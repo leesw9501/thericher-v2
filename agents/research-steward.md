@@ -374,3 +374,14 @@ The model manifest and source-safe CPU/CUDA receipts remain external only.
 GPU custody is released. A later GPU appointment must be a different frozen
 campaign with a qualified source and its own CPU evidence; this rejected
 lineage cannot be rerun merely to fill idle time.
+
+## KIS Broad D1 Causal Preflight Custody (2026-08-03)
+
+No GPU appointment was created for `kis-broad-d1-causal-cpu-preflight-v1`.
+The frozen CPU contract returned the categorical external receipt
+`sha256:c3b6918d7dcb259d4bbb7282e19c08c70939a2f9818a6d8774108bf0a658143f`
+as `input_unavailable` before fitting because its fixed within-bar geometry
+screen failed. It opened no holdout, produced no model lineage, and consumed
+no sealed-evaluation allocation. GPU is free for another independently frozen,
+eligible campaign; this candidate cannot receive CUDA merely to investigate or
+work around its own unavailable input.

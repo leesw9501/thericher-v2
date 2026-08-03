@@ -92,6 +92,105 @@ def test_materializes_a_read_only_source_local_coverage_panel(
         _assert_no_raw_fields(document)
 
 
+def test_reattaches_only_a_distinct_coverage_selected_raw_subset(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    cache_root, repository_root = _write_broad_cache(tmp_path, monkeypatch)
+    materialized = panel.materialize_kis_paper_daily_broad_panel(
+        cache_root=cache_root,
+        panel_root=tmp_path / "panel",
+        artifact_root=tmp_path / "artifacts",
+        repo_root=repository_root,
+    )
+    index_before = (cache_root / "index.json").read_bytes()
+    original = panel._load_target_records
+    seen_target_keys: list[str] = []
+
+    def tracked_load_target_records(**kwargs: object) -> object:
+        target = kwargs["target"]
+        assert isinstance(target, Mapping)
+        seen_target_keys.append(str(target["target_key"]))
+        return original(**kwargs)  # type: ignore[arg-type]
+
+    monkeypatch.setattr(panel, "_load_target_records", tracked_load_target_records)
+    _deny_external_access(monkeypatch)
+
+    selected = panel.load_materialized_kis_paper_daily_broad_panel_selection(
+        materialized.manifest_path,
+        materialization_receipt_path=materialized.receipt_path,
+        cohort_target_count=1,
+        minimum_bar_count=1,
+        cache_root=cache_root,
+        panel_root=tmp_path / "panel",
+        repo_root=repository_root,
+    )
+
+    assert type(selected) is panel.KisPaperDailyBroadPanelSelection
+    assert selected.dataset_hash == materialized.panel.dataset_hash
+    assert selected.full_target_count == len(_SYMBOLS)
+    assert selected.coverage_eligible_target_count == 2
+    assert selected.excluded_target_count == len(_SYMBOLS) - 1
+    assert selected.raw_byte_attested_target_count == 1
+    assert tuple(selected.bars_by_target) == selected.selected_target_keys
+    assert seen_target_keys == list(selected.selected_target_keys)
+    assert (cache_root / "index.json").read_bytes() == index_before
+
+
+def test_allows_only_a_real_model_artifact_mount_below_the_docker_repository(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    mounted_root = repository_root / "model_artifacts"
+    receipt_path = mounted_root / "data" / "receipt.json"
+    receipt_path.parent.mkdir(parents=True)
+    receipt_path.write_text("{}", encoding="utf-8")
+    expected_mount = mounted_root.resolve()
+
+    monkeypatch.setattr(
+        Path,
+        "is_mount",
+        lambda value: value.resolve() == expected_mount,
+    )
+
+    assert panel._external_file(receipt_path, repository_root.resolve(), "receipt") == (
+        receipt_path.resolve()
+    )
+
+
+@pytest.mark.parametrize(
+    ("common_session_count", "raw_byte_attestation_limit"),
+    ((0, None), (None, 0)),
+)
+def test_rejects_invalid_selected_panel_bounds_before_reading_data(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    common_session_count: int | None,
+    raw_byte_attestation_limit: int | None,
+) -> None:
+    cache_root, repository_root = _write_broad_cache(tmp_path, monkeypatch)
+    materialized = panel.materialize_kis_paper_daily_broad_panel(
+        cache_root=cache_root,
+        panel_root=tmp_path / "panel",
+        artifact_root=tmp_path / "artifacts",
+        repo_root=repository_root,
+    )
+
+    with pytest.raises(ValueError, match="selection .* invalid"):
+        panel.load_materialized_kis_paper_daily_broad_panel_selection(
+            materialized.manifest_path,
+            materialization_receipt_path=materialized.receipt_path,
+            cohort_target_count=1,
+            minimum_bar_count=1,
+            common_session_count=common_session_count,
+            raw_byte_attestation_limit=raw_byte_attestation_limit,
+            cache_root=cache_root,
+            panel_root=tmp_path / "panel",
+            repo_root=repository_root,
+        )
+
+
 def test_retries_only_a_changed_index_snapshot_then_fails_closed(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,

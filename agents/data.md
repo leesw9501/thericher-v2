@@ -1341,3 +1341,28 @@ universe, or authorize a ranking/Paper consumer. Do not launch a duplicate
 backfill. The next Data package is a read-only canonical-panel materialization
 that keeps all source limitations explicit for a separately frozen Engine
 consumer.
+
+## KIS Broad D1 Canonical Panel Reattachment (2026-08-03)
+
+Data materialized and reattached the completed broad-D1 cache as immutable
+panel `sha256:6f83952b101050f221032ee48f71d1dc70bb392aa3fa5e139dba1335c8659c08`.
+The manifest is
+`sha256:89e2362e983e6c74e30d55260cb95d9f52749f3950b35887d454005f615fce73`
+and the external all-target materialization receipt is
+`sha256:f6714a062f6754923c9960e74a7bd6717db6df3b31b681745860dbb0103ebe0f`.
+The panel retains 2,119 current-listing targets and all prior non-PIT,
+unadjusted, corporate-action-unqualified, and session-finality limitations.
+
+For the named Engine-only consumer, Data added a distinct selected-panel type.
+It structurally reattests the all-target manifest and receipt, then reads raw
+bytes only for a fixed lexical coverage scan. The actual run read 129 streams,
+selected 128 with an exact 800-session grid from 2023-05-17 through
+2026-07-27 UTC, and excludes 1,991 targets from this consumer. The type cannot
+be treated as a full panel; it records its raw-byte attestation count, rejects
+symlinks/malformed records/snapshot drift, and permits the Docker
+`/app/model_artifacts` bind mount only when it is an actual mount.
+
+This is source-local development input only. The next Data-owned package is a
+read-only aggregate geometry audit for the selected source; it must report
+only bins/counts and causal availability implications, not raw rows, values,
+symbols, or a source-quality promotion claim.

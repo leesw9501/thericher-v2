@@ -2452,3 +2452,35 @@ failures. It made no account/position/order/quote/live request. This closes
 only that current-listing cursor scope; raw KIS rows stay on D: and the
 source remains non-PIT and non-promoting. The next objective materializes a
 read-only canonical panel before Engine opens one new KIS-bar preflight.
+
+## KIS Broad D1 Panel And Causal Preflight (2026-08-03)
+
+`kis-broad-d1-panel-and-causal-candidate-v1` is complete. Data reattached the
+immutable broad-D1 manifest
+`sha256:89e2362e983e6c74e30d55260cb95d9f52749f3950b35887d454005f615fce73`
+and its external materialization receipt
+`sha256:f6714a062f6754923c9960e74a7bd6717db6df3b31b681745860dbb0103ebe0f`.
+The panel identity is
+`sha256:6f83952b101050f221032ee48f71d1dc70bb392aa3fa5e139dba1335c8659c08`.
+It covers 2,119 current-listing targets; 1,643 have enough bars for the fixed
+candidate geometry. A distinct, non-upcast selected-panel type reattested 129
+raw target streams to form a 128-target, 800-session common grid from
+2023-05-17 through 2026-07-27 UTC, with one terminal bar withheld. It records
+1,991 excluded full-panel targets and never claims an all-target raw-byte
+recheck during this consumer run.
+
+Engine froze the source-local pooled L2-logistic preflight: completed-D1
+within-bar geometry features, next-bar within-bar direction target, `520/20/260`
+chronological development/purge/validation allocation, flat and causal
+baselines, 2,000 session permutations, and 2,000 session bootstraps. Claude's
+falsification-first review was `uncertain`, so the review conditions are part
+of the frozen contract. The network-disabled Docker run wrote external receipt
+`sha256:c3b6918d7dcb259d4bbb7282e19c08c70939a2f9818a6d8774108bf0a658143f`
+with `input_unavailable: within_bar_geometry_integrity_failure` before model
+fit. No model weights, predictions, raw values, KIS call, credential read,
+account/order/broker route, Paper action, or GPU allocation occurred.
+
+The next objective is a bounded geometry audit and one separately frozen
+event-censoring candidate. It must measure the source limitation first and may
+not silently loosen the fixed range screen, make a performance claim, or turn
+this candidate-local result into a Data or execution hold.

@@ -6,71 +6,64 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Build `kis-broad-d1-panel-and-causal-candidate-v1`: turn the completed,
-source-limited KIS Paper broad-D1 cache into one read-only canonical panel and
-freeze one distinct KIS-bar causal candidate preflight from the coverage that
-actually exists.
+Build `kis-broad-d1-geometry-audit-and-event-censored-candidate-v1`: explain
+the first KIS broad-D1 candidate's fixed within-bar geometry failure with a
+bounded, source-safe audit, then freeze and run at most one distinct causal
+event-censoring CPU preflight if its explicit input contract is satisfied.
 
-The cache completion is a Data fact, not a profitability claim. A coverage gap
-closes only the named candidate as `input_unavailable`; it must not trigger
-synthetic training, static-source substitution, a duplicate collector, or a
-foreground wait.
+This is a source-local development objective, not a profitability or source
+quality claim. A failed audit or insufficient censored input closes only the
+new candidate as `input_unavailable`; it must not restart the completed broad
+collector, substitute data, or create a foreground wait.
 
 ## Boundaries
 
-- Ask Claude for one concise falsification-first challenge before freezing the
-  new target/split/model campaign. A timeout is `review_unavailable`, not an
-  approval hold.
-- Reattach the completed KIS Paper `dailyprice` cache read-only. Do not call
-  account/position/order endpoints, submit/modify/cancel Paper orders, read
-  `KIS_LIVE_*`, or enable live behavior. Do not restart a broad collector whose
-  durable cursor is complete unless a distinct Data objective establishes a
-  new source scope.
-- Preserve the exact KIS current-listing/non-PIT, adjustment, corporate-action,
-  availability, and historical-membership limitations. The panel and every
-  candidate result remain exploratory only: no ranking, selection, ensemble,
-  PnL/profitability claim, Paper input, or promotion.
-- Engine may use only completed KIS D1 bars from the reattested panel. State
-  feature availability, target timing, temporal split/purge, naive baseline,
-  strongest kill test, minimum usable coverage, artifact root, and stop rule
-  before opening any target.
-- Prefer one simple CPU-first KIS-bar classical baseline. Do not rerun a closed
-  Chronos, causal-TCN, HMM, candle-noise, or prior rule family merely to occupy
-  GPU. CUDA is eligible only after an actual-source CPU receipt and a separate
-  frozen GPU contract.
-- Keep raw data under `D:\market_data` and artifacts under
-  `D:\thericher-v2\model-artifacts`; never put raw rows, credentials, model
-  weights, or generated artifacts in Git or a stateboard.
+- Ask Claude for one concise falsification-first challenge before changing the
+  first candidate's range/event policy or opening the new CPU campaign.
+- Reattach the existing broad-D1 panel/cache read-only. Do not call KIS,
+  account, position, quote, or order endpoints; do not read credentials,
+  submit/modify/cancel Paper orders, read `KIS_LIVE_*`, or enable live behavior.
+- Preserve current-listing/non-PIT, unadjusted, corporate-action-unqualified,
+  availability, and session-finality limitations. No audit/candidate result may
+  become a ranking, selection, ensemble, PnL, Paper-input, or promotion claim.
+- Do not silently relax the 2.0 range screen. The new candidate must state its
+  distinct event definition, causal feature/target availability, target-adjacent
+  censoring rule, temporal split/purge, naive baseline, strongest kill test,
+  minimum coverage, artifact root, and stop rule before it opens a target.
+- The Data audit may retain only aggregate counts/bins/hashes outside Git; raw
+  rows, prices, symbols, targets, predictions, and weights remain on D: or in
+  memory. Keep raw data under `D:\market_data` and artifacts under
+  `D:\thericher-v2\model-artifacts`.
+- CPU is first. CUDA is ineligible unless this new source has an actual CPU
+  receipt and a separately frozen GPU contract.
 
 ## Required Work
 
-1. Data: reattach the latest broad-D1 receipt and materialize one canonical
-   read-only panel from eligible complete-cache symbols. Record only source-safe
-   coverage facts: counts, common-session range/count, source-limited count,
-   manifest identity, and limitations. Reject symlinks, malformed rows, mixed
-   snapshots, and inconsistent completed-bar timing before any consumer opens
-   a panel.
-2. Engine Research: independently reattest that panel and freeze one distinct
-   causal CPU-first candidate preflight. It must use KIS-reconstructible D1
-   inputs only, a fixed chronological split/purge, an always-flat or zero
-   baseline, a minimum-signal/coverage kill condition, and an availability or
-   target-permutation falsifier. Do not fit if the frozen panel fails its
-   preflight.
-3. Run the actual-source CPU preflight when eligible. If it completes and a
-   separate frozen GPU contract is justified, Research Steward may allocate one
-   bounded CUDA appointment; otherwise release GPU and dispatch another ready
-   non-conflicting package.
-4. Update Data, Engine Research, Research Steward, and orchestration
-   stateboards with actual evidence. Refresh this file with exactly one next
-   objective before completing the bounded objective.
+1. Data: implement one bounded read-only geometry audit over the same selected
+   panel lineage. Record source-safe ratio/event counts, affected target/session
+   counts, common-session implications, and immutable input identities. Reject
+   malformed/symlinked/mixed data and Docker artifact paths that are not real
+   external mounts.
+2. Engine Research: use that audit to freeze at most one event-censoring
+   preflight. It may exclude only predeclared affected feature/target pairs;
+   it must not choose symbols, windows, or thresholds after seeing model
+   metrics. Preserve chronological split and availability semantics, include a
+   zero baseline plus a causal/permutation falsifier, and run the actual-source
+   CPU preflight when eligible.
+3. Research Steward: keep GPU unallocated unless the separate CPU result
+   completes and supports a new frozen CUDA request.
+4. Add focused tests for aggregate-only audit output, causal censoring,
+   no network/credential/broker path, external-only artifacts, and categorical
+   input-unavailable containment. Refresh the Data, Engine Research, Research
+   Steward, orchestration, and handoff stateboards with actual evidence.
 
 ## Completion Evidence
 
-- one reattested, source-safe KIS broad-D1 panel receipt with no network,
-  account, order, or live route;
-- one frozen KIS-bar causal candidate preflight and either an actual CPU receipt
-  or scoped `input_unavailable` result;
-- focused tests, full clean-root parallel verification, Ruff, both Compose
+- one external aggregate-only geometry audit tied to the existing selected
+  panel lineage;
+- one separately frozen event-censoring candidate and either an actual CPU
+  receipt or scoped `input_unavailable` result;
+- focused tests, clean-root full parallel verification, Ruff, both Compose
   configurations, commit, and push.
 
 ## Verification

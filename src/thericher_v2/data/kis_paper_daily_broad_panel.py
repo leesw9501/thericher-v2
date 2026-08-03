@@ -255,6 +255,94 @@ class KisPaperDailyBroadPanel:
 
 
 @dataclass(frozen=True, slots=True)
+class KisPaperDailyBroadPanelSelection:
+    """A bounded raw-byte-attested subset of one immutable broad panel.
+
+    This deliberately is not a ``KisPaperDailyBroadPanel`` and cannot represent
+    all-target raw-byte reattestation.  It exists only for a predeclared,
+    source-local consumer that records its excluded-target count explicitly.
+    """
+
+    dataset_id: str
+    dataset_hash: str
+    manifest_sha256: str
+    materialization_receipt_sha256: str
+    index_sha256: str
+    source_root: Path
+    full_target_count: int
+    coverage_eligible_target_count: int
+    minimum_bar_count: int
+    common_session_count: int
+    terminal_buffer_sessions: int
+    raw_byte_attested_target_count: int
+    selected_target_keys: tuple[str, ...]
+    bars_by_target: Mapping[str, CatalogedBars]
+    limitations: tuple[str, ...] = _LIMITATIONS
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        bars = MappingProxyType(dict(self.bars_by_target))
+        if (
+            self.dataset_id != KIS_PAPER_DAILY_BROAD_PANEL_ID
+            or not _is_sha256(self.dataset_hash)
+            or not _is_sha256(self.manifest_sha256)
+            or not _is_sha256(self.materialization_receipt_sha256)
+            or not _is_sha256(self.index_sha256)
+            or self.source_root.is_symlink()
+            or self.full_target_count < len(self.selected_target_keys)
+            or self.coverage_eligible_target_count < len(self.selected_target_keys)
+            or self.minimum_bar_count < 1
+            or self.common_session_count < 1
+            or self.terminal_buffer_sessions < 0
+            or self.minimum_bar_count
+            < self.common_session_count + self.terminal_buffer_sessions
+            or self.raw_byte_attested_target_count < len(self.selected_target_keys)
+            or self.raw_byte_attested_target_count > self.coverage_eligible_target_count
+            or not self.selected_target_keys
+            or tuple(sorted(self.selected_target_keys)) != self.selected_target_keys
+            or set(bars) != set(self.selected_target_keys)
+            or self.limitations != _LIMITATIONS
+            or self.schema_version != SCHEMA_VERSION
+        ):
+            raise ValueError("broad daily panel selection is invalid")
+        for target_key, catalog in bars.items():
+            if (
+                not isinstance(catalog, CatalogedBars)
+                or catalog.dataset_id != self.dataset_id
+                or catalog.dataset_hash != self.dataset_hash
+                or catalog.source_path != self.source_root / _INDEX_FILENAME
+                or len(catalog.bars) < self.minimum_bar_count
+                or any(
+                    bar.symbol != target_key.split("/", maxsplit=1)[0]
+                    or bar.market != "US"
+                    or bar.timeframe is not Timeframe.D1
+                    or not bar.complete
+                    for bar in catalog.bars
+                )
+            ):
+                raise ValueError("broad daily panel selection stream is invalid")
+        reference_bars = bars[self.selected_target_keys[0]].bars
+        grid_start = -(self.common_session_count + self.terminal_buffer_sessions)
+        grid_end = -self.terminal_buffer_sessions or None
+        grid = tuple(bar.start_ts for bar in reference_bars[grid_start:grid_end])
+        if len(grid) != self.common_session_count or tuple(sorted(grid)) != grid:
+            raise ValueError("broad daily panel selection common session grid is invalid")
+        for catalog in bars.values():
+            sessions = {bar.start_ts for bar in catalog.bars}
+            if not all(session in sessions for session in grid):
+                raise ValueError("broad daily panel selection common session coverage is invalid")
+        object.__setattr__(self, "bars_by_target", bars)
+
+    @property
+    def selected_target_key_set_hash(self) -> str:
+        return _sha256(_json_bytes({"target_keys": list(self.selected_target_keys)}))
+
+    @property
+    def excluded_target_count(self) -> int:
+        return self.full_target_count - len(self.selected_target_keys)
+
+
+@dataclass(frozen=True, slots=True)
 class KisPaperDailyBroadPanelMaterialization:
     """External immutable panel manifest and source-safe receipt."""
 
@@ -478,6 +566,170 @@ def load_materialized_kis_paper_daily_broad_panel(
     if payload != _manifest_payload(panel):
         raise ValueError("broad daily panel manifest does not reattest")
     return panel
+
+
+def load_materialized_kis_paper_daily_broad_panel_selection(
+    manifest_path: Path | str,
+    *,
+    materialization_receipt_path: Path | str,
+    cohort_target_count: int,
+    minimum_bar_count: int,
+    common_session_count: int | None = None,
+    terminal_buffer_sessions: int = 0,
+    raw_byte_attestation_limit: int | None = None,
+    cache_root: Path | str = KIS_PAPER_DAILY_BROAD_CACHE_ROOT,
+    panel_root: Path | str = KIS_PAPER_DAILY_BROAD_PANEL_ROOT,
+    repo_root: Path | str | None = None,
+) -> KisPaperDailyBroadPanelSelection:
+    """Reattach a fixed coverage-only subset without claiming full disk recheck.
+
+    The full frozen manifest and its all-target materialization receipt are
+    structurally reattested first.  Raw bytes, row parsing, and cursor checks
+    are then repeated only for the explicitly selected streams.  A consumer
+    receives this distinct selection type rather than a partial full panel.
+    """
+
+    if type(cohort_target_count) is not int or cohort_target_count <= 0:
+        raise ValueError("broad daily panel selection cohort count is invalid")
+    if type(minimum_bar_count) is not int or minimum_bar_count <= 0:
+        raise ValueError("broad daily panel selection minimum bar count is invalid")
+    resolved_common_session_count = (
+        minimum_bar_count if common_session_count is None else common_session_count
+    )
+    if (
+        type(resolved_common_session_count) is not int
+        or resolved_common_session_count <= 0
+        or type(terminal_buffer_sessions) is not int
+        or terminal_buffer_sessions < 0
+        or minimum_bar_count < resolved_common_session_count + terminal_buffer_sessions
+    ):
+        raise ValueError("broad daily panel selection common session contract is invalid")
+    resolved_raw_byte_attestation_limit = (
+        cohort_target_count
+        if raw_byte_attestation_limit is None
+        else raw_byte_attestation_limit
+    )
+    if (
+        type(resolved_raw_byte_attestation_limit) is not int
+        or resolved_raw_byte_attestation_limit < cohort_target_count
+    ):
+        raise ValueError("broad daily panel selection raw byte attestation limit is invalid")
+    repository = _repository_root(repo_root)
+    root = _external_existing_root(cache_root, repository, "broad cache")
+    output_root = _external_existing_root(panel_root, repository, "panel root")
+    path = _safe_child(Path(manifest_path), output_root)
+    receipt_path = _external_file(
+        Path(materialization_receipt_path),
+        repository,
+        "materialization receipt",
+    )
+    try:
+        manifest_bytes = path.read_bytes()
+        payload = _json_document(manifest_bytes, "broad daily panel manifest")
+        receipt = _json_document(
+            receipt_path.read_bytes(),
+            "broad daily panel materialization receipt",
+        )
+    except OSError as error:
+        raise ValueError("broad daily panel selection input is unreadable") from error
+    _reject_raw_fields(payload)
+    registry = load_kis_paper_daily_broad_registry(output_root=root, repo_root=repository)
+    _validate_registry(registry)
+    index, index_sha256 = _snapshot_from_manifest(payload, registry=registry)
+    source_snapshot = _source_snapshot_from_index(index, index_sha256=index_sha256)
+    target_summaries = _target_summaries_from_manifest(payload, registry=registry)
+    dataset_hash = _dataset_hash(
+        index_sha256=index_sha256,
+        registry=registry,
+        snapshot=source_snapshot,
+        targets=target_summaries,
+    )
+    _validate_selection_manifest(
+        payload=payload,
+        registry=registry,
+        source_snapshot=source_snapshot,
+        index_sha256=index_sha256,
+        index_generation=int(index["generation"]),
+        target_summaries=target_summaries,
+        dataset_hash=dataset_hash,
+    )
+    _validate_materialization_receipt(
+        receipt=receipt,
+        manifest_sha256=_sha256(manifest_bytes),
+        index_generation=int(index["generation"]),
+        target_summaries=target_summaries,
+    )
+    candidate_target_keys = tuple(
+        target_key
+        for target_key in registry.target_keys
+        if target_summaries[target_key].bar_count >= minimum_bar_count
+        and not target_summaries[target_key].quarantined
+    )
+    if len(candidate_target_keys) < cohort_target_count:
+        raise ValueError("broad daily panel selection coverage is insufficient")
+    index_targets = {str(target["target_key"]): target for target in _targets(index)}
+    bars_by_target: dict[str, CatalogedBars] = {}
+    selected_target_keys: list[str] = []
+    common_grid: tuple[datetime, ...] | None = None
+    raw_byte_attested_target_count = 0
+    for target_key in candidate_target_keys[:resolved_raw_byte_attestation_limit]:
+        target = index_targets[target_key]
+        records, row_count, coverage_start, coverage_end, outcomes = _load_target_records(
+            target=target,
+            root=root,
+            verify_index_fingerprints=False,
+        )
+        _validate_selected_target_records(
+            target_summaries[target_key],
+            row_count=row_count,
+            coverage_start=coverage_start,
+            coverage_end=coverage_end,
+            outcomes=outcomes,
+        )
+        raw_byte_attested_target_count += 1
+        record_sessions = {bar.start_ts for bar in records}
+        if common_grid is None:
+            grid_start = -(resolved_common_session_count + terminal_buffer_sessions)
+            grid_end = -terminal_buffer_sessions or None
+            common_grid = tuple(bar.start_ts for bar in records[grid_start:grid_end])
+            if (
+                len(common_grid) != resolved_common_session_count
+                or tuple(sorted(common_grid)) != common_grid
+            ):
+                raise ValueError("broad daily panel selection common session grid is invalid")
+        elif not all(session in record_sessions for session in common_grid):
+            continue
+        bars_by_target[target_key] = _cataloged_bars_from_verified_loader(
+            dataset_id=KIS_PAPER_DAILY_BROAD_PANEL_ID,
+            dataset_hash=dataset_hash,
+            source_path=root / _INDEX_FILENAME,
+            bars=records,
+        )
+        selected_target_keys.append(target_key)
+        if len(selected_target_keys) == cohort_target_count:
+            break
+    if len(selected_target_keys) != cohort_target_count:
+        raise ValueError("broad daily panel selection exact coverage is insufficient")
+    coverage_eligible_target_count = sum(
+        target.bar_count >= minimum_bar_count and not target.quarantined
+        for target in target_summaries.values()
+    )
+    return KisPaperDailyBroadPanelSelection(
+        dataset_id=KIS_PAPER_DAILY_BROAD_PANEL_ID,
+        dataset_hash=dataset_hash,
+        manifest_sha256=_sha256(manifest_bytes),
+        materialization_receipt_sha256=_sha256(receipt_path.read_bytes()),
+        index_sha256=index_sha256,
+        source_root=root,
+        full_target_count=len(registry.target_keys),
+        coverage_eligible_target_count=coverage_eligible_target_count,
+        minimum_bar_count=minimum_bar_count,
+        common_session_count=resolved_common_session_count,
+        terminal_buffer_sessions=terminal_buffer_sessions,
+        raw_byte_attested_target_count=raw_byte_attested_target_count,
+        selected_target_keys=tuple(selected_target_keys),
+        bars_by_target=MappingProxyType(bars_by_target),
+    )
 
 
 def compare_kis_paper_daily_broad_panels(
@@ -1030,6 +1282,182 @@ def _snapshot_from_manifest(
     return index, str(snapshot["index_sha256"])
 
 
+def _source_snapshot_from_index(
+    index: Mapping[str, object],
+    *,
+    index_sha256: str,
+) -> dict[str, object]:
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "kind": "kis_paper_daily_broad_panel_source_snapshot",
+        "cache_contract": KIS_PAPER_DAILY_BROAD_CACHE_VERSION,
+        "index_generation": int(index["generation"]),
+        "index_sha256": index_sha256,
+        "targets": [_snapshot_target_payload(target) for target in _targets(index)],
+    }
+
+
+def _target_summaries_from_manifest(
+    payload: Mapping[str, object],
+    *,
+    registry: KisPaperDailyBroadRegistry,
+) -> Mapping[str, KisPaperDailyBroadPanelTarget]:
+    values = payload.get("targets")
+    if not isinstance(values, list) or len(values) != len(registry.target_keys):
+        raise ValueError("broad daily panel manifest targets are invalid")
+    targets: dict[str, KisPaperDailyBroadPanelTarget] = {}
+    for value, target_key in zip(values, registry.target_keys, strict=True):
+        if not isinstance(value, Mapping):
+            raise ValueError("broad daily panel manifest targets are invalid")
+        outcome_counts = value.get("outcome_counts")
+        if not isinstance(outcome_counts, Mapping):
+            raise ValueError("broad daily panel manifest targets are invalid")
+        try:
+            target = KisPaperDailyBroadPanelTarget(
+                target_key=str(value["target_key"]),
+                state=str(value["state"]),  # type: ignore[arg-type]
+                next_anchor_date=str(value["next_anchor_date"]),
+                accepted_page_count=int(value["accepted_page_count"]),
+                categorical_failure_count=int(value["categorical_failure_count"]),
+                last_reason=value.get("last_reason"),  # type: ignore[arg-type]
+                chunk_count=int(value["chunk_count"]),
+                bar_count=int(value["bar_count"]),
+                coverage_start=value.get("coverage_start"),  # type: ignore[arg-type]
+                coverage_end=value.get("coverage_end"),  # type: ignore[arg-type]
+                outcome_counts={str(key): int(count) for key, count in outcome_counts.items()},
+                quarantined=bool(value["quarantined"]),
+                schema_version=int(value["schema_version"]),
+            )
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError("broad daily panel manifest targets are invalid") from error
+        if target.target_key != target_key or target.to_payload() != dict(value):
+            raise ValueError("broad daily panel manifest targets are invalid")
+        targets[target_key] = target
+    return MappingProxyType(targets)
+
+
+def _validate_selection_manifest(
+    *,
+    payload: Mapping[str, object],
+    registry: KisPaperDailyBroadRegistry,
+    source_snapshot: Mapping[str, object],
+    index_sha256: str,
+    index_generation: int,
+    target_summaries: Mapping[str, KisPaperDailyBroadPanelTarget],
+    dataset_hash: str,
+) -> None:
+    source = _required_mapping(payload, "source", "broad daily panel manifest")
+    expected_source = {
+        "cache_contract": KIS_PAPER_DAILY_BROAD_CACHE_VERSION,
+        "registry_version": KIS_PAPER_DAILY_BROAD_REGISTRY_VERSION,
+        "registry_sha256": registry.registry_sha256,
+        "source_manifest_sha256": registry.source_manifest_sha256,
+        "source_file_sha256": registry.source_file_sha256,
+        "index_sha256": index_sha256,
+    }
+    expected_eligibility = {
+        "source_local_development_input": True,
+        "historical_point_in_time": False,
+        "corporate_action_qualified": False,
+        "ranking": False,
+        "model_training": False,
+        "paper": False,
+        "live": False,
+    }
+    expected_artifact_policy = {
+        "raw_market_data_in_manifest": False,
+        "raw_rows_in_manifest": False,
+        "prices_in_manifest": False,
+        "volumes_in_manifest": False,
+        "credentials_accessed": False,
+        "network_accessed": False,
+        "kis_accessed": False,
+        "broker_accessed": False,
+    }
+    if (
+        payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("kind") != KIS_PAPER_DAILY_BROAD_PANEL_ID
+        or payload.get("version") != KIS_PAPER_DAILY_BROAD_PANEL_VERSION
+        or payload.get("status") != "complete"
+        or payload.get("dataset")
+        != {"dataset_id": KIS_PAPER_DAILY_BROAD_PANEL_ID, "dataset_hash": dataset_hash}
+        or source != expected_source
+        or payload.get("scope") != _scope_payload()
+        or payload.get("coverage")
+        != _coverage_payload_from_targets(target_summaries, index_generation=index_generation)
+        or payload.get("source_snapshot") != source_snapshot
+        or payload.get("limitations") != list(_LIMITATIONS)
+        or payload.get("eligibility") != expected_eligibility
+        or payload.get("artifact_policy") != expected_artifact_policy
+    ):
+        raise ValueError("broad daily panel selection manifest is invalid")
+
+
+def _validate_materialization_receipt(
+    *,
+    receipt: Mapping[str, object],
+    manifest_sha256: str,
+    index_generation: int,
+    target_summaries: Mapping[str, KisPaperDailyBroadPanelTarget],
+) -> None:
+    expected_artifact_policy = {
+        "external_artifact_only": True,
+        "raw_market_data_persisted": False,
+        "raw_rows_persisted": False,
+        "prices_persisted": False,
+        "volumes_persisted": False,
+        "credentials_accessed": False,
+        "network_accessed": False,
+        "kis_accessed": False,
+        "account_data_persisted": False,
+        "order_data_persisted": False,
+        "broker_accessed": False,
+    }
+    if (
+        receipt.get("schema_version") != SCHEMA_VERSION
+        or receipt.get("kind") != "kis_paper_daily_broad_panel_materialization_receipt"
+        or receipt.get("version") != KIS_PAPER_DAILY_BROAD_PANEL_VERSION
+        or receipt.get("status") != "complete"
+        or receipt.get("manifest_sha256") != manifest_sha256
+        or receipt.get("coverage")
+        != _coverage_payload_from_targets(target_summaries, index_generation=index_generation)
+        or receipt.get("scope") != _scope_payload()
+        or receipt.get("artifact_policy") != expected_artifact_policy
+    ):
+        raise ValueError("broad daily panel materialization receipt is invalid")
+
+
+def _validate_selected_target_records(
+    target: KisPaperDailyBroadPanelTarget,
+    *,
+    row_count: int,
+    coverage_start: str | None,
+    coverage_end: str | None,
+    outcomes: Mapping[str, int],
+) -> None:
+    if (
+        row_count != target.bar_count
+        or coverage_start != target.coverage_start
+        or coverage_end != target.coverage_end
+        or dict(outcomes) != dict(target.outcome_counts)
+    ):
+        raise ValueError("broad daily panel selected target does not reattest")
+
+
+def _coverage_payload_from_targets(
+    targets: Mapping[str, KisPaperDailyBroadPanelTarget],
+    *,
+    index_generation: int,
+) -> dict[str, object]:
+    return {
+        "target_count": len(targets),
+        "covered_target_count": sum(target.bar_count > 0 for target in targets.values()),
+        "zero_coverage_target_count": sum(target.bar_count == 0 for target in targets.values()),
+        "quarantined_target_count": sum(target.quarantined for target in targets.values()),
+        "index_generation": index_generation,
+    }
+
+
 def _manifest_payload(panel: KisPaperDailyBroadPanel) -> dict[str, object]:
     payload = {
         "schema_version": SCHEMA_VERSION,
@@ -1169,15 +1597,18 @@ def _external_existing_root(root: Path | str, repository: Path, label: str) -> P
         resolved = candidate.resolve()
     except OSError as error:
         raise ValueError(f"broad daily panel {label} is invalid") from error
-    mounted_market_data = repository / "market_data"
-    permitted_mount = (
-        not mounted_market_data.is_symlink()
-        and mounted_market_data.is_mount()
-        and resolved.is_relative_to(mounted_market_data.resolve())
-    )
+    permitted_mount = _permitted_external_mount(resolved, repository)
     if resolved.is_relative_to(repository) and not permitted_mount:
         raise ValueError(f"broad daily panel {label} must stay outside Git")
     return resolved
+
+
+def _external_file(path: Path, repository: Path, label: str) -> Path:
+    parent = _external_existing_root(path.parent, repository, label)
+    candidate = _safe_child(path, parent)
+    if candidate.is_symlink() or not candidate.is_file():
+        raise ValueError(f"broad daily panel {label} is invalid")
+    return candidate
 
 
 def _external_output_root(root: Path | str, repository: Path, label: str) -> Path:
@@ -1188,9 +1619,21 @@ def _external_output_root(root: Path | str, repository: Path, label: str) -> Pat
         resolved = candidate.resolve()
     except OSError as error:
         raise ValueError(f"broad daily panel {label} is invalid") from error
-    if resolved.is_relative_to(repository):
+    if resolved.is_relative_to(repository) and not _permitted_external_mount(resolved, repository):
         raise ValueError(f"broad daily panel {label} must stay outside Git")
     return resolved
+
+
+def _permitted_external_mount(path: Path, repository: Path) -> bool:
+    for name in ("market_data", "model_artifacts"):
+        mount_root = repository / name
+        if (
+            not mount_root.is_symlink()
+            and mount_root.is_mount()
+            and path.is_relative_to(mount_root.resolve())
+        ):
+            return True
+    return False
 
 
 def _repository_root(repo_root: Path | str | None) -> Path:

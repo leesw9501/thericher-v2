@@ -988,3 +988,21 @@ same-session causal misreading without adding a new gate.
 - **Improvement:** the worker was started and observed instead of being left at
   a calendar due time. Its zero-remaining receipt turns broad-D1 work from
   collection scheduling into a bounded local panel-consumer package.
+
+## KIS Broad D1 Panel And Causal Preflight (2026-08-03)
+
+- **Ready:** the completed broad cache now has a reattested immutable panel and
+  a bounded selected-panel reader. The next ready package is a source-safe
+  geometry audit plus a newly frozen event-censoring candidate; it does not
+  wait for a collector, account state, market session, or GPU.
+- **Owned:** Data owns the panel, raw-byte selection scope, and aggregate
+  geometry facts. Engine owns the candidate contract and CPU execution.
+  Research Steward owns no appointment because the first CPU candidate was
+  input-unavailable. Execution has no route change.
+- **Due:** no foreground external wait. The broad cursor remains complete; the
+  `within_bar_geometry_integrity_failure` belongs only to the first candidate.
+- **Improvement:** selected reattachment reduced this consumer's raw-byte
+  verification from an all-target read to 129 deterministic streams while
+  preserving the full manifest/receipt binding. The separate type and explicit
+  excluded count prevent that throughput improvement from being misread as an
+  all-panel verification or promotion signal.

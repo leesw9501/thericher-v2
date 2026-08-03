@@ -1498,3 +1498,28 @@ Breadth queue: seek a distinct frozen, KIS-compatible non-PIT input only when
 its contract can make a valid comparative claim. Depth queue: none for the
 rejected Chronos lineage. The forward prospective campaign remains independent
 and waits only on its own future data count.
+
+## KIS Broad D1 Causal CPU Preflight (2026-08-03)
+
+Engine froze one distinct KIS-reconstructible D1 preflight after Claude's
+falsification-first review returned `uncertain`: 128 lexical selected targets,
+800 completed sessions, one terminal-bar buffer, `520/20/260` chronological
+development/purge/validation allocation, and a pooled L2-logistic classifier.
+Features are same-bar log return, log range, close location, and trailing
+5/20-session same-bar means; the target is the next completed bar's within-bar
+direction. Flat zero, development-majority, current-session cross-sectional,
+and same-target prior-direction baselines accompany 2,000 session permutation
+and bootstrap checks.
+
+The real network-disabled Docker run did not fit the model. It wrote external
+source-safe receipt
+`sha256:c3b6918d7dcb259d4bbb7282e19c08c70939a2f9818a6d8774108bf0a658143f`
+with `input_unavailable: within_bar_geometry_integrity_failure` at the fixed
+2.0 high/low range screen. This is not a strategy result, a source-wide
+quality verdict, a PnL claim, or a blocker for other lanes. No target/prediction
+row, weight, checkpoint, broker request, or GPU appointment was created.
+
+Breadth queue: a separate frozen event-censoring candidate may follow a
+source-safe aggregate geometry audit. Depth queue: none. Do not loosen the
+2.0 screen or reuse this candidate family without a new contract, Claude
+challenge, causal target-adjacency policy, and actual-source CPU receipt.
