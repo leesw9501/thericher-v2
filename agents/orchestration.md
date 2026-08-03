@@ -762,3 +762,19 @@ same-session causal misreading without adding a new gate.
   reattests import-time isolation, clock-derived freshness, and durable route
   separation. This scoped check does not hold unrelated authorized Paper,
   Data, or Research work.
+
+## Prospective SPY Safety Reattestation
+
+- **Ready:** the three requested adapter closure facts are now independently
+  covered: import isolation, immutable call-time expiry, and durable D1 versus
+  intraday identity/virtual-host separation. The next ready work is a pure
+  Engine input adapter; it does not wait for a prospective market session.
+- **Owned:** Execution owns the unchanged virtual client/canary boundary;
+  Engine owns the next target-free model-input contract; Data retains the
+  forward observer; Research Steward has no eligible GPU appointment.
+- **Due:** no foreground external wait. The installed Data observation and any
+  Paper invocation retain their own schedules while Engine implements its
+  independent contract.
+- **Improvement:** exact `valid_until` is now an exclusive execution boundary,
+  eliminating a late quote path that could never create a valid canary. Claude
+  timed out as `review_unavailable`; no approval state or lane hold follows.

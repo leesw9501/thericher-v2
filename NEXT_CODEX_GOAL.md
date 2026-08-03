@@ -6,44 +6,52 @@ Then continue from `C:\Users\Public\Documents\thericher-v2`.
 
 ## Objective
 
-Build `prospective-spy-paper-safety-reattest-v1`: close the three bounded
-falsification gaps on the unscheduled prospective-SPY virtual-paper adapter
-before any named activation relies on it. This improves live-risk control for
-an already-authorized Paper route; it is not a scheduler, strategy, PnL, or
-live-capital change.
+Build `profiled-mtf-model-input-contract-v1`: turn the existing
+`NormalizedCompletedBarProjection` into one small, pure model-input contract
+that preserves each caller-selected `1m`, `5m`, `10m`, `1h`, and `3h` causal
+sequence for later MLP, LSTM, causal-TCN, and attention experts. This advances
+feature/model research while forward data accumulates; it is not a model
+selection, training, PnL, Paper, or GPU-utilization objective.
 
 ## Boundaries
 
-- Never read or route `KIS_LIVE_*`, use live capital, add a scheduler, or run
-  an `--execute` Paper session for transport testing.
-- Do not mutate capture caches or create a fresh receipt. Use fixtures and
-  mocked clients only; no KIS, network, credential, account, quote, intent,
-  order, cancel, or reconciliation call is needed.
-- Preserve the daily SPY D1 route and broker-free `source: local_paper` replay
-  as separate paths. Do not alter their strategy, sizing, or lifecycle logic.
+- Before architecture-changing edits, ask Claude for a concise
+  falsification-first drift check on whether the adapter duplicates an existing
+  projection/window contract or weakens its causal identity.
+- Use injected or deterministic in-memory projections only. Do not read KIS,
+  credentials, `.env`, caches, or network state; do not create a market-data
+  artifact or a fresh forward observation.
+- Do not train a model, load public weights, create a checkpoint, score a
+  target, choose a window profile or model family, claim performance, touch
+  `local_paper`, or call a broker.
+- Preserve `NormalizedCompletedBarProjection` as the source of causal-window,
+  source-contract, profile, cutoff, and projection identity. Do not add a
+  second resampler or a generic feature platform.
 
 ## Required Work
 
-1. **Execution:** Prove the adapter import and all ineligible receipt exits do
-   not access configuration, credentials, account, or quote paths. Keep one
-   lazy configuration chokepoint and avoid a second access path.
-2. **Validation:** Reattest freshness from immutable receipt timestamps against
-   the call-time clock, including an explicit stale boundary, rather than any
-   producer-owned eligibility flag.
-3. **Isolation:** Prove an intraday receipt-derived durable identity cannot
-   collide with the daily SPY D1 route, and reattest that the existing canary
-   client pins virtual-Paper endpoints.
-4. **Review:** Ask Claude for a concise falsification-first verdict on these
-   exact three closure facts. An adverse verdict defers only this adapter's
-   activation; independent work continues.
+1. Inventory the existing projection, causal window, and sequence-architecture
+   APIs. Add only the smallest typed, model-neutral adapter needed to expose
+   immutable per-timeframe feature sequences and a deterministic flattened
+   control view.
+2. Bind the adapter to one explicit profile, source identity, cutoff, feature
+   timestamp, per-timeframe window ends, and projection digest. It must reject
+   a malformed, mixed-symbol, incomplete, future, stale, reordered, or
+   identity-mismatched projection before exposing values.
+3. Keep PyTorch optional and out of module import. The result may be consumed
+   by later MLP/sequence work, but this objective must not add a trainer,
+   model registry, artifact writer, or CUDA appointment.
+4. Add focused tests for deterministic identity, flattened/per-timeframe
+   geometry, mutation sensitivity, causal rejection, and import/no-I/O
+   isolation. Update the Engine and orchestration stateboards with the exact
+   next research dependency rather than a new queue.
 
 ## Completion Evidence
 
-- focused tests cover import/no-I/O, stale-boundary, and daily/intraday
-  durable-identity separation;
-- virtual/non-live endpoint isolation remains explicit;
-- no external Paper side effect occurred;
-- Commit and push, then replace this file with exactly one next objective.
+- a pure model-input adapter composes with the existing causal projection;
+- no data, credential, broker, Paper, model-weight, or GPU side effect occurs;
+- focused tests demonstrate causal and identity containment;
+- commit and push, then replace this file with exactly one next objective.
 
 ## Verification
 

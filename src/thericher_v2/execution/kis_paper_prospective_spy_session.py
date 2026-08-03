@@ -518,7 +518,7 @@ def _receipt_is_current(receipt: ResearchDecisionReceipt, *, as_of: datetime) ->
         receipt.input_status == "ready"
         and receipt.decision_class == "enter"
         and receipt.reason_class == "eligible_enter"
-        and receipt.decided_at <= observed_at <= receipt.valid_until
+        and receipt.decided_at <= observed_at < receipt.valid_until
     )
 
 

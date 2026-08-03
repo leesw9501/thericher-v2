@@ -2158,3 +2158,27 @@ Compose configurations passed. The existing `kis-readonly` container completed
 one current virtual account health observation on 2026-08-02 UTC with a
 complete snapshot and no order route. No fresh intraday receipt was
 manufactured and no new virtual canary was submitted by this objective.
+
+## Prospective SPY Paper Safety Reattestation
+
+`prospective-spy-paper-safety-reattest-v1` is complete. The adapter now treats
+`valid_until` as an exclusive execution boundary: a receipt is current only
+when `decided_at <= now < valid_until`. This matches the canary decision's
+positive-validity requirement and prevents an exact-expiry receipt from
+reading Paper configuration, account facts, or a quote only to fail later.
+
+Focused subprocess coverage imports the adapter while denying sockets,
+`urlopen`, `.env` reads, and KIS secret environment keys. Missing, malformed,
+stale, and abstaining receipt paths deny configuration, client, account, quote,
+and canary access. A sequenced clock proves a receipt that expires during
+preparation never reaches the canary. The test suite also reattests distinct
+receipt-derived state identities for the intraday SPY and daily SPY D1 paths,
+and rejects a live host before an injected canary transport can run.
+
+No KIS request, credential read, account/quote read, intent, order,
+cancellation, reconciliation, local fill, cache write, or artifact run
+occurred. The new focused group passed `15 passed, 1 skipped`; relevant legacy
+coverage passed `109 passed`; Ruff and both credential-free Compose
+configurations passed. Claude's bounded review timed out, so the record is
+`review_unavailable`, not a verdict. This does not hold independent Engine
+work.

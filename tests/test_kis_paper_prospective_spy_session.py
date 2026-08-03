@@ -12,20 +12,26 @@ import pytest
 import thericher_v2.execution.kis_paper_prospective_spy_session as session_module
 import thericher_v2.models.prospective_spy_intraday_observation as observation_module
 from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.data.kis_paper_daily_spy_input import KisPaperDailySpyInput
 from thericher_v2.data.kis_paper_prospective_spy_capture import (
     KIS_PAPER_PROSPECTIVE_SPY_CAPTURE_ARTIFACT_DIR,
 )
+from thericher_v2.execution.kis_paper_canary import KisPaperCanaryClient, KisPaperCanaryError
 from thericher_v2.execution.kis_paper_prospective_spy_session import (
     run_kis_paper_prospective_spy_session,
 )
 from thericher_v2.execution.kis_paper_quote import KisPaperSpyLimitInput
+from thericher_v2.execution.kis_paper_receipt_canary import receipt_canary_run_id
 from thericher_v2.execution.kis_readonly import (
+    KisHttpRequest,
     KisPaperAccountIdentity,
     KisPaperCashSnapshot,
+    KisPaperConfig,
     KisPaperOpenOrdersSnapshot,
     KisPaperOrderableFundsSnapshot,
     KisPaperReadOnlySnapshot,
 )
+from thericher_v2.execution.paper_decision_bridge import receipt_attribution_ref
 from thericher_v2.market.resample import SessionWindow
 from thericher_v2.models.prospective_spy_intraday_observation import (
     ProspectiveSpyIntradayObservationReceipt,
@@ -33,6 +39,12 @@ from thericher_v2.models.prospective_spy_intraday_observation import (
 )
 from thericher_v2.models.prospective_spy_intraday_session import (
     build_prospective_spy_intraday_session_record,
+)
+from thericher_v2.research.kis_paper_daily_spy_baseline import (
+    evaluate_kis_paper_daily_spy_baseline,
+)
+from thericher_v2.research.prospective_spy_intraday_paper_receipt import (
+    research_receipt_from_prospective_spy_intraday_observation,
 )
 
 _SESSION_DATE = date(2026, 8, 3)
@@ -152,6 +164,67 @@ def test_stale_or_abstaining_receipt_never_constructs_a_kis_client(
     assert abstain_outcome.reason_code == "receipt_abstain"
 
 
+def test_all_ineligible_receipt_exits_leave_paper_access_paths_untouched(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    artifact_root, repository_root = _roots(tmp_path)
+    denied_calls = _deny_paper_access(monkeypatch)
+
+    missing = run_kis_paper_prospective_spy_session(
+        environment=_NoCredentialEnvironment(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        now=_CUTOFF,
+        session_id="missing-receipt",
+        **_paths(tmp_path),
+    )
+    _receipt_path(artifact_root).parent.mkdir(parents=True, exist_ok=True)
+    _receipt_path(artifact_root).write_text("{}\n", encoding="ascii")
+    malformed = run_kis_paper_prospective_spy_session(
+        environment=_NoCredentialEnvironment(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        now=_CUTOFF,
+        session_id="malformed-receipt",
+        **_paths(tmp_path),
+    )
+    current = _write_receipt(artifact_root, _receipt())
+    stale = run_kis_paper_prospective_spy_session(
+        environment=_NoCredentialEnvironment(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        now=current.valid_until + timedelta(microseconds=1),
+        session_id="stale-receipt",
+        **_paths(tmp_path),
+    )
+    abstaining = _write_receipt(artifact_root, _receipt(upward=False))
+    abstain = run_kis_paper_prospective_spy_session(
+        environment=_NoCredentialEnvironment(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        now=abstaining.decided_at,
+        session_id="abstaining-receipt",
+        **_paths(tmp_path),
+    )
+
+    assert (missing.reason_code, malformed.reason_code, stale.reason_code, abstain.reason_code) == (
+        "receipt_unavailable",
+        "receipt_unavailable",
+        "receipt_not_current",
+        "receipt_abstain",
+    )
+    assert denied_calls == []
+
+
 def test_malformed_receipt_never_reads_credentials_or_creates_an_intent(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
@@ -249,6 +322,157 @@ def test_ineligible_receipts_never_touch_an_injected_paper_client(
     assert outcome.status == "no_intent"
     assert outcome.reason_code == ("receipt_not_current" if upward else "receipt_abstain")
     assert client.calls == []
+
+
+def test_immutable_receipt_expires_at_its_exact_valid_until(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    artifact_root, repository_root = _roots(tmp_path)
+    observation = _write_receipt(artifact_root, _receipt())
+    immediately_before_expiry = observation.valid_until - timedelta(microseconds=1)
+    client = _FlatSpyClient(captured_at=immediately_before_expiry)
+    submission_checks: list[bool] = []
+
+    def run_canary(prepared, **kwargs):
+        submission_checks.append(kwargs["submit_permitted"](immediately_before_expiry))
+        return SimpleNamespace(
+            run_id="receipt-" + prepared.receipt_ref.removeprefix("sha256:"),
+            reason_code="cancelled",
+            safe_payload=lambda: {"phase": "cancelled", "paper_only": True},
+        )
+
+    monkeypatch.setattr(session_module, "run_kis_paper_receipt_canary", run_canary)
+    outcome = run_kis_paper_prospective_spy_session(
+        environment=_NoCredentialEnvironment(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        client=client,  # type: ignore[arg-type]
+        now=immediately_before_expiry,
+        session_id="before-valid-until-boundary",
+        **_paths(tmp_path),
+    )
+
+    assert observation.valid_until == observation.decided_at + timedelta(minutes=1)
+    assert outcome.status == "canary_completed"
+    assert client.calls == ["snapshot", "limit_input"]
+    assert submission_checks == [True]
+
+    _deny_kis_config(monkeypatch)
+    expired_client = _NoAccessClient()
+    expired = run_kis_paper_prospective_spy_session(
+        environment=_NoCredentialEnvironment(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        client=expired_client,  # type: ignore[arg-type]
+        now=observation.valid_until,
+        session_id="at-valid-until-boundary",
+        **_paths(tmp_path),
+    )
+
+    assert expired.status == "no_intent"
+    assert expired.reason_code == "receipt_not_current"
+    assert expired_client.calls == []
+
+
+def test_receipt_expiring_before_submit_skips_the_canary(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    artifact_root, repository_root = _roots(tmp_path)
+    observation = _write_receipt(artifact_root, _receipt())
+    immediately_before_expiry = observation.valid_until - timedelta(microseconds=1)
+    client = _FlatSpyClient(captured_at=immediately_before_expiry)
+    timestamps = iter(
+        (
+            immediately_before_expiry,
+            immediately_before_expiry,
+            immediately_before_expiry,
+            immediately_before_expiry,
+            immediately_before_expiry,
+            observation.valid_until,
+        )
+    )
+
+    def advancing_clock() -> datetime:
+        return next(timestamps)
+
+    def fail_canary(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("an expired receipt must not reach the Paper canary")
+
+    monkeypatch.setattr(session_module, "run_kis_paper_receipt_canary", fail_canary)
+    outcome = run_kis_paper_prospective_spy_session(
+        environment=_NoCredentialEnvironment(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        client=client,  # type: ignore[arg-type]
+        clock=advancing_clock,
+        session_id="expired-before-submit",
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "receipt_expired_during_preparation"
+    assert client.calls == ["snapshot", "limit_input"]
+
+
+def test_intraday_receipt_uses_a_durable_identity_distinct_from_daily_spy_d1(
+    tmp_path: Path,
+) -> None:
+    intraday_receipt = research_receipt_from_prospective_spy_intraday_observation(_receipt())
+    daily_input = KisPaperDailySpyInput(
+        bars=(
+            _daily_bar(date(2026, 7, 31), Decimal("100")),
+            _daily_bar(_SESSION_DATE, Decimal("101")),
+        ),
+        catalog_dataset_id="test.daily.spy.d1.v1",
+        catalog_dataset_hash="sha256:" + "d" * 64,
+        last_consumed_session=_SESSION_DATE,
+        first_available_at=datetime(2026, 8, 4, 5, 0, tzinfo=UTC),
+        input_manifest_ref="sha256:" + "e" * 64,
+        availability_record_path=tmp_path / "daily-availability.json",
+    )
+    daily_receipt = evaluate_kis_paper_daily_spy_baseline(
+        daily_input,
+        as_of=datetime(2026, 8, 4, 19, 0, tzinfo=UTC),
+    ).receipt
+
+    intraday_run_id = receipt_canary_run_id(receipt_attribution_ref(intraday_receipt))
+    daily_run_id = receipt_canary_run_id(receipt_attribution_ref(daily_receipt))
+
+    assert daily_receipt.campaign_ref != intraday_receipt.campaign_ref
+    assert daily_receipt.input_manifest_ref != intraday_receipt.input_manifest_ref
+    assert daily_receipt.proposal_ref != intraday_receipt.proposal_ref
+    assert daily_receipt.decision_id != intraday_receipt.decision_id
+    assert daily_run_id != intraday_run_id
+    assert (tmp_path / "paper-state" / f"{daily_run_id}.json") != (
+        tmp_path / "paper-state" / f"{intraday_run_id}.json"
+    )
+
+
+def test_prospective_adapter_canary_client_rejects_live_endpoint_before_transport() -> None:
+    transport = _NoNetworkTransport()
+    client = KisPaperCanaryClient(
+        config=KisPaperConfig("test-key", "test-secret", "12345678", "01"),
+        transport=transport,  # type: ignore[arg-type]
+    )
+    live_request = KisHttpRequest(
+        method="POST",
+        url="https://openapi.koreainvestment.com:9443/uapi/overseas-stock/v1/trading/order",
+        headers={"content-type": "application/json", "accept": "application/json"},
+        json_body={"grant_type": "client_credentials"},
+    )
+
+    assert session_module.KisPaperCanaryClient is KisPaperCanaryClient
+    with pytest.raises(KisPaperCanaryError, match="paper_host_required"):
+        client._dispatch(live_request)
+    assert transport.calls == []
 
 
 def test_changed_receipt_content_cannot_reuse_a_preview_input_or_decision_binding(
@@ -389,11 +613,42 @@ class _NoAccessClient:
         raise AssertionError("ineligible receipt must not read a Paper quote")
 
 
+class _NoNetworkTransport:
+    def __init__(self) -> None:
+        self.calls: list[object] = []
+
+    def request(self, request: object) -> object:
+        self.calls.append(request)
+        raise AssertionError("a live endpoint must be rejected before transport")
+
+
 def _deny_kis_config(monkeypatch: pytest.MonkeyPatch) -> None:
     def fail(*_args: object, **_kwargs: object) -> None:
         raise AssertionError("ineligible receipt must not load Paper configuration")
 
     monkeypatch.setattr(session_module, "load_kis_paper_config_from_environment", fail)
+
+
+def _deny_paper_access(monkeypatch: pytest.MonkeyPatch) -> list[str]:
+    denied_calls: list[str] = []
+
+    def deny(name: str):
+        def fail(*_args: object, **_kwargs: object) -> None:
+            denied_calls.append(name)
+            raise AssertionError(f"ineligible receipt must not access {name}")
+
+        return fail
+
+    monkeypatch.setattr(
+        session_module,
+        "load_kis_paper_config_from_environment",
+        deny("configuration"),
+    )
+    monkeypatch.setattr(session_module, "KisPaperCanaryClient", deny("client"))
+    monkeypatch.setattr(session_module, "resolve_kis_paper_spy_position_target", deny("account"))
+    monkeypatch.setattr(session_module, "prepare_kis_paper_spy_receipt_decision", deny("quote"))
+    monkeypatch.setattr(session_module, "run_kis_paper_receipt_canary", deny("canary"))
+    return denied_calls
 
 
 def _roots(tmp_path: Path) -> tuple[Path, Path]:
@@ -418,15 +673,19 @@ def _write_receipt(
     artifact_root: Path,
     receipt: ProspectiveSpyIntradayObservationReceipt,
 ) -> ProspectiveSpyIntradayObservationReceipt:
-    destination = (
+    destination = _receipt_path(artifact_root)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(receipt.canonical_json() + "\n", encoding="utf-8")
+    return receipt
+
+
+def _receipt_path(artifact_root: Path) -> Path:
+    return (
         artifact_root
         / KIS_PAPER_PROSPECTIVE_SPY_CAPTURE_ARTIFACT_DIR
         / _SESSION_DATE.isoformat()
         / "receipt.json"
     )
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(receipt.canonical_json() + "\n", encoding="utf-8")
-    return receipt
 
 
 def _receipt(
@@ -470,5 +729,20 @@ def _bar_at(index: int, *, upward: bool) -> Bar:
         low=open_value - Decimal("0.5"),
         close=open_value + Decimal("0.2"),
         volume=Decimal("7777"),
+        complete=True,
+    )
+
+
+def _daily_bar(session_date: date, close: Decimal) -> Bar:
+    return Bar(
+        symbol="SPY",
+        market="US",
+        timeframe=Timeframe.D1,
+        start_ts=datetime(session_date.year, session_date.month, session_date.day, tzinfo=UTC),
+        open=close,
+        high=close + Decimal("1"),
+        low=close - Decimal("1"),
+        close=close,
+        volume=Decimal("1000"),
         complete=True,
     )

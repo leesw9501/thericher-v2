@@ -8836,3 +8836,19 @@ but the next named activation review must independently prove import-time
 credential isolation, timestamp-derived staleness, and route-discriminated
 durable identity. This scoped Paper-route condition is not a hold on Data,
 Research, or unrelated Paper work, and is not a model/PnL/GPU/live decision.
+
+## Prospective SPY Paper Safety Reattestation - Use an exclusive execution expiry
+
+Decision: treat the prospective SPY immutable receipt as execution-current
+only for `decided_at <= now < valid_until`. At exactly `valid_until`, return a
+receipt-scoped no-intent before Paper configuration, account, or quote access.
+
+Reason: the downstream canary decision requires a strictly positive validity
+interval, so inclusive adapter freshness at its exact expiry could otherwise
+misclassify an inevitable preparation failure as a quote failure. The adapter
+already derives freshness from immutable receipt timestamps and the call-time
+clock; making the boundary exclusive preserves that one source of truth.
+Subprocess import isolation, all ineligible exits, a clock crossing during
+preparation, D1/intraday durable identity separation, and virtual-host
+rejection are covered without a KIS call. Claude timed out as
+`review_unavailable`; this is not treated as approval or disagreement.

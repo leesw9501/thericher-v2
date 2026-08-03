@@ -572,3 +572,20 @@ reattest its import-time credential isolation, timestamp-derived freshness,
 and route-discriminated durable identity before relying on a named activation.
 This affects only this adapter's activation boundary; it does not pause the
 daily SPY route, local-paper replay, or another authorized Paper action.
+
+## Prospective SPY Adapter Safety Reattestation
+
+The named adapter's focused reattestation is complete. It has one lazy Paper
+configuration chokepoint after receipt/session eligibility, and its import is
+tested under denied network, `.env`, and KIS-secret access. Missing, malformed,
+stale, and abstaining receipts touch no configuration, client, account, quote,
+or canary path.
+
+Receipt freshness is execution-strict: `valid_until` is exclusive because a
+canary decision needs remaining positive validity. A call-time expiry during
+preparation returns `receipt_expired_during_preparation` without the canary.
+Daily SPY D1 and prospective intraday receipts derive different full
+receipt/run identities even though both reuse the virtual-Paper client, whose
+host allowlist rejects a live endpoint before transport. No external side
+effect occurred. Claude was `review_unavailable`, which defers no unrelated
+Data, Engine, local-paper, or Paper package.
