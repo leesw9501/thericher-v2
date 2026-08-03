@@ -6,62 +6,61 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Build `profiled-mtf-forward-campaign-readiness-v1`: make the next predictive
-research campaign automatically recognizable from Data's existing source-safe
-forward-outcome inventory, without opening any raw snapshot, price, feature,
-return, target, or label.
+Build `profiled-mtf-forward-supervised-dataset-contract-v1`: turn a valid
+forward-campaign readiness receipt into the exact first private supervised
+dataset contract for the `short` QQQ/SPY multi-timeframe engine.
 
-The engine must be able to continue useful preparation while the Data-owned
-forward collector accumulates sessions. This is a small contract bridge, not a
-second scheduler, generic campaign platform, model, backtest, or Paper route.
+This is the first target-opening boundary. It must be deterministic and
+replayable, but its implementation and tests must proceed now even though the
+current real inventory has zero forward target-ready pairs.
 
 ## Boundaries
 
-- Consume only `KisMtfProfiledForwardOutcomeInventory` and its opaque contract
-  and manifest identities. Do not open individual witness files or D:-resident
-  raw snapshots.
-- Freeze the already predeclared initial campaign shape only as readiness
-  metadata: `short` QQQ/SPY pairs, 30 target-ready pairs, `20/2/8` temporal
-  train/purge/validation allocation, 20bp round-trip cost sensitivity,
-  no-trade baseline, blocked-session target-permutation kill test, CPU-first,
-  and a ten-minute maximum CUDA appointment. Do not calculate or inspect
-  outcomes, returns, labels, scores, or PnL.
-- A count below 30 is a scoped `input_unavailable` result, not an approval,
-  scheduler, GPU, Paper, or company-wide hold. At or above 30, emit only a
-  source-safe `ready_for_private_campaign_freeze` receipt; a later goal owns
-  label opening and the distinct frozen predictive campaign.
-- Do not read `.env` or credentials; call KIS; use a broker/account/order
-  route; create a Paper action; enable live behavior; expose a service; add a
-  provider; modify market-data cache; or introduce a generic workflow layer.
-- Artifacts belong only under `D:\thericher-v2\model-artifacts` or
-  `/app/model_artifacts`, never Git. Do not persist raw values, targets,
-  predictions, weights, or model artifacts.
+- Ask Claude for one concise falsification-first drift check before choosing
+  the target timestamp, chronological selection, or split semantics.
+- Accept only a reattested
+  `ready_for_private_campaign_freeze` readiness receipt whose opaque policy,
+  forward-outcome contract, and inventory identities exactly match current
+  Data evidence. A below-threshold result remains scoped input unavailable and
+  does not block implementation or other lanes.
+- On a ready inventory, select the first 30 target-ready pairs in verified
+  chronological order. For each leg, derive only the predeclared log return
+  from the last completed causal M1 close ending at 15:30 ET to the final
+  completed outcome M1 close ending at 15:45 ET. Do not use a later bar or
+  use row-index alignment across timeframes.
+- Freeze the pair-level `20 train / 2 purge / 8 validation` chronology before
+  any model sees a target. Persist raw/value-bearing dataset material only
+  under `D:\market_data`; persist only hashes, shapes, split counts, and
+  source-safe receipts under `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts`.
+- Do not call KIS, read `.env` or credentials, use broker/account/order/Paper
+  routes, enable live behavior, expose a service, train a model, allocate GPU,
+  calculate PnL, or add a generic dataset platform.
 
 ## Required Work
 
-1. Engine Research: implement the minimal immutable readiness contract and
-   source-safe external receipt. Bind it to the exact forward-outcome observer
-   contract and opaque target-ready manifest hash; reject forged, inconsistent,
-   malformed, or stale inventory identities.
-2. Data Agent: reattach the existing forward-outcome inventory only and report
-   its categorical readiness. Do not collect, mutate, or reinterpret source
-   data. Execution has no work in this objective.
-3. Add focused tests proving the below-threshold and ready cases, immutable
-   identity binding, malformed-input rejection, external artifact isolation,
-   idempotent receipt behavior, and absence of credential/network/execution
-   routes.
-4. Update Engine Research, Research Steward, Data, and orchestration
-   stateboards with the resulting readiness state. Do not allocate GPU merely
-   for a readiness receipt.
+1. Data Agent: add the smallest read-only loader for the selected existing
+   forward witnesses and D:-resident snapshots. Reattest every witness and
+   snapshot hash, reject malformed/missing/changed content, and make an absent
+   or insufficient store a recoverable local result without creating paths.
+2. Engine Research: freeze the immutable dataset/target/split contract and a
+   source-safe external receipt. Bind it to the exact readiness receipt and
+   selected snapshot identities; the target-bearing materialization stays only
+   in D: and is not a model, comparative result, or GPU appointment.
+3. Add focused tests for target endpoint timing, chronological first-30
+   selection, pair-level purge, snapshot mutation/missing rejection, stale
+   readiness rejection, external artifact isolation, D:-only value retention,
+   and no credential/network/execution route.
+4. Reattach the real inventory once. If it remains below threshold, report the
+   exact count and leave no target-bearing dataset artifact behind. Update the
+   Engine Research, Research Steward, Data, and orchestration stateboards.
 
 ## Completion Evidence
 
-- one tested source-safe readiness receipt tied to the exact opaque Data
-  inventory;
-- explicit non-blocking behavior below threshold and no target/model/PnL/Paper
-  claim;
-- external-only artifacts, commit, push, and replacement of this file with the
-  next single objective.
+- a tested exact target/split contract and replayable fixture materialization;
+- a real local inventory result with no false training or promotion claim;
+- no raw or target values in Git/model artifacts; commit, push, and replace
+  this file with the next single objective.
 
 ## Verification
 
