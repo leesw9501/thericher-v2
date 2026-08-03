@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Literal
 from zoneinfo import ZoneInfo
 
-from thericher_v2.contracts import SCHEMA_VERSION, Bar, require_utc
+from thericher_v2.contracts import SCHEMA_VERSION, Bar, Timeframe, require_utc
 from thericher_v2.data.kis_intraday_mtf_availability import (
     KIS_INTRADAY_MTF_AVAILABILITY_TARGETS,
     KisIntradayMtfAvailabilityReceipt,
@@ -66,9 +66,32 @@ KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS = tuple(
 KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_PROFILE_IDS = tuple(
     profile.profile_id for profile in CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG.profiles
 )
+KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID = "kis-mtf-profiled-forward-outcome-witness-v1"
+KIS_MTF_PROFILED_FORWARD_OUTCOME_RAW_SNAPSHOT_ID = (
+    "kis-mtf-profiled-forward-outcome-raw-snapshot-v1"
+)
+KIS_MTF_PROFILED_FORWARD_OUTCOME_ARTIFACT_DIRECTORY = "mtf-forward-outcomes-v1"
+KIS_MTF_PROFILED_FORWARD_OUTCOME_RAW_DIRECTORY = "forward-outcome-witness-v1"
+KIS_MTF_PROFILED_FORWARD_OUTCOME_PROFILE_ID = "short"
+KIS_MTF_PROFILED_FORWARD_OUTCOME_BAR_COUNT = 15
 
 ObservationStatus = Literal["observed", "input_unavailable"]
 StoreOutcome = Literal["appended", "duplicate", "conflict", "busy"]
+ForwardOutcomeStatus = Literal[
+    "target_ready",
+    "input_unavailable",
+    "outcome_unavailable",
+    "input_mutated",
+]
+ForwardOutcomeStoreOutcome = Literal[
+    "appended",
+    "duplicate",
+    "conflict",
+    "input_unavailable",
+    "outcome_unavailable",
+    "input_mutated",
+    "busy",
+]
 CatalogLoader = Callable[..., Mapping[str, CatalogedBars]]
 _EASTERN = ZoneInfo("America/New_York")
 
@@ -279,6 +302,268 @@ class KisMtfProfiledProspectiveStoreResult:
         return payload
 
 
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledForwardOutcomeContract:
+    """One fixed post-cutoff window bound to the existing input observer contract."""
+
+    observer_contract_sha256: str
+    profile_id: str
+    outcome_bar_count: int
+    contract_sha256: str
+
+    def __post_init__(self) -> None:
+        if (
+            not _is_sha256(self.observer_contract_sha256)
+            or self.profile_id != KIS_MTF_PROFILED_FORWARD_OUTCOME_PROFILE_ID
+            or self.outcome_bar_count != KIS_MTF_PROFILED_FORWARD_OUTCOME_BAR_COUNT
+            or not _is_sha256(self.contract_sha256)
+            or self.contract_sha256
+            != _forward_outcome_contract_sha256(
+                observer_contract_sha256=self.observer_contract_sha256,
+                profile_id=self.profile_id,
+                outcome_bar_count=self.outcome_bar_count,
+            )
+        ):
+            raise ValueError("forward outcome contract is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": SCHEMA_VERSION,
+            "kind": KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID,
+            "observer_contract_sha256": self.observer_contract_sha256,
+            "profile_id": self.profile_id,
+            "outcome_geometry": {
+                "timeframe": Timeframe.M1.value,
+                "post_cutoff_bar_count": self.outcome_bar_count,
+            },
+            "contract_sha256": self.contract_sha256,
+            "scope": _forward_outcome_scope(raw_snapshot_retained=False),
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledForwardOutcomeLegCommitment:
+    """One opaque post-cutoff leg commitment in the fixed QQQ/SPY order."""
+
+    leg_index: int
+    status: Literal["available", "unavailable"]
+    content_commitment_sha256: str | None
+
+    def __post_init__(self) -> None:
+        if (
+            self.leg_index not in range(len(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS))
+            or self.status not in {"available", "unavailable"}
+            or (self.status == "available") != (self.content_commitment_sha256 is not None)
+            or (
+                self.content_commitment_sha256 is not None
+                and not _is_sha256(self.content_commitment_sha256)
+            )
+        ):
+            raise ValueError("forward outcome leg commitment is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "leg_index": self.leg_index,
+            "status": self.status,
+            "content_commitment_sha256": self.content_commitment_sha256,
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledForwardOutcomeWitness:
+    """A source-safe target-ready fact with no outcome values or labels."""
+
+    contract_sha256: str
+    session_key_sha256: str
+    input_observation_sha256: str | None
+    status: ForwardOutcomeStatus
+    legs: tuple[KisMtfProfiledForwardOutcomeLegCommitment, ...]
+    raw_snapshot_sha256: str | None
+    content_commitment_sha256: str
+    witness_sha256: str
+
+    def __post_init__(self) -> None:
+        legs = tuple(self.legs)
+        object.__setattr__(self, "legs", legs)
+        target_ready = self.status == "target_ready"
+        if (
+            not all(
+                _is_sha256(value)
+                for value in (
+                    self.contract_sha256,
+                    self.session_key_sha256,
+                    self.content_commitment_sha256,
+                    self.witness_sha256,
+                )
+            )
+            or (
+                self.input_observation_sha256 is not None
+                and not _is_sha256(self.input_observation_sha256)
+            )
+            or (self.raw_snapshot_sha256 is not None and not _is_sha256(self.raw_snapshot_sha256))
+            or tuple(leg.leg_index for leg in legs)
+            != tuple(range(len(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS)))
+            or self.status
+            not in {
+                "target_ready",
+                "input_unavailable",
+                "outcome_unavailable",
+                "input_mutated",
+            }
+            or target_ready
+            != (
+                self.input_observation_sha256 is not None
+                and self.raw_snapshot_sha256 is not None
+                and all(leg.status == "available" for leg in legs)
+            )
+            or (
+                self.status == "input_unavailable"
+                and self.input_observation_sha256 is not None
+            )
+            or (
+                self.status == "input_unavailable"
+                and any(leg.status != "unavailable" for leg in legs)
+            )
+            or (
+                self.status != "target_ready"
+                and self.raw_snapshot_sha256 is not None
+            )
+        ):
+            raise ValueError("forward outcome witness is invalid")
+        expected_content = _forward_outcome_content_commitment_sha256(
+            contract_sha256=self.contract_sha256,
+            session_key_sha256=self.session_key_sha256,
+            input_observation_sha256=self.input_observation_sha256,
+            status=self.status,
+            legs=legs,
+            raw_snapshot_sha256=self.raw_snapshot_sha256,
+        )
+        if self.content_commitment_sha256 != expected_content:
+            raise ValueError("forward outcome witness content commitment is invalid")
+        if self.witness_sha256 != _forward_outcome_witness_sha256(
+            contract_sha256=self.contract_sha256,
+            session_key_sha256=self.session_key_sha256,
+            input_observation_sha256=self.input_observation_sha256,
+            status=self.status,
+            legs=legs,
+            raw_snapshot_sha256=self.raw_snapshot_sha256,
+            content_commitment_sha256=self.content_commitment_sha256,
+        ):
+            raise ValueError("forward outcome witness hash is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": SCHEMA_VERSION,
+            "kind": KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID,
+            "contract_sha256": self.contract_sha256,
+            "session_key_sha256": self.session_key_sha256,
+            "input_observation_sha256": self.input_observation_sha256,
+            "status": self.status,
+            "outcome_geometry": {
+                "timeframe": Timeframe.M1.value,
+                "post_cutoff_bar_count": KIS_MTF_PROFILED_FORWARD_OUTCOME_BAR_COUNT,
+            },
+            "legs": [leg.safe_payload() for leg in self.legs],
+            "raw_snapshot_sha256": self.raw_snapshot_sha256,
+            "content_commitment_sha256": self.content_commitment_sha256,
+            "witness_sha256": self.witness_sha256,
+            "scope": _forward_outcome_scope(
+                raw_snapshot_retained=self.raw_snapshot_sha256 is not None
+            ),
+        }
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledForwardOutcomeMaterialization:
+    """One in-memory witness and its D:-only raw snapshot candidate."""
+
+    witness: KisMtfProfiledForwardOutcomeWitness
+    raw_snapshot_payload: Mapping[str, object] | None = field(repr=False)
+
+    def __post_init__(self) -> None:
+        if (
+            self.witness.status == "target_ready"
+        ) != (self.raw_snapshot_payload is not None):
+            raise ValueError("forward outcome raw snapshot materialization is invalid")
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledForwardOutcomeStoreResult:
+    """One idempotent outcome-store result or a retryable source fact."""
+
+    outcome: ForwardOutcomeStoreOutcome
+    witness: KisMtfProfiledForwardOutcomeWitness
+    conflict_sha256: str | None = None
+
+    def __post_init__(self) -> None:
+        if (
+            self.outcome
+            not in {
+                "appended",
+                "duplicate",
+                "conflict",
+                "input_unavailable",
+                "outcome_unavailable",
+                "input_mutated",
+                "busy",
+            }
+            or (self.outcome == "conflict") != (self.conflict_sha256 is not None)
+            or (self.conflict_sha256 is not None and not _is_sha256(self.conflict_sha256))
+            or (
+                self.outcome in {"input_unavailable", "outcome_unavailable", "input_mutated"}
+                and self.witness.status != self.outcome
+            )
+            or (
+                self.outcome in {"appended", "duplicate", "conflict"}
+                and self.witness.status != "target_ready"
+            )
+        ):
+            raise ValueError("forward outcome store result is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        payload: dict[str, object] = {
+            "kind": KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID,
+            "status": self.outcome,
+            "witness": self.witness.safe_payload(),
+        }
+        if self.conflict_sha256 is not None:
+            payload["conflict_sha256"] = self.conflict_sha256
+        return payload
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledForwardOutcomeInventory:
+    """An Engine-safe count over replayable target-ready paired witnesses."""
+
+    contract_sha256: str
+    target_ready_pair_count: int
+    target_ready_manifest_sha256: str
+    status: Literal["zero_target_ready", "target_ready"]
+
+    def __post_init__(self) -> None:
+        if (
+            not _is_sha256(self.contract_sha256)
+            or type(self.target_ready_pair_count) is not int
+            or self.target_ready_pair_count < 0
+            or not _is_sha256(self.target_ready_manifest_sha256)
+            or self.status not in {"zero_target_ready", "target_ready"}
+            or (self.target_ready_pair_count > 0) != (self.status == "target_ready")
+        ):
+            raise ValueError("forward outcome inventory is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "kind": KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID,
+            "contract_sha256": self.contract_sha256,
+            "target_ready_pair_count": self.target_ready_pair_count,
+            "target_ready_manifest_sha256": self.target_ready_manifest_sha256,
+            "status": self.status,
+            "scope": _forward_outcome_scope(
+                raw_snapshot_retained=self.target_ready_pair_count > 0
+            ),
+        }
+
+
 def freeze_kis_mtf_profiled_prospective_observer_contract(
     *,
     historical_catalogs: Mapping[str, CatalogedBars],
@@ -454,6 +739,21 @@ def _prospective_observation_window(
     return session_date, source_session.window, cutoff
 
 
+def _forward_outcome_window(
+    observed_at: datetime,
+) -> tuple[date, SessionWindow, datetime, datetime] | None:
+    """Return the fixed 15:30--15:45 ET completed-bar window when due."""
+
+    base = _prospective_observation_window(observed_at)
+    if base is None:
+        return None
+    session_date, session, cutoff = base
+    outcome_end = cutoff + Timeframe.M1.duration * KIS_MTF_PROFILED_FORWARD_OUTCOME_BAR_COUNT
+    if require_utc(observed_at, "observed_at") < outcome_end:
+        return None
+    return session_date, session, cutoff, outcome_end
+
+
 def append_kis_mtf_profiled_prospective_observation(
     *,
     artifact_root: Path | str,
@@ -523,6 +823,345 @@ def append_kis_mtf_profiled_prospective_observation(
             )
     except BlockingIOError:
         return KisMtfProfiledProspectiveStoreResult(outcome="busy", observation=observation)
+
+
+def freeze_kis_mtf_profiled_forward_outcome_contract(
+    observer_contract: KisMtfProfiledProspectiveObserverContract,
+) -> KisMtfProfiledForwardOutcomeContract:
+    """Bind the one eligible short-profile outcome geometry to a frozen observer."""
+
+    fields = {
+        "observer_contract_sha256": observer_contract.contract_sha256,
+        "profile_id": KIS_MTF_PROFILED_FORWARD_OUTCOME_PROFILE_ID,
+        "outcome_bar_count": KIS_MTF_PROFILED_FORWARD_OUTCOME_BAR_COUNT,
+    }
+    return KisMtfProfiledForwardOutcomeContract(
+        **fields,
+        contract_sha256=_forward_outcome_contract_sha256(**fields),
+    )
+
+
+def materialize_kis_mtf_profiled_forward_outcome_witness(
+    contract: KisMtfProfiledForwardOutcomeContract,
+    *,
+    observer_contract: KisMtfProfiledProspectiveObserverContract,
+    historical_catalogs: Mapping[str, CatalogedBars],
+    head_catalogs: Mapping[str, CatalogedBars | None],
+    artifact_root: Path | str,
+    repo_root: Path | str,
+    observed_at: datetime,
+) -> KisMtfProfiledForwardOutcomeMaterialization | None:
+    """Pair one persisted causal input with a complete post-cutoff M1 window.
+
+    The returned snapshot candidate remains in memory.  Only a target-ready
+    append writes it under the caller's external market-data root.
+    """
+
+    if contract.observer_contract_sha256 != observer_contract.contract_sha256:
+        raise ValueError("forward outcome contract does not match the observer contract")
+    window = _forward_outcome_window(observed_at)
+    if window is None:
+        return None
+    session_date, session, cutoff, outcome_end = window
+    if session_date in observer_contract.historical_session_dates:
+        return None
+    session_key_sha256 = _forward_outcome_session_key_sha256(
+        contract_sha256=contract.contract_sha256,
+        session_date=session_date,
+    )
+    stored_input = _read_stored_short_input_observation(
+        artifact_root=Path(artifact_root),
+        repo_root=Path(repo_root),
+        observer_contract=observer_contract,
+        session_date=session_date,
+    )
+    if stored_input is None:
+        return _forward_outcome_unavailable_materialization(
+            contract=contract,
+            session_key_sha256=session_key_sha256,
+            status="input_unavailable",
+        )
+
+    current_input = materialize_kis_mtf_profiled_prospective_observation(
+        observer_contract,
+        historical_catalogs=historical_catalogs,
+        head_catalogs=head_catalogs,
+        observed_at=observed_at,
+    )
+    if current_input is None or not _short_profile_is_observed(current_input):
+        return _forward_outcome_unavailable_materialization(
+            contract=contract,
+            session_key_sha256=session_key_sha256,
+            status="input_unavailable",
+        )
+    stored_input_sha256 = stored_input["observation_sha256"]
+    stored_head_source_contract_sha256 = stored_input["head_source_contract_sha256"]
+    if (
+        current_input.observation_sha256 != stored_input_sha256
+        or current_input.head_source_contract_sha256 != stored_head_source_contract_sha256
+    ):
+        return _forward_outcome_unavailable_materialization(
+            contract=contract,
+            session_key_sha256=session_key_sha256,
+            status="input_mutated",
+            input_observation_sha256=stored_input_sha256,
+        )
+
+    try:
+        input_prefix_by_target, input_source_contract_sha256 = _forward_input_prefixes(
+            head_catalogs=head_catalogs,
+            code_revision=observer_contract.code_revision,
+            session=session,
+            cutoff=cutoff,
+        )
+    except (SequenceWindowInputError, TypeError, ValueError):
+        return _forward_outcome_unavailable_materialization(
+            contract=contract,
+            session_key_sha256=session_key_sha256,
+            status="input_unavailable",
+        )
+    if input_source_contract_sha256 != stored_head_source_contract_sha256:
+        return _forward_outcome_unavailable_materialization(
+            contract=contract,
+            session_key_sha256=session_key_sha256,
+            status="input_mutated",
+            input_observation_sha256=stored_input_sha256,
+        )
+
+    legs, outcome_bars_by_target = _forward_outcome_leg_commitments(
+        head_catalogs=head_catalogs,
+        session=session,
+        cutoff=cutoff,
+        outcome_end=outcome_end,
+        observed_at=observed_at,
+    )
+    if any(leg.status != "available" for leg in legs):
+        return _forward_outcome_unavailable_materialization(
+            contract=contract,
+            session_key_sha256=session_key_sha256,
+            status="outcome_unavailable",
+            input_observation_sha256=stored_input_sha256,
+            legs=legs,
+        )
+    raw_snapshot_payload = _forward_outcome_raw_snapshot_payload(
+        contract=contract,
+        session_key_sha256=session_key_sha256,
+        input_observation_sha256=stored_input_sha256,
+        input_prefix_by_target=input_prefix_by_target,
+        outcome_bars_by_target=outcome_bars_by_target,
+    )
+    raw_snapshot_sha256 = _sha256(raw_snapshot_payload)
+    witness = _forward_outcome_witness(
+        contract=contract,
+        session_key_sha256=session_key_sha256,
+        input_observation_sha256=stored_input_sha256,
+        status="target_ready",
+        legs=legs,
+        raw_snapshot_sha256=raw_snapshot_sha256,
+    )
+    return KisMtfProfiledForwardOutcomeMaterialization(
+        witness=witness,
+        raw_snapshot_payload=raw_snapshot_payload,
+    )
+
+
+def append_kis_mtf_profiled_forward_outcome_witness(
+    *,
+    artifact_root: Path | str,
+    market_data_root: Path | str,
+    repo_root: Path | str,
+    contract: KisMtfProfiledForwardOutcomeContract,
+    materialization: KisMtfProfiledForwardOutcomeMaterialization,
+) -> KisMtfProfiledForwardOutcomeStoreResult:
+    """Persist a target-ready witness only after its D:-only snapshot is immutable."""
+
+    witness = materialization.witness
+    if witness.contract_sha256 != contract.contract_sha256:
+        raise ValueError("forward outcome witness contract does not match the store")
+    if witness.status != "target_ready":
+        return KisMtfProfiledForwardOutcomeStoreResult(
+            outcome=witness.status,
+            witness=witness,
+        )
+    raw_snapshot_payload = materialization.raw_snapshot_payload
+    if raw_snapshot_payload is None:
+        raise ValueError("target-ready forward outcome is missing its raw snapshot")
+    artifact = Path(artifact_root)
+    repository = Path(repo_root)
+    root = _forward_outcome_store_root(
+        artifact_root=artifact,
+        repo_root=repository,
+        contract_sha256=contract.contract_sha256,
+    )
+    raw_root = _forward_outcome_raw_snapshot_root(
+        market_data_root=Path(market_data_root),
+        repo_root=repository,
+        contract_sha256=contract.contract_sha256,
+    )
+    candidate_payload = witness.safe_payload()
+    candidate_encoded = _canonical_json(candidate_payload)
+    raw_destination = raw_root / f"{_storage_key(witness.session_key_sha256)}.json"
+    destination = root / "outcomes" / f"{_storage_key(witness.session_key_sha256)}.json"
+    try:
+        with _exclusive_store_lock(root / ".append.lock"):
+            _write_immutable_json(root / "contract.json", contract.safe_payload())
+            existing = _read_existing_forward_outcome_witness(destination)
+            if existing is None:
+                _write_immutable_json(raw_destination, raw_snapshot_payload)
+                _assert_raw_snapshot_hash(
+                    destination=raw_destination,
+                    expected_sha256=witness.raw_snapshot_sha256,
+                )
+                _write_immutable_json(destination, candidate_payload)
+                return KisMtfProfiledForwardOutcomeStoreResult(
+                    outcome="appended",
+                    witness=witness,
+                )
+            existing_bytes, existing_witness = existing
+            if existing_bytes == candidate_encoded:
+                _write_immutable_json(raw_destination, raw_snapshot_payload)
+                _assert_raw_snapshot_hash(
+                    destination=raw_destination,
+                    expected_sha256=witness.raw_snapshot_sha256,
+                )
+                return KisMtfProfiledForwardOutcomeStoreResult(
+                    outcome="duplicate",
+                    witness=witness,
+                )
+            conflict_sha256 = _sha256(
+                {
+                    "existing_content_commitment_sha256": (
+                        existing_witness.content_commitment_sha256
+                    ),
+                    "candidate_content_commitment_sha256": witness.content_commitment_sha256,
+                }
+            )
+            _write_immutable_json(
+                root
+                / "conflicts"
+                / (
+                    f"{_storage_key(witness.session_key_sha256)}-"
+                    f"{_storage_key(conflict_sha256)}.json"
+                ),
+                {
+                    "kind": KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID,
+                    "session_key_sha256": witness.session_key_sha256,
+                    "existing_content_commitment_sha256": (
+                        existing_witness.content_commitment_sha256
+                    ),
+                    "candidate_content_commitment_sha256": witness.content_commitment_sha256,
+                    "conflict_sha256": conflict_sha256,
+                },
+            )
+            return KisMtfProfiledForwardOutcomeStoreResult(
+                outcome="conflict",
+                witness=witness,
+                conflict_sha256=conflict_sha256,
+            )
+    except BlockingIOError:
+        return KisMtfProfiledForwardOutcomeStoreResult(outcome="busy", witness=witness)
+
+
+def inspect_kis_mtf_profiled_forward_outcome_inventory(
+    *,
+    artifact_root: Path | str,
+    market_data_root: Path | str,
+    repo_root: Path | str,
+    contract: KisMtfProfiledForwardOutcomeContract,
+) -> KisMtfProfiledForwardOutcomeInventory:
+    """Expose only replayable target-ready count and opaque manifest identity."""
+
+    root = _forward_outcome_store_root(
+        artifact_root=Path(artifact_root),
+        repo_root=Path(repo_root),
+        contract_sha256=contract.contract_sha256,
+    )
+    raw_root = _forward_outcome_raw_snapshot_root(
+        market_data_root=Path(market_data_root),
+        repo_root=Path(repo_root),
+        contract_sha256=contract.contract_sha256,
+    )
+    witness_hashes: list[str] = []
+    for path in sorted((root / "outcomes").glob("*.json")):
+        existing = _read_existing_forward_outcome_witness(path)
+        if existing is None:
+            continue
+        _, witness = existing
+        if witness.contract_sha256 != contract.contract_sha256:
+            raise ValueError("forward outcome inventory contract changed")
+        if witness.status != "target_ready" or witness.raw_snapshot_sha256 is None:
+            raise ValueError("forward outcome store contains a non-target-ready witness")
+        _assert_raw_snapshot_hash(
+            destination=raw_root / f"{_storage_key(witness.session_key_sha256)}.json",
+            expected_sha256=witness.raw_snapshot_sha256,
+        )
+        witness_hashes.append(witness.witness_sha256)
+    manifest = _sha256(
+        {
+            "contract_sha256": contract.contract_sha256,
+            "target_ready_witness_sha256": witness_hashes,
+        }
+    )
+    return KisMtfProfiledForwardOutcomeInventory(
+        contract_sha256=contract.contract_sha256,
+        target_ready_pair_count=len(witness_hashes),
+        target_ready_manifest_sha256=manifest,
+        status="target_ready" if witness_hashes else "zero_target_ready",
+    )
+
+
+def run_kis_mtf_profiled_forward_outcome_witness(
+    *,
+    historical_cache_root: Path | str,
+    head_cache_root: Path | str,
+    artifact_root: Path | str,
+    market_data_root: Path | str,
+    repo_root: Path | str,
+    code_revision: str,
+    observed_at: datetime,
+    catalog_loader: CatalogLoader,
+) -> KisMtfProfiledForwardOutcomeStoreResult | None:
+    """Run the local-only paired witness path without provider or credential access."""
+
+    if _forward_outcome_window(observed_at) is None:
+        return None
+    repository = Path(repo_root)
+    historical_catalogs = catalog_loader(
+        cache_root=Path(historical_cache_root),
+        repo_root=repository,
+    )
+    observer_contract = freeze_kis_mtf_profiled_prospective_observer_contract(
+        historical_catalogs=historical_catalogs,
+        code_revision=code_revision,
+    )
+    contract = freeze_kis_mtf_profiled_forward_outcome_contract(observer_contract)
+    try:
+        head_catalogs: Mapping[str, CatalogedBars | None] = catalog_loader(
+            cache_root=Path(head_cache_root),
+            repo_root=repository,
+        )
+    except (OSError, ValueError):
+        head_catalogs = {
+            target_key: None for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        }
+    materialization = materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical_catalogs,
+        head_catalogs=head_catalogs,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=observed_at,
+    )
+    if materialization is None:
+        return None
+    return append_kis_mtf_profiled_forward_outcome_witness(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+        materialization=materialization,
+    )
 
 
 def _profile_commitments(
@@ -618,6 +1257,275 @@ def _profile_commitments(
     return tuple(profiles), head_source_contract_sha256
 
 
+def _forward_input_prefixes(
+    *,
+    head_catalogs: Mapping[str, CatalogedBars | None],
+    code_revision: str,
+    session: SessionWindow,
+    cutoff: datetime,
+) -> tuple[dict[str, tuple[Bar, ...]], str]:
+    """Recover the exact causal input bars used by the stored observer hash."""
+
+    if set(head_catalogs) != set(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS) or any(
+        catalog is None for catalog in head_catalogs.values()
+    ):
+        raise ValueError("forward outcome input catalogs are unavailable")
+    present_catalogs = {
+        target_key: catalog
+        for target_key, catalog in head_catalogs.items()
+        if isinstance(catalog, CatalogedBars)
+    }
+    prefix_by_target = {
+        target_key: completed_causal_minute_prefix(
+            present_catalogs[target_key].bars,
+            expected_symbol=target_key.split("/", maxsplit=1)[0],
+            session=session,
+            cutoff=cutoff,
+        )
+        for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+    }
+    source_hash = _causal_head_source_contract_sha256(
+        code_revision=code_revision,
+        prefix_source_hash_by_target={
+            target_key: _causal_prefix_source_sha256(
+                target_key=target_key,
+                prefix=prefix_by_target[target_key],
+            )
+            for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        },
+    )
+    return prefix_by_target, source_hash
+
+
+def _forward_outcome_leg_commitments(
+    *,
+    head_catalogs: Mapping[str, CatalogedBars | None],
+    session: SessionWindow,
+    cutoff: datetime,
+    outcome_end: datetime,
+    observed_at: datetime,
+) -> tuple[
+    tuple[KisMtfProfiledForwardOutcomeLegCommitment, ...],
+    dict[str, tuple[Bar, ...]],
+]:
+    """Commit exactly fifteen completed M1 bars per fixed target key."""
+
+    bars_by_target: dict[str, tuple[Bar, ...]] = {}
+    legs: list[KisMtfProfiledForwardOutcomeLegCommitment] = []
+    for leg_index, target_key in enumerate(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS):
+        catalog = head_catalogs.get(target_key)
+        try:
+            if not isinstance(catalog, CatalogedBars):
+                raise ValueError("forward outcome catalog is unavailable")
+            bars = _complete_forward_outcome_bars(
+                catalog.bars,
+                expected_symbol=target_key.split("/", maxsplit=1)[0],
+                session=session,
+                cutoff=cutoff,
+                outcome_end=outcome_end,
+                observed_at=observed_at,
+            )
+        except (SequenceWindowInputError, TypeError, ValueError):
+            legs.append(
+                KisMtfProfiledForwardOutcomeLegCommitment(
+                    leg_index=leg_index,
+                    status="unavailable",
+                    content_commitment_sha256=None,
+                )
+            )
+        else:
+            bars_by_target[target_key] = bars
+            legs.append(
+                KisMtfProfiledForwardOutcomeLegCommitment(
+                    leg_index=leg_index,
+                    status="available",
+                    content_commitment_sha256=_forward_outcome_leg_content_sha256(
+                        target_key=target_key,
+                        bars=bars,
+                    ),
+                )
+            )
+    return tuple(legs), bars_by_target
+
+
+def _complete_forward_outcome_bars(
+    bars: tuple[Bar, ...],
+    *,
+    expected_symbol: str,
+    session: SessionWindow,
+    cutoff: datetime,
+    outcome_end: datetime,
+    observed_at: datetime,
+) -> tuple[Bar, ...]:
+    selected = tuple(
+        bar
+        for bar in bars
+        if cutoff <= bar.start_ts < outcome_end
+    )
+    expected_starts = tuple(
+        cutoff + Timeframe.M1.duration * index
+        for index in range(KIS_MTF_PROFILED_FORWARD_OUTCOME_BAR_COUNT)
+    )
+    ordered = tuple(sorted(selected, key=lambda bar: bar.start_ts))
+    if (
+        len(selected) != len(expected_starts)
+        or tuple(bar.start_ts for bar in ordered) != expected_starts
+        or any(
+            bar.symbol != expected_symbol
+            or bar.market != "US"
+            or bar.timeframe != Timeframe.M1
+            or not bar.complete
+            or bar.end_ts > observed_at
+            or bar.start_ts < session.open_ts
+            or bar.end_ts > session.close_ts
+            for bar in ordered
+        )
+    ):
+        raise ValueError("forward outcome completed minute window is invalid")
+    return ordered
+
+
+def _forward_outcome_unavailable_materialization(
+    *,
+    contract: KisMtfProfiledForwardOutcomeContract,
+    session_key_sha256: str,
+    status: Literal["input_unavailable", "outcome_unavailable", "input_mutated"],
+    input_observation_sha256: str | None = None,
+    legs: tuple[KisMtfProfiledForwardOutcomeLegCommitment, ...] | None = None,
+) -> KisMtfProfiledForwardOutcomeMaterialization:
+    if legs is None:
+        legs = _unavailable_forward_outcome_legs()
+    witness = _forward_outcome_witness(
+        contract=contract,
+        session_key_sha256=session_key_sha256,
+        input_observation_sha256=input_observation_sha256,
+        status=status,
+        legs=legs,
+        raw_snapshot_sha256=None,
+    )
+    return KisMtfProfiledForwardOutcomeMaterialization(
+        witness=witness,
+        raw_snapshot_payload=None,
+    )
+
+
+def _forward_outcome_witness(
+    *,
+    contract: KisMtfProfiledForwardOutcomeContract,
+    session_key_sha256: str,
+    input_observation_sha256: str | None,
+    status: ForwardOutcomeStatus,
+    legs: tuple[KisMtfProfiledForwardOutcomeLegCommitment, ...],
+    raw_snapshot_sha256: str | None,
+) -> KisMtfProfiledForwardOutcomeWitness:
+    content_commitment_sha256 = _forward_outcome_content_commitment_sha256(
+        contract_sha256=contract.contract_sha256,
+        session_key_sha256=session_key_sha256,
+        input_observation_sha256=input_observation_sha256,
+        status=status,
+        legs=legs,
+        raw_snapshot_sha256=raw_snapshot_sha256,
+    )
+    return KisMtfProfiledForwardOutcomeWitness(
+        contract_sha256=contract.contract_sha256,
+        session_key_sha256=session_key_sha256,
+        input_observation_sha256=input_observation_sha256,
+        status=status,
+        legs=legs,
+        raw_snapshot_sha256=raw_snapshot_sha256,
+        content_commitment_sha256=content_commitment_sha256,
+        witness_sha256=_forward_outcome_witness_sha256(
+            contract_sha256=contract.contract_sha256,
+            session_key_sha256=session_key_sha256,
+            input_observation_sha256=input_observation_sha256,
+            status=status,
+            legs=legs,
+            raw_snapshot_sha256=raw_snapshot_sha256,
+            content_commitment_sha256=content_commitment_sha256,
+        ),
+    )
+
+
+def _unavailable_forward_outcome_legs() -> tuple[KisMtfProfiledForwardOutcomeLegCommitment, ...]:
+    return tuple(
+        KisMtfProfiledForwardOutcomeLegCommitment(
+            leg_index=leg_index,
+            status="unavailable",
+            content_commitment_sha256=None,
+        )
+        for leg_index in range(len(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS))
+    )
+
+
+def _short_profile_is_observed(observation: KisMtfProfiledProspectiveObservation) -> bool:
+    return (
+        observation.status == "observed"
+        and any(
+            profile.profile_id == KIS_MTF_PROFILED_FORWARD_OUTCOME_PROFILE_ID
+            and profile.status == "observed"
+            for profile in observation.profiles
+        )
+    )
+
+
+def _forward_outcome_raw_snapshot_payload(
+    *,
+    contract: KisMtfProfiledForwardOutcomeContract,
+    session_key_sha256: str,
+    input_observation_sha256: str,
+    input_prefix_by_target: Mapping[str, tuple[Bar, ...]],
+    outcome_bars_by_target: Mapping[str, tuple[Bar, ...]],
+) -> dict[str, object]:
+    if (
+        tuple(input_prefix_by_target) != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        or tuple(outcome_bars_by_target) != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+    ):
+        raise ValueError("forward outcome raw snapshot targets are invalid")
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "kind": KIS_MTF_PROFILED_FORWARD_OUTCOME_RAW_SNAPSHOT_ID,
+        "contract_sha256": contract.contract_sha256,
+        "observer_contract_sha256": contract.observer_contract_sha256,
+        "session_key_sha256": session_key_sha256,
+        "input_observation_sha256": input_observation_sha256,
+        "input_prefixes": [
+            {
+                "target_key": target_key,
+                "bars": [
+                    _forward_outcome_raw_bar_payload(bar)
+                    for bar in input_prefix_by_target[target_key]
+                ],
+            }
+            for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        ],
+        "outcome_windows": [
+            {
+                "target_key": target_key,
+                "bars": [
+                    _forward_outcome_raw_bar_payload(bar)
+                    for bar in outcome_bars_by_target[target_key]
+                ],
+            }
+            for target_key in KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+        ],
+    }
+
+
+def _forward_outcome_raw_bar_payload(bar: Bar) -> dict[str, object]:
+    return {
+        "symbol": bar.symbol,
+        "market": bar.market,
+        "timeframe": bar.timeframe.value,
+        "start_ts": bar.start_ts.isoformat(),
+        "open": str(bar.open),
+        "high": str(bar.high),
+        "low": str(bar.low),
+        "close": str(bar.close),
+        "volume": str(bar.volume),
+        "complete": bar.complete,
+    }
+
+
 def _unavailable_profiles() -> tuple[KisMtfProfiledProspectiveProfileCommitment, ...]:
     return tuple(
         KisMtfProfiledProspectiveProfileCommitment(
@@ -668,6 +1576,88 @@ def _observation_store_root(
     for directory_name in ("observations", "conflicts"):
         ensure_external_artifact_directory(artifact_root, repo_root, *parts, directory_name)
     return root
+
+
+def _read_stored_short_input_observation(
+    *,
+    artifact_root: Path,
+    repo_root: Path,
+    observer_contract: KisMtfProfiledProspectiveObserverContract,
+    session_date: date,
+) -> dict[str, str] | None:
+    root = _observation_store_root(
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+        contract_sha256=observer_contract.contract_sha256,
+    )
+    session_key_sha256 = _session_key_sha256(
+        contract_sha256=observer_contract.contract_sha256,
+        session_date=session_date,
+    )
+    existing = _read_existing_observation(
+        root / "observations" / f"{_storage_key(session_key_sha256)}.json"
+    )
+    if existing is None:
+        return None
+    _, payload = existing
+    profiles = payload["profile_aggregates"]
+    if (
+        payload["contract_sha256"] != observer_contract.contract_sha256
+        or payload["session_key_sha256"] != session_key_sha256
+        or payload["status"] != "observed"
+        or not isinstance(profiles, list)
+        or not any(
+            isinstance(profile, Mapping)
+            and profile.get("profile_id") == KIS_MTF_PROFILED_FORWARD_OUTCOME_PROFILE_ID
+            and profile.get("status") == "observed"
+            and _is_sha256(profile.get("pair_input_sha256"))
+            for profile in profiles
+        )
+        or not _is_sha256(payload["observation_sha256"])
+        or not _is_sha256(payload["head_source_contract_sha256"])
+    ):
+        return None
+    return {
+        "observation_sha256": payload["observation_sha256"],
+        "head_source_contract_sha256": payload["head_source_contract_sha256"],
+    }
+
+
+def _forward_outcome_store_root(
+    *,
+    artifact_root: Path,
+    repo_root: Path,
+    contract_sha256: str,
+) -> Path:
+    _reject_market_data_artifact_root(artifact_root)
+    parts = (
+        "research",
+        KIS_MTF_PROFILED_FORWARD_OUTCOME_ARTIFACT_DIRECTORY,
+        "c",
+        _storage_key(contract_sha256),
+    )
+    root = ensure_external_artifact_directory(artifact_root, repo_root, *parts)
+    for directory_name in ("outcomes", "conflicts"):
+        ensure_external_artifact_directory(artifact_root, repo_root, *parts, directory_name)
+    return root
+
+
+def _forward_outcome_raw_snapshot_root(
+    *,
+    market_data_root: Path,
+    repo_root: Path,
+    contract_sha256: str,
+) -> Path:
+    return ensure_external_artifact_directory(
+        market_data_root,
+        repo_root,
+        "us_equities",
+        "kis_paper_private",
+        KIS_MTF_PROFILED_FORWARD_OUTCOME_RAW_DIRECTORY,
+        "c",
+        _storage_key(contract_sha256),
+        "snapshots",
+    )
 
 
 def _reject_market_data_artifact_root(artifact_root: Path) -> None:
@@ -732,6 +1722,110 @@ def _read_existing_observation(
     ):
         raise ValueError("prospective observer stored observation is invalid")
     return encoded, payload
+
+
+def _read_existing_forward_outcome_witness(
+    destination: Path,
+) -> tuple[bytes, KisMtfProfiledForwardOutcomeWitness] | None:
+    if not destination.exists():
+        return None
+    if destination.is_symlink() or not destination.is_file():
+        raise ValueError("forward outcome stored witness is invalid")
+    try:
+        encoded = destination.read_bytes()
+        payload = json.loads(encoded)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("forward outcome stored witness is invalid") from error
+    if not isinstance(payload, dict) or encoded != _canonical_json(payload):
+        raise ValueError("forward outcome stored witness is invalid")
+    witness = _forward_outcome_witness_from_safe_payload(payload)
+    return encoded, witness
+
+
+def _forward_outcome_witness_from_safe_payload(
+    payload: Mapping[str, object],
+) -> KisMtfProfiledForwardOutcomeWitness:
+    expected_keys = {
+        "schema_version",
+        "kind",
+        "contract_sha256",
+        "session_key_sha256",
+        "input_observation_sha256",
+        "status",
+        "outcome_geometry",
+        "legs",
+        "raw_snapshot_sha256",
+        "content_commitment_sha256",
+        "witness_sha256",
+        "scope",
+    }
+    legs = payload.get("legs")
+    geometry = payload.get("outcome_geometry")
+    if (
+        set(payload) != expected_keys
+        or payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("kind") != KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID
+        or payload.get("outcome_geometry")
+        != {
+            "timeframe": Timeframe.M1.value,
+            "post_cutoff_bar_count": KIS_MTF_PROFILED_FORWARD_OUTCOME_BAR_COUNT,
+        }
+        or not isinstance(geometry, Mapping)
+        or not isinstance(legs, list)
+        or payload.get("scope")
+        != _forward_outcome_scope(
+            raw_snapshot_retained=payload.get("raw_snapshot_sha256") is not None
+        )
+    ):
+        raise ValueError("forward outcome stored witness is invalid")
+    try:
+        witness = KisMtfProfiledForwardOutcomeWitness(
+            contract_sha256=_required_sha256_payload_field(payload, "contract_sha256"),
+            session_key_sha256=_required_sha256_payload_field(payload, "session_key_sha256"),
+            input_observation_sha256=_optional_sha256_payload_field(
+                payload,
+                "input_observation_sha256",
+            ),
+            status=_required_forward_outcome_status(payload.get("status")),
+            legs=tuple(
+                KisMtfProfiledForwardOutcomeLegCommitment(
+                    leg_index=_required_leg_index(leg),
+                    status=_required_leg_status(leg),
+                    content_commitment_sha256=_optional_sha256_payload_field(
+                        _required_mapping(leg),
+                        "content_commitment_sha256",
+                    ),
+                )
+                for leg in legs
+            ),
+            raw_snapshot_sha256=_optional_sha256_payload_field(
+                payload,
+                "raw_snapshot_sha256",
+            ),
+            content_commitment_sha256=_required_sha256_payload_field(
+                payload,
+                "content_commitment_sha256",
+            ),
+            witness_sha256=_required_sha256_payload_field(payload, "witness_sha256"),
+        )
+    except (TypeError, ValueError) as error:
+        raise ValueError("forward outcome stored witness is invalid") from error
+    if payload != witness.safe_payload():
+        raise ValueError("forward outcome stored witness is invalid")
+    return witness
+
+
+def _assert_raw_snapshot_hash(*, destination: Path, expected_sha256: str | None) -> None:
+    if expected_sha256 is None or not _is_sha256(expected_sha256):
+        raise ValueError("forward outcome raw snapshot hash is invalid")
+    if not destination.exists() or destination.is_symlink() or not destination.is_file():
+        raise ValueError("forward outcome raw snapshot is unavailable")
+    try:
+        actual_sha256 = "sha256:" + hashlib.sha256(destination.read_bytes()).hexdigest()
+    except OSError as error:
+        raise ValueError("forward outcome raw snapshot is unavailable") from error
+    if actual_sha256 != expected_sha256:
+        raise ValueError("forward outcome raw snapshot hash changed")
 
 
 def _is_safe_observation_payload(payload: Mapping[str, object]) -> bool:
@@ -868,6 +1962,90 @@ def _session_key_sha256(*, contract_sha256: str, session_date: date) -> str:
     )
 
 
+def _forward_outcome_contract_sha256(
+    *,
+    observer_contract_sha256: str,
+    profile_id: str,
+    outcome_bar_count: int,
+) -> str:
+    return _sha256(
+        {
+            "kind": KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID,
+            "observer_contract_sha256": observer_contract_sha256,
+            "profile_id": profile_id,
+            "outcome_geometry": {
+                "timeframe": Timeframe.M1.value,
+                "post_cutoff_bar_count": outcome_bar_count,
+            },
+        }
+    )
+
+
+def _forward_outcome_session_key_sha256(*, contract_sha256: str, session_date: date) -> str:
+    return _sha256(
+        {
+            "kind": KIS_MTF_PROFILED_FORWARD_OUTCOME_WITNESS_ID,
+            "contract_sha256": contract_sha256,
+            "session_date": session_date.isoformat(),
+        }
+    )
+
+
+def _forward_outcome_leg_content_sha256(*, target_key: str, bars: tuple[Bar, ...]) -> str:
+    return _sha256(
+        {
+            "target_key": target_key,
+            "completed_outcome_minute_bars": [
+                _forward_outcome_raw_bar_payload(bar) for bar in bars
+            ],
+        }
+    )
+
+
+def _forward_outcome_content_commitment_sha256(
+    *,
+    contract_sha256: str,
+    session_key_sha256: str,
+    input_observation_sha256: str | None,
+    status: ForwardOutcomeStatus,
+    legs: tuple[KisMtfProfiledForwardOutcomeLegCommitment, ...],
+    raw_snapshot_sha256: str | None,
+) -> str:
+    return _sha256(
+        {
+            "contract_sha256": contract_sha256,
+            "session_key_sha256": session_key_sha256,
+            "input_observation_sha256": input_observation_sha256,
+            "status": status,
+            "legs": [leg.safe_payload() for leg in legs],
+            "raw_snapshot_sha256": raw_snapshot_sha256,
+        }
+    )
+
+
+def _forward_outcome_witness_sha256(
+    *,
+    contract_sha256: str,
+    session_key_sha256: str,
+    input_observation_sha256: str | None,
+    status: ForwardOutcomeStatus,
+    legs: tuple[KisMtfProfiledForwardOutcomeLegCommitment, ...],
+    raw_snapshot_sha256: str | None,
+    content_commitment_sha256: str,
+) -> str:
+    return _sha256(
+        {
+            "contract_sha256": contract_sha256,
+            "session_key_sha256": session_key_sha256,
+            "input_observation_sha256": input_observation_sha256,
+            "status": status,
+            "legs": [leg.safe_payload() for leg in legs],
+            "raw_snapshot_sha256": raw_snapshot_sha256,
+            "content_commitment_sha256": content_commitment_sha256,
+        }
+    )
+
+
 def _content_commitment_sha256(
     *,
     contract_sha256: str,
@@ -921,6 +2099,72 @@ def _source_safe_scope() -> dict[str, bool]:
         "raw_market_data_written": False,
         "raw_market_data_persisted": False,
     }
+
+
+def _forward_outcome_scope(*, raw_snapshot_retained: bool) -> dict[str, bool]:
+    return {
+        "target_or_label_opened": False,
+        "return_or_cost_opened": False,
+        "model_or_prediction_opened": False,
+        "pnl_calculated": False,
+        "gpu_used": False,
+        "paper_or_broker_action": False,
+        "provider_or_network_called": False,
+        "credentials_or_environment_read": False,
+        "raw_market_data_written": raw_snapshot_retained,
+        "raw_market_data_persisted": raw_snapshot_retained,
+        "raw_market_data_d_only": raw_snapshot_retained,
+    }
+
+
+def _required_mapping(value: object) -> Mapping[str, object]:
+    if not isinstance(value, Mapping):
+        raise ValueError("forward outcome payload mapping is invalid")
+    return value
+
+
+def _required_sha256_payload_field(payload: Mapping[str, object], field_name: str) -> str:
+    value = payload.get(field_name)
+    if not _is_sha256(value):
+        raise ValueError("forward outcome payload hash is invalid")
+    return value
+
+
+def _optional_sha256_payload_field(
+    payload: Mapping[str, object],
+    field_name: str,
+) -> str | None:
+    value = payload.get(field_name)
+    if value is not None and not _is_sha256(value):
+        raise ValueError("forward outcome payload hash is invalid")
+    return value
+
+
+def _required_forward_outcome_status(value: object) -> ForwardOutcomeStatus:
+    if value not in {
+        "target_ready",
+        "input_unavailable",
+        "outcome_unavailable",
+        "input_mutated",
+    }:
+        raise ValueError("forward outcome payload status is invalid")
+    return value
+
+
+def _required_leg_index(value: object) -> int:
+    leg_index = _required_mapping(value).get("leg_index")
+    if type(leg_index) is not int:
+        raise ValueError("forward outcome payload leg index is invalid")
+    return leg_index
+
+
+def _required_leg_status(
+    value: object,
+) -> Literal["available", "unavailable"]:
+    status = _required_mapping(value).get("status")
+    if status not in {"available", "unavailable"}:
+        raise ValueError("forward outcome payload leg status is invalid")
+    return status
 
 
 def _storage_key(value: str) -> str:

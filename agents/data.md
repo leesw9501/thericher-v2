@@ -1185,3 +1185,27 @@ need is one forward-only record per new aligned QQQ/SPY session that binds a
 15:30 completed-input commitment to each leg's completed 15:45 ET outcome
 window. Preserve the historical 21-session exclusion and retain source-safe
 commitments until a separately frozen predictive campaign may open labels.
+
+## Profiled MTF Forward Outcome Witness (2026-08-01)
+
+The Data path now has `kis-mtf-profiled-forward-outcome-witness-v1`, a narrow
+paired continuation of the existing source-safe 15:30 observer. It reads only
+the verified local historical/head catalogs and the already persisted input
+witness. A usable result requires exactly fifteen complete M1 bars per leg
+with start times in `[15:30, 15:45)` ET. It rederives the causal input prefix
+before using the outcome: a changed prefix is `input_mutated`; a missing,
+duplicate, incomplete, or not-yet-complete outcome is `outcome_unavailable`.
+
+On target-ready success only, it writes a canonical input-plus-outcome raw
+snapshot under `D:\market_data\us_equities\kis_paper_private\forward-outcome-witness-v1`.
+The matching artifact is hash-only and lives below the external model-artifact
+root. Unavailable statuses are intentionally not persisted as a terminal
+outcome, so an owned later collection can recover the same session. An exact
+retry is idempotent; a changed outcome creates a source-safe conflict and
+cannot replace the original snapshot/witness.
+
+The local host run on 2026-08-01 was a closed-market no-op with
+`target_ready_pair_count: 0`. No KIS endpoint, credential, cache mutation,
+account route, or broker route was used. The existing Data-owned collector is
+the only route that may later supply a forward session; its clock never holds
+Engine work. Claude review was `review_unavailable` after two CLI timeouts.

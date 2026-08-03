@@ -2242,3 +2242,30 @@ will be rerun after the final receipt-safety fixes. Ruff and both credential-fre
 Compose configurations passed. The next goal is the narrow delayed-outcome
 witness that makes those forward pair commitments recoverable without exposing
 market values in artifacts.
+
+## Profiled MTF Forward Outcome Witness (2026-08-01)
+
+`profiled-mtf-forward-outcome-witness-v1` is now a separate immutable outcome
+namespace beside the existing forward input observer. It accepts only the
+already persisted `short` 15:30 ET causal input, rederives that same prefix
+from the current local head cache, and requires an exact complete M1 window
+with bar starts `15:30` through `15:44` ET. At `15:45` ET or later, it binds
+the opaque per-leg content commitments to the prior input witness. It computes
+no return, target label, model result, PnL, or Paper decision.
+
+Only a `target_ready` result writes anything: the exact two input prefixes and
+two 15-bar outcome windows are first stored as one canonical immutable raw
+snapshot below `D:\market_data`; the external artifact then receives only the
+snapshot hash, opaque session/input identities, status, and content hashes.
+Missing input/outcomes create no terminal artifact so later collection can
+recover. Changed input yields `input_mutated`; changed outcome yields a
+separate immutable conflict without overwriting the earlier witness. Exact
+retries are duplicates and inventory exposes only a target-ready count plus an
+opaque manifest identity.
+
+The host runner is credential-, network-, account-, order-, and live-free. Its
+2026-08-01 closed-market run returned `outside_outcome_window` with
+`target_ready_pair_count: 0`; no raw snapshot or target was opened. Focused
+coverage currently passes `13 passed, 2 skipped`. Two final Claude CLI review
+attempts timed out, so this record is `review_unavailable`, not a substantive
+verdict or a hold on independent work.

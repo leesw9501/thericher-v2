@@ -272,6 +272,18 @@ def test_runner_is_local_only_and_never_reads_environment(
 
     assert result is not None
     assert result.outcome == "appended"
+    forward_result = observer.run_kis_mtf_profiled_forward_outcome_witness(
+        historical_cache_root=historical_root,
+        head_cache_root=head_root,
+        artifact_root=tmp_path / "artifacts",
+        market_data_root=tmp_path / "market-data",
+        repo_root=repository,
+        code_revision=_sha256("code-r1"),
+        observed_at=_outcome_due(forward_date),
+        catalog_loader=local_loader,
+    )
+    assert forward_result is not None
+    assert forward_result.outcome == "outcome_unavailable"
     source = Path(observer.__file__).read_text(encoding="utf-8").lower()
     for forbidden in (
         "os.environ",
@@ -283,6 +295,425 @@ def test_runner_is_local_only_and_never_reads_environment(
         "torch",
     ):
         assert forbidden not in source
+
+
+def test_forward_outcome_seals_exact_completed_window_and_retains_raw_only_under_market_data(
+    preflight_binding,
+    tmp_path: Path,
+) -> None:
+    historical_dates = _regular_dates_after(date(2026, 6, 1), count=21)
+    forward_date = _regular_dates_after(historical_dates[-1] + timedelta(days=1), count=1)[0]
+    historical = _catalogs(historical_dates, marker="historical")
+    head = _catalogs((forward_date,), marker="forward", after_cutoff_minutes=15)
+    observer_contract = _contract(historical, preflight_binding)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    artifact_root = tmp_path / "artifacts"
+    market_data_root = tmp_path / "market-data"
+    _store_input_observation(
+        observer_contract,
+        historical,
+        head,
+        forward_date,
+        artifact_root,
+        repository,
+    )
+    contract = observer.freeze_kis_mtf_profiled_forward_outcome_contract(observer_contract)
+
+    materialization = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date),
+    )
+
+    assert materialization is not None
+    assert materialization.witness.status == "target_ready"
+    first = observer.append_kis_mtf_profiled_forward_outcome_witness(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+        materialization=materialization,
+    )
+    duplicate = observer.append_kis_mtf_profiled_forward_outcome_witness(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+        materialization=materialization,
+    )
+    inventory = observer.inspect_kis_mtf_profiled_forward_outcome_inventory(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+    )
+
+    assert first.outcome == "appended"
+    assert duplicate.outcome == "duplicate"
+    assert inventory.target_ready_pair_count == 1
+    assert inventory.status == "target_ready"
+    outcome_payloads = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in artifact_root.rglob("mtf-forward-outcomes-v1/**/*.json")
+    ]
+    rendered = json.dumps(outcome_payloads, sort_keys=True)
+    for forbidden in ("QQQ", "SPY", "2026-", "100.5", "D:/market_data"):
+        assert forbidden not in rendered
+    raw_snapshots = list(market_data_root.rglob("*.json"))
+    assert len(raw_snapshots) == 1
+    assert all(path.is_relative_to(market_data_root) for path in raw_snapshots)
+    raw_bytes = raw_snapshots[0].read_bytes()
+    assert _sha256_bytes(raw_bytes) == materialization.witness.raw_snapshot_sha256
+    assert "QQQ" in raw_bytes.decode("utf-8")
+
+
+def test_forward_outcome_waits_for_the_final_1544_bar_and_recovers_without_sealing_gap(
+    preflight_binding,
+    tmp_path: Path,
+) -> None:
+    historical_dates = _regular_dates_after(date(2026, 6, 1), count=21)
+    forward_date = _regular_dates_after(historical_dates[-1] + timedelta(days=1), count=1)[0]
+    historical = _catalogs(historical_dates, marker="historical")
+    complete_head = _catalogs((forward_date,), marker="complete", after_cutoff_minutes=15)
+    incomplete_head = _catalogs((forward_date,), marker="incomplete", after_cutoff_minutes=14)
+    observer_contract = _contract(historical, preflight_binding)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    artifact_root = tmp_path / "artifacts"
+    market_data_root = tmp_path / "market-data"
+    _store_input_observation(
+        observer_contract,
+        historical,
+        complete_head,
+        forward_date,
+        artifact_root,
+        repository,
+    )
+    contract = observer.freeze_kis_mtf_profiled_forward_outcome_contract(observer_contract)
+
+    before_due = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=complete_head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date) - timedelta(minutes=1),
+    )
+    unavailable = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=incomplete_head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date),
+    )
+
+    assert before_due is None
+    assert unavailable is not None
+    assert unavailable.witness.status == "outcome_unavailable"
+    unavailable_result = observer.append_kis_mtf_profiled_forward_outcome_witness(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+        materialization=unavailable,
+    )
+    assert unavailable_result.outcome == "outcome_unavailable"
+    assert not list(market_data_root.rglob("*.json"))
+
+    recovered = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=complete_head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date),
+    )
+    assert recovered is not None
+    assert recovered.witness.status == "target_ready"
+    assert (
+        observer.append_kis_mtf_profiled_forward_outcome_witness(
+            artifact_root=artifact_root,
+            market_data_root=market_data_root,
+            repo_root=repository,
+            contract=contract,
+            materialization=recovered,
+        ).outcome
+        == "appended"
+    )
+
+
+def test_forward_outcome_detects_input_and_outcome_mutation_without_rewriting(
+    preflight_binding,
+    tmp_path: Path,
+) -> None:
+    historical_dates = _regular_dates_after(date(2026, 6, 1), count=21)
+    forward_date = _regular_dates_after(historical_dates[-1] + timedelta(days=1), count=1)[0]
+    historical = _catalogs(historical_dates, marker="historical")
+    head = _catalogs((forward_date,), marker="forward", after_cutoff_minutes=15)
+    observer_contract = _contract(historical, preflight_binding)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    artifact_root = tmp_path / "artifacts"
+    market_data_root = tmp_path / "market-data"
+    _store_input_observation(
+        observer_contract,
+        historical,
+        head,
+        forward_date,
+        artifact_root,
+        repository,
+    )
+    contract = observer.freeze_kis_mtf_profiled_forward_outcome_contract(observer_contract)
+
+    input_bars = list(head["QQQ/NAS/1m"].bars)
+    input_bars[180] = replace(
+        input_bars[180],
+        volume=input_bars[180].volume + Decimal("1"),
+    )
+    input_mutated_head = dict(head)
+    input_mutated_head["QQQ/NAS/1m"] = _catalog(
+        "QQQ",
+        "NAS",
+        (forward_date,),
+        marker="input-mutated",
+        bars=tuple(input_bars),
+    )
+    input_mutated = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=input_mutated_head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date),
+    )
+    assert input_mutated is not None
+    assert input_mutated.witness.status == "input_mutated"
+    assert (
+        observer.append_kis_mtf_profiled_forward_outcome_witness(
+            artifact_root=artifact_root,
+            market_data_root=market_data_root,
+            repo_root=repository,
+            contract=contract,
+            materialization=input_mutated,
+        ).outcome
+        == "input_mutated"
+    )
+    assert not list(market_data_root.rglob("*.json"))
+
+    baseline = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date),
+    )
+    assert baseline is not None and baseline.witness.status == "target_ready"
+    assert (
+        observer.append_kis_mtf_profiled_forward_outcome_witness(
+            artifact_root=artifact_root,
+            market_data_root=market_data_root,
+            repo_root=repository,
+            contract=contract,
+            materialization=baseline,
+        ).outcome
+        == "appended"
+    )
+    stored_outcome = next(artifact_root.rglob("outcomes/*.json")).read_bytes()
+
+    outcome_bars = list(head["SPY/AMS/1m"].bars)
+    outcome_bars[360] = replace(
+        outcome_bars[360],
+        volume=outcome_bars[360].volume + Decimal("1"),
+    )
+    outcome_mutated_head = dict(head)
+    outcome_mutated_head["SPY/AMS/1m"] = _catalog(
+        "SPY",
+        "AMS",
+        (forward_date,),
+        marker="outcome-mutated",
+        bars=tuple(outcome_bars),
+    )
+    outcome_mutated = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=outcome_mutated_head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date),
+    )
+    assert outcome_mutated is not None and outcome_mutated.witness.status == "target_ready"
+    conflict = observer.append_kis_mtf_profiled_forward_outcome_witness(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+        materialization=outcome_mutated,
+    )
+    assert conflict.outcome == "conflict"
+    assert next(artifact_root.rglob("outcomes/*.json")).read_bytes() == stored_outcome
+    assert len(list(artifact_root.rglob("conflicts/*.json"))) == 1
+
+
+def test_forward_outcome_ignores_post_window_mutation_and_rejects_repo_raw_root(
+    preflight_binding,
+    tmp_path: Path,
+) -> None:
+    historical_dates = _regular_dates_after(date(2026, 6, 1), count=21)
+    forward_date = _regular_dates_after(historical_dates[-1] + timedelta(days=1), count=1)[0]
+    historical = _catalogs(historical_dates, marker="historical")
+    head = _catalogs((forward_date,), marker="forward", after_cutoff_minutes=15)
+    observer_contract = _contract(historical, preflight_binding)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    artifact_root = tmp_path / "artifacts"
+    _store_input_observation(
+        observer_contract,
+        historical,
+        head,
+        forward_date,
+        artifact_root,
+        repository,
+    )
+    contract = observer.freeze_kis_mtf_profiled_forward_outcome_contract(observer_contract)
+    baseline = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date),
+    )
+    assert baseline is not None and baseline.witness.status == "target_ready"
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        observer.append_kis_mtf_profiled_forward_outcome_witness(
+            artifact_root=artifact_root,
+            market_data_root=repository,
+            repo_root=repository,
+            contract=contract,
+            materialization=baseline,
+        )
+
+    post_window = _catalogs((forward_date,), marker="post-window", after_cutoff_minutes=16)
+    post_window_bars = list(post_window["QQQ/NAS/1m"].bars)
+    post_window_bars[375] = replace(
+        post_window_bars[375],
+        volume=post_window_bars[375].volume + Decimal("1"),
+    )
+    post_window["QQQ/NAS/1m"] = _catalog(
+        "QQQ",
+        "NAS",
+        (forward_date,),
+        marker="post-window-mutated",
+        bars=tuple(post_window_bars),
+    )
+    unchanged = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=post_window,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date) + timedelta(minutes=1),
+    )
+    assert unchanged is not None and unchanged.witness.status == "target_ready"
+    assert unchanged.witness.witness_sha256 == baseline.witness.witness_sha256
+
+
+def test_forward_outcome_excludes_historical_sessions_and_recovers_busy_store(
+    preflight_binding,
+    tmp_path: Path,
+) -> None:
+    historical_dates = _regular_dates_after(date(2026, 6, 1), count=21)
+    forward_date = _regular_dates_after(historical_dates[-1] + timedelta(days=1), count=1)[0]
+    historical = _catalogs(historical_dates, marker="historical")
+    head = _catalogs((forward_date,), marker="forward", after_cutoff_minutes=15)
+    observer_contract = _contract(historical, preflight_binding)
+    contract = observer.freeze_kis_mtf_profiled_forward_outcome_contract(observer_contract)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    artifact_root = tmp_path / "artifacts"
+    market_data_root = tmp_path / "market-data"
+
+    assert (
+        observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+            contract,
+            observer_contract=observer_contract,
+            historical_catalogs=historical,
+            head_catalogs=historical,
+            artifact_root=artifact_root,
+            repo_root=repository,
+            observed_at=_outcome_due(historical_dates[-1]),
+        )
+        is None
+    )
+    _store_input_observation(
+        observer_contract,
+        historical,
+        head,
+        forward_date,
+        artifact_root,
+        repository,
+    )
+    materialization = observer.materialize_kis_mtf_profiled_forward_outcome_witness(
+        contract,
+        observer_contract=observer_contract,
+        historical_catalogs=historical,
+        head_catalogs=head,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        observed_at=_outcome_due(forward_date),
+    )
+    assert materialization is not None and materialization.witness.status == "target_ready"
+    with pytest.raises(ValueError, match="outside the Git workspace"):
+        observer.append_kis_mtf_profiled_forward_outcome_witness(
+            artifact_root=repository,
+            market_data_root=market_data_root,
+            repo_root=repository,
+            contract=contract,
+            materialization=materialization,
+        )
+
+    root = observer._forward_outcome_store_root(
+        artifact_root=artifact_root,
+        repo_root=repository,
+        contract_sha256=contract.contract_sha256,
+    )
+    lock_path = root / ".append.lock"
+    lock_path.write_text("busy", encoding="ascii")
+    busy = observer.append_kis_mtf_profiled_forward_outcome_witness(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+        materialization=materialization,
+    )
+    assert busy.outcome == "busy"
+    assert not list(market_data_root.rglob("*.json"))
+    lock_path.unlink()
+    assert (
+        observer.append_kis_mtf_profiled_forward_outcome_witness(
+            artifact_root=artifact_root,
+            market_data_root=market_data_root,
+            repo_root=repository,
+            contract=contract,
+            materialization=materialization,
+        ).outcome
+        == "appended"
+    )
 
 
 def test_default_preflight_binding_rejects_arbitrary_21_session_history() -> None:
@@ -400,6 +831,7 @@ import typing
 import thericher_v2.data.kis_mtf_profiled_prospective_observer
 import thericher_v2.data.kis_intraday_mtf_availability
 typing.get_type_hints(thericher_v2.data.kis_mtf_profiled_prospective_observer.run_kis_mtf_profiled_prospective_observer)
+typing.get_type_hints(thericher_v2.data.kis_mtf_profiled_prospective_observer.run_kis_mtf_profiled_forward_outcome_witness)
 typing.get_type_hints(thericher_v2.data.kis_intraday_mtf_availability.load_kis_intraday_mtf_availability_catalogs)
 for name in sys.modules:
     if name.startswith("thericher_v2.execution"):
@@ -424,6 +856,28 @@ def _contract(
         historical_catalogs=historical,
         code_revision=_sha256("code-r1"),
     )
+
+
+def _store_input_observation(
+    contract: observer.KisMtfProfiledProspectiveObserverContract,
+    historical: dict[str, CatalogedBars],
+    head: dict[str, CatalogedBars],
+    session_date: date,
+    artifact_root: Path,
+    repository: Path,
+) -> observer.KisMtfProfiledProspectiveObservation:
+    input_observation = _observation(contract, historical, head, session_date)
+    assert input_observation is not None and input_observation.status == "observed"
+    assert (
+        observer.append_kis_mtf_profiled_prospective_observation(
+            artifact_root=artifact_root,
+            repo_root=repository,
+            contract=contract,
+            observation=input_observation,
+        ).outcome
+        == "appended"
+    )
+    return input_observation
 
 
 def _observation(
@@ -526,6 +980,10 @@ def _regular_dates_after(start: date, *, count: int) -> tuple[date, ...]:
 
 def _observed_after_cutoff(session_date: date):
     return _cutoff(session_date) + timedelta(minutes=1)
+
+
+def _outcome_due(session_date: date):
+    return _cutoff(session_date) + timedelta(minutes=15)
 
 
 def _cutoff(session_date: date):

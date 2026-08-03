@@ -1334,3 +1334,19 @@ cost sensitivity, a no-trade naive baseline, and a blocked-session target
 permutation kill test. GPU is eligible only after that distinct contract has a
 matching CPU receipt; its one bounded appointment stops at ten minutes. No
 labels were opened or training/PnL work performed here.
+
+## Profiled MTF Forward Outcome Consumer (2026-08-01)
+
+Engine may consume only the new witness inventory's opaque
+`target_ready_pair_count`, manifest identity, frozen observer/outcome contract
+identity, and categorical status. It must not open the D:-resident snapshot,
+outcome bars, returns, labels, or session keys. The fixed predictive dependency
+remains unchanged: 30 future QQQ/SPY `short` pairs, then a new frozen
+`20 train / 2 purge / 8 validation` contract with costs, no-trade baseline,
+and blocked-session permutation kill test.
+
+Current local evidence is `zero_target_ready`. That is a data availability fact,
+not a model failure or GPU wait. No CUDA appointment, model, ensemble, score,
+Paper input, or PnL claim is eligible from this witness. Claude's final review
+was unavailable after two CLI timeouts; this does not change the frozen
+consumer boundary.

@@ -830,3 +830,23 @@ same-session causal misreading without adding a new gate.
   control rather than inventing an unqualified model family. Its 42-by-50
   batch and column-permutation result are explicitly plumbing-only, preserving
   a clean boundary between runtime readiness and predictive evidence.
+
+## Profiled MTF Forward Outcome Witness (2026-08-01)
+
+- **Ready:** the source-safe forward outcome contract is complete. Data can
+  attach a previously stored 15:30 causal input to exact `[15:30, 15:45)` M1
+  outcome bars without exposing raw values in artifacts. Engine can consume
+  only its zero-or-positive opaque inventory; it cannot train until 30 pairs.
+- **Owned:** Data owns local cache interpretation, D:-only snapshot retention,
+  and the existing collection route. Engine owns the frozen future campaign
+  dependency. Research Steward has no GPU appointment; Execution has no route
+  change.
+- **Due:** the 2026-08-01 host run is `outside_outcome_window` with zero
+  target-ready pairs. The existing collector's next market-time action remains
+  lane-owned and does not create foreground idle.
+- **Improvement:** snapshot-before-witness ordering makes every target-ready
+  artifact replayable while source-safe artifacts retain only opaque hashes.
+  Missing data remains recoverable, changed input is contained as
+  `input_mutated`, and changed outcome cannot overwrite prior evidence.
+- **Review:** both bounded Claude CLI calls timed out as
+  `review_unavailable`; no verdict, approval, or lane hold follows.
