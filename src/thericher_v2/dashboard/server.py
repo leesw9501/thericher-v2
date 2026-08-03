@@ -137,11 +137,6 @@ class DashboardHandler(BaseHTTPRequestHandler):
         if path == "/emergency/stop-new-orders":
             state = self.server.emergency_store.stop_new_orders("dashboard_stop_new_orders")
             self._action_response("stop_new_orders_set", state)
-        elif path == "/emergency/cancel-open-orders":
-            state = self.server.emergency_store.request_cancel_open_orders(
-                "dashboard_cancel_open_orders"
-            )
-            self._action_response("cancel_open_orders_requested", state)
         elif path == "/controls/pause-buys":
             state = self.server.execution_control_store.set_pause_buys(True)
             self._action_response("pause_buys_set", state)

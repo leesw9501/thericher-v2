@@ -686,3 +686,30 @@ are excluded from the runtime, dashboard, bridge evidence, and legacy
 read-only evidence. This is current read-health only. A later Paper executor
 still owns fresh account/quote checks, durable intent, and reconciliation at
 its own call site.
+
+## Virtual-Paper Lifecycle Canary Preparation (2026-08-04)
+
+`kis-paper-virtual-lifecycle-canary-v2` is prepared through the existing
+`thericher-kis-paper-quote-session` owner. The task is enabled for 23:35 KST,
+uses the fixed virtual host, one fresh quote-derived SPY limit, one share,
+persisted intent, and `cancel_after_submit`. Its expiry is bounded from the
+KIS quote timestamp to at most 120 seconds and is checked again immediately
+before the transport wire after pacing and request construction. Its current
+service image was rebuilt and the same task was reinstalled without a KIS call.
+The rebuilt container's non-executing CLI smoke passed.
+
+The private state inventory contains no `submitted` or `cancel_started` state.
+Historical `outcome_unknown` records remain recoverable only through their
+own read-only reconciliation paths and do not block a distinct call-time
+reconciled intent. A same-symbol/exchange/side/remaining-quantity open order
+conflicts even when its limit price differs. An exact durable unknown can
+resume only its acknowledged cancellation after reconciliation proves it is
+still open; it cannot submit a replacement. The loopback dashboard no longer
+offers a cancellation action because it was not an owned executor command.
+
+Focused recovery, quote, and dashboard coverage plus the clean-root parallel
+suite passed. A Claude CLI request did not produce the required verdict, so the
+review status is `review_unavailable`, not approval or agreement. The scheduled
+worker's eventual categorical result is the remaining Execution evidence; no
+new intent, account, quote, order, cancellation, or live call occurred during
+this preparation package.

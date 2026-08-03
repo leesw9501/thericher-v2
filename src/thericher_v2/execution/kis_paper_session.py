@@ -38,6 +38,7 @@ from .kis_paper_canary import (
 )
 from .kis_paper_quote import (
     DEFAULT_KIS_PAPER_CANARY_DISCOUNT_BPS,
+    KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
     KIS_PAPER_US_SPY_ORDER_EXCHANGE,
     KisPaperQuoteError,
     derive_kis_paper_nonmarket_limit,
@@ -241,8 +242,14 @@ def run_kis_paper_quote_session(
                     discount_bps=DEFAULT_KIS_PAPER_CANARY_DISCOUNT_BPS,
                     tick_size=limit_input.tick_size,
                 ),
-                decision_as_of=decision_at,
-                valid_until=decision_at + timedelta(seconds=valid_seconds),
+                decision_as_of=limit_input.quoted_at,
+                valid_until=limit_input.quoted_at
+                + timedelta(
+                    seconds=min(
+                        valid_seconds,
+                        int(KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE.total_seconds()),
+                    )
+                ),
             )
         except (
             KisPaperCanaryError,

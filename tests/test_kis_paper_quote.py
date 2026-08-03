@@ -864,6 +864,29 @@ def test_session_rechecks_limit_validity_immediately_before_submit(tmp_path: Pat
     )
 
 
+def test_session_uses_the_kis_quote_timestamp_for_submit_freshness(tmp_path: Path) -> None:
+    clock = SteppingClock([NOW, NOW, NOW + timedelta(seconds=121)])
+    transport = FakeKisPaperQuoteTransport()
+
+    outcome = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        clock=clock,
+        session_id="quote-age-submit-1",
+        execute=True,
+        cancel_after_submit=True,
+        valid_seconds=300,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "canary_completed"
+    assert outcome.reason_code == "intent_expired"
+    assert all(
+        request.headers.get("tr_id") != KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    )
+
+
 def _config() -> KisPaperConfig:
     return KisPaperConfig(
         app_key="paper-app-key",

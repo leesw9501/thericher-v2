@@ -249,7 +249,6 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
     sell_action = "resume-sells" if snapshot.pause_sells else "pause-sells"
     sell_label = "Resume sells" if snapshot.pause_sells else "Pause sells"
     sell_class = "" if snapshot.pause_sells else "danger"
-    cancellation_state = "Requested" if snapshot.cancel_open_orders_requested else "Not requested"
     paper_account_details = _paper_account_details(
         snapshot.paper_account,
         status=snapshot.paper_account_status,
@@ -437,16 +436,11 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
           <input type="hidden" name="csrf" value="{_text(form_nonce)}">
           <button class="danger" type="submit">Pause new entries</button>
         </form>
-        <form method="post" action="/emergency/cancel-open-orders">
-          <input type="hidden" name="csrf" value="{_text(form_nonce)}">
-          <button type="submit">Request local cancellation</button>
-        </form>
       </div>
       <p class="scope">
         Directional state: {_text(snapshot.execution_control_reason)}. Updated
         {_text(snapshot.execution_control_updated_at)}.
         Emergency: {_text(snapshot.emergency_reason)}.
-        Cancellation: {cancellation_state}.
       </p>
     </section>
 

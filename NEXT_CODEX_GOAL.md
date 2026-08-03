@@ -20,9 +20,10 @@ model or profitability result.
   durable intent, cancellation, and reconciliation ownership paths. Do not
   create a second broker adapter, manual fixed-price order, public service, or
   dashboard submission route.
-- A distinct new intent is allowed only after inspection proves it does not
-  conflict with a pending or unknown prior intent. Reconcile an exact unknown
-  outcome before any replacement of that intent.
+- A distinct new intent uses the existing shared execution lock and its own
+  call-time reconciliation to reject a matching open order. Reconcile an exact
+  unknown outcome before replacing that same intent; an unrelated historical
+  unknown does not create a global Paper hold.
 - Keep all secrets, account identifiers, raw broker bodies, order identifiers,
   and raw prices out of Git, logs, stateboards, dashboard projections, and
   Claude prompts. Keep `KIS_LIVE_*` unavailable.

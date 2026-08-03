@@ -1657,3 +1657,20 @@ Engine has no new training, selection, ensemble, target, PnL, Paper, or GPU
 work from this implementation alone. It will consume a future receipt only in
 a fresh, scoped timing interpretation package; the scheduler-owned next due
 does not leave the GPU idle by policy or block another eligible campaign.
+
+## KIS Broad D1 Invariant Candle Representation CPU Preflight (2026-08-04)
+
+The frozen target-free `kis-broad-d1-invariant-candle-representation-cpu-
+preflight-v1` completed against the immutable source-local broad-D1 panel. It
+materializes a fixed 128-by-800 representation with `520/20/260` temporal
+partitions and verifies per-symbol positive-scale invariance, future-prefix
+isolation, and terminal-buffer separation. The host and network-disabled Docker
+preflight wrote only a source-safe external summary; it trained no model and
+wrote no checkpoint, prediction, ranking, target, PnL, Paper input, or GPU
+artifact.
+
+This is representation plumbing, not a qualified predictive dataset. The
+current-listing, non-PIT, corporate-action, and session-finality limitations
+remain intact. A future consumer needs its own frozen contract and independently
+qualified input; this preflight cannot be relabeled as comparative, ensemble,
+or Paper evidence.

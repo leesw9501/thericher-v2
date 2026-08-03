@@ -69,6 +69,7 @@ class FakeKisPaperCanaryTransport:
     submit_message_text: str | None = None
     retain_open_order_after_cancel: bool = False
     matching_ccnl_after_cancel: bool = False
+    fail_cancel: bool = False
     cancellation_seen: bool = False
     order_open: bool = False
     order_side: str = "buy"
@@ -108,6 +109,8 @@ class FakeKisPaperCanaryTransport:
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}})
         if tr_id == KIS_PAPER_US_CANCEL_TR_ID:
             self.cancellation_seen = True
+            if self.fail_cancel:
+                raise KisPaperCanaryError("cancel_transport_failure")
             if not self.retain_open_order_after_cancel:
                 self.order_open = False
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {}})
@@ -301,6 +304,53 @@ def test_real_canary_transport_uses_shared_monotonic_pacing(monkeypatch) -> None
 
     assert dispatch_times == [200.0, 201.0, 202.0]
     assert sleep_calls == [1.0, 1.0]
+
+
+def test_real_canary_transport_rechecks_expiry_after_pacing(monkeypatch) -> None:
+    current_time = [0.0]
+    sleep_calls: list[float] = []
+    open_calls: list[float] = []
+
+    def monotonic_clock() -> float:
+        return current_time[0]
+
+    def sleeper(delay: float) -> None:
+        sleep_calls.append(delay)
+        current_time[0] += delay
+
+    class RecordingOpener:
+        def open(self, _request: object, *, timeout: float) -> _PacingResponse:
+            assert timeout == 15.0
+            open_calls.append(monotonic_clock())
+            return _PacingResponse()
+
+    transport = UrllibKisPaperCanaryTransport(
+        pacer=KisPaperRequestPacer(
+            monotonic_clock=monotonic_clock,
+            sleeper=sleeper,
+        )
+    )
+    monkeypatch.setattr(transport, "_opener", RecordingOpener())
+    request = _canary_transport_request()
+    deadline = NOW + timedelta(seconds=120)
+
+    transport.request(request)
+    original_dumps = json.dumps
+
+    def advancing_dumps(*args: object, **kwargs: object) -> str:
+        current_time[0] += 1.0
+        return original_dumps(*args, **kwargs)
+
+    monkeypatch.setattr("thericher_v2.execution.kis_paper_canary.json.dumps", advancing_dumps)
+    with pytest.raises(KisPaperCanaryError, match="intent_expired"):
+        transport.request_before_deadline(
+            request,
+            deadline=deadline,
+            clock=lambda: NOW + timedelta(seconds=119 + current_time[0]),
+        )
+
+    assert sleep_calls == [1.0]
+    assert open_calls == [0.0]
 
 
 def test_real_canary_transport_paces_after_a_failed_external_attempt(monkeypatch) -> None:
@@ -1011,6 +1061,61 @@ def test_read_only_idless_recovery_never_binds_or_cancels_a_unique_open_order(
     )
 
 
+def test_different_limit_open_order_blocks_a_new_canary_without_binding_or_cancel(
+    tmp_path: Path,
+) -> None:
+    transport = FakeKisPaperCanaryTransport(
+        open_order_rows=[{**_matching_open_order_payload(), "ft_ord_unpr3": "500.26"}]
+    )
+
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="different-limit-open-order-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "different-limit-open-order-1.json",
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "outcome_unknown"
+    assert outcome.reason_code == "matching_open_order"
+    assert _submission_count(transport) == 0
+    assert transport.cancellation_seen is False
+    persisted = KisPaperCanaryStateStore(
+        tmp_path / "private" / "different-limit-open-order-1.json"
+    ).read()
+    assert persisted is not None and persisted.broker_order_id is None
+
+    request_count_before_recovery = len(transport.requests)
+    recovered = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="different-limit-open-order-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "different-limit-open-order-1.json",
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **_paths(tmp_path),
+    )
+
+    assert recovered.phase == "outcome_unknown"
+    assert _submission_count(transport) == 0
+    assert transport.cancellation_seen is False
+    assert all(
+        request.headers.get("tr_id")
+        not in {
+            KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID,
+            KIS_PAPER_US_CANCEL_TR_ID,
+        }
+        for request in transport.requests[request_count_before_recovery:]
+    )
+
+
 def test_read_only_unknown_run_recovery_rebuilds_the_persisted_decision(
     tmp_path: Path,
 ) -> None:
@@ -1594,6 +1699,54 @@ def test_recovery_resumes_durable_cancel_after_acknowledged_submit(tmp_path: Pat
     assert outcome.phase == "cancelled"
     assert transport.cancellation_seen is True
     assert _submission_count(transport) == 0
+
+
+def test_cancel_transport_failure_recovers_only_the_same_known_open_run(tmp_path: Path) -> None:
+    decision = _decision()
+    run_id = "recover-cancel-transport-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    transport = FakeKisPaperCanaryTransport(fail_cancel=True)
+    paths = _paths(tmp_path)
+
+    first = run_kis_paper_canary(
+        decision=decision,
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+
+    persisted = KisPaperCanaryStateStore(state_path).read()
+    assert first.phase == "outcome_unknown"
+    assert persisted is not None and persisted.broker_order_id is not None
+    assert _submission_count(transport) == 1
+
+    transport.fail_cancel = False
+    recovered = run_kis_paper_canary(
+        decision=decision,
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    assert recovered.phase == "cancelled"
+    assert _submission_count(transport) == 1
+    assert transport.cancellation_seen is True
+    assert sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID
+        for request in transport.requests
+    ) == 2
+    recovered_state = KisPaperCanaryStateStore(state_path).read()
+    assert recovered_state is not None and recovered_state.broker_order_id is not None
 
 
 def test_different_run_ids_cannot_submit_concurrently(tmp_path: Path) -> None:

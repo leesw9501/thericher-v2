@@ -517,10 +517,10 @@ def test_dashboard_http_html_json_and_local_actions(tmp_path) -> None:
             body=form,
             headers=form_headers,
         )
-        assert status == 200
+        assert status == 404
         state = emergency.read()
         assert state.stop_new_orders
-        assert state.cancel_open_orders_requested
+        assert not state.cancel_open_orders_requested
         assert events.jsonl_path.read_bytes() == event_bytes
 
         status, _, _ = _request(

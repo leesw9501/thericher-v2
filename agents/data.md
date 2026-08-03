@@ -1537,3 +1537,20 @@ tasks at `2026-08-05 04:29:30` and `04:30:00` KST. Until an exact runtime
 receipt exists, Data reports `not_yet_observed`; the worker's due time is not a
 foreground wait or a Data-wide completion claim. No account, quote, order,
 local-paper, live, or model route is part of this package.
+
+## Intraday-Head Duplicate-Minute Recovery Fact (2026-08-04)
+
+The 06:20 KST `thericher-kis-paper-intraday-head` task reached
+`collection_exit_nonzero`: both `QQQ/NAS/1m` and `SPY/AMS/1m` were rejected as
+`minute_duplicate_conflict`. This is cache-integrity evidence, not an
+authentication, quota, account, order, or provider-wide availability claim.
+The source-safe schedule receipt is under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule`;
+the matching cache receipt remains under the existing D: intraday-head root.
+
+The installed worker is still `Ready` for its next owned invocation. Preserve
+the existing conflict quarantine and let that worker recover on the next fresh
+run. If the same post-close category repeats, the next bounded Data package is
+a source-safe conflict-origin receipt before changing collector pace or cache
+semantics. No duplicate collector, foreground retry, Engine hold, or Execution
+action follows from this one receipt.

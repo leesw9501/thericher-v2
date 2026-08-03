@@ -220,34 +220,44 @@ end-to-end replay test.
   mount in the web process. Claude's route review was `uncertain`; its raw-price
   persistence concern was resolved by schema v3, which excludes all price and
   order-identifier fields from runtime and legacy read-only evidence.
+  The separate virtual-Paper canary now has one updated task-owned 23:35 KST
+  attempt: its quote-derived expiry is rechecked immediately before transport,
+  duplicate conflict ignores limit-price changes, and a proven-open exact
+  unknown resumes cancellation only.
 - **Data:** the broad current-listing D1 cache and its source-local research
   consumers are complete with their non-PIT and adjustment limitations intact.
   The installed forward and isolated SPY prefix workers remain Data-owned; they
   continue independently of account work and retain their own cursor, pacing,
-  and recovery facts.
+  and recovery facts. The latest post-close intraday-head run recorded only
+  `minute_duplicate_conflict` for both paired M1 inputs; the worker remains
+  scheduled, and this cache-local recovery fact does not hold Execution or
+  Engine work.
 - **Engine Research / Steward:** no current result is a selected model or a
   Paper input. The prospective MTF contract remains at zero target-ready pairs;
-  the RTX 4090 is available only to a newly frozen, input-qualified campaign.
+  the completed broad-D1 candle representation check is target-free input
+  plumbing only. The RTX 4090 is available only to a newly frozen,
+  input-qualified campaign. Its existing isolated PyTorch CUDA container was
+  reattested as ready on 2026-08-04 without touching data, models, artifacts,
+  KIS, or broker paths.
 - **Shared resources:** Data owns mutable KIS caches and collection schedules;
   Execution owns virtual-Paper state, account/order routes, and loopback
   runtime projections; Research Steward owns exclusive GPU appointments.
 
 ## Ready / Owned / Due
 
-- **Ready:** Execution can prepare one bounded virtual-Paper lifecycle canary
-  using the existing fresh-account, quote, durable-intent, cancellation, and
-  reconciliation paths. Data and Engine work remain independent: the next
-  forward/prefix observations are worker-owned, and no target-ready count is
-  manufactured while they are pending.
-- **Owned:** do not duplicate an installed Data collector or an exact existing
-  virtual-Paper intent. The next canary package must inspect and reconcile the
-  execution-owned state before it can create a distinct intent.
-- **Due:** all market-time jobs retain their own `next_due`; no external clock
-  holds the foreground orchestrator. The next isolated SPY prefix observation
-  remains scheduled for its defined session slot.
-- **Verification:** focused account/dashboard/read-only coverage passed `51`
-  tests after the schema-v3 change. Required goal-boundary verification is the
-  next integration step.
+- **Ready:** the hardened virtual-Paper lifecycle worker is installed; Data and
+  Engine work remain independent, and no target-ready count is manufactured
+  while their separate observations are pending.
+- **Owned:** only `thericher-kis-paper-quote-session` may execute this one
+  current attempt. Its shared lock and call-time reconciliation own duplicate
+  rejection; exact unknown recovery is cancellation-only after a proven-open
+  reconciliation.
+- **Due:** this worker is `Ready` for 23:35 KST today. All other market-time
+  jobs retain their own `next_due`; no external clock holds the foreground
+  orchestrator.
+- **Verification:** focused recovery/quote/dashboard coverage passed `99`
+  tests; the clean-root authority runner passed `2407`, with `23` skips. Ruff
+  and all required Compose configurations also passed.
 
 ## Current Bottleneck And Improvement
 

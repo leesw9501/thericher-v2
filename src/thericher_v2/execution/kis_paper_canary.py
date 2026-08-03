@@ -282,6 +282,31 @@ class UrllibKisPaperCanaryTransport:
         )
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
+        return self._request(request)
+
+    def request_before_deadline(
+        self,
+        request: KisHttpRequest,
+        *,
+        deadline: datetime,
+        clock: Callable[[], datetime],
+    ) -> KisHttpResponse:
+        """Pace first, then reject an expired order before it reaches the wire."""
+
+        valid_until = require_utc(deadline, "deadline")
+
+        def ensure_current() -> None:
+            if require_utc(clock(), "clock") >= valid_until:
+                raise KisPaperCanaryError("intent_expired")
+
+        return self._request(request, before_wire=ensure_current)
+
+    def _request(
+        self,
+        request: KisHttpRequest,
+        *,
+        before_wire: Callable[[], None] | None = None,
+    ) -> KisHttpResponse:
         validate_kis_paper_canary_request(request)
         self._pacer.wait_for_request_slot()
         data = (
@@ -297,6 +322,8 @@ class UrllibKisPaperCanaryTransport:
             method=request.method,
         )
         try:
+            if before_wire is not None:
+                before_wire()
             with self._opener.open(http_request, timeout=self._timeout_seconds) as response:
                 return KisHttpResponse(
                     status_code=response.status,
@@ -962,7 +989,13 @@ class KisPaperCanaryClient:
         except KisPaperReadOnlyError as error:
             raise KisPaperCanaryError("quote_response_incomplete") from error
 
-    def submit_limit(self, intent: KisPaperCanaryIntent) -> tuple[bool, str | None]:
+    def submit_limit(
+        self,
+        intent: KisPaperCanaryIntent,
+        *,
+        now: datetime | None = None,
+        clock: Callable[[], datetime] | None = None,
+    ) -> tuple[bool, str | None]:
         """Submit the intent's explicit virtual-paper limit-order side only."""
 
         if intent.side == "buy":
@@ -988,7 +1021,10 @@ class KisPaperCanaryClient:
                 url=f"{self._config.base_url}{KIS_PAPER_US_BUY_LIMIT_ORDER_PATH}",
                 headers=self._post_headers(tr_id),
                 json_body=body,
-            )
+            ),
+            deadline=intent.valid_until,
+            now=now,
+            clock=clock,
         )
         probe = inspect_kis_paper_buy_limit_response(response)
         if probe.category == "http_non_200":
@@ -1039,12 +1075,18 @@ class KisPaperCanaryClient:
             )
         return True, order_id
 
-    def submit_buy_limit(self, intent: KisPaperCanaryIntent) -> tuple[bool, str | None]:
+    def submit_buy_limit(
+        self,
+        intent: KisPaperCanaryIntent,
+        *,
+        now: datetime | None = None,
+        clock: Callable[[], datetime] | None = None,
+    ) -> tuple[bool, str | None]:
         """Compatibility wrapper for the original buy-only canary entry point."""
 
         if intent.side != "buy":
             raise KisPaperCanaryError("request_not_allowlisted")
-        return self.submit_limit(intent)
+        return self.submit_limit(intent, now=now, clock=clock)
 
     def cancel_order(self, intent: KisPaperCanaryIntent, *, broker_order_id: str) -> bool:
         """Cancel an acknowledged virtual-paper order without changing its side."""
@@ -1128,8 +1170,24 @@ class KisPaperCanaryClient:
             "tr_cont": continuation,
         }
 
-    def _dispatch(self, request: KisHttpRequest) -> KisHttpResponse:
+    def _dispatch(
+        self,
+        request: KisHttpRequest,
+        *,
+        deadline: datetime | None = None,
+        now: datetime | None = None,
+        clock: Callable[[], datetime] | None = None,
+    ) -> KisHttpResponse:
         validate_kis_paper_canary_request(request)
+        if deadline is not None:
+            if isinstance(self._transport, UrllibKisPaperCanaryTransport):
+                return self._transport.request_before_deadline(
+                    request,
+                    deadline=deadline,
+                    clock=lambda: _canary_now(now=now, clock=clock),
+                )
+            if _canary_now(now=now, clock=clock) >= deadline:
+                raise KisPaperCanaryError("intent_expired")
         return self._transport.request(request)
 
 
@@ -1249,7 +1307,7 @@ def _run_kis_paper_canary(
                 transport=transport or UrllibKisPaperCanaryTransport(),
             )
         reconciliation = client.reconcile(state, now=observed_at)
-        if _matches_intent_open_order(reconciliation.snapshot, intent):
+        if _conflicts_with_intent_open_order(reconciliation.snapshot, intent):
             state = state_store.transition(
                 intent,
                 expected=frozenset({"intent_recorded"}),
@@ -1292,7 +1350,11 @@ def _run_kis_paper_canary(
                     now=submit_at,
                 )
                 try:
-                    accepted, broker_order_id = client.submit_limit(intent)
+                    accepted, broker_order_id = client.submit_limit(
+                        intent,
+                        now=now,
+                        clock=clock,
+                    )
                 except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
                     state = state_store.transition(
                         intent,
@@ -1682,6 +1744,23 @@ def _recover_existing_canary(
                 submitted_at=observed_at,
             )
             reconciliation = client.reconcile(state, now=observed_at)
+        if (
+            allow_order_side_effects
+            and state.phase == "outcome_unknown"
+            and state.broker_order_id is not None
+            and state.cancel_after_submit
+            and reconciliation.matching_open_order
+        ):
+            # Reconciliation proves this exact durable order is still open after
+            # a cancel transport failure. Resume only its cancellation path.
+            state = state_store.transition(
+                state.intent,
+                expected=frozenset({"outcome_unknown"}),
+                phase="submitted",
+                reason_code="reconciliation_unresolved",
+                now=observed_at,
+            )
+            reconciliation = client.reconcile(state, now=observed_at)
     except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
         return state, _unavailable_reconciliation(
             reason_code=_safe_reconciliation_reason_code(error)
@@ -1715,7 +1794,7 @@ def _recover_existing_canary(
     return state, reconciliation
 
 
-def _matches_intent_open_order(
+def _conflicts_with_intent_open_order(
     snapshot: KisPaperReadOnlySnapshot | None,
     intent: KisPaperCanaryIntent,
 ) -> bool:
@@ -1726,7 +1805,6 @@ def _matches_intent_open_order(
         and order.exchange == intent.exchange
         and order.side == intent.side
         and order.remaining_quantity == intent.quantity
-        and order.limit_price == intent.limit_price
         for order in snapshot.open_orders.orders
     )
 

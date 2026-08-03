@@ -35,6 +35,12 @@ weights, modify execution risk, or call a broker.
   window-sensitivity preflight create no follow-up CUDA work. Historical D1
   remains quarantined. This does not block Data, Execution, or other CPU
   Research preparation, and it is not a request to manufacture training.
+- CUDA runtime readiness was independently reattested on 2026-08-04: the
+  existing isolated research container sees one RTX 4090 through the installed
+  PyTorch CUDA build. No dataset, model, artifact, network, KIS, or broker path
+  was used. This removes runtime availability as a future eligible campaign
+  risk, but does not itself create a GPU appointment or validate training
+  throughput.
 - The prospective SPY regular-session baseline and its dedicated source-safe
   observation receipt are fixed CPU engineering work. The receipt's content
   commitment does not create a GPU appointment, artifact, Paper consequence,
@@ -451,3 +457,12 @@ data-only observation recovery create no campaign, model lineage, target,
 sealed-evaluation spend, checkpoint, ensemble record, or GPU appointment.
 The RTX 4090 remains free for a separately frozen eligible campaign; this
 coverage probe is not a reason to manufacture training.
+
+## KIS Broad D1 Invariant Candle Representation Custody (2026-08-04)
+
+No GPU or sealed-evaluation appointment was created for
+`kis-broad-d1-invariant-candle-representation-cpu-preflight-v1`. Its completed
+target-free CPU representation check produced no labels, model, checkpoint,
+prediction, holdout access, candidate selection, or ensemble lineage. The RTX
+4090 remains available for a distinct frozen campaign with qualified inputs;
+the source-local representation preflight is not a CUDA allocation request.
