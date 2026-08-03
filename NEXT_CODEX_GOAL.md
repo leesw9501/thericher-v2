@@ -6,73 +6,62 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Build `kis-spy-completed-bar-decision-timing-probe-v1`: one bounded,
-source-safe measurement of the existing KIS Paper `SPY/AMS/1m`
-intraday-head collection's schedule relation, collection lag, and
-post-collection 15:30-prefix availability.
+Complete `kis-spy-scheduled-timing-observation-v1`: consume the first real
+source-safe receipts produced by the existing `thericher-kis-paper-intraday-head`
+task and establish the bounded current facts for its 13:31 ET and 15:31 ET
+summer-time runs.
 
-The outcome quantifies the current path for a later schedule proposal. It must
-not claim that a post-collection cache was available at the 15:30 decision
-time, or that the route is feasible before expiry. It is not a strategy result,
-profitability claim, schedule change, model tuning, or Paper trade.
+The product outcome is an evidence-backed account of current collector timing
+and post-collection prefix state. It must not infer 15:30 decision-time
+availability, change cadence or receipt validity, or become a strategy or
+Paper-trading result.
 
 ## Boundaries
 
-- `KIS_PAPER_*` may be used only by the existing Data-owned market-data client
-  and collector path. Do not read or route `KIS_LIVE_*`.
-- Do not call a KIS account, position, quote, order, submit, modify, cancel,
-  or reconciliation endpoint. Do not create an intent or local-paper fill.
-- Reuse the existing intraday-head collector and cache. Do not run a parallel
-  collector, create a duplicate cache, or retain raw provider rows outside
-  `D:\market_data`.
-- Record only source-safe raw timing endpoints with explicit America/New_York
-  offset, category, count, and identity facts outside Git. Never record
-  credentials, account identifiers, request URLs, raw bars, prices, or broker
-  payloads.
-- Preserve the frozen prospective-SPY baseline and existing `00:31`, `02:31`,
-  `04:31`, and `06:20` KST schedule. Do not change cadence, TTL, baseline,
-  size, or Paper route based on a single unreviewed observation.
-- The next market-session due time belongs to the owned Data worker or
-  scheduler. Build and test all offline pieces now, then yield only that
-  worker rather than foreground-waiting.
+- Let only the existing owned scheduler make KIS Paper market-data calls. Do
+  not start a collector manually, create a duplicate worker/cache, or widen
+  the target scope beyond the existing SPY/QQQ head collection.
+- Do not call or read KIS account, position, quote, order, submit, modify,
+  cancel, reconciliation, or live routes. Never read or route `KIS_LIVE_*`.
+- Consume only external source-safe receipts and scheduler metadata. Do not
+  retain or display credentials, raw bars, prices, request URLs, account
+  identifiers, or broker payloads.
+- Preserve the current trigger times, frozen prospective-SPY baseline,
+  exclusive validity, virtual-Paper route, and terminal schedule behavior.
+  No single receipt is authority to change any of them.
+- The scheduler-owned session due times are not foreground waits. Dispatch any
+  ready offline review or recovery package while they remain pending.
 
 ## Required Work
 
-1. **Data:** add one independent external timing-probe receipt at the existing
-   collector/cycle seam. It must identify raw schedule/collector/probe timing
-   endpoints, ET offset, schedule relation, post-collection completed-prefix
-   availability category, and counts from the existing kind-tagged collector
-   payload. It must not enter the existing terminal schedule receipt or affect
-   its exit code, open another KIS client, or start another collector.
-2. **Engine Research:** specify the causal interpretation of each probe
-   category for the frozen 15:30 decision and exclusive `valid_until`. It must
-   not alter the model, examine outcomes, or create a research campaign.
-3. **Execution:** prove the timing-probe route cannot load Paper configuration
-   or reach account, quote, order, or canary code. Keep the existing virtual
-   canary unchanged.
-4. **Integration:** run fixture and Docker smoke evidence now. The probe
-   container must be network-disabled and receive no `KIS_*` environment
-   values. At the next eligible regular-session invocation, let the existing
-   owned Data path produce one real source-safe probe receipt. A missing or
-   late source result is a valid measurement, not an approval wait.
-5. Ask Claude for a short falsification-first challenge before interpreting a
-   real probe result as grounds to change schedule timing, receipt validity, or
-   availability semantics. A timeout is `review_unavailable`, not agreement or
-   a block.
+1. **Data:** reattest the first scheduled timing receipts and task outcomes.
+   Record the exact safe timing/offset/category/count facts, receipt lineage,
+   and any scoped collector recovery fact. Distinguish an early-before-cutoff
+   run from an at-or-after-expiry run.
+2. **Engine Research:** verify that every interpretation retains
+   `decision_time_availability: not_observed`; classify only what the frozen
+   15:30 decision can and cannot infer from each receipt.
+3. **Execution:** reattest that the observed schedule runs made no account,
+   quote, order, canary, local-paper, or live route. Do not alter the adapter.
+4. **Integration:** if both current summer-time observations are available,
+   write one compact Data/Engine recommendation for a later, separately
+   approved schedule/validity design experiment. If either remains pending or
+   source-limited, preserve its owned `next_due`/recovery state and continue
+   another ready lane rather than creating a wait.
+5. Ask Claude for a short falsification-first challenge before treating two
+   observed receipts as grounds for a schedule, availability, or Paper-route
+   proposal. A timeout is `review_unavailable`, not agreement or a block.
 
 ## Completion Evidence
 
-- focused tests prove one collector/client path, redaction, no Execution
-  surface, and idempotent external receipt behavior;
-- host and Docker fixture smoke receipts succeed without KIS account/order
-  access;
-- one live KIS market-data-only timing receipt, or a durable scheduler-owned
-  `next_due` plus all offline implementation evidence if the next session has
-  not occurred; the receipt must distinguish a post-collection observation
-  from decision-time availability and must contain no feasibility verdict;
+- source-safe reattestation of the relevant external timing receipts and task
+  outcome(s), with no raw/provider/account/order output;
+- focused tests if parsing, isolation, or interpretation code changes;
 - refreshed Data, Engine Research, Execution, Research Steward,
   orchestration, and handoff stateboards; required verification, commit, and
-  push.
+  push;
+- if a receipt is still not due, durable scheduler-owned `next_due` plus all
+  ready offline evidence is a bounded completion state, not a foreground hold.
 
 ## Verification
 
