@@ -20,7 +20,7 @@ from thericher_v2.data.kis_mtf_profiled_prospective_observer import (
     KisMtfProfiledForwardOutcomeInventory,
 )
 
-from .artifact_paths import ensure_external_artifact_directory
+from .artifact_paths import ensure_external_artifact_directory, reject_repo_artifact_path
 
 PROFILED_MTF_FORWARD_CAMPAIGN_READINESS_ID: Final = "profiled-mtf-forward-campaign-readiness-v1"
 PROFILED_MTF_FORWARD_CAMPAIGN_PROFILE_ID: Final = "short"
@@ -189,6 +189,7 @@ class ProfiledMtfForwardCampaignReadiness:
 class ProfiledMtfForwardCampaignReadinessReceipt:
     """An external immutable receipt for the exact inventory/policy pairing."""
 
+    policy: ProfiledMtfForwardCampaignReadinessPolicy = field(repr=False)
     readiness: ProfiledMtfForwardCampaignReadiness = field(repr=False)
     receipt_path: Path
     receipt_sha256: str
@@ -198,6 +199,11 @@ class ProfiledMtfForwardCampaignReadinessReceipt:
             not _is_sha256(self.receipt_sha256)
             or self.receipt_path.name != "readiness-receipt.json"
             or self.receipt_path.is_symlink()
+            or self.readiness.policy_sha256 != self.policy.policy_sha256
+            or (
+                self.readiness.forward_outcome_contract_sha256
+                != self.policy.forward_outcome_contract_sha256
+            )
         ):
             raise ValueError("profiled MTF forward readiness receipt is invalid")
 
@@ -312,9 +318,62 @@ def write_profiled_mtf_forward_campaign_readiness_receipt(
     receipt_path = directory / "readiness-receipt.json"
     recorded = _write_or_verify_json(receipt_path, payload)
     return ProfiledMtfForwardCampaignReadinessReceipt(
+        policy=policy,
         readiness=readiness,
         receipt_path=receipt_path,
         receipt_sha256=_required_sha256_payload(recorded, "receipt_sha256"),
+    )
+
+
+def load_profiled_mtf_forward_campaign_readiness_receipt(
+    receipt_path: Path | str,
+    *,
+    repo_root: Path | str,
+) -> ProfiledMtfForwardCampaignReadinessReceipt:
+    """Load one canonical external receipt without reopening Data snapshots."""
+
+    path = Path(receipt_path)
+    reject_repo_artifact_path(path, Path(repo_root))
+    if path.is_symlink() or not path.is_file():
+        raise ValueError("forward campaign readiness receipt is missing or invalid")
+    try:
+        encoded = path.read_bytes()
+        payload = json.loads(encoded)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("forward campaign readiness receipt is malformed") from error
+    if not isinstance(payload, dict) or encoded != _canonical_json(payload):
+        raise ValueError("forward campaign readiness receipt is malformed")
+    if (
+        set(payload)
+        != {
+            "schema_version",
+            "campaign_id",
+            "attempt_id",
+            "policy",
+            "readiness",
+            "artifact_policy",
+            "receipt_sha256",
+        }
+        or payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("campaign_id") != PROFILED_MTF_FORWARD_CAMPAIGN_READINESS_ID
+        or not isinstance(payload.get("attempt_id"), str)
+    ):
+        raise ValueError("forward campaign readiness receipt is malformed")
+    _require_attempt_id(payload["attempt_id"])
+    receipt_sha256 = _required_sha256_payload(payload, "receipt_sha256")
+    unsigned = dict(payload)
+    unsigned.pop("receipt_sha256")
+    if receipt_sha256 != _sha256_json(unsigned):
+        raise ValueError("forward campaign readiness receipt checksum is invalid")
+    if payload.get("artifact_policy") != _artifact_policy():
+        raise ValueError("forward campaign readiness receipt artifact policy is invalid")
+    policy = _policy_from_safe_payload(_required_mapping(payload, "policy"))
+    readiness = _readiness_from_safe_payload(_required_mapping(payload, "readiness"))
+    return ProfiledMtfForwardCampaignReadinessReceipt(
+        policy=policy,
+        readiness=readiness,
+        receipt_path=path,
+        receipt_sha256=receipt_sha256,
     )
 
 
@@ -379,6 +438,110 @@ def _readiness_scope() -> dict[str, bool]:
     }
 
 
+def _artifact_policy() -> dict[str, bool]:
+    return {
+        "repository_storage_allowed": False,
+        "raw_rows_persisted": False,
+        "feature_values_persisted": False,
+        "target_values_persisted": False,
+        "predictions_persisted": False,
+        "weights_persisted": False,
+    }
+
+
+def _policy_from_safe_payload(
+    payload: Mapping[str, object],
+) -> ProfiledMtfForwardCampaignReadinessPolicy:
+    if set(payload) != {
+        "campaign_id",
+        "forward_outcome_contract_sha256",
+        "code_revision_sha256",
+        "shape",
+        "policy_sha256",
+    } or payload.get("campaign_id") != PROFILED_MTF_FORWARD_CAMPAIGN_READINESS_ID:
+        raise ValueError("forward campaign readiness policy is malformed")
+    return ProfiledMtfForwardCampaignReadinessPolicy(
+        forward_outcome_contract_sha256=_required_string(
+            payload, "forward_outcome_contract_sha256"
+        ),
+        code_revision_sha256=_required_string(payload, "code_revision_sha256"),
+        shape=_shape_from_safe_payload(_required_mapping(payload, "shape")),
+        policy_sha256=_required_string(payload, "policy_sha256"),
+    )
+
+
+def _shape_from_safe_payload(payload: Mapping[str, object]) -> ProfiledMtfForwardCampaignShape:
+    if set(payload) != {
+        "profile_id",
+        "instrument_scope",
+        "required_pair_count",
+        "temporal_allocation",
+        "round_trip_cost_bps",
+        "naive_baseline",
+        "kill_test",
+        "cpu_first",
+        "cuda_max_seconds",
+    } or payload.get("instrument_scope") != "fixed_two_leg_us_equity_pair":
+        raise ValueError("forward campaign readiness shape is malformed")
+    temporal = _required_mapping(payload, "temporal_allocation")
+    if set(temporal) != {
+        "train_pair_count",
+        "purge_pair_count",
+        "validation_pair_count",
+    }:
+        raise ValueError("forward campaign readiness temporal allocation is malformed")
+    cpu_first = payload.get("cpu_first")
+    if type(cpu_first) is not bool:
+        raise ValueError("forward campaign readiness shape is malformed")
+    return ProfiledMtfForwardCampaignShape(
+        profile_id=_required_string(payload, "profile_id"),
+        required_pair_count=_required_int(payload, "required_pair_count"),
+        train_pair_count=_required_int(temporal, "train_pair_count"),
+        purge_pair_count=_required_int(temporal, "purge_pair_count"),
+        validation_pair_count=_required_int(temporal, "validation_pair_count"),
+        round_trip_cost_bps=_required_int(payload, "round_trip_cost_bps"),
+        naive_baseline=_required_string(payload, "naive_baseline"),
+        kill_test=_required_string(payload, "kill_test"),
+        cpu_first=cpu_first,
+        cuda_max_seconds=_required_int(payload, "cuda_max_seconds"),
+    )
+
+
+def _readiness_from_safe_payload(
+    payload: Mapping[str, object],
+) -> ProfiledMtfForwardCampaignReadiness:
+    if set(payload) != {
+        "campaign_id",
+        "policy_sha256",
+        "forward_outcome_contract_sha256",
+        "source_inventory_sha256",
+        "target_ready_manifest_sha256",
+        "target_ready_pair_count",
+        "source_status",
+        "status",
+        "scope",
+        "readiness_sha256",
+    } or (
+        payload.get("campaign_id") != PROFILED_MTF_FORWARD_CAMPAIGN_READINESS_ID
+        or payload.get("scope") != _readiness_scope()
+    ):
+        raise ValueError("forward campaign readiness payload is malformed")
+    return ProfiledMtfForwardCampaignReadiness(
+        policy_sha256=_required_string(payload, "policy_sha256"),
+        forward_outcome_contract_sha256=_required_string(
+            payload, "forward_outcome_contract_sha256"
+        ),
+        source_inventory_sha256=_required_string(payload, "source_inventory_sha256"),
+        target_ready_manifest_sha256=_required_string(
+            payload, "target_ready_manifest_sha256"
+        ),
+        target_ready_pair_count=_required_int(payload, "target_ready_pair_count"),
+        source_status=_required_string(payload, "source_status"),
+        status=_required_string(payload, "status"),
+        readiness_sha256=_required_string(payload, "readiness_sha256"),
+    )
+
+
 def _write_or_verify_json(path: Path, payload: Mapping[str, object]) -> dict[str, object]:
     if path.is_symlink():
         raise ValueError("forward campaign readiness receipt path must not be a link")
@@ -409,6 +572,27 @@ def _read_json_object(path: Path) -> dict[str, object]:
 def _required_sha256_payload(payload: Mapping[str, object], field_name: str) -> str:
     value = payload.get(field_name)
     _require_sha256(value, field_name)
+    return value
+
+
+def _required_mapping(payload: Mapping[str, object], field_name: str) -> Mapping[str, object]:
+    value = payload.get(field_name)
+    if not isinstance(value, dict):
+        raise ValueError(f"{field_name} must be an object")
+    return value
+
+
+def _required_string(payload: Mapping[str, object], field_name: str) -> str:
+    value = payload.get(field_name)
+    if not isinstance(value, str):
+        raise ValueError(f"{field_name} must be a string")
+    return value
+
+
+def _required_int(payload: Mapping[str, object], field_name: str) -> int:
+    value = payload.get(field_name)
+    if type(value) is not int:
+        raise ValueError(f"{field_name} must be an integer")
     return value
 
 

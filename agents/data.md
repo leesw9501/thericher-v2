@@ -1240,3 +1240,20 @@ inventory and readiness receipt. No provider, KIS endpoint, credential,
 collection, cache mutation, raw snapshot opening, or source reinterpretation
 occurred. The next market-time witness remains Data-owned and cannot idle
 Engine preparation.
+
+## Forward Snapshot Dataset Loader (2026-08-01)
+
+Data now provides the smallest value-opening path for the profiled QQQ/SPY
+forward contract. It first reattests every source-safe witness and D:-resident
+raw snapshot hash, then parses only canonical complete M1 sequences in the
+fixed leg order. The loader requires a causal input endpoint at 15:30 ET and
+an outcome endpoint at 15:45 ET; it does not create absent paths, align
+timeframes by row, call a provider, or read credentials.
+
+The 2026-08-01 `local-cache-r3` reattachment has forward contract
+`sha256:a3efe258005365b493121ebb37b4f46dd952471441f6fb8308c6e0df218c1550`
+and inventory identity
+`sha256:d0f9772922ea34d5b79436917cd7b7d6ce8d7e566dcf63053f476fd2d43a9d92`.
+It remains `zero_target_ready`, count zero. That fact limits only the selected
+forward supervised materialization; it does not pause collection recovery or
+any independent Engine/Execution package.

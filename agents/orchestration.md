@@ -886,3 +886,22 @@ same-session causal misreading without adding a new gate.
   or fails in Docker solely because `/app/market_data` is read-only. A changed
   manifest makes the old readiness receipt stale rather than silently eligible.
   Claude timed out as `review_unavailable`; independent work continues.
+
+## Profiled MTF Forward Supervised Dataset Contract (2026-08-01)
+
+- **Ready:** the independent Engine package is complete: a matching forward
+  readiness receipt can now materialize a fixed first-30-pair target dataset
+  with replayable D:-only values. The next ready package is a CPU-first
+  multi-family campaign executor that can be fixture-tested without waiting
+  for a market session.
+- **Owned:** Data owns read-only witness/snapshot verification and forward
+  collection; Engine owns the fixed target/split contract and next campaign
+  implementation; Research Steward owns no GPU appointment yet; Execution has
+  no route change.
+- **Due:** Data's next forward outcome capture remains lane-owned. The current
+  `local-cache-r3` count zero is a scoped materialization input, not foreground
+  idle or a company block.
+- **Improvement:** the new loader differentiates absent, changed, malformed,
+  and time-misaligned snapshots before target opening. This gives the future
+  campaign a reversible, hash-bound input without turning low coverage into a
+  cross-lane approval gate. Claude was `review_unavailable`; no hold follows.

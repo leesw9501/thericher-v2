@@ -2322,3 +2322,31 @@ hash. The host and Docker research container reattached the same `r2` receipt,
 which fixes the prior read-only `/app/market_data` inspection failure without
 weakening integrity checks. Claude timed out as `review_unavailable`; no
 decision, approval, or hold follows.
+
+## Profiled MTF Forward Supervised Dataset Contract (2026-08-01)
+
+`profiled-mtf-forward-supervised-dataset-contract-v1` is complete. Data now
+opens a retained forward snapshot only through a canonical, hash-reattested
+read-only loader. It rejects a missing, changed, malformed, noncanonical, or
+time-misaligned snapshot and creates no paths when the store is absent.
+
+Engine freezes one exact target contract against a matching readiness receipt:
+the first 30 chronological QQQ/SPY pairs, each with two independent M1 legs,
+use `ln(final 15:45 ET completed close / last causal 15:30 ET close)`. The
+pair-level split is frozen before a model sees a target: 20 train, 2 purge, 8
+validation. Target rows and snapshot references can exist only under
+`D:\market_data`; external receipts retain hashes, counts, and fixed semantics
+only. This is not a model, comparative result, PnL, Paper input, or GPU
+appointment.
+
+Fixture materialization verified first-30 ordering, target endpoints,
+pair-level purge, stale readiness rejection, raw snapshot mutation/missing
+rejection, and artifact isolation. The live local reattachment produced the
+source-safe readiness `local-cache-r3` receipt
+`sha256:bb6cc42c83a3b30dff968461528ba01dcf1e56df5eac55540b8e55d926b24a3f`:
+the inventory is still `zero_target_ready`, count zero. The corresponding
+dataset `local-cache-r1` receipt is
+`sha256:7b94db11eaa66c6b253c7dc6b77784faed12b0b79a12153e01e5c3e39d9c8ff3`;
+it contains no target-bearing D: dataset artifact. Claude's requested
+falsification-first check timed out, recorded as `review_unavailable`, not a
+verdict or a hold on the next independent Engine package.

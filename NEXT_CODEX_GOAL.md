@@ -6,61 +6,63 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Build `profiled-mtf-forward-supervised-dataset-contract-v1`: turn a valid
-forward-campaign readiness receipt into the exact first private supervised
-dataset contract for the `short` QQQ/SPY multi-timeframe engine.
+Build `profiled-mtf-forward-cpu-campaign-executor-v1`: the smallest fixed,
+CPU-first research execution path that can consume the D:-only profiled-MTF
+forward supervised dataset when it exists.
 
-This is the first target-opening boundary. It must be deterministic and
-replayable, but its implementation and tests must proceed now even though the
-current real inventory has zero forward target-ready pairs.
+It must turn the already frozen `short` QQQ/SPY input/target/split contract
+into a repeatable candidate comparison without waiting for market time. The
+implementation and fixture evidence proceed now; the current real zero-pair
+result remains scoped input unavailable.
 
 ## Boundaries
 
-- Ask Claude for one concise falsification-first drift check before choosing
-  the target timestamp, chronological selection, or split semantics.
-- Accept only a reattested
-  `ready_for_private_campaign_freeze` readiness receipt whose opaque policy,
-  forward-outcome contract, and inventory identities exactly match current
-  Data evidence. A below-threshold result remains scoped input unavailable and
-  does not block implementation or other lanes.
-- On a ready inventory, select the first 30 target-ready pairs in verified
-  chronological order. For each leg, derive only the predeclared log return
-  from the last completed causal M1 close ending at 15:30 ET to the final
-  completed outcome M1 close ending at 15:45 ET. Do not use a later bar or
-  use row-index alignment across timeframes.
-- Freeze the pair-level `20 train / 2 purge / 8 validation` chronology before
-  any model sees a target. Persist raw/value-bearing dataset material only
-  under `D:\market_data`; persist only hashes, shapes, split counts, and
-  source-safe receipts under `D:\thericher-v2\model-artifacts` or
-  `/app/model_artifacts`.
+- Ask Claude for one concise falsification-first check before freezing the
+  feature representation, candidate family, and evaluation interpretation.
+- Reattest the forward supervised dataset, readiness receipt, snapshot hashes,
+  chronological pair order, and `20/2/8` pair split before any candidate sees
+  a target. A stale/missing/zero dataset must return scoped input unavailable,
+  create no model/GPU artifact, and block only this exact campaign run.
+- Use the fixed `short` causal windows (`1m/5m/10m/1h/3h`) without pretending
+  their rows are timestamp-aligned. Derive features only from completed input
+  bars ending at 15:30 ET; targets remain the already frozen 15:45 ET returns.
+- Start with one CPU-only, predeclared no-trade baseline and a small fixed
+  family of deterministic classical controls. Do not tune after validation,
+  claim profitability/PnL, select a winner, create a Paper intent, or allocate
+  GPU in this objective.
 - Do not call KIS, read `.env` or credentials, use broker/account/order/Paper
-  routes, enable live behavior, expose a service, train a model, allocate GPU,
-  calculate PnL, or add a generic dataset platform.
+  routes, enable live behavior, expose a service, download data, or create a
+  generic campaign platform.
+- Keep target/feature values and any fixture-only materialization under
+  `D:\market_data`; external receipts under
+  `D:\thericher-v2\model-artifacts` contain source-safe hashes, shapes,
+  metrics categories, and status only. Never store generated models in Git.
 
 ## Required Work
 
-1. Data Agent: add the smallest read-only loader for the selected existing
-   forward witnesses and D:-resident snapshots. Reattest every witness and
-   snapshot hash, reject malformed/missing/changed content, and make an absent
-   or insufficient store a recoverable local result without creating paths.
-2. Engine Research: freeze the immutable dataset/target/split contract and a
-   source-safe external receipt. Bind it to the exact readiness receipt and
-   selected snapshot identities; the target-bearing materialization stays only
-   in D: and is not a model, comparative result, or GPU appointment.
-3. Add focused tests for target endpoint timing, chronological first-30
-   selection, pair-level purge, snapshot mutation/missing rejection, stale
-   readiness rejection, external artifact isolation, D:-only value retention,
-   and no credential/network/execution route.
-4. Reattach the real inventory once. If it remains below threshold, report the
-   exact count and leave no target-bearing dataset artifact behind. Update the
-   Engine Research, Research Steward, Data, and orchestration stateboards.
+1. Data/Engine: add the smallest immutable reader for a materialized forward
+   supervised dataset and its referenced snapshots. It must reject D: content
+   mutation, stale receipt binding, missing row/snapshot identity, invalid
+   first-30 ordering, or pair-split drift without creating paths.
+2. Engine Research: freeze one compact CPU campaign contract with its exact
+   causal MTF feature shape, baseline, fixed classical controls, loss/metric
+   interpretation, strongest kill test, and stop rule. Keep all candidate
+   configuration predeclared before the validation pairs are opened.
+3. Add a focused fixture runner that proves deterministic replay, no target
+   leakage into features, pair-level purge exclusion, source-safe external
+   receipt isolation, and no network/credential/execution import. It must
+   produce `input_unavailable` against the real current zero-pair inventory.
+4. Reattach the real local source once. Update Data, Engine Research, Research
+   Steward, and orchestration stateboards. Do not make a GPU custody
+   appointment from this CPU contract.
 
 ## Completion Evidence
 
-- a tested exact target/split contract and replayable fixture materialization;
-- a real local inventory result with no false training or promotion claim;
-- no raw or target values in Git/model artifacts; commit, push, and replace
-  this file with the next single objective.
+- a tested D:-only dataset reader and fixed CPU campaign contract;
+- fixture-only deterministic baseline/control execution with no promotion;
+- a real local zero-or-ready receipt with truthful scoped status;
+- no raw/feature/target/model values in Git or model artifacts; commit, push,
+  and replace this file with the next single objective.
 
 ## Verification
 

@@ -352,11 +352,21 @@ def test_forward_outcome_seals_exact_completed_window_and_retains_raw_only_under
         repo_root=repository,
         contract=contract,
     )
+    catalog = observer.load_kis_mtf_profiled_forward_outcome_snapshot_catalog(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+    )
 
     assert first.outcome == "appended"
     assert duplicate.outcome == "duplicate"
     assert inventory.target_ready_pair_count == 1
     assert inventory.status == "target_ready"
+    assert catalog.inventory == inventory
+    assert len(catalog.snapshots) == 1
+    assert catalog.snapshots[0].input_prefixes[0][-1].end_ts == _cutoff(forward_date)
+    assert catalog.snapshots[0].outcome_end == _outcome_due(forward_date)
     outcome_payloads = [
         json.loads(path.read_text(encoding="utf-8"))
         for path in artifact_root.rglob("mtf-forward-outcomes-v1/**/*.json")
@@ -370,9 +380,25 @@ def test_forward_outcome_seals_exact_completed_window_and_retains_raw_only_under
     raw_bytes = raw_snapshots[0].read_bytes()
     assert _sha256_bytes(raw_bytes) == materialization.witness.raw_snapshot_sha256
     assert "QQQ" in raw_bytes.decode("utf-8")
+    raw_snapshots[0].write_bytes(raw_bytes + b" ")
+    with pytest.raises(ValueError, match="raw snapshot"):
+        observer.load_kis_mtf_profiled_forward_outcome_snapshot_catalog(
+            artifact_root=artifact_root,
+            market_data_root=market_data_root,
+            repo_root=repository,
+            contract=contract,
+        )
+    raw_snapshots[0].write_bytes(raw_bytes)
     raw_snapshots[0].unlink()
     with pytest.raises(ValueError, match="raw snapshot"):
         observer.inspect_kis_mtf_profiled_forward_outcome_inventory(
+            artifact_root=artifact_root,
+            market_data_root=market_data_root,
+            repo_root=repository,
+            contract=contract,
+        )
+    with pytest.raises(ValueError, match="raw snapshot"):
+        observer.load_kis_mtf_profiled_forward_outcome_snapshot_catalog(
             artifact_root=artifact_root,
             market_data_root=market_data_root,
             repo_root=repository,
@@ -396,9 +422,17 @@ def test_empty_forward_outcome_inventory_is_read_only(preflight_binding, tmp_pat
         repo_root=repository,
         contract=contract,
     )
+    catalog = observer.load_kis_mtf_profiled_forward_outcome_snapshot_catalog(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+    )
 
     assert inventory.target_ready_pair_count == 0
     assert inventory.status == "zero_target_ready"
+    assert catalog.inventory == inventory
+    assert catalog.snapshots == ()
     assert not artifact_root.exists()
     assert not market_data_root.exists()
 

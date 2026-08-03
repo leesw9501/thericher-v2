@@ -9,6 +9,7 @@ from collections.abc import Callable, Iterator, Mapping
 from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import UTC, date, datetime, time
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Literal
 from zoneinfo import ZoneInfo
@@ -567,6 +568,102 @@ class KisMtfProfiledForwardOutcomeInventory:
         }
 
 
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledForwardOutcomeSnapshot:
+    """One verified value-bearing raw snapshot retained only under market data."""
+
+    contract_sha256: str
+    session_key_sha256: str
+    input_observation_sha256: str
+    witness_sha256: str
+    raw_snapshot_sha256: str
+    input_prefixes: tuple[tuple[Bar, ...], ...] = field(repr=False)
+    outcome_windows: tuple[tuple[Bar, ...], ...] = field(repr=False)
+
+    def __post_init__(self) -> None:
+        input_prefixes = tuple(tuple(bars) for bars in self.input_prefixes)
+        outcome_windows = tuple(tuple(bars) for bars in self.outcome_windows)
+        if (
+            not all(
+                _is_sha256(value)
+                for value in (
+                    self.contract_sha256,
+                    self.session_key_sha256,
+                    self.input_observation_sha256,
+                    self.witness_sha256,
+                    self.raw_snapshot_sha256,
+                )
+            )
+            or len(input_prefixes) != len(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS)
+            or len(outcome_windows) != len(KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS)
+        ):
+            raise ValueError("forward outcome snapshot identity is invalid")
+        for target_key, inputs, outcomes in zip(
+            KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS,
+            input_prefixes,
+            outcome_windows,
+            strict=True,
+        ):
+            if not inputs or len(outcomes) != KIS_MTF_PROFILED_FORWARD_OUTCOME_BAR_COUNT:
+                raise ValueError("forward outcome snapshot geometry is invalid")
+            _validate_forward_snapshot_sequence(inputs, target_key=target_key)
+            _validate_forward_snapshot_sequence(outcomes, target_key=target_key)
+            if inputs[-1].start_ts + Timeframe.M1.duration != outcomes[0].start_ts:
+                raise ValueError("forward outcome snapshot target boundary is invalid")
+            input_end = (inputs[-1].start_ts + Timeframe.M1.duration).astimezone(_EASTERN)
+            outcome_end = (outcomes[-1].start_ts + Timeframe.M1.duration).astimezone(_EASTERN)
+            if (
+                input_end.date() != outcome_end.date()
+                or input_end.time().replace(tzinfo=None)
+                != KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_CUTOFF
+                or outcome_end.time().replace(tzinfo=None) != time(15, 45)
+            ):
+                raise ValueError("forward outcome snapshot target timing is invalid")
+        outcome_ends = {
+            outcomes[-1].start_ts + Timeframe.M1.duration for outcomes in outcome_windows
+        }
+        if len(outcome_ends) != 1:
+            raise ValueError("forward outcome snapshot legs have different outcome ends")
+        object.__setattr__(self, "input_prefixes", input_prefixes)
+        object.__setattr__(self, "outcome_windows", outcome_windows)
+
+    @property
+    def outcome_end(self) -> datetime:
+        return self.outcome_windows[0][-1].start_ts + Timeframe.M1.duration
+
+
+@dataclass(frozen=True, slots=True)
+class KisMtfProfiledForwardOutcomeSnapshotCatalog:
+    """A read-only chronological catalog of value-bearing target-ready snapshots."""
+
+    contract: KisMtfProfiledForwardOutcomeContract
+    inventory: KisMtfProfiledForwardOutcomeInventory
+    snapshots: tuple[KisMtfProfiledForwardOutcomeSnapshot, ...] = field(repr=False)
+
+    def __post_init__(self) -> None:
+        snapshots = tuple(self.snapshots)
+        if (
+            self.inventory.contract_sha256 != self.contract.contract_sha256
+            or len(snapshots) != self.inventory.target_ready_pair_count
+            or any(
+                snapshot.contract_sha256 != self.contract.contract_sha256
+                for snapshot in snapshots
+            )
+            or tuple(
+                (snapshot.outcome_end, snapshot.session_key_sha256) for snapshot in snapshots
+            )
+            != tuple(
+                sorted(
+                    (snapshot.outcome_end, snapshot.session_key_sha256)
+                    for snapshot in snapshots
+                )
+            )
+            or len({snapshot.session_key_sha256 for snapshot in snapshots}) != len(snapshots)
+        ):
+            raise ValueError("forward outcome snapshot catalog is invalid")
+        object.__setattr__(self, "snapshots", snapshots)
+
+
 def freeze_kis_mtf_profiled_prospective_observer_contract(
     *,
     historical_catalogs: Mapping[str, CatalogedBars],
@@ -1074,42 +1171,109 @@ def inspect_kis_mtf_profiled_forward_outcome_inventory(
 ) -> KisMtfProfiledForwardOutcomeInventory:
     """Expose only replayable target-ready count and opaque manifest identity."""
 
-    root = _existing_forward_outcome_store_root(
+    witnesses = _stored_target_ready_forward_outcome_witnesses(
         artifact_root=Path(artifact_root),
+        repo_root=Path(repo_root),
+        contract=contract,
+    )
+    raw_root = _existing_forward_outcome_raw_snapshot_root(
+        market_data_root=Path(market_data_root),
         repo_root=Path(repo_root),
         contract_sha256=contract.contract_sha256,
     )
-    witness_hashes: list[str] = []
-    if root is not None:
-        outcomes_root = root / "outcomes"
-        if outcomes_root.is_symlink() or not outcomes_root.is_dir():
-            raise ValueError("forward outcome inventory store is malformed")
-        paths = tuple(sorted(outcomes_root.glob("*.json")))
-        raw_root = (
-            _existing_forward_outcome_raw_snapshot_root(
-                market_data_root=Path(market_data_root),
-                repo_root=Path(repo_root),
-                contract_sha256=contract.contract_sha256,
-            )
-            if paths
-            else None
+    if witnesses and raw_root is None:
+        raise ValueError("forward outcome raw snapshot store is missing")
+    for witness in witnesses:
+        _assert_raw_snapshot_hash(
+            destination=raw_root / f"{_storage_key(witness.session_key_sha256)}.json",
+            expected_sha256=witness.raw_snapshot_sha256,
         )
-        for path in paths:
-            existing = _read_existing_forward_outcome_witness(path)
-            if existing is None:
-                continue
-            _, witness = existing
-            if witness.contract_sha256 != contract.contract_sha256:
-                raise ValueError("forward outcome inventory contract changed")
-            if witness.status != "target_ready" or witness.raw_snapshot_sha256 is None:
-                raise ValueError("forward outcome store contains a non-target-ready witness")
-            if raw_root is None:
-                raise ValueError("forward outcome raw snapshot store is missing")
-            _assert_raw_snapshot_hash(
-                destination=raw_root / f"{_storage_key(witness.session_key_sha256)}.json",
-                expected_sha256=witness.raw_snapshot_sha256,
+    return _forward_outcome_inventory_from_witnesses(contract, witnesses)
+
+
+def load_kis_mtf_profiled_forward_outcome_snapshot_catalog(
+    *,
+    artifact_root: Path | str,
+    market_data_root: Path | str,
+    repo_root: Path | str,
+    contract: KisMtfProfiledForwardOutcomeContract,
+) -> KisMtfProfiledForwardOutcomeSnapshotCatalog:
+    """Open verified retained snapshots only after a caller chooses this Data path."""
+
+    witnesses = _stored_target_ready_forward_outcome_witnesses(
+        artifact_root=Path(artifact_root),
+        repo_root=Path(repo_root),
+        contract=contract,
+    )
+    inventory = _forward_outcome_inventory_from_witnesses(contract, witnesses)
+    if not witnesses:
+        return KisMtfProfiledForwardOutcomeSnapshotCatalog(
+            contract=contract,
+            inventory=inventory,
+            snapshots=(),
+        )
+    raw_root = _existing_forward_outcome_raw_snapshot_root(
+        market_data_root=Path(market_data_root),
+        repo_root=Path(repo_root),
+        contract_sha256=contract.contract_sha256,
+    )
+    if raw_root is None:
+        raise ValueError("forward outcome raw snapshot store is missing")
+    snapshots = tuple(
+        _read_forward_outcome_raw_snapshot(
+            destination=raw_root / f"{_storage_key(witness.session_key_sha256)}.json",
+            contract=contract,
+            witness=witness,
+        )
+        for witness in witnesses
+    )
+    return KisMtfProfiledForwardOutcomeSnapshotCatalog(
+        contract=contract,
+        inventory=inventory,
+        snapshots=tuple(
+            sorted(
+                snapshots,
+                key=lambda snapshot: (snapshot.outcome_end, snapshot.session_key_sha256),
             )
-            witness_hashes.append(witness.witness_sha256)
+        ),
+    )
+
+
+def _stored_target_ready_forward_outcome_witnesses(
+    *,
+    artifact_root: Path,
+    repo_root: Path,
+    contract: KisMtfProfiledForwardOutcomeContract,
+) -> tuple[KisMtfProfiledForwardOutcomeWitness, ...]:
+    root = _existing_forward_outcome_store_root(
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+        contract_sha256=contract.contract_sha256,
+    )
+    if root is None:
+        return ()
+    outcomes_root = root / "outcomes"
+    if outcomes_root.is_symlink() or not outcomes_root.is_dir():
+        raise ValueError("forward outcome inventory store is malformed")
+    witnesses: list[KisMtfProfiledForwardOutcomeWitness] = []
+    for path in sorted(outcomes_root.glob("*.json")):
+        existing = _read_existing_forward_outcome_witness(path)
+        if existing is None:
+            continue
+        _, witness = existing
+        if witness.contract_sha256 != contract.contract_sha256:
+            raise ValueError("forward outcome inventory contract changed")
+        if witness.status != "target_ready" or witness.raw_snapshot_sha256 is None:
+            raise ValueError("forward outcome store contains a non-target-ready witness")
+        witnesses.append(witness)
+    return tuple(witnesses)
+
+
+def _forward_outcome_inventory_from_witnesses(
+    contract: KisMtfProfiledForwardOutcomeContract,
+    witnesses: tuple[KisMtfProfiledForwardOutcomeWitness, ...],
+) -> KisMtfProfiledForwardOutcomeInventory:
+    witness_hashes = [witness.witness_sha256 for witness in witnesses]
     manifest = _sha256(
         {
             "contract_sha256": contract.contract_sha256,
@@ -1118,9 +1282,9 @@ def inspect_kis_mtf_profiled_forward_outcome_inventory(
     )
     return KisMtfProfiledForwardOutcomeInventory(
         contract_sha256=contract.contract_sha256,
-        target_ready_pair_count=len(witness_hashes),
+        target_ready_pair_count=len(witnesses),
         target_ready_manifest_sha256=manifest,
-        status="target_ready" if witness_hashes else "zero_target_ready",
+        status="target_ready" if witnesses else "zero_target_ready",
     )
 
 
@@ -1538,6 +1702,204 @@ def _forward_outcome_raw_bar_payload(bar: Bar) -> dict[str, object]:
         "volume": str(bar.volume),
         "complete": bar.complete,
     }
+
+
+def _read_forward_outcome_raw_snapshot(
+    *,
+    destination: Path,
+    contract: KisMtfProfiledForwardOutcomeContract,
+    witness: KisMtfProfiledForwardOutcomeWitness,
+) -> KisMtfProfiledForwardOutcomeSnapshot:
+    """Read one immutable D:-resident target snapshot after hash reattestation."""
+
+    if witness.status != "target_ready" or witness.raw_snapshot_sha256 is None:
+        raise ValueError("forward outcome snapshot witness is not target-ready")
+    if not destination.exists() or destination.is_symlink() or not destination.is_file():
+        raise ValueError("forward outcome raw snapshot is unavailable")
+    try:
+        encoded = destination.read_bytes()
+        payload = json.loads(encoded)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("forward outcome raw snapshot is malformed") from error
+    if (
+        "sha256:" + hashlib.sha256(encoded).hexdigest() != witness.raw_snapshot_sha256
+        or not isinstance(payload, Mapping)
+        or encoded != _canonical_json(payload)
+    ):
+        raise ValueError("forward outcome raw snapshot changed")
+    return _forward_outcome_snapshot_from_raw_payload(
+        payload,
+        contract=contract,
+        witness=witness,
+    )
+
+
+def _forward_outcome_snapshot_from_raw_payload(
+    payload: Mapping[str, object],
+    *,
+    contract: KisMtfProfiledForwardOutcomeContract,
+    witness: KisMtfProfiledForwardOutcomeWitness,
+) -> KisMtfProfiledForwardOutcomeSnapshot:
+    expected_keys = {
+        "schema_version",
+        "kind",
+        "contract_sha256",
+        "observer_contract_sha256",
+        "session_key_sha256",
+        "input_observation_sha256",
+        "input_prefixes",
+        "outcome_windows",
+    }
+    if (
+        set(payload) != expected_keys
+        or payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("kind") != KIS_MTF_PROFILED_FORWARD_OUTCOME_RAW_SNAPSHOT_ID
+        or payload.get("contract_sha256") != contract.contract_sha256
+        or payload.get("observer_contract_sha256") != contract.observer_contract_sha256
+        or payload.get("session_key_sha256") != witness.session_key_sha256
+        or payload.get("input_observation_sha256") != witness.input_observation_sha256
+    ):
+        raise ValueError("forward outcome raw snapshot is invalid")
+    try:
+        input_prefixes = _raw_snapshot_bar_groups(
+            payload.get("input_prefixes"),
+            field_name="input_prefixes",
+        )
+        outcome_windows = _raw_snapshot_bar_groups(
+            payload.get("outcome_windows"),
+            field_name="outcome_windows",
+        )
+        snapshot = KisMtfProfiledForwardOutcomeSnapshot(
+            contract_sha256=contract.contract_sha256,
+            session_key_sha256=witness.session_key_sha256,
+            input_observation_sha256=_required_sha256_payload_field(
+                payload,
+                "input_observation_sha256",
+            ),
+            witness_sha256=witness.witness_sha256,
+            raw_snapshot_sha256=witness.raw_snapshot_sha256,
+            input_prefixes=input_prefixes,
+            outcome_windows=outcome_windows,
+        )
+    except (TypeError, ValueError) as error:
+        raise ValueError("forward outcome raw snapshot is invalid") from error
+    return snapshot
+
+
+def _raw_snapshot_bar_groups(
+    value: object,
+    *,
+    field_name: str,
+) -> tuple[tuple[Bar, ...], ...]:
+    if not isinstance(value, list) or len(value) != len(
+        KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS
+    ):
+        raise ValueError(f"forward outcome raw snapshot {field_name} is invalid")
+    groups: list[tuple[Bar, ...]] = []
+    for raw_group, target_key in zip(
+        value,
+        KIS_MTF_PROFILED_PROSPECTIVE_OBSERVER_TARGET_KEYS,
+        strict=True,
+    ):
+        group = _required_mapping(raw_group)
+        bars = group.get("bars")
+        if set(group) != {"target_key", "bars"} or group.get("target_key") != target_key:
+            raise ValueError(f"forward outcome raw snapshot {field_name} target is invalid")
+        if not isinstance(bars, list):
+            raise ValueError(f"forward outcome raw snapshot {field_name} bars are invalid")
+        groups.append(
+            tuple(
+                _raw_snapshot_bar_from_payload(raw_bar, target_key=target_key)
+                for raw_bar in bars
+            )
+        )
+    return tuple(groups)
+
+
+def _raw_snapshot_bar_from_payload(
+    value: object,
+    *,
+    target_key: str,
+) -> Bar:
+    payload = _required_mapping(value)
+    expected_keys = {
+        "symbol",
+        "market",
+        "timeframe",
+        "start_ts",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "complete",
+    }
+    expected_symbol = target_key.split("/", maxsplit=1)[0]
+    if (
+        set(payload) != expected_keys
+        or payload.get("symbol") != expected_symbol
+        or payload.get("market") != "US"
+        or payload.get("timeframe") != Timeframe.M1.value
+        or type(payload.get("complete")) is not bool
+        or not payload.get("complete")
+    ):
+        raise ValueError("forward outcome raw snapshot bar is invalid")
+    start_ts_value = payload.get("start_ts")
+    decimal_fields = ("open", "high", "low", "close", "volume")
+    if not isinstance(start_ts_value, str) or any(
+        not isinstance(payload.get(field_name), str) for field_name in decimal_fields
+    ):
+        raise ValueError("forward outcome raw snapshot bar is invalid")
+    try:
+        start_ts = require_utc(datetime.fromisoformat(start_ts_value), "start_ts")
+        decimals = {
+            field_name: Decimal(str(payload[field_name])) for field_name in decimal_fields
+        }
+        if (
+            start_ts.isoformat() != start_ts_value
+            or any(
+                str(decimals[field_name]) != payload[field_name]
+                for field_name in decimal_fields
+            )
+        ):
+            raise ValueError("forward outcome raw snapshot bar is noncanonical")
+        return Bar(
+            symbol=expected_symbol,
+            market="US",
+            timeframe=Timeframe.M1,
+            start_ts=start_ts,
+            open=decimals["open"],
+            high=decimals["high"],
+            low=decimals["low"],
+            close=decimals["close"],
+            volume=decimals["volume"],
+            complete=True,
+        )
+    except (InvalidOperation, TypeError, ValueError) as error:
+        raise ValueError("forward outcome raw snapshot bar is invalid") from error
+
+
+def _validate_forward_snapshot_sequence(
+    bars: tuple[Bar, ...],
+    *,
+    target_key: str,
+) -> None:
+    """Keep exact completed M1 chronology without coupling the two symbols by row."""
+
+    expected_symbol = target_key.split("/", maxsplit=1)[0]
+    if (
+        not bars
+        or any(
+            bar.symbol != expected_symbol
+            or bar.market != "US"
+            or bar.timeframe != Timeframe.M1
+            or not bar.complete
+            for bar in bars
+        )
+        or tuple(bar.start_ts for bar in bars)
+        != tuple(bars[0].start_ts + Timeframe.M1.duration * index for index in range(len(bars)))
+    ):
+        raise ValueError("forward outcome snapshot sequence is invalid")
 
 
 def _unavailable_profiles() -> tuple[KisMtfProfiledProspectiveProfileCommitment, ...]:

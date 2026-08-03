@@ -1399,3 +1399,21 @@ permitted snapshot set, derive the predeclared target only after the outcome
 window, and freeze an immutable chronological input contract. That target/
 split boundary needs a fresh Claude falsification-first challenge; no current
 zero-pair result blocks its implementation or other Engine work.
+
+## Profiled MTF Forward Supervised Dataset Contract (2026-08-01)
+
+The first target-opening contract is now frozen and fixture-tested, without
+claiming a trained model. On a matching ready receipt it selects exactly the
+first 30 verified chronological pairs and derives only the two leg-level M1
+log returns from 15:30 ET causal close to 15:45 ET final completed close. It
+freezes the pair order and the `20 train / 2 purge / 8 validation` split before
+any model receives a target; no cross-timeframe row alignment is used.
+
+The `local-cache-r3` Data receipt is below threshold at zero pairs, so the
+actual `local-cache-r1` supervised-dataset receipt is scoped
+`input_unavailable` with zero target rows and no D:-resident dataset file.
+This does not reserve GPU capacity or block target-free/fixture-backed Engine
+work. The next engine package should prepare one CPU-first multi-family
+campaign executor that remains input-unavailable until this exact dataset is
+materialized, rather than retrying a target-free runtime or inventing a
+performance claim.

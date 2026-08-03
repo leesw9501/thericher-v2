@@ -110,12 +110,29 @@ def test_receipt_is_external_idempotent_and_conflicts_on_changed_input(tmp_path:
     )
 
     assert first == duplicate
+    assert (
+        readiness.load_profiled_mtf_forward_campaign_readiness_receipt(
+            first.receipt_path,
+            repo_root=repository,
+        )
+        == first
+    )
     assert first.receipt_path.is_relative_to(artifact_root.resolve())
     text = first.receipt_path.read_text(encoding="utf-8")
     assert '"raw_rows_persisted":false' in text
     assert '"target_values_persisted":false' in text
     assert '"weights_persisted":false' in text
     assert "100.5" not in text
+
+    tampered_path = artifact_root / "tampered.json"
+    tampered_payload = json.loads(text)
+    tampered_payload["readiness"]["target_ready_pair_count"] = 30
+    tampered_path.write_text(json.dumps(tampered_payload), encoding="utf-8")
+    with pytest.raises(ValueError, match="malformed|checksum"):
+        readiness.load_profiled_mtf_forward_campaign_readiness_receipt(
+            tampered_path,
+            repo_root=repository,
+        )
 
     changed = readiness.evaluate_profiled_mtf_forward_campaign_readiness(
         policy,

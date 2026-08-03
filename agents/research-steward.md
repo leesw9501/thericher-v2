@@ -318,3 +318,14 @@ validate the exact private dataset, target timing, split, costs, baseline, kill
 test, and CPU receipt before any CUDA appointment. The readiness threshold is
 therefore a dispatch input for that exact future package, never a utilization
 target or a reason to train on the current zero-pair inventory.
+
+## Profiled MTF Forward Supervised Dataset Contract (2026-08-01)
+
+The supervised target contract now exists as implementation and fixture
+evidence only. Its 30-pair chronology, two-leg 15:30-to-15:45 M1 target, and
+`20/2/8` pair split are pre-model inputs, not a model result, family choice,
+holdout opening, or GPU appointment. The real `local-cache-r3` inventory is
+still zero, and the `local-cache-r1` materializer therefore created no target
+rows or training request. GPU remains unallocated until a new Engine campaign
+freezes the complete CPU-first candidate family, cost/baseline/kill test, and
+compute-stop evidence against an actual materialized dataset.
