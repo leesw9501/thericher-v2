@@ -1241,3 +1241,19 @@ same-session causal misreading without adding a new gate.
 - **Improvement:** exception-class-only categorization makes the next recovery
   diagnostic while preserving the same cache, pacing, token, and observer
   contracts; it does not serialize error text or broaden any external effect.
+
+## Granite TTM Isolated Runtime Preparation (2026-08-04)
+
+- **Ready:** Engine and Infra completed an external-artifact-only Granite TTM
+  structural runtime package. Its dedicated image/venv built while preserving
+  Torch `2.7.0+cu128` and CUDA `12.8`; its acquisition and offline GPU profiles
+  have no KIS, market-data, dashboard, runtime-state, or order surface.
+- **Owned:** Engine owns fixed model integrity and synthetic structural checks.
+  Research Steward owns the CPU-first, one-GPU appointment only after the
+  external manifest passes. Data and Execution are not consumers.
+- **Due:** one credential-free official model acquisition, then its CPU and
+  bounded CUDA structural run, are independently ready. The KIS virtual-Paper
+  canary remains task-owned at 23:35 KST and is not a dependency.
+- **Improvement:** a separate locked virtualenv prevents the Granite resolver
+  from mutating the shared CUDA research or production runtime; source-safe
+  phase receipts retain no tensors, predictions, market rows, or secrets.

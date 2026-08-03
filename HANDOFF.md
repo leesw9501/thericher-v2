@@ -2740,3 +2740,23 @@ identifiers. Focused account, dashboard, and read-only coverage passed `51`
 tests. This establishes read-health only: the next bounded virtual-Paper
 lifecycle package must perform its own fresh account/quote checks and use the
 existing durable-intent and reconciliation path.
+
+## Granite TTM Isolated Runtime Preparation (2026-08-04)
+
+An independent Engine/Infra package is ready without changing any KIS,
+dashboard, or production service path. `granite-tsfm==0.3.1` runs only in a
+dedicated virtualenv layered over the existing Torch `2.7.0+cu128` / CUDA
+`12.8` research image. The code accepts only the official immutable R1 model
+revision and three safe files under
+`D:\thericher-v2\model-artifacts\foundation-models\granite-ttm-r1`; it
+verifies the safetensors hash before a network-disabled synthetic structural
+smoke.
+
+No Granite weights, CPU result, GPU result, market data, label, prediction,
+model-performance result, or Paper input exists yet. The next independent
+Engine action is the credential-free official artifact acquisition, then two
+CPU forwards followed by one CUDA warm-up and sixteen bounded forwards. Any
+integrity, import, shape, timer, or observed 1 GiB memory-gate failure closes
+only this runtime study. A resumed CUDA phase without its same-invocation CPU
+comparator is also a no-result. It never establishes predictive quality or a
+trading claim.

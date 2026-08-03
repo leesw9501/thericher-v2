@@ -59,6 +59,8 @@ def test_granite_runtime_smoke_service_is_offline_gpu_and_artifact_scoped() -> N
     assert "network_mode: none" in service
     assert "read_only: true" in service
     assert "gpus: all" in service
+    assert "cpus: 2.0" in service
+    assert "mem_limit: 2g" in service
     assert "- /tmp" in service
     assert "scripts/run_granite_ttm_r1_runtime_smoke.py" in service
     assert "THERICHER_MODE: off" in service

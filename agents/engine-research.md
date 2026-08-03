@@ -1690,3 +1690,25 @@ It may support only a later independently re-retrieved, isolated
 non-promoting causal runtime study with a new qualified input contract. It is
 not a comparative result, ensemble member, GPU appointment, Paper input, or
 promotion candidate.
+
+## Granite TTM R1 Isolated Runtime Contract (2026-08-04)
+
+The independently re-retrieved official package and model metadata now freeze
+`granite-tsfm==0.3.1`, the 40-character R1 revision, and the root
+`model.safetensors` SHA-256 `30f8d9be...097731`. A dedicated image preserves
+the existing Torch `2.7.0+cu128` and CUDA `12.8` inside a separate virtual
+environment; its package import and explicit
+`TinyTimeMixerForPrediction` loader build checks pass. It never uses an auto
+loader or `trust_remote_code`.
+
+The implementation admits only the three pinned model files into the external
+artifact root, runs a deterministic synthetic 512-step single-channel input,
+then requires two CPU forwards before one CUDA warm-up plus sixteen forwards.
+Both 60-second Linux phase timers plus post-phase elapsed checks, an observed
+1 GiB CUDA peak-memory gate after every warm-up/forward, shape/finiteness, and
+tolerance-only CPU/CUDA comparison in the same invocation are source-safe
+structural conditions. They are runtime stop conditions, not a claim of a
+hardware VRAM partition.
+No weight has been materialized and no CPU or GPU phase has run yet. This is
+runtime evidence only: no market data, labels, target, predictive metric,
+selection, ensemble, Paper input, or promotion claim exists.

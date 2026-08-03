@@ -466,3 +466,19 @@ target-free CPU representation check produced no labels, model, checkpoint,
 prediction, holdout access, candidate selection, or ensemble lineage. The RTX
 4090 remains available for a distinct frozen campaign with qualified inputs;
 the source-local representation preflight is not a CUDA allocation request.
+
+## Granite TTM R1 Runtime-Evidence Custody (2026-08-04)
+
+`granite-ttm-r1-isolated-runtime-smoke-v1` is a source-isolated runtime
+capability contract, not a predictive campaign. It has `holdout_access=none`,
+no market input, labels, split, cost model, baseline, PnL, checkpoint,
+candidate, ensemble, or Paper route. The model artifact and phase receipts are
+external-only; the isolated runtime preserves the existing Torch/CUDA stack.
+
+GPU custody is not yet consumed. The one CPU structural phase must first
+verify the fixed external manifest. Only a completed CPU receipt can appoint
+one bounded RTX 4090 phase with one warm-up plus sixteen forwards, 60 seconds,
+and an observed 1 GiB peak-memory gate. A resumed CUDA path without the same
+invocation's CPU comparator is a terminal no-result, not a structural pass.
+Any manifest, import, shape, finiteness, timeout, or memory-cap failure closes
+this exact runtime lineage without a retry or sealed-evaluation spend.
