@@ -274,6 +274,51 @@ services:
       - ./scripts:/app/scripts:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  granite-ttm-r1-acquisition:
+    image: thericher-v2-granite-ttm-runtime:0.3.1-torch2.7.0-cu128
+    build:
+      context: .
+      target: granite-ttm-runtime
+    profiles: ["granite-ttm-acquisition"]
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/prepare_granite_ttm_r1_model.py
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+      HF_HOME: /tmp/huggingface
+      HUGGINGFACE_HUB_CACHE: /tmp/huggingface/hub
+      HF_HUB_DISABLE_XET: "1"
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    volumes:
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
+  granite-ttm-r1-runtime-smoke:
+    image: thericher-v2-granite-ttm-runtime:0.3.1-torch2.7.0-cu128
+    build:
+      context: .
+      target: granite-ttm-runtime
+    profiles: ["granite-ttm-runtime-smoke"]
+    network_mode: none
+    read_only: true
+    gpus: all
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/run_granite_ttm_r1_runtime_smoke.py
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    volumes:
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-daily-overnight-intraday-state:
     build:
       context: .
