@@ -6,70 +6,62 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Build `profiled-mtf-ragged-sequence-runtime-v1`: turn the existing frozen
-`short` QQQ/SPY `1m/5m/10m/1h/3h` causal controls into one explicit, target-free
-ragged sequence input contract for three candidate architecture families:
-per-timeframe recurrent, causal temporal-convolution, and masked
-cross-timeframe attention runtime paths.
+Build `profiled-mtf-forward-campaign-readiness-v1`: make the next predictive
+research campaign automatically recognizable from Data's existing source-safe
+forward-outcome inventory, without opening any raw snapshot, price, feature,
+return, target, or label.
 
-This is runtime and representation plumbing only. It must advance the eventual
-model engine without claiming a trained predictor, model selection, return,
-PnL, or Paper decision from the current 42-control inventory.
+The engine must be able to continue useful preparation while the Data-owned
+forward collector accumulates sessions. This is a small contract bridge, not a
+second scheduler, generic campaign platform, model, backtest, or Paper route.
 
 ## Boundaries
 
-- Ask Claude for one concise falsification-first drift check before defining
-  cross-timeframe alignment/masking or dispatching CUDA work.
-- Reuse `ProfiledMtfFlattenedControl`, its causal sequence/projection contracts,
-  and the existing local QQQ/SPY runtime inventory. Do not add a provider,
-  source format, KIS call, scheduler, historical evaluation dataset, or generic
-  model platform.
-- Preserve each timeframe's native ordered sequence. Do not silently align
-  rows by index across timeframes or pad missing data without an explicit mask
-  and availability meaning.
-- Run a deterministic CPU-first structural smoke. If its contract and CPU
-  receipt are complete and Docker CUDA is available, run one bounded CUDA
-  structural smoke for the three fixed families. Artifacts and any temporary
-  weights belong only under `D:\thericher-v2\model-artifacts` or
-  `/app/model_artifacts`, never Git.
-- Do not read `.env` or credentials; call KIS; use a broker/account/order route;
-  create a Paper action; enable live behavior; expose a service; calculate a
-  target/return/PnL; or load untrusted public weights.
-- Treat unavailable CUDA, absent source controls, or a failed family as a
-  categorical non-promoting result for that exact runtime attempt. Do not wait
-  or invent a substitute training campaign.
+- Consume only `KisMtfProfiledForwardOutcomeInventory` and its opaque contract
+  and manifest identities. Do not open individual witness files or D:-resident
+  raw snapshots.
+- Freeze the already predeclared initial campaign shape only as readiness
+  metadata: `short` QQQ/SPY pairs, 30 target-ready pairs, `20/2/8` temporal
+  train/purge/validation allocation, 20bp round-trip cost sensitivity,
+  no-trade baseline, blocked-session target-permutation kill test, CPU-first,
+  and a ten-minute maximum CUDA appointment. Do not calculate or inspect
+  outcomes, returns, labels, scores, or PnL.
+- A count below 30 is a scoped `input_unavailable` result, not an approval,
+  scheduler, GPU, Paper, or company-wide hold. At or above 30, emit only a
+  source-safe `ready_for_private_campaign_freeze` receipt; a later goal owns
+  label opening and the distinct frozen predictive campaign.
+- Do not read `.env` or credentials; call KIS; use a broker/account/order
+  route; create a Paper action; enable live behavior; expose a service; add a
+  provider; modify market-data cache; or introduce a generic workflow layer.
+- Artifacts belong only under `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts`, never Git. Do not persist raw values, targets,
+  predictions, weights, or model artifacts.
 
 ## Required Work
 
-1. Engine Research: freeze the smallest canonical ragged-layout contract for
-   `short`: per-timeframe sequence order/lengths, feature width, timestamps or
-   time deltas needed by a mask, pair/leg order, source-control identities, and
-   exact availability rules. Make mismatched, incomplete, future, forged, or
-   post-cutoff controls fail closed before a runtime family can consume them.
-2. Implement three narrow target-free consumers over exactly the same frozen
-   controls: per-timeframe recurrent, causal TCN, and masked attention. Their
-   outputs may be shape/digest/runtime facts only; do not persist predictions,
-   scores, weights, raw features, labels, or values.
-3. Run CPU structural smoke first. Then let Research Steward allocate at most
-   one bounded Docker CUDA appointment only if the CPU receipt matches the
-   exact contract. Record source-safe family/phase/status/count/shape/receipt
-   identities and an explicit no-predictive-claim scope.
-4. Data Agent: reattest only the existing source-safe runtime inventory and
-   report its exact input status. Do not collect, mutate, or reinterpret cache
+1. Engine Research: implement the minimal immutable readiness contract and
+   source-safe external receipt. Bind it to the exact forward-outcome observer
+   contract and opaque target-ready manifest hash; reject forged, inconsistent,
+   malformed, or stale inventory identities.
+2. Data Agent: reattach the existing forward-outcome inventory only and report
+   its categorical readiness. Do not collect, mutate, or reinterpret source
    data. Execution has no work in this objective.
-5. Add focused tests for causal/ragged layout, mask semantics, family parity,
-   CPU-before-CUDA, unavailable-CUDA containment, external artifact isolation,
-   and no credential/network/execution import route. Update Engine Research,
-   Research Steward, Data, and orchestration stateboards.
+3. Add focused tests proving the below-threshold and ready cases, immutable
+   identity binding, malformed-input rejection, external artifact isolation,
+   idempotent receipt behavior, and absence of credential/network/execution
+   routes.
+4. Update Engine Research, Research Steward, Data, and orchestration
+   stateboards with the resulting readiness state. Do not allocate GPU merely
+   for a readiness receipt.
 
 ## Completion Evidence
 
-- one tested target-free ragged sequence contract over the existing five
-  timeframe controls;
-- CPU receipt and, when available, one bounded Docker CUDA receipt for the
-  same contract;
-- source-safe external artifacts only, with no model/predictive/PnL/Paper claim;
-- commit and push, then replace this file with exactly one next objective.
+- one tested source-safe readiness receipt tied to the exact opaque Data
+  inventory;
+- explicit non-blocking behavior below threshold and no target/model/PnL/Paper
+  claim;
+- external-only artifacts, commit, push, and replacement of this file with the
+  next single objective.
 
 ## Verification
 
