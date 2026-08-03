@@ -1924,6 +1924,24 @@ facts under `D:\thericher-v2\model-artifacts`; raw cache rows remain under
 `D:\market_data`. Do not add a second scheduler for this command: the existing
 head collector remains the schedule owner.
 
+### Prospective SPY Virtual-Paper Session Cycle
+
+The existing `thericher-kis-paper-intraday-head` task now invokes
+`kis-paper-prospective-spy-cycle` only after its collector exits successfully.
+The service reuses the `intraday-head` SPY cache and creates a source-safe
+no-intent receipt when the completed-bar capture is unavailable. It reaches
+the existing one-share virtual-Paper canary only for a current frozen `enter`;
+the receipt content supplies the canary identity and the existing canary lock
+serializes retries. It adds no Windows task and does not embed execution in the
+collector process.
+
+The first integration smoke receipts were pre-cutoff no-intent results. Do not
+change the documented `00:31`, `02:31`, `04:31`, or `06:20` KST schedule or the
+baseline's exclusive one-minute validity from this wiring alone. The next
+Data-owned timing probe must measure 15:30 ET completed-bar availability and
+end-to-end collection timing first. A no-intent probe does not need an
+Execution, account, quote, or order call.
+
 ### Static Norgate Development Receipt
 
 To re-attest the already retained static Norgate trial panel and write or verify

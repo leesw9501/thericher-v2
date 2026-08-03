@@ -8948,3 +8948,28 @@ lane, a recurring report, a global stop, or a new approval gate. Claude
 returned `supported-with-limits`; its binding limits are no wall-clock review
 worker, no mandatory write for an unchanged state, and no authority for the
 review to hold a ready lane.
+
+## 2026-08-04 - Couple the prospective SPY receipt to the existing virtual-Paper canary
+
+Decision: append one `kis-paper-prospective-spy-cycle` Docker service to the
+existing `thericher-kis-paper-intraday-head` dispatch after its Data collector
+returns successfully. The service consumes only the existing `intraday-head`
+SPY cache through the canonical prospective capture boundary. It records a
+source-safe no-intent result before any Paper configuration, account, quote,
+or order surface when capture is unavailable, stale, malformed, or abstaining.
+For a current `enter`, it delegates only to the existing one-share
+virtual-Paper canary, whose content-derived receipt identity, virtual-host
+pinning, durable intent, reconciliation, cancellation, and cross-process lock
+remain authoritative. Do not add a Windows task or embed Paper execution in
+the collector.
+
+Reason: the current capture, frozen decision, and tested canary already own
+their respective contracts. A narrow post-collector seam makes their lifecycle
+recoverable without importing historical broad-D1 results or creating a new
+broker abstraction. Pre-cutoff host and isolated Docker smoke runs reached
+only `no_intent/before_decision_cutoff`, so no Paper action occurred. The
+existing 04:31 KST trigger and the baseline's exclusive one-minute validity
+now require a bounded source-time measurement around 15:30 ET before either is
+changed. The architecture challenge was `supported-with-limits`; the final
+route review was `review_unavailable`, neither of which changes standing
+authority.

@@ -1,0 +1,247 @@
+from __future__ import annotations
+
+import json
+from datetime import UTC, datetime
+from pathlib import Path
+from types import SimpleNamespace
+
+import pytest
+
+import thericher_v2.ops.kis_paper_prospective_spy_cycle as cycle
+from thericher_v2.execution.kis_paper_receipt_canary import receipt_canary_run_id
+
+_OBSERVED_AT = datetime(2026, 8, 3, 19, 30, tzinfo=UTC)
+_CANONICAL_RECEIPT = '{"kind":"prospective-spy-observation-receipt-v1","receipt_id":"unit"}'
+
+
+def test_not_ready_capture_never_touches_execution_or_credentials(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    calls: list[object] = []
+
+    def capture(**kwargs: object) -> SimpleNamespace:
+        calls.append(kwargs)
+        return SimpleNamespace(
+            status="not_yet_observed",
+            reason="before_decision_cutoff",
+            receipt=None,
+        )
+
+    def fail_execution(**_kwargs: object) -> None:
+        raise AssertionError("not-ready capture must not touch the execution surface")
+
+    monkeypatch.setattr(cycle, "capture_kis_paper_prospective_spy_observation", capture)
+    monkeypatch.setattr(cycle, "run_kis_paper_prospective_spy_session", fail_execution)
+    artifact_root, repository_root = _roots(tmp_path)
+
+    outcome = cycle.run_kis_paper_prospective_spy_cycle(
+        environment=_NoCredentialEnvironment(),
+        observed_at=_OBSERVED_AT,
+        cache_root=tmp_path / "intraday-head",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "before_decision_cutoff"
+    assert outcome.execution_status is None
+    assert len(calls) == 1
+    payload = json.loads(outcome.evidence_path.read_text(encoding="ascii"))
+    assert payload["capture"] == {
+        "reason_code": "before_decision_cutoff",
+        "status": "not_yet_observed",
+    }
+    assert payload["execution"]["attempted"] is False
+    _assert_safe(payload, artifact_root)
+
+
+def test_captured_receipt_delegates_with_a_digest_derived_canary_identity(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    receipt = SimpleNamespace(canonical_json=lambda: _CANONICAL_RECEIPT)
+    captured_calls: list[dict[str, object]] = []
+    execution_calls: list[dict[str, object]] = []
+
+    def capture(**kwargs: object) -> SimpleNamespace:
+        captured_calls.append(kwargs)
+        return SimpleNamespace(status="captured", reason=None, receipt=receipt)
+
+    def execute(**kwargs: object) -> SimpleNamespace:
+        execution_calls.append(kwargs)
+        return SimpleNamespace(
+            session_id=kwargs["session_id"],
+            status="canary_completed",
+            reason_code="cancelled",
+        )
+
+    monkeypatch.setattr(cycle, "capture_kis_paper_prospective_spy_observation", capture)
+    monkeypatch.setattr(cycle, "run_kis_paper_prospective_spy_session", execute)
+    artifact_root, repository_root = _roots(tmp_path)
+
+    outcome = cycle.run_kis_paper_prospective_spy_cycle(
+        environment={"not": "read"},
+        observed_at=_OBSERVED_AT,
+        cache_root=tmp_path / "intraday-head",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+
+    expected_ref = cycle._receipt_ref(_CANONICAL_RECEIPT)
+    assert outcome.status == "canary_completed"
+    assert outcome.receipt_ref == expected_ref
+    assert outcome.canary_run_id == receipt_canary_run_id(expected_ref)
+    assert captured_calls[0]["cache_root"] == tmp_path / "intraday-head"
+    assert execution_calls == [
+        {
+            "environment": {"not": "read"},
+            "artifact_root": artifact_root.resolve(),
+            "repository_root": repository_root,
+            "state_root": tmp_path / "private",
+            "runtime_projection_path": tmp_path / "runtime" / "projection.json",
+            "paper_account_snapshot_path": tmp_path / "runtime" / "account.json",
+            "emergency_state_path": tmp_path / "emergency" / "state.json",
+            "execution_control_path": tmp_path / "emergency" / "control.json",
+            "execute": True,
+            "cancel_after_submit": True,
+            "now": _OBSERVED_AT,
+            "session_id": f"{outcome.cycle_id}-execution",
+        }
+    ]
+    payload = json.loads(outcome.evidence_path.read_text(encoding="ascii"))
+    assert payload["execution"]["canary_run_id"] == outcome.canary_run_id
+    assert payload["execution"]["single_flight"] == "receipt_canary_state_lock"
+    _assert_safe(payload, artifact_root)
+
+
+def test_repeated_cycle_attempts_share_one_receipt_canary_identity(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    receipt = SimpleNamespace(canonical_json=lambda: _CANONICAL_RECEIPT)
+    canary_ids: list[str] = []
+
+    monkeypatch.setattr(
+        cycle,
+        "capture_kis_paper_prospective_spy_observation",
+        lambda **_kwargs: SimpleNamespace(status="captured", reason=None, receipt=receipt),
+    )
+
+    def execute(**kwargs: object) -> SimpleNamespace:
+        canary_ids.append(receipt_canary_run_id(cycle._receipt_ref(_CANONICAL_RECEIPT)))
+        return SimpleNamespace(
+            session_id=kwargs["session_id"],
+            status="canary_completed",
+            reason_code="cancelled",
+        )
+
+    monkeypatch.setattr(cycle, "run_kis_paper_prospective_spy_session", execute)
+    artifact_root, repository_root = _roots(tmp_path)
+    common = {
+        "environment": {"not": "read"},
+        "cache_root": tmp_path / "intraday-head",
+        "artifact_root": artifact_root,
+        "repository_root": repository_root,
+        "execute": True,
+        "cancel_after_submit": True,
+        **_paths(tmp_path),
+    }
+
+    first = cycle.run_kis_paper_prospective_spy_cycle(observed_at=_OBSERVED_AT, **common)
+    second = cycle.run_kis_paper_prospective_spy_cycle(
+        observed_at=_OBSERVED_AT.replace(microsecond=1), **common
+    )
+
+    assert first.cycle_id != second.cycle_id
+    assert first.receipt_ref == second.receipt_ref
+    assert first.canary_run_id == second.canary_run_id
+    assert canary_ids == [first.canary_run_id, second.canary_run_id]
+
+
+def test_same_cycle_replay_writes_identical_external_evidence(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    monkeypatch.setattr(
+        cycle,
+        "capture_kis_paper_prospective_spy_observation",
+        lambda **_kwargs: SimpleNamespace(
+            status="not_yet_observed",
+            reason="before_decision_cutoff",
+            receipt=None,
+        ),
+    )
+    artifact_root, repository_root = _roots(tmp_path)
+    kwargs = {
+        "environment": _NoCredentialEnvironment(),
+        "observed_at": _OBSERVED_AT,
+        "cache_root": tmp_path / "intraday-head",
+        "artifact_root": artifact_root,
+        "repository_root": repository_root,
+        "execute": True,
+        "cancel_after_submit": True,
+        "cycle_id": "same-cycle",
+        **_paths(tmp_path),
+    }
+
+    first = cycle.run_kis_paper_prospective_spy_cycle(**kwargs)
+    second = cycle.run_kis_paper_prospective_spy_cycle(**kwargs)
+
+    assert second.evidence_path == first.evidence_path
+    assert second.evidence_path.read_bytes() == first.evidence_path.read_bytes()
+
+
+def test_cycle_rejects_artifacts_inside_the_repository(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+
+    with pytest.raises(ValueError, match="outside Git"):
+        cycle.run_kis_paper_prospective_spy_cycle(
+            environment=_NoCredentialEnvironment(),
+            observed_at=_OBSERVED_AT,
+            cache_root=tmp_path / "intraday-head",
+            artifact_root=repository_root / "artifacts",
+            repository_root=repository_root,
+            execute=False,
+            cancel_after_submit=True,
+            **_paths(tmp_path),
+        )
+
+
+class _NoCredentialEnvironment(dict[str, str]):
+    def __getitem__(self, key: str) -> str:
+        raise AssertionError(f"not-ready capture must not read {key}")
+
+    def get(self, key: str, default=None):
+        raise AssertionError(f"not-ready capture must not read {key}")
+
+
+def _roots(tmp_path: Path) -> tuple[Path, Path]:
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    artifact_root.mkdir()
+    repository_root.mkdir()
+    return artifact_root, repository_root
+
+
+def _paths(tmp_path: Path) -> dict[str, Path]:
+    return {
+        "state_root": tmp_path / "private",
+        "runtime_projection_path": tmp_path / "runtime" / "projection.json",
+        "paper_account_snapshot_path": tmp_path / "runtime" / "account.json",
+        "emergency_state_path": tmp_path / "emergency" / "state.json",
+        "execution_control_path": tmp_path / "emergency" / "control.json",
+    }
+
+
+def _assert_safe(payload: dict[str, object], artifact_root: Path) -> None:
+    rendered = json.dumps(payload, ensure_ascii=True, sort_keys=True)
+    for forbidden in (str(artifact_root), "KIS_PAPER_APP_SECRET", "token", "12345678", "500.25"):
+        assert forbidden not in rendered

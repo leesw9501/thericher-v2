@@ -124,6 +124,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "Using verified existing schedule images." in source
     assert "kis-paper-intraday-pair-observation" in source
     assert "profiled-mtf-forward-capture-cycle" in source
+    assert "kis-paper-prospective-spy-cycle" in source
     assert "kis-paper-prospective-qqq-session" not in source
     assert "kis-paper-prospective-qqq-validation" not in source
     assert "kis-paper-intraday-head-receipt" in source

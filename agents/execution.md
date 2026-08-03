@@ -616,3 +616,20 @@ local-paper replay, or Paper submission. It explicitly marks executable and
 Paper eligibility as unevaluated. The next prospective-SPY cycle may use the
 existing separately tested virtual-Paper adapter only from its own current
 frozen observation; this static benchmark cannot cross that boundary.
+
+## Prospective SPY Session-Cycle Execution Handoff (2026-08-04)
+
+The new post-collector cycle calls the existing SPY virtual-Paper adapter only
+after a current immutable observation has been captured. Its no-intent branch
+is tested to avoid Paper configuration, account, quote, and order surfaces.
+For an eligible receipt, the content-derived canary identity and existing
+receipt-canary state lock preserve one virtual-host-pinned, durable,
+reconcilable lifecycle across overlapping retries. The cycle itself does not
+alter size, cancellation, route isolation, or live behavior.
+
+Host and isolated Docker smoke runs occurred before the decision cutoff and
+returned `no_intent/before_decision_cutoff`; Execution was not invoked and no
+Paper request was made. Claude's final route review returned
+`review_unavailable`; that does not change the tested route boundary. The
+next timing probe is Data/Engine-only and must not make account, quote, or
+order calls.

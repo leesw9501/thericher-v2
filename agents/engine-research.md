@@ -1587,3 +1587,18 @@ Breadth queue: do not retune this family or pick the observed 20-session cell.
 The next product package is the separate prospective-SPY session-cycle
 integration, which consumes its own frozen evidence rather than this static
 historical result. Depth and ensemble queues remain empty for this lineage.
+
+## Prospective SPY Session-Cycle Engine Handoff (2026-08-04)
+
+The frozen `prospective-spy-intraday-baseline-v1` remains unchanged: completed
+`1m/5m/10m/1h/3h` tails with the fixed `30/6/3/2/2` lookbacks yield only its
+existing categorical `enter` or abstain decision. The new cycle neither tunes
+the rule nor reads the broad-D1 result, trains a model, selects a candidate,
+opens a holdout, requests GPU, or forms an ensemble.
+
+Its one unresolved consumer fact is causal timing, not model quality: the
+baseline's 15:30 ET decision and exclusive one-minute validity require a
+measured completed-bar availability result at the existing schedule cadence.
+Engine will assess that probe's availability semantics only after Data records
+the source-safe timing evidence; no result may change the baseline or make a
+profitability claim by itself.

@@ -160,9 +160,12 @@ $scheduleObservedAtMarker = $scheduleObservedAt.ToString(
     [System.Globalization.CultureInfo]::InvariantCulture
 )
 
-# This schedule currently owns a data-only observation loop. The legacy QQQ
-# Paper route remains installed for later explicitly scoped work, but is not
-# invoked here: the frozen objective forbids both Paper and local-paper work.
+# The collector is independent from the SPY cycle. The SPY service is dispatched
+# only after collection returns, while the legacy QQQ route remains inactive.
+$prospectiveSpyCycleExitCode = 0
+$prospectiveSpyCycleStatus = "not_applicable"
+$prospectiveSpyCycleId = $null
+$prospectiveSpyCanaryRunId = $null
 $prospectiveLoopExitCode = 0
 $prospectiveLoopStatus = "not_applicable"
 $prospectiveSessionExitCode = 0
@@ -177,6 +180,21 @@ $captureCycleStatus = "not_applicable"
 $observationExitCode = 0
 $observationStatus = "not_applicable"
 if ($collectionExitCode -eq 0) {
+    $prospectiveSpyCycle = Invoke-HeadProfileService `
+        -ProjectRoot $resolvedProjectRoot `
+        -Service "kis-paper-prospective-spy-cycle"
+    $prospectiveSpyCycleExitCode = [int]$prospectiveSpyCycle.ExitCode
+    $prospectiveSpyCycleStatus = Get-ProfileStatus `
+        -Output $prospectiveSpyCycle.Output `
+        -Kind "kis_paper_prospective_spy_cycle" `
+        -AllowedStatuses @("preview", "no_intent", "canary_completed")
+    $prospectiveSpyCyclePayload = Get-ProfilePayload `
+        -Output $prospectiveSpyCycle.Output `
+        -Kind "kis_paper_prospective_spy_cycle"
+    if ($null -ne $prospectiveSpyCyclePayload) {
+        $prospectiveSpyCycleId = $prospectiveSpyCyclePayload.cycle_id
+        $prospectiveSpyCanaryRunId = $prospectiveSpyCyclePayload.execution.canary_run_id
+    }
     $captureCycle = Invoke-HeadProfileService `
         -ProjectRoot $resolvedProjectRoot `
         -Service "profiled-mtf-forward-capture-cycle" `
@@ -229,6 +247,10 @@ $scheduleReceiptCommand = @(
     $scheduleObservedAtMarker,
     "--collection-exit-code",
     [string]$collectionExitCode,
+    "--prospective-spy-cycle-exit-code",
+    [string]$prospectiveSpyCycleExitCode,
+    "--prospective-spy-cycle-status",
+    $prospectiveSpyCycleStatus,
     "--prospective-loop-exit-code",
     [string]$prospectiveLoopExitCode,
     "--prospective-loop-status",
@@ -254,6 +276,12 @@ $scheduleReceiptCommand = @(
     "--repository-root",
     "/app"
 )
+if ($null -ne $prospectiveSpyCycleId) {
+    $scheduleReceiptCommand += @("--prospective-spy-cycle-id", [string]$prospectiveSpyCycleId)
+}
+if ($null -ne $prospectiveSpyCanaryRunId) {
+    $scheduleReceiptCommand += @("--prospective-spy-canary-run-id", [string]$prospectiveSpyCanaryRunId)
+}
 $scheduleReceipt = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `
     -Service "kis-paper-intraday-head-receipt" `
@@ -274,6 +302,8 @@ $terminalExitCode = Get-DispatchTerminalExitCode `
 [ordered]@{
     kind = "kis_paper_intraday_head_schedule"
     collection_exit_code = $collectionExitCode
+    prospective_spy_cycle_exit_code = $prospectiveSpyCycleExitCode
+    prospective_spy_cycle_status = $prospectiveSpyCycleStatus
     prospective_loop_exit_code = $prospectiveLoopExitCode
     prospective_loop_status = $prospectiveLoopStatus
     prospective_session_exit_code = $prospectiveSessionExitCode

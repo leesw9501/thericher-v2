@@ -1424,3 +1424,19 @@ This adapter did not call KIS, read credentials, write a cache, or retain raw
 market values outside the existing D: source. Its static current-listing,
 non-PIT, adjustment, and session-finality limits remain source-local and do
 not qualify the result for ranking or Paper input.
+
+## Prospective SPY Session-Cycle Data Handoff (2026-08-04)
+
+The completed-bar consumer is now explicitly pinned to the existing
+`SPY/AMS/1m` `intraday-head` cache, not the historical cursor. It runs only
+after the independent collector returns and supplies one immutable capture
+receipt to the separate cycle service. A pre-cutoff, missing, incomplete, or
+stale capture is a source-safe no-intent result and does not cause a
+credential, account, quote, or order read.
+
+The bounded host and isolated Docker smoke calls both returned
+`not_yet_observed/before_decision_cutoff`; no raw bars or provider payloads
+left `D:`. The remaining Data-owned fact is the exact availability of the
+15:30 ET completed prefix at the current schedule cadence. It needs a
+session-time capability probe before any cadence, TTL, or source-finality
+claim changes.

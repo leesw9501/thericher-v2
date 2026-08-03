@@ -419,3 +419,11 @@ Its observed 20-session source-local cell does not create a depth request,
 candidate selection, family continuation, ensemble lineage, or Paper claim.
 The RTX 4090 is released for a distinct frozen campaign with a qualified
 input, not for retuning this static benchmark.
+
+## Prospective SPY Session-Cycle Custody (2026-08-04)
+
+The session-cycle integration is deterministic Data/Execution plumbing, not a
+research campaign. It creates no model lineage, sealed-evaluation spend,
+candidate selection, ensemble record, checkpoint, or GPU appointment. The
+RTX 4090 remains available for a separate frozen campaign with qualified
+inputs; it must not be occupied by this timing or route-integration work.

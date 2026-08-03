@@ -27,6 +27,9 @@ _SAFE_ID = re.compile(r"[A-Za-z0-9._-]{1,160}", re.ASCII)
 _LOOP_STATUSES = frozenset({"embedded", "preview", "no_intent", "unavailable", "not_applicable"})
 _SESSION_STATUSES = frozenset({"no_intent", "canary_completed", "unavailable", "not_applicable"})
 _VALIDATION_STATUSES = frozenset({"validated", "not_run", "unavailable", "not_applicable"})
+_SPY_CYCLE_STATUSES = frozenset(
+    {"preview", "no_intent", "canary_completed", "unavailable", "not_applicable"}
+)
 _OBSERVATION_STATUSES = frozenset(
     {
         "pending",
@@ -65,6 +68,10 @@ class KisPaperIntradayHeadScheduleReceipt:
     run_id: str
     observed_at: datetime
     collection_exit_code: int
+    prospective_spy_cycle_exit_code: int
+    prospective_spy_cycle_status: str
+    prospective_spy_cycle_id: str | None
+    prospective_spy_canary_run_id: str | None
     prospective_loop_exit_code: int
     prospective_loop_status: str
     prospective_session_exit_code: int
@@ -93,6 +100,13 @@ class KisPaperIntradayHeadScheduleReceipt:
                 "collection": {
                     "exit_code": self.collection_exit_code,
                     "status": "exit_zero" if self.collection_exit_code == 0 else "exit_nonzero",
+                },
+                "prospective_spy_cycle": {
+                    "exit_code": self.prospective_spy_cycle_exit_code,
+                    "status": self.prospective_spy_cycle_status,
+                    "cycle_id": self.prospective_spy_cycle_id,
+                    "canary_run_id": self.prospective_spy_canary_run_id,
+                    "collector_process_separate": True,
                 },
                 "prospective_loop": {
                     "exit_code": self.prospective_loop_exit_code,
@@ -143,6 +157,10 @@ def write_kis_paper_intraday_head_schedule_receipt(
     *,
     run_id: str,
     collection_exit_code: int,
+    prospective_spy_cycle_exit_code: int,
+    prospective_spy_cycle_status: str,
+    prospective_spy_cycle_id: str | None,
+    prospective_spy_canary_run_id: str | None,
     prospective_loop_exit_code: int,
     prospective_loop_status: str,
     prospective_session_exit_code: int,
@@ -162,14 +180,15 @@ def write_kis_paper_intraday_head_schedule_receipt(
     """Write a terminal receipt without retaining provider, account, or order data.
 
     The collection process remains the authority for its own exit code. A
-    data-only dispatch can mark the legacy QQQ execution stages
-    ``not_applicable`` while it publishes a credential-free pair observation.
-    Older execution receipts retain their original allowlisted terminal rules.
+    The newer SPY cycle is a separately dispatched post-collection stage. The
+    legacy QQQ branch may remain ``not_applicable`` while the data-only pair
+    observation continues to publish its own credential-free fact.
     """
 
     _require_safe_id(run_id, "run id")
     _require_exit_codes(
         collection_exit_code,
+        prospective_spy_cycle_exit_code,
         prospective_loop_exit_code,
         prospective_session_exit_code,
         prospective_validation_exit_code,
@@ -179,9 +198,12 @@ def write_kis_paper_intraday_head_schedule_receipt(
     _require_status(prospective_loop_status, _LOOP_STATUSES, "prospective loop")
     _require_status(prospective_session_status, _SESSION_STATUSES, "prospective session")
     _require_status(prospective_validation_status, _VALIDATION_STATUSES, "prospective validation")
+    _require_status(prospective_spy_cycle_status, _SPY_CYCLE_STATUSES, "prospective SPY cycle")
     _require_status(observation_status, _OBSERVATION_STATUSES, "observation")
     _require_status(capture_cycle_status, _CAPTURE_CYCLE_STATUSES, "capture cycle")
     _require_optional_safe_id(prospective_session_id, "prospective session id")
+    _require_optional_safe_id(prospective_spy_cycle_id, "prospective SPY cycle id")
+    _require_optional_safe_id(prospective_spy_canary_run_id, "prospective SPY canary run id")
     _require_optional_safe_id(
         prospective_validation_session_id,
         "prospective validation session id",
@@ -189,6 +211,10 @@ def write_kis_paper_intraday_head_schedule_receipt(
 
     terminal_status, recovery_class, scheduler_exit_code = _terminal_outcome(
         collection_exit_code=collection_exit_code,
+        prospective_spy_cycle_exit_code=prospective_spy_cycle_exit_code,
+        prospective_spy_cycle_status=prospective_spy_cycle_status,
+        prospective_spy_cycle_id=prospective_spy_cycle_id,
+        prospective_spy_canary_run_id=prospective_spy_canary_run_id,
         prospective_loop_exit_code=prospective_loop_exit_code,
         prospective_loop_status=prospective_loop_status,
         prospective_session_exit_code=prospective_session_exit_code,
@@ -207,6 +233,10 @@ def write_kis_paper_intraday_head_schedule_receipt(
         run_id=run_id,
         observed_at=require_utc(observed_at, "observed_at"),
         collection_exit_code=collection_exit_code,
+        prospective_spy_cycle_exit_code=prospective_spy_cycle_exit_code,
+        prospective_spy_cycle_status=prospective_spy_cycle_status,
+        prospective_spy_cycle_id=prospective_spy_cycle_id,
+        prospective_spy_canary_run_id=prospective_spy_canary_run_id,
         prospective_loop_exit_code=prospective_loop_exit_code,
         prospective_loop_status=prospective_loop_status,
         prospective_session_exit_code=prospective_session_exit_code,
@@ -233,6 +263,10 @@ def write_kis_paper_intraday_head_schedule_receipt(
 def _terminal_outcome(
     *,
     collection_exit_code: int,
+    prospective_spy_cycle_exit_code: int,
+    prospective_spy_cycle_status: str,
+    prospective_spy_cycle_id: str | None,
+    prospective_spy_canary_run_id: str | None,
     prospective_loop_exit_code: int,
     prospective_loop_status: str,
     prospective_session_exit_code: int,
@@ -248,6 +282,15 @@ def _terminal_outcome(
 ) -> tuple[str, str, int]:
     if collection_exit_code != 0:
         return "recovery", "collection_exit_nonzero", collection_exit_code
+
+    spy_cycle_recovery = _prospective_spy_cycle_recovery_class(
+        prospective_spy_cycle_exit_code=prospective_spy_cycle_exit_code,
+        prospective_spy_cycle_status=prospective_spy_cycle_status,
+        prospective_spy_cycle_id=prospective_spy_cycle_id,
+        prospective_spy_canary_run_id=prospective_spy_canary_run_id,
+    )
+    if spy_cycle_recovery is not None:
+        return "recovery", spy_cycle_recovery, SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
 
     recovery_class = _first_downstream_recovery_class(
         prospective_loop_exit_code=prospective_loop_exit_code,
@@ -275,6 +318,29 @@ def _terminal_outcome(
                 return "recovery", capture_recovery, SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
         return "complete", "complete", 0
     return "recovery", recovery_class, SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
+
+
+def _prospective_spy_cycle_recovery_class(
+    *,
+    prospective_spy_cycle_exit_code: int,
+    prospective_spy_cycle_status: str,
+    prospective_spy_cycle_id: str | None,
+    prospective_spy_canary_run_id: str | None,
+) -> str | None:
+    if prospective_spy_cycle_exit_code != 0:
+        return "prospective_spy_cycle_exit_nonzero"
+    if prospective_spy_cycle_status == "not_applicable":
+        return None
+    if prospective_spy_cycle_status not in {"preview", "no_intent", "canary_completed"}:
+        return "prospective_spy_cycle_payload_unavailable"
+    if prospective_spy_cycle_id is None:
+        return "prospective_spy_cycle_id_unavailable"
+    if (
+        prospective_spy_cycle_status == "canary_completed"
+        and prospective_spy_canary_run_id is None
+    ):
+        return "prospective_spy_canary_run_id_unavailable"
+    return None
 
 
 def _first_downstream_recovery_class(
@@ -439,6 +505,10 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--collection-exit-code", type=int, required=True)
+    parser.add_argument("--prospective-spy-cycle-exit-code", type=int, required=True)
+    parser.add_argument("--prospective-spy-cycle-status", required=True)
+    parser.add_argument("--prospective-spy-cycle-id")
+    parser.add_argument("--prospective-spy-canary-run-id")
     parser.add_argument("--prospective-loop-exit-code", type=int, required=True)
     parser.add_argument("--prospective-loop-status", required=True)
     parser.add_argument("--prospective-session-exit-code", type=int, required=True)
@@ -466,6 +536,10 @@ def main(argv: Sequence[str] | None = None) -> None:
     result = write_kis_paper_intraday_head_schedule_receipt(
         run_id=args.run_id,
         collection_exit_code=args.collection_exit_code,
+        prospective_spy_cycle_exit_code=args.prospective_spy_cycle_exit_code,
+        prospective_spy_cycle_status=args.prospective_spy_cycle_status,
+        prospective_spy_cycle_id=args.prospective_spy_cycle_id,
+        prospective_spy_canary_run_id=args.prospective_spy_canary_run_id,
         prospective_loop_exit_code=args.prospective_loop_exit_code,
         prospective_loop_status=args.prospective_loop_status,
         prospective_session_exit_code=args.prospective_session_exit_code,

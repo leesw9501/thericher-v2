@@ -42,6 +42,13 @@ def test_schedule_receipt_writes_a_complete_source_safe_no_intent_outcome(tmp_pa
         "scheduler_exit_code": 0,
         "status": "complete",
     }
+    assert payload["stages"]["prospective_spy_cycle"] == {
+        "canary_run_id": None,
+        "collector_process_separate": True,
+        "cycle_id": "prospective-spy-cycle-unit",
+        "exit_code": 0,
+        "status": "no_intent",
+    }
     assert payload["stages"]["prospective_loop"] == {
         "exit_code": 0,
         "status": "embedded",
@@ -124,6 +131,46 @@ def test_schedule_receipt_preserves_the_collection_exit_code(tmp_path: Path) -> 
     assert result.terminal_status == "recovery"
     assert result.recovery_class == "collection_exit_nonzero"
     assert result.scheduler_exit_code == 13
+
+
+@pytest.mark.parametrize(
+    ("overrides", "expected_recovery_class"),
+    [
+        ({"prospective_spy_cycle_exit_code": 7}, "prospective_spy_cycle_exit_nonzero"),
+        (
+            {"prospective_spy_cycle_status": "unavailable"},
+            "prospective_spy_cycle_payload_unavailable",
+        ),
+        ({"prospective_spy_cycle_id": None}, "prospective_spy_cycle_id_unavailable"),
+        (
+            {
+                "prospective_spy_cycle_status": "canary_completed",
+                "prospective_spy_canary_run_id": None,
+            },
+            "prospective_spy_canary_run_id_unavailable",
+        ),
+    ],
+)
+def test_schedule_receipt_marks_prospective_spy_cycle_faults_for_recovery(
+    tmp_path: Path,
+    overrides: dict[str, object],
+    expected_recovery_class: str,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    kwargs = _complete_kwargs()
+    kwargs.update(overrides)
+
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **kwargs,
+        artifact_root=tmp_path / "model-artifacts",
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    assert result.terminal_status == "recovery"
+    assert result.recovery_class == expected_recovery_class
+    assert result.scheduler_exit_code == SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
 
 
 def test_schedule_receipt_is_idempotent_for_one_run_id_and_timestamp(tmp_path: Path) -> None:
@@ -324,10 +371,35 @@ def test_compose_capture_cycle_service_is_offline_and_has_no_kis_surface() -> No
     assert "/app/model_artifacts" in section
 
 
+def test_compose_prospective_spy_cycle_has_only_the_virtual_paper_route() -> None:
+    compose = _COMPOSE.read_text(encoding="ascii")
+    section = compose.split("\n  kis-paper-prospective-spy-cycle:\n", maxsplit=1)[1].split(
+        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
+    )[0]
+    lowered = section.lower()
+
+    assert 'profiles: ["kis-paper-intraday-head"]' in section
+    assert "thericher_v2.ops.kis_paper_prospective_spy_cycle" in section
+    assert "--execute" in section
+    assert "--cancel-after-submit" in section
+    assert "THERICHER_MODE: kis_paper" in section
+    assert "KIS_PAPER_APP_KEY" in section
+    assert "KIS_PAPER_ACCOUNT_NO" in section
+    assert "KIS_LIVE" not in section
+    assert "gpus:" not in section
+    assert ":/app/market_data:ro" in section
+    assert ":/app/model_artifacts" in section
+    assert "network_mode: none" not in lowered
+
+
 def _complete_kwargs() -> dict[str, object]:
     return {
         "run_id": "intraday-head-unit",
         "collection_exit_code": 0,
+        "prospective_spy_cycle_exit_code": 0,
+        "prospective_spy_cycle_status": "no_intent",
+        "prospective_spy_cycle_id": "prospective-spy-cycle-unit",
+        "prospective_spy_canary_run_id": None,
         "prospective_loop_exit_code": 0,
         "prospective_loop_status": "embedded",
         "prospective_session_exit_code": 0,

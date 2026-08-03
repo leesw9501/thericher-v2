@@ -11,14 +11,18 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     source = SCRIPT.read_text(encoding="ascii")
 
     collection_call = ' -Service "kis-paper-intraday-head"'
+    spy_cycle_call = ' -Service "kis-paper-prospective-spy-cycle"'
     capture_call = ' -Service "profiled-mtf-forward-capture-cycle"'
     observation_call = ' -Service "kis-paper-intraday-pair-observation"'
     receipt_call = ' -Service "kis-paper-intraday-head-receipt"'
     assert "--profile kis-paper-intraday-head" in source
     assert "run --rm --no-deps --pull never $Service" in source
     assert collection_call in source
+    assert spy_cycle_call in source
     assert capture_call in source
     assert observation_call in source
+    assert source.index(collection_call) < source.index(spy_cycle_call)
+    assert source.index(spy_cycle_call) < source.index(capture_call)
     assert source.index(collection_call) < source.index(observation_call)
     assert source.index(collection_call) < source.index(capture_call)
     assert source.index(capture_call) < source.index(observation_call)
@@ -40,6 +44,9 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "prospective_session_status" in source
     assert "prospective_validation_exit_code" in source
     assert "prospective_validation_status" in source
+    assert "prospective_spy_cycle_exit_code" in source
+    assert "prospective_spy_cycle_status" in source
+    assert "$prospectiveSpyCycleStatus = \"not_applicable\"" in source
     assert "observation_exit_code" in source
     assert "observation_status" in source
     assert "capture_cycle_exit_code" in source

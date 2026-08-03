@@ -2551,3 +2551,40 @@ completed-bar observation, frozen baseline, and virtual-Paper adapter in one
 idempotent session-cycle. It must not reuse this historical result or wait in
 the foreground for a market session. The optional Claude direction challenge
 timed out as `review_unavailable`, not agreement or a hold.
+
+## Prospective SPY Paper Session Cycle (2026-08-04)
+
+`prospective-spy-paper-session-cycle-v1` is complete. The existing
+Data-owned SPY completed-bar capture now feeds a separate, post-collector
+cycle service. A capture that is missing, incomplete, stale, outside its time
+window, or abstaining writes only a source-safe no-intent receipt and does not
+load Paper configuration or touch account, quote, or order routes. A captured
+immutable receipt receives its durable canary identity from its content hash;
+the pre-existing virtual-Paper canary lock serializes retries and reconciles
+an uncertain prior submission before another submit. The collector and the
+Paper-capable service remain separate processes, and no new Windows task was
+introduced.
+
+Host and isolated Docker smoke runs before the decision cutoff both completed
+as `no_intent/before_decision_cutoff`; neither reached Execution nor made a
+KIS account, quote, or order call. The final Claude route review timed out as
+`review_unavailable`, which is evidence about that review only, not agreement
+or a hold. No current eligible `enter`, Paper submission, live route, model
+training, GPU appointment, PnL result, or historical broad-D1 reuse occurred.
+
+The next objective is a bounded Data/Engine timing probe around the SPY 15:30
+ET decision boundary. It must measure completed-bar availability and
+end-to-end collector timing before changing the existing 04:31 KST trigger or
+the strict one-minute execution-validity contract. It makes no Paper account,
+quote, or order call, and the schedule continues independently.
+
+Verification for this integration: the changed-path serial group passed
+`62` tests, Ruff and all required Compose configurations passed, and the
+clean-root parallel authority suite passed `2,373` tests with `23` skips in
+188.50 seconds. A diagnostic full serial `pytest -q` attempt collected all
+2,396 tests but exceeded the host's 15-minute command limit; it left no pytest
+process behind. The last completed serial baseline is still within its weekly
+diagnostic interval, so this is a test-throughput finding rather than a route
+or product failure. Keep the clean-root parallel runner as the goal-boundary
+authority and investigate the serial runtime only as a separately bounded
+throughput package.

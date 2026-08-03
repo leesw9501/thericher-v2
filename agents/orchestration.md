@@ -1055,3 +1055,41 @@ same-session causal misreading without adding a new gate.
   cost double-divisor, which was corrected before the final receipt. The
   optional next-direction prompt timed out as `review_unavailable`; it is not
   agreement, a hold, or an authority change.
+
+## Prospective SPY Session-Cycle Integration (2026-08-04)
+
+- **Ready:** the Data-to-virtual-Paper cycle is implemented and host/Docker
+  smoke-tested as pre-cutoff `no_intent`. The next single company package is a
+  bounded completed-bar decision-timing probe; it does not wait in the
+  foreground for the next market session.
+- **Owned:** Data owns KIS minute availability and collector timing; Engine
+  owns causal interpretation of the fixed baseline's validity; Execution owns
+  the unchanged virtual canary but is not invoked by the probe. Research
+  Steward keeps GPU unallocated because this is not an eligible campaign.
+- **Due:** the existing intraday-head scheduler owns the next regular-session
+  invocation. A source-safe probe receipt, rather than a calendar assumption,
+  determines whether the 04:31 KST timing and exclusive one-minute validity
+  can coexist.
+- **Improvement:** the separate post-collector Docker service binds one
+  content-derived receipt identity to the pre-existing canary single-flight
+  lock without creating a second Windows task or embedding execution in the
+  Data collector.
+- **Review:** the architecture challenge was `supported-with-limits`; the
+  final route review timed out as `review_unavailable`. Neither result creates
+  an approval hold, and no eligible Paper submission occurred.
+
+## Verification Throughput Fact (2026-08-04)
+
+- **Ready:** the current integration has focused serial and full clean-root
+  parallel evidence. The next product package remains the completed-bar timing
+  probe, not a foreground test wait.
+- **Owned:** the test runner owns its temporary root; no role owns a lingering
+  pytest process. A future Infrastructure/Throughput assignment may isolate
+  the full serial runtime without changing product behavior.
+- **Due:** the full serial diagnostic is not due again before its weekly
+  interval or a material live-route promotion. It exceeded the host's
+  15-minute command cap after collecting 2,396 tests; no child remained.
+- **Improvement:** retain the existing clean-root file-distributed authority
+  runner. It completed `2,373 passed, 23 skipped` in 188.50 seconds while the
+  changed-path serial group passed independently. This is an evidence-backed
+  verification path, not a relaxation of execution tests.
