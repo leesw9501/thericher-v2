@@ -41,6 +41,14 @@ _NOT_EXECUTED_EXIT = 2
 _PREFLIGHT_CACHE_CURRENT_EXIT = 0
 _PREFLIGHT_COLLECTION_REQUIRED_EXIT = 10
 _RECOVERY_EXIT = 20
+_COLLECTOR_UNAVAILABLE_REASONS = frozenset(
+    {
+        "nas_forward_cache_unavailable",
+        "nas_forward_market_data_unavailable",
+        "nas_forward_collector_unavailable",
+        "nas_forward_runtime_unavailable",
+    }
+)
 
 
 def main(
@@ -148,12 +156,12 @@ def _run_credentialed_collection(
         KisPaperDailyNasForwardError,
         OSError,
         ValueError,
-    ):
+    ) as error:
         return _emit_source_safe_receipt(
             artifact_root=artifact_root,
             repository_root=repository_root,
             observed_at=observed_at,
-            payload=_collector_unavailable_payload(observed_at),
+            payload=_collector_unavailable_payload(observed_at, error=error),
             exit_code=_RECOVERY_EXIT,
         )
     return _emit_source_safe_receipt(
@@ -332,10 +340,14 @@ def _preflight_unavailable_payload(
     }
 
 
-def _collector_unavailable_payload(observed_at: datetime) -> dict[str, object]:
+def _collector_unavailable_payload(
+    observed_at: datetime,
+    *,
+    error: BaseException,
+) -> dict[str, object]:
     return {
         "status": "unavailable",
-        "reason": "nas_forward_collection_unavailable",
+        "reason": _collector_unavailable_reason(error),
         "observed_at_bucket": observed_at.strftime("%Y-%m-%dT%H:00Z"),
         "recovery": "reconcile",
         "raw_rows_in_payload": False,
@@ -343,6 +355,18 @@ def _collector_unavailable_payload(observed_at: datetime) -> dict[str, object]:
         "account_or_order_data_in_payload": False,
         "route_isolation": _route_isolation_payload(),
     }
+
+
+def _collector_unavailable_reason(error: BaseException) -> str:
+    """Classify the failure boundary without inspecting exception contents."""
+
+    if isinstance(error, KisPaperDailyNasForwardCacheError):
+        return "nas_forward_cache_unavailable"
+    if isinstance(error, KisPaperMarketDataError):
+        return "nas_forward_market_data_unavailable"
+    if isinstance(error, KisPaperDailyNasForwardError):
+        return "nas_forward_collector_unavailable"
+    return "nas_forward_runtime_unavailable"
 
 
 def _route_isolation_payload() -> dict[str, bool]:

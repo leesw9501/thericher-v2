@@ -12,6 +12,8 @@ from types import SimpleNamespace
 import pytest
 
 from thericher_v2.data.kis_paper_daily_nas_forward_cache import KisPaperDailyNasForwardCacheError
+from thericher_v2.execution.kis_market_data import KisPaperMarketDataError
+from thericher_v2.execution.kis_paper_daily_nas_forward import KisPaperDailyNasForwardError
 
 
 def test_requires_explicit_execute_before_loading_market_data_configuration(
@@ -173,6 +175,65 @@ def test_partial_collection_returns_recovery_exit_before_the_scheduler_can_obser
 
     assert exit_code == 20
     assert emitted["payload"] == {"status": "partial"}
+
+
+@pytest.mark.parametrize(
+    ("error", "expected_reason"),
+    [
+        (
+            KisPaperDailyNasForwardCacheError("opaque-cache-marker"),
+            "nas_forward_cache_unavailable",
+        ),
+        (
+            KisPaperMarketDataError("opaque-provider-body-marker"),
+            "nas_forward_market_data_unavailable",
+        ),
+        (
+            KisPaperDailyNasForwardError("opaque-collector-marker"),
+            "nas_forward_collector_unavailable",
+        ),
+        (OSError("opaque-runtime-marker"), "nas_forward_runtime_unavailable"),
+        (ValueError("opaque-value-marker"), "nas_forward_runtime_unavailable"),
+    ],
+)
+def test_credentialed_collection_uses_only_allowlisted_failure_categories(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    error: BaseException,
+    expected_reason: str,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+
+    monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", lambda: object())
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_kwargs: object())
+
+    def fail_collection(*_args: object, **_kwargs: object) -> object:
+        raise error
+
+    monkeypatch.setattr(script, "collect_kis_paper_daily_nas_forward_once", fail_collection)
+    monkeypatch.setattr(
+        script,
+        "_write_source_safe_receipt",
+        lambda **kwargs: emitted.update(kwargs) or "sha256:" + "a" * 64,
+    )
+
+    exit_code = script._run_credentialed_collection(  # noqa: SLF001
+        cache_root=tmp_path / "cache",
+        control_root=tmp_path / "control",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repository",
+        frozen_boundary=datetime(2026, 7, 24, tzinfo=UTC).date(),
+        observed_at=datetime(2026, 7, 29, tzinfo=UTC),
+    )
+
+    payload = emitted["payload"]
+    assert isinstance(payload, dict)
+    assert exit_code == 20
+    assert payload["reason"] == expected_reason
+    assert payload["reason"] in script._COLLECTOR_UNAVAILABLE_REASONS
+    assert "nas_forward_collection_unavailable" not in json.dumps(payload)
+    assert str(error) not in json.dumps(payload)
 
 
 def test_compose_profile_splits_credentialed_collection_from_uncredentialed_preflight() -> None:
