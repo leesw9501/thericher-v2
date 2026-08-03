@@ -91,6 +91,29 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  chronos-t5-tiny-acquisition:
+    build:
+      context: .
+      target: research
+    profiles: ["research-acquisition"]
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/prepare_chronos_t5_tiny_model.py
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+      HF_HOME: /tmp/huggingface
+      HUGGINGFACE_HUB_CACHE: /tmp/huggingface/hub
+      HF_HUB_DISABLE_XET: "1"
+      HF_HUB_DISABLE_TELEMETRY: "1"
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-daily-overnight-intraday-state:
     build:
       context: .
@@ -161,6 +184,27 @@ services:
       - ./src:/app/src:ro
       - ./scripts:/app/scripts:ro
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
+  profiled-mtf-forward-capture-cycle:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-paper-intraday-head"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/run_profiled_mtf_forward_capture_cycle.py
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
   kis-readonly:

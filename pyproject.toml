@@ -19,6 +19,7 @@ dev = [
   "scikit-learn>=1.7,<2",
 ]
 research = [
+  "chronos-forecasting==2.2.2",
   "numpy>=2.0",
   "pandas>=2.2",
   "scikit-learn>=1.7,<2",

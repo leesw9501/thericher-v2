@@ -153,6 +153,12 @@ $collection = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `
     -Service "kis-paper-intraday-head"
 $collectionExitCode = [int]$collection.ExitCode
+$scheduleObservedAt = (Get-Date).ToUniversalTime()
+$scheduleRunId = New-ScheduleRunId -ObservedAt $scheduleObservedAt
+$scheduleObservedAtMarker = $scheduleObservedAt.ToString(
+    "o",
+    [System.Globalization.CultureInfo]::InvariantCulture
+)
 
 # This schedule currently owns a data-only observation loop. The legacy QQQ
 # Paper route remains installed for later explicitly scoped work, but is not
@@ -166,9 +172,35 @@ $prospectiveValidationExitCode = 0
 $prospectiveValidationStatus = "not_applicable"
 $prospectiveValidationSessionId = $null
 
+$captureCycleExitCode = 0
+$captureCycleStatus = "not_applicable"
 $observationExitCode = 0
 $observationStatus = "not_applicable"
 if ($collectionExitCode -eq 0) {
+    $captureCycle = Invoke-HeadProfileService `
+        -ProjectRoot $resolvedProjectRoot `
+        -Service "profiled-mtf-forward-capture-cycle" `
+        -CommandOverride @(
+            "python",
+            "scripts/run_profiled_mtf_forward_capture_cycle.py",
+            "--observed-at",
+            $scheduleObservedAtMarker
+        )
+    $captureCycleExitCode = [int]$captureCycle.ExitCode
+    $captureCycleStatus = Get-ProfileStatus `
+        -Output $captureCycle.Output `
+        -Kind "profiled-mtf-forward-capture-cycle-v1" `
+        -AllowedStatuses @(
+            "outside_cycle_slot",
+            "observed",
+            "duplicate",
+            "conflict",
+            "input_unavailable",
+            "outcome_unavailable",
+            "input_mutated",
+            "appended",
+            "busy"
+        )
     $pairObservation = Invoke-HeadProfileService `
         -ProjectRoot $resolvedProjectRoot `
         -Service "kis-paper-intraday-pair-observation"
@@ -187,13 +219,6 @@ if ($collectionExitCode -eq 0) {
             "busy"
         )
 }
-
-$scheduleObservedAt = (Get-Date).ToUniversalTime()
-$scheduleRunId = New-ScheduleRunId -ObservedAt $scheduleObservedAt
-$scheduleObservedAtMarker = $scheduleObservedAt.ToString(
-    "o",
-    [System.Globalization.CultureInfo]::InvariantCulture
-)
 $scheduleReceiptCommand = @(
     "python",
     "-m",
@@ -220,6 +245,10 @@ $scheduleReceiptCommand = @(
     [string]$observationExitCode,
     "--observation-status",
     $observationStatus,
+    "--capture-cycle-exit-code",
+    [string]$captureCycleExitCode,
+    "--capture-cycle-status",
+    $captureCycleStatus,
     "--artifact-root",
     "/app/model_artifacts",
     "--repository-root",
@@ -253,6 +282,8 @@ $terminalExitCode = Get-DispatchTerminalExitCode `
     prospective_validation_status = $prospectiveValidationStatus
     observation_exit_code = $observationExitCode
     observation_status = $observationStatus
+    capture_cycle_exit_code = $captureCycleExitCode
+    capture_cycle_status = $captureCycleStatus
     schedule_receipt_exit_code = $scheduleReceiptExitCode
     schedule_receipt_status = $scheduleReceiptStatus
     terminal_exit_code = $terminalExitCode

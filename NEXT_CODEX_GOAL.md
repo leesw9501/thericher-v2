@@ -6,70 +6,72 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Build `forward-capture-and-broad-model-cadence-v1`: make the existing KIS
-intraday-head collection deliver the new profiled-MTF forward capture at its
-eligible session slots, while Engine starts one independent, source-local,
-exploratory broad-D1 model campaign from already retained data.
+Build `kis-broad-d1-panel-and-causal-candidate-v1`: turn the completed,
+source-limited KIS Paper broad-D1 cache into one read-only canonical panel and
+freeze one distinct KIS-bar causal candidate preflight from the coverage that
+actually exists.
 
-This is one operating cadence: future KIS-shaped data accumulates without
-idling Engine development. The broad-D1 campaign is engineering research only;
-it is not a ranking, profitability, Paper-intent, or promotion path.
+The cache completion is a Data fact, not a profitability claim. A coverage gap
+closes only the named candidate as `input_unavailable`; it must not trigger
+synthetic training, static-source substitution, a duplicate collector, or a
+foreground wait.
 
 ## Boundaries
 
-- Ask Claude for one concise falsification-first check before changing the
-  collection-to-capture lifecycle or freezing the broad-D1 target/split/model
-  campaign. A timeout is `review_unavailable`, not an approval hold.
-- Reuse the existing KIS intraday-head collector and its measured pacing,
-  durable recovery, and cache semantics. It may use only standing-authorized
-  `KIS_PAPER_*` market-data access. Do not call account/order endpoints,
-  submit/modify/cancel Paper orders, read `KIS_LIVE_*`, or enable live behavior.
-- The post-collection capture service must have no network, credentials,
-  account, broker, or model/GPU route. It must consume local cache only and
-  preserve the capture cycle's exact-slot no-op behavior.
-- The broad-D1 campaign may use only an already retained, hash-reattested,
-  source-local Norgate current-build panel. Keep current-listing, non-PIT,
-  availability, adjustment, and corporate-action limitations explicit. It may
-  train/evaluate only a frozen exploratory model contract and may not create a
-  rank, order, Paper input, PnL/profitability claim, or promotion decision.
-- Store all generated contracts, scalar summaries, and any safe model artifacts
-  only under `D:\thericher-v2\model-artifacts` or `/app/model_artifacts`; do not
-  store raw market rows, credentials, or generated artifacts in Git.
+- Ask Claude for one concise falsification-first challenge before freezing the
+  new target/split/model campaign. A timeout is `review_unavailable`, not an
+  approval hold.
+- Reattach the completed KIS Paper `dailyprice` cache read-only. Do not call
+  account/position/order endpoints, submit/modify/cancel Paper orders, read
+  `KIS_LIVE_*`, or enable live behavior. Do not restart a broad collector whose
+  durable cursor is complete unless a distinct Data objective establishes a
+  new source scope.
+- Preserve the exact KIS current-listing/non-PIT, adjustment, corporate-action,
+  availability, and historical-membership limitations. The panel and every
+  candidate result remain exploratory only: no ranking, selection, ensemble,
+  PnL/profitability claim, Paper input, or promotion.
+- Engine may use only completed KIS D1 bars from the reattested panel. State
+  feature availability, target timing, temporal split/purge, naive baseline,
+  strongest kill test, minimum usable coverage, artifact root, and stop rule
+  before opening any target.
+- Prefer one simple CPU-first KIS-bar classical baseline. Do not rerun a closed
+  Chronos, causal-TCN, HMM, candle-noise, or prior rule family merely to occupy
+  GPU. CUDA is eligible only after an actual-source CPU receipt and a separate
+  frozen GPU contract.
+- Keep raw data under `D:\market_data` and artifacts under
+  `D:\thericher-v2\model-artifacts`; never put raw rows, credentials, model
+  weights, or generated artifacts in Git or a stateboard.
 
 ## Required Work
 
-1. Data: add a small post-collection, network-disabled Docker service and wire
-   it into the existing intraday-head schedule only after a successful
-   collection. It must invoke the new capture-cycle runner once, surface a
-   source-safe categorical status in the existing schedule receipt or a narrow
-   compatible extension, and preserve recovery if collection or capture fails.
-   Test KST/ET slot behavior, no collection-to-capture call after collection
-   failure, no duplicate provider call, source-safe output, and Docker profile
-   configuration.
-2. Engine Research: inventory the existing broad current-build D1 reader and
-   freeze one causal exploratory campaign that has a fixed dataset identity,
-   label availability rule, chronological split/purge, naive baselines, feature
-   window(s), model family/parameters, cost-free model metrics, strongest
-   leakage/null kill test, artifact root, and bounded CPU-first/GPU compute
-   rule. Prefer a simple tabular baseline plus one sequence or neural baseline
-   only when both consume the identical frozen rows. Do not tune after seeing
-   validation results.
-3. Run a CPU smoke with the actual retained source. If its frozen contract is
-   satisfied and CUDA is available, run one bounded Docker CUDA appointment;
-   otherwise record the categorical reason and leave GPU free. Preserve only
-   source-safe aggregate outcomes and provenance.
-4. Update Data, Engine Research, Research Steward, and orchestration stateboards
-   with the two independent results. A collector retry, missing forward pair,
-   or unavailable GPU cannot stop the other package.
+1. Data: reattach the latest broad-D1 receipt and materialize one canonical
+   read-only panel from eligible complete-cache symbols. Record only source-safe
+   coverage facts: counts, common-session range/count, source-limited count,
+   manifest identity, and limitations. Reject symlinks, malformed rows, mixed
+   snapshots, and inconsistent completed-bar timing before any consumer opens
+   a panel.
+2. Engine Research: independently reattest that panel and freeze one distinct
+   causal CPU-first candidate preflight. It must use KIS-reconstructible D1
+   inputs only, a fixed chronological split/purge, an always-flat or zero
+   baseline, a minimum-signal/coverage kill condition, and an availability or
+   target-permutation falsifier. Do not fit if the frozen panel fails its
+   preflight.
+3. Run the actual-source CPU preflight when eligible. If it completes and a
+   separate frozen GPU contract is justified, Research Steward may allocate one
+   bounded CUDA appointment; otherwise release GPU and dispatch another ready
+   non-conflicting package.
+4. Update Data, Engine Research, Research Steward, and orchestration
+   stateboards with actual evidence. Refresh this file with exactly one next
+   objective before completing the bounded objective.
 
 ## Completion Evidence
 
-- the installed intraday-head path has a tested, source-safe collection-to-local
-  capture handoff with no account/order/live surface;
-- one actual-source exploratory CPU campaign receipt, plus a bounded CUDA
-  receipt when eligible, with explicit non-promoting status;
+- one reattested, source-safe KIS broad-D1 panel receipt with no network,
+  account, order, or live route;
+- one frozen KIS-bar causal candidate preflight and either an actual CPU receipt
+  or scoped `input_unavailable` result;
 - focused tests, full clean-root parallel verification, Ruff, both Compose
-  configurations, commit, push, and this file replaced with one next objective.
+  configurations, commit, and push.
 
 ## Verification
 

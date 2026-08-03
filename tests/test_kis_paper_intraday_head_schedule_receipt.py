@@ -56,6 +56,11 @@ def test_schedule_receipt_writes_a_complete_source_safe_no_intent_outcome(tmp_pa
         "session_id": "prospective-qqq-unit",
         "status": "validated",
     }
+    assert payload["stages"]["profiled_mtf_forward_capture"] == {
+        "data_only": True,
+        "exit_code": 0,
+        "status": "outside_cycle_slot",
+    }
     rendered = result.evidence_path.read_bytes().lower()
     assert b"paper-key" not in rendered
     assert b"kis_live" not in rendered
@@ -232,6 +237,46 @@ def test_data_only_schedule_receipt_requires_a_terminal_observation_fact(
     assert result.scheduler_exit_code == SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
 
 
+@pytest.mark.parametrize(
+    ("overrides", "expected_recovery_class"),
+    [
+        (
+            {"capture_cycle_exit_code": 20, "capture_cycle_status": "input_unavailable"},
+            "capture_cycle_exit_nonzero",
+        ),
+        ({"capture_cycle_status": "unavailable"}, "capture_cycle_payload_unavailable"),
+        ({"capture_cycle_status": "busy"}, "capture_cycle_payload_unavailable"),
+    ],
+)
+def test_data_only_schedule_receipt_requires_a_terminal_capture_cycle_fact(
+    tmp_path: Path,
+    overrides: dict[str, object],
+    expected_recovery_class: str,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    kwargs = _complete_kwargs()
+    kwargs.update(
+        prospective_loop_status="not_applicable",
+        prospective_session_status="not_applicable",
+        prospective_session_id=None,
+        prospective_validation_status="not_applicable",
+        prospective_validation_session_id=None,
+    )
+    kwargs.update(overrides)
+
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **kwargs,
+        artifact_root=tmp_path / "model-artifacts",
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    assert result.terminal_status == "recovery"
+    assert result.recovery_class == expected_recovery_class
+    assert result.scheduler_exit_code == SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
+
+
 def test_schedule_receipt_rejects_a_git_workspace_artifact_root(tmp_path: Path) -> None:
     repository_root = tmp_path / "repository"
     repository_root.mkdir()
@@ -262,6 +307,23 @@ def test_compose_schedule_receipt_service_is_offline_and_has_no_kis_surface() ->
     assert "/app/model_artifacts" in section
 
 
+def test_compose_capture_cycle_service_is_offline_and_has_no_kis_surface() -> None:
+    compose = _COMPOSE.read_text(encoding="ascii")
+    section = compose.split("\n  profiled-mtf-forward-capture-cycle:\n", maxsplit=1)[1].split(
+        "\n  kis-readonly:\n", maxsplit=1
+    )[0]
+    lowered = section.lower()
+
+    assert 'profiles: ["kis-paper-intraday-head"]' in section
+    assert "network_mode: none" in section
+    assert "read_only: true" in section
+    assert "run_profiled_mtf_forward_capture_cycle.py" in section
+    assert "KIS_PAPER_" not in section
+    assert "kis_live" not in lowered
+    assert "/app/market_data" in section
+    assert "/app/model_artifacts" in section
+
+
 def _complete_kwargs() -> dict[str, object]:
     return {
         "run_id": "intraday-head-unit",
@@ -276,4 +338,6 @@ def _complete_kwargs() -> dict[str, object]:
         "prospective_validation_session_id": "prospective-qqq-unit",
         "observation_exit_code": 0,
         "observation_status": "pending",
+        "capture_cycle_exit_code": 0,
+        "capture_cycle_status": "outside_cycle_slot",
     }

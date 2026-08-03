@@ -11,13 +11,17 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     source = SCRIPT.read_text(encoding="ascii")
 
     collection_call = ' -Service "kis-paper-intraday-head"'
+    capture_call = ' -Service "profiled-mtf-forward-capture-cycle"'
     observation_call = ' -Service "kis-paper-intraday-pair-observation"'
     receipt_call = ' -Service "kis-paper-intraday-head-receipt"'
     assert "--profile kis-paper-intraday-head" in source
     assert "run --rm --no-deps --pull never $Service" in source
     assert collection_call in source
+    assert capture_call in source
     assert observation_call in source
     assert source.index(collection_call) < source.index(observation_call)
+    assert source.index(collection_call) < source.index(capture_call)
+    assert source.index(capture_call) < source.index(observation_call)
     assert source.index(observation_call) < source.index(receipt_call)
     assert "Get-DispatchTerminalExitCode" in source
     assert "New-ScheduleRunId" in source
@@ -38,6 +42,13 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "prospective_validation_status" in source
     assert "observation_exit_code" in source
     assert "observation_status" in source
+    assert "capture_cycle_exit_code" in source
+    assert "capture_cycle_status" in source
+    assert '"scripts/run_profiled_mtf_forward_capture_cycle.py"' in source
+    assert '"--observed-at",' in source
+    assert "$scheduleObservedAtMarker" in source
+    assert source.count(collection_call) == 1
+    assert "if ($collectionExitCode -eq 0)" in source
     assert "Get-ProfileStatus" in source
     assert "2>&1" in source
     assert '$ErrorActionPreference = "Continue"' in source

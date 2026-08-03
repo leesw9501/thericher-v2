@@ -41,6 +41,21 @@ _OBSERVATION_STATUSES = frozenset(
         "busy",
     }
 )
+_CAPTURE_CYCLE_STATUSES = frozenset(
+    {
+        "not_applicable",
+        "unavailable",
+        "outside_cycle_slot",
+        "observed",
+        "duplicate",
+        "conflict",
+        "input_unavailable",
+        "outcome_unavailable",
+        "input_mutated",
+        "appended",
+        "busy",
+    }
+)
 
 
 @dataclass(frozen=True)
@@ -60,6 +75,8 @@ class KisPaperIntradayHeadScheduleReceipt:
     prospective_validation_session_id: str | None
     observation_exit_code: int
     observation_status: str
+    capture_cycle_exit_code: int
+    capture_cycle_status: str
     terminal_status: str
     recovery_class: str
     scheduler_exit_code: int
@@ -97,6 +114,11 @@ class KisPaperIntradayHeadScheduleReceipt:
                     "required_for_qqq_cycle": False,
                     "data_only_pair_observation": True,
                 },
+                "profiled_mtf_forward_capture": {
+                    "exit_code": self.capture_cycle_exit_code,
+                    "status": self.capture_cycle_status,
+                    "data_only": True,
+                },
             },
             "terminal": {
                 "status": self.terminal_status,
@@ -131,6 +153,8 @@ def write_kis_paper_intraday_head_schedule_receipt(
     prospective_validation_session_id: str | None,
     observation_exit_code: int,
     observation_status: str,
+    capture_cycle_exit_code: int,
+    capture_cycle_status: str,
     artifact_root: Path = DEFAULT_KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_ROOT,
     repository_root: Path = _DEFAULT_REPOSITORY_ROOT,
     observed_at: datetime,
@@ -150,11 +174,13 @@ def write_kis_paper_intraday_head_schedule_receipt(
         prospective_session_exit_code,
         prospective_validation_exit_code,
         observation_exit_code,
+        capture_cycle_exit_code,
     )
     _require_status(prospective_loop_status, _LOOP_STATUSES, "prospective loop")
     _require_status(prospective_session_status, _SESSION_STATUSES, "prospective session")
     _require_status(prospective_validation_status, _VALIDATION_STATUSES, "prospective validation")
     _require_status(observation_status, _OBSERVATION_STATUSES, "observation")
+    _require_status(capture_cycle_status, _CAPTURE_CYCLE_STATUSES, "capture cycle")
     _require_optional_safe_id(prospective_session_id, "prospective session id")
     _require_optional_safe_id(
         prospective_validation_session_id,
@@ -173,6 +199,8 @@ def write_kis_paper_intraday_head_schedule_receipt(
         prospective_validation_session_id=prospective_validation_session_id,
         observation_exit_code=observation_exit_code,
         observation_status=observation_status,
+        capture_cycle_exit_code=capture_cycle_exit_code,
+        capture_cycle_status=capture_cycle_status,
     )
     root = _external_artifact_root(artifact_root=artifact_root, repository_root=repository_root)
     result = KisPaperIntradayHeadScheduleReceipt(
@@ -189,6 +217,8 @@ def write_kis_paper_intraday_head_schedule_receipt(
         prospective_validation_session_id=prospective_validation_session_id,
         observation_exit_code=observation_exit_code,
         observation_status=observation_status,
+        capture_cycle_exit_code=capture_cycle_exit_code,
+        capture_cycle_status=capture_cycle_status,
         terminal_status=terminal_status,
         recovery_class=recovery_class,
         scheduler_exit_code=scheduler_exit_code,
@@ -213,6 +243,8 @@ def _terminal_outcome(
     prospective_validation_session_id: str | None,
     observation_exit_code: int,
     observation_status: str,
+    capture_cycle_exit_code: int,
+    capture_cycle_status: str,
 ) -> tuple[str, str, int]:
     if collection_exit_code != 0:
         return "recovery", "collection_exit_nonzero", collection_exit_code
@@ -235,6 +267,12 @@ def _terminal_outcome(
             )
             if observation_recovery is not None:
                 return "recovery", observation_recovery, SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
+            capture_recovery = _data_only_capture_cycle_recovery_class(
+                capture_cycle_exit_code=capture_cycle_exit_code,
+                capture_cycle_status=capture_cycle_status,
+            )
+            if capture_recovery is not None:
+                return "recovery", capture_recovery, SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
         return "complete", "complete", 0
     return "recovery", recovery_class, SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
 
@@ -298,6 +336,29 @@ def _data_only_observation_recovery_class(
         "cap_reached",
     }:
         return "observation_payload_unavailable"
+    return None
+
+
+def _data_only_capture_cycle_recovery_class(
+    *,
+    capture_cycle_exit_code: int,
+    capture_cycle_status: str,
+) -> str | None:
+    """Require the post-collection local forward capture to expose one fact."""
+
+    if capture_cycle_exit_code != 0:
+        return "capture_cycle_exit_nonzero"
+    if capture_cycle_status not in {
+        "outside_cycle_slot",
+        "observed",
+        "duplicate",
+        "conflict",
+        "input_unavailable",
+        "outcome_unavailable",
+        "input_mutated",
+        "appended",
+    }:
+        return "capture_cycle_payload_unavailable"
     return None
 
 
@@ -388,6 +449,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--prospective-validation-session-id")
     parser.add_argument("--observation-exit-code", type=int, required=True)
     parser.add_argument("--observation-status", required=True)
+    parser.add_argument("--capture-cycle-exit-code", type=int, required=True)
+    parser.add_argument("--capture-cycle-status", required=True)
     parser.add_argument("--observed-at", type=_parse_utc, required=True)
     parser.add_argument(
         "--artifact-root",
@@ -413,6 +476,8 @@ def main(argv: Sequence[str] | None = None) -> None:
         prospective_validation_session_id=args.prospective_validation_session_id,
         observation_exit_code=args.observation_exit_code,
         observation_status=args.observation_status,
+        capture_cycle_exit_code=args.capture_cycle_exit_code,
+        capture_cycle_status=args.capture_cycle_status,
         artifact_root=args.artifact_root,
         repository_root=args.repository_root,
         observed_at=args.observed_at,

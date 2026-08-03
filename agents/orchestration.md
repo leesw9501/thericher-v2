@@ -956,3 +956,35 @@ same-session causal misreading without adding a new gate.
   behavior instead of adding another collector or a foreground sleep. Host and
   network-disabled Docker reattached the same categorical `input_unavailable`
   result. Claude was `review_unavailable`, not a hold.
+
+## Forward Capture And Pretrained Probe Cadence (2026-08-03)
+
+- **Ready:** the installed intraday-head schedule now carries its local capture
+  step after successful collection, and Engine closed an independent Chronos
+  probe without waiting for a market session. The next forward capture remains
+  Data-owned; the rejected Chronos lineage has no follow-up allocation.
+- **Owned:** Data owns KIS collection and local capture provenance; Engine owns
+  the source-local rejection record; Research Steward released the RTX 4090;
+  Execution has no route change.
+- **Due:** no foreground external wait. The collector's next eligible session
+  is its own schedule fact, while ready KIS-compatible research and execution
+  preparation continue independently.
+- **Improvement:** an explicit CPU-first/CUDA probe now consumes a distinct
+  public-model hypothesis during prospective-data accumulation, then closes it
+  on a frozen zero-baseline failure instead of repeating it for GPU occupancy.
+- **Review:** the required Claude drift check timed out as
+  `review_unavailable`; it did not narrow any independent implementation.
+
+## KIS Broad D1 Cursor Closure (2026-08-03)
+
+- **Ready:** the owned KIS broad-D1 cursor is drained for its exact current
+  registry. Data can materialize a read-only panel while Engine freezes a
+  KIS-bar candidate preflight from the coverage that actually exists.
+- **Owned:** Data owns cache/panel provenance and source limits; Engine owns a
+  new causal preflight only after panel reattestation; Research Steward keeps
+  GPU free until an actual CPU receipt; Execution has no route change.
+- **Due:** no foreground external wait. The completed cursor has no retry due;
+  a later refresh requires a distinct Data scope rather than a duplicate run.
+- **Improvement:** the worker was started and observed instead of being left at
+  a calendar due time. Its zero-remaining receipt turns broad-D1 work from
+  collection scheduling into a bounded local panel-consumer package.

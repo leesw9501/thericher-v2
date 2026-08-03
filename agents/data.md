@@ -1303,3 +1303,41 @@ raw values, cache mutation, provider call, account/broker route, target, model,
 or GPU work occurred. The next Data package is to attach this already-tested
 local cycle after the existing owned KIS intraday-head collection path, keeping
 the collector's pace and recovery facts scoped to that worker.
+
+## Intraday-Head Capture Handoff (2026-08-03)
+
+The owned KIS intraday-head schedule now invokes the profiled-MTF local capture
+cycle exactly once only after a successful collection and records that
+data-only categorical result beside the existing schedule receipt. Collection
+failure still prevents the downstream local call; a capture failure remains
+scoped recovery evidence for that exact schedule run. The new service has no
+network, KIS credential, account, broker, model, or GPU surface.
+
+The network-disabled, read-only Docker service was invoked at
+`2026-08-01T12:00:00Z` and returned the expected immediate
+`outside_cycle_slot` no-op. It did not open the cache or call KIS. The next
+eligible market-session collection will exercise the same installed handoff;
+that future timestamp is owned by the collector and does not block another
+ready lane.
+
+The actual intraday-head schedule was also invoked once with the standing
+market-data authority. Its collector exit was `0`, the local capture returned
+`outside_cycle_slot`, the legacy data-only pair observation remained `pending`,
+and the source-safe schedule receipt was `complete`. No account, position,
+order, or live endpoint was used.
+
+## KIS Broad D1 Cursor Completion (2026-08-03)
+
+The existing `dailyprice` broad-D1 worker reattached its durable cache and
+returned `complete` with zero remaining targets. Its source-safe receipt
+records 2,119 attempted current-listing targets, 1,089 `complete` targets,
+1,030 `source_limited` targets, 50,810 accepted pages, and 1,360 categorical
+target failures. It used no account, position, order, quote, or live endpoint;
+raw rows remain only in the KIS cache on D:.
+
+This closes only the current registry/cursor scope. It does not establish that
+KIS lacks older history, remove the source-limited facts, qualify a PIT
+universe, or authorize a ranking/Paper consumer. Do not launch a duplicate
+backfill. The next Data package is a read-only canonical-panel materialization
+that keeps all source limitations explicit for a separately frozen Engine
+consumer.

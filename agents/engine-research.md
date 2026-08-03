@@ -1471,3 +1471,30 @@ pairs and must not be trained on synthetic replacements. This is not an Engine
 wait: a source-local, explicitly non-promoting broad-D1 model implementation
 can proceed independently while Data attaches future forward captures to the
 existing collector.
+
+## Chronos-T5 Tiny D1 Probe (2026-08-03)
+
+The independent `chronos-t5-tiny-norgate-d1-probe-v1` completed as a strictly
+non-promoting source-local forecast diagnostic. It reattested the retained
+523-symbol Norgate D1 panel and official `amazon/chronos-t5-tiny` revision
+`a4a27cf5c9a8b21a2bb935eef158344dc10ff9df`; the Apache-2.0 safe-weight
+manifest is `sha256:997aba637833bd2f3b94e2281924d8a1a035c5ef23cb50a4e3938bdbe7ad0c4c`
+under `D:\thericher-v2\model-artifacts`. Pretraining corpus period and
+instrument scope remain `not_disclosed`; the panel remains current-listing,
+non-PIT, adjustment/corporate-action/availability-unqualified, and not
+KIS-reconstructible.
+
+The network-disabled Docker CPU receipt completed 16 fixed cases, then the
+RTX 4090 CUDA appointment completed 1,024 fixed cases with batches of 32.
+On the CUDA diagnostic, Chronos had MAE `0.01661`, RMSE `0.02482`, and
+directional accuracy `0.52051`; the frozen zero-return baseline was better at
+`0.01621`, `0.02414`, and `0.54785`. The reversed-target directional null was
+`0.51270`. This is a baseline-failure result, not a selection comparison:
+Chronos is rejected for further work on this source and cannot enter an
+ensemble, Paper input, ranking, PnL claim, or promotion. No predictions,
+market rows, weights, or credentials were retained in Git or a stateboard.
+
+Breadth queue: seek a distinct frozen, KIS-compatible non-PIT input only when
+its contract can make a valid comparative claim. Depth queue: none for the
+rejected Chronos lineage. The forward prospective campaign remains independent
+and waits only on its own future data count.

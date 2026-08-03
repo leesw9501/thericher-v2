@@ -359,3 +359,18 @@ does not reserve the GPU or defer a separate frozen campaign with a qualified
 existing source. Any future broad-D1 exploratory appointment must remain
 source-local and non-promoting until it has its own target, split, baseline,
 kill test, artifact root, and bounded compute contract.
+
+## Chronos-T5 Tiny Probe Custody (2026-08-03)
+
+Research Steward recorded one `holdout_access=none`, source-local appointment
+for `chronos-t5-tiny-norgate-d1-probe-v1`, contract
+`sha256:15ff58d79bd61a7406cee972f64cca457c337662b61e63124391d480b0fa6663`.
+The 16-case CPU receipt completed before one CUDA appointment of 1,024 cases
+at batch size 32 on the RTX 4090. The result is
+`rejected_no_zero_baseline_advantage`; it opened no sealed holdout, created no
+model selection, ensemble lineage, Paper candidate, or retained checkpoint.
+
+The model manifest and source-safe CPU/CUDA receipts remain external only.
+GPU custody is released. A later GPU appointment must be a different frozen
+campaign with a qualified source and its own CPU evidence; this rejected
+lineage cannot be rerun merely to fill idle time.

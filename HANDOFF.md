@@ -2420,3 +2420,35 @@ credential, opened raw values, changed a cache, trained a model, used GPU, or
 reached a broker route. Claude's required lifecycle check timed out and is
 recorded as `review_unavailable`, not a verdict or a hold. The missing forward
 pair is a Data fact only: Engine work continues on separately qualified input.
+
+## Forward Capture And Chronos Probe (2026-08-03)
+
+`forward-capture-and-pretrained-model-cadence-v1` is complete. The KIS
+intraday-head schedule invokes the local network-disabled profile capture once
+after a successful collection and records its categorical result in the
+existing schedule receipt. A Docker invocation outside its ET slot returned
+`outside_cycle_slot` without cache/KIS/credential/account/broker activity.
+One direct intraday-head schedule invocation then completed its KIS market-data
+collection, local `outside_cycle_slot` capture, pending data-only observation,
+and source-safe terminal receipt with exit code `0`; it used no account,
+position, order, or live endpoint.
+
+Engine independently downloaded the official safe Chronos-T5 Tiny files to
+`D:\thericher-v2\model-artifacts`, then completed a network-disabled Docker
+CPU receipt and RTX 4090 CUDA receipt against the retained Norgate D1 source.
+Chronos did not beat the frozen zero-return baseline on the CUDA diagnostic and
+is rejected for this source. It is not a Paper input, ranking, ensemble,
+profitability, or promotion result. The source's current-listing, non-PIT,
+adjustment/corporate-action/availability, and unknown-pretraining limitations
+remain unchanged. Claude timed out as `review_unavailable`.
+
+## KIS Broad D1 Cursor Closure (2026-08-03)
+
+An immediately started existing KIS Paper `dailyprice` broad-D1 worker
+reattached its durable cursor and returned `complete` with zero remaining
+targets. Source-safe totals are 2,119 attempted targets, 1,089 complete,
+1,030 source-limited, 50,810 accepted pages, and 1,360 categorical target
+failures. It made no account/position/order/quote/live request. This closes
+only that current-listing cursor scope; raw KIS rows stay on D: and the
+source remains non-PIT and non-promoting. The next objective materializes a
+read-only canonical panel before Engine opens one new KIS-bar preflight.
