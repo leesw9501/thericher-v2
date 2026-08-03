@@ -1612,3 +1612,15 @@ to the frozen 15:30 ET decision. Its schedule-relation categories carry their
 explicit Eastern offset/DST context. They do not tune the fixed
 `30/6/3/2/2` baseline, open a target, create a campaign, request GPU, or make a
 promotion or profitability claim.
+
+## Prospective SPY Timing Interpretation: 13:31 ET Summer Slot (2026-08-04)
+
+Timing receipt `sha256:b3d5f75244ae3ef97157a0b783ae0a334940c5e6b620a1975b8482d5fc338704`
+is categorically `before_decision_cutoff`; it records only
+`unavailable_after_collection/not_yet_observed`, with
+`decision_time_availability: not_observed`. Therefore the frozen 15:30 ET
+baseline can infer neither timely completed-bar availability nor infeasibility,
+and it cannot use this one early observation to alter the strict one-minute
+validity, select a model, make a PnL claim, or create Paper eligibility. The
+receipt's serialized Eastern `-0400` timestamp agrees with its UTC endpoint.
+The 15:31 ET observation remains pending with the existing scheduler.

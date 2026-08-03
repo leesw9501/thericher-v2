@@ -1457,3 +1457,37 @@ claim. The owned task is ready for its next scheduled measurement. Its current
 04:31 KST daylight relation is at or after the exclusive expiry boundary;
 winter 04:31 KST is before the decision cutoff. A real receipt quantifies only
 the current source/collector lag for a later schedule proposal.
+
+## Prospective SPY Timing Observation: 13:31 ET Summer Slot (2026-08-04)
+
+The existing task produced the first matching external timing receipt,
+`sha256:b3d5f75244ae3ef97157a0b783ae0a334940c5e6b620a1975b8482d5fc338704`,
+paired by its `20260803T173106` start/return lineage with terminal receipt
+`sha256:52c2eb004114d2ff11785acb310757336a63236d90672b46e601b752b683d52f`.
+Its scheduler start was `2026-08-03T17:31:01.082116Z`, with declared Eastern
+offset `-0400` and DST `true` (the 13:31 ET summer slot); collection returned
+at `17:31:06.034971Z`, in ordered clock order, with a 4,953-ms
+Docker-inclusive wall duration. The source-safe collector fact is
+`collected`, exit zero, 120 SPY rows, and zero exact-overlap rows.
+
+This is `before_decision_cutoff`: its post-collection prefix was
+`unavailable_after_collection` / `not_yet_observed` for the same reason, and
+`decision_time_availability` remains `not_observed`. The raw receipt's
+serialized Eastern timestamp, `-0400` offset/DST fields, and UTC endpoint
+agree. It does not establish bar availability, 15:30 feasibility, or a
+cadence/validity change.
+
+The static head contract allows at most four 120-row pages per SPY target,
+which nominally exceeds the 360 contiguous 09:30--15:29 completed 1m bars
+needed by the frozen capture. Page capacity alone does not prove the exact
+span, continuity, completedness, or conflict-free state. The remaining 15:31
+ET receipt can answer only whether that post-collection cache contains a
+capturable prefix, never whether it was available at 15:30.
+
+The paired terminal is `complete/complete` with scheduler exit zero and
+collection `exit_zero`; its independent observation stage is `pending`.
+The SPY cycle is `no_intent`, has a separate collector process, and records no
+canary; prospective session and validation are `not_applicable`. Sanitized Task
+Scheduler metadata is `Ready`, last result zero at 02:31 KST, with the 04:31
+KST daylight-boundary observation still task-owned. No new collector, cache,
+account, quote, order, or live route was invoked by this reattestation.

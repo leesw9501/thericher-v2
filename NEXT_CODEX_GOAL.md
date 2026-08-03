@@ -6,62 +6,60 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Complete `kis-spy-scheduled-timing-observation-v1`: consume the first real
-source-safe receipts produced by the existing `thericher-kis-paper-intraday-head`
-task and establish the bounded current facts for its 13:31 ET and 15:31 ET
-summer-time runs.
+Complete `kis-spy-expiry-boundary-observation-v1`: consume the one remaining
+source-safe 15:31 ET daylight-time receipt from the existing
+`thericher-kis-paper-intraday-head` task and compare it with the committed
+13:31 ET control observation.
 
-The product outcome is an evidence-backed account of current collector timing
-and post-collection prefix state. It must not infer 15:30 decision-time
-availability, change cadence or receipt validity, or become a strategy or
-Paper-trading result.
+The product outcome is a bounded fact about post-collection SPY prefix state
+at the existing expiry-boundary dispatch. It must not infer 15:30 decision-time
+availability, change cadence or TTL, or become a model, PnL, or Paper-trading
+result.
 
 ## Boundaries
 
 - Let only the existing owned scheduler make KIS Paper market-data calls. Do
-  not start a collector manually, create a duplicate worker/cache, or widen
-  the target scope beyond the existing SPY/QQQ head collection.
+  not start a collector manually, create a duplicate worker/cache, or change
+  the existing SPY/QQQ head scope or triggers.
 - Do not call or read KIS account, position, quote, order, submit, modify,
   cancel, reconciliation, or live routes. Never read or route `KIS_LIVE_*`.
-- Consume only external source-safe receipts and scheduler metadata. Do not
-  retain or display credentials, raw bars, prices, request URLs, account
-  identifiers, or broker payloads.
-- Preserve the current trigger times, frozen prospective-SPY baseline,
-  exclusive validity, virtual-Paper route, and terminal schedule behavior.
-  No single receipt is authority to change any of them.
-- The scheduler-owned session due times are not foreground waits. Dispatch any
-  ready offline review or recovery package while they remain pending.
+- Consume only source-safe timing/terminal receipts and sanitized Task
+  Scheduler metadata. Do not retain or display credentials, raw bars, prices,
+  request URLs, account identifiers, private intents, or broker payloads.
+- Treat the raw receipt's serialized Eastern timestamp and UTC endpoint as
+  primary evidence. Do not reinterpret its offset through host-local PowerShell
+  date conversion.
+- Preserve the frozen prospective-SPY baseline, one-minute validity, virtual
+  Paper route, and terminal schedule behavior. No observation alone changes
+  them.
 
 ## Required Work
 
-1. **Data:** reattest the first scheduled timing receipts and task outcomes.
-   Record the exact safe timing/offset/category/count facts, receipt lineage,
-   and any scoped collector recovery fact. Distinguish an early-before-cutoff
-   run from an at-or-after-expiry run.
-2. **Engine Research:** verify that every interpretation retains
-   `decision_time_availability: not_observed`; classify only what the frozen
-   15:30 decision can and cannot infer from each receipt.
-3. **Execution:** reattest that the observed schedule runs made no account,
-   quote, order, canary, local-paper, or live route. Do not alter the adapter.
-4. **Integration:** if both current summer-time observations are available,
-   write one compact Data/Engine recommendation for a later, separately
-   approved schedule/validity design experiment. If either remains pending or
-   source-limited, preserve its owned `next_due`/recovery state and continue
-   another ready lane rather than creating a wait.
-5. Ask Claude for a short falsification-first challenge before treating two
-   observed receipts as grounds for a schedule, availability, or Paper-route
-   proposal. A timeout is `review_unavailable`, not agreement or a block.
+1. **Data:** reattest the first new 15:31 ET timing receipt and paired terminal
+   outcome. Compare only safe timing, offset, collection count/status, and
+   post-collection prefix categories with the committed 13:31 ET control.
+2. **Engine Research:** retain `decision_time_availability: not_observed` and
+   classify only what the two post-collection observations can and cannot say
+   about the fixed 15:30 decision.
+3. **Execution:** reattest the terminal's SPY-cycle/no-canary state and prove
+   that no account, quote, order, local-paper, or live route was touched.
+4. **Integration:** after both observations exist, ask Claude for a concise
+   falsification-first challenge before writing one compact, later
+   schedule/validity design proposal. Do not implement that proposal in this
+   objective.
+5. If the receipt is not due or the scheduler has not yet produced it, record
+   its sanitized `next_due` and continue another ready lane without a
+   foreground wait.
 
 ## Completion Evidence
 
-- source-safe reattestation of the relevant external timing receipts and task
-  outcome(s), with no raw/provider/account/order output;
-- focused tests if parsing, isolation, or interpretation code changes;
-- refreshed Data, Engine Research, Execution, Research Steward,
-  orchestration, and handoff stateboards; required verification, commit, and
-  push;
-- if a receipt is still not due, durable scheduler-owned `next_due` plus all
-  ready offline evidence is a bounded completion state, not a foreground hold.
+- both matching source-safe timing receipts and terminal outcomes are
+  reattested without raw/provider/account/order output;
+- all active stateboards and `HANDOFF.md` distinguish post-collection state
+  from decision-time availability;
+- Claude verdict is recorded only for the later design proposal;
+- required verification, commit, and push complete; then replace this file
+  with exactly one next company objective.
 
 ## Verification
 

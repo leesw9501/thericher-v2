@@ -434,3 +434,11 @@ The completed-bar timing probe is Data/Engine observability, not a research
 campaign. It creates no model lineage, sealed-evaluation spend, candidate
 selection, checkpoint, ensemble record, or GPU appointment. GPU custody stays
 available for a separately frozen research contract.
+
+## Prospective SPY 13:31 ET Timing Observation Custody (2026-08-04)
+
+The first summer-slot timing receipt is observational Data/Engine evidence
+only: its `before_decision_cutoff` and `decision_time_availability:
+not_observed` categories create no campaign, model lineage, holdout access,
+selection, checkpoint, ensemble record, or GPU appointment. The pending 15:31
+ET task-owned observation also reserves no research resource.

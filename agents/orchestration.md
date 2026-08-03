@@ -1094,21 +1094,24 @@ same-session causal misreading without adding a new gate.
   changed-path serial group passed independently. This is an evidence-backed
   verification path, not a relaxation of execution tests.
 
-## Prospective SPY Timing-Probe Dispatch (2026-08-04)
+## Prospective SPY Timing Observation: First Summer Slot (2026-08-04)
 
-- **Ready:** the data-only timing receipt, scheduler hook, and Docker isolation
-  are implemented and smoke-tested. The next owned intraday-head task may
-  write one actual measurement; no foreground wait is dispatched.
-- **Owned:** Data owns source and collector timing; Engine owns the strictly
-  causal interpretation; Execution owns no probe action; Research Steward
-  keeps GPU free. The probe does not alter the terminal scheduler receipt or
-  its exit authority.
-- **Due:** the existing task is `Ready` for 02:31 KST, followed by its 04:31
-  KST daylight-boundary observation. The task, not Codex, owns those times.
-- **Improvement:** the independent, network-disabled receipt reports raw UTC
-  and Eastern endpoints plus Docker-inclusive host duration, rather than
-  treating the post-collection cache as an availability claim. This removes a
-  timing-leakage ambiguity without widening KIS or Paper side effects.
-- **Review:** Claude returned `supported-with-limits`; its limits are external
-  receipt isolation, DST-aware timestamps, no terminal-exit coupling, and no
-  feasibility verdict. The constraints are implemented and tested.
+- **Ready:** the existing task produced the 13:31 ET source-safe receipt
+  `sha256:b3d5f75244ae3ef97157a0b783ae0a334940c5e6b620a1975b8482d5fc338704`.
+  Its 4,953-ms collector-inclusive path is `before_decision_cutoff` and its
+  prefix remains `not_yet_observed`; a second scheduler-owned observation is
+  required before any later timing-design proposal.
+- **Owned:** Data owns receipt/timestamp limitation custody; Engine owns the
+  fixed `decision_time_availability: not_observed` interpretation; Execution
+  reattests the paired `no_intent` / no-canary terminal only; Research Steward
+  keeps GPU free. No role owns a new worker or route.
+- **Due:** sanitized Task Scheduler metadata is `Ready`, last run/result
+  02:31 KST/zero, next due 04:31 KST. That daylight-boundary observation is
+  task-owned, not a foreground wait.
+- **Improvement:** preserve the raw receipt's matching UTC and serialized
+  Eastern `-0400` DST timestamps as the timing comparison pair. This prevents
+  host-side deserialization from becoming a false availability or schedule
+  claim.
+- **Review:** the prior Claude `supported-with-limits` boundaries remain in
+  force. Claude is not invoked until both summer observations exist and a
+  proposal is contemplated.

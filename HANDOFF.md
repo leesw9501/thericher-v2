@@ -2619,3 +2619,31 @@ parallel suite (`2,379 passed, 23 skipped` in 189.72 seconds) all passed. The
 existing `thericher-kis-paper-intraday-head` task is `Ready` with its next
 owned run at 02:31 KST; no foreground wait, new collector, KIS account/quote/
 order call, Paper action, GPU appointment, or model change was created.
+
+## Prospective SPY Timing Observation: First Summer Slot (2026-08-04)
+
+The existing task produced one new matching source-safe timing receipt,
+`sha256:b3d5f75244ae3ef97157a0b783ae0a334940c5e6b620a1975b8482d5fc338704`,
+and terminal receipt
+`sha256:52c2eb004114d2ff11785acb310757336a63236d90672b46e601b752b683d52f`.
+UTC start `17:31:01.082116Z` with declared `-0400`/DST context is the 13:31 ET
+summer slot; collection returned at `17:31:06.034971Z` after 4,953 ms,
+`collected` 120 rows with zero exact overlap, and exited zero. It is
+`before_decision_cutoff`: the post-collection prefix is
+`unavailable_after_collection/not_yet_observed`, and
+`decision_time_availability` remains `not_observed`.
+
+The paired terminal is `complete` with scheduler and collection exit zero;
+the independent observation is pending, and the SPY cycle is `no_intent` with
+no canary, session, or validation stage. No account, quote, order,
+local-paper, or live route was invoked or inspected. The raw receipt's
+serialized Eastern timestamp (`13:31:...-04:00`), declared DST offset, and UTC
+endpoint agree. It cannot establish 15:30 availability, feasibility, PnL,
+model selection, or Paper permission.
+
+Sanitized Task Scheduler metadata is `Ready`, last run/result 02:31 KST/zero,
+with the 04:31 KST (15:31 ET daylight-boundary) observation still task-owned.
+Only one current summer observation exists. This checkpoint is committed with
+one narrower next objective for the remaining scheduler-owned boundary receipt;
+no Claude timing interpretation or cadence/validity proposal is due yet, and
+Codex does not wait in the foreground.

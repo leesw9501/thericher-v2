@@ -644,3 +644,15 @@ cannot load Paper configuration or reach account, quote, order, intent,
 canary, local-paper, or live behavior. The existing virtual-Paper cycle and
 its call-time expiry boundary remain unchanged; timing evidence is not a
 submission permission.
+
+## Prospective SPY 13:31 ET Timing Observation Isolation (2026-08-04)
+
+The paired terminal receipt
+`sha256:52c2eb004114d2ff11785acb310757336a63236d90672b46e601b752b683d52f`
+records `complete/complete`, while its SPY cycle is `no_intent` with no canary
+identity; prospective session and validation are `not_applicable`. Reattesting
+only that source-safe terminal category under the unchanged no-intent isolation
+confirms no Execution action was introduced: no account, quote, order,
+local-paper, or live route was inspected or invoked. This receipt is not
+submission permission, and the 15:31 ET scheduler-owned observation changes
+neither the virtual host boundary nor the adapter.
