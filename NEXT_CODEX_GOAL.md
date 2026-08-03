@@ -6,68 +6,69 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Build `profiled-mtf-forward-outcome-witness-v1`: extend the existing
-forward-only QQQ/SPY MTF observation path so a sealed 15:30 ET causal input
-commitment can be paired with each leg's completed 15:45 ET outcome-window
-commitment and a small D:-resident raw snapshot. This makes future target-ready pairs recoverable for the frozen
-predictive campaign dependency without opening labels, training a model, or
-creating a Paper decision.
+Build `profiled-mtf-ragged-sequence-runtime-v1`: turn the existing frozen
+`short` QQQ/SPY `1m/5m/10m/1h/3h` causal controls into one explicit, target-free
+ragged sequence input contract for three candidate architecture families:
+per-timeframe recurrent, causal temporal-convolution, and masked
+cross-timeframe attention runtime paths.
+
+This is runtime and representation plumbing only. It must advance the eventual
+model engine without claiming a trained predictor, model selection, return,
+PnL, or Paper decision from the current 42-control inventory.
 
 ## Boundaries
 
-- Ask Claude for one concise falsification-first drift check before changing
-  the forward-observation persistence contract or a KIS collection schedule.
-- Reuse the existing verified local KIS private intraday loader, canonical
-  session calendar, and prospective-observer historical exclusion. Do not add
-  another provider, source format, feature platform, or scheduler framework.
-- KIS Paper market-data collection is allowed only through the existing owned
-  collector when a missing forward outcome needs it. KIS account/order routes,
-  `.env`/credential output, KIS live, public access, and all broker actions
-  remain out of scope.
-- Store raw market data only under `D:\market_data`; write commitments,
-  receipts, and metadata only under `D:\thericher-v2\model-artifacts` or
-  `/app/model_artifacts`. Never persist raw OHLCV, close values, return labels,
-  account data, tokens, or identifiers in Git or artifacts.
-- Keep the scope target-free: a witness may attest that an outcome window is
-  recoverable, but it must not calculate or expose its return label, fit a
-  model, compare a baseline, claim PnL, allocate GPU, or form an order intent.
+- Ask Claude for one concise falsification-first drift check before defining
+  cross-timeframe alignment/masking or dispatching CUDA work.
+- Reuse `ProfiledMtfFlattenedControl`, its causal sequence/projection contracts,
+  and the existing local QQQ/SPY runtime inventory. Do not add a provider,
+  source format, KIS call, scheduler, historical evaluation dataset, or generic
+  model platform.
+- Preserve each timeframe's native ordered sequence. Do not silently align
+  rows by index across timeframes or pad missing data without an explicit mask
+  and availability meaning.
+- Run a deterministic CPU-first structural smoke. If its contract and CPU
+  receipt are complete and Docker CUDA is available, run one bounded CUDA
+  structural smoke for the three fixed families. Artifacts and any temporary
+  weights belong only under `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts`, never Git.
+- Do not read `.env` or credentials; call KIS; use a broker/account/order route;
+  create a Paper action; enable live behavior; expose a service; calculate a
+  target/return/PnL; or load untrusted public weights.
+- Treat unavailable CUDA, absent source controls, or a failed family as a
+  categorical non-promoting result for that exact runtime attempt. Do not wait
+  or invent a substitute training campaign.
 
 ## Required Work
 
-1. Data Agent: inventory the existing forward observer and intraday collector
-   contracts. Add the smallest value-free paired witness that binds an eligible
-   future 15:30 input commitment to verified complete QQQ and SPY outcome bars
-   with `15:30 <= start_ts < 15:45 ET`, plus opaque outcome-content
-   commitments. A target-ready success must preserve the exact input prefix and
-   outcome bars as one immutable raw snapshot under `D:\market_data`; its
-   artifact witness may contain only that snapshot hash. Historical 21 sessions
-   must remain excluded.
-2. Make duplicate, conflict, unavailable, recovery, and post-window mutation
-   behavior explicit and idempotent. A mutable whole-cache identity must not
-   rewrite an earlier sealed input or outcome witness; a changed completed
-   input constituent must make the outcome `input_mutated`, and a changed
-   outcome constituent must produce a distinct conflict rather than silently
-   overwrite evidence. Do not seal the outcome before the final 15:44 bar has
-   completed at 15:45 ET.
-3. If the market is closed or no forward pair is present, run a local no-op
-   verification and leave an exact `input_unavailable`/`zero_target_ready`
-   fact. Do not make Codex wait. If a schedule is needed, attach it to the
-   existing Data-owned worker with one bounded retry/recovery record.
-4. Engine Research: consume only the source-safe count/identity result and
-   restate the frozen 30-pair predictive dependency. Do not open outcomes or
-   create model, CUDA, ensemble, validation, or Paper work.
-5. Add focused tests for causal completed coverage, historical exclusion,
-   source-safe persistence, duplicate/conflict recovery, post-window mutation,
-   no credential/network/execution import behavior, and no KIS live/order
-   route. Update Data, Engine, and orchestration stateboards.
+1. Engine Research: freeze the smallest canonical ragged-layout contract for
+   `short`: per-timeframe sequence order/lengths, feature width, timestamps or
+   time deltas needed by a mask, pair/leg order, source-control identities, and
+   exact availability rules. Make mismatched, incomplete, future, forged, or
+   post-cutoff controls fail closed before a runtime family can consume them.
+2. Implement three narrow target-free consumers over exactly the same frozen
+   controls: per-timeframe recurrent, causal TCN, and masked attention. Their
+   outputs may be shape/digest/runtime facts only; do not persist predictions,
+   scores, weights, raw features, labels, or values.
+3. Run CPU structural smoke first. Then let Research Steward allocate at most
+   one bounded Docker CUDA appointment only if the CPU receipt matches the
+   exact contract. Record source-safe family/phase/status/count/shape/receipt
+   identities and an explicit no-predictive-claim scope.
+4. Data Agent: reattest only the existing source-safe runtime inventory and
+   report its exact input status. Do not collect, mutate, or reinterpret cache
+   data. Execution has no work in this objective.
+5. Add focused tests for causal/ragged layout, mask semantics, family parity,
+   CPU-before-CUDA, unavailable-CUDA containment, external artifact isolation,
+   and no credential/network/execution import route. Update Engine Research,
+   Research Steward, Data, and orchestration stateboards.
 
 ## Completion Evidence
 
-- one tested source-safe forward input/outcome witness contract;
-- a local actual-cache result with target-ready count or a categorical exact
-  gap, without a foreground market-time wait;
-- no raw market values or labels outside `D:\market_data`, and no broker/live
-  activity;
+- one tested target-free ragged sequence contract over the existing five
+  timeframe controls;
+- CPU receipt and, when available, one bounded Docker CUDA receipt for the
+  same contract;
+- source-safe external artifacts only, with no model/predictive/PnL/Paper claim;
 - commit and push, then replace this file with exactly one next objective.
 
 ## Verification
