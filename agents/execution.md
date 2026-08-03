@@ -713,3 +713,22 @@ review status is `review_unavailable`, not approval or agreement. The scheduled
 worker's eventual categorical result is the remaining Execution evidence; no
 new intent, account, quote, order, cancellation, or live call occurred during
 this preparation package.
+
+## Virtual-Paper Canary Claude Recheck (2026-08-04)
+
+Claude's falsification-first recheck returned `uncertain`. The durable
+interpretation is narrow: the expiry guard now reads a live clock after pacing,
+serialization, and request construction immediately before `opener.open`; it
+prevents an already expired intent from beginning I/O but does not claim to
+bound later TLS, socket, venue, or remote-processing latency. The scheduled
+entry point no longer pins that final check to its earlier run timestamp.
+
+The duplicate guard remains a fresh reconciliation inside the existing
+state-root lock. It conservatively rejects a matching open order when either
+the originally requested or remaining quantity matches, so a partially filled
+or pending-cancel matching order cannot create a new submission. Focused tests
+cover the live-clock expiry boundary, partial-fill conflict, and the second
+concurrent state-root run observing the first run's order before submitting.
+KIS does not offer an atomic snapshot-and-submit transaction, so an external
+broker-state change after reconciliation remains an explicit call-time
+limitation, not a false safety claim or a global Paper hold.

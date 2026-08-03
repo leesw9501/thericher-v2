@@ -221,9 +221,12 @@ end-to-end replay test.
   persistence concern was resolved by schema v3, which excludes all price and
   order-identifier fields from runtime and legacy read-only evidence.
   The separate virtual-Paper canary now has one updated task-owned 23:35 KST
-  attempt: its quote-derived expiry is rechecked immediately before transport,
-  duplicate conflict ignores limit-price changes, and a proven-open exact
-  unknown resumes cancellation only.
+  attempt: its quote-derived expiry is rechecked with a live clock immediately
+  before I/O, without claiming to bound later socket or venue latency; duplicate
+  conflict ignores limit-price changes and conservatively includes partial
+  fills; and a proven-open exact unknown resumes cancellation only. Claude's
+  current falsification verdict is `uncertain` with the explicit non-atomic
+  broker snapshot/submit limitation retained.
 - **Data:** the broad current-listing D1 cache and its source-local research
   consumers are complete with their non-PIT and adjustment limitations intact.
   The installed forward and isolated SPY prefix workers remain Data-owned; they

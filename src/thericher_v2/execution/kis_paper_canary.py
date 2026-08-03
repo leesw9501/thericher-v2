@@ -291,7 +291,11 @@ class UrllibKisPaperCanaryTransport:
         deadline: datetime,
         clock: Callable[[], datetime],
     ) -> KisHttpResponse:
-        """Pace first, then reject an expired order before it reaches the wire."""
+        """Pace and build the request, then recheck immediately before ``open``.
+
+        This prevents an already expired intent from beginning I/O; it does not
+        bound scheduling, TLS, socket, or remote-processing latency after ``open``.
+        """
 
         valid_until = require_utc(deadline, "deadline")
 
@@ -1181,10 +1185,11 @@ class KisPaperCanaryClient:
         validate_kis_paper_canary_request(request)
         if deadline is not None:
             if isinstance(self._transport, UrllibKisPaperCanaryTransport):
+                pre_io_clock = clock or (lambda: datetime.now(UTC))
                 return self._transport.request_before_deadline(
                     request,
                     deadline=deadline,
-                    clock=lambda: _canary_now(now=now, clock=clock),
+                    clock=pre_io_clock,
                 )
             if _canary_now(now=now, clock=clock) >= deadline:
                 raise KisPaperCanaryError("intent_expired")
@@ -1804,7 +1809,10 @@ def _conflicts_with_intent_open_order(
         order.symbol == intent.symbol
         and order.exchange == intent.exchange
         and order.side == intent.side
-        and order.remaining_quantity == intent.quantity
+        and (
+            order.requested_quantity == intent.quantity
+            or order.remaining_quantity == intent.quantity
+        )
         for order in snapshot.open_orders.orders
     )
 
@@ -2488,7 +2496,6 @@ def main(argv: list[str] | None = None) -> int:
             repository_root=arguments.repository_root,
             execute=arguments.execute,
             cancel_after_submit=arguments.cancel_after_submit,
-            now=observed_at,
             execution_control_path=arguments.execution_control,
         )
     except (KisPaperCanaryError, KisPaperReadOnlyError, ValueError) as error:

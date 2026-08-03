@@ -1674,3 +1674,19 @@ current-listing, non-PIT, corporate-action, and session-finality limitations
 remain intact. A future consumer needs its own frozen contract and independently
 qualified input; this preflight cannot be relabeled as comparative, ensemble,
 or Paper evidence.
+
+## Strategy Discovery: Granite TinyTimeMixer R1 (2026-08-04)
+
+The temporary Strategy Discovery assignment produced one external
+`source_unverified` handoff at
+`D:\thericher-v2\model-artifacts\research\strategy-discovery\granite-ttm-r1-source-pass-20260804-r1\source-handoff.json`
+with digest `sha256:a5aa2952d96de784c70a9f9b68660d85eca4232b790a8fed791890694ab8ffa0`.
+The official IBM source describes a univariate minutely-to-hourly forecasting
+interface and Apache-2.0 code license, but its pretraining period and instrument
+scope are `not_disclosed`. No weight, dependency, runtime, dataset, or campaign
+was added.
+
+It may support only a later independently re-retrieved, isolated
+non-promoting causal runtime study with a new qualified input contract. It is
+not a comparative result, ensemble member, GPU appointment, Paper input, or
+promotion candidate.

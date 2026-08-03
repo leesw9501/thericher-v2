@@ -4,6 +4,7 @@ import hashlib
 import json
 import threading
 import urllib.error
+import urllib.request
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -310,6 +311,7 @@ def test_real_canary_transport_rechecks_expiry_after_pacing(monkeypatch) -> None
     current_time = [0.0]
     sleep_calls: list[float] = []
     open_calls: list[float] = []
+    events: list[str] = []
 
     def monotonic_clock() -> float:
         return current_time[0]
@@ -336,21 +338,60 @@ def test_real_canary_transport_rechecks_expiry_after_pacing(monkeypatch) -> None
 
     transport.request(request)
     original_dumps = json.dumps
+    original_request = urllib.request.Request
 
     def advancing_dumps(*args: object, **kwargs: object) -> str:
+        events.append("serialized")
         current_time[0] += 1.0
         return original_dumps(*args, **kwargs)
 
+    def recording_request(*args: object, **kwargs: object) -> urllib.request.Request:
+        events.append("request_built")
+        return original_request(*args, **kwargs)
+
+    def deadline_clock() -> datetime:
+        events.append("deadline_checked")
+        return NOW + timedelta(seconds=119 + current_time[0])
+
     monkeypatch.setattr("thericher_v2.execution.kis_paper_canary.json.dumps", advancing_dumps)
+    monkeypatch.setattr(
+        "thericher_v2.execution.kis_paper_canary.urllib.request.Request",
+        recording_request,
+    )
     with pytest.raises(KisPaperCanaryError, match="intent_expired"):
         transport.request_before_deadline(
             request,
-            deadline=deadline,
-            clock=lambda: NOW + timedelta(seconds=119 + current_time[0]),
+            deadline=deadline + timedelta(seconds=1),
+            clock=deadline_clock,
         )
 
     assert sleep_calls == [1.0]
     assert open_calls == [0.0]
+    assert events == ["serialized", "request_built", "deadline_checked"]
+
+
+def test_real_transport_deadline_uses_live_clock_not_static_run_time(monkeypatch) -> None:
+    class LaterClock:
+        @staticmethod
+        def now(timezone: object) -> datetime:
+            assert timezone is UTC
+            return NOW + timedelta(seconds=121)
+
+    class FailingOpener:
+        def open(self, _request: object, *, timeout: float) -> _PacingResponse:
+            raise AssertionError(f"expired request reached opener with timeout {timeout}")
+
+    transport = UrllibKisPaperCanaryTransport()
+    monkeypatch.setattr(transport, "_opener", FailingOpener())
+    monkeypatch.setattr("thericher_v2.execution.kis_paper_canary.datetime", LaterClock)
+    client = KisPaperCanaryClient(config=_config(), transport=transport)
+
+    with pytest.raises(KisPaperCanaryError, match="intent_expired"):
+        client._dispatch(
+            _canary_transport_request(),
+            deadline=NOW + timedelta(seconds=120),
+            now=NOW,
+        )
 
 
 def test_real_canary_transport_paces_after_a_failed_external_attempt(monkeypatch) -> None:
@@ -1116,6 +1157,37 @@ def test_different_limit_open_order_blocks_a_new_canary_without_binding_or_cance
     )
 
 
+def test_partially_filled_matching_open_order_blocks_a_new_canary_without_submit(
+    tmp_path: Path,
+) -> None:
+    transport = FakeKisPaperCanaryTransport(
+        open_order_rows=[
+            {
+                **_matching_open_order_payload(),
+                "ft_ccld_qty": "0.5",
+                "nccs_qty": "0.5",
+            }
+        ]
+    )
+
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="partial-open-order-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "partial-open-order-1.json",
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.phase == "outcome_unknown"
+    assert outcome.reason_code == "matching_open_order"
+    assert _submission_count(transport) == 0
+    assert transport.cancellation_seen is False
+
+
 def test_read_only_unknown_run_recovery_rebuilds_the_persisted_decision(
     tmp_path: Path,
 ) -> None:
@@ -1785,6 +1857,10 @@ def test_different_run_ids_cannot_submit_concurrently(tmp_path: Path) -> None:
     assert not second.is_alive()
     assert failures == []
     assert _submission_count(transport) == 1
+    second_state = KisPaperCanaryStateStore(tmp_path / "private" / "concurrent-2.json").read()
+    assert second_state is not None
+    assert second_state.phase == "outcome_unknown"
+    assert second_state.reason_code == "matching_open_order"
 
 
 def test_reconciliation_preserves_only_safe_auth_failure_detail(tmp_path: Path) -> None:
