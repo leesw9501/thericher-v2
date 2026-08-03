@@ -271,3 +271,19 @@ panel for another apparent breadth winner without a reconstructible untouched
 partition and family-wise accounting. This does not reserve the GPU or block
 the fresh prospective Paper loop; no current frozen campaign satisfies the
 GPU-appointment contract.
+
+## Profiled MTF Runtime Appointment
+
+Research Steward recorded one `holdout_access=none`, non-promoting runtime
+appointment for `profiled-mtf-flat-mlp-runtime-smoke-v1`, contract
+`sha256:a143947894ca84d536577366e6091dd6f61869290a5babe0f133e6557d53f061`.
+Its exact CPU receipt completed before the single CUDA appointment; the CUDA
+receipt completed sixteen bounded steps on the configured RTX 4090. The
+external custody contains identities and scalar runtime facts only, with no
+sealed evaluation, labels, predictions, weights, selected candidate, ensemble
+lineage, Paper input, or promotion.
+
+The GPU is free again. The prospective 15:30-to-15:45 target contract named by
+Engine is not a GPU appointment until Data has 30 new target-ready QQQ/SPY
+pairs and Engine freezes its independent split, cost, baseline, kill test, and
+CPU receipt.

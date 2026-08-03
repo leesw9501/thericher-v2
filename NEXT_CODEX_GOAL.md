@@ -1,65 +1,75 @@
 # Next Codex Goal
 
-Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`,
-`DECISIONS.md`, `RUNBOOK.md`, and the active stateboards in `agents/` first.
-Then continue from `C:\Users\Public\Documents\thericher-v2`.
+Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
+`RUNBOOK.md`, and the active stateboards in `agents/` first. Then continue from
+`C:\Users\Public\Documents\thericher-v2`.
 
 ## Objective
 
-Build `profiled-mtf-flattened-control-v1`: add one small, pure deterministic
-flattened control view over an existing `NormalizedCompletedBarProjection`.
-It must publish the exact `1m`, `5m`, `10m`, `1h`, and `3h` block order,
-offset, length, and normalization-anchor policy for a later MLP-style control.
-The existing projection already exposes immutable per-timeframe sequences, so
-do not wrap or align them for LSTM, causal-TCN, or attention work yet. This
-advances feature/model research while forward data accumulates; it is not a
-model selection, training, PnL, Paper, or GPU-utilization objective.
+Build `profiled-mtf-forward-outcome-witness-v1`: extend the existing
+forward-only QQQ/SPY MTF observation path so a sealed 15:30 ET causal input
+commitment can be paired with each leg's completed 15:45 ET outcome-window
+commitment. This makes future target-ready pairs recoverable for the frozen
+predictive campaign dependency without opening labels, training a model, or
+creating a Paper decision.
 
 ## Boundaries
 
-- Before architecture-changing edits, ask Claude for a concise
-  falsification-first drift check on whether the adapter duplicates an existing
-  projection/window contract or weakens its causal identity.
-- Use injected or deterministic in-memory projections only. Do not read KIS,
-  credentials, `.env`, caches, or network state; do not create a market-data
-  artifact or a fresh forward observation.
-- Do not train a model, load public weights, create a checkpoint, score a
-  target, choose a window profile or model family, claim performance, touch
-  `local_paper`, or call a broker.
-- Preserve `NormalizedCompletedBarProjection` as the source of causal-window,
-  source-contract, profile, cutoff, and projection identity. Do not add a
-  second resampler or a generic feature platform.
+- Ask Claude for one concise falsification-first drift check before changing
+  the forward-observation persistence contract or a KIS collection schedule.
+- Reuse the existing verified local KIS private intraday loader, canonical
+  session calendar, and prospective-observer historical exclusion. Do not add
+  another provider, source format, feature platform, or scheduler framework.
+- KIS Paper market-data collection is allowed only through the existing owned
+  collector when a missing forward outcome needs it. KIS account/order routes,
+  `.env`/credential output, KIS live, public access, and all broker actions
+  remain out of scope.
+- Store raw market data only under `D:\market_data`; write commitments,
+  receipts, and metadata only under `D:\thericher-v2\model-artifacts` or
+  `/app/model_artifacts`. Never persist raw OHLCV, close values, return labels,
+  account data, tokens, or identifiers in Git or artifacts.
+- Keep the scope target-free: a witness may attest that an outcome window is
+  recoverable, but it must not calculate or expose its return label, fit a
+  model, compare a baseline, claim PnL, allocate GPU, or form an order intent.
 
 ## Required Work
 
-1. Inventory the existing projection, causal window, and sequence-architecture
-   APIs. Add only the smallest typed flattened view and published block layout;
-   do not re-export per-timeframe sequences the projection already exposes.
-2. Bind the view to one explicit profile, source identity, cutoff, feature
-   timestamp, per-timeframe window ends, projection digest, and canonical
-   `(timeframe, offset, length, anchor policy)` layout. It must reject a wrong
-   type, identity/geometry mismatch, reordered layout, or a projection that is
-   not already causal and structurally valid.
-3. State the precise boundary: this view validates inherited projection identity
-   and geometry, not independent value provenance. Keep PyTorch optional and
-   out of module import. Do not add a trainer, model registry, artifact writer,
-   CUDA appointment, or cross-timeframe sequence alignment.
-4. Add focused tests for deterministic identity, flattened/per-timeframe
-   geometry, mutation sensitivity, causal rejection, and import/no-I/O
-   isolation. Update the Engine and orchestration stateboards with the exact
-   next research dependency rather than a new queue.
+1. Data Agent: inventory the existing forward observer and intraday collector
+   contracts. Add the smallest value-free paired witness that binds an eligible
+   future 15:30 input commitment to verified complete QQQ and SPY 15:31-15:45
+   minute coverage and opaque outcome-content commitments. Historical 21
+   sessions must remain excluded.
+2. Make duplicate, conflict, unavailable, recovery, and post-window mutation
+   behavior explicit and idempotent. A mutable whole-cache identity must not
+   rewrite an earlier sealed input or outcome witness; a changed completed
+   constituent must fail or produce a distinct conflict rather than silently
+   overwrite evidence.
+3. If the market is closed or no forward pair is present, run a local no-op
+   verification and leave an exact `input_unavailable`/`zero_target_ready`
+   fact. Do not make Codex wait. If a schedule is needed, attach it to the
+   existing Data-owned worker with one bounded retry/recovery record.
+4. Engine Research: consume only the source-safe count/identity result and
+   restate the frozen 30-pair predictive dependency. Do not open outcomes or
+   create model, CUDA, ensemble, validation, or Paper work.
+5. Add focused tests for causal completed coverage, historical exclusion,
+   source-safe persistence, duplicate/conflict recovery, post-window mutation,
+   no credential/network/execution import behavior, and no KIS live/order
+   route. Update Data, Engine, and orchestration stateboards.
 
 ## Completion Evidence
 
-- a pure flattened control view composes with the existing causal projection;
-- no data, credential, broker, Paper, model-weight, or GPU side effect occurs;
-- focused tests demonstrate causal and identity containment;
+- one tested source-safe forward input/outcome witness contract;
+- a local actual-cache result with target-ready count or a categorical exact
+  gap, without a foreground market-time wait;
+- no raw market values or labels outside `D:\market_data`, and no broker/live
+  activity;
 - commit and push, then replace this file with exactly one next objective.
 
 ## Verification
 
 ```powershell
 uv run --extra dev pytest -q <changed focused tests>
+.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet

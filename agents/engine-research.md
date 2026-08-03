@@ -1303,3 +1303,34 @@ Focused control coverage passed `21 passed, 1 skipped`; related causal/MTF
 regression coverage passed `33 passed, 2 skipped`; the restored clean-root full
 parallel authority passed `2245 passed, 21 skipped`. This does not convert the
 input view into a trained or selected model.
+
+## Profiled MTF Runtime Smoke
+
+`profiled-mtf-flat-mlp-runtime-smoke-v1` completed one target-free runtime
+appointment over the fixed `short` all-available-leg batch: 42 controls by 50
+features. CPU completed eight fixed steps and CUDA completed sixteen fixed
+steps in the Docker research image; both receipts and the frozen contract
+`sha256:a143947894ca84d536577366e6091dd6f61869290a5babe0f133e6557d53f061`
+are external only under `D:\thericher-v2\model-artifacts`. The CPU companion
+also ran the same fixed column-permuted matrix seam. No values, labels,
+predictions, weights, checkpoints, broker input, or Paper decision were
+persisted.
+
+This is strictly `runtime_evidence_only`. With 42 controls and width 50, the
+scalar losses cannot establish feature structure, learning quality, model
+selection, or PnL. Claude's `supported-with-limits` review bound this result to
+plumbing and required the paired count/width and permutation diagnostic.
+
+A temporary independent Review then closed two receipt-safety defects: CUDA
+reattachment now rechecks the matching completed CPU receipt, and a
+CUDA-unavailable result receives a non-promoting failed outcome rather than a
+completed outcome. Those fixes do not change the target-free scope.
+
+The next predictive dependency is frozen but not yet executable: use only new
+forward QQQ/SPY pairs, `short` profile, and a per-leg 15:30-to-15:45 ET
+completed-bar log-return target. Require 30 target-ready pairs, then freeze a
+temporal `20 train / 2 purge / 8 validation` split, fixed 20bp round-trip
+cost sensitivity, a no-trade naive baseline, and a blocked-session target
+permutation kill test. GPU is eligible only after that distinct contract has a
+matching CPU receipt; its one bounded appointment stops at ten minutes. No
+labels were opened or training/PnL work performed here.

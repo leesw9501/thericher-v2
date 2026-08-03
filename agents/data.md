@@ -1167,3 +1167,21 @@ missing, symlinked, malformed, noncanonical, or wrong-session content, and
 reconstructs the immutable receipt without reopening bars or mutating a cache.
 It creates no schedule in this package. Its scoped unavailable result belongs
 only to the prospective SPY Paper adapter and cannot pause other Data work.
+
+## Profiled MTF Runtime Inventory
+
+The read-only local KIS-shaped inventory for the Engine runtime smoke is
+`runtime_input_ready`: `QQQ/NAS/1m` and `SPY/AMS/1m` provide 21 aligned causal
+regular-session prefixes at the fixed 15:30 ET cutoff. The fixed `short`
+profile yields 42 caller-owned leg controls with 50 normalized in-memory
+features each; their source-safe inventory is under
+`D:\thericher-v2\model-artifacts\data\profiled-mtf-runtime-inventory-v1\local-cache-r4`.
+The container had no network route, invoked no KIS endpoint, and did not mutate
+the cache.
+
+This is an input/runtime fact, not a historical evaluation dataset:
+`predictive_target_ready_pair_count` remains `0`. The smallest next collection
+need is one forward-only record per new aligned QQQ/SPY session that binds a
+15:30 completed-input commitment to each leg's completed 15:45 ET outcome
+window. Preserve the historical 21-session exclusion and retain source-safe
+commitments until a separately frozen predictive campaign may open labels.

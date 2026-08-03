@@ -2207,3 +2207,38 @@ authority runs, with parent/child non-link checks and the prior 24-hour
 fail-closed recovery retained. The direct legacy roots were not moved or
 deleted. Claude's review was `supported-with-limits`; the shared root preserves
 current fast-lane visibility rather than silently bypassing it.
+
+## Profiled MTF Runtime And Campaign Readiness
+
+`profiled-mtf-runtime-and-campaign-readiness-v1` is complete. The narrow
+runtime module consumes only existing `ProfiledMtfFlattenedControl` values and
+fixes the `short` profile's canonical 42-control by 50-feature in-memory batch.
+It validates the static five-timeframe layout, unique control identities,
+external artifact containment, CPU-before-CUDA order, and categorical
+CUDA-unavailable containment. It imports neither Torch nor Execution until a
+runtime call is made.
+
+The final external-only `local-cache-r4` contract is
+`sha256:a143947894ca84d536577366e6091dd6f61869290a5babe0f133e6557d53f061`.
+The CPU receipt completed eight fixed steps, then the Docker research image
+used the RTX 4090 for one sixteen-step CUDA receipt. The paired original and
+column-permuted CPU runs are runtime plumbing evidence only: 42 controls are
+not enough to treat scalar losses as feature structure, learning, selection,
+or PnL evidence. No raw rows, feature values, labels, predictions, weights,
+checkpoints, cache mutation, KIS call, credential read, broker route, Paper
+action, or live behavior occurred.
+
+The local source inventory remains 21 aligned QQQ/SPY 15:30 ET causal input
+prefixes with `predictive_target_ready_pair_count: 0`. The next exact
+dependency is a forward-only QQQ/SPY 15:30 input commitment paired with each
+leg's completed 15:45 ET outcome window. The initial predictive contract is
+predeclared but not executable: `short` profile, per-leg 15-minute log-return,
+30 target-ready pairs, `20/2/8` temporal split, 20bp round-trip sensitivity,
+no-trade baseline, blocked-session target-permutation kill test, CPU receipt,
+and a maximum ten-minute GPU appointment. No label has been opened.
+
+Focused relevant tests passed `31 passed, 1 skipped`; clean-root full parallel
+will be rerun after the final receipt-safety fixes. Ruff and both credential-free
+Compose configurations passed. The next goal is the narrow delayed-outcome
+witness that makes those forward pair commitments recoverable without exposing
+market values in artifacts.

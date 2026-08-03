@@ -812,3 +812,21 @@ same-session causal misreading without adding a new gate.
   unrelated bounded work idle forever. Claude's verdict was
   `supported-with-limits`; parent/child non-link checks and 24-hour recovery
   remain mandatory.
+
+## Profiled MTF Runtime Readiness
+
+- **Ready:** the local QQQ/SPY MTF runtime path is complete and the next
+  single product dependency is a source-safe forward-outcome witness. It can
+  advance without a fresh historical research pass, a GPU wait, or an operator
+  decision.
+- **Owned:** Data owns new 15:30 input to 15:45 outcome commitments; Engine
+  owns the frozen `short` predictive contract once target-ready pairs exist;
+  Research Steward released the completed target-free CUDA appointment;
+  Execution has no route change.
+- **Due:** no foreground wait. The next outcome capture is an owned Data
+  schedule fact, while local implementation, tests, and Paper preparation
+  remain independently dispatchable.
+- **Improvement:** CPU-first CUDA validation now consumes the existing causal
+  control rather than inventing an unqualified model family. Its 42-by-50
+  batch and column-permutation result are explicitly plumbing-only, preserving
+  a clean boundary between runtime readiness and predictive evidence.
