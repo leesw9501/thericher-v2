@@ -93,6 +93,40 @@ def test_materializes_first_thirty_pairs_with_exact_target_and_pair_purge(
     assert receipt.result.safe_payload()["dataset_materialization_sha256"] == (
         result.dataset_materialization_sha256
     )
+    loaded_receipt = dataset.load_profiled_mtf_forward_supervised_dataset_receipt(
+        receipt.receipt_path,
+        market_data_root=tmp_path / "market-data",
+        repo_root=repository,
+    )
+    loaded = dataset.load_profiled_mtf_forward_supervised_dataset_materialization(
+        loaded_receipt,
+        catalog=catalog,
+        repo_root=repository,
+    )
+    assert loaded is not None
+    assert loaded.rows[0] == dataset.ProfiledMtfForwardSupervisedTargetRow(
+        pair_index=0,
+        leg_index=0,
+        split="train",
+        session_key_sha256=catalog.snapshots[0].session_key_sha256,
+        witness_sha256=catalog.snapshots[0].witness_sha256,
+        raw_snapshot_sha256=catalog.snapshots[0].raw_snapshot_sha256,
+        input_end=catalog.snapshots[0].input_prefixes[0][-1].end_ts,
+        outcome_end=catalog.snapshots[0].outcome_windows[0][-1].end_ts,
+        target_log_return=dataset._log_return(
+            catalog.snapshots[0].input_prefixes[0][-1].close,
+            catalog.snapshots[0].outcome_windows[0][-1].close,
+        ),
+    )
+    original_bytes = result.dataset_path.read_bytes()
+    result.dataset_path.write_bytes(original_bytes + b" ")
+    with pytest.raises(ValueError, match="materialization"):
+        dataset.load_profiled_mtf_forward_supervised_dataset_materialization(
+            loaded_receipt,
+            catalog=catalog,
+            repo_root=repository,
+        )
+    result.dataset_path.write_bytes(original_bytes)
     assert result == dataset.materialize_profiled_mtf_forward_supervised_dataset(
         policy,
         receipt=readiness_receipt,
@@ -141,6 +175,19 @@ def test_below_threshold_receipt_leaves_no_target_bearing_dataset(tmp_path: Path
     rendered = receipt.receipt_path.read_text(encoding="utf-8")
     assert "target_log_return" not in rendered
     assert "raw_snapshot_sha256" not in rendered
+    loaded_receipt = dataset.load_profiled_mtf_forward_supervised_dataset_receipt(
+        receipt.receipt_path,
+        market_data_root=market_data_root,
+        repo_root=repository,
+    )
+    assert (
+        dataset.load_profiled_mtf_forward_supervised_dataset_materialization(
+            loaded_receipt,
+            catalog=catalog,
+            repo_root=repository,
+        )
+        is None
+    )
 
 
 def test_rejects_stale_readiness_even_when_current_catalog_is_ready(tmp_path: Path) -> None:

@@ -887,6 +887,22 @@ same-session causal misreading without adding a new gate.
   manifest makes the old readiness receipt stale rather than silently eligible.
   Claude timed out as `review_unavailable`; independent work continues.
 
+## Profiled MTF Forward CPU Campaign Executor (2026-08-01)
+
+- **Ready:** a fixed CPU-only classical-control campaign can now consume the
+  exact D:-only forward dataset, or return scoped input unavailable with zero
+  fitting. The next ready package is a distinct ragged sequence-family CPU
+  executor; it can be fixture-tested while Data continues prospective capture.
+- **Owned:** Data owns snapshot/catalog reattestation and collection; Engine
+  owns the dataset reader and fixed control execution; Research Steward has no
+  GPU appointment; Execution has no route change.
+- **Due:** the real source is still zero target-ready pair. That condition is
+  owned by Data's forward collector and does not hold sequence implementation
+  or another non-conflicting package.
+- **Improvement:** source-safe receipts now distinguish actual zero fitting
+  from fixture-only CPU fitting. This prevents a status field from implying a
+  model run that did not occur, without adding an approval or scheduling gate.
+
 ## Profiled MTF Forward Supervised Dataset Contract (2026-08-01)
 
 - **Ready:** the independent Engine package is complete: a matching forward

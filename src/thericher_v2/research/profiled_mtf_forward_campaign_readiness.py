@@ -276,6 +276,14 @@ def reattest_profiled_mtf_forward_campaign_readiness(
         raise ValueError("forward campaign readiness receipt is stale")
 
 
+def profiled_mtf_forward_campaign_inventory_sha256(
+    inventory: KisMtfProfiledForwardOutcomeInventory,
+) -> str:
+    """Expose the canonical source-safe inventory identity to a later reader."""
+
+    return _inventory_sha256(_validated_inventory(inventory))
+
+
 def write_profiled_mtf_forward_campaign_readiness_receipt(
     readiness: ProfiledMtfForwardCampaignReadiness,
     *,

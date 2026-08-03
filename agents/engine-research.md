@@ -1417,3 +1417,24 @@ work. The next engine package should prepare one CPU-first multi-family
 campaign executor that remains input-unavailable until this exact dataset is
 materialized, rather than retrying a target-free runtime or inventing a
 performance claim.
+
+## Profiled MTF Forward CPU Campaign Executor (2026-08-01)
+
+Engine now has one fixed, non-promoting classical-control path above the
+forward dataset reader. The `short` causal inputs are transformed only from
+completed 15:30 ET prefixes into the existing explicit 50-value flattened
+control. It retains native timeframe block semantics and never uses a 15:45
+outcome bar as a feature.
+
+The only candidates are predeclared: no-trade-zero, Ridge(alpha=10), and a
+small deterministic depth-limited histogram-gradient regressor. One pair-block
+target-reversal kill run accompanies the ordinary CPU pass; 20 train pairs and
+8 validation pairs are used while the 2 purge pairs are excluded. Fixture
+results are deterministic plumbing evidence, not selection, profitability,
+PnL, Paper, or GPU evidence.
+
+The real `local-cache-r4` run is `input_unavailable` at zero source pairs and
+fitted no model. The next ready Engine package is a separate sequence-family
+CPU executor using the already tested native ragged LSTM/TCN/masked-attention
+representations, with the same dataset reattestation and no GPU appointment
+until actual data supports a frozen campaign.

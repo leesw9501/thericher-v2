@@ -329,3 +329,13 @@ still zero, and the `local-cache-r1` materializer therefore created no target
 rows or training request. GPU remains unallocated until a new Engine campaign
 freezes the complete CPU-first candidate family, cost/baseline/kill test, and
 compute-stop evidence against an actual materialized dataset.
+
+## Profiled MTF Forward CPU Campaign Executor (2026-08-01)
+
+The new classical-control executor has no Research Steward appointment. Its
+fixture-only CPU pass is not a candidate selection, evaluation spend, model
+weight artifact, or depth-training request. The real `local-cache-r4` source
+is input-unavailable at zero pairs and fitted no model; GPU remains free rather
+than being filled with synthetic or fixture data. A later sequence family needs
+its own frozen CPU evidence and actual reattested dataset before it can request
+the exclusive GPU resource.

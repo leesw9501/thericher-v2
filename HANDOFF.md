@@ -2350,3 +2350,28 @@ dataset `local-cache-r1` receipt is
 it contains no target-bearing D: dataset artifact. Claude's requested
 falsification-first check timed out, recorded as `review_unavailable`, not a
 verdict or a hold on the next independent Engine package.
+
+## Profiled MTF Forward CPU Campaign Executor (2026-08-01)
+
+`profiled-mtf-forward-cpu-campaign-executor-v1` is complete. It reopens a
+supervised dataset only through its immutable external receipt, current Data
+snapshot catalog, exact first-30 identities, and canonical D:-only payload.
+It rejects stale, missing, or mutated materialization and pair-split drift
+without creating a data path.
+
+The fixed `short` representation uses completed 15:30 ET M1 prefixes only. It
+preserves native `1m/5m/10m/1h/3h` windows (`15/3/3/2/2`) and makes one
+explicit 50-value classical control from normalized close/volume features;
+outcome-window values never enter features. The predeclared CPU-only controls
+are `no_trade_zero`, `ridge_alpha_10`, and a depth-limited histogram-gradient
+regressor. They execute one `20/2/8` pair-level pass with purge rows excluded
+and a reversed pair-block training-target kill test. Results remain
+non-promoting: no winner, PnL, Paper input, weights, or GPU appointment.
+
+Full-session fixture evidence passed deterministically and kept all values,
+targets, predictions, and model state out of artifacts. The real host and
+Docker `local-cache-r4` result is
+`sha256:0f7cb547a31a7d6e71418e1c5b9f8e454957cb1c87a7e56f4663d2fd87096b10`:
+the inherited dataset is still zero pair, so no model was fitted and no GPU was
+used. Claude timed out as `review_unavailable`, not a conclusion or a reason
+to pause the next distinct Engine family.

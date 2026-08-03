@@ -28,6 +28,7 @@ from .profiled_mtf_forward_campaign_readiness import (
     PROFILED_MTF_FORWARD_CAMPAIGN_REQUIRED_PAIR_COUNT,
     PROFILED_MTF_FORWARD_CAMPAIGN_TEMPORAL_SPLIT,
     ProfiledMtfForwardCampaignReadinessReceipt,
+    profiled_mtf_forward_campaign_inventory_sha256,
     reattest_profiled_mtf_forward_campaign_readiness,
 )
 
@@ -225,6 +226,34 @@ class ProfiledMtfForwardSupervisedDatasetReceipt:
             raise ValueError("profiled MTF supervised dataset receipt is invalid")
 
 
+@dataclass(frozen=True, slots=True)
+class ProfiledMtfForwardSupervisedDatasetMaterialization:
+    """One verified in-memory view of the D:-only first-30-pair target rows."""
+
+    receipt: ProfiledMtfForwardSupervisedDatasetReceipt = field(repr=False)
+    catalog: KisMtfProfiledForwardOutcomeSnapshotCatalog = field(repr=False)
+    snapshots: tuple[object, ...] = field(repr=False)
+    rows: tuple[ProfiledMtfForwardSupervisedTargetRow, ...] = field(repr=False)
+    dataset_path: Path
+
+    def __post_init__(self) -> None:
+        snapshots = tuple(_require_snapshot(snapshot) for snapshot in self.snapshots)
+        rows = tuple(self.rows)
+        result = self.receipt.result
+        if (
+            result.status != "materialized"
+            or self.catalog.contract.contract_sha256
+            != self.receipt.policy.forward_outcome_contract_sha256
+            or len(snapshots) != PROFILED_MTF_FORWARD_SUPERVISED_DATASET_PAIR_COUNT
+            or rows != _target_rows(snapshots)
+            or self.dataset_path != result.dataset_path
+            or self.dataset_path.is_symlink()
+        ):
+            raise ValueError("profiled MTF supervised dataset materialization is invalid")
+        object.__setattr__(self, "snapshots", snapshots)
+        object.__setattr__(self, "rows", rows)
+
+
 def freeze_profiled_mtf_forward_supervised_dataset_policy(
     receipt: ProfiledMtfForwardCampaignReadinessReceipt,
     *,
@@ -351,6 +380,107 @@ def write_profiled_mtf_forward_supervised_dataset_receipt(
     )
 
 
+def load_profiled_mtf_forward_supervised_dataset_receipt(
+    receipt_path: Path | str,
+    *,
+    market_data_root: Path | str,
+    repo_root: Path | str,
+) -> ProfiledMtfForwardSupervisedDatasetReceipt:
+    """Load one external source-safe receipt without creating an artifact path."""
+
+    path = Path(receipt_path)
+    reject_repo_artifact_path(path, Path(repo_root))
+    if path.is_symlink() or not path.is_file():
+        raise ValueError("supervised dataset receipt is missing or invalid")
+    try:
+        encoded = path.read_bytes()
+        payload = json.loads(encoded)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("supervised dataset receipt is malformed") from error
+    if not isinstance(payload, dict) or encoded != _canonical_json(payload):
+        raise ValueError("supervised dataset receipt is malformed")
+    if (
+        set(payload)
+        != {
+            "schema_version",
+            "dataset_id",
+            "attempt_id",
+            "policy",
+            "result",
+            "artifact_policy",
+            "receipt_sha256",
+        }
+        or payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("dataset_id") != PROFILED_MTF_FORWARD_SUPERVISED_DATASET_ID
+        or not isinstance(payload.get("attempt_id"), str)
+        or payload.get("artifact_policy") != _artifact_policy()
+    ):
+        raise ValueError("supervised dataset receipt is malformed")
+    _require_attempt_id(payload["attempt_id"])
+    receipt_sha256 = _required_sha256_payload(payload, "receipt_sha256")
+    unsigned = dict(payload)
+    unsigned.pop("receipt_sha256")
+    if receipt_sha256 != _sha256_json(unsigned):
+        raise ValueError("supervised dataset receipt checksum is invalid")
+    policy = _policy_from_safe_payload(_required_mapping(payload, "policy"))
+    result = _result_from_safe_payload(
+        _required_mapping(payload, "result"),
+        market_data_root=Path(market_data_root),
+        repo_root=Path(repo_root),
+    )
+    return ProfiledMtfForwardSupervisedDatasetReceipt(
+        policy=policy,
+        result=result,
+        receipt_path=path,
+        receipt_sha256=receipt_sha256,
+    )
+
+
+def load_profiled_mtf_forward_supervised_dataset_materialization(
+    receipt: ProfiledMtfForwardSupervisedDatasetReceipt,
+    *,
+    catalog: KisMtfProfiledForwardOutcomeSnapshotCatalog,
+    repo_root: Path | str,
+) -> ProfiledMtfForwardSupervisedDatasetMaterialization | None:
+    """Reattest and open the exact D:-only rows without regenerating them."""
+
+    result = receipt.result
+    _reattest_dataset_receipt_and_catalog(receipt=receipt, catalog=catalog)
+    if result.status == "input_unavailable":
+        return None
+    if result.dataset_path is None or result.dataset_contract_sha256 is None:
+        raise ValueError("supervised dataset materialization is unavailable")
+    reject_repo_artifact_path(result.dataset_path, Path(repo_root))
+    if not result.dataset_path.exists() or result.dataset_path.is_symlink():
+        raise ValueError("supervised dataset materialization is unavailable")
+    try:
+        encoded = result.dataset_path.read_bytes()
+        payload = json.loads(encoded)
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("supervised dataset materialization is malformed") from error
+    selected = catalog.snapshots[:PROFILED_MTF_FORWARD_SUPERVISED_DATASET_PAIR_COUNT]
+    expected_rows = _target_rows(selected)
+    expected_payload = _dataset_payload(
+        policy=receipt.policy,
+        result=result,
+        rows=expected_rows,
+    )
+    if (
+        not isinstance(payload, dict)
+        or encoded != _canonical_json(payload)
+        or encoded != _canonical_json(expected_payload)
+        or _sha256_json(payload) != result.dataset_materialization_sha256
+    ):
+        raise ValueError("supervised dataset materialization changed")
+    return ProfiledMtfForwardSupervisedDatasetMaterialization(
+        receipt=receipt,
+        catalog=catalog,
+        snapshots=selected,
+        rows=expected_rows,
+        dataset_path=result.dataset_path,
+    )
+
+
 def _reattest_receipt_and_catalog(
     *,
     policy: ProfiledMtfForwardSupervisedDatasetPolicy,
@@ -371,6 +501,59 @@ def _reattest_receipt_and_catalog(
         policy=receipt.policy,
         inventory=catalog.inventory,
     )
+
+
+def _reattest_dataset_receipt_and_catalog(
+    *,
+    receipt: ProfiledMtfForwardSupervisedDatasetReceipt,
+    catalog: KisMtfProfiledForwardOutcomeSnapshotCatalog,
+) -> None:
+    result = receipt.result
+    policy = receipt.policy
+    if (
+        catalog.contract.contract_sha256 != policy.forward_outcome_contract_sha256
+        or result.policy_sha256 != policy.policy_sha256
+        or result.readiness_receipt_sha256 != policy.readiness_receipt_sha256
+        or result.source_inventory_sha256 != _inventory_sha256(catalog)
+        or result.source_manifest_sha256 != catalog.inventory.target_ready_manifest_sha256
+    ):
+        raise ValueError("supervised dataset receipt is stale or mismatched")
+    if result.status == "materialized":
+        selected = catalog.snapshots[:PROFILED_MTF_FORWARD_SUPERVISED_DATASET_PAIR_COUNT]
+        if (
+            len(selected) != PROFILED_MTF_FORWARD_SUPERVISED_DATASET_PAIR_COUNT
+            or result.selected_pair_manifest_sha256 != _selected_pair_manifest_sha256(selected)
+            or result.dataset_contract_sha256
+            != _dataset_contract_sha256(
+                policy_sha256=policy.policy_sha256,
+                selected_pair_manifest_sha256=result.selected_pair_manifest_sha256,
+                source_inventory_sha256=result.source_inventory_sha256,
+            )
+        ):
+            raise ValueError("supervised dataset receipt is stale or mismatched")
+
+
+def _dataset_payload(
+    *,
+    policy: ProfiledMtfForwardSupervisedDatasetPolicy,
+    result: ProfiledMtfForwardSupervisedDatasetResult,
+    rows: tuple[ProfiledMtfForwardSupervisedTargetRow, ...],
+) -> dict[str, object]:
+    if result.dataset_contract_sha256 is None:
+        raise ValueError("supervised dataset contract is unavailable")
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "kind": PROFILED_MTF_FORWARD_SUPERVISED_DATASET_ID,
+        "dataset_contract_sha256": result.dataset_contract_sha256,
+        "policy_sha256": policy.policy_sha256,
+        "readiness_receipt_sha256": result.readiness_receipt_sha256,
+        "source_inventory_sha256": result.source_inventory_sha256,
+        "source_manifest_sha256": result.source_manifest_sha256,
+        "selected_pair_manifest_sha256": result.selected_pair_manifest_sha256,
+        "pair_count": result.selected_pair_count,
+        "row_count": len(rows),
+        "rows": [row.d_only_payload() for row in rows],
+    }
 
 
 def _target_rows(
@@ -508,6 +691,143 @@ def _policy_unsigned_payload(
     )
 
 
+def _policy_from_safe_payload(
+    payload: dict[str, object],
+) -> ProfiledMtfForwardSupervisedDatasetPolicy:
+    expected_keys = {
+        "dataset_id",
+        "readiness_receipt_sha256",
+        "readiness_policy_sha256",
+        "readiness_sha256",
+        "forward_outcome_contract_sha256",
+        "code_revision_sha256",
+        "selection",
+        "target",
+        "pair_level_temporal_split",
+        "policy_sha256",
+    }
+    if set(payload) != expected_keys or payload.get("dataset_id") != (
+        PROFILED_MTF_FORWARD_SUPERVISED_DATASET_ID
+    ):
+        raise ValueError("supervised dataset policy is malformed")
+    required_fields = (
+        "readiness_receipt_sha256",
+        "readiness_policy_sha256",
+        "readiness_sha256",
+        "forward_outcome_contract_sha256",
+        "code_revision_sha256",
+        "policy_sha256",
+    )
+    policy = ProfiledMtfForwardSupervisedDatasetPolicy(
+        **{
+            field_name: _required_sha256_payload(payload, field_name)
+            for field_name in required_fields
+        }
+    )
+    if payload != policy.safe_payload():
+        raise ValueError("supervised dataset policy is malformed")
+    return policy
+
+
+def _result_from_safe_payload(
+    payload: dict[str, object],
+    *,
+    market_data_root: Path,
+    repo_root: Path,
+) -> ProfiledMtfForwardSupervisedDatasetResult:
+    expected_keys = {
+        "dataset_id",
+        "policy_sha256",
+        "readiness_receipt_sha256",
+        "source_inventory_sha256",
+        "source_manifest_sha256",
+        "status",
+        "selected_pair_count",
+        "selected_pair_manifest_sha256",
+        "row_count",
+        "dataset_contract_sha256",
+        "dataset_materialization_sha256",
+        "scope",
+        "result_sha256",
+    }
+    if (
+        set(payload) != expected_keys
+        or payload.get("dataset_id") != PROFILED_MTF_FORWARD_SUPERVISED_DATASET_ID
+        or payload.get("scope") != _result_scope()
+        or payload.get("status") not in {"input_unavailable", "materialized"}
+    ):
+        raise ValueError("supervised dataset result is malformed")
+    dataset_contract_sha256 = _optional_sha256_payload(payload, "dataset_contract_sha256")
+    status = payload["status"]
+    dataset_path = (
+        _dataset_destination(
+            market_data_root=market_data_root,
+            repo_root=repo_root,
+            dataset_contract_sha256=dataset_contract_sha256,
+        )
+        if status == "materialized" and dataset_contract_sha256 is not None
+        else None
+    )
+    result = ProfiledMtfForwardSupervisedDatasetResult(
+        policy_sha256=_required_sha256_payload(payload, "policy_sha256"),
+        readiness_receipt_sha256=_required_sha256_payload(
+            payload, "readiness_receipt_sha256"
+        ),
+        source_inventory_sha256=_required_sha256_payload(payload, "source_inventory_sha256"),
+        source_manifest_sha256=_required_sha256_payload(payload, "source_manifest_sha256"),
+        status=status,
+        selected_pair_count=_required_int_payload(payload, "selected_pair_count"),
+        selected_pair_manifest_sha256=_required_sha256_payload(
+            payload, "selected_pair_manifest_sha256"
+        ),
+        row_count=_required_int_payload(payload, "row_count"),
+        dataset_contract_sha256=dataset_contract_sha256,
+        dataset_materialization_sha256=_optional_sha256_payload(
+            payload, "dataset_materialization_sha256"
+        ),
+        result_sha256=_required_sha256_payload(payload, "result_sha256"),
+        dataset_path=dataset_path,
+    )
+    if payload != result.safe_payload():
+        raise ValueError("supervised dataset result is malformed")
+    return result
+
+
+def _dataset_destination(
+    *,
+    market_data_root: Path,
+    repo_root: Path,
+    dataset_contract_sha256: str,
+) -> Path:
+    _require_sha256(dataset_contract_sha256, "dataset_contract_sha256")
+    reject_repo_artifact_path(market_data_root, repo_root)
+    root = market_data_root.absolute()
+    if root.exists() and (root.is_symlink() or not root.is_dir()):
+        raise ValueError("supervised dataset market-data root is invalid")
+    current = root
+    resolved_root = root.resolve(strict=True) if root.exists() else None
+    for part in (
+        "us_equities",
+        "kis_paper_private",
+        PROFILED_MTF_FORWARD_SUPERVISED_DATASET_RAW_DIRECTORY,
+        "c",
+        _storage_key(dataset_contract_sha256),
+    ):
+        current = current / part
+        if current.exists():
+            if current.is_symlink() or not current.is_dir():
+                raise ValueError("supervised dataset path is invalid")
+            if resolved_root is not None and not current.resolve(strict=True).is_relative_to(
+                resolved_root
+            ):
+                raise ValueError("supervised dataset path escapes market data")
+    return current / "supervised-dataset.json"
+
+
+def _inventory_sha256(catalog: KisMtfProfiledForwardOutcomeSnapshotCatalog) -> str:
+    return profiled_mtf_forward_campaign_inventory_sha256(catalog.inventory)
+
+
 def _policy_unsigned_payload_from_fields(
     *,
     readiness_receipt_sha256: str,
@@ -640,6 +960,27 @@ def _storage_key(value: str) -> str:
 def _required_sha256_payload(payload: dict[str, object], field_name: str) -> str:
     value = payload.get(field_name)
     _require_sha256(value, field_name)
+    return value
+
+
+def _optional_sha256_payload(payload: dict[str, object], field_name: str) -> str | None:
+    value = payload.get(field_name)
+    if value is not None:
+        _require_sha256(value, field_name)
+    return value
+
+
+def _required_mapping(payload: dict[str, object], field_name: str) -> dict[str, object]:
+    value = payload.get(field_name)
+    if not isinstance(value, dict):
+        raise ValueError(f"{field_name} must be an object")
+    return value
+
+
+def _required_int_payload(payload: dict[str, object], field_name: str) -> int:
+    value = payload.get(field_name)
+    if type(value) is not int:
+        raise ValueError(f"{field_name} must be an integer")
     return value
 
 

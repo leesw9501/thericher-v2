@@ -1257,3 +1257,17 @@ and inventory identity
 It remains `zero_target_ready`, count zero. That fact limits only the selected
 forward supervised materialization; it does not pause collection recovery or
 any independent Engine/Execution package.
+
+## Forward Supervised Dataset Reader (2026-08-01)
+
+The D:-only supervised materialization now has a strict immutable reader for
+Engine. It binds the external source-safe dataset receipt to the current Data
+inventory, selected first-30 snapshot identities, raw snapshot hashes,
+chronological order, pair split, and canonical target payload. It opens no
+provider/client/environment route and creates no path; unavailable returns
+`None` only for the exact zero-result receipt, while changed or missing content
+is rejected.
+
+The current Data catalog remains zero, so the reader did not open a
+D:-resident target dataset on host or Docker. This scoped fact does not pause
+collection recovery or an independent Engine family.

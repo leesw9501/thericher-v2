@@ -1,4 +1,4 @@
-"""Reattest and materialize the first profiled-MTF supervised target contract."""
+"""Run the fixed CPU-only profiled-MTF campaign from local immutable receipts."""
 
 from __future__ import annotations
 
@@ -17,6 +17,9 @@ from thericher_v2.research import (
     profiled_mtf_forward_campaign_readiness as readiness,
 )
 from thericher_v2.research import (
+    profiled_mtf_forward_cpu_campaign as cpu_campaign,
+)
+from thericher_v2.research import (
     profiled_mtf_forward_supervised_dataset as supervised_dataset,
 )
 
@@ -30,8 +33,9 @@ else:
     _DEFAULT_MARKET_DATA_ROOT = Path(r"D:\market_data")
     _DEFAULT_ARTIFACT_ROOT = Path(r"D:\thericher-v2\model-artifacts")
 
-_DEFAULT_READINESS_ATTEMPT_ID = "local-cache-r3"
 _DEFAULT_DATASET_ATTEMPT_ID = "local-cache-r3"
+_DEFAULT_CAMPAIGN_ATTEMPT_ID = "local-cache-r4"
+_DEFAULT_READINESS_ATTEMPT_ID = "local-cache-r3"
 _RECOVERY_EXIT_CODE = 20
 
 
@@ -41,16 +45,23 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--market-data-root", type=Path, default=_DEFAULT_MARKET_DATA_ROOT)
     parser.add_argument("--artifact-root", type=Path, default=_DEFAULT_ARTIFACT_ROOT)
     parser.add_argument("--repo-root", type=Path, default=_REPO_ROOT)
+    parser.add_argument("--dataset-attempt-id", default=_DEFAULT_DATASET_ATTEMPT_ID)
     parser.add_argument("--readiness-attempt-id", default=_DEFAULT_READINESS_ATTEMPT_ID)
-    parser.add_argument("--attempt-id", default=_DEFAULT_DATASET_ATTEMPT_ID)
+    parser.add_argument("--attempt-id", default=_DEFAULT_CAMPAIGN_ATTEMPT_ID)
     parser.add_argument("--code-revision-sha256")
     return parser
 
 
 def main() -> int:
     args = build_parser().parse_args()
-    dataset_code_revision_sha256 = args.code_revision_sha256 or _dataset_code_revision_sha256()
-    readiness_path = (
+    dataset_receipt_path = (
+        args.artifact_root
+        / "research"
+        / supervised_dataset.PROFILED_MTF_FORWARD_SUPERVISED_DATASET_ID
+        / args.dataset_attempt_id
+        / "dataset-receipt.json"
+    )
+    readiness_receipt_path = (
         args.artifact_root
         / "research"
         / readiness.PROFILED_MTF_FORWARD_CAMPAIGN_READINESS_ID
@@ -59,7 +70,7 @@ def main() -> int:
     )
     try:
         readiness_receipt = readiness.load_profiled_mtf_forward_campaign_readiness_receipt(
-            readiness_path,
+            readiness_receipt_path,
             repo_root=args.repo_root,
         )
         catalogs = load_kis_intraday_mtf_availability_catalogs(
@@ -83,18 +94,33 @@ def main() -> int:
             repo_root=args.repo_root,
             contract=outcome_contract,
         )
-        policy = supervised_dataset.freeze_profiled_mtf_forward_supervised_dataset_policy(
-            readiness_receipt,
-            code_revision_sha256=dataset_code_revision_sha256,
-        )
-        result = supervised_dataset.materialize_profiled_mtf_forward_supervised_dataset(
-            policy,
-            receipt=readiness_receipt,
-            catalog=catalog,
+        dataset_receipt = supervised_dataset.load_profiled_mtf_forward_supervised_dataset_receipt(
+            dataset_receipt_path,
             market_data_root=args.market_data_root,
             repo_root=args.repo_root,
         )
-        receipt = supervised_dataset.write_profiled_mtf_forward_supervised_dataset_receipt(
+        if (
+            dataset_receipt.policy.readiness_receipt_sha256
+            != readiness_receipt.receipt_sha256
+        ):
+            raise ValueError("supervised dataset readiness receipt changed")
+        materialization = (
+            supervised_dataset.load_profiled_mtf_forward_supervised_dataset_materialization(
+                dataset_receipt,
+                catalog=catalog,
+                repo_root=args.repo_root,
+            )
+        )
+        policy = cpu_campaign.freeze_profiled_mtf_forward_cpu_campaign_policy(
+            dataset_receipt,
+            code_revision_sha256=args.code_revision_sha256 or _campaign_code_revision_sha256(),
+        )
+        result = cpu_campaign.run_profiled_mtf_forward_cpu_campaign(
+            policy,
+            dataset_receipt=dataset_receipt,
+            materialization=materialization,
+        )
+        receipt = cpu_campaign.write_profiled_mtf_forward_cpu_campaign_receipt(
             result,
             policy=policy,
             artifact_root=args.artifact_root,
@@ -105,7 +131,7 @@ def main() -> int:
         print(
             json.dumps(
                 {
-                    "dataset_id": supervised_dataset.PROFILED_MTF_FORWARD_SUPERVISED_DATASET_ID,
+                    "campaign_id": cpu_campaign.PROFILED_MTF_FORWARD_CPU_CAMPAIGN_ID,
                     "status": "input_unavailable",
                     "scope": {"source_safe_only": True},
                 },
@@ -116,10 +142,7 @@ def main() -> int:
         return _RECOVERY_EXIT_CODE
     print(
         json.dumps(
-            {
-                **result.safe_payload(),
-                "receipt_sha256": receipt.receipt_sha256,
-            },
+            {**result.safe_payload(), "receipt_sha256": receipt.receipt_sha256},
             ensure_ascii=True,
             sort_keys=True,
         )
@@ -127,12 +150,13 @@ def main() -> int:
     return 0
 
 
-def _dataset_code_revision_sha256() -> str:
+def _campaign_code_revision_sha256() -> str:
     source = b"".join(
         path.read_bytes()
         for path in (
-            Path(readiness.__file__),
+            Path(cpu_campaign.__file__),
             Path(supervised_dataset.__file__),
+            Path(readiness.__file__),
             Path(forward_outcome_observer.__file__),
         )
     )
