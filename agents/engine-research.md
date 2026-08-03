@@ -1641,3 +1641,19 @@ and fail a 15:29:30 ET negative control rather than projecting a later cache
 back to the decision. The null outcomes have no directional meaning about
 15:30 provider availability. The static forward-capture trigger reaches 15:31
 only in daylight time; standard-time support is a separate later consumer test.
+
+## Isolated SPY Paginated-Prefix Input Boundary (2026-08-04)
+
+Data has installed an isolated source-safe 15:30--15:31 ET prefix measurement
+with a dedicated cache, fresh-run identity, bounded four-by-120 pagination,
+and a network-disabled observer. A positive receipt may state only
+`availability_within_validity_after_collection`; it still carries
+`decision_time_availability: not_observed` and cannot retrospectively create a
+15:30 decision input. Any page timestamp outside the exact completed
+09:30--15:29 ET prefix invalidates the observation rather than being silently
+ignored.
+
+Engine has no new training, selection, ensemble, target, PnL, Paper, or GPU
+work from this implementation alone. It will consume a future receipt only in
+a fresh, scoped timing interpretation package; the scheduler-owned next due
+does not leave the GPU idle by policy or block another eligible campaign.

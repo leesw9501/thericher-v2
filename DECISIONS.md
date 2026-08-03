@@ -8995,3 +8995,30 @@ now require a bounded source-time measurement around 15:30 ET before either is
 changed. The architecture challenge was `supported-with-limits`; the final
 route review was `review_unavailable`, neither of which changes standing
 authority.
+
+## 2026-08-04 - Isolate the SPY paginated-prefix capability measurement
+
+Decision: measure the frozen SPY 15:30--15:31 ET completed-prefix assumption
+through a new Data-only worker, cache namespace, and network-disabled observer
+rather than changing the existing intraday-head or Paper cycle. The collector
+owns one in-memory KIS Paper market-data client and records its own actual UTC
+start before credential loading; a start outside the exact positive window
+returns before KIS access. It writes an immutable run only under the dedicated
+external cache and is bounded to four pages of at most 120 rows.
+
+The pre-cutoff negative control is intentionally limited to an actual-clock
+check that the new run namespace is absent. It cannot claim provider
+availability, and its payload says `source_availability: not_observed`.
+The later observer reuses neither credentials nor network, revalidates the page
+bound, seams, exact 360 completed 09:30--15:29 ET timestamps, and rejects any
+out-of-prefix timestamp. Therefore its sole positive label remains
+`availability_within_validity_after_collection`, with
+`decision_time_availability: not_observed`.
+
+Reason: a separate early KIS source probe would require either a second token
+path inside thirty seconds or a timer-holding shared client, widening the
+measured worker before this narrow capability is established. The actual-clock
+fresh-run control plus strict post-collection timestamp scope prevents a warm
+cache, host-time assertion, oversized page, or current-minute row from turning
+into a false positive. Existing head/Paper behavior is unchanged; task-owned
+runtime evidence can arrive without foreground idle or a new approval boundary.

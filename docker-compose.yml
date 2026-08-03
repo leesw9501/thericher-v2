@@ -955,6 +955,42 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/market_data
       - thericher-v2-runtime:/app/runtime
 
+  kis-spy-paginated-prefix-collector:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-spy-paginated-prefix-capability"]
+    command:
+      - python
+      - scripts/collect_kis_paper_spy_paginated_prefix_capability.py
+      - --help
+    environment:
+      THERICHER_MODE: off
+      KIS_PAPER_APP_KEY: ${KIS_PAPER_APP_KEY:-}
+      KIS_PAPER_APP_SECRET: ${KIS_PAPER_APP_SECRET:-}
+    volumes:
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/spy-paginated-prefix-capability:/app/market_data
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/collection-control-v1:/app/collection_control
+
+  kis-spy-paginated-prefix-observer:
+    build:
+      context: .
+      target: base
+    profiles: ["kis-spy-paginated-prefix-capability"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/observe_kis_paper_spy_paginated_prefix_capability.py
+      - --help
+    environment:
+      THERICHER_MODE: off
+    volumes:
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/kis_paper_private/spy-paginated-prefix-capability:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   kis-paper-intraday-head:
     build:
       context: .

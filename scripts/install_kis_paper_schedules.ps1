@@ -162,6 +162,31 @@ $schedules = @(
         ExecutionLimitMinutes = 90
     },
     @{
+        Name = "thericher-kis-paper-spy-prefix-negative-control"
+        Profile = "kis-spy-paginated-prefix-capability"
+        Service = "kis-spy-paginated-prefix-observer"
+        Runner = "run_kis_spy_paginated_prefix_capability_schedule.ps1"
+        RunnerArguments = "-Stage `"negative-control`""
+        ImageServices = @("kis-spy-paginated-prefix-observer")
+        At = @("04:29:30", "05:29:30")
+        RecoverMissedRun = $false
+        ExecutionLimitMinutes = 10
+    },
+    @{
+        Name = "thericher-kis-paper-spy-prefix-feasibility"
+        Profile = "kis-spy-paginated-prefix-capability"
+        Service = "kis-spy-paginated-prefix-collector"
+        Runner = "run_kis_spy_paginated_prefix_capability_schedule.ps1"
+        RunnerArguments = "-Stage `"feasibility`""
+        ImageServices = @(
+            "kis-spy-paginated-prefix-collector",
+            "kis-spy-paginated-prefix-observer"
+        )
+        At = @("04:30:00", "05:30:00")
+        RecoverMissedRun = $false
+        ExecutionLimitMinutes = 10
+    },
+    @{
         Name = "thericher-kis-paper-daily-nas-forward"
         Profile = "kis-paper-daily-nas-forward"
         Service = "kis-paper-daily-nas-forward"
@@ -245,7 +270,9 @@ if ($RequireExisting) {
 
 if (
     $selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward" `
-        -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-pair-forward"
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-pair-forward" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-spy-prefix-negative-control" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-spy-prefix-feasibility"
 ) {
     Assert-KoreaStandardTime
 }
@@ -265,7 +292,11 @@ foreach ($schedule in $selectedSchedules) {
         if (-not (Test-Path -LiteralPath $runnerPath -PathType Leaf)) {
             throw "Scheduled task runner is missing: $runnerPath"
         }
-        $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$runnerPath`" -ProjectRoot `"$resolvedProjectRoot`""
+        $runnerArguments = ""
+        if ($schedule.ContainsKey("RunnerArguments")) {
+            $runnerArguments = " " + [string]$schedule.RunnerArguments
+        }
+        $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$runnerPath`" -ProjectRoot `"$resolvedProjectRoot`"$runnerArguments"
         $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $arguments
     } else {
         $arguments = "compose --project-directory `"$resolvedProjectRoot`" --profile $($schedule.Profile) run --rm --no-deps --pull never $($schedule.Service)"

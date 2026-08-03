@@ -1140,3 +1140,24 @@ same-session causal misreading without adding a new gate.
   `availability_within_validity_after_collection`, never 15:30 provider
   availability, model/PnL/Paper readiness, execution authority, or a TTL
   change.
+
+## Isolated SPY Paginated-Prefix Capability (2026-08-04)
+
+- **Ready:** the isolated Data worker, observer, Docker profile, and two ET-gated
+  tasks are installed and focused tests pass. It has no current runtime receipt;
+  the next daylight-time negative/feasibility pair is task-owned at
+  `2026-08-05 04:29:30/04:30:00 KST`.
+- **Owned:** Data owns the dedicated cache, KIS market-data client, and timing
+  receipt. Engine owns only the continuing `not_observed` interpretation.
+  Execution has no route in this package; Research Steward has no GPU allocation.
+- **Due:** no foreground wait. The existing intraday-head task remains `Ready`
+  with its prior action unchanged, while the new tasks select their one valid
+  daylight or standard-time trigger through the ET gate.
+- **Improvement:** the collector and observer each record their own actual UTC
+  start rather than accepting a scheduler-supplied timing assertion. The
+  observer rejects a tampered page above the provider's 120-row contract and
+  any timestamp outside the completed prefix.
+- **Review:** Claude's architecture verdict remains `supported-with-limits`.
+  Independent code review found the host-clock and page-bound gaps; both are
+  fixed and covered. The negative control scopes itself to fresh-run cache
+  absence, never provider availability or execution feasibility.

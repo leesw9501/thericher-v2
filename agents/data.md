@@ -1512,3 +1512,28 @@ freshness, and a 15:29:30 ET negative control before it can claim a
 within-validity prefix. It must preserve the existing head collector and
 Paper route. Neither null receipt carries a directional conclusion about
 provider availability at 15:30.
+
+## Isolated SPY Paginated-Prefix Capability (2026-08-04)
+
+`kis-spy-paginated-prefix-capability-v1` is installed as a separate Data-only
+measurement path. Its collector has one KIS Paper market-data client, begins
+from its own actual UTC clock inside the 15:30--15:31 ET interval, and writes
+only one immutable run under the dedicated external SPY prefix cache. It may
+request at most four pages of at most 120 rows; every later observer reload
+reapplies the same bounds, page-seam checks, and exact 360 completed-minute
+coverage requirement. Any raw timestamp outside that completed prefix is a
+scope failure rather than an ignored extra row.
+
+The network-disabled observer uses its own actual UTC clock. Its 15:29:30 ET
+negative control is deliberately limited to the absence of the dedicated fresh
+run namespace; it records `source_availability: not_observed` and cannot make
+a provider-availability claim. A late control cannot be represented with a
+host-supplied earlier timestamp, and a pre-existing planned run causes the
+subsequent collector preflight to fail closed for this exact run only.
+
+The two new Task Scheduler tasks are `Ready`; the existing intraday-head action
+is unchanged. The next eligible daylight-time measurement is owned by the
+tasks at `2026-08-05 04:29:30` and `04:30:00` KST. Until an exact runtime
+receipt exists, Data reports `not_yet_observed`; the worker's due time is not a
+foreground wait or a Data-wide completion claim. No account, quote, order,
+local-paper, live, or model route is part of this package.

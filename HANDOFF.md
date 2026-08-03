@@ -2683,3 +2683,34 @@ standard time; that is a separate DST-tested change, not a conclusion from
 these receipts. The later claim remains only
 `availability_within_validity_after_collection`, never decision-time
 availability or execution authority.
+
+## Isolated SPY Paginated-Prefix Capability (2026-08-04)
+
+`kis-spy-paginated-prefix-capability-v1` is implemented and installed. It is a
+new, isolated Data-only path: a one-client KIS Paper market-data collector uses
+its own actual UTC start time, writes a fresh immutable run only under
+`D:\market_data\us_equities\kis_paper_private\spy-paginated-prefix-capability`,
+and is bounded to four pages of at most 120 rows. The observer is credential-
+free and network-disabled; it reads that cache read-only, records its own
+actual UTC timing, validates all page seams and the exact 360 completed
+09:30--15:29 ET minutes, and writes source-safe evidence only under
+`D:\thericher-v2\model-artifacts`.
+
+The 15:29:30 ET negative control is intentionally a dedicated fresh-run
+namespace-absence check, not a provider availability call. Its source-safe
+payload explicitly says `source_availability: not_observed`; a late observer
+cannot claim the prior host dispatch time, and a pre-existing run invalidates
+the later positive path for that exact session. The positive success label is
+only `availability_within_validity_after_collection`; it retains
+`decision_time_availability: not_observed`. A code review also found that an
+oversized cached page could previously bypass the stated provider bound, so the
+collector and observer now both enforce the 120-row maximum and test a
+hash-consistent cache tamper case. A page with a 15:30 or any other out-of-
+prefix timestamp is also rejected rather than silently ignored.
+
+The existing `thericher-kis-paper-intraday-head` task action remains unchanged.
+Two new task-owned triggers are `Ready`; the actual next daylight-time pair is
+`2026-08-05 04:29:30/04:30:00 KST`. No runtime receipt has occurred yet, so
+there is no provider availability, model, PnL, local-paper, Paper account,
+quote, order, live, or GPU conclusion. The next session is worker-owned and
+must not create foreground idle time.
