@@ -117,9 +117,12 @@ meets that same boundary.
   ready work, active-job ownership, resource contention, test feedback latency,
   and worker waits to propose one measured, reversible improvement for a named
   engine loop. It has no stateboard, independent queue, approval authority, or
-  strategy/execution authority. At resume or after unexplained foreground idle,
-  it records one `ready / owned / due` dispatch fact in `orchestration.md` and
-  then exits.
+  strategy/execution authority. Codex invokes it at task start/resume, each
+  bounded package handoff/failure/yield, before a long GPU/collection/session
+  dispatch, after unexplained foreground idle, or before a new dispatch after
+  30 minutes of active unreviewed orchestration. This is event-driven rather
+  than a timer. It updates `orchestration.md` only when a current `ready /
+  owned / due` fact or reversible improvement changes, then exits.
 - Review is a lightweight integration checkpoint. Claude challenges the
   bias-prone decision boundaries listed in `AGENTS.md`.
 

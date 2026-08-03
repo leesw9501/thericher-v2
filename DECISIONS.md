@@ -8929,3 +8929,22 @@ prompt may request the same report, but chat is only a delivery channel. Claude
 returned `supported-with-limits`: aliases must remain display-only, records
 must stay bounded and source-safe, and no generated report becomes a new
 artifact or approval gate.
+
+## 2026-08-03 - Make Throughput Review event-driven and frequent
+
+Decision: the Codex Orchestrator invokes the temporary Throughput Review at
+task start/resume, each bounded package handoff/failure/worker yield, before a
+long-running GPU/collection/session dispatch, and after unexplained foreground
+idle. After 30 minutes of active orchestration, the next new dispatch first
+gets a review; this is a ceiling on unreviewed dispatch, not a timer or a
+foreground wake-up. The review updates `agents/orchestration.md` only when a
+shared current `ready / owned / due` fact or reversible improvement changes,
+replacing the superseded entry rather than appending a review diary.
+
+Reason: the orchestrator must actively keep independent lanes moving while a
+worker waits or a constrained resource becomes idle. Event-driven checks keep
+that discipline close to real dispatch decisions without creating a management
+lane, a recurring report, a global stop, or a new approval gate. Claude
+returned `supported-with-limits`; its binding limits are no wall-clock review
+worker, no mandatory write for an unchanged state, and no authority for the
+review to hold a ready lane.

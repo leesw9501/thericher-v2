@@ -98,14 +98,20 @@ Codex is the product-development lead and integrator.
   retired. Identify the most material cross-lane bottleneck or idle resource
   and retain or enact one evidence-backed, reversible improvement when it
   advances a named engine loop.
-- At task resume, and after an observed unexplained foreground idle period,
-  run the same small throughput review before waiting: inspect ready work,
-  active jobs, owned resources, and owned `next_due` facts; then dispatch,
-  recover, or close one bounded package. Start or attach to a ready,
-  non-conflicting package before treating an external wait as foreground idle.
-  Record only the resulting shared fact or improvement in
-  `agents/orchestration.md`. This is a scheduling discipline, not a new gate,
-  report, or durable approval role.
+- Invoke a small Throughput Review at task start or resume; after each bounded
+  package handoff, failure, or worker yield; before dispatching or reattaching
+  a long-running GPU, collection, or session worker; and after an observed
+  unexplained foreground idle period. If foreground orchestration has remained
+  active for 30 minutes since its last review, run one before the next new
+  dispatch. This is a ceiling on unreviewed dispatch, not a timer, sleep, or
+  recurring report. Inspect ready work, active jobs, owned resources, and
+  owned `next_due` facts; then dispatch, recover, or close one bounded package.
+  Start or attach to a ready, non-conflicting package before treating an
+  external wait as foreground idle. Update `agents/orchestration.md` only when
+  a shared `ready / owned / due` fact or reversible improvement changes, and
+  replace its superseded current entry rather than append a review history.
+  This is a scheduling discipline, not a new gate, report, or durable approval
+  role.
 - When a **company objective** is materially blocked rather than merely one
   lane being deferred, write one compact `blocked-goal alternatives` entry in
   `agents/orchestration.md`, not a new report or goal file. It states the exact
@@ -449,10 +455,14 @@ or stateboard. It may inspect lane readiness, active-process ownership,
 resource use, test feedback latency, worker wait behavior, and the next eligible
 action for an idle constrained resource. It identifies one measured bottleneck
 and one reversible improvement for a named engine loop. Its output is a compact
-`ready / owned / due` dispatch fact plus the improvement, recorded only in the
-existing orchestration projection. It cannot create an approval gate, second
-goal, strategy decision, execution decision, standing worker, or a separate
-Markdown history.
+`ready / owned / due` dispatch fact plus the improvement, recorded only when it
+changes the existing orchestration projection and replacing the superseded
+current fact. Invoke it at the named orchestration decision points: task
+start/resume, package handoff/failure/yield, before a long worker dispatch,
+after unexplained foreground idle, or before a new dispatch after 30 minutes
+of active unreviewed orchestration. It cannot create an approval gate, second
+goal, strategy decision, execution decision, standing worker, timer, or a
+separate Markdown history.
 
 ### Blocked-Goal Alternatives
 
