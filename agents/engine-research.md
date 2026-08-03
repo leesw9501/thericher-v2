@@ -1438,3 +1438,26 @@ fitted no model. The next ready Engine package is a separate sequence-family
 CPU executor using the already tested native ragged LSTM/TCN/masked-attention
 representations, with the same dataset reattestation and no GPU appointment
 until actual data supports a frozen campaign.
+
+## Profiled MTF Forward Ragged Sequence CPU Campaign (2026-08-01)
+
+Engine now has the separate native-ragged predictive counterpart to the
+flattened classical controls. It reconstructs only completed 15:30 ET prefixes
+into `1m/5m/10m/1h/3h` sequences of `15/3/3/2/2` rows, carries explicit masks,
+and gives cross-timeframe attention timeframe/rank identity rather than a
+fabricated common row clock. Outcome bars affect only the D:-only target after
+the immutable policy is frozen.
+
+The fixed, non-promoting CPU family is no-trade-zero plus recurrent, causal
+TCN, and masked-attention candidates, with one seed, eight epochs, MSE, a
+pair-level `20/2/8` split, and a reversed pair-block target kill counterpart.
+The complete fixture pass ran in the CPU-only Docker research container; no
+weights, predictions, candidate selection, PnL, Paper input, or GPU request
+was created. The actual `local-cache-r1` receipt is `input_unavailable` at
+zero pairs and fitted nothing. Claude was `review_unavailable` after timeout.
+
+Breadth queue: wait only for a later immutable 30-pair dataset before any
+fresh sequence-family comparison. Depth queue: none from this family until a
+distinct actual CPU receipt exists. The next ready cross-lane package is Data's
+local-cache capture-cycle runner, not another fixture retune or synthetic
+training run.

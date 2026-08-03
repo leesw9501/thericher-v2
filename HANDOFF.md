@@ -2375,3 +2375,29 @@ Docker `local-cache-r4` result is
 the inherited dataset is still zero pair, so no model was fitted and no GPU was
 used. Claude timed out as `review_unavailable`, not a conclusion or a reason
 to pause the next distinct Engine family.
+
+## Profiled MTF Forward Ragged Sequence CPU Campaign (2026-08-01)
+
+`profiled-mtf-forward-ragged-sequence-cpu-campaign-v1` is complete. Its
+D:-only reader reattests the external supervised-dataset receipt, current Data
+catalog, first-30 snapshot identities, chronological `20/2/8` pair split, and
+canonical materialization before a target is opened. It builds five native
+`short` sequences (`15/3/3/2/2`, width two) from completed 15:30 ET prefixes
+only. Masks are explicit and all-available; timeframe rows are never aligned.
+
+The one fixed CPU contract evaluates no-trade-zero beside per-timeframe GRU,
+left-padded causal TCN, and availability-masked cross-timeframe attention. Each
+family uses one seed, eight full-batch SGD epochs, MSE, an excluded pair-level
+purge, and a reversed training-pair-block target counterpart. Fixture-only
+execution ran deterministically inside the network-disabled Docker research
+image without a GPU device. It selected no winner and persisted no features,
+targets, predictions, weights, or checkpoints.
+
+The actual host and CPU-only Docker reattachment produced the same external
+`local-cache-r1` receipt
+`sha256:6f317b1af3a01af4b40d88eb35675ef0dcb25e9fa263da92abd5c73d9015eff3`:
+the inherited source is still zero pair, so no model was fitted and no GPU was
+appointed. Claude's requested falsification-first check timed out and is
+recorded as `review_unavailable`, not a hold. The next data-facing package is
+an explicit local-cache capture-cycle runner for the existing 15:30 input and
+15:45 outcome observers.

@@ -921,3 +921,22 @@ same-session causal misreading without adding a new gate.
   and time-misaligned snapshots before target opening. This gives the future
   campaign a reversible, hash-bound input without turning low coverage into a
   cross-lane approval gate. Claude was `review_unavailable`; no hold follows.
+
+## Profiled MTF Forward Ragged Sequence CPU Campaign (2026-08-01)
+
+- **Ready:** Engine completed the independent native-ragged CPU executor and
+  its deterministic Docker fixture pass. The next ready package is a small
+  Data-owned local-cache capture-cycle runner; it can be implemented and
+  fixture-tested without waiting for the next market session.
+- **Owned:** Data owns the 15:30 input observer, 15:45 outcome witness, and
+  cache interpretation. Engine owns the frozen ragged input/model contract.
+  Research Steward has no appointment; Execution has no route change.
+- **Due:** the real `local-cache-r1` result is zero target-ready pair. That
+  is only the forward collector's source fact, not foreground idle or a block
+  on the capture-cycle package.
+- **Improvement:** preserve native timeframe/rank identity all the way through
+  a predictive fixture while keeping the real-source receipt categorical. This
+  makes a later actual sequence comparison reproducible without treating a
+  GPU-free interval as a reason to manufacture data or training.
+- **Review:** Claude timed out as `review_unavailable`; the named model-policy
+  boundary remains non-promoting and every independent lane continues.

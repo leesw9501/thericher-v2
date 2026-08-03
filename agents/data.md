@@ -1271,3 +1271,19 @@ is rejected.
 The current Data catalog remains zero, so the reader did not open a
 D:-resident target dataset on host or Docker. This scoped fact does not pause
 collection recovery or an independent Engine family.
+
+## Forward Ragged Campaign Reattachment (2026-08-01)
+
+The new ragged-sequence campaign performed one read-only reattachment through
+the existing D:-only supervised dataset loader and current forward snapshot
+catalog. Its host and CPU-only Docker receipts agree at
+`sha256:6f317b1af3a01af4b40d88eb35675ef0dcb25e9fa263da92abd5c73d9015eff3`:
+the current inventory remains `zero_target_ready`, so no D:-resident target
+payload was opened for a real model run. This is a source fact for that
+campaign only, not a collection stop or an Engine hold.
+
+The next ready Data package is a small local-cache capture-cycle runner that
+calls the existing 15:30 input observer and 15:45 outcome witness at their
+respective due times. It must preserve the observer's existing immutable
+snapshot/provenance semantics, leave provider/KIS calls to their own owned
+collector, and return a scoped no-op outside either slot.

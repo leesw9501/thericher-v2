@@ -339,3 +339,14 @@ is input-unavailable at zero pairs and fitted no model; GPU remains free rather
 than being filled with synthetic or fixture data. A later sequence family needs
 its own frozen CPU evidence and actual reattested dataset before it can request
 the exclusive GPU resource.
+
+## Profiled MTF Forward Ragged CPU Campaign (2026-08-01)
+
+`profiled-mtf-forward-ragged-sequence-cpu-campaign-v1` is fixture-only CPU
+evidence. Its three native-ragged families completed in a CPU-only Docker
+container and created no checkpoint, sealed-evaluation access, selection,
+ensemble lineage, or GPU appointment. The external `local-cache-r1` receipt
+is `input_unavailable` at zero actual forward pairs, so it records no fitted
+model. GPU remains free for a later, separately frozen campaign with actual
+D:-only input and a matching CPU receipt; it must not be filled by this
+fixture family.
