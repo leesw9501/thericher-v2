@@ -9022,3 +9022,24 @@ fresh-run control plus strict post-collection timestamp scope prevents a warm
 cache, host-time assertion, oversized page, or current-minute row from turning
 into a false positive. Existing head/Paper behavior is unchanged; task-owned
 runtime evidence can arrive without foreground idle or a new approval boundary.
+
+## 2026-08-04 - Minimize KIS read-only account projection custody
+
+Decision: move the local KIS Paper account-console runtime projection to schema
+v3 and omit reference prices, position prices, open-order limit prices, and
+order identifiers. The bridge retains only currencies, orderable amounts,
+symbols, sides, quantities, counts, freshness, and categorical failures. Its
+legacy discovery evidence is likewise fact-minimized rather than serializing a
+broker snapshot. The loopback dashboard displays only that projection.
+
+One current fixed-virtual-host bridge invocation completed and the loopback web
+process rendered its fresh projection without KIS credentials or broker access.
+Claude's falsification-first review was `uncertain` and specifically prompted
+the raw-price removal. This decision does not change KIS Paper authority,
+paper sizing, canary routing, live isolation, data collection, or a future
+executor's fresh call-time account/quote/reconciliation checks.
+
+Reason: the console needs an operational account view, but price and broker
+identifier retention has no role in that read-only dashboard loop. Reducing
+the projection narrows accidental persistence exposure while keeping the
+deterministic Paper executor independent.

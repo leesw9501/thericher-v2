@@ -719,7 +719,7 @@ def test_terminal_field_probe_rejects_ambiguous_order_lineage_without_terminal_i
     assert observation.pnl_status == "not_observed"
 
 
-def test_masked_evidence_excludes_credentials_and_raw_account_and_stays_external(tmp_path) -> None:
+def test_evidence_excludes_credentials_raw_account_and_prices_and_stays_external(tmp_path) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
     dotenv_path = repo_root / ".env"
@@ -751,8 +751,17 @@ def test_masked_evidence_excludes_credentials_and_raw_account_and_stays_external
     assert "super-secret-value" not in evidence
     assert "12345678" not in evidence
     assert "ORD-123456789" not in evidence
-    assert "****5678-**" in evidence
-    assert json.loads(evidence)["submit_capability"] is False
+    for raw_price in ("1200.50", "1199.75", "500", "510"):
+        assert raw_price not in evidence
+    payload = json.loads(evidence)
+    assert payload["submit_capability"] is False
+    assert payload["facts"] == {
+        "cash_currency": "USD",
+        "orderable_funds_currency": "USD",
+        "position_count": 1,
+        "open_order_count": 1,
+    }
+    assert "snapshot" not in payload
 
 
 def test_reconciliation_records_account_facts_on_currency_mismatch() -> None:

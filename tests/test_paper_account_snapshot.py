@@ -39,6 +39,7 @@ class FakeKisTransport:
     runtime_snapshot_path: Path
     reject_open_orders: bool = False
     flat_account: bool = False
+    include_open_order: bool = False
     reject_open_orders_code: object = "raw-server-code-must-not-persist"
     reject_open_orders_message: str = "raw-response-text-must-not-persist"
     requests: list[KisHttpRequest] = field(default_factory=list)
@@ -61,7 +62,9 @@ class FakeKisTransport:
                     },
                     status_code=403,
                 )
-            return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
+            return KisHttpResponse.from_payload(
+                {"rt_cd": "0", "output": [_open_order_payload()] if self.include_open_order else []}
+            )
         if tr_id == KIS_PAPER_BALANCE_ENDPOINT.tr_id:
             exchange = request.query["OVRS_EXCG_CD"]
             rows = [] if self.flat_account or exchange != "NASD" else [_position_payload()]
@@ -104,7 +107,9 @@ def test_snapshot_reader_distinguishes_unknown_complete_stale_and_malformed(tmp_
     assert malformed.snapshot is None
 
 
-def test_snapshot_schema_rejects_legacy_cash_and_unpinned_funds_source(tmp_path) -> None:
+def test_snapshot_schema_rejects_legacy_cash_unpinned_funds_and_price_bearing_shapes(
+    tmp_path,
+) -> None:
     path = tmp_path / "runtime" / "paper_account_snapshot.json"
     legacy = _complete_snapshot(NOW).to_dict()
     legacy["schema_version"] = 1
@@ -123,10 +128,24 @@ def test_snapshot_schema_rejects_legacy_cash_and_unpinned_funds_source(tmp_path)
     with pytest.raises(ValueError, match="orderable_foreign_funds_source_invalid"):
         PaperAccountOrderableForeignFunds("USD", Decimal("1"), "other")
 
+    price_bearing = _complete_snapshot(NOW).to_dict()
+    price_facts = price_bearing["facts"]
+    assert isinstance(price_facts, dict)
+    reference = price_facts["reference_orderability"]
+    assert isinstance(reference, dict)
+    reference["reference_price"] = "1"
+    open_orders = price_facts["open_orders"]
+    assert isinstance(open_orders, list)
+    assert isinstance(open_orders[0], dict)
+    open_orders[0]["limit_price"] = "731.29"
+    path.write_text(json.dumps(price_bearing), encoding="utf-8")
+
+    assert read_paper_account_snapshot(path, now=NOW).status == "unavailable"
+
 
 def test_bridge_publishes_only_a_sanitized_complete_snapshot_and_evidence(tmp_path) -> None:
     runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
-    transport = FakeKisTransport(runtime_snapshot_path)
+    transport = FakeKisTransport(runtime_snapshot_path, include_open_order=True)
     environment = _paper_environment()
 
     outcome = run_kis_paper_console_bridge(
@@ -156,6 +175,9 @@ def test_bridge_publishes_only_a_sanitized_complete_snapshot_and_evidence(tmp_pa
     assert "live-secret-must-not-be-read" not in runtime
     assert "ORD-" not in runtime
     assert "****" not in runtime
+    assert "913.37" not in runtime
+    assert "914.42" not in runtime
+    assert "731.29" not in runtime
 
     current = read_paper_account_snapshot(runtime_snapshot_path, now=NOW)
     assert current.status == "available"
@@ -168,7 +190,17 @@ def test_bridge_publishes_only_a_sanitized_complete_snapshot_and_evidence(tmp_pa
         Decimal("1199.75"),
         "NASD",
         "SPY",
-        Decimal("1"),
+    )
+    assert current.snapshot.open_orders == (
+        PaperAccountOpenOrder(
+            "NASD",
+            "SPY",
+            "USD",
+            "buy",
+            Decimal("5"),
+            Decimal("2"),
+            Decimal("3"),
+        ),
     )
 
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
@@ -348,7 +380,6 @@ def _complete_snapshot(observed_at: datetime) -> PaperAccountSnapshot:
             Decimal("1199.75"),
             "NASD",
             "SPY",
-            Decimal("1"),
         ),
         positions=(PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),),
         open_orders=(
@@ -360,7 +391,6 @@ def _complete_snapshot(observed_at: datetime) -> PaperAccountSnapshot:
                 Decimal("5"),
                 Decimal("2"),
                 Decimal("3"),
-                Decimal("510"),
             ),
         ),
     )
@@ -382,6 +412,20 @@ def _position_payload() -> dict[str, str]:
         "ovrs_excg_cd": "NASD",
         "tr_crcy_cd": "USD",
         "ovrs_cblc_qty": "2",
-        "pchs_avg_pric": "500",
-        "now_pric2": "510",
+        "pchs_avg_pric": "913.37",
+        "now_pric2": "914.42",
+    }
+
+
+def _open_order_payload() -> dict[str, str]:
+    return {
+        "odno": "ORD-123456789",
+        "pdno": "SPY",
+        "ovrs_excg_cd": "NASD",
+        "tr_crcy_cd": "USD",
+        "sll_buy_dvsn_cd": "02",
+        "ft_ord_qty": "5",
+        "ft_ccld_qty": "2",
+        "nccs_qty": "3",
+        "ft_ord_unpr3": "731.29",
     }

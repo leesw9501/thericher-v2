@@ -1257,9 +1257,12 @@ docker compose build kis-readonly
 the current working tree. This is runtime reproducibility, not a new KIS Paper
 approval or a reason to delay unrelated work.
 
-It writes a sanitized local runtime snapshot. Do not pass `.env` values on a
-command line or emit credentials, account numbers, raw response bodies, or
-tokens in logs/artifacts.
+It writes a sanitized local runtime snapshot. Schema v3 retains only the
+account fields the local console needs: currencies, orderable amounts, symbols,
+quantities, sides, and freshness. It intentionally excludes reference prices,
+position prices, open-order limit prices, order identifiers, credentials,
+account numbers, raw response bodies, and tokens. Do not pass `.env` values on
+a command line or emit those values in logs/artifacts.
 
 The bridge reports its fixed `read_only` scope and whether the account snapshot
 is complete. It is not a `safe_to_submit` approval proxy: a later paper executor
@@ -1276,6 +1279,14 @@ per-second request limit. The real read-only transport now spaces valid external
 requests by at least one second using an injectable monotonic policy. A rebuilt
 bridge then completed at `20260721T223701135634Z-complete.json` with only
 sanitized position/open-order counts and USD currency labels. It made no order.
+
+On 2026-08-04 KST, one rebuilt current-image bridge invocation completed and
+the existing loopback dashboard rendered its fresh schema-v3 projection. The
+Docker web process had no KIS environment values or broker/artifact mount. The
+source-safe bridge receipt is external only under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge`.
+This is read-health evidence, not a submit permission or a substitute for a
+future executor's fresh call-time account and quote checks.
 
 The separate canary transport now uses that same source pacing for valid real
 virtual requests. Its first current-image virtual run,

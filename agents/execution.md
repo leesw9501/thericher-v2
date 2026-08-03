@@ -667,3 +667,22 @@ are `not_applicable`. Static expiry tests continue to show that this ineligible
 path returns before Paper configuration, client, account, quote, order, or
 local-paper access. No live route was read or invoked. The recovery is a
 scoped data observation result, not an Execution or account-safety incident.
+
+## KIS Read-Only Console Refresh (2026-08-04)
+
+`kis-paper-readonly-account-refresh-v1` completed with one current
+`kis-readonly` Docker invocation against the fixed virtual host. The bridge
+reported `complete` and wrote one immutable source-safe receipt below
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge`; it
+made no submit, modify, cancel, reconciliation, or order-inference call.
+
+The loopback-only web process then rendered the fresh runtime projection while
+holding no KIS environment variable, broker client, private execution-state
+mount, or model-artifact mount. Claude returned `uncertain` and correctly
+flagged unnecessary price retention. The resulting schema-v3 projection keeps
+only currencies, orderable amounts, symbols, sides, quantities, counts, and
+freshness; reference, position, and open-order prices plus order identifiers
+are excluded from the runtime, dashboard, bridge evidence, and legacy
+read-only evidence. This is current read-health only. A later Paper executor
+still owns fresh account/quote checks, durable intent, and reconciliation at
+its own call site.

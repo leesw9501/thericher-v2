@@ -676,8 +676,7 @@ def _paper_account_details(
         settled cash, account equity, margin capacity, or general buying power.
         Reference orderability is for
         {_text(account.reference_orderability.reference_exchange)}
-        {_text(account.reference_orderability.reference_symbol)} at
-        {_text(account.reference_orderability.reference_price)}; it is not general buying power.
+        {_text(account.reference_orderability.reference_symbol)}; it is not general buying power.
       </p>
       <div class="two-column">
         <div>
@@ -709,16 +708,15 @@ def _paper_positions_table(account: PaperAccountSnapshot) -> str:
 def _paper_open_orders_table(account: PaperAccountSnapshot) -> str:
     rows = "".join(
         f"<tr><td>{_text(item.exchange)}</td><td>{_text(item.symbol)}</td>"
-        f"<td>{_text(item.side)}</td><td class=\"numeric\">{_text(item.remaining_quantity)}</td>"
-        f"<td class=\"numeric\">{_optional_decimal(item.limit_price)}</td></tr>"
+        f"<td>{_text(item.side)}</td>"
+        f"<td class=\"numeric\">{_text(item.remaining_quantity)}</td></tr>"
         for item in account.open_orders
     )
     if not rows:
-        rows = _empty_row(5, "No verified KIS open orders")
+        rows = _empty_row(4, "No verified KIS open orders")
     return (
         "<div class=\"table-wrap\"><table><thead><tr><th>Exchange</th><th>Symbol</th>"
-        "<th>Side</th><th class=\"numeric\">Remaining</th>"
-        "<th class=\"numeric\">Limit</th></tr></thead><tbody>"
+        "<th>Side</th><th class=\"numeric\">Remaining</th></tr></thead><tbody>"
         f"{rows}</tbody></table></div>"
     )
 

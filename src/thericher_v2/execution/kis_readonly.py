@@ -645,57 +645,11 @@ class KisPaperDiscoveryOutcome:
             if self.diagnostic:
                 payload["diagnostic"] = dict(self.diagnostic)
             return payload
-        payload["snapshot"] = {
-            "identity": {
-                "masked_account": self.snapshot.identity.masked_account,
-                "captured_at": self.snapshot.identity.captured_at.isoformat(),
-            },
-            "cash": {
-                "currency": self.snapshot.cash.currency,
-                "available_cash": str(self.snapshot.cash.available_cash),
-                "captured_at": self.snapshot.cash.captured_at.isoformat(),
-            },
-            "orderable_funds": {
-                "currency": self.snapshot.orderable_funds.currency,
-                "orderable_funds": str(self.snapshot.orderable_funds.orderable_funds),
-                "reference_exchange": self.snapshot.orderable_funds.reference_exchange,
-                "reference_symbol": self.snapshot.orderable_funds.reference_symbol,
-                "reference_price": str(self.snapshot.orderable_funds.reference_price),
-                "captured_at": self.snapshot.orderable_funds.captured_at.isoformat(),
-            },
-            "positions": [
-                {
-                    "symbol": position.symbol,
-                    "exchange": position.exchange,
-                    "currency": position.currency,
-                    "quantity": str(position.quantity),
-                    "average_price": str(position.average_price),
-                    "market_price": str(position.market_price),
-                    "captured_at": position.captured_at.isoformat(),
-                }
-                for position in self.snapshot.positions
-            ],
-            "open_orders": {
-                "complete": self.snapshot.open_orders.complete,
-                "orders": [
-                    {
-                        "order_reference": order.order_reference,
-                        "symbol": order.symbol,
-                        "exchange": order.exchange,
-                        "currency": order.currency,
-                        "side": order.side,
-                        "requested_quantity": str(order.requested_quantity),
-                        "filled_quantity": str(order.filled_quantity),
-                        "remaining_quantity": str(order.remaining_quantity),
-                        "limit_price": (
-                            str(order.limit_price) if order.limit_price is not None else None
-                        ),
-                        "captured_at": order.captured_at.isoformat(),
-                    }
-                    for order in self.snapshot.open_orders.orders
-                ],
-                "captured_at": self.snapshot.open_orders.captured_at.isoformat(),
-            },
+        payload["facts"] = {
+            "cash_currency": self.snapshot.cash.currency,
+            "orderable_funds_currency": self.snapshot.orderable_funds.currency,
+            "position_count": len(self.snapshot.positions),
+            "open_order_count": len(self.snapshot.open_orders.orders),
         }
         payload["reconciliation"] = {
             "account_snapshot_complete": self.reconciliation.account_snapshot_complete,

@@ -17,6 +17,7 @@ from thericher_v2.dashboard.view import build_snapshot
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
 from thericher_v2.execution.paper_account_snapshot import (
     PAPER_ACCOUNT_SNAPSHOT_TTL,
+    PaperAccountOpenOrder,
     PaperAccountOrderableForeignFunds,
     PaperAccountPosition,
     PaperAccountReferenceOrderability,
@@ -258,9 +259,19 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
                 Decimal("1199.75"),
                 "NASD",
                 "SPY",
-                Decimal("1"),
             ),
             positions=(PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),),
+            open_orders=(
+                PaperAccountOpenOrder(
+                    "NASD",
+                    "SPY",
+                    "USD",
+                    "buy",
+                    Decimal("5"),
+                    Decimal("2"),
+                    Decimal("3"),
+                ),
+            ),
         ),
         paper_snapshot_path,
     )
@@ -281,6 +292,8 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
     state = snapshot.to_dict()
     assert "12345678" not in json.dumps(state)
     assert "order_reference" not in json.dumps(state)
+    assert "reference_price" not in json.dumps(state)
+    assert "limit_price" not in json.dumps(state)
 
     from thericher_v2.dashboard.view import render_dashboard
 
@@ -290,6 +303,7 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
     assert "KIS positions" in html
     assert "KIS price quotes" in html
     assert "general buying power" in html
+    assert "Limit</th>" not in html
 
     stale_snapshot = build_snapshot(
         events,
@@ -315,7 +329,6 @@ def test_dashboard_state_preserves_canonical_paper_account_envelope(tmp_path) ->
             Decimal("1199.75"),
             "NASD",
             "SPY",
-            Decimal("1"),
         ),
         positions=(PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),),
     )

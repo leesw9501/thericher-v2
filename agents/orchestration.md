@@ -4,7 +4,7 @@
 This is a concise cross-lane projection, not a role lane, queue ledger, or
 second goal. Git and external artifacts retain historical evidence.
 
-## Current Cross-Lane View
+## Prior Cross-Lane View (Superseded 2026-08-04)
 
 - **MIM input qualification:** complete as `input_unavailable` for its exact
   historical contract. The original source is a directional long/short SPY
@@ -210,6 +210,54 @@ four-worker full run remained `1769 passed, 14 skipped` in 222.47 seconds.
 Treat the small whole-suite variation as scheduling noise rather than an
 additive speed claim; the production baseline still has its dedicated
 end-to-end replay test.
+
+## Current Cross-Lane View
+
+- **Execution:** `kis-paper-readonly-account-refresh-v1` completed on
+  2026-08-04 KST with one current virtual-host bridge attempt. Its source-safe
+  external receipt is `complete`; the existing loopback dashboard rendered the
+  fresh projection without KIS credentials, broker access, or a broker/artifact
+  mount in the web process. Claude's route review was `uncertain`; its raw-price
+  persistence concern was resolved by schema v3, which excludes all price and
+  order-identifier fields from runtime and legacy read-only evidence.
+- **Data:** the broad current-listing D1 cache and its source-local research
+  consumers are complete with their non-PIT and adjustment limitations intact.
+  The installed forward and isolated SPY prefix workers remain Data-owned; they
+  continue independently of account work and retain their own cursor, pacing,
+  and recovery facts.
+- **Engine Research / Steward:** no current result is a selected model or a
+  Paper input. The prospective MTF contract remains at zero target-ready pairs;
+  the RTX 4090 is available only to a newly frozen, input-qualified campaign.
+- **Shared resources:** Data owns mutable KIS caches and collection schedules;
+  Execution owns virtual-Paper state, account/order routes, and loopback
+  runtime projections; Research Steward owns exclusive GPU appointments.
+
+## Ready / Owned / Due
+
+- **Ready:** Execution can prepare one bounded virtual-Paper lifecycle canary
+  using the existing fresh-account, quote, durable-intent, cancellation, and
+  reconciliation paths. Data and Engine work remain independent: the next
+  forward/prefix observations are worker-owned, and no target-ready count is
+  manufactured while they are pending.
+- **Owned:** do not duplicate an installed Data collector or an exact existing
+  virtual-Paper intent. The next canary package must inspect and reconcile the
+  execution-owned state before it can create a distinct intent.
+- **Due:** all market-time jobs retain their own `next_due`; no external clock
+  holds the foreground orchestrator. The next isolated SPY prefix observation
+  remains scheduled for its defined session slot.
+- **Verification:** focused account/dashboard/read-only coverage passed `51`
+  tests after the schema-v3 change. Required goal-boundary verification is the
+  next integration step.
+
+## Current Bottleneck And Improvement
+
+The product bottleneck is no longer account-read health: it is one bounded
+virtual-Paper lifecycle outcome under the existing deterministic executor.
+The next canary may fail categorically on call-time account, quote, venue, or
+reconciliation facts; that is useful scoped evidence, not a reason to retry an
+unknown intent or stop Data/Research. The current reversible improvement is
+schema v3's price-free, identifier-free account projection, which preserves
+the console's operational view without widening its data custody.
 
 ## Durable Knowledge
 

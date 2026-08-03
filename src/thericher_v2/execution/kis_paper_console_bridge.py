@@ -230,7 +230,6 @@ def paper_account_snapshot_from_kis_readonly(
             orderable_funds=source.orderable_funds.orderable_funds,
             reference_exchange=source.orderable_funds.reference_exchange,
             reference_symbol=source.orderable_funds.reference_symbol,
-            reference_price=source.orderable_funds.reference_price,
         ),
         positions=tuple(
             PaperAccountPosition(
@@ -250,7 +249,6 @@ def paper_account_snapshot_from_kis_readonly(
                 requested_quantity=order.requested_quantity,
                 filled_quantity=order.filled_quantity,
                 remaining_quantity=order.remaining_quantity,
-                limit_price=order.limit_price,
             )
             for order in source.open_orders.orders
         ),

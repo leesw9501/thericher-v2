@@ -17,7 +17,7 @@ from thericher_v2.contracts import require_utc
 PAPER_ACCOUNT_SNAPSHOT_KIND = "paper_reconciliation_snapshot"
 PAPER_ACCOUNT_SNAPSHOT_SOURCE = "kis_paper"
 PAPER_ACCOUNT_SNAPSHOT_TTL = timedelta(minutes=5)
-PAPER_ACCOUNT_SNAPSHOT_SCHEMA_VERSION = 2
+PAPER_ACCOUNT_SNAPSHOT_SCHEMA_VERSION = 3
 PAPER_ACCOUNT_ORDERABLE_FOREIGN_FUNDS_SOURCE_FIELD = "ord_psbl_frcr_amt"
 
 
@@ -42,20 +42,18 @@ class PaperAccountOrderableForeignFunds:
 
 @dataclass(frozen=True)
 class PaperAccountReferenceOrderability:
-    """Orderability for one explicit reference request, not general buying power."""
+    """Orderability for one explicit reference instrument, not general buying power."""
 
     currency: str
     orderable_funds: Decimal
     reference_exchange: str
     reference_symbol: str
-    reference_price: Decimal
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "currency", _currency(self.currency))
         object.__setattr__(self, "orderable_funds", _nonnegative_decimal(self.orderable_funds))
         object.__setattr__(self, "reference_exchange", _required_text(self.reference_exchange))
         object.__setattr__(self, "reference_symbol", _required_text(self.reference_symbol))
-        object.__setattr__(self, "reference_price", _positive_decimal(self.reference_price))
 
 
 @dataclass(frozen=True)
@@ -81,7 +79,6 @@ class PaperAccountOpenOrder:
     requested_quantity: Decimal
     filled_quantity: Decimal
     remaining_quantity: Decimal
-    limit_price: Decimal | None
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "exchange", _required_text(self.exchange))
@@ -94,8 +91,6 @@ class PaperAccountOpenOrder:
         object.__setattr__(self, "remaining_quantity", _positive_decimal(self.remaining_quantity))
         if self.filled_quantity + self.remaining_quantity != self.requested_quantity:
             raise PaperAccountSnapshotError("open_order_quantities_invalid")
-        if self.limit_price is not None:
-            object.__setattr__(self, "limit_price", _positive_decimal(self.limit_price))
 
 
 @dataclass(frozen=True)
@@ -179,7 +174,6 @@ class PaperAccountSnapshot:
                 "orderable_funds": str(self.reference_orderability.orderable_funds),
                 "reference_exchange": self.reference_orderability.reference_exchange,
                 "reference_symbol": self.reference_orderability.reference_symbol,
-                "reference_price": str(self.reference_orderability.reference_price),
             },
             "positions": [
                 {
@@ -199,7 +193,6 @@ class PaperAccountSnapshot:
                     "requested_quantity": str(item.requested_quantity),
                     "filled_quantity": str(item.filled_quantity),
                     "remaining_quantity": str(item.remaining_quantity),
-                    "limit_price": None if item.limit_price is None else str(item.limit_price),
                 }
                 for item in self.open_orders
             ],
@@ -357,7 +350,6 @@ def _reference_orderability_from_dict(value: object) -> PaperAccountReferenceOrd
             "orderable_funds",
             "reference_exchange",
             "reference_symbol",
-            "reference_price",
         },
     )
     return PaperAccountReferenceOrderability(
@@ -365,7 +357,6 @@ def _reference_orderability_from_dict(value: object) -> PaperAccountReferenceOrd
         orderable_funds=_decimal(value["orderable_funds"], "orderable_funds"),
         reference_exchange=_text(value["reference_exchange"], "reference_exchange"),
         reference_symbol=_text(value["reference_symbol"], "reference_symbol"),
-        reference_price=_decimal(value["reference_price"], "reference_price"),
     )
 
 
@@ -405,10 +396,8 @@ def _open_orders_from_list(value: object) -> tuple[PaperAccountOpenOrder, ...]:
                 "requested_quantity",
                 "filled_quantity",
                 "remaining_quantity",
-                "limit_price",
             },
         )
-        limit_price = item["limit_price"]
         orders.append(
             PaperAccountOpenOrder(
                 exchange=_text(item["exchange"], "open_order_exchange"),
@@ -418,7 +407,6 @@ def _open_orders_from_list(value: object) -> tuple[PaperAccountOpenOrder, ...]:
                 requested_quantity=_decimal(item["requested_quantity"], "requested_quantity"),
                 filled_quantity=_decimal(item["filled_quantity"], "filled_quantity"),
                 remaining_quantity=_decimal(item["remaining_quantity"], "remaining_quantity"),
-                limit_price=None if limit_price is None else _decimal(limit_price, "limit_price"),
             )
         )
     return tuple(orders)

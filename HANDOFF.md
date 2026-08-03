@@ -2714,3 +2714,22 @@ Two new task-owned triggers are `Ready`; the actual next daylight-time pair is
 there is no provider availability, model, PnL, local-paper, Paper account,
 quote, order, live, or GPU conclusion. The next session is worker-owned and
 must not create foreground idle time.
+
+## KIS Read-Only Account Refresh And Console Projection (2026-08-04)
+
+`kis-paper-readonly-account-refresh-v1` completed with one current
+virtual-Paper account bridge call. The source-safe bridge outcome was
+`complete`, and its external evidence is under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge`.
+The existing loopback dashboard rendered the fresh projection while its web
+container held no KIS environment variable, broker access, private execution
+state, or artifact mount. No order, quote, market-data, local-paper, or live
+route ran.
+
+Claude's falsification-first review was `uncertain`; it identified raw price
+retention as unnecessary for this console boundary. The bridge/runtime schema
+is now v3 and excludes reference, position, and open-order prices and order
+identifiers. Focused account, dashboard, and read-only coverage passed `51`
+tests. This establishes read-health only: the next bounded virtual-Paper
+lifecycle package must perform its own fresh account/quote checks and use the
+existing durable-intent and reconciliation path.
