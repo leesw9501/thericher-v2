@@ -16,6 +16,27 @@ progress in parallel. A blocked lane does not stop another ready lane. Codex
 integrates shared contracts, verification, Git, recovery, and the next
 objective.
 
+## Team Directory
+
+Canonical English role identifiers remain the only keys in code, ledger
+records, paths, and policies. The Korean names below are display aliases for
+operator conversation and concise reports.
+
+| Operator name | Canonical role | Stateboard | Primary responsibility |
+| --- | --- | --- | --- |
+| Product Development Lead (`제품개발 총괄`, `총괄`) | Codex Orchestrator | `orchestration.md` | Decompose work, integrate evidence, resolve cross-lane conflicts, verify, commit, and continue the company objective. |
+| Market Data (`시장데이터 담당`, `데이터`) | Data Agent (`data`) | `data.md` | Acquire, qualify, store, and expose useful market-data inputs. |
+| Trading Engine Research (`매매 엔진 연구 담당`, `엔진`) | Engine Research Agent (`engine_research`) | `engine-research.md` | Test hypotheses, features, rules, ML/DL models, portfolios, and attribution. |
+| Research Resource and Evaluation (`연구 자원 및 평가 관리자`, `GPU/평가`) | Research Steward Agent (`research_steward`) | `research-steward.md` | Allocate the exclusive GPU and protect campaign-family and sealed-evaluation custody. |
+| Paper Execution (`페이퍼 실행 담당`, `실행`) | Execution Agent (`execution`) | `execution.md` | Own deterministic simulation, KIS Paper routes, reconciliation, accounting, and risk behavior. |
+
+Temporary assignments keep their canonical names and have no standing
+stateboard: Validation (`독립 검증 담당`), Cross-Track Synthesis (`통합 연구
+검증`), Strategy Discovery (`전략 탐색 담당`), Infra Capability (`기술 환경
+담당`), Review and Claude (`반증 검토`), and Throughput Review (`진행 효율
+점검`). They report through their invoking durable role and exit after their
+bounded evidence is delivered.
+
 ## Material Goal Blocks
 
 When the company objective, rather than one lane, lacks a ready path because of
@@ -171,11 +192,41 @@ run or Git reference, phase, owned resource, recovery class, next action, and
 evidence pointer. It must never contain raw data, secrets, account identifiers,
 or broker bodies.
 
-Until the shared ledger is implemented, a matching Git commit plus immutable
-external receipt is the handoff event's durable evidence. Do not replace it
-with per-agent journals, per-agent next-goal files, or a `throughput.md`
-stateboard. The invoked Throughput Review writes its one current improvement to
-`orchestration.md` and remains deliberately short-lived.
+Until a generic role-handoff record is implemented in the shared ledger, a
+matching Git commit plus immutable external receipt is the handoff event's
+durable evidence. Do not replace it with per-agent journals, per-agent
+next-goal files, or a `throughput.md` stateboard. The invoked Throughput Review
+writes its one current improvement to `orchestration.md` and remains
+deliberately short-lived.
+
+## Operator Activity Reports
+
+When the operator asks `에이전트별 활동사항 보고해`, Codex prepares one concise,
+source-safe report for the previous 72 hours by default, or for a requested
+period. It reads the durable role stateboards for current work and recovery,
+then matches them to recent Git commits and linked external evidence. The
+report gives each durable role's completed or advanced work, material
+difficulty, material recovery, and next ready action or owned external wait.
+
+Record a resolved problem only when its cause, repair, or prevention is useful
+to a later recovery. Keep it to the current stateboard's recovery/evidence
+pointer and the matching Git or artifact reference; do not append a narrative
+role diary. A report is delivered in the current chat and is not written back
+to a stateboard, Git, or a new report artifact family. It must never include
+credentials, account identifiers, raw provider rows, model weights, or broker
+payloads.
+
+At a bounded role handoff, Codex refreshes the changed stateboard's current
+objective, recovery class, next action, and evidence pointer. Git retains its
+older stateboard snapshots, while immutable external artifacts retain the
+underlying evidence. This is the long-term reporting and recovery history until
+a source-safe generic handoff record is added to the existing shared external
+ledger with a tested schema; do not create a separate per-agent history store.
+
+A GPT or Codex scheduled task may prompt this same on-demand report every two
+or three days, but the chat is a delivery channel rather than the historical
+source of truth. The schedule must not create a second goal, report artifact,
+or approval gate.
 
 ## Shared Memory
 
@@ -187,9 +238,10 @@ D:\thericher-v2\model-artifacts\_control\ledger\YYYY-MM.jsonl
 D:\thericher-v2\model-artifacts\_control\catalog.sqlite
 ```
 
-Until that substrate is implemented, stateboards and exact artifact pointers
-are the recovery bridge. Do not create per-agent databases, vector stores,
-history documents, daily goal files, or recovery reports.
+Until generic role handoffs are implemented in that substrate, stateboards and
+exact artifact pointers are the recovery bridge. Do not create per-agent
+databases, vector stores, history documents, daily goal files, or recovery
+reports.
 
 Focused test feedback may use independent parallel processes or `pytest-xdist`
 after the affected tests have no shared mutable artifact, control root, Docker

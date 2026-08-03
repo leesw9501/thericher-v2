@@ -1,4 +1,4 @@
-# Engine Research Agent Stateboard
+# Engine Research Agent Stateboard (매매 엔진 연구 담당)
 
 AGENTS.md owns policy and NEXT_CODEX_GOAL.md owns the company objective. This
 is the current Research projection, not a campaign ledger.

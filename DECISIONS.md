@@ -8910,3 +8910,22 @@ the new active namespace. Claude's falsification-first verdict was
 `supported-with-limits`; its binding conditions are the single shared root,
 parent-and-child link checks, retained 24-hour cleanup, explicit documentation,
 and regression assertions for all of those properties.
+
+## 2026-08-03 - Use durable evidence for periodic role activity reports
+
+Decision: retain canonical English role identifiers in policy, code, paths, and
+future ledger records, while exposing Korean display aliases for operator
+conversation. On `에이전트별 활동사항 보고해`, Codex produces a source-safe
+per-role summary from current stateboards, recent Git commits, and linked
+external receipts. It includes accomplishment, material difficulty, material
+recovery, and the next ready action or owned external wait. The default period
+is the preceding 72 hours.
+
+Reason: a periodic operator view is useful when long-running work is reviewed
+every two or three days, but per-agent journals and saved chat reports would
+duplicate history and recreate report sprawl. Stateboards remain current-only;
+Git and immutable external evidence remain durable history. A scheduled GPT
+prompt may request the same report, but chat is only a delivery channel. Claude
+returned `supported-with-limits`: aliases must remain display-only, records
+must stay bounded and source-safe, and no generated report becomes a new
+artifact or approval gate.

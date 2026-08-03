@@ -1,4 +1,4 @@
-# Codex Orchestration Stateboard
+# Codex Orchestration Stateboard (제품개발 총괄)
 
 `AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
 This is a concise cross-lane projection, not a role lane, queue ledger, or

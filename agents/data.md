@@ -1,4 +1,4 @@
-# Data Agent Stateboard
+# Data Agent Stateboard (시장데이터 담당)
 
 AGENTS.md owns policy and NEXT_CODEX_GOAL.md owns the company objective. This
 is the current Data projection, not a ledger.

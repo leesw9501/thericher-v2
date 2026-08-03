@@ -1,4 +1,4 @@
-# Research Steward Agent Stateboard
+# Research Steward Agent Stateboard (연구 자원 및 평가 관리자)
 
 `AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
 This is the current scarce-resource projection, not a strategy queue, campaign

@@ -1,4 +1,4 @@
-# Execution Agent Stateboard
+# Execution Agent Stateboard (페이퍼 실행 담당)
 
 AGENTS.md owns policy and NEXT_CODEX_GOAL.md owns the company objective. This
 is the current Execution projection, not a broker-event ledger.
