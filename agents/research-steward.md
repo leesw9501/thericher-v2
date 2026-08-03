@@ -350,3 +350,12 @@ is `input_unavailable` at zero actual forward pairs, so it records no fitted
 model. GPU remains free for a later, separately frozen campaign with actual
 D:-only input and a matching CPU receipt; it must not be filled by this
 fixture family.
+
+## Forward Capture-Cycle Integration Fact (2026-08-01)
+
+The completed capture cycle is Data-only dispatch plumbing and creates no GPU
+appointment or sealed-evaluation spend. Its current `input_unavailable` result
+does not reserve the GPU or defer a separate frozen campaign with a qualified
+existing source. Any future broad-D1 exploratory appointment must remain
+source-local and non-promoting until it has its own target, split, baseline,
+kill test, artifact root, and bounded compute contract.

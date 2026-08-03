@@ -940,3 +940,19 @@ same-session causal misreading without adding a new gate.
   GPU-free interval as a reason to manufacture data or training.
 - **Review:** Claude timed out as `review_unavailable`; the named model-policy
   boundary remains non-promoting and every independent lane continues.
+
+## Profiled MTF Forward Capture Cycle (2026-08-01)
+
+- **Ready:** the local capture cycle is complete and tested. Data can now attach
+  it to the existing intraday-head collection after a successful owned refresh;
+  Engine can independently begin a source-local exploratory model package.
+- **Owned:** Data owns collection, cache provenance, and capture evidence;
+  Engine owns the independent campaign contract; Research Steward has no
+  appointment until that contract is frozen; Execution has no route change.
+- **Due:** no foreground external wait. The collector's market-time slot and
+  retry state belong only to its worker; outside a capture slot the runner exits
+  immediately and Engine work continues.
+- **Improvement:** one exact-slot dispatch reuses immutable observer/witness
+  behavior instead of adding another collector or a foreground sleep. Host and
+  network-disabled Docker reattached the same categorical `input_unavailable`
+  result. Claude was `review_unavailable`, not a hold.

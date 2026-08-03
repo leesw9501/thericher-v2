@@ -1461,3 +1461,13 @@ fresh sequence-family comparison. Depth queue: none from this family until a
 distinct actual CPU receipt exists. The next ready cross-lane package is Data's
 local-cache capture-cycle runner, not another fixture retune or synthetic
 training run.
+
+## Forward Capture-Cycle Integration Fact (2026-08-01)
+
+The new local capture-cycle runner changes no Engine contract, model family,
+target, GPU allocation, or result. Its actual reattachment is
+`input_unavailable`, so the forward `short` campaign remains at zero target-ready
+pairs and must not be trained on synthetic replacements. This is not an Engine
+wait: a source-local, explicitly non-promoting broad-D1 model implementation
+can proceed independently while Data attaches future forward captures to the
+existing collector.

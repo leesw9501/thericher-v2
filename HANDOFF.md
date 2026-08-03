@@ -2401,3 +2401,22 @@ appointed. Claude's requested falsification-first check timed out and is
 recorded as `review_unavailable`, not a hold. The next data-facing package is
 an explicit local-cache capture-cycle runner for the existing 15:30 input and
 15:45 outcome observers.
+
+## Profiled MTF Forward Capture Cycle (2026-08-01)
+
+`profiled-mtf-forward-capture-cycle-v1` is complete. It is one local-cache
+dispatch point, not a scheduler: on a regular session it calls the existing
+input observer only from 15:30 to before 15:45 ET, then the existing outcome
+witness from 15:45 ET onward. Every other instant is an immediate no-op with no
+cache load or terminal unavailable record. Existing D:-only raw-snapshot,
+duplicate, mutation, conflict, and source-safe artifact semantics remain owned
+by those two leaves.
+
+Focused fixtures cover both due actions, idempotent retry, conflict and mutated
+input containment, D:-only placement, and import isolation. A host invocation
+and a matching network-disabled, read-only Docker invocation reattached the
+current local cache as `input_unavailable`; neither called KIS, read a
+credential, opened raw values, changed a cache, trained a model, used GPU, or
+reached a broker route. Claude's required lifecycle check timed out and is
+recorded as `review_unavailable`, not a verdict or a hold. The missing forward
+pair is a Data fact only: Engine work continues on separately qualified input.

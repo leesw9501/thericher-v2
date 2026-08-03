@@ -1287,3 +1287,19 @@ calls the existing 15:30 input observer and 15:45 outcome witness at their
 respective due times. It must preserve the observer's existing immutable
 snapshot/provenance semantics, leave provider/KIS calls to their own owned
 collector, and return a scoped no-op outside either slot.
+
+## Profiled MTF Forward Capture Cycle (2026-08-01)
+
+`profiled-mtf-forward-capture-cycle-v1` now dispatches at most one existing
+local-only leaf for one UTC instant: the 15:30 ET input observer, the post-15:45
+ET outcome witness, or an outside-slot no-op. It does not itself collect,
+schedule, call KIS, read credentials, or create a terminal unavailable record.
+The existing leaves remain authoritative for D:-only raw snapshots, immutable
+source commitments, duplicates, conflicts, and input mutation.
+
+The current host and network-disabled/read-only Docker reattachments both
+returned categorical `input_unavailable` against the current local cache. No
+raw values, cache mutation, provider call, account/broker route, target, model,
+or GPU work occurred. The next Data package is to attach this already-tested
+local cycle after the existing owned KIS intraday-head collection path, keeping
+the collector's pace and recovery facts scoped to that worker.

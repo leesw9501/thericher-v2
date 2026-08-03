@@ -13,6 +13,7 @@ from pathlib import Path
 import pytest
 
 import thericher_v2.data.kis_mtf_profiled_prospective_observer as observer
+import thericher_v2.data.profiled_mtf_forward_capture_cycle as capture_cycle
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data import kis_intraday_mtf_availability as availability
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
@@ -909,6 +910,226 @@ for name in sys.modules:
         text=True,
     )
 
+    assert result.returncode == 0, result.stderr or result.stdout
+
+
+def test_capture_cycle_selects_exactly_one_regular_session_slot() -> None:
+    session_date = _regular_dates_after(date(2026, 8, 3), count=1)[0]
+    cutoff = _cutoff(session_date)
+
+    assert (
+        capture_cycle.select_profiled_mtf_forward_capture_cycle_action(
+            cutoff - timedelta(microseconds=1)
+        )
+        == "outside_cycle_slot"
+    )
+    assert (
+        capture_cycle.select_profiled_mtf_forward_capture_cycle_action(cutoff)
+        == "input_observer"
+    )
+    assert (
+        capture_cycle.select_profiled_mtf_forward_capture_cycle_action(
+            _outcome_due(session_date) - timedelta(microseconds=1)
+        )
+        == "input_observer"
+    )
+    assert (
+        capture_cycle.select_profiled_mtf_forward_capture_cycle_action(
+            _outcome_due(session_date)
+        )
+        == "outcome_witness"
+    )
+
+
+def test_capture_cycle_runs_input_then_outcome_with_d_only_raw_snapshot(
+    preflight_binding,
+    tmp_path: Path,
+) -> None:
+    historical_dates = _regular_dates_after(date(2026, 6, 1), count=21)
+    forward_date = _regular_dates_after(historical_dates[-1] + timedelta(days=1), count=1)[0]
+    historical = _catalogs(historical_dates, marker="historical")
+    head = _catalogs((forward_date,), marker="head", after_cutoff_minutes=15)
+    preflight_binding(historical)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    historical_root = tmp_path / "historical"
+    head_root = tmp_path / "head"
+    artifact_root = tmp_path / "artifacts"
+    market_data_root = tmp_path / "market-data"
+
+    def local_loader(*, cache_root: Path, **_kwargs: object) -> dict[str, CatalogedBars]:
+        assert cache_root in {historical_root, head_root}
+        return historical if cache_root == historical_root else head
+
+    input_result = capture_cycle.run_profiled_mtf_forward_capture_cycle(
+        historical_cache_root=historical_root,
+        head_cache_root=head_root,
+        market_data_root=market_data_root,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        code_revision=_sha256("code-r1"),
+        observed_at=_cutoff(forward_date),
+        catalog_loader=local_loader,
+    )
+    outcome_result = capture_cycle.run_profiled_mtf_forward_capture_cycle(
+        historical_cache_root=historical_root,
+        head_cache_root=head_root,
+        market_data_root=market_data_root,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        code_revision=_sha256("code-r1"),
+        observed_at=_outcome_due(forward_date),
+        catalog_loader=local_loader,
+    )
+
+    assert input_result.action == "input_observer"
+    assert input_result.status == "observed"
+    assert outcome_result.action == "outcome_witness"
+    assert outcome_result.status == "appended"
+    assert len(list(market_data_root.rglob("*.json"))) == 1
+    rendered = json.dumps(outcome_result.safe_payload(), sort_keys=True)
+    for forbidden in ("QQQ", "SPY", "2026-", "100.5", "D:/market_data"):
+        assert forbidden not in rendered
+
+
+def test_capture_cycle_preserves_retry_conflict_and_input_mutation_recovery(
+    preflight_binding,
+    tmp_path: Path,
+) -> None:
+    historical_dates = _regular_dates_after(date(2026, 6, 1), count=21)
+    forward_date = _regular_dates_after(historical_dates[-1] + timedelta(days=1), count=1)[0]
+    historical = _catalogs(historical_dates, marker="historical")
+    baseline_head = _catalogs((forward_date,), marker="head", after_cutoff_minutes=15)
+    changed_bars = list(baseline_head["SPY/AMS/1m"].bars)
+    changed_bars[180] = replace(
+        changed_bars[180],
+        volume=changed_bars[180].volume + Decimal("1"),
+    )
+    changed_head = dict(baseline_head)
+    changed_head["SPY/AMS/1m"] = _catalog(
+        "SPY",
+        "AMS",
+        (forward_date,),
+        marker="changed-head",
+        bars=tuple(changed_bars),
+    )
+    preflight_binding(historical)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    historical_root = tmp_path / "historical"
+    head_root = tmp_path / "head"
+    artifact_root = tmp_path / "artifacts"
+    market_data_root = tmp_path / "market-data"
+    active_head = baseline_head
+
+    def local_loader(*, cache_root: Path, **_kwargs: object) -> dict[str, CatalogedBars]:
+        assert cache_root in {historical_root, head_root}
+        return historical if cache_root == historical_root else active_head
+
+    first = capture_cycle.run_profiled_mtf_forward_capture_cycle(
+        historical_cache_root=historical_root,
+        head_cache_root=head_root,
+        market_data_root=market_data_root,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        code_revision=_sha256("code-r1"),
+        observed_at=_cutoff(forward_date),
+        catalog_loader=local_loader,
+    )
+    duplicate = capture_cycle.run_profiled_mtf_forward_capture_cycle(
+        historical_cache_root=historical_root,
+        head_cache_root=head_root,
+        market_data_root=market_data_root,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        code_revision=_sha256("code-r1"),
+        observed_at=_cutoff(forward_date),
+        catalog_loader=local_loader,
+    )
+    active_head = changed_head
+    conflict = capture_cycle.run_profiled_mtf_forward_capture_cycle(
+        historical_cache_root=historical_root,
+        head_cache_root=head_root,
+        market_data_root=market_data_root,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        code_revision=_sha256("code-r1"),
+        observed_at=_cutoff(forward_date),
+        catalog_loader=local_loader,
+    )
+    mutated = capture_cycle.run_profiled_mtf_forward_capture_cycle(
+        historical_cache_root=historical_root,
+        head_cache_root=head_root,
+        market_data_root=market_data_root,
+        artifact_root=artifact_root,
+        repo_root=repository,
+        code_revision=_sha256("code-r1"),
+        observed_at=_outcome_due(forward_date),
+        catalog_loader=local_loader,
+    )
+
+    assert first.status == "observed"
+    assert duplicate.status == "duplicate"
+    assert conflict.status == "conflict"
+    assert mutated.status == "input_mutated"
+    assert not list(market_data_root.rglob("*.json"))
+
+
+def test_capture_cycle_outside_slot_never_opens_a_cache_loader(tmp_path: Path) -> None:
+    session_date = _regular_dates_after(date(2026, 8, 3), count=1)[0]
+    repository = tmp_path / "repo"
+    repository.mkdir()
+
+    def forbidden_loader(**_kwargs: object) -> dict[str, CatalogedBars]:
+        raise AssertionError("outside capture-cycle slot must not load cache data")
+
+    result = capture_cycle.run_profiled_mtf_forward_capture_cycle(
+        historical_cache_root=tmp_path / "historical",
+        head_cache_root=tmp_path / "head",
+        market_data_root=tmp_path / "market-data",
+        artifact_root=tmp_path / "artifacts",
+        repo_root=repository,
+        code_revision=_sha256("code-r1"),
+        observed_at=_cutoff(session_date) - timedelta(minutes=1),
+        catalog_loader=forbidden_loader,
+    )
+
+    assert result.action == "outside_cycle_slot"
+    assert result.status == "outside_cycle_slot"
+    assert result.safe_payload() == {
+        "kind": "profiled-mtf-forward-capture-cycle-v1",
+        "action": "outside_cycle_slot",
+        "status": "outside_cycle_slot",
+    }
+    assert not (tmp_path / "artifacts").exists()
+    assert not (tmp_path / "market-data").exists()
+
+
+def test_capture_cycle_import_stays_local_only() -> None:
+    source = Path(capture_cycle.__file__).read_text(encoding="utf-8").lower()
+    for forbidden in (
+        "os.environ",
+        "socket",
+        "urllib",
+        "requests",
+        "local_paper",
+        "kis_live",
+        "torch",
+    ):
+        assert forbidden not in source
+    script = """
+import sys
+import thericher_v2.data.profiled_mtf_forward_capture_cycle
+for name in sys.modules:
+    if name.startswith('thericher_v2.execution') or name == 'torch' or name.startswith('torch.'):
+        raise SystemExit(name)
+"""
+    result = subprocess.run(
+        [sys.executable, "-c", script],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
     assert result.returncode == 0, result.stderr or result.stdout
 
 
