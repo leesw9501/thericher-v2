@@ -2480,7 +2480,29 @@ with `input_unavailable: within_bar_geometry_integrity_failure` before model
 fit. No model weights, predictions, raw values, KIS call, credential read,
 account/order/broker route, Paper action, or GPU allocation occurred.
 
-The next objective is a bounded geometry audit and one separately frozen
-event-censoring candidate. It must measure the source limitation first and may
-not silently loosen the fixed range screen, make a performance claim, or turn
-this candidate-local result into a Data or execution hold.
+The range screen remains fixed. Its candidate-local failure is not a Data or
+execution hold; the separately frozen event-censoring result is recorded below.
+
+## KIS Broad D1 Geometry Audit And Event-Censored Candidate (2026-08-03)
+
+`kis-broad-d1-geometry-audit-and-event-censored-candidate-v1` is complete.
+The network-disabled, read-only Docker Data audit reattached the same selected
+128-target panel lineage and wrote an aggregate-only external receipt
+`sha256:8a8c0eef3d7036c595517b9bba4a08b2232ed3f712dc17da8507986f7150525a`.
+It found 34 fixed `high / low > 2.0` events across 15 targets and 34 sessions;
+the stricter `>3`, `>5`, and `>10` aggregate counts were `3`, `0`, and `0`.
+The causal `t-19..t` feature-window mask left 63,455 development pairs and
+30,451 validation pairs, with 126 to 128 available targets in every validation
+session. No raw rows, prices, symbols, targets, credentials, KIS call, account,
+broker, or GPU state was written or used.
+
+Claude's falsification-first verdict was `supported-with-limits`: censoring is
+hygiene rather than performance evidence, all controls must use the same mask,
+and both session-block and per-target temporal nulls are required. The separate
+Docker CPU candidate bound that audit and completed receipt
+`sha256:b318491bb3b1e0f4c15f219c68b6423e8d0e4e66f4db92f53d104b9e2bd43e5e`.
+Its pooled L2 logistic balanced accuracy was `0.4997425`, below the best fixed
+baseline (`0.5105884`) and both 95th null quantiles (about `0.500338`); both
+bootstrap advantages were negative. It is therefore closed as a non-promoting
+no-signal result. No weights, predictions, PnL, ranking, ensemble, Paper input,
+or CUDA appointment was created.

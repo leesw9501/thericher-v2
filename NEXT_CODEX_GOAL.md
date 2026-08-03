@@ -1,68 +1,66 @@
 # Next Codex Goal
 
 Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
-`RUNBOOK.md`, and the active stateboards in `agents/` first. Then continue from
+`RUNBOOK.md`, and active `agents/` stateboards first. Then continue from
 `C:\Users\Public\Documents\thericher-v2`.
 
 ## Objective
 
-Build `kis-broad-d1-geometry-audit-and-event-censored-candidate-v1`: explain
-the first KIS broad-D1 candidate's fixed within-bar geometry failure with a
-bounded, source-safe audit, then freeze and run at most one distinct causal
-event-censoring CPU preflight if its explicit input contract is satisfied.
+Build `kis-broad-d1-adjustment-semantics-probe-v1`: determine, with one small
+KIS Paper daily-price capability probe, whether the existing current-listing
+broad-D1 source can expose a separate adjusted daily representation for a fixed
+sample of already-audited range events.
 
-This is a source-local development objective, not a profitability or source
-quality claim. A failed audit or insufficient censored input closes only the
-new candidate as `input_unavailable`; it must not restart the completed broad
-collector, substitute data, or create a foreground wait.
+This is source provenance work only. It must not reopen the completed broad
+collector, replace retained raw data, repair prices, train a model, make a PnL
+claim, or change Paper/live execution behavior.
 
 ## Boundaries
 
-- Ask Claude for one concise falsification-first challenge before changing the
-  first candidate's range/event policy or opening the new CPU campaign.
-- Reattach the existing broad-D1 panel/cache read-only. Do not call KIS,
-  account, position, quote, or order endpoints; do not read credentials,
-  submit/modify/cancel Paper orders, read `KIS_LIVE_*`, or enable live behavior.
-- Preserve current-listing/non-PIT, unadjusted, corporate-action-unqualified,
-  availability, and session-finality limitations. No audit/candidate result may
-  become a ranking, selection, ensemble, PnL, Paper-input, or promotion claim.
-- Do not silently relax the 2.0 range screen. The new candidate must state its
-  distinct event definition, causal feature/target availability, target-adjacent
-  censoring rule, temporal split/purge, naive baseline, strongest kill test,
-  minimum coverage, artifact root, and stop rule before it opens a target.
-- The Data audit may retain only aggregate counts/bins/hashes outside Git; raw
-  rows, prices, symbols, targets, predictions, and weights remain on D: or in
-  memory. Keep raw data under `D:\market_data` and artifacts under
-  `D:\thericher-v2\model-artifacts`.
-- CPU is first. CUDA is ineligible unless this new source has an actual CPU
-  receipt and a separately frozen GPU contract.
+- Before relying on a changed daily-adjustment interpretation, ask Claude for
+  one concise falsification-first challenge of the source/temporal semantics.
+- `KIS_PAPER_*` is authorized only for the KIS Paper US daily-price endpoint
+  and its in-memory token path. Do not call account, position, quote, order,
+  modify, cancel, or live endpoints; never read `KIS_LIVE_*`.
+- Use one bounded, serial client and reuse its valid in-memory token. Record
+  source-safe request/accepted/error counts and measured pace only; do not
+  create a new global throttle or a foreground wait.
+- Derive at most three fixed witnesses from the completed selected-panel audit
+  in memory. Do not output witness symbols, dates, raw rows, prices, values,
+  credentials, account data, or broker payloads to Git, logs, stateboards, or
+  artifacts.
+- Store raw KIS material only below `D:\market_data`; store aggregate receipts
+  only under `D:\thericher-v2\model-artifacts`. Keep Docker artifacts under
+  `/app/model_artifacts`; reject symlinked or Git-resident artifact paths.
+- The probe may report only categorical adjustment semantics such as
+  `unchanged`, `changed`, `unsupported`, `unavailable`, or `inconsistent` plus
+  aggregate counts/hashes. It cannot qualify the source as PIT, corporate-action
+  complete, model-ready, ranking-ready, Paper-ready, or live-ready.
+- No new broad-D1 model, ensemble, local-paper replay, GPU appointment, or
+  CUDA work is eligible in this objective.
 
 ## Required Work
 
-1. Data: implement one bounded read-only geometry audit over the same selected
-   panel lineage. Record source-safe ratio/event counts, affected target/session
-   counts, common-session implications, and immutable input identities. Reject
-   malformed/symlinked/mixed data and Docker artifact paths that are not real
-   external mounts.
-2. Engine Research: use that audit to freeze at most one event-censoring
-   preflight. It may exclude only predeclared affected feature/target pairs;
-   it must not choose symbols, windows, or thresholds after seeing model
-   metrics. Preserve chronological split and availability semantics, include a
-   zero baseline plus a causal/permutation falsifier, and run the actual-source
-   CPU preflight when eligible.
-3. Research Steward: keep GPU unallocated unless the separate CPU result
-   completes and supports a new frozen CUDA request.
-4. Add focused tests for aggregate-only audit output, causal censoring,
-   no network/credential/broker path, external-only artifacts, and categorical
-   input-unavailable containment. Refresh the Data, Engine Research, Research
-   Steward, orchestration, and handoff stateboards with actual evidence.
+1. Data: implement a bounded read-only witness selector from the immutable
+   selected-panel lineage and a KIS daily adjustment-mode capability probe.
+   Freeze its event selector, endpoint parameters, comparison semantics, retry
+   class, external artifact root, and stop rule before the first request.
+2. Data: run the actual-source probe once when the input/endpoint is eligible.
+   If it is unavailable or unsupported, write one source-safe categorical
+   receipt and close only this probe; do not loop or substitute another source.
+3. Engine Research: record that the two completed broad-D1 logistic lineages
+   remain closed. It may consume only the categorical source result and must not
+   open a model or GPU campaign.
+4. Add focused tests for fixed witness selection, token reuse boundaries,
+   no account/order/live route, source-safe receipts, external-only artifacts,
+   and categorical unavailable containment. Refresh Data, Engine Research,
+   Research Steward, orchestration, and handoff stateboards.
 
 ## Completion Evidence
 
-- one external aggregate-only geometry audit tied to the existing selected
-  panel lineage;
-- one separately frozen event-censoring candidate and either an actual CPU
-  receipt or scoped `input_unavailable` result;
+- one fixed, source-safe adjustment capability contract;
+- one actual KIS Paper daily-price receipt or scoped categorical unavailable
+  receipt;
 - focused tests, clean-root full parallel verification, Ruff, both Compose
   configurations, commit, and push.
 

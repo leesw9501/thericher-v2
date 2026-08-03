@@ -120,6 +120,65 @@ services:
       - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
+  kis-broad-d1-geometry-audit:
+    build:
+      context: .
+      target: research
+    profiles: ["kis-broad-d1-geometry-audit"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/run_kis_broad_d1_geometry_audit.py
+      - --manifest-path
+      - /app/market_data/us_equities/kis_paper_private/daily-nas-broad-panel/v1/panel=6f83952b101050f22103/manifest.json
+      - --materialization-receipt-path
+      - /app/model_artifacts/data/kis-paper-daily-nas-broad-panel-v1/panel=6f83952b101050f22103/receipt.json
+      - --run-label
+      - docker-actual-r2
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
+  kis-broad-d1-event-censored-cpu-preflight:
+    image: thericher-v2-research:latest
+    build:
+      context: .
+      target: research
+    profiles: ["kis-broad-d1-event-censored-cpu"]
+    network_mode: none
+    read_only: true
+    tmpfs:
+      - /tmp
+    command:
+      - python
+      - scripts/run_kis_broad_d1_event_censored_cpu_preflight.py
+      - --manifest-path
+      - /app/market_data/us_equities/kis_paper_private/daily-nas-broad-panel/v1/panel=6f83952b101050f22103/manifest.json
+      - --materialization-receipt-path
+      - /app/model_artifacts/data/kis-paper-daily-nas-broad-panel-v1/panel=6f83952b101050f22103/receipt.json
+      - --geometry-audit-receipt-path
+      - /app/model_artifacts/data/kis-broad-d1-geometry-audit-v1/docker-actual-r2/summary.json
+      - --run-label
+      - docker-actual-r1
+      - --review-status
+      - supported-with-limits
+    environment:
+      THERICHER_MODE: off
+      PYTHONPATH: /app/src
+    volumes:
+      - ./src:/app/src:ro
+      - ./scripts:/app/scripts:ro
+      - ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}:/app/market_data:ro
+      - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
+
   chronos-t5-tiny-acquisition:
     build:
       context: .

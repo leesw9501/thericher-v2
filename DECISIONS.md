@@ -8816,6 +8816,25 @@ records fail rather than becoming observations. These are evidence-integrity
 properties of this one forward witness, not a new collection, approval, or
 execution control.
 
+## 2026-08-03 - Keep the KIS broad-D1 2.0 screen fixed and isolate event censoring
+
+Decision: retain the first broad-D1 candidate's `high / low > 2.0` geometry
+definition exactly. A separate research candidate may censor only the declared
+completed feature window `t-19..t`; it must not remove a pair because the
+unseen `t+1` target bar is an event. The original reject-on-event candidate and
+the new event-censored candidate are distinct lineages. Every baseline,
+bootstrap, and permutation null in the latter uses the identical causal
+availability mask.
+
+Reason: the aggregate audit found 34 events, enough to explain the initial
+candidate's categorical geometry failure but not to justify post-hoc threshold
+tuning. Claude's falsification-first verdict was `supported-with-limits` and
+required a session-block null in addition to per-target temporal permutation.
+The actual CPU result did not exceed its strongest baseline or either null, so
+the event-censored lineage is closed without CUDA, model selection, ensemble,
+Paper input, PnL claim, or source-quality promotion. A later broad-D1
+hypothesis must be distinct and first resolve its own adjustment semantics.
+
 ## 2026-08-02 - Bind the fixed prospective SPY receipt directly to the existing virtual canary
 
 Decision: add a named SPY-intraday receipt bridge and one Execution adapter,

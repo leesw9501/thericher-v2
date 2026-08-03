@@ -1366,3 +1366,22 @@ This is source-local development input only. The next Data-owned package is a
 read-only aggregate geometry audit for the selected source; it must report
 only bins/counts and causal availability implications, not raw rows, values,
 symbols, or a source-quality promotion claim.
+
+## KIS Broad D1 Geometry Audit (2026-08-03)
+
+The read-only `kis-broad-d1-geometry-audit-v1` reattached the exact selected
+128-target, 800-session panel and its all-target materialization identity. Its
+network-disabled Docker receipt is
+`sha256:8a8c0eef3d7036c595517b9bba4a08b2232ed3f712dc17da8507986f7150525a`.
+It retains aggregate-only source facts: 34 `high / low > 2.0` events across 15
+targets and 34 sessions; `>3` has 3 events, while `>5` and `>10` have none.
+
+The fixed causal screen excludes a decision only when its completed
+`t-19..t` feature window contains an event. It does not censor an unseen
+`t+1` target event. That leaves 63,455 development pairs and 30,451 validation
+pairs, with 126--128 available targets per validation session, so the named
+Engine-only candidate input was structurally available. The receipt contains
+only aggregate counts and hashes; it contains no raw rows, prices, symbols,
+targets, credentials, network/KIS activity, account data, broker data, or GPU
+state. This preserves the panel's current-listing, non-PIT, unadjusted,
+corporate-action-unqualified, and session-finality limitations.

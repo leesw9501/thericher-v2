@@ -1006,3 +1006,22 @@ same-session causal misreading without adding a new gate.
   preserving the full manifest/receipt binding. The separate type and explicit
   excluded count prevent that throughput improvement from being misread as an
   all-panel verification or promotion signal.
+
+## KIS Broad D1 Geometry And Event-Censored Candidate (2026-08-03)
+
+- **Ready:** the 128-target selected-panel geometry audit and one separate
+  event-censored CPU candidate are complete. The next bounded package is a
+  Data-owned KIS daily adjustment-semantics capability probe; it can proceed
+  without reopening the completed broad cursor or retrying either no-signal
+  logistic lineage.
+- **Owned:** Data owns the aggregate event provenance and any KIS daily
+  capability probe. Engine owns a new hypothesis only after that source fact.
+  Research Steward holds no appointment because the CPU candidate failed its
+  frozen falsifiers. Execution has no route change.
+- **Due:** no foreground external wait. The broad cursor is complete, the
+  event audit receipt is immutable, and the rejected candidate is closed.
+- **Improvement:** a shared, hash-bound causal availability mask let Data and
+  Engine distinguish malformed-bar rejection from a fixed event-censoring
+  experiment without loosening the screen or persisting raw data. The Docker
+  candidate now reuses the local research image with read-only source mounts,
+  avoiding an unnecessary per-service image rebuild.

@@ -1523,3 +1523,29 @@ Breadth queue: a separate frozen event-censoring candidate may follow a
 source-safe aggregate geometry audit. Depth queue: none. Do not loosen the
 2.0 screen or reuse this candidate family without a new contract, Claude
 challenge, causal target-adjacency policy, and actual-source CPU receipt.
+
+## KIS Broad D1 Event-Censored CPU Preflight (2026-08-03)
+
+The separate `kis-broad-d1-event-censored-cpu-preflight-v1` froze one
+source-local hygiene candidate after Claude's `supported-with-limits`
+falsification-first review. It preserved the fixed `high / low > 2.0` event
+definition, censored only `t-19..t` completed-bar feature windows, left a
+future `t+1` event label eligible, and used the same causal availability mask
+for every baseline, bootstrap, and null. The frozen `520/20/260` split kept
+63,455 development and 30,451 validation pairs; each validation session kept
+at least 126 targets.
+
+The actual network-disabled Docker CPU receipt is
+`sha256:b318491bb3b1e0f4c15f219c68b6423e8d0e4e66f4db92f53d104b9e2bd43e5e`.
+Pooled L2 logistic balanced accuracy was `0.4997425`, below the per-target
+development-majority baseline `0.5105884` and both 95th permutation nulls
+(approximately `0.500338`). The lower fifth-percentile balanced-accuracy and
+cross-sectional-residual advantages were negative. This candidate is rejected
+as `no_signal_after_fixed_event_censoring`, not tuned, ranked, ensembled,
+replayed, or promoted. No weights, predictions, cost/PnL claim, Paper input,
+or GPU work was created.
+
+Breadth queue: do not rerun either broad-D1 logistic lineage to chase the
+result. The next Data/Engine package should resolve a distinct KIS daily
+adjustment-semantics capability on a bounded event sample before any new
+source-local D1 hypothesis. Depth queue: none. Ensemble queue: none.

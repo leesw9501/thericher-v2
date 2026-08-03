@@ -385,3 +385,16 @@ screen failed. It opened no holdout, produced no model lineage, and consumed
 no sealed-evaluation allocation. GPU is free for another independently frozen,
 eligible campaign; this candidate cannot receive CUDA merely to investigate or
 work around its own unavailable input.
+
+## KIS Broad D1 Event-Censored CPU Custody (2026-08-03)
+
+Research Steward records no GPU appointment for
+`kis-broad-d1-event-censored-cpu-preflight-v1`. Its independently frozen,
+source-local CPU receipt
+`sha256:b318491bb3b1e0f4c15f219c68b6423e8d0e4e66f4db92f53d104b9e2bd43e5e`
+completed with `causal_falsifiers_passed: false`: model balanced accuracy was
+below the strongest fixed baseline and both required permutation nulls, while
+both bootstrap advantages were negative. It opened no sealed holdout and
+created no weights, candidate selection, ensemble lineage, Paper input, or
+promotion. GPU remains unallocated; this rejected family cannot receive a
+depth appointment merely to improve utilization.
