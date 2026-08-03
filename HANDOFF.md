@@ -2647,3 +2647,39 @@ Only one current summer observation exists. This checkpoint is committed with
 one narrower next objective for the remaining scheduler-owned boundary receipt;
 no Claude timing interpretation or cadence/validity proposal is due yet, and
 Codex does not wait in the foreground.
+
+## Prospective SPY Expiry-Boundary Observation (2026-08-04)
+
+The second source-safe timing receipt is
+`sha256:0b25f6bf91223e5eecc070663c47b46b6f22dcff142294a8555416241920c728`.
+Its raw serialized timing fields agree: scheduler start
+`19:31:01.074322Z` / `15:31:01.074322-04:00`, collector return
+`19:31:06.248101Z` / `15:31:06.248101-04:00`, and probe finish
+`19:31:08.055951Z` / `15:31:08.055951-04:00`. It is correctly
+`at_or_after_execution_expiry`, with ordered collection exit zero, 120 rows,
+zero exact overlap, and a 5,174-ms collector-inclusive duration.
+
+Both summer observations are `unavailable_after_collection/not_yet_observed`
+with `decision_time_availability: not_observed`. The first is an early 13:31
+ET control; the second has `cutoff_coverage_incomplete` after the exclusive
+15:31 boundary. Neither proves or disproves 15:30 availability, model
+inference, PnL, GPU eligibility, Paper readiness, or the frozen one-minute TTL.
+The paired 15:31 terminal receipt is
+`sha256:22c7cefcc58b7b18c10d4c7492259324d45757abd7d0ee6b932fd8e33ae84f91`.
+It is `recovery/observation_exit_nonzero` only because the data-only pair
+observation was unavailable; collection exited zero and the SPY cycle remained
+`no_intent` with no canary. No account, quote, order, local-paper, or live
+route was reached.
+
+Claude's timing review is `supported-with-limits`. The two null results carry
+no directional conclusion about 15:30; in particular, the cutoff-incomplete
+15:31 receipt is not evidence of provider unavailability. A later observer
+must bind its raw serialized UTC plus Eastern offset/DST fields, fresh
+paginated coverage, page seams, and complete minutes rather than mistake a
+120-row cache for a complete 09:30--15:30 prefix. Its strongest kill test is a
+15:29:30 ET data-only run that must not claim a complete 15:30 prefix. The
+existing static schedule reaches the input slot in daylight time but not
+standard time; that is a separate DST-tested change, not a conclusion from
+these receipts. The later claim remains only
+`availability_within_validity_after_collection`, never decision-time
+availability or execution authority.

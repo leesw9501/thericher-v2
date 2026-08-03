@@ -1115,3 +1115,28 @@ same-session causal misreading without adding a new gate.
 - **Review:** the prior Claude `supported-with-limits` boundaries remain in
   force. Claude is not invoked until both summer observations exist and a
   proposal is contemplated.
+
+## Prospective SPY Expiry-Boundary Integration (2026-08-04)
+
+- **Ready:** both summer timing receipts are reattested. The 15:31 ET run
+  collected normally but retains only a 120-row, cutoff-incomplete prefix;
+  its terminal recovery belongs to the independent data-only pair observation.
+  The next company package is a separate paginated-prefix capability probe,
+  not a Paper retry or GPU job.
+- **Owned:** Data owns fresh page/coverage/cache evidence; Engine owns the
+  causal `not_observed` interpretation; Execution remains isolated and owns no
+  action. Research Steward keeps the GPU free. Existing intraday-head and its
+  virtual-Paper cycle remain unchanged.
+- **Due:** no foreground wait. The existing head task's next due is 06:20 KST;
+  any new within-window work receives its own ET-gated schedule and bounded
+  worker after implementation.
+- **Improvement:** result monitoring now checks at :40 as well as :50 KST,
+  reducing evidence-integration delay without adding a KIS call. A later
+  probe must bind pagination, page-seam coverage, cache freshness, UTC plus
+  serialized Eastern/DST timing, and a 15:29:30 ET negative control.
+- **Review:** Claude returned `supported-with-limits`. The two null receipts
+  have no directional provider-availability meaning. A 120-row receipt is not
+  a complete session; a later pass may claim only
+  `availability_within_validity_after_collection`, never 15:30 provider
+  availability, model/PnL/Paper readiness, execution authority, or a TTL
+  change.

@@ -6,58 +6,68 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Complete `kis-spy-expiry-boundary-observation-v1`: consume the one remaining
-source-safe 15:31 ET daylight-time receipt from the existing
-`thericher-kis-paper-intraday-head` task and compare it with the committed
-13:31 ET control observation.
+Build `kis-spy-paginated-prefix-capability-v1`: an isolated, source-safe Data
+capability probe that can determine whether a fresh, paginated SPY 1m
+09:30--15:30 ET prefix can be captured and verified inside the frozen
+15:30--15:31 ET validity interval.
 
-The product outcome is a bounded fact about post-collection SPY prefix state
-at the existing expiry-boundary dispatch. It must not infer 15:30 decision-time
-availability, change cadence or TTL, or become a model, PnL, or Paper-trading
-result.
+This is a timing-and-coverage feasibility experiment only. It must not change
+the existing `thericher-kis-paper-intraday-head` schedule, prospective-SPY
+baseline TTL, virtual-Paper route, model selection, PnL, or GPU eligibility.
 
 ## Boundaries
 
-- Let only the existing owned scheduler make KIS Paper market-data calls. Do
-  not start a collector manually, create a duplicate worker/cache, or change
-  the existing SPY/QQQ head scope or triggers.
-- Do not call or read KIS account, position, quote, order, submit, modify,
-  cancel, reconciliation, or live routes. Never read or route `KIS_LIVE_*`.
-- Consume only source-safe timing/terminal receipts and sanitized Task
-  Scheduler metadata. Do not retain or display credentials, raw bars, prices,
-  request URLs, account identifiers, private intents, or broker payloads.
-- Treat the raw receipt's serialized Eastern timestamp and UTC endpoint as
-  primary evidence. Do not reinterpret its offset through host-local PowerShell
-  date conversion.
-- Preserve the frozen prospective-SPY baseline, one-minute validity, virtual
-  Paper route, and terminal schedule behavior. No observation alone changes
-  them.
+- KIS Paper market-data reads through one new named, goal-owned Data worker and
+  scheduler are standing-authorized. Do not use account, position, quote,
+  order, submit, modify, cancel, reconciliation, or any live route. Never read
+  or route `KIS_LIVE_*`.
+- Preserve the existing head collector and its Paper-cycle behavior. The new
+  worker owns a dedicated cache and artifact namespace outside Git; it must not
+  reuse a warm partial cache as fresh evidence.
+- Keep raw market data only under `D:\market_data` and generated receipts only
+  under `D:\thericher-v2\model-artifacts`. Never log secrets, account IDs, raw
+  rows, prices, request URLs, private intents, or broker bodies.
+- The observer stage is data-only: network disabled, read-only market-data
+  mount, no execution import, no KIS credential environment, and no Paper or
+  local-paper behavior.
+- Use raw serialized UTC and America/New_York timestamp strings as primary
+  evidence. Do not host-local-convert Eastern timestamps.
 
 ## Required Work
 
-1. **Data:** reattest the first new 15:31 ET timing receipt and paired terminal
-   outcome. Compare only safe timing, offset, collection count/status, and
-   post-collection prefix categories with the committed 13:31 ET control.
-2. **Engine Research:** retain `decision_time_availability: not_observed` and
-   classify only what the two post-collection observations can and cannot say
-   about the fixed 15:30 decision.
-3. **Execution:** reattest the terminal's SPY-cycle/no-canary state and prove
-   that no account, quote, order, local-paper, or live route was touched.
-4. **Integration:** after both observations exist, ask Claude for a concise
-   falsification-first challenge before writing one compact, later
-   schedule/validity design proposal. Do not implement that proposal in this
-   objective.
-5. If the receipt is not due or the scheduler has not yet produced it, record
-   its sanitized `next_due` and continue another ready lane without a
-   foreground wait.
+1. **Data:** implement a bounded same-client paginated collection/capture path
+   with explicit continuation, page-seam, complete-minute, and fresh-run
+   binding facts. It may attempt at most four 120-row pages for the one SPY
+   session; a missing continuation or incomplete prefix is a truthful scoped
+   result, not a retry flood.
+2. **Timing:** add an ET-gated, DST-safe owned scheduler path. It runs a
+   data-only 15:29:30 ET negative control and a separate actual 15:30 ET
+   feasibility observation; the irrelevant KST trigger is a no-network no-op.
+   Record collection start, return, and observer finish in UTC plus serialized
+   Eastern offset/DST form.
+3. **Negative control:** the 15:29:30 path must never claim a complete 15:30
+   prefix. Treat such a claim as a stale-cache/timestamp kill result that
+   invalidates any later positive observation from this path.
+4. **Success contract:** a positive result requires successful fresh collection,
+   continuous completed 09:30--15:30 coverage across verified page seams, and
+   all capture-path timestamps before 15:31 ET. Name it only
+   `availability_within_validity_after_collection`.
+5. **Isolation:** add focused tests proving no broker/account/quote/order/local
+   paper/live access, no credential read in the observer, no raw-data/artifact
+   escape to Git, and correct daylight/standard-time dispatch. Keep the
+   existing forward-pair DST issue separate; do not repair it in this goal.
+6. **Integration:** retain `decision_time_availability: not_observed` unless a
+   later dedicated evidence contract justifies a narrower claim. A runtime
+   failure or absent market session is Data evidence only and must not pause
+   independent Engine work.
 
 ## Completion Evidence
 
-- both matching source-safe timing receipts and terminal outcomes are
-  reattested without raw/provider/account/order output;
-- all active stateboards and `HANDOFF.md` distinguish post-collection state
-  from decision-time availability;
-- Claude verdict is recorded only for the later design proposal;
+- host and isolated Docker tests cover pagination, stale-cache negative
+  control, DST dispatch, timing bounds, and execution isolation;
+- the new scheduler is installed without changing the existing head task;
+- one source-safe runtime receipt is reattested when its owned session occurs,
+  or its explicit `next_due` and independent ready work are left to the worker;
 - required verification, commit, and push complete; then replace this file
   with exactly one next company objective.
 

@@ -1624,3 +1624,20 @@ and it cannot use this one early observation to alter the strict one-minute
 validity, select a model, make a PnL claim, or create Paper eligibility. The
 receipt's serialized Eastern `-0400` timestamp agrees with its UTC endpoint.
 The 15:31 ET observation remains pending with the existing scheduler.
+
+## Prospective SPY Timing Interpretation: 15:31 ET Expiry Boundary (2026-08-04)
+
+The reattested 15:31 ET receipt is `at_or_after_execution_expiry` and records
+the same `unavailable_after_collection/not_yet_observed` state as the 13:31 ET
+control. Its reason is `cutoff_coverage_incomplete`; it therefore cannot
+create a 15:30 input, a forward pair, a target, a model result, a PnL claim, a
+GPU appointment, or a Paper eligibility conclusion. It also cannot prove that
+the frozen one-minute validity is too short.
+
+Claude's `supported-with-limits` review requires any later data-only
+within-window test to distinguish fresh paginated source coverage from a warm
+120-row partial cache, retain raw UTC plus serialized Eastern/DST timestamps,
+and fail a 15:29:30 ET negative control rather than projecting a later cache
+back to the decision. The null outcomes have no directional meaning about
+15:30 provider availability. The static forward-capture trigger reaches 15:31
+only in daylight time; standard-time support is a separate later consumer test.

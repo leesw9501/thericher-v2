@@ -1491,3 +1491,24 @@ canary; prospective session and validation are `not_applicable`. Sanitized Task
 Scheduler metadata is `Ready`, last result zero at 02:31 KST, with the 04:31
 KST daylight-boundary observation still task-owned. No new collector, cache,
 account, quote, order, or live route was invoked by this reattestation.
+
+## Prospective SPY 15:31 ET Expiry-Boundary Observation (2026-08-04)
+
+The second timing receipt is reattested as
+`sha256:0b25f6bf91223e5eecc070663c47b46b6f22dcff142294a8555416241920c728`.
+Its raw UTC and serialized Eastern `-0400`/DST fields agree on 15:31 ET:
+collection was ordered, exit zero, 120 rows, zero overlap, and 5,174 ms
+including container lifecycle. It is correctly
+`at_or_after_execution_expiry`, but the source-safe post-collection result is
+still `unavailable_after_collection/not_yet_observed` with
+`cutoff_coverage_incomplete` and `decision_time_availability: not_observed`.
+
+This is a scoped coverage fact, not a provider failure or a permission hold.
+The current head service is configured for up to four pages, but the observed
+120-row receipt does not prove continuation, full 09:30--15:30 coverage, page
+seams, or cache freshness. A later data-only capability probe must bind a
+dedicated cache namespace, continuation/coverage facts, source timestamp
+freshness, and a 15:29:30 ET negative control before it can claim a
+within-validity prefix. It must preserve the existing head collector and
+Paper route. Neither null receipt carries a directional conclusion about
+provider availability at 15:30.

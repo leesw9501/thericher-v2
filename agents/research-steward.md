@@ -442,3 +442,12 @@ only: its `before_decision_cutoff` and `decision_time_availability:
 not_observed` categories create no campaign, model lineage, holdout access,
 selection, checkpoint, ensemble record, or GPU appointment. The pending 15:31
 ET task-owned observation also reserves no research resource.
+
+## Prospective SPY 15:31 ET Timing Custody (2026-08-04)
+
+The second timing receipt is another observational Data/Engine result only.
+Its 120-row `cutoff_coverage_incomplete` category, no-intent terminal, and
+data-only observation recovery create no campaign, model lineage, target,
+sealed-evaluation spend, checkpoint, ensemble record, or GPU appointment.
+The RTX 4090 remains free for a separately frozen eligible campaign; this
+coverage probe is not a reason to manufacture training.

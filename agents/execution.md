@@ -656,3 +656,14 @@ confirms no Execution action was introduced: no account, quote, order,
 local-paper, or live route was inspected or invoked. This receipt is not
 submission permission, and the 15:31 ET scheduler-owned observation changes
 neither the virtual host boundary nor the adapter.
+
+## Prospective SPY 15:31 ET Expiry-Boundary Isolation (2026-08-04)
+
+The paired terminal receipt is
+`recovery/observation_exit_nonzero`: collection is `exit_zero`, while the
+separate data-only pair observation is `unavailable`. The SPY cycle remains
+`no_intent` with `canary_run_id: null`, and prospective loop/session/validation
+are `not_applicable`. Static expiry tests continue to show that this ineligible
+path returns before Paper configuration, client, account, quote, order, or
+local-paper access. No live route was read or invoked. The recovery is a
+scoped data observation result, not an Execution or account-safety incident.
