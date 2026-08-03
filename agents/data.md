@@ -1385,3 +1385,26 @@ only aggregate counts and hashes; it contains no raw rows, prices, symbols,
 targets, credentials, network/KIS activity, account data, broker data, or GPU
 state. This preserves the panel's current-listing, non-PIT, unadjusted,
 corporate-action-unqualified, and session-finality limitations.
+
+## KIS Broad D1 Adjustment-Semantics Capability Probe (2026-08-03)
+
+`kis-broad-d1-adjustment-semantics-probe-v1` reattached the same 128-target,
+800-bar selected-panel lineage and used a dedicated token-plus-`dailyprice`
+transport. It chose at most two fixed in-memory range-event witnesses, issued
+the opaque `0 -> 1 -> 0` comparison sequence once, and persisted only the
+aggregate receipt `sha256:b5f2c1203e04fc0e8cd05d2ae67e1c6999abafaacc6a4bf7e4a788c50436fd4f`
+under `D:\thericher-v2\model-artifacts\data\kis-broad-d1-adjustment-semantics-probe-v1`.
+
+The result is `inconsistent/mixed_comparison_result`: one token attempt, six
+accepted daily responses, zero categorical request errors, and zero minute,
+account, quote, order, or live requests. The observed end-to-end wall-time
+bucket was 10--20 seconds and includes panel reattachment, so it is not a
+provider throughput limit. No raw rows, witness identities, values,
+credentials, request URLs, or broker payloads were retained.
+
+This closes only this alternate-representation sample. It does not reinterpret
+the existing `MODP=0` cache, establish what either provider request value
+means, qualify corporate actions or PIT history, or justify another probe loop.
+The next independent Data consumer may keep the existing immutable source
+limitations explicit; it must not substitute a guessed adjustment or blend a
+provider to repair this result.

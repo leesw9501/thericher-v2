@@ -1007,21 +1007,25 @@ same-session causal misreading without adding a new gate.
   excluded count prevent that throughput improvement from being misread as an
   all-panel verification or promotion signal.
 
-## KIS Broad D1 Geometry And Event-Censored Candidate (2026-08-03)
+## KIS Broad D1 Adjustment-Semantics Integration (2026-08-03)
 
-- **Ready:** the 128-target selected-panel geometry audit and one separate
-  event-censored CPU candidate are complete. The next bounded package is a
-  Data-owned KIS daily adjustment-semantics capability probe; it can proceed
-  without reopening the completed broad cursor or retrying either no-signal
-  logistic lineage.
-- **Owned:** Data owns the aggregate event provenance and any KIS daily
-  capability probe. Engine owns a new hypothesis only after that source fact.
-  Research Steward holds no appointment because the CPU candidate failed its
-  frozen falsifiers. Execution has no route change.
-- **Due:** no foreground external wait. The broad cursor is complete, the
-  event audit receipt is immutable, and the rejected candidate is closed.
-- **Improvement:** a shared, hash-bound causal availability mask let Data and
-  Engine distinguish malformed-bar rejection from a fixed event-censoring
-  experiment without loosening the screen or persisting raw data. The Docker
-  candidate now reuses the local research image with read-only source mounts,
-  avoiding an unnecessary per-service image rebuild.
+- **Ready:** the Data-owned alternate-representation probe is complete with
+  categorical `inconsistent/mixed_comparison_result`. The next ready company
+  package is one independent CPU-first cross-sectional momentum baseline over
+  the retained immutable representation; it does not reopen the probe or either
+  closed logistic lineage.
+- **Owned:** Data owns immutable panel reattachment and source limitations;
+  Engine owns the frozen benchmark and its window matrix; Research Steward has
+  no GPU appointment; Execution owns deterministic cost/replay-parity facts
+  only. Validation remains uninvoked unless a frozen candidate and independent
+  input exist.
+- **Due:** no foreground external wait. The alternate-mode sample is closed;
+  market-time collection, GPU availability, and the failed Claude follow-up are
+  lane-local facts, not dispatch barriers.
+- **Improvement:** the probe's dedicated daily-only transport makes the source
+  capability check observable without widening the normal KIS route. The next
+  package can run from retained D: data while KIS and GPU remain free for other
+  eligible work.
+- **Review:** the pre-run Claude challenge was `supported-with-limits` and
+  required a same-mode control; the post-run implementation challenge timed
+  out as `review_unavailable`, not agreement or a hold.

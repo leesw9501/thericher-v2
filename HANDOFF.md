@@ -2506,3 +2506,20 @@ baseline (`0.5105884`) and both 95th null quantiles (about `0.500338`); both
 bootstrap advantages were negative. It is therefore closed as a non-promoting
 no-signal result. No weights, predictions, PnL, ranking, ensemble, Paper input,
 or CUDA appointment was created.
+
+## KIS Broad D1 Adjustment-Semantics Capability Probe (2026-08-03)
+
+`kis-broad-d1-adjustment-semantics-probe-v1` is complete. Data reattached the
+same immutable selected-panel lineage and used a dedicated KIS Paper transport
+limited to one in-memory token plus the preselected `dailyprice` witness scope.
+The actual source run compared opaque request values `0 -> 1 -> 0` for at most
+two anonymous range-event witnesses. It wrote only aggregate external receipt
+`sha256:b5f2c1203e04fc0e8cd05d2ae67e1c6999abafaacc6a4bf7e4a788c50436fd4f`.
+
+The result is `inconsistent/mixed_comparison_result`: one token attempt, six
+accepted daily responses, zero categorical request errors, and no minute,
+account, quote, order, or live route. No raw row, witness identity, value,
+credential, URL, or broker payload was retained. This does not reinterpret
+the existing `MODP=0` cache, prove adjusted/corporate-action semantics, or
+qualify the source for PIT, model, ranking, Paper, or live use. The two prior
+broad-D1 logistic lineages remain closed; no GPU appointment occurred.

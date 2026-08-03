@@ -589,3 +589,15 @@ receipt/run identities even though both reuse the virtual-Paper client, whose
 host allowlist rejects a live endpoint before transport. No external side
 effect occurred. Claude was `review_unavailable`, which defers no unrelated
 Data, Engine, local-paper, or Paper package.
+
+## KIS Broad D1 Adjustment-Semantics Route Isolation (2026-08-03)
+
+The bounded Data probe added no Execution decision, intent, fill, account
+read, quote, Paper submission, cancellation, modification, reconciliation, or
+live route. Its dedicated transport admits only the virtual-paper token path
+and one preselected `dailyprice` scope; focused recording-transport coverage
+rejects minute, account, quote, order, and live paths before opening them.
+
+The actual source receipt is `inconsistent/mixed_comparison_result` and cannot
+become a deterministic fill assumption, a Paper candidate, or an Execution
+promotion. Existing local-paper and virtual-Paper boundaries are unchanged.

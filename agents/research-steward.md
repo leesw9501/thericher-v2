@@ -398,3 +398,12 @@ both bootstrap advantages were negative. It opened no sealed holdout and
 created no weights, candidate selection, ensemble lineage, Paper input, or
 promotion. GPU remains unallocated; this rejected family cannot receive a
 depth appointment merely to improve utilization.
+
+## KIS Broad D1 Adjustment-Semantics Probe Custody (2026-08-03)
+
+`kis-broad-d1-adjustment-semantics-probe-v1` is Data provenance work, not a
+research campaign. Its categorical `inconsistent/mixed_comparison_result`
+receipt opened no model lineage, checkpoint, candidate selection, sealed
+evaluation, ensemble record, or GPU appointment. The RTX 4090 remains
+available only for a separately frozen campaign with a qualified CPU-first
+contract; this source probe cannot consume idle GPU capacity.

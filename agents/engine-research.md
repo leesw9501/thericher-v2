@@ -1549,3 +1549,18 @@ Breadth queue: do not rerun either broad-D1 logistic lineage to chase the
 result. The next Data/Engine package should resolve a distinct KIS daily
 adjustment-semantics capability on a bounded event sample before any new
 source-local D1 hypothesis. Depth queue: none. Ensemble queue: none.
+
+## KIS Broad D1 Adjustment-Semantics Integration (2026-08-03)
+
+The bounded Data probe completed as `inconsistent/mixed_comparison_result`.
+It is a categorical source-provenance fact only. Neither
+`kis-broad-d1-causal-cpu-preflight-v1` nor
+`kis-broad-d1-event-censored-cpu-preflight-v1` is reopened: the first remains
+`input_unavailable/within_bar_geometry_integrity_failure` and the second
+remains rejected as `no_signal_after_fixed_event_censoring`.
+
+Do not tune, rerun, ensemble, replay, rank, make a PnL claim, or allocate GPU
+to either closed logistic lineage. The alternate-mode result does not mutate
+the retained source or prove adjusted/corporate-action semantics. A new
+independent source-local hypothesis may consume only the immutable existing
+representation with every limitation retained in its own frozen contract.

@@ -6,61 +6,56 @@ Read `HANDOFF.md`, `VISION.md`, `ARCHITECTURE.md`, `AGENTS.md`, `DECISIONS.md`,
 
 ## Objective
 
-Build `kis-broad-d1-adjustment-semantics-probe-v1`: determine, with one small
-KIS Paper daily-price capability probe, whether the existing current-listing
-broad-D1 source can expose a separate adjusted daily representation for a fixed
-sample of already-audited range events.
+Build and run `kis-broad-d1-cross-sectional-momentum-cpu-baseline-v1`: one
+source-local, CPU-first, long-only cross-sectional momentum benchmark over the
+existing immutable KIS broad-D1 `MODP=0` representation.
 
-This is source provenance work only. It must not reopen the completed broad
-collector, replace retained raw data, repair prices, train a model, make a PnL
-claim, or change Paper/live execution behavior.
+The point is to establish a reproducible strategy benchmark and its strongest
+failure mode, not to select a profitable system. It is independent of the
+closed logistic lineages and the alternate-mode probe; neither may be reopened
+or reinterpreted.
 
 ## Boundaries
 
-- Before relying on a changed daily-adjustment interpretation, ask Claude for
-  one concise falsification-first challenge of the source/temporal semantics.
-- `KIS_PAPER_*` is authorized only for the KIS Paper US daily-price endpoint
-  and its in-memory token path. Do not call account, position, quote, order,
-  modify, cancel, or live endpoints; never read `KIS_LIVE_*`.
-- Use one bounded, serial client and reuse its valid in-memory token. Record
-  source-safe request/accepted/error counts and measured pace only; do not
-  create a new global throttle or a foreground wait.
-- Derive at most three fixed witnesses from the completed selected-panel audit
-  in memory. Do not output witness symbols, dates, raw rows, prices, values,
-  credentials, account data, or broker payloads to Git, logs, stateboards, or
-  artifacts.
-- Store raw KIS material only below `D:\market_data`; store aggregate receipts
-  only under `D:\thericher-v2\model-artifacts`. Keep Docker artifacts under
-  `/app/model_artifacts`; reject symlinked or Git-resident artifact paths.
-- The probe may report only categorical adjustment semantics such as
-  `unchanged`, `changed`, `unsupported`, `unavailable`, or `inconsistent` plus
-  aggregate counts/hashes. It cannot qualify the source as PIT, corporate-action
-  complete, model-ready, ranking-ready, Paper-ready, or live-ready.
-- No new broad-D1 model, ensemble, local-paper replay, GPU appointment, or
-  CUDA work is eligible in this objective.
+- Reattach only the immutable current-listing broad-D1 panel already on `D:`.
+  Do not call KIS, read credentials, change the raw cache, or blend another
+  source.
+- Preserve every source limitation: current-listing/non-PIT universe,
+  unqualified corporate actions and session finality, and unproven alternate
+  daily representation semantics.
+- Freeze one finite `5/20/60` completed-D1 lookback matrix, a long-only top-k
+  rank rule, one-bar decision availability, a `520/20/260` chronological
+  development/purge/validation allocation, deterministic bar-cost sensitivity,
+  naive baselines, and falsification stop rules before any validation outcome
+  is read. The matrix has one family-level selection budget.
+- Use the existing fixed range-event hygiene rule across every matrix cell;
+  do not tune thresholds, windows, top-k, costs, or exposure after results.
+- This objective may create no KIS or local-paper order, PnL/profitability
+  claim, dashboard change, live path, public service, GPU/CUDA appointment,
+  sealed holdout access, or ensemble. Generated receipts remain external.
 
 ## Required Work
 
-1. Data: implement a bounded read-only witness selector from the immutable
-   selected-panel lineage and a KIS daily adjustment-mode capability probe.
-   Freeze its event selector, endpoint parameters, comparison semantics, retry
-   class, external artifact root, and stop rule before the first request.
-2. Data: run the actual-source probe once when the input/endpoint is eligible.
-   If it is unavailable or unsupported, write one source-safe categorical
-   receipt and close only this probe; do not loop or substitute another source.
-3. Engine Research: record that the two completed broad-D1 logistic lineages
-   remain closed. It may consume only the categorical source result and must not
-   open a model or GPU campaign.
-4. Add focused tests for fixed witness selection, token reuse boundaries,
-   no account/order/live route, source-safe receipts, external-only artifacts,
-   and categorical unavailable containment. Refresh Data, Engine Research,
-   Research Steward, orchestration, and handoff stateboards.
+1. Data: expose one narrow, read-only event-aware completed-bar input adapter
+   for the frozen matrix. It must bind the previous panel/audit hashes and
+   return categorical input-unavailable evidence rather than repair a source.
+2. Engine Research: implement the fixed rank benchmark and CPU runner with all
+   cells, naive controls, turnover/concentration facts, fixed cost band, and
+   strongest no-signal/no-robustness kill tests. Treat all output as
+   source-local non-promoting research evidence.
+3. Execution: independently attest that the benchmark's bar availability and
+   deterministic cost assumptions can be represented by the existing local
+   replay semantics without creating an intent or fill.
+4. Invoke Claude before relying on an unexpectedly strong result or any move
+   toward a candidate/depth boundary. Refresh Data, Engine Research, Research
+   Steward, Execution, orchestration, and handoff stateboards.
 
 ## Completion Evidence
 
-- one fixed, source-safe adjustment capability contract;
-- one actual KIS Paper daily-price receipt or scoped categorical unavailable
-  receipt;
+- one frozen source-and-strategy contract with no mutable selection after
+  results;
+- one actual CPU external receipt, including every predeclared matrix cell or
+  a categorical input-unavailable receipt;
 - focused tests, clean-root full parallel verification, Ruff, both Compose
   configurations, commit, and push.
 

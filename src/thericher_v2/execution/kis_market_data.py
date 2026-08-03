@@ -37,6 +37,8 @@ KIS_PAPER_MINUTE_QUERY_KEYS = frozenset(
     {"AUTH", "EXCD", "SYMB", "NMIN", "PINC", "NREC", "FILL", "KEYB", "NEXT"}
 )
 KIS_PAPER_DAILY_QUERY_KEYS = frozenset({"AUTH", "EXCD", "SYMB", "GUBN", "BYMD", "MODP"})
+KIS_PAPER_DAILY_DEFAULT_ADJUSTMENT_MODES = frozenset({"0"})
+KIS_PAPER_DAILY_ADJUSTMENT_PROBE_MODES = frozenset({"0", "1"})
 KIS_PAPER_MINUTE_SYMBOL_EXCHANGES = {
     "QQQ": frozenset({"NAS"}),
     # The active daily cache observes SPY through NYSE Arca (AMS). Keep NAS
@@ -126,6 +128,12 @@ class KisMarketDataRequest:
         compare=False,
         hash=False,
     )
+    daily_adjustment_modes: frozenset[str] | None = field(
+        default=None,
+        repr=False,
+        compare=False,
+        hash=False,
+    )
 
     def __post_init__(self) -> None:
         if self.daily_symbol_exchanges is not None:
@@ -133,6 +141,12 @@ class KisMarketDataRequest:
                 self,
                 "daily_symbol_exchanges",
                 _freeze_daily_symbol_exchanges(self.daily_symbol_exchanges),
+            )
+        if self.daily_adjustment_modes is not None:
+            object.__setattr__(
+                self,
+                "daily_adjustment_modes",
+                _freeze_daily_adjustment_modes(self.daily_adjustment_modes),
             )
 
 
@@ -192,6 +206,8 @@ class UrllibKisPaperMarketDataTransport:
         )
 
     def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+        if request.daily_adjustment_modes is not None:
+            raise KisPaperMarketDataError("request_not_allowlisted")
         return self._request_with_daily_symbol_exchanges(
             request,
             daily_symbol_exchanges=(
@@ -204,8 +220,13 @@ class UrllibKisPaperMarketDataTransport:
         request: KisMarketDataRequest,
         *,
         daily_symbol_exchanges: Mapping[str, frozenset[str]],
+        daily_adjustment_modes: frozenset[str] = KIS_PAPER_DAILY_DEFAULT_ADJUSTMENT_MODES,
     ) -> KisMarketDataResponse:
-        _validate_request(request, daily_symbol_exchanges=daily_symbol_exchanges)
+        _validate_request(
+            request,
+            daily_symbol_exchanges=daily_symbol_exchanges,
+            daily_adjustment_modes=daily_adjustment_modes,
+        )
         is_token_request = _is_token_request(request)
         if (
             is_token_request
@@ -248,6 +269,46 @@ class UrllibKisPaperMarketDataTransport:
         if self._request_gate is not None and _response_is_rate_limited(result):
             self._request_gate.record_rate_limit()
         return result
+
+
+class UrllibKisPaperDailyAdjustmentProbeTransport(UrllibKisPaperMarketDataTransport):
+    """Token-plus-daily transport for one preselected opaque adjustment probe.
+
+    The normal transport rejects mode-specific daily requests.  This narrow
+    subclass is constructed with the exact in-memory witness scope and permits
+    only the two opaque request values needed for ``0 -> 1 -> 0`` comparison.
+    It never enables minute, quote, account, order, or live routes.
+    """
+
+    def __init__(
+        self,
+        *,
+        daily_symbol_exchanges: Mapping[str, frozenset[str]],
+        timeout_seconds: float = 15.0,
+        request_gate: KisPaperMarketDataRateGate | None = None,
+        token_start_gate: KisPaperMarketDataTokenStartGate | None = None,
+    ) -> None:
+        super().__init__(
+            timeout_seconds=timeout_seconds,
+            request_gate=request_gate,
+            token_start_gate=token_start_gate,
+        )
+        self._daily_symbol_exchanges = _freeze_daily_symbol_exchanges(daily_symbol_exchanges)
+
+    def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+        if (
+            request.method == "GET"
+            and (
+                urllib.parse.urlsplit(request.url).path != KIS_PAPER_DAILY_PATH
+                or request.daily_adjustment_modes != KIS_PAPER_DAILY_ADJUSTMENT_PROBE_MODES
+            )
+        ):
+            raise KisPaperMarketDataError("request_not_allowlisted")
+        return self._request_with_daily_symbol_exchanges(
+            request,
+            daily_symbol_exchanges=self._daily_symbol_exchanges,
+            daily_adjustment_modes=KIS_PAPER_DAILY_ADJUSTMENT_PROBE_MODES,
+        )
 
 
 @dataclass(frozen=True)
@@ -301,12 +362,60 @@ class KisPaperDailyQuery:
         if self.continuation not in {None, "F"}:
             raise ValueError("daily historical probe continuation is not approved")
 
+    @property
+    def adjustment_mode(self) -> str:
+        """The fixed raw representation used by existing cache routes."""
+
+        return "0"
+
+
+@dataclass(frozen=True)
+class KisPaperDailyAdjustmentProbeQuery:
+    """Opaque two-mode query used only by the isolated adjustment probe.
+
+    ``0`` and ``1`` are request values, not asserted provider semantics.  The
+    dedicated daily-only transport is the only route that can issue this type.
+    """
+
+    symbol: str
+    by_date: str
+    adjustment_mode: Literal["0", "1"]
+    exchange: str = "NAS"
+    approved_symbol_exchanges: Mapping[str, frozenset[str]] = field(
+        default_factory=dict,
+        repr=False,
+        compare=False,
+        hash=False,
+    )
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "exchange", self.exchange.strip().upper())
+        object.__setattr__(self, "symbol", self.symbol.strip().upper())
+        object.__setattr__(self, "by_date", self.by_date.strip())
+        approved_symbol_exchanges = _freeze_daily_symbol_exchanges(self.approved_symbol_exchanges)
+        object.__setattr__(self, "approved_symbol_exchanges", approved_symbol_exchanges)
+        if self.exchange not in approved_symbol_exchanges.get(self.symbol, frozenset()):
+            raise ValueError("daily adjustment probe symbol/exchange pair is not approved")
+        if len(self.by_date) != 8 or not self.by_date.isdigit():
+            raise ValueError("daily adjustment probe date must be YYYYMMDD")
+        if self.adjustment_mode not in KIS_PAPER_DAILY_ADJUSTMENT_PROBE_MODES:
+            raise ValueError("daily adjustment probe mode is not approved")
+
+    @property
+    def continuation(self) -> None:
+        """The probe compares one non-continuation response at a time."""
+
+        return None
+
+
+KisPaperDailyRequestQuery = KisPaperDailyQuery | KisPaperDailyAdjustmentProbeQuery
+
 
 @dataclass(frozen=True)
 class KisPaperDailyPage:
     """Metadata-only daily page facts shared by observation and cache callers."""
 
-    query: KisPaperDailyQuery
+    query: KisPaperDailyRequestQuery
     row_count: int
     newest_date: str | None
     oldest_date: str | None
@@ -566,12 +675,12 @@ class KisPaperMarketDataClient:
             more=str(output1.get("more", "")).strip(),
         )
 
-    def fetch_daily_page(self, query: KisPaperDailyQuery) -> KisPaperDailyPage:
+    def fetch_daily_page(self, query: KisPaperDailyRequestQuery) -> KisPaperDailyPage:
         """Return metadata-only daily facts for existing observation callers."""
 
         return self.fetch_daily_raw_page(query).page
 
-    def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+    def fetch_daily_raw_page(self, query: KisPaperDailyRequestQuery) -> KisPaperDailyRawPage:
         """Return typed OHLCV rows only for a bounded private-cache collector."""
 
         if self._daily_page_attempts >= self._max_daily_page_attempts:
@@ -596,9 +705,14 @@ class KisPaperMarketDataClient:
                     "SYMB": query.symbol,
                     "GUBN": "0",
                     "BYMD": query.by_date,
-                    "MODP": "0",
+                    "MODP": query.adjustment_mode,
                 },
                 daily_symbol_exchanges=query.approved_symbol_exchanges,
+                daily_adjustment_modes=(
+                    KIS_PAPER_DAILY_ADJUSTMENT_PROBE_MODES
+                    if isinstance(query, KisPaperDailyAdjustmentProbeQuery)
+                    else None
+                ),
             )
         )
         payload = _successful_payload(response, "daily_response_rejected")
@@ -966,6 +1080,7 @@ def _validate_request(
     request: KisMarketDataRequest,
     *,
     daily_symbol_exchanges: Mapping[str, frozenset[str]] = KIS_PAPER_DAILY_SYMBOL_EXCHANGES,
+    daily_adjustment_modes: frozenset[str] = KIS_PAPER_DAILY_DEFAULT_ADJUSTMENT_MODES,
 ) -> None:
     parsed = urllib.parse.urlparse(request.url)
     if (
@@ -991,6 +1106,7 @@ def _validate_request(
     if parsed.path == KIS_PAPER_DAILY_PATH and _is_approved_daily_request(
         request,
         daily_symbol_exchanges=daily_symbol_exchanges,
+        daily_adjustment_modes=daily_adjustment_modes,
     ):
         return
     raise KisPaperMarketDataError("request_not_allowlisted")
@@ -1038,6 +1154,7 @@ def _is_approved_daily_request(
     request: KisMarketDataRequest,
     *,
     daily_symbol_exchanges: Mapping[str, frozenset[str]],
+    daily_adjustment_modes: frozenset[str],
 ) -> bool:
     query = request.query
     by_date = query.get("BYMD")
@@ -1051,7 +1168,7 @@ def _is_approved_daily_request(
         and isinstance(by_date, str)
         and len(by_date) == 8
         and by_date.isdigit()
-        and query.get("MODP") == "0"
+        and query.get("MODP") in daily_adjustment_modes
     )
 
 
@@ -1083,3 +1200,10 @@ def _freeze_daily_symbol_exchanges(
             raise ValueError("daily historical symbol/exchange scope is invalid")
         normalized[normalized_symbol] = normalized_exchanges
     return MappingProxyType(normalized)
+
+
+def _freeze_daily_adjustment_modes(value: frozenset[str]) -> frozenset[str]:
+    normalized = frozenset(str(mode).strip() for mode in value)
+    if not normalized or not normalized <= KIS_PAPER_DAILY_ADJUSTMENT_PROBE_MODES:
+        raise ValueError("daily adjustment mode scope is invalid")
+    return normalized
