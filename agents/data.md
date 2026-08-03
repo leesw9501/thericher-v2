@@ -1573,3 +1573,18 @@ evidence: it must emit a credentialed collector receipt after the valid
 Docker/task fault to investigate. The NAS-forward generic unavailable receipt
 remains a distinct collector/runtime fact; neither D1 route creates the
 separate intraday 30-pair Engine training trigger.
+
+## NAS Forward Safe Failure Classification (2026-08-04)
+
+The NAS D1 forward collector's former generic unavailable outcome is now
+classified only as one of `nas_forward_cache_unavailable`,
+`nas_forward_market_data_unavailable`, `nas_forward_collector_unavailable`, or
+`nas_forward_runtime_unavailable`. Classification is by caught exception type;
+no exception string, raw response, credential, account, or market row enters
+the source-safe receipt. Focused collector/cache/schedule tests passed.
+
+The three existing Docker service images were rebuilt and the one existing
+06:40 KST task was reinstalled without a KIS call. It remains `Ready`; its next
+owned run is the runtime evidence for the exact recovery category. This repair
+changes neither cache scope, KIS pacing, token behavior, observer isolation,
+nor any Engine or Execution eligibility.

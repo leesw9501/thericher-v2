@@ -980,6 +980,13 @@ schedule drift-check remained `review_unavailable` because local OAuth could
 not refresh. This remains a forward-data mechanism, not a PIT claim, candidate
 selection, ranking, or broker-order path.
 
+The 2026-08-04 generic credentialed-collector recovery has now been narrowed
+without exposing exception text: cache, market-data, collector, and runtime
+failures emit distinct allowlisted source-safe categories. All three NAS
+forward schedule images were rebuilt and the existing single task was
+reinstalled without a KIS call. The task is `Ready` for its owned next 06:40
+KST run; that run, not this repair, supplies the first exact runtime category.
+
 ## Current Candle-State r3 Package
 
 The current independent NAS D1 candle-state package is complete as

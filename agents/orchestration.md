@@ -1225,3 +1225,19 @@ same-session causal misreading without adding a new gate.
   Independent code review found the host-clock and page-bound gaps; both are
   fixed and covered. The negative control scopes itself to fresh-run cache
   absence, never provider availability or execution feasibility.
+
+## NAS Forward Safe Failure Classification (2026-08-04)
+
+- **Ready:** the Data-owned NAS forward collector now records an allowlisted
+  cache, market-data, collector, or runtime failure category rather than one
+  opaque unavailable result. Focused tests and all three local schedule images
+  attest the exact code; the existing task was reinstalled without a KIS call.
+- **Owned:** Data owns the next 06:40 KST source-safe runtime receipt and its
+  scoped recovery. Engine has no new eligible dataset or GPU appointment;
+  Execution has no route or order consequence.
+- **Due:** the installed task is `Ready` for its next owned invocation. Its
+  due time is not foreground idle and does not defer independent research or
+  Paper work.
+- **Improvement:** exception-class-only categorization makes the next recovery
+  diagnostic while preserving the same cache, pacing, token, and observer
+  contracts; it does not serialize error text or broaden any external effect.
