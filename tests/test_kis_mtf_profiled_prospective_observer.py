@@ -370,6 +370,37 @@ def test_forward_outcome_seals_exact_completed_window_and_retains_raw_only_under
     raw_bytes = raw_snapshots[0].read_bytes()
     assert _sha256_bytes(raw_bytes) == materialization.witness.raw_snapshot_sha256
     assert "QQQ" in raw_bytes.decode("utf-8")
+    raw_snapshots[0].unlink()
+    with pytest.raises(ValueError, match="raw snapshot"):
+        observer.inspect_kis_mtf_profiled_forward_outcome_inventory(
+            artifact_root=artifact_root,
+            market_data_root=market_data_root,
+            repo_root=repository,
+            contract=contract,
+        )
+
+
+def test_empty_forward_outcome_inventory_is_read_only(preflight_binding, tmp_path: Path) -> None:
+    historical_dates = _regular_dates_after(date(2026, 6, 1), count=21)
+    historical = _catalogs(historical_dates, marker="historical")
+    observer_contract = _contract(historical, preflight_binding)
+    contract = observer.freeze_kis_mtf_profiled_forward_outcome_contract(observer_contract)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    artifact_root = tmp_path / "artifacts"
+    market_data_root = tmp_path / "market-data"
+
+    inventory = observer.inspect_kis_mtf_profiled_forward_outcome_inventory(
+        artifact_root=artifact_root,
+        market_data_root=market_data_root,
+        repo_root=repository,
+        contract=contract,
+    )
+
+    assert inventory.target_ready_pair_count == 0
+    assert inventory.status == "zero_target_ready"
+    assert not artifact_root.exists()
+    assert not market_data_root.exists()
 
 
 def test_forward_outcome_waits_for_the_final_1544_bar_and_recovers_without_sealing_gap(

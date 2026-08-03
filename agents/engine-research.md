@@ -1375,3 +1375,27 @@ work is to prepare an opaque forward-witness manifest consumer and frozen
 campaign readiness checks without opening labels; it must continue independently
 of the collector's next market-time invocation. Claude's bounded drift check
 timed out as `review_unavailable`, not a decision boundary.
+
+## Profiled MTF Forward Campaign Readiness (2026-08-01)
+
+Engine now has one narrow bridge from Data's aggregate forward-outcome inventory
+to the future first predictive campaign. It binds only the opaque forward
+contract, aggregate manifest identity, count, and categorical status. A count
+below 30 returns scoped `input_unavailable`; 30 or more returns only
+`ready_for_private_campaign_freeze`. Neither result is a GPU appointment,
+model, target opening, selection, ensemble, Paper input, or profitability
+claim.
+
+The frozen shape is deliberately metadata only: `short`, 30 pairs, temporal
+`20/2/8`, 20bp round-trip sensitivity, no-trade baseline, blocked-session
+target permutation, CPU-first, and a maximum ten-minute CUDA appointment. The
+current source-safe `local-cache-r2` receipt is `input_unavailable` at zero
+pairs. It was identical on host and Docker after Data made the aggregate
+inspection path read-only.
+
+The ready next Engine package is the small private forward-dataset materializer:
+after a matching readiness receipt exists, it must select and verify exactly the
+permitted snapshot set, derive the predeclared target only after the outcome
+window, and freeze an immutable chronological input contract. That target/
+split boundary needs a fresh Claude falsification-first challenge; no current
+zero-pair result blocks its implementation or other Engine work.

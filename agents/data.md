@@ -1223,3 +1223,20 @@ or reinterpretation ran in this package. `predictive_target_ready_pair_count`
 remains zero; the owned forward observer remains the sole route that can change
 that prospective-data fact. This local input reattestation is not a Data or
 Engine wait condition.
+
+## Forward Outcome Inventory Read-Only Reattachment (2026-08-01)
+
+The forward-outcome inventory inspector now resolves existing external outcome
+and raw-snapshot paths without creating them. An absent store yields the exact
+zero inventory without a cache, source-row, artifact-directory, or market-data
+directory write. When outcome witnesses exist, the same inspector still rejects
+missing or changed raw snapshot hashes before exposing their aggregate count.
+
+The current `local-cache-r2` Data inventory is `zero_target_ready`, count zero,
+with opaque inventory identity
+`sha256:aac168d2db6ee71e4710962c49043db83f815d7c137c0a64afd699ded4cf89ed`.
+The host and Docker research container independently reattached that identical
+inventory and readiness receipt. No provider, KIS endpoint, credential,
+collection, cache mutation, raw snapshot opening, or source reinterpretation
+occurred. The next market-time witness remains Data-owned and cannot idle
+Engine preparation.

@@ -304,3 +304,17 @@ future predictive appointment remains contingent on a distinct frozen campaign
 with new forward target-ready pairs, temporal split, cost/baseline/kill-test
 contract, and matching CPU evidence; the current zero-pair input status is not
 a reason to idle unrelated Engine preparation.
+
+## Profiled MTF Forward Campaign Readiness (2026-08-01)
+
+The `profiled-mtf-forward-campaign-readiness-v1` receipt is a source-safe
+readiness fact, not a frozen predictive campaign or GPU allocation. Its current
+count is zero and its result is `input_unavailable`; it opened no holdout,
+target, label, model, evaluation budget, or custody appointment. Research
+Steward leaves the GPU free for an independently frozen eligible campaign.
+
+At 30 target-ready pairs, a later Data/Engine package must still create and
+validate the exact private dataset, target timing, split, costs, baseline, kill
+test, and CPU receipt before any CUDA appointment. The readiness threshold is
+therefore a dispatch input for that exact future package, never a utilization
+target or a reason to train on the current zero-pair inventory.

@@ -869,3 +869,20 @@ same-session causal misreading without adding a new gate.
   explicit masks make missing/alignment semantics testable before any future
   predictive campaign. Claude timed out as `review_unavailable`; this does not
   recreate a hold.
+
+## Profiled MTF Forward Campaign Readiness (2026-08-01)
+
+- **Ready:** Engine completed a source-safe forward-inventory bridge and the
+  next ready package is a bounded private forward-dataset materializer. It can
+  be implemented and tested with fixtures before Data reaches 30 pairs.
+- **Owned:** Data owns immutable snapshot/source verification and the forward
+  collector; Engine owns the future dataset/target contract; Research Steward
+  owns no appointment until a distinct CPU-ready campaign; Execution has no
+  route change.
+- **Due:** no foreground wait. The current zero-pair fact belongs only to the
+  future data-dependent materialization run; host and Docker can reattach the
+  same source-safe readiness receipt without mutating the read-only data mount.
+- **Improvement:** read-only inventory inspection no longer creates empty paths
+  or fails in Docker solely because `/app/market_data` is read-only. A changed
+  manifest makes the old readiness receipt stale rather than silently eligible.
+  Claude timed out as `review_unavailable`; independent work continues.

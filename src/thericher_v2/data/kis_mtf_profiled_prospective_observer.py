@@ -24,7 +24,10 @@ from thericher_v2.data.local import CatalogedBars
 from thericher_v2.data.resample import SessionWindow
 from thericher_v2.data.us_equity_session import us_equity_2026_session
 from thericher_v2.models.sequence_window import SequenceWindowInputError
-from thericher_v2.research.artifact_paths import ensure_external_artifact_directory
+from thericher_v2.research.artifact_paths import (
+    ensure_external_artifact_directory,
+    reject_repo_artifact_path,
+)
 from thericher_v2.research.causal_mtf_window_profile_feasibility import (
     CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG,
 )
@@ -1071,31 +1074,42 @@ def inspect_kis_mtf_profiled_forward_outcome_inventory(
 ) -> KisMtfProfiledForwardOutcomeInventory:
     """Expose only replayable target-ready count and opaque manifest identity."""
 
-    root = _forward_outcome_store_root(
+    root = _existing_forward_outcome_store_root(
         artifact_root=Path(artifact_root),
         repo_root=Path(repo_root),
         contract_sha256=contract.contract_sha256,
     )
-    raw_root = _forward_outcome_raw_snapshot_root(
-        market_data_root=Path(market_data_root),
-        repo_root=Path(repo_root),
-        contract_sha256=contract.contract_sha256,
-    )
     witness_hashes: list[str] = []
-    for path in sorted((root / "outcomes").glob("*.json")):
-        existing = _read_existing_forward_outcome_witness(path)
-        if existing is None:
-            continue
-        _, witness = existing
-        if witness.contract_sha256 != contract.contract_sha256:
-            raise ValueError("forward outcome inventory contract changed")
-        if witness.status != "target_ready" or witness.raw_snapshot_sha256 is None:
-            raise ValueError("forward outcome store contains a non-target-ready witness")
-        _assert_raw_snapshot_hash(
-            destination=raw_root / f"{_storage_key(witness.session_key_sha256)}.json",
-            expected_sha256=witness.raw_snapshot_sha256,
+    if root is not None:
+        outcomes_root = root / "outcomes"
+        if outcomes_root.is_symlink() or not outcomes_root.is_dir():
+            raise ValueError("forward outcome inventory store is malformed")
+        paths = tuple(sorted(outcomes_root.glob("*.json")))
+        raw_root = (
+            _existing_forward_outcome_raw_snapshot_root(
+                market_data_root=Path(market_data_root),
+                repo_root=Path(repo_root),
+                contract_sha256=contract.contract_sha256,
+            )
+            if paths
+            else None
         )
-        witness_hashes.append(witness.witness_sha256)
+        for path in paths:
+            existing = _read_existing_forward_outcome_witness(path)
+            if existing is None:
+                continue
+            _, witness = existing
+            if witness.contract_sha256 != contract.contract_sha256:
+                raise ValueError("forward outcome inventory contract changed")
+            if witness.status != "target_ready" or witness.raw_snapshot_sha256 is None:
+                raise ValueError("forward outcome store contains a non-target-ready witness")
+            if raw_root is None:
+                raise ValueError("forward outcome raw snapshot store is missing")
+            _assert_raw_snapshot_hash(
+                destination=raw_root / f"{_storage_key(witness.session_key_sha256)}.json",
+                expected_sha256=witness.raw_snapshot_sha256,
+            )
+            witness_hashes.append(witness.witness_sha256)
     manifest = _sha256(
         {
             "contract_sha256": contract.contract_sha256,
@@ -1658,6 +1672,74 @@ def _forward_outcome_raw_snapshot_root(
         _storage_key(contract_sha256),
         "snapshots",
     )
+
+
+def _existing_forward_outcome_store_root(
+    *,
+    artifact_root: Path,
+    repo_root: Path,
+    contract_sha256: str,
+) -> Path | None:
+    _reject_market_data_artifact_root(artifact_root)
+    reject_repo_artifact_path(artifact_root, repo_root)
+    return _existing_external_child_directory(
+        artifact_root,
+        "research",
+        KIS_MTF_PROFILED_FORWARD_OUTCOME_ARTIFACT_DIRECTORY,
+        "c",
+        _storage_key(contract_sha256),
+    )
+
+
+def _existing_forward_outcome_raw_snapshot_root(
+    *,
+    market_data_root: Path,
+    repo_root: Path,
+    contract_sha256: str,
+) -> Path | None:
+    _reject_repo_market_data_root(market_data_root, repo_root)
+    return _existing_external_child_directory(
+        market_data_root,
+        "us_equities",
+        "kis_paper_private",
+        KIS_MTF_PROFILED_FORWARD_OUTCOME_RAW_DIRECTORY,
+        "c",
+        _storage_key(contract_sha256),
+        "snapshots",
+    )
+
+
+def _existing_external_child_directory(root: Path, *parts: str) -> Path | None:
+    current = root.absolute()
+    if not current.exists():
+        return None
+    if current.is_symlink() or not current.is_dir():
+        raise ValueError("forward outcome read-only root is invalid")
+    resolved_root = current.resolve(strict=True)
+    for part in parts:
+        if not part or Path(part).name != part:
+            raise ValueError("forward outcome read-only path is invalid")
+        current = current / part
+        if not current.exists():
+            return None
+        if current.is_symlink() or not current.is_dir():
+            raise ValueError("forward outcome read-only path is invalid")
+        resolved = current.resolve(strict=True)
+        if not resolved.is_relative_to(resolved_root):
+            raise ValueError("forward outcome read-only path escapes its root")
+    return current.resolve(strict=True)
+
+
+def _reject_repo_market_data_root(market_data_root: Path, repo_root: Path) -> None:
+    candidate = market_data_root.absolute().resolve(strict=False)
+    repository = repo_root.absolute().resolve(strict=False)
+    if os.name != "nt":
+        docker_repo_root = Path("/app").resolve()
+        docker_market_data_root = docker_repo_root / "market_data"
+        if repository == docker_repo_root and candidate == docker_market_data_root:
+            return
+    if candidate == repository or repository in candidate.parents:
+        raise ValueError("market_data_root must be outside the Git workspace")
 
 
 def _reject_market_data_artifact_root(artifact_root: Path) -> None:

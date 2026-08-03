@@ -2297,3 +2297,28 @@ The Claude drift check timed out after its bounded invocation, recorded as
 package. The 42-control source still has zero forward target-ready pairs, so
 this is architecture/runtime evidence, not a trained predictor or a candidate
 selection result.
+
+## Profiled MTF Forward Campaign Readiness (2026-08-01)
+
+`profiled-mtf-forward-campaign-readiness-v1` is complete. Engine now accepts
+only Data's validated aggregate forward-outcome inventory and freezes the
+predeclared first campaign shape as metadata: the `short` two-leg scope, 30
+pairs, `20/2/8` temporal allocation, 20bp round-trip sensitivity, no-trade
+baseline, blocked-session target-permutation kill test, CPU-first order, and a
+ten-minute CUDA cap. It neither opens a D:-resident snapshot nor calculates a
+feature, label, return, score, PnL, or Paper intent.
+
+The source-safe `local-cache-r2` receipt is
+`sha256:2164ee3fa0021fd3c095e55bd5e2c5bf9d2bce39788a2699cc3573cf45f119db`.
+It is bound to forward outcome contract
+`sha256:5ab795b173d489117e11dd02e71b94c5389a75d414376c4ee81461d9a5b1ae2c`
+and reports `zero_target_ready`, count zero, and scoped `input_unavailable`.
+It contains no raw rows, features, targets, predictions, or weights.
+
+The Data inventory inspector was narrowed to a read-only resolver: an absent
+store now returns zero without creating any artifact or market-data directory,
+and an existing target-ready witness still requires its immutable raw snapshot
+hash. The host and Docker research container reattached the same `r2` receipt,
+which fixes the prior read-only `/app/market_data` inspection failure without
+weakening integrity checks. Claude timed out as `review_unavailable`; no
+decision, approval, or hold follows.
