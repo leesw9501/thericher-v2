@@ -1350,3 +1350,28 @@ not a model failure or GPU wait. No CUDA appointment, model, ensemble, score,
 Paper input, or PnL claim is eligible from this witness. Claude's final review
 was unavailable after two CLI timeouts; this does not change the frozen
 consumer boundary.
+
+## Profiled MTF Ragged Sequence Runtime (2026-08-01)
+
+Engine completed target-free sequence-runtime plumbing while the prospective
+outcome collector remains independently scheduled. The canonical `short`
+controls now have one explicit ragged representation: native `1m/5m/10m/1h/3h`
+sequences with lengths `15/3/3/2/2`, width two, all-available masks, and no
+cross-timeframe row alignment. Masked attention may use timeframe and
+within-frame causal-rank identities only; it makes no global timestamp or
+future-target claim.
+
+One frozen external contract exercised the same controls through three fixed
+families: per-timeframe recurrent, causal TCN, and masked cross-timeframe
+attention. CPU completed twelve structural steps before CUDA completed
+twenty-four on the configured RTX 4090. The scalar reconstruction facts are
+strictly `not_assessed_low_sample`, never performance, model-selection,
+ensemble, return, PnL, or Paper evidence. No weights or raw feature values were
+persisted.
+
+The current target-ready count remains zero, so no predictive campaign, public
+weight, target opening, or depth appointment follows. The ready next Engine
+work is to prepare an opaque forward-witness manifest consumer and frozen
+campaign readiness checks without opening labels; it must continue independently
+of the collector's next market-time invocation. Claude's bounded drift check
+timed out as `review_unavailable`, not a decision boundary.

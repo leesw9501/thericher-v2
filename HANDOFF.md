@@ -2269,3 +2269,31 @@ The host runner is credential-, network-, account-, order-, and live-free. Its
 coverage currently passes `13 passed, 2 skipped`. Two final Claude CLI review
 attempts timed out, so this record is `review_unavailable`, not a substantive
 verdict or a hold on independent work.
+
+## Profiled MTF Ragged Sequence Runtime (2026-08-01)
+
+`profiled-mtf-ragged-sequence-runtime-v1` is complete. It reattests the same
+local QQQ/SPY `short` runtime source in memory and converts each control into
+five native ordered sequences of lengths `15/3/3/2/2`, width two, with explicit
+availability masks. It does not row-align timeframes: attention receives only
+timeframe and within-frame causal-rank identities. The three target-free
+structural consumers are per-timeframe recurrent, causal TCN, and masked
+cross-timeframe attention.
+
+The external-only `local-cache-r1` contract is
+`sha256:0a235d0c4922c4891221e81773254bfdd353bc357cb40be8d49d2d9292a85188`.
+Docker CPU completed twelve fixed steps; the configured RTX 4090 completed a
+single bounded CUDA appointment of twenty-four fixed steps. The respective
+source-safe summary identities are
+`sha256:c50c6c36645386b4a044a4c3f874d37bdd3225bd51a24d61bdddc4f7ddb44a` and
+`sha256:35fe95d260772a100de782869aa9ed732dc470c468cdf83b97c736ba150f8ed3`.
+Artifacts contain only contracts and scalar runtime facts below
+`D:\thericher-v2\model-artifacts`; no values, labels, predictions, weights,
+checkpoints, cache mutation, KIS call, credential access, broker route, Paper
+action, or PnL claim occurred.
+
+The Claude drift check timed out after its bounded invocation, recorded as
+`review_unavailable` rather than a verdict. It does not hold the next Engine
+package. The 42-control source still has zero forward target-ready pairs, so
+this is architecture/runtime evidence, not a trained predictor or a candidate
+selection result.

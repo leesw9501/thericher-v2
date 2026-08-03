@@ -243,6 +243,26 @@ class ProfiledMtfFlatMlpRuntimeInventory:
 
 
 @dataclass(frozen=True, slots=True)
+class ProfiledMtfFlatMlpRuntimeSource:
+    """One reattested in-memory source shared by target-free runtime consumers."""
+
+    inventory: ProfiledMtfFlatMlpRuntimeInventory
+    controls: tuple[ProfiledMtfFlattenedControl, ...] = field(repr=False)
+
+    def __post_init__(self) -> None:
+        controls = tuple(self.controls)
+        object.__setattr__(self, "controls", controls)
+        if self.inventory.status == "input_unavailable":
+            if controls:
+                raise ValueError("unavailable runtime source must not retain controls")
+            return
+        if self.inventory.batch is None or len(controls) < 2:
+            raise ValueError("ready runtime source controls are invalid")
+        if build_profiled_mtf_flat_mlp_runtime_batch(controls) != self.inventory.batch:
+            raise ValueError("runtime source controls do not match its frozen inventory")
+
+
+@dataclass(frozen=True, slots=True)
 class ProfiledMtfFlatMlpRuntimeContract:
     """Frozen target-free runtime appointment with no predictive interpretation."""
 
@@ -384,6 +404,21 @@ def inspect_profiled_mtf_flat_mlp_runtime_inventory(
 ) -> ProfiledMtfFlatMlpRuntimeInventory:
     """Read the existing KIS local cache into the fixed runtime-only input scope."""
 
+    return load_profiled_mtf_flat_mlp_runtime_source(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision_sha256=code_revision_sha256,
+    ).inventory
+
+
+def load_profiled_mtf_flat_mlp_runtime_source(
+    *,
+    cache_root: Path | str,
+    repo_root: Path | str,
+    code_revision_sha256: str,
+) -> ProfiledMtfFlatMlpRuntimeSource:
+    """Reattest the local source once and retain controls only in memory."""
+
     _require_sha256(code_revision_sha256, "code_revision_sha256")
     catalogs = load_kis_intraday_mtf_availability_catalogs(
         cache_root=Path(cache_root), repo_root=Path(repo_root)
@@ -404,11 +439,19 @@ def inspect_profiled_mtf_flat_mlp_runtime_inventory(
         source_receipt=source_receipt,
         catalogs=catalogs,
     )
-    return _inventory_from_materialization(
+    inventory = _inventory_from_materialization(
         source_contract_sha256=source_contract.contract_sha256,
         source_receipt_sha256=source_receipt.receipt_sha256,
         feature_input_contract_sha256=feature_contract.contract_sha256,
         materialization=materialization,
+    )
+    return ProfiledMtfFlatMlpRuntimeSource(
+        inventory=inventory,
+        controls=(
+            _controls_from_materialization(materialization)
+            if inventory.status == "runtime_input_ready"
+            else ()
+        ),
     )
 
 
@@ -599,12 +642,7 @@ def _inventory_from_materialization(
     feature_input_contract_sha256: str,
     materialization: KisMtfProfiledFeatureInputMaterialization,
 ) -> ProfiledMtfFlatMlpRuntimeInventory:
-    selected_controls = tuple(
-        build_profiled_mtf_flattened_control(leg)
-        for pair in materialization.pairs
-        if pair.profile_id == PROFILED_MTF_FLAT_MLP_RUNTIME_PROFILE_ID
-        for leg in pair.legs
-    )
+    selected_controls = _controls_from_materialization(materialization)
     if materialization.receipt.status != "feature_inputs_ready" or len(selected_controls) < 2:
         return _build_inventory(
             status="input_unavailable",
@@ -625,6 +663,17 @@ def _inventory_from_materialization(
         feature_input_receipt_sha256=materialization.receipt.receipt_sha256,
         eligible_session_count=materialization.receipt.eligible_session_count,
         batch=build_profiled_mtf_flat_mlp_runtime_batch(selected_controls),
+    )
+
+
+def _controls_from_materialization(
+    materialization: KisMtfProfiledFeatureInputMaterialization,
+) -> tuple[ProfiledMtfFlattenedControl, ...]:
+    return tuple(
+        build_profiled_mtf_flattened_control(leg)
+        for pair in materialization.pairs
+        if pair.profile_id == PROFILED_MTF_FLAT_MLP_RUNTIME_PROFILE_ID
+        for leg in pair.legs
     )
 
 

@@ -1209,3 +1209,17 @@ The local host run on 2026-08-01 was a closed-market no-op with
 account route, or broker route was used. The existing Data-owned collector is
 the only route that may later supply a forward session; its clock never holds
 Engine work. Claude review was `review_unavailable` after two CLI timeouts.
+
+## Ragged Runtime Source Reattestation (2026-08-01)
+
+For `profiled-mtf-ragged-sequence-runtime-v1`, Data reattached only the existing
+local `runtime_input_ready` inventory: 42 `short` QQQ/SPY leg controls over the
+same 21 aligned 15:30 ET causal prefixes. The consumer retained controls only
+in memory, rechecked their frozen flattened batch identity, and published no
+raw rows, feature values, target values, or session keys to artifacts.
+
+No provider, KIS endpoint, credential, cache mutation, collection, schedule,
+or reinterpretation ran in this package. `predictive_target_ready_pair_count`
+remains zero; the owned forward observer remains the sole route that can change
+that prospective-data fact. This local input reattestation is not a Data or
+Engine wait condition.

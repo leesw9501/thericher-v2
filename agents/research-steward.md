@@ -287,3 +287,20 @@ The GPU is free again. The prospective 15:30-to-15:45 target contract named by
 Engine is not a GPU appointment until Data has 30 new target-ready QQQ/SPY
 pairs and Engine freezes its independent split, cost, baseline, kill test, and
 CPU receipt.
+
+## Profiled MTF Ragged Runtime Appointment (2026-08-01)
+
+Research Steward recorded one `holdout_access=none`, non-promoting runtime
+appointment for `profiled-mtf-ragged-sequence-runtime-v1`, contract
+`sha256:0a235d0c4922c4891221e81773254bfdd353bc357cb40be8d49d2d9292a85188`.
+The exact CPU receipt completed before one bounded CUDA appointment; CUDA
+completed twenty-four structural steps across recurrent, causal-TCN, and masked
+attention families on the configured RTX 4090. The external custody contains
+only identities, geometry, masks, and scalar runtime facts.
+
+This appointment opened no holdout and establishes no model family winner,
+training result, ensemble lineage, or Paper candidate. GPU is free again. A
+future predictive appointment remains contingent on a distinct frozen campaign
+with new forward target-ready pairs, temporal split, cost/baseline/kill-test
+contract, and matching CPU evidence; the current zero-pair input status is not
+a reason to idle unrelated Engine preparation.

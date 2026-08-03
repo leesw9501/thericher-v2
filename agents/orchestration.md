@@ -850,3 +850,22 @@ same-session causal misreading without adding a new gate.
   `input_mutated`, and changed outcome cannot overwrite prior evidence.
 - **Review:** both bounded Claude CLI calls timed out as
   `review_unavailable`; no verdict, approval, or lane hold follows.
+
+## Profiled MTF Ragged Sequence Runtime (2026-08-01)
+
+- **Ready:** Engine completed the independent target-free ragged runtime while
+  Data retains the forward-outcome collector. The next Engine package can
+  prepare opaque manifest/readiness plumbing without waiting for a fresh
+  market session or another GPU task.
+- **Owned:** Engine owns native sequence and future manifest-consumer
+  contracts; Data owns the unchanged prospective witness; Research Steward
+  released the completed CUDA appointment; Execution has no work or route
+  change in this package.
+- **Due:** no foreground external wait. The next forward collection remains a
+  Data-owned schedule fact, while Engine packages continue from the retained
+  local source and opaque witness inventory.
+- **Improvement:** one shared reattested in-memory source now prevents flat and
+  ragged consumers from silently drifting. Native `15/3/3/2/2` sequences and
+  explicit masks make missing/alignment semantics testable before any future
+  predictive campaign. Claude timed out as `review_unavailable`; this does not
+  recreate a hold.
