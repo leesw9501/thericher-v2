@@ -601,3 +601,18 @@ rejects minute, account, quote, order, and live paths before opening them.
 The actual source receipt is `inconsistent/mixed_comparison_result` and cannot
 become a deterministic fill assumption, a Paper candidate, or an Execution
 promotion. Existing local-paper and virtual-Paper boundaries are unchanged.
+
+## KIS Broad D1 Momentum Replay-Parity Attestation (2026-08-04)
+
+Execution supplied a pure source-safe attestation for the static broad-D1
+benchmark: completed D1 at `t` may be represented as a next-observed-D1-open
+accounting boundary, while the 5/10/20-bp values remain research-only
+round-trip stress assumptions rather than verified fill, liquidity, or Paper
+costs. The corrected benchmark receipt is
+`sha256:bb5cb76248663e66424d8342f59bafbd9be9c25a4c41f3954a7b642bd9b01a91`.
+
+This attestation creates no intent, fill, account read, quote, KIS request,
+local-paper replay, or Paper submission. It explicitly marks executable and
+Paper eligibility as unevaluated. The next prospective-SPY cycle may use the
+existing separately tested virtual-Paper adapter only from its own current
+frozen observation; this static benchmark cannot cross that boundary.

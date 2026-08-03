@@ -407,3 +407,15 @@ receipt opened no model lineage, checkpoint, candidate selection, sealed
 evaluation, ensemble record, or GPU appointment. The RTX 4090 remains
 available only for a separately frozen campaign with a qualified CPU-first
 contract; this source probe cannot consume idle GPU capacity.
+
+## KIS Broad D1 Momentum Custody (2026-08-04)
+
+No GPU or sealed-evaluation appointment was created for
+`kis-broad-d1-cross-sectional-momentum-cpu-baseline-v1`. The corrected CPU
+contract and matched host/Docker receipt are
+`sha256:927278e5abd75052a3cfdc57720d86613bb67543646f438a7523662c7fb53098`
+and `sha256:bb5cb76248663e66424d8342f59bafbd9be9c25a4c41f3954a7b642bd9b01a91`.
+Its observed 20-session source-local cell does not create a depth request,
+candidate selection, family continuation, ensemble lineage, or Paper claim.
+The RTX 4090 is released for a distinct frozen campaign with a qualified
+input, not for retuning this static benchmark.

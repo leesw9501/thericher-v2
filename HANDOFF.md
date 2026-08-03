@@ -2523,3 +2523,31 @@ credential, URL, or broker payload was retained. This does not reinterpret
 the existing `MODP=0` cache, prove adjusted/corporate-action semantics, or
 qualify the source for PIT, model, ranking, Paper, or live use. The two prior
 broad-D1 logistic lineages remain closed; no GPU appointment occurred.
+
+## KIS Broad D1 Cross-Sectional Momentum CPU Baseline (2026-08-04)
+
+`kis-broad-d1-cross-sectional-momentum-cpu-baseline-v1` completed against the
+same immutable 128-target, 800-session `MODP=0` panel. The new read-only input
+adapter binds the panel, materialization, and geometry-audit identities; it
+does not call KIS, read credentials, alter the cache, or retain raw bars. The
+fixed long-only top-10 `5/20/60` matrix uses completed-D1 decisions, the
+`520/20/260` split, common event hygiene, naive controls, and a 5/10/20-bp
+round-trip stress axis.
+
+Claude's post-outcome review was `uncertain` and identified an initial
+cost-accounting defect: standard turnover had been divided by two a second
+time. The code now charges declared round-trip bps times standard turnover,
+and the prior host receipt is superseded. Corrected host and network-disabled
+Docker runs produced the same contract
+`sha256:927278e5abd75052a3cfdc57720d86613bb67543646f438a7523662c7fb53098`
+and receipt `sha256:bb5cb76248663e66424d8342f59bafbd9be9c25a4c41f3954a7b642bd9b01a91`.
+The 5- and 60-session validation cells fail a fixed falsifier; the 20-session
+cell survives the fixed equal-weight comparison and stress axis. This is only
+a source-local observation: no winner, promotion, sealed holdout, GPU job,
+ensemble, PnL claim, local-paper input, or KIS Paper action was created.
+
+The next company objective is to connect the existing prospective SPY
+completed-bar observation, frozen baseline, and virtual-Paper adapter in one
+idempotent session-cycle. It must not reuse this historical result or wait in
+the foreground for a market session. The optional Claude direction challenge
+timed out as `review_unavailable`, not agreement or a hold.

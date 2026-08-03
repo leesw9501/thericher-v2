@@ -1564,3 +1564,26 @@ to either closed logistic lineage. The alternate-mode result does not mutate
 the retained source or prove adjusted/corporate-action semantics. A new
 independent source-local hypothesis may consume only the immutable existing
 representation with every limitation retained in its own frozen contract.
+
+## KIS Broad D1 Cross-Sectional Momentum Baseline (2026-08-04)
+
+The frozen `kis-broad-d1-cross-sectional-momentum-cpu-baseline-v1` completed
+on the immutable source-local KIS panel. It evaluates exactly the completed-D1
+long-only top-10 `5/20/60` matrix, fixed `520/20/260` split, common event
+hygiene, deterministic naive controls, and 5/10/20-bp round-trip stress. Its
+cost application is explicitly `round_trip_bps_times_standard_turnover`; a
+Claude `uncertain` post-outcome review caught and corrected the prior
+double-divisor before the final receipt was created.
+
+The corrected host and network-disabled Docker runs matched contract
+`sha256:927278e5abd75052a3cfdc57720d86613bb67543646f438a7523662c7fb53098`
+and receipt `sha256:bb5cb76248663e66424d8342f59bafbd9be9c25a4c41f3954a7b642bd9b01a91`.
+Validation rejects the 5- and 60-session cells under at least one frozen
+falsifier; the 20-session cell survives only this source-local control/stress
+observation. It is not a selected model, comparative claim, ensemble member,
+depth candidate, Paper input, or GPU appointment.
+
+Breadth queue: do not retune this family or pick the observed 20-session cell.
+The next product package is the separate prospective-SPY session-cycle
+integration, which consumes its own frozen evidence rather than this static
+historical result. Depth and ensemble queues remain empty for this lineage.

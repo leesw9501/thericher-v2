@@ -1408,3 +1408,19 @@ means, qualify corporate actions or PIT history, or justify another probe loop.
 The next independent Data consumer may keep the existing immutable source
 limitations explicit; it must not substitute a guessed adjustment or blend a
 provider to repair this result.
+
+## KIS Broad D1 Momentum Input Integration (2026-08-04)
+
+The Data-owned `kis-broad-d1-cross-sectional-momentum-input-v1` adapter now
+reattaches the exact immutable 128-target panel and prior geometry audit in
+memory. It exposes only completed 800-session decision grids, one terminal
+bar per target, fixed `5/20/60` event-availability masks, and source-safe
+lineage hashes. It preserves the panel limitations and adds
+`alternate_daily_representation_semantics_unproven`.
+
+The actual host and network-disabled Docker consumers bound the same corrected
+campaign receipt `sha256:bb5cb76248663e66424d8342f59bafbd9be9c25a4c41f3954a7b642bd9b01a91`.
+This adapter did not call KIS, read credentials, write a cache, or retain raw
+market values outside the existing D: source. Its static current-listing,
+non-PIT, adjustment, and session-finality limits remain source-local and do
+not qualify the result for ranking or Paper input.

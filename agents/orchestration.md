@@ -1029,3 +1029,29 @@ same-session causal misreading without adding a new gate.
 - **Review:** the pre-run Claude challenge was `supported-with-limits` and
   required a same-mode control; the post-run implementation challenge timed
   out as `review_unavailable`, not agreement or a hold.
+
+## KIS Broad D1 Momentum Integration (2026-08-04)
+
+- **Ready:** the immutable broad-D1 CPU baseline is complete. The next ready
+  company package is the existing prospective-SPY observation-to-virtual-Paper
+  session cycle; it is independent of the static historical result and does
+  not wait for a new market session in the foreground.
+- **Owned:** Data owns the fresh completed-bar observation; Engine owns the
+  already frozen prospective baseline; Execution owns virtual-host routing,
+  durable intent, submit/cancel, and reconciliation. Research Steward owns no
+  appointment for the completed static CPU receipt. Codex integrates only the
+  shared session contract.
+- **Due:** a real current `enter` remains a scheduler-owned session fact. The
+  next goal must prove stale, malformed, and abstaining evidence reaches no
+  Paper route, then yield the worker until an eligible session rather than
+  turning calendar time into foreground idle.
+- **Improvement:** the CPU-only broad-D1 Docker service now uses the base
+  runtime rather than rebuilding the CUDA research image. The corrected host
+  and isolated Docker receipts match at
+  `sha256:bb5cb76248663e66424d8342f59bafbd9be9c25a4c41f3954a7b642bd9b01a91`.
+  This is a reproducibility/throughput improvement only; it does not make the
+  static source promotable.
+- **Review:** Claude's post-outcome verdict was `uncertain` and exposed the
+  cost double-divisor, which was corrected before the final receipt. The
+  optional next-direction prompt timed out as `review_unavailable`; it is not
+  agreement, a hold, or an authority change.
