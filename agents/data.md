@@ -1554,3 +1554,22 @@ run. If the same post-close category repeats, the next bounded Data package is
 a source-safe conflict-origin receipt before changing collector pace or cache
 semantics. No duplicate collector, foreground retry, Engine hold, or Execution
 action follows from this one receipt.
+
+## Daily Pair Forward Token-Gate Recovery (2026-08-04)
+
+The latest QQQ/NAS plus SPY/AMS D1 pair preflight correctly reported
+`collection_required`: the completed 2026-08-03 pair session is not yet in the
+forward cache. Its credentialed follow-up then stopped before a terminal
+collector receipt because the script called a nonexistent token-gate method.
+The bounded repair uses the existing non-reserving `token_request_is_due()`
+precheck; it neither changes token reservation, pacing, cache semantics, nor
+the pair scope.
+
+Focused script, pair-cache, and schedule tests passed. The existing
+`thericher-kis-paper-daily-pair-forward` image and single 06:55 KST task were
+rebuilt and reinstalled without a KIS call. Its next owned run is the runtime
+evidence: it must emit a credentialed collector receipt after the valid
+`collection_required` preflight. Another preflight-only result is a separate
+Docker/task fault to investigate. The NAS-forward generic unavailable receipt
+remains a distinct collector/runtime fact; neither D1 route creates the
+separate intraday 30-pair Engine training trigger.

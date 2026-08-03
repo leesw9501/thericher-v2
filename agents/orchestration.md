@@ -231,7 +231,10 @@ end-to-end replay test.
   and recovery facts. The latest post-close intraday-head run recorded only
   `minute_duplicate_conflict` for both paired M1 inputs; the worker remains
   scheduled, and this cache-local recovery fact does not hold Execution or
-  Engine work.
+  Engine work. The independent D1 pair-forward worker's preflight correctly
+  found a missing completed pair; its credentialed branch now uses the existing
+  non-reserving token-due precheck after a one-line method-name repair. Its
+  rebuilt single task owns the next runtime receipt.
 - **Engine Research / Steward:** no current result is a selected model or a
   Paper input. The prospective MTF contract remains at zero target-ready pairs;
   the completed broad-D1 candle representation check is target-free input

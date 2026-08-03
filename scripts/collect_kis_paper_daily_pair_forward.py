@@ -126,7 +126,7 @@ def _run_credentialed_collection(
 ) -> int:
     rate_gate = KisPaperMarketDataRateGate(control_root=control_root)
     token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root)
-    token_request_is_due = token_gate.can_start_token_request()
+    token_request_is_due = token_gate.token_request_is_due()
     rate_gate_is_deferred = _rate_gate_is_deferred(rate_gate, observed_at)
     if not token_request_is_due or rate_gate_is_deferred:
         result = _defer_pair_cache(
