@@ -1070,10 +1070,10 @@ same-session causal misreading without adding a new gate.
   invocation. A source-safe probe receipt, rather than a calendar assumption,
   determines whether the 04:31 KST timing and exclusive one-minute validity
   can coexist.
-- **Improvement:** the separate post-collector Docker service binds one
-  content-derived receipt identity to the pre-existing canary single-flight
-  lock without creating a second Windows task or embedding execution in the
-  Data collector.
+- **Improvement:** the separate post-collector Docker service keeps the
+  observation and prepared-decision references distinct, then records the
+  actual canary identity returned by the pre-existing single-flight lock. It
+  creates no second Windows task or embedded execution in the Data collector.
 - **Review:** the architecture challenge was `supported-with-limits`; the
   final route review timed out as `review_unavailable`. Neither result creates
   an approval hold, and no eligible Paper submission occurred.

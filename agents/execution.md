@@ -622,8 +622,9 @@ frozen observation; this static benchmark cannot cross that boundary.
 The new post-collector cycle calls the existing SPY virtual-Paper adapter only
 after a current immutable observation has been captured. Its no-intent branch
 is tested to avoid Paper configuration, account, quote, and order surfaces.
-For an eligible receipt, the content-derived canary identity and existing
-receipt-canary state lock preserve one virtual-host-pinned, durable,
+For an eligible receipt, the cycle records the distinct observation reference,
+prepared-decision reference, and actual returned durable canary identity. The
+existing receipt-canary state lock preserves one virtual-host-pinned,
 reconcilable lifecycle across overlapping retries. The cycle itself does not
 alter size, cancellation, route isolation, or live behavior.
 

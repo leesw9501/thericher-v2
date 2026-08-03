@@ -20,6 +20,7 @@ from thericher_v2.data.kis_paper_prospective_spy_capture import (
     capture_kis_paper_prospective_spy_observation,
 )
 from thericher_v2.execution.kis_paper_prospective_spy_session import (
+    KisPaperProspectiveSpySessionOutcome,
     run_kis_paper_prospective_spy_session,
 )
 from thericher_v2.execution.kis_paper_receipt_canary import receipt_canary_run_id
@@ -83,7 +84,8 @@ class KisPaperProspectiveSpyCycleOutcome:
     execution_session_id: str | None
     execution_status: str | None
     execution_reason_code: str | None
-    receipt_ref: str | None
+    observation_receipt_ref: str | None
+    prepared_decision_receipt_ref: str | None
     canary_run_id: str | None
     evidence_path: Path
     schema_version: int = SCHEMA_VERSION
@@ -107,7 +109,9 @@ class KisPaperProspectiveSpyCycleOutcome:
                 "session_id": self.execution_session_id,
                 "status": self.execution_status,
                 "reason_code": self.execution_reason_code,
-                "receipt_ref": self.receipt_ref,
+                "observation_receipt_ref": self.observation_receipt_ref,
+                "prepared_decision_receipt_ref": self.prepared_decision_receipt_ref,
+                "canary_attempted": self.canary_run_id is not None,
                 "canary_run_id": self.canary_run_id,
                 "single_flight": "receipt_canary_state_lock",
             },
@@ -162,8 +166,7 @@ def run_kis_paper_prospective_spy_cycle(
             artifact_root=root,
         )
 
-    receipt_ref = _receipt_ref(captured.receipt.canonical_json())
-    canary_run_id = receipt_canary_run_id(receipt_ref)
+    observation_receipt_ref = _observation_receipt_ref(captured.receipt.canonical_json())
     execution_session_id = f"{resolved_cycle_id}-execution"
     session = run_kis_paper_prospective_spy_session(
         environment=environment,
@@ -179,6 +182,7 @@ def run_kis_paper_prospective_spy_cycle(
         now=observed,
         session_id=execution_session_id,
     )
+    prepared_decision_receipt_ref, canary_run_id = _execution_identity(session)
     return _record(
         cycle_id=resolved_cycle_id,
         observed_at=observed,
@@ -190,7 +194,8 @@ def run_kis_paper_prospective_spy_cycle(
         execution_session_id=session.session_id,
         execution_status=session.status,
         execution_reason_code=session.reason_code,
-        receipt_ref=receipt_ref,
+        observation_receipt_ref=observation_receipt_ref,
+        prepared_decision_receipt_ref=prepared_decision_receipt_ref,
         canary_run_id=canary_run_id,
         artifact_root=root,
     )
@@ -209,7 +214,8 @@ def _record(
     execution_session_id: str | None = None,
     execution_status: str | None = None,
     execution_reason_code: str | None = None,
-    receipt_ref: str | None = None,
+    observation_receipt_ref: str | None = None,
+    prepared_decision_receipt_ref: str | None = None,
     canary_run_id: str | None = None,
 ) -> KisPaperProspectiveSpyCycleOutcome:
     evidence_path = _evidence_path(artifact_root=artifact_root, cycle_id=cycle_id)
@@ -224,7 +230,8 @@ def _record(
         execution_session_id=execution_session_id,
         execution_status=execution_status,
         execution_reason_code=execution_reason_code,
-        receipt_ref=receipt_ref,
+        observation_receipt_ref=observation_receipt_ref,
+        prepared_decision_receipt_ref=prepared_decision_receipt_ref,
         canary_run_id=canary_run_id,
         evidence_path=evidence_path,
     )
@@ -236,7 +243,24 @@ def _cycle_id(observed_at: datetime) -> str:
     return f"prospective-spy-cycle-{observed_at.strftime('%Y%m%dT%H%M%S%fZ')}"
 
 
-def _receipt_ref(canonical_receipt: str) -> str:
+def _execution_identity(
+    session: KisPaperProspectiveSpySessionOutcome,
+) -> tuple[str | None, str | None]:
+    """Keep observation, prepared-decision, and durable-canary identities distinct."""
+
+    prepared_decision_receipt_ref = (
+        None if session.prepared is None else session.prepared.receipt_ref
+    )
+    if session.canary is None:
+        return prepared_decision_receipt_ref, None
+    if prepared_decision_receipt_ref is None:
+        raise ValueError("completed prospective SPY session is missing a prepared decision receipt")
+    if session.canary.run_id != receipt_canary_run_id(prepared_decision_receipt_ref):
+        raise ValueError("prospective SPY cycle canary run identity is inconsistent")
+    return prepared_decision_receipt_ref, session.canary.run_id
+
+
+def _observation_receipt_ref(canonical_receipt: str) -> str:
     return "sha256:" + hashlib.sha256(canonical_receipt.encode("utf-8")).hexdigest()
 
 

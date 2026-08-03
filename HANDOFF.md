@@ -2559,11 +2559,13 @@ Data-owned SPY completed-bar capture now feeds a separate, post-collector
 cycle service. A capture that is missing, incomplete, stale, outside its time
 window, or abstaining writes only a source-safe no-intent receipt and does not
 load Paper configuration or touch account, quote, or order routes. A captured
-immutable receipt receives its durable canary identity from its content hash;
-the pre-existing virtual-Paper canary lock serializes retries and reconciles
-an uncertain prior submission before another submit. The collector and the
-Paper-capable service remain separate processes, and no new Windows task was
-introduced.
+immutable observation remains a distinct source reference. Once a session
+reaches preparation, the cycle records its prepared-decision reference and the
+actual durable canary identity returned by the existing virtual-Paper canary;
+it never predicts a canary ID from the observation hash. The pre-existing
+canary lock serializes retries and reconciles an uncertain prior submission
+before another submit. The collector and the Paper-capable service remain
+separate processes, and no new Windows task was introduced.
 
 Host and isolated Docker smoke runs before the decision cutoff both completed
 as `no_intent/before_decision_cutoff`; neither reached Execution nor made a
