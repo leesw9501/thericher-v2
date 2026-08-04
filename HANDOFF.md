@@ -93,6 +93,12 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   needs a future frozen causal D1 baseline and qualified later evaluation
   input; it has no campaign, GPU, PnL, or Paper consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\volatility-managed-exposure-20260804-r1\source-retrieval.json`.
+- The independently retrieved extreme intraday shock-reversal mechanism is a
+  source-only event-triggered mean-reversion candidate. The project lacks its
+  source-style liquidity/spread inputs, 60-session per-symbol seasonal M1
+  baseline, completed-bar availability evidence, and candidate-specific replay
+  parity, so it has no campaign, GPU, PnL, or Paper consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\kis-intraday-extreme-shock-reversal-20260804-r1\source-retrieval.json`.
 - Closed or non-reusable historical families include QQQ MTF consensus,
   first-30/final-30 momentum, MTF logistic, lower-tail quantile preflight,
   Tiingo rotation/sequence controls, and static broad-D1 benchmarks. A later

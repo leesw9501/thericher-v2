@@ -41,6 +41,14 @@ strongest kill test before target evaluation or GPU consideration.
   qualified evaluation input, so it is `source_only_input_unavailable` with no
   campaign, GPU, PnL, ensemble, or Paper consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\volatility-managed-exposure-20260804-r1\source-retrieval.json`.
+- The independently retrieved extreme intraday shock-reversal mechanism is a
+  distinct event-triggered mean-reversion family, not a fixed-clock momentum
+  or continuation rule. Its TAQ-native liquidity/spread inputs, 60-session
+  per-symbol seasonal M1 baseline, completed-bar availability evidence, and
+  candidate-specific replay parity are absent, so it is
+  `source_only_input_unavailable` with no campaign, GPU, PnL, ensemble, or
+  Paper consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\kis-intraday-extreme-shock-reversal-20260804-r1\source-retrieval.json`.
 - The independently retrieved 52-week-high mechanism is distinct from the
   closed short-return rank, but its original 252-session/monthly/six-month
   contract needs a qualified point-in-time daily universe and more later data.
