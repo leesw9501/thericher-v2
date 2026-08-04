@@ -26,6 +26,10 @@ passed 135 focused canary, quote, intent, lifecycle-projector, and dashboard
 tests. These are local-contract facts, not a broker result or a reason to run
 the task early.
 
+The schedule installer now explicitly retains `RestartCount = 0` alongside
+`IgnoreNew`. The current registered task already has that setting; this removes
+reinstallation drift without restarting or changing tonight's task.
+
 The latest safe private-state inventory has no `submitted` or `cancel_started`
 phase. Before a fresh quote, the session reattests only a prior matching
 `SPY`/`AMEX`/buy/one-share canary in this private root. It resumes that exact

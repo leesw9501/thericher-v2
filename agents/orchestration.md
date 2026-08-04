@@ -113,6 +113,11 @@ parallel helper for fast feedback. Its eight-worker reattestation completed 124
 passing and four skipped tests in about 73 seconds with a clean owned temp root;
 keep the serial changed-path group for goal-boundary authority.
 
+The Paper schedule installer now explicitly sets `RestartCount = 0` with
+`IgnoreNew`, matching the current registered canary task. This preserves the
+single-run recovery contract on future reinstallation without touching the
+task that owns tonight's lifecycle evidence.
+
 The 2026-08-04 `-RequireCleanTempRoot` authority attempt was interrupted by an
 outer 180-second host deadline and retained its recent helper root by design;
 it is invalid verification evidence. Claude returned `unsupported` for manual
