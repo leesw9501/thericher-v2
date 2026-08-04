@@ -210,6 +210,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "DontStopIfGoingOnBatteries = $true" in source
     assert "New-TimeSpan -Minutes $ExecutionLimitMinutes" in source
     assert 'MultipleInstances = "IgnoreNew"' in source
+    assert "RestartCount = 0" in source
     assert '$settingsArguments["StartWhenAvailable"] = $true' in source
     assert "-Settings $settings" in source
     assert "Register-ScheduledTask" in source

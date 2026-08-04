@@ -34,6 +34,7 @@ function New-LocalDockerTaskSettings {
         DontStopIfGoingOnBatteries = $true
         ExecutionTimeLimit = (New-TimeSpan -Minutes $ExecutionLimitMinutes)
         MultipleInstances = "IgnoreNew"
+        RestartCount = 0
     }
     if ($RecoverMissedRun) {
         $settingsArguments["StartWhenAvailable"] = $true
