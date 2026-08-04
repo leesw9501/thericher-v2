@@ -1672,3 +1672,19 @@ categorical completion and independent forward/intraday receipt progress after
 later market dates. If a new broad cursor scope is created, restore the required
 cadence explicitly rather than silently assuming the terminal schedule remains
 appropriate.
+
+## Intraday Head Coverage Capability Reattestation (2026-08-04)
+
+The existing metadata-only coverage inspector reattached the QQQ head index
+without opening raw minute rows or calling KIS. It found zero complete
+390-minute regular sessions after the historical cutoff: the retained 120-row
+head fragments cover only short, non-contiguous portions of nine later
+sessions. The current index also records the scoped retained-cache duplicate
+conflict; it does not establish a provider-wide data verdict.
+
+Therefore neither the existing one-pair forward contract nor a hypothetical
+multi-slot intraday family may use this cache to claim completed-session
+coverage or decision-time availability. The already installed SPY paginated-
+prefix capability tasks are the next independent source-capability evidence;
+their result constrains only a later Data-owned continuation/coverage proposal,
+not the virtual-Paper canary or another ready lane.

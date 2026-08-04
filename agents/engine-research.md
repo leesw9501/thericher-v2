@@ -1749,3 +1749,18 @@ prediction, PnL, Paper input, or GPU appointment may follow from its code or
 an individual receipt. A future Engine package must first freeze its own fresh
 multi-session campaign contract and receive a new leakage/lineage challenge;
 it cannot reopen the closed historical Quantile result by relabeling it.
+
+## Intraday Multi-Slot Capability Disposition (2026-08-04)
+
+An Engine design review and the existing metadata-only head-coverage inspector
+leave a separate multi-slot prospective family `unknown`, not ready. The
+retained QQQ head cache has zero complete 390-minute sessions after the
+historical cutoff, so it cannot prove the required continuous completed-bar
+input/outcome windows or decision-time availability for additional slots.
+
+If a later Data capability result makes this viable, it must be a new campaign
+family with fresh later-session manifests and session-blocked allocation: every
+slot from one session belongs together in train, purge, or validation, and
+effective sample size is measured in session blocks rather than slot count.
+It cannot reuse closed QQQ lineages, receive GPU, train, select, ensemble, or
+become a Paper input before its own frozen contract and leakage review.

@@ -1375,3 +1375,20 @@ same-session causal misreading without adding a new gate.
   releases Docker/CPU capacity without changing cache schema or source
   semantics. Its lower cadence and recovery behavior are explicit rather than
   hidden in a data contract, and it creates no new approval or wait.
+
+## Intraday Coverage Capability Reattestation (2026-08-04)
+
+- **Ready:** a credential-free metadata inspector found zero complete QQQ
+  regular sessions in the retained post-cutoff head cache; the available
+  120-row fragments are short and non-contiguous. This closes only the proposed
+  multi-slot research preparation as `unknown`; it does not alter the existing
+  one-pair forward path, scheduled canary, or KIS authority.
+- **Owned:** Data owns later page-continuation/coverage evidence; Engine owns
+  any distinct session-blocked multi-slot contract only after that evidence.
+  Execution and Research Steward have no current route or GPU appointment.
+- **Due:** the already installed SPY paginated-prefix capability tasks own the
+  next independent provider-coverage observation. Their result is not a
+  foreground wait and does not defer another ready lane.
+- **Improvement:** reusing the existing metadata-only inspector turned an
+  attractive but unproven multi-slot idea into a measured scope limit without
+  adding a source call, scheduler, model, or permanent process.
