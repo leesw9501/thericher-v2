@@ -32,6 +32,12 @@ strongest kill test before target evaluation or GPU consideration.
   so the candidate remains source-only; no campaign, adapter, GPU job, or Paper
   path exists. Evidence:
   `D:\thericher-v2\model-artifacts\research\strategy-discovery\fifty-two-week-high-source-pass-20260804-r1\source-handoff.json`.
+- The independently retrieved same-clock-slot intraday continuation source uses
+  NYSE/TAQ 30-minute intervals. It is distinct from closed single-ETF and
+  same-day momentum work, but needs a prospective multi-symbol M1/PIT input;
+  any 5m/10m/1h adaptation is a separate untested hypothesis. It remains
+  source-only with no campaign, GPU job, or Paper path. Evidence:
+  `D:\thericher-v2\model-artifacts\research\strategy-discovery\intraday-clock-slot-continuation-source-pass-20260804-r1\source-handoff.json`.
 
 ## Closed Or Non-Reusable Families
 
