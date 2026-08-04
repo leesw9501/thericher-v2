@@ -28,8 +28,9 @@ strongest kill test before target evaluation or GPU consideration.
 - The independently retrieved 52-week-high mechanism is distinct from the
   closed short-return rank, but its original 252-session/monthly/six-month
   contract needs a qualified point-in-time daily universe and more later data.
-  It remains source-only while Data resolves Norgate capability or another
-  eligible input; no campaign, adapter, GPU job, or Paper path exists. Evidence:
+  Norgate now confirms offline-only D1 capability, not the required PIT input,
+  so the candidate remains source-only; no campaign, adapter, GPU job, or Paper
+  path exists. Evidence:
   `D:\thericher-v2\model-artifacts\research\strategy-discovery\fifty-two-week-high-source-pass-20260804-r1\source-handoff.json`.
 
 ## Closed Or Non-Reusable Families
