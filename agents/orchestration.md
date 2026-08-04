@@ -81,6 +81,11 @@ before dispatching a new baseline. This retired a duplicate Tiingo CPU/DL
 package and preserves the idle GPU for a genuinely distinct, frozen,
 input-qualified campaign.
 
+For independent prospective/MTF contract files, use the existing file-level
+parallel helper for fast feedback. Its eight-worker reattestation completed 124
+passing and four skipped tests in about 73 seconds with a clean owned temp root;
+keep the serial changed-path group for goal-boundary authority.
+
 ## Review And Monitor Facts
 
 Historic Claude CLI timeouts remain `review_unavailable`, not approval or
