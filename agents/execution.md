@@ -36,11 +36,13 @@ passed 135 focused canary, quote, intent, lifecycle-projector, and dashboard
 tests. These are local-contract facts, not a broker result or a reason to run
 the task early.
 
-At 07:18 KST on 2026-08-05, the registered task still resolved to the same
-single `kis-paper-session --execute --cancel-after-submit` action with
-`IgnoreNew` and zero restarts. A fresh offline reattestation of the canary,
-quote, intent, lifecycle-projector, and dashboard-isolation contracts passed
-150 tests. It changed no task, image, route, credential, or broker state.
+At 08:04 KST on 2026-08-05, the registered task reattached as one Docker
+Compose `kis-paper-session` profile `run --no-deps` action with `IgnoreNew`
+and zero restarts. Its static Compose command contains only the existing
+session module with `--execute --cancel-after-submit`, not a live route. A
+fresh source-free Claude check returned `supported-with-limits`; 161 offline
+canary, quote, intent, lifecycle-projector, dashboard, and schedule tests
+passed. It changed no task, image, route, credential, or broker state.
 
 The schedule installer now explicitly retains `RestartCount = 0` alongside
 `IgnoreNew`. The current registered task already has that setting; this removes

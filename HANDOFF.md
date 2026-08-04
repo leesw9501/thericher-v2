@@ -337,7 +337,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
+| Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; 08:04 static reattestation confirmed one `kis-paper-session` Compose `run --no-deps` action, `IgnoreNew`, restart 0, virtual-only command flags, Claude `supported-with-limits`, and 161 offline tests; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
 | Current-head timing repair | Data | Same `IgnoreNew` task remains at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence; rebuilt receipt now emits exact-run and observed-ET cumulative coverage, and terminal 06:20 capture owns the 390-completed-offset kill test |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |

@@ -13,7 +13,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 
 | Work | Owner | Resource | Current fact |
 | --- | --- | --- | --- |
-| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; the 07:18 static reattestation kept one `IgnoreNew`, zero-restart action and passed 150 offline route/isolation tests; next task-owned opportunity 2026-08-05 23:35 KST |
+| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; 08:04 static reattestation confirmed one Docker Compose `kis-paper-session` `run --no-deps` action, `IgnoreNew`, restart 0, virtual-only command flags, Claude `supported-with-limits`, and 161 offline tests; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
 | Current-head recovery | Data | Existing isolated cache/task | Source-safe QQQ range reattachment isolated the 04:31 KST guard collision; the same four-run task remains at 00:29/02:28/04:24/06:20 KST with one action and `IgnoreNew`. Its rebuilt receipt emits exact-run plus observed-ET cumulative metadata-only coverage; the terminal 06:20 capture owns the 390-completed-offset kill test |
 | Daily D1 catch-up | Data | Existing 07:00 KST worker | 2026-08-05 task completed `drained`: zero chunks/targets and no client constructed; exact cursor state only, not a provider-wide coverage conclusion |
