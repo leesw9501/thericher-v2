@@ -16,6 +16,7 @@ import thericher_v2.data.kis_paper_intraday_index_metadata as intraday_index_met
 import thericher_v2.execution.kis_private_intraday_backfill as private_intraday_backfill
 from thericher_v2.contracts import Timeframe
 from thericher_v2.data.kis_paper_intraday import (
+    inspect_kis_paper_private_intraday_local_retention,
     load_verified_kis_paper_private_intraday_catalog,
     resample_verified_kis_paper_private_intraday_catalog,
 )
@@ -266,6 +267,31 @@ def test_cycle_writes_only_external_raw_cache_and_loader_resamples_all_timeframe
             catalog, timeframe=Timeframe.H3, session=session
         ).bars
     ) == 1
+
+
+def test_local_retention_binds_a_catalog_from_the_verified_loader(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    _collect_one_qqq_chunk(cache_root=cache_root, repo_root=repo_root)
+
+    catalog = load_verified_kis_paper_private_intraday_catalog(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        symbol="QQQ",
+        exchange="NAS",
+    )
+    retention = inspect_kis_paper_private_intraday_local_retention(
+        catalog,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        symbol="QQQ",
+        exchange="NAS",
+        selected_bars=catalog.bars,
+    )
+
+    assert retention.latest_local_retained_at == datetime(2026, 7, 22, 5, 0, tzinfo=UTC)
+    assert retention.selected_bar_count == len(catalog.bars)
 
 
 def test_failed_unretained_attempt_does_not_latch_later_collection(tmp_path: Path) -> None:

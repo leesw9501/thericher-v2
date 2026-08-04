@@ -60,7 +60,7 @@ strongest kill test before target evaluation or GPU consideration.
   consequence. Its next outcome can be only an input-scoped no-intent or
   virtual-Paper lifecycle fact through the existing Execution boundary.
 - The separately scheduled SPY D1 stability observer is not an Engine input.
-  It has no runtime receipt yet and, even when `stable`, retains only hash and
+  Its first task-owned 23:15 KST receipt is `stable` and retains only hash and
   categorical evidence with `provider_finality: not_observed`. It cannot open
   a campaign, GPU appointment, ensemble, PnL claim, or Paper interpretation.
 - The reusable causal MTF sequence contract and local-paper replay seam are

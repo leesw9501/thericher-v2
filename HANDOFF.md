@@ -20,12 +20,12 @@ canary. It may end as a categorical no-intent, rejected,
 cancelled-and-clean, or unknown-and-reconciled result. It is never a model,
 fill, PnL, or profitability result.
 
-As of 2026-08-04 21:38 KST, no new Aug. 4 canary artifact exists. The existing
-`thericher-kis-paper-quote-session` Windows task is `Ready` for 23:35 KST with
-one Monday--Friday trigger and `IgnoreNew` concurrency. Its local
-`kis-paper-session` image was rebuilt from the current source and passed a
-network-disabled module-import check; 135 focused route/lifecycle/dashboard
-tests passed. Do not manually invoke or duplicate it.
+The existing `thericher-kis-paper-quote-session` Windows task completed its
+2026-08-04 23:35 KST invocation with Task Scheduler result `0`. Its 23:48 KST
+result monitor found no matching direct lifecycle receipt or current runtime
+projection. This proves neither a lifecycle, broker, fill, no-intent, nor PnL
+result. Do not manually invoke, infer an outcome, or duplicate the task; the
+next task-owned opportunity is 2026-08-05 23:35 KST.
 
 The 23:15 D1 stability observer and 00:31 intraday-head workers also remain
 task-owned with `IgnoreNew` concurrency. The D1 observer completed its first
@@ -64,6 +64,13 @@ execution tests passed.
   sessions, enough only for a source-local non-promoting 5--90 minute preflight;
   decision-time availability and model/Paper eligibility remain false. Evidence:
   `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
+- The new offline QQQ local-retention helper binds a verified catalog to exact
+  index metadata and reports only a selected window's maximum
+  earliest-complete local cache-retention timestamp. It rejects source/lineage,
+  conflict, candidate-conflict, and incomplete-row mismatches, but retains
+  `decision_time_availability: not_observed` and
+  `provider_finality: not_observed`. It is not wired to Execution, Paper
+  eligibility, model training, GPU allocation, or PnL.
 - A one-page, current-day-only KIS Paper IWM/AMS M1 capability probe was
   accepted. Query, client, and transport boundaries all prohibit previous-day
   and continuation use, and the probe discarded returned rows. This establishes
@@ -78,10 +85,10 @@ execution tests passed.
   raw-data scan, provider qualification, campaign, model, GPU, PnL, or Paper
   input. Evidence:
   `D:\thericher-v2\model-artifacts\data\yahoo-intraday-starter-orb-input-probe-v1\assessment.json`.
-- SPY paginated-prefix negative-control and feasibility workers are installed
-  for 04:29:30 and 04:30 KST. They have a dedicated cache and can establish
-  only post-collection availability, never retrospective decision-time
-  availability.
+- `thericher-kis-paper-spy-prefix-negative-control` and
+  `thericher-kis-paper-spy-prefix-feasibility` are installed for 04:29:30 and
+  04:30 KST. They have a dedicated cache and can establish only
+  post-collection availability, never retrospective decision-time availability.
 - The daily pair-forward cache is `cache_current` only for its named source
   contract. The metadata-only QQQ readiness observer is independent and has no
   qualified future-window record.
@@ -93,12 +100,12 @@ execution tests passed.
   KST on weekdays and owns the first distinct, exact-scope D1 comparison. It
   uses the shared KIS request/token gates, a nonblocking external receipt lock,
   and at most one virtual-Paper `dailyprice` attempt after a verified
-  15--90-minute-old snapshot and successful authentication. It has no runtime
-  receipt yet; its Task Scheduler `0x41303`/sentinel last-run display means
-  `task_has_not_run`, not worker failure. `stable` can mean only matching
-  prior-session row hashes; it
-  always retains `provider_finality: not_observed` and remains Engine-unreadable.
-  Do not build a consumer bridge from it alone. Evidence:
+  15--90-minute-old snapshot and successful authentication. Its first
+  task-owned 23:15 KST receipt is `stable`: one GET, no retry or foreground
+  wait, and an independently validated two-read row-hash match. `stable` can
+  mean only matching prior-session row hashes; it always retains
+  `provider_finality: not_observed` and remains Engine-unreadable. Do not build
+  a consumer bridge from it alone. Evidence:
   `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
 - The broad KIS D1 current-listing panel is a source-local research control,
   not a point-in-time, adjusted, corporate-action-qualified, or Paper-ready
@@ -245,7 +252,7 @@ execution tests passed.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution | Existing worker due 2026-08-04 23:35 KST |
+| Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
 | Current-head duplicate recovery | Data | Existing worker due 2026-08-05 00:31 KST |
 | SPY paginated-prefix capability | Data | Existing workers due 2026-08-05 04:29:30/04:30 KST |
@@ -316,9 +323,9 @@ ready.
 
 ## Next Handoff
 
-1. Reattach the quote-session worker's source-safe result after 23:35 KST using
-   the existing runtime projection and offline validator. Do not infer a broker
-   result from missing evidence.
+1. Preserve the 23:48 KST monitor fact that no direct lifecycle receipt/current
+   projection matched the 23:35 task. Do not infer a broker result or submit a
+   replacement; the next task-owned opportunity is 2026-08-05 23:35 KST.
 2. Continue independent Data worker reattachment at its own due times.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality

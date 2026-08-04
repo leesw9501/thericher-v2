@@ -47,6 +47,8 @@ class KisPaperPrivateIntradayV1RetainedChunkMetadata:
     """Validated retained-chunk metadata in original index row order."""
 
     chunk_key: str
+    manifest_hash: str
+    raw_sha256: str
     input_cursor: Mapping[str, str] | None
     output_cursor: Mapping[str, str] | None
     rows: tuple[tuple[str, str], ...]
@@ -209,12 +211,14 @@ def _parse_retained_chunk(
     output_cursor = _cursor_document(document.get("output_cursor"))
     fingerprints_document = document.get("row_fingerprints")
     collected_at_document = document.get("collected_at_utc")
+    manifest_hash = document.get("manifest_hash")
+    raw_sha256 = document.get("raw_sha256")
     outcome = document.get("outcome")
     if (
         outcome not in {"committed", "partial"}
         or not isinstance(document.get("manifest_path"), str)
-        or not _is_sha256(document.get("manifest_hash"))
-        or not _is_sha256(document.get("raw_sha256"))
+        or not _is_sha256(manifest_hash)
+        or not _is_sha256(raw_sha256)
         or document.get("raw_market_data_retained") is not True
         or not isinstance(document.get("row_count"), int)
         or int(document["row_count"]) <= 0
@@ -260,6 +264,8 @@ def _parse_retained_chunk(
 
     return KisPaperPrivateIntradayV1RetainedChunkMetadata(
         chunk_key=chunk_key,
+        manifest_hash=manifest_hash,
+        raw_sha256=raw_sha256,
         input_cursor=input_cursor,
         output_cursor=output_cursor,
         rows=rows,

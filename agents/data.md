@@ -93,10 +93,12 @@ undocumented timestamp seed.
   two-read row-hash match only; `provider_finality` remains `not_observed` and
   the receipt remains Engine-unreadable.
   Evidence: `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
-- **SPY prefix capability:** the negative control and feasibility tasks own
-  2026-08-05 04:29:30 and 04:30 KST. One dedicated client/cache namespace may
-  inspect at most four pages of 120 rows and must validate seams plus the exact
-  completed 09:30--15:29 ET prefix.
+- **SPY prefix capability:**
+  `thericher-kis-paper-spy-prefix-negative-control` and
+  `thericher-kis-paper-spy-prefix-feasibility` own 2026-08-05 04:29:30 and
+  04:30 KST. One dedicated client/cache namespace may inspect at most four
+  pages of 120 rows and must validate seams plus the exact completed
+  09:30--15:29 ET prefix.
 - **Pair/QQQ observers:** the daily pair-forward cache is `cache_current` for
   its own contract; the metadata-only QQQ readiness observer has no qualified
   future-window record. Neither condition becomes a general Data or Research
@@ -174,6 +176,13 @@ undocumented timestamp seed.
   `availability_within_validity_after_collection`; it must retain
   `decision_time_availability: not_observed` unless a separately designed
   measurement proves that earlier boundary.
+- The QQQ metadata-only local-retention helper binds the exact verified catalog
+  hash to the same index bytes and loader filter, then reports only the maximum
+  earliest-complete local retention timestamp for a caller-selected M1 window.
+  It excludes incomplete and candidate-conflicted chunks, retains
+  `decision_time_availability: not_observed` and
+  `provider_finality: not_observed`, and is not yet an Execution, model, or
+  Paper-eligibility input.
 - IWM/AMS is a probe-only M1 target: its request boundary permits one
   current-day page only and has no active collector or consumer contract.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,

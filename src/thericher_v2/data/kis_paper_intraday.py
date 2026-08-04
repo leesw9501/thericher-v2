@@ -7,7 +7,7 @@ import gzip
 import hashlib
 import io
 import json
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from decimal import Decimal
@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Literal
 from zoneinfo import ZoneInfo
 
-from thericher_v2.contracts import Bar, Timeframe, require_utc
+from thericher_v2.contracts import SCHEMA_VERSION, Bar, Timeframe, require_utc
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
 from thericher_v2.data.resample import SessionResampleResult, SessionWindow, resample_session_bars
 from thericher_v2.execution.kis_market_data import KisPaperMinuteRawBar
@@ -27,6 +27,11 @@ from thericher_v2.execution.kis_private_intraday_backfill import (
     sanitize_kis_paper_private_intraday_failure_reason,
 )
 
+from .kis_paper_intraday_index_metadata import (
+    KisPaperPrivateIntradayV1RetainedChunkMetadata,
+    sha256_kis_paper_private_intraday_v1_index_bytes,
+    validate_kis_paper_private_intraday_v1_index_metadata,
+)
 from .market_data_freshness_runtime import (
     MARKET_DATA_FRESHNESS_RUNTIME_TTL,
     MarketDataFreshnessRuntimeSnapshot,
@@ -49,6 +54,55 @@ class KisPaperIntradayFeatureInput:
     session_windows: tuple[SessionWindow, ...]
     input_id: str
     input_hash: str
+
+
+@dataclass(frozen=True, slots=True)
+class KisPaperPrivateIntradayLocalRetention:
+    """Source-safe local-cache retention bound for already verified KIS bars.
+
+    This records when matching rows were first retained in the local cache. It
+    deliberately does not claim provider finality or decision-time availability.
+    """
+
+    source_catalog_hash: str
+    index_metadata_sha256: str
+    selected_bar_count: int
+    latest_local_retained_at: datetime
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if not _is_sha256(self.source_catalog_hash):
+            raise ValueError("local retention source catalog hash is invalid")
+        if not _is_sha256(self.index_metadata_sha256):
+            raise ValueError("local retention index metadata hash is invalid")
+        if type(self.selected_bar_count) is not int or self.selected_bar_count <= 0:
+            raise ValueError("local retention selected bar count is invalid")
+        object.__setattr__(
+            self,
+            "latest_local_retained_at",
+            require_utc(self.latest_local_retained_at, "latest_local_retained_at"),
+        )
+        if self.schema_version != SCHEMA_VERSION:
+            raise ValueError("local retention schema version is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        """Return only source-safe local-cache timing and lineage facts."""
+
+        return {
+            "kind": "kis_paper_private_intraday_local_retention",
+            "schema_version": self.schema_version,
+            "source_catalog_hash": self.source_catalog_hash,
+            "index_metadata_sha256": self.index_metadata_sha256,
+            "selected_bar_count": self.selected_bar_count,
+            "latest_local_retained_at": self.latest_local_retained_at.isoformat().replace(
+                "+00:00", "Z"
+            ),
+            "limitations": {
+                "local_cache_retention_only": True,
+                "decision_time_availability": "not_observed",
+                "provider_finality": "not_observed",
+            },
+        }
 
 
 def build_kis_paper_private_intraday_freshness_snapshot(
@@ -219,12 +273,10 @@ def load_verified_kis_paper_private_intraday_catalog(
             continue
         if chunk.get("outcome") not in {"committed", "partial"}:
             raise ValueError("private intraday index is invalid")
-        # Preserve the original bytes for audit, but never consume a legacy
-        # partial chunk whose own candidate batch contained conflicting rows.
-        if (
-            chunk.get("outcome") == "partial"
-            and chunk.get("reason") == "minute_duplicate_conflict"
-            and chunk.get("conflict_origin") == "candidate_batch"
+        if not _is_consumable_retained_chunk(
+            outcome=chunk.get("outcome"),
+            reason=chunk.get("reason"),
+            conflict_origin=chunk.get("conflict_origin"),
         ):
             continue
         manifest_path, manifest_hash, raw_hash = _chunk_paths(root=root, chunk=chunk)
@@ -282,6 +334,112 @@ def load_verified_kis_paper_private_intraday_catalog(
         dataset_hash=_dataset_hash(index_bytes=index_bytes, lineage=lineage),
         source_path=index_path,
         bars=bars,
+    )
+
+
+def inspect_kis_paper_private_intraday_local_retention(
+    catalog: CatalogedBars,
+    *,
+    cache_root: Path,
+    repo_root: Path,
+    symbol: str,
+    exchange: str,
+    selected_bars: Sequence[Bar],
+) -> KisPaperPrivateIntradayLocalRetention:
+    """Bind selected verified bars to their earliest complete local retention.
+
+    The helper reuses exact persisted index bytes and the loader's consumable
+    chunk rule. It opens no raw data, never calls KIS, and makes no claim about
+    provider publication or historical decision-time availability.
+    """
+
+    if not isinstance(catalog, CatalogedBars):
+        raise TypeError("local retention requires CatalogedBars")
+    target = KisPaperPrivateIntradayTarget(symbol=symbol, exchange=exchange)
+    selected = tuple(selected_bars)
+    if not selected:
+        raise ValueError("local retention requires selected bars")
+    if len({bar.start_ts for bar in selected}) != len(selected):
+        raise ValueError("local retention selected bars must be unique")
+    if any(
+        bar.symbol != target.symbol
+        or bar.market != "US"
+        or bar.timeframe != Timeframe.M1
+        or not bar.complete
+        for bar in selected
+    ):
+        raise ValueError("local retention selected bars have an invalid stream")
+
+    root = _external_backfill_root(cache_root=cache_root, repo_root=repo_root)
+    index_path = root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME
+    if catalog.source_path != index_path:
+        raise ValueError("local retention catalog source path is invalid")
+    expected_dataset_id = (
+        "kis.paper.private.intraday."
+        f"{target.symbol.lower()}.{target.exchange.lower()}.m1."
+        f"{KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION}"
+    )
+    if catalog.dataset_id != expected_dataset_id:
+        raise ValueError("local retention catalog identity is invalid")
+
+    index_bytes = _read_bytes(index_path, "private intraday index is invalid")
+    index = _decode_json(index_bytes, "private intraday index is invalid")
+    metadata = validate_kis_paper_private_intraday_v1_index_metadata(
+        index,
+        expected_targets=KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
+    )
+    target_metadata = next(
+        (
+            candidate
+            for candidate in metadata.targets
+            if candidate.target_key == target.target_key
+        ),
+        None,
+    )
+    if target_metadata is None:
+        raise ValueError("local retention target metadata is missing")
+
+    fingerprints_by_start: dict[datetime, str] = {}
+    earliest_complete_retention: dict[datetime, datetime] = {}
+    lineage: list[dict[str, str]] = []
+    for chunk in target_metadata.retained_chunks:
+        if not _is_consumable_retained_chunk(
+            outcome=chunk.outcome,
+            reason=chunk.reason,
+            conflict_origin=chunk.conflict_origin,
+        ):
+            continue
+        lineage.append(
+            {
+                "manifest_hash": chunk.manifest_hash,
+                "raw_sha256": chunk.raw_sha256,
+            }
+        )
+        _record_local_retention_rows(
+            chunk=chunk,
+            fingerprints_by_start=fingerprints_by_start,
+            earliest_complete_retention=earliest_complete_retention,
+        )
+
+    if catalog.dataset_hash != _dataset_hash(index_bytes=index_bytes, lineage=lineage):
+        raise ValueError("local retention catalog lineage is invalid")
+    catalog_by_start = {bar.start_ts: bar for bar in catalog.bars}
+    if len(catalog_by_start) != len(catalog.bars):
+        raise ValueError("local retention catalog has duplicate starts")
+    selected_retention: list[datetime] = []
+    for bar in selected:
+        if catalog_by_start.get(bar.start_ts) != bar:
+            raise ValueError("local retention selected bar is not catalog-bound")
+        retained_at = earliest_complete_retention.get(bar.start_ts)
+        if retained_at is None:
+            raise ValueError("local retention selected bar is incomplete")
+        selected_retention.append(retained_at)
+
+    return KisPaperPrivateIntradayLocalRetention(
+        source_catalog_hash=catalog.dataset_hash,
+        index_metadata_sha256=sha256_kis_paper_private_intraday_v1_index_bytes(index_bytes),
+        selected_bar_count=len(selected),
+        latest_local_retained_at=max(selected_retention),
     )
 
 
@@ -444,6 +602,49 @@ def raw_bar_end_is_complete(*, start_ts: datetime, collected_at: datetime) -> bo
     start = require_utc(start_ts, "start_ts")
     collection_minute = require_utc(collected_at, "collected_at").replace(second=0, microsecond=0)
     return start + Timeframe.M1.duration <= collection_minute
+
+
+def _is_consumable_retained_chunk(
+    *,
+    outcome: object,
+    reason: object,
+    conflict_origin: object,
+) -> bool:
+    """Keep the verified loader and metadata-only retention filter identical."""
+
+    return not (
+        outcome == "partial"
+        and reason == "minute_duplicate_conflict"
+        and conflict_origin == "candidate_batch"
+    )
+
+
+def _record_local_retention_rows(
+    *,
+    chunk: KisPaperPrivateIntradayV1RetainedChunkMetadata,
+    fingerprints_by_start: dict[datetime, str],
+    earliest_complete_retention: dict[datetime, datetime],
+) -> None:
+    for timestamp_key, fingerprint in chunk.rows:
+        start_ts = _korea_timestamp_key_to_utc(timestamp_key)
+        prior_fingerprint = fingerprints_by_start.get(start_ts)
+        if prior_fingerprint is not None and prior_fingerprint != fingerprint:
+            raise ValueError("private intraday cache has conflicting overlap rows")
+        fingerprints_by_start[start_ts] = fingerprint
+        if not raw_bar_end_is_complete(start_ts=start_ts, collected_at=chunk.collected_at):
+            continue
+        prior_retained_at = earliest_complete_retention.get(start_ts)
+        if prior_retained_at is None or chunk.collected_at < prior_retained_at:
+            earliest_complete_retention[start_ts] = chunk.collected_at
+
+
+def _korea_timestamp_key_to_utc(value: str) -> datetime:
+    try:
+        return datetime.strptime(value, "%Y%m%dT%H%M%S").replace(
+            tzinfo=_KOREA_TZ
+        ).astimezone(UTC)
+    except ValueError as error:
+        raise ValueError("private intraday metadata timestamp is invalid") from error
 
 
 def _external_backfill_root(*, cache_root: Path, repo_root: Path) -> Path:

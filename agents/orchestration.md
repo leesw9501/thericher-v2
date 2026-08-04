@@ -13,10 +13,10 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 
 | Work | Owner | Resource | Current fact |
 | --- | --- | --- | --- |
-| Quote-session canary | Execution | Existing virtual-Paper task | Due 2026-08-04 23:35 KST |
+| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
 | Current-head recovery | Data | Existing isolated cache/task | Due 2026-08-05 00:31 KST |
-| SPY prefix capability | Data | Dedicated cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
+| SPY prefix capability | Data | `thericher-kis-paper-spy-prefix-*` cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
 | Norgate local capability | Data | NDU loopback and D: cache | Active client now resolves to the D: trial root; its 29/126-session tail is `input_unavailable`, while the 512-session fixed-ETF snapshot remains source-local with no PIT/model/GPU/Paper promotion |
 | Free public augmentation | Data | Official-source capability check | No full PIT/delisting/corporate-action/OHLCV source qualified; SEC sidecar probe needs declared contact |
@@ -47,11 +47,32 @@ uses no broker or credential access; the Claude design check returned no verdict
 and is recorded as `review_unavailable`. This changes neither the scheduled
 task nor its one-attempt recovery contract.
 
+A source-only throughput review retired a duplicate QQQ availability observer:
+the existing runtime selector, 90/18/9 local-resample baseline, prospective
+session, and offline validator already carry the named current-cache contract.
+The next Data package must reuse that path and add only a demonstrated missing
+retention or decision-time fact, never another scheduler or generic receipt.
+
+Claude returned `uncertain` on a proposed bare causal-availability receipt:
+the current catalog drops per-bar cache-acceptance time, so its selected bars
+cannot prove retention before `as_of`. The QQQ route remains observed and
+provisional; no `qualified` vocabulary or new receipt is added until a
+metadata-backed retention-bound design survives its own falsification test.
+
+The refined metadata-only retention bound received Claude
+`supported-with-limits`: it reuses exact index bytes and the loader's shared
+filter to bind one verified catalog to the maximum earliest-complete local
+retention timestamp for selected bars. It rejects incomplete, conflicting,
+candidate-conflicted, source-path, and lineage-mismatched inputs. It does not
+compare the result to a decision time, alter Execution, or change the QQQ
+route's observed/provisional status.
+
 At 21:40 KST, Data reattached its 23:15 stability observer and 00:31
 intraday-head task ownership. Both `IgnoreNew` profiles were rebuilt from the
 current source; their exact entrypoints passed network-disabled checks and the
-shared focused Data/schedule group passed 76 tests. Their runtime evidence
-remains worker-owned and independent from the canary.
+shared focused Data/schedule group passed 76 tests. The observer has since
+emitted one `stable` receipt; the next intraday-head receipt remains
+worker-owned and independent from the canary.
 
 ## Current Bottleneck
 
@@ -72,11 +93,11 @@ input coverage. It does not change the bottleneck or create a collector.
 The current 120-row/head and broad D1 sources cannot be relabeled as qualified
 historical training or decision-time availability. In particular, the D1 SPY
 head is a verified cache producer, not a producer of provider finality or
-decision-time availability. A separate, Engine-unreadable stability observer
-is now installed but has no runtime receipt. Its bounded comparison can show
-only whether two virtual-Paper prior-session rows matched; it cannot establish
-provider finality or qualify a consumer. This is a technical data fact, not an
-operator decision or a general Paper hold.
+decision-time availability. The separate, Engine-unreadable stability observer
+completed one `stable` comparison at 23:15 KST: it shows only that two
+virtual-Paper prior-session row hashes matched. It cannot establish provider
+finality or qualify a consumer. This is a technical data fact, not an operator
+decision or a general Paper hold.
 The Norgate fixed-ETF D1 structural receipt now attests only its own raw-file
 geometry and hash contract; it does not change the causal-input bottleneck or
 open a Research campaign.
