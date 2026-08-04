@@ -178,8 +178,8 @@ Keep only current, high-signal sections:
 - a few evidence pointers,
 - next handoff.
 
-Replace stale status instead of appending history. Details remain in Git at the
-pre-compaction commit `8f416f8` and in external artifacts.
+Replace stale status instead of appending history. Details remain in Git history
+and in external artifacts.
 
 At a bounded handoff, update only the changed objective, ready/running item,
 one evidence pointer, recovery class, and next action. This is the durable
