@@ -18,7 +18,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | Current-head recovery | Data | Existing isolated cache/task | Due 2026-08-05 00:31 KST |
 | SPY prefix capability | Data | Dedicated cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
-| Norgate local capability | Data | NDU loopback and D: cache | Aggregate probe and 502-session fixed-ETF D1 tail are offline-only; no PIT/model/GPU/Paper promotion |
+| Norgate local capability | Data | NDU loopback and D: cache | 1990--2026 probe measured a 512-session fixed-ETF D1 window; offline-only with no PIT/model/GPU/Paper promotion |
 | Free public augmentation | Data | Official-source capability check | No full PIT/delisting/corporate-action/OHLCV source qualified; SEC sidecar probe needs declared contact |
 | Predictive campaign | Engine/Steward | RTX 4090 | No eligible frozen contract |
 

@@ -68,17 +68,20 @@ arbitrary historical intraday reach.
   offline tests pass; the next existing worker owns recovery.
 - **Norgate local capability:** after the no-download metadata probe, NDU was
   started and the fixed-case aggregate receipt is
-  `qualified_for_offline_research`. A verified fixed-ETF D1 snapshot now has
-  502 common sessions and remains source-local. Trial/PIT entitlement, ranking,
-  model, GPU, PnL, and Paper eligibility remain false. Evidence:
+  `qualified_for_offline_research`. A bounded 1990--2026 request returned only
+  the fixed trio's 512 common sessions from 2024-07-18 through 2026-08-03, so
+  this trial's useful daily temporal reach is measured rather than inferred.
+  Do not repeat the same full-history request without a changed provider fact.
+  The snapshot remains source-local; Trial/PIT entitlement, ranking, model,
+  GPU, PnL, and Paper eligibility remain false. Evidence:
   `D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=listener-recovery-20260804-r1-norgate-trial-daily-capability-r1` and
-  `D:\market_data\us_equities\norgate_trial\local_d1_etf\snapshot=fresh-tail-20260804-r1-norgate-trial-raw-d1-r2` with receipt
-  `D:\thericher-v2\model-artifacts\data\norgate-local-d1-capability-v1\fresh-tail-20260804-r1.json`.
+  `D:\market_data\us_equities\norgate_trial\local_d1_etf\snapshot=history-probe-20260804-r1-norgate-trial-raw-d1-r2` with receipt
+  `D:\thericher-v2\model-artifacts\data\norgate-local-d1-capability-v1\history-probe-20260804-r1.json`.
   Its target-free structural assessment now reattests the newest snapshot as
-  `integrity_attested` with 502 common sessions and 1,506 rows; the receipt
+  `integrity_attested` with 512 common sessions and 1,536 rows; the receipt
   retains only hashes, counts, and categorical contract facts. It does not
   change any eligibility flag or create a predictive/GPU package. Evidence:
-  `D:\thericher-v2\model-artifacts\data\norgate-fixed-etf-d1-structural-integrity-v1\assessment=7e8979cd3f047139c18252cc69f2841e748b45a00ccb5398a0f00d1076b80b02\assessment.json` and
+  `D:\thericher-v2\model-artifacts\data\norgate-fixed-etf-d1-structural-integrity-v1\assessment=bf7d5fceae6b2d345dc75132a6e361f79799e6fb419498d8091f180306aaf1aa\assessment.json` and
   `D:\thericher-v2\model-artifacts\research\norgate-scope-readiness\scope-readiness-20260804-r1\assessment.json`.
 - **Free public augmentation:** no official, no-auth source found that jointly
   establishes PIT/delisting membership, corporate-action meaning, and daily

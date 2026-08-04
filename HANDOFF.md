@@ -60,12 +60,15 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   dataset. Historical minute reach remains endpoint-limited.
 - Norgate NDU is running and its new aggregate capability receipt is
   `qualified_for_offline_research` only. The latest verified fixed-ETF D1
-  snapshot has 502 common sessions and 1,506 rows through its bounded fresh
-  tail. Its source-safe structural receipt attests only the raw-file geometry
-  and manifest/hash contract, not eligibility. The trial does not establish
-  PIT, ranking, model, GPU, PnL, or Paper eligibility. Its raw snapshot remains under
-  `D:\market_data`; use it only through its source-local contract. Evidence:
-  `D:\thericher-v2\model-artifacts\data\norgate-fixed-etf-d1-structural-integrity-v1\assessment=7e8979cd3f047139c18252cc69f2841e748b45a00ccb5398a0f00d1076b80b02\assessment.json`.
+  snapshot came from a 1990--2026 request but contains only 512 common sessions
+  from 2024-07-18 through 2026-08-03 and 1,536 rows. This measures the trial's
+  current useful daily reach; do not repeat the same full-history request
+  without a changed provider fact. Its source-safe structural receipt attests
+  only the raw-file geometry and manifest/hash contract, not eligibility. The
+  trial does not establish PIT, ranking, model, GPU, PnL, or Paper eligibility.
+  Its raw snapshot remains under `D:\market_data`; use it only through its
+  source-local contract. Evidence:
+  `D:\thericher-v2\model-artifacts\data\norgate-fixed-etf-d1-structural-integrity-v1\assessment=bf7d5fceae6b2d345dc75132a6e361f79799e6fb419498d8091f180306aaf1aa\assessment.json`.
 - An official free-source check found no single public panel that establishes
   point-in-time membership including delistings, corporate-action semantics,
   and daily OHLCV. SEC Market Structure and EDGAR can be bounded sidecars only,
