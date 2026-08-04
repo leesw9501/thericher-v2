@@ -24,6 +24,15 @@ strongest kill test before target evaluation or GPU consideration.
   `D:\thericher-v2\model-artifacts\gpu-training\infra-gpu-training-smoke-20260804-r1.json`.
   This confirms the runtime path only; it creates no campaign, GPU appointment,
   model result, PnL claim, or Paper input.
+- A fixed source-local CUDA structure screen completed from 20 completed QQQ
+  M1 sessions under
+  `D:\thericher-v2\model-artifacts\kis-intraday-sequence-architecture-screen\m1-architecture-screen-20260804-r1`.
+  It jointly reported precommitted LSTM, causal-TCN, and compact-attention
+  architectures with a 90-bar input and local-paper replay evidence outside
+  Git. The receipt has no winner, selection, or ensemble permission and does
+  not materialize its sealed confirmation. It remains source-local because
+  decision-time availability is not observed; it cannot create a predictive
+  campaign, claim PnL, become a new Steward GPU appointment, or reach Paper.
 - The terminal QQQ/NAS and SPY/AMS M1 caches have a source-safe geometry
   receipt with 21 shared complete 09:30--15:29 ET sessions. That is sufficient
   only for a source-local, non-promoting 5--90 minute structural preflight;
@@ -99,6 +108,14 @@ strongest kill test before target evaluation or GPU consideration.
   and no explicit calendar or availability field. It is therefore not a
   campaign, code change, GPU appointment, PnL claim, or Paper path. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\us-equity-five-minute-orb-20260804-r1\source-retrieval.json`.
+- The independently retrieved turn-of-month source is a deterministic calendar
+  state overlay, distinct from the current momentum, VWAP, ORB, shock, and
+  sequence families. Its single-instrument SPY long-versus-flat mapping is not
+  source-native; moreover, the current KIS input lacks causal month-boundary
+  close availability, versioned calendar provenance, and next-execution
+  semantics. It remains `source_only_input_unavailable`, with no code,
+  campaign, GPU appointment, backtest, PnL, ensemble, or Paper path. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\turn-of-month-spy-window-20260804-r1\source-retrieval.json`.
 
 ## Closed Or Non-Reusable Families
 

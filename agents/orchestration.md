@@ -20,7 +20,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
 | Norgate local capability | Data | NDU loopback and D: cache | 1990--2026 probe measured a 512-session fixed-ETF D1 window; offline-only with no PIT/model/GPU/Paper promotion |
 | Free public augmentation | Data | Official-source capability check | No full PIT/delisting/corporate-action/OHLCV source qualified; SEC sidecar probe needs declared contact |
-| Predictive campaign | Engine/Steward | RTX 4090 | Docker CUDA path reverified; no eligible frozen contract |
+| Architecture structure screen | Engine | RTX 4090 | Fixed source-local LSTM/TCN/attention screen completed jointly with no winner; no eligible frozen predictive contract |
 
 No foreground wait is justified. Each external time belongs to its worker;
 independent Data, Engine, and Execution preparation continues when ready.
@@ -55,12 +55,13 @@ open a Research campaign.
 
 ## Current Reversible Improvement
 
-The D1 stability sidecar uses the existing KIS request and token-start gates,
-a narrow writable control mount, and a nonblocking external receipt lock. It
-cannot bypass another collector, overlap its own finite ten-attempt ledger, or
-turn an auth/config failure into a market-data observation. It adds one
-reversible Data measurement without changing canary execution, Engine inputs,
-or broker authority.
+For bounded Docker GPU work, retain the job-owned artifact label and reattach
+through the container state and external summary instead of treating a
+foreground CLI timeout as a training failure or starting a duplicate run. The
+2026-08-04 fixed architecture screen continued after the 180-second caller
+timeout, then wrote a complete source-local summary under its existing label.
+This is an orchestration recovery practice only; it changes no research result,
+execution route, or broker authority.
 
 ## Review And Monitor Facts
 
