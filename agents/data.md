@@ -150,6 +150,25 @@ undocumented timestamp seed.
   only post-collection completed-prefix availability, incomplete/invalid
   measurement, or no measurement; it always retains
   `decision_time_availability: not_observed`.
+- **Official minute-pagination reattestation:** the official KIS GitHub
+  `inquire_time_itemchartprice` example (current `main`, file dated
+  2025-06-30) confirms the exact first-page and continuation contract: first
+  request uses blank `NEXT`/`KEYB`; a response `tr_cont` of `M` or `F` requires
+  `NEXT=1`, `PINC=1`, `tr_cont=N`, and a `KEYB` one `NMIN` before the prior
+  page's last bar. The current typed client, four-page SPY prefix collector,
+  and transport tests already implement that contract. Therefore the next
+  task-owned exact prefix run is the bounded capability probe recommended by
+  the source, not a reason to rebuild the collector or manually rerun it.
+  The source confirms continuation semantics only; it does not turn a
+  one-page legacy receipt into a terminal-provider conclusion.
+- **15:30 timing remains measured, not guessed:** the observed 04:31 KST
+  intraday-head fresh-token collision with the preceding 04:30 prefix worker
+  remains scoped to that worker. A source-safe Claude challenge was
+  `supported-with-limits` for a hypothetical post-guard retime, but the
+  existing decision contract requires a real source-time measurement around
+  15:30 ET before changing the DST-sensitive 04:31 trigger or its exclusive
+  15:31 ET validity bound. No schedule changed; the existing worker owns its
+  retry and future exact measurement.
 - **Pair/QQQ observers:** the daily pair-forward cache is `cache_current` for
   its own contract; the metadata-only QQQ readiness observer has no qualified
   future-window record. Neither condition becomes a general Data or Research

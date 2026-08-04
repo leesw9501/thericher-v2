@@ -359,6 +359,15 @@ ready.
   Monday--Friday at 23:45 KST; installed Windows tasks remain the primary
   evidence. Retry future edits only through the official app API, never by
   editing its TOML directly.
+- An official KIS GitHub recheck confirms the existing typed minute route's
+  continuation shape: `tr_cont` `M`/`F` leads to `NEXT=1`, `PINC=1`, request
+  `tr_cont=N`, and an oldest-bar-derived `KEYB`. The current four-page SPY
+  prefix worker already performs that bounded capability probe, so no manual
+  rerun or collector rewrite is pending. The 04:31 KST token-start collision
+  does not justify a 04:36 retime: the established DST-sensitive 15:30 ET
+  contract requires an actual near-boundary source-time measurement before a
+  schedule change. Claude's source-safe challenge was
+  `supported-with-limits`; it did not override that rule.
 
 ## Verification And Git
 

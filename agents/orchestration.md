@@ -193,6 +193,16 @@ parallel helper for fast feedback. Its eight-worker reattestation completed 124
 passing and four skipped tests in about 73 seconds with a clean owned temp root;
 keep the serial changed-path group for goal-boundary authority.
 
+The official KIS minute example independently reattests the existing typed
+continuation implementation: `tr_cont` `M`/`F` leads to `NEXT=1`, `PINC=1`,
+request `tr_cont=N`, and an oldest-bar-derived `KEYB`. The current four-page
+SPY prefix worker is already the bounded exact capability probe, so no duplicate
+runner or collector rewrite is dispatched. The observed 04:31 KST token-start
+collision remains worker-local. Although a source-safe Claude challenge was
+`supported-with-limits` for a theoretical post-guard retime, the existing
+15:30 ET measurement requirement and exclusive 15:31 ET validity rule control:
+no schedule changes until task-owned source-time evidence exists.
+
 The Paper schedule installer now explicitly sets `RestartCount = 0` with
 `IgnoreNew`, matching the current registered canary task. This preserves the
 single-run recovery contract on future reinstallation without touching the
@@ -252,6 +262,7 @@ low-level previous-day/continuation bypasses. The follow-up route boundary now
 enforces a one-page client plus current-day query and transport shape; focused
 tests cover both rejection and the one allowed page. This is a bounded Data
 repair, not a new collector, scheduler, or execution route.
+
 A temporary Review assignment also found that the Compose test previously
 included later services when asserting the canary session's execution flag.
 The test now ends at the immediate `kis-paper-daily-backfill` boundary and
