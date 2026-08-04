@@ -35,9 +35,11 @@ KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS = frozenset(
     {"QQQ/NAS/1m", "SPY/AMS/1m"}
 )
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS = frozenset({"SPY/NAS/1m"})
+KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS = frozenset({"IWM/AMS/1m"})
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS = (
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS
     | KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS
+    | KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS
 )
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES = 3
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_ARTIFACT_DIRECTORY = "data/kis-paper-minute-capability-probe"
@@ -286,6 +288,11 @@ def run_kis_paper_minute_capability_probe(
     if not _is_supported_tested_interval(tested_request_interval_seconds):
         raise ValueError("capability probe tested request interval is invalid")
     symbol, exchange = _normalize_probe_target(target)
+    target_key = f"{symbol}/{exchange}/1m"
+    if target_key in KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS and (
+        max_pages != 1 or include_previous_day
+    ):
+        raise ValueError("candidate capability target requires one current-day page")
     captured_at = require_utc(observed_at or datetime.now(UTC), "observed_at")
     started = monotonic_clock()
     pages: list[_PageFacts] = []

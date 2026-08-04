@@ -57,6 +57,28 @@ def test_probe_script_rejects_observed_only_target_before_credentials(
         script.main(["--execute", "--target", "SPY/NAS"])
 
 
+@pytest.mark.parametrize(
+    "arguments",
+    [
+        ["--execute", "--target", "IWM/AMS", "--max-pages", "2"],
+        ["--execute", "--target", "IWM/AMS", "--include-previous-day"],
+    ],
+)
+def test_probe_script_rejects_candidate_scope_expansion_before_credentials(
+    monkeypatch: pytest.MonkeyPatch,
+    arguments: list[str],
+) -> None:
+    script = _load_script()
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_config",
+        lambda _: (_ for _ in ()).throw(AssertionError("credentials must stay unread")),
+    )
+
+    with pytest.raises(SystemExit, match="2"):
+        script.main(arguments)
+
+
 def test_probe_script_records_one_second_candidate_through_data_only_route(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],

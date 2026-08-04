@@ -11,6 +11,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from thericher_v2.data.kis_paper_minute_capability_probe import (
+    KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS,
@@ -49,7 +50,10 @@ def main(
         "--target",
         choices=tuple(
             target_key.removesuffix("/1m")
-            for target_key in sorted(KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS)
+            for target_key in sorted(
+                KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS
+                | KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS
+            )
         ),
         default="QQQ/NAS",
     )
@@ -79,6 +83,11 @@ def main(
         parser.error(
             "--minimum-request-interval-seconds must be between 1.0 and the current gate"
         )
+    target_key = f"{args.target}/1m"
+    if target_key in KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS and (
+        args.max_pages != 1 or args.include_previous_day
+    ):
+        parser.error("candidate target requires --max-pages 1 without --include-previous-day")
 
     request_start_times: list[datetime] = []
     symbol, exchange = str(args.target).split("/", maxsplit=1)

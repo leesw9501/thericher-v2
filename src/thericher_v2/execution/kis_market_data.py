@@ -44,6 +44,9 @@ KIS_PAPER_MINUTE_SYMBOL_EXCHANGES = {
     # The active daily cache observes SPY through NYSE Arca (AMS). Keep NAS
     # available as an observed empty capability rather than forcing one venue.
     "SPY": frozenset({"NAS", "AMS"}),
+    # IWM/AMS is permitted only for the bounded metadata-only minute capability
+    # probe. It is not part of the active private intraday collector.
+    "IWM": frozenset({"AMS"}),
 }
 # Daily history has a deliberately separate contract from the minute probe.
 # QQQ/NAS was observed by the v1 private cache. NYS and AMS remain available

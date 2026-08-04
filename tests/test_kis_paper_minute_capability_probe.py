@@ -5,7 +5,10 @@ from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
+
 from thericher_v2.data.kis_paper_minute_capability_probe import (
+    KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS,
@@ -64,16 +67,42 @@ def test_capability_route_classes_keep_observed_only_target_out_of_collector() -
         "SPY/AMS/1m",
     }
     assert KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS == {"SPY/NAS/1m"}
+    assert KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS == {"IWM/AMS/1m"}
     assert (
         KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS
         == KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS
         | KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS
+        | KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS
     )
     collector_targets = {
         f"{symbol}/{exchange}/1m" for symbol, exchange in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
     }
     assert collector_targets == KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS
     assert collector_targets.isdisjoint(KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS)
+    assert collector_targets.isdisjoint(KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS)
+
+
+def test_candidate_target_requires_one_current_day_page() -> None:
+    client = _MinuteClient([])
+    request_starts: tuple[datetime, ...] = ()
+
+    with pytest.raises(ValueError, match="candidate capability target"):
+        run_kis_paper_minute_capability_probe(
+            client=client,
+            request_start_times=request_starts,
+            max_pages=2,
+            target=("IWM", "AMS"),
+            monotonic_clock=_monotonic(0.0, 1.0),
+        )
+    with pytest.raises(ValueError, match="candidate capability target"):
+        run_kis_paper_minute_capability_probe(
+            client=client,
+            request_start_times=request_starts,
+            include_previous_day=True,
+            target=("IWM", "AMS"),
+            monotonic_clock=_monotonic(0.0, 1.0),
+        )
+    assert client.queries == []
 
 
 def test_probe_discards_raw_bars_and_records_single_client_cursor_chain() -> None:

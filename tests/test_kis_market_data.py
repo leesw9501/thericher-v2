@@ -321,6 +321,7 @@ def test_daily_query_rejects_invalid_separate_scope(
 
 def test_minute_query_requires_a_supported_us_venue_and_complete_cursor() -> None:
     assert KisPaperMinuteQuery(exchange="AMS", symbol="SPY").exchange == "AMS"
+    assert KisPaperMinuteQuery(exchange="AMS", symbol="IWM").exchange == "AMS"
     with pytest.raises(ValueError, match="exchange"):
         KisPaperMinuteQuery(exchange="NASD", symbol="QQQ")
     with pytest.raises(ValueError, match="symbol/exchange"):
