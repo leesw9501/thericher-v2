@@ -42,6 +42,14 @@ The old state is preserved, not relabeled clean. The cross-run Claude request
 timed out as `review_unavailable`; focused fake-route tests cover same-run
 recovery, old-state preservation, and current-open-order no-submit behavior.
 
+Verification for this recovery package passed 129 focused execution tests and
+the authority parallel suite with 2,543 passed and 23 skipped. Full Ruff and
+all required Compose configurations passed, and the current `kis-paper-session`
+image was rebuilt for the existing task. A separate serial `pytest -q`
+diagnostic exceeded the desktop ten-minute command limit and is not a passing
+result; the already-passing authority suite remains the required verification
+for this private Paper change.
+
 The offline projector now also accepts one explicit session ID. It rejects
 links, `.`/`..`, mismatched IDs, and non-writer evidence shapes, emits a
 distinct session fact without its evidence path, and never scans for a latest
