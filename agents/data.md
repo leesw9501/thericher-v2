@@ -48,7 +48,8 @@ undocumented timestamp seed.
   token-start guard. All downstream QQQ/Paper stages were `not_applicable`.
   This is not a model result or Paper outcome, and does not rewrite the earlier
   receipt. The existing 06:20 KST attempt likewise ended as scoped `recovery`
-  with `prospective_session_id_unavailable`; its cache reattachment still has
+  with `prospective_session_id_unavailable` under exact safe runtime
+  `intraday-head-20260804T2120059626443Z`; its cache reattachment still has
   zero complete regular sessions. Do not manually rerun it. The original scoped
   `minute_duplicate_conflict` remains the narrow collector-repair kill test;
   its historical quarantined retained head is unchanged. New

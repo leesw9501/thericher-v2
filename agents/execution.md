@@ -15,10 +15,34 @@ route `KIS_LIVE_*`.
 
 The existing `thericher-kis-paper-quote-session` Windows task owned one current
 virtual-Paper canary at 2026-08-04 23:35 KST and exited with Task Scheduler
-result `0`. Its 23:48 KST monitor found no matching direct lifecycle receipt or
-current runtime projection. This is neither a broker, lifecycle, no-intent,
-fill, nor PnL result. Do not manually invoke the task, infer an outcome, or
-create a second runner; the next task-owned opportunity is 2026-08-05 23:35 KST.
+result `0`. Its exact scheduled-session receipt
+`paper-session-20260804T143501870818Z` is
+`recovery_required/prior_submission_unresolved` for the preserved
+`canary-20260722T184759527919Z` state; the independent offline lifecycle
+validator agrees on `outcome_unknown/unresolved`. This is neither a new broker
+or lifecycle result nor a fill, no-intent, or PnL result. Do not manually invoke
+the task, infer an outcome, or create a second runner; the next task-owned
+opportunity is 2026-08-05 23:35 KST.
+
+The separate 2026-08-04 23:50 KST daily SPY receipt is exactly
+`daily-spy-20260804T145002356832Z`: `no_intent/quote_unavailable`, no run ID,
+and receipt observer plus terminal-field probe both `not_attempted`. It has no
+canary lifecycle, broker, fill, or PnL interpretation. The 2026-08-05 06:20
+KST intraday-head receipt is
+`intraday-head-20260804T2120059626443Z`,
+`recovery/prospective_session_id_unavailable`; its worker owns the 2026-08-06
+00:29 KST retry.
+
+Today's source-free Claude challenge is `uncertain`: it inspected no code or
+state and therefore could not attest the claimed guard conjunction. An
+independent static Review found the registered task/Compose surface uses the
+shared canary state root, central guarded client, exact virtual host and route
+allowlist, and dashboard isolation; no second installed task path was found.
+The generic direct canary CLI still accepts a configurable state root for a
+manual Paper-environment invocation, outside the registered-task contract.
+That is a documented scope limit, not a new task, route, authority, or Paper
+hold. The 170 focused offline canary/quote/receipt/dashboard/schedule tests
+passed.
 
 At 03:16 KST on 2026-08-05, one exact historical terminal-field probe used
 only the virtual token and history GET path for the preserved legacy state. It

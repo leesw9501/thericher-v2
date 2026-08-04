@@ -21,11 +21,25 @@ cancelled-and-clean, or unknown-and-reconciled result. It is never a model,
 fill, PnL, or profitability result.
 
 The existing `thericher-kis-paper-quote-session` Windows task completed its
-2026-08-04 23:35 KST invocation with Task Scheduler result `0`. Its 23:48 KST
-result monitor found no matching direct lifecycle receipt or current runtime
-projection. This proves neither a lifecycle, broker, fill, no-intent, nor PnL
-result. Do not manually invoke, infer an outcome, or duplicate the task; the
-next task-owned opportunity is 2026-08-05 23:35 KST.
+2026-08-04 23:35 KST invocation with Task Scheduler result `0`. Its exact
+scheduled-session receipt is `paper-session-20260804T143501870818Z`, which
+reattaches only `recovery_required/prior_submission_unresolved` to the
+preserved run `canary-20260722T184759527919Z`; the independent lifecycle
+validator also reports `outcome_unknown/unresolved`. This is not a new
+lifecycle, broker, fill, no-intent, or PnL result. Do not manually invoke,
+infer an outcome, or duplicate the task; the next task-owned opportunity is
+2026-08-05 23:35 KST.
+
+The matching 2026-08-04 23:50 KST daily SPY session receipt is exactly
+`daily-spy-20260804T145002356832Z`: `no_intent/quote_unavailable`, with no
+run identity and both receipt observer and terminal-field probe
+`not_attempted`. It is a categorical daily-session no-intent only, not a
+broker, fill, or PnL fact. The 22:15 KST daily-head task exited `0` but still
+has only the static `producer_path_missing` consumer trace. The 06:20 KST
+intraday-head task exited `20`; its exact safe runtime is
+`intraday-head-20260804T2120059626443Z`,
+`recovery/prospective_session_id_unavailable`. That anomaly is local to the
+downstream session binding; its task owns the 2026-08-06 00:29 KST retry.
 
 At 03:16 KST on 2026-08-05, one exact read-only historical terminal-field
 probe ran for the preserved legacy state. It used only a virtual token and the
@@ -343,7 +357,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; 08:04 static reattestation confirmed one `kis-paper-session` Compose `run --no-deps` action, `IgnoreNew`, restart 0, virtual-only command flags, Claude `supported-with-limits`, and 161 offline tests; next task-owned opportunity 2026-08-05 23:35 KST |
+| Virtual-Paper lifecycle canary | Execution | Exact 08-04 scheduled receipt is `recovery_required/prior_submission_unresolved` for preserved legacy run; independent validator remains `outcome_unknown/unresolved`, not a new lifecycle. Daily SPY is separately `no_intent/quote_unavailable`; 170 offline route/receipt/dashboard tests pass. Next canary opportunity is 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
 | Current-head timing repair | Data | Same `IgnoreNew` task remains at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence; rebuilt receipt now emits exact-run and observed-ET cumulative coverage, and terminal 06:20 capture owns the 390-completed-offset kill test |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
@@ -355,9 +369,10 @@ ready.
 
 ## Current Recovery And Review Facts
 
-- A current canary runtime projection is absent from the repo worktree, and no
-  Aug. 4 external canary/session/validator result existed at the latest safe
-  inspection. This is expected before the scheduled task runs.
+- The repo worktree still has no current runtime projection. The exact external
+  2026-08-04 scheduled-session receipt and independent offline validator agree
+  only on the preserved legacy `outcome_unknown/unresolved` recovery state;
+  this is not evidence of a new canary lifecycle.
 - The 2026-08-04 recovery review returned `supported-with-limits`: keep the
   preflight exact-scope, prohibit a fresh submit from recovery, preserve a
   remaining ambiguity as a session-scoped result, and retain the shared lock.
@@ -373,6 +388,12 @@ ready.
   broker-timestamp quote age. Its remaining limit is the one host-owned state
   root and one scheduled runner; this is a scope fact for the existing task,
   not an execution hold.
+- Today's source-free Claude challenge is `uncertain` because it inspected no
+  implementation or state. Independent static Review found the registered
+  task/Compose surface shares the guarded root and exact virtual host/route
+  client, while the generic direct CLI's configurable state root remains a
+  manual-entrypoint limit outside the installed-task scope. It changes no
+  route, task, authority, or current worker ownership.
 - A separate 2026-08-04 D1 bridge drift review returned `uncertain`: the bridge
   must not infer provider finality from a cached snapshot or write an
   Engine-readable observed-only result until a distinct availability/stability
@@ -437,9 +458,10 @@ metadata-only projection. DST/pre-market behavior remains unproven.
 
 ## Next Handoff
 
-1. Preserve the 23:48 KST monitor fact that no direct lifecycle receipt/current
-   projection matched the 23:35 task. Do not infer a broker result or submit a
-   replacement; the next task-owned opportunity is 2026-08-05 23:35 KST.
+1. Preserve the exact 2026-08-04 session fact as legacy
+   `outcome_unknown/unresolved`, and the separate daily SPY `no_intent` as
+   `quote_unavailable`. Do not infer a broker result or submit a replacement;
+   the next quote-session opportunity is 2026-08-05 23:35 KST.
 2. Continue independent Data worker reattachment at its own due times.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality

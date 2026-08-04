@@ -13,7 +13,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 
 | Work | Owner | Resource | Current fact |
 | --- | --- | --- | --- |
-| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; 08:04 static reattestation confirmed one Docker Compose `kis-paper-session` `run --no-deps` action, `IgnoreNew`, restart 0, virtual-only command flags, Claude `supported-with-limits`, and 161 offline tests; next task-owned opportunity 2026-08-05 23:35 KST |
+| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | Exact 08-04 receipt `paper-session-20260804T143501870818Z` reattaches legacy `recovery_required/prior_submission_unresolved`; independent validator remains `outcome_unknown/unresolved`, not a new lifecycle. Separate daily SPY receipt is `no_intent/quote_unavailable`; 170 offline route/receipt/dashboard tests pass. Next owned attempt: 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
 | Current-head recovery | Data | Existing isolated cache/task | Source-safe QQQ range reattachment isolated the 04:31 KST guard collision; the same four-run task remains at 00:29/02:28/04:24/06:20 KST with one action and `IgnoreNew`. Its rebuilt receipt emits exact-run plus observed-ET cumulative metadata-only coverage; the terminal 06:20 capture owns the 390-completed-offset kill test |
 | Daily D1 catch-up | Data | Existing 07:00 KST worker | 2026-08-05 task completed `drained`: zero chunks/targets and no client constructed; exact cursor state only, not a provider-wide coverage conclusion |
@@ -27,6 +27,12 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 
 No foreground wait is justified. Each external time belongs to its worker;
 independent Data, Engine, and Execution preparation continues when ready.
+
+The source-free Claude challenge is `uncertain` because it did not inspect the
+guard implementation. Independent static Review finds no second registered
+task/Compose state root or unpinned route, while the configurable direct CLI
+state root remains outside that installed-task scope. This is an Execution
+contract limit only; it changes no authority or ready-lane dispatch.
 
 At 03:16 KST, Execution completed one exact, read-only historical terminal
 field probe of the preserved legacy Paper state. Its derived ET-date query had
