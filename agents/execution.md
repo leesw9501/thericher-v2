@@ -63,8 +63,12 @@ cannot submit a replacement intent. A distinct current session does not scan
 or mutate other historical state files: while holding the shared lock, its own
 durable intent and fresh account/open-order snapshot determine whether a
 matching current open order blocks submission. The preserved legacy unknown is
-therefore neither resolved nor a cross-run Paper hold. Claude's requested
-cross-run review timed out as `review_unavailable`; focused fake-route tests
+therefore neither resolved nor a cross-run Paper hold. At 03:50 KST, the new
+source-free Claude drift review returned `supported-with-limits`: it supports
+the current kill tests but explicitly does not establish that a distinct prior
+unknown absent from the current broker view is clean, nor that a runner failure
+between submit and reconciliation has already recovered. Those limits do not
+authorize a historic-state scan or a global pause. Focused fake-route tests
 prove same-run recovery, current-open-order rejection, and no mutation of the
 old state.
 

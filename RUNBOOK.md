@@ -1529,13 +1529,15 @@ at the private state root. A non-success submit response or completion evidence
 after a cancel is `outcome_unknown`, not a clean result or retry cue. Do not
 pass secrets or account values on the command line.
 
-Before requesting a fresh quote, this session checks only direct durable states
-in the same private root for a prior `SPY`/`AMEX`/buy/one-share pending canary.
-It resumes only that exact state's reconciliation or cancellation path; this
-recovery cannot create a fresh order. If it remains ambiguous or its state is
-unreadable, the new matching session records `recovery_required` and sends no
-fresh quote or order. This is scoped to the conflicting canary, not a global
-Paper hold or an approval step.
+Before a new submit, the session records its own durable intent and, under the
+shared private-root lock, obtains a fresh virtual account/open-order snapshot.
+A replayed session ID recovers only its exact durable state and cannot create a
+replacement order. A distinct current session does not enumerate, mutate, or
+relabel historical state files: it records `matching_open_order` and sends no
+new order only when its fresh snapshot contains a matching current order. This
+is intentionally not a claim that a historical unknown which is absent from the
+current broker view is clean or impossible. That visibility limit remains
+unqualified, not a global Paper hold or an approval step.
 
 The original `NAS/SPY` quote and price-detail diagnostics returned
 success-shaped mappings with blank required price fields. They are historical

@@ -38,8 +38,13 @@ The quote-session runner now recovers only an exact replayed run from its own
 durable state. A distinct new run retains the shared lock and its fresh
 account/open-order reconciliation, which blocks a current matching open order
 before submit. It no longer scans or mutates unrelated historical state files.
-The old state is preserved, not relabeled clean. The cross-run Claude request
-timed out as `review_unavailable`; focused fake-route tests cover same-run
+The old state is preserved, not relabeled clean. At 03:50 KST, a new
+source-free Claude drift review returned `supported-with-limits`: it supports
+the virtual-host, durable-intent, lock, fresh-account/quote, and current
+open-order kill tests, but it leaves unqualified a distinct historical unknown
+that is not yet visible in KIS's current open-order view and a runner failure
+between submit and reconciliation. Those are scope limits, not an inference of
+an order or a global Paper hold. Focused fake-route tests cover same-run
 recovery, old-state preservation, and current-open-order no-submit behavior.
 
 Verification for this recovery package passed 129 focused execution tests and

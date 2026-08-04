@@ -34,6 +34,13 @@ shared lock plus fresh matching-open-order reconciliation. The cross-run Claude
 challenge timed out as `review_unavailable`; focused tests prove old-state
 preservation and current-open-order no-submit behavior.
 
+At 03:50 KST, a renewed source-free canary drift review returned
+`supported-with-limits`. It supports the current host/intent/lock/fresh-view
+kill tests, but a distinct historical unknown that is absent from a current
+broker open-order view and a runner failure after submit remain unqualified
+execution limits. Neither fact is evidence of an order or a reason to restore
+a cross-run scan, duplicate runner, or global Paper hold.
+
 The 00:31 worker now reattaches the already tested QQQ 90-minute
 observed/provisional baseline immediately after a successful collection, then
 validates its exact session offline before its slower Data observations. It
