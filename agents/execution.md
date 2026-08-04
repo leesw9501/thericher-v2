@@ -74,6 +74,12 @@ violation; delayed visibility after a distinct unknown is its strongest missing
 evidence. Focused fake-route tests prove same-run recovery,
 current-open-order rejection, and no mutation of the old state.
 
+At 06:39 KST, a renewed source-safe Claude falsification check again returned
+`supported-with-limits`. It restated that an open-order view can lag and that
+the shared lock must cover check through submit; it read no project files and
+granted no authority. The existing exact-intent, fresh-view, virtual-host-only
+contract therefore remains the evidence boundary for tonight's task-owned run.
+
 At 04:03 KST, a network-disabled, read-only volume inspection reattached the
 same fact without exposing any run, order, account, or price values: 13 private
 state files classified only as `cancelled`, `intent_recorded`, or

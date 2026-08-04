@@ -265,12 +265,13 @@ undocumented timestamp seed.
   `decision_time_availability: not_observed` unless a separately designed
   measurement proves that earlier boundary.
 - The QQQ metadata-only local-retention helper binds the exact verified catalog
-  hash to the same index bytes and loader filter, then reports only the maximum
-  earliest-complete local retention timestamp for a caller-selected M1 window.
-  It excludes incomplete and candidate-conflicted chunks, retains
-  `decision_time_availability: not_observed` and
-  `provider_finality: not_observed`, and is not yet an Execution, model, or
-  Paper-eligibility input.
+  hash to the same index bytes and loader filter. Its runtime-window projection
+  additionally binds one ready 90-bar input manifest to a caller-supplied
+  `decided_at`, reporting `local_input_available_by_decision` only when the
+  latest earliest-complete local retention is no later than that decision.
+  It rejects incomplete, conflicted, and lineage-mismatched inputs; provider
+  decision-time availability and finality remain `not_observed`. This is not
+  yet an Execution, model, or Paper-eligibility input.
 - IWM/AMS is a probe-only M1 target: its request boundary permits one
   current-day page only and has no active collector or consumer contract.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,

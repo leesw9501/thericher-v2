@@ -7,9 +7,14 @@ import json
 from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta
+from pathlib import Path
 from typing import Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, Bar, TargetInputStatus, Timeframe, require_utc
+from thericher_v2.data.kis_paper_intraday import (
+    KisPaperPrivateIntradayLocalRetention,
+    inspect_kis_paper_private_intraday_local_retention,
+)
 from thericher_v2.data.local import CatalogedBars
 from thericher_v2.data.us_equity_session import UsEquity2026Session, us_equity_2026_session
 
@@ -234,6 +239,119 @@ class KisPaperIntradayRuntimeWindow:
             observed_at=as_of,
             max_age=self.max_age,
         )
+
+
+@dataclass(frozen=True, slots=True)
+class KisPaperIntradayRuntimeWindowLocalAvailability:
+    """Source-safe local-retention fact for one selected runtime input window.
+
+    ``local_input_available_by_decision`` means only that every selected bar
+    was already retained in this local cache by ``decided_at``. It deliberately
+    says nothing about provider publication, finality, or another run's input.
+    """
+
+    input_manifest_ref: str
+    source_catalog_hash: str
+    index_metadata_sha256: str
+    selected_bar_count: int
+    latest_local_retained_at: datetime
+    decided_at: datetime
+    local_input_available_by_decision: bool
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        _require_sha256(self.input_manifest_ref, "input_manifest_ref")
+        _require_sha256(self.source_catalog_hash, "source_catalog_hash")
+        _require_sha256(self.index_metadata_sha256, "index_metadata_sha256")
+        if type(self.selected_bar_count) is not int or self.selected_bar_count <= 0:
+            raise ValueError("runtime local availability selected bar count is invalid")
+        object.__setattr__(
+            self,
+            "latest_local_retained_at",
+            _utc_datetime(self.latest_local_retained_at, "latest_local_retained_at"),
+        )
+        object.__setattr__(self, "decided_at", _utc_datetime(self.decided_at, "decided_at"))
+        if type(self.local_input_available_by_decision) is not bool:
+            raise ValueError("runtime local availability decision flag is invalid")
+        if self.local_input_available_by_decision != (
+            self.latest_local_retained_at <= self.decided_at
+        ):
+            raise ValueError("runtime local availability decision flag is inconsistent")
+        if self.schema_version != SCHEMA_VERSION:
+            raise ValueError("runtime local availability schema version is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        """Return only lineage, timing, count, and local-availability facts."""
+
+        return {
+            "kind": "kis_paper_intraday_runtime_window_local_availability",
+            "schema_version": self.schema_version,
+            "input_manifest_ref": self.input_manifest_ref,
+            "source_catalog_hash": self.source_catalog_hash,
+            "index_metadata_sha256": self.index_metadata_sha256,
+            "selected_bar_count": self.selected_bar_count,
+            "latest_local_retained_at": _utc_marker(self.latest_local_retained_at),
+            "decided_at": _utc_marker(self.decided_at),
+            "local_input_available_by_decision": self.local_input_available_by_decision,
+            "limitations": {
+                "local_cache_retention_only": True,
+                "provider_decision_time_availability": "not_observed",
+                "provider_finality": "not_observed",
+            },
+        }
+
+
+def attest_kis_paper_intraday_runtime_window_local_availability(
+    catalog: CatalogedBars,
+    *,
+    runtime_window: KisPaperIntradayRuntimeWindow,
+    cache_root: Path,
+    repo_root: Path,
+    decided_at: datetime,
+) -> KisPaperIntradayRuntimeWindowLocalAvailability:
+    """Bind one ready QQQ runtime window to its earliest local retention facts.
+
+    The caller keeps freshness and execution checks separate. This helper opens
+    only the already persisted local index metadata through the verified loader
+    contract; it never reads credentials or calls a provider or broker.
+    """
+
+    if not isinstance(catalog, CatalogedBars):
+        raise TypeError("runtime local availability requires CatalogedBars")
+    if not isinstance(runtime_window, KisPaperIntradayRuntimeWindow):
+        raise TypeError("runtime local availability requires a runtime window")
+    resolved_decided_at = _utc_datetime(decided_at, "decided_at")
+    if runtime_window.status != "ready":
+        raise ValueError("runtime local availability requires a ready window")
+    if runtime_window.source_catalog_hash != catalog.dataset_hash:
+        raise ValueError("runtime window catalog lineage is invalid")
+    if resolved_decided_at < runtime_window.as_of:
+        raise ValueError("decided_at must not precede runtime window as_of")
+
+    retention: KisPaperPrivateIntradayLocalRetention = (
+        inspect_kis_paper_private_intraday_local_retention(
+            catalog,
+            cache_root=cache_root,
+            repo_root=repo_root,
+            symbol="QQQ",
+            exchange="NAS",
+            selected_bars=runtime_window.decision_bars,
+        )
+    )
+    if retention.source_catalog_hash != runtime_window.source_catalog_hash:
+        raise ValueError("runtime local availability retention lineage is invalid")
+
+    return KisPaperIntradayRuntimeWindowLocalAvailability(
+        input_manifest_ref=runtime_window.input_manifest_ref,
+        source_catalog_hash=runtime_window.source_catalog_hash,
+        index_metadata_sha256=retention.index_metadata_sha256,
+        selected_bar_count=retention.selected_bar_count,
+        latest_local_retained_at=retention.latest_local_retained_at,
+        decided_at=resolved_decided_at,
+        local_input_available_by_decision=(
+            retention.latest_local_retained_at <= resolved_decided_at
+        ),
+    )
 
 
 def select_kis_paper_intraday_runtime_window(

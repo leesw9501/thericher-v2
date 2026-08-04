@@ -6,6 +6,7 @@ import os
 import socket
 import urllib.request
 from collections.abc import Mapping
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -20,6 +21,11 @@ from thericher_v2.data.kis_paper_intraday import (
     load_verified_kis_paper_private_intraday_catalog,
     resample_verified_kis_paper_private_intraday_catalog,
 )
+from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    attest_kis_paper_intraday_runtime_window_local_availability,
+    select_kis_paper_intraday_runtime_window,
+)
+from thericher_v2.data.local import _cataloged_bars_from_verified_loader
 from thericher_v2.data.resample import SessionWindow
 from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataError,
@@ -292,6 +298,130 @@ def test_local_retention_binds_a_catalog_from_the_verified_loader(tmp_path: Path
 
     assert retention.latest_local_retained_at == datetime(2026, 7, 22, 5, 0, tzinfo=UTC)
     assert retention.selected_bar_count == len(catalog.bars)
+
+
+def test_runtime_window_local_availability_binds_a_ready_window_to_cache_time(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    observed_at = datetime(2026, 7, 22, 15, 31, tzinfo=UTC)
+    client = _MinuteClient(
+        [
+            _page(
+                symbol="QQQ",
+                exchange="NAS",
+                rows=_rows(start_korea=datetime(2026, 7, 22, 22, 30), count=120),
+                next_cursor=None,
+            ),
+            KisPaperMarketDataError("minute_response_empty"),
+        ]
+    )
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=client,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        observed_at=observed_at,
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    catalog = load_verified_kis_paper_private_intraday_catalog(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        symbol="QQQ",
+        exchange="NAS",
+    )
+    window = select_kis_paper_intraday_runtime_window(
+        catalog,
+        as_of=observed_at,
+        max_age=timedelta(minutes=2),
+    )
+    before_retention = select_kis_paper_intraday_runtime_window(
+        catalog,
+        as_of=observed_at - timedelta(seconds=1),
+        max_age=timedelta(minutes=2),
+    )
+    assert window.status == "ready"
+    assert before_retention.status == "ready"
+
+    def fail_external(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("runtime local availability must not open a network connection")
+
+    def fail_environment(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("runtime local availability must not read credentials")
+
+    monkeypatch.setattr(socket, "create_connection", fail_external)
+    monkeypatch.setattr(urllib.request, "urlopen", fail_external)
+    monkeypatch.setattr(os, "getenv", fail_environment)
+
+    evidence = attest_kis_paper_intraday_runtime_window_local_availability(
+        catalog,
+        runtime_window=window,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        decided_at=observed_at,
+    )
+    late_evidence = attest_kis_paper_intraday_runtime_window_local_availability(
+        catalog,
+        runtime_window=before_retention,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        decided_at=observed_at - timedelta(seconds=1),
+    )
+
+    assert evidence.input_manifest_ref == window.input_manifest_ref
+    assert evidence.source_catalog_hash == catalog.dataset_hash
+    assert evidence.selected_bar_count == 90
+    assert evidence.latest_local_retained_at == observed_at
+    assert evidence.local_input_available_by_decision is True
+    assert late_evidence.local_input_available_by_decision is False
+    with pytest.raises(
+        ValueError,
+        match="runtime local availability decision flag is inconsistent",
+    ):
+        replace(evidence, local_input_available_by_decision=False)
+    payload = evidence.safe_payload()
+    assert payload["limitations"] == {
+        "local_cache_retention_only": True,
+        "provider_decision_time_availability": "not_observed",
+        "provider_finality": "not_observed",
+    }
+    serialized = json.dumps(payload, sort_keys=True)
+    assert str(catalog.source_path) not in serialized
+    assert '"open"' not in serialized
+
+    with pytest.raises(ValueError, match="decided_at must not precede runtime window as_of"):
+        attest_kis_paper_intraday_runtime_window_local_availability(
+            catalog,
+            runtime_window=window,
+            cache_root=cache_root,
+            repo_root=repo_root,
+            decided_at=observed_at - timedelta(microseconds=1),
+        )
+
+    other_catalog = _cataloged_bars_from_verified_loader(
+        dataset_id=catalog.dataset_id,
+        dataset_hash="sha256:" + "0" * 64,
+        source_path=catalog.source_path,
+        bars=catalog.bars,
+    )
+    other_window = select_kis_paper_intraday_runtime_window(
+        other_catalog,
+        as_of=observed_at,
+        max_age=timedelta(minutes=2),
+    )
+    with pytest.raises(ValueError, match="runtime window catalog lineage is invalid"):
+        attest_kis_paper_intraday_runtime_window_local_availability(
+            catalog,
+            runtime_window=other_window,
+            cache_root=cache_root,
+            repo_root=repo_root,
+            decided_at=observed_at,
+        )
 
 
 def test_failed_unretained_attempt_does_not_latch_later_collection(tmp_path: Path) -> None:
