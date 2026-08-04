@@ -2760,3 +2760,13 @@ integrity, import, shape, timer, or observed 1 GiB memory-gate failure closes
 only this runtime study. A resumed CUDA phase without its same-invocation CPU
 comparator is also a no-result. It never establishes predictive quality or a
 trading claim.
+
+The actual acquisition and offline structural smoke have now completed. The
+external safetensors file is exactly `3,240,592` bytes at SHA-256
+`30f8d9be...097731`; the source-safe manifest and CPU/CUDA receipts remain
+under `D:\thericher-v2\model-artifacts`. The CPU two-forward and CUDA
+warm-up-plus-sixteen-forward phases both completed with finite `1x96x1`
+structure, `within_tolerance` comparison, and an observed `12,896,768`-byte
+CUDA peak. This result is strictly `runtime_compatible_structural`, not a
+forecast, performance, model-selection, or trading result. GPU custody is
+released.

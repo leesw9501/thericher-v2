@@ -1257,3 +1257,20 @@ same-session causal misreading without adding a new gate.
 - **Improvement:** a separate locked virtualenv prevents the Granite resolver
   from mutating the shared CUDA research or production runtime; source-safe
   phase receipts retain no tensors, predictions, market rows, or secrets.
+
+## Granite TTM Runtime Outcome (2026-08-04)
+
+- **Ready:** the official fixed model was acquired outside Git and the
+  network-disabled CPU/CUDA structural smoke completed. Its output geometry was
+  finite `1x96x1`, comparison `within_tolerance`, and observed CUDA peak
+  `12,896,768` bytes. This is a completed runtime capability package only.
+- **Owned:** Research Steward released the GPU immediately after the one
+  appointment. Engine retains only external source-safe manifests/receipts and
+  may not relabel them as forecasting, ranking, ensemble, or Paper evidence.
+- **Due:** no Granite retry or follow-on training is due from this result. The
+  scheduled KIS virtual-Paper canary remains the current company-goal evidence
+  at 23:35 KST; unrelated ready Data and Research packages continue normally.
+- **Improvement:** the first actual public-model runtime path now has a pinned
+  external artifact, isolated virtualenv, and offline structural receipt, so
+  later public-model work can reuse the evidence pattern without touching the
+  production runtime.

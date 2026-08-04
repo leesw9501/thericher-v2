@@ -482,3 +482,11 @@ and an observed 1 GiB peak-memory gate. A resumed CUDA path without the same
 invocation's CPU comparator is a terminal no-result, not a structural pass.
 Any manifest, import, shape, finiteness, timeout, or memory-cap failure closes
 this exact runtime lineage without a retry or sealed-evaluation spend.
+
+The one appointment completed and is released. Its external source-safe CPU
+and CUDA receipts both report `structural_pass`, a finite `1x96x1` output, and
+`within_tolerance` CPU/CUDA comparison; the CUDA peak was `12,896,768` bytes,
+below the observed 1 GiB gate. No checkpoint, prediction, holdout access,
+candidate selection, ensemble lineage, Paper input, or evaluation allocation
+was created. The RTX 4090 is available for the next independently eligible
+package.

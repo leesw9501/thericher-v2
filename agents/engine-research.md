@@ -1712,3 +1712,12 @@ hardware VRAM partition.
 No weight has been materialized and no CPU or GPU phase has run yet. This is
 runtime evidence only: no market data, labels, target, predictive metric,
 selection, ensemble, Paper input, or promotion claim exists.
+
+The credential-free acquisition then materialized exactly the three pinned
+files outside Git. The `model.safetensors` file reattested at `3,240,592` bytes
+and SHA-256 `30f8d9be...097731`. The actual network-disabled runtime smoke
+completed its two CPU forwards and one CUDA warm-up plus sixteen forwards. Both
+phases produced finite `1x96x1` structure, the CUDA comparison was
+`within_tolerance`, and peak allocated CUDA memory was `12,896,768` bytes.
+This is `runtime_compatible_structural` only. It does not evaluate forecasting
+quality, create a prediction artifact, or alter any Research promotion queue.
