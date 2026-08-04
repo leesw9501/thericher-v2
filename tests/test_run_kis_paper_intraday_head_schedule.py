@@ -1,4 +1,8 @@
+import os
+import subprocess
 from pathlib import Path
+
+import pytest
 
 SCRIPT = (
     Path(__file__).resolve().parents[1]
@@ -13,6 +17,8 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     collection_call = ' -Service "kis-paper-intraday-head"'
     timing_probe_call = ' -Service "kis-paper-prospective-spy-timing-probe"'
     spy_cycle_call = ' -Service "kis-paper-prospective-spy-cycle"'
+    qqq_session_call = ' -Service "kis-paper-prospective-qqq-session"'
+    qqq_validation_call = ' -Service "kis-paper-prospective-qqq-validation"'
     capture_call = ' -Service "profiled-mtf-forward-capture-cycle"'
     observation_call = ' -Service "kis-paper-intraday-pair-observation"'
     receipt_call = ' -Service "kis-paper-intraday-head-receipt"'
@@ -21,8 +27,13 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert collection_call in source
     assert timing_probe_call in source
     assert spy_cycle_call in source
+    assert qqq_session_call in source
+    assert qqq_validation_call in source
     assert capture_call in source
     assert observation_call in source
+    assert source.index(collection_call) < source.index(qqq_session_call)
+    assert source.index(qqq_session_call) < source.index(qqq_validation_call)
+    assert source.index(qqq_validation_call) < source.index(timing_probe_call)
     assert source.index(collection_call) < source.index(timing_probe_call)
     assert source.index(timing_probe_call) < source.index(spy_cycle_call)
     assert source.index(collection_call) < source.index(spy_cycle_call)
@@ -43,6 +54,7 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "prospective_loop_exit_code" in source
     assert "prospective_loop_status" in source
     assert '$prospectiveLoopStatus = "not_applicable"' in source
+    assert '$prospectiveLoopStatus = "embedded"' in source
     assert "kis-paper-prospective-loop" not in source
     assert "prospective_session_exit_code" in source
     assert "prospective_session_status" in source
@@ -71,9 +83,148 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert '$ErrorActionPreference = "Continue"' in source
     assert '"observed"' in source
     assert '"not_observed"' in source
-    assert "kis-paper-prospective-qqq-session" not in source
-    assert "kis-paper-prospective-qqq-validation" not in source
     assert "kis-paper-intraday-observation" not in source
+
+
+def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it() -> None:
+    source = SCRIPT.read_text(encoding="ascii")
+
+    collection_guard = source.index("if ($collectionExitCode -eq 0)")
+    qqq_session = source.index(' -Service "kis-paper-prospective-qqq-session"')
+    qqq_validation = source.index(' -Service "kis-paper-prospective-qqq-validation"')
+    timing_probe = source.index(' -Service "kis-paper-prospective-spy-timing-probe"')
+    qqq_block = source[collection_guard:timing_probe]
+
+    assert collection_guard < qqq_session < qqq_validation < timing_probe
+    assert '$prospectiveLoopStatus = "embedded"' in qqq_block
+    assert "Get-SafeProfileSessionId" in qqq_block
+    assert '"kis_paper_prospective_qqq_session"' in qqq_block
+    assert '"kis_paper_prospective_qqq_validation"' in qqq_block
+    assert '"--session-id",' in qqq_block
+    assert "$prospectiveSessionId," in qqq_block
+    assert '$prospectiveValidationStatus = "validated"' in qqq_block
+    assert '"--execute"' not in qqq_block
+    assert '"--cancel-after-submit"' not in qqq_block
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_dispatches_qqq_before_slower_observers(tmp_path: Path) -> None:
+    log_path = tmp_path / "fake-docker-services.log"
+    project_root = SCRIPT.parents[1]
+    result = subprocess.run(
+        [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-Command",
+            _fake_dispatch_command(
+                script_path=SCRIPT,
+                project_root=project_root,
+                log_path=log_path,
+            ),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert log_path.read_text(encoding="ascii").splitlines() == [
+        "kis-paper-intraday-head",
+        "kis-paper-prospective-qqq-session",
+        "kis-paper-prospective-qqq-validation",
+        "kis-paper-prospective-spy-timing-probe",
+        "kis-paper-prospective-spy-cycle",
+        "kis-paper-qqq-intraday-head-readiness",
+        "profiled-mtf-forward-capture-cycle",
+        "kis-paper-intraday-pair-observation",
+        "kis-paper-intraday-head-receipt",
+    ]
+
+
+def _fake_dispatch_command(*, script_path: Path, project_root: Path, log_path: Path) -> str:
+    escaped_script = str(script_path).replace("'", "''")
+    escaped_root = str(project_root).replace("'", "''")
+    escaped_log = str(log_path).replace("'", "''")
+    return f"""
+$ErrorActionPreference = 'Stop'
+$env:THERICHER_FAKE_DOCKER_LOG = '{escaped_log}'
+function docker.exe {{
+    $dockerArgs = @($args)
+    $knownServices = @(
+        'kis-paper-intraday-head',
+        'kis-paper-prospective-qqq-session',
+        'kis-paper-prospective-qqq-validation',
+        'kis-paper-prospective-spy-timing-probe',
+        'kis-paper-prospective-spy-cycle',
+        'kis-paper-qqq-intraday-head-readiness',
+        'profiled-mtf-forward-capture-cycle',
+        'kis-paper-intraday-pair-observation',
+        'kis-paper-intraday-head-receipt'
+    )
+    $service = $null
+    for ($index = $dockerArgs.Count - 1; $index -ge 0; $index--) {{
+        $candidate = [string]$dockerArgs[$index]
+        if ($candidate -in $knownServices) {{
+            $service = $candidate
+            break
+        }}
+    }}
+    if ($null -eq $service) {{
+        throw "fake docker could not identify exactly one service: $($dockerArgs -join ' ')"
+    }}
+    Add-Content -LiteralPath $env:THERICHER_FAKE_DOCKER_LOG -Value $service -Encoding ascii
+    switch ($service) {{
+        'kis-paper-intraday-head' {{
+            Write-Output '{{"kind":"kis_paper_intraday_session_capture","targets":[]}}'
+        }}
+        'kis-paper-prospective-qqq-session' {{
+            Write-Output (
+                '{{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",' +
+                '"session_id":"qqq-unit"}}'
+            )
+        }}
+        'kis-paper-prospective-qqq-validation' {{
+            Write-Output (
+                '{{"kind":"kis_paper_prospective_qqq_validation","status":"validated",' +
+                '"session_id":"qqq-unit"}}'
+            )
+        }}
+        'kis-paper-prospective-spy-cycle' {{
+            Write-Output (
+                '{{"kind":"kis_paper_prospective_spy_cycle","status":"no_intent",' +
+                '"cycle_id":"spy-unit","execution":{{"canary_run_id":null}}}}'
+            )
+        }}
+        'profiled-mtf-forward-capture-cycle' {{
+            Write-Output (
+                '{{"kind":"profiled-mtf-forward-capture-cycle-v1",' +
+                '"status":"outside_cycle_slot"}}'
+            )
+        }}
+        'kis-paper-intraday-pair-observation' {{
+            Write-Output (
+                '{{"kind":"kis_qqq_spy_mtf_prospective_observation",' +
+                '"status":"not_observed"}}'
+            )
+        }}
+        'kis-paper-intraday-head-receipt' {{
+            Write-Output (
+                '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"complete",' +
+                '"terminal":{{"status":"complete","scheduler_exit_code":0}}}}'
+            )
+        }}
+        default {{
+            Write-Output '{{}}'
+        }}
+    }}
+    $global:LASTEXITCODE = 0
+}}
+& '{escaped_script}' -ProjectRoot '{escaped_root}'
+exit $LASTEXITCODE
+"""
 
 
 def test_head_schedule_dispatcher_has_no_secret_or_live_route_surface() -> None:

@@ -33,6 +33,16 @@ were rebuilt, their exact entrypoints passed network-disabled checks, and 76
 focused Data/schedule tests passed. This is preflight evidence only; neither
 worker has produced its current runtime receipt yet.
 
+On its next successful collection, the existing 00:31 intraday-head worker
+also dispatches the already implemented QQQ 90-minute observed/provisional
+baseline before slower observers can exhaust its two-minute freshness budget.
+It uses the existing local-paper replay, virtual-only receipt canary, and
+network-disabled exact-session validator; it has no new schedule or broker
+route. It may record a scoped `no_intent` or lifecycle fact, never an alpha,
+PnL, or promotion result. The source-free Claude challenge timed out
+(`review_unavailable`), while the host dispatcher simulation and focused
+execution tests passed.
+
 ## Current Lane Facts
 
 ### Data

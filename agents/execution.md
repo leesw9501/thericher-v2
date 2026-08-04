@@ -92,6 +92,14 @@ task, not a general Paper hold.
 - The prospective SPY cycle remains a data-dependent no-intent path until its
   own fresh completed-bar receipt exists. Timing observations are not Paper
   permissions.
+- The same task-owned intraday-head dispatcher now invokes the pre-existing
+  QQQ observed/provisional receipt route immediately after successful
+  collection, before slower observers consume its two-minute input-freshness
+  budget. The route creates no new adapter, task, or authority: it reuses the
+  local replay, fresh account/open-order and quote checks, virtual-host-pinned
+  canary, exact-intent recovery, cancellation, and network-disabled validator.
+  Its source-safe outcome remains execution evidence only, never a model,
+  fill-quality, PnL, or profitability claim.
 
 ## Recovery
 

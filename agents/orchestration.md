@@ -25,6 +25,14 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 No foreground wait is justified. Each external time belongs to its worker;
 independent Data, Engine, and Execution preparation continues when ready.
 
+The 00:31 worker now reattaches the already tested QQQ 90-minute
+observed/provisional baseline immediately after a successful collection, then
+validates its exact session offline before its slower Data observations. It
+adds no task or broker route and reuses the virtual-only receipt canary. A
+Claude challenge timed out as `review_unavailable`; the host dispatcher
+simulation and 72 focused schedule/QQQ lifecycle tests passed. This is an
+execution-learning path, not an alpha, PnL, or promotion claim.
+
 At 21:38 KST, Execution reattached the exact canary task ownership: one
 `IgnoreNew` Windows task, no current Aug. 4 artifact, and no duplicate runner.
 The task's local image was rebuilt from the current source and passed a

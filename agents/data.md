@@ -47,6 +47,10 @@ undocumented timestamp seed.
   current-source profile passed a network-disabled exact-entrypoint check. The
   related focused Data/schedule group passed 76 tests; this is preflight only,
   not a collection receipt.
+  On a successful collection, the same worker now gives the existing QQQ
+  90-minute runtime consumer first use of the fresh local cache before slower
+  observations. Its observed input remains provisional; stale, incomplete, or
+  non-contiguous cache conditions still end as a consumer-local no-intent.
 - **Historical M1 cursor scope:** the existing QQQ/NAS and SPY/AMS backfill
   indices were reattached offline as `source_exhausted`, with no new market-data
   page or snapshot. Do not reopen either terminal cursor with an invented seed;

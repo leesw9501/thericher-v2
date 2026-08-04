@@ -9146,3 +9146,27 @@ passes its actual allocated target rather than a lossy fixed-lot surrogate.
 Claude's bounded drift-check timed out as `review_unavailable`; an independent
 Validation review found the fixed-lot regression before integration and its
 repair plus the wrong-symbol/wrong-target and legacy fail-closed tests passed.
+
+## 2026-08-04 - Reactivate the bounded QQQ provisional-Paper dispatch
+
+Decision: after a successful run of the existing single
+`thericher-kis-paper-intraday-head` collector, dispatch the already implemented
+QQQ runtime receipt session before the slower SPY timing and Data-only observer
+stages. The route consumes only its just-collected 90-minute completed local
+window, replays it locally, proves two-minute freshness at both account and
+submit boundaries, then uses the existing virtual-only receipt canary and
+exact-session network-disabled validator. No new Windows task, broker adapter,
+credential path, live route, or public surface is introduced.
+
+Reason: the pre-existing QQQ route was left inactive when an older objective
+forbade Paper/local-paper work, while the new SPY cycle is structurally tied to
+15:30 ET and the same worker runs around 11:31 ET. That left the available
+90-minute observed/provisional baseline unable to generate either a scoped
+no-intent or real virtual-Paper lifecycle fact. The QQQ session's local replay,
+freshness, account/open-order, quote, durable-intent, virtual-host, recovery,
+and cancellation checks remain authoritative. Stale, malformed, missing,
+misaligned, conflicting, paused, or unresolved inputs must remain no-intent;
+the result is execution evidence only, never an alpha, PnL, or promotion claim.
+Claude CLI timed out as `review_unavailable`; it was not treated as agreement
+or a hold. A fake-Docker host-dispatch simulation plus focused QQQ/schedule
+tests independently verified ordering and exact session validation.

@@ -53,6 +53,12 @@ strongest kill test before target evaluation or GPU consideration.
   decision control. Its timing evidence remains
   `decision_time_availability: not_observed` and it requires a fresh qualified
   Data receipt before any predictive, PnL, Paper, or GPU interpretation.
+- The existing QQQ 90-minute `1m/5m/10m` runtime baseline is separately
+  reattached to the current-head worker as an explicit observed/provisional
+  Paper experiment. It has deterministic local-paper replay, a two-minute
+  freshness contract, and no model selection, alpha, PnL, ensemble, or GPU
+  consequence. Its next outcome can be only an input-scoped no-intent or
+  virtual-Paper lifecycle fact through the existing Execution boundary.
 - The separately scheduled SPY D1 stability observer is not an Engine input.
   It has no runtime receipt yet and, even when `stable`, retains only hash and
   categorical evidence with `provider_finality: not_observed`. It cannot open

@@ -82,6 +82,21 @@ function Get-ProfileStatus {
     return "unavailable"
 }
 
+function Get-SafeProfileSessionId {
+    param(
+        [object]$Payload
+    )
+
+    if ($null -eq $Payload) {
+        return $null
+    }
+    $candidate = [string]$Payload.session_id
+    if ($candidate -match '^[A-Za-z0-9._-]{1,160}$') {
+        return $candidate
+    }
+    return $null
+}
+
 function New-ScheduleRunId {
     param(
         [Parameter(Mandatory = $true)]
@@ -170,8 +185,10 @@ $collectionReturnedAtMarker = $collectionReturnedAt.ToString(
     [System.Globalization.CultureInfo]::InvariantCulture
 )
 
-# The collector is independent from the SPY cycle. The SPY service is dispatched
-# only after collection returns, while the legacy QQQ route remains inactive.
+# The current QQQ route consumes the just-collected local cache before slower,
+# independent observations can exhaust its two-minute freshness budget. It owns
+# local replay and the existing virtual-Paper boundary; a no-intent result never
+# changes collection recovery.
 $prospectiveSpyCycleExitCode = 0
 $prospectiveSpyCycleStatus = "not_applicable"
 $prospectiveSpyCycleId = $null
@@ -190,6 +207,56 @@ $captureCycleStatus = "not_applicable"
 $observationExitCode = 0
 $observationStatus = "not_applicable"
 if ($collectionExitCode -eq 0) {
+    $prospectiveLoopStatus = "embedded"
+    $prospectiveSession = Invoke-HeadProfileService `
+        -ProjectRoot $resolvedProjectRoot `
+        -Service "kis-paper-prospective-qqq-session"
+    $prospectiveSessionExitCode = [int]$prospectiveSession.ExitCode
+    $prospectiveSessionPayload = Get-ProfilePayload `
+        -Output $prospectiveSession.Output `
+        -Kind "kis_paper_prospective_qqq_session"
+    $prospectiveSessionId = Get-SafeProfileSessionId -Payload $prospectiveSessionPayload
+    $prospectiveSessionStatus = Get-ProfileStatus `
+        -Output $prospectiveSession.Output `
+        -Kind "kis_paper_prospective_qqq_session" `
+        -AllowedStatuses @("no_intent", "canary_completed")
+
+    # Validation reloads the exact retained cache after the execution session.
+    # Its network-disabled service cannot create another Paper side effect.
+    if (
+        $prospectiveSessionExitCode -eq 0 `
+            -and $prospectiveSessionStatus -in @("no_intent", "canary_completed") `
+            -and $null -ne $prospectiveSessionId
+    ) {
+        $prospectiveValidation = Invoke-HeadProfileService `
+            -ProjectRoot $resolvedProjectRoot `
+            -Service "kis-paper-prospective-qqq-validation" `
+            -CommandOverride @(
+                "python",
+                "-m",
+                "thericher_v2.ops.kis_paper_prospective_qqq_validation",
+                "--session-id",
+                $prospectiveSessionId,
+                "--cache-root",
+                "/app/market_data/us_equities/kis_paper_private/intraday-head",
+                "--artifact-root",
+                "/app/model_artifacts",
+                "--repository-root",
+                "/app"
+            )
+        $prospectiveValidationExitCode = [int]$prospectiveValidation.ExitCode
+        $prospectiveValidationPayload = Get-ProfilePayload `
+            -Output $prospectiveValidation.Output `
+            -Kind "kis_paper_prospective_qqq_validation"
+        if ($prospectiveValidationExitCode -eq 0 -and $null -ne $prospectiveValidationPayload) {
+            $prospectiveValidationStatus = "validated"
+            $prospectiveValidationSessionId = Get-SafeProfileSessionId `
+                -Payload $prospectiveValidationPayload
+        } else {
+            $prospectiveValidationStatus = "unavailable"
+        }
+    }
+
     # This independent receipt cannot affect the scheduled task terminal status.
     $spyCollectionStatus = "unavailable"
     $spyRowCount = 0
