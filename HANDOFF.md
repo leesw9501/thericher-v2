@@ -2799,3 +2799,21 @@ writes only immutable source-safe evidence outside Git. The observer runs after
 the SPY cycle outcome is captured and has no terminal-status influence. Its
 Docker CLI smoke and focused synthetic tests passed; no KIS call, task run,
 runtime receipt, model fit, GPU job, or Paper action occurred.
+
+## Daily Pair-Forward Recovery (2026-08-04)
+
+The daily QQQ/SPY pair task's historical `1` followed a source-safe
+`collection_required` preflight but left no collector receipt. Its exact raw
+cause cannot be reconstructed because Task Scheduler history is disabled and
+the runner does not retain Docker output. A one-time existing-runner data probe
+then completed the same isolated D1 cache as `ready`; the network-disabled
+preflight now reports `cache_current` and confirms no account, order, quote, or
+live route.
+
+Claude returned `supported-with-limits` for a narrow observability repair:
+token/rate gate reads now produce the existing source-safe
+`collector_unavailable` recovery before a KIS client can be constructed. The
+normal token/rate deferral path was deliberately left outside that catch and
+keeps its original reason. The scheduled task remains unchanged; the original
+failure is still an unknown historical subcause, not a provider or account
+claim.

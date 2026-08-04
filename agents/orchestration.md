@@ -1324,3 +1324,18 @@ same-session causal misreading without adding a new gate.
   duplicate, Git/artifact isolation, and secret/network-free code paths;
   the temporary independent review did not return a verdict and is recorded as
   `review_unavailable`, not agreement or a hold.
+
+## Daily Pair-Forward Recovery Integration (2026-08-04)
+
+- **Ready:** the QQQ/SPY daily forward cache is currently `ready` after one
+  bounded existing-runner recovery; a credential-free preflight reattached it
+  as `cache_current`. This does not create a model, PnL, Paper, or GPU result.
+- **Owned:** Data owns its cache and control-root recovery; Execution owns no
+  account or order route; Engine has no new qualified campaign input.
+- **Due:** the unchanged daily-pair task owns its next normal run. The former
+  task result `1` is a scoped historical fault, not foreground idle or a block
+  on the virtual-Paper canary.
+- **Improvement:** gate-state reads now emit a categorical recovery receipt
+  before KIS configuration/client construction, while normal token/rate
+  deferral retains its precise existing category. Claude returned
+  `supported-with-limits`; the original failure's exact cause remains unknown.

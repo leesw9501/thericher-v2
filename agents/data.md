@@ -1620,3 +1620,21 @@ An exact rerun is a duplicate; a changed commitment for the same session is
 contamination rather than an overwrite. The observer cannot alter collector,
 SPY Paper-cycle, schedule-receipt, or task terminal state. No runtime receipt,
 new task, KIS call, model input, or Paper action exists from this installation.
+
+## Daily Pair-Forward Receipt Recovery (2026-08-04)
+
+The 06:55 KST pair task's preflight emitted `collection_required`, then its
+collector returned `1` without a collector receipt. Task Scheduler history is
+disabled and the runner retains no raw Docker output, so the exact original
+subcause remains unproven. One standing-authorized run of that same owned data
+runner subsequently completed the QQQ/NAS plus SPY/AMS D1 cache as `ready`;
+the follow-up network-disabled preflight is `cache_current`. Both receipts
+attest daily-market-data-only routing with no account, order, quote, or live
+endpoint.
+
+Claude reviewed the narrow recovery. Token/rate gate construction and reads now
+have their own source-safe recovery boundary: a malformed, unreadable, or
+symlinked control state emits `collector_unavailable`/exit `20` before client
+construction. The legitimate token/rate deferral branch remains outside that
+boundary and preserves its original reason. The existing task and its next due
+time are unchanged; no foreground retry is scheduled.

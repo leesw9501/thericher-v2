@@ -124,10 +124,19 @@ def _run_credentialed_collection(
     frozen_boundary: date,
     observed_at: datetime,
 ) -> int:
-    rate_gate = KisPaperMarketDataRateGate(control_root=control_root)
-    token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root)
-    token_request_is_due = token_gate.token_request_is_due()
-    rate_gate_is_deferred = _rate_gate_is_deferred(rate_gate, observed_at)
+    try:
+        rate_gate = KisPaperMarketDataRateGate(control_root=control_root)
+        token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root)
+        token_request_is_due = token_gate.token_request_is_due()
+        rate_gate_is_deferred = _rate_gate_is_deferred(rate_gate, observed_at)
+    except (OSError, ValueError):
+        return _emit_source_safe_receipt(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            observed_at=observed_at,
+            payload=_unavailable_payload(observed_at, "collector_unavailable"),
+            exit_code=_RECOVERY_EXIT,
+        )
     if not token_request_is_due or rate_gate_is_deferred:
         result = _defer_pair_cache(
             cache_root=cache_root,
