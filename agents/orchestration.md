@@ -1410,3 +1410,20 @@ same-session causal misreading without adding a new gate.
   inactive run, and checks the KST host before mutating those task schedules.
   The Claude scheduler challenge timed out (`review_unavailable`); independent
   semantic and route reviews found no service or route change.
+
+## Midday Throughput Review (2026-08-04)
+
+- **Ready:** the current virtual-Paper canary remains independently ready at
+  23:35 KST; Data's separate intraday-head recovery is due at 00:31 KST, then
+  its isolated SPY prefix capability worker at 04:30 KST. No frozen,
+  input-qualified Engine campaign is ready, so GPU custody stays released.
+- **Owned:** Execution owns the canary lifecycle; Data owns both cache-local
+  worker outcomes. Neither worker depends on a GPU job or a foreground Codex
+  sleep.
+- **Due:** reattach each worker's source-safe categorical evidence after its
+  own run. A repeated intraday `minute_duplicate_conflict` is the narrow kill
+  test for a Data follow-up; it is not a company-wide hold.
+- **Improvement:** the Codex app monitor editor timed out during a read-only
+  weekday-alignment attempt, so its existing Tuesday result watch remains a
+  noncritical companion only. The installed Windows tasks remain the primary
+  execution evidence; no duplicate monitor or fallback scheduler was created.
