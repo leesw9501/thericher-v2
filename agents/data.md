@@ -122,6 +122,11 @@ undocumented timestamp seed.
   timing nor adjustment/capital-event semantics. Model, GPU, PnL, and Paper
   eligibility remain false. Evidence:
   `D:\thericher-v2\model-artifacts\data\norgate-active-build-revision-v1\revision-current-512-20260804-r1\receipt.json`.
+  A separate hash-bound dividend-marker exclusion sidecar now reattests the
+  same 512-session parent: 24 nonzero source markers yielded 72 exclusion rows
+  over 55 distinct date groups. It is conservative post-hoc data hygiene only,
+  not a statement about event timing, adjustment semantics, PIT availability,
+  or any consumer eligibility. Evidence lives in the matching external sidecar.
 - **Free public augmentation:** no official, no-auth source found that jointly
   establishes PIT/delisting membership, corporate-action meaning, and daily
   OHLCV. SEC Market Structure and EDGAR remain optional source-limited sidecars

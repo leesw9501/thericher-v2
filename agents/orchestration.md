@@ -53,11 +53,14 @@ The Norgate fixed-ETF D1 structural receipt now attests only its own raw-file
 geometry and hash contract; it does not change the causal-input bottleneck or
 open a Research campaign.
 The explicit current-build conformance result adds repeatability evidence for
-that exact local snapshot only. It does not repair vendor publication timing,
-PIT, adjustment, or capital-event semantics. Claude therefore allowed the
-target-free conformance taxonomy but kept the proposed range-risk diagnostic
-input-unavailable; the data-semantic gap, not GPU capacity, remains the next
-research constraint.
+that exact local snapshot only. A new hash-bound dividend-marker hygiene
+sidecar removes marked and adjacent observed sessions but does not repair
+vendor publication timing, PIT, or event semantics. Its exact range-diagnostic
+preflight found only 277 eligible date-group rows and a longest contiguous run
+of 37 versus the declared 382-group split budget; Claude independently
+returned `unsupported` on this arithmetic kill test. The family is closed as
+`input_unavailable`, so causal KIS-reconstructible input coverage, not GPU
+capacity, remains the next research constraint.
 
 ## Current Reversible Improvement
 
