@@ -77,6 +77,12 @@ undocumented timestamp seed.
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or
   non-contiguous cache conditions still end as a consumer-local no-intent.
+- **Daily D1 catch-up:** the 2026-08-05 07:00 KST task-owned worker completed
+  `drained` with zero attempted/retained chunks and zero completed targets. Its
+  source-safe receipt records `client_constructed: false`, so this exact
+  cursor state did not read credentials or call KIS. It does not establish
+  provider-wide historical coverage; the next scheduled worker remains owner
+  of any changed cursor state.
 - **Token cadence calibration:** the 04:31 head collision is now a bounded
   Data capability question, not a permanent five-minute rule. A ready,
   token-only probe first checks and atomically claims the existing five-minute
