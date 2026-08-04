@@ -27,6 +27,21 @@ projection. This proves neither a lifecycle, broker, fill, no-intent, nor PnL
 result. Do not manually invoke, infer an outcome, or duplicate the task; the
 next task-owned opportunity is 2026-08-05 23:35 KST.
 
+At 03:16 KST on 2026-08-05, one exact read-only historical terminal-field
+probe ran for the preserved legacy state. It used only a virtual token and the
+history GET route, returning `history_observed_derived_date` with an absent
+identity row. Because its ET day is derived from a tightly checked legacy
+creation timestamp, that result is not a no-order, cancellation, terminal,
+fill, or PnL conclusion; the legacy state remains `outcome_unknown`.
+
+The quote-session runner now recovers only an exact replayed run from its own
+durable state. A distinct new run retains the shared lock and its fresh
+account/open-order reconciliation, which blocks a current matching open order
+before submit. It no longer scans or mutates unrelated historical state files.
+The old state is preserved, not relabeled clean. The cross-run Claude request
+timed out as `review_unavailable`; focused fake-route tests cover same-run
+recovery, old-state preservation, and current-open-order no-submit behavior.
+
 The offline projector now also accepts one explicit session ID. It rejects
 links, `.`/`..`, mismatched IDs, and non-writer evidence shapes, emits a
 distinct session fact without its evidence path, and never scans for a latest
@@ -234,10 +249,9 @@ execution tests passed.
 - It persists one durable intent before a broker effect, uses a shared state
   lock, requires a fresh account/open-order view and fresh quote-derived limit,
   rejects matching open orders, uses `cancel_after_submit`, and reconciles an
-  exact unknown before any same-intent recovery. Before a fresh quote, a prior
-  matching `SPY`/`AMEX`/buy/one-share pending state is recovered; if it remains
-  ambiguous, only that fresh session returns `recovery_required` with no new
-  quote or order. It never reads a live route.
+  exact unknown only on a same-intent replay. A distinct run does not scan or
+  mutate historical state files; it relies on its own current open-order check.
+  It never reads a live route.
 - The at-most-one-intent claim is scoped to the existing single host-owned
   state root and its one scheduled Docker runner. No copied/restored state root,
   second machine, or out-of-band runner is installed; those would be outside

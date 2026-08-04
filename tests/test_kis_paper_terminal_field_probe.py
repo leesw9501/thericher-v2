@@ -28,11 +28,14 @@ INTENT_CREATED_AT = datetime(2026, 7, 22, 3, 59, tzinfo=UTC)
 SUBMITTED_AT = datetime(2026, 7, 22, 4, 1, tzinfo=UTC)
 RUN_ID = "canary-terminal-field-probe-001"
 RAW_ORDER_ID = "ORD-123456789"
+LEGACY_RUN_ID = "canary-20260722T140100000000Z"
+LEGACY_CREATED_AT = datetime(2026, 7, 22, 14, 1, tzinfo=UTC)
 
 
 @dataclass
 class ProbeTransport:
     requests: list[KisHttpRequest] = field(default_factory=list)
+    history_order_id: str = RAW_ORDER_ID
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
@@ -44,7 +47,7 @@ class ProbeTransport:
                     "rt_cd": "0",
                     "output": [
                         {
-                            "odno": RAW_ORDER_ID,
+                            "odno": self.history_order_id,
                             "orgn_odno": "",
                             "ft_ord_qty": "1",
                             "ft_ccld_qty": "0",
@@ -123,6 +126,89 @@ def test_terminal_field_probe_uses_private_state_only_in_memory_and_writes_redac
     assert not state_path.with_name(f".{state_path.name}.lock").exists()
 
 
+def test_legacy_state_uses_derived_created_at_date_for_exact_history_without_side_effects(
+    tmp_path: Path,
+) -> None:
+    state_path = _write_state(
+        tmp_path,
+        run_id=LEGACY_RUN_ID,
+        state_run_id=LEGACY_RUN_ID,
+        submitted_at=None,
+        client_order_id=f"canary-{LEGACY_RUN_ID}",
+        decision_id=f"decision-{LEGACY_RUN_ID}",
+        created_at=LEGACY_CREATED_AT,
+        valid_until=LEGACY_CREATED_AT + timedelta(minutes=5),
+    )
+    before = state_path.read_bytes()
+    transport = ProbeTransport()
+
+    result = probe_kis_paper_terminal_fields(
+        run_id=LEGACY_RUN_ID,
+        environment=_environment(),
+        state_root=tmp_path / "private" / "canary",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        transport=transport,
+        now=NOW,
+    )
+
+    assert result.outcome.status == "observed"
+    assert result.outcome.reason_code == "history_observed_derived_date"
+    assert result.outcome.field_observation is not None
+    assert result.outcome.field_observation.identity_match == "exact_order"
+    assert result.outcome.safe_payload()["order_date_scope"] == "derived_created_at_et_day"
+    history_request = next(
+        request
+        for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id
+    )
+    assert history_request.query["ORD_STRT_DT"] == "20260722"
+    assert history_request.query["ORD_END_DT"] == "20260722"
+    assert all(
+        request.method == "GET" or request.url.endswith(KIS_PAPER_TOKEN_PATH)
+        for request in transport.requests
+    )
+    assert all(
+        not request.headers.get("tr_id", "").startswith("VTTT")
+        for request in transport.requests
+    )
+    assert state_path.read_bytes() == before
+
+
+def test_legacy_derived_date_keeps_absent_history_distinct_from_known_submission(
+    tmp_path: Path,
+) -> None:
+    _write_state(
+        tmp_path,
+        run_id=LEGACY_RUN_ID,
+        state_run_id=LEGACY_RUN_ID,
+        submitted_at=None,
+        client_order_id=f"canary-{LEGACY_RUN_ID}",
+        decision_id=f"decision-{LEGACY_RUN_ID}",
+        created_at=LEGACY_CREATED_AT,
+        valid_until=LEGACY_CREATED_AT + timedelta(minutes=5),
+    )
+    transport = ProbeTransport(history_order_id="ORD-999999999")
+
+    result = probe_kis_paper_terminal_fields(
+        run_id=LEGACY_RUN_ID,
+        environment=_environment(),
+        state_root=tmp_path / "private" / "canary",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        transport=transport,
+        now=NOW,
+    )
+
+    assert result.outcome.status == "observed"
+    assert result.outcome.reason_code == "history_observed_derived_date"
+    assert result.outcome.field_observation is not None
+    assert result.outcome.field_observation.identity_match == "absent"
+    assert result.outcome.safe_payload()["order_date_scope"] == "derived_created_at_et_day"
+
+
 def test_missing_state_needs_no_credential_or_network_access(tmp_path: Path) -> None:
     result = probe_kis_paper_terminal_fields(
         run_id=RUN_ID,
@@ -179,6 +265,59 @@ def test_legacy_state_without_submission_time_needs_no_credential_or_network_acc
     assert result.outcome.safe_payload()["order_date_scope"] == "not_observed"
 
 
+@pytest.mark.parametrize(
+    ("run_id", "created_at", "valid_until"),
+    [
+        (
+            LEGACY_RUN_ID,
+            LEGACY_CREATED_AT + timedelta(minutes=2),
+            LEGACY_CREATED_AT + timedelta(minutes=7),
+        ),
+        (
+            LEGACY_RUN_ID,
+            LEGACY_CREATED_AT,
+            LEGACY_CREATED_AT + timedelta(minutes=6),
+        ),
+        (
+            "canary-20260722T035900000000Z",
+            datetime(2026, 7, 22, 3, 59, tzinfo=UTC),
+            datetime(2026, 7, 22, 4, 4, tzinfo=UTC),
+        ),
+    ],
+)
+def test_legacy_unqualified_created_at_date_needs_no_credential_or_network_access(
+    tmp_path: Path,
+    run_id: str,
+    created_at: datetime,
+    valid_until: datetime,
+) -> None:
+    _write_state(
+        tmp_path,
+        run_id=run_id,
+        state_run_id=run_id,
+        submitted_at=None,
+        client_order_id=f"canary-{run_id}",
+        decision_id=f"decision-{run_id}",
+        created_at=created_at,
+        valid_until=valid_until,
+    )
+
+    result = probe_kis_paper_terminal_fields(
+        run_id=run_id,
+        environment=NoCredentialEnvironment(),
+        state_root=tmp_path / "private" / "canary",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        now=NOW,
+    )
+
+    assert result.outcome.status == "not_observed"
+    assert result.outcome.reason_code == "legacy_order_date_unqualified"
+    assert result.outcome.field_observation is None
+    assert result.outcome.safe_payload()["order_date_scope"] == "not_observed"
+
+
 def test_state_run_mismatch_needs_no_credential_or_network_access(tmp_path: Path) -> None:
     _write_state(tmp_path, state_run_id="other-canary-run-001")
 
@@ -230,15 +369,47 @@ def test_state_receipt_identity_mismatch_needs_no_credential_or_network_access(
     assert result.outcome.field_observation is None
 
 
+def test_legacy_receipt_identity_mismatch_needs_no_credential_or_network_access(
+    tmp_path: Path,
+) -> None:
+    _write_state(
+        tmp_path,
+        run_id=LEGACY_RUN_ID,
+        state_run_id=LEGACY_RUN_ID,
+        submitted_at=None,
+        client_order_id=f"canary-{LEGACY_RUN_ID}",
+        decision_id="decision-other-canary-run",
+        created_at=LEGACY_CREATED_AT,
+        valid_until=LEGACY_CREATED_AT + timedelta(minutes=5),
+    )
+
+    result = probe_kis_paper_terminal_fields(
+        run_id=LEGACY_RUN_ID,
+        environment=NoCredentialEnvironment(),
+        state_root=tmp_path / "private" / "canary",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        now=NOW,
+    )
+
+    assert result.outcome.status == "unavailable"
+    assert result.outcome.reason_code == "state_receipt_identity_mismatch"
+    assert result.outcome.field_observation is None
+
+
 def _write_state(
     tmp_path: Path,
     *,
+    run_id: str = RUN_ID,
     state_run_id: str = RUN_ID,
     submitted_at: datetime | None = SUBMITTED_AT,
     client_order_id: str | None = None,
     decision_id: str | None = None,
+    created_at: datetime = INTENT_CREATED_AT,
+    valid_until: datetime | None = None,
 ) -> Path:
-    state_path = tmp_path / "private" / "canary" / f"{RUN_ID}.json"
+    state_path = tmp_path / "private" / "canary" / f"{run_id}.json"
     state_path.parent.mkdir(parents=True)
     intent = KisPaperCanaryIntent(
         run_id=state_run_id,
@@ -248,8 +419,8 @@ def _write_state(
         exchange="AMEX",
         quantity=Decimal("1"),
         limit_price=Decimal("500.25"),
-        created_at=INTENT_CREATED_AT,
-        valid_until=INTENT_CREATED_AT + timedelta(minutes=5),
+        created_at=created_at,
+        valid_until=valid_until or created_at + timedelta(minutes=5),
     )
     state = KisPaperCanaryState(
         intent=intent,

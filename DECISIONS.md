@@ -9170,3 +9170,30 @@ the result is execution evidence only, never an alpha, PnL, or promotion claim.
 Claude CLI timed out as `review_unavailable`; it was not treated as agreement
 or a hold. A fake-Docker host-dispatch simulation plus focused QQQ/schedule
 tests independently verified ordering and exact session validation.
+
+## 2026-08-05 - Scope virtual-Paper recovery to the exact run
+
+Decision: remove the quote-session scan that recovered every prior pending
+`SPY`/`AMEX`/buy/one-share state before a new run. A replayed session ID still
+uses its own durable state and existing recovery path. A distinct run retains
+the shared execution lock, durable intent-before-side-effect, fresh account and
+open-order snapshot, conservative matching-open-order rejection, virtual-host
+pinning, and cancellation behavior. Historical state is neither deleted,
+mutated, nor relabeled clean. A legacy terminal-field probe may use a derived
+creation-time ET day only for the original deterministic identity form and
+only when its timestamp/skew/validity interval is internally consistent; its
+safe output explicitly distinguishes that derived anchor from an acknowledged
+submission date.
+
+Reason: the cross-run scan turned one historical unknown into a same-scope
+global hold even though a distinct new intent already has a fresh call-time
+account/open-order check. The refined boundary preserves same-intent recovery
+and actual duplicate-order protection while allowing independent virtual-Paper
+progress. A real derived-date history absence remains unqualified rather than
+being misread as no order, cancellation, fill, terminal state, or PnL.
+Claude's terminal-probe review was `supported-with-limits`; the separate
+cross-run review timed out as `review_unavailable` and was not treated as
+agreement. Focused tests cover exact-run no-resubmit, distinct-run old-state
+preservation, current-open-order no-submit, malformed unrelated-state
+containment, legacy positive history identity, and invalid legacy anchors with
+no credential or network access.

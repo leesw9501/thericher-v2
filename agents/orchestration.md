@@ -13,7 +13,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 
 | Work | Owner | Resource | Current fact |
 | --- | --- | --- | --- |
-| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
+| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST, with exact-run recovery and current-open-order reconciliation |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
 | Current-head recovery | Data | Existing isolated cache/task | 02:31 KST collection exited zero; its QQQ no-intent session produced no broker action, while the terminal receipt narrowly classified missing downstream session identity as recovery `20`; same worker owns 04:31 retry |
 | SPY prefix capability | Data | `thericher-kis-paper-spy-prefix-*` cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
@@ -24,6 +24,15 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 
 No foreground wait is justified. Each external time belongs to its worker;
 independent Data, Engine, and Execution preparation continues when ready.
+
+At 03:16 KST, Execution completed one exact, read-only historical terminal
+field probe of the preserved legacy Paper state. Its derived ET-date query had
+an absent identity row, but the derived anchor keeps that result unqualified:
+it does not resolve, erase, or globally block the state. The quote-session path
+now keeps recovery exact-run scoped and lets a distinct run rely on the existing
+shared lock plus fresh matching-open-order reconciliation. The cross-run Claude
+challenge timed out as `review_unavailable`; focused tests prove old-state
+preservation and current-open-order no-submit behavior.
 
 The 00:31 worker now reattaches the already tested QQQ 90-minute
 observed/provisional baseline immediately after a successful collection, then

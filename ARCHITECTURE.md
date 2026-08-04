@@ -406,10 +406,16 @@ submit, modify, cancel, live-route, or model-label capability. An absent or
 ambiguous history match is evidence for that exact state only, never a Paper
 authority, schedule, or research hold.
 
-Legacy states without a durable acknowledged submission time emit only
-`submission_time_missing` and make no KIS call. This preserves their ordinary
-Paper recovery behavior while preventing a created-at timestamp from producing
-a false history absence.
+For the one original deterministic legacy identity form, a state without a
+durable acknowledged submission time may use `created_at` as an ET-date-only
+history anchor. It requires the exact legacy client/decision forms, a parsed
+run timestamp within one minute of `created_at`, a positive no-more-than-five-
+minute validity window, and one shared ET date for the run, creation, and
+validity endpoint. Its output is explicitly
+`history_observed_derived_date` with `derived_created_at_et_day`; an absent or
+ambiguous row remains an unqualified source-contract result, not evidence that
+the order was not submitted. All other timestamp-free states emit a categorical
+no-observation result before configuration, credential, or network access.
 
 ### Observed KIS Minute Cache
 

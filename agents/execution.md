@@ -20,6 +20,15 @@ current runtime projection. This is neither a broker, lifecycle, no-intent,
 fill, nor PnL result. Do not manually invoke the task, infer an outcome, or
 create a second runner; the next task-owned opportunity is 2026-08-05 23:35 KST.
 
+At 03:16 KST on 2026-08-05, one exact historical terminal-field probe used
+only the virtual token and history GET path for the preserved legacy state. It
+returned `history_observed_derived_date` with a derived ET-day anchor and an
+absent identity row. That is not a no-order, cancellation, terminal, fill, or
+PnL conclusion, so the legacy state remains `outcome_unknown`. The probe's
+legacy identity/date checks and the positive/negative local controls are now
+explicit; Claude's review of that narrow observer change was
+`supported-with-limits`.
+
 At 21:38 KST, the task's `IgnoreNew` concurrency and local Docker action were
 reattested. Its `kis-paper-session` image was rebuilt from current source and
 passed a network-disabled module-import check. The source-safe preflight also
@@ -49,12 +58,15 @@ emits `kis_paper_canary_session_fact`, not a lifecycle fact. If a session finds
 session state. That preserved run still uses the direct lifecycle validator.
 
 The latest safe private-state inventory has no `submitted` or `cancel_started`
-phase. Before a fresh quote, the session reattests only a prior matching
-`SPY`/`AMEX`/buy/one-share canary in this private root. It resumes that exact
-state's reconciliation or cancellation path; if ambiguity remains, only the
-new matching quote session records `recovery_required` without a fresh quote or
-order. Historical unknowns outside that exact scope do not create a global
-Paper hold.
+phase. A replay of the same session ID reuses only its own durable state and
+cannot submit a replacement intent. A distinct current session does not scan
+or mutate other historical state files: while holding the shared lock, its own
+durable intent and fresh account/open-order snapshot determine whether a
+matching current open order blocks submission. The preserved legacy unknown is
+therefore neither resolved nor a cross-run Paper hold. Claude's requested
+cross-run review timed out as `review_unavailable`; focused fake-route tests
+prove same-run recovery, current-open-order rejection, and no mutation of the
+old state.
 
 The canary contract is fixed:
 
@@ -64,8 +76,9 @@ The canary contract is fixed:
   rechecked immediately before broker I/O;
 - durable `intent_recorded` state before side effects and a shared lock across
   sibling runs;
-- a prior matching pending canary is recovered before any new quote; recovery
-  cannot create a fresh order and a remaining ambiguity is session-scoped;
+- a replay of the exact same run recovers only that durable state and cannot
+  create a replacement order; a distinct run checks current open orders at its
+  own call time;
 - fresh account/open-order reconciliation before submit; a matching open order
   blocks a new submission, including partial fills or a different limit price;
 - accepted flow uses `cancel_after_submit`; an exact unknown may resume only
@@ -141,9 +154,10 @@ task, not a general Paper hold.
 An absent result before the worker runs is expected. A stale/missing account or
 quote, live-host mismatch, duplicate order, or unresolved exact-intent outcome
 rejects only that canary attempt. Preserve the source-safe categorical state;
-do not submit a replacement based on missing evidence. An unresolved matching
-prior canary is recovered before the next matching session; an unrelated
-historical unknown never creates a global Paper hold.
+do not submit a replacement for that same run based on missing evidence. A
+distinct current run retains the shared lock and its fresh matching-open-order
+check; unrelated historical state remains preserved but cannot create a global
+Paper hold.
 
 ## Handoff
 

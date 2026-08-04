@@ -92,7 +92,7 @@ class FakeKisPaperQuoteTransport:
             },
         }
     )
-    order_open: bool = False
+    matching_open_order: bool = False
     submit_response_missing_order_id: bool = False
     matching_ccnl_after_cancel: bool = False
     fail_cancel: bool = False
@@ -119,6 +119,10 @@ class FakeKisPaperQuoteTransport:
                 status_code=self.asking_price_status_code,
             )
         if tr_id == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id:
+            if self.matching_open_order and request.query["OVRS_EXCG_CD"] == "NASD":
+                return KisHttpResponse.from_payload(
+                    {"rt_cd": "0", "output": [_matching_spy_open_order_payload()]}
+                )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_BALANCE_ENDPOINT.tr_id:
             return KisHttpResponse.from_payload({"rt_cd": "0", "output1": []})
@@ -140,7 +144,6 @@ class FakeKisPaperQuoteTransport:
                 )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
-            self.order_open = True
             if self.submit_response_missing_order_id:
                 return KisHttpResponse.from_payload({"rt_cd": "0", "output": {}})
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}})
@@ -148,7 +151,6 @@ class FakeKisPaperQuoteTransport:
             self.cancellation_seen = True
             if self.fail_cancel:
                 raise KisPaperCanaryError("cancel_transport_failure")
-            self.order_open = False
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {}})
         raise AssertionError(f"unexpected KIS request: {request!r}")
 
@@ -747,7 +749,7 @@ def test_repeated_due_sessions_create_distinct_intents_without_a_one_shot_latch(
     ) == 2
 
 
-def test_prior_unknown_canary_is_recovered_before_a_new_session_can_submit(
+def test_same_session_reuses_its_exact_unknown_state_without_a_second_submission(
     tmp_path: Path,
 ) -> None:
     transport = FakeKisPaperQuoteTransport(submit_response_missing_order_id=True)
@@ -765,154 +767,105 @@ def test_prior_unknown_canary_is_recovered_before_a_new_session_can_submit(
         request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
         for request in transport.requests
     ) == 1
-    asking_count_before = sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
-        for request in transport.requests
+    transport.asking_price_payload = _fresh_asking_price_payload()
+    second = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW + timedelta(minutes=15),
+        session_id="prior-unknown-1",
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
     )
 
+    assert second.status == "canary_completed"
+    assert second.run_id == first.run_id
+    assert second.canary_phase == "outcome_unknown"
+    assert sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    ) == 1
+def test_distinct_session_can_submit_without_mutating_an_old_unknown_state(
+    tmp_path: Path,
+) -> None:
+    paths = _paths(tmp_path)
+    transport = FakeKisPaperQuoteTransport(submit_response_missing_order_id=True)
+    first = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW,
+        session_id="prior-unknown-1",
+        execute=True,
+        cancel_after_submit=True,
+        **paths,
+    )
+
+    assert first.canary_phase == "outcome_unknown"
+    prior_state = paths["state_root"] / f"{first.run_id}.json"
+    before = prior_state.read_bytes()
     transport.submit_response_missing_order_id = False
+    transport.asking_price_payload = _fresh_asking_price_payload()
+
     second = run_kis_paper_quote_session(
         environment=_paper_environment(),
         transport=transport,
         now=NOW + timedelta(minutes=15),
-        session_id="prior-unknown-2",
+        session_id="fresh-after-prior-unknown-2",
         execute=True,
         cancel_after_submit=True,
-        **_paths(tmp_path),
+        **paths,
     )
 
-    assert second.status == "recovery_required"
-    assert second.reason_code == "prior_submission_unresolved"
-    assert second.run_id == first.run_id
-    assert second.canary_phase == "outcome_unknown"
+    assert second.status == "canary_completed"
+    assert second.run_id != first.run_id
+    assert second.canary_phase == "cancelled"
     assert sum(
         request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
         for request in transport.requests
-    ) == 1
-    assert sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
-        for request in transport.requests
-    ) == asking_count_before
-    runtime = read_paper_canary_runtime(
-        _paths(tmp_path)["runtime_projection_path"],
-        now=NOW + timedelta(minutes=15),
-    )
-    assert runtime.status == "available"
-    assert runtime.snapshot is not None
-    assert runtime.snapshot.run_id == first.run_id
-    assert runtime.snapshot.status == "outcome_unknown"
-    assert runtime.snapshot.reconciliation_status == "unresolved"
-    assert runtime.snapshot.account_status == "available"
-    session_fact = read_paper_canary_session_fact_from_artifact_root(
-        _paths(tmp_path)["artifact_root"],
-        "prior-unknown-2",
-    )
-    assert session_fact.result_class == "recovery_required"
-    assert session_fact.run_id == first.run_id
-    assert session_fact.canary_phase == "outcome_unknown"
-    evidence = second.evidence_path.read_text(encoding="utf-8")
-    assert "ORD-123456789" not in evidence
-    assert "paper-app-secret" not in evidence
-    assert "12345678" not in evidence
+    ) == 2
+    assert prior_state.read_bytes() == before
 
 
-def test_prior_completion_evidence_remains_unresolved_for_the_next_session(
+def test_distinct_session_rejects_a_current_matching_open_order_without_submitting(
     tmp_path: Path,
 ) -> None:
-    transport = FakeKisPaperQuoteTransport(matching_ccnl_after_cancel=True)
+    paths = _paths(tmp_path)
+    transport = FakeKisPaperQuoteTransport(submit_response_missing_order_id=True)
     first = run_kis_paper_quote_session(
         environment=_paper_environment(),
         transport=transport,
         now=NOW,
-        session_id="prior-completion-1",
+        session_id="prior-unknown-with-open-order-1",
         execute=True,
         cancel_after_submit=True,
-        **_paths(tmp_path),
+        **paths,
     )
     assert first.canary_phase == "outcome_unknown"
+    transport.submit_response_missing_order_id = False
+    transport.matching_open_order = True
+    transport.asking_price_payload = _fresh_asking_price_payload()
+
+    outcome = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW + timedelta(minutes=15),
+        session_id="current-open-order-after-prior-2",
+        execute=True,
+        cancel_after_submit=True,
+        **paths,
+    )
+
+    assert outcome.status == "canary_completed"
+    assert outcome.run_id != first.run_id
+    assert outcome.reason_code == "matching_open_order"
+    assert outcome.canary_phase == "outcome_unknown"
     assert sum(
         request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
         for request in transport.requests
     ) == 1
-    asking_count_before = sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
-        for request in transport.requests
-    )
-
-    second = run_kis_paper_quote_session(
-        environment=_paper_environment(),
-        transport=transport,
-        now=NOW + timedelta(minutes=15),
-        session_id="prior-completion-2",
-        execute=True,
-        cancel_after_submit=True,
-        **_paths(tmp_path),
-    )
-
-    assert second.status == "recovery_required"
-    assert second.reason_code == "prior_submission_unresolved"
-    assert second.run_id == first.run_id
-    assert second.canary_phase == "outcome_unknown"
-    assert sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
-        for request in transport.requests
-    ) == 1
-    assert sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
-        for request in transport.requests
-    ) == asking_count_before
 
 
-def test_prior_cancel_transport_unknown_never_starts_a_new_quote_or_order(
-    tmp_path: Path,
-) -> None:
-    transport = FakeKisPaperQuoteTransport(fail_cancel=True)
-    first = run_kis_paper_quote_session(
-        environment=_paper_environment(),
-        transport=transport,
-        now=NOW,
-        session_id="prior-cancel-unknown-1",
-        execute=True,
-        cancel_after_submit=True,
-        **_paths(tmp_path),
-    )
-
-    assert first.canary_phase == "outcome_unknown"
-    assert first.canary_reason_code == "cancel_transport_unknown"
-    asking_count_before = sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
-        for request in transport.requests
-    )
-    submit_count_before = sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
-        for request in transport.requests
-    )
-
-    second = run_kis_paper_quote_session(
-        environment=_paper_environment(),
-        transport=transport,
-        now=NOW + timedelta(minutes=15),
-        session_id="prior-cancel-unknown-2",
-        execute=True,
-        cancel_after_submit=True,
-        **_paths(tmp_path),
-    )
-
-    assert second.status == "recovery_required"
-    assert second.reason_code == "prior_submission_unresolved"
-    assert second.run_id == first.run_id
-    assert second.canary_phase == "outcome_unknown"
-    assert sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
-        for request in transport.requests
-    ) == asking_count_before
-    assert sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
-        for request in transport.requests
-    ) == submit_count_before
-
-
-def test_unreadable_prior_state_is_source_safe_and_never_starts_a_fresh_session(
+def test_malformed_unrelated_state_is_source_safe_and_does_not_block_a_fresh_session(
     tmp_path: Path,
 ) -> None:
     raw_state_text = "paper-app-secret account 12345678 broker detail"
@@ -934,9 +887,12 @@ def test_unreadable_prior_state_is_source_safe_and_never_starts_a_fresh_session(
         **_paths(tmp_path),
     )
 
-    assert outcome.status == "recovery_required"
-    assert outcome.reason_code == "prior_state_unavailable"
-    assert transport.requests == []
+    assert outcome.status == "canary_completed"
+    assert outcome.canary_phase == "cancelled"
+    assert any(
+        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    )
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
     safe_output = str(outcome.safe_payload())
     for forbidden in (raw_state_text, "paper-app-secret", "12345678"):
@@ -1154,4 +1110,32 @@ def _paths(tmp_path: Path) -> dict[str, Path]:
         "emergency_state_path": tmp_path / "emergency.json",
         "artifact_root": tmp_path / "artifacts",
         "repository_root": tmp_path / "repo",
+    }
+
+
+def _matching_spy_open_order_payload() -> dict[str, str]:
+    return {
+        "odno": "ORD-123456789",
+        "pdno": "SPY",
+        "ovrs_excg_cd": "AMEX",
+        "tr_crcy_cd": "USD",
+        "sll_buy_dvsn_cd": "02",
+        "ft_ord_qty": "1",
+        "ft_ccld_qty": "0",
+        "nccs_qty": "1",
+        "ft_ord_unpr3": "500.25",
+    }
+
+
+def _fresh_asking_price_payload() -> dict[str, object]:
+    return {
+        "rt_cd": "0",
+        "output1": {
+            "last": "600.12",
+            "zdiv": "2",
+            "pbid1": "600.11",
+            "pask1": "600.13",
+            "dymd": "20260722",
+            "dhms": "234500",
+        },
     }

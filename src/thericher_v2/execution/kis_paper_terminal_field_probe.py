@@ -16,9 +16,10 @@ import re
 import uuid
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Literal
+from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 
@@ -38,6 +39,10 @@ from .kis_readonly import (
 
 DEFAULT_KIS_PAPER_TERMINAL_FIELD_PROBE_STATE_ROOT = Path("/app/private/canary")
 _RUN_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_-]{2,159}", re.ASCII)
+_LEGACY_CANARY_RUN_ID = re.compile(r"canary-(\d{8}T\d{12}Z)", re.ASCII)
+_EASTERN = ZoneInfo("America/New_York")
+_LEGACY_RUN_TIMESTAMP_SKEW = timedelta(minutes=1)
+_LEGACY_VALIDITY_MAXIMUM = timedelta(minutes=5)
 
 
 class KisPaperTerminalFieldProbeError(RuntimeError):
@@ -54,6 +59,9 @@ class KisPaperTerminalFieldProbeOutcome:
     status: Literal["observed", "not_observed", "unavailable"]
     reason_code: str
     field_observation: KisPaperTerminalFieldObservation | None = None
+    order_date_anchor: Literal[
+        "acknowledged_submission", "derived_created_at", "not_observed"
+    ] = "not_observed"
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -63,6 +71,14 @@ class KisPaperTerminalFieldProbeOutcome:
             raise ValueError("observed terminal field probe requires field observation")
         if self.status != "observed" and self.field_observation is not None:
             raise ValueError("unobserved terminal field probe cannot retain field observation")
+        if self.order_date_anchor not in {
+            "acknowledged_submission",
+            "derived_created_at",
+            "not_observed",
+        }:
+            raise ValueError("terminal field probe order date anchor is invalid")
+        if self.field_observation is not None and self.order_date_anchor == "not_observed":
+            raise ValueError("observed terminal field probe needs a date anchor")
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
 
     def safe_payload(self) -> dict[str, object]:
@@ -76,11 +92,11 @@ class KisPaperTerminalFieldProbeOutcome:
             "reason_code": self.reason_code,
             "paper_only": True,
             "submit_capability": False,
-            "order_date_scope": (
-                "acknowledged_submission_et_day"
-                if self.field_observation is not None
-                else "not_observed"
-            ),
+            "order_date_scope": {
+                "acknowledged_submission": "acknowledged_submission_et_day",
+                "derived_created_at": "derived_created_at_et_day",
+                "not_observed": "not_observed",
+            }[self.order_date_anchor],
             "terminal_state_support": "unqualified",
             "pnl_status": "not_observed",
         }
@@ -183,10 +199,8 @@ def _probe_state(
             status="unavailable",
             reason_code="state_run_mismatch",
         )
-    if (
-        state.intent.client_order_id != f"canary-{requested_run_id}"
-        or state.intent.decision_id != requested_run_id
-    ):
+    identity_kind = _state_identity_kind(state, requested_run_id=requested_run_id)
+    if identity_kind is None:
         return KisPaperTerminalFieldProbeOutcome(
             run_ref=run_ref,
             state_phase=None,
@@ -221,14 +235,29 @@ def _probe_state(
             status="not_observed",
             reason_code="broker_order_id_missing",
         )
-    if state.submitted_at is None:
-        return KisPaperTerminalFieldProbeOutcome(
-            run_ref=run_ref,
-            state_phase=state.phase,
-            observed_at=observed_at,
-            status="not_observed",
-            reason_code="submission_time_missing",
-        )
+    order_at = state.submitted_at
+    order_date_anchor: Literal[
+        "acknowledged_submission", "derived_created_at", "not_observed"
+    ] = "acknowledged_submission"
+    if order_at is None:
+        if identity_kind != "legacy":
+            return KisPaperTerminalFieldProbeOutcome(
+                run_ref=run_ref,
+                state_phase=state.phase,
+                observed_at=observed_at,
+                status="not_observed",
+                reason_code="submission_time_missing",
+            )
+        order_at = _legacy_created_at_date_anchor(state, requested_run_id=requested_run_id)
+        if order_at is None:
+            return KisPaperTerminalFieldProbeOutcome(
+                run_ref=run_ref,
+                state_phase=state.phase,
+                observed_at=observed_at,
+                status="not_observed",
+                reason_code="legacy_order_date_unqualified",
+            )
+        order_date_anchor = "derived_created_at"
     if not execute:
         return KisPaperTerminalFieldProbeOutcome(
             run_ref=run_ref,
@@ -236,6 +265,7 @@ def _probe_state(
             observed_at=observed_at,
             status="not_observed",
             reason_code="preview",
+            order_date_anchor=order_date_anchor,
         )
     try:
         client = KisPaperReadOnlyClient(
@@ -244,7 +274,7 @@ def _probe_state(
         )
         field_observation = client.inspect_order_history_terminal_fields(
             state.broker_order_id,
-            order_at=state.submitted_at,
+            order_at=order_at,
         )
     except KisPaperReadOnlyError:
         return KisPaperTerminalFieldProbeOutcome(
@@ -253,15 +283,71 @@ def _probe_state(
             observed_at=observed_at,
             status="unavailable",
             reason_code="read_only_unavailable",
+            order_date_anchor=order_date_anchor,
         )
     return KisPaperTerminalFieldProbeOutcome(
         run_ref=run_ref,
         state_phase=state.phase,
         observed_at=observed_at,
         status="observed",
-        reason_code="history_observed",
+        reason_code=(
+            "history_observed_derived_date"
+            if order_date_anchor == "derived_created_at"
+            else "history_observed"
+        ),
         field_observation=field_observation,
+        order_date_anchor=order_date_anchor,
     )
+
+
+def _state_identity_kind(
+    state: KisPaperCanaryState,
+    *,
+    requested_run_id: str,
+) -> Literal["current", "legacy"] | None:
+    """Accept only the two deterministic state identity schemes this lane created."""
+
+    if state.intent.client_order_id != f"canary-{requested_run_id}":
+        return None
+    if state.intent.decision_id == requested_run_id:
+        return "current"
+    if state.intent.decision_id == f"decision-{requested_run_id}":
+        return "legacy"
+    return None
+
+
+def _legacy_created_at_date_anchor(
+    state: KisPaperCanaryState,
+    *,
+    requested_run_id: str,
+) -> datetime | None:
+    """Return a legacy history date anchor only when its full ET interval is proven."""
+
+    match = _LEGACY_CANARY_RUN_ID.fullmatch(requested_run_id)
+    if match is None:
+        return None
+    try:
+        run_timestamp = datetime.strptime(match.group(1), "%Y%m%dT%H%M%S%fZ").replace(
+            tzinfo=UTC
+        )
+    except ValueError:
+        return None
+    created_at = state.intent.created_at
+    valid_until = state.intent.valid_until
+    if abs(created_at - run_timestamp) > _LEGACY_RUN_TIMESTAMP_SKEW:
+        return None
+    validity = valid_until - created_at
+    if not timedelta(0) < validity <= _LEGACY_VALIDITY_MAXIMUM:
+        return None
+    if len(
+        {
+            run_timestamp.astimezone(_EASTERN).date(),
+            created_at.astimezone(_EASTERN).date(),
+            valid_until.astimezone(_EASTERN).date(),
+        }
+    ) != 1:
+        return None
+    return created_at
 
 
 def _write_probe_evidence(

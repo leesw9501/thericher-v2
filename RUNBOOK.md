@@ -1633,12 +1633,17 @@ and contains only opaque references, identity/pagination categories, and field
 presence. It never writes a broker identifier, value, account fact, status
 code, payload, terminal lifecycle, or PnL. A missing or ambiguous exact row is
 a scoped source-contract result, not a reason to stop Paper sessions,
-collection, or research. A legacy state without that durable submission time
-returns `submission_time_missing` without reading credentials or calling KIS.
-Before any history request, the probe requires the persisted run, client-order,
-and decision identifiers to agree with the requested receipt identity. A
-missing state or identity mismatch is categorical unavailable evidence, never
-proof that an order was not submitted.
+collection, or research. Before any history request, the probe requires the
+persisted run, client-order, and decision identifiers to agree with the
+requested receipt identity. The one original legacy decision form may use a
+derived `created_at` ET day only when its run timestamp, one-minute skew,
+five-minute-or-less validity interval, and full ET date agree; its safe result
+is separately labeled `history_observed_derived_date` and
+`derived_created_at_et_day`. It never treats an absent or ambiguous derived-date
+row as an order, cancellation, fill, or PnL conclusion. A missing state,
+identity mismatch, or unqualified timestamp-free legacy state is categorical
+evidence with no credential or network access, never proof that an order was
+not submitted.
 
 For a daily SPY session, the existing session process invokes the same probe
 only after it has checked the receipt-derived run identity and completed the

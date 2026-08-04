@@ -32,10 +32,8 @@ from .kis_paper_canary import (
     KisPaperCanaryClient,
     KisPaperCanaryError,
     KisPaperCanaryOutcome,
-    KisPaperCanaryStateStore,
     UrllibKisPaperCanaryTransport,
     exclusive_kis_paper_canary_state_lock,
-    recover_kis_paper_canary_pending_run,
     run_kis_paper_canary,
 )
 from .kis_paper_quote import (
@@ -98,11 +96,6 @@ _SESSION_REASONS = frozenset(
         "prior_submission_unresolved",
     }
 )
-_PENDING_PRIOR_CANARY_PHASES = frozenset(
-    {"submission_started", "submitted", "outcome_unknown", "cancel_started"}
-)
-
-
 @dataclass(frozen=True)
 class KisPaperCanarySessionOutcome:
     """Credential-free result of one scheduled virtual-paper session attempt."""
@@ -262,49 +255,6 @@ def run_kis_paper_quote_session(
                 runtime_run_id=resolved_session_id,
             )
         try:
-            prior_outcome = _recover_prior_matching_session_canary(
-                state_root=state_root,
-                current_run_id=run_id,
-                environment=environment,
-                client=client,
-                transport=transport,
-                runtime_projection_path=runtime_projection_path,
-                paper_account_snapshot_path=paper_account_snapshot_path,
-                emergency_state_path=emergency_state_path,
-                artifact_root=artifact_root,
-                repository_root=repository_root,
-                now=now,
-                clock=clock,
-                execution_control_path=execution_control_path,
-            )
-        except (KisPaperCanaryError, OSError, ValueError):
-            return _record_session_outcome(
-                session_id=resolved_session_id,
-                status="recovery_required",
-                reason_code="prior_state_unavailable",
-                observed_at=observed_at,
-                artifact_root=artifact_root,
-                repository_root=repository_root,
-                runtime_projection_path=runtime_projection_path,
-                emergency_state_path=emergency_state_path,
-                runtime_run_id=resolved_session_id,
-            )
-        if prior_outcome is not None:
-            return _record_session_outcome(
-                session_id=resolved_session_id,
-                status="recovery_required",
-                reason_code="prior_submission_unresolved",
-                observed_at=observed_at,
-                artifact_root=artifact_root,
-                repository_root=repository_root,
-                run_id=prior_outcome.run_id,
-                canary_phase=prior_outcome.phase,
-                canary_reason_code=prior_outcome.reason_code,
-                submit_upstream_code=prior_outcome.submit_upstream_code,
-                reconciliation_status=prior_outcome.reconciliation.status,
-                reconciliation_reason_code=prior_outcome.reconciliation.reason_code,
-            )
-        try:
             limit_input = client.fetch_spy_limit_input(observed_at=observed_at)
             decision_at = _session_now(now=now, clock=clock)
             if (session_reason := _session_due_reason(decision_at)) is not None:
@@ -382,71 +332,6 @@ def run_kis_paper_quote_session(
             artifact_root=artifact_root,
             repository_root=repository_root,
         )
-
-
-def _recover_prior_matching_session_canary(
-    *,
-    state_root: Path,
-    current_run_id: str,
-    environment: Mapping[str, str],
-    client: KisPaperCanaryClient,
-    transport: KisHttpTransport | None,
-    runtime_projection_path: Path,
-    paper_account_snapshot_path: Path,
-    emergency_state_path: Path,
-    artifact_root: Path,
-    repository_root: Path,
-    now: datetime | None,
-    clock: Callable[[], datetime] | None,
-    execution_control_path: Path,
-) -> KisPaperCanaryOutcome | None:
-    """Recover only a prior unresolved SPY one-share canary before a fresh one.
-
-    The scan is deliberately limited to direct files in the shared canary root
-    and the exact order scope. A remaining ambiguity defers only this new
-    canary attempt; it does not impose a global Paper-execution hold.
-    """
-
-    if not state_root.exists():
-        return None
-    if not state_root.is_dir():
-        raise KisPaperCanaryError("recovery_state_missing")
-    root = state_root.resolve()
-    candidates = tuple(sorted(state_root.glob("canary-*.json"), key=lambda path: path.name))
-    for state_path in candidates:
-        if state_path.is_symlink() or not state_path.is_file():
-            raise KisPaperCanaryError("state_invalid")
-        if not state_path.resolve().is_relative_to(root):
-            raise KisPaperCanaryError("state_invalid")
-        state = KisPaperCanaryStateStore(state_path).read()
-        if state is None or state.intent.run_id == current_run_id:
-            continue
-        if (
-            state.phase not in _PENDING_PRIOR_CANARY_PHASES
-            or state.intent.symbol != "SPY"
-            or state.intent.exchange != KIS_PAPER_US_SPY_ORDER_EXCHANGE
-            or state.intent.side != "buy"
-            or state.intent.quantity != Decimal("1")
-        ):
-            continue
-        recovered = recover_kis_paper_canary_pending_run(
-            run_id=state.intent.run_id,
-            environment=environment,
-            state_path=state_path,
-            runtime_projection_path=runtime_projection_path,
-            paper_account_snapshot_path=paper_account_snapshot_path,
-            emergency_state_path=emergency_state_path,
-            artifact_root=artifact_root,
-            repository_root=repository_root,
-            transport=transport,
-            client=client,
-            now=now,
-            clock=clock,
-            execution_control_path=execution_control_path,
-        )
-        if recovered.phase in _PENDING_PRIOR_CANARY_PHASES:
-            return recovered
-    return None
 
 
 def _session_now(
