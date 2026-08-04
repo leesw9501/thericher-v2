@@ -66,14 +66,15 @@ exact receipt. For `prior_submission_unresolved`, the prior direct-canary
 runtime remains `outcome_unknown`/`unresolved`; it is not overwritten by a
 generic session runtime and still requires direct lifecycle reattachment.
 
-The 23:15 D1 stability observer and 00:31 intraday-head workers also remain
+The 23:15 D1 stability observer and retimed intraday-head worker also remain
 task-owned with `IgnoreNew` concurrency. The D1 observer completed its first
 23:15 KST receipt as `stable`: one `dailyprice` GET, no retry or foreground
 wait, and an independently verified 15--90-minute snapshot comparison. It is
 observational only, with `provider_finality: not_observed`, and cannot qualify
-an Engine or Paper consumer. The 00:31 worker remains preflight-only.
+an Engine or Paper consumer. The next intraday-head collection is task-owned at
+00:29 KST on 2026-08-06.
 
-On its next successful collection, the existing 00:31 intraday-head worker
+On its next successful collection, the existing retimed intraday-head worker
 also dispatches the already implemented QQQ 90-minute observed/provisional
 baseline before slower observers can exhaust its two-minute freshness budget.
 It uses the existing local-paper replay, virtual-only receipt canary, and
@@ -94,7 +95,7 @@ execution tests passed.
   historical quarantine remains evidence only. Its 2026-08-05 02:31 KST
   collection exited zero, then its downstream QQQ session could not bind an
   exact ID, producing scoped recovery `20` with no broker action. Do not infer
-  its downstream stage or manually rerun it. The 04:31 KST task's terminal
+  its downstream stage or manually rerun it. The former 04:31 KST task's terminal
   receipt is separately `recovery: collection_exit_nonzero`: its fresh token
   start followed the 04:30 SPY-prefix collector inside the existing
   cross-process five-minute token-start guard. Its downstream QQQ/Paper stages
@@ -104,6 +105,18 @@ execution tests passed.
   projector reattaches that pointer only when its exact non-link receipt hash,
   run identity, observed timestamp, and terminal category agree; it makes no
   KIS, Docker, network, or credential call and never selects a latest artifact.
+- A metadata-only QQQ row-key inspection then established that the successful
+  pages covered 09:32--11:31, 11:32--13:31, and 15:20--15:59 ET, while the
+  missing mid-session range was caused by the 04:31 guard collision. After
+  Claude returned `supported-with-limits`, Codex re-registered the same
+  existing single-action, four-run `IgnoreNew` task at 00:29, 02:28, 04:24,
+  and 06:20 KST. The 04:24 time leaves 5m30s before the prefix control and
+  six minutes before the prefix collector. The next task-owned run is the sole
+ coverage kill test: it must show 390 completed regular-session minutes
+ without guard/concurrency failure. DST/pre-market behavior remains unproven;
+ this is a reversible current-season repair, not an input promotion.
+  Focused schedule checks (18) and the full parallel authority suite
+  (2,571 passed, 23 skipped) passed after task registration.
 - New `session-capture` executions preserve an existing causal head snapshot
   when a later post-close candidate conflicts, and reject that candidate
   pending bounded reconciliation. They do not auto-prefer revised post-close
@@ -322,7 +335,7 @@ execution tests passed.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
-| Current-head duplicate recovery | Data | 02:31 KST returned downstream recovery `20`; 04:31 KST hit the existing five-minute fresh-token guard after the 04:30 prefix collector, so its `collection_exit_nonzero` downstream stages are `not_applicable`; existing worker owns 06:20 retry |
+| Current-head timing repair | Data | Same `IgnoreNew` task re-registered at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence and Claude `supported-with-limits`; next 00:29 task owns the 390-completed-offset kill test |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
@@ -365,11 +378,13 @@ ready.
   continuation shape: `tr_cont` `M`/`F` leads to `NEXT=1`, `PINC=1`, request
   `tr_cont=N`, and an oldest-bar-derived `KEYB`. The current four-page SPY
   prefix worker already performs that bounded capability probe, so no manual
-  rerun or collector rewrite is pending. The 04:31 KST token-start collision
-  does not justify a 04:36 retime: the established DST-sensitive 15:30 ET
-  contract requires an actual near-boundary source-time measurement before a
-  schedule change. Claude's source-safe challenge was
-  `supported-with-limits`; it did not override that rule.
+  rerun or collector rewrite is pending. The former 04:31 KST token-start
+  collision did not by itself justify a post-guard retime. The subsequent
+  metadata-only QQQ page-range measurement supplied the required
+  near-boundary evidence, so the same task was re-registered at 04:24 KST
+  alongside the earlier 00:29/02:28 windows. Claude returned
+  `supported-with-limits`; the next task-owned session must prove the 390
+  completed-offset result, and DST/pre-market behavior remains unproven.
 
 ## Verification And Git
 

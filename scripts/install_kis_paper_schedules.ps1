@@ -171,7 +171,7 @@ $schedules = @(
             "kis-paper-intraday-pair-observation",
             "kis-paper-intraday-head-receipt"
         )
-        At = @("00:31", "02:31", "04:31", "06:20")
+        At = @("00:29", "02:28", "04:24", "06:20")
         RecoverMissedRun = $true
         ExecutionLimitMinutes = 90
     },

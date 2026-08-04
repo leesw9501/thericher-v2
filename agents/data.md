@@ -77,6 +77,22 @@ undocumented timestamp seed.
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or
   non-contiguous cache conditions still end as a consumer-local no-intent.
+- **Current-head timing repair:** a metadata-only reattachment of the
+  2026-08-04 QQQ cache found retained regular-session page ranges
+  09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST
+  run was the token-guard collision, not a source-exhaustion result. After a
+  source-safe Claude review returned `supported-with-limits`, the same existing
+  Tuesday--Saturday task was re-registered, with no new action, service, image,
+  cache, or run count, at 00:29, 02:28, 04:24, and 06:20 KST. The 04:24 trigger
+  has a static 5m30s margin before the 04:29:30 prefix control and six minutes
+  before the 04:30 prefix collection. The next task-owned capture must
+  independently show all 390 completed regular-session offsets before this
+  becomes a coverage result; otherwise this timing hypothesis is rejected and
+ reassessed. DST/pre-market page behavior remains unproven and must be
+ rechecked before the next U.S. DST transition. The next owned run is
+ 2026-08-06 00:29 KST; do not manually invoke it.
+  The focused schedule checks (18) and the full parallel authority suite
+  (2,571 passed, 23 skipped) passed after registration.
 - **Daily D1 catch-up:** the 2026-08-05 07:00 KST task-owned worker completed
   `drained` with zero attempted/retained chunks and zero completed targets. Its
   source-safe receipt records `client_constructed: false`, so this exact
@@ -185,14 +201,15 @@ undocumented timestamp seed.
   the source, not a reason to rebuild the collector or manually rerun it.
   The source confirms continuation semantics only; it does not turn a
   one-page legacy receipt into a terminal-provider conclusion.
-- **15:30 timing remains measured, not guessed:** the observed 04:31 KST
-  intraday-head fresh-token collision with the preceding 04:30 prefix worker
-  remains scoped to that worker. A source-safe Claude challenge was
-  `supported-with-limits` for a hypothetical post-guard retime, but the
-  existing decision contract requires a real source-time measurement around
-  15:30 ET before changing the DST-sensitive 04:31 trigger or its exclusive
-  15:31 ET validity bound. No schedule changed; the existing worker owns its
-  retry and future exact measurement.
+- **Timing is now a bounded source hypothesis:** the measured 2026-08-04
+  row-key geometry, completed-bar rule, and retained five-minute token guard
+  support the existing worker's 04:24 KST earlier trigger rather than a
+  speculative post-guard delay. It preserves a six-minute static margin before
+  the 04:30 prefix collection and overlaps the adjacent QQQ page windows. The
+  next task-owned session is the decisive source-time kill test; it must retain
+  390 completed regular-session offsets without a guard/concurrency failure.
+  The task remains one `IgnoreNew` owner with four runs and no manual rerun.
+  This summer-session evidence does not establish DST or pre-market behavior.
 - **Pair/QQQ observers:** the daily pair-forward cache is `cache_current` for
   its own contract; the metadata-only QQQ readiness observer has no qualified
   future-window record. Neither condition becomes a general Data or Research

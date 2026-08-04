@@ -118,7 +118,7 @@ def test_installer_adds_two_new_kst_tasks_without_changing_head_schedule() -> No
         1
     ].split("    },", maxsplit=1)[0]
 
-    assert 'At = @("00:31", "02:31", "04:31", "06:20")' in head
+    assert 'At = @("00:29", "02:28", "04:24", "06:20")' in head
     assert 'Runner = "run_kis_paper_intraday_head_schedule.ps1"' in head
     assert 'Profile = "kis-spy-paginated-prefix-capability"' in negative
     assert 'Service = "kis-spy-paginated-prefix-observer"' in negative

@@ -15,7 +15,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | --- | --- | --- | --- |
 | Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; the 07:18 static reattestation kept one `IgnoreNew`, zero-restart action and passed 150 offline route/isolation tests; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
-| Current-head recovery | Data | Existing isolated cache/task | 02:31 KST produced scoped downstream recovery `20`; 04:31 KST fresh-token start followed the 04:30 prefix collector inside the five-minute guard, and the task-owned 06:20 retry also ended `recovery` with no prospective session ID; head coverage remains below one complete regular session |
+| Current-head recovery | Data | Existing isolated cache/task | Source-safe QQQ range reattachment isolated the 04:31 KST guard collision; the same four-run task was retimed to 00:29/02:28/04:24/06:20 KST with one action and `IgnoreNew`. The next 00:29 KST worker owns the 390-completed-offset kill test |
 | Daily D1 catch-up | Data | Existing 07:00 KST worker | 2026-08-05 task completed `drained`: zero chunks/targets and no client constructed; exact cursor state only, not a provider-wide coverage conclusion |
 | Token cadence calibration | Data | One token-only Paper capability probe | Completed `unavailable`: first Paper auth succeeded, but the fresh-client second auth was `auth_rejected` after 30.12 monotonic seconds; retain the default five-minute guard and do not repeat this exact hypothesis without a changed provider fact |
 | SPY prefix capability | Data | Rebuilt `thericher-kis-paper-spy-prefix-*` images/tasks | First exact receipt is incomplete: clean control, one accepted page, invalid seam, no next cursor; its legacy terminal signal is `not_recorded_legacy`, and the existing worker owns the next attempt |
@@ -47,7 +47,7 @@ independently classifies this as a documented scope limit, not a required
 pre-23:35 change; delayed visibility after a prior distinct unknown remains
 the narrowest future recovery evidence gap.
 
-The 00:31 worker now reattaches the already tested QQQ 90-minute
+The retimed intraday-head worker now reattaches the already tested QQQ 90-minute
 observed/provisional baseline immediately after a successful collection, then
 validates its exact session offline before its slower Data observations. It
 adds no task or broker route and reuses the virtual-only receipt canary. A
@@ -214,11 +214,14 @@ The official KIS minute example independently reattests the existing typed
 continuation implementation: `tr_cont` `M`/`F` leads to `NEXT=1`, `PINC=1`,
 request `tr_cont=N`, and an oldest-bar-derived `KEYB`. The current four-page
 SPY prefix worker is already the bounded exact capability probe, so no duplicate
-runner or collector rewrite is dispatched. The observed 04:31 KST token-start
-collision remains worker-local. Although a source-safe Claude challenge was
-`supported-with-limits` for a theoretical post-guard retime, the existing
-15:30 ET measurement requirement and exclusive 15:31 ET validity rule control:
-no schedule changes until task-owned source-time evidence exists.
+runner or collector rewrite is dispatched. Metadata-only QQQ reattachment now
+supplies the required summer source-time geometry: the existing head task was
+retimed to 00:29/02:28/04:24/06:20 KST, keeping four runs, one action,
+`IgnoreNew`, and a six-minute static margin before the 04:30 prefix
+collection. Claude's source-safe review was `supported-with-limits`; the next
+task-owned session must show 390 completed offsets and no guard/concurrency
+failure. DST/pre-market behavior stays explicitly unproven, so this is a
+reversible current-season timing repair, not a provider-wide conclusion.
 
 For the scoped token-start collision, retain the current five-minute guard for
 every ordinary worker. The one calibration probe must atomically reserve that

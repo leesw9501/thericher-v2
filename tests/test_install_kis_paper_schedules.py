@@ -178,7 +178,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert 'At = "22:15"' in source
     assert 'At = "23:15"' in source
     assert 'At = "23:50"' in source
-    assert 'At = @("00:31", "02:31", "04:31", "06:20")' in source
+    assert 'At = @("00:29", "02:28", "04:24", "06:20")' in source
     assert 'At = "07:00"' in source
     assert 'At = "06:40"' in source
     assert 'At = "06:55"' in source
@@ -221,10 +221,10 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
 
 
 def test_intraday_head_kst_days_map_to_prior_eastern_weekdays() -> None:
-    head_times = ("00:31", "02:31", "04:31", "06:20")
+    head_times = ("00:29", "02:28", "04:24", "06:20")
     cases = (
-        (date(2026, 1, 6), ("10:31", "12:31", "14:31", "16:20")),
-        (date(2026, 7, 7), ("11:31", "13:31", "15:31", "17:20")),
+        (date(2026, 1, 6), ("10:29", "12:28", "14:24", "16:20")),
+        (date(2026, 7, 7), ("11:29", "13:28", "15:24", "17:20")),
     )
 
     for first_tuesday, expected_eastern_times in cases:
@@ -244,6 +244,16 @@ def test_intraday_head_kst_days_map_to_prior_eastern_weekdays() -> None:
             assert tuple(value.strftime("%H:%M") for value in eastern_times) == (
                 expected_eastern_times
             )
+
+
+def test_intraday_head_trigger_leaves_static_margin_before_prefix_workers() -> None:
+    kst_day = date(2026, 8, 5)
+    head = datetime.combine(kst_day, time.fromisoformat("04:24"))
+    negative_control = datetime.combine(kst_day, time.fromisoformat("04:29:30"))
+    feasibility = datetime.combine(kst_day, time.fromisoformat("04:30"))
+
+    assert negative_control - head >= timedelta(minutes=5, seconds=30)
+    assert feasibility - head >= timedelta(minutes=6)
 
 
 def test_same_date_kst_schedules_map_to_same_eastern_weekdays() -> None:
