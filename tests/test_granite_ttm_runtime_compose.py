@@ -20,6 +20,18 @@ def test_granite_runtime_docker_target_keeps_torch_cuda_inherited_and_verified()
     assert "torch==" not in granite.lower()
 
 
+def test_cuda_and_granite_build_stages_reuse_a_buildkit_pip_cache() -> None:
+    dockerfile = Path("Dockerfile").read_text(encoding="utf-8")
+    stages = _dockerfile_stages(dockerfile)
+
+    assert dockerfile.startswith("# syntax=docker/dockerfile:1\n")
+    assert "--mount=type=cache,target=/root/.cache/pip" in stages["base"]
+    assert "--mount=type=cache,target=/root/.cache/pip" in stages["research"]
+    assert "--mount=type=cache,target=/root/.cache/pip" in stages["granite-ttm-runtime"]
+    assert "--no-cache-dir" not in stages["research"]
+    assert "--no-cache-dir" not in stages["granite-ttm-runtime"]
+
+
 def test_granite_runtime_lock_is_exact_and_limits_additions_to_runtime_dependencies() -> None:
     lock = Path("requirements/granite-ttm-runtime.lock").read_text(encoding="utf-8")
     requirements = [line for line in lock.splitlines() if line and not line.startswith("#")]
