@@ -2168,15 +2168,17 @@ docker compose config --quiet
 ```
 
 The focused serial group covers the changed production and contract paths. The
-parallel command is the full-suite authority: it must exit zero, use a clean
-shared `C:\trpy\runs` root, and retain the expected test/skip cardinality.
-Both ordinary feedback and authority invocations use that same root, so a recent
-fast-lane run remains visible to the authority precondition. Authority mode
-prunes only helper-owned non-link roots older than 24 hours after checking the
-resolved parent and active child; a recent root, mismatch, nonzero exit, or
-retained current-run temp root fails verification. Legacy direct
-`C:\trpy\r-*` roots are preserved outside the active root and are never moved
-or deleted by the helper.
+parallel command is the full-suite authority: it must exit zero, use a fresh
+isolated child beneath `C:\trpy\runs`, and retain the expected test/skip
+cardinality. Fast feedback and authority runs share a cross-session `Global`
+mutex. Authority mode fail-closes for a held helper lease, active matching
+Python worker, mutex conflict, unreadable active-process probe, mismatch,
+nonzero exit, or retained current-run temp root. An inactive retained sibling
+root is diagnostic residue, not a blocker for a new isolated run; the helper
+does not recursively remove it. It verifies the resolved parent, active child,
+and every current-run descendant before cleanup. Legacy direct
+`C:\trpy\r-*` roots remain outside the active root and are never moved or
+deleted by the helper.
 
 ### Fast Local Test Feedback
 

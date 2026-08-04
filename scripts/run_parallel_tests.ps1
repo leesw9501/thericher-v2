@@ -11,26 +11,148 @@ $ErrorActionPreference = "Stop"
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $tempParent = "C:\trpy"
 $tempRoot = Join-Path $tempParent "runs"
+$mutexName = "Global\TheRicherV2ParallelPytest"
+$leaseSuffix = ".thericher-pytest-lease"
+
+function Test-ReparsePoint {
+    param([System.IO.FileSystemInfo]$Entry)
+
+    return [bool](
+        $Entry.LinkType -or
+        ($Entry.Attributes -band [IO.FileAttributes]::ReparsePoint)
+    )
+}
+
+function Assert-ManagedTempDirectory {
+    param(
+        [string]$Path,
+        [string]$ExpectedParent,
+        [string]$Label,
+        [switch]$RequireEmpty
+    )
+
+    $entry = Get-Item -LiteralPath $Path -Force -ErrorAction Stop
+    $resolved = [IO.Path]::GetFullPath($entry.FullName).TrimEnd([char[]]@('\', '/'))
+    if (
+        -not $entry.PSIsContainer -or
+        (Test-ReparsePoint $entry) -or
+        -not [string]::Equals(
+            [IO.Path]::GetDirectoryName($resolved),
+            $ExpectedParent,
+            [StringComparison]::OrdinalIgnoreCase
+        )
+    ) {
+        throw "Refusing to use an unmanaged parallel pytest ${Label}: $Path"
+    }
+    if ($RequireEmpty -and @(Get-ChildItem -LiteralPath $resolved -Force).Count -ne 0) {
+        throw "Parallel pytest temp child is not empty: $resolved"
+    }
+    return $resolved
+}
+
+function Assert-SafeTempTreeForRemoval {
+    param(
+        [string]$Path,
+        [string]$ExpectedParent,
+        [string]$Label
+    )
+
+    $resolved = Assert-ManagedTempDirectory `
+        -Path $Path `
+        -ExpectedParent $ExpectedParent `
+        -Label $Label
+    $linkedEntries = @(
+        Get-ChildItem -LiteralPath $resolved -Force -Recurse -ErrorAction Stop |
+            Where-Object { Test-ReparsePoint $_ }
+    )
+    if ($linkedEntries.Count -gt 0) {
+        throw "Refusing to remove a linked parallel pytest temp tree: $resolved"
+    }
+    return $resolved
+}
+
+function Assert-NoActiveParallelPytestRun {
+    param([string]$ResolvedTempRoot)
+
+    $candidateRoots = @(
+        Get-ChildItem -LiteralPath $ResolvedTempRoot -Directory -Force -Filter "r-*" -ErrorAction Stop
+    )
+    $leaseFiles = @(
+        Get-ChildItem `
+            -LiteralPath $ResolvedTempRoot `
+            -File `
+            -Force `
+            -Filter ".r-*$leaseSuffix" `
+            -ErrorAction Stop
+    )
+    foreach ($lease in $leaseFiles) {
+        $resolvedLease = [IO.Path]::GetFullPath($lease.FullName)
+        if (
+            (Test-ReparsePoint $lease) -or
+            -not [string]::Equals(
+                [IO.Path]::GetDirectoryName($resolvedLease),
+                $ResolvedTempRoot,
+                [StringComparison]::OrdinalIgnoreCase
+            )
+        ) {
+            throw "Refusing to inspect an unmanaged parallel pytest lease: $($lease.FullName)"
+        }
+        $leaseHandle = $null
+        try {
+            $leaseHandle = [IO.File]::Open(
+                $resolvedLease,
+                [IO.FileMode]::Open,
+                [IO.FileAccess]::ReadWrite,
+                [IO.FileShare]::None
+            )
+        }
+        catch [IO.IOException] {
+            throw "Parallel pytest authority found an active helper lease: $($lease.Name)"
+        }
+        finally {
+            if ($null -ne $leaseHandle) {
+                $leaseHandle.Dispose()
+            }
+        }
+    }
+
+    try {
+        $pythonProcesses = @(
+            Get-CimInstance -ClassName Win32_Process -ErrorAction Stop |
+                Where-Object { $_.Name -match '^(python|pythonw|pytest)(\.exe)?$' }
+        )
+    }
+    catch {
+        throw "Parallel pytest authority cannot inspect active Python processes"
+    }
+    foreach ($candidate in $candidateRoots) {
+        $resolvedCandidate = Assert-ManagedTempDirectory `
+            -Path $candidate.FullName `
+            -ExpectedParent $ResolvedTempRoot `
+            -Label "temp child"
+        foreach ($process in $pythonProcesses) {
+            if ([string]::IsNullOrWhiteSpace([string]$process.CommandLine)) {
+                throw "Parallel pytest authority cannot inspect an active Python command line"
+            }
+            if ($process.CommandLine.IndexOf($resolvedCandidate, [StringComparison]::OrdinalIgnoreCase) -ge 0) {
+                throw "Parallel pytest authority found an active worker for: $resolvedCandidate"
+            }
+        }
+    }
+}
 
 New-Item -ItemType Directory -Force -Path $tempParent | Out-Null
 $tempParentEntry = Get-Item -LiteralPath $tempParent -Force -ErrorAction Stop
-$parentIsReparsePoint = [bool](
-    $tempParentEntry.Attributes -band [IO.FileAttributes]::ReparsePoint
-)
-if ($tempParentEntry.LinkType -or $parentIsReparsePoint) {
+if (Test-ReparsePoint $tempParentEntry) {
     throw "Refusing to use a linked parallel pytest temp parent: $tempParent"
 }
 $resolvedTempParent = [IO.Path]::GetFullPath($tempParent).TrimEnd([char[]]@('\', '/'))
 
 New-Item -ItemType Directory -Force -Path $tempRoot | Out-Null
 $tempRootEntry = Get-Item -LiteralPath $tempRoot -Force -ErrorAction Stop
-$rootIsReparsePoint = [bool](
-    $tempRootEntry.Attributes -band [IO.FileAttributes]::ReparsePoint
-)
 $resolvedTempRoot = [IO.Path]::GetFullPath($tempRoot).TrimEnd([char[]]@('\', '/'))
 if (
-    $tempRootEntry.LinkType -or
-    $rootIsReparsePoint -or
+    (Test-ReparsePoint $tempRootEntry) -or
     -not [string]::Equals(
         [IO.Path]::GetDirectoryName($resolvedTempRoot),
         $resolvedTempParent,
@@ -40,63 +162,85 @@ if (
     throw "Refusing to use an unmanaged parallel pytest temp root: $tempRoot"
 }
 
-$existingTempRoots = @(
-    Get-ChildItem -LiteralPath $tempRoot -Directory -Force -Filter "r-*" -ErrorAction Stop
-)
-if ($RequireCleanTempRoot) {
-    $staleTempRootCutoff = [DateTime]::UtcNow.AddHours(-24)
-    foreach ($candidate in $existingTempRoots) {
-        if ($candidate.LastWriteTimeUtc -ge $staleTempRootCutoff) {
-            continue
-        }
-        $resolvedCandidate = [IO.Path]::GetFullPath($candidate.FullName)
-        $isReparsePoint = [bool](
-            $candidate.Attributes -band [IO.FileAttributes]::ReparsePoint
-        )
-        if (
-            $candidate.LinkType -or
-            $isReparsePoint -or
-            $candidate.Name -notlike "r-*" -or
-            -not [string]::Equals(
-                [IO.Path]::GetDirectoryName($resolvedCandidate),
-                $resolvedTempRoot,
-                [StringComparison]::OrdinalIgnoreCase
-            )
-        ) {
-            throw "Refusing to remove an unmanaged parallel pytest temp root: $($candidate.FullName)"
-        }
-        Remove-Item -LiteralPath $resolvedCandidate -Recurse -Force -ErrorAction Stop
-    }
-    $existingTempRoots = @(
-        Get-ChildItem -LiteralPath $tempRoot -Directory -Force -Filter "r-*" -ErrorAction Stop
-    )
-    if ($existingTempRoots.Count -gt 0) {
-        Write-Error "Parallel pytest requires a clean temp root; found $($existingTempRoots.Count) recent run root(s)."
-        exit 1
-    }
-}
-
-do {
-    $baseTemp = Join-Path $tempRoot ("r-" + [guid]::NewGuid().ToString("N").Substring(0, 8))
-} while (Test-Path -LiteralPath $baseTemp)
-
-Push-Location $repoRoot
 $exitCode = 1
+$baseTemp = $null
+$leasePath = $null
+$leaseHandle = $null
+$mutex = $null
+$mutexAcquired = $false
+$locationPushed = $false
 try {
+    $mutex = [System.Threading.Mutex]::new($false, $mutexName)
+    try {
+        $mutexAcquired = $mutex.WaitOne([TimeSpan]::Zero)
+    }
+    catch [System.Threading.AbandonedMutexException] {
+        $mutexAcquired = $true
+    }
+    if (-not $mutexAcquired) {
+        throw "Parallel pytest helper is already active; authority verification will not wait"
+    }
+    if ($RequireCleanTempRoot) {
+        Assert-NoActiveParallelPytestRun -ResolvedTempRoot $resolvedTempRoot
+    }
+
+    do {
+        $baseTemp = Join-Path $resolvedTempRoot ("r-" + [guid]::NewGuid().ToString("N").Substring(0, 8))
+    } while (Test-Path -LiteralPath $baseTemp)
+    New-Item -ItemType Directory -Path $baseTemp -ErrorAction Stop | Out-Null
+    $baseTemp = Assert-ManagedTempDirectory `
+        -Path $baseTemp `
+        -ExpectedParent $resolvedTempRoot `
+        -Label "active temp child" `
+        -RequireEmpty
+    $leasePath = Join-Path $resolvedTempRoot ("." + (Split-Path -Leaf $baseTemp) + $leaseSuffix)
+    $leaseHandle = [IO.File]::Open(
+        $leasePath,
+        [IO.FileMode]::CreateNew,
+        [IO.FileAccess]::ReadWrite,
+        [IO.FileShare]::None
+    )
+
+    Push-Location $repoRoot
+    $locationPushed = $true
     # File-level distribution preserves most test-local fixture assumptions.
     & uv run --extra dev pytest -q -n $Workers --dist=loadfile --basetemp $baseTemp @PytestArgs
     $exitCode = $LASTEXITCODE
 }
 finally {
-    Pop-Location
-    if ($exitCode -eq 0 -and (Test-Path -LiteralPath $baseTemp)) {
+    if ($locationPushed) {
+        Pop-Location
+    }
+    if ($null -ne $leaseHandle) {
+        $leaseHandle.Dispose()
+    }
+    if ($exitCode -eq 0 -and $null -ne $baseTemp -and (Test-Path -LiteralPath $baseTemp)) {
         try {
-            Remove-Item -LiteralPath $baseTemp -Recurse -Force -ErrorAction Stop
+            $resolvedBaseTemp = Assert-SafeTempTreeForRemoval `
+                -Path $baseTemp `
+                -ExpectedParent $resolvedTempRoot `
+                -Label "active temp child"
+            Remove-Item -LiteralPath $resolvedBaseTemp -Recurse -Force -ErrorAction Stop
         }
         catch {
             Write-Warning "Parallel pytest passed but could not remove its temp path: $baseTemp"
             $exitCode = 1
         }
+    }
+    if ($null -ne $leasePath -and (Test-Path -LiteralPath $leasePath)) {
+        try {
+            Remove-Item -LiteralPath $leasePath -Force -ErrorAction Stop
+        }
+        catch {
+            Write-Warning "Parallel pytest could not remove its lease path: $leasePath"
+            $exitCode = 1
+        }
+    }
+    if ($mutexAcquired) {
+        $mutex.ReleaseMutex()
+    }
+    if ($null -ne $mutex) {
+        $mutex.Dispose()
     }
 }
 

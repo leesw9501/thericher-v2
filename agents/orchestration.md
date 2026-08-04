@@ -118,13 +118,17 @@ The Paper schedule installer now explicitly sets `RestartCount = 0` with
 single-run recovery contract on future reinstallation without touching the
 task that owns tonight's lifecycle evidence.
 
-The 2026-08-04 `-RequireCleanTempRoot` authority attempt was interrupted by an
-outer 180-second host deadline and retained its recent helper root by design;
-it is invalid verification evidence. Claude returned `unsupported` for manual
-cleanup. A distinct unique-root fast-feedback run passed 2,489 tests with 23
-skips in 205.69 seconds and cleaned its own root. Use a ten-minute outer
-deadline for future full helper runs, and let the existing clean-root policy
-fail closed until the retained authority root is eligible for its own cleanup.
+The parallel helper no longer lets an inactive retained sibling root create a
+24-hour verification hold. A `Global` mutex, exclusive per-run lease, and
+fail-closed active-Python probe protect the fresh isolated child; a held lease,
+active worker, mutex conflict, or unreadable probe still rejects authority.
+Claude's falsification review was `supported-with-limits`; it requires the
+global namespace, zero wait, no recursive deletion of historical siblings, and
+an explicit future cross-session orphan-worker kill test. The focused authority
+smoke and full run completed with the two old inactive roots still present;
+the latter passed 2,499 tests with 23 skips in 204.69 seconds and cleaned its
+own root. This is a test-throughput recovery only, not a change to data,
+research, execution, or live-risk authority.
 
 ## Review And Monitor Facts
 
