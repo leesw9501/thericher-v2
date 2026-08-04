@@ -103,8 +103,10 @@ re-review found no remaining output leak in the session projection.
 A source-only throughput review retired a duplicate QQQ availability observer:
 the existing runtime selector, 90/18/9 local-resample baseline, prospective
 session, and offline validator already carry the named current-cache contract.
-The next Data package must reuse that path and add only a demonstrated missing
-retention or decision-time fact, never another scheduler or generic receipt.
+The completed Data package reused that path: one source-safe local-retention
+attestation binds a ready runtime manifest to `decided_at` without adding a
+scheduler or generic receipt. Its result is not yet wired into Execution or a
+promotion claim.
 
 Claude returned `uncertain` on a proposed bare causal-availability receipt:
 the current catalog drops per-bar cache-acceptance time, so its selected bars

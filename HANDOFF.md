@@ -119,13 +119,13 @@ execution tests passed.
   sessions, enough only for a source-local non-promoting 5--90 minute preflight;
   decision-time availability and model/Paper eligibility remain false. Evidence:
   `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
-- The new offline QQQ local-retention helper binds a verified catalog to exact
-  index metadata and reports only a selected window's maximum
-  earliest-complete local cache-retention timestamp. It rejects source/lineage,
-  conflict, candidate-conflict, and incomplete-row mismatches, but retains
-  `decision_time_availability: not_observed` and
-  `provider_finality: not_observed`. It is not wired to Execution, Paper
-  eligibility, model training, GPU allocation, or PnL.
+- The offline QQQ local-retention helper binds a verified catalog to exact index
+  metadata. Its runtime-window projection binds one ready 90-bar input manifest
+  to a named `decided_at` and reports local availability only when the selected
+  bars were retained no later than that time. It rejects source/lineage,
+  conflict, candidate-conflict, and incomplete-row mismatches; provider
+  decision-time availability and finality remain `not_observed`. It is not yet
+  wired to Execution, Paper eligibility, model training, GPU allocation, or PnL.
 - A one-page, current-day-only KIS Paper IWM/AMS M1 capability probe was
   accepted. Query, client, and transport boundaries all prohibit previous-day
   and continuation use, and the probe discarded returned rows. This establishes
