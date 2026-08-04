@@ -15,7 +15,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | --- | --- | --- | --- |
 | Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
-| Current-head recovery | Data | Existing isolated cache/task | 00:31 KST returned deliberate downstream-recovery `20`; same worker owns 02:31 retry and hash-bound current pointer/receipt reattachment |
+| Current-head recovery | Data | Existing isolated cache/task | 02:31 KST collection exited zero; its QQQ no-intent session produced no broker action, while the terminal receipt narrowly classified missing downstream session identity as recovery `20`; same worker owns 04:31 retry |
 | SPY prefix capability | Data | `thericher-kis-paper-spy-prefix-*` cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
 | Norgate local capability | Data | NDU loopback and D: cache | Active client now resolves to the D: trial root; its 29/126-session tail is `input_unavailable`, while the 512-session fixed-ETF snapshot remains source-local with no PIT/model/GPU/Paper promotion |
