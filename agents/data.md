@@ -38,11 +38,14 @@ undocumented timestamp seed.
 ## Ready / Owned / Due
 
 - **Current-head recovery:** `thericher-kis-paper-intraday-head` owns the next
-  attempt at 2026-08-05 00:31 KST. The prior 06:20 KST result was the scoped
+  attempt at 2026-08-05 02:31 KST. The prior 06:20 KST result was the scoped
   `minute_duplicate_conflict` for retained QQQ/SPY head candidates. Offline
   diagnosis classifies the origin as `retained_cache`; the conflicting head is
-  already quarantined, so the next worker alone can confirm recovery. A repeat
-  is the kill test for a narrow collector repair; no pre-run code change is due.
+  already quarantined. Its 00:31 KST Task Scheduler result `20` is the runner's
+  deliberate downstream-recovery category, not a collection failure. The task
+  metadata cannot identify the exact downstream stage, so the next source-safe
+  terminal receipt alone selects recovery. A repeat of the original conflict is
+  still the kill test for a narrow collector repair; no manual rerun is due.
   At 21:40 KST, the task's `IgnoreNew` ownership was reattached and its
   current-source profile passed a network-disabled exact-entrypoint check. The
   related focused Data/schedule group passed 76 tests; this is preflight only,
