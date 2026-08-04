@@ -1427,3 +1427,5 @@ same-session causal misreading without adding a new gate.
   weekday-alignment attempt, so its existing Tuesday result watch remains a
   noncritical companion only. The installed Windows tasks remain the primary
   execution evidence; no duplicate monitor or fallback scheduler was created.
+  A direct official update attempt also timed out and post-check retained its
+  Tuesday--Saturday cadence; retry only through the app API when it recovers.
