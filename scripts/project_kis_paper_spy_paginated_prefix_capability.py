@@ -34,7 +34,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--session-date", type=_parse_session_date, required=True)
     parser.add_argument("--run-id")
     parser.add_argument("--artifact-root", type=Path, default=_default_artifact_root())
-    parser.add_argument("--repository-root", type=Path, default=_REPOSITORY_ROOT)
     return parser
 
 
@@ -43,7 +42,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         fact = read_spy_paginated_prefix_capability_fact_from_artifact_root(
             artifact_root=arguments.artifact_root,
-            repository_root=arguments.repository_root,
+            repository_root=_REPOSITORY_ROOT,
             session_date=arguments.session_date,
             run_id=arguments.run_id,
         )

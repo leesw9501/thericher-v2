@@ -581,8 +581,12 @@ def read_spy_paginated_prefix_capability_fact_from_artifact_root(
         relative_path=control_relative,
         error_message="SPY paginated prefix control receipt is unavailable",
     )
-    control = _load_negative_control(
-        artifact_root=root,
+    control = _parse_negative_control_payload(
+        payload=_decode_object(
+            control_bytes,
+            "SPY paginated prefix control receipt is invalid",
+        ),
+        artifact_path=root / control_relative,
         session_date=session_date,
         run_id=resolved_run_id,
     )
@@ -723,6 +727,21 @@ def read_spy_paginated_prefix_capability_fact_from_artifact_root(
         result_class = "measurement_incomplete_or_invalid"
     else:
         result_class = "no_capability_measurement"
+    if (
+        _read_existing_artifact_bytes(
+            root=root,
+            relative_path=control_relative,
+            error_message="SPY paginated prefix receipt changed during projection",
+        )
+        != control_bytes
+        or _read_existing_artifact_bytes(
+            root=root,
+            relative_path=observation_relative,
+            error_message="SPY paginated prefix receipt changed during projection",
+        )
+        != observation_bytes
+    ):
+        raise ValueError("SPY paginated prefix receipt changed during projection")
     return KisSpyPaginatedPrefixCapabilityFact(
         session_date=session_date,
         run_id=resolved_run_id,
@@ -1401,7 +1420,24 @@ def _load_negative_control(
         raise ValueError("SPY paginated prefix negative control is unavailable")
     if not path.resolve(strict=True).is_relative_to(artifact_root):
         raise ValueError("SPY paginated prefix negative control is invalid")
-    payload = _decode_object(path.read_bytes(), "SPY paginated prefix negative control is invalid")
+    return _parse_negative_control_payload(
+        payload=_decode_object(
+            path.read_bytes(),
+            "SPY paginated prefix negative control is invalid",
+        ),
+        artifact_path=path,
+        session_date=session_date,
+        run_id=run_id,
+    )
+
+
+def _parse_negative_control_payload(
+    *,
+    payload: Mapping[str, object],
+    artifact_path: Path,
+    session_date: date,
+    run_id: str,
+) -> KisSpyPaginatedPrefixControl:
     if (
         payload.get("schema_version") != SCHEMA_VERSION
         or payload.get("kind") != KIS_SPY_PAGINATED_PREFIX_CAPABILITY_KIND
@@ -1433,7 +1469,7 @@ def _load_negative_control(
         session_date=session_date,
         run_id=run_id,
         observed_at=observed,
-        artifact_path=path,
+        artifact_path=artifact_path,
     )
 
 

@@ -139,8 +139,6 @@ def test_projector_cli_reports_only_a_safe_exact_fact(
             run_id,
             "--artifact-root",
             str(artifact_root),
-            "--repository-root",
-            str(repository),
         ]
     ) == 0
 
@@ -149,6 +147,52 @@ def test_projector_cli_reports_only_a_safe_exact_fact(
     assert payload["result_class"] == "post_collection_completed_prefix"
     assert payload["decision_time_availability"] == "not_observed"
     assert "913.111" not in json.dumps(payload, sort_keys=True)
+
+
+def test_projector_rejects_a_changed_control_receipt_before_returning(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    repository, _cache_root, artifact_root, _run_id = _write_receipts(tmp_path)
+    original_reader = capability._read_existing_artifact_bytes
+    changed = False
+
+    def read_then_replace(**kwargs: object) -> bytes:
+        nonlocal changed
+        result = original_reader(**kwargs)  # type: ignore[arg-type]
+        relative_path = kwargs["relative_path"]
+        if not changed and isinstance(relative_path, Path) and "controls" in relative_path.parts:
+            changed = True
+            target = artifact_root / relative_path
+            payload = json.loads(target.read_text(encoding="ascii"))
+            payload["control"]["scope"] = "replaced"
+            target.write_text(json.dumps(payload, sort_keys=True), encoding="ascii")
+        return result
+
+    monkeypatch.setattr(capability, "_read_existing_artifact_bytes", read_then_replace)
+
+    with pytest.raises(ValueError, match="changed during projection"):
+        capability.read_spy_paginated_prefix_capability_fact_from_artifact_root(
+            artifact_root=artifact_root,
+            repository_root=repository,
+            session_date=_SESSION_DATE,
+        )
+
+
+def test_projector_cli_rejects_an_artifact_root_inside_the_real_checkout(
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    script = _load_script()
+
+    assert script.main(
+        [
+            "--session-date",
+            _SESSION_DATE.isoformat(),
+            "--artifact-root",
+            str(script._REPOSITORY_ROOT / "unsafe-projector-artifacts"),
+        ]
+    ) == 2
+
+    assert json.loads(capsys.readouterr().out) == {"status": "unavailable"}
 
 
 def test_projector_has_no_kis_or_execution_surface() -> None:
