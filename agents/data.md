@@ -74,9 +74,11 @@ arbitrary historical intraday reach.
   `D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=listener-recovery-20260804-r1-norgate-trial-daily-capability-r1` and
   `D:\market_data\us_equities\norgate_trial\local_d1_etf\snapshot=fresh-tail-20260804-r1-norgate-trial-raw-d1-r2` with receipt
   `D:\thericher-v2\model-artifacts\data\norgate-local-d1-capability-v1\fresh-tail-20260804-r1.json`.
-  A bounded scope assessment permits at most a target-free structural input
-  integrity check; it does not change any of those eligibility flags or create
-  a predictive/GPU package. Evidence:
+  Its target-free structural assessment now reattests the newest snapshot as
+  `integrity_attested` with 502 common sessions and 1,506 rows; the receipt
+  retains only hashes, counts, and categorical contract facts. It does not
+  change any eligibility flag or create a predictive/GPU package. Evidence:
+  `D:\thericher-v2\model-artifacts\data\norgate-fixed-etf-d1-structural-integrity-v1\assessment=7e8979cd3f047139c18252cc69f2841e748b45a00ccb5398a0f00d1076b80b02\assessment.json` and
   `D:\thericher-v2\model-artifacts\research\norgate-scope-readiness\scope-readiness-20260804-r1\assessment.json`.
 - **Free public augmentation:** no official, no-auth source found that jointly
   establishes PIT/delisting membership, corporate-action meaning, and daily

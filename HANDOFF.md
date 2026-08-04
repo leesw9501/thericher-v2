@@ -60,10 +60,12 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   dataset. Historical minute reach remains endpoint-limited.
 - Norgate NDU is running and its new aggregate capability receipt is
   `qualified_for_offline_research` only. The latest verified fixed-ETF D1
-  snapshot has 502 common sessions through its bounded fresh tail, but the
-  trial does not establish PIT, ranking, model,
-  GPU, PnL, or Paper eligibility. Its raw snapshot remains under
-  `D:\market_data`; use it only through its source-local contract.
+  snapshot has 502 common sessions and 1,506 rows through its bounded fresh
+  tail. Its source-safe structural receipt attests only the raw-file geometry
+  and manifest/hash contract, not eligibility. The trial does not establish
+  PIT, ranking, model, GPU, PnL, or Paper eligibility. Its raw snapshot remains under
+  `D:\market_data`; use it only through its source-local contract. Evidence:
+  `D:\thericher-v2\model-artifacts\data\norgate-fixed-etf-d1-structural-integrity-v1\assessment=7e8979cd3f047139c18252cc69f2841e748b45a00ccb5398a0f00d1076b80b02\assessment.json`.
 - An official free-source check found no single public panel that establishes
   point-in-time membership including delistings, corporate-action semantics,
   and daily OHLCV. SEC Market Structure and EDGAR can be bounded sidecars only,
@@ -83,6 +85,11 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   disclosed. It has no downloaded weights, execution, campaign, GPU, ensemble,
   Paper, or profitability consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos-t5-small-20260804-r1\source-retrieval.json`.
+- Moreira and Muir's volatility-managed exposure is independently retrieved as
+  a source-only sizing candidate. Its monthly realized-variance mechanism
+  needs a future frozen causal D1 baseline and qualified later evaluation
+  input; it has no campaign, GPU, PnL, or Paper consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\volatility-managed-exposure-20260804-r1\source-retrieval.json`.
 - Closed or non-reusable historical families include QQQ MTF consensus,
   first-30/final-30 momentum, MTF logistic, lower-tail quantile preflight,
   Tiingo rotation/sequence controls, and static broad-D1 benchmarks. A later

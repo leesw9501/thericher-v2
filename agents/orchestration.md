@@ -38,6 +38,9 @@ is now installed but has no runtime receipt. Its bounded comparison can show
 only whether two virtual-Paper prior-session rows matched; it cannot establish
 provider finality or qualify a consumer. This is a technical data fact, not an
 operator decision or a general Paper hold.
+The Norgate fixed-ETF D1 structural receipt now attests only its own raw-file
+geometry and hash contract; it does not change the causal-input bottleneck or
+open a Research campaign.
 
 ## Current Reversible Improvement
 

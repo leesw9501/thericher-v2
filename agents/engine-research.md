@@ -35,6 +35,12 @@ strongest kill test before target evaluation or GPU consideration.
   disclosed, so it is not a campaign, execution, GPU appointment, ensemble,
   Paper input, or profitability claim. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos-t5-small-20260804-r1\source-retrieval.json`.
+- Moreira and Muir's volatility-managed exposure is an independently retrieved
+  allocation-layer candidate, not a directional model. Its native monthly
+  realized-variance scaling needs a future frozen causal D1 baseline and later
+  qualified evaluation input, so it is `source_only_input_unavailable` with no
+  campaign, GPU, PnL, ensemble, or Paper consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\volatility-managed-exposure-20260804-r1\source-retrieval.json`.
 - The independently retrieved 52-week-high mechanism is distinct from the
   closed short-return rank, but its original 252-session/monthly/six-month
   contract needs a qualified point-in-time daily universe and more later data.
