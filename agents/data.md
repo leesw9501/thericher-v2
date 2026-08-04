@@ -46,8 +46,9 @@ undocumented timestamp seed.
   04:30 SPY-prefix collector inside the existing cross-process five-minute
   token-start guard. All downstream QQQ/Paper stages were `not_applicable`.
   This is not a model result or Paper outcome, and does not rewrite the earlier
-  receipt. The existing worker owns the next 06:20 KST attempt; do not manually
-  rerun it. The original scoped
+  receipt. The existing 06:20 KST attempt likewise ended as scoped `recovery`
+  with `prospective_session_id_unavailable`; its cache reattachment still has
+  zero complete regular sessions. Do not manually rerun it. The original scoped
   `minute_duplicate_conflict` remains the narrow collector-repair kill test;
   its historical quarantined retained head is unchanged. New
   `session-capture` attempts preserve an already retained causal head snapshot
@@ -76,6 +77,23 @@ undocumented timestamp seed.
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or
   non-contiguous cache conditions still end as a consumer-local no-intent.
+- **Token cadence calibration:** the 04:31 head collision is now a bounded
+  Data capability question, not a permanent five-minute rule. A ready,
+  token-only probe first checks and atomically claims the existing five-minute
+  shared token-start gate, then uses fresh in-memory Paper clients for exactly
+  two successful token POSTs. Only its own second POST may use the frozen
+  30-second hypothesis; the shared request gate still applies and monotonic
+  transport-start spacing must meet the hypothesis. A lost atomic claim makes
+  no network call. The probe reads no credential when the precheck is not due,
+  requests no market/account/order data, retains no token or response, writes
+  only a source-safe immutable external receipt, and changes neither schedule
+  nor default gate until a real result exists. At 06:25 KST, its first Paper
+  token authentication succeeded but the second fresh-client authentication
+  was categorically `auth_rejected` after 30.12 monotonic seconds. The result
+  is `unavailable`, not a lower-cadence calibration: retain the default
+  five-minute guard and do not repeat this exact 30-second hypothesis without
+  a changed provider fact. Evidence:
+  `D:\thericher-v2\model-artifacts\data\kis-paper-token-cadence-probe-v1\token-cadence-20260804T212620165702Z\summary.json`.
 - **Historical M1 cursor scope:** the existing QQQ/NAS and SPY/AMS backfill
   indices were reattached offline as `source_exhausted`, with no new market-data
   page or snapshot. Do not reopen either terminal cursor with an invented seed;

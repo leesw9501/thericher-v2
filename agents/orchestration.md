@@ -15,7 +15,8 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | --- | --- | --- | --- |
 | Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST, with exact-run recovery and current-open-order reconciliation |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
-| Current-head recovery | Data | Existing isolated cache/task | 02:31 KST produced scoped downstream recovery `20`; 04:31 KST fresh-token start followed the 04:30 prefix collector inside the five-minute guard, so `collection_exit_nonzero` left all QQQ/Paper stages `not_applicable`; same worker owns 06:20 retry |
+| Current-head recovery | Data | Existing isolated cache/task | 02:31 KST produced scoped downstream recovery `20`; 04:31 KST fresh-token start followed the 04:30 prefix collector inside the five-minute guard, and the task-owned 06:20 retry also ended `recovery` with no prospective session ID; head coverage remains below one complete regular session |
+| Token cadence calibration | Data | One token-only Paper capability probe | Completed `unavailable`: first Paper auth succeeded, but the fresh-client second auth was `auth_rejected` after 30.12 monotonic seconds; retain the default five-minute guard and do not repeat this exact hypothesis without a changed provider fact |
 | SPY prefix capability | Data | Rebuilt `thericher-kis-paper-spy-prefix-*` images/tasks | First exact receipt is incomplete: clean control, one accepted page, invalid seam, no next cursor; its legacy terminal signal is `not_recorded_legacy`, and the existing worker owns the next attempt |
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
 | Norgate local capability | Data | NDU loopback and D: cache | Active client now resolves to the D: trial root; its 29/126-session tail is `input_unavailable`, while the 512-session fixed-ETF snapshot remains source-local with no PIT/model/GPU/Paper promotion |
@@ -202,6 +203,19 @@ collision remains worker-local. Although a source-safe Claude challenge was
 `supported-with-limits` for a theoretical post-guard retime, the existing
 15:30 ET measurement requirement and exclusive 15:31 ET validity rule control:
 no schedule changes until task-owned source-time evidence exists.
+
+For the scoped token-start collision, retain the current five-minute guard for
+every ordinary worker. The one calibration probe must atomically reserve that
+guard before its first token POST, so a concurrent ordinary worker cannot slip
+between precheck and request. Only the same bounded probe may issue its second
+fresh-client token POST at the frozen 30-second hypothesis, and it accepts the
+result only when both authentications succeed with monotonic transport-start
+spacing at or above that interval. It emits no price, account, order, token,
+or response data and changes no worker cadence until a later bounded decision.
+The first real result rejected the 30-second hypothesis after one successful
+authentication and one categorical second-auth rejection, so the default guard
+remains intact. This is an exact provider-behavior fact, not a global KIS,
+Data, Engine, or Paper block.
 
 The Paper schedule installer now explicitly sets `RestartCount = 0` with
 `IgnoreNew`, matching the current registered canary task. This preserves the
