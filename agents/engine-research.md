@@ -134,10 +134,12 @@ strongest kill test before target evaluation or GPU consideration.
 - The independently retrieved SPY noise-area candidate is a distinct
   same-clock 14-prior-session volatility-band entry with a band-plus-session-
   VWAP trailing exit, rather than the closed fixed-clock momentum or the
-  VWAP-side-state rule. The current 21-session M1 geometry can meet its length
-  condition, but causal decision-time availability and candidate-specific
-  Execution parity are absent. It remains `source_only_input_unavailable`,
-  with no code, campaign, GPU, PnL, ensemble, or Paper consequence. Evidence:
+  VWAP-side-state rule. The current 21-session cache ends at 15:29 ET, so it
+  cannot reproduce the source-native prior 16:00 close gap adjustment or
+  regular-close flattening; causal decision-time availability and
+  candidate-specific Execution parity are also absent. It remains
+  `source_only_input_unavailable`, with no code, campaign, GPU, PnL, ensemble,
+  or Paper consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\spy-noise-area-vwap-trailing-20260804-r1\source-retrieval.json`.
 
 - The independently retrieved five-minute opening-range-breakout source is a
