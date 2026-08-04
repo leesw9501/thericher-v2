@@ -144,8 +144,12 @@ strongest kill test before target evaluation or GPU consideration.
   historical cache. It needs later, time-disjoint observations and a new
   contract before reopening.
 - Tiingo/Norgate static D1 controls and KIS broad-D1 momentum/representation
-  studies are source-local, non-promoting evidence. They cannot become Paper
-  inputs, a winner, a depth job, or an ensemble by relabeling.
+  studies are source-local, non-promoting evidence. In particular, the Tiingo
+  raw-close CPU control and fixed `5/20` sequence breadth already exercised
+  CPU plus CUDA GRU, causal TCN, and compact attention; the completed sequence
+  cells were negative at the fixed 10-bp view. Do not create a duplicate Tiingo
+  CPU/DL baseline. These controls cannot become Paper inputs, a winner, a depth
+  job, or an ensemble by relabeling.
 - The MIM literature mechanism is historically interesting but its local
   derivative failed its frozen CPU kill test on the available small source.
   Do not re-run it without a distinct later family and data contract.

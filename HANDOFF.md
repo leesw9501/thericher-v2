@@ -154,9 +154,11 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\us-equity-five-minute-orb-20260804-r1\source-retrieval.json`.
 - Closed or non-reusable historical families include QQQ MTF consensus,
   first-30/final-30 momentum, MTF logistic, lower-tail quantile preflight,
-  Tiingo rotation/sequence controls, and static broad-D1 benchmarks. A later
-  research package must state a distinct hypothesis, causal source, temporal
-  split, cost model, baseline, kill test, and data lineage.
+  Tiingo rotation/sequence controls, and static broad-D1 benchmarks. The Tiingo
+  raw-D1 source now also has a 330-marker/990-row external hygiene sidecar;
+  this does not change its non-PIT, non-Paper scope. A later research package
+  must state a distinct hypothesis, causal source, temporal split, cost model,
+  baseline, kill test, and data lineage.
 - The fixed prospective SPY MTF baseline remains a data-timing control only.
   It needs a future qualified source receipt before any model, GPU, or Paper
   interpretation.

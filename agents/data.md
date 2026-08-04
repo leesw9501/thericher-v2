@@ -22,7 +22,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper SPY D1 stability observer | Installed, no runtime receipt yet | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
-| Tiingo/Norgate D1 snapshots | Fixed offline controls; Norgate NDU is healthy and its latest capability receipt is offline-only | Source-separated, non-Paper research only |
+| Tiingo/Norgate D1 snapshots | Fixed offline controls; Tiingo has a hash-bound event-marker sidecar and Norgate NDU is healthy | Source-separated, non-Paper research only |
 
 The broad D1 panel remains current-listing-only, non-PIT, unadjusted or
 adjustment-unqualified, corporate-action-unqualified, and session-finality
@@ -127,6 +127,13 @@ undocumented timestamp seed.
   over 55 distinct date groups. It is conservative post-hoc data hygiene only,
   not a statement about event timing, adjustment semantics, PIT availability,
   or any consumer eligibility. Evidence lives in the matching external sidecar.
+- **Tiingo D1 marker hygiene:** the immutable three-ETF raw-D1 snapshot now has
+  an independently recomputable external sidecar with 330 source-marker
+  sessions and 990 marker-or-adjacent observed-session exclusion rows. Its
+  parent hashes, scope, and explicit false eligibility flags reattest offline;
+  it does not validate event timing or semantics, repair the source's non-PIT
+  status, or qualify a model, ranking, sealed holdout, or Paper input. Evidence:
+  `D:\market_data\us_equities\tiingo_etf_daily\event_marker_exclusions\snapshot=20260804T104229Z-tiingo-etf-d1-event-exclusions-r1`.
 - **Free public augmentation:** no official, no-auth source found that jointly
   establishes PIT/delisting membership, corporate-action meaning, and daily
   OHLCV. SEC Market Structure and EDGAR remain optional source-limited sidecars

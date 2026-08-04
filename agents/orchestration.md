@@ -60,7 +60,11 @@ preflight found only 277 eligible date-group rows and a longest contiguous run
 of 37 versus the declared 382-group split budget; Claude independently
 returned `unsupported` on this arithmetic kill test. The family is closed as
 `input_unavailable`, so causal KIS-reconstructible input coverage, not GPU
-capacity, remains the next research constraint.
+capacity, remains the next research constraint. The analogous Tiingo three-ETF
+D1 sidecar records 330 source markers and 990 exclusion rows under its immutable
+external parent. It is data hygiene only. A source-safe audit also reattached
+the completed Tiingo CPU and GRU/causal-TCN/compact-attention breadth controls,
+so a proposed duplicate baseline was retired before it consumed CPU or GPU time.
 
 ## Current Reversible Improvement
 
@@ -71,6 +75,11 @@ foreground CLI timeout as a training failure or starting a duplicate run. The
 timeout, then wrote a complete source-local summary under its existing label.
 This is an orchestration recovery practice only; it changes no research result,
 execution route, or broker authority.
+
+For static source-local research, reattach existing immutable campaign receipts
+before dispatching a new baseline. This retired a duplicate Tiingo CPU/DL
+package and preserves the idle GPU for a genuinely distinct, frozen,
+input-qualified campaign.
 
 ## Review And Monitor Facts
 
