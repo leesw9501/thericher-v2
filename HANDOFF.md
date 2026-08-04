@@ -59,15 +59,22 @@ execution tests passed.
 - Market data remains under `D:\market_data`; generated artifacts remain under
   `D:\thericher-v2\model-artifacts`.
 - The KIS current-head collector last closed as the scoped
-  `minute_duplicate_conflict` from a stale `retained_cache` candidate; that
-  head is already quarantined. Its 2026-08-05 00:31 KST task exited `20`, the
-  existing downstream-recovery category rather than a collection failure. Do
-  not infer its downstream stage or manually rerun it; the same worker owns the
-  02:31 KST retry. Its terminal writer now advances one task-owned current
+  `minute_duplicate_conflict` from a stale `retained_cache` candidate; the
+  historical quarantine remains evidence only. Its 2026-08-05 02:31 KST
+  collection exited zero, then its downstream QQQ session could not bind an
+  exact ID, producing scoped recovery `20` with no broker action. Do not infer
+  its downstream stage or manually rerun it; the same worker owns the 04:31
+  KST retry. Its terminal writer now advances one task-owned current
   pointer only after the immutable source-safe receipt exists. The host
   projector reattaches that pointer only when its exact non-link receipt hash,
   run identity, observed timestamp, and terminal category agree; it makes no
   KIS, Docker, network, or credential call and never selects a latest artifact.
+- New `session-capture` executions preserve an existing causal head snapshot
+  when a later post-close candidate conflicts, and reject that candidate
+  pending bounded reconciliation. They do not auto-prefer revised post-close
+  values or create a model input. The rebuilt Docker image carries this change;
+  Claude's source-safe check was `supported-with-limits` and 65 focused
+  collector/session-capture tests passed.
 - The existing KIS M1 cursor chains for QQQ/NAS and SPY/AMS are terminally
   `source_exhausted` after their retained 2026-06-22 through 2026-07-21 spans
   (about 20,000 rows per target). The offline reattachment issued no market
@@ -326,6 +333,9 @@ ready.
 - Recent commits: `d0223ab` hardens exact Paper-canary recovery, `da12ccd`
   aligns same-date KST Paper task weekdays, and `a6a51a9` records worker
   throughput.
+- `a13c195` preserves retained causal head data when a post-close capture
+  conflicts, while leaving the fresh candidate non-promoting pending separate
+  reconciliation evidence.
 - Historic stateboard and handoff entries remain searchable in Git. Immutable
   source-safe receipts, model manifests, and runtime evidence remain external
   under `D:\thericher-v2\model-artifacts`; raw market data remains on `D:`.
