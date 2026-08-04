@@ -50,6 +50,10 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   trial does not establish PIT, ranking, model,
   GPU, PnL, or Paper eligibility. Its raw snapshot remains under
   `D:\market_data`; use it only through its source-local contract.
+- An official free-source check found no single public panel that establishes
+  point-in-time membership including delistings, corporate-action semantics,
+  and daily OHLCV. SEC Market Structure and EDGAR can be bounded sidecars only,
+  not a qualified model or Paper input.
 
 ### Engine Research And Stewardship
 
@@ -82,6 +86,8 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
 - The latest safe private-state inventory has no `submitted` or
   `cancel_started` canary phase. Historical unknowns remain scoped to their own
   reconciliation paths.
+- The host lifecycle projector now proves both a valid sanitized lifecycle
+  projection and the missing-evidence `unavailable`/exit-2 contract offline.
 - `quote-session`, `daily-spy-head`, and `daily-spy-session` are explicitly
   Monday--Friday KST. This restores Monday US-session coverage without changing
   services, order logic, sizing, or KIS routes.

@@ -45,6 +45,10 @@ arbitrary historical intraday reach.
 - **Forward data:** existing daily pair/forward workers remain independent.
   Their source-safe result can qualify only the named later observation, never
   rewrite a historical campaign.
+- **NAS-forward recovery:** the 06:40 KST `unavailable`/`reconcile` receipt
+  predates the current allowlisted failure classifier. Its cache was unchanged,
+  the current collector image matches the host source hash, and 32 focused
+  offline tests pass; the next existing worker owns recovery.
 - **Norgate local capability:** after the no-download metadata probe, NDU was
   started and the fixed-case aggregate receipt is
   `qualified_for_offline_research`. A verified fixed-ETF D1 snapshot now has
@@ -53,6 +57,10 @@ arbitrary historical intraday reach.
   `D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=listener-recovery-20260804-r1-norgate-trial-daily-capability-r1` and
   `D:\market_data\us_equities\norgate_trial\local_d1_etf\snapshot=fresh-tail-20260804-r1-norgate-trial-raw-d1-r2` with receipt
   `D:\thericher-v2\model-artifacts\data\norgate-local-d1-capability-v1\fresh-tail-20260804-r1.json`.
+- **Free public augmentation:** no official, no-auth source found that jointly
+  establishes PIT/delisting membership, corporate-action meaning, and daily
+  OHLCV. SEC Market Structure and EDGAR remain optional source-limited sidecars
+  only; no download or promotion is active.
 
 ## Current Quality Contracts
 

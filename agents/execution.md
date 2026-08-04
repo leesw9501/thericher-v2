@@ -46,6 +46,9 @@ The canary contract is fixed:
   receipt/lifecycle tests and 18 dashboard tests. This verifies deterministic
   local contracts only; it is not a current broker outcome or a substitute for
   the task-owned lifecycle receipt.
+- The host lifecycle projector additionally has explicit valid-evidence and
+  missing-evidence CLI contracts; 94 focused canary/quote/lifecycle tests pass
+  without broker or credential access.
 - `daily-spy-head` and `daily-spy-session` use explicit Monday--Friday KST
   schedules. This aligns same-date Eastern sessions without changing route,
   sizing, cancellation, or service behavior.
