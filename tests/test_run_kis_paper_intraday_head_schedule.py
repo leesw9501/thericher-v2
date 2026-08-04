@@ -86,3 +86,60 @@ def test_head_schedule_dispatcher_has_no_secret_or_live_route_surface() -> None:
     assert "kis_live" not in source
     assert "submit" not in source
     assert "cancel" not in source
+
+
+def test_head_schedule_readiness_observer_is_ordered_and_failure_isolated() -> None:
+    source = SCRIPT.read_text(encoding="ascii")
+
+    collection_call = ' -Service "kis-paper-intraday-head"'
+    readiness_call = ' -Service "kis-paper-qqq-intraday-head-readiness"'
+    spy_cycle_call = ' -Service "kis-paper-prospective-spy-cycle"'
+    capture_cycle_call = ' -Service "profiled-mtf-forward-capture-cycle"'
+    pair_observation_call = ' -Service "kis-paper-intraday-pair-observation"'
+    spy_cycle_start = source.index(spy_cycle_call)
+    spy_outcome_marker = (
+        "$prospectiveSpyCanaryRunId = $prospectiveSpyCyclePayload.execution.canary_run_id"
+    )
+    spy_outcome_capture_start = source.index(spy_outcome_marker, spy_cycle_start)
+    readiness_command_start = source.index("$qqqReadinessObserverCommand = @(")
+    readiness_call_start = source.index(readiness_call, readiness_command_start)
+    capture_cycle_start = source.index(capture_cycle_call, readiness_call_start)
+    readiness_invoke_start = source.rfind(
+        "$null = Invoke-HeadProfileService", 0, readiness_call_start
+    )
+    readiness_command = source[readiness_command_start:readiness_call_start]
+    readiness_call_block = source[readiness_invoke_start:capture_cycle_start]
+    between_spy_capture_and_readiness = source[
+        spy_outcome_capture_start + len(spy_outcome_marker) : readiness_command_start
+    ]
+
+    assert source.index(collection_call) < spy_cycle_start < spy_outcome_capture_start
+    assert spy_outcome_capture_start < readiness_call_start < capture_cycle_start
+    assert readiness_call_start < source.index(pair_observation_call)
+    assert "Invoke-HeadProfileService" not in between_spy_capture_and_readiness
+    assert readiness_call_block.startswith("$null = Invoke-HeadProfileService")
+    assert readiness_call in readiness_call_block
+    assert "-CommandOverride $qqqReadinessObserverCommand" in readiness_call_block
+    assert ".ExitCode" not in readiness_call_block
+    assert ".Output" not in readiness_call_block
+    assert "Get-Profile" not in readiness_call_block
+    assert '"scripts/observe_kis_paper_qqq_intraday_head_readiness.py",' in readiness_command
+    assert '"--collection-started-at",' in readiness_command
+    assert "$collectionStartedAtMarker," in readiness_command
+    assert '"--collector-returned-at",' in readiness_command
+    assert "$collectionReturnedAtMarker," in readiness_command
+    assert '"--cache-root",' in readiness_command
+    assert '"/app/market_data",' in readiness_command
+    assert '"--artifact-root",' in readiness_command
+    assert '"/app/model_artifacts",' in readiness_command
+    assert '"--repository-root",' in readiness_command
+    assert '"/app"' in readiness_command
+    assert "--execute" not in readiness_command
+    assert "--cancel-after-submit" not in readiness_command
+    assert "thericher_v2.execution" not in readiness_command
+    assert "--state-root" not in readiness_command
+    assert "--runtime-projection" not in readiness_command
+    assert "--paper-account-snapshot" not in readiness_command
+    assert "--emergency-state" not in readiness_command
+    assert "--execution-control" not in readiness_command
+    assert "local-paper" not in readiness_command

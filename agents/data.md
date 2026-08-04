@@ -1603,3 +1603,20 @@ not qualify it for another comparative campaign. Data retains the cache only as
 the factual source-local seed; a later Quantile contract needs new later
 sessions and a fresh immutable manifest. This result created no KIS call,
 credential use, cache mutation, raw-row projection, order, or Paper route.
+
+## QQQ Fresh-Window Readiness Observer (2026-08-04)
+
+The existing intraday-head schedule now has one network-disabled, metadata-only
+QQQ observer after the SPY cycle has returned its categorical result. It reads
+only the current collector interval's QQQ head-index row fingerprints, rejects
+conflicts and sessions at or before the fixed `2026-07-21` cutoff, and accepts
+only the exact same-session M1 offsets `260..359`: 90 completed causal bars
+plus the following 10 completed minutes. It never opens raw market rows or
+calls KIS.
+
+Qualified or contaminated receipts are immutable and isolated under
+`D:\thericher-v2\model-artifacts\data\kis-qqq-intraday-head-readiness-v1`.
+An exact rerun is a duplicate; a changed commitment for the same session is
+contamination rather than an overwrite. The observer cannot alter collector,
+SPY Paper-cycle, schedule-receipt, or task terminal state. No runtime receipt,
+new task, KIS call, model input, or Paper action exists from this installation.

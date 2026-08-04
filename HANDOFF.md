@@ -2788,3 +2788,14 @@ fitting, target access, artifact, GPU work, Paper input, or KIS call followed.
 Only a later time-disjoint source manifest and fresh contract may reopen the
 hypothesis. This does not hold the independent scheduled virtual-Paper canary
 or Data workers.
+
+## QQQ Fresh-Window Readiness Installation (2026-08-04)
+
+An offline QQQ readiness observer is installed as a best-effort companion of
+the existing intraday-head run. It is not a collector, model, target reader,
+or execution path. It reads only the current run's validated index metadata,
+requires the exact completed `90 + 10` M1 geometry after `2026-07-21`, and
+writes only immutable source-safe evidence outside Git. The observer runs after
+the SPY cycle outcome is captured and has no terminal-status influence. Its
+Docker CLI smoke and focused synthetic tests passed; no KIS call, task run,
+runtime receipt, model fit, GPU job, or Paper action occurred.

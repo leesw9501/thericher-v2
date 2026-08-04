@@ -1739,3 +1739,13 @@ lineages. The candidate is therefore `unsupported_for_current_cache`; no code,
 target access, fitting, artifact, CUDA appointment, or rerun was created. A
 future fresh contract needs later, time-disjoint QQQ sessions, an immutable
 source manifest, and a new Claude challenge before it can reopen this hypothesis.
+
+## QQQ Fresh-Window Research Boundary (2026-08-04)
+
+Data now has a source-safe observer for one later QQQ same-session 90-plus-10
+M1 geometry, but no qualified runtime receipt exists. It is a preparation
+surface only: no target/return is opened, and no fit, selection, ensemble,
+prediction, PnL, Paper input, or GPU appointment may follow from its code or
+an individual receipt. A future Engine package must first freeze its own fresh
+multi-session campaign contract and receive a new leakage/lineage challenge;
+it cannot reopen the closed historical Quantile result by relabeling it.

@@ -395,7 +395,7 @@ def test_compose_prospective_spy_cycle_has_only_the_virtual_paper_route() -> Non
 def test_compose_prospective_spy_timing_probe_is_network_disabled_and_credential_free() -> None:
     compose = _COMPOSE.read_text(encoding="ascii")
     section = compose.split("\n  kis-paper-prospective-spy-timing-probe:\n", maxsplit=1)[1].split(
-        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
+        "\n  kis-paper-qqq-intraday-head-readiness:\n", maxsplit=1
     )[0]
 
     assert 'profiles: ["kis-paper-intraday-head"]' in section
@@ -405,6 +405,47 @@ def test_compose_prospective_spy_timing_probe_is_network_disabled_and_credential
     assert "THERICHER_MODE" not in section
     assert ":/app/market_data:ro" in section
     assert ":/app/model_artifacts" in section
+
+
+def test_compose_qqq_intraday_head_readiness_is_fully_isolated() -> None:
+    compose = _COMPOSE.read_text(encoding="ascii")
+    section = compose.split("\n  kis-paper-qqq-intraday-head-readiness:\n", maxsplit=1)[1].split(
+        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
+    )[0]
+    lowered = section.lower()
+    environment = section.split("    environment:\n", maxsplit=1)[1].split(
+        "    volumes:\n", maxsplit=1
+    )[0]
+    volumes = section.split("    volumes:\n", maxsplit=1)[1]
+    volume_lines = [line.strip() for line in volumes.splitlines() if line.strip().startswith("- ")]
+    expected_cache_mount = (
+        "- ${THERICHER_HOST_MARKET_DATA_ROOT:-D:/market_data}/us_equities/"
+        "kis_paper_private/intraday-head:/app/market_data:ro"
+    )
+    expected_artifact_mount = (
+        "- ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/"
+        "kis-qqq-intraday-head-readiness-v1:"
+        "/app/model_artifacts"
+    )
+
+    assert 'profiles: ["kis-paper-intraday-head"]' in section
+    assert "scripts/observe_kis_paper_qqq_intraday_head_readiness.py" in section
+    assert "network_mode: none" in section
+    assert "read_only: true" in section
+    assert "- /tmp" in section
+    assert environment.strip() == "THERICHER_MODE: off"
+    assert volume_lines == [
+        expected_cache_mount,
+        expected_artifact_mount,
+    ]
+    assert "KIS_" not in section
+    assert "kis_live" not in lowered
+    assert "/app/runtime" not in section
+    assert "/app/private" not in section
+    assert "/app/emergency" not in section
+    assert "local-paper" not in lowered
+    assert "./src:/app/src" not in section
+    assert "./scripts:/app/scripts" not in section
 
 
 def _complete_kwargs() -> dict[str, object]:

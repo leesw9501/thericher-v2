@@ -258,6 +258,25 @@ if ($collectionExitCode -eq 0) {
         $prospectiveSpyCycleId = $prospectiveSpyCyclePayload.cycle_id
         $prospectiveSpyCanaryRunId = $prospectiveSpyCyclePayload.execution.canary_run_id
     }
+    $qqqReadinessObserverCommand = @(
+        "python",
+        "scripts/observe_kis_paper_qqq_intraday_head_readiness.py",
+        "--collection-started-at",
+        $collectionStartedAtMarker,
+        "--collector-returned-at",
+        $collectionReturnedAtMarker,
+        "--cache-root",
+        "/app/market_data",
+        "--artifact-root",
+        "/app/model_artifacts",
+        "--repository-root",
+        "/app"
+    )
+    # This data-only receipt runs after SPY dispatch and cannot affect terminal receipt or task exit.
+    $null = Invoke-HeadProfileService `
+        -ProjectRoot $resolvedProjectRoot `
+        -Service "kis-paper-qqq-intraday-head-readiness" `
+        -CommandOverride $qqqReadinessObserverCommand
     $captureCycle = Invoke-HeadProfileService `
         -ProjectRoot $resolvedProjectRoot `
         -Service "profiled-mtf-forward-capture-cycle" `

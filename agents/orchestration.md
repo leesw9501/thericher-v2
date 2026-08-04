@@ -1305,3 +1305,22 @@ same-session causal misreading without adding a new gate.
 - **Improvement:** the source audit, lineage check, and Claude reversing fact
   prevented a four-file implementation and a misleading repeated evaluation.
   The cache remains available only for its already-attested scopes.
+
+## QQQ Fresh-Window Readiness Integration (2026-08-04)
+
+- **Ready:** a focused Data-only observer is implemented and Docker CLI-smoked;
+  the current company objective remains the independently scheduled virtual-
+  Paper canary, not this future research input.
+- **Owned:** Data owns current-interval QQQ fingerprint metadata and external
+  receipts; Engine owns any later fresh campaign; Execution and Research
+  Steward have no route or GPU appointment here.
+- **Due:** the existing intraday-head worker owns the next possible receipt.
+  Its market-time invocation is not foreground idle and does not defer the
+  canary or any other ready package.
+- **Improvement:** reusing the owned collector rather than adding a task binds
+  only the exact collector interval and runs after SPY's independent outcome,
+  so observer failure cannot delay collection or the virtual-Paper cycle.
+- **Review:** synthetic metadata tests cover qualification, cutoff, conflict,
+  duplicate, Git/artifact isolation, and secret/network-free code paths;
+  the temporary independent review did not return a verdict and is recorded as
+  `review_unavailable`, not agreement or a hold.
