@@ -66,7 +66,9 @@ execution route, or broker authority.
 ## Review And Monitor Facts
 
 Historic Claude CLI timeouts remain `review_unavailable`, not approval or
-agreement. The first 2026-08-04 D1 bridge drift check returned `uncertain`:
+agreement. The latest 2026-08-04 canary drift-check retry exceeded its CLI
+time limit without a response, so it is `review_unavailable` and changes no
+execution conclusion. The first 2026-08-04 D1 bridge drift check returned `uncertain`:
 the cache alone could not prove finality. Claude returned
 `supported-with-limits` for the revised bounded stability observation, and an
 independent code review first found then verified fixes for auth-attempt
