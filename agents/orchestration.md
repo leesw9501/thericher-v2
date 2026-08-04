@@ -47,6 +47,20 @@ uses no broker or credential access; the Claude design check returned no verdict
 and is recorded as `review_unavailable`. This changes neither the scheduled
 task nor its one-attempt recovery contract.
 
+Execution's explicit-ID session projector closes the pre-canary reattachment
+gap without a new task or a latest-artifact scan: only a runtime-provided
+`paper-session-*` ID may select its one immutable receipt. It rejects links,
+`.`/`..`, ID mismatch, and shape drift, excludes the artifact path from output,
+and labels the result as a session fact rather than a lifecycle. A
+`prior_submission_unresolved` session preserves the prior canary's
+`outcome_unknown`/`unresolved` runtime for direct lifecycle recovery. Claude
+timed out on the follow-up pointer-design check and the Codex automation editor
+again timed out, so no pointer, task, or monitor configuration was added.
+A temporary Validation review found the original dot-component writer gap and
+runtime-masking proposal; the final reader and writer now reject `.`/`..`
+before evidence writes, while the prior unresolved runtime is preserved. Its
+re-review found no remaining output leak in the session projection.
+
 A source-only throughput review retired a duplicate QQQ availability observer:
 the existing runtime selector, 90/18/9 local-resample baseline, prospective
 session, and offline validator already carry the named current-cache contract.

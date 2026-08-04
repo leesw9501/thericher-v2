@@ -27,6 +27,14 @@ projection. This proves neither a lifecycle, broker, fill, no-intent, nor PnL
 result. Do not manually invoke, infer an outcome, or duplicate the task; the
 next task-owned opportunity is 2026-08-05 23:35 KST.
 
+The offline projector now also accepts one explicit session ID. It rejects
+links, `.`/`..`, mismatched IDs, and non-writer evidence shapes, emits a
+distinct session fact without its evidence path, and never scans for a latest
+artifact. A pre-canary runtime whose safe ID is `paper-session-*` can bind that
+exact receipt. For `prior_submission_unresolved`, the prior direct-canary
+runtime remains `outcome_unknown`/`unresolved`; it is not overwritten by a
+generic session runtime and still requires direct lifecycle reattachment.
+
 The 23:15 D1 stability observer and 00:31 intraday-head workers also remain
 task-owned with `IgnoreNew` concurrency. The D1 observer completed its first
 23:15 KST receipt as `stable`: one `dailyprice` GET, no retry or foreground

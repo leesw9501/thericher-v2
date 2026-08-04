@@ -56,6 +56,9 @@ from thericher_v2.execution.kis_readonly import (
     KisHttpResponse,
     KisPaperConfig,
 )
+from thericher_v2.execution.paper_canary_lifecycle import (
+    read_paper_canary_session_fact_from_artifact_root,
+)
 from thericher_v2.execution.paper_canary_runtime import read_paper_canary_runtime
 
 NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
@@ -576,6 +579,33 @@ def test_buy_pause_prevents_a_due_session_before_credentials_or_network(tmp_path
     assert runtime.snapshot.status == "unavailable"
     assert runtime.snapshot.reconciliation_status == "not_run"
     assert runtime.snapshot.account_status == "unknown"
+    session_fact = read_paper_canary_session_fact_from_artifact_root(
+        _paths(tmp_path)["artifact_root"],
+        "buy-paused-1",
+    )
+    assert session_fact.result_class == "no_new_intent"
+    assert session_fact.reason_code == "pause_buys_active"
+
+
+@pytest.mark.parametrize("session_id", [".", ".."])
+def test_quote_session_rejects_dot_path_ids_before_writing(
+    tmp_path: Path,
+    session_id: str,
+) -> None:
+    paths = _paths(tmp_path)
+
+    with pytest.raises(ValueError, match="session_id is invalid"):
+        run_kis_paper_quote_session(
+            environment={},
+            transport=FakeKisPaperQuoteTransport(),
+            now=NOW,
+            session_id=session_id,
+            execute=False,
+            cancel_after_submit=True,
+            **paths,
+        )
+
+    assert not paths["artifact_root"].exists()
 
 
 @pytest.mark.parametrize(
@@ -760,6 +790,23 @@ def test_prior_unknown_canary_is_recovered_before_a_new_session_can_submit(
         request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
         for request in transport.requests
     ) == asking_count_before
+    runtime = read_paper_canary_runtime(
+        _paths(tmp_path)["runtime_projection_path"],
+        now=NOW + timedelta(minutes=15),
+    )
+    assert runtime.status == "available"
+    assert runtime.snapshot is not None
+    assert runtime.snapshot.run_id == first.run_id
+    assert runtime.snapshot.status == "outcome_unknown"
+    assert runtime.snapshot.reconciliation_status == "unresolved"
+    assert runtime.snapshot.account_status == "available"
+    session_fact = read_paper_canary_session_fact_from_artifact_root(
+        _paths(tmp_path)["artifact_root"],
+        "prior-unknown-2",
+    )
+    assert session_fact.result_class == "recovery_required"
+    assert session_fact.run_id == first.run_id
+    assert session_fact.canary_phase == "outcome_unknown"
     evidence = second.evidence_path.read_text(encoding="utf-8")
     assert "ORD-123456789" not in evidence
     assert "paper-app-secret" not in evidence

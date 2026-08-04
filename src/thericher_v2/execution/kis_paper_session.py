@@ -59,6 +59,16 @@ from .paper_canary_runtime import (
 DEFAULT_KIS_PAPER_SESSION_VALID_SECONDS = 300
 KIS_PAPER_SESSION_EVIDENCE_KIND = "kis_paper_canary_session_evidence"
 _SAFE_SESSION_IDS = re.compile(r"[A-Za-z0-9._-]{1,80}", re.ASCII)
+
+
+def _is_safe_session_id(value: object) -> bool:
+    return (
+        isinstance(value, str)
+        and value not in {".", ".."}
+        and _SAFE_SESSION_IDS.fullmatch(value) is not None
+    )
+
+
 _SESSION_STATUSES = frozenset(
     {
         "preview",
@@ -118,13 +128,13 @@ class KisPaperCanarySessionOutcome:
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
-        if _SAFE_SESSION_IDS.fullmatch(self.session_id) is None:
+        if not _is_safe_session_id(self.session_id):
             raise ValueError("session_id is invalid")
         if self.status not in _SESSION_STATUSES:
             raise ValueError("session status is invalid")
         if self.reason_code not in _SESSION_REASONS and self.status != "canary_completed":
             raise ValueError("session reason is invalid")
-        if self.run_id is not None and _SAFE_SESSION_IDS.fullmatch(self.run_id) is None:
+        if self.run_id is not None and not _is_safe_session_id(self.run_id):
             raise ValueError("run_id is invalid")
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
 
@@ -193,10 +203,10 @@ def run_kis_paper_quote_session(
     if valid_seconds <= 0:
         raise ValueError("valid_seconds must be positive")
     resolved_session_id = session_id or f"paper-session-{observed_at.strftime('%Y%m%dT%H%M%S%fZ')}"
-    if _SAFE_SESSION_IDS.fullmatch(resolved_session_id) is None:
+    if not _is_safe_session_id(resolved_session_id):
         raise ValueError("session_id is invalid")
     run_id = f"canary-{resolved_session_id.removeprefix('paper-session-')}"
-    if _SAFE_SESSION_IDS.fullmatch(run_id) is None:
+    if not _is_safe_session_id(run_id):
         raise ValueError("run_id is invalid")
 
     with exclusive_kis_paper_canary_state_lock(state_root / ".session_execution"):

@@ -32,10 +32,74 @@ _SUBMIT_RESPONSE_CATEGORIES = frozenset(
         "transport_unavailable",
     }
 )
+_SESSION_EVIDENCE_KIND = "kis_paper_canary_session_evidence"
+_SESSION_STATUSES = frozenset(
+    {
+        "preview",
+        "not_due",
+        "paused",
+        "quote_unavailable",
+        "recovery_required",
+        "canary_completed",
+    }
+)
+_SESSION_STATUS_REASONS = {
+    "preview": frozenset({"preview"}),
+    "not_due": frozenset({"outside_regular_session", "session_unavailable"}),
+    "paused": frozenset({"pause_buys_active"}),
+    "quote_unavailable": frozenset(
+        {
+            "quote_unavailable",
+            "quote_rejected",
+            "quote_response_blank",
+            "quote_response_incomplete",
+            "quote_price_off_tick",
+            "quote_scale_mismatch",
+            "quote_tick_invalid",
+            "quote_timestamp_invalid",
+            "quote_timestamp_stale",
+        }
+    ),
+    "recovery_required": frozenset(
+        {"prior_state_unavailable", "prior_submission_unresolved"}
+    ),
+}
+_CANARY_PHASES = frozenset(
+    {
+        "intent_recorded",
+        "submission_started",
+        "submitted",
+        "rejected",
+        "outcome_unknown",
+        "cancel_started",
+        "cancelled",
+    }
+)
+_PENDING_CANARY_PHASES = frozenset(
+    {"submission_started", "submitted", "outcome_unknown", "cancel_started"}
+)
+_SESSION_EVIDENCE_KEYS = frozenset(
+    {
+        "kind",
+        "schema_version",
+        "session_id",
+        "status",
+        "reason_code",
+        "observed_at",
+        "run_id",
+        "canary_phase",
+        "canary_reason_code",
+        "submit_upstream_code",
+        "reconciliation_status",
+        "reconciliation_reason_code",
+        "paper_only",
+        "evidence_path",
+    }
+)
 
 
 class PaperCanaryLifecycleError(ValueError):
-    """The external lifecycle evidence is missing, malformed, or unsafe."""
+    """External virtual-Paper evidence is missing, malformed, or unsafe."""
 
 
 @dataclass(frozen=True)
@@ -100,6 +164,47 @@ class PaperCanaryLifecycleFact:
         }
 
 
+@dataclass(frozen=True)
+class PaperCanarySessionFact:
+    """One explicit-session fact that cannot be mistaken for a lifecycle result."""
+
+    session_id: str
+    status: str
+    result_class: Literal[
+        "no_new_intent",
+        "recovery_required",
+        "direct_lifecycle_required",
+    ]
+    reason_code: str
+    observed_at: datetime
+    evidence_sha256: str
+    run_id: str | None = None
+    canary_phase: str | None = None
+    reconciliation_status: Literal["clean", "unresolved"] | None = None
+    schema_version: int = SCHEMA_VERSION
+
+    def safe_payload(self) -> dict[str, object]:
+        """Project only source-safe routing and recovery facts from one session."""
+
+        return {
+            "schema_version": self.schema_version,
+            "kind": "kis_paper_canary_session_fact",
+            "route": "kis_paper",
+            "paper_only": True,
+            "session_id": self.session_id,
+            "status": self.status,
+            "result_class": self.result_class,
+            "reason_code": (
+                None if self.result_class == "direct_lifecycle_required" else self.reason_code
+            ),
+            "observed_at": self.observed_at.isoformat(),
+            "run_id": self.run_id,
+            "canary_phase": self.canary_phase,
+            "reconciliation_status": self.reconciliation_status,
+            "evidence_sha256": self.evidence_sha256,
+        }
+
+
 def read_paper_canary_lifecycle_fact(evidence_path: Path) -> PaperCanaryLifecycleFact:
     """Derive one safe lifecycle fact from an existing external evidence file."""
 
@@ -130,6 +235,36 @@ def read_paper_canary_lifecycle_fact_from_artifact_root(
     return fact
 
 
+def read_paper_canary_session_fact(evidence_path: Path) -> PaperCanarySessionFact:
+    """Derive one safe session fact from a directly selected external receipt."""
+
+    try:
+        encoded = evidence_path.read_bytes()
+        payload = json.loads(encoded.decode("utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise PaperCanaryLifecycleError("session_evidence_invalid") from error
+    if not isinstance(payload, Mapping):
+        raise PaperCanaryLifecycleError("session_evidence_invalid")
+    return paper_canary_session_fact_from_evidence(
+        payload,
+        evidence_sha256="sha256:" + hashlib.sha256(encoded).hexdigest(),
+    )
+
+
+def read_paper_canary_session_fact_from_artifact_root(
+    artifact_root: Path,
+    session_id: str,
+) -> PaperCanarySessionFact:
+    """Read one exact session receipt without selecting a latest artifact."""
+
+    _session_id(session_id, "session_id")
+    evidence_path = _direct_session_evidence_path(artifact_root, session_id)
+    fact = read_paper_canary_session_fact(evidence_path)
+    if fact.session_id != session_id:
+        raise PaperCanaryLifecycleError("session_id_mismatch")
+    return fact
+
+
 def _direct_canary_evidence_path(artifact_root: Path, run_id: str) -> Path:
     execution_root = artifact_root / "execution"
     canary_root = execution_root / "kis-paper-canary"
@@ -147,6 +282,32 @@ def _direct_canary_evidence_path(artifact_root: Path, run_id: str) -> Path:
         raise PaperCanaryLifecycleError("lifecycle_evidence_invalid") from error
     if not is_regular_file:
         raise PaperCanaryLifecycleError("lifecycle_evidence_invalid")
+    return evidence_path
+
+
+def _direct_session_evidence_path(artifact_root: Path, session_id: str) -> Path:
+    execution_root = artifact_root / "execution"
+    session_root = execution_root / "kis-paper-canary-session"
+    selected_session_root = session_root / session_id
+    evidence_path = selected_session_root / "evidence.json"
+    for path in (
+        artifact_root,
+        execution_root,
+        session_root,
+        selected_session_root,
+        evidence_path,
+    ):
+        _require_non_link(path)
+    if not artifact_root.is_dir() or not execution_root.is_dir() or not session_root.is_dir():
+        raise PaperCanaryLifecycleError("session_evidence_invalid")
+    if not selected_session_root.is_dir() or not evidence_path.is_file():
+        raise PaperCanaryLifecycleError("session_evidence_invalid")
+    try:
+        is_regular_file = stat.S_ISREG(evidence_path.stat().st_mode)
+    except OSError as error:
+        raise PaperCanaryLifecycleError("session_evidence_invalid") from error
+    if not is_regular_file:
+        raise PaperCanaryLifecycleError("session_evidence_invalid")
     return evidence_path
 
 
@@ -212,6 +373,164 @@ def paper_canary_lifecycle_fact_from_evidence(
             else _text(payload.get("attribution_ref"), "attribution_ref")
         ),
     )
+
+
+def paper_canary_session_fact_from_evidence(
+    payload: Mapping[str, Any],
+    *,
+    evidence_sha256: str,
+) -> PaperCanarySessionFact:
+    """Validate an exact scheduled-session envelope without claiming a lifecycle."""
+
+    if (
+        frozenset(payload) != _SESSION_EVIDENCE_KEYS
+        or payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("kind") != _SESSION_EVIDENCE_KIND
+        or payload.get("paper_only") is not True
+        or not isinstance(payload.get("evidence_path"), str)
+        or not payload["evidence_path"]
+    ):
+        raise PaperCanaryLifecycleError("session_evidence_invalid")
+    session_id = _required_session_id(payload["session_id"], "session_id")
+    status = payload["status"]
+    if not isinstance(status, str) or status not in _SESSION_STATUSES:
+        raise PaperCanaryLifecycleError("session_status_invalid")
+    reason_code = _required_session_token(payload["reason_code"], "reason_code")
+    run_id = _optional_session_id(payload["run_id"], "run_id")
+    canary_phase = _optional_session_token(payload["canary_phase"], "canary_phase")
+    canary_reason_code = _optional_session_token(
+        payload["canary_reason_code"],
+        "canary_reason_code",
+    )
+    submit_upstream_code = _optional_session_token(
+        payload["submit_upstream_code"],
+        "submit_upstream_code",
+    )
+    reconciliation_status = _optional_reconciliation_status(payload["reconciliation_status"])
+    reconciliation_reason_code = _optional_session_token(
+        payload["reconciliation_reason_code"],
+        "reconciliation_reason_code",
+    )
+    if status in {"preview", "not_due", "paused", "quote_unavailable"}:
+        if reason_code not in _SESSION_STATUS_REASONS[status] or any(
+            value is not None
+            for value in (
+                run_id,
+                canary_phase,
+                canary_reason_code,
+                submit_upstream_code,
+                reconciliation_status,
+                reconciliation_reason_code,
+            )
+        ):
+            raise PaperCanaryLifecycleError("session_no_intent_invalid")
+        result_class: Literal[
+            "no_new_intent",
+            "recovery_required",
+            "direct_lifecycle_required",
+        ] = "no_new_intent"
+    elif status == "recovery_required":
+        if reason_code == "prior_state_unavailable":
+            if any(
+                value is not None
+                for value in (
+                    run_id,
+                    canary_phase,
+                    canary_reason_code,
+                    submit_upstream_code,
+                    reconciliation_status,
+                    reconciliation_reason_code,
+                )
+            ):
+                raise PaperCanaryLifecycleError("session_recovery_invalid")
+        elif (
+            reason_code != "prior_submission_unresolved"
+            or run_id is None
+            or canary_phase not in _PENDING_CANARY_PHASES
+            or canary_reason_code is None
+            or reconciliation_status not in {"clean", "unresolved"}
+        ):
+            raise PaperCanaryLifecycleError("session_recovery_invalid")
+        result_class = "recovery_required"
+    else:
+        if (
+            run_id is None
+            or canary_phase not in _CANARY_PHASES
+            or canary_reason_code != reason_code
+            or reconciliation_status not in {"clean", "unresolved"}
+        ):
+            raise PaperCanaryLifecycleError("session_completion_invalid")
+        result_class = "direct_lifecycle_required"
+    _sha256_ref(evidence_sha256, "evidence_sha256")
+    return PaperCanarySessionFact(
+        session_id=session_id,
+        status=status,
+        result_class=result_class,
+        reason_code=reason_code,
+        observed_at=_utc(payload["observed_at"], "observed_at"),
+        evidence_sha256=evidence_sha256,
+        run_id=run_id,
+        canary_phase=canary_phase,
+        reconciliation_status=reconciliation_status,
+    )
+
+
+def _required_session_token(value: object, field_name: str) -> str:
+    if not isinstance(value, str):
+        raise PaperCanaryLifecycleError(f"session_{field_name}_invalid")
+    _session_token(value, field_name)
+    return value
+
+
+def _optional_session_token(value: object, field_name: str) -> str | None:
+    if value is None:
+        return None
+    return _required_session_token(value, field_name)
+
+
+def _required_session_id(value: object, field_name: str) -> str:
+    text = _required_session_token(value, field_name)
+    _session_id(text, field_name)
+    return text
+
+
+def _optional_session_id(value: object, field_name: str) -> str | None:
+    if value is None:
+        return None
+    return _required_session_id(value, field_name)
+
+
+def _optional_reconciliation_status(value: object) -> Literal["clean", "unresolved"] | None:
+    if value is None:
+        return None
+    if value not in {"clean", "unresolved"}:
+        raise PaperCanaryLifecycleError("session_reconciliation_invalid")
+    return value  # type: ignore[return-value]
+
+
+def _session_id(value: str, field_name: str) -> None:
+    if (
+        not value
+        or value in {".", ".."}
+        or len(value) > 80
+        or any(
+            character not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-"
+            for character in value
+        )
+    ):
+        raise PaperCanaryLifecycleError(f"session_{field_name}_invalid")
+
+
+def _session_token(value: str, field_name: str) -> None:
+    if (
+        not value
+        or len(value) > 96
+        or any(
+            character not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-"
+            for character in value
+        )
+    ):
+        raise PaperCanaryLifecycleError(f"session_{field_name}_invalid")
 
 
 def _lifecycle_state(phase: str) -> str:
@@ -298,6 +617,7 @@ def _text(value: object, field_name: str) -> str:
 def _safe_id(value: str, field_name: str) -> None:
     if (
         not value
+        or value in {".", ".."}
         or len(value) > 96
         or any(
             character not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-"

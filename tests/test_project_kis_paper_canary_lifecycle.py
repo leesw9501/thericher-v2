@@ -48,6 +48,39 @@ def _write_valid_evidence(
     )
 
 
+def _write_valid_session_evidence(artifact_root: Path, session_id: str) -> None:
+    evidence_path = (
+        artifact_root
+        / "execution"
+        / "kis-paper-canary-session"
+        / session_id
+        / "evidence.json"
+    )
+    evidence_path.parent.mkdir(parents=True)
+    evidence_path.write_text(
+        json.dumps(
+            {
+                "schema_version": SCHEMA_VERSION,
+                "kind": "kis_paper_canary_session_evidence",
+                "paper_only": True,
+                "session_id": session_id,
+                "status": "quote_unavailable",
+                "reason_code": "quote_timestamp_stale",
+                "observed_at": "2026-08-04T00:00:00+00:00",
+                "run_id": None,
+                "canary_phase": None,
+                "canary_reason_code": None,
+                "submit_upstream_code": None,
+                "reconciliation_status": None,
+                "reconciliation_reason_code": None,
+                "evidence_path": "C:/private/never-output-this-path/evidence.json",
+            },
+            sort_keys=True,
+        ),
+        encoding="utf-8",
+    )
+
+
 def test_lifecycle_projection_defaults_to_host_artifact_root(monkeypatch, tmp_path: Path) -> None:
     monkeypatch.setenv("THERICHER_HOST_MODEL_ARTIFACT_ROOT", str(tmp_path / "host-artifacts"))
     monkeypatch.setenv("THERICHER_MODEL_ARTIFACT_ROOT", "/app/model_artifacts")
@@ -75,6 +108,24 @@ def test_lifecycle_projection_prints_sanitized_fact_for_valid_evidence(
     assert payload["sizing_status"] == "fixed_canary"
     assert "order_reference" not in payload
     assert "account" not in payload
+
+
+def test_lifecycle_projection_prints_explicit_session_fact_without_evidence_path(
+    tmp_path: Path,
+    capsys,
+) -> None:
+    session_id = "paper-session-cli-valid-1"
+    _write_valid_session_evidence(tmp_path, session_id)
+    script = runpy.run_path(str(SCRIPT_PATH))
+
+    assert script["main"](["--session-id", session_id, "--artifact-root", str(tmp_path)]) == 0
+
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["paper_only"] is True
+    assert payload["session_id"] == session_id
+    assert payload["result_class"] == "no_new_intent"
+    assert "evidence_path" not in payload
+    assert "never-output-this-path" not in json.dumps(payload, sort_keys=True)
 
 
 def test_lifecycle_projection_reports_missing_evidence_as_unavailable(
@@ -115,6 +166,29 @@ def test_lifecycle_projection_rejects_unsafe_or_mismatched_run_id(
         "paper_only": True,
         "status": "unavailable",
     }
+
+    for path_component in (".", ".."):
+        assert script["main"](["--run-id", path_component, "--artifact-root", str(tmp_path)]) == 2
+        assert json.loads(capsys.readouterr().out) == {
+            "paper_only": True,
+            "status": "unavailable",
+        }
+
+
+def test_lifecycle_projection_rejects_dot_session_ids(tmp_path: Path, capsys) -> None:
+    script = runpy.run_path(str(SCRIPT_PATH))
+
+    for path_component in (".", ".."):
+        assert (
+            script["main"](
+                ["--session-id", path_component, "--artifact-root", str(tmp_path)]
+            )
+            == 2
+        )
+        assert json.loads(capsys.readouterr().out) == {
+            "paper_only": True,
+            "status": "unavailable",
+        }
 
 
 def test_lifecycle_projection_rejects_reparse_run_root(

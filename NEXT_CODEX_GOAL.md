@@ -46,8 +46,13 @@ model or profitability result.
    result; do not foreground-retry, submit a replacement intent, or infer an
    order result from absent evidence.
 4. Reattach the resulting source-safe state only through the existing runtime
-   projection and independent offline validator. Verify the loopback dashboard
-   remains credential-free and cannot trigger a broker action.
+   projection and independent offline validator. When a pre-canary runtime's
+   safe `run_id` is an explicit `paper-session-*` ID, the existing projector
+   may read only that exact immutable session receipt with `--session-id`; it
+   must never select a latest artifact. A `prior_submission_unresolved` result
+   retains the prior direct-canary runtime and still requires its direct
+   lifecycle path. Verify the loopback dashboard remains credential-free and
+   cannot trigger a broker action.
 5. Add focused tests only for any newly discovered recovery/route condition;
    otherwise reattest the existing route, duplicate-intent, and secret-safe
    projection contracts. Refresh Execution and orchestration stateboards with

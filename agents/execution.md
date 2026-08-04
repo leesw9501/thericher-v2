@@ -40,6 +40,14 @@ passed 82 tests. The accompanying Claude design challenge ended without a
 verdict (`review_unavailable`), so source/test evidence preserves the existing
 one-attempt contract rather than changing execution authority.
 
+The same host projector can now receive one explicit `--session-id` for a
+pre-canary scheduled-session receipt. It refuses links, `.`/`..`, ID mismatch,
+and extra or malformed writer fields; it never chooses a newest artifact and
+emits `kis_paper_canary_session_fact`, not a lifecycle fact. If a session finds
+`prior_submission_unresolved`, its existing prior-canary runtime remains
+`outcome_unknown`/`unresolved` instead of being replaced with a generic current
+session state. That preserved run still uses the direct lifecycle validator.
+
 The latest safe private-state inventory has no `submitted` or `cancel_started`
 phase. Before a fresh quote, the session reattests only a prior matching
 `SPY`/`AMEX`/buy/one-share canary in this private root. It resumes that exact
