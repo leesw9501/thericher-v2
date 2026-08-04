@@ -2770,3 +2770,21 @@ structure, `within_tolerance` comparison, and an observed `12,896,768`-byte
 CUDA peak. This result is strictly `runtime_compatible_structural`, not a
 forecast, performance, model-selection, or trading result. GPU custody is
 released.
+
+## KIS QQQ Lower-Tail Quantile Discovery (2026-08-04)
+
+Parallel Data, Strategy Discovery, and Research Steward review identified a
+candidate lower-tail `QuantileRegressor` preflight that would use causal 90
+completed QQQ minutes and a next completed 10-minute target. The retained
+source-local cache has 21 complete sessions and structurally supports a
+`10 / 1 full-session purge / 10` chronological split, but it is stale and
+observed-unqualified.
+
+Claude returned `supported-with-limits` conditional on the later validation
+sessions not having informed prior model selection. The exact retained period
+overlaps closed QQQ 90-bar window and sequence research, so that condition is
+false. The candidate is rejected as `unsupported_for_current_cache`; no code,
+fitting, target access, artifact, GPU work, Paper input, or KIS call followed.
+Only a later time-disjoint source manifest and fresh contract may reopen the
+hypothesis. This does not hold the independent scheduled virtual-Paper canary
+or Data workers.

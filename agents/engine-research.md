@@ -1721,3 +1721,21 @@ phases produced finite `1x96x1` structure, the CUDA comparison was
 `within_tolerance`, and peak allocated CUDA memory was `12,896,768` bytes.
 This is `runtime_compatible_structural` only. It does not evaluate forecasting
 quality, create a prediction artifact, or alter any Research promotion queue.
+
+## KIS QQQ Lower-Tail Quantile Discovery (2026-08-04)
+
+Strategy Discovery proposed a distinct conditional-downside hypothesis using
+the installed `QuantileRegressor`: a causal 90-minute QQQ feature window and a
+next completed 10-minute log-return target. Data confirmed that the retained
+21-session QQQ cache has complete same-session 90-plus-10-minute geometry with
+a chronological `10 / 1 full-session purge / 10` split. It remains a stale,
+observed-unqualified historical cache, so it could never be a Paper, PnL,
+promotion, or GPU result.
+
+Claude returned `supported-with-limits` only if the later validation sessions
+had not informed earlier selection. That reversing fact is present: the same
+retained period overlaps the closed QQQ 90-bar window-matrix and sequence
+lineages. The candidate is therefore `unsupported_for_current_cache`; no code,
+target access, fitting, artifact, CUDA appointment, or rerun was created. A
+future fresh contract needs later, time-disjoint QQQ sessions, an immutable
+source manifest, and a new Claude challenge before it can reopen this hypothesis.

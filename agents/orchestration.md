@@ -1290,3 +1290,18 @@ same-session causal misreading without adding a new gate.
   now sit before source copying, so ordinary source edits retain resolved CUDA
   dependencies. This is a measured preparation improvement, not a prediction
   or training result.
+
+## QQQ Quantile Candidate Disposition (2026-08-04)
+
+- **Ready:** a Data/Strategy/Steward review closed one proposed QQQ
+  lower-tail-quantile CPU preflight before implementation. The current company
+  goal remains the independently scheduled virtual-Paper canary at 23:35 KST.
+- **Owned:** Data owns later time-disjoint QQQ observations and their source
+  manifests; Engine owns a future fresh hypothesis contract; Research Steward
+  owns any later CPU/GPU custody. Execution has no route in this discovery.
+- **Due:** no Quantile retry is due on the retained 21-session cache. Existing
+  Data workers continue at their own due times; their waits do not defer the
+  canary or another independent package.
+- **Improvement:** the source audit, lineage check, and Claude reversing fact
+  prevented a four-file implementation and a misleading repeated evaluation.
+  The cache remains available only for its already-attested scopes.

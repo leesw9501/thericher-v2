@@ -1588,3 +1588,18 @@ The three existing Docker service images were rebuilt and the one existing
 owned run is the runtime evidence for the exact recovery category. This repair
 changes neither cache scope, KIS pacing, token behavior, observer isolation,
 nor any Engine or Execution eligibility.
+
+## QQQ Lower-Tail Quantile Input Audit (2026-08-04)
+
+The retained `QQQ/NAS/1m` source-local cache has 21 complete regular sessions.
+Every selected session can supply an exact contiguous 90 completed-minute
+feature prefix and the following 10 completed-minute target without imputation,
+cross-session construction, or a provider call. Its 10-training / one full
+session purge / 10-validation geometry is structurally possible, but its latest
+observed cache is historical and has no continuation cursor.
+
+The same period overlaps prior QQQ 90-bar research lineages, so this audit does
+not qualify it for another comparative campaign. Data retains the cache only as
+the factual source-local seed; a later Quantile contract needs new later
+sessions and a fresh immutable manifest. This result created no KIS call,
+credential use, cache mutation, raw-row projection, order, or Paper route.
