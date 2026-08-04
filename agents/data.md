@@ -119,7 +119,11 @@ undocumented timestamp seed.
   `thericher-kis-paper-spy-prefix-feasibility` own 2026-08-05 04:29:30 and
   04:30 KST. One dedicated client/cache namespace may inspect at most four
   pages of 120 rows and must validate seams plus the exact completed
-  09:30--15:29 ET prefix.
+  09:30--15:29 ET prefix. The two-stage runner has no foreground sleep or
+  retry loop: a network-free namespace control precedes the one-client
+  collection, followed by a credential-free observer. Its focused static
+  contract reattestation passed 18 tests on 2026-08-05; await only the
+  task-owned source-safe receipt.
 - **Pair/QQQ observers:** the daily pair-forward cache is `cache_current` for
   its own contract; the metadata-only QQQ readiness observer has no qualified
   future-window record. Neither condition becomes a general Data or Research

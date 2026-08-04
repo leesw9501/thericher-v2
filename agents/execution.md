@@ -68,9 +68,11 @@ source-free Claude drift review returned `supported-with-limits`: it supports
 the current kill tests but explicitly does not establish that a distinct prior
 unknown absent from the current broker view is clean, nor that a runner failure
 between submit and reconciliation has already recovered. Those limits do not
-authorize a historic-state scan or a global pause. Focused fake-route tests
-prove same-run recovery, current-open-order rejection, and no mutation of the
-old state.
+authorize a historic-state scan or a global pause. Temporary Validation agrees
+that this is a documented scope limitation rather than a pre-23:35 contract
+violation; delayed visibility after a distinct unknown is its strongest missing
+evidence. Focused fake-route tests prove same-run recovery,
+current-open-order rejection, and no mutation of the old state.
 
 The canary contract is fixed:
 

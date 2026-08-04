@@ -39,7 +39,10 @@ At 03:50 KST, a renewed source-free canary drift review returned
 kill tests, but a distinct historical unknown that is absent from a current
 broker open-order view and a runner failure after submit remain unqualified
 execution limits. Neither fact is evidence of an order or a reason to restore
-a cross-run scan, duplicate runner, or global Paper hold.
+a cross-run scan, duplicate runner, or global Paper hold. Temporary Validation
+independently classifies this as a documented scope limit, not a required
+pre-23:35 change; delayed visibility after a prior distinct unknown remains
+the narrowest future recovery evidence gap.
 
 The 00:31 worker now reattaches the already tested QQQ 90-minute
 observed/provisional baseline immediately after a successful collection, then

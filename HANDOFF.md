@@ -44,8 +44,11 @@ the virtual-host, durable-intent, lock, fresh-account/quote, and current
 open-order kill tests, but it leaves unqualified a distinct historical unknown
 that is not yet visible in KIS's current open-order view and a runner failure
 between submit and reconciliation. Those are scope limits, not an inference of
-an order or a global Paper hold. Focused fake-route tests cover same-run
-recovery, old-state preservation, and current-open-order no-submit behavior.
+an order or a global Paper hold. Temporary Validation independently classified
+that concern as a documented scope limit, not a pre-23:35 task contract
+violation; its strongest missing evidence is delayed broker visibility after a
+prior distinct unknown. Focused fake-route tests cover same-run recovery,
+old-state preservation, and current-open-order no-submit behavior.
 
 Verification for this recovery package passed 129 focused execution tests and
 the authority parallel suite with 2,543 passed and 23 skipped. Full Ruff and
