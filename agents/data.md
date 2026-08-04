@@ -1638,3 +1638,37 @@ symlinked control state emits `collector_unavailable`/exit `20` before client
 construction. The legitimate token/rate deferral branch remains outside that
 boundary and preserves its original reason. The existing task and its next due
 time are unchanged; no foreground retry is scheduled.
+
+## Intraday Head Duplicate-Conflict Diagnosis (2026-08-04)
+
+The `06:20 KST` intraday-head task's exit `1` is scoped to the Data collector:
+both `QQQ/NAS/1m` and `SPY/AMS/1m` candidates reached the retained-cache
+fingerprint comparison and were rejected as `minute_duplicate_conflict` before
+a new head snapshot committed. It is not an authentication, account, order, or
+QQQ-readiness-observer fault. The exact raw-row cause remains unknown because
+the receipt path correctly retains no raw rows and Task Scheduler history was
+disabled.
+
+Existing session-capture isolation owns recovery at the next regular task run;
+do not manually rerun or patch it after one conflict. If the same retained-cache
+conflict repeats, add only source-safe conflict-count/quarantine metadata to
+the existing collector and session-capture receipt, with focused tests. The
+metadata-only QQQ readiness observer is independent and can only lack a new
+receipt when collection fails; it cannot affect the collector or any Paper
+route.
+
+## Broad D1 Terminal-Cache Cadence Reduction (2026-08-04)
+
+The existing broad-D1 current-listing cursor is terminal with zero remaining
+targets, yet its installed local task had 48 daily half-hour triggers. The
+installer now retains the existing `00:15 KST` slot only. Reinstalling just
+that existing task with verified local images changed the observed trigger
+count from `48` to `1`; it remains `Ready` for the next `00:15 KST` run.
+
+This is a reversible worker-cost reduction, not a claim about KIS quota or
+data quality. Its single daily task uses KST validation and missed-run recovery,
+so an offline `00:15 KST` slot is not silently lost. Check the cache's
+categorical completion and independent forward/intraday receipt progress after
+later market dates. If a new broad cursor scope is created, restore the required
+cadence explicitly rather than silently assuming the terminal schedule remains
+appropriate.

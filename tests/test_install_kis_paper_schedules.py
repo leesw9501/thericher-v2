@@ -70,12 +70,8 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert 'Service = "kis-paper-daily-broad-backfill"' in broad_entry
     assert 'Runner = "run_kis_paper_daily_broad_schedule.ps1"' in broad_entry
     broad_times = tuple(re.findall(r'"(\d{2}:\d{2})"', broad_entry))
-    assert broad_times == tuple(
-        f"{hour:02d}:{minute:02d}"
-        for hour in range(24)
-        for minute in (15, 45)
-    )
-    assert "RecoverMissedRun = $false" in broad_entry
+    assert broad_times == ("00:15",)
+    assert "RecoverMissedRun = $true" in broad_entry
     assert "ExecutionLimitMinutes = 870" in broad_entry
     assert source.index('Name = "thericher-kis-paper-daily-nas-forward"') < source.index(
         'Name = "thericher-kis-paper-daily-pair-forward"'
@@ -133,6 +129,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert '[System.TimeZoneInfo]::Local' in source
     assert '"Korea Standard Time"' in source
     assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward"' in source
+    assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-broad-backfill"' in source
     assert 'New-ScheduledTaskAction -Execute "powershell.exe"' in source
     assert "-NoProfile -ExecutionPolicy Bypass -File" in source
     assert '$schedule.ContainsKey("Runner")' in source
@@ -154,7 +151,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
         ("thericher-kis-paper-intraday-head", True, 90),
         ("thericher-kis-paper-daily-nas-forward", True, 90),
         ("thericher-kis-paper-daily-pair-forward", True, 10),
-        ("thericher-kis-paper-daily-broad-backfill", False, 870),
+        ("thericher-kis-paper-daily-broad-backfill", True, 870),
         ("thericher-kis-paper-daily-backfill", True, 390),
     ):
         entry = source.split(f'Name = "{task_name}"', maxsplit=1)[1].split(

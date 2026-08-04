@@ -1339,3 +1339,39 @@ same-session causal misreading without adding a new gate.
   before KIS configuration/client construction, while normal token/rate
   deferral retains its precise existing category. Claude returned
   `supported-with-limits`; the original failure's exact cause remains unknown.
+
+## Intraday Head Duplicate-Conflict Recovery (2026-08-04)
+
+- **Ready:** the `06:20 KST` intraday-head failure is reclassified from an
+  opaque task exit to the collector's existing `minute_duplicate_conflict` for
+  retained QQQ/SPY head-cache candidates. Its session-capture isolation already
+  owns the next recovery attempt; no manual invocation, new task, or route
+  change is needed.
+- **Owned:** Data owns the exact cache conflict and any later source-safe
+  observability addition. Engine, Execution, and Research Steward have no
+  dependency or action from this one receipt; the QQQ readiness observer is
+  independent.
+- **Due:** the existing intraday-head task's next regular session owns the
+  outcome. A repeated same-scope conflict, not this single receipt, is the
+  kill test for a narrow conflict-count/quarantine-receipt patch.
+- **Improvement:** preserve categorical conflict evidence without retaining raw
+  market rows or inventing a retry wait, so the next failure can distinguish a
+  repeated cache-integrity issue from an unrelated collector fault.
+
+## Broad D1 Terminal-Cache Throughput Reduction (2026-08-04)
+
+- **Ready:** the terminal broad-D1 cache had no cursor work, so its existing
+  local task was reinstalled from the verified image with one retained `00:15
+  KST` trigger instead of 48 half-hour triggers. Its KST host precondition and
+  missed-run recovery preserve an unavailable-slot retry. Task Scheduler now
+  reports `Ready`, trigger count `1`, and the next normal run at `00:15 KST`.
+- **Owned:** Data owns cache completion and any future cursor scope. No Engine,
+  Execution, or Research Steward input changes; no KIS call or Docker
+  collection occurred during the schedule-only update.
+- **Due:** later source-safe broad-cache completion and independent
+  forward/intraday collection facts test the change. A newly created broad
+  cursor is the explicit condition to restore a denser cadence.
+- **Improvement:** removing up to 47 terminal worker starts per market date
+  releases Docker/CPU capacity without changing cache schema or source
+  semantics. Its lower cadence and recovery behavior are explicit rather than
+  hidden in a data contract, and it creates no new approval or wait.
