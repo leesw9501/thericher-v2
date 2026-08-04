@@ -17,6 +17,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | --- | --- | --- |
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
 | KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local, non-promoting 5--90 minute geometry preflight only |
+| KIS Paper IWM/AMS M1 candidate | One accepted current-day page through a probe-only route | Provisional route fact only; no history, qualification, or consumer promotion |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
 | KIS Paper SPY D1 stability observer | Installed, no runtime receipt yet | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
@@ -51,6 +52,12 @@ undocumented timestamp seed.
   5--90 minute preflight. It retains `decision_time_availability: not_observed`
   and model/Paper eligibility false. Evidence:
   `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
+- **IWM M1 candidate route:** one current-day IWM/AMS page was accepted through
+  the isolated capability probe. The target is query/client/transport-enforced
+  as one page with no previous-day or continuation request, and returned rows
+  were discarded. It is `provisional_current_page_route_supported`, not an M1
+  collector, historical-reach result, or Engine/Paper input. Evidence:
+  `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\iwm-ams-candidate-assessment-20260804-r1.json`.
 - **Yahoo M1 ORB input probe:** one exact existing metadata manifest is
   `input_unavailable`: its `1m` request spans only eight days and has one
   successful symbol with no explicit regular-session or decision-time-
@@ -124,6 +131,8 @@ undocumented timestamp seed.
   `availability_within_validity_after_collection`; it must retain
   `decision_time_availability: not_observed` unless a separately designed
   measurement proves that earlier boundary.
+- IWM/AMS is a probe-only M1 target: its request boundary permits one
+  current-day page only and has no active collector or consumer contract.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,
   or `outside_window`; `stable` means two separately timed virtual-Paper reads
   matched, not provider finality, point-in-time availability, data

@@ -38,6 +38,9 @@ A source-safe assessment does make those 21 shared complete 09:30--15:29 ET
 sessions sufficient for one source-local, non-promoting 5--90 minute geometry
 preflight. It does not repair decision-time availability or open model, GPU,
 PnL, or Paper eligibility.
+The bounded IWM/AMS probe accepted one current-day page, but its enforced
+probe-only boundary and discarded rows add no historical, causal, or qualified
+input coverage. It does not change the bottleneck or create a collector.
 The current 120-row/head and broad D1 sources cannot be relabeled as qualified
 historical training or decision-time availability. In particular, the D1 SPY
 head is a verified cache producer, not a producer of provider finality or
@@ -79,6 +82,11 @@ its cited `docs/` and `attestations/` paths are absent locally, while the actual
 canary module, projector, and allowlist tests are present. It is recorded as
 `review_invalid_workspace`, not an adverse execution verdict or a hold; the
 existing local recovery contracts remain the decision evidence.
+A temporary Review assignment found that the first IWM candidate diff allowed
+low-level previous-day/continuation bypasses. The follow-up route boundary now
+enforces a one-page client plus current-day query and transport shape; focused
+tests cover both rejection and the one allowed page. This is a bounded Data
+repair, not a new collector, scheduler, or execution route.
 
 ## Handoff
 

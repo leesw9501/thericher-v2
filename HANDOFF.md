@@ -20,7 +20,7 @@ canary. It may end as a categorical no-intent, rejected,
 cancelled-and-clean, or unknown-and-reconciled result. It is never a model,
 fill, PnL, or profitability result.
 
-As of 2026-08-04 12:20 KST, no new Aug. 4 canary artifact exists. The existing
+As of 2026-08-04 17:23 KST, no new Aug. 4 canary artifact exists. The existing
 `thericher-kis-paper-quote-session` Windows task is `Ready` for 23:35 KST with
 one Monday--Friday trigger. Do not manually invoke or duplicate it.
 
@@ -44,6 +44,13 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   sessions, enough only for a source-local non-promoting 5--90 minute preflight;
   decision-time availability and model/Paper eligibility remain false. Evidence:
   `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
+- A one-page, current-day-only KIS Paper IWM/AMS M1 capability probe was
+  accepted. Query, client, and transport boundaries all prohibit previous-day
+  and continuation use, and the probe discarded returned rows. This establishes
+  only a provisional current-page route; it does not establish historical reach,
+  venue correctness, session finality, decision-time availability, a qualified
+  dataset, or model/GPU/Paper eligibility. Evidence:
+  `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\iwm-ams-candidate-assessment-20260804-r1.json`.
 - A bounded metadata-only probe of the existing Yahoo intraday-starter M1
   manifest is `input_unavailable` for the new five-minute ORB source family:
   it has an eight-day request span, one successful symbol, and no explicit
