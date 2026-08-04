@@ -35,12 +35,11 @@ fact, not an operator decision or a general Paper hold.
 
 ## Current Reversible Improvement
 
-The handoff and five durable role stateboards now replace stale history rather
-than append it. Git and immutable external receipts retain evidence, while a
-cold recovery can identify the active tasks, exact due facts, canary owner,
-GPU custody, recovery class, and next action from the compact projections. This
-reduces resume/dispatch scan time without changing a service, KIS route,
-sizing, execution contract, or role authority.
+The quote-session canary now reattests a prior exact matching pending state
+before it fetches a fresh quote. It can resume only that state’s reconciliation
+or cancellation path and returns a source-safe, session-scoped result if the
+ambiguity remains. This closes a duplicate-submit recovery gap without a new
+service, schedule, global Paper hold, route, sizing rule, or role authority.
 
 ## Review And Monitor Facts
 

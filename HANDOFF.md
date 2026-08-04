@@ -31,7 +31,8 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
 - Market data remains under `D:\market_data`; generated artifacts remain under
   `D:\thericher-v2\model-artifacts`.
 - The KIS current-head collector last closed as the scoped
-  `minute_duplicate_conflict`; its isolated next attempt is task-owned at
+  `minute_duplicate_conflict` from a stale `retained_cache` candidate; that
+  head is already quarantined. Its isolated next attempt is task-owned at
   00:31 KST. A repeated same-scope result is the only trigger for a narrow
   conflict-origin recovery package.
 - SPY paginated-prefix negative-control and feasibility workers are installed
@@ -80,13 +81,17 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
 - It persists one durable intent before a broker effect, uses a shared state
   lock, requires a fresh account/open-order view and fresh quote-derived limit,
   rejects matching open orders, uses `cancel_after_submit`, and reconciles an
-  exact unknown before any same-intent recovery. It never reads a live route.
+  exact unknown before any same-intent recovery. Before a fresh quote, a prior
+  matching `SPY`/`AMEX`/buy/one-share pending state is recovered; if it remains
+  ambiguous, only that fresh session returns `recovery_required` with no new
+  quote or order. It never reads a live route.
 - The offline validator accepts completion only for `paper_only`, terminally
   cancelled, cleanly reconciled, freshness-valid evidence. The loopback
   dashboard is read-only, credential-free, and price/order-identifier-free.
 - The latest safe private-state inventory has no `submitted` or
   `cancel_started` canary phase. Historical unknowns remain scoped to their own
-  reconciliation paths.
+  reconciliation paths; only an exact matching pending canary defers the next
+  matching quote session.
 - The host lifecycle projector now proves both a valid sanitized lifecycle
   projection and the missing-evidence `unavailable`/exit-2 contract offline.
 - `quote-session`, `daily-spy-head`, and `daily-spy-session` are explicitly
@@ -111,9 +116,10 @@ ready.
 - A current canary runtime projection is absent from the repo worktree, and no
   Aug. 4 external canary/session/validator result existed at the latest safe
   inspection. This is expected before the scheduled task runs.
-- The newest Claude CLI canary and governance invocations timed out. Record
-  `review_unavailable`, never agreement. Prior bounded reviews remain scoped to
-  their named decisions.
+- The 2026-08-04 recovery review returned `supported-with-limits`: keep the
+  preflight exact-scope, prohibit a fresh submit from recovery, preserve a
+  remaining ambiguity as a session-scoped result, and retain the shared lock.
+  It is a challenge result, not authority or a broker outcome.
 - The Codex app monitor editor also timed out. Its active result monitor runs
   Monday--Friday at 23:45 KST; installed Windows tasks remain the primary
   evidence. Retry future edits only through the official app API, never by
@@ -121,10 +127,11 @@ ready.
 
 ## Verification And Git
 
-- The latest code-changing package passed
-  `2442 passed, 23 skipped` through
-  `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`, plus Ruff and all
-  required Compose configurations.
+- The recovery package passed `113` focused execution/schedule/dashboard tests,
+  then `2448 passed, 23 skipped` through
+  `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`, plus full Ruff and
+  all required Compose configurations. These are local-contract checks, not a
+  substitute for the task-owned current broker result.
 - Recent commits: `da12ccd` aligns same-date KST Paper task weekdays,
   `a6a51a9` records worker throughput, and `7202d4d` records monitor recovery.
 - Historic stateboard and handoff entries remain searchable in Git. Immutable

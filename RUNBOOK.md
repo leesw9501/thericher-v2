@@ -1474,6 +1474,14 @@ at the private state root. A non-success submit response or completion evidence
 after a cancel is `outcome_unknown`, not a clean result or retry cue. Do not
 pass secrets or account values on the command line.
 
+Before requesting a fresh quote, this session checks only direct durable states
+in the same private root for a prior `SPY`/`AMEX`/buy/one-share pending canary.
+It resumes only that exact state's reconciliation or cancellation path; this
+recovery cannot create a fresh order. If it remains ambiguous or its state is
+unreadable, the new matching session records `recovery_required` and sends no
+fresh quote or order. This is scoped to the conflicting canary, not a global
+Paper hold or an approval step.
+
 The original `NAS/SPY` quote and price-detail diagnostics returned
 success-shaped mappings with blank required price fields. They are historical
 rejected candidates, not the current input. The current `AMS/SPY` structural
@@ -1495,7 +1503,8 @@ The canary may be invoked by a scoped recurring Paper schedule during eligible
 sessions. There is no one-shot or per-goal execution quota: a distinct new
 intent can proceed after the scheduler's technical session, pacing, concurrency,
 and durable-state checks. An ambiguous intent remains unrepeated until its own
-reconciliation, but never blocks a later distinct Paper intent or another lane.
+reconciliation; it may defer only the next exact conflicting quote-session
+canary, never a later distinct Paper intent or another lane.
 
 For a persisted ambiguous run, use the read-only recovery command. It rebuilds
 the decision only from private durable state and rejects every phase that could

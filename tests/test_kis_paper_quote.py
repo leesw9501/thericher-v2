@@ -90,6 +90,9 @@ class FakeKisPaperQuoteTransport:
         }
     )
     order_open: bool = False
+    submit_response_missing_order_id: bool = False
+    matching_ccnl_after_cancel: bool = False
+    cancellation_seen: bool = False
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
         self.requests.append(request)
@@ -127,11 +130,18 @@ class FakeKisPaperQuoteTransport:
                 }
             )
         if tr_id == KIS_PAPER_US_CCNCL_TR_ID:
+            if self.matching_ccnl_after_cancel and self.cancellation_seen:
+                return KisHttpResponse.from_payload(
+                    {"rt_cd": "0", "output": [{"odno": "ORD-123456789"}]}
+                )
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
         if tr_id == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID:
             self.order_open = True
+            if self.submit_response_missing_order_id:
+                return KisHttpResponse.from_payload({"rt_cd": "0", "output": {}})
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {"ODNO": "ORD-123456789"}})
         if tr_id == KIS_PAPER_US_CANCEL_TR_ID:
+            self.cancellation_seen = True
             self.order_open = False
             return KisHttpResponse.from_payload({"rt_cd": "0", "output": {}})
         raise AssertionError(f"unexpected KIS request: {request!r}")
@@ -702,6 +712,137 @@ def test_repeated_due_sessions_create_distinct_intents_without_a_one_shot_latch(
         request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
         for request in transport.requests
     ) == 2
+
+
+def test_prior_unknown_canary_is_recovered_before_a_new_session_can_submit(
+    tmp_path: Path,
+) -> None:
+    transport = FakeKisPaperQuoteTransport(submit_response_missing_order_id=True)
+    first = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW,
+        session_id="prior-unknown-1",
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+    assert first.canary_phase == "outcome_unknown"
+    assert sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    ) == 1
+    asking_count_before = sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
+        for request in transport.requests
+    )
+
+    transport.submit_response_missing_order_id = False
+    second = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW + timedelta(minutes=15),
+        session_id="prior-unknown-2",
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+
+    assert second.status == "recovery_required"
+    assert second.reason_code == "prior_submission_unresolved"
+    assert second.run_id == first.run_id
+    assert second.canary_phase == "outcome_unknown"
+    assert sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    ) == 1
+    assert sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
+        for request in transport.requests
+    ) == asking_count_before
+    evidence = second.evidence_path.read_text(encoding="utf-8")
+    assert "ORD-123456789" not in evidence
+    assert "paper-app-secret" not in evidence
+    assert "12345678" not in evidence
+
+
+def test_prior_completion_evidence_remains_unresolved_for_the_next_session(
+    tmp_path: Path,
+) -> None:
+    transport = FakeKisPaperQuoteTransport(matching_ccnl_after_cancel=True)
+    first = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW,
+        session_id="prior-completion-1",
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+    assert first.canary_phase == "outcome_unknown"
+    assert sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    ) == 1
+    asking_count_before = sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
+        for request in transport.requests
+    )
+
+    second = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW + timedelta(minutes=15),
+        session_id="prior-completion-2",
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+
+    assert second.status == "recovery_required"
+    assert second.reason_code == "prior_submission_unresolved"
+    assert second.run_id == first.run_id
+    assert second.canary_phase == "outcome_unknown"
+    assert sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
+        for request in transport.requests
+    ) == 1
+    assert sum(
+        request.headers.get("tr_id") == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
+        for request in transport.requests
+    ) == asking_count_before
+
+
+def test_unreadable_prior_state_is_source_safe_and_never_starts_a_fresh_session(
+    tmp_path: Path,
+) -> None:
+    raw_state_text = "paper-app-secret account 12345678 broker detail"
+    state_root = _paths(tmp_path)["state_root"]
+    state_root.mkdir(parents=True)
+    (state_root / "canary-corrupt-state.json").write_text(
+        '{"unexpected":"' + raw_state_text + '"}',
+        encoding="utf-8",
+    )
+    transport = FakeKisPaperQuoteTransport()
+
+    outcome = run_kis_paper_quote_session(
+        environment=_paper_environment(),
+        transport=transport,
+        now=NOW,
+        session_id="corrupt-prior-state-1",
+        execute=True,
+        cancel_after_submit=True,
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "recovery_required"
+    assert outcome.reason_code == "prior_state_unavailable"
+    assert transport.requests == []
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    safe_output = str(outcome.safe_payload())
+    for forbidden in (raw_state_text, "paper-app-secret", "12345678"):
+        assert forbidden not in evidence
+        assert forbidden not in safe_output
 
 
 def test_quote_failure_writes_safe_no_submit_evidence(tmp_path: Path) -> None:

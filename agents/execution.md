@@ -20,8 +20,12 @@ canary-session, or validator receipt exists. Do not manually invoke or create a
 second task.
 
 The latest safe private-state inventory has no `submitted` or `cancel_started`
-phase. Historical `outcome_unknown` records remain recoverable only through
-their own reconciliation paths and do not block this distinct due attempt.
+phase. Before a fresh quote, the session reattests only a prior matching
+`SPY`/`AMEX`/buy/one-share canary in this private root. It resumes that exact
+state's reconciliation or cancellation path; if ambiguity remains, only the
+new matching quote session records `recovery_required` without a fresh quote or
+order. Historical unknowns outside that exact scope do not create a global
+Paper hold.
 
 The canary contract is fixed:
 
@@ -31,6 +35,8 @@ The canary contract is fixed:
   rechecked immediately before broker I/O;
 - durable `intent_recorded` state before side effects and a shared lock across
   sibling runs;
+- a prior matching pending canary is recovered before any new quote; recovery
+  cannot create a fresh order and a remaining ambiguity is session-scoped;
 - fresh account/open-order reconciliation before submit; a matching open order
   blocks a new submission, including partial fills or a different limit price;
 - accepted flow uses `cancel_after_submit`; an exact unknown may resume only
@@ -47,7 +53,7 @@ The canary contract is fixed:
   local contracts only; it is not a current broker outcome or a substitute for
   the task-owned lifecycle receipt.
 - The host lifecycle projector additionally has explicit valid-evidence and
-  missing-evidence CLI contracts; 94 focused canary/quote/lifecycle tests pass
+  missing-evidence CLI contracts; 97 focused canary/quote/lifecycle tests pass
   without broker or credential access.
 - `daily-spy-head` and `daily-spy-session` use explicit Monday--Friday KST
   schedules. This aligns same-date Eastern sessions without changing route,
@@ -61,8 +67,9 @@ The canary contract is fixed:
 An absent result before the worker runs is expected. A stale/missing account or
 quote, live-host mismatch, duplicate order, or unresolved exact-intent outcome
 rejects only that canary attempt. Preserve the source-safe categorical state;
-do not submit a replacement based on missing evidence. An unrelated historical
-unknown never creates a global Paper hold.
+do not submit a replacement based on missing evidence. An unresolved matching
+prior canary is recovered before the next matching session; an unrelated
+historical unknown never creates a global Paper hold.
 
 ## Handoff
 

@@ -29,6 +29,7 @@ from thericher_v2.execution.kis_paper_canary import (
     UrllibKisPaperCanaryTransport,
     inspect_kis_paper_buy_limit_response,
     reconcile_kis_paper_canary_unknown_run,
+    recover_kis_paper_canary_pending_run,
     run_kis_paper_canary,
 )
 from thericher_v2.execution.kis_readonly import (
@@ -837,6 +838,50 @@ def test_unknown_submission_reconciles_without_duplicate_submit(tmp_path: Path) 
 
     assert second.phase == "outcome_unknown"
     assert _submission_count(transport) == 1
+
+
+def test_pending_run_recovery_resumes_only_the_existing_cancel_path(tmp_path: Path) -> None:
+    transport = FakeKisPaperCanaryTransport(fail_cancel=True)
+    run_id = "pending-cancel-recovery-1"
+    state_path = tmp_path / "private" / f"{run_id}.json"
+    paths = _paths(tmp_path)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+    assert first.phase == "outcome_unknown"
+    assert _submission_count(transport) == 1
+    request_count_before_recovery = len(transport.requests)
+
+    transport.fail_cancel = False
+    recovered = recover_kis_paper_canary_pending_run(
+        run_id=run_id,
+        environment=_paper_environment(),
+        state_path=state_path,
+        transport=transport,
+        now=NOW + timedelta(minutes=1),
+        **paths,
+    )
+
+    recovery_requests = transport.requests[request_count_before_recovery:]
+    assert recovered.phase == "cancelled"
+    assert _submission_count(transport) == 1
+    assert any(
+        request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID
+        for request in recovery_requests
+    )
+    assert all(
+        request.headers.get("tr_id")
+        not in {KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID, KIS_PAPER_US_SELL_LIMIT_ORDER_TR_ID}
+        for request in recovery_requests
+    )
 
 
 def test_unknown_submission_recovery_never_uses_an_order_post_route(tmp_path: Path) -> None:

@@ -30,7 +30,10 @@ arbitrary historical intraday reach.
 
 - **Current-head recovery:** `thericher-kis-paper-intraday-head` owns the next
   attempt at 2026-08-05 00:31 KST. The prior 06:20 KST result was the scoped
-  `minute_duplicate_conflict` for retained QQQ/SPY head candidates.
+  `minute_duplicate_conflict` for retained QQQ/SPY head candidates. Offline
+  diagnosis classifies the origin as `retained_cache`; the conflicting head is
+  already quarantined, so the next worker alone can confirm recovery. A repeat
+  is the kill test for a narrow collector repair; no pre-run code change is due.
 - **SPY prefix capability:** the negative control and feasibility tasks own
   2026-08-05 04:29:30 and 04:30 KST. One dedicated client/cache namespace may
   inspect at most four pages of 120 rows and must validate seams plus the exact

@@ -166,6 +166,9 @@ _STATE_PHASES = frozenset(
     }
 )
 _READ_ONLY_RECOVERY_PHASES = frozenset({"submission_started", "outcome_unknown", "cancel_started"})
+_PENDING_RECOVERY_PHASES = frozenset(
+    {"submission_started", "submitted", "outcome_unknown", "cancel_started"}
+)
 _SAFE_SUBMIT_RESPONSE_CATEGORIES = frozenset(
     {
         "acknowledged_order_reference",
@@ -1219,6 +1222,7 @@ def _run_kis_paper_canary(
     price_contract_ref: str | None = None,
     reuse_existing_intent_if_same_decision: bool = False,
     read_only_recovery: bool = False,
+    recovery_only: bool = False,
 ) -> KisPaperCanaryOutcome:
     """Run or recover one bounded virtual-paper canary without a retry submit path."""
 
@@ -1245,6 +1249,8 @@ def _run_kis_paper_canary(
         cancel_after_submit=cancel_after_submit,
         now=observed_at,
     )
+    if recovery_only and state.phase not in _PENDING_RECOVERY_PHASES:
+        raise KisPaperCanaryError("recovery_phase_not_reconcilable")
     prior_recovery_state = state if read_only_recovery else None
     emergency = EmergencyStore(emergency_state_path).read()
     execution_control = PaperExecutionControlStore(execution_control_path).read()
@@ -1561,6 +1567,73 @@ def reconcile_kis_paper_canary_unknown_run(
             execution_control_path=execution_control_path,
             require_existing_state=True,
             read_only_recovery=True,
+        )
+
+
+def recover_kis_paper_canary_pending_run(
+    *,
+    run_id: str,
+    environment: Mapping[str, str],
+    state_path: Path,
+    runtime_projection_path: Path,
+    paper_account_snapshot_path: Path,
+    emergency_state_path: Path,
+    artifact_root: Path,
+    repository_root: Path,
+    transport: KisHttpTransport | None = None,
+    client: KisPaperCanaryClient | None = None,
+    now: datetime | None = None,
+    clock: Callable[[], datetime] | None = None,
+    execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
+) -> KisPaperCanaryOutcome:
+    """Resume one persisted pending run without creating a fresh order intent.
+
+    This entry point may only reconcile or continue the cancellation path of the
+    exact durable state. It cannot reach the new-submit branch, including if a
+    concurrent state mutation changes the phase after the initial inventory.
+    """
+
+    _safe_identifier(run_id, "run_id")
+    with exclusive_kis_paper_canary_state_lock(state_path.parent / ".canary_execution"):
+        state = KisPaperCanaryStateStore(state_path).read()
+        if state is None:
+            raise KisPaperCanaryError("recovery_state_missing")
+        if state.intent.run_id != run_id:
+            raise KisPaperCanaryError("recovery_run_id_mismatch")
+        if state.phase not in _PENDING_RECOVERY_PHASES:
+            raise KisPaperCanaryError("recovery_phase_not_reconcilable")
+        intent = state.intent
+        decision_type = (
+            KisPaperCanaryBuyDecision if intent.side == "buy" else KisPaperCanarySellDecision
+        )
+        decision: KisPaperCanaryOrderDecision = decision_type(
+            decision_id=intent.decision_id,
+            symbol=intent.symbol,
+            exchange=intent.exchange,
+            quantity=intent.quantity,
+            limit_price=intent.limit_price,
+            decision_as_of=intent.created_at,
+            valid_until=intent.valid_until,
+        )
+        return _run_kis_paper_canary(
+            decision=decision,
+            run_id=run_id,
+            environment=environment,
+            state_path=state_path,
+            runtime_projection_path=runtime_projection_path,
+            paper_account_snapshot_path=paper_account_snapshot_path,
+            emergency_state_path=emergency_state_path,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            execute=True,
+            cancel_after_submit=state.cancel_after_submit,
+            transport=transport,
+            client=client,
+            now=now,
+            clock=clock,
+            execution_control_path=execution_control_path,
+            require_existing_state=True,
+            recovery_only=True,
         )
 
 

@@ -9043,3 +9043,28 @@ Reason: the console needs an operational account view, but price and broker
 identifier retention has no role in that read-only dashboard loop. Reducing
 the projection narrows accidental persistence exposure while keeping the
 deterministic Paper executor independent.
+
+## 2026-08-04 - Recover an exact prior virtual canary before a fresh matching session
+
+Decision: before the scheduled quote-session requests a fresh price or creates
+a new virtual Paper intent, inspect only direct private canary state files for
+the exact `SPY`/`AMEX`/buy/one-share scope. A prior pending state may resume
+only its own reconciliation or acknowledged cancellation path. Recovery cannot
+enter a new-submit path. If the old state remains ambiguous or cannot be read,
+the new matching session records source-safe `recovery_required` and stops
+without a fresh quote or order. Other Paper scopes, Data, and Research remain
+independent.
+
+Reason: a fresh timestamped run ID previously meant that a prior
+`submission_started`, `submitted`, `outcome_unknown`, or `cancel_started`
+state was not considered before the next matching session. The shared lock and
+durable intent protected concurrent submissions but did not close that
+cross-session recovery gap. The new exact-scope preflight preserves the
+operator's standing private Paper authority while preventing a duplicate
+matching order. Focused tests cover id-less ambiguity, same-day completion
+evidence, cancellation recovery, no fresh quote/order on an unresolved prior
+state, and source-safe session evidence. Claude returned
+`supported-with-limits`; its retained conditions are the exact scope, the
+second pending-phase check inside the recovery entry point, the shared lock,
+and no inference that a completion observation is a terminal fill or clean
+cancellation.
