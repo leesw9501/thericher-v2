@@ -50,6 +50,14 @@ undocumented timestamp seed.
   projector accepts it only when identity, observation time, terminal category,
   and receipt hash agree. It has no KIS, Docker, network, or credential path
   and never scans for a latest artifact.
+  The QQQ session image's static source hash matches the host source, so no
+  stale-image conclusion follows from this receipt. For future runs, the host
+  scheduler binds session status and offline validation only to one unique
+  safe ID/status payload from its captured output. An idless trailing payload,
+  conflicting IDs, or conflicting statuses retains `recovery` and skips the
+  offline validator; it never selects a latest artifact or creates another
+  Paper action. The 02:31 result is preserved as historical evidence rather
+  than rewritten by this repair.
   At 21:40 KST, the task's `IgnoreNew` ownership was reattached and its
   current-source profile passed a network-disabled exact-entrypoint check. The
   related focused Data/schedule group passed 76 tests; this is preflight only,

@@ -47,6 +47,16 @@ uses no broker or credential access; the Claude design check returned no verdict
 and is recorded as `review_unavailable`. This changes neither the scheduled
 task nor its one-attempt recovery contract.
 
+The intraday-head scheduler now binds QQQ session status and its offline
+validator to one unique safe ID/status payload among captured same-kind JSON
+lines. A trailing idless line can no longer suppress an otherwise exact
+session, while missing or conflicting IDs/statuses still produce no validation
+and preserve the scoped recovery path. It neither scans external artifacts nor
+creates a Paper side effect. The source-free Claude parser challenge timed out
+and is `review_unavailable`; 54 focused schedule/receipt/lifecycle tests and a
+PowerShell syntax check passed. This is a narrow scheduler-observability repair
+for the next worker run, not a reinterpretation of the 02:31 KST receipt.
+
 Execution's explicit-ID session projector closes the pre-canary reattachment
 gap without a new task or a latest-artifact scan: only a runtime-provided
 `paper-session-*` ID may select its one immutable receipt. It rejects links,

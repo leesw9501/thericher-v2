@@ -65,6 +65,55 @@ function Get-ProfilePayload {
     return $null
 }
 
+function Get-UniqueSafeProfileSessionPayload {
+    param(
+        [Parameter(Mandatory = $true)]
+        [object[]]$Output,
+        [Parameter(Mandatory = $true)]
+        [string]$Kind,
+        [Parameter(Mandatory = $true)]
+        [string[]]$AllowedStatuses
+    )
+
+    $jsonLines = @(
+        $Output |
+            ForEach-Object { [string]$_ } |
+            Where-Object { $_.Trim().StartsWith("{") -and $_.Trim().EndsWith("}") }
+    )
+    $safePayloads = @()
+    for ($index = $jsonLines.Count - 1; $index -ge 0; $index--) {
+        try {
+            $payload = $jsonLines[$index] | ConvertFrom-Json -ErrorAction Stop
+        } catch {
+            continue
+        }
+        if ($payload.kind -ne $Kind -or $payload.status -notin $AllowedStatuses) {
+            continue
+        }
+        $sessionId = [string]$payload.session_id
+        if ($sessionId -match '^[A-Za-z0-9._-]{1,160}$') {
+            $safePayloads += $payload
+        }
+    }
+    if ($safePayloads.Count -eq 0) {
+        return $null
+    }
+    $sessionIds = @(
+        $safePayloads |
+            ForEach-Object { [string]$_.session_id } |
+            Sort-Object -Unique
+    )
+    $statuses = @(
+        $safePayloads |
+            ForEach-Object { [string]$_.status } |
+            Sort-Object -Unique
+    )
+    if ($sessionIds.Count -ne 1 -or $statuses.Count -ne 1) {
+        return $null
+    }
+    return $safePayloads[0]
+}
+
 function Get-ProfileStatus {
     param(
         [Parameter(Mandatory = $true)]
@@ -212,14 +261,16 @@ if ($collectionExitCode -eq 0) {
         -ProjectRoot $resolvedProjectRoot `
         -Service "kis-paper-prospective-qqq-session"
     $prospectiveSessionExitCode = [int]$prospectiveSession.ExitCode
-    $prospectiveSessionPayload = Get-ProfilePayload `
-        -Output $prospectiveSession.Output `
-        -Kind "kis_paper_prospective_qqq_session"
-    $prospectiveSessionId = Get-SafeProfileSessionId -Payload $prospectiveSessionPayload
-    $prospectiveSessionStatus = Get-ProfileStatus `
+    $prospectiveSessionPayload = Get-UniqueSafeProfileSessionPayload `
         -Output $prospectiveSession.Output `
         -Kind "kis_paper_prospective_qqq_session" `
         -AllowedStatuses @("no_intent", "canary_completed")
+    $prospectiveSessionId = Get-SafeProfileSessionId -Payload $prospectiveSessionPayload
+    if ($null -ne $prospectiveSessionPayload) {
+        $prospectiveSessionStatus = [string]$prospectiveSessionPayload.status
+    } else {
+        $prospectiveSessionStatus = "unavailable"
+    }
 
     # Validation reloads the exact retained cache after the execution session.
     # Its network-disabled service cannot create another Paper side effect.
@@ -245,9 +296,10 @@ if ($collectionExitCode -eq 0) {
                 "/app"
             )
         $prospectiveValidationExitCode = [int]$prospectiveValidation.ExitCode
-        $prospectiveValidationPayload = Get-ProfilePayload `
+        $prospectiveValidationPayload = Get-UniqueSafeProfileSessionPayload `
             -Output $prospectiveValidation.Output `
-            -Kind "kis_paper_prospective_qqq_validation"
+            -Kind "kis_paper_prospective_qqq_validation" `
+            -AllowedStatuses @("validated")
         if ($prospectiveValidationExitCode -eq 0 -and $null -ne $prospectiveValidationPayload) {
             $prospectiveValidationStatus = "validated"
             $prospectiveValidationSessionId = Get-SafeProfileSessionId `

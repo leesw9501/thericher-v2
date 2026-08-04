@@ -79,6 +79,7 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert source.count(collection_call) == 1
     assert "if ($collectionExitCode -eq 0)" in source
     assert "Get-ProfileStatus" in source
+    assert "Get-UniqueSafeProfileSessionPayload" in source
     assert "2>&1" in source
     assert '$ErrorActionPreference = "Continue"' in source
     assert '"observed"' in source
@@ -144,10 +145,88 @@ def test_head_schedule_dispatches_qqq_before_slower_observers(tmp_path: Path) ->
     ]
 
 
-def _fake_dispatch_command(*, script_path: Path, project_root: Path, log_path: Path) -> str:
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_uses_a_safe_session_payload_before_a_trailing_idless_status(
+    tmp_path: Path,
+) -> None:
+    log_path = tmp_path / "fake-docker-services.log"
+    result = subprocess.run(
+        [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-Command",
+            _fake_dispatch_command(
+                script_path=SCRIPT,
+                project_root=SCRIPT.parents[1],
+                log_path=log_path,
+                qqq_session_payloads=(
+                    '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent","session_id":"qqq-unit"}',
+                    '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent"}',
+                ),
+            ),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "kis-paper-prospective-qqq-validation" in log_path.read_text(
+        encoding="ascii"
+    ).splitlines()
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_rejects_conflicting_safe_session_ids(tmp_path: Path) -> None:
+    log_path = tmp_path / "fake-docker-services.log"
+    result = subprocess.run(
+        [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-Command",
+            _fake_dispatch_command(
+                script_path=SCRIPT,
+                project_root=SCRIPT.parents[1],
+                log_path=log_path,
+                qqq_session_payloads=(
+                    '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent","session_id":"qqq-unit-a"}',
+                    '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent","session_id":"qqq-unit-b"}',
+                ),
+            ),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "kis-paper-prospective-qqq-validation" not in log_path.read_text(
+        encoding="ascii"
+    ).splitlines()
+
+
+def _fake_dispatch_command(
+    *,
+    script_path: Path,
+    project_root: Path,
+    log_path: Path,
+    qqq_session_payloads: tuple[str, ...] = (
+        '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent","session_id":"qqq-unit"}',
+    ),
+) -> str:
     escaped_script = str(script_path).replace("'", "''")
     escaped_root = str(project_root).replace("'", "''")
     escaped_log = str(log_path).replace("'", "''")
+    escaped_qqq_session_payloads = "\n".join(
+        "            Write-Output '" + payload.replace("'", "''") + "'"
+        for payload in qqq_session_payloads
+    )
     return f"""
 $ErrorActionPreference = 'Stop'
 $env:THERICHER_FAKE_DOCKER_LOG = '{escaped_log}'
@@ -181,10 +260,7 @@ function docker.exe {{
             Write-Output '{{"kind":"kis_paper_intraday_session_capture","targets":[]}}'
         }}
         'kis-paper-prospective-qqq-session' {{
-            Write-Output (
-                '{{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",' +
-                '"session_id":"qqq-unit"}}'
-            )
+{escaped_qqq_session_payloads}
         }}
         'kis-paper-prospective-qqq-validation' {{
             Write-Output (
