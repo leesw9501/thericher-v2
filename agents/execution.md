@@ -36,6 +36,12 @@ passed 135 focused canary, quote, intent, lifecycle-projector, and dashboard
 tests. These are local-contract facts, not a broker result or a reason to run
 the task early.
 
+At 07:18 KST on 2026-08-05, the registered task still resolved to the same
+single `kis-paper-session --execute --cancel-after-submit` action with
+`IgnoreNew` and zero restarts. A fresh offline reattestation of the canary,
+quote, intent, lifecycle-projector, and dashboard-isolation contracts passed
+150 tests. It changed no task, image, route, credential, or broker state.
+
 The schedule installer now explicitly retains `RestartCount = 0` alongside
 `IgnoreNew`. The current registered task already has that setting; this removes
 reinstallation drift without restarting or changing tonight's task.

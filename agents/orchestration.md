@@ -13,7 +13,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 
 | Work | Owner | Resource | Current fact |
 | --- | --- | --- | --- |
-| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST, with exact-run recovery and current-open-order reconciliation |
+| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; the 07:18 static reattestation kept one `IgnoreNew`, zero-restart action and passed 150 offline route/isolation tests; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
 | Current-head recovery | Data | Existing isolated cache/task | 02:31 KST produced scoped downstream recovery `20`; 04:31 KST fresh-token start followed the 04:30 prefix collector inside the five-minute guard, and the task-owned 06:20 retry also ended `recovery` with no prospective session ID; head coverage remains below one complete regular session |
 | Daily D1 catch-up | Data | Existing 07:00 KST worker | 2026-08-05 task completed `drained`: zero chunks/targets and no client constructed; exact cursor state only, not a provider-wide coverage conclusion |
