@@ -30,6 +30,15 @@ The schedule installer now explicitly retains `RestartCount = 0` alongside
 `IgnoreNew`. The current registered task already has that setting; this removes
 reinstallation drift without restarting or changing tonight's task.
 
+The host lifecycle projector and the independent
+`validate_kis_paper_canary_lifecycle_evidence.py` validator now share a direct,
+non-link receipt-path check and require the recorded `run_id` to match the
+requested run. They emit only a sanitized lifecycle fact or categorical
+`unavailable`; they never call KIS or load credentials. The focused reattestation
+passed 81 tests. The accompanying Claude design challenge ended without a
+verdict (`review_unavailable`), so source/test evidence preserves the existing
+one-attempt contract rather than changing execution authority.
+
 The latest safe private-state inventory has no `submitted` or `cancel_started`
 phase. Before a fresh quote, the session reattests only a prior matching
 `SPY`/`AMEX`/buy/one-share canary in this private root. It resumes that exact
@@ -52,8 +61,10 @@ The canary contract is fixed:
   blocks a new submission, including partial fills or a different limit price;
 - accepted flow uses `cancel_after_submit`; an exact unknown may resume only
   its acknowledged cancellation after proven-open reconciliation; and
-- the offline validator accepts only `paper_only`, terminally cancelled,
-  cleanly reconciled, freshness-valid evidence.
+- the generic offline lifecycle validator accepts only a direct, non-link
+  `paper_only` receipt whose recorded `run_id` matches the requested run and
+  emits a sanitized categorical fact; terminally cancelled, cleanly reconciled,
+  freshness-valid evidence remains the stricter downstream completion case.
 
 The at-most-one-intent statement is scoped to the existing single host-owned
 state root and its one scheduled Docker runner. A copied/restored private

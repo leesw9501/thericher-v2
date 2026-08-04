@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import stat
 from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -113,6 +114,50 @@ def read_paper_canary_lifecycle_fact(evidence_path: Path) -> PaperCanaryLifecycl
         payload,
         evidence_sha256="sha256:" + hashlib.sha256(encoded).hexdigest(),
     )
+
+
+def read_paper_canary_lifecycle_fact_from_artifact_root(
+    artifact_root: Path,
+    run_id: str,
+) -> PaperCanaryLifecycleFact:
+    """Read one direct-child external receipt and bind it to the requested run."""
+
+    _safe_id(run_id, "run_id")
+    evidence_path = _direct_canary_evidence_path(artifact_root, run_id)
+    fact = read_paper_canary_lifecycle_fact(evidence_path)
+    if fact.run_id != run_id:
+        raise PaperCanaryLifecycleError("lifecycle_run_id_mismatch")
+    return fact
+
+
+def _direct_canary_evidence_path(artifact_root: Path, run_id: str) -> Path:
+    execution_root = artifact_root / "execution"
+    canary_root = execution_root / "kis-paper-canary"
+    run_root = canary_root / run_id
+    evidence_path = run_root / "evidence.json"
+    for path in (artifact_root, execution_root, canary_root, run_root, evidence_path):
+        _require_non_link(path)
+    if not artifact_root.is_dir() or not execution_root.is_dir() or not canary_root.is_dir():
+        raise PaperCanaryLifecycleError("lifecycle_evidence_invalid")
+    if not run_root.is_dir() or not evidence_path.is_file():
+        raise PaperCanaryLifecycleError("lifecycle_evidence_invalid")
+    try:
+        is_regular_file = stat.S_ISREG(evidence_path.stat().st_mode)
+    except OSError as error:
+        raise PaperCanaryLifecycleError("lifecycle_evidence_invalid") from error
+    if not is_regular_file:
+        raise PaperCanaryLifecycleError("lifecycle_evidence_invalid")
+    return evidence_path
+
+
+def _require_non_link(path: Path) -> None:
+    try:
+        metadata = path.lstat()
+    except OSError as error:
+        raise PaperCanaryLifecycleError("lifecycle_evidence_invalid") from error
+    is_reparse_point = bool(getattr(metadata, "st_file_attributes", 0) & 0x400)
+    if stat.S_ISLNK(metadata.st_mode) or is_reparse_point:
+        raise PaperCanaryLifecycleError("lifecycle_evidence_invalid")
 
 
 def paper_canary_lifecycle_fact_from_evidence(

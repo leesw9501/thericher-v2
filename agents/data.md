@@ -19,7 +19,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local, non-promoting 5--90 minute geometry preflight only |
 | KIS Paper IWM/AMS M1 candidate | One accepted current-day page through a probe-only route | Provisional route fact only; no history, qualification, or consumer promotion |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
-| KIS Paper SPY D1 stability observer | Installed, no runtime receipt yet | Bounded source-safe observation only; never a qualification or consumer bridge |
+| KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
 | Tiingo/Norgate D1 snapshots | Fixed offline controls; Tiingo has a hash-bound event-marker sidecar and Norgate NDU is healthy | Source-separated, non-Paper research only |
@@ -87,10 +87,11 @@ undocumented timestamp seed.
   `task_has_not_run`, not a worker failure. Its receipt always says
   `provider_finality: not_observed`
   and is Engine-unreadable. Do not build a consumer bridge from it alone.
-  At 21:40 KST, its single `IgnoreNew` task and current-source observer image
-  were reattached; the network-disabled entrypoint and the same focused
-  Data/schedule group passed. This does not replace its first worker-owned
-  runtime observation.
+  At 23:15 KST, its first task-owned attempt produced a source-safe `stable`
+  receipt that the offline validator reattached: one `dailyprice` GET, no
+  foreground wait or retry, and a 15--90-minute-old snapshot. This is a
+  two-read row-hash match only; `provider_finality` remains `not_observed` and
+  the receipt remains Engine-unreadable.
   Evidence: `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
 - **SPY prefix capability:** the negative control and feasibility tasks own
   2026-08-05 04:29:30 and 04:30 KST. One dedicated client/cache namespace may

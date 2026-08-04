@@ -1,4 +1,4 @@
-"""Print one read-only sanitized KIS Paper canary lifecycle fact."""
+"""Validate one external KIS Paper canary receipt without broker access."""
 
 from __future__ import annotations
 
@@ -16,19 +16,15 @@ DEFAULT_ARTIFACT_ROOT = Path(r"D:\thericher-v2\model-artifacts")
 
 
 def default_artifact_root() -> Path:
-    """Use the host mount setting; the container path is not valid on Windows."""
+    """Use the host artifact setting without loading credential files."""
 
     return Path(os.environ.get("THERICHER_HOST_MODEL_ARTIFACT_ROOT", DEFAULT_ARTIFACT_ROOT))
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Project one sanitized KIS Paper canary lifecycle")
+    parser = argparse.ArgumentParser(description="Validate one KIS Paper canary lifecycle receipt")
     parser.add_argument("--run-id", required=True)
-    parser.add_argument(
-        "--artifact-root",
-        type=Path,
-        default=default_artifact_root(),
-    )
+    parser.add_argument("--artifact-root", type=Path, default=default_artifact_root())
     return parser
 
 

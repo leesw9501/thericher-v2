@@ -14,7 +14,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | Work | Owner | Resource | Current fact |
 | --- | --- | --- | --- |
 | Quote-session canary | Execution | Existing virtual-Paper task | Due 2026-08-04 23:35 KST |
-| SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | Installed for 2026-08-04 23:15 KST; `task_has_not_run`, no receipt yet |
+| SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
 | Current-head recovery | Data | Existing isolated cache/task | Due 2026-08-05 00:31 KST |
 | SPY prefix capability | Data | Dedicated cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
@@ -39,6 +39,13 @@ The task's local image was rebuilt from the current source and passed a
 network-disabled import check; 135 focused offline route/lifecycle/dashboard
 tests passed. The remaining dependency is still the task-owned lifecycle fact,
 not a foreground wait.
+
+The source-only projector and new independent offline validator now both reject
+unsafe/non-direct receipt paths and a requested-to-recorded `run_id` mismatch
+before emitting a sanitized lifecycle fact. Their focused 81-test reattestation
+uses no broker or credential access; the Claude design check returned no verdict
+and is recorded as `review_unavailable`. This changes neither the scheduled
+task nor its one-attempt recovery contract.
 
 At 21:40 KST, Data reattached its 23:15 stability observer and 00:31
 intraday-head task ownership. Both `IgnoreNew` profiles were rebuilt from the

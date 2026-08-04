@@ -28,10 +28,11 @@ network-disabled module-import check; 135 focused route/lifecycle/dashboard
 tests passed. Do not manually invoke or duplicate it.
 
 The 23:15 D1 stability observer and 00:31 intraday-head workers also remain
-task-owned with `IgnoreNew` concurrency. Their current-source Docker profiles
-were rebuilt, their exact entrypoints passed network-disabled checks, and 76
-focused Data/schedule tests passed. This is preflight evidence only; neither
-worker has produced its current runtime receipt yet.
+task-owned with `IgnoreNew` concurrency. The D1 observer completed its first
+23:15 KST receipt as `stable`: one `dailyprice` GET, no retry or foreground
+wait, and an independently verified 15--90-minute snapshot comparison. It is
+observational only, with `provider_finality: not_observed`, and cannot qualify
+an Engine or Paper consumer. The 00:31 worker remains preflight-only.
 
 On its next successful collection, the existing 00:31 intraday-head worker
 also dispatches the already implemented QQQ 90-minute observed/provisional
@@ -229,8 +230,13 @@ execution tests passed.
   `cancel_started` canary phase. Historical unknowns remain scoped to their own
   reconciliation paths; only an exact matching pending canary defers the next
   matching quote session.
-- The host lifecycle projector now proves both a valid sanitized lifecycle
-  projection and the missing-evidence `unavailable`/exit-2 contract offline.
+- The host lifecycle projector and independent offline lifecycle validator now
+  require a direct non-link receipt path and matching requested/recorded
+  `run_id` before emitting a sanitized fact; missing or unsafe evidence remains
+  `unavailable`/exit-2. Their 81 focused tests use no broker or credentials.
+  The short Claude design check produced no verdict (`review_unavailable`), so
+  this source/test repair does not alter the scheduled task or execution
+  authority.
 - `quote-session`, `daily-spy-head`, and `daily-spy-session` are explicitly
   Monday--Friday KST. This restores Monday US-session coverage without changing
   services, order logic, sizing, or KIS routes.
@@ -240,7 +246,7 @@ execution tests passed.
 | Work | Owner | Status |
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | Existing worker due 2026-08-04 23:35 KST |
-| SPY D1 stability observation | Data | Installed worker due 2026-08-04 23:15 KST |
+| SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
 | Current-head duplicate recovery | Data | Existing worker due 2026-08-05 00:31 KST |
 | SPY paginated-prefix capability | Data | Existing workers due 2026-08-05 04:29:30/04:30 KST |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
@@ -314,9 +320,9 @@ ready.
    the existing runtime projection and offline validator. Do not infer a broker
    result from missing evidence.
 2. Continue independent Data worker reattachment at its own due times.
-3. Reattach the installed D1 stability observer after its 23:15 KST run. Treat
-   any result as source-safe observational evidence only; do not treat the
-   cache snapshot or a `stable` result as provider-finality evidence.
+3. Preserve the completed D1 `stable` observation as source-safe observational
+   evidence only; do not treat its cache snapshot or result as provider-finality
+   evidence.
 4. When Data produces a fresh qualified causal input, freeze the next distinct
    Engine contract and let Research Steward allocate GPU only if it is eligible.
 5. At a company-goal boundary, run required verification, commit/push, replace
