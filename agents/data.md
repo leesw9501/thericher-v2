@@ -17,6 +17,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | --- | --- | --- |
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
 | KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local, non-promoting 5--90 minute geometry preflight only |
+| Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
 | KIS Paper SPY D1 stability observer | Installed, no runtime receipt yet | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
@@ -50,6 +51,13 @@ undocumented timestamp seed.
   5--90 minute preflight. It retains `decision_time_availability: not_observed`
   and model/Paper eligibility false. Evidence:
   `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
+- **Yahoo M1 ORB input probe:** one exact existing metadata manifest is
+  `input_unavailable`: its `1m` request spans only eight days and has one
+  successful symbol with no explicit regular-session or decision-time-
+  availability field. It cannot reproduce the source-native multi-symbol,
+  14-prior-session ORB input, and its raw rows are not opened. Reopen only for
+  a distinct later manifest that meets every frozen condition. Evidence:
+  `D:\thericher-v2\model-artifacts\data\yahoo-intraday-starter-orb-input-probe-v1\assessment.json`.
 - **Daily SPY consumer readiness:** a static trace found `producer_path_missing`.
   The existing 22:15 KST `daily-spy-head` task emits a verified prior-session
   cache snapshot only; it does not emit a capability/qualification, a provider

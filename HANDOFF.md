@@ -44,6 +44,13 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   sessions, enough only for a source-local non-promoting 5--90 minute preflight;
   decision-time availability and model/Paper eligibility remain false. Evidence:
   `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
+- A bounded metadata-only probe of the existing Yahoo intraday-starter M1
+  manifest is `input_unavailable` for the new five-minute ORB source family:
+  it has an eight-day request span, one successful symbol, and no explicit
+  regular-session or decision-time-availability field. It is not reopened as a
+  raw-data scan, provider qualification, campaign, model, GPU, PnL, or Paper
+  input. Evidence:
+  `D:\thericher-v2\model-artifacts\data\yahoo-intraday-starter-orb-input-probe-v1\assessment.json`.
 - SPY paginated-prefix negative-control and feasibility workers are installed
   for 04:29:30 and 04:30 KST. They have a dedicated cache and can establish
   only post-collection availability, never retrospective decision-time

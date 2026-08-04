@@ -86,8 +86,10 @@ strongest kill test before target evaluation or GPU consideration.
   source-native screened form requires a contemporaneous multi-symbol universe,
   prior 14-session volume and ATR facts, and same-day relative opening-range
   volume; the current QQQ/SPY 21-session cache cannot reproduce those screens
-  and lacks observed decision-time availability. It is therefore not a campaign,
-  code change, GPU appointment, PnL claim, or Paper path. Evidence:
+  and lacks observed decision-time availability. A bounded Yahoo M1 manifest
+  probe is also insufficient at eight requested days, one successful symbol,
+  and no explicit calendar or availability field. It is therefore not a
+  campaign, code change, GPU appointment, PnL claim, or Paper path. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\us-equity-five-minute-orb-20260804-r1\source-retrieval.json`.
 
 ## Closed Or Non-Reusable Families
