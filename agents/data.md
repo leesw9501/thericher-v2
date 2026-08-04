@@ -75,7 +75,9 @@ undocumented timestamp seed.
   then issues at most one gated virtual-Paper `dailyprice` attempt. It has a
   ten-attempt bound, a nonblocking external receipt lock, and categorical
   unavailable exits before a GET for a stale/missing snapshot, client, auth, or
-  token-gate failure. Its receipt always says `provider_finality: not_observed`
+  token-gate failure. Its current `0x41303`/sentinel Task Scheduler state means
+  `task_has_not_run`, not a worker failure. Its receipt always says
+  `provider_finality: not_observed`
   and is Engine-unreadable. Do not build a consumer bridge from it alone.
   Evidence: `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
 - **SPY prefix capability:** the negative control and feasibility tasks own

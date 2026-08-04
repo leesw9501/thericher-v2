@@ -74,7 +74,9 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   uses the shared KIS request/token gates, a nonblocking external receipt lock,
   and at most one virtual-Paper `dailyprice` attempt after a verified
   15--90-minute-old snapshot and successful authentication. It has no runtime
-  receipt yet. `stable` can mean only matching prior-session row hashes; it
+  receipt yet; its Task Scheduler `0x41303`/sentinel last-run display means
+  `task_has_not_run`, not worker failure. `stable` can mean only matching
+  prior-session row hashes; it
   always retains `provider_finality: not_observed` and remains Engine-unreadable.
   Do not build a consumer bridge from it alone. Evidence:
   `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.

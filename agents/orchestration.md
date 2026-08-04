@@ -14,7 +14,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | Work | Owner | Resource | Current fact |
 | --- | --- | --- | --- |
 | Quote-session canary | Execution | Existing virtual-Paper task | Due 2026-08-04 23:35 KST |
-| SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | Installed for 2026-08-04 23:15 KST; no receipt yet |
+| SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | Installed for 2026-08-04 23:15 KST; `task_has_not_run`, no receipt yet |
 | Current-head recovery | Data | Existing isolated cache/task | Due 2026-08-05 00:31 KST |
 | SPY prefix capability | Data | Dedicated cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
