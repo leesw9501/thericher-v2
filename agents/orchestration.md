@@ -1274,3 +1274,19 @@ same-session causal misreading without adding a new gate.
   external artifact, isolated virtualenv, and offline structural receipt, so
   later public-model work can reuse the evidence pattern without touching the
   production runtime.
+
+## CUDA Research Image Cache Seed (2026-08-04)
+
+- **Ready:** the isolated Granite image has been rebuilt from the current
+  source and reattested without network access. No research appointment or
+  model run is waiting on an image build.
+- **Owned:** Infra owns the BuildKit dependency cache; Engine and Research
+  Steward retain their existing runtime and GPU contracts.
+- **Due:** no cache-specific worker is due. A cache miss is a build-local fact,
+  not a reason to defer an independently ready Data, Engine, or Execution
+  package.
+- **Improvement:** the initial dependency build took about 740 seconds; the
+  immediately repeated unchanged build completed in 3.14 seconds. Cache mounts
+  now sit before source copying, so ordinary source edits retain resolved CUDA
+  dependencies. This is a measured preparation improvement, not a prediction
+  or training result.
