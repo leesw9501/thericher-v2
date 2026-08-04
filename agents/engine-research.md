@@ -170,6 +170,15 @@ strongest kill test before target evaluation or GPU consideration.
   appointment, backtest, PnL, ensemble, or Paper path. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\pre-holiday-session-window-20260804-r1\source-retrieval.json`.
 
+- A temporary Strategy Discovery pass surfaced the monthly U.S. `Mom` factor.
+  Engine independently retrieved its official construction page, but the
+  primary-paper DOI was unavailable and the construction page does not disclose
+  reuse rights. More importantly, it is an aggregate factor return rather than
+  an executable constituent universe with local cost, borrow, and causal-input
+  assumptions. It is rejected before any code, data download, campaign, GPU,
+  ensemble, PnL, or Paper path. Evidence:
+  `D:\thericher-v2\model-artifacts\research\strategy-discovery\monthly-us-momentum-factor-source-pass-20260805-r1\source-handoff.json`.
+
 ## Closed Or Non-Reusable Families
 
 - QQQ intraday consensus, first-30/final-30 momentum, and fixed MTF logistic
