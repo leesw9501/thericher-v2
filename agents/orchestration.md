@@ -92,6 +92,14 @@ parallel helper for fast feedback. Its eight-worker reattestation completed 124
 passing and four skipped tests in about 73 seconds with a clean owned temp root;
 keep the serial changed-path group for goal-boundary authority.
 
+The 2026-08-04 `-RequireCleanTempRoot` authority attempt was interrupted by an
+outer 180-second host deadline and retained its recent helper root by design;
+it is invalid verification evidence. Claude returned `unsupported` for manual
+cleanup. A distinct unique-root fast-feedback run passed 2,489 tests with 23
+skips in 205.69 seconds and cleaned its own root. Use a ten-minute outer
+deadline for future full helper runs, and let the existing clean-root policy
+fail closed until the retained authority root is eligible for its own cleanup.
+
 ## Review And Monitor Facts
 
 Historic Claude CLI timeouts remain `review_unavailable`, not approval or
@@ -114,12 +122,14 @@ its cited `docs/` and `attestations/` paths are absent locally, while the actual
 canary module, projector, and allowlist tests are present. It is recorded as
 `review_invalid_workspace`, not an adverse execution verdict or a hold; the
 existing local recovery contracts remain the decision evidence.
-A current canary drift review first returned `uncertain`, then
-`supported-with-limits` after source-free code/test reattestation of direct
-virtual-host transport, pre-submit durable state, prior-run recovery, and
-broker-timestamp quote age. The remaining limit is explicitly one host-owned
-state root and one scheduled runner; no second root, restored copy, or manual
-runner is installed. This scopes only the existing canary and does not delay
+A current source-free canary drift review returned `supported-with-limits`
+after reattestation of direct virtual-host transport, pre-submit durable state,
+fresh account/quote reconciliation, exact-intent recovery, and dashboard route
+isolation. A canary can retain sanitized filled/remaining quantity or position
+state, but no price, cost, valuation, or model outcome; it is execution
+evidence only, never a fill-quality, PnL, profitability, or model result. The
+remaining scope limit is one host-owned state root and one scheduled runner; no
+second root, restored copy, or manual runner is installed. This does not delay
 independent work.
 A separate Norgate scope review returned `supported-with-limits` for an
 aggregate-only explicit-snapshot double-read conformance, while rejecting the
@@ -131,6 +141,12 @@ low-level previous-day/continuation bypasses. The follow-up route boundary now
 enforces a one-page client plus current-day query and transport shape; focused
 tests cover both rejection and the one allowed page. This is a bounded Data
 repair, not a new collector, scheduler, or execution route.
+A temporary Review assignment also found that the Compose test previously
+included later services when asserting the canary session's execution flag.
+The test now ends at the immediate `kis-paper-daily-backfill` boundary and
+requires exactly one session-local `--execute`; 10 focused dashboard tests
+pass. This is a bounded Paper execution-evidence repair, not a new route,
+worker, or approval step.
 
 ## Handoff
 

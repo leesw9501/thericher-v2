@@ -56,6 +56,13 @@ task, not a general Paper hold.
   order. Authenticated local emergency and pause controls may change only their
   local control state; its schema-v3 account projection omits prices and order
   identifiers.
+- The current source-free Claude falsification check returned
+  `supported-with-limits`: virtual-host pinning, pre-submit durable intent,
+  fresh account/quote reconciliation, exact-intent unknown-outcome recovery,
+  and dashboard route isolation remain intact. A single canary may retain
+  sanitized filled/remaining quantity or position state, but maps no price,
+  cost, valuation, or model outcome. It is execution evidence only, never a
+  fill-quality, PnL, profitability, or model result.
 - The resumed 2026-08-04 offline reattestation passed 137 canary, intent,
   quote, receipt, lifecycle-projection, dashboard, and schedule tests. This
   verifies deterministic local contracts only; it is not a current broker
@@ -63,6 +70,9 @@ task, not a general Paper hold.
 - The host lifecycle projector additionally has explicit valid-evidence and
   missing-evidence CLI contracts; 97 focused canary/quote/lifecycle tests pass
   without broker or credential access.
+- The Compose isolation test now scopes `kis-paper-session` to its immediate
+  `kis-paper-daily-backfill` boundary and requires exactly one `--execute`.
+  Later profile services can no longer mask a canary preview-path regression.
 - `daily-spy-head` and `daily-spy-session` use explicit Monday--Friday KST
   schedules. This aligns same-date Eastern sessions without changing route,
   sizing, cancellation, or service behavior.
