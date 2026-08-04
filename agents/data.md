@@ -123,7 +123,13 @@ undocumented timestamp seed.
   retry loop: a network-free namespace control precedes the one-client
   collection, followed by a credential-free observer. Its focused static
   contract reattestation passed 18 tests on 2026-08-05; await only the
-  task-owned source-safe receipt.
+  task-owned source-safe receipt. The host-only
+  `project_kis_paper_spy_paginated_prefix_capability.py` reader now binds one
+  derived exact run ID to its immutable control/observation pair without
+  reading raw pages, credentials, or a latest artifact. It can classify only
+  post-collection completed-prefix availability, incomplete/invalid
+  measurement, or no measurement; it always retains
+  `decision_time_availability: not_observed`.
 - **Pair/QQQ observers:** the daily pair-forward cache is `cache_current` for
   its own contract; the metadata-only QQQ readiness observer has no qualified
   future-window record. Neither condition becomes a general Data or Research

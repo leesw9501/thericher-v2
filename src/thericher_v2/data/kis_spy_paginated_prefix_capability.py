@@ -27,6 +27,7 @@ from thericher_v2.data.us_equity_session import us_equity_2026_session
 KIS_SPY_PAGINATED_PREFIX_CAPABILITY_KIND = "kis_spy_paginated_prefix_capability"
 KIS_SPY_PAGINATED_PREFIX_COLLECTION_KIND = "kis_spy_paginated_prefix_collection"
 KIS_SPY_PAGINATED_PREFIX_RAW_KIND = "kis_spy_paginated_prefix_raw_pages"
+KIS_SPY_PAGINATED_PREFIX_FACT_KIND = "kis_spy_paginated_prefix_capability_fact"
 KIS_SPY_PAGINATED_PREFIX_SCHEMA_ID = "kis-spy-paginated-prefix-capability-v1"
 KIS_SPY_PAGINATED_PREFIX_TARGET = "SPY/AMS/1m"
 KIS_SPY_PAGINATED_PREFIX_MAX_PAGES = 4
@@ -64,6 +65,11 @@ ObservationStatus = Literal[
     "page_seam_invalid",
     "incomplete_prefix",
     "capture_expired",
+]
+FactResultClass = Literal[
+    "post_collection_completed_prefix",
+    "measurement_incomplete_or_invalid",
+    "no_capability_measurement",
 ]
 
 
@@ -362,12 +368,383 @@ class KisSpyPaginatedPrefixObservation:
         }
 
 
+@dataclass(frozen=True, slots=True)
+class KisSpyPaginatedPrefixCapabilityFact:
+    """Offline projection of one exact task-owned prefix receipt pair."""
+
+    session_date: date
+    run_id: str
+    result_class: FactResultClass
+    control_status: ControlStatus
+    control_observed_at: datetime
+    observation_status: ObservationStatus
+    observation_control_status: ControlStatus | None
+    collection_started_at: datetime
+    collector_returned_at: datetime
+    observer_started_at: datetime
+    observer_finished_at: datetime
+    collection_exit_code: int
+    collection_status: CollectionStatus | None
+    page_count: int | None
+    complete_minute_count: int | None
+    missing_minute_count: int | None
+    page_seam_status: Literal["continuous", "invalid"] | None
+    raw_content_sha256: str | None
+    control_receipt_sha256: str
+    observation_receipt_sha256: str
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if type(self.session_date) is not date:
+            raise ValueError("SPY paginated prefix fact session date is invalid")
+        _require_safe_id(self.run_id)
+        if self.result_class not in {
+            "post_collection_completed_prefix",
+            "measurement_incomplete_or_invalid",
+            "no_capability_measurement",
+        }:
+            raise ValueError("SPY paginated prefix fact result class is invalid")
+        if self.control_status not in {"negative_control_clean", "negative_control_violation"}:
+            raise ValueError("SPY paginated prefix fact control status is invalid")
+        if self.observation_status not in {
+            "availability_within_validity_after_collection",
+            "outside_stage_window",
+            "control_unavailable",
+            "control_not_clean",
+            "collection_unavailable",
+            "fresh_run_invalid",
+            "page_seam_invalid",
+            "incomplete_prefix",
+            "capture_expired",
+        }:
+            raise ValueError("SPY paginated prefix fact observation status is invalid")
+        if self.observation_control_status not in {
+            None,
+            "negative_control_clean",
+            "negative_control_violation",
+        }:
+            raise ValueError("SPY paginated prefix fact observation control status is invalid")
+        for name in (
+            "control_observed_at",
+            "collection_started_at",
+            "collector_returned_at",
+            "observer_started_at",
+            "observer_finished_at",
+        ):
+            object.__setattr__(self, name, require_utc(getattr(self, name), name))
+        if self.collection_exit_code < 0:
+            raise ValueError("SPY paginated prefix fact collection exit code is invalid")
+        if self.collection_status not in {None, "collected", "partial"}:
+            raise ValueError("SPY paginated prefix fact collection status is invalid")
+        if (
+            self.page_count is not None
+            and not 0 <= self.page_count <= KIS_SPY_PAGINATED_PREFIX_MAX_PAGES
+        ):
+            raise ValueError("SPY paginated prefix fact page count is invalid")
+        for value in (self.complete_minute_count, self.missing_minute_count):
+            if value is not None and not 0 <= value <= KIS_SPY_PAGINATED_PREFIX_EXPECTED_MINUTES:
+                raise ValueError("SPY paginated prefix fact coverage is invalid")
+        if (
+            self.complete_minute_count is not None
+            and self.missing_minute_count is not None
+            and self.complete_minute_count + self.missing_minute_count
+            != KIS_SPY_PAGINATED_PREFIX_EXPECTED_MINUTES
+        ):
+            raise ValueError("SPY paginated prefix fact coverage is invalid")
+        if self.page_seam_status not in {None, "continuous", "invalid"}:
+            raise ValueError("SPY paginated prefix fact seam status is invalid")
+        for value in (
+            self.raw_content_sha256,
+            self.control_receipt_sha256,
+            self.observation_receipt_sha256,
+        ):
+            if value is not None and not _is_sha256(value):
+                raise ValueError("SPY paginated prefix fact hash is invalid")
+        if self.schema_version != SCHEMA_VERSION:
+            raise ValueError("SPY paginated prefix fact schema version is invalid")
+        if self.result_class == "post_collection_completed_prefix":
+            if not (
+                self.control_status == "negative_control_clean"
+                and self.observation_status == "availability_within_validity_after_collection"
+                and self.observation_control_status == "negative_control_clean"
+                and self.collection_exit_code == 0
+                and self.collection_status == "collected"
+                and self.page_count is not None
+                and self.complete_minute_count == KIS_SPY_PAGINATED_PREFIX_EXPECTED_MINUTES
+                and self.missing_minute_count == 0
+                and self.page_seam_status == "continuous"
+                and self.raw_content_sha256 is not None
+                and _capture_timing_is_valid(
+                    session_date=self.session_date,
+                    collection_started_at=self.collection_started_at,
+                    collector_returned_at=self.collector_returned_at,
+                    observer_started_at=self.observer_started_at,
+                    observer_finished_at=self.observer_finished_at,
+                )
+            ):
+                raise ValueError("SPY paginated prefix completed fact is invalid")
+        elif self.result_class == "measurement_incomplete_or_invalid":
+            if self.observation_status not in {
+                "fresh_run_invalid",
+                "page_seam_invalid",
+                "incomplete_prefix",
+                "capture_expired",
+            }:
+                raise ValueError("SPY paginated prefix diagnostic fact is invalid")
+        elif self.observation_status not in {
+            "outside_stage_window",
+            "control_unavailable",
+            "control_not_clean",
+            "collection_unavailable",
+        }:
+            raise ValueError("SPY paginated prefix no-measurement fact is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": self.schema_version,
+            "kind": KIS_SPY_PAGINATED_PREFIX_FACT_KIND,
+            "schema_id": KIS_SPY_PAGINATED_PREFIX_SCHEMA_ID,
+            "source": "task_owned_immutable_receipts",
+            "target": KIS_SPY_PAGINATED_PREFIX_TARGET,
+            "session_date": self.session_date.isoformat(),
+            "run_id": self.run_id,
+            "result_class": self.result_class,
+            "control": {
+                "status": self.control_status,
+                "observed_at": _time_payload(self.control_observed_at),
+                "receipt_sha256": self.control_receipt_sha256,
+            },
+            "observation": {
+                "status": self.observation_status,
+                "negative_control_status": self.observation_control_status,
+                "timing": {
+                    "collection_started_at": _time_payload(self.collection_started_at),
+                    "collector_returned_at": _time_payload(self.collector_returned_at),
+                    "observer_started_at": _time_payload(self.observer_started_at),
+                    "observer_finished_at": _time_payload(self.observer_finished_at),
+                    "validity_rule": "1530_et_inclusive_to_1531_et_exclusive",
+                },
+                "receipt_sha256": self.observation_receipt_sha256,
+            },
+            "collection": {
+                "exit_code": self.collection_exit_code,
+                "status": self.collection_status,
+                "page_count": self.page_count,
+                "raw_content_sha256": self.raw_content_sha256,
+            },
+            "coverage": {
+                "completed_minute_rule": "exchange_timestamp_plus_1m_at_or_before_1530_et",
+                "expected_minute_count": KIS_SPY_PAGINATED_PREFIX_EXPECTED_MINUTES,
+                "complete_minute_count": self.complete_minute_count,
+                "missing_minute_count": self.missing_minute_count,
+                "page_seam_status": self.page_seam_status,
+            },
+            "decision_time_availability": "not_observed",
+        }
+
+
 def run_id_for_session(session_date: date) -> str:
     """Return the only allowed fresh-run namespace for one scheduled session."""
 
     if type(session_date) is not date:
         raise ValueError("SPY paginated prefix session date is invalid")
     return f"spy-prefix-{session_date.strftime('%Y%m%d')}-v1"
+
+
+def read_spy_paginated_prefix_capability_fact_from_artifact_root(
+    *,
+    artifact_root: Path | str,
+    repository_root: Path | str,
+    session_date: date,
+    run_id: str | None = None,
+) -> KisSpyPaginatedPrefixCapabilityFact:
+    """Read only one exact control/observation receipt pair without raw pages."""
+
+    if type(session_date) is not date:
+        raise ValueError("SPY paginated prefix fact session date is invalid")
+    expected_run_id = run_id_for_session(session_date)
+    resolved_run_id = expected_run_id if run_id is None else run_id
+    _require_safe_id(resolved_run_id)
+    if resolved_run_id != expected_run_id:
+        raise ValueError("SPY paginated prefix fact run id is invalid")
+    root = _external_artifact_root(
+        artifact_root=Path(artifact_root), repository_root=Path(repository_root), create=False
+    )
+    control_relative = (
+        Path(KIS_SPY_PAGINATED_PREFIX_ARTIFACT_DIRECTORY)
+        / "controls"
+        / session_date.isoformat()
+        / "negative-control.json"
+    )
+    control_bytes = _read_existing_artifact_bytes(
+        root=root,
+        relative_path=control_relative,
+        error_message="SPY paginated prefix control receipt is unavailable",
+    )
+    control = _load_negative_control(
+        artifact_root=root,
+        session_date=session_date,
+        run_id=resolved_run_id,
+    )
+    observation_relative = (
+        Path(KIS_SPY_PAGINATED_PREFIX_ARTIFACT_DIRECTORY)
+        / "runs"
+        / resolved_run_id
+        / "evidence.json"
+    )
+    observation_bytes = _read_existing_artifact_bytes(
+        root=root,
+        relative_path=observation_relative,
+        error_message="SPY paginated prefix observation receipt is unavailable",
+    )
+    observation_path = root / observation_relative
+    payload = _decode_object(
+        observation_bytes,
+        "SPY paginated prefix observation receipt is invalid",
+    )
+    if set(payload) != {
+        "schema_version",
+        "kind",
+        "schema_id",
+        "phase",
+        "status",
+        "target",
+        "session_date",
+        "run_id",
+        "timing",
+        "negative_control_status",
+        "collection",
+        "coverage",
+        "decision_time_availability",
+    }:
+        raise ValueError("SPY paginated prefix observation receipt is invalid")
+    if (
+        payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("kind") != KIS_SPY_PAGINATED_PREFIX_CAPABILITY_KIND
+        or payload.get("schema_id") != KIS_SPY_PAGINATED_PREFIX_SCHEMA_ID
+        or payload.get("phase") != "positive_observation"
+        or payload.get("target") != KIS_SPY_PAGINATED_PREFIX_TARGET
+        or payload.get("session_date") != session_date.isoformat()
+        or payload.get("run_id") != resolved_run_id
+        or payload.get("decision_time_availability") != "not_observed"
+    ):
+        raise ValueError("SPY paginated prefix observation receipt is invalid")
+    timing = payload.get("timing")
+    collection_payload = payload.get("collection")
+    coverage_payload = payload.get("coverage")
+    if (
+        not isinstance(timing, Mapping)
+        or set(timing)
+        != {
+            "collection_started_at",
+            "collector_returned_at",
+            "observer_started_at",
+            "observer_finished_at",
+            "validity_rule",
+        }
+        or timing.get("validity_rule") != "1530_et_inclusive_to_1531_et_exclusive"
+        or not isinstance(collection_payload, Mapping)
+        or set(collection_payload)
+        != {"exit_code", "status", "page_count", "raw_content_sha256"}
+        or not isinstance(coverage_payload, Mapping)
+        or set(coverage_payload)
+        != {
+            "completed_minute_rule",
+            "expected_minute_count",
+            "complete_minute_count",
+            "missing_minute_count",
+            "page_seam_status",
+        }
+        or coverage_payload.get("completed_minute_rule")
+        != "exchange_timestamp_plus_1m_at_or_before_1530_et"
+        or coverage_payload.get("expected_minute_count")
+        != KIS_SPY_PAGINATED_PREFIX_EXPECTED_MINUTES
+    ):
+        raise ValueError("SPY paginated prefix observation receipt is invalid")
+    observation_status = payload.get("status")
+    observation_control_status = payload.get("negative_control_status")
+    collection_exit_code = collection_payload.get("exit_code")
+    collection_status = collection_payload.get("status")
+    page_count = collection_payload.get("page_count")
+    raw_content_sha256 = collection_payload.get("raw_content_sha256")
+    complete_minute_count = coverage_payload.get("complete_minute_count")
+    missing_minute_count = coverage_payload.get("missing_minute_count")
+    page_seam_status = coverage_payload.get("page_seam_status")
+    if (
+        observation_status
+        not in {
+            "availability_within_validity_after_collection",
+            "outside_stage_window",
+            "control_unavailable",
+            "control_not_clean",
+            "collection_unavailable",
+            "fresh_run_invalid",
+            "page_seam_invalid",
+            "incomplete_prefix",
+            "capture_expired",
+        }
+        or observation_control_status
+        not in {None, "negative_control_clean", "negative_control_violation"}
+        or type(collection_exit_code) is not int
+        or collection_status not in {None, "collected", "partial"}
+        or (page_count is not None and type(page_count) is not int)
+        or (raw_content_sha256 is not None and not isinstance(raw_content_sha256, str))
+        or (complete_minute_count is not None and type(complete_minute_count) is not int)
+        or (missing_minute_count is not None and type(missing_minute_count) is not int)
+        or page_seam_status not in {None, "continuous", "invalid"}
+    ):
+        raise ValueError("SPY paginated prefix observation receipt is invalid")
+    observation = KisSpyPaginatedPrefixObservation(
+        status=observation_status,
+        session_date=session_date,
+        run_id=resolved_run_id,
+        collection_started_at=_parse_time_payload(timing.get("collection_started_at")),
+        collector_returned_at=_parse_time_payload(timing.get("collector_returned_at")),
+        observer_started_at=_parse_time_payload(timing.get("observer_started_at")),
+        observer_finished_at=_parse_time_payload(timing.get("observer_finished_at")),
+        collection_exit_code=collection_exit_code,
+        control_status=observation_control_status,
+        collection_status=collection_status,
+        page_count=page_count,
+        complete_minute_count=complete_minute_count,
+        missing_minute_count=missing_minute_count,
+        page_seam_status=page_seam_status,
+        raw_content_sha256=raw_content_sha256,
+        artifact_path=observation_path,
+    )
+    if observation.status == "availability_within_validity_after_collection":
+        result_class: FactResultClass = "post_collection_completed_prefix"
+    elif observation.status in {
+        "fresh_run_invalid",
+        "page_seam_invalid",
+        "incomplete_prefix",
+        "capture_expired",
+    }:
+        result_class = "measurement_incomplete_or_invalid"
+    else:
+        result_class = "no_capability_measurement"
+    return KisSpyPaginatedPrefixCapabilityFact(
+        session_date=session_date,
+        run_id=resolved_run_id,
+        result_class=result_class,
+        control_status=control.status,
+        control_observed_at=control.observed_at,
+        observation_status=observation.status,
+        observation_control_status=observation.control_status,
+        collection_started_at=observation.collection_started_at,
+        collector_returned_at=observation.collector_returned_at,
+        observer_started_at=observation.observer_started_at,
+        observer_finished_at=observation.observer_finished_at,
+        collection_exit_code=observation.collection_exit_code,
+        collection_status=observation.collection_status,
+        page_count=observation.page_count,
+        complete_minute_count=observation.complete_minute_count,
+        missing_minute_count=observation.missing_minute_count,
+        page_seam_status=observation.page_seam_status,
+        raw_content_sha256=observation.raw_content_sha256,
+        control_receipt_sha256="sha256:" + _sha256(control_bytes),
+        observation_receipt_sha256="sha256:" + _sha256(observation_bytes),
+    )
 
 
 def is_spy_paginated_prefix_positive_window(
@@ -1297,6 +1674,21 @@ def _external_artifact_root(
     if not root.exists():
         raise ValueError("SPY paginated prefix artifact root is unavailable")
     return root
+
+
+def _read_existing_artifact_bytes(
+    *, root: Path, relative_path: Path, error_message: str
+) -> bytes:
+    if relative_path.is_absolute() or any(part in {"", ".", ".."} for part in relative_path.parts):
+        raise ValueError(error_message)
+    cursor = root
+    for part in relative_path.parts:
+        cursor = cursor / part
+        if not cursor.exists() or cursor.is_symlink():
+            raise ValueError(error_message)
+    if not cursor.is_file() or not cursor.resolve(strict=True).is_relative_to(root):
+        raise ValueError(error_message)
+    return cursor.read_bytes()
 
 
 def _cache_run_path(*, root: Path, run_id: str) -> Path:

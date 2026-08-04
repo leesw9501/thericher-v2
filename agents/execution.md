@@ -74,6 +74,13 @@ violation; delayed visibility after a distinct unknown is its strongest missing
 evidence. Focused fake-route tests prove same-run recovery,
 current-open-order rejection, and no mutation of the old state.
 
+At 04:03 KST, a network-disabled, read-only volume inspection reattached the
+same fact without exposing any run, order, account, or price values: 13 private
+state files classified only as `cancelled`, `intent_recorded`, or
+`outcome_unknown`, with no `submitted` or `cancel_started` state. The sanitized
+runtime projection was unavailable. This is a preflight inventory, not a
+broker outcome or a reason to invoke the task early.
+
 The canary contract is fixed:
 
 - virtual host only: `openapivts.koreainvestment.com:29443`, HTTPS, no

@@ -305,7 +305,7 @@ execution tests passed.
 | Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
 | Current-head duplicate recovery | Data | 00:31 KST returned deliberate downstream-recovery `20`; existing worker owns 02:31 retry and task-owned pointer/receipt reattachment |
-| SPY paginated-prefix capability | Data | Existing workers due 2026-08-05 04:29:30/04:30 KST |
+| SPY paginated-prefix capability | Data | Existing workers due 2026-08-05 04:29:30/04:30 KST; exact safe-receipt projector is ready |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate
