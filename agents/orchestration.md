@@ -1392,3 +1392,21 @@ same-session causal misreading without adding a new gate.
 - **Improvement:** reusing the existing metadata-only inspector turned an
   attractive but unproven multi-slot idea into a measured scope limit without
   adding a source call, scheduler, model, or permanent process.
+
+## Same-Date KST Paper Schedule Alignment (2026-08-04)
+
+- **Ready:** the three existing same-date KST Paper tasks (`quote-session`,
+  `daily-spy-head`, and `daily-spy-session`) are reinstalled with one explicit
+  Monday--Friday trigger each. Their current Monday run remains task-owned; no
+  foreground wait or manual Paper invocation is needed.
+- **Owned:** Execution owns their unchanged virtual host, intent, quote,
+  cancellation, and reconciliation behavior. Data and Engine retain their
+  independent scheduled packages and inputs.
+- **Due:** the current virtual-Paper canary remains due at 23:35 KST. Its
+  categorical worker result, not this trigger correction, is the remaining
+  company-goal evidence.
+- **Improvement:** the installer now distinguishes same-date KST sessions from
+  legacy overnight tasks, restores Monday US coverage, removes a Saturday
+  inactive run, and checks the KST host before mutating those task schedules.
+  The Claude scheduler challenge timed out (`review_unavailable`); independent
+  semantic and route reviews found no service or route change.

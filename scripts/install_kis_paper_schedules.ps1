@@ -123,6 +123,7 @@ $schedules = @(
         Service = "kis-paper-session"
         ImageServices = @("kis-paper-session")
         At = "23:35"
+        DaysOfWeek = @("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
         RecoverMissedRun = $false
         ExecutionLimitMinutes = 90
     },
@@ -132,6 +133,7 @@ $schedules = @(
         Service = "kis-paper-daily-spy-head"
         ImageServices = @("kis-paper-daily-spy-head")
         At = "22:15"
+        DaysOfWeek = @("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
         RecoverMissedRun = $true
         ExecutionLimitMinutes = 90
     },
@@ -141,6 +143,7 @@ $schedules = @(
         Service = "kis-paper-daily-spy-session"
         ImageServices = @("kis-paper-daily-spy-session")
         At = "23:50"
+        DaysOfWeek = @("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
         RecoverMissedRun = $false
         ExecutionLimitMinutes = 90
     },
@@ -261,7 +264,10 @@ if ($RequireExisting) {
 }
 
 if (
-    $selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward" `
+    $selectedSchedules.Name -contains "thericher-kis-paper-quote-session" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-head" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-session" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-pair-forward" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-broad-backfill" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-spy-prefix-negative-control" `
@@ -296,9 +302,16 @@ foreach ($schedule in $selectedSchedules) {
         $action = New-ScheduledTaskAction -Execute "docker.exe" -Argument $arguments
     }
     $times = @($schedule.At)
+    $daysOfWeek = @(
+        if ($schedule.ContainsKey("DaysOfWeek")) {
+            $schedule.DaysOfWeek
+        } else {
+            "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        }
+    )
     $triggers = @(
         $times | ForEach-Object {
-            New-ScheduledTaskTrigger -Weekly -DaysOfWeek Tuesday,Wednesday,Thursday,Friday,Saturday -At $_
+            New-ScheduledTaskTrigger -Weekly -DaysOfWeek $daysOfWeek -At $_
         }
     )
     $description = New-LocalDockerTaskDescription -Profile $schedule.Profile

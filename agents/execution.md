@@ -732,3 +732,22 @@ concurrent state-root run observing the first run's order before submitting.
 KIS does not offer an atomic snapshot-and-submit transaction, so an external
 broker-state change after reconciliation remains an explicit call-time
 limitation, not a false safety claim or a global Paper hold.
+
+## Same-Date KST Weekday Alignment (2026-08-04)
+
+`thericher-kis-paper-quote-session`, `thericher-kis-paper-daily-spy-head`,
+and `thericher-kis-paper-daily-spy-session` now each have an explicit
+Monday--Friday KST trigger. Their `22:15`, `23:35`, and `23:50` KST times map
+to the same Eastern civil weekday in both standard and daylight time; the
+former shared Tuesday--Saturday default omitted Monday and scheduled an
+inactive Saturday path. The installer checks the KST host for these task names,
+and post-install Task Scheduler XML confirms exactly one Monday--Friday trigger
+per task.
+
+This is schedule-only reliability work: it changed no service image, route,
+freshness rule, account call, quote, order, cancellation, sizing, or live
+behavior, and it did not run any task. A focused static/calendar suite passed;
+Claude's scoped scheduler challenge timed out and is recorded as
+`review_unavailable`. The virtual-Paper canary still owns its own fresh
+account/quote checks and terminal lifecycle evidence at the next scheduled
+current session.

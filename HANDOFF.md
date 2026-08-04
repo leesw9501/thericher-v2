@@ -2817,3 +2817,22 @@ normal token/rate deferral path was deliberately left outside that catch and
 keeps its original reason. The scheduled task remains unchanged; the original
 failure is still an unknown historical subcause, not a provider or account
 claim.
+
+## KIS Paper Same-Date Weekday Alignment (2026-08-04)
+
+The existing `quote-session`, `daily-spy-head`, and `daily-spy-session` tasks
+all run on the same America/New_York civil date as their KST trigger. They now
+explicitly use Monday--Friday KST rather than the shared Tuesday--Saturday
+overnight default, restoring the omitted Monday US session and removing the
+Saturday inactive invocation. The installer now requires a Korea Standard Time
+host when any of these three KST schedules is selected; all three existing
+tasks were reinstalled from verified images and report one Monday--Friday
+trigger in `Ready` state.
+
+No Docker service, schedule time, order logic, sizing, cancellation,
+credential, KIS, or live path changed or ran. Focused calendar/installer tests
+cover all same-date schedules in standard and daylight time, and the actual
+task XML was re-read after installation. Claude's narrow scheduler challenge
+timed out, so its status is `review_unavailable`; an independent semantic
+review confirmed the daily SPY tasks use prior-session input during the current
+Monday session. The current canary objective remains worker-owned at 23:35 KST.

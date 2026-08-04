@@ -11,14 +11,33 @@ SCRIPT = (
     / "install_kis_paper_schedules.ps1"
 )
 
+SAME_DATE_KST_SCHEDULES = {
+    "thericher-kis-paper-quote-session": "23:35",
+    "thericher-kis-paper-daily-spy-head": "22:15",
+    "thericher-kis-paper-daily-spy-session": "23:50",
+}
+LEGACY_OVERNIGHT_SCHEDULES = (
+    "thericher-kis-paper-intraday-head",
+    "thericher-kis-paper-daily-nas-forward",
+    "thericher-kis-paper-daily-pair-forward",
+    "thericher-kis-paper-daily-broad-backfill",
+    "thericher-kis-paper-daily-backfill",
+)
+
+
+def _schedule_entry(source: str, task_name: str) -> str:
+    return source.split(f'Name = "{task_name}"', maxsplit=1)[1].split(
+        "    },", maxsplit=1
+    )[0]
+
 
 def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     source = SCRIPT.read_text(encoding="ascii")
 
     assert source.count("thericher-kis-paper-daily-backfill") == 1
-    assert source.count("thericher-kis-paper-quote-session") == 1
-    assert source.count("thericher-kis-paper-daily-spy-head") == 1
-    assert source.count("thericher-kis-paper-daily-spy-session") == 1
+    assert source.count('Name = "thericher-kis-paper-quote-session"') == 1
+    assert source.count('Name = "thericher-kis-paper-daily-spy-head"') == 1
+    assert source.count('Name = "thericher-kis-paper-daily-spy-session"') == 1
     assert source.count("thericher-kis-paper-intraday-head") == 1
     assert source.count('Name = "thericher-kis-paper-daily-nas-forward"') == 1
     assert source.count('Name = "thericher-kis-paper-daily-pair-forward"') == 1
@@ -40,6 +59,16 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count('Service = "kis-paper-daily-pair-forward"') == 1
     assert source.count('Service = "kis-paper-daily-broad-backfill"') == 1
     assert source.count('Runner = "run_kis_paper_intraday_head_schedule.ps1"') == 1
+    assert source.count("DaysOfWeek = @(") == len(SAME_DATE_KST_SCHEDULES)
+    for task_name, schedule_time in SAME_DATE_KST_SCHEDULES.items():
+        entry = _schedule_entry(source, task_name)
+        assert f'At = "{schedule_time}"' in entry
+        assert (
+            'DaysOfWeek = @("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")'
+            in entry
+        )
+    for task_name in LEGACY_OVERNIGHT_SCHEDULES:
+        assert "DaysOfWeek =" not in _schedule_entry(source, task_name)
     forward_entry = source.split(
         'Name = "thericher-kis-paper-daily-nas-forward"', maxsplit=1
     )[1].split("    },", maxsplit=1)[0]
@@ -129,14 +158,16 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert '[System.TimeZoneInfo]::Local' in source
     assert '"Korea Standard Time"' in source
     assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward"' in source
+    assert '$selectedSchedules.Name -contains "thericher-kis-paper-quote-session"' in source
+    assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-head"' in source
+    assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-session"' in source
     assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-broad-backfill"' in source
     assert 'New-ScheduledTaskAction -Execute "powershell.exe"' in source
     assert "-NoProfile -ExecutionPolicy Bypass -File" in source
     assert '$schedule.ContainsKey("Runner")' in source
-    assert (
-        "New-ScheduledTaskTrigger -Weekly "
-        "-DaysOfWeek Tuesday,Wednesday,Thursday,Friday,Saturday"
-    ) in source
+    assert '$schedule.ContainsKey("DaysOfWeek")' in source
+    assert '"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"' in source
+    assert "New-ScheduledTaskTrigger -Weekly -DaysOfWeek $daysOfWeek -At $_" in source
     assert 'At = "23:35"' in source
     assert 'At = "22:15"' in source
     assert 'At = "23:50"' in source
@@ -204,6 +235,23 @@ def test_intraday_head_kst_days_map_to_prior_eastern_weekdays() -> None:
             assert tuple(value.strftime("%H:%M") for value in eastern_times) == (
                 expected_eastern_times
             )
+
+
+def test_same_date_kst_schedules_map_to_same_eastern_weekdays() -> None:
+    kst_weekdays = tuple(range(5))
+    for first_monday in (date(2026, 1, 5), date(2026, 7, 6)):
+        for offset in kst_weekdays:
+            kst_date = first_monday + timedelta(days=offset)
+            for schedule_time in SAME_DATE_KST_SCHEDULES.values():
+                eastern = (
+                    datetime.combine(kst_date, time.fromisoformat(schedule_time))
+                    .replace(tzinfo=ZoneInfo("Asia/Seoul"))
+                    .astimezone(ZoneInfo("America/New_York"))
+                )
+
+                assert eastern.date() == kst_date
+                assert eastern.weekday() == kst_date.weekday()
+                assert eastern.weekday() < 5
 
 
 def test_kis_paper_schedule_installer_has_no_secret_or_unapproved_route_surface() -> None:
