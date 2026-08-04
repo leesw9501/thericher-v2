@@ -13,6 +13,13 @@ from zoneinfo import ZoneInfo
 import pytest
 
 import thericher_v2.data.kis_spy_paginated_prefix_capability as capability
+from thericher_v2.execution.kis_market_data import (
+    KisMarketDataRequest,
+    KisMarketDataResponse,
+    KisPaperMarketDataClient,
+    KisPaperMarketDataConfig,
+    KisPaperMinuteQuery,
+)
 
 _EASTERN = ZoneInfo("America/New_York")
 _SESSION_DATE = date(2026, 8, 3)
@@ -51,6 +58,17 @@ class _Row:
 class _Page:
     bars: tuple[_Row, ...]
     next_cursor: str | None
+    continuation_signal: str | None = None
+
+
+class _ResponseTransport:
+    def __init__(self, responses: list[KisMarketDataResponse]) -> None:
+        self._responses = list(responses)
+        self.requests: list[KisMarketDataRequest] = []
+
+    def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+        self.requests.append(request)
+        return self._responses.pop(0)
 
 
 def test_paginated_full_prefix_is_exactly_bound_to_one_clean_fresh_run(tmp_path: Path) -> None:
@@ -116,7 +134,11 @@ def test_paginated_full_prefix_is_exactly_bound_to_one_clean_fresh_run(tmp_path:
     assert observation.complete_minute_count == 360
     assert observation.missing_minute_count == 0
     assert observation.page_seam_status == "continuous"
+    assert observation.terminal_continuation_signal == "blank_or_absent"
+    manifest = json.loads(run.manifest_path.read_text(encoding="ascii"))
+    assert manifest["collection"]["terminal_continuation_signal"] == "blank_or_absent"
     payload = json.loads(observation.artifact_path.read_text(encoding="ascii"))
+    assert payload["collection"]["terminal_continuation_signal"] == "blank_or_absent"
     assert payload["timing"]["collection_started_at"] == {
         "eastern": "2026-08-03T15:30:01-04:00",
         "eastern_dst": True,
@@ -126,6 +148,199 @@ def test_paginated_full_prefix_is_exactly_bound_to_one_clean_fresh_run(tmp_path:
     assert "913.111" not in json.dumps(payload, sort_keys=True)
     assert "7777" not in json.dumps(payload, sort_keys=True)
     assert str(cache_root) not in json.dumps(payload, sort_keys=True)
+
+
+def test_raw_continuation_header_is_never_persisted_or_projected(tmp_path: Path) -> None:
+    repository, cache_root, artifact_root = _roots(tmp_path)
+    run_id = capability.run_id_for_session(_SESSION_DATE)
+    cutoff = _cutoff(_SESSION_DATE)
+    capability.record_spy_paginated_prefix_negative_control(
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+        run_id=run_id,
+        observed_at=cutoff - timedelta(seconds=30),
+    )
+    raw_header_marker = "unrecognized-header-value-for-test"
+    page_rows = [row.as_document() for row in _prefix_pages(_SESSION_DATE)[0].bars]
+    transport = _ResponseTransport(
+        [
+            KisMarketDataResponse.from_payload({"access_token": "test-token"}),
+            KisMarketDataResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "output1": {"next": "0", "more": "0"},
+                    "output2": page_rows,
+                },
+                headers={"tr_cont": raw_header_marker},
+            ),
+        ]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+    collection = capability.collect_spy_paginated_prefix_pages(
+        fetch_page=lambda next_value, keyb: client.fetch_minute_page(
+            KisPaperMinuteQuery(
+                exchange="AMS",
+                symbol="SPY",
+                continuation_next=next_value,
+                continuation_key=keyb,
+            )
+        )
+    )
+    run = capability.write_spy_paginated_prefix_collection_run(
+        collection=collection,
+        cache_root=cache_root,
+        repository_root=repository,
+        run_id=run_id,
+        session_date=_SESSION_DATE,
+        collection_started_at=cutoff + timedelta(seconds=1),
+        token_attempts=1,
+        minute_page_attempts=1,
+    )
+    observation = capability.observe_spy_paginated_prefix_positive(
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+        run_id=run_id,
+        collection_started_at=cutoff + timedelta(seconds=1),
+        collector_returned_at=cutoff + timedelta(seconds=4),
+        collection_exit_code=0,
+        observer_started_at=cutoff + timedelta(seconds=5),
+        observer_finished_at=cutoff + timedelta(seconds=6),
+    )
+    fact = capability.read_spy_paginated_prefix_capability_fact_from_artifact_root(
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+    )
+
+    assert collection.pages[-1].continuation_signal == "unrecognized_nonblank"
+    assert observation.terminal_continuation_signal == "unrecognized_nonblank"
+    assert fact.terminal_continuation_signal == "unrecognized_nonblank"
+    persisted_payloads = [
+        run.manifest_path.read_text(encoding="ascii"),
+        (run.manifest_path.parent / "raw-pages.json").read_text(encoding="ascii"),
+        observation.artifact_path.read_text(encoding="ascii"),
+        json.dumps(fact.safe_payload(), sort_keys=True),
+    ]
+    assert all(raw_header_marker not in payload for payload in persisted_payloads)
+
+
+def test_legacy_zero_page_receipt_has_no_terminal_continuation_signal(tmp_path: Path) -> None:
+    repository, cache_root, artifact_root = _roots(tmp_path)
+    run_id = capability.run_id_for_session(_SESSION_DATE)
+    cutoff = _cutoff(_SESSION_DATE)
+    capability.record_spy_paginated_prefix_negative_control(
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+        run_id=run_id,
+        observed_at=cutoff - timedelta(seconds=30),
+    )
+    collection = capability.collect_spy_paginated_prefix_pages(
+        fetch_page=lambda _next, _key: _Page(bars=(), next_cursor=None)
+    )
+    capability.write_spy_paginated_prefix_collection_run(
+        collection=collection,
+        cache_root=cache_root,
+        repository_root=repository,
+        run_id=run_id,
+        session_date=_SESSION_DATE,
+        collection_started_at=cutoff + timedelta(seconds=1),
+        token_attempts=1,
+        minute_page_attempts=1,
+    )
+    observation = capability.observe_spy_paginated_prefix_positive(
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+        run_id=run_id,
+        collection_started_at=cutoff + timedelta(seconds=1),
+        collector_returned_at=cutoff + timedelta(seconds=4),
+        collection_exit_code=0,
+        observer_started_at=cutoff + timedelta(seconds=5),
+        observer_finished_at=cutoff + timedelta(seconds=6),
+    )
+    legacy_payload = json.loads(observation.artifact_path.read_text(encoding="ascii"))
+    legacy_payload["collection"].pop("terminal_continuation_signal")
+    observation.artifact_path.write_bytes(_canonical_bytes(legacy_payload))
+    fact = capability.read_spy_paginated_prefix_capability_fact_from_artifact_root(
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+    )
+
+    assert collection.pages == ()
+    assert observation.terminal_continuation_signal is None
+    assert fact.terminal_continuation_signal is None
+
+
+def test_unrecognized_terminal_continuation_is_retained_only_as_a_safe_category(
+    tmp_path: Path,
+) -> None:
+    repository, cache_root, artifact_root = _roots(tmp_path)
+    run_id = capability.run_id_for_session(_SESSION_DATE)
+    cutoff = _cutoff(_SESSION_DATE)
+    capability.record_spy_paginated_prefix_negative_control(
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+        run_id=run_id,
+        observed_at=cutoff - timedelta(seconds=30),
+    )
+    first_page = _prefix_pages(_SESSION_DATE)[0]
+    collection = capability.collect_spy_paginated_prefix_pages(
+        fetch_page=lambda _next, _key: _Page(
+            bars=first_page.bars,
+            next_cursor=None,
+            continuation_signal="unrecognized_nonblank",
+        )
+    )
+    capability.write_spy_paginated_prefix_collection_run(
+        collection=collection,
+        cache_root=cache_root,
+        repository_root=repository,
+        run_id=run_id,
+        session_date=_SESSION_DATE,
+        collection_started_at=cutoff + timedelta(seconds=1),
+        token_attempts=1,
+        minute_page_attempts=1,
+    )
+    observation = capability.observe_spy_paginated_prefix_positive(
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+        run_id=run_id,
+        collection_started_at=cutoff + timedelta(seconds=1),
+        collector_returned_at=cutoff + timedelta(seconds=4),
+        collection_exit_code=0,
+        observer_started_at=cutoff + timedelta(seconds=5),
+        observer_finished_at=cutoff + timedelta(seconds=6),
+    )
+    fact = capability.read_spy_paginated_prefix_capability_fact_from_artifact_root(
+        artifact_root=artifact_root,
+        repository_root=repository,
+        session_date=_SESSION_DATE,
+    )
+
+    assert collection.status == "collected"
+    assert collection.pages[-1].continuation_signal == "unrecognized_nonblank"
+    assert observation.status == "incomplete_prefix"
+    assert observation.terminal_continuation_signal == "unrecognized_nonblank"
+    assert fact.result_class == "measurement_incomplete_or_invalid"
+    assert fact.terminal_continuation_signal == "unrecognized_nonblank"
+    payload = json.loads(observation.artifact_path.read_text(encoding="ascii"))
+    assert payload["collection"]["terminal_continuation_signal"] == "unrecognized_nonblank"
+    assert "tr_cont" not in json.dumps(payload, sort_keys=True)
 
 
 def test_negative_control_detects_preexisting_planned_run_and_blocks_collection(

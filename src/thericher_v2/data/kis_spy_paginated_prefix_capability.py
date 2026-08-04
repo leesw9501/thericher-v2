@@ -71,6 +71,12 @@ FactResultClass = Literal[
     "measurement_incomplete_or_invalid",
     "no_capability_measurement",
 ]
+ContinuationSignal = Literal[
+    "recognized_continuation",
+    "blank_or_absent",
+    "unrecognized_nonblank",
+    "not_recorded_legacy",
+]
 
 
 @dataclass(frozen=True, slots=True)
@@ -80,6 +86,7 @@ class KisSpyPaginatedPrefixPage:
     index: int
     rows: tuple[dict[str, str], ...]
     continuation_advertised: bool
+    continuation_signal: ContinuationSignal | None = None
 
     def __post_init__(self) -> None:
         if (
@@ -91,6 +98,25 @@ class KisSpyPaginatedPrefixPage:
         object.__setattr__(self, "rows", tuple(_normalize_raw_row(row) for row in self.rows))
         if type(self.continuation_advertised) is not bool:
             raise ValueError("SPY paginated prefix page continuation is invalid")
+        signal = self.continuation_signal
+        if signal is None:
+            signal = (
+                "recognized_continuation"
+                if self.continuation_advertised
+                else "blank_or_absent"
+            )
+        if not isinstance(signal, str) or signal not in {
+            "recognized_continuation",
+            "blank_or_absent",
+            "unrecognized_nonblank",
+            "not_recorded_legacy",
+        }:
+            raise ValueError("SPY paginated prefix page continuation signal is invalid")
+        if signal != "not_recorded_legacy" and (
+            self.continuation_advertised != (signal == "recognized_continuation")
+        ):
+            raise ValueError("SPY paginated prefix page continuation signal is invalid")
+        object.__setattr__(self, "continuation_signal", signal)
 
 
 @dataclass(frozen=True, slots=True)
@@ -169,6 +195,11 @@ class KisSpyPaginatedPrefixCollectionRun:
                     None
                     if not self.collection.pages
                     else self.collection.pages[-1].continuation_advertised
+                ),
+                "terminal_continuation_signal": (
+                    None
+                    if not self.collection.pages
+                    else self.collection.pages[-1].continuation_signal
                 ),
             },
             "client": {
@@ -289,6 +320,7 @@ class KisSpyPaginatedPrefixObservation:
     control_status: str | None
     collection_status: str | None
     page_count: int | None
+    terminal_continuation_signal: ContinuationSignal | None
     complete_minute_count: int | None
     missing_minute_count: int | None
     page_seam_status: str | None
@@ -326,6 +358,17 @@ class KisSpyPaginatedPrefixObservation:
                 raise ValueError("SPY paginated prefix observation counts are invalid")
         if self.page_count is not None and self.page_count > KIS_SPY_PAGINATED_PREFIX_MAX_PAGES:
             raise ValueError("SPY paginated prefix observation page count is invalid")
+        if self.terminal_continuation_signal is not None and (
+            not isinstance(self.terminal_continuation_signal, str)
+            or self.terminal_continuation_signal
+            not in {
+                "recognized_continuation",
+                "blank_or_absent",
+                "unrecognized_nonblank",
+                "not_recorded_legacy",
+            }
+        ):
+            raise ValueError("SPY paginated prefix observation continuation signal is invalid")
         if self.raw_content_sha256 is not None and not _is_sha256(self.raw_content_sha256):
             raise ValueError("SPY paginated prefix observation raw hash is invalid")
         if not isinstance(self.artifact_path, Path) or self.artifact_path.name != "evidence.json":
@@ -355,6 +398,7 @@ class KisSpyPaginatedPrefixObservation:
                 "exit_code": self.collection_exit_code,
                 "status": self.collection_status,
                 "page_count": self.page_count,
+                "terminal_continuation_signal": self.terminal_continuation_signal,
                 "raw_content_sha256": self.raw_content_sha256,
             },
             "coverage": {
@@ -386,6 +430,7 @@ class KisSpyPaginatedPrefixCapabilityFact:
     collection_exit_code: int
     collection_status: CollectionStatus | None
     page_count: int | None
+    terminal_continuation_signal: ContinuationSignal | None
     complete_minute_count: int | None
     missing_minute_count: int | None
     page_seam_status: Literal["continuous", "invalid"] | None
@@ -441,6 +486,17 @@ class KisSpyPaginatedPrefixCapabilityFact:
             and not 0 <= self.page_count <= KIS_SPY_PAGINATED_PREFIX_MAX_PAGES
         ):
             raise ValueError("SPY paginated prefix fact page count is invalid")
+        if self.terminal_continuation_signal is not None and (
+            not isinstance(self.terminal_continuation_signal, str)
+            or self.terminal_continuation_signal
+            not in {
+                "recognized_continuation",
+                "blank_or_absent",
+                "unrecognized_nonblank",
+                "not_recorded_legacy",
+            }
+        ):
+            raise ValueError("SPY paginated prefix fact continuation signal is invalid")
         for value in (self.complete_minute_count, self.missing_minute_count):
             if value is not None and not 0 <= value <= KIS_SPY_PAGINATED_PREFIX_EXPECTED_MINUTES:
                 raise ValueError("SPY paginated prefix fact coverage is invalid")
@@ -530,6 +586,7 @@ class KisSpyPaginatedPrefixCapabilityFact:
                 "exit_code": self.collection_exit_code,
                 "status": self.collection_status,
                 "page_count": self.page_count,
+                "terminal_continuation_signal": self.terminal_continuation_signal,
                 "raw_content_sha256": self.raw_content_sha256,
             },
             "coverage": {
@@ -649,7 +706,16 @@ def read_spy_paginated_prefix_capability_fact_from_artifact_root(
         or timing.get("validity_rule") != "1530_et_inclusive_to_1531_et_exclusive"
         or not isinstance(collection_payload, Mapping)
         or set(collection_payload)
-        != {"exit_code", "status", "page_count", "raw_content_sha256"}
+        not in (
+            {"exit_code", "status", "page_count", "raw_content_sha256"},
+            {
+                "exit_code",
+                "status",
+                "page_count",
+                "terminal_continuation_signal",
+                "raw_content_sha256",
+            },
+        )
         or not isinstance(coverage_payload, Mapping)
         or set(coverage_payload)
         != {
@@ -670,6 +736,10 @@ def read_spy_paginated_prefix_capability_fact_from_artifact_root(
     collection_exit_code = collection_payload.get("exit_code")
     collection_status = collection_payload.get("status")
     page_count = collection_payload.get("page_count")
+    terminal_continuation_signal = collection_payload.get(
+        "terminal_continuation_signal",
+        None if page_count is None or page_count == 0 else "not_recorded_legacy",
+    )
     raw_content_sha256 = collection_payload.get("raw_content_sha256")
     complete_minute_count = coverage_payload.get("complete_minute_count")
     missing_minute_count = coverage_payload.get("missing_minute_count")
@@ -692,6 +762,19 @@ def read_spy_paginated_prefix_capability_fact_from_artifact_root(
         or type(collection_exit_code) is not int
         or collection_status not in {None, "collected", "partial"}
         or (page_count is not None and type(page_count) is not int)
+        or (
+            terminal_continuation_signal is not None
+            and (
+                not isinstance(terminal_continuation_signal, str)
+                or terminal_continuation_signal
+                not in {
+                    "recognized_continuation",
+                    "blank_or_absent",
+                    "unrecognized_nonblank",
+                    "not_recorded_legacy",
+                }
+            )
+        )
         or (raw_content_sha256 is not None and not isinstance(raw_content_sha256, str))
         or (complete_minute_count is not None and type(complete_minute_count) is not int)
         or (missing_minute_count is not None and type(missing_minute_count) is not int)
@@ -710,6 +793,7 @@ def read_spy_paginated_prefix_capability_fact_from_artifact_root(
         control_status=observation_control_status,
         collection_status=collection_status,
         page_count=page_count,
+        terminal_continuation_signal=terminal_continuation_signal,
         complete_minute_count=complete_minute_count,
         missing_minute_count=missing_minute_count,
         page_seam_status=page_seam_status,
@@ -757,6 +841,7 @@ def read_spy_paginated_prefix_capability_fact_from_artifact_root(
         collection_exit_code=observation.collection_exit_code,
         collection_status=observation.collection_status,
         page_count=observation.page_count,
+        terminal_continuation_signal=observation.terminal_continuation_signal,
         complete_minute_count=observation.complete_minute_count,
         missing_minute_count=observation.missing_minute_count,
         page_seam_status=observation.page_seam_status,
@@ -813,6 +898,7 @@ def collect_spy_paginated_prefix_pages(
                             index=index,
                             rows=rows,
                             continuation_advertised=_page_continuation(page),
+                            continuation_signal=_page_continuation_signal(page),
                         ),
                     ),
                 )
@@ -825,11 +911,12 @@ def collect_spy_paginated_prefix_pages(
                         reason="minute_duplicate_conflict",
                         pages=tuple(pages)
                         + (
-                            KisSpyPaginatedPrefixPage(
-                                index=index,
-                                rows=rows,
-                                continuation_advertised=_page_continuation(page),
-                            ),
+                        KisSpyPaginatedPrefixPage(
+                            index=index,
+                            rows=rows,
+                            continuation_advertised=_page_continuation(page),
+                            continuation_signal=_page_continuation_signal(page),
+                        ),
                         ),
                     )
                 fingerprints_by_timestamp[stamp] = fingerprint
@@ -839,6 +926,7 @@ def collect_spy_paginated_prefix_pages(
                     index=index,
                     rows=rows,
                     continuation_advertised=continuation_advertised,
+                    continuation_signal=_page_continuation_signal(page),
                 )
             )
             if not continuation_advertised:
@@ -909,6 +997,7 @@ def write_spy_paginated_prefix_collection_run(
             {
                 "index": page.index,
                 "continuation_advertised": page.continuation_advertised,
+                "continuation_signal": page.continuation_signal,
                 "rows": list(page.rows),
             }
             for page in collection.pages
@@ -930,6 +1019,9 @@ def write_spy_paginated_prefix_collection_run(
             "page_count": len(collection.pages),
             "continuation_advertised_on_final_page": (
                 None if not collection.pages else collection.pages[-1].continuation_advertised
+            ),
+            "terminal_continuation_signal": (
+                None if not collection.pages else collection.pages[-1].continuation_signal
             ),
         },
         "client": {
@@ -1121,6 +1213,7 @@ def observe_spy_paginated_prefix_positive(
             control_status=control_status,
             collection_status=None,
             page_count=None,
+            terminal_continuation_signal=None,
             complete_minute_count=None,
             missing_minute_count=None,
             page_seam_status=None,
@@ -1141,6 +1234,7 @@ def observe_spy_paginated_prefix_positive(
             control_status=control_status,
             collection_status=None,
             page_count=None,
+            terminal_continuation_signal=None,
             complete_minute_count=None,
             missing_minute_count=None,
             page_seam_status=None,
@@ -1172,6 +1266,7 @@ def observe_spy_paginated_prefix_positive(
             control_status=control_status,
             collection_status=None,
             page_count=None,
+            terminal_continuation_signal=None,
             complete_minute_count=None,
             missing_minute_count=None,
             page_seam_status=None,
@@ -1206,6 +1301,7 @@ def observe_spy_paginated_prefix_positive(
         control_status=control_status,
         collection_status=loaded.collection_status,
         page_count=loaded.page_count,
+        terminal_continuation_signal=loaded.terminal_continuation_signal,
         complete_minute_count=coverage.complete_minute_count,
         missing_minute_count=coverage.missing_minute_count,
         page_seam_status=coverage.page_seam_status,
@@ -1222,6 +1318,7 @@ class _LoadedCollectionRun:
     collection_started_at: datetime
     collection_status: str
     page_count: int
+    terminal_continuation_signal: ContinuationSignal | None
     token_attempts: int
     minute_page_attempts: int
     raw_content_sha256: str
@@ -1249,6 +1346,7 @@ def _write_observation(
     control_status: str | None,
     collection_status: str | None,
     page_count: int | None,
+    terminal_continuation_signal: ContinuationSignal | None,
     complete_minute_count: int | None,
     missing_minute_count: int | None,
     page_seam_status: str | None,
@@ -1268,6 +1366,7 @@ def _write_observation(
         control_status=control_status,
         collection_status=collection_status,
         page_count=page_count,
+        terminal_continuation_signal=terminal_continuation_signal,
         complete_minute_count=complete_minute_count,
         missing_minute_count=missing_minute_count,
         page_seam_status=page_seam_status,
@@ -1354,12 +1453,33 @@ def _load_collection_run(
         raise ValueError("SPY paginated prefix raw pages are invalid")
     if minute_page_attempts < len(pages):
         raise ValueError("SPY paginated prefix fresh run is invalid")
+    terminal_continuation_signal = collection.get(
+        "terminal_continuation_signal",
+        None if not pages else "not_recorded_legacy",
+    )
+    if (
+        terminal_continuation_signal is not None
+        and (
+            not isinstance(terminal_continuation_signal, str)
+            or terminal_continuation_signal
+            not in {
+                "recognized_continuation",
+                "blank_or_absent",
+                "unrecognized_nonblank",
+                "not_recorded_legacy",
+            }
+        )
+    ) or (
+        pages and terminal_continuation_signal != pages[-1].continuation_signal
+    ):
+        raise ValueError("SPY paginated prefix fresh run is invalid")
     return _LoadedCollectionRun(
         run_id=run_id,
         session_date=session_date,
         collection_started_at=collection_started,
         collection_status=collection_status,
         page_count=page_count,
+        terminal_continuation_signal=terminal_continuation_signal,
         token_attempts=token_attempts,
         minute_page_attempts=minute_page_attempts,
         raw_content_sha256=raw_hash,
@@ -1496,6 +1616,22 @@ def _page_continuation(page: object) -> bool:
     return True
 
 
+def _page_continuation_signal(page: object) -> ContinuationSignal:
+    advertised = _page_continuation(page)
+    signal = getattr(page, "continuation_signal", None)
+    if signal is None:
+        return "recognized_continuation" if advertised else "blank_or_absent"
+    if not isinstance(signal, str) or signal not in {
+        "recognized_continuation",
+        "blank_or_absent",
+        "unrecognized_nonblank",
+    }:
+        raise ValueError("minute_continuation_signal_invalid")
+    if advertised != (signal == "recognized_continuation"):
+        raise ValueError("minute_continuation_signal_invalid")
+    return signal
+
+
 def _page_next_cursor(page: object) -> str:
     if not _page_continuation(page):
         raise ValueError("minute_cursor_invalid")
@@ -1520,12 +1656,26 @@ def _page_from_document(value: object) -> KisSpyPaginatedPrefixPage:
         raise ValueError("SPY paginated prefix raw page is invalid")
     index = value.get("index")
     continuation = value.get("continuation_advertised")
+    signal = value.get("continuation_signal", "not_recorded_legacy")
     rows = value.get("rows")
-    if type(index) is not int or type(continuation) is not bool or not isinstance(rows, list):
+    if (
+        type(index) is not int
+        or type(continuation) is not bool
+        or not isinstance(signal, str)
+        or signal
+        not in {
+            "recognized_continuation",
+            "blank_or_absent",
+            "unrecognized_nonblank",
+            "not_recorded_legacy",
+        }
+        or not isinstance(rows, list)
+    ):
         raise ValueError("SPY paginated prefix raw page is invalid")
     return KisSpyPaginatedPrefixPage(
         index=index,
         continuation_advertised=continuation,
+        continuation_signal=signal,
         rows=tuple(_normalize_raw_row(row) for row in rows),
     )
 

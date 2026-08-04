@@ -67,7 +67,9 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     )
 
     assert first.next_cursor == "1"
+    assert first.continuation_signal == "recognized_continuation"
     assert second.next_cursor is None
+    assert second.continuation_signal == "blank_or_absent"
     assert transport.requests[1].query["PINC"] == "1"
     assert transport.requests[1].query["NEXT"] == ""
     assert first.more == "0"
@@ -113,11 +115,11 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     }
     assert transport.requests[1].query == {
         "AUTH": "",
-            "EXCD": "NAS",
-            "SYMB": "QQQ",
-            "NMIN": "1",
-            "PINC": "1",
-            "NREC": "120",
+        "EXCD": "NAS",
+        "SYMB": "QQQ",
+        "NMIN": "1",
+        "PINC": "1",
+        "NREC": "120",
         "FILL": "",
         "KEYB": "",
         "NEXT": "",
@@ -145,6 +147,30 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     kis_market_data._validate_request(transport.requests[1])
     kis_market_data._validate_request(transport.requests[2])
     assert all("trading" not in request.url for request in transport.requests)
+
+
+@pytest.mark.parametrize(
+    ("continuation", "expected_signal"),
+    [
+        (None, "blank_or_absent"),
+        ("", "blank_or_absent"),
+        ("unexpected", "unrecognized_nonblank"),
+    ],
+)
+def test_minute_client_keeps_only_a_safe_terminal_continuation_category(
+    continuation: str | None, expected_signal: str
+) -> None:
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=_RecordingTransport(
+            [_token(), _page("155900", "154000", next_value="0", continuation=continuation)]
+        ),
+    )
+
+    page = client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="SPY"))
+
+    assert page.next_cursor is None
+    assert page.continuation_signal == expected_signal
 
 
 def test_minute_client_accepts_f_continuation_header() -> None:
@@ -1150,7 +1176,7 @@ def _page(
     second_time: str,
     *,
     next_value: str,
-    continuation: str = "",
+    continuation: str | None = "",
 ) -> KisMarketDataResponse:
     return KisMarketDataResponse.from_payload(
         {
@@ -1158,7 +1184,7 @@ def _page(
             "output1": {"next": next_value, "more": "0"},
             "output2": [_row(first_time), _row(second_time)],
         },
-        headers={"tr_cont": continuation},
+        headers={} if continuation is None else {"tr_cont": continuation},
     )
 
 

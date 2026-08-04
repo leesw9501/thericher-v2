@@ -42,10 +42,12 @@ undocumented timestamp seed.
   canary or broker action. Its terminal receipt is narrowly `recovery` with
   `prospective_session_id_unavailable`: the downstream offline validation did
   not receive an exact session identifier. The 04:31 KST task then ended as
-  `recovery: collection_exit_nonzero`; all downstream QQQ/Paper stages were
-  `not_applicable`. This is not a model result or Paper outcome, and does not
-  rewrite the earlier receipt. The existing worker owns the next 06:20 KST
-  attempt; do not manually rerun it. The original scoped
+  `recovery: collection_exit_nonzero`: its fresh token start followed the
+  04:30 SPY-prefix collector inside the existing cross-process five-minute
+  token-start guard. All downstream QQQ/Paper stages were `not_applicable`.
+  This is not a model result or Paper outcome, and does not rewrite the earlier
+  receipt. The existing worker owns the next 06:20 KST attempt; do not manually
+  rerun it. The original scoped
   `minute_duplicate_conflict` remains the narrow collector-repair kill test;
   its historical quarantined retained head is unchanged. New
   `session-capture` attempts preserve an already retained causal head snapshot
@@ -122,21 +124,27 @@ undocumented timestamp seed.
   04:29:30 and 04:30 KST attempt. The namespace control was clean; the
   collection exited `collected` after one accepted 120-row page, with 119
   completed prefix minutes, 241 missing prefix minutes, and an invalid seam.
-  The final page advertised no continuation. It used one in-memory client, one
-  token attempt, and one minute-page attempt. This is an exact endpoint/run
+  Its last page had no next cursor, but the legacy receipt did not retain a
+  safe terminal continuation category, so its offline projection records
+  `not_recorded_legacy`; it cannot distinguish a blank/absent response signal
+  from an unrecognized nonblank one. It used one in-memory client, one token
+  attempt, and one minute-page attempt. This is an exact endpoint/run
   pagination fact, not a provider-wide retention or paging conclusion. The
   existing worker owns its next scheduled attempt; do not manually rerun it.
   One dedicated client/cache namespace may inspect at most four
   pages of 120 rows and must validate seams plus the exact completed
   09:30--15:29 ET prefix. The two-stage runner has no foreground sleep or
   retry loop: a network-free namespace control precedes the one-client
-  collection, followed by a credential-free observer. Its focused static
-  contract reattestation passed 18 tests on 2026-08-05. Its first task-owned
-  source-safe receipt is `measurement_incomplete_or_invalid`. The host-only
+  collection, followed by a credential-free observer. Its focused
+  Data/pagination/schedule reattestation passed 83 tests on 2026-08-05. Its
+  first task-owned source-safe receipt is `measurement_incomplete_or_invalid`.
+  The host-only
   `project_kis_paper_spy_paginated_prefix_capability.py` reader now binds one
   derived exact run ID to its immutable control/observation pair without
-  reading raw pages, credentials, or a latest artifact. It can classify only
-  post-collection completed-prefix availability, incomplete/invalid
+  reading raw pages, credentials, or a latest artifact. New exact runs retain
+  only `recognized_continuation`, `blank_or_absent`, or
+  `unrecognized_nonblank`, never a raw response-header value. It can classify
+  only post-collection completed-prefix availability, incomplete/invalid
   measurement, or no measurement; it always retains
   `decision_time_availability: not_observed`.
 - **Pair/QQQ observers:** the daily pair-forward cache is `cache_current` for

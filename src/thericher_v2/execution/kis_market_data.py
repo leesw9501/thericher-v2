@@ -49,6 +49,11 @@ KIS_PAPER_MINUTE_SYMBOL_EXCHANGES = {
     "IWM": frozenset({"AMS"}),
 }
 KIS_PAPER_MINUTE_PROBE_ONLY_TARGETS = frozenset({("IWM", "AMS")})
+KisPaperMinuteContinuationSignal = Literal[
+    "recognized_continuation",
+    "blank_or_absent",
+    "unrecognized_nonblank",
+]
 # Daily history has a deliberately separate contract from the minute probe.
 # QQQ/NAS was observed by the v1 private cache. NYS and AMS remain available
 # for empirical ETF venue checks; the active backfill mapping records only a
@@ -576,6 +581,7 @@ class KisPaperMinutePage:
     bars: tuple[KisPaperMinuteRawBar, ...]
     next_cursor: str | None
     more: str
+    continuation_signal: KisPaperMinuteContinuationSignal | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -584,6 +590,22 @@ class KisPaperMinutePage:
             raise KisPaperMarketDataError("minute_response_empty")
         if len(self.bars) > KIS_PAPER_MINUTE_MAX_ROWS:
             raise KisPaperMarketDataError("minute_response_invalid")
+        signal = self.continuation_signal
+        if signal is None:
+            signal = (
+                "recognized_continuation"
+                if self.next_cursor == "1"
+                else "blank_or_absent"
+            )
+        if not isinstance(signal, str) or signal not in {
+            "recognized_continuation",
+            "blank_or_absent",
+            "unrecognized_nonblank",
+        }:
+            raise KisPaperMarketDataError("minute_response_invalid")
+        if (self.next_cursor == "1") != (signal == "recognized_continuation"):
+            raise KisPaperMarketDataError("minute_response_invalid")
+        object.__setattr__(self, "continuation_signal", signal)
 
 
 class KisPaperMarketDataClient:
@@ -678,13 +700,22 @@ class KisPaperMarketDataClient:
         rows = tuple(_parse_minute_bar(row) for row in output2)
         # KIS documents minute pagination through the response ``tr_cont``
         # header. ``output1.next`` is provider metadata, not a stable cursor.
-        continuation = (_response_header(response.headers, "tr_cont") or "").upper()
+        continuation_header = _response_header(response.headers, "tr_cont")
+        continuation = (continuation_header or "").upper()
         next_cursor = "1" if continuation in {"M", "F"} else None
+        continuation_signal: KisPaperMinuteContinuationSignal
+        if next_cursor is not None:
+            continuation_signal = "recognized_continuation"
+        elif continuation_header is None or not continuation_header.strip():
+            continuation_signal = "blank_or_absent"
+        else:
+            continuation_signal = "unrecognized_nonblank"
         return KisPaperMinutePage(
             query=query,
             bars=rows,
             next_cursor=next_cursor,
             more=str(output1.get("more", "")).strip(),
+            continuation_signal=continuation_signal,
         )
 
     def fetch_daily_page(self, query: KisPaperDailyRequestQuery) -> KisPaperDailyPage:
