@@ -108,6 +108,13 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   baseline, completed-bar availability evidence, and candidate-specific replay
   parity, so it has no campaign, GPU, PnL, or Paper consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\kis-intraday-extreme-shock-reversal-20260804-r1\source-retrieval.json`.
+- The independently retrieved session-reset VWAP directional-state source is
+  `source_only_input_unavailable`. Its source-native state holds to a later
+  VWAP-side change or session close, not the discovery handoff's fixed
+  30-minute horizon. The current M1 cache lacks observed decision-time
+  availability and candidate-specific replay parity, so it has no campaign,
+  code, GPU, PnL, or Paper consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qqq-session-vwap-state-continuation-20260804-r1\source-retrieval.json`.
 - Closed or non-reusable historical families include QQQ MTF consensus,
   first-30/final-30 momentum, MTF logistic, lower-tail quantile preflight,
   Tiingo rotation/sequence controls, and static broad-D1 benchmarks. A later

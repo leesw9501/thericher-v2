@@ -69,14 +69,17 @@ strongest kill test before target evaluation or GPU consideration.
   any 5m/10m/1h adaptation is a separate untested hypothesis. It remains
   source-only with no campaign, GPU job, or Paper path. Evidence:
   `D:\thericher-v2\model-artifacts\research\strategy-discovery\intraday-clock-slot-continuation-source-pass-20260804-r1\source-handoff.json`.
-- The session-VWAP state-continuation handoff is `source_unverified`: it
-  proposes a completed regular-session M1 OHLCV, crossed-side, 30-minute
-  continuation study for a single liquid ETF. Its independent Engine retrieval
-  timeboxed without a receipt, so it cannot become a campaign or reopen a
-  closed family yet. A fresh Engine package must independently retrieve the
-  source and freeze the causal/cost contract before using the source-local
-  geometry preflight. Evidence:
-  `D:\thericher-v2\model-artifacts\research\strategy-discovery\qqq-session-vwap-state-continuation-source-pass-20260804-r1\source-handoff.json`.
+- The session-reset VWAP directional-state source is independently retrieved
+  as `source_only_input_unavailable`. Its native rule uses completed regular
+  session M1 HLC typical price and volume, changes state only after a completed
+  VWAP-side cross, and flattens at the close; it does not define the handoff's
+  fixed 30-minute horizon, which is not adopted. The author-hosted paper is
+  all-rights-reserved, so this project retains only a concise factual mechanism
+  summary and no source implementation. The current 21-session cache lacks
+  observed decision-time availability and candidate-specific causal
+  latency/fill/cost parity. It therefore cannot become a campaign, code change,
+  GPU appointment, PnL claim, or Paper path. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qqq-session-vwap-state-continuation-20260804-r1\source-retrieval.json`.
 
 ## Closed Or Non-Reusable Families
 
