@@ -35,6 +35,11 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   head is already quarantined. Its isolated next attempt is task-owned at
   00:31 KST. A repeated same-scope result is the only trigger for a narrow
   conflict-origin recovery package.
+- The existing KIS M1 cursor chains for QQQ/NAS and SPY/AMS are terminally
+  `source_exhausted` after their retained 2026-06-22 through 2026-07-21 spans
+  (about 20,000 rows per target). The offline reattachment issued no market
+  request and created no snapshot. This is an exact route/cursor fact, not a
+  general KIS historical-retention claim; do not invent a timestamp seed.
 - SPY paginated-prefix negative-control and feasibility workers are installed
   for 04:29:30 and 04:30 KST. They have a dedicated cache and can establish
   only post-collection availability, never retrospective decision-time

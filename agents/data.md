@@ -16,6 +16,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
+| KIS Paper QQQ/SPY M1 cursor cache | Terminal for its exact QQQ/NAS and SPY/AMS continuation chains | Source-local M1 evidence only; not a general KIS historical-reach claim |
 | KIS Paper SPY D1 stability observer | Installed, no runtime receipt yet | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
@@ -25,7 +26,12 @@ The broad D1 panel remains current-listing-only, non-PIT, unadjusted or
 adjustment-unqualified, corporate-action-unqualified, and session-finality
 unattested. Do not promote it to ranking, Paper input, or a qualified model
 dataset. The KIS minute endpoint's observed head continuation does not prove
-arbitrary historical intraday reach.
+arbitrary historical intraday reach. The exact QQQ/NAS and SPY/AMS blank-start
+cursor chains are now `source_exhausted`: their retained M1 coverage runs from
+2026-06-22 through 2026-07-21, with about 20,000 rows per target, and their
+terminal pages supplied no continuation. That bounds only those exact routes
+and cursors; it neither proves a provider-wide retention limit nor permits an
+undocumented timestamp seed.
 
 ## Ready / Owned / Due
 
@@ -35,6 +41,10 @@ arbitrary historical intraday reach.
   diagnosis classifies the origin as `retained_cache`; the conflicting head is
   already quarantined, so the next worker alone can confirm recovery. A repeat
   is the kill test for a narrow collector repair; no pre-run code change is due.
+- **Historical M1 cursor scope:** the existing QQQ/NAS and SPY/AMS backfill
+  indices were reattached offline as `source_exhausted`, with no new market-data
+  page or snapshot. Do not reopen either terminal cursor with an invented seed;
+  a changed endpoint, symbol, or provider behavior needs its own bounded probe.
 - **Daily SPY consumer readiness:** a static trace found `producer_path_missing`.
   The existing 22:15 KST `daily-spy-head` task emits a verified prior-session
   cache snapshot only; it does not emit a capability/qualification, a provider

@@ -30,6 +30,10 @@ independent Data, Engine, and Execution preparation continues when ready.
 The current company checkpoint depends on the task-owned canary outcome. The
 next product bottleneck beyond that result is fresh, causal, KIS-reconstructible
 input coverage.
+The exact QQQ/NAS and SPY/AMS M1 cursor caches are terminal after about 21
+sessions, so they cannot provide the 60-session baseline needed by the
+source-only shock-reversal hypothesis. This is a scope fact for those cursors,
+not a provider-wide conclusion or a hold on another ready lane.
 The current 120-row/head and broad D1 sources cannot be relabeled as qualified
 historical training or decision-time availability. In particular, the D1 SPY
 head is a verified cache producer, not a producer of provider finality or
