@@ -751,16 +751,33 @@ def test_evidence_excludes_credentials_raw_account_and_prices_and_stays_external
     assert "super-secret-value" not in evidence
     assert "12345678" not in evidence
     assert "ORD-123456789" not in evidence
-    for raw_price in ("1200.50", "1199.75", "500", "510"):
-        assert raw_price not in evidence
     payload = json.loads(evidence)
+    assert set(payload) == {
+        "schema_version",
+        "kind",
+        "status",
+        "reason_code",
+        "captured_at",
+        "paper_only",
+        "submit_capability",
+        "facts",
+        "reconciliation",
+    }
     assert payload["submit_capability"] is False
+    assert isinstance(payload["captured_at"], str)
     assert payload["facts"] == {
         "cash_currency": "USD",
         "orderable_funds_currency": "USD",
         "position_count": 1,
         "open_order_count": 1,
     }
+    assert payload["reconciliation"] == {
+        "account_snapshot_complete": True,
+        "scope": "read_only",
+        "reasons": [],
+        "reconciled_at": payload["reconciliation"]["reconciled_at"],
+    }
+    assert isinstance(payload["reconciliation"]["reconciled_at"], str)
     assert "snapshot" not in payload
 
 

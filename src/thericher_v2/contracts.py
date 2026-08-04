@@ -6,6 +6,8 @@ translate these objects into KIS, paper, or future broker payloads.
 
 from __future__ import annotations
 
+import hashlib
+import json
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -77,6 +79,75 @@ def positive(value: Decimal | int | str, field_name: str) -> Decimal:
     if result <= 0:
         raise ValueError(f"{field_name} must be positive")
     return result
+
+
+def decision_instrument_binding_ref(
+    *,
+    symbol: str,
+    market: str,
+    decision_class: str,
+) -> str:
+    """Return an opaque commitment to execution-critical instrument identity."""
+
+    return _opaque_binding_ref(
+        kind="decision_instrument_binding_v1",
+        payload={
+            "symbol": _binding_identity_text(symbol, "symbol"),
+            "market": _binding_identity_text(market, "market"),
+            "decision_class": _binding_decision_class(decision_class),
+        },
+    )
+
+
+def decision_target_binding_ref(
+    *,
+    symbol: str,
+    market: str,
+    decision_class: str,
+    target_exposure: Decimal | int | str,
+) -> str:
+    """Return an opaque commitment to one local target-exposure decision."""
+
+    exposure = decimal_value(target_exposure, "target_exposure")
+    if exposure < 0 or exposure > Decimal("1"):
+        raise ValueError("target_exposure must be between 0 and 1")
+    return _opaque_binding_ref(
+        kind="decision_target_binding_v1",
+        payload={
+            "symbol": _binding_identity_text(symbol, "symbol"),
+            "market": _binding_identity_text(market, "market"),
+            "decision_class": _binding_decision_class(decision_class),
+            "target_exposure": _decimal_marker(exposure),
+        },
+    )
+
+
+def _opaque_binding_ref(*, kind: str, payload: dict[str, str]) -> str:
+    encoded = json.dumps(
+        {"kind": kind, **payload},
+        ensure_ascii=True,
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("ascii")
+    return "ref:" + hashlib.sha256(encoded).hexdigest()
+
+
+def _binding_identity_text(value: str, field_name: str) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{field_name} must be nonempty")
+    return value.upper()
+
+
+def _binding_decision_class(value: str) -> str:
+    if value not in {"enter", "exit", "abstain"}:
+        raise ValueError("decision_class is invalid")
+    return value
+
+
+def _decimal_marker(value: Decimal) -> str:
+    if value == 0:
+        return "0"
+    return format(value.normalize(), "f")
 
 
 @dataclass(frozen=True)

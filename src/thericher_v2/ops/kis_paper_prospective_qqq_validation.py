@@ -415,6 +415,14 @@ def _validated_decision_receipt(payload: Mapping[str, object]) -> ResearchDecisi
                 "receipt input_manifest_ref",
             ),
             proposal_ref=_required_string(payload.get("proposal_ref"), "receipt proposal_ref"),
+            instrument_binding_ref=_optional_string(
+                payload.get("instrument_binding_ref"),
+                "receipt instrument_binding_ref",
+            ),
+            target_binding_ref=_optional_string(
+                payload.get("target_binding_ref"),
+                "receipt target_binding_ref",
+            ),
             decision_id=_required_string(payload.get("decision_id"), "receipt decision_id"),
             decision_class=_required_string(
                 payload.get("decision_class"),
@@ -434,6 +442,10 @@ def _required_string(value: object, name: str) -> str:
     if not isinstance(value, str):
         raise ValueError(f"{name} must be a string")
     return value
+
+
+def _optional_string(value: object, name: str) -> str | None:
+    return None if value is None else _required_string(value, name)
 
 
 def _parse_utc(value: object, name: str) -> datetime:

@@ -20,13 +20,16 @@ from thericher_v2.execution.kis_paper_prospective_qqq_session import (
     KIS_PAPER_PROSPECTIVE_QQQ_SESSION_ARTIFACT_DIRECTORY,
     KIS_PAPER_PROSPECTIVE_QQQ_SESSION_KIND,
 )
+from thericher_v2.ops import kis_paper_prospective_qqq_validation as qqq_validation
 from thericher_v2.ops.kis_paper_prospective_qqq_validation import (
     KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY,
     KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
     validate_kis_paper_prospective_qqq_session,
 )
+from thericher_v2.research import decision_receipt
 from thericher_v2.research.decision_receipt import (
     DecisionReceiptReferences,
+    ResearchDecisionReceipt,
     receipt_from_target_exposure_proposal,
 )
 from thericher_v2.research.kis_paper_prospective_loop import run_kis_paper_prospective_loop
@@ -244,6 +247,22 @@ def test_rejects_tampered_immutable_receipt_identity(
             artifact_root=artifact_root,
             repository_root=repository_root,
         )
+
+
+def test_validator_parses_legacy_receipt_without_execution_bindings(tmp_path: Path) -> None:
+    catalog = _catalog(91)
+    current = _ready_loop(
+        catalog,
+        tmp_path=tmp_path,
+        repository_root=tmp_path / "repo",
+    ).receipt
+    legacy = _legacy_receipt(current)
+
+    parsed = qqq_validation._validated_decision_receipt(legacy.to_payload())
+
+    assert legacy.instrument_binding_ref is None
+    assert legacy.target_binding_ref is None
+    assert parsed == legacy
 
 
 def test_accepts_a_current_canary_lifecycle_only_with_matching_ready_receipt(
@@ -861,6 +880,34 @@ def _replace_loop_receipt_action(payload: dict[str, object], *, action: str) -> 
     )
     baseline["action"] = action
     payload["receipt"] = projected.to_payload()
+
+
+def _legacy_receipt(receipt: ResearchDecisionReceipt) -> ResearchDecisionReceipt:
+    return ResearchDecisionReceipt(
+        campaign_ref=receipt.campaign_ref,
+        model_ref=receipt.model_ref,
+        input_manifest_ref=receipt.input_manifest_ref,
+        proposal_ref=receipt.proposal_ref,
+        decision_id=decision_receipt._derive_decision_id(
+            campaign_ref=receipt.campaign_ref,
+            model_ref=receipt.model_ref,
+            input_manifest_ref=receipt.input_manifest_ref,
+            proposal_ref=receipt.proposal_ref,
+            instrument_binding_ref=None,
+            target_binding_ref=None,
+            decision_class=receipt.decision_class,
+            input_status=receipt.input_status,
+            decided_at=receipt.decided_at,
+            valid_until=receipt.valid_until,
+            reason_class=receipt.reason_class,
+            schema_version=receipt.schema_version,
+        ),
+        decision_class=receipt.decision_class,
+        input_status=receipt.input_status,
+        decided_at=receipt.decided_at,
+        valid_until=receipt.valid_until,
+        reason_class=receipt.reason_class,
+    )
 
 
 def _parse_marker(value: object) -> datetime:

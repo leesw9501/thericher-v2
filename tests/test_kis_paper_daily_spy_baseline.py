@@ -19,7 +19,7 @@ from thericher_v2.data.kis_paper_daily_spy_input import attest_kis_paper_daily_s
 from thericher_v2.data.local import _cataloged_bars_from_verified_loader
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
 from thericher_v2.execution.paper_decision_bridge import (
-    PaperDecisionExecutionBinding,
+    LocalPaperTargetBinding,
     prepare_local_paper_intent,
 )
 from thericher_v2.research.kis_paper_daily_spy_baseline import (
@@ -124,11 +124,12 @@ def test_ready_daily_receipt_replays_through_local_paper_with_exact_identity(
     )
     prepared = prepare_local_paper_intent(
         evaluation.receipt,
-        binding=PaperDecisionExecutionBinding(
+        binding=LocalPaperTargetBinding(
             proposal_ref=evaluation.receipt.proposal_ref,
             symbol="SPY",
-            exchange="AMEX",
-            quantity=Decimal("1"),
+            target_exposure=evaluation.proposal.target_exposure,
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("20"),
         ),
         as_of=_FIRST_AVAILABLE_AT + timedelta(minutes=1),
     )

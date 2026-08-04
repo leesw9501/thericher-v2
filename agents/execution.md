@@ -73,6 +73,12 @@ task, not a general Paper hold.
 - The Compose isolation test now scopes `kis-paper-session` to its immediate
   `kis-paper-daily-backfill` boundary and requires exactly one `--execute`.
   Later profile services can no longer mask a canary preview-path regression.
+- Fresh `ResearchDecisionReceipt` objects now carry opaque commitments to the
+  proposal's normalized instrument, market, and decision class; local Paper
+  also commits its exact target exposure. Each route recomputes the commitment
+  it needs before preparation, so a matching lineage reference alone cannot
+  redirect a receipt to another symbol or target. Old receipts remain readable
+  for replay evidence but return a scoped no-intent on both Paper routes.
 - `daily-spy-head` and `daily-spy-session` use explicit Monday--Friday KST
   schedules. This aligns same-date Eastern sessions without changing route,
   sizing, cancellation, or service behavior.

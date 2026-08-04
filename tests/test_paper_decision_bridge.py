@@ -19,6 +19,7 @@ from thericher_v2.execution.paper_decision_bridge import (
     prepare_local_paper_intent,
     receipt_attribution_ref,
 )
+from thericher_v2.research import decision_receipt
 from thericher_v2.research.decision_receipt import (
     DecisionReceiptReferences,
     ResearchDecisionReceipt,
@@ -220,6 +221,116 @@ def test_entry_receipt_rejects_a_nonpositive_execution_target() -> None:
     assert prepared.local_paper_intent is None
 
 
+def test_local_target_binding_requires_the_receipt_committed_symbol_and_exposure() -> None:
+    receipt = _receipt(target_exposure=Decimal("0.20"))
+    for binding, reason in (
+        (
+            LocalPaperTargetBinding(
+                proposal_ref=receipt.proposal_ref,
+                symbol="SPY",
+                target_exposure=Decimal("1"),
+                current_quantity=Decimal("0"),
+                maximum_quantity=Decimal("10"),
+            ),
+            "binding_mismatch",
+        ),
+        (
+            LocalPaperTargetBinding(
+                proposal_ref=receipt.proposal_ref,
+                symbol="QQQ",
+                target_exposure=Decimal("1"),
+                current_quantity=Decimal("0"),
+                maximum_quantity=Decimal("10"),
+            ),
+            "target_binding_mismatch",
+        ),
+    ):
+        prepared = prepare_local_paper_intent(receipt, binding=binding, as_of=NOW)
+
+        assert prepared.status == "no_intent"
+        assert prepared.reason == reason
+        assert prepared.local_paper_intent is None
+        assert prepared.kis_paper_decision is None
+
+
+def test_kis_paper_binding_requires_the_receipt_committed_instrument() -> None:
+    receipt = _receipt()
+    mismatched = PaperDecisionExecutionBinding(
+        proposal_ref=receipt.proposal_ref,
+        symbol="SPY",
+        exchange="AMEX",
+        quantity=Decimal("1"),
+    )
+
+    prepared = prepare_kis_paper_decision(
+        receipt,
+        binding=mismatched,
+        limit_proof=_limit_proof(receipt),
+        as_of=NOW,
+    )
+
+    assert prepared.status == "no_intent"
+    assert prepared.reason == "binding_mismatch"
+    assert prepared.kis_paper_decision is None
+
+
+def test_legacy_receipt_without_binding_commitments_fails_closed_for_execution() -> None:
+    receipt = _receipt()
+    legacy = ResearchDecisionReceipt(
+        campaign_ref=receipt.campaign_ref,
+        model_ref=receipt.model_ref,
+        input_manifest_ref=receipt.input_manifest_ref,
+        proposal_ref=receipt.proposal_ref,
+        decision_id=decision_receipt._derive_decision_id(
+            campaign_ref=receipt.campaign_ref,
+            model_ref=receipt.model_ref,
+            input_manifest_ref=receipt.input_manifest_ref,
+            proposal_ref=receipt.proposal_ref,
+            instrument_binding_ref=None,
+            target_binding_ref=None,
+            decision_class=receipt.decision_class,
+            input_status=receipt.input_status,
+            decided_at=receipt.decided_at,
+            valid_until=receipt.valid_until,
+            reason_class=receipt.reason_class,
+            schema_version=receipt.schema_version,
+        ),
+        decision_class=receipt.decision_class,
+        input_status=receipt.input_status,
+        decided_at=receipt.decided_at,
+        valid_until=receipt.valid_until,
+        reason_class=receipt.reason_class,
+    )
+
+    prepared = prepare_local_paper_intent(
+        legacy,
+        binding=_local_target_binding(
+            legacy,
+            target_exposure=Decimal("0.5"),
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("10"),
+        ),
+        as_of=NOW,
+    )
+
+    assert legacy.instrument_binding_ref is None
+    assert legacy.target_binding_ref is None
+    assert prepared.status == "no_intent"
+    assert prepared.reason == "binding_mismatch"
+    assert prepared.local_paper_intent is None
+
+    paper = prepare_kis_paper_decision(
+        legacy,
+        binding=_binding(legacy),
+        limit_proof=_limit_proof(legacy),
+        as_of=NOW,
+    )
+
+    assert paper.status == "no_intent"
+    assert paper.reason == "binding_mismatch"
+    assert paper.kis_paper_decision is None
+
+
 def test_local_target_binding_cannot_prepare_a_kis_paper_decision() -> None:
     receipt = _receipt()
 
@@ -280,13 +391,17 @@ def _receipt(
     *,
     action: str = "enter",
     input_status: str = "ready",
+    target_exposure: Decimal | None = None,
 ) -> ResearchDecisionReceipt:
+    resolved_target_exposure = (
+        Decimal("0.5") if action == "enter" else Decimal("0")
+    ) if target_exposure is None else target_exposure
     proposal = TargetExposureProposal(
         proposal_id="source-proposal-not-exported",
         symbol="QQQ",
         market="US",
         action=action,  # type: ignore[arg-type]
-        target_exposure=Decimal("0.05") if action == "enter" else Decimal("0"),
+        target_exposure=resolved_target_exposure,
         confidence=Decimal("0.55") if input_status == "ready" else Decimal("0"),
         feature_schema_id="unit-feature-schema",
         input_status=input_status,  # type: ignore[arg-type]

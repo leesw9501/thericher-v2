@@ -13,6 +13,8 @@ from thericher_v2.contracts import (
     SCHEMA_VERSION,
     TargetExposureProposal,
     TargetInputStatus,
+    decision_instrument_binding_ref,
+    decision_target_binding_ref,
     require_utc,
 )
 
@@ -111,6 +113,8 @@ class ResearchDecisionReceipt:
     decided_at: datetime
     valid_until: datetime
     reason_class: DecisionReasonClass
+    instrument_binding_ref: str | None = None
+    target_binding_ref: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -136,6 +140,11 @@ class ResearchDecisionReceipt:
         object.__setattr__(self, "valid_until", require_utc(self.valid_until, "valid_until"))
         if self.valid_until < self.decided_at:
             raise ValueError("valid_until cannot precede decided_at")
+        if (self.instrument_binding_ref is None) != (self.target_binding_ref is None):
+            raise ValueError("receipt binding references must be present together")
+        if self.instrument_binding_ref is not None:
+            _require_opaque_reference(self.instrument_binding_ref, "instrument_binding_ref")
+            _require_opaque_reference(self.target_binding_ref, "target_binding_ref")
         _require_decision_shape(
             decision_class=self.decision_class,
             input_status=self.input_status,
@@ -150,6 +159,8 @@ class ResearchDecisionReceipt:
             model_ref=self.model_ref,
             input_manifest_ref=self.input_manifest_ref,
             proposal_ref=self.proposal_ref,
+            instrument_binding_ref=self.instrument_binding_ref,
+            target_binding_ref=self.target_binding_ref,
             decision_class=self.decision_class,
             input_status=self.input_status,
             decided_at=self.decided_at,
@@ -167,6 +178,8 @@ class ResearchDecisionReceipt:
             model_ref=self.model_ref,
             input_manifest_ref=self.input_manifest_ref,
             proposal_ref=self.proposal_ref,
+            instrument_binding_ref=self.instrument_binding_ref,
+            target_binding_ref=self.target_binding_ref,
             decision_class=self.decision_class,
             input_status=self.input_status,
             decided_at=self.decided_at,
@@ -195,11 +208,24 @@ def receipt_from_target_exposure_proposal(
     """Narrow a target-state proposal without copying its raw decision inputs."""
 
     decision_class, reason_class = _classify_proposal(proposal)
+    instrument_binding_ref = decision_instrument_binding_ref(
+        symbol=proposal.symbol,
+        market=proposal.market,
+        decision_class=decision_class,
+    )
+    target_binding_ref = decision_target_binding_ref(
+        symbol=proposal.symbol,
+        market=proposal.market,
+        decision_class=decision_class,
+        target_exposure=proposal.target_exposure,
+    )
     decision_id = _derive_decision_id(
         campaign_ref=references.campaign_ref,
         model_ref=references.model_ref,
         input_manifest_ref=references.input_manifest_ref,
         proposal_ref=references.proposal_ref,
+        instrument_binding_ref=instrument_binding_ref,
+        target_binding_ref=target_binding_ref,
         decision_class=decision_class,
         input_status=proposal.input_status,
         decided_at=proposal.decided_at,
@@ -212,6 +238,8 @@ def receipt_from_target_exposure_proposal(
         model_ref=references.model_ref,
         input_manifest_ref=references.input_manifest_ref,
         proposal_ref=references.proposal_ref,
+        instrument_binding_ref=instrument_binding_ref,
+        target_binding_ref=target_binding_ref,
         decision_id=decision_id,
         decision_class=decision_class,
         input_status=proposal.input_status,
@@ -268,6 +296,8 @@ def _derive_decision_id(
     model_ref: str,
     input_manifest_ref: str,
     proposal_ref: str,
+    instrument_binding_ref: str | None,
+    target_binding_ref: str | None,
     decision_class: DecisionClass,
     input_status: TargetInputStatus,
     decided_at: datetime,
@@ -280,6 +310,8 @@ def _derive_decision_id(
         model_ref=model_ref,
         input_manifest_ref=input_manifest_ref,
         proposal_ref=proposal_ref,
+        instrument_binding_ref=instrument_binding_ref,
+        target_binding_ref=target_binding_ref,
         decision_class=decision_class,
         input_status=input_status,
         decided_at=decided_at,
@@ -297,6 +329,8 @@ def _identity_payload(
     model_ref: str,
     input_manifest_ref: str,
     proposal_ref: str,
+    instrument_binding_ref: str | None,
+    target_binding_ref: str | None,
     decision_class: DecisionClass,
     input_status: TargetInputStatus,
     decided_at: datetime,
@@ -304,7 +338,7 @@ def _identity_payload(
     reason_class: DecisionReasonClass,
     schema_version: int,
 ) -> dict[str, object]:
-    return {
+    payload: dict[str, object] = {
         "campaign_ref": campaign_ref,
         "model_ref": model_ref,
         "input_manifest_ref": input_manifest_ref,
@@ -316,6 +350,10 @@ def _identity_payload(
         "reason_class": reason_class,
         "schema_version": schema_version,
     }
+    if instrument_binding_ref is not None:
+        payload["instrument_binding_ref"] = instrument_binding_ref
+        payload["target_binding_ref"] = target_binding_ref
+    return payload
 
 
 def _utc_marker(value: datetime) -> str:

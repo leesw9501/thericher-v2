@@ -49,12 +49,18 @@ def test_ready_baseline_proposal_projects_to_a_safe_deterministic_enter_receipt(
         "decided_at",
         "input_manifest_ref",
         "input_status",
+        "instrument_binding_ref",
         "model_ref",
         "proposal_ref",
         "reason_class",
         "schema_version",
+        "target_binding_ref",
         "valid_until",
     }
+    assert first.instrument_binding_ref is not None
+    assert first.target_binding_ref is not None
+    assert first.instrument_binding_ref.startswith("ref:")
+    assert first.target_binding_ref.startswith("ref:")
     serialized = first.canonical_json()
     for forbidden in (
         proposal.symbol,

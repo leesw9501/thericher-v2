@@ -9124,3 +9124,25 @@ latest fixed-trio structural receipt and an active local source response while
 preserving the distinction between repeatability evidence and causal research
 input. It improves Data recovery without making the project wait for a new
 provider or weakening any research or execution constraint.
+
+## 2026-08-04 - Bind decision receipts to executable semantics
+
+Decision: retain caller-provided `proposal_ref` as opaque lineage only. Every
+new `ResearchDecisionReceipt` additionally carries two opaque, deterministic
+commitments derived from its actual `TargetExposureProposal`: instrument/market/
+decision class, and instrument/market/decision class/target exposure. KIS Paper
+recomputes the first commitment from its execution binding; local Paper
+recomputes both. A mismatch returns a receipt-scoped no-intent before an order
+intent or KIS decision is created. Legacy receipt payloads remain parseable for
+evidence/replay, but neither Paper route prepares an execution from one.
+
+Reason: matching an arbitrary opaque lineage reference did not prove that an
+execution binding retained the proposal's symbol or local target exposure. That
+could corrupt the decision-to-intent/PnL attribution chain even though each
+individual object was valid. The commitments preserve the source-safe receipt
+boundary because they expose only hashes, never symbols, exposure values,
+prices, raw inputs, credentials, or account data. The daily local replay now
+passes its actual allocated target rather than a lossy fixed-lot surrogate.
+Claude's bounded drift-check timed out as `review_unavailable`; an independent
+Validation review found the fixed-lot regression before integration and its
+repair plus the wrong-symbol/wrong-target and legacy fail-closed tests passed.

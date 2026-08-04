@@ -147,6 +147,16 @@ The test now ends at the immediate `kis-paper-daily-backfill` boundary and
 requires exactly one session-local `--execute`; 10 focused dashboard tests
 pass. This is a bounded Paper execution-evidence repair, not a new route,
 worker, or approval step.
+A temporary Validation review found that an opaque proposal lineage reference
+alone could bind a receipt to the wrong execution symbol or local target. The
+repair adds source-safe, recomputable instrument and target commitments to new
+receipts; legacy receipts parse but fail closed for both Paper routes. Claude's
+bounded drift-check timed out as `review_unavailable`; it neither approves nor
+blocks this offline deterministic repair. The review's fixed-lot local replay
+finding was resolved by passing the actual daily target exposure. Focused 126
+tests pass; the full eight-worker fast-feedback run then passed 2,493 tests
+with 23 skips. The earlier parallel readonly failure was a timestamp substring
+in the test, now replaced with an exact JSON shape assertion.
 
 ## Handoff
 

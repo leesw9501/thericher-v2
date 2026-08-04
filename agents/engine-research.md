@@ -59,6 +59,10 @@ strongest kill test before target evaluation or GPU consideration.
   a campaign, GPU appointment, ensemble, PnL claim, or Paper interpretation.
 - The reusable causal MTF sequence contract and local-paper replay seam are
   complete engineering foundations, not evidence of alpha or selection skill.
+- Fresh target-decision receipts now carry opaque commitments to their actual
+  instrument/market/decision class and local target exposure. This protects
+  research-to-execution attribution only; it changes no model result, campaign,
+  GPU eligibility, ensemble, PnL claim, or Paper promotion.
 - Granite TTM R1 passed an isolated structural CPU/CUDA runtime smoke only. Its
   source, output shape, and artifact integrity are known; forecasting quality,
   comparative evaluation, and Paper use are unknown.

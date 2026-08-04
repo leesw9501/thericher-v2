@@ -13,6 +13,8 @@ from thericher_v2.contracts import (
     OrderIntent,
     TargetExposureProposal,
     decimal_value,
+    decision_instrument_binding_ref,
+    decision_target_binding_ref,
     positive,
     require_utc,
 )
@@ -214,6 +216,12 @@ def prepare_local_paper_intent(
         if isinstance(binding, LocalPaperTargetBinding)
         else _legacy_local_target_binding(receipt=receipt, binding=binding)
     )
+    if not _matches_target_binding(receipt=receipt, binding=target_binding):
+        return _no_intent(
+            route="local_paper",
+            receipt_ref=receipt_ref,
+            reason="target_binding_mismatch",
+        )
     proposal = _local_target_proposal(receipt=receipt, binding=target_binding)
     if proposal is None:
         return _no_intent(
@@ -334,6 +342,8 @@ def _eligibility_reason(
 ) -> BridgeReason | None:
     if binding.proposal_ref != receipt.proposal_ref:
         return "binding_mismatch"
+    if not _matches_instrument_binding(receipt=receipt, binding=binding):
+        return "binding_mismatch"
     eligible_shape = (
         receipt.decision_class == "enter" and receipt.reason_class == "eligible_enter"
     ) or (receipt.decision_class == "exit" and receipt.reason_class == "eligible_exit")
@@ -342,6 +352,35 @@ def _eligibility_reason(
     if as_of < receipt.decided_at or as_of > receipt.valid_until:
         return "receipt_not_current"
     return None
+
+
+def _matches_instrument_binding(
+    *,
+    receipt: ResearchDecisionReceipt,
+    binding: PaperDecisionExecutionBinding | LocalPaperTargetBinding,
+) -> bool:
+    if receipt.instrument_binding_ref is None:
+        return False
+    return receipt.instrument_binding_ref == decision_instrument_binding_ref(
+        symbol=binding.symbol,
+        market=binding.market,
+        decision_class=receipt.decision_class,
+    )
+
+
+def _matches_target_binding(
+    *,
+    receipt: ResearchDecisionReceipt,
+    binding: LocalPaperTargetBinding,
+) -> bool:
+    if receipt.target_binding_ref is None:
+        return False
+    return receipt.target_binding_ref == decision_target_binding_ref(
+        symbol=binding.symbol,
+        market=binding.market,
+        decision_class=receipt.decision_class,
+        target_exposure=binding.target_exposure,
+    )
 
 
 def _legacy_local_target_binding(
