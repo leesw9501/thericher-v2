@@ -193,6 +193,12 @@ For independent prospective/MTF contract files, use the existing file-level
 parallel helper for fast feedback. Its eight-worker reattestation completed 124
 passing and four skipped tests in about 73 seconds with a clean owned temp root;
 keep the serial changed-path group for goal-boundary authority.
+Every verification receipt now records its exact selector, worker count,
+passed/skipped cardinality, and elapsed time so a focused feedback group is
+never compared as though it were the full authority suite. Use the focused
+group after its owning change and retain the full authority suite only at a
+company-goal boundary; this is a measurement convention, not a new runner or
+gate.
 
 The official KIS minute example independently reattests the existing typed
 continuation implementation: `tr_cont` `M`/`F` leads to `NEXT=1`, `PINC=1`,
