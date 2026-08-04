@@ -151,8 +151,11 @@ execution tests passed.
   category, never a raw response-header value. It used one in-memory client,
   one token attempt, and one minute-page attempt. This is an exact pagination
   observation, not a provider-wide KIS conclusion. Its existing worker owns
-  the next attempt. The cache can establish only post-collection availability,
-  never retrospective decision-time availability.
+  the next attempt. Its existing collector/observer images were rebuilt and
+  the same tasks re-registered for the safe-category contract; trigger times,
+  `IgnoreNew`, and zero restart count are unchanged. The cache can establish
+  only post-collection availability, never retrospective decision-time
+  availability.
 - The daily pair-forward cache is `cache_current` only for its named source
   contract. The metadata-only QQQ readiness observer is independent and has no
   qualified future-window record.
@@ -318,7 +321,7 @@ execution tests passed.
 | Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
 | Current-head duplicate recovery | Data | 02:31 KST returned downstream recovery `20`; 04:31 KST hit the existing five-minute fresh-token guard after the 04:30 prefix collector, so its `collection_exit_nonzero` downstream stages are `not_applicable`; existing worker owns 06:20 retry |
-| SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the existing worker owns the next attempt |
+| SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate

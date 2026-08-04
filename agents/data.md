@@ -131,6 +131,9 @@ undocumented timestamp seed.
   attempt, and one minute-page attempt. This is an exact endpoint/run
   pagination fact, not a provider-wide retention or paging conclusion. The
   existing worker owns its next scheduled attempt; do not manually rerun it.
+  Its existing collector/observer images were rebuilt and the same tasks were
+  re-registered after the safe-category change; their trigger times,
+  `IgnoreNew`, and zero restart count are unchanged.
   One dedicated client/cache namespace may inspect at most four
   pages of 120 rows and must validate seams plus the exact completed
   09:30--15:29 ET prefix. The two-stage runner has no foreground sleep or
