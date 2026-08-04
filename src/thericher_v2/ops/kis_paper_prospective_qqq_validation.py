@@ -17,6 +17,8 @@ from thericher_v2.data.kis_paper_intraday import load_verified_kis_paper_private
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
     KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
     KisPaperIntradayRuntimeWindow,
+    KisPaperIntradayRuntimeWindowLocalAvailability,
+    attest_kis_paper_intraday_runtime_window_local_availability,
     select_kis_paper_intraday_runtime_window,
 )
 from thericher_v2.execution.kis_paper_prospective_qqq_session import (
@@ -32,7 +34,7 @@ KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_KIND = "kis_paper_prospective_qqq_validatio
 KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY = (
     "validation/kis-paper-prospective-qqq-cycle"
 )
-KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID = "runtime-freshness-v2"
+KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID = "runtime-freshness-v3"
 KIS_PAPER_PROSPECTIVE_QQQ_HEAD_CACHE_ROOT = Path(
     r"D:\market_data\us_equities\kis_paper_private\intraday-head"
 )
@@ -55,6 +57,7 @@ class KisPaperProspectiveQqqValidation:
     validation_scope: str
     runtime_window: dict[str, object] | None
     local_paper_replay: dict[str, object] | None
+    local_input_availability: dict[str, object] | None
     canary_present: bool
     evidence_path: Path
     validation_contract: str
@@ -70,6 +73,7 @@ class KisPaperProspectiveQqqValidation:
             "validation_scope": self.validation_scope,
             "runtime_window": self.runtime_window,
             "local_paper_replay": self.local_paper_replay,
+            "local_input_availability": self.local_input_availability,
             "canary_present": self.canary_present,
             "validation_contract": self.validation_contract,
             "validation_identity": self.validation_identity,
@@ -107,6 +111,7 @@ def validate_kis_paper_prospective_qqq_session(
         status,
         reason_code,
         loop,
+        local_input_availability,
         pre_account_freshness,
         pre_submit_freshness,
     ) = _validate_session_envelope(
@@ -116,15 +121,17 @@ def validate_kis_paper_prospective_qqq_session(
 
     runtime_window: dict[str, object] | None = None
     replay: dict[str, object] | None = None
+    validated_local_input_availability: dict[str, object] | None = None
     scope = "target_local_recovery"
     if loop is not None:
-        runtime_window, replay = _recompute_loop(
+        runtime_window, replay, validated_local_input_availability = _recompute_loop(
             loop,
             observed_at=observed_at,
             cache_root=cache_root,
             repository_root=repository_root,
             status=status,
             reason_code=reason_code,
+            local_input_availability=local_input_availability,
             pre_account_freshness=pre_account_freshness,
             pre_submit_freshness=pre_submit_freshness,
         )
@@ -140,6 +147,7 @@ def validate_kis_paper_prospective_qqq_session(
         "validation_scope": scope,
         "runtime_window": runtime_window,
         "local_paper_replay": replay,
+        "local_input_availability": validated_local_input_availability,
         "canary_present": payload["canary"] is not None,
     }
     result = KisPaperProspectiveQqqValidation(
@@ -149,6 +157,7 @@ def validate_kis_paper_prospective_qqq_session(
         validation_scope=scope,
         runtime_window=runtime_window,
         local_paper_replay=replay,
+        local_input_availability=validated_local_input_availability,
         canary_present=payload["canary"] is not None,
         evidence_path=_validation_evidence_path(root=root, session_id=session_id),
         validation_contract=KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
@@ -181,6 +190,7 @@ def _validate_session_envelope(
     Mapping[str, object] | None,
     Mapping[str, object] | None,
     Mapping[str, object] | None,
+    Mapping[str, object] | None,
 ]:
     if (
         payload.get("kind") != KIS_PAPER_PROSPECTIVE_QQQ_SESSION_KIND
@@ -208,8 +218,14 @@ def _validate_session_envelope(
         payload.get("pre_submit_freshness"),
         "prospective QQQ pre-submit freshness",
     )
+    local_input_availability = _object_or_none(
+        payload.get("local_input_availability"),
+        "prospective QQQ local input availability",
+    )
     if (pre_account_freshness is not None or pre_submit_freshness is not None) and loop is None:
         raise ValueError("execution freshness requires a prospective QQQ loop")
+    if local_input_availability is not None and loop is None:
+        raise ValueError("local input availability requires a prospective QQQ loop")
     if prepared is not None and prepared.get("route") != "kis_paper":
         raise ValueError("prospective QQQ prepared route is invalid")
     if position is not None and position.get("paper_only") is not True:
@@ -227,6 +243,20 @@ def _validate_session_envelope(
             pre_submit_freshness is None or prepared is None or position is None
         ):
             raise ValueError("pre-submit expiry session evidence is inconsistent")
+        if reason_code == "runtime_window_local_availability_unavailable" and (
+            loop is None
+            or local_input_availability is not None
+            or prepared is not None
+            or position is not None
+        ):
+            raise ValueError("local input availability recovery session evidence is inconsistent")
+        if reason_code == "runtime_window_not_locally_available" and (
+            loop is None
+            or local_input_availability is None
+            or prepared is not None
+            or position is not None
+        ):
+            raise ValueError("local input availability no-intent session evidence is inconsistent")
     else:
         if loop is None or canary is None or prepared is None or position is None:
             raise ValueError("completed prospective QQQ canary evidence is incomplete")
@@ -244,6 +274,7 @@ def _validate_session_envelope(
         status,
         reason_code,
         loop,
+        local_input_availability,
         pre_account_freshness,
         pre_submit_freshness,
     )
@@ -257,9 +288,10 @@ def _recompute_loop(
     repository_root: Path,
     status: str,
     reason_code: str,
+    local_input_availability: Mapping[str, object] | None,
     pre_account_freshness: Mapping[str, object] | None,
     pre_submit_freshness: Mapping[str, object] | None,
-) -> tuple[dict[str, object], dict[str, object] | None]:
+) -> tuple[dict[str, object], dict[str, object] | None, dict[str, object] | None]:
     if (
         loop.get("kind") != "kis_paper_prospective_loop"
         or loop.get("mode") != "offline_local_paper"
@@ -334,11 +366,39 @@ def _recompute_loop(
         or receipt.decided_at.isoformat().replace("+00:00", "Z") != observed_marker
     ):
         raise ValueError("prospective QQQ baseline and receipt lineage is inconsistent")
+    validated_local_input_availability = _validate_recorded_local_input_availability(
+        local_input_availability,
+        catalog=catalog,
+        cache_root=cache_root,
+        repository_root=repository_root,
+        recomputed=recomputed,
+        receipt=receipt,
+    )
+    if reason_code == "runtime_window_not_locally_available":
+        if (
+            validated_local_input_availability is None
+            or validated_local_input_availability.get("local_input_available_by_decision")
+            is not False
+        ):
+            raise ValueError("local input availability no-intent evidence is inconsistent")
+    elif reason_code == "runtime_window_local_availability_unavailable":
+        if validated_local_input_availability is not None:
+            raise ValueError("local input availability recovery evidence is inconsistent")
+    elif (
+        validated_local_input_availability is not None
+        and validated_local_input_availability.get("local_input_available_by_decision") is not True
+    ):
+        raise ValueError("unavailable local input requires its exact no-intent reason")
+    if status == "canary_completed" and (
+        validated_local_input_availability is not None
+        and validated_local_input_availability.get("local_input_available_by_decision") is not True
+    ):
+        raise ValueError("completed prospective QQQ canary lacks local input availability")
     replay = _object_or_none(loop.get("local_paper_replay"), "prospective QQQ local-paper replay")
     if recomputed.status != "ready":
         if replay is not None or baseline.get("action") != "abstain":
             raise ValueError("unready prospective QQQ input is not an abstaining no-intent fact")
-        return expected_window, None
+        return expected_window, None, validated_local_input_availability
     if replay is None:
         raise ValueError("ready prospective QQQ runtime window lacks local-paper replay evidence")
     if replay.get("status") == "filled":
@@ -351,7 +411,33 @@ def _recompute_loop(
         "status": replay.get("status"),
         "fill_source": replay.get("fill_source"),
         "event_log_sha256": replay.get("event_log_sha256"),
-    }
+    }, validated_local_input_availability
+
+
+def _validate_recorded_local_input_availability(
+    recorded: Mapping[str, object] | None,
+    *,
+    catalog,
+    cache_root: Path,
+    repository_root: Path,
+    recomputed: KisPaperIntradayRuntimeWindow,
+    receipt: ResearchDecisionReceipt,
+) -> dict[str, object] | None:
+    if recorded is None:
+        return None
+    attestation: KisPaperIntradayRuntimeWindowLocalAvailability = (
+        attest_kis_paper_intraday_runtime_window_local_availability(
+            catalog,
+            runtime_window=recomputed,
+            cache_root=cache_root,
+            repo_root=repository_root,
+            decided_at=receipt.decided_at,
+        )
+    )
+    expected = attestation.safe_payload()
+    if dict(recorded) != expected:
+        raise ValueError("local input availability does not match verified cache")
+    return expected
 
 
 def _validate_recorded_freshness(

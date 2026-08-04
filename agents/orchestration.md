@@ -106,8 +106,10 @@ the existing runtime selector, 90/18/9 local-resample baseline, prospective
 session, and offline validator already carry the named current-cache contract.
 The completed Data package reused that path: one source-safe local-retention
 attestation binds a ready runtime manifest to `decided_at` without adding a
-scheduler or generic receipt. Its result is not yet wired into Execution or a
-promotion claim.
+scheduler or generic receipt. Execution now consumes it only in the named QQQ
+prospective route before any KIS client interaction: unavailable or late local
+retention is a route-local no-intent. It remains outside model, PnL, and
+promotion claims.
 
 Claude returned `uncertain` on a proposed bare causal-availability receipt:
 the current catalog drops per-bar cache-acceptance time, so its selected bars
@@ -123,7 +125,9 @@ binds the ready 90-bar manifest to one `decided_at` and reports only whether
 that local retention was no later than the decision. It rejects incomplete,
 conflicting, candidate-conflicted, source-path, and lineage-mismatched inputs;
 provider availability/finality and the QQQ route's observed/provisional status
-remain unchanged. It is not yet wired into Execution, model, or Paper action.
+remain unchanged. A separate integration challenge returned
+`supported-with-limits`: the route uses it only as a pre-client local-cache
+check and does not infer provider availability or finality.
 
 At 21:40 KST, Data reattached its 23:15 stability observer and 00:31
 intraday-head task ownership. Both `IgnoreNew` profiles were rebuilt from the

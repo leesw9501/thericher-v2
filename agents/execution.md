@@ -165,6 +165,14 @@ task, not a general Paper hold.
   budget. The route creates no new adapter, task, or authority: it reuses the
   local replay, fresh account/open-order and quote checks, virtual-host-pinned
   canary, exact-intent recovery, cancellation, and network-disabled validator.
+  Before it constructs or reaches a KIS client, the named route also binds its
+  ready 90-bar input window to local-retention metadata at the receipt's
+  `decided_at`. Missing metadata or retention after that timestamp produces a
+  scoped no-intent before account, quote, preparation, or order work. This is
+  local-cache evidence only, not provider availability/finality or a model
+  promotion claim; it does not alter the separately task-owned canary.
+  Claude's integration challenge was `supported-with-limits` on exactly that
+  scope.
   Its source-safe outcome remains execution evidence only, never a model,
   fill-quality, PnL, or profitability claim.
 

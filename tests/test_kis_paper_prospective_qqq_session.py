@@ -11,6 +11,8 @@ import pytest
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
     KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
+    KisPaperIntradayRuntimeWindow,
+    KisPaperIntradayRuntimeWindowLocalAvailability,
 )
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
 from thericher_v2.data.us_equity_session import us_equity_2026_session
@@ -53,6 +55,94 @@ def test_preview_replays_locally_without_constructing_a_kis_client(
     assert outcome.loop is not None
     assert outcome.loop.local_paper_replay is not None
     assert outcome.loop.local_paper_replay.fill_source == "local_paper"
+    assert client.calls == []
+
+
+def test_late_local_retention_never_reads_account_or_quote(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_catalog(monkeypatch, catalog)
+    module = __import__(
+        "thericher_v2.execution.kis_paper_prospective_qqq_session",
+        fromlist=["placeholder"],
+    )
+
+    def unavailable_local_input(*_args, runtime_window, decided_at, **_kwargs):
+        return _local_input_availability(
+            runtime_window=runtime_window,
+            decided_at=decided_at,
+            latest_local_retained_at=decided_at + timedelta(microseconds=1),
+        )
+
+    monkeypatch.setattr(
+        module,
+        "attest_kis_paper_intraday_runtime_window_local_availability",
+        unavailable_local_input,
+    )
+    client = _FailClient()
+
+    outcome = run_kis_paper_prospective_qqq_session(
+        environment={"KIS_PAPER_APP_KEY": "not-used"},
+        cache_root=tmp_path / "cache",
+        local_paper_state_root=tmp_path / "runtime",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        cancel_after_submit=True,
+        client=client,
+        now=catalog.bars[-1].end_ts,
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "runtime_window_not_locally_available"
+    assert outcome.loop is not None
+    assert outcome.local_input_availability is not None
+    assert outcome.local_input_availability.local_input_available_by_decision is False
+    assert client.calls == []
+    rendered = outcome.evidence_path.read_text(encoding="ascii")
+    assert '"local_input_available_by_decision": false' in rendered
+    assert "not-used" not in rendered
+
+
+def test_unavailable_local_retention_never_reads_account_or_quote(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_catalog(monkeypatch, catalog)
+    module = __import__(
+        "thericher_v2.execution.kis_paper_prospective_qqq_session",
+        fromlist=["placeholder"],
+    )
+
+    def unavailable_local_input(*_args, **_kwargs):
+        raise ValueError("local retention is unavailable")
+
+    monkeypatch.setattr(
+        module,
+        "attest_kis_paper_intraday_runtime_window_local_availability",
+        unavailable_local_input,
+    )
+    client = _FailClient()
+
+    outcome = run_kis_paper_prospective_qqq_session(
+        environment={"KIS_PAPER_APP_KEY": "not-used"},
+        cache_root=tmp_path / "cache",
+        local_paper_state_root=tmp_path / "runtime",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        cancel_after_submit=True,
+        client=client,
+        now=catalog.bars[-1].end_ts,
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "runtime_window_local_availability_unavailable"
+    assert outcome.loop is not None
+    assert outcome.local_input_availability is None
     assert client.calls == []
 
 
@@ -380,6 +470,32 @@ def _install_catalog(monkeypatch: pytest.MonkeyPatch, catalog: CatalogedBars) ->
         module,
         "load_verified_kis_paper_private_intraday_catalog",
         lambda **_kwargs: catalog,
+    )
+    monkeypatch.setattr(
+        module,
+        "attest_kis_paper_intraday_runtime_window_local_availability",
+        lambda *_args, runtime_window, decided_at, **_kwargs: _local_input_availability(
+            runtime_window=runtime_window,
+            decided_at=decided_at,
+        ),
+    )
+
+
+def _local_input_availability(
+    *,
+    runtime_window: KisPaperIntradayRuntimeWindow,
+    decided_at: datetime,
+    latest_local_retained_at: datetime | None = None,
+) -> KisPaperIntradayRuntimeWindowLocalAvailability:
+    retained_at = decided_at if latest_local_retained_at is None else latest_local_retained_at
+    return KisPaperIntradayRuntimeWindowLocalAvailability(
+        input_manifest_ref=runtime_window.input_manifest_ref,
+        source_catalog_hash=runtime_window.source_catalog_hash,
+        index_metadata_sha256="sha256:" + "b" * 64,
+        selected_bar_count=len(runtime_window.decision_bars),
+        latest_local_retained_at=retained_at,
+        decided_at=decided_at,
+        local_input_available_by_decision=retained_at <= decided_at,
     )
 
 

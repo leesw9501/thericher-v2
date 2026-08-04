@@ -23,6 +23,8 @@ from thericher_v2.data.kis_paper_intraday import load_verified_kis_paper_private
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
     KIS_PAPER_INTRADAY_RUNTIME_MAX_AGE,
     KisPaperIntradayRuntimeFreshness,
+    KisPaperIntradayRuntimeWindowLocalAvailability,
+    attest_kis_paper_intraday_runtime_window_local_availability,
     select_kis_paper_intraday_runtime_window,
 )
 from thericher_v2.research.kis_paper_prospective_loop import (
@@ -81,6 +83,7 @@ class KisPaperProspectiveQqqSessionOutcome:
     observed_at: datetime
     evidence_path: Path
     loop: KisPaperProspectiveLoopResult | None
+    local_input_availability: KisPaperIntradayRuntimeWindowLocalAvailability | None = None
     position_resolution: object | None = None
     prepared: PaperDecisionBridgeResult | None = None
     pre_account_freshness: KisPaperIntradayRuntimeFreshness | None = None
@@ -108,6 +111,42 @@ class KisPaperProspectiveQqqSessionOutcome:
             self.pre_account_freshness is not None or self.pre_submit_freshness is not None
         ) and self.loop is None:
             raise ValueError("execution freshness requires a runtime loop")
+        if self.local_input_availability is not None:
+            if not isinstance(
+                self.local_input_availability,
+                KisPaperIntradayRuntimeWindowLocalAvailability,
+            ):
+                raise ValueError("prospective QQQ local input availability is invalid")
+            if self.loop is None:
+                raise ValueError("local input availability requires a runtime loop")
+            if (
+                self.local_input_availability.input_manifest_ref
+                != self.loop.window.input_manifest_ref
+                or self.local_input_availability.source_catalog_hash
+                != self.loop.window.source_catalog_hash
+                or self.local_input_availability.decided_at != self.loop.receipt.decided_at
+            ):
+                raise ValueError("prospective QQQ local input availability lineage is invalid")
+        if self.reason_code == "runtime_window_local_availability_unavailable":
+            if (
+                self.status != "no_intent"
+                or self.loop is None
+                or self.local_input_availability is not None
+            ):
+                raise ValueError("local input availability recovery evidence is invalid")
+        elif self.reason_code == "runtime_window_not_locally_available":
+            if (
+                self.status != "no_intent"
+                or self.loop is None
+                or self.local_input_availability is None
+                or self.local_input_availability.local_input_available_by_decision
+            ):
+                raise ValueError("local input availability no-intent evidence is invalid")
+        elif (
+            self.local_input_availability is not None
+            and not self.local_input_availability.local_input_available_by_decision
+        ):
+            raise ValueError("unavailable local input requires its exact no-intent reason")
         if self.reason_code == "runtime_window_expired_before_account":
             if (
                 self.status != "no_intent"
@@ -129,6 +168,11 @@ class KisPaperProspectiveQqqSessionOutcome:
                 raise ValueError("pre-submit freshness is invalid")
         elif self.status == "canary_completed":
             raise ValueError("completed canary requires pre-submit freshness")
+        if self.status == "canary_completed" and (
+            self.local_input_availability is None
+            or not self.local_input_availability.local_input_available_by_decision
+        ):
+            raise ValueError("completed canary requires local input availability")
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
 
     def safe_payload(self) -> dict[str, object]:
@@ -143,6 +187,11 @@ class KisPaperProspectiveQqqSessionOutcome:
             "observed_at": _utc_marker(self.observed_at),
             "paper_only": True,
             "loop": None if self.loop is None else self.loop.safe_payload(),
+            "local_input_availability": (
+                None
+                if self.local_input_availability is None
+                else self.local_input_availability.safe_payload()
+            ),
             "position_resolution": _safe_payload_or_none(self.position_resolution),
             "prepared": None if self.prepared is None else self.prepared.safe_payload(),
             "pre_account_freshness": (
@@ -285,6 +334,36 @@ def run_kis_paper_prospective_qqq_session(
             loop=loop,
         )
 
+    try:
+        local_input_availability = (
+            attest_kis_paper_intraday_runtime_window_local_availability(
+                catalog,
+                runtime_window=loop.window,
+                cache_root=cache_root,
+                repo_root=repository_root,
+                decided_at=receipt.decided_at,
+            )
+        )
+    except (OSError, ValueError):
+        return _record(
+            session_id=resolved_session_id,
+            status="no_intent",
+            reason_code="runtime_window_local_availability_unavailable",
+            observed_at=observed_at,
+            evidence_path=evidence_path,
+            loop=loop,
+        )
+    if not local_input_availability.local_input_available_by_decision:
+        return _record(
+            session_id=resolved_session_id,
+            status="no_intent",
+            reason_code="runtime_window_not_locally_available",
+            observed_at=observed_at,
+            evidence_path=evidence_path,
+            loop=loop,
+            local_input_availability=local_input_availability,
+        )
+
     pre_account_freshness = loop.window.freshness_at(
         as_of=_session_now(now=now, clock=clock)
     )
@@ -296,6 +375,7 @@ def run_kis_paper_prospective_qqq_session(
             observed_at=observed_at,
             evidence_path=evidence_path,
             loop=loop,
+            local_input_availability=local_input_availability,
             pre_account_freshness=pre_account_freshness,
         )
 
@@ -320,6 +400,7 @@ def run_kis_paper_prospective_qqq_session(
             observed_at=observed_at,
             evidence_path=evidence_path,
             loop=loop,
+            local_input_availability=local_input_availability,
         )
     if position_resolution.action == "none":
         return _record(
@@ -329,6 +410,7 @@ def run_kis_paper_prospective_qqq_session(
             observed_at=observed_at,
             evidence_path=evidence_path,
             loop=loop,
+            local_input_availability=local_input_availability,
             position_resolution=position_resolution,
         )
 
@@ -349,6 +431,7 @@ def run_kis_paper_prospective_qqq_session(
             observed_at=observed_at,
             evidence_path=evidence_path,
             loop=loop,
+            local_input_availability=local_input_availability,
             position_resolution=position_resolution,
         )
     if prepared.status != "ready" or prepared.kis_paper_decision is None:
@@ -359,6 +442,7 @@ def run_kis_paper_prospective_qqq_session(
             observed_at=observed_at,
             evidence_path=evidence_path,
             loop=loop,
+            local_input_availability=local_input_availability,
             position_resolution=position_resolution,
             prepared=prepared,
         )
@@ -370,6 +454,7 @@ def run_kis_paper_prospective_qqq_session(
             observed_at=observed_at,
             evidence_path=evidence_path,
             loop=loop,
+            local_input_availability=local_input_availability,
             position_resolution=position_resolution,
             prepared=prepared,
         )
@@ -385,6 +470,7 @@ def run_kis_paper_prospective_qqq_session(
             observed_at=observed_at,
             evidence_path=evidence_path,
             loop=loop,
+            local_input_availability=local_input_availability,
             position_resolution=position_resolution,
             prepared=prepared,
             pre_submit_freshness=pre_submit_freshness,
@@ -420,6 +506,7 @@ def run_kis_paper_prospective_qqq_session(
         observed_at=observed_at,
         evidence_path=evidence_path,
         loop=loop,
+        local_input_availability=local_input_availability,
         position_resolution=position_resolution,
         prepared=prepared,
         pre_submit_freshness=pre_submit_freshness,
@@ -435,6 +522,7 @@ def _record(
     observed_at: datetime,
     evidence_path: Path,
     loop: KisPaperProspectiveLoopResult | None = None,
+    local_input_availability: KisPaperIntradayRuntimeWindowLocalAvailability | None = None,
     position_resolution: object | None = None,
     prepared: PaperDecisionBridgeResult | None = None,
     pre_account_freshness: KisPaperIntradayRuntimeFreshness | None = None,
@@ -448,6 +536,7 @@ def _record(
         observed_at=observed_at,
         evidence_path=evidence_path,
         loop=loop,
+        local_input_availability=local_input_availability,
         position_resolution=position_resolution,
         prepared=prepared,
         pre_account_freshness=pre_account_freshness,

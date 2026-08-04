@@ -124,8 +124,10 @@ execution tests passed.
   to a named `decided_at` and reports local availability only when the selected
   bars were retained no later than that time. It rejects source/lineage,
   conflict, candidate-conflict, and incomplete-row mismatches; provider
-  decision-time availability and finality remain `not_observed`. It is not yet
-  wired to Execution, Paper eligibility, model training, GPU allocation, or PnL.
+  decision-time availability and finality remain `not_observed`. The named QQQ
+  prospective route now consumes it before any KIS client interaction, ending
+  as a scoped no-intent when local retention is missing or late. It remains
+  outside model training, GPU allocation, PnL, and general Paper eligibility.
 - A one-page, current-day-only KIS Paper IWM/AMS M1 capability probe was
   accepted. Query, client, and transport boundaries all prohibit previous-day
   and continuation use, and the probe discarded returned rows. This establishes

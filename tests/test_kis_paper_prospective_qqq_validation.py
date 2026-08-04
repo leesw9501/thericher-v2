@@ -12,6 +12,7 @@ import pytest
 
 from thericher_v2.contracts import Bar, TargetExposureProposal, Timeframe
 from thericher_v2.data.kis_paper_intraday_runtime_window import (
+    KisPaperIntradayRuntimeWindowLocalAvailability,
     select_kis_paper_intraday_runtime_window,
 )
 from thericher_v2.data.local import CatalogedBars, _cataloged_bars_from_verified_loader
@@ -306,6 +307,61 @@ def test_accepts_a_current_canary_lifecycle_only_with_matching_ready_receipt(
     assert result.canary_present is True
     assert result.runtime_window is not None
     assert result.runtime_window["input_manifest_ref"] == loop.window.input_manifest_ref
+
+
+def test_recomputes_recorded_local_input_availability_without_external_access(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    _deny_external_access(monkeypatch)
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    availability = _local_input_availability(loop)
+    monkeypatch.setattr(
+        qqq_validation,
+        "attest_kis_paper_intraday_runtime_window_local_availability",
+        lambda *_args, **_kwargs: availability,
+    )
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-local-input",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        local_input_availability=availability.safe_payload(),
+        status="no_intent",
+        reason_code="account_unavailable",
+    )
+
+    result = validate_kis_paper_prospective_qqq_session(
+        session_id="prospective-qqq-validation-local-input",
+        cache_root=tmp_path / "cache",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert result.local_input_availability == availability.safe_payload()
+    tampered = dict(availability.safe_payload())
+    tampered["selected_bar_count"] = 89
+    _write_session(
+        artifact_root,
+        session_id="prospective-qqq-validation-local-input-tampered",
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        local_input_availability=tampered,
+        status="no_intent",
+        reason_code="account_unavailable",
+    )
+
+    with pytest.raises(ValueError, match="local input availability does not match verified cache"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id="prospective-qqq-validation-local-input-tampered",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
 
 
 @pytest.mark.parametrize(
@@ -921,6 +977,7 @@ def _write_session(
     session_id: str,
     observed_at,
     loop: dict[str, object] | None,
+    local_input_availability: dict[str, object] | None = None,
     status: str,
     reason_code: str,
     position_resolution: dict[str, object] | None = None,
@@ -946,6 +1003,8 @@ def _write_session(
     if include_freshness_fields:
         payload["pre_account_freshness"] = pre_account_freshness
         payload["pre_submit_freshness"] = pre_submit_freshness
+    if local_input_availability is not None:
+        payload["local_input_availability"] = local_input_availability
     path = (
         artifact_root
         / KIS_PAPER_PROSPECTIVE_QQQ_SESSION_ARTIFACT_DIRECTORY
@@ -968,6 +1027,20 @@ def _install_validator_catalog(monkeypatch: pytest.MonkeyPatch, catalog: Catalog
         module,
         "load_verified_kis_paper_private_intraday_catalog",
         lambda **_kwargs: catalog,
+    )
+
+
+def _local_input_availability(
+    loop,
+) -> KisPaperIntradayRuntimeWindowLocalAvailability:
+    return KisPaperIntradayRuntimeWindowLocalAvailability(
+        input_manifest_ref=loop.window.input_manifest_ref,
+        source_catalog_hash=loop.window.source_catalog_hash,
+        index_metadata_sha256="sha256:" + "b" * 64,
+        selected_bar_count=len(loop.window.decision_bars),
+        latest_local_retained_at=loop.receipt.decided_at,
+        decided_at=loop.receipt.decided_at,
+        local_input_available_by_decision=True,
     )
 
 

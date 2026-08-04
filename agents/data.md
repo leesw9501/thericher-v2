@@ -274,8 +274,10 @@ undocumented timestamp seed.
   `decided_at`, reporting `local_input_available_by_decision` only when the
   latest earliest-complete local retention is no later than that decision.
   It rejects incomplete, conflicted, and lineage-mismatched inputs; provider
-  decision-time availability and finality remain `not_observed`. This is not
-  yet an Execution, model, or Paper-eligibility input.
+  decision-time availability and finality remain `not_observed`. It is the
+  pre-client local-input check for the named QQQ prospective route only:
+  unavailable/late retention produces its local no-intent. It is not a model,
+  general Paper-eligibility, or promotion input.
 - IWM/AMS is a probe-only M1 target: its request boundary permits one
   current-day page only and has no active collector or consumer contract.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,
