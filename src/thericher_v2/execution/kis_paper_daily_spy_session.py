@@ -388,6 +388,19 @@ def run_kis_paper_daily_spy_session(
 
     try:
         limit_input = resolved_client.fetch_spy_limit_input(observed_at=decision_at)
+    except (KisPaperCanaryError, KisPaperReadOnlyError, ValueError):
+        return _record_session(
+            session_id=resolved_session_id,
+            status="no_intent",
+            reason_code="quote_unavailable",
+            observed_at=decision_at,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            input=input,
+            evaluation=evaluation,
+            position_resolution=position_resolution,
+        )
+    try:
         prepared = prepare_kis_paper_spy_receipt_decision(
             receipt,
             limit_input=limit_input,
@@ -397,7 +410,7 @@ def run_kis_paper_daily_spy_session(
         return _record_session(
             session_id=resolved_session_id,
             status="no_intent",
-            reason_code="quote_unavailable",
+            reason_code="receipt_preparation_unavailable",
             observed_at=decision_at,
             artifact_root=artifact_root,
             repository_root=repository_root,

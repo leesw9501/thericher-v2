@@ -41,6 +41,13 @@ intraday-head task exited `20`; its exact safe runtime is
 `recovery/prospective_session_id_unavailable`. That anomaly is local to the
 downstream session binding; its task owns the 2026-08-06 00:29 KST retry.
 
+The current daily-SPY session image preserves `quote_unavailable` only for a
+fresh quote-fetch failure and emits `receipt_preparation_unavailable` for a
+local receipt/limit-preparation failure. This changes neither the preserved
+08-04 receipt nor any Paper call, intent, or schedule. Its 141 focused
+execution tests and the 2,573-pass, 23-skip parallel authority suite passed;
+the existing single `IgnoreNew` task was rebuilt for 2026-08-05 23:50 KST.
+
 At 03:16 KST on 2026-08-05, one exact read-only historical terminal-field
 probe ran for the preserved legacy state. It used only a virtual token and the
 history GET route, returning `history_observed_derived_date` with an absent

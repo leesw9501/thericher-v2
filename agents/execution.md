@@ -33,6 +33,14 @@ KST intraday-head receipt is
 `recovery/prospective_session_id_unavailable`; its worker owns the 2026-08-06
 00:29 KST retry.
 
+The rebuilt single `thericher-kis-paper-daily-spy-session` image preserves
+`quote_unavailable` for an exact fresh-quote fetch failure and uses
+`receipt_preparation_unavailable` only when local receipt/limit preparation
+fails or is not ready. The historical 08-04 receipt remains unchanged. The
+split has no new route, call, intent, cancellation, or secret-bearing evidence
+surface; 141 focused execution tests and the 2,573-pass, 23-skip authority
+suite passed before the existing `IgnoreNew` 23:50 KST task was reinstalled.
+
 Today's source-free Claude challenge is `uncertain`: it inspected no code or
 state and therefore could not attest the claimed guard conjunction. An
 independent static Review found the registered task/Compose surface uses the

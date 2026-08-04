@@ -14,7 +14,11 @@ import pytest
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.data.kis_paper_daily_spy_input import KisPaperDailySpyInput
 from thericher_v2.execution import kis_paper_daily_spy_session as session_module
-from thericher_v2.execution.kis_paper_canary import KisPaperCanaryIntent, KisPaperCanaryState
+from thericher_v2.execution.kis_paper_canary import (
+    KisPaperCanaryError,
+    KisPaperCanaryIntent,
+    KisPaperCanaryState,
+)
 from thericher_v2.execution.kis_paper_daily_spy_session import KisPaperDailySpySessionOutcome
 from thericher_v2.execution.kis_paper_quote import KisPaperSpyLimitInput
 from thericher_v2.execution.kis_paper_receipt_observer import KisPaperReceiptObservation
@@ -331,6 +335,135 @@ def test_stale_account_snapshot_does_not_fetch_a_quote_or_submit(
     assert outcome.status == "no_intent"
     assert outcome.reason_code == "account_snapshot_not_current"
     assert client.observed_at is None
+
+
+def test_quote_fetch_failure_remains_quote_unavailable_without_preparation_or_canary(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    client = FakePaperClient(
+        limit_input=KisPaperSpyLimitInput(
+            last=Decimal("500.25"),
+            decimal_places=2,
+            tick_size=Decimal("0.01"),
+            quoted_at=NOW,
+        )
+    )
+    fetch_calls = 0
+    preparation_called = False
+    canary_called = False
+    monkeypatch.setattr(
+        session_module,
+        "load_kis_paper_daily_spy_input",
+        lambda **_kwargs: _input(last_session=date(2026, 7, 21)),
+    )
+
+    def fail_quote_fetch(*, observed_at: datetime | None = None) -> KisPaperSpyLimitInput:
+        nonlocal fetch_calls
+        fetch_calls += 1
+        assert observed_at == NOW
+        raise KisPaperCanaryError("quote-fetch-secret-must-not-persist")
+
+    def preparation_must_not_run(*_args, **_kwargs):
+        nonlocal preparation_called
+        preparation_called = True
+        raise AssertionError("quote fetch failure reached receipt preparation")
+
+    def canary_must_not_run(*_args, **_kwargs):
+        nonlocal canary_called
+        canary_called = True
+        raise AssertionError("quote fetch failure reached receipt canary")
+
+    monkeypatch.setattr(client, "fetch_spy_limit_input", fail_quote_fetch)
+    monkeypatch.setattr(
+        session_module,
+        "prepare_kis_paper_spy_receipt_decision",
+        preparation_must_not_run,
+    )
+    monkeypatch.setattr(session_module, "run_kis_paper_receipt_canary", canary_must_not_run)
+
+    outcome = session_module.run_kis_paper_daily_spy_session(
+        environment=NoCredentialEnvironment(),
+        execute=True,
+        cancel_after_submit=False,
+        client=client,  # type: ignore[arg-type]
+        now=NOW,
+        session_id="quote-fetch-failure",
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "quote_unavailable"
+    assert outcome.run_id is None
+    assert fetch_calls == 1
+    assert preparation_called is False
+    assert canary_called is False
+    assert not (tmp_path / "private").exists()
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    assert '"reason_code": "quote_unavailable"' in evidence
+    for forbidden in ("quote-fetch-secret-must-not-persist", "500.25", "KIS_LIVE"):
+        assert forbidden not in evidence
+
+
+def test_receipt_preparation_failure_is_distinct_and_does_not_reach_canary(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    client = FakePaperClient(
+        limit_input=KisPaperSpyLimitInput(
+            last=Decimal("500.25"),
+            decimal_places=2,
+            tick_size=Decimal("0.01"),
+            quoted_at=NOW,
+        )
+    )
+    preparation_called = False
+    canary_called = False
+    monkeypatch.setattr(
+        session_module,
+        "load_kis_paper_daily_spy_input",
+        lambda **_kwargs: _input(last_session=date(2026, 7, 21)),
+    )
+
+    def fail_preparation(*_args, **kwargs):
+        nonlocal preparation_called
+        preparation_called = True
+        assert kwargs["limit_input"] is client.limit_input
+        raise ValueError("receipt-preparation-secret-must-not-persist")
+
+    def canary_must_not_run(*_args, **_kwargs):
+        nonlocal canary_called
+        canary_called = True
+        raise AssertionError("receipt preparation failure reached receipt canary")
+
+    monkeypatch.setattr(
+        session_module,
+        "prepare_kis_paper_spy_receipt_decision",
+        fail_preparation,
+    )
+    monkeypatch.setattr(session_module, "run_kis_paper_receipt_canary", canary_must_not_run)
+
+    outcome = session_module.run_kis_paper_daily_spy_session(
+        environment=NoCredentialEnvironment(),
+        execute=True,
+        cancel_after_submit=False,
+        client=client,  # type: ignore[arg-type]
+        now=NOW,
+        session_id="receipt-preparation-failure",
+        **_paths(tmp_path),
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "receipt_preparation_unavailable"
+    assert outcome.run_id is None
+    assert client.observed_at == NOW
+    assert preparation_called is True
+    assert canary_called is False
+    assert not (tmp_path / "private").exists()
+    evidence = outcome.evidence_path.read_text(encoding="utf-8")
+    assert '"reason_code": "receipt_preparation_unavailable"' in evidence
+    for forbidden in ("receipt-preparation-secret-must-not-persist", "500.25", "KIS_LIVE"):
+        assert forbidden not in evidence
 
 
 def test_daily_session_observer_receives_only_the_completed_canary_run(
