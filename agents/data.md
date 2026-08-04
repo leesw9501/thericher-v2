@@ -20,7 +20,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper IWM/AMS M1 candidate | One accepted current-day page through a probe-only route | Provisional route fact only; no history, qualification, or consumer promotion |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
 | KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |
-| KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
+| KIS SPY paginated-prefix capability cache | First task-owned receipt is incomplete after one accepted page | Exact endpoint pagination fact only; no decision-time availability or consumer promotion |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
 | Tiingo/Norgate D1 snapshots | Fixed offline controls; Tiingo has a hash-bound event-marker sidecar and Norgate NDU is healthy | Source-separated, non-Paper research only |
 
@@ -41,8 +41,10 @@ undocumented timestamp seed.
   `collection: exit_zero`, then wrote an exact QQQ no-intent session with no
   canary or broker action. Its terminal receipt is narrowly `recovery` with
   `prospective_session_id_unavailable`: the downstream offline validation did
-  not receive an exact session identifier. This is not a collection failure,
-  model result, or Paper outcome. The existing worker owns the next 04:31 KST
+  not receive an exact session identifier. The 04:31 KST task then ended as
+  `recovery: collection_exit_nonzero`; all downstream QQQ/Paper stages were
+  `not_applicable`. This is not a model result or Paper outcome, and does not
+  rewrite the earlier receipt. The existing worker owns the next 06:20 KST
   attempt; do not manually rerun it. The original scoped
   `minute_duplicate_conflict` remains the narrow collector-repair kill test;
   its historical quarantined retained head is unchanged. New
@@ -116,14 +118,21 @@ undocumented timestamp seed.
   Evidence: `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
 - **SPY prefix capability:**
   `thericher-kis-paper-spy-prefix-negative-control` and
-  `thericher-kis-paper-spy-prefix-feasibility` own 2026-08-05 04:29:30 and
-  04:30 KST. One dedicated client/cache namespace may inspect at most four
+  `thericher-kis-paper-spy-prefix-feasibility` completed their 2026-08-05
+  04:29:30 and 04:30 KST attempt. The namespace control was clean; the
+  collection exited `collected` after one accepted 120-row page, with 119
+  completed prefix minutes, 241 missing prefix minutes, and an invalid seam.
+  The final page advertised no continuation. It used one in-memory client, one
+  token attempt, and one minute-page attempt. This is an exact endpoint/run
+  pagination fact, not a provider-wide retention or paging conclusion. The
+  existing worker owns its next scheduled attempt; do not manually rerun it.
+  One dedicated client/cache namespace may inspect at most four
   pages of 120 rows and must validate seams plus the exact completed
   09:30--15:29 ET prefix. The two-stage runner has no foreground sleep or
   retry loop: a network-free namespace control precedes the one-client
   collection, followed by a credential-free observer. Its focused static
-  contract reattestation passed 18 tests on 2026-08-05; await only the
-  task-owned source-safe receipt. The host-only
+  contract reattestation passed 18 tests on 2026-08-05. Its first task-owned
+  source-safe receipt is `measurement_incomplete_or_invalid`. The host-only
   `project_kis_paper_spy_paginated_prefix_capability.py` reader now binds one
   derived exact run ID to its immutable control/observation pair without
   reading raw pages, credentials, or a latest artifact. It can classify only

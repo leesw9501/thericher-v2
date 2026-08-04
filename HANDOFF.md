@@ -94,8 +94,10 @@ execution tests passed.
   historical quarantine remains evidence only. Its 2026-08-05 02:31 KST
   collection exited zero, then its downstream QQQ session could not bind an
   exact ID, producing scoped recovery `20` with no broker action. Do not infer
-  its downstream stage or manually rerun it; the same worker owns the 04:31
-  KST retry. Its terminal writer now advances one task-owned current
+  its downstream stage or manually rerun it. The 04:31 KST task's terminal
+  receipt is separately `recovery: collection_exit_nonzero`; its downstream
+  QQQ/Paper stages are all `not_applicable`, and the existing worker owns the
+  06:20 KST retry. Its terminal writer now advances one task-owned current
   pointer only after the immutable source-safe receipt exists. The host
   projector reattaches that pointer only when its exact non-link receipt hash,
   run identity, observed timestamp, and terminal category agree; it makes no
@@ -137,8 +139,13 @@ execution tests passed.
   input. Evidence:
   `D:\thericher-v2\model-artifacts\data\yahoo-intraday-starter-orb-input-probe-v1\assessment.json`.
 - `thericher-kis-paper-spy-prefix-negative-control` and
-  `thericher-kis-paper-spy-prefix-feasibility` are installed for 04:29:30 and
-  04:30 KST. They have a dedicated cache and can establish only
+  `thericher-kis-paper-spy-prefix-feasibility` completed their 2026-08-05
+  04:29:30 and 04:30 KST attempt. The negative control was clean; the exact
+  SPY/AMS M1 run accepted one page with 119 completed prefix minutes, 241
+  missing, an invalid seam, and no final-page continuation. It used one
+  in-memory client, one token attempt, and one minute-page attempt. This is an
+  exact pagination observation, not a provider-wide KIS conclusion. Its
+  existing worker owns the next attempt. The cache can establish only
   post-collection availability, never retrospective decision-time availability.
 - The daily pair-forward cache is `cache_current` only for its named source
   contract. The metadata-only QQQ readiness observer is independent and has no
@@ -304,8 +311,8 @@ execution tests passed.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
-| Current-head duplicate recovery | Data | 00:31 KST returned deliberate downstream-recovery `20`; existing worker owns 02:31 retry and task-owned pointer/receipt reattachment |
-| SPY paginated-prefix capability | Data | Existing workers due 2026-08-05 04:29:30/04:30 KST; exact safe-receipt projector is ready |
+| Current-head duplicate recovery | Data | 02:31 KST returned downstream recovery `20`; 04:31 KST is isolated `collection_exit_nonzero` recovery with downstream stages `not_applicable`; existing worker owns 06:20 retry |
+| SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no continuation; existing worker owns next attempt |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate
