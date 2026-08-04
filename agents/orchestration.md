@@ -252,6 +252,10 @@ evidence only, never a fill-quality, PnL, profitability, or model result. The
 remaining scope limit is one host-owned state root and one scheduled runner; no
 second root, restored copy, or manual runner is installed. This does not delay
 independent work.
+The fresh 2026-08-05 source-free canary recovery retry likewise exceeded its
+CLI limit without a verdict. It is `review_unavailable`, not agreement or an
+adverse execution finding; the existing task-owned virtual-only contract and
+its local evidence remain unchanged.
 A separate Norgate scope review returned `supported-with-limits` for an
 aggregate-only explicit-snapshot double-read conformance, while rejecting the
 range-risk diagnostic until adjustment and capital-event semantics are
