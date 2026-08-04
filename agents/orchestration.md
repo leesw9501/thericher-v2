@@ -18,7 +18,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | Current-head recovery | Data | Existing isolated cache/task | Due 2026-08-05 00:31 KST |
 | SPY prefix capability | Data | Dedicated cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
-| Norgate local capability | Data | NDU loopback and D: cache | 512-session fixed-ETF snapshot now has a matching two-read current-build receipt; source-local only, with no PIT/model/GPU/Paper promotion |
+| Norgate local capability | Data | NDU loopback and D: cache | Active client now resolves to the D: trial root; its 29/126-session tail is `input_unavailable`, while the 512-session fixed-ETF snapshot remains source-local with no PIT/model/GPU/Paper promotion |
 | Free public augmentation | Data | Official-source capability check | No full PIT/delisting/corporate-action/OHLCV source qualified; SEC sidecar probe needs declared contact |
 | Architecture structure screen | Engine | RTX 4090 | Fixed source-local LSTM/TCN/attention screen completed jointly with no winner; no eligible frozen predictive contract |
 

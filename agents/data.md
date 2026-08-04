@@ -134,6 +134,15 @@ undocumented timestamp seed.
   timing nor adjustment/capital-event semantics. Model, GPU, PnL, and Paper
   eligibility remain false. Evidence:
   `D:\thericher-v2\model-artifacts\data\norgate-active-build-revision-v1\revision-current-512-20260804-r1\receipt.json`.
+  The latest local-client tail probe resolves its `US Equities` update timestamp
+  to exactly one active root,
+  `D:\market_data\us_equities\norgate_us_platinum_trial`. Its predeclared
+  2026-06-23 through 2026-08-04 D1 window has 29 common SPY/QQQ/IWM sessions,
+  below the separate 126-session tail contract, so it ends
+  `input_unavailable` as `calendar_interval_below_predeclared_minimum`. This
+  confirms the current client/root binding only; it does not rebuild the frozen
+  snapshot or alter model, GPU, PnL, or Paper eligibility. Evidence:
+  `D:\thericher-v2\model-artifacts\data\norgate-trial-tail-readiness-v1\tail-active-build-20260804-r2`.
   A separate hash-bound dividend-marker exclusion sidecar now reattests the
   same 512-session parent: 24 nonzero source markers yielded 72 exclusion rows
   over 55 distinct date groups. It is conservative post-hoc data hygiene only,

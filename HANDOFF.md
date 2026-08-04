@@ -126,6 +126,15 @@ execution tests passed.
   arithmetic constraint; the matching external sidecar retains its own
   source-safe evidence. Evidence:
   `D:\thericher-v2\model-artifacts\data\norgate-active-build-revision-v1\revision-current-512-20260804-r1\receipt.json`.
+- A current local-client tail probe resolves the `US Equities` update timestamp
+  to exactly one active data root,
+  `D:\market_data\us_equities\norgate_us_platinum_trial`. Its predeclared
+  2026-06-23 through 2026-08-04 D1 window has 29 common SPY/QQQ/IWM sessions,
+  below its separate 126-session minimum, so its status is
+  `input_unavailable`. It validates client/root binding only: it neither
+  rebuilds the frozen snapshot nor changes model, GPU, PnL, or Paper
+  eligibility. Evidence:
+  `D:\thericher-v2\model-artifacts\data\norgate-trial-tail-readiness-v1\tail-active-build-20260804-r2`.
 - An official free-source check found no single public panel that establishes
   point-in-time membership including delistings, corporate-action semantics,
   and daily OHLCV. SEC Market Structure and EDGAR can be bounded sidecars only,
