@@ -132,8 +132,9 @@ ready.
   `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`, plus full Ruff and
   all required Compose configurations. These are local-contract checks, not a
   substitute for the task-owned current broker result.
-- Recent commits: `da12ccd` aligns same-date KST Paper task weekdays,
-  `a6a51a9` records worker throughput, and `7202d4d` records monitor recovery.
+- Recent commits: `d0223ab` hardens exact Paper-canary recovery, `da12ccd`
+  aligns same-date KST Paper task weekdays, and `a6a51a9` records worker
+  throughput.
 - Historic stateboard and handoff entries remain searchable in Git. Immutable
   source-safe receipts, model manifests, and runtime evidence remain external
   under `D:\thericher-v2\model-artifacts`; raw market data remains on `D:`.
