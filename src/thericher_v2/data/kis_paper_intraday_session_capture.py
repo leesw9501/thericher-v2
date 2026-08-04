@@ -15,9 +15,10 @@ import os
 import uuid
 from collections.abc import Sequence
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Literal
+from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.execution.kis_private_intraday_backfill import (
@@ -45,6 +46,7 @@ _EXPECTED_TARGET_KEYS = frozenset(
     f"{symbol}/{exchange}/1m" for symbol, exchange in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
 )
 _CAPTURE_TARGET_KEY = "QQQ/NAS/1m"
+_EASTERN_TZ = ZoneInfo("America/New_York")
 
 
 @dataclass(frozen=True)
@@ -89,6 +91,7 @@ class KisPaperIntradaySessionCaptureOutcome:
     observed_at: datetime
     targets: tuple[KisPaperIntradaySessionCaptureTarget, ...]
     coverage: KisIntradayHeadCoverage
+    current_session_cumulative_coverage: KisIntradayHeadCoverage
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -108,6 +111,8 @@ class KisPaperIntradaySessionCaptureOutcome:
             raise ValueError("session capture aggregate status is invalid")
         if not isinstance(self.coverage, KisIntradayHeadCoverage):
             raise TypeError("session capture coverage is invalid")
+        if not isinstance(self.current_session_cumulative_coverage, KisIntradayHeadCoverage):
+            raise TypeError("session capture cumulative coverage is invalid")
 
     def safe_payload(self) -> dict[str, object]:
         """Return the receipt body without provider rows, paths, or credentials."""
@@ -124,6 +129,9 @@ class KisPaperIntradaySessionCaptureOutcome:
             "storage": "external_market_data_only",
             "targets": [item.to_payload() for item in self.targets],
             "coverage": self.coverage.to_payload(),
+            "current_session_cumulative_coverage": (
+                self.current_session_cumulative_coverage.to_payload()
+            ),
         }
 
 
@@ -144,12 +152,13 @@ def build_kis_paper_intraday_session_capture_outcome(
         KIS_PAPER_INTRADAY_SESSION_CAPTURE_REQUIRED_COMPLETE_SESSIONS
     ),
 ) -> KisPaperIntradaySessionCaptureOutcome:
-    """Classify one finished head collection without opening raw minute rows."""
+    """Classify one capture and its current ET session without opening raw rows."""
 
     if type(coverage_after_session_date) is not date:
         raise ValueError("session capture coverage date is invalid")
     if type(required_complete_session_count) is not int or required_complete_session_count <= 0:
         raise ValueError("session capture complete-session count is invalid")
+    observed_at = require_utc(observed_at, "observed_at")
     targets = _capture_targets(runs)
     capture_manifest_hashes = frozenset(
         run.manifest_hash
@@ -163,6 +172,16 @@ def build_kis_paper_intraday_session_capture_outcome(
         required_complete_session_count=required_complete_session_count,
         manifest_hashes=capture_manifest_hashes,
     )
+    current_session_date = observed_at.astimezone(_EASTERN_TZ).date()
+    current_session_cumulative_coverage = (
+        inspect_kis_paper_private_intraday_head_coverage(
+            cache_root=cache_root,
+            repo_root=repository_root,
+            after_session_date=current_session_date - timedelta(days=1),
+            required_complete_session_count=1,
+            through_session_date=current_session_date,
+        )
+    )
     capture_target = next(item for item in targets if item.target_key == _CAPTURE_TARGET_KEY)
     status: Literal["complete", "incomplete"] = (
         "complete" if capture_target.status in _CAPTURE_SUCCEEDED_STATUSES else "incomplete"
@@ -172,6 +191,7 @@ def build_kis_paper_intraday_session_capture_outcome(
         observed_at=observed_at,
         targets=targets,
         coverage=coverage,
+        current_session_cumulative_coverage=current_session_cumulative_coverage,
     )
 
 

@@ -208,18 +208,27 @@ def inspect_kis_paper_private_intraday_head_coverage(
     after_session_date: date,
     required_complete_session_count: int,
     manifest_hashes: frozenset[str] | None = None,
+    through_session_date: date | None = None,
 ) -> KisIntradayHeadCoverage:
     """Inspect QQQ head coverage without opening raw minute files or network access.
 
     ``manifest_hashes`` narrows the result to one bounded capture attempt. An
     empty set deliberately selects no retained rows, so a legacy head chunk
-    cannot satisfy a fresh capture receipt by accident.
+    cannot satisfy a fresh capture receipt by accident. ``through_session_date``
+    optionally bounds the metadata projection to an observed session date.
     """
 
     if (
         type(after_session_date) is not date
         or type(required_complete_session_count) is not int
         or required_complete_session_count <= 0
+        or (
+            through_session_date is not None
+            and (
+                type(through_session_date) is not date
+                or through_session_date <= after_session_date
+            )
+        )
     ):
         raise ValueError("head coverage inspection scope is invalid")
     if manifest_hashes is not None and (
@@ -279,6 +288,7 @@ def inspect_kis_paper_private_intraday_head_coverage(
             row_key for row_key, complete in first_seen_complete.items() if complete
         ),
         after_session_date=after_session_date,
+        through_session_date=through_session_date,
     )
     exact_overlap_row_count = sum(
         _required_nonnegative_int(document.get("exact_overlap_rows"))
@@ -422,12 +432,14 @@ def _session_coverage(
     *,
     completed_row_keys: frozenset[str],
     after_session_date: date,
+    through_session_date: date | None,
 ) -> tuple[KisIntradayHeadSessionCoverage, ...]:
     candidate_dates = sorted(
         {
-            _korea_timestamp_to_utc(row_key).date()
+            session_date
             for row_key in completed_row_keys
-            if _korea_timestamp_to_utc(row_key).date() > after_session_date
+            if (session_date := _korea_timestamp_to_utc(row_key).date()) > after_session_date
+            and (through_session_date is None or session_date <= through_session_date)
         }
     )
     coverage: list[KisIntradayHeadSessionCoverage] = []

@@ -109,12 +109,16 @@ execution tests passed.
   pages covered 09:32--11:31, 11:32--13:31, and 15:20--15:59 ET, while the
   missing mid-session range was caused by the 04:31 guard collision. After
   Claude returned `supported-with-limits`, Codex re-registered the same
-  existing single-action, four-run `IgnoreNew` task at 00:29, 02:28, 04:24,
-  and 06:20 KST. The 04:24 time leaves 5m30s before the prefix control and
-  six minutes before the prefix collector. The next task-owned run is the sole
- coverage kill test: it must show 390 completed regular-session minutes
- without guard/concurrency failure. DST/pre-market behavior remains unproven;
- this is a reversible current-season repair, not an input promotion.
+existing single-action, four-run `IgnoreNew` task at 00:29, 02:28, 04:24,
+and 06:20 KST. The 04:24 time leaves 5m30s before the prefix control and
+six minutes before the prefix collector. The scheduled four-run session is the
+sole coverage setup; the terminal 06:20 KST session capture is the kill test: its
+observed-ET cumulative coverage must show 390 completed regular-session
+minutes without guard/concurrency failure. The rebuilt existing image emits
+this metadata-only cumulative projection from the local index/manifests while
+preserving separate exact-run coverage; it excludes adjacent dates and is not
+a causal, finality, Engine, or Paper input. DST/pre-market behavior remains
+unproven; this is a reversible current-season repair, not an input promotion.
   Focused schedule checks (18) and the full parallel authority suite
   (2,571 passed, 23 skipped) passed after task registration.
 - New `session-capture` executions preserve an existing causal head snapshot
@@ -335,7 +339,7 @@ execution tests passed.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
-| Current-head timing repair | Data | Same `IgnoreNew` task re-registered at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence and Claude `supported-with-limits`; next 00:29 task owns the 390-completed-offset kill test |
+| Current-head timing repair | Data | Same `IgnoreNew` task remains at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence; rebuilt receipt now emits exact-run and observed-ET cumulative coverage, and terminal 06:20 capture owns the 390-completed-offset kill test |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
@@ -381,12 +385,21 @@ ready.
   rerun or collector rewrite is pending. The former 04:31 KST token-start
   collision did not by itself justify a post-guard retime. The subsequent
   metadata-only QQQ page-range measurement supplied the required
-  near-boundary evidence, so the same task was re-registered at 04:24 KST
-  alongside the earlier 00:29/02:28 windows. Claude returned
-  `supported-with-limits`; the next task-owned session must prove the 390
-  completed-offset result, and DST/pre-market behavior remains unproven.
+near-boundary evidence, so the same task was re-registered at 04:24 KST
+alongside the earlier 00:29/02:28 windows. Claude returned
+`supported-with-limits`; the terminal task-owned session capture must prove
+the 390 completed-offset result through its observed-ET cumulative
+metadata-only projection. DST/pre-market behavior remains unproven.
 
 ## Verification And Git
+
+- The observed-ET cumulative session-coverage receipt package passed 22
+  focused capture/coverage/backfill/schedule tests, then `2,571 passed,
+  23 skipped` through `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`,
+  full Ruff, and default, intraday-head, and readonly Compose configurations.
+  The rebuilt existing intraday-head image is ready for the next task-owned
+  session; this verification is local and does not substitute for its KIS
+  coverage outcome.
 
 - The recovery package passed `113` focused execution/schedule/dashboard tests,
   then `2448 passed, 23 skipped` through

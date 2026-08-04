@@ -102,6 +102,21 @@ def test_session_capture_receipt_is_d_only_safe_and_classifies_a_complete_sessio
             "status": "complete",
         }
     ]
+    cumulative_coverage = payload["current_session_cumulative_coverage"]
+    assert cumulative_coverage["complete_regular_session_dates"] == ["2026-07-22"]
+    assert cumulative_coverage["regular_session_coverage"] == coverage[
+        "regular_session_coverage"
+    ]
+    rendered_cumulative_coverage = json.dumps(cumulative_coverage, sort_keys=True)
+    for forbidden in (
+        "manifest_path",
+        "row_fingerprints",
+        "123.45",
+        "paper-key",
+        "access_token",
+        "SPY",
+    ):
+        assert forbidden not in rendered_cumulative_coverage
     rendered = json.dumps(payload, sort_keys=True)
     for forbidden in ("manifest_path", "row_fingerprints", "123.45", "paper-key", "access_token"):
         assert forbidden not in rendered
@@ -140,6 +155,8 @@ def test_session_capture_keeps_partial_terminal_head_data_partial_and_never_repa
             KisPaperMarketDataError("minute_response_empty"),
         ]
     )
+    future_session = us_equity_2026_session(date(2026, 7, 23))
+    assert future_session is not None and future_session.kind == "regular"
 
     runs = run_kis_paper_private_intraday_backfill_cycle(
         client=client,
@@ -149,6 +166,26 @@ def test_session_capture_keeps_partial_terminal_head_data_partial_and_never_repa
         pages_per_target=2,
         resume_cursor=False,
         observed_at=observed_at,
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                *_pages(
+                    "QQQ",
+                    "NAS",
+                    _session_rows(future_session.window.open_ts, 390),
+                ),
+                _page("SPY", "AMS", _session_rows(future_session.window.open_ts, 2)),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=4,
+        resume_cursor=False,
+        observed_at=future_session.window.close_ts + timedelta(minutes=1),
         sleeper=lambda _seconds: None,
         monotonic_clock=lambda: 0.0,
     )
@@ -172,6 +209,18 @@ def test_session_capture_keeps_partial_terminal_head_data_partial_and_never_repa
     assert capture.outcome.coverage.last_reason_category == "none"
     assert capture.outcome.coverage.session_coverage[0].complete_minute_count == 239
     assert capture.outcome.coverage.session_coverage[0].missing_minute_ranges == ((239, 389),)
+    current_session_cumulative_coverage = capture.outcome.current_session_cumulative_coverage
+    assert [
+        item.session_date for item in current_session_cumulative_coverage.session_coverage
+    ] == [date(2026, 7, 22)]
+    assert current_session_cumulative_coverage.complete_sessions == ()
+    assert current_session_cumulative_coverage.session_coverage[0].complete_minute_count == 239
+    assert current_session_cumulative_coverage.session_coverage[0].missing_minute_ranges == (
+        (239, 389),
+    )
+    assert date(2026, 7, 23) not in [
+        item.session_date for item in current_session_cumulative_coverage.session_coverage
+    ]
 
     with pytest.raises(ValueError, match="outside the Git workspace"):
         write_kis_paper_intraday_session_capture_evidence(

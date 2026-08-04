@@ -82,17 +82,30 @@ undocumented timestamp seed.
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST
   run was the token-guard collision, not a source-exhaustion result. After a
   source-safe Claude review returned `supported-with-limits`, the same existing
-  Tuesday--Saturday task was re-registered, with no new action, service, image,
-  cache, or run count, at 00:29, 02:28, 04:24, and 06:20 KST. The 04:24 trigger
+  Tuesday--Saturday task was re-registered, with no new action, service, cache,
+  or run count, at 00:29, 02:28, 04:24, and 06:20 KST. The 04:24 trigger
   has a static 5m30s margin before the 04:29:30 prefix control and six minutes
-  before the 04:30 prefix collection. The next task-owned capture must
-  independently show all 390 completed regular-session offsets before this
-  becomes a coverage result; otherwise this timing hypothesis is rejected and
+  before the 04:30 prefix collection. The terminal 06:20 KST session capture
+  must independently show all 390 completed regular-session offsets before
+  this becomes a coverage result;
+  otherwise this timing hypothesis is rejected and
  reassessed. DST/pre-market page behavior remains unproven and must be
  rechecked before the next U.S. DST transition. The next owned run is
- 2026-08-06 00:29 KST; do not manually invoke it.
-  The focused schedule checks (18) and the full parallel authority suite
-  (2,571 passed, 23 skipped) passed after registration.
+2026-08-06 00:29 KST; do not manually invoke it.
+ The focused schedule checks (18) and the full parallel authority suite
+ (2,571 passed, 23 skipped) passed after registration.
+- **Cumulative capture receipt:** the rebuilt existing
+  `kis-paper-intraday-head` image now writes both its exact-run
+  `coverage` and `current_session_cumulative_coverage` for the observed
+  America/New_York date. The latter reads only the local index/manifests,
+  explicitly excludes earlier and later session dates, and lets the
+  terminal capture test the full 390 completed offsets across all four
+  scheduled runs. It makes no additional KIS call, raw-minute read,
+  scheduler, model, or Paper decision. A short Claude drift-check returned
+  `supported-with-limits`; DST/holiday semantics and the immutable
+  post-collector snapshot remain scoped limitations. Focused capture and
+  coverage checks passed 22 tests, followed by the 2,571-pass, 23-skip
+  parallel authority suite, full Ruff, and all three static Compose configs.
 - **Daily D1 catch-up:** the 2026-08-05 07:00 KST task-owned worker completed
   `drained` with zero attempted/retained chunks and zero completed targets. Its
   source-safe receipt records `client_constructed: false`, so this exact
@@ -206,8 +219,9 @@ undocumented timestamp seed.
   support the existing worker's 04:24 KST earlier trigger rather than a
   speculative post-guard delay. It preserves a six-minute static margin before
   the 04:30 prefix collection and overlaps the adjacent QQQ page windows. The
-  next task-owned session is the decisive source-time kill test; it must retain
-  390 completed regular-session offsets without a guard/concurrency failure.
+  terminal task-owned session capture is the decisive source-time kill test; its
+  observed-ET cumulative coverage must retain 390 completed regular-session
+  offsets without a guard/concurrency failure.
   The task remains one `IgnoreNew` owner with four runs and no manual rerun.
   This summer-session evidence does not establish DST or pre-market behavior.
 - **Pair/QQQ observers:** the daily pair-forward cache is `cache_current` for
