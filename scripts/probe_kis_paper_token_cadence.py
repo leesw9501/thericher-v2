@@ -45,7 +45,14 @@ def main(
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--artifact-root", type=Path, default=_DEFAULT_ARTIFACT_ROOT)
+    parser.add_argument(
+        "--interval-seconds",
+        type=float,
+        default=KIS_PAPER_TOKEN_CADENCE_PROBE_INTERVAL_SECONDS,
+    )
     arguments = parser.parse_args(argv)
+    if not 30.0 <= arguments.interval_seconds <= 300.0:
+        parser.error("--interval-seconds must be between 30 and 300")
     if not arguments.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
         return 0
@@ -103,7 +110,7 @@ def main(
             request_gate=request_gate,
             token_start_gate=KisPaperMarketDataTokenStartGate(
                 control_root=control_root,
-                minimum_request_interval_seconds=KIS_PAPER_TOKEN_CADENCE_PROBE_INTERVAL_SECONDS,
+                minimum_request_interval_seconds=arguments.interval_seconds,
             ),
         )
         transports = iter((first_transport, second_transport))
@@ -119,6 +126,7 @@ def main(
 
         outcome = run_kis_paper_token_cadence_probe(
             authenticate_once=authenticate_once,
+            requested_interval_seconds=arguments.interval_seconds,
             monotonic_clock=monotonic_clock,
             sleeper=sleeper,
         )

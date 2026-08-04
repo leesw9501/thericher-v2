@@ -327,7 +327,13 @@ def test_cli_execute_runs_exactly_two_mocked_token_authentications(
 
     assert (
         module.main(
-            ["--execute", "--artifact-root", str(tmp_path)],
+            [
+                "--execute",
+                "--artifact-root",
+                str(tmp_path),
+                "--interval-seconds",
+                "60",
+            ],
             clock=clock,
             monotonic_clock=clock.monotonic,
             sleeper=clock.sleep,
@@ -340,6 +346,7 @@ def test_cli_execute_runs_exactly_two_mocked_token_authentications(
     assert transports[0].kwargs == {}
     assert set(transports[1].kwargs) == {"token_start_gate"}
     assert payload["status"] == "accepted"
+    assert payload["requested_interval_seconds"] == 60
     assert payload["accepted_authentication_count"] == 2
     assert payload["scope"]["market_data_requested"] is False
     assert payload["scope"]["account_or_order_requested"] is False
