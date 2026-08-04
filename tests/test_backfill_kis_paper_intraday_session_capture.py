@@ -57,6 +57,7 @@ def test_session_capture_script_builds_one_client_and_preserves_qqq_preparation_
         )
         assert kwargs["resume_cursor"] is False
         assert kwargs["pages_per_target"] == 1
+        assert kwargs["quarantine_retained_head_conflicts"] is False
         return runs
 
     captured: dict[str, object] = {}

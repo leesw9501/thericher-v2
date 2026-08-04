@@ -57,6 +57,15 @@ and is `review_unavailable`; 54 focused schedule/receipt/lifecycle tests and a
 PowerShell syntax check passed. This is a narrow scheduler-observability repair
 for the next worker run, not a reinterpretation of the 02:31 KST receipt.
 
+The Data conflict path no longer lets a later post-close `session-capture`
+quarantine an already retained causal head snapshot and then reject the fresh
+candidate. It preserves the existing snapshot, records the candidate conflict,
+and leaves both promotion and final-value preference unresolved. Claude's
+source-safe falsification check was `supported-with-limits`; 65 focused
+collector/session-capture tests pass. The next task-owned conflict is the
+bounded proof point for retained-coverage preservation, not a reason to add a
+collector or stop the canary.
+
 Execution's explicit-ID session projector closes the pre-canary reattachment
 gap without a new task or a latest-artifact scan: only a runtime-provided
 `paper-session-*` ID may select its one immutable receipt. It rejects links,

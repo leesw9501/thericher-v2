@@ -121,7 +121,10 @@ def main(
             code_revision=(code_revision or _current_code_revision)(_REPO_ROOT),
             pages_per_target=args.pages_per_target,
             resume_cursor=args.mode == "backfill",
-            quarantine_retained_head_conflicts=args.mode in {"head", "session-capture"},
+            # A post-close session capture may reveal a revised overlapping bar.
+            # Preserve the earlier head snapshot until a bounded reconciler can
+            # classify that difference; the fresh candidate remains rejected.
+            quarantine_retained_head_conflicts=args.mode == "head",
             observed_at=observed_at,
         )
         session_capture = (

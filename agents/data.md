@@ -45,7 +45,13 @@ undocumented timestamp seed.
   model result, or Paper outcome. The existing worker owns the next 04:31 KST
   attempt; do not manually rerun it. The original scoped
   `minute_duplicate_conflict` remains the narrow collector-repair kill test;
-  its quarantined retained head is unchanged. The task-owned current pointer
+  its historical quarantined retained head is unchanged. New
+  `session-capture` attempts preserve an already retained causal head snapshot
+  when a later post-close candidate conflicts, while rejecting that candidate
+  pending bounded reconciliation. They do not auto-prefer post-close values or
+  create a model input. Claude's source-safe challenge was
+  `supported-with-limits`; the next observed conflict must show whether this
+  prevents another coverage loss. The task-owned current pointer
   binds one immutable non-link receipt for offline reattachment; the host
   projector accepts it only when identity, observation time, terminal category,
   and receipt hash agree. It has no KIS, Docker, network, or credential path
@@ -210,10 +216,12 @@ undocumented timestamp seed.
 
 ## Recovery
 
-The next identical `minute_duplicate_conflict` is the strongest kill test for a
-narrow origin/receipt repair. A single historical conflict, absent cache,
-source-limited cursor, or worker cooldown remains scoped to that cache and must
-not hold Execution, Engine, or another Data worker.
+The next identical `minute_duplicate_conflict` is the strongest kill test for
+the non-destructive session-capture repair: an existing causal head must remain
+retained while the conflicting post-close candidate stays non-promoting. A
+single historical conflict, absent cache, source-limited cursor, or worker
+cooldown remains scoped to that cache and must not hold Execution, Engine, or
+another Data worker.
 
 ## Evidence And Handoff
 

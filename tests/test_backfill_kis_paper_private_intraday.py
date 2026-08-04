@@ -174,6 +174,7 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
         )
         assert kwargs["pages_per_target"] == 1
         assert kwargs["resume_cursor"] is False
+        assert kwargs["quarantine_retained_head_conflicts"] is True
         return (
             KisPaperPrivateIntradayBackfillRun(
                 status="collected",
