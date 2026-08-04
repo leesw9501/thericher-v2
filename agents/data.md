@@ -43,6 +43,10 @@ undocumented timestamp seed.
   diagnosis classifies the origin as `retained_cache`; the conflicting head is
   already quarantined, so the next worker alone can confirm recovery. A repeat
   is the kill test for a narrow collector repair; no pre-run code change is due.
+  At 21:40 KST, the task's `IgnoreNew` ownership was reattached and its
+  current-source profile passed a network-disabled exact-entrypoint check. The
+  related focused Data/schedule group passed 76 tests; this is preflight only,
+  not a collection receipt.
 - **Historical M1 cursor scope:** the existing QQQ/NAS and SPY/AMS backfill
   indices were reattached offline as `source_exhausted`, with no new market-data
   page or snapshot. Do not reopen either terminal cursor with an invented seed;
@@ -79,6 +83,10 @@ undocumented timestamp seed.
   `task_has_not_run`, not a worker failure. Its receipt always says
   `provider_finality: not_observed`
   and is Engine-unreadable. Do not build a consumer bridge from it alone.
+  At 21:40 KST, its single `IgnoreNew` task and current-source observer image
+  were reattached; the network-disabled entrypoint and the same focused
+  Data/schedule group passed. This does not replace its first worker-owned
+  runtime observation.
   Evidence: `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
 - **SPY prefix capability:** the negative control and feasibility tasks own
   2026-08-05 04:29:30 and 04:30 KST. One dedicated client/cache namespace may

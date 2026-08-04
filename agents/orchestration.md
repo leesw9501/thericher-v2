@@ -32,6 +32,12 @@ network-disabled import check; 135 focused offline route/lifecycle/dashboard
 tests passed. The remaining dependency is still the task-owned lifecycle fact,
 not a foreground wait.
 
+At 21:40 KST, Data reattached its 23:15 stability observer and 00:31
+intraday-head task ownership. Both `IgnoreNew` profiles were rebuilt from the
+current source; their exact entrypoints passed network-disabled checks and the
+shared focused Data/schedule group passed 76 tests. Their runtime evidence
+remains worker-owned and independent from the canary.
+
 ## Current Bottleneck
 
 The current company checkpoint depends on the task-owned canary outcome. The

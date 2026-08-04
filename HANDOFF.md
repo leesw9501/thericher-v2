@@ -27,6 +27,12 @@ one Monday--Friday trigger and `IgnoreNew` concurrency. Its local
 network-disabled module-import check; 135 focused route/lifecycle/dashboard
 tests passed. Do not manually invoke or duplicate it.
 
+The 23:15 D1 stability observer and 00:31 intraday-head workers also remain
+task-owned with `IgnoreNew` concurrency. Their current-source Docker profiles
+were rebuilt, their exact entrypoints passed network-disabled checks, and 76
+focused Data/schedule tests passed. This is preflight evidence only; neither
+worker has produced its current runtime receipt yet.
+
 ## Current Lane Facts
 
 ### Data
