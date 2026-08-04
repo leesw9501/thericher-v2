@@ -52,8 +52,10 @@ task, not a general Paper hold.
 
 ## Current Supporting Surfaces
 
-- The loopback dashboard is read-only, credential-free, and has no broker
-  action. Its schema-v3 account projection omits prices and order identifiers.
+- The credential-free loopback dashboard cannot call a broker or submit an
+  order. Authenticated local emergency and pause controls may change only their
+  local control state; its schema-v3 account projection omits prices and order
+  identifiers.
 - The resumed 2026-08-04 offline reattestation passed 137 canary, intent,
   quote, receipt, lifecycle-projection, dashboard, and schedule tests. This
   verifies deterministic local contracts only; it is not a current broker

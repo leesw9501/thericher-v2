@@ -180,8 +180,10 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   second machine, or out-of-band runner is installed; those would be outside
   this task's contract, not a general Paper hold.
 - The offline validator accepts completion only for `paper_only`, terminally
-  cancelled, cleanly reconciled, freshness-valid evidence. The loopback
-  dashboard is read-only, credential-free, and price/order-identifier-free.
+  cancelled, cleanly reconciled, freshness-valid evidence. The credential-free
+  loopback dashboard cannot call a broker or submit an order; authenticated
+  local emergency and pause controls may change only their local control state.
+  Its account projection omits prices and order identifiers.
 - The latest safe private-state inventory has no `submitted` or
   `cancel_started` canary phase. Historical unknowns remain scoped to their own
   reconciliation paths; only an exact matching pending canary defers the next
