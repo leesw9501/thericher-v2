@@ -115,6 +115,14 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   availability and candidate-specific replay parity, so it has no campaign,
   code, GPU, PnL, or Paper consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qqq-session-vwap-state-continuation-20260804-r1\source-retrieval.json`.
+- The independently retrieved five-minute opening-range-breakout source is a
+  distinct `source_only_input_unavailable` technical-rule candidate. Its
+  source-native screened form needs a contemporaneous multi-symbol universe,
+  prior 14-session liquidity/ATR facts, and relative opening-range volume; the
+  current two-ETF, 21-session M1 cache lacks those inputs and observed
+  decision-time availability. It has no campaign, code, GPU, PnL, or Paper
+  consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\us-equity-five-minute-orb-20260804-r1\source-retrieval.json`.
 - Closed or non-reusable historical families include QQQ MTF consensus,
   first-30/final-30 momentum, MTF logistic, lower-tail quantile preflight,
   Tiingo rotation/sequence controls, and static broad-D1 benchmarks. A later
