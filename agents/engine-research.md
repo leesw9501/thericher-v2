@@ -131,6 +131,14 @@ strongest kill test before target evaluation or GPU consideration.
   latency/fill/cost parity. It therefore cannot become a campaign, code change,
   GPU appointment, PnL claim, or Paper path. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qqq-session-vwap-state-continuation-20260804-r1\source-retrieval.json`.
+- The independently retrieved SPY noise-area candidate is a distinct
+  same-clock 14-prior-session volatility-band entry with a band-plus-session-
+  VWAP trailing exit, rather than the closed fixed-clock momentum or the
+  VWAP-side-state rule. The current 21-session M1 geometry can meet its length
+  condition, but causal decision-time availability and candidate-specific
+  Execution parity are absent. It remains `source_only_input_unavailable`,
+  with no code, campaign, GPU, PnL, ensemble, or Paper consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\spy-noise-area-vwap-trailing-20260804-r1\source-retrieval.json`.
 
 - The independently retrieved five-minute opening-range-breakout source is a
   distinct `source_only_input_unavailable` technical-rule candidate. Its
