@@ -21,6 +21,7 @@ from typing import Literal, Protocol
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.execution.kis_market_data import (
     KIS_PAPER_MINUTE_MAX_ROWS,
+    KIS_PAPER_MINUTE_PROBE_ONLY_TARGETS,
     KisPaperMarketDataCallCounts,
     KisPaperMarketDataError,
     KisPaperMinutePage,
@@ -35,7 +36,9 @@ KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS = frozenset(
     {"QQQ/NAS/1m", "SPY/AMS/1m"}
 )
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS = frozenset({"SPY/NAS/1m"})
-KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS = frozenset({"IWM/AMS/1m"})
+KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS = frozenset(
+    f"{symbol}/{exchange}/1m" for symbol, exchange in KIS_PAPER_MINUTE_PROBE_ONLY_TARGETS
+)
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS = (
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS
     | KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS

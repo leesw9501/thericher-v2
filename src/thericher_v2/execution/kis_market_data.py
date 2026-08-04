@@ -48,6 +48,7 @@ KIS_PAPER_MINUTE_SYMBOL_EXCHANGES = {
     # probe. It is not part of the active private intraday collector.
     "IWM": frozenset({"AMS"}),
 }
+KIS_PAPER_MINUTE_PROBE_ONLY_TARGETS = frozenset({("IWM", "AMS")})
 # Daily history has a deliberately separate contract from the minute probe.
 # QQQ/NAS was observed by the v1 private cache. NYS and AMS remain available
 # for empirical ETF venue checks; the active backfill mapping records only a
@@ -335,6 +336,10 @@ class KisPaperMinuteQuery:
             not self.continuation_next or not self.continuation_key
         ):
             raise ValueError("continuation values must be nonempty")
+        if _is_minute_probe_only_target(symbol=self.symbol, exchange=self.exchange) and (
+            self.include_previous_day or self.continuation_next is not None
+        ):
+            raise ValueError("minute probe-only target requires one current-day page")
 
 
 @dataclass(frozen=True)
@@ -628,6 +633,10 @@ class KisPaperMarketDataClient:
     ) -> KisPaperMinutePage:
         if self._minute_page_attempts >= self._max_minute_page_attempts:
             raise KisPaperMarketDataError("minute_page_limit_exceeded")
+        if _is_minute_probe_only_target(symbol=query.symbol, exchange=query.exchange) and (
+            self._max_minute_page_attempts != 1
+        ):
+            raise KisPaperMarketDataError("minute_probe_only_target_requires_one_page_client")
         access_token = self._issue_access_token()
         request = KisMarketDataRequest(
             method="GET",
@@ -1135,12 +1144,18 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
         or query.get("FILL") != ""
     ):
         return False
-    if query.get("PINC") == "0":
-        return (
-            request.headers.get("tr_cont") == ""
-            and query.get("KEYB") == ""
-            and query.get("NEXT") == ""
-        )
+    current_day_head = (
+        query.get("PINC") == "0"
+        and request.headers.get("tr_cont") == ""
+        and query.get("KEYB") == ""
+        and query.get("NEXT") == ""
+    )
+    if _is_minute_probe_only_target(
+        symbol=str(query.get("SYMB")), exchange=str(query.get("EXCD"))
+    ):
+        return current_day_head
+    if current_day_head:
+        return True
     if query.get("PINC") == "1" and query.get("KEYB") == "" and query.get("NEXT") == "":
         return request.headers.get("tr_cont") == ""
     return (
@@ -1151,6 +1166,10 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
         and len(query["KEYB"]) == 14
         and query["KEYB"].isdigit()
     )
+
+
+def _is_minute_probe_only_target(*, symbol: str, exchange: str) -> bool:
+    return (symbol, exchange) in KIS_PAPER_MINUTE_PROBE_ONLY_TARGETS
 
 
 def _is_approved_daily_request(

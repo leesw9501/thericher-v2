@@ -322,12 +322,51 @@ def test_daily_query_rejects_invalid_separate_scope(
 def test_minute_query_requires_a_supported_us_venue_and_complete_cursor() -> None:
     assert KisPaperMinuteQuery(exchange="AMS", symbol="SPY").exchange == "AMS"
     assert KisPaperMinuteQuery(exchange="AMS", symbol="IWM").exchange == "AMS"
+    with pytest.raises(ValueError, match="probe-only target"):
+        KisPaperMinuteQuery(exchange="AMS", symbol="IWM", include_previous_day=True)
+    with pytest.raises(ValueError, match="probe-only target"):
+        KisPaperMinuteQuery(
+            exchange="AMS",
+            symbol="IWM",
+            continuation_next="1",
+            continuation_key="20260717175900",
+        )
     with pytest.raises(ValueError, match="exchange"):
         KisPaperMinuteQuery(exchange="NASD", symbol="QQQ")
     with pytest.raises(ValueError, match="symbol/exchange"):
         KisPaperMinuteQuery(exchange="NAS", symbol="IWM")
     with pytest.raises(ValueError, match="continuation"):
         KisPaperMinuteQuery(exchange="NAS", symbol="QQQ", continuation_next="1")
+
+
+def test_minute_probe_only_target_requires_a_one_page_client_before_token_request() -> None:
+    transport = _RecordingTransport([])
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="probe_only_target"):
+        client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="IWM"))
+
+    assert client.call_counts.token_attempts == 0
+    assert client.call_counts.minute_page_attempts == 0
+    assert transport.requests == []
+
+
+def test_minute_probe_only_target_allows_one_current_day_page() -> None:
+    transport = _RecordingTransport([_token(), _page("195900", "180000", next_value="")])
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+        max_minute_page_attempts=1,
+    )
+
+    page = client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="IWM"))
+
+    assert page.query.symbol == "IWM"
+    assert client.call_counts.minute_page_attempts == 1
+    assert transport.requests[1].query["PINC"] == "0"
 
 
 def test_minute_client_classifies_a_successful_empty_list_after_payload_validation() -> None:
@@ -700,6 +739,21 @@ def test_transport_rejects_account_order_and_live_requests_before_opening(
                 "FILL": "",
                 "KEYB": "",
                 "NEXT": "",
+            },
+        ),
+        (
+            KIS_PAPER_MINUTE_PATH,
+            {"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "P", "tr_cont": "N"},
+            {
+                "AUTH": "",
+                "EXCD": "AMS",
+                "SYMB": "IWM",
+                "NMIN": "1",
+                "PINC": "1",
+                "NREC": "120",
+                "FILL": "",
+                "KEYB": "20260717175900",
+                "NEXT": "1",
             },
         ),
         (
