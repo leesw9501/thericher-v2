@@ -210,6 +210,12 @@ execution tests passed.
   loopback dashboard cannot call a broker or submit an order; authenticated
   local emergency and pause controls may change only their local control state.
   Its account projection omits prices and order identifiers.
+- The local dashboard now replays FIFO realized-after-fee PnL only from closed
+  `source: local_paper` lots. It leaves open lots unvalued and excludes every
+  KIS account/broker fact, so it is descriptive simulator accounting rather
+  than a fill-quality, profitability, model, or execution-risk input. The
+  related Claude request returned unrelated stale task text, so classify that
+  review as `review_unavailable`, not as agreement or a decision boundary.
 - The latest safe private-state inventory has no `submitted` or
   `cancel_started` canary phase. Historical unknowns remain scoped to their own
   reconciliation paths; only an exact matching pending canary defers the next
@@ -277,6 +283,11 @@ ready.
   canary/intent/quote/receipt/lifecycle/dashboard/schedule tests with no broker
   or credential access. It confirms the deterministic boundary only, not a
   current lifecycle outcome.
+- The independent local-PnL package passed 32 focused local-paper/dashboard/
+  attribution tests, then `2499 passed, 23 skipped` through the normal parallel
+  test helper, full Ruff, and all three required Compose static configurations.
+  Those checks use no KIS call or credential read and do not replace the
+  scheduled lifecycle-canary evidence.
 - Recent commits: `d0223ab` hardens exact Paper-canary recovery, `da12ccd`
   aligns same-date KST Paper task weekdays, and `a6a51a9` records worker
   throughput.

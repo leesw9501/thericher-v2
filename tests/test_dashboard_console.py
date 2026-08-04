@@ -13,7 +13,7 @@ from urllib.parse import urlencode
 
 from thericher_v2.contracts import Bar, OrderIntent, Timeframe
 from thericher_v2.dashboard.server import DashboardServer
-from thericher_v2.dashboard.view import build_snapshot
+from thericher_v2.dashboard.view import DashboardPosition, build_snapshot, render_dashboard
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
 from thericher_v2.execution.paper_account_snapshot import (
     PAPER_ACCOUNT_SNAPSHOT_TTL,
@@ -178,7 +178,7 @@ def test_snapshot_uses_allowlisted_local_paper_replay_and_escapes_html(tmp_path)
         for position in snapshot.local_positions
     ]
     assert actual_positions == [("NAS", "SPY", "2")]
-    assert snapshot.local_paper_pnl_status == "unavailable"
+    assert snapshot.local_paper_pnl_status == "No closed local fills"
     assert snapshot.kis_holdings_status == "unknown"
     assert snapshot.latest_decisions[0].source == "validation"
 
@@ -193,6 +193,70 @@ def test_snapshot_uses_allowlisted_local_paper_replay_and_escapes_html(tmp_path)
     assert "form-nonce" in html
 
 
+def test_snapshot_reports_only_closed_local_paper_fifo_pnl(tmp_path) -> None:
+    events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    events.bootstrap()
+    emergency = EmergencyStore(tmp_path / "emergency.json")
+    _record_local_fill(events, emergency)
+    broker = LocalPaperBroker(
+        event_store=events,
+        emergency_store=emergency,
+        starting_cash=Decimal("1000"),
+        fee_bps=Decimal("10"),
+    )
+    signal_bar = _bar(datetime(2026, 7, 20, 14, 31, tzinfo=UTC), "11")
+    execution_bar = _bar(datetime(2026, 7, 20, 14, 32, tzinfo=UTC), "12")
+    sell = broker.submit_and_fill_next_bar(
+        OrderIntent(
+            client_order_id="dashboard-local-sell",
+            symbol="SPY",
+            market="NAS",
+            side="sell",
+            quantity=Decimal("1"),
+            limit_price=None,
+            decision_id="dashboard-reduction",
+            created_at=signal_bar.end_ts,
+        ),
+        signal_bar=signal_bar,
+        execution_bar=execution_bar,
+    )
+    assert sell.fill is not None
+
+    snapshot = build_snapshot(events, emergency)
+
+    assert snapshot.local_paper_pnl_status == "0.9770"
+    assert snapshot.local_paper_cash == "989.9660"
+    assert snapshot.local_positions == (DashboardPosition("NAS", "SPY", "1"),)
+    assert "0.9770" in render_dashboard(snapshot, form_nonce="form-nonce")
+
+
+def test_snapshot_fails_closed_for_an_oversold_local_paper_history(tmp_path) -> None:
+    events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    events.bootstrap()
+    emergency = EmergencyStore(tmp_path / "emergency.json")
+    events.append(
+        Event(
+            event_type="fill",
+            created_at=datetime(2026, 7, 20, 14, 30, tzinfo=UTC),
+            payload={
+                "source": "local_paper",
+                "market": "NAS",
+                "symbol": "SPY",
+                "side": "sell",
+                "quantity": "1",
+                "price": "11",
+                "fee": "0",
+            },
+        )
+    )
+
+    snapshot = build_snapshot(events, emergency)
+
+    assert snapshot.status == "local_monitor_degraded"
+    assert snapshot.local_paper_status == "local_paper_replay_unavailable"
+    assert snapshot.local_paper_pnl_status == "Unavailable"
+
+
 def test_empty_and_malformed_local_event_logs_remain_distinct(tmp_path) -> None:
     events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
     events.bootstrap()
@@ -203,6 +267,7 @@ def test_empty_and_malformed_local_event_logs_remain_distinct(tmp_path) -> None:
     assert empty_snapshot.local_paper_status == "no_local_paper_activity"
     assert empty_snapshot.position_count == 0
     assert empty_snapshot.local_paper_cash is None
+    assert empty_snapshot.local_paper_pnl_status == "Unavailable"
 
     events.jsonl_path.write_text("{not-json}\n", encoding="utf-8")
     malformed_snapshot = build_snapshot(events, emergency)

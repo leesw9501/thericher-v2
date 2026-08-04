@@ -13,7 +13,10 @@ from thericher_v2.data.market_data_freshness_runtime import (
     read_market_data_freshness_runtime,
 )
 from thericher_v2.execution.emergency import EmergencyStore, PaperExecutionControlStore
-from thericher_v2.execution.local_paper import LOCAL_PAPER_SOURCE
+from thericher_v2.execution.local_paper import (
+    LOCAL_PAPER_SOURCE,
+    replay_local_paper_realized_pnl,
+)
 from thericher_v2.execution.paper_account_snapshot import (
     PaperAccountSnapshot,
     read_paper_account_snapshot,
@@ -111,6 +114,7 @@ class _LocalPaperProjection:
     fill_count: int
     cash: str | None
     cash_snapshot_at: str | None
+    realized_pnl_text: str
     positions: tuple[DashboardPosition, ...]
     fills: tuple[DashboardFill, ...]
 
@@ -147,6 +151,7 @@ def build_snapshot(
             fill_count=0,
             cash=None,
             cash_snapshot_at=None,
+            realized_pnl_text="Unavailable",
             positions=(),
             fills=(),
         )
@@ -204,7 +209,7 @@ def build_snapshot(
         ),
         local_paper_cash=local_paper.cash,
         local_paper_cash_snapshot_at=local_paper.cash_snapshot_at,
-        local_paper_pnl_status="unavailable",
+        local_paper_pnl_status=local_paper.realized_pnl_text,
         local_positions=None if status == "local_monitor_degraded" else local_paper.positions,
         local_paper_fills=None if status == "local_monitor_degraded" else local_paper.fills,
         latest_decisions=None if status == "local_monitor_degraded" else decisions,
@@ -741,6 +746,7 @@ def _project_local_paper(events: tuple[Event, ...]) -> _LocalPaperProjection:
         fills.append(fill)
 
     cash, cash_snapshot_at = _snapshot_cash(latest_snapshot, latest_fill_seq)
+    realized_pnl = replay_local_paper_realized_pnl(local_events)
     projected_positions = tuple(
         DashboardPosition(market=market, symbol=symbol, quantity=_decimal_text(quantity))
         for (market, symbol), quantity in sorted(positions.items())
@@ -748,15 +754,23 @@ def _project_local_paper(events: tuple[Event, ...]) -> _LocalPaperProjection:
     )
     if not local_events:
         status = "no_local_paper_activity"
+        realized_pnl_text = "Unavailable"
     elif cash is None:
         status = "local_paper_replayed_cash_unavailable"
     else:
         status = "local_paper_replayed"
+    if local_events:
+        realized_pnl_text = (
+            "No closed local fills"
+            if realized_pnl.closed_segment_count == 0
+            else _decimal_text(realized_pnl.realized_after_cost_pnl)
+        )
     return _LocalPaperProjection(
         status=status,
         fill_count=len(fills),
         cash=cash,
         cash_snapshot_at=cash_snapshot_at,
+        realized_pnl_text=realized_pnl_text,
         positions=projected_positions,
         fills=tuple(reversed(fills[-12:])),
     )

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Iterable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from decimal import Decimal
@@ -98,6 +99,43 @@ class LocalPaperAccount:
             if (position.market, position.symbol) == key:
                 return position.quantity
         return Decimal("0")
+
+
+@dataclass(frozen=True)
+class LocalPaperRealizedPnl:
+    """FIFO realized accounting for replayable local-paper fills only.
+
+    Open lots remain deliberately unvalued. This projection is not a broker
+    account balance, a mark-to-market result, or an input to execution risk.
+    """
+
+    realized_after_cost_pnl: Decimal
+    closed_segment_count: int
+    closed_quantity: Decimal
+    open_quantity: Decimal
+    local_paper_fill_count: int
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            "realized_after_cost_pnl",
+            decimal_value(self.realized_after_cost_pnl, "realized_after_cost_pnl"),
+        )
+        object.__setattr__(
+            self,
+            "closed_quantity",
+            non_negative(self.closed_quantity, "closed_quantity"),
+        )
+        object.__setattr__(
+            self,
+            "open_quantity",
+            non_negative(self.open_quantity, "open_quantity"),
+        )
+        if self.closed_segment_count < 0:
+            raise ValueError("closed_segment_count must be non-negative")
+        if self.local_paper_fill_count < 0:
+            raise ValueError("local_paper_fill_count must be non-negative")
 
 
 @dataclass(frozen=True)
@@ -510,6 +548,110 @@ def replay_local_paper_account(
         if quantity != 0
     )
     return LocalPaperAccount(cash=cash, positions=position_items)
+
+
+@dataclass(frozen=True)
+class _LocalPaperPnlLot:
+    price: Decimal
+    remaining_quantity: Decimal
+    remaining_fee: Decimal
+
+
+def replay_local_paper_realized_pnl(events: Iterable[Event]) -> LocalPaperRealizedPnl:
+    """Replay FIFO realized-after-fee PnL from the supplied local-paper events.
+
+    Events from other routes are intentionally ignored so a local monitor stays
+    isolated from broker or test-double activity. A malformed local fill or an
+    oversold local history raises instead of manufacturing a PnL value.
+    """
+
+    open_lots: dict[tuple[str, str], list[_LocalPaperPnlLot]] = {}
+    realized_after_cost_pnl = Decimal("0")
+    closed_segment_count = 0
+    closed_quantity = Decimal("0")
+    local_paper_fill_count = 0
+
+    for event in sorted(events, key=lambda item: item.seq):
+        if event.event_type != "fill" or event.payload.get("source") != LOCAL_PAPER_SOURCE:
+            continue
+        fill = _fill_from_event(event)
+        if fill.side not in {"buy", "sell"}:
+            raise ValueError("local paper fill side is invalid")
+        if fill.quantity <= 0 or fill.price <= 0:
+            raise ValueError("local paper fill quantity and price must be positive")
+
+        local_paper_fill_count += 1
+        key = (fill.market, fill.symbol)
+        if fill.side == "buy":
+            open_lots.setdefault(key, []).append(
+                _LocalPaperPnlLot(
+                    price=fill.price,
+                    remaining_quantity=fill.quantity,
+                    remaining_fee=fill.fee,
+                )
+            )
+            continue
+
+        sell_quantity_remaining = fill.quantity
+        sell_fee_remaining = fill.fee
+        lots = open_lots.get(key, [])
+        while sell_quantity_remaining > 0:
+            if not lots:
+                raise ValueError("local paper sell fill exceeds available FIFO lots")
+            entry = lots[0]
+            matched_quantity = min(entry.remaining_quantity, sell_quantity_remaining)
+            entry_fee = _allocated_fee(
+                total_fee=entry.remaining_fee,
+                total_quantity=entry.remaining_quantity,
+                matched_quantity=matched_quantity,
+            )
+            exit_fee = _allocated_fee(
+                total_fee=sell_fee_remaining,
+                total_quantity=sell_quantity_remaining,
+                matched_quantity=matched_quantity,
+            )
+            realized_after_cost_pnl += (
+                (fill.price - entry.price) * matched_quantity - entry_fee - exit_fee
+            )
+            closed_segment_count += 1
+            closed_quantity += matched_quantity
+
+            entry_quantity_remaining = entry.remaining_quantity - matched_quantity
+            if entry_quantity_remaining == 0:
+                lots.pop(0)
+            else:
+                lots[0] = _LocalPaperPnlLot(
+                    price=entry.price,
+                    remaining_quantity=entry_quantity_remaining,
+                    remaining_fee=entry.remaining_fee - entry_fee,
+                )
+            sell_quantity_remaining -= matched_quantity
+            sell_fee_remaining -= exit_fee
+
+    open_quantity = sum(
+        (lot.remaining_quantity for lots in open_lots.values() for lot in lots),
+        Decimal("0"),
+    )
+    return LocalPaperRealizedPnl(
+        realized_after_cost_pnl=realized_after_cost_pnl,
+        closed_segment_count=closed_segment_count,
+        closed_quantity=closed_quantity,
+        open_quantity=open_quantity,
+        local_paper_fill_count=local_paper_fill_count,
+    )
+
+
+def _allocated_fee(
+    *,
+    total_fee: Decimal,
+    total_quantity: Decimal,
+    matched_quantity: Decimal,
+) -> Decimal:
+    if total_quantity <= 0 or matched_quantity <= 0 or matched_quantity > total_quantity:
+        raise ValueError("FIFO fee allocation quantity is invalid")
+    if matched_quantity == total_quantity:
+        return total_fee
+    return total_fee * matched_quantity / total_quantity
 
 
 def _order_payload(order: OrderIntent) -> dict[str, str]:

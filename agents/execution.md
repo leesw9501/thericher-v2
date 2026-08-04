@@ -63,6 +63,12 @@ task, not a general Paper hold.
   order. Authenticated local emergency and pause controls may change only their
   local control state; its schema-v3 account projection omits prices and order
   identifiers.
+- The local replay now derives FIFO realized-after-fee PnL only from closed
+  `source: local_paper` lots. It deliberately excludes open-lot valuation and
+  all KIS account/broker facts, so it is descriptive simulator accounting, not
+  a fill-quality, profitability, model, or execution-risk input. The associated
+  Claude request returned unrelated stale task text rather than its requested
+  verdict; record `review_unavailable` and rely only on the local contract tests.
 - The current source-free Claude falsification check returned
   `supported-with-limits`: virtual-host pinning, pre-submit durable intent,
   fresh account/quote reconciliation, exact-intent unknown-outcome recovery,

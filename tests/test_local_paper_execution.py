@@ -10,8 +10,13 @@ from pathlib import Path
 import pytest
 
 from thericher_v2.contracts import Bar, OrderIntent, Side, Timeframe
-from thericher_v2.execution import EmergencyStore, LocalPaperBroker, replay_local_paper_account
-from thericher_v2.state import EventStore
+from thericher_v2.execution import (
+    EmergencyStore,
+    LocalPaperBroker,
+    replay_local_paper_account,
+    replay_local_paper_realized_pnl,
+)
+from thericher_v2.state import Event, EventStore
 
 
 def _bar(index: int) -> Bar:
@@ -105,6 +110,10 @@ def test_local_paper_fill_is_offline_and_does_not_read_credentials(monkeypatch, 
     assert result.fill is not None
     assert result.fill.price == Decimal("101.0000")
     assert result.account.quantity(market="US", symbol="AAPL") == Decimal("2")
+    realized = replay_local_paper_realized_pnl(broker.event_store.iter_events())
+    assert realized.realized_after_cost_pnl == Decimal("0")
+    assert realized.closed_segment_count == 0
+    assert realized.open_quantity == Decimal("2")
 
 
 def test_duplicate_client_order_id_is_rejected(tmp_path) -> None:
@@ -315,6 +324,57 @@ def test_sell_requires_local_position_and_updates_account(tmp_path) -> None:
     assert sell.fill is not None
     assert sell.account.quantity(market="US", symbol="AAPL") == Decimal("0")
     assert sell.account.cash == Decimal("1001.9594")
+
+
+def test_realized_pnl_replay_is_fifo_fee_aware_and_excludes_open_lots(tmp_path) -> None:
+    broker = _broker(tmp_path, starting_cash=Decimal("1000"))
+    broker.submit_and_fill_next_bar(
+        _order("pnl-buy-first"),
+        signal_bar=_bar(0),
+        execution_bar=_bar(1),
+    )
+    broker.submit_and_fill_next_bar(
+        replace(_order("pnl-buy-second"), quantity=Decimal("1")),
+        signal_bar=_bar(1),
+        execution_bar=_bar(2),
+    )
+    broker.submit_and_fill_next_bar(
+        replace(_order("pnl-sell", side="sell"), quantity=Decimal("2")),
+        signal_bar=_bar(2),
+        execution_bar=_bar(3),
+    )
+
+    realized = replay_local_paper_realized_pnl(broker.event_store.iter_events())
+
+    assert realized.realized_after_cost_pnl == Decimal("3.9592")
+    assert realized.closed_segment_count == 1
+    assert realized.closed_quantity == Decimal("2")
+    assert realized.open_quantity == Decimal("1")
+    assert realized.local_paper_fill_count == 3
+    assert broker.account().quantity(market="US", symbol="AAPL") == Decimal("1")
+
+
+def test_realized_pnl_replay_fails_closed_for_an_oversold_local_history(tmp_path) -> None:
+    event_store = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    event_store.append(
+        Event(
+            event_type="fill",
+            created_at=datetime(2026, 1, 2, 14, 30, tzinfo=UTC),
+            payload={
+                "source": "local_paper",
+                "client_order_id": "oversold-local-paper",
+                "market": "US",
+                "symbol": "AAPL",
+                "side": "sell",
+                "quantity": "1",
+                "price": "101",
+                "fee": "0",
+            },
+        )
+    )
+
+    with pytest.raises(ValueError, match="exceeds available FIFO lots"):
+        replay_local_paper_realized_pnl(event_store.iter_events())
 
 
 def test_canceled_order_is_persisted_and_not_fillable(tmp_path) -> None:

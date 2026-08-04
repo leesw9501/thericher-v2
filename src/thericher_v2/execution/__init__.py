@@ -42,7 +42,9 @@ from .local_paper import (
     LocalPaperFill,
     LocalPaperOrderResult,
     LocalPaperPosition,
+    LocalPaperRealizedPnl,
     replay_local_paper_account,
+    replay_local_paper_realized_pnl,
 )
 from .risk import PreSubmitRiskDecision, RiskReason, evaluate_pre_submit_risk
 from .target_position import target_proposal_to_order_intent
@@ -74,6 +76,7 @@ __all__ = [
     "LocalPaperFill",
     "LocalPaperOrderResult",
     "LocalPaperPosition",
+    "LocalPaperRealizedPnl",
     "InMemoryBrokerTransport",
     "OpenOrderSnapshot",
     "OrderStatusQuery",
@@ -87,5 +90,6 @@ __all__ = [
     "evaluate_pre_submit_risk",
     "order_intent_to_broker_order_request",
     "replay_local_paper_account",
+    "replay_local_paper_realized_pnl",
     "target_proposal_to_order_intent",
 ]
