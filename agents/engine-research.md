@@ -16,6 +16,14 @@ strongest kill test before target evaluation or GPU consideration.
 
 - No frozen, input-qualified predictive campaign is active. Do not train or
   allocate GPU merely to raise utilization.
+- The Docker research profile reverified generic PyTorch CUDA compute and a
+  five-step deterministic training smoke on the RTX 4090 on 2026-08-04.
+  Artifacts are outside Git at
+  `D:\thericher-v2\model-artifacts\gpu-compute\infra-gpu-compute-smoke-20260804-r1.json`
+  and
+  `D:\thericher-v2\model-artifacts\gpu-training\infra-gpu-training-smoke-20260804-r1.json`.
+  This confirms the runtime path only; it creates no campaign, GPU appointment,
+  model result, PnL claim, or Paper input.
 - The terminal QQQ/NAS and SPY/AMS M1 caches have a source-safe geometry
   receipt with 21 shared complete 09:30--15:29 ET sessions. That is sufficient
   only for a source-local, non-promoting 5--90 minute structural preflight;

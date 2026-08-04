@@ -20,7 +20,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
 | Norgate local capability | Data | NDU loopback and D: cache | 1990--2026 probe measured a 512-session fixed-ETF D1 window; offline-only with no PIT/model/GPU/Paper promotion |
 | Free public augmentation | Data | Official-source capability check | No full PIT/delisting/corporate-action/OHLCV source qualified; SEC sidecar probe needs declared contact |
-| Predictive campaign | Engine/Steward | RTX 4090 | No eligible frozen contract |
+| Predictive campaign | Engine/Steward | RTX 4090 | Docker CUDA path reverified; no eligible frozen contract |
 
 No foreground wait is justified. Each external time belongs to its worker;
 independent Data, Engine, and Execution preparation continues when ready.
