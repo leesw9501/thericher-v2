@@ -30,8 +30,13 @@ The current company checkpoint depends on the task-owned canary outcome. The
 next product bottleneck beyond that result is fresh, causal, KIS-reconstructible
 input coverage.
 The current 120-row/head and broad D1 sources cannot be relabeled as qualified
-historical training or decision-time availability. This is a technical data
-fact, not an operator decision or a general Paper hold.
+historical training or decision-time availability. In particular, the D1 SPY
+head is a verified cache producer, not a producer of provider finality or
+decision-time availability. A 2026-08-04 Claude drift check returned
+`uncertain`: an observed-only bridge needs a distinct, exact-scope
+availability/stability producer and an Engine-unreadable output before any
+later qualification work. This is a technical data fact, not an operator
+decision or a general Paper hold.
 
 ## Current Reversible Improvement
 
@@ -43,11 +48,14 @@ service, schedule, global Paper hold, route, sizing rule, or role authority.
 
 ## Review And Monitor Facts
 
-Recent Claude CLI checks timed out and are `review_unavailable`, not approval or
-agreement. The official Codex app monitor editor also timed out; no TOML was
-edited manually. Its active Monday--Friday 23:45 KST result monitor covers the
-task-owned canary, while Windows tasks remain the primary execution evidence.
-Retry monitor edits only through the app API when it responds.
+Historic Claude CLI timeouts remain `review_unavailable`, not approval or
+agreement. The 2026-08-04 D1 bridge drift check returned `uncertain` because
+the proposed independent provider-finality/timing receipt has no concrete
+producer yet; no bridge was implemented. The official Codex app monitor editor
+also timed out; no TOML was edited manually. Its active Monday--Friday 23:45
+KST result monitor covers the task-owned canary, while Windows tasks remain the
+primary execution evidence. Retry monitor edits only through the app API when
+it responds.
 
 ## Handoff
 

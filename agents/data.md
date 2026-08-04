@@ -34,6 +34,14 @@ arbitrary historical intraday reach.
   diagnosis classifies the origin as `retained_cache`; the conflicting head is
   already quarantined, so the next worker alone can confirm recovery. A repeat
   is the kill test for a narrow collector repair; no pre-run code change is due.
+- **Daily SPY consumer readiness:** a static trace found `producer_path_missing`.
+  The existing 22:15 KST `daily-spy-head` task emits a verified prior-session
+  cache snapshot only; it does not emit a capability/qualification, a provider
+  finality fact, or decision-time availability evidence that Engine can consume.
+  Do not add a bridge from the same snapshot alone. The next Data package must
+  first measure a distinct daily availability/stability fact and fail closed
+  when its source scope, timestamp, or snapshot binding is absent or stale.
+  Evidence: `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
 - **SPY prefix capability:** the negative control and feasibility tasks own
   2026-08-05 04:29:30 and 04:30 KST. One dedicated client/cache namespace may
   inspect at most four pages of 120 rows and must validate seams plus the exact
@@ -60,6 +68,10 @@ arbitrary historical intraday reach.
   `D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=listener-recovery-20260804-r1-norgate-trial-daily-capability-r1` and
   `D:\market_data\us_equities\norgate_trial\local_d1_etf\snapshot=fresh-tail-20260804-r1-norgate-trial-raw-d1-r2` with receipt
   `D:\thericher-v2\model-artifacts\data\norgate-local-d1-capability-v1\fresh-tail-20260804-r1.json`.
+  A bounded scope assessment permits at most a target-free structural input
+  integrity check; it does not change any of those eligibility flags or create
+  a predictive/GPU package. Evidence:
+  `D:\thericher-v2\model-artifacts\research\norgate-scope-readiness\scope-readiness-20260804-r1\assessment.json`.
 - **Free public augmentation:** no official, no-auth source found that jointly
   establishes PIT/delisting membership, corporate-action meaning, and daily
   OHLCV. SEC Market Structure and EDGAR remain optional source-limited sidecars

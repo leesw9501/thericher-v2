@@ -25,6 +25,12 @@ strongest kill test before target evaluation or GPU consideration.
 - Granite TTM R1 passed an isolated structural CPU/CUDA runtime smoke only. Its
   source, output shape, and artifact integrity are known; forecasting quality,
   comparative evaluation, and Paper use are unknown.
+- Chronos-T5 Small is an independently retrieved `source_only_candidate` with
+  an Apache-2.0 source and a documented forecast interface. Its pretraining
+  period/financial-instrument scope and hidden-representation interface are not
+  disclosed, so it is not a campaign, execution, GPU appointment, ensemble,
+  Paper input, or profitability claim. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos-t5-small-20260804-r1\source-retrieval.json`.
 - The independently retrieved 52-week-high mechanism is distinct from the
   closed short-return rank, but its original 252-session/monthly/six-month
   contract needs a qualified point-in-time daily universe and more later data.
@@ -67,7 +73,7 @@ strongest kill test before target evaluation or GPU consideration.
 | --- | --- | --- |
 | Technical/chart and momentum/regime | No current frozen campaign | New causal, time-disjoint input and contract |
 | Classical ML/statistical | No current frozen campaign | Qualified dataset plus CPU-first preflight |
-| Sequence/DL/public model | Runtime compatibility only | Frozen data/target/split and Steward appointment |
+| Sequence/DL/public model | Granite runtime receipt plus Chronos source-only candidate | Frozen data/target/split and Steward appointment |
 | Portfolio/allocation/meta-decision | Deterministic target-scale/cap foundation only | Aligned out-of-fold upstream evidence |
 
 Public source proposals remain `source_unverified` until Engine independently
