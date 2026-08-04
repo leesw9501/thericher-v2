@@ -1009,6 +1009,18 @@ limit, below its shortest 109-minute trigger gap. Do not manually start a
 duplicate run to compensate for a missed window; inspect the task result and
 use the existing owned recovery path.
 
+After a terminal dispatch receipt is written, reattach only the task-owned
+current pointer and its exact immutable receipt with this host-only command:
+
+```powershell
+uv run python scripts/project_kis_paper_intraday_head_schedule_receipt.py
+```
+
+It reads no credentials and makes no KIS, Docker, network, or market-data call.
+It never scans for a latest receipt: a malformed/link/reparse-point pointer,
+reserved run ID, Git-local artifact root, missing receipt, hash mismatch, or
+terminal-category mismatch returns only `unavailable`.
+
 To rebuild and update only an already installed named task after a local code
 change, use the scoped installer selector:
 

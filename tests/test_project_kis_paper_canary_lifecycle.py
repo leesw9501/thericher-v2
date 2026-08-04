@@ -4,14 +4,21 @@ from __future__ import annotations
 
 import json
 import runpy
+from datetime import UTC, datetime
 from pathlib import Path
 from types import SimpleNamespace
 
 from thericher_v2.contracts import SCHEMA_VERSION
+from thericher_v2.ops.kis_paper_intraday_head_schedule_receipt import (
+    write_kis_paper_intraday_head_schedule_receipt,
+)
 
 SCRIPT_PATH = Path(__file__).parents[1] / "scripts" / "project_kis_paper_canary_lifecycle.py"
 VALIDATOR_SCRIPT_PATH = (
     Path(__file__).parents[1] / "scripts" / "validate_kis_paper_canary_lifecycle_evidence.py"
+)
+SCHEDULE_SCRIPT_PATH = (
+    Path(__file__).parents[1] / "scripts" / "project_kis_paper_intraday_head_schedule_receipt.py"
 )
 
 
@@ -146,7 +153,6 @@ def test_lifecycle_projection_reports_missing_evidence_as_unavailable(
         "status": "unavailable",
     }
 
-
 def test_lifecycle_projection_rejects_unsafe_or_mismatched_run_id(
     tmp_path: Path,
     capsys,
@@ -231,6 +237,55 @@ def test_lifecycle_projection_rejects_reparse_run_root(
         "paper_only": True,
         "status": "unavailable",
     }
+
+
+def test_schedule_projection_reads_only_current_task_owned_receipt(tmp_path: Path, capsys) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    write_kis_paper_intraday_head_schedule_receipt(
+        run_id="intraday-head-cli-1",
+        collection_exit_code=0,
+        prospective_spy_cycle_exit_code=0,
+        prospective_spy_cycle_status="not_applicable",
+        prospective_spy_cycle_id=None,
+        prospective_spy_canary_run_id=None,
+        prospective_loop_exit_code=0,
+        prospective_loop_status="not_applicable",
+        prospective_session_exit_code=0,
+        prospective_session_status="not_applicable",
+        prospective_session_id=None,
+        prospective_validation_exit_code=0,
+        prospective_validation_status="not_applicable",
+        prospective_validation_session_id=None,
+        observation_exit_code=0,
+        observation_status="not_observed",
+        capture_cycle_exit_code=0,
+        capture_cycle_status="outside_cycle_slot",
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 8, 5, 0, 31, tzinfo=UTC),
+    )
+    script = runpy.run_path(str(SCHEDULE_SCRIPT_PATH))
+
+    assert script["main"](["--artifact-root", str(artifact_root)]) == 0
+
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["run_id"] == "intraday-head-cli-1"
+    assert payload["status"] == "complete"
+    assert payload["recovery_class"] == "complete"
+    assert "evidence_path" not in payload
+    assert "stages" not in payload
+
+
+def test_schedule_projection_reports_missing_pointer_as_unavailable(tmp_path: Path, capsys) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    artifact_root.mkdir()
+    script = runpy.run_path(str(SCHEDULE_SCRIPT_PATH))
+
+    assert script["main"](["--artifact-root", str(artifact_root)]) == 2
+
+    assert json.loads(capsys.readouterr().out) == {"status": "unavailable"}
 
 
 def test_lifecycle_validator_independently_revalidates_safe_projection(

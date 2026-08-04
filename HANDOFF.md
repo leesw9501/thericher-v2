@@ -63,7 +63,11 @@ execution tests passed.
   head is already quarantined. Its 2026-08-05 00:31 KST task exited `20`, the
   existing downstream-recovery category rather than a collection failure. Do
   not infer its downstream stage or manually rerun it; the same worker owns the
-  02:31 KST retry and its next source-safe terminal receipt selects recovery.
+  02:31 KST retry. Its terminal writer now advances one task-owned current
+  pointer only after the immutable source-safe receipt exists. The host
+  projector reattaches that pointer only when its exact non-link receipt hash,
+  run identity, observed timestamp, and terminal category agree; it makes no
+  KIS, Docker, network, or credential call and never selects a latest artifact.
 - The existing KIS M1 cursor chains for QQQ/NAS and SPY/AMS are terminally
   `source_exhausted` after their retained 2026-06-22 through 2026-07-21 spans
   (about 20,000 rows per target). The offline reattachment issued no market
@@ -263,7 +267,7 @@ execution tests passed.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | 23:48 KST monitor found no matching direct lifecycle receipt/current projection; next task-owned opportunity 2026-08-05 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
-| Current-head duplicate recovery | Data | 00:31 KST returned deliberate downstream-recovery `20`; existing worker owns 02:31 retry |
+| Current-head duplicate recovery | Data | 00:31 KST returned deliberate downstream-recovery `20`; existing worker owns 02:31 retry and task-owned pointer/receipt reattachment |
 | SPY paginated-prefix capability | Data | Existing workers due 2026-08-05 04:29:30/04:30 KST |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 

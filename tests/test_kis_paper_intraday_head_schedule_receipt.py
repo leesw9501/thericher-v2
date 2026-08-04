@@ -1,14 +1,19 @@
 from __future__ import annotations
 
 import json
+import socket
 from datetime import UTC, datetime
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
 from thericher_v2.ops.kis_paper_intraday_head_schedule_receipt import (
     KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY,
+    KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME,
     SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE,
+    KisPaperIntradayHeadScheduleReceiptError,
+    read_kis_paper_intraday_head_schedule_fact_from_artifact_root,
     write_kis_paper_intraday_head_schedule_receipt,
 )
 
@@ -71,6 +76,154 @@ def test_schedule_receipt_writes_a_complete_source_safe_no_intent_outcome(tmp_pa
     rendered = result.evidence_path.read_bytes().lower()
     assert b"paper-key" not in rendered
     assert b"kis_live" not in rendered
+
+
+def test_schedule_fact_reads_only_the_task_owned_current_pointer_without_network(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    runtime_path = (
+        result.evidence_path.parent
+        / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME
+    )
+    receipt_bytes = result.evidence_path.read_bytes()
+    runtime_bytes = runtime_path.read_bytes()
+
+    def network_forbidden(*args: object, **kwargs: object) -> None:
+        raise AssertionError("schedule receipt projection must stay offline")
+
+    monkeypatch.setattr(socket, "create_connection", network_forbidden)
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert fact.run_id == result.run_id
+    assert fact.terminal_status == "complete"
+    assert fact.recovery_class == "complete"
+    assert fact.scheduler_exit_code == 0
+    assert result.evidence_path.read_bytes() == receipt_bytes
+    assert runtime_path.read_bytes() == runtime_bytes
+    projected = json.dumps(fact.safe_payload(), sort_keys=True)
+    assert "evidence_path" not in projected
+    assert str(artifact_root) not in projected
+    assert "prospective_spy_cycle" not in projected
+
+
+def test_schedule_fact_rejects_pointer_receipt_mismatch(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    runtime_path = (
+        result.evidence_path.parent
+        / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME
+    )
+    runtime_payload = json.loads(runtime_path.read_text(encoding="ascii"))
+    runtime_payload["receipt_sha256"] = "sha256:" + "0" * 64
+    runtime_path.write_text(json.dumps(runtime_payload, sort_keys=True), encoding="ascii")
+
+    with pytest.raises(KisPaperIntradayHeadScheduleReceiptError):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_schedule_fact_rejects_hash_matching_pointer_terminal_mismatch(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    runtime_path = (
+        result.evidence_path.parent
+        / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME
+    )
+    runtime_payload = json.loads(runtime_path.read_text(encoding="ascii"))
+    runtime_payload.update(
+        status="recovery",
+        recovery_class="prospective_loop_exit_nonzero",
+        scheduler_exit_code=SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE,
+    )
+    runtime_path.write_text(json.dumps(runtime_payload, sort_keys=True), encoding="ascii")
+
+    with pytest.raises(KisPaperIntradayHeadScheduleReceiptError):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_schedule_fact_rejects_reparse_current_pointer(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    runtime_path = (
+        result.evidence_path.parent
+        / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME
+    )
+    original_lstat = Path.lstat
+
+    def marked_lstat(path: Path):
+        metadata = original_lstat(path)
+        if path == runtime_path:
+            return SimpleNamespace(st_mode=metadata.st_mode, st_file_attributes=0x400)
+        return metadata
+
+    monkeypatch.setattr(Path, "lstat", marked_lstat)
+
+    with pytest.raises(KisPaperIntradayHeadScheduleReceiptError):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+        )
+
+
+@pytest.mark.parametrize("run_id", [".", "..", "current", "CURRENT"])
+def test_schedule_receipt_rejects_reserved_or_dot_component_run_ids(
+    tmp_path: Path,
+    run_id: str,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    kwargs = _complete_kwargs()
+    kwargs["run_id"] = run_id
+
+    with pytest.raises(ValueError):
+        write_kis_paper_intraday_head_schedule_receipt(
+            **kwargs,
+            artifact_root=tmp_path / "model-artifacts",
+            repository_root=repository_root,
+            observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+        )
 
 
 @pytest.mark.parametrize(

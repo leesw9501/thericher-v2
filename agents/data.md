@@ -44,8 +44,12 @@ undocumented timestamp seed.
   already quarantined. Its 00:31 KST Task Scheduler result `20` is the runner's
   deliberate downstream-recovery category, not a collection failure. The task
   metadata cannot identify the exact downstream stage, so the next source-safe
-  terminal receipt alone selects recovery. A repeat of the original conflict is
-  still the kill test for a narrow collector repair; no manual rerun is due.
+  terminal receipt writes one task-owned current pointer for offline
+  reattachment. The host projector accepts it only when the pointer and exact
+  immutable non-link receipt agree on identity, observation time, terminal
+  category, and receipt hash; it has no KIS, Docker, network, or credential
+  path and never scans for a latest artifact. A repeat of the original conflict
+  is still the kill test for a narrow collector repair; no manual rerun is due.
   At 21:40 KST, the task's `IgnoreNew` ownership was reattached and its
   current-source profile passed a network-disabled exact-entrypoint check. The
   related focused Data/schedule group passed 76 tests; this is preflight only,
