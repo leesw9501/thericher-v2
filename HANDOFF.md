@@ -114,10 +114,10 @@ ready.
 - The newest Claude CLI canary and governance invocations timed out. Record
   `review_unavailable`, never agreement. Prior bounded reviews remain scoped to
   their named decisions.
-- The Codex app monitor editor also timed out. Its existing Tuesday watch still
-  covers tonight; installed Windows tasks remain the primary evidence. Retry the
-  future weekday alignment only through the official app API, never by editing
-  its TOML directly.
+- The Codex app monitor editor also timed out. Its active result monitor runs
+  Monday--Friday at 23:45 KST; installed Windows tasks remain the primary
+  evidence. Retry future edits only through the official app API, never by
+  editing its TOML directly.
 
 ## Verification And Git
 

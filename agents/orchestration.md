@@ -46,9 +46,9 @@ sizing, execution contract, or role authority.
 
 Recent Claude CLI checks timed out and are `review_unavailable`, not approval or
 agreement. The official Codex app monitor editor also timed out; no TOML was
-edited manually. Its existing Tuesday watch covers tonight, while Windows tasks
-remain the primary execution evidence. Retry monitor weekday alignment only when
-the app API responds.
+edited manually. Its active Monday--Friday 23:45 KST result monitor covers the
+task-owned canary, while Windows tasks remain the primary execution evidence.
+Retry monitor edits only through the app API when it responds.
 
 ## Handoff
 
