@@ -107,6 +107,11 @@ task, not a general Paper hold.
 - The host lifecycle projector additionally has explicit valid-evidence and
   missing-evidence CLI contracts; 97 focused canary/quote/lifecycle tests pass
   without broker or credential access.
+- A cancellation-transport regression now proves that an exact prior
+  `cancel_transport_unknown` canary re-enters only its recovery path: the next
+  matching quote session records `recovery_required` without a fresh asking
+  price or buy-limit request. This is a local contract test, not a broker
+  outcome.
 - The Compose isolation test now scopes `kis-paper-session` to its immediate
   `kis-paper-daily-backfill` boundary and requires exactly one `--execute`.
   Later profile services can no longer mask a canary preview-path regression.
