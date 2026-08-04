@@ -40,6 +40,13 @@ strongest kill test before target evaluation or GPU consideration.
 - The MIM literature mechanism is historically interesting but its local
   derivative failed its frozen CPU kill test on the available small source.
   Do not re-run it without a distinct later family and data contract.
+- The independently retrieved weekly loser-reversal source did not open a
+  campaign: its proposed bottom-rank implementation was a sign inversion of
+  the closed broad-D1 momentum line. The source-local panel could support a
+  separate five-return-interval/five-forward-session adapter, but no adapter
+  or diagnostic starts without a source-specific mechanism that is distinct
+  from both closed momentum and volume-exhaustion families. Evidence:
+  `D:\thericher-v2\model-artifacts\research\kis-broad-d1-weekly-loser-reversal-assessment-v1\assessment.json`.
 
 ## Current Inputs And Research Tracks
 
