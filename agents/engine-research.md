@@ -68,6 +68,14 @@ strongest kill test before target evaluation or GPU consideration.
   disclosed, so it is not a campaign, execution, GPU appointment, ensemble,
   Paper input, or profitability claim. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos-t5-small-20260804-r1\source-retrieval.json`.
+- Chronos-2 is a separate Apache-2.0, Safetensors-marked
+  `source_only_candidate` with a documented dataframe forecast interface. Its
+  pretraining period and financial-instrument scope are not disclosed, so it
+  cannot be comparatively evaluated, executed, trained, allocated GPU,
+  ensembled, or routed to Paper. Moirai-2.0-R-small was screened out because
+  its official weight card is `CC-BY-NC-4.0` and research-only. Neither model's
+  weights or dependencies were downloaded. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos-2-20260804-r1\source-retrieval.json`.
 - Moreira and Muir's volatility-managed exposure is an independently retrieved
   allocation-layer candidate, not a directional model. Its native monthly
   realized-variance scaling needs a future frozen causal D1 baseline and later
