@@ -61,6 +61,10 @@ arbitrary historical intraday reach.
   establishes PIT/delisting membership, corporate-action meaning, and daily
   OHLCV. SEC Market Structure and EDGAR remain optional source-limited sidecars
   only; no download or promotion is active.
+- **SEC schema probe:** the public 2025 Q4 individual-security ZIP is a bounded
+  22.4 MB sidecar candidate, but SEC scripted access requires a declared contact
+  User-Agent. No designated contact is configured, so no data, provider, or
+  promotion was created; a later probe must retain only source-safe coverage.
 
 ## Current Quality Contracts
 

@@ -53,7 +53,8 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
 - An official free-source check found no single public panel that establishes
   point-in-time membership including delistings, corporate-action semantics,
   and daily OHLCV. SEC Market Structure and EDGAR can be bounded sidecars only,
-  not a qualified model or Paper input.
+  not a qualified model or Paper input. Its 2025 Q4 sidecar ZIP is 22.4 MB, but
+  a scripted probe needs a designated contact User-Agent; no data was retained.
 
 ### Engine Research And Stewardship
 
