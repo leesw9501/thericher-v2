@@ -45,8 +45,9 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   not a point-in-time, adjusted, corporate-action-qualified, or Paper-ready
   dataset. Historical minute reach remains endpoint-limited.
 - Norgate NDU is running and its new aggregate capability receipt is
-  `qualified_for_offline_research` only. The verified fixed-ETF D1 snapshot has
-  483 common sessions, but the trial does not establish PIT, ranking, model,
+  `qualified_for_offline_research` only. The latest verified fixed-ETF D1
+  snapshot has 502 common sessions through its bounded fresh tail, but the
+  trial does not establish PIT, ranking, model,
   GPU, PnL, or Paper eligibility. Its raw snapshot remains under
   `D:\market_data`; use it only through its source-local contract.
 

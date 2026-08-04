@@ -48,10 +48,11 @@ arbitrary historical intraday reach.
 - **Norgate local capability:** after the no-download metadata probe, NDU was
   started and the fixed-case aggregate receipt is
   `qualified_for_offline_research`. A verified fixed-ETF D1 snapshot now has
-  483 common sessions and remains source-local. Trial/PIT entitlement, ranking,
+  502 common sessions and remains source-local. Trial/PIT entitlement, ranking,
   model, GPU, PnL, and Paper eligibility remain false. Evidence:
   `D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=listener-recovery-20260804-r1-norgate-trial-daily-capability-r1` and
-  `D:\market_data\us_equities\fixed_etf_daily\canonical\norgate_trial_raw_d1\snapshot=2026-08-04-norgate-trial-raw-d1-r2`.
+  `D:\market_data\us_equities\norgate_trial\local_d1_etf\snapshot=fresh-tail-20260804-r1-norgate-trial-raw-d1-r2` with receipt
+  `D:\thericher-v2\model-artifacts\data\norgate-local-d1-capability-v1\fresh-tail-20260804-r1.json`.
 
 ## Current Quality Contracts
 
