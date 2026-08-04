@@ -65,6 +65,12 @@ D1 sidecar records 330 source markers and 990 exclusion rows under its immutable
 external parent. It is data hygiene only. A source-safe audit also reattached
 the completed Tiingo CPU and GRU/causal-TCN/compact-attention breadth controls,
 so a proposed duplicate baseline was retired before it consumed CPU or GPU time.
+The same source-safe reattachment now covers the completed Chronos-T5 Tiny R4
+CPU/CUDA zero-shot diagnostic. Its external model file hashes reverify after a
+legacy manifest-order compatibility repair, but its fixed static-source result
+does not surpass the zero-return directional baseline and remains non-promoting.
+It cannot be replayed as a new GPU campaign without a distinct eligible
+contract.
 
 ## Current Reversible Improvement
 

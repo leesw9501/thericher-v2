@@ -62,6 +62,13 @@ strongest kill test before target evaluation or GPU consideration.
 - Granite TTM R1 passed an isolated structural CPU/CUDA runtime smoke only. Its
   source, output shape, and artifact integrity are known; forecasting quality,
   comparative evaluation, and Paper use are unknown.
+- Chronos-T5 Tiny R4 completed one frozen, source-local Norgate D1 CPU/CUDA
+  zero-shot diagnostic. Its external safe-file manifest now reattests despite
+  legacy record ordering; the CUDA diagnostic did not surpass its fixed
+  zero-return directional baseline. The static current-listing/non-PIT panel
+  and undisclosed pretraining scope keep it non-promoting: no model selection,
+  ensemble, Paper input, PnL, or further GPU continuation follows. Evidence:
+  `D:\thericher-v2\model-artifacts\research\chronos-t5-tiny-norgate-d1-probe-v1\chronos-t5-norgate-d1-actual-r4`.
 - Chronos-T5 Small is an independently retrieved `source_only_candidate` with
   an Apache-2.0 source and a documented forecast interface. Its pretraining
   period/financial-instrument scope and hidden-representation interface are not
@@ -175,7 +182,7 @@ strongest kill test before target evaluation or GPU consideration.
 | --- | --- | --- |
 | Technical/chart and momentum/regime | No current frozen campaign | New causal, time-disjoint input and contract |
 | Classical ML/statistical | No current frozen campaign | Qualified dataset plus CPU-first preflight |
-| Sequence/DL/public model | Granite runtime receipt plus Chronos source-only candidate | Frozen data/target/split and Steward appointment |
+| Sequence/DL/public model | Granite runtime receipt, closed Chronos-T5 Tiny diagnostic, and source-only candidates | Frozen data/target/split and Steward appointment |
 | Portfolio/allocation/meta-decision | Deterministic target-scale/cap foundation only | Aligned out-of-fold upstream evidence |
 
 Public source proposals remain `source_unverified` until Engine independently

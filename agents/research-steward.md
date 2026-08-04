@@ -11,6 +11,10 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 - The completed Granite TTM R1 structural smoke used one bounded appointment
   and released it. It is runtime compatibility evidence only, not a predictive
   campaign or a reason to reserve GPU capacity.
+- The reattached Chronos-T5 Tiny R4 CUDA diagnostic is a completed source-local,
+  non-promoting zero-shot probe, not an open allocation or predictive campaign.
+  Its fixed zero-return baseline was not surpassed, so it releases no follow-on
+  GPU work without a distinct eligible contract.
 - Model artifacts and source-safe receipts remain external under
   `D:\thericher-v2\model-artifacts`; Git holds neither model weights nor raw
   market data.

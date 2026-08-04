@@ -88,6 +88,68 @@ def test_prepare_rejects_unsafe_or_in_repo_model_artifacts(tmp_path: Path) -> No
     assert not probe.default_chronos_t5_tiny_directory(artifact_root).exists()
 
 
+def test_load_verified_accepts_legacy_file_record_order(tmp_path: Path) -> None:
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    model = _model(artifact_root=artifact_root, repository=repository)
+    payload = json.loads(model.manifest_path.read_text(encoding="ascii"))
+    payload["files"] = list(reversed(payload["files"]))
+    model.manifest_path.write_text(
+        json.dumps(payload, ensure_ascii=True, indent=2, sort_keys=True) + "\n",
+        encoding="ascii",
+    )
+
+    reloaded = probe.load_verified_chronos_t5_tiny_local_model(
+        artifact_root=artifact_root,
+        repository_root=repository,
+    )
+
+    assert reloaded.file_sha256 == model.file_sha256
+
+
+@pytest.mark.parametrize("mutation", ("duplicate", "extra_key", "bad_digest"))
+def test_load_verified_rejects_malformed_manifest_file_records(
+    tmp_path: Path,
+    mutation: str,
+) -> None:
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    model = _model(artifact_root=artifact_root, repository=repository)
+    payload = json.loads(model.manifest_path.read_text(encoding="ascii"))
+    if mutation == "duplicate":
+        payload["files"].append(dict(payload["files"][0]))
+    elif mutation == "extra_key":
+        payload["files"][0]["unexpected"] = "value"
+    else:
+        payload["files"][0]["sha256"] = "sha256:" + "A" * 64
+    model.manifest_path.write_text(
+        json.dumps(payload, ensure_ascii=True, indent=2, sort_keys=True) + "\n",
+        encoding="ascii",
+    )
+
+    with pytest.raises(ValueError, match="file records are invalid"):
+        probe.load_verified_chronos_t5_tiny_local_model(
+            artifact_root=artifact_root,
+            repository_root=repository,
+        )
+
+
+def test_load_verified_rejects_disk_only_model_file(tmp_path: Path) -> None:
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    model = _model(artifact_root=artifact_root, repository=repository)
+    (model.directory / "pytorch_model.bin").write_bytes(b"unsafe-pickle-route")
+
+    with pytest.raises(ValueError, match="unsupported file"):
+        probe.load_verified_chronos_t5_tiny_local_model(
+            artifact_root=artifact_root,
+            repository_root=repository,
+        )
+
+
 def test_probe_freezes_and_runs_cpu_then_cuda_without_retaining_values(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,

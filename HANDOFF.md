@@ -120,6 +120,13 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
 - The completed Granite TTM R1 run is a structural CPU/CUDA compatibility
   receipt only. It has no market input, forecast score, model selection,
   checkpoint promotion, ensemble, or Paper consequence.
+- The existing Chronos-T5 Tiny R4 CPU/CUDA zero-shot diagnostic was reattached
+  after its verifier was repaired for legacy manifest record ordering.
+  Its static Norgate development-panel input, hidden pretraining scope, and
+  contract keep it source-local, non-PIT, non-promoting, and ineligible for
+  Paper, model selection, or further GPU allocation. Its CUDA diagnostic did
+  not surpass the fixed zero-return directional baseline. Evidence:
+  `D:\thericher-v2\model-artifacts\research\chronos-t5-tiny-norgate-d1-probe-v1\chronos-t5-norgate-d1-actual-r4`.
 - Chronos-T5 Small is an independently retrieved Apache-2.0 source-only
   candidate. Its forecast input is documented, but its pretraining
   period/financial-instrument scope and hidden-representation interface are not

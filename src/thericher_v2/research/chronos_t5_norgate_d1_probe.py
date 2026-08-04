@@ -366,7 +366,8 @@ def _load_verified_local_model(
     ):
         raise ValueError("Chronos model manifest is invalid")
     records = payload.get("files")
-    if not isinstance(records, list) or records != _verified_model_file_records(directory):
+    observed_records = _verified_model_file_records(directory)
+    if _model_file_record_mapping(records) != _model_file_record_mapping(observed_records):
         raise ValueError("Chronos model files changed")
     file_sha256 = {str(item["path"]): str(item["sha256"]) for item in records}
     return ChronosT5LocalModel(
@@ -391,6 +392,29 @@ def _verified_model_file_records(directory: Path) -> list[dict[str, str]]:
     if not _REQUIRED_MODEL_FILES.issubset(names):
         raise ValueError("Chronos model safe files are incomplete")
     return records
+
+
+def _model_file_record_mapping(records: object) -> dict[str, str]:
+    """Validate manifest records while allowing legacy serialization order."""
+
+    if not isinstance(records, list):
+        raise ValueError("Chronos model file records are invalid")
+    mapped: dict[str, str] = {}
+    for record in records:
+        if not isinstance(record, Mapping) or set(record) != {"path", "sha256"}:
+            raise ValueError("Chronos model file records are invalid")
+        path = record["path"]
+        digest = record["sha256"]
+        if (
+            not isinstance(path, str)
+            or path not in _ALLOWED_MODEL_FILES
+            or not isinstance(digest, str)
+            or re.fullmatch(r"sha256:[0-9a-f]{64}", digest) is None
+            or path in mapped
+        ):
+            raise ValueError("Chronos model file records are invalid")
+        mapped[path] = digest
+    return mapped
 
 
 def _validate_dataset(dataset: ObservedReturnDataset) -> None:
