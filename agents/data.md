@@ -16,7 +16,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
-| KIS Paper QQQ/SPY M1 cursor cache | Terminal for its exact QQQ/NAS and SPY/AMS continuation chains | Source-local M1 evidence only; not a general KIS historical-reach claim |
+| KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local, non-promoting 5--90 minute geometry preflight only |
 | KIS Paper SPY D1 stability observer | Installed, no runtime receipt yet | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
@@ -45,6 +45,11 @@ undocumented timestamp seed.
   indices were reattached offline as `source_exhausted`, with no new market-data
   page or snapshot. Do not reopen either terminal cursor with an invented seed;
   a changed endpoint, symbol, or provider behavior needs its own bounded probe.
+  A source-safe geometry receipt independently finds 21 shared complete
+  09:30--15:29 ET sessions, enough only for a source-local, non-promoting
+  5--90 minute preflight. It retains `decision_time_availability: not_observed`
+  and model/Paper eligibility false. Evidence:
+  `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
 - **Daily SPY consumer readiness:** a static trace found `producer_path_missing`.
   The existing 22:15 KST `daily-spy-head` task emits a verified prior-session
   cache snapshot only; it does not emit a capability/qualification, a provider

@@ -16,6 +16,13 @@ strongest kill test before target evaluation or GPU consideration.
 
 - No frozen, input-qualified predictive campaign is active. Do not train or
   allocate GPU merely to raise utilization.
+- The terminal QQQ/NAS and SPY/AMS M1 caches have a source-safe geometry
+  receipt with 21 shared complete 09:30--15:29 ET sessions. That is sufficient
+  only for a source-local, non-promoting 5--90 minute structural preflight;
+  `decision_time_availability` remains `not_observed`, and model/Paper
+  eligibility remains false. It does not open a predictive campaign, GPU
+  appointment, PnL claim, or Paper path. Evidence:
+  `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
 - The prospective SPY MTF baseline is a fixed causal `1m/5m/10m/1h/3h`
   decision control. Its timing evidence remains
   `decision_time_availability: not_observed` and it requires a fresh qualified
@@ -62,6 +69,14 @@ strongest kill test before target evaluation or GPU consideration.
   any 5m/10m/1h adaptation is a separate untested hypothesis. It remains
   source-only with no campaign, GPU job, or Paper path. Evidence:
   `D:\thericher-v2\model-artifacts\research\strategy-discovery\intraday-clock-slot-continuation-source-pass-20260804-r1\source-handoff.json`.
+- The session-VWAP state-continuation handoff is `source_unverified`: it
+  proposes a completed regular-session M1 OHLCV, crossed-side, 30-minute
+  continuation study for a single liquid ETF. Its independent Engine retrieval
+  timeboxed without a receipt, so it cannot become a campaign or reopen a
+  closed family yet. A fresh Engine package must independently retrieve the
+  source and freeze the causal/cost contract before using the source-local
+  geometry preflight. Evidence:
+  `D:\thericher-v2\model-artifacts\research\strategy-discovery\qqq-session-vwap-state-continuation-source-pass-20260804-r1\source-handoff.json`.
 
 ## Closed Or Non-Reusable Families
 

@@ -40,6 +40,10 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   (about 20,000 rows per target). The offline reattachment issued no market
   request and created no snapshot. This is an exact route/cursor fact, not a
   general KIS historical-retention claim; do not invent a timestamp seed.
+  A source-safe geometry assessment finds 21 shared complete 09:30--15:29 ET
+  sessions, enough only for a source-local non-promoting 5--90 minute preflight;
+  decision-time availability and model/Paper eligibility remain false. Evidence:
+  `D:\thericher-v2\model-artifacts\data\kis-m1-cursor-session-geometry-v1\assessment.json`.
 - SPY paginated-prefix negative-control and feasibility workers are installed
   for 04:29:30 and 04:30 KST. They have a dedicated cache and can establish
   only post-collection availability, never retrospective decision-time

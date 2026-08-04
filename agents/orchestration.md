@@ -34,6 +34,10 @@ The exact QQQ/NAS and SPY/AMS M1 cursor caches are terminal after about 21
 sessions, so they cannot provide the 60-session baseline needed by the
 source-only shock-reversal hypothesis. This is a scope fact for those cursors,
 not a provider-wide conclusion or a hold on another ready lane.
+A source-safe assessment does make those 21 shared complete 09:30--15:29 ET
+sessions sufficient for one source-local, non-promoting 5--90 minute geometry
+preflight. It does not repair decision-time availability or open model, GPU,
+PnL, or Paper eligibility.
 The current 120-row/head and broad D1 sources cannot be relabeled as qualified
 historical training or decision-time availability. In particular, the D1 SPY
 head is a verified cache producer, not a producer of provider finality or
@@ -66,7 +70,10 @@ accounting, shared gate participation, and cross-process ledger locking. No
 bridge was implemented. The official Codex app monitor editor also timed out;
 no TOML was edited manually. Its active Monday--Friday 23:45 KST result monitor
 covers the task-owned canary, while Windows tasks remain the primary execution
-evidence. Retry monitor edits only through the app API when it responds.
+evidence. A bounded throughput review reattested that this one monitor remains
+the sole result-retrieval trigger; before it runs, Codex dispatches ready,
+non-conflicting Data and Research packages instead of polling or duplicating a
+worker. Retry monitor edits only through the app API when it responds.
 
 ## Handoff
 
