@@ -22,6 +22,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | First task-owned receipt is incomplete after one accepted page | Exact endpoint pagination fact only; no decision-time availability or consumer promotion |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
+| Tiingo prospective EOD snapshot | Immutable 2026-08-04 retrieval through source date 2026-07-28 for SPY/QQQ/IWM | Future-lineage only; model and Paper eligibility remain false |
 | Tiingo/Norgate D1 snapshots | Fixed offline controls; Tiingo has a hash-bound event-marker sidecar and Norgate NDU is healthy | Source-separated, non-Paper research only |
 
 The broad D1 panel remains current-listing-only, non-PIT, unadjusted or
@@ -112,6 +113,14 @@ undocumented timestamp seed.
   cursor state did not read credentials or call KIS. It does not establish
   provider-wide historical coverage; the next scheduled worker remains owner
   of any changed cursor state.
+- **Tiingo prospective EOD refresh:** one authorized standard-EOD retrieval at
+  2026-08-04 23:13 UTC stored an immutable `SPY`/`QQQ`/`IWM` snapshot under
+  the fixed external root. It made exactly three provider requests, normalized
+  39 rows through source date 2026-07-28, and then passed an offline loader
+  reattachment with no token or network path. The snapshot remains
+  `prospective_lineage_only`; training, campaign, ranking, Paper, and order
+  eligibility remain false. It neither alters the historical D1 controls nor
+  creates a new provider route, scheduler, model, or Paper action.
 - **Token cadence calibration:** the 04:31 head collision is now a bounded
   Data capability question, not a permanent five-minute rule. A ready,
   token-only probe first checks and atomically claims the existing five-minute

@@ -90,6 +90,12 @@ execution tests passed.
 
 - Market data remains under `D:\market_data`; generated artifacts remain under
   `D:\thericher-v2\model-artifacts`.
+- One authorized standard-Tiingo-EOD retrieval completed at 2026-08-04 23:13
+  UTC for the fixed `SPY`/`QQQ`/`IWM` scope. Its immutable external snapshot
+  has 39 normalized rows through source date 2026-07-28 and reattests offline
+  without a token or network path. It is future-lineage only: it cannot
+  qualify historical D1 controls, model training, ranking, Paper input, or an
+  order action.
 - The KIS current-head collector last closed as the scoped
   `minute_duplicate_conflict` from a stale `retained_cache` candidate; the
   historical quarantine remains evidence only. Its 2026-08-05 02:31 KST
