@@ -126,8 +126,9 @@ Claude's falsification review was `supported-with-limits`; it requires the
 global namespace, zero wait, no recursive deletion of historical siblings, and
 an explicit future cross-session orphan-worker kill test. The focused authority
 smoke and full run completed with the two old inactive roots still present;
-the latter passed 2,499 tests with 23 skips in 204.69 seconds and cleaned its
-own root. This is a test-throughput recovery only, not a change to data,
+the latter passed 2,500 tests with 23 skips in 195.32 seconds and cleaned its
+own root. A separate child PowerShell contention probe also rejected the held
+`Global` mutex immediately. This is a test-throughput recovery only, not a change to data,
 research, execution, or live-risk authority.
 
 ## Review And Monitor Facts
