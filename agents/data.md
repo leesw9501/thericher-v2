@@ -194,9 +194,13 @@ undocumented timestamp seed.
 - **Broad D1:** the terminal cache has no cursor work. Its low-frequency task
   remains the owner of any future exact-scope collection fact at 00:15 KST; do
   not create a duplicate worker.
-- **Forward data:** existing daily pair/forward workers remain independent.
-  Their source-safe result can qualify only the named later observation, never
-  rewrite a historical campaign.
+- **Forward data:** the 2026-08-05 06:55 KST task-owned QQQ/SPY pair-forward
+  run completed `ready`: each named target has seven retained forward rows and
+  seven common sessions under its unadjusted, non-PIT source contract. It used
+  daily market-data routes only; raw rows remain on `D:`. This narrow later
+  observation cannot rewrite a historical campaign or qualify a model, GPU, or
+  Paper input. Receipt:
+  `D:\thericher-v2\model-artifacts\data\kis-paper-daily-pair-forward-v1\run=20260804T215507025331Z-176c6d006a024f9c\receipt.json`.
 - **NAS-forward recovery:** the 06:40 KST `unavailable`/`reconcile` receipt
   predates the current allowlisted failure classifier. Its cache was unchanged,
   the current collector image matches the host source hash, and 32 focused
