@@ -44,6 +44,12 @@ The canary contract is fixed:
 - the offline validator accepts only `paper_only`, terminally cancelled,
   cleanly reconciled, freshness-valid evidence.
 
+The at-most-one-intent statement is scoped to the existing single host-owned
+state root and its one scheduled Docker runner. A copied/restored private
+state directory, second state root, second machine, or out-of-band runner is
+outside this canary contract; none is installed. This is a scope fact for this
+task, not a general Paper hold.
+
 ## Current Supporting Surfaces
 
 - The loopback dashboard is read-only, credential-free, and has no broker

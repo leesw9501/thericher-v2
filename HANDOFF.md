@@ -173,6 +173,10 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   matching `SPY`/`AMEX`/buy/one-share pending state is recovered; if it remains
   ambiguous, only that fresh session returns `recovery_required` with no new
   quote or order. It never reads a live route.
+- The at-most-one-intent claim is scoped to the existing single host-owned
+  state root and its one scheduled Docker runner. No copied/restored state root,
+  second machine, or out-of-band runner is installed; those would be outside
+  this task's contract, not a general Paper hold.
 - The offline validator accepts completion only for `paper_only`, terminally
   cancelled, cleanly reconciled, freshness-valid evidence. The loopback
   dashboard is read-only, credential-free, and price/order-identifier-free.
@@ -214,6 +218,12 @@ ready.
   while the current tree contains the canary module, projector, and allowlist
   tests. Classify that response as `review_invalid_workspace`, not as a
   substantive adverse verdict or a canary hold. No execution boundary changed.
+- A current canary drift review first returned `uncertain`, then
+  `supported-with-limits` after source-free code/test reattestation of direct
+  virtual-host transport, pre-submit durable state, prior-run recovery, and
+  broker-timestamp quote age. Its remaining limit is the one host-owned state
+  root and one scheduled runner; this is a scope fact for the existing task,
+  not an execution hold.
 - A separate 2026-08-04 D1 bridge drift review returned `uncertain`: the bridge
   must not infer provider finality from a cached snapshot or write an
   Engine-readable observed-only result until a distinct availability/stability

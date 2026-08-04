@@ -94,6 +94,13 @@ its cited `docs/` and `attestations/` paths are absent locally, while the actual
 canary module, projector, and allowlist tests are present. It is recorded as
 `review_invalid_workspace`, not an adverse execution verdict or a hold; the
 existing local recovery contracts remain the decision evidence.
+A current canary drift review first returned `uncertain`, then
+`supported-with-limits` after source-free code/test reattestation of direct
+virtual-host transport, pre-submit durable state, prior-run recovery, and
+broker-timestamp quote age. The remaining limit is explicitly one host-owned
+state root and one scheduled runner; no second root, restored copy, or manual
+runner is installed. This scopes only the existing canary and does not delay
+independent work.
 A separate Norgate scope review returned `supported-with-limits` for an
 aggregate-only explicit-snapshot double-read conformance, while rejecting the
 range-risk diagnostic until adjustment and capital-event semantics are
