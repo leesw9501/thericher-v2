@@ -16,6 +16,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
+| KIS Paper SPY D1 stability observer | Installed, no runtime receipt yet | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
 | Tiingo/Norgate D1 snapshots | Fixed offline controls; Norgate NDU is healthy and its latest capability receipt is offline-only | Source-separated, non-Paper research only |
@@ -38,9 +39,14 @@ arbitrary historical intraday reach.
   The existing 22:15 KST `daily-spy-head` task emits a verified prior-session
   cache snapshot only; it does not emit a capability/qualification, a provider
   finality fact, or decision-time availability evidence that Engine can consume.
-  Do not add a bridge from the same snapshot alone. The next Data package must
-  first measure a distinct daily availability/stability fact and fail closed
-  when its source scope, timestamp, or snapshot binding is absent or stale.
+  The reviewed `thericher-kis-paper-daily-spy-stability-observer` now owns a
+  separate 23:15 KST weekday observation before the 23:35 canary. It compares
+  only the prior-session row hash after a verified 15--90-minute-old snapshot,
+  then issues at most one gated virtual-Paper `dailyprice` attempt. It has a
+  ten-attempt bound, a nonblocking external receipt lock, and categorical
+  unavailable exits before a GET for a stale/missing snapshot, client, auth, or
+  token-gate failure. Its receipt always says `provider_finality: not_observed`
+  and is Engine-unreadable. Do not build a consumer bridge from it alone.
   Evidence: `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
 - **SPY prefix capability:** the negative control and feasibility tasks own
   2026-08-05 04:29:30 and 04:30 KST. One dedicated client/cache namespace may
@@ -90,6 +96,10 @@ arbitrary historical intraday reach.
   `availability_within_validity_after_collection`; it must retain
   `decision_time_availability: not_observed` unless a separately designed
   measurement proves that earlier boundary.
+- The D1 stability observer may label only `stable`, `changed`, `unavailable`,
+  or `outside_window`; `stable` means two separately timed virtual-Paper reads
+  matched, not provider finality, point-in-time availability, data
+  qualification, model readiness, or Paper permission.
 - Storage remains private under `D:\market_data`; Git contains neither raw
   data nor provider credentials. Do not begin large work below the documented
   free-space floor.

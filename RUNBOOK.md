@@ -1400,6 +1400,48 @@ quote-session, and intraday-head sanitized outcomes. It performs no KIS call
 itself; the named Windows tasks remain the only recurring KIS-facing
 execution/data jobs.
 
+## Bounded Daily SPY Stability Observer
+
+`thericher-kis-paper-daily-spy-stability-observer` is a Data-only Windows task
+at 23:15 KST on weekdays. It runs the
+`kis-paper-daily-spy-stability-observer` Docker profile between the existing
+22:15 daily-SPY head and the 23:35 virtual-Paper canary. It receives only the
+Paper application key/secret, pins the existing virtual host through the
+market-data client, and sends at most one `dailyprice` request for `SPY/AMS`
+after all of these local checks pass:
+
+- the current time is within 23:15--23:20 KST on a weekday;
+- the verified daily-head snapshot is 15--90 minutes old and ends strictly
+  before the current Eastern market date;
+- the shared KIS request and token-start gates permit the token/request path;
+- the separate source-safe receipt ledger has fewer than ten prior GET
+  attempts and is not already held by another observer process.
+
+The observer compares only the prior-session row hash from the cached head
+with the separately timed response. Its external receipt contains categorical
+status, UTC timestamps, scope bindings, and hashes, never raw OHLCV, prices,
+credentials, account data, order data, or a live route. A missing/stale
+snapshot, client/config failure, token failure, or lock contention records a
+categorical `unavailable` result without consuming a `dailyprice` attempt.
+`stable` means only that the two virtual-Paper reads matched;
+`provider_finality` remains `not_observed`, and the receipt is neither a
+consumer qualification nor an Engine/Paper input.
+
+The Docker service mounts all market data read-only except the existing narrow
+`collection-control-v1` gate directory, and mounts the external artifact root
+for immutable receipts. It has no account, order, KIS live, model, GPU, or
+dashboard surface. Validate a completed receipt offline only:
+
+```powershell
+uv run python scripts\validate_kis_paper_daily_spy_stability_receipt.py `
+  --receipt-path <external-receipt-path> `
+  --repository-root C:\Users\Public\Documents\thericher-v2
+```
+
+Do not manually invoke it to manufacture additional observations. Its bounded
+worker owns the next due run; a source-safe receipt is reattached after the
+task completes while unrelated lanes continue.
+
 ## Daily SPY Point-In-Time Paper Session
 
 The daily SPY path first refreshes its small forward `SPY/AMS` head and then
@@ -1427,8 +1469,9 @@ docker compose --profile kis-paper-daily-spy-session run --rm --no-deps --build 
   kis-paper-daily-spy-session
 ```
 
-The installed Windows tasks run the head at 22:15 KST and the receipt session
-at 23:50 KST, Tuesday through Saturday. The session may honestly record a
+The installed Windows tasks run the head at 22:15 KST, the stability observer
+at 23:15 KST, and the receipt session at 23:50 KST, Monday through Friday. The
+session may honestly record a
 no-intent when a receipt is stale or abstains, the market is closed, its
 directional pause is active, its account fact is stale or out of scope, an SPY
 order is already open, or its transient price proof is unavailable. That result

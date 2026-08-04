@@ -20,6 +20,10 @@ strongest kill test before target evaluation or GPU consideration.
   decision control. Its timing evidence remains
   `decision_time_availability: not_observed` and it requires a fresh qualified
   Data receipt before any predictive, PnL, Paper, or GPU interpretation.
+- The separately scheduled SPY D1 stability observer is not an Engine input.
+  It has no runtime receipt yet and, even when `stable`, retains only hash and
+  categorical evidence with `provider_finality: not_observed`. It cannot open
+  a campaign, GPU appointment, ensemble, PnL claim, or Paper interpretation.
 - The reusable causal MTF sequence contract and local-paper replay seam are
   complete engineering foundations, not evidence of alpha or selection skill.
 - Granite TTM R1 passed an isolated structural CPU/CUDA runtime smoke only. Its

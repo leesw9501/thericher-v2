@@ -9068,3 +9068,31 @@ state, and source-safe session evidence. Claude returned
 second pending-phase check inside the recovery entry point, the shared lock,
 and no inference that a completion observation is a terminal fill or clean
 cancellation.
+
+## 2026-08-04 - Isolate a finite SPY D1 stability observation from data qualification
+
+Decision: install one weekday 23:15 KST
+`thericher-kis-paper-daily-spy-stability-observer` between the existing 22:15
+prior-session `SPY/AMS` daily-head task and the independent 23:35 virtual-Paper
+canary. The observer may use only the virtual-Paper app pair and the existing
+shared request/token-start gates. After a verified 15--90-minute-old head
+snapshot and successful authentication, it can send one `dailyprice` request
+and compare only the retained prior-session row hash. Its external receipt is
+bounded to ten GET attempts, is guarded by a nonblocking cross-process receipt
+lock, and contains only categorical status, timestamps, fixed scope, and
+hashes. Its vocabulary includes `stable`, `changed`, `unavailable`, and
+`outside_window`; every receipt retains `provider_finality: not_observed` and
+is structurally outside Engine import paths.
+
+Reason: the first D1 bridge proposal could not infer a provider-finality or
+decision-time fact from the same cached snapshot, so Claude returned
+`uncertain`. The revised observation received `supported-with-limits` only
+after it kept the timing window, snapshot-age bounds, virtual-Paper identity,
+finite budget, and non-promoting output explicit. Independent review found
+three implementation faults before activation: authentication/config failures
+were counted as GETs, the worker bypassed the shared KIS gates, and its finite
+ledger was not cross-process serialized. The repaired implementation has a
+separate pre-authentication phase, the narrow writable control mount, and a
+nonblocking external lock; its focused tests and re-review passed. This adds
+one Data fact without a data qualification, model campaign, GPU work, consumer
+bridge, Paper permission, or change to existing execution authority.

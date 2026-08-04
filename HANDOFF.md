@@ -45,10 +45,15 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
 - The installed 22:15 KST SPY D1 head task currently produces a verified
   prior-session cache snapshot, not a capability/qualification or a
   provider-finality/decision-time availability fact. Its static trace is
-  `producer_path_missing`. Do not bridge from that same snapshot alone; a later
-  Data package must first create a distinct, exact-scope daily
-  availability/stability measurement that fails closed when unavailable or
-  stale. Evidence:
+  `producer_path_missing`. The reviewed
+  `thericher-kis-paper-daily-spy-stability-observer` is installed for 23:15
+  KST on weekdays and owns the first distinct, exact-scope D1 comparison. It
+  uses the shared KIS request/token gates, a nonblocking external receipt lock,
+  and at most one virtual-Paper `dailyprice` attempt after a verified
+  15--90-minute-old snapshot and successful authentication. It has no runtime
+  receipt yet. `stable` can mean only matching prior-session row hashes; it
+  always retains `provider_finality: not_observed` and remains Engine-unreadable.
+  Do not build a consumer bridge from it alone. Evidence:
   `D:\thericher-v2\model-artifacts\data\daily-spy-input-readiness\static-trace-20260804-r1\assessment.json`.
 - The broad KIS D1 current-listing panel is a source-local research control,
   not a point-in-time, adjusted, corporate-action-qualified, or Paper-ready
@@ -117,6 +122,7 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
 | Work | Owner | Status |
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | Existing worker due 2026-08-04 23:35 KST |
+| SPY D1 stability observation | Data | Installed worker due 2026-08-04 23:15 KST |
 | Current-head duplicate recovery | Data | Existing worker due 2026-08-05 00:31 KST |
 | SPY paginated-prefix capability | Data | Existing workers due 2026-08-05 04:29:30/04:30 KST |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
@@ -137,7 +143,10 @@ ready.
 - A separate 2026-08-04 D1 bridge drift review returned `uncertain`: the bridge
   must not infer provider finality from a cached snapshot or write an
   Engine-readable observed-only result until a distinct availability/stability
-  producer and exact verification predicate exist. No bridge was implemented.
+  producer and exact verification predicate exist. A revised bounded stability
+  producer received `supported-with-limits`; independent review caught and then
+  verified repairs for auth-attempt accounting, shared KIS gates, and its
+  cross-process receipt lock. No bridge was implemented.
 - The Codex app monitor editor also timed out. Its active result monitor runs
   Monday--Friday at 23:45 KST; installed Windows tasks remain the primary
   evidence. Retry future edits only through the official app API, never by
@@ -167,9 +176,9 @@ ready.
    the existing runtime projection and offline validator. Do not infer a broker
    result from missing evidence.
 2. Continue independent Data worker reattachment at its own due times.
-3. Before a D1 consumer bridge, establish an exact, independently observed
-   availability/stability producer; do not treat the current cache snapshot as
-   provider-finality evidence.
+3. Reattach the installed D1 stability observer after its 23:15 KST run. Treat
+   any result as source-safe observational evidence only; do not treat the
+   cache snapshot or a `stable` result as provider-finality evidence.
 4. When Data produces a fresh qualified causal input, freeze the next distinct
    Engine contract and let Research Steward allocate GPU only if it is eligible.
 5. At a company-goal boundary, run required verification, commit/push, replace

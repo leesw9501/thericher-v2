@@ -138,6 +138,16 @@ $schedules = @(
         ExecutionLimitMinutes = 90
     },
     @{
+        Name = "thericher-kis-paper-daily-spy-stability-observer"
+        Profile = "kis-paper-daily-spy-stability-observer"
+        Service = "kis-paper-daily-spy-stability-observer"
+        ImageServices = @("kis-paper-daily-spy-stability-observer")
+        At = "23:15"
+        DaysOfWeek = @("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+        RecoverMissedRun = $false
+        ExecutionLimitMinutes = 5
+    },
+    @{
         Name = "thericher-kis-paper-daily-spy-session"
         Profile = "kis-paper-daily-spy-session"
         Service = "kis-paper-daily-spy-session"
@@ -266,6 +276,7 @@ if ($RequireExisting) {
 if (
     $selectedSchedules.Name -contains "thericher-kis-paper-quote-session" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-head" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-stability-observer" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-session" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-pair-forward" `
