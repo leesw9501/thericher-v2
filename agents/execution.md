@@ -42,6 +42,10 @@ The canary contract is fixed:
 
 - The loopback dashboard is read-only, credential-free, and has no broker
   action. Its schema-v3 account projection omits prices and order identifiers.
+- Pre-session offline reattestation on 2026-08-04 passed 81 canary/intent/
+  receipt/lifecycle tests and 18 dashboard tests. This verifies deterministic
+  local contracts only; it is not a current broker outcome or a substitute for
+  the task-owned lifecycle receipt.
 - `daily-spy-head` and `daily-spy-session` use explicit Monday--Friday KST
   schedules. This aligns same-date Eastern sessions without changing route,
   sizing, cancellation, or service behavior.

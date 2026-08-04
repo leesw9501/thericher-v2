@@ -16,6 +16,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | Quote-session canary | Execution | Existing virtual-Paper task | Due 2026-08-04 23:35 KST |
 | Current-head recovery | Data | Existing isolated cache/task | Due 2026-08-05 00:31 KST |
 | SPY prefix capability | Data | Dedicated cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
+| Norgate local capability | Data | NDU loopback | Metadata exists; listener unavailable, so only its owned aggregate probe may resume when healthy |
 | Predictive campaign | Engine/Steward | RTX 4090 | No eligible frozen contract |
 
 No foreground wait is justified. Each external time belongs to its worker;

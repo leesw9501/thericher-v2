@@ -18,7 +18,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
 | KIS SPY paginated-prefix capability cache | Installed, no runtime receipt yet | Post-collection timing capability only |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
-| Tiingo/Norgate D1 snapshots | Fixed offline research controls | Source-separated, non-Paper research only |
+| Tiingo/Norgate D1 snapshots | Fixed offline controls; Norgate local metadata is present but its NDU listener is unavailable | Source-separated, non-Paper research only |
 
 The broad D1 panel remains current-listing-only, non-PIT, unadjusted or
 adjustment-unqualified, corporate-action-unqualified, and session-finality
@@ -45,6 +45,12 @@ arbitrary historical intraday reach.
 - **Forward data:** existing daily pair/forward workers remain independent.
   Their source-safe result can qualify only the named later observation, never
   rewrite a historical campaign.
+- **Norgate local capability:** the 2026-08-04 no-download metadata probe found
+  package `1.0.77` and a DB-build fingerprint but no listener at local port
+  `38889`. When NDU is healthy, run only the existing aggregate-only fixed-case
+  probe; current trial/PIT entitlement remains unverified and cannot qualify a
+  historical ranking or Paper input. Evidence:
+  `D:\thericher-v2\model-artifacts\data\norgate-local-d1-capability-v1\metadata-probe-20260804-r1.json`.
 
 ## Current Quality Contracts
 
