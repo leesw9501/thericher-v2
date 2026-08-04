@@ -25,6 +25,13 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 No foreground wait is justified. Each external time belongs to its worker;
 independent Data, Engine, and Execution preparation continues when ready.
 
+At 21:38 KST, Execution reattached the exact canary task ownership: one
+`IgnoreNew` Windows task, no current Aug. 4 artifact, and no duplicate runner.
+The task's local image was rebuilt from the current source and passed a
+network-disabled import check; 135 focused offline route/lifecycle/dashboard
+tests passed. The remaining dependency is still the task-owned lifecycle fact,
+not a foreground wait.
+
 ## Current Bottleneck
 
 The current company checkpoint depends on the task-owned canary outcome. The

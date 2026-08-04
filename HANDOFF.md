@@ -20,9 +20,12 @@ canary. It may end as a categorical no-intent, rejected,
 cancelled-and-clean, or unknown-and-reconciled result. It is never a model,
 fill, PnL, or profitability result.
 
-As of 2026-08-04 17:23 KST, no new Aug. 4 canary artifact exists. The existing
+As of 2026-08-04 21:38 KST, no new Aug. 4 canary artifact exists. The existing
 `thericher-kis-paper-quote-session` Windows task is `Ready` for 23:35 KST with
-one Monday--Friday trigger. Do not manually invoke or duplicate it.
+one Monday--Friday trigger and `IgnoreNew` concurrency. Its local
+`kis-paper-session` image was rebuilt from the current source and passed a
+network-disabled module-import check; 135 focused route/lifecycle/dashboard
+tests passed. Do not manually invoke or duplicate it.
 
 ## Current Lane Facts
 

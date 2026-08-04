@@ -19,6 +19,13 @@ Monday--Friday trigger. As of the latest safe inspection, no Aug. 4 canary,
 canary-session, or validator receipt exists. Do not manually invoke or create a
 second task.
 
+At 21:38 KST, the task's `IgnoreNew` concurrency and local Docker action were
+reattested. Its `kis-paper-session` image was rebuilt from current source and
+passed a network-disabled module-import check. The source-safe preflight also
+passed 135 focused canary, quote, intent, lifecycle-projector, and dashboard
+tests. These are local-contract facts, not a broker result or a reason to run
+the task early.
+
 The latest safe private-state inventory has no `submitted` or `cancel_started`
 phase. Before a fresh quote, the session reattests only a prior matching
 `SPY`/`AMEX`/buy/one-share canary in this private root. It resumes that exact
