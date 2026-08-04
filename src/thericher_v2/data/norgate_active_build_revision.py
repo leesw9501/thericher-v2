@@ -35,6 +35,7 @@ from thericher_v2.data.norgate_daily import (
 from thericher_v2.data.norgate_trial_raw_d1 import (
     DEFAULT_MARKET_DATA_ROOT,
     FIXED_NORGATE_TRIAL_SYMBOLS,
+    NorgateTrialRawD1Result,
 )
 from thericher_v2.data.provider import BarQuery
 
@@ -79,6 +80,51 @@ class _DailyBarProvider(Protocol):
 
 
 FixedPanelLoader = Callable[..., VerifiedNorgateD1Panel]
+
+
+@dataclass(frozen=True, slots=True)
+class NorgateFixedTrioD1Reference:
+    """One explicit, hash-attested fixed-trio D1 snapshot reference."""
+
+    snapshot_dir: Path
+    expected_dataset_hash: str
+    expected_manifest_hash: str
+
+    def __post_init__(self) -> None:
+        if (
+            not isinstance(self.snapshot_dir, Path)
+            or not isinstance(self.expected_dataset_hash, str)
+            or re.fullmatch(r"sha256:[0-9a-f]{64}", self.expected_dataset_hash) is None
+            or not isinstance(self.expected_manifest_hash, str)
+            or re.fullmatch(r"sha256:[0-9a-f]{64}", self.expected_manifest_hash) is None
+        ):
+            raise ValueError("Norgate fixed-trio reference is invalid")
+
+
+DEFAULT_FROZEN_NORGATE_FIXED_TRIO_D1_REFERENCE = NorgateFixedTrioD1Reference(
+    snapshot_dir=FROZEN_NORGATE_FIXED_TRIO_D1_SNAPSHOT_DIR,
+    expected_dataset_hash=FROZEN_NORGATE_FIXED_TRIO_D1_DATASET_HASH,
+    expected_manifest_hash=FROZEN_NORGATE_FIXED_TRIO_D1_MANIFEST_HASH,
+)
+
+
+def norgate_fixed_trio_d1_reference_from_verified_snapshot(
+    source: NorgateTrialRawD1Result,
+) -> NorgateFixedTrioD1Reference:
+    """Bind a comparison to identity returned by the local snapshot verifier."""
+
+    if (
+        not isinstance(source, NorgateTrialRawD1Result)
+        or not isinstance(source.snapshot_dir, Path)
+        or source.row_count <= 0
+        or source.common_session_count <= 0
+    ):
+        raise ValueError("Norgate verified fixed-trio snapshot is invalid")
+    return NorgateFixedTrioD1Reference(
+        snapshot_dir=source.snapshot_dir,
+        expected_dataset_hash=source.dataset_hash,
+        expected_manifest_hash=source.manifest_hash,
+    )
 
 
 @dataclass(frozen=True, slots=True)
@@ -198,6 +244,7 @@ def build_norgate_active_build_revision_receipt(
     artifact_root: Path = DEFAULT_NORGATE_ACTIVE_BUILD_REVISION_ARTIFACT_ROOT,
     repo_root: Path | None = None,
     active_provider: _DailyBarProvider | None = None,
+    reference: NorgateFixedTrioD1Reference | None = None,
     fixed_panel_loader: FixedPanelLoader = load_verified_norgate_d1_diagnostic_panel,
 ) -> NorgateActiveBuildRevisionResult:
     """Compare the active host build to the fixed raw-D1 development contract.
@@ -211,19 +258,24 @@ def build_norgate_active_build_revision_receipt(
         artifact_root=artifact_root,
         repo_root=repo_root,
     )
+    reference_contract = reference or DEFAULT_FROZEN_NORGATE_FIXED_TRIO_D1_REFERENCE
+    if not isinstance(reference_contract, NorgateFixedTrioD1Reference):
+        raise ValueError("Norgate fixed-trio reference is invalid")
     panel = fixed_panel_loader(
-        FROZEN_NORGATE_FIXED_TRIO_D1_SNAPSHOT_DIR,
-        expected_dataset_hash=FROZEN_NORGATE_FIXED_TRIO_D1_DATASET_HASH,
-        expected_manifest_hash=FROZEN_NORGATE_FIXED_TRIO_D1_MANIFEST_HASH,
+        reference_contract.snapshot_dir,
+        expected_dataset_hash=reference_contract.expected_dataset_hash,
+        expected_manifest_hash=reference_contract.expected_manifest_hash,
         market_data_root=DEFAULT_MARKET_DATA_ROOT,
         repo_root=repo_root,
     )
-    reference = _validate_fixed_reference_panel(panel)
+    reference_bars = _validate_fixed_reference_panel(panel, reference=reference_contract)
     provider = active_provider or NorgateRawDailyBarProvider()
-    reference_bar_count = sum(len(reference[symbol]) for symbol in FIXED_NORGATE_TRIAL_SYMBOLS)
+    reference_bar_count = sum(
+        len(reference_bars[symbol]) for symbol in FIXED_NORGATE_TRIAL_SYMBOLS
+    )
 
     try:
-        evidence, active_response_hash = _compare_active_build(reference, provider)
+        evidence, active_response_hash = _compare_active_build(reference_bars, provider)
     except _ActiveReaderNonrepeatable:
         status, reason, evidence, active_response_hash = (
             "input_unavailable",
@@ -278,6 +330,8 @@ def build_norgate_active_build_revision_receipt(
     active_bar_count = sum(item.active_bar_count for item in evidence)
     divergent_bar_count = sum(item.divergent_bar_count for item in evidence)
     receipt = _receipt_document(
+        schema_version=2 if reference is not None else 1,
+        reference=reference_contract,
         status=status,
         reason=reason,
         reference_bar_count=reference_bar_count,
@@ -318,13 +372,17 @@ def verify_norgate_active_build_revision_receipt(
     )
 
 
-def _validate_fixed_reference_panel(panel: VerifiedNorgateD1Panel) -> dict[str, tuple[Bar, ...]]:
+def _validate_fixed_reference_panel(
+    panel: VerifiedNorgateD1Panel,
+    *,
+    reference: NorgateFixedTrioD1Reference,
+) -> dict[str, tuple[Bar, ...]]:
     if not isinstance(panel, VerifiedNorgateD1Panel):
         raise NorgateActiveBuildRevisionError("Norgate fixed reference panel is invalid")
     source = panel.source_result
     if (
-        source.dataset_hash != FROZEN_NORGATE_FIXED_TRIO_D1_DATASET_HASH
-        or source.manifest_hash != FROZEN_NORGATE_FIXED_TRIO_D1_MANIFEST_HASH
+        source.dataset_hash != reference.expected_dataset_hash
+        or source.manifest_hash != reference.expected_manifest_hash
         or source.row_count <= 0
         or source.common_session_count <= 0
         or len(panel.common_sessions) != source.common_session_count
@@ -470,6 +528,8 @@ def _canonical_decimal(value: Decimal) -> str:
 
 def _receipt_document(
     *,
+    schema_version: int,
+    reference: NorgateFixedTrioD1Reference,
     status: str,
     reason: str,
     reference_bar_count: int,
@@ -478,17 +538,22 @@ def _receipt_document(
     active_response_hash: str | None,
     evidence: Sequence[NorgateActiveBuildRevisionEvidence],
 ) -> dict[str, object]:
+    if schema_version not in {1, 2}:
+        raise ValueError("Norgate active-build receipt schema version is invalid")
+    reference_document: dict[str, object] = {
+        "dataset_hash": reference.expected_dataset_hash,
+        "manifest_hash": reference.expected_manifest_hash,
+        "symbols": list(FIXED_NORGATE_TRIAL_SYMBOLS),
+        "timeframe": Timeframe.D1.value,
+        "reference_bar_count": reference_bar_count,
+    }
+    if schema_version == 2:
+        reference_document["binding"] = "explicit_verified_fixed_trio_snapshot"
     return {
-        "schema_version": 1,
+        "schema_version": schema_version,
         "kind": "norgate_active_build_revision_receipt",
         "probe_id": NORGATE_ACTIVE_BUILD_REVISION_PROBE_ID,
-        "reference": {
-            "dataset_hash": FROZEN_NORGATE_FIXED_TRIO_D1_DATASET_HASH,
-            "manifest_hash": FROZEN_NORGATE_FIXED_TRIO_D1_MANIFEST_HASH,
-            "symbols": list(FIXED_NORGATE_TRIAL_SYMBOLS),
-            "timeframe": Timeframe.D1.value,
-            "reference_bar_count": reference_bar_count,
-        },
+        "reference": reference_document,
         "active_reader": {
             "access": "local_windows_host_only",
             "provider": "norgate_host_optional_raw_daily",
@@ -513,12 +578,7 @@ def _receipt_document(
             "source_paths_persisted": False,
             "receipt_written_under_artifact_root": True,
         },
-        "scope": {
-            "model_training_allowed": False,
-            "gpu_appointment_allowed": False,
-            "paper_input_allowed": False,
-            "promotion_allowed": False,
-        },
+        "scope": _scope_document(schema_version),
     }
 
 
@@ -640,8 +700,11 @@ def _result_from_document(
     }
     if set(document) != expected_keys:
         raise NorgateActiveBuildRevisionError("Norgate active-build receipt schema is invalid")
+    schema_version = document.get("schema_version")
     if (
-        document.get("schema_version") != 1
+        not isinstance(schema_version, int)
+        or isinstance(schema_version, bool)
+        or schema_version not in {1, 2}
         or document.get("kind") != "norgate_active_build_revision_receipt"
         or document.get("probe_id") != NORGATE_ACTIVE_BUILD_REVISION_PROBE_ID
     ):
@@ -651,10 +714,11 @@ def _result_from_document(
     outcome = _mapping(document.get("outcome"), "outcome")
     integrity = _mapping(document.get("target_free_integrity"), "integrity")
     scope = _mapping(document.get("scope"), "scope")
-    _validate_reference_document(reference)
+    assert isinstance(schema_version, int)
+    _validate_reference_document(reference, schema_version=schema_version)
     active_response_hash = _validate_reader_document(reader)
     _validate_integrity_document(integrity)
-    _validate_scope_document(scope)
+    _validate_scope_document(scope, schema_version=schema_version)
     status = _nonempty_text(outcome.get("status"), "outcome status")
     reason = _nonempty_text(outcome.get("reason"), "outcome reason")
     if status not in _STATUSES:
@@ -697,23 +761,38 @@ def _result_from_document(
     )
 
 
-def _validate_reference_document(reference: Mapping[str, object]) -> None:
-    if set(reference) != {
+def _validate_reference_document(
+    reference: Mapping[str, object],
+    *,
+    schema_version: int,
+) -> None:
+    expected_keys = {
         "dataset_hash",
         "manifest_hash",
         "symbols",
         "timeframe",
         "reference_bar_count",
-    }:
+    }
+    if schema_version == 2:
+        expected_keys.add("binding")
+    if set(reference) != expected_keys:
         raise NorgateActiveBuildRevisionError("Norgate active-build reference is invalid")
+    dataset_hash = _sha256_text(reference.get("dataset_hash"), "dataset hash")
+    manifest_hash = _sha256_text(reference.get("manifest_hash"), "manifest hash")
     if (
-        _sha256_text(reference.get("dataset_hash"), "dataset hash")
-        != FROZEN_NORGATE_FIXED_TRIO_D1_DATASET_HASH
-        or _sha256_text(reference.get("manifest_hash"), "manifest hash")
-        != FROZEN_NORGATE_FIXED_TRIO_D1_MANIFEST_HASH
-        or reference.get("symbols") != list(FIXED_NORGATE_TRIAL_SYMBOLS)
+        reference.get("symbols") != list(FIXED_NORGATE_TRIAL_SYMBOLS)
         or reference.get("timeframe") != Timeframe.D1.value
         or _nonnegative_int(reference.get("reference_bar_count"), "reference bar count") <= 0
+    ):
+        raise NorgateActiveBuildRevisionError("Norgate active-build reference is invalid")
+    if schema_version == 1 and (
+        dataset_hash != FROZEN_NORGATE_FIXED_TRIO_D1_DATASET_HASH
+        or manifest_hash != FROZEN_NORGATE_FIXED_TRIO_D1_MANIFEST_HASH
+    ):
+        raise NorgateActiveBuildRevisionError("Norgate active-build reference is invalid")
+    if (
+        schema_version == 2
+        and reference.get("binding") != "explicit_verified_fixed_trio_snapshot"
     ):
         raise NorgateActiveBuildRevisionError("Norgate active-build reference is invalid")
 
@@ -749,13 +828,20 @@ def _validate_integrity_document(integrity: Mapping[str, object]) -> None:
         raise NorgateActiveBuildRevisionError("Norgate active-build integrity is invalid")
 
 
-def _validate_scope_document(scope: Mapping[str, object]) -> None:
+def _scope_document(schema_version: int) -> dict[str, bool]:
     expected = {
         "model_training_allowed": False,
         "gpu_appointment_allowed": False,
         "paper_input_allowed": False,
         "promotion_allowed": False,
     }
+    if schema_version == 2:
+        expected["pnl_eligible"] = False
+    return expected
+
+
+def _validate_scope_document(scope: Mapping[str, object], *, schema_version: int) -> None:
+    expected = _scope_document(schema_version)
     if dict(scope) != expected:
         raise NorgateActiveBuildRevisionError("Norgate active-build scope is invalid")
 

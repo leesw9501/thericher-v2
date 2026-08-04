@@ -94,6 +94,15 @@ one Monday--Friday trigger. Do not manually invoke or duplicate it.
   Its raw snapshot remains under `D:\market_data`; use it only through its
   source-local contract. Evidence:
   `D:\thericher-v2\model-artifacts\data\norgate-fixed-etf-d1-structural-integrity-v1\assessment=bf7d5fceae6b2d345dc75132a6e361f79799e6fb419498d8091f180306aaf1aa\assessment.json`.
+- The same 512-session Norgate snapshot now has one explicit, double-read
+  current-build conformance receipt with 1,536 reference and active bars and
+  zero divergences. It proves only repeatable agreement with that immutable
+  local snapshot, not vendor correctness, publication timing, PIT eligibility,
+  adjustment/corporate-action semantics, or any consumer eligibility. Claude
+  supported this target-free taxonomy with limits and rejected the proposed
+  range-risk diagnostic until adjustment and capital-event semantics are
+  independently qualified. Evidence:
+  `D:\thericher-v2\model-artifacts\data\norgate-active-build-revision-v1\revision-current-512-20260804-r1\receipt.json`.
 - An official free-source check found no single public panel that establishes
   point-in-time membership including delistings, corporate-action semantics,
   and daily OHLCV. SEC Market Structure and EDGAR can be bounded sidecars only,

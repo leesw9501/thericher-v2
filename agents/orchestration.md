@@ -18,7 +18,7 @@ reliability checkpoint, not a model, PnL, or profitability claim.
 | Current-head recovery | Data | Existing isolated cache/task | Due 2026-08-05 00:31 KST |
 | SPY prefix capability | Data | Dedicated cache/tasks | Due 2026-08-05 04:29:30/04:30 KST |
 | NAS-forward recovery | Data | Existing image and worker | Scoped 06:40 reconcile; image matches host and next worker owns retry |
-| Norgate local capability | Data | NDU loopback and D: cache | 1990--2026 probe measured a 512-session fixed-ETF D1 window; offline-only with no PIT/model/GPU/Paper promotion |
+| Norgate local capability | Data | NDU loopback and D: cache | 512-session fixed-ETF snapshot now has a matching two-read current-build receipt; source-local only, with no PIT/model/GPU/Paper promotion |
 | Free public augmentation | Data | Official-source capability check | No full PIT/delisting/corporate-action/OHLCV source qualified; SEC sidecar probe needs declared contact |
 | Architecture structure screen | Engine | RTX 4090 | Fixed source-local LSTM/TCN/attention screen completed jointly with no winner; no eligible frozen predictive contract |
 
@@ -52,6 +52,12 @@ operator decision or a general Paper hold.
 The Norgate fixed-ETF D1 structural receipt now attests only its own raw-file
 geometry and hash contract; it does not change the causal-input bottleneck or
 open a Research campaign.
+The explicit current-build conformance result adds repeatability evidence for
+that exact local snapshot only. It does not repair vendor publication timing,
+PIT, adjustment, or capital-event semantics. Claude therefore allowed the
+target-free conformance taxonomy but kept the proposed range-risk diagnostic
+input-unavailable; the data-semantic gap, not GPU capacity, remains the next
+research constraint.
 
 ## Current Reversible Improvement
 
@@ -85,6 +91,11 @@ its cited `docs/` and `attestations/` paths are absent locally, while the actual
 canary module, projector, and allowlist tests are present. It is recorded as
 `review_invalid_workspace`, not an adverse execution verdict or a hold; the
 existing local recovery contracts remain the decision evidence.
+A separate Norgate scope review returned `supported-with-limits` for an
+aggregate-only explicit-snapshot double-read conformance, while rejecting the
+range-risk diagnostic until adjustment and capital-event semantics are
+qualified. That limitation applies only to the named research family and does
+not delay the task-owned canary or independent lanes.
 A temporary Review assignment found that the first IWM candidate diff allowed
 low-level previous-day/continuation bypasses. The follow-up route boundary now
 enforces a one-page client plus current-day query and transport shape; focused

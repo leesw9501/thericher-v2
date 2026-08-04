@@ -115,6 +115,13 @@ undocumented timestamp seed.
   change any eligibility flag or create a predictive/GPU package. Evidence:
   `D:\thericher-v2\model-artifacts\data\norgate-fixed-etf-d1-structural-integrity-v1\assessment=bf7d5fceae6b2d345dc75132a6e361f79799e6fb419498d8091f180306aaf1aa\assessment.json` and
   `D:\thericher-v2\model-artifacts\research\norgate-scope-readiness\scope-readiness-20260804-r1\assessment.json`.
+  A new explicit-snapshot, two-read current-build conformance receipt is
+  `matching` with 1,536 reference and active bars and zero divergences. It is
+  a repeatability taxonomy only: a future mismatch is `revision_detected`,
+  not a data-correctness verdict, and a match proves neither PIT/publication
+  timing nor adjustment/capital-event semantics. Model, GPU, PnL, and Paper
+  eligibility remain false. Evidence:
+  `D:\thericher-v2\model-artifacts\data\norgate-active-build-revision-v1\revision-current-512-20260804-r1\receipt.json`.
 - **Free public augmentation:** no official, no-auth source found that jointly
   establishes PIT/delisting membership, corporate-action meaning, and daily
   OHLCV. SEC Market Structure and EDGAR remain optional source-limited sidecars

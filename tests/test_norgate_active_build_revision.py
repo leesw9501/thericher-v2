@@ -26,6 +26,8 @@ _RAW_DATE = "2031-02-03"
 _RAW_PRICE = "913.777"
 _RAW_PATH = r"D:\private-source\norgate"
 _CREDENTIAL = "unit-secret-must-not-persist"
+_EXPLICIT_DATASET_HASH = "sha256:" + "a" * 64
+_EXPLICIT_MANIFEST_HASH = "sha256:" + "b" * 64
 
 
 class _FixedPanelLoader:
@@ -144,6 +146,70 @@ def test_exact_agreement_writes_redacted_receipt_and_reattaches_without_provider
     assert len(provider.calls) == calls_before_reattach
 
 
+def test_explicit_verified_reference_pins_snapshot_identity_without_source_path(
+    tmp_path: Path,
+) -> None:
+    artifact_root, repo_root = _roots(tmp_path)
+    panel = _panel(
+        dataset_hash=_EXPLICIT_DATASET_HASH,
+        manifest_hash=_EXPLICIT_MANIFEST_HASH,
+    )
+    loader = _FixedPanelLoader(panel)
+    reference = revision.norgate_fixed_trio_d1_reference_from_verified_snapshot(
+        panel.source_result
+    )
+
+    result = revision.build_norgate_active_build_revision_receipt(
+        destination=artifact_root / "revision-explicit-reference",
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+        active_provider=_Provider(panel.bars_by_symbol),
+        reference=reference,
+        fixed_panel_loader=loader,
+    )
+
+    assert loader.calls == [
+        (
+            panel.source_result.snapshot_dir,
+            {
+                "expected_dataset_hash": _EXPLICIT_DATASET_HASH,
+                "expected_manifest_hash": _EXPLICIT_MANIFEST_HASH,
+                "market_data_root": revision.DEFAULT_MARKET_DATA_ROOT,
+                "repo_root": repo_root,
+            },
+        )
+    ]
+    assert result.reference_dataset_hash == _EXPLICIT_DATASET_HASH
+    assert result.reference_manifest_hash == _EXPLICIT_MANIFEST_HASH
+    receipt_text = (result.receipt_dir / "receipt.json").read_text(encoding="utf-8")
+    receipt = json.loads(receipt_text)
+    assert receipt["schema_version"] == 2
+    assert receipt["reference"] == {
+        "binding": "explicit_verified_fixed_trio_snapshot",
+        "dataset_hash": _EXPLICIT_DATASET_HASH,
+        "manifest_hash": _EXPLICIT_MANIFEST_HASH,
+        "symbols": ["SPY", "QQQ", "IWM"],
+        "timeframe": "1d",
+        "reference_bar_count": 6,
+    }
+    assert receipt["scope"] == {
+        "model_training_allowed": False,
+        "gpu_appointment_allowed": False,
+        "pnl_eligible": False,
+        "paper_input_allowed": False,
+        "promotion_allowed": False,
+    }
+    for forbidden in (_RAW_DATE, _RAW_PRICE, _RAW_PATH, _CREDENTIAL, str(reference.snapshot_dir)):
+        assert forbidden not in receipt_text
+        assert forbidden not in json.dumps(result.safe_payload(), sort_keys=True)
+
+    assert revision.verify_norgate_active_build_revision_receipt(
+        result.receipt_dir,
+        artifact_root=artifact_root,
+        repo_root=repo_root,
+    ) == result
+
+
 def test_one_bar_divergence_is_categorical_revision_not_normalization(tmp_path: Path) -> None:
     artifact_root, repo_root = _roots(tmp_path)
     panel = _panel()
@@ -158,6 +224,9 @@ def test_one_bar_divergence_is_categorical_revision_not_normalization(tmp_path: 
         artifact_root=artifact_root,
         repo_root=repo_root,
         active_provider=_Provider(altered),
+        reference=revision.norgate_fixed_trio_d1_reference_from_verified_snapshot(
+            panel.source_result
+        ),
         fixed_panel_loader=_FixedPanelLoader(panel),
     )
 
@@ -184,6 +253,9 @@ def test_missing_active_sessions_are_structural_revision_with_stable_response(
         artifact_root=artifact_root,
         repo_root=repo_root,
         active_provider=provider,
+        reference=revision.norgate_fixed_trio_d1_reference_from_verified_snapshot(
+            panel.source_result
+        ),
         fixed_panel_loader=_FixedPanelLoader(panel),
     )
 
@@ -256,6 +328,9 @@ def test_nonrepeatable_active_reader_is_input_unavailable_before_reference_compa
         artifact_root=artifact_root,
         repo_root=repo_root,
         active_provider=provider,
+        reference=revision.norgate_fixed_trio_d1_reference_from_verified_snapshot(
+            panel.source_result
+        ),
         fixed_panel_loader=_FixedPanelLoader(panel),
     )
 
@@ -306,6 +381,9 @@ def test_provider_unavailable_or_malformed_is_categorized_without_error_leakage(
 
 def test_rejects_repository_and_noncontained_artifact_destinations(tmp_path: Path) -> None:
     artifact_root, repo_root = _roots(tmp_path)
+    reference = revision.norgate_fixed_trio_d1_reference_from_verified_snapshot(
+        _panel().source_result
+    )
 
     with pytest.raises(revision.NorgateActiveBuildRevisionError, match="outside the Git workspace"):
         revision.build_norgate_active_build_revision_receipt(
@@ -313,6 +391,7 @@ def test_rejects_repository_and_noncontained_artifact_destinations(tmp_path: Pat
             artifact_root=repo_root,
             repo_root=repo_root,
             active_provider=_Provider(_panel().bars_by_symbol),
+            reference=reference,
             fixed_panel_loader=_FixedPanelLoader(_panel()),
         )
     with pytest.raises(revision.NorgateActiveBuildRevisionError, match="stay under artifact root"):
@@ -321,6 +400,7 @@ def test_rejects_repository_and_noncontained_artifact_destinations(tmp_path: Pat
             artifact_root=artifact_root,
             repo_root=repo_root,
             active_provider=_Provider(_panel().bars_by_symbol),
+            reference=reference,
             fixed_panel_loader=_FixedPanelLoader(_panel()),
         )
 
@@ -333,7 +413,11 @@ def _roots(tmp_path: Path) -> tuple[Path, Path]:
     return artifact_root, repo_root
 
 
-def _panel() -> VerifiedNorgateD1Panel:
+def _panel(
+    *,
+    dataset_hash: str = revision.FROZEN_NORGATE_FIXED_TRIO_D1_DATASET_HASH,
+    manifest_hash: str = revision.FROZEN_NORGATE_FIXED_TRIO_D1_MANIFEST_HASH,
+) -> VerifiedNorgateD1Panel:
     bars_by_symbol = {
         symbol: tuple(_bar(symbol, index, session) for index, session in enumerate(_SESSIONS))
         for symbol in ("SPY", "QQQ", "IWM")
@@ -342,8 +426,8 @@ def _panel() -> VerifiedNorgateD1Panel:
         source_result=NorgateTrialRawD1Result(
             snapshot_dir=Path(_RAW_PATH) / "snapshot=immutable",
             dataset_id="unit.fixed-trio",
-            dataset_hash=revision.FROZEN_NORGATE_FIXED_TRIO_D1_DATASET_HASH,
-            manifest_hash=revision.FROZEN_NORGATE_FIXED_TRIO_D1_MANIFEST_HASH,
+            dataset_hash=dataset_hash,
+            manifest_hash=manifest_hash,
             row_count=sum(len(bars) for bars in bars_by_symbol.values()),
             common_session_count=len(_SESSIONS),
             event_marker_count=0,

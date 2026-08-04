@@ -9096,3 +9096,31 @@ separate pre-authentication phase, the narrow writable control mount, and a
 nonblocking external lock; its focused tests and re-review passed. This adds
 one Data fact without a data qualification, model campaign, GPU work, consumer
 bridge, Paper permission, or change to existing execution authority.
+
+## 2026-08-04 - Reattest the Norgate fixed-trio current build without promoting it
+
+Decision: accept one explicit-snapshot v2 active-build conformance receipt at
+`D:\thericher-v2\model-artifacts\data\norgate-active-build-revision-v1\revision-current-512-20260804-r1\receipt.json`.
+It verified the immutable 512-session `SPY`/`QQQ`/`IWM` snapshot before any
+active local read, read each symbol twice through the host-only Norgate client,
+and recorded a `matching` result with 1,536 reference bars, 1,536 active bars,
+and zero divergences. The receipt retains hashes, counts, and categorical
+outcome only; it retains no raw bars, dates, paths, credentials, KIS call,
+broker route, model, GPU result, PnL, or Paper input.
+
+Claude's falsification-first verdict was `supported-with-limits`: agreement
+between two reads and a frozen snapshot measures local current-build
+repeatability, not vendor correctness, publication timing, point-in-time
+availability, adjustment semantics, or capital-event completeness. A future
+mismatch remains a `revision_detected` classification rather than a crash or
+consumer promotion. Claude rejected the proposed source-local range-risk
+diagnostic because those unresolved semantics can contaminate its next-session
+range target and its short, overlapping three-ETF validation would not provide
+enough independent evidence. No such campaign, CPU/GPU appointment, ensemble,
+or Paper path is opened.
+
+Reason: the explicit reference boundary closes the narrow gap between the
+latest fixed-trio structural receipt and an active local source response while
+preserving the distinction between repeatability evidence and causal research
+input. It improves Data recovery without making the project wait for a new
+provider or weakening any research or execution constraint.

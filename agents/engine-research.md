@@ -16,6 +16,13 @@ strongest kill test before target evaluation or GPU consideration.
 
 - No frozen, input-qualified predictive campaign is active. Do not train or
   allocate GPU merely to raise utilization.
+- The proposed `norgate-d1-trio-range-clustering-falsification-v1` does not
+  open a campaign. Claude's falsification review found that unverified
+  adjustment and capital-event semantics can contaminate a next-session range
+  target, while overlapping windows and shared ETF market exposure leave too
+  few independent validation units. It is `input_unavailable` until a distinct
+  data contract qualifies those semantics; it has no CPU/GPU, PnL, ensemble,
+  or Paper consequence.
 - The Docker research profile reverified generic PyTorch CUDA compute and a
   five-step deterministic training smoke on the RTX 4090 on 2026-08-04.
   Artifacts are outside Git at
