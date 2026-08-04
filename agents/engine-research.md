@@ -116,6 +116,15 @@ strongest kill test before target evaluation or GPU consideration.
   semantics. It remains `source_only_input_unavailable`, with no code,
   campaign, GPU appointment, backtest, PnL, ensemble, or Paper path. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\turn-of-month-spy-window-20260804-r1\source-retrieval.json`.
+- The independently retrieved pre-holiday return source is a sparse
+  calendar-event family distinct from the month-boundary overlay and current
+  price/volume/sequence families. The publisher's direct abstract endpoint was
+  unavailable to this worker, and the retrieved source facts do not define an
+  executable single-ETF rule. The current KIS input also lacks prospectively
+  bound holiday-calendar, completed-bar, and decision-to-execution evidence.
+  It remains `source_only_input_unavailable`, with no code, campaign, GPU
+  appointment, backtest, PnL, ensemble, or Paper path. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\pre-holiday-session-window-20260804-r1\source-retrieval.json`.
 
 ## Closed Or Non-Reusable Families
 
