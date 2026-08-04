@@ -165,6 +165,11 @@ ready.
   preflight exact-scope, prohibit a fresh submit from recovery, preserve a
   remaining ambiguity as a session-scoped result, and retain the shared lock.
   It is a challenge result, not authority or a broker outcome.
+- A later Claude CLI call returned `unsupported` from a mismatched workspace:
+  it cited absent `docs/` and `attestations/` paths and a stale Git history,
+  while the current tree contains the canary module, projector, and allowlist
+  tests. Classify that response as `review_invalid_workspace`, not as a
+  substantive adverse verdict or a canary hold. No execution boundary changed.
 - A separate 2026-08-04 D1 bridge drift review returned `uncertain`: the bridge
   must not infer provider finality from a cached snapshot or write an
   Engine-readable observed-only result until a distinct availability/stability
@@ -184,6 +189,10 @@ ready.
   `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`, plus full Ruff and
   all required Compose configurations. These are local-contract checks, not a
   substitute for the task-owned current broker result.
+- The current pre-session reattestation additionally passed 137 focused
+  canary/intent/quote/receipt/lifecycle/dashboard/schedule tests with no broker
+  or credential access. It confirms the deterministic boundary only, not a
+  current lifecycle outcome.
 - Recent commits: `d0223ab` hardens exact Paper-canary recovery, `da12ccd`
   aligns same-date KST Paper task weekdays, and `a6a51a9` records worker
   throughput.

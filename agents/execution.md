@@ -48,10 +48,10 @@ The canary contract is fixed:
 
 - The loopback dashboard is read-only, credential-free, and has no broker
   action. Its schema-v3 account projection omits prices and order identifiers.
-- Pre-session offline reattestation on 2026-08-04 passed 81 canary/intent/
-  receipt/lifecycle tests and 18 dashboard tests. This verifies deterministic
-  local contracts only; it is not a current broker outcome or a substitute for
-  the task-owned lifecycle receipt.
+- The resumed 2026-08-04 offline reattestation passed 137 canary, intent,
+  quote, receipt, lifecycle-projection, dashboard, and schedule tests. This
+  verifies deterministic local contracts only; it is not a current broker
+  outcome or a substitute for the task-owned lifecycle receipt.
 - The host lifecycle projector additionally has explicit valid-evidence and
   missing-evidence CLI contracts; 97 focused canary/quote/lifecycle tests pass
   without broker or credential access.

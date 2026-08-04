@@ -74,6 +74,11 @@ evidence. A bounded throughput review reattested that this one monitor remains
 the sole result-retrieval trigger; before it runs, Codex dispatches ready,
 non-conflicting Data and Research packages instead of polling or duplicating a
 worker. Retry monitor edits only through the app API when it responds.
+The later canary CLI review returned `unsupported` from a mismatched workspace:
+its cited `docs/` and `attestations/` paths are absent locally, while the actual
+canary module, projector, and allowlist tests are present. It is recorded as
+`review_invalid_workspace`, not an adverse execution verdict or a hold; the
+existing local recovery contracts remain the decision evidence.
 
 ## Handoff
 
