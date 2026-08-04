@@ -297,7 +297,8 @@ def _text(value: object, field_name: str) -> str:
 
 def _safe_id(value: str, field_name: str) -> None:
     if (
-        len(value) > 96
+        not value
+        or len(value) > 96
         or any(
             character not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-"
             for character in value

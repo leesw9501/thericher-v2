@@ -102,6 +102,14 @@ def test_lifecycle_projection_rejects_unsafe_or_mismatched_run_id(
 ) -> None:
     script = runpy.run_path(str(SCRIPT_PATH))
 
+    _write_valid_evidence(tmp_path, "")
+
+    assert script["main"](["--run-id", "", "--artifact-root", str(tmp_path)]) == 2
+    assert json.loads(capsys.readouterr().out) == {
+        "paper_only": True,
+        "status": "unavailable",
+    }
+
     assert script["main"](["--run-id", "../outside", "--artifact-root", str(tmp_path)]) == 2
     assert json.loads(capsys.readouterr().out) == {
         "paper_only": True,

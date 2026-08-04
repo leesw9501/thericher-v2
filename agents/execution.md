@@ -35,7 +35,7 @@ The host lifecycle projector and the independent
 non-link receipt-path check and require the recorded `run_id` to match the
 requested run. They emit only a sanitized lifecycle fact or categorical
 `unavailable`; they never call KIS or load credentials. The focused reattestation
-passed 81 tests. The accompanying Claude design challenge ended without a
+passed 82 tests. The accompanying Claude design challenge ended without a
 verdict (`review_unavailable`), so source/test evidence preserves the existing
 one-attempt contract rather than changing execution authority.
 

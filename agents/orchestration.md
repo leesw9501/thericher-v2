@@ -42,7 +42,7 @@ not a foreground wait.
 
 The source-only projector and new independent offline validator now both reject
 unsafe/non-direct receipt paths and a requested-to-recorded `run_id` mismatch
-before emitting a sanitized lifecycle fact. Their focused 81-test reattestation
+before emitting a sanitized lifecycle fact. Their focused 82-test reattestation
 uses no broker or credential access; the Claude design check returned no verdict
 and is recorded as `review_unavailable`. This changes neither the scheduled
 task nor its one-attempt recovery contract.

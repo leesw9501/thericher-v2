@@ -233,7 +233,7 @@ execution tests passed.
 - The host lifecycle projector and independent offline lifecycle validator now
   require a direct non-link receipt path and matching requested/recorded
   `run_id` before emitting a sanitized fact; missing or unsafe evidence remains
-  `unavailable`/exit-2. Their 81 focused tests use no broker or credentials.
+  `unavailable`/exit-2. Their 82 focused tests use no broker or credentials.
   The short Claude design check produced no verdict (`review_unavailable`), so
   this source/test repair does not alter the scheduled task or execution
   authority.
