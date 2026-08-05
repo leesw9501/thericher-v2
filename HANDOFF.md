@@ -58,6 +58,10 @@ perform no I/O and have no KIS, broker, data-collection, backtest, GPU, or
 Paper connection. This is only a source-verified engineering baseline: the
 source has no adopted market evaluation claim and the current data remains
 insufficient for a campaign, profitability, or promotion conclusion.
+One hermetic injected-bar test now composes its target through the existing
+research receipt and `source: local_paper` next-bar fill/replay path; insufficient
+history yields no local intent. It creates no runtime route, KIS call, campaign,
+PnL result, or promotion claim.
 
 At 03:16 KST on 2026-08-05, one exact read-only historical terminal-field
 probe ran for the preserved legacy state. It used only a virtual token and the
