@@ -52,7 +52,8 @@ Engine Research independently re-retrieved QuantConnect LEAN's Apache-2.0
 Donchian channel source and prepared a pure session-reset `20/10` long/flat
 rule with causal, contiguous completed-bar tests. Its separate model-side
 adapter requires caller-declared exposure, confidence, and TTL before emitting
-only a `TargetExposureProposal`; it never creates an order. Both modules
+only a `TargetExposureProposal`, and caps ready-target validity at the declared
+session close; it never creates an order. Both modules
 perform no I/O and have no KIS, broker, data-collection, backtest, GPU, or
 Paper connection. This is only a source-verified engineering baseline: the
 source has no adopted market evaluation claim and the current data remains

@@ -22,7 +22,8 @@ strongest kill test before target evaluation or GPU consideration.
   long/flat engineering baseline over caller-declared, contiguous completed
   session bars. Its separate pure target-state adapter requires explicit
   exposure, positive caller-declared confidence, and TTL, then emits only a
-  `TargetExposureProposal`; insufficient history stays a `missing` abstain.
+  `TargetExposureProposal` whose ready validity cannot outlast the declared
+  session close; insufficient history stays a `missing` abstain.
   Neither module has I/O or a KIS/broker/data/Paper path and neither carries a
   source-performance, campaign, GPU, PnL, ensemble, or promotion claim. Its
   next valid trigger is a separately frozen causal data/split/cost/replay
