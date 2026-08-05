@@ -141,7 +141,7 @@ def propose_session_reset_donchian_target(
         confidence=config.confidence,
         input_status="ready",
         feature_window_end=decision.feature_window_end,
-        valid_until=now + config.decision_ttl,
+        valid_until=min(now + config.decision_ttl, session.close_ts),
         reason=f"donchian_{decision.reason}",
     )
 

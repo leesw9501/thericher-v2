@@ -126,6 +126,28 @@ def test_future_bars_do_not_change_an_earlier_target_proposal() -> None:
     assert with_future == original
 
 
+def test_future_gapped_bars_do_not_change_an_earlier_target_proposal() -> None:
+    bars = _baseline_bars(20)
+    bars.append(_bar(20, close=Decimal("102"), high=Decimal("102")))
+    as_of = bars[-1].end_ts
+    future_gap = _bar(22, close=Decimal("250"), high=Decimal("250"))
+
+    original = _propose(bars, model_position="flat", as_of=as_of)
+    with_future = _propose([*bars, future_gap], model_position="flat", as_of=as_of)
+
+    assert with_future == original
+
+
+def test_ready_target_ttl_never_extends_past_the_declared_session_close() -> None:
+    bars = [_bar(index) for index in range(368, 388)]
+    bars.append(_bar(388, close=Decimal("102"), high=Decimal("102")))
+
+    proposal = _propose(bars, model_position="flat")
+
+    assert proposal.action == "enter"
+    assert proposal.valid_until == _SESSION.close_ts
+
+
 def test_proposal_identity_is_deterministic_and_price_free() -> None:
     bars = _baseline_bars(20)
     bars.append(_bar(20, close=Decimal("102"), high=Decimal("102")))

@@ -106,6 +106,28 @@ def test_future_completed_bars_do_not_change_an_earlier_causal_decision() -> Non
     assert changed == original
 
 
+def test_future_gapped_bars_do_not_change_an_earlier_causal_decision() -> None:
+    bars = _baseline_bars(_FIRST_SESSION, 20)
+    bars.append(_bar(_FIRST_SESSION, 20, close=Decimal("102"), high=Decimal("102")))
+    as_of = bars[-1].end_ts
+    future_gap = _bar(_FIRST_SESSION, 22, high=Decimal("999"))
+
+    original = SessionResetDonchianRule().decide(
+        bars,
+        position="flat",
+        session=_FIRST_SESSION,
+        as_of=as_of,
+    )
+    changed = SessionResetDonchianRule().decide(
+        [*bars, future_gap],
+        position="flat",
+        session=_FIRST_SESSION,
+        as_of=as_of,
+    )
+
+    assert changed == original
+
+
 def test_prior_session_history_is_excluded_after_a_declared_session_reset() -> None:
     previous_session = _baseline_bars(_FIRST_SESSION, 20)
     current_session = [_bar(_SECOND_SESSION, 0)]

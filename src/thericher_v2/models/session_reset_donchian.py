@@ -144,6 +144,8 @@ def _session_bars_before_as_of(
 ) -> tuple[Bar, ...]:
     session_bars: list[Bar] = []
     for bar in bars:
+        if bar.end_ts > as_of:
+            continue
         overlaps_session = bar.start_ts < session.close_ts and bar.end_ts > session.open_ts
         inside_session = session.open_ts <= bar.start_ts and bar.end_ts <= session.close_ts
         if overlaps_session and not inside_session:
@@ -166,7 +168,7 @@ def _session_bars_before_as_of(
         for prior, current in zip(session_bars, session_bars[1:], strict=False)
     ):
         raise ValueError("session bars must be contiguous")
-    return tuple(bar for bar in session_bars if bar.end_ts <= as_of)
+    return tuple(session_bars)
 
 
 def _hold(
