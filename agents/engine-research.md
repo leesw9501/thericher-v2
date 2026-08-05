@@ -20,8 +20,11 @@ strongest kill test before target evaluation or GPU consideration.
   independently re-retrieved on 2026-08-05. The new pure
   `SessionResetDonchianRule` is a fixed `20`-bar entry / `10`-bar exit,
   long/flat engineering baseline over caller-declared, contiguous completed
-  session bars. It has no I/O or KIS/broker/data/Paper path and carries no
-  source performance, campaign, GPU, PnL, ensemble, or promotion claim. Its
+  session bars. Its separate pure target-state adapter requires explicit
+  exposure, positive caller-declared confidence, and TTL, then emits only a
+  `TargetExposureProposal`; insufficient history stays a `missing` abstain.
+  Neither module has I/O or a KIS/broker/data/Paper path and neither carries a
+  source-performance, campaign, GPU, PnL, ensemble, or promotion claim. Its
   next valid trigger is a separately frozen causal data/split/cost/replay
   contract; the source itself discloses no evaluation sample to adopt.
 - The proposed `norgate-d1-trio-range-clustering-falsification-v1` remains
