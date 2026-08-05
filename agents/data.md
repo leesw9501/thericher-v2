@@ -22,6 +22,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | First task-owned receipt is incomplete after one accepted page | Exact endpoint pagination fact only; no decision-time availability or consumer promotion |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
+| PIT source candidates | `D:\market_data\pit_sources` contains empty Sharadar and Norgate membership templates only | No manifest, raw export, provenance, or consumer input; do not rescan until an actual export appears |
 | Tiingo prospective EOD snapshot | Immutable 2026-08-04 retrieval through source date 2026-07-28 for SPY/QQQ/IWM | Future-lineage only; model and Paper eligibility remain false |
 | Tiingo/Norgate D1 snapshots | Fixed offline controls; Tiingo has a hash-bound event-marker sidecar and Norgate NDU is healthy | Source-separated, non-Paper research only |
 
