@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import socket
 import urllib.request
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -103,6 +104,11 @@ def test_breakout_replays_once_through_the_existing_local_paper_path(
         signal_bar=signal_bar,
         execution_bar=replay_bar,
     )
+    retried_submission = broker.submit_and_fill_next_bar(
+        prepared.local_paper_intent,
+        signal_bar=signal_bar,
+        execution_bar=replay_bar,
+    )
     replayed = broker.fill_next_bar(
         prepared.local_paper_intent.client_order_id,
         signal_bar=signal_bar,
@@ -112,6 +118,11 @@ def test_breakout_replays_once_through_the_existing_local_paper_path(
     assert first.fill is not None
     assert first.fill.source == LOCAL_PAPER_SOURCE
     assert first.fill.filled_at == replay_bar.start_ts
+    assert (retried_submission.order_result.status, retried_submission.order_result.reason) == (
+        "rejected",
+        "duplicate_client_order_id",
+    )
+    assert retried_submission.fill is None
     assert replayed.fill == first.fill
     fills = [event for event in store.iter_events() if event.event_type == "fill"]
     assert len(fills) == 1
@@ -163,6 +174,8 @@ def test_breakdown_exits_a_replayable_donchian_local_paper_position(
         execution_bar=entry_replay,
     )
     assert entry.fill is not None
+    current_quantity = broker.account().quantity(market="US", symbol="QQQ")
+    assert current_quantity == entry.fill.quantity
 
     exit_history = [*entry_history, *(_bar(index) for index in range(21, 31))]
     exit_history.append(_bar(31, close=Decimal("98"), low=Decimal("98")))
@@ -172,7 +185,7 @@ def test_breakdown_exits_a_replayable_donchian_local_paper_position(
         exit_history,
         session=_SESSION,
         as_of=exit_signal.end_ts,
-        model_position="long",
+        model_position="long" if current_quantity > 0 else "flat",
         rule=SessionResetDonchianRule(),
         config=_CONFIG,
     )
@@ -186,7 +199,7 @@ def test_breakdown_exits_a_replayable_donchian_local_paper_position(
             proposal_ref=_EXIT_REFERENCES.proposal_ref,
             symbol="QQQ",
             target_exposure=exit_proposal.target_exposure,
-            current_quantity=Decimal("1"),
+            current_quantity=current_quantity,
             maximum_quantity=Decimal("5"),
         ),
         as_of=exit_signal.end_ts,
@@ -198,6 +211,7 @@ def test_breakdown_exits_a_replayable_donchian_local_paper_position(
         "ready",
     )
     assert exit_prepared.local_paper_intent is not None
+    assert exit_prepared.local_paper_intent.quantity == current_quantity
     exit = broker.submit_and_fill_next_bar(
         exit_prepared.local_paper_intent,
         signal_bar=exit_signal,
@@ -219,7 +233,78 @@ def test_breakdown_exits_a_replayable_donchian_local_paper_position(
     assert all(event.payload["source"] == LOCAL_PAPER_SOURCE for event in fills)
 
 
-def test_insufficient_history_cannot_create_a_local_paper_intent(tmp_path: Path) -> None:
+def test_expired_donchian_local_paper_intent_is_rejected_without_a_fill(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    _deny_external_access(monkeypatch)
+    history = _bars(20)
+    history.append(_bar(20, close=Decimal("102"), high=Decimal("102")))
+    signal_bar = history[-1]
+    proposal = propose_session_reset_donchian_target(
+        history,
+        session=_SESSION,
+        as_of=signal_bar.end_ts,
+        model_position="flat",
+        rule=SessionResetDonchianRule(),
+        config=_CONFIG,
+    )
+    receipt = receipt_from_target_exposure_proposal(proposal, references=_REFERENCES)
+    prepared = prepare_local_paper_intent(
+        receipt,
+        binding=LocalPaperTargetBinding(
+            proposal_ref=_REFERENCES.proposal_ref,
+            symbol="QQQ",
+            target_exposure=proposal.target_exposure,
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("5"),
+        ),
+        as_of=signal_bar.end_ts,
+    )
+
+    assert prepared.local_paper_intent is not None
+    assert prepared.local_paper_intent.valid_until == _bar(23).start_ts
+
+    store = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    broker = LocalPaperBroker(
+        event_store=store,
+        emergency_store=EmergencyStore(tmp_path / "emergency.json"),
+    )
+    late_submission = broker.submit_order(
+        replace(
+            prepared.local_paper_intent,
+            client_order_id=f"{prepared.local_paper_intent.client_order_id}-late",
+        ),
+        submitted_at=_bar(23).start_ts,
+    )
+    accepted = broker.submit_order(prepared.local_paper_intent)
+    restarted = LocalPaperBroker(
+        event_store=EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl"),
+        emergency_store=EmergencyStore(tmp_path / "emergency.json"),
+    )
+    expired_fill = restarted.fill_next_bar(
+        prepared.local_paper_intent.client_order_id,
+        signal_bar=_bar(22),
+        execution_bar=_bar(23),
+    )
+
+    assert (late_submission.status, late_submission.reason) == ("rejected", "intent_expired")
+    assert accepted.status == "accepted"
+    assert (expired_fill.order_result.status, expired_fill.order_result.reason) == (
+        "rejected",
+        "intent_expired",
+    )
+    assert expired_fill.fill is None
+    assert restarted.account().positions == ()
+    fills = [event for event in restarted.event_store.iter_events() if event.event_type == "fill"]
+    assert fills == []
+
+
+def test_insufficient_history_cannot_create_a_local_paper_intent(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    _deny_external_access(monkeypatch)
     history = _bars(20)
     proposal = propose_session_reset_donchian_target(
         history,

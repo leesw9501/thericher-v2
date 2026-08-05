@@ -62,6 +62,9 @@ Hermetic injected-bar tests now compose a Donchian breakout and later breakdown
 through the existing research receipt and `source: local_paper` next-bar
 fill/replay path; insufficient history yields no local intent. They create no
 runtime route, KIS call, campaign, PnL result, or promotion claim.
+Target-derived local-paper intents now retain their bounded `valid_until`
+through durable replay: late submission or next-bar fill is categorically
+rejected, while an already recorded fill remains exactly replayable.
 
 At 03:16 KST on 2026-08-05, one exact read-only historical terminal-field
 probe ran for the preserved legacy state. It used only a virtual token and the

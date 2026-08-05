@@ -337,6 +337,7 @@ class OrderIntent:
     limit_price: Decimal | None
     decision_id: str
     created_at: datetime
+    valid_until: datetime | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -346,6 +347,11 @@ class OrderIntent:
         if self.limit_price is not None:
             object.__setattr__(self, "limit_price", positive(self.limit_price, "limit_price"))
         object.__setattr__(self, "created_at", require_utc(self.created_at, "created_at"))
+        if self.valid_until is not None:
+            valid_until = require_utc(self.valid_until, "valid_until")
+            if valid_until <= self.created_at:
+                raise ValueError("valid_until must be after created_at")
+            object.__setattr__(self, "valid_until", valid_until)
 
 
 @dataclass(frozen=True)

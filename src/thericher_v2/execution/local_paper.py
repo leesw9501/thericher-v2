@@ -178,6 +178,13 @@ class LocalPaperBroker:
                 reason="duplicate_client_order_id",
                 recorded_at=recorded_at,
             )
+        if order.valid_until is not None and recorded_at >= order.valid_until:
+            return self._record_order_result(
+                order,
+                status="rejected",
+                reason="intent_expired",
+                recorded_at=recorded_at,
+            )
         if self.emergency_store.read().blocks_new_orders:
             return self._record_order_result(
                 order,
@@ -216,6 +223,12 @@ class LocalPaperBroker:
         if order is None:
             raise ValueError("client_order_id has no pending accepted local paper order")
         self._validate_next_bar(order, signal_bar, execution_bar)
+        if order.valid_until is not None and execution_bar.start_ts >= order.valid_until:
+            return self._rejected_execution(
+                order,
+                reason="intent_expired",
+                recorded_at=execution_bar.start_ts,
+            )
         fill = self._expected_fill(order, execution_bar)
         if order.limit_price is not None and not self._limit_is_marketable(order, fill.price):
             return self._rejected_execution(
@@ -666,11 +679,14 @@ def _order_payload(order: OrderIntent) -> dict[str, str]:
     }
     if order.limit_price is not None:
         payload["limit_price"] = str(order.limit_price)
+    if order.valid_until is not None:
+        payload["valid_until"] = order.valid_until.isoformat()
     return payload
 
 
 def _order_from_payload(payload: dict[str, object]) -> OrderIntent:
     limit_price = payload.get("limit_price")
+    valid_until = payload.get("valid_until")
     return OrderIntent(
         client_order_id=str(payload["client_order_id"]),
         symbol=str(payload["symbol"]),
@@ -680,6 +696,11 @@ def _order_from_payload(payload: dict[str, object]) -> OrderIntent:
         limit_price=None if limit_price is None else Decimal(str(limit_price)),
         decision_id=str(payload["decision_id"]),
         created_at=datetime.fromisoformat(str(payload["created_at"])).astimezone(UTC),
+        valid_until=(
+            None
+            if valid_until is None
+            else datetime.fromisoformat(str(valid_until)).astimezone(UTC)
+        ),
     )
 
 

@@ -39,7 +39,8 @@ _SESSION_DATES = (
     date(2026, 7, 20),
     date(2026, 7, 21),
 )
-_V3_REPLAY_DIGEST = "sha256:4aacf5330a3e95ef9f11e8dd60222774485787b55a3fbba772b6c56b047dd041"
+# Target-derived local-paper intents now retain their validity in replay evidence.
+_V4_REPLAY_DIGEST = "sha256:ae05c19530b228fc6c28d8c8589990910588f80d727a836509b0faf9c8db1c3b"
 
 
 def test_consensus_replay_is_external_aggregate_only_and_local_paper(
@@ -68,7 +69,7 @@ def test_consensus_replay_is_external_aggregate_only_and_local_paper(
     assert dict(run.decision_action_counts) == {"enter": 10, "hold": 10}
     assert run.all_fills_local_paper is True
     assert run.all_terminal_flat is True
-    assert run.replay_digest == _V3_REPLAY_DIGEST
+    assert run.replay_digest == _V4_REPLAY_DIGEST
     assert run.precommit_path.is_relative_to(artifact_root)
     assert run.summary_path.is_relative_to(artifact_root)
 
@@ -458,7 +459,7 @@ def test_stale_current_source_can_only_add_abstentions_to_the_frozen_replay() ->
         source_metadata_factory=stale_source_metadata,
     )
 
-    assert consensus_replay.consensus_session_replay_digest(baseline) == _V3_REPLAY_DIGEST
+    assert consensus_replay.consensus_session_replay_digest(baseline) == _V4_REPLAY_DIGEST
     assert tuple(item.proposal_action for item in downgraded) == ("abstain",) * 20
     assert sum(item.consensus.fill_count for item in downgraded) == 0
     assert sum(item.consensus.fill_count for item in downgraded) <= sum(

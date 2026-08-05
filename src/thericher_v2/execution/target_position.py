@@ -56,4 +56,5 @@ def target_proposal_to_order_intent(
         limit_price=None,
         decision_id=proposal.proposal_id,
         created_at=created_at,
+        valid_until=proposal.valid_until,
     )
