@@ -5,15 +5,15 @@ This is the current cross-lane projection, not a role queue or history ledger.
 
 ## Company Objective
 
-`kis-paper-virtual-lifecycle-canary-v2` needs one current, existing-worker
-virtual-Paper lifecycle result and offline reattachment. It is an execution
-reliability checkpoint, not a model, PnL, or profitability claim.
+`kis-paper-virtual-lifecycle-canary-v2` completed with one current,
+existing-worker virtual-Paper lifecycle result and offline reattachment. It is
+an execution reliability checkpoint, not a model, PnL, or profitability claim.
 
 ## Ready / Owned / Due
 
 | Work | Owner | Resource | Current fact |
 | --- | --- | --- | --- |
-| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | Exact 08-04 receipt `paper-session-20260804T143501870818Z` reattaches legacy `recovery_required/prior_submission_unresolved`; independent validator remains `outcome_unknown/unresolved`, not a new lifecycle. Separate daily SPY receipt is `no_intent/quote_unavailable`; the next daily session will distinguish quote-fetch from local receipt/limit-preparation failure without changing Paper side effects. Next owned canary attempt: 2026-08-05 23:35 KST |
+| Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | Exact 08-05 receipt `paper-session-20260805T143501171367Z` is `canary_completed`; direct lifecycle reattachment independently validates `cancelled/clean`, attribution-ineligible. It is neither fill/PnL nor model evidence. The existing task owns the next attempt: 2026-08-06 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
 | Current-head recovery | Data | Existing isolated cache/task | Source-safe QQQ range reattachment isolated the 04:31 KST guard collision; the same four-run task remains at 00:29/02:28/04:24/06:20 KST with one action and `IgnoreNew`. Its rebuilt receipt emits exact-run plus observed-ET cumulative metadata-only coverage; the terminal 06:20 capture owns the 390-completed-offset kill test |
 | Daily D1 catch-up | Data | Existing 07:00 KST worker | 2026-08-05 task completed `drained`: zero chunks/targets and no client constructed; exact cursor state only, not a provider-wide coverage conclusion |

@@ -14,11 +14,21 @@ external artifacts retain history.
 
 ## Current Objective
 
-`kis-paper-virtual-lifecycle-canary-v2` must reattach one current,
-task-owned, virtual-Paper lifecycle result through the existing deterministic
-canary. It may end as a categorical no-intent, rejected,
-cancelled-and-clean, or unknown-and-reconciled result. It is never a model,
-fill, PnL, or profitability result.
+`kis-paper-virtual-lifecycle-canary-v2` completed through the existing,
+task-owned deterministic canary. The resulting virtual-Paper lifecycle is
+execution evidence only, never a model, fill-quality, PnL, or profitability
+result.
+
+The existing `thericher-kis-paper-quote-session` Windows task completed its
+2026-08-05 23:35 KST invocation with Task Scheduler result `0`. Its exact
+scheduled-session receipt `paper-session-20260805T143501171367Z` is
+`canary_completed`, requiring the direct lifecycle receipt
+`canary-20260805T143501171367Z`. The independent offline validator and exact
+projector both classify that lifecycle as `cancelled` with `clean`
+reconciliation and `not_eligible` attribution. This is a categorical
+cancelled-and-clean virtual-Paper result, not a broker fill, PnL, or model
+result. The existing task owns the next opportunity at 2026-08-06 23:35 KST;
+do not manually invoke or duplicate it.
 
 The existing `thericher-kis-paper-quote-session` Windows task completed its
 2026-08-04 23:35 KST invocation with Task Scheduler result `0`. Its exact
@@ -386,7 +396,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution | Exact 08-04 scheduled receipt is `recovery_required/prior_submission_unresolved` for preserved legacy run; independent validator remains `outcome_unknown/unresolved`, not a new lifecycle. Daily SPY is separately `no_intent/quote_unavailable`; 170 offline route/receipt/dashboard tests pass. Next canary opportunity is 2026-08-05 23:35 KST |
+| Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-06 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
 | Current-head timing repair | Data | Same `IgnoreNew` task remains at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence; rebuilt receipt now emits exact-run and observed-ET cumulative coverage, and terminal 06:20 capture owns the 390-completed-offset kill test |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
@@ -488,10 +498,10 @@ metadata-only projection. DST/pre-market behavior remains unproven.
 
 ## Next Handoff
 
-1. Preserve the exact 2026-08-04 session fact as legacy
-   `outcome_unknown/unresolved`, and the separate daily SPY `no_intent` as
-   `quote_unavailable`. Do not infer a broker result or submit a replacement;
-   the next quote-session opportunity is 2026-08-05 23:35 KST.
+1. Preserve the exact 2026-08-05 `canary_completed` session fact and direct
+   `cancelled/clean` lifecycle result as virtual-Paper execution evidence only.
+   Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
+   or duplicate the existing task; its next opportunity is 2026-08-06 23:35 KST.
 2. Continue independent Data worker reattachment at its own due times.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality

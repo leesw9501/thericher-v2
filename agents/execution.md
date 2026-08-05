@@ -11,7 +11,18 @@ model output as untrusted input. `local_paper`, `kis_paper`, and `kis_live` are
 separate routes; local replay fills remain `source: local_paper`. Never read or
 route `KIS_LIVE_*`.
 
-## Current Objective: Virtual-Paper Lifecycle Canary
+## Current Objective: Virtual-Paper Lifecycle Canary Reattached
+
+The existing `thericher-kis-paper-quote-session` task completed its 2026-08-05
+23:35 KST owned invocation with Scheduler result `0`. Its exact scheduled
+receipt `paper-session-20260805T143501171367Z` is `canary_completed` and binds
+only the direct lifecycle `canary-20260805T143501171367Z`. The host projector
+and independent offline validator both classify that lifecycle as `cancelled`
+with `clean` reconciliation and attribution `not_eligible`. It is a
+cancelled-and-clean virtual-Paper execution result only: no fill, PnL,
+profitability, or model conclusion follows. The same existing task owns the
+next opportunity at 2026-08-06 23:35 KST; do not manually invoke or duplicate
+it.
 
 The existing `thericher-kis-paper-quote-session` Windows task owned one current
 virtual-Paper canary at 2026-08-04 23:35 KST and exited with Task Scheduler
@@ -241,7 +252,9 @@ Paper hold.
 ## Handoff
 
 After the task runs, reattach its source-safe runtime projection and matching
-offline validator before interpreting the lifecycle. Record only result
+offline validator before interpreting the lifecycle. The 2026-08-05 result is
+`cancelled/clean` and attribution-ineligible; its next recovery action is the
+existing task's next due run, not a foreground retry. Record only result
 category, reconciliation class, route isolation, evidence pointer, and next
 recovery action. Historic execution evidence remains in Git and
 `D:\thericher-v2\model-artifacts\execution`; the latest pre-current canary
