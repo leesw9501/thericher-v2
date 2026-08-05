@@ -14,7 +14,17 @@ external artifacts retain history.
 
 ## Current Objective
 
-`kis-paper-virtual-lifecycle-canary-v2` completed through the existing,
+`kis-intraday-observed-provisional-session-v1` reattached its latest
+task-owned outcome from the existing QQQ intraday-head route. The 2026-08-06
+06:20 KST invocation is exactly
+`intraday-head-20260805T2120061382131Z`,
+`recovery/collection_exit_nonzero` with Scheduler result `1`. It is a scoped
+collection recovery and produced no QQQ session outcome, Paper lifecycle,
+fill, PnL, or model claim. The follow-up objective is one exact outcome after
+the existing task's 2026-08-07 00:29 KST invocation; do not manually invoke or
+duplicate it.
+
+`kis-paper-virtual-lifecycle-canary-v2` remains completed through the existing,
 task-owned deterministic canary. The resulting virtual-Paper lifecycle is
 execution evidence only, never a model, fill-quality, PnL, or profitability
 result.
@@ -400,6 +410,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
 | Current-head timing repair | Data | Same `IgnoreNew` task remains at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence; rebuilt receipt now emits exact-run and observed-ET cumulative coverage, and terminal 06:20 capture owns the 390-completed-offset kill test |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
+| Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `r2` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, and terminal-flat mechanics pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate

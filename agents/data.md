@@ -76,6 +76,11 @@ undocumented timestamp seed.
   current-source profile passed a network-disabled exact-entrypoint check. The
   related focused Data/schedule group passed 76 tests; this is preflight only,
   not a collection receipt.
+  The later 2026-08-06 06:20 KST invocation is independently reattached as
+  exact safe runtime `intraday-head-20260805T2120061382131Z`,
+  `recovery/collection_exit_nonzero` with Scheduler result `1`. It produced no
+  QQQ session outcome and therefore no downstream Paper, fill, PnL, model, or
+  promotion fact. The same existing task owns the 2026-08-07 00:29 KST retry.
   On a successful collection, the same worker now gives the existing QQQ
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or

@@ -5,9 +5,13 @@ This is the current cross-lane projection, not a role queue or history ledger.
 
 ## Company Objective
 
-`kis-paper-virtual-lifecycle-canary-v2` completed with one current,
-existing-worker virtual-Paper lifecycle result and offline reattachment. It is
-an execution reliability checkpoint, not a model, PnL, or profitability claim.
+`kis-intraday-observed-provisional-session-v1-followup` is awaiting one exact
+outcome from the existing 2026-08-07 00:29 KST intraday-head invocation. Its
+preceding exact safe runtime is
+`intraday-head-20260805T2120061382131Z`,
+`recovery/collection_exit_nonzero` with Scheduler result `1`; this is a
+collection-only recovery, not a model, Paper lifecycle, PnL, or profitability
+claim.
 
 ## Ready / Owned / Due
 
@@ -15,7 +19,7 @@ an execution reliability checkpoint, not a model, PnL, or profitability claim.
 | --- | --- | --- | --- |
 | Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | Exact 08-05 receipt `paper-session-20260805T143501171367Z` is `canary_completed`; direct lifecycle reattachment independently validates `cancelled/clean`, attribution-ineligible. It is neither fill/PnL nor model evidence. The existing task owns the next attempt: 2026-08-06 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; one GET/no retry, no qualification or consumer bridge |
-| Current-head recovery | Data | Existing isolated cache/task | Source-safe QQQ range reattachment isolated the 04:31 KST guard collision; the same four-run task remains at 00:29/02:28/04:24/06:20 KST with one action and `IgnoreNew`. Its rebuilt receipt emits exact-run plus observed-ET cumulative metadata-only coverage; the terminal 06:20 capture owns the 390-completed-offset kill test |
+| Current-head recovery | Data | Existing isolated cache/task | The latest 06:20 KST run is exactly `recovery/collection_exit_nonzero` (Scheduler `1`) and produces no QQQ session outcome. The same `IgnoreNew` four-run task owns the next 00:29 KST attempt; its rebuilt receipt emits exact-run plus observed-ET cumulative metadata-only coverage, and terminal 06:20 capture remains the 390-completed-offset kill test |
 | Daily D1 catch-up | Data | Existing 07:00 KST worker | 2026-08-05 task completed `drained`: zero chunks/targets and no client constructed; exact cursor state only, not a provider-wide coverage conclusion |
 | Token cadence calibration | Data | One token-only Paper capability probe | Completed `unavailable`: first Paper auth succeeded, but the fresh-client second auth was `auth_rejected` after 30.12 monotonic seconds; retain the default five-minute guard and do not repeat this exact hypothesis without a changed provider fact |
 | SPY prefix capability | Data | Rebuilt `thericher-kis-paper-spy-prefix-*` images/tasks | First exact receipt is incomplete: clean control, one accepted page, invalid seam, no next cursor; its legacy terminal signal is `not_recorded_legacy`, and the existing worker owns the next attempt |
@@ -24,6 +28,7 @@ an execution reliability checkpoint, not a model, PnL, or profitability claim.
 | Norgate local capability | Data | NDU loopback and D: cache | Active client now resolves to the D: trial root; its 29/126-session tail is `input_unavailable`, while the 512-session fixed-ETF snapshot remains source-local with no PIT/model/GPU/Paper promotion |
 | Free public augmentation | Data | Official-source capability check | No full PIT/delisting/corporate-action/OHLCV source qualified; SEC sidecar probe needs declared contact |
 | Architecture structure screen | Engine | RTX 4090 | Fixed source-local LSTM/TCN/attention screen completed jointly with no winner; no eligible frozen predictive contract |
+| Donchian mechanics preflight | Engine | Local QQQ M1 cache / CPU | Completed `r2` from the deterministic first 20 complete sessions; causal receipt hashes, local-paper-only fills, and terminal-flat replay passed. It retains no performance result and changes no GPU/Paper eligibility |
 
 No foreground wait is justified. Each external time belongs to its worker;
 independent Data, Engine, and Execution preparation continues when ready.
@@ -156,6 +161,10 @@ A source-safe assessment does make those 21 shared complete 09:30--15:29 ET
 sessions sufficient for one source-local, non-promoting 5--90 minute geometry
 preflight. It does not repair decision-time availability or open model, GPU,
 PnL, or Paper eligibility.
+The completed session-reset Donchian mechanics replay consumes that exact
+source-local scope only as a receipt/local-paper conformance check. Its
+causal-prefix hashes and terminal-flat replay strengthen the engineering
+boundary, but retain no performance metric and do not alter this bottleneck.
 The bounded IWM/AMS probe accepted one current-day page, but its enforced
 probe-only boundary and discarded rows add no historical, causal, or qualified
 input coverage. It does not change the bottleneck or create a collector.

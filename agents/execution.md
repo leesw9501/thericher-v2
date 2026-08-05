@@ -44,6 +44,16 @@ KST intraday-head receipt is
 `recovery/prospective_session_id_unavailable`; its worker owns the 2026-08-06
 00:29 KST retry.
 
+The 2026-08-05 23:50 KST daily SPY receipt is exactly
+`daily-spy-20260805T145001601078Z`: `no_intent/quote_unavailable`, no run ID,
+and receipt observer plus terminal-field probe both `not_attempted`. It has no
+canary lifecycle, broker, fill, or PnL interpretation. The next intraday-head
+invocation at 2026-08-06 06:20 KST ended as exact safe runtime
+`intraday-head-20260805T2120061382131Z`,
+`recovery/collection_exit_nonzero` with Scheduler result `1`; it is a scoped
+collection recovery only, not a QQQ session, lifecycle, fill, or PnL result.
+The existing task owns its next 2026-08-07 00:29 KST run.
+
 The rebuilt single `thericher-kis-paper-daily-spy-session` image preserves
 `quote_unavailable` for an exact fresh-quote fetch failure and uses
 `receipt_preparation_unavailable` only when local receipt/limit preparation
@@ -188,6 +198,13 @@ another correctly scoped Paper action.
   a fill-quality, profitability, model, or execution-risk input. The associated
   Claude request returned unrelated stale task text rather than its requested
   verdict; record `review_unavailable` and rely only on the local contract tests.
+- The completed Engine-owned session-reset Donchian mechanics preflight uses
+  the existing receipt-to-local-paper bridge only. Its predeclared
+  penultimate-bar terminal exit fills at the final-bar open, every retained
+  fill remains `source: local_paper`, and replay reproduces each terminal-flat
+  account. It made no KIS call, credential read, external broker call, or
+  virtual-Paper intent; it is not an execution result, model promotion, or
+  Paper input.
 - The current source-free Claude falsification check returned
   `supported-with-limits`: virtual-host pinning, pre-submit durable intent,
   fresh account/quote reconciliation, exact-intent unknown-outcome recovery,
