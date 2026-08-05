@@ -28,11 +28,11 @@ strongest kill test before target evaluation or GPU consideration.
   source-performance, campaign, GPU, PnL, ensemble, or promotion claim. Its
   next valid trigger is a separately frozen causal data/split/cost/replay
   contract; the source itself discloses no evaluation sample to adopt.
-- One hermetic injected-bar integration test composes a valid Donchian breakout
-  through the existing receipt and `source: local_paper` next-bar fill/replay
-  boundary exactly once; its insufficient-history control emits no local intent.
-  This is replay reliability only, not a campaign, KIS route, PnL result, or
-  promotion claim.
+- Hermetic injected-bar integration tests compose a valid Donchian breakout and
+  later breakdown through the existing receipt and `source: local_paper`
+  next-bar fill/replay boundary exactly once; the insufficient-history control
+  emits no local intent. This is replay reliability only, not a campaign, KIS
+  route, PnL result, or promotion claim.
 - The proposed `norgate-d1-trio-range-clustering-falsification-v1` remains
   `input_unavailable` and does not open a campaign. A current hash-bound
   dividend-marker hygiene sidecar supported an exact preflight, but the

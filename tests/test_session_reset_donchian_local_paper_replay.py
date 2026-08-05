@@ -46,6 +46,12 @@ _REFERENCES = DecisionReceiptReferences(
     input_manifest_ref="sha256:" + "3" * 64,
     proposal_ref="ref:" + "4" * 64,
 )
+_EXIT_REFERENCES = DecisionReceiptReferences(
+    campaign_ref="ref:" + "1" * 64,
+    model_ref="ref:" + "2" * 64,
+    input_manifest_ref="sha256:" + "3" * 64,
+    proposal_ref="ref:" + "5" * 64,
+)
 
 
 def test_breakout_replays_once_through_the_existing_local_paper_path(
@@ -110,6 +116,107 @@ def test_breakout_replays_once_through_the_existing_local_paper_path(
     fills = [event for event in store.iter_events() if event.event_type == "fill"]
     assert len(fills) == 1
     assert fills[0].payload["source"] == LOCAL_PAPER_SOURCE
+
+
+def test_breakdown_exits_a_replayable_donchian_local_paper_position(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    _deny_external_access(monkeypatch)
+    entry_history = _bars(20)
+    entry_history.append(_bar(20, close=Decimal("102"), high=Decimal("102")))
+    entry_signal = entry_history[-1]
+    entry_replay = _bar(21)
+    entry_proposal = propose_session_reset_donchian_target(
+        entry_history,
+        session=_SESSION,
+        as_of=entry_signal.end_ts,
+        model_position="flat",
+        rule=SessionResetDonchianRule(),
+        config=_CONFIG,
+    )
+    entry_receipt = receipt_from_target_exposure_proposal(
+        entry_proposal,
+        references=_REFERENCES,
+    )
+    entry_prepared = prepare_local_paper_intent(
+        entry_receipt,
+        binding=LocalPaperTargetBinding(
+            proposal_ref=_REFERENCES.proposal_ref,
+            symbol="QQQ",
+            target_exposure=entry_proposal.target_exposure,
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("5"),
+        ),
+        as_of=entry_signal.end_ts,
+    )
+    assert entry_prepared.local_paper_intent is not None
+
+    store = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    broker = LocalPaperBroker(
+        event_store=store,
+        emergency_store=EmergencyStore(tmp_path / "emergency.json"),
+    )
+    entry = broker.submit_and_fill_next_bar(
+        entry_prepared.local_paper_intent,
+        signal_bar=entry_signal,
+        execution_bar=entry_replay,
+    )
+    assert entry.fill is not None
+
+    exit_history = [*entry_history, *(_bar(index) for index in range(21, 31))]
+    exit_history.append(_bar(31, close=Decimal("98"), low=Decimal("98")))
+    exit_signal = exit_history[-1]
+    exit_replay = _bar(32)
+    exit_proposal = propose_session_reset_donchian_target(
+        exit_history,
+        session=_SESSION,
+        as_of=exit_signal.end_ts,
+        model_position="long",
+        rule=SessionResetDonchianRule(),
+        config=_CONFIG,
+    )
+    exit_receipt = receipt_from_target_exposure_proposal(
+        exit_proposal,
+        references=_EXIT_REFERENCES,
+    )
+    exit_prepared = prepare_local_paper_intent(
+        exit_receipt,
+        binding=LocalPaperTargetBinding(
+            proposal_ref=_EXIT_REFERENCES.proposal_ref,
+            symbol="QQQ",
+            target_exposure=exit_proposal.target_exposure,
+            current_quantity=Decimal("1"),
+            maximum_quantity=Decimal("5"),
+        ),
+        as_of=exit_signal.end_ts,
+    )
+
+    assert (exit_proposal.action, exit_receipt.decision_class, exit_prepared.status) == (
+        "exit",
+        "exit",
+        "ready",
+    )
+    assert exit_prepared.local_paper_intent is not None
+    exit = broker.submit_and_fill_next_bar(
+        exit_prepared.local_paper_intent,
+        signal_bar=exit_signal,
+        execution_bar=exit_replay,
+    )
+    replayed = broker.fill_next_bar(
+        exit_prepared.local_paper_intent.client_order_id,
+        signal_bar=exit_signal,
+        execution_bar=exit_replay,
+    )
+
+    assert exit.fill is not None
+    assert exit.fill.source == LOCAL_PAPER_SOURCE
+    assert exit.fill.filled_at == exit_replay.start_ts
+    assert replayed.fill == exit.fill
+    assert broker.account().positions == ()
+    fills = [event for event in store.iter_events() if event.event_type == "fill"]
+    assert len(fills) == 2
+    assert all(event.payload["source"] == LOCAL_PAPER_SOURCE for event in fills)
 
 
 def test_insufficient_history_cannot_create_a_local_paper_intent(tmp_path: Path) -> None:
