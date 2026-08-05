@@ -1359,6 +1359,28 @@ def _open_order_payload(raw_order_id: str) -> dict[str, str]:
     }
 
 
+def test_quote_and_daily_spy_services_share_the_serialized_canary_state_root() -> None:
+    compose = (Path(__file__).resolve().parents[1] / "docker-compose.yml").read_text(
+        encoding="utf-8"
+    )
+    quote_session = compose.split("\n  kis-paper-session:\n", maxsplit=1)[1].split(
+        "\n  kis-paper-daily-backfill:\n", maxsplit=1
+    )[0]
+    daily_session = compose.split("\n  kis-paper-daily-spy-session:\n", maxsplit=1)[1].split(
+        "\n  kis-paper-prospective-spy-cycle:\n", maxsplit=1
+    )[0]
+
+    assert "thericher_v2.execution.kis_paper_session" in quote_session
+    assert "thericher_v2.execution.kis_paper_daily_spy_session" in daily_session
+    for section in (quote_session, daily_session):
+        assert "- --state-root" in section
+        assert "- /app/private/canary" in section
+        assert "thericher-v2-paper-canary-private:/app/private" in section
+        assert "KIS_LIVE" not in section
+    assert "- --cancel-after-submit" in quote_session
+    assert "- --cancel-after-submit" not in daily_session
+
+
 def _paper_environment() -> dict[str, str]:
     return {
         "KIS_PAPER_APP_KEY": "paper-app-key",

@@ -348,10 +348,14 @@ unproven; this is a reversible current-season repair, not an input promotion.
   exact unknown only on a same-intent replay. A distinct run does not scan or
   mutate historical state files; it relies on its own current open-order check.
   It never reads a live route.
-- The at-most-one-intent claim is scoped to the existing single host-owned
-  state root and its one scheduled Docker runner. No copied/restored state root,
-  second machine, or out-of-band runner is installed; those would be outside
-  this task's contract, not a general Paper hold.
+- The at-most-one-concurrent-submission claim is scoped to the existing single
+  host-owned state root and shared `.canary_execution` lock. The 23:35 KST
+  quote-session checkpoint and separate 23:50 KST daily-SPY receipt session
+  both use that root, so they cannot submit at the same time and a matching open
+  order blocks a fresh canary. Their lifecycle purposes remain distinct. No
+  copied/restored state root, second machine, or out-of-band runner is
+  installed; those would be outside this task's contract, not a general Paper
+  hold.
 - The offline validator accepts completion only for `paper_only`, terminally
   cancelled, cleanly reconciled, freshness-valid evidence. The credential-free
   loopback dashboard cannot call a broker or submit an order; authenticated
@@ -410,9 +414,10 @@ ready.
 - A current canary drift review first returned `uncertain`, then
   `supported-with-limits` after source-free code/test reattestation of direct
   virtual-host transport, pre-submit durable state, prior-run recovery, and
-  broker-timestamp quote age. Its remaining limit is the one host-owned state
-  root and one scheduled runner; this is a scope fact for the existing task,
-  not an execution hold.
+  broker-timestamp quote age. Its remaining limit is the shared host-owned state
+  root and its exact-run recovery path, not a claim that only one virtual-Paper
+  scheduler exists. A post-submit process interruption remains scoped to that
+  durable intent and does not become a general execution hold.
 - Today's source-free Claude challenge is `uncertain` because it inspected no
   implementation or state. Independent static Review found the registered
   task/Compose surface shares the guarded root and exact virtual host/route

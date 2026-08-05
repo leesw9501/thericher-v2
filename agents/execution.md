@@ -147,11 +147,23 @@ The canary contract is fixed:
   emits a sanitized categorical fact; terminally cancelled, cleanly reconciled,
   freshness-valid evidence remains the stricter downstream completion case.
 
-The at-most-one-intent statement is scoped to the existing single host-owned
-state root and its one scheduled Docker runner. A copied/restored private
-state directory, second state root, second machine, or out-of-band runner is
-outside this canary contract; none is installed. This is a scope fact for this
-task, not a general Paper hold.
+The at-most-one-**concurrent-submission** statement is scoped to the existing
+single host-owned state root and its shared `.canary_execution` lock. The 23:35
+KST `quote-session` canary and the distinct 23:50 KST daily-SPY receipt session
+both use that root: they may be scheduled separately, but cannot submit at the
+same time, and a matching open order blocks a fresh canary. The quote-session
+uses `cancel_after_submit`; the daily-SPY route owns its separate receipt-backed
+Paper lifecycle. A copied/restored private state directory, second state root,
+second machine, or out-of-band runner is outside this canary contract; none is
+installed. This is a scope fact for this task, not a general Paper hold.
+
+The 2026-08-05 source-safe Claude drift-check returned
+`supported-with-limits`. It confirmed the virtual-host, durable-intent,
+same-intent recovery, shared-lock, and fresh account/open-order controls, while
+correcting the prior single-runner shorthand. A process interruption after a
+submitted quote-session intent still requires its exact durable recovery path;
+that is a scoped recovery limit, not evidence of a broker outcome or a hold on
+another correctly scoped Paper action.
 
 ## Current Supporting Surfaces
 

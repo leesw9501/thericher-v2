@@ -291,9 +291,12 @@ fresh account/quote reconciliation, exact-intent recovery, and dashboard route
 isolation. A canary can retain sanitized filled/remaining quantity or position
 state, but no price, cost, valuation, or model outcome; it is execution
 evidence only, never a fill-quality, PnL, profitability, or model result. The
-remaining scope limit is one host-owned state root and one scheduled runner; no
-second root, restored copy, or manual runner is installed. This does not delay
-independent work.
+remaining scope limit is one host-owned state root and its shared submission
+lock, not one total scheduler. The 23:35 KST quote-session checkpoint and the
+distinct 23:50 KST daily-SPY receipt session share that root; the lock and
+fresh matching-open-order check prevent concurrent duplicate submission, while
+their separate lifecycle purposes remain intact. No second root, restored copy,
+or manual runner is installed. This does not delay independent work.
 The fresh 2026-08-05 source-free canary recovery retry likewise exceeded its
 CLI limit without a verdict. It is `review_unavailable`, not agreement or an
 adverse execution finding; the existing task-owned virtual-only contract and
