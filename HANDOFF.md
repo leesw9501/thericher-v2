@@ -411,6 +411,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | Current-head timing repair | Data | Same `IgnoreNew` task remains at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence; rebuilt receipt now emits exact-run and observed-ET cumulative coverage, and terminal 06:20 capture owns the 390-completed-offset kill test |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
+| Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule with explicit within-session seed and structural warmup status. Apache-2.0 source scope is recorded externally; no target adapter, replay, campaign, GPU, PnL, or Paper-input consequence |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate

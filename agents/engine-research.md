@@ -44,6 +44,14 @@ strongest kill test before target evaluation or GPU consideration.
   next-bar fill/replay boundary exactly once; the insufficient-history control
   emits no local intent. This is replay reliability only, not a campaign, KIS
   route, PnL result, or promotion claim.
+- The independent `SessionResetEmaStateRule` is a separate pure 15/30
+  completed-M1 long/flat mechanism, checked against the Apache-2.0
+  QuantConnect LEAN moving-average example without importing its code. Each
+  EMA seeds from its own within-session SMA before Decimal recurrence, and its
+  explicit `missing`/`ready` input state prevents warmup from becoming a target.
+  It has no target adapter, local-paper replay, campaign, GPU, PnL, or Paper
+  input. Source-safe scope and rights receipt:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\quantconnect-session-reset-ema-state-20260806-r1\source-retrieval.json`.
 - The proposed `norgate-d1-trio-range-clustering-falsification-v1` remains
   `input_unavailable` and does not open a campaign. A current hash-bound
   dividend-marker hygiene sidecar supported an exact preflight, but the
