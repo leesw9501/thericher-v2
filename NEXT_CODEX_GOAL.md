@@ -2,47 +2,48 @@
 
 ## Objective
 
-Build `same-cycle-target-allocation-v1`: add a pure caller-owned, deterministic
-same-cycle allocation helper for an ordered set of already-proposed
-multi-symbol `TargetExposureProposal`s. It advances the target-position layer
-of the engine while keeping opportunity selection, trade policy, model choice,
-and deterministic execution separate. It must consume no market data, call no
-provider or broker, load no model, reserve no capacity, and create no order.
+Build `intraday-head-0424-source-safe-followup-v1`: after the existing
+2026-08-07 04:24 KST intraday-head task runs, reattach only its exact
+source-safe terminal pointer, matching immutable receipt, Scheduler result,
+and any matching offline QQQ/session/coverage facts. This advances the data
+collection loop by recording measured coverage or a scoped recovery without
+turning either into a model, Paper lifecycle, fill, PnL, alpha, or promotion
+claim.
 
-The completed prior objective updated only the existing daily operating-review
-automation prompt. Its ID, daily recurrence, active status, model, project
-target, and workspace were read back unchanged; no secret-like value appeared.
+The completed prior objective added pure same-cycle target allocation: it
+preserves caller order, requires one shared snapshot and unique identities, and
+uses capacity only for accepted enters. It has no data, model, KIS, Paper, or
+broker surface; its Claude review was `review_unavailable`.
 
 ## Hard Boundaries
 
-- Do not call KIS, submit or modify Paper orders, manually invoke a task, or
-  alter a broker route, order behavior, credential path, dashboard,
-  Docker/runtime, capital rule, or live behavior.
-- Do not create an opportunity rank, a strategy score, a learned allocation,
-  an ensemble, a reserve, or a broker-facing order path.
-- Do not read or expose `KIS_LIVE_*`, secrets, account facts, private intents,
-  order identifiers, or raw market data.
+- Do not manually call KIS, invoke or duplicate the intraday-head task, submit
+  or modify Paper orders, or alter a scheduler, broker route, order behavior,
+  credential path, dashboard, Docker/runtime, capital rule, or live behavior.
+- Do not inspect or retain raw market data, secrets, account facts, private
+  intents, order identifiers, or provider payloads. Never read or expose
+  `KIS_LIVE_*`.
 
 ## Required Work
 
-1. Ask Claude CLI for a short falsification-first architecture drift-check
-   before implementation. Treat an unavailable response as
-   `review_unavailable`, not assent.
-2. Extend the existing single-proposal allocator with a separate pure cycle
-   helper. It must use only caller-provided order and one consistent portfolio
-   snapshot, reject duplicate symbols or inconsistent snapshot facts, and apply
-   the existing scale-then-cap rule serially without treating an unexecuted
-   reduction or exit as released capacity.
-3. Keep every output a model-side `TargetExposureProposal`; do not select,
-   reorder, score, mutate, persist, or execute a proposal. Document the
-   ownership boundary in `ARCHITECTURE.md` and the Engine stateboard.
-4. Add focused tests for deterministic caller order, shared-cap exhaustion,
-   duplicate or mismatched snapshots, stale/unqualified inputs, and the
-   no-capacity-release-on-unexecuted-exit rule. Include a no-I/O guard.
+1. After the existing task completes, hash-validate its one task-owned current
+   pointer and matching immutable terminal receipt. Read the installed task's
+   categorical Scheduler result without inspecting its action arguments.
+2. Reattach only categorical collection, cumulative regular-session coverage,
+   QQQ-session, validation, terminal, and recovery facts. If an exact matching
+   offline validator exists, confirm its identity internally and report only its
+   category and contract; do not print IDs or paths.
+3. Preserve a scoped recovery exactly and let the task own its own future run.
+   Do not retry, change pacing, or convert a failed input into an operator
+   approval or a global lane hold.
+4. While the task is due, continue only a truly ready non-conflicting package.
+   Do not foreground-wait, manufacture a duplicate experiment, or alter a
+   scheduler merely to observe this one outcome. Refresh stateboards and this
+   file before ending.
 
 ## Verification
 
-Run focused allocation tests, then:
+Run focused receipt/coverage reattachment tests, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -53,4 +54,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add same-cycle target allocation`
+`Reattach 04:24 intraday coverage receipt`

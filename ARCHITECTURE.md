@@ -156,11 +156,12 @@ The first allocation foundation is a pure caller-owned scale-then-cap stage:
 it multiplies an already-proposed long-only entry target by declared confidence
 and risk multipliers before applying current portfolio capacity and per-symbol
 concentration caps. It cannot select a symbol, infer an alpha value, reserve
-portfolio capacity, or create an order. A caller serializes multiple same-cycle
-allocations and refreshes its exposure snapshot; Execution independently
-rechecks feasible targets and order quantization. A fresh upstream reduction or
-exit bypasses unavailable allocation capacity so this research layer cannot
-suppress a risk reduction.
+portfolio capacity, or create an order. For one decision cycle, the pure helper
+serializes the caller-provided proposal order only after every entry declares
+the same portfolio snapshot. It refreshes an in-memory capacity view after an
+accepted increase but does not reorder, score, reserve, or treat an unexecuted
+reduction or exit as released capacity. Execution independently rechecks
+feasible targets and order quantization after actual position state is known.
 
 ### Ownership Boundary
 

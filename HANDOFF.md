@@ -40,6 +40,16 @@ against one declared exposure snapshot without selecting symbols, loading a
 model, reserving capacity, reading data, creating orders, or changing KIS/
 Paper/live behavior. Claude must review the narrow architecture change first.
 
+`same-cycle-target-allocation-v1` is now complete. Its pure helper preserves
+caller order, requires a consistent shared snapshot and unique market/symbol
+identities, invokes the existing scale-then-cap rule serially, and consumes
+capacity only for accepted enters. It neither ranks symbols nor releases
+capacity for an unexecuted reduction/exit, and it has no data, model, state,
+local-Paper, KIS, or broker surface. The Claude check again timed out as
+`review_unavailable`; 14 focused tests and the 2,707-pass, 25-skip authority
+suite passed. The next bounded objective reattaches only the exact existing
+04:24 KST intraday-head task result and its source-safe data facts.
+
 `kis-paper-virtual-lifecycle-canary-v2` remains completed through the existing,
 task-owned deterministic canary. The resulting virtual-Paper lifecycle is
 execution evidence only, never a model, fill-quality, PnL, or profitability

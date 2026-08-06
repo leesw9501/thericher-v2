@@ -6,22 +6,20 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`same-cycle-target-allocation-v1` will add a pure model-side allocator for a
-caller-provided ordered set of already-proposed target exposures. It advances
-the target-position layer while preserving the separation between opportunity
-selection, per-symbol evidence, trade policy, allocation, and deterministic
-execution. It must not rank symbols, infer alpha, reserve capacity, read data,
-load a model, or create an order. Its kill test is any hidden selection rule,
-capacity release before execution, inconsistent portfolio snapshot, or external
-side effect.
+`intraday-head-0424-source-safe-followup-v1` will reattach one exact outcome
+from the existing 2026-08-07 04:24 KST intraday-head task. It advances the data
+collection loop by preserving only receipt-bound categorical collection,
+coverage, QQQ-session, validation, terminal, and Scheduler facts. It must not
+manually call KIS, duplicate a task, infer raw-data quality beyond the receipt,
+or reinterpret the result as a Paper lifecycle, fill, PnL, alpha, or model
+claim.
 
-The daily operating-review automation prompt is now aligned with the current
-stateboards and clean-root parallel authority helper. Its identity, daily 08:10
-schedule, active status, model, project target, and workspace were read back
-unchanged; no secret-like value is present. The prior stateboard simplification
-retained all current owner/resource/due, bottleneck, improvement, and recovery
-facts in 57 lines. Claude's governance check for that documentation change
-timed out as `review_unavailable`, not agreement or a hold.
+The completed same-cycle allocation helper is pure caller-ordered model-side
+plumbing: unique identities and one snapshot are required, only accepted
+enters consume simulated capacity, and unexecuted exits do not release it.
+It has no data, model, KIS, Paper, state-reservation, or order surface. Its
+focused tests and authority suite passed; Claude's architecture check timed out
+as `review_unavailable`, not agreement or a hold.
 
 ## Ready / Owned / Due
 
@@ -33,6 +31,7 @@ timed out as `review_unavailable`, not agreement or a hold.
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The exact 2026-08-05 session reattaches as `cancelled/clean` and attribution-ineligible. It is execution evidence only; its next owned opportunity is 2026-08-07 23:35 KST. |
 | Existing scoped Data workers | Data | Installed forward, prefix, and D1 workers | Cursor, pagination, and forward observations remain worker-owned and non-promoting. A categorical recovery or source limit closes only its named cache or cursor; do not dispatch a duplicate manual route. |
 | GPU allocation | Research Steward / Engine Research | RTX 4090 | No frozen input-qualified predictive campaign is ready. CPU preparation can proceed, but GPU work requires the declared dataset, target, split, timeframe/window matrix, costs, baseline, artifact root, and stop rule. |
+| Same-cycle target allocation | Engine Research | Pure in-process model helper | Completed with caller-order, shared-snapshot, no-exit-release, no-I/O contract tests. It remains plumbing only, not opportunity selection, alpha, a model result, or a Paper/broker path. |
 | Daily operating review automation | Codex | Existing desktop automation | Prompt-only alignment completed: it now uses current stateboards and the clean-root parallel authority helper. Its daily 08:10 schedule and all non-prompt fields remain unchanged; it is not a new worker or approval gate. |
 
 ## Current Bottleneck

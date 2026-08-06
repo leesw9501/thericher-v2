@@ -16,6 +16,16 @@ strongest kill test before target evaluation or GPU consideration.
 
 - No frozen, input-qualified predictive campaign is active. Do not train or
   allocate GPU merely to raise utilization.
+- `same-cycle-target-allocation-v1` completed the pure model-side bridge from
+  caller-provided ordered `TargetExposureProposal` values to one simulated
+  shared-capacity cycle. It preserves caller order, rejects duplicate
+  market/symbol identities and inconsistent portfolio snapshots, applies the
+  existing scale-then-cap rule serially, and consumes capacity only for accepted
+  `enter` outputs. An unexecuted `reduce` or `exit` never releases capacity.
+  It creates no opportunity rank, alpha/model output, data/KIS call, state
+  reservation, local-Paper intent, or broker order. Its 14 focused tests and
+  the 2,707-pass, 25-skip authority suite passed; the required Claude
+  architecture check timed out as `review_unavailable`, not assent.
 - Hierarchical Risk Parity is an independently retrieved source-only portfolio
   allocation reference, not an alpha model. The documented MIT implementation
   clusters an arbitrary historical-return matrix and recursively combines
