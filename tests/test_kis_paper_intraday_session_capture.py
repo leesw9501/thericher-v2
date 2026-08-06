@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from datetime import date, datetime, timedelta
 from decimal import Decimal
@@ -10,6 +11,7 @@ import pytest
 
 from thericher_v2.data.kis_paper_intraday_session_capture import (
     build_and_write_kis_paper_intraday_session_capture,
+    validate_schedule_run_id,
     write_kis_paper_intraday_session_capture_evidence,
 )
 from thericher_v2.data.us_equity_session import us_equity_2026_session
@@ -54,6 +56,7 @@ def test_session_capture_receipt_is_d_only_safe_and_classifies_a_complete_sessio
     session = us_equity_2026_session(date(2026, 7, 22))
     assert session is not None and session.kind == "regular"
     observed_at = session.window.close_ts + timedelta(minutes=1)
+    schedule_run_id = "intraday-head-20260722T2001000000000Z"
     client = _MinuteClient(
         [
             *_pages("QQQ", "NAS", _session_rows(session.window.open_ts, 390)),
@@ -77,6 +80,7 @@ def test_session_capture_receipt_is_d_only_safe_and_classifies_a_complete_sessio
         cache_root=cache_root,
         repository_root=repo_root,
         observed_at=observed_at,
+        schedule_run_id=schedule_run_id,
     )
 
     assert capture.outcome.status == "complete"
@@ -88,6 +92,50 @@ def test_session_capture_receipt_is_d_only_safe_and_classifies_a_complete_sessio
     assert not any(repo_root.iterdir())
     payload = json.loads(capture.evidence_path.read_text(encoding="utf-8"))
     assert payload == capture.outcome.safe_payload()
+    assert payload["schedule_run_id"] == schedule_run_id
+    assert payload["current_session_cumulative_coverage_category"] == "complete"
+    assert (
+        payload["current_session_cumulative_coverage_digest"]
+        == "sha256:"
+        + hashlib.sha256(
+            json.dumps(
+                payload["current_session_cumulative_coverage"],
+                ensure_ascii=True,
+                separators=(",", ":"),
+                sort_keys=True,
+            ).encode("utf-8")
+        ).hexdigest()
+    )
+    assert (
+        capture.evidence_sha256
+        == "sha256:" + hashlib.sha256(capture.evidence_path.read_bytes()).hexdigest()
+    )
+    output_payload = capture.safe_output_payload()
+    assert output_payload["terminal_receipt_binding"] == {
+        "schedule_run_id": schedule_run_id,
+        "observed_at": observed_at.isoformat(),
+        "receipt_sha256": capture.evidence_sha256,
+        "current_session_cumulative_coverage_digest": payload[
+            "current_session_cumulative_coverage_digest"
+        ],
+        "current_session_cumulative_coverage_category": "complete",
+    }
+    assert set(output_payload["terminal_receipt_binding"]) == {
+        "schedule_run_id",
+        "observed_at",
+        "receipt_sha256",
+        "current_session_cumulative_coverage_digest",
+        "current_session_cumulative_coverage_category",
+    }
+    assert "evidence_path" not in output_payload
+    unbound_capture = build_and_write_kis_paper_intraday_session_capture(
+        runs=runs,
+        cache_root=cache_root,
+        repository_root=repo_root,
+        observed_at=observed_at,
+    )
+    assert "schedule_run_id" not in unbound_capture.outcome.safe_payload()
+    assert "terminal_receipt_binding" not in unbound_capture.safe_output_payload()
     assert payload["route_class"] == "kis_paper_market_data"
     assert payload["storage"] == "external_market_data_only"
     coverage = payload["coverage"]
@@ -104,9 +152,7 @@ def test_session_capture_receipt_is_d_only_safe_and_classifies_a_complete_sessio
     ]
     cumulative_coverage = payload["current_session_cumulative_coverage"]
     assert cumulative_coverage["complete_regular_session_dates"] == ["2026-07-22"]
-    assert cumulative_coverage["regular_session_coverage"] == coverage[
-        "regular_session_coverage"
-    ]
+    assert cumulative_coverage["regular_session_coverage"] == coverage["regular_session_coverage"]
     rendered_cumulative_coverage = json.dumps(cumulative_coverage, sort_keys=True)
     for forbidden in (
         "manifest_path",
@@ -120,6 +166,17 @@ def test_session_capture_receipt_is_d_only_safe_and_classifies_a_complete_sessio
     rendered = json.dumps(payload, sort_keys=True)
     for forbidden in ("manifest_path", "row_fingerprints", "123.45", "paper-key", "access_token"):
         assert forbidden not in rendered
+
+
+def test_session_capture_schedule_run_id_is_optional_and_canonical() -> None:
+    assert validate_schedule_run_id(None) is None
+    assert validate_schedule_run_id("intraday-head-20260807T0424001234567Z") == (
+        "intraday-head-20260807T0424001234567Z"
+    )
+    with pytest.raises(ValueError, match="schedule run ID is invalid"):
+        validate_schedule_run_id("intraday-head-2026-07-22T200100Z")
+    with pytest.raises(ValueError, match="schedule run ID is invalid"):
+        validate_schedule_run_id("not-a-schedule-run-id")
 
 
 def test_session_capture_keeps_partial_terminal_head_data_partial_and_never_repairs_it(
@@ -210,9 +267,9 @@ def test_session_capture_keeps_partial_terminal_head_data_partial_and_never_repa
     assert capture.outcome.coverage.session_coverage[0].complete_minute_count == 239
     assert capture.outcome.coverage.session_coverage[0].missing_minute_ranges == ((239, 389),)
     current_session_cumulative_coverage = capture.outcome.current_session_cumulative_coverage
-    assert [
-        item.session_date for item in current_session_cumulative_coverage.session_coverage
-    ] == [date(2026, 7, 22)]
+    assert [item.session_date for item in current_session_cumulative_coverage.session_coverage] == [
+        date(2026, 7, 22)
+    ]
     assert current_session_cumulative_coverage.complete_sessions == ()
     assert current_session_cumulative_coverage.session_coverage[0].complete_minute_count == 239
     assert current_session_cumulative_coverage.session_coverage[0].missing_minute_ranges == (

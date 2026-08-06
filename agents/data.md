@@ -76,16 +76,16 @@ undocumented timestamp seed.
   current-source profile passed a network-disabled exact-entrypoint check. The
   related focused Data/schedule group passed 76 tests; this is preflight only,
   not a collection receipt.
-  The 2026-08-07 04:24 KST task-owned invocation advanced its exact terminal
-  pointer. Collection was `exit_zero` and the exact QQQ Paper-only session was
-  `no_intent`, while offline validation was `unavailable`; the immutable
-  terminal receipt therefore ends
-  `recovery/prospective_validation_payload_unavailable` with Scheduler result
-  `20`. It records no broker action, fill, PnL, model, or promotion fact.
-  Current terminal evidence does not cryptographically bind a same-run
-  cumulative-coverage receipt, so coverage remains unreattached rather than
-  inferred. The installed task owns its next 06:20 KST invocation; no manual
-  collection, task, KIS call, or broker action follows from this recovery.
+  The 2026-08-07 04:24 KST task-owned invocation remains
+  `recovery/prospective_validation_payload_unavailable`: collection
+  `exit_zero`, exact QQQ Paper-only `no_intent`, and no broker, fill, PnL,
+  model, or promotion fact. The rebuilt collector now emits a same-run
+  source-safe capture binding with exact schedule ID, full receipt hash,
+  cumulative digest, and strict `complete`/`incomplete` category. A fresh
+  missing binding is recovery rather than `legacy_unbound`; only historical
+  terminals remain unbound. The installed task owns 06:20 KST, and the next
+  local objective is explicit-session offline-validation reliability, not a
+  manual collection, KIS call, or broker action.
   On a successful collection, the same worker now gives the existing QQQ
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or

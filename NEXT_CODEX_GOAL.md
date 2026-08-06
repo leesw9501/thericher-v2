@@ -2,62 +2,51 @@
 
 ## Objective
 
-Build `intraday-head-capture-receipt-binding-v1`: make the existing
-intraday-head terminal receipt cryptographically bind only its same-run
-source-safe session-capture cumulative-coverage receipt, so offline
-reattachment can report categorical coverage without reading raw bars or
-choosing a newest artifact.
+Build `intraday-qqq-offline-validation-reliability-v1`: make the existing
+scheduled intraday QQQ no-intent path produce one deterministic, source-safe
+offline validation result or a precise local recovery category, rather than
+an opaque `validation unavailable` terminal outcome.
 
-The 2026-08-07 04:24 KST task advanced its terminal pointer: collection exited
-zero and the exact QQQ Paper-only session was `no_intent`, but offline
-validation was `unavailable`; terminal recovery is
-`prospective_validation_payload_unavailable` with Scheduler result `20`.
-No coverage claim is available because the current terminal contract lacks an
-exact capture-receipt binding. A fresh Claude falsification check returned
-`supported-with-limits`: binding must include the same schedule run identity,
-preserve old receipts as explicitly unbound rather than corrupt, and prevent a
-stale but internally consistent pointer rollback. It establishes provenance
-only, never data qualification.
+`intraday-head-capture-receipt-binding-v1` is implemented and the normal
+collector image was rebuilt. A new task-owned run now requires its same-run
+capture receipt binding; historical terminal receipts remain
+`legacy_unbound`. The existing task alone owns 2026-08-07 06:20 KST.
 
 ## Hard Boundaries
 
-- Do not manually call KIS, invoke or duplicate an intraday task, or submit or
-  modify any Paper order.
-- Preserve installed task identity, timing, `IgnoreNew`, and broker routes.
-- Do not alter data semantics, raw-data retention, model eligibility,
-  Paper/live authority, dashboard, capital rule, or live behavior.
-- Do not log, store, or expose raw bars, prices, provider payloads,
-  credentials, accounts, intents, order IDs, or `KIS_LIVE_*`.
-- The existing task alone owns the next 06:20 KST execution.
+- Do not manually call KIS, invoke or duplicate any task, submit/modify/cancel
+  a Paper order, or read `KIS_LIVE_*`.
+- Preserve installed task identity, timing, `IgnoreNew`, broker routes, and
+  raw-data retention.
+- Do not expose raw bars, prices, provider payloads, credentials, accounts,
+  intents, order IDs, or secret-like values in Git, logs, artifacts, or
+  review prompts.
+- Do not turn a missing or malformed session record into a validated result,
+  model claim, coverage qualification, Paper permission, or GPU campaign.
 
 ## Required Work
 
-1. Use the recorded Claude `supported-with-limits` falsification check before
-   the provenance/recovery contract change. Reconsult only if the proposed
-   contract materially expands; categorize an unavailable invocation only as
-   `review_unavailable`.
-2. Make a new session-capture receipt carry its owning schedule `run_id` and
-   add a minimal source-safe terminal chain: capture time, immutable full
-   SHA-256, and categorical cumulative-coverage digest/category only.
-3. Make the offline reader verify pointer -> terminal receipt -> deterministic
-   exact capture receipt -> run identity -> hash/digest. It must use only the
-   caller-supplied guarded cache root, require direct regular files, require
-   capture time no later than terminal time and the same ET session date, and
-   reject mismatches, links/reparse surfaces, timestamp conflicts, and
-   latest-artifact selection.
-4. Preserve existing receipts as `legacy_unbound` without attaching coverage.
-   Reject stale pointer rollback while preserving the existing single-task
-   writer. Add focused tests for normal binding, legacy behavior, and every
-   rejection case.
-5. Build the existing image through the normal local path only if required for
-   the next task-owned run; do not change the task definition. Reattach the
-   existing 06:20 task outcome only if it occurs during this objective;
-   otherwise preserve its `next_due` and continue another ready,
-   non-conflicting package.
+1. Inspect the exact source-safe 04:24 terminal/session/validation evidence
+   and the offline code path to classify why the valid QQQ `no_intent` session
+   produced `prospective_validation_payload_unavailable`. Do not infer from
+   raw cache contents or select a latest session.
+2. Make the existing explicit-session validator and scheduler integration
+   emit exactly one deterministic source-safe outcome for a valid matching
+   `no_intent` session. Preserve a distinct recovery result for absent,
+   malformed, mismatched, stale, or unsafe evidence.
+3. Keep validation offline and side-effect-free: no credential, network, KIS,
+   broker, order, or local-Paper mutation path. Reuse the existing task and
+   services; do not add a scheduler or public surface.
+4. Add focused tests for the identified failure mode, exact-session identity,
+   source-safe output, route isolation, and the no-false-success recovery
+   path. Rebuild only the existing affected image if source changes require it.
+5. If the existing 06:20 KST task runs while this objective is active,
+   reattach only its exact source-safe terminal evidence, including the new
+   bound/unbound status. Otherwise retain `next_due` and continue ready work.
 
 ## Verification
 
-Run focused binding tests, then:
+Run focused validation/schedule tests, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -68,4 +57,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Bind intraday coverage receipt to terminal evidence`
+`Harden intraday QQQ offline validation`

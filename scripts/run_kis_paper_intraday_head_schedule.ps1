@@ -146,6 +146,102 @@ function Get-SafeProfileSessionId {
     return $null
 }
 
+function Get-UniqueSafeSessionCaptureTerminalBinding {
+    param(
+        [Parameter(Mandatory = $true)]
+        [object[]]$Output,
+        [Parameter(Mandatory = $true)]
+        [string]$ExpectedScheduleRunId
+    )
+
+    $jsonLines = @(
+        $Output |
+            ForEach-Object { [string]$_ } |
+            Where-Object { $_.Trim().StartsWith("{") -and $_.Trim().EndsWith("}") }
+    )
+    $bindings = @()
+    $expectedProperties = @(
+        "schedule_run_id",
+        "observed_at",
+        "receipt_sha256",
+        "current_session_cumulative_coverage_digest",
+        "current_session_cumulative_coverage_category"
+    ) | Sort-Object
+    foreach ($line in $jsonLines) {
+        try {
+            $payload = $line | ConvertFrom-Json -ErrorAction Stop
+        } catch {
+            continue
+        }
+        if ($payload.kind -ne "kis_paper_intraday_session_capture") {
+            continue
+        }
+        $binding = $payload.terminal_receipt_binding
+        if ($null -eq $binding) {
+            continue
+        }
+        $propertyNames = @($binding.PSObject.Properties.Name | Sort-Object)
+        if (
+            $propertyNames.Count -ne $expectedProperties.Count `
+                -or ($propertyNames -join "|") -ne ($expectedProperties -join "|")
+        ) {
+            continue
+        }
+        $scheduleRunId = [string]$binding.schedule_run_id
+        $observedAtValue = $binding.observed_at
+        if ($observedAtValue -is [datetime]) {
+            if ($observedAtValue.Kind -eq [System.DateTimeKind]::Unspecified) {
+                continue
+            }
+            $observedAt = $observedAtValue.ToUniversalTime().ToString(
+                "yyyy-MM-ddTHH:mm:ss.ffffffZ",
+                [System.Globalization.CultureInfo]::InvariantCulture
+            )
+        } elseif ($observedAtValue -is [datetimeoffset]) {
+            $observedAt = $observedAtValue.UtcDateTime.ToString(
+                "yyyy-MM-ddTHH:mm:ss.ffffffZ",
+                [System.Globalization.CultureInfo]::InvariantCulture
+            )
+        } else {
+            $observedAt = [string]$observedAtValue
+        }
+        $receiptSha256 = [string]$binding.receipt_sha256
+        $coverageDigest = [string]$binding.current_session_cumulative_coverage_digest
+        $coverageCategory = [string]$binding.current_session_cumulative_coverage_category
+        if (
+            $scheduleRunId -ne $ExpectedScheduleRunId `
+                -or $scheduleRunId -notmatch '^[A-Za-z0-9._-]{1,160}$' `
+                -or $observedAt -notmatch '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|\+00:00)$' `
+                -or $receiptSha256 -notmatch '^sha256:[0-9a-f]{64}$' `
+                -or $coverageDigest -notmatch '^sha256:[0-9a-f]{64}$' `
+                -or $coverageCategory -notin @("complete", "incomplete")
+        ) {
+            continue
+        }
+        $bindings += [pscustomobject]@{
+            schedule_run_id = $scheduleRunId
+            observed_at = $observedAt
+            receipt_sha256 = $receiptSha256
+            current_session_cumulative_coverage_digest = $coverageDigest
+            current_session_cumulative_coverage_category = $coverageCategory
+        }
+    }
+    if ($bindings.Count -eq 0) {
+        return $null
+    }
+    $identities = @(
+        $bindings |
+            ForEach-Object {
+                "$($_.schedule_run_id)|$($_.observed_at)|$($_.receipt_sha256)|$($_.current_session_cumulative_coverage_digest)|$($_.current_session_cumulative_coverage_category)"
+            } |
+            Sort-Object -Unique
+    )
+    if ($identities.Count -ne 1) {
+        return $null
+    }
+    return $bindings[0]
+}
+
 function New-ScheduleRunId {
     param(
         [Parameter(Mandatory = $true)]
@@ -214,13 +310,30 @@ if (-not (Test-Path -LiteralPath $composePath -PathType Leaf)) {
 }
 
 $collectionStartedAt = (Get-Date).ToUniversalTime()
+$scheduleRunId = New-ScheduleRunId -ObservedAt $collectionStartedAt
+$collectionCommand = @(
+    "python",
+    "scripts/backfill_kis_paper_private_intraday.py",
+    "--execute",
+    "--mode",
+    "session-capture",
+    "--skip-legacy-preparation",
+    "--pages-per-target",
+    "4",
+    "--preparation-artifact-root",
+    "/app/model_artifacts",
+    "--runtime-projection",
+    "/app/runtime/state/kis_paper_intraday_freshness.json",
+    "--schedule-run-id",
+    $scheduleRunId
+)
 $collection = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `
-    -Service "kis-paper-intraday-head"
+    -Service "kis-paper-intraday-head" `
+    -CommandOverride $collectionCommand
 $collectionReturnedAt = (Get-Date).ToUniversalTime()
 $collectionExitCode = [int]$collection.ExitCode
 $scheduleObservedAt = $collectionReturnedAt
-$scheduleRunId = New-ScheduleRunId -ObservedAt $scheduleObservedAt
 $scheduleObservedAtMarker = $scheduleObservedAt.ToString(
     "o",
     [System.Globalization.CultureInfo]::InvariantCulture
@@ -255,6 +368,9 @@ $captureCycleExitCode = 0
 $captureCycleStatus = "not_applicable"
 $observationExitCode = 0
 $observationStatus = "not_applicable"
+$sessionCaptureBinding = Get-UniqueSafeSessionCaptureTerminalBinding `
+    -Output $collection.Output `
+    -ExpectedScheduleRunId $scheduleRunId
 if ($collectionExitCode -eq 0) {
     $prospectiveLoopStatus = "embedded"
     $prospectiveSession = Invoke-HeadProfileService `
@@ -472,6 +588,7 @@ $scheduleReceiptCommand = @(
     [string]$captureCycleExitCode,
     "--capture-cycle-status",
     $captureCycleStatus,
+    "--require-session-capture-binding",
     "--artifact-root",
     "/app/model_artifacts",
     "--repository-root",
@@ -491,6 +608,20 @@ if ($null -ne $prospectiveSpyCycleId) {
 }
 if ($null -ne $prospectiveSpyCanaryRunId) {
     $scheduleReceiptCommand += @("--prospective-spy-canary-run-id", [string]$prospectiveSpyCanaryRunId)
+}
+if ($null -ne $sessionCaptureBinding) {
+    $scheduleReceiptCommand += @(
+        "--session-capture-run-id",
+        [string]$sessionCaptureBinding.schedule_run_id,
+        "--session-capture-observed-at",
+        [string]$sessionCaptureBinding.observed_at,
+        "--session-capture-receipt-sha256",
+        [string]$sessionCaptureBinding.receipt_sha256,
+        "--session-capture-coverage-digest",
+        [string]$sessionCaptureBinding.current_session_cumulative_coverage_digest,
+        "--session-capture-coverage-category",
+        [string]$sessionCaptureBinding.current_session_cumulative_coverage_category
+    )
 }
 $scheduleReceipt = Invoke-HeadProfileService `
     -ProjectRoot $resolvedProjectRoot `

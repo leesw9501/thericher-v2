@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import stat
 import tempfile
@@ -13,8 +14,12 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Literal
+from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
+from thericher_v2.data.kis_paper_intraday_session_capture import (
+    KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES,
+)
 
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND = "kis_paper_intraday_head_schedule_receipt"
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY = (
@@ -51,6 +56,17 @@ _SCHEDULE_RECEIPT_KEYS = frozenset(
         "terminal",
         "artifact_policy",
         "claim",
+    }
+)
+_SCHEDULE_RECEIPT_BINDING_KEY = "terminal_receipt_binding"
+_SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY = "session_capture_binding_required"
+_TERMINAL_RECEIPT_BINDING_KEYS = frozenset(
+    {
+        "schedule_run_id",
+        "observed_at",
+        "receipt_sha256",
+        "current_session_cumulative_coverage_digest",
+        "current_session_cumulative_coverage_category",
     }
 )
 _SCHEDULE_RECEIPT_TERMINAL_KEYS = frozenset(
@@ -103,6 +119,46 @@ _CAPTURE_CYCLE_STATUSES = frozenset(
         "busy",
     }
 )
+_CAPTURE_RECEIPT_KIND = "kis_paper_intraday_session_capture"
+_CAPTURE_RECEIPT_DIRECTORY = ("v1", "session-capture")
+_EASTERN_TZ = ZoneInfo("America/New_York")
+
+
+@dataclass(frozen=True)
+class KisPaperIntradayHeadTerminalReceiptBinding:
+    """Source-safe reference to one exact same-run session-capture receipt."""
+
+    schedule_run_id: str
+    observed_at: datetime
+    receipt_sha256: str
+    current_session_cumulative_coverage_digest: str
+    current_session_cumulative_coverage_category: str
+
+    def __post_init__(self) -> None:
+        _require_schedule_run_id(self.schedule_run_id, "binding schedule run id")
+        object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
+        _require_sha256(self.receipt_sha256, "binding receipt sha256")
+        _require_sha256(
+            self.current_session_cumulative_coverage_digest,
+            "binding cumulative coverage digest",
+        )
+        _require_capture_coverage_category(
+            self.current_session_cumulative_coverage_category,
+            "binding cumulative coverage category",
+        )
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "schedule_run_id": self.schedule_run_id,
+            "observed_at": _utc_marker(self.observed_at),
+            "receipt_sha256": self.receipt_sha256,
+            "current_session_cumulative_coverage_digest": (
+                self.current_session_cumulative_coverage_digest
+            ),
+            "current_session_cumulative_coverage_category": (
+                self.current_session_cumulative_coverage_category
+            ),
+        }
 
 
 @dataclass(frozen=True)
@@ -128,13 +184,15 @@ class KisPaperIntradayHeadScheduleReceipt:
     observation_status: str
     capture_cycle_exit_code: int
     capture_cycle_status: str
+    session_capture_binding_required: bool
+    terminal_receipt_binding: KisPaperIntradayHeadTerminalReceiptBinding | None
     terminal_status: str
     recovery_class: str
     scheduler_exit_code: int
     evidence_path: Path
 
     def safe_payload(self) -> dict[str, object]:
-        return {
+        payload = {
             "schema_version": SCHEMA_VERSION,
             "kind": KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND,
             "status": self.terminal_status,
@@ -188,6 +246,11 @@ class KisPaperIntradayHeadScheduleReceipt:
             },
             "claim": _SCHEDULE_RECEIPT_CLAIM,
         }
+        if self.session_capture_binding_required:
+            payload[_SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY] = True
+        if self.terminal_receipt_binding is not None:
+            payload[_SCHEDULE_RECEIPT_BINDING_KEY] = self.terminal_receipt_binding.safe_payload()
+        return payload
 
 
 class KisPaperIntradayHeadScheduleReceiptError(ValueError):
@@ -204,6 +267,9 @@ class KisPaperIntradayHeadScheduleFact:
     recovery_class: str
     scheduler_exit_code: int
     receipt_sha256: str
+    coverage_binding_status: Literal["legacy_unbound", "verified"]
+    current_session_cumulative_coverage_digest: str | None
+    current_session_cumulative_coverage_category: str | None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -213,6 +279,28 @@ class KisPaperIntradayHeadScheduleFact:
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_terminal_status_invalid")
         _require_exit_codes(self.scheduler_exit_code)
         _require_sha256(self.receipt_sha256, "receipt sha256")
+        if self.coverage_binding_status == "legacy_unbound":
+            if (
+                self.current_session_cumulative_coverage_digest is not None
+                or self.current_session_cumulative_coverage_category is not None
+            ):
+                raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
+        elif self.coverage_binding_status == "verified":
+            if (
+                self.current_session_cumulative_coverage_digest is None
+                or self.current_session_cumulative_coverage_category is None
+            ):
+                raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
+            _require_sha256(
+                self.current_session_cumulative_coverage_digest,
+                "coverage binding digest",
+            )
+            _require_capture_coverage_category(
+                self.current_session_cumulative_coverage_category,
+                "coverage binding category",
+            )
+        else:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
 
     def safe_payload(self) -> dict[str, object]:
         """Expose only terminal scheduling categories, never external evidence paths."""
@@ -226,6 +314,13 @@ class KisPaperIntradayHeadScheduleFact:
             "recovery_class": self.recovery_class,
             "scheduler_exit_code": self.scheduler_exit_code,
             "receipt_sha256": self.receipt_sha256,
+            "coverage_binding_status": self.coverage_binding_status,
+            "current_session_cumulative_coverage_digest": (
+                self.current_session_cumulative_coverage_digest
+            ),
+            "current_session_cumulative_coverage_category": (
+                self.current_session_cumulative_coverage_category
+            ),
         }
 
 
@@ -246,6 +341,8 @@ class _ScheduleReceiptTerminal:
     terminal_status: Literal["complete", "recovery"]
     recovery_class: str
     scheduler_exit_code: int
+    session_capture_binding_required: bool
+    terminal_receipt_binding: KisPaperIntradayHeadTerminalReceiptBinding | None
 
 
 def write_kis_paper_intraday_head_schedule_receipt(
@@ -268,6 +365,12 @@ def write_kis_paper_intraday_head_schedule_receipt(
     observation_status: str,
     capture_cycle_exit_code: int,
     capture_cycle_status: str,
+    session_capture_run_id: str | None = None,
+    session_capture_observed_at: datetime | None = None,
+    session_capture_receipt_sha256: str | None = None,
+    session_capture_coverage_digest: str | None = None,
+    session_capture_coverage_category: str | None = None,
+    require_session_capture_binding: bool = False,
     artifact_root: Path = DEFAULT_KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_ROOT,
     repository_root: Path = _DEFAULT_REPOSITORY_ROOT,
     observed_at: datetime,
@@ -300,26 +403,45 @@ def write_kis_paper_intraday_head_schedule_receipt(
         capture_cycle_exit_code=capture_cycle_exit_code,
         capture_cycle_status=capture_cycle_status,
     )
-
-    terminal_status, recovery_class, scheduler_exit_code = _terminal_outcome(
-        collection_exit_code=collection_exit_code,
-        prospective_spy_cycle_exit_code=prospective_spy_cycle_exit_code,
-        prospective_spy_cycle_status=prospective_spy_cycle_status,
-        prospective_spy_cycle_id=prospective_spy_cycle_id,
-        prospective_spy_canary_run_id=prospective_spy_canary_run_id,
-        prospective_loop_exit_code=prospective_loop_exit_code,
-        prospective_loop_status=prospective_loop_status,
-        prospective_session_exit_code=prospective_session_exit_code,
-        prospective_session_status=prospective_session_status,
-        prospective_session_id=prospective_session_id,
-        prospective_validation_exit_code=prospective_validation_exit_code,
-        prospective_validation_status=prospective_validation_status,
-        prospective_validation_session_id=prospective_validation_session_id,
-        observation_exit_code=observation_exit_code,
-        observation_status=observation_status,
-        capture_cycle_exit_code=capture_cycle_exit_code,
-        capture_cycle_status=capture_cycle_status,
+    binding = _terminal_receipt_binding_from_inputs(
+        session_capture_run_id=session_capture_run_id,
+        session_capture_observed_at=session_capture_observed_at,
+        session_capture_receipt_sha256=session_capture_receipt_sha256,
+        session_capture_coverage_digest=session_capture_coverage_digest,
+        session_capture_coverage_category=session_capture_coverage_category,
     )
+    if binding is not None and binding.schedule_run_id != run_id:
+        raise ValueError("terminal receipt binding run id must match schedule run id")
+    if type(require_session_capture_binding) is not bool:
+        raise ValueError("terminal receipt binding requirement is invalid")
+    binding_required = require_session_capture_binding or binding is not None
+
+    if binding_required and binding is None and collection_exit_code == 0:
+        terminal_status, recovery_class, scheduler_exit_code = (
+            "recovery",
+            "session_capture_binding_unavailable",
+            SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE,
+        )
+    else:
+        terminal_status, recovery_class, scheduler_exit_code = _terminal_outcome(
+            collection_exit_code=collection_exit_code,
+            prospective_spy_cycle_exit_code=prospective_spy_cycle_exit_code,
+            prospective_spy_cycle_status=prospective_spy_cycle_status,
+            prospective_spy_cycle_id=prospective_spy_cycle_id,
+            prospective_spy_canary_run_id=prospective_spy_canary_run_id,
+            prospective_loop_exit_code=prospective_loop_exit_code,
+            prospective_loop_status=prospective_loop_status,
+            prospective_session_exit_code=prospective_session_exit_code,
+            prospective_session_status=prospective_session_status,
+            prospective_session_id=prospective_session_id,
+            prospective_validation_exit_code=prospective_validation_exit_code,
+            prospective_validation_status=prospective_validation_status,
+            prospective_validation_session_id=prospective_validation_session_id,
+            observation_exit_code=observation_exit_code,
+            observation_status=observation_status,
+            capture_cycle_exit_code=capture_cycle_exit_code,
+            capture_cycle_status=capture_cycle_status,
+        )
     root = _external_artifact_root(artifact_root=artifact_root, repository_root=repository_root)
     result = KisPaperIntradayHeadScheduleReceipt(
         run_id=run_id,
@@ -341,6 +463,8 @@ def write_kis_paper_intraday_head_schedule_receipt(
         observation_status=observation_status,
         capture_cycle_exit_code=capture_cycle_exit_code,
         capture_cycle_status=capture_cycle_status,
+        session_capture_binding_required=binding_required,
+        terminal_receipt_binding=binding,
         terminal_status=terminal_status,
         recovery_class=recovery_class,
         scheduler_exit_code=scheduler_exit_code,
@@ -360,6 +484,7 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
     artifact_root: Path,
     *,
     repository_root: Path = _DEFAULT_REPOSITORY_ROOT,
+    capture_cache_root: Path | None = None,
 ) -> KisPaperIntradayHeadScheduleFact:
     """Read the one task-written pointer and its exact immutable terminal receipt.
 
@@ -403,6 +528,11 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         or receipt.scheduler_exit_code != runtime.scheduler_exit_code
     ):
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_runtime_receipt_mismatch")
+    coverage_binding_status, coverage_digest, coverage_category = _read_capture_binding(
+        terminal=receipt,
+        capture_cache_root=capture_cache_root,
+        repository_root=repository_root,
+    )
     return KisPaperIntradayHeadScheduleFact(
         run_id=runtime.run_id,
         observed_at=runtime.observed_at,
@@ -410,6 +540,9 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         recovery_class=runtime.recovery_class,
         scheduler_exit_code=runtime.scheduler_exit_code,
         receipt_sha256=receipt_sha256,
+        coverage_binding_status=coverage_binding_status,
+        current_session_cumulative_coverage_digest=coverage_digest,
+        current_session_cumulative_coverage_category=coverage_category,
     )
 
 
@@ -475,6 +608,18 @@ def _write_schedule_runtime_pointer(
         / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY
         / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME
     )
+    if runtime_path.exists():
+        _require_direct_regular_file(
+            root=root,
+            path=runtime_path,
+            error_code="schedule_runtime_invalid",
+        )
+        _, current_payload = _read_json_payload(runtime_path, "schedule_runtime_invalid")
+        current = _runtime_from_payload(current_payload)
+        if current.observed_at > receipt.observed_at:
+            return
+        if current.observed_at == receipt.observed_at and current.run_id != receipt.run_id:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_runtime_pointer_conflict")
     _replace_json_atomically(
         runtime_path,
         {
@@ -517,7 +662,14 @@ def _runtime_from_payload(payload: Mapping[str, Any]) -> _ScheduleRuntimePointer
 
 def _receipt_terminal_from_payload(payload: Mapping[str, Any]) -> _ScheduleReceiptTerminal:
     if (
-        frozenset(payload) != _SCHEDULE_RECEIPT_KEYS
+        frozenset(payload)
+        not in {
+            _SCHEDULE_RECEIPT_KEYS,
+            _SCHEDULE_RECEIPT_KEYS | {_SCHEDULE_RECEIPT_BINDING_KEY},
+            _SCHEDULE_RECEIPT_KEYS | {_SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY},
+            _SCHEDULE_RECEIPT_KEYS
+            | {_SCHEDULE_RECEIPT_BINDING_KEY, _SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY},
+        }
         or payload.get("schema_version") != SCHEMA_VERSION
         or payload.get("kind") != KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND
         or payload.get("artifact_policy") != _SCHEDULE_RECEIPT_ARTIFACT_POLICY
@@ -535,13 +687,262 @@ def _receipt_terminal_from_payload(payload: Mapping[str, Any]) -> _ScheduleRecei
     )
     if payload.get("status") != terminal_status:
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+    binding_required = _SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY in payload
+    if binding_required and payload.get(_SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY) is not True:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+    binding_value = payload.get(_SCHEDULE_RECEIPT_BINDING_KEY)
+    binding = (
+        None
+        if binding_value is None
+        else _terminal_receipt_binding_from_payload(
+            binding_value,
+            error_code="schedule_evidence_invalid",
+        )
+    )
+    binding_required = binding_required or binding is not None
     return _ScheduleReceiptTerminal(
         run_id=_payload_schedule_run_id(payload.get("run_id"), "receipt run id"),
         observed_at=_payload_utc(payload.get("observed_at"), "receipt observed at"),
         terminal_status=terminal_status,
         recovery_class=recovery_class,
         scheduler_exit_code=scheduler_exit_code,
+        session_capture_binding_required=binding_required,
+        terminal_receipt_binding=binding,
     )
+
+
+def _terminal_receipt_binding_from_inputs(
+    *,
+    session_capture_run_id: str | None,
+    session_capture_observed_at: datetime | None,
+    session_capture_receipt_sha256: str | None,
+    session_capture_coverage_digest: str | None,
+    session_capture_coverage_category: str | None,
+) -> KisPaperIntradayHeadTerminalReceiptBinding | None:
+    values = (
+        session_capture_run_id,
+        session_capture_observed_at,
+        session_capture_receipt_sha256,
+        session_capture_coverage_digest,
+        session_capture_coverage_category,
+    )
+    if all(value is None for value in values):
+        return None
+    if any(value is None for value in values):
+        raise ValueError("terminal receipt binding is invalid")
+    try:
+        return KisPaperIntradayHeadTerminalReceiptBinding(
+            schedule_run_id=session_capture_run_id,
+            observed_at=session_capture_observed_at,
+            receipt_sha256=session_capture_receipt_sha256,
+            current_session_cumulative_coverage_digest=session_capture_coverage_digest,
+            current_session_cumulative_coverage_category=session_capture_coverage_category,
+        )
+    except ValueError as error:
+        raise ValueError("terminal receipt binding is invalid") from error
+
+
+def _terminal_receipt_binding_from_payload(
+    value: object,
+    *,
+    error_code: str,
+) -> KisPaperIntradayHeadTerminalReceiptBinding:
+    if not isinstance(value, Mapping) or frozenset(value) != _TERMINAL_RECEIPT_BINDING_KEYS:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+    try:
+        return KisPaperIntradayHeadTerminalReceiptBinding(
+            schedule_run_id=_payload_schedule_run_id(
+                value.get("schedule_run_id"),
+                "binding schedule run id",
+            ),
+            observed_at=_payload_utc(value.get("observed_at"), "binding observed at"),
+            receipt_sha256=_payload_sha256(value.get("receipt_sha256"), "binding receipt sha256"),
+            current_session_cumulative_coverage_digest=_payload_sha256(
+                value.get("current_session_cumulative_coverage_digest"),
+                "binding cumulative coverage digest",
+            ),
+            current_session_cumulative_coverage_category=_payload_capture_coverage_category(
+                value.get("current_session_cumulative_coverage_category"),
+                "binding cumulative coverage category",
+            ),
+        )
+    except KisPaperIntradayHeadScheduleReceiptError as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
+
+
+def _read_capture_binding(
+    *,
+    terminal: _ScheduleReceiptTerminal,
+    capture_cache_root: Path | None,
+    repository_root: Path,
+) -> tuple[Literal["legacy_unbound", "verified"], str | None, str | None]:
+    binding = terminal.terminal_receipt_binding
+    if binding is None:
+        if terminal.session_capture_binding_required:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_required")
+        return "legacy_unbound", None, None
+    if capture_cache_root is None:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_cache_root_required")
+    if binding.schedule_run_id != terminal.run_id:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+    if binding.observed_at > terminal.observed_at:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+    if (
+        binding.observed_at.astimezone(_EASTERN_TZ).date()
+        != terminal.observed_at.astimezone(_EASTERN_TZ).date()
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+    capture_root = _readable_capture_cache_root(
+        cache_root=capture_cache_root,
+        repository_root=repository_root,
+    )
+    capture_path = capture_root / _capture_receipt_filename(binding)
+    _require_capture_regular_file(
+        cache_root=Path(capture_cache_root),
+        capture_root=capture_root,
+        path=capture_path,
+        error_code="schedule_capture_receipt_invalid",
+    )
+    capture_bytes, capture_payload = _read_json_payload(
+        capture_path,
+        "schedule_capture_receipt_invalid",
+    )
+    if _sha256(capture_bytes) != binding.receipt_sha256:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+    _verify_capture_payload_binding(capture_payload, binding)
+    return (
+        "verified",
+        binding.current_session_cumulative_coverage_digest,
+        binding.current_session_cumulative_coverage_category,
+    )
+
+
+def _capture_receipt_filename(binding: KisPaperIntradayHeadTerminalReceiptBinding) -> str:
+    digest_prefix = binding.receipt_sha256.removeprefix("sha256:")[:16]
+    return f"{binding.observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{digest_prefix}.json"
+
+
+def _readable_capture_cache_root(*, cache_root: Path, repository_root: Path) -> Path:
+    requested_root = _lexical_absolute_path(cache_root)
+    _require_no_link_ancestors(requested_root, "schedule_capture_cache_root_invalid")
+    root = requested_root.resolve()
+    repository = Path(repository_root).resolve()
+    if root.is_relative_to(repository) or root.is_symlink() or not root.is_dir():
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_cache_root_invalid")
+    return root.joinpath(*_CAPTURE_RECEIPT_DIRECTORY)
+
+
+def _require_capture_regular_file(
+    *,
+    cache_root: Path,
+    capture_root: Path,
+    path: Path,
+    error_code: str,
+) -> None:
+    requested_root = _lexical_absolute_path(cache_root)
+    version_root = requested_root / _CAPTURE_RECEIPT_DIRECTORY[0]
+    requested_capture_root = version_root / _CAPTURE_RECEIPT_DIRECTORY[1]
+    _require_no_link_ancestors(path, error_code)
+    for candidate in (requested_root, version_root, requested_capture_root, path):
+        _require_non_link(candidate, error_code)
+    if (
+        capture_root != requested_capture_root.resolve()
+        or not requested_root.is_dir()
+        or not version_root.is_dir()
+        or not requested_capture_root.is_dir()
+        or not path.is_file()
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+    try:
+        is_regular_file = stat.S_ISREG(path.stat().st_mode)
+    except OSError as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
+    if not is_regular_file:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+
+
+def _verify_capture_payload_binding(
+    payload: Mapping[str, Any],
+    binding: KisPaperIntradayHeadTerminalReceiptBinding,
+) -> None:
+    if payload.get("kind") != _CAPTURE_RECEIPT_KIND:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    try:
+        capture_run_id = _payload_schedule_run_id(
+            payload.get("schedule_run_id"),
+            "capture schedule run id",
+        )
+        capture_observed_at = _payload_utc(payload.get("observed_at"), "capture observed at")
+        coverage_digest = _payload_sha256(
+            payload.get("current_session_cumulative_coverage_digest"),
+            "capture cumulative coverage digest",
+        )
+        coverage_category = _payload_safe_id(
+            payload.get("current_session_cumulative_coverage_category"),
+            "capture cumulative coverage category",
+        )
+    except KisPaperIntradayHeadScheduleReceiptError as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(
+            "schedule_capture_receipt_invalid"
+        ) from error
+    if (
+        capture_run_id != binding.schedule_run_id
+        or capture_observed_at != binding.observed_at
+        or coverage_digest != binding.current_session_cumulative_coverage_digest
+        or coverage_category != binding.current_session_cumulative_coverage_category
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+    current_coverage = payload.get("current_session_cumulative_coverage")
+    if not isinstance(current_coverage, Mapping):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    if _coverage_digest(current_coverage) != coverage_digest:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+    if _coverage_category(
+        current_coverage,
+        observed_at=capture_observed_at,
+    ) != coverage_category:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+
+
+def _coverage_digest(coverage: Mapping[str, Any]) -> str:
+    try:
+        encoded = json.dumps(
+            coverage,
+            ensure_ascii=True,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("ascii")
+    except (TypeError, UnicodeEncodeError) as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(
+            "schedule_capture_receipt_invalid"
+        ) from error
+    return _sha256(encoded)
+
+
+def _coverage_category(
+    coverage: Mapping[str, Any],
+    *,
+    observed_at: datetime,
+) -> Literal["complete", "incomplete"]:
+    sessions = coverage.get("regular_session_coverage")
+    if not isinstance(sessions, list):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    observed_session_date = observed_at.astimezone(_EASTERN_TZ).date().isoformat()
+    matching_sessions = [
+        item
+        for item in sessions
+        if isinstance(item, Mapping) and item.get("session_date") == observed_session_date
+    ]
+    if len(matching_sessions) > 1:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    if not matching_sessions:
+        return "incomplete"
+    status = matching_sessions[0].get("status")
+    if status == "complete":
+        return "complete"
+    if status == "short":
+        return "incomplete"
+    raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
 
 
 def _schedule_terminal_values(
@@ -581,6 +982,17 @@ def _payload_safe_id(value: object, field_name: str) -> str:
     text = _payload_text(value, field_name)
     try:
         _require_safe_id(text, field_name)
+    except ValueError as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(
+            f"schedule_{field_name}_invalid"
+        ) from error
+    return text
+
+
+def _payload_capture_coverage_category(value: object, field_name: str) -> str:
+    text = _payload_text(value, field_name)
+    try:
+        _require_capture_coverage_category(text, field_name)
     except ValueError as error:
         raise KisPaperIntradayHeadScheduleReceiptError(
             f"schedule_{field_name}_invalid"
@@ -790,8 +1202,8 @@ def _data_only_capture_cycle_recovery_class(
 
 
 def _readable_external_artifact_root(*, artifact_root: Path, repository_root: Path) -> Path:
-    requested_root = Path(artifact_root)
-    _require_non_link(requested_root, "schedule_runtime_invalid")
+    requested_root = _lexical_absolute_path(artifact_root)
+    _require_no_link_ancestors(requested_root, "schedule_runtime_invalid")
     root = requested_root.resolve()
     repository = Path(repository_root).resolve()
     mounted_artifact_root = root == repository / "model_artifacts" and root.is_mount()
@@ -803,6 +1215,7 @@ def _readable_external_artifact_root(*, artifact_root: Path, repository_root: Pa
 
 
 def _require_direct_regular_file(*, root: Path, path: Path, error_code: str) -> None:
+    _require_no_link_ancestors(path, error_code)
     execution_root = root / "execution"
     schedule_root = execution_root / "kis-paper-intraday-head-schedule"
     for candidate in (root, execution_root, schedule_root, path):
@@ -829,6 +1242,24 @@ def _require_non_link(path: Path, error_code: str) -> None:
         raise KisPaperIntradayHeadScheduleReceiptError(error_code)
 
 
+def _lexical_absolute_path(path: Path) -> Path:
+    return Path(os.path.abspath(os.fspath(path)))
+
+
+def _require_no_link_ancestors(path: Path, error_code: str) -> None:
+    lexical_path = _lexical_absolute_path(path)
+    for candidate in reversed((lexical_path, *lexical_path.parents)):
+        try:
+            metadata = candidate.lstat()
+        except FileNotFoundError:
+            continue
+        except OSError as error:
+            raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
+        is_reparse_point = bool(getattr(metadata, "st_file_attributes", 0) & 0x400)
+        if stat.S_ISLNK(metadata.st_mode) or is_reparse_point:
+            raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+
+
 def _read_json_payload(path: Path, error_code: str) -> tuple[bytes, Mapping[str, Any]]:
     try:
         encoded = path.read_bytes()
@@ -845,12 +1276,21 @@ def _sha256(value: bytes) -> str:
 
 
 def _external_artifact_root(*, artifact_root: Path, repository_root: Path) -> Path:
-    root = Path(artifact_root).resolve()
+    requested_root = _lexical_absolute_path(artifact_root)
+    try:
+        _require_no_link_ancestors(requested_root, "schedule_receipt_root_invalid")
+    except KisPaperIntradayHeadScheduleReceiptError as error:
+        raise ValueError("schedule receipt root must stay outside Git") from error
+    root = requested_root.resolve()
     repository = Path(repository_root).resolve()
     mounted_artifact_root = root == repository / "model_artifacts" and root.is_mount()
     if (root.is_relative_to(repository) and not mounted_artifact_root) or root.is_symlink():
         raise ValueError("schedule receipt root must stay outside Git")
     root.mkdir(parents=True, exist_ok=True)
+    try:
+        _require_no_link_ancestors(root, "schedule_receipt_root_invalid")
+    except KisPaperIntradayHeadScheduleReceiptError as error:
+        raise ValueError("schedule receipt root must stay outside Git") from error
     return root
 
 
@@ -909,6 +1349,11 @@ def _require_exit_codes(*values: int) -> None:
 
 def _require_safe_id(value: str, name: str) -> None:
     if value in {".", ".."} or _SAFE_ID.fullmatch(value) is None:
+        raise ValueError(f"{name} is invalid")
+
+
+def _require_capture_coverage_category(value: str, name: str) -> None:
+    if value not in KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES:
         raise ValueError(f"{name} is invalid")
 
 
@@ -975,6 +1420,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--observation-status", required=True)
     parser.add_argument("--capture-cycle-exit-code", type=int, required=True)
     parser.add_argument("--capture-cycle-status", required=True)
+    parser.add_argument("--session-capture-run-id")
+    parser.add_argument("--session-capture-observed-at", type=_parse_utc)
+    parser.add_argument("--session-capture-receipt-sha256")
+    parser.add_argument("--session-capture-coverage-digest")
+    parser.add_argument("--session-capture-coverage-category")
+    parser.add_argument("--require-session-capture-binding", action="store_true")
     parser.add_argument("--observed-at", type=_parse_utc, required=True)
     parser.add_argument(
         "--artifact-root",
@@ -987,6 +1438,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> None:
     args = build_parser().parse_args(argv)
+    terminal_receipt_binding = _terminal_receipt_binding_from_cli_args(args)
     result = write_kis_paper_intraday_head_schedule_receipt(
         run_id=args.run_id,
         collection_exit_code=args.collection_exit_code,
@@ -1006,11 +1458,28 @@ def main(argv: Sequence[str] | None = None) -> None:
         observation_status=args.observation_status,
         capture_cycle_exit_code=args.capture_cycle_exit_code,
         capture_cycle_status=args.capture_cycle_status,
+        require_session_capture_binding=args.require_session_capture_binding,
+        **terminal_receipt_binding,
         artifact_root=args.artifact_root,
         repository_root=args.repository_root,
         observed_at=args.observed_at,
     )
     print(json.dumps(result.safe_payload(), sort_keys=True))
+
+
+def _terminal_receipt_binding_from_cli_args(args: argparse.Namespace) -> dict[str, object]:
+    values = {
+        "session_capture_run_id": args.session_capture_run_id,
+        "session_capture_observed_at": args.session_capture_observed_at,
+        "session_capture_receipt_sha256": args.session_capture_receipt_sha256,
+        "session_capture_coverage_digest": args.session_capture_coverage_digest,
+        "session_capture_coverage_category": args.session_capture_coverage_category,
+    }
+    if all(value is None for value in values.values()):
+        return values
+    if any(value is None for value in values.values()):
+        raise ValueError("terminal receipt binding arguments must be complete")
+    return values
 
 
 if __name__ == "__main__":

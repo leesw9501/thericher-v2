@@ -14,21 +14,23 @@ external artifacts retain history.
 
 ## Current Objective
 
-`intraday-head-0424-source-safe-followup-v1` completed the exact 2026-08-07
-04:24 KST intraday-head reattachment. Its hash-validated task-owned receipt
-has collection `exit_zero`, the exact QQQ Paper-only session `no_intent`, and
-offline validation `unavailable`; it ends
-`recovery/prospective_validation_payload_unavailable` with Scheduler result
-`20`. It records no broker action, fill, PnL, alpha, or model outcome. The
-terminal contract does not cryptographically bind a same-run cumulative
-coverage receipt, so coverage remains unreattached rather than inferred. The
-installed task owns 06:20 KST; do not manually invoke or duplicate it.
+`intraday-head-capture-receipt-binding-v1` is complete and the existing
+collector image was rebuilt. A new task-owned capture carries its schedule
+run ID, full receipt SHA-256, and a strict `complete`/`incomplete` coverage
+category. The terminal receipt binds that exact capture only; a missing fresh
+binding becomes `recovery/session_capture_binding_unavailable`, while
+historical receipts remain `legacy_unbound`. Offline readers verify the
+pointer, immutable terminal, deterministic capture path, run ID, hash,
+digest, same-ET-date rule, and direct non-link files. This is provenance-only
+evidence, not data qualification, a model result, or an execution authority.
 
-A fresh Claude falsification check is `supported-with-limits` for the next
-receipt-binding change. It requires the capture receipt to carry the same
-schedule run identity, legacy receipts to remain explicitly unbound rather
-than corrupt, and a stale pointer rollback check. This is provenance-only
-evidence; it does not qualify data or change execution authority.
+The exact 2026-08-07 04:24 KST receipt remains
+`recovery/prospective_validation_payload_unavailable`: collection `exit_zero`,
+QQQ Paper-only `no_intent`, and offline validation `unavailable`, with no
+broker action, fill, PnL, alpha, or model outcome. The next bounded objective
+is to make that explicit-session offline validation deterministic without
+changing KIS, task, Paper, or live behavior. The installed task alone owns
+06:20 KST; do not manually invoke or duplicate it.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,
@@ -447,7 +449,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-07 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-07 23:15 KST |
-| Current-head receipt binding | Data / Execution | The exact 04:24 KST terminal receipt records collection `exit_zero`, QQQ `no_intent`, offline validation `unavailable`, and scoped recovery with Scheduler result `20`. It cannot bind same-run cumulative coverage yet. Add only that source-safe receipt chain; the existing task alone owns 06:20 KST. No manual KIS invocation, new task, or broker path |
+| Current-head receipt binding | Data / Execution | The exact 04:24 KST terminal receipt remains `recovery/prospective_validation_payload_unavailable` with collection `exit_zero` and QQQ `no_intent`. The rebuilt chain binds future same-run capture coverage, treats a fresh missing binding as recovery, and keeps historical receipts `legacy_unbound`. The existing task alone owns 06:20 KST. No manual KIS invocation, new task, or broker path |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
@@ -554,10 +556,11 @@ metadata-only projection. DST/pre-market behavior remains unproven.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
    or duplicate the existing task. Its latest 2026-08-06 23:35 KST Scheduler
    result is `0`; the next opportunity is 2026-08-07 23:35 KST.
-2. Build and verify the minimal terminal-to-capture receipt binding with exact
-   schedule run identity, explicit legacy-unbound compatibility, and stale
-   pointer rollback rejection. Do not change the installed task, KIS route,
-   Paper lifecycle, or raw-data scope. The existing task alone owns 06:20 KST.
+2. Diagnose and repair the explicit-session offline QQQ validation path so a
+   valid matching `no_intent` session emits one deterministic source-safe
+   validation result or an exact local recovery. Do not change the installed
+   task, KIS route, Paper lifecycle, or raw-data scope. The existing task
+   alone owns 06:20 KST.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality
    evidence.

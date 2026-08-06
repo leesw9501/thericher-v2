@@ -6,6 +6,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 
+import pytest
+
 from thericher_v2.execution.kis_private_intraday_backfill import (
     KisPaperPrivateIntradayBackfillRun,
 )
@@ -17,6 +19,7 @@ def test_session_capture_script_builds_one_client_and_preserves_qqq_preparation_
     tmp_path: Path,
 ) -> None:
     script = _load_script()
+    schedule_run_id = "intraday-head-20260722T0500000000000Z"
     monkeypatch.setenv("KIS_PAPER_APP_KEY", "paper-key")
     monkeypatch.setenv("KIS_PAPER_APP_SECRET", "paper-secret")
     monkeypatch.setenv("KIS_PAPER_ACCOUNT_NO", "must-not-be-used")
@@ -65,13 +68,18 @@ def test_session_capture_script_builds_one_client_and_preserves_qqq_preparation_
     def finalize(**kwargs: object) -> object:
         captured.update(kwargs)
         return SimpleNamespace(
-            outcome=SimpleNamespace(
-                safe_payload=lambda: {
-                    "collection_mode": "session_capture",
-                    "route_class": "kis_paper_market_data",
-                    "status": "complete",
-                }
-            )
+            safe_output_payload=lambda: {
+                "collection_mode": "session_capture",
+                "route_class": "kis_paper_market_data",
+                "status": "complete",
+                "terminal_receipt_binding": {
+                    "schedule_run_id": schedule_run_id,
+                    "observed_at": "2026-07-22T05:00:00+00:00",
+                    "receipt_sha256": "sha256:" + "e" * 64,
+                    "current_session_cumulative_coverage_digest": "sha256:" + "c" * 64,
+                    "current_session_cumulative_coverage_category": "complete",
+                },
+            }
         )
 
     monkeypatch.setattr(script, "KisPaperMarketDataClient", paper_client)
@@ -91,6 +99,8 @@ def test_session_capture_script_builds_one_client_and_preserves_qqq_preparation_
                 "--execute",
                 "--mode",
                 "session-capture",
+                "--schedule-run-id",
+                schedule_run_id,
                 "--pages-per-target",
                 "1",
                 "--preparation-artifact-root",
@@ -112,6 +122,7 @@ def test_session_capture_script_builds_one_client_and_preserves_qqq_preparation_
         / "intraday-head",
         "repository_root": script._REPO_ROOT,
         "observed_at": datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        "schedule_run_id": schedule_run_id,
     }
     assert preparations == [
         {
@@ -129,6 +140,13 @@ def test_session_capture_script_builds_one_client_and_preserves_qqq_preparation_
         "preparation": {"status": "pending"},
         "route_class": "kis_paper_market_data",
         "status": "complete",
+        "terminal_receipt_binding": {
+            "schedule_run_id": schedule_run_id,
+            "observed_at": "2026-07-22T05:00:00+00:00",
+            "receipt_sha256": "sha256:" + "e" * 64,
+            "current_session_cumulative_coverage_digest": "sha256:" + "c" * 64,
+            "current_session_cumulative_coverage_category": "complete",
+        },
     }
 
 
@@ -162,13 +180,11 @@ def test_session_capture_prepares_qqq_even_when_spy_makes_the_cycle_incomplete(
         script,
         "build_and_write_kis_paper_intraday_session_capture",
         lambda **_kwargs: SimpleNamespace(
-            outcome=SimpleNamespace(
-                safe_payload=lambda: {
-                    "collection_mode": "session_capture",
-                    "route_class": "kis_paper_market_data",
-                    "status": "complete",
-                }
-            )
+            safe_output_payload=lambda: {
+                "collection_mode": "session_capture",
+                "route_class": "kis_paper_market_data",
+                "status": "complete",
+            }
         ),
     )
     preparations: list[object] = []
@@ -194,6 +210,33 @@ def test_session_capture_prepares_qqq_even_when_spy_makes_the_cycle_incomplete(
         "route_class": "kis_paper_market_data",
         "status": "complete",
     }
+
+
+def test_session_capture_rejects_an_invalid_schedule_run_id_before_collector_setup(
+    monkeypatch,
+) -> None:
+    script = _load_script()
+    setup_attempted = False
+
+    def load_config(_dotenv_path: Path) -> object:
+        nonlocal setup_attempted
+        setup_attempted = True
+        return object()
+
+    monkeypatch.setattr(script, "_load_paper_config", load_config)
+
+    with pytest.raises(SystemExit):
+        script.main(
+            [
+                "--execute",
+                "--mode",
+                "session-capture",
+                "--schedule-run-id",
+                "not-a-schedule-run-id",
+            ]
+        )
+
+    assert setup_attempted is False
 
 
 def test_session_capture_preparation_fault_does_not_change_collector_success(
@@ -225,13 +268,11 @@ def test_session_capture_preparation_fault_does_not_change_collector_success(
         script,
         "build_and_write_kis_paper_intraday_session_capture",
         lambda **_kwargs: SimpleNamespace(
-            outcome=SimpleNamespace(
-                safe_payload=lambda: {
-                    "collection_mode": "session_capture",
-                    "route_class": "kis_paper_market_data",
-                    "status": "complete",
-                }
-            )
+            safe_output_payload=lambda: {
+                "collection_mode": "session_capture",
+                "route_class": "kis_paper_market_data",
+                "status": "complete",
+            }
         ),
     )
     monkeypatch.setattr(

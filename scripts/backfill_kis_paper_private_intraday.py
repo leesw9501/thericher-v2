@@ -16,6 +16,7 @@ from thericher_v2.data.kis_paper_intraday import (
 )
 from thericher_v2.data.kis_paper_intraday_session_capture import (
     build_and_write_kis_paper_intraday_session_capture,
+    validate_schedule_run_id,
 )
 from thericher_v2.data.market_data_freshness_runtime import write_market_data_freshness_runtime
 from thericher_v2.execution.kis_market_data import (
@@ -73,6 +74,7 @@ def main(
         default=_preparation_artifact_root_from_environment(),
     )
     parser.add_argument("--runtime-projection", type=Path)
+    parser.add_argument("--schedule-run-id", type=validate_schedule_run_id)
     args = parser.parse_args(argv)
     observed_at = clock()
     if args.project_only:
@@ -133,6 +135,7 @@ def main(
                 cache_root=collection_root,
                 repository_root=_REPO_ROOT,
                 observed_at=observed_at,
+                schedule_run_id=args.schedule_run_id,
             )
             if args.mode == "session-capture"
             else None
@@ -159,7 +162,7 @@ def main(
     collection_succeeded = _collection_succeeded(results)
     payload: dict[str, object]
     if session_capture is not None:
-        payload = {"mode": args.mode, **session_capture.outcome.safe_payload()}
+        payload = {"mode": args.mode, **session_capture.safe_output_payload()}
     else:
         payload = {
             "status": "complete" if collection_succeeded else "incomplete",
@@ -244,8 +247,7 @@ def _collection_succeeded(results: Sequence[KisPaperPrivateIntradayBackfillRun])
         len(results) == len(expected_targets)
         and {result.target_key for result in results} == expected_targets
         and all(
-            result.status in {"collected", "recovered", "source_exhausted"}
-            for result in results
+            result.status in {"collected", "recovered", "source_exhausted"} for result in results
         )
     )
 

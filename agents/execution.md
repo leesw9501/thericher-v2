@@ -49,12 +49,14 @@ The 2026-08-05 23:50 KST daily SPY receipt is exactly
 `daily-spy-20260805T145001601078Z`: `no_intent/quote_unavailable`, no run ID,
 and receipt observer plus terminal-field probe both `not_attempted`. It has no
 canary lifecycle, broker, fill, or PnL interpretation. The 2026-08-07 04:24
-KST intraday-head receipt has collection `exit_zero`, an exact QQQ Paper-only
-session `no_intent`, and offline validation `unavailable`. Its terminal is
-`recovery/prospective_validation_payload_unavailable` with Scheduler result
-`20`; it records no broker action, lifecycle, fill, or PnL result. The
-installed task owns its next 06:20 KST invocation; no manual KIS call, task,
-order path, or authority change follows from this scoped recovery.
+KST intraday-head receipt remains
+`recovery/prospective_validation_payload_unavailable`: collection `exit_zero`,
+exact QQQ Paper-only `no_intent`, and no broker action, lifecycle, fill, or
+PnL result. The rebuilt terminal contract requires a same-run source-safe
+capture binding for future runs and turns a missing binding into local
+recovery; historical evidence stays `legacy_unbound`. The installed task owns
+06:20 KST. The next offline-validation reliability work must not add a KIS
+call, task, order path, or authority change.
 
 The rebuilt single `thericher-kis-paper-daily-spy-session` image preserves
 `quote_unavailable` for an exact fresh-quote fetch failure and uses

@@ -12,6 +12,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import uuid
 from collections.abc import Sequence
 from dataclasses import dataclass
@@ -47,6 +48,8 @@ _EXPECTED_TARGET_KEYS = frozenset(
 )
 _CAPTURE_TARGET_KEY = "QQQ/NAS/1m"
 _EASTERN_TZ = ZoneInfo("America/New_York")
+_SCHEDULE_RUN_ID_PATTERN = re.compile(r"\Aintraday-head-[0-9]{8}T[0-9]{6}(?:[0-9]{1,7})?Z\Z")
+KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES = frozenset({"complete", "incomplete"})
 
 
 @dataclass(frozen=True)
@@ -92,6 +95,7 @@ class KisPaperIntradaySessionCaptureOutcome:
     targets: tuple[KisPaperIntradaySessionCaptureTarget, ...]
     coverage: KisIntradayHeadCoverage
     current_session_cumulative_coverage: KisIntradayHeadCoverage
+    schedule_run_id: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -113,11 +117,38 @@ class KisPaperIntradaySessionCaptureOutcome:
             raise TypeError("session capture coverage is invalid")
         if not isinstance(self.current_session_cumulative_coverage, KisIntradayHeadCoverage):
             raise TypeError("session capture cumulative coverage is invalid")
+        object.__setattr__(self, "schedule_run_id", validate_schedule_run_id(self.schedule_run_id))
+
+    @property
+    def current_session_cumulative_coverage_digest(self) -> str:
+        """Return the digest of the coverage payload and nothing else."""
+
+        return (
+            "sha256:"
+            + hashlib.sha256(
+                _canonical_json_bytes(self.current_session_cumulative_coverage.to_payload())
+            ).hexdigest()
+        )
+
+    @property
+    def current_session_cumulative_coverage_category(self) -> Literal["complete", "incomplete"]:
+        """Classify only the ET session containing this capture observation."""
+
+        current_session_date = self.observed_at.astimezone(_EASTERN_TZ).date()
+        status = next(
+            (
+                item.status
+                for item in self.current_session_cumulative_coverage.session_coverage
+                if item.session_date == current_session_date
+            ),
+            None,
+        )
+        return "complete" if status == "complete" else "incomplete"
 
     def safe_payload(self) -> dict[str, object]:
         """Return the receipt body without provider rows, paths, or credentials."""
 
-        return {
+        payload: dict[str, object] = {
             "schema_version": self.schema_version,
             "kind": KIS_PAPER_INTRADAY_SESSION_CAPTURE_KIND,
             "status": self.status,
@@ -133,12 +164,48 @@ class KisPaperIntradaySessionCaptureOutcome:
                 self.current_session_cumulative_coverage.to_payload()
             ),
         }
+        if self.schedule_run_id is not None:
+            payload["schedule_run_id"] = self.schedule_run_id
+            payload["current_session_cumulative_coverage_digest"] = (
+                self.current_session_cumulative_coverage_digest
+            )
+            payload["current_session_cumulative_coverage_category"] = (
+                self.current_session_cumulative_coverage_category
+            )
+        return payload
 
 
 @dataclass(frozen=True)
 class KisPaperIntradaySessionCaptureResult:
     outcome: KisPaperIntradaySessionCaptureOutcome
     evidence_path: Path
+    evidence_sha256: str = ""
+
+    def terminal_receipt_binding(self) -> dict[str, str] | None:
+        """Return the all-or-none terminal binding without an evidence path."""
+
+        if self.outcome.schedule_run_id is None:
+            return None
+        return {
+            "schedule_run_id": self.outcome.schedule_run_id,
+            "observed_at": self.outcome.observed_at.isoformat(),
+            "receipt_sha256": self.evidence_sha256,
+            "current_session_cumulative_coverage_digest": (
+                self.outcome.current_session_cumulative_coverage_digest
+            ),
+            "current_session_cumulative_coverage_category": (
+                self.outcome.current_session_cumulative_coverage_category
+            ),
+        }
+
+    def safe_output_payload(self) -> dict[str, object]:
+        """Return source-safe output and, when bound, terminal receipt input."""
+
+        payload = self.outcome.safe_payload()
+        binding = self.terminal_receipt_binding()
+        if binding is not None:
+            payload["terminal_receipt_binding"] = binding
+        return payload
 
 
 def build_kis_paper_intraday_session_capture_outcome(
@@ -147,6 +214,7 @@ def build_kis_paper_intraday_session_capture_outcome(
     cache_root: Path,
     repository_root: Path,
     observed_at: datetime,
+    schedule_run_id: str | None = None,
     coverage_after_session_date: date = KIS_PAPER_INTRADAY_SESSION_CAPTURE_AFTER_SESSION_DATE,
     required_complete_session_count: int = (
         KIS_PAPER_INTRADAY_SESSION_CAPTURE_REQUIRED_COMPLETE_SESSIONS
@@ -159,6 +227,7 @@ def build_kis_paper_intraday_session_capture_outcome(
     if type(required_complete_session_count) is not int or required_complete_session_count <= 0:
         raise ValueError("session capture complete-session count is invalid")
     observed_at = require_utc(observed_at, "observed_at")
+    schedule_run_id = validate_schedule_run_id(schedule_run_id)
     targets = _capture_targets(runs)
     capture_manifest_hashes = frozenset(
         run.manifest_hash
@@ -173,14 +242,12 @@ def build_kis_paper_intraday_session_capture_outcome(
         manifest_hashes=capture_manifest_hashes,
     )
     current_session_date = observed_at.astimezone(_EASTERN_TZ).date()
-    current_session_cumulative_coverage = (
-        inspect_kis_paper_private_intraday_head_coverage(
-            cache_root=cache_root,
-            repo_root=repository_root,
-            after_session_date=current_session_date - timedelta(days=1),
-            required_complete_session_count=1,
-            through_session_date=current_session_date,
-        )
+    current_session_cumulative_coverage = inspect_kis_paper_private_intraday_head_coverage(
+        cache_root=cache_root,
+        repo_root=repository_root,
+        after_session_date=current_session_date - timedelta(days=1),
+        required_complete_session_count=1,
+        through_session_date=current_session_date,
     )
     capture_target = next(item for item in targets if item.target_key == _CAPTURE_TARGET_KEY)
     status: Literal["complete", "incomplete"] = (
@@ -192,6 +259,7 @@ def build_kis_paper_intraday_session_capture_outcome(
         targets=targets,
         coverage=coverage,
         current_session_cumulative_coverage=current_session_cumulative_coverage,
+        schedule_run_id=schedule_run_id,
     )
 
 
@@ -204,8 +272,7 @@ def write_kis_paper_intraday_session_capture_evidence(
     """Write immutable source-safe capture evidence below the external cache root."""
 
     root = _capture_evidence_root(cache_root=cache_root, repository_root=repository_root)
-    payload = json.dumps(outcome.safe_payload(), ensure_ascii=True, sort_keys=True) + "\n"
-    encoded = payload.encode("utf-8")
+    encoded = _evidence_bytes(outcome)
     digest = hashlib.sha256(encoded).hexdigest()[:16]
     destination = root / f"{outcome.observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{digest}.json"
     _validate_capture_evidence_destination(root=root, destination=destination)
@@ -230,6 +297,7 @@ def build_and_write_kis_paper_intraday_session_capture(
     cache_root: Path,
     repository_root: Path,
     observed_at: datetime,
+    schedule_run_id: str | None = None,
 ) -> KisPaperIntradaySessionCaptureResult:
     """Produce D:-resident coverage evidence after the existing collector releases its lock."""
 
@@ -238,7 +306,9 @@ def build_and_write_kis_paper_intraday_session_capture(
         cache_root=cache_root,
         repository_root=repository_root,
         observed_at=observed_at,
+        schedule_run_id=schedule_run_id,
     )
+    evidence_sha256 = _evidence_sha256(outcome)
     return KisPaperIntradaySessionCaptureResult(
         outcome=outcome,
         evidence_path=write_kis_paper_intraday_session_capture_evidence(
@@ -246,7 +316,35 @@ def build_and_write_kis_paper_intraday_session_capture(
             cache_root=cache_root,
             repository_root=repository_root,
         ),
+        evidence_sha256=evidence_sha256,
     )
+
+
+def validate_schedule_run_id(value: str | None) -> str | None:
+    """Accept an unbound capture or the scheduler's canonical safe run identifier."""
+
+    if value is None:
+        return None
+    if type(value) is not str or _SCHEDULE_RUN_ID_PATTERN.fullmatch(value) is None:
+        raise ValueError("schedule run ID is invalid")
+    return value
+
+
+def _canonical_json_bytes(payload: dict[str, object]) -> bytes:
+    return json.dumps(
+        payload,
+        ensure_ascii=True,
+        separators=(",", ":"),
+        sort_keys=True,
+    ).encode("utf-8")
+
+
+def _evidence_bytes(outcome: KisPaperIntradaySessionCaptureOutcome) -> bytes:
+    return _canonical_json_bytes(outcome.safe_payload()) + b"\n"
+
+
+def _evidence_sha256(outcome: KisPaperIntradaySessionCaptureOutcome) -> str:
+    return "sha256:" + hashlib.sha256(_evidence_bytes(outcome)).hexdigest()
 
 
 def _capture_targets(

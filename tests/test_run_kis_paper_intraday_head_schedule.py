@@ -65,6 +65,17 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "$prospectiveSpyCycleStatus = \"not_applicable\"" in source
     assert "$collectionStartedAt = (Get-Date).ToUniversalTime()" in source
     assert "$collectionReturnedAt = (Get-Date).ToUniversalTime()" in source
+    assert "$scheduleRunId = New-ScheduleRunId -ObservedAt $collectionStartedAt" in source
+    assert "$collectionCommand = @(\n" in source
+    assert '"--schedule-run-id",' in source
+    assert "$scheduleRunId" in source
+    assert "Get-UniqueSafeSessionCaptureTerminalBinding" in source
+    assert '"--session-capture-run-id",' in source
+    assert '"--session-capture-observed-at",' in source
+    assert '"--session-capture-receipt-sha256",' in source
+    assert '"--session-capture-coverage-digest",' in source
+    assert '"--session-capture-coverage-category",' in source
+    assert '"--require-session-capture-binding",' in source
     assert "kis_paper_intraday_session_capture" in source
     assert "--scheduler-started-at" in source
     assert "--collector-returned-at" in source
@@ -110,6 +121,45 @@ def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it()
     assert '"--prospective-session-id", [string]$prospectiveSessionId' in receipt_block
     assert '"--prospective-validation-session-id",' in receipt_block
     assert "[string]$prospectiveValidationSessionId" in receipt_block
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_normalizes_a_capture_binding_timestamp_from_json() -> None:
+    source = SCRIPT.read_text(encoding="ascii")
+    start = source.index("function Get-UniqueSafeSessionCaptureTerminalBinding")
+    end = source.index("function New-ScheduleRunId", start)
+    function_source = source[start:end]
+    schedule_run_id = "intraday-head-20260728T1530000000000Z"
+    payload = (
+        '{"kind":"kis_paper_intraday_session_capture","terminal_receipt_binding":{'
+        f'"schedule_run_id":"{schedule_run_id}",'
+        '"observed_at":"2026-07-28T15:31:00+00:00",'
+        '"receipt_sha256":"sha256:' + "a" * 64 + '",'
+        '"current_session_cumulative_coverage_digest":"sha256:' + "b" * 64 + '",'
+        '"current_session_cumulative_coverage_category":"complete"}}'
+    )
+    command = "\n".join(
+        (
+            "$ErrorActionPreference = 'Stop'",
+            function_source,
+            "$payload = '" + payload + "'",
+            (
+                "$binding = Get-UniqueSafeSessionCaptureTerminalBinding "
+                "-Output @($payload) "
+                f"-ExpectedScheduleRunId '{schedule_run_id}'"
+            ),
+            "if ($null -eq $binding) { exit 17 }",
+        )
+    )
+    result = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", command],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
@@ -181,6 +231,75 @@ def test_head_schedule_uses_a_safe_session_payload_before_a_trailing_idless_stat
     assert "kis-paper-prospective-qqq-validation" in log_path.read_text(
         encoding="ascii"
     ).splitlines()
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_forwards_only_one_exact_capture_binding(tmp_path: Path) -> None:
+    log_path = tmp_path / "fake-docker-services.log"
+    result = subprocess.run(
+        [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-Command",
+            _fake_dispatch_command(
+                script_path=SCRIPT,
+                project_root=SCRIPT.parents[1],
+                log_path=log_path,
+                capture_binding_payload=(
+                    '"terminal_receipt_binding":{"schedule_run_id":"{schedule_run_id}",'
+                    '"observed_at":"2026-07-28T15:31:00+00:00",'
+                    '"receipt_sha256":"sha256:' + "a" * 64 + '",'
+                    '"current_session_cumulative_coverage_digest":"sha256:' + "b" * 64 + '",'
+                    '"current_session_cumulative_coverage_category":"complete"}'
+                ),
+                require_capture_binding=True,
+            ),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert log_path.read_text(encoding="ascii").splitlines()[-1] == (
+        "kis-paper-intraday-head-receipt"
+    )
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_rejects_an_invalid_capture_binding_category(tmp_path: Path) -> None:
+    log_path = tmp_path / "fake-docker-services.log"
+    result = subprocess.run(
+        [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-Command",
+            _fake_dispatch_command(
+                script_path=SCRIPT,
+                project_root=SCRIPT.parents[1],
+                log_path=log_path,
+                capture_binding_payload=(
+                    '"terminal_receipt_binding":{"schedule_run_id":"{schedule_run_id}",'
+                    '"observed_at":"2026-07-28T15:31:00+00:00",'
+                    '"receipt_sha256":"sha256:' + "a" * 64 + '",'
+                    '"current_session_cumulative_coverage_digest":"sha256:' + "b" * 64 + '",'
+                    '"current_session_cumulative_coverage_category":"pending_complete_sessions"}'
+                ),
+                require_capture_binding=True,
+            ),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 20, result.stderr
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
@@ -275,6 +394,8 @@ def _fake_dispatch_command(
         '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
         '"session_id":"qqq-unit"}',
     ),
+    capture_binding_payload: str | None = None,
+    require_capture_binding: bool = False,
 ) -> str:
     escaped_script = str(script_path).replace("'", "''")
     escaped_root = str(project_root).replace("'", "''")
@@ -287,6 +408,23 @@ def _fake_dispatch_command(
         "            Write-Output '" + payload.replace("'", "''") + "'"
         for payload in qqq_validation_payloads
     )
+    capture_payload = (
+        '{"kind":"kis_paper_intraday_session_capture","targets":[],'
+        '"terminal_receipt_binding":{"schedule_run_id":"{schedule_run_id}",'
+        '"observed_at":"2026-07-28T15:31:00+00:00",'
+        '"receipt_sha256":"sha256:' + "a" * 64 + '",'
+        '"current_session_cumulative_coverage_digest":"sha256:' + "b" * 64 + '",'
+        '"current_session_cumulative_coverage_category":"complete"}}'
+    )
+    if capture_binding_payload is not None:
+        capture_payload = (
+            '{"kind":"kis_paper_intraday_session_capture","targets":[],' +
+            capture_binding_payload + '}'
+        )
+    escaped_capture_payload = capture_payload.replace("'", "''")
+    binding_guard = "$false"
+    if require_capture_binding:
+        binding_guard = "$true"
     return f"""
 $ErrorActionPreference = 'Stop'
 $env:THERICHER_FAKE_DOCKER_LOG = '{escaped_log}'
@@ -327,7 +465,12 @@ function docker.exe {{
     }}
     switch ($service) {{
         'kis-paper-intraday-head' {{
-            Write-Output '{{"kind":"kis_paper_intraday_session_capture","targets":[]}}'
+            $captureRunId = Get-FakeArgumentValue -Values $dockerArgs -Name '--schedule-run-id'
+            $capturePayload = '{escaped_capture_payload}'
+            if ($null -ne $captureRunId) {{
+                $capturePayload = $capturePayload.Replace('{{schedule_run_id}}', $captureRunId)
+            }}
+            Write-Output $capturePayload
         }}
         'kis-paper-prospective-qqq-session' {{
 {escaped_qqq_session_payloads}
@@ -358,7 +501,38 @@ function docker.exe {{
             $validationSessionId = Get-FakeArgumentValue `
                 -Values $dockerArgs `
                 -Name '--prospective-validation-session-id'
-            if ($null -eq $sessionId) {{
+            $captureRunId = Get-FakeArgumentValue `
+                -Values $dockerArgs `
+                -Name '--session-capture-run-id'
+            $captureObservedAt = Get-FakeArgumentValue `
+                -Values $dockerArgs `
+                -Name '--session-capture-observed-at'
+            $captureReceiptSha256 = Get-FakeArgumentValue `
+                -Values $dockerArgs `
+                -Name '--session-capture-receipt-sha256'
+            $captureCoverageDigest = Get-FakeArgumentValue `
+                -Values $dockerArgs `
+                -Name '--session-capture-coverage-digest'
+            $captureCoverageCategory = Get-FakeArgumentValue `
+                -Values $dockerArgs `
+                -Name '--session-capture-coverage-category'
+            $captureBindingRequired = $dockerArgs -contains '--require-session-capture-binding'
+            if (
+                {binding_guard} `
+                    -and (
+                        $null -eq $captureRunId `
+                            -or $null -eq $captureObservedAt `
+                            -or $null -eq $captureReceiptSha256 `
+                            -or $null -eq $captureCoverageDigest `
+                            -or $null -eq $captureCoverageCategory `
+                            -or -not $captureBindingRequired
+                    )
+            ) {{
+                Write-Output (
+                    '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"recovery",' +
+                    '"terminal":{{"status":"recovery","scheduler_exit_code":20}}}}'
+                )
+            }} elseif ($null -eq $sessionId) {{
                 Write-Output (
                     '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"recovery",' +
                     '"terminal":{{"status":"recovery","scheduler_exit_code":20}}}}'

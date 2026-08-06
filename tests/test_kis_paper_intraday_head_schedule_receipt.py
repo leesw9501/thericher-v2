@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import socket
 from datetime import UTC, datetime
+from hashlib import sha256
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -117,6 +118,438 @@ def test_schedule_fact_reads_only_the_task_owned_current_pointer_without_network
     assert "evidence_path" not in projected
     assert str(artifact_root) not in projected
     assert "prospective_spy_cycle" not in projected
+
+
+def test_schedule_fact_projects_legacy_receipts_as_explicitly_unbound(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert fact.coverage_binding_status == "legacy_unbound"
+    assert fact.current_session_cumulative_coverage_digest is None
+    assert fact.current_session_cumulative_coverage_category is None
+
+
+def test_schedule_receipt_marks_a_missing_required_capture_binding_for_recovery(
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        require_session_capture_binding=True,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    payload = json.loads(result.evidence_path.read_text(encoding="ascii"))
+    assert result.terminal_status == "recovery"
+    assert result.recovery_class == "session_capture_binding_unavailable"
+    assert result.scheduler_exit_code == SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
+    assert payload["session_capture_binding_required"] is True
+    assert "terminal_receipt_binding" not in payload
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_capture_binding_required",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_schedule_receipt_rejects_an_unsupported_capture_coverage_category(
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+
+    with pytest.raises(ValueError, match="terminal receipt binding"):
+        write_kis_paper_intraday_head_schedule_receipt(
+            **_complete_kwargs(),
+            session_capture_run_id="intraday-head-unit",
+            session_capture_observed_at=datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+            session_capture_receipt_sha256="sha256:" + "a" * 64,
+            session_capture_coverage_digest="sha256:" + "b" * 64,
+            session_capture_coverage_category="pending_complete_sessions",
+            artifact_root=tmp_path / "model-artifacts",
+            repository_root=repository_root,
+            observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+        )
+
+
+def test_schedule_fact_verifies_the_exact_same_run_capture_binding(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    capture_observed_at = datetime(2026, 7, 28, 15, 30, tzinfo=UTC)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        observed_at=capture_observed_at,
+    )
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_capture_cache_root_required",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+        )
+
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=cache_root,
+    )
+
+    receipt_payload = json.loads(result.evidence_path.read_text(encoding="ascii"))
+    binding = receipt_payload["terminal_receipt_binding"]
+    assert binding == {
+        "schedule_run_id": "intraday-head-unit",
+        "observed_at": "2026-07-28T15:30:00Z",
+        "receipt_sha256": capture.receipt_sha256,
+        "current_session_cumulative_coverage_digest": capture.coverage_digest,
+        "current_session_cumulative_coverage_category": "complete",
+    }
+    assert fact.coverage_binding_status == "verified"
+    assert fact.current_session_cumulative_coverage_digest == capture.coverage_digest
+    assert fact.current_session_cumulative_coverage_category == "complete"
+
+
+def test_schedule_fact_verifies_an_incomplete_observed_session_capture(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    capture = _write_capture_receipt(cache_root=cache_root, coverage_status="short")
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=cache_root,
+    )
+
+    assert fact.coverage_binding_status == "verified"
+    assert fact.current_session_cumulative_coverage_category == "incomplete"
+
+
+@pytest.mark.parametrize(
+    ("payload_overrides", "error_code"),
+    [
+        ({"schedule_run_id": "intraday-head-other"}, "schedule_capture_binding_mismatch"),
+        ({"observed_at": "2026-07-28T15:29:00Z"}, "schedule_capture_binding_mismatch"),
+        (
+            {"current_session_cumulative_coverage_digest": "sha256:" + "1" * 64},
+            "schedule_capture_binding_mismatch",
+        ),
+        (
+            {"current_session_cumulative_coverage_category": "incomplete"},
+            "schedule_capture_binding_mismatch",
+        ),
+        ({"kind": "other"}, "schedule_capture_receipt_invalid"),
+    ],
+)
+def test_schedule_fact_rejects_capture_binding_payload_mismatches(
+    tmp_path: Path,
+    payload_overrides: dict[str, object],
+    error_code: str,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    capture = _write_capture_receipt(cache_root=cache_root, payload_overrides=payload_overrides)
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    with pytest.raises(KisPaperIntradayHeadScheduleReceiptError, match=error_code):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+            capture_cache_root=cache_root,
+        )
+
+
+def test_schedule_fact_rejects_a_capture_receipt_hash_mismatch(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    capture = _write_capture_receipt(cache_root=cache_root)
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    capture.path.write_bytes(capture.path.read_bytes() + b"\n")
+
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_capture_binding_mismatch",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+            capture_cache_root=cache_root,
+        )
+
+
+def test_schedule_fact_rejects_capture_receipt_reparse_points(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    capture = _write_capture_receipt(cache_root=cache_root)
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    original_lstat = Path.lstat
+
+    def marked_lstat(path: Path):
+        metadata = original_lstat(path)
+        if path == capture.path:
+            return SimpleNamespace(st_mode=metadata.st_mode, st_file_attributes=0x400)
+        return metadata
+
+    monkeypatch.setattr(Path, "lstat", marked_lstat)
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_capture_receipt_invalid",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+            capture_cache_root=cache_root,
+        )
+
+
+def test_schedule_fact_rejects_a_capture_cache_reparse_ancestor(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_ancestor = tmp_path / "cache-parent"
+    cache_root = cache_ancestor / "market-data" / "intraday-head"
+    capture = _write_capture_receipt(cache_root=cache_root)
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    original_lstat = Path.lstat
+
+    def marked_lstat(path: Path):
+        metadata = original_lstat(path)
+        if path == cache_ancestor:
+            return SimpleNamespace(st_mode=metadata.st_mode, st_file_attributes=0x400)
+        return metadata
+
+    monkeypatch.setattr(Path, "lstat", marked_lstat)
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_capture_cache_root_invalid",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+            capture_cache_root=cache_root,
+        )
+
+
+def test_schedule_fact_rejects_an_artifact_root_reparse_ancestor(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_ancestor = tmp_path / "artifact-parent"
+    artifact_root = artifact_ancestor / "model-artifacts"
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    original_lstat = Path.lstat
+
+    def marked_lstat(path: Path):
+        metadata = original_lstat(path)
+        if path == artifact_ancestor:
+            return SimpleNamespace(st_mode=metadata.st_mode, st_file_attributes=0x400)
+        return metadata
+
+    monkeypatch.setattr(Path, "lstat", marked_lstat)
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_runtime_invalid",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+        )
+
+
+@pytest.mark.parametrize(
+    "capture_observed_at",
+    [
+        datetime(2026, 7, 28, 15, 32, tzinfo=UTC),
+        datetime(2026, 7, 29, 4, 1, tzinfo=UTC),
+    ],
+)
+def test_schedule_fact_rejects_capture_timestamp_conflicts(
+    tmp_path: Path,
+    capture_observed_at: datetime,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    capture = _write_capture_receipt(cache_root=cache_root, observed_at=capture_observed_at)
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_capture_binding_mismatch",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+            capture_cache_root=cache_root,
+        )
+
+
+def test_schedule_fact_never_selects_a_newer_capture_receipt(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        observed_at=datetime(2026, 7, 28, 15, 29, tzinfo=UTC),
+    )
+    _write_capture_receipt(
+        cache_root=cache_root,
+        observed_at=datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+        payload_overrides={"current_session_cumulative_coverage_category": "incomplete"},
+    )
+    write_kis_paper_intraday_head_schedule_receipt(
+        **_complete_kwargs(),
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=cache_root,
+    )
+
+    assert fact.coverage_binding_status == "verified"
+    assert fact.current_session_cumulative_coverage_category == "complete"
+
+
+def test_schedule_receipt_retains_a_newer_current_pointer_against_stale_rollback(
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    newer_kwargs = _complete_kwargs()
+    newer_kwargs["run_id"] = "intraday-head-newer"
+    newer = write_kis_paper_intraday_head_schedule_receipt(
+        **newer_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    stale_kwargs = _complete_kwargs()
+    stale_kwargs["run_id"] = "intraday-head-stale"
+    stale = write_kis_paper_intraday_head_schedule_receipt(
+        **stale_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+    )
+
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert stale.evidence_path.is_file()
+    assert fact.run_id == newer.run_id
+
+
+def test_schedule_receipt_requires_all_or_none_session_capture_binding_fields(
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+
+    with pytest.raises(ValueError, match="terminal receipt binding"):
+        write_kis_paper_intraday_head_schedule_receipt(
+            **_complete_kwargs(),
+            session_capture_run_id="intraday-head-unit",
+            artifact_root=tmp_path / "model-artifacts",
+            repository_root=repository_root,
+            observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+        )
 
 
 def test_schedule_fact_rejects_pointer_receipt_mismatch(tmp_path: Path) -> None:
@@ -599,6 +1032,72 @@ def test_compose_qqq_intraday_head_readiness_is_fully_isolated() -> None:
     assert "local-paper" not in lowered
     assert "./src:/app/src" not in section
     assert "./scripts:/app/scripts" not in section
+
+
+def _write_capture_receipt(
+    *,
+    cache_root: Path,
+    observed_at: datetime = datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+    coverage_status: str = "complete",
+    payload_overrides: dict[str, object] | None = None,
+) -> SimpleNamespace:
+    coverage_category = "complete" if coverage_status == "complete" else "incomplete"
+    current_session_cumulative_coverage = {
+        "complete_regular_session_dates": (
+            ["2026-07-28"] if coverage_status == "complete" else []
+        ),
+        "last_reason_category": "none",
+        "regular_session_coverage": [
+            {
+                "session_date": "2026-07-28",
+                "status": coverage_status,
+            }
+        ],
+    }
+    coverage_digest = "sha256:" + sha256(
+        json.dumps(
+            current_session_cumulative_coverage,
+            ensure_ascii=True,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("ascii")
+    ).hexdigest()
+    payload: dict[str, object] = {
+        "kind": "kis_paper_intraday_session_capture",
+        "schedule_run_id": "intraday-head-unit",
+        "observed_at": observed_at.isoformat().replace("+00:00", "Z"),
+        "current_session_cumulative_coverage_digest": coverage_digest,
+        "current_session_cumulative_coverage_category": coverage_category,
+        "current_session_cumulative_coverage": current_session_cumulative_coverage,
+    }
+    if payload_overrides is not None:
+        payload.update(payload_overrides)
+    encoded = (json.dumps(payload, ensure_ascii=True, sort_keys=True) + "\n").encode("ascii")
+    receipt_sha256 = "sha256:" + sha256(encoded).hexdigest()
+    path = (
+        cache_root
+        / "v1"
+        / "session-capture"
+        / f"{observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{receipt_sha256[7:23]}.json"
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(encoded)
+    return SimpleNamespace(
+        path=path,
+        receipt_sha256=receipt_sha256,
+        coverage_digest=payload["current_session_cumulative_coverage_digest"],
+        binding_kwargs={
+            "session_capture_run_id": "intraday-head-unit",
+            "session_capture_observed_at": observed_at,
+            "session_capture_receipt_sha256": receipt_sha256,
+            "session_capture_coverage_digest": payload[
+                "current_session_cumulative_coverage_digest"
+            ],
+            "session_capture_coverage_category": payload[
+                "current_session_cumulative_coverage_category"
+            ],
+        },
+    )
 
 
 def _complete_kwargs() -> dict[str, object]:
