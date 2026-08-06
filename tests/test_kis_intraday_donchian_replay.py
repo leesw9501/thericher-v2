@@ -52,7 +52,6 @@ def test_donchian_replay_is_external_aggregate_only_and_local_paper(
         _catalog(),
         artifact_root=artifact_root,
         run_label="unit-r1",
-        repo_root=Path.cwd(),
     )
 
     assert run.status == "complete"
@@ -89,6 +88,7 @@ def test_donchian_replay_is_external_aggregate_only_and_local_paper(
     }
     assert summary["mechanics"]["all_fills_local_paper"] is True
     assert summary["mechanics"]["all_terminal_flat"] is True
+    assert summary["mechanics"]["rule_activated"] is True
     assert summary["artifact_policy"]["credential_read"] is False
     assert summary["artifact_policy"]["network_called"] is False
     serialized = run.summary_path.read_text(encoding="utf-8")
@@ -149,26 +149,52 @@ def test_eligible_donchian_proposal_cannot_silently_lose_its_local_intent(
         )
 
 
-def test_replay_rejects_a_repo_artifact_root(
+def test_replay_marks_a_no_activation_rule_as_non_complete(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
     _deny_external_access(monkeypatch)
 
+    run = donchian_replay.run_kis_intraday_session_reset_donchian_replay(
+        _catalog(breakout=False),
+        artifact_root=tmp_path / "model-artifacts",
+        run_label="unit-no-activation",
+    )
+
+    assert run.status == "no_rule_activation"
+    assert run.donchian.eligible_enter_count == 0
+    assert run.donchian.eligible_exit_count == 0
+    assert run.donchian.local_paper_fill_count == 0
+    summary = json.loads(run.summary_path.read_text(encoding="utf-8"))
+    assert summary["status"] == "no_rule_activation"
+    assert summary["mechanics"]["rule_activated"] is False
+    assert "does not establish replay conformance" in summary["claim"]
+
+
+def test_replay_rejects_the_actual_repo_artifact_root_when_cwd_is_external(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    _deny_external_access(monkeypatch)
+    monkeypatch.chdir(tmp_path)
+
     with pytest.raises(ValueError, match="artifact root must stay outside"):
         donchian_replay.run_kis_intraday_session_reset_donchian_replay(
             _catalog(),
-            artifact_root=Path.cwd() / "generated-donchian-artifacts",
+            artifact_root=donchian_replay._REPOSITORY_ROOT / "generated-donchian-artifacts",
             run_label="unit-reject-root",
-            repo_root=Path.cwd(),
         )
 
 
-def _catalog(session_dates: tuple[date, ...] = _SESSION_DATES) -> CatalogedBars:
+def _catalog(
+    session_dates: tuple[date, ...] = _SESSION_DATES,
+    *,
+    breakout: bool = True,
+) -> CatalogedBars:
     bars = tuple(
         bar
         for session_date in session_dates
-        for bar in _session_bars(session_date)
+        for bar in _session_bars(session_date, breakout=breakout)
     )
     return _cataloged_bars_from_verified_loader(
         dataset_id="kis.paper.private.intraday.qqq.nas.m1.test",
@@ -178,9 +204,9 @@ def _catalog(session_dates: tuple[date, ...] = _SESSION_DATES) -> CatalogedBars:
     )
 
 
-def _session_bars(session_date: date) -> tuple[Bar, ...]:
+def _session_bars(session_date: date, *, breakout: bool = True) -> tuple[Bar, ...]:
     open_ts = datetime(session_date.year, session_date.month, session_date.day, 13, 30, tzinfo=UTC)
-    return tuple(_bar(open_ts, minute) for minute in range(390))
+    return tuple(_bar(open_ts, minute, breakout=breakout) for minute in range(390))
 
 
 def _session_window(session_date: date):
@@ -189,11 +215,11 @@ def _session_window(session_date: date):
     return session.window
 
 
-def _bar(open_ts: datetime, minute: int) -> Bar:
+def _bar(open_ts: datetime, minute: int, *, breakout: bool) -> Bar:
     close = Decimal("100")
     high = Decimal("101")
     low = Decimal("99")
-    if minute == 20:
+    if breakout and minute == 20:
         close = Decimal("102")
         high = Decimal("102")
     return Bar(

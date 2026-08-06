@@ -64,6 +64,7 @@ KIS_INTRADAY_DONCHIAN_SLIPPAGE_BPS = Decimal("2")
 KIS_INTRADAY_DONCHIAN_DECISION_TTL = timedelta(minutes=2)
 
 _SAFE_RUN_LABEL = re.compile(r"[A-Za-z0-9._-]{1,80}", re.ASCII)
+_REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 _CLEAR_EMERGENCY_STATE = EmergencyState(
     stop_new_orders=False,
     cancel_open_orders_requested=False,
@@ -178,7 +179,6 @@ def run_kis_intraday_session_reset_donchian_replay(
     *,
     artifact_root: Path,
     run_label: str,
-    repo_root: Path | None = None,
 ) -> KisIntradayDonchianReplayRun:
     """Run one frozen source-local mechanics replay with no provider or broker I/O."""
 
@@ -190,7 +190,7 @@ def run_kis_intraday_session_reset_donchian_replay(
         campaign_id=KIS_INTRADAY_DONCHIAN_REPLAY_ID,
     )
     root = Path(artifact_root).resolve()
-    _reject_repo_artifact_root(root, repo_root or Path.cwd())
+    _reject_repo_artifact_root(root)
     output_dir = root / "research" / KIS_INTRADAY_DONCHIAN_REPLAY_ID / run_label
     if output_dir.exists():
         raise FileExistsError(f"Donchian replay artifact already exists: {output_dir}")
@@ -219,6 +219,7 @@ def run_kis_intraday_session_reset_donchian_replay(
     donchian = _sum_donchian(item.donchian for item in replays)
     always_long = _sum_control(item.always_long for item in replays)
     flat = _flat_control()
+    status = "complete" if _rule_activated(donchian) else "no_rule_activation"
     if not (
         donchian.all_fills_local_paper
         and donchian.all_terminal_flat
@@ -235,6 +236,7 @@ def run_kis_intraday_session_reset_donchian_replay(
         _summary_payload(
             plan=plan,
             run_label=run_label,
+            status=status,
             contract_hash=contract_hash,
             artifact_root=root,
             donchian=donchian,
@@ -244,7 +246,7 @@ def run_kis_intraday_session_reset_donchian_replay(
     )
     return KisIntradayDonchianReplayRun(
         run_label=run_label,
-        status="complete",
+        status=status,
         contract_hash=contract_hash,
         precommit_path=precommit_path,
         summary_path=summary_path,
@@ -673,6 +675,7 @@ def _summary_payload(
     *,
     plan: KisIntradayCpuCampaignPlan,
     run_label: str,
+    status: str,
     contract_hash: str,
     artifact_root: Path,
     donchian: DonchianReplayMechanics,
@@ -682,7 +685,7 @@ def _summary_payload(
     return {
         "schema_version": 1,
         "kind": "kis_intraday_donchian_replay_summary",
-        "status": "complete",
+        "status": status,
         "mode": "offline_local_cache_local_paper_only",
         "run_label": run_label,
         "contract_hash": contract_hash,
@@ -704,11 +707,7 @@ def _summary_payload(
             "gpu_eligible": False,
         },
         "artifact_policy": _artifact_policy(artifact_root),
-        "claim": (
-            "fixed mechanics and replay-conformance preflight only; it does not establish "
-            "profitability, select a model, form an ensemble, open a sealed evaluation, "
-            "or create a Paper input"
-        ),
+        "claim": _claim_for_status(status),
     }
 
 
@@ -721,6 +720,7 @@ def _donchian_payload(value: DonchianReplayMechanics) -> dict[str, object]:
         "local_paper_fill_count": value.local_paper_fill_count,
         "all_fills_local_paper": value.all_fills_local_paper,
         "all_terminal_flat": value.all_terminal_flat,
+        "rule_activated": _rule_activated(value),
         "event_replay_digest": value.replay_digest,
     }
 
@@ -744,6 +744,22 @@ def _artifact_policy(artifact_root: Path) -> dict[str, object]:
         "network_called": False,
         "external_broker_called": False,
     }
+
+
+def _claim_for_status(status: str) -> str:
+    if status == "complete":
+        return (
+            "fixed mechanics and replay-conformance preflight only; it does not establish "
+            "profitability, select a model, form an ensemble, open a sealed evaluation, "
+            "or create a Paper input"
+        )
+    if status == "no_rule_activation":
+        return (
+            "the fixed rule produced no executable enter or exit; this is only a "
+            "source-local no-rule-activation record and does not establish replay "
+            "conformance, profitability, a model, an ensemble, or a Paper input"
+        )
+    raise ValueError(f"unsupported Donchian replay status: {status}")
 
 
 def _session_bars(catalog: CatalogedBars, *, session: SessionWindow) -> tuple[Bar, ...]:
@@ -780,9 +796,12 @@ def _write_json(path: Path, payload: dict[str, object]) -> None:
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def _reject_repo_artifact_root(artifact_root: Path, repo_root: Path) -> None:
-    resolved_repo = Path(repo_root).resolve()
-    if artifact_root == resolved_repo or artifact_root.is_relative_to(resolved_repo):
+def _rule_activated(value: DonchianReplayMechanics) -> bool:
+    return value.eligible_enter_count + value.eligible_exit_count > 0
+
+
+def _reject_repo_artifact_root(artifact_root: Path) -> None:
+    if artifact_root == _REPOSITORY_ROOT or artifact_root.is_relative_to(_REPOSITORY_ROOT):
         raise ValueError("artifact root must stay outside the Git workspace")
 
 

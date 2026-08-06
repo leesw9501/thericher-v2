@@ -202,7 +202,9 @@ another correctly scoped Paper action.
   the existing receipt-to-local-paper bridge only. Its predeclared
   penultimate-bar terminal exit fills at the final-bar open, every retained
   fill remains `source: local_paper`, and replay reproduces each terminal-flat
-  account. It made no KIS call, credential read, external broker call, or
+  account. Its source-local `2026-08-06-r1` artifact marks the fixed rule
+  activated and classifies an all-flat no-action rule as `no_rule_activation`.
+  It made no KIS call, credential read, external broker call, or
   virtual-Paper intent; it is not an execution result, model promotion, or
   Paper input.
 - The current source-free Claude falsification check returned

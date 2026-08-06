@@ -29,15 +29,16 @@ strongest kill test before target evaluation or GPU consideration.
   next valid trigger is a separately frozen causal data/split/cost/replay
   contract; the source itself discloses no evaluation sample to adopt.
 - The distinct source-local `kis-intraday-session-reset-donchian-mechanics-v1`
-  replay completed its immutable `r2` mechanics preflight from the first 20
+  replay completed its immutable `2026-08-06-r1` mechanics preflight from the first 20
   complete QQQ/NAS regular M1 sessions in ascending catalog order. Each receipt
   binds a completed-bar causal input hash; the fixed 20/10 rule excludes its
   trigger bar, and any terminal position exits from the predeclared
   penultimate-bar decision at the final-bar open. The external summary retains
   aggregate local-paper/replay/terminal-flat mechanics only, never PnL or
-  ranked comparison output. It records unavailable decision-time availability,
+  ranked comparison output. A no-action rule is explicitly `no_rule_activation`,
+  while this run activated; it records unavailable decision-time availability,
   no promotion, Paper input, GPU eligibility, or performance metric. Evidence:
-  `D:\thericher-v2\model-artifacts\research\kis-intraday-session-reset-donchian-mechanics-v1\m1-donchian-mechanics-20260805-r2\summary.json`.
+  `D:\thericher-v2\model-artifacts\research\kis-intraday-session-reset-donchian-mechanics-v1\m1-donchian-mechanics-20260806-r1\summary.json`.
 - Hermetic injected-bar integration tests compose a valid Donchian breakout and
   later breakdown through the existing receipt and `source: local_paper`
   next-bar fill/replay boundary exactly once; the insufficient-history control

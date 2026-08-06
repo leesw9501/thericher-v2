@@ -28,7 +28,7 @@ claim.
 | Norgate local capability | Data | NDU loopback and D: cache | Active client now resolves to the D: trial root; its 29/126-session tail is `input_unavailable`, while the 512-session fixed-ETF snapshot remains source-local with no PIT/model/GPU/Paper promotion |
 | Free public augmentation | Data | Official-source capability check | No full PIT/delisting/corporate-action/OHLCV source qualified; SEC sidecar probe needs declared contact |
 | Architecture structure screen | Engine | RTX 4090 | Fixed source-local LSTM/TCN/attention screen completed jointly with no winner; no eligible frozen predictive contract |
-| Donchian mechanics preflight | Engine | Local QQQ M1 cache / CPU | Completed `r2` from the deterministic first 20 complete sessions; causal receipt hashes, local-paper-only fills, and terminal-flat replay passed. It retains no performance result and changes no GPU/Paper eligibility |
+| Donchian mechanics preflight | Engine | Local QQQ M1 cache / CPU | Completed `2026-08-06-r1` from the deterministic first 20 complete sessions; causal receipt hashes, local-paper-only fills, terminal-flat replay, and explicit no-rule-activation classification passed. It retains no performance result and changes no GPU/Paper eligibility |
 
 No foreground wait is justified. Each external time belongs to its worker;
 independent Data, Engine, and Execution preparation continues when ready.

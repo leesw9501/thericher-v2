@@ -32,7 +32,6 @@ def main(argv: Sequence[str] | None = None) -> None:
         catalog,
         artifact_root=Path(arguments.artifact_root),
         run_label=str(arguments.run_label),
-        repo_root=_REPO_ROOT,
     )
     print(run.summary_path.read_text(encoding="utf-8"), end="")
 
