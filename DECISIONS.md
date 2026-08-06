@@ -9197,3 +9197,21 @@ agreement. Focused tests cover exact-run no-resubmit, distinct-run old-state
 preservation, current-open-order no-submit, malformed unrelated-state
 containment, legacy positive history identity, and invalid legacy anchors with
 no credential or network access.
+
+## 2026-08-06 - Preserve rule-specific semantics before sharing target adapters
+
+Decision: do not extract the current session-reset Donchian target adapter
+into a generic rule adapter while adding the first session-reset EMA mechanism.
+The first EMA package is limited to a pure, independently implemented rule with
+an explicit within-session seed policy and structural warmup state. A future
+shared adapter may proceed only after every participating rule exposes an
+explicit input-status contract and contributes a stable rule identity, feature
+schema identity, and full parameter/seed payload to proposal lineage.
+
+Reason: Claude's falsification-first review was `supported-with-limits`, but
+identified that the current adapter infers warmup from a Donchian-specific
+reason prefix and hashes only Donchian parameters. Generic reuse could turn an
+EMA warmup into a ready target or conflate equal lookback values across rules.
+Keeping the new rule pure preserves causal meaning and avoids a premature
+shared execution boundary. This decision adds no KIS, broker, Paper, PnL, GPU,
+or model-promotion behavior.
