@@ -99,7 +99,7 @@ undocumented timestamp seed.
   otherwise this timing hypothesis is rejected and
  reassessed. DST/pre-market page behavior remains unproven and must be
  rechecked before the next U.S. DST transition. The next owned run is
-2026-08-06 00:29 KST; do not manually invoke it.
+2026-08-07 00:29 KST; do not manually invoke it.
  The focused schedule checks (18) and the full parallel authority suite
  (2,571 passed, 23 skipped) passed after registration.
 - **Cumulative capture receipt:** the rebuilt existing
