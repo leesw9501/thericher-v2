@@ -2,47 +2,49 @@
 
 ## Objective
 
-Build `simplify-orchestration-current-projection-v1`: replace the historical
-narrative in `agents/orchestration.md` with a concise, current-only
-cross-lane projection. This improves the data collection, research, validation,
-and paper-trading loop by making ready work, owned resources, external due
-facts, the current bottleneck, and one reversible improvement immediately
-dispatchable without rereading historical incidents.
+Build `align-daily-operating-review-automation-v1`: update only the existing
+daily operating-review Codex automation prompt so its recurring operator update
+uses the current role stateboards, current objective, `ready / owned / due`
+facts, bottleneck, recovery action, and current clean-root parallel verification
+policy. This improves the data, research, validation, and Paper loops by making
+operational evidence useful without adding a new approval process or worker.
 
-The completed prior objective reattached the exact 2026-08-07 02:28 KST
-intraday-head receipt as `recovery/collection_exit_nonzero` with Scheduler
-result `1`; QQQ session and validation were `not_applicable`. It is retained
-only as a current recovery fact, never an alpha, fill, PnL, or model claim.
+The completed prior objective compressed `agents/orchestration.md` to a
+57-line current projection. Its Claude governance drift-check timed out as
+`review_unavailable`; independent consistency checks retained its due and
+recovery facts.
 
 ## Hard Boundaries
 
-- Do not call KIS, submit or modify Paper orders, or manually invoke any task.
-- Do not add or change a scheduler, broker route, order behavior, capital rule,
-  credential path, dashboard, Docker/runtime, or live behavior.
+- Do not create, delete, trigger, pause, resume, or retime an automation.
+- Update only the prompt of the one existing daily operating-review automation;
+  preserve its identity, name, recurrence, status, destination, execution
+  environment, project, and target thread exactly.
+- Do not call KIS, submit or modify Paper orders, manually invoke a task, or
+  alter a broker route, order behavior, capital rule, credential path,
+  dashboard, Docker/runtime, or live behavior.
 - Do not read or expose `KIS_LIVE_*`, secrets, account facts, private intents,
   order identifiers, or raw market data.
-- Do not rewrite historical receipts, artifacts, source contracts, or role-lane
-  implementation. Git and external artifacts retain history.
 
 ## Required Work
 
-1. Ask Claude CLI for a short falsification-first governance drift-check before
-   editing. Treat an unavailable response as `review_unavailable`, not assent.
-2. Replace only the stale historical narrative in `agents/orchestration.md`
-   with these current sections: company objective, Ready / Owned / Due table,
-   current bottleneck, current reversible improvement, and current recovery
-   action. Keep the facts needed for the next dispatch, not a chronological
-   ledger.
-3. Preserve all active external ownership and exact recovery facts, including
-   the 04:24 KST intraday-head due fact, without changing their workers.
-4. Verify that the compressed projection retains the current objective, every
-   active owner/resource/due fact, the bottleneck, improvement, and recovery
-   action. Refresh the other stateboards and this file only if their current
-   facts change.
+1. Locate the existing daily operating-review automation from its local
+   automation configuration, then read it through `automation_update` in view
+   mode. Do not infer its identity from a Markdown stateboard.
+2. Reconcile its prompt with `AGENTS.md`: it must distinguish `ready`, `owned`,
+   and `due`; report material changes, blockers, recoveries, and operator
+   decisions; use the current clean-root parallel authority helper only at a
+   goal boundary; and avoid stale serial-test, fixed-worker-count, approval-gate,
+   or routine-status language.
+3. Update only that prompt using `automation_update`, then read the automation
+   back. Preserve every non-prompt field exactly and do not trigger it.
+4. Record the current automation alignment fact in the orchestration projection
+   and refresh this file. Keep the report concise and do not create a second
+   report, scheduler, or agent queue.
 
 ## Verification
 
-Run a focused governance/stateboard consistency check, then:
+Run a focused automation readback/redaction consistency check, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -53,4 +55,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Simplify orchestration stateboard`
+`Align daily operating review automation`

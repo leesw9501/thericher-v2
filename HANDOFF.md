@@ -24,12 +24,17 @@ alpha, or model outcome. The installed task is `Ready` for its next owned
 00:29 KST receipt remains immutable
 `recovery/prospective_session_id_unavailable` with Scheduler result `20`.
 
-The next bounded objective simplifies only the cross-lane orchestration
-projection so ready Data, Engine Research, and Execution work can be dispatched
-from current facts rather than historical narrative. It must preserve the
-current objective, owned external work, bottleneck, improvement, and recovery
-facts, ask Claude for a governance drift-check before editing, and make no KIS,
-broker, scheduler, capital, credential, or live-behavior change.
+The orchestration projection is now compact and current-only: it retains the
+company objective, ready/owned/due work, bottleneck, reversible improvement,
+and recovery action in 57 lines while Git and external artifacts retain
+history. Claude's required governance check timed out as `review_unavailable`,
+not agreement or a hold; independent consistency checks retained all due and
+recovery facts. The next bounded objective updates only the existing daily
+operating-review automation prompt so it reports against this current
+projection and the clean-root parallel verification policy. It must preserve
+the existing automation identity, schedule, status, destination, and target
+thread, and make no KIS, broker, scheduler cadence, capital, credential, or
+live-behavior change.
 
 `kis-paper-virtual-lifecycle-canary-v2` remains completed through the existing,
 task-owned deterministic canary. The resulting virtual-Paper lifecycle is
