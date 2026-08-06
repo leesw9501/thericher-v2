@@ -2,19 +2,18 @@
 
 ## Objective
 
-Build `kis-intraday-schedule-receipt-qqq-session-identity-v1`: repair the
-existing intraday-head host dispatcher so its already validated safe QQQ
-prospective session ID and matching offline-validation session ID reach the
-existing terminal schedule receipt. Prove a valid task-owned `no_intent`
-session can complete its offline validation and terminal receipt, while absent,
-conflicting, or mismatched identities remain scoped recovery results.
+Build `kis-intraday-schedule-receipt-qqq-session-identity-followup-v1`:
+reattach one exact result from the existing intraday-head task's 2026-08-07
+02:28 KST invocation after the host-only QQQ safe-ID receipt repair. Preserve
+the matching task-owned terminal receipt and offline validation fact exactly;
+it may be complete or scoped recovery and must never become an alpha,
+fill-quality, PnL, or model-promotion claim.
 
-The preceding 2026-08-07 00:29 KST task result is exactly collection
-`exit_zero`, QQQ session `no_intent`, terminal
-`recovery/prospective_session_id_unavailable`, and Scheduler result `20`.
-Its data, Paper, fill, PnL, alpha, and model status remain unchanged. The cause
-is host receipt argument omission, not a reason to rerun the task or infer a
-broker outcome.
+The preceding 00:29 KST task is immutable
+`recovery/prospective_session_id_unavailable` with Scheduler result `20` after
+collection `exit_zero` and QQQ `no_intent`. The repaired dispatcher and existing
+profile images are verified offline. Do not infer a runtime result from code or
+rerun the task manually.
 
 ## Hard Boundaries
 
@@ -23,25 +22,25 @@ broker outcome.
   credential path, dashboard, or live behavior.
 - Do not read or expose `KIS_LIVE_*`, secrets, account facts, private intents,
   order identifiers, or raw market data.
-- Preserve the exact prior task-owned receipt and pointer; tests use only
-  synthetic or existing source-safe fixtures.
+- Preserve prior task-owned receipts and pointers. Inspect only the one current
+  source-safe pointer, matching immutable receipt, Scheduler result, and the
+  matching existing offline validator fact.
 
 ## Required Work
 
-1. Add the smallest host-dispatcher argument wiring for already validated safe
-   QQQ session IDs only when present.
-2. Add focused tests for successful `no_intent` plus offline-validation receipt
-   completion, and for absent, conflicting, or mismatched IDs remaining
-   recovery.
-3. Run a network-disabled host/receipt simulation. Do not call KIS.
-4. Rebuild only the existing intraday-head profile services after verification
-   so the next task-owned run uses the committed source.
-5. Record the bounded result and Claude's `review_unavailable` timeout in the
-   relevant stateboards. Refresh this file before ending the goal.
+1. After the existing 02:28 KST task runs, read and hash-validate only its
+   source-safe terminal pointer and matching immutable receipt.
+2. Reattach only categorical collection, QQQ-session, validation, terminal, and
+   Scheduler facts. Do not inspect raw inputs or broker payloads.
+3. If the task reports a scoped recovery, preserve its exact reason and keep it
+   local; do not retry or turn it into an approval wait.
+4. While waiting, continue only ready non-conflicting private work. Do not
+   foreground-wait for the task.
+5. Refresh stateboards and this file before ending the goal.
 
 ## Verification
 
-Run the focused tests, then:
+Run focused reattachment tests, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -52,4 +51,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Repair intraday schedule receipt handoff`
+`Reattach intraday receipt follow-up`

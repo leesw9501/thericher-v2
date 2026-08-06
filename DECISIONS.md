@@ -9267,3 +9267,21 @@ future same-clock KIS Paper path available. Tests bind observation time to the
 proposal, prove the no-intent creates no local state, and keep the actual
 availability/promotion path separate. This adds no scheduler, KIS call, broker
 route, credential use, live behavior, or model-performance claim.
+
+## 2026-08-07 - Preserve validated QQQ session identity in the terminal receipt
+
+Decision: pass the host dispatcher's existing validated safe QQQ prospective
+session ID and matching validation session ID to the existing terminal receipt
+only when each is present. Preserve absent, conflicting, or mismatched IDs as
+their existing scoped receipt recovery outcomes.
+
+Reason: the exact 00:29 KST task collected successfully and emitted a QQQ
+`no_intent`, but the dispatcher omitted both already-derived IDs from the
+receipt CLI, producing `prospective_session_id_unavailable` and preventing
+offline validation reattachment. A network-disabled fake-Docker dispatcher test
+now reads the actual passed receipt arguments: matching IDs complete, while
+missing QQQ IDs, conflicting QQQ IDs, mismatched validation IDs, and conflicting
+validation IDs recover. Claude timed out as `review_unavailable`; independent
+Review identified the final conflicting-validation case, which the focused test
+now covers. This changes no KIS call, scheduler, broker route, order behavior,
+credential path, live behavior, fill, PnL, or model claim.

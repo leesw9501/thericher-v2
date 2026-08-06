@@ -84,8 +84,11 @@ undocumented timestamp seed.
   (`exit_zero`) and produced a QQQ `no_intent`, but the host receipt omitted the
   already validated safe session identifier, yielding scoped terminal recovery
   `prospective_session_id_unavailable` and unavailable offline validation. The
-  data result remains non-promoting; the next bounded repair is host receipt
-  wiring only, not a new collection, task, KIS call, or broker action.
+  data result remains non-promoting. The bounded host receipt repair now passes
+  only existing validated safe QQQ session and validation IDs and is built into
+  the existing profile services. The next 02:28 KST task-owned result, not this
+  code change, determines whether offline validation reattaches; no new
+  collection, task, KIS call, or broker action follows.
   On a successful collection, the same worker now gives the existing QQQ
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or

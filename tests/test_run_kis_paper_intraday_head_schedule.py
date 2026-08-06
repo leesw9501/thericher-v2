@@ -106,6 +106,10 @@ def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it()
     assert '$prospectiveValidationStatus = "validated"' in qqq_block
     assert '"--execute"' not in qqq_block
     assert '"--cancel-after-submit"' not in qqq_block
+    receipt_block = source.split("$scheduleReceiptCommand = @(\n", maxsplit=1)[1]
+    assert '"--prospective-session-id", [string]$prospectiveSessionId' in receipt_block
+    assert '"--prospective-validation-session-id",' in receipt_block
+    assert "[string]$prospectiveValidationSessionId" in receipt_block
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
@@ -180,7 +184,58 @@ def test_head_schedule_uses_a_safe_session_payload_before_a_trailing_idless_stat
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
-def test_head_schedule_rejects_conflicting_safe_session_ids(tmp_path: Path) -> None:
+@pytest.mark.parametrize(
+    ("qqq_session_payloads", "qqq_validation_payloads", "validation_expected"),
+    (
+        (
+            ('{"kind":"kis_paper_prospective_qqq_session","status":"no_intent"}',),
+            (
+                '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
+                '"session_id":"qqq-unit"}',
+            ),
+            False,
+        ),
+        (
+            (
+                '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
+                '"session_id":"qqq-unit-a"}',
+                '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
+                '"session_id":"qqq-unit-b"}',
+            ),
+            (
+                '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
+                '"session_id":"qqq-unit"}',
+            ),
+            False,
+        ),
+        (
+            ('{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
+             '"session_id":"qqq-unit"}',),
+            (
+                '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
+                '"session_id":"qqq-other"}',
+            ),
+            True,
+        ),
+        (
+            ('{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
+             '"session_id":"qqq-unit"}',),
+            (
+                '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
+                '"session_id":"qqq-unit-a"}',
+                '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
+                '"session_id":"qqq-unit-b"}',
+            ),
+            True,
+        ),
+    ),
+)
+def test_head_schedule_keeps_missing_or_mismatched_identity_as_recovery(
+    tmp_path: Path,
+    qqq_session_payloads: tuple[str, ...],
+    qqq_validation_payloads: tuple[str, ...],
+    validation_expected: bool,
+) -> None:
     log_path = tmp_path / "fake-docker-services.log"
     result = subprocess.run(
         [
@@ -193,10 +248,8 @@ def test_head_schedule_rejects_conflicting_safe_session_ids(tmp_path: Path) -> N
                 script_path=SCRIPT,
                 project_root=SCRIPT.parents[1],
                 log_path=log_path,
-                qqq_session_payloads=(
-                    '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent","session_id":"qqq-unit-a"}',
-                    '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent","session_id":"qqq-unit-b"}',
-                ),
+                qqq_session_payloads=qqq_session_payloads,
+                qqq_validation_payloads=qqq_validation_payloads,
             ),
         ],
         capture_output=True,
@@ -205,10 +258,9 @@ def test_head_schedule_rejects_conflicting_safe_session_ids(tmp_path: Path) -> N
         timeout=30,
     )
 
-    assert result.returncode == 0, result.stderr
-    assert "kis-paper-prospective-qqq-validation" not in log_path.read_text(
-        encoding="ascii"
-    ).splitlines()
+    assert result.returncode == 20, result.stderr
+    services = log_path.read_text(encoding="ascii").splitlines()
+    assert ("kis-paper-prospective-qqq-validation" in services) is validation_expected
 
 
 def _fake_dispatch_command(
@@ -219,6 +271,10 @@ def _fake_dispatch_command(
     qqq_session_payloads: tuple[str, ...] = (
         '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent","session_id":"qqq-unit"}',
     ),
+    qqq_validation_payloads: tuple[str, ...] = (
+        '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
+        '"session_id":"qqq-unit"}',
+    ),
 ) -> str:
     escaped_script = str(script_path).replace("'", "''")
     escaped_root = str(project_root).replace("'", "''")
@@ -226,6 +282,10 @@ def _fake_dispatch_command(
     escaped_qqq_session_payloads = "\n".join(
         "            Write-Output '" + payload.replace("'", "''") + "'"
         for payload in qqq_session_payloads
+    )
+    escaped_qqq_validation_payloads = "\n".join(
+        "            Write-Output '" + payload.replace("'", "''") + "'"
+        for payload in qqq_validation_payloads
     )
     return f"""
 $ErrorActionPreference = 'Stop'
@@ -255,6 +315,16 @@ function docker.exe {{
         throw "fake docker could not identify exactly one service: $($dockerArgs -join ' ')"
     }}
     Add-Content -LiteralPath $env:THERICHER_FAKE_DOCKER_LOG -Value $service -Encoding ascii
+    function Get-FakeArgumentValue {{
+        param([object[]]$Values, [string]$Name)
+
+        for ($index = 0; $index -lt $Values.Count - 1; $index++) {{
+            if ([string]$Values[$index] -eq $Name) {{
+                return [string]$Values[$index + 1]
+            }}
+        }}
+        return $null
+    }}
     switch ($service) {{
         'kis-paper-intraday-head' {{
             Write-Output '{{"kind":"kis_paper_intraday_session_capture","targets":[]}}'
@@ -263,10 +333,7 @@ function docker.exe {{
 {escaped_qqq_session_payloads}
         }}
         'kis-paper-prospective-qqq-validation' {{
-            Write-Output (
-                '{{"kind":"kis_paper_prospective_qqq_validation","status":"validated",' +
-                '"session_id":"qqq-unit"}}'
-            )
+{escaped_qqq_validation_payloads}
         }}
         'kis-paper-prospective-spy-cycle' {{
             Write-Output (
@@ -287,10 +354,26 @@ function docker.exe {{
             )
         }}
         'kis-paper-intraday-head-receipt' {{
-            Write-Output (
-                '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"complete",' +
-                '"terminal":{{"status":"complete","scheduler_exit_code":0}}}}'
-            )
+            $sessionId = Get-FakeArgumentValue -Values $dockerArgs -Name '--prospective-session-id'
+            $validationSessionId = Get-FakeArgumentValue `
+                -Values $dockerArgs `
+                -Name '--prospective-validation-session-id'
+            if ($null -eq $sessionId) {{
+                Write-Output (
+                    '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"recovery",' +
+                    '"terminal":{{"status":"recovery","scheduler_exit_code":20}}}}'
+                )
+            }} elseif ($null -eq $validationSessionId -or $validationSessionId -ne $sessionId) {{
+                Write-Output (
+                    '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"recovery",' +
+                    '"terminal":{{"status":"recovery","scheduler_exit_code":20}}}}'
+                )
+            }} else {{
+                Write-Output (
+                    '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"complete",' +
+                    '"terminal":{{"status":"complete","scheduler_exit_code":0}}}}'
+                )
+            }}
         }}
         default {{
             Write-Output '{{}}'

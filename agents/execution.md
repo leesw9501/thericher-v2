@@ -58,9 +58,11 @@ The 2026-08-07 00:29 KST run collected with exit `0` and emitted a QQQ
 the terminal receipt. The exact task-owned terminal result is therefore
 `recovery/prospective_session_id_unavailable` with Scheduler result `20`, and
 the network-disabled validation stage is `unavailable`. This is no broker or
-fill outcome. The next bounded repair passes only the existing validated safe
-session and validation identifiers to the existing receipt command; it creates
-no KIS call, task, order path, or authority change.
+fill outcome. The bounded repair now passes only the existing validated safe
+session and validation identifiers to the existing receipt command; it is
+verified with matching and recovery simulations and built into the existing
+services. The next 02:28 KST task-owned receipt determines the runtime outcome;
+it creates no KIS call, task, order path, or authority change.
 
 The rebuilt single `thericher-kis-paper-daily-spy-session` image preserves
 `quote_unavailable` for an exact fresh-quote fetch failure and uses

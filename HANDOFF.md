@@ -14,17 +14,16 @@ external artifacts retain history.
 
 ## Current Objective
 
-`kis-intraday-observed-provisional-session-v1-followup` completed through the
-existing QQQ intraday-head route. Its 2026-08-07 00:29 KST invocation has a
-hash-attested task-owned receipt with collection `exit_zero`, downstream QQQ
-session `no_intent`, and terminal
-`recovery/prospective_session_id_unavailable` with Scheduler result `20`.
-The dispatcher computed the safe QQQ session identifiers but did not pass them
-to its existing terminal receipt command, so the network-disabled validation
-stage was `unavailable`. This is a scoped receipt-handoff recovery only: it
-creates no Paper lifecycle, fill, PnL, alpha, or model claim. The next objective
-repairs only that host-side safe-ID handoff; do not manually invoke or duplicate
-the existing task.
+`kis-intraday-schedule-receipt-qqq-session-identity-v1` completed one
+host-only receipt repair. The immutable 2026-08-07 00:29 KST task receipt
+remains `recovery/prospective_session_id_unavailable` with Scheduler result
+`20`; it is not rewritten. The dispatcher now passes its existing validated
+safe QQQ session and validation IDs to the existing terminal receipt only when
+present. A network-disabled fake-Docker simulation proves matching `no_intent`
+IDs complete, while missing, conflicting, and mismatched IDs remain scoped
+recovery. It changes no KIS call, broker behavior, task, fill, PnL, alpha, or
+model claim. The next objective reattaches one exact result from the existing
+02:28 KST task-owned invocation; do not manually invoke or duplicate it.
 
 `kis-paper-virtual-lifecycle-canary-v2` remains completed through the existing,
 task-owned deterministic canary. The resulting virtual-Paper lifecycle is
@@ -415,7 +414,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-07 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-07 23:15 KST |
-| Current-head receipt handoff | Data / Execution | The 00:29 KST task collection exited `0`, but its QQQ `no_intent` session identity was omitted from the terminal receipt and the offline validation remained unavailable. The next bounded host-only repair passes only existing validated safe IDs; no manual KIS invocation, new task, or new broker path |
+| Current-head receipt follow-up | Data / Execution | The 00:29 KST task result remains scoped recovery after collection `exit_zero` and QQQ `no_intent`. The tested host-only safe-ID receipt repair is built into the existing services; the next owned 02:28 KST task result alone can establish whether terminal receipt and offline validation reattach. No manual KIS invocation, new task, or broker path |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |

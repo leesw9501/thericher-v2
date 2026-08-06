@@ -477,6 +477,15 @@ $scheduleReceiptCommand = @(
     "--repository-root",
     "/app"
 )
+if ($null -ne $prospectiveSessionId) {
+    $scheduleReceiptCommand += @("--prospective-session-id", [string]$prospectiveSessionId)
+}
+if ($null -ne $prospectiveValidationSessionId) {
+    $scheduleReceiptCommand += @(
+        "--prospective-validation-session-id",
+        [string]$prospectiveValidationSessionId
+    )
+}
 if ($null -ne $prospectiveSpyCycleId) {
     $scheduleReceiptCommand += @("--prospective-spy-cycle-id", [string]$prospectiveSpyCycleId)
 }
