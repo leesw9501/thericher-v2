@@ -311,6 +311,17 @@ undocumented timestamp seed.
   it does not validate event timing or semantics, repair the source's non-PIT
   status, or qualify a model, ranking, sealed holdout, or Paper input. Evidence:
   `D:\market_data\us_equities\tiingo_etf_daily\event_marker_exclusions\snapshot=20260804T104229Z-tiingo-etf-d1-event-exclusions-r1`.
+- **Cboe D1 volatility availability/finality:** a metadata-only inventory
+  confirms the local 2026-06-18 snapshot has 16 daily volatility-index series,
+  including VIX/VXN/RVX, over 1990-01-02 through 2026-06-17; no raw rows were
+  inspected. Cboe labels VIX history as updated daily but does not publish a
+  daily-endpoint availability timestamp or finality SLA, while its index policy
+  allows selected EOD corrections to be recalculated and reissued within two
+  business days. These D1 series are therefore `unqualified_for_causal_feature_use`:
+  they cannot become same- or next-session features, campaigns, Paper inputs,
+  or promotion evidence until a separate source-safe five-session observation
+  captures publication and revision behavior. Evidence:
+  `D:\thericher-v2\model-artifacts\data\cboe-volatility-availability-finality-v1\assessment=20260807-r1\assessment.json`.
 - **Free public augmentation:** no official, no-auth source found that jointly
   establishes PIT/delisting membership, corporate-action meaning, and daily
   OHLCV. SEC Market Structure and EDGAR remain optional source-limited sidecars
