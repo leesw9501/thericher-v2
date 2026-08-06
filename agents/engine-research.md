@@ -49,8 +49,10 @@ strongest kill test before target evaluation or GPU consideration.
   QuantConnect LEAN moving-average example without importing its code. Each
   EMA seeds from its own within-session SMA before Decimal recurrence, and its
   explicit `missing`/`ready` input state prevents warmup from becoming a target.
-  It has no target adapter, local-paper replay, campaign, GPU, PnL, or Paper
-  input. Source-safe scope and rights receipt:
+  Its distinct rule-specific target adapter maps that structural state to a
+  `TargetExposureProposal` and commits rule id, period, tolerance, and seed
+  policy into lineage without leaking EMA values. It has no local-paper replay,
+  campaign, GPU, PnL, or Paper input. Source-safe scope and rights receipt:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\quantconnect-session-reset-ema-state-20260806-r1\source-retrieval.json`.
 - The proposed `norgate-d1-trio-range-clustering-falsification-v1` remains
   `input_unavailable` and does not open a campaign. A current hash-bound

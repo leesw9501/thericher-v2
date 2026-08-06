@@ -18,6 +18,9 @@ from typing import Final, Literal
 from thericher_v2.contracts import Bar, decimal_value, positive, require_utc
 from thericher_v2.market.resample import SessionWindow
 
+SESSION_RESET_EMA_STATE_RULE_ID: Final = "session-reset-ema-state-v1"
+SESSION_RESET_EMA_STATE_SEED_POLICY: Final = "within_session_sma_seed_then_decimal_ema_v1"
+
 EmaStateAction = Literal["enter", "exit", "hold"]
 EmaStateInputStatus = Literal["missing", "ready"]
 EmaStatePosition = Literal["flat", "long"]
