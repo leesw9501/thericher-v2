@@ -320,8 +320,16 @@ undocumented timestamp seed.
   business days. These D1 series are therefore `unqualified_for_causal_feature_use`:
   they cannot become same- or next-session features, campaigns, Paper inputs,
   or promotion evidence until a separate source-safe five-session observation
-  captures publication and revision behavior. Evidence:
-  `D:\thericher-v2\model-artifacts\data\cboe-volatility-availability-finality-v1\assessment=20260807-r1\assessment.json`.
+  captures publication and revision behavior. The new pure observation primitive
+  accepts only the mapped `VIX`/`VXN`/`RVX` Cboe CDN CSV route, hashes one
+  normalized matching row in memory, persists only source-safe timing/cache
+  metadata, and revalidates a caller-provided close-relative bracket. It has no
+  network, KIS, scheduler, Engine, or Paper import surface. A credential-free
+  HEAD mapping probe returned `200/text-csv` for all three routes without
+  retaining a body or header value; it proves endpoint mapping only, not timing
+  or finality. Evidence:
+  `D:\thericher-v2\model-artifacts\data\cboe-volatility-availability-finality-v1\assessment=20260807-r1\assessment.json` and
+  `D:\thericher-v2\model-artifacts\data\cboe-volatility-availability-finality-v1\endpoint-mapping-probe=20260807-r1\receipt.json`.
 - **Free public augmentation:** no official, no-auth source found that jointly
   establishes PIT/delisting membership, corporate-action meaning, and daily
   OHLCV. SEC Market Structure and EDGAR remain optional source-limited sidecars
