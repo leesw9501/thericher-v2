@@ -50,11 +50,26 @@ The focused reader, projection, and CLI checks passed 79 tests. Independent
 review found and corrected the terminal-scope check; the required Claude CLI
 challenge timed out as `review_unavailable`, not agreement or a hold.
 
-The next bounded objective adds immutable, source-safe duplicate-conflict
-provenance to future session-capture receipts: the conflict origin and whether
-an eligible retained head snapshot was preserved or quarantined. It will not
-infer those fields for historical receipts, inspect raw rows, or change any
-task, KIS route, Paper action, model, or data qualification.
+`intraday-head-duplicate-conflict-provenance-v1` is now complete. Future
+session-capture receipts record only the collector branch's categorical
+`candidate_batch` or `retained_cache` origin and the retained-head disposition
+`not_applicable`, `preserved`, or `quarantined`. The exact recovery reader
+projects them only after the existing pointer/terminal/run/time/hash/coverage
+binding passes. Historical receipts with both fields absent remain
+`not_recorded_legacy`; partial, mixed-generation, unknown, and inconsistent
+future fields fail closed as `evidence_unavailable`. No raw row, path, hash,
+price, account, credential, KIS, task, order, model, or qualification surface
+was added. Claude returned `supported-with-limits`; its non-destructive
+quarantine and no-mutable-fallback limits are covered by tests. The task-owned
+collector image was rebuilt without running it, so the next owned invocation
+will use the new writer contract.
+
+The next bounded objective is Engine-owned
+`source-local-session-reset-ema-mechanics-v1`: replay the existing pure 15/30
+session-reset EMA rule over the frozen first 20 complete QQQ/NAS M1 sessions
+through the existing `source: local_paper` boundary. It is CPU-only,
+source-local mechanics evidence with no PnL, performance, selection, GPU,
+Paper-input, or broker claim.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,
@@ -473,7 +488,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-07 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-07 23:15 KST |
-| Current-head receipt binding | Data / Execution | The exact 06:20 KST pointer/terminal is `recovery/collection_exit_nonzero` with a verified `incomplete` same-run capture binding. The completed offline projection emits only `rejected_duplicate_conflict` for that exact terminal/capture chain and otherwise emits `evidence_unavailable`; QQQ/v4 remain `not_applicable`. The next Data package adds immutable conflict provenance without reading mutable state. |
+| Current-head receipt binding | Data / Execution | The exact 06:20 KST pointer/terminal is `recovery/collection_exit_nonzero` with a verified `incomplete` same-run capture binding. Its historic targets now project as `not_recorded_legacy`; future receipts carry collector-time duplicate-conflict provenance through the same exact bound chain. QQQ/v4 remain `not_applicable`. |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
@@ -580,11 +595,10 @@ metadata-only projection. DST/pre-market behavior remains unproven.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
    or duplicate the existing task. Its latest 2026-08-06 23:35 KST Scheduler
    result is `0`; the next opportunity is 2026-08-07 23:35 KST.
-2. Build immutable duplicate-conflict provenance for future session-capture
-   receipts. It must carry only categorical conflict origin and retained-head
-   disposition through the exact bound receipt; historical missing fields stay
-   `not_recorded_legacy`. Do not inspect raw rows or change the installed task,
-   KIS route, Paper lifecycle, or data qualification.
+2. Build the frozen source-local 15/30 session-reset EMA mechanics replay over
+   the existing first 20 complete QQQ/NAS M1 sessions. It must use only causal
+   completed bars and `source: local_paper` replay, retain no raw data or PnL,
+   and remain non-promoting, CPU-only, and outside every KIS/Paper route.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality
    evidence.

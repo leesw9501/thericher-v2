@@ -203,8 +203,9 @@ another correctly scoped Paper action.
   This is Data recovery evidence, not a Paper lifecycle, broker, fill, PnL, or
   model outcome. The completed read-only recovery projection now reports only
   the exact bound chain's `rejected_duplicate_conflict` category and otherwise
-  `evidence_unavailable`; the next Data-owned provenance extension remains
-  unable to create a KIS or Paper side effect.
+  `evidence_unavailable`. Future receipts now seal only collector-time conflict
+  provenance; the next Engine-owned EMA mechanics replay remains local-paper
+  only and cannot create a KIS or Paper side effect.
 - The credential-free loopback dashboard cannot call a broker or submit an
   order. Authenticated local emergency and pause controls may change only their
   local control state; its schema-v3 account projection omits prices and order

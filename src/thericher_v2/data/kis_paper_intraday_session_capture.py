@@ -24,6 +24,8 @@ from zoneinfo import ZoneInfo
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION,
+    KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS,
+    KIS_PAPER_PRIVATE_INTRADAY_RETAINED_HEAD_CONFLICT_DISPOSITIONS,
     KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
     KisPaperPrivateIntradayBackfillRun,
     sanitize_kis_paper_private_intraday_failure_reason,
@@ -61,6 +63,10 @@ class KisPaperIntradaySessionCaptureTarget:
     row_count: int
     exact_overlap_rows: int
     reason: str | None
+    conflict_origin: Literal["candidate_batch", "retained_cache"] | None = None
+    retained_head_conflict_disposition: Literal[
+        "not_applicable", "preserved", "quarantined"
+    ] = "not_applicable"
 
     def __post_init__(self) -> None:
         if self.target_key not in _EXPECTED_TARGET_KEYS:
@@ -75,6 +81,25 @@ class KisPaperIntradaySessionCaptureTarget:
                 "reason",
                 sanitize_kis_paper_private_intraday_failure_reason(self.reason),
             )
+        if self.conflict_origin not in KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS | {None}:
+            raise ValueError("session capture target conflict origin is invalid")
+        if (
+            self.retained_head_conflict_disposition
+            not in KIS_PAPER_PRIVATE_INTRADAY_RETAINED_HEAD_CONFLICT_DISPOSITIONS
+        ):
+            raise ValueError("session capture target conflict disposition is invalid")
+        if self.conflict_origin is None:
+            if self.retained_head_conflict_disposition != "not_applicable":
+                raise ValueError("session capture target conflict disposition is invalid")
+            return
+        if self.status != "rejected" or self.reason != "minute_duplicate_conflict":
+            raise ValueError("session capture target conflict provenance is invalid")
+        if self.conflict_origin == "candidate_batch":
+            if self.retained_head_conflict_disposition != "not_applicable":
+                raise ValueError("session capture target conflict disposition is invalid")
+            return
+        if self.retained_head_conflict_disposition not in {"preserved", "quarantined"}:
+            raise ValueError("session capture target conflict disposition is invalid")
 
     def to_payload(self) -> dict[str, object]:
         return {
@@ -83,6 +108,8 @@ class KisPaperIntradaySessionCaptureTarget:
             "row_count": self.row_count,
             "exact_overlap_rows": self.exact_overlap_rows,
             "reason": self.reason,
+            "conflict_origin": self.conflict_origin,
+            "retained_head_conflict_disposition": self.retained_head_conflict_disposition,
         }
 
 
@@ -356,6 +383,11 @@ def _capture_targets(
         or {run.target_key for run in values} != _EXPECTED_TARGET_KEYS
     ):
         raise ValueError("session capture collector results are incomplete")
+    if any(
+        run.reason == "minute_duplicate_conflict" and run.conflict_origin is None
+        for run in values
+    ):
+        raise ValueError("session capture conflict provenance is invalid")
     return tuple(
         KisPaperIntradaySessionCaptureTarget(
             target_key=run.target_key,
@@ -363,6 +395,8 @@ def _capture_targets(
             row_count=run.row_count,
             exact_overlap_rows=run.exact_overlap_rows,
             reason=run.reason,
+            conflict_origin=run.conflict_origin,
+            retained_head_conflict_disposition=run.retained_head_conflict_disposition,
         )
         for run in values
     )

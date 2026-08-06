@@ -2,53 +2,51 @@
 
 ## Objective
 
-Build `intraday-head-duplicate-conflict-provenance-v1`: preserve the source-safe
-cause and retained-head disposition of an intraday `minute_duplicate_conflict`
-in each future immutable session-capture receipt, then expose it only through
-the existing exact bound-receipt recovery reader.
+Build `source-local-session-reset-ema-mechanics-v1`: use the existing pure
+15/30 session-reset EMA rule and target adapter to replay a deterministic frozen
+source-local QQQ/NAS M1 input through the existing local-paper seam.
 
-This is a Data recovery contract. It must not reinterpret the completed 06:20
-KST result, inspect raw market rows, or make a data-quality, model, Paper,
-fill, PnL, or alpha claim.
+This is engineering mechanics evidence only. The current cache lacks observed
+decision-time availability and provider finality, so this objective cannot make
+a predictive, PnL, profitability, selection, ensemble, GPU, KIS Paper-input,
+or broker claim.
 
 ## Hard Boundaries
 
 - Do not call KIS, invoke or alter any task, submit/modify/cancel a Paper
   order, or read any credential or `KIS_LIVE_*` value.
-- Do not inspect, emit, or commit raw bars, prices, provider payloads, paths,
-  hashes, credentials, accounts, intents, or order identifiers.
-- Do not read mutable `index.json` as an integrity root in the recovery
-  projection, mutate historical immutable receipts, or infer provenance absent
-  from an older receipt.
-- Do not create a scheduler, provider, route, data qualification, model claim,
-  GPU campaign, or Paper permission.
+- Do not inspect or commit raw bars, prices, provider payloads, account/order
+  data, credentials, model weights, or generated artifacts. Keep any result
+  under `D:\thericher-v2\model-artifacts`.
+- Do not open a predictive campaign, sealed evaluation, model selection,
+  ensemble, GPU appointment, scheduler, provider, route, or Paper permission.
+- Keep every simulated fill `source: local_paper`; no KIS adapter may be
+  imported or reached.
 
 ## Required Work
 
-1. Before changing the capture/result contract, ask Claude CLI for a concise
-   falsification-first drift check. If unavailable, record only
+1. Ask Claude CLI for a concise falsification-first mechanics drift check
+   before new replay architecture. If unavailable, record only
    `review_unavailable` and continue with local evidence.
-2. Extend the collector result and future immutable session-capture target
-   contract with allowlisted categorical fields for conflict origin
-   (`candidate_batch` or `retained_cache` when applicable) and retained-head
-   disposition (`not_applicable`, `preserved`, or `quarantined`). Keep every
-   non-conflict result explicit and source-safe.
-3. Make the exact recovery projection carry those categories only after its
-   existing pointer, terminal, run, time, hash, and coverage binding checks
-   pass. A historical receipt that lacks the new fields must remain
-   `not_recorded_legacy`; it must never be reconstructed from mutable cache.
-4. Add synthetic focused tests for candidate-batch conflict, retained-cache
-   conflict with and without eligible head quarantine, and cursor-backed
-   historical conflict. The strongest kill test is that cursor-backed history
-   is neither quarantined nor described as quarantined. Prove a later eligible
-   synthetic head can recover only after the recorded quarantine path.
-5. Preserve the projection's offline/no-credential/no-network and source-safe
-   output guarantees. Refresh the Data and orchestration stateboards with the
-   next task-owned due fact.
+2. Reuse the Donchian source-local replay's external-artifact and causal input
+   discipline rather than creating a parallel framework. Freeze the first 20
+   chronological complete QQQ/NAS regular M1 sessions, session reset, EMA
+   15/30 parameters, completed-bar-close decision timing, and next-M1-open
+   local-paper fill rule before reading outcomes.
+3. Build a small replay module and script that emit only source-safe aggregate
+   receipt fields: frozen input commitment, session count, rule activation or
+   no-rule-activation category, local-paper/replay count, terminal-flat status,
+   and explicit input-unavailable/fail-closed category. Write artifacts outside
+   Git.
+4. Add focused tests for session reset, warmup, completed-bar causality,
+   future-bar and later-session prefix invariance, incomplete-session rejection,
+   `source: local_paper` fills, replayability, and terminal-flat completion.
+5. Refresh Engine Research and orchestration stateboards. Keep GPU unallocated;
+   this package is CPU-only.
 
 ## Verification
 
-Run focused collector/capture/projection tests, then:
+Run focused model/replay tests and the source-local smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -59,4 +57,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Record intraday conflict provenance`
+`Add EMA source-local replay mechanics`

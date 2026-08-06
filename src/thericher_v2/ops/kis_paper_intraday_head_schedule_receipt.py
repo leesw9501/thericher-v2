@@ -126,6 +126,12 @@ _CAPTURE_CYCLE_STATUSES = frozenset(
 _CAPTURE_RECEIPT_KIND = "kis_paper_intraday_session_capture"
 _CAPTURE_RECEIPT_DIRECTORY = ("v1", "session-capture")
 _CAPTURE_TARGET_KEYS = frozenset({"QQQ/NAS/1m", "SPY/AMS/1m"})
+_COLLECTION_RECOVERY_CONFLICT_ORIGINS = frozenset(
+    {"candidate_batch", "retained_cache", "not_applicable", "not_recorded_legacy"}
+)
+_COLLECTION_RECOVERY_RETAINED_HEAD_DISPOSITIONS = frozenset(
+    {"not_applicable", "preserved", "quarantined", "not_recorded_legacy"}
+)
 _EASTERN_TZ = ZoneInfo("America/New_York")
 
 
@@ -338,6 +344,12 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
     target_key: str
     status: str
     reason: str | None
+    conflict_origin: Literal[
+        "candidate_batch", "retained_cache", "not_applicable", "not_recorded_legacy"
+    ]
+    retained_head_conflict_disposition: Literal[
+        "not_applicable", "preserved", "quarantined", "not_recorded_legacy"
+    ]
 
     def __post_init__(self) -> None:
         if self.target_key not in _CAPTURE_TARGET_KEYS:
@@ -345,12 +357,39 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
         _require_safe_id(self.status, "collection recovery target status")
         if self.reason is not None:
             _require_safe_id(self.reason, "collection recovery target reason")
+        if self.conflict_origin not in _COLLECTION_RECOVERY_CONFLICT_ORIGINS:
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+        if (
+            self.retained_head_conflict_disposition
+            not in _COLLECTION_RECOVERY_RETAINED_HEAD_DISPOSITIONS
+        ):
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+        if self.conflict_origin == "not_recorded_legacy":
+            if self.retained_head_conflict_disposition != "not_recorded_legacy":
+                raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+            return
+        if self.retained_head_conflict_disposition == "not_recorded_legacy":
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+        if self.conflict_origin == "not_applicable":
+            if self.retained_head_conflict_disposition != "not_applicable":
+                raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+            return
+        if self.status != "rejected" or self.reason != "minute_duplicate_conflict":
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+        if self.conflict_origin == "candidate_batch":
+            if self.retained_head_conflict_disposition != "not_applicable":
+                raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+            return
+        if self.retained_head_conflict_disposition not in {"preserved", "quarantined"}:
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
 
     def safe_payload(self) -> dict[str, object]:
         return {
             "target_key": self.target_key,
             "status": self.status,
             "reason": self.reason,
+            "conflict_origin": self.conflict_origin,
+            "retained_head_conflict_disposition": self.retained_head_conflict_disposition,
         }
 
 
@@ -1046,10 +1085,31 @@ def _collection_recovery_targets_from_capture_payload(
     values = payload.get("targets")
     if not isinstance(values, list) or len(values) != len(_CAPTURE_TARGET_KEYS):
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
-    targets: list[KisPaperIntradayHeadCollectionRecoveryTarget] = []
+    provenance_fields = frozenset(
+        {
+            "conflict_origin",
+            "retained_head_conflict_disposition",
+        }
+    )
+    provenance_shapes: set[frozenset[str]] = set()
     for value in values:
         if not isinstance(value, Mapping):
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+        shape = frozenset(field for field in provenance_fields if field in value)
+        if shape not in {frozenset(), provenance_fields}:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+        provenance_shapes.add(shape)
+    if len(provenance_shapes) != 1:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    receipt_is_legacy = not next(iter(provenance_shapes))
+    targets: list[KisPaperIntradayHeadCollectionRecoveryTarget] = []
+    for value in values:
+        if receipt_is_legacy:
+            conflict_origin = "not_recorded_legacy"
+            retained_head_conflict_disposition = "not_recorded_legacy"
+        else:
+            conflict_origin = value["conflict_origin"]
+            retained_head_conflict_disposition = value["retained_head_conflict_disposition"]
         try:
             capture_target = KisPaperIntradaySessionCaptureTarget(
                 target_key=value.get("target_key"),
@@ -1057,16 +1117,44 @@ def _collection_recovery_targets_from_capture_payload(
                 row_count=value.get("row_count"),
                 exact_overlap_rows=value.get("exact_overlap_rows"),
                 reason=value.get("reason"),
+                conflict_origin=(
+                    conflict_origin if conflict_origin != "not_recorded_legacy" else None
+                ),
+                retained_head_conflict_disposition=(
+                    retained_head_conflict_disposition
+                    if retained_head_conflict_disposition != "not_recorded_legacy"
+                    else "not_applicable"
+                ),
             )
         except (TypeError, ValueError) as error:
             raise KisPaperIntradayHeadScheduleReceiptError(
                 "schedule_capture_receipt_invalid"
             ) from error
+        if (
+            not receipt_is_legacy
+            and capture_target.reason == "minute_duplicate_conflict"
+            and capture_target.conflict_origin is None
+        ):
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
         targets.append(
             KisPaperIntradayHeadCollectionRecoveryTarget(
                 target_key=capture_target.target_key,
                 status=capture_target.status,
                 reason=capture_target.reason,
+                conflict_origin=(
+                    "not_recorded_legacy"
+                    if receipt_is_legacy
+                    else (
+                        "not_applicable"
+                        if capture_target.conflict_origin is None
+                        else capture_target.conflict_origin
+                    )
+                ),
+                retained_head_conflict_disposition=(
+                    capture_target.retained_head_conflict_disposition
+                    if not receipt_is_legacy
+                    else "not_recorded_legacy"
+                ),
             )
         )
     if {target.target_key for target in targets} != _CAPTURE_TARGET_KEYS:

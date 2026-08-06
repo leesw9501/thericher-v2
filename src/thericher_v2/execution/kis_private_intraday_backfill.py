@@ -82,6 +82,12 @@ _SAFE_FAILURE_REASONS = frozenset(
 )
 _ConflictOrigin = Literal["candidate_batch", "retained_cache"]
 _CollectionScope = Literal["head", "historical"]
+KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS = frozenset(
+    {"candidate_batch", "retained_cache"}
+)
+KIS_PAPER_PRIVATE_INTRADAY_RETAINED_HEAD_CONFLICT_DISPOSITIONS = frozenset(
+    {"not_applicable", "preserved", "quarantined"}
+)
 
 
 class _CandidateBatchDuplicateConflict(KisPaperMarketDataError):
@@ -157,6 +163,10 @@ class KisPaperPrivateIntradayBackfillRun:
     manifest_path: Path | None = None
     manifest_hash: str | None = None
     reason: str | None = None
+    conflict_origin: _ConflictOrigin | None = None
+    retained_head_conflict_disposition: Literal[
+        "not_applicable", "preserved", "quarantined"
+    ] = "not_applicable"
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -175,6 +185,27 @@ class KisPaperPrivateIntradayBackfillRun:
             raise ValueError("private intraday backfill result is invalid")
         if self.manifest_hash is not None and not _is_sha256(self.manifest_hash):
             raise ValueError("private intraday backfill result is invalid")
+        if self.conflict_origin not in KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS | {None}:
+            raise ValueError("private intraday conflict origin is invalid")
+        if (
+            self.retained_head_conflict_disposition
+            not in KIS_PAPER_PRIVATE_INTRADAY_RETAINED_HEAD_CONFLICT_DISPOSITIONS
+        ):
+            raise ValueError("private intraday conflict disposition is invalid")
+        if self.conflict_origin is None:
+            if self.retained_head_conflict_disposition != "not_applicable":
+                raise ValueError("private intraday conflict disposition is invalid")
+            if self.reason == "minute_duplicate_conflict":
+                raise ValueError("private intraday conflict provenance is invalid")
+            return
+        if self.status != "rejected" or self.reason != "minute_duplicate_conflict":
+            raise ValueError("private intraday conflict provenance is invalid")
+        if self.conflict_origin == "candidate_batch":
+            if self.retained_head_conflict_disposition != "not_applicable":
+                raise ValueError("private intraday conflict disposition is invalid")
+            return
+        if self.retained_head_conflict_disposition not in {"preserved", "quarantined"}:
+            raise ValueError("private intraday conflict disposition is invalid")
 
 
 @dataclass(frozen=True)
@@ -323,6 +354,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
                         row_count=0,
                         exact_overlap_rows=0,
                         reason=collected.reason,
+                        conflict_origin=collected.conflict_origin,
                     )
                 )
                 continue
@@ -361,6 +393,10 @@ def run_kis_paper_private_intraday_backfill_cycle(
                         row_count=0,
                         exact_overlap_rows=0,
                         reason="minute_duplicate_conflict",
+                        conflict_origin="retained_cache",
+                        retained_head_conflict_disposition=(
+                            "quarantined" if quarantined_retained_head_chunks else "preserved"
+                        ),
                     )
                 )
                 continue

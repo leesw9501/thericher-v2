@@ -287,6 +287,80 @@ def test_session_capture_keeps_partial_terminal_head_data_partial_and_never_repa
         )
 
 
+def test_session_capture_preserves_conflict_provenance_and_nonconflict_defaults(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    session = us_equity_2026_session(date(2026, 7, 22))
+    assert session is not None and session.kind == "regular"
+    original_rows = _session_rows(session.window.open_ts, 2)
+    observed_at = session.window.close_ts + timedelta(minutes=1)
+    run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page("QQQ", "NAS", original_rows),
+                _page("SPY", "AMS", original_rows),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        resume_cursor=False,
+        observed_at=observed_at,
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    changed = KisPaperMinuteRawBar(
+        exchange_date=original_rows[0].exchange_date,
+        exchange_time=original_rows[0].exchange_time,
+        korea_date=original_rows[0].korea_date,
+        korea_time=original_rows[0].korea_time,
+        open=original_rows[0].open,
+        high=original_rows[0].high + Decimal("1"),
+        low=original_rows[0].low,
+        last=original_rows[0].last + Decimal("1"),
+        volume=original_rows[0].volume,
+    )
+    runs = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page("QQQ", "NAS", (changed, original_rows[1])),
+                _page("SPY", "AMS", original_rows),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=False,
+        observed_at=observed_at + timedelta(minutes=1),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    capture = build_and_write_kis_paper_intraday_session_capture(
+        runs=runs,
+        cache_root=cache_root,
+        repository_root=repo_root,
+        observed_at=observed_at + timedelta(minutes=1),
+    )
+    payload = capture.outcome.safe_payload()
+    qqq = next(item for item in payload["targets"] if item["target_key"] == "QQQ/NAS/1m")
+    spy = next(item for item in payload["targets"] if item["target_key"] == "SPY/AMS/1m")
+
+    assert qqq["status"] == "rejected"
+    assert qqq["reason"] == "minute_duplicate_conflict"
+    assert qqq["conflict_origin"] == "retained_cache"
+    assert qqq["retained_head_conflict_disposition"] == "preserved"
+    assert spy["status"] == "recovered"
+    assert spy["conflict_origin"] is None
+    assert spy["retained_head_conflict_disposition"] == "not_applicable"
+
+
 def test_session_capture_rejects_a_symlinked_evidence_destination(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,

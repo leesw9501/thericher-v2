@@ -54,10 +54,12 @@ undocumented timestamp seed.
   projection emits `rejected_duplicate_conflict` only for this terminal class
   and capture chain; missing, malformed, unsafe, or mismatched evidence emits
   `evidence_unavailable`, without a latest-artifact or mutable-index fallback.
-  Next Data package: record only immutable categorical duplicate-conflict
-  provenance for future capture receipts, leaving historical missing fields
-  `not_recorded_legacy`. The existing task next owns 2026-08-08 00:29 KST; do
-  not manually rerun or duplicate it.
+  Future receipts now seal collector-time `candidate_batch`/`retained_cache`
+  provenance plus `not_applicable`/`preserved`/`quarantined` disposition;
+  absent historical fields remain `not_recorded_legacy`, and partial or mixed
+  receipt shapes fail closed. The existing task next owns 2026-08-08 00:29 KST;
+  do not manually rerun or duplicate it. Its collector image has been rebuilt
+  without an invocation.
 - **Current-head timing repair:** a metadata-only reattachment of the
   2026-08-04 QQQ cache found retained regular-session page ranges
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST

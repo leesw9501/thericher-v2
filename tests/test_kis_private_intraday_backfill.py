@@ -643,10 +643,12 @@ def test_snapshots_symlink_is_rejected_before_raw_data_is_written(
     assert list(repo_root.iterdir()) == []
 
 
-def test_conflicting_prior_overlap_rejects_without_advancing_cursor(tmp_path: Path) -> None:
+def test_head_retained_conflict_without_quarantine_preserves_snapshot_and_reports_origin(
+    tmp_path: Path,
+) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
-    cache_root = tmp_path / "market-data" / "intraday"
+    cache_root = tmp_path / "market-data" / "intraday-head"
     first_rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2)
     initial = _MinuteClient(
         [
@@ -660,10 +662,19 @@ def test_conflicting_prior_overlap_rejects_without_advancing_cursor(tmp_path: Pa
         repo_root=repo_root,
         code_revision="git:test",
         pages_per_target=1,
+        resume_cursor=False,
         observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
         sleeper=lambda _seconds: None,
         monotonic_clock=lambda: 0.0,
     )
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    initial_index = json.loads(index_path.read_text(encoding="utf-8"))
+    initial_qqq = next(
+        target for target in initial_index["targets"] if target["target_key"] == "QQQ/NAS/1m"
+    )
+    original_chunk = initial_qqq["chunks"][0]
+    original_manifest = index_path.parent / original_chunk["manifest_path"]
+    original_manifest_bytes = original_manifest.read_bytes()
     changed = KisPaperMinuteRawBar(
         exchange_date=first_rows[0].exchange_date,
         exchange_time=first_rows[0].exchange_time,
@@ -688,6 +699,8 @@ def test_conflicting_prior_overlap_rejects_without_advancing_cursor(tmp_path: Pa
         repo_root=repo_root,
         code_revision="git:test",
         pages_per_target=1,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=False,
         observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
         sleeper=lambda _seconds: None,
         monotonic_clock=lambda: 0.0,
@@ -695,7 +708,10 @@ def test_conflicting_prior_overlap_rejects_without_advancing_cursor(tmp_path: Pa
 
     assert results[0].status == "rejected"
     assert results[0].reason == "minute_duplicate_conflict"
-    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    assert results[0].conflict_origin == "retained_cache"
+    assert results[0].retained_head_conflict_disposition == "preserved"
+    assert original_manifest.exists()
+    assert original_manifest.read_bytes() == original_manifest_bytes
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
     assert len(qqq["chunks"]) == 1
@@ -735,6 +751,7 @@ def test_head_conflict_quarantines_old_snapshot_before_a_fresh_capture(
     original_chunk = initial_qqq["chunks"][0]
     assert original_chunk["collection_scope"] == "head"
     original_manifest = index_path.parent / original_chunk["manifest_path"]
+    original_manifest_bytes = original_manifest.read_bytes()
     changed = KisPaperMinuteRawBar(
         exchange_date=original_rows[0].exchange_date,
         exchange_time=original_rows[0].exchange_time,
@@ -770,7 +787,12 @@ def test_head_conflict_quarantines_old_snapshot_before_a_fresh_capture(
         ("QQQ/NAS/1m", "rejected"),
         ("SPY/AMS/1m", "recovered"),
     ]
+    assert quarantined[0].conflict_origin == "retained_cache"
+    assert quarantined[0].retained_head_conflict_disposition == "quarantined"
+    assert quarantined[1].conflict_origin is None
+    assert quarantined[1].retained_head_conflict_disposition == "not_applicable"
     assert original_manifest.exists()
+    assert original_manifest.read_bytes() == original_manifest_bytes
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
     assert qqq["chunks"] == [
@@ -805,6 +827,8 @@ def test_head_conflict_quarantines_old_snapshot_before_a_fresh_capture(
         ("QQQ/NAS/1m", "collected"),
         ("SPY/AMS/1m", "recovered"),
     ]
+    assert retried[0].conflict_origin is None
+    assert retried[0].retained_head_conflict_disposition == "not_applicable"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
     assert [chunk["raw_market_data_retained"] for chunk in qqq["chunks"]] == [False, True]
@@ -866,7 +890,7 @@ def test_malformed_head_quarantine_marker_fails_closed_before_orphan_recovery(
     assert original_manifest.exists()
 
 
-def test_historical_terminal_chunk_cannot_be_quarantined_by_head_option(
+def test_cursor_backed_historical_chunk_cannot_be_quarantined_by_head_option(
     tmp_path: Path,
 ) -> None:
     repo_root = tmp_path / "repo"
@@ -876,7 +900,7 @@ def test_historical_terminal_chunk_cannot_be_quarantined_by_head_option(
     run_kis_paper_private_intraday_backfill_cycle(
         client=_MinuteClient(
             [
-                _page(symbol="QQQ", exchange="NAS", rows=original_rows, next_cursor=None),
+                _page(symbol="QQQ", exchange="NAS", rows=original_rows, next_cursor="1"),
                 _page(symbol="SPY", exchange="AMS", rows=original_rows, next_cursor=None),
             ]
         ),
@@ -925,11 +949,15 @@ def test_historical_terminal_chunk_cannot_be_quarantined_by_head_option(
 
     assert results[0].status == "rejected"
     assert results[0].reason == "minute_duplicate_conflict"
+    assert results[0].conflict_origin == "retained_cache"
+    assert results[0].retained_head_conflict_disposition == "preserved"
     index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert len(qqq["chunks"]) == 1
     assert qqq["chunks"][0]["raw_market_data_retained"] is True
     assert qqq["chunks"][0]["collection_scope"] == "historical"
+    assert qqq["chunks"][0]["output_cursor"] is not None
 
 
 def test_quarantined_head_marker_requires_exact_snapshot_identity() -> None:
@@ -1003,6 +1031,8 @@ def test_candidate_batch_conflict_is_recorded_without_a_snapshot_or_cursor_advan
 
     assert results[0].status == "rejected"
     assert results[0].reason == "minute_duplicate_conflict"
+    assert results[0].conflict_origin == "candidate_batch"
+    assert results[0].retained_head_conflict_disposition == "not_applicable"
     index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")

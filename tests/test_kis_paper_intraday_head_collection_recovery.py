@@ -64,11 +64,15 @@ def test_collection_recovery_projects_bound_duplicate_conflict_without_sensitive
             "target_key": "QQQ/NAS/1m",
             "status": "rejected",
             "reason": "minute_duplicate_conflict",
+            "conflict_origin": "not_recorded_legacy",
+            "retained_head_conflict_disposition": "not_recorded_legacy",
         },
         {
             "target_key": "SPY/AMS/1m",
             "status": "rejected",
             "reason": "minute_duplicate_conflict",
+            "conflict_origin": "not_recorded_legacy",
+            "retained_head_conflict_disposition": "not_recorded_legacy",
         },
     ]
     assert set(payload) == {
@@ -265,9 +269,157 @@ def test_collection_recovery_preserves_another_valid_target_category(tmp_path: P
 
     assert result.safe_payload()["status"] == "source_exhausted"
     assert result.safe_payload()["targets"] == [
-        {"target_key": "QQQ/NAS/1m", "status": "source_exhausted", "reason": None},
-        {"target_key": "SPY/AMS/1m", "status": "source_exhausted", "reason": None},
+        {
+            "target_key": "QQQ/NAS/1m",
+            "status": "source_exhausted",
+            "reason": None,
+            "conflict_origin": "not_recorded_legacy",
+            "retained_head_conflict_disposition": "not_recorded_legacy",
+        },
+        {
+            "target_key": "SPY/AMS/1m",
+            "status": "source_exhausted",
+            "reason": None,
+            "conflict_origin": "not_recorded_legacy",
+            "retained_head_conflict_disposition": "not_recorded_legacy",
+        },
     ]
+
+
+@pytest.mark.parametrize(
+    ("target_status", "target_reason", "provenance", "expected_origin", "expected_disposition"),
+    [
+        (
+            "rejected",
+            "minute_duplicate_conflict",
+            {
+                "conflict_origin": "candidate_batch",
+                "retained_head_conflict_disposition": "not_applicable",
+            },
+            "candidate_batch",
+            "not_applicable",
+        ),
+        (
+            "rejected",
+            "minute_duplicate_conflict",
+            {
+                "conflict_origin": "retained_cache",
+                "retained_head_conflict_disposition": "quarantined",
+            },
+            "retained_cache",
+            "quarantined",
+        ),
+        (
+            "source_exhausted",
+            None,
+            {
+                "conflict_origin": None,
+                "retained_head_conflict_disposition": "not_applicable",
+            },
+            "not_applicable",
+            "not_applicable",
+        ),
+    ],
+)
+def test_collection_recovery_projects_new_immutable_conflict_provenance(
+    tmp_path: Path,
+    target_status: str,
+    target_reason: str | None,
+    provenance: dict[str, object],
+    expected_origin: str,
+    expected_disposition: str,
+) -> None:
+    repository_root, artifact_root, capture_cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=capture_cache_root,
+        target_status=target_status,
+        target_reason=target_reason,
+        target_provenance=provenance,
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+    )
+
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=capture_cache_root,
+    )
+
+    assert all(
+        target["conflict_origin"] == expected_origin
+        and target["retained_head_conflict_disposition"] == expected_disposition
+        for target in result.safe_payload()["targets"]
+    )
+
+
+@pytest.mark.parametrize(
+    "target_provenance",
+    [
+        {"conflict_origin": "candidate_batch"},
+        {
+            "conflict_origin": "unknown_origin",
+            "retained_head_conflict_disposition": "not_applicable",
+        },
+        {
+            "conflict_origin": "candidate_batch",
+            "retained_head_conflict_disposition": "quarantined",
+        },
+    ],
+)
+def test_collection_recovery_rejects_partial_or_unknown_future_provenance(
+    tmp_path: Path,
+    target_provenance: dict[str, object],
+) -> None:
+    repository_root, artifact_root, capture_cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=capture_cache_root,
+        target_provenance=target_provenance,
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+    )
+
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=capture_cache_root,
+    )
+
+    _assert_evidence_unavailable(result.safe_payload(), schema_version=result.schema_version)
+
+
+def test_collection_recovery_rejects_mixed_legacy_and_future_target_provenance(
+    tmp_path: Path,
+) -> None:
+    repository_root, artifact_root, capture_cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=capture_cache_root,
+        target_provenance_by_key={
+            "QQQ/NAS/1m": None,
+            "SPY/AMS/1m": {
+                "conflict_origin": "retained_cache",
+                "retained_head_conflict_disposition": "preserved",
+            },
+        },
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+    )
+
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=capture_cache_root,
+    )
+
+    _assert_evidence_unavailable(result.safe_payload(), schema_version=result.schema_version)
 
 
 def test_collection_recovery_returns_evidence_unavailable_outside_collection_exit_terminal(
@@ -407,6 +559,8 @@ def _write_capture_receipt(
     cache_root: Path,
     target_status: str = "rejected",
     target_reason: str | None = "minute_duplicate_conflict",
+    target_provenance: dict[str, object] | None = None,
+    target_provenance_by_key: dict[str, dict[str, object] | None] | None = None,
 ) -> _CaptureReceipt:
     coverage = {
         "complete_regular_session_dates": [],
@@ -423,22 +577,12 @@ def _write_capture_receipt(
         "current_session_cumulative_coverage_digest": coverage_digest,
         "current_session_cumulative_coverage_category": "incomplete",
         "current_session_cumulative_coverage": coverage,
-        "targets": [
-            {
-                "target_key": "QQQ/NAS/1m",
-                "status": target_status,
-                "row_count": 0,
-                "exact_overlap_rows": 0,
-                "reason": target_reason,
-            },
-            {
-                "target_key": "SPY/AMS/1m",
-                "status": target_status,
-                "row_count": 0,
-                "exact_overlap_rows": 0,
-                "reason": target_reason,
-            },
-        ],
+        "targets": _capture_target_payloads(
+            status=target_status,
+            reason=target_reason,
+            provenance=target_provenance,
+            provenance_by_key=target_provenance_by_key,
+        ),
         "fixture_raw_rows": [_RAW_SENTINEL],
         "fixture_secret": _SECRET_SENTINEL,
         "fixture_path": "D:/market_data/never-project-this.json",
@@ -459,6 +603,34 @@ def _write_capture_receipt(
         receipt_sha256=receipt_sha256,
         coverage_digest=coverage_digest,
     )
+
+
+def _capture_target_payloads(
+    *,
+    status: str,
+    reason: str | None,
+    provenance: dict[str, object] | None,
+    provenance_by_key: dict[str, dict[str, object] | None] | None,
+) -> list[dict[str, object]]:
+    targets = [
+        {
+            "target_key": target_key,
+            "status": status,
+            "row_count": 0,
+            "exact_overlap_rows": 0,
+            "reason": reason,
+        }
+        for target_key in ("QQQ/NAS/1m", "SPY/AMS/1m")
+    ]
+    for target in targets:
+        target_provenance = (
+            provenance
+            if provenance_by_key is None
+            else provenance_by_key.get(target["target_key"])
+        )
+        if target_provenance is not None:
+            target.update(target_provenance)
+    return targets
 
 
 def _write_capture_bytes(
