@@ -102,9 +102,11 @@ strongest kill test before target evaluation or GPU consideration.
   when that time follows the retained candidate execution bar, it records the
   causal `decision_after_replay_bar` no-intent instead of backdating a fill.
   It has a two-minute freshness contract and no model selection, alpha, PnL,
-  ensemble, or GPU consequence. Its next outcome can be only an input-scoped
-  no-intent or virtual-Paper lifecycle fact through the existing Execution
-  boundary.
+  ensemble, or GPU consequence. The 2026-08-07 00:29 KST task produced its
+  input-scoped `no_intent`, but the host terminal receipt omitted the safe
+  session identity and therefore could not reattach network-disabled validation.
+  This remains execution recovery evidence only, with no model-selection,
+  alpha, PnL, ensemble, or GPU consequence.
 - The separately scheduled SPY D1 stability observer is not an Engine input.
   Its first task-owned 23:15 KST receipt is `stable` and retains only hash and
   categorical evidence with `provider_finality: not_observed`. It cannot open

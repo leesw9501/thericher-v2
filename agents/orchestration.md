@@ -5,13 +5,18 @@ This is the current cross-lane projection, not a role queue or history ledger.
 
 ## Company Objective
 
-`kis-intraday-observed-provisional-session-v1-followup` is awaiting one exact
-outcome from the existing 2026-08-07 00:29 KST intraday-head invocation. Its
-preceding exact safe runtime is
-`intraday-head-20260805T2120061382131Z`,
-`recovery/collection_exit_nonzero` with Scheduler result `1`; this is a
-collection-only recovery, not a model, Paper lifecycle, PnL, or profitability
-claim.
+`kis-intraday-schedule-receipt-qqq-session-identity-v1` repairs one exact,
+host-side receipt handoff before the existing intraday-head task's next due
+time. The 2026-08-07 00:29 KST task completed collection with exit `0` and a
+QQQ `no_intent`, but its terminal receipt is
+`recovery/prospective_session_id_unavailable` with Scheduler result `20`
+because the dispatcher omitted its already validated safe session identifiers.
+This is a receipt/validation recovery only, not a model, Paper lifecycle, PnL,
+or profitability claim.
+
+Claude's falsification-first review of this receipt-only repair timed out as
+`review_unavailable`; it is not agreement or a hold. The bounded offline repair
+continues because it changes no authority, KIS call, broker behavior, or task.
 
 ## Ready / Owned / Due
 
@@ -19,7 +24,7 @@ claim.
 | --- | --- | --- | --- |
 | Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | Exact 08-05 receipt `paper-session-20260805T143501171367Z` is `canary_completed`; direct lifecycle reattachment independently validates `cancelled/clean`, attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`; its source-safe outcome remains Execution-owned. It is neither fill/PnL nor model evidence. The existing task owns the next attempt: 2026-08-07 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; the latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. No qualification or consumer bridge follows; next task-owned observation is 2026-08-07 23:15 KST |
-| Current-head recovery | Data | Existing isolated cache/task | The latest 06:20 KST run is exactly `recovery/collection_exit_nonzero` (Scheduler `1`) and produces no QQQ session outcome. The same `IgnoreNew` four-run task owns the next 00:29 KST attempt; its rebuilt receipt emits exact-run plus observed-ET cumulative metadata-only coverage, and terminal 06:20 capture remains the 390-completed-offset kill test |
+| Current-head receipt handoff | Data / Execution | Existing isolated cache/task plus offline tests | The 00:29 KST collection exited `0`; QQQ session is `no_intent`, but the terminal receipt lacks its existing validated safe identity and validation is unavailable. Repair only the host receipt arguments and prove valid, absent, and mismatched identity behavior offline before rebuilding the existing services; no manual KIS call, new task, or broker route |
 | Daily D1 catch-up | Data | Existing 07:00 KST worker | 2026-08-05 task completed `drained`: zero chunks/targets and no client constructed; exact cursor state only, not a provider-wide coverage conclusion |
 | Token cadence calibration | Data | One token-only Paper capability probe | Completed `unavailable`: first Paper auth succeeded, but the fresh-client second auth was `auth_rejected` after 30.12 monotonic seconds; retain the default five-minute guard and do not repeat this exact hypothesis without a changed provider fact |
 | SPY prefix capability | Data | Rebuilt `thericher-kis-paper-spy-prefix-*` images/tasks | First exact receipt is incomplete: clean control, one accepted page, invalid seam, no next cursor; its legacy terminal signal is `not_recorded_legacy`, and the existing worker owns the next attempt |

@@ -80,7 +80,12 @@ undocumented timestamp seed.
   exact safe runtime `intraday-head-20260805T2120061382131Z`,
   `recovery/collection_exit_nonzero` with Scheduler result `1`. It produced no
   QQQ session outcome and therefore no downstream Paper, fill, PnL, model, or
-  promotion fact. The same existing task owns the 2026-08-07 00:29 KST retry.
+  promotion fact. The 2026-08-07 00:29 KST retry then collected successfully
+  (`exit_zero`) and produced a QQQ `no_intent`, but the host receipt omitted the
+  already validated safe session identifier, yielding scoped terminal recovery
+  `prospective_session_id_unavailable` and unavailable offline validation. The
+  data result remains non-promoting; the next bounded repair is host receipt
+  wiring only, not a new collection, task, KIS call, or broker action.
   On a successful collection, the same worker now gives the existing QQQ
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or
