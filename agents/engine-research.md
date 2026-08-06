@@ -16,6 +16,15 @@ strongest kill test before target evaluation or GPU consideration.
 
 - No frozen, input-qualified predictive campaign is active. Do not train or
   allocate GPU merely to raise utilization.
+- Hierarchical Risk Parity is an independently retrieved source-only portfolio
+  allocation reference, not an alpha model. The documented MIT implementation
+  clusters an arbitrary historical-return matrix and recursively combines
+  branch-level minimum-variance portfolios, but the original study's instrument,
+  date, and evaluation scope are `not_disclosed` to this retrieval. It needs
+  causally aligned upstream candidate returns, a point-in-time universe, and
+  completed rolling windows before any separate allocation contract. It has no
+  campaign, code import, GPU, Paper, PnL, or promotion consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\pyportfolioopt-hrp-allocation-20260807-r1\source-retrieval.json`.
 - QuantConnect LEAN's `DonchianChannel` source and Apache-2.0 license were
   independently re-retrieved on 2026-08-05. The new pure
   `SessionResetDonchianRule` is a fixed `20`-bar entry / `10`-bar exit,
