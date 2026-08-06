@@ -19,7 +19,7 @@ from thericher_v2.data.us_equity_session import us_equity_2026_session
 from thericher_v2.research.kis_paper_prospective_loop import run_kis_paper_prospective_loop
 
 
-def test_ready_window_becomes_provisional_receipt_and_local_paper_replay(
+def test_ready_window_keeps_a_retrospective_replay_as_a_scoped_no_intent(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
@@ -42,8 +42,12 @@ def test_ready_window_becomes_provisional_receipt_and_local_paper_replay(
     assert result.proposal.action == "enter"
     assert result.receipt.decision_class == "enter"
     assert result.local_paper_replay is not None
-    assert result.local_paper_replay.status == "filled"
-    assert result.local_paper_replay.fill_source == "local_paper"
+    assert result.proposal.decided_at == window.as_of
+    assert window.replay_bar is not None
+    assert result.proposal.decided_at > window.replay_bar.start_ts
+    assert result.local_paper_replay.status == "no_intent"
+    assert result.local_paper_replay.reason == "decision_after_replay_bar"
+    assert result.local_paper_replay.fill_source is None
     payload = result.safe_payload()
     rendered = json.dumps(payload, sort_keys=True)
     assert payload["mode"] == "offline_local_paper"

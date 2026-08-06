@@ -140,6 +140,7 @@ class _CampaignLocalPaperBroker(LocalPaperBroker):
         self._positions: dict[tuple[str, str], Decimal] = {}
         self._seen_client_order_ids: set[str] = set()
         self._accepted_orders: dict[str, OrderIntent] = {}
+        self._accepted_order_recorded_ats: dict[str, datetime] = {}
         self._closed_order_ids: set[str] = set()
         self._fill_events: dict[str, Event] = {}
         event_store.observe_appends(self._observe_event)
@@ -162,6 +163,7 @@ class _CampaignLocalPaperBroker(LocalPaperBroker):
         self._seen_client_order_ids.add(order.client_order_id)
         if result.status == "accepted":
             self._accepted_orders[order.client_order_id] = order
+            self._accepted_order_recorded_ats[order.client_order_id] = result.recorded_at
         return result
 
     def _client_order_id_seen(self, client_order_id: str) -> bool:
@@ -172,6 +174,9 @@ class _CampaignLocalPaperBroker(LocalPaperBroker):
 
     def _accepted_order(self, client_order_id: str) -> OrderIntent | None:
         return self._accepted_orders.get(client_order_id)
+
+    def _accepted_order_recorded_at(self, client_order_id: str) -> datetime | None:
+        return self._accepted_order_recorded_ats.get(client_order_id)
 
     def _pending_order(self, client_order_id: str) -> OrderIntent | None:
         if client_order_id in self._closed_order_ids:

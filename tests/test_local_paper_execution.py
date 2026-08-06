@@ -59,7 +59,12 @@ def _daily_bar(
     )
 
 
-def _order(client_order_id: str = "paper-1", *, side: Side = "buy") -> OrderIntent:
+def _order(
+    client_order_id: str = "paper-1",
+    *,
+    side: Side = "buy",
+    created_at: datetime = datetime(2026, 1, 2, 14, 31, tzinfo=UTC),
+) -> OrderIntent:
     return OrderIntent(
         client_order_id=client_order_id,
         symbol="AAPL",
@@ -68,7 +73,7 @@ def _order(client_order_id: str = "paper-1", *, side: Side = "buy") -> OrderInte
         quantity=Decimal("2"),
         limit_price=None,
         decision_id="decision-1",
-        created_at=datetime(2026, 1, 2, 14, 31, tzinfo=UTC),
+        created_at=created_at,
     )
 
 
@@ -410,6 +415,98 @@ def test_non_next_bar_execution_is_rejected_by_contract(tmp_path) -> None:
         )
 
 
+def test_submission_before_intent_creation_is_rejected(tmp_path) -> None:
+    broker = _broker(tmp_path)
+    order = _order("submitted-before-created")
+
+    with pytest.raises(ValueError, match="submitted_at cannot precede order.created_at"):
+        broker.submit_order(order, submitted_at=_bar(0).start_ts)
+
+    assert list(broker.event_store.iter_events()) == []
+
+
+def test_late_accepted_order_cannot_fill_a_historical_execution_bar(tmp_path) -> None:
+    broker = _broker(tmp_path)
+    order = _order("late-accepted")
+
+    accepted = broker.submit_order(order, submitted_at=_bar(5).start_ts)
+
+    assert accepted.status == "accepted"
+    with pytest.raises(ValueError, match="must not follow execution bar"):
+        broker.fill_next_bar(
+            order.client_order_id,
+            signal_bar=_bar(0),
+            execution_bar=_bar(1),
+        )
+    assert [event.event_type for event in broker.event_store.iter_events()] == [
+        "local_paper_order_accepted",
+    ]
+
+
+def test_late_accepted_legacy_fill_cannot_recover_at_a_historical_bar(tmp_path) -> None:
+    order = _order("late-accepted-legacy-fill")
+    broker = _broker(tmp_path)
+    assert broker.submit_order(order, submitted_at=_bar(5).start_ts).status == "accepted"
+    broker.event_store.append(
+        Event(
+            event_type="fill",
+            created_at=_bar(1).start_ts,
+            payload={
+                "source": "local_paper",
+                "client_order_id": order.client_order_id,
+                "market": order.market,
+                "symbol": order.symbol,
+                "side": order.side,
+                "quantity": str(order.quantity),
+                "price": "101",
+                "fee": "0",
+            },
+        )
+    )
+
+    restarted = _broker(tmp_path)
+    with pytest.raises(ValueError, match="must not follow execution bar"):
+        restarted.fill_next_bar(
+            order.client_order_id,
+            signal_bar=_bar(0),
+            execution_bar=_bar(1),
+        )
+
+    assert [event.event_type for event in restarted.event_store.iter_events()] == [
+        "local_paper_order_accepted",
+        "fill",
+    ]
+
+
+def test_pending_order_survives_restart_after_a_rejected_execution_pair(tmp_path) -> None:
+    order = _order("restart-pending")
+    broker = _broker(tmp_path)
+    assert broker.submit_order(order).status == "accepted"
+
+    restarted = _broker(tmp_path)
+    with pytest.raises(ValueError, match="execution_bar must start"):
+        restarted.fill_next_bar(
+            order.client_order_id,
+            signal_bar=_bar(0),
+            execution_bar=_bar(2),
+        )
+
+    recovered = restarted.fill_next_bar(
+        order.client_order_id,
+        signal_bar=_bar(0),
+        execution_bar=_bar(1),
+    )
+
+    assert recovered.fill is not None
+    assert recovered.fill.price == Decimal("101.0000")
+    assert recovered.fill.source == "local_paper"
+    assert [event.event_type for event in restarted.event_store.iter_events()] == [
+        "local_paper_order_accepted",
+        "fill",
+        "local_paper_portfolio_snapshot",
+    ]
+
+
 @pytest.mark.parametrize(
     ("signal_start", "execution_start"),
     (
@@ -434,7 +531,10 @@ def test_daily_fill_accepts_adjacent_observed_bars_across_known_closures(
     execution = _daily_bar(execution_start, open_price=Decimal("101"))
 
     result = broker.submit_and_fill_next_bar(
-        _order(f"daily-{execution_start.date().isoformat()}"),
+        _order(
+            f"daily-{execution_start.date().isoformat()}",
+            created_at=signal.end_ts,
+        ),
         signal_bar=signal,
         execution_bar=execution,
     )
@@ -443,6 +543,60 @@ def test_daily_fill_accepts_adjacent_observed_bars_across_known_closures(
     assert result.fill.filled_at == execution.start_ts
     assert result.fill.price == Decimal("101.0000")
     assert result.fill.source == "local_paper"
+
+
+def test_daily_us_session_label_allows_same_date_acceptance_after_midnight(tmp_path) -> None:
+    broker = _broker(tmp_path)
+    signal = _daily_bar(datetime(2026, 1, 2, tzinfo=UTC))
+    execution = _daily_bar(datetime(2026, 1, 3, tzinfo=UTC), open_price=Decimal("101"))
+    order = _order("daily-same-label", created_at=signal.end_ts)
+
+    accepted = broker.submit_order(
+        order,
+        submitted_at=signal.end_ts.replace(hour=5),
+    )
+    result = broker.fill_next_bar(
+        order.client_order_id,
+        signal_bar=signal,
+        execution_bar=execution,
+    )
+
+    assert accepted.status == "accepted"
+    assert result.fill is not None
+    assert result.fill.price == Decimal("101.0000")
+
+
+def test_daily_fill_rejects_acceptance_after_the_execution_label_date(tmp_path) -> None:
+    broker = _broker(tmp_path)
+    signal = _daily_bar(datetime(2026, 1, 2, tzinfo=UTC))
+    execution = _daily_bar(datetime(2026, 1, 5, tzinfo=UTC), open_price=Decimal("101"))
+    order = _order("daily-late-accepted", created_at=signal.end_ts)
+
+    assert broker.submit_order(
+        order,
+        submitted_at=datetime(2026, 1, 6, tzinfo=UTC),
+    ).status == "accepted"
+    with pytest.raises(ValueError, match="must not follow execution bar"):
+        broker.fill_next_bar(
+            order.client_order_id,
+            signal_bar=signal,
+            execution_bar=execution,
+        )
+
+
+def test_daily_session_label_timing_is_restricted_to_us_market(tmp_path) -> None:
+    broker = _broker(tmp_path)
+    signal = _daily_bar(datetime(2026, 1, 2, tzinfo=UTC), market="CA")
+    execution = _daily_bar(datetime(2026, 1, 3, tzinfo=UTC), market="CA")
+    order = replace(_order("daily-non-us", created_at=signal.end_ts), market="CA")
+
+    assert broker.submit_order(order).status == "accepted"
+    with pytest.raises(ValueError, match="requires a US session-label market"):
+        broker.fill_next_bar(
+            order.client_order_id,
+            signal_bar=signal,
+            execution_bar=execution,
+        )
 
 
 def test_daily_fill_rejects_reversed_same_date_and_mismatched_bars(tmp_path) -> None:

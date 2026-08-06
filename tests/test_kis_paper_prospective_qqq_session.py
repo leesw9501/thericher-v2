@@ -54,7 +54,9 @@ def test_preview_replays_locally_without_constructing_a_kis_client(
     assert outcome.status == "preview"
     assert outcome.loop is not None
     assert outcome.loop.local_paper_replay is not None
-    assert outcome.loop.local_paper_replay.fill_source == "local_paper"
+    assert outcome.loop.local_paper_replay.status == "no_intent"
+    assert outcome.loop.local_paper_replay.reason == "decision_after_replay_bar"
+    assert outcome.loop.local_paper_replay.fill_source is None
     assert client.calls == []
 
 

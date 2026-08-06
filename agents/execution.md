@@ -20,9 +20,10 @@ only the direct lifecycle `canary-20260805T143501171367Z`. The host projector
 and independent offline validator both classify that lifecycle as `cancelled`
 with `clean` reconciliation and attribution `not_eligible`. It is a
 cancelled-and-clean virtual-Paper execution result only: no fill, PnL,
-profitability, or model conclusion follows. The same existing task owns the
-next opportunity at 2026-08-06 23:35 KST; do not manually invoke or duplicate
-it.
+profitability, or model conclusion follows. Its latest 2026-08-06 23:35 KST
+Scheduler result is `0`; reattaching that source-safe session outcome remains
+outside this execution package. The same existing task owns the next
+opportunity at 2026-08-07 23:35 KST; do not manually invoke or duplicate it.
 
 The existing `thericher-kis-paper-quote-session` Windows task owned one current
 virtual-Paper canary at 2026-08-04 23:35 KST and exited with Task Scheduler
@@ -32,8 +33,8 @@ result `0`. Its exact scheduled-session receipt
 `canary-20260722T184759527919Z` state; the independent offline lifecycle
 validator agrees on `outcome_unknown/unresolved`. This is neither a new broker
 or lifecycle result nor a fill, no-intent, or PnL result. Do not manually invoke
-the task, infer an outcome, or create a second runner; the next task-owned
-opportunity is 2026-08-05 23:35 KST.
+the task, infer an outcome, or create a second runner; the later 2026-08-05
+receipt is the current exact canary evidence above.
 
 The separate 2026-08-04 23:50 KST daily SPY receipt is exactly
 `daily-spy-20260804T145002356832Z`: `no_intent/quote_unavailable`, no run ID,
@@ -41,8 +42,8 @@ and receipt observer plus terminal-field probe both `not_attempted`. It has no
 canary lifecycle, broker, fill, or PnL interpretation. The 2026-08-05 06:20
 KST intraday-head receipt is
 `intraday-head-20260804T2120059626443Z`,
-`recovery/prospective_session_id_unavailable`; its worker owns the 2026-08-06
-00:29 KST retry.
+`recovery/prospective_session_id_unavailable`; its later 2026-08-06 06:20 KST
+scoped recovery is recorded below.
 
 The 2026-08-05 23:50 KST daily SPY receipt is exactly
 `daily-spy-20260805T145001601078Z`: `no_intent/quote_unavailable`, no run ID,
@@ -198,6 +199,23 @@ another correctly scoped Paper action.
   a fill-quality, profitability, model, or execution-risk input. The associated
   Claude request returned unrelated stale task text rather than its requested
   verdict; record `review_unavailable` and rely only on the local contract tests.
+- Local Paper retains an accepted event's durable timestamp when it replays a
+  pending or filled order. It rejects submission before intent creation and
+  raises instead of recreating a fill when the later of intent creation and
+  acceptance would follow an intraday execution bar. For D1, the known US
+  market and venue aliases use a session-date label rather than an actual open
+  timestamp, so they permit only the same or an earlier availability date and
+  other markets fail closed. That D1 exception cannot attest sub-session
+  availability.
+  This blocks a retrospective next-bar-open fill without changing KIS routes,
+  credentials, Paper authority, pricing sources, or model policy; contradictory
+  legacy logs remain readable but fail that exact replay.
+- The QQQ observed/provisional runtime route keeps the worker observation time
+  as its proposal decision time. If its retained candidate replay bar already
+  started before that decision, its local path returns
+  `decision_after_replay_bar` with no runtime state or fill rather than
+  backdating an order. This exact no-intent does not inhibit a distinct fresh
+  Paper session with its own receipt, account, quote, and availability evidence.
 - The completed Engine-owned session-reset Donchian mechanics preflight uses
   the existing receipt-to-local-paper bridge only. Its predeclared
   penultimate-bar terminal exit fills at the final-bar open, every retained

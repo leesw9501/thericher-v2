@@ -51,8 +51,13 @@ strongest kill test before target evaluation or GPU consideration.
   explicit `missing`/`ready` input state prevents warmup from becoming a target.
   Its distinct rule-specific target adapter maps that structural state to a
   `TargetExposureProposal` and commits rule id, period, tolerance, and seed
-  policy into lineage without leaking EMA values. It has no local-paper replay,
-  campaign, GPU, PnL, or Paper input. Source-safe scope and rights receipt:
+  policy into lineage without leaking EMA values. Hermetic in-memory tests drive
+  ready entry/exit through the existing receipt and `source: local_paper`
+  next-bar-open/pending-restart replay seam, while structural warmup, ready
+  hold, expiry, and future-prefix controls create no intent. The shared local
+  simulator rejects a late-accepted historical fill. This is integration
+  conformance, not a source-local data replay, campaign, GPU, PnL, or Paper
+  input. Source-safe scope and rights receipt:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\quantconnect-session-reset-ema-state-20260806-r1\source-retrieval.json`.
 - The proposed `norgate-d1-trio-range-clustering-falsification-v1` remains
   `input_unavailable` and does not open a campaign. A current hash-bound
@@ -93,10 +98,13 @@ strongest kill test before target evaluation or GPU consideration.
   Data receipt before any predictive, PnL, Paper, or GPU interpretation.
 - The existing QQQ 90-minute `1m/5m/10m` runtime baseline is separately
   reattached to the current-head worker as an explicit observed/provisional
-  Paper experiment. It has deterministic local-paper replay, a two-minute
-  freshness contract, and no model selection, alpha, PnL, ensemble, or GPU
-  consequence. Its next outcome can be only an input-scoped no-intent or
-  virtual-Paper lifecycle fact through the existing Execution boundary.
+  Paper experiment. Its local replay now preserves the worker observation time:
+  when that time follows the retained candidate execution bar, it records the
+  causal `decision_after_replay_bar` no-intent instead of backdating a fill.
+  It has a two-minute freshness contract and no model selection, alpha, PnL,
+  ensemble, or GPU consequence. Its next outcome can be only an input-scoped
+  no-intent or virtual-Paper lifecycle fact through the existing Execution
+  boundary.
 - The separately scheduled SPY D1 stability observer is not an Engine input.
   Its first task-owned 23:15 KST receipt is `stable` and retains only hash and
   categorical evidence with `provider_finality: not_observed`. It cannot open

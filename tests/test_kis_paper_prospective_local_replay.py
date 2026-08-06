@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import socket
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -128,6 +129,32 @@ def test_replay_does_not_fabricate_a_fill_without_the_next_completed_bar(tmp_pat
 
     assert result.status == "awaiting_replay_bar"
     assert result.fill_source is None
+
+
+def test_replay_does_not_backdate_a_decision_to_an_already_completed_bar(tmp_path: Path) -> None:
+    bars = _bars(2)
+    proposal = _proposal(action="enter", bars=bars)
+    late_decision = replace(
+        proposal,
+        decided_at=bars[1].end_ts,
+        valid_until=bars[1].end_ts + timedelta(minutes=10),
+    )
+    root = tmp_path / "runtime"
+
+    result = replay_kis_paper_prospective_local_paper(
+        late_decision,
+        signal_bar=bars[0],
+        replay_bar=bars[1],
+        state_root=root,
+        repo_root=tmp_path / "repo",
+    )
+
+    assert (result.status, result.reason, result.fill_source) == (
+        "no_intent",
+        "decision_after_replay_bar",
+        None,
+    )
+    assert not root.exists()
 
 
 def test_replay_is_network_and_credential_free(

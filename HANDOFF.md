@@ -37,8 +37,10 @@ scheduled-session receipt `paper-session-20260805T143501171367Z` is
 projector both classify that lifecycle as `cancelled` with `clean`
 reconciliation and `not_eligible` attribution. This is a categorical
 cancelled-and-clean virtual-Paper result, not a broker fill, PnL, or model
-result. The existing task owns the next opportunity at 2026-08-06 23:35 KST;
-do not manually invoke or duplicate it.
+result. Its latest 2026-08-06 23:35 KST Scheduler result is `0`; reattaching
+that source-safe session outcome remains outside this engine package. The
+existing task owns the next opportunity at 2026-08-07 23:35 KST; do not
+manually invoke or duplicate it.
 
 The existing `thericher-kis-paper-quote-session` Windows task completed its
 2026-08-04 23:35 KST invocation with Task Scheduler result `0`. Its exact
@@ -59,7 +61,8 @@ has only the static `producer_path_missing` consumer trace. The 06:20 KST
 intraday-head task exited `20`; its exact safe runtime is
 `intraday-head-20260804T2120059626443Z`,
 `recovery/prospective_session_id_unavailable`. That anomaly is local to the
-downstream session binding; its task owns the 2026-08-06 00:29 KST retry.
+downstream session binding; its later 2026-08-06 06:20 KST scoped recovery is
+recorded in the current outcome above.
 
 The current daily-SPY session image preserves `quote_unavailable` only for a
 fresh quote-fetch failure and emits `receipt_preparation_unavailable` for a
@@ -131,17 +134,19 @@ task-owned with `IgnoreNew` concurrency. The D1 observer completed its first
 wait, and an independently verified 15--90-minute snapshot comparison. It is
 observational only, with `provider_finality: not_observed`, and cannot qualify
 an Engine or Paper consumer. The next intraday-head collection is task-owned at
-00:29 KST on 2026-08-06.
+00:29 KST on 2026-08-07.
 
 On its next successful collection, the existing retimed intraday-head worker
 also dispatches the already implemented QQQ 90-minute observed/provisional
 baseline before slower observers can exhaust its two-minute freshness budget.
-It uses the existing local-paper replay, virtual-only receipt canary, and
-network-disabled exact-session validator; it has no new schedule or broker
-route. It may record a scoped `no_intent` or lifecycle fact, never an alpha,
-PnL, or promotion result. The source-free Claude challenge timed out
-(`review_unavailable`), while the host dispatcher simulation and focused
-execution tests passed.
+It preserves the worker observation timestamp, so a retained candidate replay
+bar that began earlier yields the scoped `decision_after_replay_bar` no-intent
+rather than a backdated local fill. The virtual-only receipt canary and
+network-disabled exact-session validator remain separate; there is no new
+schedule or broker route. It may record a scoped `no_intent` or lifecycle fact,
+never an alpha, PnL, or promotion result. The source-free Claude challenge
+timed out (`review_unavailable`), while the host dispatcher simulation and
+focused execution tests passed.
 
 ## Current Lane Facts
 
@@ -406,12 +411,12 @@ unproven; this is a reversible current-season repair, not an input promotion.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-06 23:35 KST |
-| SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; next owned observation 2026-08-05 23:15 KST |
+| Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-07 23:35 KST |
+| SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-07 23:15 KST |
 | Current-head timing repair | Data | Same `IgnoreNew` task remains at 00:29/02:28/04:24/06:20 KST after source-safe page-range evidence; rebuilt receipt now emits exact-run and observed-ET cumulative coverage, and terminal 06:20 capture owns the 390-completed-offset kill test |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
-| Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Proposal lineage commits period, tolerance, and seed policy; Apache-2.0 source scope is recorded externally. No replay, campaign, GPU, PnL, or Paper-input consequence |
+| Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate
@@ -513,7 +518,8 @@ metadata-only projection. DST/pre-market behavior remains unproven.
 1. Preserve the exact 2026-08-05 `canary_completed` session fact and direct
    `cancelled/clean` lifecycle result as virtual-Paper execution evidence only.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
-   or duplicate the existing task; its next opportunity is 2026-08-06 23:35 KST.
+   or duplicate the existing task. Its latest 2026-08-06 23:35 KST Scheduler
+   result is `0`; the next opportunity is 2026-08-07 23:35 KST.
 2. Continue independent Data worker reattachment at its own due times.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality

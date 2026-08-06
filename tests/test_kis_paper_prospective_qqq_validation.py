@@ -72,9 +72,9 @@ def test_recomputes_ready_window_and_local_paper_replay_without_external_access(
     assert result.runtime_window is not None
     assert result.runtime_window["status"] == "ready"
     assert result.local_paper_replay == {
-        "status": "filled",
-        "fill_source": "local_paper",
-        "event_log_sha256": loop.local_paper_replay.event_log_sha256,
+        "status": "no_intent",
+        "fill_source": None,
+        "event_log_sha256": None,
     }
     rendered = result.evidence_path.read_text(encoding="ascii")
     assert result.evidence_path.is_relative_to(

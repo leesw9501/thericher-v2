@@ -93,6 +93,17 @@ def replay_kis_paper_prospective_local_paper(
     if not isinstance(proposal, TargetExposureProposal):
         raise TypeError("proposal must be a TargetExposureProposal")
     _require_matching_signal_bar(proposal=proposal, signal_bar=signal_bar)
+    if replay_bar is not None:
+        _require_next_replay_bar(signal_bar=signal_bar, replay_bar=replay_bar)
+        if proposal.decided_at > replay_bar.start_ts:
+            return KisPaperProspectiveLocalReplay(
+                proposal_id=proposal.proposal_id,
+                status="no_intent",
+                reason="decision_after_replay_bar",
+                event_log_sha256=None,
+                fill_source=None,
+                filled_at=None,
+            )
     root = _external_state_root(state_root=state_root, repo_root=repo_root)
     event_log_path = root / f"{_LOCAL_PAPER_STATE_ID}.jsonl"
     event_store = EventStore(
@@ -115,7 +126,6 @@ def replay_kis_paper_prospective_local_paper(
                 fill_source=None,
                 filled_at=None,
             )
-        _require_next_replay_bar(signal_bar=signal_bar, replay_bar=replay_bar)
         recovered = broker.fill_next_bar(
             client_order_id,
             signal_bar=signal_bar,
@@ -166,7 +176,6 @@ def replay_kis_paper_prospective_local_paper(
             fill_source=None,
             filled_at=None,
         )
-    _require_next_replay_bar(signal_bar=signal_bar, replay_bar=replay_bar)
     execution = broker.submit_and_fill_next_bar(
         intent,
         signal_bar=signal_bar,

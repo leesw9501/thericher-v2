@@ -30,6 +30,9 @@ from thericher_v2.state import Event, EventStore
 
 LocalPaperOrderStatus = Literal["accepted", "rejected", "canceled"]
 LOCAL_PAPER_SOURCE = "local_paper"
+_US_D1_SESSION_LABEL_MARKETS = frozenset(
+    {"US", "NAS", "NASD", "NYS", "NYSE", "AMS", "AMEX", "NYSE_ARCA"}
+)
 
 
 @dataclass(frozen=True)
@@ -171,6 +174,8 @@ class LocalPaperBroker:
         submitted_at: datetime | None = None,
     ) -> LocalPaperOrderResult:
         recorded_at = require_utc(submitted_at or order.created_at, "submitted_at")
+        if recorded_at < order.created_at:
+            raise ValueError("submitted_at cannot precede order.created_at")
         if self._client_order_id_seen(order.client_order_id):
             return self._record_order_result(
                 order,
@@ -209,9 +214,15 @@ class LocalPaperBroker:
         recorded_fill = self._recorded_fill_event(client_order_id)
         if recorded_fill is not None:
             order = self._accepted_order(client_order_id)
-            if order is None:
+            accepted_at = self._accepted_order_recorded_at(client_order_id)
+            if order is None or accepted_at is None:
                 raise ValueError("recorded local paper fill has no accepted local paper order")
             self._validate_next_bar(order, signal_bar, execution_bar)
+            self._validate_execution_after_acceptance(
+                order,
+                accepted_at,
+                execution_bar,
+            )
             return self._recover_recorded_fill(
                 order,
                 recorded_fill=recorded_fill,
@@ -220,9 +231,15 @@ class LocalPaperBroker:
             )
 
         order = self._pending_order(client_order_id)
-        if order is None:
+        accepted_at = self._accepted_order_recorded_at(client_order_id)
+        if order is None or accepted_at is None:
             raise ValueError("client_order_id has no pending accepted local paper order")
         self._validate_next_bar(order, signal_bar, execution_bar)
+        self._validate_execution_after_acceptance(
+            order,
+            accepted_at,
+            execution_bar,
+        )
         if order.valid_until is not None and execution_bar.start_ts >= order.valid_until:
             return self._rejected_execution(
                 order,
@@ -324,6 +341,18 @@ class LocalPaperBroker:
         if len(accepted) > 1:
             raise ValueError("client_order_id has multiple accepted local paper orders")
         return accepted[0] if accepted else None
+
+    def _accepted_order_recorded_at(self, client_order_id: str) -> datetime | None:
+        accepted = [
+            event
+            for event in self.event_store.iter_events()
+            if event.event_type == "local_paper_order_accepted"
+            and event.payload.get("source") == LOCAL_PAPER_SOURCE
+            and event.payload.get("client_order_id") == client_order_id
+        ]
+        if len(accepted) > 1:
+            raise ValueError("client_order_id has multiple accepted local paper orders")
+        return accepted[0].created_at if accepted else None
 
     def _recover_recorded_fill(
         self,
@@ -509,6 +538,24 @@ class LocalPaperBroker:
             return
         if execution_bar.start_ts != signal_bar.end_ts:
             raise ValueError("execution_bar must start at signal_bar.end_ts")
+
+    @staticmethod
+    def _validate_execution_after_acceptance(
+        order: OrderIntent,
+        accepted_at: datetime,
+        execution_bar: Bar,
+    ) -> None:
+        available_at = max(require_utc(accepted_at, "accepted_at"), order.created_at)
+        if execution_bar.timeframe == Timeframe.D1:
+            if order.market not in _US_D1_SESSION_LABEL_MARKETS:
+                raise ValueError(
+                    "daily local-paper next-bar timing requires a US session-label market"
+                )
+            if available_at.date() <= execution_bar.start_ts.date():
+                return
+            raise ValueError("accepted local paper order must not follow execution bar")
+        if available_at > execution_bar.start_ts:
+            raise ValueError("accepted local paper order must not follow execution bar")
 
     def _execution_price(self, price: Decimal, side: Side) -> Decimal:
         adjustment = Decimal("1") + (self.slippage_bps / Decimal("10000"))

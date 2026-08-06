@@ -9202,16 +9202,68 @@ no credential or network access.
 
 Decision: do not extract the current session-reset Donchian target adapter
 into a generic rule adapter while adding the first session-reset EMA mechanism.
-The first EMA package is limited to a pure, independently implemented rule with
-an explicit within-session seed policy and structural warmup state. A future
-shared adapter may proceed only after every participating rule exposes an
-explicit input-status contract and contributes a stable rule identity, feature
-schema identity, and full parameter/seed payload to proposal lineage.
+The first EMA package has a pure, independently implemented rule with an
+explicit within-session seed policy and structural warmup state, plus a separate
+rule-specific target adapter. Its hermetic local-paper seam test proves only
+receipt-bound next-bar/restart replay; it does not create a source-data replay
+or execution route. A future shared adapter may proceed only after every
+participating rule exposes an explicit input-status contract and contributes a
+stable rule identity, feature schema identity, and full parameter/seed payload
+to proposal lineage.
 
 Reason: Claude's falsification-first review was `supported-with-limits`, but
 identified that the current adapter infers warmup from a Donchian-specific
 reason prefix and hashes only Donchian parameters. Generic reuse could turn an
 EMA warmup into a ready target or conflate equal lookback values across rules.
-Keeping the new rule pure preserves causal meaning and avoids a premature
-shared execution boundary. This decision adds no KIS, broker, Paper, PnL, GPU,
-or model-promotion behavior.
+Keeping the rule and target adapter rule-specific preserves causal meaning and
+avoids a premature shared execution boundary. This decision adds no KIS,
+external-broker, KIS-Paper, PnL, GPU, or model-promotion behavior.
+
+## 2026-08-06 - Bind local-paper next-bar fills to durable acceptance time
+
+Decision: retain the existing acceptance event timestamp as local-paper replay
+state rather than reconstructing only the `OrderIntent`. Reject a submission
+that predates its intent creation, and raise on a requested fill or recorded
+fill recovery when the later of intent creation and acceptance follows an
+intraday execution bar start. Equality remains valid so a completed signal can
+fill at the immediately following discrete bar open. For D1, apply a date-only
+check only to the declared US market and venue-alias session-label contract:
+acceptance after the execution label date fails, while same-date availability
+is not treated as a sub-session proof. Other D1 markets fail closed until they
+supply an explicit session-time contract. Do not append a retrospective
+rejection after a recorded fill: fill events remain authoritative, while a
+contradictory legacy log fails its exact replay.
+
+Reason: independent Review found that an order accepted after an execution bar
+could otherwise be paired with that historical bar and receive its open price.
+Claude's falsification-first verdict was `supported-with-limits`: the durable
+event time is sufficient without a schema migration, but caller timestamps are
+still an internal-consistency surface rather than proof of strategy causality.
+Focused offline tests cover distinct next-bar-open pricing, late acceptance,
+pre-creation submission, pending-order restart, mismatched bar pairs, and a
+late-accepted legacy fill. Claude's D1 follow-up was
+`supported-with-limits`: the date-only US exception can admit post-open data on
+the same UTC label date because the current source has no actual session-open
+timestamp. That source limitation is intentional, named, and not a
+fill-quality or model-performance claim. This changes no KIS route, credential
+path, live behavior, model result, PnL claim, or Paper authority.
+
+## 2026-08-06 - Do not backdate the QQQ observed runtime replay
+
+Decision: retain `KisPaperIntradayRuntimeWindow.as_of` as the actual worker
+observation timestamp and retain it as the QQQ proposal decision time. When the
+only retained candidate replay bar already began before that decision, return
+the exact local-only `decision_after_replay_bar` no-intent without creating
+runtime state, an order, or a fill. Do not relabel the path as a counterfactual
+decision at the preceding input-window end, because its local-retention and
+Paper evidence would then attest a different time from the receipt.
+
+Reason: Claude's falsification-first review was `supported-with-limits` for a
+counterfactual alternative but identified that the existing availability
+attestation rejects a decision before the worker observation. A filled replay
+would therefore either backdate an order or split the receipt and availability
+clocks. The scoped no-intent preserves causal truth while keeping the existing
+future same-clock KIS Paper path available. Tests bind observation time to the
+proposal, prove the no-intent creates no local state, and keep the actual
+availability/promotion path separate. This adds no scheduler, KIS call, broker
+route, credential use, live behavior, or model-performance claim.
