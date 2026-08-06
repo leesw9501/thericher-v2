@@ -363,6 +363,8 @@ $prospectiveSessionId = $null
 $prospectiveValidationExitCode = 0
 $prospectiveValidationStatus = "not_applicable"
 $prospectiveValidationSessionId = $null
+$prospectiveValidationContract = $null
+$expectedProspectiveValidationContract = "runtime-freshness-v4"
 
 $captureCycleExitCode = 0
 $captureCycleStatus = "not_applicable"
@@ -416,10 +418,16 @@ if ($collectionExitCode -eq 0) {
             -Output $prospectiveValidation.Output `
             -Kind "kis_paper_prospective_qqq_validation" `
             -AllowedStatuses @("validated")
-        if ($prospectiveValidationExitCode -eq 0 -and $null -ne $prospectiveValidationPayload) {
+        if (
+            $prospectiveValidationExitCode -eq 0 `
+                -and $null -ne $prospectiveValidationPayload `
+                -and [string]$prospectiveValidationPayload.validation_contract `
+                    -eq $expectedProspectiveValidationContract
+        ) {
             $prospectiveValidationStatus = "validated"
             $prospectiveValidationSessionId = Get-SafeProfileSessionId `
                 -Payload $prospectiveValidationPayload
+            $prospectiveValidationContract = $expectedProspectiveValidationContract
         } else {
             $prospectiveValidationStatus = "unavailable"
         }
@@ -603,6 +611,12 @@ if ($null -ne $prospectiveValidationSessionId) {
         [string]$prospectiveValidationSessionId
     )
 }
+if ($null -ne $prospectiveValidationContract) {
+    $scheduleReceiptCommand += @(
+        "--prospective-validation-contract",
+        [string]$prospectiveValidationContract
+    )
+}
 if ($null -ne $prospectiveSpyCycleId) {
     $scheduleReceiptCommand += @("--prospective-spy-cycle-id", [string]$prospectiveSpyCycleId)
 }
@@ -651,6 +665,7 @@ $terminalExitCode = Get-DispatchTerminalExitCode `
     prospective_session_status = $prospectiveSessionStatus
     prospective_validation_exit_code = $prospectiveValidationExitCode
     prospective_validation_status = $prospectiveValidationStatus
+    prospective_validation_contract = $prospectiveValidationContract
     observation_exit_code = $observationExitCode
     observation_status = $observationStatus
     capture_cycle_exit_code = $captureCycleExitCode

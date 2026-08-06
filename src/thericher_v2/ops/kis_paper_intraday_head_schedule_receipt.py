@@ -180,6 +180,7 @@ class KisPaperIntradayHeadScheduleReceipt:
     prospective_validation_exit_code: int
     prospective_validation_status: str
     prospective_validation_session_id: str | None
+    prospective_validation_contract: str | None
     observation_exit_code: int
     observation_status: str
     capture_cycle_exit_code: int
@@ -223,6 +224,7 @@ class KisPaperIntradayHeadScheduleReceipt:
                     "exit_code": self.prospective_validation_exit_code,
                     "status": self.prospective_validation_status,
                     "session_id": self.prospective_validation_session_id,
+                    "contract": self.prospective_validation_contract,
                 },
                 "observation": {
                     "exit_code": self.observation_exit_code,
@@ -365,6 +367,7 @@ def write_kis_paper_intraday_head_schedule_receipt(
     observation_status: str,
     capture_cycle_exit_code: int,
     capture_cycle_status: str,
+    prospective_validation_contract: str | None = None,
     session_capture_run_id: str | None = None,
     session_capture_observed_at: datetime | None = None,
     session_capture_receipt_sha256: str | None = None,
@@ -398,6 +401,7 @@ def write_kis_paper_intraday_head_schedule_receipt(
         prospective_validation_exit_code=prospective_validation_exit_code,
         prospective_validation_status=prospective_validation_status,
         prospective_validation_session_id=prospective_validation_session_id,
+        prospective_validation_contract=prospective_validation_contract,
         observation_exit_code=observation_exit_code,
         observation_status=observation_status,
         capture_cycle_exit_code=capture_cycle_exit_code,
@@ -459,6 +463,7 @@ def write_kis_paper_intraday_head_schedule_receipt(
         prospective_validation_exit_code=prospective_validation_exit_code,
         prospective_validation_status=prospective_validation_status,
         prospective_validation_session_id=prospective_validation_session_id,
+        prospective_validation_contract=prospective_validation_contract,
         observation_exit_code=observation_exit_code,
         observation_status=observation_status,
         capture_cycle_exit_code=capture_cycle_exit_code,
@@ -562,6 +567,7 @@ def _validate_schedule_receipt_inputs(
     prospective_validation_exit_code: int,
     prospective_validation_status: str,
     prospective_validation_session_id: str | None,
+    prospective_validation_contract: str | None,
     observation_exit_code: int,
     observation_status: str,
     capture_cycle_exit_code: int,
@@ -589,6 +595,10 @@ def _validate_schedule_receipt_inputs(
     _require_optional_safe_id(
         prospective_validation_session_id,
         "prospective validation session id",
+    )
+    _require_optional_safe_id(
+        prospective_validation_contract,
+        "prospective validation contract",
     )
 
 
@@ -1416,6 +1426,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--prospective-validation-exit-code", type=int, required=True)
     parser.add_argument("--prospective-validation-status", required=True)
     parser.add_argument("--prospective-validation-session-id")
+    parser.add_argument("--prospective-validation-contract")
     parser.add_argument("--observation-exit-code", type=int, required=True)
     parser.add_argument("--observation-status", required=True)
     parser.add_argument("--capture-cycle-exit-code", type=int, required=True)
@@ -1454,6 +1465,7 @@ def main(argv: Sequence[str] | None = None) -> None:
         prospective_validation_exit_code=args.prospective_validation_exit_code,
         prospective_validation_status=args.prospective_validation_status,
         prospective_validation_session_id=args.prospective_validation_session_id,
+        prospective_validation_contract=args.prospective_validation_contract,
         observation_exit_code=args.observation_exit_code,
         observation_status=args.observation_status,
         capture_cycle_exit_code=args.capture_cycle_exit_code,

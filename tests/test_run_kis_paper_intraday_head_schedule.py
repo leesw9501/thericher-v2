@@ -121,12 +121,15 @@ def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it()
     assert '"--session-id",' in qqq_block
     assert "$prospectiveSessionId," in qqq_block
     assert '$prospectiveValidationStatus = "validated"' in qqq_block
+    assert "$expectedProspectiveValidationContract" in qqq_block
+    assert "validation_contract" in qqq_block
     assert '"--execute"' not in qqq_block
     assert '"--cancel-after-submit"' not in qqq_block
     receipt_block = source.split("$scheduleReceiptCommand = @(\n", maxsplit=1)[1]
     assert '"--prospective-session-id", [string]$prospectiveSessionId' in receipt_block
     assert '"--prospective-validation-session-id",' in receipt_block
     assert "[string]$prospectiveValidationSessionId" in receipt_block
+    assert '"--prospective-validation-contract",' in receipt_block
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
@@ -448,7 +451,7 @@ def _fake_dispatch_command(
     ),
     qqq_validation_payloads: tuple[str, ...] = (
         '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
-        '"session_id":"qqq-unit"}',
+        '"session_id":"qqq-unit","validation_contract":"runtime-freshness-v4"}',
     ),
     capture_binding_payload: str | None = None,
     require_capture_binding: bool = False,
