@@ -26,13 +26,14 @@ strongest kill test before target evaluation or GPU consideration.
   availability/finality keep it outside predictive campaigns, GPU appointment,
   PnL, model selection, ensemble, and Paper input. Evidence:
   `D:\thericher-v2\model-artifacts\research\kis-intraday-session-reset-ema-mechanics-v1\20260807-ema-mechanics-r2\summary.json`.
-- **Ready shared input-mechanics package:**
-  `source-local-qqq-mtf-resampling-mechanics-v1` should attest the existing
-  session-aligned M1-to-M5/M10/H1/H3 resampling contract on that same frozen
-  QQQ/NAS catalog. It must retain only source identity, causal completed-bar
-  geometry, aggregate bucket counts, and input-unavailable outcomes. It opens
-  no prediction, target, local-paper action, GPU appointment, model selection,
-  ensemble, or Paper input.
+- **Completed shared input-mechanics package:**
+  `source-local-qqq-mtf-resampling-mechanics-v1` produced the immutable
+  `20260807-qqq-mtf-r1` source-local Data receipt for the same frozen
+  QQQ/NAS catalog. It attests session-aligned M1/M5/M10/H1/H3 completed-bar
+  geometry, explicitly excludes H1/H3 terminal partial buckets, and retains no
+  values, target, prediction, local-paper action, GPU appointment, model
+  selection, ensemble, or Paper input. The next ready package binds the fixed
+  M1=30/M5=6/M10=3/H1=2/H3=2 target-free causal window profile at 15:30 ET.
 - A bounded metadata-only Data probe classifies the existing KIS Paper private
   D1 cache as `input_unavailable` for a 15/30 daily EMA candidate: its rows
   expose `close`, not an adjusted-close or corporate-action contract; coverage

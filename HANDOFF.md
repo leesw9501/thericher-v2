@@ -74,11 +74,22 @@ the run is CPU-only and retains no raw prices, fills, PnL, performance,
 selection, GPU, Paper-input, or broker claim. Evidence:
 `D:\thericher-v2\model-artifacts\research\kis-intraday-session-reset-ema-mechanics-v1\20260807-ema-mechanics-r2\summary.json`.
 
+`source-local-qqq-mtf-resampling-mechanics-v1` is complete. Its immutable
+`20260807-qqq-mtf-r1` external Data receipt binds the verified QQQ/NAS
+M1 catalog to the first 20 complete regular 2026 sessions and reports only
+source-safe completed-bar geometry: M1 7,800, M5 1,560, M10 780, H1 120, and
+H3 40. H1/H3 each explicitly drop the terminal 30-minute partial bucket for
+every session; there are no incomplete buckets. It is CPU-only and creates no
+provider, credential, broker, predictive, PnL, performance, selection, GPU,
+Paper-input, or data-qualification claim. Evidence:
+`D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
+
 The next bounded objective is shared Data/Engine
-`source-local-qqq-mtf-resampling-mechanics-v1`: attest session-aligned causal
-resampling of the same frozen QQQ/NAS M1 catalog into M1/M5/M10/H1/H3 input
-geometry. It is source-local CPU mechanics evidence only and cannot make a
-predictive, PnL, performance, selection, GPU, Paper-input, or broker claim.
+`source-local-qqq-mtf-window-feasibility-v1`: bind this completed geometry to
+the existing target-free M1=30/M5=6/M10=3/H1=2/H3=2 completed-bar profile at a
+fixed 15:30 ET cutoff. It remains source-local CPU input mechanics only and
+cannot create a predictive, PnL, performance, selection, GPU, Paper-input, or
+broker claim.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,

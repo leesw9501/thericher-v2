@@ -16,7 +16,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
-| KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local non-promoting geometry only; QQQ supplied one local EMA mechanics replay, not a qualification or consumer promotion |
+| KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local non-promoting geometry only; QQQ supplied local EMA and MTF mechanics, not a qualification or consumer promotion |
 | KIS Paper private D1 cache | `input_unavailable` for daily-EMA preparation | Explicitly unadjusted, partial, and missing daily finality/as-of metadata |
 | KIS Paper IWM/AMS M1 candidate | One accepted current-day page through a probe-only route | Provisional route fact only; no history, qualification, or consumer promotion |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
@@ -319,6 +319,15 @@ undocumented timestamp seed.
 
 ## Current Quality Contracts
 
+- **Completed QQQ MTF mechanics:** the immutable source-local
+  `20260807-qqq-mtf-r1` receipt binds the verified QQQ/NAS M1 catalog
+  to the first 20 complete regular 2026 sessions. It reports only aggregate
+  M1/M5/M10/H1/H3 completed-bucket geometry and causal commitment; M1=7,800,
+  M5=1,560, M10=780, H1=120, and H3=40. The H1/H3 terminal 30-minute buckets
+  are explicitly excluded, with no incomplete buckets. It is CPU-only and has
+  no provider, credential, broker, target, model, Paper-input, or data
+  qualification consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
 - All derived `5m`, `10m`, `1h`, and `3h` views must come from a caller-owned,
   exchange-calendar-resampled completed M1 sequence. Partial and gapped bars
   remain unavailable.
