@@ -40,56 +40,21 @@ undocumented timestamp seed.
 
 ## Ready / Owned / Due
 
-- **Current-head recovery:** the 2026-08-05 02:31 KST task-owned attempt had
-  `collection: exit_zero`, then wrote an exact QQQ no-intent session with no
-  canary or broker action. Its terminal receipt is narrowly `recovery` with
-  `prospective_session_id_unavailable`: the downstream offline validation did
-  not receive an exact session identifier. The 04:31 KST task then ended as
-  `recovery: collection_exit_nonzero`: its fresh token start followed the
-  04:30 SPY-prefix collector inside the existing cross-process five-minute
-  token-start guard. All downstream QQQ/Paper stages were `not_applicable`.
-  This is not a model result or Paper outcome, and does not rewrite the earlier
-  receipt. The existing 06:20 KST attempt likewise ended as scoped `recovery`
-  with `prospective_session_id_unavailable` under exact safe runtime
-  `intraday-head-20260804T2120059626443Z`; its cache reattachment still has
-  zero complete regular sessions. Do not manually rerun it. The original scoped
-  `minute_duplicate_conflict` remains the narrow collector-repair kill test;
-  its historical quarantined retained head is unchanged. New
-  `session-capture` attempts preserve an already retained causal head snapshot
-  when a later post-close candidate conflicts, while rejecting that candidate
-  pending bounded reconciliation. They do not auto-prefer post-close values or
-  create a model input. Claude's source-safe challenge was
-  `supported-with-limits`; the next observed conflict must show whether this
-  prevents another coverage loss. The task-owned current pointer
-  binds one immutable non-link receipt for offline reattachment; the host
-  projector accepts it only when identity, observation time, terminal category,
-  and receipt hash agree. It has no KIS, Docker, network, or credential path
-  and never scans for a latest artifact.
-  The QQQ session image's static source hash matches the host source, so no
-  stale-image conclusion follows from this receipt. For future runs, the host
-  scheduler binds session status and offline validation only to one unique
-  safe ID/status payload from its captured output. An idless trailing payload,
-  conflicting IDs, or conflicting statuses retains `recovery` and skips the
-  offline validator; it never selects a latest artifact or creates another
-  Paper action. The 02:31 result is preserved as historical evidence rather
-  than rewritten by this repair.
-  At 21:40 KST, the task's `IgnoreNew` ownership was reattached and its
-  current-source profile passed a network-disabled exact-entrypoint check. The
-  related focused Data/schedule group passed 76 tests; this is preflight only,
-  not a collection receipt.
-  The 2026-08-07 04:24 KST task-owned invocation remains
-  `recovery/prospective_validation_payload_unavailable`: collection
-  `exit_zero`, exact QQQ Paper-only `no_intent`, and no broker, fill, PnL,
-  model, or promotion fact. Its v3 offline validation artifact was valid but
-  omitted the scheduler-consumed top-level `status: validated`. The v4
-  validator now writes that status into a new immutable contract namespace and
-  preserves the historical v3 artifact and terminal unchanged. The existing
-  task owns 06:20 KST; its exact next receipt is the only eligible observation,
-  not a manual collection, KIS call, or broker action.
-  On a successful collection, the same worker now gives the existing QQQ
-  90-minute runtime consumer first use of the fresh local cache before slower
-  observations. Its observed input remains provisional; stale, incomplete, or
-  non-contiguous cache conditions still end as a consumer-local no-intent.
+- **Current-head recovery:** `intraday-qqq-v4-scheduled-validation-observation-v1`
+  completed against the exact 2026-08-07 06:20 KST task-owned pointer. Task
+  Scheduler result `1` and the immutable terminal agree on
+  `recovery/collection_exit_nonzero`; the required same-run capture binding is
+  `verified/incomplete`. Its hash-bound source-safe capture receipt classifies
+  QQQ/NAS and SPY/AMS as `rejected/minute_duplicate_conflict`. This is the
+  active collector recovery fact only: no raw rows, data qualification, model,
+  Paper, fill, PnL, or alpha claim follows. The success-only QQQ session and
+  v4 validation services were not invoked and remain `not_applicable`, so v4
+  is neither a success nor a failure for this run. The 04:24 v3 historical
+  terminal remains preserved. Next Data package: expose an exact,
+  binding-verified source-safe recovery projection that returns the rejected
+  duplicate-conflict category without scanning for a latest receipt or reading
+  mutable cache state. The existing task next owns 00:29 KST; do not manually
+  rerun or duplicate it.
 - **Current-head timing repair:** a metadata-only reattachment of the
   2026-08-04 QQQ cache found retained regular-session page ranges
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST

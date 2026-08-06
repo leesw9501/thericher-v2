@@ -6,24 +6,20 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`intraday-qqq-v4-scheduled-validation-observation-v1` will reattach one exact
-task-owned QQQ v4 terminal/session/validation chain after the existing 06:20
-KST invocation. It advances the data-to-Paper evidence loop without creating a
-broker, model, scheduler, or data-qualification surface.
-
-`intraday-head-capture-receipt-binding-v1` is implemented, independently
-reviewed, and rebuilt into the existing collector image. Future task-owned
-runs require an exact same-run capture binding; a missing fresh binding is
-`recovery/session_capture_binding_unavailable`, while pre-change receipts
-remain `legacy_unbound`. This proves provenance only, not data quality.
+`intraday-head-source-safe-collection-recovery-projection-v1` will extend the
+existing exact-pointer reader with one hash-bound, same-run capture projection.
+It turns the completed 06:20 KST `collection_exit_nonzero` observation into a
+deterministic source-safe category without adding a KIS call, task, broker,
+model, or data-qualification surface.
 
 ## Ready / Owned / Due
 
 | Work | Owner | Resource | Current fact and next action |
 | --- | --- | --- | --- |
-| QQQ v4 validation observation | Data / Execution | Existing offline validator and profile service | Ready. The v4 validator emits top-level `validated` status inside its immutable identity, preserving v3 evidence. Reattach one exact task-owned next receipt only. |
-| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | 04:24 receipt is `recovery/prospective_validation_payload_unavailable` with collection `exit_zero` and QQQ `no_intent`. The task alone owns 06:20 KST; no manual run or duplicate collector. |
-| QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Exact current outcome is `no_intent`; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
+| Exact 06:20 KST recovery | Data / Execution | Existing terminal and capture receipt | Completed: terminal is `recovery/collection_exit_nonzero`, capture binding is `verified/incomplete`, and both target categories are `rejected/minute_duplicate_conflict`; QQQ/v4 stages are `not_applicable`. |
+| Collection recovery projection | Data | Existing exact-pointer/capture reader | Ready. Verify the terminal's hash-bound same-run receipt and emit only categorical target recovery without latest-artifact or mutable-index fallback. |
+| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Next owned invocation is 00:29 KST. No manual run or duplicate collector. |
+| QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
 | GPU allocation | Research Steward / Engine Research | RTX 4090 | No frozen input-qualified predictive campaign is ready. CPU preparation may continue; GPU stays unallocated. |
@@ -33,20 +29,20 @@ remain `legacy_unbound`. This proves provenance only, not data quality.
 Fresh causal KIS-reconstructible input coverage remains the product bottleneck:
 the exact QQQ/NAS and SPY/AMS M1 scopes contain only 21 shared complete
 regular-session windows and decision-time availability remains `not_observed`.
-The immediate observation is narrower: the next task-owned QQQ `no_intent`
-must carry the v4 validation contract through the scheduler. It does not
-qualify a model, campaign, GPU job, or Paper action.
+The immediate engineering gap is narrower: a verified capture receipt already
+contains the 06:20 duplicate-conflict category, but the compact terminal fact
+currently exposes only the parent nonzero exit.
 
 ## Current Reversible Improvement
 
-The terminal-capture chain now distinguishes historical absence from a fresh
-binding failure, and the validator now supplies the exact status consumed by
-the scheduler in a new immutable namespace. Reattach only an explicit session,
-offline and side-effect-free.
+The terminal-capture chain already binds one immutable receipt. Reuse that
+binding to project a strict source-safe collection category, rejecting any
+hash/run/time/coverage mismatch rather than falling back to latest or mutable
+state.
 
 ## Current Recovery Action
 
-Data owns the existing 06:20 KST task invocation. Codex does not wait in the
-foreground. If the task runs, reattach only its exact source-safe terminal,
-session, validation, and capture-binding evidence; do not infer a broker, fill,
-PnL, alpha, coverage, or model result.
+Data owns the existing 00:29 KST task invocation. Codex builds and verifies the
+read-only recovery projection now, then reattaches only the next task's exact
+source-safe terminal and capture evidence. Do not infer a broker, fill, PnL,
+alpha, coverage qualification, or model result.

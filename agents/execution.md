@@ -196,6 +196,13 @@ another correctly scoped Paper action.
 
 ## Current Supporting Surfaces
 
+- The exact 2026-08-07 06:20 KST intraday-head task has Scheduler result `1`
+  and an immutable terminal `recovery/collection_exit_nonzero`. Its same-run
+  capture binding is verified but `incomplete`; QQQ session and v4 validation
+  are `not_applicable` because the success-only downstream branch was skipped.
+  This is Data recovery evidence, not a Paper lifecycle, broker, fill, PnL, or
+  model outcome. The next read-only recovery projection may inspect only the
+  hash-bound capture receipt; it cannot create a KIS or Paper side effect.
 - The credential-free loopback dashboard cannot call a broker or submit an
   order. Authenticated local emergency and pause controls may change only their
   local control state; its schema-v3 account projection omits prices and order

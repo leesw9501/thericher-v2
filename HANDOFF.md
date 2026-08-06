@@ -27,10 +27,21 @@ validator service bind-mounts `src`, so no image rebuild was required.
 
 The historical 04:24 terminal remains
 `recovery/prospective_validation_payload_unavailable` and `legacy_unbound`; it
-is not rewritten. The existing task alone owns 06:20 KST. The next bounded
-objective is to reattach that task's exact v4 source-safe terminal, session,
-and validation evidence after it runs, without a manual invocation or any KIS,
-Paper, or live behavior change.
+is not rewritten. `intraday-qqq-v4-scheduled-validation-observation-v1` is
+now complete: the existing 2026-08-07 06:20 KST task ended with Scheduler
+result `1`, and its exact task-owned pointer/immutable terminal agree on
+`recovery/collection_exit_nonzero`. Its required same-run capture binding is
+verified with `incomplete` cumulative coverage. The bound source-safe capture
+receipt classifies both QQQ/NAS and SPY/AMS targets as
+`rejected/minute_duplicate_conflict`; this is a collector recovery fact, not a
+raw-data, quality, model, Paper, fill, PnL, or alpha result. Collection failed
+before the guarded QQQ route, so the prospective session and v4 validator are
+both `not_applicable`: v4 was not evaluated or failed on this run. No manual
+KIS call, task invocation, credential read, or broker action occurred.
+
+The next bounded objective is a read-only projection that validates the exact
+pointer-to-capture binding and emits this source-safe collection recovery
+category without selecting a latest receipt or consulting mutable cache state.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,
@@ -449,7 +460,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-07 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-07 23:15 KST |
-| Current-head receipt binding | Data / Execution | The exact 04:24 KST terminal receipt remains `recovery/prospective_validation_payload_unavailable` with collection `exit_zero` and QQQ `no_intent`. The rebuilt chain binds future same-run capture coverage, treats a fresh missing binding as recovery, and keeps historical receipts `legacy_unbound`. The existing task alone owns 06:20 KST. No manual KIS invocation, new task, or broker path |
+| Current-head receipt binding | Data / Execution | The exact 06:20 KST pointer/terminal is `recovery/collection_exit_nonzero` with a verified `incomplete` same-run capture binding; both target categories are `rejected/minute_duplicate_conflict`, while QQQ/v4 stages are `not_applicable`. The next read-only projection must preserve this exact binding and never select a latest receipt or mutable cache state. |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
@@ -556,11 +567,10 @@ metadata-only projection. DST/pre-market behavior remains unproven.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
    or duplicate the existing task. Its latest 2026-08-06 23:35 KST Scheduler
    result is `0`; the next opportunity is 2026-08-07 23:35 KST.
-2. Diagnose and repair the explicit-session offline QQQ validation path so a
-   valid matching `no_intent` session emits one deterministic source-safe
-   validation result or an exact local recovery. Do not change the installed
-   task, KIS route, Paper lifecycle, or raw-data scope. The existing task
-   alone owns 06:20 KST.
+2. Build the exact pointer-to-capture recovery projection for the 06:20 KST
+   `collection_exit_nonzero` outcome. It must verify the same-run immutable
+   capture binding and emit only source-safe categories; do not change the
+   installed task, KIS route, Paper lifecycle, or raw-data scope.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality
    evidence.
