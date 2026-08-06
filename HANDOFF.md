@@ -29,12 +29,16 @@ company objective, ready/owned/due work, bottleneck, reversible improvement,
 and recovery action in 57 lines while Git and external artifacts retain
 history. Claude's required governance check timed out as `review_unavailable`,
 not agreement or a hold; independent consistency checks retained all due and
-recovery facts. The next bounded objective updates only the existing daily
-operating-review automation prompt so it reports against this current
-projection and the clean-root parallel verification policy. It must preserve
-the existing automation identity, schedule, status, destination, and target
-thread, and make no KIS, broker, scheduler cadence, capital, credential, or
-live-behavior change.
+recovery facts. The existing daily operating-review automation now uses that
+projection and the clean-root parallel authority helper. Its prompt alone was
+updated; identity, 08:10 daily schedule, active status, model, project target,
+and workspace were read back unchanged, with no secret-like value present.
+
+The next bounded objective is a pure same-cycle target-allocation engine
+foundation. It will serialize caller-provided multi-symbol target proposals
+against one declared exposure snapshot without selecting symbols, loading a
+model, reserving capacity, reading data, creating orders, or changing KIS/
+Paper/live behavior. Claude must review the narrow architecture change first.
 
 `kis-paper-virtual-lifecycle-canary-v2` remains completed through the existing,
 task-owned deterministic canary. The resulting virtual-Paper lifecycle is

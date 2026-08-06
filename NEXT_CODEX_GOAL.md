@@ -2,49 +2,47 @@
 
 ## Objective
 
-Build `align-daily-operating-review-automation-v1`: update only the existing
-daily operating-review Codex automation prompt so its recurring operator update
-uses the current role stateboards, current objective, `ready / owned / due`
-facts, bottleneck, recovery action, and current clean-root parallel verification
-policy. This improves the data, research, validation, and Paper loops by making
-operational evidence useful without adding a new approval process or worker.
+Build `same-cycle-target-allocation-v1`: add a pure caller-owned, deterministic
+same-cycle allocation helper for an ordered set of already-proposed
+multi-symbol `TargetExposureProposal`s. It advances the target-position layer
+of the engine while keeping opportunity selection, trade policy, model choice,
+and deterministic execution separate. It must consume no market data, call no
+provider or broker, load no model, reserve no capacity, and create no order.
 
-The completed prior objective compressed `agents/orchestration.md` to a
-57-line current projection. Its Claude governance drift-check timed out as
-`review_unavailable`; independent consistency checks retained its due and
-recovery facts.
+The completed prior objective updated only the existing daily operating-review
+automation prompt. Its ID, daily recurrence, active status, model, project
+target, and workspace were read back unchanged; no secret-like value appeared.
 
 ## Hard Boundaries
 
-- Do not create, delete, trigger, pause, resume, or retime an automation.
-- Update only the prompt of the one existing daily operating-review automation;
-  preserve its identity, name, recurrence, status, destination, execution
-  environment, project, and target thread exactly.
 - Do not call KIS, submit or modify Paper orders, manually invoke a task, or
-  alter a broker route, order behavior, capital rule, credential path,
-  dashboard, Docker/runtime, or live behavior.
+  alter a broker route, order behavior, credential path, dashboard,
+  Docker/runtime, capital rule, or live behavior.
+- Do not create an opportunity rank, a strategy score, a learned allocation,
+  an ensemble, a reserve, or a broker-facing order path.
 - Do not read or expose `KIS_LIVE_*`, secrets, account facts, private intents,
   order identifiers, or raw market data.
 
 ## Required Work
 
-1. Locate the existing daily operating-review automation from its local
-   automation configuration, then read it through `automation_update` in view
-   mode. Do not infer its identity from a Markdown stateboard.
-2. Reconcile its prompt with `AGENTS.md`: it must distinguish `ready`, `owned`,
-   and `due`; report material changes, blockers, recoveries, and operator
-   decisions; use the current clean-root parallel authority helper only at a
-   goal boundary; and avoid stale serial-test, fixed-worker-count, approval-gate,
-   or routine-status language.
-3. Update only that prompt using `automation_update`, then read the automation
-   back. Preserve every non-prompt field exactly and do not trigger it.
-4. Record the current automation alignment fact in the orchestration projection
-   and refresh this file. Keep the report concise and do not create a second
-   report, scheduler, or agent queue.
+1. Ask Claude CLI for a short falsification-first architecture drift-check
+   before implementation. Treat an unavailable response as
+   `review_unavailable`, not assent.
+2. Extend the existing single-proposal allocator with a separate pure cycle
+   helper. It must use only caller-provided order and one consistent portfolio
+   snapshot, reject duplicate symbols or inconsistent snapshot facts, and apply
+   the existing scale-then-cap rule serially without treating an unexecuted
+   reduction or exit as released capacity.
+3. Keep every output a model-side `TargetExposureProposal`; do not select,
+   reorder, score, mutate, persist, or execute a proposal. Document the
+   ownership boundary in `ARCHITECTURE.md` and the Engine stateboard.
+4. Add focused tests for deterministic caller order, shared-cap exhaustion,
+   duplicate or mismatched snapshots, stale/unqualified inputs, and the
+   no-capacity-release-on-unexecuted-exit rule. Include a no-I/O guard.
 
 ## Verification
 
-Run a focused automation readback/redaction consistency check, then:
+Run focused allocation tests, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -55,4 +53,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Align daily operating review automation`
+`Add same-cycle target allocation`
