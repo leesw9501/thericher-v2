@@ -17,6 +17,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | --- | --- | --- |
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
 | KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local, non-promoting 5--90 minute geometry preflight only |
+| KIS Paper private D1 cache | `input_unavailable` for daily-EMA preparation | Explicitly unadjusted, partial, and missing daily finality/as-of metadata |
 | KIS Paper IWM/AMS M1 candidate | One accepted current-day page through a probe-only route | Provisional route fact only; no history, qualification, or consumer promotion |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
 | KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |

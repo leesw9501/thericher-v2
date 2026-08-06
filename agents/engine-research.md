@@ -16,6 +16,14 @@ strongest kill test before target evaluation or GPU consideration.
 
 - No frozen, input-qualified predictive campaign is active. Do not train or
   allocate GPU merely to raise utilization.
+- A bounded metadata-only Data probe classifies the existing KIS Paper private
+  D1 cache as `input_unavailable` for a 15/30 daily EMA candidate: its rows
+  expose `close`, not an adjusted-close or corporate-action contract; coverage
+  is partial; and no completed-bar/finality/as-of timestamp is present. It
+  cannot open a daily-rule implementation, campaign, GPU appointment, PnL
+  claim, or Paper path. Revisit only when one immutable manifest establishes
+  explicit adjustment treatment, 30 contiguous completed sessions with known
+  finality, and non-partial selected-instrument coverage.
 - `same-cycle-target-allocation-v1` completed the pure model-side bridge from
   caller-provided ordered `TargetExposureProposal` values to one simulated
   shared-capacity cycle. It preserves caller order, rejects duplicate
