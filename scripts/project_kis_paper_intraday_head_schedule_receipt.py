@@ -10,6 +10,7 @@ from pathlib import Path
 from thericher_v2.ops.kis_paper_intraday_head_schedule_receipt import (
     DEFAULT_KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_ROOT,
     KisPaperIntradayHeadScheduleReceiptError,
+    read_kis_paper_intraday_head_collection_recovery_from_artifact_root,
     read_kis_paper_intraday_head_schedule_fact_from_artifact_root,
 )
 
@@ -47,16 +48,23 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=default_capture_cache_root(),
     )
+    parser.add_argument("--collection-recovery", action="store_true")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     arguments = build_parser().parse_args(argv)
     try:
-        fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
-            arguments.artifact_root,
-            capture_cache_root=arguments.capture_cache_root,
-        )
+        if arguments.collection_recovery:
+            fact = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+                arguments.artifact_root,
+                capture_cache_root=arguments.capture_cache_root,
+            )
+        else:
+            fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+                arguments.artifact_root,
+                capture_cache_root=arguments.capture_cache_root,
+            )
     except (KisPaperIntradayHeadScheduleReceiptError, ValueError):
         print(json.dumps({"status": "unavailable"}, sort_keys=True))
         return 2

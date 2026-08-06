@@ -50,11 +50,14 @@ undocumented timestamp seed.
   Paper, fill, PnL, or alpha claim follows. The success-only QQQ session and
   v4 validation services were not invoked and remain `not_applicable`, so v4
   is neither a success nor a failure for this run. The 04:24 v3 historical
-  terminal remains preserved. Next Data package: expose an exact,
-  binding-verified source-safe recovery projection that returns the rejected
-  duplicate-conflict category without scanning for a latest receipt or reading
-  mutable cache state. The existing task next owns 00:29 KST; do not manually
-  rerun or duplicate it.
+  terminal remains preserved. The completed exact, binding-verified recovery
+  projection emits `rejected_duplicate_conflict` only for this terminal class
+  and capture chain; missing, malformed, unsafe, or mismatched evidence emits
+  `evidence_unavailable`, without a latest-artifact or mutable-index fallback.
+  Next Data package: record only immutable categorical duplicate-conflict
+  provenance for future capture receipts, leaving historical missing fields
+  `not_recorded_legacy`. The existing task next owns 2026-08-08 00:29 KST; do
+  not manually rerun or duplicate it.
 - **Current-head timing repair:** a metadata-only reattachment of the
   2026-08-04 QQQ cache found retained regular-session page ranges
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST

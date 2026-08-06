@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.data.kis_paper_intraday_session_capture import (
     KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES,
+    KisPaperIntradaySessionCaptureTarget,
 )
 
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND = "kis_paper_intraday_head_schedule_receipt"
@@ -27,6 +28,9 @@ KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY = (
 )
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME = "current.json"
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_KIND = "kis_paper_intraday_head_schedule_runtime"
+KIS_PAPER_INTRADAY_HEAD_COLLECTION_RECOVERY_FACT_KIND = (
+    "kis_paper_intraday_head_collection_recovery_fact"
+)
 DEFAULT_KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_ROOT = Path(
     r"D:\thericher-v2\model-artifacts"
 )
@@ -121,6 +125,7 @@ _CAPTURE_CYCLE_STATUSES = frozenset(
 )
 _CAPTURE_RECEIPT_KIND = "kis_paper_intraday_session_capture"
 _CAPTURE_RECEIPT_DIRECTORY = ("v1", "session-capture")
+_CAPTURE_TARGET_KEYS = frozenset({"QQQ/NAS/1m", "SPY/AMS/1m"})
 _EASTERN_TZ = ZoneInfo("America/New_York")
 
 
@@ -327,6 +332,65 @@ class KisPaperIntradayHeadScheduleFact:
 
 
 @dataclass(frozen=True)
+class KisPaperIntradayHeadCollectionRecoveryTarget:
+    """One allowlisted target outcome without counts, rows, or receipt paths."""
+
+    target_key: str
+    status: str
+    reason: str | None
+
+    def __post_init__(self) -> None:
+        if self.target_key not in _CAPTURE_TARGET_KEYS:
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+        _require_safe_id(self.status, "collection recovery target status")
+        if self.reason is not None:
+            _require_safe_id(self.reason, "collection recovery target reason")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "target_key": self.target_key,
+            "status": self.status,
+            "reason": self.reason,
+        }
+
+
+@dataclass(frozen=True)
+class KisPaperIntradayHeadCollectionRecoveryFact:
+    """A read-only, binding-verified projection of capture recovery evidence."""
+
+    category: str
+    capture_binding_status: Literal["verified", "evidence_unavailable"]
+    targets: tuple[KisPaperIntradayHeadCollectionRecoveryTarget, ...]
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        _require_safe_id(self.category, "collection recovery category")
+        targets = tuple(self.targets)
+        object.__setattr__(self, "targets", targets)
+        if self.capture_binding_status == "evidence_unavailable":
+            if self.category != "evidence_unavailable" or targets:
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "collection_recovery_binding_invalid"
+                )
+            return
+        if self.capture_binding_status != "verified":
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_binding_invalid")
+        if {target.target_key for target in targets} != _CAPTURE_TARGET_KEYS:
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+        if len(targets) != len(_CAPTURE_TARGET_KEYS):
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": self.schema_version,
+            "kind": KIS_PAPER_INTRADAY_HEAD_COLLECTION_RECOVERY_FACT_KIND,
+            "status": self.category,
+            "capture_binding_status": self.capture_binding_status,
+            "targets": [target.safe_payload() for target in self.targets],
+        }
+
+
+@dataclass(frozen=True)
 class _ScheduleRuntimePointer:
     run_id: str
     observed_at: datetime
@@ -497,6 +561,66 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
     the same single-owner task that wrote the referenced immutable evidence.
     """
 
+    runtime, receipt, receipt_sha256 = _read_current_schedule_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    coverage_binding_status, coverage_digest, coverage_category = _read_capture_binding(
+        terminal=receipt,
+        capture_cache_root=capture_cache_root,
+        repository_root=repository_root,
+    )
+    return KisPaperIntradayHeadScheduleFact(
+        run_id=runtime.run_id,
+        observed_at=runtime.observed_at,
+        terminal_status=runtime.terminal_status,
+        recovery_class=runtime.recovery_class,
+        scheduler_exit_code=runtime.scheduler_exit_code,
+        receipt_sha256=receipt_sha256,
+        coverage_binding_status=coverage_binding_status,
+        current_session_cumulative_coverage_digest=coverage_digest,
+        current_session_cumulative_coverage_category=coverage_category,
+    )
+
+
+def read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+    artifact_root: Path,
+    *,
+    repository_root: Path = _DEFAULT_REPOSITORY_ROOT,
+    capture_cache_root: Path | None = None,
+) -> KisPaperIntradayHeadCollectionRecoveryFact:
+    """Project exact bound capture categories without exposing evidence paths or rows."""
+
+    try:
+        _, terminal, _ = _read_current_schedule_terminal(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+        if (
+            terminal.terminal_status != "recovery"
+            or terminal.recovery_class != "collection_exit_nonzero"
+        ):
+            return _collection_recovery_evidence_unavailable()
+        _, capture_payload = _read_bound_capture_receipt(
+            terminal=terminal,
+            capture_cache_root=capture_cache_root,
+            repository_root=repository_root,
+        )
+        targets = _collection_recovery_targets_from_capture_payload(capture_payload)
+    except (KisPaperIntradayHeadScheduleReceiptError, OSError, ValueError):
+        return _collection_recovery_evidence_unavailable()
+    return KisPaperIntradayHeadCollectionRecoveryFact(
+        category=_collection_recovery_category(targets),
+        capture_binding_status="verified",
+        targets=targets,
+    )
+
+
+def _read_current_schedule_terminal(
+    *,
+    artifact_root: Path,
+    repository_root: Path,
+) -> tuple[_ScheduleRuntimePointer, _ScheduleReceiptTerminal, str]:
     root = _readable_external_artifact_root(
         artifact_root=artifact_root,
         repository_root=repository_root,
@@ -533,22 +657,7 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         or receipt.scheduler_exit_code != runtime.scheduler_exit_code
     ):
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_runtime_receipt_mismatch")
-    coverage_binding_status, coverage_digest, coverage_category = _read_capture_binding(
-        terminal=receipt,
-        capture_cache_root=capture_cache_root,
-        repository_root=repository_root,
-    )
-    return KisPaperIntradayHeadScheduleFact(
-        run_id=runtime.run_id,
-        observed_at=runtime.observed_at,
-        terminal_status=runtime.terminal_status,
-        recovery_class=runtime.recovery_class,
-        scheduler_exit_code=runtime.scheduler_exit_code,
-        receipt_sha256=receipt_sha256,
-        coverage_binding_status=coverage_binding_status,
-        current_session_cumulative_coverage_digest=coverage_digest,
-        current_session_cumulative_coverage_category=coverage_category,
-    )
+    return runtime, receipt, receipt_sha256
 
 
 def _validate_schedule_receipt_inputs(
@@ -791,6 +900,27 @@ def _read_capture_binding(
         if terminal.session_capture_binding_required:
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_required")
         return "legacy_unbound", None, None
+    binding, _ = _read_bound_capture_receipt(
+        terminal=terminal,
+        capture_cache_root=capture_cache_root,
+        repository_root=repository_root,
+    )
+    return (
+        "verified",
+        binding.current_session_cumulative_coverage_digest,
+        binding.current_session_cumulative_coverage_category,
+    )
+
+
+def _read_bound_capture_receipt(
+    *,
+    terminal: _ScheduleReceiptTerminal,
+    capture_cache_root: Path | None,
+    repository_root: Path,
+) -> tuple[KisPaperIntradayHeadTerminalReceiptBinding, Mapping[str, Any]]:
+    binding = terminal.terminal_receipt_binding
+    if binding is None:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_required")
     if capture_cache_root is None:
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_cache_root_required")
     if binding.schedule_run_id != terminal.run_id:
@@ -820,11 +950,7 @@ def _read_capture_binding(
     if _sha256(capture_bytes) != binding.receipt_sha256:
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
     _verify_capture_payload_binding(capture_payload, binding)
-    return (
-        "verified",
-        binding.current_session_cumulative_coverage_digest,
-        binding.current_session_cumulative_coverage_category,
-    )
+    return binding, capture_payload
 
 
 def _capture_receipt_filename(binding: KisPaperIntradayHeadTerminalReceiptBinding) -> str:
@@ -912,6 +1038,60 @@ def _verify_capture_payload_binding(
         observed_at=capture_observed_at,
     ) != coverage_category:
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+
+
+def _collection_recovery_targets_from_capture_payload(
+    payload: Mapping[str, Any],
+) -> tuple[KisPaperIntradayHeadCollectionRecoveryTarget, ...]:
+    values = payload.get("targets")
+    if not isinstance(values, list) or len(values) != len(_CAPTURE_TARGET_KEYS):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    targets: list[KisPaperIntradayHeadCollectionRecoveryTarget] = []
+    for value in values:
+        if not isinstance(value, Mapping):
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+        try:
+            capture_target = KisPaperIntradaySessionCaptureTarget(
+                target_key=value.get("target_key"),
+                status=value.get("status"),
+                row_count=value.get("row_count"),
+                exact_overlap_rows=value.get("exact_overlap_rows"),
+                reason=value.get("reason"),
+            )
+        except (TypeError, ValueError) as error:
+            raise KisPaperIntradayHeadScheduleReceiptError(
+                "schedule_capture_receipt_invalid"
+            ) from error
+        targets.append(
+            KisPaperIntradayHeadCollectionRecoveryTarget(
+                target_key=capture_target.target_key,
+                status=capture_target.status,
+                reason=capture_target.reason,
+            )
+        )
+    if {target.target_key for target in targets} != _CAPTURE_TARGET_KEYS:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    return tuple(sorted(targets, key=lambda target: target.target_key))
+
+
+def _collection_recovery_category(
+    targets: tuple[KisPaperIntradayHeadCollectionRecoveryTarget, ...],
+) -> str:
+    categories = {(target.status, target.reason) for target in targets}
+    if len(categories) == 1:
+        status, reason = next(iter(categories))
+        if status == "rejected" and reason == "minute_duplicate_conflict":
+            return "rejected_duplicate_conflict"
+        return status if reason is None else f"{status}_{reason}"
+    return "target_outcomes_mixed"
+
+
+def _collection_recovery_evidence_unavailable() -> KisPaperIntradayHeadCollectionRecoveryFact:
+    return KisPaperIntradayHeadCollectionRecoveryFact(
+        category="evidence_unavailable",
+        capture_binding_status="evidence_unavailable",
+        targets=(),
+    )
 
 
 def _coverage_digest(coverage: Mapping[str, Any]) -> str:
