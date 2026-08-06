@@ -23,7 +23,7 @@ from urllib.parse import urlsplit
 CBOE_D1_VOLATILITY_AVAILABILITY_OBSERVATION_KIND: Final = (
     "cboe_d1_volatility_availability_observation"
 )
-CBOE_D1_VOLATILITY_AVAILABILITY_OBSERVATION_SCHEMA_VERSION: Final = 1
+CBOE_D1_VOLATILITY_AVAILABILITY_OBSERVATION_SCHEMA_VERSION: Final = 2
 CBOE_D1_VOLATILITY_CSV_HEADER: Final = ("DATE", "OPEN", "HIGH", "LOW", "CLOSE")
 _RECEIPT_DIRECTORY: Final = "cboe-d1-volatility-availability-observations"
 _CANONICALIZATION: Final = "cboe_d1_ohlc_matching_row_v1"
@@ -57,7 +57,13 @@ _ROOT_KEYS: Final = frozenset(
     }
 )
 _CACHE_KEYS: Final = frozenset(
-    {"age_seconds", "cache_control_sha256", "etag_sha256"}
+    {
+        "age_seconds",
+        "cache_control_sha256",
+        "etag_sha256",
+        "response_date_sha256",
+        "last_modified_sha256",
+    }
 )
 
 
@@ -71,6 +77,30 @@ class CboeD1VolatilityAvailabilityReceipt:
 
     receipt_path: Path
     observation_sha256: str
+
+
+def validate_cboe_d1_volatility_availability_request(
+    *,
+    series_symbol: str,
+    session_label: date,
+    observed_at: datetime,
+    session_close: datetime,
+    next_market_open: datetime,
+    artifact_root: Path | str,
+    repository_root: Path | str,
+) -> tuple[str, Path]:
+    """Validate the one-series request before a caller performs network I/O."""
+
+    _require_session_label(session_label)
+    _observation_bracket(
+        observed_at=observed_at,
+        session_close=session_close,
+        next_market_open=next_market_open,
+    )
+    return (
+        _require_series_symbol(series_symbol),
+        _external_artifact_root(Path(artifact_root), Path(repository_root)),
+    )
 
 
 def write_cboe_d1_volatility_availability_observation(
@@ -87,6 +117,8 @@ def write_cboe_d1_volatility_availability_observation(
     cache_age_seconds: int | None = None,
     cache_control: str | None = None,
     etag: str | None = None,
+    response_date: str | None = None,
+    last_modified: str | None = None,
 ) -> CboeD1VolatilityAvailabilityReceipt:
     """Write one immutable, source-safe observation from injected CSV content.
 
@@ -112,6 +144,8 @@ def write_cboe_d1_volatility_availability_observation(
         age_seconds=cache_age_seconds,
         cache_control=cache_control,
         etag=etag,
+        response_date=response_date,
+        last_modified=last_modified,
     )
     body = {
         "schema_version": CBOE_D1_VOLATILITY_AVAILABILITY_OBSERVATION_SCHEMA_VERSION,
@@ -284,6 +318,8 @@ def _cache_metadata(
     age_seconds: int | None,
     cache_control: str | None,
     etag: str | None,
+    response_date: str | None,
+    last_modified: str | None,
 ) -> dict[str, int | str]:
     if age_seconds is None:
         recorded_age: int | str = "not_observed"
@@ -295,6 +331,8 @@ def _cache_metadata(
         "age_seconds": recorded_age,
         "cache_control_sha256": _optional_header_hash(cache_control),
         "etag_sha256": _optional_header_hash(etag),
+        "response_date_sha256": _optional_header_hash(response_date),
+        "last_modified_sha256": _optional_header_hash(last_modified),
     }
 
 
@@ -401,14 +439,21 @@ def _validate_receipt_document(document: dict[str, object]) -> None:
         or observed_at >= next_market_open
     ):
         raise CboeD1VolatilityAvailabilityError("receipt time is invalid")
-    _require_series_symbol(_require_string(document["series_symbol"]))
+    series_symbol = _require_series_symbol(_require_string(document["series_symbol"]))
+    if document["source_url_sha256"] != _sha256_text(_CBOE_DAILY_PRICE_URLS[series_symbol]):
+        raise CboeD1VolatilityAvailabilityError("receipt source scope is invalid")
     cache_metadata = document["cache_metadata"]
     if not isinstance(cache_metadata, dict) or set(cache_metadata) != _CACHE_KEYS:
         raise CboeD1VolatilityAvailabilityError("receipt cache metadata is invalid")
     age = cache_metadata["age_seconds"]
     if age != "not_observed" and (isinstance(age, bool) or not isinstance(age, int) or age < 0):
         raise CboeD1VolatilityAvailabilityError("receipt cache metadata is invalid")
-    for key in ("cache_control_sha256", "etag_sha256"):
+    for key in (
+        "cache_control_sha256",
+        "etag_sha256",
+        "response_date_sha256",
+        "last_modified_sha256",
+    ):
         value = cache_metadata[key]
         if value != "absent" and not _is_sha256(value):
             raise CboeD1VolatilityAvailabilityError("receipt cache metadata is invalid")

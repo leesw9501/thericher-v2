@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import ast
+import hashlib
+import importlib.util
 import json
 import os
+import sys
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
@@ -17,6 +20,20 @@ from thericher_v2.data.cboe_d1_volatility_availability import (
 _SOURCE_URL = "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
 _PAYLOAD_LF = "DATE,OPEN,HIGH,LOW,CLOSE\n2026-08-06,20.0,21.0,19.0,20.5\n"
 _PAYLOAD_CRLF = "DATE,OPEN,HIGH,LOW,CLOSE\r\n2026-08-06,20.0,21.0,19.0,20.5\r\n"
+
+
+def _cli_module():
+    script_path = (
+        Path(__file__).parents[1]
+        / "scripts"
+        / "observe_cboe_d1_volatility_availability.py"
+    )
+    specification = importlib.util.spec_from_file_location("cboe_observation_cli", script_path)
+    assert specification is not None and specification.loader is not None
+    module = importlib.util.module_from_spec(specification)
+    sys.modules[specification.name] = module
+    specification.loader.exec_module(module)
+    return module
 
 
 def test_canonical_matching_row_hash_ignores_csv_line_endings(tmp_path: Path) -> None:
@@ -129,6 +146,26 @@ def test_receipt_never_contains_raw_csv_prices_or_header_values(tmp_path: Path) 
     assert document["qualification"].startswith("observation_only")
 
 
+def test_receipt_hashes_response_date_and_last_modified_without_retaining_them(
+    tmp_path: Path,
+) -> None:
+    receipt = _write(
+        tmp_path,
+        response_date="Thu, 06 Aug 2026 20:30:00 GMT",
+        last_modified="Thu, 06 Aug 2026 20:15:00 GMT",
+    )
+    document = _document(receipt.receipt_path)
+    metadata = document["cache_metadata"]
+    assert metadata["response_date_sha256"] == "sha256:" + hashlib.sha256(
+        b"Thu, 06 Aug 2026 20:30:00 GMT"
+    ).hexdigest()
+    assert metadata["last_modified_sha256"] == "sha256:" + hashlib.sha256(
+        b"Thu, 06 Aug 2026 20:15:00 GMT"
+    ).hexdigest()
+    content = receipt.receipt_path.read_text(encoding="utf-8")
+    assert "Thu, 06 Aug 2026" not in content
+
+
 def test_validator_rejects_unsafe_malformed_and_non_direct_receipts(tmp_path: Path) -> None:
     receipt = _write(tmp_path)
     root = tmp_path / "artifacts"
@@ -174,6 +211,31 @@ def test_validator_rechecks_persisted_close_relative_boundaries(tmp_path: Path) 
         )
 
 
+def test_validator_rejects_a_rehashed_receipt_with_an_unmapped_source_url(tmp_path: Path) -> None:
+    receipt = _write(tmp_path)
+    root = tmp_path / "artifacts"
+    document = _document(receipt.receipt_path)
+    document["source_url_sha256"] = "sha256:" + hashlib.sha256(
+        b"https://example.invalid/VIX_History.csv"
+    ).hexdigest()
+    body = {key: value for key, value in document.items() if key != "observation_sha256"}
+    document["observation_sha256"] = "sha256:" + hashlib.sha256(
+        json.dumps(body, ensure_ascii=True, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+    forged = root / "cboe-d1-volatility-availability-observations" / document[
+        "observation_sha256"
+    ][7:] / "receipt.json"
+    forged.parent.mkdir(parents=True)
+    forged.write_text(json.dumps(document), encoding="utf-8")
+
+    with pytest.raises(CboeD1VolatilityAvailabilityError, match="source scope"):
+        validate_cboe_d1_volatility_availability_receipt(
+            receipt_path=forged,
+            artifact_root=root,
+            repository_root=tmp_path / "repo",
+        )
+
+
 def test_symlinked_receipt_parent_is_rejected_before_any_write(tmp_path: Path) -> None:
     artifact_root = tmp_path / "artifacts"
     artifact_root.mkdir()
@@ -214,6 +276,191 @@ def test_module_has_no_kis_broker_research_or_execution_import_surface() -> None
     ]
 
 
+def test_cli_observes_one_vix_response_with_no_cache_and_source_safe_output(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], monkeypatch: pytest.MonkeyPatch
+) -> None:
+    module = _cli_module()
+    requested: list[tuple[str, dict[str, str]]] = []
+
+    def fetcher(url: str, headers: dict[str, str]):
+        requested.append((url, dict(headers)))
+        return module.CboeHttpResponse(
+            status_code=200,
+            body=_PAYLOAD_LF,
+            headers={
+                "Age": "12",
+                "Cache-Control": "max-age=120",
+                "ETag": '"revision-1"',
+                "Date": "Thu, 06 Aug 2026 20:30:00 GMT",
+                "Last-Modified": "Thu, 06 Aug 2026 20:15:00 GMT",
+            },
+        )
+
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "observe_cboe_d1_volatility_availability.py",
+            "--series",
+            "VIX",
+            "--session-label",
+            "2026-08-06",
+            "--observed-at",
+            "2026-08-06T16:20:00Z",
+            "--session-close",
+            "2026-08-06T16:15:00Z",
+            "--next-market-open",
+            "2026-08-07T09:15:00Z",
+            "--artifact-root",
+            str(tmp_path / "artifacts"),
+            "--repository-root",
+            str(repo_root),
+        ],
+    )
+
+    module.main(fetcher=fetcher)
+
+    output = capsys.readouterr()
+    result = json.loads(output.out)
+    assert result["status"] == "observed"
+    assert result["series"] == "VIX"
+    assert result["receipt_sha256"].startswith("sha256:")
+    assert output.err == ""
+    assert requested == [
+        (_SOURCE_URL, {"Cache-Control": "no-cache", "Pragma": "no-cache"})
+    ]
+    for raw_value in (_PAYLOAD_LF, "20.5", "max-age=120", '"revision-1"', "Thu, 06 Aug 2026"):
+        assert raw_value not in output.out
+
+
+@pytest.mark.parametrize(
+    "response",
+    (
+        (503, None),
+        (200, "DATE,OPEN,HIGH,LOW,CLOSE\n2026-08-05,20.0,21.0,19.0,20.5\n"),
+        (200, "DATE,OPEN,HIGH,LOW,SETTLE\n2026-08-06,20.0,21.0,19.0,20.5\n"),
+        (200, "DATE,OPEN,HIGH,LOW,CLOSE\n2026-08-06,20.0,broken,19.0,20.5\n"),
+    ),
+)
+def test_cli_collection_failures_are_one_symbol_unavailable_without_receipt(
+    tmp_path: Path, response: tuple[int, str | None]
+) -> None:
+    module = _cli_module()
+
+    def fetcher(url: str, headers: dict[str, str]):
+        assert url == _SOURCE_URL
+        assert headers == {"Cache-Control": "no-cache", "Pragma": "no-cache"}
+        return module.CboeHttpResponse(status_code=response[0], body=response[1], headers={})
+
+    result = module.observe_once(
+        series="VIX",
+        session_label=date(2026, 8, 6),
+        observed_at=datetime(2026, 8, 6, 16, 20, tzinfo=UTC),
+        session_close=datetime(2026, 8, 6, 16, 15, tzinfo=UTC),
+        next_market_open=datetime(2026, 8, 7, 9, 15, tzinfo=UTC),
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        fetcher=fetcher,
+    )
+
+    assert result == {"receipt_sha256": None, "series": "VIX", "status": "unavailable"}
+    assert not list((tmp_path / "artifacts").rglob("*.json"))
+
+
+def test_cli_rejects_an_outside_bracket_before_network_access(tmp_path: Path) -> None:
+    module = _cli_module()
+
+    result = module.observe_once(
+        series="VIX",
+        session_label=date(2026, 8, 6),
+        observed_at=datetime(2026, 8, 6, 16, 14, tzinfo=UTC),
+        session_close=datetime(2026, 8, 6, 16, 15, tzinfo=UTC),
+        next_market_open=datetime(2026, 8, 7, 9, 15, tzinfo=UTC),
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        fetcher=lambda *_: pytest.fail("fetcher must not run outside the bracket"),
+    )
+
+    assert result == {"receipt_sha256": None, "series": None, "status": "unavailable"}
+    assert not list((tmp_path / "artifacts").rglob("*.json"))
+
+
+def test_cli_rejects_an_invalid_artifact_root_before_network_access(tmp_path: Path) -> None:
+    module = _cli_module()
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+
+    result = module.observe_once(
+        series="VIX",
+        session_label=date(2026, 8, 6),
+        observed_at=datetime(2026, 8, 6, 16, 20, tzinfo=UTC),
+        session_close=datetime(2026, 8, 6, 16, 15, tzinfo=UTC),
+        next_market_open=datetime(2026, 8, 7, 9, 15, tzinfo=UTC),
+        artifact_root=repository_root / "artifacts",
+        repository_root=repository_root,
+        fetcher=lambda *_: pytest.fail("fetcher must not run for an unsafe artifact root"),
+    )
+
+    assert result == {"receipt_sha256": None, "series": None, "status": "unavailable"}
+    assert not list(repository_root.rglob("*.json"))
+
+
+def test_cli_rejects_an_invalid_direct_series_before_network_access(tmp_path: Path) -> None:
+    module = _cli_module()
+
+    result = module.observe_once(
+        series="NOT_VIX",
+        session_label=date(2026, 8, 6),
+        observed_at=datetime(2026, 8, 6, 16, 20, tzinfo=UTC),
+        session_close=datetime(2026, 8, 6, 16, 15, tzinfo=UTC),
+        next_market_open=datetime(2026, 8, 7, 9, 15, tzinfo=UTC),
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        fetcher=lambda *_: pytest.fail("fetcher must not run for an invalid series"),
+    )
+
+    assert result == {"receipt_sha256": None, "series": None, "status": "unavailable"}
+
+
+def test_cli_requires_exactly_one_explicit_supported_series(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    module = _cli_module()
+    common = [
+        "--session-label", "2026-08-06", "--observed-at", "2026-08-06T16:20:00Z",
+        "--session-close", "2026-08-06T16:15:00Z", "--next-market-open", "2026-08-07T09:15:00Z",
+        "--artifact-root", str(tmp_path / "artifacts"), "--repository-root", str(tmp_path / "repo"),
+    ]
+    monkeypatch.setattr(sys, "argv", ["observer", *common])
+    with pytest.raises(SystemExit):
+        module.main(fetcher=lambda *_: pytest.fail("fetcher must not run"))
+    monkeypatch.setattr(sys, "argv", ["observer", "--series", "VIX", "--series", "VXN", *common])
+    with pytest.raises(SystemExit):
+        module.main(fetcher=lambda *_: pytest.fail("fetcher must not run"))
+
+
+def test_cli_has_no_kis_broker_research_or_execution_import_surface() -> None:
+    script_path = (
+        Path(__file__).parents[1]
+        / "scripts"
+        / "observe_cboe_d1_volatility_availability.py"
+    )
+    tree = ast.parse(script_path.read_text(encoding="utf-8"))
+    imports = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            imports.extend(alias.name for alias in node.names)
+        elif isinstance(node, ast.ImportFrom) and node.module:
+            imports.append(node.module)
+    assert not [
+        name
+        for name in imports
+        if any(token in name.lower() for token in ("kis", "broker", "research", "execution"))
+    ]
+
+
 def _write(
     tmp_path: Path,
     *,
@@ -221,6 +468,8 @@ def _write(
     observed_at: datetime | None = None,
     cache_control: str | None = None,
     etag: str | None = None,
+    response_date: str | None = None,
+    last_modified: str | None = None,
     source_url: str = _SOURCE_URL,
     series_symbol: str = "VIX",
 ):
@@ -241,6 +490,8 @@ def _write(
         series_symbol=series_symbol,
         cache_control=cache_control,
         etag=etag,
+        response_date=response_date,
+        last_modified=last_modified,
     )
 
 
