@@ -2,51 +2,51 @@
 
 ## Objective
 
-Build `source-local-session-reset-ema-mechanics-v1`: use the existing pure
-15/30 session-reset EMA rule and target adapter to replay a deterministic frozen
-source-local QQQ/NAS M1 input through the existing local-paper seam.
+Build `source-local-qqq-mtf-resampling-mechanics-v1`.
 
-This is engineering mechanics evidence only. The current cache lacks observed
-decision-time availability and provider finality, so this objective cannot make
-a predictive, PnL, profitability, selection, ensemble, GPU, KIS Paper-input,
-or broker claim.
+Use the existing verified local KIS-private QQQ/NAS M1 catalog and the existing
+session resampling path to attest one frozen, causal completed-bar input
+contract for M1, M5, M10, H1, and H3. This establishes shared multi-timeframe
+input semantics for later research; it is not a model, strategy, or
+profitability exercise.
 
 ## Hard Boundaries
 
 - Do not call KIS, invoke or alter any task, submit/modify/cancel a Paper
   order, or read any credential or `KIS_LIVE_*` value.
 - Do not inspect or commit raw bars, prices, provider payloads, account/order
-  data, credentials, model weights, or generated artifacts. Keep any result
+  data, credentials, model weights, or generated artifacts. Keep artifacts
   under `D:\thericher-v2\model-artifacts`.
-- Do not open a predictive campaign, sealed evaluation, model selection,
-  ensemble, GPU appointment, scheduler, provider, route, or Paper permission.
-- Keep every simulated fill `source: local_paper`; no KIS adapter may be
-  imported or reached.
+- Do not create a predictive campaign, target, decision, local-paper intent,
+  sealed evaluation, model selection, ensemble, GPU appointment, scheduler,
+  provider, route, or Paper permission.
+- Keep this package source-local and CPU-only. It may use deterministic
+  synthetic fixtures in tests but no network, secret, or raw-cache output.
 
 ## Required Work
 
-1. Ask Claude CLI for a concise falsification-first mechanics drift check
-   before new replay architecture. If unavailable, record only
-   `review_unavailable` and continue with local evidence.
-2. Reuse the Donchian source-local replay's external-artifact and causal input
-   discipline rather than creating a parallel framework. Freeze the first 20
-   chronological complete QQQ/NAS regular M1 sessions, session reset, EMA
-   15/30 parameters, completed-bar-close decision timing, and next-M1-open
-   local-paper fill rule before reading outcomes.
-3. Build a small replay module and script that emit only source-safe aggregate
-   receipt fields: frozen input commitment, session count, rule activation or
-   no-rule-activation category, local-paper/replay count, terminal-flat status,
-   and explicit input-unavailable/fail-closed category. Write artifacts outside
-   Git.
-4. Add focused tests for session reset, warmup, completed-bar causality,
-   future-bar and later-session prefix invariance, incomplete-session rejection,
-   `source: local_paper` fills, replayability, and terminal-flat completion.
-5. Refresh Engine Research and orchestration stateboards. Keep GPU unallocated;
-   this package is CPU-only.
+1. Run a concise Throughput Review, then inspect the existing M1 session
+   resampler and current QQQ/NAS catalog contract before editing. Ask Claude for
+   a short falsification-first drift check only if the work requires changing
+   shared session/resampling semantics; do not wait on an unavailable review.
+2. Freeze the exact local catalog identity and select the first 20 complete
+   regular sessions inside an explicit calendar scope. Reuse existing
+   session/calendar semantics; do not create a second resampler.
+3. Build a small Data-owned/Engine-consumed mechanics attestation and script
+   that reports only source-safe aggregates for M1/M5/M10/H1/H3: selected
+   session count, completed bucket counts, partial-bucket/drop category,
+   causal-prefix commitment, and `complete` or `input_unavailable` status.
+   Write immutable artifacts outside Git.
+4. Add focused tests proving session alignment, no future-bar influence,
+   no cross-session carry, partial/incomplete M1 rejection, correct H3 terminal
+   bucket handling, external-artifact-only output, and no network/credential/
+   KIS/broker access.
+5. Run one CPU-only local-cache smoke without printing raw data. Refresh Data,
+   Engine Research, and orchestration stateboards. GPU remains unallocated.
 
 ## Verification
 
-Run focused model/replay tests and the source-local smoke, then:
+Run focused resampling tests and the source-local smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -57,4 +57,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add EMA source-local replay mechanics`
+`Add source-local multi-timeframe resampling mechanics`

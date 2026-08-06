@@ -64,12 +64,21 @@ quarantine and no-mutable-fallback limits are covered by tests. The task-owned
 collector image was rebuilt without running it, so the next owned invocation
 will use the new writer contract.
 
-The next bounded objective is Engine-owned
-`source-local-session-reset-ema-mechanics-v1`: replay the existing pure 15/30
-session-reset EMA rule over the frozen first 20 complete QQQ/NAS M1 sessions
-through the existing `source: local_paper` boundary. It is CPU-only,
-source-local mechanics evidence with no PnL, performance, selection, GPU,
-Paper-input, or broker claim.
+`source-local-session-reset-ema-mechanics-v1` is complete. Its immutable
+`20260807-ema-mechanics-r2` external artifact binds the private
+`kis.paper.private.intraday.qqq.nas.m1.*` catalog snapshot, selects the first
+20 complete regular sessions within its explicit 2026 scope, and replays the
+fixed session-reset 15/30 EMA through only the existing `source: local_paper`
+seam. It records aggregate activation, replay, and terminal-flat evidence only;
+the run is CPU-only and retains no raw prices, fills, PnL, performance,
+selection, GPU, Paper-input, or broker claim. Evidence:
+`D:\thericher-v2\model-artifacts\research\kis-intraday-session-reset-ema-mechanics-v1\20260807-ema-mechanics-r2\summary.json`.
+
+The next bounded objective is shared Data/Engine
+`source-local-qqq-mtf-resampling-mechanics-v1`: attest session-aligned causal
+resampling of the same frozen QQQ/NAS M1 catalog into M1/M5/M10/H1/H3 input
+geometry. It is source-local CPU mechanics evidence only and cannot make a
+predictive, PnL, performance, selection, GPU, Paper-input, or broker claim.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,
