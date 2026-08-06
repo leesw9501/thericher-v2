@@ -1,8 +1,14 @@
+import json
 import os
 import subprocess
 from pathlib import Path
 
 import pytest
+
+from thericher_v2.ops.kis_paper_prospective_qqq_validation import (
+    KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
+    KisPaperProspectiveQqqValidation,
+)
 
 SCRIPT = (
     Path(__file__).resolve().parents[1]
@@ -197,6 +203,56 @@ def test_head_schedule_dispatches_qqq_before_slower_observers(tmp_path: Path) ->
         "kis-paper-intraday-pair-observation",
         "kis-paper-intraday-head-receipt",
     ]
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_accepts_actual_validator_safe_payload(tmp_path: Path) -> None:
+    session_id = "qqq-validator-contract"
+    validator_stdout = json.dumps(
+        KisPaperProspectiveQqqValidation(
+            session_id=session_id,
+            session_evidence_sha256="sha256:" + "a" * 64,
+            session_status="no_intent",
+            validation_scope="runtime_recomputed",
+            runtime_window=None,
+            local_paper_replay=None,
+            local_input_availability=None,
+            canary_present=False,
+            evidence_path=tmp_path / "validation.json",
+            validation_contract=KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
+            validation_identity="sha256:" + "b" * 64,
+        ).safe_payload(),
+        sort_keys=True,
+    )
+    log_path = tmp_path / "fake-docker-services.log"
+    result = subprocess.run(
+        [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-Command",
+            _fake_dispatch_command(
+                script_path=SCRIPT,
+                project_root=SCRIPT.parents[1],
+                log_path=log_path,
+                qqq_session_payloads=(
+                    '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
+                    f'"session_id":"{session_id}"}}',
+                ),
+                qqq_validation_payloads=(validator_stdout,),
+            ),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "kis-paper-prospective-qqq-validation" in log_path.read_text(
+        encoding="ascii"
+    ).splitlines()
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
