@@ -13,6 +13,7 @@ import pytest
 from thericher_v2.contracts import Timeframe
 from thericher_v2.research.experiments import (
     MAX_SHORT_EXPERIMENTS,
+    ExperimentSource,
     ExperimentSpec,
     default_short_experiment_specs,
     load_experiment_source,
@@ -213,6 +214,54 @@ def test_walk_forward_metrics_are_replayable_and_reproducible(tmp_path) -> None:
             assert metrics.local_paper_trades == metrics.replay_fill_count
             assert metrics.final_position == metrics.replay_final_position
             assert metrics.max_drawdown >= Decimal("0")
+
+
+def test_walk_forward_is_invariant_to_unique_bar_input_order(tmp_path) -> None:
+    source = load_experiment_source(max_bars=90)
+    assert len({bar.start_ts for bar in source.bars}) == len(source.bars)
+    reversed_source = ExperimentSource(
+        bars=tuple(reversed(source.bars)),
+        data_source=source.data_source,
+        external_path=source.external_path,
+    )
+    specs = (ExperimentSpec("order_invariant_m1", timeframe=Timeframe.M1, lookback=3),)
+
+    ordered_result = run_walk_forward_queue(
+        source,
+        queue_id="order-invariant-walk-forward",
+        specs=specs,
+        window_bars=40,
+        step_bars=25,
+        work_root=tmp_path / "ordered",
+    )
+    reversed_result = run_walk_forward_queue(
+        reversed_source,
+        queue_id="order-invariant-walk-forward",
+        specs=specs,
+        window_bars=40,
+        step_bars=25,
+        work_root=tmp_path / "reversed",
+    )
+
+    assert ordered_result.windows == reversed_result.windows
+    assert ordered_result.experiment_summaries == reversed_result.experiment_summaries
+
+
+def test_walk_forward_rejects_duplicate_bar_timestamps() -> None:
+    source = load_experiment_source(max_bars=40)
+    duplicate_source = ExperimentSource(
+        bars=(source.bars[0], *source.bars),
+        data_source=source.data_source,
+        external_path=source.external_path,
+    )
+
+    with pytest.raises(ValueError, match="unique start timestamps"):
+        run_walk_forward_queue(
+            duplicate_source,
+            specs=(ExperimentSpec("duplicate_timestamp_m1"),),
+            window_bars=40,
+            step_bars=20,
+        )
 
 
 def test_walk_forward_is_offline_and_does_not_read_credentials(monkeypatch, tmp_path) -> None:

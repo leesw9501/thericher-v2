@@ -293,11 +293,16 @@ def run_walk_forward_queue(
 ) -> WalkForwardResult:
     specs = specs or default_short_experiment_specs()
     _validate_specs(specs)
-    windows = _build_walk_forward_windows(source.bars, window_bars=window_bars, step_bars=step_bars)
+    ordered_source = _ordered_walk_forward_source(source)
+    windows = _build_walk_forward_windows(
+        ordered_source.bars,
+        window_bars=window_bars,
+        step_bars=step_bars,
+    )
     if work_root is not None:
         work_root.mkdir(parents=True, exist_ok=True)
         return _run_walk_forward_in_work_root(
-            source,
+            ordered_source,
             queue_id=queue_id,
             specs=specs,
             windows=windows,
@@ -307,7 +312,7 @@ def run_walk_forward_queue(
         )
     with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temp_dir:
         return _run_walk_forward_in_work_root(
-            source,
+            ordered_source,
             queue_id=queue_id,
             specs=specs,
             windows=windows,
@@ -709,13 +714,12 @@ def _build_walk_forward_windows(
         raise ValueError("window_bars and step_bars must be positive")
     if len(source_bars) < window_bars:
         raise ValueError("source must contain at least window_bars bars")
-    ordered = tuple(sorted(source_bars, key=lambda bar: bar.start_ts))
     windows: list[WalkForwardWindow] = []
-    for start_index in range(0, len(ordered) - window_bars + 1, step_bars):
+    for start_index in range(0, len(source_bars) - window_bars + 1, step_bars):
         if len(windows) >= MAX_WALK_FORWARD_WINDOWS:
             raise ValueError(f"walk-forward is capped at {MAX_WALK_FORWARD_WINDOWS} windows")
         end_index = start_index + window_bars
-        window_bars_slice = ordered[start_index:end_index]
+        window_bars_slice = source_bars[start_index:end_index]
         windows.append(
             WalkForwardWindow(
                 window_id=f"w{len(windows) + 1:02d}",
@@ -727,6 +731,23 @@ def _build_walk_forward_windows(
             )
         )
     return tuple(windows)
+
+
+def _ordered_walk_forward_source(source: ExperimentSource) -> ExperimentSource:
+    """Use one strict chronological source for both windowing and execution."""
+
+    bars = tuple(sorted(source.bars, key=lambda bar: bar.start_ts))
+    if any(
+        current.start_ts <= prior.start_ts
+        for prior, current in zip(bars, bars[1:], strict=False)
+    ):
+        raise ValueError("walk-forward source bars must have unique start timestamps")
+    return ExperimentSource(
+        bars=bars,
+        data_source=source.data_source,
+        external_path=source.external_path,
+        schema_version=source.schema_version,
+    )
 
 
 def _bars_for_spec(source_bars: tuple[Bar, ...], spec: ExperimentSpec) -> list[Bar]:
