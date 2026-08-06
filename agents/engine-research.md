@@ -53,6 +53,16 @@ strongest kill test before target evaluation or GPU consideration.
   next-bar fill/replay boundary exactly once; the insufficient-history control
   emits no local intent. This is replay reliability only, not a campaign, KIS
   route, PnL result, or promotion claim.
+- The separate `kis-intraday-session-reset-vwap-feature-mechanics-v1` completed
+  its immutable `2026-08-07-r1` source-local feature preflight from the first
+  20 chronological complete QQQ/NAS regular M1 sessions. It calculated only
+  in-memory cumulative typical-price/volume VWAP feature windows at the fixed
+  `5/10/30/60/90` completed-bar cuts and retained just source identity, counts,
+  and an opaque feature-window hash. It creates no directional state, signal,
+  order, local-paper path, performance/PnL result, GPU work, or promotion; it
+  does not reopen the separately source-only VWAP directional-state candidate.
+  Evidence:
+  `D:\thericher-v2\model-artifacts\research\kis-intraday-session-reset-vwap-feature-mechanics-v1\m1-vwap-feature-mechanics-20260807-r1\summary.json`.
 - The independent `SessionResetEmaStateRule` is a separate pure 15/30
   completed-M1 long/flat mechanism, checked against the Apache-2.0
   QuantConnect LEAN moving-average example without importing its code. Each
