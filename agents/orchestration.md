@@ -5,19 +5,16 @@ This is the current cross-lane projection, not a role queue or history ledger.
 
 ## Company Objective
 
-`kis-intraday-schedule-receipt-qqq-session-identity-followup-v1` awaits one
-exact outcome from the existing 2026-08-07 02:28 KST intraday-head invocation.
-The preceding 00:29 KST result remains task-owned
-`recovery/prospective_session_id_unavailable` with Scheduler result `20` after
-collection `exit_zero` and QQQ `no_intent`. Its host-only safe-ID receipt
-handoff is now repaired and built into the existing profile services. The next
-task receipt may be complete or scoped recovery; it is not a model, Paper
-lifecycle, PnL, or profitability claim.
-
-Claude's falsification-first review of this receipt-only repair timed out as
-`review_unavailable`; it is not agreement or a hold. Independent Review's
-validation-identity-conflict case was added to the network-disabled dispatcher
-simulation. The repair changes no authority, KIS call, broker behavior, or task.
+`kis-intraday-schedule-receipt-qqq-session-identity-followup-v1` completed
+offline reattachment of the exact 2026-08-07 02:28 KST intraday-head receipt.
+Its current pointer and matching immutable receipt hash agree on
+`recovery/collection_exit_nonzero` with Scheduler result `1`: collection exited
+nonzero and the QQQ session and validation were `not_applicable`. This is a
+scoped Data recovery, not a Paper lifecycle, fill, PnL, alpha, or model claim.
+The installed task is `Ready` for its next owned 04:24 KST invocation. The next
+company objective is to simplify this cross-lane projection after a Claude
+governance drift-check; it changes no KIS, broker, scheduler, capital,
+credential, or live behavior.
 
 ## Ready / Owned / Due
 
@@ -25,7 +22,7 @@ simulation. The repair changes no authority, KIS call, broker behavior, or task.
 | --- | --- | --- | --- |
 | Quote-session canary | Execution | Existing virtual-Paper task and 23:45 result monitor | Exact 08-05 receipt `paper-session-20260805T143501171367Z` is `canary_completed`; direct lifecycle reattachment independently validates `cancelled/clean`, attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`; its source-safe outcome remains Execution-owned. It is neither fill/PnL nor model evidence. The existing task owns the next attempt: 2026-08-07 23:35 KST |
 | SPY D1 stability observation | Data | Reviewed gated virtual-Paper task | 2026-08-04 23:15 KST receipt reattached as `stable`; the latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. No qualification or consumer bridge follows; next task-owned observation is 2026-08-07 23:15 KST |
-| Current-head receipt follow-up | Data / Execution | Existing isolated cache/task and rebuilt profile services | The host receipt now receives existing validated QQQ session and validation IDs only when present. Network-disabled simulation proves valid completion and missing/conflicting/mismatched recovery. The existing `IgnoreNew` task owns the next 02:28 KST outcome; no manual KIS call, new task, or broker route |
+| Current-head collection | Data / Execution | Existing isolated cache/task and rebuilt profile services | Exact 02:28 KST result is `recovery/collection_exit_nonzero` with Scheduler result `1`; collection exited nonzero and QQQ session/validation were `not_applicable`. The installed task is `Ready` for 04:24 KST; no manual KIS call, new task, or broker route |
 | Daily operating review automation | Codex | Existing desktop 08:10 KST automation | Its retained prompt still requests a serial full pytest authority run and four-worker feedback convention that conflict with the current `AGENTS.md` clean-root parallel authority helper. The current receipt-follow-up objective forbids scheduler changes, so retain this as a policy-only correction for the next company-goal boundary; do not run the stale verification path. |
 | Daily D1 catch-up | Data | Existing 07:00 KST worker | 2026-08-05 task completed `drained`: zero chunks/targets and no client constructed; exact cursor state only, not a provider-wide coverage conclusion |
 | Token cadence calibration | Data | One token-only Paper capability probe | Completed `unavailable`: first Paper auth succeeded, but the fresh-client second auth was `auth_rejected` after 30.12 monotonic seconds; retain the default five-minute guard and do not repeat this exact hypothesis without a changed provider fact |

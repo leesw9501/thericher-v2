@@ -76,19 +76,15 @@ undocumented timestamp seed.
   current-source profile passed a network-disabled exact-entrypoint check. The
   related focused Data/schedule group passed 76 tests; this is preflight only,
   not a collection receipt.
-  The later 2026-08-06 06:20 KST invocation is independently reattached as
-  exact safe runtime `intraday-head-20260805T2120061382131Z`,
-  `recovery/collection_exit_nonzero` with Scheduler result `1`. It produced no
-  QQQ session outcome and therefore no downstream Paper, fill, PnL, model, or
-  promotion fact. The 2026-08-07 00:29 KST retry then collected successfully
-  (`exit_zero`) and produced a QQQ `no_intent`, but the host receipt omitted the
-  already validated safe session identifier, yielding scoped terminal recovery
-  `prospective_session_id_unavailable` and unavailable offline validation. The
-  data result remains non-promoting. The bounded host receipt repair now passes
-  only existing validated safe QQQ session and validation IDs and is built into
-  the existing profile services. The next 02:28 KST task-owned result, not this
-  code change, determines whether offline validation reattaches; no new
-  collection, task, KIS call, or broker action follows.
+  The 2026-08-07 02:28 KST task-owned invocation is exactly
+  `intraday-head-20260806T1728059060354Z`,
+  `recovery/collection_exit_nonzero` with Scheduler result `1`. Its collection
+  stage exited nonzero, while the QQQ session and offline validation were both
+  `not_applicable`; the pointer and matching immutable receipt hash reattach
+  offline. It records no QQQ session, downstream Paper, fill, PnL, model, or
+  promotion fact. The installed task remains `Ready` for its next owned 04:24
+  KST invocation; no manual collection, task, KIS call, or broker action
+  follows from this scoped recovery.
   On a successful collection, the same worker now gives the existing QQQ
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or
@@ -153,10 +149,19 @@ undocumented timestamp seed.
   five-minute guard and do not repeat this exact 30-second hypothesis without
   a changed provider fact. Evidence:
   `D:\thericher-v2\model-artifacts\data\kis-paper-token-cadence-probe-v1\token-cadence-20260804T212620165702Z\summary.json`.
+  A later read-only end-to-end static audit found no redundant delay: the shared
+  one-second request-start gate, token-only five-minute start gate, categorical
+  cooldown, and HTTP timeout protect distinct request classes or failure paths.
+  Consider a pacing change only after a fake-clock/shared-root/transport test
+  demonstrates overlapping protection for the same request state.
 - **Historical M1 cursor scope:** the existing QQQ/NAS and SPY/AMS backfill
   indices were reattached offline as `source_exhausted`, with no new market-data
   page or snapshot. Do not reopen either terminal cursor with an invented seed;
   a changed endpoint, symbol, or provider behavior needs its own bounded probe.
+  The official `inquire_time_itemchartprice` example documents no initial date
+  or history-start parameter: blank `KEYB` starts the current request and a
+  later `KEYB` is only the prior page's continuation cursor. It therefore does
+  not authorize an arbitrary historical seed or a new collector.
   A source-safe geometry receipt independently finds 21 shared complete
   09:30--15:29 ET sessions, enough only for a source-local, non-promoting
   5--90 minute preflight. It retains `decision_time_availability: not_observed`

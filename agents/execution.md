@@ -48,21 +48,15 @@ scoped recovery is recorded below.
 The 2026-08-05 23:50 KST daily SPY receipt is exactly
 `daily-spy-20260805T145001601078Z`: `no_intent/quote_unavailable`, no run ID,
 and receipt observer plus terminal-field probe both `not_attempted`. It has no
-canary lifecycle, broker, fill, or PnL interpretation. The next intraday-head
-invocation at 2026-08-06 06:20 KST ended as exact safe runtime
-`intraday-head-20260805T2120061382131Z`,
-`recovery/collection_exit_nonzero` with Scheduler result `1`; it is a scoped
-collection recovery only, not a QQQ session, lifecycle, fill, or PnL result.
-The 2026-08-07 00:29 KST run collected with exit `0` and emitted a QQQ
-`no_intent`, but its safe session identity was omitted when the host constructed
-the terminal receipt. The exact task-owned terminal result is therefore
-`recovery/prospective_session_id_unavailable` with Scheduler result `20`, and
-the network-disabled validation stage is `unavailable`. This is no broker or
-fill outcome. The bounded repair now passes only the existing validated safe
-session and validation identifiers to the existing receipt command; it is
-verified with matching and recovery simulations and built into the existing
-services. The next 02:28 KST task-owned receipt determines the runtime outcome;
-it creates no KIS call, task, order path, or authority change.
+canary lifecycle, broker, fill, or PnL interpretation. The 2026-08-07 00:29
+KST intraday-head run remains
+`recovery/prospective_session_id_unavailable` with Scheduler result `20` after
+collection `exit_zero` and QQQ `no_intent`. The repaired 02:28 KST invocation
+then reattached as `recovery/collection_exit_nonzero` with Scheduler result
+`1`; its QQQ session and offline validation were both `not_applicable`. Neither
+receipt records a broker action, lifecycle, fill, or PnL result. The installed
+task remains `Ready` for its next 04:24 KST owned invocation; no KIS call, task,
+order path, or authority changes follow from these scoped outcomes.
 
 The rebuilt single `thericher-kis-paper-daily-spy-session` image preserves
 `quote_unavailable` for an exact fresh-quote fetch failure and uses

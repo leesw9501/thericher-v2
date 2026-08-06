@@ -14,16 +14,22 @@ external artifacts retain history.
 
 ## Current Objective
 
-`kis-intraday-schedule-receipt-qqq-session-identity-v1` completed one
-host-only receipt repair. The immutable 2026-08-07 00:29 KST task receipt
-remains `recovery/prospective_session_id_unavailable` with Scheduler result
-`20`; it is not rewritten. The dispatcher now passes its existing validated
-safe QQQ session and validation IDs to the existing terminal receipt only when
-present. A network-disabled fake-Docker simulation proves matching `no_intent`
-IDs complete, while missing, conflicting, and mismatched IDs remain scoped
-recovery. It changes no KIS call, broker behavior, task, fill, PnL, alpha, or
-model claim. The next objective reattaches one exact result from the existing
-02:28 KST task-owned invocation; do not manually invoke or duplicate it.
+`kis-intraday-schedule-receipt-qqq-session-identity-followup-v1` completed the
+exact 2026-08-07 02:28 KST intraday-head reattachment. Its hash-validated
+task-owned receipt is `recovery/collection_exit_nonzero` with Scheduler result
+`1`: collection exited nonzero and both the QQQ session and its offline
+validation were `not_applicable`. It records no QQQ session, broker, fill, PnL,
+alpha, or model outcome. The installed task is `Ready` for its next owned
+04:24 KST invocation; do not manually invoke or duplicate it. The preceding
+00:29 KST receipt remains immutable
+`recovery/prospective_session_id_unavailable` with Scheduler result `20`.
+
+The next bounded objective simplifies only the cross-lane orchestration
+projection so ready Data, Engine Research, and Execution work can be dispatched
+from current facts rather than historical narrative. It must preserve the
+current objective, owned external work, bottleneck, improvement, and recovery
+facts, ask Claude for a governance drift-check before editing, and make no KIS,
+broker, scheduler, capital, credential, or live-behavior change.
 
 `kis-paper-virtual-lifecycle-canary-v2` remains completed through the existing,
 task-owned deterministic canary. The resulting virtual-Paper lifecycle is
