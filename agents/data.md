@@ -76,15 +76,16 @@ undocumented timestamp seed.
   current-source profile passed a network-disabled exact-entrypoint check. The
   related focused Data/schedule group passed 76 tests; this is preflight only,
   not a collection receipt.
-  The 2026-08-07 02:28 KST task-owned invocation is exactly
-  `intraday-head-20260806T1728059060354Z`,
-  `recovery/collection_exit_nonzero` with Scheduler result `1`. Its collection
-  stage exited nonzero, while the QQQ session and offline validation were both
-  `not_applicable`; the pointer and matching immutable receipt hash reattach
-  offline. It records no QQQ session, downstream Paper, fill, PnL, model, or
-  promotion fact. The installed task remains `Ready` for its next owned 04:24
-  KST invocation; no manual collection, task, KIS call, or broker action
-  follows from this scoped recovery.
+  The 2026-08-07 04:24 KST task-owned invocation advanced its exact terminal
+  pointer. Collection was `exit_zero` and the exact QQQ Paper-only session was
+  `no_intent`, while offline validation was `unavailable`; the immutable
+  terminal receipt therefore ends
+  `recovery/prospective_validation_payload_unavailable` with Scheduler result
+  `20`. It records no broker action, fill, PnL, model, or promotion fact.
+  Current terminal evidence does not cryptographically bind a same-run
+  cumulative-coverage receipt, so coverage remains unreattached rather than
+  inferred. The installed task owns its next 06:20 KST invocation; no manual
+  collection, task, KIS call, or broker action follows from this recovery.
   On a successful collection, the same worker now gives the existing QQQ
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or
@@ -103,21 +104,19 @@ undocumented timestamp seed.
   otherwise this timing hypothesis is rejected and
  reassessed. DST/pre-market page behavior remains unproven and must be
  rechecked before the next U.S. DST transition. The next owned run is
-2026-08-07 00:29 KST; do not manually invoke it.
+2026-08-07 06:20 KST; do not manually invoke it.
  The focused schedule checks (18) and the full parallel authority suite
  (2,571 passed, 23 skipped) passed after registration.
 - **Cumulative capture receipt:** the rebuilt existing
   `kis-paper-intraday-head` image now writes both its exact-run
   `coverage` and `current_session_cumulative_coverage` for the observed
-  America/New_York date. The latter reads only the local index/manifests,
-  explicitly excludes earlier and later session dates, and lets the
-  terminal capture test the full 390 completed offsets across all four
-  scheduled runs. It makes no additional KIS call, raw-minute read,
-  scheduler, model, or Paper decision. A short Claude drift-check returned
-  `supported-with-limits`; DST/holiday semantics and the immutable
-  post-collector snapshot remain scoped limitations. Focused capture and
-  coverage checks passed 22 tests, followed by the 2,571-pass, 23-skip
-  parallel authority suite, full Ruff, and all three static Compose configs.
+  America/New_York date. The latter reads only the local index/manifests and
+  explicitly excludes earlier and later session dates. Current terminal
+  receipts do not include its exact receipt hash, observation time, or
+  categorical digest, so no terminal result may attach a same-run coverage
+  claim by selecting a newest artifact. It makes no additional KIS call,
+  raw-minute read, scheduler, model, or Paper decision. DST/holiday semantics
+  and the immutable post-collector snapshot remain scoped limitations.
 - **Daily D1 catch-up:** the 2026-08-05 07:00 KST task-owned worker completed
   `drained` with zero attempted/retained chunks and zero completed targets. Its
   source-safe receipt records `client_constructed: false`, so this exact

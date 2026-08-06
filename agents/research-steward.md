@@ -15,6 +15,13 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   non-promoting zero-shot probe, not an open allocation or predictive campaign.
   Its fixed zero-return baseline was not surpassed, so it releases no follow-on
   GPU work without a distinct eligible contract.
+- A source-safe registry audit found five historical frozen contracts without a
+  terminal outcome: four `norgate-broad-target-free-representation-v1` records
+  and one `profiled-mtf-flat-mlp-runtime-smoke-v1` record. They are not active
+  GPU appointments because custody records do not reserve a device. A future
+  non-blocking historical-outcome reconciliation may link each to an existing
+  terminal receipt or mark the exact record `non_promoting_abandoned`; it must
+  not reopen evaluation or reserve GPU capacity.
 - Model artifacts and source-safe receipts remain external under
   `D:\thericher-v2\model-artifacts`; Git holds neither model weights nor raw
   market data.

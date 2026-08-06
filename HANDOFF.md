@@ -14,15 +14,21 @@ external artifacts retain history.
 
 ## Current Objective
 
-`kis-intraday-schedule-receipt-qqq-session-identity-followup-v1` completed the
-exact 2026-08-07 02:28 KST intraday-head reattachment. Its hash-validated
-task-owned receipt is `recovery/collection_exit_nonzero` with Scheduler result
-`1`: collection exited nonzero and both the QQQ session and its offline
-validation were `not_applicable`. It records no QQQ session, broker, fill, PnL,
-alpha, or model outcome. The installed task is `Ready` for its next owned
-04:24 KST invocation; do not manually invoke or duplicate it. The preceding
-00:29 KST receipt remains immutable
-`recovery/prospective_session_id_unavailable` with Scheduler result `20`.
+`intraday-head-0424-source-safe-followup-v1` completed the exact 2026-08-07
+04:24 KST intraday-head reattachment. Its hash-validated task-owned receipt
+has collection `exit_zero`, the exact QQQ Paper-only session `no_intent`, and
+offline validation `unavailable`; it ends
+`recovery/prospective_validation_payload_unavailable` with Scheduler result
+`20`. It records no broker action, fill, PnL, alpha, or model outcome. The
+terminal contract does not cryptographically bind a same-run cumulative
+coverage receipt, so coverage remains unreattached rather than inferred. The
+installed task owns 06:20 KST; do not manually invoke or duplicate it.
+
+A fresh Claude falsification check is `supported-with-limits` for the next
+receipt-binding change. It requires the capture receipt to carry the same
+schedule run identity, legacy receipts to remain explicitly unbound rather
+than corrupt, and a stale pointer rollback check. This is provenance-only
+evidence; it does not qualify data or change execution authority.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,
@@ -34,12 +40,6 @@ projection and the clean-root parallel authority helper. Its prompt alone was
 updated; identity, 08:10 daily schedule, active status, model, project target,
 and workspace were read back unchanged, with no secret-like value present.
 
-The next bounded objective is a pure same-cycle target-allocation engine
-foundation. It will serialize caller-provided multi-symbol target proposals
-against one declared exposure snapshot without selecting symbols, loading a
-model, reserving capacity, reading data, creating orders, or changing KIS/
-Paper/live behavior. Claude must review the narrow architecture change first.
-
 `same-cycle-target-allocation-v1` is now complete. Its pure helper preserves
 caller order, requires a consistent shared snapshot and unique market/symbol
 identities, invokes the existing scale-then-cap rule serially, and consumes
@@ -47,8 +47,9 @@ capacity only for accepted enters. It neither ranks symbols nor releases
 capacity for an unexecuted reduction/exit, and it has no data, model, state,
 local-Paper, KIS, or broker surface. The Claude check again timed out as
 `review_unavailable`; 14 focused tests and the 2,707-pass, 25-skip authority
-suite passed. The next bounded objective reattaches only the exact existing
-04:24 KST intraday-head task result and its source-safe data facts.
+suite passed. The next bounded objective adds a minimal source-safe binding
+from a terminal receipt to its exact same-run cumulative-coverage receipt;
+it changes no scheduler, KIS route, Paper order behavior, or model eligibility.
 
 `kis-paper-virtual-lifecycle-canary-v2` remains completed through the existing,
 task-owned deterministic canary. The resulting virtual-Paper lifecycle is
@@ -180,6 +181,13 @@ focused execution tests passed.
 
 - Market data remains under `D:\market_data`; generated artifacts remain under
   `D:\thericher-v2\model-artifacts`.
+- The latest 04:24 KST intraday-head receipt is
+  `recovery/prospective_validation_payload_unavailable` with Scheduler result
+  `20`: collection `exit_zero`, exact QQQ Paper-only session `no_intent`, and
+  offline validation `unavailable`. It has no broker lifecycle, fill, PnL,
+  alpha, or model meaning. Its terminal receipt has no same-run capture-receipt
+  hash/digest binding, so coverage is deliberately not inferred. The existing
+  task owns 06:20 KST; no manual invocation follows.
 - One authorized standard-Tiingo-EOD retrieval completed at 2026-08-04 23:13
   UTC for the fixed `SPY`/`QQQ`/`IWM` scope. Its immutable external snapshot
   has 39 normalized rows through source date 2026-07-28 and reattests offline
@@ -439,7 +447,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-07 23:35 KST |
 | SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-07 23:15 KST |
-| Current-head receipt follow-up | Data / Execution | The 00:29 KST task result remains scoped recovery after collection `exit_zero` and QQQ `no_intent`. The tested host-only safe-ID receipt repair is built into the existing services; the next owned 02:28 KST task result alone can establish whether terminal receipt and offline validation reattach. No manual KIS invocation, new task, or broker path |
+| Current-head receipt binding | Data / Execution | The exact 04:24 KST terminal receipt records collection `exit_zero`, QQQ `no_intent`, offline validation `unavailable`, and scoped recovery with Scheduler result `20`. It cannot bind same-run cumulative coverage yet. Add only that source-safe receipt chain; the existing task alone owns 06:20 KST. No manual KIS invocation, new task, or broker path |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
@@ -546,7 +554,10 @@ metadata-only projection. DST/pre-market behavior remains unproven.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
    or duplicate the existing task. Its latest 2026-08-06 23:35 KST Scheduler
    result is `0`; the next opportunity is 2026-08-07 23:35 KST.
-2. Continue independent Data worker reattachment at its own due times.
+2. Build and verify the minimal terminal-to-capture receipt binding with exact
+   schedule run identity, explicit legacy-unbound compatibility, and stale
+   pointer rollback rejection. Do not change the installed task, KIS route,
+   Paper lifecycle, or raw-data scope. The existing task alone owns 06:20 KST.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality
    evidence.

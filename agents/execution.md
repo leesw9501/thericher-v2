@@ -48,15 +48,13 @@ scoped recovery is recorded below.
 The 2026-08-05 23:50 KST daily SPY receipt is exactly
 `daily-spy-20260805T145001601078Z`: `no_intent/quote_unavailable`, no run ID,
 and receipt observer plus terminal-field probe both `not_attempted`. It has no
-canary lifecycle, broker, fill, or PnL interpretation. The 2026-08-07 00:29
-KST intraday-head run remains
-`recovery/prospective_session_id_unavailable` with Scheduler result `20` after
-collection `exit_zero` and QQQ `no_intent`. The repaired 02:28 KST invocation
-then reattached as `recovery/collection_exit_nonzero` with Scheduler result
-`1`; its QQQ session and offline validation were both `not_applicable`. Neither
-receipt records a broker action, lifecycle, fill, or PnL result. The installed
-task remains `Ready` for its next 04:24 KST owned invocation; no KIS call, task,
-order path, or authority changes follow from these scoped outcomes.
+canary lifecycle, broker, fill, or PnL interpretation. The 2026-08-07 04:24
+KST intraday-head receipt has collection `exit_zero`, an exact QQQ Paper-only
+session `no_intent`, and offline validation `unavailable`. Its terminal is
+`recovery/prospective_validation_payload_unavailable` with Scheduler result
+`20`; it records no broker action, lifecycle, fill, or PnL result. The
+installed task owns its next 06:20 KST invocation; no manual KIS call, task,
+order path, or authority change follows from this scoped recovery.
 
 The rebuilt single `thericher-kis-paper-daily-spy-session` image preserves
 `quote_unavailable` for an exact fresh-quote fetch failure and uses

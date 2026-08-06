@@ -131,12 +131,11 @@ strongest kill test before target evaluation or GPU consideration.
   when that time follows the retained candidate execution bar, it records the
   causal `decision_after_replay_bar` no-intent instead of backdating a fill.
   It has a two-minute freshness contract and no model selection, alpha, PnL,
-  ensemble, or GPU consequence. The 2026-08-07 00:29 KST task produced its
-  input-scoped `no_intent`; the host terminal receipt initially omitted the safe
-  session identity and could not reattach network-disabled validation. The
-  host-only identity repair is now verified, but only the next task-owned
-  receipt can show its runtime outcome. This remains execution recovery evidence
-  only, with no model-selection, alpha, PnL, ensemble, or GPU consequence.
+  ensemble, or GPU consequence. The 2026-08-07 04:24 KST task collected
+  successfully and its exact QQQ session was `no_intent`, but offline
+  validation was `unavailable`. Its terminal recovery records no model result;
+  it also lacks a cryptographic link to a same-run coverage receipt, so no
+  coverage, model-selection, alpha, PnL, ensemble, or GPU inference follows.
 - The separately scheduled SPY D1 stability observer is not an Engine input.
   Its first task-owned 23:15 KST receipt is `stable` and retains only hash and
   categorical evidence with `provider_finality: not_observed`. It cannot open
@@ -163,6 +162,16 @@ strongest kill test before target evaluation or GPU consideration.
   disclosed, so it is not a campaign, execution, GPU appointment, ensemble,
   Paper input, or profitability claim. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos-t5-small-20260804-r1\source-retrieval.json`.
+- TimesFM 2.5 200M PyTorch is independently source-verified as an Apache-2.0,
+  Safetensors-marked `source_only_candidate`. Its documented PyTorch loader
+  does not require a trust-remote-code-style interface, while its official
+  fine-tuning example names a related Transformers checkpoint rather than this
+  PyTorch checkpoint. The source partially discloses non-financial pretraining
+  sources and selected cutoffs, but financial-instrument scope and complete
+  corpus period remain `not_disclosed`; it therefore has no downloaded weight,
+  campaign, evaluation, GPU appointment, ensemble, Paper input, or
+  profitability consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\timesfm-2.5-200m-official-r1\source-retrieval.json`.
 - Chronos-2 is a separate Apache-2.0, Safetensors-marked
   `source_only_candidate` with a documented dataframe forecast interface. Its
   pretraining period and financial-instrument scope are not disclosed, so it
