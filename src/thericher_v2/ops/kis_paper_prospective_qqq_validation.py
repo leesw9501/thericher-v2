@@ -34,7 +34,8 @@ KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_KIND = "kis_paper_prospective_qqq_validatio
 KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY = (
     "validation/kis-paper-prospective-qqq-cycle"
 )
-KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID = "runtime-freshness-v3"
+KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID = "runtime-freshness-v4"
+KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_STATUS = "validated"
 KIS_PAPER_PROSPECTIVE_QQQ_HEAD_CACHE_ROOT = Path(
     r"D:\market_data\us_equities\kis_paper_private\intraday-head"
 )
@@ -67,6 +68,7 @@ class KisPaperProspectiveQqqValidation:
         return {
             "schema_version": SCHEMA_VERSION,
             "kind": KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_KIND,
+            "status": KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_STATUS,
             "session_id": self.session_id,
             "session_evidence_sha256": self.session_evidence_sha256,
             "session_status": self.session_status,
@@ -140,6 +142,7 @@ def validate_kis_paper_prospective_qqq_session(
     identity_payload = {
         "schema_version": SCHEMA_VERSION,
         "kind": KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_KIND,
+        "status": KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_STATUS,
         "validation_contract": KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
         "session_id": session_id,
         "session_evidence_sha256": _sha256_bytes(session_bytes),

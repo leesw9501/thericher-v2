@@ -132,12 +132,12 @@ strongest kill test before target evaluation or GPU consideration.
   causal `decision_after_replay_bar` no-intent instead of backdating a fill.
   It has a two-minute freshness contract and no model selection, alpha, PnL,
   ensemble, or GPU consequence. The 2026-08-07 04:24 KST task collected
-  successfully and its exact QQQ session was `no_intent`, but offline
-  validation was `unavailable`. The rebuilt terminal contract can now bind a
-  future same-run capture receipt, but the historical 04:24 receipt remains
-  `legacy_unbound`. Neither receipt supports coverage, model selection, alpha,
-  PnL, ensemble, or GPU inference. The next local objective repairs only the
-  explicit-session validation evidence path.
+  successfully and its exact QQQ session was `no_intent`; the existing v3
+  validator artifact was source-safe but omitted the scheduler-consumed
+  top-level `status: validated`. The v4 output contract fixes that isolated
+  receipt path while preserving v3 evidence. Neither the historical receipt
+  nor the next task-owned observation supports coverage, model selection,
+  alpha, PnL, ensemble, or GPU inference.
 - The separately scheduled SPY D1 stability observer is not an Engine input.
   Its first task-owned 23:15 KST receipt is `stable` and retains only hash and
   categorical evidence with `provider_finality: not_observed`. It cannot open

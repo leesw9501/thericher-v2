@@ -81,6 +81,7 @@ def test_recomputes_ready_window_and_local_paper_replay_without_external_access(
         artifact_root / KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY
     )
     assert result.evidence_path.parent.name == KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID
+    assert result.safe_payload()["status"] == "validated"
     assert result.safe_payload()["validation_contract"] == (
         KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID
     )
@@ -582,14 +583,15 @@ def test_revalidation_keeps_legacy_validation_evidence_immutable(
         status="no_intent",
         reason_code="account_unavailable",
     )
-    legacy_path = (
+    legacy_contract_path = (
         artifact_root
         / KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY
+        / "runtime-freshness-v3"
         / f"{session_id}.json"
     )
-    legacy_path.parent.mkdir(parents=True, exist_ok=True)
+    legacy_contract_path.parent.mkdir(parents=True, exist_ok=True)
     legacy_rendered = '{"legacy_validation_contract":true}\n'
-    legacy_path.write_text(legacy_rendered, encoding="ascii")
+    legacy_contract_path.write_text(legacy_rendered, encoding="ascii")
 
     result = validate_kis_paper_prospective_qqq_session(
         session_id=session_id,
@@ -604,9 +606,10 @@ def test_revalidation_keeps_legacy_validation_evidence_immutable(
         repository_root=repository_root,
     )
 
-    assert legacy_path.read_text(encoding="ascii") == legacy_rendered
-    assert result.evidence_path != legacy_path
+    assert legacy_contract_path.read_text(encoding="ascii") == legacy_rendered
+    assert result.evidence_path != legacy_contract_path
     assert result.evidence_path.parent.name == KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID
+    assert result.safe_payload()["status"] == "validated"
     assert repeated.evidence_path == result.evidence_path
     assert repeated.validation_identity == result.validation_identity
 

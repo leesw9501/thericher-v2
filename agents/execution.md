@@ -54,9 +54,13 @@ KST intraday-head receipt remains
 exact QQQ Paper-only `no_intent`, and no broker action, lifecycle, fill, or
 PnL result. The rebuilt terminal contract requires a same-run source-safe
 capture binding for future runs and turns a missing binding into local
-recovery; historical evidence stays `legacy_unbound`. The installed task owns
-06:20 KST. The next offline-validation reliability work must not add a KIS
-call, task, order path, or authority change.
+recovery; historical evidence stays `legacy_unbound`. Its v3 offline
+validation output omitted the scheduler-consumed top-level `status:
+validated`; the credential-free, network-disabled v4 validator writes it in a
+new immutable namespace without changing the v3 terminal or any execution
+route. The installed task owns 06:20 KST. Its next exact receipt may establish
+only a validation or recovery fact, never a KIS call, task, order path,
+authority, fill, or PnL change.
 
 The rebuilt single `thericher-kis-paper-daily-spy-session` image preserves
 `quote_unavailable` for an exact fresh-quote fetch failure and uses

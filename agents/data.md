@@ -79,13 +79,12 @@ undocumented timestamp seed.
   The 2026-08-07 04:24 KST task-owned invocation remains
   `recovery/prospective_validation_payload_unavailable`: collection
   `exit_zero`, exact QQQ Paper-only `no_intent`, and no broker, fill, PnL,
-  model, or promotion fact. The rebuilt collector now emits a same-run
-  source-safe capture binding with exact schedule ID, full receipt hash,
-  cumulative digest, and strict `complete`/`incomplete` category. A fresh
-  missing binding is recovery rather than `legacy_unbound`; only historical
-  terminals remain unbound. The installed task owns 06:20 KST, and the next
-  local objective is explicit-session offline-validation reliability, not a
-  manual collection, KIS call, or broker action.
+  model, or promotion fact. Its v3 offline validation artifact was valid but
+  omitted the scheduler-consumed top-level `status: validated`. The v4
+  validator now writes that status into a new immutable contract namespace and
+  preserves the historical v3 artifact and terminal unchanged. The existing
+  task owns 06:20 KST; its exact next receipt is the only eligible observation,
+  not a manual collection, KIS call, or broker action.
   On a successful collection, the same worker now gives the existing QQQ
   90-minute runtime consumer first use of the fresh local cache before slower
   observations. Its observed input remains provisional; stale, incomplete, or

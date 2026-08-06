@@ -14,23 +14,23 @@ external artifacts retain history.
 
 ## Current Objective
 
-`intraday-head-capture-receipt-binding-v1` is complete and the existing
-collector image was rebuilt. A new task-owned capture carries its schedule
-run ID, full receipt SHA-256, and a strict `complete`/`incomplete` coverage
-category. The terminal receipt binds that exact capture only; a missing fresh
-binding becomes `recovery/session_capture_binding_unavailable`, while
-historical receipts remain `legacy_unbound`. Offline readers verify the
-pointer, immutable terminal, deterministic capture path, run ID, hash,
-digest, same-ET-date rule, and direct non-link files. This is provenance-only
-evidence, not data qualification, a model result, or an execution authority.
+`intraday-qqq-offline-validation-reliability-v1` is complete. The exact
+2026-08-07 04:24 KST QQQ session was a valid Paper-only `no_intent`, and its
+offline validation artifact existed, but the immutable v3 payload omitted the
+top-level `status: validated` required by the scheduler's exact-session
+consumer. The v4 validator now binds that source-safe status into its identity
+and writes a new contract namespace, preserving every v3 artifact unchanged.
+It remains offline, network-disabled, credential-free, and unable to create a
+broker, order, fill, PnL, alpha, model, or coverage claim. Focused tests,
+parallel authority tests, Ruff, and both Compose configurations passed; the
+validator service bind-mounts `src`, so no image rebuild was required.
 
-The exact 2026-08-07 04:24 KST receipt remains
-`recovery/prospective_validation_payload_unavailable`: collection `exit_zero`,
-QQQ Paper-only `no_intent`, and offline validation `unavailable`, with no
-broker action, fill, PnL, alpha, or model outcome. The next bounded objective
-is to make that explicit-session offline validation deterministic without
-changing KIS, task, Paper, or live behavior. The installed task alone owns
-06:20 KST; do not manually invoke or duplicate it.
+The historical 04:24 terminal remains
+`recovery/prospective_validation_payload_unavailable` and `legacy_unbound`; it
+is not rewritten. The existing task alone owns 06:20 KST. The next bounded
+objective is to reattach that task's exact v4 source-safe terminal, session,
+and validation evidence after it runs, without a manual invocation or any KIS,
+Paper, or live behavior change.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,

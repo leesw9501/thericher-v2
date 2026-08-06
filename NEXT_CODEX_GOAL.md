@@ -2,20 +2,21 @@
 
 ## Objective
 
-Build `intraday-qqq-offline-validation-reliability-v1`: make the existing
-scheduled intraday QQQ no-intent path produce one deterministic, source-safe
-offline validation result or a precise local recovery category, rather than
-an opaque `validation unavailable` terminal outcome.
+Build `intraday-qqq-v4-scheduled-validation-observation-v1`: reattach one
+exact task-owned intraday QQQ terminal/session/validation chain after the
+existing 2026-08-07 06:20 KST invocation, and classify it as a deterministic
+source-safe validation result or its exact local recovery category.
 
-`intraday-head-capture-receipt-binding-v1` is implemented and the normal
-collector image was rebuilt. A new task-owned run now requires its same-run
-capture receipt binding; historical terminal receipts remain
-`legacy_unbound`. The existing task alone owns 2026-08-07 06:20 KST.
+`intraday-qqq-offline-validation-reliability-v1` is complete. Its v4
+validator emits the top-level `status: validated` consumed by the scheduler and
+binds it into a new immutable validation identity. The historical 04:24 KST
+v3 terminal remains `recovery/prospective_validation_payload_unavailable` and
+`legacy_unbound`; do not rewrite it.
 
 ## Hard Boundaries
 
 - Do not manually call KIS, invoke or duplicate any task, submit/modify/cancel
-  a Paper order, or read `KIS_LIVE_*`.
+  a Paper order, or read any credential or `KIS_LIVE_*` value.
 - Preserve installed task identity, timing, `IgnoreNew`, broker routes, and
   raw-data retention.
 - Do not expose raw bars, prices, provider payloads, credentials, accounts,
@@ -26,27 +27,28 @@ capture receipt binding; historical terminal receipts remain
 
 ## Required Work
 
-1. Inspect the exact source-safe 04:24 terminal/session/validation evidence
-   and the offline code path to classify why the valid QQQ `no_intent` session
-   produced `prospective_validation_payload_unavailable`. Do not infer from
-   raw cache contents or select a latest session.
-2. Make the existing explicit-session validator and scheduler integration
-   emit exactly one deterministic source-safe outcome for a valid matching
-   `no_intent` session. Preserve a distinct recovery result for absent,
-   malformed, mismatched, stale, or unsafe evidence.
-3. Keep validation offline and side-effect-free: no credential, network, KIS,
-   broker, order, or local-Paper mutation path. Reuse the existing task and
-   services; do not add a scheduler or public surface.
-4. Add focused tests for the identified failure mode, exact-session identity,
-   source-safe output, route isolation, and the no-false-success recovery
-   path. Rebuild only the existing affected image if source changes require it.
-5. If the existing 06:20 KST task runs while this objective is active,
-   reattach only its exact source-safe terminal evidence, including the new
-   bound/unbound status. Otherwise retain `next_due` and continue ready work.
+1. After the existing task completes, begin at its exact source-safe terminal
+   pointer and verify the immutable terminal, capture binding, QQQ session ID,
+   and same-ID v4 validation artifact without scanning for a latest session or
+   raw cache data.
+2. Record only categorical evidence: task result, terminal status/recovery,
+   QQQ session status, validation status/contract, identity match, and
+   capture-binding class. A valid QQQ `no_intent` with v4 `validated` is a
+   validation fact only, not a data-quality, model, PnL, or Paper conclusion.
+3. Preserve distinct recovery for missing, malformed, stale, unsafe, or
+   mismatched evidence. Do not repair, relabel, or overwrite the historical
+   v3 receipt, and do not make a false success from an absent artifact.
+4. Keep the observation offline and side-effect-free. Reuse the existing task,
+   validator, and services; do not add a scheduler, route, worker, public
+   surface, KIS call, broker action, or local-Paper mutation.
+5. Do not wait in the foreground for 06:20 KST. Retain the task-owned
+   `next_due` fact and continue any ready non-conflicting package. If the task
+   has not run before a bounded package boundary, keep its observation pending
+   without treating it as an operator block.
 
 ## Verification
 
-Run focused validation/schedule tests, then:
+Run any focused reader/projection tests changed by this objective, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -57,4 +59,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Harden intraday QQQ offline validation`
+`Observe intraday QQQ v4 validation`
