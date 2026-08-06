@@ -32,8 +32,16 @@ strongest kill test before target evaluation or GPU consideration.
   QQQ/NAS catalog. It attests session-aligned M1/M5/M10/H1/H3 completed-bar
   geometry, explicitly excludes H1/H3 terminal partial buckets, and retains no
   values, target, prediction, local-paper action, GPU appointment, model
-  selection, ensemble, or Paper input. The next ready package binds the fixed
-  M1=30/M5=6/M10=3/H1=2/H3=2 target-free causal window profile at 15:30 ET.
+  selection, ensemble, or Paper input.
+- **Completed baseline causal-window package:**
+  `source-local-qqq-mtf-window-feasibility-v1` binds the same local catalog
+  and completed mechanics receipt to the canonical `kis_baseline` profile at
+  15:30 ET: M1=30, M5=6, M10=3, H1=2, H3=2. Its `20260807-qqq-mtf-window-r3`
+  external result retains aggregate geometry only (600/120/60/40/40 completed
+  window bars and 20 H1/H3 terminal exclusions), with no target, model,
+  performance, GPU, Paper, or promotion consequence. The next ready package
+  freezes and attests the whole canonical six-profile window matrix before any
+  comparative result exists.
 - A bounded metadata-only Data probe classifies the existing KIS Paper private
   D1 cache as `input_unavailable` for a 15/30 daily EMA candidate: its rows
   expose `close`, not an adjusted-close or corporate-action contract; coverage

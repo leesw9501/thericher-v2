@@ -328,6 +328,16 @@ undocumented timestamp seed.
   no provider, credential, broker, target, model, Paper-input, or data
   qualification consequence. Evidence:
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
+- **Completed QQQ baseline causal-window feasibility:** the immutable
+  `20260807-qqq-mtf-window-r3` receipt binds that exact completed mechanics
+  contract and source identity to the canonical 15:30 ET `kis_baseline`
+  profile. It confirms only aggregate completed windows: M1=600, M5=120,
+  M10=60, H1=40, and H3=40 across 20 sessions; H1/H3 each retain 20 explicit
+  terminal-partial exclusions. Receipt loading recomputes its parent contract
+  hash and rejects repository-resident parent paths. This is target-free,
+  CPU-only mechanics, not availability/finality, provider, model, Paper, or
+  data-qualification evidence. Evidence:
+  `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-feasibility-v1\20260807-qqq-mtf-window-r3\summary.json`.
 - All derived `5m`, `10m`, `1h`, and `3h` views must come from a caller-owned,
   exchange-calendar-resampled completed M1 sequence. Partial and gapped bars
   remain unavailable.

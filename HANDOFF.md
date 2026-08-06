@@ -84,12 +84,23 @@ provider, credential, broker, predictive, PnL, performance, selection, GPU,
 Paper-input, or data-qualification claim. Evidence:
 `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
 
+`source-local-qqq-mtf-window-feasibility-v1` is complete. Its immutable
+`20260807-qqq-mtf-window-r3` external receipt binds the same 20-session
+QQQ/NAS catalog and completed MTF mechanics receipt to the fixed 15:30 ET
+`kis_baseline` profile: M1=30, M5=6, M10=3, H1=2, H3=2. It records only
+aggregate causal-window geometry: 600, 120, 60, 40, and 40 completed window
+bars respectively, with 20 explicit H1 and H3 terminal-partial exclusions.
+The parent receipt hash is recomputed before use, so tampered or Git-resident
+parent evidence is rejected. It remains source-local CPU input mechanics only
+and creates no predictive, PnL, performance, selection, GPU, Paper-input, or
+broker claim. Evidence:
+`D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-feasibility-v1\20260807-qqq-mtf-window-r3\summary.json`.
+
 The next bounded objective is shared Data/Engine
-`source-local-qqq-mtf-window-feasibility-v1`: bind this completed geometry to
-the existing target-free M1=30/M5=6/M10=3/H1=2/H3=2 completed-bar profile at a
-fixed 15:30 ET cutoff. It remains source-local CPU input mechanics only and
-cannot create a predictive, PnL, performance, selection, GPU, Paper-input, or
-broker claim.
+`source-local-qqq-mtf-window-matrix-v1`: bind the same frozen local input to
+the already canonical six-profile observation-window matrix before any target
+or model result is read. It remains target-free, CPU-only, and outside KIS,
+Paper, GPU, and broker routes.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,

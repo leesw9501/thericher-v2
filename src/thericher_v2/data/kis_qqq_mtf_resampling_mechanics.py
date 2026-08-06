@@ -95,8 +95,8 @@ def run_kis_qqq_mtf_resampling_mechanics(
         run_label=run_label,
     )
     try:
-        _validate_source_catalog(catalog)
-        session_dates = _select_first_complete_regular_session_dates(catalog)
+        validate_kis_qqq_mtf_source_catalog(catalog)
+        session_dates = select_first_complete_kis_qqq_mtf_regular_session_dates(catalog)
         input_data = prepare_kis_paper_intraday_feature_input(
             catalog,
             session_dates=session_dates,
@@ -252,7 +252,12 @@ def _materialize_timeframe_mechanics(
     return tuple(results)
 
 
-def _select_first_complete_regular_session_dates(catalog: CatalogedBars) -> tuple[date, ...]:
+def select_first_complete_kis_qqq_mtf_regular_session_dates(
+    catalog: CatalogedBars,
+) -> tuple[date, ...]:
+    """Choose the shared first twenty complete QQQ/NAS regular sessions."""
+
+    validate_kis_qqq_mtf_source_catalog(catalog)
     candidate_dates = sorted(
         {
             bar.start_ts.astimezone(US_EQUITY_EASTERN).date()
@@ -275,7 +280,9 @@ def _select_first_complete_regular_session_dates(catalog: CatalogedBars) -> tupl
     raise ValueError("requires twenty complete regular KIS M1 sessions")
 
 
-def _validate_source_catalog(catalog: CatalogedBars) -> None:
+def validate_kis_qqq_mtf_source_catalog(catalog: CatalogedBars) -> None:
+    """Require the verified local QQQ/NAS M1 source used by MTF mechanics."""
+
     if not catalog.dataset_id.startswith(_REQUIRED_DATASET_ID_PREFIX):
         raise ValueError("requires the KIS private QQQ/NAS M1 catalog")
     if any(
