@@ -6,10 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`intraday-m1-collector-duplicate-conflict-recovery-v1` will advance the data
-collection loop by making the exact task-owned current-head duplicate-conflict
-recovery deterministic and non-destructive. It adds no strategy, model,
-account/order route, live-capital surface, or public service.
+`kis-paper-iwm-m1-current-head-ingestion-v1` will expand KIS-compatible M1
+coverage by turning the already observed IWM/AMS one-page route into a bounded,
+target-isolated current-head cache. It preserves the exact QQQ/SPY task and
+adds no strategy, model, account/order route, live-capital surface, or public
+service.
 
 ## Ready / Owned / Due
 
@@ -24,7 +25,8 @@ account/order route, live-capital surface, or public service.
 | QQQ baseline causal MTF windows | Data / Engine Research | Completed `20260807-qqq-mtf-window-r3` receipt | Completed: the fixed M1=30/M5=6/M10=3/H1=2/H3=2 profile has 600/120/60/40/40 aggregate completed windows at 15:30 ET, with H1/H3 terminal partials excluded. Parent receipt hash and external-path integrity are verified. |
 | QQQ causal MTF window matrix | Data / Engine Research | Completed `20260807-qqq-mtf-matrix-r2` receipt | Completed: all six canonical profiles are precommitted at 15:30 ET against the reattested 20-session QQQ/NAS input; every profile remains target-free and terminal-partial-safe. |
 | EMA local-Paper PnL attribution | Engine Research / Execution | Completed fixed EMA replay and existing local-paper accounting | Completed: `20260807-ema-pnl-attribution-r1` reattested the parent and recorded 76 closed segments, 152 local-paper fills, gross `-26.299200`, fees `10.8932`, net `-37.192400`, zero open quantity, and exact replay parity. It is source-local accounting only. |
-| M1 duplicate-conflict recovery | Data | Existing task-owned QQQ/NAS and SPY/AMS collector paths | Ready. Make exact duplicate resolution reproducible and non-destructive so the next owned task can retain a valid head while preserving or quarantining only the conflicted candidate. |
+| M1 duplicate-conflict recovery | Data | Existing task-owned QQQ/NAS and SPY/AMS collector paths | Completed. The scheduled `session-capture` preserve branch was reattested with a fake-client restart regression: repeat retained-cache conflicts leave the active chunk, manifest/raw bytes, head cursor, and snapshot count unchanged. The current terminal remains provenance-legacy. |
+| IWM current-head ingestion | Data | Existing IWM/AMS capability route and external `D:` cache root | Ready. Prepare one target-isolated one-page current-head collector without altering QQQ/SPY task state or its schedule. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -42,16 +44,14 @@ nor warrants extending the strategy.
 
 ## Current Reversible Improvement
 
-Repair only the collector's exact duplicate reconciliation branch, with a
-fixture that proves a valid retained causal head survives while a conflicting
-candidate is categorically preserved or quarantined. This improves accepted
-page progress without inventing a second collector, hiding a conflict, or
-changing strategy/execution semantics.
+Use the existing IWM/AMS capability fact to expand data coverage without
+coupling an unproven target to the QQQ/SPY task. Keep the current primary
+collector's recovery behavior and terminal semantics untouched.
 
 ## Current Recovery Action
 
-Data owns the existing 2026-08-08 00:29 KST task invocation; no manual rerun or
-parallel collector is needed. First verify the bounded duplicate-conflict
-repair, then reattach only the task's exact source-safe terminal and capture
-evidence. Do not infer coverage qualification, model readiness, broker action,
-or a live outcome.
+Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation and will
+not manually rerun it. In parallel, it may prepare an isolated IWM one-page
+current-head path with synthetic tests and at most one bounded owned probe.
+Do not infer coverage qualification, model readiness, broker action, or a live
+outcome.

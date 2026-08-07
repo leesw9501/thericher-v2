@@ -675,6 +675,11 @@ def test_head_retained_conflict_without_quarantine_preserves_snapshot_and_report
     original_chunk = initial_qqq["chunks"][0]
     original_manifest = index_path.parent / original_chunk["manifest_path"]
     original_manifest_bytes = original_manifest.read_bytes()
+    original_raw = original_manifest.parent / "raw" / "ohlcv_1m.csv.gz"
+    original_raw_bytes = original_raw.read_bytes()
+    original_snapshot_names = sorted(
+        path.name for path in original_manifest.parent.parent.iterdir()
+    )
     changed = KisPaperMinuteRawBar(
         exchange_date=first_rows[0].exchange_date,
         exchange_time=first_rows[0].exchange_time,
@@ -714,8 +719,45 @@ def test_head_retained_conflict_without_quarantine_preserves_snapshot_and_report
     assert original_manifest.read_bytes() == original_manifest_bytes
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
-    assert len(qqq["chunks"]) == 1
+    assert qqq["chunks"] == [original_chunk]
     assert qqq["last_conflict_origin"] == "retained_cache"
+    assert original_raw.read_bytes() == original_raw_bytes
+    assert sorted(path.name for path in original_manifest.parent.parent.iterdir()) == (
+        original_snapshot_names
+    )
+
+    repeated = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(symbol="QQQ", exchange="NAS", rows=(changed,), next_cursor=None),
+                KisPaperMarketDataError("minute_response_empty"),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=False,
+        observed_at=datetime(2026, 7, 22, 5, 10, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert repeated[0].status == "rejected"
+    assert repeated[0].reason == "minute_duplicate_conflict"
+    assert repeated[0].conflict_origin == "retained_cache"
+    assert repeated[0].retained_head_conflict_disposition == "preserved"
+    assert original_manifest.read_bytes() == original_manifest_bytes
+    assert original_raw.read_bytes() == original_raw_bytes
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert qqq["chunks"] == [original_chunk]
+    assert qqq["next_cursor"] is None
+    assert qqq["last_conflict_origin"] == "retained_cache"
+    assert sorted(path.name for path in original_manifest.parent.parent.iterdir()) == (
+        original_snapshot_names
+    )
 
 
 def test_head_conflict_quarantines_old_snapshot_before_a_fresh_capture(

@@ -60,14 +60,19 @@ undocumented timestamp seed.
   receipt shapes fail closed. The existing task next owns 2026-08-08 00:29 KST;
   do not manually rerun or duplicate it. Its collector image has been rebuilt
   without an invocation.
-- **Ready duplicate-conflict recovery:**
-  `intraday-m1-collector-duplicate-conflict-recovery-v1` owns a bounded
-  code-and-fixture repair for the exact `rejected/minute_duplicate_conflict`
-  terminal class. It must preserve a valid retained causal head and classify
-  only the conflicting candidate as preserved or quarantined; it may not infer
-  coverage, alter a historical receipt, overwrite raw data, create a parallel
-  collector, or block Engine/Execution work. The existing 00:29 KST task stays
-  the next owner of an actual collection attempt after the repair is verified.
+- **Completed duplicate-conflict recovery:** the existing task-owned
+  `session-capture` branch already passes the non-destructive preservation
+  policy. A new fake-client restart regression repeats the same retained-cache
+  conflict and proves the active chunk, manifest/raw bytes, head cursor, and
+  snapshot count are unchanged. The exact 06:20 KST source-safe receipt remains
+  `not_recorded_legacy`, so it is not reclassified. The existing 00:29 KST task
+  stays the next owner of an actual QQQ/SPY collection attempt.
+- **Ready IWM current-head ingestion:**
+  `kis-paper-iwm-m1-current-head-ingestion-v1` may convert the existing
+  IWM/AMS one-page route fact into a target-isolated bounded cache only after
+  its target and storage contracts are verified. It must not alter the existing
+  QQQ/SPY task, cache, cursor, or schedule; any actual KIS probe is one
+  owned-client, one-page attempt with raw data retained only under `D:`.
 - **Current-head timing repair:** a metadata-only reattachment of the
   2026-08-04 QQQ cache found retained regular-session page ranges
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST
@@ -384,12 +389,12 @@ undocumented timestamp seed.
 
 ## Recovery
 
-The next identical `minute_duplicate_conflict` is the strongest kill test for
-the non-destructive session-capture repair: an existing causal head must remain
-retained while the conflicting post-close candidate stays non-promoting. A
-single historical conflict, absent cache, source-limited cursor, or worker
-cooldown remains scoped to that cache and must not hold Execution, Engine, or
-another Data worker.
+The next identical `minute_duplicate_conflict` remains the task-owned live kill
+test for the non-destructive session-capture path: an existing causal head must
+remain retained while the conflicting candidate stays non-promoting. It does
+not block the target-isolated IWM preparation or another ready lane. A single
+historical conflict, absent cache, source-limited cursor, or worker cooldown
+remains scoped to that cache.
 
 ## Evidence And Handoff
 

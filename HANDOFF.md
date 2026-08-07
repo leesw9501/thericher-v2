@@ -126,12 +126,22 @@ Focused EMA attribution checks passed 17 tests; the CPU-only local-cache smoke
 completed without KIS, credential, or broker access; and the authority suite
 passed 2,797 tests with 25 skips, plus Ruff and both Compose configurations.
 
+`intraday-m1-collector-duplicate-conflict-recovery-v1` is complete. The
+task-owned `session-capture` route already preserves an active causal head on a
+retained-cache conflict; no speculative change to a live collector branch was
+warranted while the exact 06:20 KST receipt remains
+`not_recorded_legacy`. A new fake-client restart regression repeats the same
+conflict and proves the active chunk, manifest bytes, raw bytes, head cursor,
+and snapshot count remain unchanged. The source-safe Claude challenge was
+`uncertain` because its isolated invocation could not inspect the workspace, so
+it was not treated as agreement. The focused collector/capture/projection/CLI
+suite passed 81 tests with no KIS, credential, account, order, or live route.
+
 The next bounded objective is Data
-`intraday-m1-collector-duplicate-conflict-recovery-v1`: repair the exact
-task-owned QQQ/NAS and SPY/AMS `minute_duplicate_conflict` recovery seam so the
-next scheduled current-head collection can retain a valid causal cache while
-categorically preserving or quarantining only the conflicting candidate. It
-does not create a strategy, model, Paper order, or live route.
+`kis-paper-iwm-m1-current-head-ingestion-v1`: turn the already observed
+IWM/AMS one-page M1 capability into a target-isolated bounded current-head
+cache without altering the existing QQQ/SPY task, cache, cursor, or schedule.
+It remains source-local and non-promoting.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,

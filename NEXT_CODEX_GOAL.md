@@ -2,54 +2,61 @@
 
 ## Objective
 
-Build `intraday-m1-collector-duplicate-conflict-recovery-v1`.
+Build `kis-paper-iwm-m1-current-head-ingestion-v1`.
 
-Advance the market-data collection loop by repairing the exact task-owned
-QQQ/NAS and SPY/AMS current-head `minute_duplicate_conflict` recovery seam.
-The next scheduled collector must be able to retain a valid causal head while
-categorically preserving or quarantining only a conflicting candidate. This is
-data-recovery work, not a coverage, model, PnL, Paper, or broker result.
+Advance the market-data collection loop by turning the already observed
+IWM/AMS one-page KIS Paper M1 capability into one bounded, target-isolated
+current-head cache. It must leave the existing task-owned QQQ/NAS and SPY/AMS
+collector, cache, cursor, terminal chain, and schedule unchanged. This is a
+source-local data-expansion result, never a data qualification, model, PnL,
+Paper, or broker claim.
 
 ## Hard Boundaries
 
 - Do not read `KIS_LIVE_*`, enable live behavior, call account/order routes, or
   submit, modify, or cancel any broker order.
-- KIS Paper market-data access is standing-authorized only through the existing
-  named Data-owned collector path when a bounded post-fix capability probe is
-  genuinely needed. Never print or persist credentials, tokens, raw rows,
-  prices, provider payloads, or cache paths in Git or artifacts.
-- Do not manually invoke, duplicate, or replace the existing scheduled task.
-  Its next owned run remains the first actual-collection consumer of a verified
-  repair.
-- Keep raw data under `D:\market_data` and generated evidence under
-  `D:\thericher-v2\model-artifacts`; never commit either.
-- Do not create a strategy, model, target, local-Paper intent, performance/PnL
-  claim, GPU campaign, new scheduler, or public service.
+- KIS Paper market-data access is standing-authorized only through the named
+  Data-owned client path. Any actual probe is at most one client, one IWM/AMS
+  current-page request, with raw output retained only under `D:\market_data`.
+  Never print or persist credentials, tokens, raw rows, prices, provider
+  payloads, or cache paths in Git or source-safe artifacts.
+- Do not invoke, alter, duplicate, or replace the existing QQQ/SPY scheduled
+  task. Do not add or register a scheduler in this objective.
+- Do not broaden IWM to historical pagination, another symbol, a model input,
+  a strategy, local-Paper intent, performance/PnL claim, GPU campaign, or
+  public service.
+- Keep generated evidence under `D:\thericher-v2\model-artifacts` and raw
+  market data under `D:\market_data`; never commit either.
 
 ## Required Work
 
-1. Run a concise Throughput Review. Inspect the exact source-safe terminal and
-   capture chain plus the collector/reconciliation code. Before changing shared
-   duplicate, cursor, cache-retention, or recovery semantics, obtain a concise
-   Claude falsification-first drift-check; do not wait on it.
-2. Freeze one recovery contract before implementation: accepted duplicate
-   identity, conflicting-candidate disposition, retained-head invariant, cursor
-   behavior, source-safe terminal category, and strongest kill test.
-3. Implement the smallest deterministic recovery that preserves a valid
-   retained causal head, never overwrites a conflicting row, and closes only
-   that collector scope as a categorical recovery when it cannot continue.
-4. Add focused tests for exact duplicate idempotence, conflicting duplicate
-   preservation/quarantine, no overwrite of retained cache, durable cursor
-   recovery, source-safe receipts, external-only raw storage, and no
-   account/order/live/credential path.
-5. If the repair is testable and an actual capability fact remains unknown, use
-   at most one owned collector probe with its existing in-memory client and
-   record only source-safe accepted-page/error/pace facts. Otherwise leave the
-   next scheduled task as owner. Refresh Data and orchestration stateboards.
+1. Run a concise Throughput Review and inspect only the existing source-safe
+   IWM capability receipt, target validation, cache contracts, and free-space
+   fact. Confirm the QQQ/SPY task is independent and remains owned by its next
+   scheduled invocation.
+2. Before changing target, cache, or provider-recovery semantics, ask Claude
+   CLI for a concise falsification-first drift check. Do not send it secrets,
+   raw rows, prices, or cache paths, and do not wait on it.
+3. Freeze one ingestion contract: IWM/AMS identity, exactly one current page,
+   isolated cache root, no continuation request, source-safe result fields,
+   strongest isolation kill test, and the fact that would permit a later
+   historical or scheduled expansion.
+4. Implement the smallest reusable collection entry point or target parameter
+   needed to use the existing client without changing the QQQ/SPY default path.
+   Reject a non-IWM/AMS target, continuation request, unsafe cache root, or
+   cross-target state mutation before any provider call.
+5. Add focused fake-client tests proving target isolation, one-page request
+   shape, no QQQ/SPY cache/cursor mutation, source-safe receipt shape,
+   external-only raw storage, and no account/order/live/credential route.
+6. Run a CPU smoke with the fake client. If it passes and the external route is
+   ready, make at most one owned IWM/AMS current-page call and record only
+   accepted/error category, one-page count, pace bucket, and next recovery
+   fact. Otherwise record why no probe was issued. Refresh Data and
+   orchestration stateboards.
 
 ## Verification
 
-Run focused tests, any source-safe probe used, then:
+Run focused tests and any source-safe probe used, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -60,4 +67,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Recover task-owned M1 duplicate conflicts`
+`Add isolated IWM M1 head ingestion`
