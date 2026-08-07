@@ -273,16 +273,17 @@ strongest kill test before target evaluation or GPU consideration.
   `source_only_input_unavailable` with no campaign, GPU, PnL, ensemble, or
   Paper consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\kis-intraday-extreme-shock-reversal-20260804-r1\source-retrieval.json`.
-- A temporary Strategy Discovery handoff retrieved a source whose claimed
-  cross-sectional common-stock mechanism links an unexpected regular-session
-  volume shock to a later close-to-open return. Engine Research has not
-  independently re-retrieved the primary working paper, and it supplies no
-  QQQ/SPY single-ETF result. Full 16:00/closing-auction treatment, finality,
-  decision-time availability, later time-disjoint coverage, and an overnight
-  replay-cost contract are all absent. It remains `source_unverified` and
-  `source_only_input_unavailable`, with no code, campaign, GPU appointment,
-  PnL, ensemble, or Paper consequence. Evidence:
-  `D:\thericher-v2\model-artifacts\research\strategy-discovery\volume-shock-overnight-etf-source-pass-20260807-r1\source-handoff.json`.
+- Engine independently re-retrieved the volume-shock overnight source. It
+  confirms that the reported result is a cross-sectional U.S. common-stock
+  study whose daily regular-session volume shock uses an earlier-only 60-day
+  EMA and is known only after the closing auction. The source supplies no
+  QQQ/SPY result, implementation right, or executable close-auction ETF
+  signal; any ETF adaptation is a new hypothesis rather than replication.
+  Full terminal-session/finality and decision-time evidence, later
+  time-disjoint coverage, and an overnight replay-cost contract remain absent.
+  It is `source_only_input_unavailable`, with no code, campaign, GPU
+  appointment, PnL, ensemble, or Paper consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\volume-shock-overnight-etf-20260807-r1\source-retrieval.json`.
 - `Intraday Time Series Reversal` is a distinct per-instrument source-only
   candidate: the SSRN abstract and the authors' working-paper page support an
   opposite-signed relation between a prior regular close-to-open return and the
