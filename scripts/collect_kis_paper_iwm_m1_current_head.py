@@ -77,7 +77,7 @@ def main(
         )
         return 2
 
-    print(json.dumps(receipt.result.outcome.safe_payload(), sort_keys=True))
+    print(json.dumps(receipt.safe_payload(), sort_keys=True))
     return 0 if receipt.result.outcome.status == "collected" else 2
 
 

@@ -72,17 +72,14 @@ def test_script_uses_the_fixed_one_page_iwm_route_and_prints_no_paths(
     def collect_and_write(**kwargs: object) -> SimpleNamespace:
         observed["collect_kwargs"] = kwargs
         return SimpleNamespace(
-            result=SimpleNamespace(
-                outcome=SimpleNamespace(
-                    status="collected",
-                    safe_payload=lambda: {
-                        "status": "collected",
-                        "paper_only": True,
-                        "route_class": "kis_paper_market_data",
-                        "target_key": "IWM/AMS/1m",
-                    },
-                )
-            )
+            result=SimpleNamespace(outcome=SimpleNamespace(status="collected")),
+            safe_payload=lambda: {
+                "status": "collected",
+                "paper_only": True,
+                "route_class": "kis_paper_market_data",
+                "target_key": "IWM/AMS/1m",
+                "observation_id": "iwm-observation:" + ("a" * 64),
+            },
         )
 
     monkeypatch.setattr(script, "KisPaperMarketDataClient", _Client)
@@ -116,6 +113,7 @@ def test_script_uses_the_fixed_one_page_iwm_route_and_prints_no_paths(
         "paper_only": True,
         "route_class": "kis_paper_market_data",
         "target_key": "IWM/AMS/1m",
+        "observation_id": "iwm-observation:" + ("a" * 64),
     }
     assert "evidence_path" not in payload
 

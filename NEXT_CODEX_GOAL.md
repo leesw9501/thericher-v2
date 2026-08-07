@@ -2,65 +2,62 @@
 
 ## Objective
 
-Build `iwm-m1-prospective-observation-append-v1`.
+Build `kis-paper-m1-historical-reach-probe-v1`.
 
-Advance the market-data foundation by turning the isolated IWM/AMS current-head
-route into an append-safe observation contract. Each successful observation
-must retain or reference one immutable external snapshot and create one
-explicitly selectable, source-safe v2 receipt. Identical content may reuse its
-snapshot; changed content must remain a distinct immutable observation rather
-than overwriting or mixing a prior head. This is prospective source-local data
-mechanics, not historical M1 backfill, a qualified dataset, model input,
-strategy, PnL, Paper order, account route, or generic scheduler platform.
+Resolve the exact, provider-observed historical reach and continuation behavior
+of the named KIS Paper M1 endpoint for QQQ/NAS and SPY/AMS. This is a bounded
+capability and pacing measurement that prepares a later durable collector; it
+does not claim that either target is complete, qualified, point-in-time safe,
+decision-time available, predictive, profitable, or ready for Paper execution.
 
 ## Hard Boundaries
 
-- `KIS_PAPER_*` may be read only through the existing named IWM Paper
-  market-data client, and only for the one bounded final observation attempt.
+- `KIS_PAPER_*` may be read only through the named Paper market-data path.
   Never print or persist credentials; never read or route `KIS_LIVE_*`.
-- Keep IWM/AMS current-day, one-page, no-continuation scope. Do not add
-  historical paging, an undocumented timestamp seed, parallel flooding, an
-  account/order route, or a QQQ/SPY cache, cursor, task, or schedule change.
-- Do not create a recurring scheduler, model, dataset qualification, research
-  campaign, GPU job, local-Paper intent, broker-order path, public service, or
-  mutable latest-observation fallback.
-- Keep raw market data under `D:\market_data` and generated receipts under
-  `D:\thericher-v2\model-artifacts`; never commit either.
-- A failed, unavailable, or rate-limited observation attempt remains a scoped
-  source-safe recovery fact. Do not foreground-wait or turn it into a hold on
-  another ready lane.
+- Do not call account, position, quote, order, cancellation, or any live route.
+- Do not alter or duplicate the existing QQQ/SPY scheduled collector, its
+  cache, cursor, terminal chain, Docker service, or schedule. The probe must
+  use a target-isolated external capability root.
+- Keep the first actual probe to at most two serial minute-page requests per
+  target with one reusable client, no continuation flood, and no foreground
+  retry. Record a source-safe `next_due` only if the provider returns a
+  categorical retry fact.
+- Retain accepted raw pages only below `D:\market_data`; keep source-safe
+  receipts under `D:\thericher-v2\model-artifacts`; never commit either.
+- Do not create a recurring scheduler, broad backfill, model, research
+  campaign, GPU job, dataset qualification, local-Paper intent, broker order,
+  public service, or mutable latest-record rule.
 
 ## Required Work
 
-1. Run a concise Throughput Review. Confirm that the completed selector makes
-   repeated IWM observations safe to enumerate, while the current generic IWM
-   WIP is current-head-only and does not prove historical M1 coverage.
+1. Run a concise Throughput Review. Confirm that IWM append is complete but
+   does not establish historical reach, and that the existing QQQ/SPY task is
+   independent and unchanged.
 2. Ask Claude CLI for a short falsification-first drift check before changing
-   IWM snapshot/receipt/recovery semantics. Send no raw rows, values, paths,
-   or credentials; do not wait for the result.
-3. Freeze one append contract: observation identity, snapshot identity,
-   same-content reuse, changed-head isolation, receipt atomicity, restart
-   behavior, source-safe outcome categories, and the strongest corruption or
-   conflicting-revision kill test.
-4. Implement the smallest append API and opt-in CLI that can persist one
-   immutable IWM current-head observation without changing the existing
-   QQQ/SPY collector. A repeated identical head must not overwrite data; a
-   changed head must not silently merge with a prior observation.
-5. Add focused fake/local tests for identical repeated observations, a changed
-   head, malformed or interrupted writes, selector replay of every retained
-   observation, external-root/link rejection, and no account/order/network
-   path before the explicit execute command.
-6. Run CPU-only fixture smoke first. Then make at most one standing-authorized
-   IWM/AMS KIS Paper market-data observation attempt through the new opt-in
-   command. Record only source-safe aggregate/recovery evidence and reattach
-   it with the explicit selector. Do not retry in the foreground.
-7. Refresh Data and orchestration stateboards with the exact append outcome,
-   pace observation, and next recovery fact. Explicitly record that historical
-   coverage still needs its own endpoint-reach package.
+   historical reach, continuation, or source-safe pacing semantics. Send no
+   raw rows, values, paths, or credentials; do not wait for the result.
+3. Inspect any visible shared-worktree generic minute WIP before relying on it.
+   Reattest it with focused tests or replace only the bounded probe package;
+   unowned provenance alone is never a block.
+4. Freeze the probe contract: exact targets, request/page budget, cursor or
+   continuation evidence, raw-retention rule, per-target isolated root, pace
+   measurement fields, categorical failure/recovery outcomes, and strongest
+   target/cursor/duplicate kill test.
+5. Implement or reattest the smallest testable target-isolated probe. Add
+   focused fake/local tests for target enforcement, serial page budget,
+   continuation handling, external-root/link rejection, no credential or
+   network path without `--execute`, and source-safe outcome output.
+6. Run a CPU-only fake/local smoke. Then make the bounded KIS Paper attempts
+   and retain only permitted external data. Reattach the resulting source-safe
+   receipt; do not infer provider-wide history from source exhaustion or a
+   short probe.
+7. Refresh Data and orchestration stateboards with per-target reach, accepted
+   pages, categorical failures, measured elapsed-time bucket, remaining scope
+   as `unknown` when appropriate, and the next collection or recovery action.
 
 ## Verification
 
-Run focused tests and the CPU smoke, then:
+Run focused tests and the local smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -71,4 +68,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add IWM prospective observation append`
+`Probe KIS Paper M1 historical reach`

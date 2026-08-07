@@ -6,11 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`iwm-m1-prospective-observation-append-v1` will make repeated IWM current-head
-observations append-safe. It preserves explicit selection and immutable
-snapshot/receipt identity, keeps the exact QQQ/SPY task unchanged, and adds no
-historical pagination, account/order route, model, Paper input, qualification,
-live-capital surface, or public service.
+`kis-paper-m1-historical-reach-probe-v1` will measure QQQ/NAS and SPY/AMS M1
+endpoint reach and continuation with a small target-isolated serial probe. It
+keeps the exact QQQ/SPY task unchanged and adds no broad backfill, account/order
+route, model, Paper input, qualification, live-capital surface, or public
+service.
 
 ## Ready / Owned / Due
 
@@ -30,7 +30,8 @@ live-capital surface, or public service.
 | IWM source-local replayability | Data / Validation | Legacy IWM snapshot, v2 receipt writer, and existing `Bar`/resampler contracts | Completed: the historical v1 receipt lacks a snapshot identity, so exact local replay records `completion_evidence_unavailable` and zero completed buckets rather than inventing timing. The v2 writer/reader contract is tested with bound fixtures. |
 | IWM v2 bound observation | Data / Execution | Isolated IWM/AMS KIS Paper one-page route | Completed: one accepted no-continuation page reused the immutable snapshot and wrote a v2 content-bound receipt. Local replay produced 120 complete M1, 8 M5, 1 M10, and no H1/H3 bucket. It has no consumer or promotion consequence. |
 | IWM v2 observation selector | Data / Validation | Existing immutable IWM snapshots and v2 receipts | Completed: source-safe metadata can enumerate observations and caller-selected v2 replay has no mutable latest fallback. The independent order-versus-hash duplicate defect was fixed before integration. |
-| IWM prospective observation append | Data | Isolated IWM/AMS current-head route, immutable external roots, and completed selector | Ready: freeze and test same-content reuse, changed-head isolation, receipt atomicity, and restart behavior before one bounded KIS Paper observation attempt. This is not historical paging. |
+| IWM prospective observation append | Data / Validation | Isolated IWM/AMS route, immutable external roots, and completed selector | Completed: success receipts append separately from source-safe failure outcomes, stale owned stages cannot poison selection, and the collector returns an opaque selected ID. One bounded request reused the existing snapshot and reattached offline. |
+| QQQ/SPY historical M1 reach probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Ready: reattest or replace the bounded generic probe, then measure up to two serial pages per target without altering the existing scheduled collector. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -48,16 +49,15 @@ nor warrants extending the strategy.
 
 ## Current Reversible Improvement
 
-Use the completed explicit selector to make a small IWM append contract safe:
-reuse identical immutable content, isolate changed heads, and keep every
-receipt caller-selectable without a mutable latest-record policy or QQQ/SPY
-impact.
+Use the completed IWM append contract as the isolated reference while resolving
+the actual QQQ/SPY historical-reach unknown with a source-safe serial probe.
+This replaces assumptions about provider retention with measured per-target
+continuation evidence without touching the existing collector.
 
 ## Current Recovery Action
 
 Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation and the
-bounded IWM append package. Its first recovery decision is exact and local:
-reuse an identical snapshot, preserve a changed head as a distinct immutable
-observation, or write only a source-safe failure fact. Historical M1 reach
-remains a separate endpoint probe, never an inference from IWM current-head
-success.
+bounded historical-reach probe. Its recovery is per target and cursor: record
+an accepted page, a categorical provider fact, or `unknown` remaining scope,
+then choose a fresh bounded collector package only when the measurement supports
+it. IWM current-head success remains unrelated to historical M1 reach.

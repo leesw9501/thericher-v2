@@ -18,7 +18,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
 | KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local non-promoting geometry only; QQQ supplied local EMA and MTF mechanics, not a qualification or consumer promotion |
 | KIS Paper private D1 cache | `input_unavailable` for daily-EMA preparation | Explicitly unadjusted, partial, and missing daily finality/as-of metadata |
-| KIS Paper IWM/AMS M1 current head | Legacy v1 plus one explicitly selectable v2-bound current-day observation over one immutable snapshot | Exact selected v2 local replay has 120 completed M1, 8 M5, and 1 M10 buckets; H1/H3 are absent, and no history, qualification, or consumer promotion follows |
+| KIS Paper IWM/AMS M1 current head | Legacy v1 plus two explicitly selectable v2-bound current-day observations over one immutable snapshot | Exact selected v2 local replay has 120 completed M1, 8 M5, and 1 M10 buckets; H1/H3 are absent, and no history, qualification, or consumer promotion follows |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
 | KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | First task-owned receipt is incomplete after one accepted page | Exact endpoint pagination fact only; no decision-time availability or consumer promotion |
@@ -106,6 +106,21 @@ undocumented timestamp seed.
   provider, credential, broker, account, order, QQQ/SPY, model, or Paper call.
   The next ready IWM package is append safety for repeated current-head
   observations, not historical paging or a consumer promotion.
+- **Completed IWM prospective append:** successful observations now return the
+  opaque selector ID directly while failure/recovery receipts stay outside the
+  selector root. The source-local writer reuses an identical snapshot and
+  preserves changed content as a separate immutable revision; a physical
+  collection receipt remains distinct even when it shares the same observation
+  time, while an exact already-retained retry is idempotent. An owned stale
+  receipt staging filename or exact legacy source-safe failure receipt cannot
+  poison final selection; malformed final evidence still fails closed. One
+  bounded actual IWM/AMS request was accepted without continuation and reused the retained
+  snapshot; the explicit offline replay preserved the 120 M1, 8 M5, 1 M10, and
+  zero H1/H3 aggregate geometry. The current inventory is one incomplete
+  legacy receipt plus two bound v2 observations. The request completed in the
+  `5-10s` bucket with no categorical failure. This remains current-head-only:
+  historical reach, finality, decision-time availability, qualification, and
+  all model/Paper consumer eligibility remain false.
 - **Current-head timing repair:** a metadata-only reattachment of the
   2026-08-04 QQQ cache found retained regular-session page ranges
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST
@@ -426,6 +441,10 @@ undocumented timestamp seed.
   selection is now available before repeated observations accumulate. It has
   no historical, finality, model, or Paper consumer contract; a future append
   package must preserve changed heads as distinct immutable observations.
+- The next Data package measures QQQ/NAS and SPY/AMS historical endpoint reach
+  with target-isolated, bounded serial capability probes. A page count or
+  source-limited result applies only to that exact target/cursor contract and
+  cannot rewrite the existing task's state or become a provider-wide limit.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,
   or `outside_window`; `stable` means two separately timed virtual-Paper reads
   matched, not provider finality, point-in-time availability, data

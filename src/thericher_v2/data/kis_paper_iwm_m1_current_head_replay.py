@@ -32,6 +32,7 @@ from thericher_v2.data.kis_paper_iwm_m1_current_head import (
     KIS_PAPER_IWM_M1_CURRENT_HEAD_TARGET_KEY,
     KIS_PAPER_IWM_M1_CURRENT_HEAD_VERSION,
     KIS_PAPER_MARKET_DATA_ROOT,
+    build_kis_paper_iwm_m1_current_head_observation_id,
     validate_kis_paper_iwm_m1_current_head_cache_root,
 )
 from thericher_v2.execution.kis_market_data import KisPaperMarketDataError, KisPaperMinuteRawBar
@@ -56,6 +57,7 @@ _RAW_MINUTE_COLUMNS = (
 )
 _SNAPSHOT_ID_PATTERN = re.compile(r"[0-9a-f]{64}")
 _OBSERVATION_ID_PATTERN = re.compile(r"iwm-observation:[0-9a-f]{64}")
+_RECEIPT_STAGE_PATTERN = re.compile(r"\.[0-9a-f]{16}\.[0-9a-f]{8}\.stage")
 _KOREA_TZ = ZoneInfo("Asia/Seoul")
 _EXPECTED_MANIFEST_FIELDS = frozenset(
     {
@@ -531,10 +533,20 @@ def _load_collection_receipts(artifact_root: Path) -> tuple[_CollectionReceipt, 
         path=receipt_root,
         label="IWM current-head collection receipt root",
     )
-    candidates = tuple(receipt_root.iterdir())
+    candidates = tuple(
+        path
+        for path in receipt_root.iterdir()
+        if _RECEIPT_STAGE_PATTERN.fullmatch(path.name) is None
+    )
     if not candidates:
         raise ValueError("IWM current-head replay requires a collection receipt")
-    receipts = tuple(_read_collection_receipt(path) for path in candidates)
+    receipts = tuple(
+        _read_collection_receipt(path)
+        for path in candidates
+        if not _is_legacy_source_safe_outcome_receipt(path)
+    )
+    if not receipts:
+        raise ValueError("IWM current-head replay requires a collection receipt")
     ordered = tuple(
         sorted(
             receipts,
@@ -604,6 +616,50 @@ def _read_collection_receipt(path: Path) -> _CollectionReceipt:
             completion_basis=completion_basis,
         )
     )
+
+
+def _is_legacy_source_safe_outcome_receipt(path: Path) -> bool:
+    """Ignore only pre-append failure receipts that match the exact safe shape."""
+
+    if path.is_symlink() or not path.is_file() or path.suffix != ".json":
+        return False
+    receipt_bytes = path.read_bytes()
+    try:
+        receipt = json.loads(receipt_bytes)
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return False
+    if not isinstance(receipt, dict) or receipt_bytes != _canonical_json_bytes(receipt) + b"\n":
+        return False
+    if (
+        frozenset(receipt) != _BOUND_RECEIPT_FIELDS
+        or receipt.get("schema_version") != SCHEMA_VERSION
+        or receipt.get("kind") != "kis_paper_iwm_m1_current_head"
+        or receipt.get("receipt_version") != KIS_PAPER_IWM_M1_CURRENT_HEAD_RECEIPT_VERSION
+        or receipt.get("status") not in {"unavailable", "rejected"}
+        or receipt.get("paper_only") is not True
+        or receipt.get("route_class") != "kis_paper_market_data"
+        or receipt.get("target_key") != KIS_PAPER_IWM_M1_CURRENT_HEAD_TARGET_KEY
+        or receipt.get("collection_scope") != "one_current_day_head_page_no_continuation"
+        or receipt.get("accepted_page_count") != 0
+        or receipt.get("accepted_row_category") != "none"
+        or receipt.get("continuation_category") != "not_observed"
+        or receipt.get("cache_disposition") != "not_written"
+        or not isinstance(receipt.get("response_class"), str)
+        or not receipt["response_class"]
+        or receipt.get("raw_market_data_retained") is not False
+        or receipt.get("snapshot_content_sha256") is not None
+        or receipt.get("storage") != "external_market_data_only"
+        or receipt.get("next_recovery") != "retry_isolated_one_page_observation"
+    ):
+        return False
+    value = receipt.get("observed_at")
+    if not isinstance(value, str):
+        return False
+    try:
+        require_utc(datetime.fromisoformat(value.replace("Z", "+00:00")), "observed_at")
+    except ValueError:
+        return False
+    return True
 
 
 def _validate_collection_receipt(
@@ -734,14 +790,9 @@ def _sha256(value: bytes) -> str:
 
 
 def _observation_id(*, receipt_sha256: str, snapshot_content_sha256: str | None) -> str:
-    return "iwm-observation:" + _sha256(
-        _canonical_json_bytes(
-            {
-                "kind": "kis_paper_iwm_m1_current_head_observation_v1",
-                "receipt_sha256": receipt_sha256,
-                "snapshot_content_sha256": snapshot_content_sha256,
-            }
-        )
+    return build_kis_paper_iwm_m1_current_head_observation_id(
+        receipt_sha256=receipt_sha256,
+        snapshot_content_sha256=snapshot_content_sha256,
     )
 
 

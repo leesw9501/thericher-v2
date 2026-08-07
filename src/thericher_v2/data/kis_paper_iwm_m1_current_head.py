@@ -45,7 +45,11 @@ KIS_PAPER_IWM_M1_CURRENT_HEAD_TARGET_KEY = "IWM/AMS/1m"
 KIS_PAPER_IWM_M1_CURRENT_HEAD_VERSION = "v1"
 KIS_PAPER_IWM_M1_CURRENT_HEAD_SNAPSHOT_DIRECTORY = "snapshots"
 KIS_PAPER_IWM_M1_CURRENT_HEAD_ARTIFACT_DIRECTORY = "data/kis-paper-iwm-m1-current-head"
+KIS_PAPER_IWM_M1_CURRENT_HEAD_OUTCOME_ARTIFACT_DIRECTORY = (
+    "data/kis-paper-iwm-m1-current-head-outcomes"
+)
 KIS_PAPER_IWM_M1_CURRENT_HEAD_RECEIPT_VERSION = "v2"
+KIS_PAPER_IWM_M1_CURRENT_HEAD_OBSERVATION_ID_PREFIX = "iwm-observation:"
 
 _RAW_MINUTE_COLUMNS = (
     "xymd",
@@ -167,6 +171,14 @@ class KisPaperIwmM1CurrentHeadResult:
 class KisPaperIwmM1CurrentHeadReceipt:
     result: KisPaperIwmM1CurrentHeadResult
     evidence_path: Path
+    observation_id: str | None
+
+    def safe_payload(self) -> dict[str, object]:
+        """Return the collection outcome plus a selectable success identity."""
+
+        payload = self.result.outcome.safe_payload()
+        payload["observation_id"] = self.observation_id
+        return payload
 
 
 class _CandidatePageDuplicateConflict(KisPaperMarketDataError):
@@ -251,6 +263,11 @@ def collect_and_write_kis_paper_iwm_m1_current_head(
 ) -> KisPaperIwmM1CurrentHeadReceipt:
     """Collect the isolated page and retain a source-safe external receipt."""
 
+    _external_root(
+        root=artifact_root,
+        repository_root=repository_root,
+        label="IWM current-head artifact root",
+    )
     result = collect_kis_paper_iwm_m1_current_head(
         client=client,
         cache_root=cache_root,
@@ -259,13 +276,21 @@ def collect_and_write_kis_paper_iwm_m1_current_head(
         protected_cache_roots=protected_cache_roots,
         observed_at=observed_at,
     )
+    evidence_path = write_kis_paper_iwm_m1_current_head_evidence(
+        outcome=result.outcome,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    observation_id = None
+    if result.outcome.status == "collected":
+        observation_id = build_kis_paper_iwm_m1_current_head_observation_id(
+            receipt_sha256=hashlib.sha256(evidence_path.read_bytes()).hexdigest(),
+            snapshot_content_sha256=result.outcome.snapshot_content_sha256,
+        )
     return KisPaperIwmM1CurrentHeadReceipt(
         result=result,
-        evidence_path=write_kis_paper_iwm_m1_current_head_evidence(
-            outcome=result.outcome,
-            artifact_root=artifact_root,
-            repository_root=repository_root,
-        ),
+        evidence_path=evidence_path,
+        observation_id=observation_id,
     )
 
 
@@ -284,7 +309,12 @@ def write_kis_paper_iwm_m1_current_head_evidence(
     )
     payload = _canonical_json_bytes(outcome.safe_payload()) + b"\n"
     digest = hashlib.sha256(payload).hexdigest()[:16]
-    destination_directory = root / KIS_PAPER_IWM_M1_CURRENT_HEAD_ARTIFACT_DIRECTORY
+    artifact_directory = (
+        KIS_PAPER_IWM_M1_CURRENT_HEAD_ARTIFACT_DIRECTORY
+        if outcome.status == "collected"
+        else KIS_PAPER_IWM_M1_CURRENT_HEAD_OUTCOME_ARTIFACT_DIRECTORY
+    )
+    destination_directory = root / artifact_directory
     _ensure_external_descendant_directory(root=root, path=destination_directory)
     destination = (
         destination_directory / f"{outcome.observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{digest}.json"
@@ -472,8 +502,7 @@ def _row_fingerprint(row: KisPaperMinuteRawBar) -> bytes:
 
 def _external_root(*, root: Path, repository_root: Path, label: str) -> Path:
     supplied_root = Path(root)
-    if supplied_root.is_symlink():
-        raise ValueError(f"{label} is invalid")
+    _reject_linked_ancestors(path=supplied_root, label=label)
     resolved_root = supplied_root.resolve()
     resolved_repository = Path(repository_root).resolve()
     if resolved_root.is_relative_to(resolved_repository):
@@ -510,6 +539,12 @@ def _validate_descendant(*, root: Path, path: Path, label: str) -> None:
         raise ValueError(f"{label} is invalid")
 
 
+def _reject_linked_ancestors(*, path: Path, label: str) -> None:
+    for candidate in (path, *path.parents):
+        if candidate.exists() and candidate.is_symlink():
+            raise ValueError(f"{label} is invalid")
+
+
 def _safe_failure_reason(error: KisPaperMarketDataError) -> str:
     reason = str(error)
     return reason if reason in _SAFE_FAILURE_REASONS else "iwm_current_head_error"
@@ -517,6 +552,28 @@ def _safe_failure_reason(error: KisPaperMarketDataError) -> str:
 
 def _is_sha256(value: object) -> bool:
     return isinstance(value, str) and _SHA256_PATTERN.fullmatch(value) is not None
+
+
+def build_kis_paper_iwm_m1_current_head_observation_id(
+    *,
+    receipt_sha256: str,
+    snapshot_content_sha256: str | None,
+) -> str:
+    """Build the opaque immutable ID shared by append and replay paths."""
+
+    if not _is_sha256(receipt_sha256) or (
+        snapshot_content_sha256 is not None and not _is_sha256(snapshot_content_sha256)
+    ):
+        raise ValueError("IWM current-head observation identity is invalid")
+    return KIS_PAPER_IWM_M1_CURRENT_HEAD_OBSERVATION_ID_PREFIX + hashlib.sha256(
+        _canonical_json_bytes(
+            {
+                "kind": "kis_paper_iwm_m1_current_head_observation_v1",
+                "receipt_sha256": receipt_sha256,
+                "snapshot_content_sha256": snapshot_content_sha256,
+            }
+        )
+    ).hexdigest()
 
 
 def _canonical_json_bytes(value: object) -> bytes:

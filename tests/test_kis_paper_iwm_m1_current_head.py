@@ -7,11 +7,16 @@ from pathlib import Path
 
 import pytest
 
+import thericher_v2.data.kis_paper_iwm_m1_current_head as current_head_module
 from thericher_v2.data.kis_paper_iwm_m1_current_head import (
     KIS_PAPER_IWM_M1_CURRENT_HEAD_TARGET_KEY,
     collect_and_write_kis_paper_iwm_m1_current_head,
     collect_kis_paper_iwm_m1_current_head,
     validate_kis_paper_iwm_m1_current_head_cache_root,
+)
+from thericher_v2.data.kis_paper_iwm_m1_current_head_replay import (
+    list_verified_kis_paper_iwm_m1_current_head_observations,
+    load_selected_verified_kis_paper_iwm_m1_current_head_replay,
 )
 from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataError,
@@ -108,6 +113,259 @@ def test_reuses_identical_page_but_preserves_a_changed_head_as_another_snapshot(
     assert changed.outcome.cache_disposition == "retained"
     snapshot_root = cache_root / "v1" / "snapshots"
     assert len([path for path in snapshot_root.iterdir() if path.is_dir()]) == 2
+
+
+def test_append_receipts_keep_identical_and_changed_heads_independently_replayable(
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+    market_data_root = tmp_path / "market-data"
+    cache_root = market_data_root / "iwm-current-head"
+    artifact_root = tmp_path / "artifacts"
+    first_page = _page(_bar_count=2, next_cursor=None)
+    first = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([first_page]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=_observed_at(),
+    )
+    repeated = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([first_page]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=_observed_at() + timedelta(minutes=1),
+    )
+    changed = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([_page(_bar_count=2, next_cursor=None, last="12345.68")]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=_observed_at() + timedelta(minutes=2),
+    )
+
+    assert first.observation_id is not None
+    assert repeated.observation_id is not None
+    assert changed.observation_id is not None
+    assert len({first.observation_id, repeated.observation_id, changed.observation_id}) == 3
+    first_snapshot = first.result.outcome.snapshot_content_sha256
+    assert first_snapshot == repeated.result.outcome.snapshot_content_sha256
+    assert first_snapshot != changed.result.outcome.snapshot_content_sha256
+
+    observations = list_verified_kis_paper_iwm_m1_current_head_observations(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert [observation.observation_id for observation in observations] == [
+        first.observation_id,
+        repeated.observation_id,
+        changed.observation_id,
+    ]
+    for observation in observations:
+        replay = load_selected_verified_kis_paper_iwm_m1_current_head_replay(
+            observation_id=observation.observation_id,
+            cache_root=cache_root,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            market_data_root=market_data_root,
+        )
+        assert replay.observation_id == observation.observation_id
+        assert replay.snapshot_content_sha256 == observation.snapshot_content_sha256
+
+
+def test_same_time_append_reuses_content_but_preserves_each_physical_observation(
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+    market_data_root = tmp_path / "market-data"
+    cache_root = market_data_root / "iwm-current-head"
+    artifact_root = tmp_path / "artifacts"
+    observed_at = _observed_at()
+    first_page = _page(_bar_count=2, next_cursor=None)
+    first = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([first_page]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=observed_at,
+    )
+    retry = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([first_page]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=observed_at,
+    )
+    settled_retry = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([first_page]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=observed_at,
+    )
+    revision = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([_page(_bar_count=2, next_cursor=None, last="12345.68")]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=observed_at,
+    )
+
+    assert first.evidence_path != retry.evidence_path
+    assert first.observation_id != retry.observation_id
+    assert retry.evidence_path == settled_retry.evidence_path
+    assert retry.observation_id == settled_retry.observation_id
+    assert revision.evidence_path != first.evidence_path
+    assert revision.observation_id != first.observation_id
+    assert len(
+        list_verified_kis_paper_iwm_m1_current_head_observations(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+    ) == 3
+
+
+def test_failed_append_receipt_stays_outside_the_selector_root(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+    market_data_root = tmp_path / "market-data"
+    cache_root = market_data_root / "iwm-current-head"
+    artifact_root = tmp_path / "artifacts"
+    retained = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([_page(_bar_count=2, next_cursor=None)]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=_observed_at(),
+    )
+    failed = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([KisPaperMarketDataError("rate_limited")]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=_observed_at() + timedelta(minutes=1),
+    )
+
+    assert failed.observation_id is None
+    assert failed.result.outcome.status == "unavailable"
+    assert failed.evidence_path.parent.name == "kis-paper-iwm-m1-current-head-outcomes"
+    assert [
+        observation.observation_id
+        for observation in list_verified_kis_paper_iwm_m1_current_head_observations(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+    ] == [retained.observation_id]
+
+
+def test_rejects_linked_or_in_repository_artifact_root_before_fetch(tmp_path: Path) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+    market_data_root = tmp_path / "market-data"
+    cache_root = market_data_root / "iwm-current-head"
+    client = _MinuteClient([_page(_bar_count=2, next_cursor=None)])
+
+    with pytest.raises(ValueError, match="must stay outside Git"):
+        collect_and_write_kis_paper_iwm_m1_current_head(
+            client=client,
+            cache_root=cache_root,
+            artifact_root=repository_root / "artifacts",
+            repository_root=repository_root,
+            market_data_root=market_data_root,
+            observed_at=_observed_at(),
+        )
+
+    assert client.queries == []
+    outside = tmp_path / "outside"
+    outside.mkdir()
+    linked_root = tmp_path / "linked-artifacts"
+    try:
+        linked_root.symlink_to(outside, target_is_directory=True)
+    except OSError:
+        pytest.skip("directory links are unavailable on this host")
+    linked_client = _MinuteClient([_page(_bar_count=2, next_cursor=None)])
+
+    with pytest.raises(ValueError, match="artifact root is invalid"):
+        collect_and_write_kis_paper_iwm_m1_current_head(
+            client=linked_client,
+            cache_root=cache_root,
+            artifact_root=linked_root,
+            repository_root=repository_root,
+            market_data_root=market_data_root,
+            observed_at=_observed_at(),
+        )
+
+    assert linked_client.queries == []
+
+
+def test_interrupted_append_receipt_leaves_no_partial_receipt_and_can_restart(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+    market_data_root = tmp_path / "market-data"
+    cache_root = market_data_root / "iwm-current-head"
+    artifact_root = tmp_path / "artifacts"
+    page = _page(_bar_count=2, next_cursor=None)
+    collect_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([page]),
+        cache_root=cache_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=_observed_at(),
+    )
+    real_replace = current_head_module.os.replace
+
+    def interrupted_replace(source: object, destination: object) -> None:
+        if Path(destination).suffix == ".json":
+            raise OSError("receipt write interrupted")
+        real_replace(source, destination)
+
+    monkeypatch.setattr(current_head_module.os, "replace", interrupted_replace)
+    with pytest.raises(OSError, match="receipt write interrupted"):
+        collect_and_write_kis_paper_iwm_m1_current_head(
+            client=_MinuteClient([page]),
+            cache_root=cache_root,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            market_data_root=market_data_root,
+            observed_at=_observed_at() + timedelta(minutes=1),
+        )
+
+    receipt_directory = artifact_root / "data" / "kis-paper-iwm-m1-current-head"
+    assert not list(receipt_directory.glob("*.json"))
+    assert not list(receipt_directory.glob(".*.stage"))
+    monkeypatch.setattr(current_head_module.os, "replace", real_replace)
+    restarted = collect_and_write_kis_paper_iwm_m1_current_head(
+        client=_MinuteClient([page]),
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observed_at=_observed_at() + timedelta(minutes=1),
+    )
+
+    assert restarted.observation_id is not None
+    assert len(
+        list_verified_kis_paper_iwm_m1_current_head_observations(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+    ) == 1
 
 
 @pytest.mark.parametrize(

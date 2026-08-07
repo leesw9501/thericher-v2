@@ -189,6 +189,34 @@ observation instead of silently overwriting or mixing a prior head. This
 remains a prospective source-local path; historical M1 coverage requires a
 separate endpoint-reach package.
 
+`iwm-m1-prospective-observation-append-v1` is complete. The existing isolated
+writer now returns the opaque selected observation ID on a successful opt-in
+collection; successful v2 observations append only to the selector root, while
+unavailable or rejected source-safe outcomes go to a separate outcome root.
+The selector ignores only an owned stale staging filename and the exact
+pre-append source-safe failure shape; it still rejects malformed or ambiguous
+final evidence. Raw snapshots remain content-addressed: equal content reuses
+the snapshot, while changed content becomes another immutable revision.
+Each successful physical collection receipt remains separately selectable; an
+exact repeat after the snapshot is already retained becomes idempotent. Focused
+tests cover repeated content, changed heads, failure isolation, interrupted
+receipt publication, restart, link rejection, and explicit replay. One bounded
+KIS Paper IWM/AMS page attempt was accepted, reused the existing snapshot, and
+its exact new v2 receipt replayed offline. The current inventory is one legacy
+incomplete receipt plus two bound observations; completed local geometry remains
+120 M1, 8 M5, 1 M10, and no H1/H3 bucket. The observed one-page attempt
+completed within the `5-10s` elapsed bucket with no categorical error or
+continuation. It adds no historical-reach, finality, model, Paper, account,
+order, PnL, or QQQ/SPY claim. The Claude request did not return a usable
+verdict before the bounded review window, so it is `review_unavailable`.
+
+The next bounded objective is Data-owned
+`kis-paper-m1-historical-reach-probe-v1`: measure the exact QQQ/NAS and
+SPY/AMS KIS Paper M1 endpoint reach, continuation, and pace with a tiny
+target-isolated serial probe. It must preserve the existing scheduled collector
+and treat every source-limited outcome as scoped evidence rather than a
+provider-wide conclusion.
+
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,
 and recovery action in 57 lines while Git and external artifacts retain

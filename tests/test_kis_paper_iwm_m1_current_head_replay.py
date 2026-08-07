@@ -264,6 +264,41 @@ def test_selector_lists_legacy_as_incomplete_without_exposing_raw_values(tmp_pat
     assert not any(bar.complete for bar in selected.bars)
 
 
+def test_selector_ignores_an_owned_stale_receipt_staging_file(tmp_path: Path) -> None:
+    roots = _seed_snapshot(tmp_path, bar_count=10, observed_at=_observed_at())
+    receipt_root = roots["artifact_root"] / "data" / "kis-paper-iwm-m1-current-head"
+    receipt = next(receipt_root.glob("*.json"))
+    (receipt_root / ".aaaaaaaaaaaaaaaa.bbbbbbbb.stage").write_bytes(receipt.read_bytes())
+
+    observations = _observations(roots)
+
+    assert len(observations) == 1
+    assert observations[0].completion_basis == "receipt_snapshot_content_binding"
+
+
+def test_selector_ignores_a_legacy_source_safe_failure_receipt(tmp_path: Path) -> None:
+    roots = _seed_snapshot(tmp_path, bar_count=10, observed_at=_observed_at())
+    receipt_root = roots["artifact_root"] / "data" / "kis-paper-iwm-m1-current-head"
+    failure = KisPaperIwmM1CurrentHeadOutcome(
+        status="unavailable",
+        observed_at=_observed_at() + timedelta(minutes=1),
+        row_count=0,
+        exact_duplicate_rows=0,
+        continuation_category="not_observed",
+        cache_disposition="not_written",
+        response_class="rate_limited",
+        raw_market_data_retained=False,
+    )
+    (receipt_root / "legacy-failure.json").write_bytes(
+        _canonical_json_bytes(failure.safe_payload()) + b"\n"
+    )
+
+    observations = _observations(roots)
+
+    assert len(observations) == 1
+    assert observations[0].completion_basis == "receipt_snapshot_content_binding"
+
+
 def test_replay_evidence_rejects_a_linked_intermediate_directory(tmp_path: Path) -> None:
     roots = _seed_snapshot(tmp_path, bar_count=10, observed_at=_observed_at())
     replay = _load(roots)
