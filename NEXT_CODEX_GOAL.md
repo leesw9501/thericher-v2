@@ -2,58 +2,59 @@
 
 ## Objective
 
-Build `private-kis-paper-account-snapshot-refresh-v1`.
+Build `private-kis-paper-account-snapshot-observer-v1`.
 
-Use the existing named read-only KIS Paper account bridge to create one fresh,
-sanitized local account snapshot that the completed loopback-only private
-dashboard can display. This is an operational-observability step for Paper
-trading, not an order or strategy feature.
+Turn the completed one-shot `kis-readonly` account bridge into the smallest
+owned, concurrency-safe observer cadence that keeps the private loopback
+dashboard's read-only KIS Paper snapshot useful during its five-minute runtime
+TTL. This advances Paper-trading observability only; it is not an order,
+strategy, or live feature.
 
 ## Hard Boundaries
 
-- Read only `KIS_PAPER_*` through the existing account-read bridge. Never read,
-  reference, route, log, or persist `KIS_LIVE_*`.
-- Do not submit, modify, cancel, simulate, or imply a broker order. Do not call
-  an order, quote, market-data, or live endpoint unless the existing
-  read-only-account bridge demonstrably needs that exact documented endpoint.
-- Keep raw responses, credentials, account identifiers, and dashboard tokens
-  out of Git, logs, browser HTML, screenshots, and external artifacts.
-- Preserve the dashboard's loopback-only host boundary, explicit
-  container-bind exception, local pause controls, existing KIS collectors, and
-  local-paper replay behavior.
-- A missing, stale, malformed, or rejected account read must render an explicit
-  unavailable state; do not invent cash, positions, prices, open orders, or
-  orderability.
-- Do not add a second scheduler or a new broker client when the existing named
-  bridge suffices. Do not alter model research, GPU allocation, strategy
-  selection, or market-data collection.
+- Read only `KIS_PAPER_*` through the existing `kis-readonly` bridge. Never
+  read, reference, route, log, or persist `KIS_LIVE_*`.
+- The observer may call only the bridge's already-attested token plus read-only
+  account endpoints. It must never submit, modify, cancel, simulate, or imply
+  a broker order, and it must not call quote or market-data endpoints.
+- Keep the dashboard credential-free, loopback-only, and snapshot-only. Do not
+  turn dashboard refresh into a KIS call, add public serving, or create a
+  dashboard order action.
+- Retain raw responses, credentials, account identifiers, order identifiers,
+  prices, and balances only in the existing sanitized runtime snapshot where
+  the contract permits them; never put them in Git, task logs, evidence,
+  stateboards, browser screenshots, or new artifacts.
+- Reuse the existing one-shot Compose service and its runtime/artifact mounts.
+  Do not create a competing bridge, duplicate scheduler, daemon, broad agent
+  platform, or unbounded retry loop.
+- A missed, rejected, stale, or overlapping invocation must leave a truthful
+  unavailable/categorical result, never a fabricated fresh snapshot. It does
+  not block independent Data, Research, or Paper work.
 
 ## Required Work
 
-1. Run a concise Throughput Review. The dashboard package is complete and the
-   next ready Execution package is the existing read-only account bridge; the
-   task-owned Data collection and independent research preparation continue on
-   their own ownership.
-2. Reattest the current bridge, snapshot schema, dashboard reader, and Compose
-   ownership. Prove statically that the dashboard itself imports neither a KIS
-   client nor order functionality and that the bridge cannot read live
-   configuration or call an order endpoint.
-3. Run one bounded KIS Paper account-refresh attempt through the existing
-   bridge. Retain only its sanitized snapshot in the existing private runtime
-   root and a source-safe categorical result or receipt outside Git. Never
-   print raw response data, credentials, or account identifiers.
-4. Reopen the local Docker dashboard and verify the resulting available or
-   unavailable state against the bridge's categorical outcome. Exercise no
-   broker-order action; a local pause-control round trip is optional only when
-   it helps validate that the snapshot refresh did not change control state.
-5. Add focused tests for bridge-only `KIS_PAPER_*` ownership, absence of live
-   config and order endpoints, sanitization of the snapshot projection,
-   unavailable/stale rendering, and a dashboard route that remains broker-free.
-   Reuse existing contracts rather than duplicate them.
-6. Refresh the Execution, Infra, orchestration, and handoff stateboards with
-   only the current snapshot result, evidence pointer, recovery class, and next
-   action. Ask Claude only if implementation would change broker authority,
-   dashboard architecture, or execution recovery semantics.
+1. Run a concise Throughput Review. Data's owned collection and Engine
+   preparation remain independent. Reattest the actual complete bridge receipt,
+   five-minute snapshot TTL, and existing task-registration conventions.
+2. Ask Claude for a short falsification-first drift check before creating a
+   recurring schedule, because it widens recurring external reads. Treat a
+   timeout or unavailable result as `review_unavailable`, not a block.
+3. Design and implement the smallest goal-owned observer worker/task using the
+   existing `kis-readonly` command. It must have one owner, bounded overlap,
+   a named session/freshness predicate, a source-safe outcome, and a recovery
+   action. Derive its cadence from the snapshot TTL and measured bridge scope;
+   do not invent a provider quota or durable throttle.
+4. Test the observer's schedule/worker contract: only the existing service and
+   read-only bridge may run; no live config, order/quote/market-data path,
+   duplicate concurrent run, raw account content, or dashboard credential path
+   is allowed. Prove stale or failed runs become unavailable rather than old
+   facts.
+5. Install and run one bounded observer invocation when the named predicate is
+   eligible, then reattach only categorical result, timestamps, and safe
+   evidence pointer. Inspect the dashboard without printing account values or
+   identifiers. Do not wait in the foreground for a later scheduled run.
+6. Refresh Execution, Infra, orchestration, RUNBOOK, and HANDOFF with the
+   current owner, cadence/recovery fact, evidence pointer, and next action.
 
 ## Verification
 
@@ -66,4 +67,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Refresh private KIS Paper account snapshot`
+`Schedule private Paper account observer`

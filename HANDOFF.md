@@ -673,6 +673,13 @@ unproven; this is a reversible current-season repair, not an input promotion.
   than invented values, and a pause-buy/resume-buy UI round trip changed only
   persisted local control state. The requested concise Claude drift-check timed
   out, so its outcome is `review_unavailable`, not a dashboard decision.
+- The named `kis-readonly` bridge completed one actual KIS Paper account refresh
+  at `2026-08-07T05:41:03.199117+00:00`. Its fact-minimized external receipt is
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-console-bridge\20260807T054103199117Z-complete.json`;
+  it records only paper/read-only capability, currencies, and counts. The
+  loopback dashboard immediately read it as `available`. This created no order,
+  quote, market-data, or live request. The runtime snapshot still expires after
+  five minutes, so availability is not a lasting account assertion.
 - The local dashboard now replays FIFO realized-after-fee PnL only from closed
   `source: local_paper` lots. It leaves open lots unvalued and excludes every
   KIS account/broker fact, so it is descriptive simulator accounting rather
@@ -705,6 +712,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
 | Private Paper dashboard | Execution / Infra | Completed Docker reattestation: explicit container-bind exception, host loopback publish, secret-free unavailable rendering, and pause/resume UI round trip. It created no broker route or order. Next bounded action is the existing read-only Paper account snapshot bridge. |
+| Read-only Paper account snapshot | Execution / Infra | Completed one actual `kis-readonly` bridge refresh: categorical `complete`, external fact-minimized receipt, immediate loopback dashboard `available`, no order or live route. The five-minute runtime TTL makes a bounded observer the next operational improvement. |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate
@@ -791,6 +799,13 @@ metadata-only projection. DST/pre-market behavior remains unproven.
   tests, including direct non-loopback rejection, then a local Docker rebuild,
   loopback-port inspection, unavailable-state render, and pause/resume UI
   round trip. It performed no KIS call, credential read, broker call, or order.
+- The actual Paper account-refresh package passed `55` focused dashboard,
+  snapshot, and read-only-client tests. The new end-to-end rejection test proves
+  that a failed bridge refresh replaces a prior complete snapshot with
+  unavailable dashboard state and never leaks a raw broker marker. The actual
+  Compose `kis-readonly` one-shot returned `complete`; its external receipt is
+  fact-minimized and its dashboard check emitted only categorical status and
+  position/open-order counts.
 - Recent commits: `d0223ab` hardens exact Paper-canary recovery, `da12ccd`
   aligns same-date KST Paper task weekdays, and `a6a51a9` records worker
   throughput.
@@ -807,10 +822,11 @@ metadata-only projection. DST/pre-market behavior remains unproven.
 
 ## Next Handoff
 
-1. Use the existing read-only KIS Paper account bridge for one bounded snapshot
-   refresh, retain no raw provider body or account identifier, and reattach its
-   sanitized result to the loopback dashboard. Do not add a dashboard broker
-   path or infer unavailable values.
+1. Turn the existing read-only KIS Paper account bridge into one bounded,
+   concurrency-safe observer cadence that refreshes before the five-minute
+   snapshot expiry while its named Paper-session predicate permits it. Reuse the
+   one-shot Compose service; do not give the dashboard KIS credentials or add
+   an order path.
 2. Preserve the exact 2026-08-05 `canary_completed` session fact and direct
    `cancelled/clean` lifecycle result as virtual-Paper execution evidence only.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,

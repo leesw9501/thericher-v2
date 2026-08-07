@@ -217,6 +217,13 @@ another correctly scoped Paper action.
   local control store only. No KIS call, broker call, or order occurred. The
   next independent execution package is one existing-bridge read-only Paper
   account snapshot refresh.
+- The existing `kis-readonly` Compose service completed one actual Paper
+  refresh at `2026-08-07T05:41:03.199117+00:00`. It wrote a sanitized runtime
+  snapshot and fact-minimized external receipt, and the loopback dashboard read
+  it as `available`; no order, quote, market-data, or live route was invoked.
+  Its five-minute snapshot TTL is an availability fact only. The next bounded
+  execution package may add one concurrency-safe read-only observer cadence;
+  it must keep KIS credentials outside the dashboard.
 - The local replay now derives FIFO realized-after-fee PnL only from closed
   `source: local_paper` lots. It deliberately excludes open-lot valuation and
   all KIS account/broker facts, so it is descriptive simulator accounting, not

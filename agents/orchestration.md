@@ -6,11 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`private-kis-paper-account-snapshot-refresh-v1` will use the existing
-read-only KIS Paper account bridge to make one fresh sanitized snapshot
-observable in the completed loopback-only dashboard. It must never read
-`KIS_LIVE_*`, create an order, expose a public service, or retain raw provider
-payloads or account identifiers.
+`private-kis-paper-account-snapshot-observer-v1` will turn the existing
+read-only KIS Paper bridge into one bounded, concurrency-safe observer cadence
+for the completed loopback-only dashboard. It must never read `KIS_LIVE_*`,
+create an order, expose a public service, or retain raw provider payloads or
+account identifiers.
 
 ## Ready / Owned / Due
 
@@ -35,7 +35,8 @@ payloads or account identifiers.
 | QQQ/SPY explicit previous-day M1 scope probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one explicit-previous-day page per target was accepted and terminal with no recognized continuation or multi-date range. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This remains exact-route evidence only. |
 | Donchian local-Paper PnL attribution | Engine Research / Execution | Frozen QQQ/NAS 20-session mechanics receipt and existing FIFO local simulator | Completed: `20260807-donchian-pnl-r1` reattested the parent, recorded 115 closed segments, 230 local-paper fills, gross `-41.984600`, fees `16.5045`, net `-58.489100`, zero open quantity, and exact replay parity. It remains a non-promoting retrospective baseline. |
 | Private Paper operator dashboard | Execution / Infra | Existing KIS Paper read-only account contract and local emergency controls | Completed: Docker reattestation requires an explicit container exception, publishes only `127.0.0.1:8787`, renders unavailable facts explicitly, and UI pause/resume changes local state only. |
-| Read-only Paper account snapshot refresh | Execution | Existing named bridge and dashboard snapshot reader | Ready: one bounded authorized KIS Paper account read can make the completed dashboard operational without adding a broker-order path. |
+| Read-only Paper account snapshot refresh | Execution / Infra | Existing named bridge and dashboard snapshot reader | Completed: one actual `kis-readonly` refresh was categorical `complete`; its external receipt is fact-minimized and the loopback dashboard immediately read it as available. |
+| Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, snapshot TTL, and task conventions | Ready: a bounded cadence can keep the dashboard useful without changing its credential-free/read-only boundary. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -55,14 +56,14 @@ readiness without claiming model validity.
 ## Current Reversible Improvement
 
 Do not wait for the task-owned collection. Keep its scoped recovery contract in
-place and use the completed loopback-only Paper dashboard with the existing
-read-only account bridge; this improves Paper observability without a
-broker-order or strategy-decision path.
+place and turn the completed one-shot account bridge into a bounded observer;
+this improves Paper observability without a broker-order or strategy-decision
+path.
 
 ## Current Recovery Action
 
 Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation; it is the
-only owner of a later actual KIS collection. Execution owns one read-only Paper
-account snapshot bridge refresh; Infra is invoked only for the existing Docker
-mount/runtime. IWM current-head success remains unrelated to historical M1
+only owner of a later actual KIS collection. Execution owns the next read-only
+Paper account observer cadence; Infra is invoked only for existing Docker and
+task runtime. IWM current-head success remains unrelated to historical M1
 reach.

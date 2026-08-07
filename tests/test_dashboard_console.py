@@ -18,6 +18,12 @@ from thericher_v2.dashboard import server as dashboard_server
 from thericher_v2.dashboard.server import DashboardServer
 from thericher_v2.dashboard.view import DashboardPosition, build_snapshot, render_dashboard
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
+from thericher_v2.execution.kis_paper_console_bridge import run_kis_paper_console_bridge
+from thericher_v2.execution.kis_readonly import (
+    KIS_PAPER_OPEN_ORDERS_ENDPOINT,
+    KisHttpRequest,
+    KisHttpResponse,
+)
 from thericher_v2.execution.paper_account_snapshot import (
     PAPER_ACCOUNT_SNAPSHOT_TTL,
     PaperAccountOpenOrder,
@@ -440,6 +446,86 @@ def test_dashboard_http_hides_a_malformed_paper_account_snapshot(tmp_path) -> No
     assert state["kis_buying_power_status"] == "unavailable"
     assert state["kis_open_orders_status"] == "unavailable"
     assert raw_marker not in json.dumps(state)
+
+
+def test_dashboard_hides_prior_account_facts_after_a_rejected_bridge_refresh(tmp_path) -> None:
+    observed_at = datetime.now(UTC)
+    paper_snapshot_path = tmp_path / "paper_account_snapshot.json"
+    write_paper_account_snapshot(
+        PaperAccountSnapshot(
+            status="complete",
+            observed_at=observed_at,
+            expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
+            orderable_foreign_funds=PaperAccountOrderableForeignFunds(
+                "USD", Decimal("1200.50")
+            ),
+            reference_orderability=PaperAccountReferenceOrderability(
+                "USD",
+                Decimal("1199.75"),
+                "NASD",
+                "SPY",
+            ),
+            positions=(PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),),
+        ),
+        paper_snapshot_path,
+    )
+
+    raw_marker = "raw-broker-body-12345678-must-not-reach-dashboard"
+
+    class RejectedBridgeTransport:
+        def __init__(self) -> None:
+            self.requests: list[KisHttpRequest] = []
+
+        def request(self, request: KisHttpRequest) -> KisHttpResponse:
+            self.requests.append(request)
+            if request.method == "POST":
+                return KisHttpResponse.from_payload({"access_token": "temporary-access-token"})
+            assert request.headers["tr_id"] == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id
+            return KisHttpResponse.from_payload(
+                {"rt_cd": "1", "msg_cd": "RAW", "msg1": raw_marker},
+                status_code=403,
+            )
+
+    transport = RejectedBridgeTransport()
+    outcome = run_kis_paper_console_bridge(
+        environment={
+            "KIS_PAPER_APP_KEY": "test-app-key",
+            "KIS_PAPER_APP_SECRET": "test-app-secret",
+            "KIS_PAPER_ACCOUNT_NO": "12345678",
+            "KIS_PAPER_ACCOUNT_PRODUCT_CODE": "01",
+            "KIS_LIVE_APP_KEY": "live-secret-must-not-be-read",
+        },
+        runtime_snapshot_path=paper_snapshot_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=transport,
+        clock=lambda: observed_at,
+    )
+
+    assert outcome.status == "unavailable"
+    assert outcome.reason_code == "open_orders_rejected"
+    assert [request.method for request in transport.requests] == ["POST", "GET"]
+    assert transport.requests[1].headers["tr_id"] == KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id
+
+    with _dashboard(
+        tmp_path,
+        paper_account_snapshot_path=paper_snapshot_path,
+    ) as (server, _events, _emergency):
+        state_status, _, state_body = _request(server, "GET", "/state")
+        html_status, _, html = _request(server, "GET", "/")
+
+    state = json.loads(state_body)
+    assert state_status == 200
+    assert html_status == 200
+    assert state["paper_account_status"] == "unavailable"
+    assert state["paper_account"] is None
+    assert state["kis_holdings_status"] == "unavailable"
+    assert state["kis_open_orders_status"] == "unavailable"
+    assert "KIS snapshot unavailable" in html
+    assert raw_marker not in state_body
+    assert raw_marker not in html
+    assert "1200.50" not in state_body
+    assert "1200.50" not in html
 
 
 def test_dashboard_reads_only_a_fresh_sanitized_virtual_canary_projection(tmp_path: Path) -> None:

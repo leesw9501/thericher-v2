@@ -15,6 +15,10 @@ CI, or runtime reproducibility work is ready.
 - Latest invoked Docker check: the private `web` service rebuilt successfully
   with its explicit container-bind exception and remained published only at
   `127.0.0.1:8787`; it has no KIS environment injection.
+- Latest invoked read-only service: `kis-readonly` completed one Paper account
+  snapshot refresh with no port publishing, a read-only root, `/tmp` tmpfs, and
+  only the injected `KIS_PAPER_*` values. Its runtime volume is shared with the
+  dashboard read-only; its external receipt root is `D:`.
 - Storage warning: projected free space below 20 percent.
 - Storage hard floor: do not start new large work that crosses 15 percent.
 
