@@ -76,5 +76,7 @@ Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation; it is the
 only owner of a later actual KIS collection. Execution owns the installed
 thericher-kis-paper-snapshot-observer cadence; its pure session inspector fails
 closed outside the 2026 calendar scope and its next eligible trigger owns the
-first recurring bridge read. Infra is invoked only for existing Docker and task
+first recurring bridge read. A one-shot 2026-08-07 23:15 KST Codex follow-up
+will only reattach a validated immutable outcome; it does not invoke the task,
+KIS, or Docker bridge. Infra is invoked only for existing Docker and task
 runtime. IWM current-head success remains unrelated to historical M1 reach.
