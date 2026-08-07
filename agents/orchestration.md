@@ -6,12 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`kis-paper-m1-current-head-duplicate-recovery-v1` will repair the exact
-QQQ/SPY task-owned current-head duplicate-conflict recovery path. It preserves
-existing raw/cache evidence and the current schedule while preparing only a
-future task-owned forward observation; it adds no broad backfill, account/order
-route, model, Paper input, qualification, live-capital surface, or public
-service.
+`source-local-qqq-donchian-local-paper-pnl-attribution-v1` will attribute the
+already-fixed QQQ/NAS 20/10 Donchian source-local replay through existing
+`source: local_paper` accounting. It is a CPU-only retrospective baseline with
+fixed inputs and costs; it adds no KIS call, task, model selection, GPU job,
+Paper input, order, or live-capital surface.
 
 ## Ready / Owned / Due
 
@@ -26,7 +25,7 @@ service.
 | QQQ baseline causal MTF windows | Data / Engine Research | Completed `20260807-qqq-mtf-window-r3` receipt | Completed: the fixed M1=30/M5=6/M10=3/H1=2/H3=2 profile has 600/120/60/40/40 aggregate completed windows at 15:30 ET, with H1/H3 terminal partials excluded. Parent receipt hash and external-path integrity are verified. |
 | QQQ causal MTF window matrix | Data / Engine Research | Completed `20260807-qqq-mtf-matrix-r2` receipt | Completed: all six canonical profiles are precommitted at 15:30 ET against the reattested 20-session QQQ/NAS input; every profile remains target-free and terminal-partial-safe. |
 | EMA local-Paper PnL attribution | Engine Research / Execution | Completed fixed EMA replay and existing local-paper accounting | Completed: `20260807-ema-pnl-attribution-r1` reattested the parent and recorded 76 closed segments, 152 local-paper fills, gross `-26.299200`, fees `10.8932`, net `-37.192400`, zero open quantity, and exact replay parity. It is source-local accounting only. |
-| M1 duplicate-conflict recovery | Data | Existing task-owned QQQ/NAS and SPY/AMS collector paths | Completed. The scheduled `session-capture` preserve branch was reattested with a fake-client restart regression: repeat retained-cache conflicts leave the active chunk, manifest/raw bytes, head cursor, and snapshot count unchanged. The current terminal remains provenance-legacy. |
+| M1 duplicate-conflict recovery | Data | Existing task-owned QQQ/NAS and SPY/AMS collector paths | Completed. `session-capture` now quarantines only immutable committed cursor-free heads; it preserves original manifest/raw bytes and rejects the conflict, then a later compatible task-owned capture appends once. Partial/cursor-backed and malformed inputs fail closed. The current terminal remains provenance-legacy. |
 | IWM current-head ingestion | Data | Isolated IWM/AMS route and external market-data store | Completed: one current-day page was accepted at 2026-08-07 01:46 UTC, retained as an immutable source-local snapshot, and made no continuation request. QQQ/SPY state and schedule were untouched. |
 | IWM source-local replayability | Data / Validation | Legacy IWM snapshot, v2 receipt writer, and existing `Bar`/resampler contracts | Completed: the historical v1 receipt lacks a snapshot identity, so exact local replay records `completion_evidence_unavailable` and zero completed buckets rather than inventing timing. The v2 writer/reader contract is tested with bound fixtures. |
 | IWM v2 bound observation | Data / Execution | Isolated IWM/AMS KIS Paper one-page route | Completed: one accepted no-continuation page reused the immutable snapshot and wrote a v2 content-bound receipt. Local replay produced 120 complete M1, 8 M5, 1 M10, and no H1/H3 bucket. It has no consumer or promotion consequence. |
@@ -34,7 +33,7 @@ service.
 | IWM prospective observation append | Data / Validation | Isolated IWM/AMS route, immutable external roots, and completed selector | Completed: success receipts append separately from source-safe failure outcomes, stale owned stages cannot poison selection, and the collector returns an opaque selected ID. One bounded request reused the existing snapshot and reattached offline. |
 | QQQ/SPY current-day M1 reach probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one blank-cursor current-day page per target was accepted and terminal with no recognized continuation. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This is exact-route evidence only; prior scope remains `unknown`. |
 | QQQ/SPY explicit previous-day M1 scope probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one explicit-previous-day page per target was accepted and terminal with no recognized continuation or multi-date range. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This remains exact-route evidence only. |
-| QQQ/SPY current-head duplicate recovery | Data | Existing task-owned collector/cache and exact immutable conflict evidence | Ready: reattest the visible implementation, then repair only the non-destructive duplicate-conflict branch for the existing task. No duplicate schedule or manual KIS invocation. |
+| Donchian local-Paper PnL attribution | Engine Research / Execution | Frozen QQQ/NAS 20-session mechanics receipt and existing FIFO local simulator | Ready: one fixed 20/10 rule, selected completed sessions, and predeclared cost/replay contract; no tuning, candidate comparison, or promotion. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -44,24 +43,21 @@ service.
 
 Fresh causal KIS-reconstructible input coverage remains the product bottleneck:
 the exact QQQ/NAS and SPY/AMS M1 scopes contain only 21 shared complete
-regular-session windows, while both blank-cursor current-day and explicit
-previous-day starting requests are terminal after one page. Decision-time
-availability remains `not_observed`, and the current-head worker's exact latest
-terminal is `rejected/minute_duplicate_conflict`. The completed EMA attribution
-is a negative source-local accounting baseline; it neither overcomes this input
-gap nor warrants extending the strategy.
+regular-session windows, both bounded historical starting scopes are terminal,
+and decision-time availability remains `not_observed`. The existing task owns
+the next forward recovery observation. In parallel, the frozen source-local
+Donchian mechanics can obtain one accounting baseline without consuming KIS or
+GPU resources.
 
 ## Current Reversible Improvement
 
-Stop repeating the two terminal endpoint probes. Use their scoped results to
-focus on the reversible current-head collector recovery, preserving the existing
-schedule and immutable evidence while removing only the exact duplicate-conflict
-path that blocks a forward observation.
+Do not wait for the task-owned collection. Keep its scoped recovery contract in
+place and use the independent fixed Donchian attribution package to advance the
+research-to-local-paper loop without creating a predictive claim.
 
 ## Current Recovery Action
 
-Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation and the
-bounded duplicate-conflict recovery. Its recovery preserves the exact current
-head/cache evidence, records a source-safe recovery category, and leaves the
-existing task as the only owner of a later actual KIS collection. IWM current-
-head success remains unrelated to historical M1 reach.
+Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation; it is the
+only owner of a later actual KIS collection. Engine Research and Execution now
+own the independent fixed Donchian attribution package. IWM current-head
+success remains unrelated to historical M1 reach.

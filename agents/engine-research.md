@@ -63,9 +63,10 @@ strongest kill test before target evaluation or GPU consideration.
   The negative result is a fixed, source-local retrospective baseline, not a
   profitability verdict, candidate rejection outside this scope, model
   selection, comparative result, campaign, ensemble input, GPU appointment,
-  or Paper input. The next material research dependency is fresh causal input
-  coverage, so Data owns the current-head duplicate-conflict recovery rather
-  than Engine extending this one baseline.
+  or Paper input. Fresh causal input coverage still blocks predictive promotion,
+  but the independently fixed Donchian mechanics receipt now has one ready,
+  source-local local-paper attribution package that does not consume that
+  external dependency.
 - A bounded metadata-only Data probe classifies the existing KIS Paper private
   D1 cache as `input_unavailable` for a 15/30 daily EMA candidate: its rows
   expose `close`, not an adjusted-close or corporate-action contract; coverage
@@ -102,9 +103,10 @@ strongest kill test before target evaluation or GPU consideration.
   `TargetExposureProposal` whose ready validity cannot outlast the declared
   session close; insufficient history stays a `missing` abstain.
   Neither module has I/O or a KIS/broker/data/Paper path and neither carries a
-  source-performance, campaign, GPU, PnL, ensemble, or promotion claim. Its
-  next valid trigger is a separately frozen causal data/split/cost/replay
-  contract; the source itself discloses no evaluation sample to adopt.
+  source-performance, campaign, GPU, PnL, ensemble, or promotion claim. The
+  current next package freezes one source-local data/split/cost/replay
+  attribution contract; the source itself discloses no evaluation sample to
+  adopt.
 - The distinct source-local `kis-intraday-session-reset-donchian-mechanics-v1`
   replay completed its immutable `2026-08-06-r1` mechanics preflight from the first 20
   complete QQQ/NAS regular M1 sessions in ascending catalog order. Each receipt

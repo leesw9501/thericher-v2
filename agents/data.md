@@ -40,33 +40,18 @@ undocumented timestamp seed.
 
 ## Ready / Owned / Due
 
-- **Current-head recovery:** `intraday-qqq-v4-scheduled-validation-observation-v1`
-  completed against the exact 2026-08-07 06:20 KST task-owned pointer. Task
-  Scheduler result `1` and the immutable terminal agree on
-  `recovery/collection_exit_nonzero`; the required same-run capture binding is
-  `verified/incomplete`. Its hash-bound source-safe capture receipt classifies
-  QQQ/NAS and SPY/AMS as `rejected/minute_duplicate_conflict`. This is the
-  active collector recovery fact only: no raw rows, data qualification, model,
-  Paper, fill, PnL, or alpha claim follows. The success-only QQQ session and
-  v4 validation services were not invoked and remain `not_applicable`, so v4
-  is neither a success nor a failure for this run. The 04:24 v3 historical
-  terminal remains preserved. The completed exact, binding-verified recovery
-  projection emits `rejected_duplicate_conflict` only for this terminal class
-  and capture chain; missing, malformed, unsafe, or mismatched evidence emits
-  `evidence_unavailable`, without a latest-artifact or mutable-index fallback.
-  Future receipts now seal collector-time `candidate_batch`/`retained_cache`
-  provenance plus `not_applicable`/`preserved`/`quarantined` disposition;
-  absent historical fields remain `not_recorded_legacy`, and partial or mixed
-  receipt shapes fail closed. The existing task next owns 2026-08-08 00:29 KST;
-  do not manually rerun or duplicate it. Its collector image has been rebuilt
-  without an invocation.
-- **Completed duplicate-conflict recovery:** the existing task-owned
-  `session-capture` branch already passes the non-destructive preservation
-  policy. A new fake-client restart regression repeats the same retained-cache
-  conflict and proves the active chunk, manifest/raw bytes, head cursor, and
-  snapshot count are unchanged. The exact 06:20 KST source-safe receipt remains
-  `not_recorded_legacy`, so it is not reclassified. The existing 00:29 KST task
-  stays the next owner of an actual QQQ/SPY collection attempt.
+- **Current-head recovery:** the exact 2026-08-07 06:20 KST task terminal
+  remains `recovery/collection_exit_nonzero` with a verified incomplete capture
+  binding and `rejected/minute_duplicate_conflict` for both targets. Its absent
+  future provenance fields remain `not_recorded_legacy`; it is neither
+  rewritten nor reclassified. The existing task now enables a narrowly scoped
+  recovery: only a collected candidate against an immutable committed head with
+  no cursor may quarantine that active head into a hash-bound marker. The
+  original manifest/raw bytes survive, the conflicting invocation stays
+  non-promoting and rejected, and a later compatible task-owned capture may
+  append once. Partial heads, cursor-backed history, malformed markers, and
+  candidate-batch conflicts remain preserved or fail closed. The existing task
+  next owns 2026-08-08 00:29 KST; do not manually rerun or duplicate it.
 - **Completed IWM current-head ingestion:**
   `kis-paper-iwm-m1-current-head-ingestion-v1` accepted one IWM/AMS current-day
   page at 2026-08-07 01:46 UTC and retained one immutable, target-isolated
@@ -463,9 +448,9 @@ undocumented timestamp seed.
   receipts retain no raw rows. This means neither tested initial scope exposes
   an admitted paginated historical chain; remaining history stays `unknown` and
   no provider-wide limit, finality, qualification, model, or Paper-input claim
-  follows. Do not repeat either identical probe. The next Data package repairs
-  the existing task-owned current-head duplicate-conflict recovery path so a
-  future scheduled observation may preserve compatible forward data.
+  follows. Do not repeat either identical probe. The current-head recovery is
+  now prepared through the existing task-owned route; only that task can supply
+  fresh forward collection evidence.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,
   or `outside_window`; `stable` means two separately timed virtual-Paper reads
   matched, not provider finality, point-in-time availability, data
@@ -476,12 +461,13 @@ undocumented timestamp seed.
 
 ## Recovery
 
-The next identical `minute_duplicate_conflict` remains the task-owned live kill
-test for the non-destructive session-capture path: an existing causal head must
-remain retained while the conflicting candidate stays non-promoting. It does
-not block the target-isolated IWM preparation or another ready lane. A single
-historical conflict, absent cache, source-limited cursor, or worker cooldown
-remains scoped to that cache.
+The next task-owned `minute_duplicate_conflict` is the live recovery check: an
+immutable committed cursor-free head may be quarantined, while a partial or
+cursor-backed head remains active and every conflicting candidate stays
+non-promoting. The following compatible task-owned capture may append exactly
+one fresh head. This does not block independent Engine work; a single conflict,
+absent cache, source-limited cursor, or worker cooldown remains scoped to that
+cache.
 
 ## Evidence And Handoff
 

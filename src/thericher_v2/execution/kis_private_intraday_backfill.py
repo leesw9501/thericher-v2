@@ -1180,7 +1180,7 @@ def _is_quarantinable_head_snapshot(chunk: Mapping[str, object]) -> bool:
         and chunk.get("collection_scope") == "head"
         and chunk.get("input_cursor") is None
         and chunk.get("output_cursor") is None
-        and chunk.get("outcome") in {"committed", "partial"}
+        and chunk.get("outcome") == "committed"
         and isinstance(chunk.get("chunk_key"), str)
         and _is_sha256(chunk.get("manifest_hash"))
         and _is_sha256(chunk.get("raw_sha256"))

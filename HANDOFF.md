@@ -42,12 +42,22 @@ not a provider-wide retention limit or a data/model/Paper qualification claim;
 the remaining historical scope remains `unknown`. Claude again did not return
 before the bounded review window, so that check is `review_unavailable`.
 
-The next bounded objective is Data-owned
-`kis-paper-m1-current-head-duplicate-recovery-v1`: repair the exact existing
-QQQ/SPY current-head collector's `minute_duplicate_conflict` recovery path so a
-future task-owned observation can preserve compatible forward data. It must not
-create a duplicate schedule, manually rerun the task, rewrite raw snapshots, or
-claim historical reach or data promotion.
+`kis-paper-m1-current-head-duplicate-recovery-v1` is complete. The existing
+QQQ/SPY `session-capture` route now quarantines only an immutable, committed,
+cursor-free head when a collected candidate conflicts with it. The original
+snapshot remains immutable; the conflicting invocation stays rejected and does
+not reach downstream consumers. A later task-owned compatible capture can then
+append the fresh head exactly once. Partial heads, cursor-backed history,
+malformed markers, and candidate-batch conflicts still fail closed. The exact
+2026-08-07 06:20 KST terminal is legacy evidence and remains
+`not_recorded_legacy`; it was neither rewritten nor reclassified. No KIS call,
+task invocation, credential read, account route, or order route occurred.
+
+The next bounded objective is shared Engine Research / Execution
+`source-local-qqq-donchian-local-paper-pnl-attribution-v1`: attribute the
+already-fixed source-local 20/10 Donchian replay through the existing local
+paper accounting seam. It will remain a bounded retrospective baseline, not a
+model-selection, prediction, GPU, or Paper-readiness claim.
 
 `intraday-qqq-offline-validation-reliability-v1` is complete. The exact
 2026-08-07 04:24 KST QQQ session was a valid Paper-only `no_intent`, and its

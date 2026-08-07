@@ -1002,6 +1002,87 @@ def test_cursor_backed_historical_chunk_cannot_be_quarantined_by_head_option(
     assert qqq["chunks"][0]["output_cursor"] is not None
 
 
+def test_partial_head_snapshot_cannot_be_quarantined_by_head_option(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    original_rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2)
+    initial = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(symbol="QQQ", exchange="NAS", rows=original_rows, next_cursor="1"),
+                KisPaperMarketDataError("minute_response_empty"),
+                _page(symbol="SPY", exchange="AMS", rows=original_rows, next_cursor=None),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=2,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=True,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert initial[0].status == "partial"
+    index_path = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION / "index.json"
+    initial_index = json.loads(index_path.read_text(encoding="utf-8"))
+    initial_qqq = next(
+        target for target in initial_index["targets"] if target["target_key"] == "QQQ/NAS/1m"
+    )
+    original_chunk = initial_qqq["chunks"][0]
+    original_manifest = index_path.parent / original_chunk["manifest_path"]
+    original_manifest_bytes = original_manifest.read_bytes()
+    changed = KisPaperMinuteRawBar(
+        exchange_date=original_rows[0].exchange_date,
+        exchange_time=original_rows[0].exchange_time,
+        korea_date=original_rows[0].korea_date,
+        korea_time=original_rows[0].korea_time,
+        open=original_rows[0].open,
+        high=original_rows[0].high + Decimal("1"),
+        low=original_rows[0].low,
+        last=original_rows[0].last + Decimal("1"),
+        volume=original_rows[0].volume,
+    )
+
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        client=_MinuteClient(
+            [
+                _page(
+                    symbol="QQQ",
+                    exchange="NAS",
+                    rows=(changed, original_rows[1]),
+                    next_cursor=None,
+                ),
+                _page(symbol="SPY", exchange="AMS", rows=original_rows, next_cursor=None),
+            ]
+        ),
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=1,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=True,
+        observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+
+    assert results[0].status == "rejected"
+    assert results[0].reason == "minute_duplicate_conflict"
+    assert results[0].conflict_origin == "retained_cache"
+    assert results[0].retained_head_conflict_disposition == "preserved"
+    assert original_manifest.read_bytes() == original_manifest_bytes
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert qqq["chunks"] == [original_chunk]
+    assert qqq["next_cursor"] is None
+
+
 def test_quarantined_head_marker_requires_exact_snapshot_identity() -> None:
     marker = {
         "raw_market_data_retained": False,
