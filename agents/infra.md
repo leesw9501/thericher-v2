@@ -22,7 +22,10 @@ CI, or runtime reproducibility work is ready.
 - The host task `thericher-kis-paper-snapshot-observer` is installed through
   the existing schedule installer. It runs the credential-free host predicate
   and then only the existing `kis-readonly` service; no port, Compose profile,
-  mount, or image surface was added. Task Scheduler enforces four-minute
+  mount, or image surface was added. The predicate skips the final four minutes
+  of a known session with an immediate pre-Docker recheck, and the bridge takes
+  an advisory lock on its shared named runtime volume before any snapshot write.
+  Task Scheduler enforces four-minute
   repetition, `IgnoreNew`, no catch-up, and a four-minute execution limit.
 - Storage warning: projected free space below 20 percent.
 - Storage hard floor: do not start new large work that crosses 15 percent.

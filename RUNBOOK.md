@@ -1296,19 +1296,22 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\install_kis_paper_sc
 
 It starts at 21:20 KST on weekdays and repeats every four minutes for a bounded
 10-hour window. Before it invokes Docker, the credential-free host inspector
-uses the source-backed 2026 US session calendar. Outside a known session it
-exits with a categorical result and makes no Compose or KIS call. During an
-eligible session it invokes only:
+uses the source-backed 2026 US session calendar and returns the eligible
+session close. The runner rechecks that close immediately before Docker. Outside
+a known session, or with four minutes or less remaining, it exits with a
+categorical result and makes no Compose or KIS call. During an eligible session
+it invokes only:
 
 ```powershell
 docker compose --profile kis-readonly run --rm --no-deps --pull never kis-readonly
 ```
 
 Task Scheduler uses `IgnoreNew`, the runner also holds a named host mutex, and
-there is no missed-run catch-up, foreground sleep, or retry loop. A bridge
-failure writes the existing canonical unavailable snapshot; a duplicate runner
-does not overwrite a current snapshot. Inspect task facts without account
-values:
+the bridge holds an advisory refresh lock on the shared runtime volume for every
+snapshot writer. A busy bridge leaves the prior snapshot and external artifact
+root untouched; a bridge failure writes the existing canonical unavailable
+snapshot. There is no missed-run catch-up, foreground sleep, or retry loop.
+Inspect task facts without account values:
 
 ```powershell
 Get-ScheduledTaskInfo -TaskName thericher-kis-paper-snapshot-observer

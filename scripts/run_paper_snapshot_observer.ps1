@@ -6,6 +6,7 @@ param(
 $ErrorActionPreference = "Stop"
 $RefreshCadenceMinutes = 4
 $SnapshotTtlMinutes = 5
+$MinimumSessionRemainingMinutes = 4
 $ObserverMutexName = "Global\TheRicherPaperSnapshotObserver"
 
 function Get-ObserverUtcNow {
@@ -20,6 +21,7 @@ function Write-ObserverOutcome {
             "unavailable",
             "outside_regular_session",
             "session_unavailable",
+            "session_closing",
             "observer_busy",
             "observer_unavailable"
         )]
@@ -58,7 +60,7 @@ function Get-SafeSessionStatus {
         -not (Get-Command uv.exe -ErrorAction SilentlyContinue) `
             -or -not (Test-Path -LiteralPath $inspectorPath -PathType Leaf)
     ) {
-        return "session_unavailable"
+        return [pscustomobject]@{ Status = "session_unavailable"; EligibleUntil = $null }
     }
 
     $priorErrorActionPreference = $ErrorActionPreference
@@ -73,10 +75,10 @@ function Get-SafeSessionStatus {
         $ErrorActionPreference = $priorErrorActionPreference
     }
     if ($exitCode -ne 0) {
-        return "session_unavailable"
+        return [pscustomobject]@{ Status = "session_unavailable"; EligibleUntil = $null }
     }
 
-    $expectedProperties = @("kind", "observed_at", "status") | Sort-Object
+    $expectedProperties = @("eligible_until", "kind", "observed_at", "status") | Sort-Object
     $validPayloads = @()
     foreach ($line in $output) {
         $text = ([string]$line).Trim()
@@ -89,32 +91,52 @@ function Get-SafeSessionStatus {
             continue
         }
         $propertyNames = @($payload.PSObject.Properties.Name | Sort-Object)
+        $status = [string]$payload.status
+        $hasEligibleUntil = $null -ne $payload.eligible_until `
+            -and [string]$payload.eligible_until -match "^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|\+00:00)$"
         if (
             $propertyNames.Count -ne $expectedProperties.Count `
                 -or ($propertyNames -join "|") -ne ($expectedProperties -join "|") `
                 -or [string]$payload.kind -ne "kis_paper_snapshot_observer_session" `
-                -or [string]$payload.status -notin @(
+                -or $status -notin @(
                     "eligible",
                     "outside_regular_session",
                     "session_unavailable"
                 ) `
-                -or [string]$payload.observed_at -notmatch "^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|\+00:00)$"
+                -or [string]$payload.observed_at -notmatch "^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|\+00:00)$" `
+                -or ($status -eq "eligible" -and -not $hasEligibleUntil) `
+                -or ($status -ne "eligible" -and $null -ne $payload.eligible_until)
         ) {
             continue
         }
         $validPayloads += $payload
     }
     if ($validPayloads.Count -ne 1) {
-        return "session_unavailable"
+        return [pscustomobject]@{ Status = "session_unavailable"; EligibleUntil = $null }
     }
-    return [string]$validPayloads[0].status
+    return [pscustomobject]@{
+        Status = [string]$validPayloads[0].status
+        EligibleUntil = $validPayloads[0].eligible_until
+    }
 }
 
 function Get-SafeBridgeOutcome {
     param(
         [Parameter(Mandatory = $true)]
-        [string]$ProjectRoot
+        [string]$ProjectRoot,
+        [Parameter(Mandatory = $true)]
+        [datetime]$EligibleUntil
     )
+
+    $bridgeLaunchAt = Get-ObserverUtcNow
+    if (($EligibleUntil - $bridgeLaunchAt) -le [TimeSpan]::FromMinutes($MinimumSessionRemainingMinutes)) {
+        return [pscustomobject]@{
+            Status = "session_closing"
+            ExitCode = 0
+            ObservedAt = $bridgeLaunchAt
+            ReasonCode = ""
+        }
+    }
 
     $priorErrorActionPreference = $ErrorActionPreference
     try {
@@ -151,11 +173,22 @@ function Get-SafeBridgeOutcome {
         if (
             $propertyNames.Count -ne $expectedProperties.Count `
                 -or ($propertyNames -join "|") -ne ($expectedProperties -join "|") `
-                -or [string]$payload.status -notin @("complete", "unavailable") `
+                -or [string]$payload.status -notin @("complete", "unavailable", "busy") `
                 -or [string]$payload.scope -ne "read_only" `
                 -or [string]$payload.observed_at -notmatch "^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?(?:Z|\+00:00)$" `
                 -or [string]$payload.reason_code -notmatch "^(|[a-z0-9_]{1,64})$" `
-                -or [string]$payload.evidence_path -notmatch "^/app/model_artifacts/"
+                -or (
+                    [string]$payload.status -eq "busy" `
+                        -and (
+                            $payload.account_snapshot_complete -ne $false `
+                                -or [string]$payload.reason_code -ne "refresh_busy" `
+                                -or $null -ne $payload.evidence_path
+                        )
+                ) `
+                -or (
+                    [string]$payload.status -ne "busy" `
+                        -and [string]$payload.evidence_path -notmatch "^/app/model_artifacts/"
+                )
         ) {
             continue
         }
@@ -168,7 +201,12 @@ function Get-SafeBridgeOutcome {
         $validPayloads += $payload
     }
     if ($validPayloads.Count -ne 1) {
-        return [pscustomobject]@{ Status = "observer_unavailable"; ExitCode = $exitCode }
+        return [pscustomobject]@{
+            Status = "observer_unavailable"
+            ExitCode = $exitCode
+            ObservedAt = $null
+            ReasonCode = ""
+        }
     }
     return [pscustomobject]@{
         Status = [string]$validPayloads[0].status
@@ -208,23 +246,56 @@ try {
         $sessionStatus = Get-SafeSessionStatus `
             -ProjectRoot $resolvedProjectRoot `
             -ObservedAt $observedAt
-        if ($sessionStatus -ne "eligible") {
-            Write-ObserverOutcome -Status $sessionStatus -ObservedAt $observedAt
+        if ($sessionStatus.Status -ne "eligible") {
+            Write-ObserverOutcome -Status $sessionStatus.Status -ObservedAt $observedAt
             $exitCode = 0
         } else {
-            $bridge = Get-SafeBridgeOutcome -ProjectRoot $resolvedProjectRoot
-            if ($bridge.Status -eq "complete" -and $bridge.ExitCode -eq 0) {
-                Write-ObserverOutcome -Status "complete" -ObservedAt $observedAt
+            $eligibleUntil = [datetimeoffset]::Parse(
+                [string]$sessionStatus.EligibleUntil,
+                [System.Globalization.CultureInfo]::InvariantCulture,
+                [System.Globalization.DateTimeStyles]::AdjustToUniversal
+            ).UtcDateTime
+            if (($eligibleUntil - $observedAt) -le [TimeSpan]::FromMinutes($MinimumSessionRemainingMinutes)) {
+                Write-ObserverOutcome -Status "session_closing" -ObservedAt $observedAt
                 $exitCode = 0
-            } elseif ($bridge.Status -eq "unavailable") {
-                Write-ObserverOutcome `
-                    -Status "unavailable" `
-                    -ObservedAt $observedAt `
-                    -ReasonCode $bridge.ReasonCode
-                $exitCode = 2
             } else {
-                Write-ObserverOutcome -Status "observer_unavailable" -ObservedAt $observedAt
-                $exitCode = 3
+                $bridge = Get-SafeBridgeOutcome `
+                    -ProjectRoot $resolvedProjectRoot `
+                    -EligibleUntil $eligibleUntil
+                if ($bridge.Status -eq "session_closing") {
+                    Write-ObserverOutcome -Status "session_closing" -ObservedAt $bridge.ObservedAt
+                    $exitCode = 0
+                } elseif ($bridge.Status -eq "complete" -and $bridge.ExitCode -eq 0) {
+                    $bridgeObservedAt = [datetimeoffset]::Parse(
+                        $bridge.ObservedAt,
+                        [System.Globalization.CultureInfo]::InvariantCulture,
+                        [System.Globalization.DateTimeStyles]::AdjustToUniversal
+                    ).UtcDateTime
+                    Write-ObserverOutcome -Status "complete" -ObservedAt $bridgeObservedAt
+                    $exitCode = 0
+                } elseif ($bridge.Status -eq "busy") {
+                    $bridgeObservedAt = [datetimeoffset]::Parse(
+                        $bridge.ObservedAt,
+                        [System.Globalization.CultureInfo]::InvariantCulture,
+                        [System.Globalization.DateTimeStyles]::AdjustToUniversal
+                    ).UtcDateTime
+                    Write-ObserverOutcome -Status "observer_busy" -ObservedAt $bridgeObservedAt
+                    $exitCode = 0
+                } elseif ($bridge.Status -eq "unavailable") {
+                    $bridgeObservedAt = [datetimeoffset]::Parse(
+                        $bridge.ObservedAt,
+                        [System.Globalization.CultureInfo]::InvariantCulture,
+                        [System.Globalization.DateTimeStyles]::AdjustToUniversal
+                    ).UtcDateTime
+                    Write-ObserverOutcome `
+                        -Status "unavailable" `
+                        -ObservedAt $bridgeObservedAt `
+                        -ReasonCode $bridge.ReasonCode
+                    $exitCode = 2
+                } else {
+                    Write-ObserverOutcome -Status "observer_unavailable" -ObservedAt $observedAt
+                    $exitCode = 3
+                }
             }
         }
     }

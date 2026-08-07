@@ -224,12 +224,16 @@ another correctly scoped Paper action.
   Its five-minute snapshot TTL is an availability fact only. The installed
   `thericher-kis-paper-snapshot-observer` task renews only through that same
   service: it repeats every four minutes in a bounded weekday KST window,
-  requires the pure 2026 US-session predicate, uses `IgnoreNew` plus a named
-  host mutex, has no missed-run catch-up or retry loop, and emits only a
-  categorical outcome. A direct current off-session check returned
+  requires the close-aware pure 2026 US-session predicate, uses `IgnoreNew`, a
+  named host mutex, and a bridge-level advisory runtime-volume refresh lock, has
+  no missed-run catch-up or retry loop, and emits only a categorical outcome.
+  The final four minutes of a known session, rechecked immediately before
+  Docker, do not start Docker. A busy bridge preserves the prior snapshot and
+  creates no external receipt. A direct current off-session check returned
   `outside_regular_session` before Docker or KIS work. Claude's required
-  recurring-read challenge timed out as `review_unavailable`; it is not a
-  decision or a hold on the task-owned first eligible refresh.
+  recurring-read and correction challenges timed out as
+  `review_unavailable`; this is not a decision or a hold on the task-owned first
+  eligible refresh.
 - The local replay now derives FIFO realized-after-fee PnL only from closed
   `source: local_paper` lots. It deliberately excludes open-lot valuation and
   all KIS account/broker facts, so it is descriptive simulator accounting, not

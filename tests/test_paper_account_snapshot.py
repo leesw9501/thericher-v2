@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import multiprocessing
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -8,6 +10,7 @@ from pathlib import Path
 
 import pytest
 
+import thericher_v2.execution.kis_paper_console_bridge as console_bridge
 from thericher_v2.execution.kis_paper_console_bridge import (
     recover_kis_paper_console_bridge_evidence,
     run_kis_paper_console_bridge,
@@ -32,6 +35,13 @@ from thericher_v2.execution.paper_account_snapshot import (
 )
 
 NOW = datetime(2026, 7, 20, 12, 0, tzinfo=UTC)
+
+
+def _hold_runtime_snapshot_lock(path: str, ready: object, release: object) -> None:
+    with console_bridge._exclusive_runtime_snapshot_refresh_lock(Path(path)) as acquired:
+        assert acquired
+        ready.set()
+        assert release.wait(10)
 
 
 @dataclass
@@ -215,6 +225,133 @@ def test_bridge_publishes_only_a_sanitized_complete_snapshot_and_evidence(tmp_pa
         "ORD-",
     ):
         assert forbidden not in evidence
+
+
+def test_busy_bridge_lock_preserves_the_prior_snapshot_without_credential_or_network_access(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    write_paper_account_snapshot(
+        _complete_snapshot(NOW - timedelta(minutes=1)), runtime_snapshot_path
+    )
+    prior_snapshot = runtime_snapshot_path.read_bytes()
+    transport = FakeKisTransport(runtime_snapshot_path)
+
+    @contextmanager
+    def unavailable_refresh_lock(_: Path):
+        yield False
+
+    class PoisonEnvironment:
+        def get(self, *_args: object, **_kwargs: object) -> str:
+            raise AssertionError("busy bridge must not read credentials")
+
+    monkeypatch.setattr(
+        console_bridge,
+        "_exclusive_runtime_snapshot_refresh_lock",
+        unavailable_refresh_lock,
+    )
+
+    outcome = run_kis_paper_console_bridge(
+        environment=PoisonEnvironment(),  # type: ignore[arg-type]
+        runtime_snapshot_path=runtime_snapshot_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=transport,
+        clock=lambda: NOW,
+    )
+
+    assert outcome.status == "busy"
+    assert outcome.reason_code == "refresh_busy"
+    assert outcome.evidence_path is None
+    assert outcome.diagnostic == {}
+    assert transport.requests == []
+    assert runtime_snapshot_path.read_bytes() == prior_snapshot
+    assert not (tmp_path / "artifacts").exists()
+
+
+def test_runtime_volume_lock_rejects_a_second_bridge_process_without_side_effects(
+    tmp_path,
+) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    write_paper_account_snapshot(
+        _complete_snapshot(NOW - timedelta(minutes=1)), runtime_snapshot_path
+    )
+    prior_snapshot = runtime_snapshot_path.read_bytes()
+    transport = FakeKisTransport(runtime_snapshot_path)
+
+    class PoisonEnvironment:
+        def get(self, *_args: object, **_kwargs: object) -> str:
+            raise AssertionError("busy bridge must not read credentials")
+
+    context = multiprocessing.get_context("spawn")
+    ready = context.Event()
+    release = context.Event()
+    process = context.Process(
+        target=_hold_runtime_snapshot_lock,
+        args=(str(runtime_snapshot_path), ready, release),
+    )
+    process.start()
+    try:
+        assert ready.wait(10)
+        outcome = run_kis_paper_console_bridge(
+            environment=PoisonEnvironment(),  # type: ignore[arg-type]
+            runtime_snapshot_path=runtime_snapshot_path,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+            transport=transport,
+            clock=lambda: NOW,
+        )
+    finally:
+        release.set()
+        process.join(10)
+        if process.is_alive():
+            process.terminate()
+            process.join(10)
+
+    assert process.exitcode == 0
+    assert outcome.status == "busy"
+    assert outcome.reason_code == "refresh_busy"
+    assert outcome.evidence_path is None
+    assert transport.requests == []
+    assert runtime_snapshot_path.read_bytes() == prior_snapshot
+    assert not (tmp_path / "artifacts").exists()
+
+
+def test_busy_bridge_cli_emits_a_source_safe_non_error_outcome(
+    tmp_path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    @contextmanager
+    def unavailable_refresh_lock(_: Path):
+        yield False
+
+    monkeypatch.setattr(
+        console_bridge,
+        "_exclusive_runtime_snapshot_refresh_lock",
+        unavailable_refresh_lock,
+    )
+
+    exit_code = console_bridge.main(
+        [
+            "--execute",
+            "--runtime-snapshot",
+            str(tmp_path / "runtime" / "paper_account_snapshot.json"),
+            "--artifact-root",
+            str(tmp_path / "artifacts"),
+            "--repository-root",
+            str(tmp_path / "repo"),
+        ]
+    )
+
+    assert exit_code == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["status"] == "busy"
+    assert payload["reason_code"] == "refresh_busy"
+    assert payload["account_snapshot_complete"] is False
+    assert payload["evidence_path"] is None
+    assert payload["scope"] == "read_only"
+    assert isinstance(payload["observed_at"], str)
+    assert not (tmp_path / "runtime").exists()
+    assert not (tmp_path / "artifacts").exists()
 
 
 def test_bridge_accepts_a_valid_flat_account_without_exposing_account_facts(tmp_path) -> None:

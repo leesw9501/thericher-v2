@@ -33,6 +33,7 @@ def test_regular_session_open_is_eligible() -> None:
     result = script.inspect_session(datetime(2026, 7, 21, 14, 30, tzinfo=UTC))
 
     assert result == {
+        "eligible_until": "2026-07-21T20:00:00Z",
         "kind": "kis_paper_snapshot_observer_session",
         "observed_at": "2026-07-21T14:30:00Z",
         "status": "eligible",
@@ -45,6 +46,7 @@ def test_holiday_is_session_unavailable() -> None:
     result = script.inspect_session(datetime(2026, 7, 3, 14, 30, tzinfo=UTC))
 
     assert result["status"] == "session_unavailable"
+    assert result["eligible_until"] is None
 
 
 def test_early_close_is_eligible_before_its_close() -> None:
@@ -53,6 +55,7 @@ def test_early_close_is_eligible_before_its_close() -> None:
     result = script.inspect_session(datetime(2026, 11, 27, 17, 0, tzinfo=UTC))
 
     assert result["status"] == "eligible"
+    assert result["eligible_until"] == "2026-11-27T18:00:00Z"
 
 
 def test_time_at_early_close_is_outside_regular_session() -> None:
@@ -61,6 +64,7 @@ def test_time_at_early_close_is_outside_regular_session() -> None:
     result = script.inspect_session(datetime(2026, 11, 27, 18, 0, tzinfo=UTC))
 
     assert result["status"] == "outside_regular_session"
+    assert result["eligible_until"] is None
 
 
 def test_out_of_calendar_scope_is_session_unavailable() -> None:
@@ -69,6 +73,7 @@ def test_out_of_calendar_scope_is_session_unavailable() -> None:
     result = script.inspect_session(datetime(2027, 1, 4, 14, 30, tzinfo=UTC))
 
     assert result["status"] == "session_unavailable"
+    assert result["eligible_until"] is None
 
 
 def test_non_utc_datetime_is_rejected() -> None:
@@ -103,6 +108,7 @@ def test_cli_outputs_only_the_frozen_session_envelope(
     script.main(["--observed-at", "2026-07-21T14:30:00Z"])
 
     assert json.loads(capsys.readouterr().out) == {
+        "eligible_until": "2026-07-21T20:00:00Z",
         "kind": "kis_paper_snapshot_observer_session",
         "observed_at": "2026-07-21T14:30:00Z",
         "status": "eligible",

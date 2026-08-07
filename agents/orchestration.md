@@ -31,16 +31,18 @@ account identifiers.
 | IWM v2 bound observation | Data / Execution | Isolated IWM/AMS KIS Paper one-page route | Completed: one accepted no-continuation page reused the immutable snapshot and wrote a v2 content-bound receipt. Local replay produced 120 complete M1, 8 M5, 1 M10, and no H1/H3 bucket. It has no consumer or promotion consequence. |
 | IWM v2 observation selector | Data / Validation | Existing immutable IWM snapshots and v2 receipts | Completed: source-safe metadata can enumerate observations and caller-selected v2 replay has no mutable latest fallback. The independent order-versus-hash duplicate defect was fixed before integration. |
 | IWM prospective observation append | Data / Validation | Isolated IWM/AMS route, immutable external roots, and completed selector | Completed: success receipts append separately from source-safe failure outcomes, stale owned stages cannot poison selection, and the collector returns an opaque selected ID. One bounded request reused the existing snapshot and reattached offline. |
+| Alternate IWM collector WIP | Data | Existing IWM v2 append/selector owner | Rejected by independent audit: the untracked alternate route can mix receipt namespaces and relax the approved D: cache boundary. Do not stage or invoke it; retain the existing v2 owner for any later narrow improvement. |
 | QQQ/SPY current-day M1 reach probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one blank-cursor current-day page per target was accepted and terminal with no recognized continuation. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This is exact-route evidence only; prior scope remains `unknown`. |
 | QQQ/SPY explicit previous-day M1 scope probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one explicit-previous-day page per target was accepted and terminal with no recognized continuation or multi-date range. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This remains exact-route evidence only. |
 | Donchian local-Paper PnL attribution | Engine Research / Execution | Frozen QQQ/NAS 20-session mechanics receipt and existing FIFO local simulator | Completed: `20260807-donchian-pnl-r1` reattested the parent, recorded 115 closed segments, 230 local-paper fills, gross `-41.984600`, fees `16.5045`, net `-58.489100`, zero open quantity, and exact replay parity. It remains a non-promoting retrospective baseline. |
 | Private Paper operator dashboard | Execution / Infra | Existing KIS Paper read-only account contract and local emergency controls | Completed: Docker reattestation requires an explicit container exception, publishes only `127.0.0.1:8787`, renders unavailable facts explicitly, and UI pause/resume changes local state only. |
 | Read-only Paper account snapshot refresh | Execution / Infra | Existing named bridge and dashboard snapshot reader | Completed: one actual `kis-readonly` refresh was categorical `complete`; its external receipt is fact-minimized and the loopback dashboard immediately read it as available. |
-| Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, 2026 session inspector, and task conventions | Owned: thericher-kis-paper-snapshot-observer is installed with a four-minute repetition inside one 10-hour KST weekday window, IgnoreNew, a host mutex, no missed-run catch-up, and a four-minute execution limit. Its current off-session check made no Compose or KIS call; the first eligible bridge refresh remains task-owned. |
+| Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, 2026 session inspector, and task conventions | Owned: thericher-kis-paper-snapshot-observer is installed with a four-minute repetition inside one 10-hour KST weekday window, IgnoreNew, host mutex, bridge runtime-volume lock, no catch-up, and a four-minute execution limit. It rechecks and skips the final four minutes of a known session; its current off-session check made no Compose or KIS call. The first eligible bridge refresh remains task-owned. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
 | GPU allocation | Research Steward / Engine Research | RTX 4090 | No frozen input-qualified predictive campaign is ready. CPU preparation may continue; GPU stays unallocated. |
+| MTF feature-schema expansion | Engine Research | Existing matrix, feasibility, and profiled-input contracts | Rejected as a duplicate target-free implementation. Reuse the existing owners; do not add a new feature-schema artifact path until a frozen predictive campaign needs it. |
 
 ## Current Bottleneck
 
@@ -57,8 +59,11 @@ readiness without claiming model validity.
 
 Do not wait for the task-owned collection or observer. Keep their scoped
 recovery contracts in place. The observer now improves Paper observability
-without a broker-order or strategy-decision path; its next eligible trigger,
-not foreground orchestration, owns the first recurring read-only refresh.
+without a broker-order or strategy-decision path; its close-aware predicate and
+bridge-level lock make an overlap or session-edge result categorical rather than
+stale. Its next eligible trigger, not foreground orchestration, owns the first
+recurring read-only refresh. Engine preparation reuses its existing MTF receipt
+contracts rather than creating duplicate target-free machinery.
 
 ## Current Recovery Action
 

@@ -19,7 +19,7 @@ SessionStatus = Literal[
 _KIND = "kis_paper_snapshot_observer_session"
 
 
-def inspect_session(observed_at: datetime) -> dict[str, str]:
+def inspect_session(observed_at: datetime) -> dict[str, str | None]:
     """Return the observer's source-safe session classification for one UTC time."""
 
     if type(observed_at) is not datetime or observed_at.tzinfo is not UTC:
@@ -30,18 +30,23 @@ def inspect_session(observed_at: datetime) -> dict[str, str]:
         session = us_equity_2026_session(session_date)
     except ValueError:
         status: SessionStatus = "session_unavailable"
+        eligible_until = None
     else:
         if session is None:
             status = "session_unavailable"
+            eligible_until = None
         elif session.window.open_ts <= observed_at < session.window.close_ts:
             status = "eligible"
+            eligible_until = session.window.close_ts.isoformat().replace("+00:00", "Z")
         else:
             status = "outside_regular_session"
+            eligible_until = None
 
     return {
         "kind": _KIND,
         "observed_at": observed_at.isoformat().replace("+00:00", "Z"),
         "status": status,
+        "eligible_until": eligible_until,
     }
 
 

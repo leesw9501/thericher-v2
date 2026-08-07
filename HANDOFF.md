@@ -683,12 +683,16 @@ unproven; this is a reversible current-season repair, not an input promotion.
 - The installed `thericher-kis-paper-snapshot-observer` Windows task is the
   sole recurring owner of this same bridge. It starts in a bounded weekday KST
   window, repeats every four minutes inside the five-minute snapshot TTL, uses
-  Task Scheduler `IgnoreNew` plus a named host mutex, and has no catch-up or
-  retry loop. Before Docker, its credential-free pure inspector checks the
-  2026 US session calendar; the current off-session check returned only
-  `outside_regular_session` and made no Compose or KIS call. Its first eligible
-  refresh remains task-owned. The required Claude schedule challenge timed out,
-  so record `review_unavailable`, not agreement or a new hold.
+  Task Scheduler `IgnoreNew`, a named host mutex, and a bridge-level advisory
+  runtime-volume refresh lock. The credential-free inspector returns the known
+  2026 session close and the runner rechecks it immediately before Docker, so it
+  skips an invocation with four minutes or less remaining. The current
+  off-session check returned only
+  `outside_regular_session` and made no Compose or KIS call. A busy bridge
+  preserves its prior snapshot and creates no evidence artifact. Its first
+  eligible refresh remains task-owned. The required Claude schedule and
+  correction challenges timed out, so record `review_unavailable`, not
+  agreement or a new hold.
 - The local dashboard now replays FIFO realized-after-fee PnL only from closed
   `source: local_paper` lots. It leaves open lots unvalued and excludes every
   KIS account/broker fact, so it is descriptive simulator accounting rather
@@ -722,7 +726,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
 | Private Paper dashboard | Execution / Infra | Completed Docker reattestation: explicit container-bind exception, host loopback publish, secret-free unavailable rendering, and pause/resume UI round trip. It created no broker route or order. Next bounded action is the existing read-only Paper account snapshot bridge. |
 | Read-only Paper account snapshot | Execution / Infra | Completed one actual `kis-readonly` bridge refresh: categorical `complete`, external fact-minimized receipt, immediate loopback dashboard `available`, no order or live route. The five-minute runtime TTL makes a bounded observer the next operational improvement. |
-| Read-only Paper account observer | Execution / Infra | Installed `thericher-kis-paper-snapshot-observer`: four-minute bounded cadence, pure 2026 session predicate, `IgnoreNew`, host mutex, no catch-up/retry, and categorical-only output. Its current off-session check made no Compose or KIS call; the first eligible refresh remains task-owned. |
+| Read-only Paper account observer | Execution / Infra | Installed `thericher-kis-paper-snapshot-observer`: four-minute bounded cadence, close-aware pure 2026 session predicate, `IgnoreNew`, host mutex, bridge runtime-volume lock, no catch-up/retry, and categorical-only output. Its current off-session check made no Compose or KIS call; the first eligible refresh remains task-owned. |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate
@@ -834,9 +838,9 @@ metadata-only projection. DST/pre-market behavior remains unproven.
 
 1. Reattach the first eligible task-owned result from
    `thericher-kis-paper-snapshot-observer`. It may use only the existing
-   read-only Compose service; retain a categorical unavailable/overlap outcome
-   rather than old account facts, and do not give the dashboard KIS credentials
-   or add an order path.
+   read-only Compose service; retain a categorical unavailable, closing, or
+   overlap outcome rather than old account facts, and do not give the dashboard
+   KIS credentials or add an order path.
 2. Preserve the exact 2026-08-05 `canary_completed` session fact and direct
    `cancelled/clean` lifecycle result as virtual-Paper execution evidence only.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,

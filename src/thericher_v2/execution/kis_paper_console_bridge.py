@@ -5,11 +5,12 @@ from __future__ import annotations
 import argparse
 import json
 import os
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Iterator, Mapping
+from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Literal
+from typing import BinaryIO, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.execution.kis_readonly import (
@@ -36,14 +37,24 @@ from thericher_v2.execution.paper_account_snapshot import (
 
 DEFAULT_RUNTIME_SNAPSHOT_PATH = Path("runtime/state/paper_account_snapshot.json")
 
+try:
+    import fcntl
+except ImportError:  # pragma: no cover - Windows uses msvcrt below.
+    fcntl = None  # type: ignore[assignment]
+
+try:
+    import msvcrt
+except ImportError:  # pragma: no cover - POSIX uses fcntl above.
+    msvcrt = None  # type: ignore[assignment]
+
 
 @dataclass(frozen=True)
 class KisPaperConsoleBridgeOutcome:
-    status: Literal["complete", "unavailable"]
+    status: Literal["complete", "unavailable", "busy"]
     reason_code: str | None
     observed_at: datetime
     snapshot_path: Path
-    evidence_path: Path
+    evidence_path: Path | None
     diagnostic: Mapping[str, str] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -52,8 +63,14 @@ class KisPaperConsoleBridgeOutcome:
             raise ValueError("complete bridge outcome cannot have a reason")
         if self.status == "unavailable" and self.reason_code is None:
             raise ValueError("unavailable bridge outcome requires a reason")
+        if self.status == "busy" and self.reason_code != "refresh_busy":
+            raise ValueError("busy bridge outcome requires refresh_busy")
         if self.status == "complete" and self.diagnostic:
             raise ValueError("complete bridge outcome cannot have a diagnostic")
+        if self.status == "busy" and (self.diagnostic or self.evidence_path is not None):
+            raise ValueError("busy bridge outcome cannot have evidence")
+        if self.status != "busy" and self.evidence_path is None:
+            raise ValueError("bridge outcome requires evidence")
         if self.diagnostic:
             validate_kis_paper_readonly_diagnostic(self.diagnostic)
         object.__setattr__(self, "diagnostic", dict(self.diagnostic))
@@ -68,9 +85,41 @@ def run_kis_paper_console_bridge(
     transport: KisHttpTransport | None = None,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
 ) -> KisPaperConsoleBridgeOutcome:
-    """Publish unavailable before reading, then replace it only with a complete view."""
+    """Publish one snapshot while holding the shared runtime refresh lock."""
 
     started_at = require_utc(clock(), "clock")
+    with _exclusive_runtime_snapshot_refresh_lock(runtime_snapshot_path) as acquired:
+        if not acquired:
+            return KisPaperConsoleBridgeOutcome(
+                status="busy",
+                reason_code="refresh_busy",
+                observed_at=started_at,
+                snapshot_path=runtime_snapshot_path,
+                evidence_path=None,
+            )
+        return _run_locked_kis_paper_console_bridge(
+            environment=environment,
+            runtime_snapshot_path=runtime_snapshot_path,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            transport=transport,
+            clock=clock,
+            started_at=started_at,
+        )
+
+
+def _run_locked_kis_paper_console_bridge(
+    *,
+    environment: Mapping[str, str],
+    runtime_snapshot_path: Path,
+    artifact_root: Path,
+    repository_root: Path,
+    transport: KisHttpTransport | None,
+    clock: Callable[[], datetime],
+    started_at: datetime,
+) -> KisPaperConsoleBridgeOutcome:
+    """Publish unavailable before credential I/O, then replace it with the result."""
+
     write_paper_account_snapshot(
         PaperAccountSnapshot.unavailable(
             observed_at=started_at,
@@ -117,6 +166,64 @@ def run_kis_paper_console_bridge(
         evidence_path=evidence_path,
         diagnostic=diagnostic,
     )
+
+
+@contextmanager
+def _exclusive_runtime_snapshot_refresh_lock(runtime_snapshot_path: Path) -> Iterator[bool]:
+    """Hold one advisory lock for every bridge writer sharing the runtime volume."""
+
+    lock_path = runtime_snapshot_path.with_name(
+        f".{runtime_snapshot_path.name}.refresh.lock"
+    )
+    try:
+        lock_path.parent.mkdir(parents=True, exist_ok=True)
+        handle = lock_path.open("a+b")
+    except OSError:
+        yield False
+        return
+    try:
+        try:
+            acquired = _try_lock_file(handle)
+        except OSError:
+            yield False
+            return
+        if not acquired:
+            yield False
+            return
+        try:
+            yield True
+        finally:
+            _unlock_file(handle)
+    finally:
+        handle.close()
+
+
+def _try_lock_file(handle: BinaryIO) -> bool:
+    if fcntl is not None:
+        try:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)  # type: ignore[union-attr]
+        except BlockingIOError:
+            return False
+        return True
+    if msvcrt is not None:
+        handle.seek(0)
+        handle.write(b"\0")
+        handle.flush()
+        handle.seek(0)
+        try:
+            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)  # type: ignore[union-attr]
+        except OSError:
+            return False
+        return True
+    raise OSError("runtime_snapshot_lock_unsupported")
+
+
+def _unlock_file(handle: BinaryIO) -> None:
+    if fcntl is not None:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_UN)  # type: ignore[union-attr]
+    elif msvcrt is not None:
+        handle.seek(0)
+        msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)  # type: ignore[union-attr]
 
 
 def write_kis_paper_console_bridge_evidence(
@@ -319,14 +426,18 @@ def main(argv: list[str] | None = None) -> int:
                 "status": outcome.status,
                 "reason_code": outcome.reason_code,
                 "observed_at": outcome.observed_at.isoformat(),
-                "evidence_path": str(outcome.evidence_path),
+                "evidence_path": (
+                    str(outcome.evidence_path)
+                    if outcome.evidence_path is not None
+                    else None
+                ),
                 "scope": "read_only",
                 "account_snapshot_complete": outcome.status == "complete",
             },
             sort_keys=True,
         )
     )
-    return 0 if outcome.status == "complete" else 2
+    return 0 if outcome.status in {"complete", "busy"} else 2
 
 
 if __name__ == "__main__":
