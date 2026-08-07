@@ -137,11 +137,19 @@ and snapshot count remain unchanged. The source-safe Claude challenge was
 it was not treated as agreement. The focused collector/capture/projection/CLI
 suite passed 81 tests with no KIS, credential, account, order, or live route.
 
-The next bounded objective is Data
-`kis-paper-iwm-m1-current-head-ingestion-v1`: turn the already observed
-IWM/AMS one-page M1 capability into a target-isolated bounded current-head
-cache without altering the existing QQQ/SPY task, cache, cursor, or schedule.
-It remains source-local and non-promoting.
+`kis-paper-iwm-m1-current-head-ingestion-v1` is complete. The isolated writer
+passed fake-client CPU checks, then made one authorized IWM/AMS current-day
+page request at 2026-08-07 01:46 UTC. It retained one immutable external
+snapshot, observed no continuation, and left the QQQ/SPY task, cache, cursor,
+and schedule untouched. It is source-local and non-promoting. Claude returned
+an incomplete tool request rather than a verdict, so this implementation relies
+on the focused local tests and is not described as Claude agreement.
+
+The next bounded objective is shared Data/Engine
+`kis-paper-iwm-m1-current-head-replayability-v1`: reattach that one retained
+snapshot through the existing local `Bar` and timeframe-resampling contracts,
+without a provider call, credential read, model, Paper action, or qualification
+claim.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,

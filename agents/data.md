@@ -18,7 +18,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
 | KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local non-promoting geometry only; QQQ supplied local EMA and MTF mechanics, not a qualification or consumer promotion |
 | KIS Paper private D1 cache | `input_unavailable` for daily-EMA preparation | Explicitly unadjusted, partial, and missing daily finality/as-of metadata |
-| KIS Paper IWM/AMS M1 candidate | One accepted current-day page through a probe-only route | Provisional route fact only; no history, qualification, or consumer promotion |
+| KIS Paper IWM/AMS M1 current head | One retained current-day page at 2026-08-07 01:46 UTC | Source-local replayability only; no history, qualification, or consumer promotion |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
 | KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | First task-owned receipt is incomplete after one accepted page | Exact endpoint pagination fact only; no decision-time availability or consumer promotion |
@@ -67,12 +67,13 @@ undocumented timestamp seed.
   snapshot count are unchanged. The exact 06:20 KST source-safe receipt remains
   `not_recorded_legacy`, so it is not reclassified. The existing 00:29 KST task
   stays the next owner of an actual QQQ/SPY collection attempt.
-- **Ready IWM current-head ingestion:**
-  `kis-paper-iwm-m1-current-head-ingestion-v1` may convert the existing
-  IWM/AMS one-page route fact into a target-isolated bounded cache only after
-  its target and storage contracts are verified. It must not alter the existing
-  QQQ/SPY task, cache, cursor, or schedule; any actual KIS probe is one
-  owned-client, one-page attempt with raw data retained only under `D:`.
+- **Completed IWM current-head ingestion:**
+  `kis-paper-iwm-m1-current-head-ingestion-v1` accepted one IWM/AMS current-day
+  page at 2026-08-07 01:46 UTC and retained one immutable, target-isolated
+  external snapshot. It made no continuation request and did not alter the
+  QQQ/SPY task, cache, cursor, or schedule. This is an accepted route and
+  storage fact only; historical reach, finality, decision-time availability,
+  qualification, model, and Paper eligibility remain false.
 - **Current-head timing repair:** a metadata-only reattachment of the
   2026-08-04 QQQ cache found retained regular-session page ranges
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST
@@ -155,6 +156,13 @@ undocumented timestamp seed.
   were discarded. It is `provisional_current_page_route_supported`, not an M1
   collector, historical-reach result, or Engine/Paper input. Evidence:
   `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\iwm-ams-candidate-assessment-20260804-r1.json`.
+- **IWM M1 retained-head observation:** the bounded follow-up accepted one
+  current-day page and stored a content-addressed immutable snapshot outside
+  Git. The source-safe receipt records `accepted_page_count: 1`,
+  `cache_disposition: retained`, and no observed continuation. It remains a
+  one-observation source-local cache, not historical coverage or a consumer
+  promotion. The next offline-only package may test its deterministic `Bar`
+  reattachment and completed-bucket geometry without another KIS call.
 - **Yahoo M1 ORB input probe:** one exact existing metadata manifest is
   `input_unavailable`: its `1m` request spans only eight days and has one
   successful symbol with no explicit regular-session or decision-time-
@@ -377,8 +385,9 @@ undocumented timestamp seed.
   pre-client local-input check for the named QQQ prospective route only:
   unavailable/late retention produces its local no-intent. It is not a model,
   general Paper-eligibility, or promotion input.
-- IWM/AMS is a probe-only M1 target: its request boundary permits one
-  current-day page only and has no active collector or consumer contract.
+- IWM/AMS is a current-head-only M1 target: its request boundary permits one
+  current-day page only, and one isolated snapshot is retained. It has no
+  historical, finality, model, or Paper consumer contract.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,
   or `outside_window`; `stable` means two separately timed virtual-Paper reads
   matched, not provider finality, point-in-time availability, data

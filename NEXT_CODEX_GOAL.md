@@ -2,61 +2,54 @@
 
 ## Objective
 
-Build `kis-paper-iwm-m1-current-head-ingestion-v1`.
+Build `kis-paper-iwm-m1-current-head-replayability-v1`.
 
-Advance the market-data collection loop by turning the already observed
-IWM/AMS one-page KIS Paper M1 capability into one bounded, target-isolated
-current-head cache. It must leave the existing task-owned QQQ/NAS and SPY/AMS
-collector, cache, cursor, terminal chain, and schedule unchanged. This is a
-source-local data-expansion result, never a data qualification, model, PnL,
-Paper, or broker claim.
+Advance the market-data foundation by proving that the one newly retained,
+isolated IWM/AMS current-head snapshot can be deterministically reattached as
+canonical local `Bar` data and resampled into completed `1m`, `5m`, `10m`,
+`1h`, and `3h` buckets. This is source-local input mechanics only, never a
+data-qualification, model, PnL, Paper, or broker claim.
 
 ## Hard Boundaries
 
-- Do not read `KIS_LIVE_*`, enable live behavior, call account/order routes, or
-  submit, modify, or cancel any broker order.
-- KIS Paper market-data access is standing-authorized only through the named
-  Data-owned client path. Any actual probe is at most one client, one IWM/AMS
-  current-page request, with raw output retained only under `D:\market_data`.
-  Never print or persist credentials, tokens, raw rows, prices, provider
-  payloads, or cache paths in Git or source-safe artifacts.
-- Do not invoke, alter, duplicate, or replace the existing QQQ/SPY scheduled
-  task. Do not add or register a scheduler in this objective.
-- Do not broaden IWM to historical pagination, another symbol, a model input,
-  a strategy, local-Paper intent, performance/PnL claim, GPU campaign, or
-  public service.
-- Keep generated evidence under `D:\thericher-v2\model-artifacts` and raw
-  market data under `D:\market_data`; never commit either.
+- Do not read `.env`, credentials, or `KIS_LIVE_*`; do not call KIS or any
+  network/provider route.
+- Do not invoke, alter, duplicate, or replace the QQQ/SPY scheduled task, its
+  cache, cursor, terminal chain, or schedule.
+- Read only the exact retained IWM snapshot through a named local cache reader;
+  do not scan unrelated raw data or broaden to historical pagination, another
+  symbol, a model input, strategy, local-Paper intent, performance/PnL claim,
+  GPU campaign, or public service.
+- Keep raw market data under `D:\market_data` and generated receipts under
+  `D:\thericher-v2\model-artifacts`; never commit raw rows, prices, paths,
+  credentials, or artifacts.
 
 ## Required Work
 
-1. Run a concise Throughput Review and inspect only the existing source-safe
-   IWM capability receipt, target validation, cache contracts, and free-space
-   fact. Confirm the QQQ/SPY task is independent and remains owned by its next
-   scheduled invocation.
-2. Before changing target, cache, or provider-recovery semantics, ask Claude
-   CLI for a concise falsification-first drift check. Do not send it secrets,
-   raw rows, prices, or cache paths, and do not wait on it.
-3. Freeze one ingestion contract: IWM/AMS identity, exactly one current page,
-   isolated cache root, no continuation request, source-safe result fields,
-   strongest isolation kill test, and the fact that would permit a later
-   historical or scheduled expansion.
-4. Implement the smallest reusable collection entry point or target parameter
-   needed to use the existing client without changing the QQQ/SPY default path.
-   Reject a non-IWM/AMS target, continuation request, unsafe cache root, or
-   cross-target state mutation before any provider call.
-5. Add focused fake-client tests proving target isolation, one-page request
-   shape, no QQQ/SPY cache/cursor mutation, source-safe receipt shape,
-   external-only raw storage, and no account/order/live/credential route.
-6. Run a CPU smoke with the fake client. If it passes and the external route is
-   ready, make at most one owned IWM/AMS current-page call and record only
-   accepted/error category, one-page count, pace bucket, and next recovery
-   fact. Otherwise record why no probe was issued. Refresh Data and
-   orchestration stateboards.
+1. Run a concise Throughput Review. Confirm the IWM current-head receipt is
+   accepted/retained and the primary QQQ/SPY task remains independent.
+2. Ask Claude CLI for a short falsification-first drift check before changing
+   local cache-reader or completed-bar/resampling semantics. Send no raw rows,
+   prices, paths, or credentials; do not wait on it.
+3. Freeze the local replay contract: one IWM/AMS snapshot identity, manifest
+   and raw-hash attestation, canonical timestamp basis, completed-bar rule,
+   five timeframe set, source-safe output fields, strongest tamper/isolation
+   kill test, and the exact fact needed before any later repeated collection.
+4. Implement or reuse the smallest local-only reader/adapter needed to emit
+   canonical `Bar` values from that one snapshot and feed the existing
+   timeframe resampler. Reject wrong target, Git-resident root, malformed or
+   hash-mismatched snapshot, incomplete bucket, and cross-target state before
+   an output is accepted.
+5. Add focused no-network fake/local tests proving deterministic replay,
+   tamper rejection, `1m`/`5m`/`10m`/`1h`/`3h` completed-bucket behavior, and
+   no QQQ/SPY cache/scheduler/broker/credential route.
+6. Run a CPU-only local smoke against the retained snapshot and write only a
+   source-safe external receipt with categories and aggregate geometry. Refresh
+   Data and orchestration stateboards.
 
 ## Verification
 
-Run focused tests and any source-safe probe used, then:
+Run focused tests and the local smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -67,4 +60,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add isolated IWM M1 head ingestion`
+`Prove IWM current-head replayability`
