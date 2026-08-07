@@ -71,7 +71,11 @@ retry or a mutable newest-artifact fallback. This makes no stronger
 Scheduler-provenance claim. Its next eligible trigger, not foreground
 orchestration, owns the first recurring read-only refresh. Engine preparation
 reuses its existing MTF receipt contracts rather than creating duplicate
-target-free machinery.
+target-free machinery. Until Data supplies a qualified causal input, do not
+dispatch another source-only discovery or target-free experiment by default;
+the next available Engine capacity goes to freezing one existing candidate's
+contract. This is a reversible queue priority, not a gate on independent Data
+or Execution work.
 
 ## Current Recovery Action
 
