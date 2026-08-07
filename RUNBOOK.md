@@ -1350,6 +1350,15 @@ then prints only the categorical read-only fact. A missing, malformed, or
 tampered receipt is `observer_evidence_unavailable`; it is not a reason to
 rerun the task or infer a fresh account snapshot.
 
+On 2026-08-07, the caller-selected `20260807T141607347092Z` observer sidecar
+reattached as `complete` at `14:16:07Z`, with `read_only` scope and no submit
+capability, after the host reader recomputed its referenced bridge SHA-256.
+The credential-free loopback dashboard `/health` returned only `ok` and
+`broker_calls: false`; no account value, identifier, or raw snapshot was read.
+This is marker-present observer provenance under the assumed-honest host, not
+cryptographic proof of Task Scheduler origin: Task Scheduler Operational
+logging is disabled on this host.
+
 The current-image bridge reached `balance` (`VTTS3012R`) and received HTTP 500
 with `EGW00201` on 2026-07-21 UTC after a successful image rebuild. It sent no
 order. KIS's official sample repository identifies that code as exceeding the

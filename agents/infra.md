@@ -27,6 +27,13 @@ CI, or runtime reproducibility work is ready.
   an advisory lock on its shared named runtime volume before any snapshot write.
   Task Scheduler enforces four-minute
   repetition, `IgnoreNew`, no catch-up, and a four-minute execution limit.
+- Its caller-selected `20260807T141607347092Z` immutable sidecar reattached as
+  `complete` at `2026-08-07T14:16:07Z`: the host reader recomputed the bound
+  bridge SHA-256, and loopback `/health` reported only `ok` with
+  `broker_calls: false`. It proves marker-present provenance under the
+  assumed-honest host, not cryptographic Task Scheduler origin; Operational
+  logging is disabled. No account values, raw snapshot, or credentials were
+  inspected.
 - D: was rechecked at 40.42 percent free on 2026-08-07, so no current storage
   warning applies.
 - Storage hard floor: do not start new large work that crosses 15 percent.

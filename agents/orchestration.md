@@ -6,11 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`private-kis-paper-account-snapshot-observer-v1` will turn the existing
-read-only KIS Paper bridge into one bounded, concurrency-safe observer cadence
-for the completed loopback-only dashboard. It must never read `KIS_LIVE_*`,
-create an order, expose a public service, or retain raw provider payloads or
-account identifiers.
+`task-owned-kis-intraday-causal-observation-qualification-v1` will classify
+one new task-owned QQQ/NAS and SPY/AMS completed-session M1 evidence chain as
+qualified or scoped `input_unavailable`. It must never manually call the KIS
+collector, read `KIS_LIVE_*`, create an order, promote a model, or infer
+decision-time availability or finality from a scheduler result alone.
 
 ## Ready / Owned / Due
 
@@ -37,7 +37,7 @@ account identifiers.
 | Donchian local-Paper PnL attribution | Engine Research / Execution | Frozen QQQ/NAS 20-session mechanics receipt and existing FIFO local simulator | Completed: `20260807-donchian-pnl-r1` reattested the parent, recorded 115 closed segments, 230 local-paper fills, gross `-41.984600`, fees `16.5045`, net `-58.489100`, zero open quantity, and exact replay parity. It remains a non-promoting retrospective baseline. |
 | Private Paper operator dashboard | Execution / Infra | Existing KIS Paper read-only account contract and local emergency controls | Completed: Docker reattestation requires an explicit container exception, publishes only `127.0.0.1:8787`, renders unavailable facts explicitly, and UI pause/resume changes local state only. |
 | Read-only Paper account snapshot refresh | Execution / Infra | Existing named bridge and dashboard snapshot reader | Completed: one actual `kis-readonly` refresh was categorical `complete`; its external receipt is fact-minimized and the loopback dashboard immediately read it as available. |
-| Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, 2026 session inspector, and task conventions | Owned: thericher-kis-paper-snapshot-observer is installed with a four-minute repetition inside one 10-hour KST weekday window, IgnoreNew, host mutex, bridge runtime-volume lock, no catch-up, and a four-minute execution limit. A direct installed-XML reattestation passed ten categorical action/cadence/concurrency/state checks without KIS, Docker, credentials, or account artifacts. Tagged complete/unavailable outcomes create immutable no-account-facts receipts bound to final bridge SHA-256; a missing sidecar is unknown and the marker is assumed-honest-host evidence only. The new host-only reattacher demands one exact sidecar, never selects a newest artifact, and emits only a validated categorical read-only fact. It rechecks and skips the final four minutes of a known session; its current off-session check made no Compose or KIS call. The first eligible bridge refresh remains task-owned. |
+| Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, 2026 session inspector, and task conventions | Completed: the caller-selected `20260807T141607347092Z-7c9fb50a-81bb-40a8-b72f-49b3e492d773-complete.json` sidecar reattached as `complete` at `2026-08-07T14:16:07Z` after its final bridge SHA-256 and marker/status/time binding passed. The credential-free loopback dashboard `/health` returned only `ok` and `broker_calls:false`. No account fact was inspected. This is marker-present provenance under the assumed-honest host, not cryptographic Scheduler-origin proof; Operational logging is disabled. The existing four-minute task remains sole read-only owner. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -57,61 +57,24 @@ readiness without claiming model validity.
 
 ## Current Reversible Improvement
 
-Do not wait for the task-owned collection or observer. Keep their scoped
-recovery contracts in place. The observer now improves Paper observability
-without a broker-order or strategy-decision path; its close-aware predicate and
-bridge-level lock make an overlap or session-edge result categorical rather than
-stale. Its immutable marker-and-hash sidecar lets later reattachment reject a
-tampered or untagged bridge receipt without exposing account facts; the runner
-also matches its fresh UUIDv4 after bridge-side validation. An isolated actual
-Docker bind-mount probe confirmed create-only hard-link behavior and collision
-rejection. The explicit-sidecar host reattacher turns a missing or tampered
-artifact into `observer_evidence_unavailable` without a KIS/Docker/dashboard
-retry or a mutable newest-artifact fallback. This makes no stronger
-Scheduler-provenance claim. Its next eligible trigger, not foreground
-orchestration, owns the first recurring read-only refresh. Engine preparation
-reuses its existing MTF receipt contracts rather than creating duplicate
-target-free machinery. Until Data supplies a qualified causal input, do not
-dispatch another source-only discovery or target-free experiment by default;
-the next available Engine capacity goes to freezing one existing candidate's
-contract. This is a reversible queue priority, not a gate on independent Data
-or Execution work.
+Do not wait for the task-owned collection. The recurring observer now has one
+hash-bound `complete` reattachment and categorical loopback health, while
+remaining outside order and strategy paths. Its sidecar is assumed-honest-host
+marker provenance only, so neither its success nor Task Scheduler result
+qualifies market input. Keep the existing Data task as the sole next collector;
+its exact receipt chain, not a cache timestamp, decides the next causal-input
+classification. Until then, do not dispatch another source-only discovery or
+target-free experiment by default; the next Engine capacity freezes an
+existing candidate only after a qualified input. This is a reversible queue
+priority, not a gate on independent Data or Execution work.
 
 ## Current Recovery Action
 
 Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation; it is the
-only owner of a later actual KIS collection. Execution owns the installed
-thericher-kis-paper-snapshot-observer cadence; its pure session inspector fails
-closed outside the 2026 calendar scope and its next eligible trigger owns the
-first recurring bridge read. A one-shot 2026-08-07 23:15 KST Codex follow-up
-will only reattach a validated immutable outcome; it does not invoke the task,
-KIS, or Docker bridge. Infra is invoked only for existing Docker and task
-runtime. IWM current-head success remains unrelated to historical M1 reach.
-
-## Blocked-Goal Alternatives
-
-The observer checkpoint has no remaining implementation package: its only
-missing completion evidence is a task-owned eligible-session sidecar. This is
-an external-time recovery fact, not an operator decision or a global hold.
-Original dependency order is existing observer task -> exact immutable sidecar
--> hash-bound host reattacher -> categorical loopback dashboard inspection ->
-goal-boundary verification. Claude's additional pre-data falsification request
-is `review_unavailable` because the local CLI reached its weekly limit.
-
-- **Execution / observer task:** the installed scheduler owns the next eligible
-  read-only bridge refresh. Completion evidence is one exact sidecar accepted
-  by the host reattacher and a categorical dashboard status. The strongest kill
-  test is a missing, tampered, stale, busy, or unavailable sidecar; preserve
-  that category and let the next task invocation recover it without a manual
-  Docker or KIS call.
-- **Data / intraday-head task:** the existing 2026-08-08 00:29 KST task owns
-  the next QQQ/SPY recovery capture. Completion evidence is a matching
-  terminal/capture/prospective hash-bound chain. The strongest kill test is a
-  conflicted, incomplete, or late target; retain the scoped recovery result and
-  do not promote it or start a parallel collector.
-- **Engine Research / frozen-contract preparation:** after Data produces a
-  qualified causal input, freeze one existing candidate with a fixed split,
-  cost band, baseline, window matrix, and kill test before any GPU appointment.
-  Its strongest kill test is missing causal/finality or execution-parity facts;
-  return that one candidate to input-unavailable while independent work
-  continues.
+only owner of a later actual KIS collection. The completion evidence is a
+caller-selected terminal/capture/prospective chain whose bound identities and
+source-safe timing facts are verified offline. A conflicted, incomplete, late,
+or unbound result is scoped `input_unavailable`, not a global hold. Execution
+continues to own the installed observer cadence; Infra is invoked only for
+existing Docker/task runtime. IWM current-head success remains unrelated to
+historical M1 reach.

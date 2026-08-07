@@ -246,9 +246,15 @@ another correctly scoped Paper action.
   work. The host-only reattacher requires one caller-selected immutable sidecar,
   recomputes its bridge hash, and emits only the categorical read-only fact;
   it never scans for a newest receipt or reaches KIS, Docker, the dashboard, or
-  a credential path. Claude's required recurring-read and correction challenges timed out as
-  `review_unavailable`; this is not a decision or a hold on the task-owned first
-  eligible refresh.
+  a credential path. The caller-selected `20260807T141607347092Z` sidecar
+  reattached as `complete` at `2026-08-07T14:16:07Z` after the bridge hash and
+  marker/status/time binding passed. The credential-free loopback `/health`
+  returned only `ok` and `broker_calls: false`; no account fact was inspected.
+  This is marker-present provenance under the assumed-honest host, not
+  cryptographic Scheduler proof because Operational logging is disabled.
+  Claude's required recurring-read and correction challenges timed out as
+  `review_unavailable`; this is not a decision or a hold on the recurring
+  read-only observer.
 - The local replay now derives FIFO realized-after-fee PnL only from closed
   `source: local_paper` lots. It deliberately excludes open-lot valuation and
   all KIS account/broker facts, so it is descriptive simulator accounting, not

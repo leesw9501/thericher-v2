@@ -691,7 +691,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
   skips an invocation with four minutes or less remaining. The current
   off-session check returned only
   `outside_regular_session` and made no Compose or KIS call. A busy bridge
-  preserves its prior snapshot and creates no evidence artifact. Its first
+  preserves its prior snapshot and creates no evidence artifact. Every later
   eligible refresh remains task-owned. Tagged `complete` and `unavailable`
   bridge outcomes now write an immutable external observer receipt that binds
   the marker, categorical outcome, and timestamp to the final bridge receipt's
@@ -707,6 +707,14 @@ unproven; this is a reversible current-season repair, not an input promotion.
   categorical read-only fact; it never selects a newest receipt or calls KIS,
   Docker, the dashboard, or a credential path. Its missing/tampered outcome is
   `observer_evidence_unavailable`, not a rerun instruction.
+  The caller-selected sidecar
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-snapshot-observer\20260807T141607347092Z-7c9fb50a-81bb-40a8-b72f-49b3e492d773-complete.json`
+  reattached as `complete` at `2026-08-07T14:16:07Z` with `read_only` scope and
+  no submit capability after its bridge SHA-256 and marker/status/time binding
+  passed. The credential-free loopback dashboard `/health` returned only `ok`
+  and `broker_calls: false`; no account fact was read. This is marker-present
+  observer provenance under the assumed-honest host, not cryptographic proof
+  of Scheduler origin; Task Scheduler Operational logging is disabled.
   The required Claude schedule and correction challenges timed out, so record
   `review_unavailable`, not agreement or a new hold.
 - The local dashboard now replays FIFO realized-after-fee PnL only from closed
@@ -742,7 +750,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
 | Private Paper dashboard | Execution / Infra | Completed Docker reattestation: explicit container-bind exception, host loopback publish, secret-free unavailable rendering, and pause/resume UI round trip. It created no broker route or order. Next bounded action is the existing read-only Paper account snapshot bridge. |
 | Read-only Paper account snapshot | Execution / Infra | Completed one actual `kis-readonly` bridge refresh: categorical `complete`, external fact-minimized receipt, immediate loopback dashboard `available`, no order or live route. The five-minute runtime TTL makes a bounded observer the next operational improvement. |
-| Read-only Paper account observer | Execution / Infra | Installed `thericher-kis-paper-snapshot-observer`: four-minute bounded cadence, close-aware pure 2026 session predicate, `IgnoreNew`, host mutex, bridge runtime-volume lock, no catch-up/retry, and categorical-only output. Tagged complete/unavailable results also bind an immutable no-account-facts observer receipt to the final bridge SHA-256; a missing receipt is unknown, not inferred busy/success. Its current off-session check made no Compose or KIS call; the first eligible refresh remains task-owned. |
+| Read-only Paper account observer | Execution / Infra | Completed task-owned evidence: caller-selected immutable sidecar `20260807T141607347092Z-7c9fb50a-81bb-40a8-b72f-49b3e492d773-complete.json` reattached as `complete` at `2026-08-07T14:16:07Z` after bridge SHA-256 and marker/status/time binding. Loopback dashboard `/health` returned only `ok` and `broker_calls:false`; no account fact was inspected. This is assumed-honest-host marker provenance, not cryptographic Scheduler proof; Operational logging is disabled. The four-minute observer remains the sole recurring read-only owner. |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate
@@ -852,27 +860,22 @@ metadata-only projection. DST/pre-market behavior remains unproven.
 
 ## Next Handoff
 
-1. Reattach the first eligible task-owned result from
-   `thericher-kis-paper-snapshot-observer`. It may use only the existing
-   read-only Compose service; retain a categorical unavailable, closing, or
-   overlap outcome rather than old account facts, and do not give the dashboard
-   KIS credentials or add an order path. Use
-   `scripts\reattest_kis_paper_snapshot_observer.py` with the exact immutable
-   sidecar path rather than selecting a newest artifact.
+1. Let the installed `thericher-kis-paper-intraday-head` task own its next
+   2026-08-08 00:29 KST run. Reattach only a caller-selected exact terminal,
+   capture, and prospective chain, then decide whether its QQQ/NAS and SPY/AMS
+   M1 input is causally qualified. Do not manually invoke KIS, Docker, the
+   task, or an alternate collector; an incomplete chain remains scoped
+   `input_unavailable` evidence.
 2. Preserve the exact 2026-08-05 `canary_completed` session fact and direct
    `cancelled/clean` lifecycle result as virtual-Paper execution evidence only.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
    or duplicate the existing task. Its latest 2026-08-06 23:35 KST Scheduler
    result is `0`; the next opportunity is 2026-08-07 23:35 KST.
-3. Build the frozen source-local 15/30 session-reset EMA mechanics replay over
-   the existing first 20 complete QQQ/NAS M1 sessions. It must use only causal
-   completed bars and `source: local_paper` replay, retain no raw data or PnL,
-   and remain non-promoting, CPU-only, and outside every KIS/Paper route.
-4. Preserve the completed D1 `stable` observation as source-safe observational
+3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality
    evidence.
-5. When Data produces a fresh qualified causal input, freeze the next distinct
+4. When Data produces a fresh qualified causal input, freeze the next distinct
    Engine contract and let Research Steward allocate GPU only if it is eligible.
-6. At a company-goal boundary, run required verification, commit/push, replace
+5. At a company-goal boundary, run required verification, commit/push, replace
    `NEXT_CODEX_GOAL.md` with one material next objective, and refresh only the
    changed current facts in these projections.
