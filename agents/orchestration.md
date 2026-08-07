@@ -87,3 +87,31 @@ first recurring bridge read. A one-shot 2026-08-07 23:15 KST Codex follow-up
 will only reattach a validated immutable outcome; it does not invoke the task,
 KIS, or Docker bridge. Infra is invoked only for existing Docker and task
 runtime. IWM current-head success remains unrelated to historical M1 reach.
+
+## Blocked-Goal Alternatives
+
+The observer checkpoint has no remaining implementation package: its only
+missing completion evidence is a task-owned eligible-session sidecar. This is
+an external-time recovery fact, not an operator decision or a global hold.
+Original dependency order is existing observer task -> exact immutable sidecar
+-> hash-bound host reattacher -> categorical loopback dashboard inspection ->
+goal-boundary verification. Claude's additional pre-data falsification request
+is `review_unavailable` because the local CLI reached its weekly limit.
+
+- **Execution / observer task:** the installed scheduler owns the next eligible
+  read-only bridge refresh. Completion evidence is one exact sidecar accepted
+  by the host reattacher and a categorical dashboard status. The strongest kill
+  test is a missing, tampered, stale, busy, or unavailable sidecar; preserve
+  that category and let the next task invocation recover it without a manual
+  Docker or KIS call.
+- **Data / intraday-head task:** the existing 2026-08-08 00:29 KST task owns
+  the next QQQ/SPY recovery capture. Completion evidence is a matching
+  terminal/capture/prospective hash-bound chain. The strongest kill test is a
+  conflicted, incomplete, or late target; retain the scoped recovery result and
+  do not promote it or start a parallel collector.
+- **Engine Research / frozen-contract preparation:** after Data produces a
+  qualified causal input, freeze one existing candidate with a fixed split,
+  cost band, baseline, window matrix, and kill test before any GPU appointment.
+  Its strongest kill test is missing causal/finality or execution-parity facts;
+  return that one candidate to input-unavailable while independent work
+  continues.
