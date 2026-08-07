@@ -263,6 +263,17 @@ strongest kill test before target evaluation or GPU consideration.
   `source_only_input_unavailable` with no campaign, GPU, PnL, ensemble, or
   Paper consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\kis-intraday-extreme-shock-reversal-20260804-r1\source-retrieval.json`.
+- `Intraday Time Series Reversal` is a distinct per-instrument source-only
+  candidate: the SSRN abstract and the authors' working-paper page support an
+  opposite-signed relation between a prior regular close-to-open return and the
+  current session's first-half-hour return for U.S. market indices. The primary
+  full text could not be independently retrieved from SSRN, so its detailed
+  source scope and rights remain unverified. Completed-M1 project inputs also
+  cannot make a source-native opening decision, and current evidence lacks a
+  prospective completed-M1 session pair and candidate-specific replay parity.
+  It is therefore `source_only_input_unavailable`, with no implementation,
+  campaign, GPU appointment, ensemble, PnL claim, or Paper path. Evidence:
+  `D:\thericher-v2\model-artifacts\research\strategy-discovery\overnight-to-first-half-hour-reversal-source-pass-20260807-r1\source-handoff.json`.
 - The independently retrieved 52-week-high mechanism is distinct from the
   closed short-return rank, but its original 252-session/monthly/six-month
   contract needs a qualified point-in-time daily universe and more later data.
