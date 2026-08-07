@@ -16,7 +16,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
-| KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local non-promoting geometry only; QQQ supplied local EMA and MTF mechanics, not a qualification or consumer promotion |
+| KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local non-promoting geometry only; QQQ supplied EMA/Donchian local-paper accounting baselines and MTF mechanics, not a qualification or consumer promotion |
 | KIS Paper private D1 cache | `input_unavailable` for daily-EMA preparation | Explicitly unadjusted, partial, and missing daily finality/as-of metadata |
 | KIS Paper IWM/AMS M1 current head | Legacy v1 plus two explicitly selectable v2-bound current-day observations over one immutable snapshot | Exact selected v2 local replay has 120 completed M1, 8 M5, and 1 M10 buckets; H1/H3 are absent, and no history, qualification, or consumer promotion follows |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |

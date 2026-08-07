@@ -2,54 +2,61 @@
 
 ## Objective
 
-Build `source-local-qqq-donchian-local-paper-pnl-attribution-v1`.
+Build `private-kis-paper-operator-dashboard-v1`.
 
-Attribute the already-fixed session-reset QQQ/NAS M1 Donchian 20/10 replay over
-the existing frozen 20 complete regular sessions through the local paper FIFO
-accounting seam. This is a bounded retrospective baseline only. It must not
-select a strategy, predict returns, claim decision-time validity, allocate GPU,
-or authorize KIS Paper behavior.
+Create the smallest Docker-backed, loopback-only private operator dashboard for
+the existing KIS Paper account-read contract and deterministic local safety
+controls. It should make current paper cash, positions, open orders, source
+state, and effective entry/exit pause state observable without making the
+dashboard a strategy engine or an order-submission surface.
 
 ## Hard Boundaries
 
-- Use only the existing hash-bound source-local QQQ/NAS catalog and fixed
-  Donchian mechanics contract. Do not collect, alter, or qualify market data.
-- Do not call KIS, read credentials or `.env`, invoke a task, or change Docker
-  services, schedulers, cache roots, cursors, or source receipts.
-- All fills must remain `source: local_paper`; do not create a Paper intent,
-  broker order, account route, or live route.
-- Freeze the 20/10 rule, session order, completed-bar rule, timing, cost model,
-  and terminal-flat policy before inspecting PnL. No parameter sweep, ensemble,
-  model comparison, candidate selection, GPU job, or public output.
-- Keep any generated summary under `D:\thericher-v2\model-artifacts`, never
-  Git. Do not retain raw prices, fills, credentials, or paths in Git evidence.
-- Preserve the prior EMA baseline and all task-owned KIS evidence unchanged.
+- Use only `KIS_PAPER_*` through the existing named Paper account-read owner
+  paths. Never read, reference, route, or log `KIS_LIVE_*`.
+- The dashboard is private and loopback-only. Do not expose a public host,
+  public URL, tunnel, cloud deployment, or unauthenticated non-loopback bind.
+- No dashboard button may create, modify, cancel, or imply a broker order.
+  It may only read Paper state or persist deterministic local control state.
+- Do not invent account values, prices, PnL, fills, or strategy recommendations
+  when an account read is unavailable. Render an explicit unavailable state.
+- Keep credentials, account identifiers, raw API payloads, and dashboard auth
+  values out of Git, logs, browser HTML, screenshots, and external artifacts.
+- Preserve the local-paper replay and all KIS collector/task behavior. Do not
+  alter live routes, strategy selection, model promotion, GPU scheduling, or
+  market-data collection.
 
 ## Required Work
 
-1. Run a concise Throughput Review. Confirm the task-owned QQQ/SPY recovery is
-   externally due while the fixed Donchian attribution package is ready and
-   resource-independent.
-2. Reattest the exact Donchian mechanics parent and source-local catalog before
-   use. Freeze one attribution contract with parent identities, selected-session
-   rule, local paper fill semantics, FIFO cost model, aggregate metrics, and a
-   strongest replay-parity kill test.
-3. Build the smallest reusable local attribution harness or extend the existing
-   local replay path. It must consume completed Bars, replay only the fixed
-   long/flat Donchian state, and emit only deterministic local-paper fills.
-4. Write one immutable external, source-safe aggregate result. Bind it to the
-   mechanics parent and exact replay digest; preserve terminal-flat and local
-   paper provenance. A missing or mismatched parent must fail closed.
-5. Add focused tests for deterministic replay, no KIS/credential/broker access,
-   local-paper-only fills, cost/PnL parity, terminal flattening, parent mismatch,
-   and artifact-root exclusion from Git.
-6. Run a CPU-only smoke using the existing local catalog. Refresh Engine,
-   Execution, Data, and orchestration stateboards with the exact result scope
-   and remaining input limitation.
+1. Run a concise Throughput Review: the task-owned QQQ/SPY collection remains
+   externally due; the operator dashboard is an independent Execution/Infra
+   package. Ask Claude CLI for a short drift-check before any dashboard/runtime
+   architecture change, and record only `review_unavailable` if it cannot
+   return in the bounded window.
+2. Reattest the existing KIS Paper account snapshot and local emergency-control
+   contracts. Reuse their data structures and ownership boundaries instead of
+   introducing a parallel broker client or order path.
+3. Build a minimal Docker-backed local UI with a compact account view: current
+   cash/orderable state when available, positions, open orders, data freshness,
+   and source/route status. Account refresh must be explicit or bounded and
+   read-only; no hidden background order behavior is allowed.
+4. Add deterministic local operator controls for entry and exit pause only when
+   their execution semantics are real and testable. The UI must show the
+   effective persisted state and clearly distinguish a local control from a
+   broker action. Keep an emergency/cancel state visible when the existing
+   contract supports it.
+5. Enforce loopback-only serving and the existing dashboard-auth policy. A
+   missing local configuration may make account reads unavailable, but cannot
+   downgrade host isolation or reveal a secret.
+6. Add focused tests for virtual-route isolation, no `KIS_LIVE_*` access,
+   absence of broker submission from dashboard routes, secret-free rendering,
+   read-only account handling, unavailable-state rendering, pause-control
+   persistence, and loopback/public-bind rejection.
+7. Run the dashboard locally in Docker when configuration permits and inspect
+   the actual private UI. Refresh Execution, Infra, orchestration, and handoff
+   stateboards with only current contracts and limitations.
 
 ## Verification
-
-Run focused tests and the local smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -60,4 +67,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Attribute local Donchian paper PnL`
+`Add private KIS Paper operator dashboard`

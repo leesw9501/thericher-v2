@@ -251,6 +251,14 @@ another correctly scoped Paper action.
   It made no KIS call, credential read, external broker call, or
   virtual-Paper intent; it is not an execution result, model promotion, or
   Paper input.
+- The completed fixed Donchian FIFO attribution reattests that same external
+  mechanics parent before reconstructing in-memory events. Its
+  `20260807-donchian-pnl-r1` artifact records 115 closed segments, 230
+  `source: local_paper` fills, zero open quantity, terminal-flat sessions, and
+  fee-aware parent replay parity only. It rejects a foreign fill, non-flat
+  session, catalog/parent mismatch, or malformed parent before claiming PnL;
+  it makes no KIS, credential, account, order, or external-broker call and does
+  not create a Paper intent or promotion.
 - The current source-free Claude falsification check returned
   `supported-with-limits`: virtual-host pinning, pre-submit durable intent,
   fresh account/quote reconciliation, exact-intent unknown-outcome recovery,

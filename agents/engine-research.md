@@ -63,10 +63,17 @@ strongest kill test before target evaluation or GPU consideration.
   The negative result is a fixed, source-local retrospective baseline, not a
   profitability verdict, candidate rejection outside this scope, model
   selection, comparative result, campaign, ensemble input, GPU appointment,
-  or Paper input. Fresh causal input coverage still blocks predictive promotion,
-  but the independently fixed Donchian mechanics receipt now has one ready,
-  source-local local-paper attribution package that does not consume that
-  external dependency.
+  or Paper input. Fresh causal input coverage still blocks predictive promotion.
+- **Completed source-local Donchian PnL attribution:**
+  `source-local-qqq-donchian-local-paper-pnl-attribution-v1` reattached the
+  completed fixed 20/10 Donchian parent and recomputed its exact 20-session
+  QQQ/NAS M1 local-paper replay in memory. Its immutable
+  `20260807-donchian-pnl-r1` artifact records only aggregate FIFO accounting:
+  115 closed segments, 230 `local_paper` fills, gross delta `-41.984600`, fees
+  `16.5045`, net delta `-58.489100`, zero open quantity, and exact parent digest
+  parity. This negative source-local retrospective baseline neither rejects the
+  family outside this scope nor supports a profitability, comparison, campaign,
+  ensemble, GPU, Paper-input, or promotion claim.
 - A bounded metadata-only Data probe classifies the existing KIS Paper private
   D1 cache as `input_unavailable` for a 15/30 daily EMA candidate: its rows
   expose `close`, not an adjusted-close or corporate-action contract; coverage

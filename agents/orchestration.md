@@ -6,11 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`source-local-qqq-donchian-local-paper-pnl-attribution-v1` will attribute the
-already-fixed QQQ/NAS 20/10 Donchian source-local replay through existing
-`source: local_paper` accounting. It is a CPU-only retrospective baseline with
-fixed inputs and costs; it adds no KIS call, task, model selection, GPU job,
-Paper input, order, or live-capital surface.
+`private-kis-paper-operator-dashboard-v1` will add the smallest loopback-only
+private operator surface for existing KIS Paper account reads and local
+emergency-control state. It must preserve virtual-host isolation and never read
+`KIS_LIVE_*`, expose a public service, create an order, or make dashboard state
+into a strategy decision.
 
 ## Ready / Owned / Due
 
@@ -33,7 +33,8 @@ Paper input, order, or live-capital surface.
 | IWM prospective observation append | Data / Validation | Isolated IWM/AMS route, immutable external roots, and completed selector | Completed: success receipts append separately from source-safe failure outcomes, stale owned stages cannot poison selection, and the collector returns an opaque selected ID. One bounded request reused the existing snapshot and reattached offline. |
 | QQQ/SPY current-day M1 reach probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one blank-cursor current-day page per target was accepted and terminal with no recognized continuation. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This is exact-route evidence only; prior scope remains `unknown`. |
 | QQQ/SPY explicit previous-day M1 scope probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one explicit-previous-day page per target was accepted and terminal with no recognized continuation or multi-date range. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This remains exact-route evidence only. |
-| Donchian local-Paper PnL attribution | Engine Research / Execution | Frozen QQQ/NAS 20-session mechanics receipt and existing FIFO local simulator | Ready: one fixed 20/10 rule, selected completed sessions, and predeclared cost/replay contract; no tuning, candidate comparison, or promotion. |
+| Donchian local-Paper PnL attribution | Engine Research / Execution | Frozen QQQ/NAS 20-session mechanics receipt and existing FIFO local simulator | Completed: `20260807-donchian-pnl-r1` reattested the parent, recorded 115 closed segments, 230 local-paper fills, gross `-41.984600`, fees `16.5045`, net `-58.489100`, zero open quantity, and exact replay parity. It remains a non-promoting retrospective baseline. |
+| Private Paper operator dashboard | Execution / Infra | Existing KIS Paper read-only account contract and local emergency controls | Ready: a loopback-only, non-public surface can improve paper-trading observability without depending on fresh research data or creating an order route. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -45,19 +46,21 @@ Fresh causal KIS-reconstructible input coverage remains the product bottleneck:
 the exact QQQ/NAS and SPY/AMS M1 scopes contain only 21 shared complete
 regular-session windows, both bounded historical starting scopes are terminal,
 and decision-time availability remains `not_observed`. The existing task owns
-the next forward recovery observation. In parallel, the frozen source-local
-Donchian mechanics can obtain one accounting baseline without consuming KIS or
-GPU resources.
+the next forward recovery observation. The fixed Donchian baseline is now
+accounted and negative, so it cannot consume more research-selection effort;
+the independent execution-observability package can still improve Paper
+readiness without claiming model validity.
 
 ## Current Reversible Improvement
 
 Do not wait for the task-owned collection. Keep its scoped recovery contract in
-place and use the independent fixed Donchian attribution package to advance the
-research-to-local-paper loop without creating a predictive claim.
+place and use the independent loopback-only Paper dashboard package to make
+existing authorized account state observable without creating a broker-order or
+strategy-decision path.
 
 ## Current Recovery Action
 
 Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation; it is the
-only owner of a later actual KIS collection. Engine Research and Execution now
-own the independent fixed Donchian attribution package. IWM current-head
-success remains unrelated to historical M1 reach.
+only owner of a later actual KIS collection. Execution and Infra own the
+independent private Paper operator dashboard package. IWM current-head success
+remains unrelated to historical M1 reach.

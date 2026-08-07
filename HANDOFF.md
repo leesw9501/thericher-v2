@@ -53,11 +53,25 @@ malformed markers, and candidate-batch conflicts still fail closed. The exact
 `not_recorded_legacy`; it was neither rewritten nor reclassified. No KIS call,
 task invocation, credential read, account route, or order route occurred.
 
-The next bounded objective is shared Engine Research / Execution
-`source-local-qqq-donchian-local-paper-pnl-attribution-v1`: attribute the
-already-fixed source-local 20/10 Donchian replay through the existing local
-paper accounting seam. It will remain a bounded retrospective baseline, not a
-model-selection, prediction, GPU, or Paper-readiness claim.
+`source-local-qqq-donchian-local-paper-pnl-attribution-v1` is complete. Its
+immutable `20260807-donchian-pnl-r1` artifact reattests the exact fixed 20/10
+Donchian mechanics parent, reproduces only the same completed QQQ/NAS M1
+sessions in memory, and applies the existing FIFO local-paper accounting per
+terminal-flat session. It records 115 closed segments, 230 `local_paper` fills,
+gross delta `-41.984600`, fees `16.5045`, net delta `-58.489100`, zero open
+quantity, and exact parent replay parity. The CPU smoke used no KIS,
+credential, network, or external broker path. This negative fixed baseline is
+not a profitability conclusion, candidate selection, predictive campaign, GPU
+appointment, Paper input, or live/paper broker outcome. Evidence:
+`D:\thericher-v2\model-artifacts\research\source-local-qqq-donchian-local-paper-pnl-attribution-v1\20260807-donchian-pnl-r1\summary.json`.
+The bounded Claude drift-check timed out, so this record is
+`review_unavailable`, not Claude agreement.
+
+The next bounded objective is Execution
+`private-kis-paper-operator-dashboard-v1`: build a loopback-only private
+operator surface over the existing KIS Paper read-only account contract and
+local emergency controls. It must never read `KIS_LIVE_*`, expose a public
+service, or turn dashboard interaction into a broker order.
 
 `intraday-qqq-offline-validation-reliability-v1` is complete. The exact
 2026-08-07 04:24 KST QQQ session was a valid Paper-only `no_intent`, and its

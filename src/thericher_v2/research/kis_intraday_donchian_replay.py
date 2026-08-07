@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from collections.abc import Sequence
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
@@ -25,7 +25,12 @@ from thericher_v2.data import (
     us_equity_2026_session,
 )
 from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN
-from thericher_v2.execution import LOCAL_PAPER_SOURCE, LocalPaperBroker, replay_local_paper_account
+from thericher_v2.execution import (
+    LOCAL_PAPER_SOURCE,
+    LocalPaperAccount,
+    LocalPaperBroker,
+    replay_local_paper_account,
+)
 from thericher_v2.execution.paper_decision_bridge import (
     LocalPaperTargetBinding,
     PaperDecisionBridgeResult,
@@ -64,7 +69,9 @@ KIS_INTRADAY_DONCHIAN_SLIPPAGE_BPS = Decimal("2")
 KIS_INTRADAY_DONCHIAN_DECISION_TTL = timedelta(minutes=2)
 
 _SAFE_RUN_LABEL = re.compile(r"[A-Za-z0-9._-]{1,80}", re.ASCII)
+_SHA256_REFERENCE = re.compile(r"sha256:[0-9a-f]{64}", re.ASCII)
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
+_REQUIRED_DATASET_ID_PREFIX = "kis.paper.private.intraday.qqq.nas.m1."
 _CLEAR_EMERGENCY_STATE = EmergencyState(
     stop_new_orders=False,
     cancel_open_orders_requested=False,
@@ -110,6 +117,38 @@ class KisIntradayDonchianReplayRun:
     donchian: DonchianReplayMechanics
     flat_control: LocalPaperControlMechanics
     always_long_control: LocalPaperControlMechanics
+
+
+@dataclass(frozen=True)
+class KisIntradayDonchianReplayReceipt:
+    """Reattached immutable parent evidence for a completed Donchian replay."""
+
+    contract_hash: str
+    precommit_path: Path
+    summary_path: Path
+    contract: dict[str, object]
+    source_dataset_id: str
+    source_dataset_hash: str
+    selected_session_dates_sha256: str
+    session_count: int
+    mechanics: DonchianReplayMechanics
+
+
+@dataclass(frozen=True)
+class DonchianLocalPaperSessionReplay:
+    """In-memory local-paper evidence for one completed Donchian session."""
+
+    mechanics: DonchianReplayMechanics
+    events: tuple[Event, ...]
+    terminal_account: LocalPaperAccount
+
+
+@dataclass(frozen=True)
+class DonchianLocalPaperReplay:
+    """Exact fixed-rule replay retained only for a bounded downstream consumer."""
+
+    mechanics: DonchianReplayMechanics
+    session_replays: tuple[DonchianLocalPaperSessionReplay, ...]
 
 
 @dataclass(frozen=True)
@@ -172,6 +211,62 @@ def select_first_complete_kis_intraday_regular_session_dates(
         if len(selected) == KIS_INTRADAY_SESSION_COUNT:
             return tuple(selected)
     raise ValueError("Donchian replay requires twenty complete regular KIS M1 sessions")
+
+
+def load_kis_intraday_donchian_replay_receipt(
+    *,
+    precommit_path: Path,
+    summary_path: Path,
+    repo_root: Path = _REPOSITORY_ROOT,
+) -> KisIntradayDonchianReplayReceipt:
+    """Reattach one completed Donchian mechanics receipt from external storage only."""
+
+    precommit_file = _resolve_external_artifact_file(precommit_path, repo_root=repo_root)
+    summary_file = _resolve_external_artifact_file(summary_path, repo_root=repo_root)
+    if precommit_file.parent != summary_file.parent:
+        raise ValueError("Donchian replay receipt paths must share one run directory")
+    precommit = _read_json_mapping(precommit_file, "Donchian replay precommit")
+    summary = _read_json_mapping(summary_file, "Donchian replay summary")
+    return _donchian_replay_receipt_from_payloads(
+        precommit=precommit,
+        summary=summary,
+        precommit_path=precommit_file,
+        summary_path=summary_file,
+    )
+
+
+def replay_kis_intraday_session_reset_donchian_local_paper(
+    catalog: CatalogedBars,
+    *,
+    expected_contract_hash: str,
+) -> DonchianLocalPaperReplay:
+    """Replay the fixed Donchian semantics in memory without retaining artifacts."""
+
+    if not isinstance(catalog, CatalogedBars):
+        raise TypeError("Donchian local-paper replay requires CatalogedBars")
+    _require_sha256_reference(expected_contract_hash, "expected Donchian contract hash")
+    _validate_source_catalog(catalog)
+    session_dates = select_first_complete_kis_intraday_regular_session_dates(catalog)
+    plan = build_kis_intraday_cpu_campaign_plan(
+        catalog,
+        session_dates=session_dates,
+        campaign_id=KIS_INTRADAY_DONCHIAN_REPLAY_ID,
+    )
+    contract_hash = "sha256:" + _sha256_json(_contract_payload(plan))
+    if contract_hash != expected_contract_hash:
+        raise ValueError("Donchian local-paper replay contract does not match its parent receipt")
+    session_replays = tuple(
+        _run_donchian_local_paper_evidence(
+            _session_bars(plan.cataloged_bars, session=session),
+            session=session,
+            contract_hash=contract_hash,
+        )
+        for session in plan.session_windows
+    )
+    mechanics = _sum_donchian(item.mechanics for item in session_replays)
+    if not mechanics.all_fills_local_paper or not mechanics.all_terminal_flat:
+        raise RuntimeError("Donchian local-paper replay must remain local-paper and terminal-flat")
+    return DonchianLocalPaperReplay(mechanics=mechanics, session_replays=session_replays)
 
 
 def run_kis_intraday_session_reset_donchian_replay(
@@ -287,6 +382,19 @@ def _run_donchian_local_paper(
     session: SessionWindow,
     contract_hash: str,
 ) -> DonchianReplayMechanics:
+    return _run_donchian_local_paper_evidence(
+        bars,
+        session=session,
+        contract_hash=contract_hash,
+    ).mechanics
+
+
+def _run_donchian_local_paper_evidence(
+    bars: Sequence[Bar],
+    *,
+    session: SessionWindow,
+    contract_hash: str,
+) -> DonchianLocalPaperSessionReplay:
     rule = SessionResetDonchianRule(
         entry_lookback=KIS_INTRADAY_DONCHIAN_ENTRY_LOOKBACK,
         exit_lookback=KIS_INTRADAY_DONCHIAN_EXIT_LOOKBACK,
@@ -349,13 +457,18 @@ def _run_donchian_local_paper(
                 as_of=terminal_signal.end_ts,
             ),
         )
-    return _donchian_mechanics(
+    mechanics = _donchian_mechanics(
         store,
         broker,
         decision_count=decision_count,
         eligible_enter_count=enter_count,
         eligible_exit_count=exit_count,
         forced_terminal_exit_count=forced_terminal_exit_count,
+    )
+    return DonchianLocalPaperSessionReplay(
+        mechanics=mechanics,
+        events=store.iter_events(),
+        terminal_account=broker.account(),
     )
 
 
@@ -760,6 +873,348 @@ def _claim_for_status(status: str) -> str:
             "conformance, profitability, a model, an ensemble, or a Paper input"
         )
     raise ValueError(f"unsupported Donchian replay status: {status}")
+
+
+def _donchian_replay_receipt_from_payloads(
+    *,
+    precommit: Mapping[str, object],
+    summary: Mapping[str, object],
+    precommit_path: Path,
+    summary_path: Path,
+) -> KisIntradayDonchianReplayReceipt:
+    if set(precommit) != {
+        "schema_version",
+        "kind",
+        "status",
+        "run_label",
+        "contract_hash",
+        "contract",
+        "artifact_policy",
+    }:
+        raise ValueError("Donchian replay precommit shape is invalid")
+    if set(summary) != {
+        "schema_version",
+        "kind",
+        "status",
+        "mode",
+        "run_label",
+        "contract_hash",
+        "source",
+        "mechanics",
+        "comparators",
+        "limits",
+        "artifact_policy",
+        "claim",
+    }:
+        raise ValueError("Donchian replay summary shape is invalid")
+    contract = _mapping(precommit.get("contract"), "Donchian replay contract")
+    contract_hash = _text(precommit.get("contract_hash"), "Donchian replay contract hash")
+    _require_sha256_reference(contract_hash, "Donchian replay contract hash")
+    if (
+        precommit.get("schema_version") != 1
+        or precommit.get("kind") != "kis_intraday_donchian_replay_precommit"
+        or precommit.get("status") != "frozen_before_replay"
+        or not _text(precommit.get("run_label"), "Donchian replay run label")
+        or contract_hash != "sha256:" + _sha256_json(contract)
+    ):
+        raise ValueError("Donchian replay precommit is invalid")
+    _validate_parent_contract(contract)
+    _validate_parent_artifact_policy(
+        _mapping(precommit.get("artifact_policy"), "Donchian replay precommit artifact policy")
+    )
+    if (
+        summary.get("schema_version") != 1
+        or summary.get("kind") != "kis_intraday_donchian_replay_summary"
+        or summary.get("status") != "complete"
+        or summary.get("mode") != "offline_local_cache_local_paper_only"
+        or summary.get("run_label") != precommit.get("run_label")
+        or summary.get("contract_hash") != contract_hash
+        or summary.get("limits") != _summary_limits_payload()
+        or not _text(summary.get("claim"), "Donchian replay summary claim")
+    ):
+        raise ValueError("Donchian replay summary is invalid")
+    _validate_parent_artifact_policy(
+        _mapping(summary.get("artifact_policy"), "Donchian replay summary artifact policy")
+    )
+    source = _mapping(contract.get("source"), "Donchian replay source contract")
+    source_dataset_id = _text(source.get("dataset_id"), "Donchian replay dataset id")
+    source_dataset_hash = _text(source.get("dataset_hash"), "Donchian replay dataset hash")
+    selected_session_dates_sha256 = _text(
+        source.get("selected_session_dates_sha256"),
+        "Donchian replay selected session dates hash",
+    )
+    _require_sha256_reference(source_dataset_hash, "Donchian replay dataset hash")
+    _require_sha256_reference(
+        selected_session_dates_sha256,
+        "Donchian replay selected session dates hash",
+    )
+    session_count = _non_negative_int(source.get("session_count"), "Donchian replay session count")
+    summary_source = _mapping(summary.get("source"), "Donchian replay summary source")
+    if (
+        session_count != KIS_INTRADAY_SESSION_COUNT
+        or summary_source
+        != {
+            "dataset_id": source_dataset_id,
+            "dataset_hash": source_dataset_hash,
+            "session_count": session_count,
+        }
+    ):
+        raise ValueError("Donchian replay source binding is invalid")
+    mechanics = _donchian_mechanics_from_payload(
+        _mapping(summary.get("mechanics"), "Donchian replay mechanics")
+    )
+    comparators = _mapping(summary.get("comparators"), "Donchian replay comparators")
+    if set(comparators) != {"flat_time_matched", "always_long_after_warmup_time_matched"}:
+        raise ValueError("Donchian replay comparator shape is invalid")
+    for name in ("flat_time_matched", "always_long_after_warmup_time_matched"):
+        control = _control_mechanics_from_payload(
+            _mapping(comparators.get(name), f"Donchian replay {name} comparator")
+        )
+        if not control.all_fills_local_paper or not control.all_terminal_flat:
+            raise ValueError("Donchian replay comparator is not complete local-paper evidence")
+    if not (
+        mechanics.all_fills_local_paper
+        and mechanics.all_terminal_flat
+        and _rule_activated(mechanics)
+    ):
+        raise ValueError("Donchian replay parent mechanics are not complete local-paper evidence")
+    return KisIntradayDonchianReplayReceipt(
+        contract_hash=contract_hash,
+        precommit_path=precommit_path,
+        summary_path=summary_path,
+        contract=dict(contract),
+        source_dataset_id=source_dataset_id,
+        source_dataset_hash=source_dataset_hash,
+        selected_session_dates_sha256=selected_session_dates_sha256,
+        session_count=session_count,
+        mechanics=mechanics,
+    )
+
+
+def _validate_parent_contract(contract: Mapping[str, object]) -> None:
+    if set(contract) != {"schema_version", "source", "rule", "execution", "controls", "limits"}:
+        raise ValueError("Donchian replay contract shape is invalid")
+    source = _mapping(contract.get("source"), "Donchian replay source contract")
+    rule = _mapping(contract.get("rule"), "Donchian replay rule contract")
+    execution = _mapping(contract.get("execution"), "Donchian replay execution contract")
+    if (
+        set(source)
+        != {
+            "dataset_id",
+            "dataset_hash",
+            "session_count",
+            "selection",
+            "selected_session_dates_sha256",
+        }
+        or contract.get("schema_version") != 1
+        or not _text(source.get("dataset_id"), "Donchian replay dataset id").startswith(
+            _REQUIRED_DATASET_ID_PREFIX
+        )
+        or source.get("selection") != "first_20_complete_regular_sessions_ascending"
+        or rule
+        != {
+            "id": "session-reset-donchian-v1",
+            "entry_lookback": KIS_INTRADAY_DONCHIAN_ENTRY_LOOKBACK,
+            "exit_lookback": KIS_INTRADAY_DONCHIAN_EXIT_LOOKBACK,
+            "channel_excludes_trigger_bar": True,
+            "session_local_warmup_bars": KIS_INTRADAY_DONCHIAN_ENTRY_LOOKBACK,
+        }
+        or execution
+        != {
+            "decision": "completed_1m_bar_end",
+            "entry_exit": "next_completed_1m_bar_open",
+            "terminal_exit": "predeclared_penultimate_bar_decision_final_bar_open_fill",
+            "target_exposure": str(KIS_INTRADAY_DONCHIAN_TARGET_EXPOSURE),
+            "maximum_quantity": str(KIS_INTRADAY_DONCHIAN_MAXIMUM_QUANTITY),
+            "fee_bps": str(KIS_INTRADAY_DONCHIAN_FEE_BPS),
+            "slippage_bps": str(KIS_INTRADAY_DONCHIAN_SLIPPAGE_BPS),
+        }
+        or contract.get("controls")
+        != ["flat_time_matched", "always_long_after_warmup_time_matched"]
+        or contract.get("limits")
+        != {
+            "decision_time_availability": "not_observed",
+            "performance_metrics_retained": False,
+            "post_outcome_tuning_allowed": False,
+            "promotion_allowed": False,
+            "paper_input_allowed": False,
+            "gpu_eligible": False,
+        }
+    ):
+        raise ValueError("Donchian replay contract semantics are invalid")
+
+
+def _donchian_mechanics_from_payload(payload: Mapping[str, object]) -> DonchianReplayMechanics:
+    if set(payload) != {
+        "decision_count",
+        "eligible_enter_count",
+        "eligible_exit_count",
+        "forced_terminal_exit_count",
+        "local_paper_fill_count",
+        "all_fills_local_paper",
+        "all_terminal_flat",
+        "rule_activated",
+        "event_replay_digest",
+    }:
+        raise ValueError("Donchian replay mechanics shape is invalid")
+    mechanics = DonchianReplayMechanics(
+        decision_count=_non_negative_int(payload.get("decision_count"), "Donchian decision count"),
+        eligible_enter_count=_non_negative_int(
+            payload.get("eligible_enter_count"), "Donchian eligible enter count"
+        ),
+        eligible_exit_count=_non_negative_int(
+            payload.get("eligible_exit_count"), "Donchian eligible exit count"
+        ),
+        forced_terminal_exit_count=_non_negative_int(
+            payload.get("forced_terminal_exit_count"), "Donchian terminal exit count"
+        ),
+        local_paper_fill_count=_non_negative_int(
+            payload.get("local_paper_fill_count"), "Donchian local-paper fill count"
+        ),
+        all_fills_local_paper=_bool(
+            payload.get("all_fills_local_paper"), "Donchian local-paper flag"
+        ),
+        all_terminal_flat=_bool(
+            payload.get("all_terminal_flat"), "Donchian terminal-flat flag"
+        ),
+        replay_digest=_text(payload.get("event_replay_digest"), "Donchian replay digest"),
+    )
+    _require_sha256_reference(mechanics.replay_digest, "Donchian replay digest")
+    if payload.get("rule_activated") is not _rule_activated(mechanics):
+        raise ValueError("Donchian replay rule activation is inconsistent")
+    return mechanics
+
+
+def _control_mechanics_from_payload(payload: Mapping[str, object]) -> LocalPaperControlMechanics:
+    if set(payload) != {
+        "local_paper_fill_count",
+        "all_fills_local_paper",
+        "all_terminal_flat",
+        "event_replay_digest",
+    }:
+        raise ValueError("Donchian replay control mechanics shape is invalid")
+    mechanics = LocalPaperControlMechanics(
+        local_paper_fill_count=_non_negative_int(
+            payload.get("local_paper_fill_count"), "Donchian control local-paper fill count"
+        ),
+        all_fills_local_paper=_bool(
+            payload.get("all_fills_local_paper"), "Donchian control local-paper flag"
+        ),
+        all_terminal_flat=_bool(
+            payload.get("all_terminal_flat"), "Donchian control terminal-flat flag"
+        ),
+        replay_digest=_text(payload.get("event_replay_digest"), "Donchian control replay digest"),
+    )
+    _require_sha256_reference(mechanics.replay_digest, "Donchian control replay digest")
+    return mechanics
+
+
+def _validate_parent_artifact_policy(policy: Mapping[str, object]) -> None:
+    if (
+        set(policy)
+        != {
+            "root",
+            "repo_storage_allowed",
+            "raw_market_data_written",
+            "raw_fill_events_retained",
+            "credential_read",
+            "network_called",
+            "external_broker_called",
+        }
+        or not _text(policy.get("root"), "Donchian replay artifact root")
+        or any(
+            policy.get(field) is not False
+            for field in (
+                "repo_storage_allowed",
+                "raw_market_data_written",
+                "raw_fill_events_retained",
+                "credential_read",
+                "network_called",
+                "external_broker_called",
+            )
+        )
+    ):
+        raise ValueError("Donchian replay artifact policy is invalid")
+
+
+def _summary_limits_payload() -> dict[str, object]:
+    return {
+        "decision_time_availability": "not_observed",
+        "performance_metrics_retained": False,
+        "promotion_allowed": False,
+        "paper_input_allowed": False,
+        "gpu_eligible": False,
+    }
+
+
+def _validate_source_catalog(catalog: CatalogedBars) -> None:
+    if not catalog.dataset_id.startswith(_REQUIRED_DATASET_ID_PREFIX):
+        raise ValueError("Donchian local-paper replay requires the QQQ/NAS M1 source contract")
+    _require_sha256_reference(catalog.dataset_hash, "Donchian local-paper dataset hash")
+
+
+def _resolve_external_artifact_file(path: Path, *, repo_root: Path) -> Path:
+    candidate = Path(path).absolute()
+    if (
+        _has_existing_symlink_component(candidate)
+        or candidate.is_symlink()
+        or not candidate.is_file()
+    ):
+        raise ValueError("Donchian replay parent artifact must be a non-symlink file")
+    resolved = candidate.resolve(strict=True)
+    resolved_repo = Path(repo_root).resolve(strict=False)
+    if resolved == resolved_repo or resolved.is_relative_to(resolved_repo):
+        raise ValueError("Donchian replay parent artifact must stay outside the Git workspace")
+    return resolved
+
+
+def _has_existing_symlink_component(path: Path) -> bool:
+    absolute = path.absolute()
+    current = Path(absolute.anchor)
+    for part in absolute.parts[1:]:
+        current = current / part
+        if not current.exists():
+            return False
+        if current.is_symlink():
+            return True
+    return False
+
+
+def _read_json_mapping(path: Path, label: str) -> Mapping[str, object]:
+    try:
+        decoded = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise ValueError(f"{label} is unreadable") from error
+    return _mapping(decoded, label)
+
+
+def _mapping(value: object, label: str) -> Mapping[str, object]:
+    if not isinstance(value, Mapping) or any(not isinstance(key, str) for key in value):
+        raise ValueError(f"{label} must be a string-keyed mapping")
+    return value
+
+
+def _text(value: object, label: str) -> str:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{label} must be a nonempty string")
+    return value
+
+
+def _non_negative_int(value: object, label: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        raise ValueError(f"{label} must be a non-negative integer")
+    return value
+
+
+def _bool(value: object, label: str) -> bool:
+    if not isinstance(value, bool):
+        raise ValueError(f"{label} must be a bool")
+    return value
+
+
+def _require_sha256_reference(value: str, label: str) -> None:
+    if _SHA256_REFERENCE.fullmatch(value) is None:
+        raise ValueError(f"{label} must be a sha256 reference")
 
 
 def _session_bars(catalog: CatalogedBars, *, session: SessionWindow) -> tuple[Bar, ...]:
