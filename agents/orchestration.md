@@ -41,7 +41,7 @@ account identifiers.
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
-| GPU allocation | Research Steward / Engine Research | RTX 4090 | No frozen input-qualified predictive campaign is ready. CPU preparation may continue; GPU stays unallocated. |
+| GPU allocation | Research Steward / Engine Research | RTX 4090 | No frozen input-qualified predictive campaign is ready. The five legacy frozen custody records are terminally `non_promoting_abandoned` under the external reconciliation receipt; CPU preparation may continue and GPU stays unallocated. |
 | MTF feature-schema expansion | Engine Research | Existing matrix, feasibility, and profiled-input contracts | Rejected as a duplicate target-free implementation. Reuse the existing owners; do not add a new feature-schema artifact path until a frozen predictive campaign needs it. |
 
 ## Current Bottleneck
