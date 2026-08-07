@@ -249,6 +249,16 @@ strongest kill test before target evaluation or GPU consideration.
   its official weight card is `CC-BY-NC-4.0` and research-only. Neither model's
   weights or dependencies were downloaded. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos-2-20260804-r1\source-retrieval.json`.
+- A causal multi-timeframe local-linear-trend Kalman state estimator is a
+  distinct `source_only_input_unavailable` feature direction. Filter-only
+  level/slope updates need only ordered completed log-closes, but its original
+  source is non-financial and current KIS input lacks qualified decision-time
+  availability/finality plus a frozen split, cost, and replay contract. Freeze
+  noise settings on an earlier causal block and reject it against zero-return
+  and persistence in every predeclared time-disjoint MTF cell. No code,
+  campaign, GPU, ensemble, Paper, or profitability consequence follows.
+  Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\kalman-filter-mtf-source-20260807-r1\source-retrieval.json`.
 - Moreira and Muir's volatility-managed exposure is an independently retrieved
   allocation-layer candidate, not a directional model. Its native monthly
   realized-variance scaling needs a future frozen causal D1 baseline and later
