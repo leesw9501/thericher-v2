@@ -16,6 +16,12 @@ strongest kill test before target evaluation or GPU consideration.
 
 - No frozen, input-qualified predictive campaign is active. Do not train or
   allocate GPU merely to raise utilization.
+- The exact 2026-08-08 task-owned QQQ/NAS and SPY/AMS M1 chain is
+  `input_unavailable`: its offline-verified capture binding is cumulatively
+  `incomplete`, with decision-time availability and provider finality still
+  unobserved. It cannot freeze a dataset, target, chronological split, or
+  30/60/90-minute window matrix, so Engine Research retains no GPU appointment
+  or predictive campaign from this result.
 - **Completed source-local mechanics package:**
   `source-local-session-reset-ema-mechanics-v1` replayed the pure 15/30
   session-reset EMA rule through the existing `source: local_paper` boundary

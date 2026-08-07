@@ -14,6 +14,27 @@ external artifacts retain history.
 
 ## Current Objective
 
+`task-owned-kis-intraday-causal-observation-qualification-v1` is complete.
+The caller-selected 2026-08-08 06:20 KST terminal
+`intraday-head-20260807T2120007624227Z` reattached through the offline
+source-safe reader as `complete` with a verified exact capture binding, but
+that binding's cumulative coverage category is `incomplete`. The exact
+QQQ/NAS and SPY/AMS M1 input is therefore `input_unavailable`: it does not
+establish a completed session, decision-time availability, or provider
+finality. The terminal's source-safe downstream statuses create no broker,
+fill, PnL, alpha, or model conclusion. The required falsification-first Claude
+request exhausted the local CLI's weekly quota, so its review is
+`review_unavailable`, not agreement. No new reader was needed because the
+existing hash-bound projection reproduces this narrow no-promotion decision.
+
+The next objective is `task-owned-kis-intraday-causal-evidence-refresh-v1`.
+Only the existing task may produce the next candidate; its next owned
+invocation is 2026-08-11 00:29 KST. Reattach a caller-selected later terminal
+and its exact bound evidence offline, then qualify only if every causal,
+completed-bar, chronological-split, decision-time availability, and finality
+condition is separately evidenced. Otherwise preserve a scoped
+`input_unavailable` fact and let that task retain the next attempt.
+
 `kis-paper-m1-historical-reach-probe-v1` is complete. Its one shared in-memory
 KIS Paper client made one current-day M1 GET for each fixed QQQ/NAS and SPY/AMS
 target, with the first target issuing one token and the second reusing it. Both

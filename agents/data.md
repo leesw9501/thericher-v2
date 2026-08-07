@@ -40,18 +40,16 @@ undocumented timestamp seed.
 
 ## Ready / Owned / Due
 
-- **Current-head recovery:** the exact 2026-08-07 06:20 KST task terminal
-  remains `recovery/collection_exit_nonzero` with a verified incomplete capture
-  binding and `rejected/minute_duplicate_conflict` for both targets. Its absent
-  future provenance fields remain `not_recorded_legacy`; it is neither
-  rewritten nor reclassified. The existing task now enables a narrowly scoped
-  recovery: only a collected candidate against an immutable committed head with
-  no cursor may quarantine that active head into a hash-bound marker. The
-  original manifest/raw bytes survive, the conflicting invocation stays
-  non-promoting and rejected, and a later compatible task-owned capture may
-  append once. Partial heads, cursor-backed history, malformed markers, and
-  candidate-batch conflicts remain preserved or fail closed. The existing task
-  next owns 2026-08-08 00:29 KST; do not manually rerun or duplicate it.
+- **Current causal-input qualification:** the caller-selected 2026-08-08 06:20
+  KST terminal `intraday-head-20260807T2120007624227Z` reattaches offline as
+  `complete` with an exact verified capture binding, but that binding's
+  cumulative-coverage category is `incomplete`. The input is therefore
+  `input_unavailable` for the QQQ/NAS and SPY/AMS M1 causal consumer: it lacks
+  a complete completed-session chain and retains neither decision-time
+  availability nor provider-finality evidence. This is an exact evidence-chain
+  classification, not a scheduler-result, raw-data, model, Paper, fill, PnL,
+  or alpha claim. The existing task next owns 2026-08-11 00:29 KST; do not
+  manually rerun or duplicate it.
 - **Completed IWM current-head ingestion:**
   `kis-paper-iwm-m1-current-head-ingestion-v1` accepted one IWM/AMS current-day
   page at 2026-08-07 01:46 UTC and retained one immutable, target-isolated

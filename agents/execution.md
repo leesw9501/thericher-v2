@@ -23,7 +23,7 @@ cancelled-and-clean virtual-Paper execution result only: no fill, PnL,
 profitability, or model conclusion follows. Its latest 2026-08-06 23:35 KST
 Scheduler result is `0`; reattaching that source-safe session outcome remains
 outside this execution package. The same existing task owns the next
-opportunity at 2026-08-07 23:35 KST; do not manually invoke or duplicate it.
+opportunity at 2026-08-10 23:35 KST; do not manually invoke or duplicate it.
 
 The existing `thericher-kis-paper-quote-session` Windows task owned one current
 virtual-Paper canary at 2026-08-04 23:35 KST and exited with Task Scheduler

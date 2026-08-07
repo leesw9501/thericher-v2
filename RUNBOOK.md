@@ -1487,6 +1487,29 @@ quote-session, and intraday-head sanitized outcomes. It performs no KIS call
 itself; the named Windows tasks remain the only recurring KIS-facing
 execution/data jobs.
 
+### Intraday Causal-Input Reattachment
+
+For one caller-selected `thericher-kis-paper-intraday-head` terminal, use only
+the offline projection below. It follows the task-owned current pointer and
+verifies its immutable terminal hash and same-run capture binding; it never
+loads credentials, starts Docker, reads a broker route, or opens raw minute
+rows.
+
+```powershell
+$env:THERICHER_HOST_MODEL_ARTIFACT_ROOT = 'D:\thericher-v2\model-artifacts'
+$env:THERICHER_HOST_MARKET_DATA_ROOT = 'D:\market_data'
+uv run python scripts\project_kis_paper_intraday_head_schedule_receipt.py
+```
+
+A terminal is not a causal-input qualification. Classify the exact input as
+`input_unavailable` when the bound cumulative coverage is incomplete or when
+completed-bar/session geometry, target/hash identity, chronological split,
+decision-time availability, or provider finality is absent. Never replace a
+missing fact with a scheduler exit code, cache timestamp, terminal page, or
+latest-artifact lookup. The existing Windows task alone owns the next attempt;
+continue independent Execution observation and CPU preparation without a
+foreground wait.
+
 ## Bounded Daily SPY Stability Observer
 
 `thericher-kis-paper-daily-spy-stability-observer` is a Data-only Windows task
