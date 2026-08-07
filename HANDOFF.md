@@ -97,10 +97,27 @@ broker claim. Evidence:
 `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-feasibility-v1\20260807-qqq-mtf-window-r3\summary.json`.
 
 The next bounded objective is shared Data/Engine
-`source-local-qqq-mtf-window-matrix-v1`: bind the same frozen local input to
-the already canonical six-profile observation-window matrix before any target
-or model result is read. It remains target-free, CPU-only, and outside KIS,
-Paper, GPU, and broker routes.
+`source-local-qqq-mtf-window-matrix-v1` is complete. Its immutable
+`20260807-qqq-mtf-matrix-r2` external receipt reattests the mechanics and
+baseline-window parents before consuming the same 20-session QQQ/NAS local
+catalog. It freezes the ordered `short`, `kis_baseline`, `one_hour`, `medium`,
+`long`, and `extended` profiles at 15:30 ET, verifies every selected window
+ends exactly at that cutoff, and retains aggregate geometry only. The fixed
+profiles contain respectively 300/60/60/40/40, 600/120/60/40/40,
+1200/240/120/40/40, 1800/360/240/40/40, 2400/720/240/40/40, and
+3600/720/360/40/40 completed M1/M5/M10/H1/H3 window bars. Every profile
+explicitly excludes 20 H1 and 20 H3 terminal partial buckets. It creates no
+target, model, performance, selection, GPU, Paper-input, or broker claim.
+Evidence:
+`D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-matrix-v1\20260807-qqq-mtf-matrix-r2\summary.json`.
+
+The next bounded objective is shared Engine/Execution
+`source-local-ema-local-paper-pnl-attribution-v1`: reattest the completed
+fixed 15/30 EMA mechanics receipt, then calculate one cost-aware aggregate
+`source: local_paper` attribution from the exact same frozen local replay. It
+is source-limited, retrospective, and non-promoting; it cannot select a model,
+authorize Paper activity, or make a profitability claim beyond its exact local
+replay scope.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,

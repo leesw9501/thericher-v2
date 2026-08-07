@@ -42,6 +42,17 @@ strongest kill test before target evaluation or GPU consideration.
   performance, GPU, Paper, or promotion consequence. The next ready package
   freezes and attests the whole canonical six-profile window matrix before any
   comparative result exists.
+- **Completed causal-window matrix:**
+  `source-local-qqq-mtf-window-matrix-v1` reattests the mechanics and baseline
+  parent receipts before freezing the ordered six-profile catalog at 15:30 ET.
+  Its `20260807-qqq-mtf-matrix-r2` receipt records only profile/timeframe
+  aggregate geometry and opaque commitments from the same 20 local QQQ/NAS
+  sessions; baseline geometry must exactly equal the completed baseline receipt.
+  It remains target-free and cannot rank a profile, select a model, form an
+  ensemble, allocate GPU, create a Paper input, or claim performance. The next
+  ready package is one separately reattested, source-limited, local-Paper PnL
+  attribution for the already frozen 15/30 EMA replay, not a comparison or
+  strategy selection exercise.
 - A bounded metadata-only Data probe classifies the existing KIS Paper private
   D1 cache as `input_unavailable` for a 15/30 daily EMA candidate: its rows
   expose `close`, not an adjusted-close or corporate-action contract; coverage

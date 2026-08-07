@@ -338,6 +338,15 @@ undocumented timestamp seed.
   CPU-only mechanics, not availability/finality, provider, model, Paper, or
   data-qualification evidence. Evidence:
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-feasibility-v1\20260807-qqq-mtf-window-r3\summary.json`.
+- **Completed QQQ causal-window matrix:** the immutable
+  `20260807-qqq-mtf-matrix-r2` receipt reattests both external parent receipts
+  before binding the same 20-session QQQ/NAS catalog to the ordered canonical
+  `short`, `kis_baseline`, `one_hour`, `medium`, `long`, and `extended`
+  profiles at 15:30 ET. It retains only aggregate profile/timeframe counts and
+  opaque commitments; every profile drops 20 H1 and 20 H3 terminal partial
+  buckets. It has no target, availability/finality, provider, model, Paper,
+  performance, or data-qualification consequence. Evidence:
+  `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-matrix-v1\20260807-qqq-mtf-matrix-r2\summary.json`.
 - All derived `5m`, `10m`, `1h`, and `3h` views must come from a caller-owned,
   exchange-calendar-resampled completed M1 sequence. Partial and gapped bars
   remain unavailable.

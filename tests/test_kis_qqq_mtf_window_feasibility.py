@@ -203,8 +203,8 @@ def test_window_cutoff_tracks_eastern_time_across_dst() -> None:
     summer = _session_window(date(2026, 7, 6))
     winter = _session_window(date(2026, 1, 5))
 
-    summer_cutoff = window_feasibility._session_cutoff(summer.open_ts)
-    winter_cutoff = window_feasibility._session_cutoff(winter.open_ts)
+    summer_cutoff = window_feasibility.kis_qqq_mtf_window_cutoff(summer.open_ts)
+    winter_cutoff = window_feasibility.kis_qqq_mtf_window_cutoff(winter.open_ts)
 
     assert summer_cutoff.astimezone(US_EQUITY_EASTERN).strftime("%H:%M") == "15:30"
     assert winter_cutoff.astimezone(US_EQUITY_EASTERN).strftime("%H:%M") == "15:30"

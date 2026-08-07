@@ -62,6 +62,8 @@ class KisQqqMtfMechanicsReceipt:
     """Source-safe binding extracted from a completed MTF mechanics artifact."""
 
     contract_hash: str
+    precommit_path: Path
+    summary_path: Path
     source_dataset_id: str
     source_dataset_hash: str
     source_input_id: str
@@ -81,6 +83,12 @@ class KisQqqMtfMechanicsReceipt:
         )
         if (
             any(_SHA256_REFERENCE.fullmatch(value) is None for value in references)
+            or not isinstance(self.precommit_path, Path)
+            or not isinstance(self.summary_path, Path)
+            or self.precommit_path.is_symlink()
+            or self.summary_path.is_symlink()
+            or not self.precommit_path.is_file()
+            or not self.summary_path.is_file()
             or not self.source_dataset_id
             or not self.source_input_id
             or self.calendar_scope != "2026"
@@ -115,6 +123,71 @@ class KisQqqMtfWindowFeasibilityRun:
     geometry: tuple[QqqMtfWindowGeometry, ...]
 
 
+@dataclass(frozen=True)
+class KisQqqMtfWindowFeasibilityReceipt:
+    """Source-safe binding extracted from one completed baseline-window receipt."""
+
+    contract_hash: str
+    precommit_path: Path
+    summary_path: Path
+    mechanics_contract_hash: str
+    source_dataset_id: str
+    source_dataset_hash: str
+    source_input_id: str
+    source_input_hash: str
+    selected_session_dates_sha256: str
+    causal_completed_m1_prefix_commitment: str
+    calendar_scope: str
+    session_count: int
+    profile_catalog_sha256: str
+    geometry: tuple[QqqMtfWindowGeometry, ...]
+
+    def __post_init__(self) -> None:
+        references = (
+            self.contract_hash,
+            self.mechanics_contract_hash,
+            self.source_dataset_hash,
+            self.source_input_hash,
+            self.selected_session_dates_sha256,
+            self.causal_completed_m1_prefix_commitment,
+            self.profile_catalog_sha256,
+        )
+        expected_profile = _profile()
+        geometry = tuple(self.geometry)
+        if (
+            any(_SHA256_REFERENCE.fullmatch(value) is None for value in references)
+            or not isinstance(self.precommit_path, Path)
+            or not isinstance(self.summary_path, Path)
+            or self.precommit_path.is_symlink()
+            or self.summary_path.is_symlink()
+            or not self.precommit_path.is_file()
+            or not self.summary_path.is_file()
+            or not self.source_dataset_id
+            or not self.source_input_id
+            or self.calendar_scope != "2026"
+            or self.session_count != KIS_QQQ_MTF_RESAMPLING_SESSION_COUNT
+            or self.profile_catalog_sha256
+            != CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG.identity_sha256
+            or tuple(item.timeframe for item in geometry) != KIS_QQQ_MTF_RESAMPLING_TIMEFRAMES
+            or any(
+                item.lookback != expected_profile.lookbacks[item.timeframe]
+                or item.completed_window_bar_count
+                != expected_profile.lookbacks[item.timeframe]
+                * KIS_QQQ_MTF_RESAMPLING_SESSION_COUNT
+                or item.terminal_partial_exclusion_count
+                != (
+                    KIS_QQQ_MTF_RESAMPLING_SESSION_COUNT
+                    if item.timeframe in (Timeframe.H1, Timeframe.H3)
+                    else 0
+                )
+                or _SHA256_REFERENCE.fullmatch(item.causal_window_digest) is None
+                for item in geometry
+            )
+        ):
+            raise ValueError("QQQ MTF window feasibility receipt is invalid")
+        object.__setattr__(self, "geometry", geometry)
+
+
 def load_kis_qqq_mtf_mechanics_receipt(
     *,
     precommit_path: Path,
@@ -129,7 +202,34 @@ def load_kis_qqq_mtf_mechanics_receipt(
         raise ValueError("QQQ MTF mechanics receipt paths must share one run directory")
     precommit = _read_json_mapping(precommit_file)
     summary = _read_json_mapping(summary_file)
-    return _mechanics_receipt_from_payloads(precommit=precommit, summary=summary)
+    return _mechanics_receipt_from_payloads(
+        precommit=precommit,
+        summary=summary,
+        precommit_path=precommit_file,
+        summary_path=summary_file,
+    )
+
+
+def load_kis_qqq_mtf_window_feasibility_receipt(
+    *,
+    precommit_path: Path,
+    summary_path: Path,
+    repo_root: Path = _REPOSITORY_ROOT,
+) -> KisQqqMtfWindowFeasibilityReceipt:
+    """Load one externally stored baseline-window receipt without raw data."""
+
+    precommit_file = _resolve_external_artifact_path(precommit_path, repo_root=repo_root)
+    summary_file = _resolve_external_artifact_path(summary_path, repo_root=repo_root)
+    if precommit_file.parent != summary_file.parent:
+        raise ValueError("QQQ MTF window receipt paths must share one run directory")
+    precommit = _read_json_mapping(precommit_file)
+    summary = _read_json_mapping(summary_file)
+    return _window_feasibility_receipt_from_payloads(
+        precommit=precommit,
+        summary=summary,
+        precommit_path=precommit_file,
+        summary_path=summary_file,
+    )
 
 
 def run_kis_qqq_mtf_window_feasibility(
@@ -153,7 +253,7 @@ def run_kis_qqq_mtf_window_feasibility(
         run_label=run_label,
     )
     try:
-        input_data = _prepare_frozen_input(catalog, mechanics_receipt=mechanics_receipt)
+        input_data = prepare_kis_qqq_mtf_window_input(catalog, mechanics_receipt=mechanics_receipt)
     except _InputUnavailable as error:
         return _write_input_unavailable_run(
             catalog=catalog,
@@ -218,7 +318,7 @@ def run_kis_qqq_mtf_window_feasibility(
     )
 
 
-def _prepare_frozen_input(
+def prepare_kis_qqq_mtf_window_input(
     catalog: CatalogedBars,
     *,
     mechanics_receipt: KisQqqMtfMechanicsReceipt,
@@ -307,7 +407,7 @@ def _materialize_geometry(
     terminal_counts = {timeframe: 0 for timeframe in KIS_QQQ_MTF_RESAMPLING_TIMEFRAMES}
     records = {timeframe: [] for timeframe in KIS_QQQ_MTF_RESAMPLING_TIMEFRAMES}
     for session in input_data.session_windows:
-        cutoff = _session_cutoff(session.open_ts)
+        cutoff = kis_qqq_mtf_window_cutoff(session.open_ts)
         if cutoff <= session.open_ts or cutoff >= session.close_ts:
             raise _InputUnavailable("incomplete_or_invalid_causal_window")
         try:
@@ -387,7 +487,7 @@ def _resample_terminal_bucket(
     return resample_session_bars(prefix, timeframe, session=session).skipped_bucket_starts
 
 
-def _session_cutoff(session_open: datetime) -> datetime:
+def kis_qqq_mtf_window_cutoff(session_open: datetime) -> datetime:
     local_open = require_utc(session_open, "session_open").astimezone(US_EQUITY_EASTERN)
     return local_open.replace(
         hour=KIS_QQQ_MTF_WINDOW_CUTOFF.hour,
@@ -605,6 +705,8 @@ def _mechanics_receipt_from_payloads(
     *,
     precommit: Mapping[str, object],
     summary: Mapping[str, object],
+    precommit_path: Path,
+    summary_path: Path,
 ) -> KisQqqMtfMechanicsReceipt:
     if (
         precommit.get("kind") != "kis_qqq_mtf_resampling_mechanics_precommit"
@@ -631,6 +733,8 @@ def _mechanics_receipt_from_payloads(
     try:
         return KisQqqMtfMechanicsReceipt(
             contract_hash=_string(precommit.get("contract_hash")),
+            precommit_path=precommit_path,
+            summary_path=summary_path,
             source_dataset_id=_string(source.get("dataset_id")),
             source_dataset_hash=_string(source.get("dataset_hash")),
             source_input_id=_string(source.get("input_id")),
@@ -644,6 +748,107 @@ def _mechanics_receipt_from_payloads(
         )
     except (TypeError, ValueError) as error:
         raise ValueError("QQQ MTF mechanics receipt is invalid") from error
+
+
+def _window_feasibility_receipt_from_payloads(
+    *,
+    precommit: Mapping[str, object],
+    summary: Mapping[str, object],
+    precommit_path: Path,
+    summary_path: Path,
+) -> KisQqqMtfWindowFeasibilityReceipt:
+    if (
+        precommit.get("kind") != "kis_qqq_mtf_window_feasibility_precommit"
+        or precommit.get("status") != "frozen_before_materialization"
+        or summary.get("kind") != "kis_qqq_mtf_window_feasibility_summary"
+        or summary.get("status") != "complete"
+        or summary.get("input_unavailable_reason") is not None
+        or precommit.get("contract_hash") != summary.get("contract_hash")
+        or summary.get("mode") != "offline_existing_local_catalog_only"
+        or summary.get("eligible_session_count") != KIS_QQQ_MTF_RESAMPLING_SESSION_COUNT
+        or summary.get("limits") != _limits_payload()
+    ):
+        raise ValueError("QQQ MTF window feasibility receipt is invalid")
+    contract = _mapping(precommit.get("contract"))
+    expected_contract_hash = "sha256:" + _sha256_json(contract)
+    if (
+        precommit.get("contract_hash") != expected_contract_hash
+        or contract.get("feasibility_id") != KIS_QQQ_MTF_WINDOW_FEASIBILITY_ID
+    ):
+        raise ValueError("QQQ MTF window feasibility receipt is invalid")
+    source_mechanics = _mapping(contract.get("source_mechanics"))
+    if (
+        source_mechanics.get("mechanics_id") != KIS_QQQ_MTF_RESAMPLING_MECHANICS_ID
+        or source_mechanics.get("contract_hash") != summary.get("source_mechanics_contract_hash")
+    ):
+        raise ValueError("QQQ MTF window feasibility receipt is invalid")
+    source = _mapping(contract.get("source"))
+    summary_source = _mapping(summary.get("source"))
+    source_fields = ("dataset_id", "dataset_hash", "input_id", "input_hash", "session_count")
+    if any(source.get(field) != summary_source.get(field) for field in source_fields):
+        raise ValueError("QQQ MTF window feasibility receipt is invalid")
+    profile = _mapping(contract.get("profile"))
+    expected_profile = _profile()
+    expected_contract_profile = {
+        "profile_id": expected_profile.profile_id,
+        "catalog_sha256": CANONICAL_CAUSAL_MTF_WINDOW_PROFILE_CATALOG.identity_sha256,
+        "lookbacks": _profile_lookbacks_payload(expected_profile),
+        "cutoff": "15:30 America/New_York",
+        "all_selected_window_ends_equal_cutoff": True,
+    }
+    expected_summary_profile = {
+        key: value
+        for key, value in expected_contract_profile.items()
+        if key != "all_selected_window_ends_equal_cutoff"
+    }
+    summary_profile = _mapping(summary.get("profile"))
+    if profile != expected_contract_profile or summary_profile != expected_summary_profile:
+        raise ValueError("QQQ MTF window feasibility receipt is invalid")
+    try:
+        return KisQqqMtfWindowFeasibilityReceipt(
+            contract_hash=_string(precommit.get("contract_hash")),
+            precommit_path=precommit_path,
+            summary_path=summary_path,
+            mechanics_contract_hash=_string(source_mechanics.get("contract_hash")),
+            source_dataset_id=_string(source.get("dataset_id")),
+            source_dataset_hash=_string(source.get("dataset_hash")),
+            source_input_id=_string(source.get("input_id")),
+            source_input_hash=_string(source.get("input_hash")),
+            selected_session_dates_sha256=_string(source.get("selected_session_dates_sha256")),
+            causal_completed_m1_prefix_commitment=_string(
+                source.get("causal_completed_m1_prefix_commitment")
+            ),
+            calendar_scope=_string(source.get("calendar_scope")),
+            session_count=_integer(source.get("session_count")),
+            profile_catalog_sha256=_string(profile.get("catalog_sha256")),
+            geometry=_window_geometry_from_payload(summary.get("geometry")),
+        )
+    except (TypeError, ValueError) as error:
+        raise ValueError("QQQ MTF window feasibility receipt is invalid") from error
+
+
+def _window_geometry_from_payload(value: object) -> tuple[QqqMtfWindowGeometry, ...]:
+    if not isinstance(value, list):
+        raise ValueError("QQQ MTF window feasibility receipt is invalid")
+    geometry: list[QqqMtfWindowGeometry] = []
+    for timeframe, raw_item in zip(KIS_QQQ_MTF_RESAMPLING_TIMEFRAMES, value, strict=False):
+        item = _mapping(raw_item)
+        if item.get("timeframe") != timeframe.value:
+            raise ValueError("QQQ MTF window feasibility receipt is invalid")
+        geometry.append(
+            QqqMtfWindowGeometry(
+                timeframe=timeframe,
+                lookback=_integer(item.get("lookback")),
+                completed_window_bar_count=_integer(item.get("completed_window_bar_count")),
+                terminal_partial_exclusion_count=_integer(
+                    item.get("terminal_partial_exclusion_count")
+                ),
+                causal_window_digest=_string(item.get("causal_window_digest")),
+            )
+        )
+    if len(geometry) != len(KIS_QQQ_MTF_RESAMPLING_TIMEFRAMES) or len(value) != len(geometry):
+        raise ValueError("QQQ MTF window feasibility receipt is invalid")
+    return tuple(geometry)
 
 
 def _validate_mechanics_resampling_contract(resampling: Mapping[str, object]) -> None:
