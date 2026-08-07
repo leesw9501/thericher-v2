@@ -27,7 +27,8 @@ CI, or runtime reproducibility work is ready.
   an advisory lock on its shared named runtime volume before any snapshot write.
   Task Scheduler enforces four-minute
   repetition, `IgnoreNew`, no catch-up, and a four-minute execution limit.
-- Storage warning: projected free space below 20 percent.
+- D: was rechecked at 40.42 percent free on 2026-08-07, so no current storage
+  warning applies.
 - Storage hard floor: do not start new large work that crosses 15 percent.
 
 ## Durable Knowledge
