@@ -36,7 +36,7 @@ account identifiers.
 | Donchian local-Paper PnL attribution | Engine Research / Execution | Frozen QQQ/NAS 20-session mechanics receipt and existing FIFO local simulator | Completed: `20260807-donchian-pnl-r1` reattested the parent, recorded 115 closed segments, 230 local-paper fills, gross `-41.984600`, fees `16.5045`, net `-58.489100`, zero open quantity, and exact replay parity. It remains a non-promoting retrospective baseline. |
 | Private Paper operator dashboard | Execution / Infra | Existing KIS Paper read-only account contract and local emergency controls | Completed: Docker reattestation requires an explicit container exception, publishes only `127.0.0.1:8787`, renders unavailable facts explicitly, and UI pause/resume changes local state only. |
 | Read-only Paper account snapshot refresh | Execution / Infra | Existing named bridge and dashboard snapshot reader | Completed: one actual `kis-readonly` refresh was categorical `complete`; its external receipt is fact-minimized and the loopback dashboard immediately read it as available. |
-| Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, snapshot TTL, and task conventions | Ready: a bounded cadence can keep the dashboard useful without changing its credential-free/read-only boundary. |
+| Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, 2026 session inspector, and task conventions | Owned: thericher-kis-paper-snapshot-observer is installed with a four-minute repetition inside one 10-hour KST weekday window, IgnoreNew, a host mutex, no missed-run catch-up, and a four-minute execution limit. Its current off-session check made no Compose or KIS call; the first eligible bridge refresh remains task-owned. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -55,15 +55,16 @@ readiness without claiming model validity.
 
 ## Current Reversible Improvement
 
-Do not wait for the task-owned collection. Keep its scoped recovery contract in
-place and turn the completed one-shot account bridge into a bounded observer;
-this improves Paper observability without a broker-order or strategy-decision
-path.
+Do not wait for the task-owned collection or observer. Keep their scoped
+recovery contracts in place. The observer now improves Paper observability
+without a broker-order or strategy-decision path; its next eligible trigger,
+not foreground orchestration, owns the first recurring read-only refresh.
 
 ## Current Recovery Action
 
 Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation; it is the
-only owner of a later actual KIS collection. Execution owns the next read-only
-Paper account observer cadence; Infra is invoked only for existing Docker and
-task runtime. IWM current-head success remains unrelated to historical M1
-reach.
+only owner of a later actual KIS collection. Execution owns the installed
+thericher-kis-paper-snapshot-observer cadence; its pure session inspector fails
+closed outside the 2026 calendar scope and its next eligible trigger owns the
+first recurring bridge read. Infra is invoked only for existing Docker and task
+runtime. IWM current-head success remains unrelated to historical M1 reach.

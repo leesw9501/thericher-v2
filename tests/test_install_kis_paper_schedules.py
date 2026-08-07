@@ -13,6 +13,7 @@ SCRIPT = (
 
 SAME_DATE_KST_SCHEDULES = {
     "thericher-kis-paper-quote-session": "23:35",
+    "thericher-kis-paper-snapshot-observer": "21:20",
     "thericher-kis-paper-daily-spy-head": "22:15",
     "thericher-kis-paper-daily-spy-stability-observer": "23:15",
     "thericher-kis-paper-daily-spy-session": "23:50",
@@ -37,6 +38,7 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
 
     assert source.count("thericher-kis-paper-daily-backfill") == 1
     assert source.count('Name = "thericher-kis-paper-quote-session"') == 1
+    assert source.count('Name = "thericher-kis-paper-snapshot-observer"') == 1
     assert source.count('Name = "thericher-kis-paper-daily-spy-head"') == 1
     assert source.count('Name = "thericher-kis-paper-daily-spy-stability-observer"') == 1
     assert source.count('Name = "thericher-kis-paper-daily-spy-session"') == 1
@@ -46,6 +48,7 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count('Name = "thericher-kis-paper-daily-broad-backfill"') == 1
     assert source.count('Profile = "kis-paper-daily-backfill"') == 1
     assert source.count('Profile = "kis-paper-session"') == 1
+    assert source.count('Profile = "kis-readonly"') == 1
     assert source.count('Profile = "kis-paper-daily-spy-head"') == 1
     assert source.count('Profile = "kis-paper-daily-spy-stability-observer"') == 1
     assert source.count('Profile = "kis-paper-daily-spy-session"') == 1
@@ -55,6 +58,7 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count('Profile = "kis-paper-daily-broad-backfill"') == 1
     assert source.count('Service = "kis-paper-daily-backfill"') == 1
     assert source.count('Service = "kis-paper-session"') == 1
+    assert source.count('Service = "kis-readonly"') == 1
     assert source.count('Service = "kis-paper-daily-spy-head"') == 1
     assert source.count('Service = "kis-paper-daily-spy-stability-observer"') == 1
     assert source.count('Service = "kis-paper-daily-spy-session"') == 1
@@ -63,6 +67,16 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count('Service = "kis-paper-daily-pair-forward"') == 1
     assert source.count('Service = "kis-paper-daily-broad-backfill"') == 1
     assert source.count('Runner = "run_kis_paper_intraday_head_schedule.ps1"') == 1
+    observer_entry = _schedule_entry(source, "thericher-kis-paper-snapshot-observer")
+    assert 'Profile = "kis-readonly"' in observer_entry
+    assert 'Service = "kis-readonly"' in observer_entry
+    assert 'Runner = "run_paper_snapshot_observer.ps1"' in observer_entry
+    assert 'ImageServices = @("kis-readonly")' in observer_entry
+    assert 'At = "21:20"' in observer_entry
+    assert "RepetitionIntervalMinutes = 4" in observer_entry
+    assert "RepetitionDurationMinutes = 600" in observer_entry
+    assert "RecoverMissedRun = $false" in observer_entry
+    assert "ExecutionLimitMinutes = 4" in observer_entry
     assert source.count("DaysOfWeek = @(") == len(SAME_DATE_KST_SCHEDULES)
     for task_name, schedule_time in SAME_DATE_KST_SCHEDULES.items():
         entry = _schedule_entry(source, task_name)
@@ -163,6 +177,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert '"Korea Standard Time"' in source
     assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward"' in source
     assert '$selectedSchedules.Name -contains "thericher-kis-paper-quote-session"' in source
+    assert '$selectedSchedules.Name -contains "thericher-kis-paper-snapshot-observer"' in source
     assert '$selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-head"' in source
     stability_task = "thericher-kis-paper-daily-spy-stability-observer"
     assert f'$selectedSchedules.Name -contains "{stability_task}"' in source
@@ -173,7 +188,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert '$schedule.ContainsKey("Runner")' in source
     assert '$schedule.ContainsKey("DaysOfWeek")' in source
     assert '"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"' in source
-    assert "New-ScheduledTaskTrigger -Weekly -DaysOfWeek $daysOfWeek -At $_" in source
+    assert "New-ScheduledTaskTrigger -Weekly -DaysOfWeek $DaysOfWeek -At $_" in source
     assert 'At = "23:35"' in source
     assert 'At = "22:15"' in source
     assert 'At = "23:15"' in source
@@ -184,6 +199,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert 'At = "06:55"' in source
     for task_name, recover_missed_run, execution_limit_minutes in (
         ("thericher-kis-paper-quote-session", False, 90),
+        ("thericher-kis-paper-snapshot-observer", False, 4),
         ("thericher-kis-paper-daily-spy-head", True, 90),
         ("thericher-kis-paper-daily-spy-stability-observer", False, 5),
         ("thericher-kis-paper-daily-spy-session", False, 90),
@@ -199,7 +215,11 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
         assert f"RecoverMissedRun = ${str(recover_missed_run).lower()}" in entry
         assert f"ExecutionLimitMinutes = {execution_limit_minutes}" in entry
     assert "$times = @($schedule.At)" in source
-    assert "$times | ForEach-Object" in source
+    assert "function New-LocalDockerScheduleTriggers" in source
+    assert "$hasRepetitionInterval -ne $hasRepetitionDuration" in source
+    assert "MSFT_TaskRepetitionPattern" in source
+    assert "StopAtDurationEnd = $true" in source
+    assert "New-LocalDockerScheduleTriggers -Schedule $schedule -DaysOfWeek $daysOfWeek" in source
     assert "-Trigger $triggers" in source
     assert (
         "New-ScheduledTaskPrincipal -UserId $currentUser "

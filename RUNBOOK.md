@@ -1284,6 +1284,36 @@ allowlisted endpoint, transaction ID, HTTP status, and a narrow KIS `msg_cd`
 code; never a broker message body, `msg1`, account identifier, or free-form
 response text.
 
+### Bounded Account Snapshot Observer
+
+The task-owned observer uses the same one-shot bridge rather than a new KIS
+client or dashboard route. Install or reattest only this named task:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\install_kis_paper_schedules.ps1 `
+  -ScheduleName thericher-kis-paper-snapshot-observer -SkipImageBuild
+```
+
+It starts at 21:20 KST on weekdays and repeats every four minutes for a bounded
+10-hour window. Before it invokes Docker, the credential-free host inspector
+uses the source-backed 2026 US session calendar. Outside a known session it
+exits with a categorical result and makes no Compose or KIS call. During an
+eligible session it invokes only:
+
+```powershell
+docker compose --profile kis-readonly run --rm --no-deps --pull never kis-readonly
+```
+
+Task Scheduler uses `IgnoreNew`, the runner also holds a named host mutex, and
+there is no missed-run catch-up, foreground sleep, or retry loop. A bridge
+failure writes the existing canonical unavailable snapshot; a duplicate runner
+does not overwrite a current snapshot. Inspect task facts without account
+values:
+
+```powershell
+Get-ScheduledTaskInfo -TaskName thericher-kis-paper-snapshot-observer
+```
+
 The current-image bridge reached `balance` (`VTTS3012R`) and received HTTP 500
 with `EGW00201` on 2026-07-21 UTC after a successful image rebuild. It sent no
 order. KIS's official sample repository identifies that code as exceeding the

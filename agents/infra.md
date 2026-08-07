@@ -19,6 +19,11 @@ CI, or runtime reproducibility work is ready.
   snapshot refresh with no port publishing, a read-only root, `/tmp` tmpfs, and
   only the injected `KIS_PAPER_*` values. Its runtime volume is shared with the
   dashboard read-only; its external receipt root is `D:`.
+- The host task `thericher-kis-paper-snapshot-observer` is installed through
+  the existing schedule installer. It runs the credential-free host predicate
+  and then only the existing `kis-readonly` service; no port, Compose profile,
+  mount, or image surface was added. Task Scheduler enforces four-minute
+  repetition, `IgnoreNew`, no catch-up, and a four-minute execution limit.
 - Storage warning: projected free space below 20 percent.
 - Storage hard floor: do not start new large work that crosses 15 percent.
 

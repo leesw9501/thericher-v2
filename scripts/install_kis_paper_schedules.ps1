@@ -42,6 +42,46 @@ function New-LocalDockerTaskSettings {
     return New-ScheduledTaskSettingsSet @settingsArguments
 }
 
+function New-LocalDockerScheduleTriggers {
+    param(
+        [Parameter(Mandatory = $true)]
+        [hashtable]$Schedule,
+        [Parameter(Mandatory = $true)]
+        [string[]]$DaysOfWeek
+    )
+
+    $hasRepetitionInterval = $Schedule.ContainsKey("RepetitionIntervalMinutes")
+    $hasRepetitionDuration = $Schedule.ContainsKey("RepetitionDurationMinutes")
+    if ($hasRepetitionInterval -ne $hasRepetitionDuration) {
+        throw "Schedule repetition requires both interval and duration: $($Schedule.Name)"
+    }
+    if ($hasRepetitionInterval) {
+        $intervalMinutes = [int]$Schedule.RepetitionIntervalMinutes
+        $durationMinutes = [int]$Schedule.RepetitionDurationMinutes
+        if ($intervalMinutes -le 0 -or $durationMinutes -lt $intervalMinutes) {
+            throw "Schedule repetition values are invalid: $($Schedule.Name)"
+        }
+    }
+
+    return @(
+        @($Schedule.At) | ForEach-Object {
+            $trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek $DaysOfWeek -At $_
+            if ($hasRepetitionInterval) {
+                $trigger.Repetition = New-CimInstance `
+                    -ClientOnly `
+                    -Namespace Root/Microsoft/Windows/TaskScheduler `
+                    -ClassName MSFT_TaskRepetitionPattern `
+                    -Property @{
+                        Interval = "PT$intervalMinutes`M"
+                        Duration = "PT$durationMinutes`M"
+                        StopAtDurationEnd = $true
+                    }
+            }
+            $trigger
+        }
+    )
+}
+
 function Assert-KoreaStandardTime {
     $localTimeZone = [System.TimeZoneInfo]::Local
     if (
@@ -127,6 +167,19 @@ $schedules = @(
         DaysOfWeek = @("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
         RecoverMissedRun = $false
         ExecutionLimitMinutes = 90
+    },
+    @{
+        Name = "thericher-kis-paper-snapshot-observer"
+        Profile = "kis-readonly"
+        Service = "kis-readonly"
+        Runner = "run_paper_snapshot_observer.ps1"
+        ImageServices = @("kis-readonly")
+        At = "21:20"
+        DaysOfWeek = @("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+        RepetitionIntervalMinutes = 4
+        RepetitionDurationMinutes = 600
+        RecoverMissedRun = $false
+        ExecutionLimitMinutes = 4
     },
     @{
         Name = "thericher-kis-paper-daily-spy-head"
@@ -276,6 +329,7 @@ if ($RequireExisting) {
 
 if (
     $selectedSchedules.Name -contains "thericher-kis-paper-quote-session" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-snapshot-observer" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-head" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-stability-observer" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-session" `
@@ -321,11 +375,7 @@ foreach ($schedule in $selectedSchedules) {
             "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
         }
     )
-    $triggers = @(
-        $times | ForEach-Object {
-            New-ScheduledTaskTrigger -Weekly -DaysOfWeek $daysOfWeek -At $_
-        }
-    )
+    $triggers = New-LocalDockerScheduleTriggers -Schedule $schedule -DaysOfWeek $daysOfWeek
     $description = New-LocalDockerTaskDescription -Profile $schedule.Profile
     $settings = New-LocalDockerTaskSettings `
         -ExecutionLimitMinutes $schedule.ExecutionLimitMinutes `
