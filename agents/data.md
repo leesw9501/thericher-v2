@@ -441,10 +441,19 @@ undocumented timestamp seed.
   selection is now available before repeated observations accumulate. It has
   no historical, finality, model, or Paper consumer contract; a future append
   package must preserve changed heads as distinct immutable observations.
-- The next Data package measures QQQ/NAS and SPY/AMS historical endpoint reach
-  with target-isolated, bounded serial capability probes. A page count or
-  source-limited result applies only to that exact target/cursor contract and
-  cannot rewrite the existing task's state or become a provider-wide limit.
+- **Completed QQQ/SPY current-day M1 reach probe:** the final one-client,
+  target-isolated `kis-paper-m1-historical-reach-probe-v1` receipt accepted one
+  blank-cursor current-day M1 page for each QQQ/NAS and SPY/AMS target. Both
+  pages were terminal with no recognized continuation; QQQ issued one token,
+  SPY reused it, each target made one minute GET, and neither had a categorical
+  error. The final source-safe elapsed bucket was `under_5_seconds` for each
+  target. Raw rows were discarded, and no scheduled cache,
+  cursor, collector, account/order route, or consumer changed. This bounds only
+  those exact current-day starting requests: remaining prior scope is `unknown`,
+  and it neither proves a provider-wide retention limit nor qualifies data for
+  a model, Paper input, or promotion. The next Data package is a separately
+  bounded explicit-previous-day probe; it may follow only a provider-admitted
+  continuation and must keep the existing QQQ/SPY collector unchanged.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,
   or `outside_window`; `stable` means two separately timed virtual-Paper reads
   matched, not provider finality, point-in-time availability, data

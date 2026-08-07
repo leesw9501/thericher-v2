@@ -2,13 +2,14 @@
 
 ## Objective
 
-Build `kis-paper-m1-historical-reach-probe-v1`.
+Build `kis-paper-m1-previous-day-scope-probe-v1`.
 
-Resolve the exact, provider-observed historical reach and continuation behavior
-of the named KIS Paper M1 endpoint for QQQ/NAS and SPY/AMS. This is a bounded
-capability and pacing measurement that prepares a later durable collector; it
-does not claim that either target is complete, qualified, point-in-time safe,
-decision-time available, predictive, profitable, or ready for Paper execution.
+Measure the exact provider-observed effect of an explicit previous-day initial
+M1 request for QQQ/NAS and SPY/AMS, including only any continuation the named
+KIS Paper endpoint itself admits. This is a bounded reach and pacing measurement
+for a later collector decision; it does not claim complete history, data
+qualification, point-in-time safety, decision-time availability, prediction,
+profitability, or Paper readiness.
 
 ## Hard Boundaries
 
@@ -16,12 +17,14 @@ decision-time available, predictive, profitable, or ready for Paper execution.
   Never print or persist credentials; never read or route `KIS_LIVE_*`.
 - Do not call account, position, quote, order, cancellation, or any live route.
 - Do not alter or duplicate the existing QQQ/SPY scheduled collector, its
-  cache, cursor, terminal chain, Docker service, or schedule. The probe must
-  use a target-isolated external capability root.
-- Keep the first actual probe to at most two serial minute-page requests per
-  target with one reusable client, no continuation flood, and no foreground
-  retry. Record a source-safe `next_due` only if the provider returns a
-  categorical retry fact.
+  cache, cursor, terminal chain, Docker service, or schedule. Use a
+  target-isolated external capability root while retaining the existing shared
+  evidence-backed request and token gates.
+- The first actual probe may make at most two serial minute-page requests per
+  target through one reusable client. Its first page must set explicit
+  previous-day scope; request a second page only after a recognized provider
+  continuation, with no continuation flood or foreground retry. A categorical
+  retry fact yields only its target-scoped source-safe `next_due`.
 - Retain accepted raw pages only below `D:\market_data`; keep source-safe
   receipts under `D:\thericher-v2\model-artifacts`; never commit either.
 - Do not create a recurring scheduler, broad backfill, model, research
@@ -30,30 +33,28 @@ decision-time available, predictive, profitable, or ready for Paper execution.
 
 ## Required Work
 
-1. Run a concise Throughput Review. Confirm that IWM append is complete but
-   does not establish historical reach, and that the existing QQQ/SPY task is
-   independent and unchanged.
+1. Run a concise Throughput Review. Confirm that the completed current-day
+   blank-cursor probe was terminal for both targets and that it leaves explicit
+   previous-day scope unmeasured.
 2. Ask Claude CLI for a short falsification-first drift check before changing
-   historical reach, continuation, or source-safe pacing semantics. Send no
-   raw rows, values, paths, or credentials; do not wait for the result.
-3. Inspect any visible shared-worktree generic minute WIP before relying on it.
-   Reattest it with focused tests or replace only the bounded probe package;
-   unowned provenance alone is never a block.
-4. Freeze the probe contract: exact targets, request/page budget, cursor or
-   continuation evidence, raw-retention rule, per-target isolated root, pace
-   measurement fields, categorical failure/recovery outcomes, and strongest
-   target/cursor/duplicate kill test.
-5. Implement or reattest the smallest testable target-isolated probe. Add
-   focused fake/local tests for target enforcement, serial page budget,
-   continuation handling, external-root/link rejection, no credential or
-   network path without `--execute`, and source-safe outcome output.
+   request scope or interpreting continuation. Send no raw rows, values, paths,
+   or credentials; do not wait for the result.
+3. Inspect the completed current-day probe package and any visible generic
+   minute WIP before relying on it. Reattest or extend only the bounded
+   previous-day variant; unowned provenance alone is never a block.
+4. Freeze the exact request scope, target order, page budget, cursor rule,
+   raw-retention rule, target-isolated root, pacing fields, categorical recovery
+   outcomes, and strongest target/cursor/duplicate kill test.
+5. Implement or reattest the smallest testable prior-day variant. Add focused
+   fake/local tests for explicit scope enforcement, serial page budget,
+   continuation and target handling, external-root/link rejection, no
+   credential/network path without `--execute`, and source-safe output.
 6. Run a CPU-only fake/local smoke. Then make the bounded KIS Paper attempts
-   and retain only permitted external data. Reattach the resulting source-safe
-   receipt; do not infer provider-wide history from source exhaustion or a
-   short probe.
-7. Refresh Data and orchestration stateboards with per-target reach, accepted
-   pages, categorical failures, measured elapsed-time bucket, remaining scope
-   as `unknown` when appropriate, and the next collection or recovery action.
+   and retain only permitted external data. Reattach source-safe receipts; do
+   not infer provider-wide history from a terminal or source-limited result.
+7. Refresh Data and orchestration stateboards with per-target scope, accepted
+   pages, categorical failures, elapsed-time bucket, remaining scope as
+   `unknown` when appropriate, and the next collection or recovery action.
 
 ## Verification
 
@@ -68,4 +69,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Probe KIS Paper M1 historical reach`
+`Probe KIS Paper M1 previous-day scope`

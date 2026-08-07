@@ -6,11 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`kis-paper-m1-historical-reach-probe-v1` will measure QQQ/NAS and SPY/AMS M1
-endpoint reach and continuation with a small target-isolated serial probe. It
-keeps the exact QQQ/SPY task unchanged and adds no broad backfill, account/order
-route, model, Paper input, qualification, live-capital surface, or public
-service.
+`kis-paper-m1-previous-day-scope-probe-v1` will measure whether the named
+QQQ/NAS and SPY/AMS M1 endpoint exposes prior-session scope from an explicit
+previous-day request and any provider-admitted continuation. It keeps the exact
+QQQ/SPY task unchanged and adds no broad backfill, account/order route, model,
+Paper input, qualification, live-capital surface, or public service.
 
 ## Ready / Owned / Due
 
@@ -31,7 +31,8 @@ service.
 | IWM v2 bound observation | Data / Execution | Isolated IWM/AMS KIS Paper one-page route | Completed: one accepted no-continuation page reused the immutable snapshot and wrote a v2 content-bound receipt. Local replay produced 120 complete M1, 8 M5, 1 M10, and no H1/H3 bucket. It has no consumer or promotion consequence. |
 | IWM v2 observation selector | Data / Validation | Existing immutable IWM snapshots and v2 receipts | Completed: source-safe metadata can enumerate observations and caller-selected v2 replay has no mutable latest fallback. The independent order-versus-hash duplicate defect was fixed before integration. |
 | IWM prospective observation append | Data / Validation | Isolated IWM/AMS route, immutable external roots, and completed selector | Completed: success receipts append separately from source-safe failure outcomes, stale owned stages cannot poison selection, and the collector returns an opaque selected ID. One bounded request reused the existing snapshot and reattached offline. |
-| QQQ/SPY historical M1 reach probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Ready: reattest or replace the bounded generic probe, then measure up to two serial pages per target without altering the existing scheduled collector. |
+| QQQ/SPY current-day M1 reach probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one blank-cursor current-day page per target was accepted and terminal with no recognized continuation. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This is exact-route evidence only; prior scope remains `unknown`. |
+| QQQ/SPY explicit previous-day M1 scope probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Ready: reattest the current probe under an explicit previous-day initial request, then measure at most two serial pages per target without altering the scheduled collector. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -41,23 +42,24 @@ service.
 
 Fresh causal KIS-reconstructible input coverage remains the product bottleneck:
 the exact QQQ/NAS and SPY/AMS M1 scopes contain only 21 shared complete
-regular-session windows, decision-time availability remains `not_observed`, and
-the current-head worker's exact latest terminal is
-`rejected/minute_duplicate_conflict`. The completed EMA attribution is a
-negative source-local accounting baseline; it neither overcomes this input gap
-nor warrants extending the strategy.
+regular-session windows, and blank-cursor current-day requests now also measure
+as terminal after one page. Decision-time availability remains `not_observed`,
+while explicit previous-day scope is still unmeasured. The current-head worker's
+exact latest terminal is `rejected/minute_duplicate_conflict`. The completed
+EMA attribution is a negative source-local accounting baseline; it neither
+overcomes this input gap nor warrants extending the strategy.
 
 ## Current Reversible Improvement
 
-Use the completed IWM append contract as the isolated reference while resolving
-the actual QQQ/SPY historical-reach unknown with a source-safe serial probe.
-This replaces assumptions about provider retention with measured per-target
-continuation evidence without touching the existing collector.
+Use the completed current-day reach receipt to avoid reprobing the same blank
+cursor. The next reversible measurement changes only the initial named request
+to explicit previous-day scope and records continuation evidence per target,
+without touching the existing collector.
 
 ## Current Recovery Action
 
 Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation and the
-bounded historical-reach probe. Its recovery is per target and cursor: record
-an accepted page, a categorical provider fact, or `unknown` remaining scope,
-then choose a fresh bounded collector package only when the measurement supports
-it. IWM current-head success remains unrelated to historical M1 reach.
+bounded explicit-previous-day probe. Its recovery is per target and cursor:
+record an accepted page, a categorical provider fact, or `unknown` remaining
+scope, then choose a fresh bounded collector package only when the measurement
+supports it. IWM current-head success remains unrelated to historical M1 reach.

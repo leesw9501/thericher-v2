@@ -14,6 +14,29 @@ external artifacts retain history.
 
 ## Current Objective
 
+`kis-paper-m1-historical-reach-probe-v1` is complete. Its one shared in-memory
+KIS Paper client made one current-day M1 GET for each fixed QQQ/NAS and SPY/AMS
+target, with the first target issuing one token and the second reusing it. Both
+pages were accepted, terminal, and had no recognized continuation; no raw rows
+were retained, no categorical error occurred, and no existing QQQ/SPY cache,
+cursor, task, Docker service, account route, order route, or live route changed.
+The final source-safe elapsed bucket was `under_5_seconds` for each target.
+This establishes only that the exact blank-cursor, current-day starting
+requests ended after one page. It does not establish provider-wide retention,
+prior-day behavior, data qualification, decision-time availability, model
+readiness, or Paper eligibility. The first actual run exposed an accounting-only
+request-start classification defect; a Validation review also caught unsafe
+artifact-root ordering, Windows reparse-point coverage, invalid-continuation
+success classification, and empty-page recovery. All were corrected before the
+final source-safe receipts. Claude did not return before the bounded review
+window, so that check is `review_unavailable`, not agreement.
+
+The next bounded objective is Data-owned
+`kis-paper-m1-previous-day-scope-probe-v1`: measure the same two targets' exact
+explicit previous-day M1 request and any provider-admitted continuation under a
+small isolated page budget. It remains a reach measurement rather than a broad
+backfill or data-promotion decision.
+
 `intraday-qqq-offline-validation-reliability-v1` is complete. The exact
 2026-08-07 04:24 KST QQQ session was a valid Paper-only `no_intent`, and its
 offline validation artifact existed, but the immutable v3 payload omitted the
