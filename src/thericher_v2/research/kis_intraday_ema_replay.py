@@ -11,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from collections.abc import Iterable, Sequence
+from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -20,7 +20,12 @@ from typing import Literal
 
 from thericher_v2.contracts import Bar, EmergencyState, TargetExposureProposal
 from thericher_v2.data import CatalogedBars, SessionWindow
-from thericher_v2.execution import LOCAL_PAPER_SOURCE, LocalPaperBroker, replay_local_paper_account
+from thericher_v2.execution import (
+    LOCAL_PAPER_SOURCE,
+    LocalPaperAccount,
+    LocalPaperBroker,
+    replay_local_paper_account,
+)
 from thericher_v2.execution.paper_decision_bridge import (
     LocalPaperTargetBinding,
     PaperDecisionBridgeResult,
@@ -54,6 +59,7 @@ KIS_INTRADAY_EMA_SLIPPAGE_BPS = Decimal("2")
 KIS_INTRADAY_EMA_DECISION_TTL = timedelta(minutes=2)
 
 _SAFE_RUN_LABEL = re.compile(r"[A-Za-z0-9._-]{1,80}", re.ASCII)
+_SHA256_REFERENCE = re.compile(r"sha256:[0-9a-f]{64}", re.ASCII)
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
 _REQUIRED_DATASET_ID_PREFIX = "kis.paper.private.intraday.qqq.nas.m1."
 _SELECTION_CALENDAR_SCOPE = "2026"
@@ -100,6 +106,39 @@ class KisIntradayEmaReplayRun:
     session_count: int
     ema: EmaReplayMechanics
     input_unavailable_reason: _InputUnavailableReason | None
+
+
+@dataclass(frozen=True)
+class KisIntradayEmaReplayReceipt:
+    """Reattached immutable parent evidence for a completed EMA mechanics replay."""
+
+    contract_hash: str
+    precommit_path: Path
+    summary_path: Path
+    contract: dict[str, object]
+    source_dataset_id: str
+    source_dataset_hash: str
+    selected_session_dates_sha256: str
+    calendar_scope: str
+    session_count: int
+    mechanics: EmaReplayMechanics
+
+
+@dataclass(frozen=True)
+class EmaLocalPaperSessionReplay:
+    """In-memory local-paper replay evidence for one completed session only."""
+
+    mechanics: EmaReplayMechanics
+    events: tuple[Event, ...]
+    terminal_account: LocalPaperAccount
+
+
+@dataclass(frozen=True)
+class EmaLocalPaperReplay:
+    """Exact fixed-rule replay retained in memory for a bounded downstream consumer."""
+
+    mechanics: EmaReplayMechanics
+    session_replays: tuple[EmaLocalPaperSessionReplay, ...]
 
 
 class _InMemoryReplayEventStore:
@@ -152,6 +191,62 @@ class _CausalPrefixManifest:
         )
         self._last_end = bar.end_ts
         return "sha256:" + self._digest
+
+
+def load_kis_intraday_ema_replay_receipt(
+    *,
+    precommit_path: Path,
+    summary_path: Path,
+    repo_root: Path = _REPOSITORY_ROOT,
+) -> KisIntradayEmaReplayReceipt:
+    """Reattach one completed EMA mechanics receipt from external storage only."""
+
+    precommit_file = _resolve_external_artifact_file(precommit_path, repo_root=repo_root)
+    summary_file = _resolve_external_artifact_file(summary_path, repo_root=repo_root)
+    if precommit_file.parent != summary_file.parent:
+        raise ValueError("EMA replay receipt paths must share one run directory")
+    precommit = _read_json_mapping(precommit_file, "EMA replay precommit")
+    summary = _read_json_mapping(summary_file, "EMA replay summary")
+    return _ema_replay_receipt_from_payloads(
+        precommit=precommit,
+        summary=summary,
+        precommit_path=precommit_file,
+        summary_path=summary_file,
+    )
+
+
+def replay_kis_intraday_session_reset_ema_local_paper(
+    catalog: CatalogedBars,
+    *,
+    expected_contract_hash: str,
+) -> EmaLocalPaperReplay:
+    """Replay the frozen EMA semantics in memory without writing raw events."""
+
+    if not isinstance(catalog, CatalogedBars):
+        raise TypeError("EMA local-paper replay requires CatalogedBars")
+    _require_sha256_reference(expected_contract_hash, "expected EMA contract hash")
+    _validate_source_catalog(catalog)
+    session_dates = select_first_complete_kis_intraday_regular_session_dates(catalog)
+    plan = build_kis_intraday_cpu_campaign_plan(
+        catalog,
+        session_dates=session_dates,
+        campaign_id=KIS_INTRADAY_EMA_REPLAY_ID,
+    )
+    contract_hash = "sha256:" + _sha256_json(_contract_payload(plan))
+    if contract_hash != expected_contract_hash:
+        raise ValueError("EMA local-paper replay contract does not match its parent receipt")
+    session_replays = tuple(
+        _run_ema_local_paper_evidence(
+            _session_bars(plan.cataloged_bars, session=session),
+            session=session,
+            contract_hash=contract_hash,
+        )
+        for session in plan.session_windows
+    )
+    mechanics = _sum_ema(item.mechanics for item in session_replays)
+    if not mechanics.all_fills_local_paper or not mechanics.all_terminal_flat:
+        raise RuntimeError("EMA local-paper replay must remain local-paper and terminal-flat")
+    return EmaLocalPaperReplay(mechanics=mechanics, session_replays=session_replays)
 
 
 def run_kis_intraday_session_reset_ema_replay(
@@ -296,6 +391,19 @@ def _run_ema_local_paper(
     session: SessionWindow,
     contract_hash: str,
 ) -> EmaReplayMechanics:
+    return _run_ema_local_paper_evidence(
+        bars,
+        session=session,
+        contract_hash=contract_hash,
+    ).mechanics
+
+
+def _run_ema_local_paper_evidence(
+    bars: Sequence[Bar],
+    *,
+    session: SessionWindow,
+    contract_hash: str,
+) -> EmaLocalPaperSessionReplay:
     if len(bars) < KIS_INTRADAY_EMA_SLOW_PERIOD + 2:
         raise ValueError("EMA replay session is shorter than its frozen warmup and exit")
     rule = SessionResetEmaStateRule(
@@ -362,7 +470,7 @@ def _run_ema_local_paper(
             contract_hash=contract_hash,
             input_manifest_ref=manifest.append(terminal_signal),
         )
-    return _ema_mechanics(
+    mechanics = _ema_mechanics(
         store,
         broker,
         decision_count=decision_count,
@@ -371,6 +479,11 @@ def _run_ema_local_paper(
         eligible_enter_count=eligible_enter_count,
         eligible_exit_count=eligible_exit_count,
         forced_terminal_exit_count=forced_terminal_exit_count,
+    )
+    return EmaLocalPaperSessionReplay(
+        mechanics=mechanics,
+        events=store.iter_events(),
+        terminal_account=broker.account(),
     )
 
 
@@ -722,6 +835,299 @@ def _claim_for_status(status: _ReplayStatus) -> str:
             "mechanics, profitability, model, ensemble, evaluation, or Paper-input claim"
         )
     raise ValueError(f"unsupported EMA replay status: {status}")
+
+
+def _ema_replay_receipt_from_payloads(
+    *,
+    precommit: Mapping[str, object],
+    summary: Mapping[str, object],
+    precommit_path: Path,
+    summary_path: Path,
+) -> KisIntradayEmaReplayReceipt:
+    if set(precommit) != {
+        "schema_version",
+        "kind",
+        "status",
+        "run_label",
+        "contract_hash",
+        "contract",
+        "artifact_policy",
+    }:
+        raise ValueError("EMA replay precommit shape is invalid")
+    if set(summary) != {
+        "schema_version",
+        "kind",
+        "status",
+        "mode",
+        "run_label",
+        "contract_hash",
+        "source",
+        "mechanics",
+        "input_unavailable_reason",
+        "limits",
+        "artifact_policy",
+        "claim",
+    }:
+        raise ValueError("EMA replay summary shape is invalid")
+    contract = _mapping(precommit.get("contract"), "EMA replay contract")
+    contract_hash = _text(precommit.get("contract_hash"), "EMA replay contract hash")
+    _require_sha256_reference(contract_hash, "EMA replay contract hash")
+    if (
+        precommit.get("schema_version") != 1
+        or precommit.get("kind") != "kis_intraday_ema_replay_precommit"
+        or precommit.get("status") != "frozen_before_replay"
+        or not _text(precommit.get("run_label"), "EMA replay run label")
+        or contract_hash != "sha256:" + _sha256_json(contract)
+    ):
+        raise ValueError("EMA replay precommit is invalid")
+    _validate_parent_contract(contract)
+    _validate_parent_artifact_policy(
+        _mapping(precommit.get("artifact_policy"), "EMA replay precommit artifact policy")
+    )
+    if (
+        summary.get("schema_version") != 1
+        or summary.get("kind") != "kis_intraday_ema_replay_summary"
+        or summary.get("status") != "complete"
+        or summary.get("mode") != "offline_local_cache_local_paper_only"
+        or summary.get("run_label") != precommit.get("run_label")
+        or summary.get("contract_hash") != contract_hash
+        or summary.get("input_unavailable_reason") is not None
+        or summary.get("limits") != _limits_payload()
+        or not _text(summary.get("claim"), "EMA replay summary claim")
+    ):
+        raise ValueError("EMA replay summary is invalid")
+    _validate_parent_artifact_policy(
+        _mapping(summary.get("artifact_policy"), "EMA replay summary artifact policy")
+    )
+    source = _mapping(contract.get("source"), "EMA replay source contract")
+    summary_source = _mapping(summary.get("source"), "EMA replay summary source")
+    source_dataset_id = _text(source.get("dataset_id"), "EMA replay dataset id")
+    source_dataset_hash = _text(source.get("dataset_hash"), "EMA replay dataset hash")
+    selected_session_dates_sha256 = _text(
+        source.get("selected_session_dates_sha256"),
+        "EMA replay selected session dates hash",
+    )
+    _require_sha256_reference(source_dataset_hash, "EMA replay dataset hash")
+    _require_sha256_reference(
+        selected_session_dates_sha256,
+        "EMA replay selected session dates hash",
+    )
+    session_count = _non_negative_int(source.get("session_count"), "EMA replay session count")
+    calendar_scope = _text(source.get("calendar_scope"), "EMA replay calendar scope")
+    if (
+        session_count != 20
+        or calendar_scope != _SELECTION_CALENDAR_SCOPE
+        or summary_source
+        != {
+            "dataset_id": source_dataset_id,
+            "dataset_hash": source_dataset_hash,
+            "session_count": session_count,
+        }
+    ):
+        raise ValueError("EMA replay source binding is invalid")
+    mechanics = _ema_mechanics_from_payload(_mapping(summary.get("mechanics"), "EMA mechanics"))
+    if not (
+        mechanics.all_fills_local_paper
+        and mechanics.all_terminal_flat
+        and _rule_activated(mechanics)
+    ):
+        raise ValueError("EMA replay parent mechanics are not complete local-paper evidence")
+    return KisIntradayEmaReplayReceipt(
+        contract_hash=contract_hash,
+        precommit_path=precommit_path,
+        summary_path=summary_path,
+        contract=dict(contract),
+        source_dataset_id=source_dataset_id,
+        source_dataset_hash=source_dataset_hash,
+        selected_session_dates_sha256=selected_session_dates_sha256,
+        calendar_scope=calendar_scope,
+        session_count=session_count,
+        mechanics=mechanics,
+    )
+
+
+def _validate_parent_contract(contract: Mapping[str, object]) -> None:
+    if set(contract) != {"schema_version", "replay_id", "source", "rule", "execution", "limits"}:
+        raise ValueError("EMA replay contract shape is invalid")
+    source = _mapping(contract.get("source"), "EMA replay source contract")
+    rule = _mapping(contract.get("rule"), "EMA replay rule contract")
+    execution = _mapping(contract.get("execution"), "EMA replay execution contract")
+    if (
+        contract.get("schema_version") != 1
+        or contract.get("replay_id") != KIS_INTRADAY_EMA_REPLAY_ID
+        or source.get("selection")
+        != "first_20_complete_regular_sessions_ascending_within_2026_scope"
+        or source.get("complete_session_predicate")
+        != "verified_contiguous_regular_390_m1_bars"
+        or rule
+        != {
+            "id": "session-reset-ema-state-v1",
+            "fast_period": KIS_INTRADAY_EMA_FAST_PERIOD,
+            "slow_period": KIS_INTRADAY_EMA_SLOW_PERIOD,
+            "tolerance": str(KIS_INTRADAY_EMA_TOLERANCE),
+            "seed_policy": "within_session_sma_seed_then_decimal_ema_v1",
+            "session_local_warmup_bars": KIS_INTRADAY_EMA_SLOW_PERIOD,
+        }
+        or execution
+        != {
+            "decision": "completed_1m_bar_end",
+            "entry_exit": "next_completed_1m_bar_open",
+            "terminal_exit": "predeclared_penultimate_bar_decision_final_bar_open_fill",
+            "target_exposure": str(KIS_INTRADAY_EMA_TARGET_EXPOSURE),
+            "maximum_quantity": str(KIS_INTRADAY_EMA_MAXIMUM_QUANTITY),
+            "fee_bps": str(KIS_INTRADAY_EMA_FEE_BPS),
+            "slippage_bps": str(KIS_INTRADAY_EMA_SLIPPAGE_BPS),
+        }
+        or contract.get("limits") != _limits_payload()
+    ):
+        raise ValueError("EMA replay contract semantics are invalid")
+
+
+def _ema_mechanics_from_payload(payload: Mapping[str, object]) -> EmaReplayMechanics:
+    if set(payload) != {
+        "decision_count",
+        "warmup_abstain_count",
+        "ready_hold_count",
+        "eligible_enter_count",
+        "eligible_exit_count",
+        "forced_terminal_exit_count",
+        "local_paper_fill_count",
+        "event_replay_count",
+        "all_fills_local_paper",
+        "all_terminal_flat",
+        "rule_activated",
+        "event_replay_digest",
+    }:
+        raise ValueError("EMA replay mechanics shape is invalid")
+    mechanics = EmaReplayMechanics(
+        decision_count=_non_negative_int(payload.get("decision_count"), "EMA decision count"),
+        warmup_abstain_count=_non_negative_int(
+            payload.get("warmup_abstain_count"),
+            "EMA warmup abstain count",
+        ),
+        ready_hold_count=_non_negative_int(payload.get("ready_hold_count"), "EMA ready hold count"),
+        eligible_enter_count=_non_negative_int(
+            payload.get("eligible_enter_count"),
+            "EMA eligible enter count",
+        ),
+        eligible_exit_count=_non_negative_int(
+            payload.get("eligible_exit_count"),
+            "EMA eligible exit count",
+        ),
+        forced_terminal_exit_count=_non_negative_int(
+            payload.get("forced_terminal_exit_count"),
+            "EMA terminal exit count",
+        ),
+        local_paper_fill_count=_non_negative_int(
+            payload.get("local_paper_fill_count"),
+            "EMA local-paper fill count",
+        ),
+        replay_event_count=_non_negative_int(
+            payload.get("event_replay_count"),
+            "EMA event replay count",
+        ),
+        all_fills_local_paper=_bool(payload.get("all_fills_local_paper"), "EMA local-paper flag"),
+        all_terminal_flat=_bool(payload.get("all_terminal_flat"), "EMA terminal-flat flag"),
+        replay_digest=_text(payload.get("event_replay_digest"), "EMA replay digest"),
+    )
+    _require_sha256_reference(mechanics.replay_digest, "EMA replay digest")
+    if payload.get("rule_activated") is not _rule_activated(mechanics):
+        raise ValueError("EMA replay rule activation is inconsistent")
+    return mechanics
+
+
+def _validate_parent_artifact_policy(policy: Mapping[str, object]) -> None:
+    if (
+        set(policy)
+        != {
+            "root",
+            "repo_storage_allowed",
+            "raw_market_data_written",
+            "raw_price_values_retained",
+            "raw_fill_events_retained",
+            "credential_read",
+            "network_called",
+            "external_broker_called",
+        }
+        or not _text(policy.get("root"), "EMA replay artifact root")
+        or any(
+            policy.get(field) is not False
+            for field in (
+                "repo_storage_allowed",
+                "raw_market_data_written",
+                "raw_price_values_retained",
+                "raw_fill_events_retained",
+                "credential_read",
+                "network_called",
+                "external_broker_called",
+            )
+        )
+    ):
+        raise ValueError("EMA replay artifact policy is invalid")
+
+
+def _resolve_external_artifact_file(path: Path, *, repo_root: Path) -> Path:
+    candidate = Path(path).absolute()
+    if (
+        _has_existing_symlink_component(candidate)
+        or candidate.is_symlink()
+        or not candidate.is_file()
+    ):
+        raise ValueError("EMA replay parent artifact must be a non-symlink file")
+    resolved = candidate.resolve(strict=True)
+    resolved_repo = Path(repo_root).resolve(strict=False)
+    if resolved == resolved_repo or resolved.is_relative_to(resolved_repo):
+        raise ValueError("EMA replay parent artifact must stay outside the Git workspace")
+    return resolved
+
+
+def _has_existing_symlink_component(path: Path) -> bool:
+    absolute = path.absolute()
+    current = Path(absolute.anchor)
+    for part in absolute.parts[1:]:
+        current = current / part
+        if not current.exists():
+            return False
+        if current.is_symlink():
+            return True
+    return False
+
+
+def _read_json_mapping(path: Path, label: str) -> Mapping[str, object]:
+    try:
+        decoded = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise ValueError(f"{label} is unreadable") from error
+    return _mapping(decoded, label)
+
+
+def _mapping(value: object, label: str) -> Mapping[str, object]:
+    if not isinstance(value, Mapping) or any(not isinstance(key, str) for key in value):
+        raise ValueError(f"{label} must be a string-keyed mapping")
+    return value
+
+
+def _text(value: object, label: str) -> str:
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"{label} must be a nonempty string")
+    return value
+
+
+def _non_negative_int(value: object, label: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        raise ValueError(f"{label} must be a non-negative integer")
+    return value
+
+
+def _bool(value: object, label: str) -> bool:
+    if not isinstance(value, bool):
+        raise ValueError(f"{label} must be a boolean")
+    return value
+
+
+def _require_sha256_reference(value: str, label: str) -> None:
+    if _SHA256_REFERENCE.fullmatch(value) is None:
+        raise ValueError(f"{label} must use sha256:<64 lowercase hex> format")
 
 
 def _validate_source_catalog(catalog: CatalogedBars) -> None:

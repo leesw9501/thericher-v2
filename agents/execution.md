@@ -216,6 +216,15 @@ another correctly scoped Paper action.
   a fill-quality, profitability, model, or execution-risk input. The associated
   Claude request returned unrelated stale task text rather than its requested
   verdict; record `review_unavailable` and rely only on the local contract tests.
+- The completed `source-local-ema-local-paper-pnl-attribution-v1` reattests
+  the fixed EMA mechanics receipt before rebuilding its same session-local
+  in-memory replay. It verifies foreign fills before FIFO accounting, checks
+  each terminal account cash delta against realized-after-cost PnL, and retains
+  only aggregate 20-session facts: 152 local-paper fills, zero open quantity,
+  gross delta `-26.299200`, fees `10.8932`, and net delta `-37.192400`.
+  This negative local replay is not a KIS fill, broker account result,
+  profitability claim, model decision, or Paper input. Evidence remains under
+  `D:\thericher-v2\model-artifacts\research\source-local-ema-local-paper-pnl-attribution-v1\20260807-ema-pnl-attribution-r1\summary.json`.
 - Local Paper retains an accepted event's durable timestamp when it replays a
   pending or filled order. It rejects submission before intent creation and
   raises instead of recreating a fill when the later of intent creation and

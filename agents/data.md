@@ -60,6 +60,14 @@ undocumented timestamp seed.
   receipt shapes fail closed. The existing task next owns 2026-08-08 00:29 KST;
   do not manually rerun or duplicate it. Its collector image has been rebuilt
   without an invocation.
+- **Ready duplicate-conflict recovery:**
+  `intraday-m1-collector-duplicate-conflict-recovery-v1` owns a bounded
+  code-and-fixture repair for the exact `rejected/minute_duplicate_conflict`
+  terminal class. It must preserve a valid retained causal head and classify
+  only the conflicting candidate as preserved or quarantined; it may not infer
+  coverage, alter a historical receipt, overwrite raw data, create a parallel
+  collector, or block Engine/Execution work. The existing 00:29 KST task stays
+  the next owner of an actual collection attempt after the repair is verified.
 - **Current-head timing repair:** a metadata-only reattachment of the
   2026-08-04 QQQ cache found retained regular-session page ranges
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST

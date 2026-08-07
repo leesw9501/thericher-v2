@@ -53,6 +53,19 @@ strongest kill test before target evaluation or GPU consideration.
   ready package is one separately reattested, source-limited, local-Paper PnL
   attribution for the already frozen 15/30 EMA replay, not a comparison or
   strategy selection exercise.
+- **Completed source-local PnL attribution:**
+  `source-local-ema-local-paper-pnl-attribution-v1` reattached the completed
+  fixed 15/30 EMA mechanics receipt and recomputed the exact same 20-session
+  QQQ/NAS M1 replay in memory. Its immutable `20260807-ema-pnl-attribution-r1`
+  artifact retains only aggregate local-paper FIFO accounting: 76 closed
+  segments, 152 local-paper fills, gross delta `-26.299200`, fees `10.8932`,
+  net delta `-37.192400`, zero open quantity, and an exact parent digest match.
+  The negative result is a fixed, source-local retrospective baseline, not a
+  profitability verdict, candidate rejection outside this scope, model
+  selection, comparative result, campaign, ensemble input, GPU appointment,
+  or Paper input. The next material research dependency is fresh causal input
+  coverage, so Data owns the current-head duplicate-conflict recovery rather
+  than Engine extending this one baseline.
 - A bounded metadata-only Data probe classifies the existing KIS Paper private
   D1 cache as `input_unavailable` for a 15/30 daily EMA candidate: its rows
   expose `close`, not an adjusted-close or corporate-action contract; coverage

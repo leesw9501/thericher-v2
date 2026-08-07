@@ -111,13 +111,27 @@ target, model, performance, selection, GPU, Paper-input, or broker claim.
 Evidence:
 `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-matrix-v1\20260807-qqq-mtf-matrix-r2\summary.json`.
 
-The next bounded objective is shared Engine/Execution
-`source-local-ema-local-paper-pnl-attribution-v1`: reattest the completed
-fixed 15/30 EMA mechanics receipt, then calculate one cost-aware aggregate
-`source: local_paper` attribution from the exact same frozen local replay. It
-is source-limited, retrospective, and non-promoting; it cannot select a model,
-authorize Paper activity, or make a profitability claim beyond its exact local
-replay scope.
+`source-local-ema-local-paper-pnl-attribution-v1` is complete. Its immutable
+`20260807-ema-pnl-attribution-r1` artifact reattests the exact completed 15/30
+EMA parent receipt, reconstructs only the same in-memory `source: local_paper`
+replay, and applies existing FIFO realized-after-cost accounting independently
+per terminal-flat session. It records 76 closed segments, 152 local-paper
+fills, aggregate gross delta `-26.299200`, fees `10.8932`, and net delta
+`-37.192400`; all fills are local-paper, all sessions are terminal-flat, and the
+replay digest equals the parent. This is an exact 20-session retrospective
+accounting result, not a decision-time-valid profitability, model-selection,
+campaign, GPU, Paper-input, or broker conclusion. Evidence:
+`D:\thericher-v2\model-artifacts\research\source-local-ema-local-paper-pnl-attribution-v1\20260807-ema-pnl-attribution-r1\summary.json`.
+Focused EMA attribution checks passed 17 tests; the CPU-only local-cache smoke
+completed without KIS, credential, or broker access; and the authority suite
+passed 2,797 tests with 25 skips, plus Ruff and both Compose configurations.
+
+The next bounded objective is Data
+`intraday-m1-collector-duplicate-conflict-recovery-v1`: repair the exact
+task-owned QQQ/NAS and SPY/AMS `minute_duplicate_conflict` recovery seam so the
+next scheduled current-head collection can retain a valid causal cache while
+categorically preserving or quarantining only the conflicting candidate. It
+does not create a strategy, model, Paper order, or live route.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,
