@@ -227,6 +227,10 @@ another correctly scoped Paper action.
   requires the close-aware pure 2026 US-session predicate, uses `IgnoreNew`, a
   named host mutex, and a bridge-level advisory runtime-volume refresh lock, has
   no missed-run catch-up or retry loop, and emits only a categorical outcome.
+  Its installed Task XML passed a direct ten-check reattestation for the
+  `kis-readonly` action, weekday four-minute/ten-hour cadence, `IgnoreNew`,
+  four-minute execution limit, and ready state; that check made no KIS, Docker,
+  credential, or account-artifact read.
   The final four minutes of a known session, rechecked immediately before
   Docker, do not start Docker. A busy bridge preserves the prior snapshot and
   creates no external receipt. A tagged complete/unavailable bridge result now

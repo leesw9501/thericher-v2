@@ -684,8 +684,10 @@ unproven; this is a reversible current-season repair, not an input promotion.
   sole recurring owner of this same bridge. It starts in a bounded weekday KST
   window, repeats every four minutes inside the five-minute snapshot TTL, uses
   Task Scheduler `IgnoreNew`, a named host mutex, and a bridge-level advisory
-  runtime-volume refresh lock. The credential-free inspector returns the known
-  2026 session close and the runner rechecks it immediately before Docker, so it
+  runtime-volume refresh lock. Its installed Task XML passed a direct ten-check
+  action/cadence/concurrency/state reattestation without a KIS, Docker,
+  credential, or account-artifact read. The credential-free inspector returns
+  the known 2026 session close and the runner rechecks it immediately before Docker, so it
   skips an invocation with four minutes or less remaining. The current
   off-session check returned only
   `outside_regular_session` and made no Compose or KIS call. A busy bridge
