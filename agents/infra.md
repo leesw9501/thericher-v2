@@ -12,6 +12,9 @@ CI, or runtime reproducibility work is ready.
 - Model artifacts: `D:\thericher-v2\model-artifacts`.
 - Docker artifacts: `/app/model_artifacts`.
 - Market data: `D:\market_data`, read-only in research containers.
+- Latest invoked Docker check: the private `web` service rebuilt successfully
+  with its explicit container-bind exception and remained published only at
+  `127.0.0.1:8787`; it has no KIS environment injection.
 - Storage warning: projected free space below 20 percent.
 - Storage hard floor: do not start new large work that crosses 15 percent.
 

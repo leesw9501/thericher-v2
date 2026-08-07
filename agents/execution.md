@@ -210,6 +210,13 @@ another correctly scoped Paper action.
   order. Authenticated local emergency and pause controls may change only their
   local control state; its schema-v3 account projection omits prices and order
   identifiers.
+- The private dashboard now requires `127.0.0.1` for a direct listener; Docker
+  must opt into `0.0.0.0` with `--allow-container-bind` while Compose publishes
+  only `127.0.0.1:8787`. A local Docker UI check rendered unavailable broker
+  facts without placeholders and round-tripped pause-buy/resume-buy through the
+  local control store only. No KIS call, broker call, or order occurred. The
+  next independent execution package is one existing-bridge read-only Paper
+  account snapshot refresh.
 - The local replay now derives FIFO realized-after-fee PnL only from closed
   `source: local_paper` lots. It deliberately excludes open-lot valuation and
   all KIS account/broker facts, so it is descriptive simulator accounting, not

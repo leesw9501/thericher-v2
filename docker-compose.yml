@@ -33,6 +33,7 @@ services:
       - thericher_v2.dashboard.server
       - --host
       - 0.0.0.0
+      - --allow-container-bind
       - --port
       - "8787"
       - --emergency-state

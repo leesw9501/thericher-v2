@@ -11,7 +11,10 @@ from http.client import HTTPConnection
 from pathlib import Path
 from urllib.parse import urlencode
 
+import pytest
+
 from thericher_v2.contracts import Bar, OrderIntent, Timeframe
+from thericher_v2.dashboard import server as dashboard_server
 from thericher_v2.dashboard.server import DashboardServer
 from thericher_v2.dashboard.view import DashboardPosition, build_snapshot, render_dashboard
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
@@ -704,6 +707,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
         "\n  research:\n", maxsplit=1
     )[0]
     assert '"127.0.0.1:8787:8787"' in web_section
+    assert "--allow-container-bind" in web_section
     assert "KIS_" not in web_section
     assert "TIINGO" not in web_section
     assert "market_data" not in web_section
@@ -777,3 +781,26 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     dockerignore = (repo_root / ".dockerignore").read_text(encoding="utf-8")
     assert ".env" in dockerignore
     assert "!.env.example" in dockerignore
+
+
+def test_dashboard_rejects_non_loopback_bind_without_the_explicit_docker_exception(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    assert dashboard_server._validated_bind_host(
+        "127.0.0.1",
+        allow_container_bind=False,
+    ) == "127.0.0.1"
+
+    monkeypatch.setattr(dashboard_server, "_is_container_runtime", lambda: True)
+    assert dashboard_server._validated_bind_host(
+        "0.0.0.0",
+        allow_container_bind=True,
+    ) == "0.0.0.0"
+
+    monkeypatch.setattr(dashboard_server, "_is_container_runtime", lambda: False)
+    with pytest.raises(ValueError, match="127.0.0.1"):
+        dashboard_server._validated_bind_host("0.0.0.0", allow_container_bind=False)
+    with pytest.raises(ValueError, match="127.0.0.1"):
+        dashboard_server._validated_bind_host("0.0.0.0", allow_container_bind=True)
+    with pytest.raises(ValueError, match="127.0.0.1"):
+        dashboard_server._validated_bind_host("192.168.0.10", allow_container_bind=True)

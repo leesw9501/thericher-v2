@@ -2,59 +2,58 @@
 
 ## Objective
 
-Build `private-kis-paper-operator-dashboard-v1`.
+Build `private-kis-paper-account-snapshot-refresh-v1`.
 
-Create the smallest Docker-backed, loopback-only private operator dashboard for
-the existing KIS Paper account-read contract and deterministic local safety
-controls. It should make current paper cash, positions, open orders, source
-state, and effective entry/exit pause state observable without making the
-dashboard a strategy engine or an order-submission surface.
+Use the existing named read-only KIS Paper account bridge to create one fresh,
+sanitized local account snapshot that the completed loopback-only private
+dashboard can display. This is an operational-observability step for Paper
+trading, not an order or strategy feature.
 
 ## Hard Boundaries
 
-- Use only `KIS_PAPER_*` through the existing named Paper account-read owner
-  paths. Never read, reference, route, or log `KIS_LIVE_*`.
-- The dashboard is private and loopback-only. Do not expose a public host,
-  public URL, tunnel, cloud deployment, or unauthenticated non-loopback bind.
-- No dashboard button may create, modify, cancel, or imply a broker order.
-  It may only read Paper state or persist deterministic local control state.
-- Do not invent account values, prices, PnL, fills, or strategy recommendations
-  when an account read is unavailable. Render an explicit unavailable state.
-- Keep credentials, account identifiers, raw API payloads, and dashboard auth
-  values out of Git, logs, browser HTML, screenshots, and external artifacts.
-- Preserve the local-paper replay and all KIS collector/task behavior. Do not
-  alter live routes, strategy selection, model promotion, GPU scheduling, or
-  market-data collection.
+- Read only `KIS_PAPER_*` through the existing account-read bridge. Never read,
+  reference, route, log, or persist `KIS_LIVE_*`.
+- Do not submit, modify, cancel, simulate, or imply a broker order. Do not call
+  an order, quote, market-data, or live endpoint unless the existing
+  read-only-account bridge demonstrably needs that exact documented endpoint.
+- Keep raw responses, credentials, account identifiers, and dashboard tokens
+  out of Git, logs, browser HTML, screenshots, and external artifacts.
+- Preserve the dashboard's loopback-only host boundary, explicit
+  container-bind exception, local pause controls, existing KIS collectors, and
+  local-paper replay behavior.
+- A missing, stale, malformed, or rejected account read must render an explicit
+  unavailable state; do not invent cash, positions, prices, open orders, or
+  orderability.
+- Do not add a second scheduler or a new broker client when the existing named
+  bridge suffices. Do not alter model research, GPU allocation, strategy
+  selection, or market-data collection.
 
 ## Required Work
 
-1. Run a concise Throughput Review: the task-owned QQQ/SPY collection remains
-   externally due; the operator dashboard is an independent Execution/Infra
-   package. Ask Claude CLI for a short drift-check before any dashboard/runtime
-   architecture change, and record only `review_unavailable` if it cannot
-   return in the bounded window.
-2. Reattest the existing KIS Paper account snapshot and local emergency-control
-   contracts. Reuse their data structures and ownership boundaries instead of
-   introducing a parallel broker client or order path.
-3. Build a minimal Docker-backed local UI with a compact account view: current
-   cash/orderable state when available, positions, open orders, data freshness,
-   and source/route status. Account refresh must be explicit or bounded and
-   read-only; no hidden background order behavior is allowed.
-4. Add deterministic local operator controls for entry and exit pause only when
-   their execution semantics are real and testable. The UI must show the
-   effective persisted state and clearly distinguish a local control from a
-   broker action. Keep an emergency/cancel state visible when the existing
-   contract supports it.
-5. Enforce loopback-only serving and the existing dashboard-auth policy. A
-   missing local configuration may make account reads unavailable, but cannot
-   downgrade host isolation or reveal a secret.
-6. Add focused tests for virtual-route isolation, no `KIS_LIVE_*` access,
-   absence of broker submission from dashboard routes, secret-free rendering,
-   read-only account handling, unavailable-state rendering, pause-control
-   persistence, and loopback/public-bind rejection.
-7. Run the dashboard locally in Docker when configuration permits and inspect
-   the actual private UI. Refresh Execution, Infra, orchestration, and handoff
-   stateboards with only current contracts and limitations.
+1. Run a concise Throughput Review. The dashboard package is complete and the
+   next ready Execution package is the existing read-only account bridge; the
+   task-owned Data collection and independent research preparation continue on
+   their own ownership.
+2. Reattest the current bridge, snapshot schema, dashboard reader, and Compose
+   ownership. Prove statically that the dashboard itself imports neither a KIS
+   client nor order functionality and that the bridge cannot read live
+   configuration or call an order endpoint.
+3. Run one bounded KIS Paper account-refresh attempt through the existing
+   bridge. Retain only its sanitized snapshot in the existing private runtime
+   root and a source-safe categorical result or receipt outside Git. Never
+   print raw response data, credentials, or account identifiers.
+4. Reopen the local Docker dashboard and verify the resulting available or
+   unavailable state against the bridge's categorical outcome. Exercise no
+   broker-order action; a local pause-control round trip is optional only when
+   it helps validate that the snapshot refresh did not change control state.
+5. Add focused tests for bridge-only `KIS_PAPER_*` ownership, absence of live
+   config and order endpoints, sanitization of the snapshot projection,
+   unavailable/stale rendering, and a dashboard route that remains broker-free.
+   Reuse existing contracts rather than duplicate them.
+6. Refresh the Execution, Infra, orchestration, and handoff stateboards with
+   only the current snapshot result, evidence pointer, recovery class, and next
+   action. Ask Claude only if implementation would change broker authority,
+   dashboard architecture, or execution recovery semantics.
 
 ## Verification
 
@@ -67,4 +66,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add private KIS Paper operator dashboard`
+`Refresh private KIS Paper account snapshot`

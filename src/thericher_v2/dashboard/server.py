@@ -385,6 +385,11 @@ def _login_html(*, error: str = "") -> str:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument(
+        "--allow-container-bind",
+        action="store_true",
+        help="allow the Docker-only 0.0.0.0 listener behind a loopback host publish",
+    )
     parser.add_argument("--port", type=int, default=8787)
     parser.add_argument("--state-db", type=Path, default=Path("runtime/state/thericher.sqlite"))
     parser.add_argument("--event-log", type=Path, default=Path("runtime/state/events.jsonl"))
@@ -419,12 +424,17 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
-    args = build_parser().parse_args()
+    parser = build_parser()
+    args = parser.parse_args()
+    try:
+        host = _validated_bind_host(args.host, allow_container_bind=args.allow_container_bind)
+    except ValueError as error:
+        parser.error(str(error))
     store = EventStore(args.state_db, args.event_log)
     emergency = EmergencyStore(args.emergency_state)
     execution_control = PaperExecutionControlStore(args.execution_control)
     server = DashboardServer(
-        (args.host, args.port),
+        (host, args.port),
         event_store=store,
         emergency_store=emergency,
         execution_control_store=execution_control,
@@ -434,8 +444,24 @@ def main() -> None:
         paper_canary_runtime_path=args.paper_canary_runtime,
         market_data_freshness_path=args.market_data_freshness,
     )
-    print(f"dashboard listening on http://{args.host}:{args.port}")
+    print(f"dashboard listening on http://{host}:{args.port}")
     server.serve_forever()
+
+
+def _validated_bind_host(host: str, *, allow_container_bind: bool) -> str:
+    """Allow local serving, plus the explicit Docker listener behind loopback publish."""
+
+    if host == "127.0.0.1":
+        return host
+    if host == "0.0.0.0" and allow_container_bind and _is_container_runtime():
+        return host
+    raise ValueError(
+        "dashboard host must be 127.0.0.1; Docker requires --allow-container-bind in a container"
+    )
+
+
+def _is_container_runtime() -> bool:
+    return Path("/.dockerenv").is_file()
 
 
 if __name__ == "__main__":
