@@ -2,53 +2,53 @@
 
 ## Objective
 
-Build `kis-paper-iwm-m1-bound-observation-v2`.
+Build `iwm-m1-v2-observation-ledger-v1`.
 
-Advance the market-data foundation by making one fresh isolated IWM/AMS
-current-head KIS Paper observation whose source-safe v2 receipt binds the
-immutable snapshot identity, then prove the matching local replay can use the
-existing completed-bar and `1m`/`5m`/`10m`/`1h`/`3h` resampler contracts. This
-is source-local input mechanics only, never data qualification, a model, PnL,
-a Paper order, or broker-performance claim.
+Advance the market-data foundation by making each immutable IWM/AMS v2
+current-head observation explicitly selectable for local replay before a future
+append-only collector accumulates additional observations. This is a narrow
+source-local data contract, never a data qualification, model, PnL, Paper
+order, broker-performance claim, or generic registry platform.
 
 ## Hard Boundaries
 
-- Use only `KIS_PAPER_*` through the existing named market-data client and
-  isolated IWM path. Do not read or route `KIS_LIVE_*`.
-- Make at most one current-day IWM/AMS page request. Do not follow a
-  continuation cursor, page historical data, retry with a second request, or
-  broaden to another symbol.
+- Do not read `.env`, credentials, or `KIS_LIVE_*`; do not call KIS or any
+  network/provider route.
 - Do not invoke, alter, duplicate, or replace the QQQ/SPY scheduled task, its
   cache, cursor, terminal chain, or schedule.
-- Do not call account, position, order, modify, cancel, or live routes; do not
-  expose credentials, raw rows, prices, paths, or artifacts.
+- Read only the named isolated IWM current-head receipt/snapshot roots. Do not
+  scan unrelated raw data, add a new symbol, or infer a mutable "latest"
+  observation.
+- Do not create a schedule, worker, model input, strategy, local-Paper intent,
+  account/order route, GPU campaign, performance/PnL claim, or public service.
 - Keep raw market data under `D:\market_data` and generated receipts under
   `D:\thericher-v2\model-artifacts`; never commit either.
 
 ## Required Work
 
-1. Run a concise Throughput Review and confirm the primary QQQ/SPY collector
-   remains independent.
-2. Ask Claude CLI for a short falsification-first drift check before relying on
-   the receipt-to-snapshot completion binding. Send no raw rows, prices, paths,
-   or credentials; do not wait on the result.
-3. Run focused fake/local tests first. Verify a v2 receipt binds exactly its
-   snapshot, old v1 evidence stays incomplete, ambiguity/tampering is rejected,
-   and a bound fixture supports the five resampler timeframes.
-4. Invoke the existing isolated IWM collector exactly once with `--execute`.
-   Preserve the source-safe outcome even if it is unavailable; do not make a
-   second provider request in this objective.
-5. If the one page is accepted, run the offline replay script against its
-   matching v2 receipt and record only categorical status and aggregate completed
-   bucket counts. If the page is unavailable, record its category and leave the
-   existing legacy snapshot unchanged.
-6. Refresh Data and orchestration stateboards with the exact outcome and next
-   recovery action. Do not promote any result to coverage, model, GPU, Paper,
-   or execution eligibility.
+1. Run a concise Throughput Review. Confirm the current IWM v2 observation is
+   bound/replayable while legacy v1 evidence remains incomplete, and the
+   QQQ/SPY collector is independent.
+2. Ask Claude CLI for a short falsification-first drift check before changing
+   receipt-selection or replay identity semantics. Send no raw rows, prices,
+   paths, or credentials; do not wait on the result.
+3. Freeze one lean observation-selection contract: opaque observation ID,
+   exact v2 receipt digest, exact snapshot digest, source-safe ordering field,
+   legacy handling, selected replay identity, and strongest ambiguity kill test.
+4. Implement the smallest offline-only selector/ledger needed to enumerate
+   source-safe IWM observation metadata and reattach exactly one caller-selected
+   v2 receipt/snapshot pair. Reject malformed, hash-mismatched, cross-target,
+   duplicate, legacy-as-complete, ambiguous, Git-resident, or linked input.
+5. Add focused fake/local tests proving deterministic selected replay with
+   multiple valid observations, no mutable latest fallback, tamper rejection,
+   legacy v1 incompleteness, and no QQQ/SPY/broker/credential/network path.
+6. Run one CPU-only local smoke against the retained v2 observation and write
+   only a source-safe external receipt with selection and aggregate geometry.
+   Refresh Data and orchestration stateboards. Do not create a collector yet.
 
 ## Verification
 
-Run focused tests and any one-page collection/replay smoke, then:
+Run focused tests and the local smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -59,4 +59,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Bind IWM current-head observation receipt`
+`Add IWM observation selector`

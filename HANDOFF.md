@@ -157,11 +157,24 @@ binding. Independent Validation caught the pre-binding defect and a linked
 artifact-directory creation risk; both have focused regression coverage. The
 Claude drift check timed out as `review_unavailable`, not agreement.
 
+`kis-paper-iwm-m1-bound-observation-v2` is complete. One authorized isolated
+IWM/AMS current-day page request was accepted, observed no continuation, and
+reused the already-retained immutable snapshot. Its new v2 receipt binds that
+snapshot's content digest. The offline replay accepted the exact bound pair and
+reported 120 completed M1 bars, 8 completed M5 buckets, 1 completed M10 bucket,
+and no complete H1/H3 bucket. This is aggregate source-local mechanics only:
+provider finality and decision-time availability remain `not_observed`, and no
+model, Paper input, account, order, or QQQ/SPY state changed. Claude again
+returned an incomplete tool request rather than a verdict, so it is
+`review_unavailable`; independent Execution review confirmed the one-page
+market-data-only route and its cache-isolation kill condition.
+
 The next bounded objective is Data-owned
-`kis-paper-iwm-m1-bound-observation-v2`: make one fresh isolated IWM/AMS
-current-head KIS Paper data request through the now-bound receipt path, then
-offline-replay only that bound snapshot. It must not alter QQQ/SPY, use an
-account/order/live route, qualify data, or create a model/Paper input claim.
+`iwm-m1-v2-observation-ledger-v1`: add a narrow immutable selector for exact
+IWM v2 observations before recurring collection is considered. It must let a
+caller select one hash-bound receipt/snapshot pair without a mutable "latest"
+fallback, while retaining legacy v1 evidence as incomplete and leaving every
+provider, model, Paper, account, order, and QQQ/SPY path untouched.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,

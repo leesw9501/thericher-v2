@@ -6,11 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`kis-paper-iwm-m1-bound-observation-v2` will make one fresh, isolated IWM/AMS
-current-head KIS Paper data observation with a receipt bound to its immutable
-snapshot, then replay that exact snapshot locally. It preserves QQQ/SPY and
-adds no historical pagination, account/order route, model, Paper input,
-qualification, live-capital surface, or public service.
+`iwm-m1-v2-observation-ledger-v1` will make repeated IWM current-head evidence
+selectable without a mutable "latest" fallback. It preserves the exact
+QQQ/SPY task and adds no provider call, historical pagination, account/order
+route, model, Paper input, qualification, live-capital surface, or public
+service.
 
 ## Ready / Owned / Due
 
@@ -28,7 +28,8 @@ qualification, live-capital surface, or public service.
 | M1 duplicate-conflict recovery | Data | Existing task-owned QQQ/NAS and SPY/AMS collector paths | Completed. The scheduled `session-capture` preserve branch was reattested with a fake-client restart regression: repeat retained-cache conflicts leave the active chunk, manifest/raw bytes, head cursor, and snapshot count unchanged. The current terminal remains provenance-legacy. |
 | IWM current-head ingestion | Data | Isolated IWM/AMS route and external market-data store | Completed: one current-day page was accepted at 2026-08-07 01:46 UTC, retained as an immutable source-local snapshot, and made no continuation request. QQQ/SPY state and schedule were untouched. |
 | IWM source-local replayability | Data / Validation | Legacy IWM snapshot, v2 receipt writer, and existing `Bar`/resampler contracts | Completed: the historical v1 receipt lacks a snapshot identity, so exact local replay records `completion_evidence_unavailable` and zero completed buckets rather than inventing timing. The v2 writer/reader contract is tested with bound fixtures. |
-| IWM v2 bound observation | Data | Isolated IWM/AMS KIS Paper one-page route | Ready: make one fresh current-head observation through the existing isolated client, then locally replay the matching v2-bound snapshot. |
+| IWM v2 bound observation | Data / Execution | Isolated IWM/AMS KIS Paper one-page route | Completed: one accepted no-continuation page reused the immutable snapshot and wrote a v2 content-bound receipt. Local replay produced 120 complete M1, 8 M5, 1 M10, and no H1/H3 bucket. It has no consumer or promotion consequence. |
+| IWM v2 observation selector | Data | Existing immutable IWM snapshots and v2 receipts | Ready: build the narrow explicit selector needed before append-only prospective observation collection can safely accumulate more than one v2 receipt. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -46,14 +47,14 @@ nor warrants extending the strategy.
 
 ## Current Reversible Improvement
 
-Use the repaired IWM receipt binding rather than expanding a legacy cache:
-one isolated one-page observation can make its own completed-Bar timing
-verifiable while leaving the primary collector and all QQQ/SPY state untouched.
+Use an explicit immutable IWM v2 observation selector before creating a repeat
+collector. It turns a growing receipt set into a caller-selected local input
+without a mutable latest-record policy or any QQQ/SPY impact.
 
 ## Current Recovery Action
 
 Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation and the
-next one-shot isolated IWM observation. The IWM call uses only the named
-KIS Paper market-data client and one current page; its follow-up is local
-replay, never coverage qualification, model readiness, broker action, or a
-live outcome.
+offline IWM v2 selector package. A later recurring IWM collector may begin only
+after the selector has exact hash-bound, legacy-safe behavior; it remains a
+source-local input path, never coverage qualification, model readiness, broker
+action, or a live outcome.

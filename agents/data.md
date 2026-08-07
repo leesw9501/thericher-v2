@@ -18,7 +18,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper current M1 head cache | Observed, partial current-session input | Named current-window consumers only |
 | KIS Paper QQQ/SPY M1 cursor cache | Terminal exact cursor scope with 21 shared complete 09:30--15:29 ET sessions | Source-local non-promoting geometry only; QQQ supplied local EMA and MTF mechanics, not a qualification or consumer promotion |
 | KIS Paper private D1 cache | `input_unavailable` for daily-EMA preparation | Explicitly unadjusted, partial, and missing daily finality/as-of metadata |
-| KIS Paper IWM/AMS M1 current head | One legacy-unbound retained current-day page at 2026-08-07 01:46 UTC | Canonical raw replay is verified, but completed Bars require a future v2 receipt-to-snapshot binding; no history, qualification, or consumer promotion |
+| KIS Paper IWM/AMS M1 current head | Legacy v1 and one v2-bound current-day observation over one immutable snapshot | Exact v2 local replay has 120 completed M1, 8 M5, and 1 M10 buckets; H1/H3 are absent, and no history, qualification, or consumer promotion follows |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
 | KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | First task-owned receipt is incomplete after one accepted page | Exact endpoint pagination fact only; no decision-time availability or consumer promotion |
@@ -86,6 +86,16 @@ undocumented timestamp seed.
   finality, decision-time availability, qualification, model, or Paper-input
   consequence. Independent Validation found and the tests now cover both the
   missing binding and linked-artifact-directory defects.
+- **Completed IWM v2 bound observation:** one authorized IWM/AMS current-day
+  request returned one nonempty page, observed no continuation, and reused the
+  existing immutable snapshot. Its source-safe v2 receipt binds the snapshot
+  digest, so local replay now emits 120 completed M1 Bars, 8 M5 buckets, and 1
+  M10 bucket. It emits no H1/H3 bucket because the source-local completed M1
+  sequence does not form one; no gap is filled or inferred. This remains
+  source-local mechanics with provider finality and decision-time availability
+  `not_observed`, not a data qualification, model input, Paper input, account,
+  order, or QQQ/SPY result. Claude supplied no verdict; the independent
+  Execution review confirmed the one-page KIS Paper market-data-only route.
 - **Current-head timing repair:** a metadata-only reattachment of the
   2026-08-04 QQQ cache found retained regular-session page ranges
   09:32--11:31, 11:32--13:31, and 15:20--15:59 ET. The missing 04:31 KST
@@ -175,8 +185,10 @@ undocumented timestamp seed.
   one-observation source-local cache, not historical coverage or a consumer
   promotion. Its offline replay now verifies canonical raw mechanics but keeps
   every Bar incomplete because this legacy receipt lacks a snapshot digest. The
-  next one-page IWM observation uses the v2 receipt binding; it is still only a
-  source-local replay input, never a coverage or consumer-promotion result.
+  separate v2 observation now binds the same immutable snapshot and provides
+  completed local Bars, but recurring observations need an exact immutable
+  selector before they are accumulated. Neither receipt is a coverage or
+  consumer-promotion result.
 - **Yahoo M1 ORB input probe:** one exact existing metadata manifest is
   `input_unavailable`: its `1m` request spans only eight days and has one
   successful symbol with no explicit regular-session or decision-time-
