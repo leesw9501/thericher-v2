@@ -308,6 +308,12 @@ undocumented timestamp seed.
   `D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=listener-recovery-20260804-r1-norgate-trial-daily-capability-r1` and
   `D:\market_data\us_equities\norgate_trial\local_d1_etf\snapshot=history-probe-20260804-r1-norgate-trial-raw-d1-r2` with receipt
   `D:\thericher-v2\model-artifacts\data\norgate-local-d1-capability-v1\history-probe-20260804-r1.json`.
+  The same three-case host-only probe was reattested on 2026-08-07 against
+  the current local build as `qualified_for_offline_research` (receipt
+  `sha256:b6764cf803cd9a4041c3e0083572e8526c52f6fb02b433fcb16345fa5f9d4cf6`).
+  It retained only aggregate source facts under
+  `D:\market_data\us_equities\norgate_trial\daily_capability_probe\probe=orchestrator-norgate-health-20260807-r1-norgate-trial-daily-capability-r1`;
+  model, ranking, GPU, PnL, and Paper eligibility remain false.
   Its target-free structural assessment now reattests the newest snapshot as
   `integrity_attested` with 512 common sessions and 1,536 rows; the receipt
   retains only hashes, counts, and categorical contract facts. It does not
