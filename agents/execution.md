@@ -229,9 +229,17 @@ another correctly scoped Paper action.
   no missed-run catch-up or retry loop, and emits only a categorical outcome.
   The final four minutes of a known session, rechecked immediately before
   Docker, do not start Docker. A busy bridge preserves the prior snapshot and
-  creates no external receipt. A direct current off-session check returned
-  `outside_regular_session` before Docker or KIS work. Claude's required
-  recurring-read and correction challenges timed out as
+  creates no external receipt. A tagged complete/unavailable bridge result now
+  writes a separate immutable receipt with only marker, status/reason,
+  timestamp, no-submit scope, and the final bridge receipt's SHA-256 pointer;
+  its reader recomputes the hash and binds marker/status/time/reason. Missing
+  receipt evidence is unknown, not inferred busy or success; the marker is
+  assumed-honest-host evidence rather than Scheduler provenance. The CLI emits
+  a marker only after reader validation and the host runner matches it to its
+  fresh UUIDv4. An isolated Docker bind-mount, network-disabled hard-link probe
+  confirmed create-only write and collision rejection. A direct current
+  off-session check returned `outside_regular_session` before Docker or KIS
+  work. Claude's required recurring-read and correction challenges timed out as
   `review_unavailable`; this is not a decision or a hold on the task-owned first
   eligible refresh.
 - The local replay now derives FIFO realized-after-fee PnL only from closed

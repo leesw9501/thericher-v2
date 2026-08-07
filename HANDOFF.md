@@ -690,9 +690,18 @@ unproven; this is a reversible current-season repair, not an input promotion.
   off-session check returned only
   `outside_regular_session` and made no Compose or KIS call. A busy bridge
   preserves its prior snapshot and creates no evidence artifact. Its first
-  eligible refresh remains task-owned. The required Claude schedule and
-  correction challenges timed out, so record `review_unavailable`, not
-  agreement or a new hold.
+  eligible refresh remains task-owned. Tagged `complete` and `unavailable`
+  bridge outcomes now write an immutable external observer receipt that binds
+  the marker, categorical outcome, and timestamp to the final bridge receipt's
+  SHA-256; it carries no account facts or diagnostics. The reader requires the
+  hash plus matching bridge marker/status/time/reason; the bridge CLI emits its
+  marker only after that check and the runner compares it to its fresh UUIDv4.
+  The current Docker bind mount passed an isolated no-network hard-link and
+  collision-rejection probe. A missing receipt is unknown, and the marker is
+  only assumed-honest-host observer evidence rather than proof of a Windows
+  Scheduler launch; this host's Task Scheduler Operational log is disabled.
+  The required Claude schedule and correction challenges timed out, so record
+  `review_unavailable`, not agreement or a new hold.
 - The local dashboard now replays FIFO realized-after-fee PnL only from closed
   `source: local_paper` lots. It leaves open lots unvalued and excludes every
   KIS account/broker fact, so it is descriptive simulator accounting rather
@@ -726,7 +735,7 @@ unproven; this is a reversible current-season repair, not an input promotion.
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
 | Private Paper dashboard | Execution / Infra | Completed Docker reattestation: explicit container-bind exception, host loopback publish, secret-free unavailable rendering, and pause/resume UI round trip. It created no broker route or order. Next bounded action is the existing read-only Paper account snapshot bridge. |
 | Read-only Paper account snapshot | Execution / Infra | Completed one actual `kis-readonly` bridge refresh: categorical `complete`, external fact-minimized receipt, immediate loopback dashboard `available`, no order or live route. The five-minute runtime TTL makes a bounded observer the next operational improvement. |
-| Read-only Paper account observer | Execution / Infra | Installed `thericher-kis-paper-snapshot-observer`: four-minute bounded cadence, close-aware pure 2026 session predicate, `IgnoreNew`, host mutex, bridge runtime-volume lock, no catch-up/retry, and categorical-only output. Its current off-session check made no Compose or KIS call; the first eligible refresh remains task-owned. |
+| Read-only Paper account observer | Execution / Infra | Installed `thericher-kis-paper-snapshot-observer`: four-minute bounded cadence, close-aware pure 2026 session predicate, `IgnoreNew`, host mutex, bridge runtime-volume lock, no catch-up/retry, and categorical-only output. Tagged complete/unavailable results also bind an immutable no-account-facts observer receipt to the final bridge SHA-256; a missing receipt is unknown, not inferred busy/success. Its current off-session check made no Compose or KIS call; the first eligible refresh remains task-owned. |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
 An external wait belongs to its worker. Do not foreground-sleep, add a duplicate

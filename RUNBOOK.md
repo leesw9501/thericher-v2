@@ -1303,7 +1303,9 @@ categorical result and makes no Compose or KIS call. During an eligible session
 it invokes only:
 
 ```powershell
-docker compose --profile kis-readonly run --rm --no-deps --pull never kis-readonly
+docker compose --profile kis-readonly run --rm --no-deps --pull never `
+  -e THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=<new-uuidv4> `
+  kis-readonly
 ```
 
 Task Scheduler uses `IgnoreNew`, the runner also holds a named host mutex, and
@@ -1311,6 +1313,21 @@ the bridge holds an advisory refresh lock on the shared runtime volume for every
 snapshot writer. A busy bridge leaves the prior snapshot and external artifact
 root untouched; a bridge failure writes the existing canonical unavailable
 snapshot. There is no missed-run catch-up, foreground sleep, or retry loop.
+
+For a tagged `complete` or `unavailable` bridge result, the bridge writes one
+immutable source-safe observer receipt under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-snapshot-observer`. It
+retains only the UUIDv4 marker, categorical status/reason, timestamp,
+read-only/no-submit contract, and a relative bridge-receipt pointer plus the
+SHA-256 of that final bridge receipt. The reader recomputes that hash and
+requires the bridge status, timestamp, reason, and marker to match. It never
+copies account facts or diagnostics into the observer receipt. The bridge CLI
+emits the marker only after that reader succeeds, and the runner requires it to
+equal its own fresh UUIDv4. A busy, crashed, or otherwise missing observer
+receipt is `unknown`; do not infer success or busy from a Task Scheduler exit
+result alone. The marker demonstrates a marker-present observer invocation only
+under the assumed-honest local host; it is not cryptographic proof that Windows
+Task Scheduler launched the process.
 Inspect task facts without account values:
 
 ```powershell

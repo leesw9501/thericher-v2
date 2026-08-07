@@ -19,6 +19,7 @@ def _run_with_fake_host_commands(
     eligible_minutes: int,
     bridge_payload: dict[str, object],
     bridge_recheck_minutes: int | None = None,
+    bridge_exit_code: int = 0,
 ) -> tuple[subprocess.CompletedProcess[str], Path]:
     project_root = tmp_path / "project"
     inspector_path = (
@@ -71,9 +72,21 @@ def _run_with_fake_host_commands(
                 "}",
                 "function global:docker.exe {",
                 f"    $markerPath = {_powershell_literal(docker_marker)}",
-                "    [System.IO.File]::WriteAllText($markerPath, 'called')",
-                f"    Write-Output {_powershell_literal(bridge_json)}",
-                "    $global:LASTEXITCODE = 0",
+                "    [System.IO.File]::WriteAllText($markerPath, ($args -join '|'))",
+                f"    $bridgeJson = {_powershell_literal(bridge_json)}",
+                (
+                    "    $observerArgument = @($args | Where-Object { $_ -like "
+                    "'THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=*' })"
+                ),
+                "    if ($observerArgument.Count -eq 1) {",
+                (
+                    "        $bridgeJson = $bridgeJson.Replace("
+                    "'__observer_invocation_id__', "
+                    "([string]$observerArgument[0]).Split('=')[1])"
+                ),
+                "    }",
+                "    Write-Output $bridgeJson",
+                f"    $global:LASTEXITCODE = {bridge_exit_code}",
                 "}",
                 f"& {_powershell_literal(SCRIPT)} -ProjectRoot {_powershell_literal(project_root)}",
                 "exit $LASTEXITCODE",
@@ -126,7 +139,8 @@ def test_paper_snapshot_observer_is_bounded_and_uses_only_the_readonly_service()
     assert "($eligibleUntil - $observedAt) -le" in source
 
     assert "docker.exe compose --project-directory $ProjectRoot --profile kis-readonly" in source
-    assert "run --rm --no-deps --pull never kis-readonly" in source
+    assert "run --rm --no-deps --pull never" in source
+    assert "kis-readonly 2>&1" in source
     assert "--service-ports" not in source
     assert "--entrypoint" not in source
     assert "Get-SafeBridgeOutcome" in source
@@ -139,6 +153,12 @@ def test_paper_snapshot_observer_is_bounded_and_uses_only_the_readonly_service()
     assert "$bridgeObservedAt = [datetimeoffset]::Parse(" in source
     assert 'Write-ObserverOutcome -Status "complete" -ObservedAt $bridgeObservedAt' in source
     assert "$bridgeLaunchAt = Get-ObserverUtcNow" in source
+    assert '$observerInvocationId = [guid]::NewGuid().ToString("D")' in source
+    assert "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=$ObserverInvocationId" in source
+    assert '$bridge.Status -eq "busy" -and $bridge.ExitCode -eq 0' in source
+    assert '"observer_evidence_path"' in source
+    assert '"observer_invocation_id"' in source
+    assert '[string]$payload.observer_invocation_id -ne $ObserverInvocationId' in source
 
     for forbidden in (
         "kis_live",
@@ -184,8 +204,16 @@ def test_complete_observer_uses_the_bridge_observed_time(
         eligible_minutes=10,
         bridge_payload={
             "account_snapshot_complete": True,
-            "evidence_path": "/app/model_artifacts/execution/observer-fixture.json",
+            "evidence_path": (
+                "/app/model_artifacts/execution/kis-paper-console-bridge/"
+                "bridge-fixture.json"
+            ),
             "observed_at": bridge_observed_at,
+            "observer_evidence_path": (
+                "/app/model_artifacts/execution/kis-paper-snapshot-observer/"
+                "observer-fixture.json"
+            ),
+            "observer_invocation_id": "__observer_invocation_id__",
             "reason_code": None,
             "scope": "read_only",
             "status": "complete",
@@ -198,4 +226,62 @@ def test_complete_observer_uses_the_bridge_observed_time(
     assert datetime.fromisoformat(payload["observed_at"].replace("Z", "+00:00")) == datetime(
         2026, 7, 21, 14, 31, 2, 123000, tzinfo=UTC
     )
-    assert docker_marker.read_text(encoding="utf-8") == "called"
+    invocation = docker_marker.read_text(encoding="utf-8")
+    assert "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=" in invocation
+    assert re.search(
+        r"THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID="
+        r"[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}",
+        invocation,
+    )
+
+
+def test_busy_bridge_with_nonzero_exit_is_observer_unavailable(tmp_path: Path) -> None:
+    completed, docker_marker = _run_with_fake_host_commands(
+        tmp_path,
+        eligible_minutes=10,
+        bridge_payload={
+            "account_snapshot_complete": False,
+            "evidence_path": None,
+            "observed_at": "2026-07-21T14:31:02.123Z",
+            "observer_evidence_path": None,
+            "observer_invocation_id": None,
+            "reason_code": "refresh_busy",
+            "scope": "read_only",
+            "status": "busy",
+        },
+        bridge_exit_code=1,
+    )
+
+    assert completed.returncode == 3, completed.stderr
+    payload = json.loads(completed.stdout)
+    assert payload["status"] == "observer_unavailable"
+    assert payload["scope"] == "read_only"
+    assert payload["submit_capability"] is False
+    assert docker_marker.exists()
+
+
+def test_mismatched_bridge_observer_invocation_is_observer_unavailable(tmp_path: Path) -> None:
+    completed, docker_marker = _run_with_fake_host_commands(
+        tmp_path,
+        eligible_minutes=10,
+        bridge_payload={
+            "account_snapshot_complete": True,
+            "evidence_path": (
+                "/app/model_artifacts/execution/kis-paper-console-bridge/"
+                "bridge-fixture.json"
+            ),
+            "observed_at": "2026-07-21T14:31:02.123Z",
+            "observer_evidence_path": (
+                "/app/model_artifacts/execution/kis-paper-snapshot-observer/"
+                "observer-fixture.json"
+            ),
+            "observer_invocation_id": "6b991b8c-98ef-46de-ab4e-cbfa7fe1d00e",
+            "reason_code": None,
+            "scope": "read_only",
+            "status": "complete",
+        },
+    )
+
+    assert completed.returncode == 3, completed.stderr
+    assert json.loads(completed.stdout)["status"] == "observer_unavailable"
+    assert docker_marker.exists()

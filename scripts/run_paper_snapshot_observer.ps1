@@ -125,7 +125,9 @@ function Get-SafeBridgeOutcome {
         [Parameter(Mandatory = $true)]
         [string]$ProjectRoot,
         [Parameter(Mandatory = $true)]
-        [datetime]$EligibleUntil
+        [datetime]$EligibleUntil,
+        [Parameter(Mandatory = $true)]
+        [string]$ObserverInvocationId
     )
 
     $bridgeLaunchAt = Get-ObserverUtcNow
@@ -143,7 +145,9 @@ function Get-SafeBridgeOutcome {
         $ErrorActionPreference = "Continue"
         $output = @(
             & docker.exe compose --project-directory $ProjectRoot --profile kis-readonly `
-                run --rm --no-deps --pull never kis-readonly 2>&1
+                run --rm --no-deps --pull never `
+                -e "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID=$ObserverInvocationId" `
+                kis-readonly 2>&1
         )
         $exitCode = [int]$LASTEXITCODE
     } finally {
@@ -154,6 +158,8 @@ function Get-SafeBridgeOutcome {
         "account_snapshot_complete",
         "evidence_path",
         "observed_at",
+        "observer_evidence_path",
+        "observer_invocation_id",
         "reason_code",
         "scope",
         "status"
@@ -182,12 +188,18 @@ function Get-SafeBridgeOutcome {
                         -and (
                             $payload.account_snapshot_complete -ne $false `
                                 -or [string]$payload.reason_code -ne "refresh_busy" `
-                                -or $null -ne $payload.evidence_path
+                                -or $null -ne $payload.evidence_path `
+                                -or $null -ne $payload.observer_evidence_path `
+                                -or $null -ne $payload.observer_invocation_id
                         )
                 ) `
                 -or (
                     [string]$payload.status -ne "busy" `
-                        -and [string]$payload.evidence_path -notmatch "^/app/model_artifacts/"
+                        -and (
+                            [string]$payload.evidence_path -notmatch "^/app/model_artifacts/execution/kis-paper-console-bridge/" `
+                                -or [string]$payload.observer_evidence_path -notmatch "^/app/model_artifacts/execution/kis-paper-snapshot-observer/" `
+                                -or [string]$payload.observer_invocation_id -ne $ObserverInvocationId
+                        )
                 )
         ) {
             continue
@@ -259,9 +271,11 @@ try {
                 Write-ObserverOutcome -Status "session_closing" -ObservedAt $observedAt
                 $exitCode = 0
             } else {
+                $observerInvocationId = [guid]::NewGuid().ToString("D")
                 $bridge = Get-SafeBridgeOutcome `
                     -ProjectRoot $resolvedProjectRoot `
-                    -EligibleUntil $eligibleUntil
+                    -EligibleUntil $eligibleUntil `
+                    -ObserverInvocationId $observerInvocationId
                 if ($bridge.Status -eq "session_closing") {
                     Write-ObserverOutcome -Status "session_closing" -ObservedAt $bridge.ObservedAt
                     $exitCode = 0
@@ -273,7 +287,7 @@ try {
                     ).UtcDateTime
                     Write-ObserverOutcome -Status "complete" -ObservedAt $bridgeObservedAt
                     $exitCode = 0
-                } elseif ($bridge.Status -eq "busy") {
+                } elseif ($bridge.Status -eq "busy" -and $bridge.ExitCode -eq 0) {
                     $bridgeObservedAt = [datetimeoffset]::Parse(
                         $bridge.ObservedAt,
                         [System.Globalization.CultureInfo]::InvariantCulture,

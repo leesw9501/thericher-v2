@@ -6,15 +6,19 @@ from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
+from hashlib import sha256
 from pathlib import Path
 
 import pytest
 
 import thericher_v2.execution.kis_paper_console_bridge as console_bridge
+from thericher_v2.contracts import SCHEMA_VERSION
 from thericher_v2.execution.kis_paper_console_bridge import (
+    read_kis_paper_snapshot_observer_evidence,
     recover_kis_paper_console_bridge_evidence,
     run_kis_paper_console_bridge,
     write_kis_paper_console_bridge_evidence,
+    write_kis_paper_snapshot_observer_evidence,
 )
 from thericher_v2.execution.kis_readonly import (
     KIS_PAPER_BALANCE_ENDPOINT,
@@ -348,6 +352,8 @@ def test_busy_bridge_cli_emits_a_source_safe_non_error_outcome(
     assert payload["reason_code"] == "refresh_busy"
     assert payload["account_snapshot_complete"] is False
     assert payload["evidence_path"] is None
+    assert payload["observer_evidence_path"] is None
+    assert payload["observer_invocation_id"] is None
     assert payload["scope"] == "read_only"
     assert isinstance(payload["observed_at"], str)
     assert not (tmp_path / "runtime").exists()
@@ -378,9 +384,278 @@ def test_bridge_accepts_a_valid_flat_account_without_exposing_account_facts(tmp_
     assert payload["submit_capability"] is False
     assert payload["facts"]["position_count"] == 0
     assert payload["facts"]["open_order_count"] == 0
+    assert "observer_invocation_id" not in payload
+    assert outcome.observer_evidence_path is None
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
     for forbidden in ("12345678", "test-app-key", "test-app-secret", "SPY", "1200.50"):
         assert forbidden not in evidence
+
+
+def test_bridge_records_only_a_canonical_observer_invocation_id(tmp_path) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    invocation_id = "79c1f5dd-b7e5-4f30-875c-4d59ce6e88c3"
+    outcome = run_kis_paper_console_bridge(
+        environment={
+            **_paper_environment(),
+            "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID": invocation_id,
+        },
+        runtime_snapshot_path=runtime_snapshot_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=FakeKisTransport(runtime_snapshot_path),
+        clock=lambda: NOW,
+    )
+
+    assert outcome.status == "complete"
+    assert outcome.observer_evidence_path is not None
+    bridge_payload = json.loads(outcome.evidence_path.read_text(encoding="utf-8"))
+    assert bridge_payload["observer_invocation_id"] == invocation_id
+    payload = json.loads(outcome.observer_evidence_path.read_text(encoding="utf-8"))
+    assert payload == {
+        "bridge_evidence": {
+            "relative_path": "execution/kis-paper-console-bridge/"
+            + outcome.evidence_path.name,
+            "sha256": sha256(outcome.evidence_path.read_bytes()).hexdigest(),
+        },
+        "kind": "kis_paper_snapshot_observer",
+        "observed_at": NOW.isoformat(),
+        "observer_invocation_id": invocation_id,
+        "schema_version": SCHEMA_VERSION,
+        "scope": "read_only",
+        "status": "complete",
+        "submit_capability": False,
+    }
+    assert "facts" not in payload
+    assert read_kis_paper_snapshot_observer_evidence(
+        evidence_path=outcome.observer_evidence_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+    ) == {
+        "bridge_evidence_path": "execution/kis-paper-console-bridge/"
+        + outcome.evidence_path.name,
+        "observed_at": NOW.isoformat(),
+        "observer_invocation_id": invocation_id,
+        "scope": "read_only",
+        "status": "complete",
+        "submit_capability": False,
+    }
+    with pytest.raises(ValueError, match="already exists"):
+        write_kis_paper_snapshot_observer_evidence(
+            status="complete",
+            observed_at=NOW,
+            reason_code=None,
+            observer_invocation_id=invocation_id,
+            bridge_evidence_path=outcome.evidence_path,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+        )
+
+
+def test_tagged_bridge_cli_revalidates_observer_evidence_before_emitting_marker(
+    tmp_path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    invocation_id = "9f19cfc1-a07c-438a-9142-ef89c6bca7a9"
+    original_run = console_bridge.run_kis_paper_console_bridge
+    original_reader = console_bridge.read_kis_paper_snapshot_observer_evidence
+    read_calls: list[Path] = []
+
+    def tagged_fake_run(**_kwargs: object) -> console_bridge.KisPaperConsoleBridgeOutcome:
+        return original_run(
+            environment={
+                **_paper_environment(),
+                "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID": invocation_id,
+            },
+            runtime_snapshot_path=runtime_snapshot_path,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            transport=FakeKisTransport(runtime_snapshot_path),
+            clock=lambda: NOW,
+        )
+
+    def recording_reader(**kwargs: object) -> dict[str, object]:
+        evidence_path = kwargs["evidence_path"]
+        assert isinstance(evidence_path, Path)
+        read_calls.append(evidence_path)
+        return original_reader(
+            evidence_path=evidence_path,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+    monkeypatch.setattr(console_bridge, "run_kis_paper_console_bridge", tagged_fake_run)
+    monkeypatch.setattr(
+        console_bridge,
+        "read_kis_paper_snapshot_observer_evidence",
+        recording_reader,
+    )
+
+    exit_code = console_bridge.main(
+        [
+            "--execute",
+            "--runtime-snapshot",
+            str(runtime_snapshot_path),
+            "--artifact-root",
+            str(artifact_root),
+            "--repository-root",
+            str(repository_root),
+        ]
+    )
+
+    assert exit_code == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["observer_invocation_id"] == invocation_id
+    assert payload["observer_evidence_path"] is not None
+    assert len(read_calls) == 1
+
+
+def test_observer_evidence_rejects_a_mutated_bridge_receipt(tmp_path) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    outcome = run_kis_paper_console_bridge(
+        environment={
+            **_paper_environment(),
+            "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID": (
+                "8b81f5dd-b7e5-4f30-875c-4d59ce6e88c3"
+            ),
+        },
+        runtime_snapshot_path=runtime_snapshot_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=FakeKisTransport(runtime_snapshot_path),
+        clock=lambda: NOW,
+    )
+
+    assert outcome.evidence_path is not None
+    assert outcome.observer_evidence_path is not None
+    outcome.evidence_path.write_text("{}\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="digest does not match"):
+        read_kis_paper_snapshot_observer_evidence(
+            evidence_path=outcome.observer_evidence_path,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+        )
+
+
+def test_observer_evidence_requires_a_matching_tagged_bridge_receipt(tmp_path) -> None:
+    bridge_evidence_path = write_kis_paper_console_bridge_evidence(
+        _complete_snapshot(NOW),
+        snapshot_digest="0" * 64,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+    )
+
+    with pytest.raises(ValueError, match="bridge evidence contract"):
+        write_kis_paper_snapshot_observer_evidence(
+            status="complete",
+            observed_at=NOW,
+            reason_code=None,
+            observer_invocation_id="603a4aed-6c95-4654-a084-4bbdb8183c1b",
+            bridge_evidence_path=bridge_evidence_path,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+        )
+
+    assert not (tmp_path / "artifacts" / "execution" / "kis-paper-snapshot-observer").exists()
+
+
+def test_observer_evidence_rejects_busy_status_before_writing(tmp_path) -> None:
+    with pytest.raises(ValueError, match="status is invalid"):
+        write_kis_paper_snapshot_observer_evidence(
+            status="busy",  # type: ignore[arg-type]
+            observed_at=NOW,
+            reason_code="refresh_busy",
+            observer_invocation_id="5539f147-c892-42a7-acfc-c0b2b8bccf9d",
+            bridge_evidence_path=tmp_path / "missing.json",
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+        )
+
+    assert not (tmp_path / "artifacts").exists()
+
+
+def test_bridge_evidence_is_create_only(tmp_path) -> None:
+    snapshot = _complete_snapshot(NOW)
+    write_kis_paper_console_bridge_evidence(
+        snapshot,
+        snapshot_digest="0" * 64,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+    )
+
+    with pytest.raises(ValueError, match="evidence already exists"):
+        write_kis_paper_console_bridge_evidence(
+            snapshot,
+            snapshot_digest="0" * 64,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+        )
+
+
+def test_bridge_evidence_rejects_an_intermediate_reparse_namespace(
+    tmp_path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(
+        console_bridge,
+        "_path_is_link_or_reparse_point",
+        lambda path: path.name == "execution",
+    )
+
+    with pytest.raises(ValueError, match="link or reparse point"):
+        write_kis_paper_console_bridge_evidence(
+            _complete_snapshot(NOW),
+            snapshot_digest="0" * 64,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+        )
+
+
+def test_tagged_unavailable_observer_evidence_excludes_diagnostics(tmp_path) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+    invocation_id = "160e0ed0-4088-41c2-b1dd-ffdf61fe3fdf"
+    outcome = run_kis_paper_console_bridge(
+        environment={
+            **_paper_environment(),
+            "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID": invocation_id,
+        },
+        runtime_snapshot_path=runtime_snapshot_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        transport=FakeKisTransport(runtime_snapshot_path, reject_open_orders=True),
+        clock=lambda: NOW,
+    )
+
+    assert outcome.status == "unavailable"
+    assert outcome.reason_code == "open_orders_rejected"
+    assert outcome.observer_evidence_path is not None
+    payload = json.loads(outcome.observer_evidence_path.read_text(encoding="utf-8"))
+    assert payload["reason_code"] == "open_orders_rejected"
+    assert "diagnostic" not in payload
+    assert read_kis_paper_snapshot_observer_evidence(
+        evidence_path=outcome.observer_evidence_path,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+    )["reason_code"] == "open_orders_rejected"
+
+
+def test_bridge_rejects_a_noncanonical_observer_invocation_id_before_snapshot_io(tmp_path) -> None:
+    runtime_snapshot_path = tmp_path / "runtime" / "paper_account_snapshot.json"
+
+    with pytest.raises(ValueError, match="UUIDv4"):
+        run_kis_paper_console_bridge(
+            environment={
+                "THERICHER_KIS_PAPER_SNAPSHOT_OBSERVER_INVOCATION_ID": "not-a-uuid",
+            },
+            runtime_snapshot_path=runtime_snapshot_path,
+            artifact_root=tmp_path / "artifacts",
+            repository_root=tmp_path / "repo",
+            clock=lambda: NOW,
+        )
+
+    assert not runtime_snapshot_path.exists()
+    assert not (tmp_path / "artifacts").exists()
 
 
 def test_bridge_overwrites_a_prior_complete_view_when_the_read_is_rejected(tmp_path) -> None:
