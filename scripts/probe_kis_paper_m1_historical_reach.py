@@ -43,6 +43,7 @@ def main(
 ) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--include-previous-day", action="store_true")
     parser.add_argument("--artifact-root", type=Path, default=_DEFAULT_ARTIFACT_ROOT)
     parser.add_argument(
         "--minimum-request-interval-seconds",
@@ -91,6 +92,7 @@ def main(
             repository_root=_REPOSITORY_ROOT,
             observed_at=clock(),
             tested_request_interval_seconds=args.minimum_request_interval_seconds,
+            include_previous_day=args.include_previous_day,
             monotonic_clock=monotonic_clock,
         )
     except (KisPaperMarketDataError, OSError, ValueError):

@@ -113,7 +113,17 @@ def test_script_builds_one_four_page_client_and_prints_only_safe_output(
 
     monkeypatch.setattr(script, "probe_and_write_kis_paper_m1_historical_reach", probe_and_write)
 
-    assert script.main(["--execute", "--artifact-root", str(tmp_path / "artifacts")]) == 0
+    assert (
+        script.main(
+            [
+                "--execute",
+                "--include-previous-day",
+                "--artifact-root",
+                str(tmp_path / "artifacts"),
+            ]
+        )
+        == 0
+    )
 
     client = observed["client"]
     assert isinstance(client, dict)
@@ -122,6 +132,7 @@ def test_script_builds_one_four_page_client_and_prints_only_safe_output(
     assert isinstance(probe, dict)
     assert probe["tested_request_interval_seconds"] == 1.0
     assert probe["artifact_root"] == tmp_path / "artifacts"
+    assert probe["include_previous_day"] is True
     payload = json.loads(capsys.readouterr().out)
     assert payload["paper_only"] is True
     assert payload["raw_market_data_retained"] is False

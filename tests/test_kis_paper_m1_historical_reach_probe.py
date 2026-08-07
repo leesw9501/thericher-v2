@@ -113,6 +113,32 @@ def test_probe_uses_one_client_and_keeps_target_counts_isolated() -> None:
     assert client.queries[1].continuation_key == "20260724093000"
 
 
+def test_probe_uses_explicit_previous_day_scope_on_each_fixed_first_request() -> None:
+    request_start_times: list[datetime] = []
+    start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    client = _MinuteClient(
+        [
+            _page("QQQ", "NAS", (start,), None),
+            _page("SPY", "AMS", (start,), None),
+        ],
+        request_start_times,
+    )
+
+    outcomes = run_kis_paper_m1_historical_reach_probe(
+        client=client,
+        request_start_times=request_start_times,
+        observed_at=datetime(2026, 7, 24, 12, 0, tzinfo=UTC),
+        include_previous_day=True,
+        monotonic_clock=_monotonic(0.0, 0.1, 0.2, 0.3),
+    )
+
+    assert [query.include_previous_day for query in client.queries] == [True, True]
+    assert [outcome.request_scope for outcome in outcomes] == [
+        "current_and_previous_day",
+        "current_and_previous_day",
+    ]
+
+
 def test_probe_enforces_the_two_page_budget_and_closes_duplicate_cursor_progress() -> None:
     request_start_times: list[datetime] = []
     start = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
@@ -254,6 +280,7 @@ def test_probe_evidence_is_target_isolated_source_safe_and_idempotent(tmp_path: 
     assert len(first_paths) == 2
     assert all(path.is_relative_to(artifact_root) for path in first_paths)
     assert {path.parent.name for path in first_paths} == {"target=QQQ-NAS", "target=SPY-AMS"}
+    assert {path.parent.parent.name for path in first_paths} == {"scope=current_day_only"}
     artifact_parts = tuple(KIS_PAPER_M1_HISTORICAL_REACH_ARTIFACT_DIRECTORY.split("/"))
     assert all(
         any(

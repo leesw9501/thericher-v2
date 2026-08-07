@@ -454,6 +454,18 @@ undocumented timestamp seed.
   a model, Paper input, or promotion. The next Data package is a separately
   bounded explicit-previous-day probe; it may follow only a provider-admitted
   continuation and must keep the existing QQQ/SPY collector unchanged.
+- **Completed QQQ/SPY explicit-previous-day M1 scope probe:** each fixed target
+  made one source-safe initial request with explicit previous-day scope through
+  one shared client. Both accepted pages remained terminal with no recognized
+  continuation and a single exchange-date category; QQQ issued one token, SPY
+  reused it, each target made one minute GET, both elapsed buckets were
+  `under_5_seconds`, and no categorical failure occurred. Scope-isolated
+  receipts retain no raw rows. This means neither tested initial scope exposes
+  an admitted paginated historical chain; remaining history stays `unknown` and
+  no provider-wide limit, finality, qualification, model, or Paper-input claim
+  follows. Do not repeat either identical probe. The next Data package repairs
+  the existing task-owned current-head duplicate-conflict recovery path so a
+  future scheduled observation may preserve compatible forward data.
 - The D1 stability observer may label only `stable`, `changed`, `unavailable`,
   or `outside_window`; `stable` means two separately timed virtual-Paper reads
   matched, not provider finality, point-in-time availability, data

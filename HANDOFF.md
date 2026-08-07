@@ -31,11 +31,23 @@ success classification, and empty-page recovery. All were corrected before the
 final source-safe receipts. Claude did not return before the bounded review
 window, so that check is `review_unavailable`, not agreement.
 
+`kis-paper-m1-previous-day-scope-probe-v1` is also complete. The same bounded
+two-target, one-client route made one explicit-previous-day M1 GET for each
+target; both accepted pages were terminal, had no recognized continuation, and
+contained only one exchange-date category. QQQ issued one token, SPY reused it,
+both elapsed buckets were `under_5_seconds`, no categorical error occurred, and
+the scope-isolated receipts retained no raw rows. Therefore neither exact
+initial request scope currently opens a paginated historical M1 route. This is
+not a provider-wide retention limit or a data/model/Paper qualification claim;
+the remaining historical scope remains `unknown`. Claude again did not return
+before the bounded review window, so that check is `review_unavailable`.
+
 The next bounded objective is Data-owned
-`kis-paper-m1-previous-day-scope-probe-v1`: measure the same two targets' exact
-explicit previous-day M1 request and any provider-admitted continuation under a
-small isolated page budget. It remains a reach measurement rather than a broad
-backfill or data-promotion decision.
+`kis-paper-m1-current-head-duplicate-recovery-v1`: repair the exact existing
+QQQ/SPY current-head collector's `minute_duplicate_conflict` recovery path so a
+future task-owned observation can preserve compatible forward data. It must not
+create a duplicate schedule, manually rerun the task, rewrite raw snapshots, or
+claim historical reach or data promotion.
 
 `intraday-qqq-offline-validation-reliability-v1` is complete. The exact
 2026-08-07 04:24 KST QQQ session was a valid Paper-only `no_intent`, and its

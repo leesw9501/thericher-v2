@@ -289,6 +289,7 @@ def write_kis_paper_m1_historical_reach_evidence(
         destination = (
             root
             / KIS_PAPER_M1_HISTORICAL_REACH_ARTIFACT_DIRECTORY
+            / f"scope={outcome.request_scope}"
             / f"target={outcome.target_key.removesuffix('/1m').replace('/', '-')}"
             / f"{outcome.observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{digest}.json"
         )
