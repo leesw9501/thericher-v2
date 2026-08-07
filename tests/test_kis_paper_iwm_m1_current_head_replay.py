@@ -12,12 +12,15 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
+import thericher_v2.data.kis_paper_iwm_m1_current_head_replay as replay_module
 from thericher_v2.contracts import Timeframe
 from thericher_v2.data.kis_paper_iwm_m1_current_head import (
     KisPaperIwmM1CurrentHeadOutcome,
     write_kis_paper_iwm_m1_current_head_evidence,
 )
 from thericher_v2.data.kis_paper_iwm_m1_current_head_replay import (
+    list_verified_kis_paper_iwm_m1_current_head_observations,
+    load_selected_verified_kis_paper_iwm_m1_current_head_replay,
     load_verified_kis_paper_iwm_m1_current_head_replay,
     resample_verified_kis_paper_iwm_m1_current_head_replay,
     write_kis_paper_iwm_m1_current_head_replay_evidence,
@@ -98,8 +101,8 @@ def test_replay_rejects_multiple_receipts_as_an_ambiguous_association(tmp_path: 
     original = next(receipt_root.glob("*.json"))
     (receipt_root / "second.json").write_bytes(original.read_bytes())
 
-    with pytest.raises(ValueError, match="exactly one bound receipt"):
-        _load(roots)
+    with pytest.raises(ValueError, match="observation receipts are duplicated"):
+        _observations(roots)
 
 
 def test_replay_rejects_a_receipt_bound_to_a_missing_snapshot(tmp_path: Path) -> None:
@@ -180,6 +183,85 @@ def test_bound_receipt_selects_its_snapshot_alongside_legacy_evidence(tmp_path: 
 
     assert replay.completion_basis == "receipt_snapshot_content_binding"
     assert len(resample_verified_kis_paper_iwm_m1_current_head_replay(replay)[Timeframe.M1]) == 10
+
+
+def test_selector_requires_an_explicit_id_for_multiple_bound_observations(tmp_path: Path) -> None:
+    roots = _seed_snapshot(tmp_path, bar_count=10, observed_at=_observed_at())
+    _write_bound_receipt(roots, observed_at=_observed_at() + timedelta(minutes=1))
+
+    observations = _observations(roots)
+
+    assert len(observations) == 2
+    assert observations[0].observation_id != observations[1].observation_id
+    with pytest.raises(ValueError, match="explicit observation ID"):
+        _load(roots)
+    selected = load_selected_verified_kis_paper_iwm_m1_current_head_replay(
+        observation_id=observations[1].observation_id,
+        cache_root=roots["cache_root"],
+        artifact_root=roots["artifact_root"],
+        repository_root=roots["repository_root"],
+        market_data_root=roots["market_data"],
+    )
+
+    assert selected.observation_id == observations[1].observation_id
+    assert selected.receipt_sha256 == observations[1].receipt_sha256
+    assert selected.snapshot_content_sha256 == observations[1].snapshot_content_sha256
+    assert all(bar.complete for bar in selected.bars)
+
+
+def test_selector_keeps_distinct_time_ordered_observations_with_reverse_ids(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    roots = _seed_snapshot(tmp_path, bar_count=10, observed_at=_observed_at())
+    _write_bound_receipt(roots, observed_at=_observed_at() + timedelta(minutes=1))
+    assigned_ids: dict[str, str] = {}
+    available_ids = iter(("f" * 64, "0" * 64))
+
+    def observation_id(*, receipt_sha256: str, snapshot_content_sha256: str | None) -> str:
+        del snapshot_content_sha256
+        if receipt_sha256 not in assigned_ids:
+            assigned_ids[receipt_sha256] = next(available_ids)
+        return "iwm-observation:" + assigned_ids[receipt_sha256]
+
+    monkeypatch.setattr(replay_module, "_observation_id", observation_id)
+
+    observations = _observations(roots)
+
+    assert [observation.observation_id[-1] for observation in observations] == ["f", "0"]
+    selected = load_selected_verified_kis_paper_iwm_m1_current_head_replay(
+        observation_id=observations[1].observation_id,
+        cache_root=roots["cache_root"],
+        artifact_root=roots["artifact_root"],
+        repository_root=roots["repository_root"],
+        market_data_root=roots["market_data"],
+    )
+    assert selected.observation_id == observations[1].observation_id
+
+
+def test_selector_lists_legacy_as_incomplete_without_exposing_raw_values(tmp_path: Path) -> None:
+    roots = _seed_snapshot(
+        tmp_path,
+        bar_count=10,
+        observed_at=_observed_at(),
+        bound_receipt=False,
+    )
+
+    observations = _observations(roots)
+    payload = observations[0].safe_payload()
+    selected = load_selected_verified_kis_paper_iwm_m1_current_head_replay(
+        observation_id=observations[0].observation_id,
+        cache_root=roots["cache_root"],
+        artifact_root=roots["artifact_root"],
+        repository_root=roots["repository_root"],
+        market_data_root=roots["market_data"],
+    )
+
+    assert len(observations) == 1
+    assert payload["completion_basis"] == "completion_evidence_unavailable"
+    assert payload["snapshot_content_sha256"] is None
+    assert "123.45" not in json.dumps(payload, sort_keys=True)
+    assert not any(bar.complete for bar in selected.bars)
 
 
 def test_replay_evidence_rejects_a_linked_intermediate_directory(tmp_path: Path) -> None:
@@ -279,6 +361,32 @@ def _load(roots: dict[str, Path]):
         artifact_root=roots["artifact_root"],
         repository_root=roots["repository_root"],
         market_data_root=roots["market_data"],
+    )
+
+
+def _observations(roots: dict[str, Path]):
+    return list_verified_kis_paper_iwm_m1_current_head_observations(
+        artifact_root=roots["artifact_root"],
+        repository_root=roots["repository_root"],
+    )
+
+
+def _write_bound_receipt(roots: dict[str, Path], *, observed_at: datetime) -> None:
+    snapshot_content_sha256 = _snapshot_path(roots).name
+    write_kis_paper_iwm_m1_current_head_evidence(
+        outcome=KisPaperIwmM1CurrentHeadOutcome(
+            status="collected",
+            observed_at=observed_at,
+            row_count=10,
+            exact_duplicate_rows=0,
+            continuation_category="not_observed",
+            cache_disposition="already_retained",
+            response_class="accepted",
+            raw_market_data_retained=True,
+            snapshot_content_sha256=snapshot_content_sha256,
+        ),
+        artifact_root=roots["artifact_root"],
+        repository_root=roots["repository_root"],
     )
 
 

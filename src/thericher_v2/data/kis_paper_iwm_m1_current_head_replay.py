@@ -38,6 +38,7 @@ from thericher_v2.execution.kis_market_data import KisPaperMarketDataError, KisP
 from thericher_v2.market.resample import SUPPORTED_RESAMPLE_TIMEFRAMES, resample_bars
 
 KIS_PAPER_IWM_M1_CURRENT_HEAD_REPLAY_VERSION = "v1"
+KIS_PAPER_IWM_M1_CURRENT_HEAD_OBSERVATION_SELECTION_VERSION = "v1"
 KIS_PAPER_IWM_M1_CURRENT_HEAD_REPLAY_ARTIFACT_DIRECTORY = (
     "data/kis-paper-iwm-m1-current-head-replayability-v1"
 )
@@ -54,6 +55,7 @@ _RAW_MINUTE_COLUMNS = (
     "evol",
 )
 _SNAPSHOT_ID_PATTERN = re.compile(r"[0-9a-f]{64}")
+_OBSERVATION_ID_PATTERN = re.compile(r"iwm-observation:[0-9a-f]{64}")
 _KOREA_TZ = ZoneInfo("Asia/Seoul")
 _EXPECTED_MANIFEST_FIELDS = frozenset(
     {
@@ -97,11 +99,63 @@ _BOUND_RECEIPT_FIELDS = _LEGACY_RECEIPT_FIELDS | {
 
 
 @dataclass(frozen=True)
+class KisPaperIwmM1CurrentHeadObservation:
+    """Source-safe identity for one immutable collection receipt."""
+
+    observation_id: str
+    receipt_sha256: str
+    snapshot_content_sha256: str | None
+    observed_at: datetime | None
+    completion_basis: Literal[
+        "receipt_snapshot_content_binding",
+        "completion_evidence_unavailable",
+    ]
+    schema_version: int = SCHEMA_VERSION
+
+    def __post_init__(self) -> None:
+        if (
+            not _OBSERVATION_ID_PATTERN.fullmatch(self.observation_id)
+            or not _valid_digest(self.receipt_sha256)
+        ):
+            raise ValueError("IWM current-head observation is invalid")
+        if self.observed_at is not None:
+            object.__setattr__(
+                self,
+                "observed_at",
+                require_utc(self.observed_at, "observed_at"),
+            )
+        if self.completion_basis == "receipt_snapshot_content_binding":
+            if self.observed_at is None or not _valid_digest(self.snapshot_content_sha256):
+                raise ValueError("IWM current-head observation is invalid")
+            return
+        if self.observed_at is not None or self.snapshot_content_sha256 is not None:
+            raise ValueError("IWM current-head observation is invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        """Return selection metadata without paths, raw rows, or prices."""
+
+        return {
+            "schema_version": self.schema_version,
+            "kind": "kis_paper_iwm_m1_current_head_observation",
+            "selection_version": KIS_PAPER_IWM_M1_CURRENT_HEAD_OBSERVATION_SELECTION_VERSION,
+            "target_key": KIS_PAPER_IWM_M1_CURRENT_HEAD_TARGET_KEY,
+            "observation_id": self.observation_id,
+            "receipt_sha256": self.receipt_sha256,
+            "snapshot_content_sha256": self.snapshot_content_sha256,
+            "observed_at": None if self.observed_at is None else self.observed_at.isoformat(),
+            "completion_basis": self.completion_basis,
+        }
+
+
+@dataclass(frozen=True)
 class KisPaperIwmM1CurrentHeadReplay:
-    """Verified local Bars with a deliberately narrow timing association."""
+    """Verified local Bars from one explicitly identified observation."""
 
     bars: tuple[Bar, ...]
     source_identity: str
+    observation_id: str
+    receipt_sha256: str
+    snapshot_content_sha256: str
     observed_at: datetime | None
     completion_basis: Literal[
         "receipt_snapshot_content_binding",
@@ -117,7 +171,13 @@ class KisPaperIwmM1CurrentHeadReplay:
                 "observed_at",
                 require_utc(self.observed_at, "observed_at"),
             )
-        if not self.bars or not _SNAPSHOT_ID_PATTERN.fullmatch(self.source_identity):
+        if (
+            not self.bars
+            or not _valid_digest(self.source_identity)
+            or not _OBSERVATION_ID_PATTERN.fullmatch(self.observation_id)
+            or not _valid_digest(self.receipt_sha256)
+            or not _valid_digest(self.snapshot_content_sha256)
+        ):
             raise ValueError("IWM current-head replay is invalid")
         if any(
             bar.symbol != "IWM" or bar.market != "US" or bar.timeframe != Timeframe.M1
@@ -160,6 +220,9 @@ class KisPaperIwmM1CurrentHeadReplay:
             "route_class": "offline_local_cache",
             "target_key": KIS_PAPER_IWM_M1_CURRENT_HEAD_TARGET_KEY,
             "source_identity": self.source_identity,
+            "observation_id": self.observation_id,
+            "receipt_sha256": self.receipt_sha256,
+            "snapshot_content_sha256": self.snapshot_content_sha256,
             "completion_basis": self.completion_basis,
             "provider_finality": "not_observed",
             "decision_time_availability": "not_observed",
@@ -171,13 +234,7 @@ class KisPaperIwmM1CurrentHeadReplay:
 
 @dataclass(frozen=True)
 class _CollectionReceipt:
-    identity: str
-    observed_at: datetime | None
-    snapshot_identity: str | None
-    completion_basis: Literal[
-        "receipt_snapshot_content_binding",
-        "completion_evidence_unavailable",
-    ]
+    observation: KisPaperIwmM1CurrentHeadObservation
 
 
 def load_verified_kis_paper_iwm_m1_current_head_replay(
@@ -186,8 +243,15 @@ def load_verified_kis_paper_iwm_m1_current_head_replay(
     artifact_root: Path,
     repository_root: Path,
     market_data_root: Path = KIS_PAPER_MARKET_DATA_ROOT,
+    observation_id: str | None = None,
 ) -> KisPaperIwmM1CurrentHeadReplay:
-    """Reattach one exact isolated snapshot without network or credential access."""
+    """Reattach one isolated observation without network or credential access.
+
+    A caller may omit ``observation_id`` only while the receipt root contains
+    exactly one bound receipt, or exactly one legacy receipt.  This is a
+    compatibility path for the first observation, never a latest-record rule.
+    Repeated v2 observations require an explicit immutable observation ID.
+    """
 
     _reject_linked_ancestors(path=Path(cache_root), label="IWM current-head cache root")
     _reject_linked_ancestors(path=Path(market_data_root), label="market-data root")
@@ -201,22 +265,31 @@ def load_verified_kis_paper_iwm_m1_current_head_replay(
         repository_root=repository_root,
         label="IWM current-head replay artifact root",
     )
-    receipt = _load_collection_receipt(artifact)
-    snapshot = _snapshot_path(cache, snapshot_identity=receipt.snapshot_identity)
+    receipt = _select_collection_receipt(
+        _load_collection_receipts(artifact),
+        observation_id=observation_id,
+    )
+    snapshot = _snapshot_path(
+        cache,
+        snapshot_identity=receipt.observation.snapshot_content_sha256,
+    )
     manifest, raw_bars, snapshot_identity = _load_verified_snapshot(snapshot)
-    if receipt.snapshot_identity is not None and receipt.snapshot_identity != snapshot_identity:
+    if (
+        receipt.observation.snapshot_content_sha256 is not None
+        and receipt.observation.snapshot_content_sha256 != snapshot_identity
+    ):
         raise ValueError("IWM current-head collection receipt is invalid")
     source_identity = _sha256(
         _canonical_json_bytes(
             {
                 "kind": "kis_paper_iwm_m1_current_head_replay_source_v1",
-                "receipt_sha256": receipt.identity,
+                "receipt_sha256": receipt.observation.receipt_sha256,
                 "snapshot_sha256": snapshot_identity,
             }
         )
     )
     bars = tuple(
-        _bar_from_raw(raw_bar=raw_bar, observed_at=receipt.observed_at)
+        _bar_from_raw(raw_bar=raw_bar, observed_at=receipt.observation.observed_at)
         for raw_bar in raw_bars
     )
     if manifest["content_sha256"] != snapshot_identity:
@@ -224,8 +297,50 @@ def load_verified_kis_paper_iwm_m1_current_head_replay(
     return KisPaperIwmM1CurrentHeadReplay(
         bars=bars,
         source_identity=source_identity,
-        observed_at=receipt.observed_at,
-        completion_basis=receipt.completion_basis,
+        observation_id=receipt.observation.observation_id,
+        receipt_sha256=receipt.observation.receipt_sha256,
+        snapshot_content_sha256=snapshot_identity,
+        observed_at=receipt.observation.observed_at,
+        completion_basis=receipt.observation.completion_basis,
+    )
+
+
+def list_verified_kis_paper_iwm_m1_current_head_observations(
+    *,
+    artifact_root: Path,
+    repository_root: Path,
+) -> tuple[KisPaperIwmM1CurrentHeadObservation, ...]:
+    """List immutable receipt metadata without opening any raw snapshot."""
+
+    artifact = _external_root(
+        root=artifact_root,
+        repository_root=repository_root,
+        label="IWM current-head replay artifact root",
+    )
+    observations = tuple(receipt.observation for receipt in _load_collection_receipts(artifact))
+    if not observations:
+        raise ValueError("IWM current-head replay requires a collection receipt")
+    return observations
+
+
+def load_selected_verified_kis_paper_iwm_m1_current_head_replay(
+    *,
+    observation_id: str,
+    cache_root: Path = KIS_PAPER_IWM_M1_CURRENT_HEAD_CACHE_ROOT,
+    artifact_root: Path,
+    repository_root: Path,
+    market_data_root: Path = KIS_PAPER_MARKET_DATA_ROOT,
+) -> KisPaperIwmM1CurrentHeadReplay:
+    """Require one caller-selected immutable observation for replay."""
+
+    if not _OBSERVATION_ID_PATTERN.fullmatch(observation_id):
+        raise ValueError("IWM current-head observation ID is invalid")
+    return load_verified_kis_paper_iwm_m1_current_head_replay(
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        market_data_root=market_data_root,
+        observation_id=observation_id,
     )
 
 
@@ -407,7 +522,7 @@ def _decode_raw_bars(
     return raw_bars
 
 
-def _load_collection_receipt(artifact_root: Path) -> _CollectionReceipt:
+def _load_collection_receipts(artifact_root: Path) -> tuple[_CollectionReceipt, ...]:
     receipt_root = artifact_root / KIS_PAPER_IWM_M1_CURRENT_HEAD_ARTIFACT_DIRECTORY
     if receipt_root.is_symlink() or not receipt_root.is_dir():
         raise ValueError("IWM current-head collection receipt is invalid")
@@ -420,11 +535,46 @@ def _load_collection_receipt(artifact_root: Path) -> _CollectionReceipt:
     if not candidates:
         raise ValueError("IWM current-head replay requires a collection receipt")
     receipts = tuple(_read_collection_receipt(path) for path in candidates)
-    bound = tuple(receipt for receipt in receipts if receipt.snapshot_identity is not None)
+    ordered = tuple(
+        sorted(
+            receipts,
+            key=lambda receipt: (
+                receipt.observation.observed_at is None,
+                receipt.observation.observed_at or datetime.min.replace(tzinfo=UTC),
+                receipt.observation.observation_id,
+            ),
+        )
+    )
+    observation_ids = tuple(receipt.observation.observation_id for receipt in ordered)
+    if len(set(observation_ids)) != len(observation_ids):
+        raise ValueError("IWM current-head observation receipts are duplicated")
+    return ordered
+
+
+def _select_collection_receipt(
+    receipts: tuple[_CollectionReceipt, ...],
+    *,
+    observation_id: str | None,
+) -> _CollectionReceipt:
+    if observation_id is not None:
+        if not _OBSERVATION_ID_PATTERN.fullmatch(observation_id):
+            raise ValueError("IWM current-head observation ID is invalid")
+        selected = tuple(
+            receipt for receipt in receipts if receipt.observation.observation_id == observation_id
+        )
+        if len(selected) != 1:
+            raise ValueError("IWM current-head observation is unavailable")
+        return selected[0]
+
+    bound = tuple(
+        receipt
+        for receipt in receipts
+        if receipt.observation.completion_basis == "receipt_snapshot_content_binding"
+    )
     if len(bound) == 1:
         return bound[0]
     if len(bound) > 1:
-        raise ValueError("IWM current-head replay requires exactly one bound receipt")
+        raise ValueError("IWM current-head replay requires an explicit observation ID")
     if len(receipts) != 1:
         raise ValueError("IWM current-head replay requires exactly one legacy receipt")
     return receipts[0]
@@ -441,11 +591,18 @@ def _read_collection_receipt(path: Path) -> _CollectionReceipt:
     if not isinstance(receipt, dict) or receipt_bytes != _canonical_json_bytes(receipt) + b"\n":
         raise ValueError("IWM current-head collection receipt is invalid")
     observed_at, snapshot_identity, completion_basis = _validate_collection_receipt(receipt)
+    receipt_identity = _sha256(receipt_bytes)
     return _CollectionReceipt(
-        identity=_sha256(receipt_bytes),
-        observed_at=observed_at,
-        snapshot_identity=snapshot_identity,
-        completion_basis=completion_basis,
+        observation=KisPaperIwmM1CurrentHeadObservation(
+            observation_id=_observation_id(
+                receipt_sha256=receipt_identity,
+                snapshot_content_sha256=snapshot_identity,
+            ),
+            receipt_sha256=receipt_identity,
+            snapshot_content_sha256=snapshot_identity,
+            observed_at=observed_at,
+            completion_basis=completion_basis,
+        )
     )
 
 
@@ -574,6 +731,18 @@ def _non_negative_int(value: object) -> bool:
 
 def _sha256(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
+
+
+def _observation_id(*, receipt_sha256: str, snapshot_content_sha256: str | None) -> str:
+    return "iwm-observation:" + _sha256(
+        _canonical_json_bytes(
+            {
+                "kind": "kis_paper_iwm_m1_current_head_observation_v1",
+                "receipt_sha256": receipt_sha256,
+                "snapshot_content_sha256": snapshot_content_sha256,
+            }
+        )
+    )
 
 
 def _canonical_json_bytes(value: object) -> bytes:

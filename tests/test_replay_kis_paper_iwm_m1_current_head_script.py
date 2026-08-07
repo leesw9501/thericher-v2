@@ -29,6 +29,22 @@ def test_script_replays_local_snapshot_without_credentials_or_paths(
     script = _load_script()
     monkeypatch.setattr(script, "_REPOSITORY_ROOT", roots["repository_root"])
 
+    list_arguments = [
+        "--list-observations",
+        "--cache-root",
+        str(roots["cache_root"]),
+        "--market-data-root",
+        str(roots["market_data_root"]),
+        "--artifact-root",
+        str(roots["artifact_root"]),
+    ]
+    assert script.main(list_arguments) == 0
+    listing = json.loads(capsys.readouterr().out)
+    observation_id = listing["observations"][0]["observation_id"]
+    assert listing["status"] == "observations_listed"
+    assert listing["broker_or_network_used"] is False
+    assert str(roots["cache_root"]) not in json.dumps(listing, sort_keys=True)
+
     assert (
         script.main(
             [
@@ -38,6 +54,8 @@ def test_script_replays_local_snapshot_without_credentials_or_paths(
                 str(roots["market_data_root"]),
                 "--artifact-root",
                 str(roots["artifact_root"]),
+                "--observation-id",
+                observation_id,
             ]
         )
         == 0
@@ -67,6 +85,33 @@ def test_script_rejects_an_in_repository_artifact_root(tmp_path: Path, capsys) -
                 str(roots["market_data_root"]),
                 "--artifact-root",
                 str(roots["repository_root"] / "artifacts"),
+            ]
+        )
+        == 2
+    )
+
+    assert json.loads(capsys.readouterr().out) == {
+        "broker_or_network_used": False,
+        "paper_only": True,
+        "route_class": "offline_local_cache",
+        "status": "unavailable",
+    }
+
+
+def test_script_requires_an_explicit_observation_id(tmp_path: Path, capsys) -> None:
+    roots = _seed_snapshot(tmp_path)
+    script = _load_script()
+    script._REPOSITORY_ROOT = roots["repository_root"]
+
+    assert (
+        script.main(
+            [
+                "--cache-root",
+                str(roots["cache_root"]),
+                "--market-data-root",
+                str(roots["market_data_root"]),
+                "--artifact-root",
+                str(roots["artifact_root"]),
             ]
         )
         == 2

@@ -169,12 +169,25 @@ returned an incomplete tool request rather than a verdict, so it is
 `review_unavailable`; independent Execution review confirmed the one-page
 market-data-only route and its cache-isolation kill condition.
 
+`iwm-m1-v2-observation-ledger-v1` is complete. The offline selector lists only
+source-safe immutable IWM receipt metadata and requires a caller-selected
+opaque observation ID for CLI replay; it never falls back to a mutable latest
+record. The actual v2 observation reattached alongside the legacy v1 receipt
+and replayed the same aggregate 120 completed M1, 8 M5, and 1 M10 bucket with
+no H1/H3 bucket. Independent Validation found a time-order versus hash-order
+duplicate-check defect before integration; the order-independent fix and
+regression passed. The selector made no provider, credential, QQQ/SPY,
+account, order, Paper, model, GPU, PnL, or qualification change. Claude's
+request produced no usable verdict, so it remains `review_unavailable` rather
+than agreement.
+
 The next bounded objective is Data-owned
-`iwm-m1-v2-observation-ledger-v1`: add a narrow immutable selector for exact
-IWM v2 observations before recurring collection is considered. It must let a
-caller select one hash-bound receipt/snapshot pair without a mutable "latest"
-fallback, while retaining legacy v1 evidence as incomplete and leaving every
-provider, model, Paper, account, order, and QQQ/SPY path untouched.
+`iwm-m1-prospective-observation-append-v1`: make the isolated IWM/AMS
+current-head route append-safe. Identical content may reference its immutable
+snapshot again, while changed content must become a distinct immutable
+observation instead of silently overwriting or mixing a prior head. This
+remains a prospective source-local path; historical M1 coverage requires a
+separate endpoint-reach package.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,

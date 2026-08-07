@@ -2,53 +2,65 @@
 
 ## Objective
 
-Build `iwm-m1-v2-observation-ledger-v1`.
+Build `iwm-m1-prospective-observation-append-v1`.
 
-Advance the market-data foundation by making each immutable IWM/AMS v2
-current-head observation explicitly selectable for local replay before a future
-append-only collector accumulates additional observations. This is a narrow
-source-local data contract, never a data qualification, model, PnL, Paper
-order, broker-performance claim, or generic registry platform.
+Advance the market-data foundation by turning the isolated IWM/AMS current-head
+route into an append-safe observation contract. Each successful observation
+must retain or reference one immutable external snapshot and create one
+explicitly selectable, source-safe v2 receipt. Identical content may reuse its
+snapshot; changed content must remain a distinct immutable observation rather
+than overwriting or mixing a prior head. This is prospective source-local data
+mechanics, not historical M1 backfill, a qualified dataset, model input,
+strategy, PnL, Paper order, account route, or generic scheduler platform.
 
 ## Hard Boundaries
 
-- Do not read `.env`, credentials, or `KIS_LIVE_*`; do not call KIS or any
-  network/provider route.
-- Do not invoke, alter, duplicate, or replace the QQQ/SPY scheduled task, its
-  cache, cursor, terminal chain, or schedule.
-- Read only the named isolated IWM current-head receipt/snapshot roots. Do not
-  scan unrelated raw data, add a new symbol, or infer a mutable "latest"
-  observation.
-- Do not create a schedule, worker, model input, strategy, local-Paper intent,
-  account/order route, GPU campaign, performance/PnL claim, or public service.
+- `KIS_PAPER_*` may be read only through the existing named IWM Paper
+  market-data client, and only for the one bounded final observation attempt.
+  Never print or persist credentials; never read or route `KIS_LIVE_*`.
+- Keep IWM/AMS current-day, one-page, no-continuation scope. Do not add
+  historical paging, an undocumented timestamp seed, parallel flooding, an
+  account/order route, or a QQQ/SPY cache, cursor, task, or schedule change.
+- Do not create a recurring scheduler, model, dataset qualification, research
+  campaign, GPU job, local-Paper intent, broker-order path, public service, or
+  mutable latest-observation fallback.
 - Keep raw market data under `D:\market_data` and generated receipts under
   `D:\thericher-v2\model-artifacts`; never commit either.
+- A failed, unavailable, or rate-limited observation attempt remains a scoped
+  source-safe recovery fact. Do not foreground-wait or turn it into a hold on
+  another ready lane.
 
 ## Required Work
 
-1. Run a concise Throughput Review. Confirm the current IWM v2 observation is
-   bound/replayable while legacy v1 evidence remains incomplete, and the
-   QQQ/SPY collector is independent.
+1. Run a concise Throughput Review. Confirm that the completed selector makes
+   repeated IWM observations safe to enumerate, while the current generic IWM
+   WIP is current-head-only and does not prove historical M1 coverage.
 2. Ask Claude CLI for a short falsification-first drift check before changing
-   receipt-selection or replay identity semantics. Send no raw rows, prices,
-   paths, or credentials; do not wait on the result.
-3. Freeze one lean observation-selection contract: opaque observation ID,
-   exact v2 receipt digest, exact snapshot digest, source-safe ordering field,
-   legacy handling, selected replay identity, and strongest ambiguity kill test.
-4. Implement the smallest offline-only selector/ledger needed to enumerate
-   source-safe IWM observation metadata and reattach exactly one caller-selected
-   v2 receipt/snapshot pair. Reject malformed, hash-mismatched, cross-target,
-   duplicate, legacy-as-complete, ambiguous, Git-resident, or linked input.
-5. Add focused fake/local tests proving deterministic selected replay with
-   multiple valid observations, no mutable latest fallback, tamper rejection,
-   legacy v1 incompleteness, and no QQQ/SPY/broker/credential/network path.
-6. Run one CPU-only local smoke against the retained v2 observation and write
-   only a source-safe external receipt with selection and aggregate geometry.
-   Refresh Data and orchestration stateboards. Do not create a collector yet.
+   IWM snapshot/receipt/recovery semantics. Send no raw rows, values, paths,
+   or credentials; do not wait for the result.
+3. Freeze one append contract: observation identity, snapshot identity,
+   same-content reuse, changed-head isolation, receipt atomicity, restart
+   behavior, source-safe outcome categories, and the strongest corruption or
+   conflicting-revision kill test.
+4. Implement the smallest append API and opt-in CLI that can persist one
+   immutable IWM current-head observation without changing the existing
+   QQQ/SPY collector. A repeated identical head must not overwrite data; a
+   changed head must not silently merge with a prior observation.
+5. Add focused fake/local tests for identical repeated observations, a changed
+   head, malformed or interrupted writes, selector replay of every retained
+   observation, external-root/link rejection, and no account/order/network
+   path before the explicit execute command.
+6. Run CPU-only fixture smoke first. Then make at most one standing-authorized
+   IWM/AMS KIS Paper market-data observation attempt through the new opt-in
+   command. Record only source-safe aggregate/recovery evidence and reattach
+   it with the explicit selector. Do not retry in the foreground.
+7. Refresh Data and orchestration stateboards with the exact append outcome,
+   pace observation, and next recovery fact. Explicitly record that historical
+   coverage still needs its own endpoint-reach package.
 
 ## Verification
 
-Run focused tests and the local smoke, then:
+Run focused tests and the CPU smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -59,4 +71,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Add IWM observation selector`
+`Add IWM prospective observation append`
