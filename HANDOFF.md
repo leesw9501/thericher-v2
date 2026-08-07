@@ -700,6 +700,11 @@ unproven; this is a reversible current-season repair, not an input promotion.
   collision-rejection probe. A missing receipt is unknown, and the marker is
   only assumed-honest-host observer evidence rather than proof of a Windows
   Scheduler launch; this host's Task Scheduler Operational log is disabled.
+  The host-only `reattest_kis_paper_snapshot_observer.py` requires one exact
+  observer sidecar path, recomputes its bound bridge hash, and prints only the
+  categorical read-only fact; it never selects a newest receipt or calls KIS,
+  Docker, the dashboard, or a credential path. Its missing/tampered outcome is
+  `observer_evidence_unavailable`, not a rerun instruction.
   The required Claude schedule and correction challenges timed out, so record
   `review_unavailable`, not agreement or a new hold.
 - The local dashboard now replays FIFO realized-after-fee PnL only from closed
@@ -849,7 +854,9 @@ metadata-only projection. DST/pre-market behavior remains unproven.
    `thericher-kis-paper-snapshot-observer`. It may use only the existing
    read-only Compose service; retain a categorical unavailable, closing, or
    overlap outcome rather than old account facts, and do not give the dashboard
-   KIS credentials or add an order path.
+   KIS credentials or add an order path. Use
+   `scripts\reattest_kis_paper_snapshot_observer.py` with the exact immutable
+   sidecar path rather than selecting a newest artifact.
 2. Preserve the exact 2026-08-05 `canary_completed` session fact and direct
    `cancelled/clean` lifecycle result as virtual-Paper execution evidence only.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,

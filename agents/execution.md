@@ -239,7 +239,10 @@ another correctly scoped Paper action.
   fresh UUIDv4. An isolated Docker bind-mount, network-disabled hard-link probe
   confirmed create-only write and collision rejection. A direct current
   off-session check returned `outside_regular_session` before Docker or KIS
-  work. Claude's required recurring-read and correction challenges timed out as
+  work. The host-only reattacher requires one caller-selected immutable sidecar,
+  recomputes its bridge hash, and emits only the categorical read-only fact;
+  it never scans for a newest receipt or reaches KIS, Docker, the dashboard, or
+  a credential path. Claude's required recurring-read and correction challenges timed out as
   `review_unavailable`; this is not a decision or a hold on the task-owned first
   eligible refresh.
 - The local replay now derives FIFO realized-after-fee PnL only from closed

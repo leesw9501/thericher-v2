@@ -1334,6 +1334,22 @@ Inspect task facts without account values:
 Get-ScheduledTaskInfo -TaskName thericher-kis-paper-snapshot-observer
 ```
 
+Reattach one exact tagged observer receipt without calling KIS, Docker, the
+dashboard, or a credential path:
+
+```powershell
+uv run --extra dev python scripts\reattest_kis_paper_snapshot_observer.py `
+  --evidence-path D:\thericher-v2\model-artifacts\execution\kis-paper-snapshot-observer\<exact-receipt>.json `
+  --artifact-root D:\thericher-v2\model-artifacts `
+  --repository-root .
+```
+
+The path is required: the reattacher never scans for a newest receipt. It
+recomputes the bridge hash and validates the bound marker/status/time/reason,
+then prints only the categorical read-only fact. A missing, malformed, or
+tampered receipt is `observer_evidence_unavailable`; it is not a reason to
+rerun the task or infer a fresh account snapshot.
+
 The current-image bridge reached `balance` (`VTTS3012R`) and received HTTP 500
 with `EGW00201` on 2026-07-21 UTC after a successful image rebuild. It sent no
 order. KIS's official sample repository identifies that code as exceeding the
