@@ -13,6 +13,7 @@ import hashlib
 import io
 import json
 import os
+import re
 import shutil
 import uuid
 from collections.abc import Callable
@@ -44,6 +45,7 @@ KIS_PAPER_IWM_M1_CURRENT_HEAD_TARGET_KEY = "IWM/AMS/1m"
 KIS_PAPER_IWM_M1_CURRENT_HEAD_VERSION = "v1"
 KIS_PAPER_IWM_M1_CURRENT_HEAD_SNAPSHOT_DIRECTORY = "snapshots"
 KIS_PAPER_IWM_M1_CURRENT_HEAD_ARTIFACT_DIRECTORY = "data/kis-paper-iwm-m1-current-head"
+KIS_PAPER_IWM_M1_CURRENT_HEAD_RECEIPT_VERSION = "v2"
 
 _RAW_MINUTE_COLUMNS = (
     "xymd",
@@ -74,6 +76,7 @@ _SAFE_FAILURE_REASONS = frozenset(
         "transport_failure",
     }
 )
+_SHA256_PATTERN = re.compile(r"[0-9a-f]{64}")
 
 
 class KisPaperIwmM1CurrentHeadClient(Protocol):
@@ -99,6 +102,7 @@ class KisPaperIwmM1CurrentHeadOutcome:
     cache_disposition: Literal["retained", "already_retained", "not_written"]
     response_class: str
     raw_market_data_retained: bool
+    snapshot_content_sha256: str | None = None
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -111,6 +115,7 @@ class KisPaperIwmM1CurrentHeadOutcome:
                 or self.cache_disposition not in {"retained", "already_retained"}
                 or not self.raw_market_data_retained
                 or self.response_class != "accepted"
+                or not _is_sha256(self.snapshot_content_sha256)
             ):
                 raise ValueError("IWM current-head outcome is invalid")
             return
@@ -119,6 +124,7 @@ class KisPaperIwmM1CurrentHeadOutcome:
             or self.exact_duplicate_rows
             or self.cache_disposition != "not_written"
             or self.raw_market_data_retained
+            or self.snapshot_content_sha256 is not None
         ):
             raise ValueError("IWM current-head outcome is invalid")
 
@@ -128,6 +134,7 @@ class KisPaperIwmM1CurrentHeadOutcome:
         return {
             "schema_version": self.schema_version,
             "kind": "kis_paper_iwm_m1_current_head",
+            "receipt_version": KIS_PAPER_IWM_M1_CURRENT_HEAD_RECEIPT_VERSION,
             "status": self.status,
             "paper_only": True,
             "route_class": "kis_paper_market_data",
@@ -140,6 +147,7 @@ class KisPaperIwmM1CurrentHeadOutcome:
             "cache_disposition": self.cache_disposition,
             "response_class": self.response_class,
             "raw_market_data_retained": self.raw_market_data_retained,
+            "snapshot_content_sha256": self.snapshot_content_sha256,
             "storage": "external_market_data_only",
             "next_recovery": (
                 "new_isolated_current_head_observation"
@@ -225,6 +233,7 @@ def collect_kis_paper_iwm_m1_current_head(
             cache_disposition=cache_disposition,
             response_class="accepted",
             raw_market_data_retained=True,
+            snapshot_content_sha256=content_digest,
         ),
         snapshot_path=snapshot_path,
     )
@@ -275,12 +284,11 @@ def write_kis_paper_iwm_m1_current_head_evidence(
     )
     payload = _canonical_json_bytes(outcome.safe_payload()) + b"\n"
     digest = hashlib.sha256(payload).hexdigest()[:16]
+    destination_directory = root / KIS_PAPER_IWM_M1_CURRENT_HEAD_ARTIFACT_DIRECTORY
+    _ensure_external_descendant_directory(root=root, path=destination_directory)
     destination = (
-        root
-        / KIS_PAPER_IWM_M1_CURRENT_HEAD_ARTIFACT_DIRECTORY
-        / f"{outcome.observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{digest}.json"
+        destination_directory / f"{outcome.observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{digest}.json"
     )
-    _ensure_directory(destination.parent)
     _validate_descendant(root=root, path=destination, label="IWM current-head evidence")
     if destination.exists():
         if destination.read_bytes() != payload:
@@ -479,6 +487,24 @@ def _ensure_directory(path: Path) -> None:
         raise ValueError("IWM current-head destination is invalid")
 
 
+def _ensure_external_descendant_directory(*, root: Path, path: Path) -> None:
+    _validate_descendant(root=root, path=path, label="IWM current-head evidence directory")
+    root.mkdir(parents=True, exist_ok=True)
+    if root.is_symlink() or not root.is_dir():
+        raise ValueError("IWM current-head evidence directory is invalid")
+    current = root
+    for component in path.relative_to(root).parts:
+        candidate = current / component
+        if candidate.exists():
+            if candidate.is_symlink() or not candidate.is_dir():
+                raise ValueError("IWM current-head evidence directory is invalid")
+        else:
+            candidate.mkdir()
+            if candidate.is_symlink() or not candidate.is_dir():
+                raise ValueError("IWM current-head evidence directory is invalid")
+        current = candidate
+
+
 def _validate_descendant(*, root: Path, path: Path, label: str) -> None:
     if path.is_symlink() or not path.resolve(strict=False).is_relative_to(root):
         raise ValueError(f"{label} is invalid")
@@ -487,6 +513,10 @@ def _validate_descendant(*, root: Path, path: Path, label: str) -> None:
 def _safe_failure_reason(error: KisPaperMarketDataError) -> str:
     reason = str(error)
     return reason if reason in _SAFE_FAILURE_REASONS else "iwm_current_head_error"
+
+
+def _is_sha256(value: object) -> bool:
+    return isinstance(value, str) and _SHA256_PATTERN.fullmatch(value) is not None
 
 
 def _canonical_json_bytes(value: object) -> bytes:

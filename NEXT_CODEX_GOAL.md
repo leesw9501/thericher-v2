@@ -2,54 +2,53 @@
 
 ## Objective
 
-Build `kis-paper-iwm-m1-current-head-replayability-v1`.
+Build `kis-paper-iwm-m1-bound-observation-v2`.
 
-Advance the market-data foundation by proving that the one newly retained,
-isolated IWM/AMS current-head snapshot can be deterministically reattached as
-canonical local `Bar` data and resampled into completed `1m`, `5m`, `10m`,
-`1h`, and `3h` buckets. This is source-local input mechanics only, never a
-data-qualification, model, PnL, Paper, or broker claim.
+Advance the market-data foundation by making one fresh isolated IWM/AMS
+current-head KIS Paper observation whose source-safe v2 receipt binds the
+immutable snapshot identity, then prove the matching local replay can use the
+existing completed-bar and `1m`/`5m`/`10m`/`1h`/`3h` resampler contracts. This
+is source-local input mechanics only, never data qualification, a model, PnL,
+a Paper order, or broker-performance claim.
 
 ## Hard Boundaries
 
-- Do not read `.env`, credentials, or `KIS_LIVE_*`; do not call KIS or any
-  network/provider route.
+- Use only `KIS_PAPER_*` through the existing named market-data client and
+  isolated IWM path. Do not read or route `KIS_LIVE_*`.
+- Make at most one current-day IWM/AMS page request. Do not follow a
+  continuation cursor, page historical data, retry with a second request, or
+  broaden to another symbol.
 - Do not invoke, alter, duplicate, or replace the QQQ/SPY scheduled task, its
   cache, cursor, terminal chain, or schedule.
-- Read only the exact retained IWM snapshot through a named local cache reader;
-  do not scan unrelated raw data or broaden to historical pagination, another
-  symbol, a model input, strategy, local-Paper intent, performance/PnL claim,
-  GPU campaign, or public service.
+- Do not call account, position, order, modify, cancel, or live routes; do not
+  expose credentials, raw rows, prices, paths, or artifacts.
 - Keep raw market data under `D:\market_data` and generated receipts under
-  `D:\thericher-v2\model-artifacts`; never commit raw rows, prices, paths,
-  credentials, or artifacts.
+  `D:\thericher-v2\model-artifacts`; never commit either.
 
 ## Required Work
 
-1. Run a concise Throughput Review. Confirm the IWM current-head receipt is
-   accepted/retained and the primary QQQ/SPY task remains independent.
-2. Ask Claude CLI for a short falsification-first drift check before changing
-   local cache-reader or completed-bar/resampling semantics. Send no raw rows,
-   prices, paths, or credentials; do not wait on it.
-3. Freeze the local replay contract: one IWM/AMS snapshot identity, manifest
-   and raw-hash attestation, canonical timestamp basis, completed-bar rule,
-   five timeframe set, source-safe output fields, strongest tamper/isolation
-   kill test, and the exact fact needed before any later repeated collection.
-4. Implement or reuse the smallest local-only reader/adapter needed to emit
-   canonical `Bar` values from that one snapshot and feed the existing
-   timeframe resampler. Reject wrong target, Git-resident root, malformed or
-   hash-mismatched snapshot, incomplete bucket, and cross-target state before
-   an output is accepted.
-5. Add focused no-network fake/local tests proving deterministic replay,
-   tamper rejection, `1m`/`5m`/`10m`/`1h`/`3h` completed-bucket behavior, and
-   no QQQ/SPY cache/scheduler/broker/credential route.
-6. Run a CPU-only local smoke against the retained snapshot and write only a
-   source-safe external receipt with categories and aggregate geometry. Refresh
-   Data and orchestration stateboards.
+1. Run a concise Throughput Review and confirm the primary QQQ/SPY collector
+   remains independent.
+2. Ask Claude CLI for a short falsification-first drift check before relying on
+   the receipt-to-snapshot completion binding. Send no raw rows, prices, paths,
+   or credentials; do not wait on the result.
+3. Run focused fake/local tests first. Verify a v2 receipt binds exactly its
+   snapshot, old v1 evidence stays incomplete, ambiguity/tampering is rejected,
+   and a bound fixture supports the five resampler timeframes.
+4. Invoke the existing isolated IWM collector exactly once with `--execute`.
+   Preserve the source-safe outcome even if it is unavailable; do not make a
+   second provider request in this objective.
+5. If the one page is accepted, run the offline replay script against its
+   matching v2 receipt and record only categorical status and aggregate completed
+   bucket counts. If the page is unavailable, record its category and leave the
+   existing legacy snapshot unchanged.
+6. Refresh Data and orchestration stateboards with the exact outcome and next
+   recovery action. Do not promote any result to coverage, model, GPU, Paper,
+   or execution eligibility.
 
 ## Verification
 
-Run focused tests and the local smoke, then:
+Run focused tests and any one-page collection/replay smoke, then:
 
 ```powershell
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
@@ -60,4 +59,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Prove IWM current-head replayability`
+`Bind IWM current-head observation receipt`

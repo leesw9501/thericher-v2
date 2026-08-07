@@ -6,11 +6,11 @@ Git and external artifacts retain historic receipts and implementation evidence.
 
 ## Company Objective
 
-`kis-paper-iwm-m1-current-head-replayability-v1` will turn the newly retained
-IWM/AMS current-head snapshot into a deterministic source-local `Bar` and
-completed-bucket replay proof. It preserves the exact QQQ/SPY task and adds no
-provider call, strategy, model, account/order route, live-capital surface, or
-public service.
+`kis-paper-iwm-m1-bound-observation-v2` will make one fresh, isolated IWM/AMS
+current-head KIS Paper data observation with a receipt bound to its immutable
+snapshot, then replay that exact snapshot locally. It preserves QQQ/SPY and
+adds no historical pagination, account/order route, model, Paper input,
+qualification, live-capital surface, or public service.
 
 ## Ready / Owned / Due
 
@@ -27,7 +27,8 @@ public service.
 | EMA local-Paper PnL attribution | Engine Research / Execution | Completed fixed EMA replay and existing local-paper accounting | Completed: `20260807-ema-pnl-attribution-r1` reattested the parent and recorded 76 closed segments, 152 local-paper fills, gross `-26.299200`, fees `10.8932`, net `-37.192400`, zero open quantity, and exact replay parity. It is source-local accounting only. |
 | M1 duplicate-conflict recovery | Data | Existing task-owned QQQ/NAS and SPY/AMS collector paths | Completed. The scheduled `session-capture` preserve branch was reattested with a fake-client restart regression: repeat retained-cache conflicts leave the active chunk, manifest/raw bytes, head cursor, and snapshot count unchanged. The current terminal remains provenance-legacy. |
 | IWM current-head ingestion | Data | Isolated IWM/AMS route and external market-data store | Completed: one current-day page was accepted at 2026-08-07 01:46 UTC, retained as an immutable source-local snapshot, and made no continuation request. QQQ/SPY state and schedule were untouched. |
-| IWM source-local replayability | Data / Engine Research | Newly retained IWM current-head snapshot and existing `Bar`/resampler contracts | Ready: prove deterministic local reattachment and M1/M5/M10/H1/H3 completed-bucket geometry without provider, credential, model, or Paper access. |
+| IWM source-local replayability | Data / Validation | Legacy IWM snapshot, v2 receipt writer, and existing `Bar`/resampler contracts | Completed: the historical v1 receipt lacks a snapshot identity, so exact local replay records `completion_evidence_unavailable` and zero completed buckets rather than inventing timing. The v2 writer/reader contract is tested with bound fixtures. |
+| IWM v2 bound observation | Data | Isolated IWM/AMS KIS Paper one-page route | Ready: make one fresh current-head observation through the existing isolated client, then locally replay the matching v2-bound snapshot. |
 | QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | First receipt is `stable`, not provider finality or consumer qualification. Its next owned observation is 2026-08-07 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The 2026-08-05 receipt reattaches as `cancelled/clean` and attribution-ineligible. Next owned opportunity is 2026-08-07 23:35 KST. |
@@ -45,14 +46,14 @@ nor warrants extending the strategy.
 
 ## Current Reversible Improvement
 
-Use the retained IWM/AMS snapshot before collecting more data: test the local
-reader and all existing timeframe contracts without provider side effects.
-Keep the current primary collector's recovery behavior and terminal semantics
-untouched.
+Use the repaired IWM receipt binding rather than expanding a legacy cache:
+one isolated one-page observation can make its own completed-Bar timing
+verifiable while leaving the primary collector and all QQQ/SPY state untouched.
 
 ## Current Recovery Action
 
-Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation and will
-not manually rerun it. The next IWM package is offline-only and may reattach
-the retained snapshot through the named local contracts. Do not infer coverage
-qualification, model readiness, broker action, or a live outcome.
+Data owns the existing 2026-08-08 00:29 KST QQQ/SPY task invocation and the
+next one-shot isolated IWM observation. The IWM call uses only the named
+KIS Paper market-data client and one current page; its follow-up is local
+replay, never coverage qualification, model readiness, broker action, or a
+live outcome.

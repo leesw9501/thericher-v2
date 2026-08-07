@@ -145,11 +145,23 @@ and schedule untouched. It is source-local and non-promoting. Claude returned
 an incomplete tool request rather than a verdict, so this implementation relies
 on the focused local tests and is not described as Claude agreement.
 
-The next bounded objective is shared Data/Engine
-`kis-paper-iwm-m1-current-head-replayability-v1`: reattach that one retained
-snapshot through the existing local `Bar` and timeframe-resampling contracts,
-without a provider call, credential read, model, Paper action, or qualification
-claim.
+`kis-paper-iwm-m1-current-head-replayability-v1` is complete. Its local-only
+reader verifies the snapshot's target, canonical manifest/raw/content hashes,
+row shape, timestamp conversion, and generic M1/M5/M10/H1/H3 resampling. The
+original v1 receipt does not bind a snapshot identity, so the actual retained
+snapshot replays only as `completion_evidence_unavailable`: it emits no
+completed Bars or buckets rather than assigning an unproven collection time.
+The writer now emits a v2 source-safe receipt that binds the immutable snapshot
+content digest, and the reader accepts a completed Bar only through that exact
+binding. Independent Validation caught the pre-binding defect and a linked
+artifact-directory creation risk; both have focused regression coverage. The
+Claude drift check timed out as `review_unavailable`, not agreement.
+
+The next bounded objective is Data-owned
+`kis-paper-iwm-m1-bound-observation-v2`: make one fresh isolated IWM/AMS
+current-head KIS Paper data request through the now-bound receipt path, then
+offline-replay only that bound snapshot. It must not alter QQQ/SPY, use an
+account/order/live route, qualify data, or create a model/Paper input claim.
 
 The orchestration projection is now compact and current-only: it retains the
 company objective, ready/owned/due work, bottleneck, reversible improvement,
