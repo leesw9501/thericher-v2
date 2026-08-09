@@ -65,6 +65,10 @@ ready.
   geometry, chronological split, decision-time availability, and finality
   facts. A missing condition narrows that input only; it is never a global
   approval hold.
+- These are necessary/default-deny local reconstruction conditions, not
+  cryptographic provider-origin proof. A future `qualified` designation must
+  name its clock authority, timezone/DST session rule, and non-overlapping
+  chronological boundary; otherwise it remains a scoped unavailable input.
 - Model output remains untrusted until deterministic Execution validation.
   Local replay fills retain `source: local_paper`.
 

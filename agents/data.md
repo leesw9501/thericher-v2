@@ -50,6 +50,11 @@ client, or a parallel collector.
 ## Quality Contracts
 
 - A completed bar is not proof of availability at a prior decision time.
+- A self-consistent task-owned receipt is marker-present local provenance under
+  an assumed-honest host, not independent proof of provider origin. A future
+  `qualified` classification needs a named clock authority, timezone/DST
+  session rule, and non-overlapping chronological boundary; otherwise that
+  exact input remains unavailable.
 - An exact source/cursor limit closes only that route; it does not prove a
   provider-wide history limit.
 - Preserve a durable serial cursor only after a useful capability probe

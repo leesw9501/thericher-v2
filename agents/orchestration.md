@@ -65,6 +65,13 @@ and Engine Research completed one PatchTST source-only architecture retrieval.
 Neither changes the active KIS path, authorizes a retry, allocates GPU, or
 creates a campaign; each keeps its own next trigger.
 
+Claude's causal/finality challenge returned `uncertain`: a self-consistent
+task-owned chain is necessary local evidence, not proof of provider origin.
+Codex retains the assumed-honest-host limitation rather than inventing a new
+provider or approval gate. Any future `qualified` classification must also name
+its clock authority, timezone/DST session rule, and non-overlapping
+chronological boundary; otherwise only that input stays unavailable.
+
 ## Current Reversible Improvement
 
 The handoff and active Data, Engine Research, and Execution stateboards now

@@ -30,9 +30,13 @@ a prediction, GPU appointment, Paper intent, broker order, or live feature.
 1. Run a concise Throughput Review and reattest task ownership, current
    `next_due`, exact consumers, active GPU ownership, and independent
    Execution work.
-2. Before any promotion decision, request a short falsification-first review of
-   the causal/finality rule. A limit, timeout, or unavailable review is
-   `review_unavailable`, never agreement or a collection block.
+2. The requested falsification-first review returned `uncertain`. Treat the
+   causal/finality conditions as necessary, default-deny conditions rather
+   than proof that a self-consistent local receipt chain establishes provider
+   origin. Before any future `qualified` designation, retain the named clock
+   authority, timezone/DST session rule, and a non-overlapping chronological
+   boundary. This is a scoped evidence limit, not a new provider, approval, or
+   collection block.
 3. After the existing task creates a caller-selected later terminal/capture/
    prospective evidence chain, use only offline readers to verify its exact
    identities, hashes, completed-bar/session geometry, chronological split, and
