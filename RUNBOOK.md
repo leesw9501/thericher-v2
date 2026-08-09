@@ -1021,6 +1021,16 @@ It never scans for a latest receipt: a malformed/link/reparse-point pointer,
 reserved run ID, Git-local artifact root, missing receipt, hash mismatch, or
 terminal-category mismatch returns only `unavailable`.
 
+The reader also accepts a terminal-embedded SHA-256 binding for one fixed,
+external, source-safe causal-condition attestation. That optional receipt must
+match the terminal's run, capture, availability, and pair identities and name
+the clock authority, `America/New_York` DST/session rule, completed M1
+geometry, chronological boundary, decision-time availability, and provider
+finality. The currently installed task does not write or bind this receipt, so
+the current projection remains `not_recorded`/`input_unavailable`; do not create
+or attach one manually. This is an internal default-deny reconstruction rule,
+not cryptographic proof of provider origin.
+
 To rebuild and update only an already installed named task after a local code
 change, use the scoped installer selector:
 

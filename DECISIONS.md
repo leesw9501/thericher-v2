@@ -9303,3 +9303,28 @@ behavior, sizing, or live route. Claude's falsification-first verdict was
 non-submissions are covered by focused offline tests; aggregate correlation
 with existing opaque timestamps remains an acknowledged private evidence-surface
 limit.
+
+## 2026-08-09 - Keep intraday causal qualification hash-bound and default-deny
+
+Decision: extend the offline intraday-head terminal reader with an optional
+SHA-256-bound, source-safe causal-condition attestation. It can classify an
+input as `qualified` only when that immutable external receipt matches the
+terminal's capture, availability, and pair identities and names the independent
+clock authority, `America/New_York` DST/session rule, completed M1 geometry,
+non-overlapping chronological boundary, decision-time availability, and
+provider finality. With no binding, malformed evidence, or any missing
+condition, the exact input cannot qualify: absent bindings and missing
+conditions remain `input_unavailable`, while malformed or mismatched bound
+evidence fails closed through the reader's existing unavailable result.
+
+Reason: the prior reader's single-value types made a future qualified outcome
+impossible even if a later independent evidence source became available. The
+new branch is deliberately unreachable in current production artifacts: no
+installed task writes or binds an attestation, no scheduler or KIS path changed,
+and the current result remains unavailable. Claude's falsification-first
+verdict was `supported-with-limits`: the fixture proves only contract behavior,
+not a provider property; the explicit independent-observer marker remains
+assumed-honest-host provenance rather than cryptographic proof. Focused offline
+tests cover the valid binding, a missing finality condition, tampering, and no
+network access. No credential, KIS, Docker, order, model, GPU, Paper, live, or
+public behavior changed.

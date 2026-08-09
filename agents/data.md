@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | Latest exact chain is `input_unavailable/session_coverage_incomplete`; decision-time availability and provider finality are `not_observed`. | Only the installed task may produce a later candidate. No model/Paper consumer promotion. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | Latest exact chain is `input_unavailable/session_coverage_incomplete`; its optional causal-attestation binding is `not_recorded`, so decision-time availability and provider finality remain `not_observed`. | Only the installed task may produce a later candidate. No model/Paper consumer promotion. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
@@ -38,6 +38,12 @@ The task owns the next KST sequence on 2026-08-11 at 00:29, 02:28, 04:24, and
 classification. Do not manually run the task, its Docker profile, a KIS
 client, or a parallel collector.
 
+The offline reader now accepts a separately hash-bound causal-condition
+attestation at a fixed external artifact location, but no current task writes
+or binds one. An absent binding stays `input_unavailable`; malformed or
+mismatched bound evidence fails closed through the existing unavailable reader.
+This contract has no collector, credential, network, or schedule behavior.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
@@ -55,6 +61,11 @@ client, or a parallel collector.
   `qualified` classification needs a named clock authority, timezone/DST
   session rule, and non-overlapping chronological boundary; otherwise that
   exact input remains unavailable.
+- A bound causal-condition attestation must independently name the clock,
+  `America/New_York` DST/session rule, M1 completed-bar geometry, and a
+  non-overlapping chronological boundary before its availability/finality
+  categories can qualify a consumer. Its fixture-tested branch is not current
+  provider evidence.
 - An exact source/cursor limit closes only that route; it does not prove a
   provider-wide history limit.
 - Preserve a durable serial cursor only after a useful capability probe

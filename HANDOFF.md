@@ -25,6 +25,15 @@ offline as `complete`, but its exact capture binding has cumulative coverage
 `input_unavailable/session_coverage_incomplete`. This is neither a KIS fault
 claim nor a model, Paper, fill, PnL, or alpha result.
 
+The offline terminal reader can now consume an optional, separately
+hash-bound causal-condition attestation. It is default-deny: no current task
+emits that binding, so the reader exposes `not_recorded` and cannot promote the
+current or next task result by itself. A future bound attestation must retain
+the named clock, `America/New_York` DST/session rule, completed-bar geometry,
+non-overlapping boundary, decision-time availability, and provider-finality
+categories. This is still marker-present local provenance under an assumed
+honest host, not cryptographic proof of provider origin.
+
 Only the installed intraday-head task may produce the next candidate. Its next
 owned sequence begins at 2026-08-11 00:29 KST, with runs at 00:29, 02:28,
 04:24, and 06:20. Only the 06:20 post-close terminal is an eligible
@@ -35,7 +44,7 @@ KIS client, or a replacement collector.
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data | QQQ/SPY current causal chain is `input_unavailable`; historical M1 cursor data has 21 shared complete sessions and is source-local only. | Installed task creates the next evidence chain; reattach it offline after the 06:20 terminal. |
+| Data | QQQ/SPY current causal chain is `input_unavailable`; the optional causal-attestation binding is `not_recorded`, and historical M1 cursor data has 21 shared complete sessions. | Installed task creates the next evidence chain; reattach it offline after the 06:20 terminal. |
 | Data | The 2026-08-09 host-only Norgate tail probe is `unavailable/local_source_unavailable`; D: file freshness is not a vendor-access or rights proof. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until Norgate Data Updater shows an active US subscription and configured database location, then run one bounded probe. |
 | Engine Research | No frozen, input-qualified predictive campaign exists. Fixed QQQ local-paper EMA and Donchian baselines are negative and closed for selection. | If and only if a later qualified input arrives, freeze one existing 30/60/90-minute candidate matrix; do not train in the current objective. |
 | Research Steward | RTX 4090 is healthy but unallocated. | Allocate only a frozen, eligible campaign; never manufacture training to fill GPU time. |
@@ -69,6 +78,9 @@ ready.
   cryptographic provider-origin proof. A future `qualified` designation must
   name its clock authority, timezone/DST session rule, and non-overlapping
   chronological boundary; otherwise it remains a scoped unavailable input.
+- The causal-attestation reader is offline-only and has no writer or scheduler
+  change in the current objective. A synthetic fixture proves its default-deny
+  branch only; it is not a provider evidence claim.
 - Model output remains untrusted until deterministic Execution validation.
   Local replay fills retain `source: local_paper`.
 
@@ -89,11 +101,10 @@ ready.
 
 ## Verification And Git
 
-The causal evidence-binding package previously passed the full authority suite
-(`2890 passed, 28 skipped`), Ruff, and both Compose configurations. The
-subsequent Qlib source-only package was validated by JSON parsing and
-`git diff --check`; it changes no runtime code. Use Git history for immutable
-commit checkpoints rather than copying a self-staling latest hash here.
+The causal-attestation reader package passed 59 focused offline receipt tests,
+Ruff, and `git diff --check`; it makes no KIS, Docker, network, credential,
+order, or scheduler call. Use Git history for immutable commit checkpoints
+rather than copying a self-staling latest hash here.
 
 ## Resume Procedure
 

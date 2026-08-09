@@ -42,6 +42,12 @@ KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_KIND = "kis_paper_intraday_head_schedul
 KIS_PAPER_INTRADAY_HEAD_COLLECTION_RECOVERY_FACT_KIND = (
     "kis_paper_intraday_head_collection_recovery_fact"
 )
+KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_ARTIFACT_DIRECTORY = (
+    "kis-paper-intraday-causal-attestation-v1"
+)
+KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_KIND = (
+    "kis_paper_intraday_head_causal_attestation"
+)
 DEFAULT_KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_ROOT = Path(
     r"D:\thericher-v2\model-artifacts"
 )
@@ -77,6 +83,7 @@ _SCHEDULE_RECEIPT_BINDING_KEY = "terminal_receipt_binding"
 _SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY = "session_capture_binding_required"
 _SCHEDULE_RECEIPT_AVAILABILITY_BINDING_KEY = "receipt_binding"
 _SCHEDULE_RECEIPT_OBSERVATION_BINDING_KEY = "observation_attempt_binding"
+_SCHEDULE_RECEIPT_CAUSAL_ATTESTATION_BINDING_KEY = "causal_attestation_binding"
 _TERMINAL_RECEIPT_BINDING_KEYS = frozenset(
     {
         "schedule_run_id",
@@ -101,6 +108,55 @@ _AVAILABILITY_RECEIPT_BINDING_KEYS = frozenset(
         "summary_sha256",
     }
 )
+_CAUSAL_ATTESTATION_BINDING_KEYS = frozenset({"attestation_sha256"})
+_CAUSAL_ATTESTATION_KEYS = frozenset(
+    {
+        "schema_version",
+        "kind",
+        "schedule_run_id",
+        "schedule_observed_at",
+        "session_capture_receipt_sha256",
+        "availability_summary_sha256",
+        "observation_attempt_sha256",
+        "attestation_origin",
+        "clock_authority",
+        "timezone_dst_session_rule",
+        "completed_bar_geometry",
+        "chronological_boundary",
+        "decision_time_availability",
+        "provider_finality",
+        "artifact_policy",
+        "claim",
+    }
+)
+_CAUSAL_ATTESTATION_ARTIFACT_POLICY = {
+    "credentials_in_receipt": False,
+    "account_data_in_receipt": False,
+    "raw_market_data_in_receipt": False,
+    "broker_order_data_in_receipt": False,
+    "repo_storage_allowed": False,
+}
+_CAUSAL_ATTESTATION_CLAIM = (
+    "independent source-safe causal-condition attestation only; not cryptographic "
+    "proof of provider origin, a model result, PnL claim, or broker action"
+)
+_CAUSAL_ATTESTATION_ORIGINS = frozenset({"independent_observer"})
+_CAUSAL_ATTESTATION_CLOCK_AUTHORITIES = frozenset(
+    {"independent_utc_clock", "not_observed"}
+)
+_CAUSAL_ATTESTATION_TIMEZONE_DST_SESSION_RULES = frozenset(
+    {"America_New_York_IANA_DST", "not_observed"}
+)
+_CAUSAL_ATTESTATION_COMPLETED_BAR_GEOMETRIES = frozenset(
+    {"m1_regular_session_complete_through_1530_et", "not_observed"}
+)
+_CAUSAL_ATTESTATION_CHRONOLOGICAL_BOUNDARIES = frozenset(
+    {"non_overlapping", "not_observed"}
+)
+_CAUSAL_ATTESTATION_DECISION_TIME_AVAILABILITY = frozenset(
+    {"observed_at_decision_time", "not_observed"}
+)
+_CAUSAL_ATTESTATION_PROVIDER_FINALITY = frozenset({"observed_final", "not_observed"})
 _SCHEDULE_RECEIPT_TERMINAL_KEYS = frozenset(
     {"status", "recovery_class", "scheduler_exit_code"}
 )
@@ -261,6 +317,37 @@ class KisPaperIntradayHeadObservationAttemptBinding:
 
 
 @dataclass(frozen=True)
+class KisPaperIntradayHeadCausalAttestationBinding:
+    """Hash-bind one separately produced, source-safe causal-condition receipt."""
+
+    attestation_sha256: str
+
+    def __post_init__(self) -> None:
+        _require_sha256(self.attestation_sha256, "causal attestation sha256")
+
+    def safe_payload(self) -> dict[str, str]:
+        return {"attestation_sha256": self.attestation_sha256}
+
+
+@dataclass(frozen=True)
+class _KisPaperIntradayHeadCausalAttestation:
+    """A default-deny external condition record for one immutable terminal."""
+
+    schedule_run_id: str
+    schedule_observed_at: datetime
+    session_capture_receipt_sha256: str
+    availability_summary_sha256: str
+    observation_attempt_sha256: str
+    attestation_origin: str
+    clock_authority: str
+    timezone_dst_session_rule: str
+    completed_bar_geometry: str
+    chronological_boundary: str
+    decision_time_availability: str
+    provider_finality: str
+
+
+@dataclass(frozen=True)
 class KisPaperIntradayHeadScheduleReceipt:
     """One immutable terminal result for the existing scheduled dispatch."""
 
@@ -290,6 +377,7 @@ class KisPaperIntradayHeadScheduleReceipt:
     session_capture_binding_required: bool
     terminal_receipt_binding: KisPaperIntradayHeadTerminalReceiptBinding | None
     observation_attempt_binding: KisPaperIntradayHeadObservationAttemptBinding | None
+    causal_attestation_binding: KisPaperIntradayHeadCausalAttestationBinding | None
     terminal_status: str
     recovery_class: str
     scheduler_exit_code: int
@@ -374,6 +462,10 @@ class KisPaperIntradayHeadScheduleReceipt:
             availability[_SCHEDULE_RECEIPT_AVAILABILITY_BINDING_KEY] = (
                 self.availability_receipt_binding.safe_payload()
             )
+        if self.causal_attestation_binding is not None:
+            payload[_SCHEDULE_RECEIPT_CAUSAL_ATTESTATION_BINDING_KEY] = (
+                self.causal_attestation_binding.safe_payload()
+            )
         return payload
 
 
@@ -404,10 +496,16 @@ class KisPaperIntradayHeadScheduleFact:
     observation_attempt_sha256: str | None
     observation_attempt_status: Literal["observed", "not_observed"] | None
     observation_store_outcome: Literal["appended", "duplicate"] | None
-    causal_input_status: Literal["input_unavailable"]
+    causal_attestation_binding_status: Literal["not_recorded", "verified"]
+    causal_attestation_sha256: str | None
+    clock_authority: str | None
+    timezone_dst_session_rule: str | None
+    completed_bar_geometry: str | None
+    chronological_boundary: str | None
+    causal_input_status: Literal["input_unavailable", "qualified"]
     causal_input_reason: str
-    decision_time_availability: Literal["not_observed"]
-    provider_finality: Literal["not_observed"]
+    decision_time_availability: Literal["not_observed", "attested"]
+    provider_finality: Literal["not_observed", "attested"]
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -494,12 +592,63 @@ class KisPaperIntradayHeadScheduleFact:
                 )
         else:
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_observation_binding_invalid")
+        if self.causal_attestation_binding_status == "not_recorded":
+            if (
+                self.causal_attestation_sha256 is not None
+                or self.clock_authority is not None
+                or self.timezone_dst_session_rule is not None
+                or self.completed_bar_geometry is not None
+                or self.chronological_boundary is not None
+            ):
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "schedule_causal_attestation_invalid"
+                )
+        elif self.causal_attestation_binding_status == "verified":
+            if self.causal_attestation_sha256 is None:
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "schedule_causal_attestation_invalid"
+                )
+            _require_sha256(self.causal_attestation_sha256, "causal attestation sha256")
+            for value, allowed in (
+                (self.clock_authority, _CAUSAL_ATTESTATION_CLOCK_AUTHORITIES),
+                (
+                    self.timezone_dst_session_rule,
+                    _CAUSAL_ATTESTATION_TIMEZONE_DST_SESSION_RULES,
+                ),
+                (
+                    self.completed_bar_geometry,
+                    _CAUSAL_ATTESTATION_COMPLETED_BAR_GEOMETRIES,
+                ),
+                (
+                    self.chronological_boundary,
+                    _CAUSAL_ATTESTATION_CHRONOLOGICAL_BOUNDARIES,
+                ),
+            ):
+                if value not in allowed:
+                    raise KisPaperIntradayHeadScheduleReceiptError(
+                        "schedule_causal_attestation_invalid"
+                    )
+        else:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_causal_attestation_invalid")
         if (
-            self.causal_input_status != "input_unavailable"
-            or not self.causal_input_reason
-            or self.decision_time_availability != "not_observed"
-            or self.provider_finality != "not_observed"
+            not self.causal_input_reason
+            or self.decision_time_availability not in {"not_observed", "attested"}
+            or self.provider_finality not in {"not_observed", "attested"}
         ):
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_causal_input_invalid")
+        if self.causal_input_status == "qualified":
+            if (
+                self.causal_input_reason != "qualified"
+                or self.causal_attestation_binding_status != "verified"
+                or self.clock_authority != "independent_utc_clock"
+                or self.timezone_dst_session_rule != "America_New_York_IANA_DST"
+                or self.completed_bar_geometry != "m1_regular_session_complete_through_1530_et"
+                or self.chronological_boundary != "non_overlapping"
+                or self.decision_time_availability != "attested"
+                or self.provider_finality != "attested"
+            ):
+                raise KisPaperIntradayHeadScheduleReceiptError("schedule_causal_input_invalid")
+        elif self.causal_input_status != "input_unavailable":
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_causal_input_invalid")
 
     def safe_payload(self) -> dict[str, object]:
@@ -531,6 +680,12 @@ class KisPaperIntradayHeadScheduleFact:
             "observation_attempt_sha256": self.observation_attempt_sha256,
             "observation_attempt_status": self.observation_attempt_status,
             "observation_store_outcome": self.observation_store_outcome,
+            "causal_attestation_binding_status": self.causal_attestation_binding_status,
+            "causal_attestation_sha256": self.causal_attestation_sha256,
+            "clock_authority": self.clock_authority,
+            "timezone_dst_session_rule": self.timezone_dst_session_rule,
+            "completed_bar_geometry": self.completed_bar_geometry,
+            "chronological_boundary": self.chronological_boundary,
             "causal_input_status": self.causal_input_status,
             "causal_input_reason": self.causal_input_reason,
             "decision_time_availability": self.decision_time_availability,
@@ -652,6 +807,7 @@ class _ScheduleReceiptTerminal:
     availability_status: str
     availability_receipt_binding: KisPaperIntradayHeadAvailabilityReceiptBinding | None
     observation_attempt_binding: KisPaperIntradayHeadObservationAttemptBinding | None
+    causal_attestation_binding: KisPaperIntradayHeadCausalAttestationBinding | None
 
 
 def write_kis_paper_intraday_head_schedule_receipt(
@@ -680,6 +836,7 @@ def write_kis_paper_intraday_head_schedule_receipt(
     availability_receipt_sha256: str | None = None,
     availability_precommit_sha256: str | None = None,
     availability_summary_sha256: str | None = None,
+    causal_attestation_sha256: str | None = None,
     observation_attempt_sha256: str | None = None,
     observation_attempt_status: str | None = None,
     observation_store_outcome: str | None = None,
@@ -747,6 +904,9 @@ def write_kis_paper_intraday_head_schedule_receipt(
         raise ValueError("availability receipt binding does not match stage status")
     if availability_status == "qualified_for_prospective_input" and availability_binding is None:
         raise ValueError("qualified availability requires a receipt binding")
+    causal_attestation_binding = _causal_attestation_binding_from_inputs(
+        attestation_sha256=causal_attestation_sha256,
+    )
     observation_binding = _observation_attempt_binding_from_inputs(
         attempt_sha256=observation_attempt_sha256,
         attempt_status=observation_attempt_status,
@@ -815,6 +975,7 @@ def write_kis_paper_intraday_head_schedule_receipt(
         session_capture_binding_required=binding_required,
         terminal_receipt_binding=binding,
         observation_attempt_binding=observation_binding,
+        causal_attestation_binding=causal_attestation_binding,
         terminal_status=terminal_status,
         recovery_class=recovery_class,
         scheduler_exit_code=scheduler_exit_code,
@@ -868,6 +1029,11 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         observation_artifact_root=observation_artifact_root,
         repository_root=repository_root,
     )
+    causal_attestation_binding_status, causal_attestation = _read_causal_attestation_binding(
+        terminal=receipt,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
     causal_input_status, causal_input_reason = _causal_input_terminal(
         terminal=receipt,
         coverage_binding_status=coverage_binding_status,
@@ -875,6 +1041,7 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         observation_binding_status=observation_binding_status,
         observation_attempt_status=observation_attempt_status,
         observation_store_outcome=observation_store_outcome,
+        causal_attestation=causal_attestation,
     )
     return KisPaperIntradayHeadScheduleFact(
         run_id=runtime.run_id,
@@ -904,10 +1071,42 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         observation_attempt_sha256=observation_attempt_sha256,
         observation_attempt_status=observation_attempt_status,
         observation_store_outcome=observation_store_outcome,
+        causal_attestation_binding_status=causal_attestation_binding_status,
+        causal_attestation_sha256=(
+            None
+            if receipt.causal_attestation_binding is None
+            else receipt.causal_attestation_binding.attestation_sha256
+        ),
+        clock_authority=(
+            None if causal_attestation is None else causal_attestation.clock_authority
+        ),
+        timezone_dst_session_rule=(
+            None if causal_attestation is None else causal_attestation.timezone_dst_session_rule
+        ),
+        completed_bar_geometry=(
+            None if causal_attestation is None else causal_attestation.completed_bar_geometry
+        ),
+        chronological_boundary=(
+            None if causal_attestation is None else causal_attestation.chronological_boundary
+        ),
         causal_input_status=causal_input_status,
         causal_input_reason=causal_input_reason,
-        decision_time_availability="not_observed",
-        provider_finality="not_observed",
+        decision_time_availability=(
+            "attested"
+            if (
+                causal_attestation is not None
+                and causal_attestation.decision_time_availability == "observed_at_decision_time"
+            )
+            else "not_observed"
+        ),
+        provider_finality=(
+            "attested"
+            if (
+                causal_attestation is not None
+                and causal_attestation.provider_finality == "observed_final"
+            )
+            else "not_observed"
+        ),
     )
 
 
@@ -1120,6 +1319,23 @@ def _receipt_terminal_from_payload(payload: Mapping[str, Any]) -> _ScheduleRecei
             _SCHEDULE_RECEIPT_KEYS | {_SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY},
             _SCHEDULE_RECEIPT_KEYS
             | {_SCHEDULE_RECEIPT_BINDING_KEY, _SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY},
+            _SCHEDULE_RECEIPT_KEYS | {_SCHEDULE_RECEIPT_CAUSAL_ATTESTATION_BINDING_KEY},
+            _SCHEDULE_RECEIPT_KEYS
+            | {
+                _SCHEDULE_RECEIPT_BINDING_KEY,
+                _SCHEDULE_RECEIPT_CAUSAL_ATTESTATION_BINDING_KEY,
+            },
+            _SCHEDULE_RECEIPT_KEYS
+            | {
+                _SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY,
+                _SCHEDULE_RECEIPT_CAUSAL_ATTESTATION_BINDING_KEY,
+            },
+            _SCHEDULE_RECEIPT_KEYS
+            | {
+                _SCHEDULE_RECEIPT_BINDING_KEY,
+                _SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY,
+                _SCHEDULE_RECEIPT_CAUSAL_ATTESTATION_BINDING_KEY,
+            },
         }
         or payload.get("schema_version") != SCHEMA_VERSION
         or payload.get("kind") != KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND
@@ -1205,6 +1421,15 @@ def _receipt_terminal_from_payload(payload: Mapping[str, Any]) -> _ScheduleRecei
             error_code="schedule_evidence_invalid",
         )
     )
+    causal_attestation_value = payload.get(_SCHEDULE_RECEIPT_CAUSAL_ATTESTATION_BINDING_KEY)
+    causal_attestation_binding = (
+        None
+        if causal_attestation_value is None
+        else _causal_attestation_binding_from_payload(
+            causal_attestation_value,
+            error_code="schedule_evidence_invalid",
+        )
+    )
     return _ScheduleReceiptTerminal(
         run_id=_payload_schedule_run_id(payload.get("run_id"), "receipt run id"),
         observed_at=_payload_utc(payload.get("observed_at"), "receipt observed at"),
@@ -1216,6 +1441,7 @@ def _receipt_terminal_from_payload(payload: Mapping[str, Any]) -> _ScheduleRecei
         availability_status=availability_status,
         availability_receipt_binding=availability_binding,
         observation_attempt_binding=observation_binding,
+        causal_attestation_binding=causal_attestation_binding,
     )
 
 
@@ -1271,6 +1497,20 @@ def _availability_receipt_binding_from_inputs(
         )
     except ValueError as error:
         raise ValueError("availability receipt binding is invalid") from error
+
+
+def _causal_attestation_binding_from_inputs(
+    *,
+    attestation_sha256: str | None,
+) -> KisPaperIntradayHeadCausalAttestationBinding | None:
+    if attestation_sha256 is None:
+        return None
+    try:
+        return KisPaperIntradayHeadCausalAttestationBinding(
+            attestation_sha256=attestation_sha256,
+        )
+    except ValueError as error:
+        raise ValueError("causal attestation binding is invalid") from error
 
 
 def _observation_attempt_binding_from_inputs(
@@ -1349,6 +1589,24 @@ def _availability_receipt_binding_from_payload(
             ),
         )
     except KisPaperIntradayHeadScheduleReceiptError as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
+
+
+def _causal_attestation_binding_from_payload(
+    value: object,
+    *,
+    error_code: str,
+) -> KisPaperIntradayHeadCausalAttestationBinding:
+    if not isinstance(value, Mapping) or frozenset(value) != _CAUSAL_ATTESTATION_BINDING_KEYS:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+    try:
+        return KisPaperIntradayHeadCausalAttestationBinding(
+            attestation_sha256=_payload_sha256(
+                value.get("attestation_sha256"),
+                "causal attestation sha256",
+            )
+        )
+    except (KisPaperIntradayHeadScheduleReceiptError, ValueError) as error:
         raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
 
 
@@ -1540,6 +1798,135 @@ def _verify_observation_attempt_binding(
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_binding_mismatch")
 
 
+def _read_causal_attestation_binding(
+    *,
+    terminal: _ScheduleReceiptTerminal,
+    artifact_root: Path,
+    repository_root: Path,
+) -> tuple[
+    Literal["not_recorded", "verified"],
+    _KisPaperIntradayHeadCausalAttestation | None,
+]:
+    binding = terminal.causal_attestation_binding
+    if binding is None:
+        return "not_recorded", None
+    root = _readable_external_artifact_root(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    path = (
+        root
+        / "data"
+        / KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_ARTIFACT_DIRECTORY
+        / f"{terminal.run_id}.json"
+    )
+    _require_external_artifact_regular_file(
+        root=root,
+        path=path,
+        error_code="schedule_causal_attestation_invalid",
+    )
+    encoded, payload = _read_json_payload(path, "schedule_causal_attestation_invalid")
+    if _sha256(encoded) != binding.attestation_sha256:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_causal_attestation_mismatch")
+    attestation = _causal_attestation_from_payload(payload)
+    _verify_causal_attestation_binding(terminal=terminal, attestation=attestation)
+    return "verified", attestation
+
+
+def _causal_attestation_from_payload(
+    payload: Mapping[str, Any],
+) -> _KisPaperIntradayHeadCausalAttestation:
+    if (
+        frozenset(payload) != _CAUSAL_ATTESTATION_KEYS
+        or payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("kind") != KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_KIND
+        or payload.get("artifact_policy") != _CAUSAL_ATTESTATION_ARTIFACT_POLICY
+        or payload.get("claim") != _CAUSAL_ATTESTATION_CLAIM
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_causal_attestation_invalid")
+    try:
+        return _KisPaperIntradayHeadCausalAttestation(
+            schedule_run_id=_payload_schedule_run_id(
+                payload.get("schedule_run_id"),
+                "causal attestation run id",
+            ),
+            schedule_observed_at=_payload_utc(
+                payload.get("schedule_observed_at"),
+                "causal attestation observed at",
+            ),
+            session_capture_receipt_sha256=_payload_sha256(
+                payload.get("session_capture_receipt_sha256"),
+                "causal attestation capture sha256",
+            ),
+            availability_summary_sha256=_payload_sha256(
+                payload.get("availability_summary_sha256"),
+                "causal attestation availability sha256",
+            ),
+            observation_attempt_sha256=_payload_sha256(
+                payload.get("observation_attempt_sha256"),
+                "causal attestation observation sha256",
+            ),
+            attestation_origin=_payload_causal_attestation_category(
+                payload.get("attestation_origin"),
+                _CAUSAL_ATTESTATION_ORIGINS,
+                "causal attestation origin",
+            ),
+            clock_authority=_payload_causal_attestation_category(
+                payload.get("clock_authority"),
+                _CAUSAL_ATTESTATION_CLOCK_AUTHORITIES,
+                "causal clock authority",
+            ),
+            timezone_dst_session_rule=_payload_causal_attestation_category(
+                payload.get("timezone_dst_session_rule"),
+                _CAUSAL_ATTESTATION_TIMEZONE_DST_SESSION_RULES,
+                "causal timezone DST session rule",
+            ),
+            completed_bar_geometry=_payload_causal_attestation_category(
+                payload.get("completed_bar_geometry"),
+                _CAUSAL_ATTESTATION_COMPLETED_BAR_GEOMETRIES,
+                "causal completed bar geometry",
+            ),
+            chronological_boundary=_payload_causal_attestation_category(
+                payload.get("chronological_boundary"),
+                _CAUSAL_ATTESTATION_CHRONOLOGICAL_BOUNDARIES,
+                "causal chronological boundary",
+            ),
+            decision_time_availability=_payload_causal_attestation_category(
+                payload.get("decision_time_availability"),
+                _CAUSAL_ATTESTATION_DECISION_TIME_AVAILABILITY,
+                "causal decision time availability",
+            ),
+            provider_finality=_payload_causal_attestation_category(
+                payload.get("provider_finality"),
+                _CAUSAL_ATTESTATION_PROVIDER_FINALITY,
+                "causal provider finality",
+            ),
+        )
+    except KisPaperIntradayHeadScheduleReceiptError:
+        raise
+
+
+def _verify_causal_attestation_binding(
+    *,
+    terminal: _ScheduleReceiptTerminal,
+    attestation: _KisPaperIntradayHeadCausalAttestation,
+) -> None:
+    capture_binding = terminal.terminal_receipt_binding
+    availability_binding = terminal.availability_receipt_binding
+    observation_binding = terminal.observation_attempt_binding
+    if (
+        capture_binding is None
+        or availability_binding is None
+        or observation_binding is None
+        or attestation.schedule_run_id != terminal.run_id
+        or attestation.schedule_observed_at != terminal.observed_at
+        or attestation.session_capture_receipt_sha256 != capture_binding.receipt_sha256
+        or attestation.availability_summary_sha256 != availability_binding.summary_sha256
+        or attestation.observation_attempt_sha256 != observation_binding.attempt_sha256
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_causal_attestation_mismatch")
+
+
 def _causal_input_terminal(
     *,
     terminal: _ScheduleReceiptTerminal,
@@ -1548,7 +1935,8 @@ def _causal_input_terminal(
     observation_binding_status: Literal["legacy_unbound", "verified"],
     observation_attempt_status: Literal["observed", "not_observed"] | None,
     observation_store_outcome: Literal["appended", "duplicate"] | None,
-) -> tuple[Literal["input_unavailable"], str]:
+    causal_attestation: _KisPaperIntradayHeadCausalAttestation | None,
+) -> tuple[Literal["input_unavailable", "qualified"], str]:
     if terminal.terminal_status != "complete":
         return "input_unavailable", "terminal_recovery"
     if coverage_binding_status != "verified":
@@ -1567,7 +1955,21 @@ def _causal_input_terminal(
         return "input_unavailable", "prospective_observation_duplicate"
     if observation_attempt_status != "observed":
         return "input_unavailable", "prospective_pair_not_observed"
-    return "input_unavailable", "decision_time_availability_not_observed"
+    if causal_attestation is None:
+        return "input_unavailable", "decision_time_availability_not_observed"
+    if causal_attestation.clock_authority != "independent_utc_clock":
+        return "input_unavailable", "clock_authority_not_observed"
+    if causal_attestation.timezone_dst_session_rule != "America_New_York_IANA_DST":
+        return "input_unavailable", "timezone_dst_session_rule_not_observed"
+    if causal_attestation.completed_bar_geometry != "m1_regular_session_complete_through_1530_et":
+        return "input_unavailable", "completed_bar_geometry_not_observed"
+    if causal_attestation.chronological_boundary != "non_overlapping":
+        return "input_unavailable", "chronological_boundary_not_observed"
+    if causal_attestation.decision_time_availability != "observed_at_decision_time":
+        return "input_unavailable", "decision_time_availability_not_observed"
+    if causal_attestation.provider_finality != "observed_final":
+        return "input_unavailable", "provider_finality_not_observed"
+    return "qualified", "qualified"
 
 
 def _read_bound_capture_receipt(
@@ -1905,6 +2307,19 @@ def _payload_schedule_run_id(value: object, field_name: str) -> str:
         raise KisPaperIntradayHeadScheduleReceiptError(
             f"schedule_{field_name}_invalid"
         ) from error
+    return text
+
+
+def _payload_causal_attestation_category(
+    value: object,
+    allowed: frozenset[str],
+    field_name: str,
+) -> str:
+    text = _payload_safe_id(value, field_name)
+    if text not in allowed:
+        raise KisPaperIntradayHeadScheduleReceiptError(
+            f"schedule_{field_name}_invalid"
+        )
     return text
 
 
@@ -2343,6 +2758,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--availability-receipt-sha256")
     parser.add_argument("--availability-precommit-sha256")
     parser.add_argument("--availability-summary-sha256")
+    parser.add_argument("--causal-attestation-sha256")
     parser.add_argument("--observation-attempt-sha256")
     parser.add_argument("--observation-attempt-status")
     parser.add_argument("--observation-store-outcome")
@@ -2391,6 +2807,7 @@ def main(argv: Sequence[str] | None = None) -> None:
         availability_receipt_sha256=args.availability_receipt_sha256,
         availability_precommit_sha256=args.availability_precommit_sha256,
         availability_summary_sha256=args.availability_summary_sha256,
+        causal_attestation_sha256=args.causal_attestation_sha256,
         observation_attempt_sha256=args.observation_attempt_sha256,
         observation_attempt_status=args.observation_attempt_status,
         observation_store_outcome=args.observation_store_outcome,

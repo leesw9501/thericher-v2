@@ -11,6 +11,7 @@ import pytest
 
 import thericher_v2.ops.kis_paper_intraday_head_schedule_receipt as schedule_receipt
 from thericher_v2.ops.kis_paper_intraday_head_schedule_receipt import (
+    KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_ARTIFACT_DIRECTORY,
     KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY,
     KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME,
     SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE,
@@ -345,6 +346,8 @@ def test_schedule_fact_keeps_a_bound_pair_attempt_input_unavailable_without_atte
     assert fact.availability_summary_sha256 == availability_summary_sha256
     assert fact.observation_binding_status == "verified"
     assert fact.observation_attempt_sha256 == attempt_sha256
+    assert fact.causal_attestation_binding_status == "not_recorded"
+    assert fact.causal_attestation_sha256 is None
     assert fact.causal_input_status == "input_unavailable"
     assert fact.causal_input_reason == "decision_time_availability_not_observed"
     assert fact.decision_time_availability == "not_observed"
@@ -394,6 +397,181 @@ def test_schedule_fact_keeps_a_bound_pair_attempt_input_unavailable_without_atte
             capture_cache_root=cache_root,
             observation_artifact_root=artifact_root,
         )
+
+
+def test_schedule_fact_qualifies_only_after_a_bound_causal_attestation(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    observed_at = datetime(2026, 7, 28, 15, 31, tzinfo=UTC)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        observed_at=datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+    )
+    availability_contract_sha256 = "sha256:" + "a" * 64
+    availability_receipt_sha256 = "sha256:" + "b" * 64
+    availability_precommit_sha256 = "sha256:" + "c" * 64
+    availability_summary_sha256, _ = _write_availability_summary(
+        artifact_root=artifact_root,
+        run_id="intraday-head-unit",
+        contract_sha256=availability_contract_sha256,
+        receipt_sha256=availability_receipt_sha256,
+        precommit_sha256=availability_precommit_sha256,
+        status="qualified_for_prospective_input",
+    )
+    prospective_contract_sha256 = "sha256:" + "e" * 64
+    attempt_sha256 = "sha256:" + "f" * 64
+    attestation_sha256, attestation_path = _write_causal_attestation(
+        artifact_root=artifact_root,
+        run_id="intraday-head-unit",
+        observed_at=observed_at,
+        session_capture_receipt_sha256=capture.receipt_sha256,
+        availability_summary_sha256=availability_summary_sha256,
+        observation_attempt_sha256=attempt_sha256,
+    )
+    receipt_kwargs = {**_complete_kwargs(), **capture.binding_kwargs}
+    receipt_kwargs.update(
+        availability_status="qualified_for_prospective_input",
+        availability_contract_sha256=availability_contract_sha256,
+        availability_receipt_sha256=availability_receipt_sha256,
+        availability_precommit_sha256=availability_precommit_sha256,
+        availability_summary_sha256=availability_summary_sha256,
+        causal_attestation_sha256=attestation_sha256,
+        observation_status="observed",
+        observation_attempt_sha256=attempt_sha256,
+        observation_attempt_status="observed",
+        observation_store_outcome="appended",
+    )
+    write_kis_paper_intraday_head_schedule_receipt(
+        **receipt_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=observed_at,
+    )
+    _monkeypatch_bound_pair_attempt(
+        monkeypatch=monkeypatch,
+        attempt_sha256=attempt_sha256,
+        contract_sha256=prospective_contract_sha256,
+        availability_contract_sha256=availability_contract_sha256,
+        availability_receipt_sha256=availability_receipt_sha256,
+        availability_precommit_sha256=availability_precommit_sha256,
+        availability_summary_sha256=availability_summary_sha256,
+    )
+
+    def network_forbidden(*args: object, **kwargs: object) -> None:
+        raise AssertionError("causal attestation projection must stay offline")
+
+    monkeypatch.setattr(socket, "create_connection", network_forbidden)
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=cache_root,
+        observation_artifact_root=artifact_root,
+    )
+
+    assert fact.causal_attestation_binding_status == "verified"
+    assert fact.causal_attestation_sha256 == attestation_sha256
+    assert fact.causal_input_status == "qualified"
+    assert fact.causal_input_reason == "qualified"
+    assert fact.decision_time_availability == "attested"
+    assert fact.provider_finality == "attested"
+    assert fact.clock_authority == "independent_utc_clock"
+    assert fact.timezone_dst_session_rule == "America_New_York_IANA_DST"
+    assert fact.completed_bar_geometry == "m1_regular_session_complete_through_1530_et"
+    assert fact.chronological_boundary == "non_overlapping"
+
+    attestation_path.write_bytes(attestation_path.read_bytes() + b"\n")
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_causal_attestation_mismatch",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+            capture_cache_root=cache_root,
+            observation_artifact_root=artifact_root,
+        )
+
+
+def test_schedule_fact_keeps_a_bound_causal_attestation_unavailable_when_finality_is_missing(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    observed_at = datetime(2026, 7, 28, 15, 31, tzinfo=UTC)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        observed_at=datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+    )
+    availability_contract_sha256 = "sha256:" + "a" * 64
+    availability_receipt_sha256 = "sha256:" + "b" * 64
+    availability_precommit_sha256 = "sha256:" + "c" * 64
+    availability_summary_sha256, _ = _write_availability_summary(
+        artifact_root=artifact_root,
+        run_id="intraday-head-unit",
+        contract_sha256=availability_contract_sha256,
+        receipt_sha256=availability_receipt_sha256,
+        precommit_sha256=availability_precommit_sha256,
+        status="qualified_for_prospective_input",
+    )
+    attempt_sha256 = "sha256:" + "f" * 64
+    attestation_sha256, _ = _write_causal_attestation(
+        artifact_root=artifact_root,
+        run_id="intraday-head-unit",
+        observed_at=observed_at,
+        session_capture_receipt_sha256=capture.receipt_sha256,
+        availability_summary_sha256=availability_summary_sha256,
+        observation_attempt_sha256=attempt_sha256,
+        provider_finality="not_observed",
+    )
+    receipt_kwargs = {**_complete_kwargs(), **capture.binding_kwargs}
+    receipt_kwargs.update(
+        availability_status="qualified_for_prospective_input",
+        availability_contract_sha256=availability_contract_sha256,
+        availability_receipt_sha256=availability_receipt_sha256,
+        availability_precommit_sha256=availability_precommit_sha256,
+        availability_summary_sha256=availability_summary_sha256,
+        causal_attestation_sha256=attestation_sha256,
+        observation_status="observed",
+        observation_attempt_sha256=attempt_sha256,
+        observation_attempt_status="observed",
+        observation_store_outcome="appended",
+    )
+    write_kis_paper_intraday_head_schedule_receipt(
+        **receipt_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=observed_at,
+    )
+    _monkeypatch_bound_pair_attempt(
+        monkeypatch=monkeypatch,
+        attempt_sha256=attempt_sha256,
+        contract_sha256="sha256:" + "e" * 64,
+        availability_contract_sha256=availability_contract_sha256,
+        availability_receipt_sha256=availability_receipt_sha256,
+        availability_precommit_sha256=availability_precommit_sha256,
+        availability_summary_sha256=availability_summary_sha256,
+    )
+
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=cache_root,
+        observation_artifact_root=artifact_root,
+    )
+
+    assert fact.causal_attestation_binding_status == "verified"
+    assert fact.causal_input_status == "input_unavailable"
+    assert fact.causal_input_reason == "provider_finality_not_observed"
+    assert fact.decision_time_availability == "attested"
+    assert fact.provider_finality == "not_observed"
 
 
 @pytest.mark.parametrize(
@@ -1165,6 +1343,90 @@ def test_compose_qqq_intraday_head_readiness_is_fully_isolated() -> None:
     assert "local-paper" not in lowered
     assert "./src:/app/src" not in section
     assert "./scripts:/app/scripts" not in section
+
+
+def _monkeypatch_bound_pair_attempt(
+    *,
+    monkeypatch: pytest.MonkeyPatch,
+    attempt_sha256: str,
+    contract_sha256: str,
+    availability_contract_sha256: str,
+    availability_receipt_sha256: str,
+    availability_precommit_sha256: str,
+    availability_summary_sha256: str,
+) -> None:
+    monkeypatch.setattr(
+        schedule_receipt,
+        "read_kis_qqq_spy_mtf_prospective_attempt",
+        lambda **_: SimpleNamespace(
+            attempt_sha256=attempt_sha256,
+            contract_sha256=contract_sha256,
+            status="observed",
+            sealed_at=datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+            session_date=date(2026, 7, 28),
+        ),
+    )
+    monkeypatch.setattr(
+        schedule_receipt,
+        "read_kis_qqq_spy_mtf_prospective_contract",
+        lambda **_: SimpleNamespace(
+            contract_sha256=contract_sha256,
+            availability_contract_sha256=availability_contract_sha256,
+            availability_receipt_sha256=availability_receipt_sha256,
+            availability_precommit_sha256=availability_precommit_sha256,
+            availability_summary_sha256=availability_summary_sha256,
+        ),
+    )
+
+
+def _write_causal_attestation(
+    *,
+    artifact_root: Path,
+    run_id: str,
+    observed_at: datetime,
+    session_capture_receipt_sha256: str,
+    availability_summary_sha256: str,
+    observation_attempt_sha256: str,
+    provider_finality: str = "observed_final",
+) -> tuple[str, Path]:
+    payload = {
+        "schema_version": 1,
+        "kind": "kis_paper_intraday_head_causal_attestation",
+        "schedule_run_id": run_id,
+        "schedule_observed_at": observed_at.isoformat().replace("+00:00", "Z"),
+        "session_capture_receipt_sha256": session_capture_receipt_sha256,
+        "availability_summary_sha256": availability_summary_sha256,
+        "observation_attempt_sha256": observation_attempt_sha256,
+        "attestation_origin": "independent_observer",
+        "clock_authority": "independent_utc_clock",
+        "timezone_dst_session_rule": "America_New_York_IANA_DST",
+        "completed_bar_geometry": "m1_regular_session_complete_through_1530_et",
+        "chronological_boundary": "non_overlapping",
+        "decision_time_availability": "observed_at_decision_time",
+        "provider_finality": provider_finality,
+        "artifact_policy": {
+            "credentials_in_receipt": False,
+            "account_data_in_receipt": False,
+            "raw_market_data_in_receipt": False,
+            "broker_order_data_in_receipt": False,
+            "repo_storage_allowed": False,
+        },
+        "claim": (
+            "independent source-safe causal-condition attestation only; not cryptographic "
+            "proof of provider origin, a model result, PnL claim, or broker action"
+        ),
+    }
+    encoded = (json.dumps(payload, ensure_ascii=True, sort_keys=True) + "\n").encode("ascii")
+    attestation_sha256 = "sha256:" + sha256(encoded).hexdigest()
+    path = (
+        artifact_root
+        / "data"
+        / KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_ARTIFACT_DIRECTORY
+        / f"{run_id}.json"
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(encoded)
+    return attestation_sha256, path
 
 
 def _write_availability_summary(

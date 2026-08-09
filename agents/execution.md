@@ -19,7 +19,7 @@ read or route `KIS_LIVE_*`.
 | Private operator dashboard | Loopback-only dashboard and local pause/resume controls are complete. | It has no public bind and no broker-order control. |
 | Read-only Paper account observer | Exact sidecar receipt reattached as `complete`; dashboard health reports no broker calls. | Marker-present provenance assumes an honest host; it is not cryptographic Scheduler-origin proof. |
 | Virtual-Paper lifecycle canary | The latest exact canary is `canary_completed/intent_recorded` with direct lifecycle `not_submitted/unresolved`; its offline source-safe lifecycle fact now classifies the pre-submit disposition as `reconciliation_unavailable`. A bounded audit of the latest eight exact receipts found five acknowledged submissions that later cancelled cleanly, two scoped `outcome_unknown` results, and this one `not_submitted` result. | The latest anomaly is exact-run scoped, not evidence that the schedule or Paper route is globally disabled. The reader emits only a closed disposition, never a raw broker or reconciliation reason; it is not a submit, fill, PnL, profitability, or model result. |
-| Intraday QQQ/SPY data chain | Latest chain is Data `input_unavailable`. | Execution must not consume it without a later qualified objective and replay parity. |
+| Intraday QQQ/SPY data chain | Latest chain is Data `input_unavailable`; its optional offline causal-attestation binding is `not_recorded`. | Execution must not consume it without a later qualified objective and replay parity. |
 
 ## Ready / Owned / Due
 

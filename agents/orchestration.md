@@ -23,7 +23,7 @@ facts from a scheduler result alone.
 | Collection recovery projection | Data | Existing exact-pointer/capture reader | Completed. It requires `recovery/collection_exit_nonzero`, emits `rejected_duplicate_conflict` only for the exact verified capture chain, and otherwise emits `evidence_unavailable`. |
 | Duplicate-conflict provenance | Data | Existing backfill result and session-capture contracts | Completed. Future exact receipts preserve collector-time conflict origin/disposition; historic missing fields are `not_recorded_legacy`, and partial/mixed/unknown future forms fail closed. |
 | Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Next owned four-run sequence begins 2026-08-11 00:29 KST; only its 06:20 KST post-close terminal is an eligible completed-session candidate. No manual run or duplicate collector. |
-| Task-owned causal evidence binding | Data | Existing intraday-head task and its existing local-only pair service | Ready for the next owned invocation: one source-local availability receipt is bound by its contract/receipt/precommit/summary hashes, and a pair attempt is accepted only when its immutable contract matches all four. A matching chain still remains `input_unavailable` until decision-time availability and provider finality are observed. No new task, collector, broker route, or model/GPU appointment. |
+| Causal evidence binding | Data | Existing intraday-head task, pair service, and offline reader | Completed default-deny extension: a later terminal can bind one independently produced source-safe causal attestation by SHA-256, which must match its capture, availability, and pair identities plus named clock/session/geometry/boundary facts. No current task writes that binding, so it remains `not_recorded`; no new task, collector, broker route, or model/GPU appointment. |
 | EMA source-local mechanics | Engine Research / Execution | Frozen QQQ/NAS 20-session catalog and existing local replay | Completed: the `20260807-ema-mechanics-r2` external replay is local-paper-only, replayable, and terminal-flat; it has no performance or promotion claim. |
 | QQQ multi-timeframe resampling mechanics | Data / Engine Research | Frozen QQQ/NAS M1 catalog and existing session resampler | Completed: immutable `20260807-qqq-mtf-r1` records 20 session-aligned completed-bar inputs with M1/M5/M10/H1/H3 aggregate geometry; H1/H3 terminal 30-minute buckets are explicitly excluded. It is source-local CPU evidence only. |
 | QQQ baseline causal MTF windows | Data / Engine Research | Completed `20260807-qqq-mtf-window-r3` receipt | Completed: the fixed M1=30/M5=6/M10=3/H1=2/H3=2 profile has 600/120/60/40/40 aggregate completed windows at 15:30 ET, with H1/H3 terminal partials excluded. Parent receipt hash and external-path integrity are verified. |
@@ -70,17 +70,19 @@ task-owned chain is necessary local evidence, not proof of provider origin.
 Codex retains the assumed-honest-host limitation rather than inventing a new
 provider or approval gate. Any future `qualified` classification must also name
 its clock authority, timezone/DST session rule, and non-overlapping
-chronological boundary; otherwise only that input stays unavailable.
+chronological boundary; otherwise only that input stays unavailable. The new
+reader holds those conditions as an optional SHA-bound external record but has
+no current writer or terminal binding, so it does not change the current fact.
 
 ## Current Reversible Improvement
 
-The handoff and active Data, Engine Research, and Execution stateboards now
-retain only current objective, ownership, readiness, limits, and evidence
-pointers; Git and immutable external artifacts retain the historical ledger.
-This reversibly reduces resume and dispatch latency without creating a report,
-gate, scheduler, or authority change. The existing Data task still materializes
-and hash-binds its availability/pair evidence in its own run; an unavailable or
-malformed receipt remains scoped to that task and never becomes foreground idle.
+The terminal reader can now default-deny a separately hash-bound,
+source-safe causal attestation without changing the installed task, KIS client,
+Docker profile, or Paper route. It verifies its binding against the exact
+terminal's capture, availability, and pair identities and retains the
+assumed-honest-host limitation. Missing or malformed evidence stays scoped to
+that input, so the improvement shortens a future qualification handoff without
+creating a report, scheduler, or approval gate.
 
 ## Current Recovery Action
 

@@ -18,8 +18,9 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 ## Current Research State
 
 - No frozen, input-qualified predictive campaign is active. The latest
-  task-owned QQQ/SPY M1 chain is `input_unavailable`; it cannot freeze a
-  target, split, or 30/60/90-minute candidate matrix.
+  task-owned QQQ/SPY M1 chain is `input_unavailable`; its optional causal
+  attestation is `not_recorded`, so it cannot freeze a target, split, or
+  30/60/90-minute candidate matrix.
 - The RTX 4090 CUDA path is healthy, but Research Steward has no GPU
   appointment. GPU utilization is not a research KPI.
 - QQQ 20-session M1/M5/M10/H1/H3 resampling and six canonical causal window
