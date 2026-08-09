@@ -1,117 +1,46 @@
 # Codex Orchestration Stateboard (제품개발 총괄)
 
 `AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
-This is a current cross-lane projection, not a role queue or history ledger.
-Git and external artifacts retain historic receipts and implementation evidence.
+This is a current cross-lane projection, not a queue or history ledger. Git and
+external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`task-owned-kis-intraday-causal-evidence-refresh-v1` will classify the next
-caller-selected task-owned QQQ/NAS and SPY/AMS completed-session M1 evidence
-chain as qualified or scoped `input_unavailable`. The 2026-08-08 terminal is
-already closed as `input_unavailable`: its exact hash-bound capture has
-`incomplete` cumulative coverage and no recorded decision-time availability or
-provider-finality fact. The work must never manually call the KIS collector,
-read `KIS_LIVE_*`, create an order, promote a model, or infer any of those
-facts from a scheduler result alone.
+`kis-paper-canary-lifecycle-closure-v1` will reattach one eligible outcome from
+the existing quote-session task. Its external due time belongs to that task;
+the objective must not turn it into foreground idle. It is operational Paper
+evidence only, never a strategy, PnL, or live claim.
 
 ## Ready / Owned / Due
 
 | Work | Owner | Resource | Current fact and next action |
 | --- | --- | --- | --- |
-| Exact 2026-08-08 06:20 KST terminal | Data / Execution | Caller-selected terminal and bound capture receipt | Completed classification: the offline terminal reader returned `complete` with `verified/incomplete` coverage binding. This exact QQQ/NAS and SPY/AMS input is `input_unavailable`; it is not a data-quality, finality, model, Paper, fill, or PnL claim. |
-| Collection recovery projection | Data | Existing exact-pointer/capture reader | Completed. It requires `recovery/collection_exit_nonzero`, emits `rejected_duplicate_conflict` only for the exact verified capture chain, and otherwise emits `evidence_unavailable`. |
-| Duplicate-conflict provenance | Data | Existing backfill result and session-capture contracts | Completed. Future exact receipts preserve collector-time conflict origin/disposition; historic missing fields are `not_recorded_legacy`, and partial/mixed/unknown future forms fail closed. |
-| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Next owned four-run sequence begins 2026-08-11 00:29 KST; only its 06:20 KST post-close terminal is an eligible completed-session candidate. Its registered action points to the current dispatcher, whose exact image inventory was rebuilt from clean committed source `586844d`. No manual run or duplicate collector. |
-| Causal evidence binding | Data | Existing intraday-head task, pair service, and offline reader | Completed default-deny extension: a later terminal can bind one independently produced source-safe causal attestation by SHA-256, which must match its capture, availability, and pair identities plus named clock/session/geometry/boundary facts. No current task writes that binding, so it remains `not_recorded`; no new task, collector, broker route, or model/GPU appointment. |
-| EMA source-local mechanics | Engine Research / Execution | Frozen QQQ/NAS 20-session catalog and existing local replay | Completed: the `20260807-ema-mechanics-r2` external replay is local-paper-only, replayable, and terminal-flat; it has no performance or promotion claim. |
-| QQQ multi-timeframe resampling mechanics | Data / Engine Research | Frozen QQQ/NAS M1 catalog and existing session resampler | Completed: immutable `20260807-qqq-mtf-r1` records 20 session-aligned completed-bar inputs with M1/M5/M10/H1/H3 aggregate geometry; H1/H3 terminal 30-minute buckets are explicitly excluded. It is source-local CPU evidence only. |
-| QQQ baseline causal MTF windows | Data / Engine Research | Completed `20260807-qqq-mtf-window-r3` receipt | Completed: the fixed M1=30/M5=6/M10=3/H1=2/H3=2 profile has 600/120/60/40/40 aggregate completed windows at 15:30 ET, with H1/H3 terminal partials excluded. Parent receipt hash and external-path integrity are verified. |
-| QQQ causal MTF window matrix | Data / Engine Research | Completed `20260807-qqq-mtf-matrix-r2` receipt | Completed: all six canonical profiles are precommitted at 15:30 ET against the reattested 20-session QQQ/NAS input; every profile remains target-free and terminal-partial-safe. |
-| EMA local-Paper PnL attribution | Engine Research / Execution | Completed fixed EMA replay and existing local-paper accounting | Completed: `20260807-ema-pnl-attribution-r1` reattested the parent and recorded 76 closed segments, 152 local-paper fills, gross `-26.299200`, fees `10.8932`, net `-37.192400`, zero open quantity, and exact replay parity. It is source-local accounting only. |
-| M1 duplicate-conflict recovery | Data | Existing task-owned QQQ/NAS and SPY/AMS collector paths | Completed. `session-capture` now quarantines only immutable committed cursor-free heads; it preserves original manifest/raw bytes and rejects the conflict, then a later compatible task-owned capture appends once. Partial/cursor-backed and malformed inputs fail closed. The current terminal remains provenance-legacy. |
-| IWM current-head ingestion | Data | Isolated IWM/AMS route and external market-data store | Completed: one current-day page was accepted at 2026-08-07 01:46 UTC, retained as an immutable source-local snapshot, and made no continuation request. QQQ/SPY state and schedule were untouched. |
-| IWM source-local replayability | Data / Validation | Legacy IWM snapshot, v2 receipt writer, and existing `Bar`/resampler contracts | Completed: the historical v1 receipt lacks a snapshot identity, so exact local replay records `completion_evidence_unavailable` and zero completed buckets rather than inventing timing. The v2 writer/reader contract is tested with bound fixtures. |
-| IWM v2 bound observation | Data / Execution | Isolated IWM/AMS KIS Paper one-page route | Completed: one accepted no-continuation page reused the immutable snapshot and wrote a v2 content-bound receipt. Local replay produced 120 complete M1, 8 M5, 1 M10, and no H1/H3 bucket. It has no consumer or promotion consequence. |
-| IWM v2 observation selector | Data / Validation | Existing immutable IWM snapshots and v2 receipts | Completed: source-safe metadata can enumerate observations and caller-selected v2 replay has no mutable latest fallback. The independent order-versus-hash duplicate defect was fixed before integration. |
-| IWM prospective observation append | Data / Validation | Isolated IWM/AMS route, immutable external roots, and completed selector | Completed: success receipts append separately from source-safe failure outcomes, stale owned stages cannot poison selection, and the collector returns an opaque selected ID. One bounded request reused the existing snapshot and reattached offline. |
-| Alternate IWM collector WIP | Data | Existing IWM v2 append/selector owner | Rejected by independent audit: the untracked alternate route can mix receipt namespaces and relax the approved D: cache boundary. Do not stage or invoke it; retain the existing v2 owner for any later narrow improvement. |
-| QQQ/SPY current-day M1 reach probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one blank-cursor current-day page per target was accepted and terminal with no recognized continuation. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This is exact-route evidence only; prior scope remains `unknown`. |
-| QQQ/SPY explicit previous-day M1 scope probe | Data | Named Paper minute endpoint, isolated external probe roots, and one reusable client | Completed: one explicit-previous-day page per target was accepted and terminal with no recognized continuation or multi-date range. QQQ issued one token, SPY reused it, both made one minute GET, and no categorical failure occurred. This remains exact-route evidence only. |
-| Donchian local-Paper PnL attribution | Engine Research / Execution | Frozen QQQ/NAS 20-session mechanics receipt and existing FIFO local simulator | Completed: `20260807-donchian-pnl-r1` reattested the parent, recorded 115 closed segments, 230 local-paper fills, gross `-41.984600`, fees `16.5045`, net `-58.489100`, zero open quantity, and exact replay parity. It remains a non-promoting retrospective baseline. |
-| Private Paper operator dashboard | Execution / Infra | Existing KIS Paper read-only account contract and local emergency controls | Completed: Docker reattestation requires an explicit container exception, publishes only `127.0.0.1:8787`, renders unavailable facts explicitly, and UI pause/resume changes local state only. |
-| Read-only Paper account snapshot refresh | Execution / Infra | Existing named bridge and dashboard snapshot reader | Completed: one actual `kis-readonly` refresh was categorical `complete`; its external receipt is fact-minimized and the loopback dashboard immediately read it as available. |
-| Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, 2026 session inspector, and task conventions | Completed: the caller-selected `20260807T141607347092Z-7c9fb50a-81bb-40a8-b72f-49b3e492d773-complete.json` sidecar reattached as `complete` at `2026-08-07T14:16:07Z` after its final bridge SHA-256 and marker/status/time binding passed. The credential-free loopback dashboard `/health` returned only `ok` and `broker_calls:false`. No account fact was inspected. This is marker-present provenance under the assumed-honest host, not cryptographic Scheduler-origin proof; Operational logging is disabled. The existing four-minute task remains sole read-only owner. |
-| QQQ observed/provisional route | Data / Execution | Existing downstream profile service | The task-owned route now carries a reattested v5 `observed_provisional` input grade through loop, session, and validation evidence. Its provider availability/finality, terminal-state support, and PnL remain explicitly unobserved/unqualified; no lifecycle can promote a model or claim alpha/PnL. |
-| SPY D1 stability observation | Data | Existing virtual-Paper task | The exact 2026-08-07 `d1-stability-20260807T141501Z-attempt-04-c5e2cd1a0693` receipt reattaches as `stable`: one unadjusted GET, zero retries/foreground wait, and provider finality `not_observed`. It is not provider-finality or consumer qualification. Next owned observation is 2026-08-10 23:15 KST. |
-| Quote-session lifecycle canary | Execution | Existing virtual-Paper task and 23:45 KST result monitor | The exact 2026-08-07 session is `canary_completed/intent_recorded`; its direct lifecycle is `not_submitted/unresolved`, with closed pre-submit disposition `reconciliation_unavailable`, attribution unavailable, and no submit, fill, PnL, or model result. A source-safe audit of the latest eight exact lifecycle receipts found five `cancelled/clean` submissions, two `outcome_unknown`, and this one non-submission, so it does not evidence a globally disabled route. Next owned opportunity is 2026-08-10 23:35 KST; its result monitor reattaches a new exact receipt without replacing the pending intraday objective. |
-| GPU allocation | Research Steward / Engine Research | RTX 4090 | No frozen input-qualified predictive campaign is ready. The five legacy frozen custody records are terminally `non_promoting_abandoned` under the external reconciliation receipt; CPU preparation may continue and GPU stays unallocated. |
-| MTF feature-schema expansion | Engine Research | Existing matrix, feasibility, and profiled-input contracts | Rejected as a duplicate target-free implementation. Reuse the existing owners; do not add a new feature-schema artifact path until a frozen predictive campaign needs it. |
+| Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |
+| GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
+| KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | Ready when its own first eligible session completes. Reattach only its immutable source-safe receipt; no manual task, container, or duplicate submission. |
+| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Independently owned next four-run sequence begins 2026-08-11 00:29 KST. Its post-close terminal remains the only candidate for the scoped causal reader. No manual duplicate collector. |
+| D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
+| Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
 ## Current Bottleneck
 
-Fresh causal KIS-reconstructible input coverage remains the product bottleneck:
-the exact 2026-08-08 chain is explicitly `incomplete`, the QQQ/NAS and SPY/AMS
-M1 scopes still have only 21 shared complete regular-session windows, both
-bounded historical starting scopes are terminal, and decision-time availability
-and provider finality remain `not_observed`. The existing task owns the next
-forward observation. The fixed Donchian baseline is now accounted and negative,
-so it cannot consume more research-selection effort; independent execution
-observability can still improve Paper readiness without claiming model validity.
-
-The scheduled KIS wait is not team-wide idle. On 2026-08-09, Data closed one
-host-only Norgate availability probe as `unavailable/local_source_unavailable`,
-and Engine Research completed one PatchTST source-only architecture retrieval.
-Neither changes the active KIS path, authorizes a retry, allocates GPU, or
-creates a campaign; each keeps its own next trigger.
-
-Claude's causal/finality challenge returned `uncertain`: a self-consistent
-task-owned chain is necessary local evidence, not proof of provider origin.
-Codex retains the assumed-honest-host limitation rather than inventing a new
-provider or approval gate. Any future `qualified` classification must also name
-its clock authority, timezone/DST session rule, and non-overlapping
-chronological boundary; otherwise only that input stays unavailable. The new
-reader holds those conditions as an optional SHA-bound external record but has
-no current writer or terminal binding, so it does not change the current fact.
+Fresh, KIS-reconstructible causal input coverage remains the predictive-engine
+bottleneck. The prior QQQ/SPY input is scoped `input_unavailable` because its
+coverage is incomplete and provider decision-time availability/finality remain
+unobserved. Paper lifecycle reliability has a separate ready proof path and
+does not depend on resolving that prediction-input limitation.
 
 ## Current Reversible Improvement
 
-The registered intraday task's `ImageServices` inventory now exactly matches
-the literal services its existing dispatcher invokes. All affected image tags
-were rebuilt from clean committed source `586844d`, while the task action,
-schedule, KIS client, broker semantics, and running containers remain
-unchanged. This removes stale-image latency from the next task-owned attempt
-without creating a report, approval gate, or model-promotion path.
+Tiingo IEX snapshot reattestation now preserves the pinned compressed artifact
+hash while independently checking the exact canonical gzip payload. This removes
+a Python/zlib cross-runtime encoding false negative without changing snapshot
+bytes, provider scope, KIS behavior, or promotion conditions. The next
+reversible focus is source-safe reattachment of the existing Paper canary.
 
 ## Current Recovery Action
 
-Data owns the existing 2026-08-11 QQQ/SPY task sequence from 00:29 KST through
-the 06:20 KST post-close terminal; it is the only owner of a later actual KIS
-collection. The 2026-08-08 chain's bound
-identities and hash are verified offline, while its incomplete coverage closes
-only that exact input as `input_unavailable`. A conflicted, incomplete, late,
-unbound, or availability-hash-mismatched later result remains scoped and is
-never a global hold. Execution continues to own the installed observer cadence;
-Infra is invoked only for existing Docker/task runtime. IWM current-head
-success remains unrelated to historical M1 reach.
-
-## Blocked-Goal Alternatives
-
-**Blocking fact:** only the enabled `thericher-kis-paper-intraday-head` task
-can create the later QQQ/SPY terminal required by this company objective, and
-its next owned sequence starts 2026-08-11 00:29 KST. This is not a team-wide
-idle state: independent source-safe or offline preparation remains dispatchable
-when it has a distinct completion condition. The work graph is task-owned
-terminal -> offline exact-chain reader -> scoped classification -> conditional
-frozen candidate. Manual KIS requests, task or Docker-service invocation,
-replacement collection, training, and GPU alternatives are outside this
-objective.
-
-| Package | Owner/resource | Evidence, kill test, and recovery |
-| --- | --- | --- |
-| Later intraday terminal reattachment | Data / installed task and immutable artifact root | Reader must reproduce terminal, capture, availability, and optional pair binding; any missing/mismatched geometry or availability/finality fact yields scoped `input_unavailable`. Recover at the next task-owned 06:20 terminal. |
-| D1 stability observation | Data / existing scheduled observer | A source-safe `stable`, `changed`, or unavailable receipt can refine only D1 observability; no provider-finality or intraday-consumer claim. Recover at its own next due time. |
-| Virtual-Paper lifecycle receipt | Execution / existing scheduled task | Validate only the exact durable lifecycle and reconciliation state; any unknown result stays scoped and creates no new submission. Recover at its own next due time. |
-
-Claude's bounded block-classification request timed out as `review_unavailable`;
-it is not agreement or an approval hold. No operator decision is required.
+Execution owns the first eligible quote-session lifecycle. Codex first
+reattests its existing configuration and reader offline, then resumes the
+receipt only after the task writes it. Any later KIS terminal remains owned by
+its existing collector; missing or unavailable evidence stays local to its path.

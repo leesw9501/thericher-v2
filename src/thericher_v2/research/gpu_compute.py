@@ -91,7 +91,7 @@ def run_gpu_compute_smoke(
             gpu=gpu,
             available_backends=available_backends,
             selected_backend=selected_backend,
-            reason=f"GPU compute smoke unavailable: {exc}",
+            reason=f"GPU compute backend unavailable: {exc}",
         )
     return GpuComputeSmokeResult(
         run_id=run_id,

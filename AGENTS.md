@@ -350,6 +350,14 @@ author, or permanent LLM process.
   cell count in custody. Missing contract fields defer only that campaign; they
   do not create an operator approval, block CPU preparation, or stop another
   ready lane.
+- A source-isolated, target-free representation integration study may receive
+  one bounded GPU appointment without becoming a predictive campaign only when
+  its exact source snapshot/hash, no-target reconstruction task, fixed
+  architecture matrix, no-selection rule, no-weight-retention rule, artifact
+  root, compute stop rule, and strongest kill test are frozen before CPU work.
+  It records only source-safe loader/gap/geometry/runtime facts. It cannot
+  retain model weights, report a market-performance statistic, access a
+  holdout, or later re-enter as a KIS, ensemble, or Paper input.
 - When the GPU becomes idle, select the first ready frozen campaign. Resolve a
   genuine tie by evidence value: independent replication or an underrepresented
   hypothesis family first, then the shorter bounded job. This is not fixed lane

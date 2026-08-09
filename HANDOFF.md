@@ -14,38 +14,25 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-`task-owned-kis-intraday-causal-evidence-refresh-v1` will classify one later
-caller-selected `thericher-kis-paper-intraday-head` completed-session result
-for the QQQ/NAS and SPY/AMS M1 causal input.
+`kis-paper-canary-lifecycle-closure-v1` will reattach one eligible lifecycle
+from the existing `thericher-kis-paper-quote-session` task. It is execution
+readiness evidence only: the durable result may be no intent, intent-only,
+submitted/cancelled, or scoped unknown/recovery. It does not select a model,
+claim PnL, or authorize live behavior.
 
-The latest terminal, `intraday-head-20260807T2120007624227Z`, reattached
-offline as `complete`, but its exact capture binding has cumulative coverage
-`incomplete`; decision-time availability and provider finality are both
-`not_observed`. Its exact input is therefore
-`input_unavailable/session_coverage_incomplete`. This is neither a KIS fault
-claim nor a model, Paper, fill, PnL, or alpha result.
+The completed Tiingo IEX r1 source-isolated integration reattested the pinned
+M5 snapshot in both host and Docker runtime. A gzip encoder difference was
+resolved by preserving the pinned compressed hash and comparing exact canonical
+payloads rebuilt from attested raw sources. Its CPU and single CUDA matrices
+completed with categorical finite-run and memory-cleanup evidence; no weights,
+loss values, predictions, returns, holdout, selection, KIS input, or Paper
+input were created. Receipts remain external under
+`D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1`.
 
-The offline terminal reader can now consume an optional, separately
-hash-bound causal-condition attestation. It is default-deny: no current task
-emits that binding, so the reader exposes `not_recorded` and cannot promote the
-current or next task result by itself. A future bound attestation must retain
-the named clock, `America/New_York` DST/session rule, completed-bar geometry,
-non-overlapping boundary, decision-time availability, and provider-finality
-categories. This is still marker-present local provenance under an assumed
-honest host, not cryptographic proof of provider origin.
-
-The same installed task also owns the existing QQQ runtime Paper observation.
-Its v5 offline validation contract now carries and reattests a fixed
-`observed_provisional` input grade, including unobserved provider
-availability/finality, `terminal_state_support: unqualified`, and
-`pnl_status: not_observed`. That evidence can describe one virtual Paper
-lifecycle only; it cannot promote a model, establish an edge, or claim PnL.
-
-Only the installed intraday-head task may produce the next candidate. Its next
-owned sequence begins at 2026-08-11 00:29 KST, with runs at 00:29, 02:28,
-04:24, and 06:20. Only the 06:20 post-close terminal is an eligible
-completed-session candidate. Do not manually invoke the task, Docker profile,
-KIS client, or a replacement collector.
+The separately owned QQQ/SPY intraday causal chain remains
+`input_unavailable/session_coverage_incomplete`; its optional causal attestation
+is `not_recorded`. It is a scoped Data limitation, never a hold on the Paper
+canary or another ready lane.
 
 ## Current Cross-Lane Facts
 
@@ -53,9 +40,9 @@ KIS client, or a replacement collector.
 | --- | --- | --- |
 | Data | QQQ/SPY current causal chain is `input_unavailable`; the optional causal-attestation binding is `not_recorded`, and historical M1 cursor data has 21 shared complete sessions. | Installed task creates the next evidence chain; reattach it offline after the 06:20 terminal. |
 | Data | The 2026-08-09 host-only Norgate tail probe is `unavailable/local_source_unavailable`; D: file freshness is not a vendor-access or rights proof. A new immutable Tiingo SPY/QQQ/IWM raw-D1 continuation through 2026-08-07 reattested offline, but Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until Norgate Data Updater shows an active US subscription and configured database location, then run one bounded probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
-| Engine Research | No frozen, input-qualified predictive campaign exists. Fixed QQQ local-paper EMA and Donchian baselines are negative and closed for selection. | If and only if a later qualified input arrives, freeze one existing 30/60/90-minute candidate matrix; do not train in the current objective. |
-| Research Steward | RTX 4090 is healthy but unallocated. | Allocate only a frozen, eligible campaign; never manufacture training to fill GPU time. |
-| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. The installed QQQ runtime route retains a reattested `observed_provisional` interpretation, while a source-safe audit of the latest eight quote-session lifecycle receipts confirms five `cancelled/clean` submissions, two scoped `outcome_unknown` results, and the latest `not_submitted/unresolved` result. The existing quote, read-only, and exact intraday dispatcher images were rebuilt from clean committed source `586844d` without starting a new container. | Treat the latest non-submission as its exact run's reconciliation limitation, not a global route hold. The task-owned QQQ route may produce bounded virtual Paper execution evidence, but neither it nor its grade can promote a model or establish PnL. |
+| Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. Fixed QQQ local-paper EMA and Donchian baselines remain negative and closed for selection. | A later predictive campaign needs a distinct qualified input and frozen contract; it is not part of the Paper lifecycle objective. |
+| Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
+| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. The existing quote-session task is the sole owner of the current lifecycle proof. | Reattach its next eligible receipt without duplicating task, container, or submission. Treat any non-submission or unknown state as exact-run scoped. |
 | Shared worktree | Alternate IWM collector WIP is untracked/modified and rejected from this objective. | Do not touch, stage, invoke, or reconcile it without a separate assignment. |
 
 ## Ready / Owned / Due
@@ -64,7 +51,7 @@ KIS client, or a replacement collector.
 | --- | --- | --- |
 | QQQ/SPY intraday causal evidence | Data | Installed `thericher-kis-paper-intraday-head` task owns the next sequence. Its source-local availability receipt and any pair attempt must bind the same contract, receipt, precommit, and summary hashes. |
 | SPY D1 stability | Data | Existing observer owns the next 2026-08-10 23:15 KST observation. Its status is observational only, never provider finality. |
-| Virtual-Paper lifecycle canary | Execution | Existing task owns the next 2026-08-10 23:35 KST opportunity. Its existing 23:45 KST result monitor owns offline reattachment only and preserves this intraday company objective. The latest exact canary is `intent_recorded/not_submitted/unresolved` with closed pre-submit disposition `reconciliation_unavailable`; five of its eight most-recent source-safe peers completed `submitted -> cancelled/clean`, so that anomaly is not a global route hold. It is not a submit, fill, PnL, or model result. |
+| Virtual-Paper lifecycle canary | Execution | Existing task owns the next eligible opportunity. Its result monitor reattaches only source-safe lifecycle evidence for the current objective. The latest exact canary is `intent_recorded/not_submitted/unresolved` with closed pre-submit disposition `reconciliation_unavailable`; five of its eight most-recent source-safe peers completed `submitted -> cancelled/clean`, so that anomaly is not a global route hold. It is not a submit, fill, PnL, or model result. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
 | Read-only Paper account observer | Execution | Existing four-minute task is the sole owner. Its validated provenance is marker-present under an assumed-honest host, not cryptographic Scheduler-origin proof. |
 | Public-source research | Engine Research | Qlib and PatchTST are source-only architecture references, with no code, package, data, weight, campaign, GPU, or Paper consequence. |
@@ -108,16 +95,17 @@ ready.
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\patchtst-source-20260809-r1\source-retrieval.json`.
 - Tiingo raw-D1 source-safe receipt:
   `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\4a2344b7ab8ec2eaf0b1a5e4afcd41e07cf0b4c14e13db64d07b41fd054883d2.json`.
+- Tiingo IEX r1 source-isolated CUDA receipt:
+  `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
 
 ## Verification And Git
 
-The QQQ provisional-grade v5 package passed 117 focused loop/session/validator/
-host-dispatch tests, the 2,903-pass authority parallel suite, Ruff, both
-Compose configuration parses, and `git diff --check`. The focused package makes
-no KIS, credential, network, broker, or scheduler call during verification;
-its only runtime effect is the existing task's later interpretation contract.
-A full serial diagnostic exceeded the local 10-minute command cap and was
-terminated with no remaining pytest process, so it is not a passing result.
+The Tiingo IEX source-isolated package passed 19 focused data/research tests,
+the 2,919-pass authority parallel suite with 17 skips, Ruff, both Compose
+configuration parses, and `git diff --check`. The CPU and CUDA Docker commands
+were networkless and wrote only external source-safe summaries. The suite also
+repaired three pre-existing test-contract mismatches exposed by the local Torch
+runtime; no KIS, credential, broker, or scheduler call occurred in verification.
 Use Git history for immutable commit checkpoints rather than copying a
 self-staling latest hash here.
 
@@ -128,6 +116,6 @@ self-staling latest hash here.
    active stateboards.
 3. Run a compact Throughput Review, then dispatch only a ready,
    non-conflicting package.
-4. After the next task-owned terminal, use only offline source-safe readers to
-   classify its exact evidence; preserve a scoped unavailable result or freeze
-   the next candidate only when every stated condition is evidenced.
+4. Reattach the next eligible existing quote-session receipt only after its
+   owned task writes it. Preserve a scoped unavailable or unknown result; never
+   infer an outcome or issue a duplicate Paper submission.

@@ -20,6 +20,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
 | Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. |
+| Tiingo IEX M5 r1 ETF trio | Pinned 2026-07-19 IEX-only snapshot reattested offline by raw hashes, stored gzip hash, and exact canonical payload. | One completed source-isolated reconstruction runtime integration only; no source scope, training eligibility, KIS equivalence, model-selection, or Paper-input change. |
 | Norgate trial tail | The 2026-08-09 host-only `norgatedata` 1.0.77 probe returned `unavailable/local_source_unavailable`; recently written D: database files do not attest current vendor access or rights. | Do not re-probe until Norgate Data Updater shows an active US subscription, then verify its Database Location and run one new bounded tail probe. |
 
 Raw market bytes remain under `D:\market_data`. Source-safe receipts and
@@ -27,10 +28,16 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
-`task-owned-kis-intraday-causal-evidence-refresh-v1` requires one later exact
-QQQ/NAS + SPY/AMS M1 completed-session chain. The old terminal
-`intraday-head-20260807T2120007624227Z` is closed only for its own incomplete
-coverage condition. It cannot become a provider-wide retention claim or an
+Data has no direct broker-side-effect work in the current Paper lifecycle
+objective. It preserves the Tiingo IEX r1 completed offline reattestation and
+the independently owned KIS input tasks. The r1 cross-runtime gzip encoding
+difference was resolved by checking the pinned compressed artifact hash plus
+exact canonical payload, not by changing the snapshot or acquiring data. The
+result remains a source-local runtime input only.
+
+The QQQ/NAS + SPY/AMS completed-session chain remains separately owned by its
+installed KIS task. Its old terminal is closed only for its incomplete coverage
+condition; it cannot become a provider-wide retention claim or an
 Engine/Execution hold.
 
 The task owns the next KST sequence on 2026-08-11 at 00:29, 02:28, 04:24, and
@@ -50,6 +57,7 @@ This contract has no collector, credential, network, or schedule behavior.
 | --- | --- | --- |
 | Intraday causal evidence refresh | Existing `thericher-kis-paper-intraday-head` task | Exact terminal plus matching capture, availability, and optional pair hashes; reader recomputes the named availability-summary bytes. |
 | Offline classification | Data after task terminal | `qualified` only with completed-session geometry, chronological split, decision-time availability, and provider finality. Otherwise record the narrow unavailable reason. |
+| Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Next 2026-08-10 23:15 KST observation; `stable` is not provider finality. |
 | Norgate tail readiness | Norgate local source | Blocked only for this source: wait for Norgate Data Updater to show an active subscription, then run one new bounded probe; do not foreground-retry. |
 
@@ -95,6 +103,8 @@ This contract has no collector, credential, network, or schedule behavior.
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-matrix-v1\20260807-qqq-mtf-matrix-r2\summary.json`.
 - Tiingo raw-D1 collection receipt:
   `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\4a2344b7ab8ec2eaf0b1a5e4afcd41e07cf0b4c14e13db64d07b41fd054883d2.json`.
+- Tiingo IEX r1 runtime evidence:
+  `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
 
 ## Handoff
 

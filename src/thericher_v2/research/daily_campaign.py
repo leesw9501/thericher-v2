@@ -780,19 +780,21 @@ def _assert_source_sensitivity_replay_compatibility(
 def _resolve_replay_input_manifest_hash(
     plan: DailyCampaignPlan,
     expected_manifest_hash: str | None,
+    *,
+    label: str = "explicit-event replay input",
 ) -> str:
     manifest_path = plan.cataloged_bars[0].source_path.resolve().parent / "manifest.json"
     if manifest_path.is_symlink():
-        raise ValueError("explicit-event replay input manifest cannot be a symlink")
+        raise ValueError(f"{label} manifest cannot be a symlink")
     try:
         actual_manifest_hash = _sha256_file(manifest_path)
     except OSError as exc:
-        raise ValueError("explicit-event replay input manifest is not readable") from exc
+        raise ValueError(f"{label} manifest is not readable") from exc
     if expected_manifest_hash is None:
         return actual_manifest_hash
-    _require_sha256(expected_manifest_hash, "explicit-event replay input manifest SHA-256")
+    _require_sha256(expected_manifest_hash, f"{label} manifest SHA-256")
     if actual_manifest_hash != expected_manifest_hash:
-        raise ValueError("explicit-event replay input manifest SHA-256 mismatch")
+        raise ValueError(f"{label} manifest SHA-256 mismatch")
     return expected_manifest_hash
 
 
@@ -810,6 +812,7 @@ def _source_sensitivity_target(
         manifest_hash=_resolve_replay_input_manifest_hash(
             target_plan,
             expected_manifest_hash,
+            label="target",
         ),
         source_path=target_plan.cataloged_bars[0].source_path.resolve(),
         common_sessions_sha256=_daily_sessions_sha256(target_plan.common_sessions),
@@ -1095,6 +1098,7 @@ def run_daily_explicit_event_replay(
         _resolve_replay_input_manifest_hash(
             target,
             replay_plan.source_sensitivity_target.manifest_hash,
+            label="target",
         )
     _assert_explicit_event_replay_plan(target, replay_plan)
 

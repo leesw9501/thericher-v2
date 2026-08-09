@@ -5,9 +5,15 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
-- The RTX 4090 is free. No active GPU process or sealed-evaluation allocation
-  is held by Research Steward.
+- The RTX 4090 is free. The bounded Tiingo IEX r1 source-isolated appointment
+  completed and released its memory; no GPU process or sealed-evaluation
+  allocation is held by Research Steward.
 - No frozen, input-qualified campaign is ready for an appointment.
+- The completed Tiingo IEX r1 receipt is
+  `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
+  It records one non-promoting runtime appointment only: no holdout spend,
+  source-derived weights, model selection, predictive result, KIS input, or
+  Paper input. Its lineage cannot receive follow-on allocation by implication.
 - The completed Granite TTM R1 structural smoke used one bounded appointment
   and released it. It is runtime compatibility evidence only, not a predictive
   campaign or a reason to reserve GPU capacity.

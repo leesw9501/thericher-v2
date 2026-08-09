@@ -16,6 +16,7 @@ from types import SimpleNamespace
 
 import pytest
 
+import thericher_v2.research.daily_campaign as daily_campaign
 from thericher_v2.contracts import SCHEMA_VERSION, Bar, Timeframe
 from thericher_v2.data import (
     CatalogedCorporateActions,
@@ -406,6 +407,7 @@ def test_prepare_explicit_event_replay_is_no_training_and_fixed_36_cells(
 
 def test_prepare_explicit_event_replay_reattests_legacy_timezone_contract(
     daily_plan,
+    monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
     legacy_plan = replace(
@@ -423,6 +425,16 @@ def test_prepare_explicit_event_replay_reattests_legacy_timezone_contract(
     summary = json.loads(summary_path.read_text())
     legacy_contract_hash = (
         "sha256:abdd71954a4b04b1baa9b40fab89688a74dc524e0fd3f52291b6ca41eba34f78"
+    )
+    legacy_key = (
+        legacy_plan.contract.campaign_id,
+        legacy_plan.contract.catalog.dataset_id,
+        legacy_plan.contract.catalog.dataset_hash,
+    )
+    monkeypatch.setitem(
+        daily_campaign._LEGACY_RAW_D1_CUDA_CONTRACTS,
+        legacy_key,
+        legacy_contract_hash,
     )
     summary["campaign_contract_hash"] = legacy_contract_hash
     summary["split"] = _source_summary_schedule_fixture(legacy_plan)

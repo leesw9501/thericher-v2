@@ -2267,6 +2267,31 @@ the executable surface. Their external summaries remain historical evidence,
 but they do not restrict current collection, scheduling, raw retention, or
 paper execution.
 
+## Tiingo IEX r1 Source-Isolated Runtime Integration
+
+The completed Tiingo IEX M5 r1 integration is a reproducible runtime check, not
+a predictive campaign. It runs only the pinned external r1 snapshot through the
+networkless `research` service, first with `--phase cpu` and then once with
+`--phase cuda` after CPU completion:
+
+```powershell
+docker compose --env-file .env.example --profile research run --rm --no-deps `
+  research python scripts\run_tiingo_iex_r1_representation_integration.py `
+  --phase <cpu-or-cuda> --run-label <new-label> `
+  --snapshot-dir /app/market_data/us_equities/fixed_etf_intraday/canonical/tiingo_iex_5m/snapshot=2026-07-19-tiingo-iex-5m-r1 `
+  --market-data-root /app/market_data --artifact-root /app/model_artifacts `
+  --repo-root /app
+```
+
+The loader reattests pinned manifest, raw-source, and compressed-artifact
+hashes, then compares the gzip payload with the exact canonical CSV rebuilt
+from the raw sources. The payload comparison is portable across zlib encoders;
+it does not rewrite the snapshot. The receipt contains only source hashes,
+aggregate window geometry, architecture identities, categorical completion, and
+memory cleanup. It has no network, token, KIS, broker, return/holdout, loss,
+prediction, raw-row, or retained-weight path. Do not rerun or extend this
+closed lineage to select a model or feed Paper.
+
 ## Recovery
 
 At a task start, after interruption, and before trusting a checkpoint:

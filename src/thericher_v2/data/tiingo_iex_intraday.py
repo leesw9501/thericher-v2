@@ -469,7 +469,10 @@ def load_tiingo_iex_intraday_snapshot(
     actual_dataset_hash = _sha256(normalized_bytes)
     if actual_dataset_hash != expected_dataset_hash:
         raise ValueError("Tiingo IEX dataset hash mismatch")
-    if normalized_bytes != _gzip_bytes(_canonical_csv_bytes(ordered_bars)):
+    if not _matches_gzip_canonical_payload(
+        normalized_bytes,
+        _canonical_csv_bytes(ordered_bars),
+    ):
         raise ValueError("Tiingo IEX normalized data does not match attested raw bytes")
     _validate_manifest_content(
         manifest,
@@ -844,7 +847,10 @@ def load_tiingo_iex_pre_r1_archive_snapshot(
     )
     if _sha256(normalized_bytes) != expected_dataset_hash:
         raise ValueError("Tiingo IEX pre-r1 archive dataset hash mismatch")
-    if normalized_bytes != _gzip_bytes(_canonical_csv_bytes(ordered_bars)):
+    if not _matches_gzip_canonical_payload(
+        normalized_bytes,
+        _canonical_csv_bytes(ordered_bars),
+    ):
         raise ValueError(
             "Tiingo IEX pre-r1 archive normalized data does not match attested raw bytes"
         )
@@ -1473,6 +1479,22 @@ def _gzip_bytes(data: bytes) -> bytes:
     with gzip.GzipFile(filename="", fileobj=buffer, mode="wb", mtime=0) as compressed:
         compressed.write(data)
     return buffer.getvalue()
+
+
+def _matches_gzip_canonical_payload(compressed: bytes, expected: bytes) -> bool:
+    """Compare gzip content without depending on the local zlib encoder output."""
+
+    try:
+        with gzip.GzipFile(fileobj=io.BytesIO(compressed), mode="rb") as stream:
+            offset = 0
+            while offset < len(expected):
+                chunk = stream.read(min(64 * 1024, len(expected) - offset))
+                if not chunk or expected[offset : offset + len(chunk)] != chunk:
+                    return False
+                offset += len(chunk)
+            return stream.read(1) == b""
+    except (EOFError, OSError, ValueError):
+        return False
 
 
 def _dataset_id(snapshot_dir: Path) -> str:

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import gzip
+import io
 import json
 from datetime import UTC, date, datetime, time, timedelta
 from pathlib import Path
@@ -163,6 +165,42 @@ def test_loader_rejects_tampered_raw_or_normalized_bytes(tmp_path: Path) -> None
         _load(destination, result, market_root, repo_root)
 
 
+def test_loader_accepts_equivalent_gzip_encoding_but_rejects_changed_canonical_content(
+    tmp_path: Path,
+) -> None:
+    market_root, repo_root, destination, result = _snapshot_fixture(tmp_path)
+    normalized_path = destination / "ohlcv_5m.csv.gz"
+    canonical = gzip.decompress(normalized_path.read_bytes())
+
+    equivalent = _gzip_with_level(canonical, level=1)
+    assert equivalent != normalized_path.read_bytes()
+    equivalent_hash, equivalent_manifest_hash = _rewrite_normalized_manifest(
+        destination,
+        equivalent,
+    )
+    loaded = intraday.load_tiingo_iex_intraday_snapshot(
+        destination,
+        dataset_id=result.dataset_id,
+        expected_dataset_hash=equivalent_hash,
+        expected_manifest_hash=equivalent_manifest_hash,
+        market_data_root=market_root,
+        repo_root=repo_root,
+    )
+    assert loaded.dataset_hash == equivalent_hash
+
+    changed = _gzip_with_level(canonical + b"x", level=1)
+    changed_hash, changed_manifest_hash = _rewrite_normalized_manifest(destination, changed)
+    with pytest.raises(ValueError, match="does not match attested raw bytes"):
+        intraday.load_tiingo_iex_intraday_snapshot(
+            destination,
+            dataset_id=result.dataset_id,
+            expected_dataset_hash=changed_hash,
+            expected_manifest_hash=changed_manifest_hash,
+            market_data_root=market_root,
+            repo_root=repo_root,
+        )
+
+
 def test_normalizer_preserves_gapped_sessions_but_rejects_invalid_timestamps() -> None:
     rows = _rows("SPY")
     normalized = intraday.normalize_tiingo_iex_intraday_response(
@@ -269,6 +307,33 @@ def _load(destination: Path, result, market_root: Path, repo_root: Path):
         market_data_root=market_root,
         repo_root=repo_root,
     )
+
+
+def _gzip_with_level(data: bytes, *, level: int) -> bytes:
+    buffer = io.BytesIO()
+    with gzip.GzipFile(
+        filename="",
+        fileobj=buffer,
+        mode="wb",
+        mtime=0,
+        compresslevel=level,
+    ) as stream:
+        stream.write(data)
+    return buffer.getvalue()
+
+
+def _rewrite_normalized_manifest(destination: Path, normalized: bytes) -> tuple[str, str]:
+    normalized_path = destination / "ohlcv_5m.csv.gz"
+    manifest_path = destination / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    dataset_hash = intraday._sha256(normalized)
+    manifest["dataset_hash"] = dataset_hash
+    manifest["normalized_data"]["sha256"] = dataset_hash
+    manifest["normalized_data"]["size_bytes"] = len(normalized)
+    manifest_bytes = intraday._json_bytes(manifest)
+    normalized_path.write_bytes(normalized)
+    manifest_path.write_bytes(manifest_bytes)
+    return dataset_hash, intraday._sha256(manifest_bytes)
 
 
 def _responses() -> dict[str, bytes]:

@@ -21,8 +21,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   task-owned QQQ/SPY M1 chain is `input_unavailable`; its optional causal
   attestation is `not_recorded`, so it cannot freeze a target, split, or
   30/60/90-minute candidate matrix.
-- The RTX 4090 CUDA path is healthy, but Research Steward has no GPU
-  appointment. GPU utilization is not a research KPI.
+- The RTX 4090 source-isolated Tiingo IEX r1 appointment completed and released
+  its memory. Its M5-only masked reconstruction used the fixed
+  LSTM/causal-TCN/compact-attention order with no target, holdout, selection,
+  retained weights, or promotion path.
 - QQQ 20-session M1/M5/M10/H1/H3 resampling and six canonical causal window
   profiles are complete source-local mechanics. They are target-free and
   non-promoting.
@@ -42,7 +44,7 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 | --- | --- | --- |
 | Technical/chart and momentum/regime | Fixed local mechanics and negative baselines only | New causal, time-disjoint input plus frozen contract |
 | Classical ML/statistical | No active campaign | Qualified dataset and CPU-first preflight |
-| Sequence/DL/public model | CUDA runtime proven; no campaign | Qualified dataset, frozen target/split, and Steward appointment |
+| Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
 | Portfolio/allocation/meta-decision | Deterministic scale/cap foundation only | Aligned out-of-fold upstream candidate evidence |
 
 ## Public-Source References
@@ -76,7 +78,7 @@ ensemble use, or Paper routing on their own.
 
 ## Active Constraint And Handoff
 
-The current company objective permits no training or GPU allocation. If Data
-qualifies the later QQQ/SPY chain, freeze one existing candidate without
-training and hand its contract to Research Steward. If it remains unavailable,
-record only that exact missing fact and continue a distinct ready track.
+The completed source-isolated CUDA appointment proved only loader, geometry,
+finite-run, and cleanup facts. It cannot change the unavailable QQQ/SPY causal
+input, create a predictive candidate, or feed KIS Paper. Its lineage is closed
+to selection; a later distinct ready track needs its own frozen contract.
