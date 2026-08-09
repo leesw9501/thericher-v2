@@ -1076,9 +1076,13 @@ that deadline; immediately before `submit_limit`, the existing canary lock
 evaluates the same deadline together with the regular-session predicate. This
 deadline does not constrain offline Research campaigns that deliberately pass a
 separate campaign-local age. The offline validator writes new results under the
-immutable `runtime-freshness-v2` validation namespace, so it can reattach an
-older receipt without overwriting it; legacy receipts without these new fields
-remain replayable under their original scope.
+immutable `runtime-freshness-v5` validation namespace, so it can reattach an
+older receipt without overwriting it. A current QQQ runtime receipt carries an
+exact `observed_provisional` input grade with provider availability/finality
+`not_observed`, terminal-state support `unqualified`, and PnL `not_observed`.
+The offline validator recomputes that grade from the retained window and
+rejects a missing or altered current-v5 grade; older receipts remain replayable
+only under their original scope.
 
 ### Bounded Session Capture
 

@@ -477,7 +477,7 @@ def _fake_dispatch_command(
     ),
     qqq_validation_payloads: tuple[str, ...] = (
         '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
-        '"session_id":"qqq-unit","validation_contract":"runtime-freshness-v4"}',
+        '"session_id":"qqq-unit","validation_contract":"runtime-freshness-v5"}',
     ),
     capture_binding_payload: str | None = None,
     require_capture_binding: bool = False,

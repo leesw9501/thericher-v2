@@ -19,7 +19,7 @@ read or route `KIS_LIVE_*`.
 | Private operator dashboard | Loopback-only dashboard and local pause/resume controls are complete. | It has no public bind and no broker-order control. |
 | Read-only Paper account observer | Exact sidecar receipt reattached as `complete`; dashboard health reports no broker calls. | Marker-present provenance assumes an honest host; it is not cryptographic Scheduler-origin proof. |
 | Virtual-Paper lifecycle canary | The latest exact canary is `canary_completed/intent_recorded` with direct lifecycle `not_submitted/unresolved`; its offline source-safe lifecycle fact now classifies the pre-submit disposition as `reconciliation_unavailable`. A bounded audit of the latest eight exact receipts found five acknowledged submissions that later cancelled cleanly, two scoped `outcome_unknown` results, and this one `not_submitted` result. | The latest anomaly is exact-run scoped, not evidence that the schedule or Paper route is globally disabled. The reader emits only a closed disposition, never a raw broker or reconciliation reason; it is not a submit, fill, PnL, profitability, or model result. |
-| Intraday QQQ/SPY data chain | Latest chain is Data `input_unavailable`; its optional offline causal-attestation binding is `not_recorded`. | Execution must not consume it without a later qualified objective and replay parity. |
+| Intraday QQQ/SPY data chain | Latest chain is Data `input_unavailable`; its optional offline causal-attestation binding is `not_recorded`. The embedded QQQ runtime route separately retains `observed_provisional` input evidence. | Only the existing task-owned QQQ route may use its current runtime cache for one virtual-Paper observation. Its v5 session/validator grade stays non-promoting with provider availability/finality and PnL unobserved. |
 
 ## Ready / Owned / Due
 
@@ -27,7 +27,8 @@ read or route `KIS_LIVE_*`.
 | --- | --- | --- |
 | Virtual-Paper lifecycle canary | Existing `thericher-kis-paper-quote-session` task | Next owned opportunity: 2026-08-10 23:35 KST. Do not manually invoke or duplicate it; validate its own source-safe receipt independently. |
 | Read-only account snapshot | Existing observer task | The existing four-minute task remains the sole recurring owner. |
-| QQQ/SPY intraday causal evidence | Data-owned `thericher-kis-paper-intraday-head` task | Execution consumes nothing during the current objective. |
+| QQQ/SPY intraday causal evidence | Data-owned `thericher-kis-paper-intraday-head` task | Execution consumes no causal-qualified model input during the current objective; the existing QQQ provisional route remains a separate, task-owned observation. |
+| QQQ provisional runtime observation | Embedded existing intraday-head child | The v5 validation contract recomputes the fixed non-promoting grade. Do not manually invoke, duplicate, or interpret it as model/PnL evidence. |
 | Any unknown exact Paper outcome | Execution reconciliation path | Reconcile the exact durable intent; never infer success or create a fresh action from ambiguity. |
 
 ## Deterministic Controls

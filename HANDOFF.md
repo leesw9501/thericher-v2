@@ -34,6 +34,13 @@ non-overlapping boundary, decision-time availability, and provider-finality
 categories. This is still marker-present local provenance under an assumed
 honest host, not cryptographic proof of provider origin.
 
+The same installed task also owns the existing QQQ runtime Paper observation.
+Its v5 offline validation contract now carries and reattests a fixed
+`observed_provisional` input grade, including unobserved provider
+availability/finality, `terminal_state_support: unqualified`, and
+`pnl_status: not_observed`. That evidence can describe one virtual Paper
+lifecycle only; it cannot promote a model, establish an edge, or claim PnL.
+
 Only the installed intraday-head task may produce the next candidate. Its next
 owned sequence begins at 2026-08-11 00:29 KST, with runs at 00:29, 02:28,
 04:24, and 06:20. Only the 06:20 post-close terminal is an eligible
@@ -48,7 +55,7 @@ KIS client, or a replacement collector.
 | Data | The 2026-08-09 host-only Norgate tail probe is `unavailable/local_source_unavailable`; D: file freshness is not a vendor-access or rights proof. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until Norgate Data Updater shows an active US subscription and configured database location, then run one bounded probe. |
 | Engine Research | No frozen, input-qualified predictive campaign exists. Fixed QQQ local-paper EMA and Donchian baselines are negative and closed for selection. | If and only if a later qualified input arrives, freeze one existing 30/60/90-minute candidate matrix; do not train in the current objective. |
 | Research Steward | RTX 4090 is healthy but unallocated. | Allocate only a frozen, eligible campaign; never manufacture training to fill GPU time. |
-| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. A source-safe audit of the latest eight quote-session lifecycle receipts confirms five `cancelled/clean` submissions, two scoped `outcome_unknown` results, and the latest `not_submitted/unresolved` result. Its closed pre-submit disposition is `reconciliation_unavailable`. | Treat the latest non-submission as its exact run's reconciliation limitation, not a global route hold. Keep scheduled execution evidence owned by its task and consume no intraday data result without a later qualified objective. |
+| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. The installed QQQ runtime route retains a reattested `observed_provisional` interpretation, while a source-safe audit of the latest eight quote-session lifecycle receipts confirms five `cancelled/clean` submissions, two scoped `outcome_unknown` results, and the latest `not_submitted/unresolved` result. | Treat the latest non-submission as its exact run's reconciliation limitation, not a global route hold. The task-owned QQQ route may produce bounded virtual Paper execution evidence, but neither it nor its grade can promote a model or establish PnL. |
 | Shared worktree | Alternate IWM collector WIP is untracked/modified and rejected from this objective. | Do not touch, stage, invoke, or reconcile it without a separate assignment. |
 
 ## Ready / Owned / Due
@@ -58,6 +65,7 @@ KIS client, or a replacement collector.
 | QQQ/SPY intraday causal evidence | Data | Installed `thericher-kis-paper-intraday-head` task owns the next sequence. Its source-local availability receipt and any pair attempt must bind the same contract, receipt, precommit, and summary hashes. |
 | SPY D1 stability | Data | Existing observer owns the next 2026-08-10 23:15 KST observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | Existing task owns the next 2026-08-10 23:35 KST opportunity. The latest exact canary is `intent_recorded/not_submitted/unresolved` with closed pre-submit disposition `reconciliation_unavailable`; five of its eight most-recent source-safe peers completed `submitted -> cancelled/clean`, so that anomaly is not a global route hold. It is not a submit, fill, PnL, or model result. |
+| QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
 | Read-only Paper account observer | Execution | Existing four-minute task is the sole owner. Its validated provenance is marker-present under an assumed-honest host, not cryptographic Scheduler-origin proof. |
 | Public-source research | Engine Research | Qlib and PatchTST are source-only architecture references, with no code, package, data, weight, campaign, GPU, or Paper consequence. |
 
@@ -101,10 +109,15 @@ ready.
 
 ## Verification And Git
 
-The causal-attestation reader package passed 59 focused offline receipt tests,
-Ruff, and `git diff --check`; it makes no KIS, Docker, network, credential,
-order, or scheduler call. Use Git history for immutable commit checkpoints
-rather than copying a self-staling latest hash here.
+The QQQ provisional-grade v5 package passed 117 focused loop/session/validator/
+host-dispatch tests, the 2,903-pass authority parallel suite, Ruff, both
+Compose configuration parses, and `git diff --check`. The focused package makes
+no KIS, credential, network, broker, or scheduler call during verification;
+its only runtime effect is the existing task's later interpretation contract.
+A full serial diagnostic exceeded the local 10-minute command cap and was
+terminated with no remaining pytest process, so it is not a passing result.
+Use Git history for immutable commit checkpoints rather than copying a
+self-staling latest hash here.
 
 ## Resume Procedure
 

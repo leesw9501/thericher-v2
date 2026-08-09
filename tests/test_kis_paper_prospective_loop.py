@@ -52,6 +52,15 @@ def test_ready_window_keeps_a_retrospective_replay_as_a_scoped_no_intent(
     rendered = json.dumps(payload, sort_keys=True)
     assert payload["mode"] == "offline_local_paper"
     assert payload["baseline"]["capability_authorization"] == "provisional"
+    assert payload["input_evidence_grade"] == {
+        "input_evidence_grade": "observed_provisional",
+        "capability_authorization": "provisional",
+        "provider_decision_time_availability": "not_observed",
+        "provider_finality": "not_observed",
+        "terminal_state_support": "unqualified",
+        "pnl_status": "not_observed",
+        "promotion_eligible": False,
+    }
     assert payload["window"]["freshness"]["lag_category"] == "within_budget"
     assert "101.00" not in rendered
     assert "price" not in rendered
@@ -80,6 +89,8 @@ def test_missing_window_creates_a_replayable_unavailable_receipt_without_local_o
     assert result.receipt.decision_class == "abstain"
     assert result.receipt.reason_class == "input_unavailable"
     assert result.local_paper_replay is None
+    payload = result.safe_payload()
+    assert payload["input_evidence_grade"]["input_evidence_grade"] == "input_unavailable"
     assert not (tmp_path / "runtime" / "qqq-prospective-local-paper-v1.jsonl").exists()
 
 

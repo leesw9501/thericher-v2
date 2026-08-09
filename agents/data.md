@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | Latest exact chain is `input_unavailable/session_coverage_incomplete`; its optional causal-attestation binding is `not_recorded`, so decision-time availability and provider finality remain `not_observed`. | Only the installed task may produce a later candidate. No model/Paper consumer promotion. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | Latest exact chain is `input_unavailable/session_coverage_incomplete`; its optional causal-attestation binding is `not_recorded`, so decision-time availability and provider finality remain `not_observed`. | Only the installed task may produce a later candidate. No model or reusable Paper-candidate promotion; its separately owned QQQ runtime observation remains explicitly provisional. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |

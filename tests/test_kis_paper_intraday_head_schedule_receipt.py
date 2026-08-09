@@ -67,7 +67,7 @@ def test_schedule_receipt_writes_a_complete_source_safe_no_intent_outcome(tmp_pa
         "status": "no_intent",
     }
     assert payload["stages"]["prospective_validation"] == {
-        "contract": "runtime-freshness-v4",
+        "contract": "runtime-freshness-v5",
         "exit_code": 0,
         "session_id": "prospective-qqq-unit",
         "status": "validated",
@@ -1544,7 +1544,7 @@ def _complete_kwargs() -> dict[str, object]:
         "prospective_validation_exit_code": 0,
         "prospective_validation_status": "validated",
         "prospective_validation_session_id": "prospective-qqq-unit",
-        "prospective_validation_contract": "runtime-freshness-v4",
+        "prospective_validation_contract": "runtime-freshness-v5",
         "observation_exit_code": 0,
         "observation_status": "pending",
         "capture_cycle_exit_code": 0,

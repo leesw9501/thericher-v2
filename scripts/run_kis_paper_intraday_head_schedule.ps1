@@ -471,7 +471,7 @@ $prospectiveValidationExitCode = 0
 $prospectiveValidationStatus = "not_applicable"
 $prospectiveValidationSessionId = $null
 $prospectiveValidationContract = $null
-$expectedProspectiveValidationContract = "runtime-freshness-v4"
+$expectedProspectiveValidationContract = "runtime-freshness-v5"
 
 $availabilityExitCode = 0
 $availabilityStatus = "not_applicable"

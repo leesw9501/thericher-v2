@@ -76,6 +76,9 @@ def test_recomputes_ready_window_and_local_paper_replay_without_external_access(
         "fill_source": None,
         "event_log_sha256": None,
     }
+    assert result.input_evidence_grade is not None
+    assert result.input_evidence_grade["input_evidence_grade"] == "observed_provisional"
+    assert result.input_evidence_grade["promotion_eligible"] is False
     rendered = result.evidence_path.read_text(encoding="ascii")
     assert result.evidence_path.is_relative_to(
         artifact_root / KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_ARTIFACT_DIRECTORY
@@ -245,6 +248,74 @@ def test_rejects_tampered_immutable_receipt_identity(
     with pytest.raises(ValueError, match="decision receipt is invalid"):
         validate_kis_paper_prospective_qqq_session(
             session_id="prospective-qqq-validation-tampered-receipt",
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_rejects_tampered_provisional_input_evidence_grade(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    session_id = "prospective-qqq-validation-tampered-evidence-grade"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    evidence_path = _write_session(
+        artifact_root,
+        session_id=session_id,
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="account_unavailable",
+    )
+    payload = json.loads(evidence_path.read_text(encoding="ascii"))
+    payload["input_evidence_grade"]["provider_finality"] = "observed_final"
+    evidence_path.write_text(
+        json.dumps(payload, ensure_ascii=True, sort_keys=True),
+        encoding="ascii",
+    )
+
+    with pytest.raises(ValueError, match="input evidence grade is inconsistent"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id=session_id,
+            cache_root=tmp_path / "cache",
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_rejects_tampered_loop_input_evidence_grade(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_validator_catalog(monkeypatch, catalog)
+    artifact_root = tmp_path / "artifacts"
+    repository_root = tmp_path / "repo"
+    session_id = "prospective-qqq-validation-tampered-loop-evidence-grade"
+    loop = _ready_loop(catalog, tmp_path=tmp_path, repository_root=repository_root)
+    evidence_path = _write_session(
+        artifact_root,
+        session_id=session_id,
+        observed_at=catalog.bars[-1].end_ts,
+        loop=loop.safe_payload(),
+        status="no_intent",
+        reason_code="account_unavailable",
+    )
+    payload = json.loads(evidence_path.read_text(encoding="ascii"))
+    payload["loop"]["input_evidence_grade"]["promotion_eligible"] = True
+    evidence_path.write_text(
+        json.dumps(payload, ensure_ascii=True, sort_keys=True),
+        encoding="ascii",
+    )
+
+    with pytest.raises(ValueError, match="input evidence grade is inconsistent"):
+        validate_kis_paper_prospective_qqq_session(
+            session_id=session_id,
             cache_root=tmp_path / "cache",
             artifact_root=artifact_root,
             repository_root=repository_root,
@@ -999,6 +1070,9 @@ def _write_session(
         "observed_at": observed_at.isoformat().replace("+00:00", "Z"),
         "paper_only": True,
         "loop": loop,
+        "input_evidence_grade": (
+            None if loop is None else loop.get("input_evidence_grade")
+        ),
         "position_resolution": position_resolution,
         "prepared": prepared,
         "canary": canary,

@@ -9328,3 +9328,25 @@ assumed-honest-host provenance rather than cryptographic proof. Focused offline
 tests cover the valid binding, a missing finality condition, tampering, and no
 network access. No credential, KIS, Docker, order, model, GPU, Paper, live, or
 public behavior changed.
+
+## 2026-08-10 - Carry the QQQ provisional input grade through Paper reattachment
+
+Decision: retain the existing task-owned QQQ runtime/Paper route and add one
+compact, immutable interpretation to its loop, execution-session, and offline
+validation evidence. A ready runtime window is always
+`observed_provisional`; provider decision-time availability and provider
+finality remain `not_observed`, terminal-state support remains `unqualified`,
+PnL remains `not_observed`, and the result is never promotion-eligible. The v5
+offline validator recomputes the expected grade from the verified cache/window
+and rejects a missing or altered loop/session grade. Its v5 namespace preserves
+earlier validation artifacts rather than overwriting them.
+
+Reason: architecture already permitted an explicitly graded, bounded virtual
+Paper observation but the QQQ authorization existed only as a nested baseline
+field and the validator did not independently verify it. The new small contract
+keeps the interpretation attached to the source-safe execution evidence without
+adding a scheduler, collector, model, broker behavior, credential path, or
+submission gate. Claude's requested drift-check timed out as
+`review_unavailable`; this was not treated as agreement. Focused offline and
+fake-dispatch tests cover the exact grade, missing/unavailable input, session
+projection, validator reattachment, and a tampered finality value.

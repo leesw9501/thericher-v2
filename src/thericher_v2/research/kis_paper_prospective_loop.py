@@ -45,6 +45,48 @@ ProspectiveLoopAuthorization = Literal[
     "unqualified",
     "not_evaluated",
 ]
+ProspectiveInputEvidenceGradeKind = Literal["observed_provisional", "input_unavailable"]
+
+
+@dataclass(frozen=True)
+class KisPaperProspectiveInputEvidenceGrade:
+    """Interpretation limits that travel with one prospective QQQ input."""
+
+    input_evidence_grade: ProspectiveInputEvidenceGradeKind
+    capability_authorization: Literal["provisional", "not_evaluated"]
+    provider_decision_time_availability: Literal["not_observed"] = "not_observed"
+    provider_finality: Literal["not_observed"] = "not_observed"
+    terminal_state_support: Literal["unqualified"] = "unqualified"
+    pnl_status: Literal["not_observed"] = "not_observed"
+    promotion_eligible: Literal[False] = False
+
+    def __post_init__(self) -> None:
+        expected_grade: ProspectiveInputEvidenceGradeKind = (
+            "observed_provisional"
+            if self.capability_authorization == "provisional"
+            else "input_unavailable"
+        )
+        if self.input_evidence_grade != expected_grade:
+            raise ValueError("prospective input evidence grade is inconsistent")
+        if (
+            self.provider_decision_time_availability != "not_observed"
+            or self.provider_finality != "not_observed"
+            or self.terminal_state_support != "unqualified"
+            or self.pnl_status != "not_observed"
+            or self.promotion_eligible is not False
+        ):
+            raise ValueError("prospective input evidence limits are invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "input_evidence_grade": self.input_evidence_grade,
+            "capability_authorization": self.capability_authorization,
+            "provider_decision_time_availability": self.provider_decision_time_availability,
+            "provider_finality": self.provider_finality,
+            "terminal_state_support": self.terminal_state_support,
+            "pnl_status": self.pnl_status,
+            "promotion_eligible": self.promotion_eligible,
+        }
 
 
 @dataclass(frozen=True)
@@ -75,6 +117,17 @@ class KisPaperProspectiveLoopResult:
             raise ValueError("unready runtime input must retain its exact status")
         elif self.local_paper_replay is not None:
             raise ValueError("unready runtime input cannot create a local-paper replay")
+        prospective_input_evidence_grade(
+            window=self.window,
+            capability_authorization=self.capability_authorization,
+        )
+
+    @property
+    def input_evidence_grade(self) -> KisPaperProspectiveInputEvidenceGrade:
+        return prospective_input_evidence_grade(
+            window=self.window,
+            capability_authorization=self.capability_authorization,
+        )
 
     def safe_payload(self) -> dict[str, object]:
         """Return safe evidence that binds data, decision, and replay identities."""
@@ -98,6 +151,7 @@ class KisPaperProspectiveLoopResult:
                     else _utc_marker(self.proposal.feature_window_end)
                 ),
             },
+            "input_evidence_grade": self.input_evidence_grade.safe_payload(),
             "receipt": self.receipt.to_payload(),
             "local_paper_replay": (
                 None if self.local_paper_replay is None else self.local_paper_replay.safe_payload()
@@ -107,6 +161,28 @@ class KisPaperProspectiveLoopResult:
                 "not a model promotion or profitability claim"
             ),
         }
+
+
+def prospective_input_evidence_grade(
+    *,
+    window: KisPaperIntradayRuntimeWindow,
+    capability_authorization: ProspectiveLoopAuthorization,
+) -> KisPaperProspectiveInputEvidenceGrade:
+    """Return the fixed non-promoting interpretation for this runtime loop."""
+
+    expected_authorization: Literal["provisional", "not_evaluated"] = (
+        "provisional" if window.status == "ready" else "not_evaluated"
+    )
+    if capability_authorization != expected_authorization:
+        raise ValueError("runtime loop capability authorization is inconsistent")
+    return KisPaperProspectiveInputEvidenceGrade(
+        input_evidence_grade=(
+            "observed_provisional"
+            if expected_authorization == "provisional"
+            else "input_unavailable"
+        ),
+        capability_authorization=expected_authorization,
+    )
 
 
 def run_kis_paper_prospective_loop(

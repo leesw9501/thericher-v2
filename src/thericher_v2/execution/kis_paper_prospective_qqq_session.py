@@ -187,6 +187,9 @@ class KisPaperProspectiveQqqSessionOutcome:
             "observed_at": _utc_marker(self.observed_at),
             "paper_only": True,
             "loop": None if self.loop is None else self.loop.safe_payload(),
+            "input_evidence_grade": (
+                None if self.loop is None else self.loop.input_evidence_grade.safe_payload()
+            ),
             "local_input_availability": (
                 None
                 if self.local_input_availability is None

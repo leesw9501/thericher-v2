@@ -57,6 +57,9 @@ def test_preview_replays_locally_without_constructing_a_kis_client(
     assert outcome.loop.local_paper_replay.status == "no_intent"
     assert outcome.loop.local_paper_replay.reason == "decision_after_replay_bar"
     assert outcome.loop.local_paper_replay.fill_source is None
+    payload = json.loads(outcome.evidence_path.read_text(encoding="ascii"))
+    assert payload["input_evidence_grade"]["input_evidence_grade"] == "observed_provisional"
+    assert payload["input_evidence_grade"]["pnl_status"] == "not_observed"
     assert client.calls == []
 
 

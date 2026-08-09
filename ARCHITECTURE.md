@@ -333,6 +333,16 @@ or unavailable inputs remain no-intent results. The first service deliberately
 uses cancellation after a submitted virtual canary so the bounded observation
 does not leave an unintended open Paper order.
 
+Every persisted QQQ runtime loop and every execution-session or independent
+validation result that contains one carries the same compact input-evidence
+interpretation. A ready window is `observed_provisional`, not qualified:
+provider decision-time availability and finality remain `not_observed`,
+terminal-state support remains `unqualified`, `pnl_status` remains
+`not_observed`, and promotion eligibility is false. The validator recomputes
+that exact grade from the verified cache and window; a missing or altered grade
+rejects only that session's reattachment. This is evidence custody, not a
+submission gate or a new scheduler.
+
 The trailing `kis-paper-prospective-qqq-validation` service is an independent,
 network-disabled temporary Validation consumer. The dispatcher gives it the
 exact execution-session ID only after that session exits. It reloads the same

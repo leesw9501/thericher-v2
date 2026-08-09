@@ -7,7 +7,9 @@ Build `task-owned-kis-intraday-causal-evidence-refresh-v1`.
 Classify one later caller-selected `thericher-kis-paper-intraday-head`
 completed-session result for the QQQ/NAS and SPY/AMS M1 causal input. This
 advances data collection and frozen-research readiness only; it does not create
-a prediction, GPU appointment, Paper intent, broker order, or live feature.
+a prediction, GPU appointment, new Paper route, new broker order behavior, or
+live feature. The existing task-owned QQQ observed/provisional Paper observation
+remains separate execution evidence and cannot promote a model or claim PnL.
 
 ## Hard Boundaries
 
@@ -46,6 +48,9 @@ a prediction, GPU appointment, Paper intent, broker order, or live feature.
    location and verifies its exact capture, availability, and pair identities.
    No installed task writes that binding yet, so do not add another reader,
    attestation writer, task, collector, or scheduler in this objective.
+   The existing QQQ loop/session/validator already carries its reattested v5
+   `observed_provisional` grade; do not create a duplicate Paper route or
+   evidence layer for it.
 4. Mark the input `qualified` only if every predeclared condition is evidenced.
    Otherwise write the narrow `input_unavailable` or recovery fact with its
    exact missing condition and leave the next attempt to the installed task.

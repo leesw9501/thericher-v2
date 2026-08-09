@@ -42,7 +42,7 @@ facts from a scheduler result alone.
 | Private Paper operator dashboard | Execution / Infra | Existing KIS Paper read-only account contract and local emergency controls | Completed: Docker reattestation requires an explicit container exception, publishes only `127.0.0.1:8787`, renders unavailable facts explicitly, and UI pause/resume changes local state only. |
 | Read-only Paper account snapshot refresh | Execution / Infra | Existing named bridge and dashboard snapshot reader | Completed: one actual `kis-readonly` refresh was categorical `complete`; its external receipt is fact-minimized and the loopback dashboard immediately read it as available. |
 | Read-only Paper account observer | Execution / Infra | Existing one-shot bridge, 2026 session inspector, and task conventions | Completed: the caller-selected `20260807T141607347092Z-7c9fb50a-81bb-40a8-b72f-49b3e492d773-complete.json` sidecar reattached as `complete` at `2026-08-07T14:16:07Z` after its final bridge SHA-256 and marker/status/time binding passed. The credential-free loopback dashboard `/health` returned only `ok` and `broker_calls:false`. No account fact was inspected. This is marker-present provenance under the assumed-honest host, not cryptographic Scheduler-origin proof; Operational logging is disabled. The existing four-minute task remains sole read-only owner. |
-| QQQ observed/provisional route | Data / Execution | Existing downstream profile service | Skipped on the 06:20 collection failure; no Paper lifecycle, fill, PnL, alpha, or model result follows. |
+| QQQ observed/provisional route | Data / Execution | Existing downstream profile service | The task-owned route now carries a reattested v5 `observed_provisional` input grade through loop, session, and validation evidence. Its provider availability/finality, terminal-state support, and PnL remain explicitly unobserved/unqualified; no lifecycle can promote a model or claim alpha/PnL. |
 | SPY D1 stability observation | Data | Existing virtual-Paper task | The exact 2026-08-07 `d1-stability-20260807T141501Z-attempt-04-c5e2cd1a0693` receipt reattaches as `stable`: one unadjusted GET, zero retries/foreground wait, and provider finality `not_observed`. It is not provider-finality or consumer qualification. Next owned observation is 2026-08-10 23:15 KST. |
 | Quote-session lifecycle canary | Execution | Existing virtual-Paper task | The exact 2026-08-07 session is `canary_completed/intent_recorded`; its direct lifecycle is `not_submitted/unresolved`, with closed pre-submit disposition `reconciliation_unavailable`, attribution unavailable, and no submit, fill, PnL, or model result. A source-safe audit of the latest eight exact lifecycle receipts found five `cancelled/clean` submissions, two `outcome_unknown`, and this one non-submission, so it does not evidence a globally disabled route. Next owned opportunity is 2026-08-10 23:35 KST; any new outcome needs its own source-safe receipt and offline validation. |
 | GPU allocation | Research Steward / Engine Research | RTX 4090 | No frozen input-qualified predictive campaign is ready. The five legacy frozen custody records are terminally `non_promoting_abandoned` under the external reconciliation receipt; CPU preparation may continue and GPU stays unallocated. |
@@ -76,13 +76,12 @@ no current writer or terminal binding, so it does not change the current fact.
 
 ## Current Reversible Improvement
 
-The terminal reader can now default-deny a separately hash-bound,
-source-safe causal attestation without changing the installed task, KIS client,
-Docker profile, or Paper route. It verifies its binding against the exact
-terminal's capture, availability, and pair identities and retains the
-assumed-honest-host limitation. Missing or malformed evidence stays scoped to
-that input, so the improvement shortens a future qualification handoff without
-creating a report, scheduler, or approval gate.
+The existing QQQ runtime loop/session/validator now preserve one compact,
+recomputed `observed_provisional` interpretation rather than leaving its
+capability authorization nested and unaudited. The v5 validator rejects a
+missing or altered grade, while the task, KIS client, Docker profile, order
+semantics, and schedule remain unchanged. It shortens exact execution-evidence
+reattachment without creating a report, approval gate, or model promotion path.
 
 ## Current Recovery Action
 
