@@ -39,7 +39,7 @@ KIS client, or a replacement collector.
 | Data | The 2026-08-09 host-only Norgate tail probe is `unavailable/local_source_unavailable`; D: file freshness is not a vendor-access or rights proof. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until Norgate Data Updater shows an active US subscription and configured database location, then run one bounded probe. |
 | Engine Research | No frozen, input-qualified predictive campaign exists. Fixed QQQ local-paper EMA and Donchian baselines are negative and closed for selection. | If and only if a later qualified input arrives, freeze one existing 30/60/90-minute candidate matrix; do not train in the current objective. |
 | Research Steward | RTX 4090 is healthy but unallocated. | Allocate only a frozen, eligible campaign; never manufacture training to fill GPU time. |
-| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. | Keep scheduled execution evidence owned by its task and consume no intraday data result without a later qualified objective. |
+| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. A source-safe audit of the latest eight quote-session lifecycle receipts confirms five `cancelled/clean` submissions, two scoped `outcome_unknown` results, and the latest `not_submitted/unresolved` result. | Treat the latest non-submission as its exact run's reconciliation limitation, not a global route hold. Keep scheduled execution evidence owned by its task and consume no intraday data result without a later qualified objective. |
 | Shared worktree | Alternate IWM collector WIP is untracked/modified and rejected from this objective. | Do not touch, stage, invoke, or reconcile it without a separate assignment. |
 
 ## Ready / Owned / Due
@@ -48,7 +48,7 @@ KIS client, or a replacement collector.
 | --- | --- | --- |
 | QQQ/SPY intraday causal evidence | Data | Installed `thericher-kis-paper-intraday-head` task owns the next sequence. Its source-local availability receipt and any pair attempt must bind the same contract, receipt, precommit, and summary hashes. |
 | SPY D1 stability | Data | Existing observer owns the next 2026-08-10 23:15 KST observation. Its status is observational only, never provider finality. |
-| Virtual-Paper lifecycle canary | Execution | Existing task owns the next 2026-08-10 23:35 KST opportunity. The latest exact canary is `intent_recorded/not_submitted/unresolved`; it is not a submit, fill, PnL, or model result. |
+| Virtual-Paper lifecycle canary | Execution | Existing task owns the next 2026-08-10 23:35 KST opportunity. The latest exact canary is `intent_recorded/not_submitted/unresolved`; five of its eight most-recent source-safe peers completed `submitted -> cancelled/clean`, so that anomaly is not a global route hold. It is not a submit, fill, PnL, or model result. |
 | Read-only Paper account observer | Execution | Existing four-minute task is the sole owner. Its validated provenance is marker-present under an assumed-honest host, not cryptographic Scheduler-origin proof. |
 | Public-source research | Engine Research | Qlib and PatchTST are source-only architecture references, with no code, package, data, weight, campaign, GPU, or Paper consequence. |
 

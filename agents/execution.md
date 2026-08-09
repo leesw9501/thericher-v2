@@ -18,14 +18,14 @@ read or route `KIS_LIVE_*`.
 | --- | --- | --- |
 | Private operator dashboard | Loopback-only dashboard and local pause/resume controls are complete. | It has no public bind and no broker-order control. |
 | Read-only Paper account observer | Exact sidecar receipt reattached as `complete`; dashboard health reports no broker calls. | Marker-present provenance assumes an honest host; it is not cryptographic Scheduler-origin proof. |
-| Virtual-Paper lifecycle canary | Latest exact canary is `canary_completed/intent_recorded` with direct lifecycle `not_submitted/unresolved`. | It is not a submit, fill, PnL, profitability, or model result. |
+| Virtual-Paper lifecycle canary | The latest exact canary is `canary_completed/intent_recorded` with direct lifecycle `not_submitted/unresolved`. A bounded, source-safe audit of the latest eight exact receipts found five acknowledged submissions that later cancelled cleanly, two scoped `outcome_unknown` results, and this one `not_submitted` result. | The latest anomaly is exact-run scoped, not evidence that the schedule or Paper route is globally disabled. The fact-minimized receipt does not expose a pre-submit cause; it is not a submit, fill, PnL, profitability, or model result. |
 | Intraday QQQ/SPY data chain | Latest chain is Data `input_unavailable`. | Execution must not consume it without a later qualified objective and replay parity. |
 
 ## Ready / Owned / Due
 
 | Work | Owner | Next action |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Existing `thericher-kis-paper-quote-session` task | Next owned opportunity: 2026-08-10 23:35 KST. Do not manually invoke or duplicate it. |
+| Virtual-Paper lifecycle canary | Existing `thericher-kis-paper-quote-session` task | Next owned opportunity: 2026-08-10 23:35 KST. Do not manually invoke or duplicate it; validate its own source-safe receipt independently. |
 | Read-only account snapshot | Existing observer task | The existing four-minute task remains the sole recurring owner. |
 | QQQ/SPY intraday causal evidence | Data-owned `thericher-kis-paper-intraday-head` task | Execution consumes nothing during the current objective. |
 | Any unknown exact Paper outcome | Execution reconciliation path | Reconcile the exact durable intent; never infer success or create a fresh action from ambiguity. |
