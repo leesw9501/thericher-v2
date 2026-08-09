@@ -32,6 +32,17 @@ _SUBMIT_RESPONSE_CATEGORIES = frozenset(
         "transport_unavailable",
     }
 )
+_PRE_SUBMIT_DISPOSITIONS = frozenset(
+    {
+        "preview",
+        "intent_expired",
+        "emergency_stop",
+        "execution_paused",
+        "reconciliation_unavailable",
+        "session_closed",
+        "other_not_submitted",
+    }
+)
 _SESSION_EVIDENCE_KIND = "kis_paper_canary_session_evidence"
 _SESSION_STATUSES = frozenset(
     {
@@ -117,6 +128,7 @@ class PaperCanaryLifecycleFact:
     attribution_eligibility: str
     sizing_status: Literal["fixed_canary", "not_submitted"]
     evidence_sha256: str
+    pre_submit_disposition: str | None = None
     attribution_ref: str | None = None
     schema_version: int = SCHEMA_VERSION
 
@@ -140,10 +152,15 @@ class PaperCanaryLifecycleFact:
             raise PaperCanaryLifecycleError("attribution_eligibility_invalid")
         if self.sizing_status not in {"fixed_canary", "not_submitted"}:
             raise PaperCanaryLifecycleError("sizing_status_invalid")
+        if self.lifecycle_state == "not_submitted":
+            if self.pre_submit_disposition not in _PRE_SUBMIT_DISPOSITIONS:
+                raise PaperCanaryLifecycleError("pre_submit_disposition_invalid")
+        elif self.pre_submit_disposition is not None:
+            raise PaperCanaryLifecycleError("pre_submit_disposition_unexpected")
         _sha256_ref(self.evidence_sha256, "evidence_sha256")
 
     def safe_payload(self) -> dict[str, object]:
-        return {
+        payload: dict[str, object] = {
             "schema_version": self.schema_version,
             "kind": "kis_paper_canary_lifecycle_fact",
             "route": "kis_paper",
@@ -162,6 +179,9 @@ class PaperCanaryLifecycleFact:
             "sizing_status": self.sizing_status,
             "evidence_sha256": self.evidence_sha256,
         }
+        if self.pre_submit_disposition is not None:
+            payload["pre_submit_disposition"] = self.pre_submit_disposition
+        return payload
 
 
 @dataclass(frozen=True)
@@ -367,6 +387,10 @@ def paper_canary_lifecycle_fact_from_evidence(
         ),
         sizing_status=("not_submitted" if lifecycle_state == "not_submitted" else "fixed_canary"),
         evidence_sha256=evidence_sha256,
+        pre_submit_disposition=_pre_submit_disposition(
+            lifecycle_state=lifecycle_state,
+            reason_code=payload.get("reason_code"),
+        ),
         attribution_ref=(
             None
             if payload.get("attribution_ref") is None
@@ -569,6 +593,26 @@ def _submit_response_category(value: object, reason_code: object) -> str:
     if reason_code == "submit_transport_unknown":
         return "transport_unavailable"
     return "not_observed"
+
+
+def _pre_submit_disposition(*, lifecycle_state: str, reason_code: object) -> str | None:
+    """Expose one closed local disposition without disclosing the raw reason."""
+
+    if lifecycle_state != "not_submitted":
+        return None
+    if reason_code == "preview":
+        return "preview"
+    if reason_code == "intent_expired":
+        return "intent_expired"
+    if reason_code == "emergency_stop_new_orders":
+        return "emergency_stop"
+    if reason_code in {"pause_buys_active", "pause_sells_active"}:
+        return "execution_paused"
+    if reason_code == "reconciliation_unavailable":
+        return "reconciliation_unavailable"
+    if reason_code == "session_closed":
+        return "session_closed"
+    return "other_not_submitted"
 
 
 def _attribution_eligibility(

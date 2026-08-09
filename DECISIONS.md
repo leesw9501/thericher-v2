@@ -9285,3 +9285,21 @@ validation IDs recover. Claude timed out as `review_unavailable`; independent
 Review identified the final conflicting-validation case, which the focused test
 now covers. This changes no KIS call, scheduler, broker route, order behavior,
 credential path, live behavior, fill, PnL, or model claim.
+
+## 2026-08-09 - Project a closed pre-submit disposition from Paper lifecycle evidence
+
+Decision: the offline Paper lifecycle reader emits `pre_submit_disposition`
+only for `not_submitted` facts. It maps known local causes into a closed,
+low-cardinality vocabulary and maps every unknown value to
+`other_not_submitted`; all other lifecycle states omit the key entirely.
+
+Reason: the prior source-safe lifecycle surface proved a non-submission but
+could not distinguish an unavailable reconciliation from an expired or paused
+intent. The new projection resolves that narrow operational ambiguity without
+retaining a raw reason, broker body, account fact, price, credential, or order
+identifier, and it changes no KIS call, scheduler, order action, reconciliation
+behavior, sizing, or live route. Claude's falsification-first verdict was
+`supported-with-limits`: default-deny mapping and absent-key behavior for
+non-submissions are covered by focused offline tests; aggregate correlation
+with existing opaque timestamps remains an acknowledged private evidence-surface
+limit.

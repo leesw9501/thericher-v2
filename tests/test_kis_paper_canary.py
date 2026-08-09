@@ -45,7 +45,10 @@ from thericher_v2.execution.kis_readonly import (
     KisPaperRequestPacer,
 )
 from thericher_v2.execution.paper_account_snapshot import read_paper_account_snapshot
-from thericher_v2.execution.paper_canary_lifecycle import read_paper_canary_lifecycle_fact
+from thericher_v2.execution.paper_canary_lifecycle import (
+    paper_canary_lifecycle_fact_from_evidence,
+    read_paper_canary_lifecycle_fact,
+)
 from thericher_v2.execution.paper_canary_runtime import (
     PAPER_CANARY_RUNTIME_TTL,
     PaperCanaryRuntimeSnapshot,
@@ -1595,6 +1598,8 @@ def test_canary_evidence_projects_a_sanitized_open_lifecycle_fact(tmp_path: Path
     assert fact.lifecycle_state == "acknowledged"
     assert fact.attribution_eligibility == "open"
     assert fact.sizing_status == "fixed_canary"
+    assert fact.pre_submit_disposition is None
+    assert "pre_submit_disposition" not in fact.safe_payload()
     safe_output = str(fact.safe_payload())
     for forbidden in ("QQQ", "500.25", "ORD-123456789", "12345678", "paper-app-secret"):
         assert forbidden not in safe_output
@@ -1620,6 +1625,47 @@ def test_canary_evidence_projects_unknown_as_pending_reconciliation(tmp_path: Pa
     assert fact.attribution_eligibility == "pending_reconciliation"
     assert "filled" not in str(fact.safe_payload())
     assert "realized" not in str(fact.safe_payload())
+
+
+@pytest.mark.parametrize(
+    ("reason_code", "expected_disposition"),
+    [
+        ("preview", "preview"),
+        ("intent_expired", "intent_expired"),
+        ("emergency_stop_new_orders", "emergency_stop"),
+        ("pause_buys_active", "execution_paused"),
+        ("reconciliation_unavailable", "reconciliation_unavailable"),
+        ("session_closed", "session_closed"),
+        ("auth_rejected", "other_not_submitted"),
+    ],
+)
+def test_lifecycle_fact_uses_closed_pre_submit_dispositions(
+    tmp_path: Path,
+    reason_code: str,
+    expected_disposition: str,
+) -> None:
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="lifecycle-pre-submit-1",
+        environment=_paper_environment(),
+        state_path=tmp_path / "private" / "lifecycle-pre-submit-1.json",
+        execute=False,
+        cancel_after_submit=False,
+        now=NOW,
+        **_paths(tmp_path),
+    )
+    payload = json.loads(outcome.evidence_path.read_text(encoding="utf-8"))
+    payload["reason_code"] = reason_code
+
+    fact = paper_canary_lifecycle_fact_from_evidence(
+        payload,
+        evidence_sha256="sha256:" + ("f" * 64),
+    )
+
+    assert fact.lifecycle_state == "not_submitted"
+    assert fact.pre_submit_disposition == expected_disposition
+    assert fact.safe_payload()["pre_submit_disposition"] == expected_disposition
+    assert reason_code not in str(fact.safe_payload()) or reason_code == expected_disposition
 
 
 def test_canary_evidence_preserves_an_exact_receipt_attribution_reference(tmp_path: Path) -> None:
@@ -1929,6 +1975,10 @@ def test_reconciliation_preserves_only_safe_auth_failure_detail(tmp_path: Path) 
     assert outcome.reconciliation.reason_code == "auth_rejected"
     assert outcome.safe_payload()["reconciliation_reason_code"] == "auth_rejected"
     assert _submission_count(transport) == 0
+
+    fact = read_paper_canary_lifecycle_fact(outcome.evidence_path)
+    assert fact.pre_submit_disposition == "reconciliation_unavailable"
+    assert "auth_rejected" not in str(fact.safe_payload())
 
     runtime = read_paper_canary_runtime(paths["runtime_projection_path"], now=NOW)
     assert runtime.status == "available"
