@@ -28,7 +28,7 @@ read or route `KIS_LIVE_*`.
 
 | Work | Owner | Next action |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Existing `thericher-kis-paper-quote-session` task and 23:45 KST result monitor | Static reattestation found no newer direct or session receipt after the 2026-08-07 task result. Next owned opportunity: 2026-08-10 23:35 KST. The monitor reattaches only its source-safe result and cannot replace the active intraday objective. Do not manually invoke or duplicate either worker. |
+| Virtual-Paper lifecycle canary | Existing `thericher-kis-paper-quote-session` task, 23:45 KST result monitor, and one-shot Tuesday 06:35 KST thread fallback | Static reattestation found no newer direct or session receipt after the 2026-08-07 task result. Next owned opportunity: 2026-08-10 23:35 KST. The fallback first branches on the actual current goal, so it reattaches a still-active canary lifecycle before its original intraday follow-up. Do not manually invoke or duplicate any worker. |
 | Lifecycle closure objective | Execution | Reattach the next eligible existing canary receipt as source-safe operational evidence. Any scoped unknown uses its exact durable recovery path; it never authorizes a repeat submission. |
 | Read-only account snapshot | Existing observer task | The existing four-minute task remains the sole recurring owner. |
 | QQQ/SPY intraday causal evidence | Data-owned `thericher-kis-paper-intraday-head` task | Execution consumes no causal-qualified model input during the current objective; the existing QQQ provisional route remains a separate, task-owned observation. |

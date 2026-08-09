@@ -42,7 +42,7 @@ order: owned task -> exact session receipt -> exact direct receipt when named
 
 | Recovery package | Owner / resource | Completion evidence | Strongest kill test / recovery |
 | --- | --- | --- | --- |
-| Reattach the next quote-session result | Execution / existing task and 23:45 KST monitor | One fresh task-time-bound session receipt plus, when required, its exact direct lifecycle receipt with recomputed reader hashes and `paper_only`. | No unique fresh receipt: preserve task `next_due`; never infer an outcome or resubmit. |
+| Reattach the next quote-session result | Execution / existing task, 23:45 KST monitor, and Tuesday 06:35 KST one-shot thread fallback | One fresh task-time-bound session receipt plus, when required, its exact direct lifecycle receipt with recomputed reader hashes and `paper_only`. | No unique fresh receipt: preserve task `next_due`; never infer an outcome or resubmit. |
 | Reattach D1 stability observation | Data / existing 23:15 KST observer | Its existing categorical source-safe receipt. | Missing or unavailable record remains local to D1 finality; leave predictive inputs unchanged. |
 | Reattach intraday terminal chain | Data / existing 2026-08-11 06:20 KST terminal | Exact terminal, capture, availability, and optional pair bindings through the existing reader. | Any missing binding yields scoped `input_unavailable`; do not duplicate collection. |
 
