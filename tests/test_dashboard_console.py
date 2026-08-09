@@ -819,6 +819,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert 'profiles: ["kis-paper-canary"]' in canary_section
     assert "--execute" in canary_section
     assert "--cancel-after-submit" in canary_section
+    assert "THERICHER_MODE: kis_paper" in canary_section
     assert "KIS_PAPER_APP_KEY" in canary_section
     assert "KIS_LIVE" not in canary_section
     assert "thericher-v2-paper-canary-private:/app/private" in canary_section
@@ -831,6 +832,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "--execute" in session_section
     assert session_section.count("--execute") == 1
     assert "--cancel-after-submit" in session_section
+    assert "THERICHER_MODE: kis_paper" in session_section
     assert "KIS_PAPER_APP_KEY" in session_section
     assert "KIS_LIVE" not in session_section
     assert "thericher-v2-paper-canary-private:/app/private" in session_section
