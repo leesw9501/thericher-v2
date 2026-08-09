@@ -7,8 +7,10 @@ import contextlib
 import io
 import json
 import sys
+from collections.abc import Callable
 from datetime import UTC, date, datetime
 from pathlib import Path
+from typing import Any
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = REPOSITORY_ROOT / "src"
@@ -30,6 +32,10 @@ from thericher_v2.data.norgate_trial_tail_readiness import (  # noqa: E402
 )
 
 _RECOVERY_EXIT_CODE = 20
+_NORGATE_LOCAL_STATUS_HOST = "127.0.0.1"
+_NORGATE_LOCAL_STATUS_PORT = 38889
+_NORGATE_LOCAL_STATUS_PATH = "/api/v1/status"
+_NORGATE_LOCAL_STATUS_TIMEOUT_SECONDS = 1.0
 
 
 def _parse_date(value: str) -> date:
@@ -67,17 +73,13 @@ def main() -> int:
             repo_root=REPOSITORY_ROOT,
         )
     except NorgateLocalSourcePreflightError as exc:
-        recovery = (
-            "restore_local_norgate_api_readiness"
-            if exc.reason == "local_api_not_ready"
-            else "configure_local_norgate_us_database"
-        )
+        reason, recovery = _source_preflight_result(exc.reason)
         print(
             json.dumps(
                 {
                     "kind": "norgate_trial_tail_readiness",
                     "status": "unavailable",
-                    "reason": exc.reason,
+                    "reason": reason,
                     "recovery": recovery,
                 },
                 sort_keys=True,
@@ -114,6 +116,51 @@ def _collect_local_source(arguments: argparse.Namespace) -> tuple[object, Path, 
         )
         database_build_metadata_sha256 = fingerprint_norgate_us_database_build(active_root)
     return observation, active_root, database_build_metadata_sha256
+
+
+def _source_preflight_result(reason: str) -> tuple[str, str]:
+    if reason != "local_api_not_ready":
+        return reason, "configure_local_norgate_us_database"
+    try:
+        status_code = _norgate_local_status_http_code()
+    except Exception:
+        status_code = None
+    if status_code == 402:
+        return (
+            "subscription_or_update_unavailable",
+            "open_norgate_data_updater_and_check_for_updates",
+        )
+    return "local_api_not_ready", "restore_local_norgate_api_readiness"
+
+
+def _norgate_local_status_http_code(
+    *,
+    connection_factory: Callable[..., Any] | None = None,
+) -> int | None:
+    """Inspect only the local status code; never consume or expose response data."""
+
+    try:
+        from http.client import HTTPConnection
+
+        make_connection = HTTPConnection if connection_factory is None else connection_factory
+        connection = make_connection(
+            _NORGATE_LOCAL_STATUS_HOST,
+            _NORGATE_LOCAL_STATUS_PORT,
+            timeout=_NORGATE_LOCAL_STATUS_TIMEOUT_SECONDS,
+        )
+    except Exception:
+        return None
+    try:
+        connection.request("GET", _NORGATE_LOCAL_STATUS_PATH)
+        status_code = connection.getresponse().status
+        return status_code if isinstance(status_code, int) else None
+    except Exception:
+        return None
+    finally:
+        try:
+            connection.close()
+        except Exception:
+            pass
 
 
 if __name__ == "__main__":

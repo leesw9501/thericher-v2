@@ -106,8 +106,8 @@ def test_runner_sanitizes_local_source_failures_without_calling_later_steps(
 @pytest.mark.parametrize(
     ("reason", "recovery"),
     [
-        ("local_api_not_ready", "restore_local_norgate_api_readiness"),
         ("no_configured_databases", "configure_local_norgate_us_database"),
+        ("us_equities_database_not_configured", "configure_local_norgate_us_database"),
     ],
 )
 def test_runner_reports_source_preflight_without_source_details(
@@ -128,6 +128,146 @@ def test_runner_reports_source_preflight_without_source_details(
         "recovery": recovery,
         "status": "unavailable",
     }
+
+
+def test_runner_maps_local_status_http_402_to_subscription_or_update_unavailable(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    runner = _load_runner()
+
+    def fail_observation(**_kwargs: object) -> object:
+        raise runner.NorgateLocalSourcePreflightError("local_api_not_ready")
+
+    monkeypatch.setattr(runner, "collect_norgate_tail_reference_observation", fail_observation)
+    monkeypatch.setattr(runner, "_norgate_local_status_http_code", lambda: 402)
+    monkeypatch.setattr(sys, "argv", [str(_SCRIPT), "--run-label", "unit-r1"])
+
+    assert runner.main() == runner._RECOVERY_EXIT_CODE
+    assert json.loads(capsys.readouterr().out) == {
+        "kind": "norgate_trial_tail_readiness",
+        "reason": "subscription_or_update_unavailable",
+        "recovery": "open_norgate_data_updater_and_check_for_updates",
+        "status": "unavailable",
+    }
+
+
+@pytest.mark.parametrize("status_probe", [500, None], ids=["unknown", "absent"])
+def test_runner_preserves_local_api_not_ready_without_a_402(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    status_probe: int | None,
+) -> None:
+    runner = _load_runner()
+
+    def fail_observation(**_kwargs: object) -> object:
+        raise runner.NorgateLocalSourcePreflightError("local_api_not_ready")
+
+    monkeypatch.setattr(runner, "collect_norgate_tail_reference_observation", fail_observation)
+    monkeypatch.setattr(runner, "_norgate_local_status_http_code", lambda: status_probe)
+    monkeypatch.setattr(sys, "argv", [str(_SCRIPT), "--run-label", "unit-r1"])
+
+    assert runner.main() == runner._RECOVERY_EXIT_CODE
+    assert json.loads(capsys.readouterr().out) == {
+        "kind": "norgate_trial_tail_readiness",
+        "reason": "local_api_not_ready",
+        "recovery": "restore_local_norgate_api_readiness",
+        "status": "unavailable",
+    }
+
+
+def test_runner_preserves_local_api_not_ready_when_status_probe_errors(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    runner = _load_runner()
+
+    def fail_observation(**_kwargs: object) -> object:
+        raise runner.NorgateLocalSourcePreflightError("local_api_not_ready")
+
+    def fail_status_probe() -> bool:
+        raise RuntimeError("status detail must not be printed")
+
+    monkeypatch.setattr(runner, "collect_norgate_tail_reference_observation", fail_observation)
+    monkeypatch.setattr(runner, "_norgate_local_status_http_code", fail_status_probe)
+    monkeypatch.setattr(sys, "argv", [str(_SCRIPT), "--run-label", "unit-r1"])
+
+    assert runner.main() == runner._RECOVERY_EXIT_CODE
+    assert json.loads(capsys.readouterr().out) == {
+        "kind": "norgate_trial_tail_readiness",
+        "reason": "local_api_not_ready",
+        "recovery": "restore_local_norgate_api_readiness",
+        "status": "unavailable",
+    }
+
+
+def test_status_probe_classifies_loopback_http_402_without_consuming_response_data() -> None:
+    runner = _load_runner()
+
+    class _Response:
+        status = 402
+
+        def read(self) -> bytes:
+            pytest.fail("status probe must not consume response data")
+
+    class _Connection:
+        closed = False
+        request_args: tuple[str, str] | None = None
+
+        def request(self, method: str, path: str) -> None:
+            self.request_args = (method, path)
+
+        def getresponse(self) -> _Response:
+            return _Response()
+
+        def close(self) -> None:
+            self.closed = True
+
+    connection = _Connection()
+
+    def make_connection(host: str, port: int, *, timeout: float) -> _Connection:
+        assert host == "127.0.0.1"
+        assert port == 38889
+        assert timeout == 1.0
+        return connection
+
+    assert runner._norgate_local_status_http_code(connection_factory=make_connection) == 402
+    assert connection.request_args == ("GET", "/api/v1/status")
+    assert connection.closed is True
+
+
+def test_status_probe_reads_only_the_http_code_and_closes_its_connection() -> None:
+    runner = _load_runner()
+
+    class _Response:
+        status = 500
+
+        def getcode(self) -> int:
+            pytest.fail("status probe must use the status code property")
+
+        def read(self) -> bytes:
+            pytest.fail("status probe must not consume response data")
+
+    class _Connection:
+        closed = False
+
+        def request(self, _method: str, _path: str) -> None:
+            pass
+
+        def getresponse(self) -> _Response:
+            return response
+
+        def close(self) -> None:
+            self.closed = True
+
+    response = _Response()
+    connection = _Connection()
+
+    assert (
+        runner._norgate_local_status_http_code(
+            connection_factory=lambda *_args, **_kwargs: connection
+        )
+        == 500
+    )
+    assert connection.closed is True
 
 
 class _Result:
