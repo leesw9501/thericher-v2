@@ -25,7 +25,7 @@ read or route `KIS_LIVE_*`.
 
 | Work | Owner | Next action |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Existing `thericher-kis-paper-quote-session` task | Next owned opportunity: 2026-08-10 23:35 KST. Do not manually invoke or duplicate it; validate its own source-safe receipt independently. |
+| Virtual-Paper lifecycle canary | Existing `thericher-kis-paper-quote-session` task and 23:45 KST result monitor | Next owned opportunity: 2026-08-10 23:35 KST. The monitor reattaches only its source-safe result and cannot replace the active intraday objective. Do not manually invoke or duplicate either worker. |
 | Read-only account snapshot | Existing observer task | The existing four-minute task remains the sole recurring owner. |
 | QQQ/SPY intraday causal evidence | Data-owned `thericher-kis-paper-intraday-head` task | Execution consumes no causal-qualified model input during the current objective; the existing QQQ provisional route remains a separate, task-owned observation. |
 | QQQ provisional runtime observation | Embedded existing intraday-head child | The v5 validation contract recomputes the fixed non-promoting grade. Do not manually invoke, duplicate, or interpret it as model/PnL evidence. |
