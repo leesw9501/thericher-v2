@@ -21,7 +21,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
 | Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. |
 | Tiingo IEX M5 r1 ETF trio | Pinned 2026-07-19 IEX-only snapshot reattested offline by raw hashes, stored gzip hash, and exact canonical payload. | One completed source-isolated reconstruction runtime integration only; no source scope, training eligibility, KIS equivalence, model-selection, or Paper-input change. |
-| Norgate trial tail | The host-only `norgatedata` 1.0.77 loopback API is reachable, but its configured-database catalog is empty (`no_configured_databases`). Recently written D: database files therefore do not attest active NDU registration, vendor access, or rights. | In Norgate Data Updater, verify an active US subscription and set the Database Location to the intended database folder; once its catalog exposes `US Equities`, run one new bounded tail probe. |
+| Norgate trial tail | The host-only `norgatedata` 1.0.77 loopback endpoint responds, but its own readiness status is false (`local_api_not_ready`). The reader stops before catalog, update-metadata, or price reads; recently written D: database files therefore do not attest active NDU registration, vendor access, or rights. | Restore NDU to an active ready state, then verify its active US subscription and Database Location. Once its status is ready and catalog exposes `US Equities`, run one new bounded tail probe. |
 
 Raw market bytes remain under `D:\market_data`. Source-safe receipts and
 research artifacts remain under `D:\thericher-v2\model-artifacts`.
@@ -59,7 +59,7 @@ This contract has no collector, credential, network, or schedule behavior.
 | Offline classification | Data after task terminal | `qualified` only with completed-session geometry, chronological split, decision-time availability, and provider finality. Otherwise record the narrow unavailable reason. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Next 2026-08-10 23:15 KST observation; `stable` is not provider finality. |
-| Norgate tail readiness | Norgate local source | Local configuration is `no_configured_databases`; the source-safe runner now stops before metadata or price reads. After NDU exposes `US Equities`, run one new bounded probe; do not foreground-retry. |
+| Norgate tail readiness | Norgate local source | Local source is `local_api_not_ready`; the source-safe runner now stops before catalog, metadata, or price reads. After NDU is ready and exposes `US Equities`, run one new bounded probe; do not foreground-retry. |
 
 ## Quality Contracts
 

@@ -103,13 +103,20 @@ def test_runner_sanitizes_local_source_failures_without_calling_later_steps(
     }
 
 
-def test_runner_reports_empty_catalog_without_source_details(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+@pytest.mark.parametrize(
+    ("reason", "recovery"),
+    [
+        ("local_api_not_ready", "restore_local_norgate_api_readiness"),
+        ("no_configured_databases", "configure_local_norgate_us_database"),
+    ],
+)
+def test_runner_reports_source_preflight_without_source_details(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], reason: str, recovery: str
 ) -> None:
     runner = _load_runner()
 
     def fail_observation(**_kwargs: object) -> object:
-        raise runner.NorgateLocalDatabaseConfigurationError("no_configured_databases")
+        raise runner.NorgateLocalSourcePreflightError(reason)
 
     monkeypatch.setattr(runner, "collect_norgate_tail_reference_observation", fail_observation)
     monkeypatch.setattr(sys, "argv", [str(_SCRIPT), "--run-label", "unit-r1"])
@@ -117,8 +124,8 @@ def test_runner_reports_empty_catalog_without_source_details(
     assert runner.main() == runner._RECOVERY_EXIT_CODE
     assert json.loads(capsys.readouterr().out) == {
         "kind": "norgate_trial_tail_readiness",
-        "reason": "no_configured_databases",
-        "recovery": "configure_local_norgate_us_database",
+        "reason": reason,
+        "recovery": recovery,
         "status": "unavailable",
     }
 

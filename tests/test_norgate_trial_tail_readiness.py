@@ -12,7 +12,7 @@ import pytest
 
 from thericher_v2.data.norgate_trial_tail_readiness import (
     NORGATE_TAIL_MINIMUM_COMMON_SESSIONS,
-    NorgateLocalDatabaseConfigurationError,
+    NorgateLocalSourcePreflightError,
     NorgateTailReferenceObservation,
     NorgateTrialTailReadinessError,
     build_norgate_trial_tail_readiness_receipt,
@@ -45,13 +45,20 @@ class _Client:
         sessions_by_symbol: dict[str, list[date]],
         *,
         databases: tuple[str, ...] = ("US Equities",),
+        status_ready: bool = True,
     ) -> None:
         self._sessions_by_symbol = sessions_by_symbol
         self._databases = databases
+        self._status_ready = status_ready
+        self.catalog_calls = 0
         self.metadata_calls = 0
         self.price_calls = 0
 
+    def status(self) -> bool:
+        return self._status_ready
+
     def databases(self) -> list[str]:
+        self.catalog_calls += 1
         return list(self._databases)
 
     def last_database_update_time(self, _database: str) -> datetime:
@@ -110,27 +117,33 @@ def test_short_tail_receipt_is_source_safe_and_replayable(
 
 
 @pytest.mark.parametrize(
-    ("databases", "reason"),
+    ("status_ready", "databases", "reason", "expected_catalog_calls"),
     [
-        ((), "no_configured_databases"),
-        (("AU Equities",), "us_equities_database_not_configured"),
+        (False, ("US Equities",), "local_api_not_ready", 0),
+        (True, (), "no_configured_databases", 1),
+        (True, ("AU Equities",), "us_equities_database_not_configured", 1),
     ],
 )
 def test_unusable_local_catalog_fails_before_metadata_or_price_reads(
-    databases: tuple[str, ...], reason: str
+    status_ready: bool,
+    databases: tuple[str, ...],
+    reason: str,
+    expected_catalog_calls: int,
 ) -> None:
     client = _Client(
         {symbol: [] for symbol in ("SPY", "QQQ", "IWM")},
         databases=databases,
+        status_ready=status_ready,
     )
 
-    with pytest.raises(NorgateLocalDatabaseConfigurationError) as raised:
+    with pytest.raises(NorgateLocalSourcePreflightError) as raised:
         collect_norgate_tail_reference_observation(
             requested_end=date(2026, 8, 1),
             client_loader=lambda: client,
         )
 
     assert raised.value.reason == reason
+    assert client.catalog_calls == expected_catalog_calls
     assert client.metadata_calls == 0
     assert client.price_calls == 0
 

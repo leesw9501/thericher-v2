@@ -55,19 +55,20 @@ class NorgateTrialTailReadinessError(ValueError):
     """Raised when the bounded source-safe readiness contract is invalid."""
 
 
-class NorgateLocalDatabaseConfigurationError(NorgateTrialTailReadinessError):
-    """Raised when the local Norgate API has no usable US database catalog entry."""
+class NorgateLocalSourcePreflightError(NorgateTrialTailReadinessError):
+    """Raised when the local Norgate API cannot safely begin a tail read."""
 
     _VALID_REASONS = {
+        "local_api_not_ready",
         "no_configured_databases",
         "us_equities_database_not_configured",
     }
 
     def __init__(self, reason: str) -> None:
         if reason not in self._VALID_REASONS:
-            raise ValueError("Norgate database configuration reason is invalid")
+            raise ValueError("Norgate local source preflight reason is invalid")
         self.reason = reason
-        super().__init__("Norgate local US database configuration is unavailable")
+        super().__init__("Norgate local source preflight is unavailable")
 
 
 @dataclass(frozen=True, slots=True)
@@ -169,7 +170,7 @@ def collect_norgate_tail_reference_observation(
     if requested_end < requested_start:
         raise NorgateTrialTailReadinessError("Norgate tail window is invalid")
     client = _load_client(client_loader)
-    _assert_norgate_us_database_is_configured(client)
+    _assert_norgate_local_source_is_ready(client)
     try:
         source_update = client.last_database_update_time(NORGATE_US_DATABASE_NAME)
     except Exception as exc:
@@ -334,13 +335,21 @@ def _load_client(client_loader: ClientLoader | None) -> Any:
         _ = client.databases
         _ = client.last_database_update_time
         _ = client.price_timeseries
+        _ = client.status
     except Exception as exc:
         raise NorgateTrialTailReadinessError("Norgate local client is unavailable") from exc
     return client
 
 
-def _assert_norgate_us_database_is_configured(client: Any) -> None:
-    """Reject an empty or mismatched local catalog before reading date metadata."""
+def _assert_norgate_local_source_is_ready(client: Any) -> None:
+    """Reject a non-ready local API or unusable catalog before source reads."""
+
+    try:
+        status = client.status()
+    except Exception as exc:
+        raise NorgateTrialTailReadinessError("Norgate local API status is unavailable") from exc
+    if status is not True:
+        raise NorgateLocalSourcePreflightError("local_api_not_ready")
 
     try:
         configured = tuple(client.databases())
@@ -349,9 +358,9 @@ def _assert_norgate_us_database_is_configured(client: Any) -> None:
     if not all(isinstance(name, str) and name for name in configured):
         raise NorgateTrialTailReadinessError("Norgate database catalog is invalid")
     if not configured:
-        raise NorgateLocalDatabaseConfigurationError("no_configured_databases")
+        raise NorgateLocalSourcePreflightError("no_configured_databases")
     if NORGATE_US_DATABASE_NAME not in configured:
-        raise NorgateLocalDatabaseConfigurationError("us_equities_database_not_configured")
+        raise NorgateLocalSourcePreflightError("us_equities_database_not_configured")
 
 
 def _session_dates(

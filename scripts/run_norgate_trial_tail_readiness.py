@@ -21,7 +21,7 @@ from thericher_v2.data.norgate_trial_daily_capability_probe import (  # noqa: E4
 from thericher_v2.data.norgate_trial_tail_readiness import (  # noqa: E402
     DEFAULT_NORGATE_ACTIVE_DATABASE_ROOT_CANDIDATES,
     DEFAULT_NORGATE_TRIAL_TAIL_READINESS_ROOT,
-    NorgateLocalDatabaseConfigurationError,
+    NorgateLocalSourcePreflightError,
     NorgateTrialTailReadinessError,
     build_norgate_trial_tail_readiness_receipt,
     collect_norgate_tail_reference_observation,
@@ -66,14 +66,19 @@ def main() -> int:
             artifact_root=arguments.artifact_root,
             repo_root=REPOSITORY_ROOT,
         )
-    except NorgateLocalDatabaseConfigurationError as exc:
+    except NorgateLocalSourcePreflightError as exc:
+        recovery = (
+            "restore_local_norgate_api_readiness"
+            if exc.reason == "local_api_not_ready"
+            else "configure_local_norgate_us_database"
+        )
         print(
             json.dumps(
                 {
                     "kind": "norgate_trial_tail_readiness",
                     "status": "unavailable",
                     "reason": exc.reason,
-                    "recovery": "configure_local_norgate_us_database",
+                    "recovery": recovery,
                 },
                 sort_keys=True,
             )
