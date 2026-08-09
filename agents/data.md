@@ -65,6 +65,11 @@ client, or a parallel collector.
 
 - Intraday source-safe projection:
   `scripts\project_kis_paper_intraday_head_schedule_receipt.py`.
+- Official KIS overseas-minute documentation confirms the reviewed request and
+  cursor semantics but supplies no reviewed finality/as-of predicate. It keeps
+  `provider_finality` and decision-time availability `not_observed`; it makes
+  no KIS call or consumer change. Evidence:
+  `D:\thericher-v2\model-artifacts\data\provider-documentation-retrieval\kis-overseas-minute-finality-surface-20260809-r1\source-retrieval.json`.
 - QQQ multi-timeframe completed-bar mechanics:
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
 - QQQ MTF canonical window matrix:
