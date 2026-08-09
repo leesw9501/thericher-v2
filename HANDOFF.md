@@ -331,10 +331,10 @@ scheduled-session receipt `paper-session-20260805T143501171367Z` is
 projector both classify that lifecycle as `cancelled` with `clean`
 reconciliation and `not_eligible` attribution. This is a categorical
 cancelled-and-clean virtual-Paper result, not a broker fill, PnL, or model
-result. Its latest 2026-08-06 23:35 KST Scheduler result is `0`; reattaching
-that source-safe session outcome remains outside this engine package. The
-existing task owns the next opportunity at 2026-08-07 23:35 KST; do not
-manually invoke or duplicate it.
+result. Its latest 2026-08-07 23:35 KST Scheduler result is `0`; reattaching
+  that source-safe session outcome remains outside this engine package. The
+  existing task owns the next opportunity at 2026-08-10 23:35 KST; do not
+  manually invoke or duplicate it.
 
 The existing `thericher-kis-paper-quote-session` Windows task completed its
 2026-08-04 23:35 KST invocation with Task Scheduler result `0`. Its exact
@@ -763,14 +763,14 @@ unproven; this is a reversible current-season repair, not an input promotion.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-06 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-07 23:35 KST |
-| SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-06 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-07 23:15 KST |
+| Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-07 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-10 23:35 KST |
+| SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-07 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-10 23:15 KST |
 | Current-head receipt binding | Data / Execution | The exact 06:20 KST pointer/terminal is `recovery/collection_exit_nonzero` with a verified `incomplete` same-run capture binding. Its historic targets now project as `not_recorded_legacy`; future receipts carry collector-time duplicate-conflict provenance through the same exact bound chain. QQQ/v4 remain `not_applicable`. |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
 | Session-reset EMA state rule | Engine Research | Pure 15/30 completed-M1 long/flat rule and rule-specific structural target adapter. Hermetic receipt-to-`local_paper` entry/exit/pending-restart replay verifies causal/warmup/hold/expiry controls and next-bar-open pricing; deterministic local execution now rejects a late-accepted historical fill. No source-local data replay, campaign, GPU, PnL, or Paper-input consequence |
-| Private Paper dashboard | Execution / Infra | Completed Docker reattestation: explicit container-bind exception, host loopback publish, secret-free unavailable rendering, and pause/resume UI round trip. It created no broker route or order. Next bounded action is the existing read-only Paper account snapshot bridge. |
-| Read-only Paper account snapshot | Execution / Infra | Completed one actual `kis-readonly` bridge refresh: categorical `complete`, external fact-minimized receipt, immediate loopback dashboard `available`, no order or live route. The five-minute runtime TTL makes a bounded observer the next operational improvement. |
+| Private Paper dashboard | Execution / Infra | Completed Docker reattestation: explicit container-bind exception, host loopback publish, secret-free unavailable rendering, and pause/resume UI round trip. It created no broker route or order. The existing read-only snapshot observer is the only recurring refresh owner. |
+| Read-only Paper account snapshot | Execution / Infra | Completed one actual `kis-readonly` refresh: categorical `complete`, external fact-minimized receipt, immediate loopback dashboard `available`, no order or live route. The bounded five-minute-TTL observer is installed and task-owned. |
 | Read-only Paper account observer | Execution / Infra | Completed task-owned evidence: caller-selected immutable sidecar `20260807T141607347092Z-7c9fb50a-81bb-40a8-b72f-49b3e492d773-complete.json` reattached as `complete` at `2026-08-07T14:16:07Z` after bridge SHA-256 and marker/status/time binding. Loopback dashboard `/health` returned only `ok` and `broker_calls:false`; no account fact was inspected. This is assumed-honest-host marker provenance, not cryptographic Scheduler proof; Operational logging is disabled. The four-minute observer remains the sole recurring read-only owner. |
 | GPU research | Research Steward | Idle because no eligible frozen campaign exists |
 
@@ -881,17 +881,19 @@ metadata-only projection. DST/pre-market behavior remains unproven.
 
 ## Next Handoff
 
-1. Let the installed `thericher-kis-paper-intraday-head` task own its next
-   2026-08-08 00:29 KST run. Reattach only a caller-selected exact terminal,
-   capture, and prospective chain, then decide whether its QQQ/NAS and SPY/AMS
-   M1 input is causally qualified. Do not manually invoke KIS, Docker, the
-   task, or an alternate collector; an incomplete chain remains scoped
-   `input_unavailable` evidence.
+1. The caller-selected 2026-08-08 06:20 KST QQQ/NAS and SPY/AMS chain is
+   closed `input_unavailable`: its exact capture binding is verified but
+   cumulative coverage is `incomplete`, with no decision-time availability or
+   provider-finality fact. Let the installed
+   `thericher-kis-paper-intraday-head` task own its next 2026-08-11 00:29 KST
+   run. Reattach only a later caller-selected exact terminal, capture, and
+   prospective chain; do not manually invoke KIS, Docker, the task, or an
+   alternate collector.
 2. Preserve the exact 2026-08-05 `canary_completed` session fact and direct
    `cancelled/clean` lifecycle result as virtual-Paper execution evidence only.
    Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
-   or duplicate the existing task. Its latest 2026-08-06 23:35 KST Scheduler
-   result is `0`; the next opportunity is 2026-08-07 23:35 KST.
+   or duplicate the existing task. Its latest 2026-08-07 23:35 KST Scheduler
+   result is `0`; the next opportunity is 2026-08-10 23:35 KST.
 3. Preserve the completed D1 `stable` observation as source-safe observational
    evidence only; do not treat its cache snapshot or result as provider-finality
    evidence.

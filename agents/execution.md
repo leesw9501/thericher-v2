@@ -215,8 +215,8 @@ another correctly scoped Paper action.
   only `127.0.0.1:8787`. A local Docker UI check rendered unavailable broker
   facts without placeholders and round-tripped pause-buy/resume-buy through the
   local control store only. No KIS call, broker call, or order occurred. The
-  next independent execution package is one existing-bridge read-only Paper
-  account snapshot refresh.
+  installed task-owned observer is the existing bridge's recurring read-only
+  refresh owner.
 - The existing `kis-readonly` Compose service completed one actual Paper
   refresh at `2026-08-07T05:41:03.199117+00:00`. It wrote a sanitized runtime
   snapshot and fact-minimized external receipt, and the loopback dashboard read
