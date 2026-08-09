@@ -16,7 +16,7 @@ read or route `KIS_LIVE_*`.
 
 | Surface | Current fact | Limit |
 | --- | --- | --- |
-| Private operator dashboard | Loopback-only dashboard and local pause/resume controls are complete. | It has no public bind and no broker-order control. |
+| Private operator dashboard | Loopback-only dashboard and local pause/resume controls are complete. | It has no public bind or broker-order control. `cancel_open_orders_requested` remains a projection-only state until a separately owned consumer can reconcile an exact durable order, so the dashboard does not present a misleading cancellation command. |
 | Read-only Paper account observer | Exact sidecar receipt reattached as `complete`; dashboard health reports no broker calls. | Marker-present provenance assumes an honest host; it is not cryptographic Scheduler-origin proof. |
 | Scheduled Paper mode | The installed quote-session task runs the `kis-paper-session` Compose profile, which pins `THERICHER_MODE: kis_paper`. | The host default `THERICHER_MODE=off` does not disable this virtual-Paper task; the service still has no `KIS_LIVE_*` surface. |
 | Scheduled image provenance | The existing quote, read-only, and exact intraday dispatcher image tags were rebuilt from clean committed source `586844d`; all 11 named service images exist and the only running project service remained the loopback web container. | This is local image-readiness evidence, not a KIS call, submit, fill, account fact, or proof of the next task outcome. |

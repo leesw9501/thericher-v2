@@ -103,8 +103,9 @@ its next owned sequence starts 2026-08-11 00:29 KST. This is not a team-wide
 idle state: independent source-safe or offline preparation remains dispatchable
 when it has a distinct completion condition. The work graph is task-owned
 terminal -> offline exact-chain reader -> scoped classification -> conditional
-frozen candidate. Manual KIS, Docker, collector, training, and GPU alternatives
-are outside this objective.
+frozen candidate. Manual KIS requests, task or Docker-service invocation,
+replacement collection, training, and GPU alternatives are outside this
+objective.
 
 | Package | Owner/resource | Evidence, kill test, and recovery |
 | --- | --- | --- |
