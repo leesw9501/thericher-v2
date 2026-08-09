@@ -48,8 +48,10 @@ undocumented timestamp seed.
   a complete completed-session chain and retains neither decision-time
   availability nor provider-finality evidence. This is an exact evidence-chain
   classification, not a scheduler-result, raw-data, model, Paper, fill, PnL,
-  or alpha claim. The existing task next owns 2026-08-11 00:29 KST; do not
-  manually rerun or duplicate it. Before that owned invocation, its existing
+  or alpha claim. The existing task next owns the 2026-08-11 sequence beginning
+  00:29 KST through its 06:20 KST post-close terminal opportunity; do not
+  manually rerun or duplicate it, and do not classify an intermediate
+  same-session result as final. Before that owned invocation, its existing
   local-only path now materializes a current-cache availability receipt and
   binds its contract, receipt, precommit, and summary hashes into the terminal.
   The offline reader recomputes the named summary-file hash; a later pair
@@ -131,8 +133,9 @@ undocumented timestamp seed.
   this becomes a coverage result;
   otherwise this timing hypothesis is rejected and
  reassessed. DST/pre-market page behavior remains unproven and must be
- rechecked before the next U.S. DST transition. The next owned run is
-2026-08-11 00:29 KST; do not manually invoke it.
+  rechecked before the next U.S. DST transition. The next owned sequence starts
+  2026-08-11 00:29 KST and its completion candidate is the 06:20 KST terminal;
+  do not manually invoke any run.
  The focused schedule checks (18) and the full parallel authority suite
  (2,571 passed, 23 skipped) passed after registration.
 - **Cumulative capture receipt:** the rebuilt existing

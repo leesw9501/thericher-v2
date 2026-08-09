@@ -22,7 +22,7 @@ facts from a scheduler result alone.
 | Exact 2026-08-08 06:20 KST terminal | Data / Execution | Caller-selected terminal and bound capture receipt | Completed classification: the offline terminal reader returned `complete` with `verified/incomplete` coverage binding. This exact QQQ/NAS and SPY/AMS input is `input_unavailable`; it is not a data-quality, finality, model, Paper, fill, or PnL claim. |
 | Collection recovery projection | Data | Existing exact-pointer/capture reader | Completed. It requires `recovery/collection_exit_nonzero`, emits `rejected_duplicate_conflict` only for the exact verified capture chain, and otherwise emits `evidence_unavailable`. |
 | Duplicate-conflict provenance | Data | Existing backfill result and session-capture contracts | Completed. Future exact receipts preserve collector-time conflict origin/disposition; historic missing fields are `not_recorded_legacy`, and partial/mixed/unknown future forms fail closed. |
-| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Next owned invocation is 2026-08-11 00:29 KST. No manual run or duplicate collector. |
+| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Next owned four-run sequence begins 2026-08-11 00:29 KST; only its 06:20 KST post-close terminal is an eligible completed-session candidate. No manual run or duplicate collector. |
 | Task-owned causal evidence binding | Data | Existing intraday-head task and its existing local-only pair service | Ready for the next owned invocation: one source-local availability receipt is bound by its contract/receipt/precommit/summary hashes, and a pair attempt is accepted only when its immutable contract matches all four. A matching chain still remains `input_unavailable` until decision-time availability and provider finality are observed. No new task, collector, broker route, or model/GPU appointment. |
 | EMA source-local mechanics | Engine Research / Execution | Frozen QQQ/NAS 20-session catalog and existing local replay | Completed: the `20260807-ema-mechanics-r2` external replay is local-paper-only, replayable, and terminal-flat; it has no performance or promotion claim. |
 | QQQ multi-timeframe resampling mechanics | Data / Engine Research | Frozen QQQ/NAS M1 catalog and existing session resampler | Completed: immutable `20260807-qqq-mtf-r1` records 20 session-aligned completed-bar inputs with M1/M5/M10/H1/H3 aggregate geometry; H1/H3 terminal 30-minute buckets are explicitly excluded. It is source-local CPU evidence only. |
@@ -72,8 +72,9 @@ bounded drift-check timed out, so it is `review_unavailable`, not agreement.
 
 ## Current Recovery Action
 
-Data owns the existing 2026-08-11 00:29 KST QQQ/SPY task invocation; it is the
-only owner of a later actual KIS collection. The 2026-08-08 chain's bound
+Data owns the existing 2026-08-11 QQQ/SPY task sequence from 00:29 KST through
+the 06:20 KST post-close terminal; it is the only owner of a later actual KIS
+collection. The 2026-08-08 chain's bound
 identities and hash are verified offline, while its incomplete coverage closes
 only that exact input as `input_unavailable`. A conflicted, incomplete, late,
 unbound, or availability-hash-mismatched later result remains scoped and is

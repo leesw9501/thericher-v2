@@ -28,8 +28,10 @@ request exhausted the local CLI's weekly quota, so its review is
 existing hash-bound projection reproduces this narrow no-promotion decision.
 
 The next objective is `task-owned-kis-intraday-causal-evidence-refresh-v1`.
-Only the existing task may produce the next candidate; its next owned
-invocation is 2026-08-11 00:29 KST. Reattach a caller-selected later terminal
+Only the existing task may produce the next candidate; its next owned sequence
+begins 2026-08-11 00:29 KST and its post-close terminal opportunity is 06:20
+KST. Intermediate same-session outcomes are not final input classifications.
+Reattach a caller-selected later terminal
 and its exact bound evidence offline, then qualify only if every causal,
 completed-bar, chronological-split, decision-time availability, and finality
 condition is separately evidenced. Otherwise preserve a scoped
@@ -907,8 +909,9 @@ metadata-only projection. DST/pre-market behavior remains unproven.
    closed `input_unavailable`: its exact capture binding is verified but
    cumulative coverage is `incomplete`, with no decision-time availability or
    provider-finality fact. Let the installed
-   `thericher-kis-paper-intraday-head` task own its next 2026-08-11 00:29 KST
-   run. Reattach only a later caller-selected exact terminal, capture, and
+   `thericher-kis-paper-intraday-head` task own its next four-run sequence
+   beginning 2026-08-11 00:29 KST through its 06:20 KST terminal opportunity.
+   Reattach only a later post-close exact terminal, capture, and
    prospective chain; do not manually invoke KIS, Docker, the task, or an
    alternate collector.
 2. Preserve the exact 2026-08-07 `canary_completed/intent_recorded` session
