@@ -30,6 +30,25 @@ coverage is incomplete and provider decision-time availability/finality remain
 unobserved. Paper lifecycle reliability has a separate ready proof path and
 does not depend on resolving that prediction-input limitation.
 
+## Blocked-Goal Alternatives
+
+The current canary-closure objective has no further in-scope foreground package
+after the source-safe route and full historical-corpus reader checks. Its only
+missing evidence is a new immutable outcome from the enabled, Ready existing
+quote-session task at its owned 2026-08-10 23:35 KST opportunity; missing
+evidence remains `unknown`, not a task or route failure. Original dependency
+order: owned task -> exact session receipt -> exact direct receipt when named
+-> offline hash-bound reader -> categorical lifecycle closure.
+
+| Recovery package | Owner / resource | Completion evidence | Strongest kill test / recovery |
+| --- | --- | --- | --- |
+| Reattach the next quote-session result | Execution / existing task and 23:45 KST monitor | One fresh task-time-bound session receipt plus, when required, its exact direct lifecycle receipt with recomputed reader hashes and `paper_only`. | No unique fresh receipt: preserve task `next_due`; never infer an outcome or resubmit. |
+| Reattach D1 stability observation | Data / existing 23:15 KST observer | Its existing categorical source-safe receipt. | Missing or unavailable record remains local to D1 finality; leave predictive inputs unchanged. |
+| Reattach intraday terminal chain | Data / existing 2026-08-11 06:20 KST terminal | Exact terminal, capture, availability, and optional pair bindings through the existing reader. | Any missing binding yields scoped `input_unavailable`; do not duplicate collection. |
+
+Claude challenge: `review_unavailable` because its CLI timed out; this is not
+treated as agreement, a hold, or a change to the standing authority.
+
 ## Current Reversible Improvement
 
 Tiingo IEX snapshot reattestation now preserves the pinned compressed artifact
