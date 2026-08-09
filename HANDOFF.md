@@ -86,8 +86,8 @@ ready.
 The causal evidence-binding package previously passed the full authority suite
 (`2890 passed, 28 skipped`), Ruff, and both Compose configurations. The
 subsequent Qlib source-only package was validated by JSON parsing and
-`git diff --check`; it changes no runtime code. Latest project checkpoint:
-`659f7a4 Record Qlib architecture reference`, pushed to `origin/main`.
+`git diff --check`; it changes no runtime code. Use Git history for immutable
+commit checkpoints rather than copying a self-staling latest hash here.
 
 ## Resume Procedure
 
