@@ -36,7 +36,7 @@ KIS client, or a replacement collector.
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
 | Data | QQQ/SPY current causal chain is `input_unavailable`; historical M1 cursor data has 21 shared complete sessions and is source-local only. | Installed task creates the next evidence chain; reattach it offline after the 06:20 terminal. |
-| Data | Norgate local tail source is `source_unavailable`; Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until its local subscription is active. |
+| Data | The 2026-08-09 host-only Norgate tail probe is `unavailable/local_source_unavailable`; D: file freshness is not a vendor-access or rights proof. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until Norgate Data Updater shows an active US subscription and configured database location, then run one bounded probe. |
 | Engine Research | No frozen, input-qualified predictive campaign exists. Fixed QQQ local-paper EMA and Donchian baselines are negative and closed for selection. | If and only if a later qualified input arrives, freeze one existing 30/60/90-minute candidate matrix; do not train in the current objective. |
 | Research Steward | RTX 4090 is healthy but unallocated. | Allocate only a frozen, eligible campaign; never manufacture training to fill GPU time. |
 | Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. | Keep scheduled execution evidence owned by its task and consume no intraday data result without a later qualified objective. |
@@ -50,7 +50,7 @@ KIS client, or a replacement collector.
 | SPY D1 stability | Data | Existing observer owns the next 2026-08-10 23:15 KST observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | Existing task owns the next 2026-08-10 23:35 KST opportunity. The latest exact canary is `intent_recorded/not_submitted/unresolved`; it is not a submit, fill, PnL, or model result. |
 | Read-only Paper account observer | Execution | Existing four-minute task is the sole owner. Its validated provenance is marker-present under an assumed-honest host, not cryptographic Scheduler-origin proof. |
-| Public-source research | Engine Research | Qlib is now a source-only architecture reference, with no code, package, data, weight, campaign, GPU, or Paper consequence. |
+| Public-source research | Engine Research | Qlib and PatchTST are source-only architecture references, with no code, package, data, weight, campaign, GPU, or Paper consequence. |
 
 External quota and session waits belong to their named task. Codex does not
 foreground-sleep or add a duplicate scheduler while an independent package is
@@ -80,6 +80,8 @@ ready.
   `D:\thericher-v2\model-artifacts\research\source-local-qqq-donchian-local-paper-pnl-attribution-v1\20260807-donchian-pnl-r1\summary.json`.
 - Qlib source-only receipt:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qlib-architecture-source-20260809-r1\source-retrieval.json`.
+- PatchTST source-only receipt:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\patchtst-source-20260809-r1\source-retrieval.json`.
 
 ## Verification And Git
 

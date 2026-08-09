@@ -59,6 +59,12 @@ forward observation. The fixed Donchian baseline is now accounted and negative,
 so it cannot consume more research-selection effort; independent execution
 observability can still improve Paper readiness without claiming model validity.
 
+The scheduled KIS wait is not team-wide idle. On 2026-08-09, Data closed one
+host-only Norgate availability probe as `unavailable/local_source_unavailable`,
+and Engine Research completed one PatchTST source-only architecture retrieval.
+Neither changes the active KIS path, authorizes a retry, allocates GPU, or
+creates a campaign; each keeps its own next trigger.
+
 ## Current Reversible Improvement
 
 The handoff and active Data, Engine Research, and Execution stateboards now
@@ -83,12 +89,14 @@ success remains unrelated to historical M1 reach.
 
 ## Blocked-Goal Alternatives
 
-**Blocking fact:** the active company objective has no remaining local producer:
-only the enabled `thericher-kis-paper-intraday-head` task can create its later
-QQQ/SPY terminal, and its next owned sequence starts 2026-08-11 00:29 KST.
-The work graph is task-owned terminal -> offline exact-chain reader -> scoped
-classification -> conditional frozen candidate. Manual KIS, Docker, collector,
-training, and GPU alternatives are outside the objective.
+**Blocking fact:** only the enabled `thericher-kis-paper-intraday-head` task
+can create the later QQQ/SPY terminal required by this company objective, and
+its next owned sequence starts 2026-08-11 00:29 KST. This is not a team-wide
+idle state: independent source-safe or offline preparation remains dispatchable
+when it has a distinct completion condition. The work graph is task-owned
+terminal -> offline exact-chain reader -> scoped classification -> conditional
+frozen candidate. Manual KIS, Docker, collector, training, and GPU alternatives
+are outside this objective.
 
 | Package | Owner/resource | Evidence, kill test, and recovery |
 | --- | --- | --- |

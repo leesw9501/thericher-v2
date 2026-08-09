@@ -20,7 +20,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
 | Tiingo prospective EOD and broad D1 panels | Source-separated but non-PIT and non-promoting. | Controls and diagnostics only. |
-| Norgate trial tail | Local source returned `source_unavailable` on 2026-08-09. | Do not retry until Norgate Data Updater reports an active local subscription. |
+| Norgate trial tail | The 2026-08-09 host-only `norgatedata` 1.0.77 probe returned `unavailable/local_source_unavailable`; recently written D: database files do not attest current vendor access or rights. | Do not re-probe until Norgate Data Updater shows an active US subscription, then verify its Database Location and run one new bounded tail probe. |
 
 Raw market bytes remain under `D:\market_data`. Source-safe receipts and
 research artifacts remain under `D:\thericher-v2\model-artifacts`.
@@ -45,7 +45,7 @@ client, or a parallel collector.
 | Intraday causal evidence refresh | Existing `thericher-kis-paper-intraday-head` task | Exact terminal plus matching capture, availability, and optional pair hashes; reader recomputes the named availability-summary bytes. |
 | Offline classification | Data after task terminal | `qualified` only with completed-session geometry, chronological split, decision-time availability, and provider finality. Otherwise record the narrow unavailable reason. |
 | SPY D1 stability | Existing task | Next 2026-08-10 23:15 KST observation; `stable` is not provider finality. |
-| Norgate tail readiness | Norgate local source | Wait for actual local subscription recovery; no foreground retry. |
+| Norgate tail readiness | Norgate local source | Blocked only for this source: wait for Norgate Data Updater to show an active subscription, then run one new bounded probe; do not foreground-retry. |
 
 ## Quality Contracts
 

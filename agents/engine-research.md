@@ -45,11 +45,14 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 | Reference | Status | Limit |
 | --- | --- | --- |
 | Qlib | MIT `architecture_reference_only` | No package, code, data, model, runtime, or campaign adoption. |
+| PatchTST | Apache-2.0 `future_sequence_architecture_reference` | General time-series claims only; financial pretraining/evaluation scope is not disclosed, and no runtime, code, weight, or campaign is adopted. |
 | Chronos, TimesFM, Granite | Isolated source/runtime studies only | Unknown or incompatible financial pretraining/evaluation scope prevents comparative or Paper use. |
 | PyPortfolioOpt HRP | Source-only allocation reference | Requires causal candidate returns, PIT universe, and completed rolling windows. |
 
 Qlib evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qlib-architecture-source-20260809-r1\source-retrieval.json`.
+PatchTST source-only evidence:
+`D:\thericher-v2\model-artifacts\research\engine-source-retrieval\patchtst-source-20260809-r1\source-retrieval.json`.
 Public source proposals never authorize code import, weight download, training,
 ensemble use, or Paper routing on their own.
 
