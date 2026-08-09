@@ -10,6 +10,7 @@ SCRIPT = (
     / "scripts"
     / "install_kis_paper_schedules.ps1"
 )
+INTRADAY_HEAD_RUNNER = SCRIPT.parent / "run_kis_paper_intraday_head_schedule.ps1"
 
 SAME_DATE_KST_SCHEDULES = {
     "thericher-kis-paper-quote-session": "23:35",
@@ -87,6 +88,22 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
         )
     for task_name in LEGACY_OVERNIGHT_SCHEDULES:
         assert "DaysOfWeek =" not in _schedule_entry(source, task_name)
+    intraday_head_entry = _schedule_entry(source, "thericher-kis-paper-intraday-head")
+    image_services = set(
+        re.findall(
+            r'"([a-z0-9-]+)"',
+            intraday_head_entry.split("ImageServices = @(", maxsplit=1)[1].split(
+                "        )", maxsplit=1
+            )[0],
+        )
+    )
+    dispatcher_services = set(
+        re.findall(
+            r'-Service "([a-z0-9-]+)"',
+            INTRADAY_HEAD_RUNNER.read_text(encoding="ascii"),
+        )
+    )
+    assert image_services == dispatcher_services
     forward_entry = source.split(
         'Name = "thericher-kis-paper-daily-nas-forward"', maxsplit=1
     )[1].split("    },", maxsplit=1)[0]
@@ -169,8 +186,8 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
     assert "profiled-mtf-forward-capture-cycle" in source
     assert "kis-paper-prospective-spy-cycle" in source
     assert "kis-paper-prospective-spy-timing-probe" in source
-    assert "kis-paper-prospective-qqq-session" not in source
-    assert "kis-paper-prospective-qqq-validation" not in source
+    assert "kis-paper-prospective-qqq-session" in source
+    assert "kis-paper-prospective-qqq-validation" in source
     assert "kis-paper-intraday-head-receipt" in source
     assert "Assert-KoreaStandardTime" in source
     assert '[System.TimeZoneInfo]::Local' in source

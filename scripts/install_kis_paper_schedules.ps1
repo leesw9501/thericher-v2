@@ -218,8 +218,11 @@ $schedules = @(
         Runner = "run_kis_paper_intraday_head_schedule.ps1"
         ImageServices = @(
             "kis-paper-intraday-head",
+            "kis-paper-prospective-qqq-session",
+            "kis-paper-prospective-qqq-validation",
             "kis-paper-prospective-spy-cycle",
             "kis-paper-prospective-spy-timing-probe",
+            "kis-paper-qqq-intraday-head-readiness",
             "profiled-mtf-forward-capture-cycle",
             "kis-paper-intraday-pair-observation",
             "kis-paper-intraday-head-receipt"
