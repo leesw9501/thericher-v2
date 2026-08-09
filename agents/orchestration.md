@@ -22,7 +22,7 @@ facts from a scheduler result alone.
 | Exact 2026-08-08 06:20 KST terminal | Data / Execution | Caller-selected terminal and bound capture receipt | Completed classification: the offline terminal reader returned `complete` with `verified/incomplete` coverage binding. This exact QQQ/NAS and SPY/AMS input is `input_unavailable`; it is not a data-quality, finality, model, Paper, fill, or PnL claim. |
 | Collection recovery projection | Data | Existing exact-pointer/capture reader | Completed. It requires `recovery/collection_exit_nonzero`, emits `rejected_duplicate_conflict` only for the exact verified capture chain, and otherwise emits `evidence_unavailable`. |
 | Duplicate-conflict provenance | Data | Existing backfill result and session-capture contracts | Completed. Future exact receipts preserve collector-time conflict origin/disposition; historic missing fields are `not_recorded_legacy`, and partial/mixed/unknown future forms fail closed. |
-| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Next owned four-run sequence begins 2026-08-11 00:29 KST; only its 06:20 KST post-close terminal is an eligible completed-session candidate. No manual run or duplicate collector. |
+| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Next owned four-run sequence begins 2026-08-11 00:29 KST; only its 06:20 KST post-close terminal is an eligible completed-session candidate. Its registered action points to the current dispatcher, whose exact image inventory was rebuilt from clean committed source `586844d`. No manual run or duplicate collector. |
 | Causal evidence binding | Data | Existing intraday-head task, pair service, and offline reader | Completed default-deny extension: a later terminal can bind one independently produced source-safe causal attestation by SHA-256, which must match its capture, availability, and pair identities plus named clock/session/geometry/boundary facts. No current task writes that binding, so it remains `not_recorded`; no new task, collector, broker route, or model/GPU appointment. |
 | EMA source-local mechanics | Engine Research / Execution | Frozen QQQ/NAS 20-session catalog and existing local replay | Completed: the `20260807-ema-mechanics-r2` external replay is local-paper-only, replayable, and terminal-flat; it has no performance or promotion claim. |
 | QQQ multi-timeframe resampling mechanics | Data / Engine Research | Frozen QQQ/NAS M1 catalog and existing session resampler | Completed: immutable `20260807-qqq-mtf-r1` records 20 session-aligned completed-bar inputs with M1/M5/M10/H1/H3 aggregate geometry; H1/H3 terminal 30-minute buckets are explicitly excluded. It is source-local CPU evidence only. |
@@ -76,12 +76,12 @@ no current writer or terminal binding, so it does not change the current fact.
 
 ## Current Reversible Improvement
 
-The existing QQQ runtime loop/session/validator now preserve one compact,
-recomputed `observed_provisional` interpretation rather than leaving its
-capability authorization nested and unaudited. The v5 validator rejects a
-missing or altered grade, while the task, KIS client, Docker profile, order
-semantics, and schedule remain unchanged. It shortens exact execution-evidence
-reattachment without creating a report, approval gate, or model promotion path.
+The registered intraday task's `ImageServices` inventory now exactly matches
+the literal services its existing dispatcher invokes. All affected image tags
+were rebuilt from clean committed source `586844d`, while the task action,
+schedule, KIS client, broker semantics, and running containers remain
+unchanged. This removes stale-image latency from the next task-owned attempt
+without creating a report, approval gate, or model-promotion path.
 
 ## Current Recovery Action
 

@@ -1046,6 +1046,11 @@ service. `-RequireExisting` fails before the build when a selected task is not
 already registered. Use `-WhatIf` when reviewing the scope. Leaving out
 `-ScheduleName` retains the installer's all-task behavior.
 
+For `thericher-kis-paper-intraday-head`, the installer's image list is tested
+to match the dispatcher's literal service set exactly. Keep that inventory in
+sync with the existing dispatcher so a scheduled task cannot fall back to a
+stale local image while still using `--pull never`.
+
 The same named task dispatches the credential-bearing data collector, one
 virtual-only `kis-paper-prospective-qqq-session`, the offline
 `kis-paper-prospective-qqq-validation`, an optional older pair-bound
