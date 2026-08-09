@@ -42,7 +42,7 @@ canary or another ready lane.
 | Data | The 2026-08-09 host-only Norgate tail probe is `unavailable/local_source_unavailable`; D: file freshness is not a vendor-access or rights proof. A new immutable Tiingo SPY/QQQ/IWM raw-D1 continuation through 2026-08-07 reattested offline, but Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until Norgate Data Updater shows an active US subscription and configured database location, then run one bounded probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. Fixed QQQ local-paper EMA and Donchian baselines remain negative and closed for selection. | A later predictive campaign needs a distinct qualified input and frozen contract; it is not part of the Paper lifecycle objective. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
-| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. The existing quote-session task is the sole owner of the current lifecycle proof. | Reattach its next eligible receipt without duplicating task, container, or submission. Treat any non-submission or unknown state as exact-run scoped. |
+| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. On 2026-08-10 the existing quote-session task, local image, receipt reader, and categorical dashboard health reattested offline; no new lifecycle receipt exists after 2026-08-07. The task remains the sole owner of the current lifecycle proof. | Reattach its next eligible receipt without duplicating task, container, or submission. Treat any non-submission or unknown state as exact-run scoped. |
 | Shared worktree | Alternate IWM collector WIP is untracked/modified and rejected from this objective. | Do not touch, stage, invoke, or reconcile it without a separate assignment. |
 
 ## Ready / Owned / Due
@@ -106,6 +106,9 @@ configuration parses, and `git diff --check`. The CPU and CUDA Docker commands
 were networkless and wrote only external source-safe summaries. The suite also
 repaired three pre-existing test-contract mismatches exposed by the local Torch
 runtime; no KIS, credential, broker, or scheduler call occurred in verification.
+The 2026-08-10 quote-session route reattestation added one no-public-port
+contract and passed 123 focused execution tests, Ruff, and both Compose parses;
+it did not call KIS, start a task/container, or read a private receipt body.
 Use Git history for immutable commit checkpoints rather than copying a
 self-staling latest hash here.
 

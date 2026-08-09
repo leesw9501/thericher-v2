@@ -835,6 +835,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "THERICHER_MODE: kis_paper" in session_section
     assert "KIS_PAPER_APP_KEY" in session_section
     assert "KIS_LIVE" not in session_section
+    assert "ports:" not in session_section
     assert "thericher-v2-paper-canary-private:/app/private" in session_section
 
     intraday_section = compose.split("\n  kis-paper-intraday-cache:\n", maxsplit=1)[1].split(
