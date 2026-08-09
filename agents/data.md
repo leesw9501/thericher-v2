@@ -52,8 +52,9 @@ undocumented timestamp seed.
   manually rerun or duplicate it. Before that owned invocation, its existing
   local-only path now materializes a current-cache availability receipt and
   binds its contract, receipt, precommit, and summary hashes into the terminal.
-  A later pair attempt must reattach to the exact same four hashes or the
-  offline reader rejects it. This adds no KIS request, new scheduler, raw-data
+  The offline reader recomputes the named summary-file hash; a later pair
+  attempt must reattach to the exact same four hashes or it rejects the chain.
+  This adds no KIS request, new scheduler, raw-data
   output, provider-finality claim, or consumer promotion; decision-time
   availability and finality remain `not_observed`. Claude's bounded review
   timed out as `review_unavailable`, not agreement.

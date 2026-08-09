@@ -1493,8 +1493,9 @@ For one caller-selected `thericher-kis-paper-intraday-head` terminal, use only
 the offline projection below. It follows the task-owned current pointer and
 verifies its immutable terminal hash and same-run capture binding. When a
 later task writes them, it also reattests the exact source-local availability
-contract/receipt/precommit/summary hashes and the pair-attempt contract that
-uses them; any mismatch is rejected. It never loads credentials, starts
+contract/receipt/precommit/summary hashes, recomputes the named summary-file
+hash, and reattests the pair-attempt contract that uses them; any mismatch is
+rejected. It never loads credentials, starts
 Docker, reads a broker route, or opens raw minute rows.
 
 ```powershell

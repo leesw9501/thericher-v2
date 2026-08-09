@@ -37,7 +37,8 @@ condition is separately evidenced. Otherwise preserve a scoped
 next invocation, the task-owned local path now writes one current-cache
 availability receipt, binds its contract/receipt/precommit/summary hashes into
 the terminal, and accepts a prospective pair attempt only when its immutable
-contract matches the same four hashes. The offline reader rejects any mismatch;
+contract matches the same four hashes. The offline reader recomputes the named
+summary-file hash and rejects any mismatch;
 even a matching pair remains `input_unavailable` until decision-time
 availability and provider finality are separately observed. This adds no KIS
 request, scheduler, broker route, model, GPU appointment, or Paper intent.

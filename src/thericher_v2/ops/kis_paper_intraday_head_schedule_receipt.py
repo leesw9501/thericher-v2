@@ -17,6 +17,10 @@ from typing import Any, Literal
 from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
+from thericher_v2.data.kis_intraday_mtf_availability import (
+    KIS_INTRADAY_MTF_AVAILABILITY_ARTIFACT_DIRECTORY,
+    KIS_INTRADAY_MTF_AVAILABILITY_RECEIPT_ID,
+)
 from thericher_v2.data.kis_paper_intraday_session_capture import (
     KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES,
     KisPaperIntradaySessionCaptureTarget,
@@ -391,7 +395,7 @@ class KisPaperIntradayHeadScheduleFact:
     current_session_cumulative_coverage_digest: str | None
     current_session_cumulative_coverage_category: str | None
     availability_status: str
-    availability_binding_status: Literal["legacy_unbound", "recorded", "verified"]
+    availability_binding_status: Literal["legacy_unbound", "verified"]
     availability_contract_sha256: str | None
     availability_receipt_sha256: str | None
     availability_precommit_sha256: str | None
@@ -448,7 +452,7 @@ class KisPaperIntradayHeadScheduleFact:
                 raise KisPaperIntradayHeadScheduleReceiptError(
                     "schedule_availability_binding_invalid"
                 )
-        elif self.availability_binding_status in {"recorded", "verified"}:
+        elif self.availability_binding_status == "verified":
             if any(value is None for value in availability_values):
                 raise KisPaperIntradayHeadScheduleReceiptError(
                     "schedule_availability_binding_invalid"
@@ -849,6 +853,11 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         repository_root=repository_root,
     )
     availability_binding = receipt.availability_receipt_binding
+    availability_binding_status = _read_availability_receipt_binding(
+        terminal=receipt,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
     (
         observation_binding_status,
         observation_attempt_sha256,
@@ -878,13 +887,7 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         current_session_cumulative_coverage_digest=coverage_digest,
         current_session_cumulative_coverage_category=coverage_category,
         availability_status=receipt.availability_status,
-        availability_binding_status=(
-            "verified"
-            if availability_binding is not None and observation_binding_status == "verified"
-            else "recorded"
-            if availability_binding is not None
-            else "legacy_unbound"
-        ),
+        availability_binding_status=availability_binding_status,
         availability_contract_sha256=(
             None if availability_binding is None else availability_binding.contract_sha256
         ),
@@ -1396,6 +1399,72 @@ def _read_capture_binding(
         binding.current_session_cumulative_coverage_digest,
         binding.current_session_cumulative_coverage_category,
     )
+
+
+def _read_availability_receipt_binding(
+    *,
+    terminal: _ScheduleReceiptTerminal,
+    artifact_root: Path,
+    repository_root: Path,
+) -> Literal["legacy_unbound", "verified"]:
+    binding = terminal.availability_receipt_binding
+    if binding is None:
+        return "legacy_unbound"
+    root = _readable_external_artifact_root(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    summary_path = (
+        root
+        / "data"
+        / KIS_INTRADAY_MTF_AVAILABILITY_ARTIFACT_DIRECTORY
+        / f"task-owned-{terminal.run_id}"
+        / "summary.json"
+    )
+    _require_external_artifact_regular_file(
+        root=root,
+        path=summary_path,
+        error_code="schedule_availability_summary_invalid",
+    )
+    summary_bytes, summary_payload = _read_json_payload(
+        summary_path,
+        "schedule_availability_summary_invalid",
+    )
+    if _sha256(summary_bytes) != binding.summary_sha256:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_binding_mismatch")
+    _verify_availability_summary_binding(
+        payload=summary_payload,
+        binding=binding,
+        availability_status=terminal.availability_status,
+    )
+    return "verified"
+
+
+def _verify_availability_summary_binding(
+    *,
+    payload: Mapping[str, Any],
+    binding: KisPaperIntradayHeadAvailabilityReceiptBinding,
+    availability_status: str,
+) -> None:
+    if (
+        frozenset(payload) != {"schema_version", "receipt_id", "precommit_sha256", "receipt"}
+        or payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("receipt_id") != KIS_INTRADAY_MTF_AVAILABILITY_RECEIPT_ID
+        or _payload_sha256(payload.get("precommit_sha256"), "availability precommit sha256")
+        != binding.precommit_sha256
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_binding_mismatch")
+    receipt = payload.get("receipt")
+    if not isinstance(receipt, Mapping):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_summary_invalid")
+    if (
+        _payload_sha256(receipt.get("contract_sha256"), "availability contract sha256")
+        != binding.contract_sha256
+        or _payload_sha256(receipt.get("receipt_sha256"), "availability receipt sha256")
+        != binding.receipt_sha256
+        or receipt.get("status") != availability_status
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_binding_mismatch")
 
 
 def _read_observation_attempt_binding(
@@ -2051,6 +2120,29 @@ def _require_direct_regular_file(*, root: Path, path: Path, error_code: str) -> 
     if not root.is_dir() or not execution_root.is_dir() or not schedule_root.is_dir():
         raise KisPaperIntradayHeadScheduleReceiptError(error_code)
     if not path.is_file():
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+    try:
+        is_regular_file = stat.S_ISREG(path.stat().st_mode)
+    except OSError as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
+    if not is_regular_file:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+
+
+def _require_external_artifact_regular_file(*, root: Path, path: Path, error_code: str) -> None:
+    try:
+        relative_path = path.relative_to(root)
+    except ValueError as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
+    _require_no_link_ancestors(path, error_code)
+    directories = [root]
+    current = root
+    for part in relative_path.parts[:-1]:
+        current = current / part
+        directories.append(current)
+    for candidate in (*directories, path):
+        _require_non_link(candidate, error_code)
+    if not all(directory.is_dir() for directory in directories) or not path.is_file():
         raise KisPaperIntradayHeadScheduleReceiptError(error_code)
     try:
         is_regular_file = stat.S_ISREG(path.stat().st_mode)

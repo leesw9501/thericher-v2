@@ -63,8 +63,9 @@ observability can still improve Paper readiness without claiming model validity.
 
 Do not wait for the task-owned collection. The existing Data task will
 materialize one source-local historical availability receipt in its own run,
-bind its four immutable hashes into the terminal, and bind any eligible pair
-attempt to that same contract. An unavailable local receipt stays a scoped
+bind its four immutable hashes into the terminal, recompute the named summary
+file hash offline, and bind any eligible pair attempt to that same contract.
+An unavailable local receipt stays a scoped
 `not_observed` result; a malformed receipt remains task-local recovery. This
 does not add a scheduler, collector, broker route, or promotion path. Claude's
 bounded drift-check timed out, so it is `review_unavailable`, not agreement.

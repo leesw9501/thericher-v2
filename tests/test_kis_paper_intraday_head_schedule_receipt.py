@@ -281,7 +281,14 @@ def test_schedule_fact_keeps_a_bound_pair_attempt_input_unavailable_without_atte
     availability_contract_sha256 = "sha256:" + "a" * 64
     availability_receipt_sha256 = "sha256:" + "b" * 64
     availability_precommit_sha256 = "sha256:" + "c" * 64
-    availability_summary_sha256 = "sha256:" + "d" * 64
+    availability_summary_sha256, availability_summary_path = _write_availability_summary(
+        artifact_root=artifact_root,
+        run_id="intraday-head-unit",
+        contract_sha256=availability_contract_sha256,
+        receipt_sha256=availability_receipt_sha256,
+        precommit_sha256=availability_precommit_sha256,
+        status="qualified_for_prospective_input",
+    )
     prospective_contract_sha256 = "sha256:" + "e" * 64
     attempt_sha256 = "sha256:" + "f" * 64
     kwargs = {
@@ -354,6 +361,29 @@ def test_schedule_fact_keeps_a_bound_pair_attempt_input_unavailable_without_atte
             availability_summary_sha256="sha256:" + "0" * 64,
         ),
     )
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_availability_binding_mismatch",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+            capture_cache_root=cache_root,
+            observation_artifact_root=artifact_root,
+        )
+
+    monkeypatch.setattr(
+        schedule_receipt,
+        "read_kis_qqq_spy_mtf_prospective_contract",
+        lambda **_: SimpleNamespace(
+            contract_sha256=prospective_contract_sha256,
+            availability_contract_sha256=availability_contract_sha256,
+            availability_receipt_sha256=availability_receipt_sha256,
+            availability_precommit_sha256=availability_precommit_sha256,
+            availability_summary_sha256=availability_summary_sha256,
+        ),
+    )
+    availability_summary_path.write_bytes(availability_summary_path.read_bytes() + b"\n")
     with pytest.raises(
         KisPaperIntradayHeadScheduleReceiptError,
         match="schedule_availability_binding_mismatch",
@@ -1135,6 +1165,39 @@ def test_compose_qqq_intraday_head_readiness_is_fully_isolated() -> None:
     assert "local-paper" not in lowered
     assert "./src:/app/src" not in section
     assert "./scripts:/app/scripts" not in section
+
+
+def _write_availability_summary(
+    *,
+    artifact_root: Path,
+    run_id: str,
+    contract_sha256: str,
+    receipt_sha256: str,
+    precommit_sha256: str,
+    status: str,
+) -> tuple[str, Path]:
+    payload = {
+        "schema_version": 1,
+        "receipt_id": "kis-intraday-mtf-availability-receipt-v1",
+        "precommit_sha256": precommit_sha256,
+        "receipt": {
+            "contract_sha256": contract_sha256,
+            "receipt_sha256": receipt_sha256,
+            "status": status,
+        },
+    }
+    encoded = (json.dumps(payload, ensure_ascii=True, sort_keys=True) + "\n").encode("ascii")
+    summary_sha256 = "sha256:" + sha256(encoded).hexdigest()
+    path = (
+        artifact_root
+        / "data"
+        / "kis-intraday-mtf-availability-receipt-v1"
+        / f"task-owned-{run_id}"
+        / "summary.json"
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(encoded)
+    return summary_sha256, path
 
 
 def _write_capture_receipt(
