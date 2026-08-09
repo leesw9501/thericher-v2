@@ -40,8 +40,12 @@ a prediction, GPU appointment, Paper intent, broker order, or live feature.
 3. After the existing task creates a caller-selected later terminal/capture/
    prospective evidence chain, use only offline readers to verify its exact
    identities, hashes, completed-bar/session geometry, chronological split, and
-   retained decision-time availability/finality facts. Add the smallest reader
-   or contract test only if the existing chain cannot reproduce the decision.
+   retained decision-time availability/finality facts. The smallest offline
+   default-deny reader extension is complete: it accepts an optional
+   SHA-256-bound causal-condition attestation at a fixed external artifact
+   location and verifies its exact capture, availability, and pair identities.
+   No installed task writes that binding yet, so do not add another reader,
+   attestation writer, task, collector, or scheduler in this objective.
 4. Mark the input `qualified` only if every predeclared condition is evidenced.
    Otherwise write the narrow `input_unavailable` or recovery fact with its
    exact missing condition and leave the next attempt to the installed task.
