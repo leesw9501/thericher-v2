@@ -52,7 +52,7 @@ KIS client, or a replacement collector.
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
 | Data | QQQ/SPY current causal chain is `input_unavailable`; the optional causal-attestation binding is `not_recorded`, and historical M1 cursor data has 21 shared complete sessions. | Installed task creates the next evidence chain; reattach it offline after the 06:20 terminal. |
-| Data | The 2026-08-09 host-only Norgate tail probe is `unavailable/local_source_unavailable`; D: file freshness is not a vendor-access or rights proof. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until Norgate Data Updater shows an active US subscription and configured database location, then run one bounded probe. |
+| Data | The 2026-08-09 host-only Norgate tail probe is `unavailable/local_source_unavailable`; D: file freshness is not a vendor-access or rights proof. A new immutable Tiingo SPY/QQQ/IWM raw-D1 continuation through 2026-08-07 reattested offline, but Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not retry Norgate until Norgate Data Updater shows an active US subscription and configured database location, then run one bounded probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | No frozen, input-qualified predictive campaign exists. Fixed QQQ local-paper EMA and Donchian baselines are negative and closed for selection. | If and only if a later qualified input arrives, freeze one existing 30/60/90-minute candidate matrix; do not train in the current objective. |
 | Research Steward | RTX 4090 is healthy but unallocated. | Allocate only a frozen, eligible campaign; never manufacture training to fill GPU time. |
 | Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. The installed QQQ runtime route retains a reattested `observed_provisional` interpretation, while a source-safe audit of the latest eight quote-session lifecycle receipts confirms five `cancelled/clean` submissions, two scoped `outcome_unknown` results, and the latest `not_submitted/unresolved` result. The existing quote, read-only, and exact intraday dispatcher images were rebuilt from clean committed source `586844d` without starting a new container. | Treat the latest non-submission as its exact run's reconciliation limitation, not a global route hold. The task-owned QQQ route may produce bounded virtual Paper execution evidence, but neither it nor its grade can promote a model or establish PnL. |
@@ -106,6 +106,8 @@ ready.
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qlib-architecture-source-20260809-r1\source-retrieval.json`.
 - PatchTST source-only receipt:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\patchtst-source-20260809-r1\source-retrieval.json`.
+- Tiingo raw-D1 source-safe receipt:
+  `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\4a2344b7ab8ec2eaf0b1a5e4afcd41e07cf0b4c14e13db64d07b41fd054883d2.json`.
 
 ## Verification And Git
 

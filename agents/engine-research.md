@@ -31,6 +31,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   Do not retune their windows, costs, thresholds, or signs under a new label.
 - Existing CPU/CUDA structural screens for LSTM, causal TCN, and compact
   attention prove only a local runtime path. They do not select a model.
+- The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
+  already inspected history. It may support retrospective controls only; it
+  cannot create a fresh candidate, tune a filter or threshold, spend a sealed
+  evaluation, obtain a GPU appointment, or feed Paper.
 
 ## Current Tracks
 

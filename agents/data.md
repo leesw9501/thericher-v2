@@ -19,7 +19,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
-| Tiingo prospective EOD and broad D1 panels | Source-separated but non-PIT and non-promoting. | Controls and diagnostics only. |
+| Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. |
 | Norgate trial tail | The 2026-08-09 host-only `norgatedata` 1.0.77 probe returned `unavailable/local_source_unavailable`; recently written D: database files do not attest current vendor access or rights. | Do not re-probe until Norgate Data Updater shows an active US subscription, then verify its Database Location and run one new bounded tail probe. |
 
 Raw market bytes remain under `D:\market_data`. Source-safe receipts and
@@ -76,6 +76,9 @@ This contract has no collector, credential, network, or schedule behavior.
   it is never a foreground sleep or token lifetime.
 - Data limitations are visible to their exact consumer. They never become a
   global approval gate or suppress an independent lane.
+- Tiingo's fixed ETF trio is a repeated historical sample, not independent
+  evidence. Its non-PIT scope cannot calibrate a later model-side threshold or
+  filter, and it cannot be joined into the KIS causal/Paper path.
 
 ## Current Evidence
 
@@ -90,6 +93,8 @@ This contract has no collector, credential, network, or schedule behavior.
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
 - QQQ MTF canonical window matrix:
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-matrix-v1\20260807-qqq-mtf-matrix-r2\summary.json`.
+- Tiingo raw-D1 collection receipt:
+  `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\4a2344b7ab8ec2eaf0b1a5e4afcd41e07cf0b4c14e13db64d07b41fd054883d2.json`.
 
 ## Handoff
 
