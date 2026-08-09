@@ -25,7 +25,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
 | PIT source candidates | `D:\market_data\pit_sources` contains empty Sharadar and Norgate membership templates only | No manifest, raw export, provenance, or consumer input; do not rescan until an actual export appears |
 | Tiingo prospective EOD snapshot | Immutable 2026-08-04 retrieval through source date 2026-07-28 for SPY/QQQ/IWM | Future-lineage only; model and Paper eligibility remain false |
-| Tiingo/Norgate D1 snapshots | Fixed offline controls; Tiingo has a hash-bound event-marker sidecar and Norgate NDU is healthy | Source-separated, non-Paper research only |
+| Tiingo/Norgate D1 snapshots | Tiingo has a hash-bound event-marker sidecar; Norgate tail refresh is source-unavailable as of 2026-08-09 | Source-separated, non-Paper research only; do not retry Norgate until its local subscription is active |
 
 The broad D1 panel remains current-listing-only, non-PIT, unadjusted or
 adjustment-unqualified, corporate-action-unqualified, and session-finality
@@ -348,6 +348,12 @@ undocumented timestamp seed.
   confirms the current client/root binding only; it does not rebuild the frozen
   snapshot or alter model, GPU, PnL, or Paper eligibility. Evidence:
   `D:\thericher-v2\model-artifacts\data\norgate-trial-tail-readiness-v1\tail-active-build-20260804-r2`.
+  The 2026-08-09 changed-build tail refresh reached the local host client but
+  received a categorical unavailable-subscription response before any source
+  series read, so it wrote no receipt. Keep the fixed prior snapshot intact and
+  classify only the new tail refresh as `source_unavailable`; retry after NDU
+  reports an active local subscription, not on a foreground loop. This affects
+  neither the KIS causal-input objective nor any existing source-local result.
   A separate hash-bound dividend-marker exclusion sidecar now reattests the
   same 512-session parent: 24 nonzero source markers yielded 72 exclusion rows
   over 55 distinct date groups. It is conservative post-hoc data hygiene only,

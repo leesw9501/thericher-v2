@@ -616,6 +616,12 @@ unproven; this is a reversible current-season repair, not an input promotion.
   rebuilds the frozen snapshot nor changes model, GPU, PnL, or Paper
   eligibility. Evidence:
   `D:\thericher-v2\model-artifacts\data\norgate-trial-tail-readiness-v1\tail-active-build-20260804-r2`.
+- The changed-build Norgate tail refresh on 2026-08-09 reached the local host
+  client but received a categorical unavailable-subscription response before a
+  source-series read; it wrote no new receipt. This makes only the new tail
+  refresh `source_unavailable`. Keep the frozen snapshot and its prior facts,
+  and retry only after NDU reports an active local subscription. It does not
+  affect KIS collection, Paper behavior, or existing source-local evidence.
 - An official free-source check found no single public panel that establishes
   point-in-time membership including delistings, corporate-action semantics,
   and daily OHLCV. SEC Market Structure and EDGAR can be bounded sidecars only,
