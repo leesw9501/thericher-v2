@@ -80,3 +80,21 @@ unbound, or availability-hash-mismatched later result remains scoped and is
 never a global hold. Execution continues to own the installed observer cadence;
 Infra is invoked only for existing Docker/task runtime. IWM current-head
 success remains unrelated to historical M1 reach.
+
+## Blocked-Goal Alternatives
+
+**Blocking fact:** the active company objective has no remaining local producer:
+only the enabled `thericher-kis-paper-intraday-head` task can create its later
+QQQ/SPY terminal, and its next owned sequence starts 2026-08-11 00:29 KST.
+The work graph is task-owned terminal -> offline exact-chain reader -> scoped
+classification -> conditional frozen candidate. Manual KIS, Docker, collector,
+training, and GPU alternatives are outside the objective.
+
+| Package | Owner/resource | Evidence, kill test, and recovery |
+| --- | --- | --- |
+| Later intraday terminal reattachment | Data / installed task and immutable artifact root | Reader must reproduce terminal, capture, availability, and optional pair binding; any missing/mismatched geometry or availability/finality fact yields scoped `input_unavailable`. Recover at the next task-owned 06:20 terminal. |
+| D1 stability observation | Data / existing scheduled observer | A source-safe `stable`, `changed`, or unavailable receipt can refine only D1 observability; no provider-finality or intraday-consumer claim. Recover at its own next due time. |
+| Virtual-Paper lifecycle receipt | Execution / existing scheduled task | Validate only the exact durable lifecycle and reconciliation state; any unknown result stays scoped and creates no new submission. Recover at its own next due time. |
+
+Claude's bounded block-classification request timed out as `review_unavailable`;
+it is not agreement or an approval hold. No operator decision is required.
