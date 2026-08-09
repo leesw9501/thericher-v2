@@ -357,6 +357,9 @@ undocumented timestamp seed.
   classify only the new tail refresh as `source_unavailable`; retry after NDU
   reports an active local subscription, not on a foreground loop. This affects
   neither the KIS causal-input objective nor any existing source-local result.
+  The host runner now emits only a fixed source-safe unavailable payload and a
+  recovery exit code on that path, never provider exception detail or a partial
+  receipt.
   A separate hash-bound dividend-marker exclusion sidecar now reattests the
   same 512-session parent: 24 nonzero source markers yielded 72 exclusion rows
   over 55 distinct date groups. It is conservative post-hoc data hygiene only,

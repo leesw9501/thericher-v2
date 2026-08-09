@@ -624,6 +624,9 @@ unproven; this is a reversible current-season repair, not an input promotion.
   refresh `source_unavailable`. Keep the frozen snapshot and its prior facts,
   and retry only after NDU reports an active local subscription. It does not
   affect KIS collection, Paper behavior, or existing source-local evidence.
+  Its host runner now emits only a fixed source-safe unavailable payload and a
+  recovery exit code on this path; it creates no partial receipt or exception
+  detail for a later consumer to misread.
 - An official free-source check found no single public panel that establishes
   point-in-time membership including delistings, corporate-action semantics,
   and daily OHLCV. SEC Market Structure and EDGAR can be bounded sidecars only,
