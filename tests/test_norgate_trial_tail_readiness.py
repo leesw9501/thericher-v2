@@ -12,6 +12,7 @@ import pytest
 
 from thericher_v2.data.norgate_trial_tail_readiness import (
     NORGATE_TAIL_MINIMUM_COMMON_SESSIONS,
+    NorgateLocalDatabaseConfigurationError,
     NorgateTailReferenceObservation,
     NorgateTrialTailReadinessError,
     build_norgate_trial_tail_readiness_receipt,
@@ -39,13 +40,26 @@ class _Client:
     class StockPriceAdjustmentType:
         NONE = "none"
 
-    def __init__(self, sessions_by_symbol: dict[str, list[date]]) -> None:
+    def __init__(
+        self,
+        sessions_by_symbol: dict[str, list[date]],
+        *,
+        databases: tuple[str, ...] = ("US Equities",),
+    ) -> None:
         self._sessions_by_symbol = sessions_by_symbol
+        self._databases = databases
+        self.metadata_calls = 0
+        self.price_calls = 0
+
+    def databases(self) -> list[str]:
+        return list(self._databases)
 
     def last_database_update_time(self, _database: str) -> datetime:
+        self.metadata_calls += 1
         return datetime(2026, 8, 1, 18, 59, 55, tzinfo=UTC)
 
     def price_timeseries(self, symbol: str, **_kwargs: Any) -> _Rows:
+        self.price_calls += 1
         return _Rows(self._sessions_by_symbol[symbol])
 
 
@@ -93,6 +107,32 @@ def test_short_tail_receipt_is_source_safe_and_replayable(
         artifact_root=root,
         repo_root=repo,
     ) == result
+
+
+@pytest.mark.parametrize(
+    ("databases", "reason"),
+    [
+        ((), "no_configured_databases"),
+        (("AU Equities",), "us_equities_database_not_configured"),
+    ],
+)
+def test_unusable_local_catalog_fails_before_metadata_or_price_reads(
+    databases: tuple[str, ...], reason: str
+) -> None:
+    client = _Client(
+        {symbol: [] for symbol in ("SPY", "QQQ", "IWM")},
+        databases=databases,
+    )
+
+    with pytest.raises(NorgateLocalDatabaseConfigurationError) as raised:
+        collect_norgate_tail_reference_observation(
+            requested_end=date(2026, 8, 1),
+            client_loader=lambda: client,
+        )
+
+    assert raised.value.reason == reason
+    assert client.metadata_calls == 0
+    assert client.price_calls == 0
 
 
 def test_calendar_upper_bound_fails_before_a_panel_rebuild(tmp_path: Path) -> None:

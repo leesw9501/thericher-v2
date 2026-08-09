@@ -55,6 +55,21 @@ class NorgateTrialTailReadinessError(ValueError):
     """Raised when the bounded source-safe readiness contract is invalid."""
 
 
+class NorgateLocalDatabaseConfigurationError(NorgateTrialTailReadinessError):
+    """Raised when the local Norgate API has no usable US database catalog entry."""
+
+    _VALID_REASONS = {
+        "no_configured_databases",
+        "us_equities_database_not_configured",
+    }
+
+    def __init__(self, reason: str) -> None:
+        if reason not in self._VALID_REASONS:
+            raise ValueError("Norgate database configuration reason is invalid")
+        self.reason = reason
+        super().__init__("Norgate local US database configuration is unavailable")
+
+
 @dataclass(frozen=True, slots=True)
 class NorgateTailReferenceObservation:
     """In-memory D1 calendar evidence from the official local client."""
@@ -154,6 +169,7 @@ def collect_norgate_tail_reference_observation(
     if requested_end < requested_start:
         raise NorgateTrialTailReadinessError("Norgate tail window is invalid")
     client = _load_client(client_loader)
+    _assert_norgate_us_database_is_configured(client)
     try:
         source_update = client.last_database_update_time(NORGATE_US_DATABASE_NAME)
     except Exception as exc:
@@ -315,11 +331,27 @@ def _load_client(client_loader: ClientLoader | None) -> Any:
             client = client_loader()
         _ = client.PaddingType.NONE
         _ = client.StockPriceAdjustmentType.NONE
+        _ = client.databases
         _ = client.last_database_update_time
         _ = client.price_timeseries
     except Exception as exc:
         raise NorgateTrialTailReadinessError("Norgate local client is unavailable") from exc
     return client
+
+
+def _assert_norgate_us_database_is_configured(client: Any) -> None:
+    """Reject an empty or mismatched local catalog before reading date metadata."""
+
+    try:
+        configured = tuple(client.databases())
+    except Exception as exc:
+        raise NorgateTrialTailReadinessError("Norgate database catalog is unavailable") from exc
+    if not all(isinstance(name, str) and name for name in configured):
+        raise NorgateTrialTailReadinessError("Norgate database catalog is invalid")
+    if not configured:
+        raise NorgateLocalDatabaseConfigurationError("no_configured_databases")
+    if NORGATE_US_DATABASE_NAME not in configured:
+        raise NorgateLocalDatabaseConfigurationError("us_equities_database_not_configured")
 
 
 def _session_dates(

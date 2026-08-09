@@ -45,6 +45,39 @@ def test_runner_prints_the_safe_success_payload(
     assert json.loads(capsys.readouterr().out) == expected
 
 
+def test_runner_suppresses_local_client_output(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    runner = _load_runner()
+    expected = {"status": "input_unavailable", "reason": "calendar_short"}
+    observation = SimpleNamespace(source_update_at_utc=datetime(2026, 8, 9, tzinfo=UTC))
+
+    def noisy_collect(**_kwargs: object) -> SimpleNamespace:
+        print("third-party local client detail")
+        return observation
+
+    monkeypatch.setattr(runner, "collect_norgate_tail_reference_observation", noisy_collect)
+    monkeypatch.setattr(
+        runner,
+        "resolve_active_norgate_us_database_root",
+        lambda *_args, **_kwargs: Path("D:/norgate"),
+    )
+    monkeypatch.setattr(
+        runner,
+        "fingerprint_norgate_us_database_build",
+        lambda _root: "sha256:" + "a" * 64,
+    )
+    monkeypatch.setattr(
+        runner,
+        "build_norgate_trial_tail_readiness_receipt",
+        lambda **kwargs: _Result(expected, kwargs),
+    )
+    monkeypatch.setattr(sys, "argv", [str(_SCRIPT), "--run-label", "unit-r1"])
+
+    assert runner.main() == 0
+    assert capsys.readouterr().out == json.dumps(expected, sort_keys=True) + "\n"
+
+
 def test_runner_sanitizes_local_source_failures_without_calling_later_steps(
     monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
@@ -66,6 +99,26 @@ def test_runner_sanitizes_local_source_failures_without_calling_later_steps(
         "kind": "norgate_trial_tail_readiness",
         "reason": "local_source_unavailable",
         "recovery": "retry_after_local_source_recovery",
+        "status": "unavailable",
+    }
+
+
+def test_runner_reports_empty_catalog_without_source_details(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    runner = _load_runner()
+
+    def fail_observation(**_kwargs: object) -> object:
+        raise runner.NorgateLocalDatabaseConfigurationError("no_configured_databases")
+
+    monkeypatch.setattr(runner, "collect_norgate_tail_reference_observation", fail_observation)
+    monkeypatch.setattr(sys, "argv", [str(_SCRIPT), "--run-label", "unit-r1"])
+
+    assert runner.main() == runner._RECOVERY_EXIT_CODE
+    assert json.loads(capsys.readouterr().out) == {
+        "kind": "norgate_trial_tail_readiness",
+        "reason": "no_configured_databases",
+        "recovery": "configure_local_norgate_us_database",
         "status": "unavailable",
     }
 
