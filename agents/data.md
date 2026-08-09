@@ -20,7 +20,7 @@ never read `KIS_LIVE_*` or route account/order calls.
 | KIS Paper private D1 cache | `input_unavailable` for daily-EMA preparation | Explicitly unadjusted, partial, and missing daily finality/as-of metadata |
 | KIS Paper IWM/AMS M1 current head | Legacy v1 plus two explicitly selectable v2-bound current-day observations over one immutable snapshot | Exact selected v2 local replay has 120 completed M1, 8 M5, and 1 M10 buckets; H1/H3 are absent, and no history, qualification, or consumer promotion follows |
 | Yahoo intraday starter M1 manifest | Bounded metadata-only 8-day probe with one successful symbol | `input_unavailable` for source-native multi-symbol ORB; no raw scan or promotion |
-| KIS Paper SPY D1 stability observer | First task-owned receipt `stable` at 2026-08-04 23:15 KST | Bounded source-safe observation only; never a qualification or consumer bridge |
+| KIS Paper SPY D1 stability observer | Latest reattached task-owned receipt `d1-stability-20260807T141501Z-attempt-04-c5e2cd1a0693` is `stable` | One unadjusted daily GET, zero retry/foreground wait, and provider finality `not_observed`; bounded source-safe observation only, never a qualification or consumer bridge |
 | KIS SPY paginated-prefix capability cache | First task-owned receipt is incomplete after one accepted page | Exact endpoint pagination fact only; no decision-time availability or consumer promotion |
 | KIS broad NAS D1 panel | Terminal current-listing control | Offline, non-promoting source-local research only |
 | PIT source candidates | `D:\market_data\pit_sources` contains empty Sharadar and Norgate membership templates only | No manifest, raw export, provenance, or consumer input; do not rescan until an actual export appears |
@@ -50,6 +50,12 @@ undocumented timestamp seed.
   classification, not a scheduler-result, raw-data, model, Paper, fill, PnL,
   or alpha claim. The existing task next owns 2026-08-11 00:29 KST; do not
   manually rerun or duplicate it.
+- **D1 stability reattachment:** the exact 2026-08-07 23:15 KST receipt
+  `d1-stability-20260807T141501Z-attempt-04-c5e2cd1a0693` independently
+  validates as `stable` for unadjusted SPY/AMS `dailyprice`: one GET, zero
+  retries, and no foreground wait. Its `provider_finality` remains
+  `not_observed`, so it is a bounded Data observation only. The installed
+  observer owns the next 2026-08-10 23:15 KST opportunity.
 - **Completed IWM current-head ingestion:**
   `kis-paper-iwm-m1-current-head-ingestion-v1` accepted one IWM/AMS current-day
   page at 2026-08-07 01:46 UTC and retained one immutable, target-isolated

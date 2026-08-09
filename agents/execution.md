@@ -20,10 +20,17 @@ only the direct lifecycle `canary-20260805T143501171367Z`. The host projector
 and independent offline validator both classify that lifecycle as `cancelled`
 with `clean` reconciliation and attribution `not_eligible`. It is a
 cancelled-and-clean virtual-Paper execution result only: no fill, PnL,
-profitability, or model conclusion follows. Its latest 2026-08-06 23:35 KST
-Scheduler result is `0`; reattaching that source-safe session outcome remains
-outside this execution package. The same existing task owns the next
-opportunity at 2026-08-10 23:35 KST; do not manually invoke or duplicate it.
+profitability, or model conclusion follows.
+
+The later 2026-08-07 23:35 KST task-owned receipt
+`paper-session-20260807T143501281497Z` independently reattaches as
+`canary_completed` at `intent_recorded`, bound only to direct lifecycle
+`canary-20260807T143501281497Z`. That lifecycle is `not_submitted` with
+`not_submitted` sizing, `not_observed` submit response, `unresolved`
+reconciliation, and unavailable attribution. It is not a submission, fill,
+PnL, profitability, or model result, and it creates no manual-recovery action.
+The same existing task owns the next opportunity at 2026-08-10 23:35 KST; do
+not manually invoke or duplicate it.
 
 The existing `thericher-kis-paper-quote-session` Windows task owned one current
 virtual-Paper canary at 2026-08-04 23:35 KST and exited with Task Scheduler
@@ -33,7 +40,7 @@ result `0`. Its exact scheduled-session receipt
 `canary-20260722T184759527919Z` state; the independent offline lifecycle
 validator agrees on `outcome_unknown/unresolved`. This is neither a new broker
 or lifecycle result nor a fill, no-intent, or PnL result. Do not manually invoke
-the task, infer an outcome, or create a second runner; the later 2026-08-05
+the task, infer an outcome, or create a second runner; the later 2026-08-07
 receipt is the current exact canary evidence above.
 
 The separate 2026-08-04 23:50 KST daily SPY receipt is exactly
@@ -368,11 +375,13 @@ Paper hold.
 ## Handoff
 
 After the task runs, reattach its source-safe runtime projection and matching
-offline validator before interpreting the lifecycle. The 2026-08-05 result is
-`cancelled/clean` and attribution-ineligible; its next recovery action is the
-existing task's next due run, not a foreground retry. Record only result
-category, reconciliation class, route isolation, evidence pointer, and next
-recovery action. Historic execution evidence remains in Git and
+offline validator before interpreting the lifecycle. The latest 2026-08-07
+result is `not_submitted/unresolved` and attribution-unavailable; its next
+recovery action is the existing task's next due run, not a foreground retry.
+The earlier 2026-08-05 result remains `cancelled/clean` and
+attribution-ineligible. Record only result category, reconciliation class,
+route isolation, evidence pointer, and next recovery action. Historic
+execution evidence remains in Git and
 `D:\thericher-v2\model-artifacts\execution`; the latest pre-current canary
 session receipt is
 `kis-paper-canary-session\paper-session-20260801T143501387961Z\evidence.json`.

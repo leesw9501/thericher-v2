@@ -331,10 +331,15 @@ scheduled-session receipt `paper-session-20260805T143501171367Z` is
 projector both classify that lifecycle as `cancelled` with `clean`
 reconciliation and `not_eligible` attribution. This is a categorical
 cancelled-and-clean virtual-Paper result, not a broker fill, PnL, or model
-result. Its latest 2026-08-07 23:35 KST Scheduler result is `0`; reattaching
-  that source-safe session outcome remains outside this engine package. The
-  existing task owns the next opportunity at 2026-08-10 23:35 KST; do not
-  manually invoke or duplicate it.
+result. Its later 2026-08-07 23:35 KST task-owned receipt
+`paper-session-20260807T143501281497Z` independently reattaches as
+`canary_completed` at `intent_recorded`, bound only to direct lifecycle
+`canary-20260807T143501281497Z`. That lifecycle is `not_submitted` with
+`not_submitted` sizing, `not_observed` submit response, `unresolved`
+reconciliation, and unavailable attribution. It is not a submit, fill, PnL,
+or model result and creates no manual-recovery action. The existing task owns
+the next opportunity at 2026-08-10 23:35 KST; do not manually invoke or
+duplicate it.
 
 The existing `thericher-kis-paper-quote-session` Windows task completed its
 2026-08-04 23:35 KST invocation with Task Scheduler result `0`. Its exact
@@ -343,8 +348,9 @@ reattaches only `recovery_required/prior_submission_unresolved` to the
 preserved run `canary-20260722T184759527919Z`; the independent lifecycle
 validator also reports `outcome_unknown/unresolved`. This is not a new
 lifecycle, broker, fill, no-intent, or PnL result. Do not manually invoke,
-infer an outcome, or duplicate the task; the next task-owned opportunity is
-2026-08-05 23:35 KST.
+infer an outcome, or duplicate the task; the later 2026-08-07 receipt is the
+current exact lifecycle evidence and the next task-owned opportunity is
+2026-08-10 23:35 KST.
 
 The matching 2026-08-04 23:50 KST daily SPY session receipt is exactly
 `daily-spy-20260804T145002356832Z`: `no_intent/quote_unavailable`, with no
@@ -763,8 +769,8 @@ unproven; this is a reversible current-season repair, not an input promotion.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution | Exact 08-05 scheduled receipt is `canary_completed`; the direct lifecycle independently validates as `cancelled/clean` and attribution-ineligible. The latest 08-07 23:35 KST Scheduler result is `0`, and its source-safe outcome remains Execution-owned. This is execution evidence only, not fill, PnL, or model evidence. Next owned canary opportunity is 2026-08-10 23:35 KST |
-| SPY D1 stability observation | Data | First 23:15 KST receipt `stable`; latest 08-07 23:15 KST Scheduler result is `0`, and source-safe receipt reattachment remains Data-owned. Next owned observation is 2026-08-10 23:15 KST |
+| Virtual-Paper lifecycle canary | Execution | Exact 08-07 scheduled receipt is `canary_completed/intent_recorded`; direct lifecycle independently validates as `not_submitted/unresolved`, attribution unavailable, with no submit, fill, PnL, or model result. The 08-05 `cancelled/clean` result remains historic. Next owned canary opportunity is 2026-08-10 23:35 KST |
+| SPY D1 stability observation | Data | Exact 08-07 receipt `d1-stability-20260807T141501Z-attempt-04-c5e2cd1a0693` is `stable`: one unadjusted GET, zero retry/foreground wait, provider finality `not_observed`. It remains observational only. Next owned observation is 2026-08-10 23:15 KST |
 | Current-head receipt binding | Data / Execution | The exact 06:20 KST pointer/terminal is `recovery/collection_exit_nonzero` with a verified `incomplete` same-run capture binding. Its historic targets now project as `not_recorded_legacy`; future receipts carry collector-time duplicate-conflict provenance through the same exact bound chain. QQQ/v4 remain `not_applicable`. |
 | SPY paginated-prefix capability | Data | First exact receipt is `measurement_incomplete_or_invalid`: clean control, one accepted page, invalid seam, no next cursor; legacy terminal signal is `not_recorded_legacy`, and the rebuilt existing worker owns the next attempt |
 | Session-reset Donchian mechanics | Engine Research | Completed immutable source-local `2026-08-06-r1` preflight from the deterministic first 20 complete QQQ/NAS M1 sessions. Causal prefix hashes, `source: local_paper` replay, terminal-flat mechanics, and explicit no-rule-activation classification pass; no PnL/performance output, GPU, promotion, or Paper-input consequence |
@@ -889,14 +895,15 @@ metadata-only projection. DST/pre-market behavior remains unproven.
    run. Reattach only a later caller-selected exact terminal, capture, and
    prospective chain; do not manually invoke KIS, Docker, the task, or an
    alternate collector.
-2. Preserve the exact 2026-08-05 `canary_completed` session fact and direct
-   `cancelled/clean` lifecycle result as virtual-Paper execution evidence only.
-   Do not infer a fill, PnL, or model outcome, manually invoke a replacement,
-   or duplicate the existing task. Its latest 2026-08-07 23:35 KST Scheduler
-   result is `0`; the next opportunity is 2026-08-10 23:35 KST.
-3. Preserve the completed D1 `stable` observation as source-safe observational
-   evidence only; do not treat its cache snapshot or result as provider-finality
-   evidence.
+2. Preserve the exact 2026-08-07 `canary_completed/intent_recorded` session
+   fact and direct `not_submitted/unresolved` lifecycle result as virtual-Paper
+   execution evidence only. Do not infer a submit, fill, PnL, or model outcome,
+   manually invoke a replacement, or duplicate the existing task. The next
+   opportunity is 2026-08-10 23:35 KST.
+3. Preserve the exact 2026-08-07 D1 `stable` observation as source-safe
+   observational evidence only: its one-GET/zero-retry outcome still has
+   provider finality `not_observed`, so never treat it as a consumer or
+   provider-finality bridge.
 4. When Data produces a fresh qualified causal input, freeze the next distinct
    Engine contract and let Research Steward allocate GPU only if it is eligible.
 5. At a company-goal boundary, run required verification, commit/push, replace
