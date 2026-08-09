@@ -23,6 +23,7 @@ facts from a scheduler result alone.
 | Collection recovery projection | Data | Existing exact-pointer/capture reader | Completed. It requires `recovery/collection_exit_nonzero`, emits `rejected_duplicate_conflict` only for the exact verified capture chain, and otherwise emits `evidence_unavailable`. |
 | Duplicate-conflict provenance | Data | Existing backfill result and session-capture contracts | Completed. Future exact receipts preserve collector-time conflict origin/disposition; historic missing fields are `not_recorded_legacy`, and partial/mixed/unknown future forms fail closed. |
 | Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Next owned invocation is 2026-08-11 00:29 KST. No manual run or duplicate collector. |
+| Task-owned causal evidence binding | Data | Existing intraday-head task and its existing local-only pair service | Ready for the next owned invocation: one source-local availability receipt is bound by its contract/receipt/precommit/summary hashes, and a pair attempt is accepted only when its immutable contract matches all four. A matching chain still remains `input_unavailable` until decision-time availability and provider finality are observed. No new task, collector, broker route, or model/GPU appointment. |
 | EMA source-local mechanics | Engine Research / Execution | Frozen QQQ/NAS 20-session catalog and existing local replay | Completed: the `20260807-ema-mechanics-r2` external replay is local-paper-only, replayable, and terminal-flat; it has no performance or promotion claim. |
 | QQQ multi-timeframe resampling mechanics | Data / Engine Research | Frozen QQQ/NAS M1 catalog and existing session resampler | Completed: immutable `20260807-qqq-mtf-r1` records 20 session-aligned completed-bar inputs with M1/M5/M10/H1/H3 aggregate geometry; H1/H3 terminal 30-minute buckets are explicitly excluded. It is source-local CPU evidence only. |
 | QQQ baseline causal MTF windows | Data / Engine Research | Completed `20260807-qqq-mtf-window-r3` receipt | Completed: the fixed M1=30/M5=6/M10=3/H1=2/H3=2 profile has 600/120/60/40/40 aggregate completed windows at 15:30 ET, with H1/H3 terminal partials excluded. Parent receipt hash and external-path integrity are verified. |
@@ -60,16 +61,13 @@ observability can still improve Paper readiness without claiming model validity.
 
 ## Current Reversible Improvement
 
-Do not wait for the task-owned collection. The recurring observer now has one
-hash-bound `complete` reattachment and categorical loopback health, while
-remaining outside order and strategy paths. Its sidecar is assumed-honest-host
-marker provenance only, so neither its success nor Task Scheduler result
-qualifies market input. Keep the existing Data task as the sole next collector;
-its exact receipt chain, not a cache timestamp, decides the next causal-input
-classification. Until then, do not dispatch another source-only discovery or
-target-free experiment by default; the next Engine capacity freezes an
-existing candidate only after a qualified input. This is a reversible queue
-priority, not a gate on independent Data or Execution work.
+Do not wait for the task-owned collection. The existing Data task will
+materialize one source-local historical availability receipt in its own run,
+bind its four immutable hashes into the terminal, and bind any eligible pair
+attempt to that same contract. An unavailable local receipt stays a scoped
+`not_observed` result; a malformed receipt remains task-local recovery. This
+does not add a scheduler, collector, broker route, or promotion path. Claude's
+bounded drift-check timed out, so it is `review_unavailable`, not agreement.
 
 ## Current Recovery Action
 
@@ -77,7 +75,7 @@ Data owns the existing 2026-08-11 00:29 KST QQQ/SPY task invocation; it is the
 only owner of a later actual KIS collection. The 2026-08-08 chain's bound
 identities and hash are verified offline, while its incomplete coverage closes
 only that exact input as `input_unavailable`. A conflicted, incomplete, late,
-or unbound later result remains scoped and is never a global hold. Execution
-continues to own the installed observer cadence; Infra is invoked only for
-existing Docker/task runtime. IWM current-head success remains unrelated to
-historical M1 reach.
+unbound, or availability-hash-mismatched later result remains scoped and is
+never a global hold. Execution continues to own the installed observer cadence;
+Infra is invoked only for existing Docker/task runtime. IWM current-head
+success remains unrelated to historical M1 reach.

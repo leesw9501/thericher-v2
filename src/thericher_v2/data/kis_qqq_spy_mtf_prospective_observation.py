@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import stat
 from collections.abc import Iterator, Mapping, Sequence
 from contextlib import contextmanager
 from dataclasses import dataclass, field
@@ -30,7 +31,10 @@ from thericher_v2.models.sequence_window import (
     SequenceWindowInputError,
     build_causal_multitimeframe_sequence_window,
 )
-from thericher_v2.research.artifact_paths import ensure_external_artifact_directory
+from thericher_v2.research.artifact_paths import (
+    ensure_external_artifact_directory,
+    reject_repo_artifact_path,
+)
 
 KIS_QQQ_SPY_MTF_PROSPECTIVE_OBSERVATION_ID = "kis-qqq-spy-mtf-prospective-observation-v1"
 KIS_QQQ_SPY_MTF_PROSPECTIVE_OBSERVATION_ARTIFACT_DIRECTORY = (
@@ -741,6 +745,44 @@ def append_kis_qqq_spy_mtf_prospective_attempt(
         )
 
 
+def read_kis_qqq_spy_mtf_prospective_attempt(
+    *,
+    artifact_root: Path | str,
+    repo_root: Path | str,
+    attempt_sha256: str,
+) -> KisQqqSpyMtfProspectiveAttempt:
+    """Read one caller-selected immutable attempt without a provider route."""
+
+    _require_sha256(attempt_sha256, "attempt sha256")
+    root = _readable_attempt_store_root(
+        artifact_root=Path(artifact_root),
+        repo_root=Path(repo_root),
+    )
+    contract = _read_store_contract(root)
+    matches = [
+        attempt
+        for attempt in _load_primary_attempts(root, contract.contract_sha256).values()
+        if attempt.attempt_sha256 == attempt_sha256
+    ]
+    if len(matches) != 1:
+        raise KisQqqSpyMtfProspectiveObservationError("prospective attempt is unavailable")
+    return matches[0]
+
+
+def read_kis_qqq_spy_mtf_prospective_contract(
+    *,
+    artifact_root: Path | str,
+    repo_root: Path | str,
+) -> KisQqqSpyMtfProspectiveContract:
+    """Read the immutable contract for an existing attempt store without creating state."""
+
+    root = _readable_attempt_store_root(
+        artifact_root=Path(artifact_root),
+        repo_root=Path(repo_root),
+    )
+    return _read_store_contract(root)
+
+
 def _availability_binding(summary: Mapping[str, object]) -> dict[str, object]:
     if set(summary) != {"schema_version", "receipt_id", "precommit_sha256", "receipt"}:
         raise KisQqqSpyMtfProspectiveObservationError("availability summary shape is invalid")
@@ -1160,6 +1202,43 @@ def _attempt_store_root(*, artifact_root: Path, repo_root: Path) -> Path:
     )
 
 
+def _readable_attempt_store_root(*, artifact_root: Path, repo_root: Path) -> Path:
+    """Resolve an existing external attempt store without creating any directories."""
+
+    requested_root = Path(os.path.abspath(os.fspath(artifact_root)))
+    try:
+        reject_repo_artifact_path(requested_root, repo_root)
+    except ValueError as error:
+        raise KisQqqSpyMtfProspectiveObservationError(
+            "prospective attempt store is invalid"
+        ) from error
+    _require_no_link_ancestors(requested_root)
+    try:
+        root = requested_root.resolve(strict=True)
+    except OSError as error:
+        raise KisQqqSpyMtfProspectiveObservationError(
+            "prospective attempt store is unavailable"
+        ) from error
+    store = root / "data" / KIS_QQQ_SPY_MTF_PROSPECTIVE_OBSERVATION_ARTIFACT_DIRECTORY
+    store = store / KIS_QQQ_SPY_MTF_PROSPECTIVE_ATTEMPT_STORE_DIRECTORY
+    _require_no_link_ancestors(store)
+    for directory in (
+        root,
+        root / "data",
+        root / "data" / KIS_QQQ_SPY_MTF_PROSPECTIVE_OBSERVATION_ARTIFACT_DIRECTORY,
+        store,
+    ):
+        _require_real_directory(directory)
+    return store
+
+
+def _read_store_contract(root: Path) -> KisQqqSpyMtfProspectiveContract:
+    contract = _load_store_contract(root)
+    if contract is None:
+        raise KisQqqSpyMtfProspectiveObservationError("prospective attempt is unavailable")
+    return contract
+
+
 def _load_store_contract(root: Path) -> KisQqqSpyMtfProspectiveContract | None:
     path = root / "contract.json"
     if not path.exists():
@@ -1167,6 +1246,38 @@ def _load_store_contract(root: Path) -> KisQqqSpyMtfProspectiveContract | None:
     if path.is_symlink() or not path.is_file():
         raise KisQqqSpyMtfProspectiveObservationError("prospective attempt store is invalid")
     return _contract_from_payload(_read_json_object(path.read_bytes(), "prospective contract"))
+
+
+def _require_no_link_ancestors(path: Path) -> None:
+    absolute = Path(os.path.abspath(os.fspath(path)))
+    for candidate in reversed((absolute, *absolute.parents)):
+        try:
+            metadata = candidate.lstat()
+        except FileNotFoundError:
+            continue
+        except OSError as error:
+            raise KisQqqSpyMtfProspectiveObservationError(
+                "prospective attempt store is invalid"
+            ) from error
+        if stat.S_ISLNK(metadata.st_mode) or bool(
+            getattr(metadata, "st_file_attributes", 0) & 0x400
+        ):
+            raise KisQqqSpyMtfProspectiveObservationError("prospective attempt store is invalid")
+
+
+def _require_real_directory(path: Path) -> None:
+    try:
+        metadata = path.lstat()
+    except OSError as error:
+        raise KisQqqSpyMtfProspectiveObservationError(
+            "prospective attempt store is unavailable"
+        ) from error
+    if (
+        stat.S_ISLNK(metadata.st_mode)
+        or bool(getattr(metadata, "st_file_attributes", 0) & 0x400)
+        or not stat.S_ISDIR(metadata.st_mode)
+    ):
+        raise KisQqqSpyMtfProspectiveObservationError("prospective attempt store is invalid")
 
 
 def _contract_from_payload(payload: Mapping[str, object]) -> KisQqqSpyMtfProspectiveContract:

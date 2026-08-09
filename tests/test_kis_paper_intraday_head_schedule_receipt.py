@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import json
 import socket
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from hashlib import sha256
 from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
 
+import thericher_v2.ops.kis_paper_intraday_head_schedule_receipt as schedule_receipt
 from thericher_v2.ops.kis_paper_intraday_head_schedule_receipt import (
     KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY,
     KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME,
@@ -262,6 +263,107 @@ def test_schedule_fact_verifies_an_incomplete_observed_session_capture(tmp_path:
 
     assert fact.coverage_binding_status == "verified"
     assert fact.current_session_cumulative_coverage_category == "incomplete"
+
+
+def test_schedule_fact_keeps_a_bound_pair_attempt_input_unavailable_without_attestation(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    observed_at = datetime(2026, 7, 28, 15, 31, tzinfo=UTC)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        observed_at=datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+    )
+    availability_contract_sha256 = "sha256:" + "a" * 64
+    availability_receipt_sha256 = "sha256:" + "b" * 64
+    availability_precommit_sha256 = "sha256:" + "c" * 64
+    availability_summary_sha256 = "sha256:" + "d" * 64
+    prospective_contract_sha256 = "sha256:" + "e" * 64
+    attempt_sha256 = "sha256:" + "f" * 64
+    kwargs = {
+        **_complete_kwargs(),
+        "availability_status": "qualified_for_prospective_input",
+        "availability_contract_sha256": availability_contract_sha256,
+        "availability_receipt_sha256": availability_receipt_sha256,
+        "availability_precommit_sha256": availability_precommit_sha256,
+        "availability_summary_sha256": availability_summary_sha256,
+        "observation_status": "observed",
+        "observation_attempt_sha256": attempt_sha256,
+        "observation_attempt_status": "observed",
+        "observation_store_outcome": "appended",
+    }
+    write_kis_paper_intraday_head_schedule_receipt(
+        **kwargs,
+        **capture.binding_kwargs,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=observed_at,
+    )
+    monkeypatch.setattr(
+        schedule_receipt,
+        "read_kis_qqq_spy_mtf_prospective_attempt",
+        lambda **_: SimpleNamespace(
+            attempt_sha256=attempt_sha256,
+            contract_sha256=prospective_contract_sha256,
+            status="observed",
+            sealed_at=datetime(2026, 7, 28, 15, 30, tzinfo=UTC),
+            session_date=date(2026, 7, 28),
+        ),
+    )
+    monkeypatch.setattr(
+        schedule_receipt,
+        "read_kis_qqq_spy_mtf_prospective_contract",
+        lambda **_: SimpleNamespace(
+            contract_sha256=prospective_contract_sha256,
+            availability_contract_sha256=availability_contract_sha256,
+            availability_receipt_sha256=availability_receipt_sha256,
+            availability_precommit_sha256=availability_precommit_sha256,
+            availability_summary_sha256=availability_summary_sha256,
+        ),
+    )
+
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root,
+        repository_root=repository_root,
+        capture_cache_root=cache_root,
+        observation_artifact_root=artifact_root,
+    )
+
+    assert fact.availability_status == "qualified_for_prospective_input"
+    assert fact.availability_binding_status == "verified"
+    assert fact.availability_summary_sha256 == availability_summary_sha256
+    assert fact.observation_binding_status == "verified"
+    assert fact.observation_attempt_sha256 == attempt_sha256
+    assert fact.causal_input_status == "input_unavailable"
+    assert fact.causal_input_reason == "decision_time_availability_not_observed"
+    assert fact.decision_time_availability == "not_observed"
+    assert fact.provider_finality == "not_observed"
+
+    monkeypatch.setattr(
+        schedule_receipt,
+        "read_kis_qqq_spy_mtf_prospective_contract",
+        lambda **_: SimpleNamespace(
+            contract_sha256=prospective_contract_sha256,
+            availability_contract_sha256=availability_contract_sha256,
+            availability_receipt_sha256=availability_receipt_sha256,
+            availability_precommit_sha256=availability_precommit_sha256,
+            availability_summary_sha256="sha256:" + "0" * 64,
+        ),
+    )
+    with pytest.raises(
+        KisPaperIntradayHeadScheduleReceiptError,
+        match="schedule_availability_binding_mismatch",
+    ):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root,
+            repository_root=repository_root,
+            capture_cache_root=cache_root,
+            observation_artifact_root=artifact_root,
+        )
 
 
 @pytest.mark.parametrize(

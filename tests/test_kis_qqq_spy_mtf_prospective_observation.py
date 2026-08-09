@@ -76,6 +76,55 @@ def test_pair_attempt_binds_historical_exclusion_and_exact_causal_tails(tmp_path
     assert '"credential"' not in rendered
 
 
+def test_caller_selected_attempt_reader_reattests_one_immutable_attempt(tmp_path: Path) -> None:
+    historical_date = date(2026, 7, 20)
+    prospective_date = date(2026, 7, 21)
+    contract, repository, artifact_root = _contract(tmp_path, historical_date)
+    stored = observation.append_kis_qqq_spy_mtf_prospective_attempt(
+        artifact_root=artifact_root,
+        repo_root=repository,
+        draft=observation.materialize_kis_qqq_spy_mtf_prospective_attempt(
+            contract,
+            prospective_catalogs=_catalogs(prospective_date),
+            observed_at=_observed_after_cutoff(prospective_date),
+        ),
+    )
+    assert stored.attempt is not None
+
+    reattached = observation.read_kis_qqq_spy_mtf_prospective_attempt(
+        artifact_root=artifact_root,
+        repo_root=repository,
+        attempt_sha256=stored.attempt.attempt_sha256,
+    )
+
+    assert reattached == stored.attempt
+    assert observation.read_kis_qqq_spy_mtf_prospective_contract(
+        artifact_root=artifact_root,
+        repo_root=repository,
+    ) == contract
+    with pytest.raises(observation.KisQqqSpyMtfProspectiveObservationError):
+        observation.read_kis_qqq_spy_mtf_prospective_attempt(
+            artifact_root=artifact_root,
+            repo_root=repository,
+            attempt_sha256="sha256:" + "f" * 64,
+        )
+
+
+def test_caller_selected_attempt_reader_never_creates_a_missing_store(tmp_path: Path) -> None:
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    artifact_root.mkdir()
+
+    with pytest.raises(observation.KisQqqSpyMtfProspectiveObservationError):
+        observation.read_kis_qqq_spy_mtf_prospective_contract(
+            artifact_root=artifact_root,
+            repo_root=repository,
+        )
+
+    assert not (artifact_root / "data").exists()
+
+
 def test_one_leg_failure_is_a_sealed_not_observed_attempt(tmp_path: Path) -> None:
     historical_date = date(2026, 7, 20)
     prospective_date = date(2026, 7, 21)

@@ -65,6 +65,113 @@ function Get-ProfilePayload {
     return $null
 }
 
+function Get-UniqueSafeAvailabilityPayload {
+    param(
+        [Parameter(Mandatory = $true)]
+        [object[]]$Output
+    )
+
+    $expectedProperties = @(
+        "contract_sha256",
+        "precommit_sha256",
+        "reason",
+        "receipt_sha256",
+        "receipt_id",
+        "status",
+        "summary_sha256"
+    ) | Sort-Object
+    $safePayloads = @()
+    foreach ($line in $Output) {
+        $text = [string]$line
+        if (-not ($text.Trim().StartsWith("{") -and $text.Trim().EndsWith("}"))) {
+            continue
+        }
+        try {
+            $payload = $text | ConvertFrom-Json -ErrorAction Stop
+        } catch {
+            continue
+        }
+        $propertyNames = @($payload.PSObject.Properties.Name | Sort-Object)
+        if (
+            $propertyNames.Count -ne $expectedProperties.Count `
+                -or ($propertyNames -join "|") -ne ($expectedProperties -join "|")
+        ) {
+            continue
+        }
+        $receiptId = [string]$payload.receipt_id
+        $status = [string]$payload.status
+        $reason = $payload.reason
+        if (
+            $receiptId -ne "kis-intraday-mtf-availability-receipt-v1" `
+                -or $status -notin @("qualified_for_prospective_input", "input_unavailable") `
+                -or [string]$payload.contract_sha256 -notmatch '^sha256:[0-9a-f]{64}$' `
+                -or [string]$payload.receipt_sha256 -notmatch '^sha256:[0-9a-f]{64}$' `
+                -or [string]$payload.precommit_sha256 -notmatch '^sha256:[0-9a-f]{64}$' `
+                -or [string]$payload.summary_sha256 -notmatch '^sha256:[0-9a-f]{64}$'
+        ) {
+            continue
+        }
+        if (
+            ($status -eq "qualified_for_prospective_input" -and $null -ne $reason) `
+                -or ($status -eq "input_unavailable" `
+                    -and [string]$reason -ne "insufficient_contiguous_intraday_session_coverage")
+        ) {
+            continue
+        }
+        $safePayloads += $payload
+    }
+    if ($safePayloads.Count -ne 1) {
+        return $null
+    }
+    return $safePayloads[0]
+}
+
+function Get-SafePairObservationAttemptBinding {
+    param(
+        [Parameter(Mandatory = $true)]
+        [object[]]$Output
+    )
+
+    $bindings = @()
+    foreach ($line in $Output) {
+        $text = [string]$line
+        if (-not ($text.Trim().StartsWith("{") -and $text.Trim().EndsWith("}"))) {
+            continue
+        }
+        try {
+            $payload = $text | ConvertFrom-Json -ErrorAction Stop
+        } catch {
+            continue
+        }
+        if (
+            [string]$payload.kind -ne "kis_qqq_spy_mtf_prospective_observation" `
+                -or [string]$payload.store_outcome -notin @("appended", "duplicate") `
+                -or $null -eq $payload.attempt
+        ) {
+            continue
+        }
+        $stageStatus = [string]$payload.status
+        $attemptStatus = [string]$payload.attempt.status
+        $attemptSha256 = [string]$payload.attempt.attempt_sha256
+        if (
+            $attemptStatus -notin @("observed", "not_observed") `
+                -or $attemptSha256 -notmatch '^sha256:[0-9a-f]{64}$' `
+                -or ($stageStatus -ne $attemptStatus -and $stageStatus -ne "duplicate")
+        ) {
+            continue
+        }
+        $bindings += [pscustomobject]@{
+            attempt_sha256 = $attemptSha256
+            attempt_status = $attemptStatus
+            store_outcome = [string]$payload.store_outcome
+        }
+    }
+    if ($bindings.Count -ne 1) {
+        return $null
+    }
+    return $bindings[0]
+}
+
 function Get-UniqueSafeProfileSessionPayload {
     param(
         [Parameter(Mandatory = $true)]
@@ -366,10 +473,15 @@ $prospectiveValidationSessionId = $null
 $prospectiveValidationContract = $null
 $expectedProspectiveValidationContract = "runtime-freshness-v4"
 
+$availabilityExitCode = 0
+$availabilityStatus = "not_applicable"
+$availabilityRunLabel = "task-owned-$scheduleRunId"
+$availabilityReceiptBinding = $null
 $captureCycleExitCode = 0
 $captureCycleStatus = "not_applicable"
 $observationExitCode = 0
 $observationStatus = "not_applicable"
+$observationAttemptBinding = $null
 $sessionCaptureBinding = Get-UniqueSafeSessionCaptureTerminalBinding `
     -Output $collection.Output `
     -ExpectedScheduleRunId $scheduleRunId
@@ -544,23 +656,78 @@ if ($collectionExitCode -eq 0) {
             "appended",
             "busy"
         )
-    $pairObservation = Invoke-HeadProfileService `
+
+    # This refresh reads only the frozen historical cache. Its receipt is an
+    # exact source identity for the pair reader, not a decision-time or finality attestation.
+    $availability = Invoke-HeadProfileService `
         -ProjectRoot $resolvedProjectRoot `
-        -Service "kis-paper-intraday-pair-observation"
-    $observationExitCode = [int]$pairObservation.ExitCode
-    $observationStatus = Get-ProfileStatus `
-        -Output $pairObservation.Output `
-        -Kind "kis_qqq_spy_mtf_prospective_observation" `
-        -AllowedStatuses @(
-            "pending",
-            "unavailable",
-            "observed",
-            "not_observed",
-            "duplicate",
-            "conflict",
-            "cap_reached",
-            "busy"
+        -Service "kis-paper-intraday-pair-observation" `
+        -CommandOverride @(
+            "python",
+            "scripts/run_kis_intraday_mtf_availability_receipt.py",
+            "--cache-root",
+            "/app/market_data/us_equities/kis_paper_private/intraday",
+            "--artifact-root",
+            "/app/model_artifacts",
+            "--repo-root",
+            "/app",
+            "--run-label",
+            $availabilityRunLabel,
+            "--allow-current-source-identities"
         )
+    $availabilityExitCode = [int]$availability.ExitCode
+    $availabilityPayload = Get-UniqueSafeAvailabilityPayload -Output $availability.Output
+    if ($availabilityExitCode -eq 0 -and $null -ne $availabilityPayload) {
+        $availabilityStatus = [string]$availabilityPayload.status
+        $availabilityReceiptBinding = [pscustomobject]@{
+            contract_sha256 = [string]$availabilityPayload.contract_sha256
+            receipt_sha256 = [string]$availabilityPayload.receipt_sha256
+            precommit_sha256 = [string]$availabilityPayload.precommit_sha256
+            summary_sha256 = [string]$availabilityPayload.summary_sha256
+        }
+    } else {
+        $availabilityStatus = "unavailable"
+    }
+
+    if ($availabilityStatus -eq "qualified_for_prospective_input") {
+        $availabilitySummaryPath = (
+            "/app/model_artifacts/data/kis-intraday-mtf-availability-receipt-v1/" +
+            "$availabilityRunLabel/summary.json"
+        )
+        $pairObservation = Invoke-HeadProfileService `
+            -ProjectRoot $resolvedProjectRoot `
+            -Service "kis-paper-intraday-pair-observation" `
+            -CommandOverride @(
+                "python",
+                "scripts/run_kis_qqq_spy_mtf_prospective_attempt.py",
+                "--availability-summary",
+                $availabilitySummaryPath,
+                "--observed-at",
+                $scheduleObservedAtMarker
+            )
+        $observationExitCode = [int]$pairObservation.ExitCode
+        $observationStatus = Get-ProfileStatus `
+            -Output $pairObservation.Output `
+            -Kind "kis_qqq_spy_mtf_prospective_observation" `
+            -AllowedStatuses @(
+                "pending",
+                "unavailable",
+                "observed",
+                "not_observed",
+                "duplicate",
+                "conflict",
+                "cap_reached",
+                "busy"
+            )
+        $observationAttemptBinding = Get-SafePairObservationAttemptBinding `
+            -Output $pairObservation.Output
+    } elseif ($availabilityStatus -eq "input_unavailable") {
+        # A valid local receipt can establish that this exact pair has no
+        # historical input without turning the whole dispatch into a recovery.
+        $observationStatus = "not_observed"
+    } else {
+        $observationStatus = "unavailable"
+    }
 }
 $scheduleReceiptCommand = @(
     "python",
@@ -588,6 +755,10 @@ $scheduleReceiptCommand = @(
     [string]$prospectiveValidationExitCode,
     "--prospective-validation-status",
     $prospectiveValidationStatus,
+    "--availability-exit-code",
+    [string]$availabilityExitCode,
+    "--availability-status",
+    $availabilityStatus,
     "--observation-exit-code",
     [string]$observationExitCode,
     "--observation-status",
@@ -622,6 +793,28 @@ if ($null -ne $prospectiveSpyCycleId) {
 }
 if ($null -ne $prospectiveSpyCanaryRunId) {
     $scheduleReceiptCommand += @("--prospective-spy-canary-run-id", [string]$prospectiveSpyCanaryRunId)
+}
+if ($null -ne $availabilityReceiptBinding) {
+    $scheduleReceiptCommand += @(
+        "--availability-contract-sha256",
+        [string]$availabilityReceiptBinding.contract_sha256,
+        "--availability-receipt-sha256",
+        [string]$availabilityReceiptBinding.receipt_sha256,
+        "--availability-precommit-sha256",
+        [string]$availabilityReceiptBinding.precommit_sha256,
+        "--availability-summary-sha256",
+        [string]$availabilityReceiptBinding.summary_sha256
+    )
+}
+if ($null -ne $observationAttemptBinding) {
+    $scheduleReceiptCommand += @(
+        "--observation-attempt-sha256",
+        [string]$observationAttemptBinding.attempt_sha256,
+        "--observation-attempt-status",
+        [string]$observationAttemptBinding.attempt_status,
+        "--observation-store-outcome",
+        [string]$observationAttemptBinding.store_outcome
+    )
 }
 if ($null -ne $sessionCaptureBinding) {
     $scheduleReceiptCommand += @(
@@ -666,6 +859,8 @@ $terminalExitCode = Get-DispatchTerminalExitCode `
     prospective_validation_exit_code = $prospectiveValidationExitCode
     prospective_validation_status = $prospectiveValidationStatus
     prospective_validation_contract = $prospectiveValidationContract
+    availability_exit_code = $availabilityExitCode
+    availability_status = $availabilityStatus
     observation_exit_code = $observationExitCode
     observation_status = $observationStatus
     capture_cycle_exit_code = $captureCycleExitCode

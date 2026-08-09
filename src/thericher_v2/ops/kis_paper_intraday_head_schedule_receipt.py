@@ -21,6 +21,13 @@ from thericher_v2.data.kis_paper_intraday_session_capture import (
     KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES,
     KisPaperIntradaySessionCaptureTarget,
 )
+from thericher_v2.data.kis_qqq_spy_mtf_prospective_observation import (
+    KisQqqSpyMtfProspectiveAttempt,
+    KisQqqSpyMtfProspectiveContract,
+    KisQqqSpyMtfProspectiveObservationError,
+    read_kis_qqq_spy_mtf_prospective_attempt,
+    read_kis_qqq_spy_mtf_prospective_contract,
+)
 
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND = "kis_paper_intraday_head_schedule_receipt"
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY = (
@@ -64,6 +71,8 @@ _SCHEDULE_RECEIPT_KEYS = frozenset(
 )
 _SCHEDULE_RECEIPT_BINDING_KEY = "terminal_receipt_binding"
 _SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY = "session_capture_binding_required"
+_SCHEDULE_RECEIPT_AVAILABILITY_BINDING_KEY = "receipt_binding"
+_SCHEDULE_RECEIPT_OBSERVATION_BINDING_KEY = "observation_attempt_binding"
 _TERMINAL_RECEIPT_BINDING_KEYS = frozenset(
     {
         "schedule_run_id",
@@ -71,6 +80,21 @@ _TERMINAL_RECEIPT_BINDING_KEYS = frozenset(
         "receipt_sha256",
         "current_session_cumulative_coverage_digest",
         "current_session_cumulative_coverage_category",
+    }
+)
+_OBSERVATION_ATTEMPT_BINDING_KEYS = frozenset(
+    {
+        "attempt_sha256",
+        "attempt_status",
+        "store_outcome",
+    }
+)
+_AVAILABILITY_RECEIPT_BINDING_KEYS = frozenset(
+    {
+        "contract_sha256",
+        "receipt_sha256",
+        "precommit_sha256",
+        "summary_sha256",
     }
 )
 _SCHEDULE_RECEIPT_TERMINAL_KEYS = frozenset(
@@ -123,6 +147,16 @@ _CAPTURE_CYCLE_STATUSES = frozenset(
         "busy",
     }
 )
+_AVAILABILITY_STATUSES = frozenset(
+    {
+        "qualified_for_prospective_input",
+        "input_unavailable",
+        "unavailable",
+        "not_applicable",
+    }
+)
+_OBSERVATION_ATTEMPT_STATUSES = frozenset({"observed", "not_observed"})
+_OBSERVATION_ATTEMPT_OUTCOMES = frozenset({"appended", "duplicate"})
 _CAPTURE_RECEIPT_KIND = "kis_paper_intraday_session_capture"
 _CAPTURE_RECEIPT_DIRECTORY = ("v1", "session-capture")
 _CAPTURE_TARGET_KEYS = frozenset({"QQQ/NAS/1m", "SPY/AMS/1m"})
@@ -173,6 +207,56 @@ class KisPaperIntradayHeadTerminalReceiptBinding:
 
 
 @dataclass(frozen=True)
+class KisPaperIntradayHeadAvailabilityReceiptBinding:
+    """Source-safe hashes for the exact local availability receipt used downstream."""
+
+    contract_sha256: str
+    receipt_sha256: str
+    precommit_sha256: str
+    summary_sha256: str
+
+    def __post_init__(self) -> None:
+        for value, name in (
+            (self.contract_sha256, "availability contract sha256"),
+            (self.receipt_sha256, "availability receipt sha256"),
+            (self.precommit_sha256, "availability precommit sha256"),
+            (self.summary_sha256, "availability summary sha256"),
+        ):
+            _require_sha256(value, name)
+
+    def safe_payload(self) -> dict[str, str]:
+        return {
+            "contract_sha256": self.contract_sha256,
+            "receipt_sha256": self.receipt_sha256,
+            "precommit_sha256": self.precommit_sha256,
+            "summary_sha256": self.summary_sha256,
+        }
+
+
+@dataclass(frozen=True)
+class KisPaperIntradayHeadObservationAttemptBinding:
+    """Source-safe reference to one exact local-only pair-observation attempt."""
+
+    attempt_sha256: str
+    attempt_status: Literal["observed", "not_observed"]
+    store_outcome: Literal["appended", "duplicate"]
+
+    def __post_init__(self) -> None:
+        _require_sha256(self.attempt_sha256, "observation attempt sha256")
+        if self.attempt_status not in _OBSERVATION_ATTEMPT_STATUSES:
+            raise ValueError("observation attempt binding is invalid")
+        if self.store_outcome not in _OBSERVATION_ATTEMPT_OUTCOMES:
+            raise ValueError("observation attempt binding is invalid")
+
+    def safe_payload(self) -> dict[str, str]:
+        return {
+            "attempt_sha256": self.attempt_sha256,
+            "attempt_status": self.attempt_status,
+            "store_outcome": self.store_outcome,
+        }
+
+
+@dataclass(frozen=True)
 class KisPaperIntradayHeadScheduleReceipt:
     """One immutable terminal result for the existing scheduled dispatch."""
 
@@ -192,12 +276,16 @@ class KisPaperIntradayHeadScheduleReceipt:
     prospective_validation_status: str
     prospective_validation_session_id: str | None
     prospective_validation_contract: str | None
+    availability_exit_code: int
+    availability_status: str
+    availability_receipt_binding: KisPaperIntradayHeadAvailabilityReceiptBinding | None
     observation_exit_code: int
     observation_status: str
     capture_cycle_exit_code: int
     capture_cycle_status: str
     session_capture_binding_required: bool
     terminal_receipt_binding: KisPaperIntradayHeadTerminalReceiptBinding | None
+    observation_attempt_binding: KisPaperIntradayHeadObservationAttemptBinding | None
     terminal_status: str
     recovery_class: str
     scheduler_exit_code: int
@@ -214,6 +302,11 @@ class KisPaperIntradayHeadScheduleReceipt:
                 "collection": {
                     "exit_code": self.collection_exit_code,
                     "status": "exit_zero" if self.collection_exit_code == 0 else "exit_nonzero",
+                },
+                "availability": {
+                    "exit_code": self.availability_exit_code,
+                    "status": self.availability_status,
+                    "source_local": True,
                 },
                 "prospective_spy_cycle": {
                     "exit_code": self.prospective_spy_cycle_exit_code,
@@ -263,6 +356,20 @@ class KisPaperIntradayHeadScheduleReceipt:
             payload[_SCHEDULE_RECEIPT_BINDING_REQUIRED_KEY] = True
         if self.terminal_receipt_binding is not None:
             payload[_SCHEDULE_RECEIPT_BINDING_KEY] = self.terminal_receipt_binding.safe_payload()
+        if self.observation_attempt_binding is not None:
+            stages = payload["stages"]
+            assert isinstance(stages, dict)
+            observation = stages["observation"]
+            assert isinstance(observation, dict)
+            observation["attempt_binding"] = self.observation_attempt_binding.safe_payload()
+        if self.availability_receipt_binding is not None:
+            stages = payload["stages"]
+            assert isinstance(stages, dict)
+            availability = stages["availability"]
+            assert isinstance(availability, dict)
+            availability[_SCHEDULE_RECEIPT_AVAILABILITY_BINDING_KEY] = (
+                self.availability_receipt_binding.safe_payload()
+            )
         return payload
 
 
@@ -283,6 +390,20 @@ class KisPaperIntradayHeadScheduleFact:
     coverage_binding_status: Literal["legacy_unbound", "verified"]
     current_session_cumulative_coverage_digest: str | None
     current_session_cumulative_coverage_category: str | None
+    availability_status: str
+    availability_binding_status: Literal["legacy_unbound", "recorded", "verified"]
+    availability_contract_sha256: str | None
+    availability_receipt_sha256: str | None
+    availability_precommit_sha256: str | None
+    availability_summary_sha256: str | None
+    observation_binding_status: Literal["legacy_unbound", "verified"]
+    observation_attempt_sha256: str | None
+    observation_attempt_status: Literal["observed", "not_observed"] | None
+    observation_store_outcome: Literal["appended", "duplicate"] | None
+    causal_input_status: Literal["input_unavailable"]
+    causal_input_reason: str
+    decision_time_availability: Literal["not_observed"]
+    provider_finality: Literal["not_observed"]
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -314,6 +435,68 @@ class KisPaperIntradayHeadScheduleFact:
             )
         else:
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
+        if self.availability_status not in _AVAILABILITY_STATUSES | {"not_recorded_legacy"}:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_invalid")
+        availability_values = (
+            self.availability_contract_sha256,
+            self.availability_receipt_sha256,
+            self.availability_precommit_sha256,
+            self.availability_summary_sha256,
+        )
+        if self.availability_binding_status == "legacy_unbound":
+            if any(value is not None for value in availability_values):
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "schedule_availability_binding_invalid"
+                )
+        elif self.availability_binding_status in {"recorded", "verified"}:
+            if any(value is None for value in availability_values):
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "schedule_availability_binding_invalid"
+                )
+            for value, name in zip(
+                availability_values,
+                (
+                    "availability contract sha256",
+                    "availability receipt sha256",
+                    "availability precommit sha256",
+                    "availability summary sha256",
+                ),
+                strict=True,
+            ):
+                assert value is not None
+                _require_sha256(value, name)
+        else:
+            raise KisPaperIntradayHeadScheduleReceiptError(
+                "schedule_availability_binding_invalid"
+            )
+        if self.observation_binding_status == "legacy_unbound":
+            if (
+                self.observation_attempt_sha256 is not None
+                or self.observation_attempt_status is not None
+                or self.observation_store_outcome is not None
+            ):
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "schedule_observation_binding_invalid"
+                )
+        elif self.observation_binding_status == "verified":
+            _require_sha256(self.observation_attempt_sha256, "observation attempt sha256")
+            if self.observation_attempt_status not in _OBSERVATION_ATTEMPT_STATUSES:
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "schedule_observation_binding_invalid"
+                )
+            if self.observation_store_outcome not in _OBSERVATION_ATTEMPT_OUTCOMES:
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "schedule_observation_binding_invalid"
+                )
+        else:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_observation_binding_invalid")
+        if (
+            self.causal_input_status != "input_unavailable"
+            or not self.causal_input_reason
+            or self.decision_time_availability != "not_observed"
+            or self.provider_finality != "not_observed"
+        ):
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_causal_input_invalid")
 
     def safe_payload(self) -> dict[str, object]:
         """Expose only terminal scheduling categories, never external evidence paths."""
@@ -334,6 +517,20 @@ class KisPaperIntradayHeadScheduleFact:
             "current_session_cumulative_coverage_category": (
                 self.current_session_cumulative_coverage_category
             ),
+            "availability_status": self.availability_status,
+            "availability_binding_status": self.availability_binding_status,
+            "availability_contract_sha256": self.availability_contract_sha256,
+            "availability_receipt_sha256": self.availability_receipt_sha256,
+            "availability_precommit_sha256": self.availability_precommit_sha256,
+            "availability_summary_sha256": self.availability_summary_sha256,
+            "observation_binding_status": self.observation_binding_status,
+            "observation_attempt_sha256": self.observation_attempt_sha256,
+            "observation_attempt_status": self.observation_attempt_status,
+            "observation_store_outcome": self.observation_store_outcome,
+            "causal_input_status": self.causal_input_status,
+            "causal_input_reason": self.causal_input_reason,
+            "decision_time_availability": self.decision_time_availability,
+            "provider_finality": self.provider_finality,
         }
 
 
@@ -448,6 +645,9 @@ class _ScheduleReceiptTerminal:
     scheduler_exit_code: int
     session_capture_binding_required: bool
     terminal_receipt_binding: KisPaperIntradayHeadTerminalReceiptBinding | None
+    availability_status: str
+    availability_receipt_binding: KisPaperIntradayHeadAvailabilityReceiptBinding | None
+    observation_attempt_binding: KisPaperIntradayHeadObservationAttemptBinding | None
 
 
 def write_kis_paper_intraday_head_schedule_receipt(
@@ -470,6 +670,15 @@ def write_kis_paper_intraday_head_schedule_receipt(
     observation_status: str,
     capture_cycle_exit_code: int,
     capture_cycle_status: str,
+    availability_exit_code: int = 0,
+    availability_status: str = "not_applicable",
+    availability_contract_sha256: str | None = None,
+    availability_receipt_sha256: str | None = None,
+    availability_precommit_sha256: str | None = None,
+    availability_summary_sha256: str | None = None,
+    observation_attempt_sha256: str | None = None,
+    observation_attempt_status: str | None = None,
+    observation_store_outcome: str | None = None,
     prospective_validation_contract: str | None = None,
     session_capture_run_id: str | None = None,
     session_capture_observed_at: datetime | None = None,
@@ -505,6 +714,8 @@ def write_kis_paper_intraday_head_schedule_receipt(
         prospective_validation_status=prospective_validation_status,
         prospective_validation_session_id=prospective_validation_session_id,
         prospective_validation_contract=prospective_validation_contract,
+        availability_exit_code=availability_exit_code,
+        availability_status=availability_status,
         observation_exit_code=observation_exit_code,
         observation_status=observation_status,
         capture_cycle_exit_code=capture_cycle_exit_code,
@@ -519,6 +730,29 @@ def write_kis_paper_intraday_head_schedule_receipt(
     )
     if binding is not None and binding.schedule_run_id != run_id:
         raise ValueError("terminal receipt binding run id must match schedule run id")
+    availability_binding = _availability_receipt_binding_from_inputs(
+        contract_sha256=availability_contract_sha256,
+        receipt_sha256=availability_receipt_sha256,
+        precommit_sha256=availability_precommit_sha256,
+        summary_sha256=availability_summary_sha256,
+    )
+    if availability_binding is not None and availability_status not in {
+        "qualified_for_prospective_input",
+        "input_unavailable",
+    }:
+        raise ValueError("availability receipt binding does not match stage status")
+    if availability_status == "qualified_for_prospective_input" and availability_binding is None:
+        raise ValueError("qualified availability requires a receipt binding")
+    observation_binding = _observation_attempt_binding_from_inputs(
+        attempt_sha256=observation_attempt_sha256,
+        attempt_status=observation_attempt_status,
+        store_outcome=observation_store_outcome,
+    )
+    if observation_binding is not None and observation_status not in {
+        observation_binding.attempt_status,
+        "duplicate",
+    }:
+        raise ValueError("observation attempt binding does not match stage status")
     if type(require_session_capture_binding) is not bool:
         raise ValueError("terminal receipt binding requirement is invalid")
     binding_required = require_session_capture_binding or binding is not None
@@ -567,12 +801,16 @@ def write_kis_paper_intraday_head_schedule_receipt(
         prospective_validation_status=prospective_validation_status,
         prospective_validation_session_id=prospective_validation_session_id,
         prospective_validation_contract=prospective_validation_contract,
+        availability_exit_code=availability_exit_code,
+        availability_status=availability_status,
+        availability_receipt_binding=availability_binding,
         observation_exit_code=observation_exit_code,
         observation_status=observation_status,
         capture_cycle_exit_code=capture_cycle_exit_code,
         capture_cycle_status=capture_cycle_status,
         session_capture_binding_required=binding_required,
         terminal_receipt_binding=binding,
+        observation_attempt_binding=observation_binding,
         terminal_status=terminal_status,
         recovery_class=recovery_class,
         scheduler_exit_code=scheduler_exit_code,
@@ -593,6 +831,7 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
     *,
     repository_root: Path = _DEFAULT_REPOSITORY_ROOT,
     capture_cache_root: Path | None = None,
+    observation_artifact_root: Path | None = None,
 ) -> KisPaperIntradayHeadScheduleFact:
     """Read the one task-written pointer and its exact immutable terminal receipt.
 
@@ -609,6 +848,25 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         capture_cache_root=capture_cache_root,
         repository_root=repository_root,
     )
+    availability_binding = receipt.availability_receipt_binding
+    (
+        observation_binding_status,
+        observation_attempt_sha256,
+        observation_attempt_status,
+        observation_store_outcome,
+    ) = _read_observation_attempt_binding(
+        terminal=receipt,
+        observation_artifact_root=observation_artifact_root,
+        repository_root=repository_root,
+    )
+    causal_input_status, causal_input_reason = _causal_input_terminal(
+        terminal=receipt,
+        coverage_binding_status=coverage_binding_status,
+        coverage_category=coverage_category,
+        observation_binding_status=observation_binding_status,
+        observation_attempt_status=observation_attempt_status,
+        observation_store_outcome=observation_store_outcome,
+    )
     return KisPaperIntradayHeadScheduleFact(
         run_id=runtime.run_id,
         observed_at=runtime.observed_at,
@@ -619,6 +877,34 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         coverage_binding_status=coverage_binding_status,
         current_session_cumulative_coverage_digest=coverage_digest,
         current_session_cumulative_coverage_category=coverage_category,
+        availability_status=receipt.availability_status,
+        availability_binding_status=(
+            "verified"
+            if availability_binding is not None and observation_binding_status == "verified"
+            else "recorded"
+            if availability_binding is not None
+            else "legacy_unbound"
+        ),
+        availability_contract_sha256=(
+            None if availability_binding is None else availability_binding.contract_sha256
+        ),
+        availability_receipt_sha256=(
+            None if availability_binding is None else availability_binding.receipt_sha256
+        ),
+        availability_precommit_sha256=(
+            None if availability_binding is None else availability_binding.precommit_sha256
+        ),
+        availability_summary_sha256=(
+            None if availability_binding is None else availability_binding.summary_sha256
+        ),
+        observation_binding_status=observation_binding_status,
+        observation_attempt_sha256=observation_attempt_sha256,
+        observation_attempt_status=observation_attempt_status,
+        observation_store_outcome=observation_store_outcome,
+        causal_input_status=causal_input_status,
+        causal_input_reason=causal_input_reason,
+        decision_time_availability="not_observed",
+        provider_finality="not_observed",
     )
 
 
@@ -716,6 +1002,8 @@ def _validate_schedule_receipt_inputs(
     prospective_validation_status: str,
     prospective_validation_session_id: str | None,
     prospective_validation_contract: str | None,
+    availability_exit_code: int,
+    availability_status: str,
     observation_exit_code: int,
     observation_status: str,
     capture_cycle_exit_code: int,
@@ -728,6 +1016,7 @@ def _validate_schedule_receipt_inputs(
         prospective_loop_exit_code,
         prospective_session_exit_code,
         prospective_validation_exit_code,
+        availability_exit_code,
         observation_exit_code,
         capture_cycle_exit_code,
     )
@@ -735,6 +1024,7 @@ def _validate_schedule_receipt_inputs(
     _require_status(prospective_session_status, _SESSION_STATUSES, "prospective session")
     _require_status(prospective_validation_status, _VALIDATION_STATUSES, "prospective validation")
     _require_status(prospective_spy_cycle_status, _SPY_CYCLE_STATUSES, "prospective SPY cycle")
+    _require_status(availability_status, _AVAILABILITY_STATUSES, "availability")
     _require_status(observation_status, _OBSERVATION_STATUSES, "observation")
     _require_status(capture_cycle_status, _CAPTURE_CYCLE_STATUSES, "capture cycle")
     _require_optional_safe_id(prospective_session_id, "prospective session id")
@@ -858,6 +1148,60 @@ def _receipt_terminal_from_payload(payload: Mapping[str, Any]) -> _ScheduleRecei
         )
     )
     binding_required = binding_required or binding is not None
+    stages = payload.get("stages")
+    if not isinstance(stages, Mapping):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+    availability_status = "not_recorded_legacy"
+    availability_binding = None
+    availability = stages.get("availability")
+    if availability is not None:
+        if not isinstance(availability, Mapping) or frozenset(availability) not in {
+            frozenset({"exit_code", "status", "source_local"}),
+            frozenset(
+                {
+                    "exit_code",
+                    "status",
+                    "source_local",
+                    _SCHEDULE_RECEIPT_AVAILABILITY_BINDING_KEY,
+                }
+            ),
+        }:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+        if availability.get("source_local") is not True:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+        _payload_exit_code(availability.get("exit_code"), "availability exit code")
+        availability_status = _payload_safe_id(
+            availability.get("status"),
+            "availability status",
+        )
+        if availability_status not in _AVAILABILITY_STATUSES:
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+        availability_value = availability.get(_SCHEDULE_RECEIPT_AVAILABILITY_BINDING_KEY)
+        availability_binding = (
+            None
+            if availability_value is None
+            else _availability_receipt_binding_from_payload(
+                availability_value,
+                error_code="schedule_evidence_invalid",
+            )
+        )
+        if (
+            availability_status == "qualified_for_prospective_input"
+            and availability_binding is None
+        ):
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+    observation = stages.get("observation")
+    if not isinstance(observation, Mapping):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+    observation_value = observation.get("attempt_binding")
+    observation_binding = (
+        None
+        if observation_value is None
+        else _observation_attempt_binding_from_payload(
+            observation_value,
+            error_code="schedule_evidence_invalid",
+        )
+    )
     return _ScheduleReceiptTerminal(
         run_id=_payload_schedule_run_id(payload.get("run_id"), "receipt run id"),
         observed_at=_payload_utc(payload.get("observed_at"), "receipt observed at"),
@@ -866,6 +1210,9 @@ def _receipt_terminal_from_payload(payload: Mapping[str, Any]) -> _ScheduleRecei
         scheduler_exit_code=scheduler_exit_code,
         session_capture_binding_required=binding_required,
         terminal_receipt_binding=binding,
+        availability_status=availability_status,
+        availability_receipt_binding=availability_binding,
+        observation_attempt_binding=observation_binding,
     )
 
 
@@ -900,6 +1247,50 @@ def _terminal_receipt_binding_from_inputs(
         raise ValueError("terminal receipt binding is invalid") from error
 
 
+def _availability_receipt_binding_from_inputs(
+    *,
+    contract_sha256: str | None,
+    receipt_sha256: str | None,
+    precommit_sha256: str | None,
+    summary_sha256: str | None,
+) -> KisPaperIntradayHeadAvailabilityReceiptBinding | None:
+    values = (contract_sha256, receipt_sha256, precommit_sha256, summary_sha256)
+    if all(value is None for value in values):
+        return None
+    if any(value is None for value in values):
+        raise ValueError("availability receipt binding is invalid")
+    try:
+        return KisPaperIntradayHeadAvailabilityReceiptBinding(
+            contract_sha256=contract_sha256,
+            receipt_sha256=receipt_sha256,
+            precommit_sha256=precommit_sha256,
+            summary_sha256=summary_sha256,
+        )
+    except ValueError as error:
+        raise ValueError("availability receipt binding is invalid") from error
+
+
+def _observation_attempt_binding_from_inputs(
+    *,
+    attempt_sha256: str | None,
+    attempt_status: str | None,
+    store_outcome: str | None,
+) -> KisPaperIntradayHeadObservationAttemptBinding | None:
+    values = (attempt_sha256, attempt_status, store_outcome)
+    if all(value is None for value in values):
+        return None
+    if any(value is None for value in values):
+        raise ValueError("observation attempt binding is invalid")
+    try:
+        return KisPaperIntradayHeadObservationAttemptBinding(
+            attempt_sha256=attempt_sha256,
+            attempt_status=attempt_status,  # type: ignore[arg-type]
+            store_outcome=store_outcome,  # type: ignore[arg-type]
+        )
+    except ValueError as error:
+        raise ValueError("observation attempt binding is invalid") from error
+
+
 def _terminal_receipt_binding_from_payload(
     value: object,
     *,
@@ -928,6 +1319,62 @@ def _terminal_receipt_binding_from_payload(
         raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
 
 
+def _availability_receipt_binding_from_payload(
+    value: object,
+    *,
+    error_code: str,
+) -> KisPaperIntradayHeadAvailabilityReceiptBinding:
+    if not isinstance(value, Mapping) or frozenset(value) != _AVAILABILITY_RECEIPT_BINDING_KEYS:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+    try:
+        return KisPaperIntradayHeadAvailabilityReceiptBinding(
+            contract_sha256=_payload_sha256(
+                value.get("contract_sha256"),
+                "availability contract sha256",
+            ),
+            receipt_sha256=_payload_sha256(
+                value.get("receipt_sha256"),
+                "availability receipt sha256",
+            ),
+            precommit_sha256=_payload_sha256(
+                value.get("precommit_sha256"),
+                "availability precommit sha256",
+            ),
+            summary_sha256=_payload_sha256(
+                value.get("summary_sha256"),
+                "availability summary sha256",
+            ),
+        )
+    except KisPaperIntradayHeadScheduleReceiptError as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
+
+
+def _observation_attempt_binding_from_payload(
+    value: object,
+    *,
+    error_code: str,
+) -> KisPaperIntradayHeadObservationAttemptBinding:
+    if not isinstance(value, Mapping) or frozenset(value) != _OBSERVATION_ATTEMPT_BINDING_KEYS:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code)
+    try:
+        return KisPaperIntradayHeadObservationAttemptBinding(
+            attempt_sha256=_payload_sha256(
+                value.get("attempt_sha256"),
+                "observation attempt sha256",
+            ),
+            attempt_status=_payload_safe_id(
+                value.get("attempt_status"),
+                "observation attempt status",
+            ),  # type: ignore[arg-type]
+            store_outcome=_payload_safe_id(
+                value.get("store_outcome"),
+                "observation store outcome",
+            ),  # type: ignore[arg-type]
+        )
+    except (KisPaperIntradayHeadScheduleReceiptError, ValueError) as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(error_code) from error
+
+
 def _read_capture_binding(
     *,
     terminal: _ScheduleReceiptTerminal,
@@ -949,6 +1396,109 @@ def _read_capture_binding(
         binding.current_session_cumulative_coverage_digest,
         binding.current_session_cumulative_coverage_category,
     )
+
+
+def _read_observation_attempt_binding(
+    *,
+    terminal: _ScheduleReceiptTerminal,
+    observation_artifact_root: Path | None,
+    repository_root: Path,
+) -> tuple[
+    Literal["legacy_unbound", "verified"],
+    str | None,
+    Literal["observed", "not_observed"] | None,
+    Literal["appended", "duplicate"] | None,
+]:
+    binding = terminal.observation_attempt_binding
+    if binding is None:
+        return "legacy_unbound", None, None, None
+    if observation_artifact_root is None:
+        raise KisPaperIntradayHeadScheduleReceiptError(
+            "schedule_observation_artifact_root_required"
+        )
+    try:
+        attempt = read_kis_qqq_spy_mtf_prospective_attempt(
+            artifact_root=observation_artifact_root,
+            repo_root=repository_root,
+            attempt_sha256=binding.attempt_sha256,
+        )
+        contract = read_kis_qqq_spy_mtf_prospective_contract(
+            artifact_root=observation_artifact_root,
+            repo_root=repository_root,
+        )
+    except (KisQqqSpyMtfProspectiveObservationError, OSError, ValueError) as error:
+        raise KisPaperIntradayHeadScheduleReceiptError(
+            "schedule_observation_attempt_invalid"
+        ) from error
+    _verify_observation_attempt_binding(
+        terminal=terminal,
+        binding=binding,
+        attempt=attempt,
+        contract=contract,
+    )
+    return (
+        "verified",
+        binding.attempt_sha256,
+        binding.attempt_status,
+        binding.store_outcome,
+    )
+
+
+def _verify_observation_attempt_binding(
+    *,
+    terminal: _ScheduleReceiptTerminal,
+    binding: KisPaperIntradayHeadObservationAttemptBinding,
+    attempt: KisQqqSpyMtfProspectiveAttempt,
+    contract: KisQqqSpyMtfProspectiveContract,
+) -> None:
+    availability_binding = terminal.availability_receipt_binding
+    if (
+        attempt.attempt_sha256 != binding.attempt_sha256
+        or attempt.status != binding.attempt_status
+        or attempt.contract_sha256 != contract.contract_sha256
+        or attempt.sealed_at > terminal.observed_at
+        or attempt.session_date != terminal.observed_at.astimezone(_EASTERN_TZ).date()
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_observation_binding_mismatch")
+    if availability_binding is None:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_binding_required")
+    if (
+        contract.availability_contract_sha256 != availability_binding.contract_sha256
+        or contract.availability_receipt_sha256 != availability_binding.receipt_sha256
+        or contract.availability_precommit_sha256 != availability_binding.precommit_sha256
+        or contract.availability_summary_sha256 != availability_binding.summary_sha256
+    ):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_binding_mismatch")
+
+
+def _causal_input_terminal(
+    *,
+    terminal: _ScheduleReceiptTerminal,
+    coverage_binding_status: Literal["legacy_unbound", "verified"],
+    coverage_category: str | None,
+    observation_binding_status: Literal["legacy_unbound", "verified"],
+    observation_attempt_status: Literal["observed", "not_observed"] | None,
+    observation_store_outcome: Literal["appended", "duplicate"] | None,
+) -> tuple[Literal["input_unavailable"], str]:
+    if terminal.terminal_status != "complete":
+        return "input_unavailable", "terminal_recovery"
+    if coverage_binding_status != "verified":
+        return "input_unavailable", "session_capture_unbound"
+    if coverage_category != "complete":
+        return "input_unavailable", "session_coverage_incomplete"
+    if terminal.availability_status == "not_recorded_legacy":
+        return "input_unavailable", "historical_availability_unbound"
+    if terminal.availability_receipt_binding is None:
+        return "input_unavailable", "historical_availability_unbound"
+    if terminal.availability_status != "qualified_for_prospective_input":
+        return "input_unavailable", "historical_availability_unavailable"
+    if observation_binding_status != "verified":
+        return "input_unavailable", "prospective_observation_unbound"
+    if observation_store_outcome != "appended":
+        return "input_unavailable", "prospective_observation_duplicate"
+    if observation_attempt_status != "observed":
+        return "input_unavailable", "prospective_pair_not_observed"
+    return "input_unavailable", "decision_time_availability_not_observed"
 
 
 def _read_bound_capture_receipt(
@@ -1695,6 +2245,15 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--prospective-validation-status", required=True)
     parser.add_argument("--prospective-validation-session-id")
     parser.add_argument("--prospective-validation-contract")
+    parser.add_argument("--availability-exit-code", type=int, default=0)
+    parser.add_argument("--availability-status", default="not_applicable")
+    parser.add_argument("--availability-contract-sha256")
+    parser.add_argument("--availability-receipt-sha256")
+    parser.add_argument("--availability-precommit-sha256")
+    parser.add_argument("--availability-summary-sha256")
+    parser.add_argument("--observation-attempt-sha256")
+    parser.add_argument("--observation-attempt-status")
+    parser.add_argument("--observation-store-outcome")
     parser.add_argument("--observation-exit-code", type=int, required=True)
     parser.add_argument("--observation-status", required=True)
     parser.add_argument("--capture-cycle-exit-code", type=int, required=True)
@@ -1734,6 +2293,15 @@ def main(argv: Sequence[str] | None = None) -> None:
         prospective_validation_status=args.prospective_validation_status,
         prospective_validation_session_id=args.prospective_validation_session_id,
         prospective_validation_contract=args.prospective_validation_contract,
+        availability_exit_code=args.availability_exit_code,
+        availability_status=args.availability_status,
+        availability_contract_sha256=args.availability_contract_sha256,
+        availability_receipt_sha256=args.availability_receipt_sha256,
+        availability_precommit_sha256=args.availability_precommit_sha256,
+        availability_summary_sha256=args.availability_summary_sha256,
+        observation_attempt_sha256=args.observation_attempt_sha256,
+        observation_attempt_status=args.observation_attempt_status,
+        observation_store_outcome=args.observation_store_outcome,
         observation_exit_code=args.observation_exit_code,
         observation_status=args.observation_status,
         capture_cycle_exit_code=args.capture_cycle_exit_code,

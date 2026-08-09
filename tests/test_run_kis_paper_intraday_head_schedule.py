@@ -132,6 +132,32 @@ def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it()
     assert '"--prospective-validation-contract",' in receipt_block
 
 
+def test_head_schedule_refreshes_task_owned_availability_before_pair_observation() -> None:
+    source = SCRIPT.read_text(encoding="ascii")
+
+    availability_runner = '"scripts/run_kis_intraday_mtf_availability_receipt.py"'
+    pair_runner = '"scripts/run_kis_qqq_spy_mtf_prospective_attempt.py"'
+    availability_start = source.index(availability_runner)
+    pair_start = source.index(pair_runner)
+    receipt_block = source.split("$scheduleReceiptCommand = @(\n", maxsplit=1)[1]
+
+    assert "Get-UniqueSafeAvailabilityPayload" in source
+    assert "Get-SafePairObservationAttemptBinding" in source
+    assert availability_start < pair_start
+    assert '"--allow-current-source-identities"' in source
+    assert '$availabilityStatus -eq "qualified_for_prospective_input"' in source
+    assert '$availabilityStatus -eq "input_unavailable"' in source
+    assert '"--availability-exit-code",' in receipt_block
+    assert '"--availability-status",' in receipt_block
+    assert '"--availability-contract-sha256",' in receipt_block
+    assert '"--availability-receipt-sha256",' in receipt_block
+    assert '"--availability-precommit-sha256",' in receipt_block
+    assert '"--availability-summary-sha256",' in receipt_block
+    assert '"--observation-attempt-sha256",' in receipt_block
+    assert '"--observation-attempt-status",' in receipt_block
+    assert '"--observation-store-outcome",' in receipt_block
+
+
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
 def test_head_schedule_normalizes_a_capture_binding_timestamp_from_json() -> None:
     source = SCRIPT.read_text(encoding="ascii")

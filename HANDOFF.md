@@ -33,7 +33,16 @@ invocation is 2026-08-11 00:29 KST. Reattach a caller-selected later terminal
 and its exact bound evidence offline, then qualify only if every causal,
 completed-bar, chronological-split, decision-time availability, and finality
 condition is separately evidenced. Otherwise preserve a scoped
-`input_unavailable` fact and let that task retain the next attempt.
+`input_unavailable` fact and let that task retain the next attempt. Before the
+next invocation, the task-owned local path now writes one current-cache
+availability receipt, binds its contract/receipt/precommit/summary hashes into
+the terminal, and accepts a prospective pair attempt only when its immutable
+contract matches the same four hashes. The offline reader rejects any mismatch;
+even a matching pair remains `input_unavailable` until decision-time
+availability and provider finality are separately observed. This adds no KIS
+request, scheduler, broker route, model, GPU appointment, or Paper intent.
+The Claude drift-check timed out, so this package is `review_unavailable`, not
+Claude agreement.
 
 `kis-paper-m1-historical-reach-probe-v1` is complete. Its one shared in-memory
 KIS Paper client made one current-day M1 GET for each fixed QQQ/NAS and SPY/AMS

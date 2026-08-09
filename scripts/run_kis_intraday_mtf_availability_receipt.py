@@ -40,6 +40,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--artifact-root", type=Path, default=_DEFAULT_ARTIFACT_ROOT)
     parser.add_argument("--repo-root", type=Path, default=_REPOSITORY_ROOT)
     parser.add_argument("--run-label", default=_DEFAULT_RUN_LABEL)
+    parser.add_argument(
+        "--allow-current-source-identities",
+        action="store_true",
+        help="omit the legacy fixed source-hash pin for one task-owned local receipt",
+    )
     args = parser.parse_args(argv)
 
     result = run_kis_intraday_mtf_availability_receipt(
@@ -48,13 +53,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         repo_root=Path(args.repo_root),
         run_label=str(args.run_label),
         code_revision=_code_revision(),
-        expected_dataset_hashes=_EXPECTED_DATASET_HASHES,
+        expected_dataset_hashes=(
+            None if args.allow_current_source_identities else _EXPECTED_DATASET_HASHES
+        ),
     )
     print(
         json.dumps(
             {
                 "receipt_id": KIS_INTRADAY_MTF_AVAILABILITY_RECEIPT_ID,
                 "contract_sha256": result.contract.contract_sha256,
+                "receipt_sha256": result.receipt.receipt_sha256,
                 "status": result.receipt.status,
                 "reason": result.receipt.reason,
                 "precommit_sha256": result.precommit_sha256,

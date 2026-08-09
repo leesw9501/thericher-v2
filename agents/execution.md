@@ -11,6 +11,15 @@ model output as untrusted input. `local_paper`, `kis_paper`, and `kis_live` are
 separate routes; local replay fills remain `source: local_paper`. Never read or
 route `KIS_LIVE_*`.
 
+## Intraday Data Evidence Boundary
+
+The next QQQ/SPY intraday-head task will bind a source-local availability
+receipt and, when available, one local pair-observation attempt into its own
+terminal. This is Data evidence only: it adds no account call, order intent,
+submission, fill, PnL, dashboard state, or live route. Execution must not
+consume the result unless a later objective separately supplies qualified input
+and replay-parity evidence.
+
 ## Current Objective: Virtual-Paper Lifecycle Canary Reattached
 
 The existing `thericher-kis-paper-quote-session` task completed its 2026-08-05

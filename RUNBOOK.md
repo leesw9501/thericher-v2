@@ -1491,9 +1491,11 @@ execution/data jobs.
 
 For one caller-selected `thericher-kis-paper-intraday-head` terminal, use only
 the offline projection below. It follows the task-owned current pointer and
-verifies its immutable terminal hash and same-run capture binding; it never
-loads credentials, starts Docker, reads a broker route, or opens raw minute
-rows.
+verifies its immutable terminal hash and same-run capture binding. When a
+later task writes them, it also reattests the exact source-local availability
+contract/receipt/precommit/summary hashes and the pair-attempt contract that
+uses them; any mismatch is rejected. It never loads credentials, starts
+Docker, reads a broker route, or opens raw minute rows.
 
 ```powershell
 $env:THERICHER_HOST_MODEL_ARTIFACT_ROOT = 'D:\thericher-v2\model-artifacts'
@@ -1506,9 +1508,10 @@ A terminal is not a causal-input qualification. Classify the exact input as
 completed-bar/session geometry, target/hash identity, chronological split,
 decision-time availability, or provider finality is absent. Never replace a
 missing fact with a scheduler exit code, cache timestamp, terminal page, or
-latest-artifact lookup. The existing Windows task alone owns the next attempt;
-continue independent Execution observation and CPU preparation without a
-foreground wait.
+latest-artifact lookup. Matching availability and pair hashes do not attest
+decision-time availability or provider finality by themselves. The existing
+Windows task alone owns the next attempt; continue independent Execution
+observation and CPU preparation without a foreground wait.
 
 ## Bounded Daily SPY Stability Observer
 

@@ -49,7 +49,14 @@ undocumented timestamp seed.
   availability nor provider-finality evidence. This is an exact evidence-chain
   classification, not a scheduler-result, raw-data, model, Paper, fill, PnL,
   or alpha claim. The existing task next owns 2026-08-11 00:29 KST; do not
-  manually rerun or duplicate it.
+  manually rerun or duplicate it. Before that owned invocation, its existing
+  local-only path now materializes a current-cache availability receipt and
+  binds its contract, receipt, precommit, and summary hashes into the terminal.
+  A later pair attempt must reattach to the exact same four hashes or the
+  offline reader rejects it. This adds no KIS request, new scheduler, raw-data
+  output, provider-finality claim, or consumer promotion; decision-time
+  availability and finality remain `not_observed`. Claude's bounded review
+  timed out as `review_unavailable`, not agreement.
 - **D1 stability reattachment:** the exact 2026-08-07 23:15 KST receipt
   `d1-stability-20260807T141501Z-attempt-04-c5e2cd1a0693` independently
   validates as `stable` for unadjusted SPY/AMS `dailyprice`: one GET, zero

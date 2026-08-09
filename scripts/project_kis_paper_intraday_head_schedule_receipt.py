@@ -64,6 +64,7 @@ def main(argv: list[str] | None = None) -> int:
             fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
                 arguments.artifact_root,
                 capture_cache_root=arguments.capture_cache_root,
+                observation_artifact_root=arguments.artifact_root,
             )
     except (KisPaperIntradayHeadScheduleReceiptError, ValueError):
         print(json.dumps({"status": "unavailable"}, sort_keys=True))

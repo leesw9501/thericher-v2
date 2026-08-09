@@ -22,6 +22,12 @@ strongest kill test before target evaluation or GPU consideration.
   unobserved. It cannot freeze a dataset, target, chronological split, or
   30/60/90-minute window matrix, so Engine Research retains no GPU appointment
   or predictive campaign from this result.
+- The next task-owned Data invocation may add only a hash-bound local
+  availability/pair evidence chain. Even if its four availability hashes and
+  pair contract reattach exactly, missing decision-time availability and
+  provider finality keep the result `input_unavailable`; it does not start
+  training, select a model, allocate the GPU, or form an ensemble. Claude's
+  bounded challenge timed out as `review_unavailable`, not agreement.
 - **Completed source-local mechanics package:**
   `source-local-session-reset-ema-mechanics-v1` replayed the pure 15/30
   session-reset EMA rule through the existing `source: local_paper` boundary
