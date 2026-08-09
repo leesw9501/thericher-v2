@@ -113,6 +113,17 @@ strongest kill test before target evaluation or GPU consideration.
   completed rolling windows before any separate allocation contract. It has no
   campaign, code import, GPU, Paper, PnL, or promotion consequence. Evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\pyportfolioopt-hrp-allocation-20260807-r1\source-retrieval.json`.
+- Qlib is an independently retrieved MIT `architecture_reference_only`, not a
+  proposed runtime or dependency. Its official repository describes
+  loose-coupled data, learning, strategy/executor, and analysis components, a
+  useful comparison for TheRicher's existing data -> frozen research ->
+  deterministic execution -> attribution custody. Its example public data is
+  explicitly not adopted, and it discloses no KIS-compatible U.S.-equity
+  evaluation scope in this retrieval. No Qlib code, package, model, weight, or
+  data was downloaded; it cannot create a campaign, GPU appointment, Paper
+  input, PnL, or promotion claim. Any runtime adoption remains a separately
+  reviewed major-runtime decision. Evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qlib-architecture-source-20260809-r1\source-retrieval.json`.
 - QuantConnect LEAN's `DonchianChannel` source and Apache-2.0 license were
   independently re-retrieved on 2026-08-05. The new pure
   `SessionResetDonchianRule` is a fixed `20`-bar entry / `10`-bar exit,
