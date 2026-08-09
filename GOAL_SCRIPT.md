@@ -21,7 +21,10 @@ shared contracts before dependent work relies on them.
 A prospective data condition gates only its named consumer, campaign, or
 promotion. It must not make historical Research, independent Data work, local
 simulation, or deterministic Paper preparation input-pending. When an external
-due time exists, keep every other ready bounded package moving.
+due time exists, keep every other ready bounded package moving. An owned
+`next_due` is neither company completion nor permission to end the task: do
+not report "no work" or leave the orchestrator foreground-idle while a
+non-conflicting bounded package remains ready.
 
 When the company objective itself is materially blocked, write one compact
 `blocked-goal alternatives` entry in `agents/orchestration.md`: exact blocking
