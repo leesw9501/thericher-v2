@@ -78,6 +78,77 @@ def test_head_coverage_reports_short_ranges_and_manifest_continuation_without_ra
     assert not list(cache_root.rglob("*.gz"))
 
 
+def test_head_coverage_promotes_a_later_complete_identical_row(tmp_path: Path) -> None:
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    session = _regular_session(date(2026, 7, 21))
+    last_start = session.window.close_ts - timedelta(minutes=1)
+    last_key = _korea_key(last_start)
+    _write_head_index(
+        cache_root,
+        chunks=(
+            {
+                "rows": {last_key: _digest("shared-389")},
+                "continuation_available": False,
+                "exact_overlap_rows": 0,
+                "collected_at": last_start,
+            },
+            {
+                "rows": _session_rows(session, range(390), "shared"),
+                "continuation_available": False,
+                "exact_overlap_rows": 1,
+                "collected_at": session.window.close_ts + timedelta(minutes=1),
+            },
+        ),
+    )
+
+    result = inspect_kis_paper_private_intraday_head_coverage(
+        cache_root=cache_root,
+        repo_root=tmp_path / "repo",
+        after_session_date=date(2026, 7, 7),
+        required_complete_session_count=1,
+    )
+
+    assert result.conflicting_overlap_category == "none"
+    assert result.exact_overlap_row_count == 1
+    assert result.session_coverage[0].complete_minute_count == 390
+    assert result.session_coverage[0].status == "complete"
+
+
+def test_head_coverage_keeps_conflicting_later_row_incomplete(tmp_path: Path) -> None:
+    cache_root = tmp_path / "market-data" / "intraday-head"
+    session = _regular_session(date(2026, 7, 21))
+    last_start = session.window.close_ts - timedelta(minutes=1)
+    last_key = _korea_key(last_start)
+    _write_head_index(
+        cache_root,
+        chunks=(
+            {
+                "rows": {last_key: _digest("first-389")},
+                "continuation_available": False,
+                "exact_overlap_rows": 0,
+                "collected_at": last_start,
+            },
+            {
+                "rows": _session_rows(session, range(390), "second"),
+                "continuation_available": False,
+                "exact_overlap_rows": 0,
+                "collected_at": session.window.close_ts + timedelta(minutes=1),
+            },
+        ),
+    )
+
+    result = inspect_kis_paper_private_intraday_head_coverage(
+        cache_root=cache_root,
+        repo_root=tmp_path / "repo",
+        after_session_date=date(2026, 7, 7),
+        required_complete_session_count=1,
+    )
+
+    assert result.conflicting_overlap_category == "retained_fingerprint_conflict"
+    assert result.session_coverage[0].complete_minute_count == 389
+    assert result.session_coverage[0].status == "short"
+
+
 @pytest.mark.parametrize("origin", ["candidate_batch", "retained_cache"])
 def test_head_coverage_exposes_safe_duplicate_conflict_origin_without_changing_preparation(
     origin: str,

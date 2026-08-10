@@ -414,17 +414,21 @@ def _first_seen_completion(
         if chunk.candidate_batch_conflicted:
             continue
         for row_key, fingerprint in chunk.rows:
-            prior = fingerprints.get(row_key)
-            if prior is not None:
-                retained_fingerprint_conflict = (
-                    retained_fingerprint_conflict or prior != fingerprint
-                )
-                continue
-            fingerprints[row_key] = fingerprint
-            completion[row_key] = raw_bar_end_is_complete(
+            observed_complete = raw_bar_end_is_complete(
                 start_ts=_korea_timestamp_to_utc(row_key),
                 collected_at=chunk.collected_at,
             )
+            prior = fingerprints.get(row_key)
+            if prior is not None:
+                if prior != fingerprint:
+                    retained_fingerprint_conflict = True
+                elif observed_complete:
+                    # Cumulative coverage may later confirm that an identical
+                    # row first retained while forming has completed.
+                    completion[row_key] = True
+                continue
+            fingerprints[row_key] = fingerprint
+            completion[row_key] = observed_complete
     return completion, retained_fingerprint_conflict
 
 

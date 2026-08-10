@@ -14,11 +14,11 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-`kis-intraday-coverage-contract-diagnosis-v1` will determine whether the
-existing QQQ/SPY current-session coverage result has a narrow deterministic
-aggregation or retention defect that is repairable offline. It advances data
-collection without manually invoking KIS, Docker, a task, or a scheduler, and
-does not select a model, claim PnL, or authorize Paper or live execution.
+`kis-intraday-coverage-repair-rollout-v1` will make the existing intraday-head
+image consume the verified metadata-only cumulative-coverage repair, without
+manually invoking its task or KIS route. It advances data collection and keeps
+the next runtime observation task-owned; it does not select a model, claim PnL,
+or authorize Paper or live execution.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -38,13 +38,22 @@ Decision-time availability and provider finality remain `not_observed`; this is
 a scoped Data limitation, never a hold on the Paper canary or another ready
 lane.
 
+The offline diagnosis found a narrow aggregation defect: an identical row first
+retained while still forming could remain incomplete even when a later retained
+copy was after the bar close. Coverage now promotes only an identical later row
+to complete; conflicting fingerprints and candidate-batch exclusions remain
+unchanged. A metadata-only re-evaluation of the current cache still reports the
+current session as short, so the immutable terminal receipt remains
+`input_unavailable`; no prior receipt, provider-finality fact, model input, or
+Paper behavior changed.
+
 ## Current Cross-Lane Facts
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data | The fresh terminal has verified capture/availability bindings but `incomplete` current-session coverage, `legacy_unbound` optional pair evidence, and `input_unavailable/session_coverage_incomplete`. | Diagnose only the offline aggregation/retention contract; preserve the source limitation if no deterministic defect is proved. |
+| Data | The metadata-only cumulative-coverage repair is tested, but the current cache remains short and the fresh terminal stays `input_unavailable/session_coverage_incomplete`. | Roll the repair into the existing task image without invoking the task; a later task-owned terminal is the only runtime confirmation. |
 | Data | The host-only Norgate loopback endpoint responds, but its own readiness status is false; its source-safe status-only response was HTTP `402`, so the installed client narrows it to `subscription_or_update_unavailable` without proving expiry versus update state. The reader stops before catalog, metadata, or price reads, and D: file freshness is not an active NDU registration, vendor-access, or rights proof. The NDU process is responsive and predates the 2026-08-09T18:34:14Z `UPDATE DONOTSHOW` request; a later hidden start only joined the existing instance. A new immutable Tiingo SPY/QQQ/IWM raw-D1 continuation through 2026-08-07 reattested offline, but Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The next daily operating review may recheck through the source-safe readiness reader. If it remains unavailable, the one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If NDU becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
-| Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. The fresh QQQ/SPY terminal is not a qualified consumer input. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
+| Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. The repair does not change the fresh QQQ/SPY terminal's unavailable consumer input. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
 | Execution | The existing 2026-08-10 quote-session receipt reattached offline as `canary_completed -> cancelled / clean`, with `paper_only` scope and attribution `not_eligible`. Scheduler result was `0`; the route/image and credential-free loopback health remained virtual-only/no-broker-call. | Lifecycle closure is complete. The existing task alone owns future canaries; do not infer a fill, PnL, alpha, or model result from this exact run. |
 | Shared worktree | Alternate IWM collector WIP is untracked/modified and rejected from this objective. | Do not touch, stage, invoke, or reconcile it without a separate assignment. |
@@ -53,7 +62,7 @@ lane.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| QQQ/SPY intraday coverage diagnosis | Data | Credential-free inspection of the existing current-head aggregation/retention contract is ready. It must use only source-safe receipts and metadata, never raw M1 rows or a duplicate collector. |
+| QQQ/SPY intraday coverage repair rollout | Data | Rebuild and statically reattest the existing task image only; do not invoke the task. A later owned terminal, not an offline recomputation, supplies runtime evidence. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | Closure evidence is complete: the 2026-08-10 owned task produced `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`. It is not a fill, PnL, or model result; future canaries remain task-owned. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
@@ -117,6 +126,10 @@ The 2026-08-11 intraday terminal closure used only the existing offline reader
 and source-safe task facts. It passed 85 focused receipt/capture/schedule tests,
 the 2,931-pass authority parallel suite with 17 skips, Ruff, both Compose
 configuration parses, and `git diff --check`.
+The cumulative-coverage repair used only fixture metadata and one filtered
+metadata-only cache inspection. It passed 90 focused coverage/capture/schedule
+tests, the 2,933-pass authority parallel suite with 17 skips, Ruff, both
+Compose configuration parses, and `git diff --check`.
 Use Git history for immutable commit checkpoints rather than copying a
 self-staling latest hash here.
 

@@ -1542,6 +1542,14 @@ availability and provider finality still `not_observed`. This is a source-safe
 coverage fact only, not a raw-data, model, execution, or provider-finality
 claim.
 
+The metadata-only coverage inspector now treats a later retained row with the
+same fingerprint and a completed bar end as cumulative confirmation of that
+row. It still reports a conflicting fingerprint and excludes candidate-batch
+conflicted chunks. This rule applies to future inspections and capture receipts;
+it does not rewrite prior immutable receipts. Re-evaluating the current cache
+under the repaired rule remained short, so the terminal above remains
+`input_unavailable` and no consumer is upgraded.
+
 ## Bounded Daily SPY Stability Observer
 
 `thericher-kis-paper-daily-spy-stability-observer` is a Data-only Windows task
