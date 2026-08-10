@@ -2,45 +2,47 @@
 
 ## Objective
 
-Build `kis-intraday-causal-observation-closure-v1`.
+Build `kis-intraday-coverage-contract-diagnosis-v1`.
 
-Reattach one terminal result from the existing task-owned QQQ/SPY intraday
-head sequence and classify its exact causal availability. This advances the
-data-collection and backtest/walk-forward-validation loops by establishing a
-source-safe input boundary; it does not select a strategy, claim PnL, or
-authorize Paper or live execution.
+Determine whether the existing QQQ/SPY current-session M1 coverage result has
+a narrow deterministic aggregation or retention defect that is repairable
+offline. This advances the data-collection loop while preserving the current
+causal input boundary; it does not select a strategy, train a model, claim PnL,
+or authorize Paper or live execution.
 
 ## Hard Boundaries
 
-- Use only the existing `thericher-kis-paper-intraday-head` task and its
-  established route for collection. Do not manually invoke it, Docker, KIS,
-  account/order/quote endpoints, or a replacement scheduler.
-- Inspect only source-safe task facts, immutable receipts, and existing
-  credential-free offline validators. Never print credentials, account values,
-  raw market rows, private intents, broker payloads, or identifiers.
-- Never read, reference, route, print, log, or persist `KIS_LIVE_*`; do not
-  enable live behavior or make a Paper submission from this objective.
-- A missing, unavailable, provisional, or unqualified result narrows only its
-  exact data input. It cannot become an approval hold or alter the closed
-  Paper-canary lifecycle evidence.
+- Do not manually invoke KIS, Docker, `thericher-kis-paper-intraday-head`, a
+  collector, a scheduler, or any account/order/quote endpoint.
+- Do not read credentials or `.env`, print or persist raw M1 rows, account
+  values, private intents, broker payloads, or identifiers. Never read or
+  route `KIS_LIVE_*`.
+- Inspect only credential-free source code, tests, source-safe receipt/cache
+  metadata, and the existing offline terminal reader. Do not replace its
+  task-owned pointer with a latest-artifact scan.
 - Do not touch, stage, invoke, or reconcile the alternate IWM collector WIP.
+- Do not change provider pacing, task schedules, execution routes, Paper
+  submission behavior, model eligibility, or GPU allocation from this goal.
 
 ## Required Work
 
-1. Preserve the installed task's owned 2026-08-11 00:29 KST collection and
-   06:20 KST terminal opportunities; do not foreground-wait or duplicate it.
-2. After the terminal writes evidence, reattach only the matching immutable
-   terminal, source-local capture, availability, and optional pair receipts
-   through the existing offline reader. Recompute its required hash bindings.
-3. Record the categorical result as `qualified_for_prospective_input` or
-   scoped `input_unavailable`; never infer provider finality, model validity,
-   fills, PnL, or alpha.
-4. Refresh the Data, Execution, and orchestration stateboards plus `HANDOFF.md`
-   with source-safe facts. Repair only an exact credential-free reader contract
-   if validation exposes one; otherwise retain the receipt outcome.
-5. Run changed-path focused tests and goal-boundary verification, commit and
-   push only owned changes, then replace this file with the next material
-   company objective.
+1. Trace the current-session coverage calculation from the existing exact
+   terminal binding through the source-safe capture metadata and current-head
+   aggregation/retention code. Keep all raw M1 rows unopened.
+2. Decide with focused fixture tests whether `incomplete` can arise from a
+   deterministic aggregation/retention defect. State the strongest kill test:
+   if the same valid metadata still yields incomplete coverage under the
+   intended contract, retain the scoped source limitation.
+3. If and only if a defect is proven, make the smallest credential-free repair
+   and add regression tests. Do not rebuild or run a collector, Docker service,
+   task, or scheduler in this objective.
+4. If no repairable defect is proven, record the categorical no-repair result
+   and select an independent next company objective rather than waiting for a
+   new market session.
+5. Refresh `HANDOFF.md`, the Data, Engine Research, Execution, and
+   orchestration stateboards, plus `RUNBOOK.md`. Ask Claude for a short
+   falsification-first drift check before relying on a repair or changing the
+   next data direction.
 
 ## Verification
 
@@ -54,4 +56,4 @@ docker compose config --quiet
 
 ## Suggested Commit Message
 
-`Close KIS Paper canary lifecycle evidence`
+`Diagnose intraday coverage contract`

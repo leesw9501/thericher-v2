@@ -1533,6 +1533,15 @@ decision-time availability or provider finality by themselves. The existing
 Windows task alone owns the next attempt; continue independent Execution
 observation and CPU preparation without a foreground wait.
 
+The fresh 2026-08-11 06:20 KST terminal reattached through this reader at
+2026-08-10T21:20:07Z. Its terminal, same-run capture, and availability bindings
+verified, but the cumulative current-session coverage category was `incomplete`;
+the optional pair binding remained `legacy_unbound`. Therefore this exact input
+is `input_unavailable/session_coverage_incomplete`, with decision-time
+availability and provider finality still `not_observed`. This is a source-safe
+coverage fact only, not a raw-data, model, execution, or provider-finality
+claim.
+
 ## Bounded Daily SPY Stability Observer
 
 `thericher-kis-paper-daily-spy-stability-observer` is a Data-only Windows task

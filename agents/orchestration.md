@@ -6,10 +6,10 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-intraday-causal-observation-closure-v1` will reattach the next terminal
-chain from the existing intraday-head task. Its external due time belongs to
-that task; the objective must not turn it into foreground idle. It is data
-availability evidence only, never a strategy, PnL, or live claim.
+`kis-intraday-coverage-contract-diagnosis-v1` will determine whether the
+existing QQQ/SPY current-session coverage result has a narrow deterministic
+aggregation or retention defect that is repairable offline. It is data
+collection work only, never a strategy, PnL, Paper action, or live claim.
 
 ## Ready / Owned / Due
 
@@ -19,48 +19,40 @@ availability evidence only, never a strategy, PnL, or live claim.
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | Closed for the 2026-08-10 owned receipt: `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`. Future evidence remains task-owned; no manual task, container, or duplicate submission. |
 | Norgate local readiness | Data | Existing NDU updater | The responsive NDU instance predates the 2026-08-09T18:34:14Z `UPDATE DONOTSHOW` request. Its status-only response is HTTP `402`, categorized as `subscription_or_update_unavailable` without an expiry claim; a later hidden start only joined the existing instance. This does not block the Paper canary. The daily operating review may recheck the local reader without duplicate starts or triggers; if still unavailable, one operator-visible NDU update plus database/subscription-state diagnostic is available. |
-| Intraday M1 head collection | Data | Existing `thericher-kis-paper-intraday-head` task | Independently owned next four-run sequence begins 2026-08-11 00:29 KST. Its post-close terminal remains the only candidate for the scoped causal reader. No manual duplicate collector. |
+| Intraday M1 coverage | Data | Existing terminal plus credential-free offline code | The fresh 06:20 KST terminal has verified capture/availability bindings but incomplete coverage and a legacy-unbound optional pair. Data owns a narrow aggregation/retention diagnosis; the task remains the sole future collector. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
 ## Current Bottleneck
 
 Fresh, KIS-reconstructible causal input coverage remains the predictive-engine
-bottleneck. The prior QQQ/SPY input is scoped `input_unavailable` because its
-coverage is incomplete and provider decision-time availability/finality remain
-unobserved. Paper lifecycle reliability has a separate ready proof path and
-does not depend on resolving that prediction-input limitation.
+bottleneck. The new QQQ/SPY terminal remains scoped
+`input_unavailable/session_coverage_incomplete`; decision-time availability and
+provider finality remain unobserved. The current reversible test is whether the
+coverage aggregation/retention contract, rather than an unsupported inference,
+explains the incomplete result. Paper lifecycle reliability has a separate ready
+proof path and does not depend on resolving that prediction-input limitation.
 
-## Blocked-Goal Alternatives
+## Current Cross-Lane Decision
 
-The current intraday observation objective has no foreground block: the
-installed task owns its 2026-08-11 00:29 KST collection sequence and 06:20 KST
-terminal. Original dependency order: owned collection -> terminal receipt ->
-capture/availability bindings -> optional pair binding -> offline causal
-reader. Until then, the task `next_due` is an owned fact, not a failure or an
-orchestration wait.
-
-| Recovery package | Owner / resource | Completion evidence | Strongest kill test / recovery |
-| --- | --- | --- | --- |
-| Reattach intraday terminal chain | Data / existing 2026-08-11 06:20 KST terminal | Exact terminal, capture, availability, and optional pair bindings through the existing reader. | Any missing binding yields scoped `input_unavailable`; do not duplicate collection. |
-| Reattach D1 stability observation | Data / existing 23:15 KST observer | Its existing categorical source-safe receipt. | Missing or unavailable record remains local to D1 finality; leave predictive inputs unchanged. |
-| Reattach next quote-session result | Execution / existing 2026-08-11 23:35 KST task | One fresh task-time-bound source-safe session and direct receipt when named. | No unique fresh receipt: preserve task `next_due`; never infer an outcome or resubmit. |
-
-Claude challenge: `review_unavailable` because its CLI timed out; this is not
-treated as agreement, a hold, or a change to the standing authority.
+There is no company-level block: Data has a ready offline diagnosis package.
+It may change only a proven deterministic aggregation/retention defect and
+must preserve the exact input limitation if the evidence instead indicates
+source coverage is incomplete. Claude returned `supported-with-limits`: the
+scope is falsifiable and credential-free, but it cannot upgrade decision-time
+availability, provider finality, or the legacy-unbound pair evidence.
 
 ## Current Reversible Improvement
 
-Tiingo IEX snapshot reattestation now preserves the pinned compressed artifact
-hash while independently checking the exact canonical gzip payload. This removes
-a Python/zlib cross-runtime encoding false negative without changing snapshot
-bytes, provider scope, KIS behavior, or promotion conditions. The next
-reversible focus is source-safe reattachment of the existing intraday terminal.
+Use a bounded offline coverage diagnosis before changing collector pacing,
+scheduling, or provider assumptions. This keeps the next improvement reversible
+and tests a named data-collection bottleneck without creating another worker or
+turning an unavailable input into an approval gate.
 
 ## Current Recovery Action
 
-Execution closed the existing quote-session lifecycle offline: the owned
-2026-08-10 receipt binds `canary_completed` to `cancelled / clean`, and the
-reader, image-presence, and loopback health reattested without a network client
-or broker call. The next recovery action is Data's existing intraday terminal;
-any missing or unavailable evidence remains local to that input path.
+The fresh intraday terminal reattached offline as complete with verified capture
+and availability bindings, but it is an exact
+`input_unavailable/session_coverage_incomplete` result. Data now diagnoses the
+existing offline coverage contract; no task, KIS route, Docker service, order,
+or GPU job is dispatched by that diagnosis.

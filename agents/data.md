@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | Latest exact chain is `input_unavailable/session_coverage_incomplete`; its optional causal-attestation binding is `not_recorded`, so decision-time availability and provider finality remain `not_observed`. | Only the installed task may produce a later candidate. No model or reusable Paper-candidate promotion; its separately owned QQQ runtime observation remains explicitly provisional. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The fresh 2026-08-11 06:20 KST terminal reattached as `complete` with verified same-run capture and availability bindings. Current-session coverage is `incomplete`; the optional pair binding is `legacy_unbound`, so causal input is `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. | Diagnose the existing offline aggregation/retention contract only. No model or reusable Paper-candidate promotion; its separately owned QQQ runtime observation remains explicitly provisional. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
@@ -28,22 +28,18 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
-Data has no direct broker-side-effect work in the current Paper lifecycle
-objective. It preserves the Tiingo IEX r1 completed offline reattestation and
-the independently owned KIS input tasks. The r1 cross-runtime gzip encoding
-difference was resolved by checking the pinned compressed artifact hash plus
-exact canonical payload, not by changing the snapshot or acquiring data. The
-result remains a source-local runtime input only.
+The fresh 06:20 KST terminal is closed as an exact, source-safe
+`input_unavailable/session_coverage_incomplete` classification. It differs
+from the prior terminal and its existing offline reader recomputed the terminal,
+capture, and availability bindings. The result does not establish provider
+finality, availability at a decision time, a model input, or a Paper action.
 
-The QQQ/NAS + SPY/AMS completed-session chain remains separately owned by its
-installed KIS task. Its old terminal is closed only for its incomplete coverage
-condition; it cannot become a provider-wide retention claim or an
-Engine/Execution hold.
-
-The task owns the next KST sequence on 2026-08-11 at 00:29, 02:28, 04:24, and
-06:20. The 06:20 terminal alone is eligible for a completed-session
-classification. Do not manually run the task, its Docker profile, a KIS
-client, or a parallel collector.
+The ready package is a narrow credential-free diagnosis of the current-head
+coverage aggregation and retention contract. It may inspect only source-safe
+receipt and cache metadata. It must not open raw M1 rows, invoke KIS, Docker,
+the installed task, or a parallel collector. If it finds no deterministic
+defect, the scoped limitation remains factual rather than becoming a global
+provider claim or an Engine/Execution hold.
 
 The offline reader now accepts a separately hash-bound causal-condition
 attestation at a fixed external artifact location, but no current task writes
@@ -55,10 +51,10 @@ This contract has no collector, credential, network, or schedule behavior.
 
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
-| Intraday causal evidence refresh | Existing `thericher-kis-paper-intraday-head` task | Exact terminal plus matching capture, availability, and optional pair hashes; reader recomputes the named availability-summary bytes. |
-| Offline classification | Data after task terminal | `qualified` only with completed-session geometry, chronological split, decision-time availability, and provider finality. Otherwise record the narrow unavailable reason. |
+| Intraday coverage-contract diagnosis | Data / source-safe offline code and receipts | Either a focused deterministic aggregation/retention repair with tests, or evidence that the current `incomplete` result is not repairable offline. |
+| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | A later task-owned terminal may be reattached independently; it does not block the offline diagnosis. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
-| SPY D1 stability | Existing task | Next 2026-08-10 23:15 KST observation; `stable` is not provider finality. |
+| SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The responsive NDU instance predates the 2026-08-09T18:34:14Z `UPDATE DONOTSHOW` request; a status-only probe now narrows readiness to `subscription_or_update_unavailable` from HTTP `402`, without determining expiry versus update state. Do not foreground-wait, duplicate either action, or infer a cause. The daily operating review may run the source-safe reader; if it remains unavailable, the one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
 
 ## Quality Contracts
@@ -111,4 +107,5 @@ This contract has no collector, credential, network, or schedule behavior.
 When a later task-owned input qualifies, hand Engine Research only its exact
 source-safe receipt pointer, source identity, target eligibility, split-ready
 time geometry, availability/finality facts, and limitations. Do not choose a
-model or construct a Paper order.
+model or construct a Paper order. The current terminal does not meet that
+handoff condition.

@@ -47,6 +47,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 | Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
 | Portfolio/allocation/meta-decision | Deterministic scale/cap foundation only | Aligned out-of-fold upstream candidate evidence |
 
+The fresh QQQ/SPY intraday terminal remains
+`input_unavailable/session_coverage_incomplete` despite verified capture and
+availability bindings. It creates no frozen contract, candidate, training run,
+GPU appointment, sealed-evaluation spend, ensemble input, or Paper input.
+
 ## Public-Source References
 
 | Reference | Status | Limit |
