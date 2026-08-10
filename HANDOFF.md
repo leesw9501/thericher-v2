@@ -14,10 +14,10 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-`kis-paper-canary-lifecycle-closure-v1` will reattach one eligible lifecycle
-from the existing `thericher-kis-paper-quote-session` task. It is execution
-readiness evidence only: the durable result may be no intent, intent-only,
-submitted/cancelled, or scoped unknown/recovery. It does not select a model,
+`kis-intraday-causal-observation-closure-v1` will reattach the next terminal
+evidence chain from the existing intraday-head task. It advances the data
+collection and backtest/walk-forward validation loops by determining whether
+one exact QQQ/SPY observation is causally usable; it does not select a model,
 claim PnL, or authorize live behavior.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
@@ -42,7 +42,7 @@ canary or another ready lane.
 | Data | The host-only Norgate loopback endpoint responds, but its own readiness status is false; its source-safe status-only response was HTTP `402`, so the installed client narrows it to `subscription_or_update_unavailable` without proving expiry versus update state. The reader stops before catalog, metadata, or price reads, and D: file freshness is not an active NDU registration, vendor-access, or rights proof. The NDU process is responsive and predates the 2026-08-09T18:34:14Z `UPDATE DONOTSHOW` request; a later hidden start only joined the existing instance. A new immutable Tiingo SPY/QQQ/IWM raw-D1 continuation through 2026-08-07 reattested offline, but Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The next daily operating review may recheck through the source-safe readiness reader. If it remains unavailable, the one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If NDU becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. Fixed QQQ local-paper EMA and Donchian baselines remain negative and closed for selection. | A later predictive campaign needs a distinct qualified input and frozen contract; it is not part of the Paper lifecycle objective. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
-| Execution | Loopback-only Paper dashboard and read-only observer are complete; no live route exists. On 2026-08-10 the existing receipt bridge/local simulator revalidated as broker-free with deterministic `local_paper` replay, and the quote-session task, local image, receipt reader, and categorical dashboard health reattested offline; no new lifecycle receipt exists after 2026-08-07. The task remains the sole owner of the current KIS lifecycle proof. | Reattach its next eligible receipt without duplicating task, container, or submission. Treat any non-submission or unknown state as exact-run scoped. |
+| Execution | The existing 2026-08-10 quote-session receipt reattached offline as `canary_completed -> cancelled / clean`, with `paper_only` scope and attribution `not_eligible`. Scheduler result was `0`; the route/image and credential-free loopback health remained virtual-only/no-broker-call. | Lifecycle closure is complete. The existing task alone owns future canaries; do not infer a fill, PnL, alpha, or model result from this exact run. |
 | Shared worktree | Alternate IWM collector WIP is untracked/modified and rejected from this objective. | Do not touch, stage, invoke, or reconcile it without a separate assignment. |
 
 ## Ready / Owned / Due
@@ -51,7 +51,7 @@ canary or another ready lane.
 | --- | --- | --- |
 | QQQ/SPY intraday causal evidence | Data | Installed `thericher-kis-paper-intraday-head` task owns the next sequence. Its source-local availability receipt and any pair attempt must bind the same contract, receipt, precommit, and summary hashes. |
 | SPY D1 stability | Data | Existing observer owns the next 2026-08-10 23:15 KST observation. Its status is observational only, never provider finality. |
-| Virtual-Paper lifecycle canary | Execution | Existing task owns the next eligible opportunity. Its result monitor reattaches only source-safe lifecycle evidence for the current objective. The latest exact canary is `intent_recorded/not_submitted/unresolved` with closed pre-submit disposition `reconciliation_unavailable`; five of its eight most-recent source-safe peers completed `submitted -> cancelled/clean`, so that anomaly is not a global route hold. It is not a submit, fill, PnL, or model result. |
+| Virtual-Paper lifecycle canary | Execution | Closure evidence is complete: the 2026-08-10 owned task produced `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`. It is not a fill, PnL, or model result; future canaries remain task-owned. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
 | Read-only Paper account observer | Execution | Existing four-minute task is the sole owner. Its validated provenance is marker-present under an assumed-honest host, not cryptographic Scheduler-origin proof. |
 | Public-source research | Engine Research | Qlib and PatchTST are source-only architecture references, with no code, package, data, weight, campaign, GPU, or Paper consequence. |

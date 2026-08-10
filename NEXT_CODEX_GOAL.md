@@ -2,62 +2,50 @@
 
 ## Objective
 
-Build `kis-paper-canary-lifecycle-closure-v1`.
+Build `kis-intraday-causal-observation-closure-v1`.
 
-Close one eligible, existing KIS Paper virtual-order canary lifecycle as
-source-safe operational evidence. The objective is a durable interpretation of
-what the existing owned task actually did: no intent, intent only,
-submitted/cancelled cleanly, or scoped unknown/recovery. It advances Paper
-execution readiness, not strategy profitability or model selection.
+Reattach one terminal result from the existing task-owned QQQ/SPY intraday
+head sequence and classify its exact causal availability. This advances the
+data-collection and backtest/walk-forward-validation loops by establishing a
+source-safe input boundary; it does not select a strategy, claim PnL, or
+authorize Paper or live execution.
 
 ## Hard Boundaries
 
-- Use only the existing `thericher-kis-paper-quote-session` owned task and its
-  established Paper-only route for any broker side effect. Do not manually
-  invoke the Windows task, its Docker profile, a KIS client, or a replacement
-  canary. The task's normal eligible session owns timing and submission.
-- `KIS_PAPER_*` use by that named existing path is authorized. Never read,
-  reference, route, print, log, or persist `KIS_LIVE_*`; do not enable a live
-  route or real-money behavior.
-- Inspect only source-safe task facts, immutable receipts, and categorical
-  loopback dashboard paths. Never print credentials, account identifiers,
-  balances, positions, raw broker bodies, raw price rows, order identifiers, or
-  private snapshot values.
-- Do not add a new scheduler, provider, dashboard surface, agent, model,
-  strategy, signal, market-data cache, capital envelope, or human-release gate.
-- A `not_submitted`, unavailable, or unknown result narrows only that exact
-  lifecycle. Reconcile it through its existing exact durable path; it cannot
-  block distinct authorized Paper work or create an approval wait.
+- Use only the existing `thericher-kis-paper-intraday-head` task and its
+  established route for collection. Do not manually invoke it, Docker, KIS,
+  account/order/quote endpoints, or a replacement scheduler.
+- Inspect only source-safe task facts, immutable receipts, and existing
+  credential-free offline validators. Never print credentials, account values,
+  raw market rows, private intents, broker payloads, or identifiers.
+- Never read, reference, route, print, log, or persist `KIS_LIVE_*`; do not
+  enable live behavior or make a Paper submission from this objective.
+- A missing, unavailable, provisional, or unqualified result narrows only its
+  exact data input. It cannot become an approval hold or alter the closed
+  Paper-canary lifecycle evidence.
 - Do not touch, stage, invoke, or reconcile the alternate IWM collector WIP.
 
 ## Required Work
 
-1. Reattest the existing quote-session task configuration and current image
-   provenance through source-safe Task Scheduler/Docker facts. Confirm its
-   existing route remains virtual-only and its execution receipt reader remains
-   credential-free; do not create a duplicate task or start a container.
-2. After its first eligible owned run, read only the resulting immutable
-   source-safe lifecycle receipt. Recompute the reader's required receipt/hash
-   bindings and record the categorical lifecycle, reconciliation state, and
-   local Paper/Paper-only scope. Missing evidence is `unknown`, never inferred
-   as success, busy, or failure.
-3. If the reader exposes one exact recoverable technical defect, repair and
-   test only that reader/route contract. Do not resubmit an unknown intent or
-   broaden the canary. If the lifecycle is clean, retain its exact result and
-   stop this objective without inventing a model or PnL interpretation.
-4. Inspect the credential-free loopback dashboard only through categorical
-   health/status paths. Its display is an operational aid, not broker evidence
-   or a new public surface.
-5. While the task owns an external due time, continue ready non-conflicting
-   offline Data/Engine/Execution package preparation. Do not foreground-wait;
-   preserve the task-owned `next_due` and reattach only after evidence exists.
-6. Refresh the active stateboards, `HANDOFF.md`, `RUNBOOK.md`, and
-   `DECISIONS.md`; run the required verification; commit, push, replace this
-   file with one material next company objective, and continue.
+1. Preserve the installed task's owned 2026-08-11 00:29 KST collection and
+   06:20 KST terminal opportunities; do not foreground-wait or duplicate it.
+2. After the terminal writes evidence, reattach only the matching immutable
+   terminal, source-local capture, availability, and optional pair receipts
+   through the existing offline reader. Recompute its required hash bindings.
+3. Record the categorical result as `qualified_for_prospective_input` or
+   scoped `input_unavailable`; never infer provider finality, model validity,
+   fills, PnL, or alpha.
+4. Refresh the Data, Execution, and orchestration stateboards plus `HANDOFF.md`
+   with source-safe facts. Repair only an exact credential-free reader contract
+   if validation exposes one; otherwise retain the receipt outcome.
+5. Run changed-path focused tests and goal-boundary verification, commit and
+   push only owned changes, then replace this file with the next material
+   company objective.
 
 ## Verification
 
 ```powershell
+uv run --extra dev pytest -q <changed paths>
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
