@@ -14,11 +14,11 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-`kis-intraday-coverage-repair-rollout-v1` will make the existing intraday-head
-image consume the verified metadata-only cumulative-coverage repair, without
-manually invoking its task or KIS route. It advances data collection and keeps
-the next runtime observation task-owned; it does not select a model, claim PnL,
-or authorize Paper or live execution.
+`kis-intraday-coverage-repair-runtime-observation-v1` owns only the later
+task-written source-safe terminal for the already-built intraday-head image.
+It advances data collection by reattaching categorical cumulative-coverage
+evidence without manually invoking its task or KIS route; it does not select a
+model, claim PnL, or authorize Paper or live execution.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -47,11 +47,21 @@ current session as short, so the immutable terminal receipt remains
 `input_unavailable`; no prior receipt, provider-finality fact, model input, or
 Paper behavior changed.
 
+The rollout is complete. In a clean `HEAD` worktree, the enabled intraday-head
+task was source-safely reattested as one action selecting the established
+dispatcher; the installed definition binds that dispatcher to the existing
+profile/service and exposes no live surface. The `kis-paper-intraday-head`
+image built with `.env.example` without starting a container. The 56 focused
+coverage/capture/recovery/schedule tests and the 2,933-pass authority parallel
+suite (17 skips) passed, as did Ruff and both Compose parses. The alternate IWM
+WIP was not modified, staged, invoked, reconciled, or included in the clean
+build context. Only a later task-owned terminal can observe the repaired writer.
+
 ## Current Cross-Lane Facts
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data | The metadata-only cumulative-coverage repair is tested, but the current cache remains short and the fresh terminal stays `input_unavailable/session_coverage_incomplete`. | Roll the repair into the existing task image without invoking the task; a later task-owned terminal is the only runtime confirmation. |
+| Data | The metadata-only cumulative-coverage repair is built and statically reattested, but the current cache remains short and the fresh terminal stays `input_unavailable/session_coverage_incomplete`. | Reattach only a later task-owned terminal; it is the sole runtime confirmation. |
 | Data | The host-only Norgate loopback endpoint responds, but its own readiness status is false; its source-safe status-only response was HTTP `402`, so the installed client narrows it to `subscription_or_update_unavailable` without proving expiry versus update state. The reader stops before catalog, metadata, or price reads, and D: file freshness is not an active NDU registration, vendor-access, or rights proof. The NDU process is responsive and predates the 2026-08-09T18:34:14Z `UPDATE DONOTSHOW` request; a later hidden start only joined the existing instance. A new immutable Tiingo SPY/QQQ/IWM raw-D1 continuation through 2026-08-07 reattested offline, but Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The next daily operating review may recheck through the source-safe readiness reader. If it remains unavailable, the one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If NDU becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. The repair does not change the fresh QQQ/SPY terminal's unavailable consumer input. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
@@ -62,7 +72,7 @@ Paper behavior changed.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| QQQ/SPY intraday coverage repair rollout | Data | Rebuild and statically reattest the existing task image only; do not invoke the task. A later owned terminal, not an offline recomputation, supplies runtime evidence. |
+| QQQ/SPY intraday repaired-image observation | Existing `thericher-kis-paper-intraday-head` task | The rollout is complete. A later owned terminal, not an offline recomputation, supplies runtime evidence. Current task `next_due`: 2026-08-13 00:29 KST. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-11 owned task produced `canary_completed -> outcome_unknown / unresolved`, `paper_only`, and attribution `unavailable`; the direct receipt records only an acknowledged order reference. It is not a fill, PnL, or model result. The exact intent remains with the existing reconciliation path; do not resubmit. Next task-owned opportunity: 2026-08-12 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |

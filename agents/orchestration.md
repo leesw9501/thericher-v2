@@ -6,10 +6,9 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-intraday-coverage-repair-rollout-v1` will make the existing intraday-head
-image consume the verified metadata-only cumulative-coverage repair. The next
-runtime observation remains task-owned; this is data collection work only,
-never a strategy, PnL, Paper action, or live claim.
+`kis-intraday-coverage-repair-runtime-observation-v1` reattaches only the next
+task-owned terminal for the already-built intraday-head image. This is data
+collection work only, never a strategy, PnL, Paper action, or live claim.
 
 ## Ready / Owned / Due
 
@@ -19,7 +18,7 @@ never a strategy, PnL, Paper action, or live claim.
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-11 owned receipt is `canary_completed -> outcome_unknown / unresolved`, `paper_only`, with attribution `unavailable`; its direct receipt has only an acknowledged order reference. Existing reconciliation owns the exact durable intent. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-12 23:35 KST. |
 | Norgate local readiness | Data | Existing NDU updater | The responsive NDU instance predates the 2026-08-09T18:34:14Z `UPDATE DONOTSHOW` request. Its status-only response is HTTP `402`, categorized as `subscription_or_update_unavailable` without an expiry claim; a later hidden start only joined the existing instance. This does not block the Paper canary. The daily operating review may recheck the local reader without duplicate starts or triggers; if still unavailable, one operator-visible NDU update plus database/subscription-state diagnostic is available. |
-| Intraday M1 coverage | Data | Existing task image and source-safe static checks | A tested metadata-only repair promotes later complete identical rows without altering conflicts. The current cache remains short, so only a later task-owned terminal can observe the repaired writer. |
+| Intraday M1 coverage | Data | Existing task image and source-safe terminal projection | The clean-context build and static reattestation completed; 56 focused tests, the 2,933-pass authority suite (17 skips), Ruff, and both Compose parses passed. The current cache remains short, so only a later task-owned terminal can observe the repaired writer; `next_due` is 2026-08-13 00:29 KST. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -35,26 +34,24 @@ limitation.
 
 ## Current Cross-Lane Decision
 
-There is no company-level block: Data has a ready image-rollout package. The
-repair is limited to cumulative metadata coverage, preserves conflicting-row
-and candidate-batch behavior, and leaves the exact input limitation intact.
-Claude returned `supported-with-limits`: the cumulative semantics align with
-the existing retention helper, but the repair cannot upgrade decision-time
-availability, provider finality, legacy-unbound pair evidence, or any immutable
-receipt.
+The ready image-rollout package is complete. The remaining runtime observation
+is owned by the installed task, not a foreground wait: it may confirm only the
+repaired metadata path. The repair preserves conflicting-row and candidate-batch
+behavior and cannot upgrade decision-time availability, provider finality,
+legacy-unbound pair evidence, or any immutable receipt.
 
 ## Current Reversible Improvement
 
-Use a tested monotonic-completeness repair for future task-written cumulative
-coverage, then reattach only the next owned terminal. This keeps rollout
-reversible and avoids changing collector pacing, scheduling, or provider
-assumptions.
+Use the built, tested monotonic-completeness repair only through the existing
+task image, then reattach the next owned terminal. This remains reversible and
+avoids changing collector pacing, scheduling, or provider assumptions.
 
 ## Current Recovery Action
 
 The fresh intraday terminal reattached offline as complete with verified capture
 and availability bindings, but it is an exact
-`input_unavailable/session_coverage_incomplete` result. Data has repaired one
-metadata-only aggregation defect, while the current cache remains short. The
-next action is an image-only rollout; no task, KIS route, Docker service, order,
-or GPU job is dispatched until that distinct objective.
+`input_unavailable/session_coverage_incomplete` result. The image-only rollout
+is verified and complete while the current cache remains short. The next action
+is source-safe reattachment only after the installed task's 2026-08-13 00:29
+KST terminal; no manual task, KIS route, Docker service, order, or GPU job is
+dispatched.

@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The fresh 2026-08-11 06:20 KST terminal reattached as `complete` with verified same-run capture and availability bindings. Current-session coverage is `incomplete`; the optional pair binding is `legacy_unbound`, so causal input is `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. The metadata-only repair does not change the current cache's short result or this immutable receipt. | Rebuild and statically reattest only the existing task image. No model or reusable Paper-candidate promotion; its separately owned QQQ runtime observation remains explicitly provisional. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The fresh 2026-08-11 06:20 KST terminal reattached as `complete` with verified same-run capture and availability bindings. Current-session coverage is `incomplete`; the optional pair binding is `legacy_unbound`, so causal input is `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. The metadata-only repair is now built into a clean static task image but does not change this immutable receipt. | Reattach only a later task-owned terminal. No model or reusable Paper-candidate promotion; its separately owned QQQ runtime observation remains explicitly provisional. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
@@ -37,9 +37,11 @@ finality, availability at a decision time, a model input, or a Paper action.
 The completed diagnosis found one cumulative-coverage defect: later identical
 fingerprints could not promote a forming row to complete. The repair preserves
 conflicting-fingerprint and candidate-batch handling, uses no raw M1 rows, and
-does not rewrite any immutable receipt. A metadata-only re-evaluation remains
-short for the current session, so the next task-owned terminal alone can test
-the repaired writer at runtime.
+does not rewrite any immutable receipt. It is now built in the existing service
+from a clean `HEAD` context: 56 focused tests, the 2,933-pass authority suite
+with 17 skips, Ruff, and both Compose parses passed. A metadata-only
+re-evaluation remains short for the current session, so the next task-owned
+terminal alone can test the repaired writer at runtime.
 
 The offline reader now accepts a separately hash-bound causal-condition
 attestation at a fixed external artifact location, but no current task writes
@@ -51,8 +53,8 @@ This contract has no collector, credential, network, or schedule behavior.
 
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
-| Intraday coverage-repair rollout | Data / existing task image | Rebuild and source-safe static reattestation of the existing image without a task, KIS, Docker service, or collector invocation. |
-| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | A later task-owned terminal may be reattached independently; it does not block the offline diagnosis. |
+| Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
+| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | A later task-owned terminal may be reattached independently; its current `next_due` is 2026-08-13 00:29 KST and it does not block another lane. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The responsive NDU instance predates the 2026-08-09T18:34:14Z `UPDATE DONOTSHOW` request; a status-only probe now narrows readiness to `subscription_or_update_unavailable` from HTTP `402`, without determining expiry versus update state. Do not foreground-wait, duplicate either action, or infer a cause. The daily operating review may run the source-safe reader; if it remains unavailable, the one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
