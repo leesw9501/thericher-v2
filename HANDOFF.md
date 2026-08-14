@@ -14,11 +14,11 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-`kis-intraday-coverage-repair-runtime-observation-v1` owns only the later
-task-written source-safe terminal for the already-built intraday-head image.
-It advances data collection by reattaching categorical cumulative-coverage
-evidence without manually invoking its task or KIS route; it does not select a
-model, claim PnL, or authorize Paper or live execution.
+`kis-intraday-short-session-topology-classification-v1` owns only the bound,
+source-safe missing-minute topology classification of the 2026-08-15
+intraday-head terminal. It advances data collection without manually invoking
+its task or KIS route; it does not select a model, claim PnL, or authorize
+Paper or live execution.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -29,14 +29,13 @@ loss values, predictions, returns, holdout, selection, KIS input, or Paper
 input were created. Receipts remain external under
 `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1`.
 
-The task-owned 2026-08-11 06:20 KST terminal differed from the prior terminal
-and reattached offline at 2026-08-10T21:20:07Z as `complete`, with verified
-same-run capture and availability bindings. Its cumulative current-session
-coverage is `incomplete`, the optional pair binding is `legacy_unbound`, and
-the exact causal input remains `input_unavailable/session_coverage_incomplete`.
-Decision-time availability and provider finality remain `not_observed`; this is
-a scoped Data limitation, never a hold on the Paper canary or another ready
-lane.
+The task-owned 2026-08-15 06:20 KST terminal reattached offline as `complete`,
+with verified coverage and availability bindings. Its cumulative current-session
+coverage remains `incomplete/current_session_short`, the optional pair binding is `legacy_unbound`,
+and the exact causal input remains `input_unavailable/session_coverage_incomplete`.
+The causal attestation is `not_recorded`; decision-time availability and
+provider finality remain `not_observed`. This is a scoped Data limitation,
+never a hold on the Paper canary or another ready lane.
 
 The offline diagnosis found a narrow aggregation defect: an identical row first
 retained while still forming could remain incomplete even when a later retained
@@ -61,8 +60,8 @@ build context. Only a later task-owned terminal can observe the repaired writer.
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data | The metadata-only cumulative-coverage repair is built and statically reattested, but the current cache remains short and the fresh terminal stays `input_unavailable/session_coverage_incomplete`. | Reattach only a later task-owned terminal; it is the sole runtime confirmation. |
-| Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`; it wrote no receipt and did not read catalog, metadata, or prices. This categorical change does not determine NDU process, update, subscription, expiry, vendor-access, or rights state. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If the reader later becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
+| Data | The 2026-08-15 repaired-image terminal is `complete` with verified coverage/availability bindings but stays `input_unavailable/session_coverage_incomplete/current_session_short`; causal attestation is `not_recorded` and pair evidence `legacy_unbound`. | Classify the missing topology only from bound source-safe metadata; this is the next bounded Data package. |
+| Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`; it wrote no receipt and did not read catalog, metadata, or prices. This categorical result does not determine NDU process, update, subscription, expiry, vendor-access, or rights state. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If the reader later becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. The repair does not change the fresh QQQ/SPY terminal's unavailable consumer input. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
 | Execution | The 2026-08-14 23:35 KST owned quote-session receipt reattached offline as `canary_completed -> cancelled / clean`, `paper_only`, with attribution `not_eligible`; the bound direct lifecycle receipt records only an acknowledged order-reference category. The earlier 2026-08-11 `outcome_unknown / unresolved` remains its own exact-run reconciliation fact. | Neither receipt proves a fill, PnL, alpha, or model result. Do not resubmit either durable intent; their existing reconciliation paths remain the only owners. |
@@ -72,7 +71,7 @@ build context. Only a later task-owned terminal can observe the repaired writer.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| QQQ/SPY intraday repaired-image observation | Existing `thericher-kis-paper-intraday-head` task | The rollout is complete. The 2026-08-14 offline projection still selects the 2026-08-11 terminal, so a later owned terminal, not an offline recomputation or task exit code, supplies runtime evidence. Current task `next_due`: 2026-08-15 00:29 KST. |
+| QQQ/SPY intraday short-session topology classification | Data / bound terminal projection | Ready: the 2026-08-15 task-owned terminal supplied the runtime observation and is `input_unavailable/session_coverage_incomplete/current_session_short`; classify its bound source-safe metadata without invoking the task or KIS. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-14 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-17 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |

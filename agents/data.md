@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The fresh 2026-08-11 06:20 KST terminal reattached as `complete` with verified same-run capture and availability bindings. Current-session coverage is `incomplete`; the optional pair binding is `legacy_unbound`, so causal input is `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. The metadata-only repair is now built into a clean static task image but does not change this immutable receipt. | Reattach only a later task-owned terminal. No model or reusable Paper-candidate promotion; its separately owned QQQ runtime observation remains explicitly provisional. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The new 2026-08-15 06:20 KST task-owned terminal reattached as `complete`, with verified coverage and availability bindings. Current-session cumulative coverage is `incomplete/current_session_short`; the optional pair binding is `legacy_unbound`, so causal input remains `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. The repaired image therefore did not upgrade this exact consumer category. | Classify the missing topology only from bound source-safe metadata. No model or reusable Paper-candidate promotion; its separately owned QQQ runtime observation remains explicitly provisional. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
@@ -28,11 +28,13 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
-The fresh 06:20 KST terminal is closed as an exact, source-safe
-`input_unavailable/session_coverage_incomplete` classification. It differs
-from the prior terminal and its existing offline reader recomputed the terminal,
-capture, and availability bindings. The result does not establish provider
-finality, availability at a decision time, a model input, or a Paper action.
+The fresh 2026-08-15 06:20 KST terminal is closed as an exact, source-safe
+`input_unavailable/session_coverage_incomplete/current_session_short`
+classification. Its offline projection verified the bound cumulative-coverage
+and availability evidence;
+the causal attestation remains `not_recorded` and the pair binding
+`legacy_unbound`. The result does not establish provider finality, availability
+at a decision time, a model input, or a Paper action.
 
 The completed diagnosis found one cumulative-coverage defect: later identical
 fingerprints could not promote a forming row to complete. The repair preserves
@@ -54,7 +56,8 @@ This contract has no collector, credential, network, or schedule behavior.
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
-| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The 2026-08-14 offline projection remains bound to the 2026-08-11 terminal. A later task-owned terminal may be reattached independently; its current `next_due` is 2026-08-15 00:29 KST and it does not block another lane. |
+| Intraday short-session topology classification | Data / bound terminal projection | Ready: the new 2026-08-15 terminal is `input_unavailable/session_coverage_incomplete/current_session_short` despite the repaired image. Classify only its missing topology from source-safe metadata; no task or collector invocation. |
+| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The 2026-08-15 task-owned terminal is reattached. The next terminal remains task-owned; its due time is not reprojected by this reader and does not block another lane. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The 2026-08-14 source-safe reader returned `local_api_not_ready` and wrote no receipt. Do not foreground-wait, duplicate either action, or infer a cause. The one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |

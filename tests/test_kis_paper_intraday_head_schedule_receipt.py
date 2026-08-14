@@ -142,6 +142,7 @@ def test_schedule_fact_projects_legacy_receipts_as_explicitly_unbound(tmp_path: 
     assert fact.coverage_binding_status == "legacy_unbound"
     assert fact.current_session_cumulative_coverage_digest is None
     assert fact.current_session_cumulative_coverage_category is None
+    assert fact.current_session_cumulative_coverage_gap_category is None
 
 
 def test_schedule_receipt_marks_a_missing_required_capture_binding_for_recovery(
@@ -240,6 +241,7 @@ def test_schedule_fact_verifies_the_exact_same_run_capture_binding(tmp_path: Pat
     assert fact.coverage_binding_status == "verified"
     assert fact.current_session_cumulative_coverage_digest == capture.coverage_digest
     assert fact.current_session_cumulative_coverage_category == "complete"
+    assert fact.current_session_cumulative_coverage_gap_category is None
 
 
 def test_schedule_fact_verifies_an_incomplete_observed_session_capture(tmp_path: Path) -> None:
@@ -264,6 +266,7 @@ def test_schedule_fact_verifies_an_incomplete_observed_session_capture(tmp_path:
 
     assert fact.coverage_binding_status == "verified"
     assert fact.current_session_cumulative_coverage_category == "incomplete"
+    assert fact.current_session_cumulative_coverage_gap_category == "current_session_short"
 
 
 def test_schedule_fact_keeps_a_bound_pair_attempt_input_unavailable_without_attestation(

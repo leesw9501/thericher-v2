@@ -486,6 +486,9 @@ class KisPaperIntradayHeadScheduleFact:
     coverage_binding_status: Literal["legacy_unbound", "verified"]
     current_session_cumulative_coverage_digest: str | None
     current_session_cumulative_coverage_category: str | None
+    current_session_cumulative_coverage_gap_category: (
+        Literal["current_session_missing", "current_session_short"] | None
+    )
     availability_status: str
     availability_binding_status: Literal["legacy_unbound", "verified"]
     availability_contract_sha256: str | None
@@ -519,6 +522,7 @@ class KisPaperIntradayHeadScheduleFact:
             if (
                 self.current_session_cumulative_coverage_digest is not None
                 or self.current_session_cumulative_coverage_category is not None
+                or self.current_session_cumulative_coverage_gap_category is not None
             ):
                 raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
         elif self.coverage_binding_status == "verified":
@@ -535,6 +539,18 @@ class KisPaperIntradayHeadScheduleFact:
                 self.current_session_cumulative_coverage_category,
                 "coverage binding category",
             )
+            if self.current_session_cumulative_coverage_category == "complete":
+                if self.current_session_cumulative_coverage_gap_category is not None:
+                    raise KisPaperIntradayHeadScheduleReceiptError(
+                        "schedule_coverage_binding_invalid"
+                    )
+            elif self.current_session_cumulative_coverage_gap_category not in {
+                "current_session_missing",
+                "current_session_short",
+            }:
+                raise KisPaperIntradayHeadScheduleReceiptError(
+                    "schedule_coverage_binding_invalid"
+                )
         else:
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
         if self.availability_status not in _AVAILABILITY_STATUSES | {"not_recorded_legacy"}:
@@ -669,6 +685,9 @@ class KisPaperIntradayHeadScheduleFact:
             ),
             "current_session_cumulative_coverage_category": (
                 self.current_session_cumulative_coverage_category
+            ),
+            "current_session_cumulative_coverage_gap_category": (
+                self.current_session_cumulative_coverage_gap_category
             ),
             "availability_status": self.availability_status,
             "availability_binding_status": self.availability_binding_status,
@@ -1008,7 +1027,12 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         artifact_root=artifact_root,
         repository_root=repository_root,
     )
-    coverage_binding_status, coverage_digest, coverage_category = _read_capture_binding(
+    (
+        coverage_binding_status,
+        coverage_digest,
+        coverage_category,
+        coverage_gap_category,
+    ) = _read_capture_binding(
         terminal=receipt,
         capture_cache_root=capture_cache_root,
         repository_root=repository_root,
@@ -1053,6 +1077,7 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         coverage_binding_status=coverage_binding_status,
         current_session_cumulative_coverage_digest=coverage_digest,
         current_session_cumulative_coverage_category=coverage_category,
+        current_session_cumulative_coverage_gap_category=coverage_gap_category,
         availability_status=receipt.availability_status,
         availability_binding_status=availability_binding_status,
         availability_contract_sha256=(
@@ -1641,21 +1666,30 @@ def _read_capture_binding(
     terminal: _ScheduleReceiptTerminal,
     capture_cache_root: Path | None,
     repository_root: Path,
-) -> tuple[Literal["legacy_unbound", "verified"], str | None, str | None]:
+) -> tuple[
+    Literal["legacy_unbound", "verified"],
+    str | None,
+    str | None,
+    Literal["current_session_missing", "current_session_short"] | None,
+]:
     binding = terminal.terminal_receipt_binding
     if binding is None:
         if terminal.session_capture_binding_required:
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_required")
-        return "legacy_unbound", None, None
-    binding, _ = _read_bound_capture_receipt(
+        return "legacy_unbound", None, None, None
+    binding, capture_payload = _read_bound_capture_receipt(
         terminal=terminal,
         capture_cache_root=capture_cache_root,
         repository_root=repository_root,
     )
+    current_coverage = capture_payload.get("current_session_cumulative_coverage")
+    if not isinstance(current_coverage, Mapping):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
     return (
         "verified",
         binding.current_session_cumulative_coverage_digest,
         binding.current_session_cumulative_coverage_category,
+        _coverage_gap_category(current_coverage, observed_at=binding.observed_at),
     )
 
 
@@ -2098,6 +2132,12 @@ def _verify_capture_payload_binding(
         observed_at=capture_observed_at,
     ) != coverage_category:
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
+    coverage_gap_category = _coverage_gap_category(
+        current_coverage,
+        observed_at=capture_observed_at,
+    )
+    if (coverage_category == "complete") != (coverage_gap_category is None):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
 
 
 def _collection_recovery_targets_from_capture_payload(
@@ -2241,6 +2281,34 @@ def _coverage_category(
         return "complete"
     if status == "short":
         return "incomplete"
+    raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+
+
+def _coverage_gap_category(
+    coverage: Mapping[str, Any],
+    *,
+    observed_at: datetime,
+) -> Literal["current_session_missing", "current_session_short"] | None:
+    """Return one safe reason for an incomplete current-session coverage category."""
+
+    sessions = coverage.get("regular_session_coverage")
+    if not isinstance(sessions, list):
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    observed_session_date = observed_at.astimezone(_EASTERN_TZ).date().isoformat()
+    matching_sessions = [
+        item
+        for item in sessions
+        if isinstance(item, Mapping) and item.get("session_date") == observed_session_date
+    ]
+    if len(matching_sessions) > 1:
+        raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+    if not matching_sessions:
+        return "current_session_missing"
+    status = matching_sessions[0].get("status")
+    if status == "complete":
+        return None
+    if status == "short":
+        return "current_session_short"
     raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
 
 
