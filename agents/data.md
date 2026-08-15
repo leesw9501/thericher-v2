@@ -45,6 +45,10 @@ with 17 skips, Ruff, and both Compose parses passed. A metadata-only
 re-evaluation remains short for the current session, so the next task-owned
 terminal alone can test the repaired writer at runtime.
 
+The short-session topology category is complete for this immutable terminal.
+Only a later task-owned terminal may supply a new, separately scoped category;
+its due time remains task-owned and is never a foreground wait.
+
 The offline reader now accepts a separately hash-bound causal-condition
 attestation at a fixed external artifact location, but no current task writes
 or binds one. An absent binding stays `input_unavailable`; malformed or
@@ -56,7 +60,7 @@ This contract has no collector, credential, network, or schedule behavior.
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
-| Intraday short-session topology classification | Data / bound terminal projection | Ready: the new 2026-08-15 terminal is `input_unavailable/session_coverage_incomplete/current_session_short` despite the repaired image. Classify only its missing topology from source-safe metadata; no task or collector invocation. |
+| Later intraday terminal reattachment | Existing `thericher-kis-paper-intraday-head` task / Data | Owned monitoring dependency: once a later terminal exists, consume only its source-safe bound projection and compare its scoped category without task or collector invocation. |
 | Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The 2026-08-15 task-owned terminal is reattached. The next terminal remains task-owned; its due time is not reprojected by this reader and does not block another lane. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |

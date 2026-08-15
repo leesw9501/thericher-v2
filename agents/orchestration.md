@@ -6,8 +6,9 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-intraday-short-session-topology-classification-v1` classifies the bound
-terminal's missing-minute topology without exposing rows, offsets, or counts.
+`kis-intraday-next-terminal-reattachment-v1` reattaches only a later
+task-owned terminal through the existing source-safe projector and compares its
+scoped coverage category with the completed `current_session_short` baseline.
 This is data collection work only, never a strategy, PnL, Paper action, or live
 claim.
 
@@ -19,7 +20,7 @@ claim.
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-14 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-17 23:35 KST. |
 | Norgate local readiness | Data | Existing NDU updater | The 2026-08-14 provisioned-host reader returned `local_api_not_ready` and wrote no receipt. It does not establish a process, update, subscription, expiry, vendor-access, or rights cause. This does not block the Paper canary. The one operator-visible diagnostic is the already-running NDU update plus database/subscription-state panes, then minimize it. |
-| Intraday M1 coverage | Data | Existing task image and source-safe terminal projection | The 2026-08-15 task-owned terminal reattached as `complete` with verified coverage/availability bindings, and source-safe classification is `input_unavailable/session_coverage_incomplete/current_session_short`; causal attestation is `not_recorded` and pair evidence `legacy_unbound`. The next terminal is task-owned and not a foreground wait. |
+| Intraday M1 coverage | Data | Existing task image and source-safe terminal projection | The 2026-08-15 task-owned terminal reattached as `complete` with verified coverage/availability bindings. Its source-safe topology is closed as `input_unavailable/session_coverage_incomplete/current_session_short`; causal attestation is `not_recorded` and pair evidence `legacy_unbound`. A later terminal is task-owned and not a foreground wait. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -36,20 +37,20 @@ resolving that prediction-input limitation.
 ## Current Cross-Lane Decision
 
 The image-rollout runtime observation and the binary coverage-gap classification
-are complete. The ready package is a bounded missing-topology classification
-from bound source-safe metadata; it cannot upgrade decision-time availability,
-provider finality, legacy-unbound pair evidence, or any immutable receipt.
+are complete. The next package is a source-safe reattachment of a later
+task-owned terminal; it cannot upgrade decision-time availability, provider
+finality, legacy-unbound pair evidence, or any immutable receipt.
 
 ## Current Reversible Improvement
 
-Use the bound terminal projection to classify the short-session topology before
-considering any repair. This remains reversible and avoids changing collector
-pacing, scheduling, or provider assumptions.
+Reuse the bound terminal projector for a later terminal before considering any
+repair. This remains reversible and avoids changing collector pacing,
+scheduling, or provider assumptions.
 
 ## Current Recovery Action
 
 The 2026-08-15 intraday projection is the exact
 `input_unavailable/session_coverage_incomplete/current_session_short` result.
-The image-only rollout is verified and complete while the current cache remains
-short. The next action is a source-safe short-session topology classification;
-no manual task, KIS route, Docker service, order, or GPU job is dispatched.
+The image-only rollout and source-safe topology classification are complete.
+The next action is a later source-safe terminal reattachment; no manual task,
+KIS route, Docker service, order, or GPU job is dispatched.
