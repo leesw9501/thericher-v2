@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The new 2026-08-15 06:20 KST task-owned terminal reattached as `complete`, with verified coverage and availability bindings. Current-session cumulative coverage is `incomplete/current_session_short`; the optional pair binding is `legacy_unbound`, so causal input remains `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. The repaired image therefore did not upgrade this exact consumer category. | Classify the missing topology only from bound source-safe metadata. No model or reusable Paper-candidate promotion; its separately owned QQQ runtime observation remains explicitly provisional. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-17 06:20 KST task-owned terminal reattached as `complete`, with verified coverage and availability bindings. Like the 2026-08-15 baseline, current-session cumulative coverage is `incomplete/current_session_short`; the optional pair binding is `legacy_unbound`, so causal input remains `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. | The static audit is complete. The next writer integration needs its required drift check; no model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
@@ -28,10 +28,10 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
-The fresh 2026-08-15 06:20 KST terminal is closed as an exact, source-safe
+The fresh 2026-08-17 06:20 KST terminal is closed as an exact, source-safe
 `input_unavailable/session_coverage_incomplete/current_session_short`
-classification. Its offline projection verified the bound cumulative-coverage
-and availability evidence;
+classification, matching the 2026-08-15 baseline. Its offline projection
+verified the bound cumulative-coverage and availability evidence;
 the causal attestation remains `not_recorded` and the pair binding
 `legacy_unbound`. The result does not establish provider finality, availability
 at a decision time, a model input, or a Paper action.
@@ -45,8 +45,8 @@ with 17 skips, Ruff, and both Compose parses passed. A metadata-only
 re-evaluation remains short for the current session, so the next task-owned
 terminal alone can test the repaired writer at runtime.
 
-The short-session topology category is complete for this immutable terminal.
-Only a later task-owned terminal may supply a new, separately scoped category;
+The short-session topology category is complete for both immutable terminals.
+Any later task-owned terminal may supply only a new, separately scoped category;
 its due time remains task-owned and is never a foreground wait.
 
 The offline reader now accepts a separately hash-bound causal-condition
@@ -55,13 +55,22 @@ or binds one. An absent binding stays `input_unavailable`; malformed or
 mismatched bound evidence fails closed through the existing unavailable reader.
 This contract has no collector, credential, network, or schedule behavior.
 
+The static audit freezes a narrow future boundary: the terminal writer already
+accepts one optional attestation hash, while the dispatcher supplies the bound
+capture and availability facts but no attestation argument. No current source
+can truthfully supply the required independent clock, decision-time observation,
+or provider-finality categories. A future networkless attester may bind only
+fully observed source-safe facts; its strongest kill test is that any missing,
+task-derived, or mismatched field omits the hash and leaves the consumer
+`input_unavailable`.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
-| Later intraday terminal reattachment | Existing `thericher-kis-paper-intraday-head` task / Data | Owned monitoring dependency: once a later terminal exists, consume only its source-safe bound projection and compare its scoped category without task or collector invocation. |
-| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The 2026-08-15 task-owned terminal is reattached. The next terminal remains task-owned; its due time is not reprojected by this reader and does not block another lane. |
+| Causal-attestation writer integration | Data | Ready after its required drift check: add only the networkless, default-deny future binding; no collector, schedule registration, or installed definition is changed. |
+| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The 2026-08-17 task-owned terminal is reattached. The next terminal remains task-owned; its due time is not reprojected by this reader and does not block another lane. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The 2026-08-14 source-safe reader returned `local_api_not_ready` and wrote no receipt. Do not foreground-wait, duplicate either action, or infer a cause. The one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
