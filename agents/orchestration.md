@@ -6,11 +6,12 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`norgate-trial-d1-capability-reprobe-v1` follows the completed FirstRate source
-semantics package. It runs one existing isolated host-only Norgate D1 capability
-probe after updater work and retains only categorical local readiness evidence.
-It is Data capability only: no model, GPU appointment, KIS join,
-availability/finality claim, PnL, Paper action, or live route.
+`norgate-host-readiness-bridge-v1` follows the completed FirstRate source
+semantics package and one unclassified Norgate daily-capability invocation. It
+builds a raw-data-free, isolated host bridge that emits only categorical runtime,
+local API, catalog, and active-root facts. It is Data capability only: no model,
+GPU appointment, KIS join, availability/finality claim, PnL, Paper action, or
+live route.
 
 ## Ready / Owned / Due
 
@@ -21,7 +22,8 @@ availability/finality claim, PnL, Paper action, or live route.
 | FirstRate source-local timeframe mechanics | Data / Codex | Existing local provider/resampler and immutable normalization receipt | Closed: canonical hashes reattached and only complete unique UTC-anchored 1m/5m/10m/1h/3h aggregate geometry retained. Every emitted bar passed source-bucket OHLCV, ordering, and completion checks. |
 | FirstRate source-local window preflight | Data / Engine Research | Hash-bound FirstRate normalization/mechanics receipts and canonical CSVs | Closed: 32 fixed matrix cells reattached locally and retained only eligible-window count/end-timestamp-set hash evidence. No labels, features, models, GPU, KIS, or Paper consumer. |
 | FirstRate source semantics retrieval | Data / Claude review | Closed: official free-data/license pages re-retrieved with matching hashes; vendor timezone/omission claims are narrow and offset convention/bar boundary remain `not_disclosed`. No promotion follows. |
-| Norgate D1 capability reprobe | Data | Existing isolated Norgate host runtime and one unique external probe root | Ready: invoke exactly once and retain only categorical readiness/receipt facts. Do not start a D1 pilot or wait/retry. |
+| Norgate D1 capability reprobe | Data | Existing isolated host runtime and daily capability path | Closed: one invocation produced no parseable source-safe output and no task-owned receipt. It is not a Norgate availability conclusion and will not be retried. |
+| Norgate host readiness bridge | Data | Existing isolated Norgate host runtime and two known metadata candidates | Ready: produce only runtime/API/catalog/active-root categories without raw market calls. Do not invoke the daily probe or a pilot. |
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | Norgate local readiness | Data | Existing NDU updater | The 2026-08-14 provisioned-host reader returned `local_api_not_ready` and wrote no receipt. It does not establish a process, update, subscription, expiry, vendor-access, or rights cause. This does not block the Paper canary. The one operator-visible diagnostic is the already-running NDU update plus database/subscription-state panes, then minimize it. |
@@ -52,16 +54,15 @@ does not qualify research input or change Paper behavior.
 
 ## Current Reversible Improvement
 
-The FirstRate source-semantics retrieval now re-retrieves two official pages,
-keeps only hashes and exact source statements, and attaches a Claude-challenged
-interpretation without rewriting source evidence. It narrows only the FirstRate
-data contract, preserving `not_disclosed` offset/boundary facts and no
-KIS/Paper/model consumer.
+The immediate reversible improvement is a host readiness bridge that separates
+Norgate runtime/API/catalog/root facts from the price-reading daily capability
+probe. It prevents output-capture ambiguity from being misclassified as a data,
+subscription, or rights result while avoiding a duplicate raw-data invocation.
 
 ## Current Recovery Action
 
 No category-based recovery proposal is active. A later recovery investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current next
-action is the independent Norgate D1 capability reprobe; it needs no Task or
-foreground wait.
+action is the independent raw-data-free Norgate host readiness bridge; it needs
+no Task or foreground wait.

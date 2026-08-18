@@ -38,7 +38,7 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   runtime benchmark. The subsequent FirstRate source retrieval confirmed only a
   vendor timezone label and zero-volume omission; offset convention and bar
   boundary remain `not_disclosed`. GPU custody stays free; the next bounded Data
-  task is the existing local Norgate D1 capability reprobe, not training.
+  task is a raw-data-free Norgate host readiness bridge, not training.
 - Fixed session-reset 15/30 EMA and 20/10 Donchian local-paper replays have
   replayable, terminal-flat accounting evidence and negative fixed baselines.
   Do not retune their windows, costs, thresholds, or signs under a new label.
