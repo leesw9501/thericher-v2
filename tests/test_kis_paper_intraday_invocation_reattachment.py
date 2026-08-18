@@ -59,6 +59,17 @@ def test_reattachment_keeps_a_missing_current_marker_unknown(tmp_path: Path) -> 
         "invocation_receipt": None,
         "schedule_terminal": None,
     }
+    assert result.safe_payload()["invocation"] == {
+        "phase": "unavailable",
+        "run_id": None,
+        "started_at": None,
+        "schedule_observed_at": None,
+        "completed_at": None,
+        "receipt_sha256": None,
+        "collection_failure_category": "reason_unavailable",
+        "collection_outcome": "unavailable",
+        "failure_category_is_comparable": False,
+    }
 
 
 def test_projector_exposes_only_source_safe_marker_unavailable_status(
@@ -193,6 +204,9 @@ def test_reattachment_classifies_complete_session_with_metadata_only_relation() 
     assert result.completed_at == terminal.completed_at
     assert result.invocation_receipt_pointer.endswith("head-unit/terminal.json")
     assert result.schedule_receipt_pointer.endswith("head-unit.json")
+    payload = result.safe_payload()["invocation"]
+    assert payload["collection_outcome"] == "succeeded"
+    assert payload["failure_category_is_comparable"] is False
 
 
 def test_reattachment_rejects_the_same_bound_marker_as_not_later() -> None:
@@ -212,6 +226,7 @@ def test_reattachment_rejects_the_same_bound_marker_as_not_later() -> None:
     assert result.run_id == terminal.run_id
     assert result.completed_at == terminal.completed_at
     assert result.schedule_receipt_sha256 == schedule.receipt_sha256
+    assert result.safe_payload()["invocation"]["failure_category_is_comparable"] is False
 
 
 def test_reattachment_requires_a_strictly_later_completion_timestamp() -> None:
@@ -300,6 +315,38 @@ def test_reattachment_preserves_each_closed_nonzero_category(
     assert result.safe_payload()["invocation"]["collection_failure_category"] == (
         collection_failure_category
     )
+    assert result.safe_payload()["invocation"]["collection_outcome"] == "nonzero"
+    assert result.safe_payload()["invocation"]["failure_category_is_comparable"] is True
+
+
+def test_reattachment_does_not_treat_a_succeeded_partial_terminal_as_failure_evidence() -> None:
+    runtime, terminal, _ = _bound_facts()
+    schedule = _schedule(
+        run_id=terminal.run_id,
+        observed_at=terminal.schedule_observed_at,
+        coverage_category="incomplete",
+    )
+    topology = SimpleNamespace(
+        sessions=(
+            {
+                "session_date": "2026-08-19",
+                "coverage_status": "short",
+            },
+        )
+    )
+
+    result = reattachment.classify_kis_paper_intraday_invocation_reattachment(
+        runtime=runtime,
+        terminal=terminal,
+        schedule=schedule,
+        topology=topology,
+    )
+
+    assert result.status == "retained_partial"
+    assert result.collection_failure_category == "reason_unavailable"
+    payload = result.safe_payload()["invocation"]
+    assert payload["collection_outcome"] == "succeeded"
+    assert payload["failure_category_is_comparable"] is False
 
 
 def _bound_facts(

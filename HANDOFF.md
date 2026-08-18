@@ -33,9 +33,14 @@ installed only a closed source-safe reason classification for future task-owned
 nonzero runs. The next objective,
 `kis-intraday-failure-category-reattachment-v1`, reattached the first
 post-writer task-owned marker as one closed `reason_unavailable` category
-binding. The next objective, `kis-intraday-failure-category-confirmation-v1`,
-waits only for one later independent binding before any category-based recovery
-proposal can be considered.
+binding. The completed `kis-intraday-failure-category-confirmation-v1`
+reattached a strictly later terminal as
+`retained_partial/current_session_not_complete` with a successful collection
+outcome. Its compatibility-default `reason_unavailable` is explicitly
+noncomparable, so it is neither a second category binding nor a divergence.
+No recovery proposal followed. The next objective,
+`firstrate-source-local-normalization-v1`, normalizes two hash-bound free
+SPY/QQQ M1 archives as source-isolated retrospective mechanics only.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -110,11 +115,29 @@ later category comparison therefore cannot accidentally count a reread marker
 as independent evidence. This is source-safe reader behavior only and changes
 no Task, collector, KIS, Docker, consumer, or Paper path.
 
+The first strictly later marker is
+`intraday-head-20260818T2120005941479Z`. Its hash-bound terminal and exact
+schedule receipt reattach as `retained_partial/current_session_not_complete`
+with `collection_outcome: succeeded`,
+`collection_failure_category: reason_unavailable`, and
+`failure_category_is_comparable: false`; topology remains
+`current_metadata_consistent` for session date `2026-08-18`. The source-safe
+terminal and schedule hashes are
+`sha256:cf3b6983308630167f97962317aa3f89e7d96eb0f66beb2d6a9dd186c4a558ad`
+and `sha256:c18b5024a7a058541e6d81757bb30405381451bfdee7b5aad576be5380d349a2`,
+with pointers
+`execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T2120005941479Z/terminal.json`
+and `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T2120005941479Z.json`.
+The category is a writer compatibility default for a successful collection
+stage, not failure evidence. Marker provenance remains assumed-honest-host,
+not cryptographic proof of Scheduler origin; Task Scheduler Operational logging
+is disabled.
+
 ## Current Cross-Lane Facts
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data | The legacy marker and one independent post-writer marker each retain `collection_exit_nonzero` with `reason_unavailable`; topology remains `current_metadata_consistent` and coverage incomplete. The task is enabled with one runner action and its Operational log is disabled. | Reattach one later hash-bound marker against the paired first-marker baseline and compare only its closed category without changing timing, page count, Docker/KIS behavior, or downstream consumers. |
+| Data | The legacy and first post-writer markers retain `collection_exit_nonzero / reason_unavailable`. The later hash-bound marker is instead `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its default category is noncomparable. Topology remains `current_metadata_consistent` and coverage incomplete. | Normalize the staged FirstRate SPY/QQQ M1 archives offline, preserving each decoded timestamp set exactly and keeping the result source-isolated from KIS, Paper, and predictive consumers. |
 | Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`; it wrote no receipt and did not read catalog, metadata, or prices. This categorical result does not determine NDU process, update, subscription, expiry, vendor-access, or rights state. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If the reader later becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. A synthetic caller-owned local-paper two-step replay proves future policy-environment stepping against owned cost/fill semantics only. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
@@ -128,7 +151,8 @@ no Task, collector, KIS, Docker, consumer, or Paper path.
 | Invocation receipt reattachment | Data / Codex | Complete: the exact fresh marker, terminal, and schedule receipt bind a `collection_exit_nonzero` task stage. Its external evidence pointers are `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T1728005721271Z/terminal.json` and `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T1728005721271Z.json`. |
 | Task-path failure localization | Data / Codex | Complete: one closed, free-text-free category writer and legacy-compatible offline reader preserve the stage exit code. No timing/page/task/consumer change followed. |
 | Failure-category reattachment | Data / Codex | Complete: post-writer `intraday-head-20260818T1924006306454Z` binds `collection_exit_nonzero / reason_unavailable` through `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T1924006306454Z/terminal.json` and `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T1924006306454Z.json`. |
-| Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Next objective: reattach one later exact marker against the paired first-marker baseline and compare its closed category only. Two matching bindings still need a fresh Claude falsification-first review before any recovery proposal. |
+| Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but `retained_partial` with a successful collection outcome, so its compatibility-default `reason_unavailable` is noncomparable. No recovery proposal or behavior change followed. |
+| FirstRate source-local M1 normalization | Data / Codex | Next objective: verify the two staged ZIP hashes, normalize only their expected entries under `D:\market_data`, and emit source-safe hashes/counts/timestamp-set evidence without densifying or creating a KIS/Paper/model consumer. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-17 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
@@ -188,14 +212,13 @@ ready.
 
 ## Verification And Git
 
-The closed intraday failure-category reattachment package passed 41 focused
-offline receipt/reattachment/dispatcher tests, the 2,991-pass authority
-parallel suite with 17 skips, Ruff, both credential-free Compose configuration
-parses, and `git diff --check`. The only suite warnings were existing
-external-storage threshold warnings. Verification made no KIS, credential,
-broker, collector, Docker service, or Task Scheduler call. It reattached one
-post-writer category as `reason_unavailable`; the next confirmation objective
-uses only the current offline reader and source-safe static Task facts.
+The completed intraday failure-category confirmation package passed 25 focused
+offline reader/reattachment tests, the 2,996-pass authority parallel suite with
+17 skips, Ruff, both credential-free Compose configuration parses, and
+`git diff --check`. Verification made no KIS, credential, broker, collector,
+Docker service, or Task Scheduler call. It reattached one later terminal as
+successful but `retained_partial`, which makes the compatibility-default
+category noncomparable; no recovery behavior changed.
 
 The Tiingo IEX source-isolated package passed 19 focused data/research tests,
 the 2,919-pass authority parallel suite with 17 skips, Ruff, both Compose
@@ -224,7 +247,8 @@ self-staling latest hash here.
    active stateboards.
 3. Run a compact Throughput Review, then dispatch only a ready,
    non-conflicting package.
-4. A legacy marker and one post-writer marker both retain
-   `reason_unavailable`, not a causal diagnosis. Reattach only one later bound
-   marker before interpreting category consistency; never infer a Scheduler,
-   collector, provider, or Paper outcome from any marker.
+4. The first post-writer marker is one comparable task-stage
+   `collection_exit_nonzero / reason_unavailable` binding. The later marker is
+   successful and `retained_partial`, so its default category is noncomparable.
+   Never infer a Scheduler, collector, provider, or Paper outcome from either
+   marker.

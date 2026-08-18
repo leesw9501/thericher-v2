@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The legacy marker and first post-writer 2026-08-19 KST marker each bind a `recovery` terminal with `collection_exit_nonzero` and `reason_unavailable`; metadata topology is `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The two closed categories remain task-path diagnostics only. They do not prove collector-process entry, an exact provider cause, or a timing/page remedy. No model or reusable Paper-candidate promotion follows. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The legacy and first post-writer 2026-08-19 KST markers each bind a `recovery` terminal with `collection_exit_nonzero / reason_unavailable`. The later `intraday-head-20260818T2120005941479Z` instead binds `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its compatibility-default category is noncomparable. Metadata topology remains `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The one comparable category remains task-path diagnostic evidence only. The later successful partial terminal does not confirm or diverge a failure category, prove collector-process entry or an exact provider cause, or create a timing/page remedy. No model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper broad D1 panel | The latest source-safe postrun snapshot (2026-08-01) recorded 2,119/2,119 current-listing targets covered, zero quarantined targets, and zero mismatches over its 604-target baseline overlap. A later successful Task exit does not itself refresh this frozen snapshot. | Coverage/provenance inventory only: current-listing, non-PIT, unadjusted, corporate-action-unqualified, and session-finality-unattested. It cannot supply a target, ranking, training, or Paper input. |
@@ -102,6 +102,20 @@ facts. Against the first post-writer marker, the unchanged current pointer is
 existing Task, timing, pages, KIS route, Docker path, consumers, and Paper
 behavior unchanged.
 
+The first strictly later pointer is
+`intraday-head-20260818T2120005941479Z`, completed at
+`2026-08-18T21:20:32.579443Z`. Its terminal and exact schedule receipt hashes
+are `sha256:cf3b6983308630167f97962317aa3f89e7d96eb0f66beb2d6a9dd186c4a558ad`
+and `sha256:c18b5024a7a058541e6d81757bb30405381451bfdee7b5aad576be5380d349a2`.
+The offline projection classifies it as
+`retained_partial/current_session_not_complete` with a successful collection
+outcome. `failure_category_is_comparable` is therefore false despite the
+compatibility-default `reason_unavailable`; no second failure-category binding,
+recovery proposal, or behavior change exists. Its source-safe pointers remain
+external-root-relative, marker provenance is assumed-honest-host rather than
+cryptographic Scheduler origin, and Task Scheduler Operational logging is
+disabled.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
@@ -110,7 +124,7 @@ behavior unchanged.
 | Invocation-marker reattachment | Data / Codex | Complete: the first fresh marker and exact schedule terminal reattached as `collection_exit_nonzero`; its source-safe pointers remain external-root-relative. |
 | Task-path failure localization | Data / Codex | Complete: an allowlisted free-text-free category writer and legacy-compatible reader preserve the exact stage exit. No task, pages, timing, or consumer change followed. |
 | Failure-category reattachment | Data / Codex | Complete: post-writer `intraday-head-20260818T1924006306454Z` reattached as `collection_exit_nonzero / reason_unavailable` through exact hash-bound terminal and schedule receipts. No timing, pages, task, or consumer behavior changed. |
-| Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Reattach one later exact marker against the paired first-marker baseline and compare only its closed category. Its due time remains task-owned and never a foreground wait. |
+| Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but successful and `retained_partial`, so the preserved default category is noncomparable. No recovery proposal or behavior change followed. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The 2026-08-14 source-safe reader returned `local_api_not_ready` and wrote no receipt. Do not foreground-wait, duplicate either action, or infer a cause. The one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
@@ -135,10 +149,13 @@ behavior unchanged.
   collector-process, provider, or Scheduler-origin diagnosis. A later category
   may be only `dispatcher_config`, `collector_provider`, or
   `reason_unavailable`, never free text, and preserves the original exit code.
-- One post-writer category binding is diagnostic only. A category-based
-  recovery proposal needs two later independently hash-validated matching
-  bindings and a fresh Claude falsification-first verdict; divergence remains
-  diagnostic only.
+- A category is comparable only for a later hash-bound `collector_nonzero`
+  terminal with `collection_outcome: nonzero`. A successful `retained_partial`
+  or `complete_session` may preserve a compatibility-default category, but it
+  is noncomparable. One comparable post-writer binding is diagnostic only; a
+  category-based recovery proposal needs two independently hash-validated
+  matching comparable bindings and a fresh Claude falsification-first verdict.
+  Divergence remains diagnostic only.
 - A later binding must differ from its paired opaque baseline run and complete
   strictly after its paired completion timestamp. `marker_not_later` is a valid
   stale-pointer diagnosis, never a second binding, a cause, or a behavior
@@ -170,6 +187,10 @@ behavior unchanged.
   `scripts\inspect_kis_paper_intraday_capture_topology.ps1`,
   `scripts\project_kis_paper_intraday_head_invocation_receipt.py`, and
   `scripts\project_kis_paper_intraday_invocation_reattachment.ps1`.
+- Later category-confirmation terminal and schedule evidence:
+  `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T2120005941479Z/terminal.json`,
+  `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T2120005941479Z.json`
+  under `D:\thericher-v2\model-artifacts`.
 - Official KIS overseas-minute documentation confirms the reviewed request and
   cursor semantics but supplies no reviewed finality/as-of predicate. It keeps
   `provider_finality` and decision-time availability `not_observed`; it makes

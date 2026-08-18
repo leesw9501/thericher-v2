@@ -47,6 +47,7 @@ _TopologyRelation = Literal[
     "current_metadata_consistent",
     "current_metadata_diverged",
 ]
+_CollectionOutcome = Literal["unavailable", "succeeded", "nonzero"]
 
 
 @dataclass(frozen=True, slots=True)
@@ -69,6 +70,18 @@ class KisPaperIntradayInvocationReattachment:
     collection_failure_category: Literal[
         "reason_unavailable", "dispatcher_config", "collector_provider"
     ] = "reason_unavailable"
+    collection_outcome: _CollectionOutcome = "unavailable"
+    failure_category_is_comparable: bool = False
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.failure_category_is_comparable, bool):
+            raise TypeError("failure_category_is_comparable must be bool")
+        if self.failure_category_is_comparable != (
+            self.status == "collector_nonzero" and self.collection_outcome == "nonzero"
+        ):
+            raise ValueError(
+                "failure_category_is_comparable requires a later collector_nonzero result"
+            )
 
     def safe_payload(self) -> dict[str, object]:
         return {
@@ -83,6 +96,8 @@ class KisPaperIntradayInvocationReattachment:
                 "completed_at": _utc_marker(self.completed_at),
                 "receipt_sha256": self.invocation_receipt_sha256,
                 "collection_failure_category": self.collection_failure_category,
+                "collection_outcome": self.collection_outcome,
+                "failure_category_is_comparable": self.failure_category_is_comparable,
             },
             "schedule_terminal_receipt_sha256": self.schedule_receipt_sha256,
             "external_evidence": {
@@ -287,6 +302,8 @@ def _require_later_marker(
         topology_relation=result.topology_relation,
         topology_session_date=result.topology_session_date,
         collection_failure_category=result.collection_failure_category,
+        collection_outcome=result.collection_outcome,
+        failure_category_is_comparable=False,
     )
 
 
@@ -391,6 +408,10 @@ def _terminal_result(
         topology_relation=relation,
         topology_session_date=session_date if topology is not None else None,
         collection_failure_category=terminal.collection_failure_category,
+        collection_outcome=terminal.collection_outcome,
+        failure_category_is_comparable=(
+            status == "collector_nonzero" and terminal.collection_outcome == "nonzero"
+        ),
     )
 
 

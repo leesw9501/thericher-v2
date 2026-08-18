@@ -1100,11 +1100,18 @@ immutable markers are read as `reason_unavailable` without byte changes. This
 category is diagnostic evidence only: it does not authorize a Task, paging,
 pace, Docker, KIS, consumer, Paper, or recovery behavior change.
 
-One post-writer category binding is not a recovery premise. Before proposing a
-category-based recovery, reattach two later independently hash-validated
-task-owned bindings with the same category and obtain a fresh Claude
-falsification-first verdict. A different later category records divergence only
-and still authorizes no behavior change.
+The reattachment projection also reports `collection_outcome` and
+`failure_category_is_comparable`. The latter is true only when the exact later
+terminal is both `collector_nonzero` and `collection_outcome: nonzero`.
+`retained_partial` or `complete_session` may preserve the compatibility-default
+`reason_unavailable` after a successful collection stage; that field is
+noncomparable and is not a failure-category binding, match, or divergence.
+
+One comparable post-writer category binding is not a recovery premise. Before
+proposing a category-based recovery, reattach two later independently
+hash-validated task-owned *nonzero* bindings with the same comparable category
+and obtain a fresh Claude falsification-first verdict. A different comparable
+later category records divergence only and still authorizes no behavior change.
 
 The reader also accepts a terminal-embedded SHA-256 binding for one fixed,
 external, source-safe causal-condition attestation. That optional receipt must
