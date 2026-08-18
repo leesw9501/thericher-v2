@@ -46,7 +46,11 @@ decoded/emitted timestamp-set equality. The next objective,
 1m/5m/10m/1h/3h UTC-anchored resampling geometry without persisting resampled
 rows. The next objective, `firstrate-source-local-window-preflight-v1`, freezes
 target-free, source-local feature-window geometry only; it remains never a
-KIS/Paper/model input.
+KIS/Paper/model input. The completed window preflight reattached that geometry
+into a fixed 32-cell count/hash matrix with no raw rows, features, labels,
+predictions, weights, model, GPU, KIS, or Paper consumer. The next objective,
+`firstrate-source-semantics-retrieval-v1`, is a primary-source-only check of
+timestamp and omission semantics; it cannot itself promote the source.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -164,11 +168,24 @@ source buckets are only `not_emitted_from_observed_source_set`, never market
 gaps, zero-volume bars, session completeness, availability, finality, model, or
 Paper evidence.
 
+The completed FirstRate target-free window preflight reattached both immutable
+parent receipts and canonical input hashes, recomputed the exact five
+timeframes, and retained only the predeclared 32-cell window matrix, each
+eligible count, and end-timestamp-set hash. Its immutable manifest is
+`D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-window-preflight-v1.json`
+(`sha256:eb88b4a441541cc1adbd55be781267d4990fce743b89109d610ff82be3904987`).
+Eligibility means only complete in-memory Bars with adjacent starts exactly one
+declared timeframe apart; it does not bridge, fill, establish a market/session
+gap, or choose a model. Claude's scope-matched review rejected a follow-on GPU
+representation study as `unsupported`: without verified source time semantics
+or a decision-carrying artifact it would be a runtime benchmark, not research.
+GPU custody remains free.
+
 ## Current Cross-Lane Facts
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data / Engine Research | The legacy and first post-writer markers retain `collection_exit_nonzero / reason_unavailable`. The later hash-bound marker is instead `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its default category is noncomparable. FirstRate SPY/QQQ canonical M1 and UTC-anchored timeframe geometry are hash-bound but source-isolated. | Freeze and run a target-free 1m/5m/10m/1h/3h window-geometry preflight without labels, predictions, model selection, GPU, KIS, Paper, or a continuity/finality claim. |
+| Data / Engine Research | The legacy and first post-writer markers retain `collection_exit_nonzero / reason_unavailable`. The later hash-bound marker is instead `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its default category is noncomparable. FirstRate SPY/QQQ canonical M1, UTC-anchored timeframe mechanics, and 32-cell target-free window geometry are hash-bound but source-isolated. | Retrieve primary FirstRate timestamp, omission, sample-coverage, and private-use facts. Unstated facts remain `not_disclosed`; no model, GPU, KIS, Paper, or continuity/finality claim follows. |
 | Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`; it wrote no receipt and did not read catalog, metadata, or prices. This categorical result does not determine NDU process, update, subscription, expiry, vendor-access, or rights state. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If the reader later becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. A synthetic caller-owned local-paper two-step replay proves future policy-environment stepping against owned cost/fill semantics only. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
@@ -185,7 +202,8 @@ Paper evidence.
 | Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but `retained_partial` with a successful collection outcome, so its compatibility-default `reason_unavailable` is noncomparable. No recovery proposal or behavior change followed. |
 | FirstRate source-local M1 normalization | Data / Codex | Complete: archive hashes/expected entries, strict decode, canonical output hashes, and timestamp-set equality are retained in the external normalization receipt. SPY/QQQ provider round-trip counts are 207,824/210,482; no promotion followed. |
 | FirstRate source-local timeframe mechanics | Data / Codex | Complete: canonical hashes reattached; actual UTC-anchored 1m/5m/10m/1h/3h outputs are aggregated only and each emitted bar passed source-bucket OHLCV/ordering/completion checks. No resampled rows, coverage, model, or Paper consumer followed. |
-| FirstRate source-local window preflight | Data / Engine Research | Next objective: freeze a finite target-free window matrix over the five source-local timeframes and retain only eligible-window geometry/count evidence. No labels, predictions, GPU allocation, model selection, or Paper consumer. |
+| FirstRate source-local window preflight | Data / Engine Research | Complete: 32 frozen cells reattached canonical/mechanics hashes and retained only eligible-window count/end-timestamp-set hashes. No labels, features, predictions, GPU allocation, model selection, KIS, or Paper consumer followed. |
+| FirstRate source semantics retrieval | Data | Next objective: retrieve official timestamp, omission, sample-coverage, and private-use evidence; preserve `not_disclosed` when a source is silent. No model/Paper promotion follows. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-17 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
@@ -230,6 +248,8 @@ ready.
   `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-normalization-v1.json`.
 - FirstRate source-local timeframe mechanics manifest:
   `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-timeframe-mechanics-v1.json`.
+- FirstRate source-local window preflight manifest:
+  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-window-preflight-v1.json`.
 - FinRL source-only receipt:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\finrl-environment-interface-source-20260819-r1\source-retrieval.json`.
 - QQQ M1/M5/M10/H1/H3 mechanics:
@@ -272,6 +292,15 @@ KIS, broker, Task Scheduler, or Docker-service call occurred. It then passed
 the 3,015-pass authority parallel suite with 17 skips, Ruff, both credential-
 free Compose configuration parses, and `git diff --check`.
 
+The FirstRate source-local window-preflight package passed 23 focused
+normalizer/provider/mechanics/preflight tests. Its actual offline run reattached
+the parent receipt hashes and wrote only the 32-cell aggregate manifest; no
+network, credential, KIS, broker, Task Scheduler, Docker-service, training, or
+GPU call occurred. Claude rejected a proposed source-isolated GPU follow-up as
+`unsupported`, so no appointment followed. It then passed the 3,019-pass
+authority parallel suite with 17 skips, Ruff, both credential-free Compose
+configuration parses, and `git diff --check`.
+
 The Tiingo IEX source-isolated package passed 19 focused data/research tests,
 the 2,919-pass authority parallel suite with 17 skips, Ruff, both Compose
 configuration parses, and `git diff --check`. The CPU and CUDA Docker commands
@@ -304,6 +333,6 @@ self-staling latest hash here.
    successful and `retained_partial`, so its default category is noncomparable.
    Never infer a Scheduler, collector, provider, or Paper outcome from either
    marker.
-5. FirstRate canonical M1 outputs are source-isolated. Use them only for the
-   frozen target-free window-geometry preflight until a distinct consumer obtains
-   its own qualified-input contract.
+5. FirstRate canonical M1 outputs and window geometry are source-isolated. Use
+   them only for primary-source timestamp/omission semantics retrieval until a
+   distinct consumer obtains its own qualified-input contract.

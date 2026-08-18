@@ -28,10 +28,15 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 - QQQ 20-session M1/M5/M10/H1/H3 resampling and six canonical causal window
   profiles are complete source-local mechanics. They are target-free and
   non-promoting.
-- FirstRate SPY/QQQ canonical M1 data now has an actual source-local,
-  UTC-anchored 1m/5m/10m/1h/3h aggregate geometry manifest. It may support one
-  frozen target-free window preflight only; it cannot supply labels, a campaign,
-  GPU appointment, model selection, KIS equivalence, or Paper input.
+- FirstRate SPY/QQQ canonical M1 data has source-local UTC-anchored
+  1m/5m/10m/1h/3h mechanics plus a completed fixed target-free window matrix.
+  It retains only geometry/count evidence, not labels, features, predictions,
+  a campaign, GPU appointment, model selection, KIS equivalence, or Paper input.
+- Claude's 2026-08-19 falsification-first review found a FirstRate GPU
+  representation study `unsupported`: without a meaningful source time-grid
+  contract, retained artifact, or decision path it would only manufacture a
+  runtime benchmark. GPU custody stays free; the next bounded Data task is
+  primary-source timestamp/omission semantics retrieval, not training.
 - Fixed session-reset 15/30 EMA and 20/10 Donchian local-paper replays have
   replayable, terminal-flat accounting evidence and negative fixed baselines.
   Do not retune their windows, costs, thresholds, or signs under a new label.

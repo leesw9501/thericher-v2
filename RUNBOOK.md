@@ -1979,6 +1979,24 @@ emitted from the observed source set is not a claim about a market gap,
 zero-volume bar, session coverage, provider finality, or decision-time
 availability. This manifest remains source-isolated and non-promoting.
 
+### FirstRate Source-Local Window Preflight
+
+Build the target-free window-geometry manifest with:
+
+```powershell
+uv run --extra dev python scripts/build_firstrate_free_intraday_window_preflight.py
+```
+
+The runner reattests the normalization and timeframe-mechanics receipts before
+re-reading canonical CSVs. It recomputes the fixed 1m/5m/10m/1h/3h matrix and
+records only eligible-window counts and end-timestamp-set hashes. A window is
+eligible only when all in-memory Bars are complete and every adjacent start is
+exactly one declared timeframe apart. It never bridges, fills, reindexes, or
+writes a feature, label, price, prediction, weight, or resampled Bar.
+
+The result is source-local geometry only. It is not a time-grid, session,
+availability, finality, KIS-parity, model, backtest, Paper, or live claim.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,

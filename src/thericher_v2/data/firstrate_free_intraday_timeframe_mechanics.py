@@ -175,6 +175,22 @@ def main(argv: Sequence[str] | None = None) -> None:
     print(json.dumps(result, ensure_ascii=True, sort_keys=True))
 
 
+def parse_firstrate_normalization_receipt(
+    payload_bytes: bytes,
+) -> tuple[FirstRateCanonicalSpec, ...]:
+    """Parse the source-local normalization receipt for another offline consumer."""
+
+    return _parse_normalization_receipt(payload_bytes)
+
+
+def validate_firstrate_canonical_bars(
+    bars: list[Bar], spec: FirstRateCanonicalSpec
+) -> None:
+    """Reattest one canonical FirstRate stream without accessing a provider."""
+
+    _validate_source_bars(bars, spec)
+
+
 def _parse_normalization_receipt(payload_bytes: bytes) -> tuple[FirstRateCanonicalSpec, ...]:
     try:
         payload = json.loads(payload_bytes.decode("utf-8"))

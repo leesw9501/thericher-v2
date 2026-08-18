@@ -6,12 +6,12 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`firstrate-source-local-window-preflight-v1` follows the completed FirstRate
-normalization and timeframe-mechanics packages. It freezes only the finite
-target-free SPY/QQQ 1m/5m/10m/1h/3h window-geometry matrix over the hash-bound
-canonical input. It is retrospective Data/Research preparation only: no label,
-model, selection, GPU appointment, KIS join, availability/finality claim, PnL,
-Paper action, or live route.
+`firstrate-source-semantics-retrieval-v1` follows the completed FirstRate
+normalization, timeframe-mechanics, and target-free window-preflight packages.
+It retrieves only primary FirstRate timestamp, omission, sample-coverage, and
+private-use facts needed to narrow source-local interpretation. It is Data
+provenance only: no raw data, model, GPU appointment, KIS join,
+availability/finality claim, PnL, Paper action, or live route.
 
 ## Ready / Owned / Due
 
@@ -20,7 +20,8 @@ Paper action, or live route.
 | Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |
 | FirstRate free M1 normalization | Data | Hash-bound external ZIPs, canonical CSVs, and source-safe receipt | Closed: archive hashes, expected entries, strict decode, canonical hashes, and exact timestamp-set equality reattached. Local provider round-trip counts are 207,824 SPY and 210,482 QQQ M1 Bars. |
 | FirstRate source-local timeframe mechanics | Data / Codex | Existing local provider/resampler and immutable normalization receipt | Closed: canonical hashes reattached and only complete unique UTC-anchored 1m/5m/10m/1h/3h aggregate geometry retained. Every emitted bar passed source-bucket OHLCV, ordering, and completion checks. |
-| FirstRate source-local window preflight | Data / Engine Research | Hash-bound FirstRate normalization/mechanics receipts and canonical CSVs | Ready: produce only independent eligible-window counts and end-timestamp-set hashes for the frozen matrix. No labels, features, models, GPU, KIS, or Paper consumer. |
+| FirstRate source-local window preflight | Data / Engine Research | Hash-bound FirstRate normalization/mechanics receipts and canonical CSVs | Closed: 32 fixed matrix cells reattached locally and retained only eligible-window count/end-timestamp-set hash evidence. No labels, features, models, GPU, KIS, or Paper consumer. |
+| FirstRate source semantics retrieval | Data | Public official FirstRate sources and external source-safe receipt root | Ready: determine only documented timestamp, omission, sample coverage, and private-use facts. Missing evidence stays `not_disclosed`; no promotion follows. |
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | Norgate local readiness | Data | Existing NDU updater | The 2026-08-14 provisioned-host reader returned `local_api_not_ready` and wrote no receipt. It does not establish a process, update, subscription, expiry, vendor-access, or rights cause. This does not block the Paper canary. The one operator-visible diagnostic is the already-running NDU update plus database/subscription-state panes, then minimize it. |
@@ -51,16 +52,16 @@ does not qualify research input or change Paper behavior.
 
 ## Current Reversible Improvement
 
-The FirstRate timeframe-mechanics runner reattests canonical inputs and proves
-UTC-anchored 1m/5m/10m/1h/3h bucket ordering, completion, source-start, and
-OHLCV aggregation in memory before retaining only aggregate hashes and counts.
-It advances source-local research preparation without treating omitted source
-minutes as gaps or promoting the data to a KIS/Paper/model consumer.
+The FirstRate window-preflight runner reattests both upstream receipts and
+canonical inputs, then records only independently eligible window counts and
+end-timestamp-set hashes for a fixed 32-cell matrix. It makes observation-window
+geometry explicit without treating omitted source minutes as gaps or promoting
+the data to a KIS/Paper/model consumer.
 
 ## Current Recovery Action
 
 No category-based recovery proposal is active. A later recovery investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current next
-action is the independent FirstRate target-free window preflight; it needs no
-Task or foreground wait.
+action is the independent FirstRate source-semantics retrieval; it needs no Task
+or foreground wait.
