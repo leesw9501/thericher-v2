@@ -82,12 +82,14 @@ def _broker(
     *,
     starting_cash: Decimal = Decimal("1000"),
     fee_bps: Decimal = Decimal("1"),
+    slippage_bps: Decimal = Decimal("0"),
 ) -> LocalPaperBroker:
     return LocalPaperBroker(
         event_store=EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl"),
         emergency_store=EmergencyStore(tmp_path / "emergency.json"),
         starting_cash=starting_cash,
         fee_bps=fee_bps,
+        slippage_bps=slippage_bps,
     )
 
 
@@ -217,6 +219,76 @@ def test_next_bar_fill_updates_cash_positions_and_replay(tmp_path) -> None:
 
     event_types = [event.event_type for event in broker.event_store.iter_events()]
     assert event_types == [
+        "local_paper_order_accepted",
+        "fill",
+        "local_paper_portfolio_snapshot",
+    ]
+
+
+def test_caller_owned_stepwise_policy_replays_costs_at_each_decision(tmp_path) -> None:
+    """A future policy runtime can drive owned local-paper steps without an adapter."""
+
+    broker = _broker(
+        tmp_path,
+        starting_cash=Decimal("1000"),
+        fee_bps=Decimal("2"),
+        slippage_bps=Decimal("10"),
+    )
+
+    def policy_order(step: int, signal_bar: Bar) -> OrderIntent:
+        return OrderIntent(
+            client_order_id=f"external-policy-step-{step}",
+            symbol="AAPL",
+            market="US",
+            side="buy" if step == 0 else "sell",
+            quantity=Decimal("2"),
+            limit_price=None,
+            decision_id=f"external-policy-decision-{step}",
+            created_at=signal_bar.end_ts,
+        )
+
+    entry_order = policy_order(0, _bar(0))
+    entry_accepted = broker.submit_order(entry_order)
+    entry = broker.fill_next_bar(
+        entry_order.client_order_id,
+        signal_bar=_bar(0),
+        execution_bar=_bar(1),
+    )
+    exit_order = policy_order(1, _bar(1))
+    exit_accepted = broker.submit_order(exit_order)
+    exit_execution = broker.fill_next_bar(
+        exit_order.client_order_id,
+        signal_bar=_bar(1),
+        execution_bar=_bar(2),
+    )
+
+    assert entry_accepted.status == "accepted"
+    assert exit_accepted.status == "accepted"
+    assert entry.fill is not None
+    assert exit_execution.fill is not None
+    assert (entry.fill.filled_at, exit_execution.fill.filled_at) == (
+        _bar(1).start_ts,
+        _bar(2).start_ts,
+    )
+    assert (entry.fill.price, entry.fill.fee) == (Decimal("101.1010"), Decimal("0.0404"))
+    assert (exit_execution.fill.price, exit_execution.fill.fee) == (
+        Decimal("101.8980"),
+        Decimal("0.0408"),
+    )
+    assert entry.fill.notional + exit_execution.fill.notional == Decimal("405.9980")
+
+    realized = replay_local_paper_realized_pnl(broker.event_store.iter_events())
+
+    assert realized.realized_after_cost_pnl == Decimal("1.5128")
+    assert realized.closed_quantity == Decimal("2")
+    assert realized.open_quantity == Decimal("0")
+    assert realized.local_paper_fill_count == 2
+    assert exit_execution.account.cash == Decimal("1001.5128")
+    assert exit_execution.account.positions == ()
+    assert [event.event_type for event in broker.event_store.iter_events()] == [
+        "local_paper_order_accepted",
+        "fill",
+        "local_paper_portfolio_snapshot",
         "local_paper_order_accepted",
         "fill",
         "local_paper_portfolio_snapshot",

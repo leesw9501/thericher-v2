@@ -25,9 +25,12 @@ real-artifact smoke returned `not_written/session_coverage_incomplete` for the
 current terminal. The next objective,
 `kis-intraday-full-session-capture-recovery-v1` completed a metadata-only
 topology audit and installed a diagnostic-only invocation receipt path in the
-existing dispatcher. The next objective,
-`kis-intraday-invocation-receipt-reattachment-v1`, reattaches the first later
-task-owned marker to locate the exact run-versus-retention boundary.
+existing dispatcher. The completed
+`kis-intraday-invocation-receipt-reattachment-v1` reattached the first later
+task-owned marker and found one exact task-stage nonzero without a root-cause
+claim. The next objective, `kis-intraday-task-path-failure-localization-v1`,
+adds only a closed source-safe reason classification for future task-owned
+nonzero runs before any capture or consumer behavior changes.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -65,23 +68,24 @@ not prove missed triggers. Claude's falsification-first verdict was
 `unsupported` for changing timing, paging, or downstream consumers from this
 evidence alone.
 
-The existing host dispatcher now writes an immutable, source-safe `started`
-marker before collection and a hash-bound `terminal` marker after its existing
-schedule receipt. The terminal separates its schedule-observed timestamp from
-the later dispatcher-completion timestamp, and the offline reattachment reader
-requires the exact run and schedule-timestamp binding before classification.
-It changes neither the Task definition nor any collector, KIS, Paper, or
-downstream-consumer behavior. The current marker pointer is unavailable until a
-later task-owned invocation writes it. This is assumed-honest-host provenance,
-not cryptographic proof of Scheduler origin.
+The existing host dispatcher writes an immutable, source-safe `started` marker
+before collection and a hash-bound `terminal` marker after its existing schedule
+receipt. The first fresh marker reattached the exact 2026-08-19 KST run
+`intraday-head-20260818T1728005721271Z`: its start, schedule-observed, and
+dispatcher-completion timestamps bind to a `recovery` terminal with exit code
+`1` and `collection_exit_nonzero`. This is one exact task-path nonzero, not
+proof that a collector process started or that Docker, provider, persistence,
+or timing caused it. It changes neither the Task definition nor any collector,
+KIS, Paper, or downstream-consumer behavior. The provenance remains
+assumed-honest-host, not cryptographic proof of Scheduler origin.
 
 ## Current Cross-Lane Facts
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data | The topology audit observed a sparse retained-slot pattern but cannot distinguish a missing Scheduler start from collector, provider, or persistence behavior. The task is enabled with one runner action; its Operational log is disabled. | Reattach the first later source-safe invocation marker and exact terminal before changing trigger timing, page count, or downstream consumers. |
+| Data | The exact fresh marker now localizes one `collection_exit_nonzero` task stage, while topology is `current_metadata_consistent` and coverage remains incomplete. The task is enabled with one runner action; its Operational log is disabled. | Localize only an allowlisted source-safe reason category before changing timing, page count, Docker/KIS behavior, or downstream consumers. |
 | Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`; it wrote no receipt and did not read catalog, metadata, or prices. This categorical result does not determine NDU process, update, subscription, expiry, vendor-access, or rights state. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If the reader later becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
-| Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. The future attestation writer does not change the fresh QQQ/SPY terminal's unavailable consumer input. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
+| Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. A synthetic caller-owned local-paper two-step replay proves future policy-environment stepping against owned cost/fill semantics only. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
 | Execution | The 2026-08-17 23:35 KST owned quote-session receipt reattached offline as `canary_completed -> cancelled / clean`, `paper_only`, with attribution `not_eligible`; the bound direct lifecycle receipt records only an acknowledged order-reference category. The earlier 2026-08-11 `outcome_unknown / unresolved` remains its own exact-run reconciliation fact. | This exact run proves neither a fill, PnL, alpha, nor model result. Do not resubmit either durable intent; their existing reconciliation paths remain the only owners. |
 | Shared worktree | Alternate IWM collector WIP is untracked/modified and rejected from this objective. | Do not touch, stage, invoke, or reconcile it without a separate assignment. |
@@ -90,12 +94,13 @@ not cryptographic proof of Scheduler origin.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Invocation receipt reattachment | Data / Codex | Existing task owns the next marker. The current pointer is unavailable; the offline reader now binds exact run ID plus schedule-observed timestamp before it reports a terminal category. No foreground wait, duplicate task, or manual collection is permitted. |
+| Invocation receipt reattachment | Data / Codex | Complete: the exact fresh marker, terminal, and schedule receipt bind a `collection_exit_nonzero` task stage. Its external evidence pointers are `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T1728005721271Z/terminal.json` and `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T1728005721271Z.json`. |
+| Task-path failure localization | Data / Codex | Next objective owns one closed, free-text-free reason classification that can distinguish dispatcher/config from collector/provider cases. No timing/page/task/consumer change follows from the current one-run fact. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-17 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
 | Read-only Paper account observer | Execution | Existing four-minute task is the sole owner. Its validated provenance is marker-present under an assumed-honest host, not cryptographic Scheduler-origin proof. |
-| Public-source research | Engine Research | Qlib and PatchTST are source-only architecture references, with no code, package, data, weight, campaign, GPU, or Paper consequence. |
+| Public-source research | Engine Research | Qlib, PatchTST, and FinRL are source-only references, with no code, package, data, weight, campaign, GPU, or Paper consequence. FinRL conventions cannot replace owned data, timing, or cost semantics. |
 
 External quota and session waits belong to their named task. Codex does not
 foreground-sleep or add a duplicate scheduler while an independent package is
@@ -131,6 +136,8 @@ ready.
   `scripts\project_kis_paper_intraday_head_invocation_receipt.py`.
 - Invocation-to-terminal reattachment reader:
   `scripts\project_kis_paper_intraday_invocation_reattachment.ps1`.
+- FinRL source-only receipt:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\finrl-environment-interface-source-20260819-r1\source-retrieval.json`.
 - QQQ M1/M5/M10/H1/H3 mechanics:
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
 - Fixed local-paper EMA attribution:
@@ -175,6 +182,6 @@ self-staling latest hash here.
    active stateboards.
 3. Run a compact Throughput Review, then dispatch only a ready,
    non-conflicting package.
-4. Reattach the next eligible intraday invocation marker only after its owned
-   task writes it. Preserve a scoped unavailable or unknown result; never infer
-   a Scheduler, collector, provider, or Paper outcome from a missing marker.
+4. The current exact marker is a task-stage nonzero, not a causal diagnosis.
+   Preserve its scope and localize only a closed source-safe reason category;
+   never infer a Scheduler, collector, provider, or Paper outcome from it.

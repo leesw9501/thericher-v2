@@ -1069,6 +1069,13 @@ are exact but relative to the external artifact root, never local absolute
 paths. A marker remains assumed-honest-host provenance, not cryptographic
 Scheduler-origin proof.
 
+`collector_nonzero` means only that the dispatcher-recorded collection service
+stage returned nonzero for that exact bound task path. It does not identify a
+collector-process, Docker, provider, persistence, rate, or timing cause. Do not
+read or retain command output or exception text as a shortcut: any future
+localization receipt must use a closed allowlist of categorical codes and keep
+the original stage exit separately intact.
+
 The reader also accepts a terminal-embedded SHA-256 binding for one fixed,
 external, source-safe causal-condition attestation. That optional receipt must
 match the terminal's run, capture, availability, and pair identities and name

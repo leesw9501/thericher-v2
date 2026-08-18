@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-19 metadata-only audit found sparse retained QQQ chunks associated with all four expected ET slots, but no complete audited session. The latest audited session retained only the 11:29 ET slot with 119 complete minutes. The enabled one-action Task has its Operational log disabled, so absent chunks cannot prove a missed start. | Existing dispatcher writes source-safe `started` and hash-bound `terminal` invocation markers outside Git. The terminal preserves exact schedule-observed and later dispatcher-completion timestamps; reattach the next task-owned marker before changing timing, paging, or consumers. No model or reusable Paper-candidate promotion follows. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The first fresh 2026-08-19 KST invocation marker binds one task-path run to a `recovery` terminal with `collection_exit_nonzero`; its metadata topology is `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The stage label proves only that the dispatcher-recorded collection service invocation returned nonzero. It does not prove collector-process entry, a provider cause, or a timing/page remedy. No model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper broad D1 panel | The latest source-safe postrun snapshot (2026-08-01) recorded 2,119/2,119 current-listing targets covered, zero quarantined targets, and zero mismatches over its 604-target baseline overlap. A later successful Task exit does not itself refresh this frozen snapshot. | Coverage/provenance inventory only: current-listing, non-PIT, unadjusted, corporate-action-unqualified, and session-finality-unattested. It cannot supply a target, ranking, training, or Paper input. |
@@ -70,22 +70,26 @@ run/timestamp binding, and rejects an explicit task-derived input or a replayed
 run. This limitation does not block the separate collection-recovery package.
 
 The full-session topology audit is now complete. Its `run_or_persistence_unresolved`
-result is intentionally narrower than a Scheduler-failure claim: retained index
-metadata cannot tell whether a slot did not start, failed before persistence,
-received a provider-limited window, or was deduplicated. The existing task
-definition remains unchanged. A diagnostic marker is emitted immediately before
-the collector and after the existing terminal receipt; its terminal marker now
-binds both the existing schedule-observed timestamp and its actual later
-dispatcher-completion timestamp. The external current pointer is unavailable
-pending the next task-owned run.
+result remains intentionally narrower than a Scheduler-failure claim. The first
+fresh marker reattached the exact task-path run
+`intraday-head-20260818T1728005721271Z`: the marker began at
+`2026-08-18T17:28:00.572127Z`, the schedule receipt was observed at
+`2026-08-18T17:28:04.254121Z`, and the dispatcher completed at
+`2026-08-18T17:28:05.278714Z`. Its hash-bound schedule terminal is `recovery`
+with scheduler exit code `1` and the closed stage category
+`collection_exit_nonzero`. This establishes a task-path nonzero only; it cannot
+identify a Docker wrapper, collector-process, provider, or persistence cause.
+The existing task definition, timing, pages, consumers, KIS route, and Paper
+behavior remain unchanged.
 
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
-| Invocation-marker reattachment | Data / Codex | Ready only when the existing task writes a fresh marker. Validate its exact pointer, immutable receipt, run ID, and schedule-observed timestamp with the offline reader, then compare its categorical outcomes with terminal and topology evidence. |
-| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The current invocation-marker pointer is unavailable. Its next due time is task-owned and never a foreground wait. |
+| Invocation-marker reattachment | Data / Codex | Complete: the first fresh marker and exact schedule terminal reattached as `collection_exit_nonzero`; its source-safe pointers remain external-root-relative. |
+| Task-path failure localization | Data / Codex | Next objective: retain only an allowlisted categorical reason that distinguishes dispatcher/config from collector/provider cases without changing the task, pages, timing, or consumers. |
+| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The current pointer is a validated terminal for one exact nonzero task path. Its later due times remain task-owned and never foreground waits. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The 2026-08-14 source-safe reader returned `local_api_not_ready` and wrote no receipt. Do not foreground-wait, duplicate either action, or infer a cause. The one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
@@ -105,6 +109,9 @@ pending the next task-owned run.
   provider evidence.
 - An exact source/cursor limit closes only that route; it does not prove a
   provider-wide history limit.
+- A `collection_exit_nonzero` terminal is a closed task-stage category, not a
+  collector-process, provider, or Scheduler-origin diagnosis. Any later reason
+  field must be an allowlisted category with free-text structurally impossible.
 - Preserve a durable serial cursor only after a useful capability probe
   establishes continuation semantics. Do not replace measurement with a
   parallel request flood.

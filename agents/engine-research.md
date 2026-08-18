@@ -33,6 +33,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   Do not retune their windows, costs, thresholds, or signs under a new label.
 - Existing CPU/CUDA structural screens for LSTM, causal TCN, and compact
   attention prove only a local runtime path. They do not select a model.
+- A caller-owned synthetic two-step local-paper policy replay now proves that
+  independent decisions can submit and fill sequentially at next-bar boundaries
+  with the same fee/slippage and replay/PnL accounting semantics. It is an
+  interface capability fixture, not a market, model, or PnL result.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed
@@ -55,11 +59,12 @@ candidate, training run, GPU appointment, sealed-evaluation spend, ensemble
 input, or Paper input. Engine Research waits only on Data's separate complete-
 session recovery, never on an attestation artifact for the current terminal.
 
-The 2026-08-19 capture-topology audit and dispatcher invocation markers are
-Data diagnostics only. Their current pointer is unavailable; its future reader
-requires exact run and schedule-observed timestamp binding before a narrow
-terminal category. No result can qualify a dataset, spend evaluation, allocate
-GPU, or change the frozen 30/60/90-minute candidate matrix.
+The first fresh 2026-08-19 KST dispatcher marker reattached as an exact
+task-path `collection_exit_nonzero` terminal. It remains a Data diagnostic, not
+a cause attribution: its stage label cannot establish collector-process entry,
+provider state, or a capture remedy. It creates no qualified dataset, target,
+split, campaign, GPU allocation, or change to the frozen 30/60/90-minute
+candidate matrix.
 
 ## Public-Source References
 
@@ -67,7 +72,7 @@ GPU, or change the frozen 30/60/90-minute candidate matrix.
 | --- | --- | --- |
 | Qlib | MIT `architecture_reference_only` | No package, code, data, model, runtime, or campaign adoption. |
 | PatchTST | Apache-2.0 `future_sequence_architecture_reference` | General time-series claims only; financial pretraining/evaluation scope is not disclosed, and no runtime, code, weight, or campaign is adopted. |
-| FinRL | MIT `rl_environment_interface_reference_only` | Its official classic framework is an educational/research train-test-trade pipeline that assumes external data and a new DRL runtime. Only its environment-to-agent separation is a future allocation-design reference; no package, code, data, weight, runtime, campaign, or Paper route is adopted. |
+| FinRL | MIT `rl_environment_interface_reference_only` | Its official classic framework is an educational/research train-test-trade pipeline that assumes external data and a new DRL runtime. Exclude its data preprocessing, same-bar reward timing, and cost/fill conventions; only its environment-to-agent separation is a future allocation-design reference. No package, code, data, weight, runtime, campaign, or Paper route is adopted. |
 | Chronos, TimesFM, Granite | Isolated source/runtime studies only | Unknown or incompatible financial pretraining/evaluation scope prevents comparative or Paper use. |
 | PyPortfolioOpt HRP | Source-only allocation reference | Requires causal candidate returns, PIT universe, and completed rolling windows. |
 

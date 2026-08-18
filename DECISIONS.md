@@ -9447,3 +9447,44 @@ validation, exact run/timestamp mismatch rejection, marker-unavailable and
 start-only states, complete/partial/nonzero classification, and no secret or
 Task-start surface. The provenance remains marker-present under an assumed-honest
 host, never cryptographic Scheduler-origin proof.
+
+## 2026-08-19 - Keep public RL references out of owned execution semantics
+
+Decision: retain FinRL as an MIT source-only environment-interface reference.
+Do not import its package, data pipeline, model weights, reward timing, cost or
+fill conventions. The existing caller-owned `LocalPaperBroker` remains the only
+future policy environment seam: a synthetic two-step external-policy fixture
+must submit each independent decision before its next completed bar, fill through
+the same fee/slippage contract, and replay terminal-flat realized-after-cost
+accounting. This is an interface capability, not a market result, model result,
+campaign, GPU appointment, or Paper action.
+
+Reason: Claude's falsification-first verdict was `supported-with-limits`.
+Freezing RL runtime adoption does not justify deferring data-independent proof
+that a later external policy can use owned execution semantics. The focused
+fixture proves that seam without a provider, credential, network, KIS, Docker,
+runtime, raw market input, or new execution route. It also prevents a future
+framework from silently substituting same-bar rewards or a different cost/fill
+model for replay-parity evidence.
+
+## 2026-08-19 - Treat an intraday collection-stage nonzero as task-path evidence
+
+Decision: classify the first fresh hash-bound intraday marker as one exact
+task-path `collection_exit_nonzero` fact only. Its bound schedule receipt is
+`recovery` with scheduler exit `1`; it does not prove a collector process
+started, or assign cause to Docker, provider, persistence, request pace, page
+count, or Scheduler timing. Keep all task triggers, pages, consumers, KIS
+routes, Docker services, and Paper behavior unchanged. The next recovery may
+retain a reason only as a closed allowlisted category with free-text structurally
+impossible, while preserving the original stage exit code.
+
+Reason: the marker established the start, schedule-observed, and dispatcher-
+completion boundary, but the collection stage's code is supplied by the host
+service wrapper and not independent root-cause evidence. Claude's
+falsification-first verdict was `supported-with-limits`: a generic diagnostic
+can mask the nonzero or leak credentials/account identifiers through exception
+text, and the existing receipt already localizes stage-level exit codes. A
+behavior change needs a source-safe categorical reason that distinguishes a
+deterministic dispatcher/config case from a collector/provider case in at least
+two hash-validated bindings. Until then, the result is Data-only and never a
+model, PnL, Paper, or live fact.
