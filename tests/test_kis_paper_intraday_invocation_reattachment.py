@@ -195,6 +195,68 @@ def test_reattachment_classifies_complete_session_with_metadata_only_relation() 
     assert result.schedule_receipt_pointer.endswith("head-unit.json")
 
 
+def test_reattachment_rejects_the_same_bound_marker_as_not_later() -> None:
+    runtime, terminal, schedule = _bound_facts()
+
+    result = reattachment.classify_kis_paper_intraday_invocation_reattachment(
+        runtime=runtime,
+        terminal=terminal,
+        schedule=schedule,
+        topology=None,
+        baseline_run_id=terminal.run_id,
+        baseline_completed_at=terminal.completed_at,
+    )
+
+    assert result.status == "marker_not_later"
+    assert result.reason == "current_marker_is_not_later_than_baseline"
+    assert result.run_id == terminal.run_id
+    assert result.completed_at == terminal.completed_at
+    assert result.schedule_receipt_sha256 == schedule.receipt_sha256
+
+
+def test_reattachment_requires_a_strictly_later_completion_timestamp() -> None:
+    runtime, terminal, schedule = _bound_facts()
+
+    result = reattachment.classify_kis_paper_intraday_invocation_reattachment(
+        runtime=runtime,
+        terminal=terminal,
+        schedule=schedule,
+        topology=None,
+        baseline_run_id="older-run",
+        baseline_completed_at=terminal.completed_at,
+    )
+
+    assert result.status == "marker_not_later"
+    assert result.reason == "current_marker_is_not_later_than_baseline"
+
+
+def test_reattachment_requires_both_baseline_facts() -> None:
+    runtime, terminal, schedule = _bound_facts()
+
+    with pytest.raises(ValueError, match="must be supplied together"):
+        reattachment.classify_kis_paper_intraday_invocation_reattachment(
+            runtime=runtime,
+            terminal=terminal,
+            schedule=schedule,
+            topology=None,
+            baseline_run_id=terminal.run_id,
+        )
+
+
+def test_reattachment_requires_a_timezone_aware_baseline_completion() -> None:
+    runtime, terminal, schedule = _bound_facts()
+
+    with pytest.raises(ValueError, match="timezone-aware"):
+        reattachment.classify_kis_paper_intraday_invocation_reattachment(
+            runtime=runtime,
+            terminal=terminal,
+            schedule=schedule,
+            topology=None,
+            baseline_run_id="older-run",
+            baseline_completed_at=terminal.completed_at.replace(tzinfo=None),
+        )
+
+
 @pytest.mark.parametrize(
     "collection_failure_category",
     ["reason_unavailable", "dispatcher_config", "collector_provider"],

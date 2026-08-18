@@ -37,6 +37,7 @@ _ReattachmentStatus = Literal[
     "marker_unavailable",
     "start_only",
     "terminal_unavailable",
+    "marker_not_later",
     "collector_nonzero",
     "retained_partial",
     "complete_session",
@@ -115,8 +116,15 @@ def reattach_kis_paper_intraday_invocation_from_artifact_root(
     task_facts: KisPaperIntradayCaptureTaskFacts,
     after_session_date: date,
     required_complete_session_count: int,
+    baseline_run_id: str | None = None,
+    baseline_completed_at: datetime | None = None,
 ) -> KisPaperIntradayInvocationReattachment:
     """Read only validated source-safe pointers and metadata for the current run."""
+
+    _validate_baseline(
+        baseline_run_id=baseline_run_id,
+        baseline_completed_at=baseline_completed_at,
+    )
 
     try:
         runtime = read_current_kis_paper_intraday_head_invocation_runtime_fact(
@@ -155,6 +163,8 @@ def reattach_kis_paper_intraday_invocation_from_artifact_root(
         terminal=terminal,
         schedule=schedule,
         topology=topology,
+        baseline_run_id=baseline_run_id,
+        baseline_completed_at=baseline_completed_at,
     )
 
 
@@ -164,8 +174,15 @@ def classify_kis_paper_intraday_invocation_reattachment(
     terminal: KisPaperIntradayHeadInvocationTerminalFact | None,
     schedule: KisPaperIntradayHeadScheduleFact | None,
     topology: KisPaperIntradayCaptureTopology | None,
+    baseline_run_id: str | None = None,
+    baseline_completed_at: datetime | None = None,
 ) -> KisPaperIntradayInvocationReattachment:
     """Classify only evidence that is bound to the current invocation marker."""
+
+    _validate_baseline(
+        baseline_run_id=baseline_run_id,
+        baseline_completed_at=baseline_completed_at,
+    )
 
     if runtime is None:
         return _marker_unavailable()
@@ -188,12 +205,16 @@ def classify_kis_paper_intraday_invocation_reattachment(
             or schedule.recovery_class != "collection_exit_nonzero"
         ):
             return _terminal_unavailable(runtime, reason="collection_outcome_mismatch")
-        return _terminal_result(
-            status="collector_nonzero",
-            reason="collection_exit_nonzero",
-            terminal=terminal,
-            schedule=schedule,
-            topology=topology,
+        return _require_later_marker(
+            _terminal_result(
+                status="collector_nonzero",
+                reason="collection_exit_nonzero",
+                terminal=terminal,
+                schedule=schedule,
+                topology=topology,
+            ),
+            baseline_run_id=baseline_run_id,
+            baseline_completed_at=baseline_completed_at,
         )
     if terminal.terminal_outcome != "succeeded" or schedule.terminal_status != "complete":
         return _terminal_unavailable(runtime, reason="dispatch_terminal_not_complete")
@@ -203,19 +224,69 @@ def classify_kis_paper_intraday_invocation_reattachment(
     ):
         return _terminal_unavailable(runtime, reason="capture_binding_unavailable")
     if schedule.current_session_cumulative_coverage_category == "complete":
-        return _terminal_result(
-            status="complete_session",
-            reason="current_session_complete",
+        return _require_later_marker(
+            _terminal_result(
+                status="complete_session",
+                reason="current_session_complete",
+                terminal=terminal,
+                schedule=schedule,
+                topology=topology,
+            ),
+            baseline_run_id=baseline_run_id,
+            baseline_completed_at=baseline_completed_at,
+        )
+    return _require_later_marker(
+        _terminal_result(
+            status="retained_partial",
+            reason="current_session_not_complete",
             terminal=terminal,
             schedule=schedule,
             topology=topology,
-        )
-    return _terminal_result(
-        status="retained_partial",
-        reason="current_session_not_complete",
-        terminal=terminal,
-        schedule=schedule,
-        topology=topology,
+        ),
+        baseline_run_id=baseline_run_id,
+        baseline_completed_at=baseline_completed_at,
+    )
+
+
+def _validate_baseline(
+    *,
+    baseline_run_id: str | None,
+    baseline_completed_at: datetime | None,
+) -> None:
+    if baseline_run_id is None and baseline_completed_at is None:
+        return
+    if baseline_run_id is None or baseline_completed_at is None:
+        raise ValueError("baseline run ID and completion timestamp must be supplied together")
+    if baseline_completed_at.tzinfo is None:
+        raise ValueError("baseline completion timestamp must be timezone-aware")
+
+
+def _require_later_marker(
+    result: KisPaperIntradayInvocationReattachment,
+    *,
+    baseline_run_id: str | None,
+    baseline_completed_at: datetime | None,
+) -> KisPaperIntradayInvocationReattachment:
+    if baseline_run_id is None or baseline_completed_at is None:
+        return result
+    if result.run_id != baseline_run_id and result.completed_at is not None:
+        if result.completed_at > baseline_completed_at:
+            return result
+    return KisPaperIntradayInvocationReattachment(
+        status="marker_not_later",
+        reason="current_marker_is_not_later_than_baseline",
+        invocation_phase=result.invocation_phase,
+        run_id=result.run_id,
+        started_at=result.started_at,
+        schedule_observed_at=result.schedule_observed_at,
+        completed_at=result.completed_at,
+        invocation_receipt_sha256=result.invocation_receipt_sha256,
+        schedule_receipt_sha256=result.schedule_receipt_sha256,
+        invocation_receipt_pointer=result.invocation_receipt_pointer,
+        schedule_receipt_pointer=result.schedule_receipt_pointer,
+        topology_relation=result.topology_relation,
+        topology_session_date=result.topology_session_date,
+        collection_failure_category=result.collection_failure_category,
     )
 
 

@@ -1,9 +1,14 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Join-Path $PSScriptRoot "..")
+    [string]$ProjectRoot = (Join-Path $PSScriptRoot ".."),
+    [string]$BaselineRunId,
+    [string]$BaselineCompletedAt
 )
 
 $ErrorActionPreference = "Stop"
+if ([string]::IsNullOrWhiteSpace($BaselineRunId) -ne [string]::IsNullOrWhiteSpace($BaselineCompletedAt)) {
+    throw "BaselineRunId and BaselineCompletedAt must be supplied together."
+}
 $taskName = "thericher-kis-paper-intraday-head"
 $resolvedProjectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
 $task = Get-ScheduledTask -TaskName $taskName -ErrorAction Stop
@@ -47,6 +52,10 @@ if ($info.LastRunTime -and $info.LastRunTime.Year -gt 2000) {
 }
 if ($info.NextRunTime -and $info.NextRunTime.Year -gt 2000) {
     $arguments += @("--next-run-at", $info.NextRunTime.ToUniversalTime().ToString("o"))
+}
+if (-not [string]::IsNullOrWhiteSpace($BaselineRunId)) {
+    $arguments += @("--baseline-run-id", $BaselineRunId)
+    $arguments += @("--baseline-completed-at", $BaselineCompletedAt)
 }
 
 Push-Location $resolvedProjectRoot

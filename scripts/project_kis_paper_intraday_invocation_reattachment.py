@@ -45,12 +45,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--next-run-at")
     parser.add_argument("--last-task-result", type=int, required=True)
     parser.add_argument("--missed-run-count", type=int, required=True)
+    parser.add_argument("--baseline-run-id")
+    parser.add_argument("--baseline-completed-at")
     parser.add_argument(
         "--operational-log-state",
         choices=("enabled", "disabled", "unavailable"),
         required=True,
     )
     arguments = parser.parse_args(argv)
+    baseline_completed_at = (
+        None
+        if arguments.baseline_completed_at is None
+        else _utc(arguments.baseline_completed_at, "baseline completion timestamp")
+    )
     task_facts = KisPaperIntradayCaptureTaskFacts(
         task_name=arguments.task_name,
         state=arguments.task_state,
@@ -76,6 +83,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         task_facts=task_facts,
         after_session_date=KIS_INTRADAY_PROSPECTIVE_HEAD_HISTORICAL_DEVELOPMENT_SESSION_DATES[-1],
         required_complete_session_count=KIS_INTRADAY_PROSPECTIVE_HEAD_REQUIRED_SESSION_COUNT,
+        baseline_run_id=arguments.baseline_run_id,
+        baseline_completed_at=baseline_completed_at,
     )
     print(json.dumps(result.safe_payload(), sort_keys=True))
     return 0

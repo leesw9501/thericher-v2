@@ -47,10 +47,12 @@ not a verdict. This does not qualify research input or change Paper behavior.
 
 ## Current Reversible Improvement
 
-Use the installed external marker boundary plus a second later closed category
-to distinguish a repeated category from divergence, without identifying an
-exact cause. Preserve the original stage exit code and do not emit free-text
-exceptions, URLs, secrets, account values, or raw data.
+Use the installed external marker boundary with the paired first-marker
+baseline plus a second later closed category to distinguish a repeated category
+from divergence, without identifying an exact cause. The reader reports
+`marker_not_later` for an unchanged or non-later current pointer, so a reread
+cannot count as independent evidence. Preserve the original stage exit code and
+do not emit free-text exceptions, URLs, secrets, account values, or raw data.
 
 ## Current Recovery Action
 

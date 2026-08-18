@@ -94,6 +94,12 @@ diagnostic binding, not a cause or recovery premise. A 2026-08-19 Claude scope
 review ended `review_unavailable` because of an API overload, so no
 category-based recovery claim exists.
 
+The same offline reader now accepts paired opaque baseline run and completion
+facts. Against the first post-writer marker, the unchanged current pointer is
+`marker_not_later`, not a second category binding. This reader guard leaves the
+existing Task, timing, pages, KIS route, Docker path, consumers, and Paper
+behavior unchanged.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
@@ -102,7 +108,7 @@ category-based recovery claim exists.
 | Invocation-marker reattachment | Data / Codex | Complete: the first fresh marker and exact schedule terminal reattached as `collection_exit_nonzero`; its source-safe pointers remain external-root-relative. |
 | Task-path failure localization | Data / Codex | Complete: an allowlisted free-text-free category writer and legacy-compatible reader preserve the exact stage exit. No task, pages, timing, or consumer change followed. |
 | Failure-category reattachment | Data / Codex | Complete: post-writer `intraday-head-20260818T1924006306454Z` reattached as `collection_exit_nonzero / reason_unavailable` through exact hash-bound terminal and schedule receipts. No timing, pages, task, or consumer behavior changed. |
-| Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Reattach one later exact marker and compare only its closed category. Its due time remains task-owned and never a foreground wait. |
+| Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Reattach one later exact marker against the paired first-marker baseline and compare only its closed category. Its due time remains task-owned and never a foreground wait. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The 2026-08-14 source-safe reader returned `local_api_not_ready` and wrote no receipt. Do not foreground-wait, duplicate either action, or infer a cause. The one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
@@ -130,6 +136,10 @@ category-based recovery claim exists.
   recovery proposal needs two later independently hash-validated matching
   bindings and a fresh Claude falsification-first verdict; divergence remains
   diagnostic only.
+- A later binding must differ from its paired opaque baseline run and complete
+  strictly after its paired completion timestamp. `marker_not_later` is a valid
+  stale-pointer diagnosis, never a second binding, a cause, or a behavior
+  change.
 - Generic resampling skips a target bucket containing a duplicate timestamp or
   incomplete source record. `Bar` has no source-revision or observation-order
   provenance, so upstream Data reconciliation must resolve a later revision

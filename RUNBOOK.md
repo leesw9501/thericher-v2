@@ -1062,12 +1062,27 @@ metadata-only topology, while reading only static Task facts, run:
 ```
 
 The result is only `marker_unavailable`, `start_only`, `terminal_unavailable`,
-`collector_nonzero`, `retained_partial`, or `complete_session`. It recomputes
+`marker_not_later`, `collector_nonzero`, `retained_partial`, or
+`complete_session`. It recomputes
 the marker and schedule bindings, never searches for a newest artifact, and
 does not treat topology metadata as an exact run binding. Its evidence pointers
 are exact but relative to the external artifact root, never local absolute
 paths. A marker remains assumed-honest-host provenance, not cryptographic
 Scheduler-origin proof.
+
+When a bounded objective needs a marker later than a known terminal, pass both
+opaque baseline facts to the same offline reader:
+
+```powershell
+.\scripts\project_kis_paper_intraday_invocation_reattachment.ps1 `
+  -BaselineRunId <opaque-run-id> `
+  -BaselineCompletedAt <UTC-ISO-8601-timestamp>
+```
+
+`marker_not_later` means the current, otherwise bound pointer repeats that run
+or does not complete strictly after its baseline. It is not a second binding,
+a failure, or a reason to alter Task, collection, KIS, Docker, consumer, or
+Paper behavior.
 
 `collector_nonzero` means only that the dispatcher-recorded collection service
 stage returned nonzero for that exact bound task path. It does not identify a

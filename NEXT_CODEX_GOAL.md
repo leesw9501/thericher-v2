@@ -30,8 +30,11 @@ recovery action, model result, PnL claim, Paper decision, or live route.
 ## Required Work
 
 1. Inspect only source-safe static Task facts and the current offline
-   reattachment result. Confirm that the eligible later run differs from
-   `intraday-head-20260818T1924006306454Z` before interpreting it.
+   reattachment result. Supply the first post-writer marker's paired opaque run
+   ID and completion timestamp as the reader baseline, then confirm that the
+   eligible later run differs from `intraday-head-20260818T1924006306454Z` and
+   completes strictly later before interpreting it. `marker_not_later` is
+   unknown/stale-pointer evidence, never a second category binding.
 2. Reattach that later immutable marker through the existing offline
    reader. Record only opaque run/timestamps, the preserved terminal stage
    outcome, one closed failure category, binding hashes, and external-root-
