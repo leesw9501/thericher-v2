@@ -6,11 +6,10 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`norgate-host-readiness-bridge-v1` follows the completed FirstRate source
-semantics package and one unclassified Norgate daily-capability invocation. It
-builds a raw-data-free, isolated host bridge that emits only categorical runtime,
-local API, catalog, and active-root facts. It is Data capability only: no model,
-GPU appointment, KIS join, availability/finality claim, PnL, Paper action, or
+`kis-intraday-later-terminal-reattachment-v1` reattaches only the first
+task-owned intraday-head terminal strictly later than the completed 2026-08-18
+baseline. It is Data-only source-safe receipt projection: no raw rows, model,
+GPU appointment, KIS call, availability/finality claim, PnL, Paper action, or
 live route.
 
 ## Ready / Owned / Due
@@ -23,10 +22,12 @@ live route.
 | FirstRate source-local window preflight | Data / Engine Research | Hash-bound FirstRate normalization/mechanics receipts and canonical CSVs | Closed: 32 fixed matrix cells reattached locally and retained only eligible-window count/end-timestamp-set hash evidence. No labels, features, models, GPU, KIS, or Paper consumer. |
 | FirstRate source semantics retrieval | Data / Claude review | Closed: official free-data/license pages re-retrieved with matching hashes; vendor timezone/omission claims are narrow and offset convention/bar boundary remain `not_disclosed`. No promotion follows. |
 | Norgate D1 capability reprobe | Data | Existing isolated host runtime and daily capability path | Closed: one invocation produced no parseable source-safe output and no task-owned receipt. It is not a Norgate availability conclusion and will not be retried. |
-| Norgate host readiness bridge | Data | Existing isolated Norgate host runtime and two known metadata candidates | Ready: produce only runtime/API/catalog/active-root categories without raw market calls. Do not invoke the daily probe or a pilot. |
+| Norgate host readiness bridge | Data | Existing isolated Norgate host runtime and two known metadata candidates | Closed: a hash-bound receipt records `input_unavailable/local_api_not_ready`, with host runtime `available` and later categories `not_checked`. No raw-data capability or updater/subscription conclusion follows. |
+| Market-data contract inventory | Data / Engine Research | Predeclared shallow locations and external source-safe receipts | Closed: six classes bind only receipt hashes and categorical status: `input_unavailable: 3`, `source_local_mechanics_only: 1`, `retrospective_control_only: 1`, and `non_promoting_runtime_only: 1`. No predictive/Paper/GPU consumer is ready. |
+| Later intraday terminal reattachment | Data / existing `thericher-kis-paper-intraday-head` task | Existing source-safe schedule and terminal receipts | Owned monitoring dependency: the current pointer is still baseline `intraday-head-20260818T2120005941479Z`; wait only for a strictly later task-owned terminal, never by foreground polling. |
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
-| Norgate local readiness | Data | Existing NDU updater | The 2026-08-14 provisioned-host reader returned `local_api_not_ready` and wrote no receipt. It does not establish a process, update, subscription, expiry, vendor-access, or rights cause. This does not block the Paper canary. The one operator-visible diagnostic is the already-running NDU update plus database/subscription-state panes, then minimize it. |
+| Norgate local readiness | Data | Isolated host bridge receipt | The completed bridge reattached `input_unavailable/local_api_not_ready`, with host runtime available and later categories not checked. It does not establish an updater, process, subscription, expiry, vendor-access, or rights cause and does not block another lane. |
 | Intraday M1 coverage | Data | Existing task image and source-safe terminal projection | The 2026-08-17 task-owned terminal reattached as `complete` with verified coverage/availability bindings, matching the 2026-08-15 `input_unavailable/session_coverage_incomplete/current_session_short` topology. The new writer leaves it unbound by default. |
 | Capture topology and markers | Data / Codex | Existing task, cache metadata, external artifact root | The first post-writer marker is one comparable `collection_exit_nonzero / reason_unavailable` binding. The later hash-bound marker is successful but `retained_partial`, so its default category is noncomparable. No recovery proposal exists. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
@@ -54,15 +55,15 @@ does not qualify research input or change Paper behavior.
 
 ## Current Reversible Improvement
 
-The immediate reversible improvement is a host readiness bridge that separates
-Norgate runtime/API/catalog/root facts from the price-reading daily capability
-probe. It prevents output-capture ambiguity from being misclassified as a data,
-subscription, or rights result while avoiding a duplicate raw-data invocation.
+The completed inventory now makes the absence of a predictive/Paper/GPU input
+explicit. The immediate reversible improvement is to reattach one strictly
+later task-owned terminal through the existing reader when it appears, rather
+than treating a repeated pointer or task exit as new causal evidence.
 
 ## Current Recovery Action
 
 No category-based recovery proposal is active. A later recovery investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current next
-action is the independent raw-data-free Norgate host readiness bridge; it needs
-no Task or foreground wait.
+action is the owned later-terminal reattachment; its task-owned due is not a
+foreground wait, and Data/Execution continue any separately ready package.

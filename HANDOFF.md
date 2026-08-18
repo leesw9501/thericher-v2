@@ -57,7 +57,17 @@ convention and bar boundary remain `not_disclosed`. The next objective,
 `norgate-trial-d1-capability-reprobe-v1`, made one host-only local invocation
 after updater work but yielded no parseable source-safe output or task-owned
 receipt. The next objective, `norgate-host-readiness-bridge-v1`, separates
-runtime/API/catalog/root diagnostics from raw-data capability reads.
+runtime/API/catalog/root diagnostics from raw-data capability reads. It
+completed with one hash-bound receipt: the isolated host runtime is available,
+but the local API is `not_ready`, leaving catalog, update metadata, and active
+root `not_checked`. No raw Norgate data was read; no trial capability, updater,
+subscription, or rights conclusion follows. The completed source-safe
+market-data contract inventory wrote one immutable receipt for all six fixed
+classes: three `input_unavailable` entries (KIS M1, KIS D1, Norgate trial), one
+FirstRate source-local-mechanics entry, one Tiingo D1 retrospective-control
+entry, and one Tiingo IEX runtime-only entry. It qualifies no predictive,
+Paper, or GPU consumer. The next objective is later task-owned intraday-terminal
+reattachment, not a Norgate retry or a duplicate collector run.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -207,8 +217,8 @@ live claim follows.
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data / Engine Research | The legacy and first post-writer markers retain `collection_exit_nonzero / reason_unavailable`. The later hash-bound marker is instead `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its default category is noncomparable. FirstRate SPY/QQQ canonical M1, UTC-anchored mechanics, window geometry, and review-limited semantics remain source-isolated. | Run one existing isolated Norgate host capability probe after updater work. Its result is local capability evidence only; no model, GPU, KIS, Paper, or continuity/finality claim follows. |
-| Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`. On 2026-08-19 one isolated daily-capability invocation after updater work produced no parseable source-safe output or task-owned receipt. Known local metadata candidates exist, but active root and local client capability remain unproven. | Do not repeat that daily probe or infer a subscription/update/rights cause. Build one raw-data-free isolated host bridge for runtime/API/catalog/root categories. Only a `ready/one` result may create a later distinct daily-capability goal; Tiingo/Norgate remain non-promoting. |
+| Data / Engine Research | The fixed six-class inventory is reattached at `data-receipts/market-data-contract-inventory/market-data-contract-inventory-20260819-r1.json` (`sha256:17f2b0f7cf7e16a61b2c2006e806d6e9c8e6135d41e63bf073fe4cdd2fb55632`). Its counts are unavailable 3, mechanics-only 1, retrospective-control-only 1, and runtime-only 1; no predictive/Paper/GPU consumer is eligible. | Reattach only the first strictly later task-owned intraday terminal. Do not use a repeated pointer, task exit, or inventory status as a causal or broker result. |
+| Data | The completed isolated Norgate bridge is `input_unavailable/local_api_not_ready`; host runtime is `available`, while catalog/update/root remain `not_checked`. Its receipt is `data-receipts/norgate-host-readiness-bridge/bridge-norgate-host-readiness-20260818T230439Z.json` (`sha256:20cf9e2954bb567fa31a54d58cde6d61b50be0d86b4b345261e14136c1aa521c`). | Do not repeat the daily probe or infer an updater/subscription/rights cause. No `ready/one` result exists, so no later Norgate capability goal is ready. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. A synthetic caller-owned local-paper two-step replay proves future policy-environment stepping against owned cost/fill semantics only. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
 | Execution | The 2026-08-17 23:35 KST owned quote-session receipt reattached offline as `canary_completed -> cancelled / clean`, `paper_only`, with attribution `not_eligible`; the bound direct lifecycle receipt records only an acknowledged order-reference category. The earlier 2026-08-11 `outcome_unknown / unresolved` remains its own exact-run reconciliation fact. | This exact run proves neither a fill, PnL, alpha, nor model result. Do not resubmit either durable intent; their existing reconciliation paths remain the only owners. |
@@ -227,8 +237,9 @@ live claim follows.
 | FirstRate source-local window preflight | Data / Engine Research | Complete: 32 frozen cells reattached canonical/mechanics hashes and retained only eligible-window count/end-timestamp-set hashes. No labels, features, predictions, GPU allocation, model selection, KIS, or Paper consumer followed. |
 | FirstRate source semantics retrieval | Data / Claude review | Complete: official free-data/license pages re-retrieved with matching hashes; only vendor-declared timezone/omission facts are retained, and offset convention/bar boundary remain `not_disclosed`. No promotion followed. |
 | Norgate D1 capability reprobe | Data / isolated host runtime | Complete as scoped: the one invocation produced no parseable source-safe output or task-owned receipt. It proves no Norgate availability, subscription, source, or data fact and is not retried. |
-| Norgate host readiness bridge | Data | Next objective: emit only isolated-host runtime/API/catalog/active-root categories without a raw data call, daily capability probe, or pilot. |
-| Norgate D1 capability reprobe | Data | Next objective: invoke the existing isolated host-only probe once and retain only categorical readiness/receipt facts. Do not launch the D1 pilot in this package. |
+| Norgate host readiness bridge | Data | Complete: a source-safe immutable receipt reattests `input_unavailable/local_api_not_ready`; host runtime is available and later categories are not checked. No raw data, credential, KIS, broker, scheduler, or Docker path was used. |
+| Market-data contract inventory | Data / Engine Research | Complete: immutable six-class receipt `market-data-contract-inventory-20260819-r1.json` reattaches as 3 unavailable and no predictive/Paper/GPU-eligible input. |
+| Later intraday terminal reattachment | Data / existing task | Owned monitoring: current pointer remains the 2026-08-18 baseline; accept only a strictly later terminal/completion binding. Do not poll or manually invoke the task. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-17 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |

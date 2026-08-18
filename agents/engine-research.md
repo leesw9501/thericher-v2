@@ -37,8 +37,12 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   contract, retained artifact, or decision path it would only manufacture a
   runtime benchmark. The subsequent FirstRate source retrieval confirmed only a
   vendor timezone label and zero-volume omission; offset convention and bar
-  boundary remain `not_disclosed`. GPU custody stays free; the next bounded Data
-  task is a raw-data-free Norgate host readiness bridge, not training.
+  boundary remain `not_disclosed`. The completed Norgate host bridge is
+  `input_unavailable/local_api_not_ready`, so it unlocks no trial data work.
+  The completed six-source contract inventory leaves every class non-promoting:
+  three are `input_unavailable`, and the remaining FirstRate/Tiingo classes are
+  mechanics, retrospective-control, or runtime-only. GPU custody stays free;
+  no frozen predictive campaign is ready.
 - Fixed session-reset 15/30 EMA and 20/10 Donchian local-paper replays have
   replayable, terminal-flat accounting evidence and negative fixed baselines.
   Do not retune their windows, costs, thresholds, or signs under a new label.

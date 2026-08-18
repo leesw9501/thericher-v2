@@ -22,8 +22,9 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
 | Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. |
 | Tiingo IEX M5 r1 ETF trio | Pinned 2026-07-19 IEX-only snapshot reattested offline by raw hashes, stored gzip hash, and exact canonical payload. | One completed source-isolated reconstruction runtime integration only; no source scope, training eligibility, KIS equivalence, model-selection, or Paper-input change. |
-| Norgate trial tail | On 2026-08-14 the provisioned-host `norgatedata` reader returned only `local_api_not_ready`. On 2026-08-19 one isolated daily-capability invocation was made after updater work, but it produced no parseable source-safe output or task-owned receipt. Known local metadata candidates exist, but no active root or source capability is proven. | The new output failure is scoped to that invocation/wrapper, not a subscription, update, vendor-access, rights, or data conclusion. Do not repeat the daily probe. Run one raw-data-free host readiness bridge first; only `ready/one` may schedule a later distinct capability probe. |
+| Norgate trial tail | The one host-only readiness bridge completed through the isolated runtime and wrote a hash-bound categorical receipt. It records `input_unavailable/local_api_not_ready`; host runtime is `available`, while catalog, update metadata, and active-root resolution are `not_checked`. No raw Norgate data was read. | This is a local API state only, not an updater, subscription, vendor-access, rights, or data-capability conclusion. Do not repeat the daily probe or start a pilot. Because the result is not `ready/one`, no distinct Norgate capability goal is ready. |
 | FirstRate free M1 SPY/QQQ | The two hash-bound original ZIPs normalized to canonical local CSVs with expected entry names and exact decoded/emitted timestamp-set equality. SPY has 207,824 and QQQ 210,482 provider-readable complete M1 Bars; UTC-anchored 1m/5m/10m/1h/3h geometry and the frozen 32-cell target-free window matrix reattached offline. Official FirstRate evidence labels data US Eastern/New York and declares zero-volume bars omitted. | The existing DST-aware New York-to-UTC conversion is a source-local assumption: offset convention and bar start/end stamping remain `not_disclosed`. Omission is vendor-declared only, never session coverage or cross-feed alignment. Project policy remains private/internal with no redistribution. The source proves neither KIS parity, decision-time availability, finality, a predictive model input, or a Paper input. |
+| Fixed market-data contract inventory | The external immutable inventory records all six predeclared footprints with only shallow presence and receipt hashes: KIS M1/D1 and Norgate trial are `input_unavailable`; FirstRate M1 is `source_local_mechanics_only`; Tiingo ETF D1 is `retrospective_control_only`; Tiingo IEX M5 is `non_promoting_runtime_only`. | The receipt confers no predictive, Paper, or GPU consumer. It is an evidence map only; each status is scoped and a later qualified input needs its own contract. |
 | NYSE Daily TAQ source discovery | The official catalog distinguishes a public sample from a full paid product. No data was acquired and no provider was adopted. | Sample schema/aggregation reference only; it is not a no-cost ongoing or KIS-aligned prospective input. |
 
 Raw market bytes remain under `D:\market_data`. Source-safe receipts and
@@ -127,12 +128,12 @@ disabled.
 | Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but successful and `retained_partial`, so the preserved default category is noncomparable. No recovery proposal or behavior change followed. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
-| Norgate host readiness bridge | Data / isolated host runtime | Next objective: classify runtime, local API, US Equities catalog, and active metadata-root resolution without reading any raw market data. The prior daily capability invocation has no usable receipt and must not be repeated in this package. |
+| Norgate host readiness bridge | Data / isolated host runtime | Complete: the immutable bridge receipt is `input_unavailable/local_api_not_ready`; host runtime is available and all later categories are not checked. It never accessed a price, membership, listing, corporate-action, credential, KIS, broker, scheduler, or Docker path. |
 | FirstRate source-local M1 normalization | Data | Complete: reattached ZIP hashes, decoded only expected entries, and retained source-safe canonical/output/timestamp-set evidence. The local provider re-read 207,824 SPY and 210,482 QQQ complete M1 Bars; do not infer continuity or promotion. |
 | FirstRate source-local timeframe mechanics | Data / Codex | Complete: canonical hashes reattached, existing resampler emitted only complete unique contiguous observed-minute buckets, and source-safe 1m/5m/10m/1h/3h hashes/counts are retained. UTC-epoch alignment is not a regular-session claim. |
 | FirstRate source-local window preflight | Data / Engine Research | Complete: two canonical streams reattached through the mechanics receipt and each frozen matrix cell retained only eligible-window counts/end-timestamp-set hashes. No label, feature, prediction, model, selection, GPU, KIS, or Paper consumer followed. |
 | FirstRate source semantics retrieval | Data / Claude review | Complete: official free-data and license pages re-retrieved with matching page hashes, then a review-bound interpretation preserved offset convention and bar timestamp boundary as `not_disclosed`. No source promotion followed. |
-| Norgate D1 capability reprobe | Data | Next objective: invoke the existing isolated host-only probe once after updater work and retain only its categorical readiness/receipt result. Do not launch a D1 pilot in this step. |
+| Market-data contract inventory | Data / Engine Research | Complete: six fixed source classes reattached through shallow metadata and source-safe receipt hashes. Counts are `input_unavailable: 3`, `source_local_mechanics_only: 1`, `retrospective_control_only: 1`, and `non_promoting_runtime_only: 1`; no eligible predictive/Paper/GPU consumer exists. |
 
 ## Quality Contracts
 
@@ -194,6 +195,9 @@ disabled.
 - Tiingo's fixed ETF trio is a repeated historical sample, not independent
   evidence. Its non-PIT scope cannot calibrate a later model-side threshold or
   filter, and it cannot be joined into the KIS causal/Paper path.
+- A Norgate readiness receipt may state only host/runtime/API/catalog/update/root
+  categories. `local_api_not_ready` leaves later categories `not_checked`; it
+  proves neither source capability nor an updater, subscription, or rights cause.
 
 ## Current Evidence
 
@@ -213,6 +217,12 @@ disabled.
 - FirstRate source-local timeframe mechanics manifest:
   `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-timeframe-mechanics-v1.json`
   (`sha256:aa83961f57f7fe373f9383874c3d294384dca895115ad7f447fb2371ec2528c3`).
+- Norgate host readiness bridge receipt:
+  `D:\thericher-v2\model-artifacts\data-receipts\norgate-host-readiness-bridge\bridge-norgate-host-readiness-20260818T230439Z.json`
+  (`sha256:20cf9e2954bb567fa31a54d58cde6d61b50be0d86b4b345261e14136c1aa521c`).
+- Fixed market-data contract inventory receipt:
+  `D:\thericher-v2\model-artifacts\data-receipts\market-data-contract-inventory\market-data-contract-inventory-20260819-r1.json`
+  (`sha256:17f2b0f7cf7e16a61b2c2006e806d6e9c8e6135d41e63bf073fe4cdd2fb55632`).
 - FirstRate official source retrieval receipt:
   `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-source-semantics-retrieval-v1.json`
   (`sha256:81954bfd6fde980dd63af92fafb6471830742cbb6871b9bdaf21c9ea6c81063f`).

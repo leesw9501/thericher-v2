@@ -2395,11 +2395,59 @@ never source rows, symbols, dates, OHLCV, feature values, labels, prices, PnL,
 or broker data. A qualified result is development-only, not model, GPU,
 campaign, Paper, or live authority.
 
+### Norgate Host Readiness Bridge
+
+Run this only for a new, explicitly bounded readiness package and only through
+the isolated host runtime:
+
+```powershell
+D:\thericher-v2\host-runtimes\norgate-python\Scripts\python.exe `
+  scripts\run_norgate_host_readiness_bridge.py --run-label <unique-label>
+```
+
+The bridge may call only local `status`, configured-database membership, and
+US Equities update metadata, then compare it in memory against the two
+predeclared local metadata-root candidates. It prints and retains only host
+runtime, local API, catalog, update-metadata, and active-root categories; it
+never reads price, membership, listings, corporate actions, credentials, KIS,
+broker, scheduler, Docker, or raw rows.
+
+The completed 2026-08-18 UTC bridge receipt is
+`D:\thericher-v2\model-artifacts\data-receipts\norgate-host-readiness-bridge\bridge-norgate-host-readiness-20260818T230439Z.json`
+(`sha256:20cf9e2954bb567fa31a54d58cde6d61b50be0d86b4b345261e14136c1aa521c`).
+It is `input_unavailable/local_api_not_ready`: the host runtime is available,
+but catalog/update/root categories are `not_checked`. This does not diagnose an
+updater, subscription, vendor-access, or rights condition and does not permit a
+daily capability retry or D1 pilot. Reattach the receipt with
+`read_norgate_host_readiness_receipt`; do not rerun this completed objective.
+
+### Fixed Market-Data Contract Inventory
+
+For the six predeclared source classes, run the source-safe inventory once with
+an immutable label:
+
+```powershell
+uv run --extra dev python scripts\build_market_data_contract_inventory.py `
+  --inventory-label <unique-label>
+```
+
+It checks only allowlisted directory/file metadata and hashes existing
+source-safe receipts. It never reads or hashes market rows, loads credentials,
+uses the network, calls KIS/a broker/Task Scheduler, or creates a model, GPU,
+Paper, or promotion path. Reattach only with
+`read_market_data_contract_inventory`.
+
+The completed receipt is
+`D:\thericher-v2\model-artifacts\data-receipts\market-data-contract-inventory\market-data-contract-inventory-20260819-r1.json`
+(`sha256:17f2b0f7cf7e16a61b2c2006e806d6e9c8e6135d41e63bf073fe4cdd2fb55632`).
+Its six categorical entries produce no predictive, Paper, or GPU consumer;
+missing evidence remains scoped `input_unavailable`, never a global hold.
+
 ### Norgate Date-Indexed Capability Probe
 
-Run this only with the isolated Windows host runtime that contains the locally
-installed Norgate package; it is intentionally not a project or Docker
-dependency:
+Run this only after a distinct host-readiness result is `ready/one`, with the
+isolated Windows host runtime that contains the locally installed Norgate
+package; it is intentionally not a project or Docker dependency:
 
 ```powershell
 D:\thericher-v2\host-runtimes\norgate-python\Scripts\python.exe `
