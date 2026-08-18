@@ -1,8 +1,9 @@
 """Offline normalization for a hash-bound FirstRate free intraday archive.
 
 The archive contract is intentionally small and explicit: it must contain one
-UTF-8 CSV named ``<SYMBOL>.csv`` with the fixed FirstRate OHLCV header.  This
-leaf never downloads data, reads environment state, or contacts a provider.
+UTF-8 CSV named ``<SYMBOL>_1min_firstratedata.csv`` with the fixed FirstRate
+OHLCV header. This leaf never downloads data, reads environment state, or
+contacts a provider.
 """
 
 from __future__ import annotations
@@ -52,7 +53,7 @@ class FirstRateFreeIntradayNormalization:
             raise ValueError("symbol is invalid")
         if not self.market:
             raise ValueError("market is required")
-        if self.source_entry_name != f"{self.symbol}.csv":
+        if self.source_entry_name != _source_entry_name(self.symbol):
             raise ValueError("source_entry_name does not match symbol")
         for field_name in ("input_sha256", "output_sha256"):
             _require_sha256(getattr(self, field_name), field_name)
@@ -85,11 +86,12 @@ def normalize_firstrate_free_intraday_zip(
     requested_symbol = _normalize_symbol(symbol)
     resolved_market = _normalize_market(market)
     expected_hash = _require_sha256(expected_archive_sha256, "expected_archive_sha256")
-    source_path = Path(archive_path)
-    destination = Path(output_csv_path)
-    if source_path.resolve() == destination.resolve():
+    source_path = _require_regular_source_path(Path(archive_path))
+    destination = _prepare_output_path(Path(output_csv_path))
+    if _same_path(source_path, destination):
         raise ValueError("output_csv_path must differ from archive_path")
 
+    source_path = _require_regular_source_path(source_path)
     archive_bytes = source_path.read_bytes()
     input_sha256 = _sha256(archive_bytes)
     if input_sha256 != expected_hash:
@@ -98,7 +100,7 @@ def normalize_firstrate_free_intraday_zip(
             f"expected {expected_hash}, observed {input_sha256}"
         )
 
-    source_entry_name = f"{requested_symbol}.csv"
+    source_entry_name = _source_entry_name(requested_symbol)
     bars = _decode_archive(
         archive_bytes=archive_bytes,
         symbol=requested_symbol,
@@ -349,7 +351,9 @@ def _timestamp_set_sha256(timestamps: Iterable[datetime]) -> str:
 
 
 def _write_bytes_atomically(path: Path, payload: bytes) -> None:
+    path = _prepare_output_path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
+    path = _prepare_output_path(path)
     descriptor, temporary_name = tempfile.mkstemp(
         dir=path.parent,
         prefix=f".{path.name}.",
@@ -359,6 +363,7 @@ def _write_bytes_atomically(path: Path, payload: bytes) -> None:
     try:
         with os.fdopen(descriptor, "wb") as handle:
             handle.write(payload)
+        _prepare_output_path(path)
         os.replace(temporary_path, path)
     except BaseException:
         temporary_path.unlink(missing_ok=True)
@@ -381,6 +386,64 @@ def _normalize_market(value: str) -> str:
     if not result:
         raise ValueError("market is required")
     return result
+
+
+def _source_entry_name(symbol: str) -> str:
+    return f"{symbol}_1min_firstratedata.csv"
+
+
+def _require_regular_source_path(path: Path) -> Path:
+    source_path = _absolute_non_reparse_path(path, "archive_path")
+    source_stat = _lstat_or_none(source_path, "archive_path")
+    if source_stat is None or not stat.S_ISREG(source_stat.st_mode):
+        raise ValueError("archive_path must reference a regular file")
+    return source_path
+
+
+def _prepare_output_path(path: Path) -> Path:
+    output_path = _absolute_non_reparse_path(path, "output_csv_path")
+    parent_stat = _lstat_or_none(output_path.parent, "output_csv_path")
+    if parent_stat is not None and not stat.S_ISDIR(parent_stat.st_mode):
+        raise ValueError("output_csv_path parent must be a directory")
+    target_stat = _lstat_or_none(output_path, "output_csv_path")
+    if target_stat is not None and not stat.S_ISREG(target_stat.st_mode):
+        raise ValueError("output_csv_path must be a regular file when it exists")
+    return output_path
+
+
+def _absolute_non_reparse_path(path: Path, field_name: str) -> Path:
+    absolute_path = path.absolute()
+    current = Path(absolute_path.anchor)
+    root_stat = _lstat_or_none(current, field_name)
+    if root_stat is not None and _is_reparse_stat(root_stat):
+        raise ValueError(f"{field_name} must not use a reparse-point path")
+    for component in absolute_path.parts[1:]:
+        current /= component
+        entry_stat = _lstat_or_none(current, field_name)
+        if entry_stat is None:
+            break
+        if _is_reparse_stat(entry_stat):
+            raise ValueError(f"{field_name} must not use a reparse-point path")
+    return absolute_path
+
+
+def _lstat_or_none(path: Path, field_name: str) -> os.stat_result | None:
+    try:
+        return path.lstat()
+    except FileNotFoundError:
+        return None
+    except OSError as error:
+        raise ValueError(f"{field_name} cannot be inspected") from error
+
+
+def _is_reparse_stat(entry_stat: os.stat_result) -> bool:
+    reparse_attribute = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)
+    file_attributes = getattr(entry_stat, "st_file_attributes", 0)
+    return stat.S_ISLNK(entry_stat.st_mode) or bool(file_attributes & reparse_attribute)
+
+
+def _same_path(first: Path, second: Path) -> bool:
+    return os.path.normcase(os.fspath(first)) == os.path.normcase(os.fspath(second))
 
 
 def _require_sha256(value: str, field_name: str) -> str:

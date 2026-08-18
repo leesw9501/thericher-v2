@@ -3,7 +3,9 @@ from __future__ import annotations
 import csv
 import hashlib
 import io
+import os
 import socket
+import stat
 import zipfile
 from pathlib import Path
 
@@ -12,13 +14,23 @@ import pytest
 import thericher_v2.data.firstrate_free_intraday as firstrate
 from thericher_v2.data.local import CSV_FIELDS
 
+_SPY_ENTRY = "SPY_1min_firstratedata.csv"
+_QQQ_ENTRY = "QQQ_1min_firstratedata.csv"
 
+
+@pytest.mark.parametrize(
+    ("symbol", "entry_name"),
+    [("SPY", _SPY_ENTRY), ("QQQ", _QQQ_ENTRY)],
+)
 def test_normalizes_sparse_rows_with_dst_conversion_and_no_network(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    symbol: str,
+    entry_name: str,
 ) -> None:
     archive_path, expected_hash = _zip_fixture(
         tmp_path,
-        "SPY.csv",
+        entry_name,
         "\ufeff"
         + _source_csv(
             ("2024-03-08 15:59:00", "100", "101", "99", "100.5", "10"),
@@ -26,7 +38,7 @@ def test_normalizes_sparse_rows_with_dst_conversion_and_no_network(
             ("2024-03-11 09:32:00", "102", "103", "101", "102.5", "12"),
         ),
     )
-    output_path = tmp_path / "canonical" / "SPY.csv"
+    output_path = tmp_path / "canonical" / f"{symbol}.csv"
 
     def unexpected_network(*_args: object, **_kwargs: object) -> None:
         raise AssertionError("FirstRate normalizer must not access the network")
@@ -35,7 +47,7 @@ def test_normalizes_sparse_rows_with_dst_conversion_and_no_network(
     result = firstrate.normalize_firstrate_free_intraday_zip(
         archive_path,
         expected_archive_sha256=expected_hash,
-        symbol="spy",
+        symbol=symbol.lower(),
         output_csv_path=output_path,
     )
 
@@ -47,9 +59,9 @@ def test_normalizes_sparse_rows_with_dst_conversion_and_no_network(
         "2024-03-11T13:32:00+00:00",
     ]
     assert [record["complete"] for record in records] == ["true", "true", "true"]
-    assert result.symbol == "SPY"
+    assert result.symbol == symbol
     assert result.market == "US"
-    assert result.source_entry_name == "SPY.csv"
+    assert result.source_entry_name == entry_name
     assert result.bar_count == 3
     assert result.input_sha256 == expected_hash
     assert result.output_sha256 == _sha256(output_path.read_bytes())
@@ -61,7 +73,7 @@ def test_rejects_duplicate_or_nonmonotonic_source_rows_without_output(
 ) -> None:
     duplicate_path, duplicate_hash = _zip_fixture(
         tmp_path / "duplicate",
-        "SPY.csv",
+        _SPY_ENTRY,
         _source_csv(
             ("2024-03-11 09:30:00", "100", "101", "99", "100.5", "10"),
             ("2024-03-11 09:30:00", "101", "102", "100", "101.5", "11"),
@@ -79,7 +91,7 @@ def test_rejects_duplicate_or_nonmonotonic_source_rows_without_output(
 
     unordered_path, unordered_hash = _zip_fixture(
         tmp_path / "unordered",
-        "SPY.csv",
+        _SPY_ENTRY,
         _source_csv(
             ("2024-03-11 09:31:00", "100", "101", "99", "100.5", "10"),
             ("2024-03-11 09:30:00", "101", "102", "100", "101.5", "11"),
@@ -98,29 +110,29 @@ def test_rejects_duplicate_or_nonmonotonic_source_rows_without_output(
     ("entry_name", "source", "expected_error"),
     [
         (
-            "SPY.csv",
+            _SPY_ENTRY,
             "timestamp,open,high,low,close\n2024-03-11 09:30:00,1,2,0.5,1.5\n",
             "header",
         ),
         (
-            "SPY.csv",
+            _SPY_ENTRY,
             "open,timestamp,high,low,close,volume\n1,2024-03-11 09:30:00,2,0.5,1.5,1\n",
             "header",
         ),
         (
-            "../SPY.csv",
+            f"../{_SPY_ENTRY}",
             "timestamp,open,high,low,close,volume\n"
             "2024-03-11 09:30:00,1,2,0.5,1.5,1\n",
             "unsafe entry",
         ),
         (
-            "SPY.csv/",
+            f"{_SPY_ENTRY}/",
             "timestamp,open,high,low,close,volume\n"
             "2024-03-11 09:30:00,1,2,0.5,1.5,1\n",
             "unsafe entry",
         ),
         (
-            "QQQ.csv",
+            _QQQ_ENTRY,
             "timestamp,open,high,low,close,volume\n"
             "2024-03-11 09:30:00,1,2,0.5,1.5,1\n",
             "does not match requested symbol",
@@ -160,7 +172,7 @@ def test_rejects_extra_archive_member_and_invalid_ohlcv_or_dst_timestamp(
 ) -> None:
     archive_path, expected_hash = _zip_fixture(
         tmp_path / "extra",
-        "SPY.csv",
+        _SPY_ENTRY,
         _source_csv(("2024-03-11 09:30:00", "1", "2", "0.5", "1.5", "1")),
         extra_entries={"notes.txt": "not a market row"},
     )
@@ -174,7 +186,7 @@ def test_rejects_extra_archive_member_and_invalid_ohlcv_or_dst_timestamp(
 
     invalid_path, invalid_hash = _zip_fixture(
         tmp_path / "invalid",
-        "SPY.csv",
+        _SPY_ENTRY,
         _source_csv(
             ("2024-03-11 09:30:00", "1", "2", "0.5", "1.5", "1"),
             ("2024-03-11 09:31:00", "0", "2", "0.5", "1.5", "1"),
@@ -192,7 +204,7 @@ def test_rejects_extra_archive_member_and_invalid_ohlcv_or_dst_timestamp(
 
     dst_path, dst_hash = _zip_fixture(
         tmp_path / "dst",
-        "SPY.csv",
+        _SPY_ENTRY,
         _source_csv(("2024-03-10 02:30:00", "1", "2", "0.5", "1.5", "1")),
     )
     with pytest.raises(ValueError, match="ambiguous or nonexistent"):
@@ -208,7 +220,7 @@ def test_rejects_declared_zip_expansion_without_publishing_output(tmp_path: Path
     source = _source_csv(
         ("2024-03-11 09:30:00", "1", "2", "0.5", "1.5", "1" + "0" * 20_000)
     )
-    archive_path, expected_hash = _zip_fixture(tmp_path, "SPY.csv", source)
+    archive_path, expected_hash = _zip_fixture(tmp_path, _SPY_ENTRY, source)
     output_path = tmp_path / "expansion.csv"
 
     with pytest.raises(ValueError, match="declared expansion limit"):
@@ -219,6 +231,60 @@ def test_rejects_declared_zip_expansion_without_publishing_output(tmp_path: Path
             output_csv_path=output_path,
         )
     assert not output_path.exists()
+
+
+def test_rejects_source_archive_reparse_path(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    archive_path, expected_hash = _zip_fixture(
+        tmp_path,
+        _SPY_ENTRY,
+        _source_csv(("2024-03-11 09:30:00", "1", "2", "0.5", "1.5", "1")),
+    )
+    _mark_paths_as_reparse(monkeypatch, archive_path)
+    output_path = tmp_path / "output.csv"
+
+    with pytest.raises(ValueError, match="reparse-point"):
+        firstrate.normalize_firstrate_free_intraday_zip(
+            archive_path,
+            expected_archive_sha256=expected_hash,
+            symbol="SPY",
+            output_csv_path=output_path,
+        )
+    assert not output_path.exists()
+
+
+def test_rejects_output_parent_or_target_reparse_path_without_overwrite(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    archive_path, expected_hash = _zip_fixture(
+        tmp_path,
+        _SPY_ENTRY,
+        _source_csv(("2024-03-11 09:30:00", "1", "2", "0.5", "1.5", "1")),
+    )
+    output_parent = tmp_path / "output-parent"
+    output_parent.mkdir()
+    preserved_target = tmp_path / "preserved.csv"
+    preserved_target.write_text("preserve", encoding="utf-8")
+    _mark_paths_as_reparse(monkeypatch, output_parent, preserved_target)
+
+    with pytest.raises(ValueError, match="reparse-point"):
+        firstrate.normalize_firstrate_free_intraday_zip(
+            archive_path,
+            expected_archive_sha256=expected_hash,
+            symbol="SPY",
+            output_csv_path=output_parent / "output.csv",
+        )
+    assert not (output_parent / "output.csv").exists()
+
+    with pytest.raises(ValueError, match="reparse-point"):
+        firstrate.normalize_firstrate_free_intraday_zip(
+            archive_path,
+            expected_archive_sha256=expected_hash,
+            symbol="SPY",
+            output_csv_path=preserved_target,
+        )
+    assert preserved_target.read_text(encoding="utf-8") == "preserve"
 
 
 def _zip_fixture(
@@ -256,3 +322,17 @@ def _canonical_records(path: Path) -> tuple[tuple[str, ...], list[dict[str, str]
 
 def _sha256(payload: bytes) -> str:
     return "sha256:" + hashlib.sha256(payload).hexdigest()
+
+
+def _mark_paths_as_reparse(
+    monkeypatch: pytest.MonkeyPatch, *paths: Path
+) -> None:
+    original_lstat = firstrate._lstat_or_none
+    flagged_paths = {path.absolute() for path in paths}
+
+    def fake_lstat(path: Path, field_name: str) -> os.stat_result | None:
+        if path.absolute() in flagged_paths:
+            return os.stat_result((stat.S_IFLNK | 0o777, 0, 0, 1, 0, 0, 0, 0, 0, 0))
+        return original_lstat(path, field_name)
+
+    monkeypatch.setattr(firstrate, "_lstat_or_none", fake_lstat)
