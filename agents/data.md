@@ -18,6 +18,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-19 metadata-only audit found sparse retained QQQ chunks associated with all four expected ET slots, but no complete audited session. The latest audited session retained only the 11:29 ET slot with 119 complete minutes. The enabled one-action Task has its Operational log disabled, so absent chunks cannot prove a missed start. | Existing dispatcher writes source-safe `started` and hash-bound `terminal` invocation markers outside Git. The terminal preserves exact schedule-observed and later dispatcher-completion timestamps; reattach the next task-owned marker before changing timing, paging, or consumers. No model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
+| KIS Paper broad D1 panel | The latest source-safe postrun snapshot (2026-08-01) recorded 2,119/2,119 current-listing targets covered, zero quarantined targets, and zero mismatches over its 604-target baseline overlap. A later successful Task exit does not itself refresh this frozen snapshot. | Coverage/provenance inventory only: current-listing, non-PIT, unadjusted, corporate-action-unqualified, and session-finality-unattested. It cannot supply a target, ranking, training, or Paper input. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
 | Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. |
 | Tiingo IEX M5 r1 ETF trio | Pinned 2026-07-19 IEX-only snapshot reattested offline by raw hashes, stored gzip hash, and exact canonical payload. | One completed source-isolated reconstruction runtime integration only; no source scope, training eligibility, KIS equivalence, model-selection, or Paper-input change. |
@@ -135,6 +136,8 @@ pending the next task-owned run.
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-matrix-v1\20260807-qqq-mtf-matrix-r2\summary.json`.
 - Tiingo raw-D1 collection receipt:
   `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\4a2344b7ab8ec2eaf0b1a5e4afcd41e07cf0b4c14e13db64d07b41fd054883d2.json`.
+- Broad D1 source-safe postrun receipt:
+  `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-broad-panel-postrun-v1\postrun-5b24100dc992a4fed2848593.json`.
 - Tiingo IEX r1 runtime evidence:
   `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
 
