@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-17 06:20 KST task-owned terminal reattached as `complete`, with verified coverage and availability bindings. Like the 2026-08-15 baseline, current-session cumulative coverage is `incomplete/current_session_short`; the optional pair binding is `legacy_unbound`, so causal input remains `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. The new default-deny writer produced no artifact for this exact terminal. | Audit source-safe capture topology and existing trigger facts to recover whole M1 session accumulation. No model or reusable Paper-candidate promotion follows. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-19 metadata-only audit found sparse retained QQQ chunks associated with all four expected ET slots, but no complete audited session. The latest audited session retained only the 11:29 ET slot with 119 complete minutes. The enabled one-action Task has its Operational log disabled, so absent chunks cannot prove a missed start. | Existing dispatcher writes source-safe `started` and hash-bound `terminal` invocation markers outside Git. Reattach the next task-owned marker before changing timing, paging, or consumers. No model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
@@ -68,13 +68,21 @@ writer therefore states the assumed-honest limitation, requires exact
 run/timestamp binding, and rejects an explicit task-derived input or a replayed
 run. This limitation does not block the separate collection-recovery package.
 
+The full-session topology audit is now complete. Its `run_or_persistence_unresolved`
+result is intentionally narrower than a Scheduler-failure claim: retained index
+metadata cannot tell whether a slot did not start, failed before persistence,
+received a provider-limited window, or was deduplicated. The existing task
+definition remains unchanged. A diagnostic marker is emitted immediately before
+the collector and after the existing terminal receipt; its external current
+pointer is currently unavailable pending the next task-owned run.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
-| Full-session M1 capture recovery | Data / Codex | Ready: use only cache metadata and static task facts to locate the retained topology gap, then deploy an evidence-backed recovery through the existing task. |
-| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The 2026-08-17 task-owned terminal is reattached. The next terminal remains task-owned; its due time is not reprojected by this reader and does not block another lane. |
+| Invocation-marker reattachment | Data / Codex | Ready only when the existing task writes a fresh marker. Validate its exact pointer/receipt binding with the offline reader, then compare its categorical outcomes with terminal and topology evidence. |
+| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The current invocation-marker pointer is unavailable. Its next due time is task-owned and never a foreground wait. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The 2026-08-14 source-safe reader returned `local_api_not_ready` and wrote no receipt. Do not foreground-wait, duplicate either action, or infer a cause. The one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
@@ -110,6 +118,9 @@ run. This limitation does not block the separate collection-recovery package.
 
 - Intraday source-safe projection:
   `scripts\project_kis_paper_intraday_head_schedule_receipt.py`.
+- Capture-topology audit and invocation-marker reader:
+  `scripts\inspect_kis_paper_intraday_capture_topology.ps1` and
+  `scripts\project_kis_paper_intraday_head_invocation_receipt.py`.
 - Official KIS overseas-minute documentation confirms the reviewed request and
   cursor semantics but supplies no reviewed finality/as-of predicate. It keeps
   `provider_finality` and decision-time availability `not_observed`; it makes

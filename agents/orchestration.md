@@ -6,9 +6,11 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-intraday-full-session-capture-recovery-v1` recovers actual complete M1
-regular-session accumulation through the existing single Data-owned task. It is
-data collection work only, never a strategy, PnL, Paper action, or live claim.
+`kis-intraday-invocation-receipt-reattachment-v1` reattaches the first later
+diagnostic marker from the existing single Data-owned task. It identifies the
+run-versus-retention boundary before any capture timing, paging, consumer, or
+Task-definition change. It is data collection work only, never a strategy,
+PnL, Paper action, or live claim.
 
 ## Ready / Owned / Due
 
@@ -19,7 +21,7 @@ data collection work only, never a strategy, PnL, Paper action, or live claim.
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | Norgate local readiness | Data | Existing NDU updater | The 2026-08-14 provisioned-host reader returned `local_api_not_ready` and wrote no receipt. It does not establish a process, update, subscription, expiry, vendor-access, or rights cause. This does not block the Paper canary. The one operator-visible diagnostic is the already-running NDU update plus database/subscription-state panes, then minimize it. |
 | Intraday M1 coverage | Data | Existing task image and source-safe terminal projection | The 2026-08-17 task-owned terminal reattached as `complete` with verified coverage/availability bindings, matching the 2026-08-15 `input_unavailable/session_coverage_incomplete/current_session_short` topology. The new writer leaves it unbound by default. |
-| Full-session M1 capture recovery | Data / Codex | Existing task, cache metadata, static task facts | Ready: find the observed retained topology failure before changing the existing one-task collection contract. |
+| Capture topology and markers | Data / Codex | Existing task, cache metadata, external artifact root | Topology audit complete: static task is enabled/one-action/four-trigger, but Operational log is disabled and retained chunks cannot prove starts. The runner now writes start/terminal markers; current pointer is unavailable pending its next owned run. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -35,22 +37,22 @@ resolving that prediction-input limitation.
 
 ## Current Cross-Lane Decision
 
-The image-rollout runtime observation, coverage-gap classification, later
-terminal reattachment, static writer audit, and writer integration are complete.
-The writer's actual current-terminal smoke omitted a binding because coverage
-was incomplete; it cannot upgrade an immutable receipt. The next package uses
-source-safe topology to make the existing collector accumulate complete M1
-sessions rather than waiting for another partial terminal.
+The topology audit rejected an unmeasured timing/paging/downstream change.
+Claude's `unsupported` drift check identified no causal proof that absent
+retained chunks were missed Task starts. The reversible improvement is a
+diagnostic-only host receipt, not a task or collector change. Its next
+task-owned marker can distinguish only the evidenced boundary; it does not
+qualify research input or change Paper behavior.
 
 ## Current Reversible Improvement
 
-Use a metadata-only topology audit before changing one existing task. This is
-reversible and prevents a second scheduler or an unmeasured request flood.
+Use one external, immutable source-safe invocation marker around the existing
+dispatcher. This is reversible and prevents a second scheduler, an unmeasured
+request flood, or an unsupported timing change.
 
 ## Current Recovery Action
 
-The 2026-08-17 intraday projection matches the exact 2026-08-15
-`input_unavailable/session_coverage_incomplete/current_session_short` result.
-The future writer did not attach a hash. The next action is a static,
-metadata-only full-session topology audit, then the smallest evidence-backed
-single-task recovery; no duplicate task or foreground wait is permitted.
+The current marker pointer is unavailable, which is unknown rather than a
+failed task or collection. Reattach the first fresh marker to its exact
+schedule terminal and capture metadata; no duplicate task or foreground wait
+is permitted.

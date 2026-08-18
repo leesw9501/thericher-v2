@@ -972,17 +972,17 @@ docker compose --profile kis-paper-intraday-head run --rm --no-deps kis-paper-in
 Head snapshots live below the sibling `intraday-head` cache root and never
 advance the historical backfill cursor. It is a Data-local source sampler, not
 a company-wide wait. The Windows Scheduled Task
-`thericher-kis-paper-intraday-head` runs Tuesday through Saturday at 00:31,
-02:31, 04:31, and 06:20 KST. The first three starts align one minute after a
-10-minute US bar boundary; the final start remains a coverage collection after
-the regular session. Each data collector invocation keeps the four-page-per-
-target maximum. The capture coverage selector, not the schedule, still requires
-an exact 390-minute declared QQQ session before it can call a whole-session
-observation complete. That rule does not apply to the bounded runtime selector:
-it accepts one verified, same-session, contiguous 90 completed-minute QQQ/NAS
-window ending on a 10-minute boundary and emits a precise stale/missing/gapped
-fact otherwise. Historical Research uses separately qualified inputs and does
-not wait for this task.
+`thericher-kis-paper-intraday-head` currently runs Tuesday through Saturday at
+00:29, 02:28, 04:24, and 06:20 KST according to its source-safe static Task
+facts. Do not infer a retained-cache chunk from any one trigger. Each data
+collector invocation keeps the four-page-per-target maximum. The capture
+coverage selector, not the schedule, still requires an exact 390-minute
+declared QQQ session before it can call a whole-session observation complete.
+That rule does not apply to the bounded runtime selector: it accepts one
+verified, same-session, contiguous 90 completed-minute QQQ/NAS window ending
+on a 10-minute boundary and emits a precise stale/missing/gapped fact
+otherwise. Historical Research uses separately qualified inputs and does not
+wait for this task.
 
 If a complete fresh head page disagrees with an active retained head snapshot,
 the installed `head` and `session-capture` modes may write an index-only
@@ -1020,6 +1020,36 @@ It reads no credentials and makes no KIS, Docker, network, or market-data call.
 It never scans for a latest receipt: a malformed/link/reparse-point pointer,
 reserved run ID, Git-local artifact root, missing receipt, hash mismatch, or
 terminal-category mismatch returns only `unavailable`.
+
+### Intraday Capture Topology And Invocation Markers
+
+To inspect the retained QQQ capture topology without opening raw minute rows,
+credentials, Docker, or KIS, run:
+
+```powershell
+.\scripts\inspect_kis_paper_intraday_capture_topology.ps1
+```
+
+The audit reads only the external index/manifest metadata plus source-safe
+static facts for the one existing Task. A reported
+`unretained_or_unstarted_slots` value means exactly that: it does not prove a
+missed Scheduler trigger, a provider limitation, or a collector failure.
+
+The existing dispatcher writes a diagnostic-only immutable `started` marker
+before collection and a hash-bound `terminal` marker after its existing
+schedule receipt. To inspect only the validated current marker pointer, run:
+
+```powershell
+uv run python scripts\project_kis_paper_intraday_head_invocation_receipt.py
+```
+
+`unavailable` means no valid current marker can be reattached; it is not a
+success, busy, or failure inference. The marker contains only opaque run and
+timestamp/outcome categories under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-invocation-v1`.
+It is assumed-honest-host provenance, not cryptographic proof that Task
+Scheduler started the process. Do not manually invoke the task, collector,
+Docker service, KIS, or Scheduler to manufacture this evidence.
 
 The reader also accepts a terminal-embedded SHA-256 binding for one fixed,
 external, source-safe causal-condition attestation. That optional receipt must

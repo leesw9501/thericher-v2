@@ -104,6 +104,21 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "kis-paper-intraday-observation" not in source
 
 
+def test_head_schedule_writes_diagnostic_invocation_receipts_around_collection() -> None:
+    source = SCRIPT.read_text(encoding="ascii")
+
+    start_write = source.index(' -Phase "started" ')
+    collection_call = source.index(' -Service "kis-paper-intraday-head"')
+    terminal_exit = source.index("$terminalExitCode = Get-DispatchTerminalExitCode")
+    terminal_write = source.index(' -Phase "terminal" ')
+
+    assert "function Write-HeadInvocationReceipt" in source
+    assert "thericher_v2.ops.kis_paper_intraday_head_invocation_receipt" in source
+    assert start_write < collection_call < terminal_exit < terminal_write
+    assert "-ArtifactRoot $InvocationReceiptArtifactRoot" in source
+    assert "Invocation receipts are diagnostic. They cannot defer collection." in source
+
+
 def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it() -> None:
     source = SCRIPT.read_text(encoding="ascii")
 
@@ -640,7 +655,8 @@ function docker.exe {{
     }}
     $global:LASTEXITCODE = 0
 }}
-& '{escaped_script}' -ProjectRoot '{escaped_root}'
+& '{escaped_script}' -ProjectRoot '{escaped_root}' `
+    -InvocationReceiptArtifactRoot '{escaped_log}.artifacts'
 exit $LASTEXITCODE
 """
 

@@ -2,52 +2,52 @@
 
 ## Objective
 
-Complete `kis-intraday-full-session-capture-recovery-v1`: turn the existing
-single KIS Paper intraday-head collection path into a verifiably complete M1
-regular-session accumulator, or establish the exact source/scheduler constraint
-that prevents it and deploy the smallest evidence-backed recovery. This advances
-actual data collection, not a model, PnL claim, Paper decision, or live route.
+Complete `kis-intraday-invocation-receipt-reattachment-v1`: reattach the first
+later task-owned invocation marker from the existing intraday-head dispatcher
+to determine the exact boundary between Scheduler start, collector completion,
+terminal receipt, and retained M1 topology. This is a bounded Data diagnosis,
+not a model, PnL, Paper decision, or live route.
 
 ## Hard Boundaries
 
-- Use KIS Paper market-data only through the named Data owner path. Never call
-  an account, order, position, quote, or live endpoint; never read or route
-  `KIS_LIVE_*`.
-- Do not read credentials, raw M1 rows, account values, private intents, broker
-  bodies, or identifiers.
-- Keep one task, one collector lock, the measured one-second request-start
-  gate, token-start guard, cooldown, and external cache/artifact roots. Do not
-  add a parallel flood or a duplicate task.
-- Do not manually invoke the existing quote-session/Paper task to test this
-  work. A later scheduled data result remains task-owned.
-- Preserve the immutable 2026-08-15 and 2026-08-17 scoped
-  `input_unavailable/session_coverage_incomplete/current_session_short`
-  evidence. The new causal-attestation writer may not attach or backfill either
-  terminal.
-- Do not touch, stage, invoke, or reconcile the alternate IWM collector WIP.
+- Do not manually invoke a Task Scheduler task, KIS, Docker service, collector,
+  or scheduler. A later result remains owned by the existing task.
+- Never read credentials, `KIS_LIVE_*`, raw market rows, account values,
+  private intents, broker bodies, or order identifiers.
+- Use only source-safe static Task facts, the validated external invocation
+  pointer/immutable receipts, the existing offline terminal reader, and
+  metadata-only cache topology. A missing pointer is `unknown`, not a task or
+  collection outcome.
+- Keep one task, one collector lock, the measured request-start gate,
+  token-start guard, cooldown, and external roots. Do not add a duplicate task,
+  collector, request flood, or foreground wait.
+- Do not change trigger timing, page counts, downstream QQQ/SPY consumers,
+  Docker services, KIS routes, or Paper behavior in this objective.
+- Preserve the 2026-08-15 and 2026-08-17 immutable terminal facts. Do not
+  touch, stage, invoke, or reconcile the alternate IWM collector WIP.
 
 ## Required Work
 
-1. Obtain a concise Claude falsification-first drift check before any installed
-   schedule or dispatcher change. It must challenge the inferred capture-window
-   geometry, duplicate-run risk, provider-continuation assumption, and recovery
-   kill test.
-2. Add a metadata-only capture-topology audit that uses the existing cache
-   index/manifests and source-safe Task Scheduler facts, never raw M1 rows, to
-   distinguish trigger loss, overlap, source-window limits, and retained-cache
-   topology. Its output must give aggregate session coverage and an explicit
-   bounded recovery recommendation.
-3. When the audit supports a fix, update only the existing task/dispatcher
-   contract and its installer/static tests to accumulate a whole 390-minute
-   regular session. Keep downstream QQQ/SPY Paper consumers unchanged and do
-   not create another task.
-4. Build and statically reattest the existing image/task definition, then let
-   the existing task own the next observation. Update Data, Engine Research,
-   Execution, orchestration, HANDOFF, and RUNBOOK facts. Do not promote a model
-   or Paper input merely because a collection path is installed.
+1. Inspect only the first fresh, task-owned current invocation marker after
+   this objective starts. Recompute the pointer/immutable receipt hashes and
+   retain only opaque run ID, timestamps, categorical collection/terminal
+   outcomes, and the exact external evidence pointer.
+2. Reattach it to the matching source-safe schedule-terminal and capture-topology
+   evidence. Classify narrowly as marker unavailable, start-only, terminal
+   unavailable, collector nonzero, retained partial, or complete-session only
+   when the exact receipts support that category. Do not infer a missed trigger
+   from missing retained chunks.
+3. If a fresh marker establishes a precise technical constraint, ask Claude for
+   a concise falsification-first check before proposing the smallest recovery.
+   Keep all downstream consumers and Task configuration unchanged unless a new
+   single objective owns a measured, evidence-backed change.
+4. Refresh Data, Engine Research, Execution, orchestration, HANDOFF, and
+   RUNBOOK facts. Engine Research remains non-promoting unless independently
+   qualified input evidence exists.
 
 ## Verification
 
-Run focused contract tests, the goal-boundary authority group, Ruff, and both
-Compose configurations. Report the metadata-only audit and any task deployment
-fact without raw rows or credentials.
+Run focused offline reader/receipt/topology tests for any changes, then the
+goal-boundary authority group, Ruff, and both Compose configurations. Report
+only source-safe evidence and explicitly state the assumed-honest-host
+provenance limitation.

@@ -9400,3 +9400,27 @@ outside-Git storage, idempotence, incomplete current-terminal denial,
 task-derived input, stale input, and invalid time order. The real current
 terminal smoke returned `not_written/session_coverage_incomplete`, so no
 artifact was attached or backfilled.
+
+## 2026-08-19 - Diagnose intraday capture gaps before changing the one task
+
+Decision: retain the existing enabled one-action intraday-head Task and all
+four trigger times. Add a metadata-only topology audit plus an external,
+source-safe dispatcher `started`/`terminal` invocation marker. The marker is
+written immediately before the existing collector and after the existing
+schedule receipt; its terminal record hashes the exact start marker. Do not
+change timing, page count, consumers, Docker services, collector locks, or the
+Task definition until a later task-owned marker distinguishes the observed
+boundary.
+
+Reason: the audit found sparse retained chunks associated with the expected ET
+slots, including an incomplete latest session with only its first slot retained.
+But metadata cannot distinguish a missed Scheduler start from a collector,
+provider, persistence, or de-duplication outcome. The Task is `Ready`, enabled,
+and has one action, while Task Scheduler Operational logging is disabled. The
+attempt to enable that log was denied by the host, so it remains a categorical
+observability limitation rather than a reason to infer failure. Claude's
+falsification-first verdict was `unsupported` for a downstream/timing fix from
+the available evidence. Focused tests prove metadata-only auditing, external
+receipt idempotence/hash binding, no raw data/credential/network path, and
+dispatcher ordering. The marker proves only assumed-honest-host provenance,
+not cryptographic Scheduler-origin proof or a provider/PnL/model fact.

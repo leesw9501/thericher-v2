@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Join-Path $PSScriptRoot "..")
+    [string]$ProjectRoot = (Join-Path $PSScriptRoot ".."),
+    [string]$InvocationReceiptArtifactRoot = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -63,6 +64,64 @@ function Get-ProfilePayload {
         }
     }
     return $null
+}
+
+function Write-HeadInvocationReceipt {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$ProjectRoot,
+        [Parameter(Mandatory = $true)]
+        [ValidateSet("started", "terminal")]
+        [string]$Phase,
+        [Parameter(Mandatory = $true)]
+        [string]$RunId,
+        [Parameter(Mandatory = $true)]
+        [string]$StartedAt,
+        [string]$CompletedAt,
+        [int]$CollectionExitCode,
+        [string]$ScheduleReceiptStatus,
+        [int]$TerminalExitCode,
+        [string]$ArtifactRoot
+    )
+
+    $arguments = @(
+        "python",
+        "-m",
+        "thericher_v2.ops.kis_paper_intraday_head_invocation_receipt",
+        $Phase,
+        "--run-id",
+        $RunId,
+        "--started-at",
+        $StartedAt,
+        "--repository-root",
+        $ProjectRoot
+    )
+    if ($Phase -eq "terminal") {
+        $arguments += @(
+            "--completed-at",
+            $CompletedAt,
+            "--collection-exit-code",
+            [string]$CollectionExitCode,
+            "--schedule-receipt-status",
+            $ScheduleReceiptStatus,
+            "--terminal-exit-code",
+            [string]$TerminalExitCode
+        )
+    }
+    if (-not [string]::IsNullOrWhiteSpace($ArtifactRoot)) {
+        $arguments += @("--artifact-root", $ArtifactRoot)
+    }
+    $priorErrorActionPreference = $ErrorActionPreference
+    Push-Location $ProjectRoot
+    try {
+        $ErrorActionPreference = "Continue"
+        $null = & uv run @arguments 2>$null
+    } catch {
+        # Invocation receipts are diagnostic. They cannot defer collection.
+    } finally {
+        Pop-Location
+        $ErrorActionPreference = $priorErrorActionPreference
+    }
 }
 
 function Get-UniqueSafeAvailabilityPayload {
@@ -418,6 +477,16 @@ if (-not (Test-Path -LiteralPath $composePath -PathType Leaf)) {
 
 $collectionStartedAt = (Get-Date).ToUniversalTime()
 $scheduleRunId = New-ScheduleRunId -ObservedAt $collectionStartedAt
+$collectionStartedAtMarker = $collectionStartedAt.ToString(
+    "o",
+    [System.Globalization.CultureInfo]::InvariantCulture
+)
+Write-HeadInvocationReceipt `
+    -ProjectRoot $resolvedProjectRoot `
+    -Phase "started" `
+    -RunId $scheduleRunId `
+    -StartedAt $collectionStartedAtMarker `
+    -ArtifactRoot $InvocationReceiptArtifactRoot
 $collectionCommand = @(
     "python",
     "scripts/backfill_kis_paper_private_intraday.py",
@@ -442,10 +511,6 @@ $collectionReturnedAt = (Get-Date).ToUniversalTime()
 $collectionExitCode = [int]$collection.ExitCode
 $scheduleObservedAt = $collectionReturnedAt
 $scheduleObservedAtMarker = $scheduleObservedAt.ToString(
-    "o",
-    [System.Globalization.CultureInfo]::InvariantCulture
-)
-$collectionStartedAtMarker = $collectionStartedAt.ToString(
     "o",
     [System.Globalization.CultureInfo]::InvariantCulture
 )
@@ -846,6 +911,16 @@ $terminalExitCode = Get-DispatchTerminalExitCode `
     -CollectionExitCode $collectionExitCode `
     -ScheduleReceiptExitCode $scheduleReceiptExitCode `
     -ScheduleReceiptPayload $scheduleReceiptPayload
+Write-HeadInvocationReceipt `
+    -ProjectRoot $resolvedProjectRoot `
+    -Phase "terminal" `
+    -RunId $scheduleRunId `
+    -StartedAt $collectionStartedAtMarker `
+    -CompletedAt $scheduleObservedAtMarker `
+    -CollectionExitCode $collectionExitCode `
+    -ScheduleReceiptStatus $scheduleReceiptStatus `
+    -TerminalExitCode $terminalExitCode `
+    -ArtifactRoot $InvocationReceiptArtifactRoot
 
 [ordered]@{
     kind = "kis_paper_intraday_head_schedule"
