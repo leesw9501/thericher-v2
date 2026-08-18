@@ -12,7 +12,9 @@ from pathlib import Path
 import pytest
 
 import thericher_v2.data.firstrate_free_intraday as firstrate
-from thericher_v2.data.local import CSV_FIELDS
+from thericher_v2.contracts import Timeframe
+from thericher_v2.data.local import CSV_FIELDS, LocalCsvBarProvider
+from thericher_v2.data.provider import BarQuery
 
 _SPY_ENTRY = "SPY_1min_firstratedata.csv"
 _QQQ_ENTRY = "QQQ_1min_firstratedata.csv"
@@ -66,6 +68,22 @@ def test_normalizes_sparse_rows_with_dst_conversion_and_no_network(
     assert result.input_sha256 == expected_hash
     assert result.output_sha256 == _sha256(output_path.read_bytes())
     assert result.decoded_timestamp_set_sha256 == result.emitted_timestamp_set_sha256
+
+    provider_bars = LocalCsvBarProvider(output_path).get_bars(
+        BarQuery(symbol=symbol, market="US", timeframe=Timeframe.M1)
+    )
+    assert [bar.start_ts.isoformat() for bar in provider_bars] == [
+        "2024-03-08T20:59:00+00:00",
+        "2024-03-11T13:30:00+00:00",
+        "2024-03-11T13:32:00+00:00",
+    ]
+    assert all(bar.start_ts.isoformat() != "2024-03-11T13:31:00+00:00" for bar in provider_bars)
+    assert [str(bar.open) for bar in provider_bars] == ["100", "101", "102"]
+    assert [str(bar.high) for bar in provider_bars] == ["101", "102", "103"]
+    assert [str(bar.low) for bar in provider_bars] == ["99", "100", "101"]
+    assert [str(bar.close) for bar in provider_bars] == ["100.5", "101.5", "102.5"]
+    assert [str(bar.volume) for bar in provider_bars] == ["10", "11", "12"]
+    assert all(bar.complete for bar in provider_bars)
 
 
 def test_rejects_duplicate_or_nonmonotonic_source_rows_without_output(

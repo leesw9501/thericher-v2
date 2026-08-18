@@ -1938,6 +1938,27 @@ D:\thericher-v2\model-artifacts
 /app/model_artifacts
 ```
 
+### FirstRate Free M1 Source-Local Normalization
+
+Normalize only the staged, acquisition-receipt-bound SPY/QQQ ZIPs with:
+
+```powershell
+uv run --extra dev python scripts/normalize_firstrate_free_intraday.py
+```
+
+The runner has no network, credential, KIS, broker, Docker-service, or Task
+Scheduler path. It rechecks each source ZIP hash, expects exactly one named CSV
+entry, rejects invalid ordering/DST/archive shape, writes canonical `CSV_FIELDS`
+files under `D:\market_data\us_equities\firstrate_free_intraday\canonical`, and
+writes only aggregate evidence to
+`D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday`.
+
+The output timestamp set must equal the decoded source timestamp set. Do not
+fill, reindex, aggregate, or infer omitted minutes; zero-volume omissions stay
+`not_present_in_source`. The normalized files are source-isolated retrospective
+mechanics only, not session coverage, KIS parity, decision-time availability,
+provider finality, a model input, a Paper input, or a live route.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,

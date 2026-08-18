@@ -6,19 +6,19 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`firstrate-source-local-normalization-v1` follows the closed intraday
-failure-category confirmation. It converts only the two hash-bound FirstRate
-SPY/QQQ free M1 archives into source-local canonical Bars while preserving each
-decoded timestamp set exactly. It is retrospective Data mechanics only: no
-densification, KIS join, availability/finality claim, strategy, PnL, Paper
-action, or live route.
+`firstrate-source-local-timeframe-mechanics-v1` follows the completed FirstRate
+normalization. It consumes only the two hash-bound canonical FirstRate SPY/QQQ
+M1 files through the existing 1m/5m/10m/1h/3h resampler and records aggregate
+geometry. It is retrospective Data mechanics only: no densification, KIS join,
+availability/finality claim, strategy, PnL, Paper action, or live route.
 
 ## Ready / Owned / Due
 
 | Work | Owner | Resource | Current fact and next action |
 | --- | --- | --- | --- |
 | Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |
-| FirstRate free M1 normalization | Data | Hash-bound external SPY/QQQ ZIPs and source-safe acquisition receipt | Ready: reattest each archive hash, decode only its expected CSV entry, and write source-local canonical output with exact timestamp-set equality. It stays retrospective-only, with no KIS/Paper or predictive consumer. |
+| FirstRate free M1 normalization | Data | Hash-bound external ZIPs, canonical CSVs, and source-safe receipt | Closed: archive hashes, expected entries, strict decode, canonical hashes, and exact timestamp-set equality reattached. Local provider round-trip counts are 207,824 SPY and 210,482 QQQ M1 Bars. |
+| FirstRate source-local timeframe mechanics | Data / Codex | Existing local provider/resampler and immutable normalization receipt | Ready: create an aggregate 1m/5m/10m/1h/3h geometry manifest with no generated bars, filling, coverage inference, or research/execution consumer. |
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | Norgate local readiness | Data | Existing NDU updater | The 2026-08-14 provisioned-host reader returned `local_api_not_ready` and wrote no receipt. It does not establish a process, update, subscription, expiry, vendor-access, or rights cause. This does not block the Paper canary. The one operator-visible diagnostic is the already-running NDU update plus database/subscription-state panes, then minimize it. |
@@ -43,23 +43,22 @@ The topology audit rejected an unmeasured timing/paging/downstream change. The
 first post-writer marker supplies one closed `reason_unavailable` category for a
 task-stage nonzero, not a capture cause. The later successful partial terminal
 does not supply a second category. The diagnostic preserves the original nonzero
-and has no free-text exception/log path. This does not qualify research input or
-change Paper behavior.
+and has no free-text exception/log path. Separately, FirstRate canonical M1
+output is usable only as source-isolated mechanics, not a qualified input. This
+does not qualify research input or change Paper behavior.
 
 ## Current Reversible Improvement
 
-The reattachment reader now exposes `collection_outcome` and makes
-`failure_category_is_comparable` true only for a later
-`collector_nonzero/nonzero` terminal. This prevents a zero-exit compatibility
-default from counting as a second failure category. It still reports
-`marker_not_later` for an unchanged or non-later current pointer, so a reread
-cannot count as independent evidence. Preserve the original stage exit code and
-do not emit free-text exceptions, URLs, secrets, account values, or raw data.
+The FirstRate batch normalizer reattests each staged ZIP, rejects unexpected
+archive shape/time semantics, and proves the emitted canonical timestamp set
+equals the decoded source set before writing a source-safe receipt. It adds a
+real local 1m data path without treating omitted source minutes as gaps or
+promoting the data to a KIS/Paper/model consumer.
 
 ## Current Recovery Action
 
 No category-based recovery proposal is active. A later recovery investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current next
-action is the independent FirstRate source-local normalizer; it needs no Task
-or foreground wait.
+action is the independent FirstRate source-local timeframe mechanics package;
+it needs no Task or foreground wait.
