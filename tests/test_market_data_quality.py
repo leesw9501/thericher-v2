@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import socket
 import sys
+from dataclasses import replace
 from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
@@ -54,6 +55,27 @@ def test_bar_quality_explains_resample_skipped_gap_bucket_without_filling() -> N
         for warning in report.warnings
     )
     assert report.blocks_research is False
+
+
+def test_bar_quality_explains_resample_skip_from_incomplete_duplicate() -> None:
+    bars = tuple(_bar(index) for index in range(10)) + (
+        replace(_bar(0), complete=False),
+    )
+
+    report = assess_bar_quality(bars, target_timeframes=(Timeframe.M5,))
+    resampled = resample_bars(bars, Timeframe.M5)
+
+    assert [bar.start_ts for bar in resampled] == [
+        datetime(2026, 1, 2, 0, 5, tzinfo=UTC)
+    ]
+    warning = next(
+        warning
+        for warning in report.warnings
+        if warning.code == "incomplete_resample_bucket"
+        and warning.start_ts == datetime(2026, 1, 2, 0, 0, tzinfo=UTC)
+    )
+    assert warning.count == 6
+    assert "5 complete 1m bars across 6 source record(s)" in warning.message
 
 
 def test_bar_quality_is_offline_and_does_not_read_credentials(monkeypatch) -> None:

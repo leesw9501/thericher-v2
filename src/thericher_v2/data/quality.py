@@ -217,8 +217,7 @@ def _target_bucket_warnings(
     expected_count = target_timeframe.duration // timeframe.duration
     buckets: dict[datetime, list[Bar]] = defaultdict(list)
     for bar in stream:
-        if bar.complete:
-            buckets[_bucket_start(bar.start_ts, target_timeframe)].append(bar)
+        buckets[_bucket_start(bar.start_ts, target_timeframe)].append(bar)
 
     warnings: list[BarQualityWarning] = []
     for bucket_ts in sorted(buckets):
@@ -227,15 +226,21 @@ def _target_bucket_warnings(
             bucket_ts + timeframe.duration * index for index in range(expected_count)
         )
         actual_starts = tuple(bar.start_ts for bar in bucket_bars)
-        if len(bucket_bars) == expected_count and actual_starts == expected_starts:
+        complete_count = sum(bar.complete for bar in bucket_bars)
+        if (
+            len(bucket_bars) == expected_count
+            and complete_count == expected_count
+            and actual_starts == expected_starts
+        ):
             continue
         warnings.append(
             BarQualityWarning(
                 code="incomplete_resample_bucket",
                 message=(
                     f"incomplete {target_timeframe.value} bucket has "
-                    f"{len(bucket_bars)} of {expected_count} expected complete "
-                    f"{timeframe.value} bars"
+                    f"{complete_count} complete {timeframe.value} bars across "
+                    f"{len(bucket_bars)} source record(s); expected exactly "
+                    f"{expected_count}"
                 ),
                 market=market,
                 symbol=symbol,
