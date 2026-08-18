@@ -115,6 +115,8 @@ def test_bar_csv_round_trip_and_local_provider(tmp_path) -> None:
 
     assert loaded == source_bars[2:5]
     assert bar_from_record(bar_to_record(source_bars[0])) == source_bars[0]
+    incomplete = replace(source_bars[0], complete=False)
+    assert bar_from_record(bar_to_record(incomplete)) == incomplete
 
 
 def test_bar_from_record_rejects_naive_timestamps() -> None:
