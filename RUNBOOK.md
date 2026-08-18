@@ -1959,6 +1959,26 @@ fill, reindex, aggregate, or infer omitted minutes; zero-volume omissions stay
 mechanics only, not session coverage, KIS parity, decision-time availability,
 provider finality, a model input, a Paper input, or a live route.
 
+### FirstRate Source-Local Timeframe Mechanics
+
+Build the aggregate-only mechanics manifest with:
+
+```powershell
+uv run --extra dev python scripts/build_firstrate_free_intraday_timeframe_mechanics.py
+```
+
+The runner reattests the canonical input hashes from the normalization receipt,
+loads the files through `LocalCsvBarProvider`, and holds resampled Bars only in
+memory. It records source-safe 1m/5m/10m/1h/3h counts, timestamp-set hashes,
+and OHLCV content hashes under `D:\thericher-v2\model-artifacts`; it never
+writes resampled market rows. A target bucket is retained only when every
+expected observed source minute is unique, complete, and contiguous.
+
+Buckets use a UTC-epoch anchor, not a U.S. regular-session anchor. A bucket not
+emitted from the observed source set is not a claim about a market gap,
+zero-volume bar, session coverage, provider finality, or decision-time
+availability. This manifest remains source-isolated and non-promoting.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,

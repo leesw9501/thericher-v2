@@ -23,7 +23,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. |
 | Tiingo IEX M5 r1 ETF trio | Pinned 2026-07-19 IEX-only snapshot reattested offline by raw hashes, stored gzip hash, and exact canonical payload. | One completed source-isolated reconstruction runtime integration only; no source scope, training eligibility, KIS equivalence, model-selection, or Paper-input change. |
 | Norgate trial tail | On 2026-08-14 the provisioned-host `norgatedata` reader returned only `local_api_not_ready`. It wrote no receipt and stopped before catalog, update-metadata, or price reads. This categorical result does not establish the NDU process state, update outcome, subscription, trial expiry, vendor access, or rights. | Do not launch a second trigger or repeat the hidden start. The one operator-visible diagnostic is in the already-running NDU: inspect `Update > Check for Updates` and the database/subscription state panes, retain only their categorical outcome, then minimize rather than close it. This is an unconfirmed recovery path, not a readiness claim or a hold on other lanes. If status becomes ready, verify the active US subscription and Database Location, then require a catalog exposing `US Equities` before one bounded tail probe. |
-| FirstRate free M1 SPY/QQQ | The two hash-bound original ZIPs normalized to canonical local CSVs with expected entry names, strict Eastern-to-UTC conversion, and exact decoded/emitted timestamp-set equality. SPY has 207,824 and QQQ 210,482 provider-readable complete M1 Bars. | Private/internal derivative use is allowed while resale/redistribution is prohibited. The source remains source-isolated retrospective mechanics only: zero-volume omissions make its timestamps unusable as continuity or session-coverage evidence, and it proves neither KIS parity, decision-time availability, finality, a model input, or a Paper input. |
+| FirstRate free M1 SPY/QQQ | The two hash-bound original ZIPs normalized to canonical local CSVs with expected entry names, strict Eastern-to-UTC conversion, and exact decoded/emitted timestamp-set equality. SPY has 207,824 and QQQ 210,482 provider-readable complete M1 Bars; in-memory UTC-epoch 1m/5m/10m/1h/3h geometry passed source-bucket OHLCV checks. | Private/internal derivative use is allowed while resale/redistribution is prohibited. The source remains source-isolated retrospective mechanics only: zero-volume omissions make its timestamps unusable as continuity or session-coverage evidence, and it proves neither KIS parity, decision-time availability, finality, a predictive model input, or a Paper input. |
 | NYSE Daily TAQ source discovery | The official catalog distinguishes a public sample from a full paid product. No data was acquired and no provider was adopted. | Sample schema/aggregation reference only; it is not a no-cost ongoing or KIS-aligned prospective input. |
 
 Raw market bytes remain under `D:\market_data`. Source-safe receipts and
@@ -129,7 +129,8 @@ disabled.
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The 2026-08-14 source-safe reader returned `local_api_not_ready` and wrote no receipt. Do not foreground-wait, duplicate either action, or infer a cause. The one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
 | FirstRate source-local M1 normalization | Data | Complete: reattached ZIP hashes, decoded only expected entries, and retained source-safe canonical/output/timestamp-set evidence. The local provider re-read 207,824 SPY and 210,482 QQQ complete M1 Bars; do not infer continuity or promotion. |
-| FirstRate source-local timeframe mechanics | Data / Codex | Next objective: consume only the canonical M1 files through the existing resampler and record source-safe 1m/5m/10m/1h/3h geometry. Do not densify, infer absent minutes, calculate session coverage, or create a KIS/Paper/model consumer. |
+| FirstRate source-local timeframe mechanics | Data / Codex | Complete: canonical hashes reattached, existing resampler emitted only complete unique contiguous observed-minute buckets, and source-safe 1m/5m/10m/1h/3h hashes/counts are retained. UTC-epoch alignment is not a regular-session claim. |
+| FirstRate source-local window preflight | Data / Engine Research | Next objective: freeze a finite target-free window matrix over the five timeframes and retain only eligible-window counts/geometry. Do not label, predict, train, select, allocate GPU, infer absent minutes, or create a KIS/Paper consumer. |
 
 ## Quality Contracts
 
@@ -180,6 +181,10 @@ disabled.
   source-safe M1 provider round-trip check. `complete: true` records the
   normalized historical bar representation only; it is not session coverage,
   provider finality, or decision-time availability evidence.
+- FirstRate generic resampling is UTC-epoch anchored. An emitted 5m/10m/1h/3h
+  bar requires a complete unique contiguous observed-minute source bucket and
+  passes OHLCV aggregation checks; a non-emitted bucket is only
+  `not_emitted_from_observed_source_set`, not a market/session gap.
 - Tiingo's fixed ETF trio is a repeated historical sample, not independent
   evidence. Its non-PIT scope cannot calibrate a later model-side threshold or
   filter, and it cannot be joined into the KIS causal/Paper path.
@@ -199,6 +204,9 @@ disabled.
 - FirstRate canonical M1 normalization receipt:
   `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-normalization-v1.json`
   (`sha256:374fc885b831b6a2aea59526e25f918ebe568414b018b621452c02d608f988be`).
+- FirstRate source-local timeframe mechanics manifest:
+  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-timeframe-mechanics-v1.json`
+  (`sha256:aa83961f57f7fe373f9383874c3d294384dca895115ad7f447fb2371ec2528c3`).
 - Official KIS overseas-minute documentation confirms the reviewed request and
   cursor semantics but supplies no reviewed finality/as-of predicate. It keeps
   `provider_finality` and decision-time availability `not_observed`; it makes
