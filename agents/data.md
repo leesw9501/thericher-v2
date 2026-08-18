@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The first fresh 2026-08-19 KST invocation marker binds one task-path run to a `recovery` terminal with `collection_exit_nonzero`; its metadata topology is `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The stage label proves only that the dispatcher-recorded collection service invocation returned nonzero. It does not prove collector-process entry, a provider cause, or a timing/page remedy. No model or reusable Paper-candidate promotion follows. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The first fresh 2026-08-19 KST invocation marker binds one task-path run to a `recovery` terminal with `collection_exit_nonzero`; its metadata topology is `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The closed future category writer is installed, while the legacy marker reattaches as `reason_unavailable`. The enabled one-action Task has its Operational log disabled. | The stage label proves only that the dispatcher-recorded collection service invocation returned nonzero. Neither the legacy default nor a later category proves collector-process entry, an exact provider cause, or a timing/page remedy. No model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper broad D1 panel | The latest source-safe postrun snapshot (2026-08-01) recorded 2,119/2,119 current-listing targets covered, zero quarantined targets, and zero mismatches over its 604-target baseline overlap. A later successful Task exit does not itself refresh this frozen snapshot. | Coverage/provenance inventory only: current-listing, non-PIT, unadjusted, corporate-action-unqualified, and session-finality-unattested. It cannot supply a target, ranking, training, or Paper input. |
@@ -82,14 +82,22 @@ identify a Docker wrapper, collector-process, provider, or persistence cause.
 The existing task definition, timing, pages, consumers, KIS route, and Paper
 behavior remain unchanged.
 
+The new terminal field accepts only `reason_unavailable`, `dispatcher_config`,
+or `collector_provider` from exactly one existing structured collector error
+payload. It stores neither the payload nor free text and preserves the existing
+stage exit code. The offline reader accepts old immutable markers as
+`reason_unavailable`; the current legacy marker was reattached that way without
+byte changes. A 2026-08-19 Claude scope review ended `review_unavailable`
+because of an API overload, so no category-based recovery claim exists.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
 | Invocation-marker reattachment | Data / Codex | Complete: the first fresh marker and exact schedule terminal reattached as `collection_exit_nonzero`; its source-safe pointers remain external-root-relative. |
-| Task-path failure localization | Data / Codex | Next objective: retain only an allowlisted categorical reason that distinguishes dispatcher/config from collector/provider cases without changing the task, pages, timing, or consumers. |
-| Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The current pointer is a validated terminal for one exact nonzero task path. Its later due times remain task-owned and never foreground waits. |
+| Task-path failure localization | Data / Codex | Complete: an allowlisted free-text-free category writer and legacy-compatible reader preserve the exact stage exit. No task, pages, timing, or consumer change followed. |
+| Failure-category reattachment | Data / existing `thericher-kis-paper-intraday-head` task | The current pointer is a legacy validated terminal for one exact nonzero path. Reattach only the first later task-owned marker; its due time remains task-owned and never a foreground wait. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
 | Norgate tail readiness | Existing NDU updater, Data, then one operator-visible diagnostic if needed | The 2026-08-14 source-safe reader returned `local_api_not_ready` and wrote no receipt. Do not foreground-wait, duplicate either action, or infer a cause. The one manual diagnostic is visible NDU update plus database/subscription-state inspection, retaining only categorical outcomes. A ready reader must still see `US Equities` before one bounded tail probe. |
@@ -110,8 +118,9 @@ behavior remain unchanged.
 - An exact source/cursor limit closes only that route; it does not prove a
   provider-wide history limit.
 - A `collection_exit_nonzero` terminal is a closed task-stage category, not a
-  collector-process, provider, or Scheduler-origin diagnosis. Any later reason
-  field must be an allowlisted category with free-text structurally impossible.
+  collector-process, provider, or Scheduler-origin diagnosis. A later category
+  may be only `dispatcher_config`, `collector_provider`, or
+  `reason_unavailable`, never free text, and preserves the original exit code.
 - Preserve a durable serial cursor only after a useful capability probe
   establishes continuation semantics. Do not replace measurement with a
   parallel request flood.

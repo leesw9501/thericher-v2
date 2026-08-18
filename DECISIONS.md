@@ -9488,3 +9488,28 @@ behavior change needs a source-safe categorical reason that distinguishes a
 deterministic dispatcher/config case from a collector/provider case in at least
 two hash-validated bindings. Until then, the result is Data-only and never a
 model, PnL, Paper, or live fact.
+
+## 2026-08-19 - Retain only closed intraday failure categories
+
+Decision: future immutable intraday invocation terminals may retain one of
+`reason_unavailable`, `dispatcher_config`, or `collector_provider` beside the
+existing collection-stage exit outcome. The scheduler dispatcher derives a
+non-default category only from exactly one existing structured collector error
+payload with the expected shape and approved fields. It retains no payload,
+command output, exception text, credential, account value, market row, or raw
+broker data. A zero collection exit must use `reason_unavailable`; malformed,
+unknown, ambiguous, or free-text-looking output also stays
+`reason_unavailable`. Readers interpret old immutable terminal bytes as
+`reason_unavailable` without rewriting them.
+
+Reason: the existing source-safe task-stage fact distinguishes only a nonzero
+collection return, while a behavior change requires evidence that can rule out
+at least one broad recovery class without expanding the diagnostic data surface.
+The closed mapping preserves exit semantics and allows one later task-owned
+hash-bound marker to provide a narrow Data fact. The scope-matched Claude
+falsification-first request ended `review_unavailable` because the service was
+overloaded; it was not treated as agreement or a cause verdict. Any future
+category-based recovery still requires a fresh Claude verdict and two
+independently hash-validated matching task bindings. The category remains
+assumed-honest-host marker provenance, not cryptographic proof of Scheduler
+origin.

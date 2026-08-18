@@ -65,6 +65,9 @@ class KisPaperIntradayInvocationReattachment:
     schedule_receipt_pointer: str | None
     topology_relation: _TopologyRelation
     topology_session_date: date | None
+    collection_failure_category: Literal[
+        "reason_unavailable", "dispatcher_config", "collector_provider"
+    ] = "reason_unavailable"
 
     def safe_payload(self) -> dict[str, object]:
         return {
@@ -78,6 +81,7 @@ class KisPaperIntradayInvocationReattachment:
                 "schedule_observed_at": _utc_marker(self.schedule_observed_at),
                 "completed_at": _utc_marker(self.completed_at),
                 "receipt_sha256": self.invocation_receipt_sha256,
+                "collection_failure_category": self.collection_failure_category,
             },
             "schedule_terminal_receipt_sha256": self.schedule_receipt_sha256,
             "external_evidence": {
@@ -315,6 +319,7 @@ def _terminal_result(
         ),
         topology_relation=relation,
         topology_session_date=session_date if topology is not None else None,
+        collection_failure_category=terminal.collection_failure_category,
     )
 
 

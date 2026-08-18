@@ -66,6 +66,9 @@ _TERMINAL_KEYS = frozenset(
         "claim",
     }
 )
+_TERMINAL_KEYS_WITH_COLLECTION_FAILURE_CATEGORY = _TERMINAL_KEYS | frozenset(
+    {"collection_failure_category"}
+)
 _RUNTIME_KEYS = frozenset(
     {
         "schema_version",
@@ -77,6 +80,9 @@ _RUNTIME_KEYS = frozenset(
         "artifact_policy",
         "claim",
     }
+)
+_COLLECTION_FAILURE_CATEGORIES = frozenset(
+    {"reason_unavailable", "dispatcher_config", "collector_provider"}
 )
 
 
@@ -132,6 +138,9 @@ class KisPaperIntradayHeadInvocationTerminalFact:
     collection_outcome: Literal["succeeded", "nonzero"]
     schedule_receipt_outcome: Literal["complete", "recovery", "unavailable"]
     terminal_outcome: Literal["succeeded", "nonzero"]
+    collection_failure_category: Literal[
+        "reason_unavailable", "dispatcher_config", "collector_provider"
+    ] = "reason_unavailable"
 
     def safe_payload(self) -> dict[str, object]:
         return {
@@ -142,6 +151,7 @@ class KisPaperIntradayHeadInvocationTerminalFact:
             "completed_at": _utc_marker(self.completed_at),
             "receipt_sha256": self.receipt_sha256,
             "collection_outcome": self.collection_outcome,
+            "collection_failure_category": self.collection_failure_category,
             "schedule_receipt_outcome": self.schedule_receipt_outcome,
             "terminal_outcome": self.terminal_outcome,
             "artifact_policy": dict(_ARTIFACT_POLICY),
@@ -196,6 +206,7 @@ def write_terminal_kis_paper_intraday_head_invocation_receipt(
     collection_exit_code: int,
     schedule_receipt_status: str,
     terminal_exit_code: int,
+    collection_failure_category: str = "reason_unavailable",
 ) -> KisPaperIntradayHeadInvocationReceiptResult:
     """Bind a source-safe terminal category to an existing immutable start marker."""
 
@@ -210,6 +221,13 @@ def write_terminal_kis_paper_intraday_head_invocation_receipt(
         return _not_written("schedule_observed_time_invalid", phase="terminal")
     if type(collection_exit_code) is not int or type(terminal_exit_code) is not int:
         return _not_written("exit_code_invalid", phase="terminal")
+    if (
+        not isinstance(collection_failure_category, str)
+        or collection_failure_category not in _COLLECTION_FAILURE_CATEGORIES
+    ):
+        return _not_written("collection_failure_category_invalid", phase="terminal")
+    if collection_exit_code == 0 and collection_failure_category != "reason_unavailable":
+        return _not_written("collection_failure_category_invalid", phase="terminal")
     if schedule_receipt_status not in {"complete", "recovery", "unavailable"}:
         return _not_written("schedule_receipt_status_invalid", phase="terminal")
     try:
@@ -231,6 +249,7 @@ def write_terminal_kis_paper_intraday_head_invocation_receipt(
             "completed_at": _utc_marker(completed_at),
             "started_receipt_sha256": _sha256(started_bytes),
             "collection_outcome": _exit_outcome(collection_exit_code),
+            "collection_failure_category": collection_failure_category,
             "schedule_receipt_outcome": schedule_receipt_status,
             "terminal_outcome": _exit_outcome(terminal_exit_code),
             "artifact_policy": dict(_ARTIFACT_POLICY),
@@ -348,6 +367,7 @@ def read_current_kis_paper_intraday_head_invocation_terminal_fact(
     collection_outcome = payload.get("collection_outcome")
     schedule_receipt_outcome = payload.get("schedule_receipt_outcome")
     terminal_outcome = payload.get("terminal_outcome")
+    collection_failure_category = _collection_failure_category_from_terminal_payload(payload)
     if (
         collection_outcome not in {"succeeded", "nonzero"}
         or schedule_receipt_outcome not in {"complete", "recovery", "unavailable"}
@@ -361,6 +381,7 @@ def read_current_kis_paper_intraday_head_invocation_terminal_fact(
         completed_at=completed_at,
         receipt_sha256=runtime.receipt_sha256,
         collection_outcome=collection_outcome,
+        collection_failure_category=collection_failure_category,
         schedule_receipt_outcome=schedule_receipt_outcome,
         terminal_outcome=terminal_outcome,
     )
@@ -374,6 +395,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--schedule-observed-at")
     parser.add_argument("--completed-at")
     parser.add_argument("--collection-exit-code", type=int)
+    parser.add_argument("--collection-failure-category", default="reason_unavailable")
     parser.add_argument("--schedule-receipt-status")
     parser.add_argument("--terminal-exit-code", type=int)
     parser.add_argument(
@@ -411,6 +433,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 ),
                 completed_at=_utc(arguments.completed_at, "completed_at"),
                 collection_exit_code=arguments.collection_exit_code,
+                collection_failure_category=arguments.collection_failure_category,
                 schedule_receipt_status=arguments.schedule_receipt_status,
                 terminal_exit_code=arguments.terminal_exit_code,
             )
@@ -455,7 +478,8 @@ def _read_exact_terminal(*, root: Path, run_id: str, observed_at: datetime) -> b
         raise ValueError("terminal receipt is invalid") from error
     if (
         not isinstance(payload, dict)
-        or frozenset(payload) != _TERMINAL_KEYS
+        or frozenset(payload)
+        not in {_TERMINAL_KEYS, _TERMINAL_KEYS_WITH_COLLECTION_FAILURE_CATEGORY}
         or payload.get("schema_version") != SCHEMA_VERSION
         or payload.get("kind") != KIS_PAPER_INTRADAY_HEAD_INVOCATION_RECEIPT_KIND
         or payload.get("phase") != "terminal"
@@ -493,7 +517,25 @@ def _read_exact_terminal(*, root: Path, run_id: str, observed_at: datetime) -> b
     )
     if payload.get("started_receipt_sha256") != _sha256(started_bytes):
         raise ValueError("terminal receipt is invalid")
+    _collection_failure_category_from_terminal_payload(payload)
     return encoded
+
+
+def _collection_failure_category_from_terminal_payload(
+    payload: dict[str, object],
+) -> Literal["reason_unavailable", "dispatcher_config", "collector_provider"]:
+    value = payload.get("collection_failure_category", "reason_unavailable")
+    if value == "reason_unavailable":
+        category: Literal["reason_unavailable", "dispatcher_config", "collector_provider"] = value
+    elif value == "dispatcher_config":
+        category = value
+    elif value == "collector_provider":
+        category = value
+    else:
+        raise ValueError("terminal receipt is invalid")
+    if payload.get("collection_outcome") == "succeeded" and category != "reason_unavailable":
+        raise ValueError("terminal receipt is invalid")
+    return category
 
 
 def _write_result(

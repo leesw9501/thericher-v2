@@ -1,3 +1,4 @@
+import base64
 import json
 import os
 import subprocess
@@ -119,12 +120,92 @@ def test_head_schedule_writes_diagnostic_invocation_receipts_around_collection()
     assert "$scheduleObservedAt = $collectionReturnedAt" in source
     assert "$dispatchCompletedAt = (Get-Date).ToUniversalTime()" in source
     assert "--schedule-observed-at" in source
+    assert "Get-UniqueSafeCollectionFailureCategory" in source
+    assert "$collectionFailureCategory = Get-UniqueSafeCollectionFailureCategory" in source
+    assert "if ($collectionExitCode -ne 0)" in source
+    assert "--collection-failure-category" in source
+    assert "-CollectionFailureCategory $collectionFailureCategory" in source
     assert "-ScheduleObservedAt $scheduleObservedAtMarker" in source
     assert "-CompletedAt $dispatchCompletedAtMarker" in source
     assert source.index("$scheduleReceipt = Invoke-HeadProfileService") < source.index(
         "$dispatchCompletedAt = (Get-Date).ToUniversalTime()"
     ) < terminal_write
     assert "Invocation receipts are diagnostic. They cannot defer collection." in source
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+@pytest.mark.parametrize(
+    ("output_lines", "expected"),
+    (
+        (
+            (
+                '{"freshness_projection":"written","reason":"config_missing",'
+                '"status":"not_executed"}',
+            ),
+            "dispatcher_config",
+        ),
+        (
+            (
+                '{"freshness_projection":"unavailable","reason":"transport_failure",'
+                '"status":"not_executed"}',
+            ),
+            "collector_provider",
+        ),
+        (("collector emitted non-json text",), "reason_unavailable"),
+        (
+            (
+                '{"freshness_projection":"written","reason":"token=synthetic-secret",'
+                '"status":"not_executed"}',
+            ),
+            "reason_unavailable",
+        ),
+        (
+            (
+                '{"freshness_projection":"written","reason":"config_missing",'
+                '"status":"not_executed"}',
+                '{"freshness_projection":"unavailable","reason":"transport_failure",'
+                '"status":"not_executed"}',
+            ),
+            "reason_unavailable",
+        ),
+    ),
+)
+def test_head_schedule_classifies_only_one_exact_safe_collection_failure_payload(
+    output_lines: tuple[str, ...],
+    expected: str,
+) -> None:
+    source = SCRIPT.read_text(encoding="ascii")
+    start = source.index("function Get-UniqueSafeCollectionFailureCategory")
+    end = source.index("function Write-HeadInvocationReceipt", start)
+    function_source = source[start:end]
+    encoded_lines = base64.b64encode(json.dumps(output_lines).encode("ascii")).decode("ascii")
+    command = "\n".join(
+        (
+            "$ErrorActionPreference = 'Stop'",
+            function_source,
+            (
+                "$encodedLines = '"
+                + encoded_lines
+                + "'"
+            ),
+            (
+                "$lines = [System.Text.Encoding]::ASCII.GetString("
+                "[Convert]::FromBase64String($encodedLines)) | ConvertFrom-Json"
+            ),
+            "$category = Get-UniqueSafeCollectionFailureCategory -Output @($lines)",
+            "Write-Output $category",
+        )
+    )
+    result = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", command],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.strip() == expected
 
 
 def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it() -> None:

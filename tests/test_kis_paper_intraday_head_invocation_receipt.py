@@ -71,6 +71,7 @@ def test_started_and_terminal_receipts_are_external_idempotent_and_networkless(
     payload = json.loads(terminal_path.read_text(encoding="ascii"))
     assert payload["started_receipt_sha256"] == started.receipt_sha256
     assert payload["collection_outcome"] == "succeeded"
+    assert payload["collection_failure_category"] == "reason_unavailable"
     assert payload["schedule_receipt_outcome"] == "complete"
     assert payload["terminal_outcome"] == "succeeded"
     assert runtime.phase == "terminal"
@@ -82,6 +83,7 @@ def test_started_and_terminal_receipts_are_external_idempotent_and_networkless(
     )
     assert terminal_fact.schedule_observed_at == started_at + timedelta(minutes=1)
     assert terminal_fact.completed_at == started_at + timedelta(minutes=2)
+    assert terminal_fact.collection_failure_category == "reason_unavailable"
     assert start_path.is_relative_to(artifact_root)
     assert terminal_path.is_relative_to(artifact_root)
     assert not any(repository_root.rglob("*.json"))
@@ -105,6 +107,120 @@ def test_terminal_receipt_requires_matching_started_marker(tmp_path: Path) -> No
 
     assert result.status == "not_written"
     assert result.reason == "started_receipt_unavailable"
+
+
+def test_terminal_receipt_retains_only_allowlisted_failure_categories(tmp_path: Path) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    started_at = datetime(2026, 8, 19, 15, 29, tzinfo=UTC)
+    receipts.write_started_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-unit",
+        started_at=started_at,
+    )
+    result = receipts.write_terminal_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-unit",
+        started_at=started_at,
+        schedule_observed_at=started_at + timedelta(seconds=1),
+        completed_at=started_at + timedelta(seconds=2),
+        collection_exit_code=1,
+        collection_failure_category="dispatcher_config",
+        schedule_receipt_status="recovery",
+        terminal_exit_code=1,
+    )
+
+    assert result.status == "written"
+    terminal_path = _receipt_path(artifact_root, "head-unit", "terminal")
+    before_invalid = terminal_path.read_bytes()
+    invalid = receipts.write_terminal_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-unit",
+        started_at=started_at,
+        schedule_observed_at=started_at + timedelta(seconds=1),
+        completed_at=started_at + timedelta(seconds=2),
+        collection_exit_code=1,
+        collection_failure_category="token=synthetic-secret",
+        schedule_receipt_status="recovery",
+        terminal_exit_code=1,
+    )
+
+    assert invalid.status == "not_written"
+    assert invalid.reason == "collection_failure_category_invalid"
+    assert terminal_path.read_bytes() == before_invalid
+    assert b"synthetic-secret" not in terminal_path.read_bytes()
+    terminal_fact = receipts.read_current_kis_paper_intraday_head_invocation_terminal_fact(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    assert terminal_fact.collection_failure_category == "dispatcher_config"
+    receipts.write_started_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-zero",
+        started_at=started_at,
+    )
+    zero_exit = receipts.write_terminal_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-zero",
+        started_at=started_at,
+        schedule_observed_at=started_at + timedelta(seconds=1),
+        completed_at=started_at + timedelta(seconds=2),
+        collection_exit_code=0,
+        collection_failure_category="collector_provider",
+        schedule_receipt_status="complete",
+        terminal_exit_code=0,
+    )
+    assert zero_exit.reason == "collection_failure_category_invalid"
+
+
+def test_legacy_terminal_receipt_remains_immutable_and_defaults_reason_unavailable(
+    tmp_path: Path,
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    started_at = datetime(2026, 8, 19, 15, 29, tzinfo=UTC)
+    receipts.write_started_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-legacy",
+        started_at=started_at,
+    )
+    receipts.write_terminal_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-legacy",
+        started_at=started_at,
+        schedule_observed_at=started_at + timedelta(seconds=1),
+        completed_at=started_at + timedelta(seconds=2),
+        collection_exit_code=1,
+        collection_failure_category="collector_provider",
+        schedule_receipt_status="recovery",
+        terminal_exit_code=1,
+    )
+    terminal_path = _receipt_path(artifact_root, "head-legacy", "terminal")
+    legacy_payload = json.loads(terminal_path.read_text(encoding="ascii"))
+    legacy_payload.pop("collection_failure_category")
+    legacy_bytes = receipts._canonical_json(legacy_payload)
+    terminal_path.write_bytes(legacy_bytes)
+    runtime_path = (
+        artifact_root
+        / receipts.KIS_PAPER_INTRADAY_HEAD_INVOCATION_RECEIPT_DIRECTORY
+        / receipts.KIS_PAPER_INTRADAY_HEAD_INVOCATION_RUNTIME_ARTIFACT_NAME
+    )
+    runtime_payload = json.loads(runtime_path.read_text(encoding="ascii"))
+    runtime_payload["receipt_sha256"] = "sha256:" + hashlib.sha256(legacy_bytes).hexdigest()
+    runtime_path.write_bytes(receipts._canonical_json(runtime_payload))
+
+    fact = receipts.read_current_kis_paper_intraday_head_invocation_terminal_fact(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert fact.collection_failure_category == "reason_unavailable"
+    assert terminal_path.read_bytes() == legacy_bytes
 
 
 def test_module_entrypoint_writes_a_source_safe_started_receipt(tmp_path: Path) -> None:

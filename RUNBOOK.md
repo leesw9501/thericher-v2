@@ -1076,6 +1076,15 @@ read or retain command output or exception text as a shortcut: any future
 localization receipt must use a closed allowlist of categorical codes and keep
 the original stage exit separately intact.
 
+Future terminal markers may carry only `reason_unavailable`,
+`dispatcher_config`, or `collector_provider`. The dispatcher derives that field
+in memory from exactly one existing structured collector error payload; malformed,
+multiple, unknown, or free-text-looking output remains `reason_unavailable` and
+is never retained. A zero collection exit must retain `reason_unavailable`. Old
+immutable markers are read as `reason_unavailable` without byte changes. This
+category is diagnostic evidence only: it does not authorize a Task, paging,
+pace, Docker, KIS, consumer, Paper, or recovery behavior change.
+
 The reader also accepts a terminal-embedded SHA-256 binding for one fixed,
 external, source-safe causal-condition attestation. That optional receipt must
 match the terminal's run, capture, availability, and pair identities and name
@@ -2428,7 +2437,7 @@ uv run --extra dev pytest -q <changed paths>
 .\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
-docker compose config --quiet
+docker compose --env-file .env.example --profile research config --quiet
 ```
 
 The focused serial group covers the changed production and contract paths. The

@@ -66,6 +66,86 @@ function Get-ProfilePayload {
     return $null
 }
 
+function Get-UniqueSafeCollectionFailureCategory {
+    param(
+        [Parameter(Mandatory = $true)]
+        [object[]]$Output
+    )
+
+    # Only the existing collector's exact, source-safe error payload can narrow
+    # a later nonzero. Transport text and every other payload stay unavailable.
+    $expectedProperties = @(
+        "freshness_projection",
+        "reason",
+        "status"
+    ) | Sort-Object
+    $dispatcherConfigReasons = @(
+        "config_missing",
+        "execute_flag_required"
+    )
+    $collectorProviderReasons = @(
+        "auth_rejected",
+        "auth_response_invalid",
+        "minute_cursor_invalid",
+        "minute_cursor_stalled",
+        "minute_duplicate_conflict",
+        "minute_exchange_timestamp_invalid",
+        "minute_korea_timestamp_invalid",
+        "minute_ohlc_invalid",
+        "minute_page_limit_exceeded",
+        "minute_response_empty",
+        "minute_response_invalid",
+        "minute_response_rejected",
+        "paper_host_required",
+        "private_intraday_collector_error",
+        "rate_limited",
+        "redirect_rejected",
+        "request_not_allowlisted",
+        "response_invalid",
+        "token_request_not_due",
+        "transport_failure"
+    )
+    $categories = @()
+    foreach ($line in $Output) {
+        $text = [string]$line
+        if (-not ($text.Trim().StartsWith("{") -and $text.Trim().EndsWith("}"))) {
+            continue
+        }
+        try {
+            $payload = $text | ConvertFrom-Json -ErrorAction Stop
+        } catch {
+            return "reason_unavailable"
+        }
+        $propertyNames = @($payload.PSObject.Properties.Name | Sort-Object)
+        if (
+            $propertyNames.Count -ne $expectedProperties.Count `
+                -or ($propertyNames -join "|") -ne ($expectedProperties -join "|")
+        ) {
+            return "reason_unavailable"
+        }
+        if (
+            -not ($payload.freshness_projection -is [string]) `
+                -or -not ($payload.reason -is [string]) `
+                -or -not ($payload.status -is [string]) `
+                -or $payload.freshness_projection -notin @("written", "unavailable") `
+                -or $payload.status -ne "not_executed"
+        ) {
+            return "reason_unavailable"
+        }
+        if ($payload.reason -in $dispatcherConfigReasons) {
+            $categories += "dispatcher_config"
+        } elseif ($payload.reason -in $collectorProviderReasons) {
+            $categories += "collector_provider"
+        } else {
+            return "reason_unavailable"
+        }
+    }
+    if ($categories.Count -ne 1) {
+        return "reason_unavailable"
+    }
+    return $categories[0]
+}
+
 function Write-HeadInvocationReceipt {
     param(
         [Parameter(Mandatory = $true)]
@@ -80,6 +160,8 @@ function Write-HeadInvocationReceipt {
         [string]$ScheduleObservedAt,
         [string]$CompletedAt,
         [int]$CollectionExitCode,
+        [ValidateSet("reason_unavailable", "dispatcher_config", "collector_provider")]
+        [string]$CollectionFailureCategory = "reason_unavailable",
         [string]$ScheduleReceiptStatus,
         [int]$TerminalExitCode,
         [string]$ArtifactRoot
@@ -105,6 +187,8 @@ function Write-HeadInvocationReceipt {
             $ScheduleObservedAt,
             "--collection-exit-code",
             [string]$CollectionExitCode,
+            "--collection-failure-category",
+            $CollectionFailureCategory,
             "--schedule-receipt-status",
             $ScheduleReceiptStatus,
             "--terminal-exit-code",
@@ -512,6 +596,10 @@ $collection = Invoke-HeadProfileService `
     -CommandOverride $collectionCommand
 $collectionReturnedAt = (Get-Date).ToUniversalTime()
 $collectionExitCode = [int]$collection.ExitCode
+$collectionFailureCategory = "reason_unavailable"
+if ($collectionExitCode -ne 0) {
+    $collectionFailureCategory = Get-UniqueSafeCollectionFailureCategory -Output $collection.Output
+}
 $scheduleObservedAt = $collectionReturnedAt
 $scheduleObservedAtMarker = $scheduleObservedAt.ToString(
     "o",
@@ -927,6 +1015,7 @@ Write-HeadInvocationReceipt `
     -ScheduleObservedAt $scheduleObservedAtMarker `
     -CompletedAt $dispatchCompletedAtMarker `
     -CollectionExitCode $collectionExitCode `
+    -CollectionFailureCategory $collectionFailureCategory `
     -ScheduleReceiptStatus $scheduleReceiptStatus `
     -TerminalExitCode $terminalExitCode `
     -ArtifactRoot $InvocationReceiptArtifactRoot

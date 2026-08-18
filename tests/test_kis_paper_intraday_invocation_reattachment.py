@@ -212,6 +212,7 @@ def test_reattachment_classifies_collector_nonzero_only_with_bound_recovery() ->
         completed_at=terminal.completed_at,
         receipt_sha256=terminal.receipt_sha256,
         collection_outcome="nonzero",
+        collection_failure_category="collector_provider",
         schedule_receipt_outcome="recovery",
         terminal_outcome="nonzero",
     )
@@ -225,6 +226,10 @@ def test_reattachment_classifies_collector_nonzero_only_with_bound_recovery() ->
 
     assert result.status == "collector_nonzero"
     assert result.reason == "collection_exit_nonzero"
+    assert result.collection_failure_category == "collector_provider"
+    assert result.safe_payload()["invocation"]["collection_failure_category"] == (
+        "collector_provider"
+    )
 
 
 def _bound_facts(
