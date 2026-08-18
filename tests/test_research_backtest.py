@@ -10,7 +10,11 @@ from thericher_v2.backtest import run_next_bar_backtest
 from thericher_v2.contracts import ModelPrediction, OrderIntent, Signal, Timeframe
 from thericher_v2.data import generate_trending_bars
 from thericher_v2.ensemble import decide
-from thericher_v2.execution import EmergencyStore, LocalPaperBroker
+from thericher_v2.execution import (
+    EmergencyStore,
+    LocalPaperBroker,
+    replay_local_paper_realized_pnl,
+)
 from thericher_v2.models import MomentumModel
 from thericher_v2.state import EventStore
 
@@ -115,6 +119,13 @@ def test_backtest_matches_local_paper_for_explicit_costs_at_next_bar_open(tmp_pa
             local_result.fill.fee,
             local_result.fill.filled_at.isoformat(),
         ) == (trade.execution_price, trade.fee, trade.execution_ts)
+
+    realized = replay_local_paper_realized_pnl(broker.event_store.iter_events())
+
+    assert broker.account().cash == result.ending_cash
+    assert broker.account().positions == ()
+    assert realized.realized_after_cost_pnl == result.pnl
+    assert realized.open_quantity == Decimal("0")
 
 
 @pytest.mark.parametrize(
