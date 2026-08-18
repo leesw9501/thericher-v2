@@ -195,7 +195,15 @@ def test_reattachment_classifies_complete_session_with_metadata_only_relation() 
     assert result.schedule_receipt_pointer.endswith("head-unit.json")
 
 
-def test_reattachment_classifies_collector_nonzero_only_with_bound_recovery() -> None:
+@pytest.mark.parametrize(
+    "collection_failure_category",
+    ["reason_unavailable", "dispatcher_config", "collector_provider"],
+)
+def test_reattachment_preserves_each_closed_nonzero_category(
+    collection_failure_category: Literal[
+        "reason_unavailable", "dispatcher_config", "collector_provider"
+    ],
+) -> None:
     runtime, terminal, _ = _bound_facts(collection_outcome="nonzero")
     schedule = _schedule(
         run_id=terminal.run_id,
@@ -212,7 +220,7 @@ def test_reattachment_classifies_collector_nonzero_only_with_bound_recovery() ->
         completed_at=terminal.completed_at,
         receipt_sha256=terminal.receipt_sha256,
         collection_outcome="nonzero",
-        collection_failure_category="collector_provider",
+        collection_failure_category=collection_failure_category,
         schedule_receipt_outcome="recovery",
         terminal_outcome="nonzero",
     )
@@ -226,9 +234,9 @@ def test_reattachment_classifies_collector_nonzero_only_with_bound_recovery() ->
 
     assert result.status == "collector_nonzero"
     assert result.reason == "collection_exit_nonzero"
-    assert result.collection_failure_category == "collector_provider"
+    assert result.collection_failure_category == collection_failure_category
     assert result.safe_payload()["invocation"]["collection_failure_category"] == (
-        "collector_provider"
+        collection_failure_category
     )
 
 
