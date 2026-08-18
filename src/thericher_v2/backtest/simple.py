@@ -9,7 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from decimal import Decimal
 
-from thericher_v2.contracts import Bar
+from thericher_v2.contracts import Bar, non_negative, positive
 from thericher_v2.ensemble.simple import decide
 from thericher_v2.models.momentum import MomentumModel
 
@@ -89,6 +89,10 @@ def run_next_bar_backtest(
     if len(bars) < 6:
         raise ValueError("at least 6 bars are required")
     _validate_next_observed_bar_sequence(bars)
+    starting_cash = non_negative(starting_cash, "starting_cash")
+    quantity = positive(quantity, "quantity")
+    fee_bps = non_negative(fee_bps, "fee_bps")
+    slippage_bps = non_negative(slippage_bps, "slippage_bps")
     model = model or MomentumModel()
     cash = starting_cash
     position = Decimal("0")

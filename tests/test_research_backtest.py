@@ -80,3 +80,20 @@ def test_backtest_allows_a_gap_to_the_next_observed_session_bar() -> None:
     result = run_next_bar_backtest(bars, model=MomentumModel(lookback=3))
 
     assert result.equity > Decimal("0")
+
+
+@pytest.mark.parametrize(
+    ("kwargs", "message"),
+    [
+        ({"starting_cash": Decimal("-1")}, "starting_cash"),
+        ({"quantity": Decimal("0")}, "quantity"),
+        ({"quantity": Decimal("-1")}, "quantity"),
+        ({"fee_bps": Decimal("-1")}, "fee_bps"),
+        ({"slippage_bps": Decimal("-1")}, "slippage_bps"),
+    ],
+)
+def test_backtest_rejects_invalid_cash_quantity_and_cost_inputs(kwargs, message: str) -> None:
+    bars = generate_trending_bars(seed=3, count=30, drift_bps=Decimal("12"))
+
+    with pytest.raises(ValueError, match=message):
+        run_next_bar_backtest(bars, model=MomentumModel(lookback=3), **kwargs)
