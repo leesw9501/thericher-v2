@@ -47,6 +47,36 @@ def _cost_adjusted_price(price: Decimal, side: str, slippage_bps: Decimal) -> De
     return (price * adjustment).quantize(Decimal("0.0001"))
 
 
+def _validate_next_observed_bar_sequence(bars: list[Bar]) -> None:
+    """Reject inputs that could turn list ordering into look-ahead bias.
+
+    Session gaps are valid: a next observed bar can be the next market session.
+    Overlap, reordering, mixed instruments, and incomplete bars are not valid
+    inputs to a completed-bar next-observed-bar simulation.
+    """
+
+    first = bars[0]
+    if not isinstance(first, Bar):
+        raise TypeError("bars must contain Bar values")
+    for bar in bars:
+        if not isinstance(bar, Bar):
+            raise TypeError("bars must contain Bar values")
+        if (bar.symbol, bar.market, bar.timeframe) != (
+            first.symbol,
+            first.market,
+            first.timeframe,
+        ):
+            raise ValueError("bars must share one symbol, market, and timeframe")
+        if not bar.complete:
+            raise ValueError("backtest bars must be complete")
+
+    for prior, current in zip(bars, bars[1:], strict=False):
+        if current.start_ts < prior.start_ts:
+            raise ValueError("bars must be chronological")
+        if current.start_ts < prior.end_ts:
+            raise ValueError("bars must not overlap")
+
+
 def run_next_bar_backtest(
     bars: list[Bar],
     *,
@@ -58,6 +88,7 @@ def run_next_bar_backtest(
 ) -> BacktestResult:
     if len(bars) < 6:
         raise ValueError("at least 6 bars are required")
+    _validate_next_observed_bar_sequence(bars)
     model = model or MomentumModel()
     cash = starting_cash
     position = Decimal("0")
