@@ -121,6 +121,10 @@ because of an API overload, so no category-based recovery claim exists.
   collector-process, provider, or Scheduler-origin diagnosis. A later category
   may be only `dispatcher_config`, `collector_provider`, or
   `reason_unavailable`, never free text, and preserves the original exit code.
+- Generic resampling skips a target bucket containing a duplicate timestamp or
+  incomplete source record. `Bar` has no source-revision or observation-order
+  provenance, so upstream Data reconciliation must resolve a later revision
+  before a complete duplicate can be used.
 - Preserve a durable serial cursor only after a useful capability probe
   establishes continuation semantics. Do not replace measurement with a
   parallel request flood.
