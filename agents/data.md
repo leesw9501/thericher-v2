@@ -169,6 +169,13 @@ behavior unchanged.
   `provider_finality` and decision-time availability `not_observed`; it makes
   no KIS call or consumer change. Evidence:
   `D:\thericher-v2\model-artifacts\data\provider-documentation-retrieval\kis-overseas-minute-finality-surface-20260809-r1\source-retrieval.json`.
+- A 2026-08-19 official-source recheck independently confirms the existing
+  `NEXT`/`KEYB` minute-pagination semantics and separately documents that the
+  related U.S. free current-price surface can receive next-day corrections. The
+  latter is not a minute-route finality fact, so it reinforces rather than
+  relaxes `not_observed`; it does not widen the measured QQQ/SPY cursor scope.
+  Evidence:
+  `D:\thericher-v2\model-artifacts\data\provider-documentation-retrieval\kis-overseas-price-revision-surface-20260819-r1\source-retrieval.json`.
 - QQQ multi-timeframe completed-bar mechanics:
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
 - QQQ MTF canonical window matrix:
