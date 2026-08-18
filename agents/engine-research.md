@@ -73,6 +73,7 @@ candidate matrix.
 | --- | --- | --- |
 | Qlib | MIT `architecture_reference_only` | No package, code, data, model, runtime, or campaign adoption. |
 | PatchTST | Apache-2.0 `future_sequence_architecture_reference` | General time-series claims only; financial pretraining/evaluation scope is not disclosed, and no runtime, code, weight, or campaign is adopted. |
+| Temporal Fusion Transformer | Apache-2.0 `future_multihorizon_sequence_architecture_reference` | Source-only reference for a strict static/past-observed/known-future covariate partition. Its TensorFlow reference runtime, non-trading evaluation, and any future-known market feature are not adopted; a qualified KIS campaign must independently prove causal feature availability. |
 | FinRL | MIT `rl_environment_interface_reference_only` | Its official classic framework is an educational/research train-test-trade pipeline that assumes external data and a new DRL runtime. Exclude its data preprocessing, same-bar reward timing, and cost/fill conventions; only its environment-to-agent separation is a future allocation-design reference. No package, code, data, weight, runtime, campaign, or Paper route is adopted. |
 | Chronos, TimesFM, Granite | Isolated source/runtime studies only | Unknown or incompatible financial pretraining/evaluation scope prevents comparative or Paper use. |
 | PyPortfolioOpt HRP | Source-only allocation reference | Requires causal candidate returns, PIT universe, and completed rolling windows. |
@@ -81,6 +82,8 @@ Qlib evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qlib-architecture-source-20260809-r1\source-retrieval.json`.
 PatchTST source-only evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\patchtst-source-20260809-r1\source-retrieval.json`.
+Temporal Fusion Transformer source-only evidence:
+`D:\thericher-v2\model-artifacts\research\engine-source-retrieval\tft-multihorizon-source-20260819-r1\source-retrieval.json`.
 FinRL source-only evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\finrl-environment-interface-source-20260819-r1\source-retrieval.json`.
 Public source proposals never authorize code import, weight download, training,
