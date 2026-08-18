@@ -63,8 +63,10 @@ def _bucket_start(start_ts: datetime, target_timeframe: Timeframe) -> datetime:
 def resample_bars(bars: list[Bar] | tuple[Bar, ...], target_timeframe: Timeframe) -> list[Bar]:
     """Aggregate complete bars into deterministic UTC-epoch anchored buckets.
 
-    Missing or incomplete source bars make their containing bucket incomplete;
-    the function skips those buckets instead of filling gaps.
+    Missing, duplicate, or incomplete source bars make their containing bucket
+    incomplete; the function skips those buckets instead of filling gaps.
+    Source revision reconciliation belongs upstream because ``Bar`` has no
+    observation-order or revision provenance.
     """
 
     target_timeframe = Timeframe(target_timeframe)
@@ -88,18 +90,24 @@ def resample_bars(bars: list[Bar] | tuple[Bar, ...], target_timeframe: Timeframe
         raise ValueError("target timeframe must be an integer multiple of source timeframe")
 
     if target_timeframe == source_timeframe:
-        return [bar for bar in ordered if bar.complete]
+        source_buckets: dict[datetime, list[Bar]] = defaultdict(list)
+        for bar in ordered:
+            source_buckets[bar.start_ts].append(bar)
+        return [
+            bucket_bars[0]
+            for _, bucket_bars in sorted(source_buckets.items())
+            if len(bucket_bars) == 1 and bucket_bars[0].complete
+        ]
 
     expected_count = target_timeframe.duration // source_timeframe.duration
     buckets: dict[datetime, list[Bar]] = defaultdict(list)
     for bar in ordered:
-        if bar.complete:
-            buckets[_bucket_start(bar.start_ts, target_timeframe)].append(bar)
+        buckets[_bucket_start(bar.start_ts, target_timeframe)].append(bar)
 
     resampled: list[Bar] = []
     for bucket_ts in sorted(buckets):
         bucket_bars = sorted(buckets[bucket_ts], key=lambda bar: bar.start_ts)
-        if len(bucket_bars) != expected_count:
+        if len(bucket_bars) != expected_count or any(not bar.complete for bar in bucket_bars):
             continue
         expected_starts = [
             bucket_ts + source_timeframe.duration * index for index in range(expected_count)
@@ -170,23 +178,22 @@ def resample_session_bars(
         raise ValueError("bars must remain inside the declared session window")
 
     expected_count = target_timeframe.duration // source_timeframe.duration
-    complete_buckets: dict[datetime, list[Bar]] = defaultdict(list)
+    source_buckets: dict[datetime, list[Bar]] = defaultdict(list)
     for bar in ordered:
-        if not bar.complete:
-            continue
         bucket_index = (bar.start_ts - session.open_ts) // target_timeframe.duration
         bucket_start = session.open_ts + target_timeframe.duration * bucket_index
-        complete_buckets[bucket_start].append(bar)
+        source_buckets[bucket_start].append(bar)
 
     resampled: list[Bar] = []
     skipped: list[datetime] = []
     for bucket_start in full_bucket_starts:
-        bucket_bars = sorted(complete_buckets.get(bucket_start, ()), key=lambda bar: bar.start_ts)
+        bucket_bars = sorted(source_buckets.get(bucket_start, ()), key=lambda bar: bar.start_ts)
         expected_starts = [
             bucket_start + source_timeframe.duration * offset for offset in range(expected_count)
         ]
         if (
             len(bucket_bars) != expected_count
+            or any(not bar.complete for bar in bucket_bars)
             or [bar.start_ts for bar in bucket_bars] != expected_starts
         ):
             skipped.append(bucket_start)

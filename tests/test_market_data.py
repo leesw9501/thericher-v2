@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import socket
+from dataclasses import replace
 from datetime import UTC, datetime
 from decimal import Decimal
 
@@ -72,6 +73,25 @@ def test_resampling_skips_gap_buckets_without_filling() -> None:
 
     assert len(resampled) == 1
     assert resampled[0].start_ts == datetime(2026, 1, 2, 0, 5, tzinfo=UTC)
+
+
+@pytest.mark.parametrize(
+    "extra",
+    [
+        lambda bar: bar,
+        lambda bar: replace(bar, complete=False),
+    ],
+    ids=("complete-duplicate", "incomplete-duplicate"),
+)
+def test_resampling_skips_any_bucket_with_a_duplicate_source_timestamp(extra) -> None:
+    bars = [_bar(index) for index in range(10)]
+    duplicated = [*bars, extra(bars[0])]
+
+    minute_bars = resample_bars(duplicated, Timeframe.M1)
+    five_minute_bars = resample_bars(duplicated, Timeframe.M5)
+
+    assert [bar.start_ts for bar in minute_bars] == [bar.start_ts for bar in bars[1:]]
+    assert [bar.start_ts for bar in five_minute_bars] == [bars[5].start_ts]
 
 
 def test_bar_csv_round_trip_and_local_provider(tmp_path) -> None:

@@ -117,6 +117,15 @@ def test_session_resampling_exposes_gap_and_duplicate_buckets() -> None:
         *_bar_range(session.open_ts + timedelta(minutes=5), 5),
     ]
     duplicate_result = resample_session_bars(duplicate, Timeframe.M5, session=session)
+    incomplete_duplicate = [
+        *_bar_range(session.open_ts, 30),
+        replace(_bar(7, start=session.open_ts), complete=False),
+    ]
+    incomplete_duplicate_result = resample_session_bars(
+        incomplete_duplicate,
+        Timeframe.M5,
+        session=session,
+    )
 
     assert [bar.start_ts for bar in gapped_result.bars] == [
         session.open_ts,
@@ -136,6 +145,16 @@ def test_session_resampling_exposes_gap_and_duplicate_buckets() -> None:
         session.open_ts + timedelta(minutes=15),
         session.open_ts + timedelta(minutes=20),
         session.open_ts + timedelta(minutes=25),
+    )
+    assert [bar.start_ts for bar in incomplete_duplicate_result.bars] == [
+        session.open_ts,
+        session.open_ts + timedelta(minutes=10),
+        session.open_ts + timedelta(minutes=15),
+        session.open_ts + timedelta(minutes=20),
+        session.open_ts + timedelta(minutes=25),
+    ]
+    assert incomplete_duplicate_result.skipped_bucket_starts == (
+        session.open_ts + timedelta(minutes=5),
     )
 
 
