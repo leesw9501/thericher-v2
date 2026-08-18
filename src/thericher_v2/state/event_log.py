@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import sqlite3
 from collections.abc import Iterable
+from contextlib import closing
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from decimal import Decimal
@@ -90,12 +91,15 @@ class EventStore:
     def bootstrap(self) -> None:
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self.jsonl_path.parent.mkdir(parents=True, exist_ok=True)
-        with sqlite3.connect(self.db_path) as conn:
-            conn.execute("create table if not exists schema_version (version integer not null)")
-            count = conn.execute("select count(*) from schema_version").fetchone()[0]
-            if count == 0:
-                conn.execute("insert into schema_version(version) values (?)", (SCHEMA_VERSION,))
-            self._create_views(conn)
+        with closing(sqlite3.connect(self.db_path)) as conn:
+            with conn:
+                conn.execute("create table if not exists schema_version (version integer not null)")
+                count = conn.execute("select count(*) from schema_version").fetchone()[0]
+                if count == 0:
+                    conn.execute(
+                        "insert into schema_version(version) values (?)", (SCHEMA_VERSION,)
+                    )
+                self._create_views(conn)
 
     def append(self, event: Event) -> Event:
         if self.rebuild_sqlite_on_append:
@@ -156,43 +160,46 @@ class EventStore:
         self.bootstrap()
         events = sorted(self.iter_events(), key=lambda item: item.seq)
         replay = self.replay()
-        with sqlite3.connect(self.db_path) as conn:
-            self._create_views(conn)
-            conn.execute("delete from events")
-            conn.execute("delete from positions")
-            conn.execute("delete from latest_decisions")
-            for event in events:
-                conn.execute(
-                    """
-                    insert into events(seq, event_type, created_at, payload_json)
-                    values (?, ?, ?, ?)
-                    """,
-                    (
-                        event.seq,
-                        event.event_type,
-                        event.created_at.isoformat(),
-                        json.dumps(event.payload, sort_keys=True),
-                    ),
-                )
-            for (market, symbol), quantity in replay.positions.items():
-                conn.execute(
-                    "insert into positions(market, symbol, quantity) values (?, ?, ?)",
-                    (market, symbol, str(quantity)),
-                )
-            for (market, symbol), decision in replay.latest_decisions.items():
-                conn.execute(
-                    """
-                    insert into latest_decisions(market, symbol, action, confidence, payload_json)
-                    values (?, ?, ?, ?, ?)
-                    """,
-                    (
-                        market,
-                        symbol,
-                        str(decision.get("action", "")),
-                        str(decision.get("confidence", "")),
-                        json.dumps(decision, sort_keys=True),
-                    ),
-                )
+        with closing(sqlite3.connect(self.db_path)) as conn:
+            with conn:
+                self._create_views(conn)
+                conn.execute("delete from events")
+                conn.execute("delete from positions")
+                conn.execute("delete from latest_decisions")
+                for event in events:
+                    conn.execute(
+                        """
+                        insert into events(seq, event_type, created_at, payload_json)
+                        values (?, ?, ?, ?)
+                        """,
+                        (
+                            event.seq,
+                            event.event_type,
+                            event.created_at.isoformat(),
+                            json.dumps(event.payload, sort_keys=True),
+                        ),
+                    )
+                for (market, symbol), quantity in replay.positions.items():
+                    conn.execute(
+                        "insert into positions(market, symbol, quantity) values (?, ?, ?)",
+                        (market, symbol, str(quantity)),
+                    )
+                for (market, symbol), decision in replay.latest_decisions.items():
+                    conn.execute(
+                        """
+                        insert into latest_decisions(
+                          market, symbol, action, confidence, payload_json
+                        )
+                        values (?, ?, ?, ?, ?)
+                        """,
+                        (
+                            market,
+                            symbol,
+                            str(decision.get("action", "")),
+                            str(decision.get("confidence", "")),
+                            json.dumps(decision, sort_keys=True),
+                        ),
+                    )
 
     def _create_views(self, conn: sqlite3.Connection) -> None:
         conn.execute(
