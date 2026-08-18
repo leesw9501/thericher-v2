@@ -18,11 +18,13 @@ The completed `kis-intraday-short-session-topology-classification-v1` classified
 the bound 2026-08-15 terminal as `current_session_short` solely from source-safe
 metadata. The completed `kis-intraday-next-terminal-reattachment-v1` reattached
 the later 2026-08-17 terminal through the same projection and found the same
-scoped category. The completed `kis-intraday-causal-attestation-contract-audit-v1`
-froze a default-deny writer boundary. The next objective,
-`kis-intraday-causal-attestation-writer-integration-v1`, implements it only
-after the required drift check; it does not select a model, collect data, change
-a task, claim PnL, or authorize Paper or live execution.
+scoped category. The completed
+`kis-intraday-causal-attestation-writer-integration-v1` added a networkless,
+default-deny future writer with no current task or terminal change. Its
+real-artifact smoke returned `not_written/session_coverage_incomplete` for the
+current terminal. The next objective,
+`kis-intraday-full-session-capture-recovery-v1`, addresses actual M1 coverage
+accumulation through the existing single Data-owned task.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -65,20 +67,20 @@ build context. Only a later task-owned terminal can observe the repaired writer.
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data | The 2026-08-17 terminal is `complete` with verified coverage/availability bindings and matches the 2026-08-15 `input_unavailable/session_coverage_incomplete/current_session_short` category; causal attestation is `not_recorded` and pair evidence `legacy_unbound`. | The short-session category and static writer audit are closed. Implement only the reviewed, default-deny future writer boundary. |
+| Data | The 2026-08-17 terminal is `complete` with verified coverage/availability bindings and matches the 2026-08-15 `input_unavailable/session_coverage_incomplete/current_session_short` category; causal attestation is `not_recorded` and pair evidence `legacy_unbound`. The new writer correctly leaves this exact terminal unbound. | Audit retained capture topology and existing trigger facts, then apply only an evidence-backed single-task recovery for complete sessions. |
 | Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`; it wrote no receipt and did not read catalog, metadata, or prices. This categorical result does not determine NDU process, update, subscription, expiry, vendor-access, or rights state. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If the reader later becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
-| Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. The repair does not change the fresh QQQ/SPY terminal's unavailable consumer input. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
+| Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. The future attestation writer does not change the fresh QQQ/SPY terminal's unavailable consumer input. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
-| Execution | The 2026-08-14 23:35 KST owned quote-session receipt reattached offline as `canary_completed -> cancelled / clean`, `paper_only`, with attribution `not_eligible`; the bound direct lifecycle receipt records only an acknowledged order-reference category. The earlier 2026-08-11 `outcome_unknown / unresolved` remains its own exact-run reconciliation fact. | Neither receipt proves a fill, PnL, alpha, or model result. Do not resubmit either durable intent; their existing reconciliation paths remain the only owners. |
+| Execution | The 2026-08-17 23:35 KST owned quote-session receipt reattached offline as `canary_completed -> cancelled / clean`, `paper_only`, with attribution `not_eligible`; the bound direct lifecycle receipt records only an acknowledged order-reference category. The earlier 2026-08-11 `outcome_unknown / unresolved` remains its own exact-run reconciliation fact. | This exact run proves neither a fill, PnL, alpha, nor model result. Do not resubmit either durable intent; their existing reconciliation paths remain the only owners. |
 | Shared worktree | Alternate IWM collector WIP is untracked/modified and rejected from this objective. | Do not touch, stage, invoke, or reconcile it without a separate assignment. |
 
 ## Ready / Owned / Due
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Causal-attestation writer integration | Data | Ready after its required drift check: implement only the checked-in, default-deny future writer boundary. No task, collector, schedule registration, or installed definition is changed. |
+| Full-session M1 capture recovery | Data / Codex | Ready: inspect source-safe cache topology and static trigger facts, then repair only the existing collection task when the evidence supports it. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
-| Virtual-Paper lifecycle canary | Execution | The 2026-08-14 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-17 23:35 KST. |
+| Virtual-Paper lifecycle canary | Execution | The 2026-08-17 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
 | Read-only Paper account observer | Execution | Existing four-minute task is the sole owner. Its validated provenance is marker-present under an assumed-honest host, not cryptographic Scheduler-origin proof. |
 | Public-source research | Engine Research | Qlib and PatchTST are source-only architecture references, with no code, package, data, weight, campaign, GPU, or Paper consequence. |

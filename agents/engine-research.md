@@ -49,10 +49,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and
-availability bindings. The metadata-only coverage repair leaves the current
-cache short and does not rewrite the terminal, so it creates no frozen contract,
+availability bindings. The new future-only causal-attestation writer correctly
+leaves that immutable terminal unchanged. It creates no frozen contract,
 candidate, training run, GPU appointment, sealed-evaluation spend, ensemble
-input, or Paper input.
+input, or Paper input. Engine Research waits only on Data's separate complete-
+session recovery, never on an attestation artifact for the current terminal.
 
 ## Public-Source References
 

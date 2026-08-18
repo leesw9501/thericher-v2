@@ -486,6 +486,7 @@ class KisPaperIntradayHeadScheduleFact:
     coverage_binding_status: Literal["legacy_unbound", "verified"]
     current_session_cumulative_coverage_digest: str | None
     current_session_cumulative_coverage_category: str | None
+    session_capture_receipt_sha256: str | None
     current_session_cumulative_coverage_gap_category: (
         Literal["current_session_missing", "current_session_short"] | None
     )
@@ -522,6 +523,7 @@ class KisPaperIntradayHeadScheduleFact:
             if (
                 self.current_session_cumulative_coverage_digest is not None
                 or self.current_session_cumulative_coverage_category is not None
+                or self.session_capture_receipt_sha256 is not None
                 or self.current_session_cumulative_coverage_gap_category is not None
             ):
                 raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
@@ -529,11 +531,16 @@ class KisPaperIntradayHeadScheduleFact:
             if (
                 self.current_session_cumulative_coverage_digest is None
                 or self.current_session_cumulative_coverage_category is None
+                or self.session_capture_receipt_sha256 is None
             ):
                 raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
             _require_sha256(
                 self.current_session_cumulative_coverage_digest,
                 "coverage binding digest",
+            )
+            _require_sha256(
+                self.session_capture_receipt_sha256,
+                "coverage binding receipt sha256",
             )
             _require_capture_coverage_category(
                 self.current_session_cumulative_coverage_category,
@@ -686,6 +693,7 @@ class KisPaperIntradayHeadScheduleFact:
             "current_session_cumulative_coverage_category": (
                 self.current_session_cumulative_coverage_category
             ),
+            "session_capture_receipt_sha256": self.session_capture_receipt_sha256,
             "current_session_cumulative_coverage_gap_category": (
                 self.current_session_cumulative_coverage_gap_category
             ),
@@ -1077,6 +1085,11 @@ def read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
         coverage_binding_status=coverage_binding_status,
         current_session_cumulative_coverage_digest=coverage_digest,
         current_session_cumulative_coverage_category=coverage_category,
+        session_capture_receipt_sha256=(
+            None
+            if receipt.terminal_receipt_binding is None
+            else receipt.terminal_receipt_binding.receipt_sha256
+        ),
         current_session_cumulative_coverage_gap_category=coverage_gap_category,
         availability_status=receipt.availability_status,
         availability_binding_status=availability_binding_status,

@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-17 06:20 KST task-owned terminal reattached as `complete`, with verified coverage and availability bindings. Like the 2026-08-15 baseline, current-session cumulative coverage is `incomplete/current_session_short`; the optional pair binding is `legacy_unbound`, so causal input remains `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. | The static audit is complete. The next writer integration needs its required drift check; no model or reusable Paper-candidate promotion follows. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-17 06:20 KST task-owned terminal reattached as `complete`, with verified coverage and availability bindings. Like the 2026-08-15 baseline, current-session cumulative coverage is `incomplete/current_session_short`; the optional pair binding is `legacy_unbound`, so causal input remains `input_unavailable/session_coverage_incomplete` and decision-time availability/provider finality remain `not_observed`. The new default-deny writer produced no artifact for this exact terminal. | Audit source-safe capture topology and existing trigger facts to recover whole M1 session accumulation. No model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
@@ -55,21 +55,25 @@ or binds one. An absent binding stays `input_unavailable`; malformed or
 mismatched bound evidence fails closed through the existing unavailable reader.
 This contract has no collector, credential, network, or schedule behavior.
 
-The static audit freezes a narrow future boundary: the terminal writer already
-accepts one optional attestation hash, while the dispatcher supplies the bound
-capture and availability facts but no attestation argument. No current source
-can truthfully supply the required independent clock, decision-time observation,
-or provider-finality categories. A future networkless attester may bind only
-fully observed source-safe facts; its strongest kill test is that any missing,
-task-derived, or mismatched field omits the hash and leaves the consumer
-`input_unavailable`.
+The static audit and writer integration are complete. The writer reads only the
+current source-safe terminal projection and a separate assumed-honest external
+observer input. It rejects missing, task-derived, stale, time-invalid, or
+mismatched input, writes only outside Git, and does not alter a task or an
+immutable terminal. The real current-terminal smoke returned
+`not_written/session_coverage_incomplete`; no attestation was attached.
+
+Claude's scope-matched review was `uncertain`: hashes and categories cannot
+cryptographically prove that an external-observer input was independent. The
+writer therefore states the assumed-honest limitation, requires exact
+run/timestamp binding, and rejects an explicit task-derived input or a replayed
+run. This limitation does not block the separate collection-recovery package.
 
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
-| Causal-attestation writer integration | Data | Ready after its required drift check: add only the networkless, default-deny future binding; no collector, schedule registration, or installed definition is changed. |
+| Full-session M1 capture recovery | Data / Codex | Ready: use only cache metadata and static task facts to locate the retained topology gap, then deploy an evidence-backed recovery through the existing task. |
 | Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The 2026-08-17 task-owned terminal is reattached. The next terminal remains task-owned; its due time is not reprojected by this reader and does not block another lane. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |

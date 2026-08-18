@@ -1550,6 +1550,33 @@ it does not rewrite prior immutable receipts. Re-evaluating the current cache
 under the repaired rule remained short, so the terminal above remains
 `input_unavailable` and no consumer is upgraded.
 
+### Future-Only Causal Attestation Writer
+
+The networkless writer below is not a collector, task installer, broker route,
+or terminal rewriter. It reads the task-owned current source-safe projection
+and a separate external-observer input under the external artifact root. It
+writes an immutable future attestation only when capture coverage is complete,
+availability and pair bindings are exact, every independent-observer category
+is present, the input run/timestamp exactly matches the current terminal, and
+the availability/decision/finality timestamps are ordered correctly.
+
+```powershell
+uv run python scripts\write_kis_paper_intraday_causal_attestation.py --execute
+```
+
+No `.env`, credential, KIS, Docker, account, order, quote, raw M1, or task path
+is opened by this command. Missing, task-derived, stale, malformed, or
+mismatched observer input yields a source-safe `not_written` result and creates
+no artifact. The 2026-08-17 current-terminal smoke correctly returned
+`not_written/session_coverage_incomplete`.
+
+The independent-observer origin is marker-present, assumed-honest provenance;
+the writer does not claim cryptographic proof that an input was independently
+observed. Exact run/timestamp binding rejects an explicit replay or a
+task-derived input, but a source that falsely labels itself independent remains
+an external provenance limitation. A future dispatcher integration is separate
+and must never attach an artifact to an existing immutable terminal.
+
 ## Bounded Daily SPY Stability Observer
 
 `thericher-kis-paper-daily-spy-stability-observer` is a Data-only Windows task

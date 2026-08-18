@@ -2,43 +2,52 @@
 
 ## Objective
 
-Complete `kis-intraday-causal-attestation-writer-integration-v1`: after the
-required drift check, implement and verify the smallest networkless future
-attester/writer boundary that binds only fully observed source-safe causal facts
-to a later intraday terminal. This advances the data-collection loop without
-collecting data, selecting a model, claiming PnL, or authorizing Paper or live
-execution.
+Complete `kis-intraday-full-session-capture-recovery-v1`: turn the existing
+single KIS Paper intraday-head collection path into a verifiably complete M1
+regular-session accumulator, or establish the exact source/scheduler constraint
+that prevents it and deploy the smallest evidence-backed recovery. This advances
+actual data collection, not a model, PnL claim, Paper decision, or live route.
 
 ## Hard Boundaries
 
-- Do not manually invoke KIS, the installed task, a collector, a scheduler, a
-  container, or any account/order/quote endpoint. Do not change triggers,
-  pacing, concurrency, task actions, or the installed task definition.
+- Use KIS Paper market-data only through the named Data owner path. Never call
+  an account, order, position, quote, or live endpoint; never read or route
+  `KIS_LIVE_*`.
 - Do not read credentials, raw M1 rows, account values, private intents, broker
-  bodies, or identifiers. Never read or route `KIS_LIVE_*`.
-- A task exit code alone never proves a fill, PnL, alpha, model result, provider
-  finality, or decision-time availability. A task timestamp cannot satisfy an
-  independent-clock or decision-time-observation requirement.
-- Preserve the immutable 2026-08-15 and 2026-08-17 terminals' scoped
+  bodies, or identifiers.
+- Keep one task, one collector lock, the measured one-second request-start
+  gate, token-start guard, cooldown, and external cache/artifact roots. Do not
+  add a parallel flood or a duplicate task.
+- Do not manually invoke the existing quote-session/Paper task to test this
+  work. A later scheduled data result remains task-owned.
+- Preserve the immutable 2026-08-15 and 2026-08-17 scoped
   `input_unavailable/session_coverage_incomplete/current_session_short`
-  categories. Do not create, attach, or backfill an attestation for either.
+  evidence. The new causal-attestation writer may not attach or backfill either
+  terminal.
 - Do not touch, stage, invoke, or reconcile the alternate IWM collector WIP.
 
 ## Required Work
 
-1. Obtain the concise Claude falsification-first drift check before relying on
-   an integration decision. It must challenge the independent-clock,
-   decision-time-availability, provider-finality, and task/Paper blast-radius
-   assumptions.
-2. Implement only a networkless, default-deny attester and terminal-hash
-   binding: any missing, task-derived, invalid, or mismatched field omits the
-   binding and preserves `input_unavailable`.
-3. Keep the new stage separate from the QQQ prospective/Paper route, with no
-   collector, broker, credential, task-registration, or installed-schedule
-   update. Freeze the strongest kill test and focused contract coverage.
+1. Obtain a concise Claude falsification-first drift check before any installed
+   schedule or dispatcher change. It must challenge the inferred capture-window
+   geometry, duplicate-run risk, provider-continuation assumption, and recovery
+   kill test.
+2. Add a metadata-only capture-topology audit that uses the existing cache
+   index/manifests and source-safe Task Scheduler facts, never raw M1 rows, to
+   distinguish trigger loss, overlap, source-window limits, and retained-cache
+   topology. Its output must give aggregate session coverage and an explicit
+   bounded recovery recommendation.
+3. When the audit supports a fix, update only the existing task/dispatcher
+   contract and its installer/static tests to accumulate a whole 390-minute
+   regular session. Keep downstream QQQ/SPY Paper consumers unchanged and do
+   not create another task.
+4. Build and statically reattest the existing image/task definition, then let
+   the existing task own the next observation. Update Data, Engine Research,
+   Execution, orchestration, HANDOFF, and RUNBOOK facts. Do not promote a model
+   or Paper input merely because a collection path is installed.
 
 ## Verification
 
-Run focused contract tests and the goal-boundary authority group, Ruff, and both
-Compose configurations. An installed-task update remains a separate decision
-after verification and the required drift check.
+Run focused contract tests, the goal-boundary authority group, Ruff, and both
+Compose configurations. Report the metadata-only audit and any task deployment
+fact without raw rows or credentials.

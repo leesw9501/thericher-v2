@@ -9376,3 +9376,27 @@ families completed with categorical finite-run and memory-release evidence only.
 No weights, loss values, raw rows, predictions, returns, holdout, model choice,
 KIS input, Paper action, PnL claim, or live behavior was created. This lineage
 is closed to selection and cannot receive another appointment by implication.
+
+## 2026-08-19 - Keep future causal-attestation writing networkless and default-deny
+
+Decision: add a separate future-only writer that reads the current source-safe
+intraday terminal projection and one external-observer input. It writes a
+canonical immutable attestation outside Git only when the terminal has complete
+capture coverage, exact availability and pair bindings, and an exact matching
+run/timestamp input with complete clock, session-rule, completed-bar,
+chronological-boundary, decision-time, and finality categories. Missing,
+task-derived, stale, malformed, mismatched, or time-invalid input writes
+nothing. The writer neither calls KIS nor changes a task, collector, Docker
+service, broker route, existing terminal, or Paper action.
+
+Reason: the existing reader already default-denied an absent or malformed
+attestation, but had no bounded producer for a future independent-observer
+artifact. Claude's falsification-first verdict was `uncertain`: matching hashes
+cannot cryptographically prove that the external input was independently
+observed. The artifact claim therefore retains the assumed-honest external
+observer limitation, while exact run/timestamp binding rejects an explicit
+task-derived input and a stale replay. Focused tests cover no network access,
+outside-Git storage, idempotence, incomplete current-terminal denial,
+task-derived input, stale input, and invalid time order. The real current
+terminal smoke returned `not_written/session_coverage_incomplete`, so no
+artifact was attached or backfilled.
