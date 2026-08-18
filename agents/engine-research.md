@@ -35,8 +35,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 - Claude's 2026-08-19 falsification-first review found a FirstRate GPU
   representation study `unsupported`: without a meaningful source time-grid
   contract, retained artifact, or decision path it would only manufacture a
-  runtime benchmark. GPU custody stays free; the next bounded Data task is
-  primary-source timestamp/omission semantics retrieval, not training.
+  runtime benchmark. The subsequent FirstRate source retrieval confirmed only a
+  vendor timezone label and zero-volume omission; offset convention and bar
+  boundary remain `not_disclosed`. GPU custody stays free; the next bounded Data
+  task is the existing local Norgate D1 capability reprobe, not training.
 - Fixed session-reset 15/30 EMA and 20/10 Donchian local-paper replays have
   replayable, terminal-flat accounting evidence and negative fixed baselines.
   Do not retune their windows, costs, thresholds, or signs under a new label.

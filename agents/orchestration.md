@@ -6,11 +6,10 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`firstrate-source-semantics-retrieval-v1` follows the completed FirstRate
-normalization, timeframe-mechanics, and target-free window-preflight packages.
-It retrieves only primary FirstRate timestamp, omission, sample-coverage, and
-private-use facts needed to narrow source-local interpretation. It is Data
-provenance only: no raw data, model, GPU appointment, KIS join,
+`norgate-trial-d1-capability-reprobe-v1` follows the completed FirstRate source
+semantics package. It runs one existing isolated host-only Norgate D1 capability
+probe after updater work and retains only categorical local readiness evidence.
+It is Data capability only: no model, GPU appointment, KIS join,
 availability/finality claim, PnL, Paper action, or live route.
 
 ## Ready / Owned / Due
@@ -21,7 +20,8 @@ availability/finality claim, PnL, Paper action, or live route.
 | FirstRate free M1 normalization | Data | Hash-bound external ZIPs, canonical CSVs, and source-safe receipt | Closed: archive hashes, expected entries, strict decode, canonical hashes, and exact timestamp-set equality reattached. Local provider round-trip counts are 207,824 SPY and 210,482 QQQ M1 Bars. |
 | FirstRate source-local timeframe mechanics | Data / Codex | Existing local provider/resampler and immutable normalization receipt | Closed: canonical hashes reattached and only complete unique UTC-anchored 1m/5m/10m/1h/3h aggregate geometry retained. Every emitted bar passed source-bucket OHLCV, ordering, and completion checks. |
 | FirstRate source-local window preflight | Data / Engine Research | Hash-bound FirstRate normalization/mechanics receipts and canonical CSVs | Closed: 32 fixed matrix cells reattached locally and retained only eligible-window count/end-timestamp-set hash evidence. No labels, features, models, GPU, KIS, or Paper consumer. |
-| FirstRate source semantics retrieval | Data | Public official FirstRate sources and external source-safe receipt root | Ready: determine only documented timestamp, omission, sample coverage, and private-use facts. Missing evidence stays `not_disclosed`; no promotion follows. |
+| FirstRate source semantics retrieval | Data / Claude review | Closed: official free-data/license pages re-retrieved with matching hashes; vendor timezone/omission claims are narrow and offset convention/bar boundary remain `not_disclosed`. No promotion follows. |
+| Norgate D1 capability reprobe | Data | Existing isolated Norgate host runtime and one unique external probe root | Ready: invoke exactly once and retain only categorical readiness/receipt facts. Do not start a D1 pilot or wait/retry. |
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | Norgate local readiness | Data | Existing NDU updater | The 2026-08-14 provisioned-host reader returned `local_api_not_ready` and wrote no receipt. It does not establish a process, update, subscription, expiry, vendor-access, or rights cause. This does not block the Paper canary. The one operator-visible diagnostic is the already-running NDU update plus database/subscription-state panes, then minimize it. |
@@ -52,16 +52,16 @@ does not qualify research input or change Paper behavior.
 
 ## Current Reversible Improvement
 
-The FirstRate window-preflight runner reattests both upstream receipts and
-canonical inputs, then records only independently eligible window counts and
-end-timestamp-set hashes for a fixed 32-cell matrix. It makes observation-window
-geometry explicit without treating omitted source minutes as gaps or promoting
-the data to a KIS/Paper/model consumer.
+The FirstRate source-semantics retrieval now re-retrieves two official pages,
+keeps only hashes and exact source statements, and attaches a Claude-challenged
+interpretation without rewriting source evidence. It narrows only the FirstRate
+data contract, preserving `not_disclosed` offset/boundary facts and no
+KIS/Paper/model consumer.
 
 ## Current Recovery Action
 
 No category-based recovery proposal is active. A later recovery investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current next
-action is the independent FirstRate source-semantics retrieval; it needs no Task
-or foreground wait.
+action is the independent Norgate D1 capability reprobe; it needs no Task or
+foreground wait.

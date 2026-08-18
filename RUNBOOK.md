@@ -1997,6 +1997,25 @@ writes a feature, label, price, prediction, weight, or resampled Bar.
 The result is source-local geometry only. It is not a time-grid, session,
 availability, finality, KIS-parity, model, backtest, Paper, or live claim.
 
+### FirstRate Source Semantics
+
+Retrieve the two official FirstRate pages and then attach the review-limited
+interpretation with:
+
+```powershell
+uv run --extra dev python scripts/retrieve_firstrate_source_semantics.py
+uv run --extra dev python scripts/resolve_firstrate_source_semantics.py
+```
+
+The retrieval fetches each official no-auth page twice and records only URL,
+hash, exact source statements, and source-safe fact status under
+`D:\thericher-v2\model-artifacts`. The resolver reattests that immutable source
+receipt and records the bounded interpretation without a network call or source
+rewrite. It must preserve fixed-offset versus DST conversion and source bar
+start/end stamping as `not_disclosed` unless a separate primary source resolves
+them. Neither receipt authorizes cross-feed alignment, session completeness,
+KIS parity, a model, Paper, or live behavior.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,

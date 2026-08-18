@@ -2,48 +2,43 @@
 
 ## Objective
 
-Complete `firstrate-source-semantics-retrieval-v1`: make one bounded,
-source-safe retrieval of official FirstRate documentation needed to interpret
-the already hash-bound free SPY/QQQ M1 archives. The target facts are timestamp
-timezone/meaning, zero-volume or omitted-bar policy, sample coverage, and
-private-use licensing. A claim not stated by a primary official source remains
-`not_disclosed`; this objective never upgrades the data to a predictive, KIS,
-Paper, or live input.
+Complete `norgate-trial-d1-capability-reprobe-v1`: run exactly one bounded,
+host-only Norgate US Equities D1 capability probe through the existing isolated
+Norgate Python runtime. This is a fresh local capability measurement after the
+operator's updater work, not a retry loop, subscription claim, campaign,
+model-selection, KIS, Paper, or live action.
 
 ## Hard Boundaries
 
-- Do not call KIS, read credentials, invoke a broker, submit or alter an order,
-  invoke Task Scheduler, start Docker services, acquire new market data, train
-  a model, or allocate GPU.
-- Retrieve only public, no-auth, official FirstRate pages or files. Do not use
-  search-result snippets, unofficial mirrors, archived copies, or a claim from
-  memory as evidence. Never print raw market rows or write market data or
-  generated artifacts into Git.
-- Record only page URL, retrieval time, content hash, verbatim license text,
-  the exact official statement or `not_disclosed`, and the narrow resulting
-  interpretation. Do not extrapolate a timestamp statement into session
-  completeness, KIS parity, decision-time availability, provider finality, or
-  a trading property.
-- Do not change a canonical CSV, normalization/mechanics/preflight receipt, a
-  model, a Paper path, or an existing scheduler. A missing, inaccessible, or
-  contradictory source ends this objective as `source_unverified` rather than
-  triggering retries, a new provider, or an approval wait.
+- Do not read `.env`, credentials, or any `KIS_*` value; do not call KIS,
+  invoke a broker, submit or alter an order, invoke Task Scheduler, or start
+  Docker services.
+- Use only `D:\thericher-v2\host-runtimes\norgate-python\Scripts\python.exe`
+  and the existing `scripts\run_norgate_trial_daily_capability_probe.py` path.
+  Do not install, update, configure, start, close, or automate the Norgate Data
+  Updater; do not use a project Python runtime as a substitute.
+- Use one unique run label and one invocation. Never print raw Norgate rows,
+  prices, symbols, dates, database paths, subscription values, or client output.
+  Keep any source bytes under `D:\market_data`, generated evidence outside Git,
+  and only source-safe categorical output in documentation.
+- If the local API is unavailable, catalog is missing, the host runtime is
+  absent, or the probe is non-qualifying, record that scoped category and stop
+  this probe without a foreground wait, duplicate launch, retry loop, or
+  operator-approval request. Do not launch the D1 pilot in this objective.
 
 ## Required Work
 
-1. Retrieve and re-retrieve each candidate official FirstRate source. Write one
-   immutable external source receipt with exact URLs, hashes, statements, and
-   `confirmed`, `not_disclosed`, `contradictory`, or `source_unverified`
-   classifications only.
-2. Ask Claude for a concise falsification-first review before relying on any
-   source statement that would narrow FirstRate timestamp or omission limits.
-   Claude may challenge the interpretation but cannot create a promotion.
+1. Verify the isolated host runtime exists, then run the existing probe once
+   with a new run label. Reattach only its source-safe output/receipt facts.
+2. Classify the result narrowly as `qualified_for_offline_research`,
+   `input_unavailable`, or `local_api_not_ready`; do not infer an update,
+   subscription, rights, full-history, corporate-action, or model result.
 3. Refresh Data, Engine Research, and orchestration stateboards, `HANDOFF.md`,
-   and `RUNBOOK.md`. Preserve the completed target-free window preflight,
-   Research Steward GPU custody, and Execution as non-promoting.
+   and `RUNBOOK.md`. Keep Research Steward GPU custody and Execution
+   non-promoting; a qualified result may only create a distinct next Data goal.
 
 ## Verification
 
-Run focused source-retrieval/receipt tests, the goal-boundary authority test
+Run focused Norgate capability/receipt tests, the goal-boundary authority test
 group, Ruff, credential-free Compose configurations, and `git diff --check`.
 Report only source-safe facts and the external evidence pointer.

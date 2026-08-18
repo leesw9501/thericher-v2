@@ -50,7 +50,12 @@ KIS/Paper/model input. The completed window preflight reattached that geometry
 into a fixed 32-cell count/hash matrix with no raw rows, features, labels,
 predictions, weights, model, GPU, KIS, or Paper consumer. The next objective,
 `firstrate-source-semantics-retrieval-v1`, is a primary-source-only check of
-timestamp and omission semantics; it cannot itself promote the source.
+timestamp and omission semantics; it cannot itself promote the source. It
+completed with a hash-bound, review-limited interpretation: the vendor labels
+US Eastern/New York time and declares zero-volume omission, while offset
+convention and bar boundary remain `not_disclosed`. The next objective,
+`norgate-trial-d1-capability-reprobe-v1`, is one host-only local capability
+measurement after updater work.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -144,8 +149,8 @@ not cryptographic proof of Scheduler origin; Task Scheduler Operational logging
 is disabled.
 
 The completed FirstRate normalizer verified the staged archive hashes, expected
-entry names, strict source timestamps, Eastern-to-UTC conversion, and exact
-decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath
+entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
+conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath
 `D:\market_data\us_equities\firstrate_free_intraday\canonical` and the
 source-safe receipt
 `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-normalization-v1.json`
@@ -181,11 +186,26 @@ representation study as `unsupported`: without verified source time semantics
 or a decision-carrying artifact it would be a runtime benchmark, not research.
 GPU custody remains free.
 
+The completed FirstRate source-semantics package re-retrieved the official free
+data and license pages twice each with matching content hashes, without market
+data, credentials, KIS, broker, model, or GPU access. Its immutable source
+receipt is
+`D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-source-semantics-retrieval-v1.json`
+(`sha256:81954bfd6fde980dd63af92fafb6471830742cbb6871b9bdaf21c9ea6c81063f`).
+The attached review-limited interpretation is
+`D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-source-semantics-interpretation-v1.json`
+(`sha256:055b4faa5b83dc85255eeacd84eb59db762992250fcb18eb5285bcf0de4d37e2`).
+It confirms only vendor-declared timezone label/zero-volume omission and a
+conservative private-internal/no-redistribution project policy. It explicitly
+preserves fixed-offset versus DST conversion and source bar boundary as
+`not_disclosed`; no cross-feed alignment, completeness, KIS, model, Paper, or
+live claim follows.
+
 ## Current Cross-Lane Facts
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data / Engine Research | The legacy and first post-writer markers retain `collection_exit_nonzero / reason_unavailable`. The later hash-bound marker is instead `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its default category is noncomparable. FirstRate SPY/QQQ canonical M1, UTC-anchored timeframe mechanics, and 32-cell target-free window geometry are hash-bound but source-isolated. | Retrieve primary FirstRate timestamp, omission, sample-coverage, and private-use facts. Unstated facts remain `not_disclosed`; no model, GPU, KIS, Paper, or continuity/finality claim follows. |
+| Data / Engine Research | The legacy and first post-writer markers retain `collection_exit_nonzero / reason_unavailable`. The later hash-bound marker is instead `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its default category is noncomparable. FirstRate SPY/QQQ canonical M1, UTC-anchored mechanics, window geometry, and review-limited semantics remain source-isolated. | Run one existing isolated Norgate host capability probe after updater work. Its result is local capability evidence only; no model, GPU, KIS, Paper, or continuity/finality claim follows. |
 | Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`; it wrote no receipt and did not read catalog, metadata, or prices. This categorical result does not determine NDU process, update, subscription, expiry, vendor-access, or rights state. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If the reader later becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. A synthetic caller-owned local-paper two-step replay proves future policy-environment stepping against owned cost/fill semantics only. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
@@ -203,7 +223,8 @@ GPU custody remains free.
 | FirstRate source-local M1 normalization | Data / Codex | Complete: archive hashes/expected entries, strict decode, canonical output hashes, and timestamp-set equality are retained in the external normalization receipt. SPY/QQQ provider round-trip counts are 207,824/210,482; no promotion followed. |
 | FirstRate source-local timeframe mechanics | Data / Codex | Complete: canonical hashes reattached; actual UTC-anchored 1m/5m/10m/1h/3h outputs are aggregated only and each emitted bar passed source-bucket OHLCV/ordering/completion checks. No resampled rows, coverage, model, or Paper consumer followed. |
 | FirstRate source-local window preflight | Data / Engine Research | Complete: 32 frozen cells reattached canonical/mechanics hashes and retained only eligible-window count/end-timestamp-set hashes. No labels, features, predictions, GPU allocation, model selection, KIS, or Paper consumer followed. |
-| FirstRate source semantics retrieval | Data | Next objective: retrieve official timestamp, omission, sample-coverage, and private-use evidence; preserve `not_disclosed` when a source is silent. No model/Paper promotion follows. |
+| FirstRate source semantics retrieval | Data / Claude review | Complete: official free-data/license pages re-retrieved with matching hashes; only vendor-declared timezone/omission facts are retained, and offset convention/bar boundary remain `not_disclosed`. No promotion followed. |
+| Norgate D1 capability reprobe | Data | Next objective: invoke the existing isolated host-only probe once and retain only categorical readiness/receipt facts. Do not launch the D1 pilot in this package. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-17 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
@@ -250,6 +271,10 @@ ready.
   `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-timeframe-mechanics-v1.json`.
 - FirstRate source-local window preflight manifest:
   `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-window-preflight-v1.json`.
+- FirstRate official source retrieval receipt:
+  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-source-semantics-retrieval-v1.json`.
+- FirstRate review-limited interpretation receipt:
+  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-source-semantics-interpretation-v1.json`.
 - FinRL source-only receipt:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\finrl-environment-interface-source-20260819-r1\source-retrieval.json`.
 - QQQ M1/M5/M10/H1/H3 mechanics:
@@ -301,6 +326,15 @@ GPU call occurred. Claude rejected a proposed source-isolated GPU follow-up as
 authority parallel suite with 17 skips, Ruff, both credential-free Compose
 configuration parses, and `git diff --check`.
 
+The FirstRate source-semantics package passed seven focused source-retrieval and
+review-interpretation tests. It re-retrieved two official FirstRate pages twice
+each with matching hashes, then attached a source-safe Claude
+`supported-with-limits` interpretation without rewriting source evidence. No
+market data, credential, KIS, broker, scheduler, Docker service, model, or GPU
+path was used. It then passed the 3,026-pass authority parallel suite with 17
+skips, Ruff, both credential-free Compose configuration parses, and
+`git diff --check`.
+
 The Tiingo IEX source-isolated package passed 19 focused data/research tests,
 the 2,919-pass authority parallel suite with 17 skips, Ruff, both Compose
 configuration parses, and `git diff --check`. The CPU and CUDA Docker commands
@@ -333,6 +367,7 @@ self-staling latest hash here.
    successful and `retained_partial`, so its default category is noncomparable.
    Never infer a Scheduler, collector, provider, or Paper outcome from either
    marker.
-5. FirstRate canonical M1 outputs and window geometry are source-isolated. Use
-   them only for primary-source timestamp/omission semantics retrieval until a
-   distinct consumer obtains its own qualified-input contract.
+5. FirstRate canonical M1 outputs and window geometry remain source-isolated.
+   The vendor timezone label/omission declaration does not settle offset or bar
+   boundary semantics; never cross-feed align them until a distinct consumer
+   obtains its own qualified-input contract.
