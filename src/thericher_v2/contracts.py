@@ -167,6 +167,7 @@ class Bar:
     def __post_init__(self) -> None:
         object.__setattr__(self, "symbol", self.symbol.upper())
         object.__setattr__(self, "market", self.market.upper())
+        object.__setattr__(self, "timeframe", Timeframe(self.timeframe))
         object.__setattr__(self, "start_ts", require_utc(self.start_ts, "start_ts"))
         object.__setattr__(self, "open", positive(self.open, "open"))
         object.__setattr__(self, "high", positive(self.high, "high"))
