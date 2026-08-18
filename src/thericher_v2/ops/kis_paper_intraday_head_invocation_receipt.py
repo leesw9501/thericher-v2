@@ -56,6 +56,7 @@ _TERMINAL_KEYS = frozenset(
         "phase",
         "run_id",
         "started_at",
+        "schedule_observed_at",
         "completed_at",
         "started_receipt_sha256",
         "collection_outcome",
@@ -119,6 +120,35 @@ class KisPaperIntradayHeadInvocationRuntimeFact:
         }
 
 
+@dataclass(frozen=True, slots=True)
+class KisPaperIntradayHeadInvocationTerminalFact:
+    """One validated terminal marker with its exact schedule-observed binding."""
+
+    run_id: str
+    started_at: datetime
+    schedule_observed_at: datetime
+    completed_at: datetime
+    receipt_sha256: str
+    collection_outcome: Literal["succeeded", "nonzero"]
+    schedule_receipt_outcome: Literal["complete", "recovery", "unavailable"]
+    terminal_outcome: Literal["succeeded", "nonzero"]
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "kind": "kis_paper_intraday_head_invocation_terminal_fact",
+            "run_id": self.run_id,
+            "started_at": _utc_marker(self.started_at),
+            "schedule_observed_at": _utc_marker(self.schedule_observed_at),
+            "completed_at": _utc_marker(self.completed_at),
+            "receipt_sha256": self.receipt_sha256,
+            "collection_outcome": self.collection_outcome,
+            "schedule_receipt_outcome": self.schedule_receipt_outcome,
+            "terminal_outcome": self.terminal_outcome,
+            "artifact_policy": dict(_ARTIFACT_POLICY),
+            "claim": _CLAIM,
+        }
+
+
 def write_started_kis_paper_intraday_head_invocation_receipt(
     *, artifact_root: Path, repository_root: Path, run_id: str, started_at: datetime
 ) -> KisPaperIntradayHeadInvocationReceiptResult:
@@ -161,6 +191,7 @@ def write_terminal_kis_paper_intraday_head_invocation_receipt(
     repository_root: Path,
     run_id: str,
     started_at: datetime,
+    schedule_observed_at: datetime,
     completed_at: datetime,
     collection_exit_code: int,
     schedule_receipt_status: str,
@@ -171,9 +202,12 @@ def write_terminal_kis_paper_intraday_head_invocation_receipt(
     root = _external_root(artifact_root=artifact_root, repository_root=repository_root)
     normalized_run_id = _require_run_id(run_id)
     started_at = require_utc(started_at, "started_at")
+    schedule_observed_at = require_utc(schedule_observed_at, "schedule_observed_at")
     completed_at = require_utc(completed_at, "completed_at")
     if completed_at < started_at:
         return _not_written("terminal_before_start", phase="terminal")
+    if not started_at <= schedule_observed_at <= completed_at:
+        return _not_written("schedule_observed_time_invalid", phase="terminal")
     if type(collection_exit_code) is not int or type(terminal_exit_code) is not int:
         return _not_written("exit_code_invalid", phase="terminal")
     if schedule_receipt_status not in {"complete", "recovery", "unavailable"}:
@@ -193,6 +227,7 @@ def write_terminal_kis_paper_intraday_head_invocation_receipt(
             "phase": "terminal",
             "run_id": normalized_run_id,
             "started_at": _utc_marker(started_at),
+            "schedule_observed_at": _utc_marker(schedule_observed_at),
             "completed_at": _utc_marker(completed_at),
             "started_receipt_sha256": _sha256(started_bytes),
             "collection_outcome": _exit_outcome(collection_exit_code),
@@ -282,11 +317,61 @@ def read_current_kis_paper_intraday_head_invocation_runtime_fact(
     )
 
 
+def read_current_kis_paper_intraday_head_invocation_terminal_fact(
+    *, artifact_root: Path, repository_root: Path
+) -> KisPaperIntradayHeadInvocationTerminalFact:
+    """Read the current terminal marker without exposing an external path."""
+
+    runtime = read_current_kis_paper_intraday_head_invocation_runtime_fact(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    if runtime.phase != "terminal":
+        raise ValueError("invocation terminal marker is unavailable")
+    root = _external_root(artifact_root=artifact_root, repository_root=repository_root)
+    encoded = _read_exact_terminal(
+        root=root,
+        run_id=runtime.run_id,
+        observed_at=runtime.observed_at,
+    )
+    try:
+        payload = json.loads(encoded)
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise ValueError("terminal receipt is invalid") from error
+    if not isinstance(payload, dict):
+        raise ValueError("terminal receipt is invalid")
+    started_at = _utc_value(payload.get("started_at"), "terminal started_at")
+    schedule_observed_at = _utc_value(
+        payload.get("schedule_observed_at"), "terminal schedule_observed_at"
+    )
+    completed_at = _utc_value(payload.get("completed_at"), "terminal completed_at")
+    collection_outcome = payload.get("collection_outcome")
+    schedule_receipt_outcome = payload.get("schedule_receipt_outcome")
+    terminal_outcome = payload.get("terminal_outcome")
+    if (
+        collection_outcome not in {"succeeded", "nonzero"}
+        or schedule_receipt_outcome not in {"complete", "recovery", "unavailable"}
+        or terminal_outcome not in {"succeeded", "nonzero"}
+    ):
+        raise ValueError("terminal receipt is invalid")
+    return KisPaperIntradayHeadInvocationTerminalFact(
+        run_id=runtime.run_id,
+        started_at=started_at,
+        schedule_observed_at=schedule_observed_at,
+        completed_at=completed_at,
+        receipt_sha256=runtime.receipt_sha256,
+        collection_outcome=collection_outcome,
+        schedule_receipt_outcome=schedule_receipt_outcome,
+        terminal_outcome=terminal_outcome,
+    )
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("phase", choices=("started", "terminal"))
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--started-at", required=True)
+    parser.add_argument("--schedule-observed-at")
     parser.add_argument("--completed-at")
     parser.add_argument("--collection-exit-code", type=int)
     parser.add_argument("--schedule-receipt-status")
@@ -310,6 +395,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         else:
             if (
                 arguments.completed_at is None
+                or arguments.schedule_observed_at is None
                 or arguments.collection_exit_code is None
                 or arguments.schedule_receipt_status is None
                 or arguments.terminal_exit_code is None
@@ -320,6 +406,9 @@ def main(argv: Sequence[str] | None = None) -> int:
                 repository_root=arguments.repository_root,
                 run_id=arguments.run_id,
                 started_at=started_at,
+                schedule_observed_at=_utc(
+                    arguments.schedule_observed_at, "schedule_observed_at"
+                ),
                 completed_at=_utc(arguments.completed_at, "completed_at"),
                 collection_exit_code=arguments.collection_exit_code,
                 schedule_receipt_status=arguments.schedule_receipt_status,
@@ -382,11 +471,20 @@ def _read_exact_terminal(*, root: Path, run_id: str, observed_at: datetime) -> b
     ):
         raise ValueError("terminal receipt is invalid")
     started_at = payload.get("started_at")
+    schedule_observed_at = payload.get("schedule_observed_at")
     completed_at = payload.get("completed_at")
-    if not isinstance(started_at, str) or not isinstance(completed_at, str):
+    if (
+        not isinstance(started_at, str)
+        or not isinstance(schedule_observed_at, str)
+        or not isinstance(completed_at, str)
+    ):
         raise ValueError("terminal receipt is invalid")
     normalized_started_at = _utc(started_at, "terminal started_at")
-    if _utc(completed_at, "terminal completed_at") < normalized_started_at:
+    normalized_schedule_observed_at = _utc(
+        schedule_observed_at, "terminal schedule_observed_at"
+    )
+    normalized_completed_at = _utc(completed_at, "terminal completed_at")
+    if not normalized_started_at <= normalized_schedule_observed_at <= normalized_completed_at:
         raise ValueError("terminal receipt is invalid")
     started_bytes = _read_exact_start(
         root=root,
@@ -540,6 +638,12 @@ def _utc(value: str, label: str) -> datetime:
     except ValueError as error:
         raise ValueError(f"{label} is invalid") from error
     return require_utc(parsed, label)
+
+
+def _utc_value(value: object, label: str) -> datetime:
+    if not isinstance(value, str):
+        raise ValueError(f"{label} is invalid")
+    return _utc(value, label)
 
 
 def _utc_marker(value: datetime) -> str:

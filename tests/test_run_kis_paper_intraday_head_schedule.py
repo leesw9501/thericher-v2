@@ -116,6 +116,14 @@ def test_head_schedule_writes_diagnostic_invocation_receipts_around_collection()
     assert "thericher_v2.ops.kis_paper_intraday_head_invocation_receipt" in source
     assert start_write < collection_call < terminal_exit < terminal_write
     assert "-ArtifactRoot $InvocationReceiptArtifactRoot" in source
+    assert "$scheduleObservedAt = $collectionReturnedAt" in source
+    assert "$dispatchCompletedAt = (Get-Date).ToUniversalTime()" in source
+    assert "--schedule-observed-at" in source
+    assert "-ScheduleObservedAt $scheduleObservedAtMarker" in source
+    assert "-CompletedAt $dispatchCompletedAtMarker" in source
+    assert source.index("$scheduleReceipt = Invoke-HeadProfileService") < source.index(
+        "$dispatchCompletedAt = (Get-Date).ToUniversalTime()"
+    ) < terminal_write
     assert "Invocation receipts are diagnostic. They cannot defer collection." in source
 
 

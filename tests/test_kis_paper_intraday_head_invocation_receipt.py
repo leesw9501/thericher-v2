@@ -41,6 +41,7 @@ def test_started_and_terminal_receipts_are_external_idempotent_and_networkless(
         repository_root=repository_root,
         run_id="head-unit",
         started_at=started_at,
+        schedule_observed_at=started_at + timedelta(minutes=1),
         completed_at=started_at + timedelta(minutes=2),
         collection_exit_code=0,
         schedule_receipt_status="complete",
@@ -51,6 +52,7 @@ def test_started_and_terminal_receipts_are_external_idempotent_and_networkless(
         repository_root=repository_root,
         run_id="head-unit",
         started_at=started_at,
+        schedule_observed_at=started_at + timedelta(minutes=1),
         completed_at=started_at + timedelta(minutes=2),
         collection_exit_code=0,
         schedule_receipt_status="complete",
@@ -74,6 +76,12 @@ def test_started_and_terminal_receipts_are_external_idempotent_and_networkless(
     assert runtime.phase == "terminal"
     assert runtime.run_id == "head-unit"
     assert runtime.receipt_sha256 == terminal.receipt_sha256
+    terminal_fact = receipts.read_current_kis_paper_intraday_head_invocation_terminal_fact(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    assert terminal_fact.schedule_observed_at == started_at + timedelta(minutes=1)
+    assert terminal_fact.completed_at == started_at + timedelta(minutes=2)
     assert start_path.is_relative_to(artifact_root)
     assert terminal_path.is_relative_to(artifact_root)
     assert not any(repository_root.rglob("*.json"))
@@ -88,6 +96,7 @@ def test_terminal_receipt_requires_matching_started_marker(tmp_path: Path) -> No
         repository_root=repository_root,
         run_id="head-unit",
         started_at=started_at,
+        schedule_observed_at=started_at + timedelta(seconds=30),
         completed_at=started_at + timedelta(minutes=1),
         collection_exit_code=1,
         schedule_receipt_status="unavailable",
@@ -143,6 +152,7 @@ def test_terminal_receipt_rejects_invalid_time_or_status(tmp_path: Path) -> None
         repository_root=repository_root,
         run_id="head-unit",
         started_at=started_at,
+        schedule_observed_at=started_at,
         completed_at=started_at - timedelta(seconds=1),
         collection_exit_code=0,
         schedule_receipt_status="complete",
@@ -153,6 +163,7 @@ def test_terminal_receipt_rejects_invalid_time_or_status(tmp_path: Path) -> None
         repository_root=repository_root,
         run_id="head-unit",
         started_at=started_at,
+        schedule_observed_at=started_at,
         completed_at=started_at + timedelta(seconds=1),
         collection_exit_code=0,
         schedule_receipt_status="invalid",
@@ -161,6 +172,20 @@ def test_terminal_receipt_rejects_invalid_time_or_status(tmp_path: Path) -> None
 
     assert before_start.reason == "terminal_before_start"
     assert invalid_status.reason == "schedule_receipt_status_invalid"
+
+    invalid_schedule_time = receipts.write_terminal_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-unit",
+        started_at=started_at,
+        schedule_observed_at=started_at + timedelta(seconds=2),
+        completed_at=started_at + timedelta(seconds=1),
+        collection_exit_code=0,
+        schedule_receipt_status="complete",
+        terminal_exit_code=0,
+    )
+
+    assert invalid_schedule_time.reason == "schedule_observed_time_invalid"
 
 
 def test_started_receipt_rejects_a_repository_artifact_root(tmp_path: Path) -> None:
@@ -247,6 +272,7 @@ def test_reader_rejects_a_terminal_before_its_started_marker(tmp_path: Path) -> 
         repository_root=repository_root,
         run_id="head-unit",
         started_at=started_at,
+        schedule_observed_at=started_at + timedelta(seconds=1),
         completed_at=started_at + timedelta(seconds=1),
         collection_exit_code=0,
         schedule_receipt_status="complete",
@@ -273,6 +299,51 @@ def test_reader_rejects_a_terminal_before_its_started_marker(tmp_path: Path) -> 
 
     with pytest.raises(ValueError, match="terminal receipt"):
         receipts.read_current_kis_paper_intraday_head_invocation_runtime_fact(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_reader_rejects_a_schedule_time_after_terminal_completion(tmp_path: Path) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    started_at = datetime(2026, 8, 19, 15, 29, tzinfo=UTC)
+    receipts.write_started_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-unit",
+        started_at=started_at,
+    )
+    receipts.write_terminal_kis_paper_intraday_head_invocation_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        run_id="head-unit",
+        started_at=started_at,
+        schedule_observed_at=started_at + timedelta(seconds=1),
+        completed_at=started_at + timedelta(seconds=2),
+        collection_exit_code=0,
+        schedule_receipt_status="complete",
+        terminal_exit_code=0,
+    )
+    terminal_path = _receipt_path(artifact_root, "head-unit", "terminal")
+    terminal_payload = json.loads(terminal_path.read_text(encoding="ascii"))
+    terminal_payload["schedule_observed_at"] = "2026-08-19T15:29:03Z"
+    terminal_path.write_text(
+        json.dumps(terminal_payload, sort_keys=True, separators=(",", ":")) + "\n",
+        encoding="ascii",
+    )
+    runtime_path = (
+        artifact_root
+        / receipts.KIS_PAPER_INTRADAY_HEAD_INVOCATION_RECEIPT_DIRECTORY
+        / receipts.KIS_PAPER_INTRADAY_HEAD_INVOCATION_RUNTIME_ARTIFACT_NAME
+    )
+    runtime_payload = json.loads(runtime_path.read_text(encoding="ascii"))
+    runtime_payload["receipt_sha256"] = "sha256:" + hashlib.sha256(
+        terminal_path.read_bytes()
+    ).hexdigest()
+    runtime_path.write_bytes(receipts._canonical_json(runtime_payload))
+
+    with pytest.raises(ValueError, match="terminal receipt"):
+        receipts.read_current_kis_paper_intraday_head_invocation_terminal_fact(
             artifact_root=artifact_root,
             repository_root=repository_root,
         )

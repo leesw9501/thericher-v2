@@ -21,7 +21,7 @@ PnL, Paper action, or live claim.
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | Norgate local readiness | Data | Existing NDU updater | The 2026-08-14 provisioned-host reader returned `local_api_not_ready` and wrote no receipt. It does not establish a process, update, subscription, expiry, vendor-access, or rights cause. This does not block the Paper canary. The one operator-visible diagnostic is the already-running NDU update plus database/subscription-state panes, then minimize it. |
 | Intraday M1 coverage | Data | Existing task image and source-safe terminal projection | The 2026-08-17 task-owned terminal reattached as `complete` with verified coverage/availability bindings, matching the 2026-08-15 `input_unavailable/session_coverage_incomplete/current_session_short` topology. The new writer leaves it unbound by default. |
-| Capture topology and markers | Data / Codex | Existing task, cache metadata, external artifact root | Topology audit complete: static task is enabled/one-action/four-trigger, but Operational log is disabled and retained chunks cannot prove starts. The runner now writes start/terminal markers; current pointer is unavailable pending its next owned run. |
+| Capture topology and markers | Data / Codex | Existing task, cache metadata, external artifact root | Topology audit complete: static task is enabled/one-action/four-trigger, but Operational log is disabled and retained chunks cannot prove starts. The runner now writes start/terminal markers with separately bound schedule-observed and dispatcher-completion times; current pointer is unavailable pending its next owned run. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -47,8 +47,10 @@ qualify research input or change Paper behavior.
 ## Current Reversible Improvement
 
 Use one external, immutable source-safe invocation marker around the existing
-dispatcher. This is reversible and prevents a second scheduler, an unmeasured
-request flood, or an unsupported timing change.
+dispatcher. Its exact run plus schedule-observed timestamp binding keeps
+collection-return, schedule-terminal, and dispatcher-completion facts distinct.
+This is reversible and prevents a second scheduler, an unmeasured request
+flood, or an unsupported timing change.
 
 ## Current Recovery Action
 

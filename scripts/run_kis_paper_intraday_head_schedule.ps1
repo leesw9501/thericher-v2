@@ -77,6 +77,7 @@ function Write-HeadInvocationReceipt {
         [string]$RunId,
         [Parameter(Mandatory = $true)]
         [string]$StartedAt,
+        [string]$ScheduleObservedAt,
         [string]$CompletedAt,
         [int]$CollectionExitCode,
         [string]$ScheduleReceiptStatus,
@@ -100,6 +101,8 @@ function Write-HeadInvocationReceipt {
         $arguments += @(
             "--completed-at",
             $CompletedAt,
+            "--schedule-observed-at",
+            $ScheduleObservedAt,
             "--collection-exit-code",
             [string]$CollectionExitCode,
             "--schedule-receipt-status",
@@ -911,12 +914,18 @@ $terminalExitCode = Get-DispatchTerminalExitCode `
     -CollectionExitCode $collectionExitCode `
     -ScheduleReceiptExitCode $scheduleReceiptExitCode `
     -ScheduleReceiptPayload $scheduleReceiptPayload
+$dispatchCompletedAt = (Get-Date).ToUniversalTime()
+$dispatchCompletedAtMarker = $dispatchCompletedAt.ToString(
+    "o",
+    [System.Globalization.CultureInfo]::InvariantCulture
+)
 Write-HeadInvocationReceipt `
     -ProjectRoot $resolvedProjectRoot `
     -Phase "terminal" `
     -RunId $scheduleRunId `
     -StartedAt $collectionStartedAtMarker `
-    -CompletedAt $scheduleObservedAtMarker `
+    -ScheduleObservedAt $scheduleObservedAtMarker `
+    -CompletedAt $dispatchCompletedAtMarker `
     -CollectionExitCode $collectionExitCode `
     -ScheduleReceiptStatus $scheduleReceiptStatus `
     -TerminalExitCode $terminalExitCode `

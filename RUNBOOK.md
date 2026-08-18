@@ -1037,7 +1037,10 @@ missed Scheduler trigger, a provider limitation, or a collector failure.
 
 The existing dispatcher writes a diagnostic-only immutable `started` marker
 before collection and a hash-bound `terminal` marker after its existing
-schedule receipt. To inspect only the validated current marker pointer, run:
+schedule receipt. The terminal preserves both the schedule-observed timestamp
+and the later dispatcher-completion timestamp, so the reader can distinguish
+the exact boundary without inventing a Scheduler or collector outcome. To
+inspect only the validated current marker pointer, run:
 
 ```powershell
 uv run python scripts\project_kis_paper_intraday_head_invocation_receipt.py
@@ -1050,6 +1053,21 @@ timestamp/outcome categories under
 It is assumed-honest-host provenance, not cryptographic proof that Task
 Scheduler started the process. Do not manually invoke the task, collector,
 Docker service, KIS, or Scheduler to manufacture this evidence.
+
+To bind the current marker to the exact source-safe schedule terminal and
+metadata-only topology, while reading only static Task facts, run:
+
+```powershell
+.\scripts\project_kis_paper_intraday_invocation_reattachment.ps1
+```
+
+The result is only `marker_unavailable`, `start_only`, `terminal_unavailable`,
+`collector_nonzero`, `retained_partial`, or `complete_session`. It recomputes
+the marker and schedule bindings, never searches for a newest artifact, and
+does not treat topology metadata as an exact run binding. Its evidence pointers
+are exact but relative to the external artifact root, never local absolute
+paths. A marker remains assumed-honest-host provenance, not cryptographic
+Scheduler-origin proof.
 
 The reader also accepts a terminal-embedded SHA-256 binding for one fixed,
 external, source-safe causal-condition attestation. That optional receipt must

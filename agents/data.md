@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-19 metadata-only audit found sparse retained QQQ chunks associated with all four expected ET slots, but no complete audited session. The latest audited session retained only the 11:29 ET slot with 119 complete minutes. The enabled one-action Task has its Operational log disabled, so absent chunks cannot prove a missed start. | Existing dispatcher writes source-safe `started` and hash-bound `terminal` invocation markers outside Git. Reattach the next task-owned marker before changing timing, paging, or consumers. No model or reusable Paper-candidate promotion follows. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The 2026-08-19 metadata-only audit found sparse retained QQQ chunks associated with all four expected ET slots, but no complete audited session. The latest audited session retained only the 11:29 ET slot with 119 complete minutes. The enabled one-action Task has its Operational log disabled, so absent chunks cannot prove a missed start. | Existing dispatcher writes source-safe `started` and hash-bound `terminal` invocation markers outside Git. The terminal preserves exact schedule-observed and later dispatcher-completion timestamps; reattach the next task-owned marker before changing timing, paging, or consumers. No model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. | `input_unavailable` for daily predictive work. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
@@ -73,15 +73,17 @@ result is intentionally narrower than a Scheduler-failure claim: retained index
 metadata cannot tell whether a slot did not start, failed before persistence,
 received a provider-limited window, or was deduplicated. The existing task
 definition remains unchanged. A diagnostic marker is emitted immediately before
-the collector and after the existing terminal receipt; its external current
-pointer is currently unavailable pending the next task-owned run.
+the collector and after the existing terminal receipt; its terminal marker now
+binds both the existing schedule-observed timestamp and its actual later
+dispatcher-completion timestamp. The external current pointer is unavailable
+pending the next task-owned run.
 
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
 | --- | --- | --- |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
-| Invocation-marker reattachment | Data / Codex | Ready only when the existing task writes a fresh marker. Validate its exact pointer/receipt binding with the offline reader, then compare its categorical outcomes with terminal and topology evidence. |
+| Invocation-marker reattachment | Data / Codex | Ready only when the existing task writes a fresh marker. Validate its exact pointer, immutable receipt, run ID, and schedule-observed timestamp with the offline reader, then compare its categorical outcomes with terminal and topology evidence. |
 | Later intraday observation | Existing `thericher-kis-paper-intraday-head` task | The current invocation-marker pointer is unavailable. Its next due time is task-owned and never a foreground wait. |
 | Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
 | SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
@@ -118,9 +120,10 @@ pointer is currently unavailable pending the next task-owned run.
 
 - Intraday source-safe projection:
   `scripts\project_kis_paper_intraday_head_schedule_receipt.py`.
-- Capture-topology audit and invocation-marker reader:
-  `scripts\inspect_kis_paper_intraday_capture_topology.ps1` and
-  `scripts\project_kis_paper_intraday_head_invocation_receipt.py`.
+- Capture-topology audit and invocation-marker readers:
+  `scripts\inspect_kis_paper_intraday_capture_topology.ps1`,
+  `scripts\project_kis_paper_intraday_head_invocation_receipt.py`, and
+  `scripts\project_kis_paper_intraday_invocation_reattachment.ps1`.
 - Official KIS overseas-minute documentation confirms the reviewed request and
   cursor semantics but supplies no reviewed finality/as-of predicate. It keeps
   `provider_finality` and decision-time availability `not_observed`; it makes

@@ -56,9 +56,10 @@ input, or Paper input. Engine Research waits only on Data's separate complete-
 session recovery, never on an attestation artifact for the current terminal.
 
 The 2026-08-19 capture-topology audit and dispatcher invocation markers are
-Data diagnostics only. Their current pointer is unavailable and no result can
-qualify a dataset, spend evaluation, allocate GPU, or change the frozen
-30/60/90-minute candidate matrix.
+Data diagnostics only. Their current pointer is unavailable; its future reader
+requires exact run and schedule-observed timestamp binding before a narrow
+terminal category. No result can qualify a dataset, spend evaluation, allocate
+GPU, or change the frozen 30/60/90-minute candidate matrix.
 
 ## Public-Source References
 

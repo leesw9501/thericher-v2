@@ -9424,3 +9424,26 @@ the available evidence. Focused tests prove metadata-only auditing, external
 receipt idempotence/hash binding, no raw data/credential/network path, and
 dispatcher ordering. The marker proves only assumed-honest-host provenance,
 not cryptographic Scheduler-origin proof or a provider/PnL/model fact.
+
+## 2026-08-19 - Preserve the intraday invocation time boundary exactly
+
+Decision: keep the existing one-task dispatcher and diagnostic-only marker
+contract, but record the schedule-observed time and the actual later dispatcher
+completion time as separate terminal fields. Add an offline source-safe reader
+that requires the exact invocation run ID, schedule timestamp, terminal outcome,
+and bound schedule receipt before it reports a narrow category. It may compare
+metadata-only topology, but explicitly does not treat it as exact run binding.
+It exposes the exact evidence pointers only relative to the external artifact
+root.
+
+Reason: the old terminal marker used the collector-return/schedule-observed time
+as its completion value even though the terminal marker was written after the
+schedule receipt. That erased the boundary the current Data objective is meant
+to diagnose. This correction changes no Task definition, trigger, collector,
+KIS/Docker route, Paper behavior, raw data, or consumer. The required Claude
+drift request produced no verdict before its bounded local timeout, recorded as
+`review_unavailable`, not agreement or a block. Focused tests cover time-order
+validation, exact run/timestamp mismatch rejection, marker-unavailable and
+start-only states, complete/partial/nonzero classification, and no secret or
+Task-start surface. The provenance remains marker-present under an assumed-honest
+host, never cryptographic Scheduler-origin proof.

@@ -67,10 +67,13 @@ evidence alone.
 
 The existing host dispatcher now writes an immutable, source-safe `started`
 marker before collection and a hash-bound `terminal` marker after its existing
-schedule receipt. It changes neither the Task definition nor any collector,
-KIS, Paper, or downstream-consumer behavior. The current marker pointer is
-unavailable until a later task-owned invocation writes it. This is
-assumed-honest-host provenance, not cryptographic proof of Scheduler origin.
+schedule receipt. The terminal separates its schedule-observed timestamp from
+the later dispatcher-completion timestamp, and the offline reattachment reader
+requires the exact run and schedule-timestamp binding before classification.
+It changes neither the Task definition nor any collector, KIS, Paper, or
+downstream-consumer behavior. The current marker pointer is unavailable until a
+later task-owned invocation writes it. This is assumed-honest-host provenance,
+not cryptographic proof of Scheduler origin.
 
 ## Current Cross-Lane Facts
 
@@ -87,7 +90,7 @@ assumed-honest-host provenance, not cryptographic proof of Scheduler origin.
 
 | Work | Owner | Status |
 | --- | --- | --- |
-| Invocation receipt reattachment | Data / Codex | Existing task owns the next marker. The current pointer is unavailable; no foreground wait, duplicate task, or manual collection is permitted. |
+| Invocation receipt reattachment | Data / Codex | Existing task owns the next marker. The current pointer is unavailable; the offline reader now binds exact run ID plus schedule-observed timestamp before it reports a terminal category. No foreground wait, duplicate task, or manual collection is permitted. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-17 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
@@ -126,6 +129,8 @@ ready.
   `scripts\inspect_kis_paper_intraday_capture_topology.ps1`.
 - Current invocation-marker reader:
   `scripts\project_kis_paper_intraday_head_invocation_receipt.py`.
+- Invocation-to-terminal reattachment reader:
+  `scripts\project_kis_paper_intraday_invocation_reattachment.ps1`.
 - QQQ M1/M5/M10/H1/H3 mechanics:
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
 - Fixed local-paper EMA attribution:
