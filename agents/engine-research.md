@@ -59,9 +59,10 @@ candidate, training run, GPU appointment, sealed-evaluation spend, ensemble
 input, or Paper input. Engine Research waits only on Data's separate complete-
 session recovery, never on an attestation artifact for the current terminal.
 
-The first fresh 2026-08-19 KST dispatcher marker reattached as an exact
-task-path `collection_exit_nonzero` terminal. It remains a Data diagnostic, not
-a cause attribution: its stage label cannot establish collector-process entry,
+The first post-writer 2026-08-19 KST dispatcher marker reattached as an exact
+task-path `collection_exit_nonzero / reason_unavailable` terminal. It remains
+one Data diagnostic, not a cause attribution or recovery premise: its stage
+label and one category binding cannot establish collector-process entry,
 provider state, or a capture remedy. It creates no qualified dataset, target,
 split, campaign, GPU allocation, or change to the frozen 30/60/90-minute
 candidate matrix.

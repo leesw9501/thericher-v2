@@ -2,12 +2,11 @@
 
 ## Objective
 
-Complete `kis-intraday-failure-category-reattachment-v1`: reattach the first
-later task-owned intraday-head terminal written after the closed failure-category
-writer is installed. Preserve the existing stage exit code and distinguish only
-the retained `dispatcher_config`, `collector_provider`, or
-`reason_unavailable` category. This is Data diagnosis, not a recovery action,
-model result, PnL claim, Paper decision, or live route.
+Complete `kis-intraday-failure-category-confirmation-v1`: reattach one later
+task-owned intraday-head terminal written after the first post-writer category binding
+`intraday-head-20260818T1924006306454Z`. Compare only its closed category with
+the existing `reason_unavailable` category. This is Data diagnosis, not a
+recovery action, model result, PnL claim, Paper decision, or live route.
 
 ## Hard Boundaries
 
@@ -19,8 +18,9 @@ model result, PnL claim, Paper decision, or live route.
 - Do not change task triggers, page counts, collector locks, request pace,
   downstream QQQ/SPY consumers, Docker services, KIS routes, or Paper behavior.
 - Preserve every existing invocation marker and schedule terminal as immutable.
-  The current 2026-08-19 KST bound nonzero is a legacy marker and must remain
-  `reason_unavailable`; do not rewrite, backfill, or infer its root cause.
+  The 2026-08-19 KST legacy marker remains `reason_unavailable` by compatibility,
+  and the first post-writer marker remains one exact `reason_unavailable`
+  binding; do not rewrite, backfill, or infer either root cause.
 - A category is evidence only when the current pointer, immutable terminal, and
   exact schedule receipt all validate their hashes, run ID, timestamps, and
   outcomes through the existing offline reader. A missing, old, malformed, or
@@ -30,22 +30,25 @@ model result, PnL claim, Paper decision, or live route.
 ## Required Work
 
 1. Inspect only source-safe static Task facts and the current offline
-   reattachment result. Confirm that the first later eligible run differs from
-   the 2026-08-19 legacy marker before interpreting it.
-2. Reattach one later immutable marker through the existing offline reader.
-   Record only opaque run/timestamps, the preserved terminal stage outcome,
-   one closed failure category, binding hashes, and external-root-relative
-   evidence pointers.
-3. Classify narrowly: a zero collection exit must expose `reason_unavailable`;
-   a nonzero may expose `dispatcher_config`, `collector_provider`, or
-   `reason_unavailable`. The category does not identify an exact provider,
-   Docker, persistence, Scheduler, or rate cause.
-4. If one later bound category is present, retain it as Data evidence only.
-   Do not change behavior in this objective. Before any future recovery proposal
-   based on a category, obtain a fresh Claude falsification-first verdict and
-   require at least two independently hash-validated matching task bindings.
-5. Refresh only affected stateboards and the handoff. Keep Engine Research and
-   Execution non-promoting unless their existing independent inputs qualify.
+   reattachment result. Confirm that the eligible later run differs from
+   `intraday-head-20260818T1924006306454Z` before interpreting it.
+2. Reattach that later immutable marker through the existing offline
+   reader. Record only opaque run/timestamps, the preserved terminal stage
+   outcome, one closed failure category, binding hashes, and external-root-
+   relative evidence pointers.
+3. Classify narrowly:
+   - matching `reason_unavailable` supplies the second independently
+     hash-validated category binding required for a later recovery proposal;
+   - a different allowed category records only divergence and leaves recovery
+     unconfirmed.
+   Neither outcome identifies an exact provider, Docker, persistence,
+   Scheduler, or rate cause.
+4. Retain the result as Data evidence only. Do not change behavior in this
+   objective. Any later category-based recovery proposal requires a fresh
+   Claude falsification-first verdict after the two bindings are verified.
+5. Refresh only affected stateboards, the handoff, and the runbook. Keep Engine
+   Research and Execution non-promoting unless their existing independent inputs
+   qualify.
 
 ## Verification
 

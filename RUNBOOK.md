@@ -1085,6 +1085,12 @@ immutable markers are read as `reason_unavailable` without byte changes. This
 category is diagnostic evidence only: it does not authorize a Task, paging,
 pace, Docker, KIS, consumer, Paper, or recovery behavior change.
 
+One post-writer category binding is not a recovery premise. Before proposing a
+category-based recovery, reattach two later independently hash-validated
+task-owned bindings with the same category and obtain a fresh Claude
+falsification-first verdict. A different later category records divergence only
+and still authorizes no behavior change.
+
 The reader also accepts a terminal-embedded SHA-256 binding for one fixed,
 external, source-safe causal-condition attestation. That optional receipt must
 match the terminal's run, capture, availability, and pair identities and name

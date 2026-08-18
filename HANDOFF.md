@@ -31,8 +31,11 @@ task-owned marker and found one exact task-stage nonzero without a root-cause
 claim. The next objective, `kis-intraday-task-path-failure-localization-v1`,
 installed only a closed source-safe reason classification for future task-owned
 nonzero runs. The next objective,
-`kis-intraday-failure-category-reattachment-v1`, waits for and reattaches one
-later task-owned marker before any capture or consumer behavior change.
+`kis-intraday-failure-category-reattachment-v1`, reattached the first
+post-writer task-owned marker as one closed `reason_unavailable` category
+binding. The next objective, `kis-intraday-failure-category-confirmation-v1`,
+waits only for one later independent binding before any category-based recovery
+proposal can be considered.
 
 The completed Tiingo IEX r1 source-isolated integration reattested the pinned
 M5 snapshot in both host and Docker runtime. A gzip encoder difference was
@@ -91,11 +94,20 @@ bytes. Claude's latest scope-matched challenge returned `review_unavailable`
 because the service was overloaded; it is not a verdict or authority to change
 collection behavior.
 
+The first post-writer marker reattached the exact 2026-08-19 KST run
+`intraday-head-20260818T1924006306454Z`. Its source-safe start,
+schedule-observed, and completion timestamps bind an existing `recovery`
+terminal with exit code `1`, `collection_exit_nonzero`, and the closed category
+`reason_unavailable`. Its hash-bound terminal and schedule pointers remain
+external-root-relative. This is one diagnostic binding only: it does not prove
+a collector, provider, Docker, persistence, Scheduler, or pacing cause and
+does not authorize a behavior change.
+
 ## Current Cross-Lane Facts
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
-| Data | The exact fresh marker localizes one `collection_exit_nonzero` task stage, while topology is `current_metadata_consistent` and coverage remains incomplete. The closed future category writer is installed; the legacy marker reads `reason_unavailable`. The task is enabled with one runner action and its Operational log is disabled. | Reattach the first later hash-bound marker and record its category without changing timing, page count, Docker/KIS behavior, or downstream consumers. |
+| Data | The legacy marker and one independent post-writer marker each retain `collection_exit_nonzero` with `reason_unavailable`; topology remains `current_metadata_consistent` and coverage incomplete. The task is enabled with one runner action and its Operational log is disabled. | Reattach one later hash-bound marker and compare only its closed category without changing timing, page count, Docker/KIS behavior, or downstream consumers. |
 | Data | On 2026-08-14 the provisioned-host, source-safe Norgate reader returned `local_api_not_ready`; it wrote no receipt and did not read catalog, metadata, or prices. This categorical result does not determine NDU process, update, subscription, expiry, vendor-access, or rights state. Tiingo/Norgate and broad-D1 sources remain non-promoting. | Do not launch another trigger or repeat the hidden start. The one operator-visible diagnostic is the already-running NDU `Update > Check for Updates` plus database/subscription-state outcome, then minimize rather than close the app; this does not assert a cause or block the Paper canary. If the reader later becomes ready, verify active US subscription and Database Location; only then, if the catalog exposes `US Equities`, run one bounded Norgate probe. Tiingo can support only retrospective controls without a new selection look or KIS/Paper join. |
 | Engine Research | The Tiingo IEX r1 source-isolated CPU/CUDA runtime matrix is closed with no retained weights or predictive interpretation. A synthetic caller-owned local-paper two-step replay proves future policy-environment stepping against owned cost/fill semantics only. | No candidate, training, GPU appointment, or Paper input follows; a later predictive campaign needs a distinct qualified input and frozen contract. |
 | Research Steward | RTX 4090 is free after the completed Tiingo IEX r1 source-isolated appointment; no sealed evaluation was spent. | Allocate only a fresh frozen eligible campaign; never manufacture training to fill GPU time. |
@@ -108,7 +120,8 @@ collection behavior.
 | --- | --- | --- |
 | Invocation receipt reattachment | Data / Codex | Complete: the exact fresh marker, terminal, and schedule receipt bind a `collection_exit_nonzero` task stage. Its external evidence pointers are `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T1728005721271Z/terminal.json` and `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T1728005721271Z.json`. |
 | Task-path failure localization | Data / Codex | Complete: one closed, free-text-free category writer and legacy-compatible offline reader preserve the stage exit code. No timing/page/task/consumer change followed. |
-| Failure-category reattachment | Data / Codex | Next objective: wait for one later exact task-owned marker, then reattach only its category and existing bound terminal facts. |
+| Failure-category reattachment | Data / Codex | Complete: post-writer `intraday-head-20260818T1924006306454Z` binds `collection_exit_nonzero / reason_unavailable` through `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T1924006306454Z/terminal.json` and `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T1924006306454Z.json`. |
+| Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Next objective: reattach one later exact marker and compare its closed category only. Two matching bindings still need a fresh Claude falsification-first review before any recovery proposal. |
 | SPY D1 stability | Data | Existing observer owns its next eligible weekday observation. Its status is observational only, never provider finality. |
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-17 23:35 KST task receipt is bound offline to its direct lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged order-reference category only. It is not a fill, PnL, alpha, or model result. The earlier 2026-08-11 unknown remains separately owned by its reconciliation path; do not resubmit either intent. Next task-owned opportunity: 2026-08-19 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
@@ -168,15 +181,14 @@ ready.
 
 ## Verification And Git
 
-The closed intraday failure-category package passed 39 focused offline
-receipt/reattachment/dispatcher tests, PowerShell syntax parsing, the
-2,971-pass authority parallel suite with 17 skips, Ruff, both credential-free
-Compose configuration parses, and `git diff --check`. The only full-suite
-warnings were existing external-storage threshold warnings. Verification made no
-KIS, credential, broker, collector, Docker service, or Task Scheduler call.
-The next reattachment objective uses only the current offline reader and
-source-safe static Task facts; its observed current pointer is the unchanged
-legacy marker, so no later category has been interpreted yet.
+The closed intraday failure-category reattachment package passed 41 focused
+offline receipt/reattachment/dispatcher tests, the 2,991-pass authority
+parallel suite with 17 skips, Ruff, both credential-free Compose configuration
+parses, and `git diff --check`. The only suite warnings were existing
+external-storage threshold warnings. Verification made no KIS, credential,
+broker, collector, Docker service, or Task Scheduler call. It reattached one
+post-writer category as `reason_unavailable`; the next confirmation objective
+uses only the current offline reader and source-safe static Task facts.
 
 The Tiingo IEX source-isolated package passed 19 focused data/research tests,
 the 2,919-pass authority parallel suite with 17 skips, Ruff, both Compose
@@ -205,7 +217,7 @@ self-staling latest hash here.
    active stateboards.
 3. Run a compact Throughput Review, then dispatch only a ready,
    non-conflicting package.
-4. The current exact marker is a legacy task-stage nonzero with
-   `reason_unavailable`, not a causal diagnosis. Reattach only a later bound
-   marker before interpreting the new category; never infer a Scheduler,
-   collector, provider, or Paper outcome from either marker.
+4. A legacy marker and one post-writer marker both retain
+   `reason_unavailable`, not a causal diagnosis. Reattach only one later bound
+   marker before interpreting category consistency; never infer a Scheduler,
+   collector, provider, or Paper outcome from any marker.
