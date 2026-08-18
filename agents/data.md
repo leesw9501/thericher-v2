@@ -23,6 +23,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. |
 | Tiingo IEX M5 r1 ETF trio | Pinned 2026-07-19 IEX-only snapshot reattested offline by raw hashes, stored gzip hash, and exact canonical payload. | One completed source-isolated reconstruction runtime integration only; no source scope, training eligibility, KIS equivalence, model-selection, or Paper-input change. |
 | Norgate trial tail | On 2026-08-14 the provisioned-host `norgatedata` reader returned only `local_api_not_ready`. It wrote no receipt and stopped before catalog, update-metadata, or price reads. This categorical result does not establish the NDU process state, update outcome, subscription, trial expiry, vendor access, or rights. | Do not launch a second trigger or repeat the hidden start. The one operator-visible diagnostic is in the already-running NDU: inspect `Update > Check for Updates` and the database/subscription state panes, retain only their categorical outcome, then minimize rather than close it. This is an unconfirmed recovery path, not a readiness claim or a hold on other lanes. If status becomes ready, verify the active US subscription and Database Location, then require a catalog exposing `US Equities` before one bounded tail probe. |
+| Public U.S. minute-source discovery | Official pages were re-retrieved for FirstRate free 1-minute samples and NYSE Daily TAQ's public sample/full product distinction. No data download, provider adoption, rights acceptance, or credential use occurred. | Neither reviewed source proves KIS parity, decision-time availability, or provider finality. The FirstRate license page did not reattach during the review. Retain both only as source-isolated retrospective mechanics or format candidates, never as collection or Paper input. |
 
 Raw market bytes remain under `D:\market_data`. Source-safe receipts and
 research artifacts remain under `D:\thericher-v2\model-artifacts`.
@@ -176,6 +177,8 @@ behavior unchanged.
   relaxes `not_observed`; it does not widen the measured QQQ/SPY cursor scope.
   Evidence:
   `D:\thericher-v2\model-artifacts\data\provider-documentation-retrieval\kis-overseas-price-revision-surface-20260819-r1\source-retrieval.json`.
+- Public U.S. minute-source discovery receipt:
+  `D:\thericher-v2\model-artifacts\data\provider-discovery\public-us-equity-intraday-20260819-r1\source-retrieval.json`.
 - QQQ multi-timeframe completed-bar mechanics:
   `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
 - QQQ MTF canonical window matrix:
