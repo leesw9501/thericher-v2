@@ -71,6 +71,22 @@ def test_bar_normalizes_timeframe_at_construction() -> None:
         )
 
 
+def test_bar_rejects_ambiguous_complete_values() -> None:
+    with pytest.raises(TypeError, match="complete must be bool"):
+        Bar(
+            symbol="AAPL",
+            market="US",
+            timeframe=Timeframe.M1,
+            start_ts=datetime(2026, 1, 2, 14, 30, tzinfo=UTC),
+            open=Decimal("100"),
+            high=Decimal("101"),
+            low=Decimal("99"),
+            close=Decimal("100"),
+            volume=Decimal("1"),
+            complete="false",  # type: ignore[arg-type]
+        )
+
+
 def test_emergency_state_blocks_new_orders_only_when_stop_is_active() -> None:
     clear = EmergencyState(
         stop_new_orders=False,

@@ -174,6 +174,8 @@ class Bar:
         object.__setattr__(self, "low", positive(self.low, "low"))
         object.__setattr__(self, "close", positive(self.close, "close"))
         object.__setattr__(self, "volume", non_negative(self.volume, "volume"))
+        if not isinstance(self.complete, bool):
+            raise TypeError("complete must be bool")
         if self.high < max(self.open, self.close) or self.low > min(self.open, self.close):
             raise ValueError("bar high/low must contain open and close")
 
