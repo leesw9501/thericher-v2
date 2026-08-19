@@ -94,6 +94,9 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   and token-gate states, not a v4 commit subphase. Its bound cache retains the
   same seven common sessions and remains Data-only; it creates no campaign,
   GPU appointment, model selection, replay, or Paper consumer.
+- The later token-only KIS Paper capability receipt is `authenticated`, but it
+  has no daily page, finality, or decision-time availability fact. It changes
+  no campaign, GPU appointment, model selection, replay, or Paper consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ

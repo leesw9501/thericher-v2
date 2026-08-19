@@ -532,6 +532,23 @@ PnL, or live conclusion. The next package isolates the KIS Paper authentication
 path with one bounded, source-safe capability probe rather than another daily
 collection retry.
 
+Claude's authentication-probe challenge returned `supported-with-limits`: the
+transport-level token claim is atomic, but an advisory due check can lose a
+race after the two Paper app values enter process memory. The probe therefore
+tests that this race sends no token request and writes neither values nor a raw
+body. The one permitted virtual-host token-only probe wrote
+`data/kis-paper-daily-pair-forward-v1/kis-paper-auth-capability-probe-v1/auth-capability-20260819T190601865051Z/receipt.json`
+(`sha256:d07e12f8ca521ca32cc00a4a0f81625ad5b503fa0505bad026969aca95db8261`).
+Its hash reattached as `authenticated` with no reason, a 2026-08-19T19:00Z
+time bucket, and token-only/Paper-only scope; market-data, account, order,
+live, token-retention, credential-write, and raw-body-retention flags are all
+false. This proves one bounded KIS Paper token capability only. It does not
+reclassify the v4 collector, establish daily-page availability, finality,
+causal input, Research, Execution, Paper, PnL, or live eligibility. The next
+package uses the existing credential-free readiness route and, only if it is
+currently ready, one existing QQQ/SPY D1 collector invocation without a retry
+loop.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

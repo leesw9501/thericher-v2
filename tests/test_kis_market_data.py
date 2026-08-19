@@ -650,6 +650,22 @@ def test_market_data_config_repr_does_not_expose_credentials() -> None:
     assert "paper-secret" not in repr(config)
 
 
+def test_token_only_authentication_uses_one_post_and_discards_the_token() -> None:
+    transport = _RecordingTransport([_token()])
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+
+    client.authenticate_token_only()
+
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.minute_page_attempts == 0
+    assert client.call_counts.daily_page_attempts == 0
+    assert [request.method for request in transport.requests] == ["POST"]
+    assert client._access_token is None  # noqa: SLF001
+
+
 def test_auth_failure_stops_before_any_market_data_get() -> None:
     transport = _RecordingTransport(
         [KisMarketDataResponse.from_payload({"rt_cd": "1"}, status_code=403)]

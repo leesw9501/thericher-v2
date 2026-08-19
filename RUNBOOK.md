@@ -806,6 +806,28 @@ provider-finality, model, Research, Execution, Paper, PnL, or live fact. The
 next bounded package isolates the KIS Paper authentication path without a
 market-data, account, order, or live call.
 
+### Authentication Capability Outcome
+
+Claude returned `supported-with-limits`: the non-reserving due check avoids
+ordinary configuration reads, while a later atomic transport claim can still
+lose a cross-worker race after the Paper app values are held only in process
+memory. The source/fixture contract verifies that a loss makes no token request
+and emits no credential, token, raw body, or dynamic exception text. The one
+allowed token-only result is
+`data/kis-paper-daily-pair-forward-v1/kis-paper-auth-capability-probe-v1/auth-capability-20260819T190601865051Z/receipt.json`
+(`sha256:d07e12f8ca521ca32cc00a4a0f81625ad5b503fa0505bad026969aca95db8261`).
+Its recomputed hash matches and its source-safe outcome is `authenticated`,
+with no reason and only the 2026-08-19T19:00Z bucket retained. The receipt
+records `paper_only` and `token_only`; market-data, account, position,
+open-order, quote, order, live, credential-write, token-retention, and raw-body
+retention are false.
+
+This is one virtual-host token endpoint capability fact, not a daily-price
+result or an eligibility promotion. Preserve the v4 daily receipt unchanged.
+The next package runs the existing credential-free readiness path and, only on
+its matching ready result, one existing D1 collector. It must not wait in the
+foreground or retry either call.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

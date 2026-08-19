@@ -864,6 +864,14 @@ class KisPaperMarketDataClient:
 
         self._issue_access_token()
 
+    def authenticate_token_only(self) -> None:
+        """Verify the token endpoint once without retaining a bearer token for later use."""
+
+        try:
+            self._issue_access_token()
+        finally:
+            self._access_token = None
+
     def _issue_access_token(self) -> str:
         if self._access_token is not None:
             return self._access_token
