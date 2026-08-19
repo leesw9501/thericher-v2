@@ -195,6 +195,40 @@ def test_role_inverted_accounting_segment_fails_closed(tmp_path: Path) -> None:
         attribute_local_paper_decision_pnl_to_receipts(malformed, (entry, exit))
 
 
+def test_receipt_for_another_instrument_cannot_claim_local_paper_pnl(tmp_path: Path) -> None:
+    _, exit_receipt, accounting = _closed_pair_accounting(tmp_path)
+    foreign_entry = _distinct_receipt(
+        action="enter",
+        target_exposure=Decimal("0.5"),
+        decided_at=NOW,
+        marker="4",
+        symbol="SPY",
+    )
+    segment = accounting.closed_segments[0]
+    malformed = replace(
+        accounting,
+        closed_segments=(replace(segment, entry_decision_id=foreign_entry.decision_id),),
+        entry_decision_totals=(
+            replace(accounting.entry_decision_totals[0], decision_id=foreign_entry.decision_id),
+        ),
+        decision_pair_totals=(
+            replace(
+                accounting.decision_pair_totals[0],
+                entry_decision_id=foreign_entry.decision_id,
+            ),
+        ),
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="entry decision receipt does not match local-paper instrument",
+    ):
+        attribute_local_paper_decision_pnl_to_receipts(
+            malformed,
+            (foreign_entry, exit_receipt),
+        )
+
+
 def test_internally_inconsistent_pnl_projection_fails_closed(tmp_path: Path) -> None:
     _, _, accounting = _closed_pair_accounting(tmp_path)
 
@@ -324,10 +358,11 @@ def _distinct_receipt(
     target_exposure: Decimal,
     decided_at: datetime,
     marker: str,
+    symbol: str = "QQQ",
 ) -> ResearchDecisionReceipt:
     proposal = TargetExposureProposal(
         proposal_id=f"source-proposal-{marker}-not-exported",
-        symbol="QQQ",
+        symbol=symbol,
         market="US",
         action=action,
         target_exposure=target_exposure,
