@@ -163,6 +163,18 @@ accepted increase but does not reorder, score, reserve, or treat an unexecuted
 reduction or exit as released capacity. Execution independently rechecks
 feasible targets and order quantization after actual position state is known.
 
+The first opportunity-selection foundation is also pure and caller-owned. It
+accepts only already source-attested candidates plus caller-supplied bounded
+scores under one frozen score schema. Before any top-K comparison it requires
+one shared `as_of`, snapshot identity, completed-bar/source-semantics identity,
+and availability grade. A stale, duplicate, unqualified, future, or mixed
+context input rejects that one selection cycle rather than being silently
+dropped; otherwise every input receives a `selected` or categorical
+not-selected result, with stable symbol-identity tie breaking. This is a
+mechanism, not alpha evidence: a future campaign must predeclare the ranking
+key, K, turnover, capacity, correlation, and cost assumptions before using its
+selection output for comparative, ensemble, or Paper-candidate claims.
+
 The pure target-policy cycle composes that allocator with the existing
 per-symbol policy only after each entry supplies an existing monotone current-
 source eligibility attestation and binds the same current symbol exposure in
@@ -171,6 +183,14 @@ policy proposal and the allocated proposal, so later attribution can
 distinguish an expert-policy decision from a capacity cap. It has no
 opportunity-ranking, model-training, portfolio-reservation, data, or broker
 authority.
+
+The source-attested selection-policy cycle composes the three pure stages in
+selection-rank order. It retains an outcome for every candidate: unselected
+candidates have no downstream policy result, selected candidates retain both
+their per-symbol policy proposal and capacity-allocated target. Thus selection
+exclusion cannot be misreported as a policy abstention or an allocation cap.
+It has no data access, score generation, training, reservation, execution, or
+Paper authority.
 
 ### Ownership Boundary
 

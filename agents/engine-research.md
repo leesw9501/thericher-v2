@@ -58,6 +58,17 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   proposal layers for later attribution. It has no data, model, ranking,
   reservation, execution, or Paper authority; without a qualified input it
   cannot create a candidate or research result.
+- The pure source-attested selection-policy cycle now adds the upstream
+  cross-sectional decision layer. It requires one shared snapshot/as-of,
+  completed-bar semantics, availability grade, and frozen score schema before
+  top-K selection; stale, duplicate, unqualified, future, or mixed inputs
+  reject only that cycle. Every valid candidate retains a selected or
+  not-selected outcome, and selected candidates retain their later policy and
+  allocation outcomes separately. Claude's `supported-with-limits` review
+  requires a future campaign to freeze the ranking key, K, turnover, capacity,
+  correlation, and cost assumptions before any comparative, ensemble, or Paper
+  claim. This pure mechanism has no score generation, data, training, GPU,
+  reservation, execution, or Paper authority.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed
@@ -70,7 +81,7 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 | Technical/chart and momentum/regime | Fixed local mechanics and negative baselines only | New causal, time-disjoint input plus frozen contract |
 | Classical ML/statistical | No active campaign | Qualified dataset and CPU-first preflight |
 | Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
-| Portfolio/allocation/meta-decision | Deterministic scale/cap foundation only | Aligned out-of-fold upstream candidate evidence |
+| Portfolio/allocation/meta-decision | Deterministic source-attested selection, per-symbol policy, and scale/cap foundation only | Aligned out-of-fold upstream candidate evidence with a frozen ranking/turnover/capacity/correlation contract |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and

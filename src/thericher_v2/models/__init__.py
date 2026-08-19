@@ -16,6 +16,19 @@ from .multitimeframe_momentum import (
     build_multitimeframe_momentum_evidence,
     build_multitimeframe_momentum_evidence_from_causal_window,
 )
+from .opportunity_selection import (
+    OpportunitySelectionConfig,
+    OpportunitySelectionContext,
+    OpportunitySelectionEntry,
+    OpportunitySelectionInputError,
+    OpportunitySelectionOutcome,
+    select_source_attested_opportunities,
+)
+from .opportunity_selection_policy_cycle import (
+    OpportunitySelectionPolicyCycleEntry,
+    OpportunitySelectionPolicyCycleOutcome,
+    evaluate_opportunity_selection_policy_cycle,
+)
 from .sequence_window import (
     CAUSAL_SEQUENCE_WINDOW_SCHEMA_ID,
     SUPPORTED_SEQUENCE_WINDOW_TIMEFRAMES,
@@ -57,6 +70,13 @@ __all__ = [
     "MultiTimeframeMomentumConfig",
     "MultiTimeframeMomentumEvidence",
     "MultiTimeframeMomentumSpec",
+    "OpportunitySelectionConfig",
+    "OpportunitySelectionContext",
+    "OpportunitySelectionEntry",
+    "OpportunitySelectionInputError",
+    "OpportunitySelectionOutcome",
+    "OpportunitySelectionPolicyCycleEntry",
+    "OpportunitySelectionPolicyCycleOutcome",
     "OpportunityEligibility",
     "TargetExposureAllocationConfig",
     "TargetExposureAllocationCycleEntry",
@@ -73,5 +93,7 @@ __all__ = [
     "build_multitimeframe_momentum_evidence",
     "build_multitimeframe_momentum_evidence_from_causal_window",
     "evaluate_target_exposure_policy_cycle",
+    "evaluate_opportunity_selection_policy_cycle",
     "propose_target_exposure",
+    "select_source_attested_opportunities",
 ]
