@@ -82,6 +82,14 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   one optional static boundary label only; it does not reinterpret the v2
   receipt. Its v3 contract is not a campaign input, GPU appointment, model
   selection, replay, or Paper consumer.
+- The v3 one-shot is now `commit/cache_contract/cache_prepare`, while the
+  external cache reattests unchanged. This is a narrower Data recovery fact
+  only; it still creates no campaign, GPU appointment, model selection, replay,
+  or Paper consumer.
+- The v4 source-only subphase contract can label a future matching exception by
+  fixed source region only. It does not interpret the v3 result, create a
+  campaign, consume GPU custody, select a model, run a replay, or create a
+  Paper consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ

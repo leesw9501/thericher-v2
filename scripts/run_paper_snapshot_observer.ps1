@@ -1,13 +1,13 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Join-Path $PSScriptRoot "..")
+    [string]$ProjectRoot = (Join-Path $PSScriptRoot ".."),
+    [string]$ObserverMutexName = "Global\TheRicherPaperSnapshotObserver"
 )
 
 $ErrorActionPreference = "Stop"
 $RefreshCadenceMinutes = 4
 $SnapshotTtlMinutes = 5
 $MinimumSessionRemainingMinutes = 4
-$ObserverMutexName = "Global\TheRicherPaperSnapshotObserver"
 
 function Get-ObserverUtcNow {
     return (Get-Date).ToUniversalTime()

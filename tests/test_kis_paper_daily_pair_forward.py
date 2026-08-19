@@ -10,11 +10,13 @@ import pytest
 from thericher_v2.data import kis_paper_daily_pair_forward_cache as pair_forward_cache
 from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES,
+    KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_PREPARE_SUBPHASES,
     KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
     KisPaperDailyPairForwardCacheError,
     KisPaperDailyPairForwardRow,
     commit_kis_paper_daily_pair_forward_observation,
     get_kis_paper_daily_pair_forward_commit_failure_phase,
+    get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase,
     load_verified_kis_paper_daily_pair_forward_cache,
 )
 from thericher_v2.execution.kis_market_data import (
@@ -141,6 +143,82 @@ def test_pair_cache_defers_only_failed_target_and_rejects_conflicting_duplicate(
 
 
 @pytest.mark.parametrize(
+    ("subphase", "patch_name"),
+    [
+        ("cache_access", "_external_root"),
+        ("cache_state_load", "_load_or_initialize_index"),
+        ("incoming_merge", "_compressed_rows"),
+    ],
+)
+def test_pair_cache_attaches_prepare_subphase_at_fixed_region_without_mutating_error(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    subphase: str,
+    patch_name: str,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    error = KisPaperDailyPairForwardCacheError("private-subphase-detail-canary", "opaque")
+    expected_args = error.args
+
+    monkeypatch.setattr(
+        pair_forward_cache,
+        patch_name,
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(error),
+    )
+
+    with pytest.raises(KisPaperDailyPairForwardCacheError) as raised:
+        commit_kis_paper_daily_pair_forward_observation(
+            rows_by_target=_rows_for_pair((date(2026, 7, 27),)),
+            failure_reasons_by_target={},
+            cache_root=tmp_path / "external" / "qqq-spy-forward",
+            repo_root=repo_root,
+        )
+
+    assert raised.value is error
+    assert type(raised.value) is KisPaperDailyPairForwardCacheError
+    assert raised.value.args == expected_args
+    assert get_kis_paper_daily_pair_forward_commit_failure_phase(raised.value) == "cache_prepare"
+    assert (
+        get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase(raised.value)
+        == subphase
+    )
+
+
+def test_pair_cache_keeps_prepare_subphase_absent_for_unclassified_boundary(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    error = KisPaperDailyPairForwardCacheError("private-subphase-detail-canary", "opaque")
+    expected_args = error.args
+
+    class _UnclassifiedLock:
+        def __enter__(self) -> None:
+            raise error
+
+        def __exit__(self, *_args: object) -> bool:
+            return False
+
+    monkeypatch.setattr(pair_forward_cache, "_exclusive_lock", lambda _path: _UnclassifiedLock())
+
+    with pytest.raises(KisPaperDailyPairForwardCacheError) as raised:
+        commit_kis_paper_daily_pair_forward_observation(
+            rows_by_target=_rows_for_pair((date(2026, 7, 27),)),
+            failure_reasons_by_target={},
+            cache_root=tmp_path / "external" / "qqq-spy-forward",
+            repo_root=repo_root,
+        )
+
+    assert raised.value is error
+    assert type(raised.value) is KisPaperDailyPairForwardCacheError
+    assert raised.value.args == expected_args
+    assert get_kis_paper_daily_pair_forward_commit_failure_phase(raised.value) == "cache_prepare"
+    assert get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase(raised.value) is None
+
+
+@pytest.mark.parametrize(
     ("phase", "patch_name"),
     [
         ("snapshot_persist", "_write_snapshot"),
@@ -175,11 +253,13 @@ def test_pair_cache_attaches_only_fixed_commit_phase_at_persist_boundaries(
     assert raised.value is error
     assert str(raised.value) == "private-phase-detail-canary"
     assert get_kis_paper_daily_pair_forward_commit_failure_phase(raised.value) == phase
+    assert get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase(raised.value) is None
 
 
 def test_pair_cache_commit_phase_reader_rejects_unrecognized_or_noncache_errors() -> None:
     error = KisPaperDailyPairForwardCacheError("private-phase-detail-canary")
     error._commit_failure_phase = "not_allowlisted"  # noqa: SLF001
+    error._commit_failure_prepare_subphase = "cache_access"  # noqa: SLF001
 
     assert KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES == (
         "cache_prepare",
@@ -187,8 +267,18 @@ def test_pair_cache_commit_phase_reader_rejects_unrecognized_or_noncache_errors(
         "index_persist",
         "cache_reverify",
     )
+    assert KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_PREPARE_SUBPHASES == (
+        "cache_access",
+        "cache_state_load",
+        "incoming_merge",
+    )
     assert get_kis_paper_daily_pair_forward_commit_failure_phase(error) is None
+    assert get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase(error) is None
     assert get_kis_paper_daily_pair_forward_commit_failure_phase(OSError("private")) is None
+    assert (
+        get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase(OSError("private"))
+        is None
+    )
 
 
 def test_pair_cache_rejects_git_root_and_wrong_exchange(tmp_path: Path) -> None:

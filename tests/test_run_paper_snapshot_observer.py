@@ -5,6 +5,7 @@ import re
 import subprocess
 from datetime import UTC, datetime
 from pathlib import Path
+from uuid import uuid4
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "run_paper_snapshot_observer.ps1"
 
@@ -29,6 +30,7 @@ def _run_with_fake_host_commands(
     inspector_path.write_text("# fixture\n", encoding="ascii")
     (project_root / "docker-compose.yml").write_text("services: {}\n", encoding="ascii")
     docker_marker = tmp_path / "docker-called.txt"
+    fixture_mutex_name = f"Global\\TheRicherPaperSnapshotObserver-fixture-{uuid4().hex}"
     bridge_json = json.dumps(bridge_payload, separators=(",", ":"))
     clock_fixture: list[str] = []
     if bridge_recheck_minutes is not None:
@@ -88,7 +90,11 @@ def _run_with_fake_host_commands(
                 "    Write-Output $bridgeJson",
                 f"    $global:LASTEXITCODE = {bridge_exit_code}",
                 "}",
-                f"& {_powershell_literal(SCRIPT)} -ProjectRoot {_powershell_literal(project_root)}",
+                (
+                    f"& {_powershell_literal(SCRIPT)} "
+                    f"-ProjectRoot {_powershell_literal(project_root)} "
+                    f"-ObserverMutexName {_powershell_literal(fixture_mutex_name)}"
+                ),
                 "exit $LASTEXITCODE",
                 "",
             ]
@@ -121,6 +127,7 @@ def test_paper_snapshot_observer_is_bounded_and_uses_only_the_readonly_service()
     assert "$MinimumSessionRemainingMinutes = 4" in source
     assert "$RefreshCadenceMinutes -ge $SnapshotTtlMinutes" in source
     assert "Global\\TheRicherPaperSnapshotObserver" in source
+    assert '[string]$ObserverMutexName = "Global\\TheRicherPaperSnapshotObserver"' in source
     assert "New-Object System.Threading.Mutex" in source
     assert "$mutex.WaitOne(0)" in source
     assert "$mutex.ReleaseMutex()" in source

@@ -736,6 +736,52 @@ allowlist rejection, field omission, and a private-detail canary. This package
 made no credential, KIS, Docker, cache-write, scheduler, Research, Execution,
 Paper, or live call.
 
+### V3 One-Shot Outcome
+
+Claude's collection recheck was `supported-with-limits`: exact-one and
+matching-hash enforcement belongs to the host orchestration, and a deferred
+execute can alter the cache observation without a page collection. The v3
+networkless preflight wrote
+`run=20260819T175759151923Z-5abf449a6416418f/receipt.json`
+(`sha256:6fa27ec40b8009b76c0c31fe6210a4ad8814676566bc5f6cc442fa71a011fd5a`)
+as matching `collection_required`. It retained no cache payload and all
+non-market-data route flags are false. Exactly one collector then wrote
+`run=20260819T175852692208Z-6dd72fc496fc48d5/receipt.json`
+(`sha256:cd1b1222c61da98aa12091b8a61bd153cd91e2943d0c79c98dafe4340eb33dc3`)
+as `unavailable/collector_unavailable/failure_stage=commit` with
+`commit_failure_kind=cache_contract` and
+`commit_failure_phase=cache_prepare`.
+
+The selected local tag was unchanged across the call, which does not prove
+immutable image provenance. The receipt contains no cache payload or forbidden
+market/private fields. The offline cache/index reattach to their prior
+identities with seven common sessions and two seven-row streams; zero files were
+observed changed in the bounded invocation window. This is a fixed prepare-phase
+category, not an exact cause or a data/finality/consumer conclusion. Do not
+retry. A later local-only diagnostic may distinguish only `cache_access`,
+`cache_state_load`, or `incoming_merge` for a future matching result.
+
+### Prepare Subphase V4
+
+The source/fixture-only v4 contract is
+`sha256:95e0ec0fd7408e237cbb79e4010e152291dd4322f58133bd4c46207c258dc893`.
+Only the exact triple `failure_stage=commit`,
+`commit_failure_kind=cache_contract`, and
+`commit_failure_phase=cache_prepare` may carry optional
+`commit_failure_prepare_subphase`. Its fixed values are `cache_access`,
+`cache_state_load`, and `incoming_merge`. They identify only the static source
+region where a cache exception surfaced, never an exact cause. An unclassified
+boundary omits the field. The cache exception type, message, and args remain
+unchanged, and no dynamic error, path, raw row, cache value, credential, or
+account datum enters the receipt.
+
+Claude's falsification-first review was `supported-with-limits`: preserve the
+region-versus-cause distinction and add no incident-shaped value. Fixture tests
+cover every fixed region, triple mismatch, unclassified omission, exception
+preservation, and a private-detail canary. This package made no credential,
+KIS, Docker, cache-write, scheduler, Research, Execution, Paper, or live call;
+the completed v3 receipt remains subphase-unknown.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

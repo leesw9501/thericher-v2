@@ -39,6 +39,11 @@ KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES = (
     "index_persist",
     "cache_reverify",
 )
+KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_PREPARE_SUBPHASES = (
+    "cache_access",
+    "cache_state_load",
+    "incoming_merge",
+)
 
 _INDEX_FILENAME = "index.json"
 _LOCK_FILENAME = "worker.lock"
@@ -84,6 +89,7 @@ class KisPaperDailyPairForwardCacheError(RuntimeError):
     def __init__(self, *args: object) -> None:
         super().__init__(*args)
         self._commit_failure_phase: str | None = None
+        self._commit_failure_prepare_subphase: str | None = None
 
 
 def get_kis_paper_daily_pair_forward_commit_failure_phase(
@@ -97,12 +103,42 @@ def get_kis_paper_daily_pair_forward_commit_failure_phase(
     return phase if phase in KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES else None
 
 
+def get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase(
+    error: BaseException,
+) -> str | None:
+    """Return one fixed prepare region without exposing a causal claim."""
+
+    if get_kis_paper_daily_pair_forward_commit_failure_phase(error) != "cache_prepare":
+        return None
+    subphase = getattr(error, "_commit_failure_prepare_subphase", None)
+    return (
+        subphase
+        if subphase in KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_PREPARE_SUBPHASES
+        else None
+    )
+
+
 def _attach_commit_failure_phase(
     error: KisPaperDailyPairForwardCacheError,
     phase: str,
 ) -> None:
     if get_kis_paper_daily_pair_forward_commit_failure_phase(error) is None:
         error._commit_failure_phase = phase
+
+
+def _attach_commit_failure_prepare_subphase(
+    error: KisPaperDailyPairForwardCacheError,
+    subphase: str,
+) -> None:
+    """Attach only the static region where a prepare failure surfaced."""
+
+    phase = get_kis_paper_daily_pair_forward_commit_failure_phase(error)
+    if phase is None:
+        _attach_commit_failure_phase(error, "cache_prepare")
+    elif phase != "cache_prepare":
+        return
+    if get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase(error) is None:
+        error._commit_failure_prepare_subphase = subphase
 
 
 @dataclass(frozen=True, slots=True)
@@ -336,21 +372,41 @@ def commit_kis_paper_daily_pair_forward_observation(
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
     repository = _repository_root(repo_root)
     try:
-        root = _external_root(Path(cache_root), repository, create=True)
+        try:
+            root = _external_root(Path(cache_root), repository, create=True)
+        except KisPaperDailyPairForwardCacheError as error:
+            _attach_commit_failure_prepare_subphase(error, "cache_access")
+            raise
         with _exclusive_lock(root / _LOCK_FILENAME):
             try:
                 index_path = _safe_child(root / _INDEX_FILENAME, root)
                 index_exists = index_path.exists()
+            except KisPaperDailyPairForwardCacheError as error:
+                _attach_commit_failure_prepare_subphase(error, "cache_access")
+                raise
+            try:
                 index = _load_or_initialize_index(root=root, frozen_boundary=frozen_boundary)
                 _validate_index(index, frozen_boundary=frozen_boundary)
+                prior_by_target: dict[
+                    str,
+                    tuple[dict[str, object], tuple[KisPaperDailyPairForwardRow, ...]],
+                ] = {}
+                for target_key in _TARGET_KEYS:
+                    target = _target_document(index, target_key)
+                    existing = _load_target_rows(root=root, target=target, target_key=target_key)
+                    prior_by_target[target_key] = (target, existing)
+            except KisPaperDailyPairForwardCacheError as error:
+                _attach_commit_failure_prepare_subphase(error, "cache_state_load")
+                raise
+
+            try:
                 merged_by_target: dict[str, tuple[KisPaperDailyPairForwardRow, ...]] = {}
                 changed_targets: set[str] = set()
                 pending_snapshots: dict[str, tuple[bytes, str, str]] = {}
                 target_updates: dict[str, dict[str, object]] = {}
 
                 for target_key in _TARGET_KEYS:
-                    target = _target_document(index, target_key)
-                    existing = _load_target_rows(root=root, target=target, target_key=target_key)
+                    target, existing = prior_by_target[target_key]
                     if target_key in failure_reasons_by_target:
                         target_updates[target_key] = _failure_target_document(
                             target,
@@ -389,7 +445,7 @@ def commit_kis_paper_daily_pair_forward_observation(
                             rows_sha256=_rows_sha256(existing) if existing else None,
                         )
             except KisPaperDailyPairForwardCacheError as error:
-                _attach_commit_failure_phase(error, "cache_prepare")
+                _attach_commit_failure_prepare_subphase(error, "incoming_merge")
                 raise
 
             wrote_snapshot = False
@@ -935,8 +991,12 @@ def _json_mapping(payload: bytes, label: str) -> dict[str, object]:
 
 @contextmanager
 def _exclusive_lock(path: Path) -> Iterator[None]:
-    if path.is_symlink():
-        raise KisPaperDailyPairForwardCacheError("pair forward lock is invalid")
+    try:
+        if path.is_symlink():
+            raise KisPaperDailyPairForwardCacheError("pair forward lock is invalid")
+    except KisPaperDailyPairForwardCacheError as error:
+        _attach_commit_failure_prepare_subphase(error, "cache_access")
+        raise
     with path.open("a+b") as handle:
         _lock(handle)
         try:

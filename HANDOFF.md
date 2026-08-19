@@ -465,6 +465,57 @@ canary. No credential, KIS, Docker, cache-write, scheduler, Research,
 Execution, Paper, or live action occurred. This establishes a future diagnostic
 surface only; it does not infer a phase for the v1 or v2 receipt.
 
+Claude's v3 collection recheck was `supported-with-limits`: the host must
+enforce the exact-one and matching-hash conditions, and a gate-deferred execute
+path can still alter a cache observation without collecting pages. Codex applied
+both limits. The v3 credential-free preflight wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T175759151923Z-5abf449a6416418f/receipt.json`
+(`sha256:6fa27ec40b8009b76c0c31fe6210a4ad8814676566bc5f6cc442fa71a011fd5a`)
+as matching `collection_required`; it had no cache payload and all
+non-market-data route flags were false. Exactly one existing collector then
+wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T175852692208Z-6dd72fc496fc48d5/receipt.json`
+(`sha256:cd1b1222c61da98aa12091b8a61bd153cd91e2943d0c79c98dafe4340eb33dc3`)
+as `unavailable/collector_unavailable/failure_stage=commit`, fixed
+`commit_failure_kind=cache_contract`, and fixed
+`commit_failure_phase=cache_prepare`. The tag was locally unchanged across that
+one call, but this is not immutable image provenance. The receipt retains no
+cache payload or forbidden market/private fields; its static hash matches host
+v3. The cache and index reattach to their prior identities with seven common
+sessions and two seven-row target streams; no file mutation was observed in the
+bounded invocation window. No retry ran. This does not establish the exact
+prepare cause, data availability, finality, causal qualification, Research,
+Execution, Paper, or live eligibility.
+
+The next bounded package is source/fixture-only `cache_prepare` subphase
+diagnostics. It may add only `cache_access`, `cache_state_load`, or
+`incoming_merge` for a future matching failure. It must preserve v3 as
+subphase-unknown and make no KIS, Docker, cache-write, or retry call.
+
+That package is complete. The v4 static contract hash is
+`sha256:95e0ec0fd7408e237cbb79e4010e152291dd4322f58133bd4c46207c258dc893`.
+Only a future `commit/cache_contract/cache_prepare` outcome may carry optional
+`commit_failure_prepare_subphase`: `cache_access`, `cache_state_load`, or
+`incoming_merge`. Each value names only the fixed source region where the
+cache exception surfaced; it is not an exact cause claim. An unclassified
+boundary leaves the field absent. The cache error's type, message, and args are
+preserved, and the collector exposes no dynamic exception or cache detail.
+Claude's falsification-first review was `supported-with-limits`: do not treat a
+region as causation and do not add incident-shaped values. The v3 receipt stays
+subphase-unknown. This local package made no credential, KIS, Docker,
+cache-write, scheduler, Research, Execution, Paper, or live call.
+
+The goal-boundary parallel suite initially exposed an unrelated fixture race:
+its fake snapshot observer shared the production global mutex with a task-owned
+read-only observer. The observer keeps that production default, while fixtures
+now pass a unique mutex name. The repaired authority run completed
+`3206 passed, 19 skipped, 51 warnings`; this changes no real observer,
+schedule, Docker route, KIS call, account read, or order capability.
+
+The next objective is one independently scoped v4 preflight and, only when its
+matching source-safe result requires collection, one existing QQQ/SPY collector
+call. It is not an automatic retry and remains Data-only.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

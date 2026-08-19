@@ -387,8 +387,17 @@ def test_commit_failure_kind_is_limited_to_known_commit_payloads() -> None:
         "commit",
         commit_failure_kind="cache_contract",
         commit_failure_phase="cache_prepare",
+        commit_failure_prepare_subphase="cache_access",
     )
     assert payload["commit_failure_phase"] == "cache_prepare"
+    assert payload["commit_failure_prepare_subphase"] == "cache_access"
+    payload = script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+        observed_at,
+        "commit",
+        commit_failure_kind="cache_contract",
+        commit_failure_phase="cache_prepare",
+    )
+    assert "commit_failure_prepare_subphase" not in payload
     with pytest.raises(ValueError):
         script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
             observed_at,
@@ -414,6 +423,22 @@ def test_commit_failure_kind_is_limited_to_known_commit_payloads() -> None:
             "commit",
             commit_failure_kind="cache_contract",
             commit_failure_phase="not_allowlisted",
+        )
+    with pytest.raises(ValueError):
+        script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+            observed_at,
+            "commit",
+            commit_failure_kind="cache_contract",
+            commit_failure_phase="snapshot_persist",
+            commit_failure_prepare_subphase="cache_access",
+        )
+    with pytest.raises(ValueError):
+        script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+            observed_at,
+            "commit",
+            commit_failure_kind="cache_contract",
+            commit_failure_phase="cache_prepare",
+            commit_failure_prepare_subphase="not_allowlisted",
         )
 
 
@@ -462,6 +487,7 @@ def test_commit_failure_phase_emits_only_fixed_safe_cache_contract_detail(
     private_detail = "private-phase-detail-canary"
     error = script.KisPaperDailyPairForwardCacheError(private_detail)
     error._commit_failure_phase = "cache_prepare"  # type: ignore[attr-defined]  # noqa: SLF001
+    error._commit_failure_prepare_subphase = "cache_access"  # type: ignore[attr-defined]  # noqa: SLF001
 
     _install_ready_gates(monkeypatch, script)
     monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", lambda: object())
@@ -496,10 +522,35 @@ def test_commit_failure_phase_emits_only_fixed_safe_cache_contract_detail(
         "commit",
         expected_commit_failure_kind="cache_contract",
         expected_commit_failure_phase="cache_prepare",
+        expected_commit_failure_prepare_subphase="cache_access",
     )
     receipt = emitted["receipt"]
     assert isinstance(receipt, dict)
     assert private_detail not in json.dumps(receipt, sort_keys=True)
+
+
+def test_commit_failure_prepare_subphase_is_omitted_without_matching_triple() -> None:
+    script = _script_module()
+    error = script.KisPaperDailyPairForwardCacheError("private-phase-detail-canary")
+    error._commit_failure_phase = "snapshot_persist"  # type: ignore[attr-defined]  # noqa: SLF001
+    error._commit_failure_prepare_subphase = "cache_access"  # type: ignore[attr-defined]  # noqa: SLF001
+
+    assert (
+        script._commit_failure_prepare_subphase(  # type: ignore[attr-defined]  # noqa: SLF001
+            error,
+            "cache_contract",
+            "snapshot_persist",
+        )
+        is None
+    )
+    assert (
+        script._commit_failure_prepare_subphase(  # type: ignore[attr-defined]  # noqa: SLF001
+            error,
+            "storage",
+            "cache_prepare",
+        )
+        is None
+    )
 
 
 def test_networkless_readiness_checks_only_control_and_aggregate_environment(
@@ -624,6 +675,11 @@ def test_runtime_contract_fingerprint_is_static_and_environment_independent(
         "snapshot_persist",
         "index_persist",
         "cache_reverify",
+    )
+    assert script._RUNTIME_CONTRACT["commit_failure_prepare_subphases"] == (  # type: ignore[attr-defined]  # noqa: SLF001
+        "cache_access",
+        "cache_state_load",
+        "incoming_merge",
     )
 
 
@@ -804,6 +860,7 @@ def _assert_collector_stage(
     *,
     expected_commit_failure_kind: str | None = None,
     expected_commit_failure_phase: str | None = None,
+    expected_commit_failure_prepare_subphase: str | None = None,
 ) -> None:
     receipt = emitted["receipt"]
     assert isinstance(receipt, dict)
@@ -821,6 +878,13 @@ def _assert_collector_stage(
         assert "commit_failure_phase" not in payload
     else:
         assert payload["commit_failure_phase"] == expected_commit_failure_phase
+    if expected_commit_failure_prepare_subphase is None:
+        assert "commit_failure_prepare_subphase" not in payload
+    else:
+        assert (
+            payload["commit_failure_prepare_subphase"]
+            == expected_commit_failure_prepare_subphase
+        )
 
 
 def _runtime_contract_sha256(script: object) -> str:
