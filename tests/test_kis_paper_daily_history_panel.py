@@ -93,13 +93,65 @@ def test_fails_closed_on_lineage_drift_and_does_not_fake_cross_symbol_alignment(
 
     misaligned_cache = _write_history_cache(
         tmp_path / "misaligned-cache",
+        session_overrides={"MSFT": (date(2020, 1, 2), date(2020, 1, 6))},
+    )
+    with pytest.raises(ValueError, match="normal US session gap"):
+        panel.build_kis_paper_daily_history_panel(cache_root=misaligned_cache)
+
+    disjoint_cache = _write_history_cache(
+        tmp_path / "disjoint-cache",
         session_overrides={"MSFT": (date(2021, 1, 4), date(2021, 1, 5), date(2021, 1, 6))},
     )
-    result = panel.build_kis_paper_daily_history_panel(cache_root=misaligned_cache)
+    result = panel.build_kis_paper_daily_history_panel(cache_root=disjoint_cache)
 
     assert result.common_intersection_available is False
     assert result.common_sessions == ()
     assert all(stream.bars for stream in result.bars_by_symbol.values())
+
+
+def test_rejects_a_shared_normal_us_session_gap_without_external_access(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    shared_sessions = (date(2020, 1, 2), date(2020, 1, 6))
+    cache_root = _write_history_cache(
+        tmp_path / "shared-gap-cache",
+        session_overrides={
+            symbol: shared_sessions
+            for symbol in panel.KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        },
+    )
+    _deny_external_access(monkeypatch)
+
+    with pytest.raises(ValueError, match="normal US session gap"):
+        panel.build_kis_paper_daily_history_panel(cache_root=cache_root)
+
+
+@pytest.mark.parametrize(
+    "sessions",
+    [
+        (date(1990, 1, 2), date(1990, 1, 3), date(1990, 1, 4)),
+        (date(2020, 12, 31), date(2021, 1, 4)),
+        (date(2020, 11, 25), date(2020, 11, 27), date(2020, 11, 30)),
+        (date(2025, 1, 8), date(2025, 1, 10)),
+    ],
+)
+def test_allows_known_us_equity_non_sessions(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    sessions: tuple[date, ...],
+) -> None:
+    cache_root = _write_history_cache(
+        tmp_path / "known-closure-cache",
+        session_overrides={
+            symbol: sessions for symbol in panel.KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        },
+    )
+    _deny_external_access(monkeypatch)
+
+    result = panel.build_kis_paper_daily_history_panel(cache_root=cache_root)
+
+    assert result.common_sessions == sessions
 
 
 def test_rejects_mutable_outputs_and_paths_inside_git(tmp_path: Path) -> None:

@@ -19,9 +19,12 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from decimal import Decimal, InvalidOperation
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from types import MappingProxyType
 from typing import Literal
+
+import pandas_market_calendars as mcal
 
 from thericher_v2.contracts import SCHEMA_VERSION, Bar, Timeframe
 from thericher_v2.data.local import (
@@ -114,6 +117,10 @@ _RAW_LIMITATIONS = (
     "current_listing_registry_not_point_in_time_universe",
     "source_local_only_no_cross_source_blend",
 )
+_SESSION_CALENDAR_ALIAS = "NASDAQ"
+_SESSION_CALENDAR_NAME = "NYSE"
+_SESSION_CALENDAR_PACKAGE = "pandas_market_calendars"
+_SESSION_CALENDAR_VERSION = "5.4.0"
 _SAFE_FIELD_NAMES = frozenset(
     {
         "open",
@@ -228,14 +235,10 @@ class KisPaperDailyHistoryPanel:
                 != tuple(sorted(bar.start_ts.date() for bar in stream.bars))
             ):
                 raise ValueError("KIS paper daily history panel stream is invalid")
-        expected_common = tuple(
-            sorted(
-                set.intersection(
-                    *(
-                        set(bar.start_ts.date() for bar in stream.bars)
-                        for stream in streams.values()
-                    )
-                )
+        expected_common = _common_sessions(
+            tuple(
+                {bar.start_ts.date() for bar in stream.bars}
+                for stream in streams.values()
             )
         )
         if sessions != expected_common:
@@ -305,9 +308,8 @@ def build_kis_paper_daily_history_panel(
             coverage_end_bucket=_coverage_bucket(sessions[-1]),
         )
 
-    common_sessions = tuple(
-        sorted(set.intersection(*(set(rows) for rows in rows_by_target.values())))
-    )
+    common_sessions = _common_sessions(tuple(set(rows) for rows in rows_by_target.values()))
+    _validate_expected_us_equity_session_coverage(common_sessions)
     dataset_hash = _dataset_hash(
         index_hash=index_hash,
         rows_by_target=rows_by_target,
@@ -759,6 +761,35 @@ def _bar_from_record(record: tuple[str, ...]) -> Bar:
         )
     except (InvalidOperation, ValueError) as error:
         raise ValueError("KIS paper daily history panel raw contents are invalid") from error
+
+
+def _common_sessions(session_sets: tuple[set[date], ...]) -> tuple[date, ...]:
+    if not session_sets:
+        return ()
+    return tuple(sorted(set.intersection(*session_sets)))
+
+
+def _validate_expected_us_equity_session_coverage(sessions: tuple[date, ...]) -> None:
+    if not sessions:
+        return
+    try:
+        installed_version = version(_SESSION_CALENDAR_PACKAGE)
+    except PackageNotFoundError as error:
+        raise ValueError("KIS paper daily history session calendar is unavailable") from error
+    if installed_version != _SESSION_CALENDAR_VERSION:
+        raise ValueError("KIS paper daily history session calendar version is invalid")
+    calendar = mcal.get_calendar(_SESSION_CALENDAR_ALIAS)
+    if calendar.name != _SESSION_CALENDAR_NAME:
+        raise ValueError("KIS paper daily history session calendar is invalid")
+    expected = tuple(
+        session.date()
+        for session in calendar.schedule(
+            start_date=sessions[0],
+            end_date=sessions[-1],
+        ).index
+    )
+    if sessions != expected:
+        raise ValueError("KIS paper daily history panel has a normal US session gap")
 
 
 def _dataset_hash(
