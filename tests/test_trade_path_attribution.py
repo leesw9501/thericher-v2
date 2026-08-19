@@ -6,6 +6,8 @@ from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
+
 from thericher_v2.contracts import Bar, Timeframe
 from thericher_v2.execution import BROKER_DISABLED_SOURCE, LOCAL_PAPER_SOURCE
 from thericher_v2.research.trade_path_attribution import (
@@ -150,6 +152,58 @@ def test_trade_path_attribution_surfaces_non_local_sources(tmp_path) -> None:
     assert verification["local_paper_fill_count"] == 2
 
 
+def test_trade_path_attribution_fails_closed_for_fill_instrument_mismatch(tmp_path) -> None:
+    events = tmp_path / "events.jsonl"
+    start = datetime(2026, 1, 2, 14, 30, tzinfo=UTC)
+    _write_events(
+        events,
+        (
+            _fill_event(
+                created_at=start,
+                side="buy",
+                price="10.00",
+                quantity="1",
+                fee="0.01",
+                source=LOCAL_PAPER_SOURCE,
+                symbol="MSFT",
+            ),
+            _fill_event(
+                created_at=start + timedelta(minutes=1),
+                side="sell",
+                price="10.50",
+                quantity="1",
+                fee="0.01",
+                source=LOCAL_PAPER_SOURCE,
+                symbol="MSFT",
+            ),
+        ),
+    )
+
+    with pytest.raises(ValueError, match="does not match trade-path artifact instrument"):
+        attribute_trade_paths_from_local_paper_events(
+            event_artifacts=(
+                TradePathEventArtifact(
+                    path=events,
+                    expected_fill_count=2,
+                    slice_id="aaa_slice",
+                    variant_id="t01",
+                    symbol="AAA",
+                ),
+            ),
+            bars=(
+                _bar("AAA", start, low="9.90", high="10.10", close="10.00"),
+                _bar(
+                    "AAA",
+                    start + timedelta(minutes=1),
+                    low="10.00",
+                    high="10.60",
+                    close="10.50",
+                ),
+            ),
+            checked_at=start,
+        )
+
+
 def test_trade_path_attribution_tolerates_zero_fill_missing_artifacts_only(
     tmp_path,
 ) -> None:
@@ -252,6 +306,8 @@ def _fill_event(
     quantity: str,
     fee: str,
     source: str,
+    symbol: str = "AAA",
+    market: str = "US",
 ) -> dict[str, object]:
     return {
         "created_at": created_at.isoformat(),
@@ -262,8 +318,8 @@ def _fill_event(
             "price": price,
             "quantity": quantity,
             "fee": fee,
-            "symbol": "AAA",
-            "market": "US",
+            "symbol": symbol,
+            "market": market,
         },
     }
 

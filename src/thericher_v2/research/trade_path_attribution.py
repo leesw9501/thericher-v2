@@ -111,6 +111,13 @@ def attribute_trade_paths_from_local_paper_events(
             source = str(fill.get("source") or "")
             if source != LOCAL_PAPER_SOURCE:
                 continue
+            if (
+                str(fill.get("market") or "").upper() != event_artifact.market.upper()
+                or str(fill.get("symbol") or "").upper() != event_artifact.symbol.upper()
+            ):
+                raise ValueError(
+                    "local paper fill does not match trade-path artifact instrument"
+                )
             side = str(fill.get("side") or "")
             quantity = _positive_decimal(fill.get("quantity"), "quantity")
             price = _positive_decimal(fill.get("price"), "price")

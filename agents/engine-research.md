@@ -98,9 +98,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   valid FIFO close segments, with separate role and pair accounting totals.
   Its pure receipt resolver attaches only exact opaque campaign/model/input/
   proposal lineage and fails closed on missing, duplicate, role, or instrument
-  mismatch. This is future PnL-attribution plumbing only: it neither assigns
-  causal credit nor changes the lack of a qualified dataset, candidate, model,
-  execution result, or Paper outcome.
+  mismatch. Descriptive trade-path attribution also requires every local-paper
+  fill to match its declared artifact market and symbol. This is future
+  PnL-attribution plumbing only: it neither assigns causal credit nor changes
+  the lack of a qualified dataset, candidate, model, execution result, or
+  Paper outcome.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed
