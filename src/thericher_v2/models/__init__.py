@@ -33,6 +33,11 @@ from .target_exposure_cycle_allocator import (
     TargetExposureAllocationCycleEntry,
     allocate_target_exposure_cycle,
 )
+from .target_exposure_policy_cycle import (
+    TargetExposurePolicyCycleEntry,
+    TargetExposurePolicyCycleOutcome,
+    evaluate_target_exposure_policy_cycle,
+)
 from .target_position_policy import (
     OpportunityEligibility,
     TargetPositionPolicyConfig,
@@ -56,6 +61,8 @@ __all__ = [
     "TargetExposureAllocationConfig",
     "TargetExposureAllocationCycleEntry",
     "TargetExposureAllocationInput",
+    "TargetExposurePolicyCycleEntry",
+    "TargetExposurePolicyCycleOutcome",
     "TargetPositionPolicyConfig",
     "SequenceWindowInputError",
     "allocate_target_exposure",
@@ -65,5 +72,6 @@ __all__ = [
     "build_causal_multitimeframe_sequence_window",
     "build_multitimeframe_momentum_evidence",
     "build_multitimeframe_momentum_evidence_from_causal_window",
+    "evaluate_target_exposure_policy_cycle",
     "propose_target_exposure",
 ]
