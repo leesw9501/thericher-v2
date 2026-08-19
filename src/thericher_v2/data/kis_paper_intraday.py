@@ -249,13 +249,24 @@ def load_verified_kis_paper_private_intraday_catalog(
     repo_root: Path,
     symbol: str,
     exchange: str,
+    expected_index_metadata_sha256: str | None = None,
 ) -> CatalogedBars:
     """Load one KIS-native stream without credentials, network, or source mixing."""
 
+    if expected_index_metadata_sha256 is not None and not _is_sha256(
+        expected_index_metadata_sha256
+    ):
+        raise ValueError("private intraday expected index identity is invalid")
     target = KisPaperPrivateIntradayTarget(symbol=symbol, exchange=exchange)
     root = _external_backfill_root(cache_root=cache_root, repo_root=repo_root)
     index_path = root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME
     index_bytes = _read_bytes(index_path, "private intraday index is invalid")
+    if (
+        expected_index_metadata_sha256 is not None
+        and sha256_kis_paper_private_intraday_v1_index_bytes(index_bytes)
+        != expected_index_metadata_sha256
+    ):
+        raise ValueError("private intraday index identity mismatch")
     index = _decode_json(index_bytes, "private intraday index is invalid")
     target_state = _target_state(index=index, target=target)
     chunks = target_state.get("chunks")

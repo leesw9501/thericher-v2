@@ -2,11 +2,12 @@
 
 ## Objective
 
-Complete `kis-paper-iwm-current-head-cache-mechanics-reattachment-v1`: add and
-run the smallest offline, source-safe reattachment of the accepted isolated
-IWM/AMS current-head cache. It must reuse the existing generic verified private
-intraday cache path to prove only cache/index/manifest/raw-file integrity and
-aggregate page geometry. This is not a KIS call, historical-reach claim,
+Complete `kis-paper-iwm-m1-temporal-reach-continuation-probe-v1`: build and run
+one isolated KIS Paper capability probe for exactly `IWM/AMS/1m`. Use one
+in-memory client for one current-head page and at most one continuation page,
+only when the first response supplies a documented continuation cursor. The
+probe resolves only this endpoint's immediate continuation semantics and
+aggregate relation to its head page. It is not a historical-data completion,
 finality/availability observation, qualified dataset, model result, Paper
 input, order, or live route.
 
@@ -15,46 +16,52 @@ task-owned monitor. Do not foreground-wait for it or manually invoke it.
 
 ## Standing Authorization And Boundaries
 
-- Do not read credentials or `.env`; call neither KIS nor any other provider.
-  Never read or route `KIS_LIVE_*`; never print, log, commit, or send raw rows,
-  compressed raw payloads, credentials, account identifiers, broker bodies,
-  private intents, or tokens to Claude.
-- The offline verifier may read only the existing external IWM current-head
-  cache beneath `D:\market_data` internally to reattest its existing index,
-  manifest, and raw-file integrity. It may return or persist only categorical
-  integrity status and aggregate geometry such as retained chunk/page count,
-  total row count, target identity, and collection scope. Do not expose dates,
-  timestamps, prices, volumes, filenames, row hashes, or raw contents.
-- Keep any new source-safe mechanics receipt beneath
-  `D:\thericher-v2\model-artifacts`; keep raw market data only beneath
-  `D:\market_data`. Never store raw data or generated artifacts in Git. Do not
-  use the legacy IWM replay receipt reader or alter its cache/receipt roots.
-- Do not schedule a worker, start Docker, paginate, retry the collector,
-  submit/modify/cancel an order, or enable live behavior. The completed one-page
-  capture remains immutable evidence and cannot gain predictive, Paper, or GPU
-  eligibility from this reattachment.
+- `KIS_PAPER_*` may be read only by the named probe path for this one bounded
+  KIS Paper market-data invocation. Never read or route `KIS_LIVE_*`; never
+  print, log, commit, or send credentials, account identifiers, raw rows,
+  compressed payloads, broker bodies, private intents, or tokens to Claude.
+- Preserve the existing shared request gate and one in-memory client. The probe
+  may issue one initial current-head request and at most one response-supplied
+  continuation request. It has no retry, pagination loop, historical cursor,
+  previous-day request, scheduler, Docker, account, or order path.
+- Keep any raw market data only beneath a new replay-isolated cache root under
+  `D:\market_data`; keep source-safe probe receipts only beneath
+  `D:\thericher-v2\model-artifacts`. Never store raw data or generated
+  artifacts in Git. Do not mutate the completed IWM current-head or legacy IWM
+  replay cache/receipt roots.
+- Retain only target identity, token/page request counts, accepted-page count,
+  categorical continuation disposition, aggregate page yield/overlap direction,
+  elapsed-time bucket, and `model_input_eligibility: false`. Do not expose
+  dates, timestamps, prices, volumes, filenames, cursor values, row hashes, or
+  raw contents.
+- Do not submit/modify/cancel an order or enable live behavior. A positive
+  continuation result proves neither usable historical coverage, session
+  finality, decision-time availability, cadence, model eligibility, nor a
+  Paper consumer.
 
 ## Required Work
 
-1. Add the smallest public Data-owned offline inspector using the generic
-   verified private-intraday loader plus its source-safe metadata validator for
-   exactly `IWM/AMS`. It must fail closed before producing an outcome on any
-   index, manifest, raw-file, target, or scope mismatch.
-2. Emit or persist a replay-isolated source-safe mechanics result containing
-   only integrity category, aggregate geometry, `session_finality:
-   not_observed`, `decision_time_availability: not_observed`, and
-   `model_input_eligibility: false`.
-3. Add focused tests proving the accepted IWM cache reattaches only aggregate
-   mechanics and that a tampered compressed raw file fails before a source-safe
-   result is produced. Preserve legacy IWM replay-reader compatibility.
-4. Refresh Data, orchestration, and `HANDOFF.md` with the narrow result. Run
+1. Ask Claude CLI for a short falsification-first drift check before changing
+   the collector contract. Then implement the smallest isolated probe with
+   strict cache/receipt separation and no more than two minute-page requests.
+2. Add focused tests proving no provider/credential/order access is needed for
+   offline cases, the second request is impossible without a supplied cursor,
+   replay roots cannot overlap, and an invalid or non-older continuation cannot
+   produce a `reachable` result.
+3. Run the probe once. If it yields a valid older non-conflicting continuation,
+   record only its narrow aggregate reach result. Otherwise record the scoped
+   `input_unavailable` or `continuation_not_observed` outcome. Never retry or
+   turn either result into a collector schedule.
+4. Refresh Data, orchestration, and `HANDOFF.md` with the result. Run
    goal-boundary verification, commit, push, replace this file with exactly one
    material next company objective, and continue.
 
 ## Completion Evidence
 
-- One source-safe offline mechanics result whose verifier internally reattests
-  the existing external cache and reports no raw rows.
-- A tamper test fails closed before output.
-- No provider call, credential read, raw-data exposure, model/PnL claim,
-  broker order, or live route occurs.
+- One source-safe categorical outcome from at most two minute-page requests and
+  one in-memory client, with no live route or order.
+- Strongest kill test: no accepted valid continuation page with a directionally
+  older, non-conflicting relation to the head page. That closes only this
+  endpoint's expansion path and does not block another lane.
+- No raw values, credential values, account identifiers, model/PnL claim, or
+  predictive/Paper/GPU eligibility claim is retained in Git or stateboards.
