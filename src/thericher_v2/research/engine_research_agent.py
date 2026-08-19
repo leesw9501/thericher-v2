@@ -8,6 +8,7 @@ the Git workspace.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -65,6 +66,13 @@ AgentRunStatus = Literal[
     "failed",
     "gpu_locked",
     "queue_empty",
+]
+RunDirectoryState = Literal[
+    "absent",
+    "bare",
+    "interrupted_claim",
+    "terminal",
+    "unknown",
 ]
 SubprocessExecutor = Callable[
     [list[str], Path, dict[str, str]],
@@ -140,6 +148,7 @@ class AgentRunResult:
     job_id: str | None = None
     run_dir: Path | None = None
     claimed_job_path: Path | None = None
+    recovery_queue_path: Path | None = None
     status_artifact: Path | None = None
     command: tuple[str, ...] = ()
     returncode: int | None = None
@@ -153,6 +162,29 @@ class AgentRunResult:
 
 class GpuLockHeldError(RuntimeError):
     """Raised when another Engine Research Agent invocation holds the GPU lock."""
+
+
+class JobIdReuseError(ValueError):
+    """Raised when a queued job would overwrite immutable run evidence."""
+
+    def __init__(
+        self,
+        *,
+        job_id: str,
+        run_dir: Path,
+        run_state: RunDirectoryState,
+        recovery_queue_path: Path | None = None,
+    ) -> None:
+        self.job_id = job_id
+        self.run_dir = run_dir
+        self.recovery_queue_path = recovery_queue_path
+        reason = (
+            f"research job ID {job_id!r} already has immutable {run_state} run evidence; "
+            "leave it unchanged and enqueue recovery under a new job ID"
+        )
+        if recovery_queue_path is not None:
+            reason += f"; preserved duplicate queue item at {recovery_queue_path}"
+        super().__init__(reason)
 
 
 class GpuFileLock:
@@ -247,7 +279,37 @@ def claim_next_job(agent_root: Path) -> AgentClaim | None:
     for queue_path in sorted(queue_dir.glob("*.json"), key=lambda path: path.name):
         spec = _read_agent_job_spec(queue_path)
         run_dir = agent_root / "runs" / spec.job_id
-        run_dir.mkdir(parents=True, exist_ok=False)
+        run_state = _run_directory_state(run_dir)
+        if run_state == "bare":
+            _remove_bare_run_dir(run_dir, spec.job_id)
+            run_state = _run_directory_state(run_dir)
+        if run_state != "absent":
+            recovery_queue_path = _preserve_reused_queue_item(
+                queue_path,
+                agent_root=agent_root,
+                job_id=spec.job_id,
+            )
+            raise JobIdReuseError(
+                job_id=spec.job_id,
+                run_dir=run_dir,
+                run_state=run_state,
+                recovery_queue_path=recovery_queue_path,
+            )
+        try:
+            run_dir.mkdir(parents=True, exist_ok=False)
+        except FileExistsError as exc:
+            run_state = _run_directory_state(run_dir)
+            recovery_queue_path = _preserve_reused_queue_item(
+                queue_path,
+                agent_root=agent_root,
+                job_id=spec.job_id,
+            )
+            raise JobIdReuseError(
+                job_id=spec.job_id,
+                run_dir=run_dir,
+                run_state=run_state,
+                recovery_queue_path=recovery_queue_path,
+            ) from exc
         claimed_path = run_dir / "job.json"
         queue_path.replace(claimed_path)
         return AgentClaim(spec=spec, run_dir=run_dir, claimed_job_path=claimed_path)
@@ -289,6 +351,16 @@ def run_once(
             checked_at=checked_at,
             reason=str(exc),
             agent_root=agent_root,
+        )
+    except JobIdReuseError as exc:
+        return AgentRunResult(
+            status="failed",
+            checked_at=checked_at,
+            reason=str(exc),
+            agent_root=agent_root,
+            job_id=exc.job_id,
+            run_dir=exc.run_dir,
+            recovery_queue_path=exc.recovery_queue_path,
         )
 
 
@@ -416,6 +488,7 @@ def _run_claim(
         job_id=result.job_id,
         run_dir=result.run_dir,
         claimed_job_path=result.claimed_job_path,
+        recovery_queue_path=result.recovery_queue_path,
         status_artifact=status_artifact,
         command=result.command,
         returncode=result.returncode,
@@ -502,7 +575,9 @@ def _compose_host_path(path: Path) -> str:
 
 
 def _write_queue_spec(spec: AgentJobSpec, artifact_root: Path) -> Path:
-    queue_dir = resolve_agent_root(artifact_root) / "queue"
+    agent_root = resolve_agent_root(artifact_root)
+    _reject_reused_job_id(agent_root / "runs" / spec.job_id, spec.job_id)
+    queue_dir = agent_root / "queue"
     queue_dir.mkdir(parents=True, exist_ok=True)
     queue_path = queue_dir / f"{spec.job_id}.json"
     if queue_path.exists():
@@ -514,6 +589,82 @@ def _write_queue_spec(spec: AgentJobSpec, artifact_root: Path) -> Path:
     )
     temp_path.replace(queue_path)
     return queue_path
+
+
+def _reject_reused_job_id(run_dir: Path, job_id: str) -> None:
+    run_state = _run_directory_state(run_dir)
+    if run_state == "bare":
+        _remove_bare_run_dir(run_dir, job_id)
+        return
+    if run_state != "absent":
+        raise JobIdReuseError(
+            job_id=job_id,
+            run_dir=run_dir,
+            run_state=run_state,
+        )
+
+
+def _run_directory_state(run_dir: Path) -> RunDirectoryState:
+    if run_dir.is_symlink():
+        return "unknown"
+    if not run_dir.exists():
+        return "absent"
+    if not run_dir.is_dir():
+        return "unknown"
+    status_path = run_dir / "status.json"
+    if status_path.is_file() and not status_path.is_symlink():
+        return "terminal"
+    entries = tuple(run_dir.iterdir())
+    if not entries:
+        return "bare"
+    job_path = run_dir / "job.json"
+    if (
+        len(entries) == 1
+        and entries[0] == job_path
+        and job_path.is_file()
+        and not job_path.is_symlink()
+    ):
+        return "interrupted_claim"
+    return "unknown"
+
+
+def _remove_bare_run_dir(run_dir: Path, job_id: str) -> None:
+    try:
+        run_dir.rmdir()
+    except FileNotFoundError:
+        return
+    except OSError as exc:
+        raise JobIdReuseError(
+            job_id=job_id,
+            run_dir=run_dir,
+            run_state=_run_directory_state(run_dir),
+        ) from exc
+
+
+def _preserve_reused_queue_item(
+    queue_path: Path,
+    *,
+    agent_root: Path,
+    job_id: str,
+) -> Path:
+    queued_bytes = queue_path.read_bytes()
+    digest = hashlib.sha256(queued_bytes).hexdigest()
+    recovery_path = (
+        agent_root / "recovery" / "job-id-reuse" / f"{job_id}.{digest}.json"
+    )
+    recovery_path.parent.mkdir(parents=True, exist_ok=True)
+    if recovery_path.exists() or recovery_path.is_symlink():
+        if recovery_path.is_symlink() or recovery_path.read_bytes() != queued_bytes:
+            raise ValueError("research job-ID recovery evidence conflicts")
+    else:
+        try:
+            with recovery_path.open("xb") as stream:
+                stream.write(queued_bytes)
+        except FileExistsError:
+            if recovery_path.is_symlink() or recovery_path.read_bytes() != queued_bytes:
+                raise ValueError("research job-ID recovery evidence conflicts") from None
+    queue_path.unlink()
+    return recovery_path
 
 
 def _clean_research_args(args: list[str]) -> tuple[str, ...]:
@@ -623,6 +774,7 @@ def _write_run_status(
         job_id=result.job_id,
         run_dir=result.run_dir,
         claimed_job_path=result.claimed_job_path,
+        recovery_queue_path=result.recovery_queue_path,
         status_artifact=path,
         command=result.command,
         returncode=result.returncode,
@@ -662,6 +814,11 @@ def _agent_run_payload(
             "run_dir": None if result.run_dir is None else str(result.run_dir),
             "claimed_job_path": (
                 None if result.claimed_job_path is None else str(result.claimed_job_path)
+            ),
+            "recovery_queue_path": (
+                None
+                if result.recovery_queue_path is None
+                else str(result.recovery_queue_path)
             ),
             "status_artifact": (
                 None if result.status_artifact is None else str(result.status_artifact)

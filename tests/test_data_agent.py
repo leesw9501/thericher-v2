@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import gzip
+import hashlib
 import json
 import socket
 from datetime import UTC, datetime
@@ -83,6 +84,140 @@ def test_claim_next_data_job_is_deterministic_by_queue_filename(tmp_path) -> Non
     assert claim.claimed_job_path.exists()
     assert not (artifact_root / "data-agent" / "queue" / "a-job.json").exists()
     assert (artifact_root / "data-agent" / "queue" / "b-job.json").exists()
+
+
+def test_data_agent_recovers_bare_interrupted_claim_without_network_or_credentials(
+    monkeypatch,
+    tmp_path,
+) -> None:
+    def fail_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("Data Agent must not open network connections")
+
+    original_read_text = Path.read_text
+
+    def guard_read_text(path: Path, *args: object, **kwargs: object) -> str:
+        if path.name.lower().startswith(".env") or "credential" in path.name.lower():
+            raise AssertionError("Data Agent must not read credentials")
+        return original_read_text(path, *args, **kwargs)
+
+    monkeypatch.setattr(socket, "create_connection", fail_network)
+    monkeypatch.setattr(Path, "read_text", guard_read_text)
+    artifact_root = tmp_path / "model-artifacts"
+    market_data_root = tmp_path / "market-data"
+    job_id = "bare-interrupted-claim"
+    run_dir = artifact_root / "data-agent" / "runs" / job_id
+    run_dir.mkdir(parents=True)
+
+    enqueue_data_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id=job_id,
+        market_data_root=market_data_root,
+    )
+    result = run_once(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        now=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    assert result.status == "completed"
+    assert result.run_dir == run_dir
+    assert (run_dir / "job.json").exists()
+    assert result.status_artifact == run_dir / "status.json"
+    assert result.status_artifact.exists()
+    assert not (artifact_root / "data-agent" / "queue" / f"{job_id}.json").exists()
+
+
+def test_data_agent_terminal_job_id_reuse_preserves_evidence_and_recovers_queue(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    market_data_root = tmp_path / "market-data"
+    job_id = "terminal-job"
+    queue_path = enqueue_data_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id=job_id,
+        market_data_root=market_data_root,
+    )
+    queued_bytes = queue_path.read_bytes()
+    first = run_once(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        now=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    assert first.status == "completed"
+    assert first.run_dir is not None
+    assert first.status_artifact is not None
+    assert first.inventory_artifact is not None
+    job_bytes = (first.run_dir / "job.json").read_bytes()
+    status_bytes = first.status_artifact.read_bytes()
+    inventory_bytes = first.inventory_artifact.read_bytes()
+    queue_path.write_bytes(queued_bytes)
+
+    reused = run_once(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        now=datetime(2026, 1, 3, tzinfo=UTC),
+    )
+
+    assert reused.status == "failed"
+    assert reused.status_artifact is None
+    assert reused.run_dir == first.run_dir
+    assert "immutable terminal evidence" in reused.reason
+    assert reused.recovery_queue_path == (
+        artifact_root
+        / "data-agent"
+        / "recovery"
+        / "job-id-conflict"
+        / f"{job_id}.{hashlib.sha256(queued_bytes).hexdigest()}.json"
+    )
+    assert reused.recovery_queue_path.read_bytes() == queued_bytes
+    assert not queue_path.exists()
+    assert (first.run_dir / "job.json").read_bytes() == job_bytes
+    assert first.status_artifact.read_bytes() == status_bytes
+    assert first.inventory_artifact.read_bytes() == inventory_bytes
+
+    with pytest.raises(ValueError, match="immutable terminal evidence"):
+        enqueue_data_job(
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+            job_id=job_id,
+            market_data_root=market_data_root,
+        )
+
+
+def test_data_agent_nonterminal_claim_preserves_queue_and_claim_evidence(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    market_data_root = tmp_path / "market-data"
+    job_id = "interrupted-claimed-job"
+    queue_path = enqueue_data_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id=job_id,
+        market_data_root=market_data_root,
+    )
+    queued_bytes = queue_path.read_bytes()
+    run_dir = artifact_root / "data-agent" / "runs" / job_id
+    run_dir.mkdir(parents=True)
+    claimed_path = run_dir / "job.json"
+    claimed_bytes = b'{"state":"interrupted"}'
+    claimed_path.write_bytes(claimed_bytes)
+
+    result = run_once(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        now=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    assert result.status == "failed"
+    assert result.status_artifact is None
+    assert result.run_dir == run_dir
+    assert "interrupted claim" in result.reason
+    assert claimed_path.read_bytes() == claimed_bytes
+    assert not (run_dir / "status.json").exists()
+    assert not queue_path.exists()
+    assert result.recovery_queue_path is not None
+    assert result.recovery_queue_path.read_bytes() == queued_bytes
 
 
 def test_data_agent_run_once_records_bounded_inventory_and_is_single_shot(tmp_path) -> None:

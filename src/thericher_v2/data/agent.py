@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import csv
 import gzip
+import hashlib
 import json
 import os
 import re
@@ -81,6 +82,7 @@ class DataAgentRunResult:
     job_id: str | None = None
     run_dir: Path | None = None
     claimed_job_path: Path | None = None
+    recovery_queue_path: Path | None = None
     status_artifact: Path | None = None
     inventory_artifact: Path | None = None
     market_data_root: Path | None = None
@@ -90,10 +92,39 @@ class DataAgentRunResult:
         object.__setattr__(self, "checked_at", self.checked_at.astimezone(UTC))
 
 
+class DataJobIdConflictError(ValueError):
+    """Raised when a queued job would collide with prior run state."""
+
+    def __init__(
+        self,
+        *,
+        job_id: str,
+        run_dir: Path,
+        state: Literal["terminal", "interrupted"],
+        recovery_queue_path: Path | None = None,
+    ) -> None:
+        self.job_id = job_id
+        self.run_dir = run_dir
+        self.state = state
+        self.recovery_queue_path = recovery_queue_path
+        if state == "terminal":
+            reason = (
+                f"data job ID {job_id!r} already has immutable terminal evidence; "
+                "leave it unchanged and enqueue recovery under a new job ID"
+            )
+        else:
+            reason = (
+                f"data job ID {job_id!r} already has an interrupted claim; "
+                "leave it unchanged and enqueue recovery under a new job ID"
+            )
+        if recovery_queue_path is not None:
+            reason += f"; preserved duplicate queue item at {recovery_queue_path}"
+        super().__init__(reason)
+
+
 def resolve_model_artifact_root() -> Path:
-    configured = (
-        os.environ.get("THERICHER_HOST_MODEL_ARTIFACT_ROOT")
-        or os.environ.get("THERICHER_MODEL_ARTIFACT_ROOT")
+    configured = os.environ.get("THERICHER_HOST_MODEL_ARTIFACT_ROOT") or os.environ.get(
+        "THERICHER_MODEL_ARTIFACT_ROOT"
     )
     return Path(configured) if configured else DEFAULT_MODEL_ARTIFACT_ROOT
 
@@ -138,7 +169,46 @@ def claim_next_job(agent_root: Path) -> DataAgentClaim | None:
     for queue_path in sorted(queue_dir.glob("*.json"), key=lambda path: path.name):
         spec = _read_data_job_spec(queue_path)
         run_dir = agent_root / "runs" / spec.job_id
-        run_dir.mkdir(parents=True, exist_ok=False)
+        if _run_dir_has_terminal_evidence(run_dir):
+            recovery_queue_path = _preserve_conflicting_queue_item(
+                queue_path,
+                agent_root=agent_root,
+                job_id=spec.job_id,
+            )
+            raise DataJobIdConflictError(
+                job_id=spec.job_id,
+                run_dir=run_dir,
+                state="terminal",
+                recovery_queue_path=recovery_queue_path,
+            )
+        if _is_bare_interrupted_claim_dir(run_dir):
+            run_dir.rmdir()
+        elif run_dir.exists() or run_dir.is_symlink():
+            recovery_queue_path = _preserve_conflicting_queue_item(
+                queue_path,
+                agent_root=agent_root,
+                job_id=spec.job_id,
+            )
+            raise DataJobIdConflictError(
+                job_id=spec.job_id,
+                run_dir=run_dir,
+                state="interrupted",
+                recovery_queue_path=recovery_queue_path,
+            )
+        try:
+            run_dir.mkdir(parents=True, exist_ok=False)
+        except FileExistsError as exc:
+            recovery_queue_path = _preserve_conflicting_queue_item(
+                queue_path,
+                agent_root=agent_root,
+                job_id=spec.job_id,
+            )
+            raise DataJobIdConflictError(
+                job_id=spec.job_id,
+                run_dir=run_dir,
+                state="interrupted",
+                recovery_queue_path=recovery_queue_path,
+            ) from exc
         claimed_path = run_dir / "job.json"
         queue_path.replace(claimed_path)
         return DataAgentClaim(spec=spec, run_dir=run_dir, claimed_job_path=claimed_path)
@@ -155,7 +225,18 @@ def run_once(
     root = artifact_root or resolve_model_artifact_root()
     agent_root = resolve_data_agent_root(root)
     _reject_repo_artifact_path(root, repo_root)
-    claim = claim_next_job(agent_root)
+    try:
+        claim = claim_next_job(agent_root)
+    except DataJobIdConflictError as exc:
+        return DataAgentRunResult(
+            status="failed",
+            checked_at=checked_at,
+            reason=str(exc),
+            agent_root=agent_root,
+            job_id=exc.job_id,
+            run_dir=exc.run_dir,
+            recovery_queue_path=exc.recovery_queue_path,
+        )
     if claim is None:
         return DataAgentRunResult(
             status="queue_empty",
@@ -349,6 +430,7 @@ def _run_claim(
         job_id=result.job_id,
         run_dir=result.run_dir,
         claimed_job_path=result.claimed_job_path,
+        recovery_queue_path=result.recovery_queue_path,
         status_artifact=status_artifact,
         inventory_artifact=result.inventory_artifact,
         market_data_root=result.market_data_root,
@@ -464,7 +546,21 @@ def _inventory_payload(
 
 
 def _write_queue_spec(spec: DataAgentJobSpec, artifact_root: Path) -> Path:
-    queue_dir = resolve_data_agent_root(artifact_root) / "queue"
+    agent_root = resolve_data_agent_root(artifact_root)
+    run_dir = agent_root / "runs" / spec.job_id
+    if _run_dir_has_terminal_evidence(run_dir):
+        raise DataJobIdConflictError(
+            job_id=spec.job_id,
+            run_dir=run_dir,
+            state="terminal",
+        )
+    if (run_dir.exists() or run_dir.is_symlink()) and not _is_bare_interrupted_claim_dir(run_dir):
+        raise DataJobIdConflictError(
+            job_id=spec.job_id,
+            run_dir=run_dir,
+            state="interrupted",
+        )
+    queue_dir = agent_root / "queue"
     queue_dir.mkdir(parents=True, exist_ok=True)
     queue_path = queue_dir / f"{spec.job_id}.json"
     if queue_path.exists():
@@ -476,6 +572,39 @@ def _write_queue_spec(spec: DataAgentJobSpec, artifact_root: Path) -> Path:
     )
     temp_path.replace(queue_path)
     return queue_path
+
+
+def _run_dir_has_terminal_evidence(run_dir: Path) -> bool:
+    status_path = run_dir / "status.json"
+    return status_path.exists() or status_path.is_symlink()
+
+
+def _is_bare_interrupted_claim_dir(run_dir: Path) -> bool:
+    return run_dir.is_dir() and not run_dir.is_symlink() and not any(run_dir.iterdir())
+
+
+def _preserve_conflicting_queue_item(
+    queue_path: Path,
+    *,
+    agent_root: Path,
+    job_id: str,
+) -> Path:
+    queued_bytes = queue_path.read_bytes()
+    digest = hashlib.sha256(queued_bytes).hexdigest()
+    recovery_path = agent_root / "recovery" / "job-id-conflict" / f"{job_id}.{digest}.json"
+    recovery_path.parent.mkdir(parents=True, exist_ok=True)
+    if recovery_path.exists() or recovery_path.is_symlink():
+        if recovery_path.is_symlink() or recovery_path.read_bytes() != queued_bytes:
+            raise ValueError("Data Agent job-ID recovery evidence conflicts")
+    else:
+        try:
+            with recovery_path.open("xb") as stream:
+                stream.write(queued_bytes)
+        except FileExistsError:
+            if recovery_path.is_symlink() or recovery_path.read_bytes() != queued_bytes:
+                raise ValueError("Data Agent job-ID recovery evidence conflicts") from None
+    queue_path.unlink()
+    return recovery_path
 
 
 def _read_data_job_spec(path: Path) -> DataAgentJobSpec:
@@ -544,6 +673,7 @@ def _write_run_status(
         job_id=result.job_id,
         run_dir=result.run_dir,
         claimed_job_path=result.claimed_job_path,
+        recovery_queue_path=result.recovery_queue_path,
         status_artifact=path,
         inventory_artifact=result.inventory_artifact,
         market_data_root=result.market_data_root,
@@ -581,6 +711,9 @@ def _data_agent_run_payload(
             "run_dir": None if result.run_dir is None else str(result.run_dir),
             "claimed_job_path": (
                 None if result.claimed_job_path is None else str(result.claimed_job_path)
+            ),
+            "recovery_queue_path": (
+                None if result.recovery_queue_path is None else str(result.recovery_queue_path)
             ),
             "status_artifact": (
                 None if result.status_artifact is None else str(result.status_artifact)

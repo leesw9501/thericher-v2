@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import socket
 import subprocess
@@ -76,6 +77,158 @@ def test_claim_next_job_is_deterministic_by_queue_filename(tmp_path) -> None:
     assert claim.claimed_job_path.exists()
     assert not (artifact_root / "engine-research-agent" / "queue" / "a-job.json").exists()
     assert (artifact_root / "engine-research-agent" / "queue" / "b-job.json").exists()
+
+
+def test_enqueue_research_job_rejects_reused_completed_job_id(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    job_id = "completed-job"
+    enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id=job_id,
+        research_kind="gpu_training_smoke",
+    )
+    first = run_once(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        executor=lambda command, _cwd, _env: subprocess.CompletedProcess(
+            command,
+            0,
+            stdout="completed",
+            stderr="",
+        ),
+        now=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    assert first.status == "completed"
+    assert first.run_dir is not None
+    assert first.status_artifact is not None
+    job_bytes = (first.run_dir / "job.json").read_bytes()
+    status_bytes = first.status_artifact.read_bytes()
+
+    with pytest.raises(ValueError, match="immutable terminal run evidence"):
+        enqueue_research_job(
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+            job_id=job_id,
+            research_kind="gpu_training_smoke",
+        )
+
+    assert not (
+        artifact_root / "engine-research-agent" / "queue" / f"{job_id}.json"
+    ).exists()
+    assert (first.run_dir / "job.json").read_bytes() == job_bytes
+    assert first.status_artifact.read_bytes() == status_bytes
+
+
+def test_enqueue_research_job_recovers_a_bare_interrupted_claim_directory(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    job_id = "bare-interrupted-claim"
+    run_dir = artifact_root / "engine-research-agent" / "runs" / job_id
+    run_dir.mkdir(parents=True)
+
+    queue_path = enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id=job_id,
+        research_kind="gpu_training_smoke",
+    )
+
+    assert queue_path.exists()
+    assert not run_dir.exists()
+
+
+def test_run_once_recovers_bare_interrupted_claim_before_running_job(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    job_id = "bare-interrupted-run"
+    queue_path = enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id=job_id,
+        research_kind="gpu_training_smoke",
+    )
+    run_dir = artifact_root / "engine-research-agent" / "runs" / job_id
+    run_dir.mkdir(parents=True)
+
+    result = run_once(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        executor=lambda command, _cwd, _env: subprocess.CompletedProcess(
+            command,
+            0,
+            stdout="recovered bare claim",
+            stderr="",
+        ),
+        now=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    assert result.status == "completed"
+    assert result.run_dir == run_dir
+    assert not queue_path.exists()
+    assert (run_dir / "job.json").exists()
+    assert (run_dir / "status.json").exists()
+
+
+def test_run_once_reports_legacy_reused_queue_without_mutating_run_evidence(tmp_path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    agent_root = artifact_root / "engine-research-agent"
+    queue_path = enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id="legacy-reused-job",
+        research_kind="gpu_training_smoke",
+    )
+    queued_bytes = queue_path.read_bytes()
+    claimed = claim_next_job(agent_root)
+
+    assert claimed is not None
+    claimed_bytes = claimed.claimed_job_path.read_bytes()
+    queue_path.write_bytes(queued_bytes)
+
+    result = run_once(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        executor=lambda *_args: pytest.fail("duplicate queue item must not run Docker"),
+        now=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    assert result.status == "failed"
+    assert result.job_id == claimed.spec.job_id
+    assert result.run_dir == claimed.run_dir
+    assert result.status_artifact is None
+    assert result.recovery_queue_path is not None
+    assert "immutable interrupted_claim run evidence" in result.reason
+    assert "enqueue recovery under a new job ID" in result.reason
+    assert claimed.claimed_job_path.read_bytes() == claimed_bytes
+    assert not queue_path.exists()
+    assert not (agent_root / "locks" / "gpu.lock").exists()
+    assert result.recovery_queue_path.read_bytes() == queued_bytes
+    assert result.recovery_queue_path == (
+        agent_root
+        / "recovery"
+        / "job-id-reuse"
+        / f"legacy-reused-job.{hashlib.sha256(queued_bytes).hexdigest()}.json"
+    )
+
+    enqueue_research_job(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        job_id="legacy-reused-job-recovery",
+        research_kind="gpu_training_smoke",
+    )
+    recovered = run_once(
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        executor=lambda command, _cwd, _env: subprocess.CompletedProcess(
+            command,
+            0,
+            stdout="recovered",
+            stderr="",
+        ),
+        now=datetime(2026, 1, 2, tzinfo=UTC),
+    )
+
+    assert recovered.status == "completed"
 
 
 def test_enqueue_research_job_writes_existing_kind_args_outside_repo(tmp_path) -> None:
