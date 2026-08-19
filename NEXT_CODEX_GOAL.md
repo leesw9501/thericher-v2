@@ -2,72 +2,68 @@
 
 ## Objective
 
-Complete `kis-paper-iwm-m1-caller-derived-temporal-reach-probe-v1`: build and
-run one isolated KIS Paper capability probe for exactly `IWM/AMS/1m`. Use one
-in-memory client for one current-head page and at most one continuation page.
-The second page is permitted only after a recognized response `tr_cont` header;
-it uses a caller-derived in-memory key from the first page's oldest exchange
-timestamp and is necessarily `PINC=1` previous-day-inclusive. The probe
-resolves only this endpoint's immediate continuation semantics and aggregate
-relation to its head page. It is not a historical-data completion,
-finality/availability observation, qualified dataset, model result, Paper
-input, order, or live route.
+Complete `kis-paper-canary-unknown-run-reconciliation-v1`: reconcile exactly
+one existing `2026-08-11` KIS Paper canary durable intent through its existing
+reconciliation path, or retain its scoped `outcome_unknown` result when exact
+evidence is unavailable. This advances Paper-trading recovery and later PnL
+attribution custody. It must never create a new order, duplicate a session,
+or turn an ambiguous historical outcome into a fill, PnL, alpha, or model
+claim.
 
-The earlier `kis-intraday-later-terminal-reattachment-v1` remains an existing
-task-owned monitor. Do not foreground-wait for it or manually invoke it.
+The IWM/AMS temporal-reach probe is closed: its one accepted head did not carry
+a recognized continuation header, so it issued no second request and has no
+retry path. The existing QQQ/SPY intraday monitor remains task-owned and is not
+a foreground dependency.
 
 ## Standing Authorization And Boundaries
 
-- `KIS_PAPER_*` may be read only by the named probe path for this one bounded
-  KIS Paper market-data invocation. Never read or route `KIS_LIVE_*`; never
-  print, log, commit, or send credentials, account identifiers, raw rows,
-  compressed payloads, broker bodies, private intents, or tokens to Claude.
-- Preserve the existing shared request gate and one in-memory client. The probe
-  may issue one initial current-head request and at most one header-gated,
-  caller-derived continuation request. It has no retry, loop, historical
-  collector, scheduler, Docker, account, or order path. The default IWM route
-  must remain one current-day page for every non-probe caller.
-- Do not retain probe raw pages or create a raw cache. Keep only its source-safe
-  receipt beneath `D:\thericher-v2\model-artifacts`; never store raw data or
-  generated artifacts in Git. Do not mutate the completed IWM current-head or
-  legacy IWM replay cache/receipt roots.
-- Retain only target identity, token/page request counts, accepted-page count,
-  categorical continuation disposition, aggregate page yield/overlap direction,
-  elapsed-time bucket, and `model_input_eligibility: false`. Do not expose
-  dates, timestamps, prices, volumes, filenames, cursor values, row hashes, or
-  raw contents.
-- Do not submit/modify/cancel an order or enable live behavior. A positive
-  continuation result proves neither usable historical coverage, session
-  finality, decision-time availability, cadence, model eligibility, nor a
-  Paper consumer.
+- `KIS_PAPER_*` may be read only through the existing named reconciliation
+  path for this one exact durable Paper intent. It may perform only the existing
+  read-only account, position, and open-order checks required by that path.
+  Never read or route `KIS_LIVE_*`; never print, log, commit, or send
+  credentials, account identifiers, order identifiers, broker bodies, private
+  intent contents, or tokens to Claude.
+- Do not submit, modify, cancel, replace, or resubmit any order. Do not create
+  a scheduler, invoke an existing scheduled session manually, widen a Docker
+  service, or use a current/"latest" artifact selector. A Docker invocation,
+  if the existing reconciliation path requires one, is a single bounded
+  read-only reconciliation of the exact durable intent only.
+- First bind the exact persisted intent, route, and opaque lineage offline. A
+  missing, duplicate, mismatched, or unreplayable binding is a valid
+  `outcome_unknown` completion, not a reason to guess, retry, or create a new
+  Paper action.
+- Retain only source-safe lifecycle/reconciliation categories and immutable
+  receipt pointers under `D:\thericher-v2\model-artifacts`. Do not store raw
+  broker/account responses or generated artifacts in Git. Keep all resulting
+  statements `paper_only`; do not claim a fill, PnL, profitability, model
+  validity, or live readiness.
 
 ## Required Work
 
-1. Record the resolved Claude falsification-first drift check, then implement
-   the smallest explicit IWM probe intent and client state machine. It must
-   enforce a current-head first request, a header-gated second request, exactly
-   two total minute attempts, and no standalone/third continuation.
-2. Add focused tests proving no provider/credential/order access is needed for
-   offline cases, default IWM callers cannot issue a continuation, the second
-   request is impossible without the first recognized header and a strictly
-   older caller-derived key, and an invalid or non-older continuation cannot
-   produce a `reachable` result. Verify the transport rejects every other IWM
-   `PINC=1` shape.
-3. Run the probe once. If it yields a valid older non-conflicting continuation,
-   record only its narrow aggregate reach result. Otherwise record the scoped
-   `input_unavailable` or `continuation_not_observed` outcome. Never retry or
-   turn either result into a collector schedule.
-4. Refresh Data, orchestration, and `HANDOFF.md` with the result. Run
-   goal-boundary verification, commit, push, replace this file with exactly one
+1. Ask Claude for a concise falsification-first drift-check of the exact-run
+   recovery scope before a broker-facing reconciliation call. Include the
+   strongest kill test, route isolation, and the fact that reverses any
+   `resolved` interpretation, but no secret, identifier, or raw broker data.
+2. Reattest the exact historical durable intent and its lifecycle evidence with
+   the existing offline readers. Prove that a failure remains fail-closed and
+   does not consume a fresh order path.
+3. If the exact durable binding is eligible, execute the existing reconciliation
+   exactly once. If it is not eligible, preserve a source-safe
+   `outcome_unknown` result without calling a broker. In either branch, do not
+   retry or resubmit.
+4. Validate the resulting exact lifecycle projection through the existing
+   reader, refresh Execution, orchestration, `HANDOFF.md`, and `RUNBOOK.md`,
+   run required verification, commit, push, replace this file with exactly one
    material next company objective, and continue.
 
 ## Completion Evidence
 
-- One source-safe categorical outcome from at most two minute-page attempts and
-  one in-memory client, with no live route, order, raw persistence, or raw
-  cache.
-- Strongest kill test: no accepted valid continuation page with a directionally
-  older, non-conflicting relation to the head page. That closes only this
-  endpoint's expansion path and does not block another lane.
-- No raw values, credential values, account identifiers, model/PnL claim, or
-  predictive/Paper/GPU eligibility claim is retained in Git or stateboards.
+- One exact durable-intent binding and one reproducible source-safe lifecycle
+  result: either reconciled under the existing path or explicitly
+  `outcome_unknown` with a categorical reason.
+- Strongest kill test: absent, duplicate, route-mismatched, or lineage-mismatched
+  evidence remains fail-closed and produces no broker submission/cancel/modify
+  request.
+- No live route, new Paper intent, raw account/broker data, order identifier,
+  model/PnL claim, or predictive/GPU eligibility claim appears in Git or a
+  stateboard.

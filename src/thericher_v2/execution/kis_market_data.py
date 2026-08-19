@@ -9,7 +9,7 @@ import urllib.parse
 import urllib.request
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from types import MappingProxyType
@@ -54,6 +54,12 @@ KisPaperMinuteContinuationSignal = Literal[
     "blank_or_absent",
     "unrecognized_nonblank",
 ]
+KisPaperMinuteRequestIntent = Literal[
+    "standard",
+    "iwm_temporal_reach_probe_head",
+    "iwm_temporal_reach_probe_continuation",
+]
+KisPaperMinuteRoute = Literal["standard", "iwm_temporal_reach_probe"]
 # Daily history has a deliberately separate contract from the minute probe.
 # QQQ/NAS was observed by the v1 private cache. NYS and AMS remain available
 # for empirical ETF venue checks; the active backfill mapping records only a
@@ -327,6 +333,7 @@ class KisPaperMinuteQuery:
     include_previous_day: bool = False
     continuation_next: str | None = None
     continuation_key: str | None = None
+    request_intent: KisPaperMinuteRequestIntent = "standard"
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "exchange", self.exchange.strip().upper())
@@ -341,10 +348,36 @@ class KisPaperMinuteQuery:
             not self.continuation_next or not self.continuation_key
         ):
             raise ValueError("continuation values must be nonempty")
-        if _is_minute_current_head_only_target(symbol=self.symbol, exchange=self.exchange) and (
-            self.include_previous_day or self.continuation_next is not None
+        if self.request_intent not in {
+            "standard",
+            "iwm_temporal_reach_probe_head",
+            "iwm_temporal_reach_probe_continuation",
+        }:
+            raise ValueError("minute request intent is not supported")
+        is_iwm_current_head_target = _is_minute_current_head_only_target(
+            symbol=self.symbol,
+            exchange=self.exchange,
+        )
+        if not is_iwm_current_head_target:
+            if self.request_intent != "standard":
+                raise ValueError("IWM temporal-reach probe intent requires IWM/AMS")
+            return
+        if self.request_intent == "standard":
+            if self.include_previous_day or self.continuation_next is not None:
+                raise ValueError("minute current-head-only target requires one current-day page")
+            return
+        if self.request_intent == "iwm_temporal_reach_probe_head":
+            if self.include_previous_day or self.continuation_next is not None:
+                raise ValueError("IWM temporal-reach probe head requires one current-day page")
+            return
+        if (
+            not self.include_previous_day
+            or self.continuation_next != "1"
+            or self.continuation_key is None
+            or len(self.continuation_key) != 14
+            or not self.continuation_key.isdigit()
         ):
-            raise ValueError("minute current-head-only target requires one current-day page")
+            raise ValueError("IWM temporal-reach probe continuation is invalid")
 
 
 @dataclass(frozen=True)
@@ -618,19 +651,26 @@ class KisPaperMarketDataClient:
         transport: KisMarketDataTransport,
         max_minute_page_attempts: int = KIS_PAPER_MARKET_DATA_MAX_MINUTE_PAGE_ATTEMPTS,
         max_daily_page_attempts: int = KIS_PAPER_MARKET_DATA_MAX_DAILY_PAGE_ATTEMPTS,
+        minute_route: KisPaperMinuteRoute = "standard",
     ) -> None:
         if type(max_minute_page_attempts) is not int or max_minute_page_attempts < 1:
             raise ValueError("max_minute_page_attempts must be a positive integer")
         if type(max_daily_page_attempts) is not int or max_daily_page_attempts < 1:
             raise ValueError("max_daily_page_attempts must be a positive integer")
+        if minute_route not in {"standard", "iwm_temporal_reach_probe"}:
+            raise ValueError("minute route is not supported")
+        if minute_route == "iwm_temporal_reach_probe" and max_minute_page_attempts != 2:
+            raise ValueError("IWM temporal-reach probe requires exactly two minute attempts")
         self._config = config
         self._transport = transport
         self._max_minute_page_attempts = max_minute_page_attempts
         self._max_daily_page_attempts = max_daily_page_attempts
+        self._minute_route = minute_route
         self._access_token: str | None = None
         self._token_attempts = 0
         self._minute_page_attempts = 0
         self._daily_page_attempts = 0
+        self._iwm_temporal_reach_continuation_key: str | None = None
 
     @property
     def call_counts(self) -> KisPaperMarketDataCallCounts:
@@ -655,12 +695,18 @@ class KisPaperMarketDataClient:
     ) -> KisPaperMinutePage:
         if self._minute_page_attempts >= self._max_minute_page_attempts:
             raise KisPaperMarketDataError("minute_page_limit_exceeded")
-        if _is_minute_current_head_only_target(symbol=query.symbol, exchange=query.exchange) and (
-            self._max_minute_page_attempts != 1
-        ):
-            raise KisPaperMarketDataError(
-                "minute_current_head_only_target_requires_one_page_client"
-            )
+        if self._minute_route == "iwm_temporal_reach_probe":
+            self._validate_iwm_temporal_reach_probe_query(query)
+        else:
+            if query.request_intent != "standard":
+                raise KisPaperMarketDataError("minute_request_intent_requires_probe_route")
+            if _is_minute_current_head_only_target(
+                symbol=query.symbol,
+                exchange=query.exchange,
+            ) and self._max_minute_page_attempts != 1:
+                raise KisPaperMarketDataError(
+                    "minute_current_head_only_target_requires_one_page_client"
+                )
         access_token = self._issue_access_token()
         request = KisMarketDataRequest(
             method="GET",
@@ -712,13 +758,44 @@ class KisPaperMarketDataClient:
             continuation_signal = "blank_or_absent"
         else:
             continuation_signal = "unrecognized_nonblank"
-        return KisPaperMinutePage(
+        page = KisPaperMinutePage(
             query=query,
             bars=rows,
             next_cursor=next_cursor,
             more=str(output1.get("more", "")).strip(),
             continuation_signal=continuation_signal,
         )
+        if (
+            self._minute_route == "iwm_temporal_reach_probe"
+            and query.request_intent == "iwm_temporal_reach_probe_head"
+        ):
+            self._iwm_temporal_reach_continuation_key = (
+                derive_kis_paper_minute_continuation_key(page)
+                if page.next_cursor is not None
+                else None
+            )
+        return page
+
+    def _validate_iwm_temporal_reach_probe_query(self, query: KisPaperMinuteQuery) -> None:
+        if not _is_minute_current_head_only_target(
+            symbol=query.symbol,
+            exchange=query.exchange,
+        ):
+            raise KisPaperMarketDataError("IWM_temporal_reach_probe_target_required")
+        if self._minute_page_attempts == 0:
+            if query.request_intent != "iwm_temporal_reach_probe_head":
+                raise KisPaperMarketDataError("IWM_temporal_reach_probe_head_required")
+            return
+        if self._minute_page_attempts == 1:
+            if query.request_intent != "iwm_temporal_reach_probe_continuation":
+                raise KisPaperMarketDataError("IWM_temporal_reach_probe_continuation_required")
+            if (
+                self._iwm_temporal_reach_continuation_key is None
+                or query.continuation_key != self._iwm_temporal_reach_continuation_key
+            ):
+                raise KisPaperMarketDataError("IWM_temporal_reach_probe_continuation_unavailable")
+            return
+        raise KisPaperMarketDataError("minute_page_limit_exceeded")
 
     def fetch_daily_page(self, query: KisPaperDailyRequestQuery) -> KisPaperDailyPage:
         """Return metadata-only daily facts for existing observation callers."""
@@ -728,6 +805,8 @@ class KisPaperMarketDataClient:
     def fetch_daily_raw_page(self, query: KisPaperDailyRequestQuery) -> KisPaperDailyRawPage:
         """Return typed OHLCV rows only for a bounded private-cache collector."""
 
+        if self._minute_route != "standard":
+            raise KisPaperMarketDataError("minute_route_disallows_daily_page")
         if self._daily_page_attempts >= self._max_daily_page_attempts:
             raise KisPaperMarketDataError("daily_page_limit_exceeded")
         access_token = self._issue_access_token()
@@ -1163,6 +1242,21 @@ def _is_token_request(request: KisMarketDataRequest) -> bool:
     )
 
 
+def derive_kis_paper_minute_continuation_key(page: KisPaperMinutePage) -> str:
+    """Derive the sole allowed next-page key from the parsed oldest bar."""
+
+    oldest = min(page.bars, key=lambda row: (row.exchange_date, row.exchange_time))
+    oldest_key = f"{oldest.exchange_date}{oldest.exchange_time}"
+    try:
+        oldest_timestamp = datetime.strptime(oldest_key, "%Y%m%d%H%M%S")
+    except ValueError as error:
+        raise KisPaperMarketDataError("minute_exchange_timestamp_invalid") from error
+    continuation_key = (oldest_timestamp - timedelta(minutes=1)).strftime("%Y%m%d%H%M%S")
+    if continuation_key >= oldest_key:
+        raise KisPaperMarketDataError("minute_cursor_invalid")
+    return continuation_key
+
+
 def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
     query = request.query
     if (
@@ -1186,7 +1280,14 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
     if _is_minute_current_head_only_target(
         symbol=str(query.get("SYMB")), exchange=str(query.get("EXCD"))
     ):
-        return current_day_head
+        return current_day_head or (
+            query.get("PINC") == "1"
+            and request.headers.get("tr_cont") == "N"
+            and query.get("NEXT") == "1"
+            and isinstance(query.get("KEYB"), str)
+            and len(query["KEYB"]) == 14
+            and query["KEYB"].isdigit()
+        )
     if current_day_head:
         return True
     if query.get("PINC") == "1" and query.get("KEYB") == "" and query.get("NEXT") == "":

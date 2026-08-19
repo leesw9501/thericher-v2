@@ -24,8 +24,11 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataConfig,
     KisPaperMarketDataError,
     KisPaperMinuteClient,
+    KisPaperMinutePage,
     KisPaperMinuteQuery,
+    KisPaperMinuteRawBar,
     UrllibKisPaperMarketDataTransport,
+    derive_kis_paper_minute_continuation_key,
     load_kis_paper_market_data_config,
 )
 from thericher_v2.execution.kis_market_data_rate_gate import KisPaperMarketDataTokenStartGate
@@ -363,6 +366,21 @@ def test_minute_query_requires_a_supported_us_venue_and_complete_cursor() -> Non
         KisPaperMinuteQuery(exchange="NAS", symbol="IWM")
     with pytest.raises(ValueError, match="continuation"):
         KisPaperMinuteQuery(exchange="NAS", symbol="QQQ", continuation_next="1")
+    with pytest.raises(ValueError, match="probe head"):
+        KisPaperMinuteQuery(
+            exchange="AMS",
+            symbol="IWM",
+            include_previous_day=True,
+            request_intent="iwm_temporal_reach_probe_head",
+        )
+    with pytest.raises(ValueError, match="probe continuation"):
+        KisPaperMinuteQuery(
+            exchange="AMS",
+            symbol="IWM",
+            continuation_next="1",
+            continuation_key="20260717175900",
+            request_intent="iwm_temporal_reach_probe_continuation",
+        )
 
 
 def test_minute_current_head_only_target_requires_a_one_page_client_before_token_request() -> None:
@@ -393,6 +411,159 @@ def test_minute_current_head_only_target_allows_one_current_day_page() -> None:
     assert page.query.symbol == "IWM"
     assert client.call_counts.minute_page_attempts == 1
     assert transport.requests[1].query["PINC"] == "0"
+
+
+def test_iwm_temporal_reach_probe_client_requires_head_then_its_exact_cursor() -> None:
+    transport = _RecordingTransport(
+        [
+            _token(),
+            _page("100000", "095900", next_value="", continuation="M"),
+            _page("095800", "095700", next_value="", continuation=""),
+        ]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+        max_minute_page_attempts=2,
+        minute_route="iwm_temporal_reach_probe",
+    )
+    continuation = KisPaperMinuteQuery(
+        exchange="AMS",
+        symbol="IWM",
+        include_previous_day=True,
+        continuation_next="1",
+        continuation_key="20260717095800",
+        request_intent="iwm_temporal_reach_probe_continuation",
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="probe_head_required"):
+        client.fetch_minute_page(continuation)
+
+    head = client.fetch_minute_page(
+        KisPaperMinuteQuery(
+            exchange="AMS",
+            symbol="IWM",
+            request_intent="iwm_temporal_reach_probe_head",
+        )
+    )
+    derived_key = derive_kis_paper_minute_continuation_key(head)
+    with pytest.raises(KisPaperMarketDataError, match="continuation_unavailable"):
+        client.fetch_minute_page(
+            KisPaperMinuteQuery(
+                exchange="AMS",
+                symbol="IWM",
+                include_previous_day=True,
+                continuation_next="1",
+                continuation_key="20260717095700",
+                request_intent="iwm_temporal_reach_probe_continuation",
+            )
+        )
+
+    continuation = client.fetch_minute_page(
+        KisPaperMinuteQuery(
+            exchange="AMS",
+            symbol="IWM",
+            include_previous_day=True,
+            continuation_next="1",
+            continuation_key=derived_key,
+            request_intent="iwm_temporal_reach_probe_continuation",
+        )
+    )
+
+    assert continuation.query.continuation_key == derived_key
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.minute_page_attempts == 2
+    assert len(transport.requests) == 3
+    with pytest.raises(KisPaperMarketDataError, match="minute_page_limit_exceeded"):
+        client.fetch_minute_page(
+            KisPaperMinuteQuery(
+                exchange="AMS",
+                symbol="IWM",
+                include_previous_day=True,
+                continuation_next="1",
+                continuation_key=derived_key,
+                request_intent="iwm_temporal_reach_probe_continuation",
+            )
+        )
+    assert len(transport.requests) == 3
+
+
+def test_iwm_temporal_reach_probe_client_requires_a_recognized_head_header() -> None:
+    transport = _RecordingTransport(
+        [_token(), _page("100000", "095900", next_value="", continuation="")]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+        max_minute_page_attempts=2,
+        minute_route="iwm_temporal_reach_probe",
+    )
+    head = client.fetch_minute_page(
+        KisPaperMinuteQuery(
+            exchange="AMS",
+            symbol="IWM",
+            request_intent="iwm_temporal_reach_probe_head",
+        )
+    )
+
+    with pytest.raises(KisPaperMarketDataError, match="continuation_unavailable"):
+        client.fetch_minute_page(
+            KisPaperMinuteQuery(
+                exchange="AMS",
+                symbol="IWM",
+                include_previous_day=True,
+                continuation_next="1",
+                continuation_key=derive_kis_paper_minute_continuation_key(head),
+                request_intent="iwm_temporal_reach_probe_continuation",
+            )
+        )
+
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.minute_page_attempts == 1
+    assert len(transport.requests) == 2
+
+
+def test_iwm_temporal_reach_probe_route_is_exactly_two_minutes_and_has_no_daily_path() -> None:
+    with pytest.raises(ValueError, match="exactly two"):
+        KisPaperMarketDataClient(
+            config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+            transport=_RecordingTransport([]),
+            max_minute_page_attempts=1,
+            minute_route="iwm_temporal_reach_probe",
+        )
+
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=_RecordingTransport([]),
+        max_minute_page_attempts=2,
+        minute_route="iwm_temporal_reach_probe",
+    )
+    with pytest.raises(KisPaperMarketDataError, match="disallows_daily"):
+        client.fetch_daily_page(KisPaperDailyQuery(symbol="QQQ", by_date="20260719"))
+    assert client.call_counts.token_attempts == 0
+
+
+def test_iwm_temporal_reach_cursor_derivation_crosses_an_exchange_date_boundary() -> None:
+    page = KisPaperMinutePage(
+        query=KisPaperMinuteQuery(exchange="AMS", symbol="IWM"),
+        bars=(
+            KisPaperMinuteRawBar(
+                exchange_date="20260718",
+                exchange_time="000000",
+                korea_date="20260718",
+                korea_time="000000",
+                open=Decimal("100"),
+                high=Decimal("102"),
+                low=Decimal("99"),
+                last=Decimal("101"),
+                volume=Decimal("1000"),
+            ),
+        ),
+        next_cursor="1",
+        more="",
+    )
+
+    assert derive_kis_paper_minute_continuation_key(page) == "20260717235900"
 
 
 def test_minute_client_classifies_a_successful_empty_list_after_payload_validation() -> None:
@@ -779,7 +950,7 @@ def test_transport_rejects_account_order_and_live_requests_before_opening(
                 "NREC": "120",
                 "FILL": "",
                 "KEYB": "20260717175900",
-                "NEXT": "1",
+                "NEXT": "",
             },
         ),
         (
@@ -854,6 +1025,45 @@ def test_transport_rejects_out_of_scope_market_data_values_before_opening(
         )
 
     assert opened is False
+
+
+def test_transport_allows_only_the_exact_iwm_temporal_reach_continuation_shape() -> None:
+    headers = {"tr_id": KIS_PAPER_MINUTE_TR_ID, "custtype": "P", "tr_cont": "N"}
+    exact_query = {
+        "AUTH": "",
+        "EXCD": "AMS",
+        "SYMB": "IWM",
+        "NMIN": "1",
+        "PINC": "1",
+        "NREC": "120",
+        "FILL": "",
+        "KEYB": "20260717175900",
+        "NEXT": "1",
+    }
+
+    assert kis_market_data._is_approved_minute_request(
+        KisMarketDataRequest(
+            method="GET",
+            url=f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_MINUTE_PATH}",
+            headers=headers,
+            query=exact_query,
+        )
+    )
+    for changed_headers, changed_query in (
+        ({**headers, "tr_cont": ""}, exact_query),
+        (headers, {**exact_query, "NEXT": ""}),
+        (headers, {**exact_query, "KEYB": "2026071717590"}),
+        (headers, {**exact_query, "KEYB": "not-a-cursor"}),
+        (headers, {**exact_query, "PINC": "0"}),
+    ):
+        assert not kis_market_data._is_approved_minute_request(
+            KisMarketDataRequest(
+                method="GET",
+                url=f"{KIS_PAPER_MARKET_DATA_BASE_URL}{KIS_PAPER_MINUTE_PATH}",
+                headers=changed_headers,
+                query=changed_query,
+            )
+        )
 
 
 @pytest.mark.parametrize(
