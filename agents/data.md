@@ -158,6 +158,17 @@ token POST; it identifies no worker and does not diagnose Docker, KIS, or the
 provider. A new goal-owned post-gate attempt may make one fresh atomic claim;
 the completed attempt will not be retried inside this objective.
 
+The due-gate container attempt then reached the existing retained-cache
+protection for both targets. Its exact safe receipt
+`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T133017088958Z-ed596cfe5f8dc959.json`
+(`sha256:ed596cfe5f8dc95977c961d48927e9266ba6353e82578f2a2f76b26acc1b80e4`)
+is `rejected/minute_duplicate_conflict` with `retained_cache/quarantined` for
+both `QQQ/NAS` and `SPY/AMS`. The existing index-only quarantine leaves raw
+bytes immutable and excludes only conflicting active head entries. It is an
+isolated recovery fact, not a provider-finality, coverage, or consumer claim.
+Claude supports one later independently fetched clean-capture attempt; another
+retained-cache conflict closes this exact recovery path.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
@@ -171,6 +182,7 @@ the completed attempt will not be retried inside this objective.
 | Collection-dispatch boundary review | Data / Codex / Claude | Complete as no-change: the bound terminal already carries the returned host Docker-command exit for its exact collection call. A new marker would not diagnose Docker/container or provider behavior and would add diagnostic work before collection. |
 | Direct host collection capability probe | Data / Codex | Complete: one `QQQ/NAS` + `SPY/AMS` `session-capture` invocation at four pages per target completed with an exact unbound source-safe receipt. It established direct-host collector completion only; no Task, Docker, account, order, Paper consumer, or model behavior changed. |
 | First container collection capability probe | Data / Codex | Complete: one exact Compose invocation yielded `rejected/token_request_not_due` for both targets before a token POST. Its safe receipt does not diagnose Docker, KIS, or the provider; no Task, account, order, or consumer ran. |
+| Post-gate container collection capability probe | Data / Codex | Complete: the due-gate service reached the built-in retained-cache conflict branch and quarantined both conflicting active head entries while preserving raw bytes. It established no session/finality/model consumer. |
 | IWM isolated current-head capture | Data | Complete: one fixed IWM/AMS page accepted with the replay-isolated source-safe receipt above; no retry, pagination, replay promotion, or consumer change followed. |
 | IWM isolated cache mechanics | Data | Complete: strict index identity binds the generic raw verifier, with replay-root, index-replacement, raw-tamper, and artifact-symlink rejection coverage. Only source-safe aggregate mechanics were emitted. |
 | IWM temporal-reach continuation probe | Data | Complete: one head was accepted, its continuation header was not recognized, and no second page was requested. The exact endpoint expansion path is closed without retry; the external receipt is the source-safe hash above. |
@@ -290,6 +302,9 @@ the completed attempt will not be retried inside this objective.
 - First container session-capture evidence:
   `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T131812782029Z-0caa1e559078804d.json`
   (`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`).
+- Post-gate container conflict evidence:
+  `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T133017088958Z-ed596cfe5f8dc959.json`
+  (`sha256:ed596cfe5f8dc95977c961d48927e9266ba6353e82578f2a2f76b26acc1b80e4`).
 - Later category-confirmation terminal and schedule evidence:
   `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T2120005941479Z/terminal.json`,
   `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T2120005941479Z.json`

@@ -1251,6 +1251,19 @@ KIS/provider failure. Treat its due time as the owning control's `next_due`,
 not a foreground sleep. A distinct goal may make one fresh atomic attempt only
 after a non-mutating due precheck; never retry this exact attempt.
 
+The next due-gate Compose attempt reached the existing cache-conflict branch.
+Its safe receipt
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T133017088958Z-ed596cfe5f8dc959.json`
+(`sha256:ed596cfe5f8dc95977c961d48927e9266ba6353e82578f2a2f76b26acc1b80e4`)
+records `minute_duplicate_conflict` from `retained_cache` with `quarantined`
+disposition for both fixed targets. That means the installed path preserved the
+immutable raw snapshot and excluded only conflicting active head entries; do
+not inspect, edit, clear, or restore those bytes. It is neither provider
+finality nor a complete-session claim. One later independently fetched clean
+capture may test the existing recovery rule after the shared gate is due. If
+the same retained-cache conflict recurs, close this exact recovery path rather
+than adding a retry loop or a cache-rewrite rule.
+
 The one existing `thericher-kis-paper-intraday-head` task invokes this same
 capture mode before its bounded local and QQQ Paper consumers. It adds no new
 Windows task, and its page cap, concurrency, and collector exit authority stay

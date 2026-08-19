@@ -2,13 +2,13 @@
 
 ## Objective
 
-Complete `kis-paper-intraday-container-post-gate-capability-probe-v1`: after
-the completed first container attempt yielded before any token POST because the
-shared token-start gate was not due, make one new, post-gate attempt through
-the exact existing `kis-paper-intraday-head` Compose collector. This separates
-a due-gate container result from the direct-host result and the task-owned
-host-dispatch result without treating any result as Scheduler origin, session
-completeness, finality, model eligibility, Paper-trading, or live evidence.
+Complete `kis-paper-intraday-quarantined-head-recovery-capture-v1`: after the
+completed due-gate container attempt independently fetched a candidate then
+quarantined conflicting retained head chunks for both targets, make one later
+clean-capture attempt through the exact existing Compose collector. This tests
+only the existing quarantine recovery path; it is not a cache edit, retry loop,
+Scheduler claim, session-completeness, finality, model, Paper-trading, or live
+evidence.
 
 ## Boundaries
 
@@ -35,39 +35,41 @@ completeness, finality, model eligibility, Paper-trading, or live evidence.
 
 ## Required Work
 
-1. Reattest the existing service contract, focused tests, and the shared
-   token-start gate before the call. The non-mutating gate check must report
-   `due`; if it does not, retain a scoped `deferred` result and do not invoke
-   Compose in this objective. A due precheck is advisory only; the service's
-   own atomic claim remains authoritative.
+1. Reattest the existing service contract, focused tests, quarantine semantics,
+   and shared token-start gate before the call. The non-mutating gate check
+   must report `due`; otherwise retain a scoped `deferred` result and do not
+   invoke Compose. A due precheck is advisory only; the service's own atomic
+   claim remains authoritative.
 2. Run exactly one direct Compose `session-capture` invocation with the
    predeclared two-symbol/four-page scope only when the precheck is due.
-   Capture no command output beyond an allowlisted source-safe result. On a
-   bounded failure or a lost atomic token race, record the existing closed
-   category or `reason_unavailable`; do not retry in this objective.
-3. Reattach only the exact probe-owned source-safe receipt/cache aggregate and
-   classify the result narrowly as `succeeded`, `nonzero`, `deferred`, or
-   `unavailable`. A container success does not prove a Windows Task/Scheduler
-   cause; a container nonzero does not prove a provider cause or authorize a
-   collector change.
-4. Add only focused tests or a source-safe reader needed to prove the
-   post-gate container probe cannot read live/account/order credentials or
-   invoke a downstream Paper branch. Update Data, Engine Research, Execution,
-   orchestration, `HANDOFF.md`, and `RUNBOOK.md` with the narrow result.
+   Capture no command output beyond an allowlisted source-safe result. Do not
+   manually edit, clear, restore, or inspect raw cache bytes. On a bounded
+   failure, a lost atomic token race, or another retained-cache conflict,
+   record the existing closed category and stop this recovery path.
+3. Reattach only the exact new source-safe receipt/cache aggregate and
+   classify it narrowly as `recovered`, `nonzero`, `deferred`, or
+   `unavailable`. A clean result is only an isolated capture recovery; it does
+   not prove a Windows Task/Scheduler cause, complete session, provider
+   finality, a qualified model input, or a Paper consumer.
+4. Add only focused tests or a source-safe reader needed to prove the recovery
+   probe cannot read live/account/order credentials, mutate raw bytes outside
+   the existing quarantine path, or invoke a downstream Paper branch. Update
+   Data, Engine Research, Execution, orchestration, `HANDOFF.md`, and
+   `RUNBOOK.md` with the narrow result.
 5. Run required verification, commit, push, replace this file with exactly one
    material next company objective, and continue.
 
 ## Completion Evidence
 
-- One source-safe post-gate result for the exact bounded scope, with no
+- One source-safe post-quarantine result for the exact bounded scope, with no
   account/order/Paper/live call and no raw/secret/output retention; or a
   source-safe `deferred` result with no Compose invocation.
 - Strongest kill test: a Compose route outside the named service, two symbols,
   four-page cap, named market-data path, off-mode/external-root policy, or
   credential allowlist rejects before Docker or any KIS request; a non-due
-  gate never launches Compose, and the probe cannot call a Paper/session/order
-  branch.
-- The conclusion stays asymmetric: it distinguishes only the new due-gate
-  containerized collector result from the direct-host and task-owned
-  host-dispatch results, not Scheduler origin, provider cause, coverage,
-  finality, model, PnL, or live behavior.
+  gate never launches Compose, a recurring retained-cache conflict closes this
+  recovery path, and the probe cannot call a Paper/session/order branch.
+- The conclusion stays asymmetric: it distinguishes only one post-quarantine
+  capture result from the prior direct-host/container/task-owned observations,
+  not Scheduler origin, provider cause, coverage, finality, model, PnL, or
+  live behavior.

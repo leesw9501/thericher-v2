@@ -233,6 +233,19 @@ No Task, account, order, Paper consumer, or live route ran. The next objective
 is one new post-gate Compose attempt with a non-mutating due precheck and its
 own atomic in-service claim; it has no foreground wait or retry loop.
 
+That post-gate attempt completed and exercised the existing collector through
+its retained-cache conflict protection. Its exact safe receipt is
+`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T133017088958Z-ed596cfe5f8dc959.json`
+under `D:\market_data` (`sha256:ed596cfe5f8dc95977c961d48927e9266ba6353e82578f2a2f76b26acc1b80e4`):
+both targets are `rejected/minute_duplicate_conflict` with
+`conflict_origin: retained_cache` and `retained_head_conflict_disposition: quarantined`.
+The installed path preserved immutable raw bytes and quarantined only the
+conflicting active head entries; no manual cache change, Task, account, order,
+consumer, or live route occurred. This is not provider-finality or qualified
+data evidence. Claude returned `supported-with-limits` for one later,
+independently fetched clean-capture attempt using the same recovery path; a
+second retained-cache conflict closes that exact recovery path without a loop.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath
