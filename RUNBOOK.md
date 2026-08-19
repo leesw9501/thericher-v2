@@ -1231,6 +1231,15 @@ minutes, which must remain Data evidence rather than a Research input. SPY is
 recorded as a companion target, but an independent SPY failure cannot erase the
 scoped QQQ capture result.
 
+On 2026-08-19, one Data-owned **direct host** invocation of this exact bounded
+path completed `QQQ/NAS` and `SPY/AMS` with the four-page cap. Its unbound,
+source-safe capture receipt is
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T130238145868Z-50e04e46fdb2e4e0.json`
+(`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`).
+That proves only the direct host collector path completed this scope; it is not
+Windows Task/Scheduler or Docker/container provenance, a complete session,
+provider finality, a model input, or an execution consumer.
+
 The one existing `thericher-kis-paper-intraday-head` task invokes this same
 capture mode before its bounded local and QQQ Paper consumers. It adds no new
 Windows task, and its page cap, concurrency, and collector exit authority stay

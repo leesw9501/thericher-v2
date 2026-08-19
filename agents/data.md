@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The legacy and first post-writer 2026-08-19 KST markers each bind a `recovery` terminal with `collection_exit_nonzero / reason_unavailable`. The later `intraday-head-20260818T2120005941479Z` instead binds `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its compatibility-default category is noncomparable. The source-safe static audit independently reports `matches` for the installed Task enabled/action/triggers/settings and the checked-in first `session-capture` runner/Compose route (`task_state: ready`), with no Task, Docker, or KIS invocation. Metadata topology remains `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The static match rules out only checked-in/installed contract drift. It does not prove a task ran, Scheduler origin, Docker dispatch or container entry, collector/provider cause, session completeness, finality, or model eligibility. The one comparable category remains task-path diagnostic evidence only; no timing/page remedy or reusable Paper-candidate promotion follows. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The legacy and first post-writer 2026-08-19 KST markers each bind a `recovery` terminal with `collection_exit_nonzero / reason_unavailable`. The later `intraday-head-20260818T2120005941479Z` instead binds `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its compatibility-default category is noncomparable. The source-safe static audit reports `matches` for the installed Task and checked-in first `session-capture` route. One direct host collector probe then completed both targets at the fixed four-page cap; its safe unbound receipt is `us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T130238145868Z-50e04e46fdb2e4e0.json` (`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`). Metadata topology remains `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The host-direct success narrows only the direct collector/KIS path. It does not prove a task ran, Scheduler origin, Docker dispatch or container entry, session completeness, finality, or model eligibility. The one comparable category remains task-path diagnostic evidence only; no timing/page remedy or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. The NAS daily-history panel and historical-forward projection now reject a nonempty common-session sequence with an interior normal session missing under pinned local `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar); this package did not reread the current cache. | `input_unavailable` for daily predictive work. A forward cache retains later rows across a gap, but its prospective input stays unavailable until the full boundary-to-forward session chain is present. The continuity rule proves neither source finality nor current-cache qualification. |
 | KIS Paper broad D1 panel | The latest source-safe postrun snapshot (2026-08-01) recorded 2,119/2,119 current-listing targets covered, zero quarantined targets, and zero mismatches over its 604-target baseline overlap. A later successful Task exit does not itself refresh this frozen snapshot. | Coverage/provenance inventory only: current-listing, non-PIT, unadjusted, corporate-action-unqualified, and session-finality-unattested. It cannot supply a target, ranking, training, or Paper input. |
@@ -135,8 +135,17 @@ is written only after `Invoke-HeadProfileService` has returned the host
 `supported-with-limits`: a further per-call marker would duplicate that exact
 returned-boundary evidence for the known terminal while adding another
 diagnostic write to the pre-collection path. This proves neither Docker/container
-entry nor collector/KIS/provider behavior. No duplicate marker was added; the
-next useful Data action is one bounded direct data-only collection probe.
+entry nor collector/KIS/provider behavior. No duplicate marker was added.
+
+The bounded direct host probe is now complete: `QQQ/NAS` and `SPY/AMS`
+completed one `session-capture` invocation at the existing four-page cap, with
+only `paper_only`/market-data aggregate evidence retained at
+`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T130238145868Z-50e04e46fdb2e4e0.json`
+(`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`).
+It proves direct-host collector completion only. The next narrow Data package
+is one existing Compose-service invocation without a Windows Task, so the
+container path can be classified separately without changing pace, scheduling,
+or consumers.
 
 ## Ready / Owned / Due
 
@@ -149,6 +158,7 @@ next useful Data action is one bounded direct data-only collection probe.
 | Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but successful and `retained_partial`, so the preserved default category is noncomparable. No recovery proposal or behavior change followed. |
 | Static intraday Task-contract reattestation | Data / Codex | Complete: installed Task enabled/action/triggers/settings and checked-in first `session-capture` runner/Compose route are all `matches`; the source-safe receipt is hash-bound and the audit invoked no Task, Docker, KIS, collector, or broker. It does not diagnose the existing terminal. |
 | Collection-dispatch boundary review | Data / Codex / Claude | Complete as no-change: the bound terminal already carries the returned host Docker-command exit for its exact collection call. A new marker would not diagnose Docker/container or provider behavior and would add diagnostic work before collection. |
+| Direct host collection capability probe | Data / Codex | Complete: one `QQQ/NAS` + `SPY/AMS` `session-capture` invocation at four pages per target completed with an exact unbound source-safe receipt. It established direct-host collector completion only; no Task, Docker, account, order, Paper consumer, or model behavior changed. |
 | IWM isolated current-head capture | Data | Complete: one fixed IWM/AMS page accepted with the replay-isolated source-safe receipt above; no retry, pagination, replay promotion, or consumer change followed. |
 | IWM isolated cache mechanics | Data | Complete: strict index identity binds the generic raw verifier, with replay-root, index-replacement, raw-tamper, and artifact-symlink rejection coverage. Only source-safe aggregate mechanics were emitted. |
 | IWM temporal-reach continuation probe | Data | Complete: one head was accepted, its continuation header was not recognized, and no second page was requested. The exact endpoint expansion path is closed without retry; the external receipt is the source-safe hash above. |
@@ -262,6 +272,9 @@ next useful Data action is one bounded direct data-only collection probe.
   `scripts\inspect_kis_paper_intraday_head_static_contract.ps1` and
   `execution/kis-paper-intraday-head-static-contract-v1/static-contract-20260819T1234034490997Z-931b776ddcdc.json`
   (`sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`).
+- Direct host session-capture evidence:
+  `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T130238145868Z-50e04e46fdb2e4e0.json`
+  (`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`).
 - Later category-confirmation terminal and schedule evidence:
   `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T2120005941479Z/terminal.json`,
   `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T2120005941479Z.json`

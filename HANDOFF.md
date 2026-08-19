@@ -205,9 +205,21 @@ terminal, the runner captures the return from its exact
 `Invoke-HeadProfileService`/host Docker command before it writes
 `collection_outcome`. A new pre/post marker would neither prove container entry
 nor identify a collector/provider cause, while adding another diagnostic step to
-the pre-collection path. The next objective is therefore one bounded direct
-KIS Paper data-only collection capability probe, with no order, account, live,
-or scheduler action.
+the pre-collection path.
+
+The completed direct host collection capability probe then used exactly one
+existing `session-capture` collector invocation for `QQQ/NAS` and `SPY/AMS`
+with the four-page cap. It completed with `paper_only: true` and
+`route_class: kis_paper_market_data`; its exact unbound source-safe receipt is
+`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T130238145868Z-50e04e46fdb2e4e0.json`
+under `D:\market_data` (`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`).
+This establishes only that the direct host collector/KIS data path completed
+the bounded scope and persisted its safe aggregate; it does not prove a
+Windows Task/Scheduler, Docker/container, provider-finality, coverage, or
+model-input fact. Claude's next falsification-first review returned
+`supported-with-limits` for one exact existing Compose-service probe, so the
+next objective isolates that container path without invoking a task or a
+downstream consumer.
 
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
