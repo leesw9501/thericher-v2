@@ -26,7 +26,10 @@ def decide(
         raise ValueError("predictions must target one market/symbol")
 
     votes = Counter(item.signal.action for item in predictions)
-    action = votes.most_common(1)[0][0]
+    highest_vote_count = max(votes.values())
+    vote_leaders = tuple(action for action, count in votes.items() if count == highest_vote_count)
+    action = vote_leaders[0] if len(vote_leaders) == 1 else "hold"
+    reason = "single_model_or_majority_vote" if len(vote_leaders) == 1 else "tied_vote_hold"
     count = Decimal(len(predictions))
     confidence = sum((item.confidence for item in predictions), Decimal("0")) / count
     expected_edge_bps = sum((item.expected_edge_bps for item in predictions), Decimal("0")) / count
@@ -41,5 +44,5 @@ def decide(
         risk_score=max(Decimal("0"), Decimal("1") - confidence),
         prediction_ids=tuple(f"{item.model_id}:{item.model_version}" for item in predictions),
         decided_at=max(item.feature_window_end for item in predictions).astimezone(UTC),
-        reason="single_model_or_majority_vote",
+        reason=reason,
     )

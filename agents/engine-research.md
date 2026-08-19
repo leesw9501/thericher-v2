@@ -50,6 +50,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   Tiingo D1 breadth runner uses that same factory. This is implementation
   consistency only: no frozen screen, campaign, GPU appointment, model
   selection, or Paper path changed.
+- The minimal action-vote ensemble now maps a highest-vote tie to `hold`
+  independently of caller order and labels it `tied_vote_hold`. This is
+  deterministic local fusion only: it does not select a model, create a
+  campaign, consume data, allocate GPU, or authorize Paper behavior.
 - Existing CPU/CUDA structural screens for LSTM, causal TCN, and compact
   attention prove only a local runtime path. They do not select a model.
 - A caller-owned synthetic two-step local-paper policy replay now proves that
