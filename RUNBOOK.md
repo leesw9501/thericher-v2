@@ -1839,6 +1839,20 @@ It may obtain a virtual token and read reconciliation endpoints, but never uses
 the buy-limit or cancellation route. A missing or malformed private state ends
 with a safe failure; it is not recreated from command-line values.
 
+The 2026-08-11 historical session/direct reader pair is bound as
+`canary_completed -> outcome_unknown / unresolved`, `paper_only`, with no
+attribution eligibility. Its later closure assessment did not rerun this command:
+the source-safe evidence did not include an exact private durable-state binding
+or a predeclared immutable pointer proving that no same-run reconciliation had
+already occurred. It therefore preserved the scoped unknown without a KIS,
+submit, cancel, modify, or replacement request. This is not broker-state proof.
+
+Do not treat an `outcome_unknown` lifecycle fact by itself as permission to
+repeat a read-only reconciliation. A future broker-facing recovery for the same
+run needs both an exact durable binding and a predeclared prior-attempt proof;
+otherwise it remains `outcome_unknown` and does not affect a distinct Paper
+intent or another lane.
+
 To inspect one completed canary without a KIS call or credential read, project
 only its sanitized lifecycle fact from the host artifact root:
 
