@@ -211,7 +211,10 @@ class LocalCsvBarProvider:
     def get_bars(self, query: BarQuery) -> list[Bar]:
         path = Path(self.path)
         with path.open(newline="", encoding="utf-8") as handle:
-            bars = [bar_from_record(row) for row in csv.DictReader(handle)]
+            reader = csv.DictReader(handle)
+            if tuple(reader.fieldnames or ()) != CSV_FIELDS:
+                raise ValueError("local CSV header must exactly match canonical bar fields")
+            bars = [bar_from_record(row) for row in reader]
         matching_bars = filter_bars(bars, query)
         if len({bar.start_ts for bar in matching_bars}) != len(matching_bars):
             raise ValueError("local CSV query contains duplicate bar timestamps")

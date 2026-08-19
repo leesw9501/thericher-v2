@@ -141,6 +141,22 @@ def test_local_provider_rejects_duplicate_timestamps_in_direct_stream(tmp_path) 
         provider.get_bars(query)
 
 
+def test_local_provider_rejects_noncanonical_header(tmp_path) -> None:
+    csv_path = tmp_path / "bars.csv"
+    fieldnames = tuple(field for field in CSV_FIELDS if field != "complete")
+    with csv_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        row = bar_to_record(_bar(0))
+        writer.writerow({field: row[field] for field in fieldnames})
+
+    provider = LocalCsvBarProvider(csv_path)
+    query = BarQuery(symbol="AAPL", market="US", timeframe=Timeframe.M1)
+
+    with pytest.raises(ValueError, match="header must exactly match"):
+        provider.get_bars(query)
+
+
 def test_bar_from_record_rejects_naive_timestamps() -> None:
     record = bar_to_record(_bar(0))
     record["start_ts"] = "2026-01-02T00:00:00"

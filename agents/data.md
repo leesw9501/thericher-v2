@@ -173,6 +173,10 @@ disabled.
   rather than silently returning an ambiguous M1 stream. This is source-local
   query integrity only; it does not infer revisions, session continuity, or
   promotion eligibility.
+- A direct `LocalCsvBarProvider` query requires the exact canonical
+  `CSV_FIELDS` header before parsing. A missing `complete` field cannot be
+  defaulted to a completed bar through this path; this remains source-local
+  integrity only, not an assertion about source completeness or finality.
 - A cumulative intraday session with a non-`none`
   `conflicting_overlap_category` is metadata-conflicted even when its
   expected-minute count is complete. The current capture-category projection
