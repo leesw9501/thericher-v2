@@ -135,6 +135,7 @@ candidate matrix.
 | --- | --- | --- |
 | Qlib | MIT `architecture_reference_only` | No package, code, data, model, runtime, or campaign adoption. |
 | PatchTST | Apache-2.0 `future_sequence_architecture_reference` | General time-series claims only; financial pretraining/evaluation scope is not disclosed, and no runtime, code, weight, or campaign is adopted. |
+| Crossformer | Apache-2.0 `future_cross_dimension_multivariate_sequence_architecture_reference` | DSW segments, router-mediated temporal/cross-dimension attention, and hierarchical multiscale decoding are source-only references; generic non-financial evaluation and undisclosed pretraining leave KIS causal timing, session, finality, and multi-timeframe mapping unproven. |
 | TiDE | Apache-2.0 `future_mlp_multihorizon_baseline_reference` | Source-only reference for an observed-feature MLP encoder-decoder baseline. Its generic long-horizon benchmark, TensorFlow reference runtime, and any future-known market covariate are not adopted; a qualified campaign must independently prove causal feature availability. |
 | TimeMixer | Apache-2.0 `future_multiscale_mlp_baseline_reference` | Source-only reference for past decomposable mixing and multipredictor fusion across scales. Its generic non-financial benchmarks, optional future temporal features, and average-downsampled hierarchy are not adopted; a qualified campaign must freeze its own causal 1m/5m/10m/1h/3h scale mapping. |
 | N-HiTS | Apache-2.0 `future_single_timeframe_hierarchical_forecast_reference` | Source-only reference for past-observed hierarchical interpolation and multi-rate pooling within one timeframe. Its generic long-horizon benchmarks, automatic tuning, and future/static covariate interfaces are not adopted; internal multi-rate sampling does not establish a 1m/5m/10m/1h/3h cross-timeframe mapping. |
@@ -148,6 +149,9 @@ Qlib evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qlib-architecture-source-20260809-r1\source-retrieval.json`.
 PatchTST source-only evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\patchtst-source-20260809-r1\source-retrieval.json`.
+Crossformer source-only evidence:
+`D:\thericher-v2\model-artifacts\research\engine-source-retrieval\crossformer-source-20260819-r1\source-retrieval.json`
+(`sha256:826f75a4ae05ca0f0955ebe711cb6887045c3dfc708d87f9cb3483e03982b7b6`).
 TiDE source-only evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\tide-multihorizon-source-20260819-r1\source-retrieval.json`.
 TimeMixer source-only evidence:
