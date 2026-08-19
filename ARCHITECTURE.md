@@ -193,13 +193,15 @@ It has no data access, score generation, training, reservation, execution, or
 Paper authority.
 
 Before a selected allocated proposal enters the existing decision-receipt path,
-Research may derive one cohort-level opaque proposal reference by replaying the
-entire supplied selection field. The reference commits the aligned selector,
-score schema, top-K geometry, source context, all candidate selection outcomes,
-and caller-owned policy/allocation proposal identities. It is lineage only: it
-does not prove the field was a complete universe, validate predictive scores,
-or replace Execution's independent target and symbol binding checks. Receipt
-and local-Paper binding must use the same derived reference; a mismatch fails
+Research may derive one cohort-level opaque proposal reference only by replaying
+the entire supplied selection, policy, and allocation cycle from its original
+entries and frozen configs. The recomputed outcome must exactly match every
+supplied result before a reference exists. The reference commits the aligned
+selector, score schema, top-K geometry, source context, policy/allocation
+geometry, and every candidate outcome. It is lineage only: it does not prove
+the field was a complete universe, validate predictive scores, or replace
+Execution's independent target and symbol binding checks. Receipt and
+local-Paper binding must use the same derived reference; a mismatch fails
 closed at the existing bridge.
 
 For replayable local-Paper fills, Execution also has a pure offline FIFO

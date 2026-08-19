@@ -69,12 +69,13 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   correlation, and cost assumptions before any comparative, ensemble, or Paper
   claim. This pure mechanism has no score generation, data, training, GPU,
   reservation, execution, or Paper authority.
-- For a selected candidate only, Research can now replay the entire supplied
-  selection cohort into an opaque lineage `proposal_ref` for the existing
-  decision-receipt and local-paper bridge. It commits the observed candidate
-  field and selection context, not a complete universe, predictive score, or
-  Execution proof; policy/allocation IDs remain caller-owned downstream
-  identities. A mismatched receipt/binding reference fails closed.
+- For a selected candidate only, Research now replays the entire supplied
+  selection, per-symbol policy, and allocation cycle from the original inputs
+  and frozen configs before issuing an opaque lineage `proposal_ref` for the
+  existing decision-receipt and local-paper bridge. A substituted downstream
+  target fails closed. It still proves neither a complete universe nor a
+  predictive score or Execution correctness; a mismatched receipt/binding
+  reference also fails closed.
 - The local-Paper replay now retains both entry and exit decision identities on
   valid FIFO close segments, with separate role and pair accounting totals.
   Its pure receipt resolver attaches only exact opaque campaign/model/input/

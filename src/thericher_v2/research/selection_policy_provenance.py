@@ -17,11 +17,14 @@ from typing import Final
 from thericher_v2.models.opportunity_selection import (
     OpportunitySelectionConfig,
     OpportunitySelectionContext,
-    select_source_attested_opportunities,
 )
 from thericher_v2.models.opportunity_selection_policy_cycle import (
+    OpportunitySelectionPolicyCycleEntry,
     OpportunitySelectionPolicyCycleOutcome,
+    evaluate_opportunity_selection_policy_cycle,
 )
+from thericher_v2.models.target_exposure_allocator import TargetExposureAllocationConfig
+from thericher_v2.models.target_position_policy import TargetPositionPolicyConfig
 
 SELECTION_POLICY_LINEAGE_SCHEMA_ID = "selection-policy-lineage-v1"
 _OPAQUE_REFERENCE: Final = re.compile(r"ref:[0-9a-f]{32,128}", re.ASCII)
@@ -57,45 +60,58 @@ class SelectionPolicyProposalLineage:
 def build_selected_selection_policy_proposal_lineage(
     outcomes: Sequence[OpportunitySelectionPolicyCycleOutcome],
     *,
+    entries: Sequence[OpportunitySelectionPolicyCycleEntry],
     selection_config: OpportunitySelectionConfig,
     selection_context: OpportunitySelectionContext,
+    policy_config: TargetPositionPolicyConfig,
+    allocation_config: TargetExposureAllocationConfig,
     symbol: str,
     market: str,
 ) -> SelectionPolicyProposalLineage:
-    """Build a selected proposal reference after replaying the full cohort.
+    """Build a selected proposal reference after replaying the full policy cohort.
 
-    This proves only the exact candidate field supplied by the caller.  It
+    This proves only the exact candidate field supplied by the caller. It
     cannot prove that field was the whole historical universe or that scores
-    are predictive.  The full selection result is recomputed first, which
-    binds the selector, score schema, thresholds, common source context, and
-    peer ordering rather than trusting a one-row rank assertion.
+    are predictive. The full selection, per-symbol policy, and allocation
+    result is recomputed from the original inputs first, which prevents a
+    caller from pairing a valid rank with a substituted downstream target.
     """
 
     if not isinstance(outcomes, Sequence):
         raise TypeError("outcomes must be a sequence")
+    if not isinstance(entries, Sequence):
+        raise TypeError("entries must be a sequence")
     if not isinstance(selection_config, OpportunitySelectionConfig):
         raise TypeError("selection_config must be an OpportunitySelectionConfig")
     if not isinstance(selection_context, OpportunitySelectionContext):
         raise TypeError("selection_context must be an OpportunitySelectionContext")
+    if not isinstance(policy_config, TargetPositionPolicyConfig):
+        raise TypeError("policy_config must be a TargetPositionPolicyConfig")
+    if not isinstance(allocation_config, TargetExposureAllocationConfig):
+        raise TypeError("allocation_config must be a TargetExposureAllocationConfig")
     if not isinstance(symbol, str) or not symbol.strip():
         raise ValueError("symbol must be nonempty")
     if not isinstance(market, str) or not market.strip():
         raise ValueError("market must be nonempty")
     cycle_outcomes = tuple(outcomes)
+    cycle_entries = tuple(entries)
     if any(
         not isinstance(outcome, OpportunitySelectionPolicyCycleOutcome)
         for outcome in cycle_outcomes
     ):
         raise TypeError("outcomes must contain OpportunitySelectionPolicyCycleOutcome values")
+    if any(not isinstance(entry, OpportunitySelectionPolicyCycleEntry) for entry in cycle_entries):
+        raise TypeError("entries must contain OpportunitySelectionPolicyCycleEntry values")
 
-    selection_outcomes = tuple(outcome.selection_outcome for outcome in cycle_outcomes)
-    expected_selection = select_source_attested_opportunities(
-        tuple(outcome.entry for outcome in selection_outcomes),
-        config=selection_config,
-        context=selection_context,
+    expected_cycle = evaluate_opportunity_selection_policy_cycle(
+        cycle_entries,
+        selection_config=selection_config,
+        selection_context=selection_context,
+        policy_config=policy_config,
+        allocation_config=allocation_config,
     )
-    if selection_outcomes != expected_selection:
-        raise ValueError("selection outcomes must match deterministic cohort recomputation")
+    if cycle_outcomes != expected_cycle:
+        raise ValueError("selection policy outcomes must match deterministic cohort replay")
 
     target_identity = market.upper(), symbol.upper()
     matching = tuple(
@@ -115,6 +131,8 @@ def build_selected_selection_policy_proposal_lineage(
         cycle_outcomes,
         selection_config=selection_config,
         selection_context=selection_context,
+        policy_config=policy_config,
+        allocation_config=allocation_config,
     )
     policy_outcome = selected.policy_cycle_outcome
     proposal_ref = _opaque_reference(
@@ -144,6 +162,8 @@ def _cohort_ref(
     *,
     selection_config: OpportunitySelectionConfig,
     selection_context: OpportunitySelectionContext,
+    policy_config: TargetPositionPolicyConfig,
+    allocation_config: TargetExposureAllocationConfig,
 ) -> str:
     return _opaque_reference(
         kind="selection_policy_cohort_lineage_v1",
@@ -157,6 +177,24 @@ def _cohort_ref(
             "as_of": selection_context.as_of.isoformat(),
             "source_semantics_id": selection_context.source_semantics_id,
             "availability_grade": selection_context.availability_grade,
+            "policy": {
+                "policy_id": policy_config.policy_id,
+                "feature_schema_id": policy_config.feature_schema_id,
+                "required_timeframes": [
+                    timeframe.value for timeframe in policy_config.required_timeframes
+                ],
+                "maximum_evidence_age_seconds": {
+                    timeframe.value: int(
+                        policy_config.maximum_evidence_age[timeframe].total_seconds()
+                    )
+                    for timeframe in policy_config.required_timeframes
+                },
+                "minimum_confidence": str(policy_config.minimum_confidence),
+                "minimum_absolute_edge_bps": str(policy_config.minimum_absolute_edge_bps),
+                "entry_target_exposure": str(policy_config.entry_target_exposure),
+                "decision_ttl_seconds": int(policy_config.decision_ttl.total_seconds()),
+            },
+            "allocation": {"allocator_id": allocation_config.allocator_id},
             "candidates": [_candidate_payload(outcome) for outcome in outcomes],
         },
     )

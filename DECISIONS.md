@@ -9513,3 +9513,24 @@ category-based recovery still requires a fresh Claude verdict and two
 independently hash-validated matching task bindings. The category remains
 assumed-honest-host marker provenance, not cryptographic proof of Scheduler
 origin.
+
+## 2026-08-19 - Recompute the full selected-policy cycle before lineage
+
+Decision: a selected-cohort lineage reference now requires the original
+selection-policy entries and the frozen selection, per-symbol policy, and
+allocation configs. Its builder independently replays the complete cycle and
+rejects every supplied outcome that differs before producing an opaque proposal
+reference. The cohort identity now includes policy and allocator geometry as
+well as selection context and candidate outcomes.
+
+Reason: replaying only the rank left a narrow integrity gap: a caller could
+pair a valid selected symbol with a substituted same-identity downstream target
+and obtain a receipt-compatible lineage reference. The narrow pure replay
+preserves the existing separation between Research proposals and Execution
+authority while making a target substitution fail before receipt or local-paper
+preparation. Focused offline tests cover a forged allocation outcome and both
+policy and allocator config mismatches. The requested Claude falsification
+check returned no output before its bounded wait, recorded as
+`review_unavailable`, not agreement. This changes no data, credential, KIS,
+broker, Docker, GPU, model, Paper order, PnL, or live behavior; it still does
+not prove complete-universe coverage or predictive score validity.

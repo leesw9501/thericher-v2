@@ -121,11 +121,14 @@ def test_cycle_selection_order_is_not_caller_order() -> None:
 
 
 def test_selected_lineage_replays_the_full_cohort_then_binds_a_local_paper_receipt() -> None:
-    outcomes = _outcomes()
+    entries, outcomes = _cycle()
     lineage = build_selected_selection_policy_proposal_lineage(
         outcomes,
+        entries=entries,
         selection_config=_selection_config(),
         selection_context=_selection_context(),
+        policy_config=_policy_config(),
+        allocation_config=_allocation_config(),
         symbol="QQQ",
         market="US",
     )
@@ -162,12 +165,15 @@ def test_selected_lineage_replays_the_full_cohort_then_binds_a_local_paper_recei
 
 
 def test_lineage_rejects_a_nonselected_or_tampered_selection_cohort() -> None:
-    outcomes = _outcomes()
+    entries, outcomes = _cycle()
     with pytest.raises(ValueError, match="only for a selected outcome"):
         build_selected_selection_policy_proposal_lineage(
             outcomes,
+            entries=entries,
             selection_config=_selection_config(),
             selection_context=_selection_context(),
+            policy_config=_policy_config(),
+            allocation_config=_allocation_config(),
             symbol="DIA",
             market="US",
         )
@@ -183,19 +189,89 @@ def test_lineage_rejects_a_nonselected_or_tampered_selection_cohort() -> None:
         else outcome
         for outcome in outcomes
     )
-    with pytest.raises(ValueError, match="deterministic cohort recomputation"):
+    with pytest.raises(ValueError, match="deterministic cohort replay"):
         build_selected_selection_policy_proposal_lineage(
             tampered,
+            entries=entries,
             selection_config=_selection_config(),
             selection_context=_selection_context(),
+            policy_config=_policy_config(),
+            allocation_config=_allocation_config(),
             symbol="QQQ",
             market="US",
         )
-    with pytest.raises(ValueError, match="deterministic cohort recomputation"):
+    with pytest.raises(ValueError, match="deterministic cohort replay"):
         build_selected_selection_policy_proposal_lineage(
             outcomes,
+            entries=entries,
             selection_config=replace(_selection_config(), maximum_selected=1),
             selection_context=_selection_context(),
+            policy_config=_policy_config(),
+            allocation_config=_allocation_config(),
+            symbol="QQQ",
+            market="US",
+        )
+
+
+def test_lineage_rejects_tampered_downstream_allocation_outcome() -> None:
+    entries, outcomes = _cycle()
+    qqq = _outcome_for(outcomes, "QQQ")
+    assert qqq.policy_cycle_outcome is not None
+    forged_allocation = replace(
+        qqq.policy_cycle_outcome.allocated_proposal,
+        target_exposure=Decimal("0.10"),
+    )
+    forged_outcome = replace(
+        qqq,
+        policy_cycle_outcome=replace(
+            qqq.policy_cycle_outcome,
+            allocated_proposal=forged_allocation,
+        ),
+    )
+    forged_cohort = tuple(
+        forged_outcome if outcome is qqq else outcome for outcome in outcomes
+    )
+
+    with pytest.raises(ValueError, match="deterministic cohort replay"):
+        build_selected_selection_policy_proposal_lineage(
+            forged_cohort,
+            entries=entries,
+            selection_config=_selection_config(),
+            selection_context=_selection_context(),
+            policy_config=_policy_config(),
+            allocation_config=_allocation_config(),
+            symbol="QQQ",
+            market="US",
+        )
+
+
+def test_lineage_requires_the_exact_frozen_policy_and_allocation_configs() -> None:
+    entries, outcomes = _cycle()
+
+    with pytest.raises(ValueError, match="deterministic cohort replay"):
+        build_selected_selection_policy_proposal_lineage(
+            outcomes,
+            entries=entries,
+            selection_config=_selection_config(),
+            selection_context=_selection_context(),
+            policy_config=replace(
+                _policy_config(),
+                entry_target_exposure=Decimal("0.40"),
+            ),
+            allocation_config=_allocation_config(),
+            symbol="QQQ",
+            market="US",
+        )
+    with pytest.raises(ValueError, match="deterministic cohort replay"):
+        build_selected_selection_policy_proposal_lineage(
+            outcomes,
+            entries=entries,
+            selection_config=_selection_config(),
+            selection_context=_selection_context(),
+            policy_config=_policy_config(),
+            allocation_config=TargetExposureAllocationConfig(
+                allocator_id="other-selection-policy-cycle-test-v1"
+            ),
             symbol="QQQ",
             market="US",
         )
@@ -237,8 +313,9 @@ def test_cycle_is_pure_without_data_network_broker_or_credentials(
     monkeypatch.setattr(socket, "create_connection", forbidden)
     monkeypatch.setattr(urllib.request, "urlopen", forbidden)
 
+    entries = (_entry("QQQ", "0.90", actions=("buy", "buy")),)
     outcomes = evaluate_opportunity_selection_policy_cycle(
-        (_entry("QQQ", "0.90", actions=("buy", "buy")),),
+        entries,
         selection_config=_selection_config(),
         selection_context=_selection_context(),
         policy_config=_policy_config(),
@@ -249,8 +326,11 @@ def test_cycle_is_pure_without_data_network_broker_or_credentials(
     assert outcomes[0].policy_cycle_outcome is not None
     lineage = build_selected_selection_policy_proposal_lineage(
         outcomes,
+        entries=entries,
         selection_config=_selection_config(),
         selection_context=_selection_context(),
+        policy_config=_policy_config(),
+        allocation_config=_allocation_config(),
         symbol="QQQ",
         market="US",
     )
@@ -277,14 +357,24 @@ def _cycle_summary(
     return tuple(summary)
 
 
-def _outcomes() -> tuple[object, ...]:
+def _cycle() -> tuple[
+    tuple[OpportunitySelectionPolicyCycleEntry, ...],
+    tuple[object, ...],
+]:
+    entries = (
+        _entry("DIA", "0.70", actions=("buy", "buy")),
+        _entry("IWM", "0.80", actions=("buy", "buy")),
+        _entry("SPY", "0.90", actions=("buy", "sell")),
+        _entry("QQQ", "0.99", actions=("buy", "buy")),
+    )
+    return entries, _outcomes(entries)
+
+
+def _outcomes(
+    entries: tuple[OpportunitySelectionPolicyCycleEntry, ...],
+) -> tuple[object, ...]:
     return evaluate_opportunity_selection_policy_cycle(
-        (
-            _entry("DIA", "0.70", actions=("buy", "buy")),
-            _entry("IWM", "0.80", actions=("buy", "buy")),
-            _entry("SPY", "0.90", actions=("buy", "sell")),
-            _entry("QQQ", "0.99", actions=("buy", "buy")),
-        ),
+        entries,
         selection_config=_selection_config(),
         selection_context=_selection_context(),
         policy_config=_policy_config(),
