@@ -13,6 +13,11 @@ from thericher_v2.execution.paper_decision_bridge import (
     LocalPaperTargetBinding,
     prepare_local_paper_intent,
 )
+from thericher_v2.models.current_source_opportunity_eligibility import (
+    CurrentSourceContract,
+    CurrentSourceMetadata,
+    adapt_current_source_opportunity_eligibility,
+)
 from thericher_v2.models.target_exposure_allocator import (
     TargetExposureAllocationConfig,
     TargetExposureAllocationInput,
@@ -57,10 +62,10 @@ def test_cycle_preserves_policy_and_allocation_outcomes_in_caller_order() -> Non
     assert outcomes[1].allocated_proposal.reason == "allocation_capacity_exhausted"
 
 
-def test_unready_policy_abstains_without_consuming_next_symbol_capacity() -> None:
+def test_unready_source_attestation_abstains_without_consuming_next_symbol_capacity() -> None:
     outcomes = evaluate_target_exposure_policy_cycle(
         (
-            _entry("QQQ", opportunity_status="unqualified"),
+            _entry("QQQ", source_status="unqualified"),
             _entry("SPY"),
         ),
         policy_config=_policy_config(),
@@ -116,10 +121,20 @@ def test_valid_exit_does_not_release_unexecuted_capacity_for_a_later_entry() -> 
 def test_current_exposure_must_match_the_allocation_snapshot() -> None:
     with pytest.raises(ValueError, match="match allocation current_symbol_exposure"):
         TargetExposurePolicyCycleEntry(
-            eligibility=_eligibility("QQQ"),
+            source_eligibility=_source_eligibility("QQQ"),
             predictions=_predictions("QQQ"),
             current_exposure=Decimal("0.10"),
             allocation=_allocation(current_symbol_exposure="0"),
+        )
+
+
+def test_cycle_requires_a_monotone_current_source_attestation() -> None:
+    with pytest.raises(TypeError, match="source_eligibility"):
+        TargetExposurePolicyCycleEntry(
+            source_eligibility=_eligibility("QQQ"),
+            predictions=_predictions("QQQ"),
+            current_exposure=Decimal("0"),
+            allocation=_allocation(),
         )
 
 
@@ -174,14 +189,14 @@ def _entry(
     *,
     action: str = "buy",
     expected_edge_bps: str = "4",
-    opportunity_status: str = "ready",
+    source_status: str = "ready",
     current_symbol_exposure: str = "0",
     current_portfolio_exposure: str = "0.40",
     available_portfolio_capacity: str = "0.30",
     portfolio_exposure_cap: str = "0.70",
 ) -> TargetExposurePolicyCycleEntry:
     return TargetExposurePolicyCycleEntry(
-        eligibility=_eligibility(symbol, status=opportunity_status),
+        source_eligibility=_source_eligibility(symbol, status=source_status),
         predictions=_predictions(symbol, action=action, expected_edge_bps=expected_edge_bps),
         current_exposure=Decimal(current_symbol_exposure),
         allocation=_allocation(
@@ -193,15 +208,40 @@ def _entry(
     )
 
 
-def _eligibility(symbol: str, *, status: str = "ready") -> OpportunityEligibility:
+def _eligibility(symbol: str) -> OpportunityEligibility:
     return OpportunityEligibility(
         opportunity_ref="ref:" + symbol.lower().encode().hex().ljust(64, "0"),
         symbol=symbol,
         market="US",
         eligible=True,
-        input_status=status,
+        input_status="ready",
         observed_at=_NOW - timedelta(minutes=1),
         valid_until=_NOW + timedelta(minutes=3),
+    )
+
+
+def _source_eligibility(
+    symbol: str,
+    *,
+    status: str = "ready",
+):
+    contract = CurrentSourceContract(
+        contract_id=f"current-source-{symbol.lower()}-us-v1",
+        contract_hash="sha256:" + ("a" if symbol == "QQQ" else "b") * 64,
+    )
+    return adapt_current_source_opportunity_eligibility(
+        _eligibility(symbol),
+        CurrentSourceMetadata(
+            contract=contract,
+            symbol=symbol,
+            market="US",
+            input_status=status,
+            complete=True,
+            observed_at=_NOW - timedelta(minutes=1),
+            valid_until=_NOW + timedelta(minutes=2),
+        ),
+        expected_contract=contract,
+        as_of=_NOW,
     )
 
 

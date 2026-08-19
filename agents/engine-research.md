@@ -52,8 +52,9 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   independent decisions can submit and fill sequentially at next-bar boundaries
   with the same fee/slippage and replay/PnL accounting semantics. It is an
   interface capability fixture, not a market, model, or PnL result.
-- The pure target-policy cycle now composes caller-ordered per-symbol policy
-  outcomes with the existing same-snapshot allocation helper and retains both
+- The pure target-policy cycle now accepts only an existing monotone
+  current-source eligibility attestation, composes caller-ordered per-symbol
+  policy outcomes with the same-snapshot allocation helper, and retains both
   proposal layers for later attribution. It has no data, model, ranking,
   reservation, execution, or Paper authority; without a qualified input it
   cannot create a candidate or research result.

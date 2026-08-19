@@ -164,10 +164,11 @@ reduction or exit as released capacity. Execution independently rechecks
 feasible targets and order quantization after actual position state is known.
 
 The pure target-policy cycle composes that allocator with the existing
-per-symbol policy only after each caller-owned entry binds the same current
-symbol exposure in both layers. It preserves caller order and retains both the
-pre-allocation policy proposal and the allocated proposal, so later attribution
-can distinguish an expert-policy decision from a capacity cap. It has no
+per-symbol policy only after each entry supplies an existing monotone current-
+source eligibility attestation and binds the same current symbol exposure in
+both layers. It preserves caller order and retains both the pre-allocation
+policy proposal and the allocated proposal, so later attribution can
+distinguish an expert-policy decision from a capacity cap. It has no
 opportunity-ranking, model-training, portfolio-reservation, data, or broker
 authority.
 

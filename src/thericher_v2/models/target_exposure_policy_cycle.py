@@ -13,6 +13,9 @@ from thericher_v2.contracts import (
     decimal_value,
     require_utc,
 )
+from thericher_v2.models.current_source_opportunity_eligibility import (
+    CurrentSourceOpportunityEligibility,
+)
 from thericher_v2.models.sequence_window import CausalMultiTimeframeSequenceWindow
 from thericher_v2.models.target_exposure_allocator import (
     TargetExposureAllocationConfig,
@@ -31,17 +34,17 @@ from thericher_v2.models.target_position_policy import (
 
 @dataclass(frozen=True)
 class TargetExposurePolicyCycleEntry:
-    """Caller-owned inputs for one symbol in a shared decision cycle."""
+    """Source-attested inputs for one symbol in a shared decision cycle."""
 
-    eligibility: OpportunityEligibility
+    source_eligibility: CurrentSourceOpportunityEligibility
     predictions: Sequence[ModelPrediction]
     current_exposure: Decimal | int | str
     allocation: TargetExposureAllocationInput
     causal_window: CausalMultiTimeframeSequenceWindow | None = None
 
     def __post_init__(self) -> None:
-        if not isinstance(self.eligibility, OpportunityEligibility):
-            raise TypeError("eligibility must be an OpportunityEligibility")
+        if not isinstance(self.source_eligibility, CurrentSourceOpportunityEligibility):
+            raise TypeError("source_eligibility must be a CurrentSourceOpportunityEligibility")
         if not isinstance(self.allocation, TargetExposureAllocationInput):
             raise TypeError("allocation must be a TargetExposureAllocationInput")
         if self.causal_window is not None and not isinstance(
@@ -60,6 +63,12 @@ class TargetExposurePolicyCycleEntry:
 
         object.__setattr__(self, "predictions", predictions)
         object.__setattr__(self, "current_exposure", current_exposure)
+
+    @property
+    def eligibility(self) -> OpportunityEligibility:
+        """Expose only the monotone eligibility projected from the source contract."""
+
+        return self.source_eligibility.eligibility
 
 
 @dataclass(frozen=True)
