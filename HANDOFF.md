@@ -312,6 +312,28 @@ both below their fixed previous-bar-direction comparators. This is a failed
 descriptive classical-ML control, not a selected model, GPU allocation,
 profitability result, broker PnL, Paper action, or live claim.
 
+The one frozen QQQ/SPY D1 shallow regime-tree reproduction also completed
+offline on that same hash-pinned panel. Its external precommit and
+sanitized-summary hashes are
+`sha256:94432ab794299a3a02504e0061f7b0bc6d7220c7c2295ca7192ff3d9e499b59f`
+and
+`sha256:8bb7f4c7a487cb399d42442a87f467330e9cebbae36cbddd672ef97d0048cd50`.
+The precommit preceded the development-only fit; validation labels were
+excluded, no fitted estimator was serialized, and all two model plus six fixed
+comparator replay cells used `local_paper`. Its after-cost QQQ/SPY model
+replays were `-45.8296` and `-73.7783`, both below their fixed
+previous-bar-direction comparators. The nonlinear tree lineage is therefore
+closed as failed descriptive control evidence: it creates no selected model,
+ensemble, GPU appointment, broker PnL, Paper action, or live claim.
+
+Claude's scoped falsification-first review returned `supported-with-limits`
+for the next Data-only step: an offline QQQ/SPY D1 forward-cache causal
+qualification predicate. It must discriminate every single missing condition
+in synthetic fixtures and classify the present cache without inferring
+decision-time availability or provider finality from a timestamp, task outcome,
+or hash. It must not collect, construct a KIS client, change a schedule, or
+create a Research, GPU, Paper, or live consumer.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

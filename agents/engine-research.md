@@ -38,6 +38,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   at the shared token-start gate, adding zero pages and zero target changes.
   It leaves the seven-session source-local cache non-promoting and creates no
   campaign, GPU appointment, model selection, or Paper consumer.
+- The next Data-only forward causal-qualification predicate may make the
+  individual missing-input facts explicit, but it cannot by itself qualify a
+  Research campaign, GPU appointment, model selection, replay, or Paper
+  consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ
@@ -47,8 +51,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   and `-139.3587`, below the corresponding previous-bar-direction controls.
   All two model and six comparator cells used `local_paper`, validation labels
   were excluded from fitting, and no GPU/model-selection/Paper consumer follows.
-  The next bounded classical-ML package is one fixed shallow regime-tree
-  breadth control, still descriptive-only and CPU-only.
+  The one fixed shallow regime-tree reproduction then completed under the same
+  constraints, with QQQ/SPY after-cost results `-45.8296` and `-73.7783`, also
+  below their fixed previous-bar-direction controls. It retained no serialized
+  estimator. Both failed lineages are closed descriptive controls; neither has
+  a retry, tuning, selection, ensemble, GPU, or Paper consumer.
 - The RTX 4090 source-isolated Tiingo IEX r1 appointment completed and released
   its memory. Its M5-only masked reconstruction used the fixed
   LSTM/causal-TCN/compact-attention order with no target, holdout, selection,

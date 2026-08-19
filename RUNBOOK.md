@@ -2421,6 +2421,16 @@ costs. Do not reuse it for parameter tuning, an ensemble, a GPU rerun, model
 promotion, or a Paper decision. A later campaign must make a distinct causal
 hypothesis and write a separate immutable contract.
 
+The independent `20260819-kis-daily-regime-tree-r1` reproduction also
+completed beneath
+`D:\thericher-v2\model-artifacts\kis-daily-regime-tree-breadth-v1`. Its
+development-only fit excluded validation labels, retained no serialized
+estimator, and completed two model plus six fixed comparator replays with only
+`local_paper` fills. QQQ/SPY after-cost model replays were `-45.8296` and
+`-73.7783`, below their fixed previous-bar-direction comparators, so the tree
+lineage is closed. Do not rerun, tune, select, ensemble, allocate GPU to, or
+route this result to Paper or live behavior.
+
 ### Prospective Intraday Offline Observation
 
 To consume an already verified first-five QQQ preparation pair, run:

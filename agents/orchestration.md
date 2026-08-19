@@ -6,14 +6,15 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-regime-tree-breadth-reproduction-v1` is ready. The daily-broad
-cursor is terminal, the first QQQ/SPY forward refresh closed at the shared
-token-start gate with zero new pages, and its scheduled task owns the next due
-time. The fixed QQQ/SPY historical CPU baseline and the one frozen L2 logistic
-control both completed on the same hash-pinned daily input. The L2 QQQ/SPY
-after-cost replays were negative and below their previous-bar-direction
-comparators, so the next ready Engine Research package is one frozen shallow
-nonlinear tree control without a promotion or GPU path.
+`kis-daily-forward-causal-qualification-predicate-v1` is ready. The
+daily-broad cursor is terminal, the first QQQ/SPY forward refresh closed at the
+shared token-start gate with zero new pages, and its scheduled task owns the
+next due time. The fixed QQQ/SPY historical CPU baseline, L2 logistic control,
+and shallow nonlinear tree control all completed on the same hash-pinned daily
+input, with the L2 and tree QQQ/SPY after-cost replays below their fixed
+previous-bar-direction comparators. The next bounded Data package makes the
+exact forward-cache causal-input gaps discriminable without a promotion, GPU,
+or Paper path.
 
 ## Ready / Owned / Due
 
@@ -44,9 +45,10 @@ nonlinear tree control without a promotion or GPU path.
 | Quarantined-head recovery capture | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Complete: the one later clean direct Compose capture is hash-bound as `complete` with both targets collected. It is unbound direct-container evidence only. |
 | Daily-broad continuation capability | Data / Codex | Existing daily-broad Compose service, durable cursor, worker lock, and shared gates | Complete: all 2,119 targets reattached terminal and the exact continuation exited `complete` with zero page attempts. No long worker is eligible for this exhausted historical cursor. |
 | QQQ/SPY D1 forward refresh | Data / Codex | Existing pair-forward/preflight Compose services, shared gates, and scheduled task | Complete: preflight required the 2026-08-18 session, but the one direct collector deferred at `token_request_not_due` with zero new pages and zero changed targets. The ready task owns the next due run at `2026-08-19T21:55:00Z`; no foreground retry. |
+| KIS D1 forward causal qualification | Data | Existing QQQ/SPY forward cache, source-safe receipts, and external artifact root | Ready: make each causal-input condition explicit in one offline predicate and prove it discriminates every single-condition synthetic ablation. No collection, KIS client, Docker, scheduler, GPU, or execution consumer. |
 | Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
 | KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one development-only CPU fit wrote external model parameters only, excluded validation labels, and completed two model plus six comparator local-paper cells. Both model after-cost cells were negative and below previous-bar-direction controls. |
-| KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Ready: run one frozen shallow histogram-gradient-tree control with the same validation and fixed local-paper comparators. It cannot select a winner, serialize a fitted estimator, or consume GPU. |
+| KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one shallow histogram-gradient-tree replay excluded validation labels from fitting, wrote no serialized estimator, and completed two model plus six comparator `local_paper` cells. Both model cells were below their fixed previous-bar-direction comparators, closing the lineage. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -57,9 +59,11 @@ bottleneck. The direct container recovery is clean but unbound, so it does not
 change the task-owned `incomplete/current_session_short` topology,
 decision-time availability, provider finality, or model eligibility. The broad
 historical cursor is terminal and the forward refresh is task-owned after its
-shared-gate deferral. The completed CPU baseline and failed L2 control advance
-the backtest/local-paper accounting loop, while the ready shallow tree tests a
-separate fixed nonlinear bias without pretending to solve that input gap.
+shared-gate deferral. The completed CPU baseline, failed L2 control, and failed
+shallow-tree control advance the backtest/local-paper accounting loop without
+pretending to solve that input gap. The next research action must not rerun
+either failed model family under a new label; the immediate bottleneck is the
+missing per-condition proof for the QQQ/SPY forward cache.
 
 ## Current Cross-Lane Decision
 
@@ -96,10 +100,11 @@ proposal is closed rather than deferred.
 ## Current Reversible Improvement
 
 The completed inventory makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is one fixed QQQ/SPY D1
-regime-tree breadth replay, which tests a separate development-only nonlinear
-bias with the existing validation/local-paper loop without creating a winner,
-GPU appointment, scheduler, or downstream consumer.
+explicit. The immediate reversible improvement is one offline D1
+forward-cache causal-qualification predicate with synthetic negative controls.
+It tests whether the actual input blocker is discriminable rather than
+repeating the falsified L2 or tree model families or spending GPU on an
+unqualified runtime study.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -114,5 +119,5 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current action is
-the bounded QQQ/SPY D1 regime-tree breadth control while the forward and
-intraday task-owned observations remain non-foreground.
+to implement and run the D1 forward-cache causal-qualification predicate while
+the forward and intraday task-owned observations remain non-foreground.
