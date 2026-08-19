@@ -10,7 +10,12 @@ from pathlib import Path
 import pytest
 
 from thericher_v2.contracts import Bar, TargetExposureProposal, Timeframe
-from thericher_v2.execution import EmergencyStore, LocalPaperBroker, paper_decision_bridge
+from thericher_v2.execution import (
+    EmergencyStore,
+    LocalPaperBroker,
+    paper_decision_bridge,
+    replay_local_paper_decision_pnl,
+)
 from thericher_v2.execution.paper_decision_bridge import (
     KisPaperLimitProof,
     LocalPaperTargetBinding,
@@ -90,6 +95,59 @@ def test_eligible_receipt_replays_through_local_paper_with_its_exact_identity(
     }
     assert safe["price_contract_ref"] is None
     assert not {"symbol", "exchange", "quantity", "limit_price"}.intersection(safe)
+
+
+def test_local_paper_decision_pnl_replay_preserves_exact_receipt_roles(tmp_path: Path) -> None:
+    entry_receipt = _receipt()
+    exit_receipt = _receipt(action="exit")
+    entry = prepare_local_paper_intent(
+        entry_receipt,
+        binding=_local_target_binding(
+            entry_receipt,
+            target_exposure=Decimal("0.5"),
+            current_quantity=Decimal("1"),
+            maximum_quantity=Decimal("10"),
+        ),
+        as_of=NOW,
+    )
+    exit = prepare_local_paper_intent(
+        exit_receipt,
+        binding=_local_target_binding(
+            exit_receipt,
+            target_exposure=Decimal("0"),
+            current_quantity=Decimal("4"),
+            maximum_quantity=Decimal("10"),
+        ),
+        as_of=NOW + timedelta(minutes=1),
+    )
+
+    assert entry.local_paper_intent is not None
+    assert exit.local_paper_intent is not None
+    store = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    broker = LocalPaperBroker(
+        event_store=store,
+        emergency_store=EmergencyStore(tmp_path / "emergency.json"),
+    )
+    broker.submit_and_fill_next_bar(
+        entry.local_paper_intent,
+        signal_bar=_bar(NOW - timedelta(minutes=1)),
+        execution_bar=_bar(NOW),
+    )
+    broker.submit_and_fill_next_bar(
+        exit.local_paper_intent,
+        signal_bar=_bar(NOW),
+        execution_bar=_bar(NOW + timedelta(minutes=1)),
+    )
+
+    attribution = replay_local_paper_decision_pnl(tuple(store.iter_events()))
+
+    assert attribution.aggregate.closed_quantity == Decimal("4")
+    assert [
+        (segment.entry_decision_id, segment.exit_decision_id)
+        for segment in attribution.closed_segments
+    ] == [(entry_receipt.decision_id, exit_receipt.decision_id)]
+    assert attribution.entry_decision_totals[0].decision_id == entry_receipt.decision_id
+    assert attribution.exit_decision_totals[0].decision_id == exit_receipt.decision_id
 
 
 def test_abstain_future_and_binding_mismatch_never_rehydrate_to_local_paper_intent() -> None:
