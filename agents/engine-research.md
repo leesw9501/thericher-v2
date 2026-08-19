@@ -103,13 +103,15 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   PnL-attribution plumbing only: it neither assigns causal credit nor changes
   the lack of a qualified dataset, candidate, model, execution result, or
   Paper outcome.
-- A bounded candidate evaluation now passes only one in-memory model-byte
-  snapshot to its runner and records its SHA-256. Local-Paper replay requires
-  that completed evaluation's candidate identity, parameters, and recomputed
-  model hash before invoking a probability runner or creating any event. It
-  binds the model payload only; mutable runtime, feature, or sidecar contracts
-  remain separately scoped. This is replay-evidence custody, not a promotion,
-  GPU appointment, or Paper authorization.
+- A bounded candidate evaluation passes one in-memory model-byte snapshot to
+  its runner and records its SHA-256. Direct Local-Paper replay and the
+  threshold variants derived from a saved probability trace each require that
+  completed evaluation's candidate identity, parameters, and exact model hash
+  before invoking a runner or creating an event store; an unbound trace remains
+  analyzable but yields prepared, no-fill variants. This binds model bytes only:
+  trace immutability plus mutable runtime, feature, and sidecar contracts remain
+  separately scoped. It is replay-evidence custody, not a promotion, GPU
+  appointment, or Paper authorization.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed

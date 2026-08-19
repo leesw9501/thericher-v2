@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import socket
 import sys
@@ -44,6 +45,9 @@ def test_candidate_threshold_sweep_writes_trace_and_local_paper_artifacts(
     assert result.status == "candidate_swept_only"
     assert sweep_payload["artifact_policy"]["repo_storage_allowed"] is False
     assert trace_payload["artifact_policy"]["repo_storage_allowed"] is False
+    assert trace_payload["model_artifact_sha256"] == (
+        f"sha256:{hashlib.sha256(b'unit-model').hexdigest()}"
+    )
     assert trace_payload["entries"]
     assert {
         "probability",
@@ -152,6 +156,127 @@ def test_candidate_threshold_sweep_missing_trace_is_prepared(tmp_path) -> None:
     payload = json.loads(result.sweep_artifact.read_text(encoding="utf-8"))
     assert result.status == "prepared_not_swept"
     assert "probability trace artifact is missing" in payload["reason"]
+
+
+def test_candidate_threshold_sweep_rejects_changed_model_before_trace(tmp_path) -> None:
+    model_artifact = _model_artifact(tmp_path)
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    model_artifact.write_text("different-unit-model", encoding="utf-8")
+    runner_called = False
+
+    def runner(*_args: object, **_kwargs: object) -> dict[str, object]:
+        nonlocal runner_called
+        runner_called = True
+        return {}
+
+    result = run_bounded_candidate_threshold_sweep(
+        config=CandidateThresholdSweepConfig(
+            run_id="changed-model-threshold-sweep",
+            max_bars=40,
+            threshold_pairs=((0.70, 0.30),),
+        ),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        comparison_artifact=_comparison_artifact(tmp_path),
+        gpu=_unit_gpu(),
+        probability_runner=runner,
+    )
+
+    payload = json.loads(result.sweep_artifact.read_text(encoding="utf-8"))
+    assert result.status == "prepared_not_swept"
+    assert "does not match evaluated model bytes" in payload["reason"]
+    assert result.variants == ()
+    assert runner_called is False
+
+
+def test_candidate_threshold_sweep_rejects_trace_without_model_digest(tmp_path) -> None:
+    seed_root = tmp_path / "seed"
+    seed_root.mkdir()
+    model_artifact = _model_artifact(seed_root)
+    training_artifact = _training_metrics_artifact(seed_root, model_artifact)
+    evaluation_artifact = _evaluation_artifact(seed_root, training_artifact, model_artifact)
+    comparison_artifact = _comparison_artifact(seed_root)
+    seed = run_bounded_candidate_threshold_sweep(
+        config=CandidateThresholdSweepConfig(
+            run_id="trace-without-digest-seed",
+            max_bars=40,
+            threshold_pairs=((0.70, 0.30),),
+        ),
+        artifact_root=seed_root / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        comparison_artifact=comparison_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=_alternating_probability_runner,
+    )
+    trace_payload = json.loads(seed.probability_trace_artifact.read_text(encoding="utf-8"))
+    trace_payload.pop("model_artifact_sha256")
+    seed.probability_trace_artifact.write_text(
+        json.dumps(trace_payload),
+        encoding="utf-8",
+    )
+
+    result = _run_from_trace(
+        tmp_path / "without-digest",
+        seed.probability_trace_artifact,
+        comparison_artifact,
+    )
+
+    assert result.status == "prepared_not_swept"
+    assert all(variant.status == "prepared_not_replayed" for variant in result.variants)
+    assert all("model digest is required" in variant.reason for variant in result.variants)
+    assert all(variant.events_artifact is None for variant in result.variants)
+    assert not (result.sweep_artifact.parent / "variants").exists()
+
+
+def test_candidate_threshold_sweep_rejects_trace_with_mismatched_model_digest(
+    tmp_path,
+) -> None:
+    seed_root = tmp_path / "seed"
+    seed_root.mkdir()
+    model_artifact = _model_artifact(seed_root)
+    training_artifact = _training_metrics_artifact(seed_root, model_artifact)
+    evaluation_artifact = _evaluation_artifact(seed_root, training_artifact, model_artifact)
+    comparison_artifact = _comparison_artifact(seed_root)
+    seed = run_bounded_candidate_threshold_sweep(
+        config=CandidateThresholdSweepConfig(
+            run_id="trace-with-mismatched-digest-seed",
+            max_bars=40,
+            threshold_pairs=((0.70, 0.30),),
+        ),
+        artifact_root=seed_root / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        comparison_artifact=comparison_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=_alternating_probability_runner,
+    )
+    trace_payload = json.loads(seed.probability_trace_artifact.read_text(encoding="utf-8"))
+    trace_payload["model_artifact_sha256"] = f"sha256:{'0' * 64}"
+    seed.probability_trace_artifact.write_text(
+        json.dumps(trace_payload),
+        encoding="utf-8",
+    )
+
+    result = _run_from_trace(
+        tmp_path / "mismatched-digest",
+        seed.probability_trace_artifact,
+        comparison_artifact,
+    )
+
+    assert result.status == "prepared_not_swept"
+    assert all(variant.status == "prepared_not_replayed" for variant in result.variants)
+    assert all(
+        "does not match evaluated model bytes" in variant.reason
+        for variant in result.variants
+    )
+    assert all(variant.events_artifact is None for variant in result.variants)
+    assert not (result.sweep_artifact.parent / "variants").exists()
 
 
 def test_candidate_threshold_sweep_missing_model_is_prepared(tmp_path) -> None:
@@ -294,6 +419,7 @@ def _run_from_trace(root: Path, trace_artifact: Path, comparison_artifact: Path)
 
 def _alternating_probability_runner(dataset, model_artifact, training_payload):  # noqa: ANN001
     assert model_artifact.exists()
+    assert model_artifact.read_bytes() == b"unit-model"
     assert tuple(training_payload["metrics"]["feature_names"]) == dataset.feature_names
     probabilities = tuple(
         0.80 if index % 4 in {0, 1} else 0.20
@@ -357,10 +483,16 @@ def _evaluation_artifact(
     training_artifact: Path,
     model_artifact: Path,
 ) -> Path:
+    digest = (
+        hashlib.sha256(model_artifact.read_bytes()).hexdigest()
+        if model_artifact.exists()
+        else "0" * 64
+    )
     path = tmp_path / "evaluation-metrics.json"
     path.write_text(
         json.dumps(
             {
+                "status": "candidate_evaluated_only",
                 "candidate_experiment_id": "unit_candidate",
                 "candidate_parameters": {
                     "lookback": 3,
@@ -368,6 +500,7 @@ def _evaluation_artifact(
                 },
                 "training_metrics_artifact": str(training_artifact),
                 "model_artifact": str(model_artifact),
+                "model_artifact_sha256": f"sha256:{digest}",
                 "artifacts": {
                     "source_model": str(model_artifact),
                 },

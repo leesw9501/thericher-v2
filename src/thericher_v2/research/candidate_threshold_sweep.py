@@ -18,15 +18,19 @@ from .candidate_evaluation import (
     _feature_names_from_training_payload,
     _model_artifact_from_training_payload,
     _probabilities_from_result,
+    _read_candidate_model_artifact,
     _read_training_metrics,
     _run_torch_cuda_candidate_probabilities,
+    _runner_training_payload,
 )
 from .candidate_replay import (
     CandidateProbabilityRunner,
     CandidateReplayConfig,
     CandidateReplaySource,
     _available_gpu_backends,
+    _evaluated_model_binding,
     _fresh_event_store,
+    _is_sha256_digest,
     _load_replay_source,
     _local_paper_fill_events,
     _model_artifact_from_evaluation_payload,
@@ -135,6 +139,7 @@ class BoundedCandidateProbabilityTraceResult:
     training_metrics_artifact: Path | None
     evaluation_artifact: Path | None
     model_artifact: Path | None
+    model_artifact_sha256: str | None
     candidate_experiment_id: str | None
     candidate_parameters: dict[str, Any]
     data_source: str
@@ -353,6 +358,7 @@ def run_bounded_candidate_probability_trace(
         training_metrics_artifact=selected_training_metrics_artifact,
         training_error=training_error,
         evaluation_artifact=evaluation_artifact,
+        evaluation_payload=evaluation_payload,
         evaluation_error=evaluation_error,
         model_artifact=selected_model_artifact,
         candidate=candidate,
@@ -381,6 +387,7 @@ def _run_trace_result(
     training_metrics_artifact: Path | None,
     training_error: str | None,
     evaluation_artifact: Path | None,
+    evaluation_payload: dict[str, Any],
     evaluation_error: str | None,
     model_artifact: Path | None,
     candidate: dict[str, Any],
@@ -419,6 +426,24 @@ def _run_trace_result(
             selected_backend=selected_backend,
             trace_artifact=trace_artifact,
             reason=training_error,
+        )
+    evaluated_model_sha256, evaluation_binding_error = _evaluated_model_binding(
+        evaluation_payload,
+        candidate,
+    )
+    if evaluation_binding_error is not None:
+        return _prepared_trace_result(
+            config=config,
+            training_metrics_artifact=training_metrics_artifact,
+            evaluation_artifact=evaluation_artifact,
+            model_artifact=model_artifact,
+            candidate=candidate,
+            source=source,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            trace_artifact=trace_artifact,
+            reason=evaluation_binding_error,
         )
     expected_feature_names = _feature_names_from_training_payload(training_payload)
     if expected_feature_names and expected_feature_names != source.dataset.feature_names:
@@ -461,7 +486,8 @@ def _run_trace_result(
             trace_artifact=trace_artifact,
             reason=f"candidate feature preprocessing unavailable: {exc}",
         )
-    if model_artifact is None or not model_artifact.exists():
+    model_bytes, model_read_error = _read_candidate_model_artifact(model_artifact)
+    if model_read_error is not None:
         return _prepared_trace_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
@@ -473,7 +499,21 @@ def _run_trace_result(
             available_backends=available_backends,
             selected_backend=selected_backend,
             trace_artifact=trace_artifact,
-            reason="candidate model artifact is missing",
+            reason=model_read_error,
+        )
+    if model_bytes.sha256 != evaluated_model_sha256:
+        return _prepared_trace_result(
+            config=config,
+            training_metrics_artifact=training_metrics_artifact,
+            evaluation_artifact=evaluation_artifact,
+            model_artifact=model_artifact,
+            candidate=candidate,
+            source=source,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            trace_artifact=trace_artifact,
+            reason="candidate model artifact does not match evaluated model bytes",
         )
     if probability_runner is None and not gpu.available:
         return _prepared_trace_result(
@@ -523,7 +563,11 @@ def _run_trace_result(
 
     runner = probability_runner or _run_torch_cuda_candidate_probabilities
     try:
-        probability_result = runner(inference_source.dataset, model_artifact, training_payload)
+        probability_result = runner(
+            inference_source.dataset,
+            model_bytes,
+            _runner_training_payload(training_payload),
+        )
         probabilities = _probabilities_from_result(probability_result)
     except Exception as exc:  # noqa: BLE001 - trace jobs record backend failures.
         return _prepared_trace_result(
@@ -564,6 +608,7 @@ def _run_trace_result(
         training_metrics_artifact=training_metrics_artifact,
         evaluation_artifact=evaluation_artifact,
         model_artifact=model_artifact,
+        model_artifact_sha256=model_bytes.sha256,
         candidate_experiment_id=candidate.get("candidate_experiment_id"),
         candidate_parameters=candidate.get("candidate_parameters") or {},
         data_source=inference_source.data_source,
@@ -604,6 +649,7 @@ def _prepared_trace_result(
         training_metrics_artifact=training_metrics_artifact,
         evaluation_artifact=evaluation_artifact,
         model_artifact=model_artifact,
+        model_artifact_sha256=None,
         candidate_experiment_id=candidate.get("candidate_experiment_id"),
         candidate_parameters=candidate.get("candidate_parameters") or {},
         data_source=source.data_source,
@@ -668,12 +714,12 @@ def _run_threshold_variants(
 ) -> tuple[CandidateThresholdSweepVariant, ...]:
     probabilities = _probabilities_from_trace_payload(trace_payload)
     model_artifact = _path_from_payload(trace_payload, "model_artifact") or Path("missing-model")
+    model_artifact_sha256 = _payload_string(trace_payload, "model_artifact_sha256")
+    replay_binding_error = _trace_local_paper_binding_error(trace_payload)
     variants: list[CandidateThresholdSweepVariant] = []
     for ordinal, (buy_threshold, sell_threshold) in enumerate(config.threshold_pairs, start=1):
         variant_id = _threshold_variant_id(ordinal, buy_threshold, sell_threshold)
         threshold_error = _threshold_pair_error(buy_threshold, sell_threshold)
-        variant_dir = output_dir / "variants" / variant_id
-        variant_dir.mkdir(parents=True, exist_ok=True)
         if threshold_error is not None:
             variants.append(
                 _prepared_variant(
@@ -685,6 +731,19 @@ def _run_threshold_variants(
                 )
             )
             continue
+        if replay_binding_error is not None:
+            variants.append(
+                _prepared_variant(
+                    variant_id=variant_id,
+                    buy_threshold=buy_threshold,
+                    sell_threshold=sell_threshold,
+                    reason=replay_binding_error,
+                    events_artifact=None,
+                )
+            )
+            continue
+        variant_dir = output_dir / "variants" / variant_id
+        variant_dir.mkdir(parents=True, exist_ok=True)
         event_store = _fresh_event_store(variant_dir)
         replay = _run_local_paper_replay(
             config=CandidateReplayConfig(
@@ -705,6 +764,7 @@ def _run_threshold_variants(
             ),
             evaluation_artifact=_path_from_payload(trace_payload, "evaluation_artifact"),
             model_artifact=model_artifact,
+            model_artifact_sha256=model_artifact_sha256,
             candidate={
                 "candidate_experiment_id": trace_payload.get("candidate_experiment_id"),
                 "candidate_parameters": _payload_dict(trace_payload, "candidate_parameters"),
@@ -801,6 +861,7 @@ def _candidate_probability_trace_payload(
             "model_artifact": (
                 None if result.model_artifact is None else str(result.model_artifact)
             ),
+            "model_artifact_sha256": result.model_artifact_sha256,
             "candidate_experiment_id": result.candidate_experiment_id,
             "candidate_parameters": result.candidate_parameters,
             "data_source": result.data_source,
@@ -817,6 +878,7 @@ def _candidate_probability_trace_payload(
                 "source_model": None
                 if result.model_artifact is None
                 else str(result.model_artifact),
+                "source_model_sha256": result.model_artifact_sha256,
             },
             "artifact_policy": {
                 "root": str(artifact_root),
@@ -1155,6 +1217,27 @@ def _trace_payload_error(payload: dict[str, Any]) -> str | None:
     if payload.get("status") == "probability_traced_only":
         return None
     return _payload_string(payload, "reason") or "candidate probability trace was not completed"
+
+
+def _trace_local_paper_binding_error(payload: dict[str, Any]) -> str | None:
+    evaluation_payload, error = _read_evaluation_artifact(
+        _path_from_payload(payload, "evaluation_artifact")
+    )
+    if error is not None:
+        return error
+    candidate = {
+        "candidate_experiment_id": payload.get("candidate_experiment_id"),
+        "candidate_parameters": _payload_dict(payload, "candidate_parameters"),
+    }
+    expected_digest, error = _evaluated_model_binding(evaluation_payload, candidate)
+    if error is not None:
+        return error
+    trace_digest = payload.get("model_artifact_sha256")
+    if not _is_sha256_digest(trace_digest):
+        return "candidate probability trace model digest is required for local-paper replay"
+    if trace_digest != expected_digest:
+        return "candidate probability trace model digest does not match evaluated model bytes"
+    return None
 
 
 def _path_from_payload(payload: dict[str, Any], key: str) -> Path | None:

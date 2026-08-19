@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import socket
 import sys
@@ -379,8 +380,15 @@ def _variant_artifacts(
         json.dumps(
             {
                 **payload,
+                "status": "candidate_evaluated_only",
                 "training_metrics_artifact": str(training_artifact),
                 "model_artifact": str(model_artifact),
+                "model_artifact_sha256": (
+                    "sha256:"
+                    f"{hashlib.sha256(model_artifact.read_bytes()).hexdigest()}"
+                    if model_artifact.exists()
+                    else f"sha256:{'0' * 64}"
+                ),
                 "artifacts": {
                     "source_model": str(model_artifact),
                 },

@@ -1,5 +1,6 @@
 import csv
 import gzip
+import hashlib
 import json
 import socket
 import sys
@@ -250,10 +251,14 @@ def _band_artifacts(tmp_path: Path) -> tuple[Path, Path]:
     _write_json(
         evaluation_artifact,
         {
+            "status": "candidate_evaluated_only",
             "candidate_experiment_id": "m1_lb3_b10_s10",
             "candidate_parameters": {"lookback": 3, "timeframe": "1m"},
             "training_metrics_artifact": str(training_artifact),
             "model_artifact": str(model_artifact),
+            "model_artifact_sha256": (
+                f"sha256:{hashlib.sha256(model_artifact.read_bytes()).hexdigest()}"
+            ),
             "metrics": {
                 "feature_names": [
                     "lookback_return",
@@ -273,6 +278,9 @@ def _band_artifacts(tmp_path: Path) -> tuple[Path, Path]:
             "training_metrics_artifact": str(training_artifact),
             "evaluation_artifact": str(evaluation_artifact),
             "model_artifact": str(model_artifact),
+            "model_artifact_sha256": (
+                f"sha256:{hashlib.sha256(model_artifact.read_bytes()).hexdigest()}"
+            ),
             "candidate_experiment_id": "m1_lb3_b10_s10",
             "candidate_parameters": {"lookback": 3, "timeframe": "1m"},
             "data_source": str(yahoo_snapshot),

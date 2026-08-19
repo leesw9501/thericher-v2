@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import gzip
+import hashlib
 import json
 import socket
 import sys
@@ -314,6 +315,9 @@ def _feature_branch_artifacts(
             },
             "training_metrics_artifact": str(training_artifact),
             "model_artifact": str(model_artifact),
+            "model_artifact_sha256": (
+                f"sha256:{hashlib.sha256(model_artifact.read_bytes()).hexdigest()}"
+            ),
             "metrics": {
                 "feature_names": feature_names,
                 "min_probability": "0.200000",

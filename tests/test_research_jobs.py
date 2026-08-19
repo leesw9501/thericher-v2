@@ -1295,10 +1295,14 @@ def _breadth_queue_artifact(artifact_root: Path, *, variant_id: str) -> Path:
     evaluation_artifact.write_text(
         json.dumps(
             {
+                "status": "candidate_evaluated_only",
                 "candidate_experiment_id": variant_id,
                 "candidate_parameters": candidate_parameters,
                 "training_metrics_artifact": str(training_artifact),
                 "model_artifact": str(model_artifact),
+                "model_artifact_sha256": (
+                    f"sha256:{hashlib.sha256(model_artifact.read_bytes()).hexdigest()}"
+                ),
                 "artifacts": {
                     "source_model": str(model_artifact),
                 },
