@@ -27,7 +27,7 @@ def target_proposal_to_order_intent(
     created_at = proposal.decided_at if as_of is None else require_utc(as_of, "as_of")
     if (
         created_at < proposal.decided_at
-        or created_at > proposal.valid_until
+        or created_at >= proposal.valid_until
         or proposal.input_status != "ready"
     ):
         return None

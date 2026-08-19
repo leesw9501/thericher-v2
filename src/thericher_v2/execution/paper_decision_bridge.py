@@ -284,7 +284,7 @@ def prepare_kis_paper_decision(
             receipt_ref=receipt_ref,
             reason="price_proof_binding_mismatch",
         )
-    if now < limit_proof.observed_at or now > limit_proof.valid_until:
+    if now < limit_proof.observed_at or now >= limit_proof.valid_until:
         return _no_intent(
             route="kis_paper",
             receipt_ref=receipt_ref,
@@ -349,7 +349,7 @@ def _eligibility_reason(
     ) or (receipt.decision_class == "exit" and receipt.reason_class == "eligible_exit")
     if not eligible_shape or receipt.input_status != "ready":
         return "receipt_not_eligible"
-    if as_of < receipt.decided_at or as_of > receipt.valid_until:
+    if as_of < receipt.decided_at or as_of >= receipt.valid_until:
         return "receipt_not_current"
     return None
 

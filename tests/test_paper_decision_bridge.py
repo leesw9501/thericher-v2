@@ -165,6 +165,7 @@ def test_abstain_future_and_binding_mismatch_never_rehydrate_to_local_paper_inte
         (unavailable, _binding(unavailable), NOW, "receipt_not_eligible"),
         (abstain, _binding(abstain), NOW - timedelta(seconds=1), "receipt_not_eligible"),
         (_receipt(), _binding(_receipt()), NOW - timedelta(seconds=1), "receipt_not_current"),
+        (_receipt(), _binding(_receipt()), NOW + timedelta(minutes=2), "receipt_not_current"),
         (_receipt(), _binding(_receipt()), NOW + timedelta(minutes=3), "receipt_not_current"),
         (_receipt(), mismatched, NOW, "binding_mismatch"),
     ):
@@ -210,6 +211,36 @@ def test_eligible_receipt_can_prepare_but_not_submit_a_tick_valid_kis_paper_deci
     assert blocked.status == "no_intent"
     assert blocked.reason == "price_proof_receipt_mismatch"
     assert blocked.kis_paper_decision is None
+
+
+def test_kis_paper_receipt_and_price_proof_expiry_are_exclusive() -> None:
+    receipt = _receipt()
+    binding = _binding(receipt)
+    limit_proof = _limit_proof(receipt)
+
+    receipt_expired = prepare_kis_paper_decision(
+        receipt,
+        binding=binding,
+        limit_proof=limit_proof,
+        as_of=receipt.valid_until,
+    )
+    proof_expired = prepare_kis_paper_decision(
+        receipt,
+        binding=binding,
+        limit_proof=limit_proof,
+        as_of=limit_proof.valid_until,
+    )
+
+    assert (receipt_expired.status, receipt_expired.reason) == (
+        "no_intent",
+        "receipt_not_current",
+    )
+    assert receipt_expired.kis_paper_decision is None
+    assert (proof_expired.status, proof_expired.reason) == (
+        "no_intent",
+        "price_proof_not_current",
+    )
+    assert proof_expired.kis_paper_decision is None
 
 
 def test_eligible_exit_receipt_keeps_sell_identity_on_both_paper_routes() -> None:
