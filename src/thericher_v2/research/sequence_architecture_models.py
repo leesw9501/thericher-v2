@@ -113,7 +113,7 @@ def build_torch_sequence_model(
                 (length, hidden_size), dtype=values.dtype, device=values.device
             )
             positional[:, 0::2] = torch.sin(positions * divisors)
-            positional[:, 1::2] = torch.cos(positions * divisors)
+            positional[:, 1::2] = torch.cos(positions * divisors[: hidden_size // 2])
             causal_mask = torch.triu(
                 torch.full(
                     (length, length), float("-inf"), dtype=values.dtype, device=values.device

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import warnings
+
 import pytest
 
 torch = pytest.importorskip("torch", reason="research-only sequence models require PyTorch")
@@ -36,6 +38,29 @@ def test_shared_sequence_encoders_do_not_look_ahead(architecture_id: str) -> Non
 def test_shared_sequence_builder_rejects_unknown_architecture() -> None:
     with pytest.raises(ValueError, match="sequence architecture geometry is invalid"):
         _model("unknown")
+
+
+def test_shared_compact_attention_accepts_odd_hidden_size() -> None:
+    with warnings.catch_warnings():
+        warnings.filterwarnings(
+            "ignore",
+            message="enable_nested_tensor is True",
+            category=UserWarning,
+        )
+        model = build_torch_sequence_model(
+            torch=torch,
+            architecture_id="compact_attention",
+            feature_count=3,
+            hidden_size=3,
+            attention_heads=1,
+            tcn_kernel_size=3,
+        ).eval()
+
+        with torch.no_grad():
+            output = model(torch.arange(12, dtype=torch.float32).reshape(1, 4, 3))
+
+    assert tuple(output.shape) == (1, 1)
+    assert bool(torch.isfinite(output).all())
 
 
 def _model(architecture_id: str) -> object:
