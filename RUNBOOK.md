@@ -336,6 +336,16 @@ worker start, auth/token stops, runtime expiry, and storage-floor conditions
 still yield without client construction. This recovery does not change the
 one-second request-start gate or turn Codex into a foreground sleeper.
 
+On 2026-08-19, the bounded continuation capability check reattached the
+2,119-target registry and completed with zero chunks, accepted pages, failures,
+or remaining targets. Its external source-safe receipt is
+`D:\\thericher-v2\\model-artifacts\\data\\kis-paper-daily-nas-broad-v1\\run=20260819T140140890766Z-90568a0332da\\receipt.json`
+(`sha256:065e6b4189e172f78047304b21d81361355eebe9f3c8db7d2b2935f3beb430a3`).
+The unchanged index is generation 26,368 with 1,089 `complete` and 1,030
+`source_limited` targets. This terminal outcome built no KIS client and made no
+market-data request. Do not start a long worker merely to retry an exhausted
+historical cursor; a separately bounded forward cache owns later daily sessions.
+
 Install the continuation owner only after a successful bootstrap:
 
 ```powershell

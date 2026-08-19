@@ -257,6 +257,19 @@ This closes the exact cache-recovery path; it does not establish Scheduler
 origin, a complete session, provider finality, qualified research input, or a
 Paper consumer.
 
+The daily-broad continuation capability check is also closed. Its non-network
+preflight reattached the 2,119-target current-listing registry, and its one
+allowed continuation completed with zero chunks, accepted pages, failures, or
+remaining targets. The exact source-safe receipt is
+`data/kis-paper-daily-nas-broad-v1/run=20260819T140140890766Z-90568a0332da/receipt.json`
+under `D:\\thericher-v2\\model-artifacts`
+(`sha256:065e6b4189e172f78047304b21d81361355eebe9f3c8db7d2b2935f3beb430a3`).
+Its reattached index is unchanged at generation 26,368: 1,089 targets are
+`complete` and 1,030 `source_limited`. No KIS client or market-data request was
+constructed, and no account/order/live route ran. Do not start a long worker
+for this exhausted historical cursor; a separate QQQ/SPY forward cache is the
+next bounded current-data path.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

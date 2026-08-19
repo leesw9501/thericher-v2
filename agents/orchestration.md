@@ -6,14 +6,13 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-paper-daily-broad-continuation-capability-v1` is ready. The completed
-intraday static audit, host capture, token-gate defer, retained-cache
-quarantine, and one allowed direct Compose recovery now end with hash-bound
-unbound receipt
-`sha256:c87d4ebfde0e7545e7907936c8eb506c1e3aa7514ef6d9ea86e9a36d7b4a522e`.
-That result closes only the exact intraday cache-recovery path. The next ready
-Data package instead probes the existing daily-broad durable cursor with one
-short, serial, market-data-only continuation before any long worker is started.
+`kis-paper-daily-pair-forward-refresh-v1` is ready. The daily-broad capability
+check now reattached its all-terminal 2,119-target index and exited with zero
+chunks/pages/failures; its exact evidence hash is
+`sha256:065e6b4189e172f78047304b21d81361355eebe9f3c8db7d2b2935f3beb430a3`.
+It closed that historical cursor without constructing a KIS client. The next
+ready Data package uses the existing QQQ/SPY D1 forward-cache preflight and,
+only when collection is required, one bounded market-data-only refresh.
 
 ## Ready / Owned / Due
 
@@ -42,19 +41,19 @@ short, serial, market-data-only continuation before any long worker is started.
 | First container collection capability probe | Data / Codex | Existing `kis-paper-intraday-head` Compose service | Complete: both targets returned `rejected/token_request_not_due` before a token POST. This is shared-gate evidence, not Docker/KIS/provider diagnosis. |
 | Post-gate container collection capability probe | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Complete: the due-gate service reached retained-cache conflict handling and quarantined both active conflicting head entries. It remains a non-promoting Data recovery fact. |
 | Quarantined-head recovery capture | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Complete: the one later clean direct Compose capture is hash-bound as `complete` with both targets collected. It is unbound direct-container evidence only. |
-| Daily-broad continuation capability | Data / Codex | Existing daily-broad Compose service, durable cursor, worker lock, and shared gates | Ready: preflight then one short serial continuation. Atomic worker lock/cursor lease, not an advisory process check, owns the call. Require accepted persisted pages and a monotonic cursor advance before proposing a long worker. |
+| Daily-broad continuation capability | Data / Codex | Existing daily-broad Compose service, durable cursor, worker lock, and shared gates | Complete: all 2,119 targets reattached terminal and the exact continuation exited `complete` with zero page attempts. No long worker is eligible for this exhausted historical cursor. |
+| QQQ/SPY D1 forward refresh | Data / Codex | Existing pair-forward/preflight Compose services and shared gates | Ready: run credential-free preflight first; only a `collection_required` result may reach one exact two-target forward refresh. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
 ## Current Bottleneck
 
 Fresh, KIS-reconstructible causal input coverage remains the predictive-engine
-bottleneck. The direct container recovery is now clean, but it remains unbound
-and does not change the task-owned `incomplete/current_session_short` topology,
-decision-time availability, provider finality, or model eligibility. The
-separately stalled daily-broad cursor is a ready data-coverage opportunity: one
-short continuation can determine whether the existing durable path still makes
-persisted-page and cursor progress without waiting for the intraday session.
+bottleneck. The direct container recovery is clean but unbound, so it does not
+change the task-owned `incomplete/current_session_short` topology,
+decision-time availability, provider finality, or model eligibility. The broad
+historical cursor is fully terminal rather than stalled; the next concrete data
+opportunity is the separate QQQ/SPY forward cache for later D1 sessions.
 
 ## Current Cross-Lane Decision
 
@@ -84,14 +83,17 @@ fetched clean capture, not a cache edit or retry loop; that clean capture has
 now completed. For the daily-broad continuation Claude also returned
 `supported-with-limits`: a process check is advisory, the durable lock/lease is
 authoritative, and any first successful run must prove persisted accepted pages
-plus monotonic cursor advance before a long worker is proposed.
+plus monotonic cursor advance before a long worker is proposed. The short run
+instead proved all targets terminal with zero page attempts, so the long-worker
+proposal is closed rather than deferred.
 
 ## Current Reversible Improvement
 
 The completed inventory makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is one bounded daily-broad
-continuation capability run, which can advance a durable external data cursor
-without adding a scheduler, model, marker family, or downstream consumer.
+explicit. The immediate reversible improvement is one bounded QQQ/SPY D1
+forward-cache refresh, which can add later source-local sessions without
+reopening an exhausted history cursor, adding a scheduler, or creating a model
+or downstream consumer.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -106,5 +108,5 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current action is
-one bounded daily-broad continuation capability run while task-owned intraday
-reattachment remains non-foreground.
+one bounded QQQ/SPY D1 forward refresh while task-owned intraday reattachment
+remains non-foreground.

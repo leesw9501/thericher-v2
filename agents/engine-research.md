@@ -29,6 +29,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   the later direct Compose recovery capture completed cleanly, but remains
   unbound and non-promoting until distinct task-owned causal qualification
   conditions are independently met.
+- The 2,119-target KIS daily-broad continuation is exhausted under its current
+  historical cursor contract: its short reattachment made no KIS request and
+  advanced no cursor. It creates no refreshed daily input, campaign, GPU
+  appointment, or Paper consumer; later sessions require the separate forward
+  cache path.
 - The RTX 4090 source-isolated Tiingo IEX r1 appointment completed and released
   its memory. Its M5-only masked reconstruction used the fixed
   LSTM/causal-TCN/compact-attention order with no target, holdout, selection,
