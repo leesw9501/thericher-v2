@@ -6,18 +6,14 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-paper-intraday-quarantined-head-recovery-capture-v1` is ready. The
-completed static audit reattached the installed task and checked-in first
-`session-capture` route as source-safely `matches`; a direct host collector
-then completed the fixed two-target/four-page scope with safe receipt
-`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`.
-The first exact Compose attempt yielded before a token POST because the shared
-token-start gate was not due; its receipt is
-`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`.
-The due-gate Compose attempt reached the retained-cache conflict branch and
-quarantined both active conflicting head entries; its receipt is
-`sha256:ed596cfe5f8dc95977c961d48927e9266ba6353e82578f2a2f76b26acc1b80e4`.
-Claude supports one later clean-capture attempt after the shared gate is due.
+`kis-paper-daily-broad-continuation-capability-v1` is ready. The completed
+intraday static audit, host capture, token-gate defer, retained-cache
+quarantine, and one allowed direct Compose recovery now end with hash-bound
+unbound receipt
+`sha256:c87d4ebfde0e7545e7907936c8eb506c1e3aa7514ef6d9ea86e9a36d7b4a522e`.
+That result closes only the exact intraday cache-recovery path. The next ready
+Data package instead probes the existing daily-broad durable cursor with one
+short, serial, market-data-only continuation before any long worker is started.
 
 ## Ready / Owned / Due
 
@@ -45,22 +41,20 @@ Claude supports one later clean-capture attempt after the shared gate is due.
 | Direct host collection capability probe | Data / Codex | Existing host collector and external head-cache receipt | Complete: `QQQ/NAS` and `SPY/AMS` completed one `session-capture` at the fixed four-page cap. The exact safe receipt is hash-bound; no Task, Docker, order, or consumer ran. |
 | First container collection capability probe | Data / Codex | Existing `kis-paper-intraday-head` Compose service | Complete: both targets returned `rejected/token_request_not_due` before a token POST. This is shared-gate evidence, not Docker/KIS/provider diagnosis. |
 | Post-gate container collection capability probe | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Complete: the due-gate service reached retained-cache conflict handling and quarantined both active conflicting head entries. It remains a non-promoting Data recovery fact. |
-| Quarantined-head recovery capture | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Owned `next_due`: reattach the gate before one later clean-capture attempt. A non-due result defers without Compose; another retained conflict closes this exact recovery path. |
+| Quarantined-head recovery capture | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Complete: the one later clean direct Compose capture is hash-bound as `complete` with both targets collected. It is unbound direct-container evidence only. |
+| Daily-broad continuation capability | Data / Codex | Existing daily-broad Compose service, durable cursor, worker lock, and shared gates | Ready: preflight then one short serial continuation. Atomic worker lock/cursor lease, not an advisory process check, owns the call. Require accepted persisted pages and a monotonic cursor advance before proposing a long worker. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
 ## Current Bottleneck
 
 Fresh, KIS-reconstructible causal input coverage remains the predictive-engine
-bottleneck. The direct host collector now completes the bounded QQQ/SPY scope,
-while the first direct container attempt was pre-transport deferred by a recent
-separate token-start reservation. The due-gate container path then reached
-cache-conflict handling and quarantined old active head entries. Task-owned
-evidence still has one comparable `reason_unavailable` nonzero and one
-successful `retained_partial` terminal. The immediate Data recovery is one
-post-quarantine clean capture; coverage remains `incomplete/current_session_short`,
-decision-time availability and provider finality are unobserved, and no model
-input exists.
+bottleneck. The direct container recovery is now clean, but it remains unbound
+and does not change the task-owned `incomplete/current_session_short` topology,
+decision-time availability, provider finality, or model eligibility. The
+separately stalled daily-broad cursor is a ready data-coverage opportunity: one
+short continuation can determine whether the existing durable path still makes
+persisted-page and cursor progress without waiting for the intraday session.
 
 ## Current Cross-Lane Decision
 
@@ -86,15 +80,18 @@ behavior. The first direct Compose call then yielded at the shared gate before
 transport, so it did not exercise the container collector. The post-gate call
 then exercised only its retained-cache conflict protection. Claude's
 `supported-with-limits` recovery challenge allows one later independently
-fetched clean capture, not a cache edit or retry loop; it does not change task
-timing, pace, route, or consumer behavior.
+fetched clean capture, not a cache edit or retry loop; that clean capture has
+now completed. For the daily-broad continuation Claude also returned
+`supported-with-limits`: a process check is advisory, the durable lock/lease is
+authoritative, and any first successful run must prove persisted accepted pages
+plus monotonic cursor advance before a long worker is proposed.
 
 ## Current Reversible Improvement
 
 The completed inventory makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is one bounded post-quarantine
-Compose capture, which can test the installed clean-recovery path without
-adding a Task, schedule, marker family, or downstream consumer.
+explicit. The immediate reversible improvement is one bounded daily-broad
+continuation capability run, which can advance a durable external data cursor
+without adding a scheduler, model, marker family, or downstream consumer.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -106,8 +103,8 @@ not a relaxation of test, execution, or live-risk coverage.
 
 ## Current Recovery Action
 
-No category-based recovery proposal is active. A later recovery investigation
+No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
-bindings plus a fresh Claude falsification-first verdict. The current next
-action is one bounded post-quarantine Compose capture while the later-terminal
-reattachment remains task-owned and non-foreground.
+bindings plus a fresh Claude falsification-first verdict. The current action is
+one bounded daily-broad continuation capability run while task-owned intraday
+reattachment remains non-foreground.

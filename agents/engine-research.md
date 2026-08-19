@@ -26,8 +26,9 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   container attempt yielded at the shared token-start gate before a token POST,
   so it likewise creates no dataset, target, split, or campaign change. The
   due-gate container attempt reached retained-cache quarantine for both targets;
-  its recovery evidence remains non-promoting until a distinct clean capture
-  and the existing causal qualification conditions are independently met.
+  the later direct Compose recovery capture completed cleanly, but remains
+  unbound and non-promoting until distinct task-owned causal qualification
+  conditions are independently met.
 - The RTX 4090 source-isolated Tiingo IEX r1 appointment completed and released
   its memory. Its M5-only masked reconstruction used the fixed
   LSTM/causal-TCN/compact-attention order with no target, holdout, selection,

@@ -169,6 +169,15 @@ isolated recovery fact, not a provider-finality, coverage, or consumer claim.
 Claude supports one later independently fetched clean-capture attempt; another
 retained-cache conflict closes this exact recovery path.
 
+That later clean-capture attempt completed through the exact existing Compose
+service. Its unbound source-safe receipt
+`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T134229353199Z-c87d4ebfde0e7545.json`
+(`sha256:c87d4ebfde0e7545e7907936c8eb506c1e3aa7514ef6d9ea86e9a36d7b4a522e`)
+is `complete` with both fixed targets `collected` and no failure or conflict
+category. The filename timestamp, immutable hash, external storage scope, and
+unbound direct-Compose identity were reattached offline. It closes only the
+cache-recovery branch, not session coverage, finality, or consumer eligibility.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
@@ -183,6 +192,7 @@ retained-cache conflict closes this exact recovery path.
 | Direct host collection capability probe | Data / Codex | Complete: one `QQQ/NAS` + `SPY/AMS` `session-capture` invocation at four pages per target completed with an exact unbound source-safe receipt. It established direct-host collector completion only; no Task, Docker, account, order, Paper consumer, or model behavior changed. |
 | First container collection capability probe | Data / Codex | Complete: one exact Compose invocation yielded `rejected/token_request_not_due` for both targets before a token POST. Its safe receipt does not diagnose Docker, KIS, or the provider; no Task, account, order, or consumer ran. |
 | Post-gate container collection capability probe | Data / Codex | Complete: the due-gate service reached the built-in retained-cache conflict branch and quarantined both conflicting active head entries while preserving raw bytes. It established no session/finality/model consumer. |
+| Quarantined-head recovery capture | Data / Codex | Complete: one later exact Compose capture is hash-bound as unbound `complete` with both fixed targets `collected`; no conflict repeated and no Task, account, order, consumer, or model change followed. |
 | IWM isolated current-head capture | Data | Complete: one fixed IWM/AMS page accepted with the replay-isolated source-safe receipt above; no retry, pagination, replay promotion, or consumer change followed. |
 | IWM isolated cache mechanics | Data | Complete: strict index identity binds the generic raw verifier, with replay-root, index-replacement, raw-tamper, and artifact-symlink rejection coverage. Only source-safe aggregate mechanics were emitted. |
 | IWM temporal-reach continuation probe | Data | Complete: one head was accepted, its continuation header was not recognized, and no second page was requested. The exact endpoint expansion path is closed without retry; the external receipt is the source-safe hash above. |

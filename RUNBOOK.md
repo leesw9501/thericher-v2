@@ -1264,6 +1264,16 @@ capture may test the existing recovery rule after the shared gate is due. If
 the same retained-cache conflict recurs, close this exact recovery path rather
 than adding a retry loop or a cache-rewrite rule.
 
+That one later clean-capture attempt completed through the same direct Compose
+service. The exact unbound receipt is
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T134229353199Z-c87d4ebfde0e7545.json`
+(`sha256:c87d4ebfde0e7545e7907936c8eb506c1e3aa7514ef6d9ea86e9a36d7b4a522e`).
+Its two fixed targets are `collected`, with no retained-cache conflict category.
+The offline reattachment binds the filename timestamp and hash and confirms an
+unbound `paper_only` market-data capture. It closes only this direct cache
+recovery path, not Scheduler provenance, session completeness, finality, model
+eligibility, or a downstream consumer.
+
 The one existing `thericher-kis-paper-intraday-head` task invokes this same
 capture mode before its bounded local and QQQ Paper consumers. It adds no new
 Windows task, and its page cap, concurrency, and collector exit authority stay

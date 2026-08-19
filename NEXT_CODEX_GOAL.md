@@ -2,74 +2,67 @@
 
 ## Objective
 
-Complete `kis-paper-intraday-quarantined-head-recovery-capture-v1`: after the
-completed due-gate container attempt independently fetched a candidate then
-quarantined conflicting retained head chunks for both targets, make one later
-clean-capture attempt through the exact existing Compose collector. This tests
-only the existing quarantine recovery path; it is not a cache edit, retry loop,
-Scheduler claim, session-completeness, finality, model, Paper-trading, or live
-evidence.
+Complete `kis-paper-daily-broad-continuation-capability-v1`: determine whether
+the existing KIS Paper daily-broad durable cursor can make real persisted-page
+and monotonic cursor progress through one short, serial, direct Compose
+continuation. This advances external data collection only. The current-listing,
+non-PIT breadth cache remains source-local and cannot become a predictive,
+ranking, ensemble, Paper, or live claim through this objective.
 
 ## Boundaries
 
-- `KIS_PAPER_*` reads for this one collector invocation are standing-authorized
-  by `AGENTS.md`; use no other credential and never read or route `KIS_LIVE_*`.
-  Do not call account, position, order, cancel, modify, broker, or live routes.
-- Do not invoke, modify, reinstall, or start a Windows task or scheduler. Run
-  only the existing `kis-paper-intraday-head` Compose service once with
-  `--rm --no-deps --pull never`; do not build, pull, add a service, add a
-  scheduler, retry loop, parallel flood, or timing/pacing change.
-- Reattest before execution that the service has its checked-in
-  `session-capture` command, `THERICHER_MODE=off`, only its two KIS
-  market-data variables, and the external `D:\market_data`/artifact roots.
-  Scope remains `QQQ/NAS` and `SPY/AMS` with the existing four-page maximum.
-  Keep raw response/cache bytes only under `D:\market_data`; never print,
-  log, artifact, or Git raw rows.
-- Retain only source-safe aggregate outcome, closed reason category if the
-  existing collector emits one, timestamps, opaque run identity, and external
-  relative receipt/hash pointers. Do not retain or expose secrets, account
-  identifiers, raw responses, command output, private runtime state, or order
-  identifiers.
-- Preserve `THERICHER_MODE=off`; the probe must not reach local-Paper,
-  conditional session, dashboard, or any downstream consumer.
+- `KIS_PAPER_*` reads for the named existing daily-market-data collector are
+  standing-authorized. Never read or route `KIS_LIVE_*`, and do not call
+  account, position, order, cancel, modify, broker, or live endpoints.
+- Use only the existing `kis-paper-daily-broad-backfill` Compose service and
+  checked-in `scripts/backfill_kis_paper_daily_broad.py` continuation path.
+  Do not create, change, start, or invoke a Windows task/scheduler; do not
+  build, pull, add a service, use a parallel flood, or launch a long worker.
+- The one direct worker is capped at `--max-chunks 8` and
+  `--max-runtime-seconds 900`. Its durable cache worker lock and cursor lease
+  are authoritative; any advisory active-process check cannot authorize a
+  second writer. Do not retry this objective.
+- Reattest `THERICHER_MODE=off`, current-listing-only/non-PIT/non-ranking
+  scope, external `D:\market_data` and artifact roots, and the service's
+  market-data-only credential surface before execution. Keep all raw bytes only
+  under `D:\market_data`; do not print, log, artifact, or Git raw rows,
+  credentials, account identifiers, or private runtime state.
+- Retain only source-safe aggregate counts, closed categories, safe cursor date
+  categories, timestamp, opaque evidence hash/pointer, and route-isolation
+  facts. A no-progress, busy, token-gated, rate-limited, storage-floor, or
+  source-limited result closes this short probe without a retry loop.
 
 ## Required Work
 
-1. Reattest the existing service contract, focused tests, quarantine semantics,
-   and shared token-start gate before the call. The non-mutating gate check
-   must report `due`; otherwise retain a scoped `deferred` result and do not
-   invoke Compose. A due precheck is advisory only; the service's own atomic
-   claim remains authoritative.
-2. Run exactly one direct Compose `session-capture` invocation with the
-   predeclared two-symbol/four-page scope only when the precheck is due.
-   Capture no command output beyond an allowlisted source-safe result. Do not
-   manually edit, clear, restore, or inspect raw cache bytes. On a bounded
-   failure, a lost atomic token race, or another retained-cache conflict,
-   record the existing closed category and stop this recovery path.
-3. Reattach only the exact new source-safe receipt/cache aggregate and
-   classify it narrowly as `recovered`, `nonzero`, `deferred`, or
-   `unavailable`. A clean result is only an isolated capture recovery; it does
-   not prove a Windows Task/Scheduler cause, complete session, provider
-   finality, a qualified model input, or a Paper consumer.
-4. Add only focused tests or a source-safe reader needed to prove the recovery
-   probe cannot read live/account/order credentials, mutate raw bytes outside
-   the existing quarantine path, or invoke a downstream Paper branch. Update
-   Data, Engine Research, Execution, orchestration, `HANDOFF.md`, and
-   `RUNBOOK.md` with the narrow result.
+1. Reattest the existing Compose contract and focused unit tests. Run the
+   collector's non-network preflight, and inspect only source-safe durable
+   worker-lock/cursor metadata before the call. Record the pre-call cursor
+   aggregate as a comparison point; never inspect raw daily rows.
+2. Run exactly one direct Compose continuation at the fixed eight-chunk,
+   900-second bound. Capture no command output beyond allowlisted source-safe
+   aggregate results. The in-service lock and gate remain authoritative.
+3. Reattach only the exact worker-owned external evidence. A `collected` or
+   `complete` result is capability success only when it records at least one
+   accepted persisted page and its durable cursor advances monotonically from
+   the pre-call safe aggregate. Otherwise classify the closed result narrowly
+   and do not propose a long worker from it.
+4. Add only the focused reader/test required to prove the progress claim is
+   impossible without persisted accepted pages and cursor advancement, and that
+   the service cannot access live/account/order routes. Update Data, Engine
+   Research, Execution, orchestration, `HANDOFF.md`, and `RUNBOOK.md` with the
+   narrow result.
 5. Run required verification, commit, push, replace this file with exactly one
    material next company objective, and continue.
 
 ## Completion Evidence
 
-- One source-safe post-quarantine result for the exact bounded scope, with no
-  account/order/Paper/live call and no raw/secret/output retention; or a
-  source-safe `deferred` result with no Compose invocation.
-- Strongest kill test: a Compose route outside the named service, two symbols,
-  four-page cap, named market-data path, off-mode/external-root policy, or
-  credential allowlist rejects before Docker or any KIS request; a non-due
-  gate never launches Compose, a recurring retained-cache conflict closes this
-  recovery path, and the probe cannot call a Paper/session/order branch.
-- The conclusion stays asymmetric: it distinguishes only one post-quarantine
-  capture result from the prior direct-host/container/task-owned observations,
-  not Scheduler origin, provider cause, coverage, finality, model, PnL, or
-  live behavior.
+- One source-safe preflight and one exact source-safe continuation outcome for
+  the fixed bound, with no account/order/Paper/live call and no raw/secret
+  output retention.
+- Strongest kill test: a worker lock/lease collision, unchanged cursor,
+  zero accepted persisted pages, wrong service/roots/mode/credential surface,
+  or any live/account/order path rejects before a long worker can be proposed.
+- The conclusion remains narrow: a successful probe proves only current
+  source-local daily collection progress. It does not prove point-in-time
+  correctness, corporate-action completeness, a qualified research input,
+  model performance, PnL, Paper eligibility, or live behavior.

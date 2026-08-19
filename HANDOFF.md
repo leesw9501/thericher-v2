@@ -246,6 +246,17 @@ data evidence. Claude returned `supported-with-limits` for one later,
 independently fetched clean-capture attempt using the same recovery path; a
 second retained-cache conflict closes that exact recovery path without a loop.
 
+The permitted later clean-capture attempt then completed through the exact
+existing Compose service. Its unbound source-safe receipt is
+`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T134229353199Z-c87d4ebfde0e7545.json`
+under `D:\market_data` (`sha256:c87d4ebfde0e7545e7907936c8eb506c1e3aa7514ef6d9ea86e9a36d7b4a522e`):
+both fixed targets are `collected`, with no failure or conflict category. The
+receipt hash, filename timestamp, unbound direct-Compose identity, external
+storage scope, and `paper_only` market-data route were revalidated offline.
+This closes the exact cache-recovery path; it does not establish Scheduler
+origin, a complete session, provider finality, qualified research input, or a
+Paper consumer.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath
