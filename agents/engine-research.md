@@ -42,9 +42,13 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ
   `previous_bar_direction` holdout at `-0.3965` is only the closest negative
-  control. No predictive promotion, GPU appointment, model selection, or Paper
-  consumer follows. The next bounded classical-ML package is one frozen L2
-  logistic control replay against the same hash-pinned input.
+  control. The one fixed development-only L2 logistic control then completed on
+  the same hash-pinned panel: its QQQ/SPY after-cost replays were `-109.2703`
+  and `-139.3587`, below the corresponding previous-bar-direction controls.
+  All two model and six comparator cells used `local_paper`, validation labels
+  were excluded from fitting, and no GPU/model-selection/Paper consumer follows.
+  The next bounded classical-ML package is one fixed shallow regime-tree
+  breadth control, still descriptive-only and CPU-only.
 - The RTX 4090 source-isolated Tiingo IEX r1 appointment completed and released
   its memory. Its M5-only masked reconstruction used the fixed
   LSTM/causal-TCN/compact-attention order with no target, holdout, selection,

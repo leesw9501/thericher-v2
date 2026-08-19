@@ -208,7 +208,8 @@ cache-recovery branch, not session coverage, finality, or consumer eligibility.
 | Daily-broad continuation capability | Data / Codex | Complete: the exact short continuation reattached an unchanged all-terminal 2,119-target index and exited `complete` with zero chunks/pages/failures. It constructed no KIS client; a long worker is not ready for this cursor. |
 | QQQ/SPY D1 forward refresh | Data / Codex | Complete: the hash-bound preflight required collection, then the one permitted direct collector deferred at `token_request_not_due` with zero new accepted pages and zero changed targets. The existing scheduled task is ready and owns its next due attempt. |
 | Historical KIS D1 CPU baseline | Data / Engine Research | Complete: QQQ and SPY independently reattached the same 4,756 complete D1 Bars and completed their fixed two-baseline by two-phase local-paper matrices under external contracts. This source remains descriptive-only and does not become a current predictive input. |
-| KIS D1 L2 logistic control | Engine Research / Data | Ready: the existing hash-pinned QQQ/SPY daily sequence control can fit once on development labels and replay its frozen validation alongside fixed local-paper comparators, without KIS, credentials, Docker, or GPU. |
+| KIS D1 L2 logistic control | Engine Research / Data | Complete: the one hash-pinned QQQ/SPY development-only fit wrote external evidence only; validation labels were excluded and all two model plus six comparator replays used `local_paper`. Both model after-cost cells were negative, so the source remains descriptive-only. |
+| KIS D1 regime-tree breadth | Engine Research / Data | Ready: one frozen shallow nonlinear control can reuse the same historical input with a new external label, fixed comparators, and no KIS, credentials, Docker, or GPU. |
 
 ## Quality Contracts
 

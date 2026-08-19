@@ -1394,6 +1394,28 @@ No cell had positive after-cost PnL; this anchors a negative control rather
 than a model-selection or profitability result. The contracts, replay work, and
 sanitized summaries remain only under the external baseline artifact root.
 
+### Frozen KIS Daily L2 Logistic Control
+
+The fixed L2 logistic control reuses the same hash-pinned QQQ/SPY D1 catalog,
+but fits pooled development labels only for 160 deterministic CPU steps and
+replays its frozen validation against the three fixed local-paper comparators.
+It does not read credentials, call KIS, use Docker or GPU, serialize raw rows,
+or write model parameters into the repository.
+
+The 2026-08-19 run label `20260819-kis-daily-l2-logistic-r1` completed beneath
+`D:\thericher-v2\model-artifacts\kis-daily-l2-logistic-control-v1`. Its
+precommit preceded fit and validation replay, validation labels were excluded
+from fitting, and its two model plus six comparator cells retained only
+`local_paper` fills. The after-cost QQQ/SPY model replays were `-109.2703` and
+`-139.3587`, below the fixed previous-bar-direction controls. The external
+precommit, parameter identity, and sanitized-summary hashes are
+`sha256:60ac9f662014bc76067945befed7877a345099088f5e3defd4747eacf9dd3b9a`,
+`sha256:7db2456aa6f0368008becd59d7d70b3580b2f0f5aeb0db4aafda5f858f3a8545`,
+and `sha256:143f7ce60cc74fcac61cf004245730b78c0a34acf5e8003d326bd267c1492213`.
+This is negative descriptive control evidence only: it selects no model,
+creates no ensemble or GPU appointment, and cannot support a Paper or live
+action.
+
 ### Frozen Chronological CPU Campaign
 
 When Data has reattested exactly 20 complete regular 1m sessions for one KIS
