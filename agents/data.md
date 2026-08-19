@@ -177,6 +177,10 @@ disabled.
   `CSV_FIELDS` header before parsing. A missing `complete` field cannot be
   defaulted to a completed bar through this path; this remains source-local
   integrity only, not an assertion about source completeness or finality.
+- Training catalog inspection treats a `date` column used as the parsed
+  timestamp as a UTC-derived session key, rather than treating each ISO
+  timestamp as an invalid session label. This restores per-session gap
+  accounting for that schema without relaxing a distinct `session_date` field.
 - A cumulative intraday session with a non-`none`
   `conflicting_overlap_category` is metadata-conflicted even when its
   expected-minute count is complete. The current capture-category projection

@@ -175,7 +175,12 @@ def inspect_ohlcv_file(
                     else:
                         rows_on_or_after_holdout += 1
 
-            raw_session = (row.get(session_column) or "").strip() if session_column else ""
+            if session_column == timestamp_column and parsed_timestamp is not None:
+                raw_session = parsed_timestamp.date().isoformat()
+            else:
+                raw_session = (
+                    (row.get(session_column) or "").strip() if session_column else ""
+                )
             if not raw_session and parsed_timestamp is not None:
                 raw_session = parsed_timestamp.date().isoformat()
             if raw_session:

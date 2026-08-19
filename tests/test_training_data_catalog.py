@@ -93,6 +93,40 @@ def test_unproven_point_in_time_provenance_rejects_sealed_holdout(tmp_path: Path
     )
 
 
+def test_inspection_derives_session_from_timestamp_date_column(tmp_path: Path) -> None:
+    path = tmp_path / "snapshot=2026-01-02" / "ohlcv_1m.csv.gz"
+    fieldnames = ("symbol", "date", "open", "high", "low", "close", "volume")
+    _write_rows(
+        path,
+        [
+            _date_timestamp_row("AAA", "2026-01-02T14:30:00Z"),
+            _date_timestamp_row("AAA", "2026-01-02T14:32:00Z"),
+        ],
+        fieldnames=fieldnames,
+    )
+
+    result = inspect_ohlcv_file(
+        path,
+        timeframe="1m",
+        proposed_holdout_start=None,
+        provenance_proves_point_in_time=True,
+        minimum_training_sessions=1,
+    )
+
+    assert result["timestamp"]["column"] == "date"
+    assert result["session"] == {
+        "column": "date",
+        "min": "2026-01-02",
+        "max": "2026-01-02",
+        "count": 1,
+        "row_counts": {"2026-01-02": 2},
+        "invalid_count": 0,
+    }
+    assert result["interval_gaps"]["gap_transition_count"] == 1
+    assert result["interval_gaps"]["missing_interval_count"] == 1
+    assert result["training_eligible"] is True
+
+
 def test_catalog_bounds_daily_inventory_and_writes_one_external_json(tmp_path: Path) -> None:
     intraday_paths = []
     for index in range(3):
@@ -287,9 +321,26 @@ def _row(
     }
 
 
-def _write_rows(path: Path, rows: list[dict[str, str]]) -> None:
+def _date_timestamp_row(symbol: str, timestamp: str) -> dict[str, str]:
+    return {
+        "symbol": symbol,
+        "date": timestamp,
+        "open": "10",
+        "high": "11",
+        "low": "9",
+        "close": "10.5",
+        "volume": "100",
+    }
+
+
+def _write_rows(
+    path: Path,
+    rows: list[dict[str, str]],
+    *,
+    fieldnames: tuple[str, ...] = FIELDS,
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with gzip.open(path, "wt", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
