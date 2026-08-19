@@ -75,6 +75,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   field and selection context, not a complete universe, predictive score, or
   Execution proof; policy/allocation IDs remain caller-owned downstream
   identities. A mismatched receipt/binding reference fails closed.
+- The local-Paper replay now retains both entry and exit decision identities on
+  valid FIFO close segments, with separate role and pair accounting totals.
+  This is future PnL-attribution plumbing only: it neither assigns causal
+  credit nor changes the lack of a qualified dataset, candidate, model,
+  execution result, or Paper outcome.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed

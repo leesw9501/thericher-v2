@@ -202,6 +202,14 @@ or replace Execution's independent target and symbol binding checks. Receipt
 and local-Paper binding must use the same derived reference; a mismatch fails
 closed at the existing bridge.
 
+For replayable local-Paper fills, Execution also has a pure offline FIFO
+decision-PnL projection. It binds each local fill to exactly one accepted local
+order, retains both entry and exit decision identities on every closed segment,
+and reports separate entry-role, exit-role, and decision-pair totals. This
+improves the PnL-attribution loop without assigning causal credit: it rejects
+missing, duplicate, mismatched, inactive, or oversold local history and never
+claims broker PnL, alpha, model performance, or Paper-account results.
+
 ### Ownership Boundary
 
 - **Data** owns the point-in-time eligibility facts, calendars, completed-bar
