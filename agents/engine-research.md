@@ -17,6 +17,18 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+- The 2026-08-19 UTC Tiingo Standard EOD fixed ETF snapshot reattests as one
+  three-request prospective lineage record with a 2026-08-12 source-as-of
+  boundary. Its closed scope leaves point-in-time, model, training, campaign,
+  ranking, Paper, and GPU eligibility false. It is not a predictive input or a
+  Research Steward appointment.
+- `firstrate-5m-after-cost-control-v1` is ready as one source-local,
+  CPU-only descriptive control. It freezes a contiguous 5m geometry, past-60
+  bar window, one-bar forward direction target, chronological split/embargo,
+  `always_flat` and previous-bar-direction baselines, one L2-logistic control,
+  and a 1/3/5-bps per-side sensitivity band before any result is read. The
+  strongest kill test is failure to beat flat after every nonzero cost; a result
+  cannot allocate GPU, tune, select, ensemble, or reach KIS/Paper.
 - No frozen, input-qualified predictive campaign is active. The latest
   task-owned QQQ/SPY M1 chain is `input_unavailable`; its optional causal
   attestation is `not_recorded`, so it cannot freeze a target, split, or
@@ -242,7 +254,7 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
 | Technical/chart and momentum/regime | Fixed local mechanics and negative baselines only | New causal, time-disjoint input plus frozen contract |
-| Classical ML/statistical | No active campaign | Qualified dataset and CPU-first preflight |
+| Classical ML/statistical | FirstRate 5m after-cost CPU control ready, source-local only | Frozen input reattestation, then one CPU-only control; a nonzero-cost failure closes it without GPU |
 | Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
 | Portfolio/allocation/meta-decision | Deterministic source-attested selection, per-symbol policy, and scale/cap foundation only | Aligned out-of-fold upstream candidate evidence with a frozen ranking/turnover/capacity/correlation contract |
 

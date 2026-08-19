@@ -6,10 +6,14 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`tiingo-prospective-eod-refresh-v1` is ready. Data will create or reattest one
-fixed SPY/QQQ/IWM Tiingo Standard EOD prospective snapshot under the existing
-external root, preserving its current non-promoting lineage-only contract. The
-completed `kis-daily-pair-forward-post-reconciliation-observation-v1` passed
+`firstrate-5m-after-cost-control-v1` is ready. Data and Engine Research will
+run one frozen CPU-only SPY/QQQ source-local 5m control before any FirstRate GPU
+matrix is considered. It fixes the contiguous geometry, past-60-bar window,
+one-bar target, chronological split/embargo, baselines, and 1/3/5-bps per-side
+cost band. The completed `tiingo-prospective-eod-refresh-v1` created and
+offline-reattested the fixed SPY/QQQ/IWM external snapshot; it remains
+lineage-only and passed focused and full authority verification. The completed
+`kis-daily-pair-forward-post-reconciliation-observation-v1` passed
 its focused 48-test group and goal-boundary authority suite as `3218 passed, 19
 skipped` in 42m13s. The completed overlap-reconciliation package passed its own
 goal-boundary verification. The v4 deferred
@@ -36,7 +40,8 @@ named clock/session, decision-time availability, and provider finality
 
 | Work | Owner | Resource | Current fact and next action |
 | --- | --- | --- | --- |
-| Tiingo prospective EOD refresh | Data | Existing fixed ETF source contract, external canonical root, and approved local token path | Ready: create or reattest one current dated SPY/QQQ/IWM snapshot through the existing bounded three-request acquisition path. It stays prospective-lineage-only and cannot clear KIS quarantine or create a Research, GPU, Execution, or Paper consumer. |
+| FirstRate 5m after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Ready: CPU-first fixed control uses one chronological source-local split, no time-of-day/cross-feed feature, explicit 1/3/5-bps sensitivity, and a nonzero-cost kill test. It cannot allocate GPU or create KIS/Paper input. |
+| Tiingo prospective EOD refresh | Data | Existing fixed ETF source contract, external canonical root, and approved local token path | Complete: one current dated SPY/QQQ snapshot was created, then reattached offline by its source-safe dataset/manifest identities. It stays prospective-lineage-only and cannot clear KIS quarantine or create a Research, GPU, Execution, or Paper consumer. |
 | Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |
 | FirstRate free M1 normalization | Data | Hash-bound external ZIPs, canonical CSVs, and source-safe receipt | Closed: archive hashes, expected entries, strict decode, canonical hashes, and exact timestamp-set equality reattached. Local provider round-trip counts are 207,824 SPY and 210,482 QQQ M1 Bars. |
 | FirstRate source-local timeframe mechanics | Data / Codex | Existing local provider/resampler and immutable normalization receipt | Closed: canonical hashes reattached and only complete unique UTC-anchored 1m/5m/10m/1h/3h aggregate geometry retained. Every emitted bar passed source-bucket OHLCV, ordering, and completion checks. |
@@ -141,6 +146,11 @@ The reconciliation retains no raw values, exception detail, or value-derived
 hash; a conflict preserves the prior row and excludes only that target from the
 causal reader. Do not repeat a failed model family or spend GPU on an
 unqualified runtime study.
+
+The current reversible improvement is to establish a frozen nonzero-cost CPU
+control before allocating the idle GPU to a FirstRate architecture matrix. This
+advances feature/model research while preventing a zero-cost M1/5m artifact
+from being mistaken for deployable signal.
 
 The source-safe snapshot-observer fixture now receives a unique mutex while the
 production default remains `Global\TheRicherPaperSnapshotObserver`. This removes

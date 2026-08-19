@@ -9,6 +9,9 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   completed and released its memory; no GPU process or sealed-evaluation
   allocation is held by Research Steward.
 - No frozen, input-qualified campaign is ready for an appointment.
+- The ready FirstRate 5m after-cost control is CPU-only and source-local. It
+  must resolve its fixed nonzero cost band before any GPU matrix can be
+  proposed; it holds no GPU appointment or sealed-evaluation allocation.
 - The completed QQQ/SPY D1 forward causal qualification is Data-only and
   `input_unavailable` for three unobserved runtime facts: named clock/session,
   decision-time availability, and provider finality. It consumed no GPU custody,

@@ -14,10 +14,29 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-The active objective is `tiingo-prospective-eod-refresh-v1`: create or
-reattest one current dated, fixed SPY/QQQ/IWM Tiingo Standard EOD snapshot under
-the existing external root. It improves independent forward data lineage only;
-it does not promote a model, GPU, KIS recovery, Execution, or Paper consumer.
+The active objective is `firstrate-5m-after-cost-control-v1`: establish one
+frozen CPU-only, source-local SPY/QQQ 5m predictive control with predeclared
+nonzero cost sensitivity before any FirstRate GPU matrix is considered. It is
+exploratory-only and cannot promote a KIS, Execution, or Paper consumer.
+
+The 2026-08-19 UTC fixed ETF snapshot is now external at
+`D:\market_data\us_equities\fixed_etf_prospective_lineage\canonical\tiingo_standard_eod\snapshot=2026-08-19-tiingo-standard-eod-prospective-r1`.
+Its offline loader reattached dataset identity
+`sha256:537211067196a91d24dfaab229666decc96108e17c4de89e8059d02ed27c787c`
+and manifest identity
+`sha256:d02c5c1f7bcd47148b491273fad613637ddee8972ad8bb1bdf79dd3ab7d5426d`.
+It retained exactly three fixed-symbol responses, 72 normalized rows, and a
+2026-08-12 source-as-of boundary. The existing closed contract leaves every
+model, training, campaign, ranking, order, GPU, KIS-recovery, Execution, and
+Paper eligibility false. Claude's compact code-level challenge was
+`supported-with-limits`: provider freshness still does not establish
+point-in-time decision availability.
+
+The completed `tiingo-prospective-eod-refresh-v1` passed 6 focused prospective
+EOD tests and the goal-boundary authority suite as `3218 passed, 19 skipped` in
+42m31s, plus Ruff, both credential-free Compose parses, and `git diff --check`.
+The only external action was the fixed three-request Tiingo acquisition; no
+KIS, broker, order, live, or model action occurred.
 
 The completed `kis-intraday-short-session-topology-classification-v1` classified
 the bound 2026-08-15 terminal as `current_session_short` solely from source-safe
