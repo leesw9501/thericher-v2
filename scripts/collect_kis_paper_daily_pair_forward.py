@@ -13,10 +13,12 @@ from pathlib import Path
 from types import MappingProxyType
 
 from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
+    KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES,
     KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY,
     KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
     KisPaperDailyPairForwardCacheError,
     commit_kis_paper_daily_pair_forward_observation,
+    get_kis_paper_daily_pair_forward_commit_failure_phase,
     load_verified_kis_paper_daily_pair_forward_cache,
 )
 from thericher_v2.execution.kis_market_data import (
@@ -61,7 +63,8 @@ _RUNTIME_CONTRACT = MappingProxyType(
         "collector_failure_stages": _COLLECTOR_FAILURE_STAGES,
         "collector_unavailable_reason": "collector_unavailable",
         "commit_failure_kinds": tuple(_COMMIT_FAILURE_KIND_BY_EXCEPTION.values()),
-        "contract_id": "kis_paper_daily_pair_forward_stage_contract_v2",
+        "commit_failure_phases": KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES,
+        "contract_id": "kis_paper_daily_pair_forward_stage_contract_v3",
         "readiness_unavailable_reason": "readiness_unavailable",
         "receipt_kind": "kis_paper_daily_pair_forward_receipt",
     }
@@ -185,12 +188,14 @@ def _run_credentialed_collection(
                 reason="token_request_not_due" if not token_request_is_due else "rate_limited",
             )
         except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
+            commit_failure_kind = _commit_failure_kind(error)
             return _emit_collector_stage_unavailable(
                 artifact_root=artifact_root,
                 repository_root=repository_root,
                 observed_at=observed_at,
                 failure_stage="commit",
-                commit_failure_kind=_commit_failure_kind(error),
+                commit_failure_kind=commit_failure_kind,
+                commit_failure_phase=_commit_failure_phase(error, commit_failure_kind),
             )
         return _emit_source_safe_receipt(
             artifact_root=artifact_root,
@@ -245,12 +250,14 @@ def _run_credentialed_collection(
         )
         payload = result.safe_payload()
     except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
+        commit_failure_kind = _commit_failure_kind(error)
         return _emit_collector_stage_unavailable(
             artifact_root=artifact_root,
             repository_root=repository_root,
             observed_at=observed_at,
             failure_stage="commit",
-            commit_failure_kind=_commit_failure_kind(error),
+            commit_failure_kind=commit_failure_kind,
+            commit_failure_phase=_commit_failure_phase(error, commit_failure_kind),
         )
     return _emit_source_safe_receipt(
         artifact_root=artifact_root,
@@ -438,20 +445,33 @@ def _collector_unavailable_payload(
     failure_stage: str,
     *,
     commit_failure_kind: str | None = None,
+    commit_failure_phase: str | None = None,
 ) -> dict[str, object]:
     if failure_stage not in _COLLECTOR_FAILURE_STAGES:
         raise ValueError("collector failure stage is invalid")
-    if failure_stage != "commit" and commit_failure_kind is not None:
+    if failure_stage != "commit" and (
+        commit_failure_kind is not None or commit_failure_phase is not None
+    ):
         raise ValueError("commit failure kind is invalid")
     if (
         commit_failure_kind is not None
         and commit_failure_kind not in _COMMIT_FAILURE_KIND_BY_EXCEPTION.values()
     ):
         raise ValueError("commit failure kind is invalid")
+    if (
+        commit_failure_phase is not None
+        and (
+            commit_failure_kind != "cache_contract"
+            or commit_failure_phase not in KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES
+        )
+    ):
+        raise ValueError("commit failure phase is invalid")
     payload = _unavailable_payload(observed_at, "collector_unavailable")
     payload["failure_stage"] = failure_stage
     if commit_failure_kind is not None:
         payload["commit_failure_kind"] = commit_failure_kind
+    if commit_failure_phase is not None:
+        payload["commit_failure_phase"] = commit_failure_phase
     return payload
 
 
@@ -479,6 +499,7 @@ def _emit_collector_stage_unavailable(
     observed_at: datetime,
     failure_stage: str,
     commit_failure_kind: str | None = None,
+    commit_failure_phase: str | None = None,
 ) -> int:
     return _emit_source_safe_receipt(
         artifact_root=artifact_root,
@@ -488,6 +509,7 @@ def _emit_collector_stage_unavailable(
             observed_at,
             failure_stage,
             commit_failure_kind=commit_failure_kind,
+            commit_failure_phase=commit_failure_phase,
         ),
         exit_code=_RECOVERY_EXIT,
     )
@@ -498,6 +520,12 @@ def _commit_failure_kind(error: BaseException) -> str | None:
         if isinstance(error, exception_type):
             return kind
     return None
+
+
+def _commit_failure_phase(error: BaseException, kind: str | None) -> str | None:
+    if kind != "cache_contract":
+        return None
+    return get_kis_paper_daily_pair_forward_commit_failure_phase(error)
 
 
 def _emit_readiness_stage_unavailable(

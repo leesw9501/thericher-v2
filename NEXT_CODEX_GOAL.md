@@ -2,47 +2,54 @@
 
 ## Objective
 
-Complete `kis-daily-pair-forward-commit-phase-diagnostic-v1`: add a minimal,
-source-safe fixed commit-phase diagnostic for future QQQ/SPY D1 pair-forward
-`cache_contract` failures. This advances Data recovery only; it does not make
-current data, causal input, strategy, model, execution, or trading eligible.
+Complete `kis-daily-pair-forward-v3-preflight-and-one-shot-collection-v1`:
+reattach one credential-free v3 QQQ/SPY D1 pair-forward preflight and, only if
+it requires collection, execute exactly one fresh KIS Paper market-data outcome
+through the existing collector. This advances bounded Data recovery only, not
+causal input, strategy, model, execution, or trading eligibility.
 
 ## Boundaries
 
 - Run `./scripts/start_next_codex_task.ps1` first, then read `HANDOFF.md`,
   `AGENTS.md`, `RUNBOOK.md`, and the active stateboards. Ask Claude for a short
-  falsification-first drift check before changing the recovery contract. A
-  missing response is `review_unavailable`, not agreement or a stop on this
-  isolated local package.
-- Use source and fixtures only. Do not read credentials, call KIS, start
-  Docker, invoke a collector or scheduler, write the external cache, or retry
-  the completed collection.
-- Keep the existing `commit_failure_kind` behavior intact. A phase may appear
-  only on a future `failure_stage=commit` receipt whose fixed kind is
-  `cache_contract`; it must be absent for success, every non-commit stage, and
-  storage or validation kinds.
-- The only allowed phase values are fixed source constants representing static
-  operation boundaries: `cache_prepare`, `snapshot_persist`, `index_persist`,
-  and `cache_reverify`. Never retain an exception message, exception class,
-  path, raw row, credential, account datum, cache value, or dynamic detail.
-- Preserve the public cache exception behavior for callers. Do not infer the
-  phase of either completed receipt or add a new runtime worker, provider,
-  queue, consumer, approval step, or promotion path.
+  falsification-first recheck before collection. A missing response is
+  `review_unavailable`, not agreement or a stop on an independent local package.
+- Use only the existing shared-tag pair-forward Compose services. Build only the
+  existing collector image tag; do not create a second image, provider, queue,
+  worker, scheduler, or Research/Execution consumer.
+- The preflight is credential-free, network-disabled, and cache-read-only. Do
+  not run readiness. Run the collector only when the fresh preflight is exactly
+  `collection_required` and its payload v3 contract hash matches current host
+  source; otherwise close with no collector invocation.
+- The collector may read `KIS_PAPER_*` only inside its existing service and may
+  call only its KIS Paper QQQ/SPY daily market-data route and external pair
+  cache. Do not call account, position, quote, order, or live endpoints.
+- Inspect the selected local image identity after build and immediately before
+  the collector only as a narrow same-tag stability check; do not claim immutable
+  image provenance. Invoke the collector at most once with no build or pull.
+- Retain only categorical status, fixed stage/kind/optional phase, contract
+  match, safe aggregates, route isolation, artifact policy, and cache-change
+  observation. A missing phase remains unknown, never a retry premise.
+- Never read or route `KIS_LIVE_*`, print secret/config-variable names, account
+  data, raw market rows, raw broker bodies, private cache values, or exception
+  text. Generated receipts stay under `D:\thericher-v2\model-artifacts`; raw
+  cache data stays under `D:\market_data`; neither enters Git.
 
 ## Required Work
 
-1. Add the smallest internal phase-carrying mechanism needed to associate a
-   caught pair-forward cache-contract failure with its static commit boundary.
-2. Extend the source-safe collector payload and static runtime contract only as
-   needed for the optional phase. Keep receipt top-level schema unchanged.
-3. Add focused tests for every allowed phase, field omission outside its exact
-   scope, preserved exception behavior, and a private-detail canary proving no
-   dynamic exception content serializes.
-4. Refresh `HANDOFF.md`, `RUNBOOK.md`, and active stateboards with the narrow
-   v2 outcome and the new diagnostic contract; no causal, Research, Execution,
-   Paper, or live conclusion may change.
-5. Run verification, commit, push, replace this file with exactly one next
-   objective, and continue.
+1. Reattach the v2 `commit/cache_contract` receipt as phase-unknown and verify
+   no Research or Execution consumer treats this cache as decision-time or
+   finality input.
+2. After Claude recheck and focused tests, build the existing shared tag and run
+   exactly one credential-free v3 preflight. Recompute its receipt hash and
+   compare only its payload contract hash against the current host static hash.
+3. Only if that exact preflight is matching `collection_required`, invoke the
+   existing collector once with no build or pull. Recompute its receipt hash and
+   retain only the allowed source-safe facts. Do not infer the exact cause from
+   a missing phase or an observed lack of cache mutation.
+4. Refresh stateboards, `HANDOFF.md`, and `RUNBOOK.md`; run verification,
+   commit, push, replace this file with exactly one next objective, and
+   continue.
 
 ## Verification
 

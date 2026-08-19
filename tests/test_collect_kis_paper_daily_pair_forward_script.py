@@ -382,6 +382,13 @@ def test_commit_failure_kind_is_limited_to_known_commit_payloads() -> None:
     )
 
     assert payload["commit_failure_kind"] == "storage"
+    payload = script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+        observed_at,
+        "commit",
+        commit_failure_kind="cache_contract",
+        commit_failure_phase="cache_prepare",
+    )
+    assert payload["commit_failure_phase"] == "cache_prepare"
     with pytest.raises(ValueError):
         script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
             observed_at,
@@ -393,6 +400,20 @@ def test_commit_failure_kind_is_limited_to_known_commit_payloads() -> None:
             observed_at,
             "commit",
             commit_failure_kind="unexpected",
+        )
+    with pytest.raises(ValueError):
+        script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+            observed_at,
+            "commit",
+            commit_failure_kind="storage",
+            commit_failure_phase="cache_prepare",
+        )
+    with pytest.raises(ValueError):
+        script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+            observed_at,
+            "commit",
+            commit_failure_kind="cache_contract",
+            commit_failure_phase="not_allowlisted",
         )
 
 
@@ -427,7 +448,58 @@ def test_commit_failure_kind_does_not_bleed_into_a_later_success_receipt(
     )
 
     assert receipts[0]["payload"]["commit_failure_kind"] == "storage"
+    assert "commit_failure_phase" not in receipts[0]["payload"]
     assert "commit_failure_kind" not in receipts[1]["payload"]
+    assert "commit_failure_phase" not in receipts[1]["payload"]
+
+
+def test_commit_failure_phase_emits_only_fixed_safe_cache_contract_detail(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+    private_detail = "private-phase-detail-canary"
+    error = script.KisPaperDailyPairForwardCacheError(private_detail)
+    error._commit_failure_phase = "cache_prepare"  # type: ignore[attr-defined]  # noqa: SLF001
+
+    _install_ready_gates(monkeypatch, script)
+    monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", lambda: object())
+    monkeypatch.setattr(
+        script,
+        "UrllibKisPaperDailyPairForwardTransport",
+        lambda **_kwargs: object(),
+    )
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_kwargs: object())
+    monkeypatch.setattr(
+        script,
+        "collect_kis_paper_daily_pair_forward_observation",
+        lambda *_args, **kwargs: SimpleNamespace(
+            rows_by_target={},
+            failure_reasons_by_target={},
+            observed_at=kwargs["observed_at"],
+        ),
+    )
+    monkeypatch.setattr(
+        script,
+        "commit_kis_paper_daily_pair_forward_observation",
+        lambda **_kwargs: (_ for _ in ()).throw(error),
+    )
+    _capture_receipt(monkeypatch, script, tmp_path, emitted, "p")
+
+    exit_code = _run_credentialed_collection(script, tmp_path)
+
+    assert exit_code == 20
+    _assert_collector_stage(
+        emitted,
+        script,
+        "commit",
+        expected_commit_failure_kind="cache_contract",
+        expected_commit_failure_phase="cache_prepare",
+    )
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    assert private_detail not in json.dumps(receipt, sort_keys=True)
 
 
 def test_networkless_readiness_checks_only_control_and_aggregate_environment(
@@ -546,6 +618,12 @@ def test_runtime_contract_fingerprint_is_static_and_environment_independent(
         "cache_contract",
         "storage",
         "validation",
+    )
+    assert script._RUNTIME_CONTRACT["commit_failure_phases"] == (  # type: ignore[attr-defined]  # noqa: SLF001
+        "cache_prepare",
+        "snapshot_persist",
+        "index_persist",
+        "cache_reverify",
     )
 
 
@@ -725,6 +803,7 @@ def _assert_collector_stage(
     expected_stage: str,
     *,
     expected_commit_failure_kind: str | None = None,
+    expected_commit_failure_phase: str | None = None,
 ) -> None:
     receipt = emitted["receipt"]
     assert isinstance(receipt, dict)
@@ -738,6 +817,10 @@ def _assert_collector_stage(
         assert "commit_failure_kind" not in payload
     else:
         assert payload["commit_failure_kind"] == expected_commit_failure_kind
+    if expected_commit_failure_phase is None:
+        assert "commit_failure_phase" not in payload
+    else:
+        assert payload["commit_failure_phase"] == expected_commit_failure_phase
 
 
 def _runtime_contract_sha256(script: object) -> str:

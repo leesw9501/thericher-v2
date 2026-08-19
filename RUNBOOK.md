@@ -718,6 +718,24 @@ may expose a fixed phase for a future `cache_contract` failure; it must never
 serialize exception text, exception class, path, raw data, credential, or
 account data.
 
+### Commit Failure Phase V3
+
+The source/fixture-only v3 contract is
+`sha256:219a3a13d1419f9b65dc34f1d6fa3a3ffcb534b045b1d1729308cb8d944e5893`.
+Only `failure_stage=commit` with `commit_failure_kind=cache_contract` may carry
+optional `commit_failure_phase`. The only values are fixed operation-boundary
+constants: `cache_prepare`, `snapshot_persist`, `index_persist`, and
+`cache_reverify`. The cache writer preserves the caught cache exception class
+and message for local callers, then exposes only its allowlisted phase through
+the collector payload. Storage and validation failures, every non-commit stage,
+and successes omit the field.
+
+The phase changes no prior receipt and cannot prove an exact data cause without
+a later independent outcome. Focused fixture tests cover all four boundaries,
+allowlist rejection, field omission, and a private-detail canary. This package
+made no credential, KIS, Docker, cache-write, scheduler, Research, Execution,
+Paper, or live call.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

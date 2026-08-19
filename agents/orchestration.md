@@ -6,15 +6,14 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-pair-forward-commit-phase-diagnostic-v1` is ready. The v2
-preflight matched its static contract and `collection_required`; exactly one
-existing collector then closed `unavailable/collector_unavailable/failure_stage=commit`
-with `commit_failure_kind=cache_contract`. Its external cache and index
-reattach unchanged with seven common sessions and no observed mutation in the
-invocation window. The next Data/Infra package is source/fixture-only: add a
-fixed phase diagnostic for a future cache-contract failure without another KIS,
-Docker, cache-write, or retry call. The daily-broad cursor is terminal and the
-QQQ/SPY forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
+`kis-daily-pair-forward-v3-preflight-and-one-shot-collection-v1` is ready. The
+source/fixture-only v3 contract has static hash
+`sha256:219a3a13d1419f9b65dc34f1d6fa3a3ffcb534b045b1d1729308cb8d944e5893` and
+permits only an optional fixed phase on a future `commit/cache_contract`
+receipt. It preserves the prior v2 result as phase-unknown. The next Data
+action is one credential-free v3 preflight and, only if it is matching
+`collection_required`, exactly one existing collector invocation. The daily-broad
+cursor is terminal and the QQQ/SPY forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
 control, and shallow nonlinear tree control all completed on the same
 hash-pinned daily input, with the L2 and tree QQQ/SPY after-cost replays below
 their fixed previous-bar-direction comparators. The causal predicate keeps
@@ -55,7 +54,8 @@ named clock/session, decision-time availability, and provider finality
 | KIS QQQ/SPY D1 stage-aware one-shot collection | Data | Existing shared-tag pair-forward collector, external cache, and source-safe receipt root | Complete: one matching preflight and exactly one collector closed `unavailable/collector_unavailable/failure_stage=commit`; no cache payload or observed cache-file/index mutation, no retry, and no consumer change. |
 | KIS QQQ/SPY D1 commit failure classification | Data / Infra Capability | Existing source, fixtures, and source-safe receipt root | Complete: v2 optional fixed commit kinds are static/fixture-only, ordered, and source-safe; no KIS, Docker, credential, cache write, or retry. |
 | KIS QQQ/SPY D1 v2 preflight and one-shot collection | Data | Existing shared-tag Compose services, external cache, and receipt root | Complete: matching preflight receipt `sha256:cf95c93741330d60d95dc040e12446d3a34e899d8a3565b82cb0f8b2743e6ec2` preceded one collector receipt `sha256:0c28203f24a098685f8068433e2250f14c1774bde99e5e87e64de1862ae53d42`, narrowed to `commit/cache_contract`; cache/index reattached unchanged and no retry ran. |
-| KIS QQQ/SPY D1 commit-phase diagnostic | Data / Infra Capability | Existing source and fixtures | Ready: add one fixed, source-safe phase to future `cache_contract` commit receipts. The package makes no KIS, Docker, credential, cache-write, scheduler, retry, Research, or Execution call. |
+| KIS QQQ/SPY D1 commit-phase diagnostic | Data / Infra Capability | Existing source and fixtures | Complete: v3 static contract emits only fixed `cache_prepare`, `snapshot_persist`, `index_persist`, or `cache_reverify` phases for future cache-contract failures; no external action ran. |
+| KIS QQQ/SPY D1 v3 preflight and one-shot collection | Data | Existing shared-tag Compose services, external cache, and receipt root | Ready: build one existing tag, run one credential-free v3 preflight, and call the existing collector once only if its matching status is `collection_required`. |
 | Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
 | KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one development-only CPU fit wrote external model parameters only, excluded validation labels, and completed two model plus six comparator local-paper cells. Both model after-cost cells were negative and below previous-bar-direction controls. |
 | KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one shallow histogram-gradient-tree replay excluded validation labels from fitting, wrote no serialized estimator, and completed two model plus six comparator `local_paper` cells. Both model cells were below their fixed previous-bar-direction comparators, closing the lineage. |
@@ -118,9 +118,9 @@ predictive/Paper/GPU input explicit. The completed reversible improvements are
 a fixed-stage source-safe D1 collector boundary, a no-network/no-write
 readiness check, a shared-tag payload contract fingerprint, one bounded
 collector outcome, and v2 fixed commit-kind diagnostics. The next bounded action
-is local source/fixture-only fixed phase diagnostics for `cache_contract`; it
-must retain no exception detail and must not repeat a failed model family or
-spend GPU on an unqualified runtime study.
+is a fresh v3 preflight and conditionally one existing collector. It must retain
+no exception detail and must not repeat a failed model family or spend GPU on an
+unqualified runtime study.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -135,6 +135,7 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current D1 action
-is to distinguish a future fixed `cache_contract` commit phase locally; it must
-preserve the prior results, make no KIS call or automatic retry, and infer
-neither causal availability nor finality.
+is to reattach a new v3 preflight, then invoke the existing collector at most
+once only when that preflight requires collection. It must preserve prior
+results, make no automatic retry, and infer neither causal availability nor
+finality.

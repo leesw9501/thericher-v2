@@ -452,6 +452,19 @@ agreement. The next bounded package is source/fixture-only fixed commit-phase
 diagnostics for future `cache_contract` outcomes; it makes no KIS, Docker,
 credential, cache-write, or retry call.
 
+That local-only package is complete. The v3 static contract hash is
+`sha256:219a3a13d1419f9b65dc34f1d6fa3a3ffcb534b045b1d1729308cb8d944e5893`.
+Only a future `commit/cache_contract` outcome may carry optional fixed
+`commit_failure_phase`: `cache_prepare`, `snapshot_persist`, `index_persist`,
+or `cache_reverify`. The cache writer attaches a phase at the four static
+operation boundaries while preserving the original cache exception type and
+message for callers. The collector accepts a phase only with `cache_contract`;
+success, non-commit stages, storage, validation, and earlier receipts omit it.
+Fixture tests cover every boundary, field omission, and a private-detail
+canary. No credential, KIS, Docker, cache-write, scheduler, Research,
+Execution, Paper, or live action occurred. This establishes a future diagnostic
+surface only; it does not infer a phase for the v1 or v2 receipt.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

@@ -78,6 +78,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   narrows a Data recovery family only; it creates no campaign, GPU appointment,
   model selection, replay, or Paper consumer. A local-only future phase
   diagnostic cannot change that boundary.
+- The completed local phase diagnostic gives a future `cache_contract` receipt
+  one optional static boundary label only; it does not reinterpret the v2
+  receipt. Its v3 contract is not a campaign input, GPU appointment, model
+  selection, replay, or Paper consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ

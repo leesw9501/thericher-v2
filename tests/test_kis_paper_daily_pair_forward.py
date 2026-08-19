@@ -7,11 +7,14 @@ from pathlib import Path
 
 import pytest
 
+from thericher_v2.data import kis_paper_daily_pair_forward_cache as pair_forward_cache
 from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
+    KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES,
     KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
     KisPaperDailyPairForwardCacheError,
     KisPaperDailyPairForwardRow,
     commit_kis_paper_daily_pair_forward_observation,
+    get_kis_paper_daily_pair_forward_commit_failure_phase,
     load_verified_kis_paper_daily_pair_forward_cache,
 )
 from thericher_v2.execution.kis_market_data import (
@@ -123,14 +126,69 @@ def test_pair_cache_defers_only_failed_target_and_rejects_conflicting_duplicate(
     assert partial.status == "partial"
     assert partial.cache.targets_by_key["SPY/AMS"].status == "deferred"
     assert partial.cache.targets_by_key["QQQ/NAS"].row_count == 2
-    with pytest.raises(KisPaperDailyPairForwardCacheError, match="duplicate conflict"):
+    with pytest.raises(
+        KisPaperDailyPairForwardCacheError,
+        match="duplicate conflict",
+    ) as raised:
         commit_kis_paper_daily_pair_forward_observation(
             rows_by_target=conflicting,
             failure_reasons_by_target={},
             cache_root=cache_root,
             repo_root=repo_root,
         )
+    assert get_kis_paper_daily_pair_forward_commit_failure_phase(raised.value) == "cache_prepare"
     assert (cache_root / "index.json").read_bytes() == index_bytes
+
+
+@pytest.mark.parametrize(
+    ("phase", "patch_name"),
+    [
+        ("snapshot_persist", "_write_snapshot"),
+        ("index_persist", "_write_json_atomic"),
+        ("cache_reverify", "load_verified_kis_paper_daily_pair_forward_cache"),
+    ],
+)
+def test_pair_cache_attaches_only_fixed_commit_phase_at_persist_boundaries(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+    phase: str,
+    patch_name: str,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    error = KisPaperDailyPairForwardCacheError("private-phase-detail-canary")
+
+    monkeypatch.setattr(
+        pair_forward_cache,
+        patch_name,
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(error),
+    )
+
+    with pytest.raises(KisPaperDailyPairForwardCacheError) as raised:
+        commit_kis_paper_daily_pair_forward_observation(
+            rows_by_target=_rows_for_pair((date(2026, 7, 27),)),
+            failure_reasons_by_target={},
+            cache_root=tmp_path / "external" / "qqq-spy-forward",
+            repo_root=repo_root,
+        )
+
+    assert raised.value is error
+    assert str(raised.value) == "private-phase-detail-canary"
+    assert get_kis_paper_daily_pair_forward_commit_failure_phase(raised.value) == phase
+
+
+def test_pair_cache_commit_phase_reader_rejects_unrecognized_or_noncache_errors() -> None:
+    error = KisPaperDailyPairForwardCacheError("private-phase-detail-canary")
+    error._commit_failure_phase = "not_allowlisted"  # noqa: SLF001
+
+    assert KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES == (
+        "cache_prepare",
+        "snapshot_persist",
+        "index_persist",
+        "cache_reverify",
+    )
+    assert get_kis_paper_daily_pair_forward_commit_failure_phase(error) is None
+    assert get_kis_paper_daily_pair_forward_commit_failure_phase(OSError("private")) is None
 
 
 def test_pair_cache_rejects_git_root_and_wrong_exchange(tmp_path: Path) -> None:

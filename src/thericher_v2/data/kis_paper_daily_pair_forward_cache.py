@@ -33,6 +33,12 @@ KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ROOT = Path(
 )
 KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY = date(2026, 7, 24)
 KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS = (("QQQ", "NAS"), ("SPY", "AMS"))
+KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES = (
+    "cache_prepare",
+    "snapshot_persist",
+    "index_persist",
+    "cache_reverify",
+)
 
 _INDEX_FILENAME = "index.json"
 _LOCK_FILENAME = "worker.lock"
@@ -74,6 +80,29 @@ _SAFE_REASONS = frozenset(
 
 class KisPaperDailyPairForwardCacheError(RuntimeError):
     """A non-secret structural failure in the QQQ/SPY forward cache."""
+
+    def __init__(self, *args: object) -> None:
+        super().__init__(*args)
+        self._commit_failure_phase: str | None = None
+
+
+def get_kis_paper_daily_pair_forward_commit_failure_phase(
+    error: BaseException,
+) -> str | None:
+    """Return an allowlisted commit phase attached by the bounded writer."""
+
+    if not isinstance(error, KisPaperDailyPairForwardCacheError):
+        return None
+    phase = getattr(error, "_commit_failure_phase", None)
+    return phase if phase in KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES else None
+
+
+def _attach_commit_failure_phase(
+    error: KisPaperDailyPairForwardCacheError,
+    phase: str,
+) -> None:
+    if get_kis_paper_daily_pair_forward_commit_failure_phase(error) is None:
+        error._commit_failure_phase = phase
 
 
 @dataclass(frozen=True, slots=True)
@@ -306,79 +335,105 @@ def commit_kis_paper_daily_pair_forward_observation(
     )
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
     repository = _repository_root(repo_root)
-    root = _external_root(Path(cache_root), repository, create=True)
-    with _exclusive_lock(root / _LOCK_FILENAME):
-        index_path = _safe_child(root / _INDEX_FILENAME, root)
-        index_exists = index_path.exists()
-        index = _load_or_initialize_index(root=root, frozen_boundary=frozen_boundary)
-        _validate_index(index, frozen_boundary=frozen_boundary)
-        merged_by_target: dict[str, tuple[KisPaperDailyPairForwardRow, ...]] = {}
-        changed_targets: set[str] = set()
-        pending_snapshots: dict[str, tuple[bytes, str, str]] = {}
-        target_updates: dict[str, dict[str, object]] = {}
+    try:
+        root = _external_root(Path(cache_root), repository, create=True)
+        with _exclusive_lock(root / _LOCK_FILENAME):
+            try:
+                index_path = _safe_child(root / _INDEX_FILENAME, root)
+                index_exists = index_path.exists()
+                index = _load_or_initialize_index(root=root, frozen_boundary=frozen_boundary)
+                _validate_index(index, frozen_boundary=frozen_boundary)
+                merged_by_target: dict[str, tuple[KisPaperDailyPairForwardRow, ...]] = {}
+                changed_targets: set[str] = set()
+                pending_snapshots: dict[str, tuple[bytes, str, str]] = {}
+                target_updates: dict[str, dict[str, object]] = {}
 
-        for target_key in _TARGET_KEYS:
-            target = _target_document(index, target_key)
-            existing = _load_target_rows(root=root, target=target, target_key=target_key)
-            if target_key in failure_reasons_by_target:
-                target_updates[target_key] = _failure_target_document(
-                    target,
-                    failure_reasons_by_target[target_key],
-                )
-                merged_by_target[target_key] = existing
-                continue
-            incoming = tuple(
-                row
-                for row in rows_by_target[target_key]
-                if row.session_date > frozen_boundary
-            )
-            merged = _merge_rows(existing, incoming, target_key=target_key)
-            merged_by_target[target_key] = merged
-            if merged != existing:
-                raw_payload = _compressed_rows(merged)
-                pending_snapshots[target_key] = (
-                    raw_payload,
-                    _sha256(raw_payload),
-                    _rows_sha256(merged),
-                )
-                changed_targets.add(target_key)
-                target_updates[target_key] = _success_target_document(
-                    target,
-                    rows=merged,
-                    snapshot_path=None,
-                    snapshot_sha256=None,
-                    rows_sha256=pending_snapshots[target_key][2],
-                )
-            else:
-                target_updates[target_key] = _success_target_document(
-                    target,
-                    rows=existing,
-                    snapshot_path=None,
-                    snapshot_sha256=None,
-                    rows_sha256=_rows_sha256(existing) if existing else None,
-                )
+                for target_key in _TARGET_KEYS:
+                    target = _target_document(index, target_key)
+                    existing = _load_target_rows(root=root, target=target, target_key=target_key)
+                    if target_key in failure_reasons_by_target:
+                        target_updates[target_key] = _failure_target_document(
+                            target,
+                            failure_reasons_by_target[target_key],
+                        )
+                        merged_by_target[target_key] = existing
+                        continue
+                    incoming = tuple(
+                        row
+                        for row in rows_by_target[target_key]
+                        if row.session_date > frozen_boundary
+                    )
+                    merged = _merge_rows(existing, incoming, target_key=target_key)
+                    merged_by_target[target_key] = merged
+                    if merged != existing:
+                        raw_payload = _compressed_rows(merged)
+                        pending_snapshots[target_key] = (
+                            raw_payload,
+                            _sha256(raw_payload),
+                            _rows_sha256(merged),
+                        )
+                        changed_targets.add(target_key)
+                        target_updates[target_key] = _success_target_document(
+                            target,
+                            rows=merged,
+                            snapshot_path=None,
+                            snapshot_sha256=None,
+                            rows_sha256=pending_snapshots[target_key][2],
+                        )
+                    else:
+                        target_updates[target_key] = _success_target_document(
+                            target,
+                            rows=existing,
+                            snapshot_path=None,
+                            snapshot_sha256=None,
+                            rows_sha256=_rows_sha256(existing) if existing else None,
+                        )
+            except KisPaperDailyPairForwardCacheError as error:
+                _attach_commit_failure_phase(error, "cache_prepare")
+                raise
 
-        wrote_snapshot = False
-        for target_key, (payload, snapshot_sha256, rows_sha256) in pending_snapshots.items():
-            relative_path = _write_snapshot(root=root, target_key=target_key, payload=payload)
-            target_updates[target_key] = _success_target_document(
-                _target_document(index, target_key),
-                rows=merged_by_target[target_key],
-                snapshot_path=relative_path,
-                snapshot_sha256=snapshot_sha256,
-                rows_sha256=rows_sha256,
-            )
-            wrote_snapshot = True
+            wrote_snapshot = False
+            try:
+                for target_key, snapshot in pending_snapshots.items():
+                    payload, snapshot_sha256, rows_sha256 = snapshot
+                    relative_path = _write_snapshot(
+                        root=root,
+                        target_key=target_key,
+                        payload=payload,
+                    )
+                    target_updates[target_key] = _success_target_document(
+                        _target_document(index, target_key),
+                        rows=merged_by_target[target_key],
+                        snapshot_path=relative_path,
+                        snapshot_sha256=snapshot_sha256,
+                        rows_sha256=rows_sha256,
+                    )
+                    wrote_snapshot = True
+            except KisPaperDailyPairForwardCacheError as error:
+                _attach_commit_failure_phase(error, "snapshot_persist")
+                raise
 
-        updated_index = dict(index)
-        updated_index["targets"] = [target_updates[key] for key in _TARGET_KEYS]
-        if not index_exists or updated_index != index:
-            updated_index["generation"] = int(index["generation"]) + 1
-            _write_json_atomic(root / _INDEX_FILENAME, updated_index)
-        cache = load_verified_kis_paper_daily_pair_forward_cache(
-            cache_root=root,
-            repo_root=repository,
-        )
+            try:
+                updated_index = dict(index)
+                updated_index["targets"] = [target_updates[key] for key in _TARGET_KEYS]
+                if not index_exists or updated_index != index:
+                    updated_index["generation"] = int(index["generation"]) + 1
+                    _write_json_atomic(root / _INDEX_FILENAME, updated_index)
+            except KisPaperDailyPairForwardCacheError as error:
+                _attach_commit_failure_phase(error, "index_persist")
+                raise
+
+            try:
+                cache = load_verified_kis_paper_daily_pair_forward_cache(
+                    cache_root=root,
+                    repo_root=repository,
+                )
+            except KisPaperDailyPairForwardCacheError as error:
+                _attach_commit_failure_phase(error, "cache_reverify")
+                raise
+    except KisPaperDailyPairForwardCacheError as error:
+        _attach_commit_failure_phase(error, "cache_prepare")
+        raise
 
     failure_count = len(failure_reasons_by_target)
     has_rows = any(cache.rows_by_target.values())
