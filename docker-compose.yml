@@ -651,6 +651,7 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/kis-paper-daily-nas-forward-v1:/app/model_artifacts
 
   kis-paper-daily-pair-forward:
+    image: localhost/thericher-v2/kis-paper-daily-pair-forward:local
     build:
       context: .
       target: base
@@ -681,6 +682,7 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/kis-paper-daily-pair-forward-v1:/app/model_artifacts
 
   kis-paper-daily-pair-forward-readiness:
+    image: localhost/thericher-v2/kis-paper-daily-pair-forward:local
     build:
       context: .
       target: base
@@ -709,6 +711,7 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/kis-paper-daily-pair-forward-v1:/app/model_artifacts
 
   kis-paper-daily-pair-forward-preflight:
+    image: localhost/thericher-v2/kis-paper-daily-pair-forward:local
     build:
       context: .
       target: base

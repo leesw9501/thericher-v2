@@ -10,6 +10,7 @@ import uuid
 from collections.abc import Callable, Mapping, Sequence
 from datetime import UTC, date, datetime
 from pathlib import Path
+from types import MappingProxyType
 
 from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY,
@@ -41,6 +42,22 @@ _CANONICAL_REPOSITORY_ROOT = Path("/app")
 _NOT_EXECUTED_EXIT = 2
 _COLLECTION_REQUIRED_EXIT = 10
 _RECOVERY_EXIT = 20
+_COLLECTOR_FAILURE_STAGES = (
+    "control_gate",
+    "environment",
+    "collection",
+    "commit",
+)
+_READINESS_FAILURE_STAGES = _COLLECTOR_FAILURE_STAGES[:2]
+_RUNTIME_CONTRACT = MappingProxyType(
+    {
+        "collector_failure_stages": _COLLECTOR_FAILURE_STAGES,
+        "collector_unavailable_reason": "collector_unavailable",
+        "contract_id": "kis_paper_daily_pair_forward_stage_contract_v1",
+        "readiness_unavailable_reason": "readiness_unavailable",
+        "receipt_kind": "kis_paper_daily_pair_forward_receipt",
+    }
+)
 _TARGET_KEYS = tuple(
     f"{symbol}/{exchange}" for symbol, exchange in KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS
 )
@@ -410,7 +427,7 @@ def _collector_unavailable_payload(
     observed_at: datetime,
     failure_stage: str,
 ) -> dict[str, object]:
-    if failure_stage not in {"control_gate", "environment", "collection", "commit"}:
+    if failure_stage not in _COLLECTOR_FAILURE_STAGES:
         raise ValueError("collector failure stage is invalid")
     payload = _unavailable_payload(observed_at, "collector_unavailable")
     payload["failure_stage"] = failure_stage
@@ -421,7 +438,7 @@ def _readiness_unavailable_payload(
     observed_at: datetime,
     failure_stage: str,
 ) -> dict[str, object]:
-    if failure_stage not in {"control_gate", "environment"}:
+    if failure_stage not in _READINESS_FAILURE_STAGES:
         raise ValueError("readiness failure stage is invalid")
     return {
         "status": "unavailable",
@@ -499,10 +516,12 @@ def _emit_source_safe_receipt(
     payload: Mapping[str, object],
     exit_code: int,
 ) -> int:
+    source_safe_payload = dict(payload)
+    source_safe_payload["runtime_contract_sha256"] = _runtime_contract_sha256()
     receipt = {
         "kind": "kis_paper_daily_pair_forward_receipt",
         "observed_at_bucket": observed_at.strftime("%Y-%m-%dT%H:00Z"),
-        "payload": dict(payload),
+        "payload": source_safe_payload,
         "artifact_policy": {
             "raw_market_data_in_receipt": False,
             "credentials_in_receipt": False,
@@ -527,6 +546,13 @@ def _emit_source_safe_receipt(
         }
     )
     return exit_code
+
+
+def _runtime_contract_sha256() -> str:
+    encoded = json.dumps(
+        dict(_RUNTIME_CONTRACT), sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    return "sha256:" + hashlib.sha256(encoded).hexdigest()
 
 
 def _write_source_safe_receipt(

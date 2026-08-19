@@ -65,7 +65,10 @@ def test_credentialed_collection_uses_nonreserving_token_due_check(
     assert "result" in collected
     receipt = emitted["receipt"]
     assert isinstance(receipt, dict)
-    assert receipt["payload"] == {"status": "ready"}
+    assert receipt["payload"] == {
+        "status": "ready",
+        "runtime_contract_sha256": _runtime_contract_sha256(script),
+    }
 
 
 @pytest.mark.parametrize("broken_gate", ["token", "rate"])
@@ -125,6 +128,7 @@ def test_control_gate_failure_emits_recovery_without_constructing_a_client(
         "status": "unavailable",
         "reason": "collector_unavailable",
         "failure_stage": "control_gate",
+        "runtime_contract_sha256": _runtime_contract_sha256(script),
         "observed_at_bucket": "2026-08-03T21:00Z",
         "recovery": "resume",
         "route_isolation": {
@@ -183,7 +187,11 @@ def test_token_deferral_keeps_its_existing_reason_outside_control_failure_bounda
     assert exit_code == 20
     receipt = emitted["receipt"]
     assert isinstance(receipt, dict)
-    assert receipt["payload"] == {"status": "deferred", "reason": "token_request_not_due"}
+    assert receipt["payload"] == {
+        "status": "deferred",
+        "reason": "token_request_not_due",
+        "runtime_contract_sha256": _runtime_contract_sha256(script),
+    }
 
 
 def test_environment_failure_emits_fixed_safe_stage_without_constructing_a_client(
@@ -214,7 +222,7 @@ def test_environment_failure_emits_fixed_safe_stage_without_constructing_a_clien
     exit_code = _run_credentialed_collection(script, tmp_path)
 
     assert exit_code == 20
-    _assert_collector_stage(emitted, "environment")
+    _assert_collector_stage(emitted, script, "environment")
 
 
 def test_collection_failure_emits_fixed_safe_stage_without_committing(
@@ -249,7 +257,7 @@ def test_collection_failure_emits_fixed_safe_stage_without_committing(
     exit_code = _run_credentialed_collection(script, tmp_path)
 
     assert exit_code == 20
-    _assert_collector_stage(emitted, "collection")
+    _assert_collector_stage(emitted, script, "collection")
 
 
 def test_commit_failure_emits_fixed_safe_stage_after_collection(
@@ -288,7 +296,7 @@ def test_commit_failure_emits_fixed_safe_stage_after_collection(
     exit_code = _run_credentialed_collection(script, tmp_path)
 
     assert exit_code == 20
-    _assert_collector_stage(emitted, "commit")
+    _assert_collector_stage(emitted, script, "commit")
 
 
 def test_networkless_readiness_checks_only_control_and_aggregate_environment(
@@ -337,6 +345,7 @@ def test_networkless_readiness_checks_only_control_and_aggregate_environment(
         "readiness": "aggregate_ready",
         "token_request_due": True,
         "rate_gate_deferred": False,
+        "runtime_contract_sha256": _runtime_contract_sha256(script),
         "route_isolation": {
             "daily_market_data_only": True,
             "account_endpoints_used": False,
@@ -383,6 +392,25 @@ def test_readiness_environment_failure_stays_networkless_and_source_safe(
     assert isinstance(receipt, dict)
     assert receipt["payload"]["reason"] == "readiness_unavailable"
     assert receipt["payload"]["failure_stage"] == "environment"
+    assert receipt["payload"]["runtime_contract_sha256"] == _runtime_contract_sha256(script)
+
+
+def test_runtime_contract_fingerprint_is_static_and_environment_independent(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    script = _script_module()
+    baseline = _runtime_contract_sha256(script)
+
+    monkeypatch.setenv("KIS_PAPER_APP_KEY", "private-key")
+    monkeypatch.setenv("KIS_PAPER_APP_SECRET", "private-secret")
+
+    assert _runtime_contract_sha256(script) == baseline
+    monkeypatch.setattr(
+        script,
+        "_RUNTIME_CONTRACT",
+        {**script._RUNTIME_CONTRACT, "collector_failure_stages": ("control_gate",)},
+    )
+    assert _runtime_contract_sha256(script) != baseline
 
 
 def test_source_safe_receipt_writer_uses_an_external_create_only_path(
@@ -555,7 +583,11 @@ def _run_credentialed_collection(script: object, tmp_path: Path) -> int:
     )
 
 
-def _assert_collector_stage(emitted: dict[str, object], expected_stage: str) -> None:
+def _assert_collector_stage(
+    emitted: dict[str, object],
+    script: object,
+    expected_stage: str,
+) -> None:
     receipt = emitted["receipt"]
     assert isinstance(receipt, dict)
     payload = receipt["payload"]
@@ -563,6 +595,11 @@ def _assert_collector_stage(emitted: dict[str, object], expected_stage: str) -> 
     assert payload["status"] == "unavailable"
     assert payload["reason"] == "collector_unavailable"
     assert payload["failure_stage"] == expected_stage
+    assert payload["runtime_contract_sha256"] == _runtime_contract_sha256(script)
+
+
+def _runtime_contract_sha256(script: object) -> str:
+    return script._runtime_contract_sha256()  # type: ignore[attr-defined]  # noqa: SLF001
 
 
 def _script_module() -> object:

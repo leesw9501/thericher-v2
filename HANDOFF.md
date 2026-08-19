@@ -379,6 +379,23 @@ call. The next bounded Data/Infra package is source/image provenance for this
 existing service; it must not call the collector, reinterpret this receipt, or
 change causal, Research, Execution, Paper, or live eligibility.
 
+Claude's follow-up drift check returned `supported-with-limits` for the runtime
+provenance repair. Its constraints were adopted: the contract fingerprint lives
+inside receipt `payload` to preserve the causal reader's exact top-level schema,
+and it hashes only an in-source frozen stage contract rather than file bytes,
+environment, paths, timestamps, or any private input. The three pair-forward
+Compose services now share the local image tag
+`localhost/thericher-v2/kis-paper-daily-pair-forward:local`. After a local build,
+one credential-free `network_mode: none` preflight wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T164013025667Z-6219bc10fc8c4dd4/receipt.json`
+(`sha256:e5c2cf9be1bace915d8c3deb19a57ab5a5f0cc1d7bff634afbeb8f2a38090a7a`)
+as `collection_required`; its payload contract hash matches current host source.
+It did not read credentials, call KIS, write the cache, run readiness, or invoke
+the collector. This establishes only the fixed diagnostic contract, not full
+image freshness, data availability, finality, causal qualification, or a
+Research/Execution/Paper consumer. The next bounded Data objective is one fresh
+stage-aware collector invocation, with no automatic retry.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

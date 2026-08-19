@@ -6,15 +6,15 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-pair-forward-runtime-image-provenance-v1` is ready. The completed
-stage-discrimination package established fixed `control_gate`, `environment`,
-`collection`, and `commit` synthetic outcomes, while its one networkless
-readiness receipt was aggregate-ready, token-due, and rate-open. Its exactly one
-allowed collector invocation still emitted the old generic unavailable shape
-with no `failure_stage`, so the receipt does not attest the stage-aware runtime
-image; there was no retry and no cache payload. The collector image was rebuilt
-without another KIS call. The daily-broad cursor is terminal and the QQQ/SPY
-forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
+`kis-daily-pair-forward-stage-aware-one-shot-collection-v1` is ready. The
+completed runtime-provenance package made preflight, readiness, and collector
+share the local image tag `localhost/thericher-v2/kis-paper-daily-pair-forward:local`.
+Its one credential-free networkless preflight returned `collection_required` and
+emitted a payload-only static stage-contract hash matching current host source.
+This proves the stage contract, not full image freshness, a KIS request, a cache
+write, data availability, or causal qualification. The daily-broad cursor is
+terminal and the QQQ/SPY forward scheduler has stale timing facts. The fixed
+QQQ/SPY historical CPU baseline, L2 logistic
 control, and shallow nonlinear tree control all completed on the same
 hash-pinned daily input, with the L2 and tree QQQ/SPY after-cost replays below
 their fixed previous-bar-direction comparators. The causal predicate keeps
@@ -52,7 +52,7 @@ named clock/session, decision-time availability, and provider finality
 | QQQ/SPY D1 forward refresh | Data / Codex | Existing pair-forward/preflight Compose services, shared gates, and scheduled task | Complete: preflight required the 2026-08-18 session, but the one direct collector deferred at `token_request_not_due` with zero new pages and zero changed targets. The ready task owns the next due run at `2026-08-19T21:55:00Z`; no foreground retry. |
 | KIS D1 forward causal qualification | Data | Existing QQQ/SPY forward cache, source-safe receipts, and external artifact root | Complete: the external receipt is `input_unavailable` only for named clock/session, decision-time availability, and provider finality. The synthetic fixture passed only with all conditions, and every individual ablation failed closed. No collection, KIS client, Docker, scheduler, GPU, or execution consumer. |
 | KIS QQQ/SPY D1 one-shot current collection | Data | Existing pair-forward preflight/collector Compose services, external cache, and source-safe receipts | Complete: static consumer proof was clean; preflight returned `collection_required`, and exactly one collector returned `unavailable/collector_unavailable` with no cache payload. No retry, promotion, or consumer change followed. |
-| KIS QQQ/SPY D1 runtime-image provenance | Data / Infra Capability | Existing pair-forward Compose services and external receipt root | Ready: use one shared local image/build contract plus a source-safe runtime fingerprint. After focused tests, build it and reattach one credential-free, networkless preflight only; no readiness or collector invocation. |
+| KIS QQQ/SPY D1 stage-aware one-shot collection | Data | Existing shared-tag pair-forward collector, external cache, and source-safe receipt root | Ready: reattach the matching `collection_required` preflight, then run exactly one existing collector. Preserve only safe status, optional fixed stage, contract hash, and cache aggregates; no retry or consumer change. |
 | Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
 | KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one development-only CPU fit wrote external model parameters only, excluded validation labels, and completed two model plus six comparator local-paper cells. Both model after-cost cells were negative and below previous-bar-direction controls. |
 | KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one shallow histogram-gradient-tree replay excluded validation labels from fitting, wrote no serialized estimator, and completed two model plus six comparator `local_paper` cells. Both model cells were below their fixed previous-bar-direction comparators, closing the lineage. |
@@ -71,11 +71,10 @@ shallow-tree control advance the backtest/local-paper accounting loop without
 pretending to solve that input gap. The next research action must not rerun
 either failed model family under a new label; the immediate bottleneck is the
 three now-explicit missing runtime facts for the QQQ/SPY forward cache. The
-stage boundary is now discriminated in source and synthetic tests, but the one
-permitted runtime collector receipt omitted its stage field because it did not
-attest the stage-aware image. The immediate operational bottleneck is
-image/source provenance for this exact pair-forward service, not another KIS
-retry. No collection can resolve the three causal runtime facts by itself.
+stage contract now matches one networkless shared-image preflight. The immediate
+Data package is therefore one independent stage-aware collector invocation, not
+a retry of the old generic result. Regardless of its result, no collection can
+resolve the three causal runtime facts by itself.
 
 ## Current Cross-Lane Decision
 
@@ -112,12 +111,12 @@ proposal is closed rather than deferred.
 ## Current Reversible Improvement
 
 The completed inventory and D1 predicate make the absence of a
-predictive/Paper/GPU input explicit. The completed reversible improvement is a
-fixed-stage source-safe D1 collector boundary plus a no-network/no-write
-readiness check. The next reversible improvement is bounded source/image
-provenance for that existing service, without another collector invocation. It
-must retain no exception detail and must not repeat a failed model family or
-spend GPU on an unqualified runtime study.
+predictive/Paper/GPU input explicit. The completed reversible improvements are
+a fixed-stage source-safe D1 collector boundary, a no-network/no-write
+readiness check, and a shared-tag payload contract fingerprint. The next
+bounded action is one independent stage-aware collection. It must retain no
+exception detail and must not repeat a failed model family or spend GPU on an
+unqualified runtime study.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -132,7 +131,6 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current action is
-to establish source/image parity for the existing D1 pair-forward Compose
-service without a collector invocation. It must preserve the single prior
-collection result, then leave any later collection to a fresh independent
-objective rather than a retry loop or inferred causal availability/finality.
+to reattach the exact shared-image preflight, then run one fresh collector only
+through the existing service. It must preserve the single generic prior result,
+make no automatic retry, and infer neither causal availability nor finality.

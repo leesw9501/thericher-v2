@@ -621,6 +621,44 @@ technical evidence boundary, not an operator approval or a standing hold on
 other work. A ready/due result still cannot prove decision-time availability or
 provider finality.
 
+### Shared Runtime Contract
+
+Claude's follow-up verdict was `supported-with-limits`: a receipt fingerprint
+must live inside `payload`, because the causal reader validates the receipt's
+top-level schema exactly. It therefore cannot claim a full image digest. The
+three existing pair-forward services now share this local image tag:
+
+```text
+localhost/thericher-v2/kis-paper-daily-pair-forward:local
+```
+
+Every new pair-forward receipt includes `payload.runtime_contract_sha256`. It
+is a deterministic hash of the frozen stage contract only: receipt kind,
+unavailable reasons, and the four fixed collector stages. It reads no file,
+environment, path, timestamp, credential, cache, or market-data value. A
+matching hash establishes that the runtime implements this fixed diagnostic
+contract; it does not prove general image freshness or source-build provenance.
+
+Build the shared local contract, then use the credential-free preflight to
+reattach it without a KIS request or cache write:
+
+```powershell
+docker compose --profile kis-paper-daily-pair-forward build `
+  kis-paper-daily-pair-forward
+docker compose --profile kis-paper-daily-pair-forward run --rm --no-deps `
+  --pull never kis-paper-daily-pair-forward-preflight
+```
+
+The 2026-08-19 preflight wrote
+`run=20260819T164013025667Z-6219bc10fc8c4dd4/receipt.json`
+(`sha256:e5c2cf9be1bace915d8c3deb19a57ab5a5f0cc1d7bff634afbeb8f2a38090a7a`)
+as `collection_required`. Its `runtime_contract_sha256` matched the host's
+static contract hash. The service remained `network_mode: none`, mounted the
+cache read-only, had no credentials, and did not invoke readiness or collector.
+This reattaches the runtime contract only; it neither supplies a data input nor
+changes provider finality, decision-time availability, causal qualification,
+Research, Execution, or Paper eligibility.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

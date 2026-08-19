@@ -235,6 +235,7 @@ def _current_cache_fixture(tmp_path: Path) -> tuple[Path, Path, Path, Path]:
                 "observed_at_bucket": "2026-07-30T00:00Z",
                 "payload": {
                     "status": "ready",
+                    "runtime_contract_sha256": _sha("runtime-contract"),
                     "observed_at_bucket": "2026-07-30T00:00Z",
                     "accepted_page_count": 2,
                     "categorical_failure_count": 0,

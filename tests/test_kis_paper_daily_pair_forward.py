@@ -261,6 +261,13 @@ def test_pair_forward_compose_isolates_preflight_from_credentials_and_network() 
     assert "KIS_LIVE" not in collector
     assert "account" not in collector.lower()
     assert "order" not in collector.lower()
+    expected_image = "image: localhost/thericher-v2/kis-paper-daily-pair-forward:local"
+    assert expected_image in collector
+    assert expected_image in readiness
+    assert expected_image in preflight
+    assert collector.count("image:") == 1
+    assert readiness.count("image:") == 1
+    assert preflight.count("image:") == 1
     assert 'profiles: ["kis-paper-daily-pair-forward"]' in readiness
     assert "network_mode: none" in readiness
     assert "KIS_PAPER_APP_KEY" in readiness
