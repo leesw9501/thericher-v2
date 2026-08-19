@@ -2,53 +2,59 @@
 
 ## Objective
 
-Complete `kis-paper-iwm-current-head-capability-capture-v1`: use the prepared
-isolated IWM/AMS one-current-day-page collector once to establish whether its
-KIS Paper path can produce one source-safe categorical outcome and external
-data receipt. This is a bounded data-capability capture, not a historical-data
-claim, causal input, model result, Paper order, or live route.
+Complete `kis-paper-iwm-current-head-cache-mechanics-reattachment-v1`: add and
+run the smallest offline, source-safe reattachment of the accepted isolated
+IWM/AMS current-head cache. It must reuse the existing generic verified private
+intraday cache path to prove only cache/index/manifest/raw-file integrity and
+aggregate page geometry. This is not a KIS call, historical-reach claim,
+finality/availability observation, qualified dataset, model result, Paper
+input, order, or live route.
 
 The earlier `kis-intraday-later-terminal-reattachment-v1` remains an existing
 task-owned monitor. Do not foreground-wait for it or manually invoke it.
 
 ## Standing Authorization And Boundaries
 
-- `KIS_PAPER_*` may be read only by the named collector path for this one KIS
-  Paper market-data invocation. Never read or route `KIS_LIVE_*`; never print,
-  log, commit, or send credentials, account identifiers, raw rows, broker
-  bodies, private intents, or tokens to Claude.
-- Run only `scripts\collect_kis_paper_iwm_current_head.py --execute` with its
-  fixed IWM/AMS one-current-day, no-previous-day, no-continuation scope. Do not
-  retry in this objective, paginate, change the collector, modify a task,
-  schedule a worker, start a Docker service, submit/modify/cancel an order, or
-  enable live behavior.
-- Keep any raw market data only beneath `D:\market_data`; keep its source-safe
-  receipt only beneath `D:\thericher-v2\model-artifacts`. Do not inspect,
-  copy, hash, or persist raw rows outside the collector's existing external
-  path. Never store raw data or generated artifacts in Git.
-- Keep the new ingestion receipt separate from the established IWM replay
-  receipt directory. A `collected`, `recovered`, `unavailable`, or `locked`
-  categorical outcome establishes only this one attempt's scope. It does not
-  qualify replay, historical reach, finality, availability, a model input, or
-  a Paper consumer.
+- Do not read credentials or `.env`; call neither KIS nor any other provider.
+  Never read or route `KIS_LIVE_*`; never print, log, commit, or send raw rows,
+  compressed raw payloads, credentials, account identifiers, broker bodies,
+  private intents, or tokens to Claude.
+- The offline verifier may read only the existing external IWM current-head
+  cache beneath `D:\market_data` internally to reattest its existing index,
+  manifest, and raw-file integrity. It may return or persist only categorical
+  integrity status and aggregate geometry such as retained chunk/page count,
+  total row count, target identity, and collection scope. Do not expose dates,
+  timestamps, prices, volumes, filenames, row hashes, or raw contents.
+- Keep any new source-safe mechanics receipt beneath
+  `D:\thericher-v2\model-artifacts`; keep raw market data only beneath
+  `D:\market_data`. Never store raw data or generated artifacts in Git. Do not
+  use the legacy IWM replay receipt reader or alter its cache/receipt roots.
+- Do not schedule a worker, start Docker, paginate, retry the collector,
+  submit/modify/cancel an order, or enable live behavior. The completed one-page
+  capture remains immutable evidence and cannot gain predictive, Paper, or GPU
+  eligibility from this reattachment.
 
 ## Required Work
 
-1. Run the prepared collector exactly once and retain only its source-safe
-   stdout category plus external evidence pointer if one is written.
-2. If it completes, reattach only the categorical receipt metadata through the
-   existing offline-safe reader/path checks; do not read raw data. If it is
-   unavailable or locked, record its narrow recovery fact without retrying.
-3. Refresh Data, orchestration, and `HANDOFF.md` with the outcome. Keep the
-   intraday later-terminal task-owned monitor non-blocking and do not infer
-   equivalence between its QQQ/SPY path and IWM.
-4. Run focused tests for any code changes. After a material outcome, run the
-   goal-boundary verification, commit, push, replace this file with one next
-   company objective, and continue.
+1. Add the smallest public Data-owned offline inspector using the generic
+   verified private-intraday loader plus its source-safe metadata validator for
+   exactly `IWM/AMS`. It must fail closed before producing an outcome on any
+   index, manifest, raw-file, target, or scope mismatch.
+2. Emit or persist a replay-isolated source-safe mechanics result containing
+   only integrity category, aggregate geometry, `session_finality:
+   not_observed`, `decision_time_availability: not_observed`, and
+   `model_input_eligibility: false`.
+3. Add focused tests proving the accepted IWM cache reattaches only aggregate
+   mechanics and that a tampered compressed raw file fails before a source-safe
+   result is produced. Preserve legacy IWM replay-reader compatibility.
+4. Refresh Data, orchestration, and `HANDOFF.md` with the narrow result. Run
+   goal-boundary verification, commit, push, replace this file with exactly one
+   material next company objective, and continue.
 
 ## Completion Evidence
 
-- One source-safe categorical collector result, with no live route or order.
-- Any resulting receipt/cache location is external and replay-isolated.
-- No raw values, credential values, account identifiers, model, PnL, or
-  predictive eligibility claim is retained in Git or stateboards.
+- One source-safe offline mechanics result whose verifier internally reattests
+  the existing external cache and reports no raw rows.
+- A tamper test fails closed before output.
+- No provider call, credential read, raw-data exposure, model/PnL claim,
+  broker order, or live route occurs.
