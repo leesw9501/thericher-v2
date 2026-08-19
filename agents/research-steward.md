@@ -9,9 +9,10 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   completed and released its memory; no GPU process or sealed-evaluation
   allocation is held by Research Steward.
 - No frozen, input-qualified campaign is ready for an appointment.
-- The next QQQ/SPY D1 forward causal-qualification predicate is Data-only and
-  cannot reserve or consume GPU custody, sealed-evaluation history, or a model
-  allocation.
+- The completed QQQ/SPY D1 forward causal qualification is Data-only and
+  `input_unavailable` for three unobserved runtime facts: named clock/session,
+  decision-time availability, and provider finality. It consumed no GPU custody,
+  sealed-evaluation history, or model allocation.
 - The QQQ/SPY historical D1 CPU baseline reproductions and the later frozen L2
   logistic control completed without a GPU appointment, model-selection
   allocation, or sealed-evaluation spend. The L2 QQQ/SPY after-cost replays

@@ -550,6 +550,29 @@ Both receipts are external under the pair-forward artifact root and contain no
 raw rows, credentials, or account data. Do not retry that bounded direct run;
 the existing task owns the next due attempt while independent work continues.
 
+### Causal Qualification
+
+The completed offline predicate reads the existing pair-forward cache plus one
+explicit source-safe parent receipt. It writes only a canonical aggregate
+receipt under:
+
+```text
+D:\thericher-v2\model-artifacts\data\kis-daily-forward-causal-qualification-v1\run=20260820-kis-daily-forward-causal-qualification-r1\receipt.json
+```
+
+The current receipt hash is
+`sha256:9b361addc7e76dd5cd8ff6bf9800077c8a8866f3b5a21eeedbeb6d2a2dcdc3cf`.
+It is `input_unavailable`: source/pair identity, complete-calendar continuity,
+and chronological boundary are satisfied, while named clock/session,
+decision-time availability, and provider finality are `not_observed`. It is not
+a KIS call, credential read, Docker or scheduler invocation, GPU use, research
+promotion, or Execution input.
+
+Do not overwrite this receipt. A later causal-qualification run requires a new
+explicit label and a current cache/parent-receipt contract; it must capture the
+missing runtime facts rather than infer them from a file timestamp, task exit,
+or hash.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

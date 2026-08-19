@@ -2,64 +2,71 @@
 
 ## Objective
 
-Complete `kis-daily-forward-causal-qualification-predicate-v1`: build one
-offline, credential-free predicate that evaluates the existing QQQ/SPY KIS
-Paper D1 forward cache against its fixed causal-input conditions separately.
-It must distinguish a fully qualified synthetic fixture from the present
-unqualified cache and write one immutable, source-safe external receipt for
-the present cache. This improves the data-to-research loop; it does not create
-a strategy result, candidate, model, GPU job, Paper action, or live behavior.
+Complete `kis-daily-pair-forward-one-shot-collection-v2`: advance the existing
+QQQ/NAS plus SPY/AMS KIS Paper D1 forward-cache path with at most one bounded
+existing collector invocation, then reattach only source-safe provenance. This
+improves current data coverage; it does not claim availability, finality, a
+model input, or a trading result.
 
 ## Boundaries
 
-- Read only the existing local QQQ/SPY D1 forward cache plus its source-safe
-  external receipts. Do not read `.env` or credentials, construct a KIS client,
-  call KIS or any network, invoke Docker or a scheduler, submit a broker order,
-  or use GPU.
-- Keep raw bars and cache bytes under `D:\market_data`; write only canonical
-  aggregate qualification facts under
-  `D:\thericher-v2\model-artifacts\data\kis-daily-forward-causal-qualification-v1`.
-  Never write raw rows, prices, account facts, order identifiers, credentials,
-  model parameters, predictions, or fitted artifacts.
-- The frozen condition set must separately identify source/pair identity,
-  complete-bar and calendar-continuity evidence, a named clock/session rule,
-  a non-overlapping chronological boundary, decision-time availability, and
-  provider finality. A condition that is not evidenced must remain
-  `not_observed`; do not infer it from cache timestamps, task exit codes, or a
-  receipt hash.
-- `qualified` is an input classification only. It cannot itself authorize
-  training, a replay, ranking, an ensemble, KIS Paper behavior, or live use.
+- Run `./scripts/start_next_codex_task.ps1` first, then read `HANDOFF.md`,
+  `AGENTS.md`, `RUNBOOK.md`, `agents/data.md`, `agents/engine-research.md`,
+  `agents/execution.md`, and `agents/orchestration.md`.
+- `KIS_PAPER_*` may be read only by the existing
+  `kis-paper-daily-pair-forward` Compose service. Never read or route
+  `KIS_LIVE_*`, print credentials, account data, raw market rows, or raw broker
+  bodies.
+- Use the existing network-disabled preflight first. Run the existing
+  credentialed Compose collector at most once, and only when that preflight
+  says collection is required. Do not manually invoke a Windows Task, create a
+  retry loop, alter a scheduler, or start a parallel collector.
+- Keep raw cache data under `D:\market_data` and source-safe receipts under
+  `D:\thericher-v2\model-artifacts`. Do not write either to Git.
+- No broker order, account endpoint, Paper intent, model training, GPU,
+  research campaign, or public service is in scope.
+- Never infer named clock/session, decision-time availability, or provider
+  finality from a newer cache session, file timestamp, task exit, receipt hash,
+  or successful collector result. No consumer may treat `latest_session` as
+  decision-time availability.
 
 ## Required Work
 
-1. Reuse existing forward-cache loaders and source-safe receipt readers where
-   their semantics match. Add the smallest Data-owned module and script needed
-   to produce the predicate and immutable receipt.
-2. Freeze explicit condition identifiers and a fail-closed aggregate result.
-   Emit current-cache evidence only after verifying every parent identity and
-   output path stays external to Git.
-3. Add focused tests with one fully qualified synthetic fixture and one
-   single-condition ablation per condition. Each ablation must become
-   `input_unavailable` and name the missing condition. Add isolation tests
-   proving no credential, KIS client, network, Docker, scheduler, broker, GPU,
-   raw row, or repository artifact access is required.
-4. Run the one current-cache predicate exactly once with a new external label;
-   reattach only its source-safe condition verdicts, receipt hash, and output
-   pointer. The expected current outcome may be `input_unavailable`.
-5. Refresh Data, Engine Research, Execution, Research Steward, orchestration,
-   `HANDOFF.md`, and `RUNBOOK.md`; then run required verification, commit,
-   push, replace this file with exactly one next company objective, and
-   continue.
+1. Recheck the narrow static consumer boundary: the pair-forward cache must
+   have no Research or Execution consumer that promotes a newer
+   `latest_session` into availability/finality evidence.
+2. Use the existing read-only preflight Compose service. Record its categorical
+   outcome only.
+3. If and only if collection is required, run the existing
+   `kis-paper-daily-pair-forward` Compose collector exactly once. A token-gate
+   deferral, no accepted page, unavailable result, or unchanged cache is a
+   closed result for this objective, not a reason to retry.
+4. Reattach the resulting source-safe receipt and current cache through the
+   existing offline reader. If an eligible direct parent receipt exists, write
+   one fresh causal-qualification receipt with a new explicit label; keep the
+   three runtime conditions `not_observed` unless retained evidence proves
+   otherwise.
+5. Refresh Data, Engine Research, Execution, orchestration, HANDOFF, and
+   RUNBOOK with only the observed categorical result and the no-promotion
+   limitation. Record the Claude `supported-with-limits` boundary if it
+   materially affects the result.
 
 ## Completion Evidence
 
-- A source-safe immutable external receipt discriminates a complete synthetic
-  fixture from every one-condition ablation and classifies the real current
-  cache without raw data.
-- Strongest kill test: if any single-condition ablation still produces
-  `qualified`, close the objective as non-discriminating with no receipt,
-  promotion, or downstream handoff.
-- Also close without retry or consumer change if the predicate reads `.env`,
-  constructs a KIS client, reaches a network/Docker/scheduler/broker path,
-  writes outside the artifact root, or emits `qualified` when decision-time
-  availability or provider finality is `not_observed`.
+- One preflight outcome, and zero or one collector outcome, with external
+  source-safe receipt pointer(s).
+- A focused test or static proof that no pair-forward `latest_session` consumer
+  treats data freshness as availability/finality.
+- One offline reattachment result, if a usable direct collector receipt exists.
+- Required verification passes, then commit, push, and replace this file with
+  exactly one next company objective.
+
+## Verification
+
+```powershell
+.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
+uv run --extra dev ruff check .
+docker compose --env-file .env.example config --quiet
+docker compose --env-file .env.example --profile research config --quiet
+git diff --check
+```

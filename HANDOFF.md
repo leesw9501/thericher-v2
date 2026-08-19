@@ -327,12 +327,27 @@ closed as failed descriptive control evidence: it creates no selected model,
 ensemble, GPU appointment, broker PnL, Paper action, or live claim.
 
 Claude's scoped falsification-first review returned `supported-with-limits`
-for the next Data-only step: an offline QQQ/SPY D1 forward-cache causal
-qualification predicate. It must discriminate every single missing condition
-in synthetic fixtures and classify the present cache without inferring
-decision-time availability or provider finality from a timestamp, task outcome,
-or hash. It must not collect, construct a KIS client, change a schedule, or
+for the completed Data-only QQQ/SPY D1 forward-cache causal-qualification
+predicate. Its synthetic fixture was qualified only with every explicit
+condition and every single-condition ablation failed closed. The one current
+cache run wrote
+`data/kis-daily-forward-causal-qualification-v1/run=20260820-kis-daily-forward-causal-qualification-r1/receipt.json`
+under `D:\thericher-v2\model-artifacts`
+(`sha256:9b361addc7e76dd5cd8ff6bf9800077c8a8866f3b5a21eeedbeb6d2a2dcdc3cf`).
+Source/pair identity, complete-calendar continuity, and chronological boundary
+are satisfied; named clock/session, decision-time availability, and provider
+finality remain `not_observed`, so the aggregate is `input_unavailable`. It did
+not collect, construct a KIS client, read credentials, change a schedule, or
 create a Research, GPU, Paper, or live consumer.
+
+Claude's next falsification-first review returned `supported-with-limits` for
+one existing KIS Paper QQQ/SPY D1 collector invocation. Its static consumer
+check found no Research or Execution use of this pair-forward cache that treats
+`latest_session` as decision-time availability or provider finality. The next
+bounded step may therefore advance cache coverage and exercise the token gate,
+but it must remain one-shot and no result can alter the three `not_observed`
+runtime conditions without separate retained evidence. A successful collection
+is not a model, GPU, Paper, or promotion event.
 
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC

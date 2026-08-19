@@ -38,9 +38,21 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   at the shared token-start gate, adding zero pages and zero target changes.
   It leaves the seven-session source-local cache non-promoting and creates no
   campaign, GPU appointment, model selection, or Paper consumer.
-- The next Data-only forward causal-qualification predicate may make the
-  individual missing-input facts explicit, but it cannot by itself qualify a
-  Research campaign, GPU appointment, model selection, replay, or Paper
+- The completed Data-only forward causal-qualification predicate classified the
+  seven-session QQQ/SPY D1 cache as `input_unavailable`: source/pair identity,
+  complete-calendar continuity, and chronological boundary are satisfied, while
+  named clock/session, decision-time availability, and provider finality remain
+  `not_observed`. Its source-safe external receipt is
+  `data/kis-daily-forward-causal-qualification-v1/run=20260820-kis-daily-forward-causal-qualification-r1/receipt.json`
+  (`sha256:9b361addc7e76dd5cd8ff6bf9800077c8a8866f3b5a21eeedbeb6d2a2dcdc3cf`).
+  It does not qualify a Research campaign, GPU appointment, model selection,
+  replay, or Paper consumer.
+- Claude's `supported-with-limits` challenge permits one existing KIS Paper D1
+  collector invocation solely to advance current cache coverage and exercise
+  the token gate. Even a successful collection cannot satisfy named
+  clock/session, decision-time availability, or provider finality, and no
+  consumer may interpret a newer `latest_session` as those facts. It therefore
+  creates no campaign, GPU appointment, model selection, replay, or Paper
   consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
