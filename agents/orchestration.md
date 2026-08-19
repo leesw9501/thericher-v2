@@ -6,13 +6,12 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-paper-daily-pair-forward-refresh-v1` is ready. The daily-broad capability
-check now reattached its all-terminal 2,119-target index and exited with zero
-chunks/pages/failures; its exact evidence hash is
-`sha256:065e6b4189e172f78047304b21d81361355eebe9f3c8db7d2b2935f3beb430a3`.
-It closed that historical cursor without constructing a KIS client. The next
-ready Data package uses the existing QQQ/SPY D1 forward-cache preflight and,
-only when collection is required, one bounded market-data-only refresh.
+`historical-kis-daily-cpu-baseline-reproduction-v1` is ready. The daily-broad
+cursor is terminal, and the first QQQ/SPY forward refresh correctly closed at
+the shared token-start gate with zero new pages. Its existing scheduled task is
+ready for its own next due time, so it is not a foreground wait. The next ready
+Engine Research package instead replays the verified 4,756-bar QQQ and SPY D1
+catalogs through the fixed offline CPU/local-paper baseline.
 
 ## Ready / Owned / Due
 
@@ -42,7 +41,8 @@ only when collection is required, one bounded market-data-only refresh.
 | Post-gate container collection capability probe | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Complete: the due-gate service reached retained-cache conflict handling and quarantined both active conflicting head entries. It remains a non-promoting Data recovery fact. |
 | Quarantined-head recovery capture | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Complete: the one later clean direct Compose capture is hash-bound as `complete` with both targets collected. It is unbound direct-container evidence only. |
 | Daily-broad continuation capability | Data / Codex | Existing daily-broad Compose service, durable cursor, worker lock, and shared gates | Complete: all 2,119 targets reattached terminal and the exact continuation exited `complete` with zero page attempts. No long worker is eligible for this exhausted historical cursor. |
-| QQQ/SPY D1 forward refresh | Data / Codex | Existing pair-forward/preflight Compose services and shared gates | Ready: run credential-free preflight first; only a `collection_required` result may reach one exact two-target forward refresh. |
+| QQQ/SPY D1 forward refresh | Data / Codex | Existing pair-forward/preflight Compose services, shared gates, and scheduled task | Complete: preflight required the 2026-08-18 session, but the one direct collector deferred at `token_request_not_due` with zero new pages and zero changed targets. The ready task owns the next due run at `2026-08-19T21:55:00Z`; no foreground retry. |
+| Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Ready: run the fixed `always_long` and `previous_bar_direction` baselines once per symbol, using descriptive chronological holdouts and `local_paper` fills only. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -52,8 +52,9 @@ Fresh, KIS-reconstructible causal input coverage remains the predictive-engine
 bottleneck. The direct container recovery is clean but unbound, so it does not
 change the task-owned `incomplete/current_session_short` topology,
 decision-time availability, provider finality, or model eligibility. The broad
-historical cursor is fully terminal rather than stalled; the next concrete data
-opportunity is the separate QQQ/SPY forward cache for later D1 sessions.
+historical cursor is terminal and the forward refresh is task-owned after its
+shared-gate deferral. The ready, non-promoting CPU baseline advances the
+backtest/local-paper accounting loop without pretending to solve that input gap.
 
 ## Current Cross-Lane Decision
 
@@ -90,9 +91,9 @@ proposal is closed rather than deferred.
 ## Current Reversible Improvement
 
 The completed inventory makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is one bounded QQQ/SPY D1
-forward-cache refresh, which can add later source-local sessions without
-reopening an exhausted history cursor, adding a scheduler, or creating a model
+explicit. The immediate reversible improvement is one fixed QQQ/SPY historical
+D1 CPU baseline reproduction, which tests the existing data-to-local-paper
+attribution loop without creating a model selection, GPU appointment, scheduler,
 or downstream consumer.
 
 For verification throughput, use
@@ -108,5 +109,5 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current action is
-one bounded QQQ/SPY D1 forward refresh while task-owned intraday reattachment
-remains non-foreground.
+the bounded QQQ/SPY historical D1 CPU baseline while the forward and intraday
+task-owned observations remain non-foreground.

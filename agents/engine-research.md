@@ -34,6 +34,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   advanced no cursor. It creates no refreshed daily input, campaign, GPU
   appointment, or Paper consumer; later sessions require the separate forward
   cache path.
+- The first QQQ/SPY D1 forward-cache refresh required collection but deferred
+  at the shared token-start gate, adding zero pages and zero target changes.
+  It leaves the seven-session source-local cache non-promoting and creates no
+  campaign, GPU appointment, model selection, or Paper consumer.
 - The RTX 4090 source-isolated Tiingo IEX r1 appointment completed and released
   its memory. Its M5-only masked reconstruction used the fixed
   LSTM/causal-TCN/compact-attention order with no target, holdout, selection,

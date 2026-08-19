@@ -176,6 +176,82 @@ def test_token_deferral_keeps_its_existing_reason_outside_control_failure_bounda
     assert receipt["payload"] == {"status": "deferred", "reason": "token_request_not_due"}
 
 
+def test_cache_current_preflight_never_reads_kis_configuration_or_constructs_client(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+    current_session = datetime(2026, 8, 18, tzinfo=UTC).date()
+    cache = SimpleNamespace(
+        frozen_boundary=datetime(2026, 7, 24, tzinfo=UTC).date(),
+        targets_by_key={
+            target_key: SimpleNamespace(latest_session=current_session)
+            for target_key in script._TARGET_KEYS
+        },
+        common_sessions=(current_session,),
+        safe_payload=lambda: {"kind": "kis_paper_daily_pair_forward_cache"},
+    )
+
+    monkeypatch.setattr(
+        script,
+        "latest_completed_us_equity_d1_session",
+        lambda _value: current_session,
+    )
+    monkeypatch.setattr(
+        script,
+        "load_verified_kis_paper_daily_pair_forward_cache",
+        lambda **_kwargs: cache,
+    )
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_environment_config",
+        lambda: pytest.fail("cache-current preflight must not read KIS configuration"),
+    )
+    monkeypatch.setattr(
+        script,
+        "KisPaperMarketDataClient",
+        lambda **_kwargs: pytest.fail("cache-current preflight must not construct a client"),
+    )
+    monkeypatch.setattr(
+        script,
+        "UrllibKisPaperDailyPairForwardTransport",
+        lambda **_kwargs: pytest.fail("cache-current preflight must not construct a transport"),
+    )
+    monkeypatch.setattr(
+        script,
+        "_write_source_safe_receipt",
+        lambda **kwargs: emitted.update(kwargs)
+        or (tmp_path / "receipt.json", "sha256:" + "d" * 64),
+    )
+
+    exit_code = script._run_preflight(  # noqa: SLF001
+        cache_root=tmp_path / "cache",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repository",
+        frozen_boundary=cache.frozen_boundary,
+        observed_at=datetime(2026, 8, 19, 14, tzinfo=UTC),
+        schedule_guard_failed=None,
+    )
+
+    assert exit_code == 0
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    payload = receipt["payload"]
+    assert isinstance(payload, dict)
+    assert payload["status"] == "cache_current"
+    assert payload["eligible_through"] == "2026-08-18"
+    assert payload["route_isolation"] == {
+        "daily_market_data_only": True,
+        "account_endpoints_used": False,
+        "position_endpoints_used": False,
+        "open_order_endpoints_used": False,
+        "quote_endpoints_used": False,
+        "order_endpoints_used": False,
+        "live_endpoints_used": False,
+    }
+
+
 class _TokenGate:
     def __init__(self, due: bool = True) -> None:
         self.checked = False

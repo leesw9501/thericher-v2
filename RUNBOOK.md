@@ -540,6 +540,16 @@ source-safe recovery reason, returns `20`, and leaves retry to the next due
 time. It does not sleep the foreground, create a parallel request flood, or
 block independent work.
 
+On 2026-08-19, the bounded direct refresh first wrote a `collection_required`
+preflight receipt for the 2026-08-18 eligible session
+(`sha256:7987f5a89f3ec8631646ece7718f0433ae7308aad9b27060cf0efffa4ad7028f`).
+Its one permitted collector then wrote a hash-bound `deferred` receipt with
+`token_request_not_due`, zero new accepted pages, and zero changed targets
+(`sha256:f3305c86da4ce345beed1e734f30e614356827ed54f678e3dcf87596c32f5914`).
+Both receipts are external under the pair-forward artifact root and contain no
+raw rows, credentials, or account data. Do not retry that bounded direct run;
+the existing task owns the next due attempt while independent work continues.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

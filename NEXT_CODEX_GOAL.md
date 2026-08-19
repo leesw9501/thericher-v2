@@ -2,53 +2,56 @@
 
 ## Objective
 
-Complete `kis-paper-daily-pair-forward-refresh-v1`: reattest the existing
-`QQQ/NAS` and `SPY/AMS` D1 forward cache and, only when its credential-free
-preflight reports `collection_required`, perform one exact existing Compose
-refresh for the last completed US equity session. This advances source-local
-forward data only; it does not prove finality, point-in-time eligibility, a
-model, PnL, Paper behavior, or live behavior.
+Complete `historical-kis-daily-cpu-baseline-reproduction-v1`: reproduce the
+existing fixed, source-separated historical KIS D1 CPU/local-paper baseline
+once for QQQ and once for SPY using the verified 4,756-bar common panel. This
+advances the data-to-backtest-to-local-paper-attribution loop only; it does not
+select a model, claim alpha or profitability, qualify a KIS runtime input, or
+create Paper/live behavior.
 
 ## Boundaries
 
-- Use `KIS_PAPER_*` only through the existing pair-forward market-data service.
-  Never read or route `KIS_LIVE_*`, and do not call account, position, order,
-  cancel, modify, broker, or live endpoints.
-- Use the existing `kis-paper-daily-pair-forward-preflight` and
-  `kis-paper-daily-pair-forward` Compose services only. Do not invoke or
-  change a Windows task/scheduler, build or pull images, add services, start a
-  retry loop, or run parallel collection.
-- Preserve `THERICHER_MODE=off`, the fixed QQQ/NAS plus SPY/AMS scope, and
-  external cache/artifact roots. Never print, log, artifact, or commit raw
-  market rows, credentials, account identifiers, or private runtime state.
-- If preflight reports `cache_current`, do not make a credentialed KIS call.
-  If it reports `collection_required`, make exactly one direct Compose
-  collection attempt. Any defer, conflict, or failure closes that one attempt
-  without retry.
+- Run offline only through `scripts/run_historical_kis_cpu_baseline.py` and the
+  existing verified private-D1 catalog. Do not read credentials, call KIS,
+  invoke Docker or a scheduler, submit a broker order, or use GPU.
+- Use exactly the fixed `QQQ/NAS/MODP=0` and `SPY/AMS/MODP=0` catalog targets,
+  `always_long` and `previous_bar_direction` baselines, the fixed 1-bp fee plus
+  2-bp slippage assumptions, chronological descriptive holdout, and
+  `source: local_paper` fills. Do not tune windows, thresholds, costs, signs,
+  splits, or candidates after seeing either result.
+- Write contracts, work evidence, and sanitized summaries only beneath
+  `D:\thericher-v2\model-artifacts\historical-kis-daily-cpu-baseline` with
+  new `20260819-historical-kis-qqq-r1` and
+  `20260819-historical-kis-spy-r1` labels. Never output or commit raw rows,
+  credentials, account state, or model artifacts.
+- A source/hash mismatch, unavailable catalog, non-local-paper fill, missing
+  fixed baseline/phase, or write outside the artifact root closes only that
+  symbol attempt without retry or model promotion.
 
 ## Required Work
 
-1. Reattest the existing Compose contract and focused tests, then run the
-   networkless preflight and retain only its source-safe categorical result.
-2. When and only when collection is required, run one exact pair-forward
-   service invocation and capture only allowlisted source-safe aggregate
-   results. Otherwise record that no collection was needed and no KIS call was
-   made.
-3. Reattach the exact external receipt/cache summary through existing offline
-   readers. Retain only its hash/pointer, target-count/category facts, and the
-   explicit finality and predictive-eligibility limitation.
-4. Add only a focused reader or test required to prove cache-current preflight
-   cannot reach KIS collection and that the pair-forward service has no
-   live/account/order route. Refresh the active stateboards, `HANDOFF.md`, and
-   `RUNBOOK.md` with the narrow result.
+1. Reattest the verified two-symbol D1 catalog through its existing offline
+   loader, retaining only dataset identity/hash, bar counts, and complete-bar
+   facts. Run the focused campaign and runner tests first.
+2. Run the two independent fixed CPU baselines with their predeclared labels.
+   They may run in parallel only with isolated artifact directories. Capture
+   only the runner's sanitized aggregate summaries.
+3. Reattach each external contract and summary, verify the fixed two-baseline
+   by two-phase cardinality and local-paper fill source, and record only
+   aggregate after-cost/replay facts and artifact hashes/pointers.
+4. Refresh Data, Engine Research, Execution, Research Steward, orchestration,
+   `HANDOFF.md`, and `RUNBOOK.md` with the descriptive-only result. Do not
+   allocate GPU or create a candidate queue from either outcome.
 5. Run required verification, commit, push, replace this file with exactly one
    material next company objective, and continue.
 
 ## Completion Evidence
 
-- One source-safe networkless preflight and either a cache-current result with
-  no KIS invocation or one exact two-target source-safe collection outcome.
-- Strongest kill test: wrong target scope/mode/roots/credential surface,
-  preflight reaching KIS collection, or a collected result lacking an immutable
-  external receipt and canonical target binding.
-- No predictive, PnL, Paper, or live claim follows from this refresh.
+- Two hash-bound external contracts and sanitized summaries, each with exactly
+  two fixed baselines across development and chronological descriptive holdout.
+- Strongest kill test: a catalog/hash mismatch, unexpected target/cost/split,
+  output outside the artifact root, a non-`local_paper` fill, or incomplete
+  baseline/phase cardinality.
+- The result remains descriptive local-paper accounting evidence, never a
+  selected model, predictive performance, broker PnL, Paper action, or live
+  claim.

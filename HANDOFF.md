@@ -270,6 +270,22 @@ constructed, and no account/order/live route ran. Do not start a long worker
 for this exhausted historical cursor; a separate QQQ/SPY forward cache is the
 next bounded current-data path.
 
+The first bounded QQQ/SPY D1 forward-cache refresh is also closed. Its
+networkless preflight required the 2026-08-18 completed session and wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T141629274707Z-85e3ed4ed5bd497e/receipt.json`
+under `D:\thericher-v2\model-artifacts`
+(`sha256:7987f5a89f3ec8631646ece7718f0433ae7308aad9b27060cf0efffa4ad7028f`).
+The one permitted collector then closed `deferred/token_request_not_due`, with
+zero new accepted pages and zero changed targets; its exact source-safe receipt
+is `data/kis-paper-daily-pair-forward-v1/run=20260819T141651910431Z-7298440b05e84736/receipt.json`
+(`sha256:f3305c86da4ce345beed1e734f30e614356827ed54f678e3dcf87596c32f5914`).
+The offline cache reader reattached seven common forward sessions and two
+unchanged target streams. The deferral contract constructs no KIS client in
+this branch, and the added cache-current regression test proves preflight also
+cannot read KIS configuration or construct a client. This does not refresh a
+daily input, prove finality or point-in-time eligibility, or create a research,
+Paper, PnL, or live consumer; the existing ready task owns its next due run.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath
