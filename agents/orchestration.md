@@ -6,12 +6,13 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`historical-kis-daily-cpu-baseline-reproduction-v1` is ready. The daily-broad
-cursor is terminal, and the first QQQ/SPY forward refresh correctly closed at
-the shared token-start gate with zero new pages. Its existing scheduled task is
-ready for its own next due time, so it is not a foreground wait. The next ready
-Engine Research package instead replays the verified 4,756-bar QQQ and SPY D1
-catalogs through the fixed offline CPU/local-paper baseline.
+`kis-daily-l2-logistic-control-reproduction-v1` is ready. The daily-broad
+cursor is terminal, the first QQQ/SPY forward refresh closed at the shared
+token-start gate with zero new pages, and its scheduled task owns the next due
+time. The fixed QQQ/SPY historical CPU baseline then completed both four-cell
+local-paper matrices with no after-cost winner. The next ready Engine Research
+package is one hash-pinned, frozen L2 logistic control replay against the same
+offline daily input.
 
 ## Ready / Owned / Due
 
@@ -42,7 +43,8 @@ catalogs through the fixed offline CPU/local-paper baseline.
 | Quarantined-head recovery capture | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Complete: the one later clean direct Compose capture is hash-bound as `complete` with both targets collected. It is unbound direct-container evidence only. |
 | Daily-broad continuation capability | Data / Codex | Existing daily-broad Compose service, durable cursor, worker lock, and shared gates | Complete: all 2,119 targets reattached terminal and the exact continuation exited `complete` with zero page attempts. No long worker is eligible for this exhausted historical cursor. |
 | QQQ/SPY D1 forward refresh | Data / Codex | Existing pair-forward/preflight Compose services, shared gates, and scheduled task | Complete: preflight required the 2026-08-18 session, but the one direct collector deferred at `token_request_not_due` with zero new pages and zero changed targets. The ready task owns the next due run at `2026-08-19T21:55:00Z`; no foreground retry. |
-| Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Ready: run the fixed `always_long` and `previous_bar_direction` baselines once per symbol, using descriptive chronological holdouts and `local_paper` fills only. |
+| Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
+| KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Ready: fit the one frozen CPU L2 logistic spec on development labels and replay frozen validation against fixed local-paper comparators. It cannot select a winner or consume GPU. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -53,8 +55,9 @@ bottleneck. The direct container recovery is clean but unbound, so it does not
 change the task-owned `incomplete/current_session_short` topology,
 decision-time availability, provider finality, or model eligibility. The broad
 historical cursor is terminal and the forward refresh is task-owned after its
-shared-gate deferral. The ready, non-promoting CPU baseline advances the
-backtest/local-paper accounting loop without pretending to solve that input gap.
+shared-gate deferral. The completed CPU baseline advances the
+backtest/local-paper accounting loop, while the ready L2 control tests one
+fixed classical-ML path without pretending to solve that input gap.
 
 ## Current Cross-Lane Decision
 
@@ -91,10 +94,10 @@ proposal is closed rather than deferred.
 ## Current Reversible Improvement
 
 The completed inventory makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is one fixed QQQ/SPY historical
-D1 CPU baseline reproduction, which tests the existing data-to-local-paper
-attribution loop without creating a model selection, GPU appointment, scheduler,
-or downstream consumer.
+explicit. The immediate reversible improvement is one fixed QQQ/SPY D1 L2
+logistic control replay, which tests the existing development-only fit and
+validation/local-paper loop without creating a winner, GPU appointment,
+scheduler, or downstream consumer.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -109,5 +112,5 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current action is
-the bounded QQQ/SPY historical D1 CPU baseline while the forward and intraday
+the bounded QQQ/SPY D1 L2 logistic control while the forward and intraday
 task-owned observations remain non-foreground.

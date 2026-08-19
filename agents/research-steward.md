@@ -9,6 +9,9 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   completed and released its memory; no GPU process or sealed-evaluation
   allocation is held by Research Steward.
 - No frozen, input-qualified campaign is ready for an appointment.
+- The QQQ/SPY historical D1 CPU baseline reproductions completed without a GPU
+  appointment, model-selection allocation, or sealed-evaluation spend. Their
+  negative local-paper controls leave GPU custody free.
 - The completed Tiingo IEX r1 receipt is
   `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
   It records one non-promoting runtime appointment only: no holdout spend,

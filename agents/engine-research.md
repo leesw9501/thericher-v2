@@ -38,6 +38,13 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   at the shared token-start gate, adding zero pages and zero target changes.
   It leaves the seven-session source-local cache non-promoting and creates no
   campaign, GPU appointment, model selection, or Paper consumer.
+- The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
+  SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
+  matrix completed, and every after-cost result was negative; QQQ
+  `previous_bar_direction` holdout at `-0.3965` is only the closest negative
+  control. No predictive promotion, GPU appointment, model selection, or Paper
+  consumer follows. The next bounded classical-ML package is one frozen L2
+  logistic control replay against the same hash-pinned input.
 - The RTX 4090 source-isolated Tiingo IEX r1 appointment completed and released
   its memory. Its M5-only masked reconstruction used the fixed
   LSTM/causal-TCN/compact-attention order with no target, holdout, selection,

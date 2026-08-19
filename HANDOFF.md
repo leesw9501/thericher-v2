@@ -286,6 +286,19 @@ cannot read KIS configuration or construct a client. This does not refresh a
 daily input, prove finality or point-in-time eligibility, or create a research,
 Paper, PnL, or live consumer; the existing ready task owns its next due run.
 
+The frozen historical KIS D1 CPU baseline now has independent QQQ and SPY
+reproductions. Both reattached the same verified 4,756-bar common-panel hash,
+completed the fixed two-baseline by two-phase matrix, and retained only
+`local_paper` fills. The external QQQ contract/summary hashes are
+`sha256:2f40d0fdbb34aef36a35f181f1e1e52c80fa623326dc91e5a7cf4257ed48bed6` and
+`sha256:d1731138d8f2898b75ecd90ab41c4c5754d22fa380f8580dd79d61cd78273c39`;
+the SPY summary hash is
+`sha256:852fe248251eea52b25e3bbf7796dc9a0881b2a8e78ee536246b4583e9f15f9f`.
+Every fixed after-cost baseline result was negative; the closest was QQQ
+`previous_bar_direction` on the chronological descriptive holdout at `-0.3965`.
+This is a useful negative control, not a profitability claim, selected model,
+KIS request, broker result, Paper action, or GPU allocation.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

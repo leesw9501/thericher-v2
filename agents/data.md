@@ -207,7 +207,8 @@ cache-recovery branch, not session coverage, finality, or consumer eligibility.
 | Market-data contract inventory | Data / Engine Research | Complete: six fixed source classes reattached through shallow metadata and source-safe receipt hashes. Counts are `input_unavailable: 3`, `source_local_mechanics_only: 1`, `retrospective_control_only: 1`, and `non_promoting_runtime_only: 1`; no eligible predictive/Paper/GPU consumer exists. |
 | Daily-broad continuation capability | Data / Codex | Complete: the exact short continuation reattached an unchanged all-terminal 2,119-target index and exited `complete` with zero chunks/pages/failures. It constructed no KIS client; a long worker is not ready for this cursor. |
 | QQQ/SPY D1 forward refresh | Data / Codex | Complete: the hash-bound preflight required collection, then the one permitted direct collector deferred at `token_request_not_due` with zero new accepted pages and zero changed targets. The existing scheduled task is ready and owns its next due attempt. |
-| Historical KIS D1 CPU baseline | Data / Engine Research | Ready: the existing offline loader reattached the same 4,756 complete D1 Bars for QQQ and SPY under one common-panel hash. The fixed descriptive baseline can run without KIS, credentials, Docker, GPU, or a broker route. |
+| Historical KIS D1 CPU baseline | Data / Engine Research | Complete: QQQ and SPY independently reattached the same 4,756 complete D1 Bars and completed their fixed two-baseline by two-phase local-paper matrices under external contracts. This source remains descriptive-only and does not become a current predictive input. |
+| KIS D1 L2 logistic control | Engine Research / Data | Ready: the existing hash-pinned QQQ/SPY daily sequence control can fit once on development labels and replay its frozen validation alongside fixed local-paper comparators, without KIS, credentials, Docker, or GPU. |
 
 ## Quality Contracts
 

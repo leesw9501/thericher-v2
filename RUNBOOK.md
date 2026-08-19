@@ -1387,6 +1387,13 @@ Choose a new label after an interrupted run. The chronological holdout is
 descriptive and unsealed: this command cannot select a model, claim
 profitability, submit a Paper order, or read credentials/network data.
 
+The 2026-08-19 QQQ and SPY reproductions used separate external labels and the
+same 4,756-bar common-panel hash. Each completed the four fixed
+development/chronological-holdout by baseline cells with `local_paper` fills.
+No cell had positive after-cost PnL; this anchors a negative control rather
+than a model-selection or profitability result. The contracts, replay work, and
+sanitized summaries remain only under the external baseline artifact root.
+
 ### Frozen Chronological CPU Campaign
 
 When Data has reattested exactly 20 complete regular 1m sessions for one KIS
