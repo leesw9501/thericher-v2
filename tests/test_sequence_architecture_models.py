@@ -10,7 +10,7 @@ from thericher_v2.research.sequence_architecture_models import (  # noqa: E402
 )
 
 
-@pytest.mark.parametrize("architecture_id", ("lstm", "causal_tcn", "compact_attention"))
+@pytest.mark.parametrize("architecture_id", ("gru", "lstm", "causal_tcn", "compact_attention"))
 def test_shared_sequence_encoders_do_not_look_ahead(architecture_id: str) -> None:
     torch.manual_seed(17)
     model = _model(architecture_id).eval()
@@ -50,7 +50,7 @@ def _model(architecture_id: str) -> object:
 
 
 def _encoded_prefix(model: object, architecture_id: str, values: object) -> object:
-    if architecture_id == "lstm":
+    if architecture_id in {"gru", "lstm"}:
         encoded, _ = model.encoder(values)
         return encoded
     if architecture_id == "causal_tcn":
@@ -75,4 +75,6 @@ def _encoded_prefix(model: object, architecture_id: str, values: object) -> obje
 
 
 def test_shared_sequence_architecture_ids_match_the_supported_contract() -> None:
-    assert SEQUENCE_ARCHITECTURE_IDS == frozenset({"lstm", "causal_tcn", "compact_attention"})
+    assert SEQUENCE_ARCHITECTURE_IDS == frozenset(
+        {"gru", "lstm", "causal_tcn", "compact_attention"}
+    )

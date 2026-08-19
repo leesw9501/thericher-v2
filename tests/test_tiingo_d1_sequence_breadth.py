@@ -207,6 +207,32 @@ def test_docker_model_artifact_mount_is_external_but_other_app_paths_are_not() -
     )
 
 
+def test_cuda_gru_builder_uses_shared_sequence_factory(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    sentinel = object()
+    torch_sentinel = object()
+    calls: list[dict[str, object]] = []
+
+    def fake_builder(**kwargs: object) -> object:
+        calls.append(kwargs)
+        return sentinel
+
+    monkeypatch.setattr(sequence_breadth, "build_torch_sequence_model", fake_builder)
+
+    assert sequence_breadth._build_cuda_model(torch_sentinel, architecture_id="gru") is sentinel
+    assert calls == [
+        {
+            "torch": torch_sentinel,
+            "architecture_id": "gru",
+            "feature_count": len(sequence_breadth.TIINGO_D1_SEQUENCE_FEATURE_NAMES),
+            "hidden_size": sequence_breadth.TIINGO_D1_SEQUENCE_GPU_HIDDEN_SIZE,
+            "attention_heads": sequence_breadth.TIINGO_D1_SEQUENCE_GPU_ATTENTION_HEADS,
+            "tcn_kernel_size": sequence_breadth.TIINGO_D1_SEQUENCE_GPU_TCN_KERNEL_SIZE,
+        }
+    ]
+
+
 def _fake_cuda_breadth(_sequence_input: object) -> dict[str, object]:
     return {
         "backend": "torch_cuda",

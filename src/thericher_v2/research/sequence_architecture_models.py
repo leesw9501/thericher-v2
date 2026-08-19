@@ -5,8 +5,8 @@ from __future__ import annotations
 import math
 from typing import Literal
 
-SequenceArchitectureId = Literal["lstm", "causal_tcn", "compact_attention"]
-SEQUENCE_ARCHITECTURE_IDS = frozenset({"lstm", "causal_tcn", "compact_attention"})
+SequenceArchitectureId = Literal["gru", "lstm", "causal_tcn", "compact_attention"]
+SEQUENCE_ARCHITECTURE_IDS = frozenset({"gru", "lstm", "causal_tcn", "compact_attention"})
 
 
 def build_torch_sequence_model(
@@ -30,6 +30,24 @@ def build_torch_sequence_model(
     ):
         raise ValueError("sequence architecture geometry is invalid")
     nn = torch.nn
+
+    if architecture_id == "gru":
+
+        class GruModel(nn.Module):
+            def __init__(self) -> None:
+                super().__init__()
+                self.encoder = nn.GRU(
+                    input_size=feature_count,
+                    hidden_size=hidden_size,
+                    batch_first=True,
+                )
+                self.head = nn.Linear(hidden_size, 1)
+
+            def forward(self, values: object) -> object:
+                encoded, _ = self.encoder(values)
+                return self.head(encoded[:, -1, :])
+
+        return GruModel()
 
     if architecture_id == "lstm":
 

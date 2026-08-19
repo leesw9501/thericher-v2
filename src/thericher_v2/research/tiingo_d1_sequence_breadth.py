@@ -933,24 +933,6 @@ def _run_torch_cuda_breadth(sequence_input: TiingoD1SequenceInput) -> Mapping[st
 
 
 def _build_cuda_model(torch: object, *, architecture_id: str) -> object:
-    if architecture_id == "gru":
-        nn = torch.nn
-
-        class GruModel(nn.Module):
-            def __init__(self) -> None:
-                super().__init__()
-                self.encoder = nn.GRU(
-                    input_size=len(TIINGO_D1_SEQUENCE_FEATURE_NAMES),
-                    hidden_size=TIINGO_D1_SEQUENCE_GPU_HIDDEN_SIZE,
-                    batch_first=True,
-                )
-                self.head = nn.Linear(TIINGO_D1_SEQUENCE_GPU_HIDDEN_SIZE, 1)
-
-            def forward(self, values: object) -> object:
-                encoded, _ = self.encoder(values)
-                return self.head(encoded[:, -1, :])
-
-        return GruModel()
     return build_torch_sequence_model(
         torch=torch,
         architecture_id=architecture_id,
