@@ -7,7 +7,7 @@ import sqlite3
 from collections.abc import Iterable
 from contextlib import closing
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
+from datetime import datetime
 from decimal import Decimal
 from pathlib import Path
 from typing import Any
@@ -55,7 +55,10 @@ class Event:
 
     @classmethod
     def from_record(cls, record: dict[str, Any]) -> Event:
-        created_at = datetime.fromisoformat(str(record["created_at"])).astimezone(UTC)
+        created_at = require_utc(
+            datetime.fromisoformat(str(record["created_at"])),
+            "event.created_at",
+        )
         payload = record.get("payload")
         if not isinstance(payload, dict):
             raise ValueError("event payload must be an object")

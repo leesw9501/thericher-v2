@@ -11,7 +11,7 @@ import hashlib
 import json
 from collections.abc import Iterable
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import datetime
 from decimal import Decimal
 from typing import Literal, cast
 
@@ -1159,11 +1159,17 @@ def _order_from_payload(payload: dict[str, object]) -> OrderIntent:
         quantity=Decimal(str(payload["quantity"])),
         limit_price=None if limit_price is None else Decimal(str(limit_price)),
         decision_id=str(payload["decision_id"]),
-        created_at=datetime.fromisoformat(str(payload["created_at"])).astimezone(UTC),
+        created_at=require_utc(
+            datetime.fromisoformat(str(payload["created_at"])),
+            "local paper order.created_at",
+        ),
         valid_until=(
             None
             if valid_until is None
-            else datetime.fromisoformat(str(valid_until)).astimezone(UTC)
+            else require_utc(
+                datetime.fromisoformat(str(valid_until)),
+                "local paper order.valid_until",
+            )
         ),
     )
 

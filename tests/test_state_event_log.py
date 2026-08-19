@@ -5,6 +5,8 @@ from contextlib import closing
 from datetime import UTC, datetime
 from decimal import Decimal
 
+import pytest
+
 import thericher_v2.state.event_log as event_log
 from thericher_v2.state import Event, EventStore
 
@@ -93,6 +95,17 @@ def test_event_store_can_defer_sqlite_rebuild_for_bounded_batch_work(tmp_path) -
             "select quantity from positions where market='US' and symbol='AAPL'"
         ).fetchone()[0]
     assert quantity == "2"
+
+
+def test_event_record_rejects_timezone_less_timestamp() -> None:
+    with pytest.raises(ValueError, match="timezone-aware UTC"):
+        Event.from_record(
+            {
+                "event_type": "fill",
+                "created_at": "2026-01-02T14:36:00",
+                "payload": {},
+            }
+        )
 
 
 def test_event_store_closes_each_sqlite_connection(monkeypatch, tmp_path) -> None:

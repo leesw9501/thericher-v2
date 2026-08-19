@@ -202,6 +202,19 @@ def test_decision_pnl_replay_fails_closed_for_tampered_fill_identity_and_inactiv
         replay_local_paper_decision_pnl(canceled_then_filled)
 
 
+def test_decision_pnl_replay_rejects_timezone_less_accepted_order_timestamp() -> None:
+    accepted = _accepted(1, "timezone-less", "entry", created_at=START)
+    timezone_less_order = Event(
+        event_type=accepted.event_type,
+        created_at=accepted.created_at,
+        seq=accepted.seq,
+        payload={**accepted.payload, "created_at": "2026-01-02T14:30:00"},
+    )
+
+    with pytest.raises(ValueError, match="timezone-aware UTC"):
+        replay_local_paper_decision_pnl((timezone_less_order,))
+
+
 def test_decision_pnl_replay_uses_append_order_not_date_label_timestamps() -> None:
     result = replay_local_paper_decision_pnl(
         (
