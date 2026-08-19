@@ -6,18 +6,14 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-pair-forward-v4-preflight-and-one-shot-collection-v1` is ready. The v3
-preflight matched its static contract and `collection_required`; exactly one
-existing collector then closed `unavailable/collector_unavailable/failure_stage=commit`
-with `commit_failure_kind=cache_contract` and
-`commit_failure_phase=cache_prepare`. Its external cache/index reattach unchanged
-with seven common sessions, two seven-row streams, and zero observed mutation in
-the bounded window. The source/fixture-only v4 contract now permits only
-`cache_access`, `cache_state_load`, or `incoming_merge` on a future exact
-matching failure; each is a static source region, not an exact cause. The v3
-receipt remains subphase-unknown. One credential-free v4 preflight may now
-permit exactly one existing collector, with no automatic retry or consumer
-change. The daily-broad cursor is terminal and the
+`kis-paper-daily-auth-capability-probe-v1` is ready. The v4 preflight matched
+`collection_required` and its static hash; exactly one collector then deferred
+with QQQ/NAS `auth_rejected` and SPY/AMS `token_request_not_due`. Its changed
+cache/index identities reattach to the receipt, while aggregate scope remains
+seven common sessions and two seven-row streams. No v4 prepare subphase applies.
+The next Data/Infra package separates virtual-host authentication capability
+from market-data collection with one bounded source-safe probe. It makes no
+market-data, account, order, or live call. The daily-broad cursor is terminal and the
 QQQ/SPY forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
 control, and shallow nonlinear tree control all completed on the same
 hash-pinned daily input, with the L2 and tree QQQ/SPY after-cost replays below
@@ -62,7 +58,8 @@ named clock/session, decision-time availability, and provider finality
 | KIS QQQ/SPY D1 commit-phase diagnostic | Data / Infra Capability | Existing source and fixtures | Complete: v3 static contract emits only fixed `cache_prepare`, `snapshot_persist`, `index_persist`, or `cache_reverify` phases for future cache-contract failures; no external action ran. |
 | KIS QQQ/SPY D1 v3 preflight and one-shot collection | Data | Existing shared-tag Compose services, external cache, and receipt root | Complete: matching preflight receipt `sha256:6fa27ec40b8009b76c0c31fe6210a4ad8814676566bc5f6cc442fa71a011fd5a` preceded one collector receipt `sha256:cd1b1222c61da98aa12091b8a61bd153cd91e2943d0c79c98dafe4340eb33dc3`, narrowed to `commit/cache_contract/cache_prepare`; cache/index reattached unchanged and no retry ran. |
 | KIS QQQ/SPY D1 prepare-subphase diagnostic | Data / Infra Capability | Existing source and fixtures | Complete: v4 static hash `sha256:95e0ec0fd7408e237cbb79e4010e152291dd4322f58133bd4c46207c258dc893` permits only the three fixed source-region labels on a future exact `cache_prepare/cache_contract` receipt. Unclassified cases omit the field; no external call ran. |
-| KIS QQQ/SPY D1 v4 preflight and one-shot collection | Data | Existing shared-tag Compose service, external cache, and receipt root | Ready: one source-safe matching preflight may permit exactly one collector call. It reattaches only safe receipt and aggregate cache/index facts, with no automatic retry or downstream consumer. |
+| KIS QQQ/SPY D1 v4 preflight and one-shot collection | Data | Existing shared-tag Compose service, external cache, and receipt root | Complete: matching preflight `sha256:e24e124b7e2ab6ec50496b5fc9a70ce21198f1483606527b442e9c749cf9029f` permitted one collector `sha256:8100bf8cccc02afa88124c05a731ae53113f99075761c5fbe8bb657a3416e832`, which deferred with QQQ authentication rejection and SPY token gate state; its cache/index reattach holds and no retry ran. |
+| KIS Paper authentication capability probe | Data / Infra Capability | Existing virtual-host market-data authentication path and source-safe receipt root | Ready: isolate one authentication attempt without a market-data, account, order, or live request; retain only categorical result and route facts. |
 | Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
 | KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one development-only CPU fit wrote external model parameters only, excluded validation labels, and completed two model plus six comparator local-paper cells. Both model after-cost cells were negative and below previous-bar-direction controls. |
 | KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one shallow histogram-gradient-tree replay excluded validation labels from fitting, wrote no serialized estimator, and completed two model plus six comparator `local_paper` cells. Both model cells were below their fixed previous-bar-direction comparators, closing the lineage. |
@@ -80,10 +77,10 @@ historical cursor is terminal and the QQQ/SPY D1 forward cache remains
 baseline, failed L2 control, and failed shallow-tree control advance the
 backtest/local-paper accounting loop without pretending to solve that input
 gap. The next research action must not rerun either failed model family under a
-new label. The immediate Data recovery fact is
-`commit/cache_contract/cache_prepare`; the v4 contract can narrow only the
-future static source region and cannot resolve causal clocks or finality by
-itself.
+new label. The immediate Data recovery facts are a QQQ virtual-host
+`auth_rejected` state and a distinct SPY `token_request_not_due` state from one
+v4 collector. The v4 subphase is absent; one authentication-only probe can
+narrow the route fact but cannot resolve causal clocks or finality by itself.
 
 ## Current Cross-Lane Decision
 
@@ -123,10 +120,10 @@ The completed inventory and D1 predicate make the absence of a
 predictive/Paper/GPU input explicit. The completed reversible improvements are
 a fixed-stage source-safe D1 collector boundary, a no-network/no-write
 readiness check, a shared-tag payload contract fingerprint, bounded collector
-evidence, and fixed v2/v3/v4 failure diagnostics. The next bounded action must
-use the completed v4 contract only through a separately scoped recovery probe;
-it must retain no exception detail and must not repeat a failed model family or
-spend GPU on an unqualified runtime study.
+evidence, and fixed v2/v3/v4 failure diagnostics. The next bounded action is a
+separately scoped virtual-host authentication capability probe; it must retain
+no exception detail and must not repeat a failed model family or spend GPU on
+an unqualified runtime study.
 
 The source-safe snapshot-observer fixture now receives a unique mutex while the
 production default remains `Global\TheRicherPaperSnapshotObserver`. This removes
@@ -146,7 +143,6 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current D1 action
-is one separately scoped v4 preflight and, only if it matches and requires
-collection, one existing collector call. Its result may carry one v4
-source-region label while the v3 receipt remains unchanged; it must infer
-neither causal availability nor finality.
+is one separately scoped virtual-host authentication capability probe without a
+market-data, account, order, or live request. Its result must preserve the v4
+receipt and infer neither causal availability nor finality.

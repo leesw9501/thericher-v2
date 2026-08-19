@@ -512,9 +512,25 @@ now pass a unique mutex name. The repaired authority run completed
 `3206 passed, 19 skipped, 51 warnings`; this changes no real observer,
 schedule, Docker route, KIS call, account read, or order capability.
 
-The next objective is one independently scoped v4 preflight and, only when its
-matching source-safe result requires collection, one existing QQQ/SPY collector
-call. It is not an automatic retry and remains Data-only.
+Claude's v4 recovery check returned no output, recorded as
+`review_unavailable`, not agreement or a hold. The credential-free v4
+preflight wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T183535741410Z-6454fe31110444e3/receipt.json`
+(`sha256:e24e124b7e2ab6ec50496b5fc9a70ce21198f1483606527b442e9c749cf9029f`)
+as matching `collection_required`; its non-market routes, network requests, and
+cache writes were all false. The one permitted collector then wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T183649887588Z-b72198c4d5344bba/receipt.json`
+(`sha256:8100bf8cccc02afa88124c05a731ae53113f99075761c5fbe8bb657a3416e832`)
+as `deferred`. Its cache-bound target aggregates record `auth_rejected` for
+QQQ/NAS and `token_request_not_due` for SPY/AMS; only the daily market-data
+route is present and every non-market route is false. Network use is not
+recorded for this collector receipt, so it is not inferred. The cache/index
+hashes changed with the deferred state but reattach to the receipt; seven common
+sessions and two seven-row streams remain, and the optional v4 subphase is
+absent. No retry ran. This is not a causal-input, Research, Execution, Paper,
+PnL, or live conclusion. The next package isolates the KIS Paper authentication
+path with one bounded, source-safe capability probe rather than another daily
+collection retry.
 
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC

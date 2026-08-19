@@ -90,6 +90,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   fixed source region only. It does not interpret the v3 result, create a
   campaign, consume GPU custody, select a model, run a replay, or create a
   Paper consumer.
+- The one permitted v4 collector deferred with source-safe KIS authentication
+  and token-gate states, not a v4 commit subphase. Its bound cache retains the
+  same seven common sessions and remains Data-only; it creates no campaign,
+  GPU appointment, model selection, replay, or Paper consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ

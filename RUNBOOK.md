@@ -782,6 +782,30 @@ preservation, and a private-detail canary. This package made no credential,
 KIS, Docker, cache-write, scheduler, Research, Execution, Paper, or live call;
 the completed v3 receipt remains subphase-unknown.
 
+### V4 One-Shot Outcome
+
+The v4 recovery check returned no Claude output, so it is
+`review_unavailable`, not a verdict or hold. The matching credential-free
+preflight receipt is
+`run=20260819T183535741410Z-6454fe31110444e3/receipt.json`
+(`sha256:e24e124b7e2ab6ec50496b5fc9a70ce21198f1483606527b442e9c749cf9029f`)
+with no cache payload, no network requests, no cache writes, and every
+non-market route false. It permitted exactly one collector. That collector's
+receipt is `run=20260819T183649887588Z-b72198c4d5344bba/receipt.json`
+(`sha256:8100bf8cccc02afa88124c05a731ae53113f99075761c5fbe8bb657a3416e832`),
+which is hash-bound as `deferred` with QQQ/NAS `auth_rejected` and SPY/AMS
+`token_request_not_due` target states. It exposes only the daily market-data
+route; all non-market routes are false and collector network use is
+`not_recorded` rather than inferred.
+
+The external cache/index reattach to the receipt's changed identities, while
+the aggregate remains seven common sessions and two seven-row streams. The v4
+prepare subphase is absent because this is not a matching commit failure. Do
+not retry the daily collector from this outcome. It changes no causal timing,
+provider-finality, model, Research, Execution, Paper, PnL, or live fact. The
+next bounded package isolates the KIS Paper authentication path without a
+market-data, account, order, or live call.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

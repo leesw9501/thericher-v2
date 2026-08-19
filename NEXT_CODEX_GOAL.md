@@ -2,48 +2,48 @@
 
 ## Objective
 
-Complete `kis-daily-pair-forward-v4-preflight-and-one-shot-collection-v1`:
-apply the completed source-safe v4 subphase contract to one independently
-scoped QQQ/SPY D1 forward-cache observation. This advances Data recovery only;
-it does not make current data, causal input, strategy, model, execution, or
-trading eligible.
+Complete `kis-paper-daily-auth-capability-probe-v1`: isolate the virtual-host
+KIS Paper authentication capability behind the QQQ/SPY D1 collector's
+source-safe `auth_rejected` result. This advances Data recovery only; it does
+not make data, causal input, strategy, model, execution, or trading eligible.
 
 ## Boundaries
 
 - Run `./scripts/start_next_codex_task.ps1` first, then read `HANDOFF.md`,
   `AGENTS.md`, `RUNBOOK.md`, and the active stateboards. Ask Claude for a short
-  falsification-first recovery check before the external invocation. A missing
-  response is `review_unavailable`, not agreement or a hold on this
-  standing-authorized private Paper Data package.
-- Use only the named KIS Paper daily market-data client path. `KIS_PAPER_*`
-  reads are authorized; never read or route `KIS_LIVE_*`. Never print or retain
-  credentials, account identifiers, raw broker bodies, or raw market rows.
-- Reuse the existing shared pair-forward service and exact v4 static contract
-  hash `sha256:95e0ec0fd7408e237cbb79e4010e152291dd4322f58133bd4c46207c258dc893`.
-  Build/configure only that existing service if needed; do not add a worker,
-  scheduler, provider, public surface, consumer, or runtime replacement.
-- Run one credential-free preflight. Invoke exactly one existing collector only
-  if the preflight is source-safe `collection_required`, its runtime contract
-  hash matches v4, and no active pair-forward collector owns the cache. A
-  mismatch, non-required status, or ownership conflict closes this invocation
-  without a collector call. No automatic retry or parallel flood.
-- Reattach only source-safe receipt and aggregate cache/index facts before and
-  after the allowed call. Treat a v4 subphase as the static source region where
-  an exception surfaced, not its exact cause. Preserve all causal timing,
-  provider-finality, Research, Execution, Paper, and live conclusions.
+  falsification-first check before changing the authentication probe or making
+  its one external token attempt. A missing response is `review_unavailable`,
+  not agreement or a hold on this standing-authorized private Paper package.
+- `KIS_PAPER_*` credential reads are authorized only through the named Data
+  authentication path. Never read or route `KIS_LIVE_*`; never print, log,
+  persist, or send credentials, tokens, account identifiers, raw broker bodies,
+  or raw market rows to artifacts, Git, or Claude.
+- Begin with source/fixture-only inspection. Reuse existing KIS Paper
+  market-data authentication primitives; do not add a provider, scheduler,
+  worker, public surface, account route, quote route, order route, or runtime
+  replacement.
+- If an external attempt is needed, make at most one virtual-host token request
+  after a source-safe ownership/gate check. It must make no daily market-data,
+  account, position, open-order, quote, order, or live request and may not
+  retain the token. A due/ownership mismatch closes without an attempt; no
+  automatic retry or foreground waiting.
+- Retain only static categorical outcome, timestamp bucket, route isolation,
+  and external receipt hash/pointer. `authenticated` proves only a bounded
+  token capability; `auth_rejected` remains a route fact, not a credential
+  diagnosis, consumer promotion, or operator-approval gate.
 
 ## Required Work
 
-1. Verify the current shared-image/runtime-contract and exact cache ownership
-   facts without exposing private data.
-2. Run the one credential-free v4 preflight and record its immutable external
-   receipt pointer/hash and route-isolation facts.
-3. If and only if it requires collection, run one existing QQQ/SPY collector
-   invocation and reattach its source-safe outcome plus aggregate cache/index
-   comparison. Do not retry.
+1. Inspect existing authentication/config/gate primitives and define the
+   smallest source-safe probe contract with fixed outcome taxonomy.
+2. Add focused fixtures proving no credential, token, market-data, account,
+   order, raw body, or dynamic exception detail can enter a receipt; preserve
+   existing collector behavior.
+3. Run any required source-only verification. Then, only under the stated
+   ownership/gate conditions, make one virtual-host authentication attempt and
+   reattach its immutable source-safe outcome.
 4. Refresh `HANDOFF.md`, `RUNBOOK.md`, and active stateboards with the exact
-   result. A v4 label may guide a later targeted recovery package, but it must
-   not itself become a causal, model, or Paper promotion claim.
+   result. Do not retry the D1 collector in this objective.
 5. Run verification, commit, push, replace this file with exactly one next
    objective, and continue.
 
