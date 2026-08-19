@@ -598,9 +598,15 @@ class LocalPaperBroker:
         canceled_at: datetime,
         reason: str = "local_cancel",
     ) -> LocalPaperOrderResult:
+        canceled_at = require_utc(canceled_at, "canceled_at")
         order = self._pending_order(client_order_id)
         if order is None:
             raise ValueError("client_order_id has no pending accepted local paper order")
+        accepted_at = self._accepted_order_recorded_at(client_order_id)
+        if accepted_at is None:
+            raise ValueError("pending local paper order has no accepted event")
+        if canceled_at < accepted_at:
+            raise ValueError("canceled_at cannot precede accepted_at")
         return self._record_order_result(
             order,
             status="canceled",

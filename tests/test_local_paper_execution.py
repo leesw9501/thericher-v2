@@ -475,6 +475,27 @@ def test_canceled_order_is_persisted_and_not_fillable(tmp_path) -> None:
         broker.fill_next_bar(order.client_order_id, signal_bar=_bar(0), execution_bar=_bar(1))
 
 
+def test_cancel_before_acceptance_is_rejected_without_persisting_a_cancel_event(tmp_path) -> None:
+    broker = _broker(tmp_path)
+    order = _order("cancel-before-acceptance")
+    accepted = broker.submit_order(order, submitted_at=_bar(5).start_ts)
+
+    with pytest.raises(ValueError, match="canceled_at cannot precede accepted_at"):
+        broker.cancel_order(order.client_order_id, canceled_at=_bar(4).start_ts)
+
+    assert [event.event_type for event in broker.event_store.iter_events()] == [
+        "local_paper_order_accepted",
+    ]
+    canceled = broker.cancel_order(order.client_order_id, canceled_at=_bar(6).start_ts)
+
+    assert accepted.status == "accepted"
+    assert canceled.status == "canceled"
+    assert [event.created_at for event in broker.event_store.iter_events()] == [
+        _bar(5).start_ts,
+        _bar(6).start_ts,
+    ]
+
+
 def test_non_next_bar_execution_is_rejected_by_contract(tmp_path) -> None:
     broker = _broker(tmp_path)
     broker.submit_order(_order("bad-next-bar"))
