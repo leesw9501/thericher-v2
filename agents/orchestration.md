@@ -6,12 +6,13 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-paper-iwm-m1-caller-derived-temporal-reach-probe-v1` is complete. Its one
-IWM/AMS initial page was accepted, but no recognized continuation header was
-observed, so no second page was requested. The result closes only that exact
-endpoint expansion path; the later-terminal reattachment remains task-owned
-monitoring. Neither path creates a model input, GPU appointment, order, PnL,
-or live route.
+`kis-intraday-head-collection-dispatch-boundary-v1` is ready. Its completed
+static-audit predecessor reattached the installed
+`thericher-kis-paper-intraday-head` Task and checked-in first `session-capture`
+runner/Compose route as source-safely `matches`, with no Task, Docker, KIS,
+collector, or broker invocation. The new objective closes only the next host
+dispatch observability gap; it leaves task-owned later-terminal monitoring and
+all model, GPU, order, PnL, and live boundaries unchanged.
 
 ## Ready / Owned / Due
 
@@ -34,6 +35,7 @@ or live route.
 | Norgate local readiness | Data | Isolated host bridge receipt | The completed bridge reattached `input_unavailable/local_api_not_ready`, with host runtime available and later categories not checked. It does not establish an updater, process, subscription, expiry, vendor-access, or rights cause and does not block another lane. |
 | Intraday M1 coverage | Data | Existing task image and source-safe terminal projection | The 2026-08-17 task-owned terminal reattached as `complete` with verified coverage/availability bindings, matching the 2026-08-15 `input_unavailable/session_coverage_incomplete/current_session_short` topology. The new writer leaves it unbound by default. |
 | Capture topology and markers | Data / Codex | Existing task, cache metadata, external artifact root | The first post-writer marker is one comparable `collection_exit_nonzero / reason_unavailable` binding. The later hash-bound marker is successful but `retained_partial`, so its default category is noncomparable. No recovery proposal exists. |
+| Static intraday Task contract | Data / Codex | Installed Task metadata, checked-in runner/Compose, external source-safe receipt | Complete: enabled/action/triggers/settings/source all reattached as `matches` at `task_state: ready`; receipt `sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`. It is neither runtime execution nor a collector/provider diagnosis. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -44,8 +46,10 @@ bottleneck. The first post-writer task path has one comparable
 `reason_unavailable` nonzero category, while the later terminal is successful
 but `retained_partial`; its default category is noncomparable. Coverage remains
 `incomplete/current_session_short`, decision-time availability and provider
-finality are unobserved, and no model input exists. Paper lifecycle reliability
-has a separate proof path and does not depend on resolving this Data diagnosis.
+finality are unobserved, and no model input exists. The installed static Task
+contract now matches, but that rules out neither Docker dispatch, container
+entry, nor the source of the existing category. Paper lifecycle reliability has
+a separate proof path and does not depend on resolving this Data diagnosis.
 
 ## Current Cross-Lane Decision
 
@@ -63,12 +67,19 @@ and has no free-text exception/log path. Separately, FirstRate canonical M1
 output is usable only as source-isolated mechanics, not a qualified input. This
 does not qualify research input or change Paper behavior.
 
+The completed static audit found no installed Task, runner, or Compose mismatch.
+It reuses the already-attested terminal only as context, does not reselect a
+current marker, and does not diagnose runtime behavior. The next bounded
+recovery package can therefore isolate the existing Docker collection-dispatch
+boundary without changing schedule timing, pace, route, or consumer behavior.
+
 ## Current Reversible Improvement
 
 The completed inventory makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is now to retain the IWM route
-as a one-page current-head capability and continue an independent ready package
-rather than retrying a header-gated continuation that was not observed.
+explicit. The immediate reversible improvement is a closed, source-safe
+collection-dispatch boundary for future task-owned runs, so a later terminal can
+separate an unreached dispatch from a returned Docker call without retaining
+output or changing collection behavior.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -82,6 +93,6 @@ not a relaxation of test, execution, or live-risk coverage.
 
 No category-based recovery proposal is active. A later recovery investigation
 would need two independently hash-validated matching *comparable* nonzero
-bindings plus a fresh Claude falsification-first verdict. The IWM probe has no
-retry path; the current next action is an independent ready package while the
-later-terminal reattachment remains task-owned and non-foreground.
+bindings plus a fresh Claude falsification-first verdict. The current next
+action is a bounded dispatch-boundary package while the later-terminal
+reattachment remains task-owned and non-foreground.

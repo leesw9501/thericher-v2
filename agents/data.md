@@ -15,7 +15,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The legacy and first post-writer 2026-08-19 KST markers each bind a `recovery` terminal with `collection_exit_nonzero / reason_unavailable`. The later `intraday-head-20260818T2120005941479Z` instead binds `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its compatibility-default category is noncomparable. Metadata topology remains `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The one comparable category remains task-path diagnostic evidence only. The later successful partial terminal does not confirm or diverge a failure category, prove collector-process entry or an exact provider cause, or create a timing/page remedy. No model or reusable Paper-candidate promotion follows. |
+| KIS Paper QQQ/NAS + SPY/AMS intraday head | The legacy and first post-writer 2026-08-19 KST markers each bind a `recovery` terminal with `collection_exit_nonzero / reason_unavailable`. The later `intraday-head-20260818T2120005941479Z` instead binds `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its compatibility-default category is noncomparable. The source-safe static audit independently reports `matches` for the installed Task enabled/action/triggers/settings and the checked-in first `session-capture` runner/Compose route (`task_state: ready`), with no Task, Docker, or KIS invocation. Metadata topology remains `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The static match rules out only checked-in/installed contract drift. It does not prove a task ran, Scheduler origin, Docker dispatch or container entry, collector/provider cause, session completeness, finality, or model eligibility. The one comparable category remains task-path diagnostic evidence only; no timing/page remedy or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
 | KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. The NAS daily-history panel and historical-forward projection now reject a nonempty common-session sequence with an interior normal session missing under pinned local `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar); this package did not reread the current cache. | `input_unavailable` for daily predictive work. A forward cache retains later rows across a gap, but its prospective input stays unavailable until the full boundary-to-forward session chain is present. The continuity rule proves neither source finality nor current-cache qualification. |
 | KIS Paper broad D1 panel | The latest source-safe postrun snapshot (2026-08-01) recorded 2,119/2,119 current-listing targets covered, zero quarantined targets, and zero mismatches over its 604-target baseline overlap. A later successful Task exit does not itself refresh this frozen snapshot. | Coverage/provenance inventory only: current-listing, non-PIT, unadjusted, corporate-action-unqualified, and session-finality-unattested. It cannot supply a target, ranking, training, or Paper input. |
@@ -117,6 +117,17 @@ external-root-relative, marker provenance is assumed-honest-host rather than
 cryptographic Scheduler origin, and Task Scheduler Operational logging is
 disabled.
 
+The source-safe static audit separately reattached the installed
+`thericher-kis-paper-intraday-head` Task as `matches`: enabled, exactly one
+expected action, four non-repeating Tuesday-through-Saturday KST triggers,
+expected recovery/settings shape, and the checked-in first `session-capture`
+runner/Compose route all match. Its receipt is
+`execution/kis-paper-intraday-head-static-contract-v1/static-contract-20260819T1234034490997Z-931b776ddcdc.json`
+with `sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`.
+It read no current marker pointer and invoked no Task, Docker, KIS, broker, or
+collector. It supplies static-contract evidence only, so the known terminal
+remains `reason_unavailable` without a runtime or provider diagnosis.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
@@ -126,6 +137,7 @@ disabled.
 | Task-path failure localization | Data / Codex | Complete: an allowlisted free-text-free category writer and legacy-compatible reader preserve the exact stage exit. No task, pages, timing, or consumer change followed. |
 | Failure-category reattachment | Data / Codex | Complete: post-writer `intraday-head-20260818T1924006306454Z` reattached as `collection_exit_nonzero / reason_unavailable` through exact hash-bound terminal and schedule receipts. No timing, pages, task, or consumer behavior changed. |
 | Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but successful and `retained_partial`, so the preserved default category is noncomparable. No recovery proposal or behavior change followed. |
+| Static intraday Task-contract reattestation | Data / Codex | Complete: installed Task enabled/action/triggers/settings and checked-in first `session-capture` runner/Compose route are all `matches`; the source-safe receipt is hash-bound and the audit invoked no Task, Docker, KIS, collector, or broker. It does not diagnose the existing terminal. |
 | IWM isolated current-head capture | Data | Complete: one fixed IWM/AMS page accepted with the replay-isolated source-safe receipt above; no retry, pagination, replay promotion, or consumer change followed. |
 | IWM isolated cache mechanics | Data | Complete: strict index identity binds the generic raw verifier, with replay-root, index-replacement, raw-tamper, and artifact-symlink rejection coverage. Only source-safe aggregate mechanics were emitted. |
 | IWM temporal-reach continuation probe | Data | Complete: one head was accepted, its continuation header was not recognized, and no second page was requested. The exact endpoint expansion path is closed without retry; the external receipt is the source-safe hash above. |
@@ -235,6 +247,10 @@ disabled.
   `scripts\inspect_kis_paper_intraday_capture_topology.ps1`,
   `scripts\project_kis_paper_intraday_head_invocation_receipt.py`, and
   `scripts\project_kis_paper_intraday_invocation_reattachment.ps1`.
+- Static Task-contract audit and source-safe evidence:
+  `scripts\inspect_kis_paper_intraday_head_static_contract.ps1` and
+  `execution/kis-paper-intraday-head-static-contract-v1/static-contract-20260819T1234034490997Z-931b776ddcdc.json`
+  (`sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`).
 - Later category-confirmation terminal and schedule evidence:
   `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T2120005941479Z/terminal.json`,
   `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T2120005941479Z.json`

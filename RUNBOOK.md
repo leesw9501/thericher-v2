@@ -1035,6 +1035,23 @@ static facts for the one existing Task. A reported
 `unretained_or_unstarted_slots` value means exactly that: it does not prove a
 missed Scheduler trigger, a provider limitation, or a collector failure.
 
+To compare the installed intraday-head Task's source-safe static shape with the
+checked-in first `session-capture` runner and credential-free Compose route,
+run:
+
+```powershell
+.\scripts\inspect_kis_paper_intraday_head_static_contract.ps1
+```
+
+It reads only Task Scheduler metadata plus checked-in source and writes one
+external source-safe categorical receipt. It does not read credentials, use a
+current/latest marker, invoke a Task, Docker, KIS, collector, broker, or
+Scheduler, or retain action command text, roots, task output, market rows, or
+private runtime state. `matches` covers only enabled/action/triggers/settings
+and the first `session-capture` route; it is not evidence that a task ran or
+that Docker/container entry, provider behavior, session completeness, finality,
+or a model input is valid. `Running` is observational rather than a mismatch.
+
 The existing dispatcher writes a diagnostic-only immutable `started` marker
 before collection and a hash-bound `terminal` marker after its existing
 schedule receipt. The terminal preserves both the schedule-observed timestamp

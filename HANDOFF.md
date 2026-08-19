@@ -180,6 +180,25 @@ stage, not failure evidence. Marker provenance remains assumed-honest-host,
 not cryptographic proof of Scheduler origin; Task Scheduler Operational logging
 is disabled.
 
+The completed `kis-intraday-head-static-task-contract-reattest-v1` independently
+attached the installed `thericher-kis-paper-intraday-head` Task and checked-in
+first `session-capture` runner/Compose route to one source-safe `matches` result:
+enabled, action, triggers, settings, and source all match at `task_state: ready`.
+The external receipt is
+`execution/kis-paper-intraday-head-static-contract-v1/static-contract-20260819T1234034490997Z-931b776ddcdc.json`
+(`sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`).
+It read no current marker pointer and invoked no Task, Docker, KIS, collector,
+broker, or scheduler. This rules out only static contract drift; it does not
+prove Scheduler origin, Docker/container entry, collector/provider cause,
+session completeness, finality, or model eligibility. The existing scoped
+`reason_unavailable` classification remains unchanged.
+
+The next bounded objective is `kis-intraday-head-collection-dispatch-boundary-v1`:
+after a Claude falsification-first challenge, add only closed source-safe
+host-side dispatch boundary evidence for future task-owned runs. It must not
+change the existing task timing, collector behavior, Docker profile, KIS route,
+or conditional Paper branch.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath
@@ -252,6 +271,7 @@ live claim follows.
 | Task-path failure localization | Data / Codex | Complete: one closed, free-text-free category writer and legacy-compatible offline reader preserve the stage exit code. No timing/page/task/consumer change followed. |
 | Failure-category reattachment | Data / Codex | Complete: post-writer `intraday-head-20260818T1924006306454Z` binds `collection_exit_nonzero / reason_unavailable` through `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T1924006306454Z/terminal.json` and `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T1924006306454Z.json`. |
 | Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but `retained_partial` with a successful collection outcome, so its compatibility-default `reason_unavailable` is noncomparable. No recovery proposal or behavior change followed. |
+| Static intraday Task-contract reattestation | Data / Codex | Complete: source-safe installed Task metadata and checked-in first `session-capture` route are all `matches`; no Task, Docker, KIS, collector, or broker invocation occurred. It closes static drift only. |
 | FirstRate source-local M1 normalization | Data / Codex | Complete: archive hashes/expected entries, strict decode, canonical output hashes, and timestamp-set equality are retained in the external normalization receipt. SPY/QQQ provider round-trip counts are 207,824/210,482; no promotion followed. |
 | FirstRate source-local timeframe mechanics | Data / Codex | Complete: canonical hashes reattached; actual UTC-anchored 1m/5m/10m/1h/3h outputs are aggregated only and each emitted bar passed source-bucket OHLCV/ordering/completion checks. No resampled rows, coverage, model, or Paper consumer followed. |
 | FirstRate source-local window preflight | Data / Engine Research | Complete: 32 frozen cells reattached canonical/mechanics hashes and retained only eligible-window count/end-timestamp-set hashes. No labels, features, predictions, GPU allocation, model selection, KIS, or Paper consumer followed. |
