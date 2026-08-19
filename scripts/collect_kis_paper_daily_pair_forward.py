@@ -49,11 +49,19 @@ _COLLECTOR_FAILURE_STAGES = (
     "commit",
 )
 _READINESS_FAILURE_STAGES = _COLLECTOR_FAILURE_STAGES[:2]
+_COMMIT_FAILURE_KIND_BY_EXCEPTION = MappingProxyType(
+    {
+        KisPaperDailyPairForwardCacheError: "cache_contract",
+        OSError: "storage",
+        ValueError: "validation",
+    }
+)
 _RUNTIME_CONTRACT = MappingProxyType(
     {
         "collector_failure_stages": _COLLECTOR_FAILURE_STAGES,
         "collector_unavailable_reason": "collector_unavailable",
-        "contract_id": "kis_paper_daily_pair_forward_stage_contract_v1",
+        "commit_failure_kinds": tuple(_COMMIT_FAILURE_KIND_BY_EXCEPTION.values()),
+        "contract_id": "kis_paper_daily_pair_forward_stage_contract_v2",
         "readiness_unavailable_reason": "readiness_unavailable",
         "receipt_kind": "kis_paper_daily_pair_forward_receipt",
     }
@@ -176,12 +184,13 @@ def _run_credentialed_collection(
                 observed_at=observed_at,
                 reason="token_request_not_due" if not token_request_is_due else "rate_limited",
             )
-        except (KisPaperDailyPairForwardCacheError, OSError, ValueError):
+        except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
             return _emit_collector_stage_unavailable(
                 artifact_root=artifact_root,
                 repository_root=repository_root,
                 observed_at=observed_at,
                 failure_stage="commit",
+                commit_failure_kind=_commit_failure_kind(error),
             )
         return _emit_source_safe_receipt(
             artifact_root=artifact_root,
@@ -235,12 +244,13 @@ def _run_credentialed_collection(
             observed_at=observation.observed_at,
         )
         payload = result.safe_payload()
-    except (KisPaperDailyPairForwardCacheError, OSError, ValueError):
+    except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
         return _emit_collector_stage_unavailable(
             artifact_root=artifact_root,
             repository_root=repository_root,
             observed_at=observed_at,
             failure_stage="commit",
+            commit_failure_kind=_commit_failure_kind(error),
         )
     return _emit_source_safe_receipt(
         artifact_root=artifact_root,
@@ -426,11 +436,22 @@ def _unavailable_payload(observed_at: datetime, reason: str) -> dict[str, object
 def _collector_unavailable_payload(
     observed_at: datetime,
     failure_stage: str,
+    *,
+    commit_failure_kind: str | None = None,
 ) -> dict[str, object]:
     if failure_stage not in _COLLECTOR_FAILURE_STAGES:
         raise ValueError("collector failure stage is invalid")
+    if failure_stage != "commit" and commit_failure_kind is not None:
+        raise ValueError("commit failure kind is invalid")
+    if (
+        commit_failure_kind is not None
+        and commit_failure_kind not in _COMMIT_FAILURE_KIND_BY_EXCEPTION.values()
+    ):
+        raise ValueError("commit failure kind is invalid")
     payload = _unavailable_payload(observed_at, "collector_unavailable")
     payload["failure_stage"] = failure_stage
+    if commit_failure_kind is not None:
+        payload["commit_failure_kind"] = commit_failure_kind
     return payload
 
 
@@ -457,14 +478,26 @@ def _emit_collector_stage_unavailable(
     repository_root: Path,
     observed_at: datetime,
     failure_stage: str,
+    commit_failure_kind: str | None = None,
 ) -> int:
     return _emit_source_safe_receipt(
         artifact_root=artifact_root,
         repository_root=repository_root,
         observed_at=observed_at,
-        payload=_collector_unavailable_payload(observed_at, failure_stage),
+        payload=_collector_unavailable_payload(
+            observed_at,
+            failure_stage,
+            commit_failure_kind=commit_failure_kind,
+        ),
         exit_code=_RECOVERY_EXIT,
     )
+
+
+def _commit_failure_kind(error: BaseException) -> str | None:
+    for exception_type, kind in _COMMIT_FAILURE_KIND_BY_EXCEPTION.items():
+        if isinstance(error, exception_type):
+            return kind
+    return None
 
 
 def _emit_readiness_stage_unavailable(

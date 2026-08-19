@@ -676,6 +676,25 @@ not its cause, a data availability fact, or a consumer qualification. Do not
 retry it; a later source/fixture-only fixed failure-kind change must precede any
 new collection objective.
 
+### Commit Failure Kind V2
+
+The source/fixture-only recovery changed the static pair-forward contract to v2
+(`sha256:82a72fb357f6d7ad8d3d8bb447cc4310461bdb9226afbca26e0e1ad9b42a8c1c`).
+Only a receipt already classified as `failure_stage=commit` may carry optional
+`payload.commit_failure_kind`. The only values are selected in fixed order from
+the caught exception family: `cache_contract`, `storage`, or `validation`. The
+value is a source constant; exception text, type name, path, raw data,
+credential, account data, and dynamic fields are never retained. A nonmatching
+exception omits the field, so this is partial diagnostics rather than an
+exhaustive runtime cause claim.
+
+The v2 hash intentionally differs from the v1 preflight and collector receipts.
+Do not compare them as matching runtime contracts. Before a future collection,
+build the same existing shared local tag and create one fresh credential-free,
+networkless v2 preflight. Only a matching `collection_required` preflight can
+precede one collector invocation; `cache_current` or `unavailable` closes that
+attempt without a collector call or retry.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

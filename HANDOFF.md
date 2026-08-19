@@ -414,6 +414,21 @@ the exact commit cause, so this one-shot is closed without retry, causal
 qualification, Research, Execution, Paper, or live consequence. The next
 bounded package is source/fixture-only fixed commit-failure classification.
 
+Claude's classification-boundary review returned `supported-with-limits`. The
+implemented v2 static contract adds an optional payload-only
+`commit_failure_kind`: fixed-order `cache_contract`, then `storage`, then
+`validation`; an unmatched exception omits the field. It never serializes the
+exception, message, class name, path, or dynamic value, and it is rejected on
+every non-`commit` stage. The static v2 contract hash is
+`sha256:82a72fb357f6d7ad8d3d8bb447cc4310461bdb9226afbca26e0e1ad9b42a8c1c`.
+Focused fixture tests cover all three mappings, the `OSError`-before-`ValueError`
+ordering, a private-detail canary, top-level schema stability, and no leakage to
+a later success receipt. This does not classify the completed v1 receipt or
+claim that the three categories exhaust runtime failures. It made no credential,
+KIS, Docker, cache-write, scheduler, Research, Execution, Paper, or live call.
+The next bounded Data action is a fresh credential-free v2 preflight; only its
+matching `collection_required` outcome can permit one new collector invocation.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

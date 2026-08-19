@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
+import io
+import json
 from datetime import UTC, datetime
 from pathlib import Path
 from types import SimpleNamespace
@@ -194,6 +196,46 @@ def test_token_deferral_keeps_its_existing_reason_outside_control_failure_bounda
     }
 
 
+def test_deferred_commit_failure_emits_fixed_storage_kind_without_loading_configuration(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+    private_detail = "private-defer-detail-canary"
+
+    monkeypatch.setattr(
+        script,
+        "KisPaperMarketDataTokenStartGate",
+        lambda **_kwargs: _TokenGate(False),
+    )
+    monkeypatch.setattr(script, "KisPaperMarketDataRateGate", lambda **_kwargs: _RateGate())
+    monkeypatch.setattr(
+        script,
+        "_defer_pair_cache",
+        lambda **_kwargs: (_ for _ in ()).throw(OSError(private_detail)),
+    )
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_environment_config",
+        lambda: pytest.fail("deferred commit failure must not load configuration"),
+    )
+    _capture_receipt(monkeypatch, script, tmp_path, emitted, "d")
+
+    exit_code = _run_credentialed_collection(script, tmp_path)
+
+    assert exit_code == 20
+    _assert_collector_stage(
+        emitted,
+        script,
+        "commit",
+        expected_commit_failure_kind="storage",
+    )
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    assert private_detail not in json.dumps(receipt, sort_keys=True)
+
+
 def test_environment_failure_emits_fixed_safe_stage_without_constructing_a_client(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
@@ -260,12 +302,26 @@ def test_collection_failure_emits_fixed_safe_stage_without_committing(
     _assert_collector_stage(emitted, script, "collection")
 
 
+@pytest.mark.parametrize(
+    ("error_factory", "expected_kind"),
+    [
+        (
+            lambda script, message: script.KisPaperDailyPairForwardCacheError(message),
+            "cache_contract",
+        ),
+        (lambda _script, message: OSError(message), "storage"),
+        (lambda _script, message: ValueError(message), "validation"),
+    ],
+)
 def test_commit_failure_emits_fixed_safe_stage_after_collection(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
+    error_factory: object,
+    expected_kind: str,
 ) -> None:
     script = _script_module()
     emitted: dict[str, object] = {}
+    private_detail = "private-detail-canary"
 
     _install_ready_gates(monkeypatch, script)
     monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", lambda: object())
@@ -288,7 +344,7 @@ def test_commit_failure_emits_fixed_safe_stage_after_collection(
         script,
         "commit_kis_paper_daily_pair_forward_observation",
         lambda **_kwargs: (_ for _ in ()).throw(
-            script.KisPaperDailyPairForwardCacheError("invalid")
+            error_factory(script, private_detail)  # type: ignore[operator]
         ),
     )
     _capture_receipt(monkeypatch, script, tmp_path, emitted, "g")
@@ -296,7 +352,82 @@ def test_commit_failure_emits_fixed_safe_stage_after_collection(
     exit_code = _run_credentialed_collection(script, tmp_path)
 
     assert exit_code == 20
-    _assert_collector_stage(emitted, script, "commit")
+    _assert_collector_stage(
+        emitted,
+        script,
+        "commit",
+        expected_commit_failure_kind=expected_kind,
+    )
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    assert set(receipt) == {"artifact_policy", "kind", "observed_at_bucket", "payload"}
+    assert private_detail not in json.dumps(receipt, sort_keys=True)
+
+
+def test_commit_failure_kind_uses_fixed_exception_order_and_omits_unmatched() -> None:
+    script = _script_module()
+
+    assert script._commit_failure_kind(io.UnsupportedOperation("canary")) == "storage"  # type: ignore[attr-defined]  # noqa: SLF001
+    assert script._commit_failure_kind(RuntimeError("canary")) is None  # type: ignore[attr-defined]  # noqa: SLF001
+
+
+def test_commit_failure_kind_is_limited_to_known_commit_payloads() -> None:
+    script = _script_module()
+    observed_at = datetime(2026, 8, 3, 21, tzinfo=UTC)
+
+    payload = script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+        observed_at,
+        "commit",
+        commit_failure_kind="storage",
+    )
+
+    assert payload["commit_failure_kind"] == "storage"
+    with pytest.raises(ValueError):
+        script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+            observed_at,
+            "collection",
+            commit_failure_kind="storage",
+        )
+    with pytest.raises(ValueError):
+        script._collector_unavailable_payload(  # type: ignore[attr-defined]  # noqa: SLF001
+            observed_at,
+            "commit",
+            commit_failure_kind="unexpected",
+        )
+
+
+def test_commit_failure_kind_does_not_bleed_into_a_later_success_receipt(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    receipts: list[dict[str, object]] = []
+
+    monkeypatch.setattr(
+        script,
+        "_write_source_safe_receipt",
+        lambda **kwargs: receipts.append(kwargs["receipt"])
+        or (tmp_path / f"receipt-{len(receipts)}.json", "sha256:" + "h" * 64),
+    )
+    observed_at = datetime(2026, 8, 3, 21, tzinfo=UTC)
+
+    script._emit_collector_stage_unavailable(  # type: ignore[attr-defined]  # noqa: SLF001
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repository",
+        observed_at=observed_at,
+        failure_stage="commit",
+        commit_failure_kind="storage",
+    )
+    script._emit_source_safe_receipt(  # type: ignore[attr-defined]  # noqa: SLF001
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repository",
+        observed_at=observed_at,
+        payload={"status": "ready"},
+        exit_code=0,
+    )
+
+    assert receipts[0]["payload"]["commit_failure_kind"] == "storage"
+    assert "commit_failure_kind" not in receipts[1]["payload"]
 
 
 def test_networkless_readiness_checks_only_control_and_aggregate_environment(
@@ -411,6 +542,11 @@ def test_runtime_contract_fingerprint_is_static_and_environment_independent(
         {**script._RUNTIME_CONTRACT, "collector_failure_stages": ("control_gate",)},
     )
     assert _runtime_contract_sha256(script) != baseline
+    assert script._RUNTIME_CONTRACT["commit_failure_kinds"] == (  # type: ignore[attr-defined]  # noqa: SLF001
+        "cache_contract",
+        "storage",
+        "validation",
+    )
 
 
 def test_source_safe_receipt_writer_uses_an_external_create_only_path(
@@ -587,6 +723,8 @@ def _assert_collector_stage(
     emitted: dict[str, object],
     script: object,
     expected_stage: str,
+    *,
+    expected_commit_failure_kind: str | None = None,
 ) -> None:
     receipt = emitted["receipt"]
     assert isinstance(receipt, dict)
@@ -596,6 +734,10 @@ def _assert_collector_stage(
     assert payload["reason"] == "collector_unavailable"
     assert payload["failure_stage"] == expected_stage
     assert payload["runtime_contract_sha256"] == _runtime_contract_sha256(script)
+    if expected_commit_failure_kind is None:
+        assert "commit_failure_kind" not in payload
+    else:
+        assert payload["commit_failure_kind"] == expected_commit_failure_kind
 
 
 def _runtime_contract_sha256(script: object) -> str:
