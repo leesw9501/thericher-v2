@@ -118,6 +118,7 @@ candidate matrix.
 | --- | --- | --- |
 | Qlib | MIT `architecture_reference_only` | No package, code, data, model, runtime, or campaign adoption. |
 | PatchTST | Apache-2.0 `future_sequence_architecture_reference` | General time-series claims only; financial pretraining/evaluation scope is not disclosed, and no runtime, code, weight, or campaign is adopted. |
+| TiDE | Apache-2.0 `future_mlp_multihorizon_baseline_reference` | Source-only reference for an observed-feature MLP encoder-decoder baseline. Its generic long-horizon benchmark, TensorFlow reference runtime, and any future-known market covariate are not adopted; a qualified campaign must independently prove causal feature availability. |
 | Temporal Fusion Transformer | Apache-2.0 `future_multihorizon_sequence_architecture_reference` | Source-only reference for a strict static/past-observed/known-future covariate partition. Its TensorFlow reference runtime, non-trading evaluation, and any future-known market feature are not adopted; a qualified KIS campaign must independently prove causal feature availability. |
 | FinRL | MIT `rl_environment_interface_reference_only` | Its official classic framework is an educational/research train-test-trade pipeline that assumes external data and a new DRL runtime. Exclude its data preprocessing, same-bar reward timing, and cost/fill conventions; only its environment-to-agent separation is a future allocation-design reference. No package, code, data, weight, runtime, campaign, or Paper route is adopted. |
 | Heston et al.; Gao et al. | Re-retrieved source-only completed-30-minute OHLCV mechanism references | Their claimed intraday continuation/momentum effects require a fresh, causal, full-session input and a separately frozen campaign before any test. No parameter, model, data, campaign, GPU, ensemble, or Paper adoption follows. |
@@ -128,6 +129,8 @@ Qlib evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qlib-architecture-source-20260809-r1\source-retrieval.json`.
 PatchTST source-only evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\patchtst-source-20260809-r1\source-retrieval.json`.
+TiDE source-only evidence:
+`D:\thericher-v2\model-artifacts\research\engine-source-retrieval\tide-multihorizon-source-20260819-r1\source-retrieval.json`.
 Temporal Fusion Transformer source-only evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\tft-multihorizon-source-20260819-r1\source-retrieval.json`.
 FinRL source-only evidence:
