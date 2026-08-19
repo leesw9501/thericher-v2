@@ -22,7 +22,9 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   attestation is `not_recorded`, so it cannot freeze a target, split, or
   30/60/90-minute candidate matrix. One direct host collection completed the
   two-target/four-page scope, but it has no Task/Docker provenance, causal
-  availability/finality evidence, or research-consumer promotion.
+  availability/finality evidence, or research-consumer promotion. The first
+  container attempt yielded at the shared token-start gate before a token POST,
+  so it likewise creates no dataset, target, split, or campaign change.
 - The RTX 4090 source-isolated Tiingo IEX r1 appointment completed and released
   its memory. Its M5-only masked reconstruction used the fixed
   LSTM/causal-TCN/compact-attention order with no target, holdout, selection,

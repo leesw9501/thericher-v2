@@ -221,6 +221,18 @@ model-input fact. Claude's next falsification-first review returned
 next objective isolates that container path without invoking a task or a
 downstream consumer.
 
+The first exact direct Compose-service probe completed with a scoped nonzero,
+not a Docker or provider failure claim. Its `session-capture` receipt is
+`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T131812782029Z-0caa1e559078804d.json`
+under `D:\market_data` (`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`):
+both allowlisted targets are `rejected/token_request_not_due`. The collector's
+shared source-safe token gate had a separate token-start reservation at
+`2026-08-19T13:15:01.522769Z` with a five-minute due time; it identifies no
+worker and proves only that this container attempt yielded before a token POST.
+No Task, account, order, Paper consumer, or live route ran. The next objective
+is one new post-gate Compose attempt with a non-mutating due precheck and its
+own atomic in-service claim; it has no foreground wait or retry loop.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

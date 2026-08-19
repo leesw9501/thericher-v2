@@ -2,13 +2,13 @@
 
 ## Objective
 
-Complete `kis-paper-intraday-container-collection-capability-probe-v1`: run
-the existing `kis-paper-intraday-head` Compose collector once, without the
-Windows task, to distinguish a containerized collector result from the now
-successful direct host collector and the earlier task-owned host-dispatch
-result. This advances the data recovery loop without treating any result as
-Scheduler origin, session completeness, finality, model eligibility,
-Paper-trading, or live evidence.
+Complete `kis-paper-intraday-container-post-gate-capability-probe-v1`: after
+the completed first container attempt yielded before any token POST because the
+shared token-start gate was not due, make one new, post-gate attempt through
+the exact existing `kis-paper-intraday-head` Compose collector. This separates
+a due-gate container result from the direct-host result and the task-owned
+host-dispatch result without treating any result as Scheduler origin, session
+completeness, finality, model eligibility, Paper-trading, or live evidence.
 
 ## Boundaries
 
@@ -35,35 +35,39 @@ Paper-trading, or live evidence.
 
 ## Required Work
 
-1. Reattest the existing service contract and focused tests before the call:
-   the exact Compose service must retain its allowlisted KIS Paper market-data
-   path, external roots, and no Paper/session/order consumer.
+1. Reattest the existing service contract, focused tests, and the shared
+   token-start gate before the call. The non-mutating gate check must report
+   `due`; if it does not, retain a scoped `deferred` result and do not invoke
+   Compose in this objective. A due precheck is advisory only; the service's
+   own atomic claim remains authoritative.
 2. Run exactly one direct Compose `session-capture` invocation with the
-   predeclared two-symbol/four-page scope. Capture no command output beyond an
-   allowlisted source-safe result. On a bounded failure, record the existing
-   closed category or `reason_unavailable`; do not retry in this objective.
+   predeclared two-symbol/four-page scope only when the precheck is due.
+   Capture no command output beyond an allowlisted source-safe result. On a
+   bounded failure or a lost atomic token race, record the existing closed
+   category or `reason_unavailable`; do not retry in this objective.
 3. Reattach only the exact probe-owned source-safe receipt/cache aggregate and
-   classify the result narrowly as `succeeded`, `nonzero`, or `unavailable`.
-   A container success does not prove a Windows Task/Scheduler cause; a
-   container nonzero does not prove a provider cause or authorize a collector
-   change.
+   classify the result narrowly as `succeeded`, `nonzero`, `deferred`, or
+   `unavailable`. A container success does not prove a Windows Task/Scheduler
+   cause; a container nonzero does not prove a provider cause or authorize a
+   collector change.
 4. Add only focused tests or a source-safe reader needed to prove the
-   container probe cannot read live/account/order credentials or invoke a
-   downstream Paper branch. Update Data, Engine Research, Execution,
-   orchestration,
-   `HANDOFF.md`, and `RUNBOOK.md` with the narrow result.
+   post-gate container probe cannot read live/account/order credentials or
+   invoke a downstream Paper branch. Update Data, Engine Research, Execution,
+   orchestration, `HANDOFF.md`, and `RUNBOOK.md` with the narrow result.
 5. Run required verification, commit, push, replace this file with exactly one
    material next company objective, and continue.
 
 ## Completion Evidence
 
-- One source-safe container-probe result for the exact bounded scope, with no
-  account/order/Paper/live call and no raw/secret/output retention.
+- One source-safe post-gate result for the exact bounded scope, with no
+  account/order/Paper/live call and no raw/secret/output retention; or a
+  source-safe `deferred` result with no Compose invocation.
 - Strongest kill test: a Compose route outside the named service, two symbols,
   four-page cap, named market-data path, off-mode/external-root policy, or
-  credential allowlist rejects before Docker or any KIS request; the probe
-  cannot call a Paper/session/order branch.
-- The conclusion stays asymmetric: it distinguishes only the containerized
-  collector result from the direct-host and prior task-owned host-dispatch
-  results, not Scheduler origin, provider cause, coverage, finality, model,
-  PnL, or live behavior.
+  credential allowlist rejects before Docker or any KIS request; a non-due
+  gate never launches Compose, and the probe cannot call a Paper/session/order
+  branch.
+- The conclusion stays asymmetric: it distinguishes only the new due-gate
+  containerized collector result from the direct-host and task-owned
+  host-dispatch results, not Scheduler origin, provider cause, coverage,
+  finality, model, PnL, or live behavior.

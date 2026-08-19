@@ -147,6 +147,17 @@ is one existing Compose-service invocation without a Windows Task, so the
 container path can be classified separately without changing pace, scheduling,
 or consumers.
 
+That first direct Compose-service invocation is now complete as a scoped
+nonzero. The exact source-safe receipt
+`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T131812782029Z-0caa1e559078804d.json`
+(`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`)
+records both fixed targets as `rejected/token_request_not_due`. A source-safe
+read of the shared gate observed a separate start at `2026-08-19T13:15:01.522769Z`
+and the installed 300-second due interval. Thus this attempt yielded before a
+token POST; it identifies no worker and does not diagnose Docker, KIS, or the
+provider. A new goal-owned post-gate attempt may make one fresh atomic claim;
+the completed attempt will not be retried inside this objective.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
@@ -159,6 +170,7 @@ or consumers.
 | Static intraday Task-contract reattestation | Data / Codex | Complete: installed Task enabled/action/triggers/settings and checked-in first `session-capture` runner/Compose route are all `matches`; the source-safe receipt is hash-bound and the audit invoked no Task, Docker, KIS, collector, or broker. It does not diagnose the existing terminal. |
 | Collection-dispatch boundary review | Data / Codex / Claude | Complete as no-change: the bound terminal already carries the returned host Docker-command exit for its exact collection call. A new marker would not diagnose Docker/container or provider behavior and would add diagnostic work before collection. |
 | Direct host collection capability probe | Data / Codex | Complete: one `QQQ/NAS` + `SPY/AMS` `session-capture` invocation at four pages per target completed with an exact unbound source-safe receipt. It established direct-host collector completion only; no Task, Docker, account, order, Paper consumer, or model behavior changed. |
+| First container collection capability probe | Data / Codex | Complete: one exact Compose invocation yielded `rejected/token_request_not_due` for both targets before a token POST. Its safe receipt does not diagnose Docker, KIS, or the provider; no Task, account, order, or consumer ran. |
 | IWM isolated current-head capture | Data | Complete: one fixed IWM/AMS page accepted with the replay-isolated source-safe receipt above; no retry, pagination, replay promotion, or consumer change followed. |
 | IWM isolated cache mechanics | Data | Complete: strict index identity binds the generic raw verifier, with replay-root, index-replacement, raw-tamper, and artifact-symlink rejection coverage. Only source-safe aggregate mechanics were emitted. |
 | IWM temporal-reach continuation probe | Data | Complete: one head was accepted, its continuation header was not recognized, and no second page was requested. The exact endpoint expansion path is closed without retry; the external receipt is the source-safe hash above. |
@@ -275,6 +287,9 @@ or consumers.
 - Direct host session-capture evidence:
   `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T130238145868Z-50e04e46fdb2e4e0.json`
   (`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`).
+- First container session-capture evidence:
+  `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T131812782029Z-0caa1e559078804d.json`
+  (`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`).
 - Later category-confirmation terminal and schedule evidence:
   `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T2120005941479Z/terminal.json`,
   `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T2120005941479Z.json`

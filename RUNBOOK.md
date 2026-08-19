@@ -1240,6 +1240,17 @@ That proves only the direct host collector path completed this scope; it is not
 Windows Task/Scheduler or Docker/container provenance, a complete session,
 provider finality, a model input, or an execution consumer.
 
+The first later direct Compose-service attempt did **not** exercise the token
+transport: its exact safe receipt
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T131812782029Z-0caa1e559078804d.json`
+(`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`)
+is `incomplete` with both targets `rejected/token_request_not_due`. The shared
+token-start gate had a separate recent reservation and rejected the attempt
+before a token POST; it identifies no owner and proves neither a Docker nor a
+KIS/provider failure. Treat its due time as the owning control's `next_due`,
+not a foreground sleep. A distinct goal may make one fresh atomic attempt only
+after a non-mutating due precheck; never retry this exact attempt.
+
 The one existing `thericher-kis-paper-intraday-head` task invokes this same
 capture mode before its bounded local and QQQ Paper consumers. It adds no new
 Windows task, and its page cap, concurrency, and collector exit authority stay

@@ -6,15 +6,15 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-paper-intraday-container-collection-capability-probe-v1` is ready. The
+`kis-paper-intraday-container-post-gate-capability-probe-v1` is ready. The
 completed static audit reattached the installed task and checked-in first
 `session-capture` route as source-safely `matches`; a direct host collector
 then completed the fixed two-target/four-page scope with safe receipt
 `sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`.
-The direct result is not Task or Docker provenance. Claude's
-falsification-first verdict is `supported-with-limits` for one exact existing
-Compose-service probe, which separates that container path without a Windows
-Task or downstream consumer.
+The first exact Compose attempt yielded before a token POST because the shared
+token-start gate was not due; its receipt is
+`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`.
+The current gate is due, so one new atomic post-gate service attempt is ready.
 
 ## Ready / Owned / Due
 
@@ -40,7 +40,8 @@ Task or downstream consumer.
 | Static intraday Task contract | Data / Codex | Installed Task metadata, checked-in runner/Compose, external source-safe receipt | Complete: enabled/action/triggers/settings/source all reattached as `matches` at `task_state: ready`; receipt `sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`. It is neither runtime execution nor a collector/provider diagnosis. |
 | Collection dispatch-boundary review | Data / Codex / Claude | Complete as no-change: a hash-bound terminal already records the returned host `docker.exe compose run` exit for its exact collection call. A second marker would not prove Docker/container entry or a collector/provider cause. |
 | Direct host collection capability probe | Data / Codex | Existing host collector and external head-cache receipt | Complete: `QQQ/NAS` and `SPY/AMS` completed one `session-capture` at the fixed four-page cap. The exact safe receipt is hash-bound; no Task, Docker, order, or consumer ran. |
-| Container collection capability probe | Data / Codex | Existing `kis-paper-intraday-head` Compose service | Ready: reattest the checked-in off-mode/credential/root contract, then invoke the existing service once without the Windows Task and retain only an exact safe result. |
+| First container collection capability probe | Data / Codex | Existing `kis-paper-intraday-head` Compose service | Complete: both targets returned `rejected/token_request_not_due` before a token POST. This is shared-gate evidence, not Docker/KIS/provider diagnosis. |
+| Post-gate container collection capability probe | Data / Codex | Existing `kis-paper-intraday-head` Compose service and shared token gate | Ready: only if a non-mutating precheck is due, make one new exact service invocation; its atomic claim remains authoritative and it never waits or retries. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -48,12 +49,12 @@ Task or downstream consumer.
 
 Fresh, KIS-reconstructible causal input coverage remains the predictive-engine
 bottleneck. The direct host collector now completes the bounded QQQ/SPY scope,
-while task-owned evidence still has one comparable `reason_unavailable`
-nonzero and one successful `retained_partial` terminal. The remaining runtime
-distinction is container path versus Windows Task path; coverage remains
-`incomplete/current_session_short`, decision-time availability and provider
-finality are unobserved, and no model input exists. Paper lifecycle reliability
-has a separate proof path and does not depend on resolving this Data diagnosis.
+while the first direct container attempt was pre-transport deferred by a recent
+separate token-start reservation. Task-owned evidence still has one comparable
+`reason_unavailable` nonzero and one successful `retained_partial` terminal.
+The remaining runtime distinction is a due-gate container path versus Windows
+Task path; coverage remains `incomplete/current_session_short`, decision-time
+availability and provider finality are unobserved, and no model input exists.
 
 ## Current Cross-Lane Decision
 
@@ -75,16 +76,18 @@ The completed static audit found no installed Task, runner, or Compose mismatch.
 The follow-on Claude challenge returned `supported-with-limits`: the existing
 bound terminal already proves only that its host Docker command returned, while
 a new marker would not isolate Docker/container entry or collector/provider
-behavior. The direct data-only probe then completed, so one exact existing
-Compose-service call is now the narrower remaining container-path test; it does
-not change task timing, pace, route, or consumer behavior.
+behavior. The first direct Compose call then yielded at the shared gate before
+transport, so it did not exercise the container collector. The gate's retained
+timing fact is now due; one new atomic post-gate call is the narrower remaining
+container-path test and does not change task timing, pace, route, or consumer
+behavior.
 
 ## Current Reversible Improvement
 
 The completed inventory makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is one bounded existing Compose
-collector probe, which can separate a containerized result from the proven
-direct-host collector without adding a Task, schedule, marker family, or
+explicit. The immediate reversible improvement is one bounded post-gate Compose
+collector probe, which can actually exercise the container path after the first
+pre-transport deferral without adding a Task, schedule, marker family, or
 downstream consumer.
 
 For verification throughput, use
@@ -100,5 +103,5 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based recovery proposal is active. A later recovery investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current next
-action is one bounded existing Compose collection capability probe while the
+action is one bounded post-gate Compose collection capability probe while the
 later-terminal reattachment remains task-owned and non-foreground.
