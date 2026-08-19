@@ -77,8 +77,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   identities. A mismatched receipt/binding reference fails closed.
 - The local-Paper replay now retains both entry and exit decision identities on
   valid FIFO close segments, with separate role and pair accounting totals.
-  This is future PnL-attribution plumbing only: it neither assigns causal
-  credit nor changes the lack of a qualified dataset, candidate, model,
+  Its pure receipt resolver attaches only exact opaque campaign/model/input/
+  proposal lineage and fails closed on missing, duplicate, role, or instrument
+  mismatch. This is future PnL-attribution plumbing only: it neither assigns
+  causal credit nor changes the lack of a qualified dataset, candidate, model,
   execution result, or Paper outcome.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it

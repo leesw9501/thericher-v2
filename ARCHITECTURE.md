@@ -210,6 +210,13 @@ improves the PnL-attribution loop without assigning causal credit: it rejects
 missing, duplicate, mismatched, inactive, or oversold local history and never
 claims broker PnL, alpha, model performance, or Paper-account results.
 
+Engine Research can resolve each closed segment against exactly-once canonical
+decision receipts, retaining only opaque campaign, model, input, and proposal
+references alongside the existing arithmetic. Missing, duplicate,
+role-incompatible, or instrument-incompatible receipts fail closed. This is
+receipt-to-accounting provenance only: it neither establishes timing causality
+nor turns local Paper arithmetic into a model-performance or broker-PnL claim.
+
 ### Ownership Boundary
 
 - **Data** owns the point-in-time eligibility facts, calendars, completed-bar

@@ -268,6 +268,65 @@ class LocalPaperDecisionPnl:
     decision_pair_totals: tuple[LocalPaperDecisionPairPnlTotal, ...]
     schema_version: int = SCHEMA_VERSION
 
+    def __post_init__(self) -> None:
+        if (
+            self.schema_version != SCHEMA_VERSION
+            or not isinstance(self.aggregate, LocalPaperRealizedPnl)
+            or self.aggregate.schema_version != SCHEMA_VERSION
+            or not isinstance(self.closed_segments, tuple)
+            or not isinstance(self.entry_decision_totals, tuple)
+            or not isinstance(self.exit_decision_totals, tuple)
+            or not isinstance(self.decision_pair_totals, tuple)
+        ):
+            raise ValueError("local-paper decision PnL projection is invalid")
+        if any(
+            not isinstance(segment, LocalPaperDecisionPnlSegment)
+            or segment.schema_version != SCHEMA_VERSION
+            for segment in self.closed_segments
+        ):
+            raise ValueError("local-paper decision PnL segments are invalid")
+        totals = (
+            *self.entry_decision_totals,
+            *self.exit_decision_totals,
+            *self.decision_pair_totals,
+        )
+        if any(
+            not isinstance(
+                total,
+                LocalPaperDecisionPnlTotal | LocalPaperDecisionPairPnlTotal,
+            )
+            or total.schema_version != SCHEMA_VERSION
+            for total in totals
+        ):
+            raise ValueError("local-paper decision PnL totals are invalid")
+        if (
+            self.aggregate.closed_segment_count != len(self.closed_segments)
+            or self.aggregate.closed_quantity
+            != sum((segment.quantity for segment in self.closed_segments), Decimal("0"))
+            or self.aggregate.realized_after_cost_pnl
+            != sum(
+                (segment.realized_after_cost_pnl for segment in self.closed_segments),
+                Decimal("0"),
+            )
+        ):
+            raise ValueError("local-paper decision PnL does not reconcile closed segments")
+        if self.closed_segments and self.aggregate.local_paper_fill_count < len(
+            self.closed_segments
+        ) + 1:
+            raise ValueError("local-paper decision PnL fill count cannot close its segments")
+        if self.entry_decision_totals != _decision_pnl_totals(
+            self.closed_segments,
+            role="entry",
+        ):
+            raise ValueError("local-paper decision PnL entry totals do not reconcile")
+        if self.exit_decision_totals != _decision_pnl_totals(
+            self.closed_segments,
+            role="exit",
+        ):
+            raise ValueError("local-paper decision PnL exit totals do not reconcile")
+        if self.decision_pair_totals != _decision_pair_pnl_totals(self.closed_segments):
+            raise ValueError("local-paper decision PnL pair totals do not reconcile")
+
 
 @dataclass(frozen=True)
 class LocalPaperExecutionResult:
