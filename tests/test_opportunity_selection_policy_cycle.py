@@ -164,6 +164,53 @@ def test_selected_lineage_replays_the_full_cohort_then_binds_a_local_paper_recei
     assert bridge.kis_paper_decision is None
 
 
+def test_lineage_binds_nonselected_source_attestation_even_when_results_match() -> None:
+    entries, outcomes = _cycle()
+    original = build_selected_selection_policy_proposal_lineage(
+        outcomes,
+        entries=entries,
+        selection_config=_selection_config(),
+        selection_context=_selection_context(),
+        policy_config=_policy_config(),
+        allocation_config=_allocation_config(),
+        symbol="QQQ",
+        market="US",
+    )
+    dia = next(entry for entry in entries if entry.identity == ("US", "DIA"))
+    attestation = dia.selection_entry.source_eligibility
+    changed_attestation = adapt_current_source_opportunity_eligibility(
+        attestation.upstream_candidate,
+        replace(
+            attestation.source,
+            valid_until=attestation.source.valid_until + timedelta(seconds=30),
+        ),
+        expected_contract=attestation.expected_contract,
+        as_of=attestation.as_of,
+    )
+    changed_dia = replace(
+        dia,
+        selection_entry=replace(dia.selection_entry, source_eligibility=changed_attestation),
+    )
+    changed_entries = tuple(changed_dia if entry is dia else entry for entry in entries)
+    changed_outcomes = _outcomes(changed_entries)
+    changed = build_selected_selection_policy_proposal_lineage(
+        changed_outcomes,
+        entries=changed_entries,
+        selection_config=_selection_config(),
+        selection_context=_selection_context(),
+        policy_config=_policy_config(),
+        allocation_config=_allocation_config(),
+        symbol="QQQ",
+        market="US",
+    )
+
+    assert attestation != changed_attestation
+    assert _cycle_summary(outcomes) == _cycle_summary(changed_outcomes)
+    assert original.selection_ref == changed.selection_ref
+    assert original.cohort_ref != changed.cohort_ref
+    assert original.proposal_ref != changed.proposal_ref
+
+
 def test_lineage_rejects_a_nonselected_or_tampered_selection_cohort() -> None:
     entries, outcomes = _cycle()
     with pytest.raises(ValueError, match="only for a selected outcome"):

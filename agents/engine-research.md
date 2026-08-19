@@ -88,9 +88,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 - For a selected candidate only, Research now replays the entire supplied
   selection, per-symbol policy, and allocation cycle from the original inputs
   and frozen configs before issuing an opaque lineage `proposal_ref` for the
-  existing decision-receipt and local-paper bridge. A substituted downstream
-  target fails closed. It still proves neither a complete universe nor a
-  predictive score or Execution correctness; a mismatched receipt/binding
+  existing decision-receipt and local-paper bridge. Cohort lineage commits the
+  full source attestation of every selected and not-selected candidate, so a
+  changed valid source time/state cannot reuse a prior lineage. A substituted
+  downstream target fails closed. It still proves neither a complete universe
+  nor a predictive score or Execution correctness; a mismatched receipt/binding
   reference also fails closed.
 - The local-Paper replay now retains both entry and exit decision identities on
   valid FIFO close segments, with separate role and pair accounting totals.

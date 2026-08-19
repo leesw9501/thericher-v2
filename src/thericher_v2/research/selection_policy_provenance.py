@@ -14,6 +14,9 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from typing import Final
 
+from thericher_v2.models.current_source_opportunity_eligibility import (
+    CurrentSourceOpportunityEligibility,
+)
 from thericher_v2.models.opportunity_selection import (
     OpportunitySelectionConfig,
     OpportunitySelectionContext,
@@ -24,9 +27,12 @@ from thericher_v2.models.opportunity_selection_policy_cycle import (
     evaluate_opportunity_selection_policy_cycle,
 )
 from thericher_v2.models.target_exposure_allocator import TargetExposureAllocationConfig
-from thericher_v2.models.target_position_policy import TargetPositionPolicyConfig
+from thericher_v2.models.target_position_policy import (
+    OpportunityEligibility,
+    TargetPositionPolicyConfig,
+)
 
-SELECTION_POLICY_LINEAGE_SCHEMA_ID = "selection-policy-lineage-v1"
+SELECTION_POLICY_LINEAGE_SCHEMA_ID = "selection-policy-lineage-v2"
 _OPAQUE_REFERENCE: Final = re.compile(r"ref:[0-9a-f]{32,128}", re.ASCII)
 
 
@@ -136,7 +142,7 @@ def build_selected_selection_policy_proposal_lineage(
     )
     policy_outcome = selected.policy_cycle_outcome
     proposal_ref = _opaque_reference(
-        kind="selection_policy_proposal_lineage_v1",
+        kind="selection_policy_proposal_lineage_v2",
         payload={
             "cohort_ref": cohort_ref,
             "selection_ref": selected.selection_outcome.entry.selection_ref,
@@ -166,7 +172,7 @@ def _cohort_ref(
     allocation_config: TargetExposureAllocationConfig,
 ) -> str:
     return _opaque_reference(
-        kind="selection_policy_cohort_lineage_v1",
+        kind="selection_policy_cohort_lineage_v2",
         payload={
             "schema_id": SELECTION_POLICY_LINEAGE_SCHEMA_ID,
             "selector_id": selection_config.selector_id,
@@ -203,7 +209,7 @@ def _cohort_ref(
 def _candidate_payload(outcome: OpportunitySelectionPolicyCycleOutcome) -> dict[str, object]:
     selection = outcome.selection_outcome
     entry = selection.entry
-    source = entry.source_eligibility
+    source_attestation = entry.source_eligibility
     policy = outcome.policy_cycle_outcome
     return {
         "market": entry.identity[0],
@@ -212,8 +218,7 @@ def _candidate_payload(outcome: OpportunitySelectionPolicyCycleOutcome) -> dict[
         "selection_score": str(entry.selection_score),
         "score_observed_at": entry.score_observed_at.isoformat(),
         "score_valid_until": entry.score_valid_until.isoformat(),
-        "source_contract_id": source.expected_contract.contract_id,
-        "source_contract_hash": source.expected_contract.contract_hash,
+        "source_attestation": _source_attestation_payload(source_attestation),
         "selected": selection.selected,
         "selection_rank": selection.selection_rank,
         "reason": selection.reason,
@@ -221,6 +226,45 @@ def _candidate_payload(outcome: OpportunitySelectionPolicyCycleOutcome) -> dict[
         "allocated_proposal_id": policy.allocated_proposal.proposal_id
         if policy is not None
         else None,
+    }
+
+
+def _source_attestation_payload(
+    attestation: CurrentSourceOpportunityEligibility,
+) -> dict[str, object]:
+    """Commit every caller-supplied source-attestation field into lineage."""
+
+    return {
+        "upstream_candidate": _opportunity_eligibility_payload(attestation.upstream_candidate),
+        "source": {
+            "contract_id": attestation.source.contract.contract_id,
+            "contract_hash": attestation.source.contract.contract_hash,
+            "symbol": attestation.source.symbol,
+            "market": attestation.source.market,
+            "input_status": attestation.source.input_status,
+            "complete": attestation.source.complete,
+            "observed_at": attestation.source.observed_at.isoformat(),
+            "valid_until": attestation.source.valid_until.isoformat(),
+        },
+        "expected_contract": {
+            "contract_id": attestation.expected_contract.contract_id,
+            "contract_hash": attestation.expected_contract.contract_hash,
+        },
+        "as_of": attestation.as_of.isoformat(),
+        "projected_eligibility": _opportunity_eligibility_payload(attestation.eligibility),
+        "reason": attestation.reason,
+    }
+
+
+def _opportunity_eligibility_payload(value: OpportunityEligibility) -> dict[str, object]:
+    return {
+        "opportunity_ref": value.opportunity_ref,
+        "symbol": value.symbol,
+        "market": value.market,
+        "eligible": value.eligible,
+        "input_status": value.input_status,
+        "observed_at": value.observed_at.isoformat(),
+        "valid_until": value.valid_until.isoformat(),
     }
 
 
