@@ -119,6 +119,28 @@ def test_bar_csv_round_trip_and_local_provider(tmp_path) -> None:
     assert bar_from_record(bar_to_record(incomplete)) == incomplete
 
 
+def test_local_provider_rejects_duplicate_timestamps_in_direct_stream(tmp_path) -> None:
+    csv_path = tmp_path / "bars.csv"
+    source_bars = [_bar(index) for index in range(6)]
+    duplicate = replace(source_bars[2], volume=Decimal("999"))
+    with csv_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
+        writer.writeheader()
+        writer.writerows(bar_to_record(bar) for bar in [*source_bars, duplicate])
+
+    provider = LocalCsvBarProvider(csv_path)
+    query = BarQuery(
+        symbol="AAPL",
+        market="US",
+        timeframe=Timeframe.M1,
+        start_ts=datetime(2026, 1, 2, 0, 0, tzinfo=UTC),
+        end_ts=datetime(2026, 1, 2, 0, 6, tzinfo=UTC),
+    )
+
+    with pytest.raises(ValueError, match="duplicate bar timestamps"):
+        provider.get_bars(query)
+
+
 def test_bar_from_record_rejects_naive_timestamps() -> None:
     record = bar_to_record(_bar(0))
     record["start_ts"] = "2026-01-02T00:00:00"

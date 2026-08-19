@@ -169,6 +169,10 @@ disabled.
   incomplete source record. `Bar` has no source-revision or observation-order
   provenance, so upstream Data reconciliation must resolve a later revision
   before a complete duplicate can be used.
+- A direct `LocalCsvBarProvider` query rejects duplicate returned timestamps
+  rather than silently returning an ambiguous M1 stream. This is source-local
+  query integrity only; it does not infer revisions, session continuity, or
+  promotion eligibility.
 - A cumulative intraday session with a non-`none`
   `conflicting_overlap_category` is metadata-conflicted even when its
   expected-minute count is complete. The current capture-category projection
