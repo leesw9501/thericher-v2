@@ -128,6 +128,16 @@ It read no current marker pointer and invoked no Task, Docker, KIS, broker, or
 collector. It supplies static-contract evidence only, so the known terminal
 remains `reason_unavailable` without a runtime or provider diagnosis.
 
+The bounded collection-dispatch review then verified from the existing runner
+and terminal contract that an already bound `collection_exit_nonzero` terminal
+is written only after `Invoke-HeadProfileService` has returned the host
+`docker.exe compose run` exit code. Claude's falsification-first result was
+`supported-with-limits`: a further per-call marker would duplicate that exact
+returned-boundary evidence for the known terminal while adding another
+diagnostic write to the pre-collection path. This proves neither Docker/container
+entry nor collector/KIS/provider behavior. No duplicate marker was added; the
+next useful Data action is one bounded direct data-only collection probe.
+
 ## Ready / Owned / Due
 
 | Work | Owner | Completion evidence |
@@ -138,6 +148,7 @@ remains `reason_unavailable` without a runtime or provider diagnosis.
 | Failure-category reattachment | Data / Codex | Complete: post-writer `intraday-head-20260818T1924006306454Z` reattached as `collection_exit_nonzero / reason_unavailable` through exact hash-bound terminal and schedule receipts. No timing, pages, task, or consumer behavior changed. |
 | Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but successful and `retained_partial`, so the preserved default category is noncomparable. No recovery proposal or behavior change followed. |
 | Static intraday Task-contract reattestation | Data / Codex | Complete: installed Task enabled/action/triggers/settings and checked-in first `session-capture` runner/Compose route are all `matches`; the source-safe receipt is hash-bound and the audit invoked no Task, Docker, KIS, collector, or broker. It does not diagnose the existing terminal. |
+| Collection-dispatch boundary review | Data / Codex / Claude | Complete as no-change: the bound terminal already carries the returned host Docker-command exit for its exact collection call. A new marker would not diagnose Docker/container or provider behavior and would add diagnostic work before collection. |
 | IWM isolated current-head capture | Data | Complete: one fixed IWM/AMS page accepted with the replay-isolated source-safe receipt above; no retry, pagination, replay promotion, or consumer change followed. |
 | IWM isolated cache mechanics | Data | Complete: strict index identity binds the generic raw verifier, with replay-root, index-replacement, raw-tamper, and artifact-symlink rejection coverage. Only source-safe aggregate mechanics were emitted. |
 | IWM temporal-reach continuation probe | Data | Complete: one head was accepted, its continuation header was not recognized, and no second page was requested. The exact endpoint expansion path is closed without retry; the external receipt is the source-safe hash above. |

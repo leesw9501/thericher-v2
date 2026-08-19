@@ -1108,6 +1108,14 @@ read or retain command output or exception text as a shortcut: any future
 localization receipt must use a closed allowlist of categorical codes and keep
 the original stage exit separately intact.
 
+For an already bound terminal, `collection_outcome` is written only after the
+runner's `Invoke-HeadProfileService` call has returned a host
+`docker.exe compose run` exit code. This proves neither Docker/container entry
+nor collector, KIS, or provider behavior. Do not add a duplicate pre/post
+marker merely to restate that returned boundary; a direct data-only collector
+probe is the narrower way to separate collector/provider behavior from the
+task-owned host path.
+
 Future terminal markers may carry only `reason_unavailable`,
 `dispatcher_config`, or `collector_provider`. The dispatcher derives that field
 in memory from exactly one existing structured collector error payload; malformed,

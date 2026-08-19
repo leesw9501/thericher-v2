@@ -6,13 +6,14 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-intraday-head-collection-dispatch-boundary-v1` is ready. Its completed
-static-audit predecessor reattached the installed
-`thericher-kis-paper-intraday-head` Task and checked-in first `session-capture`
-runner/Compose route as source-safely `matches`, with no Task, Docker, KIS,
-collector, or broker invocation. The new objective closes only the next host
-dispatch observability gap; it leaves task-owned later-terminal monitoring and
-all model, GPU, order, PnL, and live boundaries unchanged.
+`kis-paper-intraday-direct-collection-capability-probe-v1` is ready. The
+completed static audit reattached the installed task and checked-in first
+`session-capture` route as source-safely `matches`. The ensuing
+falsification-first review established that a bound existing terminal already
+contains the returned host Docker-command exit for its collection call, so a
+new marker would duplicate evidence without isolating a container or provider
+cause. The next objective instead uses one bounded direct KIS Paper data-only
+probe to separate collector/provider behavior from task-owned host dispatch.
 
 ## Ready / Owned / Due
 
@@ -36,6 +37,7 @@ all model, GPU, order, PnL, and live boundaries unchanged.
 | Intraday M1 coverage | Data | Existing task image and source-safe terminal projection | The 2026-08-17 task-owned terminal reattached as `complete` with verified coverage/availability bindings, matching the 2026-08-15 `input_unavailable/session_coverage_incomplete/current_session_short` topology. The new writer leaves it unbound by default. |
 | Capture topology and markers | Data / Codex | Existing task, cache metadata, external artifact root | The first post-writer marker is one comparable `collection_exit_nonzero / reason_unavailable` binding. The later hash-bound marker is successful but `retained_partial`, so its default category is noncomparable. No recovery proposal exists. |
 | Static intraday Task contract | Data / Codex | Installed Task metadata, checked-in runner/Compose, external source-safe receipt | Complete: enabled/action/triggers/settings/source all reattached as `matches` at `task_state: ready`; receipt `sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`. It is neither runtime execution nor a collector/provider diagnosis. |
+| Collection dispatch-boundary review | Data / Codex / Claude | Complete as no-change: a hash-bound terminal already records the returned host `docker.exe compose run` exit for its exact collection call. A second marker would not prove Docker/container entry or a collector/provider cause. |
 | D1 stability and quote-session lifecycle | Data / Execution | Existing scheduled observers | Each owns its next due time and reattaches only source-safe scoped evidence. Neither blocks the completed Tiingo integration or next ready objective. |
 | Loopback Paper dashboard | Execution / Infra | Existing loopback service | Available as a credential-free operational surface; the Tiingo receipt has no execution consumer. |
 
@@ -68,18 +70,19 @@ output is usable only as source-isolated mechanics, not a qualified input. This
 does not qualify research input or change Paper behavior.
 
 The completed static audit found no installed Task, runner, or Compose mismatch.
-It reuses the already-attested terminal only as context, does not reselect a
-current marker, and does not diagnose runtime behavior. The next bounded
-recovery package can therefore isolate the existing Docker collection-dispatch
-boundary without changing schedule timing, pace, route, or consumer behavior.
+The follow-on Claude challenge returned `supported-with-limits`: the existing
+bound terminal already proves only that its host Docker command returned, while
+a new marker would not isolate Docker/container entry or collector/provider
+behavior. The direct data-only probe is the narrower next recovery package; it
+does not change task timing, pace, route, or consumer behavior.
 
 ## Current Reversible Improvement
 
 The completed inventory makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is a closed, source-safe
-collection-dispatch boundary for future task-owned runs, so a later terminal can
-separate an unreached dispatch from a returned Docker call without retaining
-output or changing collection behavior.
+explicit. The immediate reversible improvement is one bounded direct
+KIS-Paper-data probe through the existing collector path, which can separate a
+direct collector/provider result from task-owned host dispatch without adding a
+new schedule, marker family, or downstream consumer.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -94,5 +97,5 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based recovery proposal is active. A later recovery investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current next
-action is a bounded dispatch-boundary package while the later-terminal
-reattachment remains task-owned and non-foreground.
+action is one bounded direct collection capability probe while the
+later-terminal reattachment remains task-owned and non-foreground.

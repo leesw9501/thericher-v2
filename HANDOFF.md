@@ -199,6 +199,16 @@ host-side dispatch boundary evidence for future task-owned runs. It must not
 change the existing task timing, collector behavior, Docker profile, KIS route,
 or conditional Paper branch.
 
+That follow-on review is complete as no-change. Claude returned
+`supported-with-limits`, and the source check agrees: for an already bound
+terminal, the runner captures the return from its exact
+`Invoke-HeadProfileService`/host Docker command before it writes
+`collection_outcome`. A new pre/post marker would neither prove container entry
+nor identify a collector/provider cause, while adding another diagnostic step to
+the pre-collection path. The next objective is therefore one bounded direct
+KIS Paper data-only collection capability probe, with no order, account, live,
+or scheduler action.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath
