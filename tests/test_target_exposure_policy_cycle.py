@@ -9,6 +9,10 @@ from decimal import Decimal
 import pytest
 
 from thericher_v2.contracts import ModelPrediction, Signal, Timeframe
+from thericher_v2.execution.paper_decision_bridge import (
+    LocalPaperTargetBinding,
+    prepare_local_paper_intent,
+)
 from thericher_v2.models.target_exposure_allocator import (
     TargetExposureAllocationConfig,
     TargetExposureAllocationInput,
@@ -20,6 +24,10 @@ from thericher_v2.models.target_exposure_policy_cycle import (
 from thericher_v2.models.target_position_policy import (
     OpportunityEligibility,
     TargetPositionPolicyConfig,
+)
+from thericher_v2.research.decision_receipt import (
+    DecisionReceiptReferences,
+    receipt_from_target_exposure_proposal,
 )
 
 _NOW = datetime(2026, 8, 1, 15, 0, tzinfo=UTC)
@@ -113,6 +121,37 @@ def test_current_exposure_must_match_the_allocation_snapshot() -> None:
             current_exposure=Decimal("0.10"),
             allocation=_allocation(current_symbol_exposure="0"),
         )
+
+
+def test_allocated_target_composes_only_with_the_local_paper_bridge() -> None:
+    outcome = evaluate_target_exposure_policy_cycle(
+        (_entry("QQQ"),),
+        policy_config=_policy_config(),
+        allocation_config=_allocation_config(),
+        as_of=_NOW,
+    )[0]
+    receipt = receipt_from_target_exposure_proposal(
+        outcome.allocated_proposal,
+        references=_references(),
+    )
+
+    bridge = prepare_local_paper_intent(
+        receipt,
+        binding=LocalPaperTargetBinding(
+            proposal_ref="ref:" + "4" * 64,
+            symbol="QQQ",
+            target_exposure=outcome.allocated_proposal.target_exposure,
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("10"),
+        ),
+        as_of=_NOW,
+    )
+
+    assert bridge.route == "local_paper"
+    assert bridge.status == "ready"
+    assert bridge.kis_paper_decision is None
+    assert bridge.local_paper_intent is not None
+    assert bridge.local_paper_intent.quantity == Decimal("3.00")
 
 
 def test_cycle_is_pure_and_needs_no_external_state(
@@ -234,6 +273,15 @@ def _policy_config() -> TargetPositionPolicyConfig:
 
 def _allocation_config() -> TargetExposureAllocationConfig:
     return TargetExposureAllocationConfig(allocator_id="target-policy-cycle-test-v1")
+
+
+def _references() -> DecisionReceiptReferences:
+    return DecisionReceiptReferences(
+        campaign_ref="ref:" + "1" * 64,
+        model_ref="ref:" + "2" * 64,
+        input_manifest_ref="sha256:" + "3" * 64,
+        proposal_ref="ref:" + "4" * 64,
+    )
 
 
 def _deny_external_access(monkeypatch: pytest.MonkeyPatch) -> None:
