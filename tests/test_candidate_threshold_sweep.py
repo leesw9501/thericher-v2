@@ -279,6 +279,59 @@ def test_candidate_threshold_sweep_rejects_trace_with_mismatched_model_digest(
     assert not (result.sweep_artifact.parent / "variants").exists()
 
 
+def test_candidate_threshold_sweep_clears_prior_variant_replay_when_trace_is_unbound(
+    tmp_path,
+) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    model_artifact = _model_artifact(tmp_path)
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    comparison_artifact = _comparison_artifact(tmp_path)
+    config = CandidateThresholdSweepConfig(
+        run_id="trace-cleanup-threshold-sweep",
+        max_bars=40,
+        threshold_pairs=((0.70, 0.30),),
+    )
+    seed = run_bounded_candidate_threshold_sweep(
+        config=config,
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        comparison_artifact=comparison_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=_alternating_probability_runner,
+    )
+    variant_dir = seed.sweep_artifact.parent / "variants" / "t01_b0p700_s0p300"
+    assert (variant_dir / "events.jsonl").exists()
+    assert (variant_dir / "state.sqlite").exists()
+    trace_payload = json.loads(seed.probability_trace_artifact.read_text(encoding="utf-8"))
+    trace_payload["model_artifact_sha256"] = f"sha256:{'0' * 64}"
+    seed.probability_trace_artifact.write_text(
+        json.dumps(trace_payload),
+        encoding="utf-8",
+    )
+
+    result = run_bounded_candidate_threshold_sweep(
+        config=config,
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        probability_trace_artifact=seed.probability_trace_artifact,
+        comparison_artifact=comparison_artifact,
+        gpu=GpuReadiness(
+            available=False,
+            detail="not needed when rejecting probability trace",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+    )
+
+    assert result.status == "prepared_not_swept"
+    assert result.variants[0].status == "prepared_not_replayed"
+    assert result.variants[0].events_artifact is None
+    assert not (variant_dir / "events.jsonl").exists()
+    assert not (variant_dir / "state.sqlite").exists()
+
+
 def test_candidate_threshold_sweep_missing_model_is_prepared(tmp_path) -> None:
     missing_model = tmp_path / "missing-model.pt"
     training_artifact = _training_metrics_artifact(tmp_path, missing_model)

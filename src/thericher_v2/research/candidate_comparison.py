@@ -178,6 +178,7 @@ def run_bounded_candidate_replay_comparison(
     _reject_repo_artifact_path(artifact_root, repo_root)
     output_dir = artifact_root / "candidate-replay-comparison" / config.run_id
     output_dir.mkdir(parents=True, exist_ok=True)
+    _clear_baseline_event_artifacts(output_dir)
     comparison_artifact = output_dir / "metrics.json"
     gpu = gpu or detect_gpu_readiness()
 
@@ -201,13 +202,30 @@ def run_bounded_candidate_replay_comparison(
         yahoo_snapshot=yahoo_snapshot,
         symbol=symbol or _payload_string(candidate_payload, "symbol"),
     )
-    baseline = _run_momentum_baseline(
-        config=config,
-        source=source,
-        output_dir=output_dir,
-    )
     candidate_metrics = _candidate_metrics_from_payload(candidate_payload)
     source_alignment = _source_alignment(candidate_payload, source)
+    candidate_replay_ready = (
+        candidate_error is None
+        and candidate_metrics.get("status") == "candidate_replayed_only"
+        and source_alignment["same_bar_evidence"]
+    )
+    baseline = (
+        _run_momentum_baseline(
+            config=config,
+            source=source,
+            output_dir=output_dir,
+        )
+        if candidate_replay_ready
+        else _prepared_baseline_result(
+            config=config,
+            source=source,
+            baseline_events=output_dir / "baseline-events.jsonl",
+            reason=(
+                "baseline replay deferred until candidate replay evidence is "
+                "completed and aligned"
+            ),
+        )
+    )
     status, reason = _comparison_status_and_reason(
         candidate_error=candidate_error,
         candidate_metrics=candidate_metrics,
@@ -576,12 +594,24 @@ def _candidate_replay_config(
     )
 
 
+def _clear_baseline_event_artifacts(output_dir: Path) -> None:
+    for filename in (
+        "baseline-emergency.json",
+        "baseline-events.jsonl",
+        "baseline-state.sqlite",
+        "baseline-state.sqlite-journal",
+        "baseline-state.sqlite-shm",
+        "baseline-state.sqlite-wal",
+    ):
+        path = output_dir / filename
+        if path.is_file() or path.is_symlink():
+            path.unlink()
+
+
 def _fresh_baseline_event_store(output_dir: Path) -> EventStore:
+    _clear_baseline_event_artifacts(output_dir)
     db_path = output_dir / "baseline-state.sqlite"
     jsonl_path = output_dir / "baseline-events.jsonl"
-    for path in (db_path, output_dir / "baseline-state.sqlite-journal", jsonl_path):
-        if path.exists():
-            path.unlink()
     return EventStore(db_path, jsonl_path)
 
 

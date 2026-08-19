@@ -234,6 +234,7 @@ def run_bounded_candidate_threshold_sweep(
     _reject_repo_artifact_path(artifact_root, repo_root)
     output_dir = artifact_root / "candidate-threshold-sweep" / config.run_id
     output_dir.mkdir(parents=True, exist_ok=True)
+    _clear_threshold_variant_replay_artifacts(output_dir, config)
     sweep_artifact = output_dir / "metrics.json"
     gpu = gpu or detect_gpu_readiness()
 
@@ -1173,6 +1174,28 @@ def _prepared_variant(
         deltas={},
         events_artifact=events_artifact,
     )
+
+
+def _clear_threshold_variant_replay_artifacts(
+    output_dir: Path,
+    config: CandidateThresholdSweepConfig,
+) -> None:
+    for ordinal, (buy_threshold, sell_threshold) in enumerate(
+        config.threshold_pairs,
+        start=1,
+    ):
+        variant_id = _threshold_variant_id(ordinal, buy_threshold, sell_threshold)
+        variant_dir = output_dir / "variants" / variant_id
+        for filename in (
+            "emergency.json",
+            "events.jsonl",
+            "state.sqlite",
+            "state.sqlite-shm",
+            "state.sqlite-wal",
+        ):
+            path = variant_dir / filename
+            if path.is_file() or path.is_symlink():
+                path.unlink()
 
 
 def _threshold_pair_error(buy_threshold: float, sell_threshold: float) -> str | None:

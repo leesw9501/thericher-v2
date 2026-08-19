@@ -108,10 +108,13 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   threshold variants derived from a saved probability trace each require that
   completed evaluation's candidate identity, parameters, and exact model hash
   before invoking a runner or creating an event store; an unbound trace remains
-  analyzable but yields prepared, no-fill variants. This binds model bytes only:
-  trace immutability plus mutable runtime, feature, and sidecar contracts remain
-  separately scoped. It is replay-evidence custody, not a promotion, GPU
-  appointment, or Paper authorization.
+  analyzable but yields prepared, no-fill variants after clearing matching stale
+  variant artifacts. A descriptive candidate comparison runs its baseline only
+  after completed, aligned candidate replay evidence and clears its matching
+  stale baseline artifacts first. This binds the candidate stack only; generic
+  rule-model provenance plus trace immutability and mutable runtime, feature,
+  and sidecar contracts remain separately scoped. It is replay-evidence
+  custody, not a promotion, GPU appointment, or Paper authorization.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed
