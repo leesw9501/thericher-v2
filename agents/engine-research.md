@@ -125,6 +125,7 @@ candidate matrix.
 | PatchTST | Apache-2.0 `future_sequence_architecture_reference` | General time-series claims only; financial pretraining/evaluation scope is not disclosed, and no runtime, code, weight, or campaign is adopted. |
 | TiDE | Apache-2.0 `future_mlp_multihorizon_baseline_reference` | Source-only reference for an observed-feature MLP encoder-decoder baseline. Its generic long-horizon benchmark, TensorFlow reference runtime, and any future-known market covariate are not adopted; a qualified campaign must independently prove causal feature availability. |
 | TimeMixer | Apache-2.0 `future_multiscale_mlp_baseline_reference` | Source-only reference for past decomposable mixing and multipredictor fusion across scales. Its generic non-financial benchmarks, optional future temporal features, and average-downsampled hierarchy are not adopted; a qualified campaign must freeze its own causal 1m/5m/10m/1h/3h scale mapping. |
+| N-HiTS | Apache-2.0 `future_single_timeframe_hierarchical_forecast_reference` | Source-only reference for past-observed hierarchical interpolation and multi-rate pooling within one timeframe. Its generic long-horizon benchmarks, automatic tuning, and future/static covariate interfaces are not adopted; internal multi-rate sampling does not establish a 1m/5m/10m/1h/3h cross-timeframe mapping. |
 | Temporal Fusion Transformer | Apache-2.0 `future_multihorizon_sequence_architecture_reference` | Source-only reference for a strict static/past-observed/known-future covariate partition. Its TensorFlow reference runtime, non-trading evaluation, and any future-known market feature are not adopted; a qualified KIS campaign must independently prove causal feature availability. |
 | FinRL | MIT `rl_environment_interface_reference_only` | Its official classic framework is an educational/research train-test-trade pipeline that assumes external data and a new DRL runtime. Exclude its data preprocessing, same-bar reward timing, and cost/fill conventions; only its environment-to-agent separation is a future allocation-design reference. No package, code, data, weight, runtime, campaign, or Paper route is adopted. |
 | Heston et al.; Gao et al. | Re-retrieved source-only completed-30-minute OHLCV mechanism references | Their claimed intraday continuation/momentum effects require a fresh, causal, full-session input and a separately frozen campaign before any test. No parameter, model, data, campaign, GPU, ensemble, or Paper adoption follows. |
@@ -140,6 +141,9 @@ TiDE source-only evidence:
 TimeMixer source-only evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\timemixer-multiscale-source-20260819-r1\source-retrieval.json`
 (`sha256:b52a069032a04077158a6614b296513e7f5b238a96f519650d018da86cfe5a12`).
+N-HiTS source-only evidence:
+`D:\thericher-v2\model-artifacts\research\engine-source-retrieval\nhits-hierarchical-forecast-source-20260819-r1\source-retrieval.json`
+(`sha256:4a6352247e061bd4b28a62e3cec4b52189d3ddc6c2147a336b5caff1741de1d2`).
 Temporal Fusion Transformer source-only evidence:
 `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\tft-multihorizon-source-20260819-r1\source-retrieval.json`.
 FinRL source-only evidence:
