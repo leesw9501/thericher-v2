@@ -158,6 +158,48 @@ def test_duplicate_evidence_abstain_identity_is_independent_of_input_order() -> 
     )
 
 
+def test_mixed_invalid_evidence_is_order_independent() -> None:
+    valid = _prediction(Timeframe.M1)
+    duplicate = _prediction(Timeframe.M1, action="sell", expected_edge_bps=Decimal("-4"))
+    misaligned = _prediction(Timeframe.M5, symbol="SPY")
+    remaining = tuple(
+        item
+        for item in _predictions()
+        if item.signal.timeframe not in {Timeframe.M1, Timeframe.M5}
+    )
+
+    duplicate_first = propose_target_exposure(
+        _eligibility(),
+        (valid, duplicate, misaligned, *remaining),
+        current_exposure=Decimal("0"),
+        config=_config(),
+        as_of=_NOW,
+    )
+    misaligned_first = propose_target_exposure(
+        _eligibility(),
+        (valid, misaligned, duplicate, *remaining),
+        current_exposure=Decimal("0"),
+        config=_config(),
+        as_of=_NOW,
+    )
+
+    assert (
+        duplicate_first.action,
+        duplicate_first.input_status,
+        duplicate_first.reason,
+        duplicate_first.proposal_id,
+    ) == (
+        misaligned_first.action,
+        misaligned_first.input_status,
+        misaligned_first.reason,
+        misaligned_first.proposal_id,
+    )
+    assert (duplicate_first.input_status, duplicate_first.reason) == (
+        "duplicate",
+        "evidence_duplicate",
+    )
+
+
 def test_ineligible_or_misaligned_inputs_never_create_a_target_action() -> None:
     ineligible = OpportunityEligibility(
         opportunity_ref="ref:" + "2" * 64,

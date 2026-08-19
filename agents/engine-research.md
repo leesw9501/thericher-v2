@@ -56,8 +56,9 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   local fusion only: it does not select a model, create a campaign, consume
   data, allocate GPU, or authorize Paper behavior.
 - Target-policy proposal identities now use canonical tie-break fields before
-  hashing, so the same duplicate-input abstain has one identity regardless of
-  caller order. This preserves replay and deduplication semantics only; it
+  hashing, and validation consumes that same order, so a mixed invalid evidence
+  set has one categorical abstain and identity regardless of caller order. This
+  preserves replay and deduplication semantics only; it
   changes no model, campaign, input qualification, or Paper behavior.
 - Existing CPU/CUDA structural screens for LSTM, causal TCN, and compact
   attention prove only a local runtime path. They do not select a model.

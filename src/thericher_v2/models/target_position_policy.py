@@ -319,10 +319,13 @@ def _index_evidence(
     as_of: datetime,
     causal_window: CausalMultiTimeframeSequenceWindow | None,
 ) -> tuple[dict[Timeframe, ModelPrediction], TargetInputStatus | None]:
-    indexed: dict[Timeframe, ModelPrediction] = {}
+    checked_predictions: list[ModelPrediction] = []
     for prediction in predictions:
         if not isinstance(prediction, ModelPrediction):
             raise TypeError("predictions must contain ModelPrediction values")
+        checked_predictions.append(prediction)
+    indexed: dict[Timeframe, ModelPrediction] = {}
+    for prediction in sorted(checked_predictions, key=_canonical_evidence_key):
         if (
             prediction.symbol != eligibility.symbol
             or prediction.market != eligibility.market
@@ -511,16 +514,7 @@ def _proposal_id(
         }
         for item in sorted(
             (item for item in predictions if isinstance(item, ModelPrediction)),
-            key=lambda item: (
-                item.signal.timeframe.value,
-                item.model_id,
-                item.model_version,
-                item.feature_window_end,
-                item.signal.action,
-                item.confidence,
-                item.expected_edge_bps,
-                item.signal.generated_at,
-            ),
+            key=_canonical_evidence_key,
         )
     ]
     payload = {
@@ -550,6 +544,21 @@ def _proposal_id(
     }
     encoded = json.dumps(payload, ensure_ascii=True, separators=(",", ":"), sort_keys=True).encode()
     return f"policy:sha256:{hashlib.sha256(encoded).hexdigest()}"
+
+
+def _canonical_evidence_key(
+    item: ModelPrediction,
+) -> tuple[str, str, str, datetime, str, Decimal, Decimal, datetime]:
+    return (
+        item.signal.timeframe.value,
+        item.model_id,
+        item.model_version,
+        item.feature_window_end,
+        item.signal.action,
+        item.confidence,
+        item.expected_edge_bps,
+        item.signal.generated_at,
+    )
 
 
 def _timestamp(value: datetime) -> str:
