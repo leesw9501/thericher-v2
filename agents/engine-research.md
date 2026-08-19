@@ -115,6 +115,14 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   rule-model provenance plus trace immutability and mutable runtime, feature,
   and sidecar contracts remain separately scoped. It is replay-evidence
   custody, not a promotion, GPU appointment, or Paper authorization.
+- Persistent campaign Local-Paper replays reject every exact partial-file name,
+  including SQLite journal/WAL/SHM sidecars, so a failed deterministic run
+  cannot silently mix with a later attempt. `discard_partial_campaign_replay`
+  is an explicit, artifact-root-guarded recovery operation only when that run
+  has no completed validation artifact; it removes only those exact regular
+  files, preserves unrelated work-directory content, and never recurses or
+  removes an artifact. This is offline replay hygiene, not a model result,
+  promotion, Paper action, or authority change.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed

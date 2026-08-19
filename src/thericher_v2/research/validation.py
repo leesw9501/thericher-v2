@@ -1285,17 +1285,12 @@ def run_campaign_model_replay(
     artifact_path = _validation_artifact_path(artifact_root, run_id)
     _require_new_path(artifact_path, "validation artifact")
 
+    for path, label in _partial_campaign_replay_paths(resolved_work_dir):
+        _require_new_path(path, label)
     event_jsonl_path = resolved_work_dir / "events.jsonl"
     state_sqlite_path = resolved_work_dir / "state.sqlite"
     emergency_path = resolved_work_dir / "emergency.json"
-    for path, label in (
-        (event_jsonl_path, "event JSONL"),
-        (state_sqlite_path, "state SQLite"),
-        (emergency_path, "emergency state"),
-    ):
-        _require_new_path(path, label)
     resolved_work_dir.mkdir(parents=True, exist_ok=True)
-
     emergency_store = EmergencyStore(emergency_path)
     emergency_store.write(
         EmergencyState(
@@ -1650,8 +1645,65 @@ def _validation_artifact_path(artifact_root: Path, run_id: str) -> Path:
 
 
 def _require_new_path(path: Path, label: str) -> None:
-    if path.exists():
+    if path.exists() or path.is_symlink():
         raise FileExistsError(f"{label} already exists: {path}")
+
+
+def _partial_campaign_replay_paths(work_dir: Path) -> tuple[tuple[Path, str], ...]:
+    state_sqlite_path = work_dir / "state.sqlite"
+    return (
+        (work_dir / "events.jsonl", "event JSONL"),
+        (state_sqlite_path, "state SQLite"),
+        (
+            state_sqlite_path.with_name(f"{state_sqlite_path.name}-journal"),
+            "state SQLite journal",
+        ),
+        (
+            state_sqlite_path.with_name(f"{state_sqlite_path.name}-shm"),
+            "state SQLite shared memory",
+        ),
+        (
+            state_sqlite_path.with_name(f"{state_sqlite_path.name}-wal"),
+            "state SQLite write-ahead log",
+        ),
+        (work_dir / "emergency.json", "emergency state"),
+    )
+
+
+def discard_partial_campaign_replay(
+    *,
+    artifact_root: Path,
+    work_dir: Path,
+    run_id: str,
+    repo_root: Path | None = None,
+) -> tuple[Path, ...]:
+    """Explicitly discard a failed replay's exact partial files.
+
+    A completed validation artifact makes the replay immutable. This function
+    never recursively removes ``work_dir`` and never removes an artifact.
+    """
+
+    _validate_run_label(run_id)
+    resolved_repo_root = repo_root or Path.cwd()
+    resolved_work_dir = Path(work_dir).resolve()
+    resolved_artifact_root = Path(artifact_root).resolve()
+    _reject_repo_artifact_path(resolved_work_dir, resolved_repo_root)
+    _reject_repo_artifact_path(resolved_artifact_root, resolved_repo_root)
+    artifact_path = _validation_artifact_path(resolved_artifact_root, run_id)
+    if artifact_path.exists():
+        raise FileExistsError("completed validation artifact cannot be discarded")
+
+    present_paths = tuple(
+        path
+        for path, _ in _partial_campaign_replay_paths(resolved_work_dir)
+        if path.exists() or path.is_symlink()
+    )
+    for path in present_paths:
+        if path.is_symlink() or not path.is_file():
+            raise ValueError("partial campaign replay path must be a regular file")
+    for path in present_paths:
+        path.unlink()
+    return present_paths
 
 
 def _validate_run_label(value: str) -> None:

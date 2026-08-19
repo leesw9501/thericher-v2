@@ -12,9 +12,10 @@ from pathlib import Path
 
 import pytest
 
-from thericher_v2.contracts import Timeframe
+from thericher_v2.contracts import Bar, ModelPrediction, Timeframe
 from thericher_v2.data import CatalogedBars, load_cataloged_yahoo_intraday_1m_bars
 from thericher_v2.execution import EmergencyStore
+from thericher_v2.models import MomentumModel
 from thericher_v2.research.campaign import (
     CampaignContract,
     CampaignCosts,
@@ -24,6 +25,8 @@ from thericher_v2.research.campaign import (
     ExecutableTarget,
 )
 from thericher_v2.research.validation import (
+    discard_partial_campaign_replay,
+    run_campaign_model_replay,
     run_local_paper_validation,
     run_naive_cpu_baseline,
 )
@@ -279,6 +282,117 @@ def test_naive_baseline_keeps_durable_offline_replay_and_is_deterministic(
             work_dir=tmp_path / "repo-artifact-run",
             repo_root=Path.cwd(),
         )
+
+
+def test_explicit_partial_campaign_replay_discard_allows_retry(tmp_path: Path) -> None:
+    cataloged = _load_cataloged(tmp_path)
+    campaign = _contract(cataloged)
+    artifact_root = tmp_path / "artifacts"
+    work_dir = tmp_path / "work"
+    work_dir.mkdir()
+    sentinel = work_dir / "leave-me-alone.txt"
+    sentinel.write_text("preserve", encoding="utf-8")
+    run_id = "unit-recovery-replay"
+
+    with pytest.raises(RuntimeError, match="injected prediction failure"):
+        run_campaign_model_replay(
+            cataloged,
+            campaign=campaign,
+            model=_FailAfterFirstPrediction(),
+            run_id=run_id,
+            artifact_root=artifact_root,
+            work_dir=work_dir,
+            repo_root=Path.cwd(),
+        )
+
+    assert sentinel.read_text(encoding="utf-8") == "preserve"
+    assert (work_dir / "events.jsonl").is_file()
+    assert (work_dir / "emergency.json").is_file()
+    artifact_path = artifact_root / "validation" / f"{run_id}.json"
+    assert not artifact_path.exists()
+    with pytest.raises(FileExistsError, match="event JSONL already exists"):
+        run_campaign_model_replay(
+            cataloged,
+            campaign=campaign,
+            model=MomentumModel(),
+            run_id=run_id,
+            artifact_root=artifact_root,
+            work_dir=work_dir,
+            repo_root=Path.cwd(),
+        )
+
+    sidecars = ("state.sqlite", "state.sqlite-journal", "state.sqlite-shm", "state.sqlite-wal")
+    for name in sidecars:
+        (work_dir / name).write_text("partial", encoding="utf-8")
+    discarded = discard_partial_campaign_replay(
+        artifact_root=artifact_root,
+        work_dir=work_dir,
+        run_id=run_id,
+        repo_root=Path.cwd(),
+    )
+
+    assert {path.name for path in discarded} == {
+        "emergency.json",
+        "events.jsonl",
+        *sidecars,
+    }
+    assert sentinel.read_text(encoding="utf-8") == "preserve"
+    partial_names = (*sidecars, "events.jsonl", "emergency.json")
+    assert all(not (work_dir / name).exists() for name in partial_names)
+
+    stale_wal = work_dir / "state.sqlite-wal"
+    stale_wal.write_text("partial", encoding="utf-8")
+    with pytest.raises(FileExistsError, match="state SQLite write-ahead log already exists"):
+        run_campaign_model_replay(
+            cataloged,
+            campaign=campaign,
+            model=MomentumModel(),
+            run_id=run_id,
+            artifact_root=artifact_root,
+            work_dir=work_dir,
+            repo_root=Path.cwd(),
+        )
+    assert discard_partial_campaign_replay(
+        artifact_root=artifact_root,
+        work_dir=work_dir,
+        run_id=run_id,
+        repo_root=Path.cwd(),
+    ) == (stale_wal,)
+
+    recovered = run_campaign_model_replay(
+        cataloged,
+        campaign=campaign,
+        model=MomentumModel(),
+        run_id=run_id,
+        artifact_root=artifact_root,
+        work_dir=work_dir,
+        repo_root=Path.cwd(),
+    )
+
+    assert recovered.fill_source == "local_paper"
+    assert recovered.artifact_path.is_file()
+    assert sentinel.read_text(encoding="utf-8") == "preserve"
+    with pytest.raises(FileExistsError, match="completed validation artifact"):
+        discard_partial_campaign_replay(
+            artifact_root=artifact_root,
+            work_dir=work_dir,
+            run_id=run_id,
+            repo_root=Path.cwd(),
+        )
+
+
+class _FailAfterFirstPrediction:
+    lookback = 3
+
+    def __init__(self) -> None:
+        self._calls = 0
+        self._delegate = MomentumModel()
+
+    def predict(self, bars: list[Bar]) -> ModelPrediction:
+        self._calls += 1
+        if self._calls > 1:
+            raise RuntimeError("injected prediction failure")
+        return self._delegate.predict(bars)
 
 
 def _without_replay_paths(payload: dict[str, object]) -> dict[str, object]:
