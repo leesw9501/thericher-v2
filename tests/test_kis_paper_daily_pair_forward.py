@@ -22,6 +22,7 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataError,
 )
 from thericher_v2.execution.kis_paper_daily_pair_forward import (
+    collect_kis_paper_daily_pair_forward_observation,
     collect_kis_paper_daily_pair_forward_once,
 )
 
@@ -209,9 +210,43 @@ def test_collector_marks_one_transport_fault_without_network_or_credentials(tmp_
     assert run.cache.targets_by_key["QQQ/NAS"].status == "ready"
 
 
+def test_uncommitted_collection_observation_does_not_create_a_cache(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "external" / "qqq-spy-forward"
+    client = _FakeDailyClient(
+        {
+            "QQQ/NAS": _daily_page("20260729"),
+            "SPY/AMS": _daily_page("20260729"),
+        }
+    )
+
+    observation = collect_kis_paper_daily_pair_forward_observation(
+        client,
+        observed_at=datetime(2026, 7, 29, 22, tzinfo=UTC),
+    )
+
+    assert not cache_root.exists()
+    run = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=observation.rows_by_target,
+        failure_reasons_by_target=observation.failure_reasons_by_target,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        observed_at=observation.observed_at,
+    )
+    assert run.status == "ready"
+
+
 def test_pair_forward_compose_isolates_preflight_from_credentials_and_network() -> None:
     source = COMPOSE.read_text(encoding="ascii")
     collector = source.split("  kis-paper-daily-pair-forward:\n", maxsplit=1)[1].split(
+        "  kis-paper-daily-pair-forward-readiness:\n",
+        maxsplit=1,
+    )[0]
+    readiness = source.split(
+        "  kis-paper-daily-pair-forward-readiness:\n",
+        maxsplit=1,
+    )[1].split(
         "  kis-paper-daily-pair-forward-preflight:\n",
         maxsplit=1,
     )[0]
@@ -226,6 +261,17 @@ def test_pair_forward_compose_isolates_preflight_from_credentials_and_network() 
     assert "KIS_LIVE" not in collector
     assert "account" not in collector.lower()
     assert "order" not in collector.lower()
+    assert 'profiles: ["kis-paper-daily-pair-forward"]' in readiness
+    assert "network_mode: none" in readiness
+    assert "KIS_PAPER_APP_KEY" in readiness
+    assert "KIS_PAPER_APP_SECRET" in readiness
+    assert "KIS_LIVE" not in readiness
+    assert "account" not in readiness.lower()
+    assert "order" not in readiness.lower()
+    assert "--readiness" in readiness
+    assert "/app/market_data" not in readiness
+    assert "/app/collection_control" in readiness
+    assert "read_only: true" in readiness
     assert "network_mode: none" in preflight
     assert "KIS_PAPER_APP_KEY" not in preflight
     assert "KIS_PAPER_APP_SECRET" not in preflight

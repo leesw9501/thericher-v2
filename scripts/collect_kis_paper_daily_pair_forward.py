@@ -31,7 +31,7 @@ from thericher_v2.execution.kis_paper_daily_nas_forward import latest_completed_
 from thericher_v2.execution.kis_paper_daily_pair_forward import (
     KisPaperDailyPairForwardError,
     UrllibKisPaperDailyPairForwardTransport,
-    collect_kis_paper_daily_pair_forward_once,
+    collect_kis_paper_daily_pair_forward_observation,
 )
 
 _CANONICAL_CACHE_ROOT = Path("/app/market_data")
@@ -55,6 +55,7 @@ def main(
     action = parser.add_mutually_exclusive_group()
     action.add_argument("--execute", action="store_true")
     action.add_argument("--preflight", action="store_true")
+    action.add_argument("--readiness", action="store_true")
     parser.add_argument("--cache-root", type=Path, default=_CANONICAL_CACHE_ROOT)
     parser.add_argument("--control-root", type=Path, default=_CANONICAL_CONTROL_ROOT)
     parser.add_argument("--artifact-root", type=Path, default=_CANONICAL_ARTIFACT_ROOT)
@@ -68,7 +69,7 @@ def main(
         choices=("host_timezone_not_kst", "shared_dispatcher_busy"),
     )
     args = parser.parse_args(argv)
-    if not args.execute and not args.preflight:
+    if not args.execute and not args.preflight and not args.readiness:
         _emit({"status": "not_executed", "reason": "execute_flag_required"})
         return _NOT_EXECUTED_EXIT
     if args.schedule_guard_failed is not None and not args.preflight:
@@ -77,6 +78,12 @@ def main(
     if args.preflight:
         roots_are_valid = _canonical_preflight_roots(
             cache_root=args.cache_root,
+            artifact_root=args.artifact_root,
+            repository_root=args.repository_root,
+        )
+    elif args.readiness:
+        roots_are_valid = _canonical_readiness_roots(
+            control_root=args.control_root,
             artifact_root=args.artifact_root,
             repository_root=args.repository_root,
         )
@@ -90,12 +97,19 @@ def main(
     if not roots_are_valid:
         _emit({"status": "not_executed", "reason": "canonical_container_roots_required"})
         return _NOT_EXECUTED_EXIT
+    observed_at = _require_utc(clock())
+    if args.readiness:
+        return _run_readiness(
+            control_root=args.control_root,
+            artifact_root=args.artifact_root,
+            repository_root=args.repository_root,
+            observed_at=observed_at,
+        )
     try:
         frozen_boundary = datetime.fromisoformat(args.frozen_boundary).date()
     except ValueError:
         _emit({"status": "not_executed", "reason": "frozen_boundary_invalid"})
         return _NOT_EXECUTED_EXIT
-    observed_at = _require_utc(clock())
     if args.preflight:
         return _run_preflight(
             cache_root=args.cache_root,
@@ -130,21 +144,28 @@ def _run_credentialed_collection(
         token_request_is_due = token_gate.token_request_is_due()
         rate_gate_is_deferred = _rate_gate_is_deferred(rate_gate, observed_at)
     except (OSError, ValueError):
-        return _emit_source_safe_receipt(
+        return _emit_collector_stage_unavailable(
             artifact_root=artifact_root,
             repository_root=repository_root,
             observed_at=observed_at,
-            payload=_unavailable_payload(observed_at, "collector_unavailable"),
-            exit_code=_RECOVERY_EXIT,
+            failure_stage="control_gate",
         )
     if not token_request_is_due or rate_gate_is_deferred:
-        result = _defer_pair_cache(
-            cache_root=cache_root,
-            repository_root=repository_root,
-            frozen_boundary=frozen_boundary,
-            observed_at=observed_at,
-            reason="token_request_not_due" if not token_request_is_due else "rate_limited",
-        )
+        try:
+            result = _defer_pair_cache(
+                cache_root=cache_root,
+                repository_root=repository_root,
+                frozen_boundary=frozen_boundary,
+                observed_at=observed_at,
+                reason="token_request_not_due" if not token_request_is_due else "rate_limited",
+            )
+        except (KisPaperDailyPairForwardCacheError, OSError, ValueError):
+            return _emit_collector_stage_unavailable(
+                artifact_root=artifact_root,
+                repository_root=repository_root,
+                observed_at=observed_at,
+                failure_stage="commit",
+            )
         return _emit_source_safe_receipt(
             artifact_root=artifact_root,
             repository_root=repository_root,
@@ -153,35 +174,56 @@ def _run_credentialed_collection(
             exit_code=_RECOVERY_EXIT,
         )
     try:
+        config = load_kis_paper_market_data_environment_config()
+    except (KisPaperMarketDataError, OSError, ValueError):
+        return _emit_collector_stage_unavailable(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            observed_at=observed_at,
+            failure_stage="environment",
+        )
+    try:
         client = KisPaperMarketDataClient(
-            config=load_kis_paper_market_data_environment_config(),
+            config=config,
             transport=UrllibKisPaperDailyPairForwardTransport(
                 request_gate=rate_gate,
                 token_start_gate=token_gate,
             ),
             max_daily_page_attempts=2,
         )
-        result = collect_kis_paper_daily_pair_forward_once(
+        observation = collect_kis_paper_daily_pair_forward_observation(
             client,
-            cache_root=cache_root,
-            repository_root=repository_root,
             frozen_boundary=frozen_boundary,
             observed_at=observed_at,
         )
-        payload = result.safe_payload()
     except (
-        KisPaperDailyPairForwardCacheError,
         KisPaperDailyPairForwardError,
         KisPaperMarketDataError,
         OSError,
         ValueError,
     ):
-        return _emit_source_safe_receipt(
+        return _emit_collector_stage_unavailable(
             artifact_root=artifact_root,
             repository_root=repository_root,
             observed_at=observed_at,
-            payload=_unavailable_payload(observed_at, "collector_unavailable"),
-            exit_code=_RECOVERY_EXIT,
+            failure_stage="collection",
+        )
+    try:
+        result = commit_kis_paper_daily_pair_forward_observation(
+            rows_by_target=observation.rows_by_target,
+            failure_reasons_by_target=observation.failure_reasons_by_target,
+            cache_root=cache_root,
+            repo_root=repository_root,
+            frozen_boundary=frozen_boundary,
+            observed_at=observation.observed_at,
+        )
+        payload = result.safe_payload()
+    except (KisPaperDailyPairForwardCacheError, OSError, ValueError):
+        return _emit_collector_stage_unavailable(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            observed_at=observed_at,
+            failure_stage="commit",
         )
     return _emit_source_safe_receipt(
         artifact_root=artifact_root,
@@ -189,6 +231,51 @@ def _run_credentialed_collection(
         observed_at=observed_at,
         payload=payload,
         exit_code=_RECOVERY_EXIT if result.status in {"partial", "deferred"} else 0,
+    )
+
+
+def _run_readiness(
+    *,
+    control_root: Path,
+    artifact_root: Path,
+    repository_root: Path,
+    observed_at: datetime,
+) -> int:
+    """Check only control timing and aggregate Paper environment availability."""
+
+    try:
+        rate_gate = KisPaperMarketDataRateGate(control_root=control_root)
+        token_gate = KisPaperMarketDataTokenStartGate(control_root=control_root)
+        token_request_is_due = token_gate.token_request_is_due()
+        rate_gate_is_deferred = _rate_gate_is_deferred(rate_gate, observed_at)
+    except (OSError, ValueError):
+        return _emit_readiness_stage_unavailable(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            observed_at=observed_at,
+            failure_stage="control_gate",
+        )
+    try:
+        load_kis_paper_market_data_environment_config()
+    except (KisPaperMarketDataError, OSError, ValueError):
+        return _emit_readiness_stage_unavailable(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            observed_at=observed_at,
+            failure_stage="environment",
+        )
+    return _emit_source_safe_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=observed_at,
+        payload={
+            "status": "ready",
+            "readiness": "aggregate_ready",
+            "token_request_due": token_request_is_due,
+            "rate_gate_deferred": rate_gate_is_deferred,
+            "route_isolation": _readiness_route_isolation_payload(),
+        },
+        exit_code=0,
     )
 
 
@@ -319,6 +406,66 @@ def _unavailable_payload(observed_at: datetime, reason: str) -> dict[str, object
     }
 
 
+def _collector_unavailable_payload(
+    observed_at: datetime,
+    failure_stage: str,
+) -> dict[str, object]:
+    if failure_stage not in {"control_gate", "environment", "collection", "commit"}:
+        raise ValueError("collector failure stage is invalid")
+    payload = _unavailable_payload(observed_at, "collector_unavailable")
+    payload["failure_stage"] = failure_stage
+    return payload
+
+
+def _readiness_unavailable_payload(
+    observed_at: datetime,
+    failure_stage: str,
+) -> dict[str, object]:
+    if failure_stage not in {"control_gate", "environment"}:
+        raise ValueError("readiness failure stage is invalid")
+    return {
+        "status": "unavailable",
+        "reason": "readiness_unavailable",
+        "failure_stage": failure_stage,
+        "readiness": "not_ready",
+        "observed_at_bucket": observed_at.strftime("%Y-%m-%dT%H:00Z"),
+        "recovery": "resume",
+        "route_isolation": _readiness_route_isolation_payload(),
+    }
+
+
+def _emit_collector_stage_unavailable(
+    *,
+    artifact_root: Path,
+    repository_root: Path,
+    observed_at: datetime,
+    failure_stage: str,
+) -> int:
+    return _emit_source_safe_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=observed_at,
+        payload=_collector_unavailable_payload(observed_at, failure_stage),
+        exit_code=_RECOVERY_EXIT,
+    )
+
+
+def _emit_readiness_stage_unavailable(
+    *,
+    artifact_root: Path,
+    repository_root: Path,
+    observed_at: datetime,
+    failure_stage: str,
+) -> int:
+    return _emit_source_safe_receipt(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=observed_at,
+        payload=_readiness_unavailable_payload(observed_at, failure_stage),
+        exit_code=_RECOVERY_EXIT,
+    )
+
+
 def _route_isolation_payload() -> dict[str, bool]:
     return {
         "daily_market_data_only": True,
@@ -328,6 +475,14 @@ def _route_isolation_payload() -> dict[str, bool]:
         "quote_endpoints_used": False,
         "order_endpoints_used": False,
         "live_endpoints_used": False,
+    }
+
+
+def _readiness_route_isolation_payload() -> dict[str, bool]:
+    return {
+        **_route_isolation_payload(),
+        "network_requests_used": False,
+        "cache_writes": False,
     }
 
 
@@ -431,6 +586,19 @@ def _canonical_preflight_roots(
 ) -> bool:
     return (
         cache_root == _CANONICAL_CACHE_ROOT
+        and artifact_root == _CANONICAL_ARTIFACT_ROOT
+        and repository_root == _CANONICAL_REPOSITORY_ROOT
+    )
+
+
+def _canonical_readiness_roots(
+    *,
+    control_root: Path,
+    artifact_root: Path,
+    repository_root: Path,
+) -> bool:
+    return (
+        control_root == _CANONICAL_CONTROL_ROOT
         and artifact_root == _CANONICAL_ARTIFACT_ROOT
         and repository_root == _CANONICAL_REPOSITORY_ROOT
     )

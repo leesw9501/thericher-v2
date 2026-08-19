@@ -29,8 +29,17 @@ def test_credentialed_collection_uses_nonreserving_token_due_check(
     monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_kwargs: object())
     monkeypatch.setattr(
         script,
-        "collect_kis_paper_daily_pair_forward_once",
-        lambda *_args, **_kwargs: collected.setdefault(
+        "collect_kis_paper_daily_pair_forward_observation",
+        lambda *_args, **kwargs: SimpleNamespace(
+            rows_by_target={},
+            failure_reasons_by_target={},
+            observed_at=kwargs["observed_at"],
+        ),
+    )
+    monkeypatch.setattr(
+        script,
+        "commit_kis_paper_daily_pair_forward_observation",
+        lambda **_kwargs: collected.setdefault(
             "result",
             SimpleNamespace(status="ready", safe_payload=lambda: {"status": "ready"}),
         ),
@@ -115,6 +124,7 @@ def test_control_gate_failure_emits_recovery_without_constructing_a_client(
     assert receipt["payload"] == {
         "status": "unavailable",
         "reason": "collector_unavailable",
+        "failure_stage": "control_gate",
         "observed_at_bucket": "2026-08-03T21:00Z",
         "recovery": "resume",
         "route_isolation": {
@@ -174,6 +184,243 @@ def test_token_deferral_keeps_its_existing_reason_outside_control_failure_bounda
     receipt = emitted["receipt"]
     assert isinstance(receipt, dict)
     assert receipt["payload"] == {"status": "deferred", "reason": "token_request_not_due"}
+
+
+def test_environment_failure_emits_fixed_safe_stage_without_constructing_a_client(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+
+    _install_ready_gates(monkeypatch, script)
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_environment_config",
+        lambda: (_ for _ in ()).throw(script.KisPaperMarketDataError("invalid")),
+    )
+    monkeypatch.setattr(
+        script,
+        "KisPaperMarketDataClient",
+        lambda **_kwargs: pytest.fail("environment failure must not construct a client"),
+    )
+    monkeypatch.setattr(
+        script,
+        "UrllibKisPaperDailyPairForwardTransport",
+        lambda **_kwargs: pytest.fail("environment failure must not construct a transport"),
+    )
+    _capture_receipt(monkeypatch, script, tmp_path, emitted, "e")
+
+    exit_code = _run_credentialed_collection(script, tmp_path)
+
+    assert exit_code == 20
+    _assert_collector_stage(emitted, "environment")
+
+
+def test_collection_failure_emits_fixed_safe_stage_without_committing(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+
+    _install_ready_gates(monkeypatch, script)
+    monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", lambda: object())
+    monkeypatch.setattr(
+        script,
+        "UrllibKisPaperDailyPairForwardTransport",
+        lambda **_kwargs: object(),
+    )
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_kwargs: object())
+    monkeypatch.setattr(
+        script,
+        "collect_kis_paper_daily_pair_forward_observation",
+        lambda *_args, **_kwargs: (_ for _ in ()).throw(
+            script.KisPaperMarketDataError("invalid")
+        ),
+    )
+    monkeypatch.setattr(
+        script,
+        "commit_kis_paper_daily_pair_forward_observation",
+        lambda **_kwargs: pytest.fail("collection failure must not commit a cache observation"),
+    )
+    _capture_receipt(monkeypatch, script, tmp_path, emitted, "f")
+
+    exit_code = _run_credentialed_collection(script, tmp_path)
+
+    assert exit_code == 20
+    _assert_collector_stage(emitted, "collection")
+
+
+def test_commit_failure_emits_fixed_safe_stage_after_collection(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+
+    _install_ready_gates(monkeypatch, script)
+    monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", lambda: object())
+    monkeypatch.setattr(
+        script,
+        "UrllibKisPaperDailyPairForwardTransport",
+        lambda **_kwargs: object(),
+    )
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", lambda **_kwargs: object())
+    monkeypatch.setattr(
+        script,
+        "collect_kis_paper_daily_pair_forward_observation",
+        lambda *_args, **kwargs: SimpleNamespace(
+            rows_by_target={},
+            failure_reasons_by_target={},
+            observed_at=kwargs["observed_at"],
+        ),
+    )
+    monkeypatch.setattr(
+        script,
+        "commit_kis_paper_daily_pair_forward_observation",
+        lambda **_kwargs: (_ for _ in ()).throw(
+            script.KisPaperDailyPairForwardCacheError("invalid")
+        ),
+    )
+    _capture_receipt(monkeypatch, script, tmp_path, emitted, "g")
+
+    exit_code = _run_credentialed_collection(script, tmp_path)
+
+    assert exit_code == 20
+    _assert_collector_stage(emitted, "commit")
+
+
+def test_networkless_readiness_checks_only_control_and_aggregate_environment(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+
+    _install_ready_gates(monkeypatch, script)
+    monkeypatch.setattr(script, "load_kis_paper_market_data_environment_config", lambda: object())
+    monkeypatch.setattr(
+        script,
+        "KisPaperMarketDataClient",
+        lambda **_kwargs: pytest.fail("readiness must not construct a client"),
+    )
+    monkeypatch.setattr(
+        script,
+        "UrllibKisPaperDailyPairForwardTransport",
+        lambda **_kwargs: pytest.fail("readiness must not construct a transport"),
+    )
+    monkeypatch.setattr(
+        script,
+        "collect_kis_paper_daily_pair_forward_observation",
+        lambda *_args, **_kwargs: pytest.fail("readiness must not collect market data"),
+    )
+    monkeypatch.setattr(
+        script,
+        "commit_kis_paper_daily_pair_forward_observation",
+        lambda **_kwargs: pytest.fail("readiness must not write a cache observation"),
+    )
+    _capture_receipt(monkeypatch, script, tmp_path, emitted, "h")
+
+    exit_code = script._run_readiness(  # noqa: SLF001
+        control_root=tmp_path / "control",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repository",
+        observed_at=datetime(2026, 8, 3, 21, tzinfo=UTC),
+    )
+
+    assert exit_code == 0
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    assert receipt["payload"] == {
+        "status": "ready",
+        "readiness": "aggregate_ready",
+        "token_request_due": True,
+        "rate_gate_deferred": False,
+        "route_isolation": {
+            "daily_market_data_only": True,
+            "account_endpoints_used": False,
+            "position_endpoints_used": False,
+            "open_order_endpoints_used": False,
+            "quote_endpoints_used": False,
+            "order_endpoints_used": False,
+            "live_endpoints_used": False,
+            "network_requests_used": False,
+            "cache_writes": False,
+        },
+    }
+
+
+def test_readiness_environment_failure_stays_networkless_and_source_safe(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+
+    _install_ready_gates(monkeypatch, script)
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_environment_config",
+        lambda: (_ for _ in ()).throw(script.KisPaperMarketDataError("invalid")),
+    )
+    monkeypatch.setattr(
+        script,
+        "KisPaperMarketDataClient",
+        lambda **_kwargs: pytest.fail("readiness must not construct a client"),
+    )
+    _capture_receipt(monkeypatch, script, tmp_path, emitted, "i")
+
+    exit_code = script._run_readiness(  # noqa: SLF001
+        control_root=tmp_path / "control",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repository",
+        observed_at=datetime(2026, 8, 3, 21, tzinfo=UTC),
+    )
+
+    assert exit_code == 20
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    assert receipt["payload"]["reason"] == "readiness_unavailable"
+    assert receipt["payload"]["failure_stage"] == "environment"
+
+
+def test_source_safe_receipt_writer_uses_an_external_create_only_path(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "external" / "artifacts"
+
+    class _FixedReceiptClock:
+        @staticmethod
+        def now(_timezone: object) -> datetime:
+            return datetime(2026, 8, 3, 21, tzinfo=UTC)
+
+    monkeypatch.setattr(script, "datetime", _FixedReceiptClock)
+    monkeypatch.setattr(script.uuid, "uuid4", lambda: SimpleNamespace(hex="j" * 32))
+    receipt = {
+        "kind": "kis_paper_daily_pair_forward_receipt",
+        "payload": {"status": "ready"},
+    }
+
+    path, digest = script._write_source_safe_receipt(  # noqa: SLF001
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        receipt=receipt,
+    )
+
+    assert path.is_relative_to(artifact_root)
+    assert not path.is_relative_to(repository_root)
+    assert digest.startswith("sha256:")
+    with pytest.raises(FileExistsError):
+        script._write_source_safe_receipt(  # noqa: SLF001
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            receipt=receipt,
+        )
 
 
 def test_cache_current_preflight_never_reads_kis_configuration_or_constructs_client(
@@ -275,6 +522,47 @@ class _BrokenTokenGate:
 class _BrokenRateGate:
     def snapshot(self) -> SimpleNamespace:
         raise OSError("control state unavailable")
+
+
+def _install_ready_gates(monkeypatch: pytest.MonkeyPatch, script: object) -> None:
+    monkeypatch.setattr(script, "KisPaperMarketDataTokenStartGate", lambda **_kwargs: _TokenGate())
+    monkeypatch.setattr(script, "KisPaperMarketDataRateGate", lambda **_kwargs: _RateGate())
+
+
+def _capture_receipt(
+    monkeypatch: pytest.MonkeyPatch,
+    script: object,
+    tmp_path: Path,
+    emitted: dict[str, object],
+    digest_character: str,
+) -> None:
+    monkeypatch.setattr(
+        script,
+        "_write_source_safe_receipt",
+        lambda **kwargs: emitted.update(kwargs)
+        or (tmp_path / "receipt.json", "sha256:" + digest_character * 64),
+    )
+
+
+def _run_credentialed_collection(script: object, tmp_path: Path) -> int:
+    return script._run_credentialed_collection(  # type: ignore[attr-defined]  # noqa: SLF001
+        cache_root=tmp_path / "cache",
+        control_root=tmp_path / "control",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repository",
+        frozen_boundary=datetime(2026, 7, 24, tzinfo=UTC).date(),
+        observed_at=datetime(2026, 8, 3, 21, tzinfo=UTC),
+    )
+
+
+def _assert_collector_stage(emitted: dict[str, object], expected_stage: str) -> None:
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    payload = receipt["payload"]
+    assert isinstance(payload, dict)
+    assert payload["status"] == "unavailable"
+    assert payload["reason"] == "collector_unavailable"
+    assert payload["failure_stage"] == expected_stage
 
 
 def _script_module() -> object:

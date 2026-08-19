@@ -2,51 +2,46 @@
 
 ## Objective
 
-Complete `kis-daily-pair-forward-stage-discrimination-v1`: make the existing
-QQQ/SPY KIS Paper D1 collector's source-safe `unavailable` outcome distinguish
-fixed failure stages, then use one networkless in-container readiness check to
-decide whether one new collector call is justified. This repairs data-collection
-diagnostics, not a strategy, causal-input, or trading path.
+Complete `kis-daily-pair-forward-runtime-image-provenance-v1`: make the
+existing QQQ/SPY D1 pair-forward preflight, readiness, and collector use an
+attestable common source/image contract, so a stale service image is detected
+before any later collection. This is Docker/runtime provenance only, not a data,
+strategy, causal-input, execution, or trading objective.
 
 ## Boundaries
 
 - Run `./scripts/start_next_codex_task.ps1` first, then read `HANDOFF.md`,
-  `AGENTS.md`, `RUNBOOK.md`, and the active Data, Engine Research, Execution,
-  and orchestration stateboards.
-- Never read or route `KIS_LIVE_*`, print a secret/config-variable name,
-  account data, raw market rows, raw broker bodies, or exception text.
-- Keep the existing QQQ/SPY pair-forward routes, artifact policy, cache format,
-  token gate, rate gate, schedule, and consumer boundary. Do not create a new
-  provider, endpoint, queue, worker, scheduler, or research/execution consumer.
-- The only permitted credential read is the existing pair-forward Compose
-  service's in-container readiness check or collector. The readiness check makes
-  no network/KIS request and no cache write.
+  `AGENTS.md`, `RUNBOOK.md`, and the active stateboards. Ask Claude for a short
+  falsification-first drift check before changing the Compose/image contract.
+- Do not read credentials, call KIS, make network requests from the container,
+  write a market-data cache, run readiness, or invoke the collector.
+- Never read or route `KIS_LIVE_*`, print secret/config-variable names, account
+  data, raw market rows, raw broker bodies, or exception text.
+- Keep the existing pair-forward routes, cache format, token/rate gates,
+  schedule, and consumer boundary. Do not add a provider, endpoint, queue,
+  worker, scheduler, or Research/Execution consumer.
 - Generated receipts stay under `D:\thericher-v2\model-artifacts`; raw cache
   data stays under `D:\market_data`; neither enters Git.
-- No KIS account/order endpoint, Paper intent, model training, GPU, public
-  service, or live behavior is in scope.
 
 ## Required Work
 
-1. Refactor only the existing collector path so its fixed, source-safe failure
-   stage is one of `control_gate`, `environment`, `collection`, or `commit`.
-   The category must not reveal exception text, HTTP/response detail, target,
-   credential/config-variable identity, or raw data.
-2. Add a networkless in-container readiness mode that validates only control
-   gate state and aggregate environment availability. It must write a canonical
-   source-safe receipt, make no cache write, and expose no secret/config name.
-3. Add focused synthetic tests for every fixed stage, readiness isolation, route
-   isolation, immutable external receipts, and compatibility of the existing
-   collector behavior. Strongest kill test: if any synthetic stage is not
-   discriminated exactly, do not invoke a new collector.
-4. After focused tests pass, run the readiness mode once. Run the existing
-   credentialed collector at most once only if readiness is aggregate-ready,
-   the token start is due, and the rate gate is not deferred. A non-ready or
-   deferred readiness result closes this objective without a collector call.
-5. If a collector call occurs, preserve only its source-safe categorical result.
-   Do not infer data availability/finality, retry automatically, or treat a
-   cache write as a model/Execution input.
-6. Refresh stateboards, `HANDOFF.md`, and `RUNBOOK.md`; run verification,
+1. Add one canonical source-safe runtime contract fingerprint to pair-forward
+   receipts. It may identify only the stage-aware collector source contract by
+   SHA-256; it must not retain source text, raw data, credentials, account data,
+   or a host path.
+2. Make the three existing pair-forward Compose services share one explicit
+   local image/build contract, so a build of that contract cannot leave the
+   collector on a separately tagged stale image. Preserve each service's
+   existing network, credential, cache-mount, and command isolation.
+3. Add focused tests for deterministic fingerprinting, receipt safety,
+   shared-image Compose topology, and compatibility of preflight/readiness/
+   collector behavior. Strongest kill test: if the services can still select
+   distinct image tags or the fingerprint can expose mutable/private input, do
+   not run an in-container check.
+4. After focused tests pass, build the existing shared contract and run exactly
+   one credential-free, networkless preflight. Reattach only its source-safe
+   fingerprint and isolation/status facts. Do not invoke readiness or collector.
+5. Refresh stateboards, `HANDOFF.md`, and `RUNBOOK.md`; run verification,
    commit, push, replace this file with exactly one next objective, and
    continue.
 

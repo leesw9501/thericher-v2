@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
+from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -47,6 +48,15 @@ _SYMBOL_EXCHANGES: Mapping[str, frozenset[str]] = {
 }
 
 
+@dataclass(frozen=True, slots=True)
+class KisPaperDailyPairForwardObservation:
+    """One uncommitted, source-scoped QQQ/SPY D1 collection result."""
+
+    rows_by_target: Mapping[str, tuple[KisPaperDailyPairForwardRow, ...]]
+    failure_reasons_by_target: Mapping[str, str]
+    observed_at: datetime
+
+
 def collect_kis_paper_daily_pair_forward_once(
     client: KisPaperDailyPairForwardClient,
     *,
@@ -57,6 +67,29 @@ def collect_kis_paper_daily_pair_forward_once(
 ) -> KisPaperDailyPairForwardRun:
     """Fetch one page per fixed pair target and retain completed later sessions only."""
 
+    observation = collect_kis_paper_daily_pair_forward_observation(
+        client,
+        frozen_boundary=frozen_boundary,
+        observed_at=observed_at,
+    )
+    return commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=observation.rows_by_target,
+        failure_reasons_by_target=observation.failure_reasons_by_target,
+        cache_root=cache_root,
+        repo_root=repository_root,
+        frozen_boundary=frozen_boundary,
+        observed_at=observation.observed_at,
+    )
+
+
+def collect_kis_paper_daily_pair_forward_observation(
+    client: KisPaperDailyPairForwardClient,
+    *,
+    frozen_boundary: date = KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY,
+    observed_at: datetime | None = None,
+) -> KisPaperDailyPairForwardObservation:
+    """Fetch one fixed-target observation without touching the durable cache."""
+
     if type(frozen_boundary) is not date:
         raise ValueError("pair forward boundary is invalid")
     observed = _require_utc(observed_at or datetime.now(UTC))
@@ -66,12 +99,9 @@ def collect_kis_paper_daily_pair_forward_once(
         for symbol, exchange in KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS
     )
     if eligible_through is None:
-        return commit_kis_paper_daily_pair_forward_observation(
+        return KisPaperDailyPairForwardObservation(
             rows_by_target={key: () for key in target_keys},
             failure_reasons_by_target={},
-            cache_root=cache_root,
-            repo_root=repository_root,
-            frozen_boundary=frozen_boundary,
             observed_at=observed,
         )
 
@@ -98,12 +128,9 @@ def collect_kis_paper_daily_pair_forward_once(
             )
         except (KisPaperDailyPairForwardError, KisPaperMarketDataError, ValueError) as error:
             failures[target_key] = sanitize_kis_paper_daily_pair_forward_failure_reason(error)
-    return commit_kis_paper_daily_pair_forward_observation(
+    return KisPaperDailyPairForwardObservation(
         rows_by_target=rows_by_target,
         failure_reasons_by_target=failures,
-        cache_root=cache_root,
-        repo_root=repository_root,
-        frozen_boundary=frozen_boundary,
         observed_at=observed,
     )
 

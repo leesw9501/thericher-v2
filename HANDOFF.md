@@ -363,6 +363,22 @@ requires fixed source-safe `control_gate`, `environment`, `collection`, or
 later one-shot collector may be considered. No exception text, secret/config
 identity, raw row, account, order, Paper, GPU, model, or live fact is retained.
 
+The completed stage-discrimination package now passes synthetic faults for all
+four fixed stages and has one networkless readiness receipt at
+`data/kis-paper-daily-pair-forward-v1/run=20260819T161924502292Z-333ce65960854fcd/receipt.json`
+(`sha256:e64e4888b2f5e4937df1712c2bb72f3bf6f6d1410a55bef1d9ba9d09254ee4e5`).
+It is `ready/aggregate_ready`, token-due, rate-open, and records no network or
+cache write. Its exactly one allowed collector call wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T161956811379Z-4948e7f7e87b4fe0/receipt.json`
+(`sha256:b00e687001ff988bf1e2b32e53ee9c5eebf7585bdacc33b057259c64f50870e0`)
+as generic `unavailable/collector_unavailable` with no cache payload and no
+`failure_stage`. That receipt does not attest the stage-aware runtime image, so
+it is not a stage/provider/finality/availability conclusion and was not
+retried. The collector image was rebuilt from the workspace without another KIS
+call. The next bounded Data/Infra package is source/image provenance for this
+existing service; it must not call the collector, reinterpret this receipt, or
+change causal, Research, Execution, Paper, or live eligibility.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

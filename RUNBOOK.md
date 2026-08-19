@@ -526,6 +526,16 @@ docker compose --profile kis-paper-daily-pair-forward run --rm --no-deps `
   --pull never kis-paper-daily-pair-forward
 ```
 
+The companion readiness mode is network-disabled, mounts no market-data cache,
+and validates only the shared control state plus aggregate Paper environment
+availability. It writes a source-safe receipt but does not construct a client,
+request KIS, or commit cache state:
+
+```powershell
+docker compose --profile kis-paper-daily-pair-forward run --rm --no-deps `
+  --pull never kis-paper-daily-pair-forward-readiness
+```
+
 Install or refresh the guarded task with:
 
 ```powershell
@@ -585,12 +595,30 @@ Its exactly one existing collector call then returned
 That receipt contains no cache payload, so do not use it as a causal parent or
 retry it. The existing cache remains readable with seven common sessions.
 
-Before any later collector call, the existing service must emit one fixed,
-source-safe failure stage and a no-network/no-write readiness result. The only
-permitted stage labels are `control_gate`, `environment`, `collection`, and
-`commit`; they must not expose secret/config names, exception text, response
-detail, target identity, or raw data. A ready/due result may justify one new
-bounded collector call, but it still cannot prove decision-time availability or
+### Stage Discrimination And Runtime Image Limitation
+
+The source and synthetic tests now distinguish only four source-safe collector
+failure stages: `control_gate`, `environment`, `collection`, and `commit`.
+They do not expose secret/config names, exception text, response detail, target
+identity, or raw data.
+
+The one networkless readiness run wrote
+`run=20260819T161924502292Z-333ce65960854fcd/receipt.json`
+(`sha256:e64e4888b2f5e4937df1712c2bb72f3bf6f6d1410a55bef1d9ba9d09254ee4e5`)
+as `ready/aggregate_ready`, token-due, rate-open, no-network, and no-cache
+write. Its exactly one allowed collector invocation then wrote
+`run=20260819T161956811379Z-4948e7f7e87b4fe0/receipt.json`
+(`sha256:b00e687001ff988bf1e2b32e53ee9c5eebf7585bdacc33b057259c64f50870e0`)
+as `unavailable/collector_unavailable` with no cache payload and no
+`failure_stage`. That exact receipt therefore does not attest that the
+stage-aware source was the collector's runtime image. It is not a stage,
+provider, finality, or availability conclusion, and it was not retried.
+
+The collector image was rebuilt from the workspace without another KIS call.
+A later bounded source/image-provenance package must make that runtime identity
+observable before a fresh independent collection is considered; this is a
+technical evidence boundary, not an operator approval or a standing hold on
+other work. A ready/due result still cannot prove decision-time availability or
 provider finality.
 
 ## KIS Daily Event Sidecar
