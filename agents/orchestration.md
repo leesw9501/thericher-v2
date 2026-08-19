@@ -6,11 +6,11 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-intraday-later-terminal-reattachment-v1` reattaches only the first
-task-owned intraday-head terminal strictly later than the completed 2026-08-18
-baseline. It is Data-only source-safe receipt projection: no raw rows, model,
-GPU appointment, KIS call, availability/finality claim, PnL, Paper action, or
-live route.
+`kis-paper-iwm-current-head-capability-capture-v1` runs the prepared isolated
+IWM/AMS one-page KIS Paper market-data path once and records only its
+source-safe categorical result. The earlier later-terminal reattachment remains
+task-owned monitoring. Neither path creates a model input, GPU appointment,
+order, PnL, or live route.
 
 ## Ready / Owned / Due
 
@@ -24,7 +24,7 @@ live route.
 | Norgate D1 capability reprobe | Data | Existing isolated host runtime and daily capability path | Closed: one invocation produced no parseable source-safe output and no task-owned receipt. It is not a Norgate availability conclusion and will not be retried. |
 | Norgate host readiness bridge | Data | Existing isolated Norgate host runtime and two known metadata candidates | Closed: a hash-bound receipt records `input_unavailable/local_api_not_ready`, with host runtime `available` and later categories `not_checked`. No raw-data capability or updater/subscription conclusion follows. |
 | Market-data contract inventory | Data / Engine Research | Predeclared shallow locations and external source-safe receipts | Closed: six classes bind only receipt hashes and categorical status: `input_unavailable: 3`, `source_local_mechanics_only: 1`, `retrospective_control_only: 1`, and `non_promoting_runtime_only: 1`. No predictive/Paper/GPU consumer is ready. |
-| IWM isolated current-head preflight | Data | Separate external cache and source-safe receipt roots | Complete as code-only preparation: one-page scope, replay receipt isolation, repeated-page recovery semantics, and pre-credential root validation are offline-tested. No KIS call, raw data, new receipt, task change, or consumer is active. |
+| IWM isolated current-head capture | Data | Separate external cache and source-safe receipt roots | Ready: one fixed IWM/AMS current-day page through the prepared Paper-only path. It may yield only a categorical source-safe outcome; no retry, pagination, replay promotion, task change, or consumer follows. |
 | Later intraday terminal reattachment | Data / existing `thericher-kis-paper-intraday-head` task | Existing source-safe schedule and terminal receipts | Owned monitoring dependency: the current pointer is still baseline `intraday-head-20260818T2120005941479Z`; wait only for a strictly later task-owned terminal, never by foreground polling. |
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
@@ -56,10 +56,10 @@ does not qualify research input or change Paper behavior.
 
 ## Current Reversible Improvement
 
-The completed inventory now makes the absence of a predictive/Paper/GPU input
-explicit. The immediate reversible improvement is to reattach one strictly
-later task-owned terminal through the existing reader when it appears, rather
-than treating a repeated pointer or task exit as new causal evidence.
+The completed inventory makes the absence of a predictive/Paper/GPU input
+explicit. The immediate reversible improvement is one isolated, preflight-tested
+IWM current-head capability capture while the later QQQ/SPY terminal remains a
+task-owned monitor, rather than foreground-waiting on a repeated pointer.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
