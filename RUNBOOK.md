@@ -659,6 +659,23 @@ This reattaches the runtime contract only; it neither supplies a data input nor
 changes provider finality, decision-time availability, causal qualification,
 Research, Execution, or Paper eligibility.
 
+The subsequent one-shot collector was invoked exactly once with `--pull never`
+and no build request. Claude's recheck was `supported-with-limits`: the common
+local tag proves only the selected tag name, while the payload contract hash
+proves only the fixed stage contract. Neither proves immutable image identity,
+freshness, configuration, or source-build provenance. The collector wrote
+`run=20260819T165517911332Z-b52ac5d46a704e12/receipt.json`
+(`sha256:804786626d4fe10dbac971d21f563a54298e9afae92d7beb69c0c4caef8b74cf`)
+as `unavailable/collector_unavailable/failure_stage=commit`; its payload
+contract hash matched the preflight and host static contract hash. It retained
+no cache payload, raw row, credential, or account datum and all non-market-data
+route flags are false. A credential-free offline cache reattest remains valid at
+seven common sessions, with zero cache-file and index modifications observed in
+the invocation time window. This records only an unknown commit-stage failure,
+not its cause, a data availability fact, or a consumer qualification. Do not
+retry it; a later source/fixture-only fixed failure-kind change must precede any
+new collection objective.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

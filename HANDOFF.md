@@ -396,6 +396,24 @@ image freshness, data availability, finality, causal qualification, or a
 Research/Execution/Paper consumer. The next bounded Data objective is one fresh
 stage-aware collector invocation, with no automatic retry.
 
+The fresh shared-tag one-shot was run exactly once after a new Claude
+`supported-with-limits` recheck. Claude narrowed the evidence claim: a shared
+local tag establishes only the selected tag name, and the static contract hash
+establishes only the stage contract, not immutable image identity, freshness,
+configuration, or source-build provenance. The collector was run with no build
+or pull request and wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T165517911332Z-b52ac5d46a704e12/receipt.json`
+(`sha256:804786626d4fe10dbac971d21f563a54298e9afae92d7beb69c0c4caef8b74cf`)
+as `unavailable/collector_unavailable/failure_stage=commit`. Its payload
+contract hash matched the preflight and current host static contract hash. The
+receipt has no cache payload, no raw rows, credentials, or account data, and its
+non-market-data route flags are all false. A credential-free offline reattest
+still validates the seven-common-session cache; no cache file or index write was
+observed in the invocation time window. The stage does not expose or establish
+the exact commit cause, so this one-shot is closed without retry, causal
+qualification, Research, Execution, Paper, or live consequence. The next
+bounded package is source/fixture-only fixed commit-failure classification.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

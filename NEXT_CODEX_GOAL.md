@@ -2,47 +2,45 @@
 
 ## Objective
 
-Complete `kis-daily-pair-forward-stage-aware-one-shot-collection-v1`: use the
-now-attested shared QQQ/SPY D1 pair-forward runtime for exactly one fresh KIS
-Paper market-data collection outcome. This is a bounded Data recovery action,
-not a causal-input, strategy, model, execution, or trading objective.
+Complete `kis-daily-pair-forward-commit-failure-classification-v1`: make a
+future QQQ/SPY D1 pair-forward `commit` failure diagnostically classifiable
+without exposing private details. This is a local recovery-code and test
+objective, not a KIS collection, cache-refresh, causal-input, strategy, model,
+execution, or trading objective.
 
 ## Boundaries
 
 - Run `./scripts/start_next_codex_task.ps1` first, then read `HANDOFF.md`,
   `AGENTS.md`, `RUNBOOK.md`, and the active stateboards. Ask Claude for a short
-  falsification-first recheck before the collection because the earlier runtime
-  image mismatch was unexplained.
-- Use only the existing shared-tag `kis-paper-daily-pair-forward` Compose
-  service. It may read `KIS_PAPER_*` only inside that service and may use only
-  its KIS Paper market-data route and external pair cache.
+  falsification-first drift check before changing the commit recovery boundary.
+- Do not read credentials, call KIS, invoke any Docker service, write an
+  external cache, run a scheduler, or retry the completed one-shot collector.
 - Never read or route `KIS_LIVE_*`, print secret/config-variable names, account
   data, raw market rows, raw broker bodies, private cache values, or exception
-  text. Do not call an account, position, quote, or order endpoint.
-- Reattach the exact matching credential-free preflight contract before the
-  collector. Do not run readiness, build a second image, add a provider,
-  endpoint, queue, worker, scheduler, or Research/Execution consumer.
-- Run the collector at most once. Do not retry automatically, infer data
-  availability/finality, or treat a cache write as model/Execution input.
+  text.
+- Preserve the pair cache format, retention policy, target scope, route
+  isolation, token/rate controls, schedule, and consumer boundary. Do not add a
+  provider, worker, queue, or Research/Execution consumer.
 - Generated receipts stay under `D:\thericher-v2\model-artifacts`; raw cache
   data stays under `D:\market_data`; neither enters Git.
 
 ## Required Work
 
-1. Reattach the hash-matching `collection_required` preflight and recheck that
-   no Research/Execution consumer treats this forward cache as a decision-time
-   or finality input.
-2. After the Claude recheck and focused tests, invoke the existing shared-tag
-   collector exactly once. Its own token/rate checks determine whether it
-   collects or safely defers.
-3. Recompute the external receipt SHA-256 and reattach only its categorical
-   status, optional fixed `failure_stage`, contract hash match, safe aggregates,
-   route isolation, and artifact-policy facts. A missing stage on a new
-   shared-contract receipt is a scoped runtime-provenance fault, never a reason
-   to retry.
-4. If the cache changed, record that fact only; defer causal qualification to a
-   separate objective. If it did not, close the exact outcome without a loop.
-5. Refresh stateboards, `HANDOFF.md`, and `RUNBOOK.md`; run verification,
+1. Reattach the completed shared-contract collector receipt as
+   `unavailable/collector_unavailable/failure_stage=commit`, plus the valid
+   seven-session offline cache reattestation and observed zero cache-file/index
+   modifications in its invocation window. Treat the exact commit cause as
+   unknown rather than inferring it from the stage.
+2. Add one optional, fixed `commit_failure_kind` only to source-safe receipts
+   whose `failure_stage` is `commit`: `cache_contract` for
+   `KisPaperDailyPairForwardCacheError`, `storage` for `OSError`, and
+   `validation` for `ValueError`. It must never contain exception text, class
+   names, paths, raw data, credentials, account data, or dynamic values.
+3. Add focused tests for all three fixed mappings, absence on non-commit and
+   successful outcomes, receipt-schema compatibility, and source safety.
+   Strongest kill test: if an exception's dynamic detail can reach a receipt or
+   the field leaks to another failure stage, do not accept the change.
+4. Refresh stateboards, `HANDOFF.md`, and `RUNBOOK.md`; run verification,
    commit, push, replace this file with exactly one next objective, and
    continue.
 

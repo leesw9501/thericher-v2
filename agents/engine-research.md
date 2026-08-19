@@ -62,9 +62,15 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   one credential-free networkless preflight emitted a payload-only static stage
   contract hash matching the host source contract, then returned
   `collection_required`. This proves no full image freshness, data availability,
-  finality, or causal qualification, and it made no collector/KIS call. It
-  leaves only a fresh independent one-shot collection ready; Research receives
-  no campaign, GPU, model-selection, replay, or Paper consumer from it.
+  finality, or causal qualification, and it made no collector/KIS call.
+  Research receives no campaign, GPU, model-selection, replay, or Paper
+  consumer from it.
+- That fresh one-shot collector is now closed as
+  `unavailable/collector_unavailable/failure_stage=commit` with a matching
+  static contract hash and no cache payload. The offline cache still reattests
+  with seven common sessions and no observed cache-file/index write in the
+  invocation window. This is an unknown commit-stage fact only; it creates no
+  campaign, GPU appointment, model selection, replay, or Paper consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ
