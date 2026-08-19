@@ -429,6 +429,29 @@ KIS, Docker, cache-write, scheduler, Research, Execution, Paper, or live call.
 The next bounded Data action is a fresh credential-free v2 preflight; only its
 matching `collection_required` outcome can permit one new collector invocation.
 
+That v2 preflight completed at
+`data/kis-paper-daily-pair-forward-v1/run=20260819T172512279495Z-e9baed100e2548a8/receipt.json`
+(`sha256:cf95c93741330d60d95dc040e12446d3a34e899d8a3565b82cb0f8b2743e6ec2`)
+as matching `collection_required`. The existing shared tag was built once, and
+its locally observed image identity was unchanged immediately before and after
+the one collector call; that is not immutable image provenance. The one
+collector wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T172546233523Z-2f2f777f8c454d19/receipt.json`
+(`sha256:0c28203f24a098685f8068433e2250f14c1774bde99e5e87e64de1862ae53d42`)
+as `unavailable/collector_unavailable/failure_stage=commit` with fixed
+`commit_failure_kind=cache_contract`. It has no cache payload and all
+non-market-data route flags remain false. The offline reattest still binds the
+same cache and index identities with seven common sessions; no cache-file or
+index mutation was observed in the invocation window. This narrows only the
+failure family, not its exact cause, data availability, finality, causal
+qualification, Research, Execution, Paper, or live eligibility. No retry ran.
+
+A short architecture/recovery Claude invocation for the next diagnostic did
+not return a verdict before it was stopped, so it is `review_unavailable`, not
+agreement. The next bounded package is source/fixture-only fixed commit-phase
+diagnostics for future `cache_contract` outcomes; it makes no KIS, Docker,
+credential, cache-write, or retry call.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

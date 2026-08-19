@@ -71,11 +71,13 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   with seven common sessions and no observed cache-file/index write in the
   invocation window. This is an unknown commit-stage fact only; it creates no
   campaign, GPU appointment, model selection, replay, or Paper consumer.
-- The source/fixture-only v2 contract now permits one optional fixed
-  `commit_failure_kind` only on a later commit-stage receipt. It did not change
-  the completed v1 result or create a campaign, GPU appointment, model
-  selection, replay, or Paper consumer. A fresh v2 preflight is required before
-  any later one-shot collection can be considered.
+- The v2 preflight then permitted exactly one new collector call, which closed
+  as `unavailable/collector_unavailable/failure_stage=commit` with fixed
+  `commit_failure_kind=cache_contract`. The cache reattests unchanged at seven
+  common sessions, with no cache payload or observed cache/index mutation. This
+  narrows a Data recovery family only; it creates no campaign, GPU appointment,
+  model selection, replay, or Paper consumer. A local-only future phase
+  diagnostic cannot change that boundary.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ

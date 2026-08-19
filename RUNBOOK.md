@@ -695,6 +695,29 @@ networkless v2 preflight. Only a matching `collection_required` preflight can
 precede one collector invocation; `cache_current` or `unavailable` closes that
 attempt without a collector call or retry.
 
+### V2 One-Shot Outcome
+
+The one credential-free v2 preflight wrote
+`run=20260819T172512279495Z-e9baed100e2548a8/receipt.json`
+(`sha256:cf95c93741330d60d95dc040e12446d3a34e899d8a3565b82cb0f8b2743e6ec2`)
+as matching `collection_required`. The existing shared image tag was built
+once; its locally observed image identity did not change before or after the
+following collector, which is not a full provenance claim. The exactly one
+collector call wrote
+`run=20260819T172546233523Z-2f2f777f8c454d19/receipt.json`
+(`sha256:0c28203f24a098685f8068433e2250f14c1774bde99e5e87e64de1862ae53d42`)
+as `unavailable/collector_unavailable/failure_stage=commit` with
+`commit_failure_kind=cache_contract`. It retained no cache payload, raw row,
+credential, or account data, and every non-market-data route flag is false.
+
+The cache and index reattach to their prior source-safe identities with seven
+common sessions, and no cache-file or index mutation was observed in the
+collector window. The fixed kind does not identify an exact subcause, so this
+outcome is closed without retry or consumer change. The next local-only package
+may expose a fixed phase for a future `cache_contract` failure; it must never
+serialize exception text, exception class, path, raw data, credential, or
+account data.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:
