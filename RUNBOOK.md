@@ -869,6 +869,25 @@ value-derived diagnostic hash enter source-safe payloads. A future external
 recovery must be a separately declared target-scoped re-fetch, not an automatic
 quarantine clear.
 
+### Post-Reconciliation Observation
+
+The completed post-policy preflight was `collection_required`, followed by one
+and only one fixed-pair collector. Its source-safe receipt is `partial/resume`
+with two accepted pages, two retained-revision conflicts, two quarantined
+targets, and eighteen common sessions. Both targets remain
+`input_unavailable/daily_retained_revision_conflict`. The offline causal reader
+then returned `input_unavailable` for source-pair identity and the existing
+clock, availability, and finality gaps. This is a cache-mechanics observation,
+not an independent reference, automatic clearance, causal input, model result,
+or Paper/Execution permission. The direct runner now resolves an omitted
+`ProjectRoot` after parameter binding; installed task actions already pass it
+explicitly.
+
+The completed package passed its focused 48-test group and the full authority
+suite as `3218 passed, 19 skipped` in 42m13s, plus Ruff, both credential-free
+Compose parses, and `git diff --check`. Verification made no external, KIS,
+broker, credential, or scheduler call.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

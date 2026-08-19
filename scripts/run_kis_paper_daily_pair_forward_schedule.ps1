@@ -1,9 +1,14 @@
 [CmdletBinding()]
 param(
-    [string]$ProjectRoot = (Join-Path $PSScriptRoot "..")
+    [string]$ProjectRoot = ""
 )
 
 $ErrorActionPreference = "Stop"
+
+if ([string]::IsNullOrWhiteSpace($ProjectRoot)) {
+    $ProjectRoot = Join-Path $PSScriptRoot ".."
+}
+
 $CacheCurrentExitCode = 0
 $CollectionRequiredExitCode = 10
 $RecoveryExitCode = 20

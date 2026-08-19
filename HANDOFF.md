@@ -14,6 +14,11 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
+The active objective is `tiingo-prospective-eod-refresh-v1`: create or
+reattest one current dated, fixed SPY/QQQ/IWM Tiingo Standard EOD snapshot under
+the existing external root. It improves independent forward data lineage only;
+it does not promote a model, GPU, KIS recovery, Execution, or Paper consumer.
+
 The completed `kis-intraday-short-session-topology-classification-v1` classified
 the bound 2026-08-15 terminal as `current_session_short` solely from source-safe
 metadata. The completed `kis-intraday-next-terminal-reattachment-v1` reattached
@@ -584,6 +589,35 @@ and the consumer gate prevents a conflicted target from becoming a model input.
 No credential, KIS, Docker, external-cache, scheduler, Research, Execution,
 Paper, or live action ran. The next collector-facing package must be an
 explicit bounded recovery/re-fetch contract.
+
+That one post-policy fixed-pair observation is complete. Its offline preflight
+receipt is
+`data/kis-paper-daily-pair-forward-v1/run=20260819T215118439029Z-e468f94edded4f86/receipt.json`
+(`sha256:91206b61150364513ecaedaa2591253be4721abbc37a0cac9c6e2eca69e54757`)
+with `collection_required`. Exactly one collector then wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T215122140472Z-304d6943bbf146d1/receipt.json`
+(`sha256:85516c0e8ce93a9fb4396afd9f53f33ed37005dade4e998bdc4dd1f307a692c0`)
+as `partial/resume`: two accepted pages, two retained-revision conflicts, two
+quarantined targets, and eighteen common sessions. Both fixed targets are now
+`input_unavailable/daily_retained_revision_conflict`; the receipt records the
+daily-market route only and every account, position, quote, order, and live
+route false. The offline causal receipt
+`data/kis-daily-forward-causal-qualification-v1/run=post-reconciliation-observation-20260819-r1/receipt.json`
+(`sha256:40cf5a8487fd7144304f8e056aebf6d93811a3ff7051364c207f4025c4e0105a`)
+is `input_unavailable` for source-pair identity plus the existing named-clock,
+decision-time availability, and provider-finality gaps. A same-route refetch is
+not independent recovery evidence and does not clear either quarantine.
+
+The first direct runner invocation failed before its preflight because a
+PowerShell parameter default evaluated before its script root was available; no
+Docker or KIS call ran. The runner now resolves an empty `ProjectRoot` after
+parameter binding, matching the installed task's already-explicit root, with a
+fixture assertion for the resolved default path.
+
+The post-reconciliation observation passed its focused 48-test group and the
+goal-boundary authority suite as `3218 passed, 19 skipped` in 42m13s, plus
+Ruff, both credential-free Compose parses, and `git diff --check`. Verification
+made no additional external, KIS, broker, credential, or scheduler call.
 
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC

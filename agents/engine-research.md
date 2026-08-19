@@ -105,6 +105,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   causal reader rejects every non-ready target, so this remains Data-only and
   creates no campaign, GPU appointment, model selection, replay, or Paper
   consumer.
+- The post-policy fixed-pair observation then retained two target-local revision
+  conflicts and quarantined both targets. Its offline causal receipt is
+  `input_unavailable` with source-pair identity unsatisfied in addition to the
+  existing clock, availability, and finality gaps. This is not an independent
+  recovery, model input, campaign, GPU appointment, replay, or Paper consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ

@@ -6,8 +6,13 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-pair-forward-post-reconciliation-observation-v1` is ready. The
-completed overlap-reconciliation package passed goal-boundary verification. The v4 deferred
+`tiingo-prospective-eod-refresh-v1` is ready. Data will create or reattest one
+fixed SPY/QQQ/IWM Tiingo Standard EOD prospective snapshot under the existing
+external root, preserving its current non-promoting lineage-only contract. The
+completed `kis-daily-pair-forward-post-reconciliation-observation-v1` passed
+its focused 48-test group and goal-boundary authority suite as `3218 passed, 19
+skipped` in 42m13s. The completed overlap-reconciliation package passed its own
+goal-boundary verification. The v4 deferred
 cache retains seven common sessions and two seven-row streams; a later token
 probe is `authenticated`. V5 readiness recorded open gates without network or
 cache write, while its one collector then failed at
@@ -15,10 +20,11 @@ cache write, while its one collector then failed at
 identities are unchanged from v4. The completed Data/Infra package makes exact
 duplicates idempotent, preserves a conflicting retained row under durable
 target-local quarantine, and allows only strictly newer sessions to append;
-the causal reader rejects any non-ready target. The next collector-facing
-package builds the existing fixed-pair service, runs one offline preflight and
-only one collector on `collection_required`, and cannot clear a quarantine
-implicitly. The daily-broad cursor is terminal and the QQQ/SPY
+the causal reader rejects any non-ready target. The fixed-pair package built
+the committed image, saw `collection_required`, and ran one collector. It
+retained two conflicts and quarantined both targets; the offline causal reader
+returned `input_unavailable`. Neither result clears a quarantine implicitly.
+The daily-broad cursor is terminal and the QQQ/SPY
 forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
 control, and shallow nonlinear tree control all completed on the same
 hash-pinned daily input, with the L2 and tree QQQ/SPY after-cost replays below
@@ -30,6 +36,7 @@ named clock/session, decision-time availability, and provider finality
 
 | Work | Owner | Resource | Current fact and next action |
 | --- | --- | --- | --- |
+| Tiingo prospective EOD refresh | Data | Existing fixed ETF source contract, external canonical root, and approved local token path | Ready: create or reattest one current dated SPY/QQQ/IWM snapshot through the existing bounded three-request acquisition path. It stays prospective-lineage-only and cannot clear KIS quarantine or create a Research, GPU, Execution, or Paper consumer. |
 | Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |
 | FirstRate free M1 normalization | Data | Hash-bound external ZIPs, canonical CSVs, and source-safe receipt | Closed: archive hashes, expected entries, strict decode, canonical hashes, and exact timestamp-set equality reattached. Local provider round-trip counts are 207,824 SPY and 210,482 QQQ M1 Bars. |
 | FirstRate source-local timeframe mechanics | Data / Codex | Existing local provider/resampler and immutable normalization receipt | Closed: canonical hashes reattached and only complete unique UTC-anchored 1m/5m/10m/1h/3h aggregate geometry retained. Every emitted bar passed source-bucket OHLCV, ordering, and completion checks. |
@@ -66,7 +73,7 @@ named clock/session, decision-time availability, and provider finality
 | KIS QQQ/SPY D1 v4 preflight and one-shot collection | Data | Existing shared-tag Compose service, external cache, and receipt root | Complete: matching preflight `sha256:e24e124b7e2ab6ec50496b5fc9a70ce21198f1483606527b442e9c749cf9029f` permitted one collector `sha256:8100bf8cccc02afa88124c05a731ae53113f99075761c5fbe8bb657a3416e832`, which deferred with QQQ authentication rejection and SPY token gate state; its cache/index reattach holds and no retry ran. |
 | KIS Paper authentication capability probe | Data / Infra Capability | Existing virtual-host market-data authentication path and source-safe receipt root | Complete: one `authenticated` token-only receipt `sha256:d07e12f8ca521ca32cc00a4a0f81625ad5b503fa0505bad026969aca95db8261` has no market-data, account, order, live, token, or credential-retention fact. |
 | KIS QQQ/SPY D1 v5 readiness and one-shot collection | Data | Existing shared-tag readiness/collector Compose service, external cache, and receipt root | Complete: readiness `sha256:f1d833bdf8aa775919f1793d2025ab2b530d251c13e3da22eb81a70a2c6ba7ab` recorded open gates/no network/no cache write; one collector `sha256:a10e42f5a44753c67bf483414005d98b5171341998926b10a2a5f9dc85100910` failed at `commit/cache_contract/cache_prepare/incoming_merge`, with prior cache identities reattached unchanged. |
-| KIS QQQ/SPY D1 post-reconciliation observation | Data / Infra Capability | Existing fixed-pair Compose service, external cache, and receipt root | Ready: build the committed source, reattach one offline preflight, and invoke the collector once only on `collection_required`. Reattach aggregate-only output; no retry, clearance, causal promotion, or consumer call. |
+| KIS QQQ/SPY D1 post-reconciliation observation | Data / Infra Capability | Existing fixed-pair Compose service, external cache, and receipt root | Complete: preflight was `collection_required`; one collector retained two conflicts and quarantined both targets. Offline causal qualification is `input_unavailable`; focused and full authority verification passed. No retry, clearance, causal promotion, or consumer call followed. |
 | Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
 | KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one development-only CPU fit wrote external model parameters only, excluded validation labels, and completed two model plus six comparator local-paper cells. Both model after-cost cells were negative and below previous-bar-direction controls. |
 | KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one shallow histogram-gradient-tree replay excluded validation labels from fitting, wrote no serialized estimator, and completed two model plus six comparator `local_paper` cells. Both model cells were below their fixed previous-bar-direction comparators, closing the lineage. |
@@ -158,9 +165,9 @@ or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current D1 action
-has completed the source/fixture-only overlap-reconciliation package. Its
-result preserves prior retained rows, infers neither causal availability nor
-finality, and made no KIS, credential, external-cache, or consumer call. The
-next daily action is the separately bounded fixed-pair observation/re-fetch
-contract; it must not treat an ordinary collection as automatic quarantine
-clearance.
+completed the fixed-pair observation. Its preflight was `collection_required`;
+the one permitted collector retained two conflicts and quarantined both targets.
+The resulting causal classification remains `input_unavailable`, so this did
+not produce availability, finality, model, or consumer evidence. The next Data
+package must not use a same-route refetch as automatic clearance or independent
+recovery evidence.

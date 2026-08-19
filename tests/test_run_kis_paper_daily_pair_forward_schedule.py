@@ -64,6 +64,8 @@ def test_pair_forward_schedule_collects_only_after_required_preflight(tmp_path: 
             (
                 "$ErrorActionPreference = 'Stop'",
                 f". '{escaped_script}'",
+                "$resolvedDefaultProjectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path",
+                f"if ($resolvedDefaultProjectRoot -ne '{escaped_project_root}') {{ exit 92 }}",
                 "$script:collectionCalls = 0",
                 "function Test-KoreaStandardTime { return $true }",
                 "function Test-SharedDataDispatcherIdle { return $true }",
