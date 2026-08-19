@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import socket
 import sys
@@ -1176,10 +1177,16 @@ def _evaluation_artifact(
     training_artifact: Path,
     model_artifact: Path,
 ) -> Path:
+    digest = (
+        hashlib.sha256(model_artifact.read_bytes()).hexdigest()
+        if model_artifact.exists()
+        else "0" * 64
+    )
     path = tmp_path / "evaluation-metrics.json"
     path.write_text(
         json.dumps(
             {
+                "status": "candidate_evaluated_only",
                 "candidate_experiment_id": "unit_candidate",
                 "candidate_parameters": {
                     "lookback": 3,
@@ -1187,6 +1194,7 @@ def _evaluation_artifact(
                 },
                 "training_metrics_artifact": str(training_artifact),
                 "model_artifact": str(model_artifact),
+                "model_artifact_sha256": f"sha256:{digest}",
                 "artifacts": {
                     "source_model": str(model_artifact),
                 },

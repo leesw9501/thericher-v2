@@ -18,12 +18,15 @@ from thericher_v2.serialization import to_jsonable
 from thericher_v2.state import Event, EventStore
 
 from .candidate_evaluation import (
+    CandidateModelArtifact,
     _candidate_from_training_payload,
     _feature_names_from_training_payload,
     _model_artifact_from_training_payload,
     _probabilities_from_result,
+    _read_candidate_model_artifact,
     _read_training_metrics,
     _run_torch_cuda_candidate_probabilities,
+    _runner_training_payload,
 )
 from .candidate_training import (
     CandidateTrainingDataset,
@@ -118,6 +121,7 @@ class BoundedCandidateReplayResult:
     training_metrics_artifact: Path | None
     evaluation_artifact: Path | None
     model_artifact: Path | None
+    model_artifact_sha256: str | None
     candidate_experiment_id: str | None
     candidate_parameters: dict[str, Any]
     data_source: str
@@ -150,7 +154,7 @@ class BoundedCandidateReplayResult:
 
 
 CandidateProbabilityRunner = Callable[
-    [CandidateTrainingDataset, Path, dict[str, Any]],
+    [CandidateTrainingDataset, CandidateModelArtifact | Path, dict[str, Any]],
     dict[str, Any],
 ]
 
@@ -201,6 +205,7 @@ def run_bounded_candidate_replay(
         training_metrics_artifact=selected_training_metrics_artifact,
         training_error=training_error,
         evaluation_artifact=evaluation_artifact,
+        evaluation_payload=evaluation_payload,
         evaluation_error=evaluation_error,
         model_artifact=selected_model_artifact,
         candidate=candidate,
@@ -226,6 +231,7 @@ def _run_candidate_replay_result(
     training_metrics_artifact: Path | None,
     training_error: str | None,
     evaluation_artifact: Path | None,
+    evaluation_payload: dict[str, Any],
     evaluation_error: str | None,
     model_artifact: Path | None,
     candidate: dict[str, Any],
@@ -265,6 +271,24 @@ def _run_candidate_replay_result(
             selected_backend=selected_backend,
             replay_artifact=replay_artifact,
             reason=training_error,
+        )
+    evaluated_model_sha256, evaluation_binding_error = _evaluated_model_binding(
+        evaluation_payload,
+        candidate,
+    )
+    if evaluation_binding_error is not None:
+        return _prepared_result(
+            config=config,
+            training_metrics_artifact=training_metrics_artifact,
+            evaluation_artifact=evaluation_artifact,
+            model_artifact=model_artifact,
+            candidate=candidate,
+            source=source,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            replay_artifact=replay_artifact,
+            reason=evaluation_binding_error,
         )
     expected_feature_names = _feature_names_from_training_payload(training_payload)
     if expected_feature_names and expected_feature_names != source.dataset.feature_names:
@@ -307,7 +331,8 @@ def _run_candidate_replay_result(
             replay_artifact=replay_artifact,
             reason=f"candidate feature preprocessing unavailable: {exc}",
         )
-    if model_artifact is None or not model_artifact.exists():
+    model_bytes, model_read_error = _read_candidate_model_artifact(model_artifact)
+    if model_read_error is not None:
         return _prepared_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
@@ -319,7 +344,21 @@ def _run_candidate_replay_result(
             available_backends=available_backends,
             selected_backend=selected_backend,
             replay_artifact=replay_artifact,
-            reason="candidate model artifact is missing",
+            reason=model_read_error,
+        )
+    if model_bytes.sha256 != evaluated_model_sha256:
+        return _prepared_result(
+            config=config,
+            training_metrics_artifact=training_metrics_artifact,
+            evaluation_artifact=evaluation_artifact,
+            model_artifact=model_artifact,
+            candidate=candidate,
+            source=source,
+            gpu=gpu,
+            available_backends=available_backends,
+            selected_backend=selected_backend,
+            replay_artifact=replay_artifact,
+            reason="candidate model artifact does not match evaluated model bytes",
         )
     if probability_runner is None and not gpu.available:
         return _prepared_result(
@@ -369,7 +408,11 @@ def _run_candidate_replay_result(
 
     runner = probability_runner or _run_torch_cuda_candidate_probabilities
     try:
-        probability_result = runner(inference_source.dataset, model_artifact, training_payload)
+        probability_result = runner(
+            inference_source.dataset,
+            model_bytes,
+            _runner_training_payload(training_payload),
+        )
         probabilities = _probabilities_from_result(probability_result)
     except Exception as exc:  # noqa: BLE001 - replay jobs record backend failures.
         return _prepared_result(
@@ -404,6 +447,7 @@ def _run_candidate_replay_result(
         training_metrics_artifact=training_metrics_artifact,
         evaluation_artifact=evaluation_artifact,
         model_artifact=model_artifact,
+        model_artifact_sha256=model_bytes.sha256,
         candidate=candidate,
         source=inference_source,
         probabilities=probabilities,
@@ -422,6 +466,7 @@ def _run_local_paper_replay(
     training_metrics_artifact: Path | None,
     evaluation_artifact: Path | None,
     model_artifact: Path,
+    model_artifact_sha256: str | None = None,
     candidate: dict[str, Any],
     source: CandidateReplaySource,
     probabilities: tuple[float, ...],
@@ -543,6 +588,7 @@ def _run_local_paper_replay(
         training_metrics_artifact=training_metrics_artifact,
         evaluation_artifact=evaluation_artifact,
         model_artifact=model_artifact,
+        model_artifact_sha256=model_artifact_sha256,
         candidate_experiment_id=candidate.get("candidate_experiment_id"),
         candidate_parameters=candidate.get("candidate_parameters") or {},
         data_source=source.data_source,
@@ -596,6 +642,7 @@ def _prepared_result(
         training_metrics_artifact=training_metrics_artifact,
         evaluation_artifact=evaluation_artifact,
         model_artifact=model_artifact,
+        model_artifact_sha256=None,
         candidate_experiment_id=candidate.get("candidate_experiment_id"),
         candidate_parameters=candidate.get("candidate_parameters") or {},
         data_source=source.data_source,
@@ -681,6 +728,7 @@ def _candidate_replay_payload(
             "model_artifact": (
                 None if result.model_artifact is None else str(result.model_artifact)
             ),
+            "model_artifact_sha256": result.model_artifact_sha256,
             "candidate_experiment_id": result.candidate_experiment_id,
             "candidate_parameters": result.candidate_parameters,
             "data_source": result.data_source,
@@ -711,6 +759,7 @@ def _candidate_replay_payload(
                 "source_model": None
                 if result.model_artifact is None
                 else str(result.model_artifact),
+                "source_model_sha256": result.model_artifact_sha256,
             },
             "artifact_policy": {
                 "root": str(artifact_root),
@@ -749,6 +798,35 @@ def _model_artifact_from_evaluation_payload(payload: dict[str, Any]) -> Path | N
     if isinstance(artifacts, dict) and artifacts.get("source_model"):
         return Path(str(artifacts["source_model"]))
     return None
+
+
+def _evaluated_model_binding(
+    payload: dict[str, Any],
+    candidate: dict[str, Any],
+) -> tuple[str | None, str | None]:
+    if payload.get("status") != "candidate_evaluated_only":
+        return None, "candidate evaluation artifact is not a completed evaluation"
+    candidate_experiment_id = candidate.get("candidate_experiment_id")
+    if not isinstance(candidate_experiment_id, str) or not candidate_experiment_id:
+        return None, "training candidate identity is required for replay"
+    if payload.get("candidate_experiment_id") != candidate_experiment_id:
+        return None, "candidate evaluation identity does not match replay training candidate"
+    candidate_parameters = candidate.get("candidate_parameters")
+    evaluation_parameters = payload.get("candidate_parameters")
+    if not isinstance(candidate_parameters, dict) or not isinstance(evaluation_parameters, dict):
+        return None, "candidate parameters are required for replay binding"
+    if evaluation_parameters != candidate_parameters:
+        return None, "candidate evaluation parameters do not match replay training candidate"
+    digest = payload.get("model_artifact_sha256")
+    if not _is_sha256_digest(digest):
+        return None, "candidate evaluation model digest is required for replay"
+    return digest, None
+
+
+def _is_sha256_digest(value: object) -> bool:
+    if not isinstance(value, str) or not value.startswith("sha256:") or len(value) != 71:
+        return False
+    return all(character in "0123456789abcdef" for character in value.removeprefix("sha256:"))
 
 
 def _fresh_event_store(output_dir: Path) -> EventStore:

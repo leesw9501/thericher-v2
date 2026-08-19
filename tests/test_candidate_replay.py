@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import socket
 import sys
@@ -145,6 +146,69 @@ def test_candidate_replay_missing_backend_is_prepared_not_replayed(monkeypatch, 
     payload = json.loads(result.replay_artifact.read_text(encoding="utf-8"))
     assert result.status == "prepared_not_replayed"
     assert "no compatible research GPU replay backend" in payload["reason"]
+
+
+def test_candidate_replay_rejects_model_bytes_changed_after_evaluation(tmp_path) -> None:
+    model_artifact = _model_artifact(tmp_path)
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    model_artifact.write_text("different-unit-model", encoding="utf-8")
+    runner_called = False
+
+    def runner(*_args: object, **_kwargs: object) -> dict[str, object]:
+        nonlocal runner_called
+        runner_called = True
+        return {}
+
+    result = run_bounded_candidate_replay(
+        config=CandidateReplayConfig(run_id="changed-model-candidate-replay"),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=runner,
+    )
+
+    payload = json.loads(result.replay_artifact.read_text(encoding="utf-8"))
+    assert result.status == "prepared_not_replayed"
+    assert "does not match evaluated model bytes" in payload["reason"]
+    assert result.event_count == result.replay_fill_count == 0
+    assert runner_called is False
+
+
+def test_candidate_replay_rejects_mismatched_evaluation_candidate(tmp_path) -> None:
+    model_artifact = _model_artifact(tmp_path)
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    evaluation_payload = json.loads(evaluation_artifact.read_text(encoding="utf-8"))
+    evaluation_payload["candidate_parameters"]["lookback"] = 5
+    evaluation_artifact.write_text(
+        json.dumps(evaluation_payload),
+        encoding="utf-8",
+    )
+    runner_called = False
+
+    def runner(*_args: object, **_kwargs: object) -> dict[str, object]:
+        nonlocal runner_called
+        runner_called = True
+        return {}
+
+    result = run_bounded_candidate_replay(
+        config=CandidateReplayConfig(run_id="mismatched-candidate-replay"),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=runner,
+    )
+
+    payload = json.loads(result.replay_artifact.read_text(encoding="utf-8"))
+    assert result.status == "prepared_not_replayed"
+    assert "parameters do not match" in payload["reason"]
+    assert result.event_count == result.replay_fill_count == 0
+    assert runner_called is False
 
 
 def test_candidate_replay_probability_path_uses_artifact_feature_normalization(
@@ -340,10 +404,16 @@ def _evaluation_artifact(
     training_artifact: Path,
     model_artifact: Path,
 ) -> Path:
+    digest = (
+        hashlib.sha256(model_artifact.read_bytes()).hexdigest()
+        if model_artifact.exists()
+        else "0" * 64
+    )
     path = tmp_path / "evaluation-metrics.json"
     path.write_text(
         json.dumps(
             {
+                "status": "candidate_evaluated_only",
                 "candidate_experiment_id": "unit_candidate",
                 "candidate_parameters": {
                     "lookback": 3,
@@ -351,6 +421,7 @@ def _evaluation_artifact(
                 },
                 "training_metrics_artifact": str(training_artifact),
                 "model_artifact": str(model_artifact),
+                "model_artifact_sha256": f"sha256:{digest}",
                 "artifacts": {
                     "source_model": str(model_artifact),
                 },

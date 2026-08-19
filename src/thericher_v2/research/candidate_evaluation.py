@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import hashlib
 import importlib.util
+import io
 import json
 import math
 from collections.abc import Callable
@@ -74,6 +76,7 @@ class BoundedCandidateEvaluationResult:
     selected_backend: str | None
     training_metrics_artifact: Path | None
     model_artifact: Path | None
+    model_artifact_sha256: str | None
     candidate_artifact: Path | None
     candidate_experiment_id: str | None
     candidate_parameters: dict[str, Any]
@@ -93,12 +96,34 @@ class BoundedCandidateEvaluationResult:
         object.__setattr__(self, "checked_at", self.checked_at.astimezone(UTC))
 
 
+@dataclass(frozen=True)
+class CandidateModelArtifact:
+    """The exact model payload an evaluation or replay runner may consume."""
+
+    payload: bytes
+    sha256: str
+
+    def exists(self) -> bool:
+        """Retain the small file-like contract used by injected test runners."""
+
+        return True
+
+    def read_bytes(self) -> bytes:
+        return self.payload
+
+    def __str__(self) -> str:
+        return self.sha256
+
+    def __repr__(self) -> str:
+        return f"{type(self).__name__}({self.sha256})"
+
+
 CandidateEvaluationRunner = Callable[
-    [CandidateTrainingDataset, Path, dict[str, Any], CandidateEvaluationConfig],
+    [CandidateTrainingDataset, CandidateModelArtifact, dict[str, Any], CandidateEvaluationConfig],
     dict[str, Any],
 ]
 CandidateProbabilityRunner = Callable[
-    [CandidateTrainingDataset, Path, dict[str, Any]],
+    [CandidateTrainingDataset, CandidateModelArtifact | Path, dict[str, Any]],
     dict[str, Any],
 ]
 
@@ -245,7 +270,8 @@ def _run_candidate_evaluation_result(
             evaluation_artifact=evaluation_artifact,
             reason=f"candidate feature preprocessing unavailable: {exc}",
         )
-    if model_artifact is None or not model_artifact.exists():
+    model_bytes, model_read_error = _read_candidate_model_artifact(model_artifact)
+    if model_read_error is not None:
         return _prepared_result(
             config=config,
             training_metrics_artifact=training_metrics_artifact,
@@ -256,7 +282,7 @@ def _run_candidate_evaluation_result(
             available_backends=available_backends,
             selected_backend=selected_backend,
             evaluation_artifact=evaluation_artifact,
-            reason="candidate model artifact is missing",
+            reason=model_read_error,
         )
     if not gpu.available:
         return _prepared_result(
@@ -302,7 +328,12 @@ def _run_candidate_evaluation_result(
         )
     runner = evaluation_runner or _run_torch_cuda_candidate_evaluation
     try:
-        metrics = runner(inference_dataset, model_artifact, training_payload, config)
+        metrics = runner(
+            inference_dataset,
+            model_bytes,
+            _runner_training_payload(training_payload),
+            config,
+        )
     except Exception as exc:  # noqa: BLE001 - evaluation jobs record backend failures.
         return _prepared_result(
             config=config,
@@ -331,6 +362,7 @@ def _run_candidate_evaluation_result(
         selected_backend=selected_backend,
         training_metrics_artifact=training_metrics_artifact,
         model_artifact=model_artifact,
+        model_artifact_sha256=model_bytes.sha256,
         candidate_artifact=_candidate_artifact_from_training_payload(training_payload),
         candidate_experiment_id=candidate.get("candidate_experiment_id"),
         candidate_parameters=candidate.get("candidate_parameters") or {},
@@ -369,6 +401,7 @@ def _prepared_result(
         selected_backend=selected_backend,
         training_metrics_artifact=training_metrics_artifact,
         model_artifact=model_artifact,
+        model_artifact_sha256=None,
         candidate_artifact=None,
         candidate_experiment_id=candidate.get("candidate_experiment_id"),
         candidate_parameters=candidate.get("candidate_parameters") or {},
@@ -448,7 +481,7 @@ def _load_evaluation_dataset(
 
 def _run_torch_cuda_candidate_evaluation(
     dataset: CandidateTrainingDataset,
-    model_artifact: Path,
+    model_artifact: CandidateModelArtifact,
     training_payload: dict[str, Any],
     config: CandidateEvaluationConfig,
 ) -> dict[str, Any]:
@@ -490,15 +523,23 @@ def _run_torch_cuda_candidate_evaluation(
 
 def _run_torch_cuda_candidate_probabilities(
     dataset: CandidateTrainingDataset,
-    model_artifact: Path,
+    model_artifact: CandidateModelArtifact | Path,
     training_payload: dict[str, Any],
 ) -> dict[str, Any]:
     import torch
 
+    if isinstance(model_artifact, Path):
+        model_artifact, model_read_error = _read_candidate_model_artifact(model_artifact)
+        if model_read_error is not None:
+            raise RuntimeError(model_read_error)
     if not torch.cuda.is_available():
         raise RuntimeError("torch CUDA is not available")
     device = torch.device("cuda")
-    checkpoint = torch.load(model_artifact, map_location=device, weights_only=False)
+    checkpoint = torch.load(
+        io.BytesIO(model_artifact.payload),
+        map_location=device,
+        weights_only=False,
+    )
     feature_names = tuple(str(name) for name in checkpoint.get("feature_names", ()))
     if feature_names != dataset.feature_names:
         raise ValueError(f"model feature names do not match evaluation dataset: {feature_names}")
@@ -535,7 +576,7 @@ def _run_torch_cuda_candidate_probabilities(
         "feature_normalization": dataset.feature_normalization,
         "preprocessing_axis": _preprocessing_axis_payload(dataset.feature_preprocessing),
         "hidden_units": hidden_units,
-        "model_artifact": str(model_artifact),
+        "model_artifact_sha256": model_artifact.sha256,
         "candidate_experiment_id": training_payload.get("candidate_experiment_id"),
     }
 
@@ -562,6 +603,7 @@ def _candidate_evaluation_payload(
             "model_artifact": (
                 None if result.model_artifact is None else str(result.model_artifact)
             ),
+            "model_artifact_sha256": result.model_artifact_sha256,
             "candidate_artifact": (
                 None if result.candidate_artifact is None else str(result.candidate_artifact)
             ),
@@ -581,6 +623,7 @@ def _candidate_evaluation_payload(
                 "source_model": None
                 if result.model_artifact is None
                 else str(result.model_artifact),
+                "source_model_sha256": result.model_artifact_sha256,
             },
             "artifact_policy": {
                 "root": str(artifact_root),
@@ -620,6 +663,43 @@ def _model_artifact_from_training_payload(payload: dict[str, Any]) -> Path | Non
     if isinstance(metrics, dict) and metrics.get("model_artifact"):
         return Path(str(metrics["model_artifact"]))
     return None
+
+
+def _read_candidate_model_artifact(
+    path: Path | None,
+) -> tuple[CandidateModelArtifact | None, str | None]:
+    if path is None:
+        return None, "candidate model artifact is missing"
+    try:
+        payload = path.read_bytes()
+    except FileNotFoundError:
+        return None, "candidate model artifact is missing"
+    except OSError as exc:
+        return None, f"candidate model artifact is unreadable: {exc}"
+    return (
+        CandidateModelArtifact(
+            payload=payload,
+            sha256=f"sha256:{hashlib.sha256(payload).hexdigest()}",
+        ),
+        None,
+    )
+
+
+def _runner_training_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    """Keep model paths out of the runner contract after snapshotting bytes."""
+
+    runner_payload = dict(payload)
+    artifacts = payload.get("artifacts")
+    if isinstance(artifacts, dict):
+        runner_payload["artifacts"] = {
+            key: value for key, value in artifacts.items() if key != "model"
+        }
+    metrics = payload.get("metrics")
+    if isinstance(metrics, dict):
+        runner_payload["metrics"] = {
+            key: value for key, value in metrics.items() if key != "model_artifact"
+        }
+    return runner_payload
 
 
 def _candidate_artifact_from_training_payload(payload: dict[str, Any]) -> Path | None:

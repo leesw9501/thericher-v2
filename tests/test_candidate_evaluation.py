@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import socket
 import sys
@@ -41,6 +42,9 @@ def test_candidate_evaluation_records_injected_success_outside_repo(tmp_path) ->
     assert payload["status"] == "candidate_evaluated_only"
     assert payload["candidate_experiment_id"] == "unit_candidate"
     assert payload["metrics"]["backend"] == "unit"
+    assert payload["model_artifact_sha256"] == (
+        f"sha256:{hashlib.sha256(b'unit-model').hexdigest()}"
+    )
     assert payload["metrics"]["feature_names_match"] is True
     assert payload["local_paper_conversion"] == "deferred_to_next_goal"
     assert payload["source_slices"] == []
@@ -99,6 +103,43 @@ def test_candidate_evaluation_reuses_training_source_slices(tmp_path) -> None:
     assert all(
         item["data_quality"]["blocks_research"] is False
         for item in payload["source_slices"]
+    )
+
+
+def test_candidate_evaluation_runner_receives_only_snapshotted_model_bytes(tmp_path) -> None:
+    model_artifact = tmp_path / "external-model.pt"
+    model_artifact.write_text("unit-model", encoding="utf-8")
+
+    def runner(dataset, model, training_payload, _config):  # noqa: ANN001
+        assert model.read_bytes() == b"unit-model"
+        assert not hasattr(model, "path")
+        assert "unit-model" not in repr(model)
+        assert "model" not in training_payload["artifacts"]
+        assert "model_artifact" not in training_payload["metrics"]
+        model_artifact.write_text("changed-after-snapshot", encoding="utf-8")
+        assert tuple(training_payload["metrics"]["feature_names"]) == dataset.feature_names
+        return {
+            "backend": "unit",
+            "operation": "unit_candidate_evaluation",
+            "examples_seen": len(dataset.labels),
+            "feature_names": dataset.feature_names,
+            "feature_names_match": True,
+            "accuracy": "0.500000",
+        }
+
+    result = run_bounded_candidate_evaluation(
+        config=CandidateEvaluationConfig(run_id="snapshotted-model-evaluation"),
+        artifact_root=tmp_path / "model-artifacts",
+        repo_root=Path.cwd(),
+        training_metrics_artifact=_training_metrics_artifact(tmp_path, model_artifact),
+        gpu=_unit_gpu(),
+        evaluation_runner=runner,
+    )
+
+    payload = json.loads(result.evaluation_artifact.read_text(encoding="utf-8"))
+    assert result.status == "candidate_evaluated_only"
+    assert payload["model_artifact_sha256"] == (
+        f"sha256:{hashlib.sha256(b'unit-model').hexdigest()}"
     )
 
 
@@ -345,6 +386,7 @@ def _unit_gpu() -> GpuReadiness:
 
 def _unit_evaluation_runner(dataset, model_artifact, training_payload, _config):  # noqa: ANN001
     assert model_artifact.exists()
+    assert model_artifact.read_bytes() == b"unit-model"
     assert tuple(training_payload["metrics"]["feature_names"]) == dataset.feature_names
     return {
         "backend": "unit",
