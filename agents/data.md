@@ -169,6 +169,11 @@ disabled.
   incomplete source record. `Bar` has no source-revision or observation-order
   provenance, so upstream Data reconciliation must resolve a later revision
   before a complete duplicate can be used.
+- A cumulative intraday session with a non-`none`
+  `conflicting_overlap_category` is metadata-conflicted even when its
+  expected-minute count is complete. The current capture-category projection
+  does not yet encode that conflict; this is a deferred Data writer hardening,
+  not a reinterpretation of any immutable receipt or a hold on another lane.
 - NAS D1 history reattestation and prospective forward projection compare their
   nonempty common session sequences with the pinned local
   `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar) schedule.
