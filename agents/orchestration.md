@@ -60,6 +60,14 @@ explicit. The immediate reversible improvement is to reattach one strictly
 later task-owned terminal through the existing reader when it appears, rather
 than treating a repeated pointer or task exit as new causal evidence.
 
+For verification throughput, use
+`scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
+lease is free: the 2026-08-19 authority run reproduced the serial suite's
+`3083 passed, 17 skipped, 51 warnings` result in 4m59s, versus the same day's
+29m03s serial diagnostic. The serial path remains the periodic compatibility
+check; this is a measured replacement for routine goal-boundary verification,
+not a relaxation of test, execution, or live-risk coverage.
+
 ## Current Recovery Action
 
 No category-based recovery proposal is active. A later recovery investigation
