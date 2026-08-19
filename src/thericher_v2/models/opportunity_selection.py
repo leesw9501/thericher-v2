@@ -220,11 +220,15 @@ def _validate_cycle_inputs(
     context: OpportunitySelectionContext,
 ) -> None:
     identities: set[tuple[str, str]] = set()
+    selection_refs: set[str] = set()
     for entry in entries:
         identity = entry.identity
         if identity in identities:
             raise OpportunitySelectionInputError("selection_duplicate_identity")
         identities.add(identity)
+        if entry.selection_ref in selection_refs:
+            raise OpportunitySelectionInputError("selection_duplicate_reference")
+        selection_refs.add(entry.selection_ref)
         if entry.selector_id != config.selector_id:
             raise OpportunitySelectionInputError("selection_selector_misaligned")
         if entry.score_schema_id != config.score_schema_id:

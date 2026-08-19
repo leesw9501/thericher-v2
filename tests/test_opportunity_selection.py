@@ -112,6 +112,20 @@ def test_selection_rejects_scores_that_are_not_observable_at_the_shared_snapshot
         )
 
 
+def test_selection_rejects_duplicate_score_evidence_references() -> None:
+    selection_ref = "ref:" + "a" * 64
+
+    with pytest.raises(OpportunitySelectionInputError, match="duplicate_reference"):
+        select_source_attested_opportunities(
+            (
+                _entry("QQQ", "0.90", selection_ref=selection_ref),
+                _entry("SPY", "0.80", selection_ref=selection_ref),
+            ),
+            config=_config(maximum_selected=2),
+            context=_context(),
+        )
+
+
 def test_selection_is_pure_without_data_network_broker_or_credentials(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -192,6 +206,7 @@ def _entry(
     availability_grade: str = "causal-current-v1",
     score_observed_at: datetime = _NOW - timedelta(seconds=1),
     score_valid_until: datetime = _NOW + timedelta(minutes=1),
+    selection_ref: str | None = None,
 ) -> OpportunitySelectionEntry:
     contract = CurrentSourceContract(
         contract_id=f"source-{symbol.lower()}-v1",
@@ -222,7 +237,11 @@ def _entry(
             expected_contract=contract,
             as_of=_NOW,
         ),
-        selection_ref="ref:" + (symbol.lower().encode().hex() + "f" * 64)[:64],
+        selection_ref=(
+            selection_ref
+            if selection_ref is not None
+            else "ref:" + (symbol.lower().encode().hex() + "f" * 64)[:64]
+        ),
         selection_score=Decimal(score),
         selector_id=selector_id,
         score_schema_id=score_schema_id,

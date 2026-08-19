@@ -81,7 +81,9 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   allocation outcomes separately. Claude's `supported-with-limits` review
   requires a future campaign to freeze the ranking key, K, turnover, capacity,
   correlation, and cost assumptions before any comparative, ensemble, or Paper
-  claim. This pure mechanism has no score generation, data, training, GPU,
+  claim. Distinct candidates must also carry distinct opaque score-evidence
+  references before ranking, so one reference cannot be reused inside a
+  cohort. This pure mechanism has no score generation, data, training, GPU,
   reservation, execution, or Paper authority.
 - For a selected candidate only, Research now replays the entire supplied
   selection, per-symbol policy, and allocation cycle from the original inputs

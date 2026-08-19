@@ -303,6 +303,40 @@ def test_invalid_selection_input_fails_before_the_policy_cycle(
         )
 
 
+def test_duplicate_selection_reference_fails_before_the_policy_cycle(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import thericher_v2.models.opportunity_selection_policy_cycle as cycle_module
+
+    def policy_must_not_run(*_args: object, **_kwargs: object) -> object:
+        raise AssertionError("policy cycle must not run after selection rejection")
+
+    entries = (
+        _entry("QQQ", "0.90", actions=("buy", "buy")),
+        _entry("SPY", "0.80", actions=("buy", "buy")),
+    )
+    duplicate_reference_entries = (
+        entries[0],
+        replace(
+            entries[1],
+            selection_entry=replace(
+                entries[1].selection_entry,
+                selection_ref=entries[0].selection_entry.selection_ref,
+            ),
+        ),
+    )
+    monkeypatch.setattr(cycle_module, "evaluate_target_exposure_policy_cycle", policy_must_not_run)
+
+    with pytest.raises(OpportunitySelectionInputError, match="duplicate_reference"):
+        evaluate_opportunity_selection_policy_cycle(
+            duplicate_reference_entries,
+            selection_config=_selection_config(),
+            selection_context=_selection_context(),
+            policy_config=_policy_config(),
+            allocation_config=_allocation_config(),
+        )
+
+
 def test_cycle_is_pure_without_data_network_broker_or_credentials(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
