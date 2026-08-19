@@ -44,11 +44,11 @@ KIS_PAPER_MINUTE_SYMBOL_EXCHANGES = {
     # The active daily cache observes SPY through NYSE Arca (AMS). Keep NAS
     # available as an observed empty capability rather than forcing one venue.
     "SPY": frozenset({"NAS", "AMS"}),
-    # IWM/AMS is permitted only for the bounded metadata-only minute capability
-    # probe. It is not part of the active private intraday collector.
+    # IWM/AMS is restricted to one current-day head page. Historical pagination
+    # and continuation remain unavailable until separately evidenced.
     "IWM": frozenset({"AMS"}),
 }
-KIS_PAPER_MINUTE_PROBE_ONLY_TARGETS = frozenset({("IWM", "AMS")})
+KIS_PAPER_MINUTE_CURRENT_HEAD_ONLY_TARGETS = frozenset({("IWM", "AMS")})
 KisPaperMinuteContinuationSignal = Literal[
     "recognized_continuation",
     "blank_or_absent",
@@ -341,10 +341,10 @@ class KisPaperMinuteQuery:
             not self.continuation_next or not self.continuation_key
         ):
             raise ValueError("continuation values must be nonempty")
-        if _is_minute_probe_only_target(symbol=self.symbol, exchange=self.exchange) and (
+        if _is_minute_current_head_only_target(symbol=self.symbol, exchange=self.exchange) and (
             self.include_previous_day or self.continuation_next is not None
         ):
-            raise ValueError("minute probe-only target requires one current-day page")
+            raise ValueError("minute current-head-only target requires one current-day page")
 
 
 @dataclass(frozen=True)
@@ -655,10 +655,12 @@ class KisPaperMarketDataClient:
     ) -> KisPaperMinutePage:
         if self._minute_page_attempts >= self._max_minute_page_attempts:
             raise KisPaperMarketDataError("minute_page_limit_exceeded")
-        if _is_minute_probe_only_target(symbol=query.symbol, exchange=query.exchange) and (
+        if _is_minute_current_head_only_target(symbol=query.symbol, exchange=query.exchange) and (
             self._max_minute_page_attempts != 1
         ):
-            raise KisPaperMarketDataError("minute_probe_only_target_requires_one_page_client")
+            raise KisPaperMarketDataError(
+                "minute_current_head_only_target_requires_one_page_client"
+            )
         access_token = self._issue_access_token()
         request = KisMarketDataRequest(
             method="GET",
@@ -1181,7 +1183,7 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
         and query.get("KEYB") == ""
         and query.get("NEXT") == ""
     )
-    if _is_minute_probe_only_target(
+    if _is_minute_current_head_only_target(
         symbol=str(query.get("SYMB")), exchange=str(query.get("EXCD"))
     ):
         return current_day_head
@@ -1199,8 +1201,8 @@ def _is_approved_minute_request(request: KisMarketDataRequest) -> bool:
     )
 
 
-def _is_minute_probe_only_target(*, symbol: str, exchange: str) -> bool:
-    return (symbol, exchange) in KIS_PAPER_MINUTE_PROBE_ONLY_TARGETS
+def _is_minute_current_head_only_target(*, symbol: str, exchange: str) -> bool:
+    return (symbol, exchange) in KIS_PAPER_MINUTE_CURRENT_HEAD_ONLY_TARGETS
 
 
 def _is_approved_daily_request(

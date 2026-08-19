@@ -348,9 +348,9 @@ def test_daily_query_rejects_invalid_separate_scope(
 def test_minute_query_requires_a_supported_us_venue_and_complete_cursor() -> None:
     assert KisPaperMinuteQuery(exchange="AMS", symbol="SPY").exchange == "AMS"
     assert KisPaperMinuteQuery(exchange="AMS", symbol="IWM").exchange == "AMS"
-    with pytest.raises(ValueError, match="probe-only target"):
+    with pytest.raises(ValueError, match="current-head-only target"):
         KisPaperMinuteQuery(exchange="AMS", symbol="IWM", include_previous_day=True)
-    with pytest.raises(ValueError, match="probe-only target"):
+    with pytest.raises(ValueError, match="current-head-only target"):
         KisPaperMinuteQuery(
             exchange="AMS",
             symbol="IWM",
@@ -365,14 +365,14 @@ def test_minute_query_requires_a_supported_us_venue_and_complete_cursor() -> Non
         KisPaperMinuteQuery(exchange="NAS", symbol="QQQ", continuation_next="1")
 
 
-def test_minute_probe_only_target_requires_a_one_page_client_before_token_request() -> None:
+def test_minute_current_head_only_target_requires_a_one_page_client_before_token_request() -> None:
     transport = _RecordingTransport([])
     client = KisPaperMarketDataClient(
         config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
         transport=transport,
     )
 
-    with pytest.raises(KisPaperMarketDataError, match="probe_only_target"):
+    with pytest.raises(KisPaperMarketDataError, match="current_head_only_target"):
         client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="IWM"))
 
     assert client.call_counts.token_attempts == 0
@@ -380,7 +380,7 @@ def test_minute_probe_only_target_requires_a_one_page_client_before_token_reques
     assert transport.requests == []
 
 
-def test_minute_probe_only_target_allows_one_current_day_page() -> None:
+def test_minute_current_head_only_target_allows_one_current_day_page() -> None:
     transport = _RecordingTransport([_token(), _page("195900", "180000", next_value="")])
     client = KisPaperMarketDataClient(
         config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),

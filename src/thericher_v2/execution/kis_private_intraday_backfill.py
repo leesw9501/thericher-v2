@@ -34,8 +34,15 @@ from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
 )
 
-KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT = Path(
-    r"D:\market_data\us_equities\kis_paper_private\intraday"
+KIS_PAPER_MARKET_DATA_ROOT = Path(r"D:\market_data")
+KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT = (
+    KIS_PAPER_MARKET_DATA_ROOT / "us_equities" / "kis_paper_private" / "intraday"
+)
+KIS_PAPER_IWM_CURRENT_HEAD_CACHE_ROOT = (
+    KIS_PAPER_MARKET_DATA_ROOT / "us_equities" / "kis_paper_private" / "iwm_current_head"
+)
+KIS_PAPER_IWM_M1_CURRENT_HEAD_REPLAY_CACHE_ROOT = (
+    KIS_PAPER_MARKET_DATA_ROOT / "us_equities" / "kis_paper_private" / "iwm_m1_current_head"
 )
 KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION = "v1"
 KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME = "index.json"
@@ -45,6 +52,7 @@ KIS_PAPER_PRIVATE_INTRADAY_MIN_REQUEST_INTERVAL_SECONDS = (
     KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
 )
 KIS_PAPER_PRIVATE_INTRADAY_TARGETS = (("QQQ", "NAS"), ("SPY", "AMS"))
+KIS_PAPER_IWM_CURRENT_HEAD_TARGET = ("IWM", "AMS")
 _RAW_MINUTE_COLUMNS = (
     "xymd",
     "xhms",
@@ -82,9 +90,7 @@ _SAFE_FAILURE_REASONS = frozenset(
 )
 _ConflictOrigin = Literal["candidate_batch", "retained_cache"]
 _CollectionScope = Literal["head", "historical"]
-KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS = frozenset(
-    {"candidate_batch", "retained_cache"}
-)
+KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS = frozenset({"candidate_batch", "retained_cache"})
 KIS_PAPER_PRIVATE_INTRADAY_RETAINED_HEAD_CONFLICT_DISPOSITIONS = frozenset(
     {"not_applicable", "preserved", "quarantined"}
 )
@@ -164,9 +170,9 @@ class KisPaperPrivateIntradayBackfillRun:
     manifest_hash: str | None = None
     reason: str | None = None
     conflict_origin: _ConflictOrigin | None = None
-    retained_head_conflict_disposition: Literal[
-        "not_applicable", "preserved", "quarantined"
-    ] = "not_applicable"
+    retained_head_conflict_disposition: Literal["not_applicable", "preserved", "quarantined"] = (
+        "not_applicable"
+    )
     schema_version: int = SCHEMA_VERSION
 
     def __post_init__(self) -> None:
@@ -248,6 +254,98 @@ def run_kis_paper_private_intraday_backfill_cycle(
     sleeper: Callable[[float], None] = time.sleep,
     monotonic_clock: Callable[[], float] = time.monotonic,
 ) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
+    """Collect the unchanged QQQ/SPY private intraday target scope."""
+
+    return _run_kis_paper_private_intraday_cycle(
+        client=client,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision=code_revision,
+        targets=KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
+        pages_per_target=pages_per_target,
+        resume_cursor=resume_cursor,
+        quarantine_retained_head_conflicts=quarantine_retained_head_conflicts,
+        observed_at=observed_at,
+        sleeper=sleeper,
+        monotonic_clock=monotonic_clock,
+    )
+
+
+def run_kis_paper_iwm_current_head_cycle(
+    *,
+    client: KisPaperPrivateIntradayClient,
+    cache_root: Path,
+    repo_root: Path,
+    code_revision: str,
+    target: tuple[str, str] = KIS_PAPER_IWM_CURRENT_HEAD_TARGET,
+    observed_at: datetime | None = None,
+    sleeper: Callable[[float], None] = time.sleep,
+    monotonic_clock: Callable[[], float] = time.monotonic,
+) -> KisPaperPrivateIntradayBackfillRun:
+    """Collect exactly one isolated IWM current-head page with no cursor path."""
+
+    validate_kis_paper_iwm_current_head_request(
+        target=target,
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    targets = (KIS_PAPER_IWM_CURRENT_HEAD_TARGET,)
+    results = _run_kis_paper_private_intraday_cycle(
+        client=client,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision=code_revision,
+        targets=targets,
+        pages_per_target=1,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=False,
+        observed_at=observed_at,
+        sleeper=sleeper,
+        monotonic_clock=monotonic_clock,
+    )
+    if len(results) != 1 or results[0].target_key != "IWM/AMS/1m":
+        raise ValueError("IWM current-head result is invalid")
+    return results[0]
+
+
+def validate_kis_paper_iwm_current_head_request(
+    *,
+    target: tuple[str, str],
+    cache_root: Path,
+    repo_root: Path,
+    market_data_root: Path | None = None,
+    protected_cache_roots: tuple[Path, ...] = (
+        KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT,
+        KIS_PAPER_IWM_M1_CURRENT_HEAD_REPLAY_CACHE_ROOT,
+    ),
+) -> Path:
+    """Reject an unsafe IWM head request before a client can issue a call."""
+
+    targets = _normalize_private_intraday_targets((target,))
+    if targets != (KIS_PAPER_IWM_CURRENT_HEAD_TARGET,):
+        raise ValueError("IWM current-head target is invalid")
+    return _validate_iwm_current_head_cache_root(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        market_data_root=market_data_root or KIS_PAPER_MARKET_DATA_ROOT,
+        protected_cache_roots=protected_cache_roots,
+    )
+
+
+def _run_kis_paper_private_intraday_cycle(
+    *,
+    client: KisPaperPrivateIntradayClient,
+    cache_root: Path,
+    repo_root: Path,
+    code_revision: str,
+    targets: tuple[tuple[str, str], ...],
+    pages_per_target: int,
+    resume_cursor: bool,
+    quarantine_retained_head_conflicts: bool,
+    observed_at: datetime | None,
+    sleeper: Callable[[float], None],
+    monotonic_clock: Callable[[], float],
+) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
     """Collect bounded source pages with optional historical-cursor resumption.
 
     A head observation sets ``resume_cursor`` false: it starts from the latest
@@ -256,6 +354,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
     for that call only and never a later collection latch.
     """
 
+    targets = _normalize_private_intraday_targets(targets)
     if type(pages_per_target) is not int or pages_per_target <= 0:
         raise ValueError("pages_per_target must be a positive integer")
     if type(resume_cursor) is not bool:
@@ -278,10 +377,14 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 exact_overlap_rows=0,
                 reason="worker_locked",
             )
-            for target in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+            for target in targets
         )
     try:
-        index = _read_or_create_index(root, hydrate_source_exhaustion=resume_cursor)
+        index = _read_or_create_index(
+            root,
+            hydrate_source_exhaustion=resume_cursor,
+            expected_targets=targets,
+        )
         removed_candidate_chunks = _remove_candidate_batch_conflicted_chunks(
             index, resume_cursor=resume_cursor
         )
@@ -292,16 +395,14 @@ def run_kis_paper_private_intraday_backfill_cycle(
             recovered_by_target.setdefault(item.target.target_key, []).append(item)
         if removed_candidate_chunks or recovered:
             _attest_committed_snapshots(root=root, index=index)
-            _write_index(root=root, index=index)
+            _write_index(root=root, index=index, expected_targets=targets)
         results: list[KisPaperPrivateIntradayBackfillRun] = []
         pacer = _RequestPacer(sleeper=sleeper, monotonic_clock=monotonic_clock)
-        for symbol, exchange in KIS_PAPER_PRIVATE_INTRADAY_TARGETS:
+        for symbol, exchange in targets:
             target = KisPaperPrivateIntradayTarget(symbol=symbol, exchange=exchange)
             recovered_snapshots = recovered_by_target.get(target.target_key)
             if recovered_snapshots:
-                results.append(
-                    _recovered_target_run(target=target, snapshots=recovered_snapshots)
-                )
+                results.append(_recovered_target_run(target=target, snapshots=recovered_snapshots))
                 continue
             target_state = _index_target(index=index, target=target)
             input_cursor = (
@@ -346,7 +447,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
                     conflict_origin=collected.conflict_origin,
                     observed_at_utc=_format_utc(observed),
                 )
-                _write_index(root=root, index=index)
+                _write_index(root=root, index=index, expected_targets=targets)
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
                         status="rejected",
@@ -385,7 +486,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 )
                 if quarantined_retained_head_chunks:
                     index["generation"] = int(index["generation"]) + 1
-                _write_index(root=root, index=index)
+                _write_index(root=root, index=index, expected_targets=targets)
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
                         status="rejected",
@@ -402,9 +503,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 continue
 
             prior_exact_overlap = sum(
-                1
-                for row in collected.rows
-                if _row_key(row) in existing_fingerprints
+                1 for row in collected.rows if _row_key(row) in existing_fingerprints
             )
             chunk = _chunk_document(
                 target=target,
@@ -433,15 +532,13 @@ def run_kis_paper_private_intraday_backfill_cycle(
                     reason=last_reason,
                     observed_at_utc=_format_utc(observed),
                 )
-                _write_index(root=root, index=index)
+                _write_index(root=root, index=index, expected_targets=targets)
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
                         status="recovered",
                         target_key=target.target_key,
                         row_count=len(collected.rows),
-                        exact_overlap_rows=(
-                            collected.exact_duplicate_rows + prior_exact_overlap
-                        ),
+                        exact_overlap_rows=(collected.exact_duplicate_rows + prior_exact_overlap),
                         reason="already_cached",
                     )
                 )
@@ -481,15 +578,13 @@ def run_kis_paper_private_intraday_backfill_cycle(
                 observed_at_utc=_format_utc(observed),
             )
             index["generation"] = int(index["generation"]) + 1
-            _write_index(root=root, index=index)
+            _write_index(root=root, index=index, expected_targets=targets)
             results.append(
                 KisPaperPrivateIntradayBackfillRun(
                     status=collected.status,
                     target_key=target.target_key,
                     row_count=len(collected.rows),
-                    exact_overlap_rows=(
-                        collected.exact_duplicate_rows + prior_exact_overlap
-                    ),
+                    exact_overlap_rows=(collected.exact_duplicate_rows + prior_exact_overlap),
                     manifest_path=manifest_path,
                     manifest_hash=manifest_hash,
                     reason=collected.reason,
@@ -513,11 +608,7 @@ def _recovered_target_run(
         exact_overlap_rows=sum(int(item.chunk["exact_overlap_rows"]) for item in snapshots),
         manifest_path=latest.manifest_path,
         manifest_hash=latest.manifest_hash,
-        reason=(
-            str(latest.chunk["reason"])
-            if latest.chunk["reason"] is not None
-            else None
-        ),
+        reason=(str(latest.chunk["reason"]) if latest.chunk["reason"] is not None else None),
     )
 
 
@@ -570,9 +661,7 @@ def _collect_target(
     except KisPaperMarketDataError as error:
         reason = sanitize_kis_paper_private_intraday_failure_reason(error)
         conflict_origin: _ConflictOrigin | None = (
-            "candidate_batch"
-            if isinstance(error, _CandidateBatchDuplicateConflict)
-            else None
+            "candidate_batch" if isinstance(error, _CandidateBatchDuplicateConflict) else None
         )
         # A conflicting candidate batch has no trustworthy prefix. Keeping an
         # earlier page would let an invalid batch later complete a session.
@@ -805,9 +894,7 @@ def _snapshot_manifest(
             "timezone": "Asia/Seoul",
             "exchange_timestamp_semantics": "observed_unqualified",
             "canonical_start_policy": "korea_timestamp_projected_to_utc",
-            "completed_bar_rule": (
-                "source_timestamp_plus_1m_at_or_before_collection_minute"
-            ),
+            "completed_bar_rule": ("source_timestamp_plus_1m_at_or_before_collection_minute"),
         },
         "pages": list(collected.page_documents),
         "deduplication": {
@@ -849,11 +936,68 @@ def _compressed_raw_minute_csv(rows: tuple[KisPaperMinuteRawBar, ...]) -> bytes:
     return buffer.getvalue()
 
 
+def _normalize_private_intraday_targets(
+    targets: object,
+) -> tuple[tuple[str, str], ...]:
+    if not isinstance(targets, tuple) or not targets:
+        raise ValueError("private intraday target scope is invalid")
+    normalized: list[tuple[str, str]] = []
+    target_keys: set[str] = set()
+    for item in targets:
+        if (
+            not isinstance(item, tuple)
+            or len(item) != 2
+            or not isinstance(item[0], str)
+            or not isinstance(item[1], str)
+        ):
+            raise ValueError("private intraday target scope is invalid")
+        target = KisPaperPrivateIntradayTarget(symbol=item[0], exchange=item[1])
+        if target.target_key in target_keys:
+            raise ValueError("private intraday target scope is invalid")
+        target_keys.add(target.target_key)
+        normalized.append((target.symbol, target.exchange))
+    return tuple(normalized)
+
+
+def _validate_iwm_current_head_cache_root(
+    *,
+    cache_root: Path,
+    repo_root: Path,
+    market_data_root: Path,
+    protected_cache_roots: tuple[Path, ...],
+) -> Path:
+    supplied = Path(cache_root)
+    supplied_market_data_root = Path(market_data_root)
+    if (
+        not supplied.is_absolute()
+        or supplied.is_symlink()
+        or not supplied_market_data_root.is_absolute()
+        or supplied_market_data_root.is_symlink()
+    ):
+        raise ValueError("IWM current-head cache root is invalid")
+    root = supplied.resolve(strict=False)
+    market_data = supplied_market_data_root.resolve(strict=False)
+    repository = Path(repo_root).resolve(strict=False)
+    if (
+        root.is_relative_to(repository)
+        or root == market_data
+        or not root.is_relative_to(market_data)
+    ):
+        raise ValueError("IWM current-head cache root is invalid")
+    for protected_root in protected_cache_roots:
+        protected = Path(protected_root).resolve(strict=False)
+        if root == protected or root.is_relative_to(protected) or protected.is_relative_to(root):
+            raise ValueError("IWM current-head cache root is invalid")
+    return root
+
+
 def _read_or_create_index(
     root: Path,
     *,
     hydrate_source_exhaustion: bool,
+    expected_targets: tuple[tuple[str, str], ...] = KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
 ) -> dict[str, object]:
+    expected_targets = _normalize_private_intraday_targets(expected_targets)
     path = root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME
     if not path.exists():
         index: dict[str, object] = {
@@ -872,10 +1016,10 @@ def _read_or_create_index(
                     "last_observed_at_utc": None,
                     "chunks": [],
                 }
-                for target in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+                for target in expected_targets
             ],
         }
-        _write_index(root=root, index=index)
+        _write_index(root=root, index=index, expected_targets=expected_targets)
         return index
     try:
         loaded = json.loads(path.read_text(encoding="utf-8"))
@@ -883,17 +1027,21 @@ def _read_or_create_index(
         raise ValueError("private intraday index is invalid") from error
     if not isinstance(loaded, dict):
         raise ValueError("private intraday index is invalid")
-    _validate_index(loaded)
+    _validate_index(loaded, expected_targets=expected_targets)
     if hydrate_source_exhaustion and _hydrate_source_exhaustion_state(loaded):
-        _write_index(root=root, index=loaded)
+        _write_index(root=root, index=loaded, expected_targets=expected_targets)
     return loaded
 
 
-def _validate_index(index: Mapping[str, object]) -> None:
+def _validate_index(
+    index: Mapping[str, object],
+    *,
+    expected_targets: tuple[tuple[str, str], ...] = KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
+) -> None:
     try:
         _validate_shared_index_metadata(
             index,
-            expected_targets=KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
+            expected_targets=_normalize_private_intraday_targets(expected_targets),
         )
     except ValueError as error:
         raise ValueError("private intraday index is invalid") from error
@@ -1029,11 +1177,7 @@ def _collected_target_source_is_exhausted(
     collected: _CollectedTarget,
     resume_cursor: bool,
 ) -> bool:
-    return (
-        resume_cursor
-        and collected.status == "collected"
-        and collected.output_cursor is None
-    )
+    return resume_cursor and collected.status == "collected" and collected.output_cursor is None
 
 
 def _hydrate_source_exhaustion_state(index: dict[str, object]) -> bool:
@@ -1051,9 +1195,7 @@ def _hydrate_source_exhaustion_state(index: dict[str, object]) -> bool:
         chunks = target_state.get("chunks")
         if not isinstance(chunks, list):
             raise ValueError("private intraday index is invalid")
-        retained_chunks = [
-            chunk for chunk in chunks if not _is_ignored_collection_chunk(chunk)
-        ]
+        retained_chunks = [chunk for chunk in chunks if not _is_ignored_collection_chunk(chunk)]
         if not retained_chunks:
             continue
         last_chunk = retained_chunks[-1]
@@ -1305,9 +1447,7 @@ def _recover_orphan_snapshots(
         if chunk.get("raw_sha256") != raw_document["sha256"]:
             raise ValueError("private intraday snapshot is invalid")
         recovered_chunk = dict(chunk)
-        recovered_chunk["manifest_path"] = str(manifest_path.relative_to(root)).replace(
-            "\\", "/"
-        )
+        recovered_chunk["manifest_path"] = str(manifest_path.relative_to(root)).replace("\\", "/")
         recovered_chunk["manifest_hash"] = manifest_hash
         _validate_chunk(chunk=recovered_chunk, target=target)
         chunks.append(recovered_chunk)
@@ -1452,8 +1592,13 @@ def _read_manifest(path: Path) -> dict[str, object]:
     return loaded
 
 
-def _write_index(*, root: Path, index: Mapping[str, object]) -> None:
-    _validate_index(index)
+def _write_index(
+    *,
+    root: Path,
+    index: Mapping[str, object],
+    expected_targets: tuple[tuple[str, str], ...] = KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
+) -> None:
+    _validate_index(index, expected_targets=expected_targets)
     payload = (json.dumps(index, indent=2, sort_keys=True) + "\n").encode("utf-8")
     target = root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME
     staging = root / f".{target.name}.{uuid.uuid4().hex}.stage"
