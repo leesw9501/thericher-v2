@@ -778,22 +778,21 @@ def replay_local_paper_account(
     for event in sorted(event_store.iter_events(), key=lambda item: item.seq):
         if event.event_type != "fill" or event.payload.get("source") != LOCAL_PAPER_SOURCE:
             continue
-        market = str(event.payload["market"]).upper()
-        symbol = str(event.payload["symbol"]).upper()
-        side = str(event.payload["side"])
-        quantity = Decimal(str(event.payload["quantity"]))
-        price = Decimal(str(event.payload["price"]))
-        fee = Decimal(str(event.payload.get("fee", "0")))
-        notional = price * quantity
-        key = (market, symbol)
-        if side == "buy":
-            cash -= notional + fee
-            positions[key] = positions.get(key, Decimal("0")) + quantity
-        elif side == "sell":
-            cash += notional - fee
-            positions[key] = positions.get(key, Decimal("0")) - quantity
-        else:
-            raise ValueError(f"unknown fill side: {side}")
+        fill = _fill_from_event(event, require_client_order_id=False)
+        if fill.side not in {"buy", "sell"}:
+            raise ValueError("local paper fill side is invalid")
+        if fill.quantity <= 0 or fill.price <= 0:
+            raise ValueError("local paper fill quantity and price must be positive")
+
+        key = (fill.market, fill.symbol)
+        if fill.side == "buy":
+            cash -= fill.notional + fill.fee
+            positions[key] = positions.get(key, Decimal("0")) + fill.quantity
+            continue
+        if positions.get(key, Decimal("0")) < fill.quantity:
+            raise ValueError("local paper sell fill exceeds available position")
+        cash += fill.notional - fill.fee
+        positions[key] = positions.get(key, Decimal("0")) - fill.quantity
 
     position_items = tuple(
         LocalPaperPosition(market=market, symbol=symbol, quantity=quantity)
@@ -1180,10 +1179,17 @@ def _order_from_payload(payload: dict[str, object]) -> OrderIntent:
     )
 
 
-def _fill_from_event(event: Event) -> LocalPaperFill:
+def _fill_from_event(
+    event: Event,
+    *,
+    require_client_order_id: bool = True,
+) -> LocalPaperFill:
     payload = event.payload
+    raw_client_order_id = payload.get("client_order_id")
+    if raw_client_order_id is None and require_client_order_id:
+        raise ValueError("local paper fill requires client_order_id")
     return LocalPaperFill(
-        client_order_id=str(payload["client_order_id"]),
+        client_order_id="" if raw_client_order_id is None else str(raw_client_order_id),
         symbol=str(payload["symbol"]),
         market=str(payload["market"]),
         side=cast(Side, str(payload["side"])),

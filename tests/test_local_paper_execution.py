@@ -454,6 +454,43 @@ def test_realized_pnl_replay_fails_closed_for_an_oversold_local_history(tmp_path
         replay_local_paper_realized_pnl(event_store.iter_events())
 
 
+def test_account_replay_fails_closed_for_a_balanced_oversold_local_history(tmp_path) -> None:
+    event_store = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    event_store.append(
+        Event(
+            event_type="fill",
+            created_at=datetime(2026, 1, 2, 14, 30, tzinfo=UTC),
+            payload={
+                "source": "local_paper",
+                "market": "US",
+                "symbol": "AAPL",
+                "side": "sell",
+                "quantity": "1",
+                "price": "101",
+                "fee": "0",
+            },
+        )
+    )
+    event_store.append(
+        Event(
+            event_type="fill",
+            created_at=datetime(2026, 1, 2, 14, 31, tzinfo=UTC),
+            payload={
+                "source": "local_paper",
+                "market": "US",
+                "symbol": "AAPL",
+                "side": "buy",
+                "quantity": "1",
+                "price": "100",
+                "fee": "0",
+            },
+        )
+    )
+
+    with pytest.raises(ValueError, match="sell fill exceeds available position"):
+        replay_local_paper_account(event_store, starting_cash=Decimal("1000"))
+
+
 def test_canceled_order_is_persisted_and_not_fillable(tmp_path) -> None:
     broker = _broker(tmp_path)
     order = _order("cancel-me")
