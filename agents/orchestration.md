@@ -6,11 +6,12 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-paper-iwm-m1-temporal-reach-continuation-probe-v1` runs one isolated
-IWM/AMS initial-page request plus at most one response-supplied continuation to
-measure this endpoint's continuation semantics. The earlier later-terminal
-reattachment remains task-owned monitoring. Neither path creates a model input,
-GPU appointment, order, PnL, or live route.
+`kis-paper-iwm-m1-caller-derived-temporal-reach-probe-v1` runs one isolated
+IWM/AMS initial-page request plus at most one recognized-header-gated,
+caller-derived `PINC=1` continuation to measure this endpoint's continuation
+semantics. The earlier later-terminal reattachment remains task-owned
+monitoring. Neither path creates a model input, GPU appointment, order, PnL,
+or live route.
 
 ## Ready / Owned / Due
 
@@ -26,7 +27,7 @@ GPU appointment, order, PnL, or live route.
 | Market-data contract inventory | Data / Engine Research | Predeclared shallow locations and external source-safe receipts | Closed: six classes bind only receipt hashes and categorical status: `input_unavailable: 3`, `source_local_mechanics_only: 1`, `retrospective_control_only: 1`, and `non_promoting_runtime_only: 1`. No predictive/Paper/GPU consumer is ready. |
 | IWM isolated current-head capture | Data | Separate external cache and source-safe receipt roots | Complete: one fixed IWM/AMS page accepted at `2026-08-19T10:39:57.047668+00:00`; external receipt `data/kis-paper-iwm-m1-current-head-ingestion/20260819T103957047668Z-40a0ce16a64069fe.json` has `sha256:40a0ce16a64069fe57026ea11f874718021ab9058760aef639809f26f3c0bed7`. No raw data was inspected, no retry/pagination occurred, and no consumer changed. |
 | IWM isolated cache mechanics | Data | Existing external IWM cache and generic offline verifier | Complete: exact index identity bound the generic verifier before raw decoding. One `head` chunk retained `51` complete bars, `17` adjacent pairs, `33` gaps, and a `660`-second maximum interval; receipt `sha256:7dbdae99adaf1e19fe1c3d6bd2760edb71cae2cb7c737c519a5b5f3259e50818` contains aggregates only. |
-| IWM temporal-reach continuation probe | Data | One isolated KIS Paper client and external probe roots | Ready: issue one initial IWM/AMS page and at most one documented continuation request; preserve existing gate/no-retry behavior and retain only aggregate reach/overlap evidence. |
+| IWM temporal-reach continuation probe | Data | One isolated KIS Paper client and external source-safe receipt root | Ready: issue one initial IWM/AMS page and at most one recognized-header-gated caller-derived `PINC=1` continuation; preserve default IWM one-page isolation and retain only aggregate reach/overlap evidence. |
 | Later intraday terminal reattachment | Data / existing `thericher-kis-paper-intraday-head` task | Existing source-safe schedule and terminal receipts | Owned monitoring dependency: the current pointer is still baseline `intraday-head-20260818T2120005941479Z`; wait only for a strictly later task-owned terminal, never by foreground polling. |
 | GPU custody | Research Steward | RTX 4090 | Released: one source-isolated target-free appointment spent no sealed evaluation and retained no weights. No predictive GPU appointment is active. |
 | KIS Paper lifecycle canary | Execution | Existing `thericher-kis-paper-quote-session` task | The 2026-08-17 23:35 KST receipt is bound offline to its direct receipt as `canary_completed -> cancelled / clean`, `paper_only`, and attribution `not_eligible`; the direct receipt contains only an acknowledged order-reference category. The 2026-08-11 unknown remains separately owned by its reconciliation path. No manual task, container, duplicate submission, fill, PnL, or model inference. Next task-owned opportunity: 2026-08-19 23:35 KST. |
@@ -47,6 +48,16 @@ finality are unobserved, and no model input exists. Paper lifecycle reliability
 has a separate proof path and does not depend on resolving this Data diagnosis.
 
 ## Current Cross-Lane Decision
+
+### Blocked-Goal Alternatives
+
+The prior response-supplied/no-previous-page IWM probe was `unsupported`:
+`tr_cont` is a flag, not a cursor, and its valid continuation grammar requires
+`PINC=1`. The selected Data recovery package is a dedicated two-attempt intent
+with a caller-derived key and default IWM isolation; its kill test rejects a
+missing header, non-older key, overlap, or second-page error without a retry.
+The alternative is to close endpoint expansion as unknown without a second GET;
+it produces less capability evidence and does not improve another engine loop.
 
 The topology audit rejected an unmeasured timing/paging/downstream change. The
 first post-writer marker supplies one closed `reason_unavailable` category for a
