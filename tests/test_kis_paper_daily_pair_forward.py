@@ -81,7 +81,7 @@ def test_pair_cache_drops_preboundary_rows_and_preserves_prior_snapshots_on_retr
     index = json.loads((cache_root / "index.json").read_bytes())
 
     second = commit_kis_paper_daily_pair_forward_observation(
-        rows_by_target=rows,
+        rows_by_target=_rows_for_pair((date(2026, 7, 24), date(2026, 7, 27))),
         failure_reasons_by_target={},
         cache_root=cache_root,
         repo_root=repo_root,
@@ -90,6 +90,8 @@ def test_pair_cache_drops_preboundary_rows_and_preserves_prior_snapshots_on_retr
     assert first.status == "ready"
     assert all(len(rows) == 1 for rows in first.cache.rows_by_target.values())
     assert second.status == "unchanged"
+    assert second.retained_revision_conflict_count == 0
+    assert second.revision_quarantined_target_count == 0
     assert tuple(sorted((cache_root / "snapshots").rglob("*.csv.gz"))) == snapshots
     assert {
         path.relative_to(cache_root): path.read_bytes()
@@ -100,7 +102,7 @@ def test_pair_cache_drops_preboundary_rows_and_preserves_prior_snapshots_on_retr
     assert all(target["accepted_page_count"] == 2 for target in updated["targets"])
 
 
-def test_pair_cache_defers_only_failed_target_and_rejects_conflicting_duplicate(
+def test_pair_cache_defers_only_failed_target_and_quarantines_retained_revision_conflicts(
     tmp_path: Path,
 ) -> None:
     repo_root = tmp_path / "repo"
@@ -122,24 +124,99 @@ def test_pair_cache_defers_only_failed_target_and_rejects_conflicting_duplicate(
         repo_root=repo_root,
     )
     index_bytes = (cache_root / "index.json").read_bytes()
-    conflicting = _rows_for_pair((date(2026, 7, 27),))
-    conflicting["QQQ/NAS"] = (_row("QQQ", "NAS", date(2026, 7, 27), Decimal("999")),)
+    conflicting = _rows_for_pair((date(2026, 7, 27), date(2026, 7, 29)))
+    conflicting["QQQ/NAS"] = (
+        _row("QQQ", "NAS", date(2026, 7, 27), Decimal("999")),
+        conflicting["QQQ/NAS"][1],
+    )
 
     assert partial.status == "partial"
     assert partial.cache.targets_by_key["SPY/AMS"].status == "deferred"
     assert partial.cache.targets_by_key["QQQ/NAS"].row_count == 2
-    with pytest.raises(
-        KisPaperDailyPairForwardCacheError,
-        match="duplicate conflict",
-    ) as raised:
+    reconciled = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=conflicting,
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    assert reconciled.status == "partial"
+    assert reconciled.retained_revision_conflict_count == 1
+    assert reconciled.revision_quarantined_target_count == 1
+    assert reconciled.categorical_failure_count == 1
+    assert reconciled.cache.targets_by_key["QQQ/NAS"].status == "input_unavailable"
+    assert (
+        reconciled.cache.targets_by_key["QQQ/NAS"].last_reason
+        == pair_forward_cache.KIS_PAPER_DAILY_PAIR_FORWARD_RETAINED_REVISION_CONFLICT_REASON
+    )
+    assert reconciled.cache.targets_by_key["SPY/AMS"].status == "ready"
+    assert reconciled.cache.rows_by_target["QQQ/NAS"][:2] == partial.cache.rows_by_target["QQQ/NAS"]
+    assert reconciled.cache.targets_by_key["QQQ/NAS"].row_count == 3
+    assert (cache_root / "index.json").read_bytes() != index_bytes
+    payload = reconciled.safe_payload()
+    assert "retained_revision_conflict_sha256" not in payload
+    _assert_source_safe(payload)
+
+    retained = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=_rows_for_pair((date(2026, 7, 30),)),
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    assert retained.status == "partial"
+    assert retained.retained_revision_conflict_count == 0
+    assert retained.revision_quarantined_target_count == 1
+    assert retained.cache.targets_by_key["QQQ/NAS"].status == "input_unavailable"
+
+
+def test_pair_cache_rejects_conflicts_inside_one_incoming_target(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "external" / "qqq-spy-forward"
+    incoming = _rows_for_pair((date(2026, 7, 27),))
+    incoming["QQQ/NAS"] = (
+        incoming["QQQ/NAS"][0],
+        _row("QQQ", "NAS", date(2026, 7, 27), Decimal("999")),
+    )
+
+    with pytest.raises(KisPaperDailyPairForwardCacheError, match="duplicate conflict") as raised:
         commit_kis_paper_daily_pair_forward_observation(
-            rows_by_target=conflicting,
+            rows_by_target=incoming,
             failure_reasons_by_target={},
             cache_root=cache_root,
             repo_root=repo_root,
         )
-    assert get_kis_paper_daily_pair_forward_commit_failure_phase(raised.value) == "cache_prepare"
-    assert (cache_root / "index.json").read_bytes() == index_bytes
+
+    assert get_kis_paper_daily_pair_forward_commit_failure_phase(raised.value) is None
+    assert not cache_root.exists()
+
+
+def test_pair_cache_rejects_unseen_nonforward_session(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "external" / "qqq-spy-forward"
+    commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=_rows_for_pair((date(2026, 7, 27), date(2026, 7, 29))),
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    prior_index = (cache_root / "index.json").read_bytes()
+    nonforward = _rows_for_pair((date(2026, 7, 28),))
+
+    with pytest.raises(KisPaperDailyPairForwardCacheError, match="non-forward append") as raised:
+        commit_kis_paper_daily_pair_forward_observation(
+            rows_by_target=nonforward,
+            failure_reasons_by_target={},
+            cache_root=cache_root,
+            repo_root=repo_root,
+        )
+
+    assert (
+        get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase(raised.value)
+        == "incoming_merge"
+    )
+    assert (cache_root / "index.json").read_bytes() == prior_index
 
 
 @pytest.mark.parametrize(

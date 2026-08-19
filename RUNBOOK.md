@@ -853,6 +853,22 @@ cause; duplicate conflicting overlap is only the source-inspection candidate.
 The next source/fixture-only package must establish a revision-preserving merge
 policy before another collector invocation.
 
+### Forward-Cache Overlap Reconciliation
+
+The source/fixture-only reconciliation policy is now fixed. Canonically equal
+replayed rows are idempotent. A different row for a retained session never
+overwrites that retained row: it records only the fixed
+`daily_retained_revision_conflict` category and aggregate count, leaves that
+target `input_unavailable`, and keeps the quarantine on later ordinary
+collections. An unseen session may append only when it is strictly later than
+the target's retained coverage end; an unseen interior/older session or a
+conflict within one incoming payload remains a structural cache-contract error.
+The causal D1 reader rejects every cache whose target is not `ready`, so a
+quarantined target cannot reach Research or Execution. No raw row values or
+value-derived diagnostic hash enter source-safe payloads. A future external
+recovery must be a separately declared target-scoped re-fetch, not an automatic
+quarantine clear.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

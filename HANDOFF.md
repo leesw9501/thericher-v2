@@ -570,6 +570,21 @@ Source inspection makes duplicate conflicting overlap the candidate inside that
 fixed region, not a proven row-level cause. The next package is source/fixture
 only: define a revision-preserving forward-merge policy before another KIS call.
 
+That source/fixture-only overlap package is complete. A canonical exact
+duplicate is idempotent even when it is reconstructed as a new object. A
+conflicting retained session preserves the existing row, records only a
+count/category, and leaves that target `input_unavailable` with
+`daily_retained_revision_conflict`; it may retain a strictly later append but
+cannot clear itself through a later ordinary collection. An unseen interior or
+older session and a conflicting duplicate inside one incoming payload remain
+structural cache-contract errors. Causal qualification now rejects any
+non-`ready` target at its read boundary. Claude returned
+`supported-with-limits`: no raw-value hash was added, quarantine is durable,
+and the consumer gate prevents a conflicted target from becoming a model input.
+No credential, KIS, Docker, external-cache, scheduler, Research, Execution,
+Paper, or live action ran. The next collector-facing package must be an
+explicit bounded recovery/re-fetch contract.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath
@@ -719,6 +734,11 @@ ready.
   `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
 
 ## Verification And Git
+
+The D1 overlap-reconciliation package passed 48 focused cache, causal-reader,
+collector-script, and scheduler-script tests, then the full authority suite as
+`3218 passed, 19 skipped` in 41m26s, plus Ruff, both credential-free Compose
+parses, and `git diff --check`. It was source/fixture-only.
 
 The v5 D1 forward-cache outcome and verification-root recovery passed the
 focused eight-test serial and four-worker groups, then the full authority

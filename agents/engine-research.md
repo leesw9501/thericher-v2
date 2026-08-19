@@ -99,8 +99,12 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   no campaign, GPU appointment, model selection, replay, or Paper consumer.
 - V5 readiness was gate-open but its one D1 collector failed before cache
   commit at the static `incoming_merge` region; the current seven-session cache
-  reattached unchanged. This remains Data-only and creates no campaign, GPU
-  appointment, model selection, replay, or Paper consumer.
+  reattached unchanged. The completed source/fixture reconciliation now makes
+  exact duplicates idempotent, preserves retained conflicts under durable
+  target-local quarantine, and lets only strictly later sessions append. The
+  causal reader rejects every non-ready target, so this remains Data-only and
+  creates no campaign, GPU appointment, model selection, replay, or Paper
+  consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ

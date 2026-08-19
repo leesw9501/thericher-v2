@@ -44,6 +44,9 @@ KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_PREPARE_SUBPHASES = (
     "cache_state_load",
     "incoming_merge",
 )
+KIS_PAPER_DAILY_PAIR_FORWARD_RETAINED_REVISION_CONFLICT_REASON = (
+    "daily_retained_revision_conflict"
+)
 
 _INDEX_FILENAME = "index.json"
 _LOCK_FILENAME = "worker.lock"
@@ -68,6 +71,7 @@ _SAFE_REASONS = frozenset(
         "auth_response_invalid",
         "config_missing",
         "daily_duplicate_conflict",
+        KIS_PAPER_DAILY_PAIR_FORWARD_RETAINED_REVISION_CONFLICT_REASON,
         "daily_response_invalid",
         "daily_response_rejected",
         "empty_daily_response",
@@ -187,6 +191,19 @@ class KisPaperDailyPairForwardRow:
             _decimal_text(self.close),
             _decimal_text(self.volume),
         )
+
+
+@dataclass(frozen=True, slots=True)
+class _MergedRows:
+    """One target merge with only a source-safe retained-conflict count."""
+
+    rows: tuple[KisPaperDailyPairForwardRow, ...]
+    retained_revision_conflict_count: int
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "rows", tuple(self.rows))
+        if self.retained_revision_conflict_count < 0:
+            raise ValueError("pair forward merge result is invalid")
 
 
 @dataclass(frozen=True, slots=True)
@@ -323,6 +340,8 @@ class KisPaperDailyPairForwardRun:
     accepted_page_count: int
     categorical_failure_count: int
     changed_target_count: int
+    retained_revision_conflict_count: int
+    revision_quarantined_target_count: int
     recovery: Literal["complete", "resume"]
 
     def __post_init__(self) -> None:
@@ -332,6 +351,8 @@ class KisPaperDailyPairForwardRun:
             or self.accepted_page_count < 0
             or self.categorical_failure_count < 0
             or not 0 <= self.changed_target_count <= len(_TARGET_KEYS)
+            or self.retained_revision_conflict_count < 0
+            or not 0 <= self.revision_quarantined_target_count <= len(_TARGET_KEYS)
         ):
             raise ValueError("pair forward run is invalid")
 
@@ -342,6 +363,8 @@ class KisPaperDailyPairForwardRun:
             "accepted_page_count": self.accepted_page_count,
             "categorical_failure_count": self.categorical_failure_count,
             "changed_target_count": self.changed_target_count,
+            "retained_revision_conflict_count": self.retained_revision_conflict_count,
+            "revision_quarantined_target_count": self.revision_quarantined_target_count,
             "recovery": self.recovery,
             "cache": self.cache.safe_payload(),
             "route_isolation": {
@@ -401,6 +424,7 @@ def commit_kis_paper_daily_pair_forward_observation(
 
             try:
                 merged_by_target: dict[str, tuple[KisPaperDailyPairForwardRow, ...]] = {}
+                retained_revision_conflicts_by_target: dict[str, int] = {}
                 changed_targets: set[str] = set()
                 pending_snapshots: dict[str, tuple[bytes, str, str]] = {}
                 target_updates: dict[str, dict[str, object]] = {}
@@ -413,14 +437,19 @@ def commit_kis_paper_daily_pair_forward_observation(
                             failure_reasons_by_target[target_key],
                         )
                         merged_by_target[target_key] = existing
+                        retained_revision_conflicts_by_target[target_key] = 0
                         continue
                     incoming = tuple(
                         row
                         for row in rows_by_target[target_key]
                         if row.session_date > frozen_boundary
                     )
-                    merged = _merge_rows(existing, incoming, target_key=target_key)
+                    merge = _merge_rows(existing, incoming, target_key=target_key)
+                    merged = merge.rows
                     merged_by_target[target_key] = merged
+                    retained_revision_conflicts_by_target[target_key] = (
+                        merge.retained_revision_conflict_count
+                    )
                     if merged != existing:
                         raw_payload = _compressed_rows(merged)
                         pending_snapshots[target_key] = (
@@ -435,6 +464,9 @@ def commit_kis_paper_daily_pair_forward_observation(
                             snapshot_path=None,
                             snapshot_sha256=None,
                             rows_sha256=pending_snapshots[target_key][2],
+                            retained_revision_conflict_count=(
+                                retained_revision_conflicts_by_target[target_key]
+                            ),
                         )
                     else:
                         target_updates[target_key] = _success_target_document(
@@ -443,6 +475,9 @@ def commit_kis_paper_daily_pair_forward_observation(
                             snapshot_path=None,
                             snapshot_sha256=None,
                             rows_sha256=_rows_sha256(existing) if existing else None,
+                            retained_revision_conflict_count=(
+                                retained_revision_conflicts_by_target[target_key]
+                            ),
                         )
             except KisPaperDailyPairForwardCacheError as error:
                 _attach_commit_failure_prepare_subphase(error, "incoming_merge")
@@ -463,6 +498,9 @@ def commit_kis_paper_daily_pair_forward_observation(
                         snapshot_path=relative_path,
                         snapshot_sha256=snapshot_sha256,
                         rows_sha256=rows_sha256,
+                        retained_revision_conflict_count=(
+                            retained_revision_conflicts_by_target[target_key]
+                        ),
                     )
                     wrote_snapshot = True
             except KisPaperDailyPairForwardCacheError as error:
@@ -492,11 +530,19 @@ def commit_kis_paper_daily_pair_forward_observation(
         raise
 
     failure_count = len(failure_reasons_by_target)
+    retained_revision_conflict_count = sum(retained_revision_conflicts_by_target.values())
+    retained_revision_conflict_target_count = sum(
+        count > 0 for count in retained_revision_conflicts_by_target.values()
+    )
+    revision_quarantined_target_count = sum(
+        target.last_reason == KIS_PAPER_DAILY_PAIR_FORWARD_RETAINED_REVISION_CONFLICT_REASON
+        for target in cache.targets_by_key.values()
+    )
     has_rows = any(cache.rows_by_target.values())
     status: Literal["ready", "partial", "deferred", "input_unavailable", "unchanged"]
     if failure_count == len(_TARGET_KEYS):
         status = "deferred"
-    elif failure_count:
+    elif failure_count or revision_quarantined_target_count:
         status = "partial"
     elif not has_rows:
         status = "input_unavailable"
@@ -511,9 +557,21 @@ def commit_kis_paper_daily_pair_forward_observation(
         observed_at=observed,
         cache=cache,
         accepted_page_count=len(rows_by_target),
-        categorical_failure_count=failure_count,
+        categorical_failure_count=(
+            failure_count + retained_revision_conflict_target_count
+        ),
         changed_target_count=len(changed_targets),
-        recovery="resume" if failure_count else "complete",
+        retained_revision_conflict_count=retained_revision_conflict_count,
+        revision_quarantined_target_count=revision_quarantined_target_count,
+        recovery=(
+            "resume"
+            if (
+                failure_count
+                or retained_revision_conflict_target_count
+                or revision_quarantined_target_count
+            )
+            else "complete"
+        ),
     )
 
 
@@ -768,7 +826,10 @@ def _success_target_document(
     snapshot_path: str | None,
     snapshot_sha256: str | None,
     rows_sha256: str | None,
+    retained_revision_conflict_count: int = 0,
 ) -> dict[str, object]:
+    if retained_revision_conflict_count < 0:
+        raise ValueError("pair forward retained revision conflict count is invalid")
     if not rows:
         return {
             "target_key": prior["target_key"],
@@ -784,11 +845,15 @@ def _success_target_document(
         }
     if rows_sha256 is None:
         raise ValueError("pair forward rows hash is unavailable")
+    revision_quarantined = (
+        retained_revision_conflict_count > 0 or _is_revision_quarantined(prior)
+    )
     return {
         "target_key": prior["target_key"],
-        "status": "ready",
+        "status": "input_unavailable" if revision_quarantined else "ready",
         "accepted_page_count": int(prior["accepted_page_count"]) + 1,
-        "categorical_failure_count": int(prior["categorical_failure_count"]),
+        "categorical_failure_count": int(prior["categorical_failure_count"])
+        + (1 if retained_revision_conflict_count else 0),
         "latest_session": rows[-1].session_date.isoformat(),
         "row_count": len(rows),
         "snapshot_path": snapshot_path if snapshot_path is not None else prior.get("snapshot_path"),
@@ -796,14 +861,28 @@ def _success_target_document(
         if snapshot_sha256 is not None
         else prior.get("snapshot_sha256"),
         "rows_sha256": rows_sha256,
-        "last_reason": None,
+        "last_reason": (
+            KIS_PAPER_DAILY_PAIR_FORWARD_RETAINED_REVISION_CONFLICT_REASON
+            if revision_quarantined
+            else None
+        ),
     }
+
+
+def _is_revision_quarantined(prior: Mapping[str, object]) -> bool:
+    return (
+        prior.get("last_reason")
+        == KIS_PAPER_DAILY_PAIR_FORWARD_RETAINED_REVISION_CONFLICT_REASON
+    )
 
 
 def _failure_target_document(prior: Mapping[str, object], reason: str) -> dict[str, object]:
     if reason not in _SAFE_REASONS:
         raise ValueError("pair forward failure reason is invalid")
     result = dict(prior)
+    if _is_revision_quarantined(prior):
+        result["categorical_failure_count"] = int(prior["categorical_failure_count"]) + 1
+        return result
     result["status"] = "deferred"
     result["categorical_failure_count"] = int(prior["categorical_failure_count"]) + 1
     result["last_reason"] = reason
@@ -840,17 +919,42 @@ def _merge_rows(
     incoming: Sequence[KisPaperDailyPairForwardRow],
     *,
     target_key: str,
-) -> tuple[KisPaperDailyPairForwardRow, ...]:
+) -> _MergedRows:
     symbol, exchange = _TARGET_BY_KEY[target_key]
     by_session: dict[date, KisPaperDailyPairForwardRow] = {}
-    for row in (*existing, *incoming):
+    retained_sessions: set[date] = set()
+    for row in existing:
         if row.symbol != symbol or row.exchange != exchange:
             raise ValueError("pair forward row target is invalid")
         prior = by_session.get(row.session_date)
         if prior is not None and prior != row:
             raise KisPaperDailyPairForwardCacheError("pair forward duplicate conflict")
         by_session[row.session_date] = row
-    return tuple(by_session[session] for session in sorted(by_session))
+        retained_sessions.add(row.session_date)
+
+    latest_retained_session = max(retained_sessions, default=None)
+    retained_revision_conflict_count = 0
+    for row in incoming:
+        if row.symbol != symbol or row.exchange != exchange:
+            raise ValueError("pair forward row target is invalid")
+        prior = by_session.get(row.session_date)
+        if prior is None:
+            if (
+                latest_retained_session is not None
+                and row.session_date <= latest_retained_session
+            ):
+                raise KisPaperDailyPairForwardCacheError(
+                    "pair forward non-forward append"
+                )
+            by_session[row.session_date] = row
+        elif prior != row:
+            if row.session_date not in retained_sessions:
+                raise KisPaperDailyPairForwardCacheError("pair forward duplicate conflict")
+            retained_revision_conflict_count += 1
+    return _MergedRows(
+        rows=tuple(by_session[session] for session in sorted(by_session)),
+        retained_revision_conflict_count=retained_revision_conflict_count,
+    )
 
 
 def _write_snapshot(*, root: Path, target_key: str, payload: bytes) -> str:
@@ -901,7 +1005,7 @@ def _parse_compressed_rows(
         raise KisPaperDailyPairForwardCacheError(
             "pair forward snapshot contents are invalid"
         ) from error
-    return _merge_rows((), rows, target_key=target_key)
+    return _merge_rows((), rows, target_key=target_key).rows
 
 
 def _rows_sha256(rows: Sequence[KisPaperDailyPairForwardRow]) -> str:

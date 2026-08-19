@@ -87,6 +87,48 @@ def test_parent_identity_mismatch_is_a_scoped_unavailable_condition(tmp_path: Pa
     assert statuses["source_pair_identity"] == "not_satisfied"
 
 
+def test_revision_quarantined_target_is_not_a_causal_source_identity(tmp_path: Path) -> None:
+    repo_root, artifact_root, cache_root, parent_receipt = _current_cache_fixture(tmp_path)
+    original = _rows("QQQ", "NAS")[0]
+    run = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target={
+            "QQQ/NAS": (replace(original, close=original.close + Decimal("0.25")),),
+            "SPY/AMS": (_rows("SPY", "AMS")[0],),
+        },
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    document = json.loads(parent_receipt.read_text(encoding="utf-8"))
+    document["payload"]["status"] = run.status
+    document["payload"]["categorical_failure_count"] = run.categorical_failure_count
+    document["payload"]["changed_target_count"] = run.changed_target_count
+    document["payload"]["retained_revision_conflict_count"] = (
+        run.retained_revision_conflict_count
+    )
+    document["payload"]["revision_quarantined_target_count"] = (
+        run.revision_quarantined_target_count
+    )
+    document["payload"]["recovery"] = run.recovery
+    document["payload"]["cache"] = run.cache.safe_payload()
+    parent_receipt.write_bytes(_canonical_json(document).encode("utf-8"))
+
+    result = qualification.qualify_current_kis_paper_daily_pair_forward_cache(
+        cache_root=cache_root,
+        parent_receipt_path=parent_receipt,
+        artifact_root=artifact_root,
+        repository_root=repo_root,
+    )
+
+    statuses = {
+        condition.condition_id: condition.status for condition in result.evidence.conditions
+    }
+    assert run.status == "partial"
+    assert run.revision_quarantined_target_count == 1
+    assert result.status == "input_unavailable"
+    assert statuses["source_pair_identity"] == "not_satisfied"
+
+
 def test_receipt_is_external_immutable_and_source_safe(tmp_path: Path) -> None:
     repo_root, artifact_root, cache_root, parent_receipt = _current_cache_fixture(tmp_path)
     result = qualification.qualify_current_kis_paper_daily_pair_forward_cache(

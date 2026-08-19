@@ -6,14 +6,20 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-pair-forward-overlap-reconciliation-v1` is ready. The v4 deferred
+`kis-daily-pair-forward-post-reconciliation-observation-v1` is ready. The
+completed overlap-reconciliation package passed goal-boundary verification. The v4 deferred
 cache retains seven common sessions and two seven-row streams; a later token
 probe is `authenticated`. V5 readiness recorded open gates without network or
 cache write, while its one collector then failed at
 `commit/cache_contract/cache_prepare/incoming_merge`; the verified cache/index
-identities are unchanged from v4. The next Data/Infra package is source/fixture
-only and defines revision-preserving overlap reconciliation before any later
-collector. The daily-broad cursor is terminal and the QQQ/SPY forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
+identities are unchanged from v4. The completed Data/Infra package makes exact
+duplicates idempotent, preserves a conflicting retained row under durable
+target-local quarantine, and allows only strictly newer sessions to append;
+the causal reader rejects any non-ready target. The next collector-facing
+package builds the existing fixed-pair service, runs one offline preflight and
+only one collector on `collection_required`, and cannot clear a quarantine
+implicitly. The daily-broad cursor is terminal and the QQQ/SPY
+forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
 control, and shallow nonlinear tree control all completed on the same
 hash-pinned daily input, with the L2 and tree QQQ/SPY after-cost replays below
 their fixed previous-bar-direction comparators. The causal predicate keeps
@@ -60,7 +66,7 @@ named clock/session, decision-time availability, and provider finality
 | KIS QQQ/SPY D1 v4 preflight and one-shot collection | Data | Existing shared-tag Compose service, external cache, and receipt root | Complete: matching preflight `sha256:e24e124b7e2ab6ec50496b5fc9a70ce21198f1483606527b442e9c749cf9029f` permitted one collector `sha256:8100bf8cccc02afa88124c05a731ae53113f99075761c5fbe8bb657a3416e832`, which deferred with QQQ authentication rejection and SPY token gate state; its cache/index reattach holds and no retry ran. |
 | KIS Paper authentication capability probe | Data / Infra Capability | Existing virtual-host market-data authentication path and source-safe receipt root | Complete: one `authenticated` token-only receipt `sha256:d07e12f8ca521ca32cc00a4a0f81625ad5b503fa0505bad026969aca95db8261` has no market-data, account, order, live, token, or credential-retention fact. |
 | KIS QQQ/SPY D1 v5 readiness and one-shot collection | Data | Existing shared-tag readiness/collector Compose service, external cache, and receipt root | Complete: readiness `sha256:f1d833bdf8aa775919f1793d2025ab2b530d251c13e3da22eb81a70a2c6ba7ab` recorded open gates/no network/no cache write; one collector `sha256:a10e42f5a44753c67bf483414005d98b5171341998926b10a2a5f9dc85100910` failed at `commit/cache_contract/cache_prepare/incoming_merge`, with prior cache identities reattached unchanged. |
-| KIS QQQ/SPY D1 overlap reconciliation | Data / Infra Capability | Existing cache source, synthetic fixtures, and source-safe receipt root | Ready: establish a no-overwrite policy for conflicting overlap while preserving exact duplicates and strictly newer-session append behavior. No KIS or consumer call. |
+| KIS QQQ/SPY D1 post-reconciliation observation | Data / Infra Capability | Existing fixed-pair Compose service, external cache, and receipt root | Ready: build the committed source, reattach one offline preflight, and invoke the collector once only on `collection_required`. Reattach aggregate-only output; no retry, clearance, causal promotion, or consumer call. |
 | Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
 | KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one development-only CPU fit wrote external model parameters only, excluded validation labels, and completed two model plus six comparator local-paper cells. Both model after-cost cells were negative and below previous-bar-direction controls. |
 | KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one shallow histogram-gradient-tree replay excluded validation labels from fitting, wrote no serialized estimator, and completed two model plus six comparator `local_paper` cells. Both model cells were below their fixed previous-bar-direction comparators, closing the lineage. |
@@ -123,10 +129,11 @@ predictive/Paper/GPU input explicit. The completed reversible improvements are
 a fixed-stage source-safe D1 collector boundary, a no-network/no-write
 readiness check, a shared-tag payload contract fingerprint, bounded collector
 evidence, fixed v2/v3/v4 failure diagnostics, a token-only authentication
-receipt, and one v5 failed collector. The next bounded action is source/fixture
-overlap reconciliation; it must retain no raw values or exception detail and
-must not repeat a failed model family or spend GPU on an unqualified runtime
-study.
+receipt, one v5 failed collector, and target-local D1 overlap reconciliation.
+The reconciliation retains no raw values, exception detail, or value-derived
+hash; a conflict preserves the prior row and excludes only that target from the
+causal reader. Do not repeat a failed model family or spend GPU on an
+unqualified runtime study.
 
 The source-safe snapshot-observer fixture now receives a unique mutex while the
 production default remains `Global\TheRicherPaperSnapshotObserver`. This removes
@@ -151,6 +158,9 @@ or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current D1 action
-is one source/fixture-only overlap-reconciliation policy package. Its result
-must preserve prior cache bytes, infer neither causal availability nor finality,
-and make no KIS, credential, cache-write, or consumer call.
+has completed the source/fixture-only overlap-reconciliation package. Its
+result preserves prior retained rows, infers neither causal availability nor
+finality, and made no KIS, credential, external-cache, or consumer call. The
+next daily action is the separately bounded fixed-pair observation/re-fetch
+contract; it must not treat an ordinary collection as automatic quarantine
+clearance.

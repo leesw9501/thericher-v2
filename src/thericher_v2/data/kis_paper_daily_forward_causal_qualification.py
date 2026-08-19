@@ -357,6 +357,7 @@ def _source_pair_identity_status(
     if (
         tuple(cache.rows_by_target) != expected_targets
         or tuple(cache.targets_by_key) != expected_targets
+        or any(target.status != "ready" for target in cache.targets_by_key.values())
         or parent.cache_sha256 != cache.cache_hash
         or parent.cache_index_sha256 != cache.index_hash
     ):
