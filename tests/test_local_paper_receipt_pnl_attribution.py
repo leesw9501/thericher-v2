@@ -60,6 +60,102 @@ def test_local_paper_pnl_segments_retain_exact_receipt_lineage(tmp_path: Path) -
     )
 
 
+def test_one_exit_receipt_retains_every_fifo_entry_lineage(tmp_path: Path) -> None:
+    entry_a = _distinct_receipt(
+        action="enter",
+        target_exposure=Decimal("0.25"),
+        decided_at=NOW,
+        marker="1",
+    )
+    entry_b = _distinct_receipt(
+        action="enter",
+        target_exposure=Decimal("0.50"),
+        decided_at=NOW + timedelta(minutes=1),
+        marker="2",
+    )
+    exit_receipt = _distinct_receipt(
+        action="exit",
+        target_exposure=Decimal("0"),
+        decided_at=NOW + timedelta(minutes=2),
+        marker="3",
+    )
+    store = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    broker = LocalPaperBroker(
+        event_store=store,
+        emergency_store=EmergencyStore(tmp_path / "emergency.json"),
+    )
+    prepared_entry_a = prepare_local_paper_intent(
+        entry_a,
+        binding=_binding(
+            entry_a,
+            target_exposure=Decimal("0.25"),
+            current_quantity=Decimal("0"),
+        ),
+        as_of=NOW,
+    )
+    prepared_entry_b = prepare_local_paper_intent(
+        entry_b,
+        binding=_binding(
+            entry_b,
+            target_exposure=Decimal("0.50"),
+            current_quantity=Decimal("2"),
+        ),
+        as_of=NOW + timedelta(minutes=1),
+    )
+    prepared_exit = prepare_local_paper_intent(
+        exit_receipt,
+        binding=_binding(
+            exit_receipt,
+            target_exposure=Decimal("0"),
+            current_quantity=Decimal("4"),
+        ),
+        as_of=NOW + timedelta(minutes=2),
+    )
+    assert prepared_entry_a.local_paper_intent is not None
+    assert prepared_entry_b.local_paper_intent is not None
+    assert prepared_exit.local_paper_intent is not None
+    broker.submit_and_fill_next_bar(
+        prepared_entry_a.local_paper_intent,
+        signal_bar=_bar(NOW - timedelta(minutes=1)),
+        execution_bar=_bar(NOW),
+    )
+    broker.submit_and_fill_next_bar(
+        prepared_entry_b.local_paper_intent,
+        signal_bar=_bar(NOW),
+        execution_bar=_bar(NOW + timedelta(minutes=1)),
+    )
+    broker.submit_and_fill_next_bar(
+        prepared_exit.local_paper_intent,
+        signal_bar=_bar(NOW + timedelta(minutes=1)),
+        execution_bar=_bar(NOW + timedelta(minutes=2)),
+    )
+
+    accounting = replay_local_paper_decision_pnl(tuple(store.iter_events()))
+    attribution = attribute_local_paper_decision_pnl_to_receipts(
+        accounting,
+        (exit_receipt, entry_b, entry_a),
+    )
+
+    assert [
+        (
+            segment.entry_receipt.decision_id,
+            segment.exit_receipt.decision_id,
+            segment.accounting.quantity,
+        )
+        for segment in attribution.closed_segments
+    ] == [
+        (entry_a.decision_id, exit_receipt.decision_id, Decimal("2")),
+        (entry_b.decision_id, exit_receipt.decision_id, Decimal("2")),
+    ]
+    assert {
+        segment.exit_receipt.receipt_ref for segment in attribution.closed_segments
+    } == {receipt_attribution_ref(exit_receipt)}
+    assert sum(
+        (segment.accounting.realized_after_cost_pnl for segment in attribution.closed_segments),
+        Decimal("0"),
+    ) == accounting.aggregate.realized_after_cost_pnl
+
+
 def test_missing_or_duplicate_receipts_fail_closed(tmp_path: Path) -> None:
     entry, exit, accounting = _closed_pair_accounting(tmp_path)
 
@@ -218,6 +314,38 @@ def _receipt(*, action: Literal["enter", "exit"]) -> ResearchDecisionReceipt:
             model_ref=_ref("b" if action == "enter" else "f"),
             input_manifest_ref=f"sha256:{('c' if action == 'enter' else 'a') * 64}",
             proposal_ref=_ref("d" if action == "enter" else "b"),
+        ),
+    )
+
+
+def _distinct_receipt(
+    *,
+    action: Literal["enter", "exit"],
+    target_exposure: Decimal,
+    decided_at: datetime,
+    marker: str,
+) -> ResearchDecisionReceipt:
+    proposal = TargetExposureProposal(
+        proposal_id=f"source-proposal-{marker}-not-exported",
+        symbol="QQQ",
+        market="US",
+        action=action,
+        target_exposure=target_exposure,
+        confidence=Decimal("0.55"),
+        feature_schema_id="receipt-pnl-attribution-test-v1",
+        input_status="ready",
+        decided_at=decided_at,
+        valid_until=decided_at + timedelta(minutes=2),
+        feature_window_end=decided_at,
+        reason="not-exported-to-receipt",
+    )
+    return receipt_from_target_exposure_proposal(
+        proposal,
+        references=DecisionReceiptReferences(
+            campaign_ref=_ref(marker),
+            model_ref=_ref("a" if marker != "a" else "b"),
+            input_manifest_ref=f"sha256:{marker * 64}",
+            proposal_ref=_ref("b" if marker != "b" else "c"),
         ),
     )
 
