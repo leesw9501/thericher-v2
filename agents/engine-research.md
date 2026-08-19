@@ -50,10 +50,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   Tiingo D1 breadth runner uses that same factory. This is implementation
   consistency only: no frozen screen, campaign, GPU appointment, model
   selection, or Paper path changed.
-- The minimal action-vote ensemble now maps a highest-vote tie to `hold`
-  independently of caller order and labels it `tied_vote_hold`. This is
-  deterministic local fusion only: it does not select a model, create a
-  campaign, consume data, allocate GPU, or authorize Paper behavior.
+- The minimal action-vote ensemble now maps a highest-vote tie to `hold`,
+  canonicalizes prediction-ID order, and labels a tie `tied_vote_hold`. Its
+  full decision projection is independent of caller order. This is deterministic
+  local fusion only: it does not select a model, create a campaign, consume
+  data, allocate GPU, or authorize Paper behavior.
 - Target-policy proposal identities now use canonical tie-break fields before
   hashing, so the same duplicate-input abstain has one identity regardless of
   caller order. This preserves replay and deduplication semantics only; it

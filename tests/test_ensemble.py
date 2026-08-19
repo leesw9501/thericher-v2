@@ -16,6 +16,7 @@ def test_tied_vote_holds_regardless_of_prediction_order() -> None:
 
     assert (first.action, first.reason) == ("hold", "tied_vote_hold")
     assert (reversed_order.action, reversed_order.reason) == ("hold", "tied_vote_hold")
+    assert first == reversed_order
 
 
 def _prediction(*, model_id: str, action: str) -> ModelPrediction:

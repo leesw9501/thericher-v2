@@ -42,7 +42,9 @@ def decide(
         confidence=confidence,
         expected_edge_bps=expected_edge_bps,
         risk_score=max(Decimal("0"), Decimal("1") - confidence),
-        prediction_ids=tuple(f"{item.model_id}:{item.model_version}" for item in predictions),
+        prediction_ids=tuple(
+            sorted(f"{item.model_id}:{item.model_version}" for item in predictions)
+        ),
         decided_at=max(item.feature_window_end for item in predictions).astimezone(UTC),
         reason=reason,
     )
