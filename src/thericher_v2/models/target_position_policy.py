@@ -516,6 +516,10 @@ def _proposal_id(
                 item.model_id,
                 item.model_version,
                 item.feature_window_end,
+                item.signal.action,
+                item.confidence,
+                item.expected_edge_bps,
+                item.signal.generated_at,
             ),
         )
     ]

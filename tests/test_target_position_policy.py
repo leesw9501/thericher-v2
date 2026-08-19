@@ -126,6 +126,38 @@ def test_stale_or_duplicate_evidence_becomes_a_categorical_abstain() -> None:
     ) == ("abstain", "duplicate", "evidence_duplicate")
 
 
+def test_duplicate_evidence_abstain_identity_is_independent_of_input_order() -> None:
+    original = _prediction(Timeframe.M1, action="buy", expected_edge_bps=Decimal("4"))
+    conflicting_duplicate = _prediction(
+        Timeframe.M1,
+        action="sell",
+        expected_edge_bps=Decimal("-4"),
+    )
+    remaining = tuple(item for item in _predictions() if item.signal.timeframe != Timeframe.M1)
+
+    first = propose_target_exposure(
+        _eligibility(),
+        (original, conflicting_duplicate, *remaining),
+        current_exposure=Decimal("0"),
+        config=_config(),
+        as_of=_NOW,
+    )
+    reversed_order = propose_target_exposure(
+        _eligibility(),
+        (conflicting_duplicate, original, *remaining),
+        current_exposure=Decimal("0"),
+        config=_config(),
+        as_of=_NOW,
+    )
+
+    assert (first.action, first.input_status, first.reason, first.proposal_id) == (
+        "abstain",
+        "duplicate",
+        "evidence_duplicate",
+        reversed_order.proposal_id,
+    )
+
+
 def test_ineligible_or_misaligned_inputs_never_create_a_target_action() -> None:
     ineligible = OpportunityEligibility(
         opportunity_ref="ref:" + "2" * 64,
