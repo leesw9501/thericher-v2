@@ -78,6 +78,7 @@ class OpportunitySelectionEntry:
     source_eligibility: CurrentSourceOpportunityEligibility
     selection_ref: str
     selection_score: Decimal | int | str
+    selector_id: str
     score_schema_id: str
     snapshot_id: str
     source_semantics_id: str
@@ -91,6 +92,7 @@ class OpportunitySelectionEntry:
         if _SELECTION_REFERENCE.fullmatch(self.selection_ref) is None:
             raise ValueError("selection_ref must be an opaque reference")
         for value in (
+            self.selector_id,
             self.score_schema_id,
             self.snapshot_id,
             self.source_semantics_id,
@@ -223,6 +225,8 @@ def _validate_cycle_inputs(
         if identity in identities:
             raise OpportunitySelectionInputError("selection_duplicate_identity")
         identities.add(identity)
+        if entry.selector_id != config.selector_id:
+            raise OpportunitySelectionInputError("selection_selector_misaligned")
         if entry.score_schema_id != config.score_schema_id:
             raise OpportunitySelectionInputError("selection_score_schema_misaligned")
         if (

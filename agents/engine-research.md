@@ -60,7 +60,7 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   cannot create a candidate or research result.
 - The pure source-attested selection-policy cycle now adds the upstream
   cross-sectional decision layer. It requires one shared snapshot/as-of,
-  completed-bar semantics, availability grade, and frozen score schema before
+  completed-bar semantics, availability grade, frozen selector, and score schema before
   top-K selection; stale, duplicate, unqualified, future, or mixed inputs
   reject only that cycle. Every valid candidate retains a selected or
   not-selected outcome, and selected candidates retain their later policy and
@@ -69,6 +69,12 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   correlation, and cost assumptions before any comparative, ensemble, or Paper
   claim. This pure mechanism has no score generation, data, training, GPU,
   reservation, execution, or Paper authority.
+- For a selected candidate only, Research can now replay the entire supplied
+  selection cohort into an opaque lineage `proposal_ref` for the existing
+  decision-receipt and local-paper bridge. It commits the observed candidate
+  field and selection context, not a complete universe, predictive score, or
+  Execution proof; policy/allocation IDs remain caller-owned downstream
+  identities. A mismatched receipt/binding reference fails closed.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed

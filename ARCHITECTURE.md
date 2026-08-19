@@ -165,7 +165,7 @@ feasible targets and order quantization after actual position state is known.
 
 The first opportunity-selection foundation is also pure and caller-owned. It
 accepts only already source-attested candidates plus caller-supplied bounded
-scores under one frozen score schema. Before any top-K comparison it requires
+scores under one frozen selector and score schema. Before any top-K comparison it requires
 one shared `as_of`, snapshot identity, completed-bar/source-semantics identity,
 and availability grade. A stale, duplicate, unqualified, future, or mixed
 context input rejects that one selection cycle rather than being silently
@@ -191,6 +191,16 @@ their per-symbol policy proposal and capacity-allocated target. Thus selection
 exclusion cannot be misreported as a policy abstention or an allocation cap.
 It has no data access, score generation, training, reservation, execution, or
 Paper authority.
+
+Before a selected allocated proposal enters the existing decision-receipt path,
+Research may derive one cohort-level opaque proposal reference by replaying the
+entire supplied selection field. The reference commits the aligned selector,
+score schema, top-K geometry, source context, all candidate selection outcomes,
+and caller-owned policy/allocation proposal identities. It is lineage only: it
+does not prove the field was a complete universe, validate predictive scores,
+or replace Execution's independent target and symbol binding checks. Receipt
+and local-Paper binding must use the same derived reference; a mismatch fails
+closed at the existing bridge.
 
 ### Ownership Boundary
 

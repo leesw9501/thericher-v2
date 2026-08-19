@@ -3,12 +3,17 @@ from __future__ import annotations
 import os
 import socket
 import urllib.request
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 
 import pytest
 
 from thericher_v2.contracts import ModelPrediction, Signal, Timeframe
+from thericher_v2.execution.paper_decision_bridge import (
+    LocalPaperTargetBinding,
+    prepare_local_paper_intent,
+)
 from thericher_v2.models.current_source_opportunity_eligibility import (
     CurrentSourceContract,
     CurrentSourceMetadata,
@@ -31,6 +36,13 @@ from thericher_v2.models.target_exposure_allocator import (
 from thericher_v2.models.target_position_policy import (
     OpportunityEligibility,
     TargetPositionPolicyConfig,
+)
+from thericher_v2.research.decision_receipt import (
+    DecisionReceiptReferences,
+    receipt_from_target_exposure_proposal,
+)
+from thericher_v2.research.selection_policy_provenance import (
+    build_selected_selection_policy_proposal_lineage,
 )
 
 _NOW = datetime(2026, 8, 3, 15, 0, tzinfo=UTC)
@@ -108,6 +120,87 @@ def test_cycle_selection_order_is_not_caller_order() -> None:
     assert _cycle_summary(first) == _cycle_summary(second)
 
 
+def test_selected_lineage_replays_the_full_cohort_then_binds_a_local_paper_receipt() -> None:
+    outcomes = _outcomes()
+    lineage = build_selected_selection_policy_proposal_lineage(
+        outcomes,
+        selection_config=_selection_config(),
+        selection_context=_selection_context(),
+        symbol="QQQ",
+        market="US",
+    )
+    qqq = _outcome_for(outcomes, "QQQ")
+    assert qqq.policy_cycle_outcome is not None
+
+    receipt = receipt_from_target_exposure_proposal(
+        qqq.policy_cycle_outcome.allocated_proposal,
+        references=DecisionReceiptReferences(
+            campaign_ref="ref:" + "a" * 64,
+            model_ref="ref:" + "b" * 64,
+            input_manifest_ref="sha256:" + "c" * 64,
+            proposal_ref=lineage.proposal_ref,
+        ),
+    )
+    bridge = prepare_local_paper_intent(
+        receipt,
+        binding=LocalPaperTargetBinding(
+            proposal_ref=lineage.proposal_ref,
+            symbol="QQQ",
+            target_exposure=qqq.policy_cycle_outcome.allocated_proposal.target_exposure,
+            current_quantity=Decimal("0"),
+            maximum_quantity=Decimal("10"),
+        ),
+        as_of=_NOW,
+    )
+
+    assert lineage.selection_rank == 1
+    assert lineage.symbol == "QQQ"
+    assert lineage.proposal_ref.startswith("ref:")
+    assert bridge.route == "local_paper"
+    assert bridge.status == "ready"
+    assert bridge.kis_paper_decision is None
+
+
+def test_lineage_rejects_a_nonselected_or_tampered_selection_cohort() -> None:
+    outcomes = _outcomes()
+    with pytest.raises(ValueError, match="only for a selected outcome"):
+        build_selected_selection_policy_proposal_lineage(
+            outcomes,
+            selection_config=_selection_config(),
+            selection_context=_selection_context(),
+            symbol="DIA",
+            market="US",
+        )
+
+    qqq = _outcome_for(outcomes, "QQQ")
+    tampered_selection = replace(
+        qqq.selection_outcome,
+        entry=replace(qqq.selection_outcome.entry, selection_score=Decimal("0.10")),
+    )
+    tampered = tuple(
+        replace(outcome, selection_outcome=tampered_selection)
+        if outcome is qqq
+        else outcome
+        for outcome in outcomes
+    )
+    with pytest.raises(ValueError, match="deterministic cohort recomputation"):
+        build_selected_selection_policy_proposal_lineage(
+            tampered,
+            selection_config=_selection_config(),
+            selection_context=_selection_context(),
+            symbol="QQQ",
+            market="US",
+        )
+    with pytest.raises(ValueError, match="deterministic cohort recomputation"):
+        build_selected_selection_policy_proposal_lineage(
+            outcomes,
+            selection_config=replace(_selection_config(), maximum_selected=1),
+            selection_context=_selection_context(),
+            symbol="QQQ",
+            market="US",
+        )
+
+
 def test_invalid_selection_input_fails_before_the_policy_cycle(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -154,6 +247,14 @@ def test_cycle_is_pure_without_data_network_broker_or_credentials(
 
     assert outcomes[0].selection_outcome.selected is True
     assert outcomes[0].policy_cycle_outcome is not None
+    lineage = build_selected_selection_policy_proposal_lineage(
+        outcomes,
+        selection_config=_selection_config(),
+        selection_context=_selection_context(),
+        symbol="QQQ",
+        market="US",
+    )
+    assert lineage.selection_rank == 1
 
 
 def _cycle_summary(
@@ -174,6 +275,29 @@ def _cycle_summary(
             )
         )
     return tuple(summary)
+
+
+def _outcomes() -> tuple[object, ...]:
+    return evaluate_opportunity_selection_policy_cycle(
+        (
+            _entry("DIA", "0.70", actions=("buy", "buy")),
+            _entry("IWM", "0.80", actions=("buy", "buy")),
+            _entry("SPY", "0.90", actions=("buy", "sell")),
+            _entry("QQQ", "0.99", actions=("buy", "buy")),
+        ),
+        selection_config=_selection_config(),
+        selection_context=_selection_context(),
+        policy_config=_policy_config(),
+        allocation_config=_allocation_config(),
+    )
+
+
+def _outcome_for(outcomes: tuple[object, ...], symbol: str) -> object:
+    return next(
+        outcome
+        for outcome in outcomes
+        if outcome.selection_outcome.entry.source_eligibility.eligibility.symbol == symbol
+    )
 
 
 def _entry(
@@ -213,6 +337,7 @@ def _entry(
         source_eligibility=source_eligibility,
         selection_ref="ref:" + (symbol.lower().encode().hex() + "f" * 64)[:64],
         selection_score=Decimal(score),
+        selector_id="selection-policy-cycle-test-v1",
         score_schema_id="cross-sectional-score-v1",
         snapshot_id="selection-policy-snapshot-v1",
         source_semantics_id="completed-bar-source-v1",

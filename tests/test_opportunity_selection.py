@@ -81,6 +81,10 @@ def test_selection_is_top_k_stable_across_caller_order_and_retains_all_outcomes(
             "context_misaligned",
         ),
         (
+            lambda: (_entry("QQQ", "0.90", selector_id="other-selector-v1"),),
+            "selector_misaligned",
+        ),
+        (
             lambda: (_entry("QQQ", "0.90", score_schema_id="other-score-v1"),),
             "score_schema_misaligned",
         ),
@@ -181,6 +185,7 @@ def _entry(
     *,
     upstream_eligible: bool = True,
     source_status: str = "ready",
+    selector_id: str = "cross-sectional-selection-test-v1",
     score_schema_id: str = "cross-sectional-score-v1",
     snapshot_id: str = "selection-snapshot-test-v1",
     source_semantics_id: str = "completed-bar-source-v1",
@@ -219,6 +224,7 @@ def _entry(
         ),
         selection_ref="ref:" + (symbol.lower().encode().hex() + "f" * 64)[:64],
         selection_score=Decimal(score),
+        selector_id=selector_id,
         score_schema_id=score_schema_id,
         snapshot_id=snapshot_id,
         source_semantics_id=source_semantics_id,
