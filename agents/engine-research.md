@@ -121,8 +121,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   is an explicit, artifact-root-guarded recovery operation only when that run
   has no completed validation artifact; it removes only those exact regular
   files, preserves unrelated work-directory content, and never recurses or
-  removes an artifact. This is offline replay hygiene, not a model result,
-  promotion, Paper action, or authority change.
+  removes an artifact. Its Claude drift-check returned no response
+  (`review_unavailable`), so no Claude verdict was relied on. This is offline
+  replay hygiene, not a model result, promotion, Paper action, or authority
+  change.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed
