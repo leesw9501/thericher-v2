@@ -175,6 +175,7 @@ def run_bounded_candidate_replay(
     config = config or CandidateReplayConfig()
     _reject_repo_artifact_path(artifact_root, repo_root)
     output_dir = artifact_root / "candidate-replay" / config.run_id
+    _require_new_candidate_replay_paths(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     replay_artifact = output_dir / "metrics.json"
     event_store = _fresh_event_store(output_dir)
@@ -829,12 +830,31 @@ def _is_sha256_digest(value: object) -> bool:
     return all(character in "0123456789abcdef" for character in value.removeprefix("sha256:"))
 
 
+def _require_new_candidate_replay_paths(output_dir: Path) -> None:
+    if output_dir.is_symlink():
+        raise ValueError("candidate replay output directory must not be a symlink")
+    for path, label in _candidate_replay_paths(output_dir):
+        if path.exists() or path.is_symlink():
+            raise FileExistsError(f"candidate replay {label} already exists: {path}")
+
+
+def _candidate_replay_paths(output_dir: Path) -> tuple[tuple[Path, str], ...]:
+    state_sqlite = output_dir / "state.sqlite"
+    return (
+        (output_dir / "metrics.json", "metrics artifact"),
+        (output_dir / "events.jsonl", "event JSONL"),
+        (state_sqlite, "state SQLite"),
+        (state_sqlite.with_name(f"{state_sqlite.name}-journal"), "state SQLite journal"),
+        (state_sqlite.with_name(f"{state_sqlite.name}-shm"), "state SQLite shared memory"),
+        (state_sqlite.with_name(f"{state_sqlite.name}-wal"), "state SQLite write-ahead log"),
+        (output_dir / "emergency.json", "emergency state"),
+    )
+
+
 def _fresh_event_store(output_dir: Path) -> EventStore:
+    _require_new_candidate_replay_paths(output_dir)
     db_path = output_dir / "state.sqlite"
     jsonl_path = output_dir / "events.jsonl"
-    for path in (db_path, jsonl_path):
-        if path.exists():
-            path.unlink()
     return EventStore(db_path, jsonl_path)
 
 

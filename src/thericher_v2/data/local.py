@@ -125,8 +125,6 @@ def load_cataloged_yahoo_intraday_1m_bars(
             if selected_symbol is None:
                 selected_symbol = row_symbol
             if row_symbol != selected_symbol:
-                if bars:
-                    break
                 continue
             bars.append(
                 Bar(

@@ -61,6 +61,32 @@ def test_fill_source_evidence_detects_mixed_and_unknown_sources(tmp_path) -> Non
     assert summary["local_paper_replay_invariant_passed"] is False
 
 
+def test_fill_source_evidence_marks_non_object_event_rows_unreadable(tmp_path) -> None:
+    events = tmp_path / "non-object-events.jsonl"
+    events.write_text('"not-an-event-object"\n', encoding="utf-8")
+
+    evidence = collect_fill_source_evidence(
+        (FillEventArtifact(path=events, expected_fill_count=1, label="non_object"),)
+    )
+
+    assert evidence.all_fills_local_paper is False
+    assert evidence.fill_source_counts == {}
+    assert evidence.unreadable_event_artifacts == ("non_object",)
+
+
+def test_fill_source_evidence_marks_non_utf8_event_artifacts_unreadable(tmp_path) -> None:
+    events = tmp_path / "non-utf8-events.jsonl"
+    events.write_bytes(b"\xff")
+
+    evidence = collect_fill_source_evidence(
+        (FillEventArtifact(path=events, expected_fill_count=1, label="non_utf8"),)
+    )
+
+    assert evidence.all_fills_local_paper is False
+    assert evidence.fill_source_counts == {}
+    assert evidence.unreadable_event_artifacts == ("non_utf8",)
+
+
 def test_fill_source_evidence_flags_expected_local_paper_fill_count_mismatch(
     tmp_path,
 ) -> None:

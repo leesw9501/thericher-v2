@@ -119,7 +119,7 @@ def test_candidate_replay_comparison_missing_replay_artifact_is_prepared(tmp_pat
     assert not (result.comparison_artifact.parent / "baseline-state.sqlite").exists()
 
 
-def test_candidate_replay_comparison_clears_baseline_when_candidate_replay_is_unusable(
+def test_candidate_replay_comparison_preserves_existing_run_evidence(
     tmp_path,
 ) -> None:
     artifact_root = tmp_path / "model-artifacts"
@@ -155,41 +155,27 @@ def test_candidate_replay_comparison_clears_baseline_when_candidate_replay_is_un
         gpu=_unit_gpu(),
     )
     assert completed.baseline_events.exists()
+    comparison_bytes = completed.comparison_artifact.read_bytes()
+    baseline_bytes = completed.baseline_events.read_bytes()
     replay_payload = json.loads(replay.replay_artifact.read_text(encoding="utf-8"))
     replay_payload["status"] = "prepared_not_replayed"
     replay.replay_artifact.write_text(json.dumps(replay_payload), encoding="utf-8")
 
-    rejected = run_bounded_candidate_replay_comparison(
-        config=config,
-        artifact_root=artifact_root,
-        repo_root=Path.cwd(),
-        candidate_replay_artifact=replay.replay_artifact,
-        training_metrics_artifact=training_artifact,
-        gpu=_unit_gpu(),
-    )
+    with pytest.raises(
+        FileExistsError,
+        match="candidate replay comparison metrics artifact already exists",
+    ):
+        run_bounded_candidate_replay_comparison(
+            config=config,
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+            candidate_replay_artifact=replay.replay_artifact,
+            training_metrics_artifact=training_artifact,
+            gpu=_unit_gpu(),
+        )
 
-    assert rejected.status == "prepared_not_compared"
-    assert rejected.baseline_status == "prepared_not_replayed"
-    assert not rejected.baseline_events.exists()
-    assert not (rejected.comparison_artifact.parent / "baseline-state.sqlite").exists()
-    replay_payload["status"] = "candidate_replayed_only"
-    replay_payload["bars_seen"] += 1
-    replay.replay_artifact.write_text(json.dumps(replay_payload), encoding="utf-8")
-
-    misaligned = run_bounded_candidate_replay_comparison(
-        config=config,
-        artifact_root=artifact_root,
-        repo_root=Path.cwd(),
-        candidate_replay_artifact=replay.replay_artifact,
-        training_metrics_artifact=training_artifact,
-        gpu=_unit_gpu(),
-    )
-
-    assert misaligned.status == "prepared_not_compared"
-    assert "does not match baseline bars" in misaligned.reason
-    assert misaligned.baseline_status == "prepared_not_replayed"
-    assert not misaligned.baseline_events.exists()
-    assert not (misaligned.comparison_artifact.parent / "baseline-state.sqlite").exists()
+    assert completed.comparison_artifact.read_bytes() == comparison_bytes
+    assert completed.baseline_events.read_bytes() == baseline_bytes
 
 
 def test_candidate_replay_comparison_missing_model_is_prepared(tmp_path) -> None:

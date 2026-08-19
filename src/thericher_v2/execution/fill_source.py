@@ -97,7 +97,7 @@ def collect_fill_source_evidence(
             continue
         try:
             lines = path.read_text(encoding="utf-8").splitlines()
-        except OSError:
+        except (OSError, UnicodeDecodeError):
             if event_artifact.expected_fill_count == 0:
                 missing_zero_fill_artifacts.append(str(path))
                 continue
@@ -144,6 +144,8 @@ def _fill_payloads(lines: list[str]) -> tuple[dict[str, Any], ...]:
         if not line.strip():
             continue
         event = json.loads(line)
+        if not isinstance(event, dict):
+            raise TypeError("event artifact row must be a JSON object")
         if event.get("event_type") != "fill":
             continue
         payload = event.get("payload")

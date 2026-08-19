@@ -110,10 +110,14 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   before invoking a runner or creating an event store; an unbound trace remains
   analyzable but yields prepared, no-fill variants after clearing matching stale
   variant artifacts. A descriptive candidate comparison runs its baseline only
-  after completed, aligned candidate replay evidence and clears its matching
-  stale baseline artifacts first. This binds the candidate stack only; generic
-  rule-model provenance plus trace immutability and mutable runtime, feature,
-  and sidecar contracts remain separately scoped. It is replay-evidence
+  after completed, aligned candidate replay evidence. Candidate replay and
+  comparison namespaces reject existing exact metrics/event/SQLite/emergency
+  outputs before a runner or baseline write, preserving completed and partial
+  evidence rather than clearing it. Claude's `supported-with-limits` review
+  exposed and narrowed a stale-baseline-delete interaction; output concurrency
+  remains the job owner's responsibility. This binds the candidate stack only;
+  generic rule-model provenance plus trace immutability and mutable runtime,
+  feature, and sidecar contracts remain separately scoped. It is replay-evidence
   custody, not a promotion, GPU appointment, or Paper authorization.
 - Persistent campaign Local-Paper replays reject every exact partial-file name,
   including SQLite journal/WAL/SHM sidecars, so a failed deterministic run

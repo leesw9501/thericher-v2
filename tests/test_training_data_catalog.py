@@ -219,8 +219,8 @@ def test_cataloged_bars_bind_actual_gzip_hash_and_reject_replaced_bytes(
         path,
         [
             _row("AAA", "2026-01-02T14:30:00Z", "2026-01-02"),
-            _row("AAA", "2026-01-02T14:31:00Z", "2026-01-02"),
             _row("BBB", "2026-01-02T14:30:00Z", "2026-01-02"),
+            _row("AAA", "2026-01-02T14:31:00Z", "2026-01-02"),
         ],
     )
     expected_hash = "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
@@ -258,6 +258,10 @@ def test_cataloged_bars_bind_actual_gzip_hash_and_reject_replaced_bytes(
     assert loaded.dataset_hash == expected_hash
     assert loaded.source_path == path
     assert len(loaded.bars) == 2
+    assert [bar.start_ts for bar in loaded.bars] == [
+        datetime(2026, 1, 2, 14, 30, tzinfo=UTC),
+        datetime(2026, 1, 2, 14, 31, tzinfo=UTC),
+    ]
     assert all(
         bar.symbol == "AAA"
         and bar.market == "US"

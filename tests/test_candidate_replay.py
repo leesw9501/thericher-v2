@@ -83,6 +83,84 @@ def test_candidate_replay_is_deterministic_with_injected_runner(tmp_path) -> Non
     assert first.replay_final_position == second.replay_final_position
 
 
+def test_candidate_replay_preserves_existing_run_evidence(tmp_path) -> None:
+    model_artifact = _model_artifact(tmp_path)
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    config = CandidateReplayConfig(
+        run_id="immutable-candidate-replay",
+        max_bars=40,
+        buy_threshold=0.70,
+        sell_threshold=0.30,
+    )
+    artifact_root = tmp_path / "model-artifacts"
+    first = run_bounded_candidate_replay(
+        config=config,
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        training_metrics_artifact=training_artifact,
+        evaluation_artifact=evaluation_artifact,
+        gpu=_unit_gpu(),
+        probability_runner=_alternating_probability_runner,
+    )
+    metrics_bytes = first.replay_artifact.read_bytes()
+    events_path = first.replay_artifact.parent / "events.jsonl"
+    event_bytes = events_path.read_bytes()
+    runner_called = False
+
+    def runner(*_args: object, **_kwargs: object) -> dict[str, object]:
+        nonlocal runner_called
+        runner_called = True
+        return {}
+
+    with pytest.raises(FileExistsError, match="candidate replay metrics artifact already exists"):
+        run_bounded_candidate_replay(
+            config=config,
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+            training_metrics_artifact=training_artifact,
+            evaluation_artifact=evaluation_artifact,
+            gpu=_unit_gpu(),
+            probability_runner=runner,
+        )
+
+    assert first.replay_artifact.read_bytes() == metrics_bytes
+    assert events_path.read_bytes() == event_bytes
+    assert runner_called is False
+
+
+def test_candidate_replay_preserves_partial_event_evidence(tmp_path) -> None:
+    model_artifact = _model_artifact(tmp_path)
+    training_artifact = _training_metrics_artifact(tmp_path, model_artifact)
+    evaluation_artifact = _evaluation_artifact(tmp_path, training_artifact, model_artifact)
+    config = CandidateReplayConfig(run_id="partial-candidate-replay", max_bars=40)
+    artifact_root = tmp_path / "model-artifacts"
+    output_dir = artifact_root / "candidate-replay" / config.run_id
+    output_dir.mkdir(parents=True)
+    events_path = output_dir / "events.jsonl"
+    events_path.write_text("partial candidate replay evidence\n", encoding="utf-8")
+    runner_called = False
+
+    def runner(*_args: object, **_kwargs: object) -> dict[str, object]:
+        nonlocal runner_called
+        runner_called = True
+        return {}
+
+    with pytest.raises(FileExistsError, match="candidate replay event JSONL already exists"):
+        run_bounded_candidate_replay(
+            config=config,
+            artifact_root=artifact_root,
+            repo_root=Path.cwd(),
+            training_metrics_artifact=training_artifact,
+            evaluation_artifact=evaluation_artifact,
+            gpu=_unit_gpu(),
+            probability_runner=runner,
+        )
+
+    assert events_path.read_text(encoding="utf-8") == "partial candidate replay evidence\n"
+    assert runner_called is False
+
+
 def test_candidate_replay_missing_model_is_prepared_not_replayed(tmp_path) -> None:
     missing_model = tmp_path / "missing-model.pt"
     training_artifact = _training_metrics_artifact(tmp_path, missing_model)

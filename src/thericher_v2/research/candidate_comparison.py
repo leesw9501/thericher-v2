@@ -177,8 +177,8 @@ def run_bounded_candidate_replay_comparison(
     config = config or CandidateReplayComparisonConfig()
     _reject_repo_artifact_path(artifact_root, repo_root)
     output_dir = artifact_root / "candidate-replay-comparison" / config.run_id
+    _require_new_candidate_replay_comparison_paths(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    _clear_baseline_event_artifacts(output_dir)
     comparison_artifact = output_dir / "metrics.json"
     gpu = gpu or detect_gpu_readiness()
 
@@ -594,22 +594,40 @@ def _candidate_replay_config(
     )
 
 
-def _clear_baseline_event_artifacts(output_dir: Path) -> None:
-    for filename in (
-        "baseline-emergency.json",
-        "baseline-events.jsonl",
-        "baseline-state.sqlite",
-        "baseline-state.sqlite-journal",
-        "baseline-state.sqlite-shm",
-        "baseline-state.sqlite-wal",
-    ):
-        path = output_dir / filename
-        if path.is_file() or path.is_symlink():
-            path.unlink()
+def _require_new_candidate_replay_comparison_paths(output_dir: Path) -> None:
+    if output_dir.is_symlink():
+        raise ValueError("candidate replay comparison output directory must not be a symlink")
+    for path, label in _candidate_replay_comparison_paths(output_dir):
+        if path.exists() or path.is_symlink():
+            raise FileExistsError(
+                f"candidate replay comparison {label} already exists: {path}"
+            )
+
+
+def _candidate_replay_comparison_paths(output_dir: Path) -> tuple[tuple[Path, str], ...]:
+    state_sqlite = output_dir / "baseline-state.sqlite"
+    return (
+        (output_dir / "metrics.json", "metrics artifact"),
+        (output_dir / "baseline-emergency.json", "baseline emergency state"),
+        (output_dir / "baseline-events.jsonl", "baseline event JSONL"),
+        (state_sqlite, "baseline state SQLite"),
+        (
+            state_sqlite.with_name(f"{state_sqlite.name}-journal"),
+            "baseline state SQLite journal",
+        ),
+        (
+            state_sqlite.with_name(f"{state_sqlite.name}-shm"),
+            "baseline state SQLite shared memory",
+        ),
+        (
+            state_sqlite.with_name(f"{state_sqlite.name}-wal"),
+            "baseline state SQLite write-ahead log",
+        ),
+    )
 
 
 def _fresh_baseline_event_store(output_dir: Path) -> EventStore:
-    _clear_baseline_event_artifacts(output_dir)
+    _require_new_candidate_replay_comparison_paths(output_dir)
     db_path = output_dir / "baseline-state.sqlite"
     jsonl_path = output_dir / "baseline-events.jsonl"
     return EventStore(db_path, jsonl_path)
