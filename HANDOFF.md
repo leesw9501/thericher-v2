@@ -545,9 +545,30 @@ live, token-retention, credential-write, and raw-body-retention flags are all
 false. This proves one bounded KIS Paper token capability only. It does not
 reclassify the v4 collector, establish daily-page availability, finality,
 causal input, Research, Execution, Paper, PnL, or live eligibility. The next
-package uses the existing credential-free readiness route and, only if it is
-currently ready, one existing QQQ/SPY D1 collector invocation without a retry
-loop.
+package uses the existing networkless Paper configuration/gate readiness route
+and, only if it is currently ready, one existing QQQ/SPY D1 collector
+invocation without a retry loop.
+
+The v5 readiness receipt is
+`data/kis-paper-daily-pair-forward-v1/run=20260819T191313847774Z-fefb0b409c2c4366/receipt.json`
+(`sha256:f1d833bdf8aa775919f1793d2025ab2b530d251c13e3da22eb81a70a2c6ba7ab`).
+Its hash and v4 static contract reattached as `ready/aggregate_ready`, with
+`token_request_due: true`, `rate_gate_deferred: false`, and no network, cache
+write, account, order, or live route. It validates only the named Paper app
+configuration in process memory. Claude's collection review returned
+`supported-with-limits`: those gate fields and the host's zero active collector
+fact must be checked at dispatch time, while the collector's own atomic gate
+remains authoritative. The one permitted v5 collector then wrote
+`data/kis-paper-daily-pair-forward-v1/run=20260819T191401404530Z-df12344aeec246ec/receipt.json`
+(`sha256:a10e42f5a44753c67bf483414005d98b5171341998926b10a2a5f9dc85100910`)
+as `unavailable/collector_unavailable/commit/cache_contract/cache_prepare/`
+`incoming_merge`. Its hash and route isolation reattached; no cache payload was
+present and all non-market routes were false. The verified current cache/index
+identities and seven-common-session aggregate exactly match the v4 deferred
+receipt, so this failed attempt did not mutate retained data. No retry ran.
+Source inspection makes duplicate conflicting overlap the candidate inside that
+fixed region, not a proven row-level cause. The next package is source/fixture
+only: define a revision-preserving forward-merge policy before another KIS call.
 
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
@@ -698,6 +719,20 @@ ready.
   `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
 
 ## Verification And Git
+
+The v5 D1 forward-cache outcome and verification-root recovery passed the
+focused eight-test serial and four-worker groups, then the full authority
+parallel suite as `3215 passed, 19 skipped` in 39m24s, plus Ruff, both
+credential-free Compose parses, and `git diff --check`. The runner now prefers
+local non-reparse `D:\trpy` and falls back to `C:\trpy`; it is test-only and
+does not alter market-data or model-artifact roots. The first C-root authority
+attempt exposed correct 15% storage-floor enforcement in test-created artifact
+roots, and the only later failures came from a short system-temp fixture's
+normal-capacity assumption. That fixture now supplies a deterministic normal
+capacity while retaining its explicit below-floor test. Claude's bounded
+recovery review returned no verdict, recorded as `review_unavailable`; no
+broker, KIS, credential, Docker service, or scheduler call occurred in this
+verification repair.
 
 The completed intraday failure-category confirmation package passed 25 focused
 offline reader/reattachment tests, the 2,996-pass authority parallel suite with

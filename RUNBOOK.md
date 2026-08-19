@@ -824,9 +824,34 @@ retention are false.
 
 This is one virtual-host token endpoint capability fact, not a daily-price
 result or an eligibility promotion. Preserve the v4 daily receipt unchanged.
-The next package runs the existing credential-free readiness path and, only on
-its matching ready result, one existing D1 collector. It must not wait in the
-foreground or retry either call.
+The next package runs the existing networkless Paper configuration/gate
+readiness path and, only on its matching ready result, one existing D1
+collector. It must not wait in the foreground or retry either call.
+
+### V5 Readiness And One-Shot Outcome
+
+The networkless readiness receipt
+`run=20260819T191313847774Z-fefb0b409c2c4366/receipt.json`
+(`sha256:f1d833bdf8aa775919f1793d2025ab2b530d251c13e3da22eb81a70a2c6ba7ab`)
+recomputed as matching `ready/aggregate_ready`. It validated only the named
+Paper configuration and recorded `token_request_due: true`,
+`rate_gate_deferred: false`, no network request, no cache write, and no account,
+order, or live route. Claude's `supported-with-limits` review requires the
+individual gate fields and current host ownership to be checked before dispatch;
+the collector's atomic gate is still decisive.
+
+One collector then wrote
+`run=20260819T191401404530Z-df12344aeec246ec/receipt.json`
+(`sha256:a10e42f5a44753c67bf483414005d98b5171341998926b10a2a5f9dc85100910`)
+as `unavailable/collector_unavailable` at
+`commit/cache_contract/cache_prepare/incoming_merge`. The receipt has no cache
+payload and retains only the daily-market route with every non-market route
+false. The verified current cache/index identities, seven common sessions, and
+per-target aggregate states match the preceding v4 deferred cache exactly. Do
+not retry this collector. `incoming_merge` is a source region, not a direct
+cause; duplicate conflicting overlap is only the source-inspection candidate.
+The next source/fixture-only package must establish a revision-preserving merge
+policy before another collector invocation.
 
 ## KIS Daily Event Sidecar
 
@@ -3015,16 +3040,16 @@ docker compose --env-file .env.example --profile research config --quiet
 
 The focused serial group covers the changed production and contract paths. The
 parallel command is the full-suite authority: it must exit zero, use a fresh
-isolated child beneath `C:\trpy\runs`, and retain the expected test/skip
-cardinality. Fast feedback and authority runs share a cross-session `Global`
-mutex. Authority mode fail-closes for a held helper lease, active matching
-Python worker, mutex conflict, unreadable active-process probe, mismatch,
-nonzero exit, or retained current-run temp root. An inactive retained sibling
-root is diagnostic residue, not a blocker for a new isolated run; the helper
-does not recursively remove it. It verifies the resolved parent, active child,
-and every current-run descendant before cleanup. Legacy direct
-`C:\trpy\r-*` roots remain outside the active root and are never moved or
-deleted by the helper.
+isolated child beneath local non-reparse `D:\trpy\runs` when available,
+otherwise `C:\trpy\runs`, and retain the expected test/skip cardinality. Fast
+feedback and authority runs share a cross-session `Global` mutex. Authority
+mode fail-closes for a held helper lease, active matching Python worker, mutex
+conflict, unreadable active-process probe, mismatch, nonzero exit, or retained
+current-run temp root. An inactive retained sibling root is diagnostic residue,
+not a blocker for a new isolated run; the helper does not recursively remove
+it. It verifies the resolved parent, active child, and every current-run
+descendant before cleanup. Legacy direct `C:\trpy\r-*` roots remain outside the
+active root and are never moved or deleted by the helper.
 
 ### Fast Local Test Feedback
 
@@ -3036,9 +3061,11 @@ For repeatable Windows feedback between goal boundaries, use:
 
 It runs the same suite with up to eight `pytest-xdist` workers (bounded by the
 host CPU count) and file-level distribution. The helper gives each run a short,
-unique base temp path beneath the shared `C:\trpy\runs` root; this avoids
-Windows worker-path length failures, cleans a successful run's private temp
-path, and leaves a failed run available for diagnosis. Override the worker
+unique base temp path beneath the shared local `D:\trpy\runs` root when it is
+available, otherwise `C:\trpy\runs`; this avoids Windows worker-path length
+failures, keeps test artifact roots off a near-floor system drive, cleans a
+successful run's private temp path, and leaves a failed run available for
+diagnosis. It is not a market-data or model-artifact root. Override the worker
 count when needed:
 
 ```powershell

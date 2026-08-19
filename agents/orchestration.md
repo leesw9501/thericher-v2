@@ -6,15 +6,14 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-pair-forward-v5-readiness-and-one-shot-collection-v1` is ready. The
-v4 preflight matched `collection_required` and its one collector deferred with
-QQQ/NAS `auth_rejected` and SPY/AMS `token_request_not_due`; aggregate scope
-remains seven common sessions and two seven-row streams. The later one-shot
-virtual-host token-only receipt reattached as `authenticated`, with no
-market-data, account, order, or live route. The next Data package uses existing
-credential-free readiness and, only if it reports a current open gate, one
-existing D1 collector without an automatic retry. The daily-broad cursor is
-terminal and the QQQ/SPY forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
+`kis-daily-pair-forward-overlap-reconciliation-v1` is ready. The v4 deferred
+cache retains seven common sessions and two seven-row streams; a later token
+probe is `authenticated`. V5 readiness recorded open gates without network or
+cache write, while its one collector then failed at
+`commit/cache_contract/cache_prepare/incoming_merge`; the verified cache/index
+identities are unchanged from v4. The next Data/Infra package is source/fixture
+only and defines revision-preserving overlap reconciliation before any later
+collector. The daily-broad cursor is terminal and the QQQ/SPY forward scheduler has stale timing facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic
 control, and shallow nonlinear tree control all completed on the same
 hash-pinned daily input, with the L2 and tree QQQ/SPY after-cost replays below
 their fixed previous-bar-direction comparators. The causal predicate keeps
@@ -60,7 +59,8 @@ named clock/session, decision-time availability, and provider finality
 | KIS QQQ/SPY D1 prepare-subphase diagnostic | Data / Infra Capability | Existing source and fixtures | Complete: v4 static hash `sha256:95e0ec0fd7408e237cbb79e4010e152291dd4322f58133bd4c46207c258dc893` permits only the three fixed source-region labels on a future exact `cache_prepare/cache_contract` receipt. Unclassified cases omit the field; no external call ran. |
 | KIS QQQ/SPY D1 v4 preflight and one-shot collection | Data | Existing shared-tag Compose service, external cache, and receipt root | Complete: matching preflight `sha256:e24e124b7e2ab6ec50496b5fc9a70ce21198f1483606527b442e9c749cf9029f` permitted one collector `sha256:8100bf8cccc02afa88124c05a731ae53113f99075761c5fbe8bb657a3416e832`, which deferred with QQQ authentication rejection and SPY token gate state; its cache/index reattach holds and no retry ran. |
 | KIS Paper authentication capability probe | Data / Infra Capability | Existing virtual-host market-data authentication path and source-safe receipt root | Complete: one `authenticated` token-only receipt `sha256:d07e12f8ca521ca32cc00a4a0f81625ad5b503fa0505bad026969aca95db8261` has no market-data, account, order, live, token, or credential-retention fact. |
-| KIS QQQ/SPY D1 v5 readiness and one-shot collection | Data | Existing shared-tag readiness/collector Compose service, external cache, and receipt root | Ready: one credential-free readiness result may permit one existing collector after the shared gates are due; reattach only safe receipt/cache aggregate facts and do not retry. |
+| KIS QQQ/SPY D1 v5 readiness and one-shot collection | Data | Existing shared-tag readiness/collector Compose service, external cache, and receipt root | Complete: readiness `sha256:f1d833bdf8aa775919f1793d2025ab2b530d251c13e3da22eb81a70a2c6ba7ab` recorded open gates/no network/no cache write; one collector `sha256:a10e42f5a44753c67bf483414005d98b5171341998926b10a2a5f9dc85100910` failed at `commit/cache_contract/cache_prepare/incoming_merge`, with prior cache identities reattached unchanged. |
+| KIS QQQ/SPY D1 overlap reconciliation | Data / Infra Capability | Existing cache source, synthetic fixtures, and source-safe receipt root | Ready: establish a no-overwrite policy for conflicting overlap while preserving exact duplicates and strictly newer-session append behavior. No KIS or consumer call. |
 | Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
 | KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one development-only CPU fit wrote external model parameters only, excluded validation labels, and completed two model plus six comparator local-paper cells. Both model after-cost cells were negative and below previous-bar-direction controls. |
 | KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one shallow histogram-gradient-tree replay excluded validation labels from fitting, wrote no serialized estimator, and completed two model plus six comparator `local_paper` cells. Both model cells were below their fixed previous-bar-direction comparators, closing the lineage. |
@@ -79,10 +79,10 @@ baseline, failed L2 control, and failed shallow-tree control advance the
 backtest/local-paper accounting loop without pretending to solve that input
 gap. The next research action must not rerun either failed model family under a
 new label. The immediate Data recovery facts are the v4 QQQ virtual-host
-`auth_rejected` state, a distinct SPY `token_request_not_due` state, and a later
-token-only `authenticated` capability receipt. The v4 subphase is absent. One
-fresh collector result can narrow daily availability, but cannot by itself
-resolve causal clocks or finality.
+`auth_rejected` state, a distinct SPY `token_request_not_due` state, a later
+token-only `authenticated` receipt, and the v5 `incoming_merge` cache-prepare
+region with cache identities unchanged. A source/fixture overlap policy can
+repair forward-cache mechanics, but cannot resolve causal clocks or finality.
 
 ## Current Cross-Lane Decision
 
@@ -122,9 +122,9 @@ The completed inventory and D1 predicate make the absence of a
 predictive/Paper/GPU input explicit. The completed reversible improvements are
 a fixed-stage source-safe D1 collector boundary, a no-network/no-write
 readiness check, a shared-tag payload contract fingerprint, bounded collector
-evidence, fixed v2/v3/v4 failure diagnostics, and a token-only authentication
-receipt. The next bounded action is existing readiness followed, only when
-ready, by one existing daily collector; it must retain no exception detail and
+evidence, fixed v2/v3/v4 failure diagnostics, a token-only authentication
+receipt, and one v5 failed collector. The next bounded action is source/fixture
+overlap reconciliation; it must retain no raw values or exception detail and
 must not repeat a failed model family or spend GPU on an unqualified runtime
 study.
 
@@ -133,19 +133,24 @@ production default remains `Global\TheRicherPaperSnapshotObserver`. This removes
 one observed task-owned-worker/test-fixture collision from authority verification
 without changing real observer concurrency, routes, or credentials.
 
-For verification throughput, use
+For verification throughput and stability, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
-lease is free: the 2026-08-19 authority run reproduced the serial suite's
-`3083 passed, 17 skipped, 51 warnings` result in 4m59s, versus the same day's
-29m03s serial diagnostic. The serial path remains the periodic compatibility
-check; this is a measured replacement for routine goal-boundary verification,
-not a relaxation of test, execution, or live-risk coverage.
+lease is free. The helper now selects local non-reparse `D:\trpy` before
+falling back to `C:\trpy`: an 8-worker C-root run exposed host storage-floor
+failures in tests whose product checks behaved correctly, while a short-
+external fixture and explicit normal-capacity stub retain the dedicated
+below-floor assertions without coupling routine verification to current system
+free space. The completed 2026-08-20 authority run passed `3215 passed, 19
+skipped` in 39m24s. Claude returned no verdict for this reversible verification
+recovery, so its status is `review_unavailable`, not agreement. The serial path
+remains the periodic compatibility check; this does not relax test, execution,
+or live-risk coverage.
 
 ## Current Recovery Action
 
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current D1 action
-is one existing credential-free readiness check and, only on its matching open
-gate, one existing D1 collector. Its result must preserve the v4 receipt and
-infer neither causal availability nor finality.
+is one source/fixture-only overlap-reconciliation policy package. Its result
+must preserve prior cache bytes, infer neither causal availability nor finality,
+and make no KIS, credential, cache-write, or consumer call.

@@ -97,6 +97,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 - The later token-only KIS Paper capability receipt is `authenticated`, but it
   has no daily page, finality, or decision-time availability fact. It changes
   no campaign, GPU appointment, model selection, replay, or Paper consumer.
+- V5 readiness was gate-open but its one D1 collector failed before cache
+  commit at the static `incoming_merge` region; the current seven-session cache
+  reattached unchanged. This remains Data-only and creates no campaign, GPU
+  appointment, model selection, replay, or Paper consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ

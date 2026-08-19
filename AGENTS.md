@@ -161,9 +161,10 @@ Codex is the product-development lead and integrator.
   The goal-boundary Python authority is the changed-path serial group plus
   `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`, followed by Ruff and
   both Compose configurations. The helper uses file-level xdist distribution,
-  one fresh short shared temp child beneath `C:\trpy` for both fast feedback
-  and authority runs, a cross-session `Global` mutex, and an explicit clean
-  active-run precondition. Authority mode probes helper leases and active
+  one fresh short shared temp child beneath local non-reparse `D:\trpy` when
+  available, otherwise `C:\trpy`, for both fast feedback and authority runs,
+  a cross-session `Global` mutex, and an explicit clean active-run precondition.
+  Authority mode probes helper leases and active
   Python command lines; a held lease, active matching worker, mutex conflict,
   or indeterminate probe fails closed, while an inactive retained sibling root
   cannot block a new isolated run. It verifies the parent and active child are

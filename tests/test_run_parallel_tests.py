@@ -14,7 +14,11 @@ def test_parallel_test_runner_uses_bounded_workers_and_cross_session_safe_temp_r
 
     assert "[int]$Workers = [Math]::Min(8, [Environment]::ProcessorCount)" in source
     assert "[switch]$RequireCleanTempRoot" in source
-    assert '$tempParent = "C:\\trpy"' in source
+    assert "function Resolve-TestTempParent" in source
+    assert '@("D:\\trpy", "C:\\trpy")' in source
+    assert "Get-PSDrive -Name $driveName -PSProvider FileSystem" in source
+    assert "$drive.DisplayRoot" in source
+    assert "$tempParent = Resolve-TestTempParent" in source
     assert '$tempRoot = Join-Path $tempParent "runs"' in source
     assert "$tempParentEntry = Get-Item -LiteralPath $tempParent" in source
     assert "$tempRootEntry = Get-Item -LiteralPath $tempRoot" in source

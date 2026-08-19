@@ -8,8 +8,33 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+function Resolve-TestTempParent {
+    foreach ($candidate in @("D:\trpy", "C:\trpy")) {
+        $qualifier = Split-Path -Qualifier $candidate
+        if ([string]::IsNullOrWhiteSpace($qualifier)) {
+            continue
+        }
+        $driveName = $qualifier.TrimEnd([char[]]@(':', '\', '/'))
+        $drive = Get-PSDrive -Name $driveName -PSProvider FileSystem -ErrorAction SilentlyContinue
+        if ($null -eq $drive -or -not [string]::IsNullOrWhiteSpace([string]$drive.DisplayRoot)) {
+            continue
+        }
+        $root = Get-Item -LiteralPath $qualifier -Force -ErrorAction SilentlyContinue
+        if (
+            $null -eq $root -or
+            $root.LinkType -or
+            ($root.Attributes -band [IO.FileAttributes]::ReparsePoint)
+        ) {
+            continue
+        }
+        return [IO.Path]::GetFullPath($candidate).TrimEnd([char[]]@('\', '/'))
+    }
+
+    throw "No local non-reparse drive is available for parallel pytest temporary files"
+}
+
 $repoRoot = Split-Path -Parent $PSScriptRoot
-$tempParent = "C:\trpy"
+$tempParent = Resolve-TestTempParent
 $tempRoot = Join-Path $tempParent "runs"
 $mutexName = "Global\TheRicherV2ParallelPytest"
 $leaseSuffix = ".thericher-pytest-lease"

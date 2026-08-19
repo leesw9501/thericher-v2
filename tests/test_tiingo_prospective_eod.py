@@ -355,6 +355,7 @@ def _acquire(
         market_data_root=market_root,
         repo_root=repo_root,
         opener=opener,
+        disk_usage=lambda _path: SimpleNamespace(total=100, free=100),
     )
 
 
