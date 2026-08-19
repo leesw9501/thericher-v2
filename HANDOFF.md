@@ -96,15 +96,17 @@ current session as short, so the immutable terminal receipt remains
 `input_unavailable`; no prior receipt, provider-finality fact, model input, or
 Paper behavior changed.
 
-The private NAS D1 history-panel builder now checks every nonempty derived
-common-session span against pinned local `pandas-market-calendars==5.4.0`
-`NASDAQ` alias (`NYSE` calendar) sessions and rejects an interior scheduled
-session omission before indexed features or labels can bridge it. The check
-preserves weekends, holidays, and early-close sessions, uses no provider or
-credential, and does not alter the panel identity or current D1 eligibility.
-This package did not read or reattest the current raw D1 cache, so it does not
-claim that cache has passed the new condition or that finality, adjustments,
-PIT scope, or predictive/Paper eligibility improved.
+The private NAS D1 history-panel builder and historical-forward projection now
+check their nonempty derived common-session spans against pinned local
+`pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar) sessions and
+reject an interior scheduled-session omission before indexed features or labels
+can bridge it. The check preserves weekends, holidays, and early-close sessions
+and uses no provider or credential. A forward cache can still retain later raw
+rows across a gap, but its prospective input stays `input_unavailable` until
+the complete boundary-to-forward session chain is present. This package did not
+read or reattest the current raw D1 cache, so it does not claim that cache has
+passed the new condition or that finality, adjustments, PIT scope, or
+predictive/Paper eligibility improved.
 
 The topology audit found retained 120-minute-style chunks at all four expected
 ET slots, but the retained set is sparse and no observed session is complete.

@@ -28,6 +28,7 @@ from thericher_v2.data.kis_paper_daily_history_panel import (
     KIS_PAPER_DAILY_HISTORY_PANEL_ADJUSTMENT_MODE,
     KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS,
     KisPaperDailyHistoryPanel,
+    has_complete_us_equity_session_coverage,
 )
 from thericher_v2.data.official_symbol_directory_nas_probe import NAS_EXCHANGE
 
@@ -226,13 +227,7 @@ class KisPaperDailyNasForwardCache:
                 or (rows and target.latest_session != rows[-1].session_date)
             ):
                 raise ValueError("NAS forward cache stream is invalid")
-        expected_common = tuple(
-            sorted(
-                set.intersection(
-                    *(set(row.session_date for row in rows) for rows in streams.values())
-                )
-            )
-        )
+        expected_common = _common_forward_sessions(streams)
         if common != expected_common:
             raise ValueError("NAS forward cache common sessions are invalid")
         object.__setattr__(self, "root", self.root.resolve())
@@ -490,6 +485,11 @@ def commit_kis_paper_daily_nas_forward_observation(
         if index_changed:
             updated_index["generation"] = int(index["generation"]) + 1
             _write_json_atomic(root / _INDEX_FILENAME, updated_index)
+        common_sessions = _common_forward_sessions(merged_by_symbol)
+        prospective_input_ready = _is_forward_projection_ready(
+            common_sessions,
+            frozen_boundary=frozen_boundary,
+        )
         cache = load_verified_kis_paper_daily_nas_forward_cache(
             cache_root=root,
             repo_root=repository,
@@ -519,11 +519,7 @@ def commit_kis_paper_daily_nas_forward_observation(
         accepted_page_count=len(rows_by_symbol),
         categorical_failure_count=failures,
         changed_target_count=len(changed_symbols),
-        prospective_input_status=(
-            "ready"
-            if len(cache.common_sessions) >= KIS_PAPER_DAILY_NAS_FORWARD_TARGET_SLOT_SESSIONS
-            else "input_unavailable"
-        ),
+        prospective_input_status="ready" if prospective_input_ready else "input_unavailable",
         recovery="resume" if failures else "complete",
     )
 
@@ -565,13 +561,7 @@ def load_verified_kis_paper_daily_nas_forward_cache(
             rows_sha256=target.get("rows_sha256"),  # type: ignore[arg-type]
             last_reason=target.get("last_reason"),  # type: ignore[arg-type]
         )
-    common_sessions = tuple(
-        sorted(
-            set.intersection(
-                *(set(row.session_date for row in rows) for rows in rows_by_symbol.values())
-            )
-        )
-    )
+    common_sessions = _common_forward_sessions(rows_by_symbol)
     index_hash = _sha256(index_bytes)
     cache_hash = _sha256_json(
         {
@@ -628,6 +618,11 @@ def build_kis_paper_daily_nas_historical_forward_projection(
         context_by_symbol[symbol] = context
         forward_by_symbol[symbol] = forward
     common = forward_cache.common_sessions
+    if not _has_complete_forward_session_coverage(
+        common,
+        frozen_boundary=boundary,
+    ):
+        raise ValueError("NAS historical-forward projection has a normal US session gap")
     eligible_slots = len(common) // KIS_PAPER_DAILY_NAS_FORWARD_TARGET_SLOT_SESSIONS
     return KisPaperDailyNasHistoricalForwardProjection(
         frozen_panel_hash=frozen_panel.dataset_hash,
@@ -646,6 +641,46 @@ def sanitize_kis_paper_daily_nas_forward_failure_reason(value: BaseException | s
 
     reason = str(value).strip()
     return reason if reason in _SAFE_REASONS else "unexpected_private_daily_collector_error"
+
+
+def _common_forward_sessions(
+    rows_by_symbol: Mapping[str, Sequence[KisPaperDailyNasForwardRow]],
+) -> tuple[date, ...]:
+    if not rows_by_symbol:
+        return ()
+    return tuple(
+        sorted(
+            set.intersection(
+                *(set(row.session_date for row in rows) for rows in rows_by_symbol.values())
+            )
+        )
+    )
+
+
+def _has_complete_forward_session_coverage(
+    sessions: tuple[date, ...],
+    *,
+    frozen_boundary: date,
+) -> bool:
+    return bool(sessions) and has_complete_us_equity_session_coverage(
+        (frozen_boundary, *sessions)
+    )
+
+
+def _is_forward_projection_ready(
+    sessions: tuple[date, ...],
+    *,
+    frozen_boundary: date,
+) -> bool:
+    if len(sessions) < KIS_PAPER_DAILY_NAS_FORWARD_TARGET_SLOT_SESSIONS:
+        return False
+    try:
+        return _has_complete_forward_session_coverage(
+            sessions,
+            frozen_boundary=frozen_boundary,
+        )
+    except ValueError:
+        return False
 
 
 def _validate_observation_inputs(

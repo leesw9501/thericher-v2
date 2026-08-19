@@ -9,6 +9,7 @@ from types import MappingProxyType
 import pytest
 
 from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.data import kis_paper_daily_nas_forward_cache as forward_cache
 from thericher_v2.data.kis_paper_daily_history_panel import (
     KIS_PAPER_DAILY_HISTORY_PANEL_ADJUSTMENT_MODE,
     KIS_PAPER_DAILY_HISTORY_PANEL_ID,
@@ -274,6 +275,56 @@ def test_historical_forward_projection_is_read_only_and_requires_all_six_target_
     )
     assert unavailable.status == "input_unavailable"
     assert unavailable.eligible_target_slot_count == 0
+
+
+def test_retains_a_gapped_forward_cache_but_rejects_its_projection(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    frozen_root = tmp_path / "external" / "frozen-panel"
+    panel = _frozen_panel(frozen_root)
+    cache_root = tmp_path / "external" / "forward"
+
+    run = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=_rows_for_all(_sessions(27, 29, 30)),
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    assert run.status == "ready"
+    assert run.prospective_input_status == "input_unavailable"
+    assert run.cache.common_sessions == _sessions(27, 29, 30)
+    assert (cache_root / "index.json").is_file()
+    with pytest.raises(ValueError, match="normal US session gap"):
+        build_kis_paper_daily_nas_historical_forward_projection(
+            frozen_panel=panel,
+            forward_cache=run.cache,
+        )
+
+
+def test_retains_forward_rows_when_session_coverage_is_unavailable(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "external" / "forward"
+    monkeypatch.setattr(
+        forward_cache,
+        "has_complete_us_equity_session_coverage",
+        lambda _sessions: (_ for _ in ()).throw(ValueError("calendar unavailable")),
+    )
+
+    run = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=_rows_for_all(_sessions(27, 28, 29)),
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    assert run.status == "ready"
+    assert run.prospective_input_status == "input_unavailable"
+    assert (cache_root / "index.json").is_file()
 
 
 def _rows_for_all(sessions: tuple[date, ...]) -> dict[str, tuple[KisPaperDailyNasForwardRow, ...]]:

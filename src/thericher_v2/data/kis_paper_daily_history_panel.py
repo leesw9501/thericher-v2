@@ -309,7 +309,8 @@ def build_kis_paper_daily_history_panel(
         )
 
     common_sessions = _common_sessions(tuple(set(rows) for rows in rows_by_target.values()))
-    _validate_expected_us_equity_session_coverage(common_sessions)
+    if not has_complete_us_equity_session_coverage(common_sessions):
+        raise ValueError("KIS paper daily history panel has a normal US session gap")
     dataset_hash = _dataset_hash(
         index_hash=index_hash,
         rows_by_target=rows_by_target,
@@ -769,18 +770,22 @@ def _common_sessions(session_sets: tuple[set[date], ...]) -> tuple[date, ...]:
     return tuple(sorted(set.intersection(*session_sets)))
 
 
-def _validate_expected_us_equity_session_coverage(sessions: tuple[date, ...]) -> None:
+def has_complete_us_equity_session_coverage(sessions: tuple[date, ...]) -> bool:
+    """Return whether a sequence has no missing local US equity session."""
+
     if not sessions:
-        return
+        return True
+    if tuple(sorted(sessions)) != sessions or len(set(sessions)) != len(sessions):
+        return False
     try:
         installed_version = version(_SESSION_CALENDAR_PACKAGE)
     except PackageNotFoundError as error:
-        raise ValueError("KIS paper daily history session calendar is unavailable") from error
+        raise ValueError("US equity session calendar is unavailable") from error
     if installed_version != _SESSION_CALENDAR_VERSION:
-        raise ValueError("KIS paper daily history session calendar version is invalid")
+        raise ValueError("US equity session calendar version is invalid")
     calendar = mcal.get_calendar(_SESSION_CALENDAR_ALIAS)
     if calendar.name != _SESSION_CALENDAR_NAME:
-        raise ValueError("KIS paper daily history session calendar is invalid")
+        raise ValueError("US equity session calendar is invalid")
     expected = tuple(
         session.date()
         for session in calendar.schedule(
@@ -788,8 +793,7 @@ def _validate_expected_us_equity_session_coverage(sessions: tuple[date, ...]) ->
             end_date=sessions[-1],
         ).index
     )
-    if sessions != expected:
-        raise ValueError("KIS paper daily history panel has a normal US session gap")
+    return sessions == expected
 
 
 def _dataset_hash(

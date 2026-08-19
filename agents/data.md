@@ -17,7 +17,7 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 | --- | --- | --- |
 | KIS Paper QQQ/NAS + SPY/AMS intraday head | The legacy and first post-writer 2026-08-19 KST markers each bind a `recovery` terminal with `collection_exit_nonzero / reason_unavailable`. The later `intraday-head-20260818T2120005941479Z` instead binds `retained_partial/current_session_not_complete` with `collection_outcome: succeeded`; its compatibility-default category is noncomparable. Metadata topology remains `current_metadata_consistent`, while cumulative session coverage remains `incomplete/current_session_short`. The enabled one-action Task has its Operational log disabled. | The one comparable category remains task-path diagnostic evidence only. The later successful partial terminal does not confirm or diverge a failure category, prove collector-process entry or an exact provider cause, or create a timing/page remedy. No model or reusable Paper-candidate promotion follows. |
 | KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
-| KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. The NAS daily-history panel now rejects a nonempty common-session sequence with an interior normal session missing under pinned local `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar); this package did not reread the current cache. | `input_unavailable` for daily predictive work. The continuity rule prevents indexed daily windows from bridging a detected gap, but proves neither source finality nor current-cache qualification. |
+| KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. The NAS daily-history panel and historical-forward projection now reject a nonempty common-session sequence with an interior normal session missing under pinned local `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar); this package did not reread the current cache. | `input_unavailable` for daily predictive work. A forward cache retains later rows across a gap, but its prospective input stays unavailable until the full boundary-to-forward session chain is present. The continuity rule proves neither source finality nor current-cache qualification. |
 | KIS Paper broad D1 panel | The latest source-safe postrun snapshot (2026-08-01) recorded 2,119/2,119 current-listing targets covered, zero quarantined targets, and zero mismatches over its 604-target baseline overlap. A later successful Task exit does not itself refresh this frozen snapshot. | Coverage/provenance inventory only: current-listing, non-PIT, unadjusted, corporate-action-unqualified, and session-finality-unattested. It cannot supply a target, ranking, training, or Paper input. |
 | KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. | Current-head mechanics only. Alternate WIP is not an owner path. |
 | Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. |
@@ -169,12 +169,14 @@ disabled.
   incomplete source record. `Bar` has no source-revision or observation-order
   provenance, so upstream Data reconciliation must resolve a later revision
   before a complete duplicate can be used.
-- NAS D1 history reattestation compares a nonempty common session sequence with
-  the pinned local `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE`
-  calendar) schedule. An interior scheduled-session omission fails closed;
-  weekends, holidays, and early closes remain valid sessions. This detects
-  continuity only and neither fills data nor proves KIS finality, as-of
-  availability, adjustments, or model/Paper eligibility.
+- NAS D1 history reattestation and prospective forward projection compare their
+  nonempty common session sequences with the pinned local
+  `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar) schedule.
+  An interior scheduled-session omission fails closed; weekends, holidays, and
+  early closes remain valid sessions. The forward cache may retain later rows
+  while its projection remains unavailable. This detects continuity only and
+  neither fills data nor proves KIS finality, as-of availability, adjustments,
+  or model/Paper eligibility.
 - Preserve a durable serial cursor only after a useful capability probe
   establishes continuation semantics. Do not replace measurement with a
   parallel request flood.

@@ -127,6 +127,15 @@ def test_rejects_a_shared_normal_us_session_gap_without_external_access(
         panel.build_kis_paper_daily_history_panel(cache_root=cache_root)
 
 
+def test_session_coverage_requires_a_unique_sorted_sequence() -> None:
+    assert panel.has_complete_us_equity_session_coverage(
+        (date(2020, 1, 2), date(2020, 1, 6), date(2020, 1, 3))
+    ) is False
+    assert panel.has_complete_us_equity_session_coverage(
+        (date(2020, 1, 2), date(2020, 1, 3), date(2020, 1, 3))
+    ) is False
+
+
 @pytest.mark.parametrize(
     "sessions",
     [
