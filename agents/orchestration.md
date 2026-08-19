@@ -6,17 +6,18 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-pair-forward-one-shot-collection-v2` is ready. The daily-broad
-cursor is terminal, the first QQQ/SPY forward refresh closed at the shared
-token-start gate with zero new pages, and its scheduled task shows stale timing
-facts. The fixed QQQ/SPY historical CPU baseline, L2 logistic control, and
-shallow nonlinear tree control all completed on the same hash-pinned daily
-input, with the L2 and tree QQQ/SPY after-cost replays below their fixed
-previous-bar-direction comparators. The completed offline predicate made the
-exact forward-cache causal-input gap discriminable: named clock/session,
-decision-time availability, and provider finality remain `not_observed`, so no
-promotion, GPU, or Paper path is eligible. The next bounded Data package makes
-one existing collection attempt without treating a newer session as those facts.
+`kis-daily-pair-forward-stage-discrimination-v1` is ready. The daily-broad
+cursor is terminal and the QQQ/SPY forward scheduler has stale timing facts.
+The prior direct refresh deferred at the shared token gate; the completed
+one-shot preflight then required collection, and its one collector invocation
+closed `unavailable/collector_unavailable` before a cache payload. The fixed
+QQQ/SPY historical CPU baseline, L2 logistic control, and shallow nonlinear
+tree control all completed on the same hash-pinned daily input, with the L2 and
+tree QQQ/SPY after-cost replays below their fixed previous-bar-direction
+comparators. The causal predicate keeps named clock/session, decision-time
+availability, and provider finality `not_observed`, so no promotion, GPU, or
+Paper path is eligible. The next Data/Infra package separates this broad
+collection failure without treating a newer session as those facts.
 
 ## Ready / Owned / Due
 
@@ -48,7 +49,8 @@ one existing collection attempt without treating a newer session as those facts.
 | Daily-broad continuation capability | Data / Codex | Existing daily-broad Compose service, durable cursor, worker lock, and shared gates | Complete: all 2,119 targets reattached terminal and the exact continuation exited `complete` with zero page attempts. No long worker is eligible for this exhausted historical cursor. |
 | QQQ/SPY D1 forward refresh | Data / Codex | Existing pair-forward/preflight Compose services, shared gates, and scheduled task | Complete: preflight required the 2026-08-18 session, but the one direct collector deferred at `token_request_not_due` with zero new pages and zero changed targets. The ready task owns the next due run at `2026-08-19T21:55:00Z`; no foreground retry. |
 | KIS D1 forward causal qualification | Data | Existing QQQ/SPY forward cache, source-safe receipts, and external artifact root | Complete: the external receipt is `input_unavailable` only for named clock/session, decision-time availability, and provider finality. The synthetic fixture passed only with all conditions, and every individual ablation failed closed. No collection, KIS client, Docker, scheduler, GPU, or execution consumer. |
-| KIS QQQ/SPY D1 one-shot current collection | Data | Existing pair-forward preflight/collector Compose services, external cache, and source-safe receipts | Ready: run preflight, then at most one collector only when required. Claude permits this only to advance coverage/exercise the token gate; a newer `latest_session` is not availability/finality and cannot create a consumer. |
+| KIS QQQ/SPY D1 one-shot current collection | Data | Existing pair-forward preflight/collector Compose services, external cache, and source-safe receipts | Complete: static consumer proof was clean; preflight returned `collection_required`, and exactly one collector returned `unavailable/collector_unavailable` with no cache payload. No retry, promotion, or consumer change followed. |
+| KIS QQQ/SPY D1 unavailable-stage discrimination | Data / Infra Capability | Existing collector source, pair-forward Compose service, control root, and external receipt root | Ready: add four fixed safe stages plus networkless readiness. A later collector is eligible only after the tested readiness result is aggregate-ready, token due, and rate gate open. |
 | Historical KIS D1 CPU baseline | Engine Research / Data | Verified 4,756-bar QQQ and SPY common panel plus isolated external artifact roots | Complete: both symbols completed the fixed four-cell local-paper matrix. Every after-cost cell was negative, so it is a negative control only. |
 | KIS D1 L2 logistic control | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one development-only CPU fit wrote external model parameters only, excluded validation labels, and completed two model plus six comparator local-paper cells. Both model after-cost cells were negative and below previous-bar-direction controls. |
 | KIS D1 regime-tree breadth | Engine Research / Data | Hash-pinned QQQ/SPY daily sequence input and external artifact root | Complete: the one shallow histogram-gradient-tree replay excluded validation labels from fitting, wrote no serialized estimator, and completed two model plus six comparator `local_paper` cells. Both model cells were below their fixed previous-bar-direction comparators, closing the lineage. |
@@ -67,8 +69,10 @@ shallow-tree control advance the backtest/local-paper accounting loop without
 pretending to solve that input gap. The next research action must not rerun
 either failed model family under a new label; the immediate bottleneck is the
 three now-explicit missing runtime facts for the QQQ/SPY forward cache. The
-next one-shot collection can advance coverage or resolve the token-gate state,
-but cannot resolve those runtime facts by itself.
+next one-shot collection closed before cache write and left an overly broad
+unavailable category. That category must be discriminated before another
+credentialed collection; no collection can resolve the three runtime facts by
+itself.
 
 ## Current Cross-Lane Decision
 
@@ -105,11 +109,10 @@ proposal is closed rather than deferred.
 ## Current Reversible Improvement
 
 The completed inventory and D1 predicate make the absence of a
-predictive/Paper/GPU input explicit. The immediate reversible improvement is
-one existing QQQ/SPY D1 preflight and, only when required, one existing
-collector invocation. It must retain only source-safe coverage evidence and
-must not repeat a failed model family or spend GPU on an unqualified runtime
-study.
+predictive/Paper/GPU input explicit. The immediate reversible improvement is a
+fixed-stage source-safe D1 collector boundary plus a no-network/no-write
+readiness check. It must retain no exception detail and must not repeat a failed
+model family or spend GPU on an unqualified runtime study.
 
 For verification throughput, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
@@ -124,6 +127,7 @@ not a relaxation of test, execution, or live-risk coverage.
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
 bindings plus a fresh Claude falsification-first verdict. The current action is
-to run the existing D1 preflight and, only when it requires collection, exactly
-one existing collector. Its result closes the attempt; it is not a retry loop,
-task repair, or source of inferred causal availability/finality.
+to add and test the narrow D1 stage classification, then run its no-network
+readiness once. Only a ready/due result may justify one later collector; any
+other result closes that branch without a retry loop, task repair, or inferred
+causal availability/finality.

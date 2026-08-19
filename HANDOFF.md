@@ -349,6 +349,20 @@ but it must remain one-shot and no result can alter the three `not_observed`
 runtime conditions without separate retained evidence. A successful collection
 is not a model, GPU, Paper, or promotion event.
 
+That one-shot preflight returned `collection_required` at
+`data/kis-paper-daily-pair-forward-v1/run=20260819T155737898831Z-4b91351878114c11/receipt.json`
+(`sha256:77de03be7d6f4f1ce0fb567244e239966869c39cc50f75f2be361369d7dc9ef9`).
+Its exactly one collector call returned `unavailable/collector_unavailable` at
+`data/kis-paper-daily-pair-forward-v1/run=20260819T155753946326Z-d0ec4d21d99446fa/receipt.json`
+(`sha256:7bba8e74781c803bcdcaaef44aaabdc6b4021b0f039919296618430c996a59b3`).
+The unavailable receipt has no cache payload; the existing cache remains
+offline-readable with seven common sessions, so no causal requalification or
+consumer change followed. Claude's resulting `supported-with-limits` review
+requires fixed source-safe `control_gate`, `environment`, `collection`, or
+`commit` classification plus a no-network/no-write readiness result before a
+later one-shot collector may be considered. No exception text, secret/config
+identity, raw row, account, order, Paper, GPU, model, or live fact is retained.
+
 The completed FirstRate normalizer verified the staged archive hashes, expected
 entry names, strict source timestamps, an explicit DST-aware New York-to-UTC
 conversion assumption, and exact decoded/emitted timestamp-set equality. It wrote canonical CSVs beneath

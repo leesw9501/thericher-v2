@@ -573,6 +573,26 @@ explicit label and a current cache/parent-receipt contract; it must capture the
 missing runtime facts rather than infer them from a file timestamp, task exit,
 or hash.
 
+### One-Shot Collection Outcome
+
+The completed one-shot preflight returned `collection_required` with external
+receipt `run=20260819T155737898831Z-4b91351878114c11/receipt.json`
+(`sha256:77de03be7d6f4f1ce0fb567244e239966869c39cc50f75f2be361369d7dc9ef9`).
+Its exactly one existing collector call then returned
+`unavailable/collector_unavailable` with external receipt
+`run=20260819T155753946326Z-d0ec4d21d99446fa/receipt.json`
+(`sha256:7bba8e74781c803bcdcaaef44aaabdc6b4021b0f039919296618430c996a59b3`).
+That receipt contains no cache payload, so do not use it as a causal parent or
+retry it. The existing cache remains readable with seven common sessions.
+
+Before any later collector call, the existing service must emit one fixed,
+source-safe failure stage and a no-network/no-write readiness result. The only
+permitted stage labels are `control_gate`, `environment`, `collection`, and
+`commit`; they must not expose secret/config names, exception text, response
+detail, target identity, or raw data. A ready/due result may justify one new
+bounded collector call, but it still cannot prove decision-time availability or
+provider finality.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

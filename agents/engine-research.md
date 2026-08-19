@@ -47,13 +47,16 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   (`sha256:9b361addc7e76dd5cd8ff6bf9800077c8a8866f3b5a21eeedbeb6d2a2dcdc3cf`).
   It does not qualify a Research campaign, GPU appointment, model selection,
   replay, or Paper consumer.
-- Claude's `supported-with-limits` challenge permits one existing KIS Paper D1
-  collector invocation solely to advance current cache coverage and exercise
-  the token gate. Even a successful collection cannot satisfy named
-  clock/session, decision-time availability, or provider finality, and no
-  consumer may interpret a newer `latest_session` as those facts. It therefore
-  creates no campaign, GPU appointment, model selection, replay, or Paper
-  consumer.
+- The permitted one-shot KIS Paper D1 preflight reported `collection_required`,
+  then its one collector invocation closed `unavailable/collector_unavailable`
+  with no cache payload. The offline cache remains readable at seven common
+  sessions; no causal requalification or consumer change follows. Claude's
+  next `supported-with-limits` review requires a fixed source-safe stage
+  classifier and no-network readiness result before any later collector call.
+  Even a successful collection cannot satisfy named clock/session,
+  decision-time availability, or provider finality, and no consumer may
+  interpret a newer `latest_session` as those facts. It creates no campaign,
+  GPU appointment, model selection, replay, or Paper consumer.
 - The fixed historical KIS D1 CPU baseline reproduced independently for QQQ and
   SPY from the same 4,756-bar common panel. Each exact four-cell local-paper
   matrix completed, and every after-cost result was negative; QQQ
