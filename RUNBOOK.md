@@ -573,8 +573,9 @@ Execution input, Paper order, or live behavior.
 
 The worker owns `next_due` in its external state and does not poll or foreground
 wait. Do not invoke the task manually. The initial container smoke was outside
-the scheduled minute and returned `not_due` without constructing a KIS client;
-the first actual stage is due 2026-08-21 08:15 KST.
+the scheduled minute and returned `not_due` without constructing a KIS client.
+Source-safe Task Scheduler metadata currently reports its next task-owned run
+as 2026-08-20 23:20 KST; stage and outcome remain receipt-derived only.
 
 After the task writes a result, use only
 `read_current_kis_paper_d1_prospective_observation_pairing_outcome` from the
