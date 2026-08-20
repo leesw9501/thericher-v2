@@ -7,14 +7,16 @@ ENV PYTHONPATH=/app/src
 
 WORKDIR /app
 
-COPY pyproject.toml README.md ./
-COPY src ./src
+COPY pyproject.toml README.md uv.lock ./
+COPY requirements/runtime.lock /tmp/runtime.lock
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    python -m pip install --upgrade pip && \
-    python -m pip install -e .
+    python -m pip install --require-hashes -r /tmp/runtime.lock
 
+COPY src ./src
 COPY scripts ./scripts
+
+RUN python -c "import pandas_market_calendars; import thericher_v2"
 
 CMD ["python", "-m", "thericher_v2.ops.daily_report", "--print-summary"]
 

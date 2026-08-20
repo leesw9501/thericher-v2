@@ -212,6 +212,13 @@ but it has no hardcoded Norgate invocation or authority to rerun a historical
 Task. This narrows recurring side effects without adding a scheduler, changing
 the active objective, or turning a missing receipt into a foreground wait.
 
+The active D1 observer image now installs the existing runtime dependency graph
+from a generated, hash-checked `uv.lock` export and verifies its source import
+during the image build. The rebuilt image was not started, so this improves
+dependency-resolution reproducibility without making a KIS, cache, scheduler,
+or behavioral claim. Claude returned no bounded verdict within the review
+window (`review_unavailable`).
+
 ## Current Recovery Action
 
 The owned post-close depth probe is the only active intraday coverage recovery:
