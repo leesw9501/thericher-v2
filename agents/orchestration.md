@@ -206,6 +206,12 @@ This does not relax execution or live-risk coverage. Claude produced no
 verdict for this policy clarification (`review_unavailable`), so no review
 agreement is claimed.
 
+The existing daily operating review is now current-goal-first and reader-only:
+it may reattach a named D1 or Cboe outcome through its exact offline reader,
+but it has no hardcoded Norgate invocation or authority to rerun a historical
+Task. This narrows recurring side effects without adding a scheduler, changing
+the active objective, or turning a missing receipt into a foreground wait.
+
 ## Current Recovery Action
 
 The owned post-close depth probe is the only active intraday coverage recovery:
