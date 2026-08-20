@@ -182,6 +182,82 @@ def test_current_reader_rejects_a_tampered_current_pointer(tmp_path: Path) -> No
         )
 
 
+def test_current_reader_rejects_a_pointer_with_a_mismatched_observed_timestamp(
+    tmp_path: Path,
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    first_fetcher, _ = _recording_fetcher(_observation(FIRST_OBSERVED_AT))
+    _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=first_fetcher,
+    )
+    later_fetcher, _ = _recording_fetcher(_observation(LATER_OBSERVED_AT))
+    _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=LATER_OBSERVED_AT,
+        observation_fetcher=later_fetcher,
+    )
+    pointer_path = _current_pointer(artifact_root)
+    pointer = json.loads(pointer_path.read_text(encoding="utf-8"))
+    pointer["updated_at_utc"] = "2026-08-22T00:00:00Z"
+    pointer.pop("pointer_sha256")
+    pointer["pointer_sha256"] = pairing._sha256(pointer)
+    pointer_path.write_text(json.dumps(pointer), encoding="utf-8")
+
+    with pytest.raises(
+        pairing.KisPaperD1ProspectiveObservationPairingError,
+        match="current_pointer_invalid",
+    ):
+        pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_current_reader_rejects_a_receipt_with_a_mismatched_file_identity(
+    tmp_path: Path,
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    first_fetcher, _ = _recording_fetcher(_observation(FIRST_OBSERVED_AT))
+    _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=first_fetcher,
+    )
+    later_fetcher, _ = _recording_fetcher(_observation(LATER_OBSERVED_AT))
+    later = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=LATER_OBSERVED_AT,
+        observation_fetcher=later_fetcher,
+    )
+    assert later.evidence_path is not None
+    receipt = json.loads(later.evidence_path.read_text(encoding="utf-8"))
+    receipt["receipt_id"] = "later-rebound"
+    receipt.pop("receipt_sha256")
+    receipt["receipt_sha256"] = pairing._sha256(receipt)
+    later.evidence_path.write_text(json.dumps(receipt), encoding="utf-8")
+    pointer_path = _current_pointer(artifact_root)
+    pointer = json.loads(pointer_path.read_text(encoding="utf-8"))
+    pointer["receipt_sha256"] = receipt["receipt_sha256"]
+    pointer.pop("pointer_sha256")
+    pointer["pointer_sha256"] = pairing._sha256(pointer)
+    pointer_path.write_text(json.dumps(pointer), encoding="utf-8")
+
+    with pytest.raises(
+        pairing.KisPaperD1ProspectiveObservationPairingError,
+        match="current_receipt_unavailable",
+    ):
+        pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
 def test_current_reader_rejects_a_later_receipt_bound_to_the_wrong_first(
     tmp_path: Path,
 ) -> None:

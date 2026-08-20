@@ -252,11 +252,17 @@ def read_current_kis_paper_d1_prospective_observation_pairing_outcome(
     if not isinstance(receipt_id, str) or not _is_sha256(receipt_sha256):
         raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
     receipt = _read_existing(receipts, receipt_id)
-    if receipt is None or receipt.get("receipt_sha256") != receipt_sha256:
+    if (
+        receipt is None
+        or receipt.get("receipt_id") != receipt_id
+        or receipt.get("receipt_sha256") != receipt_sha256
+    ):
         raise KisPaperD1ProspectiveObservationPairingError("current_receipt_unavailable")
     for key in ("status", "stage", "session_key"):
         if pointer.get(key) != receipt.get(key):
             raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
+    if pointer.get("updated_at_utc") != receipt.get("observed_at_utc"):
+        raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
     _validate_later_receipt_binding(receipts, receipt)
     return receipt
 
