@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, time, timedelta
@@ -56,6 +57,7 @@ _TARGET_KEYS = tuple(
 _STATE_FILENAME = "state.json"
 _CURRENT_FILENAME = "current.json"
 _RECEIPTS_DIRECTORY = "receipts"
+_SAFE_RECEIPT_ID = re.compile(r"[A-Za-z0-9-]{1,160}", re.ASCII)
 _SOURCE_CONTRACT = {
     "provider": "KIS Open API virtual paper",
     "endpoint": "dailyprice",
@@ -249,7 +251,7 @@ def read_current_kis_paper_d1_prospective_observation_pairing_outcome(
     pointer = _read_current_pointer(root)
     receipt_id = pointer["receipt_id"]
     receipt_sha256 = pointer["receipt_sha256"]
-    if not isinstance(receipt_id, str) or not _is_sha256(receipt_sha256):
+    if not _is_receipt_id(receipt_id) or not _is_sha256(receipt_sha256):
         raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
     receipt = _read_existing(receipts, receipt_id)
     if (
@@ -705,6 +707,8 @@ def _first_binding(
 
 
 def _read_existing(receipts: Path, receipt_id: str) -> dict[str, object] | None:
+    if not _is_receipt_id(receipt_id):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
     path = receipts / f"{receipt_id}.json"
     return None if not path.exists() else _read_receipt(path)
 
@@ -725,7 +729,7 @@ def _read_receipt(path: Path) -> dict[str, object]:
         or payload.get("version") != KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_VERSION
         or payload.get("source_contract_sha256")
         != KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_SOURCE_CONTRACT_SHA256
-        or not isinstance(payload.get("receipt_id"), str)
+        or not _is_receipt_id(payload.get("receipt_id"))
         or not _is_sha256(declared)
         or declared != _sha256(payload)
     ):
@@ -795,7 +799,7 @@ def _receipt_binding(payload: Mapping[str, object]) -> tuple[str | None, str | N
     receipt_sha256 = value.get("receipt_sha256")
     if receipt_id is None and receipt_sha256 is None:
         return None, None
-    if not isinstance(receipt_id, str) or not _is_sha256(receipt_sha256):
+    if not _is_receipt_id(receipt_id) or not _is_sha256(receipt_sha256):
         raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
     return receipt_id, receipt_sha256
 
@@ -878,7 +882,7 @@ def _read_current_pointer(root: Path) -> dict[str, object]:
         or payload.get("record_type") != "current_outcome_pointer"
         or payload.get("source_contract_sha256")
         != KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_SOURCE_CONTRACT_SHA256
-        or not isinstance(payload.get("receipt_id"), str)
+        or not _is_receipt_id(payload.get("receipt_id"))
         or not _is_sha256(payload.get("receipt_sha256"))
         or payload.get("status")
         not in {"first_recorded", "measurement_only_match", "disqualified", "input_unavailable"}
@@ -1092,6 +1096,10 @@ def _is_sha256(value: object) -> bool:
         and value.startswith("sha256:")
         and all(character in "0123456789abcdef" for character in value[7:])
     )
+
+
+def _is_receipt_id(value: object) -> bool:
+    return isinstance(value, str) and _SAFE_RECEIPT_ID.fullmatch(value) is not None
 
 
 def _utc_marker(value: datetime) -> str:

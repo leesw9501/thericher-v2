@@ -258,6 +258,47 @@ def test_current_reader_rejects_a_receipt_with_a_mismatched_file_identity(
         )
 
 
+def test_current_reader_rejects_a_pointer_receipt_path_escape(tmp_path: Path) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    first_fetcher, _ = _recording_fetcher(_observation(FIRST_OBSERVED_AT))
+    _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=first_fetcher,
+    )
+    later_fetcher, _ = _recording_fetcher(_observation(LATER_OBSERVED_AT))
+    later = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=LATER_OBSERVED_AT,
+        observation_fetcher=later_fetcher,
+    )
+    assert later.evidence_path is not None
+    escaped_receipt = json.loads(later.evidence_path.read_text(encoding="utf-8"))
+    escaped_receipt["receipt_id"] = "../escaped"
+    escaped_receipt.pop("receipt_sha256")
+    escaped_receipt["receipt_sha256"] = pairing._sha256(escaped_receipt)
+    escaped_path = later.evidence_path.parent.parent / "escaped.json"
+    escaped_path.write_text(json.dumps(escaped_receipt), encoding="utf-8")
+    pointer_path = _current_pointer(artifact_root)
+    pointer = json.loads(pointer_path.read_text(encoding="utf-8"))
+    pointer["receipt_id"] = "../escaped"
+    pointer["receipt_sha256"] = escaped_receipt["receipt_sha256"]
+    pointer.pop("pointer_sha256")
+    pointer["pointer_sha256"] = pairing._sha256(pointer)
+    pointer_path.write_text(json.dumps(pointer), encoding="utf-8")
+
+    with pytest.raises(
+        pairing.KisPaperD1ProspectiveObservationPairingError,
+        match="current_pointer_invalid",
+    ):
+        pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
 def test_current_reader_rejects_a_later_receipt_bound_to_the_wrong_first(
     tmp_path: Path,
 ) -> None:
