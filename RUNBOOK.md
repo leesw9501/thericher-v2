@@ -2508,6 +2508,28 @@ replayable, and terminal-flat. Do not rerun or tune that lineage; do not infer a
 GPU, KIS, or execution consequence from it. The next disjoint technical-rule
 control needs its own frozen precommit and independent validation.
 
+### FirstRate 5m Technical Trend-Rule Control
+
+Run the frozen source-local `SMA(20) > SMA(60)` rule once with a new label:
+
+```powershell
+uv run python scripts/run_firstrate_m5_trend_rule_after_cost_control.py --run-label <unique-label>
+```
+
+The runner reuses only the existing source reattestation and complete,
+contiguous UTC-anchored 5m geometry. It performs no training or calibration,
+then replays the fixed trend rule, `always_flat`, and previous-bar-direction
+comparators through terminal-flat `local_paper` at the same 1/3/5-bps
+per-side synthetic band. It writes only external precommit, aggregate summary,
+and independent validation JSON; it retains no raw bars, labels, predictions,
+or event stream and has no credential, network, KIS, broker, order, GPU, or
+Paper-consumer path.
+
+The completed `20260820-r1` run was `rejected`: the trend rule beat flat in
+zero of six nonzero-cost SPY/QQQ cells, while all 18 replay cells were
+`local_paper`, replayable, and terminal-flat. Do not rerun or tune this
+20/60 rule or treat it as a GPU, KIS, execution, or profitability signal.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,

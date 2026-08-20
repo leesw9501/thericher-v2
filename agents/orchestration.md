@@ -6,11 +6,11 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`firstrate-m5-trend-rule-after-cost-control-v1` is ready. Data and Engine
-Research will run one frozen CPU-only SPY/QQQ source-local 5m technical trend
-rule after the prior L2 control rejected all six nonzero-cost comparisons. It
-fixes the contiguous geometry, 20/60-bar rule, chronological split/embargo,
-baselines, and 1/3/5-bps per-side cost band. The completed
+`kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` is ready. Data will
+create one isolated QQQ/SPY KIS Paper D1 forward-cache lineage after v1's
+retained revision conflicts, while preserving v1 bytes and its quarantine.
+This is collection/provenance work only: no model, GPU, Execution,
+Paper-consumer, or live consequence follows. The completed
 `tiingo-prospective-eod-refresh-v1` created and
 offline-reattested the fixed SPY/QQQ/IWM external snapshot; it remains
 lineage-only and passed focused and full authority verification. The completed
@@ -42,7 +42,8 @@ named clock/session, decision-time availability, and provider finality
 | Work | Owner | Resource | Current fact and next action |
 | --- | --- | --- | --- |
 | FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: source reattached and 18 `local_paper`, replayable, terminal-flat cells completed. L2 beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; no GPU or KIS/Paper consumer follows. |
-| FirstRate 5m trend-rule after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Ready: one fixed 20/60-bar technical trend rule uses the same source-local split and 1/3/5-bps band. It remains CPU-only, non-promoting, and has no KIS/Paper consumer. |
+| FirstRate 5m trend-rule after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: the fixed 20/60 rule beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; all 18 cells were `local_paper`, replayable, and terminal-flat. No GPU or KIS/Paper consumer follows. |
+| KIS QQQ/SPY D1 v2 fresh-cache bootstrap | Data / Infra Capability | Isolated external v2 root, existing KIS Paper daily route, and source-safe receipt root | Ready: preserve the v1 quarantined cache and establish a separately identified forward lineage. It may collect only the fixed daily pair and creates no Research, GPU, Execution, Paper-consumer, or live claim. |
 | Tiingo prospective EOD refresh | Data | Existing fixed ETF source contract, external canonical root, and approved local token path | Complete: one current dated SPY/QQQ snapshot was created, then reattached offline by its source-safe dataset/manifest identities. It stays prospective-lineage-only and cannot clear KIS quarantine or create a Research, GPU, Execution, or Paper consumer. |
 | Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |
 | FirstRate free M1 normalization | Data | Hash-bound external ZIPs, canonical CSVs, and source-safe receipt | Closed: archive hashes, expected entries, strict decode, canonical hashes, and exact timestamp-set equality reattached. Local provider round-trip counts are 207,824 SPY and 210,482 QQQ M1 Bars. |
@@ -149,10 +150,10 @@ hash; a conflict preserves the prior row and excludes only that target from the
 causal reader. Do not repeat a failed model family or spend GPU on an
 unqualified runtime study.
 
-The current reversible improvement is to test one independent rule family only
-after the frozen L2 control failed its complete nonzero-cost matrix. This keeps
-breadth evidence moving while preventing an idle GPU or a rejected CPU lineage
-from being mistaken for a reason to expand a model family.
+The current reversible improvement is an isolated v2 QQQ/SPY D1 forward-cache
+bootstrap rather than clearing or overwriting the v1 quarantined rows. This
+advances future KIS-reconstructible coverage while preserving conflict evidence
+and preventing the two cache lineages from being conflated.
 
 The source-safe snapshot-observer fixture now receives a unique mutex while the
 production default remains `Global\TheRicherPaperSnapshotObserver`. This removes

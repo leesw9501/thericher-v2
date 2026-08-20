@@ -14,10 +14,10 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-The active objective is `firstrate-m5-trend-rule-after-cost-control-v1`: test
-one frozen, CPU-only, source-local SPY/QQQ 5m technical trend rule after the
-separate L2-logistic control was rejected. It is exploratory-only and cannot
-promote a KIS, Execution, Paper, ensemble, or GPU consumer.
+The active objective is `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1`:
+create one isolated QQQ/SPY KIS Paper D1 forward-cache lineage after the v1
+cache retained revision conflicts. It preserves v1 bytes and does not create a
+model, ranking, GPU, Execution, Paper-consumer, or live claim.
 
 The completed `firstrate-5m-after-cost-control-v1` independently reattached
 the existing canonical SPY/QQQ FirstRate source, UTC-anchored complete 5m
@@ -34,6 +34,20 @@ validation SHA-256 values are respectively
 and `sha256:9d6950afdf9051aafa94e82a43eadc4ab6bf2438c10c1b0a63fb41dfe19e2de6`.
 This closes that L2 lineage; it is not evidence that a different source-local
 technical rule, a GPU architecture, or a KIS consumer is ready.
+
+The completed `firstrate-m5-trend-rule-after-cost-control-v1` reused that exact
+source-local 5m geometry but evaluated only the frozen calibration-free
+`SMA(20) > SMA(60)` long rule. Its external `20260820-r1` run wrote only
+precommit, aggregate summary, and independent validation evidence. The rule
+did not beat `always_flat` in any of six SPY/QQQ nonzero-cost cells. All 18
+rule/baseline replays were `source: local_paper`, replayable, and terminal-flat;
+the summary and validation SHA-256 values are respectively
+`sha256:539463a0d6cb84ba16fd75e750493277adc5e9f00f94a5e51f00d1cb44a78d00`
+and `sha256:dfc5fab61fb5c440127d9e71eb49d64006c7bbdc77b09e213f94354fa29e8124`.
+No training, GPU, network, credential, KIS, broker, order, selection,
+ensemble, or Paper-consumer path ran. This closes only the frozen trend rule;
+do not tune its windows, direction, threshold, costs, or exit after this
+outcome.
 
 The 2026-08-19 UTC fixed ETF snapshot is now external at
 `D:\market_data\us_equities\fixed_etf_prospective_lineage\canonical\tiingo_standard_eod\snapshot=2026-08-19-tiingo-standard-eod-prospective-r1`.

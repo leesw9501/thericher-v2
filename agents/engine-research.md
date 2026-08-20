@@ -30,11 +30,13 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   KIS/Paper. The immutable source-safe summary is
   `firstrate-5m-after-cost-control-v1/20260820-r2/summary.json`
   (`sha256:249a55dc53605e5381cfbaaef370ce9d36302c93594abc421a65b6685857fb2c`).
-- `firstrate-m5-trend-rule-after-cost-control-v1` is ready as a disjoint
-  technical/chart track: one fixed causal 20/60-bar trend rule, the same
-  source-local 5m geometry, chronological split/embargo, local-paper replay,
-  and 1/3/5-bps band. It is breadth work only; it cannot select an architecture,
-  allocate GPU, or create a KIS/Paper consumer.
+- `firstrate-m5-trend-rule-after-cost-control-v1` is complete and `rejected`.
+  Its fixed calibration-free 20/60-bar technical trend rule did not beat
+  `always_flat` in any of six SPY/QQQ nonzero-cost cells. All 18 local-paper
+  cells were replayable and terminal-flat. It cannot be tuned, selected,
+  ensembled, allocated GPU, or made a KIS/Paper consumer; the summary is
+  `firstrate-m5-trend-rule-after-cost-control-v1/20260820-r1/summary.json`
+  (`sha256:539463a0d6cb84ba16fd75e750493277adc5e9f00f94a5e51f00d1cb44a78d00`).
 - No frozen, input-qualified predictive campaign is active. The latest
   task-owned QQQ/SPY M1 chain is `input_unavailable`; its optional causal
   attestation is `not_recorded`, so it cannot freeze a target, split, or
@@ -259,7 +261,7 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | One disjoint FirstRate 5m causal trend-rule control is ready | Frozen source reattestation, then one CPU-only after-cost replay; a nonzero-cost failure closes this exact rule without GPU |
+| Technical/chart and momentum/regime | FirstRate 5m L2 and fixed 20/60 trend-rule controls both rejected | Do not tune or extend either closed source-local lineage; wait for a distinct frozen campaign on a data-qualified input |
 | Classical ML/statistical | FirstRate 5m L2 control rejected after all six nonzero-cost comparisons | Do not extend that L2 family or allocate GPU without a distinct frozen campaign |
 | Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
 | Portfolio/allocation/meta-decision | Deterministic source-attested selection, per-symbol policy, and scale/cap foundation only | Aligned out-of-fold upstream candidate evidence with a frozen ranking/turnover/capacity/correlation contract |

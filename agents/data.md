@@ -34,11 +34,17 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
-`firstrate-m5-trend-rule-after-cost-control-v1` is the current Data package.
-Reattest the existing source-local FirstRate SPY/QQQ canonical input and its
-complete, contiguous 5m geometry for one frozen technical-rule CPU control. It
-provides no KIS-parity, point-in-time, finality, ranking, GPU, Execution, or
-Paper claim.
+`kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` is the current Data
+package. It will create an isolated QQQ/SPY KIS Paper D1 forward-cache lineage
+without mutating or copying the v1 quarantined cache. It is collection and
+provenance work only; it provides no ranking, model, GPU, Execution,
+Paper-consumer, or live claim.
+
+The completed FirstRate 20/60 technical-trend control reattached the same
+source-local 5m geometry and rejected the fixed rule after zero wins over flat
+in its six nonzero-cost cells. Its 18 aggregate local-paper cells were
+replayable and terminal-flat. This is a closed source-local rule result, not a
+KIS-parity, point-in-time, finality, ranking, GPU, Execution, or Paper fact.
 
 The fresh 2026-08-17 06:20 KST terminal is closed as an exact, source-safe
 `input_unavailable/session_coverage_incomplete/current_session_short`
