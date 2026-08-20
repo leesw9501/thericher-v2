@@ -174,6 +174,10 @@ Codex is the product-development lead and integrator.
   verification. This replacement is supported by a completed 2026-07-31 serial
   baseline and matching full-suite results with four and eight workers; it does
   not relax execution or live-risk tests.
+  A small isolated role package may be focused-verified and committed while a
+  company objective remains active; that commit alone is not a goal boundary.
+  Reserve the full authority sequence for company-objective integration, a
+  changed shared runtime/control root, or an explicit current-goal requirement.
   Run full serial `pytest -q` at least weekly and before material live-route or
   execution-recovery promotion as a diagnostic/compatibility check. It does
   not foreground-block an otherwise verified private Paper objective or an

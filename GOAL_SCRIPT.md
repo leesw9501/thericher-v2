@@ -59,10 +59,16 @@ the measured gate permits. This is an operational forecast for dispatch and
 recovery, never a daily-quota claim, a completion promise, or a gate on another
 lane.
 
-After each bounded objective has completion evidence, run the required
+After each bounded company objective has completion evidence, run the required
 verification, commit, push, replace `NEXT_CODEX_GOAL.md` with exactly one next
 company objective, refresh the stateboards, and continue. A lane-local block
 does not stop another ready lane. Do not create per-agent next-goal files.
+
+An isolated role package may be focused-verified and committed while the
+company objective remains active. Its commit alone does not trigger a full
+authority suite, `NEXT_CODEX_GOAL.md` replacement, or stateboard-wide refresh;
+reserve those for company-objective integration, a changed shared
+runtime/control root, or an explicit current-goal requirement.
 
 At task resume or after an observed unexplained foreground idle period, perform
 one bounded Throughput Review from the stateboards and active-job facts. Keep

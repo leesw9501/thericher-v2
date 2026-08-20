@@ -3296,6 +3296,12 @@ docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet
 ```
 
+An isolated role package committed during an active company objective is not a
+goal boundary by itself. Run its focused changed-path tests, relevant Ruff,
+Compose parsing when Compose/runtime wiring changes, and `git diff --check`;
+reserve the full authority command for company-objective integration, a changed
+shared runtime/control root, or an explicit current-goal requirement.
+
 The focused serial group covers the changed production and contract paths. The
 parallel command is the full-suite authority: it must exit zero, use a fresh
 isolated child beneath local non-reparse `D:\trpy\runs` when available,
