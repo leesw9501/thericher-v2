@@ -416,6 +416,37 @@ def test_schedule_owned_wait_never_constructs_a_client(tmp_path: Path) -> None:
         )
 
 
+def test_later_trigger_before_first_stage_never_constructs_a_client(tmp_path: Path) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    calls: list[datetime] = []
+
+    def fetcher(*_args: object, **kwargs: object) -> KisPaperDailyPairForwardObservation:
+        calls.append(kwargs["observed_at"])
+        raise AssertionError("later trigger must not replace a missing first observation")
+
+    result = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=datetime(2026, 8, 20, 14, 20, tzinfo=UTC),
+        observation_fetcher=fetcher,
+    )
+
+    assert result.status == "not_due"
+    assert result.reason == "next_due_owned"
+    assert result.stage == "none"
+    assert result.next_due_at == datetime(2026, 8, 20, 23, 15, tzinfo=UTC)
+    assert calls == []
+    assert _state(artifact_root)["expected_stage"] == "first"
+    with pytest.raises(
+        pairing.KisPaperD1ProspectiveObservationPairingError,
+        match="current_pointer_unavailable",
+    ):
+        pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
 def test_existing_first_receipt_reattaches_idempotently_without_collection(tmp_path: Path) -> None:
     repository_root, artifact_root = _roots(tmp_path)
     first_fetcher, _ = _recording_fetcher(_observation(FIRST_OBSERVED_AT))
