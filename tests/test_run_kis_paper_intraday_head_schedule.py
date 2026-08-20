@@ -73,7 +73,15 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "$collectionStartedAt = (Get-Date).ToUniversalTime()" in source
     assert "$collectionReturnedAt = (Get-Date).ToUniversalTime()" in source
     assert "$scheduleRunId = New-ScheduleRunId -ObservedAt $collectionStartedAt" in source
+    assert "$CollectionBasePagesPerTarget = 4" in source
+    assert "$CollectionPostClosePagesPerTarget = 8" in source
+    assert "function Get-CollectionPagesPerTarget" in source
+    assert (
+        "$collectionPagesPerTarget = Get-CollectionPagesPerTarget "
+        "-ObservedAt $collectionStartedAt"
+    ) in source
     assert "$collectionCommand = @(\n" in source
+    assert "[string]$collectionPagesPerTarget," in source
     assert '"--schedule-run-id",' in source
     assert "$scheduleRunId" in source
     assert "Get-UniqueSafeSessionCaptureTerminalBinding" in source
@@ -206,6 +214,38 @@ def test_head_schedule_classifies_only_one_exact_safe_collection_failure_payload
 
     assert result.returncode == 0, result.stderr
     assert result.stdout.strip() == expected
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_uses_deeper_pages_only_for_the_bounded_post_close_window() -> None:
+    source = SCRIPT.read_text(encoding="ascii")
+    start = source.index("$CollectionBasePagesPerTarget = 4")
+    end = source.index("function Invoke-HeadProfileService", start)
+    selector_source = source[start:end]
+    command = "\n".join(
+        (
+            "$ErrorActionPreference = 'Stop'",
+            selector_source,
+            "$values = @(",
+            "  (Get-CollectionPagesPerTarget -ObservedAt ([datetime]'2026-01-05T21:19:00Z')),",
+            "  (Get-CollectionPagesPerTarget -ObservedAt ([datetime]'2026-01-05T21:20:00Z')),",
+            "  (Get-CollectionPagesPerTarget -ObservedAt ([datetime]'2026-07-06T19:24:00Z')),",
+            "  (Get-CollectionPagesPerTarget -ObservedAt ([datetime]'2026-07-06T21:20:00Z')),",
+            "  (Get-CollectionPagesPerTarget -ObservedAt ([datetime]'2026-07-11T21:20:00Z'))",
+            ")",
+            "$values -join ','",
+        )
+    )
+    result = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", command],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert result.stdout.strip() == "4,8,4,8,4"
 
 
 def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it() -> None:

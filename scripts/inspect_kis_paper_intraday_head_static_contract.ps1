@@ -121,8 +121,14 @@ function Get-StaticSourceContract {
         '"session-capture",',
         '"--execute",',
         '"--skip-legacy-preparation",',
+        '$CollectionBasePagesPerTarget = 4',
+        '$CollectionPostClosePagesPerTarget = 8',
+        '$CollectionPostCloseEarliestEastern = [TimeSpan]::FromHours(16) + [TimeSpan]::FromMinutes(20)',
+        '$CollectionPostCloseLatestEastern = [TimeSpan]::FromHours(20)',
+        'function Get-CollectionPagesPerTarget',
+        '$collectionPagesPerTarget = Get-CollectionPagesPerTarget -ObservedAt $collectionStartedAt',
         '"--pages-per-target",',
-        '"4",'
+        '[string]$collectionPagesPerTarget,'
     )
     $composeRequired = @(
         '  kis-paper-intraday-head:',

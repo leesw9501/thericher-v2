@@ -99,6 +99,17 @@ check returned `current_pointer_unavailable`, meaning no actual result exists;
 it made no KIS, credential, Docker, or cache call. A missing pointer is
 unknown, never an inferred match or failure.
 
+The latest task-owned QQQ/SPY intraday-head terminal is dispatcher-complete but
+its source-safe current-session coverage is still
+`incomplete/current_session_short`; metadata-only inspection reports 37
+retained chunks and zero complete 390-minute sessions. To measure whether this
+is only the fixed four-page cap, the existing runner now keeps its normal cap
+at four pages per target and uses eight only during a regular-weekday
+16:20--20:00 Eastern post-close invocation. It adds no Task, route, rate
+change, retry loop, or manual run. Claude CLI supplied no verdict
+(`review_unavailable`); the next immutable scheduled receipt is the sole kill
+test, and a short outcome does not auto-escalate.
+
 The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` created the
 isolated QQQ/NAS + SPY/AMS KIS Paper D1 cache at
 `D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v2`

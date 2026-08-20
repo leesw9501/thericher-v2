@@ -6,6 +6,42 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+$CollectionBasePagesPerTarget = 4
+$CollectionPostClosePagesPerTarget = 8
+$CollectionPostCloseEarliestEastern = [TimeSpan]::FromHours(16) + [TimeSpan]::FromMinutes(20)
+$CollectionPostCloseLatestEastern = [TimeSpan]::FromHours(20)
+
+function Get-CollectionPagesPerTarget {
+    param(
+        [Parameter(Mandatory = $true)]
+        [datetime]$ObservedAt
+    )
+
+    if ($ObservedAt.Kind -eq [System.DateTimeKind]::Unspecified) {
+        throw "Collection observation timestamp must be timezone-aware."
+    }
+    $eastern = [System.TimeZoneInfo]::FindSystemTimeZoneById("Eastern Standard Time")
+    $easternObservedAt = [System.TimeZoneInfo]::ConvertTimeFromUtc(
+        $ObservedAt.ToUniversalTime(),
+        $eastern
+    )
+    $isRegularEasternWeekday = $easternObservedAt.DayOfWeek -in @(
+        [System.DayOfWeek]::Monday,
+        [System.DayOfWeek]::Tuesday,
+        [System.DayOfWeek]::Wednesday,
+        [System.DayOfWeek]::Thursday,
+        [System.DayOfWeek]::Friday
+    )
+    if (
+        $isRegularEasternWeekday `
+            -and $easternObservedAt.TimeOfDay -ge $CollectionPostCloseEarliestEastern `
+            -and $easternObservedAt.TimeOfDay -lt $CollectionPostCloseLatestEastern
+    ) {
+        return $CollectionPostClosePagesPerTarget
+    }
+    return $CollectionBasePagesPerTarget
+}
+
 function Invoke-HeadProfileService {
     param(
         [Parameter(Mandatory = $true)]
@@ -564,6 +600,7 @@ if (-not (Test-Path -LiteralPath $composePath -PathType Leaf)) {
 
 $collectionStartedAt = (Get-Date).ToUniversalTime()
 $scheduleRunId = New-ScheduleRunId -ObservedAt $collectionStartedAt
+$collectionPagesPerTarget = Get-CollectionPagesPerTarget -ObservedAt $collectionStartedAt
 $collectionStartedAtMarker = $collectionStartedAt.ToString(
     "o",
     [System.Globalization.CultureInfo]::InvariantCulture
@@ -582,7 +619,7 @@ $collectionCommand = @(
     "session-capture",
     "--skip-legacy-preparation",
     "--pages-per-target",
-    "4",
+    [string]$collectionPagesPerTarget,
     "--preparation-artifact-root",
     "/app/model_artifacts",
     "--runtime-projection",

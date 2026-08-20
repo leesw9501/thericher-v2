@@ -48,8 +48,20 @@ def _write_source_contract_fixture(project_root: Path) -> None:
                 '"session-capture",',
                 '"--execute",',
                 '"--skip-legacy-preparation",',
+                "$CollectionBasePagesPerTarget = 4",
+                "$CollectionPostClosePagesPerTarget = 8",
+                (
+                    "$CollectionPostCloseEarliestEastern = [TimeSpan]::FromHours(16) + "
+                    "[TimeSpan]::FromMinutes(20)"
+                ),
+                "$CollectionPostCloseLatestEastern = [TimeSpan]::FromHours(20)",
+                "function Get-CollectionPagesPerTarget {}",
+                (
+                    "$collectionPagesPerTarget = Get-CollectionPagesPerTarget "
+                    "-ObservedAt $collectionStartedAt"
+                ),
                 '"--pages-per-target",',
-                '"4",',
+                '[string]$collectionPagesPerTarget,',
                 "if ($collectionExitCode -eq 0) {}",
                 "",
             )

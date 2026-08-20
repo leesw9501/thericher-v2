@@ -1400,7 +1400,11 @@ a company-wide wait. The Windows Scheduled Task
 `thericher-kis-paper-intraday-head` currently runs Tuesday through Saturday at
 00:29, 02:28, 04:24, and 06:20 KST according to its source-safe static Task
 facts. Do not infer a retained-cache chunk from any one trigger. Each data
-collector invocation keeps the four-page-per-target maximum. The capture
+collector invocation keeps the four-page-per-target normal cap. The existing
+regular-weekday post-close invocation (16:20--20:00 Eastern) is the one bounded
+exception: it uses eight pages per target to test whether the retained head can
+cover a full session. It adds no Task, route, rate change, retry loop, or
+automatic escalation; a still-short receipt closes that cap test. The capture
 coverage selector, not the schedule, still requires an exact 390-minute
 declared QQQ session before it can call a whole-session observation complete.
 That rule does not apply to the bounded runtime selector: it accepts one
@@ -1701,8 +1705,10 @@ eligibility, or a downstream consumer.
 
 The one existing `thericher-kis-paper-intraday-head` task invokes this same
 capture mode before its bounded local and QQQ Paper consumers. It adds no new
-Windows task, and its page cap, concurrency, and collector exit authority stay
-unchanged. An eligible 90-minute runtime window may now produce a provisional
+Windows task, and its concurrency and collector exit authority stay unchanged.
+The normal cap remains four pages per target; only the bounded post-close
+window uses eight pages to measure full-session reach. An eligible 90-minute
+runtime window may now produce a provisional
 five-action receipt and a `local_paper` replay without waiting for a
 whole-session observer. Only a separately current `enter` or `exit` receipt
 can reach the existing virtual QQQ/NASD canary lifecycle; this is execution

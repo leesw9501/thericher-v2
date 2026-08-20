@@ -186,6 +186,14 @@ production default remains `Global\TheRicherPaperSnapshotObserver`. This removes
 one observed task-owned-worker/test-fixture collision from authority verification
 without changing real observer concurrency, routes, or credentials.
 
+The current reversible Data improvement is a bounded post-close depth probe in
+the existing intraday-head runner: four pages per target remain the normal cap,
+while only a regular-weekday 16:20--20:00 Eastern invocation uses eight. It
+adds no Task, route, rate setting, retry loop, or manual run. Metadata-only
+evidence showed 37 retained chunks but zero complete 390-minute sessions under
+the former cap. Claude CLI returned no verdict, so this remains limited to one
+scheduled post-close result; an incomplete result does not auto-escalate.
+
 For verification throughput and stability, use
 `scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
 lease is free. The helper now selects local non-reparse `D:\trpy` before
@@ -201,12 +209,13 @@ or live-risk coverage.
 
 ## Current Recovery Action
 
-No category-based intraday recovery proposal is active. A later investigation
-would need two independently hash-validated matching *comparable* nonzero
-bindings plus a fresh Claude falsification-first verdict. The completed v2 D1
-action used a new isolated cache rather than a same-route v1 refetch. Its
-preflight was `collection_required`, its one permitted collector returned
-`ready`, and the independent preflight reattached `cache_current`. This does
-not clear v1 quarantine or produce availability, finality, model, or consumer
-evidence. A future Data package must not use a same-route refetch as automatic
-clearance or independent recovery evidence.
+The owned post-close depth probe is the only active intraday coverage recovery:
+inspect the next immutable task receipt, then classify its current session as
+complete or short. Do not manually invoke it, increase the cap again, or turn a
+short result into a global hold. The completed v2 D1 action used a new isolated
+cache rather than a same-route v1 refetch. Its preflight was
+`collection_required`, its one permitted collector returned `ready`, and the
+independent preflight reattached `cache_current`. This does not clear v1
+quarantine or produce availability, finality, model, or consumer evidence. A
+future Data package must not use a same-route refetch as automatic clearance or
+independent recovery evidence.
