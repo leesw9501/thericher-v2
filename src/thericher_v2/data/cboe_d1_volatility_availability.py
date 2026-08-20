@@ -17,7 +17,7 @@ from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from typing import Final
+from typing import Final, Literal
 from urllib.parse import urlsplit
 
 CBOE_D1_VOLATILITY_AVAILABILITY_OBSERVATION_KIND: Final = (
@@ -77,6 +77,18 @@ class CboeD1VolatilityAvailabilityReceipt:
 
     receipt_path: Path
     observation_sha256: str
+
+
+@dataclass(frozen=True, slots=True)
+class CboeD1VolatilityAvailabilityOutcome:
+    """One source-safe reattachment result for an exact series/session observation."""
+
+    status: Literal["unavailable", "observed", "disqualified"]
+    series_symbol: str
+    session_label: str
+    receipt_sha256: str | None
+    observed_at_utc: str | None
+    receipt_path: Path | None
 
 
 def validate_cboe_d1_volatility_availability_request(
@@ -204,6 +216,95 @@ def validate_cboe_d1_volatility_availability_receipt(
     return CboeD1VolatilityAvailabilityReceipt(
         receipt_path=path,
         observation_sha256=observation_sha256,
+    )
+
+
+def read_cboe_d1_volatility_availability_outcome(
+    *,
+    series_symbol: str,
+    session_label: date,
+    session_close: datetime,
+    next_market_open: datetime,
+    artifact_root: Path | str,
+    repository_root: Path | str,
+) -> CboeD1VolatilityAvailabilityOutcome:
+    """Reattach one exact observation without network, credentials, or raw rows."""
+
+    normalized_series = _require_series_symbol(series_symbol)
+    normalized_session = _require_session_label(session_label)
+    _, expected_close, expected_next_open = _observation_bracket(
+        observed_at=session_close,
+        session_close=session_close,
+        next_market_open=next_market_open,
+    )
+    root = _existing_external_artifact_root(Path(artifact_root), Path(repository_root))
+    receipts = root / _RECEIPT_DIRECTORY
+    if not receipts.exists():
+        return _outcome(
+            status="unavailable",
+            series_symbol=normalized_series,
+            session_label=normalized_session,
+        )
+    if receipts.is_symlink() or not receipts.is_dir():
+        raise CboeD1VolatilityAvailabilityError("receipt directory is invalid")
+
+    matches: list[tuple[CboeD1VolatilityAvailabilityReceipt, dict[str, object]]] = []
+    mismatched_boundary = False
+    for candidate in sorted(receipts.iterdir(), key=lambda path: path.name):
+        receipt_path = candidate / "receipt.json"
+        if candidate.is_symlink() or not candidate.is_dir() or not receipt_path.is_file():
+            continue
+        try:
+            receipt = validate_cboe_d1_volatility_availability_receipt(
+                receipt_path=receipt_path,
+                artifact_root=root,
+                repository_root=repository_root,
+            )
+            document = json.loads(receipt.receipt_path.read_text(encoding="utf-8"))
+        except (
+            CboeD1VolatilityAvailabilityError,
+            OSError,
+            UnicodeDecodeError,
+            json.JSONDecodeError,
+        ):
+            continue
+        if (
+            not isinstance(document, dict)
+            or document.get("series_symbol") != normalized_series
+            or document.get("session_label") != normalized_session
+        ):
+            continue
+        if (
+            document.get("session_close_utc") != expected_close
+            or document.get("next_market_open_utc") != expected_next_open
+        ):
+            mismatched_boundary = True
+            continue
+        matches.append((receipt, document))
+
+    if mismatched_boundary or len(matches) > 1:
+        return _outcome(
+            status="disqualified",
+            series_symbol=normalized_series,
+            session_label=normalized_session,
+        )
+    if not matches:
+        return _outcome(
+            status="unavailable",
+            series_symbol=normalized_series,
+            session_label=normalized_session,
+        )
+    receipt, document = matches[0]
+    observed_at = document.get("observed_at_utc")
+    if not isinstance(observed_at, str):
+        raise CboeD1VolatilityAvailabilityError("receipt time is invalid")
+    return CboeD1VolatilityAvailabilityOutcome(
+        status="observed",
+        series_symbol=normalized_series,
+        session_label=normalized_session,
+        receipt_sha256=receipt.observation_sha256,
+        observed_at_utc=observed_at,
+        receipt_path=receipt.receipt_path,
     )
 
 
@@ -357,6 +458,16 @@ def _external_artifact_root(root: Path, repository_root: Path) -> Path:
     return root.resolve()
 
 
+def _existing_external_artifact_root(root: Path, repository_root: Path) -> Path:
+    candidate = root.resolve(strict=False)
+    repository = repository_root.resolve(strict=False)
+    if candidate == repository or candidate.is_relative_to(repository):
+        raise CboeD1VolatilityAvailabilityError("artifact root must be outside the repository")
+    if not root.exists() or root.is_symlink() or not root.is_dir():
+        raise CboeD1VolatilityAvailabilityError("artifact root is unavailable")
+    return root.resolve(strict=True)
+
+
 def _direct_receipt_target(artifact_root: Path, observation_sha256: str) -> Path:
     if not _is_sha256(observation_sha256):
         raise CboeD1VolatilityAvailabilityError("receipt identity is invalid")
@@ -409,6 +520,22 @@ def _write_immutable_json(path: Path, payload: dict[str, object]) -> None:
     except FileExistsError:
         if path.is_symlink() or path.read_bytes() != encoded:
             raise CboeD1VolatilityAvailabilityError("receipt is not immutable") from None
+
+
+def _outcome(
+    *,
+    status: Literal["unavailable", "disqualified"],
+    series_symbol: str,
+    session_label: str,
+) -> CboeD1VolatilityAvailabilityOutcome:
+    return CboeD1VolatilityAvailabilityOutcome(
+        status=status,
+        series_symbol=series_symbol,
+        session_label=session_label,
+        receipt_sha256=None,
+        observed_at_utc=None,
+        receipt_path=None,
+    )
 
 
 def _validate_receipt_document(document: dict[str, object]) -> None:

@@ -5,6 +5,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import socket
 import sys
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
@@ -13,11 +14,13 @@ import pytest
 
 from thericher_v2.data.cboe_d1_volatility_availability import (
     CboeD1VolatilityAvailabilityError,
+    read_cboe_d1_volatility_availability_outcome,
     validate_cboe_d1_volatility_availability_receipt,
     write_cboe_d1_volatility_availability_observation,
 )
 
 _SOURCE_URL = "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
+_VXN_SOURCE_URL = "https://cdn.cboe.com/api/global/us_indices/daily_prices/VXN_History.csv"
 _PAYLOAD_LF = "DATE,OPEN,HIGH,LOW,CLOSE\n2026-08-06,20.0,21.0,19.0,20.5\n"
 _PAYLOAD_CRLF = "DATE,OPEN,HIGH,LOW,CLOSE\r\n2026-08-06,20.0,21.0,19.0,20.5\r\n"
 
@@ -29,6 +32,20 @@ def _cli_module():
         / "observe_cboe_d1_volatility_availability.py"
     )
     specification = importlib.util.spec_from_file_location("cboe_observation_cli", script_path)
+    assert specification is not None and specification.loader is not None
+    module = importlib.util.module_from_spec(specification)
+    sys.modules[specification.name] = module
+    specification.loader.exec_module(module)
+    return module
+
+
+def _outcome_cli_module():
+    script_path = (
+        Path(__file__).parents[1]
+        / "scripts"
+        / "read_cboe_d1_volatility_availability_outcome.py"
+    )
+    specification = importlib.util.spec_from_file_location("cboe_outcome_reader_cli", script_path)
     assert specification is not None and specification.loader is not None
     module = importlib.util.module_from_spec(specification)
     sys.modules[specification.name] = module
@@ -262,6 +279,154 @@ def test_module_has_no_kis_broker_research_or_execution_import_surface() -> None
         / "cboe_d1_volatility_availability.py"
     )
     tree = ast.parse(module_path.read_text(encoding="utf-8"))
+    imports = []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            imports.extend(alias.name for alias in node.names)
+        elif isinstance(node, ast.ImportFrom) and node.module:
+            imports.append(node.module)
+
+    assert not [
+        name
+        for name in imports
+        if any(token in name.lower() for token in ("kis", "broker", "research", "execution"))
+    ]
+
+
+def test_outcome_reader_returns_unavailable_without_a_receipt_directory(tmp_path: Path) -> None:
+    artifact_root = tmp_path / "artifacts"
+    artifact_root.mkdir()
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+
+    outcome = read_cboe_d1_volatility_availability_outcome(
+        series_symbol="VIX",
+        session_label=date(2026, 8, 6),
+        session_close=datetime(2026, 8, 6, 16, 15, tzinfo=UTC),
+        next_market_open=datetime(2026, 8, 7, 9, 15, tzinfo=UTC),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+
+    assert outcome.status == "unavailable"
+    assert outcome.series_symbol == "VIX"
+    assert outcome.session_label == "2026-08-06"
+    assert outcome.receipt_sha256 is None
+    assert outcome.observed_at_utc is None
+    assert outcome.receipt_path is None
+
+
+def test_outcome_reader_reattaches_one_exact_receipt_without_network(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    receipt = _write(tmp_path)
+
+    def forbid_network(*_args: object, **_kwargs: object) -> object:
+        raise AssertionError("outcome reader must stay offline")
+
+    monkeypatch.setattr(socket, "create_connection", forbid_network)
+    outcome = _read_outcome(tmp_path)
+
+    assert outcome.status == "observed"
+    assert outcome.series_symbol == "VIX"
+    assert outcome.session_label == "2026-08-06"
+    assert outcome.receipt_sha256 == receipt.observation_sha256
+    assert outcome.observed_at_utc == "2026-08-06T16:20:00Z"
+    assert outcome.receipt_path == receipt.receipt_path
+
+
+def test_outcome_reader_ignores_a_different_series_receipt(tmp_path: Path) -> None:
+    expected = _write(tmp_path)
+    _write(tmp_path, source_url=_VXN_SOURCE_URL, series_symbol="VXN")
+
+    outcome = _read_outcome(tmp_path)
+
+    assert outcome.status == "observed"
+    assert outcome.receipt_sha256 == expected.observation_sha256
+
+
+def test_outcome_reader_disqualifies_multiple_exact_receipts(tmp_path: Path) -> None:
+    _write(tmp_path)
+    _write(tmp_path, observed_at=datetime(2026, 8, 6, 16, 25, tzinfo=UTC))
+
+    outcome = _read_outcome(tmp_path)
+
+    assert outcome.status == "disqualified"
+    assert outcome.receipt_sha256 is None
+    assert outcome.observed_at_utc is None
+    assert outcome.receipt_path is None
+
+
+def test_outcome_reader_disqualifies_another_boundary_for_the_exact_series_session(
+    tmp_path: Path,
+) -> None:
+    _write(tmp_path)
+    wrong_close = datetime(2026, 8, 6, 16, 0, tzinfo=UTC)
+    _write(
+        tmp_path,
+        observed_at=wrong_close + timedelta(minutes=5),
+        session_close=wrong_close,
+        next_market_open=datetime(2026, 8, 7, 9, 15, tzinfo=UTC),
+    )
+
+    outcome = _read_outcome(tmp_path)
+
+    assert outcome.status == "disqualified"
+    assert outcome.receipt_sha256 is None
+
+
+def test_outcome_reader_cli_emits_only_source_safe_fields(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    receipt = _write(tmp_path)
+    module = _outcome_cli_module()
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "read_cboe_d1_volatility_availability_outcome.py",
+            "--series",
+            "VIX",
+            "--session-label",
+            "2026-08-06",
+            "--session-close",
+            "2026-08-06T16:15:00Z",
+            "--next-market-open",
+            "2026-08-07T09:15:00Z",
+            "--artifact-root",
+            str(tmp_path / "artifacts"),
+            "--repository-root",
+            str(tmp_path / "repo"),
+        ],
+    )
+
+    module.main()
+
+    output = capsys.readouterr()
+    result = json.loads(output.out)
+    assert result == {
+        "observed_at_utc": "2026-08-06T16:20:00Z",
+        "receipt_path": str(receipt.receipt_path),
+        "receipt_sha256": receipt.observation_sha256,
+        "series_symbol": "VIX",
+        "session_label": "2026-08-06",
+        "status": "observed",
+    }
+    assert output.err == ""
+    for raw_value in (_PAYLOAD_LF, "20.5", "21.0", "19.0"):
+        assert raw_value not in output.out
+
+
+def test_outcome_reader_cli_has_no_kis_broker_research_or_execution_import_surface() -> None:
+    script_path = (
+        Path(__file__).parents[1]
+        / "scripts"
+        / "read_cboe_d1_volatility_availability_outcome.py"
+    )
+    tree = ast.parse(script_path.read_text(encoding="utf-8"))
     imports = []
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
@@ -518,12 +683,14 @@ def _write(
     last_modified: str | None = None,
     source_url: str = _SOURCE_URL,
     series_symbol: str = "VIX",
+    session_close: datetime | None = None,
+    next_market_open: datetime | None = None,
 ):
     artifact_root = tmp_path / "artifacts"
     repo_root = tmp_path / "repo"
     repo_root.mkdir(exist_ok=True)
     (repo_root / ".git").mkdir(exist_ok=True)
-    close = datetime(2026, 8, 6, 16, 15, tzinfo=UTC)
+    close = session_close or datetime(2026, 8, 6, 16, 15, tzinfo=UTC)
     return write_cboe_d1_volatility_availability_observation(
         artifact_root=artifact_root,
         repository_root=repo_root,
@@ -531,13 +698,24 @@ def _write(
         session_label=date(2026, 8, 6),
         observed_at=observed_at or close + timedelta(minutes=5),
         session_close=close,
-        next_market_open=close + timedelta(hours=17),
+        next_market_open=next_market_open or close + timedelta(hours=17),
         source_url=source_url,
         series_symbol=series_symbol,
         cache_control=cache_control,
         etag=etag,
         response_date=response_date,
         last_modified=last_modified,
+    )
+
+
+def _read_outcome(tmp_path: Path):
+    return read_cboe_d1_volatility_availability_outcome(
+        series_symbol="VIX",
+        session_label=date(2026, 8, 6),
+        session_close=datetime(2026, 8, 6, 16, 15, tzinfo=UTC),
+        next_market_open=datetime(2026, 8, 7, 9, 15, tzinfo=UTC),
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
     )
 
 
