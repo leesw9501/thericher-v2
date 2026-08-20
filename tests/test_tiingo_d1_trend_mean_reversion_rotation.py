@@ -241,6 +241,14 @@ def test_validation_recomputes_and_binds_existing_safe_evidence(tmp_path: Path) 
     assert validation["paper_input_allowed"] is False
     assert validation["promotion_allowed"] is False
 
+    reattached = rotation.reattach_tiingo_d1_trend_mean_reversion_rotation(
+        snapshot,
+        artifact_root=artifact_root,
+        run_label="validation-r1",
+        repo_root=repo_root,
+    )
+    assert reattached == receipt
+
     run.summary_path.write_text("{}\n", encoding="ascii")
     with pytest.raises(ValueError, match="evidence binding"):
         rotation.validate_tiingo_d1_trend_mean_reversion_rotation(
@@ -249,6 +257,39 @@ def test_validation_recomputes_and_binds_existing_safe_evidence(tmp_path: Path) 
             run_label="validation-r1",
             repo_root=repo_root,
         )
+
+
+def test_read_only_reattachment_requires_an_existing_validation_receipt(
+    tmp_path: Path,
+) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    snapshot = _snapshot(profile="flat")
+    rotation.run_tiingo_d1_trend_mean_reversion_rotation(
+        snapshot,
+        artifact_root=artifact_root,
+        run_label="read-only-r1",
+        repo_root=repo_root,
+    )
+
+    with pytest.raises(ValueError, match="evidence binding"):
+        rotation.reattach_tiingo_d1_trend_mean_reversion_rotation(
+            snapshot,
+            artifact_root=artifact_root,
+            run_label="read-only-r1",
+            repo_root=repo_root,
+        )
+
+    missing_root = tmp_path / "missing-artifacts"
+    with pytest.raises(ValueError, match="artifact root"):
+        rotation.reattach_tiingo_d1_trend_mean_reversion_rotation(
+            snapshot,
+            artifact_root=missing_root,
+            run_label="read-only-r1",
+            repo_root=repo_root,
+        )
+    assert not missing_root.exists()
 
 
 def _snapshot(

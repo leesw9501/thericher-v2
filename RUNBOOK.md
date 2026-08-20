@@ -2608,6 +2608,29 @@ band, masks, or threshold from this outcome. A separate aggregate-only Data
 audit must establish whether the fixed mask contract is structurally sparse
 before any later policy change is considered.
 
+### Tiingo D1 Event-Mask Coverage Audit
+
+Run the bounded aggregate audit only after the completed rotation has all three
+immutable receipts, then independently reattach it:
+
+```powershell
+uv run python scripts/run_tiingo_d1_event_mask_coverage_audit.py --run-label <unique-label>
+uv run python scripts/run_tiingo_d1_event_mask_coverage_audit.py --run-label <same-label> --verify-only
+```
+
+It reattaches the same pinned local snapshot and completed rotation receipts,
+then emits only aggregate event/discontinuity counts, deterministic index-set
+hashes, bounded exclusion-run buckets, and binding status. It does not read
+`.env` or credentials, call a network, KIS, Docker, or a broker, use GPU,
+train/load a model, retain rows/dates/prices/values/per-decision masks, or
+create an Execution or Paper input.
+
+The completed `20260820-r1` audit is `consistent`: event masks account for
+all 1,892 validation exclusions, discontinuity-only exclusions are zero, four
+contexts are unmasked, and three are active. No semantic contradiction was
+found, so the frozen Tiingo rotation lineage is closed without retuning its
+rule, mask, threshold, source, or cost contract.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,

@@ -274,15 +274,16 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   `input_unavailable/insufficient_validation_active_decisions`: 3 active
   decisions against a fixed minimum of 100, with 1,892 of 1,896 scheduled
   validation decisions excluded by the existing event/discontinuity conditions.
-  This is a source-local eligibility result, not performance evidence, a
-  selection result, a GPU appointment, or a Paper input. Data may audit only
-  aggregate mask coverage before any material source or masking-policy change.
+  Its completed aggregate audit found every exclusion was event-driven, with no
+  discontinuity-only exclusion or semantic contradiction. This closes the
+  source-local lineage, not performance evidence, a selection result, a GPU
+  appointment, or a Paper input.
 
 ## Current Tracks
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | FirstRate 5m controls are rejected; the frozen Tiingo D1 trend-pullback rotation stopped at preflight with 3/100 active validation decisions | Await the Data-owned aggregate event-mask coverage audit; do not retune the rule, masks, costs, or eligibility threshold |
+| Technical/chart and momentum/regime | FirstRate 5m controls are rejected; the frozen Tiingo D1 trend-pullback rotation is closed as structurally sparse after its consistent mask audit | Do not retune the Tiingo rule, masks, costs, or eligibility threshold; a distinct qualified source and fresh frozen hypothesis are required |
 | Classical ML/statistical | FirstRate 5m L2 control rejected after all six nonzero-cost comparisons | Do not extend that L2 family or allocate GPU without a distinct frozen campaign |
 | Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
 | Portfolio/allocation/meta-decision | Deterministic source-attested selection, per-symbol policy, and scale/cap foundation only | Aligned out-of-fold upstream candidate evidence with a frozen ranking/turnover/capacity/correlation contract |

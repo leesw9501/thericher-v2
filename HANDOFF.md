@@ -42,9 +42,23 @@ validation SHA-256 values are respectively
 `sha256:f68bbd3cac1ccfbf1f4e4d6876ba3c28c5e9a8fa37324a20d19c252df26261cf`
 and
 `sha256:17b1ce1f5e18e8f525fb42bcfd2537d18c8d885b40ae3dc68816d3b8653a74d3`.
-The next objective is `tiingo-d1-event-mask-coverage-audit-v1`: explain this
-source-specific sparse eligibility only with aggregate mask evidence, without
-retuning the frozen rule or mask.
+The completed `tiingo-d1-event-mask-coverage-audit-v1` independently bound
+the rotation receipt and found no semantic contradiction: all 1,892 excluded
+validation decisions were event-mask exclusions, with zero discontinuity-only
+exclusions. Four validation contexts were unmasked, but only three carried a
+signal; the event exclusions form five runs longer than 60 decisions. This
+proves that this fixed all-ETF event window is structurally sparse on this
+repeat source, not that the rule has a PnL result or that a mask change is
+warranted. Its summary and validation SHA-256 values are respectively
+`sha256:84ba51e3e7857f6e72dbf4552ecbe8496a6804e7b4f7d7b7970f4352081e1897`
+and
+`sha256:e7fbfdeedd7e55c91ac7a7048ec193dc24dd3352d660e57ef0a1b669b89a0bf9`.
+The Tiingo rotation lineage is closed without retuning, GPU, KIS, Paper, or
+live consequence. The next objective is
+`norgate-trial-host-readiness-reconciliation-v1`: diagnose the existing local
+Norgate trial host condition with source-safe metadata only, then either enable
+one bounded date-indexed capability probe or close the host path without
+polling.
 
 The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` created the
 isolated QQQ/NAS + SPY/AMS KIS Paper D1 cache at

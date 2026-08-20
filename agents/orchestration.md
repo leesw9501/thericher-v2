@@ -13,11 +13,12 @@ local-paper cells were replayable and terminal-flat, with no network,
 credential, KIS, broker, order, GPU, Execution, Paper-consumer, or live
 consequence. The frozen Tiingo D1 trend-pullback rotation subsequently
 reattached its separate pinned snapshot and independently verified its receipt,
-but stopped at `input_unavailable/insufficient_validation_active_decisions`
-(3 active decisions against 100 required; 1,892 of 1,896 scheduled validation
-decisions excluded). The current ready, non-conflicting Data package is an
-aggregate-only event-mask coverage audit. It does not reopen rule, cost, mask,
-source, promotion, GPU, KIS, Paper, or live behavior. The completed
+then its completed aggregate audit found all 1,892 validation exclusions came
+from the event mask, with no discontinuity-only exclusions or semantic
+contradiction. The lineage is closed without changing rule, cost, mask, source,
+promotion, GPU, KIS, Paper, or live behavior. The current ready,
+non-conflicting Data/Infra package is the bounded Norgate trial host-readiness
+reconciliation. The completed
 `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1`
 created one isolated QQQ/SPY KIS Paper D1 v2 forward-cache lineage after v1's
 retained revision conflicts while preserving v1 bytes and its quarantine. A
@@ -57,7 +58,8 @@ named clock/session, decision-time availability, and provider finality
 | FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: source reattached and 18 `local_paper`, replayable, terminal-flat cells completed. L2 beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; no GPU or KIS/Paper consumer follows. |
 | FirstRate 5m trend-rule after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: the fixed 20/60 rule beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; all 18 cells were `local_paper`, replayable, and terminal-flat. No GPU or KIS/Paper consumer follows. |
 | FirstRate 5m mean-reversion after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: the fixed Wilder-RSI(14) 30/50 rule beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; all 12 cells were `local_paper`, replayable, and terminal-flat. No GPU or KIS/Paper consumer follows. |
-| Tiingo D1 event-mask coverage audit | Data | Exact pinned Tiingo snapshot, completed frozen rotation receipt, and external artifact root | Ready: account for the frozen 3-of-100 active-decision result using aggregate event/discontinuity coverage only. No rule, threshold, cost, mask, source, consumer, GPU, KIS, or Paper change is in scope. |
+| Tiingo D1 event-mask coverage audit | Data | Exact pinned Tiingo snapshot, completed frozen rotation receipt, and external artifact root | Complete: all 1,892 validation exclusions were event-mask exclusions; no discontinuity-only exclusion or semantic contradiction was found. The frozen Tiingo rotation lineage is closed without retuning. |
+| Norgate trial host-readiness reconciliation | Data / Infra Capability | Existing isolated host runtime, exact prior readiness receipt, local safe metadata, and external receipt root | Ready: identify one safe local prerequisite category or a closed unavailable condition before any date-indexed probe. No raw Norgate data, network, purchase, updater run, model, GPU, KIS, or Paper path is in scope. |
 | KIS QQQ/SPY D1 v2 fresh-cache bootstrap | Data / Infra Capability | Isolated external v2 root, existing KIS Paper daily route, and source-safe receipt root | Complete: the fixed QQQ/NAS + SPY/AMS v2 cache reattached after one `ready` collection with 18 common sessions. v1 was not mounted, copied, cleared, or relabeled. The v2 lineage remains non-promoting: no Research, GPU, Execution, Paper-consumer, or live claim follows. |
 | Tiingo prospective EOD refresh | Data | Existing fixed ETF source contract, external canonical root, and approved local token path | Complete: one current dated SPY/QQQ snapshot was created, then reattached offline by its source-safe dataset/manifest identities. It stays prospective-lineage-only and cannot clear KIS quarantine or create a Research, GPU, Execution, or Paper consumer. |
 | Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |
