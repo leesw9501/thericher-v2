@@ -54,11 +54,27 @@ warranted. Its summary and validation SHA-256 values are respectively
 and
 `sha256:e7fbfdeedd7e55c91ac7a7048ec193dc24dd3352d660e57ef0a1b669b89a0bf9`.
 The Tiingo rotation lineage is closed without retuning, GPU, KIS, Paper, or
-live consequence. The next objective is
-`norgate-trial-host-readiness-reconciliation-v1`: diagnose the existing local
-Norgate trial host condition with source-safe metadata only, then either enable
-one bounded date-indexed capability probe or close the host path without
-polling.
+live consequence. The completed
+`norgate-trial-host-readiness-reconciliation-v1` reattached that exact prior
+bridge, imported only the isolated local client, and observed
+`input_unavailable/local_api_not_ready_updater_not_observed`. Its source-safe
+summary and offline validation are respectively
+`sha256:5c79a0430b789709df50136f6a1ea999836072c7483f6f1598fc80d43bb924ac`
+and the same bound summary with prior receipt
+`sha256:20cf9e2954bb567fa31a54d58cde6d61b50be0d86b4b345261e14136c1aa521c`.
+No Norgate source rows, settings, credentials, network path, updater action,
+KIS, broker, model, or GPU path ran. The narrow local prerequisite is to
+install and run Norgate Data Updater; this is not a data-rights or
+data-capability conclusion and must not be polled.
+
+Claude's falsification-first direction check returned
+`supported-with-limits` for a KIS Paper D1 prospective observation-pairing
+measurement, and rejected both another same-source FirstRate rule draw and
+waiting as a company objective. The next objective is
+`kis-paper-d1-prospective-observation-pairing-v1`: add only the two-stage
+decision-time/post-finality identity measurement for the existing QQQ/SPY v2
+cache. It can disqualify revision-leaking input but cannot make a predictive,
+GPU, Paper, or live claim.
 
 The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` created the
 isolated QQQ/NAS + SPY/AMS KIS Paper D1 cache at

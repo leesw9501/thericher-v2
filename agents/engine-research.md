@@ -179,6 +179,12 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   three are `input_unavailable`, and the remaining FirstRate/Tiingo classes are
   mechanics, retrospective-control, or runtime-only. GPU custody stays free;
   no frozen predictive campaign is ready.
+- The completed Norgate reconciliation narrows its local host condition to
+  `local_api_not_ready_updater_not_observed`; it adds no data input. Claude's
+  later direction check is `supported-with-limits` only for a KIS D1
+  prospective decision-time/post-finality observation pair. That work can
+  disqualify revision leakage but cannot freeze a target, spend GPU, or create
+  a candidate until a separate qualified input contract exists.
 - Fixed session-reset 15/30 EMA and 20/10 Donchian local-paper replays have
   replayable, terminal-flat accounting evidence and negative fixed baselines.
   Do not retune their windows, costs, thresholds, or signs under a new label.

@@ -3046,6 +3046,38 @@ updater, subscription, vendor-access, or rights condition and does not permit a
 daily capability retry or D1 pilot. Reattach the receipt with
 `read_norgate_host_readiness_receipt`; do not rerun this completed objective.
 
+### Norgate Trial Host Readiness Reconciliation
+
+The completed reconciliation is a distinct local-host diagnosis. It reattaches
+the exact bridge before one isolated-client status call, then examines only a
+fixed updater installation marker and an in-memory process marker when that API
+is not ready:
+
+~~~powershell
+D:/thericher-v2/host-runtimes/norgate-python/Scripts/python.exe `
+  scripts/run_norgate_trial_host_readiness_reconciliation.py `
+  --run-label <unique-label>
+
+D:/thericher-v2/host-runtimes/norgate-python/Scripts/python.exe `
+  scripts/run_norgate_trial_host_readiness_reconciliation.py `
+  --run-label <unique-label> --verify-only
+~~~
+
+It prints and retains only categorical status, reason, recovery, and hashes.
+It does not read source rows, configuration values, credentials, or database
+paths; it does not invoke a network route, updater, KIS, Docker, broker, or
+model/GPU path.
+
+The completed norgate-host-reconcile-20260820-r1 output is
+input_unavailable/local_api_not_ready_updater_not_observed
+(sha256:5c79a0430b789709df50136f6a1ea999836072c7483f6f1598fc80d43bb924ac).
+Its validation reattached the prior bridge
+(sha256:20cf9e2954bb567fa31a54d58cde6d61b50be0d86b4b345261e14136c1aa521c)
+without reinvoking the host. The only next local prerequisite is to install and
+run Norgate Data Updater; this is not a trial-rights, data-capability, or
+research-input conclusion. Do not poll it or run the date-indexed probe until a
+fresh bounded readiness result says ready_for_date_indexed_probe.
+
 ### Fixed Market-Data Contract Inventory
 
 For the six predeclared source classes, run the source-safe inventory once with
