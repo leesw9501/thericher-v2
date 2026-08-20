@@ -303,6 +303,48 @@ def test_stale_runtime_window_never_reads_account_or_prepares_an_order(
     assert payload["canary"] is None
 
 
+def test_closed_session_never_constructs_a_kis_client(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    catalog = _catalog(91)
+    _install_catalog(monkeypatch, catalog)
+    module = __import__(
+        "thericher_v2.execution.kis_paper_prospective_qqq_session",
+        fromlist=["placeholder"],
+    )
+    monkeypatch.setattr(
+        module,
+        "is_us_equity_regular_session_window",
+        lambda _observed_at: False,
+    )
+    client = _FailClient()
+
+    outcome = run_kis_paper_prospective_qqq_session(
+        environment={"KIS_PAPER_APP_KEY": "not-used"},
+        cache_root=tmp_path / "cache",
+        local_paper_state_root=tmp_path / "runtime",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+        execute=True,
+        cancel_after_submit=True,
+        client=client,
+        now=catalog.bars[-1].end_ts,
+    )
+
+    assert outcome.status == "no_intent"
+    assert outcome.reason_code == "session_closed"
+    assert outcome.loop is not None
+    assert outcome.local_input_availability is None
+    assert outcome.pre_account_freshness is None
+    assert outcome.pre_submit_freshness is None
+    assert client.calls == []
+    payload = json.loads(outcome.evidence_path.read_text(encoding="ascii"))
+    assert payload["local_input_availability"] is None
+    assert payload["prepared"] is None
+    assert payload["canary"] is None
+
+
 def test_runtime_window_expiring_during_preparation_never_reaches_canary(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
