@@ -84,9 +84,11 @@ It uses only the existing QQQ/NAS + SPY/AMS virtual-Paper daily route and v2
 cache read-only; immutable receipts retain only the fixed source-contract hash,
 session key, timestamps, and per-target canonical row hashes. Its container
 wiring smoke was `not_due` at 2026-08-20T08:27Z, so it made no KIS request and
-there is no pair result yet. Source-safe Task Scheduler metadata currently
-reports its next task-owned run as 2026-08-20 23:20 KST; the stage and outcome
-remain receipt-derived only. A terse implementation drift check from Claude returned `uncertain`;
+there is no pair result yet. Task Scheduler records that its 2026-08-20 23:20
+KST invocation returned `0`, while the offline reader remains
+`current_pointer_unavailable`; that exit code is not stage or outcome evidence.
+The next task-owned run is 2026-08-21 08:15 KST. A terse implementation drift
+check from Claude returned `uncertain`;
 therefore no observation is treated as a qualification result, and a later
 Claude falsification check is still required before relying on an actual pair
 outcome. A matching pair remains measurement-only; missing/mismatched data

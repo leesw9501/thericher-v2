@@ -43,9 +43,10 @@ only an external source-contract hash, session key, timestamps, row hashes, and
 a hash-bound source-safe current-outcome pointer to immutable receipts. The
 offline reader revalidates the pointer plus exact first/later receipt binding;
 an absent pointer is only `current_pointer_unavailable`.
-The 2026-08-20 wiring smoke was `not_due`; source-safe Task Scheduler metadata
-currently reports its next task-owned run as 2026-08-20 23:20 KST. Its stage
-and outcome remain receipt-derived only. No raw rows, credentials, KIS request, model, GPU,
+The 2026-08-20 wiring smoke was `not_due`. Task Scheduler records its 23:20
+KST invocation with result `0`, while the offline reader remains
+`current_pointer_unavailable`; task exit is not stage or outcome evidence. Its
+next task-owned run is 2026-08-21 08:15 KST. No raw rows, credentials, KIS request, model, GPU,
 or consumer path ran. A later match is measurement-only; a missing or changed
 target hash disqualifies only the bound session.
 
@@ -226,7 +227,7 @@ cache-recovery branch, not session coverage, finality, or consumer eligibility.
 | FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Complete: source/local-resampling reattestation, 60-bar/61-bar-embargo split, and all 18 local-paper replay cells completed. The L2 candidate had zero wins over flat in six nonzero-cost SPY/QQQ cells, so the lineage is `rejected`; no GPU or consumer follows. |
 | Tiingo D1 event-mask coverage audit | Data | Complete: the exact rotation receipt and pinned snapshot reattached independently. Event masks accounted for all 1,892 validation exclusions, discontinuity-only exclusions were zero, and the aggregate binding was consistent. The rotation lineage is closed without a policy change. |
 | Norgate trial host readiness reconciliation | Data / Infra Capability | Complete: the immutable diagnosis is `local_api_not_ready_updater_not_observed`, independently validated without a second host invocation. It records a local updater prerequisite only; no source rows, updater action, network, or repeated poll followed. |
-| KIS D1 prospective observation pairing | Data / Infra Capability | Owned: the installed two-stage worker has an external durable `next_due`, validated Docker `not_due` smoke, and a hash-bound current-outcome reader. Source-safe Task Scheduler metadata currently reports its next owned run as 2026-08-20 23:20 KST; stage and outcome remain receipt-derived only. No current pointer exists yet, so no result, model, or consumer is enabled. |
+| KIS D1 prospective observation pairing | Data / Infra Capability | Owned: the installed two-stage worker has an external durable `next_due`, validated Docker `not_due` smoke, and a hash-bound current-outcome reader. Task Scheduler records the 2026-08-20 23:20 KST invocation with result `0`, while the reader remains `current_pointer_unavailable`; exit code is not stage or outcome evidence. Next owned run: 2026-08-21 08:15 KST. No current pointer exists yet, so no result, model, or consumer is enabled. |
 | Cboe VIX/VXN D1 availability observations | Data / one-shot `thericher-cboe-vix-d1-availability-20260820` and `thericher-cboe-vxn-d1-availability-20260820` tasks | Owned: no-auth official Cboe VIX and VXN CSV observations are scheduled for 2026-08-21 05:30 and 05:31 KST, inside the 2026-08-20 close-to-next-open bracket. Each captures its actual runtime UTC instant, writes only an external source-safe row-hash receipt when one matching row exists, and has no retry or recurring trigger. The prepared offline reader returns `observed` only for one exact series/session/boundary-bound receipt; missing is `unavailable`, while a duplicate or boundary mismatch is `disqualified`. Neither outcome can establish decision-time availability, provider finality, a feature, campaign, GPU, Execution, Paper, or live input. |
 | FirstRate 5m trend-rule input reattestation | Data | Closed as duplicate: the completed fixed 20/60 control already bound this exact source-local 5m geometry and chronology. Do not dispatch another reattestation under a new label. |
 | Tiingo prospective EOD refresh | Data | Complete: one current dated external SPY/QQQ/IWM snapshot was acquired through the fixed three-request path and reattached offline by dataset/manifest identity. Its source-as-of boundary and all lineage-only eligibility flags remain fixed; focused and full authority verification passed. |
