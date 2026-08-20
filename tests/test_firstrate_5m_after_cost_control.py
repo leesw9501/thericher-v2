@@ -1,0 +1,290 @@
+from __future__ import annotations
+
+import csv
+import hashlib
+import json
+import socket
+from datetime import UTC, datetime, timedelta
+from decimal import Decimal
+from pathlib import Path
+
+import pytest
+
+from thericher_v2.contracts import Bar, Timeframe
+from thericher_v2.data.local import CSV_FIELDS, bar_to_record
+from thericher_v2.research import firstrate_5m_after_cost_control as control
+
+
+def test_frozen_control_uses_local_paper_only_and_external_source_safe_evidence(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    market_root, artifact_root = _install_source(tmp_path, minute_count=3_000)
+
+    def unexpected_network(*_args: object, **_kwargs: object) -> None:
+        raise AssertionError("FirstRate after-cost control must not access the network")
+
+    monkeypatch.setattr(socket, "create_connection", unexpected_network)
+    run = control.run_firstrate_m5_after_cost_control(
+        run_label="unit-r1",
+        market_data_root=market_root,
+        artifact_root=artifact_root,
+        repo_root=Path(__file__).resolve().parents[1],
+    )
+
+    assert run.status == "complete"
+    assert run.summary_path is not None
+    assert run.model_path is not None
+    receipt = control.validate_firstrate_m5_after_cost_control(
+        run_label="unit-r1",
+        market_data_root=market_root,
+        artifact_root=artifact_root,
+        repo_root=Path(__file__).resolve().parents[1],
+    )
+
+    summary = json.loads(run.summary_path.read_text(encoding="utf-8"))
+    assert receipt.source_reattached is True
+    assert summary["classification"] == receipt.classification
+    assert summary["gpu_used"] is False
+    assert summary["network_access"] is False
+    assert summary["credentials_read"] is False
+    assert summary["kis_or_broker_called"] is False
+    assert summary["raw_market_data_written"] is False
+    assert summary["raw_predictions_written"] is False
+    assert summary["raw_local_paper_events_written"] is False
+    assert len(summary["replay_cells"]) == 18
+    assert {
+        cell["fill_source"] for cell in summary["replay_cells"]
+    } == {"local_paper"}
+    assert all(cell["all_fills_local_paper"] for cell in summary["replay_cells"])
+    assert all(cell["replayable"] for cell in summary["replay_cells"])
+    assert all(cell["terminal_flat"] for cell in summary["replay_cells"])
+    assert not list(run.output_dir.rglob("events.jsonl"))
+    assert "source_path" not in json.dumps(summary)
+    assert "history_start" not in json.dumps(summary)
+    assert "weights" not in json.dumps(summary)
+    _assert_source_safe(summary)
+    assert run.output_dir.is_relative_to(artifact_root)
+    assert not run.output_dir.is_relative_to(Path(__file__).resolve().parents[1])
+
+
+def test_geometry_failure_returns_input_unavailable_before_fit(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    market_root, artifact_root = _install_source(tmp_path, minute_count=350)
+
+    def unexpected_fit(*_args: object, **_kwargs: object) -> object:
+        raise AssertionError("fit must not run when frozen geometry is unavailable")
+
+    monkeypatch.setattr(control, "_fit_l2_logistic", unexpected_fit)
+    run = control.run_firstrate_m5_after_cost_control(
+        run_label="geometry-r1",
+        market_data_root=market_root,
+        artifact_root=artifact_root,
+        repo_root=Path(__file__).resolve().parents[1],
+    )
+
+    assert run.status == "input_unavailable"
+    assert run.precommit_path is None
+    assert run.model_path is None
+    assert run.summary_path is None
+    assert run.input_unavailable_path is not None
+    unavailable = json.loads(run.input_unavailable_path.read_text(encoding="utf-8"))
+    assert unavailable["fit_started"] is False
+    assert unavailable["gpu_used"] is False
+    assert unavailable["kis_or_broker_called"] is False
+    assert unavailable["raw_market_data_written"] is False
+
+
+def test_control_rejects_git_workspace_artifact_root(tmp_path: Path) -> None:
+    market_root, _artifact_root = _install_source(tmp_path, minute_count=3_000)
+
+    with pytest.raises(ValueError, match="artifact_root must stay outside Git"):
+        control.run_firstrate_m5_after_cost_control(
+            run_label="repo-root-r1",
+            market_data_root=market_root,
+            artifact_root=Path(__file__).resolve().parents[1],
+            repo_root=Path(__file__).resolve().parents[1],
+        )
+
+
+def test_validation_rejects_changed_canonical_source(tmp_path: Path) -> None:
+    market_root, artifact_root = _install_source(tmp_path, minute_count=3_000)
+    run = control.run_firstrate_m5_after_cost_control(
+        run_label="changed-source-r1",
+        market_data_root=market_root,
+        artifact_root=artifact_root,
+        repo_root=Path(__file__).resolve().parents[1],
+    )
+    assert run.status == "complete"
+    source_path = market_root / "us_equities/firstrate_free_intraday/canonical/SPY_1m.csv"
+    source_path.write_text(source_path.read_text(encoding="utf-8") + "\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="canonical CSV hash"):
+        control.validate_firstrate_m5_after_cost_control(
+            run_label="changed-source-r1",
+            market_data_root=market_root,
+            artifact_root=artifact_root,
+            repo_root=Path(__file__).resolve().parents[1],
+        )
+
+
+def test_control_replays_only_contiguous_5m_chunks_across_source_gaps(tmp_path: Path) -> None:
+    market_root, artifact_root = _install_source(
+        tmp_path,
+        minute_count=3_900,
+        session_gap_after_minutes=390,
+    )
+
+    run = control.run_firstrate_m5_after_cost_control(
+        run_label="gapped-source-r1",
+        market_data_root=market_root,
+        artifact_root=artifact_root,
+        repo_root=Path(__file__).resolve().parents[1],
+    )
+
+    assert run.status == "complete"
+    assert run.summary_path is not None
+    summary = json.loads(run.summary_path.read_text(encoding="utf-8"))
+    assert all(cell["terminal_flat"] for cell in summary["replay_cells"])
+    assert all(cell["replayable"] for cell in summary["replay_cells"])
+
+
+def test_module_has_no_kis_network_or_gpu_route() -> None:
+    source = Path(control.__file__).read_text(encoding="utf-8")
+
+    assert "KIS_" not in source
+    assert "requests" not in source
+    assert "socket" not in source
+    assert "torch" not in source
+    assert "subprocess" not in source
+
+
+def _install_source(
+    tmp_path: Path,
+    *,
+    minute_count: int,
+    session_gap_after_minutes: int | None = None,
+) -> tuple[Path, Path]:
+    market_root = tmp_path / "market-data"
+    artifact_root = tmp_path / "model-artifacts"
+    canonical_root = market_root / "us_equities/firstrate_free_intraday/canonical"
+    canonical_root.mkdir(parents=True)
+    artifact_root.mkdir(parents=True)
+    normalizations: list[dict[str, object]] = []
+    for symbol, offset in (("SPY", Decimal("0")), ("QQQ", Decimal("25"))):
+        bars = _bars(
+            symbol=symbol,
+            offset=offset,
+            minute_count=minute_count,
+            session_gap_after_minutes=session_gap_after_minutes,
+        )
+        path = canonical_root / f"{symbol}_1m.csv"
+        _write_canonical_csv(path, bars)
+        normalizations.append(
+            {
+                "symbol": symbol,
+                "market": "US",
+                "timeframe": "1m",
+                "canonical_market_data_relative_path": (
+                    f"us_equities/firstrate_free_intraday/canonical/{symbol}_1m.csv"
+                ),
+                "canonical_sha256": _sha256(path.read_bytes()),
+                "bar_count": len(bars),
+                "emitted_timestamp_set_sha256": _timestamp_hash(
+                    tuple(bar.start_ts for bar in bars)
+                ),
+                "timestamp_set_equal": True,
+            }
+        )
+    receipt_path = artifact_root / (
+        "data-receipts/firstrate-free-intraday/"
+        "firstrate-free-intraday-source-local-normalization-v1.json"
+    )
+    receipt_path.parent.mkdir(parents=True)
+    receipt_path.write_text(
+        json.dumps(
+            {
+                "schema_version": "firstrate-free-intraday-normalization-receipt-v1",
+                "status": "completed",
+                "permitted_interpretation": "source_isolated_retrospective_mechanics_only",
+                "normalizations": normalizations,
+            },
+            ensure_ascii=True,
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    return market_root, artifact_root
+
+
+def _bars(
+    *,
+    symbol: str,
+    offset: Decimal,
+    minute_count: int,
+    session_gap_after_minutes: int | None = None,
+) -> list[Bar]:
+    start = datetime(2026, 1, 2, tzinfo=UTC)
+    bars: list[Bar] = []
+    for index in range(minute_count):
+        gap_count = (
+            0
+            if session_gap_after_minutes is None
+            else index // session_gap_after_minutes
+        )
+        timestamp = start + timedelta(minutes=index + gap_count * 900)
+        open_price = Decimal("100") + offset + Decimal(index) / Decimal("500")
+        pattern = Decimal((index * 17) % 11 - 5) / Decimal("1000")
+        close_price = open_price * (Decimal("1") + pattern)
+        bars.append(
+            Bar(
+                symbol=symbol,
+                market="US",
+                timeframe=Timeframe.M1,
+                start_ts=timestamp,
+                open=open_price,
+                high=max(open_price, close_price) + Decimal("0.01"),
+                low=min(open_price, close_price) - Decimal("0.01"),
+                close=close_price,
+                volume=Decimal("1000"),
+                complete=True,
+            )
+        )
+    return bars
+
+
+def _write_canonical_csv(path: Path, bars: list[Bar]) -> None:
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
+        writer.writeheader()
+        writer.writerows(bar_to_record(bar) for bar in bars)
+
+
+def _timestamp_hash(values: tuple[datetime, ...]) -> str:
+    return _sha256("".join(f"{value.isoformat()}\n" for value in values).encode("utf-8"))
+
+
+def _sha256(payload: bytes) -> str:
+    return "sha256:" + hashlib.sha256(payload).hexdigest()
+
+
+def _assert_source_safe(value: object) -> None:
+    if isinstance(value, dict):
+        forbidden = {
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume",
+            "features",
+            "labels",
+            "predictions",
+        }
+        assert not forbidden.intersection(value)
+        for nested in value.values():
+            _assert_source_safe(nested)
+    elif isinstance(value, list):
+        for nested in value:
+            _assert_source_safe(nested)

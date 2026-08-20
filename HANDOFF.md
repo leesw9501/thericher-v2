@@ -14,10 +14,26 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-The active objective is `firstrate-5m-after-cost-control-v1`: establish one
-frozen CPU-only, source-local SPY/QQQ 5m predictive control with predeclared
-nonzero cost sensitivity before any FirstRate GPU matrix is considered. It is
-exploratory-only and cannot promote a KIS, Execution, or Paper consumer.
+The active objective is `firstrate-m5-trend-rule-after-cost-control-v1`: test
+one frozen, CPU-only, source-local SPY/QQQ 5m technical trend rule after the
+separate L2-logistic control was rejected. It is exploratory-only and cannot
+promote a KIS, Execution, Paper, ensemble, or GPU consumer.
+
+The completed `firstrate-5m-after-cost-control-v1` independently reattached
+the existing canonical SPY/QQQ FirstRate source, UTC-anchored complete 5m
+windows, and frozen chronological 60-bar/61-bar-embargo contract. Its external
+run `firstrate-5m-after-cost-control-v1/20260820-r2` wrote a precommit,
+CPU-only per-symbol L2 model, source-safe aggregate summary, and independent
+validation receipt. The L2 control did not beat `always_flat` in any of its six
+SPY/QQQ nonzero-cost cells (1/3/5 bps per side), so Validation classified it
+`rejected`. All 18 model/baseline replay cells were `source: local_paper`,
+replayable, and terminal-flat. No network, credential, KIS, broker, order,
+GPU, selection, ensemble, or Paper consumer path ran. The summary and
+validation SHA-256 values are respectively
+`sha256:249a55dc53605e5381cfbaaef370ce9d36302c93594abc421a65b6685857fb2c`
+and `sha256:9d6950afdf9051aafa94e82a43eadc4ab6bf2438c10c1b0a63fb41dfe19e2de6`.
+This closes that L2 lineage; it is not evidence that a different source-local
+technical rule, a GPU architecture, or a KIS consumer is ready.
 
 The 2026-08-19 UTC fixed ETF snapshot is now external at
 `D:\market_data\us_equities\fixed_etf_prospective_lineage\canonical\tiingo_standard_eod\snapshot=2026-08-19-tiingo-standard-eod-prospective-r1`.

@@ -22,13 +22,19 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   boundary. Its closed scope leaves point-in-time, model, training, campaign,
   ranking, Paper, and GPU eligibility false. It is not a predictive input or a
   Research Steward appointment.
-- `firstrate-5m-after-cost-control-v1` is ready as one source-local,
-  CPU-only descriptive control. It freezes a contiguous 5m geometry, past-60
-  bar window, one-bar forward direction target, chronological split/embargo,
-  `always_flat` and previous-bar-direction baselines, one L2-logistic control,
-  and a 1/3/5-bps per-side sensitivity band before any result is read. The
-  strongest kill test is failure to beat flat after every nonzero cost; a result
-  cannot allocate GPU, tune, select, ensemble, or reach KIS/Paper.
+- `firstrate-5m-after-cost-control-v1` is complete and `rejected`. Its frozen
+  source-local, CPU-only 60-bar L2-logistic control did not beat `always_flat`
+  in any of the six SPY/QQQ cells under the fixed 1/3/5-bps per-side band.
+  All 18 model/baseline local-paper cells reattached as replayable and
+  terminal-flat. It cannot allocate GPU, tune, select, ensemble, or reach
+  KIS/Paper. The immutable source-safe summary is
+  `firstrate-5m-after-cost-control-v1/20260820-r2/summary.json`
+  (`sha256:249a55dc53605e5381cfbaaef370ce9d36302c93594abc421a65b6685857fb2c`).
+- `firstrate-m5-trend-rule-after-cost-control-v1` is ready as a disjoint
+  technical/chart track: one fixed causal 20/60-bar trend rule, the same
+  source-local 5m geometry, chronological split/embargo, local-paper replay,
+  and 1/3/5-bps band. It is breadth work only; it cannot select an architecture,
+  allocate GPU, or create a KIS/Paper consumer.
 - No frozen, input-qualified predictive campaign is active. The latest
   task-owned QQQ/SPY M1 chain is `input_unavailable`; its optional causal
   attestation is `not_recorded`, so it cannot freeze a target, split, or
@@ -253,8 +259,8 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | Fixed local mechanics and negative baselines only | New causal, time-disjoint input plus frozen contract |
-| Classical ML/statistical | FirstRate 5m after-cost CPU control ready, source-local only | Frozen input reattestation, then one CPU-only control; a nonzero-cost failure closes it without GPU |
+| Technical/chart and momentum/regime | One disjoint FirstRate 5m causal trend-rule control is ready | Frozen source reattestation, then one CPU-only after-cost replay; a nonzero-cost failure closes this exact rule without GPU |
+| Classical ML/statistical | FirstRate 5m L2 control rejected after all six nonzero-cost comparisons | Do not extend that L2 family or allocate GPU without a distinct frozen campaign |
 | Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
 | Portfolio/allocation/meta-decision | Deterministic source-attested selection, per-symbol policy, and scale/cap foundation only | Aligned out-of-fold upstream candidate evidence with a frozen ranking/turnover/capacity/correlation contract |
 

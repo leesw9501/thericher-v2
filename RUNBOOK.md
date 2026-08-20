@@ -2485,6 +2485,29 @@ start/end stamping as `not_disclosed` unless a separate primary source resolves
 them. Neither receipt authorizes cross-feed alignment, session completeness,
 KIS parity, a model, Paper, or live behavior.
 
+### FirstRate 5m CPU After-Cost Control
+
+Run the fixed source-local SPY/QQQ L2 control once with a new label:
+
+```powershell
+uv run python scripts/run_firstrate_5m_after_cost_control.py --run-label <unique-label>
+```
+
+The runner reads only the existing canonical FirstRate CSVs and normalization
+receipt, creates complete contiguous UTC-anchored 5m Bars in memory, and
+freezes a 60-bar observation, one-bar direction target, 61-bar embargo,
+L2-logistic fit, `always_flat`/previous-bar comparators, and 1/3/5-bps
+per-side synthetic costs. It writes only external precommit, model, aggregate
+summary, and independent validation JSON; raw bars, labels, predictions, paths,
+and local-paper event logs are not retained. It has no credential, network,
+KIS, broker, order, GPU, or Paper-consumer path.
+
+The completed `20260820-r2` run was `rejected`: its L2 candidate beat flat in
+zero of six SPY/QQQ nonzero-cost cells. All 18 replay cells were local-paper,
+replayable, and terminal-flat. Do not rerun or tune that lineage; do not infer a
+GPU, KIS, or execution consequence from it. The next disjoint technical-rule
+control needs its own frozen precommit and independent validation.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,
