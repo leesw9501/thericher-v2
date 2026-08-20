@@ -54,6 +54,7 @@ _TARGET_KEYS = tuple(
     f"{symbol}/{exchange}" for symbol, exchange in KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS
 )
 _STATE_FILENAME = "state.json"
+_CURRENT_FILENAME = "current.json"
 _RECEIPTS_DIRECTORY = "receipts"
 _SOURCE_CONTRACT = {
     "provider": "KIS Open API virtual paper",
@@ -109,6 +110,8 @@ class KisPaperD1ProspectiveObservationPairingResult:
     first_row_hashes: Mapping[str, str] | None = None
     later_observed_at: datetime | None = None
     later_row_hashes: Mapping[str, str] | None = None
+    first_receipt_id: str | None = None
+    first_receipt_sha256: str | None = None
     receipt_sha256: str | None = None
     evidence_path: Path | None = None
 
@@ -132,6 +135,10 @@ class KisPaperD1ProspectiveObservationPairingResult:
             "later_observation": _observation_payload(
                 self.later_observed_at,
                 self.later_row_hashes,
+            ),
+            "first_receipt_binding": _receipt_binding_payload(
+                self.first_receipt_id,
+                self.first_receipt_sha256,
             ),
             "next_due_at_utc": _utc_marker(self.next_due_at),
             "point_in_time_availability": "not_observed",
@@ -228,6 +235,32 @@ def validate_kis_paper_d1_prospective_observation_pairing_receipt(
     return _read_receipt(path)
 
 
+def read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+    *,
+    artifact_root: Path | str = KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_ARTIFACT_ROOT,
+    repository_root: Path | str,
+) -> dict[str, object]:
+    """Read only the hash-bound current outcome and its immutable receipts."""
+
+    root = _existing_artifact_root(Path(artifact_root), Path(repository_root))
+    receipts = root / _RECEIPTS_DIRECTORY
+    if receipts.is_symlink() or not receipts.is_dir():
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_directory_unavailable")
+    pointer = _read_current_pointer(root)
+    receipt_id = pointer["receipt_id"]
+    receipt_sha256 = pointer["receipt_sha256"]
+    if not isinstance(receipt_id, str) or not _is_sha256(receipt_sha256):
+        raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
+    receipt = _read_existing(receipts, receipt_id)
+    if receipt is None or receipt.get("receipt_sha256") != receipt_sha256:
+        raise KisPaperD1ProspectiveObservationPairingError("current_receipt_unavailable")
+    for key in ("status", "stage", "session_key"):
+        if pointer.get(key) != receipt.get(key):
+            raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
+    _validate_later_receipt_binding(receipts, receipt)
+    return receipt
+
+
 def _first_stage(
     *,
     root: Path,
@@ -288,8 +321,10 @@ def _first_stage(
         binding = _first_binding(existing, session)
         if binding is not None:
             next_due = _later_due(observed_at)
+            result = _result_from_receipt(existing, receipts / f"{receipt_id}.json")
+            _publish_current(root, receipt_id, result)
             _write_state(root, "later", next_due, session, receipt_id, existing["receipt_sha256"])
-            return _result_from_receipt(existing, receipts / f"{receipt_id}.json")
+            return result
     try:
         observation = observation_fetcher(client_factory(), observed_at=observed_at)
         hashes = _row_hashes(observation, session)
@@ -328,6 +363,7 @@ def _first_stage(
             first_row_hashes=hashes,
         ),
     )
+    _publish_current(root, receipt_id, result)
     _write_state(root, "later", next_due, session, receipt_id, result.receipt_sha256)
     return result
 
@@ -369,14 +405,53 @@ def _later_stage(
     try:
         existing = _read_existing(receipts, later_id)
     except KisPaperD1ProspectiveObservationPairingError:
-        return _terminal_failure(root, receipts, observed_at, session, "later_receipt_invalid")
+        return _terminal_failure(
+            root,
+            receipts,
+            observed_at,
+            session,
+            "later_receipt_invalid",
+            first_observed_at,
+            first_hashes,
+            None,
+            receipt_id,
+            receipt_hash,
+        )
     if existing is not None:
         try:
             result = _result_from_receipt(existing, receipts / f"{later_id}.json")
         except KisPaperD1ProspectiveObservationPairingError:
-            return _terminal_failure(root, receipts, observed_at, session, "later_receipt_invalid")
-        if result.session_key != session or result.first_row_hashes != first_hashes:
-            return _terminal_failure(root, receipts, observed_at, session, "later_receipt_invalid")
+            return _terminal_failure(
+                root,
+                receipts,
+                observed_at,
+                session,
+                "later_receipt_invalid",
+                first_observed_at,
+                first_hashes,
+                None,
+                receipt_id,
+                receipt_hash,
+            )
+        if (
+            result.session_key != session
+            or result.first_row_hashes != first_hashes
+            or result.first_receipt_id != receipt_id
+            or result.first_receipt_sha256 != receipt_hash
+        ):
+            return _terminal_failure(
+                root,
+                receipts,
+                observed_at,
+                session,
+                "later_receipt_invalid",
+                first_observed_at,
+                first_hashes,
+                None,
+                receipt_id,
+                receipt_hash,
+            )
+        _publish_current(root, later_id, result)
         _write_state(root, "first", _next_first_due(observed_at), None, None, None)
         return result
     if not _cache_is_conflict_free(cache_root, repository_root, cache_loader):
@@ -389,6 +464,8 @@ def _later_stage(
             first_observed_at,
             first_hashes,
             later_id,
+            receipt_id,
+            receipt_hash,
         )
     try:
         observation = observation_fetcher(client_factory(), observed_at=observed_at)
@@ -409,6 +486,8 @@ def _later_stage(
             first_observed_at,
             first_hashes,
             later_id,
+            receipt_id,
+            receipt_hash,
         )
     status: PairingStatus = "measurement_only_match"
     reason: str | None = None
@@ -428,6 +507,8 @@ def _later_stage(
             first_row_hashes=first_hashes,
             later_observed_at=observed_at,
             later_row_hashes=later_hashes,
+            first_receipt_id=receipt_id,
+            first_receipt_sha256=receipt_hash,
         ),
         receipt_id=later_id,
     )
@@ -442,6 +523,8 @@ def _terminal_failure(
     first_observed_at: datetime | None = None,
     first_hashes: Mapping[str, str] | None = None,
     receipt_id: str | None = None,
+    first_receipt_id: str | None = None,
+    first_receipt_sha256: str | None = None,
 ) -> KisPaperD1ProspectiveObservationPairingResult:
     return _close(
         root=root,
@@ -455,6 +538,8 @@ def _terminal_failure(
             session_key=session,
             first_observed_at=first_observed_at,
             first_row_hashes=first_hashes,
+            first_receipt_id=first_receipt_id,
+            first_receipt_sha256=first_receipt_sha256,
         ),
         receipt_id=receipt_id or _terminal_receipt_id("later", session, observed_at),
     )
@@ -468,6 +553,7 @@ def _close(
     receipt_id: str,
 ) -> KisPaperD1ProspectiveObservationPairingResult:
     persisted = _persist(receipts, receipt_id, result)
+    _publish_current(root, receipt_id, persisted)
     _write_state(root, "first", persisted.next_due_at, None, None, None)
     return persisted
 
@@ -527,6 +613,8 @@ def _result(
     first_row_hashes: Mapping[str, str] | None = None,
     later_observed_at: datetime | None = None,
     later_row_hashes: Mapping[str, str] | None = None,
+    first_receipt_id: str | None = None,
+    first_receipt_sha256: str | None = None,
 ) -> KisPaperD1ProspectiveObservationPairingResult:
     return KisPaperD1ProspectiveObservationPairingResult(
         status=status,
@@ -539,6 +627,8 @@ def _result(
         first_row_hashes=first_row_hashes,
         later_observed_at=later_observed_at,
         later_row_hashes=later_row_hashes,
+        first_receipt_id=first_receipt_id,
+        first_receipt_sha256=first_receipt_sha256,
     )
 
 
@@ -567,6 +657,7 @@ def _result_from_receipt(
 ) -> KisPaperD1ProspectiveObservationPairingResult:
     first_observed_at, first_hashes = _receipt_observation(payload, "first_observation")
     later_observed_at, later_hashes = _receipt_observation(payload, "later_observation")
+    first_receipt_id, first_receipt_sha256 = _receipt_binding(payload)
     status = payload.get("status")
     stage = payload.get("stage")
     if status not in {
@@ -587,6 +678,8 @@ def _result_from_receipt(
         first_row_hashes=first_hashes,
         later_observed_at=later_observed_at,
         later_row_hashes=later_hashes,
+        first_receipt_id=first_receipt_id,
+        first_receipt_sha256=first_receipt_sha256,
         receipt_sha256=_hash_text(payload.get("receipt_sha256")),
         evidence_path=path,
     )
@@ -634,8 +727,16 @@ def _read_receipt(path: Path) -> dict[str, object]:
     _parse_utc(payload.get("observed_at_utc"))
     _parse_utc(payload.get("next_due_at_utc"))
     _parse_date(payload.get("session_key"))
-    _receipt_observation(payload, "first_observation")
+    first_observed_at, first_hashes = _receipt_observation(payload, "first_observation")
     _receipt_observation(payload, "later_observation")
+    first_receipt_id, first_receipt_sha256 = _receipt_binding(payload)
+    stage = payload.get("stage")
+    if stage == "first" and (first_receipt_id is not None or first_receipt_sha256 is not None):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    if stage == "later" and first_observed_at is not None and first_hashes is not None and (
+        first_receipt_id is None or first_receipt_sha256 is None
+    ):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
     payload["receipt_sha256"] = declared
     return payload
 
@@ -667,6 +768,123 @@ def _observation_payload(
         "observed_at_utc": None if observed_at is None else _utc_marker(observed_at),
         "row_sha256": None if hashes is None else dict(hashes),
     }
+
+
+def _receipt_binding_payload(
+    receipt_id: str | None,
+    receipt_sha256: str | None,
+) -> dict[str, str | None]:
+    if (receipt_id is None) != (receipt_sha256 is None):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_binding_invalid")
+    if receipt_sha256 is not None and not _is_sha256(receipt_sha256):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_binding_invalid")
+    return {"receipt_id": receipt_id, "receipt_sha256": receipt_sha256}
+
+
+def _receipt_binding(payload: Mapping[str, object]) -> tuple[str | None, str | None]:
+    value = payload.get("first_receipt_binding")
+    if not isinstance(value, Mapping):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    receipt_id = value.get("receipt_id")
+    receipt_sha256 = value.get("receipt_sha256")
+    if receipt_id is None and receipt_sha256 is None:
+        return None, None
+    if not isinstance(receipt_id, str) or not _is_sha256(receipt_sha256):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    return receipt_id, receipt_sha256
+
+
+def _validate_later_receipt_binding(
+    receipts: Path,
+    receipt: Mapping[str, object],
+) -> None:
+    if receipt.get("stage") != "later":
+        return
+    first_observed_at, first_hashes = _receipt_observation(receipt, "first_observation")
+    first_receipt_id, first_receipt_sha256 = _receipt_binding(receipt)
+    if first_observed_at is None or first_hashes is None:
+        if first_receipt_id is not None or first_receipt_sha256 is not None:
+            raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+        return
+    if first_receipt_id is None or first_receipt_sha256 is None:
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    first = _read_existing(receipts, first_receipt_id)
+    if (
+        first is None
+        or first.get("receipt_sha256") != first_receipt_sha256
+        or first.get("status") != "first_recorded"
+        or first.get("stage") != "first"
+        or first.get("session_key") != receipt.get("session_key")
+    ):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    first_time, first_hashes_from_receipt = _receipt_observation(first, "first_observation")
+    if first_time != first_observed_at or first_hashes_from_receipt != first_hashes:
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+
+
+def _publish_current(
+    root: Path,
+    receipt_id: str,
+    result: KisPaperD1ProspectiveObservationPairingResult,
+) -> None:
+    if not _is_sha256(result.receipt_sha256):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    payload: dict[str, object] = {
+        "schema_version": SCHEMA_VERSION,
+        "kind": KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_KIND,
+        "version": KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_VERSION,
+        "record_type": "current_outcome_pointer",
+        "source_contract_sha256": (
+            KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_SOURCE_CONTRACT_SHA256
+        ),
+        "receipt_id": receipt_id,
+        "receipt_sha256": result.receipt_sha256,
+        "status": result.status,
+        "stage": result.stage,
+        "session_key": None if result.session_key is None else result.session_key.isoformat(),
+        "updated_at_utc": _utc_marker(result.observed_at),
+    }
+    payload["pointer_sha256"] = _sha256(payload)
+    path = root / _CURRENT_FILENAME
+    temporary = root / f".{_CURRENT_FILENAME}.tmp"
+    with temporary.open("wb") as handle:
+        handle.write(_canonical_json(payload))
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(temporary, path)
+
+
+def _read_current_pointer(root: Path) -> dict[str, object]:
+    path = root / _CURRENT_FILENAME
+    if path.is_symlink() or not path.is_file():
+        raise KisPaperD1ProspectiveObservationPairingError("current_pointer_unavailable")
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid") from error
+    if not isinstance(payload, dict):
+        raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
+    declared = payload.pop("pointer_sha256", None)
+    if (
+        payload.get("schema_version") != SCHEMA_VERSION
+        or payload.get("kind") != KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_KIND
+        or payload.get("version") != KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_VERSION
+        or payload.get("record_type") != "current_outcome_pointer"
+        or payload.get("source_contract_sha256")
+        != KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_SOURCE_CONTRACT_SHA256
+        or not isinstance(payload.get("receipt_id"), str)
+        or not _is_sha256(payload.get("receipt_sha256"))
+        or payload.get("status")
+        not in {"first_recorded", "measurement_only_match", "disqualified", "input_unavailable"}
+        or payload.get("stage") not in {"first", "later"}
+        or not _is_sha256(declared)
+        or declared != _sha256(payload)
+    ):
+        raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
+    _parse_utc(payload.get("updated_at_utc"))
+    _parse_date(payload.get("session_key"))
+    payload["pointer_sha256"] = declared
+    return payload
 
 
 def _load_state(root: Path, observed_at: datetime) -> dict[str, object]:

@@ -38,7 +38,10 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 two-trigger KST worker: first observation at 08:15 and later re-observation at
 23:20, Tuesday through Saturday. It uses the existing QQQ/NAS + SPY/AMS
 virtual-Paper daily route only, keeps the v2 cache read-only, and persists
-only an external source-contract hash, session key, timestamps, and row hashes.
+only an external source-contract hash, session key, timestamps, row hashes, and
+a hash-bound source-safe current-outcome pointer to immutable receipts. The
+offline reader revalidates the pointer plus exact first/later receipt binding;
+an absent pointer is only `current_pointer_unavailable`.
 The 2026-08-20 wiring smoke was `not_due`; its durable first-stage `next_due`
 is 2026-08-21 08:15 KST. No raw rows, credentials, KIS request, model, GPU,
 or consumer path ran. A later match is measurement-only; a missing or changed
@@ -221,7 +224,7 @@ cache-recovery branch, not session coverage, finality, or consumer eligibility.
 | FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Complete: source/local-resampling reattestation, 60-bar/61-bar-embargo split, and all 18 local-paper replay cells completed. The L2 candidate had zero wins over flat in six nonzero-cost SPY/QQQ cells, so the lineage is `rejected`; no GPU or consumer follows. |
 | Tiingo D1 event-mask coverage audit | Data | Complete: the exact rotation receipt and pinned snapshot reattached independently. Event masks accounted for all 1,892 validation exclusions, discontinuity-only exclusions were zero, and the aggregate binding was consistent. The rotation lineage is closed without a policy change. |
 | Norgate trial host readiness reconciliation | Data / Infra Capability | Complete: the immutable diagnosis is `local_api_not_ready_updater_not_observed`, independently validated without a second host invocation. It records a local updater prerequisite only; no source rows, updater action, network, or repeated poll followed. |
-| KIS D1 prospective observation pairing | Data / Infra Capability | Owned: the installed two-stage worker has an external durable `next_due` and a validated Docker `not_due` smoke. The first eligible session will write an immutable first hash receipt; the later stage binds exactly to it. No result exists yet, and no model or consumer is enabled. |
+| KIS D1 prospective observation pairing | Data / Infra Capability | Owned: the installed two-stage worker has an external durable `next_due`, validated Docker `not_due` smoke, and a hash-bound current-outcome reader. The first eligible session will write an immutable first hash receipt; the later stage binds exactly to it. No current pointer exists yet, so no result, model, or consumer is enabled. |
 | FirstRate 5m trend-rule input reattestation | Data | Closed as duplicate: the completed fixed 20/60 control already bound this exact source-local 5m geometry and chronology. Do not dispatch another reattestation under a new label. |
 | Tiingo prospective EOD refresh | Data | Complete: one current dated external SPY/QQQ/IWM snapshot was acquired through the fixed three-request path and reattached offline by dataset/manifest identity. Its source-as-of boundary and all lineage-only eligibility flags remain fixed; focused and full authority verification passed. |
 | Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |

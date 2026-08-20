@@ -41,10 +41,14 @@ promotes a model, GPU campaign, Execution input, Paper order, or live behavior.
 1. Run `scripts\start_next_codex_task.ps1`, then read the current handoff,
    policy, runbook, and Data, Engine Research, Execution, and orchestration
    stateboards before inspecting a result.
-2. Reattach only a fresh complete result with exact first/later receipt binding:
-   same source-contract hash, completed-session key, target set, first-receipt
-   identity, and immutable receipt identities. Treat any missing or invalid
-   link as scoped `input_unavailable` or `disqualified`, never as a success.
+2. Reattach only a fresh complete result through
+   `read_current_kis_paper_d1_prospective_observation_pairing_outcome`. It must
+   validate the hash-bound current pointer plus the same source-contract hash,
+   completed-session key, target set, first-receipt identity, and immutable
+   receipt identities. Treat any missing or invalid link as scoped
+   `input_unavailable` or `disqualified`, never as a success. A
+   `first_recorded` pointer is incomplete; only a validated `later` receipt is
+   a two-observation result.
 3. If no complete result is present, preserve the worker-owned `next_due` and
    dispatch or continue a ready non-conflicting package. Do not foreground-wait
    or manufacture a retry/schedule.

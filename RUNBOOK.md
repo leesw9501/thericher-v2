@@ -576,6 +576,18 @@ wait. Do not invoke the task manually. The initial container smoke was outside
 the scheduled minute and returned `not_due` without constructing a KIS client;
 the first actual stage is due 2026-08-21 08:15 KST.
 
+After the task writes a result, use only
+`read_current_kis_paper_d1_prospective_observation_pairing_outcome` from the
+pairing module to inspect it. The reader is host-only and offline: it validates
+the hash-bound `current.json` pointer, its immutable receipt, and, for a later
+result, the exact first receipt ID/hash, session, and first-observation hashes.
+`current_pointer_unavailable` means no result is available yet; it is not a
+match, a failure, a retry instruction, or a reason to invoke the task.
+`first_recorded` is likewise incomplete: only a validated `later` receipt is a
+two-observation outcome. The hash linkage is provenance under an assumed-honest
+artifact host, not cryptographic proof of Task Scheduler origin, provider
+finality, or decision-time availability.
+
 On 2026-08-19, the bounded direct refresh first wrote a `collection_required`
 preflight receipt for the 2026-08-18 eligible session
 (`sha256:7987f5a89f3ec8631646ece7718f0433ae7308aad9b27060cf0efffa4ad7028f`).

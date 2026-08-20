@@ -91,6 +91,14 @@ Claude falsification check is still required before relying on an actual pair
 outcome. A matching pair remains measurement-only; missing/mismatched data
 disqualifies only that session.
 
+The observer now writes a hash-bound source-safe `current.json` pointer only to
+an immutable outcome receipt. Its offline reader independently revalidates the
+pointer, referenced receipt, and, for a later result, the exact first-receipt
+ID/hash, session, and first-observation hashes. The initial read-only host
+check returned `current_pointer_unavailable`, meaning no actual result exists;
+it made no KIS, credential, Docker, or cache call. A missing pointer is
+unknown, never an inferred match or failure.
+
 The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` created the
 isolated QQQ/NAS + SPY/AMS KIS Paper D1 cache at
 `D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v2`
