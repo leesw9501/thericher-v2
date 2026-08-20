@@ -550,6 +550,32 @@ source-safe recovery reason, returns `20`, and leaves retry to the next due
 time. It does not sleep the foreground, create a parallel request flood, or
 block independent work.
 
+### QQQ/SPY D1 Prospective Observation Pairing
+
+The separate revision-leakage measurement never writes this cache. Its task is
+`thericher-kis-paper-d1-prospective-observation-pairing`, with first and later
+triggers at 08:15 and 23:20 KST Tuesday through Saturday. It mounts the v2
+cache read-only, uses only the existing virtual-Paper `dailyprice` route for
+QQQ/NAS and SPY/AMS, and stores state plus immutable source-safe receipts at:
+
+```text
+D:\thericher-v2\model-artifacts\data\kis-paper-d1-prospective-observation-pairing\v1
+```
+
+The first stage records a fixed source-contract hash, completed-session key,
+UTC observation time, and one canonical row hash per target. The later stage
+must bind exactly to that first receipt and same session. A missing target,
+invalid receipt/state, cache conflict, absent session row, or identity mismatch
+is `input_unavailable` or `disqualified` for that session. A match is
+`measurement_only_match`; it does not establish point-in-time availability,
+provider finality, corporate-action status, model input, GPU eligibility,
+Execution input, Paper order, or live behavior.
+
+The worker owns `next_due` in its external state and does not poll or foreground
+wait. Do not invoke the task manually. The initial container smoke was outside
+the scheduled minute and returned `not_due` without constructing a KIS client;
+the first actual stage is due 2026-08-21 08:15 KST.
+
 On 2026-08-19, the bounded direct refresh first wrote a `collection_required`
 preflight receipt for the 2026-08-18 eligible session
 (`sha256:7987f5a89f3ec8631646ece7718f0433ae7308aad9b27060cf0efffa4ad7028f`).

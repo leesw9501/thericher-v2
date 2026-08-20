@@ -76,6 +76,21 @@ decision-time/post-finality identity measurement for the existing QQQ/SPY v2
 cache. It can disqualify revision-leaking input but cannot make a predictive,
 GPU, Paper, or live claim.
 
+The pairing implementation is now installed as
+`thericher-kis-paper-d1-prospective-observation-pairing`. It has two KST
+triggers, 08:15 and 23:20 Tuesday through Saturday, and a small external state
+pointer under `D:\thericher-v2\model-artifacts\data\kis-paper-d1-prospective-observation-pairing\v1`.
+It uses only the existing QQQ/NAS + SPY/AMS virtual-Paper daily route and v2
+cache read-only; immutable receipts retain only the fixed source-contract hash,
+session key, timestamps, and per-target canonical row hashes. Its container
+wiring smoke was `not_due` at 2026-08-20T08:27Z, so it made no KIS request and
+there is no pair result yet. The durable first-stage due time is 2026-08-21
+08:15 KST. A terse implementation drift check from Claude returned `uncertain`;
+therefore no observation is treated as a qualification result, and a later
+Claude falsification check is still required before relying on an actual pair
+outcome. A matching pair remains measurement-only; missing/mismatched data
+disqualifies only that session.
+
 The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` created the
 isolated QQQ/NAS + SPY/AMS KIS Paper D1 cache at
 `D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v2`

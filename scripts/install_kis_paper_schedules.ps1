@@ -284,6 +284,15 @@ $schedules = @(
         ExecutionLimitMinutes = 10
     },
     @{
+        Name = "thericher-kis-paper-d1-prospective-observation-pairing"
+        Profile = "kis-paper-d1-prospective-observation-pairing"
+        Service = "kis-paper-d1-prospective-observation-pairing"
+        ImageServices = @("kis-paper-d1-prospective-observation-pairing")
+        At = @("08:15", "23:20")
+        RecoverMissedRun = $false
+        ExecutionLimitMinutes = 5
+    },
+    @{
         Name = "thericher-kis-paper-daily-broad-backfill"
         Profile = "kis-paper-daily-broad-backfill"
         Service = "kis-paper-daily-broad-backfill"
@@ -338,6 +347,7 @@ if (
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-spy-session" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-nas-forward" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-pair-forward" `
+        -or $selectedSchedules.Name -contains "thericher-kis-paper-d1-prospective-observation-pairing" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-daily-broad-backfill" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-spy-prefix-negative-control" `
         -or $selectedSchedules.Name -contains "thericher-kis-paper-spy-prefix-feasibility"

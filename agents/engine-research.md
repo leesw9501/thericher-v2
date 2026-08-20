@@ -50,6 +50,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   point-in-time availability, provider finality, and corporate-action
   qualification are unobserved. It cannot freeze a target/split, enter a
   campaign, reserve GPU, or become a KIS/Paper consumer.
+- The new QQQ/SPY D1 prospective observation worker has no pair result yet.
+  Its first/later hash comparison is a Data-only disqualification measurement;
+  a match cannot freeze a campaign, allocate GPU, select a model, or create a
+  KIS/Paper consumer.
 - No frozen, input-qualified predictive campaign is active. The latest
   task-owned QQQ/SPY M1 chain is `input_unavailable`; its optional causal
   attestation is `not_recorded`, so it cannot freeze a target, split, or

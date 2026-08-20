@@ -2,64 +2,66 @@
 
 ## Objective
 
-Complete kis-paper-d1-prospective-observation-pairing-v1: add a bounded,
-source-safe QQQ/SPY daily-observation pairing capability that records one
-decision-time snapshot and one later re-observation of the same completed
-session through the existing KIS Paper market-data route. Its only research
-purpose is to falsify revision-leaking input; a matching pair never promotes
-the v2 cache to a model, GPU, Execution, Paper, or live consumer.
+Complete `kis-paper-d1-prospective-observation-pair-result-v1`: independently
+reattach and validate the first complete QQQ/SPY D1 two-observation result
+emitted by the installed task-owned observer for one exact completed session.
+The result may only classify that session as `measurement_only_match`,
+`input_unavailable`, or `disqualified`; it never qualifies a dataset or
+promotes a model, GPU campaign, Execution input, Paper order, or live behavior.
+
+## Context
+
+- The installed task is `thericher-kis-paper-d1-prospective-observation-pairing`.
+  It owns the `08:15` and `23:20` KST Tuesday-Saturday opportunities.
+- Its state and immutable, source-safe receipts are under
+  `D:\thericher-v2\model-artifacts\data\kis-paper-d1-prospective-observation-pairing\v1`.
+- It observes only the existing isolated QQQ/NAS + SPY/AMS v2 cache through
+  the KIS Paper `dailyprice` route. The cache stays read-only to this work.
+- The implementation smoke was `not_due`; no actual pair result exists yet.
 
 ## Boundaries
 
-- Use only KIS_PAPER_* through the existing Data-owned QQQ/NAS + SPY/AMS daily
-  route. Never read, route, or mention KIS_LIVE_*.
-- Market-data calls and a goal-owned bounded schedule are approved. Do not use
-  account, position, quote, order, or broker endpoints.
-- Keep raw cache bytes under D:/market_data and source-safe receipts under
-  D:/thericher-v2/model-artifacts; never print or retain raw rows, credentials,
-  account identifiers, or response bodies in Git or receipts.
-- Preserve the v1 quarantine and current v2 immutable data contract. Do not
-  overwrite, clear, relabel, or use a conflicting row as an implicit revision.
-- Reuse the existing single-client, measured-pacing, durable-cursor behavior.
-  A rate limit or next due time belongs to the owned worker or schedule, never
-  to foreground orchestration.
-- Do not create a model, target, feature, campaign, GPU appointment, replay,
-  order intent, Paper order, or live behavior.
-- Do not treat one observation, a later final value, or a matching pair as
-  point-in-time availability, provider finality, corporate-action qualification,
-  a complete universe, or a profitability result.
+- Do not manually invoke the task, Docker service, KIS client, collector, or
+  scheduler. Do not poll in the foreground.
+- Read only source-safe Task Scheduler facts and source-safe state/receipt
+  fields through the existing offline reader. Never print or retain raw rows,
+  credentials, account identifiers, request/response bodies, or private state.
+- Never read, route, or mention `KIS_LIVE_*`. Do not use account, position,
+  quote, order, or broker endpoints.
+- A missing, incomplete, invalid, or mismatched result applies only to the
+  bound session. It must not become a general Data, Research, Execution, or
+  Paper hold.
+- Do not change the v1 quarantine or write, clear, relabel, or copy either
+  cache lineage.
+- Do not create a feature, target, model, training run, GPU appointment,
+  backtest, intent, Paper order, public service, or live behavior.
 
 ## Required Work
 
-1. Reattach the current v2 QQQ/SPY cache and its source-safe receipts before
-   implementation. Define one immutable pair contract with the exact session
-   key, first-observation time, later-observation time, source identity hash,
-   and allowed categorical outcomes.
-2. Add a minimal Data-owned two-stage worker or schedule using the existing
-   daily collection path. It must persist the first stage before the later
-   re-observation and keep a durable next_due without foreground waiting.
-3. Make pair evaluation fail closed: missing first observation, absent
-   decision-time bar, identity mismatch, conflicting cache state, or incomplete
-   pair yields a scoped input_unavailable or disqualified outcome. A matching
-   pair is measurement-only.
-4. Add focused tests for KIS Paper-only routing, no credential/raw-data leakage
-   in receipts, exact pair binding, immutable/idempotent artifacts, mismatch
-   rejection, and schedule-owned waiting.
-5. Run offline tests and a bounded wiring smoke. If an eligible session occurs
-   under the task-owned schedule, run exactly the scoped first or later stage;
-   otherwise preserve its next_due and continue another ready package without
-   polling.
-6. Ask Claude for a concise falsification-first review before relying on any
-   pair result. Refresh stateboards, HANDOFF.md, and RUNBOOK.md; run required
-   verification; commit, push, replace this file with exactly one next material
-   objective, and continue.
+1. Run `scripts\start_next_codex_task.ps1`, then read the current handoff,
+   policy, runbook, and Data, Engine Research, Execution, and orchestration
+   stateboards before inspecting a result.
+2. Reattach only a fresh complete result with exact first/later receipt binding:
+   same source-contract hash, completed-session key, target set, first-receipt
+   identity, and immutable receipt identities. Treat any missing or invalid
+   link as scoped `input_unavailable` or `disqualified`, never as a success.
+3. If no complete result is present, preserve the worker-owned `next_due` and
+   dispatch or continue a ready non-conflicting package. Do not foreground-wait
+   or manufacture a retry/schedule.
+4. Before relying on an actual result, ask Claude for a concise
+   falsification-first review of the exact measurement claim. Record only its
+   categorical verdict and the evidence pointer; `uncertain` or
+   `review_unavailable` narrows this result alone.
+5. Refresh the stateboards, `HANDOFF.md`, and `RUNBOOK.md` with source-safe
+   evidence. Run required verification for changes, commit, push, and replace
+   this file with exactly one next material company objective.
 
 ## Strongest Kill Test
 
-For either QQQ or SPY, if the intended decision-time observation is absent or
-its immutable identity differs from the later re-observation, the session is
-disqualified. If no two-observation pair can be produced prospectively, close
-this measurement path rather than extending it.
+Any absent target, corrupt or unbound first receipt, changed source contract,
+different session key, or changed canonical row hash disqualifies the exact
+session. A hash match alone proves neither decision-time availability, provider
+finality, corporate-action status, nor a predictive-use qualification.
 
 ## Verification
 
