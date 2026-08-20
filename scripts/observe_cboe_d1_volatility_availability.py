@@ -6,7 +6,7 @@ import argparse
 import json
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import UTC, date, datetime
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import HTTPRedirectHandler, Request, build_opener
@@ -158,6 +158,12 @@ def _utc_datetime_argument(value: str) -> datetime:
     return parsed
 
 
+def _utc_now() -> datetime:
+    """Return the instant a scheduled observer actually begins its request."""
+
+    return datetime.now(tz=UTC)
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Observe one Cboe D1 volatility series")
     parser.add_argument(
@@ -167,7 +173,13 @@ def build_parser() -> argparse.ArgumentParser:
         choices=sorted(_CBOE_DAILY_PRICE_URLS),
     )
     parser.add_argument("--session-label", required=True, type=_date_argument)
-    parser.add_argument("--observed-at", required=True, type=_utc_datetime_argument)
+    observed_at = parser.add_mutually_exclusive_group(required=True)
+    observed_at.add_argument("--observed-at", type=_utc_datetime_argument)
+    observed_at.add_argument(
+        "--observed-now",
+        action="store_true",
+        help="Capture the actual UTC instant immediately before the one-shot request.",
+    )
     parser.add_argument("--session-close", required=True, type=_utc_datetime_argument)
     parser.add_argument("--next-market-open", required=True, type=_utc_datetime_argument)
     parser.add_argument("--artifact-root", required=True, type=Path)
@@ -180,10 +192,11 @@ def main(*, fetcher: Fetcher = fetch_cboe_daily_csv) -> None:
     args = parser.parse_args()
     if len(args.series) != 1:
         parser.error("--series must be supplied exactly once")
+    observed_at = args.observed_at if args.observed_at is not None else _utc_now()
     result = observe_once(
         series=args.series[0],
         session_label=args.session_label,
-        observed_at=args.observed_at,
+        observed_at=observed_at,
         session_close=args.session_close,
         next_market_open=args.next_market_open,
         artifact_root=args.artifact_root,

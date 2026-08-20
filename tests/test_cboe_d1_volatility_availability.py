@@ -335,6 +335,52 @@ def test_cli_observes_one_vix_response_with_no_cache_and_source_safe_output(
         assert raw_value not in output.out
 
 
+def test_cli_observed_now_records_the_runtime_utc_instant(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str], monkeypatch: pytest.MonkeyPatch
+) -> None:
+    module = _cli_module()
+    observed_at = datetime(2026, 8, 6, 16, 20, tzinfo=UTC)
+    monkeypatch.setattr(module, "_utc_now", lambda: observed_at)
+
+    def fetcher(url: str, headers: dict[str, str]):
+        assert url == _SOURCE_URL
+        assert headers == {"Cache-Control": "no-cache", "Pragma": "no-cache"}
+        return module.CboeHttpResponse(status_code=200, body=_PAYLOAD_LF, headers={})
+
+    artifact_root = tmp_path / "artifacts"
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "observe_cboe_d1_volatility_availability.py",
+            "--series",
+            "VIX",
+            "--session-label",
+            "2026-08-06",
+            "--observed-now",
+            "--session-close",
+            "2026-08-06T16:15:00Z",
+            "--next-market-open",
+            "2026-08-07T09:15:00Z",
+            "--artifact-root",
+            str(artifact_root),
+            "--repository-root",
+            str(repo_root),
+        ],
+    )
+
+    module.main(fetcher=fetcher)
+
+    result = json.loads(capsys.readouterr().out)
+    receipt_directory = artifact_root / "cboe-d1-volatility-availability-observations"
+    receipt_path = next(receipt_directory.rglob("receipt.json"))
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    assert result["status"] == "observed"
+    assert receipt["observed_at_utc"] == "2026-08-06T16:20:00Z"
+
+
 @pytest.mark.parametrize(
     "response",
     (
