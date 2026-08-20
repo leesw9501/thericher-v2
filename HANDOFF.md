@@ -87,8 +87,10 @@ wiring smoke was `not_due` at 2026-08-20T08:27Z, so it made no KIS request and
 there is no pair result yet. Task Scheduler records that its 2026-08-20 23:20
 KST invocation returned `0`, while the offline reader remains
 `current_pointer_unavailable`; that exit code is not stage or outcome evidence.
-The next task-owned run is 2026-08-21 08:15 KST. A terse implementation drift
-check from Claude returned `uncertain`;
+The next task-owned run is 2026-08-21 08:15 KST. One thread-owned, one-shot
+offline reattachment follow-up is scheduled for 2026-08-21 23:30 KST, after
+both owned stages. A terse implementation drift check from Claude returned
+`uncertain`;
 therefore no observation is treated as a qualification result, and a later
 Claude falsification check is still required before relying on an actual pair
 outcome. A matching pair remains measurement-only; missing/mismatched data
