@@ -253,7 +253,10 @@ def read_current_kis_paper_d1_prospective_observation_pairing_outcome(
     receipt_sha256 = pointer["receipt_sha256"]
     if not _is_receipt_id(receipt_id) or not _is_sha256(receipt_sha256):
         raise KisPaperD1ProspectiveObservationPairingError("current_pointer_invalid")
-    receipt = _read_existing(receipts, receipt_id)
+    try:
+        receipt = _read_existing(receipts, receipt_id)
+    except KisPaperD1ProspectiveObservationPairingError:
+        receipt = None
     if (
         receipt is None
         or receipt.get("receipt_id") != receipt_id
@@ -655,7 +658,9 @@ def _persist(
             handle.flush()
             os.fsync(handle.fileno())
     except FileExistsError:
-        payload = _read_receipt(path)
+        payload = _read_existing(receipts, receipt_id)
+        if payload is None:
+            raise KisPaperD1ProspectiveObservationPairingError("receipt_unavailable") from None
     return _result_from_receipt(payload, path)
 
 
@@ -710,7 +715,12 @@ def _read_existing(receipts: Path, receipt_id: str) -> dict[str, object] | None:
     if not _is_receipt_id(receipt_id):
         raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
     path = receipts / f"{receipt_id}.json"
-    return None if not path.exists() else _read_receipt(path)
+    if not path.exists():
+        return None
+    payload = _read_receipt(path)
+    if payload.get("receipt_id") != receipt_id:
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    return payload
 
 
 def _read_receipt(path: Path) -> dict[str, object]:

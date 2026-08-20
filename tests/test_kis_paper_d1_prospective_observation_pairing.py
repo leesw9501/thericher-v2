@@ -299,6 +299,55 @@ def test_current_reader_rejects_a_pointer_receipt_path_escape(tmp_path: Path) ->
         )
 
 
+def test_current_reader_rejects_a_first_receipt_with_mismatched_file_identity(
+    tmp_path: Path,
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    first_fetcher, _ = _recording_fetcher(_observation(FIRST_OBSERVED_AT))
+    first = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=first_fetcher,
+    )
+    later_fetcher, _ = _recording_fetcher(_observation(LATER_OBSERVED_AT))
+    later = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=LATER_OBSERVED_AT,
+        observation_fetcher=later_fetcher,
+    )
+    assert first.evidence_path is not None
+    assert later.evidence_path is not None
+    forged_first = json.loads(first.evidence_path.read_text(encoding="utf-8"))
+    forged_first["receipt_id"] = "first-rebound"
+    forged_first.pop("receipt_sha256")
+    forged_first["receipt_sha256"] = pairing._sha256(forged_first)
+    first.evidence_path.write_text(json.dumps(forged_first), encoding="utf-8")
+    forged_later = json.loads(later.evidence_path.read_text(encoding="utf-8"))
+    forged_later["first_receipt_binding"]["receipt_sha256"] = forged_first[
+        "receipt_sha256"
+    ]
+    forged_later.pop("receipt_sha256")
+    forged_later["receipt_sha256"] = pairing._sha256(forged_later)
+    later.evidence_path.write_text(json.dumps(forged_later), encoding="utf-8")
+    pointer_path = _current_pointer(artifact_root)
+    pointer = json.loads(pointer_path.read_text(encoding="utf-8"))
+    pointer["receipt_sha256"] = forged_later["receipt_sha256"]
+    pointer.pop("pointer_sha256")
+    pointer["pointer_sha256"] = pairing._sha256(pointer)
+    pointer_path.write_text(json.dumps(pointer), encoding="utf-8")
+
+    with pytest.raises(
+        pairing.KisPaperD1ProspectiveObservationPairingError,
+        match="receipt_invalid",
+    ):
+        pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
 def test_current_reader_rejects_a_later_receipt_bound_to_the_wrong_first(
     tmp_path: Path,
 ) -> None:
