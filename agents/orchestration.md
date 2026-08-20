@@ -6,12 +6,14 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`firstrate-m5-mean-reversion-after-cost-control-v1` is ready. Engine Research
-will evaluate one fixed source-local 5m mean-reversion rule through the existing
-local-paper simulator, with the same fixed after-cost comparison discipline as
-the closed L2 and trend controls. This is a bounded breadth control: no KIS,
-network, credential, GPU, Execution, Paper-consumer, or live consequence
-follows. The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1`
+`firstrate-m5-mean-reversion-after-cost-control-v1` is complete and
+`rejected`: the fixed 14-period Wilder-RSI 30/50 long-only rule beat
+`always_flat` in zero of six SPY/QQQ cost-band cells. Its 12 aggregate-only
+local-paper cells were replayable and terminal-flat, with no network,
+credential, KIS, broker, order, GPU, Execution, Paper-consumer, or live
+consequence. The next ready, non-conflicting Engine Research package is the
+already frozen Tiingo D1 trend-pullback rotation falsification on its separate
+pinned snapshot. The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1`
 created one isolated QQQ/SPY KIS Paper D1 v2 forward-cache lineage after v1's
 retained revision conflicts while preserving v1 bytes and its quarantine. A
 network-disabled preflight returned `collection_required`, one serial v2
@@ -49,6 +51,7 @@ named clock/session, decision-time availability, and provider finality
 | --- | --- | --- | --- |
 | FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: source reattached and 18 `local_paper`, replayable, terminal-flat cells completed. L2 beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; no GPU or KIS/Paper consumer follows. |
 | FirstRate 5m trend-rule after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: the fixed 20/60 rule beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; all 18 cells were `local_paper`, replayable, and terminal-flat. No GPU or KIS/Paper consumer follows. |
+| FirstRate 5m mean-reversion after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: the fixed Wilder-RSI(14) 30/50 rule beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; all 12 cells were `local_paper`, replayable, and terminal-flat. No GPU or KIS/Paper consumer follows. |
 | KIS QQQ/SPY D1 v2 fresh-cache bootstrap | Data / Infra Capability | Isolated external v2 root, existing KIS Paper daily route, and source-safe receipt root | Complete: the fixed QQQ/NAS + SPY/AMS v2 cache reattached after one `ready` collection with 18 common sessions. v1 was not mounted, copied, cleared, or relabeled. The v2 lineage remains non-promoting: no Research, GPU, Execution, Paper-consumer, or live claim follows. |
 | Tiingo prospective EOD refresh | Data | Existing fixed ETF source contract, external canonical root, and approved local token path | Complete: one current dated SPY/QQQ snapshot was created, then reattached offline by its source-safe dataset/manifest identities. It stays prospective-lineage-only and cannot clear KIS quarantine or create a Research, GPU, Execution, or Paper consumer. |
 | Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |

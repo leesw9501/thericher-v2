@@ -2,45 +2,42 @@
 
 ## Objective
 
-Complete `firstrate-m5-mean-reversion-after-cost-control-v1`: test one fixed,
-source-local 5m SPY/QQQ mean-reversion rule through the existing deterministic
-local-paper simulator and reject it unless it beats `always_flat` after costs
-for each symbol across the fixed 1/3/5-bps-per-side band.
+Complete `tiingo-d1-trend-mean-reversion-rotation-falsification-v1`: run the
+already frozen SPY/QQQ/IWM D1 trend-pullback mean-reversion rotation once
+against its exact pinned Tiingo snapshot, independently verify its aggregate
+receipt, and retain the result only as source-separated retrospective
+falsification evidence.
 
 ## Boundaries
 
-- Reattach the existing FirstRate normalization, timeframe-mechanics, and
-  window-preflight evidence before consuming source-local Bars. Do not download
-  data, call KIS, read credentials, call a broker, or use a Docker service.
-- Freeze the conventional long-only rule before an outcome is read: enter after
-  a completed 14-bar RSI is at or below 30, exit after a completed RSI is at or
-  above 50, and force terminal flatness. Use next-bar local-paper fills only.
-- Use the fixed 5m source-local geometry, 60-bar observation window, 61-bar
-  embargo, and fixed 1/3/5-bps cost band. Do not tune RSI windows, thresholds,
-  holding rules, costs, timeframe, or direction after seeing outcomes.
-- Keep all generated summaries and validation receipts outside Git under
-  `D:\thericher-v2\model-artifacts`. Do not store raw bars, features, model
-  weights, credentials, or broker data in Git or artifacts.
-- This is a non-promoting source-local breadth control: no model training,
-  GPU allocation, ensemble, KIS/Paper consumer, Execution change, or live
-  behavior follows regardless of result.
+- Reattach only the existing immutable
+  `snapshot=20260801T173121Z-tiingo-etf-d1-r1` identity through the verified
+  loader. Do not download, refresh, or select another Tiingo snapshot.
+- Do not read credentials, call KIS, a broker, Docker, or a network. Do not use
+  GPU, train a model, create an ensemble, or modify Execution behavior.
+- Freeze the existing 60-session trend, 5-session pullback, 20-session
+  volatility, 61-session purge, 5/10/20-bps all-in cost band, and fixed
+  comparators before the outcome is read. Do not tune after an outcome.
+- Keep generated evidence under `D:\thericher-v2\model-artifacts`; keep raw
+  market data under `D:\market_data`. Do not retain rows, prices, scores,
+  per-decision outputs, credentials, or weights in Git or artifacts.
+- This repeat-source control is non-promoting regardless of outcome. It cannot
+  become a point-in-time claim, GPU appointment, KIS/Paper input, order,
+  capital, or live behavior.
 
 ## Required Work
 
-1. Freeze a source-safe campaign/precommit contract with the rule, data
-   identities, chronological split, baseline, costs, kill test, and artifact
-   root before any outcome is calculated.
-2. Implement the rule and runner by extending existing FirstRate local-paper
-   control patterns without duplicating unrelated closed-lineage behavior.
-3. Add focused tests for completed-bar RSI timing, next-bar/local-paper-only
-   fills, terminal flatness, cost-band comparison, deterministic replay, and
-   artifact-root isolation.
-4. Run one CPU-only external smoke, independently validate its aggregate
-   receipt, and record `rejected` unless every fixed symbol/cost comparison
-   beats `always_flat`.
-5. Refresh the active stateboards, `HANDOFF.md`, and `RUNBOOK.md`; run the
-   required verification; commit, push, replace this file with exactly one
-   material next objective, and continue.
+1. Reattach the pinned snapshot and frozen source-reuse/precommit contract
+   before evaluating any result.
+2. Run the existing offline rotation runner once with a unique external label;
+   keep terminal output aggregate-only and source-safe.
+3. Independently verify exact precommit, source, and summary bindings. Classify
+   the fixed kill rule narrowly without reopening prior source-reuse families.
+4. Add focused tests only if an actual isolation, identity, or receipt-binding
+   gap is found.
+5. Refresh active stateboards, `HANDOFF.md`, and `RUNBOOK.md`; run required
+   verification; commit, push, replace this file with exactly one material next
+   objective, and continue.
 
 ## Verification
 

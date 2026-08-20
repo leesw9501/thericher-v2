@@ -9,11 +9,11 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   completed and released its memory; no GPU process or sealed-evaluation
   allocation is held by Research Steward.
 - No frozen, input-qualified campaign is ready for an appointment.
-- The FirstRate 5m L2 and fixed 20/60 technical-trend controls both completed
-  `rejected`: neither beat always-flat in any of six fixed nonzero-cost
-  SPY/QQQ cells. Their 18-cell local-paper matrices were terminal-flat and
-  replayable, but neither lineage holds a GPU appointment or sealed-evaluation
-  allocation.
+- The FirstRate 5m L2, fixed 20/60 technical-trend, and fixed Wilder-RSI
+  mean-reversion controls all completed `rejected`: none beat always-flat in
+  any of its six fixed nonzero-cost SPY/QQQ cells. Their aggregate-only
+  local-paper matrices were terminal-flat and replayable, but no closed lineage
+  holds a GPU appointment or sealed-evaluation allocation.
 - The completed QQQ/SPY D1 forward causal qualification is Data-only and
   `input_unavailable` for three unobserved runtime facts: named clock/session,
   decision-time availability, and provider finality. It consumed no GPU custody,

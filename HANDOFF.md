@@ -14,10 +14,26 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-The active objective is `firstrate-m5-mean-reversion-after-cost-control-v1`:
-evaluate one predeclared, source-local 5m mean-reversion rule against an
-always-flat after-cost local-paper comparator. It is a distinct research breadth
-control, not a KIS-parity, point-in-time, model, GPU, Execution, Paper-consumer,
+The completed `firstrate-m5-mean-reversion-after-cost-control-v1` evaluated one
+predeclared, source-local 5m RSI mean-reversion rule against an always-flat
+after-cost local-paper comparator. Its external `20260820-r1` run reattached
+the fixed FirstRate source geometry, wrote only a precommit, aggregate summary,
+and independent validation receipt, and was `rejected`: the rule beat flat in
+zero of six SPY/QQQ nonzero-cost cells. All 12 rule/baseline cells were
+`source: local_paper`, replayable, and terminal-flat; no raw events persisted.
+The summary and validation SHA-256 values are respectively
+`sha256:b437e8e39e9cb3963e13bf4778daee7e92d0de6c32cec6e9dac24e462f16266f`
+and
+`sha256:02f8f89200696d5f8bc0aac15d1d92141d0e076beb656e6ac06696a04418857a`.
+No network, credential, KIS, broker, order, GPU, selection, ensemble, or
+Paper-consumer path ran. This closes the fixed 14-period Wilder-RSI
+30/50 long-only rule; do not tune its parameters or infer a KIS/Paper or GPU
+consequence.
+
+The next objective is `tiingo-d1-trend-mean-reversion-rotation-falsification-v1`:
+reattach the existing pinned Tiingo SPY/QQQ/IWM D1 snapshot and run the already
+frozen, source-separated trend-pullback rotation once. It is an aggregate-only,
+repeat-source falsification control, never a point-in-time, KIS, Paper, GPU,
 or live claim.
 
 The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` created the
@@ -64,6 +80,15 @@ No training, GPU, network, credential, KIS, broker, order, selection,
 ensemble, or Paper-consumer path ran. This closes only the frozen trend rule;
 do not tune its windows, direction, threshold, costs, or exit after this
 outcome.
+
+The separate completed `firstrate-m5-mean-reversion-after-cost-control-v1`
+reused the same source-local 60-bar/61-bar-embargo geometry but evaluated only
+the frozen long-only Wilder-RSI(14) <=30 entry and >=50 completed-bar exit
+rule, with a predeclared final next-bar flatten. Its `20260820-r1` run was
+`rejected`: it beat `always_flat` in zero of six SPY/QQQ 1/3/5-bps-per-side
+cells. All 12 aggregate-only local-paper cells reattached as replayable and
+terminal-flat. This closes only this fixed RSI lineage; no tuning, GPU,
+selection, ensemble, KIS, Paper-consumer, or live consequence follows.
 
 The 2026-08-19 UTC fixed ETF snapshot is now external at
 `D:\market_data\us_equities\fixed_etf_prospective_lineage\canonical\tiingo_standard_eod\snapshot=2026-08-19-tiingo-standard-eod-prospective-r1`.

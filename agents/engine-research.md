@@ -37,6 +37,14 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   ensembled, allocated GPU, or made a KIS/Paper consumer; the summary is
   `firstrate-m5-trend-rule-after-cost-control-v1/20260820-r1/summary.json`
   (`sha256:539463a0d6cb84ba16fd75e750493277adc5e9f00f94a5e51f00d1cb44a78d00`).
+- `firstrate-m5-mean-reversion-after-cost-control-v1` is complete and
+  `rejected`. Its frozen long-only completed-bar Wilder-RSI(14) <=30 entry,
+  >=50 exit, and predeclared terminal flatten did not beat `always_flat` in
+  any of six SPY/QQQ nonzero-cost cells. All 12 local-paper cells were
+  replayable and terminal-flat. It cannot be tuned, selected, ensembled,
+  allocated GPU, or made a KIS/Paper consumer; the source-safe summary is
+  `firstrate-m5-mean-reversion-after-cost-control-v1/20260820-r1/summary.json`
+  (`sha256:b437e8e39e9cb3963e13bf4778daee7e92d0de6c32cec6e9dac24e462f16266f`).
 - The isolated QQQ/SPY D1 v2 forward cache is collection/provenance evidence
   only: its initial 18 common sessions reattach under the v2 identity, but
   point-in-time availability, provider finality, and corporate-action
@@ -266,7 +274,7 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | FirstRate 5m L2 and fixed 20/60 trend-rule controls both rejected; a distinct fixed mean-reversion control is ready | Evaluate only the frozen mean-reversion contract against always-flat; do not tune or extend either closed lineage |
+| Technical/chart and momentum/regime | FirstRate 5m L2, fixed 20/60 trend, and fixed Wilder-RSI mean-reversion controls are all rejected | Close these FirstRate lineages; the next distinct source-separated breadth control is the pre-existing Tiingo D1 trend-pullback rotation, with no tuning or promotion |
 | Classical ML/statistical | FirstRate 5m L2 control rejected after all six nonzero-cost comparisons | Do not extend that L2 family or allocate GPU without a distinct frozen campaign |
 | Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
 | Portfolio/allocation/meta-decision | Deterministic source-attested selection, per-symbol policy, and scale/cap foundation only | Aligned out-of-fold upstream candidate evidence with a frozen ranking/turnover/capacity/correlation contract |

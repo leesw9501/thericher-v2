@@ -2559,6 +2559,30 @@ zero of six nonzero-cost SPY/QQQ cells, while all 18 replay cells were
 `local_paper`, replayable, and terminal-flat. Do not rerun or tune this
 20/60 rule or treat it as a GPU, KIS, execution, or profitability signal.
 
+### FirstRate 5m Mean-Reversion Control
+
+Run the frozen source-local Wilder-RSI(14) <=30 / >=50 rule once with a new
+label:
+
+```powershell
+uv run python scripts/run_firstrate_m5_mean_reversion_after_cost_control.py --run-label <unique-label>
+```
+
+The runner reattaches the existing canonical FirstRate source and complete,
+contiguous UTC-anchored 5m geometry. It freezes a 60-bar observation,
+61-bar embargo, completed-bar Wilder RSI with long-only <=30 entry and >=50
+exit, a predeclared next-bar terminal flatten, `always_flat`, and the fixed
+1/3/5-bps-per-side synthetic band. It writes only external precommit, aggregate
+summary, and independent validation JSON; no raw bars, features, predictions,
+or local-paper event stream are retained. It has no credential, network, KIS,
+broker, order, GPU, or Paper-consumer route.
+
+The completed `20260820-r1` run was `rejected`: the RSI rule beat flat in
+zero of six nonzero-cost SPY/QQQ cells. All 12 replay cells were
+`local_paper`, replayable, and terminal-flat. Do not rerun or tune this
+fixed 14/30/50 lineage or treat it as a GPU, KIS, execution, or profitability
+signal.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,
