@@ -194,18 +194,17 @@ evidence showed 37 retained chunks but zero complete 390-minute sessions under
 the former cap. Claude CLI returned no verdict, so this remains limited to one
 scheduled post-close result; an incomplete result does not auto-escalate.
 
-For verification throughput and stability, use
-`scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` whenever its Python
-lease is free. The helper now selects local non-reparse `D:\trpy` before
-falling back to `C:\trpy`: an 8-worker C-root run exposed host storage-floor
-failures in tests whose product checks behaved correctly, while a short-
-external fixture and explicit normal-capacity stub retain the dedicated
-below-floor assertions without coupling routine verification to current system
-free space. The completed 2026-08-20 authority run passed `3215 passed, 19
-skipped` in 39m24s. Claude returned no verdict for this reversible verification
-recovery, so its status is `review_unavailable`, not agreement. The serial path
-remains the periodic compatibility check; this does not relax test, execution,
-or live-risk coverage.
+For verification throughput and stability, an isolated role package uses its
+focused changed-path tests, relevant Ruff, affected Compose parsing, and
+`git diff --check` while the company objective remains active. Its commit does
+not by itself run the full suite or replace `NEXT_CODEX_GOAL.md`. Reserve
+`scripts\run_parallel_tests.ps1 -RequireCleanTempRoot` for company-objective
+integration, a changed shared runtime/control root, or an explicit current-goal
+requirement. The helper remains the authority at that boundary; its file-level
+eight-worker `xdist` distribution is intentionally not a fast feedback command.
+This does not relax execution or live-risk coverage. Claude produced no
+verdict for this policy clarification (`review_unavailable`), so no review
+agreement is claimed.
 
 ## Current Recovery Action
 
