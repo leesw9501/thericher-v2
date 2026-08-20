@@ -888,6 +888,35 @@ suite as `3218 passed, 19 skipped` in 42m13s, plus Ruff, both credential-free
 Compose parses, and `git diff --check`. Verification made no external, KIS,
 broker, credential, or scheduler call.
 
+### Isolated V2 Fresh Cache
+
+The v1 cache remains immutable/quarantined. The v2 cache is a separate
+`QQQ/NAS` + `SPY/AMS` lineage at:
+
+```text
+D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v2
+```
+
+Use its dedicated profile only. Its preflight is network-disabled and has no
+KIS credentials; the collector has only the virtual-Paper daily-market-data
+credentials and no account, position, quote, order, or live route:
+
+```powershell
+docker compose --env-file .env.example --profile kis-paper-daily-pair-forward-v2 run --rm --no-deps --pull never kis-paper-daily-pair-forward-v2-preflight
+docker compose --profile kis-paper-daily-pair-forward-v2 run --rm --no-deps --pull never kis-paper-daily-pair-forward-v2
+```
+
+The 2026-08-20 bootstrap preflight was `collection_required`
+(`sha256:9aaee83455c9a93906ff534a46d28457bd6aeb125b3f0bf251dc6a6bf4a1d976`),
+the one collector was `ready`
+(`sha256:0db2b9fa0dd1b475f971fee33009ed576e03c877fb0e63d19a004db4a3a95d49`),
+and a separate network-disabled preflight reattached `cache_current`
+(`sha256:d91a68988a3ef248c4ea2c752b27e4ec3c7f53746dd47a06592dcb4e15e6835a`).
+The cache has 18 common sessions, but raw rows remain only under the external
+cache root. This is not point-in-time availability, provider finality,
+corporate-action, model, GPU, Execution, Paper-consumer, or live evidence.
+Never copy, relabel, clear, or use v2 to clear the v1 quarantine.
+
 ## KIS Daily Event Sidecar
 
 The qualified QQQ/SPY event-only snapshot is external and immutable:

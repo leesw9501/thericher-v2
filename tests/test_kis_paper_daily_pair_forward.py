@@ -12,6 +12,7 @@ from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES,
     KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_PREPARE_SUBPHASES,
     KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
+    KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
     KisPaperDailyPairForwardCacheError,
     KisPaperDailyPairForwardRow,
     commit_kis_paper_daily_pair_forward_observation,
@@ -60,6 +61,81 @@ def test_pair_cache_is_external_source_separated_and_replayable(tmp_path: Path) 
     )
     assert reloaded.cache_hash == run.cache.cache_hash
     _assert_source_safe(run.safe_payload())
+
+
+def test_pair_cache_v2_identity_isolated_from_v1_and_replayable(tmp_path: Path) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    v1_root = tmp_path / "external" / "daily-qqq-spy-forward" / "v1"
+    v2_root = tmp_path / "external" / "daily-qqq-spy-forward" / "v2"
+
+    v1 = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=_rows_for_pair((date(2026, 7, 27), date(2026, 7, 28))),
+        failure_reasons_by_target={},
+        cache_root=v1_root,
+        repo_root=repo_root,
+        observed_at=datetime(2026, 7, 29, tzinfo=UTC),
+    )
+    v1_index = (v1_root / "index.json").read_bytes()
+    v1_snapshots = {
+        path.relative_to(v1_root): path.read_bytes()
+        for path in (v1_root / "snapshots").rglob("*.csv.gz")
+    }
+
+    v2 = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=_rows_for_pair((date(2026, 7, 29),)),
+        failure_reasons_by_target={},
+        cache_root=v2_root,
+        repo_root=repo_root,
+        cache_identity=KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
+        observed_at=datetime(2026, 7, 30, tzinfo=UTC),
+    )
+    resumed_rows = _rows_for_pair((date(2026, 7, 30),))
+    resumed_rows.pop("SPY/AMS")
+    resumed = commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target=resumed_rows,
+        failure_reasons_by_target={"SPY/AMS": "transport_failure"},
+        cache_root=v2_root,
+        repo_root=repo_root,
+        cache_identity=KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
+        observed_at=datetime(2026, 7, 31, tzinfo=UTC),
+    )
+
+    reattached = load_verified_kis_paper_daily_pair_forward_cache(
+        cache_root=v2_root,
+        repo_root=repo_root,
+        cache_identity=KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
+    )
+
+    assert v1.cache.common_sessions == (date(2026, 7, 27), date(2026, 7, 28))
+    assert v2.cache.common_sessions == (date(2026, 7, 29),)
+    assert resumed.status == "partial"
+    assert resumed.recovery == "resume"
+    assert reattached.cache_hash == resumed.cache.cache_hash
+    assert reattached.targets_by_key["QQQ/NAS"].latest_session == date(2026, 7, 30)
+    assert reattached.targets_by_key["SPY/AMS"].status == "deferred"
+    assert resumed.safe_payload()["cache"]["kind"] == KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY.kind
+    assert (
+        resumed.safe_payload()["cache"]["version"]
+        == KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY.version
+    )
+    with pytest.raises(KisPaperDailyPairForwardCacheError, match="pair forward index is invalid"):
+        load_verified_kis_paper_daily_pair_forward_cache(
+            cache_root=v2_root,
+            repo_root=repo_root,
+        )
+    with pytest.raises(KisPaperDailyPairForwardCacheError, match="pair forward index is invalid"):
+        load_verified_kis_paper_daily_pair_forward_cache(
+            cache_root=v1_root,
+            repo_root=repo_root,
+            cache_identity=KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
+    )
+    assert (v1_root / "index.json").read_bytes() == v1_index
+    assert {
+        path.relative_to(v1_root): path.read_bytes()
+        for path in (v1_root / "snapshots").rglob("*.csv.gz")
+    } == v1_snapshots
+    _assert_source_safe(resumed.safe_payload())
 
 
 def test_pair_cache_drops_preboundary_rows_and_preserves_prior_snapshots_on_retry(
@@ -486,6 +562,8 @@ def test_pair_forward_compose_isolates_preflight_from_credentials_and_network() 
     assert "KIS_LIVE" not in collector
     assert "account" not in collector.lower()
     assert "order" not in collector.lower()
+    assert "gpus:" not in collector
+    assert "research" not in collector
     expected_image = "image: localhost/thericher-v2/kis-paper-daily-pair-forward:local"
     assert expected_image in collector
     assert expected_image in readiness
@@ -510,6 +588,39 @@ def test_pair_forward_compose_isolates_preflight_from_credentials_and_network() 
     assert "KIS_LIVE" not in preflight
     assert "/app/market_data:ro" in preflight
     assert "read_only: true" in preflight
+
+
+def test_pair_forward_v2_compose_uses_an_isolated_identity_and_preflight() -> None:
+    source = COMPOSE.read_text(encoding="ascii")
+    collector = source.split("  kis-paper-daily-pair-forward-v2:\n", maxsplit=1)[1].split(
+        "  kis-paper-daily-pair-forward-v2-preflight:\n",
+        maxsplit=1,
+    )[0]
+    preflight = source.split(
+        "  kis-paper-daily-pair-forward-v2-preflight:\n",
+        maxsplit=1,
+    )[1].split("  kis-paper-daily-spy-stability-observer:\n", maxsplit=1)[0]
+
+    assert 'profiles: ["kis-paper-daily-pair-forward-v2"]' in collector
+    assert "--cache-lineage" in collector
+    assert "      - v2" in collector
+    assert "daily-qqq-spy-forward/v2:/app/market_data" in collector
+    assert "daily-qqq-spy-forward/v1:/app/market_data" not in collector
+    assert "KIS_PAPER_APP_KEY" in collector
+    assert "KIS_PAPER_APP_SECRET" in collector
+    assert "KIS_LIVE" not in collector
+    assert "account" not in collector.lower()
+    assert "order" not in collector.lower()
+    assert 'profiles: ["kis-paper-daily-pair-forward-v2"]' in preflight
+    assert "network_mode: none" in preflight
+    assert "--cache-lineage" in preflight
+    assert "      - v2" in preflight
+    assert "daily-qqq-spy-forward/v2:/app/market_data:ro" in preflight
+    assert "KIS_PAPER_APP_KEY" not in preflight
+    assert "KIS_PAPER_APP_SECRET" not in preflight
+    assert "KIS_LIVE" not in preflight
+    assert "account" not in preflight.lower()
+    assert "order" not in preflight.lower()
 
 
 def _rows_for_pair(

@@ -18,6 +18,10 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   `input_unavailable` for three unobserved runtime facts: named clock/session,
   decision-time availability, and provider finality. It consumed no GPU custody,
   sealed-evaluation history, or model allocation.
+- The separately bootstrapped QQQ/SPY D1 v2 forward cache reattaches 18 common
+  sessions under a distinct identity, but does not change those unobserved
+  clock, availability, finality, or corporate-action facts. It consumes no
+  GPU custody, sealed-evaluation history, or model allocation.
 - The QQQ/SPY historical D1 CPU baseline reproductions and the later frozen L2
   logistic control completed without a GPU appointment, model-selection
   allocation, or sealed-evaluation spend. The L2 QQQ/SPY after-cost replays

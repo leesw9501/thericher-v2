@@ -14,10 +14,26 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-The active objective is `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1`:
-create one isolated QQQ/SPY KIS Paper D1 forward-cache lineage after the v1
-cache retained revision conflicts. It preserves v1 bytes and does not create a
-model, ranking, GPU, Execution, Paper-consumer, or live claim.
+The active objective is `firstrate-m5-mean-reversion-after-cost-control-v1`:
+evaluate one predeclared, source-local 5m mean-reversion rule against an
+always-flat after-cost local-paper comparator. It is a distinct research breadth
+control, not a KIS-parity, point-in-time, model, GPU, Execution, Paper-consumer,
+or live claim.
+
+The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` created the
+isolated QQQ/NAS + SPY/AMS KIS Paper D1 cache at
+`D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v2`
+without mounting, copying, clearing, or relabeling v1. A network-disabled
+preflight was `collection_required`
+(`sha256:9aaee83455c9a93906ff534a46d28457bd6aeb125b3f0bf251dc6a6bf4a1d976`),
+one serial daily-market-data collector was `ready`
+(`sha256:0db2b9fa0dd1b475f971fee33009ed576e03c877fb0e63d19a004db4a3a95d49`),
+and a fresh credential-free preflight reattached `cache_current`
+(`sha256:d91a68988a3ef248c4ea2c752b27e4ec3c7f53746dd47a06592dcb4e15e6835a`).
+The v2 cache has 18 common sessions and is still collection/provenance only:
+point-in-time availability, provider finality, and corporate-action
+qualification are unobserved, so it cannot clear v1 quarantine or create a
+model, GPU, Execution, Paper-consumer, or live claim.
 
 The completed `firstrate-5m-after-cost-control-v1` independently reattached
 the existing canonical SPY/QQQ FirstRate source, UTC-anchored complete 5m

@@ -31,6 +31,9 @@ KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ID = "kis.paper.private.daily.qqq-spy.forward
 KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ROOT = Path(
     "D:/market_data/us_equities/kis_paper_private/daily-qqq-spy-forward/v1"
 )
+KIS_PAPER_DAILY_PAIR_FORWARD_V2_CACHE_ROOT = Path(
+    "D:/market_data/us_equities/kis_paper_private/daily-qqq-spy-forward/v2"
+)
 KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY = date(2026, 7, 24)
 KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS = (("QQQ", "NAS"), ("SPY", "AMS"))
 KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_FAILURE_PHASES = (
@@ -84,6 +87,37 @@ _SAFE_REASONS = frozenset(
         "transport_failure",
         "unexpected_private_daily_collector_error",
     }
+)
+
+
+@dataclass(frozen=True, slots=True)
+class KisPaperDailyPairForwardCacheIdentity:
+    """One allowlisted on-disk lineage for the fixed QQQ/SPY forward pair."""
+
+    kind: str
+    version: str
+
+    def __post_init__(self) -> None:
+        if (self.kind, self.version) not in {
+            (
+                "kis.paper.private.daily.qqq-spy.forward-v1",
+                "kis-paper-daily-qqq-spy-forward-v1",
+            ),
+            (
+                "kis.paper.private.daily.qqq-spy.forward-v2",
+                "kis-paper-daily-qqq-spy-forward-v2",
+            ),
+        }:
+            raise ValueError("pair forward cache identity is invalid")
+
+
+KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY = KisPaperDailyPairForwardCacheIdentity(
+    kind=KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ID,
+    version=KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_VERSION,
+)
+KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY = KisPaperDailyPairForwardCacheIdentity(
+    kind="kis.paper.private.daily.qqq-spy.forward-v2",
+    version="kis-paper-daily-qqq-spy-forward-v2",
 )
 
 
@@ -254,6 +288,7 @@ class KisPaperDailyPairForwardCache:
     index_path: Path
     index_hash: str
     cache_hash: str
+    cache_identity: KisPaperDailyPairForwardCacheIdentity
     frozen_boundary: date
     rows_by_target: Mapping[str, tuple[KisPaperDailyPairForwardRow, ...]]
     targets_by_key: Mapping[str, KisPaperDailyPairForwardTargetState]
@@ -268,6 +303,7 @@ class KisPaperDailyPairForwardCache:
             or tuple(targets) != _TARGET_KEYS
             or not _is_sha256(self.index_hash)
             or not _is_sha256(self.cache_hash)
+            or not isinstance(self.cache_identity, KisPaperDailyPairForwardCacheIdentity)
             or self.index_path.is_symlink()
             or self.root.is_symlink()
         ):
@@ -305,8 +341,8 @@ class KisPaperDailyPairForwardCache:
 
     def safe_payload(self) -> dict[str, object]:
         return {
-            "kind": KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ID,
-            "version": KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_VERSION,
+            "kind": self.cache_identity.kind,
+            "version": self.cache_identity.version,
             "frozen_boundary": self.frozen_boundary.isoformat(),
             "index_sha256": self.index_hash,
             "cache_sha256": self.cache_hash,
@@ -383,6 +419,9 @@ def commit_kis_paper_daily_pair_forward_observation(
     cache_root: Path | str = KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ROOT,
     repo_root: Path | str | None = None,
     frozen_boundary: date = KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity = (
+        KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY
+    ),
     observed_at: datetime | None = None,
 ) -> KisPaperDailyPairForwardRun:
     """Atomically retain one completed-session observation per successful target."""
@@ -392,6 +431,8 @@ def commit_kis_paper_daily_pair_forward_observation(
         failure_reasons_by_target=failure_reasons_by_target,
         frozen_boundary=frozen_boundary,
     )
+    if not isinstance(cache_identity, KisPaperDailyPairForwardCacheIdentity):
+        raise ValueError("pair forward cache identity is invalid")
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
     repository = _repository_root(repo_root)
     try:
@@ -408,8 +449,16 @@ def commit_kis_paper_daily_pair_forward_observation(
                 _attach_commit_failure_prepare_subphase(error, "cache_access")
                 raise
             try:
-                index = _load_or_initialize_index(root=root, frozen_boundary=frozen_boundary)
-                _validate_index(index, frozen_boundary=frozen_boundary)
+                index = _load_or_initialize_index(
+                    root=root,
+                    frozen_boundary=frozen_boundary,
+                    cache_identity=cache_identity,
+                )
+                _validate_index(
+                    index,
+                    frozen_boundary=frozen_boundary,
+                    cache_identity=cache_identity,
+                )
                 prior_by_target: dict[
                     str,
                     tuple[dict[str, object], tuple[KisPaperDailyPairForwardRow, ...]],
@@ -521,6 +570,7 @@ def commit_kis_paper_daily_pair_forward_observation(
                 cache = load_verified_kis_paper_daily_pair_forward_cache(
                     cache_root=root,
                     repo_root=repository,
+                    cache_identity=cache_identity,
                 )
             except KisPaperDailyPairForwardCacheError as error:
                 _attach_commit_failure_phase(error, "cache_reverify")
@@ -579,10 +629,15 @@ def load_verified_kis_paper_daily_pair_forward_cache(
     *,
     cache_root: Path | str = KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ROOT,
     repo_root: Path | str | None = None,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity = (
+        KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY
+    ),
 ) -> KisPaperDailyPairForwardCache:
     """Reattest the pair cache without credentials, network, or KIS clients."""
 
     repository = _repository_root(repo_root)
+    if not isinstance(cache_identity, KisPaperDailyPairForwardCacheIdentity):
+        raise ValueError("pair forward cache identity is invalid")
     root = _external_root(Path(cache_root), repository, create=False)
     index_path = _safe_child(root / _INDEX_FILENAME, root)
     try:
@@ -591,7 +646,11 @@ def load_verified_kis_paper_daily_pair_forward_cache(
         raise KisPaperDailyPairForwardCacheError("pair forward index is unreadable") from error
     index = _json_mapping(index_bytes, "pair forward index")
     frozen_boundary = _date(index.get("frozen_boundary"), "pair forward boundary")
-    _validate_index(index, frozen_boundary=frozen_boundary)
+    _validate_index(
+        index,
+        frozen_boundary=frozen_boundary,
+        cache_identity=cache_identity,
+    )
     rows_by_target: dict[str, tuple[KisPaperDailyPairForwardRow, ...]] = {}
     targets: dict[str, KisPaperDailyPairForwardTargetState] = {}
     for target in index["targets"]:
@@ -635,6 +694,7 @@ def load_verified_kis_paper_daily_pair_forward_cache(
         index_path=index_path,
         index_hash=index_hash,
         cache_hash=cache_hash,
+        cache_identity=cache_identity,
         frozen_boundary=frozen_boundary,
         rows_by_target=MappingProxyType(rows_by_target),
         targets_by_key=MappingProxyType(targets),
@@ -673,10 +733,15 @@ def _validate_observation_inputs(
             raise ValueError("pair forward observation failure is invalid")
 
 
-def _load_or_initialize_index(*, root: Path, frozen_boundary: date) -> dict[str, object]:
+def _load_or_initialize_index(
+    *,
+    root: Path,
+    frozen_boundary: date,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity,
+) -> dict[str, object]:
     path = _safe_child(root / _INDEX_FILENAME, root)
     if not path.exists():
-        return _initial_index(frozen_boundary)
+        return _initial_index(frozen_boundary, cache_identity=cache_identity)
     index = _json_mapping(path.read_bytes(), "pair forward index")
     if _date(index.get("frozen_boundary"), "pair forward boundary") != frozen_boundary:
         raise KisPaperDailyPairForwardCacheError(
@@ -685,11 +750,15 @@ def _load_or_initialize_index(*, root: Path, frozen_boundary: date) -> dict[str,
     return index
 
 
-def _initial_index(frozen_boundary: date) -> dict[str, object]:
+def _initial_index(
+    frozen_boundary: date,
+    *,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity,
+) -> dict[str, object]:
     return {
         "schema_version": SCHEMA_VERSION,
-        "kind": KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ID,
-        "version": KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_VERSION,
+        "kind": cache_identity.kind,
+        "version": cache_identity.version,
         "frozen_boundary": frozen_boundary.isoformat(),
         "generation": 0,
         "source": _source_document(),
@@ -698,7 +767,12 @@ def _initial_index(frozen_boundary: date) -> dict[str, object]:
     }
 
 
-def _validate_index(index: Mapping[str, object], *, frozen_boundary: date) -> None:
+def _validate_index(
+    index: Mapping[str, object],
+    *,
+    frozen_boundary: date,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity,
+) -> None:
     expected = {
         "schema_version",
         "kind",
@@ -712,8 +786,8 @@ def _validate_index(index: Mapping[str, object], *, frozen_boundary: date) -> No
     if (
         set(index) != expected
         or index.get("schema_version") != SCHEMA_VERSION
-        or index.get("kind") != KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_ID
-        or index.get("version") != KIS_PAPER_DAILY_PAIR_FORWARD_CACHE_VERSION
+        or index.get("kind") != cache_identity.kind
+        or index.get("version") != cache_identity.version
         or _date(index.get("frozen_boundary"), "pair forward boundary") != frozen_boundary
         or type(index.get("generation")) is not int
         or int(index["generation"]) < 0

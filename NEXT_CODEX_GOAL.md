@@ -2,46 +2,44 @@
 
 ## Objective
 
-Complete `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1`: establish one
-isolated, forward-only KIS Paper D1 cache for `QQQ/NAS` and `SPY/AMS` after the
-v1 cache retained revision conflicts, without altering, clearing, copying, or
-relabeling v1 data.
+Complete `firstrate-m5-mean-reversion-after-cost-control-v1`: test one fixed,
+source-local 5m SPY/QQQ mean-reversion rule through the existing deterministic
+local-paper simulator and reject it unless it beats `always_flat` after costs
+for each symbol across the fixed 1/3/5-bps-per-side band.
 
 ## Boundaries
 
-- Run `./scripts/start_next_codex_task.ps1` first, then read `HANDOFF.md`,
-  `AGENTS.md`, `RUNBOOK.md`, and the active stateboards. Ask Claude for a
-  concise falsification-first challenge before changing the persistent cache
-  recovery design.
-- `KIS_PAPER_*` may be read only through the named daily market-data owner
-  path. Do not read or route `KIS_LIVE_*`; do not call account, position,
-  quote, order, submit, modify, cancel, or broker-execution endpoints.
-- Keep v1 immutable and create v2 only under
-  `D:\market_data\us_equities\kis_paper_private\daily-qqq-spy-forward\v2`.
-  Never copy raw v1 rows into it. Keep raw data out of Git, logs, stateboards,
-  Claude prompts, and source-safe receipts.
-- A v2 collection is collection/provenance evidence only. It cannot clear v1
-  quarantine, establish point-in-time availability/finality, rank, train,
-  allocate GPU, create an ensemble, or create an Execution/Paper consumer.
-- Use one owned client and bounded serial collection. A source-backed or
-  measured token/rate gate belongs to the worker; never foreground-wait.
-  Do not replace it with a parallel request flood.
+- Reattach the existing FirstRate normalization, timeframe-mechanics, and
+  window-preflight evidence before consuming source-local Bars. Do not download
+  data, call KIS, read credentials, call a broker, or use a Docker service.
+- Freeze the conventional long-only rule before an outcome is read: enter after
+  a completed 14-bar RSI is at or below 30, exit after a completed RSI is at or
+  above 50, and force terminal flatness. Use next-bar local-paper fills only.
+- Use the fixed 5m source-local geometry, 60-bar observation window, 61-bar
+  embargo, and fixed 1/3/5-bps cost band. Do not tune RSI windows, thresholds,
+  holding rules, costs, timeframe, or direction after seeing outcomes.
+- Keep all generated summaries and validation receipts outside Git under
+  `D:\thericher-v2\model-artifacts`. Do not store raw bars, features, model
+  weights, credentials, or broker data in Git or artifacts.
+- This is a non-promoting source-local breadth control: no model training,
+  GPU allocation, ensemble, KIS/Paper consumer, Execution change, or live
+  behavior follows regardless of result.
 
 ## Required Work
 
-1. Freeze a versioned v2 cache identity, source-safe receipt contract,
-   immutable-v1 separation check, and exact QQQ/NAS + SPY/AMS scope before a
-   network call.
-2. Add focused tests for v1/v2 root separation, raw-data exclusion from public
-   evidence, KIS Paper-only route isolation, durable cursor/recovery behavior,
-   and no model/Execution consumer.
-3. Run a credential-free preflight, then one eligible bounded KIS Paper
-   daily-market-data collection when its owned gate permits. Record only
-   source-safe aggregate evidence; a deferred, failed, or partial collection
-   is a scoped result, not a retry loop or approval wait.
-4. Independently reattach the v2 receipt/cache identity and refresh
-   `HANDOFF.md`, `RUNBOOK.md`, and active stateboards with its exact limitation.
-5. Run required verification, commit, push, replace this file with exactly one
+1. Freeze a source-safe campaign/precommit contract with the rule, data
+   identities, chronological split, baseline, costs, kill test, and artifact
+   root before any outcome is calculated.
+2. Implement the rule and runner by extending existing FirstRate local-paper
+   control patterns without duplicating unrelated closed-lineage behavior.
+3. Add focused tests for completed-bar RSI timing, next-bar/local-paper-only
+   fills, terminal flatness, cost-band comparison, deterministic replay, and
+   artifact-root isolation.
+4. Run one CPU-only external smoke, independently validate its aggregate
+   receipt, and record `rejected` unless every fixed symbol/cost comparison
+   beats `always_flat`.
+5. Refresh the active stateboards, `HANDOFF.md`, and `RUNBOOK.md`; run the
+   required verification; commit, push, replace this file with exactly one
    material next objective, and continue.
 
 ## Verification

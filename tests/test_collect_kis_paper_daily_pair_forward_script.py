@@ -721,6 +721,95 @@ def test_source_safe_receipt_writer_uses_an_external_create_only_path(
         )
 
 
+def test_v2_preflight_selects_the_frozen_identity_without_kis_configuration(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    script = _script_module()
+    received: dict[str, object] = {}
+
+    monkeypatch.setattr(
+        script,
+        "_run_preflight",
+        lambda **kwargs: received.update(kwargs) or 17,
+    )
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_environment_config",
+        lambda: pytest.fail("v2 preflight must not read KIS configuration"),
+    )
+
+    exit_code = script.main(  # type: ignore[attr-defined]  # noqa: SLF001
+        ["--preflight", "--cache-lineage", "v2"],
+        clock=lambda: datetime(2026, 8, 20, 12, tzinfo=UTC),
+    )
+
+    assert exit_code == 17
+    assert received["cache_identity"] == script.KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY
+
+
+def test_v2_missing_cache_preflight_receipt_stays_source_safe_and_network_free(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    script = _script_module()
+    emitted: dict[str, object] = {}
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    cache_root = tmp_path / "external" / "cache"
+
+    monkeypatch.setattr(
+        script,
+        "latest_completed_us_equity_d1_session",
+        lambda _value: datetime(2026, 8, 19, tzinfo=UTC).date(),
+    )
+    monkeypatch.setattr(
+        script,
+        "load_kis_paper_market_data_environment_config",
+        lambda: pytest.fail("v2 preflight must not read KIS configuration"),
+    )
+    monkeypatch.setattr(
+        script,
+        "KisPaperMarketDataClient",
+        lambda **_kwargs: pytest.fail("v2 preflight must not construct a client"),
+    )
+    monkeypatch.setattr(
+        script,
+        "_write_source_safe_receipt",
+        lambda **kwargs: emitted.update(kwargs)
+        or (tmp_path / "receipt.json", "sha256:" + "v" * 64),
+    )
+
+    exit_code = script._run_preflight(  # noqa: SLF001
+        cache_root=cache_root,
+        artifact_root=tmp_path / "artifacts",
+        repository_root=repository_root,
+        frozen_boundary=datetime(2026, 7, 24, tzinfo=UTC).date(),
+        observed_at=datetime(2026, 8, 20, 12, tzinfo=UTC),
+        schedule_guard_failed=None,
+        cache_identity=script.KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
+    )
+
+    assert exit_code == 10
+    receipt = emitted["receipt"]
+    assert isinstance(receipt, dict)
+    payload = receipt["payload"]
+    assert isinstance(payload, dict)
+    assert payload["status"] == "collection_required"
+    assert payload["cache_identity"] == {
+        "kind": "kis.paper.private.daily.qqq-spy.forward-v2",
+        "version": "kis-paper-daily-qqq-spy-forward-v2",
+    }
+    assert payload["route_isolation"] == {
+        "daily_market_data_only": True,
+        "account_endpoints_used": False,
+        "position_endpoints_used": False,
+        "open_order_endpoints_used": False,
+        "quote_endpoints_used": False,
+        "order_endpoints_used": False,
+        "live_endpoints_used": False,
+    }
+
+
 def test_cache_current_preflight_never_reads_kis_configuration_or_constructs_client(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,

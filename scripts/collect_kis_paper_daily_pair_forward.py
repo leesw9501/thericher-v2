@@ -17,7 +17,10 @@ from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     KIS_PAPER_DAILY_PAIR_FORWARD_COMMIT_PREPARE_SUBPHASES,
     KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY,
     KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
+    KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY,
+    KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
     KisPaperDailyPairForwardCacheError,
+    KisPaperDailyPairForwardCacheIdentity,
     commit_kis_paper_daily_pair_forward_observation,
     get_kis_paper_daily_pair_forward_commit_failure_phase,
     get_kis_paper_daily_pair_forward_commit_failure_prepare_subphase,
@@ -97,6 +100,7 @@ def main(
         "--frozen-boundary",
         default=KIS_PAPER_DAILY_PAIR_FORWARD_FROZEN_BOUNDARY.isoformat(),
     )
+    parser.add_argument("--cache-lineage", choices=("v1", "v2"), default="v1")
     parser.add_argument(
         "--schedule-guard-failed",
         choices=("host_timezone_not_kst", "shared_dispatcher_busy"),
@@ -143,6 +147,7 @@ def main(
     except ValueError:
         _emit({"status": "not_executed", "reason": "frozen_boundary_invalid"})
         return _NOT_EXECUTED_EXIT
+    cache_identity = _cache_identity(args.cache_lineage)
     if args.preflight:
         return _run_preflight(
             cache_root=args.cache_root,
@@ -151,6 +156,7 @@ def main(
             frozen_boundary=frozen_boundary,
             observed_at=observed_at,
             schedule_guard_failed=args.schedule_guard_failed,
+            cache_identity=cache_identity,
         )
     return _run_credentialed_collection(
         cache_root=args.cache_root,
@@ -159,6 +165,7 @@ def main(
         repository_root=args.repository_root,
         frozen_boundary=frozen_boundary,
         observed_at=observed_at,
+        cache_identity=cache_identity,
     )
 
 
@@ -170,6 +177,9 @@ def _run_credentialed_collection(
     repository_root: Path,
     frozen_boundary: date,
     observed_at: datetime,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity = (
+        KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY
+    ),
 ) -> int:
     try:
         rate_gate = KisPaperMarketDataRateGate(control_root=control_root)
@@ -182,6 +192,7 @@ def _run_credentialed_collection(
             repository_root=repository_root,
             observed_at=observed_at,
             failure_stage="control_gate",
+            cache_identity=cache_identity,
         )
     if not token_request_is_due or rate_gate_is_deferred:
         try:
@@ -191,6 +202,7 @@ def _run_credentialed_collection(
                 frozen_boundary=frozen_boundary,
                 observed_at=observed_at,
                 reason="token_request_not_due" if not token_request_is_due else "rate_limited",
+                cache_identity=cache_identity,
             )
         except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
             commit_failure_kind = _commit_failure_kind(error)
@@ -207,6 +219,7 @@ def _run_credentialed_collection(
                     commit_failure_kind,
                     commit_failure_phase,
                 ),
+                cache_identity=cache_identity,
             )
         return _emit_source_safe_receipt(
             artifact_root=artifact_root,
@@ -214,6 +227,7 @@ def _run_credentialed_collection(
             observed_at=observed_at,
             payload=result.safe_payload(),
             exit_code=_RECOVERY_EXIT,
+            cache_identity=cache_identity,
         )
     try:
         config = load_kis_paper_market_data_environment_config()
@@ -223,6 +237,7 @@ def _run_credentialed_collection(
             repository_root=repository_root,
             observed_at=observed_at,
             failure_stage="environment",
+            cache_identity=cache_identity,
         )
     try:
         client = KisPaperMarketDataClient(
@@ -249,6 +264,7 @@ def _run_credentialed_collection(
             repository_root=repository_root,
             observed_at=observed_at,
             failure_stage="collection",
+            cache_identity=cache_identity,
         )
     try:
         result = commit_kis_paper_daily_pair_forward_observation(
@@ -258,6 +274,7 @@ def _run_credentialed_collection(
             repo_root=repository_root,
             frozen_boundary=frozen_boundary,
             observed_at=observation.observed_at,
+            cache_identity=cache_identity,
         )
         payload = result.safe_payload()
     except (KisPaperDailyPairForwardCacheError, OSError, ValueError) as error:
@@ -270,18 +287,20 @@ def _run_credentialed_collection(
             failure_stage="commit",
             commit_failure_kind=commit_failure_kind,
             commit_failure_phase=commit_failure_phase,
-            commit_failure_prepare_subphase=_commit_failure_prepare_subphase(
+                commit_failure_prepare_subphase=_commit_failure_prepare_subphase(
                 error,
                 commit_failure_kind,
-                commit_failure_phase,
-            ),
-        )
+                    commit_failure_phase,
+                ),
+                cache_identity=cache_identity,
+            )
     return _emit_source_safe_receipt(
         artifact_root=artifact_root,
         repository_root=repository_root,
         observed_at=observed_at,
         payload=payload,
         exit_code=_RECOVERY_EXIT if result.status in {"partial", "deferred"} else 0,
+        cache_identity=cache_identity,
     )
 
 
@@ -338,6 +357,9 @@ def _run_preflight(
     frozen_boundary: date,
     observed_at: datetime,
     schedule_guard_failed: str | None,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity = (
+        KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY
+    ),
 ) -> int:
     """Reattest only local pair-cache state without a KIS or credential path."""
 
@@ -348,6 +370,7 @@ def _run_preflight(
             observed_at=observed_at,
             payload=_unavailable_payload(observed_at, schedule_guard_failed),
             exit_code=_RECOVERY_EXIT,
+            cache_identity=cache_identity,
         )
     eligible_through = latest_completed_us_equity_d1_session(observed_at)
     if eligible_through is None:
@@ -357,11 +380,13 @@ def _run_preflight(
             observed_at=observed_at,
             payload=_unavailable_payload(observed_at, "eligible_session_unavailable"),
             exit_code=_RECOVERY_EXIT,
+            cache_identity=cache_identity,
         )
     try:
         cache = load_verified_kis_paper_daily_pair_forward_cache(
             cache_root=cache_root,
             repo_root=repository_root,
+            cache_identity=cache_identity,
         )
     except (KisPaperDailyPairForwardCacheError, OSError, ValueError):
         cache_exists = _cache_index_exists(cache_root)
@@ -376,6 +401,7 @@ def _run_preflight(
             observed_at=observed_at,
             payload=payload,
             exit_code=_RECOVERY_EXIT if cache_exists else _COLLECTION_REQUIRED_EXIT,
+            cache_identity=cache_identity,
         )
     if cache.frozen_boundary != frozen_boundary:
         return _emit_source_safe_receipt(
@@ -384,6 +410,7 @@ def _run_preflight(
             observed_at=observed_at,
             payload=_unavailable_payload(observed_at, "forward_cache_boundary_conflict"),
             exit_code=_RECOVERY_EXIT,
+            cache_identity=cache_identity,
         )
     if all(
         cache.targets_by_key[target_key].latest_session == eligible_through
@@ -402,6 +429,7 @@ def _run_preflight(
             observed_at=observed_at,
             payload=payload,
             exit_code=0,
+            cache_identity=cache_identity,
         )
     return _emit_source_safe_receipt(
         artifact_root=artifact_root,
@@ -409,6 +437,7 @@ def _run_preflight(
         observed_at=observed_at,
         payload=_collection_required_payload(observed_at, eligible_through),
         exit_code=_COLLECTION_REQUIRED_EXIT,
+        cache_identity=cache_identity,
     )
 
 
@@ -419,6 +448,7 @@ def _defer_pair_cache(
     frozen_boundary: date,
     observed_at: datetime,
     reason: str,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity,
 ):
     return commit_kis_paper_daily_pair_forward_observation(
         rows_by_target={},
@@ -427,6 +457,7 @@ def _defer_pair_cache(
         repo_root=repository_root,
         frozen_boundary=frozen_boundary,
         observed_at=observed_at,
+        cache_identity=cache_identity,
     )
 
 
@@ -533,6 +564,9 @@ def _emit_collector_stage_unavailable(
     commit_failure_kind: str | None = None,
     commit_failure_phase: str | None = None,
     commit_failure_prepare_subphase: str | None = None,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity = (
+        KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY
+    ),
 ) -> int:
     return _emit_source_safe_receipt(
         artifact_root=artifact_root,
@@ -546,6 +580,7 @@ def _emit_collector_stage_unavailable(
             commit_failure_prepare_subphase=commit_failure_prepare_subphase,
         ),
         exit_code=_RECOVERY_EXIT,
+        cache_identity=cache_identity,
     )
 
 
@@ -620,8 +655,14 @@ def _emit_source_safe_receipt(
     observed_at: datetime,
     payload: Mapping[str, object],
     exit_code: int,
+    cache_identity: KisPaperDailyPairForwardCacheIdentity | None = None,
 ) -> int:
     source_safe_payload = dict(payload)
+    if cache_identity is not None and cache_identity != KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY:
+        source_safe_payload["cache_identity"] = {
+            "kind": cache_identity.kind,
+            "version": cache_identity.version,
+        }
     source_safe_payload["runtime_contract_sha256"] = _runtime_contract_sha256()
     receipt = {
         "kind": "kis_paper_daily_pair_forward_receipt",
@@ -733,6 +774,14 @@ def _canonical_readiness_roots(
         and artifact_root == _CANONICAL_ARTIFACT_ROOT
         and repository_root == _CANONICAL_REPOSITORY_ROOT
     )
+
+
+def _cache_identity(lineage: str) -> KisPaperDailyPairForwardCacheIdentity:
+    if lineage == "v1":
+        return KIS_PAPER_DAILY_PAIR_FORWARD_V1_IDENTITY
+    if lineage == "v2":
+        return KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY
+    raise ValueError("pair forward cache lineage is invalid")
 
 
 def _require_utc(value: datetime) -> datetime:

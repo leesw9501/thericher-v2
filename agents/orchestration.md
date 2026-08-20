@@ -6,11 +6,17 @@ external source-safe receipts retain completed evidence.
 
 ## Company Objective
 
-`kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` is ready. Data will
-create one isolated QQQ/SPY KIS Paper D1 forward-cache lineage after v1's
-retained revision conflicts, while preserving v1 bytes and its quarantine.
-This is collection/provenance work only: no model, GPU, Execution,
-Paper-consumer, or live consequence follows. The completed
+`firstrate-m5-mean-reversion-after-cost-control-v1` is ready. Engine Research
+will evaluate one fixed source-local 5m mean-reversion rule through the existing
+local-paper simulator, with the same fixed after-cost comparison discipline as
+the closed L2 and trend controls. This is a bounded breadth control: no KIS,
+network, credential, GPU, Execution, Paper-consumer, or live consequence
+follows. The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1`
+created one isolated QQQ/SPY KIS Paper D1 v2 forward-cache lineage after v1's
+retained revision conflicts while preserving v1 bytes and its quarantine. A
+network-disabled preflight returned `collection_required`, one serial v2
+collector returned `ready`, and a second network-disabled preflight reattached
+`cache_current`. This is collection/provenance work only. The completed
 `tiingo-prospective-eod-refresh-v1` created and
 offline-reattested the fixed SPY/QQQ/IWM external snapshot; it remains
 lineage-only and passed focused and full authority verification. The completed
@@ -43,7 +49,7 @@ named clock/session, decision-time availability, and provider finality
 | --- | --- | --- | --- |
 | FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: source reattached and 18 `local_paper`, replayable, terminal-flat cells completed. L2 beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; no GPU or KIS/Paper consumer follows. |
 | FirstRate 5m trend-rule after-cost control | Data / Engine Research / temporary Validation | Existing canonical SPY/QQQ source-local data, resampler, local-paper simulator, and external artifact root | Complete/rejected: the fixed 20/60 rule beat flat in 0/6 nonzero-cost SPY/QQQ comparisons; all 18 cells were `local_paper`, replayable, and terminal-flat. No GPU or KIS/Paper consumer follows. |
-| KIS QQQ/SPY D1 v2 fresh-cache bootstrap | Data / Infra Capability | Isolated external v2 root, existing KIS Paper daily route, and source-safe receipt root | Ready: preserve the v1 quarantined cache and establish a separately identified forward lineage. It may collect only the fixed daily pair and creates no Research, GPU, Execution, Paper-consumer, or live claim. |
+| KIS QQQ/SPY D1 v2 fresh-cache bootstrap | Data / Infra Capability | Isolated external v2 root, existing KIS Paper daily route, and source-safe receipt root | Complete: the fixed QQQ/NAS + SPY/AMS v2 cache reattached after one `ready` collection with 18 common sessions. v1 was not mounted, copied, cleared, or relabeled. The v2 lineage remains non-promoting: no Research, GPU, Execution, Paper-consumer, or live claim follows. |
 | Tiingo prospective EOD refresh | Data | Existing fixed ETF source contract, external canonical root, and approved local token path | Complete: one current dated SPY/QQQ snapshot was created, then reattached offline by its source-safe dataset/manifest identities. It stays prospective-lineage-only and cannot clear KIS quarantine or create a Research, GPU, Execution, or Paper consumer. |
 | Tiingo IEX r1 integration | Data / Engine Research | Immutable r1 snapshot and external artifact root | Closed: host and container reattested the same raw, manifest, gzip, and canonical payload identities. CPU and CUDA fixed matrices completed; only categorical completion and cleanup receipts exist. |
 | FirstRate free M1 normalization | Data | Hash-bound external ZIPs, canonical CSVs, and source-safe receipt | Closed: archive hashes, expected entries, strict decode, canonical hashes, and exact timestamp-set equality reattached. Local provider round-trip counts are 207,824 SPY and 210,482 QQQ M1 Bars. |
@@ -94,8 +100,9 @@ Fresh, KIS-reconstructible causal input coverage remains the predictive-engine
 bottleneck. The direct container recovery is clean but unbound, so it does not
 change the task-owned `incomplete/current_session_short` topology,
 decision-time availability, provider finality, or model eligibility. The broad
-historical cursor is terminal and the QQQ/SPY D1 forward cache remains
-`input_unavailable` for its three named runtime facts. The completed CPU
+historical cursor is terminal; v1 remains quarantined, and the new QQQ/SPY D1
+v2 forward cache still lacks point-in-time availability, provider finality,
+and corporate-action qualification. The completed CPU
 baseline, failed L2 control, and failed shallow-tree control advance the
 backtest/local-paper accounting loop without pretending to solve that input
 gap. The next research action must not rerun either failed model family under a
@@ -150,10 +157,11 @@ hash; a conflict preserves the prior row and excludes only that target from the
 causal reader. Do not repeat a failed model family or spend GPU on an
 unqualified runtime study.
 
-The current reversible improvement is an isolated v2 QQQ/SPY D1 forward-cache
-bootstrap rather than clearing or overwriting the v1 quarantined rows. This
+The completed reversible improvement is an isolated v2 QQQ/SPY D1 forward-cache
+bootstrap rather than clearing or overwriting the v1 quarantined rows. It
 advances future KIS-reconstructible coverage while preserving conflict evidence
-and preventing the two cache lineages from being conflated.
+and preventing the two cache lineages from being conflated. Its one collection
+and independent reattach do not alter causal eligibility.
 
 The source-safe snapshot-observer fixture now receives a unique mutex while the
 production default remains `Global\TheRicherPaperSnapshotObserver`. This removes
@@ -177,10 +185,10 @@ or live-risk coverage.
 
 No category-based intraday recovery proposal is active. A later investigation
 would need two independently hash-validated matching *comparable* nonzero
-bindings plus a fresh Claude falsification-first verdict. The current D1 action
-completed the fixed-pair observation. Its preflight was `collection_required`;
-the one permitted collector retained two conflicts and quarantined both targets.
-The resulting causal classification remains `input_unavailable`, so this did
-not produce availability, finality, model, or consumer evidence. The next Data
-package must not use a same-route refetch as automatic clearance or independent
-recovery evidence.
+bindings plus a fresh Claude falsification-first verdict. The completed v2 D1
+action used a new isolated cache rather than a same-route v1 refetch. Its
+preflight was `collection_required`, its one permitted collector returned
+`ready`, and the independent preflight reattached `cache_current`. This does
+not clear v1 quarantine or produce availability, finality, model, or consumer
+evidence. A future Data package must not use a same-route refetch as automatic
+clearance or independent recovery evidence.
