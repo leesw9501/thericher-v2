@@ -269,12 +269,20 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   already inspected history. It may support retrospective controls only; it
   cannot create a fresh candidate, tune a filter or threshold, spend a sealed
   evaluation, obtain a GPU appointment, or feed Paper.
+- The frozen Tiingo D1 trend-pullback rotation reattached its exact snapshot
+  and independent receipt, then stopped as
+  `input_unavailable/insufficient_validation_active_decisions`: 3 active
+  decisions against a fixed minimum of 100, with 1,892 of 1,896 scheduled
+  validation decisions excluded by the existing event/discontinuity conditions.
+  This is a source-local eligibility result, not performance evidence, a
+  selection result, a GPU appointment, or a Paper input. Data may audit only
+  aggregate mask coverage before any material source or masking-policy change.
 
 ## Current Tracks
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | FirstRate 5m L2, fixed 20/60 trend, and fixed Wilder-RSI mean-reversion controls are all rejected | Close these FirstRate lineages; the next distinct source-separated breadth control is the pre-existing Tiingo D1 trend-pullback rotation, with no tuning or promotion |
+| Technical/chart and momentum/regime | FirstRate 5m controls are rejected; the frozen Tiingo D1 trend-pullback rotation stopped at preflight with 3/100 active validation decisions | Await the Data-owned aggregate event-mask coverage audit; do not retune the rule, masks, costs, or eligibility threshold |
 | Classical ML/statistical | FirstRate 5m L2 control rejected after all six nonzero-cost comparisons | Do not extend that L2 family or allocate GPU without a distinct frozen campaign |
 | Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
 | Portfolio/allocation/meta-decision | Deterministic source-attested selection, per-symbol policy, and scale/cap foundation only | Aligned out-of-fold upstream candidate evidence with a frozen ranking/turnover/capacity/correlation contract |

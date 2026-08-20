@@ -2583,6 +2583,31 @@ zero of six nonzero-cost SPY/QQQ cells. All 12 replay cells were
 fixed 14/30/50 lineage or treat it as a GPU, KIS, execution, or profitability
 signal.
 
+### Tiingo D1 Trend-Pullback Rotation Falsification
+
+Run the frozen source-separated SPY/QQQ/IWM D1 rotation once with a unique
+external label, then reattach its exact receipt in a fresh process:
+
+```powershell
+uv run python scripts/run_tiingo_d1_trend_mean_reversion_rotation.py --run-label <unique-label>
+uv run python scripts/run_tiingo_d1_trend_mean_reversion_rotation.py --run-label <same-label> --verify-only
+```
+
+The runner reads only its pinned local Tiingo snapshot and writes a precommit,
+aggregate summary, and independent validation receipt beneath the external
+artifact root. It does not read `.env` or credentials, call a network, KIS,
+Docker, or broker, train or load a model, use GPU, retain rows/prices/scores,
+or create an Execution or Paper input.
+
+The completed `20260820-r1` run stopped at the frozen preflight as
+`input_unavailable/insufficient_validation_active_decisions`: only 3 of the
+required 100 validation decisions were active, while 1,892 of 1,896 scheduled
+validation decisions were excluded by the fixed event/discontinuity conditions.
+This is not a performance or PnL result. Do not retune the rotation, cost
+band, masks, or threshold from this outcome. A separate aggregate-only Data
+audit must establish whether the fixed mask contract is structurally sparse
+before any later policy change is considered.
+
 ### Source-Scoped Liquid Universe
 
 Reattest the current local source metadata without reading bars, credentials,

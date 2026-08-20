@@ -30,11 +30,21 @@ Paper-consumer path ran. This closes the fixed 14-period Wilder-RSI
 30/50 long-only rule; do not tune its parameters or infer a KIS/Paper or GPU
 consequence.
 
-The next objective is `tiingo-d1-trend-mean-reversion-rotation-falsification-v1`:
-reattach the existing pinned Tiingo SPY/QQQ/IWM D1 snapshot and run the already
-frozen, source-separated trend-pullback rotation once. It is an aggregate-only,
-repeat-source falsification control, never a point-in-time, KIS, Paper, GPU,
-or live claim.
+The completed `tiingo-d1-trend-mean-reversion-rotation-falsification-v1`
+reattached its exact pinned Tiingo SPY/QQQ/IWM D1 snapshot and independently
+validated its one external `20260820-r1` receipt. It stopped at its frozen
+preflight as `input_unavailable/insufficient_validation_active_decisions`:
+only 3 of the required 100 validation decisions were active, while 1,892 of
+1,896 scheduled validation decisions were excluded by the frozen event or
+discontinuity conditions. It made no performance, selection, point-in-time,
+GPU, KIS, Paper, or live claim. The aggregate summary and independent
+validation SHA-256 values are respectively
+`sha256:f68bbd3cac1ccfbf1f4e4d6876ba3c28c5e9a8fa37324a20d19c252df26261cf`
+and
+`sha256:17b1ce1f5e18e8f525fb42bcfd2537d18c8d885b40ae3dc68816d3b8653a74d3`.
+The next objective is `tiingo-d1-event-mask-coverage-audit-v1`: explain this
+source-specific sparse eligibility only with aggregate mask evidence, without
+retuning the frozen rule or mask.
 
 The completed `kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` created the
 isolated QQQ/NAS + SPY/AMS KIS Paper D1 cache at

@@ -435,6 +435,24 @@ class TiingoD1TrendMeanReversionRotationRun:
             raise ValueError("Tiingo D1 mean-reversion rotation precommit hash is invalid")
 
 
+@dataclass(frozen=True, slots=True)
+class TiingoD1TrendMeanReversionRotationValidationReceipt:
+    """Independent external reattachment of one frozen run's safe evidence."""
+
+    status: Literal["verified"]
+    validation_path: Path
+    precommit_hash: str
+    source_reattached: bool
+
+    def __post_init__(self) -> None:
+        if (
+            self.status != "verified"
+            or not _is_sha256(self.precommit_hash)
+            or not self.source_reattached
+        ):
+            raise ValueError("Tiingo D1 mean-reversion rotation validation is invalid")
+
+
 def prepare_tiingo_d1_trend_mean_reversion_rotation(
     snapshot: LoadedTiingoEtfDailySnapshot,
     *,
@@ -574,6 +592,68 @@ def run_tiingo_d1_trend_mean_reversion_rotation(
         precommit_path=precommit_path,
         precommit_hash=precommit_hash,
         summary_path=summary_path,
+    )
+
+
+def validate_tiingo_d1_trend_mean_reversion_rotation(
+    snapshot: LoadedTiingoEtfDailySnapshot,
+    *,
+    artifact_root: Path | str,
+    run_label: str,
+    repo_root: Path | str,
+) -> TiingoD1TrendMeanReversionRotationValidationReceipt:
+    """Recompute and bind one persisted aggregate-only run in a fresh process."""
+
+    resolved_label = _validated_run_label(run_label)
+    root = _external_artifact_root(Path(artifact_root), Path(repo_root))
+    campaign_input = prepare_tiingo_d1_trend_mean_reversion_rotation(snapshot)
+    expected_precommit = campaign_input.safe_payload()
+    precommit_hash = _sha256_json(expected_precommit)
+    expected_summary = {
+        "precommit_hash": precommit_hash,
+        "result": evaluate_tiingo_d1_trend_mean_reversion_rotation(
+            campaign_input
+        ).safe_payload(),
+    }
+    artifact_dir = root / "research" / TIINGO_D1_TREND_MEAN_REVERSION_ROTATION_ID / resolved_label
+    _ensure_artifact_directory(root, artifact_dir)
+    precommit_path = artifact_dir / "precommit.json"
+    summary_path = artifact_dir / "summary.json"
+    expected_precommit_bytes = _canonical_json(expected_precommit)
+    expected_summary_bytes = _canonical_json(expected_summary)
+    if (
+        not precommit_path.is_file()
+        or precommit_path.is_symlink()
+        or precommit_path.read_bytes() != expected_precommit_bytes
+        or not summary_path.is_file()
+        or summary_path.is_symlink()
+        or summary_path.read_bytes() != expected_summary_bytes
+    ):
+        raise ValueError("Tiingo D1 mean-reversion rotation evidence binding is invalid")
+
+    validation_path = artifact_dir / "validation.json"
+    validation_payload = {
+        "schema_version": SCHEMA_VERSION,
+        "campaign_id": TIINGO_D1_TREND_MEAN_REVERSION_ROTATION_ID,
+        "status": "verified",
+        "precommit_hash": precommit_hash,
+        "precommit_sha256": _sha256_bytes(expected_precommit_bytes),
+        "summary_sha256": _sha256_bytes(expected_summary_bytes),
+        "source_reattached": True,
+        "result_status": expected_summary["result"]["status"],
+        "raw_market_data_written": False,
+        "candidate_selection_allowed": False,
+        "ensemble_allowed": False,
+        "gpu_eligible": False,
+        "paper_input_allowed": False,
+        "promotion_allowed": False,
+    }
+    _write_or_verify(validation_path, _canonical_json(validation_payload))
+    return TiingoD1TrendMeanReversionRotationValidationReceipt(
+        status="verified",
+        validation_path=validation_path,
+        precommit_hash=precommit_hash,
+        source_reattached=True,
     )
 
 
@@ -894,6 +974,10 @@ def _sha256_json(payload: Mapping[str, object]) -> str:
         "utf-8"
     )
     return "sha256:" + hashlib.sha256(encoded).hexdigest()
+
+
+def _sha256_bytes(payload: bytes) -> str:
+    return "sha256:" + hashlib.sha256(payload).hexdigest()
 
 
 def _is_sha256(value: str) -> bool:

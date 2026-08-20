@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -12,6 +13,7 @@ from thericher_v2.data.tiingo_etf_daily import (
 )
 from thericher_v2.research.tiingo_d1_trend_mean_reversion_rotation import (
     run_tiingo_d1_trend_mean_reversion_rotation,
+    validate_tiingo_d1_trend_mean_reversion_rotation,
 )
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
@@ -29,6 +31,7 @@ def main(argv: Sequence[str] | None = None) -> None:
     parser.add_argument("--snapshot", type=Path, default=_SNAPSHOT)
     parser.add_argument("--market-data-root", type=Path, default=DEFAULT_MARKET_DATA_ROOT)
     parser.add_argument("--artifact-root", type=Path, default=_DEFAULT_ARTIFACT_ROOT)
+    parser.add_argument("--verify-only", action="store_true")
     arguments = parser.parse_args(argv)
     snapshot = load_verified_tiingo_etf_d1_snapshot(
         arguments.snapshot,
@@ -38,6 +41,25 @@ def main(argv: Sequence[str] | None = None) -> None:
         market_data_root=arguments.market_data_root,
         repo_root=_REPOSITORY_ROOT,
     )
+    if arguments.verify_only:
+        receipt = validate_tiingo_d1_trend_mean_reversion_rotation(
+            snapshot,
+            artifact_root=arguments.artifact_root,
+            run_label=arguments.run_label,
+            repo_root=_REPOSITORY_ROOT,
+        )
+        print(
+            json.dumps(
+                {
+                    "status": receipt.status,
+                    "precommit_hash": receipt.precommit_hash,
+                    "source_reattached": receipt.source_reattached,
+                },
+                ensure_ascii=True,
+                sort_keys=True,
+            )
+        )
+        return
     run = run_tiingo_d1_trend_mean_reversion_rotation(
         snapshot,
         artifact_root=arguments.artifact_root,

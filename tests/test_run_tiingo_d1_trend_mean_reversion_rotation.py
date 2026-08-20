@@ -57,6 +57,69 @@ def test_runner_uses_the_pinned_snapshot_and_only_prints_safe_summary(
     assert capsys.readouterr().out == '{"raw_market_data_written": false}\n'
 
 
+def test_runner_verify_only_uses_the_pinned_snapshot_and_safe_receipt(
+    tmp_path: Path,
+    monkeypatch,
+    capsys,
+) -> None:
+    runner = _load_runner()
+    snapshot = object()
+    observed: dict[str, object] = {}
+
+    def load_snapshot(path: Path, **kwargs: object) -> object:
+        observed["snapshot_path"] = path
+        observed["load_kwargs"] = kwargs
+        return snapshot
+
+    def validate_rotation(
+        received_snapshot: object,
+        *,
+        artifact_root: Path,
+        run_label: str,
+        repo_root: Path,
+    ) -> SimpleNamespace:
+        observed["received_snapshot"] = received_snapshot
+        observed["artifact_root"] = artifact_root
+        observed["run_label"] = run_label
+        observed["repo_root"] = repo_root
+        return SimpleNamespace(
+            status="verified",
+            precommit_hash="sha256:" + "a" * 64,
+            source_reattached=True,
+        )
+
+    def unexpected_run(*_args: object, **_kwargs: object) -> object:
+        raise AssertionError("--verify-only must not run the rotation")
+
+    monkeypatch.setattr(runner, "load_verified_tiingo_etf_d1_snapshot", load_snapshot)
+    monkeypatch.setattr(
+        runner,
+        "validate_tiingo_d1_trend_mean_reversion_rotation",
+        validate_rotation,
+    )
+    monkeypatch.setattr(runner, "run_tiingo_d1_trend_mean_reversion_rotation", unexpected_run)
+    artifact_root = tmp_path / "model-artifacts"
+
+    runner.main(
+        [
+            "--run-label",
+            "unit-verify",
+            "--artifact-root",
+            str(artifact_root),
+            "--verify-only",
+        ]
+    )
+
+    assert observed["received_snapshot"] is snapshot
+    assert observed["run_label"] == "unit-verify"
+    assert observed["artifact_root"] == artifact_root
+    assert capsys.readouterr().out == (
+        '{"precommit_hash": "sha256:'
+        + "a" * 64
+        + '", "source_reattached": true, "status": "verified"}\n'
+    )
+
+
 def test_runner_has_no_credential_or_broker_surface() -> None:
     source = (
         Path(__file__).resolve().parents[1]

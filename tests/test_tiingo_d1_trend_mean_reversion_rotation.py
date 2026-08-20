@@ -213,6 +213,44 @@ def test_external_artifacts_are_idempotent_external_and_redacted(
         )
 
 
+def test_validation_recomputes_and_binds_existing_safe_evidence(tmp_path: Path) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    snapshot = _snapshot(profile="active")
+    run = rotation.run_tiingo_d1_trend_mean_reversion_rotation(
+        snapshot,
+        artifact_root=artifact_root,
+        run_label="validation-r1",
+        repo_root=repo_root,
+    )
+
+    receipt = rotation.validate_tiingo_d1_trend_mean_reversion_rotation(
+        snapshot,
+        artifact_root=artifact_root,
+        run_label="validation-r1",
+        repo_root=repo_root,
+    )
+
+    validation = json.loads(receipt.validation_path.read_text(encoding="utf-8"))
+    assert receipt.status == "verified"
+    assert receipt.source_reattached is True
+    assert receipt.precommit_hash == run.precommit_hash
+    assert validation["summary_sha256"].startswith("sha256:")
+    assert validation["raw_market_data_written"] is False
+    assert validation["paper_input_allowed"] is False
+    assert validation["promotion_allowed"] is False
+
+    run.summary_path.write_text("{}\n", encoding="ascii")
+    with pytest.raises(ValueError, match="evidence binding"):
+        rotation.validate_tiingo_d1_trend_mean_reversion_rotation(
+            snapshot,
+            artifact_root=artifact_root,
+            run_label="validation-r1",
+            repo_root=repo_root,
+        )
+
+
 def _snapshot(
     *,
     count: int = 1_000,

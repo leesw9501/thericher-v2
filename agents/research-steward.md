@@ -14,6 +14,11 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   any of its six fixed nonzero-cost SPY/QQQ cells. Their aggregate-only
   local-paper matrices were terminal-flat and replayable, but no closed lineage
   holds a GPU appointment or sealed-evaluation allocation.
+- The frozen Tiingo D1 trend-pullback rotation stopped before evaluation as
+  `input_unavailable/insufficient_validation_active_decisions` (3 active
+  decisions versus 100 required). It spent no GPU appointment, sealed
+  evaluation, selection, or model allocation; the next Data audit is
+  aggregate-only and remains outside GPU custody.
 - The completed QQQ/SPY D1 forward causal qualification is Data-only and
   `input_unavailable` for three unobserved runtime facts: named clock/session,
   decision-time availability, and provider finality. It consumed no GPU custody,
