@@ -27,10 +27,11 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   sessions under a distinct identity, but does not change those unobserved
   clock, availability, finality, or corporate-action facts. It consumes no
   GPU custody, sealed-evaluation history, or model allocation.
-- The next KIS D1 prospective observation-pairing package is Data-only
-  measurement. Even a matching pair cannot allocate GPU or sealed evaluation;
-  an absent or changed decision-time identity only disqualifies its scoped
-  session.
+- The current KIS D1 prospective observation receipt is a Data-only scoped
+  `input_unavailable/first_observation_unavailable` first stage, without a
+  later observation. Even a matching pair cannot allocate GPU or sealed
+  evaluation; an absent or changed decision-time identity only disqualifies its
+  scoped session.
 - The QQQ/SPY historical D1 CPU baseline reproductions and the later frozen L2
   logistic control completed without a GPU appointment, model-selection
   allocation, or sealed-evaluation spend. The L2 QQQ/SPY after-cost replays

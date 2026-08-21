@@ -83,13 +83,16 @@ pointer under `D:\thericher-v2\model-artifacts\data\kis-paper-d1-prospective-obs
 It uses only the existing QQQ/NAS + SPY/AMS virtual-Paper daily route and v2
 cache read-only; immutable receipts retain only the fixed source-contract hash,
 session key, timestamps, and per-target canonical row hashes. Its container
-wiring smoke was `not_due` at 2026-08-20T08:27Z, so it made no KIS request and
-there is no pair result yet. Task Scheduler records that its 2026-08-20 23:20
-KST invocation returned `0`, while the offline reader remains
-`current_pointer_unavailable`; that exit code is not stage or outcome evidence.
-The next task-owned run is 2026-08-21 08:15 KST. One thread-owned, one-shot
-offline reattachment follow-up is scheduled for 2026-08-21 23:30 KST, after
-both owned stages. A terse implementation drift check from Claude returned
+wiring smoke was `not_due` at 2026-08-20T08:27Z, so it made no KIS request.
+The approved offline reader now validates the current pointer for the
+2026-08-20 completed-session first stage as
+`input_unavailable/first_observation_unavailable` (receipt
+`sha256:5099b0495d033d500c244015aca710e98a0aba34b0b8a65394df3565ae20f932`;
+source contract `sha256:b7752aa22cc3b358b52c6fe2e6da72e1dc811b5a7078563de0c4201a68f9033d`).
+It has no first-receipt binding or later observation, so it is not a pair
+outcome. Task Scheduler records that 2026-08-21 08:15 KST first-stage
+invocation returned `0`; the next task-owned run is 2026-08-22 08:15 KST.
+Task exit is not outcome evidence. A terse implementation drift check from Claude returned
 `uncertain`;
 therefore no observation is treated as a qualification result, and a later
 Claude falsification check is still required before relying on an actual pair
@@ -100,9 +103,11 @@ The observer now writes a hash-bound source-safe `current.json` pointer only to
 an immutable outcome receipt. Its offline reader independently revalidates the
 pointer, referenced receipt, and, for a later result, the exact first-receipt
 ID/hash, session, and first-observation hashes. The initial read-only host
-check returned `current_pointer_unavailable`, meaning no actual result exists;
-it made no KIS, credential, Docker, or cache call. A missing pointer is
-unknown, never an inferred match or failure.
+check returned `current_pointer_unavailable`, meaning no actual result existed;
+it made no KIS, credential, Docker, or cache call. The later approved
+reattachment found the scoped first-stage `input_unavailable` receipt above;
+it is neither `first_recorded` nor a validated later receipt. A missing pointer
+is unknown, never an inferred match or failure.
 
 The latest task-owned QQQ/SPY intraday-head terminal is dispatcher-complete but
 its source-safe current-session coverage is still

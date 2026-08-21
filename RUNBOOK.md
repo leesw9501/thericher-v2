@@ -574,10 +574,12 @@ Execution input, Paper order, or live behavior.
 The worker owns `next_due` in its external state and does not poll or foreground
 wait. Do not invoke the task manually. The initial container smoke was outside
 the scheduled minute and returned `not_due` without constructing a KIS client.
-Task Scheduler records the 2026-08-20 23:20 KST invocation with result `0`,
-while the offline reader remains `current_pointer_unavailable`; task exit alone
-is not stage or outcome evidence. The next task-owned run is 2026-08-21 08:15
-KST.
+The approved offline reader reattached the 2026-08-21 08:15 KST first stage as
+`input_unavailable/first_observation_unavailable` for completed session
+2026-08-20. Its hash-bound receipt has no first-observation binding and no
+later observation, so it is not a two-observation outcome. Task Scheduler
+records that invocation with result `0`; task exit alone is not stage or
+outcome evidence. The next task-owned run is 2026-08-22 08:15 KST.
 
 After the task writes a result, use only
 `read_current_kis_paper_d1_prospective_observation_pairing_outcome` from the
@@ -587,7 +589,8 @@ result, the exact first receipt ID/hash, session, and first-observation hashes.
 `current_pointer_unavailable` means no result is available yet; it is not a
 match, a failure, a retry instruction, or a reason to invoke the task.
 `first_recorded` is likewise incomplete: only a validated `later` receipt is a
-two-observation outcome. The hash linkage is provenance under an assumed-honest
+two-observation outcome. A hash-bound `input_unavailable` first-stage receipt
+is likewise scoped to its session and does not supply that pair outcome. The hash linkage is provenance under an assumed-honest
 artifact host, not cryptographic proof of Task Scheduler origin, provider
 finality, or decision-time availability.
 

@@ -50,8 +50,10 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   point-in-time availability, provider finality, and corporate-action
   qualification are unobserved. It cannot freeze a target/split, enter a
   campaign, reserve GPU, or become a KIS/Paper consumer.
-- The new QQQ/SPY D1 prospective observation worker has no pair result yet.
-  Its first/later hash comparison is a Data-only disqualification measurement;
+- The current QQQ/SPY D1 prospective observation receipt is a scoped
+  `input_unavailable/first_observation_unavailable` first stage with no
+  first-receipt binding or later observation, so it is not a pair result. Its
+  first/later hash comparison remains a Data-only disqualification measurement;
   a match cannot freeze a campaign, allocate GPU, select a model, or create a
   KIS/Paper consumer.
 - No frozen, input-qualified predictive campaign is active. The latest
