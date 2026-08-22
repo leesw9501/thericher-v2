@@ -574,12 +574,13 @@ Execution input, Paper order, or live behavior.
 The worker owns `next_due` in its external state and does not poll or foreground
 wait. Do not invoke the task manually. The initial container smoke was outside
 the scheduled minute and returned `not_due` without constructing a KIS client.
-The approved offline reader reattached the 2026-08-21 08:15 KST first stage as
-`input_unavailable/first_observation_unavailable` for completed session
-2026-08-20. Its hash-bound receipt has no first-observation binding and no
-later observation, so it is not a two-observation outcome. Task Scheduler
-records that invocation with result `0`; task exit alone is not stage or
-outcome evidence. The next task-owned run is 2026-08-22 08:15 KST.
+The approved offline reader reattached the current completed-session 2026-08-21
+first stage as `input_unavailable/first_observation_unavailable` (receipt
+`sha256:87b6f50a989e1beddaed13ab4c420e5a9c657667297a654fbaeb0a6751d4632d`).
+Its hash-bound receipt has no first-observation binding and no later observation,
+so it is not a two-observation outcome. Source-safe Task Scheduler status is
+`Ready`; task exit alone is not stage or outcome evidence. The reader-owned
+`next_due` is `2026-08-24T23:15:00Z`.
 
 After the task writes a result, use only
 `read_current_kis_paper_d1_prospective_observation_pairing_outcome` from the

@@ -85,14 +85,14 @@ cache read-only; immutable receipts retain only the fixed source-contract hash,
 session key, timestamps, and per-target canonical row hashes. Its container
 wiring smoke was `not_due` at 2026-08-20T08:27Z, so it made no KIS request.
 The approved offline reader now validates the current pointer for the
-2026-08-20 completed-session first stage as
+2026-08-21 completed-session first stage as
 `input_unavailable/first_observation_unavailable` (receipt
-`sha256:5099b0495d033d500c244015aca710e98a0aba34b0b8a65394df3565ae20f932`;
+`sha256:87b6f50a989e1beddaed13ab4c420e5a9c657667297a654fbaeb0a6751d4632d`;
 source contract `sha256:b7752aa22cc3b358b52c6fe2e6da72e1dc811b5a7078563de0c4201a68f9033d`).
 It has no first-receipt binding or later observation, so it is not a pair
-outcome. Task Scheduler records that 2026-08-21 08:15 KST first-stage
-invocation returned `0`; the next task-owned run is 2026-08-22 08:15 KST.
-Task exit is not outcome evidence. A terse implementation drift check from Claude returned
+outcome. The source-safe Task Scheduler status is `Ready`; task exit is not
+outcome evidence. The reader-owned `next_due` is `2026-08-24T23:15:00Z`.
+A terse implementation drift check from Claude returned
 `uncertain`;
 therefore no observation is treated as a qualification result, and a later
 Claude falsification check is still required before relying on an actual pair

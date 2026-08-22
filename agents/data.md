@@ -44,13 +44,13 @@ a hash-bound source-safe current-outcome pointer to immutable receipts. The
 offline reader revalidates the pointer plus exact first/later receipt binding;
 an absent pointer is only `current_pointer_unavailable`. The approved offline
 reader now validates a current first-stage receipt for completed session
-2026-08-20: `input_unavailable/first_observation_unavailable`, source contract
+2026-08-21: `input_unavailable/first_observation_unavailable`, source contract
 `sha256:b7752aa22cc3b358b52c6fe2e6da72e1dc811b5a7078563de0c4201a68f9033d`,
-and receipt `sha256:5099b0495d033d500c244015aca710e98a0aba34b0b8a65394df3565ae20f932`.
+and receipt `sha256:87b6f50a989e1beddaed13ab4c420e5a9c657667297a654fbaeb0a6751d4632d`.
 Its first-receipt binding and later observation are both absent, so it is not a
-pair result. Task Scheduler records that 2026-08-21 08:15 KST invocation with
-result `0`; task exit is not stage or outcome evidence. The next task-owned run
-is 2026-08-22 08:15 KST. No raw rows, model, GPU, or consumer path is enabled.
+pair result. The source-safe Task Scheduler status is `Ready`; task exit is not
+stage or outcome evidence. The reader-owned `next_due` is
+`2026-08-24T23:15:00Z`. No raw rows, model, GPU, or consumer path is enabled.
 A later match is measurement-only; a missing or changed target hash
 disqualifies only the bound session.
 
@@ -231,7 +231,7 @@ cache-recovery branch, not session coverage, finality, or consumer eligibility.
 | FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Complete: source/local-resampling reattestation, 60-bar/61-bar-embargo split, and all 18 local-paper replay cells completed. The L2 candidate had zero wins over flat in six nonzero-cost SPY/QQQ cells, so the lineage is `rejected`; no GPU or consumer follows. |
 | Tiingo D1 event-mask coverage audit | Data | Complete: the exact rotation receipt and pinned snapshot reattached independently. Event masks accounted for all 1,892 validation exclusions, discontinuity-only exclusions were zero, and the aggregate binding was consistent. The rotation lineage is closed without a policy change. |
 | Norgate trial host readiness reconciliation | Data / Infra Capability | Complete: the immutable diagnosis is `local_api_not_ready_updater_not_observed`, independently validated without a second host invocation. It records a local updater prerequisite only; no source rows, updater action, network, or repeated poll followed. |
-| KIS D1 prospective observation pairing | Data / Infra Capability | Owned: the installed two-stage worker has an external durable `next_due` and a hash-bound current-outcome reader. The validated current first-stage receipt is `input_unavailable/first_observation_unavailable` for 2026-08-20; no first-receipt binding or later observation exists, so no pair result, model, or consumer is enabled. Task Scheduler records the 2026-08-21 08:15 KST invocation with result `0`; exit code is not stage or outcome evidence. Next owned run: 2026-08-22 08:15 KST. |
+| KIS D1 prospective observation pairing | Data / Infra Capability | Owned: the installed two-stage worker has an external durable `next_due` and a hash-bound current-outcome reader. The validated current first-stage receipt is `input_unavailable/first_observation_unavailable` for completed session 2026-08-21; no first-receipt binding or later observation exists, so no pair result, model, or consumer is enabled. The source-safe Task Scheduler status is `Ready`; task exit is not stage or outcome evidence. Reader-owned `next_due`: `2026-08-24T23:15:00Z`. |
 | Cboe VIX/VXN D1 availability observations | Data / completed one-shot `thericher-cboe-vix-d1-availability-20260820` and `thericher-cboe-vxn-d1-availability-20260820` tasks | Complete: Task Scheduler records the 2026-08-21 05:30/05:31 KST invocations with result `0`, but the prepared offline reader returned `unavailable` for both VIX and VXN under the exact 2026-08-20 session, 20:00Z close, and 2026-08-21 13:30Z next-open bounds. The missing receipts are scoped to these observations; task exit is not outcome evidence. Do not retry or create a recurring task. Neither outcome establishes decision-time availability, provider finality, a feature, campaign, GPU, Execution, Paper, or live input. |
 | FirstRate 5m trend-rule input reattestation | Data | Closed as duplicate: the completed fixed 20/60 control already bound this exact source-local 5m geometry and chronology. Do not dispatch another reattestation under a new label. |
 | Tiingo prospective EOD refresh | Data | Complete: one current dated external SPY/QQQ/IWM snapshot was acquired through the fixed three-request path and reattached offline by dataset/manifest identity. Its source-as-of boundary and all lineage-only eligibility flags remain fixed; focused and full authority verification passed. |
