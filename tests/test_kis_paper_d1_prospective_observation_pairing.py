@@ -17,7 +17,9 @@ from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
     KisPaperDailyPairForwardRow,
 )
+from thericher_v2.execution.kis_market_data import KisPaperMarketDataError
 from thericher_v2.execution.kis_paper_daily_pair_forward import (
+    KisPaperDailyPairForwardError,
     KisPaperDailyPairForwardObservation,
 )
 
@@ -152,6 +154,86 @@ def test_current_reader_revalidates_the_exact_later_binding_offline(
     pointer_text = _current_pointer(artifact_root).read_text(encoding="utf-8")
     assert "812.34" not in pointer_text
     assert "test-token" not in pointer_text
+
+
+def test_current_reader_rejects_non_allowlisted_observation_failure_codes(
+    tmp_path: Path,
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    incomplete = KisPaperDailyPairForwardObservation(
+        rows_by_target={"QQQ/NAS": (_row("QQQ", "NAS", "812.34"),)},
+        failure_reasons_by_target={"SPY/AMS": "auth_rejected"},
+        observed_at=FIRST_OBSERVED_AT,
+    )
+    fetcher, _ = _recording_fetcher(incomplete)
+    result = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=fetcher,
+    )
+    assert result.evidence_path is not None
+    assert result.receipt_sha256 is not None
+
+    payload = json.loads(result.evidence_path.read_text(encoding="utf-8"))
+    payload.pop("receipt_sha256")
+    payload["observation_failure_codes"] = ["private error detail"]
+    receipt_sha256 = pairing._sha256(payload)
+    payload["receipt_sha256"] = receipt_sha256
+    result.evidence_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    pointer_path = _current_pointer(artifact_root)
+    pointer = json.loads(pointer_path.read_text(encoding="utf-8"))
+    pointer["receipt_sha256"] = receipt_sha256
+    pointer.pop("pointer_sha256")
+    pointer["pointer_sha256"] = pairing._sha256(pointer)
+    pointer_path.write_text(json.dumps(pointer), encoding="utf-8")
+
+    with pytest.raises(pairing.KisPaperD1ProspectiveObservationPairingError):
+        pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
+
+
+def test_current_reader_rejects_failure_codes_outside_target_failure_binding(
+    tmp_path: Path,
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    incomplete = KisPaperDailyPairForwardObservation(
+        rows_by_target={"QQQ/NAS": (_row("QQQ", "NAS", "812.34"),)},
+        failure_reasons_by_target={"SPY/AMS": "auth_rejected"},
+        observed_at=FIRST_OBSERVED_AT,
+    )
+    fetcher, _ = _recording_fetcher(incomplete)
+    result = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=fetcher,
+    )
+    assert result.evidence_path is not None
+    assert result.receipt_sha256 is not None
+
+    payload = json.loads(result.evidence_path.read_text(encoding="utf-8"))
+    payload.pop("receipt_sha256")
+    payload["reason"] = "first_observation_identity_unavailable"
+    receipt_sha256 = pairing._sha256(payload)
+    payload["receipt_sha256"] = receipt_sha256
+    result.evidence_path.write_text(json.dumps(payload), encoding="utf-8")
+
+    pointer_path = _current_pointer(artifact_root)
+    pointer = json.loads(pointer_path.read_text(encoding="utf-8"))
+    pointer["receipt_sha256"] = receipt_sha256
+    pointer.pop("pointer_sha256")
+    pointer["pointer_sha256"] = pairing._sha256(pointer)
+    pointer_path.write_text(json.dumps(pointer), encoding="utf-8")
+
+    with pytest.raises(pairing.KisPaperD1ProspectiveObservationPairingError):
+        pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+        )
 
 
 def test_current_reader_rejects_a_tampered_current_pointer(tmp_path: Path) -> None:
@@ -498,10 +580,74 @@ def test_missing_target_fails_closed_and_does_not_leave_a_pending_pair(tmp_path:
     )
 
     assert result.status == "input_unavailable"
-    assert result.reason == "first_observation_unavailable"
+    assert result.reason == "first_observation_target_failure"
     assert result.first_row_hashes is None
+    assert result.observation_failure_codes == ("unexpected_private_daily_collector_error",)
     assert len(calls) == 1
     assert _state(artifact_root)["expected_stage"] == "first"
+
+
+def test_target_failure_receipt_keeps_only_allowlisted_codes(tmp_path: Path) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    incomplete = KisPaperDailyPairForwardObservation(
+        rows_by_target={"QQQ/NAS": (_row("QQQ", "NAS", "812.34"),)},
+        failure_reasons_by_target={"SPY/AMS": "auth_rejected"},
+        observed_at=FIRST_OBSERVED_AT,
+    )
+    fetcher, _ = _recording_fetcher(incomplete)
+
+    result = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=fetcher,
+    )
+
+    assert result.reason == "first_observation_target_failure"
+    assert result.observation_failure_codes == ("auth_rejected",)
+    assert result.evidence_path is not None
+    receipt = result.evidence_path.read_text(encoding="utf-8")
+    assert "auth_rejected" in receipt
+    assert "812.34" not in receipt
+
+
+@pytest.mark.parametrize(
+    ("error", "expected_reason"),
+    [
+        (
+            KisPaperMarketDataError("private market message"),
+            "first_observation_market_data_unavailable",
+        ),
+        (
+            KisPaperDailyPairForwardError("private pair message"),
+            "first_observation_pair_forward_unavailable",
+        ),
+        (OSError("private io message"), "first_observation_io_unavailable"),
+        (ValueError("private value message"), "first_observation_value_unavailable"),
+    ],
+)
+def test_first_observation_exceptions_are_classified_without_error_text(
+    tmp_path: Path,
+    error: BaseException,
+    expected_reason: str,
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+
+    def failing_fetcher(*_args: object, **_kwargs: object) -> KisPaperDailyPairForwardObservation:
+        raise error
+
+    result = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=failing_fetcher,
+    )
+
+    assert result.status == "input_unavailable"
+    assert result.reason == expected_reason
+    assert result.observation_failure_codes == ()
+    assert result.evidence_path is not None
+    assert "private" not in result.evidence_path.read_text(encoding="utf-8")
 
 
 def test_invalid_first_receipt_fails_closed_before_later_collection(tmp_path: Path) -> None:

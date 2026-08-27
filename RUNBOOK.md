@@ -574,13 +574,21 @@ Execution input, Paper order, or live behavior.
 The worker owns `next_due` in its external state and does not poll or foreground
 wait. Do not invoke the task manually. The initial container smoke was outside
 the scheduled minute and returned `not_due` without constructing a KIS client.
-The approved offline reader reattached the current completed-session 2026-08-25
+The approved offline reader reattached the current completed-session 2026-08-26
 first stage as `input_unavailable/first_observation_unavailable` (receipt
-`sha256:eb64ef20ba08159c81984f3c987670adc0b0dcb151216600eba1b05d3b77fe83`).
+`sha256:cae3e15d21241267429efd666d07f1c4f3e2c5e7d4dd8d270497aabebe5d4cab`).
 Its hash-bound receipt has no first-observation binding and no later observation,
 so it is not a two-observation outcome. Source-safe Task Scheduler status is
 `Ready`; task exit alone is not stage or outcome evidence. The reader-owned
-`next_due` is `2026-08-26T23:15:00Z`.
+`next_due` is `2026-08-27T23:15:00Z`.
+
+The rebuilt observer image adds `observation_failure_codes` only to a future
+target-level first-stage failure. The list is sorted and limited to the existing
+sanitized recovery taxonomy; an invalid code makes the immutable receipt fail
+offline validation. A direct first-stage exception receives one fixed family
+reason instead. Neither path stores error text, raw rows, credentials, account
+data, or stack traces, and neither changes task timing, KIS route, cache writes,
+or pair-result semantics.
 
 After the task writes a result, use only
 `read_current_kis_paper_d1_prospective_observation_pairing_outcome` from the

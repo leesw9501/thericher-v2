@@ -85,13 +85,20 @@ cache read-only; immutable receipts retain only the fixed source-contract hash,
 session key, timestamps, and per-target canonical row hashes. Its container
 wiring smoke was `not_due` at 2026-08-20T08:27Z, so it made no KIS request.
 The approved offline reader now validates the current pointer for the
-2026-08-25 completed-session first stage as
+2026-08-26 completed-session first stage as
 `input_unavailable/first_observation_unavailable` (receipt
-`sha256:eb64ef20ba08159c81984f3c987670adc0b0dcb151216600eba1b05d3b77fe83`;
+`sha256:cae3e15d21241267429efd666d07f1c4f3e2c5e7d4dd8d270497aabebe5d4cab`;
 source contract `sha256:b7752aa22cc3b358b52c6fe2e6da72e1dc811b5a7078563de0c4201a68f9033d`).
 It has no first-receipt binding or later observation, so it is not a pair
 outcome. The source-safe Task Scheduler status is `Ready`; task exit is not
-outcome evidence. The reader-owned `next_due` is `2026-08-26T23:15:00Z`.
+outcome evidence. The reader-owned `next_due` is `2026-08-27T23:15:00Z`.
+The rebuilt observer image adds only a fixed source-safe failure taxonomy for
+future first stages: target failures retain a sorted allowlisted aggregate code
+list, while direct exceptions map to fixed family reasons. It preserves task
+timing, route, cache read-only behavior, and receipt semantics, and retains no
+error text, rows, credentials, or account data. The short Claude recovery
+check was `review_unavailable` because its OAuth session had expired; no
+substantive verdict was inferred.
 A terse implementation drift check from Claude returned
 `uncertain`;
 therefore no observation is treated as a qualification result, and a later

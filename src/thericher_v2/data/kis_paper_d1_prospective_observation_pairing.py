@@ -22,6 +22,7 @@ from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     KisPaperDailyPairForwardCacheError,
     KisPaperDailyPairForwardRow,
     load_verified_kis_paper_daily_pair_forward_cache,
+    sanitize_kis_paper_daily_pair_forward_failure_reason,
 )
 from thericher_v2.execution.kis_market_data import KisPaperMarketDataError
 from thericher_v2.execution.kis_paper_daily_nas_forward import (
@@ -98,6 +99,14 @@ class KisPaperD1ProspectiveObservationPairingError(RuntimeError):
     """A source-safe error from the isolated pairing worker."""
 
 
+class _FirstObservationTargetFailure(KisPaperD1ProspectiveObservationPairingError):
+    """A fixed, aggregate-only target failure classification."""
+
+    def __init__(self, failure_codes: tuple[str, ...]) -> None:
+        super().__init__("first_observation_target_failure")
+        self.failure_codes = failure_codes
+
+
 @dataclass(frozen=True, slots=True)
 class KisPaperD1ProspectiveObservationPairingResult:
     """One safe scheduling result; all price-bearing values remain in memory."""
@@ -110,6 +119,7 @@ class KisPaperD1ProspectiveObservationPairingResult:
     session_key: date | None = None
     first_observed_at: datetime | None = None
     first_row_hashes: Mapping[str, str] | None = None
+    observation_failure_codes: tuple[str, ...] = ()
     later_observed_at: datetime | None = None
     later_row_hashes: Mapping[str, str] | None = None
     first_receipt_id: str | None = None
@@ -134,6 +144,7 @@ class KisPaperD1ProspectiveObservationPairingResult:
                 self.first_observed_at,
                 self.first_row_hashes,
             ),
+            "observation_failure_codes": list(self.observation_failure_codes),
             "later_observation": _observation_payload(
                 self.later_observed_at,
                 self.later_row_hashes,
@@ -345,17 +356,19 @@ def _first_stage(
         KisPaperD1ProspectiveObservationPairingError,
         OSError,
         ValueError,
-    ):
+    ) as error:
+        reason, failure_codes = _first_observation_failure(error)
         return _close(
             root=root,
             receipts=receipts,
             result=_result(
                 status="input_unavailable",
-                reason="first_observation_unavailable",
+                reason=reason,
                 stage="first",
                 observed_at=observed_at,
                 next_due_at=_next_first_due(observed_at),
                 session_key=session,
+                observation_failure_codes=failure_codes,
             ),
             receipt_id=_terminal_receipt_id("first", session, observed_at),
         )
@@ -594,10 +607,13 @@ def _row_hashes(
     observation: KisPaperDailyPairForwardObservation,
     session: date,
 ) -> dict[str, str]:
-    if (
-        set(observation.rows_by_target) != set(_TARGET_KEYS)
-        or observation.failure_reasons_by_target
-    ):
+    if observation.failure_reasons_by_target and set(
+        observation.failure_reasons_by_target
+    ).issubset(_TARGET_KEYS):
+        raise _FirstObservationTargetFailure(
+            _source_safe_failure_codes(observation.failure_reasons_by_target)
+        )
+    if set(observation.rows_by_target) != set(_TARGET_KEYS):
         raise KisPaperD1ProspectiveObservationPairingError("observation_incomplete")
     hashes: dict[str, str] = {}
     for key in _TARGET_KEYS:
@@ -612,6 +628,49 @@ def _row_hash(row: KisPaperDailyPairForwardRow) -> str:
     return "sha256:" + hashlib.sha256("\x1f".join(row.raw_record()).encode("utf-8")).hexdigest()
 
 
+def _first_observation_failure(
+    error: BaseException,
+) -> tuple[str, tuple[str, ...]]:
+    if isinstance(error, _FirstObservationTargetFailure):
+        return "first_observation_target_failure", error.failure_codes
+    if isinstance(error, KisPaperMarketDataError):
+        return "first_observation_market_data_unavailable", ()
+    if isinstance(error, KisPaperDailyPairForwardError):
+        return "first_observation_pair_forward_unavailable", ()
+    if isinstance(error, OSError):
+        return "first_observation_io_unavailable", ()
+    if isinstance(error, ValueError):
+        return "first_observation_value_unavailable", ()
+    return "first_observation_identity_unavailable", ()
+
+
+def _source_safe_failure_codes(failure_reasons: Mapping[str, object]) -> tuple[str, ...]:
+    codes = {
+        sanitize_kis_paper_daily_pair_forward_failure_reason(value)
+        if isinstance(value, str)
+        else "unexpected_private_daily_collector_error"
+        for value in failure_reasons.values()
+    }
+    return tuple(sorted(codes))
+
+
+def _receipt_failure_codes(value: object) -> tuple[str, ...]:
+    if value is None:
+        return ()
+    if not isinstance(value, list) or not all(isinstance(code, str) for code in value):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    codes = tuple(value)
+    if (
+        tuple(sorted(set(codes))) != codes
+        or any(
+            sanitize_kis_paper_daily_pair_forward_failure_reason(code) != code
+            for code in codes
+        )
+    ):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
+    return codes
+
+
 def _result(
     *,
     status: PairingStatus,
@@ -622,6 +681,7 @@ def _result(
     session_key: date | None = None,
     first_observed_at: datetime | None = None,
     first_row_hashes: Mapping[str, str] | None = None,
+    observation_failure_codes: tuple[str, ...] = (),
     later_observed_at: datetime | None = None,
     later_row_hashes: Mapping[str, str] | None = None,
     first_receipt_id: str | None = None,
@@ -636,6 +696,7 @@ def _result(
         session_key=session_key,
         first_observed_at=first_observed_at,
         first_row_hashes=first_row_hashes,
+        observation_failure_codes=observation_failure_codes,
         later_observed_at=later_observed_at,
         later_row_hashes=later_row_hashes,
         first_receipt_id=first_receipt_id,
@@ -671,6 +732,7 @@ def _result_from_receipt(
     first_observed_at, first_hashes = _receipt_observation(payload, "first_observation")
     later_observed_at, later_hashes = _receipt_observation(payload, "later_observation")
     first_receipt_id, first_receipt_sha256 = _receipt_binding(payload)
+    observation_failure_codes = _receipt_failure_codes(payload.get("observation_failure_codes"))
     status = payload.get("status")
     stage = payload.get("stage")
     if status not in {
@@ -689,6 +751,7 @@ def _result_from_receipt(
         session_key=_parse_date(payload.get("session_key")),
         first_observed_at=first_observed_at,
         first_row_hashes=first_hashes,
+        observation_failure_codes=observation_failure_codes,
         later_observed_at=later_observed_at,
         later_row_hashes=later_hashes,
         first_receipt_id=first_receipt_id,
@@ -749,6 +812,13 @@ def _read_receipt(path: Path) -> dict[str, object]:
     _parse_date(payload.get("session_key"))
     first_observed_at, first_hashes = _receipt_observation(payload, "first_observation")
     _receipt_observation(payload, "later_observation")
+    failure_codes = _receipt_failure_codes(payload.get("observation_failure_codes"))
+    if failure_codes and (
+        payload.get("status") != "input_unavailable"
+        or payload.get("stage") != "first"
+        or payload.get("reason") != "first_observation_target_failure"
+    ):
+        raise KisPaperD1ProspectiveObservationPairingError("receipt_invalid")
     first_receipt_id, first_receipt_sha256 = _receipt_binding(payload)
     stage = payload.get("stage")
     if stage == "first" and (first_receipt_id is not None or first_receipt_sha256 is not None):

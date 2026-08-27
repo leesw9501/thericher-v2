@@ -28,7 +28,8 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
   clock, availability, finality, or corporate-action facts. It consumes no
   GPU custody, sealed-evaluation history, or model allocation.
 - The current KIS D1 prospective observation receipt is a Data-only scoped
-  `input_unavailable/first_observation_unavailable` first stage, without a
+  `input_unavailable/first_observation_unavailable` first stage for completed
+  session 2026-08-26, without a
   later observation. Even a matching pair cannot allocate GPU or sealed
   evaluation; an absent or changed decision-time identity only disqualifies its
   scoped session.
