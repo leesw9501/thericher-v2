@@ -613,6 +613,9 @@ uv run --extra dev python scripts/read_current_kis_paper_d1_prospective_observat
   --repository-root .
 ```
 
+The CLI also accepts the exact pairing receipt root shown above when a task
+handoff already supplies that narrower path.
+
 On 2026-08-19, the bounded direct refresh first wrote a `collection_required`
 preflight receipt for the 2026-08-18 eligible session
 (`sha256:7987f5a89f3ec8631646ece7718f0433ae7308aad9b27060cf0efffa4ad7028f`).

@@ -35,6 +35,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--artifact-root",
         type=Path,
         default=KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_ARTIFACT_ROOT,
+        help="model artifact root or the exact D1 pairing receipt root",
     )
     parser.add_argument(
         "--repository-root",
@@ -46,15 +47,24 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> None:
     args = build_parser().parse_args(argv)
+    artifact_root = _model_artifact_root(args.artifact_root)
     try:
         outcome = read_current_kis_paper_d1_prospective_observation_pairing_outcome(
-            artifact_root=args.artifact_root,
+            artifact_root=artifact_root,
             repository_root=args.repository_root,
         )
-        payload = _safe_payload(outcome, artifact_root=args.artifact_root)
+        payload = _safe_payload(outcome, artifact_root=artifact_root)
     except KisPaperD1ProspectiveObservationPairingError as error:
         payload = _unavailable_payload(str(error))
     print(json.dumps(payload, sort_keys=True))
+
+
+def _model_artifact_root(path: Path) -> Path:
+    parts = KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_ARTIFACT_PARTS
+    suffix = tuple(part.casefold() for part in path.parts[-len(parts) :])
+    if suffix == tuple(part.casefold() for part in parts):
+        return path.parents[len(parts) - 1]
+    return path
 
 
 def _safe_payload(

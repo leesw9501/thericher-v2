@@ -188,7 +188,11 @@ def test_current_outcome_reader_cli_emits_only_source_safe_later_binding(
     module.main(
         [
             "--artifact-root",
-            str(artifact_root),
+            str(
+                artifact_root.joinpath(
+                    *pairing.KIS_PAPER_D1_PROSPECTIVE_OBSERVATION_PAIRING_ARTIFACT_PARTS
+                )
+            ),
             "--repository-root",
             str(repository_root),
         ]
