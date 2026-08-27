@@ -115,6 +115,11 @@ it made no KIS, credential, Docker, or cache call. The later approved
 reattachment found the scoped first-stage `input_unavailable` receipt above;
 it is neither `first_recorded` nor a validated later receipt. A missing pointer
 is unknown, never an inferred match or failure.
+`scripts/read_current_kis_paper_d1_prospective_observation_pairing_outcome.py`
+now exposes that same host-only reader as a fixed source-safe CLI: it emits
+only categorical outcome fields, immutable receipt identities/binding, and the
+external evidence pointer. It loads no credential, task, Docker, KIS client,
+or cache writer.
 
 The latest task-owned QQQ/SPY intraday-head terminal is dispatcher-complete but
 its source-safe current-session coverage is still

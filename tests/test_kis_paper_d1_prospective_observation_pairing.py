@@ -156,6 +156,114 @@ def test_current_reader_revalidates_the_exact_later_binding_offline(
     assert "test-token" not in pointer_text
 
 
+def test_current_outcome_reader_cli_emits_only_source_safe_later_binding(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    first_fetcher, _ = _recording_fetcher(_observation(FIRST_OBSERVED_AT))
+    first = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=FIRST_OBSERVED_AT,
+        observation_fetcher=first_fetcher,
+    )
+    later_fetcher, _ = _recording_fetcher(_observation(LATER_OBSERVED_AT))
+    later = _run(
+        repository_root=repository_root,
+        artifact_root=artifact_root,
+        observed_at=LATER_OBSERVED_AT,
+        observation_fetcher=later_fetcher,
+    )
+    assert first.evidence_path is not None
+    assert first.receipt_sha256 is not None
+    assert later.evidence_path is not None
+
+    def forbid_network(*_args: object, **_kwargs: object) -> object:
+        raise AssertionError("outcome reader CLI must stay offline")
+
+    monkeypatch.setattr(socket, "create_connection", forbid_network)
+    module = _load_outcome_reader_script()
+    module.main(
+        [
+            "--artifact-root",
+            str(artifact_root),
+            "--repository-root",
+            str(repository_root),
+        ]
+    )
+
+    output = capsys.readouterr()
+    payload = json.loads(output.out)
+    assert set(payload) == {
+        "first_receipt_binding",
+        "next_due_at_utc",
+        "observed_at_utc",
+        "reason",
+        "receipt_id",
+        "receipt_path",
+        "receipt_sha256",
+        "session_key",
+        "source_contract_sha256",
+        "stage",
+        "status",
+    }
+    assert payload["status"] == "measurement_only_match"
+    assert payload["stage"] == "later"
+    assert payload["receipt_id"] == later.evidence_path.stem
+    assert payload["receipt_path"] == str(later.evidence_path)
+    assert payload["first_receipt_binding"] == {
+        "receipt_id": first.evidence_path.stem,
+        "receipt_sha256": first.receipt_sha256,
+    }
+    assert output.err == ""
+    for raw_value in ("812.34", "501.23", "test-token"):
+        assert raw_value not in output.out
+
+
+def test_current_outcome_reader_cli_sanitizes_reader_errors(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    repository_root, artifact_root = _roots(tmp_path)
+    module = _load_outcome_reader_script()
+
+    module.main(
+        [
+            "--artifact-root",
+            str(artifact_root),
+            "--repository-root",
+            str(repository_root),
+        ]
+    )
+
+    assert json.loads(capsys.readouterr().out) == {
+        "first_receipt_binding": None,
+        "next_due_at_utc": None,
+        "observed_at_utc": None,
+        "reason": "artifact_root_unavailable",
+        "receipt_id": None,
+        "receipt_path": None,
+        "receipt_sha256": None,
+        "session_key": None,
+        "source_contract_sha256": None,
+        "stage": None,
+        "status": "unavailable",
+    }
+
+
+def test_current_outcome_reader_cli_has_no_credential_or_broker_surface() -> None:
+    source = (
+        REPOSITORY_ROOT
+        / "scripts"
+        / "read_current_kis_paper_d1_prospective_observation_pairing_outcome.py"
+    ).read_text(encoding="utf-8")
+
+    for forbidden in (".env", "KIS_LIVE", "KIS_PAPER_ACCOUNT", "order", "broker"):
+        assert forbidden not in source
+
+
 def test_current_reader_rejects_non_allowlisted_observation_failure_codes(
     tmp_path: Path,
 ) -> None:
@@ -915,6 +1023,22 @@ def _load_worker_script() -> ModuleType:
     )
     spec = importlib.util.spec_from_file_location(
         "observe_kis_paper_d1_prospective_observation_pairing_for_test",
+        script_path,
+    )
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _load_outcome_reader_script() -> ModuleType:
+    script_path = (
+        REPOSITORY_ROOT
+        / "scripts"
+        / "read_current_kis_paper_d1_prospective_observation_pairing_outcome.py"
+    )
+    spec = importlib.util.spec_from_file_location(
+        "read_current_kis_paper_d1_prospective_observation_pairing_outcome_for_test",
         script_path,
     )
     assert spec is not None and spec.loader is not None

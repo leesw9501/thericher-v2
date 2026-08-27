@@ -603,6 +603,16 @@ is likewise scoped to its session and does not supply that pair outcome. The has
 artifact host, not cryptographic proof of Task Scheduler origin, provider
 finality, or decision-time availability.
 
+For a repeatable source-safe host read, use the narrow CLI below. It invokes no
+task, Docker service, KIS client, credential loader, or cache writer and emits
+only the validated receipt identity/binding and categorical outcome fields.
+
+```powershell
+uv run --extra dev python scripts/read_current_kis_paper_d1_prospective_observation_pairing_outcome.py `
+  --artifact-root D:/thericher-v2/model-artifacts `
+  --repository-root .
+```
+
 On 2026-08-19, the bounded direct refresh first wrote a `collection_required`
 preflight receipt for the 2026-08-18 eligible session
 (`sha256:7987f5a89f3ec8631646ece7718f0433ae7308aad9b27060cf0efffa4ad7028f`).
