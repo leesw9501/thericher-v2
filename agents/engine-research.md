@@ -332,6 +332,7 @@ candidate matrix.
 | FinRL | MIT `rl_environment_interface_reference_only` | Its official classic framework is an educational/research train-test-trade pipeline that assumes external data and a new DRL runtime. Exclude its data preprocessing, same-bar reward timing, and cost/fill conventions; only its environment-to-agent separation is a future allocation-design reference. No package, code, data, weight, runtime, campaign, or Paper route is adopted. |
 | Heston et al.; Gao et al. | Re-retrieved source-only completed-30-minute OHLCV mechanism references | Their claimed intraday continuation/momentum effects require a fresh, causal, full-session input and a separately frozen campaign before any test. No parameter, model, data, campaign, GPU, ensemble, or Paper adoption follows. |
 | Chronos, TimesFM, Granite | Isolated source/runtime studies only | Unknown or incompatible financial pretraining/evaluation scope prevents comparative or Paper use. |
+| MOMENT, Time-MoE | MIT / Apache-2.0 `source_retrieved_source_only` references | MOMENT is a general patch-reconstruction representation family with a Python 3.11 recommendation; Time-MoE is a general autoregressive MoE forecasting family whose official usage specifies `trust_remote_code=True` and a separate Transformers version. Financial pretraining/evaluation scope is not disclosed for either. No code, package, weight, model, campaign, GPU, ensemble, or Paper route is adopted. |
 | PyPortfolioOpt HRP | Source-only allocation reference | Requires causal candidate returns, PIT universe, and completed rolling windows. |
 
 Qlib evidence:
@@ -358,6 +359,9 @@ FinRL source-only evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\finrl-environment-interface-source-20260819-r1\source-retrieval.json`.
 Completed-30-minute OHLCV mechanism source-only evidence:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\intraday-ohlcv-us-equity-sources-20260819-r1\source-retrieval.json`.
+MOMENT and Time-MoE source-only evidence:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\moment-time-moe-source-20260828-r1\source-retrieval.json`
+  (`sha256:d7147c4e334cafdd311d5ec9e2c08ebb801062a06c8c731cffed39a35f93bb41`).
 Public source proposals never authorize code import, weight download, training,
 ensemble use, or Paper routing on their own.
 

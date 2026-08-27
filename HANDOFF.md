@@ -885,7 +885,7 @@ live claim follows.
 | Virtual-Paper lifecycle canary | Execution | The 2026-08-26 23:35 KST task session receipt reattached offline to its exact lifecycle receipt as `canary_completed -> cancelled / clean`, `paper_only`, attribution `not_eligible`, and acknowledged-order-reference category only (session `sha256:f3cf4dd38ed27741aa303d6d51d86189ff27ad12fd593da50cccb2f87141cd4a`; lifecycle `sha256:e6cafd4af487103b1a2e8ae6b4283492e4154829a7bd96ec843873d2c51b2421`). The credential-free runtime projection is absent. The 2026-08-24 session remains `quote_unavailable / quote_timestamp_stale`, `no_new_intent`, and the 2026-08-11 reader pair remains `outcome_unknown / unresolved`. None is a fill, PnL, alpha, or model result. Do not resubmit either intent. Scheduler is `Ready`; next task-owned opportunity: 2026-08-27 23:35 KST. |
 | QQQ provisional runtime observation | Execution | Embedded in the existing intraday-head task. Its v5 validator recomputes the cache/window and exact non-promoting grade; do not manually invoke or duplicate it. |
 | Read-only Paper account observer | Execution | Existing four-minute task is the sole owner. Its validated provenance is marker-present under an assumed-honest host, not cryptographic Scheduler-origin proof. |
-| Public-source research | Engine Research | Qlib, PatchTST, and FinRL are source-only references, with no code, package, data, weight, campaign, GPU, or Paper consequence. FinRL conventions cannot replace owned data, timing, or cost semantics. |
+| Public-source research | Engine Research | Qlib, PatchTST, FinRL, MOMENT, and Time-MoE are source-only references, with no code, package, data, weight, campaign, GPU, or Paper consequence. MOMENT and Time-MoE disclose no compatible financial pretraining/evaluation scope; Time-MoE's official `trust_remote_code=True` usage and separate Transformers version preclude automatic runtime adoption. |
 
 External quota and session waits belong to their named task. Codex does not
 foreground-sleep or add a duplicate scheduler while an independent package is
@@ -943,6 +943,8 @@ ready.
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\qlib-architecture-source-20260809-r1\source-retrieval.json`.
 - PatchTST source-only receipt:
   `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\patchtst-source-20260809-r1\source-retrieval.json`.
+- MOMENT and Time-MoE source-only receipt:
+  `D:\thericher-v2\model-artifacts\research\engine-source-retrieval\moment-time-moe-source-20260828-r1\source-retrieval.json`.
 - Tiingo raw-D1 source-safe receipt:
   `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\4a2344b7ab8ec2eaf0b1a5e4afcd41e07cf0b4c14e13db64d07b41fd054883d2.json`.
 - Tiingo IEX r1 source-isolated CUDA receipt:
