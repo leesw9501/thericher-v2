@@ -574,13 +574,13 @@ Execution input, Paper order, or live behavior.
 The worker owns `next_due` in its external state and does not poll or foreground
 wait. Do not invoke the task manually. The initial container smoke was outside
 the scheduled minute and returned `not_due` without constructing a KIS client.
-The approved offline reader reattached the current completed-session 2026-08-26
-first stage as `input_unavailable/first_observation_unavailable` (receipt
-`sha256:cae3e15d21241267429efd666d07f1c4f3e2c5e7d4dd8d270497aabebe5d4cab`).
+The approved offline reader reattached the current completed-session 2026-08-27
+first stage as `input_unavailable/first_observation_target_failure` (receipt
+`sha256:1325486eedd3b72c3323700f2a7eac91dae94fad71643298659fc8deef71f37b`).
 Its hash-bound receipt has no first-observation binding and no later observation,
 so it is not a two-observation outcome. Source-safe Task Scheduler status is
 `Ready`; task exit alone is not stage or outcome evidence. The reader-owned
-`next_due` is `2026-08-27T23:15:00Z`.
+`next_due` is `2026-08-28T23:15:00Z`.
 
 The rebuilt observer image adds `observation_failure_codes` only to a future
 target-level first-stage failure. The list is sorted and limited to the existing

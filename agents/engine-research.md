@@ -51,8 +51,8 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   qualification are unobserved. It cannot freeze a target/split, enter a
   campaign, reserve GPU, or become a KIS/Paper consumer.
 - The current QQQ/SPY D1 prospective observation receipt is a scoped
-  `input_unavailable/first_observation_unavailable` first stage for completed
-  session 2026-08-26, with no
+  `input_unavailable/first_observation_target_failure` first stage for completed
+  session 2026-08-27, with no
   first-receipt binding or later observation, so it is not a pair result. Its
   first/later hash comparison remains a Data-only disqualification measurement;
   a match cannot freeze a campaign, allocate GPU, select a model, or create a
