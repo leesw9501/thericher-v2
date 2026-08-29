@@ -13,10 +13,10 @@ task-owned observer. Its only permitted classifications are
 match is Data-only and cannot qualify a dataset, feature, model, GPU campaign,
 Execution input, Paper order, or live behavior.
 
-The validated current pointer is only the completed-session 2026-08-27
+The validated current pointer is only the completed-session 2026-08-28
 first-stage `input_unavailable/first_observation_target_failure` receipt. It has
 no first-receipt binding or later receipt, so it is not a pair result. The
-reader-owned next due is `2026-08-28T23:15:00Z` (08:15 KST on 2026-08-29).
+reader-owned next due is `2026-08-31T23:15:00Z` (08:15 KST on 2026-09-01).
 
 ## Ready / Owned / Due
 
