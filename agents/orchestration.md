@@ -13,11 +13,11 @@ task-owned observer. Its only permitted classifications are
 match is Data-only and cannot qualify a dataset, feature, model, GPU campaign,
 Execution input, Paper order, or live behavior.
 
-The validated current pointer is only the completed-session 2026-08-31
+The validated current pointer is only the completed-session 2026-09-04
 first-stage `input_unavailable/first_observation_target_failure` receipt
-(`sha256:a630aa9a342553b1162c057f6590a5e5dd493b306c6998ef6cf6aedbef9c87a4`).
+(`sha256:a7d54a2220bb5f7ca78a9e34a48c827fbe6c03d4c5f575c5c23a0d12519af401`).
 It has no first-receipt binding or later receipt, so it is not a pair result.
-The reader-owned next due is `2026-09-01T23:15:00Z` (08:15 KST on 2026-09-02).
+The reader-owned next due is `2026-09-07T23:15:00Z` (08:15 KST on 2026-09-08).
 
 ## Ready / Owned / Due
 

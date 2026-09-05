@@ -85,13 +85,13 @@ cache read-only; immutable receipts retain only the fixed source-contract hash,
 session key, timestamps, and per-target canonical row hashes. Its container
 wiring smoke was `not_due` at 2026-08-20T08:27Z, so it made no KIS request.
 The approved offline reader now validates the current pointer for the
-2026-08-28 completed-session first stage as
+2026-09-04 completed-session first stage as
 `input_unavailable/first_observation_target_failure` (receipt
-`sha256:36560fc3aa37db0f2e669d5235adac0ebf9ceea972f4a507f2a58d3009342d6e`;
+`sha256:a7d54a2220bb5f7ca78a9e34a48c827fbe6c03d4c5f575c5c23a0d12519af401`;
 source contract `sha256:b7752aa22cc3b358b52c6fe2e6da72e1dc811b5a7078563de0c4201a68f9033d`).
 It has no first-receipt binding or later observation, so it is not a pair
 outcome. The source-safe Task Scheduler status is `Ready`; task exit is not
-outcome evidence. The reader-owned `next_due` is `2026-08-31T23:15:00Z`.
+outcome evidence. The reader-owned `next_due` is `2026-09-07T23:15:00Z`.
 The rebuilt observer image adds only a fixed source-safe failure taxonomy for
 future first stages: target failures retain a sorted allowlisted aggregate code
 list, while direct exceptions map to fixed family reasons. It preserves task
