@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
@@ -858,7 +859,11 @@ def test_distinct_session_rejects_a_current_matching_open_order_without_submitti
     assert outcome.status == "canary_completed"
     assert outcome.run_id != first.run_id
     assert outcome.reason_code == "matching_open_order"
-    assert outcome.canary_phase == "outcome_unknown"
+    assert outcome.canary_phase == "intent_recorded"
+    state = json.loads((paths["state_root"] / f"{outcome.run_id}.json").read_text())
+    assert state["submission_started_at"] is None
+    assert state["submitted_at"] is None
+    assert state["broker_order_id"] is None
     assert sum(
         request.headers.get("tr_id") == KIS_PAPER_US_BUY_LIMIT_ORDER_TR_ID
         for request in transport.requests

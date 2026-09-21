@@ -9,7 +9,8 @@ param(
 $ErrorActionPreference = "Stop"
 
 function Resolve-TestTempParent {
-    foreach ($candidate in @("D:\trpy", "C:\trpy")) {
+    # This host's NVMe C: avoids the measured SATA D: durable-write bottleneck.
+    foreach ($candidate in @("C:\trpy", "D:\trpy")) {
         $qualifier = Split-Path -Qualifier $candidate
         if ([string]::IsNullOrWhiteSpace($qualifier)) {
             continue
@@ -166,6 +167,41 @@ function Assert-NoActiveParallelPytestRun {
     }
 }
 
+function Assert-NoActiveKnownParallelPytestRuns {
+    param([string[]]$TempParents)
+
+    # A dead helper may leave workers on the previously selected drive.
+    foreach ($parent in $TempParents) {
+        if (-not (Test-Path -LiteralPath $parent -ErrorAction Stop)) {
+            continue
+        }
+        $fullParent = [IO.Path]::GetFullPath($parent).TrimEnd([char[]]@('\', '/'))
+        $qualifier = Split-Path -Qualifier $fullParent
+        $driveName = $qualifier.TrimEnd([char[]]@(':', '\', '/'))
+        $drive = Get-PSDrive -Name $driveName -PSProvider FileSystem -ErrorAction Stop
+        $driveRoot = Get-Item -LiteralPath $qualifier -Force -ErrorAction Stop
+        if (
+            -not [string]::IsNullOrWhiteSpace([string]$drive.DisplayRoot) -or
+            (Test-ReparsePoint $driveRoot)
+        ) {
+            throw "Refusing to inspect a nonlocal or linked parallel pytest drive: $qualifier"
+        }
+        $checkedParent = Assert-ManagedTempDirectory `
+            -Path $fullParent `
+            -ExpectedParent ([IO.Path]::GetDirectoryName($fullParent)) `
+            -Label "temp parent"
+        $knownRoot = Join-Path $checkedParent "runs"
+        if (-not (Test-Path -LiteralPath $knownRoot -ErrorAction Stop)) {
+            continue
+        }
+        $checkedRoot = Assert-ManagedTempDirectory `
+            -Path $knownRoot `
+            -ExpectedParent $checkedParent `
+            -Label "temp root"
+        Assert-NoActiveParallelPytestRun -ResolvedTempRoot $checkedRoot
+    }
+}
+
 New-Item -ItemType Directory -Force -Path $tempParent | Out-Null
 $tempParentEntry = Get-Item -LiteralPath $tempParent -Force -ErrorAction Stop
 if (Test-ReparsePoint $tempParentEntry) {
@@ -206,7 +242,7 @@ try {
         throw "Parallel pytest helper is already active; authority verification will not wait"
     }
     if ($RequireCleanTempRoot) {
-        Assert-NoActiveParallelPytestRun -ResolvedTempRoot $resolvedTempRoot
+        Assert-NoActiveKnownParallelPytestRuns -TempParents @("C:\trpy", "D:\trpy")
     }
 
     do {

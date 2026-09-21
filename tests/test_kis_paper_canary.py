@@ -186,6 +186,7 @@ class StateInspectingKisPaperCanaryTransport(FakeKisPaperCanaryTransport):
         super().__init__()
         self._state_path = state_path
         self.submit_phases: list[str | None] = []
+        self.submit_started_times: list[datetime | None] = []
         self.cancel_states: list[tuple[str | None, bool]] = []
 
     def request(self, request: KisHttpRequest) -> KisHttpResponse:
@@ -195,6 +196,7 @@ class StateInspectingKisPaperCanaryTransport(FakeKisPaperCanaryTransport):
         }:
             state = KisPaperCanaryStateStore(self._state_path).read()
             self.submit_phases.append(None if state is None else state.phase)
+            self.submit_started_times.append(None if state is None else state.submission_started_at)
         if request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID:
             state = KisPaperCanaryStateStore(self._state_path).read()
             self.cancel_states.append(
@@ -769,6 +771,7 @@ def test_canary_persists_submission_started_before_submit_side_effect(tmp_path: 
     )
 
     assert transport.submit_phases == ["submission_started"]
+    assert transport.submit_started_times == [NOW]
     assert outcome.phase == "submitted"
 
 
@@ -805,6 +808,176 @@ def test_submission_time_is_write_once_across_later_state_transitions(tmp_path: 
             now=acknowledged_at + timedelta(days=1, minutes=1),
             submitted_at=acknowledged_at + timedelta(minutes=1),
         )
+
+
+@pytest.mark.parametrize("missing_reference", [False, True])
+def test_restart_history_uses_original_submission_day(
+    tmp_path: Path,
+    missing_reference: bool,
+) -> None:
+    state_path = tmp_path / "private" / "order-day.json"
+    transport = FakeKisPaperCanaryTransport(
+        submit_response_missing_order_id=missing_reference,
+    )
+    paths = _paths(tmp_path)
+    run_kis_paper_canary(
+        decision=_decision(),
+        run_id="order-day",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+    request_count = len(transport.requests)
+    later = NOW + timedelta(days=2)
+    recovered = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="order-day",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=later,
+        **paths,
+    )
+    state = KisPaperCanaryStateStore(state_path).read()
+    assert state is not None
+    assert state.submitted_at == state.submission_started_at == NOW
+    assert recovered.phase == "submitted"
+    history = [
+        r
+        for r in transport.requests[request_count:]
+        if r.headers.get("tr_id") == KIS_PAPER_US_CCNCL_TR_ID
+    ]
+    assert history
+    assert all(r.query["ORD_STRT_DT"] == r.query["ORD_END_DT"] == "20260722" for r in history)
+    assert _submission_count(transport) == 1
+    assert transport.cancellation_seen is False
+
+
+def test_submission_start_is_write_once_and_not_backfilled_on_recovery(tmp_path: Path) -> None:
+    intent = KisPaperCanaryIntent.from_decision(_decision(), run_id="attempt-time")
+    store = KisPaperCanaryStateStore(tmp_path / "private" / "attempt-time.json")
+    store.record_intent(intent, cancel_after_submit=False, now=NOW)
+    started = store.transition(
+        intent,
+        expected=frozenset({"intent_recorded"}),
+        phase="submission_started",
+        reason_code="preview",
+        now=NOW,
+        submission_started_at=NOW,
+    )
+    assert started.submission_started_at == NOW
+    with pytest.raises(KisPaperCanaryError, match="state_submission_time_invalid"):
+        store.transition(
+            intent,
+            expected=frozenset({"submission_started"}),
+            phase="outcome_unknown",
+            reason_code="reconciliation_unresolved",
+            now=NOW + timedelta(days=1),
+            submission_started_at=NOW + timedelta(days=1),
+        )
+    with pytest.raises(ValueError, match="outside state lifetime"):
+        store.transition(
+            intent,
+            expected=frozenset({"submission_started"}),
+            phase="outcome_unknown",
+            reason_code="reconciliation_unresolved",
+            now=NOW - timedelta(seconds=1),
+        )
+    assert store.read() == started
+
+
+@pytest.mark.parametrize("missing_reference", [False, True])
+def test_legacy_unknown_submission_date_is_not_fabricated_or_terminal(
+    tmp_path: Path,
+    missing_reference: bool,
+) -> None:
+    intent = KisPaperCanaryIntent.from_decision(_decision(), run_id="legacy-date")
+    state = KisPaperCanaryState(
+        intent=intent,
+        phase="outcome_unknown" if missing_reference else "submitted",
+        updated_at=NOW,
+        reason_code="reconciliation_unresolved",
+        cancel_after_submit=True,
+        broker_order_id=None if missing_reference else "ORD-123456789",
+        submit_response_category="success_order_reference_missing" if missing_reference else None,
+    )
+    state_path = tmp_path / "private" / "legacy-date.json"
+    state_path.parent.mkdir(parents=True)
+    payload = state.to_dict()
+    payload.pop("submitted_at")
+    payload.pop("submission_started_at")
+    state_path.write_text(json.dumps(payload), encoding="utf-8")
+    transport = FakeKisPaperCanaryTransport(order_open=True)
+    recovered = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="legacy-date",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=True,
+        transport=transport,
+        now=NOW + timedelta(days=1),
+        **_paths(tmp_path),
+    )
+    restored = KisPaperCanaryStateStore(state_path).read()
+    assert restored is not None
+    assert restored.submitted_at is restored.submission_started_at is None
+    assert recovered.phase == "outcome_unknown"
+    assert _submission_count(transport) == 0
+    assert transport.cancellation_seen is True
+    assert not any(r.headers.get("tr_id") == KIS_PAPER_US_CCNCL_TR_ID for r in transport.requests)
+
+
+@pytest.mark.parametrize("delay_minutes, expected_submits", [(1, 1), (6, 0)])
+def test_never_submitted_conflict_can_clear_but_expired_intent_cannot_submit(
+    tmp_path: Path,
+    delay_minutes: int,
+    expected_submits: int,
+) -> None:
+    state_path = tmp_path / "private" / "conflict-clear.json"
+    paths = _paths(tmp_path)
+    transport = FakeKisPaperCanaryTransport(order_open=True)
+    first = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="conflict-clear",
+        environment=_paper_environment(),
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        transport=transport,
+        now=NOW,
+        **paths,
+    )
+    assert first.phase == "intent_recorded"
+    transport.order_open = False
+    for offset in (0, 1):
+        run_kis_paper_canary(
+            decision=_decision(),
+            run_id="conflict-clear",
+            environment=_paper_environment(),
+            state_path=state_path,
+            execute=True,
+            cancel_after_submit=False,
+            transport=transport,
+            now=NOW + timedelta(minutes=delay_minutes, seconds=offset),
+            **paths,
+        )
+    assert _submission_count(transport) == expected_submits
+    assert transport.cancellation_seen is False
+    state = KisPaperCanaryStateStore(state_path).read()
+    assert state is not None
+    if expected_submits:
+        assert state.submission_started_at == NOW + timedelta(minutes=delay_minutes)
+    else:
+        assert state.phase == "intent_recorded"
+        assert state.reason_code == "intent_expired"
+        assert state.submission_started_at is None
 
 
 def test_unknown_submission_reconciles_without_duplicate_submit(tmp_path: Path) -> None:
@@ -877,8 +1050,7 @@ def test_pending_run_recovery_resumes_only_the_existing_cancel_path(tmp_path: Pa
     assert recovered.phase == "cancelled"
     assert _submission_count(transport) == 1
     assert any(
-        request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID
-        for request in recovery_requests
+        request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID for request in recovery_requests
     )
     assert all(
         request.headers.get("tr_id")
@@ -1075,7 +1247,7 @@ def test_pre_submit_open_order_conflict_is_never_bound_or_cancelled_on_recovery(
         **paths,
     )
 
-    assert first.phase == "outcome_unknown"
+    assert first.phase == "intent_recorded"
     assert first.reason_code == "matching_open_order"
     assert _submission_count(transport) == 0
     request_count_before_recovery = len(transport.requests)
@@ -1094,8 +1266,9 @@ def test_pre_submit_open_order_conflict_is_never_bound_or_cancelled_on_recovery(
 
     recovery_requests = transport.requests[request_count_before_recovery:]
     recovered_state = KisPaperCanaryStateStore(state_path).read()
-    assert recovered.phase == "outcome_unknown"
+    assert recovered.phase == "intent_recorded"
     assert recovered_state.broker_order_id is None
+    assert recovered_state.submission_started_at is None
     assert transport.cancellation_seen is False
     assert _submission_count(transport) == 0
     assert all(
@@ -1169,7 +1342,7 @@ def test_different_limit_open_order_blocks_a_new_canary_without_binding_or_cance
         **_paths(tmp_path),
     )
 
-    assert outcome.phase == "outcome_unknown"
+    assert outcome.phase == "intent_recorded"
     assert outcome.reason_code == "matching_open_order"
     assert _submission_count(transport) == 0
     assert transport.cancellation_seen is False
@@ -1191,7 +1364,7 @@ def test_different_limit_open_order_blocks_a_new_canary_without_binding_or_cance
         **_paths(tmp_path),
     )
 
-    assert recovered.phase == "outcome_unknown"
+    assert recovered.phase == "intent_recorded"
     assert _submission_count(transport) == 0
     assert transport.cancellation_seen is False
     assert all(
@@ -1230,7 +1403,7 @@ def test_partially_filled_matching_open_order_blocks_a_new_canary_without_submit
         **_paths(tmp_path),
     )
 
-    assert outcome.phase == "outcome_unknown"
+    assert outcome.phase == "intent_recorded"
     assert outcome.reason_code == "matching_open_order"
     assert _submission_count(transport) == 0
     assert transport.cancellation_seen is False
@@ -1803,6 +1976,7 @@ def test_state_and_runtime_accept_payloads_before_submit_upstream_code() -> None
         cancel_after_submit=True,
     ).to_dict()
     legacy_state.pop("submitted_at")
+    legacy_state.pop("submission_started_at")
     legacy_state.pop("submit_upstream_code")
     legacy_state.pop("submit_response_category")
 
@@ -1810,6 +1984,7 @@ def test_state_and_runtime_accept_payloads_before_submit_upstream_code() -> None
 
     assert restored_state.submit_upstream_code is None
     assert restored_state.submit_response_category is None
+    assert restored_state.submission_started_at is None
 
     legacy_runtime = PaperCanaryRuntimeSnapshot(
         run_id="legacy-code-payload-1",
@@ -1840,6 +2015,7 @@ def test_recovery_resumes_durable_cancel_after_acknowledged_submit(tmp_path: Pat
         updated_at=NOW,
         reason_code="reconciliation_unresolved",
         broker_order_id="ORD-123456789",
+        submitted_at=NOW,
         cancel_after_submit=True,
     )
     state_path = tmp_path / "private" / f"{run_id}.json"
@@ -1904,10 +2080,13 @@ def test_cancel_transport_failure_recovers_only_the_same_known_open_run(tmp_path
     assert recovered.phase == "cancelled"
     assert _submission_count(transport) == 1
     assert transport.cancellation_seen is True
-    assert sum(
-        request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID
-        for request in transport.requests
-    ) == 2
+    assert (
+        sum(
+            request.headers.get("tr_id") == KIS_PAPER_US_CANCEL_TR_ID
+            for request in transport.requests
+        )
+        == 2
+    )
     recovered_state = KisPaperCanaryStateStore(state_path).read()
     assert recovered_state is not None and recovered_state.broker_order_id is not None
 
@@ -1950,7 +2129,7 @@ def test_different_run_ids_cannot_submit_concurrently(tmp_path: Path) -> None:
     assert _submission_count(transport) == 1
     second_state = KisPaperCanaryStateStore(tmp_path / "private" / "concurrent-2.json").read()
     assert second_state is not None
-    assert second_state.phase == "outcome_unknown"
+    assert second_state.phase == "intent_recorded"
     assert second_state.reason_code == "matching_open_order"
 
 

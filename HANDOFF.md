@@ -14,10 +14,72 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-`kis-paper-spy-restart-safe-lifecycle-v1` is the next implementation objective.
+`kis-paper-spy-restart-safe-lifecycle-v1` is the active implementation objective.
 The operator approved the 2026-09-21 partial reset: the D1-pair objective is
 superseded while incomplete, not successfully completed. D1 stays an independent
 Data measurement; it does not block Execution recovery or offline development.
+
+## Continued Implementation (2026-09-22 KST)
+
+The operator postponed the Terra switch and resumed autonomous implementation.
+The bootstrap stop below is historical, not a current instruction to wait.
+
+- Execution repaired order-date recovery and never-submitted conflict state.
+  A write-once `submission_started_at` is persisted before the side effect;
+  late ID recovery retains that time, never the recovery clock. Legacy missing
+  dates remain unknown. The strict receipt observer accepts the optional field.
+  All seven existing private-state consumer images now have matching source.
+  One new-image existing-path SPY submit/cancel reached `cancelled/clean`;
+  the original-attempt field is present and valid in its durable state.
+  Date-crossing behavior is fixture-tested, not observed across a real restart.
+  Complete fill/accounting recovery remains open.
+- The existing 23:35 KST quote task independently produced matching session and
+  direct receipts for `canary-20260921T143502071908Z`: acknowledged reference,
+  `cancelled/clean`. This used the old image, not this repair. It establishes
+  the existing submit/cancel path, not restart parity, a terminal fill, or PnL.
+  Exact source-safe evidence is linked in `agents/execution.md`.
+- One subsequent exact-run read-only terminal-field probe returned complete
+  pagination but no matching cancelled-order row. That absence proves no fill
+  quantity or PnL. It does not block distinct Paper work; Execution needs
+  positive terminal/accounting facts rather than another observation gate.
+- Data rebuilt only the existing D1 observer image, without invoking its task.
+  Seven baked source hashes match the host. Its owned next opportunity remains
+  2026-09-22 08:15 KST; no pair success is inferred. See `agents/data.md`.
+- Engine completed the frozen FirstRate M5 open/open CPU comparison once:
+  four fits and 48 local-paper cells, all replay-parity checked. Most active
+  cells lose after fees; the three-trade SPY Ridge exception at 1 bps is not
+  an edge claim. Existing data is development-only; no holdout or GPU was used.
+  Summary: `D:\thericher-v2\model-artifacts\research\firstrate-m5-open-open-development-20260921-v1\20260921-proposed-r1\summary.json`.
+  SHA256: `2a0d4c9632f569ce2308ddcf306c986591d36cff908cf17562d318327b9a3ce5`.
+- Its separate H30 development successor completed eight Ridge and 16 LSTM
+  fits, 108 replay-parity cost cells, using the rebuilt existing CUDA image.
+  All 16 final weights/scalers are external and reload successfully. Some
+  low-cost cells are positive, but seed-sensitive/near-constant behavior and
+  negative 5-bps results establish no robust edge. Full contract/result hashes,
+  retained model paths and the completed train-only diagnostic are in the Engine and
+  Steward stateboards. The GPU is no longer owned by this completed campaign.
+- The CPU-only diagnostic restored all 16 final models and compared training
+  behavior with their seeded initialization: parameters moved and MSE improved,
+  but every final train MSE remained above the train-mean baseline. Eight epochs
+  provided only 16 optimizer updates per fit. This supports checking train-only
+  convergence next, not a claim that LSTM cannot work or more epochs will
+  generalize. No evaluation predictions, optimizer step, or GPU ran.
+- Measured durable-write latency identified D: test scratch as a major feedback
+  bottleneck. The existing helper now prefers C: NVMe scratch, falling back to
+  D: without weakening isolation/cleanup. The unchanged depth test took 3.43s on
+  C: versus 316.40s on D: under the observed load. Production data/models stay D:.
+
+Integrated verification: changed-path serial `259 passed, 1 skipped` in 32.41s;
+the clean-root eight-worker full suite `3389 passed, 19 skipped` in 304.13s,
+with successful current-run cleanup. Earlier failed/aborted D: runs are not
+passes. The deliberately stopped D: run root `D:\trpy\runs\r-c7b908f7` remains,
+without its lease or active worker; do not delete unrelated scratch trees.
+Independent review then found the drive-switch orphan-worker case. The helper
+now checks both known managed roots; nine new isolated cases passed, and its
+own clean-root focused authority run passed all 11 helper tests in 7.04s.
+
+The company objective remains incomplete. Do not rotate it based on these
+packages or turn a scheduled observation wait into foreground idle.
 
 ## Terra Bootstrap Handoff (2026-09-21)
 

@@ -17,13 +17,84 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
-The 2026-09-21 reset makes a bounded development comparison ready for dispatch:
-use existing lawful ETF history for one rule/linear baseline with matched
-feature timing, target payoff, replay, costs, and a finite window budget. A new
-contract must link earlier trials and label already-seen samples development.
-No training or GPU job ran in this bootstrap. D1 observation and Paper runtime
-recovery are independent, not prerequisites. The historical receipts below
-retain their original non-promotion limits; they do not prohibit new development.
+The 2026-09-21 FirstRate M5 open/open development comparison completed once:
+two symbols, two expanding development folds, four fixed Ridge fits, and 48
+SMA20/60, Ridge, previous-bar, and flat cost cells. It uses a fixed 60-bar
+history, next-open/following-open payoff, one share, and 1/3/5 bps per side.
+All cells pass independent fee/fill/cash/FIFO replay parity. Of 1,024 sampled
+evaluation timestamps, 165 have past-eligible input and 154 observed outcomes;
+missing future outcomes were not used to choose the 165 decisions. All four
+folds satisfy the frozen minimums and label/history purge. No backfill/tuning.
+The one-thread CPU run took 9.838 seconds; no GPU or weights were used.
+
+Most active results are negative after costs. SPY Ridge sums +0.1727 at 1 bps
+over only three independent one-share roundtrips and turns negative at 3/5 bps;
+this is neither an edge nor a continuous-capital return. No winner was selected.
+The old L2/trend/RSI summary hashes matched before this linked development run.
+Claude's initial uncertainty was resolved by explicit purge, future-invariance,
+no-backfill and exact replay tests; final verdict was `supported-with-limits`.
+Already-seen data, unverified source clock/finality/actions, zero execution
+latency, and censored missing payoffs prohibit generalization/Paper claims.
+
+Evidence root:
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-open-open-development-20260921-v1\20260921-proposed-r1`.
+Contract SHA256: `e1aba1b5bbb91d74315e749f02541b9d9d069506e0bbf23edc265c883fd6fe6c`.
+Summary SHA256: `2a0d4c9632f569ce2308ddcf306c986591d36cff908cf17562d318327b9a3ce5`.
+The independently frozen successor
+`firstrate-m5-h30-lstm-development-20260921-v1/20260921-h30-r1` completed
+eight Ridge fits/60 CPU cells (33.664s) and 16 LSTM fits/48 CUDA cells
+(26.733s, RTX 4090). It compares 12/36 M5-bar contexts, seeds 101/103,
+hourly decisions and a 30-minute holding payoff, fixed eight epochs, with
+the same 1/3/5-bps band and matched-cadence naive baselines. All four folds
+passed strict history/label separation and all 108 cells passed local-paper
+replay parity. There were 250 eligible evaluation decisions and 234 supported
+outcomes; missing payoffs were censored after decisions, never backfilled.
+
+Both context lengths produced the same aggregate threshold decisions within
+each seed. Seed 103 was nearly always long; seed 101 was sparse. SPY seed 101
+totals +2.7760/+1.3670/-0.0415 dollars at 1/3/5 bps across only eight separate
+one-share roundtrips. The 1-bps positive cells do not establish model skill:
+the matched always-long comparator is positive too, while all LSTM combinations
+turn negative at 5 bps. No winner, generalization or Paper-input claim.
+
+External root:
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\20260921-h30-r1`.
+Contract SHA256: `be785361611db683afb3bd4bb80d245fc69e93fb90279e9ec8a1fafe459e22fe`.
+CPU summary SHA256: `06dc794bd575f42aa4079f5f7dac9a61d64f58659664a5587608a74c68b14142`.
+CUDA summary SHA256: `4329cf2727bd8adeded60742507ce596be6b20e134e6639db61dd71bdb95d99e`.
+All 16 final weights and train-only scalers are in `models`, numeric-only NPZ
+plus hash-bound configuration. Actual Torch CPU reload/finite synthetic
+inference passed for all 16; no arbitrary-code deserialization or Execution
+consumer. The existing research image was rebuilt to include its already-pinned
+calendar dependency; actual version custody is in `agents/research-steward.md`.
+
+The train-only diagnostic completed all 16 restored fits in 13.201 CPU seconds,
+without optimizer steps, GPU, evaluation tensors or predictions. It binds the
+original contracts/source/models/scalers and trims data before each evaluation
+history cutoff. The immutable appendix is `train-diagnostic-v1\summary.json`
+under the H30 root above. Diagnostic contract SHA256:
+`d4334e56edc55368662c9a94ef0428a49365e6669102abc8f14730826311849f`;
+summary SHA256:
+`8dac1484b6e67087004fe79f3d65c4927a7bedd05b779c99f74f9e39cc800034`.
+All 16 parameter sets moved (RMS 0.01146-0.01324) and improved over seeded
+initialization, but final train MSE 1.00577-1.02045 remained worse than the
+train-mean baseline. Each fit had only 230-241 train rows and 16 optimizer
+updates. Masking the oldest 24 of 36 bars changed prediction RMS by only
+0.00160-0.00703 bps, with no sign change in seven fits and one in the eighth.
+These are training diagnostics, not comparative return or generalization facts.
+
+Next ready research is a separately bounded train-only convergence/capacity
+check before increasing architecture/seed search; preserve evaluation data and
+the closed r1 contract. Do not infer that longer training will improve unseen
+performance or that LSTM is intrinsically unsuitable. D1 and Paper
+recovery remain independent; historical limits below apply to their own closed
+contracts, not a prohibition on new development.
+
+## Historical Evidence (Closed Scopes)
+
+The dated results below retain their original limitations. Statements about
+then-active campaigns, eligibility, or readiness are historical, not current
+dispatch restrictions. The current development package is described above.
 
 - The 2026-08-19 UTC Tiingo Standard EOD fixed ETF snapshot reattests as one
   three-request prospective lineage record with a 2026-08-12 source-as-of

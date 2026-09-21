@@ -20,7 +20,30 @@ remain unchanged; its result is not a prerequisite for this company objective.
 The bootstrap fixes only the D1 shared-client page budget and safe error
 classification, plus these policy conflicts. It does not deploy an image,
 invoke a broker/task, fix the Paper state machine, train, or prove a pair result.
-See `HANDOFF.md` for the verified bootstrap and remaining implementation work.
+See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
+
+## Current Progress (2026-09-22 KST)
+
+The operator resumed implementation without waiting for a Terra switch.
+Order-date and never-submitted-state repairs passed integrated verification;
+all seven existing Execution images sharing private state have matching source.
+One explicit existing-path SPY Paper session on the new image reached
+acknowledged-submit/cancelled-clean. A read-only state check confirmed the new
+original-attempt timestamp. This is not a date-crossing runtime test or fill/PnL
+result; complete lifecycle/accounting remains open. Exact evidence is in
+`agents/execution.md`. Data deployed the D1-only image with source parity;
+its observation remains independently due.
+The fixed FirstRate CPU rule/linear comparison completed 48 development-only
+cells. Its separate H30 comparison then completed 8 Ridge/16 LSTM fits and 108
+CPU/CUDA cost cells, preserving all 16 final models externally. These are not
+robust-edge or Paper-input claims. The completed train-only diagnostic found
+real parameter movement but all 16 final train MSEs worse than the train-mean
+baseline; eight epochs meant only 16 optimizer updates per fit. Next Research
+work is a distinct bounded train-only convergence/capacity check, not retuning
+the closed r1 evaluation. Next main work is a deliberately fillable one-share
+Paper cycle with exact fill/position/accounting facts, not another D1 gate or
+immediate-cancel repetition. Use existing ownership, locks and virtual routes;
+do not change the current canary's semantics silently.
 
 ## Role-Owned Work
 
@@ -43,6 +66,11 @@ See `HANDOFF.md` for the verified bootstrap and remaining implementation work.
    Bind terminal order/fill evidence to its intent, deduplicate fills, and
    reconcile position/cash accounting. A task exit or `canary_completed` alone
    is not a submission, terminal fill, realized PnL, or completed lifecycle.
+   First connect exact order/date/instrument/side-bound quantity observations
+   to private accounting, then use an explicit fresh ask/bid-based one-share
+   cycle without changing the canary default. Exit only this cycle's confirmed
+   inventory. Orderable funds are not settled cash; unknown fees/settlement
+   stay unknown. Reuse existing locks/store/routes, not a new report or gate.
 
 ### Data: Independent Support
 
@@ -93,7 +121,7 @@ Use focused serial tests for each isolated repair. At company-goal integration,
 run changed-path serial coverage plus the existing authority sequence:
 
 ~~~powershell
-.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot
+.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot --maxfail=1 --durations=15
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet

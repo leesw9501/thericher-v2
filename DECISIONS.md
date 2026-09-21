@@ -9576,3 +9576,30 @@ token gates separately enforce pace. No new authority was inferred from Claude.
 This operator-requested bootstrap is a focused-verified role repair and policy
 reassignment, not company-objective completion or execution-recovery promotion;
 the next objective retains the existing full integration verification contract.
+
+## 2026-09-21 - Preserve submission time and distinguish unsent intents
+
+The operator resumed implementation, postponing the Terra handoff. Persist an
+optional write-once client attempt time before submission; retain it through
+late reference recovery. An acknowledged timestamp cannot disagree with that
+attempt. Backward-compatible missing legacy timestamps remain unknown. Query
+history on the persisted local order day, never the recovery invocation day.
+The official KIS [overseas order-history example](https://github.com/koreainvestment/open-trading-api/blob/main/examples_user/overseas_stock/overseas_stock_functions.py)
+defines order start/end dates in local time. We did not adopt Claude's
+speculative wider date query: the source supports the existing order-date
+contract, and an absent row still cannot prove a fill or terminal outcome.
+
+A never-sent intent blocked by an existing open order stays `intent_recorded`.
+It does not adopt that order or gain cancel authority over it. Normal expiry,
+exposure checks, serialization and no-resubmit for actual unknown submissions
+remain. The private-state reader accepts and validates the optional timestamp.
+This is recovery correctness, not a global permission or profitability gate.
+Claude returned `supported-with-limits`; atomic file fsync/replace ordering,
+time-field agreement, legacy ambiguity and expiry have focused coverage.
+
+The separate FirstRate open/open CPU comparison links prior trial hashes and
+labels all reused history development. Claude initially requested stronger
+purge/censoring/parity evidence; explicit tests resolved this to
+`supported-with-limits` before data dispatch. Its completed 48 cells authorize
+no winner, holdout, GPU allocation or Paper consumer. A later distinct finite
+research question remains possible under the reset; results are not rewritten.

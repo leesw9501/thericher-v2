@@ -161,11 +161,13 @@ Codex is the product-development lead and integrator.
   The goal-boundary Python authority is the changed-path serial group plus
   `scripts/run_parallel_tests.ps1 -RequireCleanTempRoot`, followed by Ruff and
   both Compose configurations. The helper uses file-level xdist distribution,
-  one fresh short shared temp child beneath local non-reparse `D:\trpy` when
-  available, otherwise `C:\trpy`, for both fast feedback and authority runs,
+  one fresh short shared temp child beneath local non-reparse `C:\trpy` when
+  available, otherwise `D:\trpy`, for both fast feedback and authority runs,
   a cross-session `Global` mutex, and an explicit clean active-run precondition.
-  Authority mode probes helper leases and active
-  Python command lines; a held lease, active matching worker, mutex conflict,
+  Authority mode probes helper leases and active Python command lines beneath
+  both known C: and D: managed roots, including the non-selected drive after a
+  preference change; it allocates/cleans only its selected current-run child.
+  A held lease, active matching worker, mutex conflict,
   or indeterminate probe fails closed, while an inactive retained sibling root
   cannot block a new isolated run. It verifies the parent and active child are
   not links, and verifies every current-run descendant before recursive cleanup.
@@ -178,6 +180,13 @@ Codex is the product-development lead and integrator.
   company objective remains active; that commit alone is not a goal boundary.
   Reserve the full authority sequence for company-objective integration, a
   changed shared runtime/control root, or an explicit current-goal requirement.
+  Prefer `--maxfail=1 --durations=15` for integrated feedback so a known failed
+  run stops early and exposes slow tests. A partial failed run is never
+  authority; a passing authority run still covers the complete expected suite.
+  Test scratch prefers this host's measured NVMe C: drive; market data and
+  model artifacts remain on D:. The 2026-09-22 paired durable-write probe and
+  same-test comparison supersede the old near-floor-system-drive rationale.
+  Recalibrate if C: space or storage performance materially changes.
   Run full serial `pytest -q` at least weekly and before material live-route or
   execution-recovery promotion as a diagnostic/compatibility check. It does
   not foreground-block an otherwise verified private Paper objective or an

@@ -156,6 +156,17 @@ def test_torch_cuda_backend_is_research_stage_only() -> None:
     assert "torch==" not in stages["runtime"].lower()
 
 
+def test_research_installs_pinned_torch_before_resolving_extras() -> None:
+    research = _dockerfile_stages(Path("Dockerfile").read_text(encoding="utf-8"))["research"]
+
+    assert "ARG PYTORCH_VERSION=2.7.0+cu128" in research
+    assert "ARG PYTORCH_CUDA_INDEX_URL=https://download.pytorch.org/whl/cu128" in research
+    assert research.count('"torch==${PYTORCH_VERSION}"') == 1
+    assert research.index('"torch==${PYTORCH_VERSION}"') < research.index(
+        'python -m pip install -e ".[research]"'
+    )
+
+
 def _candidate_artifact(tmp_path: Path) -> Path:
     path = tmp_path / "candidate.json"
     path.write_text(

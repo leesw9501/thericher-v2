@@ -409,8 +409,7 @@ def test_read_only_snapshot_uses_fixed_allowlisted_requests_with_injected_transp
         "/uapi/overseas-stock/v1/trading/inquire-balance",
         "https://openapivts.koreainvestment.com:29443"
         "/uapi/overseas-stock/v1/trading/inquire-psamount",
-        "https://openapivts.koreainvestment.com:29443"
-        "/uapi/overseas-stock/v1/trading/inquire-nccs",
+        "https://openapivts.koreainvestment.com:29443/uapi/overseas-stock/v1/trading/inquire-nccs",
     }
     assert transport.requests[1].query["OVRS_EXCG_CD"] == "NASD"
     assert transport.requests[1].headers["tr_cont"] == ""
@@ -462,14 +461,10 @@ def test_virtual_balance_request_contract_covers_initial_and_continuation_pages(
         "https://openapivts.koreainvestment.com:29443"
         "/uapi/overseas-stock/v1/trading/inquire-balance"
     )
-    balance_requests = [
-        request for request in transport.requests if request.url == balance_url
-    ]
+    balance_requests = [request for request in transport.requests if request.url == balance_url]
 
     assert [request.method for request in balance_requests] == ["GET"] * 4
-    assert [request.headers["tr_id"] for request in balance_requests] == [
-        "VTTS3012R"
-    ] * 4
+    assert [request.headers["tr_id"] for request in balance_requests] == ["VTTS3012R"] * 4
     assert [request.headers["custtype"] for request in balance_requests] == ["P"] * 4
     assert [request.query["OVRS_EXCG_CD"] for request in balance_requests] == [
         "NASD",
@@ -499,9 +494,7 @@ def test_virtual_balance_request_contract_covers_initial_and_continuation_pages(
         "CTX_AREA_FK200": "balance-next-fk",
         "CTX_AREA_NK200": "balance-next-nk",
     }
-    for request, exchange in zip(
-        balance_requests[2:], ("NYSE", "AMEX"), strict=True
-    ):
+    for request, exchange in zip(balance_requests[2:], ("NYSE", "AMEX"), strict=True):
         assert request.query == {
             "CANO": "12345678",
             "ACNT_PRDT_CD": "01",
@@ -566,6 +559,40 @@ def test_same_day_order_id_observation_is_read_only_and_never_retains_the_raw_id
     )
 
 
+@pytest.mark.parametrize(
+    "order_at,expected_day",
+    [
+        (datetime(2026, 7, 23, 1, 0, tzinfo=UTC), "20260722"),
+        (datetime(2026, 1, 23, 4, 0, tzinfo=UTC), "20260122"),
+    ],
+)
+def test_history_observation_separates_order_day_from_recovery_clock(
+    order_at: datetime,
+    expected_day: str,
+) -> None:
+    class HistoryTransport:
+        requests: list[KisHttpRequest]
+
+        def __init__(self) -> None:
+            self.requests = []
+
+        def request(self, request: KisHttpRequest) -> KisHttpResponse:
+            self.requests.append(request)
+            return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
+
+    transport = HistoryTransport()
+    recovered_at = datetime(2026, 7, 25, 15, 0, tzinfo=UTC)
+    observation = KisPaperReadOnlyClient(
+        config=_config(),
+        transport=transport,
+        access_token="synthetic-token",
+    ).observe_same_day_order_id("ORD-123456789", as_of=recovered_at, order_at=order_at)
+    assert observation.observed_at == recovered_at
+    assert len(transport.requests) == 1
+    assert transport.requests[0].query["ORD_STRT_DT"] == expected_day
+    assert transport.requests[0].query["ORD_END_DT"] == expected_day
+
+
 def test_terminal_field_probe_uses_persisted_order_day_and_redacts_raw_fields() -> None:
     @dataclass
     class TerminalFieldTransport:
@@ -627,8 +654,7 @@ def test_terminal_field_probe_uses_persisted_order_day_and_redacts_raw_fields() 
         for request in transport.requests
     )
     assert all(
-        not request.headers.get("tr_id", "").startswith("VTTT")
-        for request in transport.requests
+        not request.headers.get("tr_id", "").startswith("VTTT") for request in transport.requests
     )
 
 

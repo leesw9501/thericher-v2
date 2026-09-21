@@ -706,8 +706,9 @@ class KisPaperReadOnlyClient:
         raw_order_id: str,
         *,
         as_of: datetime,
+        order_at: datetime | None = None,
     ) -> KisPaperSameDayOrderIdObservation:
-        """Check whether one raw ID appears in the current ET history query.
+        """Check one raw ID on its recorded ET order day, or today by default.
 
         KIS's ``inquire-ccnl`` response may establish only that the exact order
         ID appeared in that query. It must not be treated as a fill, cancel, or
@@ -715,7 +716,10 @@ class KisPaperReadOnlyClient:
         """
 
         observed_at = require_utc(as_of, "as_of")
-        history = self._read_same_day_order_history(raw_order_id, order_at=observed_at)
+        history = self._read_same_day_order_history(
+            raw_order_id,
+            order_at=observed_at if order_at is None else require_utc(order_at, "order_at"),
+        )
         return KisPaperSameDayOrderIdObservation(
             observed_at=observed_at,
             same_day_order_id_seen=bool(history.direct_matches),

@@ -23,12 +23,108 @@ Read the files it prints and then execute the single current objective in
 and temporary Validation work, integrates it, verifies, commits, pushes, and
 refreshes the next objective. Do not stop for routine paper-work approval.
 
+For integrated test feedback, pass `--maxfail=1 --durations=15` to the existing
+parallel helper. A failed run is already non-authoritative; stop at its first
+reported failure and inspect it instead of paying for the remaining long
+replays. The measured 2026-09-21 failed full run took 40 minutes; the next
+fail-fast run surfaced a test-isolation fault in 34.50 seconds. Successful
+authority still requires the complete expected suite, workers and cleanup.
+
 The 2026-09-21 partial reset superseded the incomplete D1-pair company goal.
 The next implementation is the restart-safe SPY Paper lifecycle; D1 stays a
 Data-owned measurement. Older one-run restrictions below describe their exact
 historical attempts, not a global ban on new owned recovery or developmental
 research. Use `AGENTS.md` for the development-versus-promotion distinction.
-The bootstrap changes source/docs only, not installed images or task state.
+The bootstrap changed source/docs only. Subsequent work rebuilt the D1 image
+and existing research runtime; current deployment facts are in the stateboards.
+
+### Restart-Safe Paper State
+
+The private canary state has optional write-once `submission_started_at`,
+persisted by atomic temporary write, file flush/fsync, and replace before the
+submit transport. It records the original client attempt, not a broker fill or
+acknowledgement timestamp. `submitted_at` retains that same attempt when an
+order reference is acknowledged; new records require agreement between both.
+History uses the durable attempt time, falling back to legacy `submitted_at`,
+never the recovery clock. An unknown legacy date remains unknown and cannot
+establish terminal cancellation from an absent date query. This does not add a
+new submit retry path: unknown side effects still require exact reconciliation.
+Pre-submit exposure conflicts remain `intent_recorded`; only unexpired intents
+whose own conflict cleared may submit. They never bind/cancel an unrelated ID.
+
+The strict receipt observer understands the optional timestamp, but its
+explicit same-day observation semantics are unchanged. Before Execution image
+promotion, update all active strict-reader images sharing the private-state
+volume; do not assume a host edit changed baked source. D1 has a separate tag
+and no source bind mount. A D1-only build uses no real credential file:
+
+```powershell
+docker compose --env-file .env.example --profile kis-paper-d1-prospective-observation-pairing build kis-paper-d1-prospective-observation-pairing
+```
+
+The actual 2026-09-21 D1 build/image hashes are in `agents/data.md`. It did not
+invoke collection. All seven existing Execution private-state consumer images
+were subsequently rebuilt, including the two strict read-only consumers;
+21 baked-source checks matched. One explicit existing-path SPY Paper session
+on the new image at 2026-09-22 00:54 KST reached acknowledged-submit/cancelled-
+clean. A networkless read-only state parse confirmed the durable original
+attempt timestamp. `agents/execution.md` links exact image/source/receipt facts.
+This is not a date-crossing runtime test, terminal fill quantity, or PnL claim.
+Do not repeatedly run immediate-cancel sessions to obtain fill/accounting proof.
+
+### Open/Open Development Comparison
+
+`scripts/run_firstrate_m5_open_open_dev_20260921.py` reuses existing FirstRate
+normalization, complete M5 resampling and LocalPaperBroker. `--freeze` writes
+only metadata; `--run --contract-sha256 ...` consumes exactly that contract.
+The completed `20260921-proposed-r1` namespace is immutable and must not be
+rerun or re-frozen as an untouched evaluation. Its four Ridge fits and 48 cells
+are already-seen development, not model selection or continuous-capital return.
+Artifacts and hashes are in `agents/engine-research.md`; no weights are retained.
+Past-known eligibility and future payoff censoring remain separate. Subsequent
+experiments need a distinct scientific question, not relabeling these results.
+
+### H30 LSTM Development And Retained Models
+
+`scripts/run_firstrate_m5_h30_lstm_dev_20260921.py` has metadata-only `--freeze`
+and separate `--phase cpu|cuda` invocations. Both phases used the same installed
+research image, existing offline Compose profiles, and read-only source/data
+mounts. Use `.env.example`, project name `thericher-v2`, `--no-deps` and
+`--pull never`; this Compose version does not accept `run --no-build`.
+The CPU phase must receive the frozen contract SHA; CUDA also requires the
+exact completed CPU summary SHA. The parent owns the CPU/GPU timeout and reaps
+its child; CUDA additionally holds the existing exclusive GPU lock. No positive
+CPU PnL, D1 pairing, or operator approval was required for this development run.
+
+The completed `20260921-h30-r1` contract/results must not be overwritten or
+re-executed. Hashes and actual image/dependency versions are in the Engine and
+Steward stateboards. `models` contains every final epoch-8 fit, not a selected
+checkpoint: numeric NPZ arrays, train-only scalers, and hash-bound JSON config.
+`restore_predictor` loads only the fixed in-repo LSTM with `allow_pickle=False`,
+exact key/shape/dtype/identity checks and strict state loading. All 16 restored
+models passed synthetic CPU inference; this is not a deployment/Paper adapter.
+
+The old research image was missing an already-pinned calendar dependency.
+Rebuilding the existing image resolved it. The Dockerfile now installs the
+explicit CUDA Torch pin before editable research extras, avoiding a redundant
+unconstrained Torch download followed by replacement. Research extras remain
+range-resolved; actual versions and the image ID, not a fully locked runtime
+claim, identify these completed experiments.
+
+`scripts/run_firstrate_h30_train_diagnostic.py` is the completed train-only
+appendix, not another performance evaluation. `--describe` prints its fixed
+metadata digest; actual execution requires `--diagnostic-contract-sha256` and
+uses the existing CPU profile with read-only data/source mounts and the same
+research image. It restores all 16 numeric models, reconstructs only train
+inputs/normalizers, compares seeded initialization/final fit, and masks the
+old context. No optimizer, GPU, evaluation tensor, prediction export, or new
+model is involved. A parent-owned 600-second CPU limit reaps its child.
+The whole appendix succeeds or fails, and its immutable namespace is exclusive.
+The completed `20260921-h30-r1/train-diagnostic-v1` took 13.201 seconds. Do not
+overwrite or rerun it; hashes and findings are in `agents/engine-research.md`.
+Training moved parameters but did not beat train-mean MSE; check convergence
+under a new finite train-only budget before a larger model search. This finding
+cannot choose a market winner or predict generalization.
 
 ## Standing KIS Paper Authority
 
@@ -3351,10 +3447,12 @@ shared runtime/control root, or an explicit current-goal requirement.
 
 The focused serial group covers the changed production and contract paths. The
 parallel command is the full-suite authority: it must exit zero, use a fresh
-isolated child beneath local non-reparse `D:\trpy\runs` when available,
-otherwise `C:\trpy\runs`, and retain the expected test/skip cardinality. Fast
+isolated child beneath local non-reparse `C:\trpy\runs` when available,
+otherwise `D:\trpy\runs`, and retain the expected test/skip cardinality. Fast
 feedback and authority runs share a cross-session `Global` mutex. Authority
-mode fail-closes for a held helper lease, active matching Python worker, mutex
+mode checks both known C: and D: managed roots for surviving workers/leases,
+even when the preferred drive changed. It does not allocate or delete content
+under the non-selected root. It fail-closes for a held helper lease, active matching Python worker, mutex
 conflict, unreadable active-process probe, mismatch, nonzero exit, or retained
 current-run temp root. An inactive retained sibling root is diagnostic residue,
 not a blocker for a new isolated run; the helper does not recursively remove
@@ -3372,9 +3470,9 @@ For repeatable Windows feedback between goal boundaries, use:
 
 It runs the same suite with up to eight `pytest-xdist` workers (bounded by the
 host CPU count) and file-level distribution. The helper gives each run a short,
-unique base temp path beneath the shared local `D:\trpy\runs` root when it is
-available, otherwise `C:\trpy\runs`; this avoids Windows worker-path length
-failures, keeps test artifact roots off a near-floor system drive, cleans a
+unique base temp path beneath the shared local `C:\trpy\runs` root when it is
+available, otherwise `D:\trpy\runs`; this avoids Windows worker-path length
+failures, uses this host's measured faster NVMe scratch drive, cleans a
 successful run's private temp path, and leaves a failed run available for
 diagnosis. It is not a market-data or model-artifact root. Override the worker
 count when needed:
@@ -3382,6 +3480,18 @@ count when needed:
 ```powershell
 .\scripts\run_parallel_tests.ps1 -Workers 4
 ```
+
+On 2026-09-22, C: had 245.5 GiB free and was NVMe; D: was SATA. Alternating
+100 x 4-KiB `Flush(true)` probes under the active workload took C: 79/67 ms
+versus D: 21,468/20,260 ms. The unchanged optimized depth-dispatch test passed
+in 3.43s on C: versus the earlier 316.40s D: run. These are measured runs,
+not an unconditional speed ratio for every test. They replace the old
+near-floor C: preference for D:. Recheck capacity/performance if that premise
+changes. No market-data/model-artifact path, test assertion, worker count,
+mutex, lease, reparse check, or cleanup protection was weakened. A subsequent
+cross-root regression covers an orphan on the non-selected drive, held lease,
+missing/inactive roots and failed process probes. The final helper's focused
+authority run passed all 11 helper tests with cleanup in 7.04s.
 
 It has no KIS, credential, Docker, market-data, or artifact access. On
 2026-07-31, the completed full serial baseline was `1769 passed, 14 skipped` in

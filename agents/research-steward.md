@@ -5,12 +5,54 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+The 2026-09-21 frozen FirstRate M5 open/open development comparison completed
+four CPU fits and 48 aggregate local-paper cells, without GPU allocation,
+retained weights, sealed evaluation, or promotion. Contract/summary hashes and
+prior-family linkage are in `agents/engine-research.md`; they do not reserve
+compute for a successor.
+
+`firstrate-m5-h30-lstm-development-20260921-v1/20260921-h30-r1` completed its
+previously frozen contract, SHA256
+`be785361611db683afb3bd4bb80d245fc69e93fb90279e9ec8a1fafe459e22fe`.
+It spends no sealed evaluation. The fixed budget is eight Ridge fits and
+16 LSTM fits (two symbols/folds/contexts/seeds), 108 cost cells total,
+600 CPU seconds and one exclusive 1,200-second CUDA appointment. All final
+eight-epoch weights/scalers are retained externally only after whole-phase
+success; no best-checkpoint selection or Paper consumer. CPU input/parity
+readiness, not positive PnL, controls GPU dispatch. CPU completed all 60 cells
+with parity in 33.664 seconds; summary SHA256
+`06dc794bd575f42aa4079f5f7dac9a61d64f58659664a5587608a74c68b14142`.
+The exclusive CUDA appointment completed 16 fits/48 cells in 26.733 seconds,
+without timeout, and released its lock. CUDA summary SHA256:
+`4329cf2727bd8adeded60742507ce596be6b20e134e6639db61dd71bdb95d99e`.
+All 16 final numeric-only NPZ/config pairs passed hash/schema checks and actual
+Torch CPU restoration with synthetic-input finite inference. No raw market
+rows or predictions were emitted by that reload check. No GPU job remains
+owned by this campaign; no successor appointment is implied.
+The old installed image lacked an already-pinned calendar dependency; Infra
+rebuilt the existing research image. Both actual phases use image
+`sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039`,
+Python 3.12.14, Torch 2.7.0+cu128, CUDA build 12.8, NumPy 2.5.1 and sklearn
+1.9.1. Range-resolved research extras are a reproducibility limitation, not
+a claim of a fully locked environment.
+
+The same image completed the fixed train-only diagnostic in 13.201 CPU
+seconds, restoring all 16 models without training, evaluation tensors, or GPU.
+Its immutable appendix and hashes are in Engine Research. No allocation is
+held. The next train-only convergence experiment needs its own finite budget;
+the diagnostic neither spends a sealed evaluation nor reopens the closed r1.
+
 The bootstrap created no allocation or training run. Recheck actual GPU/process
 ownership before an appointment; the historical idle facts below are not a live
 utilization measurement. A frozen developmental campaign may use already-seen
 lawful data with explicit assumptions under the 2026-09-21 `AGENTS.md` policy.
 Custody still records family lineage and evaluation spend; this does not reopen
 a sealed holdout, promote a candidate, or require a successful D1 pair.
+
+## Historical Resource Facts
+
+The dated closed studies below are not current GPU availability or dispatch
+instructions. Recheck the owned lock and actual workers for each new job.
 
 - The RTX 4090 is free. The bounded Tiingo IEX r1 source-isolated appointment
   completed and released its memory; no GPU process or sealed-evaluation

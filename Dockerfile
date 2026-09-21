@@ -26,10 +26,10 @@ ARG PYTORCH_VERSION=2.7.0+cu128
 ARG PYTORCH_CUDA_INDEX_URL=https://download.pytorch.org/whl/cu128
 
 RUN --mount=type=cache,target=/root/.cache/pip \
-    python -m pip install -e ".[research]" && \
     python -m pip install \
         "torch==${PYTORCH_VERSION}" \
-        --index-url "${PYTORCH_CUDA_INDEX_URL}"
+        --index-url "${PYTORCH_CUDA_INDEX_URL}" && \
+    python -m pip install -e ".[research]"
 
 FROM research AS granite-ttm-runtime
 

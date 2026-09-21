@@ -111,9 +111,28 @@ def test_open_receipt_observation_uses_only_read_only_kis_requests_and_redacts_r
         for request in transport.requests
     )
     assert all(
-        not request.headers.get("tr_id", "").startswith("VTTT")
-        for request in transport.requests
+        not request.headers.get("tr_id", "").startswith("VTTT") for request in transport.requests
     )
+
+
+@pytest.mark.parametrize("valid", [True, False])
+def test_new_submission_start_field_is_validated_without_changing_observer_semantics(
+    tmp_path: Path,
+    valid: bool,
+) -> None:
+    path = _write_state(tmp_path, phase="submitted", broker_order_id=RAW_ORDER_ID)
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    payload["submission_started_at"] = (NOW if valid else NOW + timedelta(days=1)).isoformat()
+    payload["submitted_at"] = NOW.isoformat()
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    transport = FakeObserverTransport(exact_open_order=True)
+    outcome = _observe(tmp_path, transport=transport)
+    if valid:
+        assert outcome.observation.lifecycle_state == "open"
+        assert outcome.observation.pnl_status == "not_observed"
+    else:
+        assert outcome.observation.reason_code == "state_invalid"
+        assert transport.requests == []
 
 
 def test_same_day_order_id_sighting_never_becomes_a_fill_or_realized_pnl(tmp_path: Path) -> None:
@@ -159,8 +178,7 @@ def test_exact_absence_without_terminal_evidence_remains_scoped_and_ambiguous(
         for request in transport.requests
     )
     assert all(
-        not request.headers.get("tr_id", "").startswith("VTTT")
-        for request in transport.requests
+        not request.headers.get("tr_id", "").startswith("VTTT") for request in transport.requests
     )
 
 
@@ -333,8 +351,7 @@ def test_replay_is_idempotent_for_artifact_and_never_changes_the_private_intent(
     assert first.evidence_path.read_bytes() == second.evidence_path.read_bytes()
     assert state_path.read_bytes() == before
     assert all(
-        not request.headers.get("tr_id", "").startswith("VTTT")
-        for request in transport.requests
+        not request.headers.get("tr_id", "").startswith("VTTT") for request in transport.requests
     )
 
 

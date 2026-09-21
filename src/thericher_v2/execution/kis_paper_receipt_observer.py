@@ -105,9 +105,7 @@ class KisPaperReceiptObservation:
     observed_at: datetime
     lifecycle_state: str
     account_fact_status: Literal["not_checked", "current", "unavailable"]
-    open_order_observation: Literal[
-        "not_checked", "exact_match", "exact_absent", "unavailable"
-    ]
+    open_order_observation: Literal["not_checked", "exact_match", "exact_absent", "unavailable"]
     same_day_order_id_observation: Literal[
         "not_checked", "same_day_id_seen", "same_day_id_absent", "unavailable"
     ]
@@ -393,6 +391,7 @@ def _read_private_receipt_state(path: Path, run_id: str) -> _PrivateReceiptInten
     }
     optional = {
         "submitted_at",
+        "submission_started_at",
         "cancel_after_submit",
         "submit_upstream_code",
         "submit_response_category",
@@ -418,6 +417,14 @@ def _read_private_receipt_state(path: Path, run_id: str) -> _PrivateReceiptInten
         updated_at = _utc_datetime(payload.get("updated_at"))
         if "submitted_at" in payload and payload["submitted_at"] is not None:
             _utc_datetime(payload["submitted_at"])
+        if payload.get("submission_started_at") is not None:
+            started_at = _utc_datetime(payload["submission_started_at"])
+            if not created_at <= started_at <= updated_at:
+                raise ValueError("submission start")
+            if payload.get("submitted_at") is not None and (
+                _utc_datetime(payload["submitted_at"]) != started_at
+            ):
+                raise ValueError("submission attempt time mismatch")
         receipt_digest = _receipt_digest(run_id)
         client_order_id = _required_text(raw_intent.get("client_order_id"))
         decision_id = _required_text(raw_intent.get("decision_id"))
@@ -453,9 +460,12 @@ def _read_private_receipt_state(path: Path, run_id: str) -> _PrivateReceiptInten
             canonical_intent["price_contract_ref"] = price_contract_ref
         if side == "sell":
             canonical_intent["side"] = side
-        intent_ref = "sha256:" + hashlib.sha256(
-            json.dumps(canonical_intent, sort_keys=True, separators=(",", ":")).encode("utf-8")
-        ).hexdigest()
+        intent_ref = (
+            "sha256:"
+            + hashlib.sha256(
+                json.dumps(canonical_intent, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            ).hexdigest()
+        )
         if (
             payload.get("intent_fingerprint") != intent_ref
             or payload.get("phase") not in _STATE_PHASES

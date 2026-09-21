@@ -14,13 +14,88 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
-The next implementation objective is `kis-paper-spy-restart-safe-lifecycle-v1`.
-Ready work: submission-date-bound reconciliation and separating a never-sent
-intent from an actual unknown submission. Start with offline synthetic cases,
-then use the existing owned virtual-only route and exact persisted identity.
-Both fixes and broker/accounting confirmation remain outstanding; this
-bootstrap changes no Execution runtime. D1 is not an input dependency of the
-baseline lifecycle. Dated facts below are historical, not fresh account status.
+The active objective is `kis-paper-spy-restart-safe-lifecycle-v1`. Source fixes
+now retain the original submission attempt date across restart/late-ID recovery
+and keep an unrelated-open-order conflict `intent_recorded`, not an invented
+unknown submission. Legacy unknown dates are not fabricated; exact ambiguous
+side effects still cannot resubmit. The strict receipt observer accepts the
+new optional field. Seven existing consumer images are source-compatible and
+deployed; complete terminal/accounting closure remains outstanding.
+
+New-image runtime check (2026-09-22 00:54 KST): one explicit, standing-authorized
+invocation of the existing quote-session path, after checking task/container
+ownership, reached `acknowledged_order_reference`, `cancelled/clean`. Its exact
+session/direct readers independently validated matching run/phase/reconciliation
+and timestamps. This was a direct invocation, not a Scheduler-origin claim.
+Evidence under `D:\thericher-v2\model-artifacts\execution`:
+- `kis-paper-canary-session\paper-session-20260921T155423665718Z\evidence.json`,
+  SHA256 `067700162f733047034692559b23edc4dba0932c7c814d207c5d1f6911a297ac`;
+- `kis-paper-canary\canary-20260921T155423665718Z\evidence.json`,
+  SHA256 `06512035ec16a8d7c8958cc6b5946dff8f211f1b3281ebe1a7833026dec9b160`.
+A separate networkless/read-only private-state parse confirmed
+`submission_started_at` present, equal to `submitted_at`, and inside the intent
+lifetime. It emitted only booleans/phase, not private values. This proves current
+runtime persistence, not an actual date-crossing restart, fill quantity or PnL.
+
+Rollout covers `kis-paper-session`, `kis-paper-daily-spy-session`,
+`kis-paper-prospective-qqq-session`, `kis-paper-prospective-spy-cycle`,
+`kis-paper-canary`, `kis-paper-receipt-observer`, and
+`kis-paper-terminal-field-probe`. All 21 baked checks matched the three changed
+sources, including both read-only private-state consumers. Session image:
+`sha256:f9851c34757f6b1e126423c946d393c303100a3196b610ff52055a05c3b5a025`.
+Source SHA256 values, respectively canary, readonly, receipt observer:
+`e202286515bd01a26c381263b52e8b2e51a2868ff903578af741cd63d1d47f21`,
+`26eb18818d99ca83224136f81d5b0fc851aa797c29dbd2951d5aad6dfed2bca4`,
+`16358d71ce79b44388fc4683b710348c67b5d058ba8d09a44adec33e3ec22982`.
+No new schedule, live route, strategy selection or fill-accounting claim.
+
+Fresh existing-task evidence (2026-09-21 23:35 KST, old image):
+`paper-session-20260921T143502071908Z` and
+`canary-20260921T143502071908Z` independently parse with matching run, phase,
+reconciliation and subsecond timestamps: `acknowledged_order_reference`,
+`cancelled/clean`. Session SHA256:
+`7d2cdbacba8638253d955925c7a85be1be22576285d2f1c3792996c0743cdd83`;
+direct SHA256:
+`44471f1a860eae7e39c79aedf974e6f61b5bd84fa02e40b68961bdfd706dbebf`.
+Exact paths are under `D:\thericher-v2\model-artifacts\execution`, respectively
+`kis-paper-canary-session\paper-session-20260921T143502071908Z\evidence.json`
+and `kis-paper-canary\canary-20260921T143502071908Z\evidence.json`.
+These are application-receipt bindings, not cryptographic scheduler-origin
+proof. They prove neither new-patch restart behavior nor fills, account PnL,
+profitability, or the complete company outcome. The task next runs
+2026-09-22 23:35 KST. D1 remains independent; older table rows are historical.
+
+One standing-authorized, exact-run read-only history field probe at
+2026-09-21T15:02:13.669177Z used the installed virtual-only terminal-probe
+profile with the private-state volume read-only. It returned
+`observed/history_observed`, `identity_match: absent`, complete pagination and
+no observed quantity/amount fields; terminal support remains unqualified and
+PnL unobserved. Do not infer a fill or zero fill from this absence. No account
+endpoint or submit/modify/cancel ran in this probe. Its exact source-safe receipt:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-terminal-field-probe\run-6f6e1d51f2689201\20260921T150213669177Z-b61bd1d5488ee055.json`.
+The initial Docker dispatch failed before a container started: the minimal
+environment omitted Windows Compose plugin discovery variables. Restoring
+standard Windows/Docker connection variables fixed dispatch; only the four
+authorized Paper values were loaded by the existing scoped loader, with
+`.env.example` passed to Compose. No live value or raw error was exposed.
+Next terminal/accounting work must obtain positive quantity/position/cash
+evidence for its exact lifecycle, not repeat this absent cancelled-row probe
+as a company-wide wait or permission check.
+
+The current quote-session and receipt preparation both derive a below-last
+buy limit; the quote task then cancels immediately. That is useful transport
+and cancellation evidence, not a design for accumulating fill/PnL observations.
+After recovery rollout, the next implementation must connect exact terminal
+quantities to private position/cash accounting and exercise a deliberately
+fillable bounded Paper cycle. Do not silently change the existing canary's
+pricing or infer a zero fill from cancellation/absence alone.
+The existing numeric `ord_psbl_frcr_amt` is orderable funds, not settled cash
+or equity. The next private accounting adapter must bind order/date/instrument/
+side/currency/quantities, make duplicate observations no-ops, and reject only
+the exact regressive/conflicting observation. Broker fills stay `kis_paper`,
+never `local_paper`. Unknown fee or settlement semantics cannot become invented
+zero fees or broker net PnL. A fillable cycle may exit only its own confirmed
+inventory; it need not wait for the old cancelled row to reappear.
 
 | Surface | Current fact | Limit |
 | --- | --- | --- |
@@ -62,7 +137,7 @@ baseline lifecycle. Dated facts below are historical, not fresh account status.
 
 | Work | Owner | Next action |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution / existing quote-session owner | Last recorded 2026-09-01 result is historical `not_submitted/reconciliation_unavailable`, not current broker state. Recheck ownership, repair date-bound recovery and never-submitted status, then use the same owned route. Do not duplicate an active worker or resubmit an unresolved intent. |
+| Virtual-Paper lifecycle canary | Execution / existing quote-session owner | New-image direct session is `cancelled/clean` with valid durable attempt time; seven private-state consumers are compatible. Next: exact terminal quantity/accounting support and a fillable cycle. Do not duplicate an active worker or resubmit an unresolved intent. |
 | Historical lifecycle closure | Execution | The 2026-08-11 assessment closed its evidence review only, leaving an unresolved intent. Repeated exact-bound read-only reconciliation is permitted; runtime recovery is still outstanding under the new company objective. |
 | Read-only account snapshot | Existing observer task | The existing four-minute task remains the sole recurring owner. |
 | QQQ/SPY intraday causal evidence | Data-owned `thericher-kis-paper-intraday-head` task | The first post-writer bound task path is one comparable `collection_exit_nonzero / reason_unavailable` category. The later successful partial terminal is Data-only and noncomparable, so Execution consumes no causal-qualified model input; the existing QQQ provisional route remains separately task-owned. |

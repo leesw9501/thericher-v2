@@ -40,12 +40,19 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
-Data independently supports the SPY lifecycle company goal. Its bootstrap
-repairs the shared-client D1 page budget and safe error classification with
-synthetic integration coverage. No deployment, collection, cache mutation, or
-new pair result is claimed. Next: verify the installed runtime under the
-existing task owner, preserve `next_due`, and inspect eligible outcomes without
-blocking Engine preparation or Execution recovery.
+Data independently supports the SPY lifecycle company goal. On 2026-09-21 the
+installed D1 image was found to lack the shared-client budget/error repair.
+The D1-only image was rebuilt with `.env.example`, without a task or collector
+invocation. Old image `sha256:08e61294172974b2c8005b3c0cca59cd1fcfc9b8326c6af5b1b91760d903b769`
+was replaced by `sha256:c2fd5021d8b2db734c896d90291bc828202153b7b9898d0340a70ebce62e4cec`.
+Network-disabled, read-only, no-mount inspection matched all seven relevant
+host/image source hashes (observer, cache, client, pair-forward, pairing,
+collector, reader). The observer SHA256 is
+`cea04cfda6f4680981a27bae697df9eb9d0d55f9cea4b154ba7cbd4b6a87b009`;
+pair-cache is `77cd40b4696baec459de57fb948d1f2a1ae2f2a75d3267ce7dc21fab0a33b71c`.
+No quote/daily-SPY image, schedule, credential, cache, or receipt was changed.
+This proves source equality only, not an observation/pair. Preserve owned
+`next_due` (2026-09-22 08:15 KST) and continue independent lanes.
 
 `kis-paper-d1-prospective-observation-pairing-v1` now owns an installed
 two-trigger KST worker: first observation at 08:15 and later re-observation at

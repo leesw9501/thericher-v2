@@ -567,45 +567,16 @@ def test_research_job_runs_candidate_depth_target_kind_with_injected_runners(
     tmp_path,
 ) -> None:
     artifact_root = tmp_path / "model-artifacts"
-    queue_artifact = _breadth_queue_artifact(artifact_root, variant_id="unit-lb3")
+    breadth_artifact = _breadth_holdout_artifact(artifact_root, variant_id="unit-lb3")
     source_dir = tmp_path / "source"
     holdout_dir = tmp_path / "holdout"
     source_dir.mkdir()
     holdout_dir.mkdir()
     source_snapshot = _yahoo_snapshot(source_dir, symbols=("AAA",))
     holdout_snapshot = _yahoo_snapshot(holdout_dir, symbols=("AAA",))
-    breadth_run = run_and_write_research_job(
-        ResearchJobSpec(
-            job_id="ubh-source",
-            kind="candidate_breadth_holdout",
-            breadth_queue_artifact=queue_artifact,
-            data_slices=(
-                CandidateDataSliceConfig(
-                    slice_id="src",
-                    yahoo_snapshot=source_snapshot,
-                    symbol="AAA",
-                ),
-            ),
-            robustness_slices=(
-                CandidateThresholdRobustnessSliceConfig(
-                    slice_id="hold",
-                    yahoo_snapshot=holdout_snapshot,
-                    symbol="AAA",
-                ),
-            ),
-            max_bars=40,
-        ),
-        artifact_root=artifact_root,
-        repo_root=Path.cwd(),
-        gpu=GpuReadiness(
-            available=True,
-            detail="Unit GPU, 24576 MiB",
-            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
-        ),
-        candidate_probability_runner=_probability_runner,
-    )
 
     def trainer(dataset, candidate, model_artifact, config):  # noqa: ANN001
+        assert candidate["candidate_experiment_id"] == "unit-lb3"
         model_artifact.write_text("unit-depth-model", encoding="utf-8")
         return {
             "backend": "unit",
@@ -622,7 +593,7 @@ def test_research_job_runs_candidate_depth_target_kind_with_injected_runners(
         ResearchJobSpec(
             job_id="udt-job",
             kind="candidate_depth_target",
-            breadth_holdout_artifact=breadth_run.result.training_artifact,
+            breadth_holdout_artifact=breadth_artifact,
             data_slices=(
                 CandidateDataSliceConfig(
                     slice_id="src",
@@ -663,17 +634,66 @@ def test_research_job_runs_candidate_depth_target_kind_with_injected_runners(
     payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
     assert run.result.status == "completed"
     assert payload["kind"] == "candidate_depth_target"
+    assert payload["source_breadth_holdout_artifact"] == str(breadth_artifact)
     depth = payload["candidate_depth_target"]
     assert depth["status"] == "candidate_depth_target_ran_only"
     assert depth["selected_variant_count"] == 1
+    assert depth["selection"]["selected_variant_id"] == "unit-lb3"
+    assert depth["selection"]["candidate_experiment_id"] == "unit-lb3"
     assert depth["selection"]["mode"] == "research_scheduling_only"
     assert depth["selection"]["winner"] is None
     assert depth["selection"]["recommendation"] is None
     assert depth["metrics"]["all_fills_local_paper"] is True
+    assert depth["metrics"]["local_paper_fill_count"] > 0
     assert Path(payload["artifacts"]["candidate_depth_target"]).exists()
     assert Path(payload["artifacts"]["candidate_training"]).exists()
     assert Path(payload["artifacts"]["candidate_threshold_holdout"]).exists()
     assert Path(payload["artifacts"]["model"]).exists()
+
+
+@pytest.mark.parametrize("source_model", [None, "missing-model.pt"], ids=["absent", "missing"])
+def test_research_job_depth_dispatch_requires_source_model_identity(tmp_path, source_model) -> None:
+    artifact_root = tmp_path / "model-artifacts"
+    breadth_artifact = _breadth_holdout_artifact(artifact_root, variant_id="unit-lb3")
+    breadth = json.loads(breadth_artifact.read_text(encoding="utf-8"))
+    variant = breadth["variants"][0]
+    if source_model is None:
+        variant.pop("model_artifact")
+    else:
+        variant["model_artifact"] = str(tmp_path / source_model)
+    breadth_artifact.write_text(json.dumps(breadth), encoding="utf-8")
+
+    def unexpected_runner(*_args):  # noqa: ANN002
+        raise AssertionError("unbound source model must not reach a depth runner")
+
+    run = run_and_write_research_job(
+        ResearchJobSpec(
+            job_id="udt-unbound-source",
+            kind="candidate_depth_target",
+            breadth_holdout_artifact=breadth_artifact,
+        ),
+        artifact_root=artifact_root,
+        repo_root=Path.cwd(),
+        gpu=GpuReadiness(
+            available=True,
+            detail="Unit GPU, 24576 MiB",
+            checked_at=datetime(2026, 1, 2, tzinfo=UTC),
+        ),
+        candidate_trainer_runner=unexpected_runner,
+        candidate_evaluation_runner=unexpected_runner,
+        candidate_probability_runner=unexpected_runner,
+    )
+
+    payload = json.loads(run.job_artifact.read_text(encoding="utf-8"))
+    depth = payload["candidate_depth_target"]
+    assert run.result.status == "prepared_not_depth_targeted"
+    assert payload["source_breadth_holdout_artifact"] == str(breadth_artifact)
+    assert depth["status"] == "prepared_not_depth_targeted"
+    assert "source model artifact" in depth["reason"]
+    assert depth["selected_variant_count"] == 1
+    assert depth["training_status"] is None
+    assert depth["selection"]["selected_variant_id"] == "unit-lb3"
+    assert "model" not in payload["artifacts"]
 
 
 def test_research_job_runs_candidate_replay_kind_with_injected_runner(tmp_path) -> None:
@@ -1340,6 +1360,62 @@ def _breadth_queue_artifact(artifact_root: Path, *, variant_id: str) -> Path:
         encoding="utf-8",
     )
     return queue_artifact
+
+
+def _breadth_holdout_artifact(artifact_root: Path, *, variant_id: str) -> Path:
+    # Only upstream evidence is synthetic; depth dispatch still runs its own replays.
+    queue_artifact = _breadth_queue_artifact(artifact_root, variant_id=variant_id)
+    queue_variant = json.loads(queue_artifact.read_text(encoding="utf-8"))["variants"][0]
+    training = Path(queue_variant["training"]["metrics_artifact"])
+    lineage = {}
+    for stage, status in (
+        ("calibration", "candidate_thresholds_calibrated_only"),
+        ("holdout", "candidate_threshold_holdout_replayed_only"),
+        ("robustness", "candidate_robustness_replayed_only"),
+    ):
+        path = training.parent / f"{stage}.json"
+        path.write_text(
+            json.dumps(
+                {
+                    "status": status,
+                    "candidate_experiment_id": queue_variant["candidate_experiment_id"],
+                    "candidate_parameters": queue_variant["candidate_parameters"],
+                }
+            ),
+            encoding="utf-8",
+        )
+        lineage[stage] = str(path)
+    path = artifact_root / "candidate-breadth-holdout" / "ubh-source" / "metrics.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "run_id": "ubh-source",
+                "status": "candidate_breadth_holdout_replayed_only",
+                "source_breadth_queue_artifact": str(queue_artifact),
+                "variants": [
+                    {
+                        "variant_id": queue_variant["variant_id"],
+                        "candidate_experiment_id": queue_variant["candidate_experiment_id"],
+                        "candidate_parameters": queue_variant["candidate_parameters"],
+                        "status": "variant_holdout_replayed_only",
+                        "training_metrics_artifact": str(training),
+                        "evaluation_artifact": queue_variant["evaluation"]["evaluation_artifact"],
+                        "model_artifact": queue_variant["training"]["model_artifact"],
+                        "calibration": {"artifact": lineage["calibration"]},
+                        "holdout": {
+                            "artifact": lineage["holdout"],
+                            "robustness_artifact": lineage["robustness"],
+                        },
+                        "metrics": {"holdout_status": "candidate_threshold_holdout_replayed_only"},
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    return path
 
 
 def _probability_runner(dataset, model, training_payload):  # noqa: ANN001

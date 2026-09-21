@@ -464,6 +464,7 @@ class KisPaperCanaryState:
     reason_code: str
     broker_order_id: str | None = None
     submitted_at: datetime | None = None
+    submission_started_at: datetime | None = None
     cancel_after_submit: bool = False
     submit_upstream_code: str | None = None
     submit_response_category: str | None = None
@@ -476,12 +477,26 @@ class KisPaperCanaryState:
             raise ValueError("canary state reason is invalid")
         if self.broker_order_id is not None and not _raw_order_id(self.broker_order_id):
             raise ValueError("canary broker order id is invalid")
+        if self.submission_started_at is not None:
+            started_at = require_utc(self.submission_started_at, "submission_started_at")
+            if (
+                not self.intent.created_at
+                <= started_at
+                <= require_utc(self.updated_at, "updated_at")
+            ):
+                raise ValueError("canary submission start is outside state lifetime")
+            object.__setattr__(self, "submission_started_at", started_at)
         if self.submitted_at is not None:
             if self.broker_order_id is None:
                 raise ValueError("canary submitted time requires broker order id")
             submitted_at = require_utc(self.submitted_at, "submitted_at")
             if submitted_at < self.intent.created_at:
                 raise ValueError("canary submitted time precedes intent")
+            if (
+                self.submission_started_at is not None
+                and submitted_at != self.submission_started_at
+            ):
+                raise ValueError("canary submitted time differs from recorded attempt")
             object.__setattr__(self, "submitted_at", submitted_at)
         if not isinstance(self.cancel_after_submit, bool):
             raise ValueError("canary cancellation policy is invalid")
@@ -508,6 +523,11 @@ class KisPaperCanaryState:
             "reason_code": self.reason_code,
             "broker_order_id": self.broker_order_id,
             "submitted_at": (None if self.submitted_at is None else self.submitted_at.isoformat()),
+            "submission_started_at": (
+                None
+                if self.submission_started_at is None
+                else self.submission_started_at.isoformat()
+            ),
             "cancel_after_submit": self.cancel_after_submit,
             "submit_upstream_code": self.submit_upstream_code,
             "submit_response_category": self.submit_response_category,
@@ -527,6 +547,7 @@ class KisPaperCanaryState:
         }
         optional = {
             "submitted_at",
+            "submission_started_at",
             "cancel_after_submit",
             "submit_upstream_code",
             "submit_response_category",
@@ -576,6 +597,11 @@ class KisPaperCanaryState:
                     None
                     if "submitted_at" not in payload or payload["submitted_at"] is None
                     else _utc_datetime(payload["submitted_at"])
+                ),
+                submission_started_at=(
+                    None
+                    if payload.get("submission_started_at") is None
+                    else _utc_datetime(payload["submission_started_at"])
                 ),
                 cancel_after_submit=(
                     False
@@ -691,6 +717,7 @@ class KisPaperCanaryStateStore:
         now: datetime,
         broker_order_id: str | None = None,
         submitted_at: datetime | None = None,
+        submission_started_at: datetime | None = None,
         submit_upstream_code: str | None = None,
         submit_response_category: str | None = None,
     ) -> KisPaperCanaryState:
@@ -704,6 +731,17 @@ class KisPaperCanaryStateStore:
                 and submitted_at != current.submitted_at
             ):
                 raise KisPaperCanaryError("state_submission_time_invalid")
+            if submission_started_at is not None and (
+                (
+                    current.submission_started_at is not None
+                    and submission_started_at != current.submission_started_at
+                )
+                or (
+                    current.submission_started_at is None
+                    and (current.phase != "intent_recorded" or phase != "submission_started")
+                )
+            ):
+                raise KisPaperCanaryError("state_submission_time_invalid")
             state = KisPaperCanaryState(
                 intent=intent,
                 phase=phase,
@@ -713,6 +751,11 @@ class KisPaperCanaryStateStore:
                     current.broker_order_id if broker_order_id is None else broker_order_id
                 ),
                 submitted_at=(current.submitted_at if submitted_at is None else submitted_at),
+                submission_started_at=(
+                    current.submission_started_at
+                    if submission_started_at is None
+                    else submission_started_at
+                ),
                 cancel_after_submit=current.cancel_after_submit,
                 submit_upstream_code=(
                     current.submit_upstream_code
@@ -789,12 +832,15 @@ class KisPaperCanaryClient:
                 access_token=access_token,
             )
             snapshot = read_only_client.snapshot()
+            # Recovery time is not order time. Legacy unknown dates stay unknown.
+            order_at = state.submission_started_at or state.submitted_at
             same_day_order = (
                 None
-                if state.broker_order_id is None
+                if state.broker_order_id is None or order_at is None
                 else read_only_client.observe_same_day_order_id(
                     state.broker_order_id,
                     as_of=now,
+                    order_at=order_at,
                 )
             )
             recovered_broker_order_id = (
@@ -826,7 +872,12 @@ class KisPaperCanaryClient:
         status: Literal["clean", "unresolved"] = "unresolved"
         if state.phase in {"intent_recorded", "rejected"}:
             status = "clean"
-        elif state.phase == "cancelled" and not matching_open and not matching_ccnl:
+        elif (
+            state.phase == "cancelled"
+            and same_day_order is not None
+            and not matching_open
+            and not matching_ccnl
+        ):
             status = "clean"
         elif known:
             status = "clean"
@@ -1322,7 +1373,7 @@ def _run_kis_paper_canary(
             state = state_store.transition(
                 intent,
                 expected=frozenset({"intent_recorded"}),
-                phase="outcome_unknown",
+                phase="intent_recorded",
                 reason_code="matching_open_order",
                 now=observed_at,
             )
@@ -1359,6 +1410,7 @@ def _run_kis_paper_canary(
                     phase="submission_started",
                     reason_code="preview",
                     now=submit_at,
+                    submission_started_at=submit_at,
                 )
                 try:
                     accepted, broker_order_id = client.submit_limit(
@@ -1767,6 +1819,7 @@ def _cancel_submitted_canary(
     reconciliation = client.reconcile(state, now=observed_at)
     if (
         reconciliation.account_status != "available"
+        or (state.submission_started_at is None and state.submitted_at is None)
         or reconciliation.matching_open_order
         or reconciliation.matching_ccnl
     ):
@@ -1819,7 +1872,7 @@ def _recover_existing_canary(
                 reason_code="reconciliation_clean",
                 now=observed_at,
                 broker_order_id=reconciliation.recovered_broker_order_id,
-                submitted_at=observed_at,
+                submitted_at=state.submission_started_at,
             )
             reconciliation = client.reconcile(state, now=observed_at)
         if (
