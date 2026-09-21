@@ -53,7 +53,7 @@ function Invoke-PairForwardProfileService {
             "--project-directory",
             $ProjectRoot,
             "--profile",
-            "kis-paper-daily-pair-forward",
+            "kis-paper-daily-pair-forward-v2",
             "run",
             "--rm",
             "--no-deps",
@@ -89,6 +89,8 @@ function Invoke-PairForwardGuardReceipt {
     $commandOverride = @(
         "scripts/collect_kis_paper_daily_pair_forward.py",
         "--preflight",
+        "--cache-lineage",
+        "v2",
         "--cache-root",
         "/app/market_data",
         "--artifact-root",
@@ -100,7 +102,7 @@ function Invoke-PairForwardGuardReceipt {
     )
     return Invoke-PairForwardProfileService `
         -ProjectRoot $ProjectRoot `
-        -Service "kis-paper-daily-pair-forward-preflight" `
+        -Service "kis-paper-daily-pair-forward-v2-preflight" `
         -CommandOverride $commandOverride
 }
 
@@ -133,7 +135,7 @@ function Invoke-PairForwardSchedule {
 
     $preflight = Invoke-PairForwardProfileService `
         -ProjectRoot $resolvedProjectRoot `
-        -Service "kis-paper-daily-pair-forward-preflight"
+        -Service "kis-paper-daily-pair-forward-v2-preflight"
     $preflightExitCode = [int]$preflight.ExitCode
     if ($preflightExitCode -eq $CacheCurrentExitCode) {
         return 0
@@ -143,7 +145,7 @@ function Invoke-PairForwardSchedule {
     }
     $collection = Invoke-PairForwardProfileService `
         -ProjectRoot $resolvedProjectRoot `
-        -Service "kis-paper-daily-pair-forward"
+        -Service "kis-paper-daily-pair-forward-v2"
     return [int]$collection.ExitCode
 }
 

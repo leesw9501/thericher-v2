@@ -38,6 +38,49 @@ research. Use `AGENTS.md` for the development-versus-promotion distinction.
 The bootstrap changed source/docs only. Subsequent work rebuilt the D1 image
 and existing research runtime; current deployment facts are in the stateboards.
 
+### Current Schedule Set (2026-09-22)
+
+This section supersedes historical registration/next-due claims below. All
+names in this table have the prefix `thericher-kis-paper-`; times are KST.
+
+| Task | Current disposition |
+| --- | --- |
+| `intraday-head` | Retained: 00:29, 02:28, 04:24, 06:20 Tue-Sat. |
+| `daily-spy-head`, `daily-spy-session` | Retained: 22:15 and 23:50 Mon-Fri; input collection and actual baseline Paper lifecycle. |
+| `snapshot-observer` | Retained: every four minutes for ten hours from 21:20 Mon-Fri; no cadence change without freshness/load evidence. |
+| `daily-pair-forward` | Retained: 06:55 Tue-Sat; host runner now uses existing v2 profile/preflight/collector and v2 guard-receipt lineage. v1 remains untouched. |
+| `daily-nas-forward` | Retained: 06:40 Tue-Sat; latest safe reason is `nas_forward_cache_unavailable/reconcile`, requiring scoped Data recovery. Code 20 does not prove quarantine. |
+| `d1-prospective-observation-pairing` | Final later opportunity 2026-09-22 23:20. Both triggers expire 2026-09-23 00:00. Fresh first observation is recorded, not a complete pair. |
+| `daily-backfill`, `daily-broad-backfill` | Disabled: exact historical cursors terminal, respectively 3/3 and 2,119/2,119 targets. This is not a claim of unlimited historical coverage. |
+| `daily-spy-stability-observer`, `spy-prefix-negative-control`, `spy-prefix-feasibility` | Disabled finite diagnostic studies; commands and immutable results retained. |
+| `quote-session` | Disabled recurring immediate-cancel smoke; explicit diagnostics/recovery remain available. Do not confuse this with retained `daily-spy-session`. |
+
+Two completed Cboe one-shot registrations are also disabled. The two legacy
+TheRicher tasks remain disabled. Nothing was unregistered or stopped mid-run.
+Three old Codex follow-up IDs were confirmed `not_found` by the app; no new
+automation replaces them.
+
+The installer without `-ScheduleName` selects only the six operational tasks.
+A named historical/diagnostic install remains possible, but updating a disabled
+task preserves disabled state and an existing trigger expiry is retained.
+Installing is not an implicit instruction to resume a retired experiment.
+The pair task already calls the host runner, so the v2 edit needs no task start
+or image rebuild. Its image exists; successful next collection is not claimed.
+
+Rollback metadata is in
+`D:\thericher-v2\model-artifacts\ops\schedule-cleanup-20260922\before.json`;
+`after.json` records the independently read host settings. A review probe later
+re-registered eight tasks; original start anchors were restored and last-run
+timestamps were unchanged. `rechecked-after-review.json` and
+`action-contract-recheck.json` retain the safe correction/route checks. No
+full pre-probe XML was retained, so this is not a byte-identical task rollback
+claim. Restore only named
+enabled states/trigger expiry fields after checking ownership, using
+`Enable-ScheduledTask`/`Disable-ScheduledTask` and `Set-ScheduledTask -Trigger`.
+The prior runner is in Git revision `8dce708`; reverting to it also reverts the
+pair to quarantined v1 and is not a data repair. Do not erase private state,
+quarantine, raw data or immutable receipts to undo scheduling changes.
+
 ### Restart-Safe Paper State
 
 The private canary state has optional write-once `submission_started_at`,

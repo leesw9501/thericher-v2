@@ -21,6 +21,31 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+The operator then approved pruning schedules. Six exhausted/diagnostic
+recurring tasks and two expired Cboe one-shots are disabled, not deleted.
+Six operational schedules remain, plus the D1 study's final later opportunity
+at 2026-09-22 23:20 KST; both D1 triggers expire at midnight. Its fresh reader
+result is `first_recorded` for 2026-09-21, not a complete pair. The QQQ/SPY
+forward runner now selects existing v2 services/lineage instead of quarantined
+v1. NAS forward remains enabled with `nas_forward_cache_unavailable/reconcile`
+pending separate Data recovery; it is not proved quarantined or complete.
+The account observer's four-minute cadence and actual daily-SPY Paper session
+are unchanged. Immediate-cancel quote diagnostics are now on demand; private
+state, recovery commands and historical evidence survive. The installer defaults
+to six operational tasks and preserves disabled/expiry state on named reinstall.
+Exact host before/after facts and rollback fields are under
+`D:\thericher-v2\model-artifacts\ops\schedule-cleanup-20260922`.
+The three historical Codex follow-ups were confirmed absent by the app.
+An independent review probe accidentally re-registered eight tasks; original
+start anchors were restored and actions/settings/expiry rechecked, with all
+last-run timestamps unchanged. Details and test isolation repair are in the
+2026-09-22 decision entry. No direct KIS call/order was made, and this package
+does not complete the company goal.
+Cleanup verification: final changed-path serial 55 passed; final clean-root
+eight-worker suite 3,446 passed / 19 skipped in 292.71s. The earlier 3,445-pass
+run preceded the final installer/mock-isolation repair and is superseded.
+Ruff, default/research Compose parses with `.env.example`, and diff checks pass.
+
 The operator postponed the Terra switch and resumed autonomous implementation.
 The bootstrap stop below is historical, not a current instruction to wait.
 

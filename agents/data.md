@@ -40,6 +40,32 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
+Schedule cleanup (2026-09-22) verified terminal metadata for the existing
+three-target historical cache (generation 65: two complete, one source-limited)
+and broad cache (generation 26,368: 1,089 complete, 1,030 source-limited).
+Both historical backfill tasks are disabled; their exact cursor contracts,
+data and indices remain intact. The finite SPY stability and both prefix-study
+tasks are also disabled. Stability exhausted its ten GETs on 2026-08-24;
+all ten matched, without proving finality. Prefix retained 31 validated pairs,
+all `page_seam_invalid`; latest session 2026-09-21 still has 119/360 minutes
+and no continuation. Repeating that unchanged study is retired, not all SPY
+history acquisition. Current intraday and SPY head collection continue.
+The installed pair-forward task's host runner now selects v2 services and
+guard-receipt lineage; its next natural run is 2026-09-23 06:55 KST. This is
+routing repair, not proof of new rows. NAS forward remains active at 06:40:
+its latest safe receipt is `unavailable/nas_forward_cache_unavailable/reconcile`
+at `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20260921T214003621428Z-524597323641\receipt.json`.
+Its actual cache fault needs a separate bounded recovery; quarantine is unknown.
+
+The current D1 reader now validates `first_recorded` for session 2026-09-21,
+at `D:\thericher-v2\model-artifacts\data\kis-paper-d1-prospective-observation-pairing\v1\receipts\first-20260921-b7752aa22cc3.json`.
+There is no later pair result. Its final later opportunity is 2026-09-22
+23:20 KST; both installed triggers expire at 2026-09-23 00:00 KST. Read and
+close that finite study after the opportunity, without automatic extension or
+company-wide waiting. Older first-failure/due entries below are historical.
+Host change/rollback fields are in
+`D:\thericher-v2\model-artifacts\ops\schedule-cleanup-20260922`.
+
 Data independently supports the SPY lifecycle company goal. On 2026-09-21 the
 installed D1 image was found to lack the shared-client budget/error repair.
 The D1-only image was rebuilt with `.env.example`, without a task or collector

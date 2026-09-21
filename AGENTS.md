@@ -180,6 +180,9 @@ Codex is the product-development lead and integrator.
   company objective remains active; that commit alone is not a goal boundary.
   Reserve the full authority sequence for company-objective integration, a
   changed shared runtime/control root, or an explicit current-goal requirement.
+  Synthetic installer tests must disable PowerShell module auto-loading and
+  mock every Scheduler entry point; never exercise a partial-mock installer
+  against production task names. Auto-loaded module functions can replace mocks.
   Prefer `--maxfail=1 --durations=15` for integrated feedback so a known failed
   run stops early and exposes slow tests. A partial failed run is never
   authority; a passing authority run still covers the complete expected suite.
@@ -205,6 +208,14 @@ operator approval is needed for routine schedule creation or runs. Build only
 the scheduler capability that improves an engine loop; do not turn it into an
 unrelated agent platform. These are implementation qualities for reliable
 automation, not approval gates or a reason to hold routine paper work.
+
+Close finite diagnostic schedules when their question/budget ends, and disable
+an exhausted historical cursor's recurring launch unless a new useful scope is
+actually assigned. Keep current-data refresh and exact Paper recovery ownership
+separate. Prefer reversible disabling or an explicit trigger expiry; retain
+commands, private state and immutable evidence. Installer defaults must not
+silently recreate retired studies or clear disabled/expiry state. This is job
+lifecycle maintenance, not a gate on collection, research or Paper authority.
 
 An external quota, retry-not-before timestamp, or timer wait belongs to its
 owned worker or scheduler. It must not hold the foreground orchestrator in a

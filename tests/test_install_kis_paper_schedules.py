@@ -1,9 +1,13 @@
 from __future__ import annotations
 
+import json
 import re
+import subprocess
 from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+import pytest
 
 SCRIPT = (
     Path(__file__).resolve().parents[1]
@@ -55,7 +59,7 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count('Profile = "kis-paper-daily-spy-session"') == 1
     assert source.count('Profile = "kis-paper-intraday-head"') == 1
     assert source.count('Profile = "kis-paper-daily-nas-forward"') == 1
-    assert source.count('Profile = "kis-paper-daily-pair-forward"') == 1
+    assert source.count('Profile = "kis-paper-daily-pair-forward-v2"') == 1
     assert source.count('Profile = "kis-paper-daily-broad-backfill"') == 1
     assert source.count('Service = "kis-paper-daily-backfill"') == 1
     assert source.count('Service = "kis-paper-session"') == 1
@@ -65,7 +69,7 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     assert source.count('Service = "kis-paper-daily-spy-session"') == 1
     assert source.count('Service = "kis-paper-intraday-head"') == 1
     assert source.count('Service = "kis-paper-daily-nas-forward"') == 1
-    assert source.count('Service = "kis-paper-daily-pair-forward"') == 1
+    assert source.count('Service = "kis-paper-daily-pair-forward-v2"') == 1
     assert source.count('Service = "kis-paper-daily-broad-backfill"') == 1
     assert source.count('Runner = "run_kis_paper_intraday_head_schedule.ps1"') == 1
     observer_entry = _schedule_entry(source, "thericher-kis-paper-snapshot-observer")
@@ -119,11 +123,11 @@ def test_kis_paper_schedule_installer_has_exact_task_surface() -> None:
     pair_forward_entry = source.split(
         'Name = "thericher-kis-paper-daily-pair-forward"', maxsplit=1
     )[1].split("    },", maxsplit=1)[0]
-    assert 'Profile = "kis-paper-daily-pair-forward"' in pair_forward_entry
-    assert 'Service = "kis-paper-daily-pair-forward"' in pair_forward_entry
+    assert 'Profile = "kis-paper-daily-pair-forward-v2"' in pair_forward_entry
+    assert 'Service = "kis-paper-daily-pair-forward-v2"' in pair_forward_entry
     assert 'Runner = "run_kis_paper_daily_pair_forward_schedule.ps1"' in pair_forward_entry
-    assert '"kis-paper-daily-pair-forward-preflight"' in pair_forward_entry
-    assert '"kis-paper-daily-pair-forward"' in pair_forward_entry
+    assert '"kis-paper-daily-pair-forward-v2-preflight"' in pair_forward_entry
+    assert '"kis-paper-daily-pair-forward-v2"' in pair_forward_entry
     assert 'At = "06:55"' in pair_forward_entry
     assert "RecoverMissedRun = $true" in pair_forward_entry
     assert "ExecutionLimitMinutes = 10" in pair_forward_entry
@@ -322,3 +326,122 @@ def test_kis_paper_schedule_installer_has_no_secret_or_unapproved_route_surface(
     assert "live" not in source
     assert "password" not in source
     assert "secret" not in source
+
+
+@pytest.mark.parametrize(
+    ("selection", "existing", "expected_count", "expected_enabled", "expires", "blocked"),
+    [
+        ("", "absent", 6, True, False, False),
+        ("thericher-kis-paper-quote-session", "absent", 1, True, False, False),
+        ("thericher-kis-paper-quote-session", "disabled", 1, False, False, False),
+        ("thericher-kis-paper-quote-session", "trigger_disabled", 1, True, False, False),
+        ("thericher-kis-paper-d1-prospective-observation-pairing", "expired", 1, True, True, False),
+        ("thericher-kis-paper-daily-pair-forward", "running", 0, True, False, True),
+    ],
+)
+def test_installer_preserves_retirement_with_mocked_windows_tasks(
+    tmp_path: Path,
+    selection: str,
+    existing: str,
+    expected_count: int,
+    expected_enabled: bool,
+    expires: bool,
+    blocked: bool,
+) -> None:
+    script_path = str(SCRIPT).replace("'", "''")
+    project_path = str(SCRIPT.parents[1]).replace("'", "''")
+    harness = tmp_path / "installer.ps1"
+    # Every external command is replaced; this exercises the real installer flow.
+    harness.write_text(
+        r"""
+$ErrorActionPreference = 'Stop'
+Import-Module Microsoft.PowerShell.Management, Microsoft.PowerShell.Utility
+$PSModuleAutoLoadingPreference = 'None'
+$global:registered = @()
+$global:buildCalls = 0
+function docker.exe { $global:buildCalls += 1; $global:LASTEXITCODE = 0 }
+function New-ScheduledTaskPrincipal { param($UserId, $LogonType, $RunLevel) @{} }
+function New-ScheduledTaskAction { param($Execute, $Argument) @{} }
+function New-ScheduledTaskTrigger {
+    param([switch]$Weekly, $DaysOfWeek, $At)
+    [pscustomobject]@{
+        Repetition=$null; EndBoundary=''; Enabled=$true; StartBoundary="2030-01-01T${At}:00+09:00"
+    }
+}
+function New-CimInstance { param([switch]$ClientOnly, $Namespace, $ClassName, $Property) $Property }
+function New-ScheduledTaskSettingsSet {
+    param([switch]$AllowStartIfOnBatteries, [switch]$DontStopIfGoingOnBatteries,
+          $ExecutionTimeLimit, $MultipleInstances, $RestartCount,
+          [switch]$StartWhenAvailable, [switch]$Disable)
+    [pscustomobject]@{Enabled=(-not $Disable)}
+}
+function Get-ScheduledTask {
+    param($TaskName, $ErrorAction)
+    if ($global:existing -eq 'absent') { return $null }
+    [pscustomobject]@{
+        State=$(if ($global:existing -eq 'running') {'Running'} else {'Ready'})
+        Settings=[pscustomobject]@{Enabled=($global:existing -ne 'disabled')}
+        Triggers=@(foreach ($at in @('08:15','23:20')) {
+            [pscustomobject]@{
+                Enabled=($global:existing -ne 'trigger_disabled')
+                StartBoundary="2020-01-01T${at}:00+09:00"
+                EndBoundary=$(if ($global:existing -eq 'expired') {
+                    '2020-01-02T00:00:00+09:00'
+                } else {''})
+            }
+        })
+    }
+}
+function Register-ScheduledTask {
+    param($TaskName, $Action, $Trigger, $Principal, $Settings, $Description, [switch]$Force)
+    $global:registered += [pscustomobject]@{
+        Name=$TaskName; Enabled=$Settings.Enabled; Ends=@($Trigger.EndBoundary)
+        Starts=@($Trigger.StartBoundary); TriggerEnabled=@($Trigger.Enabled)
+    }
+}
+"""
+        + f"\n$global:existing = '{existing}'\n"
+        + "try {\n"
+        + f"    & '{script_path}' -ProjectRoot '{project_path}'"
+        + (f" -ScheduleName '{selection}'" if selection else "")
+        + "\n    $blocked = $false\n"
+        + "} catch {\n"
+        + "    if ($_.Exception.Message -notlike 'Cannot replace an active scheduled task:*') "
+        + "{ throw }\n"
+        + "    $blocked = $true\n}\n"
+        + "@{registered=@($global:registered); blocked=$blocked; builds=$global:buildCalls} "
+        + "| ConvertTo-Json -Depth 5 -Compress\n",
+        encoding="ascii",
+    )
+    result = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(harness)],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=40,
+    )
+    assert result.returncode == 0, result.stderr
+    payload = json.loads(result.stdout.strip().splitlines()[-1])
+    assert payload["blocked"] is blocked
+    assert payload["builds"] == (0 if blocked else expected_count)
+    registered = payload["registered"]
+    assert len(registered) == expected_count
+    for entry in registered:
+        assert entry["Enabled"] is expected_enabled
+        assert all(bool(value) is expires for value in entry["Ends"])
+        if existing in {"expired", "trigger_disabled"}:
+            assert entry["Starts"] == [
+                "2020-01-01T08:15:00+09:00", "2020-01-01T23:20:00+09:00"
+            ]
+            assert entry["TriggerEnabled"] == [existing != "trigger_disabled"] * 2
+        if expires:
+            assert entry["Ends"] == ["2020-01-02T00:00:00+09:00"] * 2
+    if not selection:
+        assert {entry["Name"] for entry in registered} == {
+            "thericher-kis-paper-snapshot-observer",
+            "thericher-kis-paper-daily-spy-head",
+            "thericher-kis-paper-daily-spy-session",
+            "thericher-kis-paper-intraday-head",
+            "thericher-kis-paper-daily-nas-forward",
+            "thericher-kis-paper-daily-pair-forward",
+        }

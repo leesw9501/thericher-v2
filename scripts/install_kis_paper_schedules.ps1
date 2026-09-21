@@ -26,7 +26,8 @@ function New-LocalDockerTaskSettings {
         [Parameter(Mandatory = $true)]
         [int]$ExecutionLimitMinutes,
         [Parameter(Mandatory = $true)]
-        [bool]$RecoverMissedRun
+        [bool]$RecoverMissedRun,
+        [bool]$Enabled = $true
     )
 
     $settingsArguments = @{
@@ -38,6 +39,9 @@ function New-LocalDockerTaskSettings {
     }
     if ($RecoverMissedRun) {
         $settingsArguments["StartWhenAvailable"] = $true
+    }
+    if (-not $Enabled) {
+        $settingsArguments["Disable"] = $true
     }
     return New-ScheduledTaskSettingsSet @settingsArguments
 }
@@ -160,6 +164,7 @@ $principal = New-ScheduledTaskPrincipal -UserId $currentUser -LogonType Interact
 $schedules = @(
     @{
         Name = "thericher-kis-paper-quote-session"
+        OnDemand = $true
         Profile = "kis-paper-session"
         Service = "kis-paper-session"
         ImageServices = @("kis-paper-session")
@@ -193,6 +198,7 @@ $schedules = @(
     },
     @{
         Name = "thericher-kis-paper-daily-spy-stability-observer"
+        OnDemand = $true
         Profile = "kis-paper-daily-spy-stability-observer"
         Service = "kis-paper-daily-spy-stability-observer"
         ImageServices = @("kis-paper-daily-spy-stability-observer")
@@ -233,6 +239,7 @@ $schedules = @(
     },
     @{
         Name = "thericher-kis-paper-spy-prefix-negative-control"
+        OnDemand = $true
         Profile = "kis-spy-paginated-prefix-capability"
         Service = "kis-spy-paginated-prefix-observer"
         Runner = "run_kis_spy_paginated_prefix_capability_schedule.ps1"
@@ -244,6 +251,7 @@ $schedules = @(
     },
     @{
         Name = "thericher-kis-paper-spy-prefix-feasibility"
+        OnDemand = $true
         Profile = "kis-spy-paginated-prefix-capability"
         Service = "kis-spy-paginated-prefix-collector"
         Runner = "run_kis_spy_paginated_prefix_capability_schedule.ps1"
@@ -272,12 +280,12 @@ $schedules = @(
     },
     @{
         Name = "thericher-kis-paper-daily-pair-forward"
-        Profile = "kis-paper-daily-pair-forward"
-        Service = "kis-paper-daily-pair-forward"
+        Profile = "kis-paper-daily-pair-forward-v2"
+        Service = "kis-paper-daily-pair-forward-v2"
         Runner = "run_kis_paper_daily_pair_forward_schedule.ps1"
         ImageServices = @(
-            "kis-paper-daily-pair-forward-preflight",
-            "kis-paper-daily-pair-forward"
+            "kis-paper-daily-pair-forward-v2-preflight",
+            "kis-paper-daily-pair-forward-v2"
         )
         At = "06:55"
         RecoverMissedRun = $true
@@ -285,6 +293,7 @@ $schedules = @(
     },
     @{
         Name = "thericher-kis-paper-d1-prospective-observation-pairing"
+        OnDemand = $true
         Profile = "kis-paper-d1-prospective-observation-pairing"
         Service = "kis-paper-d1-prospective-observation-pairing"
         ImageServices = @("kis-paper-d1-prospective-observation-pairing")
@@ -294,6 +303,7 @@ $schedules = @(
     },
     @{
         Name = "thericher-kis-paper-daily-broad-backfill"
+        OnDemand = $true
         Profile = "kis-paper-daily-broad-backfill"
         Service = "kis-paper-daily-broad-backfill"
         Runner = "run_kis_paper_daily_broad_schedule.ps1"
@@ -304,6 +314,7 @@ $schedules = @(
     },
     @{
         Name = "thericher-kis-paper-daily-backfill"
+        OnDemand = $true
         Profile = "kis-paper-daily-backfill"
         Service = "kis-paper-daily-backfill"
         ImageServices = @("kis-paper-daily-backfill")
@@ -313,7 +324,8 @@ $schedules = @(
     }
 )
 
-$selectedSchedules = @($schedules)
+# Finite studies and historical backfills require an explicit named install.
+$selectedSchedules = @($schedules | Where-Object { -not $_.OnDemand })
 if ($ScheduleName.Count -gt 0) {
     $requestedNames = @($ScheduleName | Select-Object -Unique)
     $knownNames = @($schedules | ForEach-Object { [string]$_.Name })
@@ -357,6 +369,13 @@ if (
 
 Write-Host "Installing local Docker schedules for: $($selectedSchedules.Name -join ', ')"
 
+foreach ($schedule in $selectedSchedules) {
+    $existingTask = Get-ScheduledTask -TaskName $schedule.Name -ErrorAction SilentlyContinue
+    if ($null -ne $existingTask -and $existingTask.State -eq "Running") {
+        throw "Cannot replace an active scheduled task: $($schedule.Name)"
+    }
+}
+
 if ($SkipImageBuild) {
     Assert-LocalDockerScheduleImages -ProjectRoot $resolvedProjectRoot -Schedules $selectedSchedules
     Write-Host "Using verified existing schedule images."
@@ -365,6 +384,10 @@ if ($SkipImageBuild) {
 }
 
 foreach ($schedule in $selectedSchedules) {
+    $existingTask = Get-ScheduledTask -TaskName $schedule.Name -ErrorAction SilentlyContinue
+    if ($null -ne $existingTask -and $existingTask.State -eq "Running") {
+        throw "Cannot replace an active scheduled task: $($schedule.Name)"
+    }
     if ($schedule.ContainsKey("Runner")) {
         $runnerPath = Join-Path $resolvedProjectRoot "scripts\$($schedule.Runner)"
         if (-not (Test-Path -LiteralPath $runnerPath -PathType Leaf)) {
@@ -388,11 +411,24 @@ foreach ($schedule in $selectedSchedules) {
             "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
         }
     )
-    $triggers = New-LocalDockerScheduleTriggers -Schedule $schedule -DaysOfWeek $daysOfWeek
+    # Preserve the original starts too: a new start could lie after an old expiry.
+    $retiredTriggers = @(
+        $existingTask.Triggers |
+            Where-Object {
+                -not $_.Enabled -or -not [string]::IsNullOrWhiteSpace($_.EndBoundary)
+            }
+    )
+    if ($retiredTriggers.Count -gt 0) {
+        $triggers = @($existingTask.Triggers)
+    } else {
+        $triggers = New-LocalDockerScheduleTriggers -Schedule $schedule -DaysOfWeek $daysOfWeek
+    }
+    $enabled = $null -eq $existingTask -or $existingTask.Settings.Enabled
     $description = New-LocalDockerTaskDescription -Profile $schedule.Profile
     $settings = New-LocalDockerTaskSettings `
         -ExecutionLimitMinutes $schedule.ExecutionLimitMinutes `
-        -RecoverMissedRun $schedule.RecoverMissedRun
+        -RecoverMissedRun $schedule.RecoverMissedRun `
+        -Enabled $enabled
 
     if ($PSCmdlet.ShouldProcess($schedule.Name, "create or update local Docker scheduled task")) {
         Register-ScheduledTask `

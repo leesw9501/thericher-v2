@@ -24,6 +24,17 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-22 KST)
 
+Operator-approved schedule cleanup now leaves six operational recurring tasks.
+The two exhausted historical backfills, finite stability/prefix studies and
+immediate-cancel quote diagnostic are disabled with state/evidence preserved.
+The existing D1 study has only its 2026-09-22 23:20 KST later observation left;
+both triggers expire at 2026-09-23 00:00 KST. The reader currently reports
+`first_recorded`, not a pair. The pair-forward runner now targets v2; its next
+natural run is 2026-09-23 06:55 KST and is not yet runtime-verified. NAS forward
+needs scoped recovery of `nas_forward_cache_unavailable/reconcile`, not another
+approval or company hold. Actual daily-SPY Paper and account-observer schedules
+remain active. This maintenance package does not complete or replace this goal.
+
 The operator resumed implementation without waiting for a Terra switch.
 Order-date and never-submitted-state repairs passed integrated verification;
 all seven existing Execution images sharing private state have matching source.
@@ -83,6 +94,11 @@ do not change the current canary's semantics silently.
 - Validate later D1 outcomes with the existing exact reader. Preserve old
   receipts and quarantine. A missing/changed/invalid pair narrows that session
   only; a match remains measurement-only, not finality or model qualification.
+  After the final owned opportunity above, close the finite study with whatever
+  evidence exists; do not extend its schedule simply to keep observing.
+- Confirm v2 forward collection on its next natural run and diagnose the NAS
+  cache failure separately. Exhausted historical cursors are not ongoing daily
+  refreshers and remain on demand until a useful new scope is established.
 - Reattach only the existing lawful ETF snapshots needed for the Engine
   package, exposing event, timestamp, gap, and already-seen-data limitations.
 
@@ -124,7 +140,7 @@ Use focused serial tests for each isolated repair. At company-goal integration,
 run changed-path serial coverage plus the existing authority sequence:
 
 ~~~powershell
-.\scripts\run_parallel_tests.ps1 -RequireCleanTempRoot --maxfail=1 --durations=15
+.\scripts\run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot -PytestArgs @('--maxfail=1','--durations=15')
 uv run --extra dev ruff check .
 docker compose --env-file .env.example config --quiet
 docker compose --env-file .env.example --profile research config --quiet

@@ -14,6 +14,18 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+Schedule cleanup (2026-09-22): recurring immediate-cancel `quote-session` is
+disabled after its exact latest receipt revalidated `cancelled/clean`.
+The explicit diagnostic/recovery command and private state remain available;
+this does not declare every historical intent resolved. Execution retains
+ownership of exact unresolved intents. Actual `daily-spy-session` remains
+enabled at 23:50 KST and account snapshots retain the four-minute cadence.
+Cleanup made no direct KIS request, private-state mutation or forced worker
+stop. A review probe's accidental task re-registration was corrected; all
+last-run timestamps stayed unchanged (see DECISIONS). This supersedes old quote-task
+next-due statements below. Metadata/rollback is in
+`D:\thericher-v2\model-artifacts\ops\schedule-cleanup-20260922`.
+
 The active objective is `kis-paper-spy-restart-safe-lifecycle-v1`. Source fixes
 now retain the original submission attempt date across restart/late-ID recovery
 and keep an unrelated-open-order conflict `intent_recorded`, not an invented
@@ -62,8 +74,8 @@ Exact paths are under `D:\thericher-v2\model-artifacts\execution`, respectively
 and `kis-paper-canary\canary-20260921T143502071908Z\evidence.json`.
 These are application-receipt bindings, not cryptographic scheduler-origin
 proof. They prove neither new-patch restart behavior nor fills, account PnL,
-profitability, or the complete company outcome. The task next runs
-2026-09-22 23:35 KST. D1 remains independent; older table rows are historical.
+profitability, or the complete company outcome. The recurring quote task is now
+disabled; D1 remains independent and older table rows are historical.
 
 One standing-authorized, exact-run read-only history field probe at
 2026-09-21T15:02:13.669177Z used the installed virtual-only terminal-probe

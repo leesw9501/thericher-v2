@@ -9603,3 +9603,40 @@ purge/censoring/parity evidence; explicit tests resolved this to
 `supported-with-limits` before data dispatch. Its completed 48 cells authorize
 no winner, holdout, GPU allocation or Paper consumer. A later distinct finite
 research question remains possible under the reset; results are not rewritten.
+
+## 2026-09-22 - Retire repeated diagnostics, preserve operational schedules
+
+On the operator's explicit approval, disable the exact exhausted historical
+backfills (3/3 and 2,119/2,119 terminal targets), finite stability/prefix studies,
+recurring immediate-cancel quote smoke, and expired Cboe one-shots. Preserve
+all data, private intents, receipts and explicit recovery commands. The actual
+daily-SPY Paper task, current-data collectors and account observer remain;
+account refresh pace is not reduced without freshness/load evidence. NAS forward
+remains owned but its cache-unavailable failure needs scoped recovery, not a
+fabricated quarantine/terminal classification.
+
+The existing QQQ/SPY host runner now routes to v2 services and v2 guard receipts;
+v1 remains quarantined and untouched. This is a two-ETF market-data path, not a
+broker/accounting state migration. D1 has a fresh first observation and keeps
+today's final later opportunity; both triggers expire at midnight. A missing
+later result closes this bounded study as incomplete, not a reason to extend
+it indefinitely or pause the company goal.
+
+The default installer selects six operational jobs; explicit named reinstalls
+preserve disabled/expiry state and do not replace a running task or build over
+its image tags. Host rollback fields are under
+`D:\thericher-v2\model-artifacts\ops\schedule-cleanup-20260922`.
+Claude returned `supported-with-limits`: do not remove the only recovery owner,
+equate exact cursor exhaustion with unlimited provider reach, or silently
+reactivate a retired task. Execution retains unresolved-intent recovery.
+
+An independent review probe unexpectedly re-registered eight existing tasks
+when PowerShell module auto-loading escaped its mocks. The orchestrator stopped
+the review, restored their original trigger start anchors from the prior safe
+inventory, and rechecked task enabled states, expiry, timing and principal SID
+equivalence. Last-run timestamps remained unchanged and no task was observed
+running; this is Scheduler evidence, not a raw broker audit. The checked-in
+test harness now disables module auto-loading after importing only standard
+Management/Utility modules. No credential/live access or intentional broker
+invocation occurred. Safe corrective facts are `rechecked-after-review.json`
+in the same external directory; no task, private state or data was deleted.
