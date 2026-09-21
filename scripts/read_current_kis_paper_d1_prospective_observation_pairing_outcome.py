@@ -81,7 +81,7 @@ def _safe_payload(
         if isinstance(receipt_id, str)
         else None
     )
-    return {
+    payload = {
         "first_receipt_binding": _safe_first_receipt_binding(outcome),
         "next_due_at_utc": outcome.get("next_due_at_utc"),
         "observed_at_utc": outcome.get("observed_at_utc"),
@@ -94,6 +94,10 @@ def _safe_payload(
         "stage": outcome.get("stage"),
         "status": outcome.get("status"),
     }
+    failure_codes = outcome.get("observation_failure_codes")
+    if failure_codes:
+        payload["observation_failure_codes"] = failure_codes
+    return payload
 
 
 def _safe_first_receipt_binding(outcome: Mapping[str, object]) -> dict[str, str] | None:

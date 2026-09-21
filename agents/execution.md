@@ -14,6 +14,14 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+The next implementation objective is `kis-paper-spy-restart-safe-lifecycle-v1`.
+Ready work: submission-date-bound reconciliation and separating a never-sent
+intent from an actual unknown submission. Start with offline synthetic cases,
+then use the existing owned virtual-only route and exact persisted identity.
+Both fixes and broker/accounting confirmation remain outstanding; this
+bootstrap changes no Execution runtime. D1 is not an input dependency of the
+baseline lifecycle. Dated facts below are historical, not fresh account status.
+
 | Surface | Current fact | Limit |
 | --- | --- | --- |
 | Private operator dashboard | Loopback-only dashboard and local pause/resume controls are complete. | It has no public bind or broker-order control. `cancel_open_orders_requested` remains a projection-only state until a separately owned consumer can reconcile an exact durable order, so the dashboard does not present a misleading cancellation command. |
@@ -54,11 +62,11 @@ read or route `KIS_LIVE_*`.
 
 | Work | Owner | Next action |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Existing `thericher-kis-paper-quote-session` task and 23:45 KST result monitor | The 2026-09-01 exact session/lifecycle pair is `canary_completed -> not_submitted / unresolved`, `paper_only`, with `reconciliation_unavailable` and `submit_response_category: not_observed`; the credential-free runtime projection is absent. Scheduler is `Ready` with next owned opportunity: 2026-09-02 23:35 KST. Do not manually invoke, duplicate, or resubmit. |
-| Lifecycle closure objective | Execution | Complete. The 2026-08-11 run remains a scoped unresolved outcome, not an eligible retry, fill, or attribution fact. |
+| Virtual-Paper lifecycle canary | Execution / existing quote-session owner | Last recorded 2026-09-01 result is historical `not_submitted/reconciliation_unavailable`, not current broker state. Recheck ownership, repair date-bound recovery and never-submitted status, then use the same owned route. Do not duplicate an active worker or resubmit an unresolved intent. |
+| Historical lifecycle closure | Execution | The 2026-08-11 assessment closed its evidence review only, leaving an unresolved intent. Repeated exact-bound read-only reconciliation is permitted; runtime recovery is still outstanding under the new company objective. |
 | Read-only account snapshot | Existing observer task | The existing four-minute task remains the sole recurring owner. |
 | QQQ/SPY intraday causal evidence | Data-owned `thericher-kis-paper-intraday-head` task | The first post-writer bound task path is one comparable `collection_exit_nonzero / reason_unavailable` category. The later successful partial terminal is Data-only and noncomparable, so Execution consumes no causal-qualified model input; the existing QQQ provisional route remains separately task-owned. |
-| QQQ/SPY D1 prospective pairing | Data-owned `thericher-kis-paper-d1-prospective-observation-pairing` task | The source-safe reader validates the current completed-session 2026-09-04 first-stage receipt as `input_unavailable/first_observation_target_failure`, without a first binding or later observation. Source-safe Task Scheduler status is `Ready`; task exit is not stage or outcome evidence. Reader-owned `next_due`: `2026-09-07T23:15:00Z`. Do not invoke it manually or interpret its future hash-only receipt as an execution input. |
+| QQQ/SPY D1 prospective pairing | Data-owned observer | Independent measurement; current source-safe status is in `agents/data.md`. Its result is not a prerequisite for the baseline Paper lifecycle and is not itself Execution input. |
 | QQQ provisional runtime observation | Embedded existing intraday-head child | The v5 validation contract recomputes the fixed non-promoting grade. Do not manually invoke, duplicate, or interpret it as model/PnL evidence. |
 | Any unknown exact Paper outcome | Execution reconciliation path | Reconcile the exact durable intent; never infer success or create a fresh action from ambiguity. |
 

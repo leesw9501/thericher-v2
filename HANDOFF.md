@@ -14,6 +14,55 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
+`kis-paper-spy-restart-safe-lifecycle-v1` is the next implementation objective.
+The operator approved the 2026-09-21 partial reset: the D1-pair objective is
+superseded while incomplete, not successfully completed. D1 stays an independent
+Data measurement; it does not block Execution recovery or offline development.
+
+## Terra Bootstrap Handoff (2026-09-21)
+
+- Orchestrator integrated policy/Git and the Data sub-agent's D1 budget/error
+  repair. The client now budgets one page per fixed target; regression tests
+  exercise the real factory/client/collector and both observation stages.
+  They retain one token per observation, cap exhaustion, immutable cache/receipt
+  behavior, and safe enum-only errors. Global client cap enforcement remains.
+- This bootstrap changes host source and policy only. No image deployment,
+  scheduler invocation, KIS call, credential read, order, model training, or
+  cache repair is part of it. Installed runtime equivalence remains unverified.
+- Latest offline-validated D1 facts are in `agents/data.md`. A first-stage
+  failure is not a pair result, and a future pair match is not finality.
+- First Execution work: reproduce the submission-date recovery bug and the
+  never-submitted intent incorrectly recorded as `outcome_unknown`, then fix
+  them with synthetic transports. Both remain open; no Paper recovery is
+  claimed by this bootstrap. Use `NEXT_CODEX_GOAL.md` for completion evidence.
+- In parallel, Engine prepares one rule/linear developmental comparison on
+  existing lawful data, aligning target payoff and replay while preserving
+  spent evaluation/family history. D1 is not its readiness condition.
+- Claude returned `supported-with-limits`: fixture success is not deployment;
+  exact identity/serialization and old evidence must survive the reset.
+- Stop this bounded bootstrap after verified commit/push for the requested
+  Terra handoff. That is not completion of the new Paper company objective.
+
+Bootstrap verification: the regression red run failed in both expected places;
+changed-path serial tests then passed 56/56 (no skips). The existing clean-root
+parallel helper, eight workers, passed 148/148 in 9.73s across pairing,
+daily-pair, market-data client/rate gate, collector script, schedule wrapper,
+and startup-script tests. Ruff, default and research-profile Compose parses
+using `.env.example`, and `git diff --check` passed. Independent diff review
+found no concrete regressions. No full-suite/company-goal completion is claimed.
+The helper cleaned its fresh run root; three earlier synthetic fixture roots
+`D:\trpy\d1b-0921-red-a1`, `D:\trpy\d1b-0921-green-a1`, and
+`D:\trpy\d1b-0921-green-a2` remain because the tool policy refused deletion.
+They have no active test processes or reparse entries and are not production
+data. Do not confuse them with an active helper lease or delete unrelated roots.
+
+## Historical Evidence Through 2026-09-06
+
+The following closed-run descriptions and dated task facts are historical,
+not current dispatch restrictions. Current policy is in `AGENTS.md`; current
+work is above and in `NEXT_CODEX_GOAL.md`. Do not infer fresh status from old
+next-due timestamps or reuse old evidence as an untouched evaluation.
+
 The completed `firstrate-m5-mean-reversion-after-cost-control-v1` evaluated one
 predeclared, source-local 5m RSI mean-reversion rule against an always-flat
 after-cost local-paper comparator. Its external `20260820-r1` run reattached
@@ -858,7 +907,7 @@ preserves fixed-offset versus DST conversion and source bar boundary as
 `not_disclosed`; no cross-feed alignment, completeness, KIS, model, Paper, or
 live claim follows.
 
-## Current Cross-Lane Facts
+## Historical Cross-Lane Facts
 
 | Lane | Current fact | Next valid action |
 | --- | --- | --- |
@@ -869,7 +918,7 @@ live claim follows.
 | Execution | The 2026-09-01 23:35 KST owned quote-session receipt reattached offline as `canary_completed -> not_submitted / unresolved`, `paper_only`, with `pre_submit_disposition: reconciliation_unavailable` and `submit_response_category: not_observed`; its source-safe session/lifecycle identities are `sha256:d63b537ce4aeabbb4c556863e6864f37fb9903c53116f8642bef35890e03b68d` and `sha256:16494b8ac6961c375867e026a4e3add1087edbdbf6b1d647d622ea443e279255`. Offline validation matched the direct lifecycle projection and the credential-free runtime projection is absent. No broker submission, fill, PnL, alpha, or model claim follows. | The exact run remains scoped reconciliation-unavailable evidence; do not resubmit its durable intent or infer an account state. The next quote-session opportunity is task-owned (2026-09-02 23:35 KST). |
 | Data | The isolated IWM current-head cache reattached offline as one `head` chunk with `51` complete bars, `17` adjacent 1m pairs, `33` non-adjacent pairs, and a `660`-second maximum interbar interval. Its external source-safe mechanics receipt is `sha256:7dbdae99adaf1e19fe1c3d6bd2760edb71cae2cb7c737c519a5b5f3259e50818`; no raw rows were emitted. The explicit caller-derived probe then accepted one head with no recognized continuation header and wrote aggregate-only receipt `sha256:99068ebe69ee7d5300eeb2671eed433df87830db980947ac26d4b97a3b267cea`. | Default IWM remains one page. This exact continuation path is closed with no retry, schedule, raw cache, cadence/history/finality/availability inference, predictive input, Paper input, or GPU consequence. |
 
-## Ready / Owned / Due
+## Historical Ready / Owned / Due
 
 | Work | Owner | Status |
 | --- | --- | --- |
@@ -901,10 +950,13 @@ ready.
 - Never read or route `KIS_LIVE_*`.
 - Keep raw market data under `D:\market_data` and generated artifacts under
   `D:\thericher-v2\model-artifacts`; neither belongs in Git.
-- A qualified research input must retain exact provenance, completed-bar
+- A causally qualified research input must retain exact provenance, completed-bar
   geometry, chronological split, decision-time availability, and finality
   facts. A missing condition narrows that input only; it is never a global
   approval hold.
+- Development-only studies may reuse already-seen lawful data under the
+  2026-09-21 policy with explicit timing/adjustment assumptions and family
+  history. This does not qualify it for independent evaluation or KIS use.
 - These are necessary/default-deny local reconstruction conditions, not
   cryptographic provider-origin proof. A future `qualified` designation must
   name its clock authority, timezone/DST session rule, and non-overlapping

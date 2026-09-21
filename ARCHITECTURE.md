@@ -60,6 +60,18 @@ missing dependency. It is not replaced by an inferred value, a hidden provider,
 or a paper-trading blocker. A later observed KIS capability can reactivate that
 branch through a new bounded contract.
 
+The 2026-09-21 partial reset distinguishes developmental evidence from
+independent validation and Paper execution readiness. Lawfully retained,
+already-seen Tiingo/FirstRate history may be reused for bounded offline
+development under a new contract linked to its trial family. Historical
+source-specific restrictions below still describe those closed runs; they do
+not prohibit every new developmental study on the same source. Never rewrite
+their masks, results, or eligibility flags. A new split is not a fresh holdout.
+Align prediction targets with replay payoffs and expose outcome censoring.
+Unknown timing/finality limits causal claims; no silent KIS feature substitution
+is permitted. D1 hash pairing stays an independent measurement, not a dependency
+of the deterministic baseline Paper lifecycle or unrelated research.
+
 ### Source-Local Tiingo Daily Research Control
 
 The bounded Tiingo `SPY`/`QQQ`/`IWM` raw-D1 snapshot is a separate offline

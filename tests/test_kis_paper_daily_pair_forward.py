@@ -489,13 +489,17 @@ def test_collector_uses_only_pair_targets_and_filters_incomplete_or_preboundary_
     assert all(len(rows) == 1 for rows in run.cache.rows_by_target.values())
 
 
-def test_collector_marks_one_transport_fault_without_network_or_credentials(tmp_path: Path) -> None:
+@pytest.mark.parametrize("reason", ["transport_failure", "daily_page_limit_exceeded"])
+def test_collector_marks_one_target_fault_without_network_or_credentials(
+    tmp_path: Path,
+    reason: str,
+) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
     client = _FakeDailyClient(
         {
             "QQQ/NAS": _daily_page("20260729"),
-            "SPY/AMS": KisPaperMarketDataError("transport_failure"),
+            "SPY/AMS": KisPaperMarketDataError(reason),
         }
     )
 
@@ -508,7 +512,34 @@ def test_collector_marks_one_transport_fault_without_network_or_credentials(tmp_
 
     assert run.status == "partial"
     assert run.cache.targets_by_key["SPY/AMS"].status == "deferred"
+    assert run.cache.targets_by_key["SPY/AMS"].last_reason == reason
     assert run.cache.targets_by_key["QQQ/NAS"].status == "ready"
+    reloaded = load_verified_kis_paper_daily_pair_forward_cache(
+        cache_root=tmp_path / "external" / "qqq-spy-forward",
+        repo_root=repo_root,
+    )
+    assert reloaded.targets_by_key["SPY/AMS"].last_reason == reason
+    _assert_source_safe(run.safe_payload())
+
+
+@pytest.mark.parametrize(
+    ("value", "expected"),
+    [
+        (KisPaperMarketDataError("daily_page_limit_exceeded"), "daily_page_limit_exceeded"),
+        ("daily_page_limit_exceeded", "daily_page_limit_exceeded"),
+        (
+            KisPaperMarketDataError("daily_page_limit_exceeded: synthetic-private-detail"),
+            "unexpected_private_daily_collector_error",
+        ),
+        ("synthetic-private-detail", "unexpected_private_daily_collector_error"),
+    ],
+)
+def test_pair_failure_sanitizer_preserves_only_exact_allowlisted_budget_code(
+    value: BaseException | str,
+    expected: str,
+) -> None:
+    reason = pair_forward_cache.sanitize_kis_paper_daily_pair_forward_failure_reason(value)
+    assert reason == expected
 
 
 def test_uncommitted_collection_observation_does_not_create_a_cache(tmp_path: Path) -> None:

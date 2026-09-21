@@ -23,6 +23,13 @@ Read the files it prints and then execute the single current objective in
 and temporary Validation work, integrates it, verifies, commits, pushes, and
 refreshes the next objective. Do not stop for routine paper-work approval.
 
+The 2026-09-21 partial reset superseded the incomplete D1-pair company goal.
+The next implementation is the restart-safe SPY Paper lifecycle; D1 stays a
+Data-owned measurement. Older one-run restrictions below describe their exact
+historical attempts, not a global ban on new owned recovery or developmental
+research. Use `AGENTS.md` for the development-versus-promotion distinction.
+The bootstrap changes source/docs only, not installed images or task state.
+
 ## Standing KIS Paper Authority
 
 The operator has authorized all private `KIS_PAPER_*` development work:
@@ -552,6 +559,15 @@ block independent work.
 
 ### QQQ/SPY D1 Prospective Observation Pairing
 
+This is an independent Data measurement, not the company objective. The
+2026-09-21 source repair budgets one daily page for each of the two fixed
+targets through one shared client/token. It changes neither request pacing
+nor schedules. `daily_page_limit_exceeded` is a safe diagnostic category, not
+an external quota claim. Synthetic integration tests do not establish that
+the installed image contains the patch or that either observation succeeded.
+Data must check owned runtime source before deployment/measurement claims;
+preserve existing receipts, cache quarantine, and the worker's `next_due`.
+
 The separate revision-leakage measurement never writes this cache. Its task is
 `thericher-kis-paper-d1-prospective-observation-pairing`, with first and later
 triggers at 08:15 and 23:20 KST Tuesday through Saturday. It mounts the v2
@@ -574,7 +590,7 @@ Execution input, Paper order, or live behavior.
 The worker owns `next_due` in its external state and does not poll or foreground
 wait. Do not invoke the task manually. The initial container smoke was outside
 the scheduled minute and returned `not_due` without constructing a KIS client.
-The approved offline reader reattached the current completed-session 2026-09-04
+The approved offline reader historically reattached completed-session 2026-09-04
 first stage as `input_unavailable/first_observation_target_failure` (receipt
 `sha256:a7d54a2220bb5f7ca78a9e34a48c827fbe6c03d4c5f575c5c23a0d12519af401`).
 Its hash-bound receipt has no first-observation binding and no later observation,
@@ -2403,11 +2419,15 @@ or a predeclared immutable pointer proving that no same-run reconciliation had
 already occurred. It therefore preserved the scoped unknown without a KIS,
 submit, cancel, modify, or replacement request. This is not broker-state proof.
 
-Do not treat an `outcome_unknown` lifecycle fact by itself as permission to
-repeat a read-only reconciliation. A future broker-facing recovery for the same
-run needs both an exact durable binding and a predeclared prior-attempt proof;
-otherwise it remains `outcome_unknown` and does not affect a distinct Paper
-intent or another lane.
+Read-only reconciliation may repeat through the existing owned, serialized
+path with exact persisted intent identity and submission-date binding.
+Record its outcome without altering old receipts. A prior reconciliation is
+not a one-attempt quota, and predeclared proof of no prior attempt is not a
+permission prerequisite. Missing/ambiguous identity remains unresolved for that
+intent; never fabricate a replacement submission or cancel an unrelated order.
+The 2026-09-21 bootstrap changes this operating instruction only. The
+submission-date and never-submitted-intent state-machine fixes remain work for
+the Execution owner, not demonstrated runtime recovery.
 
 To inspect one completed canary without a KIS call or credential read, project
 only its sanitized lifecycle fact from the host artifact root:

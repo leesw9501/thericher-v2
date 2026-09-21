@@ -1,74 +1,37 @@
 # Codex Orchestration Stateboard (제품개발 총괄)
 
-`AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the one active company
-objective. This file is the current cross-lane projection only. Git,
-`HANDOFF.md`, and immutable external receipts retain history.
+`AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
+This is the shared-resource and dispatch projection, not another backlog.
 
 ## Active Company Objective
 
-`kis-paper-d1-prospective-observation-pair-result-v1` must independently
-reattach one complete QQQ/SPY D1 two-observation result from the installed
-task-owned observer. Its only permitted classifications are
-`measurement_only_match`, `input_unavailable`, and `disqualified`. Even a
-match is Data-only and cannot qualify a dataset, feature, model, GPU campaign,
-Execution input, Paper order, or live behavior.
-
-The validated current pointer is only the completed-session 2026-09-04
-first-stage `input_unavailable/first_observation_target_failure` receipt
-(`sha256:a7d54a2220bb5f7ca78a9e34a48c827fbe6c03d4c5f575c5c23a0d12519af401`).
-It has no first-receipt binding or later receipt, so it is not a pair result.
-The reader-owned next due is `2026-09-07T23:15:00Z` (08:15 KST on 2026-09-08).
+`kis-paper-spy-restart-safe-lifecycle-v1`. The 2026-09-21 operator-approved
+partial reset superseded the incomplete D1-pair company objective without
+claiming a pair, deployment, model, or Paper success. See `HANDOFF.md` for the
+bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 
 ## Ready / Owned / Due
 
-| Work | Owner | Resource | Current fact and next action |
-| --- | --- | --- | --- |
-| D1 prospective pairing | Data / Infra Capability | Installed `thericher-kis-paper-d1-prospective-observation-pairing` task | The task owns 08:15 and 23:20 KST Tuesday-Saturday runs. It is `Ready`; Task Scheduler exit is not outcome evidence. Do not invoke it, Docker, KIS, the collector, or a scheduler manually. |
-| D1 outcome reattachment | Codex / temporary Validation | Hash-bound pointer, immutable receipts, host-only offline reader | A validated later receipt is required before classification. Then obtain Claude's falsification-first verdict, run goal-boundary verification, commit/push, and replace `NEXT_CODEX_GOAL.md`. |
-| D1 safe reader | Data / Infra Capability | `scripts/read_current_kis_paper_d1_prospective_observation_pairing_outcome.py` | Complete and pushed. It accepts the model artifact root or exact pairing subroot, emits only categorical outcome fields, immutable receipt binding, and evidence pointer, and has no task, Docker, KIS, credential, or cache-write path. |
-| Intraday coverage monitor | Data | Existing task-owned intraday-head worker | Separate source-safe monitoring remains owned by its task. It does not block or qualify this D1 objective. |
-| Virtual-Paper lifecycle | Execution | Existing quote-session task and receipt reader | The 2026-09-01 23:35 KST exact run is `not_submitted / reconciliation_unavailable` with `submit_response_category: not_observed`; it remains separate from D1 pairing and is not a broker-submission, fill, PnL, or model/PnL promotion path. |
-| Predictive research / GPU | Engine Research / Research Steward | RTX 4090 | No input-qualified frozen predictive campaign is ready. The GPU remains unallocated; do not manufacture training for utilization. |
-| Local Paper dashboard | Execution / Infra Capability | Existing loopback-only web service | Available for sanitized runtime projections. It deliberately has no artifact mount, so D1 receipts stay on the host-only reader path. |
+| Work | Owner / resource | Current fact and dispatch |
+| --- | --- | --- |
+| SPY lifecycle recovery | Execution / existing Paper state and task | Ready for offline date-bound and never-submitted-intent regression repairs; reconcile through the existing owner before any runtime side effect. Runtime recovery is not implemented by the bootstrap. |
+| Development comparison | Engine Research / CPU | Ready to define one finite rule/linear comparison using existing lawful data, with payoff alignment and already-seen-data limitations. D1 is not a prerequisite. |
+| D1 repair deployment/measurement | Data / existing observer | Host-source budget/error repair only; installed image equivalence and later outcome remain unverified. Preserve worker-owned due state; no duplicate scheduler. Latest offline-validated first-stage facts live in `agents/data.md`. |
+| GPU | Research Steward / exclusive allocation | No new campaign or GPU appointment was created by the bootstrap. Recheck actual resource ownership before dispatching a frozen developmental campaign; do not infer current utilization from old stateboards. |
 
-## Resource Conflicts And Current Improvement
+## Bottleneck And Reversible Improvement
 
-There is no active shared-resource conflict. External task due times belong to
-their named workers and do not create foreground waits or general Data,
-Research, or Execution holds.
+The company is not blocked on external time: source-level Execution repairs
+and independent research preparation are ready. The current improvement is to
+separate developer feedback from deployment evidence: test the real two-target
+client path instead of preserving the incorrect one-page fixture assertion.
+Do not replace one failed scheduled attempt with another without investigating
+a reproducible deterministic defect.
 
-The current reversible improvement is the source-safe D1 reader CLI added in
-`8a9d6a1` and its pairing-subroot compatibility in `a121ac1`. It replaces ad
-hoc reattachment snippets without widening the observer's route, cache, or
-credential surface.
+Task-owned due times belong to their workers. This bootstrap changed no task,
+runtime, account state, market cache, or GPU allocation. Before a later long
+dispatch, inspect owned processes/resources rather than assuming they are idle.
 
-## Blocked-Goal Alternatives
-
-The active objective has no remaining compliant foreground package until an
-external task-owned observation changes the immutable evidence. This is an
-external dependency, not an operator approval or general project hold.
-
-1. **Data, scheduled first observation:** the 08:15 KST task invokes the
-   existing read-only D1 observer. Completion evidence is a hash-bound first
-   receipt. A missing target, invalid state, or unavailable input stays scoped
-   to that session; recovery is the worker's own next due, not a manual retry.
-2. **Data, scheduled later observation:** only a valid first binding enables
-   the 23:20 KST comparison. Completion evidence is a later receipt bound to
-   the same source contract, session, targets, first receipt, and first hashes.
-   Any mismatch disqualifies that exact session.
-3. **Codex / temporary Validation, offline integration:** a validated later
-   receipt triggers the existing offline reader, a concise Claude
-   falsification-first review, required full verification, commit/push, and
-   one next company objective. The kill test is any failed receipt binding or
-   source-contract mismatch.
-
-Claude's block-classification check is `review_unavailable` because its OAuth
-session expired. This is not a substantive verdict and does not recreate a
-manual approval gate.
-
-## Recovery Rule
-
-Do not foreground-poll or create another D1 scheduler. The existing one-shot
-follow-up reattaches the result after the owned later opportunity. A missing or
-incomplete receipt remains unknown or session-scoped; it never pauses another
-correctly scoped private, non-live lane.
+Claude's 2026-09-21 bounded challenge returned `supported-with-limits`: preserve
+identity/serialization, old evidence, and claim boundaries; fixture success is
+not deployment or reconciliation success. Resolution is in `DECISIONS.md`.

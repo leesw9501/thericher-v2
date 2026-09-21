@@ -74,6 +74,7 @@ _SAFE_REASONS = frozenset(
         "auth_response_invalid",
         "config_missing",
         "daily_duplicate_conflict",
+        "daily_page_limit_exceeded",
         KIS_PAPER_DAILY_PAIR_FORWARD_RETAINED_REVISION_CONFLICT_REASON,
         "daily_response_invalid",
         "daily_response_rejected",

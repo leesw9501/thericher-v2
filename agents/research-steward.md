@@ -5,6 +5,13 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+The bootstrap created no allocation or training run. Recheck actual GPU/process
+ownership before an appointment; the historical idle facts below are not a live
+utilization measurement. A frozen developmental campaign may use already-seen
+lawful data with explicit assumptions under the 2026-09-21 `AGENTS.md` policy.
+Custody still records family lineage and evaluation spend; this does not reopen
+a sealed holdout, promote a candidate, or require a successful D1 pair.
+
 - The RTX 4090 is free. The bounded Tiingo IEX r1 source-isolated appointment
   completed and released its memory; no GPU process or sealed-evaluation
   allocation is held by Research Steward.
@@ -76,6 +83,8 @@ Before a GPU appointment, Engine Research must freeze:
    root; and
 5. family lineage and sealed-holdout access status.
 
+For development, source timing/finality limitations may be explicit assumptions;
+they need not be mislabelled qualified to obtain a bounded appointment.
 Missing information defers only that campaign. It never creates an operator
 approval request or blocks CPU preparation, Data collection, or Execution.
 

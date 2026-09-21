@@ -17,6 +17,14 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+The 2026-09-21 reset makes a bounded development comparison ready for dispatch:
+use existing lawful ETF history for one rule/linear baseline with matched
+feature timing, target payoff, replay, costs, and a finite window budget. A new
+contract must link earlier trials and label already-seen samples development.
+No training or GPU job ran in this bootstrap. D1 observation and Paper runtime
+recovery are independent, not prerequisites. The historical receipts below
+retain their original non-promotion limits; they do not prohibit new development.
+
 - The 2026-08-19 UTC Tiingo Standard EOD fixed ETF snapshot reattests as one
   three-request prospective lineage record with a 2026-08-12 source-as-of
   boundary. Its closed scope leaves point-in-time, model, training, campaign,
@@ -279,9 +287,11 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
   replay hygiene, not a model result, promotion, Paper action, or authority
   change.
 - The refreshed Tiingo SPY/QQQ/IWM raw-D1 snapshot is a non-PIT continuation of
-  already inspected history. It may support retrospective controls only; it
-  cannot create a fresh candidate, tune a filter or threshold, spend a sealed
-  evaluation, obtain a GPU appointment, or feed Paper.
+  already inspected history. A new bounded developmental contract may reuse it
+  with its assumptions and trial-family history visible. It cannot become a
+  fresh holdout, independent replication, or a silently substituted KIS input.
+  Existing frozen masks/results remain unchanged; revision is a new linked
+  contract, not an opportunity to relabel the failed experiment as successful.
 - The frozen Tiingo D1 trend-pullback rotation reattached its exact snapshot
   and independent receipt, then stopped as
   `input_unavailable/insufficient_validation_active_decisions`: 3 active
@@ -296,18 +306,18 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | FirstRate 5m controls are rejected; the frozen Tiingo D1 trend-pullback rotation is closed as structurally sparse after its consistent mask audit | Do not retune the Tiingo rule, masks, costs, or eligibility threshold; a distinct qualified source and fresh frozen hypothesis are required |
-| Classical ML/statistical | FirstRate 5m L2 control rejected after all six nonzero-cost comparisons | Do not extend that L2 family or allocate GPU without a distinct frozen campaign |
-| Sequence/DL/public model | Tiingo IEX r1 source-isolated representation matrix completed | Predictive work still needs qualified data, target/split, and a fresh appointment; this lineage is closed to selection and Paper |
-| Portfolio/allocation/meta-decision | Deterministic source-attested selection, per-symbol policy, and scale/cap foundation only | Aligned out-of-fold upstream candidate evidence with a frozen ranking/turnover/capacity/correlation contract |
+| Technical/chart and momentum/regime | Existing controls remain rejected or structurally sparse | Freeze a new development-only hypothesis on existing lawful data; test action-invariant features rather than retrospectively weakening the closed mask |
+| Classical ML/statistical | Existing L2 result remains rejected | Match label and replay payoff in a linked development contract; separate past-known eligibility from future outcome censoring |
+| Sequence/DL/public model | Existing runtime/representation studies remain closed | After CPU feedback, freeze a finite small sequence comparison with explicit source assumptions and GPU custody; no D1 dependency or automatic promotion |
+| Portfolio/allocation/meta-decision | Deterministic allocation foundation exists | Fixed-baseline risk/sizing development may use aligned source-local data; candidate ensembles still need the existing independent aligned-evidence contract |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and
 availability bindings. The new future-only causal-attestation writer correctly
 leaves that immutable terminal unchanged. It creates no frozen contract,
 candidate, training run, GPU appointment, sealed-evaluation spend, ensemble
-input, or Paper input. Engine Research waits only on Data's separate complete-
-session recovery, never on an attestation artifact for the current terminal.
+input, or Paper input. Only that exact causal intraday consumer waits for
+complete-session recovery; the independent developmental queue continues.
 
 The first post-writer 2026-08-19 KST dispatcher marker reattached as an exact
 task-path `collection_exit_nonzero / reason_unavailable` terminal. It remains
@@ -367,6 +377,9 @@ ensemble use, or Paper routing on their own.
 
 ## Promotion Sequence
 
+This sequence is for independent/promoted claims, not permission to start a
+developmental study or a separately scoped baseline Paper experiment.
+
 1. Data provides a qualified, immutable consumer input.
 2. Freeze exactly one campaign with a predeclared horizon or finite
    30/60/90-minute window matrix, shared family budget, causal observation
@@ -379,6 +392,10 @@ ensemble use, or Paper routing on their own.
    Paper-candidate claim.
 
 ## Active Constraint And Handoff
+
+Dispatch the ready development comparison above. Keep the original FirstRate
+losses and Tiingo sample shortage intact; neither proves all model families
+unusable. A later independent performance claim needs genuinely unseen evidence.
 
 The completed source-isolated CUDA appointment proved only loader, geometry,
 finite-run, and cleanup facts. It cannot change the unavailable QQQ/SPY causal

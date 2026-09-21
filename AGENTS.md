@@ -572,6 +572,37 @@ or block independent Data or Execution work. When a company goal includes an
 external due time, Codex includes every already-ready, non-conflicting bounded
 package rather than treating that due time as the company bottleneck.
 
+### Development Evidence Is Not Promotion
+
+The 2026-09-21 operator-approved partial reset supersedes company-wide waits
+on D1 pairing. An objective may be explicitly superseded while incomplete;
+retain that fact and its evidence instead of claiming it succeeded. A
+Data-only measurement is not a prerequisite for independent research or the
+baseline Paper lifecycle. Deterministic defects get a reproducing test and a
+bounded repair, not another scheduled repetition of the same failure.
+
+Already-seen, lawfully retained data may support a new, bounded developmental
+hypothesis, features, training, and local replay with source limitations and
+trial-family history visible. Reusing data, refreshing a snapshot, changing a
+split, or renaming a family cannot create an untouched holdout or independent
+replication. Preserve closed results and their frozen rules; a revised
+hypothesis has a new contract linked to the prior family, not a rewritten result.
+Its target must match the scored execution payoff, and decision-time eligibility
+must be separated from later outcome censoring or missing-data exclusions.
+
+KIS finality, Paper parity, and full point-in-time qualification constrain the
+claims and consumers that need them, not every source-local development study.
+A frozen developmental GPU campaign can be ready with explicit timing/data
+assumptions and the existing compute/custody controls; it acquires no deployment
+or independent-performance qualification. Provisional Paper experiments remain
+subject to their own reproducible inputs and deterministic execution controls,
+not a profitability requirement. Unclear rights still require operator input.
+
+Read-only Paper reconciliation may repeat through the owned, serialized path
+using exact persisted identity. Prior-attempt evidence is recovery history, not
+a one-attempt quota or permission prerequisite. An unknown submission outcome
+still forbids duplicate submission of that exact intent until reconciled.
+
 ## Data And Public Assets
 
 Market data belongs under `D:\market_data`, never in Git. Model and generated

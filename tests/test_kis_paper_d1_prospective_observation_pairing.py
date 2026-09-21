@@ -14,10 +14,22 @@ import pytest
 from thericher_v2.data import kis_paper_d1_prospective_observation_pairing as pairing
 from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
     KIS_PAPER_DAILY_PAIR_FORWARD_RETAINED_REVISION_CONFLICT_REASON,
+    KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
     KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
     KisPaperDailyPairForwardRow,
+    commit_kis_paper_daily_pair_forward_observation,
 )
-from thericher_v2.execution.kis_market_data import KisPaperMarketDataError
+from thericher_v2.execution.kis_market_data import (
+    KIS_PAPER_DAILY_PATH,
+    KIS_PAPER_MARKET_DATA_BASE_URL,
+    KIS_PAPER_TOKEN_PATH,
+    KisMarketDataRequest,
+    KisMarketDataResponse,
+    KisPaperDailyQuery,
+    KisPaperMarketDataClient,
+    KisPaperMarketDataConfig,
+    KisPaperMarketDataError,
+)
 from thericher_v2.execution.kis_paper_daily_pair_forward import (
     KisPaperDailyPairForwardError,
     KisPaperDailyPairForwardObservation,
@@ -699,11 +711,19 @@ def test_missing_target_fails_closed_and_does_not_leave_a_pending_pair(tmp_path:
     assert _state(artifact_root)["expected_stage"] == "first"
 
 
-def test_target_failure_receipt_keeps_only_allowlisted_codes(tmp_path: Path) -> None:
+@pytest.mark.parametrize(
+    "failure_code",
+    ["auth_rejected", "daily_page_limit_exceeded", "unexpected_private_daily_collector_error"],
+)
+def test_target_failure_receipt_keeps_only_allowlisted_codes(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+    failure_code: str,
+) -> None:
     repository_root, artifact_root = _roots(tmp_path)
     incomplete = KisPaperDailyPairForwardObservation(
         rows_by_target={"QQQ/NAS": (_row("QQQ", "NAS", "812.34"),)},
-        failure_reasons_by_target={"SPY/AMS": "auth_rejected"},
+        failure_reasons_by_target={"SPY/AMS": failure_code},
         observed_at=FIRST_OBSERVED_AT,
     )
     fetcher, _ = _recording_fetcher(incomplete)
@@ -716,11 +736,19 @@ def test_target_failure_receipt_keeps_only_allowlisted_codes(tmp_path: Path) -> 
     )
 
     assert result.reason == "first_observation_target_failure"
-    assert result.observation_failure_codes == ("auth_rejected",)
+    assert result.observation_failure_codes == (failure_code,)
     assert result.evidence_path is not None
     receipt = result.evidence_path.read_text(encoding="utf-8")
-    assert "auth_rejected" in receipt
+    assert failure_code in receipt
     assert "812.34" not in receipt
+    receipt_before = result.evidence_path.read_bytes()
+    reader = _load_outcome_reader_script()
+    reader.main(
+        ["--artifact-root", str(artifact_root), "--repository-root", str(repository_root)]
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["observation_failure_codes"] == [failure_code]
+    assert result.evidence_path.read_bytes() == receipt_before
 
 
 @pytest.mark.parametrize(
@@ -870,7 +898,7 @@ def test_worker_uses_only_the_existing_daily_data_client(
     }
     assert client_kwargs["config"] is not None
     assert client_kwargs["transport"] is not None
-    assert client_kwargs["max_daily_page_attempts"] == 1
+    assert client_kwargs["max_daily_page_attempts"] == len(KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS)
     assert json.loads(capsys.readouterr().out) == {"status": "not_due"}
 
     worker_source = (
@@ -878,6 +906,140 @@ def test_worker_uses_only_the_existing_daily_data_client(
     ).read_text(encoding="utf-8")
     for forbidden in (".env", "KIS_LIVE", "KIS_PAPER_ACCOUNT", "order"):
         assert forbidden not in worker_source
+
+
+def test_production_factory_collects_both_targets_with_one_token_per_observation(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    _forbid_sockets(monkeypatch)
+    repository_root, artifact_root = _roots(tmp_path)
+    cache_root = _empty_v2_cache(tmp_path, repository_root)
+    cache_before = {path: path.read_bytes() for path in cache_root.rglob("*") if path.is_file()}
+    script = _load_worker_script()
+    control_root = tmp_path / "control"
+    for name, root in (
+        ("_CANONICAL_REPOSITORY_ROOT", repository_root),
+        ("_CANONICAL_ARTIFACT_ROOT", artifact_root),
+        ("_CANONICAL_CACHE_ROOT", cache_root),
+        ("_CANONICAL_CONTROL_ROOT", control_root),
+    ):
+        monkeypatch.setattr(script, name, root)
+    transports: list[_SyntheticDailyTransport] = []
+
+    def transport_factory(**kwargs: object) -> _SyntheticDailyTransport:
+        assert set(kwargs) == {"request_gate", "token_start_gate"}
+        transport = _SyntheticDailyTransport()
+        transports.append(transport)
+        return transport
+
+    monkeypatch.setattr(script, "UrllibKisPaperDailyPairForwardTransport", transport_factory)
+    assert script.KisPaperMarketDataClient is KisPaperMarketDataClient
+    assert script.run_kis_paper_d1_prospective_observation_pairing is (
+        pairing.run_kis_paper_d1_prospective_observation_pairing
+    )
+
+    for observed_at, expected_status in (
+        (FIRST_OBSERVED_AT, "first_recorded"),
+        (LATER_OBSERVED_AT, "measurement_only_match"),
+    ):
+        script.main(
+            ["--execute"],
+            clock=lambda observed_at=observed_at: observed_at,
+            environment={
+                "KIS_PAPER_APP_KEY": "synthetic-app-key",
+                "KIS_PAPER_APP_SECRET": "synthetic-app-secret",
+            },
+        )
+        output = capsys.readouterr()
+        payload = json.loads(output.out)
+        assert payload["status"] == expected_status
+        assert payload["observation_failure_codes"] == []
+        requests = transports[-1].requests
+        assert [request.method for request in requests] == ["POST", "GET", "GET"]
+        assert [(request.query["SYMB"], request.query["EXCD"]) for request in requests[1:]] == (
+            list(KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS)
+        )
+        assert all(request.query["BYMD"] == "20260820" for request in requests[1:])
+        assert all(request.query["MODP"] == "0" for request in requests[1:])
+        assert output.err == ""
+        _assert_no_synthetic_private_values(output.out)
+
+    assert len(transports) == 2
+    current = pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    assert current["status"] == "measurement_only_match"
+    assert tuple(current["first_observation"]["row_sha256"]) == ("QQQ/NAS", "SPY/AMS")
+    assert current["first_observation"]["row_sha256"] == (
+        current["later_observation"]["row_sha256"]
+    )
+    assert {path: path.read_bytes() for path in cache_root.rglob("*") if path.is_file()} == (
+        cache_before
+    )
+    for path in artifact_root.rglob("*.json"):
+        _assert_no_synthetic_private_values(path.read_text(encoding="utf-8"))
+
+
+def test_real_client_cap_one_fails_typed_without_second_target_request(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    _forbid_sockets(monkeypatch)
+    repository_root, artifact_root = _roots(tmp_path)
+    cache_root = _empty_v2_cache(tmp_path, repository_root)
+    transport = _SyntheticDailyTransport()
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(
+            app_key="synthetic-app-key", app_secret="synthetic-app-secret"
+        ),
+        transport=transport,
+        max_daily_page_attempts=1,
+    )
+
+    result = pairing.run_kis_paper_d1_prospective_observation_pairing(
+        cache_root=cache_root,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=FIRST_OBSERVED_AT,
+        client_factory=lambda: client,
+    )
+
+    assert result.status == "input_unavailable"
+    assert result.reason == "first_observation_target_failure"
+    assert result.observation_failure_codes == ("daily_page_limit_exceeded",)
+    assert result.first_row_hashes is None
+    assert _state(artifact_root)["expected_stage"] == "first"
+    with pytest.raises(KisPaperMarketDataError, match="^daily_page_limit_exceeded$"):
+        client.fetch_daily_raw_page(
+            KisPaperDailyQuery(symbol="QQQ", exchange="NAS", by_date="20260820")
+        )
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.daily_page_attempts == 1
+    assert client.call_counts.minute_page_attempts == 0
+    assert [request.method for request in transport.requests] == ["POST", "GET"]
+    assert transport.requests[1].query["SYMB"] == "QQQ"
+
+    current = pairing.read_current_kis_paper_d1_prospective_observation_pairing_outcome(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    assert current["observation_failure_codes"] == ["daily_page_limit_exceeded"]
+    reader = _load_outcome_reader_script()
+    reader.main(
+        ["--artifact-root", str(artifact_root), "--repository-root", str(repository_root)]
+    )
+    output = capsys.readouterr()
+    payload = json.loads(output.out)
+    assert payload["observation_failure_codes"] == ["daily_page_limit_exceeded"]
+    assert payload["reason"] == "first_observation_target_failure"
+    assert output.err == ""
+    _assert_no_synthetic_private_values(output.out)
+    assert result.evidence_path is not None
+    _assert_no_synthetic_private_values(result.evidence_path.read_text(encoding="utf-8"))
 
 
 def test_docker_service_and_schedule_are_virtual_data_only() -> None:
@@ -918,6 +1080,70 @@ def test_docker_service_and_schedule_are_virtual_data_only() -> None:
     assert "DaysOfWeek" not in entry
     assert "RecoverMissedRun = $false" in entry
     assert "ExecutionLimitMinutes = 5" in entry
+
+
+class _SyntheticDailyTransport:
+    def __init__(self) -> None:
+        self.requests: list[KisMarketDataRequest] = []
+
+    def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+        self.requests.append(request)
+        if request.method == "POST":
+            assert request.url == KIS_PAPER_MARKET_DATA_BASE_URL + KIS_PAPER_TOKEN_PATH
+            return KisMarketDataResponse.from_payload({"access_token": "synthetic-token"})
+        assert request.method == "GET"
+        assert request.url == KIS_PAPER_MARKET_DATA_BASE_URL + KIS_PAPER_DAILY_PATH
+        assert request.headers["authorization"] == "Bearer synthetic-token"
+        assert (request.query["SYMB"], request.query["EXCD"]) in (
+            KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS
+        )
+        close = "812.34" if request.query["SYMB"] == "QQQ" else "501.23"
+        return KisMarketDataResponse.from_payload(
+            {
+                "rt_cd": "0",
+                "output1": {},
+                "output2": [
+                    {
+                        "xymd": "20260820",
+                        "open": close,
+                        "high": close,
+                        "low": close,
+                        "clos": close,
+                        "tvol": "100",
+                    }
+                ],
+            }
+        )
+
+
+def _empty_v2_cache(tmp_path: Path, repository_root: Path) -> Path:
+    cache_root = tmp_path / "cache"
+    commit_kis_paper_daily_pair_forward_observation(
+        rows_by_target={
+            f"{symbol}/{exchange}": () for symbol, exchange in KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS
+        },
+        failure_reasons_by_target={},
+        cache_root=cache_root,
+        repo_root=repository_root,
+        cache_identity=KIS_PAPER_DAILY_PAIR_FORWARD_V2_IDENTITY,
+        observed_at=FIRST_OBSERVED_AT,
+    )
+    return cache_root
+
+
+def _forbid_sockets(monkeypatch: pytest.MonkeyPatch) -> None:
+    def forbidden(*_args: object, **_kwargs: object) -> object:
+        raise AssertionError("synthetic integration must not open sockets")
+
+    monkeypatch.setattr(socket, "socket", forbidden)
+    monkeypatch.setattr(socket, "create_connection", forbidden)
+
+
+def _assert_no_synthetic_private_values(text: str) -> None:
+    for value in (
+        "812.34", "501.23", "synthetic-token", "synthetic-app-key", "synthetic-app-secret"
+    ):
+        assert value not in text
 
 
 def _run(

@@ -9534,3 +9534,45 @@ check returned no output before its bounded wait, recorded as
 `review_unavailable`, not agreement. This changes no data, credential, KIS,
 broker, Docker, GPU, model, Paper order, PnL, or live behavior; it still does
 not prove complete-universe coverage or predictive score validity.
+
+## 2026-09-21 - Partial reset toward a restart-safe Paper loop
+
+Decision: on the operator's explicit instruction, supersede the incomplete
+`kis-paper-d1-prospective-observation-pair-result-v1` company objective with
+`kis-paper-spy-restart-safe-lifecycle-v1`. This is reassignment, not evidence
+that D1 succeeded. Keep D1 measurement and its owned due state, immutable
+receipts, quarantine, and exact reader bindings independent of the baseline
+Paper lifecycle and source-local developmental research.
+
+Already-seen lawful data may support new finite developmental contracts linked
+to prior trial families, including bounded training. Closed masks, results,
+and spent evaluation history stay intact; refreshed data or another split is
+not a fresh holdout or independent replication. Match prediction targets to
+execution payoffs and disclose outcome censoring. KIS timing/finality and
+replay parity remain requirements for the claims/consumers that need them,
+not a universal ban on development. These current rules supersede broader
+historical source-reuse or company-wide waiting restrictions in older entries.
+
+Repeated read-only reconciliation uses exact persisted identity and the owned
+serialized path. The runbook's prior-attempt-proof prerequisite is retired;
+it was not a runtime authorization boundary. Unknown side effects still block
+duplicate submission of that exact intent. Submission-date recovery and the
+never-submitted-intent state defect are explicitly deferred to Execution.
+
+The bounded bootstrap changes only policy and D1 source/tests: one client must
+budget one page per fixed target, retain its one token, and preserve a typed
+`daily_page_limit_exceeded` diagnostic. The original one-page assertion did not
+exercise that integration. This is not a pacing/quota, route, schedule, cache,
+deployment, or broker change. Existing live, rights, paid, public, runtime,
+holdout, and deterministic execution boundaries remain.
+
+Claude's supplied-facts-only, tool-disabled challenge returned
+`supported-with-limits`: tests must exercise the actual two-target factory,
+fixture success must not imply deployment/reconciliation, D1 must not reappear
+as a global prerequisite, and durable identity/serialization must remain.
+The suggested external one-page quota counterexample was not found: the
+existing pair collector already budgets two attempts while shared request and
+token gates separately enforce pace. No new authority was inferred from Claude.
+This operator-requested bootstrap is a focused-verified role repair and policy
+reassignment, not company-objective completion or execution-recovery promotion;
+the next objective retains the existing full integration verification contract.

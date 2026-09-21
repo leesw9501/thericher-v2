@@ -12,6 +12,9 @@ from thericher_v2.data.kis_paper_d1_prospective_observation_pairing import (
     KisPaperD1ProspectiveObservationPairingError,
     run_kis_paper_d1_prospective_observation_pairing,
 )
+from thericher_v2.data.kis_paper_daily_pair_forward_cache import (
+    KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS,
+)
 from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataClient,
     KisPaperMarketDataError,
@@ -65,7 +68,8 @@ def main(
                 request_gate=request_gate,
                 token_start_gate=token_start_gate,
             ),
-            max_daily_page_attempts=1,
+            # One page per target shares the same client-wide attempt budget.
+            max_daily_page_attempts=len(KIS_PAPER_DAILY_PAIR_FORWARD_TARGETS),
         )
 
     try:

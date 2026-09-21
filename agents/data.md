@@ -13,6 +13,11 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Sources
 
+The recorded source grades below describe their named consumers and completed
+contracts. Under the 2026-09-21 reset they do not prohibit a new development-only
+contract on already-seen lawful data. They still confer no fresh holdout,
+independent replication, or silent KIS/Paper equivalence.
+
 | Source | Status | Permitted interpretation |
 | --- | --- | --- |
 | KIS Paper QQQ/NAS + SPY/AMS intraday head | The latest task-owned terminal (`intraday-head-20260819T2120006022679Z`) is source-safely `complete` at the dispatcher level, with verified current-session coverage still `incomplete/current_session_short`; it retains no model qualification. Metadata-only inspection has 37 retained chunks and zero complete regular sessions. The existing four-trigger Task remains unchanged. Its runner now keeps the first three triggers at four pages per target and gives only a regular-weekday 16:20--20:00 Eastern post-close invocation an eight-page cap. Claude CLI produced no verdict (`review_unavailable`). | This is one bounded existing-task capability probe, not a new schedule, rate change, or retry loop. The next post-close receipt must still prove the exact coverage result; a short result closes this cap test without automatic escalation. It does not prove Scheduler origin, provider finality, decision-time availability, a model input, or Paper eligibility. |
@@ -35,6 +40,13 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
+Data independently supports the SPY lifecycle company goal. Its bootstrap
+repairs the shared-client D1 page budget and safe error classification with
+synthetic integration coverage. No deployment, collection, cache mutation, or
+new pair result is claimed. Next: verify the installed runtime under the
+existing task owner, preserve `next_due`, and inspect eligible outcomes without
+blocking Engine preparation or Execution recovery.
+
 `kis-paper-d1-prospective-observation-pairing-v1` now owns an installed
 two-trigger KST worker: first observation at 08:15 and later re-observation at
 23:20, Tuesday through Saturday. It uses the existing QQQ/NAS + SPY/AMS
@@ -43,14 +55,14 @@ only an external source-contract hash, session key, timestamps, row hashes, and
 a hash-bound source-safe current-outcome pointer to immutable receipts. The
 offline reader revalidates the pointer plus exact first/later receipt binding;
 an absent pointer is only `current_pointer_unavailable`. The approved offline
-reader now validates a current first-stage receipt for completed session
-2026-09-04: `input_unavailable/first_observation_target_failure`, source contract
+reader revalidated on 2026-09-21 a first-stage receipt for completed session
+2026-09-18: `input_unavailable/first_observation_target_failure`, source contract
 `sha256:b7752aa22cc3b358b52c6fe2e6da72e1dc811b5a7078563de0c4201a68f9033d`,
-and receipt `sha256:a7d54a2220bb5f7ca78a9e34a48c827fbe6c03d4c5f575c5c23a0d12519af401`.
+and receipt `sha256:63b5297a670925dc7813bdda93c3e491e3bad48450dfb9e1f5364bf5059d54c0`.
 Its first-receipt binding and later observation are both absent, so it is not a
-pair result. The source-safe Task Scheduler status is `Ready`; task exit is not
-stage or outcome evidence. The reader-owned `next_due` is
-`2026-09-07T23:15:00Z`. The rebuilt observer image now gives future target
+pair result. Task exit is not stage or outcome evidence. The reader-owned
+`next_due` is `2026-09-21T23:15:00Z`; no task state was changed. The earlier
+observer image's failure taxonomy gives target
 failures only sorted allowlisted aggregate codes and direct exceptions fixed
 family reasons; it retains no error text. No raw rows, model, GPU, or consumer
 path is enabled.
@@ -234,7 +246,7 @@ cache-recovery branch, not session coverage, finality, or consumer eligibility.
 | FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Complete: source/local-resampling reattestation, 60-bar/61-bar-embargo split, and all 18 local-paper replay cells completed. The L2 candidate had zero wins over flat in six nonzero-cost SPY/QQQ cells, so the lineage is `rejected`; no GPU or consumer follows. |
 | Tiingo D1 event-mask coverage audit | Data | Complete: the exact rotation receipt and pinned snapshot reattached independently. Event masks accounted for all 1,892 validation exclusions, discontinuity-only exclusions were zero, and the aggregate binding was consistent. The rotation lineage is closed without a policy change. |
 | Norgate trial host readiness reconciliation | Data / Infra Capability | Complete: the immutable diagnosis is `local_api_not_ready_updater_not_observed`, independently validated without a second host invocation. It records a local updater prerequisite only; no source rows, updater action, network, or repeated poll followed. |
-| KIS D1 prospective observation pairing | Data / Infra Capability | Owned: the installed two-stage worker has an external durable `next_due` and a hash-bound current-outcome reader. The validated current first-stage receipt is `input_unavailable/first_observation_target_failure` for completed session 2026-09-04; no first-receipt binding or later observation exists, so no pair result, model, or consumer is enabled. The source-safe Task Scheduler status is `Ready`; task exit is not stage or outcome evidence. Reader-owned `next_due`: `2026-09-07T23:15:00Z`. The host-only `read_current_kis_paper_d1_prospective_observation_pairing_outcome.py` CLI calls that same reader and emits only validated categorical fields, immutable receipt binding, and an external evidence pointer. The rebuilt image limits future target failures to sorted allowlisted aggregate codes and direct exceptions to fixed family reasons. |
+| KIS D1 prospective observation pairing | Data / existing observer | Host-source budget and safe-error fix is focused-verified, not deployed. The offline reader revalidated the 2026-09-18 first-stage `input_unavailable/first_observation_target_failure`; no pair exists. Owned `next_due`: `2026-09-21T23:15:00Z`. Next verify runtime source and observe through the existing owner; do not block independent research or Execution. |
 | Cboe VIX/VXN D1 availability observations | Data / completed one-shot `thericher-cboe-vix-d1-availability-20260820` and `thericher-cboe-vxn-d1-availability-20260820` tasks | Complete: Task Scheduler records the 2026-08-21 05:30/05:31 KST invocations with result `0`, but the prepared offline reader returned `unavailable` for both VIX and VXN under the exact 2026-08-20 session, 20:00Z close, and 2026-08-21 13:30Z next-open bounds. The missing receipts are scoped to these observations; task exit is not outcome evidence. Do not retry or create a recurring task. Neither outcome establishes decision-time availability, provider finality, a feature, campaign, GPU, Execution, Paper, or live input. |
 | FirstRate 5m trend-rule input reattestation | Data | Closed as duplicate: the completed fixed 20/60 control already bound this exact source-local 5m geometry and chronology. Do not dispatch another reattestation under a new label. |
 | Tiingo prospective EOD refresh | Data | Complete: one current dated external SPY/QQQ/IWM snapshot was acquired through the fixed three-request path and reattached offline by dataset/manifest identity. Its source-as-of boundary and all lineage-only eligibility flags remain fixed; focused and full authority verification passed. |
@@ -438,6 +450,10 @@ cache-recovery branch, not session coverage, finality, or consumer eligibility.
   `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
 
 ## Handoff
+
+For independent developmental research, hand off the existing source identity,
+split geometry, already-seen status, event/gap assumptions, and limitations.
+That preparation does not wait for the D1 observation pair.
 
 When a later task-owned input qualifies, hand Engine Research only its exact
 source-safe receipt pointer, source identity, target eligibility, split-ready
