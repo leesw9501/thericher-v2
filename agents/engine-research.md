@@ -83,10 +83,28 @@ updates. Masking the oldest 24 of 36 bars changed prediction RMS by only
 0.00160-0.00703 bps, with no sign change in seven fits and one in the eighth.
 These are training diagnostics, not comparative return or generalization facts.
 
-Next ready research is a separately bounded train-only convergence/capacity
-check before increasing architecture/seed search; preserve evaluation data and
-the closed r1 contract. Do not infer that longer training will improve unseen
-performance or that LSTM is intrinsically unsuitable. D1 and Paper
+The separate four-fit learnability check completed in 9.779 CUDA seconds on
+the same image: LSTM16/context12/seeds101/103, fixed synthetic64 and first16
+chronological SPY fold1 TRAIN batches, 256 updates each. Both batches had zero
+duplicate/conflicting inputs. Synthetic final MSE/mean-baseline ratios were
+0.013432/0.006089, satisfying the predeclared <=0.1 criterion for both seeds.
+Real-batch ratios were 0.000672/0.0000528: near memorization, not prediction.
+Finite gradients/movement and independent loss parity passed; no evaluation,
+weights or individual predictions were retained. GPU lock released.
+Immutable summary: `D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\train-learnability-v1\summary.json`.
+Contract SHA256: `f2be555bc0b42f58237a6bc23ab258dcecd04491bcf70036f86a2cc9e4b663b2`.
+Summary SHA256: `833a5aafbdf1ea561be2d9fb4d449f19c0c0f4e0df88ab42ec747ecf6abf653d`.
+This demonstrates basic training/capacity, not full-cohort convergence or
+profitability. Do not create another mechanics prerequisite from this result.
+
+Next ready package: a separately frozen full-cohort H30 DEVELOPMENT comparison,
+context12, both symbols/folds/seeds (8 fits), 256 updates/fit, batch128 and the
+same optimizer, at most 2,048 updates/180 CUDA seconds. Compare the fixed final
+models with matched Ridge/naive baselines at 1/3/5 bps; include train loss,
+activity and censor counts. No best checkpoint, tuning, or new holdout claim.
+Keep original max36 eligibility/scalers/purge and closed r1 immutable; link
+the already-seen/outcome-informed lineage. This is the next question, not an
+allocated job or frozen contract yet. D1 and Paper
 recovery remain independent; historical limits below apply to their own closed
 contracts, not a prohibition on new development.
 

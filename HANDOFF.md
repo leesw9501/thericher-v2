@@ -61,9 +61,16 @@ The bootstrap stop below is historical, not a current instruction to wait.
 - The CPU-only diagnostic restored all 16 final models and compared training
   behavior with their seeded initialization: parameters moved and MSE improved,
   but every final train MSE remained above the train-mean baseline. Eight epochs
-  provided only 16 optimizer updates per fit. This supports checking train-only
-  convergence next, not a claim that LSTM cannot work or more epochs will
+  provided only 16 optimizer updates per fit. This motivated the train-only
+  follow-up below, not a claim that LSTM cannot work or more epochs will
   generalize. No evaluation predictions, optimizer step, or GPU ran.
+- The distinct four-fit learnability follow-up completed 1,024 CUDA optimizer
+  updates in 9.779s. Both seeds learned the fixed synthetic relationship and
+  nearly memorized the first 16 SPY TRAIN examples. This confirms basic learning
+  mechanics/capacity, not predictive value. No evaluation or weights were
+  retained; its source-safe sibling summary/hashes are in Engine Research.
+  Next research is a fixed full-cohort development comparison, not another
+  mechanics gate. The main company priority remains fill/accounting closure.
 - Measured durable-write latency identified D: test scratch as a major feedback
   bottleneck. The existing helper now prefers C: NVMe scratch, falling back to
   D: without weakening isolation/cleanup. The unchanged depth test took 3.43s on
@@ -77,6 +84,17 @@ without its lease or active worker; do not delete unrelated scratch trees.
 Independent review then found the drive-switch orphan-worker case. The helper
 now checks both known managed roots; nine new isolated cases passed, and its
 own clean-root focused authority run passed all 11 helper tests in 7.04s.
+The weekly full serial diagnostic of the original 3,408-test snapshot also
+completed `3389 passed, 19 skipped` in 1621.44s; the nine subsequently added
+cross-root cases are covered by the separate helper run. This diagnostic did
+not postpone the already-verified Paper runtime check or checkpoint push.
+Checkpoint `19556459c05cec5d4a633f109cdd547855d43ce9` is pushed; the company
+objective remains active, not completed by that commit.
+After the 24 new synthetic learnability tests and actual four-fit CUDA run,
+the final eight-worker clean-root suite passed `3422 passed, 19 skipped` in
+289.24s with successful cleanup. Ruff, both credential-free Compose parses,
+and diff checks passed. All owned test/GPU containers and child processes
+finished; no training appointment or foreground external wait remains.
 
 The company objective remains incomplete. Do not rotate it based on these
 packages or turn a scheduled observation wait into foreground idle.

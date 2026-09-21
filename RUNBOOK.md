@@ -122,9 +122,21 @@ model is involved. A parent-owned 600-second CPU limit reaps its child.
 The whole appendix succeeds or fails, and its immutable namespace is exclusive.
 The completed `20260921-h30-r1/train-diagnostic-v1` took 13.201 seconds. Do not
 overwrite or rerun it; hashes and findings are in `agents/engine-research.md`.
-Training moved parameters but did not beat train-mean MSE; check convergence
-under a new finite train-only budget before a larger model search. This finding
-cannot choose a market winner or predict generalization.
+Training moved parameters but did not beat train-mean MSE, motivating the
+bounded learnability follow-up below. This finding cannot choose a market
+winner or predict generalization.
+
+`scripts/run_firstrate_h30_train_learnability.py` completed that bounded
+follow-up once. `--describe` is metadata-only; the actual single appointment
+received the reviewed contract SHA through the existing `research` profile,
+same image, `.env.example`, `--no-deps` and `--pull never`. Its parent holds
+the existing GPU lock and supervises all source preparation, four fixed fits
+and report serialization within 180 seconds; interruption reaps the child.
+The sibling `train-learnability-v1/summary.json` is immutable and outside r1.
+All four 256-update fits completed in 9.779 seconds; synthetic learnability
+and small-batch memorization are demonstrated, with no new evaluation or
+retained model. Hashes/results are in Engine Research. No repeated mechanics
+check is required before a newly frozen substantive development comparison.
 
 ## Standing KIS Paper Authority
 
@@ -3493,9 +3505,14 @@ cross-root regression covers an orphan on the non-selected drive, held lease,
 missing/inactive roots and failed process probes. The final helper's focused
 authority run passed all 11 helper tests with cleanup in 7.04s.
 
-It has no KIS, credential, Docker, market-data, or artifact access. On
-2026-07-31, the completed full serial baseline was `1769 passed, 14 skipped` in
-806.07 seconds; matching clean parallel results completed with four and eight
-workers. Run serial `pytest -q` at least weekly and before a material live-route
+It has no KIS, credential, Docker, market-data, or artifact access. The
+2026-09-22 weekly full serial diagnostic passed 3389 tests/19 skips in 1621.44s;
+the same snapshot passed the eight-worker helper in 304.13s. The later nine
+cross-root regression cases separately passed with the final helper. The final
+suite, including those cases and 24 learnability tests, passed 3422 tests/19
+skips in 289.24s with clean-root cleanup. On
+2026-07-31, the earlier serial baseline was 1769 tests/14 skips in 806.07s,
+with matching four/eight-worker counts. Run serial `pytest -q` at least weekly
+and before a material live-route
 or execution-recovery promotion. It is a compatibility diagnostic rather than
 a routine goal-boundary hold.

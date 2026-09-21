@@ -38,9 +38,12 @@ cells. Its separate H30 comparison then completed 8 Ridge/16 LSTM fits and 108
 CPU/CUDA cost cells, preserving all 16 final models externally. These are not
 robust-edge or Paper-input claims. The completed train-only diagnostic found
 real parameter movement but all 16 final train MSEs worse than the train-mean
-baseline; eight epochs meant only 16 optimizer updates per fit. Next Research
-work is a distinct bounded train-only convergence/capacity check, not retuning
-the closed r1 evaluation. Next main work is a deliberately fillable one-share
+baseline; eight epochs meant only 16 optimizer updates per fit. The subsequent
+four-fit CUDA learnability check demonstrated basic learning and tiny-batch
+memorization at 256 updates, not predictive skill. Next Research work is one
+new frozen full-cohort H30 DEVELOPMENT comparison (context12, 8 fits at 256
+updates, <=180 CUDA seconds), preserving closed r1 and seen-data limitations.
+Next main work is a deliberately fillable one-share
 Paper cycle with exact fill/position/accounting facts, not another D1 gate or
 immediate-cancel repetition. Use existing ownership, locks and virtual routes;
 do not change the current canary's semantics silently.

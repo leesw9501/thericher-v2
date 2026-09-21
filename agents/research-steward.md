@@ -39,8 +39,19 @@ a claim of a fully locked environment.
 The same image completed the fixed train-only diagnostic in 13.201 CPU
 seconds, restoring all 16 models without training, evaluation tensors, or GPU.
 Its immutable appendix and hashes are in Engine Research. No allocation is
-held. The next train-only convergence experiment needs its own finite budget;
-the diagnostic neither spends a sealed evaluation nor reopens the closed r1.
+held. This diagnostic spent no sealed evaluation and did not reopen closed r1;
+its finite learnability successor is recorded below.
+
+The distinct four-fit train-learnability contract completed its reviewed scope,
+SHA256 `f2be555bc0b42f58237a6bc23ab258dcecd04491bcf70036f86a2cc9e4b663b2`.
+After 24 synthetic CPU tests and an absent-lock/no-Python-worker check, main
+ran one appointment on the same installed image: all 1,024 updates in 9.779
+seconds, inside the 180-second parent limit, no retry/fallback. The lock was
+released and its container removed. No new evaluation, weight retention,
+model selection or Paper consumer. Main owns Execution preemption through
+the existing parent lock/supervisor and child reaping.
+Engine's proposed eight-fit full-cohort DEVELOPMENT successor is not yet
+frozen or allocated; the completed mechanics check imposes no new gate.
 
 The bootstrap created no allocation or training run. Recheck actual GPU/process
 ownership before an appointment; the historical idle facts below are not a live
