@@ -17,6 +17,52 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+Completed 2026-09-22 successor: `regular-session-cost-matrix-v2` in the existing
+FirstRate H30 trial family. The old cohort first sampled 1,024 TRAIN times from
+a 24-hour grid before checking past/future support. New development uses all
+regular-session M5 TRAIN decisions, the same 36-bar eligibility for contexts
+12/36, 30/60/120-minute targets and nonoverlapping H-cadence EVAL. Two expanding
+session folds; TRAIN exits strictly precede first EVAL history start. Costs
+remain 1/3/5 bps/side; model threshold 6 bps is a fixed rule, not exact
+breakeven. CPU controls/Ridge precede 48 LSTM fits at eight full epochs, without
+outcome screening, winner selection or a fresh holdout. Source timestamps are
+an explicit unverified assumption, not KIS runtime parity. No Paper dependency.
+Focused synthetic/runner tests passed 73 cases. Contract
+`sha256:012497f503e322dcbc076aacc174dc10e039b1da185876b0744b07f33e4a0646`
+is frozen; both phases used the pinned existing research image,
+networkless, source/data read-only, without credentials or Paper changes.
+The metadata-only v1 contract was abandoned before dispatch after independent
+review found missing post-decision outcome support. v2 requires 32 scored rows
+and eight disjoint-history blocks after decisions; insufficient observations
+retain safe counts and no returns, rather than a successful all-zero result.
+CPU completed 24 Ridge fits and 216 model/control/cost cells in 117.611
+supervised seconds. TRAIN support is now 2,232-6,732 rows per fold/horizon;
+H30 alone is 4,464-6,732 versus the old 230-241. EVAL contains 62-378 scored
+observations per fold/horizon, zero future censoring, 62-63 disjoint-history
+blocks. At 3bps/side, 7/24 Ridge cells are positive, 16 negative and one has
+zero trades; SMA3/12 is positive in 1/12, previous-bar in 3/12 and always-long
+in 1/12. At 5bps, 5/24 Ridge cells remain positive but all those rule/naive
+cells are nonpositive. These are separate one-share experiments, not portfolio
+returns or a selected winner. CPU summary:
+`sha256:5198f95a0c6a8863cd18a9fa8e74431a1e0f4b827b4cebab47b59b58cb14523b`.
+The CUDA phase completed all 48 LSTM fits (13,248 optimizer updates) and 144
+cost cells in 159.193 supervised seconds, including data loading/replay rather
+than pure kernel time. All 48 TRAIN losses improved and beat TRAIN-mean MSE;
+that does not establish prediction skill. CPU/CUDA cohort/scaler/censor facts
+match. All 48 final models passed numeric schema/hash checks and actual Torch
+CPU reload; weights/configs occupy 435,104 bytes externally. CUDA summary:
+`sha256:4bacb76827f3de667c331e37b65a5a7b603e6be51b94034041524b268350e3b1`.
+At 3bps/side 10/48 LSTM cells are positive, 9 negative, 29 have no trades. At 5bps
+6 are positive, 13 negative, 29 inactive. Only 2/24 symbol/horizon/context/seed
+combinations are positive in both folds at 3bps; none at 5bps. Beating the
+matched always-long control in 48/48 cases is largely loss avoidance, not
+evidence of robust alpha. No winner, ensemble or Paper input was selected.
+Both containers and child jobs exited, GPU lock released; recovery: complete.
+127 focused/parent-regression tests, Ruff and both Compose checks passed.
+Next useful research question is whether a persistent target-position policy
+reduces unnecessary exit/re-entry costs versus these independent roundtrips;
+freeze a new linked contract rather than retuning this closed matrix.
+
 The 2026-09-21 FirstRate M5 open/open development comparison completed once:
 two symbols, two expanding development folds, four fixed Ridge fits, and 48
 SMA20/60, Ridge, previous-bar, and flat cost cells. It uses a fixed 60-bar

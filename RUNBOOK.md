@@ -67,6 +67,18 @@ helper exit; Ruff and both sample-env Compose configurations passed.
 
 ## Long Codex Task
 
+For this 2026-09-22 continuation, thread heartbeat `thericher-paper` owns one
+follow-up at 2026-09-23 00:20 KST, after both installed Paper task limits. It
+does not start another order worker or modify schedules. Inspect the exact
+fill-cycle identity and every budget visit in the task-time window, not just
+the last categorical status: a later no-intent can follow earlier recovery.
+Mutable dispatch files lack timestamps and are process status only. Missing,
+preview, exit zero and cancellation are not fills. Read private state through
+pure parsers with categorical in-process projection; do not print identities,
+amounts or parsed state objects. `StateStore.read()` acquires locks; avoid it
+for a strictly read-only projection. Fees/settlement/net PnL stay unknown unless
+independently evidenced. This follow-up requires the local host/app available.
+
 ```powershell
 .\scripts\start_next_codex_task.ps1
 ```

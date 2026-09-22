@@ -21,6 +21,27 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Latest parallel research package completed `regular-session-cost-matrix-v2`:
+the old pre-mask capped 24-hour sampler was replaced in a separate linked
+development contract by full regular-session TRAIN windows. Support grew from
+230-241 to 2,232-6,732 rows per fit. CPU completed 24 Ridge fits/216 cells in
+117.611 seconds; RTX4090 completed 48 eight-epoch LSTMs/144 cells and 13,248
+updates in 159.193 supervised seconds including replay. All 48 final models
+are retained under the existing D: artifact root and passed numeric/hash and
+Torch reload checks. At 3bps/side 10/48 LSTM cells are positive, but 29 never
+trade; at 5bps no symbol/horizon/context/seed combination is positive in both
+folds. This is not a robust winner, independent validation or a Paper input.
+Exact hashes and recovery are in Research/Steward; 127 focused regression tests,
+Ruff and both sample-env Compose configurations pass. No shared execution
+runtime was edited or rebuilt; the earlier full authority remains its evidence.
+Both research workers exited and released the GPU. No extra data was downloaded.
+
+User also requested tonight's results: one-shot thread follow-up
+`thericher-paper` is scheduled for 2026-09-23 00:20 KST, after the existing
+22:35 diagnostic and 23:50 budget strategy task limits. It does not invoke
+another task/order. Tonight's actual fills remain unobserved, so the company
+lifecycle objective remains open. Keep the local host, Docker and app running.
+
 Latest operator direction approves approximately 10 percent of virtual cash
 for an aggregate baseline strategy-Paper allocation. Policy is in `AGENTS.md`;
 the sizing/inventory package is in `NEXT_CODEX_GOAL.md`. The opt-in budget

@@ -5,6 +5,28 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+2026-09-22 completed appointment: `regular-session-cost-matrix-v2` under the
+existing FirstRate H30 family. Frozen contract:
+`sha256:012497f503e322dcbc076aacc174dc10e039b1da185876b0744b07f33e4a0646`.
+CPU completed all216 cells in 117.611 supervised seconds; its summary hash is
+`sha256:5198f95a0c6a8863cd18a9fa8e74431a1e0f4b827b4cebab47b59b58cb14523b`.
+Canonical GPU lock was absent and no research process/container remained.
+The single Docker CUDA appointment completed all 48 LSTM fits, exactly eight
+full chronological epochs and 13,248 updates, in 159.193 supervised seconds
+against its shared 1,800-second budget. All 144 CUDA cells pass replay; summary
+`sha256:4bacb76827f3de667c331e37b65a5a7b603e6be51b94034041524b268350e3b1`.
+All 48 final models/configs are retained (435,104 bytes), with numeric/hash and
+actual Torch CPU reload checks. Container/child jobs reaped; canonical GPU
+lock absent, registry records `non_promoting_completed`. No successor job is
+running or reserved. Recovery: complete.
+Contexts12/36 and horizons30/60/120 share this family allocation; no sealed
+evaluation, winner selection or Paper promotion. Models belong only under
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\regular-session-cost-matrix-v2`.
+The existing RTX4090/image/runtime is unchanged; D: has 40.2 percent free.
+v1 contract `39390e865930ad883021633997f508bef0d60ff3a71db4399eebfdb3ecced561`
+was metadata-only and recorded `non_promoting_abandoned` before any phase after
+review found a scoring-support omission. It spent no compute/evaluation.
+
 The 2026-09-21 frozen FirstRate M5 open/open development comparison completed
 four CPU fits and 48 aggregate local-paper cells, without GPU allocation,
 retained weights, sealed evaluation, or promotion. Contract/summary hashes and

@@ -9762,3 +9762,38 @@ fix. This changes no credential or broker authority. Final authority passed
 seven private-state consumers. The existing daily task's scoped launcher and
 25-minute deadline are deployed with its trigger/principal unchanged. Preview
 and installation are not actual strategy orders, fills or accounting evidence.
+
+## 2026-09-22 - Expand research cohorts without changing tonight's Paper strategy
+
+The operator requested all three parallel steps: expand usable training
+samples, compare costs/holding frequency across rule/ML/DL models, and inspect
+tonight's real virtual-account results. The previous 1,024-point TRAIN cap
+sampled a full 24-hour grid before eligibility. A linked, separately frozen
+development matrix uses all regular-session M5 training windows instead;
+48 eight-epoch LSTMs and 24 Ridge fits share two folds, fixed contexts12/36,
+30/60/120-minute horizons and the same cost bands. No source acquisition,
+runtime replacement, winning-cell selection or Paper model replacement.
+
+Claude's supplied-facts/tool-disabled challenge was `supported-with-limits`.
+Resolution: timestamp start/end convention stays an explicit uncertainty;
+seeing a 09:30 row would not independently verify it. Purge uses the first
+scheduled EVAL decision minus the maximum 180-minute history, not the decision
+itself. The 6-bps threshold is a fixed rule carried from earlier development,
+not a breakeven assertion; a 5-bps/side cell is not necessarily negative by
+construction since predictions can exceed the threshold. Report actual costs
+and every cell without a promotion or independent-skill claim.
+
+The night follow-up is a single thread heartbeat after the existing tasks,
+not another order worker or Windows schedule. It separates signal, submission,
+fill, inventory reconciliation and unresolved fees/settlement/net PnL.
+
+Independent source review identified that wholly absent future payoffs could
+otherwise appear as a successful zero-return comparison. After every model
+decision is fixed, require 32 scored rows/eight disjoint-history blocks and
+retain safe support counts on failure. The runner now preserves allowlisted,
+identity-bound failure categories instead of replacing them all with a generic
+error. The v1 metadata-only contract was recorded abandoned before any data
+phase, and v2 freezes these corrections; no observed outcome chose the change.
+Two delegated agents encountered service capacity failures. Main inspected
+and integrated their existing runner/tests and completed the missing cohort
+tests, rather than treating their unfinished narrative as evidence.

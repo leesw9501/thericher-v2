@@ -174,6 +174,19 @@ funding binding or inventing another manual-approval or profitability gate.
 
 ### Engine Research: Parallel Preparation
 
+- `regular-session-cost-matrix-v2` completed on 2026-09-22 without changing
+  tonight's Paper paths. Full regular-session TRAIN windows grew support to
+  2,232-6,732 rows per fit; contexts12/36 and horizons30/60/120 share fixed costs.
+  CPU completed 24 Ridge fits/216 cells; CUDA completed 48 eight-epoch LSTMs/
+  144 cells and 13,248 updates. All 48 models are retained externally. Results
+  are cost-sensitive and often inactive; no robust winner or Paper input.
+  Detailed custody, hashes and limitations are in Research. This closed run
+  is not a fresh holdout and must not be silently rerun or retuned. A later
+  linked package may compare persistent target positions against independent
+  roundtrips to distinguish predictive skill from exit/re-entry costs.
+- A one-shot thread follow-up (`thericher-paper`) is installed for
+  2026-09-23 00:20 KST to reattach both existing Paper opportunities. It does
+  not start another worker/order or expand the Windows task schedules.
 - Freeze one development-only comparison on existing ETF data: a small rule
   and linear baseline with the same feature timing, target payoff, replay,
   costs, naive comparator, temporal split, and finite window/trial budget.

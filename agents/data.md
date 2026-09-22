@@ -40,6 +40,20 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
+2026-09-22 research support: the new regular-session development CPU phase
+reattested the existing FirstRate SPY/QQQ canonical CSVs through their hash-
+and timestamp-bound loader. No new data, provider blend or source qualification.
+Removing the old pre-mask 24-hour sample cap yields 2,232-6,732 supported TRAIN
+rows per fold/horizon; the H30 folds have 4,464-6,732 rows. EVAL has 62-378
+eligible and scored rows per symbol/fold/horizon, with zero future-censored
+rows in this source-local run. Those are overlapping observations, not that
+many independent sessions. The new NYSE-calendar schedule still assumes the
+existing New-York conversion/start-bar convention; it does not verify it.
+The independent Data sidecar was interrupted by service capacity before a
+final inventory, so these facts are the main-integrated loader/CPU result,
+not a claimed independent audit. Exact source pins/folds are in
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\regular-session-cost-matrix-v2\cpu-summary.json`.
+
 Schedule cleanup (2026-09-22) verified terminal metadata for the existing
 three-target historical cache (generation 65: two complete, one source-limited)
 and broad cache (generation 26,368: 1,089 complete, 1,030 source-limited).
