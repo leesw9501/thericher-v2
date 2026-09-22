@@ -14,67 +14,38 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 
 | Work | Owner / resource | Current fact and dispatch |
 | --- | --- | --- |
-| SPY lifecycle recovery | Execution / existing Paper state and task | Explicit fresh-ask/bid cycle and shared private-state readers deployed across seven images, 42 source matches. Existing quote-task registration has one finite 2026-09-22 22:35 KST invocation, fixed ID `spy-fill-20260922-v1`; expires 23:10, no new task/repetition. Mounted private-path rejection repaired and checked in actual Docker. Preview is not a fill. |
-| Aggregate strategy sizing | Execution / existing strategy and private intent store | Frozen initial 10-percent allocation, actual entry-cost/reservation replay, owned inventory and recovery-first sizing implemented. Existing daily task now invokes the scoped budget launcher at 2026-09-22 23:50 KST, with 24 bounded visits and a 25-minute limit. No new schedule or approval. Actual orders/fills remain unobserved; preserve exact ownership against the separate cycle. |
-| Development comparison | Engine Research / completed CPU and CUDA | Full regular-session cohort expands TRAIN to 2,232-6,732 rows; 24 Ridge and 48 LSTM fits complete 360 cost cells. No robust winner or Paper replacement. Independent review's missing-payoff issue fixed before dispatch. Capacity-failed sidecars were integrated by main, not claimed as completed independent audits. |
-| Model-family breadth | Engine Research / CPU preparation | Next predictive comparison is LightGBM plus existing TCN/compact attention with matched controls, not further LSTM-only configuration churn. TimesFM 2.5 local adapter and synthetic CPU/CUDA smoke complete; 3.0 not adopted because personal use does not establish downstream revenue/production rights. Public-model market overlap remains unverified, affecting that comparison only. |
-| Data collection / finite D1 measurement | Data / existing tasks | Existing six NAS snapshots validate; the old generic failure does not identify its failing stage. New fixed-category diagnostics are ready for the next owned 06:40 run. Pair-forward v2 due 2026-09-23 06:55; D1 final later opportunity 2026-09-22 23:20, triggers expire midnight. No fresh collection/pair inferred. |
-| GPU | Research Steward / exclusive allocation | Latest TimesFM 2.5 synthetic CUDA check completed in 6.730s, after CPU8.882s, on unchanged Torch/CUDA. No training or predictive result. Both containers exited and canonical GPU lock released; no active appointment. Earlier 48 LSTM models remain external and unchanged. |
-| Night result reattachment | Orchestrator / thread follow-up | One-shot `thericher-paper` installed for 2026-09-23 00:20 KST after both Paper opportunities. Existing Windows cadence unchanged; task/process exits are not fills. |
+| SPY lifecycle recovery | Execution / existing private state | Same cycle spy-fill-20260922-v1 has an acknowledged buy, not a confirmed fill. Numeric-padding repair is deployed in all seven consumers. Latest 15:32Z resume returned evidence_unavailable; a separate 00:36:48 KST read-only attempt returned auth_rejected before account parsing. No active worker. Recover this exact leg, not another entry; earlier causes remain unknown. |
+| Aggregate strategy sizing | Execution / existing strategy and private intent store | The 23:50 strategy returned no_intent/daily_receipt_not_eligible. Data identified first-attestation clock reuse; the fix samples the decision clock after loading and is deployed. The 10-percent policy and shared SPY ownership remain unchanged; no strategy trade is claimed. |
+| Model-family breadth | Engine Research / completed CPU and CUDA | Fixed H30/context36: 4 LightGBM and 16 TCN/Transformer models, 144 cells, all 84 parent controls reproduced. CUDA 499.058s. No new model is positive in both folds at 3/5bps. Next ready research compares persistent target positions with repeated fixed-H roundtrips, not another parameter sweep. |
+| Data collection / finite D1 measurement | Data / existing tasks | Six NAS snapshots validate; next owned diagnostic opportunity is 06:40 KST and pair-forward v2 is due 2026-09-23 06:55. D1's final opportunity was 23:20 with midnight expiry; no fresh pair result was inspected in this package. No new collection/pair inferred. |
+| GPU | Research Steward / allocation released | The comparison completed 16 CUDA fits/5,632 updates and released its lock. All 20 new models/configs occupy 500,891 bytes on D:. No owned training process or successor appointment; old LSTMs/TimesFM unchanged. |
+| Verification | Orchestrator / completed isolated test workers | 718 non-overlapping focused serial cases; full eight-worker authority 4,405 passed / 19 skips in 339.16s with clean helper exit. Earlier failed scratch remains inactive; no competing test worker or image build remains. |
 
 ## Bottleneck And Reversible Improvement
 
-Current research improvement: reuse existing sequence implementations and one
-pinned public-model adapter instead of increasing only LSTM configurations.
-TimesFM's dependency is ephemeral and isolated; Paper deployment/schedules are
-untouched. Both bounded implementation/test agents completed, and the runner's
-missing identity checks are fixed with 108 passing focused tests. No foreground
-market wait or new scheduler; the next predictive breadth remains independent.
+The finite GPU comparison completed while Execution recovered the same cycle
+and Data diagnosed the budget input. Three role agents implemented/reviewed
+disjoint packages; no authority, D1 or GPU environment hold was introduced.
+The remaining Execution bottleneck is fresh account/fill recovery, not model
+profitability. Current authentication rejection is one scoped observation,
+not a permanent credential diagnosis or permission hold. Preserve exact SPY
+ownership while independent offline research advances.
 
-The company is not blocked on D1 time or API permission. Budget-based baseline
-execution is now deployed; its next material evidence is the actual strategy
-decision/order/fill/accounting result. Pending exact orders recover before a
-new signal, and both SPY paths share ownership without adopting inherited
-holdings. The budget host/container have independent deadlines. Other symbols
-and Data/Research remain independent. Final integration passed 3,903 / 19 skips
-in 296.58s with eight workers and clean helper exit. Both bounded implementation
-agents returned and closed; image builds/tests/preview have exited. No foreground
-market wait. A real mount-only Docker probe, beyond preview, found and fixed the
-private-path rejection that otherwise prevented execution. Current improvement:
-deploy the existing daily owner through a scoped credential loader and bounded
-budget runner, not a new canary, scheduler or account approval process.
-Current reversible improvement: six exhausted/diagnostic recurring schedules
-and two expired one-shots are disabled with rollback metadata; six operational
-schedules remain and D1 expires after its final later opportunity. Default
-installation no longer resurrects retired studies. This reduces redundant
-dispatch while preserving ongoing data/Paper paths; no throughput speedup is
-claimed without measurement. Detailed disposition and recovery are in RUNBOOK.
-The existing test helper continues to prefer C: NVMe
-scratch, not D: SATA scratch. Alternating 100-write/fsync probes measured
-67-79ms on C: and 20.26-21.47s on D: under current load; the unchanged depth
-test took 3.43s on C: versus 316.40s on D:. The final eight-worker C: suite
-passed 3422 tests/19 skips in 289.24s with cleanup. This is observed feedback
-latency, not a universal disk benchmark. Recalibrate for C: capacity/performance;
-production data/models stay D:. Keep fail-fast timing and isolated fixture
-improvements, with all authority/lease/cleanup checks intact.
-Both known managed roots are checked for surviving workers after a drive
-switch. The bounded research job and image builds have exited. Final integrated
-eight-worker coverage passed 3,513 tests / 19 skips in 294.19s with managed
-cleanup; no owned worker remains and there is no foreground market wait.
-Independent source review found two recovery edge cases and the implementation
-now includes their regression tests. No agent performed system/mock experiments.
+The evidence-backed improvements are the actual post-load decision clock,
+history-only numeric-padding compatibility, and closed-category pre-intent
+diagnostics. All are deployed without changing raw identity, cancellation,
+ambiguity checks or live isolation. No new worker/schedule/report family.
+The next ready research package targets turnover cost under fixed weights;
+more parameter fitting is not justified by the completed matrix alone.
 
-Task-owned due times belong to their workers. Independent role agents performed
-Data deployment, CPU research, and code review while Execution integrated.
-The earlier implementation changed D1, research and seven Execution images. The
-bounded CUDA campaign completed while the old-image Paper task ran naturally;
-the later new-image direct session is separately identified in Execution.
-Neither cancellation receipt is a terminal-fill/PnL claim.
+One full test run passed assertions but failed cleanup on a fixture-owned
+hardlink. The fixture now releases its own link; the next authority run and
+cleanup passed. Retained failed root `C:\trpy\runs\r-7784b455` is inactive,
+not a lease or a reason to block new isolated work. C: remains measured-fast
+test scratch; data/models remain D:. No cleanup guard was relaxed.
 
-Claude's schedule-cleanup challenge returned `supported-with-limits`: retain
-recovery ownership, verify exact terminal cursor scope and v2 routing, and
-preserve enabled/expiry state on reinstall. Pair-forward is market data only,
-not a fill/accounting state migration. Immutable data and private state remain.
-Claude's 2026-09-21 bounded challenge returned `supported-with-limits`: preserve
-identity/serialization, old evidence, and claim boundaries; fixture success is
-not deployment or reconciliation success. Resolution is in `DECISIONS.md`.
+Owned due times stay with their jobs. Keep six operational schedules and
+the existing disabled/expiry dispositions; do not recreate finite studies.
+The earlier one-shot thread follow-up was due at 00:20 KST; no duplicate is
+installed here. Historical operating evidence remains in Git, DECISIONS and
+RUNBOOK rather than as competing current entries in this projection.

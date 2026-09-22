@@ -24,6 +24,29 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-22 KST)
 
+2026-09-23 priority: recover exact owned cycle spy-fill-20260922-v1 after the
+history-only numeric-padding repair. Its buy was acknowledged, but the initial
+20-visit result was pending/awaiting_fill_observation, not a fill. The bounded
+read-only history probe found one numeric-equivalent, otherwise fully bound
+row; do not create another entry, change persisted IDs or reset ownership.
+The23:50 budget input first-attestation clock bug is repaired without relaxing
+availability checks; its actual10-percent strategy result remains unobserved.
+Seven images and 21 changed-source hashes match. The corrected same-cycle
+resume at 15:32:38Z returned recovery_required/evidence_unavailable and exited.
+A single separate snapshot attempt at 00:36:48 KST returned auth_rejected
+before account parsing; earlier failure causes remain unknown. No worker is
+active. Execution retains the exact evidence pointer and acknowledged buy;
+diagnose/recover that existing exposure without submitting a replacement.
+
+Parallel research completed model-family-h30-c36-v1:4 LightGBM and16
+TCN/Transformer fits,144 cells and84 reproduced parent controls; all20 models
+are external and the GPU lock is released. None is positive across both folds
+at3/5bps. No model selection or Paper dependency. The next ready research
+package compares persistent target positions with repeated H30 roundtrips.
+Final integration: 718 changed-path serial tests; 4,405 full passed / 19 skips,
+eight workers, 339.16s, clean helper exit. This package is verified, but the
+company objective is not complete until its actual lifecycle is reconciled.
+
 Operator priority update: implement an approximately 10-percent aggregate
 virtual-cash strategy trial under the sizing instruction in `AGENTS.md`.
 This is already approved; no further capital/profitability/D1 gate applies.

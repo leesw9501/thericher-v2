@@ -17,6 +17,34 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+Completed bounded comparison: `model-family-h30-c36-v1`, linked to the existing
+FirstRate H30 family. Fixed H30/context36, unchanged two session folds and
+1/3/5-bps costs; four LightGBM fits precede sixteen TCN/Transformer fits.
+The eight existing context36 LSTMs are reloaded, not retrained; 84 parent
+control cells must reproduce. Contract
+`sha256:9625f31d0fc0d879a106cc0fad3d058752658728c6a310d0684b9610c749cb0a`
+is frozen. CPU completed96 cells/four new models in89.446s, reproducing all84
+parent controls. CUDA completed48 cells/sixteen models and5,632 updates in
+499.058s. Both used the same pinned networkless image and matched cohort facts.
+No model selection, holdout, public-model comparison or Paper replacement.
+LightGBM4.6.0 is MIT, installed from a verified external wheel into ephemeral
+`/tmp`; no base/Paper image dependency changes. Independent review caught and
+fixed normalizer and fold-identity binding gaps before freeze.
+CPU summary: `sha256:c514f0a4a2da5a9a4c5e3a5d66279de7f43971e53af22bfb819347ffbc686b41`.
+CUDA summary: `sha256:db1cfc4d127449615c824cc4550e3d4bd103c456830e0056c91b2eb7006ab813`.
+All20 final models beat TRAIN-mean MSE, not proof of predictive skill. At both
+3/5bps per side LightGBM is negative in4/4 cells; TCN is positive1/8, negative5/8,
+inactive2/8; compact attention is inactive8/8. No new model has positive net
+PnL in both folds. The matched LSTM has only four trades across eight model/fold
+cells, so its tiny aggregate is not a robust baseline edge. Attention's zero
+trades mean this fixed rule never crosses6bps, not a universal architecture
+failure. Models/configs occupy500,891 bytes externally and all passed numeric
+or native-text restoration and exact decision parity.225 focused tests pass.
+Both containers and scratch jobs exited, GPU lock absent; recovery complete.
+Next bounded research: compare a persistent target-position rule against
+repeated fixed-H roundtrips, keeping old weights and cost/availability facts
+fixed. Do not select new parameters from this closed matrix.
+
 2026-09-22 public-model decision: use official Apache-2.0 TimesFM 2.5, not the
 3.0 weights whose separate license excludes revenue/production uses and also
 restricts outputs. Private offline noncommercial research is not categorically
@@ -29,8 +57,8 @@ weights move; no CPU fallback or automatic download. Source and weights stay
 research-only. Synthetic inference is not a financial benchmark, training,
 model selection, or Paper qualification. The model card lists pretraining
 sources, but their exact overlap with our financial panel is not verified.
-Next predictive breadth: LightGBM and existing TCN/compact attention on the
-same linked development payoff/cost/split, with fixed naive and LSTM controls.
+That recommended predictive breadth is now completed above, with fixed naive
+and LSTM controls and a full-context dilated TCN.
 Do not silently retune the closed 48-LSTM matrix. A later target-position
 comparison remains useful for separating turnover cost from prediction error.
 

@@ -937,10 +937,10 @@ class KisPaperReadOnlyClient:
                 ):
                     raise KisPaperReadOnlyError("ccnl_response_incomplete")
                 row_count += 1
-                if candidate == raw_order_id:
+                if _history_order_id_matches(candidate, raw_order_id):
                     direct_matches.append(row)
                 original_order_id = row.get("orgn_odno")
-                if original_order_id == raw_order_id:
+                if _history_order_id_matches(original_order_id, raw_order_id):
                     lineage_matches.append(row)
             continuation = response.header("tr_cont").strip().upper()
             if continuation not in {"M", "F"}:
@@ -1436,6 +1436,20 @@ def validate_kis_paper_readonly_request(request: KisHttpRequest) -> None:
 
 # Keep the private compatibility name while new clients import the public contract.
 _validate_allowlisted_request = validate_kis_paper_readonly_request
+
+
+def _history_order_id_matches(candidate: object, raw_order_id: str) -> bool:
+    """Compare history IDs only; never normalize persisted or submitted identity."""
+
+    if not isinstance(candidate, str) or _RAW_KIS_PAPER_ORDER_ID.fullmatch(candidate) is None:
+        return False
+    if candidate == raw_order_id:
+        return True
+    # The caller validates raw_order_id with the same bounded ASCII pattern.
+    if not candidate.isdecimal() or not raw_order_id.isdecimal():
+        return False
+    positive_id = raw_order_id.lstrip("0")
+    return bool(positive_id) and candidate.lstrip("0") == positive_id
 
 
 def _valid_same_day_order_id_query(query: Mapping[str, str]) -> bool:

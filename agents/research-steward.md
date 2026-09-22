@@ -5,6 +5,18 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Completed appointment: `model-family-h30-c36-v1`, contract
+`sha256:9625f31d0fc0d879a106cc0fad3d058752658728c6a310d0684b9610c749cb0a`.
+Same FirstRate H30 family, fixed context36, no sealed evaluation or selection.
+CPU used89.446 of600 supervised seconds for four LightGBM fits and96 cells;
+CUDA used499.058 of900 seconds for sixteen eight-epoch TCN/Transformer fits,
+5,632 updates and48 cells. All20 models restored successfully;500,891 bytes
+remain external. Both worker/container paths exited, scratch was cleaned and
+canonical GPU lock is absent. Registry: non_promoting_completed; recovery
+complete. Exact result hashes are in Engine Research. No winner, holdout or
+Paper input, and no next GPU appointment. D: free space was40.2 percent.
+The independent Execution diagnostic patch does not alter this research image.
+
 Latest isolated public-model runtime appointment:
 `timesfm-2p5-offline-runtime-20260922-v3`, contract
 `sha256:5dd84883513ae88225d19bc68d3cc07d92fb909626409e9893c0804ced3aa5d5`.

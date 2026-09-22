@@ -3,20 +3,22 @@ from __future__ import annotations
 import json
 import sys
 from collections.abc import Callable, Iterator, Mapping
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 
 import pytest
 
-from thericher_v2.contracts import TargetExposureProposal
+from thericher_v2.contracts import Bar, TargetExposureProposal, Timeframe
+from thericher_v2.data.kis_paper_daily_spy_input import KisPaperDailySpyInput
 from thericher_v2.execution import kis_paper_daily_spy_session as session_module
 from thericher_v2.research.decision_receipt import (
     DecisionReceiptReferences,
     ResearchDecisionReceipt,
     receipt_from_target_exposure_proposal,
 )
+from thericher_v2.research.kis_paper_daily_spy_baseline import evaluate_kis_paper_daily_spy_baseline
 
 NOW = datetime(2026, 9, 22, 14, 50, tzinfo=UTC)
 BUDGET_MODULE = "thericher_v2.execution.kis_paper_budget_strategy"
@@ -238,15 +240,23 @@ def test_budget_branch_precedes_input_and_forwards_only_runner_contract(
     assert clock_calls == ([NOW] if use_clock else [])
 
 
-def test_budget_runner_loads_receipt_after_recovery_using_its_own_datetime(
+def test_budget_runner_samples_decision_clock_after_recovery_and_input(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     events = []
     paths = _paths(tmp_path)
     as_of = NOW + timedelta(minutes=1)
+    decision_at = as_of + timedelta(seconds=1)
+    moments = iter((NOW, decision_at))
     input = object()
-    receipt = _receipt(as_of)
+    receipt = _receipt(decision_at)
     outcome = StubBudgetOutcome()
+
+    def clock():
+        current = next(moments)
+        if current == decision_at:
+            events.append("decision_clock")
+        return current
 
     def load_input(**kwargs):
         events.append("input")
@@ -264,7 +274,7 @@ def test_budget_runner_loads_receipt_after_recovery_using_its_own_datetime(
     def evaluate(received_input, **kwargs):
         events.append("evaluate")
         assert received_input is input
-        assert kwargs == {"as_of": as_of}
+        assert kwargs == {"as_of": decision_at}
         return SimpleNamespace(receipt=receipt)
 
     def run_budget(*, receipt_loader, **_kwargs):
@@ -283,10 +293,94 @@ def test_budget_runner_loads_receipt_after_recovery_using_its_own_datetime(
         execute=True,
         cancel_after_submit=False,
         budget_trial=True,
-        now=NOW,
+        clock=clock,
         **paths,
     ) is outcome
-    assert events == ["recovered", "input", "evaluate", "recorded_by_budget_runner"]
+    assert events == [
+        "recovered", "input", "decision_clock", "evaluate", "recorded_by_budget_runner"
+    ]
+
+
+@pytest.mark.parametrize(
+    "mode,decision_seconds,availability_seconds,status,reason",
+    [
+        ("clock", 1, 0, "ready", "two_close_momentum_enter"),
+        ("wall", 1, 0, "ready", "two_close_momentum_enter"),
+        ("clock", 1, 2, "future", "daily_input_not_yet_available"),
+        ("clock", 0, 0, "future", "daily_input_not_yet_available"),
+        ("now", 0, 0, "future", "daily_input_not_yet_available"),
+        ("clock", -1, 0, "future", "daily_input_not_yet_available"),
+        ("clock", 18601, 0, "stale", "daily_input_execution_window_expired"),
+    ],
+)
+def test_budget_receipt_preserves_strict_availability_and_injected_clock(
+    tmp_path, monkeypatch, mode, decision_seconds, availability_seconds, status, reason
+):
+    decision_at = NOW + timedelta(seconds=decision_seconds)
+    moments = iter((NOW, decision_at))
+    events, evaluations, inputs = [], [], []
+    outcome = StubBudgetOutcome()
+
+    def clock():
+        events.append("clock")
+        return next(moments)
+
+    def load_input(*, attested_at, **_kwargs):
+        events.append("input")
+        assert attested_at == NOW
+        bars = tuple(
+            Bar(
+                symbol="SPY", market="US", timeframe=Timeframe.D1,
+                start_ts=datetime.combine(day, datetime.min.time(), UTC),
+                open=Decimal(price), close=Decimal(price), high=Decimal(price + 1),
+                low=Decimal(price - 1), volume=Decimal(1000), complete=True,
+            )
+            for day, price in ((date(2026, 9, 18), 100), (date(2026, 9, 21), 101))
+        )
+        input = KisPaperDailySpyInput(
+            bars=bars, catalog_dataset_id="synthetic-daily-input",
+            catalog_dataset_hash="sha256:" + "a" * 64,
+            last_consumed_session=date(2026, 9, 21),
+            first_available_at=attested_at + timedelta(seconds=availability_seconds),
+            input_manifest_ref="sha256:" + "b" * 64,
+            availability_record_path=tmp_path / "unused-availability.json",
+        )
+        inputs.append(input)
+        return input
+
+    def evaluate(input, *, as_of):
+        events.append("evaluate")
+        assert as_of == decision_at
+        result = evaluate_kis_paper_daily_spy_baseline(input, as_of=as_of)
+        evaluations.append(result)
+        return result
+
+    def run_budget(*, receipt_loader, **_kwargs):
+        events.append("recovery")
+        receipt = receipt_loader(NOW)
+        assert receipt.input_status == status
+        assert receipt.decision_class == ("enter" if status == "ready" else "abstain")
+        return outcome
+
+    timing = {"clock": clock} if mode == "clock" else {"now": NOW} if mode == "now" else {}
+    if mode == "wall":
+        def wall_now(zone):
+            assert zone is UTC
+            return clock()
+
+        monkeypatch.setattr(session_module, "datetime", SimpleNamespace(now=wall_now))
+    monkeypatch.setattr(session_module, "_load_preferred_daily_spy_input", load_input)
+    monkeypatch.setattr(session_module, "evaluate_kis_paper_daily_spy_baseline", evaluate)
+    _install_budget_runner(monkeypatch, run_budget)
+    assert session_module.run_kis_paper_daily_spy_session(
+        environment=NoCredentialEnvironment(), execute=True, cancel_after_submit=False,
+        budget_trial=True, **timing, **_paths(tmp_path),
+    ) is outcome
+    expected = ["recovery", "input", "evaluate"]
+    assert events == (expected if mode == "now" else ["clock", *expected[:2], "clock", "evaluate"])
+    assert evaluations[0].proposal.reason == reason
+    assert inputs[0].first_available_at == NOW + timedelta(seconds=availability_seconds)
+    assert not list(tmp_path.iterdir())
 
 
 @pytest.mark.parametrize("error_type", [OSError, ValueError])
@@ -489,6 +583,7 @@ def test_cli_forwards_opt_in_and_prints_only_safe_outcome(
     assert captured["budget_trial"] is budget_trial
     assert captured["execute"] is True
     assert captured["cancel_after_submit"] is False
+    assert "now" not in captured and "clock" not in captured
     assert captured["client"] is (budget_cli.client if budget_trial else None)
     assert budget_cli.initialization == (["config", "transport", "client"] if budget_trial else [])
     assert budget_cli.environment.reads == (["THERICHER_MODE"] if budget_trial else [])

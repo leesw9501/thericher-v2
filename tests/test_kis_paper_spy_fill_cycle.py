@@ -4,7 +4,7 @@ import json
 from contextlib import contextmanager
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 
 import pytest
 
@@ -303,6 +303,8 @@ def test_two_leg_success_reuses_ledger_and_public_output_has_no_values(setup):
     assert second.exit_gross_cashflow == Decimal("600.11")
     assert not cycle.conflicts_with_active_spy_fill_cycle(paths["state_root"], "other", "SPY")
     public = json.dumps(second.safe_payload())
+    assert "failure_stage" not in second.safe_payload()
+    assert "failure_category" not in second.safe_payload()
     for private in ("600.13", "600.11", "synthetic-cycle", "SYNTHETIC", *ENV.values()):
         assert private not in public
     for key in ("fees", "settled_cash", "net_pnl"):
@@ -798,3 +800,144 @@ def test_expired_unsubmitted_exit_retains_ownership_without_automatic_reprice(se
     )
     assert (paths["state_root"] / ".spy_fill_active.json").exists()
     assert client.submits == ["buy"] and store.path.read_bytes() == before
+
+
+@pytest.mark.parametrize(
+    "target,error_type,stage,category",
+    [
+        ("configuration", ValueError, "configuration", "validation_error"),
+        ("paths", OSError, "path_validation", "io_error"),
+        ("private_json", OSError, "private_state_read", "io_error"),
+        ("private_leg", KisPaperCanaryError, "private_state_read", "canary_error"),
+        ("emergency", OSError, "emergency_read", "io_error"),
+        ("snapshot", cycle.KisPaperReadOnlyError, "account_snapshot", "readonly_error"),
+        ("book", TypeError, "account_validation", "validation_error"),
+        ("control", ValueError, "control_read", "validation_error"),
+        ("quote", cycle.KisPaperQuoteError, "quote_fetch", "quote_error"),
+        ("price", InvalidOperation, "quote_validation", "decimal_error"),
+        ("binding", OSError, "initial_binding_write", "io_error"),
+    ],
+)
+def test_pre_intent_failure_adds_only_closed_diagnostics(
+    setup, monkeypatch, target, error_type, stage, category
+):
+    paths, client, visit = setup
+    owner, attribute = {
+        "configuration": (cycle, "load_kis_paper_config_from_environment"),
+        "paths": (cycle, "_validate_paths"),
+        "private_json": (cycle, "_read_json"),
+        "private_leg": (KisPaperCanaryStateStore, "read"),
+        "emergency": (EmergencyStore, "read"),
+        "snapshot": (client, "snapshot"),
+        "book": (cycle, "_spy_book"),
+        "control": (PaperExecutionControlStore, "read"),
+        "quote": (client, "fetch_spy_limit_input"),
+        "price": (cycle, "derive_kis_paper_marketable_limit"),
+        "binding": (cycle, "_atomic_json"),
+    }[target]
+    failures = []
+
+    class PrivateError(error_type):
+        def __str__(self):
+            raise AssertionError("exception text must not be inspected")
+
+    def fail(*args, **kwargs):
+        failures.append(target)
+        raise PrivateError("synthetic-private-provider-body")
+
+    monkeypatch.setattr(owner, attribute, fail)
+    outcome = visit()
+    assert failures == [target]
+    assert (outcome.status, outcome.reason_code) == ("recovery_required", "evidence_unavailable")
+    payload = outcome.safe_payload()
+    assert payload["failure_stage"] == stage
+    assert payload["failure_category"] == category
+    legacy = replace(outcome, failure_stage=None, failure_category=None).safe_payload()
+    assert payload == legacy | {"failure_stage": stage, "failure_category": category}
+    encoded = json.dumps(payload)
+    for private in ("synthetic-private-provider-body", "synthetic-cycle", *ENV.values()):
+        assert private not in encoded
+    assert client.submits == [] and client.cancels == []
+    binding = cycle._binding("synthetic-cycle", KisPaperConfig(*ENV.values()))
+    for side in ("buy", "sell"):
+        assert not (paths["state_root"] / (binding[side + "_run_id"] + ".json")).exists()
+    assert not (paths["state_root"] / ".spy_fill_active.json").exists()
+    assert not (paths["state_root"] / ".spy_fill_cycles").exists()
+
+
+@pytest.mark.parametrize("existing_leg", [False, True])
+def test_post_intent_or_recovery_failure_has_no_stale_pre_intent_stage(
+    setup, monkeypatch, existing_leg
+):
+    paths, client, visit = setup
+    if existing_leg:
+        assert visit().status == "pending"
+
+    def fail(*args, **kwargs):
+        raise OSError("synthetic-private-path")
+
+    monkeypatch.setattr(cycle, "_run_kis_paper_canary", fail)
+    outcome = visit()
+    assert (outcome.status, outcome.reason_code) == ("recovery_required", "evidence_unavailable")
+    assert "failure_stage" not in outcome.safe_payload()
+    assert "failure_category" not in outcome.safe_payload()
+    assert _state(paths, "buy").read() is not None
+    assert client.submits == (["buy"] if existing_leg else [])
+    assert client.cancels == []
+
+
+def test_initial_ownership_write_failure_preserves_binding_and_same_cycle_recovery(
+    setup, monkeypatch
+):
+    paths, client, visit = setup
+    write = cycle._atomic_json
+    calls = []
+
+    def fail_owner_write(path, payload):
+        calls.append(path)
+        if len(calls) == 2:
+            raise OSError("synthetic-private-path")
+        write(path, payload)
+
+    monkeypatch.setattr(cycle, "_atomic_json", fail_owner_write)
+    outcome = visit()
+    assert (outcome.status, outcome.reason_code) == ("recovery_required", "evidence_unavailable")
+    assert outcome.safe_payload()["failure_stage"] == "initial_binding_write"
+    assert outcome.safe_payload()["failure_category"] == "io_error"
+    assert calls[0].is_file()
+    binding = json.loads(calls[0].read_text())
+    assert binding["buy_intent_ref"] is None and binding["sell_intent_ref"] is None
+    assert not (paths["state_root"] / ".spy_fill_active.json").exists()
+    assert _state(paths, "buy").read() is None
+    assert client.submits == [] and client.cancels == []
+    monkeypatch.setattr(cycle, "_atomic_json", write)
+    recovered = visit()
+    assert recovered.status == "pending" and client.submits == ["buy"]
+    assert "failure_stage" not in recovered.safe_payload()
+
+
+def test_named_recovery_reason_remains_unchanged_without_generic_diagnostics(setup):
+    _, client, visit = setup
+    client.position_override = 1
+    outcome = visit()
+    assert (outcome.status, outcome.reason_code) == ("recovery_required", "position_contradiction")
+    assert "failure_stage" not in outcome.safe_payload()
+    assert "failure_category" not in outcome.safe_payload()
+    assert client.submits == []
+
+
+@pytest.mark.parametrize(
+    "stage,category",
+    [
+        ("private-text", cycle._FailureCategory.IO),
+        (cycle._FailureStage.PRIVATE_STATE_READ, "private-text"),
+        (cycle._FailureStage.PRIVATE_STATE_READ, None),
+        (None, cycle._FailureCategory.IO),
+    ],
+)
+def test_diagnostic_fields_reject_non_enum_or_unpaired_values(stage, category):
+    with pytest.raises(ValueError, match="paired closed enums"):
+        cycle.KisPaperSpyFillCycleOutcome(
+            "recovery_required", "evidence_unavailable", NOW,
+            failure_stage=stage, failure_category=category,
+        )

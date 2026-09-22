@@ -716,6 +716,87 @@ def test_terminal_field_probe_requires_completed_pagination_before_field_support
     assert history_requests[1].query["CTX_AREA_NK200"] == "next-nk"
 
 
+def _history_client_with_rows(rows):
+    class HistoryTransport:
+        def request(self, request):
+            assert request.method == "GET"
+            assert request.headers["tr_id"] == KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT.tr_id
+            assert request.query["ODNO"] == ""
+            return KisHttpResponse.from_payload({"rt_cd": "0", "output": rows})
+
+    return KisPaperReadOnlyClient(
+        config=_config(), transport=HistoryTransport(), access_token="synthetic-token"
+    )
+
+
+@pytest.mark.parametrize(
+    "raw_id,candidate,matched",
+    [
+        ("000123", "123", True),
+        ("123", "000123", True),
+        ("1", "0" * 63 + "1", True),
+        ("AB-001_X", "AB-001_X", True),
+        ("AB001", "AB1", False),
+        ("001AB", "1AB", False),
+        ("ab1", "AB1", False),
+        ("-001", "-1", False),
+        ("001_", "1_", False),
+        ("0", "000", False),
+        ("000", "0", False),
+        ("0", "0", True),
+        ("123", "124", False),
+    ],
+)
+def test_history_only_padding_comparison_applies_to_direct_and_lineage(raw_id, candidate, matched):
+    rows = [{"odno": candidate, "orgn_odno": candidate}]
+    history = _history_client_with_rows(rows)._read_same_day_order_history(raw_id, order_at=NOW)
+    assert history.row_count == 1
+    assert bool(history.direct_matches) is matched
+    assert bool(history.lineage_matches) is matched
+    assert rows == [{"odno": candidate, "orgn_odno": candidate}]
+
+
+@pytest.mark.parametrize("field", ["odno", "orgn_odno"])
+@pytest.mark.parametrize(
+    "candidate",
+    [
+        None, 123, "", "+123", "123.0", " 123", "123 ",
+        "\uff11\uff12\uff13", "\u0661\u0662\u0663", "0" * 64 + "123",
+    ],
+)
+def test_invalid_history_alias_is_never_equivalent(field, candidate):
+    row = {"odno": "OTHER-123", "orgn_odno": ""}
+    row[field] = candidate
+    client = _history_client_with_rows([row])
+    if field == "odno":
+        with pytest.raises(KisPaperReadOnlyError, match="ccnl_response_incomplete"):
+            client._read_same_day_order_history("123", order_at=NOW)
+    else:
+        history = client._read_same_day_order_history("123", order_at=NOW)
+        assert not history.direct_matches and not history.lineage_matches
+
+
+@pytest.mark.parametrize("raw_id", [None, 123, "", " 123", "\uff11\uff12\uff13", "0" * 64 + "123"])
+def test_invalid_requested_history_id_still_rejected(raw_id):
+    with pytest.raises(KisPaperReadOnlyError, match="order_id_invalid"):
+        _history_client_with_rows([])._read_same_day_order_history(raw_id, order_at=NOW)
+
+
+@pytest.mark.parametrize("raw_id,alias", [("000123", "123"), ("123", "000123")])
+def test_numeric_lineage_padding_retains_structural_only_observation(raw_id, alias):
+    row = {"odno": "OTHER-123", "orgn_odno": alias}
+    observation = _history_client_with_rows([row]).inspect_order_history_terminal_fields(
+        raw_id, order_at=NOW
+    )
+    assert observation.identity_match == "original_order_lineage"
+    assert observation.terminal_state_support == "unqualified"
+    assert observation.pnl_status == "not_observed"
+    ambiguous = _history_client_with_rows([
+        row, {"odno": "OTHER-456", "orgn_odno": raw_id}
+    ]).inspect_order_history_terminal_fields(raw_id, order_at=NOW)
+    assert ambiguous.identity_match == "ambiguous"
+
+
 def test_terminal_field_probe_rejects_ambiguous_order_lineage_without_terminal_inference() -> None:
     @dataclass
     class AmbiguousTerminalFieldTransport:

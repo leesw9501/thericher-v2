@@ -14,6 +14,7 @@ from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import Decimal, DecimalException
+from enum import StrEnum
 from pathlib import Path
 
 from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN
@@ -60,6 +61,28 @@ from .kis_readonly import (
 )
 
 
+class _FailureStage(StrEnum):
+    CONFIGURATION = "configuration"
+    PATH_VALIDATION = "path_validation"
+    PRIVATE_STATE_READ = "private_state_read"
+    EMERGENCY_READ = "emergency_read"
+    ACCOUNT_SNAPSHOT = "account_snapshot"
+    ACCOUNT_VALIDATION = "account_validation"
+    CONTROL_READ = "control_read"
+    QUOTE_FETCH = "quote_fetch"
+    QUOTE_VALIDATION = "quote_validation"
+    INITIAL_BINDING_WRITE = "initial_binding_write"
+
+
+class _FailureCategory(StrEnum):
+    CANARY = "canary_error"
+    READONLY = "readonly_error"
+    QUOTE = "quote_error"
+    IO = "io_error"
+    DECIMAL = "decimal_error"
+    VALIDATION = "validation_error"
+
+
 @dataclass(frozen=True, repr=False)
 class KisPaperSpyFillCycleOutcome:
     status: str
@@ -67,9 +90,19 @@ class KisPaperSpyFillCycleOutcome:
     observed_at: datetime
     entry_gross_cashflow: Decimal | None = None
     exit_gross_cashflow: Decimal | None = None
+    failure_stage: _FailureStage | None = None
+    failure_category: _FailureCategory | None = None
+
+    def __post_init__(self) -> None:
+        if self.failure_stage is None and self.failure_category is None:
+            return
+        if not isinstance(self.failure_stage, _FailureStage) or not isinstance(
+            self.failure_category, _FailureCategory
+        ):
+            raise ValueError("failure diagnostics must be paired closed enums")
 
     def safe_payload(self) -> dict[str, object]:
-        return {
+        payload = {
             "status": self.status,
             "reason_code": self.reason_code,
             "observed_at": self.observed_at.isoformat(),
@@ -81,6 +114,10 @@ class KisPaperSpyFillCycleOutcome:
             "settled_cash": "not_observed",
             "net_pnl": "not_observed",
         }
+        if self.failure_stage is not None:
+            payload["failure_stage"] = self.failure_stage.value
+            payload["failure_category"] = self.failure_category.value
+        return payload
 
 
 class _RecoveryRequired(RuntimeError):
@@ -121,6 +158,7 @@ def run_kis_paper_spy_fill_cycle(
         return KisPaperSpyFillCycleOutcome("preview", "preview", observed_at)
     if not is_us_equity_regular_session_window(observed_at):
         return KisPaperSpyFillCycleOutcome("not_due", "outside_regular_session", observed_at)
+    failure_stage: _FailureStage | None = _FailureStage.CONFIGURATION
     try:
         mode = environment.get("THERICHER_MODE", "off")
         if isinstance(mode, str) and mode.strip().lower() == "kis_live":
@@ -141,6 +179,7 @@ def run_kis_paper_spy_fill_cycle(
         client = client or KisPaperCanaryClient(
             config=config, transport=transport or UrllibKisPaperCanaryTransport()
         )
+        failure_stage = _FailureStage.PATH_VALIDATION
         root = state_root.resolve()
         _validate_paths(
             root,
@@ -209,6 +248,7 @@ def run_kis_paper_spy_fill_cycle(
             return outcome.reconciliation
 
         # Lock order and roots are exactly those used by the existing session/canary.
+        failure_stage = _FailureStage.PRIVATE_STATE_READ
         with exclusive_kis_paper_canary_state_lock(root / ".session_execution"):
             with exclusive_kis_paper_canary_state_lock(root / ".canary_execution"):
                 active = _read_json(active_path)
@@ -242,6 +282,9 @@ def run_kis_paper_spy_fill_cycle(
                 if other_active and not all(_filled(state) for state in states.values()):
                     raise _RecoveryRequired("another_cycle_unresolved")
 
+                # Diagnostics must not label existing-leg recovery as a pre-intent failure.
+                pre_intent = all(state is None for state in states.values())
+                failure_stage = None
                 reconciliations = {}
                 for side, state in states.items():
                     if state is not None:
@@ -250,7 +293,9 @@ def run_kis_paper_spy_fill_cycle(
                         else:
                             reconciliations[side] = run_leg(side)
                 # Known-order containment precedes fill/position contradiction checks.
+                failure_stage = _FailureStage.EMERGENCY_READ if pre_intent else None
                 emergency = EmergencyStore(emergency_state_path).read()
+                failure_stage = None
                 for side, rec in reconciliations.items():
                     state = states[side]
                     order_at = state.submission_started_at or state.submitted_at
@@ -283,8 +328,11 @@ def run_kis_paper_spy_fill_cycle(
                         # A cancellation/fill race is resolved on the next visit, never guessed.
                         return result("pending", "cancellation_reconciled")
 
+                failure_stage = _FailureStage.ACCOUNT_SNAPSHOT if pre_intent else None
                 snapshot = client.snapshot()
+                failure_stage = _FailureStage.ACCOUNT_VALIDATION if pre_intent else None
                 position, open_orders = _spy_book(snapshot, at(), config)
+                failure_stage = None
                 entry, exit_state = states["buy"], states["sell"]
                 if (
                     exit_state is None
@@ -334,12 +382,16 @@ def run_kis_paper_spy_fill_cycle(
                     return result("no_intent", "emergency_stop_new_orders")
                 if current is not None and at() >= current.intent.valid_until:
                     raise _RecoveryRequired("exit_not_submitted_expired")
+                failure_stage = _FailureStage.CONTROL_READ if pre_intent else None
                 control = PaperExecutionControlStore(execution_control_path).read()
                 if control.pause_buys if side == "buy" else control.pause_sells:
                     return result("no_intent", f"pause_{side}s_active")
 
+                failure_stage = _FailureStage.QUOTE_FETCH if pre_intent else None
                 quote = client.fetch_spy_limit_input(observed_at=at())
+                failure_stage = _FailureStage.QUOTE_VALIDATION if pre_intent else None
                 price = derive_kis_paper_marketable_limit(quote, side=side, observed_at=at())
+                failure_stage = _FailureStage.INITIAL_BINDING_WRITE if pre_intent else None
                 if saved is None:
                     _atomic_json(binding_path, binding)
                 if active is None:
@@ -347,6 +399,7 @@ def run_kis_paper_spy_fill_cycle(
                         active_path,
                         {"cycle_ref": _digest(cycle_id), "account_ref": binding["account_ref"]},
                     )
+                failure_stage = None
                 if current is None:
                     decision_type = (
                         KisPaperCanaryBuyDecision if side == "buy" else KisPaperCanarySellDecision
@@ -422,8 +475,25 @@ def run_kis_paper_spy_fill_cycle(
         ValueError,
         TypeError,
         DecimalException,
+    ) as error:
+        return KisPaperSpyFillCycleOutcome(
+            "recovery_required", "evidence_unavailable", at(),
+            failure_stage=failure_stage,
+            failure_category=None if failure_stage is None else _failure_category(error),
+        )
+
+
+def _failure_category(error: Exception) -> _FailureCategory:
+    for error_type, category in (
+        (KisPaperCanaryError, _FailureCategory.CANARY),
+        (KisPaperReadOnlyError, _FailureCategory.READONLY),
+        (KisPaperQuoteError, _FailureCategory.QUOTE),
+        (OSError, _FailureCategory.IO),
+        (DecimalException, _FailureCategory.DECIMAL),
     ):
-        return KisPaperSpyFillCycleOutcome("recovery_required", "evidence_unavailable", at())
+        if isinstance(error, error_type):
+            return category
+    return _FailureCategory.VALIDATION
 
 
 def _digest(value) -> str:

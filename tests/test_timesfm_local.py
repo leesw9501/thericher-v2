@@ -415,10 +415,14 @@ def test_not_a_local_directory(local_model, no_backend_import, kind):
 
 
 def test_hardlinked_weights_rejected(local_model, no_backend_import, tmp_path):
-    os.link(local_model[0] / "model.safetensors", tmp_path / "linked.safetensors")
-    with pytest.raises(ValueError, match="links"):
-        adapter.forecast_timesfm_2p5(*local_model, [[1]], 1, "cpu")
-    assert no_backend_import == []
+    linked = tmp_path / "linked.safetensors"
+    os.link(local_model[0] / "model.safetensors", linked)
+    try:
+        with pytest.raises(ValueError, match="links"):
+            adapter.forecast_timesfm_2p5(*local_model, [[1]], 1, "cpu")
+        assert no_backend_import == []
+    finally:
+        linked.unlink()
 
 
 @pytest.mark.parametrize("location", ["ancestor", "directory", "weights", "config"])

@@ -21,15 +21,57 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+2026-09-23 continuation: the model-family comparison completed 4 LightGBM,
+8 dilated-TCN and 8 compact-Transformer models in networkless Docker. CPU: 96
+cells/89.446s; CUDA: 48 cells/499.058s. All 84 matched parent controls reproduce.
+All 20 new models remain on D: and reload with identical decisions. No family
+is positive in both folds at 3/5bps; no winner or Paper replacement. Research
+records exact hashes and limits. GPU appointment/container/lock are closed.
+
+Actual Paper observations exposed two integration faults. The23:50 budget
+session used one timestamp for first availability attestation and evaluation;
+strict equality correctly produced no_intent/daily_receipt_not_eligible. The
+loader now samples the decision clock after loading, like the non-budget path.
+No data acquisition or relaxed timing predicate is needed. The22:35 one-share
+cycle instead failed before intent with an opaque evidence_unavailable result;
+its historical cause remains unknown. Additive closed-stage diagnostics now
+identify a repeat failure without private error text.
+
+The same spy-fill-20260922-v1 cycle was resumed and its buy acknowledged. After
+20 visits it remained pending because exact-string history matching missed
+leading-zero differences. A serialized read-only one-page probe independently
+found one numeric-equivalent row with all other order identity fields matching;
+no raw identifiers or rows were retained. The narrow history-only comparison
+now permits positive ASCII-numeric padding aliases, leaves raw IDs and cancel
+arguments untouched, and retains ambiguity/full fill validation. Claude and
+independent code review support this bounded compatibility change with limits.
+All seven private-state images are rebuilt; 21 changed-source checks match.
+The corrected same-cycle resume at 2026-09-22T15:32:38.784561Z still returned
+recovery_required/evidence_unavailable and exited after one visit. A separate
+single read-only snapshot attempt at 2026-09-23 00:36:48 KST was auth_rejected
+before account parsing; this does not establish the cause of earlier failures.
+There is no active cycle worker. Preserve its acknowledged buy and ownership;
+the next Execution package recovers this SAME cycle, never another entry or
+an inferred fill. Confirmed fills, exit, position closure and net PnL remain
+unobserved. The company objective remains open, without blocking research.
+
+Final verification: 718 non-overlapping changed-path serial tests passed;
+eight-worker authority passed 4,405 / 19 skips in 339.16s with helper exit zero
+and managed cleanup. Ruff, default/research Compose with `.env.example`, and
+diff checks pass. The earlier same-count run failed cleanup because a
+TimesFM fixture retained its own hardlink. Its teardown now removes that link;
+the helper safeguards were not relaxed. Old failed scratch
+`C:\trpy\runs\r-7784b455` remains inactive and was not manually deleted.
+
+Earlier package facts below retain their original scope and chronology.
+
 Public-model direction: personal use alone does not waive TimesFM 3.0's
 noncommercial/nonproduction/output restrictions. Select official Apache-2.0
 TimesFM 2.5 instead, preserving the current Torch/CUDA and Paper runtimes.
 Its local-only safetensors adapter and synthetic Docker check are separate
 from predictive benchmarking. Exact asset/runtime/result facts are in Research
-and RUNBOOK. No TimesFM model supplies a Paper signal. Next predictive breadth
-is LightGBM plus existing TCN/compact attention under matched development
-conditions, rather than more LSTM configurations. The company lifecycle goal
-and tonight's owned Paper opportunities are unchanged.
+and RUNBOOK. No TimesFM model supplies a Paper signal. The predictive breadth
+recommended here is now completed above. The company lifecycle goal is unchanged.
 Final TimesFM synthetic smoke completed CPU8.882s/CUDA6.730s with no market
 inputs or retained predictions; both containers exited and GPU lock released.
 108 focused tests pass, including independent identity-regression cases. This

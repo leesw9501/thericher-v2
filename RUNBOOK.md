@@ -14,6 +14,13 @@ mode must fail before paper credentials are used.
 
 ### Ten-Percent Strategy Trial
 
+2026-09-23 correction: the budget receipt loader now samples the real decision
+clock after input loading/availability attestation. The old equality caused
+the23:50 first-use receipt to abstain despite September21 coverage. Do not add
+an epsilon or weaken future/stale predicates; a fixed equal clock still abstains.
+The normal CLI supplies neither `now` nor a fixed clock. The new daily image
+contains this correction; deployment does not itself prove a strategy trade.
+
 The existing daily SPY session has an explicit `--budget-trial` mode. It uses
 the existing daily baseline's enter/exit direction, not its old fixed-share
 size or an assertion of predictive skill. It freezes 10 percent of the lesser
@@ -66,6 +73,64 @@ directory beneath the repository. Required verification: 439 focused passed /
 helper exit; Ruff and both sample-env Compose configurations passed.
 
 ## Long Codex Task
+
+### Existing SPY Cycle Recovery
+
+Resume only `spy-fill-20260922-v1` while its owned buy is unresolved. Its actual
+artifact directory is `execution/kis-paper-spy-fill-cycle/e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866`
+under the external root. The scoped launcher is
+`scripts/run_kis_paper_spy_fill_cycle.py --cycle-id spy-fill-20260922-v1 --visits 20 --execute`.
+Check the exact worker/ownership first; do not concurrently invoke it or run a
+competing SPY entry. Old task exits and previews are not actual fill evidence.
+
+The15:18Z read-only history probe found a numeric-padding mismatch between the
+raw acknowledgement ID and one otherwise fully bound history row. The repair
+only widens history candidate matching for positive ASCII decimal leading zeros.
+Stored identifiers and cancellation calls stay unchanged; no state migration.
+Keep duplicate rows ambiguous and all date/instrument/side/quantity/amount
+checks. This empirical Paper compatibility fact is not an official universal
+normalization guarantee. Safe probe metadata is retained beside the worker
+receipt as `history-capability-20260923.json`; no raw ID or market row is there.
+The generic pre-intent error now includes paired closed-enum stage/category
+fields. No exception text, broker payload or secret can be put in these fields.
+
+Latest same-cycle result, 2026-09-22T15:32:38.784561Z, is
+recovery_required/evidence_unavailable after one visit on the corrected image.
+A separate single read-only attempt at 2026-09-23 00:36:48 KST returned
+auth_rejected before account parsing. Neither supplies a fill or proves the
+cause of earlier generic errors. No cycle worker remains; preserve the existing
+acknowledged entry, binding and original order date. Recover that scope with
+the existing serialized Paper loader/client; do not reset ownership, issue a
+replacement buy, or start repeated authentication attempts without inspecting
+the owned retry facts. No new standing cooldown or approval gate is introduced.
+Independent offline research remains ready while provider recovery is pending.
+
+### Fixed Model-Family Comparison
+
+`scripts/run_firstrate_family_comparison.py` owns the finite
+`model-family-h30-c36-v1` study under the existing FirstRate H30 family.
+It fixes context36/H30, costs1/3/5bps, four LightGBM fits and sixteen
+TCN/Transformer fits; parent LSTMs are reloaded rather than retrained.
+The contract and CPU summary pins are in Engine Research. Source and original
+data are read-only; generated models/configs stay beneath
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\model-family-h30-c36-v1`.
+Successful phases retain `cpu-models` or `cuda-models`; existing summaries and
+started markers are not overwritten. This is not a recurring training worker.
+
+Use the pinned research image recorded in the contract, network disabled,
+2CPU/6GB RAM, source/scripts read-only, D: market data mounted read-only at
+`/app/market_data`, and external artifacts at `/app/model_artifacts`.
+The official LightGBM4.6.0 wheel is under external `public-runtime/lightgbm-4.6.0`;
+verify its contract hash, then install with `--no-index --no-deps --target`
+into `/tmp/family-runtime`. Mount `/tmp` as `rw,exec,size=512m`: the native
+library cannot load from a noexec tmpfs. Torch loads before LightGBM to provide
+OpenMP. Put the temporary runtime and `/app/src` on `PYTHONPATH` for spawned
+children. No credentials, broker client, network or Paper service is supplied.
+CPU uses `--phase cpu --contract-sha256`; CUDA additionally uses
+`--cpu-summary-sha256` and the canonical GPU lock. Worker limits are600/900s;
+outer container limits660/960s. CPU completion requires84 exact parent controls;
+model restoration must reproduce predictions and every threshold decision.
+All retained forecasts remain DEVELOPMENT-only aggregate cost cells, not NAV.
 
 ### TimesFM 2.5 Offline Research Runtime
 

@@ -40,6 +40,17 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
+2026-09-23 Execution input diagnosis: the23:50 budget abstention was a clock
+reuse bug, not missing coverage or a qualification gate. Exact first-availability
+metadata is `_control/kis-paper-daily-spy-input-availability-v1/2c02149b2ed1969dd528803c2fdef40518706390945809316244f6b83c03c7f0.json`
+beneath the external artifact root: September21 coverage,99 head rows,
+collection13:15:01.660835Z, first attestation14:50:02.431828Z on September22.
+Budget evaluation reused that attestation time, triggering strict equality
+rejection. Execution now samples its actual decision clock after loading.
+Existing metadata and strict future/stale checks remain unchanged. No new
+market download or source qualification was needed; final Paper evidence is
+Execution-owned. The independent Data sidecar identified and tested this fix.
+
 2026-09-22 research support: the new regular-session development CPU phase
 reattested the existing FirstRate SPY/QQQ canonical CSVs through their hash-
 and timestamp-bound loader. No new data, provider blend or source qualification.

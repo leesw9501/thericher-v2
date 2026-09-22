@@ -69,7 +69,7 @@ def _row(**updates):
     }
 
 
-def _observe(rows, *, pages=None):
+def _observe(rows, *, pages=None, order_id=ORDER):
     requests = []
 
     class Transport:
@@ -88,7 +88,7 @@ def _observe(rows, *, pages=None):
         transport=Transport(),
     )
     result = client.observe_order_execution(
-        ORDER,
+        order_id,
         order_at=NOW,
         observed_at=NOW + timedelta(days=1),
         symbol="SPY",
@@ -339,6 +339,43 @@ def test_exact_history_bound_to_original_date_and_amount():
 
 
 @pytest.mark.parametrize(
+    "raw_id,row_id", [("000123", "123"), ("123", "000123"), ("0" * 63 + "1", "1")]
+)
+def test_numeric_history_padding_keeps_original_fill_identity_and_row(raw_id, row_id):
+    row = _row(odno=row_id)
+    original = dict(row)
+    result = _observe([row], order_id=raw_id)
+    assert result.status == "available" and result.same_day_order_id_seen
+    assert result.fill.identity_ref == _fill(order=raw_id).identity_ref
+    assert result.fill.identity_ref != _fill(order=row_id).identity_ref
+    assert result.fill.quantity == 1 and result.fill.gross_amount == 500
+    assert row == original
+
+
+@pytest.mark.parametrize("across_pages", [False, True])
+def test_numeric_history_alias_duplicates_remain_ambiguous(across_pages):
+    rows = [_row(odno="123"), _row(odno="000123")]
+    pages = None
+    if across_pages:
+        pages = [
+            KisHttpResponse.from_payload(
+                {"rt_cd": "0", "output": rows[:1], "ctx_area_fk200": "f", "ctx_area_nk200": "n"},
+                headers={"tr_cont": "M"},
+            ),
+            KisHttpResponse.from_payload({"rt_cd": "0", "output": rows[1:]}),
+        ]
+    result = _observe(rows, pages=pages, order_id="00123")
+    assert result.status == "ambiguous" and result.fill is None
+    assert result.row_count == 2
+
+
+def test_numeric_lineage_alias_is_not_a_direct_fill():
+    result = _observe([_row(odno="OTHER-123", orgn_odno="000123")], order_id="123")
+    assert result.status == "absent" and result.fill is None
+
+
+@pytest.mark.parametrize("order_id,row_id", [(ORDER, ORDER), ("000123", "123")])
+@pytest.mark.parametrize(
     "updates",
     [
         {"ord_dt": "20260922"},
@@ -348,12 +385,13 @@ def test_exact_history_bound_to_original_date_and_amount():
         {"tr_crcy_cd": "KRW"},
     ],
 )
-def test_identity_conflicts_are_not_fills(updates):
-    result = _observe([_row(**updates)])
+def test_identity_conflicts_are_not_fills(updates, order_id, row_id):
+    result = _observe([_row(odno=row_id, **updates)], order_id=order_id)
     assert result.status == "identity_mismatch"
     assert result.same_day_order_id_seen and result.fill is None
 
 
+@pytest.mark.parametrize("order_id,row_id", [(ORDER, ORDER), ("123", "000123")])
 @pytest.mark.parametrize(
     "updates",
     [
@@ -374,8 +412,8 @@ def test_identity_conflicts_are_not_fills(updates):
         {"ft_ccld_amt3": ""},
     ],
 )
-def test_invalid_or_wrong_unit_amount_is_not_accounted(updates):
-    result = _observe([_row(**updates)])
+def test_invalid_or_wrong_unit_amount_is_not_accounted(updates, order_id, row_id):
+    result = _observe([_row(odno=row_id, **updates)], order_id=order_id)
     assert result.status == "fields_invalid"
     assert result.fill is None
 

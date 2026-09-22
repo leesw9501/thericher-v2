@@ -291,7 +291,8 @@ def run_kis_paper_daily_spy_session(
                 repository_root=repository_root,
                 attested_at=as_of,
             )
-            return evaluate_kis_paper_daily_spy_baseline(input, as_of=as_of).receipt
+            decision_at = _session_now(now=now, clock=clock)
+            return evaluate_kis_paper_daily_spy_baseline(input, as_of=decision_at).receipt
 
         return run_kis_paper_budget_strategy(
             environment=environment,

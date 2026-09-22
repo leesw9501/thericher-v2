@@ -9843,3 +9843,82 @@ same payoff/cost contract, not describe more LSTM configurations as model-family
 diversity. Public-model forecast benchmarking needs its own applicable source
 and temporal-scope interpretation; it does not hold those locally trained
 comparators or the scheduled KIS Paper baseline.
+
+## 2026-09-22 - Compare model families with matched development controls
+
+The next predictive breadth package fixes H30/context36 and reuses the prior
+full regular-session cohorts, TRAIN-only normalization, purge and local-paper
+cost semantics. Four LightGBM models and sixteen TCN/compact-Transformer models
+are new; eight existing LSTMs are reloaded. This compares architectures without
+silently reopening the closed LSTM window/horizon matrix. It remains seen-data
+development, not independent validation, a selected winner or a Paper input.
+
+LightGBM4.6.0 uses the official MIT license:
+https://github.com/lightgbm-org/LightGBM/blob/v4.6.0/LICENSE
+Parameter semantics: https://lightgbm.readthedocs.io/en/v4.6.0/Parameters.html
+Its pinned wheel stays external and is installed offline without dependencies
+into an ephemeral research container. Torch must load first for its bundled
+OpenMP; native wheel loading needs an executable tmpfs. Neither fact requires
+replacing the runtime or changing Paper dependencies.
+
+Claude's falsification-first verdict was `supported-with-limits`: keep seen-data
+and clock/action limitations, chronological exit-based purge, deterministic
+single-thread CPU work, no evaluation-driven tuning, and whole-phase failure on
+preemption. The five-layer dilated TCN is explicitly a new arm; the old single
+kernel3 layer would not consume the full36-bar context. Compute is fixed epochs,
+not equal parameters/FLOPs. We reject the suggestion that offline inference
+requires baking the wheel into the base image: a hashed read-only mounted wheel
+and offline temporary installation were actually tested. Before dispatch,
+independent reviews led to normalizer/cohort checks, exact fold identities and
+returned CUDA-to-CPU summary binding. No new gate, scheduler or authority role.
+
+## 2026-09-23 - Repair actual Paper clock and history representation mismatches
+
+The first budget decision reused its first-attestation time; strict availability
+correctly rejected equality. Re-sample the actual decision clock after loading,
+as the non-budget path already does. Fixed or future clocks still abstain; no
+epsilon, backdating or relaxed predicate. The actual CLI leaves injected clocks
+unset and no load occurs between the new sample and evaluation. Claude returned
+supported-with-limits. This corrects chronology, not permission or model quality.
+
+The existing one-share buy was acknowledged but twenty visits could not bind
+its history. A read-only same-day probe found one page/row, zero literal/trim
+matches and one positive numeric-only match with date, instrument, exchange,
+side, currency and requested quantity all matching. Safe evidence:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866\history-capability-20260923.json`.
+The first diagnostic returned an uncategorized failure; the second completed
+history but reached a read-only snapshot error. Neither established an account
+or fill result. The final successful probe is history-only.
+
+Official KIS examples confirm mock VTTS3035R, exchange-local query dates,
+blank mock filters/order ID and M/F -> N continuation, but do not document an
+ID-padding equivalence rule:
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_ccnl/inquire_ccnl.py
+The repair is therefore measured private-Paper compatibility, not a universal
+provider guarantee. Permit only positive ASCII-decimal leading-zero aliases
+in history matching. Preserve raw acknowledgment IDs, hashes, cancel arguments,
+full fill-field validation and ambiguous-row rejection. Capture already preserves
+zeros; this was not local integer coercion. No global identity migration.
+
+Claude returned supported-with-limits and an independent static review found
+no blocker. Do not adopt two inaccurate reviewer suggestions: unknown evidence
+is not itself ledger corruption, and partial fills need not fail because the
+requested quantity is checked separately from filled quantity. Keep the earlier,
+conservative multiple-row ambiguity check; do not silently choose one row by
+discarding conflicting identities. The retained probe records the alias count;
+actual runtime fill/reconciliation remains separate evidence, not inferred here.
+
+The corrected same-cycle resume at 15:32Z still returned evidence_unavailable.
+A separate single snapshot attempt at 00:36:48 KST was auth_rejected before
+account parsing. Keep these observations distinct; neither proves the earlier
+cause. The official balance example distinguishes mock NASD/NYSE/AMEX queries
+from live NASD's all-US behavior, so a guessed duplicate-exchange explanation
+does not justify changing the current Paper query pattern:
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_balance/inquire_balance.py
+
+Final verification passed 718 non-overlapping changed-path serial cases and
+4,405 full cases / 19 skips with eight workers in 339.16s, helper exit zero.
+The earlier full run passed assertions but failed cleanup on two fixture-owned
+hardlink names. Add a finally-unlink teardown to that existing TimesFM test;
+do not weaken the cleanup guard or delete the retained failed run manually.
+The focused helper rerun passed 90 cases with cleanup before full authority.

@@ -1,4 +1,6 @@
+import hashlib
 import importlib.util
+import json
 import subprocess
 from pathlib import Path
 from types import SimpleNamespace
@@ -101,3 +103,19 @@ def test_dispatch_error_has_durable_categorical_result(monkeypatch, tmp_path):
     paths = list((tmp_path / "external").rglob("dispatch.json"))
     assert len(paths) == 1
     assert json.loads(paths[0].read_text()) == result
+
+
+@pytest.mark.parametrize("execute", [False, True])
+def test_cycle_reference_depends_only_on_json_encoded_id(monkeypatch, tmp_path, execute):
+    monkeypatch.setattr(
+        runner, "load_kis_paper_config",
+        lambda path: KisPaperConfig("fake-app", "fake-secret", "12345678", "01"),
+    )
+    monkeypatch.setattr(
+        runner.subprocess, "run",
+        lambda command, **kwargs: SimpleNamespace(returncode=1 if "inspect" in command else 0),
+    )
+    identity = "spy-fill-20260922-v1"
+    result = runner.run(project_root=tmp_path, cycle_id=identity, execute=execute, visits=1)
+    assert result["cycle_ref"] == hashlib.sha256(json.dumps(identity).encode("utf-8")).hexdigest()
+    assert result["cycle_ref"] == "e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866"

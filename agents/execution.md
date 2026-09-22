@@ -14,6 +14,48 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+2026-09-23 active recovery: actual cycle reference
+`e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866`
+is the JSON-string SHA256 of `spy-fill-20260922-v1`. The22:35 task returned
+recovery_required/evidence_unavailable, not success. Additive closed-stage
+diagnostics do not retroactively identify that historical exception.
+The same cycle resumed at23:59: its buy was acknowledged, no duplicate entry;
+the 20-visit receipt at 2026-09-22T15:07:43.520791Z remained
+pending/awaiting_fill_observation with worker_stop=visit_budget. No exit was
+created. The worker exited; preserve the exact private binding and owned leg.
+
+Source-safe current worker receipt is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866\worker-outcome.json`.
+The adjacent immutable `history-capability-20260923.json` at15:18:18.655530Z
+records one completed page/row, exact0/trim0/numeric-only1, all other identity
+fields matching. It is a representation probe, not fill/position/PnL evidence.
+The new history-only positive-numeric padding comparison preserves raw IDs,
+hashes, cancellation args and all downstream fill checks. Duplicate aliases
+remain ambiguous. Claude and independent static review support it with limits.
+Seven private-state images are rebuilt with 21 matching changed-source hashes.
+The corrected same-cycle resume at 2026-09-22T15:32:38.784561Z returned
+recovery_required/evidence_unavailable, worker_stop=outcome, one visit. Its
+post-intent failure has no pre-intent diagnostic stage; no fill/exit is inferred.
+A separate single read-only snapshot attempt at 2026-09-23 00:36:48 KST was
+auth_rejected before account/position parsing. That process observation does
+not establish earlier causes, permanent credential failure or a parser defect.
+It has no retained external receipt and must not be treated as immutable evidence.
+No worker remains. Next recover this SAME leg through the scoped Paper client,
+then exit only confirmed owned inventory. Never submit another buy to test it.
+
+Final integration: 718 non-overlapping focused serial cases passed; full
+eight-worker authority passed 4,405 / 19 skips in 339.16s, with managed cleanup
+and exit zero. The first full run's cleanup failure was a test-owned hardlink;
+its fixture now releases it without changing production cleanup policy.
+
+The23:50 budget result at
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\daily-spy-20260922T145002424612Z\outcome.json`
+was no_intent/daily_receipt_not_eligible. Data found first-attestation clock
+reuse, not absent data. The decision clock is now sampled after loading;
+strict equality/future/stale behavior remains. ActualCLI clocks are not frozen.
+The existing daily owner will use the rebuilt image; its10-percent allocation
+policy and shared SPY ownership remain unchanged. No budget trade is claimed.
+
 2026-09-22 operator sizing update: approximately 10 percent of virtual cash is
 approved as the initial aggregate strategy-Paper allocation, not per-order
 spend. The budget mode is implemented and deployed on the existing daily SPY

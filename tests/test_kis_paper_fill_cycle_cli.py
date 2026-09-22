@@ -1,6 +1,7 @@
 """Explicit fill mode must not change the existing immediate-cancel entry point."""
 
 import json
+from datetime import UTC, datetime
 from types import SimpleNamespace
 
 import pytest
@@ -154,3 +155,44 @@ def test_safe_worker_status_is_persisted_without_raw_cycle_identity(tmp_path):
     assert json.loads(paths[0].read_text()) == payload
     assert len(payload["cycle_ref"]) == 64
     assert arguments.fill_cycle_id not in paths[0].read_text()
+
+
+def test_additive_diagnostics_roundtrip_without_changing_worker_stop_or_exit(
+    tmp_path, monkeypatch, capsys
+):
+    from thericher_v2.execution import kis_paper_spy_fill_cycle as cycle
+
+    outcome = cycle.KisPaperSpyFillCycleOutcome(
+        "recovery_required", "evidence_unavailable", datetime(2026, 9, 22, 14, 30, tzinfo=UTC),
+        failure_stage=cycle._FailureStage.ACCOUNT_SNAPSHOT,
+        failure_category=cycle._FailureCategory.READONLY,
+    )
+    calls = []
+
+    def run(**kwargs):
+        calls.append(kwargs)
+        return outcome
+
+    def forbidden(*args, **kwargs):
+        pytest.fail("diagnostic serialization must not load credentials or retry")
+
+    monkeypatch.setattr(cycle, "run_kis_paper_spy_fill_cycle", run)
+    monkeypatch.setattr(session, "load_kis_paper_config_from_environment", forbidden)
+    monkeypatch.setattr(session.time, "sleep", forbidden)
+    monkeypatch.setattr(session, "_write_fill_cycle_outcome", WRITE_OUTCOME)
+    artifact_root = tmp_path / "artifacts"
+    assert session.main([
+        "--fill-cycle-id", "spy-fill-20260922-v1", "--fill-cycle-visits", "20",
+        "--artifact-root", str(artifact_root), "--repository-root", str(tmp_path / "repo"),
+    ]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert len(calls) == 1
+    assert payload["worker_visits"] == 1 and payload["worker_stop"] == "outcome"
+    assert payload["failure_stage"] == "account_snapshot"
+    assert payload["failure_category"] == "readonly_error"
+    assert payload["status"] == "recovery_required"
+    assert payload["reason_code"] == "evidence_unavailable"
+    expected_ref = "e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866"
+    assert payload["cycle_ref"] == cycle._digest("spy-fill-20260922-v1") == expected_ref
+    receipt = artifact_root / "execution" / "kis-paper-spy-fill-cycle" / expected_ref
+    assert json.loads((receipt / "worker-outcome.json").read_text()) == payload
