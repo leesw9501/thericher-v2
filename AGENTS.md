@@ -676,6 +676,22 @@ routine paper sizing, cadence, independent-intent count, and recurring schedules
 without requesting a paper capital envelope. `KIS_LIVE_*` is not readable or
 callable.
 
+On 2026-09-22 the operator explicitly selected approximately 10 percent of
+available virtual cash for the initial strategy-Paper trial. Implement this as
+one aggregate initial allocation, not 10 percent per order or a utilization
+target. Until settled-cash mapping is available, use an explicitly provisional
+USD orderable-funds basis, no larger than either observed orderable amount;
+never label it settled cash, account equity, or a loss guarantee. Freeze the
+initial basis privately across restart. Count owned position entry cost and
+pending buy reservations once, release closed entry cost without increasing the
+allocation from profits, and respect current broker buying power. Existing
+holdings are not automatically strategy-owned or authorized sell inventory.
+This is a sizing instruction, not a new approval gate: independent research,
+reconciliation and inventory-reducing Paper actions continue. A profitable
+model, D1 result, or another operator confirmation is not required to begin a
+provisional baseline strategy trial. Record whether enforcement is implemented;
+approval or a document change alone is not runtime deployment.
+
 For the operator's stated private, personal, noncommercial, nonpublic project,
 Codex may retain, extend, and schedule KIS Paper market-data caches under
 `D:\market_data` for active engine loops. Each collection job still records its

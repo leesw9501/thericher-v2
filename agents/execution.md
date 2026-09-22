@@ -14,6 +14,21 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+2026-09-22 operator sizing update: approximately 10 percent of virtual cash is
+approved as the initial aggregate strategy-Paper allocation, not per-order
+spend. See `AGENTS.md`; implementation is not yet deployed. Next ready package
+is budget-based sizing on the existing daily baseline, with durable reserved
+buys and owned position cost sharing the same cap. Do not scale the immediate
+roundtrip diagnostic or await profitability/D1 approval. Existing fixed one-share
+routes remain unchanged until integrated sizing is verified and deployed.
+Two direct scoped Paper read-only account checks at 03:38:30 and 03:39:57 UTC
+succeeded: USD orderable amounts positive, one position row, no open orders;
+the position is neither SPY nor QQQ. No amounts, identities or raw rows were
+printed/persisted, and no submit/modify/cancel endpoint was called. The values
+were held only in memory; no budget was frozen and these snapshots must not be
+reused as fresh facts for tonight's orders. Broker holdings alone do not prove
+our strategy's fills or inventory ownership.
+
 2026-09-22 explicit fill cycle: `kis_paper_spy_fill_cycle.py` reuses the existing
 session/canary locks, private leg store and virtual client. A private account-
 bound identity owns SPY buy-one/sell-one legs across restart. Fresh exact fills

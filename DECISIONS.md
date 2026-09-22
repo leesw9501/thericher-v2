@@ -9693,3 +9693,26 @@ last and scale in output1, with pbid1/pask1 in output2. Only field-presence fact
 were output; no raw price, account/order call or order was made. The new book
 parser follows that measured shape; missing book fields leave the legacy
 last-only path usable. Fills remain unobserved until an actual session result.
+
+## 2026-09-22 - Initial ten-percent strategy-Paper allocation
+
+The operator explicitly approved approximately 10 percent of virtual cash for
+actual strategy-Paper iteration. This improves the Paper/PnL learning loop, not
+the size of the immediate roundtrip diagnostic. Standing Paper authority was
+already sufficient; no profitability, D1 or renewed manual approval is needed.
+The chosen interpretation is one initial aggregate allocation, not repeated
+10-percent-per-order spending. `AGENTS.md` owns its sizing semantics. The
+existing daily baseline needs quantity/reservation/owned-inventory integration;
+this decision does not deploy that implementation or complete the lifecycle.
+
+Claude's supplied-facts, tool-disabled challenge returned
+`supported-with-limits`: use a literal provisional orderable-funds denominator,
+account for concurrent entry cost plus pending buys, and reserve atomically with
+durable intent ownership. Its assertion that the inherited position was SPY
+was unsupported by the supplied facts. The second actual read-only check
+confirmed neither SPY nor QQQ; do not turn that assertion into durable evidence.
+Orderable funds are not settled cash or equity. Official field reference:
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_psamount/chk_inquire_psamount.py
+No private amounts, raw account rows, credentials or identifiers were supplied
+to Claude or stored in this decision. Existing holdings are not silently sold
+or adopted by a new strategy. Live authority remains unavailable.

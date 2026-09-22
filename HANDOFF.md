@@ -21,6 +21,13 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Latest operator direction approves approximately 10 percent of virtual cash
+for an aggregate baseline strategy-Paper allocation. Policy is in `AGENTS.md`;
+the ready sizing/inventory package is in `NEXT_CODEX_GOAL.md`. It is not yet
+runtime-enforced: existing routes remain one-share. Fresh read-only account
+checks succeeded, with one non-SPY/non-QQQ holding and no open orders. No orders
+were placed by this sizing review, and no new approval is required.
+
 Current package adds an explicit fillable SPY buy-one/sell-one mode to the
 existing session CLI, not a new broker engine or recurring scheduler. Exact
 private leg state, account-bound cycle identity and the shared canary lock

@@ -24,6 +24,16 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-22 KST)
 
+Operator priority update: implement an approximately 10-percent aggregate
+virtual-cash strategy trial under the sizing instruction in `AGENTS.md`.
+This is already approved; no further capital/profitability/D1 gate applies.
+The current one-share position resolver and receipt path do not yet enforce
+that budget. Do not simply enlarge the diagnostic buy-one/sell-one cycle or
+claim that recording this direction deploys it. Prepare budget-based sizing
+and owned-inventory recovery on the existing daily strategy path now, without
+waiting for the finite diagnostic's result; serialize only actual shared SPY
+side effects. Keep this lifecycle objective open until its evidence exists.
+
 The explicit fresh-ask/bid SPY cycle is implemented in the existing session
 CLI, with a scoped host launcher, account-bound private identity, shared
 new-intent ownership, same-leg restart recovery and bounded asynchronous fill
@@ -98,6 +108,18 @@ and virtual routes; do not silently change the old canary's semantics.
 ## Role-Owned Work
 
 ### Execution: Main Path
+
+Priority ready package: connect the existing baseline decision to aggregate
+budget-based integer sizing, durable same-account reservations and exact owned
+inventory. Reuse the existing intent/fill store and writer locks; no new broker
+backend, recurring diagnostic or approval workflow. Preserve the legacy fixed
+one-share diagnostic. Prove restart/overlapping attempts cannot double-reserve
+or double-submit, a sell cannot consume unowned holdings, and multiple entries
+cannot repeatedly claim 10 percent. Deploy through the existing strategy owner
+with fresh buying-power/quote facts, and report orders, fills and attributable
+results separately. Recover existing owned intents before daily input/target
+checks can skip them. No research profitability claim is required. The current
+runtime remains one-share until this package is actually integrated/deployed.
 
 1. Recheck owned tasks, private-state ownership, and current source-safe status
    before any runtime work. Do not compete with an existing worker or create a
