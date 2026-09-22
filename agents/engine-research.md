@@ -17,6 +17,39 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+2026-09-22 public-model decision: use official Apache-2.0 TimesFM 2.5, not the
+3.0 weights whose separate license excludes revenue/production uses and also
+restricts outputs. Private offline noncommercial research is not categorically
+prohibited; personal ownership is simply not a blanket trading-use permission.
+See DECISIONS for the actual text and Claude resolution.
+The `timesfm_local` adapter verifies local config/safetensors and calls the
+constructor/checkpoint loader directly: the inspected upstream Hub convenience
+method attempts a Hub call even for local directories. Device is pinned before
+weights move; no CPU fallback or automatic download. Source and weights stay
+research-only. Synthetic inference is not a financial benchmark, training,
+model selection, or Paper qualification. The model card lists pretraining
+sources, but their exact overlap with our financial panel is not verified.
+Next predictive breadth: LightGBM and existing TCN/compact attention on the
+same linked development payoff/cost/split, with fixed naive and LSTM controls.
+Do not silently retune the closed 48-LSTM matrix. A later target-position
+comparison remains useful for separating turnover cost from prediction error.
+
+The exact `timesfm-2p5-offline-runtime-20260922-v3` synthetic appointment
+completed CPU (8.882s) then RTX4090 CUDA (6.730s), four contexts12/36/128/256,
+horizon12, finite outputs `(4,12)` and `(4,12,10)`. CUDA peak allocated memory
+was 946,213,376 bytes; this includes a pretrained model, not trained weights.
+The official 925,181,104-byte safetensors and wheel remain external under
+`foundation-models/timesfm-2.5-200m/1d952420fba87f3c6dee4f240de0f1a0fbc790e3`.
+Result root: `D:\thericher-v2\model-artifacts\research\timesfm-2p5-offline-runtime-20260922-v3`.
+Contract: `sha256:5dd84883513ae88225d19bc68d3cc07d92fb909626409e9893c0804ced3aa5d5`.
+CPU: `sha256:1d18836c7b328cfe813ce0ed04a8814ea56f3d5660ce5361b427fc23892e12a4`.
+CUDA: `sha256:ba80f8bd9765a132e230f3ba13f21ff02db61fd52bd13e59dc9d12daa70bacfc`.
+No financial inputs, targets, forecasts or scores were retained. Both workers
+exited; recovery complete. Independent runner tests found missing source-key
+and model-identity checks; main fixed them before this final run. The earlier
+valid v1 runtime result is preserved, and metadata-only v2 is abandoned before
+CPU/CUDA. Focused integration passes 108 tests; no shared Paper runtime changes.
+
 Completed 2026-09-22 successor: `regular-session-cost-matrix-v2` in the existing
 FirstRate H30 trial family. The old cohort first sampled 1,024 TRAIN times from
 a 24-hour grid before checking past/future support. New development uses all

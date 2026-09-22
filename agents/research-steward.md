@@ -5,6 +5,21 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Latest isolated public-model runtime appointment:
+`timesfm-2p5-offline-runtime-20260922-v3`, contract
+`sha256:5dd84883513ae88225d19bc68d3cc07d92fb909626409e9893c0804ced3aa5d5`.
+Synthetic-only CPU8.882s/CUDA6.730s completed under a 240-second limit per
+disposable container. CUDA used RTX4090 and peak946,213,376 allocated bytes.
+No training, market comparison, holdout, model selection or Paper input.
+Exact hashes/assets are in Engine Research. Pinned `timesfm==2.0.2` was
+installed offline/no-dependencies into ephemeral `/tmp`, not the base image,
+host environment or Execution images. Torch2.7.0+cu128/CUDA12.8 are unchanged.
+The canonical GPU lock is absent, both named containers exited, registry is
+`non_promoting_completed`; no new reservation/job. v1 is preserved as a valid
+earlier runtime smoke; v2 was metadata-only and recorded abandoned before
+dispatch after identity-validation review. Rights choice is 2.5 Apache-2.0,
+not a 3.0 permission inference. Recovery: complete.
+
 2026-09-22 completed appointment: `regular-session-cost-matrix-v2` under the
 existing FirstRate H30 family. Frozen contract:
 `sha256:012497f503e322dcbc076aacc174dc10e039b1da185876b0744b07f33e4a0646`.

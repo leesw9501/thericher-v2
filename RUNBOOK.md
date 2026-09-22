@@ -67,6 +67,44 @@ helper exit; Ruff and both sample-env Compose configurations passed.
 
 ## Long Codex Task
 
+### TimesFM 2.5 Offline Research Runtime
+
+The approved reusable version is `google/timesfm-2.5-200m-pytorch`, revision
+`1d952420fba87f3c6dee4f240de0f1a0fbc790e3` (Apache-2.0), not TimesFM 3.0.
+Personal use does not override the latter's separate revenue/production/output
+restrictions. The rights decision and official sources are in DECISIONS.
+
+Assets are under
+`D:\thericher-v2\model-artifacts\foundation-models\timesfm-2.5-200m\1d952420fba87f3c6dee4f240de0f1a0fbc790e3`.
+`scripts/run_timesfm_2p5_smoke.py --artifact-root D:\thericher-v2\model-artifacts --prepare`
+acquires/verifies only pinned config, README, safe weights and the
+`timesfm==2.0.2` wheel. Its acquisition is separate from inference. Existing
+mismatched or partial bytes are not silently replaced. Preserve Apache notices.
+
+The actual smoke uses the existing research image
+`sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039`.
+Run each phase in a disposable `--network none --read-only` container with
+2 CPU cores, 6GB RAM, 512MB writable `/tmp`, source/scripts/model mounts
+read-only and the external artifact root at `/app/model_artifacts`. Verify
+the wheel hash, install it only into `/tmp/timesfm-runtime` using
+`pip install --no-index --no-deps --target`, then place that directory on the
+Python import path. No dependencies, base images or Paper images are upgraded.
+Inside that container the entry is
+`python scripts/run_timesfm_2p5_smoke.py --artifact-root /app/model_artifacts --phase cpu`
+and then `--phase cuda` in the GPU-enabled container. Each invocation has
+`timeout -s TERM -k 15 240`; only CUDA takes the existing exclusive GPU lock.
+HF offline/no-implicit-token/no-telemetry flags are enabled, no secrets or
+market-data volume are supplied, and raw predictions are not retained.
+
+The closed synthetic run is not meant to be repeated as a scheduler. Results
+are `contract.json`, `cpu.json`, and `cuda.json` beneath external
+`research/timesfm-2p5-offline-runtime-20260922-v3`. This proves shape/device/
+runtime compatibility only. A market comparison requires a separate applicable
+source/temporal-scope contract; it does not block locally trained models or
+the existing Paper baseline.
+
+### Current Follow-Up
+
 For this 2026-09-22 continuation, thread heartbeat `thericher-paper` owns one
 follow-up at 2026-09-23 00:20 KST, after both installed Paper task limits. It
 does not start another order worker or modify schedules. Inspect the exact

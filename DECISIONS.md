@@ -9797,3 +9797,49 @@ phase, and v2 freezes these corrections; no observed outcome chose the change.
 Two delegated agents encountered service capacity failures. Main inspected
 and integrated their existing runner/tests and completed the missing cohort
 tests, rather than treating their unfinished narrative as evidence.
+
+## 2026-09-22 - Prefer TimesFM 2.5 for reusable personal research
+
+The operator asked whether solo noncommercial use permits TimesFM 3.0 and
+delegated the choice. The actual 3.0 weight license defines permitted purposes
+more narrowly than "not selling software": research/evaluation not tied to
+commercial gain, production deployment or revenue generation. Its exclusions
+include revenue-generating activity and production systems; restrictions also
+cover outputs and fine-tuned derivatives. Personal ownership alone therefore
+does not establish permission for an operational trading engine. This is not
+a legal ruling that every private offline experiment is prohibited. A strictly
+noncommercial/nonproduction experiment can be different, but do not assume
+its outputs can then be transferred to a profit-seeking trading path.
+
+Select official `google/timesfm-2.5-200m-pytorch` revision
+`1d952420fba87f3c6dee4f240de0f1a0fbc790e3` under its Apache-2.0 model-card
+license, which Google's repository explicitly confirms remains applicable
+through 2.5. The model repository has no separate LICENSE file; do not claim
+one was inspected. The pinned `timesfm==2.0.2` wheel independently contains
+the Apache-2.0 license and uses safe tensor loading. Keep notices and hashes
+with the external artifacts. No TimesFM 3.0 weights/code are acquired or used.
+
+Official sources inspected:
+- https://huggingface.co/google/timesfm-3.0-pytorch/blob/main/LICENSE
+- https://huggingface.co/google/timesfm-2.5-200m-pytorch/blob/1d952420fba87f3c6dee4f240de0f1a0fbc790e3/README.md
+- https://github.com/google-research/timesfm#license-notice-for-pretrained-weights
+- https://pypi.org/project/timesfm/2.0.2/
+
+Claude's supplied-facts, tool-disabled verdict was `supported-with-limits`:
+distinguish a license-compatible offline study from operational/profit use,
+verify the runtime license separately, and do not treat synthetic inference
+as accuracy or profitability. Two reviewer inferences are not adopted:
+authentication/gating alone would not disprove an Apache license, and a later
+use does not automatically establish retroactive breach of a prior experiment.
+Codex chooses 2.5 to avoid the unclear downstream scope without an approval wait.
+
+This package advances public-model research integration only: pinned external
+assets, an offline CPU/CUDA adapter and a bounded synthetic inference check.
+The existing Torch/CUDA base and all Paper images/schedules stay unchanged.
+Pretraining market overlap is not verified, so no market comparison or Paper
+input follows from this runtime result. Next predictive breadth should compare
+LightGBM and existing TCN/compact attention against matched controls on the
+same payoff/cost contract, not describe more LSTM configurations as model-family
+diversity. Public-model forecast benchmarking needs its own applicable source
+and temporal-scope interpretation; it does not hold those locally trained
+comparators or the scheduled KIS Paper baseline.

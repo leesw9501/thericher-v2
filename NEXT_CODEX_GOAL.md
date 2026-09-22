@@ -174,6 +174,16 @@ funding binding or inventing another manual-approval or profitability gate.
 
 ### Engine Research: Parallel Preparation
 
+- Operator priority: broaden model families beyond LSTM configurations.
+  First compare LightGBM and existing TCN/compact attention against matched
+  linear/LSTM/rule controls under a new linked development contract, preserving
+  payoff, eligibility, temporal splits and costs. Do not reopen the closed
+  48-LSTM matrix or change tonight's baseline Paper strategy.
+  TimesFM 2.5 is selected as the public-model runtime; 3.0's separate
+  noncommercial/nonproduction restrictions are not waived by personal use.
+  The pinned 2.5 synthetic CPU/CUDA check is runtime evidence only, not a
+  predictive benchmark. Source/pretraining scope affects only that public
+  model's claims, not the ready locally trained comparison. See DECISIONS.
 - `regular-session-cost-matrix-v2` completed on 2026-09-22 without changing
   tonight's Paper paths. Full regular-session TRAIN windows grew support to
   2,232-6,732 rows per fit; contexts12/36 and horizons30/60/120 share fixed costs.

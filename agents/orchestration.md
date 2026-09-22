@@ -17,11 +17,19 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 | SPY lifecycle recovery | Execution / existing Paper state and task | Explicit fresh-ask/bid cycle and shared private-state readers deployed across seven images, 42 source matches. Existing quote-task registration has one finite 2026-09-22 22:35 KST invocation, fixed ID `spy-fill-20260922-v1`; expires 23:10, no new task/repetition. Mounted private-path rejection repaired and checked in actual Docker. Preview is not a fill. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | Frozen initial 10-percent allocation, actual entry-cost/reservation replay, owned inventory and recovery-first sizing implemented. Existing daily task now invokes the scoped budget launcher at 2026-09-22 23:50 KST, with 24 bounded visits and a 25-minute limit. No new schedule or approval. Actual orders/fills remain unobserved; preserve exact ownership against the separate cycle. |
 | Development comparison | Engine Research / completed CPU and CUDA | Full regular-session cohort expands TRAIN to 2,232-6,732 rows; 24 Ridge and 48 LSTM fits complete 360 cost cells. No robust winner or Paper replacement. Independent review's missing-payoff issue fixed before dispatch. Capacity-failed sidecars were integrated by main, not claimed as completed independent audits. |
+| Model-family breadth | Engine Research / CPU preparation | Next predictive comparison is LightGBM plus existing TCN/compact attention with matched controls, not further LSTM-only configuration churn. TimesFM 2.5 local adapter and synthetic CPU/CUDA smoke complete; 3.0 not adopted because personal use does not establish downstream revenue/production rights. Public-model market overlap remains unverified, affecting that comparison only. |
 | Data collection / finite D1 measurement | Data / existing tasks | Existing six NAS snapshots validate; the old generic failure does not identify its failing stage. New fixed-category diagnostics are ready for the next owned 06:40 run. Pair-forward v2 due 2026-09-23 06:55; D1 final later opportunity 2026-09-22 23:20, triggers expire midnight. No fresh collection/pair inferred. |
-| GPU | Research Steward / exclusive allocation | RTX4090 completed one 159.193-second supervised CUDA phase including 48 fits/13,248 updates and replay. Final 48 models retained externally. Both research containers/children exited, canonical GPU lock released; no active appointment. |
+| GPU | Research Steward / exclusive allocation | Latest TimesFM 2.5 synthetic CUDA check completed in 6.730s, after CPU8.882s, on unchanged Torch/CUDA. No training or predictive result. Both containers exited and canonical GPU lock released; no active appointment. Earlier 48 LSTM models remain external and unchanged. |
 | Night result reattachment | Orchestrator / thread follow-up | One-shot `thericher-paper` installed for 2026-09-23 00:20 KST after both Paper opportunities. Existing Windows cadence unchanged; task/process exits are not fills. |
 
 ## Bottleneck And Reversible Improvement
+
+Current research improvement: reuse existing sequence implementations and one
+pinned public-model adapter instead of increasing only LSTM configurations.
+TimesFM's dependency is ephemeral and isolated; Paper deployment/schedules are
+untouched. Both bounded implementation/test agents completed, and the runner's
+missing identity checks are fixed with 108 passing focused tests. No foreground
+market wait or new scheduler; the next predictive breadth remains independent.
 
 The company is not blocked on D1 time or API permission. Budget-based baseline
 execution is now deployed; its next material evidence is the actual strategy

@@ -21,6 +21,21 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Public-model direction: personal use alone does not waive TimesFM 3.0's
+noncommercial/nonproduction/output restrictions. Select official Apache-2.0
+TimesFM 2.5 instead, preserving the current Torch/CUDA and Paper runtimes.
+Its local-only safetensors adapter and synthetic Docker check are separate
+from predictive benchmarking. Exact asset/runtime/result facts are in Research
+and RUNBOOK. No TimesFM model supplies a Paper signal. Next predictive breadth
+is LightGBM plus existing TCN/compact attention under matched development
+conditions, rather than more LSTM configurations. The company lifecycle goal
+and tonight's owned Paper opportunities are unchanged.
+Final TimesFM synthetic smoke completed CPU8.882s/CUDA6.730s with no market
+inputs or retained predictions; both containers exited and GPU lock released.
+108 focused tests pass, including independent identity-regression cases. This
+is an isolated role package, not company-goal completion or a reason to repeat
+the full execution suite. No Paper image, task, credential or broker path changed.
+
 Latest parallel research package completed `regular-session-cost-matrix-v2`:
 the old pre-mask capped 24-hour sampler was replaced in a separate linked
 development contract by full regular-session TRAIN windows. Support grew from
