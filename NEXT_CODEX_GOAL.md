@@ -24,6 +24,24 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-22 KST)
 
+The explicit fresh-ask/bid SPY cycle is implemented in the existing session
+CLI, with a scoped host launcher, account-bound private identity, shared
+new-intent ownership, same-leg restart recovery and bounded asynchronous fill
+observation. A real quote-only structure check confirmed bid/ask in output2;
+the parser and fixtures now match. No order/account call was made by that
+check. Focused integration passed 346 tests / 1 skip. Actual fill/flat/gross
+accounting evidence is still required; this does not complete the goal.
+Final integration passed 3,707 tests / 19 skips with eight workers in 289.48s;
+the managed helper cleaned its run and exited zero. Ruff and both Compose
+configurations pass.
+The next owned runtime action uses one fixed cycle ID, not another immediate-
+cancel canary. See RUNBOOK and Execution for deployment and finite dispatch.
+All seven state consumers are deployed with source parity. The existing
+quote-task registration owns one 2026-09-22 22:35 KST fill invocation, expiring
+23:10, with fixed cycle ID `spy-fill-20260922-v1`. No new recurring task exists.
+Reattach its categorical worker result and exact private-leg/account evidence;
+an incomplete outcome resumes the same cycle, not a new ID or a claimed fill.
+
 Exact cumulative fill accounting is now connected to the existing canary and
 restart reconciliation, using the same original-date history GET and atomic
 private state. Unique order/date/instrument/side/currency/quantity binding,
@@ -32,8 +50,8 @@ handling and pre-cancel persistence have focused coverage. Missing/failed
 observations preserve historical totals but do not present them as current.
 This is source/integration work, not a real fill or settled-cash/PnL result.
 Seven Execution and two NAS images were rebuilt; 34 baked-source checks match.
-Next Execution work remains the explicit fresh-ask/bid one-share cycle and
-exact own-inventory reconciliation; existing canary pricing is unchanged.
+That foundation is now consumed by the explicit one-share cycle above;
+existing canary pricing remains unchanged outside that named mode.
 
 Operator-approved schedule cleanup now leaves six operational recurring tasks.
 The two exhausted historical backfills, finite stability/prefix studies and
@@ -69,10 +87,13 @@ All eight final models are retained externally. TRAIN loss improved, but every
 3/5-bps LSTM cell is negative. Do not extend this closed trial or equate the
 1-bps positives with skill; the next research question should address costs
 and turnover against matched controls rather than repeat tiny-batch learning.
-Next main work is a deliberately fillable one-share
-Paper cycle with exact fill/position/accounting facts, not another D1 gate or
-immediate-cancel repetition. Use existing ownership, locks and virtual routes;
-do not change the current canary's semantics silently.
+The linked fixed nominal 6-bps hurdle comparison completed all eight retained
+models and 84 development cells on CPU, reproducing 60 old sign/control cells.
+Trading fell substantially; one symbol/seed aggregation is positive at 3/5 bps
+but the gain is not uniform by fold. No model was selected or promoted.
+Next main work is the actual runtime result of the fillable cycle, followed
+by exact fill/position/accounting comparison. Use existing ownership, locks
+and virtual routes; do not silently change the old canary's semantics.
 
 ## Role-Owned Work
 

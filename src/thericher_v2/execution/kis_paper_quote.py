@@ -12,7 +12,7 @@ import urllib.parse
 from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
-from decimal import ROUND_DOWN, Decimal, InvalidOperation
+from decimal import ROUND_DOWN, ROUND_UP, Decimal, DecimalException, InvalidOperation
 from typing import Any, Final, Literal
 from zoneinfo import ZoneInfo
 
@@ -91,6 +91,8 @@ class KisPaperSpyLimitInput:
     decimal_places: int
     tick_size: Decimal
     quoted_at: datetime
+    best_bid: Decimal | None = None
+    best_ask: Decimal | None = None
 
     def __post_init__(self) -> None:
         quote = KisPaperSpyQuote(last=self.last, decimal_places=self.decimal_places)
@@ -441,12 +443,16 @@ def _parse_kis_paper_limit_input(
         raise KisPaperQuoteError("quote_tick_invalid") from error
     if detail_scale != quote.decimal_places:
         raise KisPaperQuoteError("quote_scale_mismatch")
+    book_output = asking_price_payload.get("output2")
+    best_bid, best_ask = _optional_best_prices(book_output, tick_size=tick_size)
     try:
         return KisPaperSpyLimitInput(
             last=quote.last,
             decimal_places=quote.decimal_places,
             tick_size=tick_size,
             quoted_at=quoted_at,
+            best_bid=best_bid,
+            best_ask=best_ask,
         )
     except ValueError as error:
         raise KisPaperQuoteError("quote_tick_invalid") from error
@@ -615,6 +621,74 @@ def derive_kis_paper_nonmarket_limit(
     if limit <= 0 or not _is_tick_multiple(limit, tick):
         raise KisPaperQuoteError("quote_limit_invalid")
     return limit
+
+
+def derive_kis_paper_marketable_limit(
+    quote: KisPaperSpyLimitInput,
+    *,
+    side: Literal["buy", "sell"],
+    observed_at: datetime,
+) -> Decimal:
+    """Round a fresh ask up for a buy or bid down for a sell; fills are not guaranteed."""
+
+    if not isinstance(quote, KisPaperSpyLimitInput):
+        raise TypeError("quote must be a KisPaperSpyLimitInput")
+    if side not in ("buy", "sell"):
+        raise ValueError("side must be buy or sell")
+    if not isinstance(observed_at, datetime):
+        raise KisPaperQuoteError("quote_timestamp_invalid")
+    if _quote_timestamp_age_state(quote.quoted_at, observed_at=observed_at) != (
+        "age_within_120s_under_korea_interpretation"
+    ):
+        raise KisPaperQuoteError("quote_timestamp_stale")
+    best_bid, best_ask = quote.best_bid, quote.best_ask
+    if (
+        not isinstance(best_bid, Decimal)
+        or not isinstance(best_ask, Decimal)
+        or not best_bid.is_finite()
+        or not best_ask.is_finite()
+        or best_bid <= 0
+        or best_ask <= 0
+        or best_bid > best_ask
+    ):
+        raise KisPaperQuoteError("quote_bid_ask_invalid")
+    price = best_ask if side == "buy" else best_bid
+    rounding = ROUND_UP if side == "buy" else ROUND_DOWN
+    scale_tick = Decimal(1).scaleb(-quote.decimal_places)
+    try:
+        limit = (price / quote.tick_size).to_integral_value(rounding=rounding) * quote.tick_size
+        limit = limit.quantize(scale_tick, rounding=rounding)
+        if (
+            not limit.is_finite()
+            or limit <= 0
+            or not _is_tick_multiple(limit, quote.tick_size)
+            or (side == "buy" and limit < best_ask)
+            or (side == "sell" and limit > best_bid)
+        ):
+            raise KisPaperQuoteError("quote_limit_invalid")
+    except DecimalException as error:
+        raise KisPaperQuoteError("quote_limit_invalid") from error
+    return limit
+
+
+def _optional_best_prices(
+    output: object, *, tick_size: Decimal
+) -> tuple[Decimal | None, Decimal | None]:
+    # An unusable book must not invalidate the legacy last-only quote path.
+    if not isinstance(output, Mapping):
+        return None, None
+    try:
+        best_bid = _positive_decimal(output.get("pbid1"))
+        best_ask = _positive_decimal(output.get("pask1"))
+        if (
+            best_bid <= best_ask
+            and _is_tick_multiple(best_bid, tick_size)
+            and _is_tick_multiple(best_ask, tick_size)
+        ):
+            return best_bid, best_ask
+    except (KisPaperQuoteError, DecimalException):
+        pass
+    return None, None
 
 
 def _positive_decimal(value: object) -> Decimal:

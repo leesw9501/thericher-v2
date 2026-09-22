@@ -14,15 +14,21 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 
 | Work | Owner / resource | Current fact and dispatch |
 | --- | --- | --- |
-| SPY lifecycle recovery | Execution / existing Paper state and task | Exact cumulative fills now persist across duplicate reads, cancellation and intermediate recovery, with explicit current/unknown status. Changed-path integration passes; nine Execution/Data images rebuilt with 34 matching source checks. Actual daily-SPY Paper remains due 2026-09-22 23:50 KST. Next: explicit fresh-ask/bid one-share cycle, own-inventory and account comparison. |
-| Development comparison | Engine Research / CPU and CUDA | Frozen H30 full-cohort successor completed 8 LSTM/4 Ridge fits and 72 replay-parity cells, 2,048 updates, 27.336 supervised CUDA seconds. Eight final models retained externally. Every 3/5-bps LSTM cell is negative; no selected winner/Paper claim. Next scientific question should address turnover/cost, not repeat learnability. |
+| SPY lifecycle recovery | Execution / existing Paper state and task | Explicit fresh-ask/bid cycle integrated and deployed across seven images, 35 source matches. Existing quote-task registration has one finite 2026-09-22 22:35 KST invocation, fixed ID `spy-fill-20260922-v1`; expires 23:10, no new task/repetition. Daily-SPY remains 23:50. Preview is not a fill. |
+| Development comparison | Engine Research / CPU | Fixed nominal 6-bps abstention comparison completed all eight retained models and 84 replay cells, reproducing 60 prior controls/sign cells exactly. Trades decreased; only one symbol/seed aggregation is positive at 3/5 bps. Not uniform by fold, no selection/skill/Paper claim. Container reaped after 14.941 supervised seconds. |
 | Data collection / finite D1 measurement | Data / existing tasks | Existing six NAS snapshots validate; the old generic failure does not identify its failing stage. New fixed-category diagnostics are ready for the next owned 06:40 run. Pair-forward v2 due 2026-09-23 06:55; D1 final later opportunity 2026-09-22 23:20, triggers expire midnight. No fresh collection/pair inferred. |
-| GPU | Research Steward / exclusive allocation | Full-cohort CUDA assignment finished, named container reaped, lock released. No unowned training or automatically expanded successor. Research work stayed independent of D1 and Execution. |
+| GPU | Research Steward / exclusive allocation | No active CUDA allocation. The cost-hurdle question reused retained weights on CPU without retraining. Both bounded agents have returned and closed after integration/review. |
 
 ## Bottleneck And Reversible Improvement
 
 The company is not blocked on D1 time. The current bottleneck is
 terminal/accounting interpretation and a fillable cycle, not API permission.
+Current dispatch has a bounded container-local deadline independent of host
+termination, and reuses one finite existing task registration rather than
+restoring a recurring canary. Shared SPY ownership survives worker exit but is
+released immediately for a proven never-submitted entry. Other symbols and
+Data/Research remain independent. Final integration passed 3,707 / 19 skips in
+289.48s with eight workers and clean helper exit. No foreground session wait.
 Current reversible improvement: six exhausted/diagnostic recurring schedules
 and two expired one-shots are disabled with rollback metadata; six operational
 schedules remain and D1 expires after its final later opportunity. Default

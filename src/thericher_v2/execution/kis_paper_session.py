@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
 import tempfile
+import time
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
@@ -482,6 +484,10 @@ def _write_session_evidence(
         "schema_version": SCHEMA_VERSION,
         **outcome.safe_payload(),
     }
+    _write_session_json(destination, payload)
+
+
+def _write_session_json(destination: Path, payload: dict[str, object]) -> None:
     encoded = (json.dumps(payload, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
     descriptor, temporary_name = tempfile.mkstemp(dir=destination.parent)
     temporary = Path(temporary_name)
@@ -518,7 +524,10 @@ def _is_permitted_artifact_root(artifact_root: Path, repository_root: Path) -> b
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run one quote-derived KIS virtual-paper session")
-    parser.add_argument("--session-id")
+    identity = parser.add_mutually_exclusive_group()
+    identity.add_argument("--session-id")
+    identity.add_argument("--fill-cycle-id")
+    parser.add_argument("--fill-cycle-visits", type=int, default=1)
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--cancel-after-submit", action="store_true")
     parser.add_argument(
@@ -562,8 +571,24 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
-    arguments = build_parser().parse_args(argv)
+    parser = build_parser()
+    arguments = parser.parse_args(argv)
+    if not 1 <= arguments.fill_cycle_visits <= 20:
+        parser.error("fill-cycle-visits must be between 1 and 20")
+    if arguments.fill_cycle_id is not None and arguments.cancel_after_submit:
+        parser.error("a fill cycle cannot use immediate cancellation")
+    if (
+        arguments.fill_cycle_id is not None
+        and arguments.valid_seconds != DEFAULT_KIS_PAPER_SESSION_VALID_SECONDS
+    ):
+        parser.error("valid-seconds is for the legacy quote session only")
+    if arguments.fill_cycle_id is None and arguments.fill_cycle_visits != 1:
+        parser.error("fill-cycle-visits requires fill-cycle-id")
     try:
+        if arguments.fill_cycle_id is not None:
+            payload = _run_fill_cycle_visits(arguments)
+            print(json.dumps(payload, sort_keys=True))
+            return 0
         outcome = run_kis_paper_quote_session(
             environment=os.environ,
             state_root=arguments.state_root,
@@ -587,6 +612,69 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     print(json.dumps(outcome.safe_payload(), sort_keys=True))
     return 0
+
+
+def _run_fill_cycle_visits(arguments: argparse.Namespace) -> dict[str, object]:
+    from .kis_paper_spy_fill_cycle import run_kis_paper_spy_fill_cycle
+
+    if not _is_safe_session_id(arguments.fill_cycle_id):
+        raise ValueError("cycle_id is invalid")
+    if not _is_permitted_artifact_root(arguments.artifact_root, arguments.repository_root):
+        raise ValueError("artifact_root must be outside the Git workspace")
+    if arguments.execute and os.environ.get("THERICHER_MODE") == "kis_live":
+        raise ValueError("live mode is unavailable")
+    client = None
+    started = time.monotonic()
+    for visit in range(1, arguments.fill_cycle_visits + 1):
+        # The bounded worker retains its token; preview/closed visits never load credentials.
+        if (
+            client is None
+            and arguments.execute
+            and is_us_equity_regular_session_window(datetime.now(UTC))
+        ):
+            client = KisPaperCanaryClient(
+                config=load_kis_paper_config_from_environment(os.environ),
+                transport=UrllibKisPaperCanaryTransport(),
+            )
+        outcome = run_kis_paper_spy_fill_cycle(
+            cycle_id=arguments.fill_cycle_id,
+            environment=os.environ,
+            state_root=arguments.state_root,
+            runtime_projection_path=arguments.runtime_projection,
+            paper_account_snapshot_path=arguments.paper_account_snapshot,
+            emergency_state_path=arguments.emergency_state,
+            artifact_root=arguments.artifact_root,
+            repository_root=arguments.repository_root,
+            execute=arguments.execute,
+            client=client,
+            execution_control_path=arguments.execution_control,
+        )
+        payload = outcome.safe_payload()
+        payload["worker_visits"] = visit
+        if payload["status"] != "pending":
+            payload["worker_stop"] = "outcome"
+            _write_fill_cycle_outcome(arguments, payload)
+            return payload
+        if visit == arguments.fill_cycle_visits or time.monotonic() - started >= 1200:
+            payload["worker_stop"] = "visit_budget"
+            _write_fill_cycle_outcome(arguments, payload)
+            return payload
+        payload["worker_stop"] = "observing"
+        _write_fill_cycle_outcome(arguments, payload)
+        # Observation cadence and finite worker budget, not a provider rate-limit claim.
+        time.sleep(15)
+    raise AssertionError("validated visit budget must execute")
+
+
+def _write_fill_cycle_outcome(arguments: argparse.Namespace, payload: dict[str, object]) -> None:
+    cycle_ref = hashlib.sha256(json.dumps(arguments.fill_cycle_id).encode("utf-8")).hexdigest()
+    destination = (
+        arguments.artifact_root / "execution" / "kis-paper-spy-fill-cycle"
+        / cycle_ref / "worker-outcome.json"
+    )
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    payload.update(kind="kis_paper_spy_fill_cycle_worker", cycle_ref=cycle_ref)
+    _write_session_json(destination, payload)
 
 
 if __name__ == "__main__":

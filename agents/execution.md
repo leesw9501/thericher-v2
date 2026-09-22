@@ -14,6 +14,42 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+2026-09-22 explicit fill cycle: `kis_paper_spy_fill_cycle.py` reuses the existing
+session/canary locks, private leg store and virtual client. A private account-
+bound identity owns SPY buy-one/sell-one legs across restart. Fresh exact fills
+and account position are required before exit/closure; broker IDs and amounts
+stay private. The shared new-intent check applies only to currently owned SPY
+inventory, never unrelated historical unknowns, existing recovery/cancellation
+or other symbols. No-entry-POST paths release ownership before worker exit;
+missing asynchronous history is reobserved without duplicate submission.
+The legacy immediate-cancel/default nonmarket path is unchanged.
+
+The scoped host launcher injects only Paper fields and uses `.env.example`
+for Compose, with a single-client, at-most-20-visit worker. Independent
+container/host deadlines prevent an orphan indefinitely owning the lock.
+Categorical worker/dispatch status is external; exact private legs remain the
+fill authority. Focused integration passed 346 tests / 1 skip in 10.92s.
+Claude twice returned `supported-with-limits`; the final independent review's
+zero-submission cleanup issue is covered by an immediate-release regression.
+One real quote-only GET confirmed last/clock/scale in output1 and bid/ask in
+output2. No account/order endpoint or order was called during that probe.
+No actual fill, settled cash, fee or net-PnL result is claimed yet.
+Final clean-root eight-worker authority: 3,707 passed / 19 skipped in 289.48s,
+exactly the prior 3,513 plus 194 new cases; helper cleanup exited zero. Ruff,
+default/research Compose with `.env.example`, and diff checks pass.
+All seven existing private-state consumer images are rebuilt with 35 matching
+source hashes. Session image:
+`sha256:b0ed763f79e9ed40372dd472e63f12e82b5b236d954a3c9b64e26ed6da7da2d3`.
+The credential-free launcher preview exited successfully and wrote `preview`;
+the container deadline smoke returned expected code 124. No cycle container
+remains. The old quote-task registration now owns only the 2026-09-22 22:35 KST
+finite fill invocation (`spy-fill-20260922-v1`), expires 23:10, with no repetition
+or retries and a 25-minute task cap. Other tasks and principal are unchanged,
+and task last-run did not advance. This supersedes its earlier disabled fact
+below only for this finite opportunity; it does not restore recurring canaries.
+Resume this exact cycle on an unresolved outcome; do not claim a real fill from
+the preview or task installation. Actual daily-SPY remains due at 23:50 KST.
+
 2026-09-22 cumulative-fill package: the existing original-order-date history
 GET now also returns a private typed quantity/amount observation. One unique
 exact order/date/symbol/exchange/side/requested-quantity/USD row is required;

@@ -198,6 +198,7 @@ _SAFE_REASON_CODES = frozenset(
         "pause_buys_active",
         "pause_sells_active",
         "matching_open_order",
+        "owned_intent_conflict",
         "submit_rejected",
         "submit_http_4xx",
         "submit_http_5xx",
@@ -1495,6 +1496,14 @@ def _run_kis_paper_canary(
             reason_code=("pause_buys_active" if intent.side == "buy" else "pause_sells_active"),
             now=observed_at,
         )
+    elif _conflicts_with_owned_spy_cycle(state_path.parent, intent):
+        state = state_store.transition(
+            intent,
+            expected=frozenset({"intent_recorded"}),
+            phase="intent_recorded",
+            reason_code="owned_intent_conflict",
+            now=observed_at,
+        )
     else:
         if client is None:
             config = load_kis_paper_config_from_environment(environment)
@@ -1645,6 +1654,14 @@ def _run_kis_paper_canary(
         submit_upstream_code=state.submit_upstream_code,
         submit_response_category=state.submit_response_category,
     )
+
+
+def _conflicts_with_owned_spy_cycle(state_root: Path, intent: KisPaperCanaryIntent) -> bool:
+    if intent.symbol != "SPY":
+        return False
+    from .kis_paper_spy_fill_cycle import conflicts_with_active_spy_fill_cycle
+
+    return conflicts_with_active_spy_fill_cycle(state_root, intent.run_id, intent.symbol)
 
 
 def run_kis_paper_canary(

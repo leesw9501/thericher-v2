@@ -53,7 +53,7 @@ names in this table have the prefix `thericher-kis-paper-`; times are KST.
 | `d1-prospective-observation-pairing` | Final later opportunity 2026-09-22 23:20. Both triggers expire 2026-09-23 00:00. Fresh first observation is recorded, not a complete pair. |
 | `daily-backfill`, `daily-broad-backfill` | Disabled: exact historical cursors terminal, respectively 3/3 and 2,119/2,119 targets. This is not a claim of unlimited historical coverage. |
 | `daily-spy-stability-observer`, `spy-prefix-negative-control`, `spy-prefix-feasibility` | Disabled finite diagnostic studies; commands and immutable results retained. |
-| `quote-session` | Disabled recurring immediate-cancel smoke; explicit diagnostics/recovery remain available. Do not confuse this with retained `daily-spy-session`. |
+| `quote-session` | Recurring immediate-cancel smoke remains retired. Its existing registration is reused for one explicit fill cycle at 2026-09-22 22:35, expiring 23:10; no repetition/restart. Do not confuse this with retained `daily-spy-session`. |
 
 Two completed Cboe one-shot registrations are also disabled. The two legacy
 TheRicher tasks remain disabled. Nothing was unregistered or stopped mid-run.
@@ -80,6 +80,62 @@ enabled states/trigger expiry fields after checking ownership, using
 The prior runner is in Git revision `8dce708`; reverting to it also reverts the
 pair to quarantined v1 and is not a data repair. Do not erase private state,
 quarantine, raw data or immutable receipts to undo scheduling changes.
+
+### Explicit SPY Fill Cycle
+
+Installed finite opportunity: `thericher-kis-paper-quote-session`,
+2026-09-22 22:35 KST, cycle ID `spy-fill-20260922-v1`. Its single trigger
+expires at 23:10, execution limit is 25 minutes, restart count is zero, and
+multiple instances are ignored. Principal, other task definitions and task
+count are unchanged; last-run time did not advance during installation.
+Do not reinstall this task with its legacy diagnostic definition before the
+owned opportunity. Afterward disable the finite registration or keep its
+expired trigger; do not resume the old recurring canary automatically.
+
+The existing session CLI now has an explicit `--fill-cycle-id` mode. It buys
+one SPY share using a fresh ask limit, then sells only its exact confirmed
+inventory using a fresh bid limit. Marketable limits do not guarantee fills.
+The old quote-session default and immediate cancellation remain unchanged.
+
+The scoped host launcher uses the existing `kis-paper-session` service and
+private volumes, with the sample Compose environment and only the approved
+Paper credential fields injected in memory:
+
+```powershell
+uv run --no-sync --project C:\Users\Public\Documents\thericher-v2 python C:\Users\Public\Documents\thericher-v2\scripts\run_kis_paper_spy_fill_cycle.py --cycle-id spy-fill-20260922-v1 --execute --visits 20
+```
+
+Omit `--execute` for a credential-free, broker-free preview. Do not generate a
+new cycle ID to evade an unknown outcome. Reusing the same ID reconciles its
+persisted legs; at most one fresh submission occurs per visit. The worker uses
+one cached client/token, up to 20 visits with 15-second observation intervals,
+and a 20-minute soft budget. A container-local 1,260-second deadline with a
+30-second termination margin remains effective if the host wrapper dies.
+These are this worker's observation/compute bounds, not provider quota claims.
+
+The source-safe `worker-outcome.json` and `dispatch.json` are under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\<cycle_ref>`.
+They are mutable operational status, not cryptographic scheduler provenance or
+standalone fill proof. Exact private leg state and current account evidence
+remain authoritative. `worker_exited` does not mean the cycle filled.
+Account/order IDs, raw prices and execution amounts never enter these files.
+Fees, settled cash and net PnL stay `not_observed`.
+
+While a cycle owns pending SPY inventory, only its own new SPY legs may use the
+common canary submission path. Existing reconciliation/cancellation and other
+symbols continue. Recover that same cycle after a timeout; never delete the
+ownership file to force an unrelated SPY trade. An expired, never-submitted
+exit with owned inventory needs a separately explicit repair, not an automatic
+replacement of an unknown order. Old unrelated unknown receipts do not block
+a fresh flat/no-open-order cycle or get relabeled resolved.
+
+Deployment: all seven private-state consumer images rebuilt, with 35 matching
+isolated/no-network/no-volume source checks. The host launcher's no-credential
+preview returned `worker_exited` and the worker recorded `preview` under cycle
+reference `38d6ab03e3a307fcd39e068614552c9e32ffc0d38e6160fc620d18ba574ebabb`.
+The independent container deadline smoke returned the expected timeout code
+124. Neither probe submitted an order or read an account. Current session
+image: `sha256:b0ed763f79e9ed40372dd472e63f12e82b5b236d954a3c9b64e26ed6da7da2d3`.
 
 ### Restart-Safe Paper State
 

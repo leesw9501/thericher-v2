@@ -5,7 +5,7 @@ import json
 import threading
 import urllib.error
 import urllib.request
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -2366,6 +2366,77 @@ def test_fill_accounting_runs_on_submit_and_restart_without_an_extra_history_get
     assert unavailable.fill_observation_status == "unavailable"
     assert unavailable.cumulative_fill == after.cumulative_fill
     assert unavailable.current_fill is None
+    assert _submission_count(transport) == 1
+
+
+def test_active_spy_cycle_blocks_only_an_unowned_new_spy_intent(tmp_path, monkeypatch):
+    from thericher_v2.execution import kis_paper_spy_fill_cycle as cycle
+
+    seen = []
+
+    def conflict(root, run_id, symbol):
+        seen.append((root, run_id, symbol))
+        return True
+
+    monkeypatch.setattr(cycle, "conflicts_with_active_spy_fill_cycle", conflict)
+    transport = FakeKisPaperCanaryTransport()
+    state_path = tmp_path / "private" / "foreign-spy.json"
+    outcome = run_kis_paper_canary(
+        decision=replace(_decision(), symbol="SPY", exchange="AMEX"),
+        run_id="foreign-spy",
+        environment={},
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=False,
+        client=KisPaperCanaryClient(config=_config(), transport=transport),
+        now=NOW,
+        **_paths(tmp_path),
+    )
+    assert outcome.reason_code == "owned_intent_conflict"
+    assert transport.requests == []
+    assert seen == [(state_path.parent, "foreign-spy", "SPY")]
+    assert KisPaperCanaryStateStore(state_path).read().phase == "intent_recorded"
+
+    run_kis_paper_canary(
+        decision=_decision(),
+        run_id="independent-qqq",
+        environment={},
+        state_path=tmp_path / "private" / "independent-qqq.json",
+        execute=True,
+        cancel_after_submit=False,
+        client=KisPaperCanaryClient(config=_config(), transport=transport),
+        now=NOW,
+        **_paths(tmp_path),
+    )
+    assert _submission_count(transport) == 1
+    assert len(seen) == 1
+
+
+def test_active_cycle_does_not_block_existing_spy_reconciliation(tmp_path, monkeypatch):
+    from thericher_v2.execution import kis_paper_canary as canary
+
+    transport = FakeKisPaperCanaryTransport()
+    arguments = dict(
+        decision=replace(_decision(), symbol="SPY", exchange="AMEX"),
+        run_id="existing-spy",
+        environment={},
+        state_path=tmp_path / "private" / "existing-spy.json",
+        execute=True,
+        cancel_after_submit=False,
+        client=KisPaperCanaryClient(config=_config(), transport=transport),
+        now=NOW,
+        **_paths(tmp_path),
+    )
+    monkeypatch.setattr(canary, "_conflicts_with_owned_spy_cycle", lambda *args: False)
+    run_kis_paper_canary(**arguments)
+
+    def forbidden(*args):
+        pytest.fail("existing recovery checked fresh-submission ownership")
+
+    monkeypatch.setattr(canary, "_conflicts_with_owned_spy_cycle", forbidden)
+    request_count = len(transport.requests)
+    run_kis_paper_canary(**arguments)
+    assert len(transport.requests) > request_count
     assert _submission_count(transport) == 1
 
 

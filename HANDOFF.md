@@ -21,6 +21,36 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Current package adds an explicit fillable SPY buy-one/sell-one mode to the
+existing session CLI, not a new broker engine or recurring scheduler. Exact
+private leg state, account-bound cycle identity and the shared canary lock
+protect restart and inventory ownership; unrelated historical unknown states
+do not become permission holds. Asynchronous fill-history lag gets bounded
+re-observation, not another POST. Never-submitted entry ownership is released
+before its worker stops. Independent review found and covered both cases.
+One real SPY quote-only structure check confirmed output2 bid/ask; no raw price,
+account/order call or order was emitted. Focused integration: 346 passed /
+1 skipped in 10.92s. Actual cycle fills and settled/net accounting remain
+unobserved. Current runtime deployment/dispatch facts are in Execution/RUNBOOK.
+Final eight-worker authority passed 3,707 tests / 19 skips in 289.48 seconds,
+matching the prior suite plus 194 added cases. The helper exited zero with
+managed cleanup. Ruff, both sample-env Compose configurations and diff checks
+pass. No repeated full serial run was needed for this private-Paper package.
+Seven existing Execution images were rebuilt with 35 matching isolated source
+checks. The scoped Docker launcher preview and independent container deadline
+smoke passed. The existing quote-task registration now owns one explicit
+`spy-fill-20260922-v1` invocation at 2026-09-22 22:35 KST, expiring 23:10;
+there is no new task or recurring expansion. Principal and all other tasks
+are unchanged; no task was manually started. Daily-SPY remains at 23:50.
+The actual lifecycle still needs its runtime fill/position/accounting result.
+
+Parallel Engine work completed the fixed nominal 6-bps abstention comparison
+on all eight retained LSTMs: 84 parity cells, 60 old cells exactly reproduced,
+14.941 supervised CPU seconds, no training/GPU/holdout/selection. A positive
+SPY/103 aggregation is not consistent fold-level evidence of skill; all cells
+and limitations remain in the external `fixed-nominal-hurdle-v1` contract and
+summary. Commit `a9e7b02` is pushed. Research does not gate this Paper baseline.
+
 Latest parallel package: Execution connected exact cumulative KIS Paper fills
 to existing private canary state/recovery; Data added closed-category failure
 stages without modifying the verified real NAS cache; Engine completed the
@@ -45,9 +75,9 @@ CPU/CUDA replay-parity cells passing. CUDA supervision took 27.336s. Training
 loss improved; every 3/5-bps LSTM cell remains negative. Weights/results are
 under `D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\full-cohort-u256-v1`.
 This was seen-data development, not a holdout, winner or Paper promotion.
-Next main package: explicit fresh ask/bid entry/exit of one SPY share using
-only confirmed cycle inventory, then position/accounting comparison. No new
-market wait, scheduler or operator approval is needed for its implementation.
+The explicit cycle above now consumes this foundation. Its next runtime result
+must establish exact fills, flat position and gross accounting; no settled cash
+or profitability follows from code/tests alone.
 
 The operator then approved pruning schedules. Six exhausted/diagnostic
 recurring tasks and two expired Cboe one-shots are disabled, not deleted.

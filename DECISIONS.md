@@ -9664,3 +9664,32 @@ This is not real-fill calibration, a terminal-cancel proof, or settled cash.
 Independent source review additionally caught intermediate-read loss and a
 progressing-clock issue; both have regression tests. No real broker action was
 needed to implement the adapter. Explicit fillable SPY execution remains next.
+
+## 2026-09-22 - Explicit fillable SPY cycle, separate from the canary default
+
+Add a named SPY buy-one/sell-one execution baseline to the existing session
+entry point. Its transient price uses fresh ask/bid and directional tick
+rounding. The existing nonmarket/immediate-cancel command is unchanged. Reuse
+the shared canary/session locks, durable intents and original-date cumulative
+fills, not a second order ledger. A private account-bound cycle identity owns
+only its two legs. The active SPY binding prevents another new SPY intent from
+consuming that inventory between visits; existing reconciliation/cancellation
+and other symbols remain independent. Unrelated historical unknown states
+are not a new global permission hold.
+
+Claude's two supplied-facts, tool-disabled challenges returned
+`supported-with-limits`. Implement the exact-account binding, cross-cycle
+exclusion and bounded old-order containment; classify inconsistent account/fill
+facts narrowly rather than guessing. A finite owned invocation may reuse the
+disabled quote-task registration with a wholly replaced one-time trigger and
+settings. A container-local deadline must outlive neither a killed host wrapper
+nor its task limit. No new recurring task or live route is authorized by this
+decision. Actual deployment/dispatch facts belong in RUNBOOK and Execution.
+
+The official REST example returns separate output1/2/3 objects:
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_asking_price/inquire_asking_price.py
+One bounded SPY Paper quote structure call on 2026-09-22 confirmed the clock,
+last and scale in output1, with pbid1/pask1 in output2. Only field-presence facts
+were output; no raw price, account/order call or order was made. The new book
+parser follows that measured shape; missing book fields leave the legacy
+last-only path usable. Fills remain unobserved until an actual session result.
