@@ -97,16 +97,41 @@ Summary SHA256: `833a5aafbdf1ea561be2d9fb4d449f19c0c0f4e0df88ab42ec747ecf6abf653
 This demonstrates basic training/capacity, not full-cohort convergence or
 profitability. Do not create another mechanics prerequisite from this result.
 
-Next ready package: a separately frozen full-cohort H30 DEVELOPMENT comparison,
-context12, both symbols/folds/seeds (8 fits), 256 updates/fit, batch128 and the
-same optimizer, at most 2,048 updates/180 CUDA seconds. Compare the fixed final
-models with matched Ridge/naive baselines at 1/3/5 bps; include train loss,
-activity and censor counts. No best checkpoint, tuning, or new holdout claim.
-Keep original max36 eligibility/scalers/purge and closed r1 immutable; link
-the already-seen/outcome-informed lineage. This is the next question, not an
-allocated job or frozen contract yet. D1 and Paper
-recovery remain independent; historical limits below apply to their own closed
-contracts, not a prohibition on new development.
+The distinct `full-cohort-u256-v1` sibling is now frozen under the H30 family,
+contract SHA256 `d7cceb5ab3642d2a727bc8f0f73ac3ee58a3b1393b196a553e057391c1ece596`.
+Its context12 SPY/QQQ x original two folds x seeds101/103 matrix has eight
+LSTM16 fits, exactly 256 chronological batch128 updates each, the same AdamW,
+max36 eligibility/scalers/purge and 1/3/5-bps payoff/replay controls. Budget:
+2,048 updates and one 180-second CUDA appointment; CPU cap 600 seconds.
+Four fresh Ridge fits and all matched naive controls must reproduce the old
+context12 CPU cells exactly. All eight final-update weights are retained only
+after whole-phase parity and numeric/actual Torch CPU reload; no checkpoint
+selection, tuning, fresh holdout or promotion claim. Claude's tool-disabled
+challenge was `supported-with-limits`: TRAIN loss improvement is descriptive,
+not a success criterion; seen-data behavior cannot establish independent skill.
+The CPU phase completed four Ridge fits/48 cells in 19.783 parent-supervised
+seconds; every fresh control cell equals r1. The one CUDA phase completed
+eight fits/24 cells and all 2,048 updates in 27.336 parent-supervised seconds
+(25.403 worker seconds, 4.947554 summed fit-wall seconds, not kernel time).
+All 72 cells pass local replay parity. TRAIN final MSE/mean-baseline ratios
+range 0.525285-0.739221, with 230-241 TRAIN rows per fold; these loss changes
+are descriptive only. Evaluation retains the original 250 eligible decisions,
+234 supported outcomes and 16 future-censored outcomes per seed. Across both
+folds, fixed SPY seed101/103 net dollars at 1/3/5 bps are respectively
+`4.2441/-7.2053/-18.6533` and `4.2165/-9.3278/-22.8699`; QQQ seed101/103 are
+`1.8300/-8.6427/-19.1153` and `7.2627/-4.7186/-16.6990`. Every 3/5-bps LSTM
+cell is negative; these are independent one-share roundtrips, not NAV or skill.
+All eight final-update NPZ/config pairs are retained under the sibling's
+`models`; hash/schema and actual Torch CPU synthetic reload passed. Per-fit
+hashes, train losses, activity, censor counts and matched-control deltas are
+in `cuda-summary.json`. CPU summary SHA256:
+`5d8ecd2cf2e170a35b6115f8deda05c16f3d09736d42e433824e1d9071c50b3b`;
+CUDA summary SHA256:
+`4b26bfffb377be6462ac56346526f5089dc6214d800a8b0e8491662fc6f15237`.
+Both phases used the existing pinned image, networkless, source read-only;
+no rebuild, credentials, schedules, selection or promotion. Container reaped,
+lock released, bounded assignment complete; no successor allocated or expanded.
+Original r1 and diagnostics remain immutable; D1/Paper work is independent.
 
 ## Historical Evidence (Closed Scopes)
 

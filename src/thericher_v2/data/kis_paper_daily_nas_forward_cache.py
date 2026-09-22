@@ -75,10 +75,72 @@ _SAFE_REASONS = frozenset(
         "unexpected_private_daily_collector_error",
     }
 )
+_FAILURE_STAGES = frozenset(
+    {
+        "observation_input",
+        "cache_access",
+        "cache_commit",
+        "verified_base_load",
+        "target_fetch",
+        "overlap_reconciliation",
+        "cache_publish",
+        "published_cache_load",
+    }
+)
 
 
 class KisPaperDailyNasForwardCacheError(RuntimeError):
     """A non-secret structural failure in the private forward cache."""
+
+    def __init__(self, *args: object, category: str = "cache_contract") -> None:
+        super().__init__(*args)
+        self._nas_forward_failure_category = category
+
+
+def get_kis_paper_daily_nas_forward_failure_details(error: BaseException) -> dict[str, str]:
+    """Project only closed diagnostic values, never exception text or chained errors."""
+
+    category = "collector_error"
+    if isinstance(error, KisPaperDailyNasForwardCacheError):
+        category = "cache_contract"
+        if getattr(error, "_nas_forward_failure_category", None) == "duplicate_conflict":
+            category = "duplicate_conflict"
+    elif isinstance(error, OSError):
+        category = "io_error"
+    elif isinstance(error, ValueError):
+        category = "value_error"
+    stage = getattr(error, "_nas_forward_failure_stage", None)
+    details = {
+        "failure_stage": stage if type(stage) is str and stage in _FAILURE_STAGES else "unknown",
+        "failure_category": category,
+    }
+    symbol = getattr(error, "_nas_forward_failure_symbol", None)
+    if (
+        details["failure_stage"] != "unknown"
+        and type(symbol) is str
+        and symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+    ):
+        details["failure_symbol"] = symbol
+    return details
+
+
+@contextmanager
+def kis_paper_daily_nas_forward_failure_context(
+    stage: str, *, symbol: str | None = None
+) -> Iterator[None]:
+    """Annotate an existing exception without changing its type or handling."""
+
+    if stage not in _FAILURE_STAGES or (
+        symbol is not None and symbol not in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+    ):
+        raise ValueError("NAS forward failure context is invalid")
+    try:
+        yield
+    except (RuntimeError, OSError, ValueError) as error:
+        if get_kis_paper_daily_nas_forward_failure_details(error)["failure_stage"] == "unknown":
+            error._nas_forward_failure_stage = stage
+            error._nas_forward_failure_symbol = symbol
+        raise
 
 
 @dataclass(frozen=True, slots=True)
@@ -297,7 +359,7 @@ class KisPaperDailyNasForwardRun:
             raise ValueError("NAS forward run is invalid")
 
     def safe_payload(self) -> dict[str, object]:
-        return {
+        payload: dict[str, object] = {
             "status": self.status,
             "observed_at_bucket": self.observed_at.strftime("%Y-%m-%dT%H:00Z"),
             "accepted_page_count": self.accepted_page_count,
@@ -316,6 +378,17 @@ class KisPaperDailyNasForwardRun:
                 "live_endpoints_used": False,
             },
         }
+        if self.categorical_failure_count:
+            payload["target_failures"] = [
+                {
+                    "failure_stage": "target_fetch",
+                    "failure_category": target.last_reason,
+                    "failure_symbol": target_key.split("/", maxsplit=1)[0],
+                }
+                for target_key, target in self.cache.targets_by_key.items()
+                if target.last_reason is not None
+            ]
+        return payload
 
 
 @dataclass(frozen=True, slots=True)
@@ -402,19 +475,25 @@ def commit_kis_paper_daily_nas_forward_observation(
 ) -> KisPaperDailyNasForwardRun:
     """Atomically retain one source-local forward observation per successful target."""
 
-    _validate_observation_inputs(
-        rows_by_symbol=rows_by_symbol,
-        failure_reasons_by_symbol=failure_reasons_by_symbol,
-        frozen_boundary=frozen_boundary,
-    )
+    with kis_paper_daily_nas_forward_failure_context("observation_input"):
+        _validate_observation_inputs(
+            rows_by_symbol=rows_by_symbol,
+            failure_reasons_by_symbol=failure_reasons_by_symbol,
+            frozen_boundary=frozen_boundary,
+        )
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
     repository = _repository_root(repo_root)
-    root = _external_root(Path(cache_root), repository, create=True)
-    with _exclusive_lock(root / _LOCK_FILENAME):
-        index_path = _safe_child(root / _INDEX_FILENAME, root)
-        index_exists = index_path.exists()
-        index = _load_or_initialize_index(root=root, frozen_boundary=frozen_boundary)
-        _validate_index(index, frozen_boundary=frozen_boundary)
+    with kis_paper_daily_nas_forward_failure_context("cache_access"):
+        root = _external_root(Path(cache_root), repository, create=True)
+    with (
+        kis_paper_daily_nas_forward_failure_context("cache_commit"),
+        _exclusive_lock(root / _LOCK_FILENAME),
+    ):
+        with kis_paper_daily_nas_forward_failure_context("verified_base_load"):
+            index_path = _safe_child(root / _INDEX_FILENAME, root)
+            index_exists = index_path.exists()
+            index = _load_or_initialize_index(root=root, frozen_boundary=frozen_boundary)
+            _validate_index(index, frozen_boundary=frozen_boundary)
         merged_by_symbol: dict[str, tuple[KisPaperDailyNasForwardRow, ...]] = {}
         changed_symbols: set[str] = set()
         pending_snapshots: dict[str, tuple[bytes, str, str, int]] = {}
@@ -422,8 +501,9 @@ def commit_kis_paper_daily_nas_forward_observation(
 
         for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:
             target_key = f"{symbol}/{NAS_EXCHANGE}"
-            target = _target_document(index, target_key)
-            existing = _load_target_rows(root=root, target=target, symbol=symbol)
+            with kis_paper_daily_nas_forward_failure_context("verified_base_load", symbol=symbol):
+                target = _target_document(index, target_key)
+                existing = _load_target_rows(root=root, target=target, symbol=symbol)
             if symbol in failure_reasons_by_symbol:
                 target_updates[target_key] = _failure_target_document(
                     target,
@@ -434,7 +514,10 @@ def commit_kis_paper_daily_nas_forward_observation(
             incoming = tuple(
                 row for row in rows_by_symbol[symbol] if row.session_date > frozen_boundary
             )
-            merged = _merge_rows(existing, incoming, symbol=symbol)
+            with kis_paper_daily_nas_forward_failure_context(
+                "overlap_reconciliation", symbol=symbol
+            ):
+                merged = _merge_rows(existing, incoming, symbol=symbol)
             merged_by_symbol[symbol] = merged
             if merged != existing:
                 raw_payload = _compressed_rows(merged)
@@ -468,7 +551,8 @@ def commit_kis_paper_daily_nas_forward_observation(
             rows_sha256,
             _row_count,
         ) in pending_snapshots.items():
-            relative_path = _write_snapshot(root=root, symbol=symbol, payload=payload)
+            with kis_paper_daily_nas_forward_failure_context("cache_publish", symbol=symbol):
+                relative_path = _write_snapshot(root=root, symbol=symbol, payload=payload)
             target_key = f"{symbol}/{NAS_EXCHANGE}"
             target_updates[target_key] = _success_target_document(
                 _target_document(index, target_key),
@@ -484,16 +568,18 @@ def commit_kis_paper_daily_nas_forward_observation(
         index_changed = not index_exists or updated_index != index
         if index_changed:
             updated_index["generation"] = int(index["generation"]) + 1
-            _write_json_atomic(root / _INDEX_FILENAME, updated_index)
+            with kis_paper_daily_nas_forward_failure_context("cache_publish"):
+                _write_json_atomic(root / _INDEX_FILENAME, updated_index)
         common_sessions = _common_forward_sessions(merged_by_symbol)
         prospective_input_ready = _is_forward_projection_ready(
             common_sessions,
             frozen_boundary=frozen_boundary,
         )
-        cache = load_verified_kis_paper_daily_nas_forward_cache(
-            cache_root=root,
-            repo_root=repository,
-        )
+        with kis_paper_daily_nas_forward_failure_context("published_cache_load"):
+            cache = load_verified_kis_paper_daily_nas_forward_cache(
+                cache_root=root,
+                repo_root=repository,
+            )
 
     failures = len(failure_reasons_by_symbol)
     has_rows = any(cache.rows_by_symbol.values())
@@ -971,7 +1057,9 @@ def _merge_rows(
             raise ValueError("forward row symbol is invalid")
         prior = by_session.get(row.session_date)
         if prior is not None and prior != row:
-            raise KisPaperDailyNasForwardCacheError("forward duplicate conflict")
+            raise KisPaperDailyNasForwardCacheError(
+                "forward duplicate conflict", category="duplicate_conflict"
+            )
         by_session[row.session_date] = row
     return tuple(by_session[session] for session in sorted(by_session))
 

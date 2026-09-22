@@ -14,7 +14,7 @@ import urllib.parse
 import urllib.request
 from collections.abc import Callable, Iterator, Mapping
 from contextlib import contextmanager
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -34,6 +34,11 @@ from .emergency import (
     PaperExecutionControlStore,
 )
 from .kis_paper_console_bridge import paper_account_snapshot_from_kis_readonly
+from .kis_paper_fill_accounting import (
+    KisPaperCumulativeFill,
+    KisPaperExecutionObservation,
+    fill_identity_ref,
+)
 from .kis_paper_order_fields import (
     map_kis_paper_us_buy_limit_order_fields,
     map_kis_paper_us_sell_limit_order_fields,
@@ -469,6 +474,9 @@ class KisPaperCanaryState:
     submit_upstream_code: str | None = None
     submit_response_category: str | None = None
     schema_version: int = SCHEMA_VERSION
+    cumulative_fill: KisPaperCumulativeFill | None = None
+    fill_observation_status: str = "not_observed"
+    fill_observed_at: datetime | None = None
 
     def __post_init__(self) -> None:
         if self.phase not in _STATE_PHASES:
@@ -511,6 +519,68 @@ class KisPaperCanaryState:
         ):
             raise ValueError("canary submit response category is invalid")
         object.__setattr__(self, "updated_at", require_utc(self.updated_at, "updated_at"))
+        if self.fill_observation_status not in {
+            "not_observed",
+            "available",
+            "absent",
+            "ambiguous",
+            "identity_mismatch",
+            "fields_invalid",
+            "conflict",
+            "unavailable",
+        }:
+            raise ValueError("fill observation status invalid")
+        if (self.fill_observation_status == "not_observed") != (self.fill_observed_at is None):
+            raise ValueError("fill observation time missing")
+        if self.fill_observed_at is not None:
+            require_utc(self.fill_observed_at)
+            if self.fill_observed_at > self.updated_at:
+                raise ValueError("fill observation time invalid")
+        if self.cumulative_fill is not None:
+            order_at = self.submission_started_at or self.submitted_at
+            if (
+                self.broker_order_id is None
+                or order_at is None
+                or (
+                    self.cumulative_fill.identity_ref
+                    != fill_identity_ref(
+                        raw_order_id=self.broker_order_id,
+                        order_at=order_at,
+                        symbol=self.intent.symbol,
+                        exchange=self.intent.exchange,
+                        side=self.intent.side,
+                        quantity=self.intent.quantity,
+                    )
+                    or self.cumulative_fill.requested_quantity != self.intent.quantity
+                    or self.fill_observed_at is None
+                    or not order_at <= self.cumulative_fill.observed_at <= self.fill_observed_at
+                )
+            ):
+                raise ValueError("fill observation binding invalid")
+        if self.fill_observation_status == "available" and (
+            self.cumulative_fill is None
+            or self.cumulative_fill.observed_at != self.fill_observed_at
+        ):
+            raise ValueError("current fill missing")
+
+    @property
+    def current_fill(self) -> KisPaperCumulativeFill | None:
+        return self.cumulative_fill if self.fill_observation_status == "available" else None
+
+    @property
+    def gross_cashflow_contribution(self) -> Decimal | None:
+        """Own order's gross flow only, never account cash, settlement, or net PnL."""
+        fill = self.current_fill
+        if fill is None:
+            return None
+        return fill.gross_amount * (1 if self.intent.side == "sell" else -1)
+
+    @property
+    def position_contribution(self) -> Decimal | None:
+        fill = self.current_fill
+        if fill is None:
+            return None
+        return fill.quantity * (1 if self.intent.side == "buy" else -1)
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -531,6 +601,13 @@ class KisPaperCanaryState:
             "cancel_after_submit": self.cancel_after_submit,
             "submit_upstream_code": self.submit_upstream_code,
             "submit_response_category": self.submit_response_category,
+            "cumulative_fill": None
+            if self.cumulative_fill is None
+            else self.cumulative_fill.to_dict(),
+            "fill_observation_status": self.fill_observation_status,
+            "fill_observed_at": None
+            if self.fill_observed_at is None
+            else self.fill_observed_at.isoformat(),
         }
 
     @classmethod
@@ -551,6 +628,9 @@ class KisPaperCanaryState:
             "cancel_after_submit",
             "submit_upstream_code",
             "submit_response_category",
+            "cumulative_fill",
+            "fill_observation_status",
+            "fill_observed_at",
         }
         if not isinstance(payload, Mapping) or not expected <= set(payload) <= expected | optional:
             raise KisPaperCanaryError("state_invalid")
@@ -585,6 +665,17 @@ class KisPaperCanaryState:
                 raise ValueError("fingerprint")
             return cls(
                 intent=intent,
+                cumulative_fill=(
+                    None
+                    if payload.get("cumulative_fill") is None
+                    else KisPaperCumulativeFill.from_dict(payload["cumulative_fill"])
+                ),
+                fill_observation_status=payload.get("fill_observation_status", "not_observed"),
+                fill_observed_at=(
+                    None
+                    if payload.get("fill_observed_at") is None
+                    else _utc_datetime(payload["fill_observed_at"])
+                ),
                 phase=_required_text(payload["phase"]),
                 updated_at=_utc_datetime(payload["updated_at"]),
                 reason_code=_required_text(payload["reason_code"]),
@@ -635,6 +726,7 @@ class KisPaperCanaryReconciliation:
     status: Literal["clean", "unresolved"]
     reason_code: str | None = None
     recovered_broker_order_id: str | None = field(default=None, repr=False)
+    execution: KisPaperExecutionObservation | None = field(default=None, repr=False)
 
     @property
     def position_count(self) -> int:
@@ -707,6 +799,40 @@ class KisPaperCanaryStateStore:
             self._write_unlocked(state)
             return state
 
+    def record_fill_observation(
+        self,
+        intent: KisPaperCanaryIntent,
+        observation: KisPaperExecutionObservation,
+        *,
+        now: datetime,
+    ) -> KisPaperCanaryState:
+        with exclusive_kis_paper_canary_state_lock(self.path):
+            current = self._read_unlocked()
+            if current is None or current.intent != intent:
+                raise KisPaperCanaryError("state_intent_mismatch")
+            cumulative = current.cumulative_fill
+            status = observation.status
+            try:
+                if observation.fill is not None:
+                    cumulative = observation.fill.advance(cumulative)
+                state = replace(
+                    current,
+                    cumulative_fill=cumulative,
+                    fill_observation_status=status,
+                    fill_observed_at=now,
+                    updated_at=max(current.updated_at, now),
+                )
+            except ValueError:
+                # Preserve accepted totals but make stale/conflicting reads explicit.
+                state = replace(
+                    current,
+                    fill_observation_status="conflict",
+                    fill_observed_at=max(current.fill_observed_at or now, now),
+                    updated_at=max(current.updated_at, now),
+                )
+            self._write_unlocked(state)
+            return state
+
     def transition(
         self,
         intent: KisPaperCanaryIntent,
@@ -747,6 +873,9 @@ class KisPaperCanaryStateStore:
                 phase=phase,
                 updated_at=now,
                 reason_code=reason_code,
+                cumulative_fill=current.cumulative_fill,
+                fill_observation_status=current.fill_observation_status,
+                fill_observed_at=current.fill_observed_at,
                 broker_order_id=(
                     current.broker_order_id if broker_order_id is None else broker_order_id
                 ),
@@ -837,10 +966,14 @@ class KisPaperCanaryClient:
             same_day_order = (
                 None
                 if state.broker_order_id is None or order_at is None
-                else read_only_client.observe_same_day_order_id(
+                else read_only_client.observe_order_execution(
                     state.broker_order_id,
-                    as_of=now,
                     order_at=order_at,
+                    observed_at=now,
+                    symbol=state.intent.symbol,
+                    exchange=state.intent.exchange,
+                    side=state.intent.side,
+                    quantity=state.intent.quantity,
                 )
             )
             recovered_broker_order_id = (
@@ -889,6 +1022,7 @@ class KisPaperCanaryClient:
             matching_ccnl=matching_ccnl,
             status=status,
             recovered_broker_order_id=recovered_broker_order_id,
+            execution=same_day_order,
         )
 
     def fetch_spy_quote(self) -> KisPaperSpyQuote:
@@ -1468,6 +1602,13 @@ def _run_kis_paper_canary(
                                 observed_at=submit_at,
                             )
 
+    if execute:
+        state = _record_reconciliation_fill(
+            state_store,
+            state,
+            reconciliation,
+            observed_at=observed_at,
+        )
     if reconciliation.snapshot is not None:
         write_paper_account_snapshot(
             paper_account_snapshot_from_kis_readonly(
@@ -1779,6 +1920,32 @@ def _validate_allowlisted_price_request(
         raise KisPaperCanaryError(error.code) from error
 
 
+def _record_reconciliation_fill(
+    store: KisPaperCanaryStateStore,
+    state: KisPaperCanaryState,
+    reconciliation: KisPaperCanaryReconciliation,
+    *,
+    observed_at: datetime,
+) -> KisPaperCanaryState:
+    observation = reconciliation.execution
+    if observation is None:
+        if state.cumulative_fill is None:
+            return state
+        observation = KisPaperExecutionObservation(0, False, "unavailable")
+    return store.record_fill_observation(
+        state.intent,
+        observation,
+        now=(
+            observation.observed_at
+            or (
+                observation.fill.observed_at
+                if observation.fill is not None
+                else max(observed_at, state.updated_at)
+            )
+        ),
+    )
+
+
 def _cancel_submitted_canary(
     *,
     client: KisPaperCanaryClient,
@@ -1787,6 +1954,14 @@ def _cancel_submitted_canary(
     reconciliation: KisPaperCanaryReconciliation,
     observed_at: datetime,
 ) -> tuple[KisPaperCanaryState, KisPaperCanaryReconciliation]:
+    # A cancellation may remove the history row. Retain any prior exact fill
+    # before the side effect; a later absent row changes freshness, not totals.
+    state = _record_reconciliation_fill(
+        state_store,
+        state,
+        reconciliation,
+        observed_at=observed_at,
+    )
     if state.broker_order_id is None:
         return state, reconciliation
     state = state_store.transition(
@@ -1858,6 +2033,12 @@ def _recover_existing_canary(
                 transport=transport or UrllibKisPaperCanaryTransport(),
             )
         reconciliation = client.reconcile(state, now=observed_at)
+        state = _record_reconciliation_fill(
+            state_store,
+            state,
+            reconciliation,
+            observed_at=observed_at,
+        )
         if (
             allow_order_side_effects
             and state.phase == "outcome_unknown"
@@ -1875,6 +2056,12 @@ def _recover_existing_canary(
                 submitted_at=state.submission_started_at,
             )
             reconciliation = client.reconcile(state, now=observed_at)
+            state = _record_reconciliation_fill(
+                state_store,
+                state,
+                reconciliation,
+                observed_at=observed_at,
+            )
         if (
             allow_order_side_effects
             and state.phase == "outcome_unknown"
@@ -1892,6 +2079,12 @@ def _recover_existing_canary(
                 now=observed_at,
             )
             reconciliation = client.reconcile(state, now=observed_at)
+            state = _record_reconciliation_fill(
+                state_store,
+                state,
+                reconciliation,
+                observed_at=observed_at,
+            )
     except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
         return state, _unavailable_reconciliation(
             reason_code=_safe_reconciliation_reason_code(error)
@@ -2263,6 +2456,18 @@ def _write_evidence(
         },
         "runtime_projection_sha256": runtime_digest,
     }
+    if state.fill_observation_status != "not_observed":
+        payload["fill_accounting"] = {
+            "source": "kis_paper",
+            "observation_status": state.fill_observation_status,
+            "observed_at": state.fill_observed_at.isoformat(),
+            "quantity_state": (
+                "not_observed" if state.current_fill is None else state.current_fill.status
+            ),
+            "fees": "not_observed",
+            "settled_cash": "not_observed",
+            "net_pnl": "not_observed",
+        }
     if prior_recovery_state is not None:
         payload.update(
             {

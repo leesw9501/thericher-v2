@@ -50,8 +50,23 @@ seconds, inside the 180-second parent limit, no retry/fallback. The lock was
 released and its container removed. No new evaluation, weight retention,
 model selection or Paper consumer. Main owns Execution preemption through
 the existing parent lock/supervisor and child reaping.
-Engine's proposed eight-fit full-cohort DEVELOPMENT successor is not yet
-frozen or allocated; the completed mechanics check imposes no new gate.
+The distinct H30 `full-cohort-u256-v1` contract is frozen and registered in
+the same trial family, SHA256
+`d7cceb5ab3642d2a727bc8f0f73ac3ee58a3b1393b196a553e057391c1ece596`.
+The single 180-second CUDA appointment completed all eight context12 fits,
+256 updates each, 2,048 total, in 27.336 parent-supervised seconds (25.403
+worker seconds; 4.947554 summed fit-wall seconds, not CUDA kernel time).
+CPU completed four Ridge fits/48 cells in 19.783 parent-supervised seconds,
+matching r1 exactly; CUDA completed 24 cells. All eight final-update numeric
+weights/configs are retained externally and passed hash/schema plus actual
+Torch CPU reload checks. Summary hashes and results are in Engine Research.
+The pre-dispatch recheck found no lock, host Python worker or GPU-enabled
+running container. This run used the existing pinned image and exclusive
+parent lock/supervisor, with read-only source mounts and no network, credentials,
+image rebuild, retry/fallback or schedule. The child and named container are
+reaped, lock released, no research Python worker remains; the existing registry
+records `non_promoting_completed`. No sealed evaluation or selection spend.
+Recovery class: complete. No further successor package or GPU allocation.
 
 The bootstrap created no allocation or training run. Recheck actual GPU/process
 ownership before an appointment; the historical idle facts below are not a live

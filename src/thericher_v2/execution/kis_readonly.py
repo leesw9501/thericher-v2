@@ -27,6 +27,12 @@ from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 
+from .kis_paper_fill_accounting import (
+    KisPaperCumulativeFill,
+    KisPaperExecutionObservation,
+    fill_identity_ref,
+)
+
 KIS_PAPER_BASE_URL = "https://openapivts.koreainvestment.com:29443"
 KIS_PAPER_TOKEN_PATH = "/oauth2/tokenP"
 DEFAULT_KIS_PAPER_ARTIFACT_ROOT = Path(r"D:\thericher-v2\model-artifacts")
@@ -753,6 +759,78 @@ class KisPaperReadOnlyClient:
             )
         ]
         return matches[0] if len(matches) == 1 else None
+
+    def observe_order_execution(
+        self,
+        raw_order_id: str,
+        *,
+        order_at: datetime,
+        observed_at: datetime,
+        symbol: str,
+        exchange: str,
+        side: Literal["buy", "sell"],
+        quantity: Decimal,
+    ) -> KisPaperExecutionObservation:
+        """Bind one documented cumulative fill row; never sum amendment lineage.
+
+        KIS's official overseas inquire_ccnl example names ft_ccld_qty and
+        ft_ccld_amt3 as executed quantity/amount. No status-name inference or
+        assumption that an absent open order was filled is made here.
+        """
+        history = self._read_same_day_order_history(raw_order_id, order_at=order_at)
+        base = dict(
+            row_count=history.row_count,
+            same_day_order_id_seen=bool(history.direct_matches),
+            observed_at=require_utc(observed_at),
+        )
+        if not history.direct_matches:
+            return KisPaperExecutionObservation(**base, status="absent")
+        if len(history.direct_matches) != 1:
+            return KisPaperExecutionObservation(**base, status="ambiguous")
+        row = history.direct_matches[0]
+        order_date = (
+            require_utc(order_at).astimezone(ZoneInfo("America/New_York")).strftime("%Y%m%d")
+        )
+        if (
+            row.get("ord_dt") != order_date
+            or row.get("pdno") != symbol
+            or row.get("ovrs_excg_cd") != exchange
+            or row.get("sll_buy_dvsn_cd") != {"buy": "02", "sell": "01"}.get(side)
+            or row.get("tr_crcy_cd") != "USD"
+        ):
+            return KisPaperExecutionObservation(**base, status="identity_mismatch")
+        try:
+            requested = _response_decimal(row, "ft_ord_qty", "ccnl_response_incomplete")
+            filled = _response_decimal(row, "ft_ccld_qty", "ccnl_response_incomplete")
+            amount = _response_decimal(row, "ft_ccld_amt3", "ccnl_response_incomplete")
+            price = _response_decimal(row, "ft_ccld_unpr3", "ccnl_response_incomplete")
+            remaining = _response_decimal(row, "nccs_qty", "ccnl_response_incomplete")
+            if (
+                requested != quantity
+                or remaining < 0
+                or filled + remaining > requested
+                or price < 0
+                or (filled > 0 and price <= 0)
+                or abs(amount - filled * price) > Decimal("0.01")
+            ):
+                raise ValueError("fill quantity mismatch")
+            fill = KisPaperCumulativeFill(
+                identity_ref=fill_identity_ref(
+                    raw_order_id=raw_order_id,
+                    order_at=order_at,
+                    symbol=symbol,
+                    exchange=exchange,
+                    side=side,
+                    quantity=quantity,
+                ),
+                requested_quantity=requested,
+                quantity=filled,
+                gross_amount=amount,
+                observed_at=observed_at,
+            )
+        except (KisPaperReadOnlyError, ValueError, InvalidOperation):
+            return KisPaperExecutionObservation(**base, status="fields_invalid")
+        return KisPaperExecutionObservation(**base, status="available", fill=fill)
 
     def inspect_order_history_terminal_fields(
         self,

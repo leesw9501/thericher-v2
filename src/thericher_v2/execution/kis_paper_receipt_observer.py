@@ -395,6 +395,9 @@ def _read_private_receipt_state(path: Path, run_id: str) -> _PrivateReceiptInten
         "cancel_after_submit",
         "submit_upstream_code",
         "submit_response_category",
+        "cumulative_fill",
+        "fill_observation_status",
+        "fill_observed_at",
     }
     if not expected <= set(payload) <= expected | optional:
         raise KisPaperReceiptObservationError("private state is invalid")

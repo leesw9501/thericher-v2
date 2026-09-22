@@ -21,6 +21,34 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Latest parallel package: Execution connected exact cumulative KIS Paper fills
+to existing private canary state/recovery; Data added closed-category failure
+stages without modifying the verified real NAS cache; Engine completed the
+fixed full-cohort H30 CUDA successor. Quantity observations are deduplicated,
+order/date-bound, retained before cancellation/requery, and marked non-current
+after missing/conflicting reads. Gross order contribution is not settled cash,
+fees or net PnL. Structural probes and the immediate-cancel default are unchanged.
+The first combined changed-path run passed 228 tests / 1 skip in 8.83s.
+Final clean-root eight-worker integration passed 3,513 tests / 19 skips in
+294.19s; helper exited zero after managed-run cleanup. Ruff, both Compose
+configurations with `.env.example`, and diff checks pass. Focused-test scratch
+under the six named `C:\trpy\fill-accounting-20260922-*` / `integration-20260922-f`
+paths remains because manual cleanup was tool-policy denied; these are not
+active helper-managed roots or surviving test workers.
+Deployment/integration details are in Execution and Data stateboards.
+All seven private-state consumer images plus the NAS collector/preflight images
+were rebuilt with `.env.example`; 34 isolated source checks match. No task,
+broker, real credential file, or private-state volume was invoked/mounted.
+
+The H30 successor trained eight final models at 256 updates each, with all 72
+CPU/CUDA replay-parity cells passing. CUDA supervision took 27.336s. Training
+loss improved; every 3/5-bps LSTM cell remains negative. Weights/results are
+under `D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\full-cohort-u256-v1`.
+This was seen-data development, not a holdout, winner or Paper promotion.
+Next main package: explicit fresh ask/bid entry/exit of one SPY share using
+only confirmed cycle inventory, then position/accounting comparison. No new
+market wait, scheduler or operator approval is needed for its implementation.
+
 The operator then approved pruning schedules. Six exhausted/diagnostic
 recurring tasks and two expired Cboe one-shots are disabled, not deleted.
 Six operational schedules remain, plus the D1 study's final later opportunity

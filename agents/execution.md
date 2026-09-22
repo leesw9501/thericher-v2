@@ -14,6 +14,35 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+2026-09-22 cumulative-fill package: the existing original-order-date history
+GET now also returns a private typed quantity/amount observation. One unique
+exact order/date/symbol/exchange/side/requested-quantity/USD row is required;
+lineage rows are never summed. Positive amount must match quantity times
+reported fill price within USD 0.01. Ambiguous/missing/malformed evidence is
+scoped to that observation. The existing atomic state stores cumulative totals,
+not added snapshots, so restart/duplicate reads cannot accrue another fill.
+Pre-cancel and intermediate recovery observations are persisted before another
+read can hide them. Regression/conflict preserves accepted totals, but only a
+current available observation exposes signed position/gross-flow contribution.
+Read failures and absence do not masquerade as current fills. Fees, settlement,
+account cash and net PnL remain unknown; orderable funds are not cash.
+New state fields are optional for legacy reads; the strict receipt observer
+accepts them without changing its old same-day/structural interpretation.
+Independent review found and fixed intermediate-requery loss and run-start
+timestamp reuse; progressing-clock/restart synthetic tests cover both.
+Changed-path coverage initially passed 228 tests / 1 skip. No new broker call,
+live access or deliberately fillable cycle occurred in this source package.
+Final integrated eight-worker run: 3,513 passed / 19 skipped, 294.19s; managed
+cleanup completed. Ruff, default/research Compose and diff checks pass.
+All seven private-state consumer images were rebuilt together using
+`.env.example`; 28 networkless/read-only/no-mount source hash comparisons match
+the four changed execution modules. Current session image:
+`sha256:968dba2d2d5fd622eb705073a08c3f9b939c3ca0a7629f0b6005f9b4b0fbebb9`;
+daily-SPY image:
+`sha256:0b313ccec4f5a4c8b2efc02b5dca74138a5be9feae2d21c920d1bc568a855fec`.
+No owned task was running at dispatch and no task/broker/private-state invocation
+was made. The older rollout hashes below describe the previous timestamp fix.
+
 Schedule cleanup (2026-09-22): recurring immediate-cancel `quote-session` is
 disabled after its exact latest receipt revalidated `cancelled/clean`.
 The explicit diagnostic/recovery command and private state remain available;

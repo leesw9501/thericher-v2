@@ -15,6 +15,7 @@ from thericher_v2.data.kis_paper_daily_nas_forward_cache import (
     KisPaperDailyNasForwardRow,
     KisPaperDailyNasForwardRun,
     commit_kis_paper_daily_nas_forward_observation,
+    kis_paper_daily_nas_forward_failure_context,
     sanitize_kis_paper_daily_nas_forward_failure_reason,
 )
 from thericher_v2.data.official_symbol_directory_nas_probe import NAS_EXCHANGE
@@ -76,20 +77,21 @@ def collect_kis_paper_daily_nas_forward_once(
     failures: dict[str, str] = {}
     for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:
         try:
-            page = client.fetch_daily_raw_page(
-                KisPaperDailyQuery(
-                    symbol=symbol,
-                    exchange=NAS_EXCHANGE,
-                    by_date=anchor,
-                    approved_symbol_exchanges=_SYMBOL_EXCHANGES,
+            with kis_paper_daily_nas_forward_failure_context("target_fetch", symbol=symbol):
+                page = client.fetch_daily_raw_page(
+                    KisPaperDailyQuery(
+                        symbol=symbol,
+                        exchange=NAS_EXCHANGE,
+                        by_date=anchor,
+                        approved_symbol_exchanges=_SYMBOL_EXCHANGES,
+                    )
                 )
-            )
-            rows_by_symbol[symbol] = _completed_forward_rows(
-                page,
-                symbol=symbol,
-                eligible_through=eligible_through,
-                frozen_boundary=frozen_boundary,
-            )
+                rows_by_symbol[symbol] = _completed_forward_rows(
+                    page,
+                    symbol=symbol,
+                    eligible_through=eligible_through,
+                    frozen_boundary=frozen_boundary,
+                )
         except (KisPaperMarketDataError, KisPaperDailyNasForwardError, ValueError) as error:
             failures[symbol] = sanitize_kis_paper_daily_nas_forward_failure_reason(error)
     return commit_kis_paper_daily_nas_forward_observation(

@@ -14,10 +14,10 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 
 | Work | Owner / resource | Current fact and dispatch |
 | --- | --- | --- |
-| SPY lifecycle recovery | Execution / existing Paper state and task | Date/conflict fixes pass integration; seven consumer images match source. Latest exact canary is cancelled/clean. Recurring immediate-cancel quote task is disabled; explicit recovery remains owned. Actual daily-SPY Paper session remains due 2026-09-22 23:50 KST. Next: fillable cycle and exact accounting. |
-| Development comparison | Engine Research / CPU and CUDA | H30 completed 8 Ridge/16 LSTM fits and 108 replay-parity cells. The four-fit 256-update learnability check then completed in 9.779s: synthetic relationship learned, tiny TRAIN batch memorized, no generalization claim. Next: one fixed full-cohort eight-fit DEVELOPMENT comparison, not another mechanics gate or a closed-result rewrite. |
-| Data collection / finite D1 measurement | Data / existing tasks | Exhausted backfills and finite stability/prefix diagnostics disabled. Pair-forward host runner repaired to v2, next due 2026-09-23 06:55 KST; NAS error recovery remains local to that collector. D1 is first_recorded; final later opportunity 2026-09-22 23:20, both triggers expire at midnight. No pair or new collection is inferred. |
-| GPU | Research Steward / exclusive allocation | H30 and four-fit learnability appointments completed; lock released and named containers removed. Same restored research image, no running campaign or implied successor allocation. Recheck ownership before a newly frozen job. |
+| SPY lifecycle recovery | Execution / existing Paper state and task | Exact cumulative fills now persist across duplicate reads, cancellation and intermediate recovery, with explicit current/unknown status. Changed-path integration passes; nine Execution/Data images rebuilt with 34 matching source checks. Actual daily-SPY Paper remains due 2026-09-22 23:50 KST. Next: explicit fresh-ask/bid one-share cycle, own-inventory and account comparison. |
+| Development comparison | Engine Research / CPU and CUDA | Frozen H30 full-cohort successor completed 8 LSTM/4 Ridge fits and 72 replay-parity cells, 2,048 updates, 27.336 supervised CUDA seconds. Eight final models retained externally. Every 3/5-bps LSTM cell is negative; no selected winner/Paper claim. Next scientific question should address turnover/cost, not repeat learnability. |
+| Data collection / finite D1 measurement | Data / existing tasks | Existing six NAS snapshots validate; the old generic failure does not identify its failing stage. New fixed-category diagnostics are ready for the next owned 06:40 run. Pair-forward v2 due 2026-09-23 06:55; D1 final later opportunity 2026-09-22 23:20, triggers expire midnight. No fresh collection/pair inferred. |
+| GPU | Research Steward / exclusive allocation | Full-cohort CUDA assignment finished, named container reaped, lock released. No unowned training or automatically expanded successor. Research work stayed independent of D1 and Execution. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -38,9 +38,11 @@ latency, not a universal disk benchmark. Recalibrate for C: capacity/performance
 production data/models stay D:. Keep fail-fast timing and isolated fixture
 improvements, with all authority/lease/cleanup checks intact.
 Both known managed roots are checked for surviving workers after a drive
-switch. Current test/training jobs have exited; the next ready packages are
-the fill/accounting implementation and the proposed research comparison,
-with their separate owners. The latter still needs its actual contract freeze.
+switch. The bounded research job and image builds have exited. Final integrated
+eight-worker coverage passed 3,513 tests / 19 skips in 294.19s with managed
+cleanup; no owned worker remains and there is no foreground market wait.
+Independent source review found two recovery edge cases and the implementation
+now includes their regression tests. No agent performed system/mock experiments.
 
 Task-owned due times belong to their workers. Independent role agents performed
 Data deployment, CPU research, and code review while Execution integrated.

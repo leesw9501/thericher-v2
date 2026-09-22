@@ -55,7 +55,31 @@ guard-receipt lineage; its next natural run is 2026-09-23 06:55 KST. This is
 routing repair, not proof of new rows. NAS forward remains active at 06:40:
 its latest safe receipt is `unavailable/nas_forward_cache_unavailable/reconcile`
 at `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20260921T214003621428Z-524597323641\receipt.json`.
-Its actual cache fault needs a separate bounded recovery; quarantine is unknown.
+The 2026-09-22 bounded offline diagnosis reattested this exact NAS cache through
+its existing loader with writes/network blocked: generation 2, six ready targets,
+two common sessions through 2026-07-28, and all snapshot/content hashes valid.
+Index `sha256:985ea6348e315a7c0a075f873dffe718a3e5addcf393ffb1b9752ca03da5c144`
+still matches the last successful 2026-07-28 21:40 UTC receipt; the first failed
+receipt is 2026-07-29 21:40 UTC. No stored-cache/loader inconsistency or quarantine
+was established. A new-page overlap conflict is possible, not proved: the failed
+receipt loses the exact cache exception stage and rejected incoming rows were
+not retained. The follow-on source-only diagnostic change adds allowlisted
+`failure_stage`/`failure_category` and an optional fixed-universe symbol to new
+failure receipts, plus scoped `target_failures` on partial/deferred outcomes.
+Base load, target fetch, and overlap reconciliation are distinct; status, reason,
+recovery, exit codes, cache schema, and validation remain unchanged. The 45-test
+focused synthetic/static group passes with external surfaces blocked. No real
+cache, task or credential was changed by the agent; prior receipts remain
+intact. Main subsequently rebuilt the existing collector/preflight images with
+`.env.example`; six networkless/no-mount source checks match the three changed
+modules. Collector image `sha256:05e3ee382dc506825bccc1741f82b64787066b37d408f299b055786e1996ce42`;
+preflight `sha256:4474445534345e0e0a4253e80502e100b74f6b45b37345a02e0d36234e355c41`.
+No collection was invoked. Use the next naturally owned 2026-09-23 06:40 KST
+outcome to choose any reconciliation. Do not reset,
+overwrite, or quarantine this verified cache from exit 20 or the generic receipt
+alone. The prior retained C: synthetic scratch was containment/link-checked and
+removed with native PowerShell; its earlier cleanup failed at tool-policy
+dispatch, not at a demonstrated filesystem lock.
 
 The current D1 reader now validates `first_recorded` for session 2026-09-21,
 at `D:\thericher-v2\model-artifacts\data\kis-paper-d1-prospective-observation-pairing\v1\receipts\first-20260921-b7752aa22cc3.json`.

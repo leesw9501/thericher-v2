@@ -22,6 +22,7 @@ from thericher_v2.data.kis_paper_daily_nas_forward_cache import (
     KisPaperDailyNasForwardRow,
     build_kis_paper_daily_nas_historical_forward_projection,
     commit_kis_paper_daily_nas_forward_observation,
+    get_kis_paper_daily_nas_forward_failure_details,
     load_verified_kis_paper_daily_nas_forward_cache,
 )
 from thericher_v2.data.local import _cataloged_bars_from_verified_loader
@@ -96,7 +97,8 @@ def test_conflicting_duplicate_does_not_publish_or_replace_prior_snapshot(tmp_pa
     conflicting = _rows_for_all((date(2026, 7, 27),))
     conflicting["AAPL"] = (_row("AAPL", date(2026, 7, 27), close=Decimal("999")),)
 
-    with pytest.raises(KisPaperDailyNasForwardCacheError, match="duplicate conflict"):
+    snapshots = {path: path.read_bytes() for path in cache_root.rglob("*.csv.gz")}
+    with pytest.raises(KisPaperDailyNasForwardCacheError, match="duplicate conflict") as caught:
         commit_kis_paper_daily_nas_forward_observation(
             rows_by_symbol=conflicting,
             failure_reasons_by_symbol={},
@@ -105,6 +107,12 @@ def test_conflicting_duplicate_does_not_publish_or_replace_prior_snapshot(tmp_pa
         )
 
     assert (cache_root / "index.json").read_bytes() == index_bytes
+    assert {path: path.read_bytes() for path in cache_root.rglob("*.csv.gz")} == snapshots
+    assert get_kis_paper_daily_nas_forward_failure_details(caught.value) == {
+        "failure_stage": "overlap_reconciliation",
+        "failure_category": "duplicate_conflict",
+        "failure_symbol": "AAPL",
+    }
     assert (
         load_verified_kis_paper_daily_nas_forward_cache(
             cache_root=cache_root,
@@ -112,6 +120,80 @@ def test_conflicting_duplicate_does_not_publish_or_replace_prior_snapshot(tmp_pa
         ).cache_hash
         == first.cache.cache_hash
     )
+
+
+@pytest.mark.parametrize("fault", ["index", "snapshot", "boundary"])
+def test_base_load_failure_is_distinct_from_incoming_overlap(tmp_path: Path, fault: str) -> None:
+    cache_root = tmp_path / "external" / "forward"
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    rows = _rows_for_all(_sessions(27, 28))
+    commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=rows,
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    index_path = cache_root / "index.json"
+    if fault == "index":
+        index_path.write_text("{}", encoding="utf-8")
+    elif fault == "snapshot":
+        target = json.loads(index_path.read_bytes())["targets"][0]
+        (cache_root / target["snapshot_path"]).write_bytes(b"synthetic-invalid-snapshot")
+    before = {path: path.read_bytes() for path in cache_root.rglob("*") if path.is_file()}
+
+    expected_type = ValueError if fault == "index" else KisPaperDailyNasForwardCacheError
+    with pytest.raises(expected_type) as caught:
+        commit_kis_paper_daily_nas_forward_observation(
+            rows_by_symbol=rows,
+            failure_reasons_by_symbol={},
+            cache_root=cache_root,
+            repo_root=repo_root,
+            frozen_boundary=date(2026, 7, 23) if fault == "boundary" else date(2026, 7, 24),
+        )
+
+    details = get_kis_paper_daily_nas_forward_failure_details(caught.value)
+    assert details["failure_stage"] == "verified_base_load"
+    assert details["failure_category"] == ("value_error" if fault == "index" else "cache_contract")
+    assert details.get("failure_symbol") == ("AAPL" if fault == "snapshot" else None)
+    assert {path: path.read_bytes() for path in cache_root.rglob("*") if path.is_file()} == before
+
+
+@pytest.mark.parametrize(
+    ("surface", "stage", "symbol"),
+    [
+        ("_write_snapshot", "cache_publish", "AAPL"),
+        ("_write_json_atomic", "cache_publish", None),
+        ("load_verified_kis_paper_daily_nas_forward_cache", "published_cache_load", None),
+    ],
+)
+def test_persistence_failure_keeps_original_exception_and_stage(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    surface: str,
+    stage: str,
+    symbol: str | None,
+) -> None:
+    error = OSError("synthetic-private-path-must-not-be-emitted")
+
+    def fail(*_args: object, **_kwargs: object) -> object:
+        raise error
+
+    monkeypatch.setattr(forward_cache, surface, fail)
+    with pytest.raises(OSError) as caught:
+        commit_kis_paper_daily_nas_forward_observation(
+            rows_by_symbol=_rows_for_all(_sessions(27, 28)),
+            failure_reasons_by_symbol={},
+            cache_root=tmp_path / "external",
+            repo_root=tmp_path / "repo",
+        )
+
+    assert caught.value is error
+    details = get_kis_paper_daily_nas_forward_failure_details(error)
+    assert details["failure_stage"] == stage
+    assert details["failure_category"] == "io_error"
+    assert details.get("failure_symbol") == symbol
+    assert str(error) not in json.dumps(details)
 
 
 def test_exact_retry_preserves_snapshots_and_records_each_accepted_page(tmp_path: Path) -> None:

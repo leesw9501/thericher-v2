@@ -15,6 +15,8 @@ from thericher_v2.data.kis_paper_daily_history_panel import KIS_PAPER_DAILY_HIST
 from thericher_v2.data.kis_paper_daily_nas_forward_cache import (
     KIS_PAPER_DAILY_NAS_FORWARD_FROZEN_BOUNDARY,
     KisPaperDailyNasForwardCacheError,
+    get_kis_paper_daily_nas_forward_failure_details,
+    kis_paper_daily_nas_forward_failure_context,
     load_verified_kis_paper_daily_nas_forward_cache,
 )
 from thericher_v2.execution.kis_market_data import (
@@ -214,21 +216,25 @@ def _run_preflight(
             exit_code=_RECOVERY_EXIT,
         )
     try:
-        cache = load_verified_kis_paper_daily_nas_forward_cache(
-            cache_root=cache_root,
-            repo_root=repository_root,
-        )
-    except (KisPaperDailyNasForwardCacheError, OSError, ValueError):
+        with kis_paper_daily_nas_forward_failure_context("verified_base_load"):
+            cache = load_verified_kis_paper_daily_nas_forward_cache(
+                cache_root=cache_root,
+                repo_root=repository_root,
+            )
+    except (KisPaperDailyNasForwardCacheError, OSError, ValueError) as error:
         if _cache_index_exists(cache_root):
             return _emit_source_safe_receipt(
                 artifact_root=artifact_root,
                 repository_root=repository_root,
                 observed_at=observed_at,
-                payload=_preflight_unavailable_payload(
-                    observed_at,
-                    reason="forward_cache_reattest_unavailable",
-                    recovery="reconcile",
-                ),
+                payload={
+                    **_preflight_unavailable_payload(
+                        observed_at,
+                        reason="forward_cache_reattest_unavailable",
+                        recovery="reconcile",
+                    ),
+                    **get_kis_paper_daily_nas_forward_failure_details(error),
+                },
                 exit_code=_RECOVERY_EXIT,
             )
         print(
@@ -348,6 +354,7 @@ def _collector_unavailable_payload(
     return {
         "status": "unavailable",
         "reason": _collector_unavailable_reason(error),
+        **get_kis_paper_daily_nas_forward_failure_details(error),
         "observed_at_bucket": observed_at.strftime("%Y-%m-%dT%H:00Z"),
         "recovery": "reconcile",
         "raw_rows_in_payload": False,

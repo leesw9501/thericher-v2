@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import os
 from datetime import UTC, date, datetime
 from pathlib import Path
@@ -8,6 +9,9 @@ from zoneinfo import ZoneInfo
 import pytest
 
 from thericher_v2.data.kis_paper_daily_history_panel import KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+from thericher_v2.data.kis_paper_daily_nas_forward_cache import (
+    get_kis_paper_daily_nas_forward_failure_details,
+)
 from thericher_v2.execution.kis_market_data import (
     KisPaperDailyPage,
     KisPaperDailyQuery,
@@ -44,6 +48,7 @@ def test_collects_only_prior_completed_rows_for_exact_fixed_nas_scope(tmp_path: 
     )
     assert {query.by_date for query in client.queries} == {"20260728"}
     payload = run.safe_payload()
+    assert "target_failures" not in payload
     assert payload["route_isolation"] == {
         "daily_market_data_only": True,
         "account_endpoints_used": False,
@@ -75,6 +80,14 @@ def test_one_symbol_failure_is_scoped_and_does_not_read_environment(
     assert run.cache.targets_by_key["MSFT/NAS"].status == "deferred"
     assert not run.cache.rows_by_symbol["MSFT"]
     assert run.cache.rows_by_symbol["AAPL"]
+    assert run.safe_payload()["target_failures"] == [
+        {
+            "failure_stage": "target_fetch",
+            "failure_category": "transport_failure",
+            "failure_symbol": "MSFT",
+        }
+    ]
+    assert "target_failures" not in run.cache.safe_payload()
 
 
 def test_unknown_fetch_failure_is_sanitized_to_safe_reason(tmp_path: Path) -> None:
@@ -94,6 +107,41 @@ def test_unknown_fetch_failure_is_sanitized_to_safe_reason(tmp_path: Path) -> No
         run.cache.targets_by_key["AAPL/NAS"].last_reason
         == "unexpected_private_daily_collector_error"
     )
+    assert run.safe_payload()["target_failures"] == [
+        {
+            "failure_stage": "target_fetch",
+            "failure_category": "unexpected_private_daily_collector_error",
+            "failure_symbol": "AAPL",
+        }
+    ]
+    assert "sensitive provider detail" not in json.dumps(run.safe_payload())
+
+
+def test_fatal_fetch_error_keeps_type_and_safe_symbol_without_committing(tmp_path: Path) -> None:
+    error = OSError("synthetic-private-transport-detail")
+
+    class FailingClient(_Client):
+        def fetch_daily_raw_page(self, query: KisPaperDailyQuery) -> KisPaperDailyRawPage:
+            if query.symbol == "MSFT":
+                raise error
+            return super().fetch_daily_raw_page(query)
+
+    cache_root = tmp_path / "external"
+    with pytest.raises(OSError) as caught:
+        collect_kis_paper_daily_nas_forward_once(
+            FailingClient(),
+            cache_root=cache_root,
+            repository_root=tmp_path / "repo",
+            observed_at=datetime(2026, 7, 29, 1, tzinfo=UTC),
+        )
+
+    assert caught.value is error
+    assert not cache_root.exists()
+    assert get_kis_paper_daily_nas_forward_failure_details(error) == {
+        "failure_stage": "target_fetch",
+        "failure_category": "io_error",
+        "failure_symbol": "MSFT",
+    }
 
 
 def test_latest_completed_session_uses_actual_regular_and_early_close_times() -> None:

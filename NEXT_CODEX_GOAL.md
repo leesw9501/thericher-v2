@@ -24,6 +24,17 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-22 KST)
 
+Exact cumulative fill accounting is now connected to the existing canary and
+restart reconciliation, using the same original-date history GET and atomic
+private state. Unique order/date/instrument/side/currency/quantity binding,
+quantity/price/amount consistency, duplicate no-accrual, monotonic conflict
+handling and pre-cancel persistence have focused coverage. Missing/failed
+observations preserve historical totals but do not present them as current.
+This is source/integration work, not a real fill or settled-cash/PnL result.
+Seven Execution and two NAS images were rebuilt; 34 baked-source checks match.
+Next Execution work remains the explicit fresh-ask/bid one-share cycle and
+exact own-inventory reconciliation; existing canary pricing is unchanged.
+
 Operator-approved schedule cleanup now leaves six operational recurring tasks.
 The two exhausted historical backfills, finite stability/prefix studies and
 immediate-cancel quote diagnostic are disabled with state/evidence preserved.
@@ -51,9 +62,13 @@ robust-edge or Paper-input claims. The completed train-only diagnostic found
 real parameter movement but all 16 final train MSEs worse than the train-mean
 baseline; eight epochs meant only 16 optimizer updates per fit. The subsequent
 four-fit CUDA learnability check demonstrated basic learning and tiny-batch
-memorization at 256 updates, not predictive skill. Next Research work is one
-new frozen full-cohort H30 DEVELOPMENT comparison (context12, 8 fits at 256
-updates, <=180 CUDA seconds), preserving closed r1 and seen-data limitations.
+memorization at 256 updates, not predictive skill. The separate frozen full-
+cohort H30 DEVELOPMENT comparison completed 8 fits/2,048 updates in 27.336
+supervised CUDA seconds, plus four Ridge fits and 72 replay-parity cells.
+All eight final models are retained externally. TRAIN loss improved, but every
+3/5-bps LSTM cell is negative. Do not extend this closed trial or equate the
+1-bps positives with skill; the next research question should address costs
+and turnover against matched controls rather than repeat tiny-batch learning.
 Next main work is a deliberately fillable one-share
 Paper cycle with exact fill/position/accounting facts, not another D1 gate or
 immediate-cancel repetition. Use existing ownership, locks and virtual routes;

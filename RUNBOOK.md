@@ -115,6 +115,28 @@ attempt timestamp. `agents/execution.md` links exact image/source/receipt facts.
 This is not a date-crossing runtime test, terminal fill quantity, or PnL claim.
 Do not repeatedly run immediate-cancel sessions to obtain fill/accounting proof.
 
+### Cumulative Paper Fill Accounting
+
+The existing canary/recovery history request now binds documented `inquire-ccnl`
+quantity and amount fields to the persisted original ET order date and exact
+intent. It does not add another GET, infer fills from acknowledgement, sum
+amendment rows, or treat zero remaining quantity as a fill. Private state adds
+optional `cumulative_fill`, `fill_observation_status`, and `fill_observed_at`.
+Old states still parse. All seven private-state consumer images need the new
+parser before a writer runs; never print these private numeric records.
+Sanitized canary evidence exposes only categorical quantity/observation status.
+Unavailable/conflicting reads retain prior totals but cannot expose a current
+position/gross-flow contribution. Cancel and recovery retain earlier positive
+observations before requery. Fees, settled cash and net PnL remain unobserved.
+The next explicit fillable cycle must use fresh ask/bid limits and exit only
+its confirmed inventory; this patch does not alter the immediate-cancel default.
+
+NAS-forward failure receipts now retain fixed `failure_stage`/`failure_category`
+and optional frozen-universe symbol. Existing generic receipts cannot establish
+an overlap conflict. The offline loader validated all six snapshots; do not
+reset that real cache based on the old exit-20 classification. Deploy only its
+collector/preflight images and inspect the next naturally owned failure stage.
+
 ### Open/Open Development Comparison
 
 `scripts/run_firstrate_m5_open_open_dev_20260921.py` reuses existing FirstRate

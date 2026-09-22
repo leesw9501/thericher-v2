@@ -9640,3 +9640,27 @@ test harness now disables module auto-loading after importing only standard
 Management/Utility modules. No credential/live access or intentional broker
 invocation occurred. Safe corrective facts are `rechecked-after-review.json`
 in the same external directory; no task, private state or data was deleted.
+
+## 2026-09-22 - Persist exact cumulative Paper fills in the existing store
+
+Advance Paper accounting using the existing full original-order-date history
+query and atomic private canary state, not another worker/report/permission gate.
+Bind the unique direct row to its intent; never aggregate amendment lineage or
+infer a fill from cancellation/absence. Persist cumulative quantities/amounts
+once per exact identity, including before cancellation and recovery requery.
+Keep last accepted totals on regression but expose current contribution only
+after a current matching observation. Public receipts remain categorical.
+Gross execution consideration excludes fees and settlement; orderable funds
+cannot stand in for cash. No profitability or Paper promotion rule is added.
+
+Official field reference:
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_ccnl/chk_inquire_ccnl.py
+Claude's tool-disabled challenge returned `supported-with-limits`: preserve
+per-order identity, distinguish stale/conflicting reads, and test amount units.
+Resolution: the existing immutable per-run intent plus order/date identity
+prevents cross-order inheritance; observation status/time are persisted, and
+USD amount/quantity/price consistency is checked before accepting contribution.
+This is not real-fill calibration, a terminal-cancel proof, or settled cash.
+Independent source review additionally caught intermediate-read loss and a
+progressing-clock issue; both have regression tests. No real broker action was
+needed to implement the adapter. Explicit fillable SPY execution remains next.

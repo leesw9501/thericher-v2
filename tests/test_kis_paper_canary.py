@@ -2266,6 +2266,109 @@ def _paper_environment() -> dict[str, str]:
     }
 
 
+@pytest.mark.parametrize("cancel_after_submit", [False, True])
+def test_fill_accounting_runs_on_submit_and_restart_without_an_extra_history_get(
+    tmp_path,
+    cancel_after_submit,
+):
+    class FilledTransport(FakeKisPaperCanaryTransport):
+        def request(self, request):
+            if request.headers.get("tr_id") == KIS_PAPER_US_CCNCL_TR_ID:
+                self.requests.append(request)
+                if self.cancellation_seen:
+                    return KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
+                return KisHttpResponse.from_payload(
+                    {
+                        "rt_cd": "0",
+                        "output": [
+                            {
+                                "odno": "ORD-123456789",
+                                "ord_dt": "20260722",
+                                "pdno": "QQQ",
+                                "ovrs_excg_cd": "NASD",
+                                "sll_buy_dvsn_cd": "02",
+                                "tr_crcy_cd": "USD",
+                                "ft_ord_qty": "1",
+                                "ft_ccld_qty": "1",
+                                "ft_ccld_amt3": "499.99",
+                                "ft_ccld_unpr3": "499.99",
+                                "nccs_qty": "0",
+                            }
+                        ],
+                    }
+                )
+            result = super().request(request)
+            self.order_open = False
+            return result
+
+    state_path = tmp_path / "private" / "accounted-fill.json"
+    transport = FilledTransport()
+    ticks = iter(NOW + timedelta(seconds=index) for index in range(100))
+    outcome = run_kis_paper_canary(
+        decision=_decision(),
+        run_id="accounted-fill",
+        environment={"THERICHER_MODE": "off"},
+        state_path=state_path,
+        execute=True,
+        cancel_after_submit=cancel_after_submit,
+        client=KisPaperCanaryClient(config=_config(), transport=transport),
+        clock=lambda: next(ticks),
+        **_paths(tmp_path),
+    )
+    before = KisPaperCanaryStateStore(state_path).read()
+    if cancel_after_submit:
+        assert before.phase == "cancelled"
+        assert before.fill_observation_status == "absent"
+        assert before.current_fill is None
+        assert before.cumulative_fill.quantity == 1
+        assert before.cumulative_fill.gross_amount == Decimal("499.99")
+        assert before.fill_observed_at > NOW
+        assert _submission_count(transport) == 1
+        return
+    assert before.current_fill.status == "filled"
+    assert before.position_contribution == 1
+    assert before.gross_cashflow_contribution == Decimal("-499.99")
+    assert _submission_count(transport) == 1
+    history = [r for r in transport.requests if r.headers.get("tr_id") == KIS_PAPER_US_CCNCL_TR_ID]
+    assert len(history) == 1
+    evidence = json.loads(outcome.evidence_path.read_text())
+    assert evidence["fill_accounting"]["quantity_state"] == "filled"
+    assert evidence["fill_accounting"]["net_pnl"] == "not_observed"
+    assert "499.99" not in json.dumps(evidence)
+    assert "ORD-123456789" not in json.dumps(evidence)
+
+    recover_kis_paper_canary_pending_run(
+        run_id="accounted-fill",
+        environment={"THERICHER_MODE": "off"},
+        state_path=state_path,
+        now=NOW + timedelta(days=1),
+        client=KisPaperCanaryClient(config=_config(), transport=transport),
+        **_paths(tmp_path),
+    )
+    after = KisPaperCanaryStateStore(state_path).read()
+    assert after.gross_cashflow_contribution == before.gross_cashflow_contribution
+    assert after.position_contribution == before.position_contribution
+    assert _submission_count(transport) == 1
+    history = [r for r in transport.requests if r.headers.get("tr_id") == KIS_PAPER_US_CCNCL_TR_ID]
+    assert len(history) == 2
+    assert all(r.query["ORD_STRT_DT"] == "20260722" for r in history)
+
+    transport.fail_auth = True
+    recover_kis_paper_canary_pending_run(
+        run_id="accounted-fill",
+        environment={"THERICHER_MODE": "off"},
+        state_path=state_path,
+        now=NOW + timedelta(days=2),
+        client=KisPaperCanaryClient(config=_config(), transport=transport),
+        **_paths(tmp_path),
+    )
+    unavailable = KisPaperCanaryStateStore(state_path).read()
+    assert unavailable.fill_observation_status == "unavailable"
+    assert unavailable.cumulative_fill == after.cumulative_fill
+    assert unavailable.current_fill is None
+    assert _submission_count(transport) == 1
+
+
 def _decision(
     *,
     decision_as_of: datetime = NOW,
