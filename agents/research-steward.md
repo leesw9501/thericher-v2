@@ -66,7 +66,21 @@ parent lock/supervisor, with read-only source mounts and no network, credentials
 image rebuild, retry/fallback or schedule. The child and named container are
 reaped, lock released, no research Python worker remains; the existing registry
 records `non_promoting_completed`. No sealed evaluation or selection spend.
-Recovery class: complete. No further successor package or GPU allocation.
+Recovery class: complete. No further GPU allocation.
+
+The separately frozen `fixed-nominal-hurdle-v1` CPU DEVELOPMENT contract links
+to all eight retained full-cohort models, with zero GPU/optimizer/selection or
+sealed-evaluation spend. Contract SHA256
+`6e00636fe0eb2b507affbc22c296281997946a9a39de7df171317b6204832c73`;
+the existing custody ledger records `non_promoting_completed`, summary SHA256
+`8a54c24785716d04bd1958bcce951a6e9bbaa7881d24a47e7b9fd4ada24db86b`.
+All84 cells and all60 prior sign/naive reproduction checks completed once on
+the same pinned networkless image: 14.941 supervised / 8.822 worker CPU seconds,
+under both 300-second limits. No GPU appointment or lock was acquired. Parent
+models/source/data were read-only, no credentials/rebuild/scheduler/retry, and
+no new weights. Child/container reaped; no research Python worker or temporary
+job remains. Artifact pointer, limitations and mixed results are in Engine
+Research. Recovery: complete; no follow-on allocation or promotion implied.
 
 The bootstrap created no allocation or training run. Recheck actual GPU/process
 ownership before an appointment; the historical idle facts below are not a live

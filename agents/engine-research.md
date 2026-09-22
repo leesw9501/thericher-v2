@@ -130,8 +130,38 @@ CUDA summary SHA256:
 `4b26bfffb377be6462ac56346526f5089dc6214d800a8b0e8491662fc6f15237`.
 Both phases used the existing pinned image, networkless, source read-only;
 no rebuild, credentials, schedules, selection or promotion. Container reaped,
-lock released, bounded assignment complete; no successor allocated or expanded.
+lock released, bounded assignment complete; no successor GPU allocation.
 Original r1 and diagnostics remain immutable; D1/Paper work is independent.
+
+The linked `fixed-nominal-hurdle-v1` DEVELOPMENT package is complete. It restores
+ALL eight full-cohort final models without fitting, selection, holdout or GPU.
+The target is gross return bps after inverse saved TRAIN normalization; the
+single strict `>6` hurdle is nominal roundtrip 3bps/side, unchanged at 1/3/5bps.
+It is not exact rounded-fee breakeven: even before fee rounding that is
+`6/(1-0.0003)` bps. Claude's pre-outcome supplied-facts/tool-disabled challenge
+was `supported-with-limits`; no suggested extra threshold arm was added.
+All 84 cells pass local fee/fill/cash/FIFO replay; all 24 original sign-only
+and 36 naive cells reproduce exactly. Source/model/scaler/cohort/mask hashes
+reattach before/after; 250 eligible, 234 observed, 16 censored per seed remain.
+Across both folds, SPY seed101/103 hurdle net dollars at 1/3/5bps are
+`0.8351/-1.1750/-3.1849` and `3.8910/2.1729/0.4548` (12/10 trades versus
+67/78 sign-only); QQQ seed101/103 are `3.6276/-0.9822/-5.5918` and
+`2.3623/-0.7129/-3.7873` (32/21 versus 74/85 trades). No winner is selected.
+SPY seed101 fold2 has zero hurdle trades; QQQ seed103 fold1 worsens versus
+sign-only at 3bps. Aggregate improvement is not uniform per-fold or skill.
+Seen data, unqualified clock/finality/actions, dependent capped histories,
+future censoring, fees-only/zero-latency replay and no KIS parity remain limits.
+Evidence: `D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\fixed-nominal-hurdle-v1\summary.json`.
+Contract SHA256: `6e00636fe0eb2b507affbc22c296281997946a9a39de7df171317b6204832c73`.
+Summary SHA256: `8a54c24785716d04bd1958bcce951a6e9bbaa7881d24a47e7b9fd4ada24db86b`.
+The pinned networkless image completed once in 14.941 supervised seconds,
+13.485 worker wall / 8.822 worker CPU seconds, below the 300-second limits.
+All data/source/parent artifacts were read-only; child/container and temporary
+job reaped, no research Python worker. Test scratch `C:\trpy\fixed-hurdle-20260922-a`
+is inactive but retained because manual cleanup was tool-policy denied.
+Focused synthetic tests: 18 passed; Ruff passed. Recovery: complete.
+No retry, threshold extension, retraining, schedule,
+new weights, promotion or follow-on allocation; main retains Execution.
 
 ## Historical Evidence (Closed Scopes)
 
