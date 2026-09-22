@@ -211,11 +211,12 @@ $schedules = @(
         Name = "thericher-kis-paper-daily-spy-session"
         Profile = "kis-paper-daily-spy-session"
         Service = "kis-paper-daily-spy-session"
+        PythonRunner = "run_kis_paper_budget_strategy.py"
         ImageServices = @("kis-paper-daily-spy-session")
         At = "23:50"
         DaysOfWeek = @("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
         RecoverMissedRun = $false
-        ExecutionLimitMinutes = 90
+        ExecutionLimitMinutes = 25
     },
     @{
         Name = "thericher-kis-paper-intraday-head"
@@ -388,7 +389,18 @@ foreach ($schedule in $selectedSchedules) {
     if ($null -ne $existingTask -and $existingTask.State -eq "Running") {
         throw "Cannot replace an active scheduled task: $($schedule.Name)"
     }
-    if ($schedule.ContainsKey("Runner")) {
+    if ($schedule.ContainsKey("PythonRunner")) {
+        $runnerPath = Join-Path $resolvedProjectRoot "scripts\$($schedule.PythonRunner)"
+        if (-not (Test-Path -LiteralPath $runnerPath -PathType Leaf)) {
+            throw "Scheduled task runner is missing: $runnerPath"
+        }
+        $uvPath = (Get-Command uv -ErrorAction Stop).Source.Replace("'", "''")
+        $quotedRoot = $resolvedProjectRoot.Replace("'", "''")
+        $quotedRunner = $runnerPath.Replace("'", "''")
+        $command = "& '$uvPath' run --no-sync --project '$quotedRoot' python '$quotedRunner' --execute --visits 24; exit `$LASTEXITCODE"
+        $arguments = "-NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command `"$command`""
+        $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $arguments
+    } elseif ($schedule.ContainsKey("Runner")) {
         $runnerPath = Join-Path $resolvedProjectRoot "scripts\$($schedule.Runner)"
         if (-not (Test-Path -LiteralPath $runnerPath -PathType Leaf)) {
             throw "Scheduled task runner is missing: $runnerPath"

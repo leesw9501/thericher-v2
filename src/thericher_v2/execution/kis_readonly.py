@@ -827,6 +827,7 @@ class KisPaperReadOnlyClient:
                 quantity=filled,
                 gross_amount=amount,
                 observed_at=observed_at,
+                remaining_quantity=remaining,
             )
         except (KisPaperReadOnlyError, ValueError, InvalidOperation):
             return KisPaperExecutionObservation(**base, status="fields_invalid")

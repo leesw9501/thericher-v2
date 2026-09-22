@@ -9716,3 +9716,49 @@ https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overs
 No private amounts, raw account rows, credentials or identifiers were supplied
 to Claude or stored in this decision. Existing holdings are not silently sold
 or adopted by a new strategy. Live authority remains unavailable.
+
+## 2026-09-22 - Bind the daily strategy to its initial Paper allocation
+
+Implement an opt-in budget mode in the existing daily SPY session, with a
+scoped host launcher replacing that task's raw Compose action. Do not add a
+recurring scheduler or enlarge the diagnostic buy/sell-one cycle. Existing
+baseline direction is retained, but the new allocation policy is explicitly
+separate from the baseline's old proposed exposure and historical fixed-lot
+results. No profitability claim or model promotion follows.
+
+One private account-bound funding record references the existing durable
+intents. Recompute actual entry cost and residual buy reservations, rather
+than maintaining a second fill ledger or repeatedly adding snapshots. Sales
+release entry cost, not sale proceeds; the initial allocation is never topped
+up from profits. Persist intent/reservation under the existing writer locks
+before any POST. A possible prior side effect remains an exact recovery,
+never a replacement order based on a new signal. Safe signal receipts are
+retained for decision attribution, without raw prices or account amounts.
+
+Claude's supplied-facts challenge returned `supported-with-limits`, raising
+price-basis, inherited-position and crash-before-ack ambiguities. Resolution:
+the cap is a frozen constant, entry cost is actual bound fill consideration,
+and projection tests cover price improvement/repeated roundtrips. Initial SPY
+must be flat; later account quantity must match owned fills. No inherited SPY
+is adopted. Unknown POST identity cannot be manufactured from absent history,
+and only that owned exposure stays under reconciliation. The reviewer found
+no additional confirmed critical issue in its scoped source pass; it did not
+independently rerun the final tests.
+
+Retain optional exact `nccs_qty` in the existing private cumulative observation
+without changing legacy payloads. Its absence is unknown, not zero. A fresh
+bound zero remainder, no open order and matching position can close a partial
+order; cancellation acknowledgement alone cannot. Official field reference:
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_ccnl/chk_inquire_ccnl.py
+No live route, account reset, new credential class or real-money sizing is added.
+
+Actual Docker deployment testing found the existing path validator rejected
+the real `/app/private/canary` volume as repository storage. Accept exactly
+that path only when its `/app/private` parent is an actual mount; retain the
+host ignored-path exception and reject other repository directories. Mounted
+and unmounted regressions plus the actual rebuilt-container probe cover the
+fix. This changes no credential or broker authority. Final authority passed
+3,903 tests / 19 skips with eight workers; 42 source hashes match across the
+seven private-state consumers. The existing daily task's scoped launcher and
+25-minute deadline are deployed with its trigger/principal unchanged. Preview
+and installation are not actual strategy orders, fills or accounting evidence.

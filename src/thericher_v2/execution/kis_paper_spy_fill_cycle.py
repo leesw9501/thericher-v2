@@ -591,7 +591,12 @@ def _own_open(state, snapshot):
 
 def _validate_paths(root, repository_root, artifact_root, *public_paths):
     repo = repository_root.resolve()
-    if root.is_relative_to(repo) and root != repo / "runtime" / "private" / "kis_paper_canary":
+    docker_private = root == repo / "private" / "canary" and (repo / "private").is_mount()
+    if (
+        root.is_relative_to(repo)
+        and root != repo / "runtime" / "private" / "kis_paper_canary"
+        and not docker_private
+    ):
         raise _RecoveryRequired("private_root_invalid")
     if not _is_permitted_artifact_root(artifact_root.resolve(), repo):
         raise _RecoveryRequired("artifact_root_invalid")

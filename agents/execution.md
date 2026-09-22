@@ -16,11 +16,31 @@ read or route `KIS_LIVE_*`.
 
 2026-09-22 operator sizing update: approximately 10 percent of virtual cash is
 approved as the initial aggregate strategy-Paper allocation, not per-order
-spend. See `AGENTS.md`; implementation is not yet deployed. Next ready package
-is budget-based sizing on the existing daily baseline, with durable reserved
-buys and owned position cost sharing the same cap. Do not scale the immediate
-roundtrip diagnostic or await profitability/D1 approval. Existing fixed one-share
-routes remain unchanged until integrated sizing is verified and deployed.
+spend. The budget mode is implemented and deployed on the existing daily SPY
+baseline. One private account-bound initial funding basis stays fixed; accepted
+entry costs and residual buy reservations share its cap. Exact owned inventory
+and pending intent recovery precede any new daily input/signal. Do not scale
+the separate roundtrip diagnostic or await profitability/D1 approval. Other
+fixed one-share entry points retain their original behavior.
+
+Final budget verification: 439 focused passed / 1 skipped; 3,903 full passed /
+19 skipped, eight workers, 296.58s, helper cleanup/exit zero. Ruff and both
+sample-env Compose configurations pass. Seven rebuilt private-state consumer
+images have 42 matching source hashes. Daily image:
+`sha256:df426086317da543968b1a3c39d0be1eeef7dffc20dcbd96cda00416ed4b9fe4`.
+The actual Docker mount probe exposed and repaired the old private-volume path
+rejection; only the exact mounted `/app/private/canary` exception is allowed.
+The credential-free scoped launcher preview exited zero; its named container
+is gone. Source-safe process evidence is at
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\dispatch.json`.
+It is not fill evidence. The daily task now invokes the budget host launcher
+with 24 bounded visits and a 25-minute limit. Principal/trigger/last-run/next-run
+are unchanged; next due is 2026-09-22 23:50 KST. No task was manually started,
+and this implementation package made no broker call or live credential access.
+Next: reattach actual decision/order/fill/accounting facts, retaining the same
+funding binding and recovering the exact owned intent on incomplete outcomes.
+
+Prior source/account checks below retain their original, narrower scope.
 Two direct scoped Paper read-only account checks at 03:38:30 and 03:39:57 UTC
 succeeded: USD orderable amounts positive, one position row, no open orders;
 the position is neither SPY nor QQQ. No amounts, identities or raw rows were

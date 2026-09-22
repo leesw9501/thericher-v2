@@ -23,10 +23,29 @@ Data measurement; it does not block Execution recovery or offline development.
 
 Latest operator direction approves approximately 10 percent of virtual cash
 for an aggregate baseline strategy-Paper allocation. Policy is in `AGENTS.md`;
-the ready sizing/inventory package is in `NEXT_CODEX_GOAL.md`. It is not yet
-runtime-enforced: existing routes remain one-share. Fresh read-only account
-checks succeeded, with one non-SPY/non-QQQ holding and no open orders. No orders
-were placed by this sizing review, and no new approval is required.
+the sizing/inventory package is in `NEXT_CODEX_GOAL.md`. The opt-in budget
+strategy is now implemented on the existing daily session: frozen private
+funding basis, integer sizing, owned fill/cost replay and recovery before a
+new signal. It does not scale the separate one-share diagnostic. Final
+changed-path integration passed 439 tests / 1 skip; clean-root eight-worker
+authority passed 3,903 / 19 skips in 296.58s with managed cleanup. Ruff and
+both sample-env Compose configurations pass. Seven rebuilt Execution images
+have 42 matching source hashes. The real Docker private-volume path check
+and credential-free launcher preview passed; no worker container remains.
+The existing daily-SPY task now invokes the scoped budget launcher with 24
+bounded visits and a 25-minute task limit. Its principal, trigger, last-run
+and next-run facts are unchanged; next run is 2026-09-22 23:50 KST. No task
+was manually started and this package made no broker call. No new approval,
+profitable-model gate or D1 dependency applies. No actual budget order/fill is
+claimed from source/tests or a successful launcher preview.
+
+Deployment exposed and repaired a real preexisting path bug: the fixed Docker
+private volume `/app/private/canary` was rejected as repository storage. It is
+now accepted only when `/app/private` is an actual mount. The isolated Docker
+probe reproduced the rejection and then passed on the rebuilt image. This
+also repairs the separately scheduled one-share cycle; arbitrary in-repository
+private directories remain rejected. Older verification/image facts below
+describe their own earlier packages, not this final deployment.
 
 Current package adds an explicit fillable SPY buy-one/sell-one mode to the
 existing session CLI, not a new broker engine or recurring scheduler. Exact

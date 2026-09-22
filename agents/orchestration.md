@@ -14,22 +14,26 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 
 | Work | Owner / resource | Current fact and dispatch |
 | --- | --- | --- |
-| SPY lifecycle recovery | Execution / existing Paper state and task | Explicit fresh-ask/bid cycle integrated and deployed across seven images, 35 source matches. Existing quote-task registration has one finite 2026-09-22 22:35 KST invocation, fixed ID `spy-fill-20260922-v1`; expires 23:10, no new task/repetition. Daily-SPY remains 23:50. Preview is not a fill. |
-| Aggregate strategy sizing | Execution / existing strategy and private intent store | Operator approved initial approximately 10-percent virtual-cash allocation. Existing runtime is still one-share; budget sizing/reservation implementation is ready work, not an approval wait or dependent on the diagnostic result. Account read-only access succeeded. Serialize any actual SPY side effects with its existing cycle owner. |
+| SPY lifecycle recovery | Execution / existing Paper state and task | Explicit fresh-ask/bid cycle and shared private-state readers deployed across seven images, 42 source matches. Existing quote-task registration has one finite 2026-09-22 22:35 KST invocation, fixed ID `spy-fill-20260922-v1`; expires 23:10, no new task/repetition. Mounted private-path rejection repaired and checked in actual Docker. Preview is not a fill. |
+| Aggregate strategy sizing | Execution / existing strategy and private intent store | Frozen initial 10-percent allocation, actual entry-cost/reservation replay, owned inventory and recovery-first sizing implemented. Existing daily task now invokes the scoped budget launcher at 2026-09-22 23:50 KST, with 24 bounded visits and a 25-minute limit. No new schedule or approval. Actual orders/fills remain unobserved; preserve exact ownership against the separate cycle. |
 | Development comparison | Engine Research / CPU | Fixed nominal 6-bps abstention comparison completed all eight retained models and 84 replay cells, reproducing 60 prior controls/sign cells exactly. Trades decreased; only one symbol/seed aggregation is positive at 3/5 bps. Not uniform by fold, no selection/skill/Paper claim. Container reaped after 14.941 supervised seconds. |
 | Data collection / finite D1 measurement | Data / existing tasks | Existing six NAS snapshots validate; the old generic failure does not identify its failing stage. New fixed-category diagnostics are ready for the next owned 06:40 run. Pair-forward v2 due 2026-09-23 06:55; D1 final later opportunity 2026-09-22 23:20, triggers expire midnight. No fresh collection/pair inferred. |
 | GPU | Research Steward / exclusive allocation | No active CUDA allocation. The cost-hurdle question reused retained weights on CPU without retraining. Both bounded agents have returned and closed after integration/review. |
 
 ## Bottleneck And Reversible Improvement
 
-The company is not blocked on D1 time. The current bottleneck is
-terminal/accounting interpretation and a fillable cycle, not API permission.
-Current dispatch has a bounded container-local deadline independent of host
-termination, and reuses one finite existing task registration rather than
-restoring a recurring canary. Shared SPY ownership survives worker exit but is
-released immediately for a proven never-submitted entry. Other symbols and
-Data/Research remain independent. Final integration passed 3,707 / 19 skips in
-289.48s with eight workers and clean helper exit. No foreground session wait.
+The company is not blocked on D1 time or API permission. Budget-based baseline
+execution is now deployed; its next material evidence is the actual strategy
+decision/order/fill/accounting result. Pending exact orders recover before a
+new signal, and both SPY paths share ownership without adopting inherited
+holdings. The budget host/container have independent deadlines. Other symbols
+and Data/Research remain independent. Final integration passed 3,903 / 19 skips
+in 296.58s with eight workers and clean helper exit. Both bounded implementation
+agents returned and closed; image builds/tests/preview have exited. No foreground
+market wait. A real mount-only Docker probe, beyond preview, found and fixed the
+private-path rejection that otherwise prevented execution. Current improvement:
+deploy the existing daily owner through a scoped credential loader and bounded
+budget runner, not a new canary, scheduler or account approval process.
 Current reversible improvement: six exhausted/diagnostic recurring schedules
 and two expired one-shots are disabled with rollback metadata; six operational
 schedules remain and D1 expires after its final later opportunity. Default

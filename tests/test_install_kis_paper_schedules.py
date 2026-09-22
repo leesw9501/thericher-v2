@@ -223,7 +223,7 @@ def test_kis_paper_schedule_installer_uses_required_windows_schedule_contract() 
         ("thericher-kis-paper-snapshot-observer", False, 4),
         ("thericher-kis-paper-daily-spy-head", True, 90),
         ("thericher-kis-paper-daily-spy-stability-observer", False, 5),
-        ("thericher-kis-paper-daily-spy-session", False, 90),
+        ("thericher-kis-paper-daily-spy-session", False, 25),
         ("thericher-kis-paper-intraday-head", True, 90),
         ("thericher-kis-paper-daily-nas-forward", True, 90),
         ("thericher-kis-paper-daily-pair-forward", True, 10),

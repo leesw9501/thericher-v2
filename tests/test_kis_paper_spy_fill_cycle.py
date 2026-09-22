@@ -44,6 +44,22 @@ ENV = {
 }
 
 
+@pytest.mark.parametrize("mounted", [False, True])
+def test_named_docker_private_path_requires_actual_mount(tmp_path, monkeypatch, mounted):
+    from pathlib import Path
+
+    repo = (tmp_path / "repo").resolve()
+    parent = repo / "private"
+    monkeypatch.setattr(Path, "is_mount", lambda path: mounted and path == parent)
+    if mounted:
+        cycle._validate_paths(parent / "canary", repo, tmp_path / "artifacts")
+    else:
+        with pytest.raises(cycle._RecoveryRequired, match="private_root_invalid"):
+            cycle._validate_paths(parent / "canary", repo, tmp_path / "artifacts")
+    with pytest.raises(cycle._RecoveryRequired, match="private_root_invalid"):
+        cycle._validate_paths(parent / "unexpected", repo, tmp_path / "artifacts")
+
+
 class SyntheticClient(KisPaperCanaryClient):
     def __init__(self, root):
         super().__init__(config=KisPaperConfig(*ENV.values()), transport=None)

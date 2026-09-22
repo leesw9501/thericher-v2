@@ -1,9 +1,10 @@
 """Run one receipt-backed KIS Paper SPY daily decision session.
 
-The daily cache and model decision are evaluated offline before this module
-loads Paper configuration or touches KIS. A missing, stale, or abstaining
-receipt is scoped evidence for this session, not an approval state or a hold on
-another Paper action.
+By default, the daily cache and model decision are evaluated offline before
+this module loads Paper configuration or touches KIS. The opt-in budget trial
+delegates recovery before loading a new receipt. A missing, stale, or abstaining
+receipt is scoped evidence for this session, not an approval state or a hold
+on another Paper action.
 """
 
 from __future__ import annotations
@@ -13,12 +14,13 @@ import hashlib
 import json
 import os
 import re
+import time
 import uuid
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Literal
+from typing import TYPE_CHECKING, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.data.kis_paper_daily import KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT
@@ -74,6 +76,9 @@ from .kis_readonly import (
     load_kis_paper_config_from_environment,
 )
 from .paper_decision_bridge import PaperDecisionBridgeResult
+
+if TYPE_CHECKING:
+    from .kis_paper_budget_strategy import KisPaperBudgetOutcome
 
 KIS_PAPER_DAILY_SPY_SESSION_EVIDENCE_KIND = "kis_paper_daily_spy_session_evidence"
 _SAFE_ID = re.compile(r"[A-Za-z0-9._-]{1,160}", re.ASCII)
@@ -263,13 +268,48 @@ def run_kis_paper_daily_spy_session(
     clock: Callable[[], datetime] | None = None,
     session_id: str | None = None,
     execution_control_path: Path = DEFAULT_PAPER_EXECUTION_CONTROL_STATE,
-) -> KisPaperDailySpySessionOutcome:
+    budget_trial: bool = False,
+) -> KisPaperDailySpySessionOutcome | KisPaperBudgetOutcome:
     """Evaluate one SPY D1 receipt and execute only its eligible Paper intent."""
+
+    if budget_trial and cancel_after_submit:
+        raise ValueError("budget_trial and cancel_after_submit are mutually exclusive")
 
     observed_at = _session_now(now=now, clock=clock)
     resolved_session_id = session_id or f"daily-spy-{observed_at.strftime('%Y%m%dT%H%M%S%fZ')}"
     if _SAFE_ID.fullmatch(resolved_session_id) is None:
         raise ValueError("daily SPY session id is invalid")
+
+    if budget_trial:
+        from .kis_paper_budget_strategy import run_kis_paper_budget_strategy
+
+        def receipt_loader(as_of: datetime) -> ResearchDecisionReceipt:
+            input = _load_preferred_daily_spy_input(
+                cache_root=cache_root,
+                head_cache_root=head_cache_root,
+                availability_root=availability_root,
+                repository_root=repository_root,
+                attested_at=as_of,
+            )
+            return evaluate_kis_paper_daily_spy_baseline(input, as_of=as_of).receipt
+
+        return run_kis_paper_budget_strategy(
+            environment=environment,
+            state_root=state_root,
+            runtime_projection_path=runtime_projection_path,
+            paper_account_snapshot_path=paper_account_snapshot_path,
+            emergency_state_path=emergency_state_path,
+            artifact_root=artifact_root,
+            repository_root=repository_root,
+            execute=execute,
+            transport=transport,
+            client=client,
+            now=now,
+            clock=clock,
+            execution_control_path=execution_control_path,
+            receipt_loader=receipt_loader,
+            session_id=resolved_session_id,
+        )
 
     try:
         input = _load_preferred_daily_spy_input(
@@ -779,7 +819,10 @@ def _utc_marker(value: datetime) -> str:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run one KIS Paper SPY daily receipt session")
     parser.add_argument("--execute", action="store_true")
-    parser.add_argument("--cancel-after-submit", action="store_true")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--cancel-after-submit", action="store_true")
+    mode.add_argument("--budget-trial", action="store_true")
+    parser.add_argument("--budget-visits", type=int, choices=range(1, 25), default=1)
     parser.add_argument("--cache-root", type=Path, default=KIS_PAPER_PRIVATE_DAILY_CACHE_ROOT)
     parser.add_argument("--head-cache-root", type=Path, default=KIS_PAPER_DAILY_SPY_HEAD_ROOT)
     parser.add_argument(
@@ -807,24 +850,50 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> None:
-    args = build_parser().parse_args(argv)
-    outcome = run_kis_paper_daily_spy_session(
-        environment=os.environ,
-        cache_root=args.cache_root,
-        head_cache_root=args.head_cache_root,
-        availability_root=args.availability_root,
-        state_root=args.state_root,
-        runtime_projection_path=args.runtime_projection,
-        paper_account_snapshot_path=args.paper_account_snapshot,
-        emergency_state_path=args.emergency_state,
-        artifact_root=args.artifact_root,
-        repository_root=args.repository_root,
-        execute=args.execute,
-        cancel_after_submit=args.cancel_after_submit,
-        session_id=args.session_id,
-        execution_control_path=args.execution_control,
-    )
-    print(json.dumps(outcome.safe_payload(), sort_keys=True))
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    deadline = time.monotonic() + 1200 if args.budget_trial else None
+    client = None
+    if args.budget_trial and args.execute:
+        if os.environ.get("THERICHER_MODE", "off").strip().lower() == "kis_live":
+            parser.error("live_mode_unavailable")
+        try:
+            client = KisPaperCanaryClient(
+                config=load_kis_paper_config_from_environment(os.environ),
+                transport=UrllibKisPaperCanaryTransport(),
+            )
+        except (KisPaperReadOnlyError, KisPaperCanaryError, ValueError):
+            parser.error("paper_configuration_unavailable")
+
+    visits = args.budget_visits if args.budget_trial else 1
+    for visit in range(visits):
+        if deadline is not None and time.monotonic() >= deadline:
+            break
+        outcome = run_kis_paper_daily_spy_session(
+            environment=os.environ,
+            cache_root=args.cache_root,
+            head_cache_root=args.head_cache_root,
+            availability_root=args.availability_root,
+            state_root=args.state_root,
+            runtime_projection_path=args.runtime_projection,
+            paper_account_snapshot_path=args.paper_account_snapshot,
+            emergency_state_path=args.emergency_state,
+            artifact_root=args.artifact_root,
+            repository_root=args.repository_root,
+            execute=args.execute,
+            cancel_after_submit=args.cancel_after_submit,
+            budget_trial=args.budget_trial,
+            session_id=args.session_id,
+            execution_control_path=args.execution_control,
+            client=client,
+        )
+        print(json.dumps(outcome.safe_payload(), sort_keys=True), flush=True)
+        if deadline is None or outcome.status != "pending" or visit + 1 == visits:
+            break
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            break
+        time.sleep(min(15, remaining))
 
 
 if __name__ == "__main__":

@@ -12,6 +12,59 @@
 Existing KIS clients must pin the virtual-paper host. A caller selecting a live
 mode must fail before paper credentials are used.
 
+### Ten-Percent Strategy Trial
+
+The existing daily SPY session has an explicit `--budget-trial` mode. It uses
+the existing daily baseline's enter/exit direction, not its old fixed-share
+size or an assertion of predictive skill. It freezes 10 percent of the lesser
+of two fresh USD orderable amounts as a provisional initial allocation, not
+settled cash/equity or a loss bound. It holds no leverage/short position and
+does not increase that allocation after profitable sales.
+
+The private `.spy_strategy_budget.json` in the existing canary volume contains
+only the funding/account binding and ordered intent references. Fills remain
+in the existing private canary states. Never print either. Actual entry cost
+plus residual buy reservations share one cap under the session/canary locks.
+A missing binding alongside owned intents requires recovery, not a fresh
+allocation. Initial inherited SPY is not adopted or sold. Shared SPY ownership
+excludes a competing fresh legacy/diagnostic order; other symbols and exact
+recovery/cancellation remain independent.
+
+The scoped host entry is:
+
+~~~powershell
+uv run --no-sync python scripts/run_kis_paper_budget_strategy.py --visits 1
+# Only the owned strategy invocation uses --execute; the command above is preview.
+~~~
+
+It uses `.env.example` for Compose and injects only the four scoped Paper
+values when execution is requested. It never inherits `KIS_LIVE_*` values.
+The existing daily task owns `--execute --visits 24`; only a pending exact
+order repeats, at 15-second worker intervals with one client/token. The
+worker starts no new visit after 1,200 seconds; container/host deadlines are
+1,260/1,350 seconds and the task limit is 25 minutes. No foreground wait,
+new recurring task or automatic retry of an unknown POST is introduced.
+
+Source-safe results are under
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget`:
+`dispatch.json` is process status only; per-session `outcome.json` is categorical
+strategy status, and `decisions` holds safe hash-bound signal receipts. Neither
+a process exit nor `order_complete` is settled cash or net PnL. Exact existing
+intent/fill/account facts remain the authority. Legacy CLI defaults and the
+separate 22:35 one-share fill cycle are unchanged.
+
+Deployed 2026-09-22: the existing `thericher-kis-paper-daily-spy-session`
+action now invokes this scoped launcher, with its weekday 23:50 KST trigger
+and principal preserved. The task limit is 25 minutes; registration did not
+advance last-run. Seven images have 42 matching source hashes. The daily
+image is `sha256:df426086317da543968b1a3c39d0be1eeef7dffc20dcbd96cda00416ed4b9fe4`.
+The real mounted private path and credential-free preview pass, but no
+budget order/fill has yet been observed. The path validator accepts
+`/app/private/canary` only with a real `/app/private` mount, not an arbitrary
+directory beneath the repository. Required verification: 439 focused passed /
+1 skipped; 3,903 full passed / 19 skipped, eight workers, 296.58s and clean
+helper exit; Ruff and both sample-env Compose configurations passed.
+
 ## Long Codex Task
 
 ```powershell
@@ -46,7 +99,7 @@ names in this table have the prefix `thericher-kis-paper-`; times are KST.
 | Task | Current disposition |
 | --- | --- |
 | `intraday-head` | Retained: 00:29, 02:28, 04:24, 06:20 Tue-Sat. |
-| `daily-spy-head`, `daily-spy-session` | Retained: 22:15 and 23:50 Mon-Fri; input collection and actual baseline Paper lifecycle. |
+| `daily-spy-head`, `daily-spy-session` | Retained: 22:15 and 23:50 Mon-Fri; input collection and the scoped 10-percent aggregate-budget baseline trial. Daily session uses the host budget launcher, 24 visits, 25-minute task limit. |
 | `snapshot-observer` | Retained: every four minutes for ten hours from 21:20 Mon-Fri; no cadence change without freshness/load evidence. |
 | `daily-pair-forward` | Retained: 06:55 Tue-Sat; host runner now uses existing v2 profile/preflight/collector and v2 guard-receipt lineage. v1 remains untouched. |
 | `daily-nas-forward` | Retained: 06:40 Tue-Sat; latest safe reason is `nas_forward_cache_unavailable/reconcile`, requiring scoped Data recovery. Code 20 does not prove quarantine. |
@@ -2387,9 +2440,10 @@ code or dependency update to rebuild images and refresh task commands. This is
 runtime reproducibility, not a new scheduling or Paper approval condition.
 
 All named tasks allow battery start/continuation and have explicit execution
-limits. The Paper quote and daily-session tasks retain `IgnoreNew` and a
-90-minute limit but deliberately omit `StartWhenAvailable`: a late wake or
-login must not create an off-cadence Paper session. The daily-backfill task is
+limits. The current finite Paper quote cycle and daily budget session retain
+`IgnoreNew`, now with a 25-minute limit, and deliberately omit
+`StartWhenAvailable`: a late wake or login must not create an off-cadence
+Paper session. The retired daily-backfill task is
 data-only and has a 390-minute task limit around its declared six-hour inner
 budget.
 

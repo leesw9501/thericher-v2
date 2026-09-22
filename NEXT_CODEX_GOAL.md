@@ -27,12 +27,21 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 Operator priority update: implement an approximately 10-percent aggregate
 virtual-cash strategy trial under the sizing instruction in `AGENTS.md`.
 This is already approved; no further capital/profitability/D1 gate applies.
-The current one-share position resolver and receipt path do not yet enforce
-that budget. Do not simply enlarge the diagnostic buy-one/sell-one cycle or
-claim that recording this direction deploys it. Prepare budget-based sizing
-and owned-inventory recovery on the existing daily strategy path now, without
-waiting for the finite diagnostic's result; serialize only actual shared SPY
-side effects. Keep this lifecycle objective open until its evidence exists.
+The new opt-in daily-session mode now implements that budget, with an immutable
+initial funding basis, entry-cost/reservation replay from existing intents,
+owned inventory and recovery before new input checks. It consumes the existing
+baseline's direction only; its 10-percent allocation is a distinct execution
+policy, not the old fixed-lot result. Final integration passed 439 / 1 skip;
+full eight-worker authority passed 3,903 / 19 skips in 296.58s, with managed
+cleanup. Ruff and both Compose configurations pass. Seven images contain the
+six changed modules (42 matching hashes); the actual Docker mount check and
+credential-free launcher preview passed. The existing daily task now uses
+the budget launcher, 24 bounded visits and a 25-minute limit, without changing
+its principal or 23:50 KST weekday trigger. First due: 2026-09-22 23:50 KST.
+No task was started manually and no broker call was made in this package.
+See Execution/RUNBOOK for recovery and exact runtime scope. Do not enlarge the
+separate diagnostic cycle or claim budget orders/fills from source tests.
+Keep this lifecycle objective open until its runtime evidence exists.
 
 The explicit fresh-ask/bid SPY cycle is implemented in the existing session
 CLI, with a scoped host launcher, account-bound private identity, shared
@@ -109,7 +118,7 @@ and virtual routes; do not silently change the old canary's semantics.
 
 ### Execution: Main Path
 
-Priority ready package: connect the existing baseline decision to aggregate
+Implemented package: connect the existing baseline decision to aggregate
 budget-based integer sizing, durable same-account reservations and exact owned
 inventory. Reuse the existing intent/fill store and writer locks; no new broker
 backend, recurring diagnostic or approval workflow. Preserve the legacy fixed
@@ -119,7 +128,10 @@ cannot repeatedly claim 10 percent. Deploy through the existing strategy owner
 with fresh buying-power/quote facts, and report orders, fills and attributable
 results separately. Recover existing owned intents before daily input/target
 checks can skip them. No research profitability claim is required. The current
-runtime remains one-share until this package is actually integrated/deployed.
+default Python entry remains one-share unless `--budget-trial` is selected;
+the existing daily task is the deployment owner. Next reattach that owner's
+actual budget decision/order/fill/accounting result without resetting its
+funding binding or inventing another manual-approval or profitability gate.
 
 1. Recheck owned tasks, private-state ownership, and current source-safe status
    before any runtime work. Do not compete with an existing worker or create a

@@ -10,6 +10,7 @@ import pytest
 from thericher_v2.execution.kis_paper_canary import (
     KisPaperCanaryError,
     KisPaperCanaryIntent,
+    KisPaperCanaryOutcome,
     KisPaperCanaryReconciliation,
     KisPaperCanaryState,
     KisPaperCanaryStateStore,
@@ -32,7 +33,7 @@ NOW = datetime(2026, 9, 21, 19, tzinfo=UTC)
 ORDER = "SYNTHETIC-123"
 
 
-def _fill(quantity="1", amount="500", *, observed_at=NOW, order=ORDER):
+def _fill(quantity="1", amount="500", *, observed_at=NOW, order=ORDER, remaining=None):
     return KisPaperCumulativeFill(
         identity_ref=fill_identity_ref(
             raw_order_id=order,
@@ -46,6 +47,7 @@ def _fill(quantity="1", amount="500", *, observed_at=NOW, order=ORDER):
         quantity=Decimal(quantity),
         gross_amount=Decimal(amount),
         observed_at=observed_at,
+        remaining_quantity=None if remaining is None else Decimal(remaining),
     )
 
 
@@ -141,11 +143,196 @@ def _record(store, intent, fill):
     )
 
 
+@pytest.mark.parametrize(
+    "quantity,amount,remaining,status",
+    [
+        ("2", "1000", "0", "filled"),
+        ("1", "500", "1.00", "partial"),
+        ("0", "0", "2", "unfilled"),
+        ("0", "0", "0", "unfilled"),
+        ("1", "500", "0", "partial"),
+    ],
+)
+def test_remaining_quantity_roundtrip_preserves_fill_status(quantity, amount, remaining, status):
+    fill = _fill(quantity, amount, remaining=remaining)
+    assert fill.remaining_quantity == Decimal(remaining)
+    assert fill.status == status
+    payload = fill.to_dict()
+    assert payload["remaining_quantity"] == remaining
+    assert KisPaperCumulativeFill.from_dict(payload) == fill
+
+
+@pytest.mark.parametrize(
+    "remaining",
+    [
+        Decimal("-1"),
+        Decimal("NaN"),
+        Decimal("sNaN"),
+        Decimal("Infinity"),
+        Decimal("-Infinity"),
+        Decimal("0.5"),
+        Decimal("2"),
+        0,
+        0.0,
+        "0",
+        False,
+    ],
+)
+def test_invalid_remaining_quantity_rejected(remaining):
+    with pytest.raises(ValueError, match="fill remaining quantity invalid"):
+        replace(_fill(), remaining_quantity=remaining)
+
+
+@pytest.mark.parametrize("remaining", ["-1", "NaN", "sNaN", "Infinity", "0.5", "2"])
+def test_invalid_serialized_remaining_quantity_rejected(remaining):
+    payload = {**_fill().to_dict(), "remaining_quantity": remaining}
+    with pytest.raises(ValueError, match="fill remaining quantity invalid"):
+        KisPaperCumulativeFill.from_dict(payload)
+
+
+@pytest.mark.parametrize("quantity,amount", [("0", "0"), ("1", "500"), ("2", "1000")])
+def test_legacy_fill_positional_constructor_and_roundtrip_keep_remaining_unknown(quantity, amount):
+    expected = _fill(quantity, amount)
+    fill = KisPaperCumulativeFill(
+        expected.identity_ref,
+        expected.requested_quantity,
+        expected.quantity,
+        expected.gross_amount,
+        expected.observed_at,
+    )
+    assert fill == expected
+    payload = fill.to_dict()
+    assert set(payload) == {
+        "source",
+        "identity_ref",
+        "requested_quantity",
+        "quantity",
+        "gross_amount",
+        "observed_at",
+    }
+    restored = KisPaperCumulativeFill.from_dict(payload)
+    assert restored.remaining_quantity is None
+    assert restored.to_dict() == payload
+
+
+@pytest.mark.parametrize("remaining", [None, "0"])
+@pytest.mark.parametrize(
+    "updates,removed",
+    [
+        ({"unexpected": "0"}, None),
+        ({}, "quantity"),
+        ({"remaining_quantity": None}, None),
+        ({"remaining_quantity": 0}, None),
+    ],
+)
+def test_fill_payload_requires_exact_legacy_or_extended_string_schema(remaining, updates, removed):
+    payload = {**_fill(remaining=remaining).to_dict(), **updates}
+    if removed is not None:
+        payload.pop(removed)
+    with pytest.raises(ValueError, match="fill payload invalid"):
+        KisPaperCumulativeFill.from_dict(payload)
+
+
+@pytest.mark.parametrize(
+    "previous,current",
+    [
+        (_fill("0", "0", remaining="2"), _fill(remaining="1")),
+        (_fill(remaining="1"), _fill("2", "1000", remaining="0")),
+        (_fill(remaining="1"), _fill(remaining="1")),
+        (_fill(remaining="1"), _fill(remaining="0")),
+        (_fill("0", "0", remaining="2"), _fill("0", "0", remaining="0")),
+        (_fill(), _fill(remaining="1")),
+        (_fill(), _fill(remaining="0")),
+        (_fill(remaining="1"), _fill()),
+        (_fill(remaining="0"), _fill()),
+        (_fill(), _fill()),
+    ],
+)
+def test_advance_preserves_current_remaining_evidence_without_inference(previous, current):
+    current = replace(current, observed_at=NOW + timedelta(seconds=1))
+    assert current.advance(previous) is current
+    assert current.advance(None) is current
+    if current.remaining_quantity is None:
+        assert "remaining_quantity" not in current.to_dict()
+
+
+def test_remaining_increase_conflicts_even_without_additional_fill(tmp_path):
+    store, intent = _store(tmp_path)
+    previous = _fill(remaining="0")
+    current = _fill(remaining="1", observed_at=NOW + timedelta(seconds=1))
+    with pytest.raises(ValueError, match="fill cumulative observation conflicts"):
+        current.advance(previous)
+    original = _record(store, intent, previous)
+    result = _record(store, intent, current)
+    assert result.fill_observation_status == "conflict"
+    assert result.cumulative_fill == original.cumulative_fill
+    assert result.current_fill is None
+
+
+def test_partial_cancel_remaining_persists_without_changing_phase_or_accounting(tmp_path):
+    store, intent = _store(tmp_path)
+    partial = _record(store, intent, _fill(remaining="1"))
+    observed_zero = _record(
+        store, intent, _fill(remaining="0", observed_at=NOW + timedelta(seconds=1))
+    )
+    restored = KisPaperCanaryStateStore(store.path).read()
+    assert restored == observed_zero
+    assert restored.current_fill.remaining_quantity == 0
+    assert restored.phase == partial.phase == "submitted"
+    assert restored.current_fill.status == "partial"
+    assert restored.position_contribution == partial.position_contribution == 1
+    assert restored.gross_cashflow_contribution == partial.gross_cashflow_contribution == -500
+    unknown = _record(store, intent, _fill(observed_at=NOW + timedelta(seconds=2)))
+    assert unknown.current_fill.remaining_quantity is None
+    assert unknown.phase == "submitted"
+    assert unknown.current_fill.status == "partial"
+    assert "remaining_quantity" not in unknown.to_dict()["cumulative_fill"]
+
+
+def test_legacy_state_with_fill_still_roundtrips(tmp_path):
+    store, intent = _store(tmp_path)
+    state = _record(store, intent, _fill())
+    payload = state.to_dict()
+    assert "remaining_quantity" not in payload["cumulative_fill"]
+    restored = KisPaperCanaryState.from_dict(payload)
+    assert restored == state
+    assert restored.current_fill.remaining_quantity is None
+    assert restored.to_dict() == payload
+
+
+@pytest.mark.parametrize("remaining", ["0", "1", None])
+def test_safe_receipt_does_not_expose_remaining_or_other_fill_values(tmp_path, remaining):
+    fill = _fill(remaining=remaining)
+    reconciliation = KisPaperCanaryReconciliation(
+        snapshot=None,
+        account_status="available",
+        ccnl_row_count=1,
+        matching_open_order=False,
+        matching_ccnl=True,
+        status="clean",
+        execution=KisPaperExecutionObservation(1, True, "available", fill, NOW),
+    )
+    outcome = KisPaperCanaryOutcome(
+        run_id="synthetic-fill",
+        phase="submitted",
+        reason_code="reconciliation_clean",
+        evidence_path=tmp_path / "evidence.json",
+        runtime_path=tmp_path / "runtime.json",
+        paper_account_snapshot_path=tmp_path / "account.json",
+        reconciliation=reconciliation,
+    )
+    without_fill = replace(outcome, reconciliation=replace(reconciliation, execution=None))
+    assert outcome.safe_payload() == without_fill.safe_payload()
+    assert "remaining_quantity" not in repr(fill)
+    assert "remaining_quantity" not in json.dumps(outcome.safe_payload())
+
+
 def test_exact_history_bound_to_original_date_and_amount():
     observation = _observe([_row()])
     assert observation.status == "available"
     assert observation.fill.quantity == 1
     assert observation.fill.gross_amount == 500
+    assert observation.fill.remaining_quantity == 1
     assert observation.fill.status == "partial"
     assert "500" not in repr(observation)
     assert ORDER not in repr(observation)
@@ -175,6 +362,12 @@ def test_identity_conflicts_are_not_fills(updates):
         {"ft_ccld_amt3": "NaN"},
         {"ft_ccld_qty": "0"},
         {"nccs_qty": "2"},
+        {"nccs_qty": "-1"},
+        {"nccs_qty": "NaN"},
+        {"nccs_qty": "Infinity"},
+        {"nccs_qty": "0.5"},
+        {"nccs_qty": ""},
+        {"nccs_qty": None},
         {"ft_ccld_unpr3": "0"},
         {"ft_ccld_amt3": "50000"},
         {"ft_ccld_qty": "0.5"},
@@ -190,6 +383,34 @@ def test_invalid_or_wrong_unit_amount_is_not_accounted(updates):
 def test_zero_remaining_does_not_imply_a_fill():
     result = _observe([_row(ft_ccld_qty="0", ft_ccld_amt3="0", nccs_qty="0")])
     assert result.fill.status == "unfilled"
+    assert result.fill.remaining_quantity == 0
+
+
+@pytest.mark.parametrize(
+    "quantity,amount,remaining,status",
+    [
+        ("2", "1000", "0", "filled"),
+        ("1", "500", "1.00", "partial"),
+        ("0", "0", "2", "unfilled"),
+        ("1", "500", "0", "partial"),
+    ],
+)
+def test_readonly_propagates_exact_remaining_without_terminal_inference(
+    quantity, amount, remaining, status
+):
+    observation = _observe([_row(ft_ccld_qty=quantity, ft_ccld_amt3=amount, nccs_qty=remaining)])
+    assert observation.status == "available"
+    assert observation.fill.remaining_quantity == Decimal(remaining)
+    assert observation.fill.to_dict()["remaining_quantity"] == remaining
+    assert observation.fill.status == status
+
+
+def test_readonly_missing_remaining_is_not_an_observed_zero():
+    row = _row()
+    row.pop("nccs_qty")
+    observation = _observe([row])
+    assert observation.status == "fields_invalid"
+    assert observation.fill is None
 
 
 def test_duplicate_rows_and_lineage_never_get_summed():
