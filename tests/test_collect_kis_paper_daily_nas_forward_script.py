@@ -174,13 +174,16 @@ def test_partial_collection_returns_recovery_exit_before_the_scheduler_can_obser
     emitted: dict[str, object] = {}
 
     _mock_collection_client(script, monkeypatch)
+    collection_inputs: dict[str, object] = {}
+
+    def collect(*_args: object, **kwargs: object) -> object:
+        collection_inputs.update(kwargs)
+        return SimpleNamespace(status="partial", safe_payload=lambda: {"status": "partial"})
+
     monkeypatch.setattr(
         script,
         "collect_kis_paper_daily_nas_forward_once",
-        lambda *_args, **_kwargs: SimpleNamespace(
-            status="partial",
-            safe_payload=lambda: {"status": "partial"},
-        ),
+        collect,
     )
     monkeypatch.setattr(
         script,
@@ -199,6 +202,7 @@ def test_partial_collection_returns_recovery_exit_before_the_scheduler_can_obser
 
     assert exit_code == 20
     assert emitted["payload"] == {"status": "partial"}
+    assert collection_inputs["retain_revisions"] is True
 
 
 @pytest.mark.parametrize(

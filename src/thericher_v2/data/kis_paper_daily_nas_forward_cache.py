@@ -61,6 +61,7 @@ _SAFE_REASONS = frozenset(
         "auth_response_invalid",
         "config_missing",
         "daily_duplicate_conflict",
+        "daily_retained_revision_conflict",
         "daily_page_limit_exceeded",
         "daily_response_invalid",
         "daily_response_rejected",
@@ -260,6 +261,7 @@ class KisPaperDailyNasForwardCache:
     rows_by_symbol: Mapping[str, tuple[KisPaperDailyNasForwardRow, ...]]
     targets_by_key: Mapping[str, KisPaperDailyNasForwardTargetState]
     common_sessions: tuple[date, ...]
+    retained_revision_snapshot_count: int = 0
 
     def __post_init__(self) -> None:
         streams = MappingProxyType(
@@ -274,6 +276,8 @@ class KisPaperDailyNasForwardCache:
             or not _is_sha256(self.cache_hash)
             or self.index_path.is_symlink()
             or self.root.is_symlink()
+            or type(self.retained_revision_snapshot_count) is not int
+            or self.retained_revision_snapshot_count < 0
         ):
             raise ValueError("NAS forward cache is invalid")
         for symbol, rows in streams.items():
@@ -306,6 +310,8 @@ class KisPaperDailyNasForwardCache:
             "cache_sha256": self.cache_hash,
             "forward_common_session_count": len(self.common_sessions),
             "forward_common_sessions_sha256": _dates_hash(self.common_sessions),
+            "retained_revision_snapshot_count": self.retained_revision_snapshot_count,
+            "canonical_revision_policy": "first_retained_not_point_in_time",
             "targets": [
                 self.targets_by_key[target_key].safe_payload() for target_key in _TARGET_KEYS
             ],
@@ -362,7 +368,7 @@ class KisPaperDailyNasForwardRun:
             or any(
                 symbol not in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
                 or self.cache.targets_by_key[f"{symbol}/{NAS_EXCHANGE}"].last_reason
-                != "daily_duplicate_conflict"
+                not in {"daily_duplicate_conflict", "daily_retained_revision_conflict"}
                 for symbol in self.overlap_conflict_symbols
             )
         ):
@@ -405,6 +411,10 @@ class KisPaperDailyNasForwardRun:
                 }
                 for target_key, target in self.cache.targets_by_key.items()
                 if target.last_reason is not None
+                and (
+                    target.last_reason != "daily_retained_revision_conflict"
+                    or target_key.split("/", maxsplit=1)[0] in self.overlap_conflict_symbols
+                )
             ]
         return payload
 
@@ -490,10 +500,13 @@ def commit_kis_paper_daily_nas_forward_observation(
     repo_root: Path | str | None = None,
     frozen_boundary: date = KIS_PAPER_DAILY_NAS_FORWARD_FROZEN_BOUNDARY,
     observed_at: datetime | None = None,
+    retain_revisions: bool = False,
 ) -> KisPaperDailyNasForwardRun:
     """Atomically retain one source-local forward observation per successful target."""
 
     with kis_paper_daily_nas_forward_failure_context("observation_input"):
+        if type(retain_revisions) is not bool:
+            raise ValueError("NAS revision retention mode is invalid")
         _validate_observation_inputs(
             rows_by_symbol=rows_by_symbol,
             failure_reasons_by_symbol=failure_reasons_by_symbol,
@@ -514,6 +527,8 @@ def commit_kis_paper_daily_nas_forward_observation(
             index_exists = index_path.exists()
             index = _load_or_initialize_index(root=root, frozen_boundary=frozen_boundary)
             _validate_index(index, frozen_boundary=frozen_boundary)
+            _validate_retained_revisions(root, index)
+        revisions = list(index.get("retained_revisions", []))
         merged_by_symbol: dict[str, tuple[KisPaperDailyNasForwardRow, ...]] = {}
         changed_symbols: set[str] = set()
         pending_snapshots: dict[str, tuple[bytes, str, str, int]] = {}
@@ -531,8 +546,10 @@ def commit_kis_paper_daily_nas_forward_observation(
                 )
                 merged_by_symbol[symbol] = existing
                 continue
-            incoming = tuple(
-                row for row in rows_by_symbol[symbol] if row.session_date > frozen_boundary
+            incoming = _merge_rows(
+                (),
+                tuple(row for row in rows_by_symbol[symbol] if row.session_date > frozen_boundary),
+                symbol=symbol,
             )
             try:
                 with kis_paper_daily_nas_forward_failure_context(
@@ -548,11 +565,21 @@ def commit_kis_paper_daily_nas_forward_observation(
                     raise
                 effective_failures[symbol] = "daily_duplicate_conflict"
                 overlap_conflict_symbols.append(symbol)
-                target_updates[target_key] = _failure_target_document(
-                    target, effective_failures[symbol]
+                if not retain_revisions:
+                    target_updates[target_key] = _failure_target_document(
+                        target, effective_failures[symbol]
+                    )
+                    merged_by_symbol[symbol] = existing
+                    continue
+                with kis_paper_daily_nas_forward_failure_context("cache_publish", symbol=symbol):
+                    _retain_revision(root, revisions, target, incoming, observed, symbol)
+                effective_failures[symbol] = "daily_retained_revision_conflict"
+                existing_dates = {row.session_date for row in existing}
+                merged = _merge_rows(
+                    existing,
+                    tuple(row for row in incoming if row.session_date not in existing_dates),
+                    symbol=symbol,
                 )
-                merged_by_symbol[symbol] = existing
-                continue
             merged_by_symbol[symbol] = merged
             if merged != existing:
                 raw_payload = _compressed_rows(merged)
@@ -598,7 +625,21 @@ def commit_kis_paper_daily_nas_forward_observation(
             )
             wrote_snapshot = True
 
+        # Retention resolves acquisition, not the contradictory values for a predictive consumer.
+        for symbol in overlap_conflict_symbols:
+            if retain_revisions:
+                key = f"{symbol}/{NAS_EXCHANGE}"
+                target_updates[key] = _failure_target_document(
+                    target_updates[key], "daily_retained_revision_conflict"
+                )
+        for record in revisions:
+            target = target_updates[f"{record['symbol']}/{NAS_EXCHANGE}"]
+            if target["status"] == "ready":
+                target["status"] = "deferred"
+                target["last_reason"] = "daily_retained_revision_conflict"
         updated_index = dict(index)
+        if revisions:
+            updated_index["retained_revisions"] = revisions
         updated_index["targets"] = [target_updates[target_key] for target_key in _TARGET_KEYS]
         index_changed = not index_exists or updated_index != index
         if index_changed:
@@ -606,7 +647,8 @@ def commit_kis_paper_daily_nas_forward_observation(
             with kis_paper_daily_nas_forward_failure_context("cache_publish"):
                 _write_json_atomic(root / _INDEX_FILENAME, updated_index)
         common_sessions = _common_forward_sessions(merged_by_symbol)
-        prospective_input_ready = not effective_failures and _is_forward_projection_ready(
+        targets_ready = all(target["status"] == "ready" for target in target_updates.values())
+        prospective_input_ready = targets_ready and _is_forward_projection_ready(
             common_sessions,
             frozen_boundary=frozen_boundary,
         )
@@ -623,7 +665,7 @@ def commit_kis_paper_daily_nas_forward_observation(
     ]
     if failures == len(_TARGET_KEYS):
         status = "deferred"
-    elif failures:
+    elif failures or not targets_ready and has_rows:
         status = "partial"
     elif not has_rows:
         status = "input_unavailable"
@@ -637,11 +679,13 @@ def commit_kis_paper_daily_nas_forward_observation(
         status=status,
         observed_at=observed,
         cache=cache,
-        accepted_page_count=len(rows_by_symbol) - len(overlap_conflict_symbols),
+        accepted_page_count=len(rows_by_symbol) - (
+            0 if retain_revisions else len(overlap_conflict_symbols)
+        ),
         categorical_failure_count=failures,
         changed_target_count=len(changed_symbols),
         prospective_input_status="ready" if prospective_input_ready else "input_unavailable",
-        recovery="resume" if failures else "complete",
+        recovery="resume" if failures or not targets_ready and has_rows else "complete",
         overlap_conflict_symbols=tuple(overlap_conflict_symbols),
     )
 
@@ -663,6 +707,7 @@ def load_verified_kis_paper_daily_nas_forward_cache(
     index = _json_mapping(index_bytes, "forward index")
     frozen_boundary = _date(index.get("frozen_boundary"), "forward boundary")
     _validate_index(index, frozen_boundary=frozen_boundary)
+    _validate_retained_revisions(root, index)
     rows_by_symbol: dict[str, tuple[KisPaperDailyNasForwardRow, ...]] = {}
     targets: dict[str, KisPaperDailyNasForwardTargetState] = {}
     for target in index["targets"]:
@@ -705,6 +750,7 @@ def load_verified_kis_paper_daily_nas_forward_cache(
         rows_by_symbol=MappingProxyType(rows_by_symbol),
         targets_by_key=MappingProxyType(targets),
         common_sessions=common_sessions,
+        retained_revision_snapshot_count=len(index.get("retained_revisions", [])),
     )
 
 
@@ -758,6 +804,36 @@ def build_kis_paper_daily_nas_historical_forward_projection(
         eligible_target_slot_count=eligible_slots,
         status="ready" if eligible_slots else "input_unavailable",
     )
+
+
+def load_kis_paper_daily_nas_revision_as_of(
+    *,
+    cache_root: Path | str,
+    repo_root: Path | str,
+    symbol: str,
+    snapshot_sha256: str,
+    as_of: datetime,
+) -> tuple[KisPaperDailyNasForwardRow, ...]:
+    """Read one exact retained whole-page vintage, never a mixed or latest-row view.
+
+    Local recording time is only a conservative availability bound. This proves
+    neither original historical availability nor source finality/correctness.
+    """
+    as_of = require_utc(as_of, "as_of")
+    root = _external_root(Path(cache_root), _repository_root(repo_root), create=False)
+    index = _json_mapping(_safe_child(root / _INDEX_FILENAME, root).read_bytes(), "forward index")
+    _validate_index(index, frozen_boundary=_date(index.get("frozen_boundary"), "boundary"))
+    _validate_retained_revisions(root, index)
+    matches = [
+        record for record in index.get("retained_revisions", [])
+        if record["symbol"] == symbol and record["snapshot_sha256"] == snapshot_sha256
+    ]
+    if len(matches) != 1 or datetime.fromisoformat(matches[0]["recorded_at"]) > as_of:
+        raise KisPaperDailyNasForwardCacheError("revision unavailable at requested time")
+    payload = _safe_child(root / matches[0]["snapshot_path"], root).read_bytes()
+    if _sha256(payload) != snapshot_sha256:
+        raise KisPaperDailyNasForwardCacheError("retained revision hash is invalid")
+    return _parse_compressed_rows(payload, symbol=symbol)
 
 
 def sanitize_kis_paper_daily_nas_forward_failure_reason(value: BaseException | str) -> str:
@@ -883,7 +959,7 @@ def _validate_index(index: Mapping[str, object], *, frozen_boundary: date) -> No
         "redaction",
     }
     if (
-        set(index) != expected
+        set(index) not in (expected, expected | {"retained_revisions"})
         or index.get("schema_version") != SCHEMA_VERSION
         or index.get("kind") != KIS_PAPER_DAILY_NAS_FORWARD_CACHE_ID
         or index.get("version") != KIS_PAPER_DAILY_NAS_FORWARD_CACHE_VERSION
@@ -1034,7 +1110,10 @@ def _success_target_document(
         raise ValueError("forward rows hash is unavailable")
     return {
         "target_key": prior["target_key"],
-        "status": "ready",
+        "status": (
+            "deferred"
+            if prior.get("last_reason") == "daily_retained_revision_conflict" else "ready"
+        ),
         "accepted_page_count": int(prior["accepted_page_count"]) + 1,
         "categorical_failure_count": int(prior["categorical_failure_count"]),
         "latest_session": rows[-1].session_date.isoformat(),
@@ -1044,7 +1123,10 @@ def _success_target_document(
         if snapshot_sha256 is not None
         else prior.get("snapshot_sha256"),
         "rows_sha256": rows_sha256,
-        "last_reason": None,
+        "last_reason": (
+            "daily_retained_revision_conflict"
+            if prior.get("last_reason") == "daily_retained_revision_conflict" else None
+        ),
     }
 
 
@@ -1110,6 +1192,96 @@ def _write_snapshot(*, root: Path, symbol: str, payload: bytes) -> str:
     return destination.relative_to(root).as_posix()
 
 
+def _retain_revision(
+    root: Path,
+    records: list[dict[str, object]],
+    prior: Mapping[str, object],
+    incoming: tuple[KisPaperDailyNasForwardRow, ...],
+    observed: datetime,
+    symbol: str,
+) -> None:
+    rows_hash = _rows_sha256(incoming)
+    # Identical pages need no second copy or a fabricated new first-observation time.
+    if any(item["symbol"] == symbol and item["rows_sha256"] == rows_hash for item in records):
+        return
+    payload = _compressed_rows(incoming)
+    prior_rows = _load_target_rows(root=root, target=prior, symbol=symbol)
+    by_date = {row.session_date: row for row in prior_rows}
+    changed = sum(
+        row.session_date in by_date and by_date[row.session_date] != row for row in incoming
+    )
+    records.append({
+        "symbol": symbol,
+        "recorded_at": max(datetime.now(UTC), observed).isoformat(),
+        "snapshot_path": _write_snapshot(root=root, symbol=symbol, payload=payload),
+        "snapshot_sha256": _sha256(payload),
+        "rows_sha256": rows_hash,
+        "row_count": len(incoming),
+        "revised_row_count": changed,
+        "prior_target": dict(prior),
+    })
+
+
+def _validate_retained_revisions(root: Path, index: Mapping[str, object]) -> None:
+    records = index.get("retained_revisions", [])
+    if not isinstance(records, list):
+        raise KisPaperDailyNasForwardCacheError("retained revisions are invalid")
+    seen: set[tuple[str, str]] = set()
+    for record in records:
+        if not isinstance(record, dict) or set(record) != {
+            "symbol", "recorded_at", "snapshot_path", "snapshot_sha256", "rows_sha256",
+            "row_count", "revised_row_count", "prior_target",
+        }:
+            raise KisPaperDailyNasForwardCacheError("retained revision is invalid")
+        symbol = record["symbol"]
+        if (
+            symbol not in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+            or type(record["row_count"]) is not int or record["row_count"] <= 0
+            or type(record["revised_row_count"]) is not int
+            or not 0 < record["revised_row_count"] <= record["row_count"]
+            or not isinstance(record["snapshot_path"], str)
+            or not _is_sha256(record["snapshot_sha256"])
+            or not _is_sha256(record["rows_sha256"])
+            or (symbol, record["rows_sha256"]) in seen
+        ):
+            raise KisPaperDailyNasForwardCacheError("retained revision metadata is invalid")
+        try:
+            require_utc(datetime.fromisoformat(record["recorded_at"]), "recorded_at")
+        except (TypeError, ValueError) as error:
+            raise KisPaperDailyNasForwardCacheError("retained revision time is invalid") from error
+        seen.add((symbol, record["rows_sha256"]))
+        boundary = _date(index["frozen_boundary"], "forward boundary")
+        prior = record["prior_target"]
+        _validate_target(prior, frozen_boundary=boundary)
+        if prior["target_key"] != f"{symbol}/{NAS_EXCHANGE}":
+            raise KisPaperDailyNasForwardCacheError("retained revision target is invalid")
+        prior_rows = _load_target_rows(root=root, target=prior, symbol=symbol)
+        try:
+            payload = _safe_child(root / record["snapshot_path"], root).read_bytes()
+        except OSError as error:
+            raise KisPaperDailyNasForwardCacheError("retained revision is unreadable") from error
+        if _sha256(payload) != record["snapshot_sha256"]:
+            raise KisPaperDailyNasForwardCacheError("retained revision hash is invalid")
+        rows = _parse_compressed_rows(payload, symbol=symbol)
+        by_date = {row.session_date: row for row in prior_rows}
+        if (
+            len(rows) != record["row_count"] or _rows_sha256(rows) != record["rows_sha256"]
+            or any(row.session_date <= boundary for row in rows)
+            or sum(row.session_date in by_date and by_date[row.session_date] != row for row in rows)
+            != record["revised_row_count"]
+        ):
+            raise KisPaperDailyNasForwardCacheError("retained revision contents are invalid")
+    revised_symbols = {symbol for symbol, _ in seen}
+    for target in index["targets"]:
+        symbol = target["target_key"].split("/")[0]
+        if (
+            symbol in revised_symbols and target["status"] != "deferred"
+            or target["last_reason"] == "daily_retained_revision_conflict"
+            and symbol not in revised_symbols
+        ):
+            raise KisPaperDailyNasForwardCacheError("retained revision state is invalid")
+
+
 def _compressed_rows(rows: Sequence[KisPaperDailyNasForwardRow]) -> bytes:
     buffer = io.StringIO(newline="")
     writer = csv.writer(buffer, lineterminator="\n")
@@ -1130,6 +1302,9 @@ def _parse_compressed_rows(
             reader = csv.DictReader(io.StringIO(handle.read().decode("utf-8"), newline=""))
             if tuple(reader.fieldnames or ()) != _RAW_COLUMNS:
                 raise ValueError
+            records = tuple(reader)
+            if any(row["exchange"] != NAS_EXCHANGE for row in records):
+                raise ValueError
             rows = tuple(
                 KisPaperDailyNasForwardRow(
                     symbol=str(row["symbol"]),
@@ -1140,7 +1315,7 @@ def _parse_compressed_rows(
                     close=Decimal(str(row["close"])),
                     volume=Decimal(str(row["volume"])),
                 )
-                for row in reader
+                for row in records
             )
     except (KeyError, OSError, UnicodeDecodeError, InvalidOperation, ValueError) as error:
         raise KisPaperDailyNasForwardCacheError("forward snapshot contents are invalid") from error

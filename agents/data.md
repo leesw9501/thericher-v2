@@ -49,36 +49,39 @@ Its verified loader hashes match the owned successful receipt:
 No finality, adjustment or Paper-model equivalence follows. Next existing run:
 2026-09-24 06:55 KST; no schedule change or new collection was needed to prove it.
 
-NAS's 06:40 result now identifies `overlap_reconciliation/duplicate_conflict`
-for AAPL. The cache remains valid at generation2, six targets with two rows
-each and two July27-28 common sessions; no new retained coverage.
-Exact receipt:
-`D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20260922T214003902371Z-30ed1a01f785\receipt.json`
-(file SHA256 `df03de9b8a5f0ed8fde93bf01dea6ad445a4393a7759f2b9b6b435cc78a74faf`).
-The conflict is stored-versus-incoming, not corrupt stored bytes. Target-local
-handling is implemented, with old snapshots retained, explicit partial status,
-correct accepted/failure counts and deferred-target preflight/projection checks.
-82 focused integration tests pass. The existing collector, preflight and
-observation images are rebuilt with source parity. No Paper image or schedule
-changed. Collector image:
-`sha256:dbfa4a64ff071cf8281a929a12c82fc163704e691ca0f97e87f8ed2cf703f8f7`.
+NAS revision retention is implemented and deployed in its existing collector,
+preflight and observation images (nine changed-file hashes match). At13:21:08Z
+the bounded six-page collection accepted all six pages and appended39 sessions
+per target: six times41 rows, 41 common sessions, 234 additional daily rows.
+All six incoming revisions remain as whole-page immutable snapshots alongside
+the unchanged original values. Exact receipt:
+`D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20260923T132108726059Z-a011745b56d8\receipt.json`
+(`sha256:fd3bcf49e4c318b3c752be66f8507511bfffb40bc940efc7fb629686b1d10e3f`).
+Independent offline reattachment confirms generation4, both receipt-bound
+index/cache hashes, all six prior snapshots and all12 original canonical rows.
+All six exact whole-page reads succeed at current as_of and reject a time before
+recording. Every target has one changed overlap: close/volume only, not open/
+high/low. This does not establish which version is correct or source finality.
 
-The actual bounded6-page run at11:27:54Z found overlap conflicts for ALL6
-targets. Accepted/changed are0/0, common sessions remain2, and generation3
-records failure metadata only, not added data. Exact bound receipt:
-`D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20260923T112754086800Z-805e6ea31f32\receipt.json`
-(`sha256:b51315aa38538a2ca3692c0719fe7b3468ff67a63e0a10da2d804b6a8ed435cb`).
-One subsequent read-only AAPL page at11:33:18Z had41 incoming rows, two overlaps,
-one changed row: close and volume differ numerically; open/high/low match.
-Trailing-zero formatting is not the cause. No raw values were output/retained,
-no cache was modified, and no correct version or revision cause is established.
-Safe evidence: `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\diagnostics\overlap-fields-20260923T113318804149Z.json`.
-Other symbols' differing fields remain unknown. Next bounded recovery should
-retain revision-aware, observed-at snapshots through the existing owner rather
-than reject every new page or overwrite old bars. Reuse existing snapshot/cache
-machinery; no new scheduler or generic data platform. The raw source difference
-limits this exact merged consumer, not independent research or Paper work.
-Next existing NAS schedule remains2026-09-24 06:40 KST.
+The current first-retained view is not PIT or final: six revision conflicts
+remain visible and its legacy predictive projection is input_unavailable.
+Exit20/deferred here means unresolved values, NOT zero acquisition. The exact
+whole-page reader requires symbol, snapshot hash and as_of >= local recorded_at;
+it can support a separately scoped observed/developmental source without
+silently blending vintages or clearing the legacy consumer. No arbitrary
+price-difference tolerance or repeated-agreement finality rule was invented.
+The index atomically binds old/new snapshots; readers recheck hashes, schema,
+counts and exchange. Retries deduplicate identical incoming pages. New days
+continue to append even when a prior revision remains unresolved.
+
+Independent synthetic review:45 new tests; existing82 NAS/consumer tests pass.
+Source snapshots are under the existing D: cache, receipts under the existing
+D: artifact root. No account/order call or Paper image/schedule change.
+Collector image: `sha256:a39f3e3ac2b6dd81a5a6c895a45f8a3b8fa91465058af9b14c68adfdeac3e784`.
+Observation source-only overlay preserves the old Torch2.7.0+cu128 runtime,
+avoiding a CUDA dependency reinstall; its image is
+`sha256:684d9cbb3ada7286e59aa5693fae94d61cf4bb24fd49aebaca808926c882e4da`.
+Next existing NAS schedule remains2026-09-24 06:40 KST; no new scheduler.
 
 The expired finite D1 study now has a reader-validated later result for
 September21: `disqualified/identity_mismatch`, observed September22 14:20:03Z.

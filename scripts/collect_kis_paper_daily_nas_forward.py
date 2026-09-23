@@ -150,6 +150,7 @@ def _run_credentialed_collection(
             repository_root=repository_root,
             frozen_boundary=frozen_boundary,
             observed_at=observed_at,
+            retain_revisions=True,
         )
         payload = result.safe_payload()
     except (

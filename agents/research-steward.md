@@ -5,6 +5,18 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Latest closed CPU-only appointment: `firstrate-m5-opening-range-development-20260923-v1`,
+contract `sha256:8a02e63b4e2d08b5993625c20c2429d1bb62807bd86663bd87e0190d5143a83c`.
+One fixed rule/three costs/two symbols/two seen folds; no fitted parameters,
+new weights, GPU allocation, sealed evaluation or Paper selection. Supervisor
+budget600 seconds, one thread, networkless Docker capped at2 CPUs/6GB. The
+existing Execution tasks retain their resources/ownership. Results are
+descriptive under the assumed source clock and complete-session censoring,
+not economic survival/rejection. See Research for the exact contract/outcome.
+Completed12 cells in259.329s; no timeout, worker/container exited and scratch
+cleaned. Summary `sha256:aa92f3677c328196fbd306b43f941627d7fb69f28f5cfd0df8bf51e47226e07b`;
+registry non_promoting_completed, recovery complete. No successor allocation.
+
 Latest closed CPU-only diagnostic: `fixed-forecast-diagnostic-h30-c36-v1`.
 Contract `sha256:d3fa577bbf005492c340e9147c76b71ab8f35c4440240adb792e45fcd9874ab8`;
 summary `sha256:47ed62aa043511e01f5550a5e81fb26a5d0d4b8081ce373453ea1d4b8aeb0b8f`.

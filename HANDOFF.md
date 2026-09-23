@@ -21,6 +21,23 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+2026-09-23 22:21 KST: the NAS retention repair is now runtime-confirmed.
+All six targets advanced from2 to41 daily rows (234 added rows); six immutable
+whole-page revisions preserve the conflicting responses without replacing old
+values. Exact receipt and image identities are in Data. The mixed first-retained
+view is not PIT/final and remains unavailable to its legacy predictive consumer;
+an exact hash/as-of reader exposes a whole recorded vintage for explicitly
+scoped development. This is real collection progress, not source qualification.
+127 NAS/consumer tests pass. The existing06:40 schedule is unchanged.
+
+The independent fixed opening-range CPU study completed12 cells in259.329s,
+159 one-share roundtrips on two seen folds. First-fold net is positive at3bps,
+second-fold negative for both symbols: `descriptive_criterion_not_met`.
+This is neither a portfolio return nor statistical rejection of the mechanism.
+No training/GPU/Paper replacement.109 research/runner tests pass; total236
+focused tests for this continuation, Ruff and both sample-env Compose configs.
+Research/Steward hold the exact frozen contract/summary; no full-suite rerun.
+
 2026-09-23 parallel continuation: fixed-weight forecast diagnosis completed
 all28 models and84 parent replay cells in84.497 CPU seconds. Of28 model/fold
 cells,21 have worse MSE than TRAIN mean; no same-symbol/family/seed improves

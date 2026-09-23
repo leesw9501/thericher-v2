@@ -35,15 +35,35 @@ Claude supported the diagnostic with these limits. Independent review found
 and main fixed a worker-payload field-validation gap before the actual run;
 112 focused numerical/integration/runner tests pass.
 
-Next bounded research question: one fixed opening-range breakout, not another
-same-feature parameter sweep. Draft: first30 regular-session minutes define
-the high; first subsequent completed M5 close above it signals a next-open
-entry; one entry/session, fixed pre-close exit, no overnight. Freeze exact
-early-close/missing-bar behavior, two seen-data folds, 1/3/5bps costs and
-time-matched long/cash controls before any outcome is read. Kill on leakage,
-insufficient complete sessions, or failure to repeat cost3bps control-relative
-improvement across folds. This is a proposed CPU DEVELOPMENT package, not yet
-frozen/dispatched and not a Paper strategy replacement.
+The distinct opening-range CPU study is complete in259.329 supervised seconds:
+`firstrate-m5-opening-range-development-20260923-v1`, contract
+`sha256:8a02e63b4e2d08b5993625c20c2429d1bb62807bd86663bd87e0190d5143a83c`.
+Its external root is `D:\thericher-v2\model-artifacts\research\firstrate-m5-opening-range-development-20260923-v1`.
+First30 regular-session minutes define the high; the first later completed M5
+close above it enters at the next open, once/session, and exits at close-minus5
+minutes OPEN, including early closes. No overnight or fitted parameter.
+Freeze decisions before complete-session censoring; retain all planned,
+observed, censored and selected/censored counts. Compare1/3/5bps against cash
+and the in-fold unconditional long mean at matched entry offset/session length.
+The comparator is descriptive, not a deployable strategy or independent test.
+Minimum16 complete sessions and8 scored entries per symbol/fold;600-second CPU
+budget; two seen-data folds. No training, GPU, holdout or Paper replacement.
+Claude's initial economic-interpretation verdict was uncertain; after narrowing
+to descriptive_criterion_met/not_met, its verdict was supported-with-limits.
+Known bar-start uncertainty and posthoc censoring remain, not silently resolved
+by synthetic clock tests. Independent review and109 focused tests pass; bool
+identity and cross-cost consistency checks were tightened before freezing.
+Summary: `sha256:aa92f3677c328196fbd306b43f941627d7fb69f28f5cfd0df8bf51e47226e07b`.
+All12 cost/symbol/fold cells completed,159 independent one-share roundtrips
+(39/41 SPY,40/39 QQQ). Each fold has63 scheduled sessions; SPY fold1 excludes
+one opening-unavailable session, and no selected trade is censored. At3bps/side,
+SPY fold1/fold2 net dollars are21.5310/-22.1273 and QQQ19.4992/-22.2182.
+SPY beats its descriptive matched mean in both folds; QQQ only in the first.
+The predeclared result is `descriptive_criterion_not_met`; not statistical
+rejection of the mechanism, a portfolio return, or a reason to retune the rule.
+The immutable contract/output and custody are closed, with no active research
+container. Next priority is the existing Paper lifecycle result; later research
+should use a separately declared mechanism/replication, not rescue this matrix.
 
 Completed `persistent-position-h30-c36-v1`: CPU re-inference of all eight
 retained context36/H30 LSTMs and fixed cash/long/previous-bar/SMA controls.

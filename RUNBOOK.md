@@ -149,6 +149,22 @@ network disabled, 2CPU/6GB, no GPU/credentials, read-only source/data and the
 same hash-checked offline LightGBM wheel described below. `--freeze` is
 metadata-only; `--run` requires its exact `--contract-sha256`.
 
+### Fixed Opening-Range Comparison
+
+`scripts/run_firstrate_opening_range.py` reuses the existing position-study
+CLI/supervisor for one fixed source-local DEVELOPMENT rule. Its completed
+contract and summary are in `agents/engine-research.md`; external directory:
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-opening-range-development-20260923-v1`.
+It completed12 cells/159 one-share trades in259.329s of600, with no training,
+GPU, new weights or Paper change. The descriptive criterion was not met;
+neither a portfolio return nor statistical mechanism rejection follows.
+Do not rerun or overwrite its started/summary records. Use `--freeze` only for
+metadata and `--run --contract-sha256 <exact hash>` for a fresh owned contract.
+The actual container used the pinned existing research image, network none,
+2CPU/6GB, read-only `/app/src`, `/app/scripts`, `/app/market_data` mounts and
+writable external `/app/model_artifacts`. Mount source subdirectories instead
+of the whole read-only repo at `/app`, which prevents nested mount creation.
+
 ### Fixed Model-Family Comparison
 
 `scripts/run_firstrate_family_comparison.py` owns the finite
@@ -261,7 +277,7 @@ names in this table have the prefix `thericher-kis-paper-`; times are KST.
 | `daily-spy-head`, `daily-spy-session` | Retained: 22:15 and 23:50 Mon-Fri; input collection and the scoped 10-percent aggregate-budget baseline trial. Daily session uses the host budget launcher, 24 visits, 25-minute task limit. |
 | `snapshot-observer` | Retained: every four minutes for ten hours from 21:20 Mon-Fri; no cadence change without freshness/load evidence. |
 | `daily-pair-forward` | Retained: 06:55 Tue-Sat; host runner now uses existing v2 profile/preflight/collector and v2 guard-receipt lineage. v1 remains untouched. |
-| `daily-nas-forward` | Retained: 06:40 Tue-Sat; deployed target-local recovery now records six overlap conflicts, zero new rows. Prior snapshots remain valid; revision-retaining recovery is next. Code 20 alone never proves quarantine. |
+| `daily-nas-forward` | Retained: 06:40 Tue-Sat; revision-retaining collection now has41 sessions per target, six saved whole-page revisions,234 added rows. Old overlap values remain. Code20 describes unresolved mixed-view values, not zero collection. |
 | `d1-prospective-observation-pairing` | Final later opportunity 2026-09-22 23:20. Both triggers expire 2026-09-23 00:00. Fresh first observation is recorded, not a complete pair. |
 | `daily-backfill`, `daily-broad-backfill` | Disabled: exact historical cursors terminal, respectively 3/3 and 2,119/2,119 targets. This is not a claim of unlimited historical coverage. |
 | `daily-spy-stability-observer`, `spy-prefix-negative-control`, `spy-prefix-feasibility` | Disabled finite diagnostic studies; commands and immutable results retained. |
@@ -399,19 +415,15 @@ observations before requery. Fees, settled cash and net PnL remain unobserved.
 The next explicit fillable cycle must use fresh ask/bid limits and exit only
 its confirmed inventory; this patch does not alter the immediate-cancel default.
 
-NAS-forward now isolates only measured stored/incoming overlap conflicts by
-target. Prior rows remain immutable; valid other targets can publish atomically.
-Failed targets cannot qualify a fresh run, cache-current preflight or historical-
-forward projection. Collector/preflight/observation images are deployed. The
-actual September23 six-page run returned deferred with six overlap conflicts,
-zero accepted/changed targets and two retained common sessions; generation3
-records failure counters only. A read-only AAPL page then isolated one numeric
-close/volume change among two overlapping rows, with41 incoming rows available.
-Other symbols' differing fields remain unknown. Exact receipts are in Data.
-No historical reset, dropped conflict, correct-version inference or schedule
-change follows. Next bounded Data repair should retain observed-at versions
-through existing snapshot machinery instead of repeating an immutable-merge
-failure. The existing NAS06:40/pair06:55 next runs remain September24 KST.
+NAS-forward now retains changed whole pages and appends previously absent dates
+without replacing old values. Its September23 13:21Z run accepted six pages,
+preserved six revision snapshots and grew every target from2 to41 sessions.
+The first-retained mixed view remains deferred for its legacy predictive
+consumer, not for continued acquisition. The exact hash/as-of whole-page reader
+supports separately scoped developmental use with recording-time limits.
+See the NAS cache section and Data for schema, receipts and deployed images.
+No finality/correct-version inference or schedule change follows. The existing
+NAS06:40/pair06:55 next runs remain September24 KST.
 
 ### Open/Open Development Comparison
 
@@ -895,6 +907,25 @@ a scheduler failure; it makes no KIS, credential, network, broker, or cache
 call either way.
 
 ## KIS NAS D1 Forward Cache
+
+The owned collector enables `retain_revisions=True`. A valid changed incoming
+page is saved whole, with a conservative local `recorded_at` and the prior
+snapshot binding in the same atomic index. The first-retained view appends new
+dates but never overwrites old overlaps; both snapshots are verified on read.
+Identical-page retries deduplicate. The legacy predictive projection stays
+deferred for that contradictory view even after a later clean page. This does
+not prevent acquisition or independent Paper work. For separately scoped
+development, `load_kis_paper_daily_nas_revision_as_of` selects one exact symbol/
+snapshot hash at or after recording; it never builds a mixed latest-row view.
+It proves neither historical availability nor provider finality/correctness.
+
+Runtime evidence: September23 13:21:08Z accepted6 pages, retained6 revisions,
+and advanced each target2->41 sessions. Exact receipt is in `agents/data.md`.
+Collector/preflight use normal Compose builds. The observation image received
+a networkless source-only overlay on its pinned prior image, with unchanged
+Torch2.7.0+cu128; all nine changed-source hashes match. No schedule, Paper image,
+credential policy or shared control root changed. Normal source builds remain
+valid; the overlay merely avoids reinstalling an unchanged CUDA runtime.
 
 The prospective six-symbol NAS D1 cache is separate from the frozen historical
 panel and exists only under external roots:

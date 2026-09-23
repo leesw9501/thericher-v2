@@ -38,11 +38,13 @@ Independent Data continuation: QQQ/SPY v2 now reattests41 common D1 sessions
 through September22, not M1 history. Finite D1 observation closed as
 disqualified/identity_mismatch without extension. NAS target-local overlap
 handling is implemented and deployed, but an actual6-page attempt found all6
-targets conflict, with zero new rows and2 common sessions retained. Preserve
-those historical snapshots. A bounded AAPL page found a numeric close/volume
-change in1 of2 overlapping rows, with41 incoming rows. Next Data recovery is
-observed-at revision retention using existing snapshot machinery, not repeated
-strict-merge failures or silently replacing old values.
+targets conflict. The subsequent revision-retaining recovery at13:21:08Z
+accepted six pages, preserved six whole-page revisions and appended234 rows:
+all six targets now have41 common daily sessions. Original overlap values remain
+unchanged. An exact recorded-at/hash reader exposes one whole vintage, while
+the mixed first-retained view remains explicitly non-PIT and unresolved for
+its old predictive consumer. Continue the existing daily owner, not strict-merge
+retry loops, reset history or an invented automatic-finality rule.
 No account/order call or Paper schedule change belongs to that Data package.
 
 Next: the SAME fixed-cycle task runs at 2026-09-23 22:35 KST, expires 23:10,
@@ -66,9 +68,11 @@ models in84.497 CPU seconds, reproducing84 parent model/cost cells. Of28 cells,
 21 have worse MSE than TRAIN mean; no same-symbol/family/seed improves it in
 both folds. Sparse >6bps decisions are consistent with narrow predictions,
 not sufficient reason to lower a threshold on these seen outcomes. Next
-proposed CPU package is one fixed opening-range breakout against matched
-long/cash controls, with a new predeclared contract and no Paper replacement.
-Latest isolated-package verification: 194 focused tests passed in 32.50s;
+opening-range CPU package is now complete:12 cells,159 one-share roundtrips,
+259.329s. First-fold positive/second-fold negative at3bps for both symbols;
+descriptive_criterion_not_met. No statistical rejection or Paper replacement.
+Exact immutable contract/results are in Research; do not retune this closed run.
+Latest isolated-package verification:127 NAS tests and109 research/runner tests;
 Ruff and both sample-env Compose configurations pass. No full-suite rerun.
 Preceding shared-Execution verification: 587 focused cases; 4,545 full passed /
 19 skips in 317.15s, eight workers, clean helper exit. The actual sell/flat
@@ -219,11 +223,11 @@ funding binding or inventing another manual-approval or profitability gate.
   stays with the existing task owner; do not add a schedule or widen symbols.
 - Finite D1 is closed with a validated later identity mismatch; preserve its
   immutable receipts and expired triggers. It is not a company prerequisite.
-- V2 forward collection is confirmed at41 sessions. NAS now isolates target
-  overlap failures, but all6 current targets conflict. AAPL's single-page
-  diagnostic narrows one changed row to close/volume. Prepare bounded observed-at
-  revision retention while preserving original snapshots; do not call that an
-  API quota or overwrite history as a recovery shortcut. Exhausted historical cursors
+- V2 forward collection is confirmed at41 sessions. NAS revision retention also
+  advanced all six targets to41 sessions, with old values and whole new vintages
+  preserved. Continue collection through its existing owner. A future consumer
+  must explicitly bind one snapshot and its recorded-at limitation, not treat
+  the mixed first-retained view as historical PIT data. Exhausted historical cursors
   are not daily refreshers and remain on demand until useful scope is assigned.
 - Reattach only the existing lawful ETF snapshots needed for the Engine
   package, exposing event, timestamp, gap, and already-seen-data limitations.
@@ -233,10 +237,11 @@ funding binding or inventing another manual-approval or profitability gate.
 - Operator priority: broaden model families beyond LSTM configurations.
   The linked LightGBM/TCN/compact-attention comparison and fixed-weight
   persistent-position and fixed-forecast comparisons are complete above.
-  Prepare one fixed opening-range-breakout DEVELOPMENT contract, with exact
-  next-open/exit timing and matched long/cash controls. Preserve seen-data
-  lineage, causal eligibility, temporal splits and cost sensitivity; do not
-  retune the closed matrices or change tonight's baseline Paper strategy.
+  The fixed opening-range-breakout DEVELOPMENT study also completed with
+  exact next-open/exit timing and matched long/cash controls. Its descriptive
+  criterion was not met; do not retune the closed matrices or change tonight's
+  baseline Paper strategy. A later research package needs a separate declared
+  mechanism or replication, preserving seen-data and source-clock limitations.
   TimesFM 2.5 is selected as the public-model runtime; 3.0's separate
   noncommercial/nonproduction restrictions are not waived by personal use.
   The pinned 2.5 synthetic CPU/CUDA check is runtime evidence only, not a

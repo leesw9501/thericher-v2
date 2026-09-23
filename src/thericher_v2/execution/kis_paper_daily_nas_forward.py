@@ -55,6 +55,7 @@ def collect_kis_paper_daily_nas_forward_once(
     repository_root: Path | str,
     frozen_boundary: date = KIS_PAPER_DAILY_NAS_FORWARD_FROZEN_BOUNDARY,
     observed_at: datetime | None = None,
+    retain_revisions: bool = False,
 ) -> KisPaperDailyNasForwardRun:
     """Fetch one page per fixed NAS symbol and retain only completed later D1 rows."""
 
@@ -70,6 +71,7 @@ def collect_kis_paper_daily_nas_forward_once(
             repo_root=repository_root,
             frozen_boundary=frozen_boundary,
             observed_at=observed,
+            retain_revisions=retain_revisions,
         )
 
     anchor = eligible_through.strftime("%Y%m%d")
@@ -101,6 +103,7 @@ def collect_kis_paper_daily_nas_forward_once(
         repo_root=repository_root,
         frozen_boundary=frozen_boundary,
         observed_at=observed,
+        retain_revisions=retain_revisions,
     )
 
 

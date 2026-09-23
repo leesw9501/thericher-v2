@@ -9978,3 +9978,22 @@ attempt receipt or all metadata generation changes: immutable attempt evidence
 and failure counters remain legitimate, but never count them as new rows.
 The bounded deployed attempt found all6 conflicts, so no coverage advanced.
 Do not infer the correct value or reset old snapshots from that observation.
+
+## 2026-09-23 - Retain NAS revisions without discarding new sessions
+
+The owned collector opts into immutable whole-page revision retention. The
+first-retained view keeps old overlap values and appends unseen dates; it is
+not a point-in-time table. The same atomic index binds each distinct incoming
+snapshot, its conservative local recorded-at time and its prior snapshot.
+Readers verify both versions. Equal-page retries do not create another vintage.
+The legacy predictive projection remains deferred for this contradictory view;
+an exact hash-bound whole-page reader permits explicitly observed developmental
+use only at or after recording, without a finality or historical-PIT claim.
+Collection, unrelated research and Paper continue. No existing history is reset.
+
+Claude returned supported-with-limits. Accept the warning that retained data
+is not qualified data and that timestamps and corruption checks matter. Reject
+unmeasured magnitude/count tolerances or repeated-agreement auto-finality:
+they neither prove correctness nor justify another collection gate. NAS here
+means the exchange code, not a network filesystem; existing local locking,
+immutable creation, hash checks and atomic-index publication are retained.
