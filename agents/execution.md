@@ -14,6 +14,23 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+2026-09-23 22:35 KST owned task ran and exited after one visit:
+`recovery_required/evidence_unavailable`, not a completed exit. The existing
+private-state parser and exact cycle/leg checks independently reattached a
+fresh full buy-fill observation at13:35:02.799196Z; no sell state exists.
+Thus the earlier buy-fill repair works, but the subsequent failure cause is
+not identified by this outcome. No new order/account call was made by the
+offline reader. Do not replace the buy, reset identity or infer flatness.
+Source-safe immutable observation:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866\offline-observation-20260923T133816Z.json`.
+The finite task has no next run; its existing expiry remains23:10. The23:50
+budget owner is still due, with unchanged10-percent allocation and shared SPY
+ownership. Next priority: localize the post-entry recovery failure through the
+existing client path, then resume this same cycle. Fees/settled cash/net PnL
+and fresh account flatness remain not_observed. Company objective stays open.
+
+Earlier recovery and schedule facts below are superseded only by this result.
+
 2026-09-23 19:52 KST: the SAME cycle's buy is fully filled, its exact fill is
 persisted, and fresh account SPY quantity matches with no SPY open order.
 No sell leg exists. The read-only recovery used the existing pending-run

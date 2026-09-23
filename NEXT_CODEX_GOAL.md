@@ -47,12 +47,14 @@ its old predictive consumer. Continue the existing daily owner, not strict-merge
 retry loops, reset history or an invented automatic-finality rule.
 No account/order call or Paper schedule change belongs to that Data package.
 
-Next: the SAME fixed-cycle task runs at 2026-09-23 22:35 KST, expires 23:10,
-with action/principal/identity unchanged. It must reobserve the existing fill
-and position before selling only owned inventory. No exit leg exists yet;
-fees, settled cash, net PnL and lifecycle closure remain unknown. The 23:50
-10-percent strategy schedule is unchanged; it cannot take over the cycle's
-unresolved SPY inventory. No replacement buy or funding reset.
+The SAME fixed-cycle task ran at22:35 and returned recovery_required /
+evidence_unavailable after one visit. Exact offline parsing confirms a fresh
+full buy-fill observation at13:35:02.799196Z, but no sell state. Its finite
+trigger has no next run; do not infer completion from its exit0. Next localize
+the failure after entry reconciliation through the existing client path, then
+recover this same cycle. Fees, settled cash, net PnL and lifecycle closure
+remain unknown. The23:50 10-percent strategy schedule is unchanged; it cannot
+take over unresolved SPY inventory. No replacement buy or funding reset.
 
 Parallel research completed model-family-h30-c36-v1:4 LightGBM and16
 TCN/Transformer fits,144 cells and84 reproduced parent controls; all20 models

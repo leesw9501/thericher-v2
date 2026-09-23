@@ -149,6 +149,15 @@ network disabled, 2CPU/6GB, no GPU/credentials, read-only source/data and the
 same hash-checked offline LightGBM wheel described below. `--freeze` is
 metadata-only; `--run` requires its exact `--contract-sha256`.
 
+Latest Paper runtime follow-up (September23 22:35 KST): task exit0 only records
+worker completion. The exact worker outcome is recovery_required /
+evidence_unavailable. Offline stable private-state parsing validates a fresh
+full buy-fill observation at13:35:02.799196Z and no sell state. The immutable
+observation is linked in Execution. No new API/order/task invocation was made
+by that reader. Preserve same-cycle identity; localize the post-entry failure
+before claiming exit/flat/accounting. The finite trigger is consumed, while
+the separate23:50 strategy schedule remains unchanged.
+
 ### Fixed Opening-Range Comparison
 
 `scripts/run_firstrate_opening_range.py` reuses the existing position-study

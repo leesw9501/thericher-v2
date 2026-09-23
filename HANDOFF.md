@@ -21,6 +21,13 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Latest22:35 owned Paper result: `recovery_required/evidence_unavailable` after
+one visit. Offline exact-cycle parsing confirms a fresh full buy fill at
+13:35:02.799196Z and no sell state. No exit/flat/PnL success is claimed.
+Execution holds the immutable observation; next priority is post-entry failure
+localization/recovery of the SAME cycle, not a new entry. No task rescheduled
+or order submitted by this continuation; the23:50 budget owner is unchanged.
+
 2026-09-23 22:21 KST: the NAS retention repair is now runtime-confirmed.
 All six targets advanced from2 to41 daily rows (234 added rows); six immutable
 whole-page revisions preserve the conflicting responses without replacing old
