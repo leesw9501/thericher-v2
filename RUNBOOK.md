@@ -76,7 +76,23 @@ helper exit; Ruff and both sample-env Compose configurations passed.
 
 ### Existing SPY Cycle Recovery
 
-Resume only `spy-fill-20260922-v1` while its owned buy is unresolved. Its actual
+Current as of 2026-09-23 19:52 KST: the original buy's full fill is persisted
+and its position agrees, with no SPY open order. No sell leg exists. Exact safe
+receipt: `readonly-recovery-20260923T105253851682Z.json` in the cycle root below.
+The existing fixed-cycle task runs once at 2026-09-23 22:35 KST, expires 23:10,
+and retains its action, principal, cycle ID and 25-minute limit. It was not
+manually started. The separate daily strategy remains at 23:50; shared SPY
+ownership and the frozen aggregate budget are unchanged. Reobserve exact
+fills/position before the exit; do not recreate or enlarge the original buy.
+
+The cross-venue balance parser repair is deployed in all seven state consumers.
+All three query groups must finish. Rows retain their reported US venue;
+matching inventory duplicates across groups coalesce, while same-group/page
+duplicates and quantity/cost-basis/currency conflicts fail. Market marks are
+sequential indicative observations, not execution prices or atomic account NAV.
+No change to quote freshness, sizing, persisted order identity or live isolation.
+
+Resume only `spy-fill-20260922-v1` while its owned cycle is open. Its actual
 artifact directory is `execution/kis-paper-spy-fill-cycle/e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866`
 under the external root. The scoped launcher is
 `scripts/run_kis_paper_spy_fill_cycle.py --cycle-id spy-fill-20260922-v1 --visits 20 --execute`.
@@ -94,7 +110,7 @@ receipt as `history-capability-20260923.json`; no raw ID or market row is there.
 The generic pre-intent error now includes paired closed-enum stage/category
 fields. No exception text, broker payload or secret can be put in these fields.
 
-Latest same-cycle result, 2026-09-22T15:32:38.784561Z, is
+Earlier same-cycle result, 2026-09-22T15:32:38.784561Z, was
 recovery_required/evidence_unavailable after one visit on the corrected image.
 A separate single read-only attempt at 2026-09-23 00:36:48 KST returned
 auth_rejected before account parsing. Neither supplies a fill or proves the
@@ -104,6 +120,19 @@ the existing serialized Paper loader/client; do not reset ownership, issue a
 replacement buy, or start repeated authentication attempts without inspecting
 the owned retry facts. No new standing cooldown or approval gate is introduced.
 Independent offline research remains ready while provider recovery is pending.
+
+### Fixed Position-Policy Comparison
+
+`scripts/run_firstrate_position_policy.py` freezes metadata with `--freeze`
+and supervises one `--run --contract-sha256` CPU replay. The completed
+`persistent-position-h30-c36-v1` root and hashes are in Engine Research.
+Keep the closed result; do not rerun or retune it. The worker reused eight
+existing LSTMs, fixed rules and the pinned research image, with network off,
+source/scripts/market data mounted read-only and external D: artifacts writable.
+No wheel/dependency change or GPU allocation was needed. CPU limit was 600s,
+outer container 660s; actual supervised time 317.730s. All 72 parent controls,
+72 policy pairs and common-support checks passed. The container exited.
+Generated summaries remain external; no new model weights exist for this study.
 
 ### Fixed Model-Family Comparison
 

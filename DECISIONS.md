@@ -9922,3 +9922,45 @@ The earlier full run passed assertions but failed cleanup on two fixture-owned
 hardlink names. Add a finally-unlink teardown to that existing TimesFM test;
 do not weaken the cleanup guard or delete the retained failed run manually.
 The focused helper rerun passed 90 cases with cleanup before full authority.
+
+## 2026-09-23 - Preserve reported venues in Paper balance reconciliation
+
+An exact same-order capability probe confirmed auth and history worked while
+the NASD balance parser rejected a valid positive row from another US venue.
+All required fields were present, prices positive and currency USD; no raw row
+was retained. A later three-query probe completed NASD/NYSE/AMEX and confirmed
+the original full fill matched reported holdings. Official sample documentation
+describes Paper filters as venue-specific, so record this as measured private
+compatibility, not a general promise that NASD alone supplies a complete account.
+Source: https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_balance/inquire_balance.py
+
+Keep all query/pagination completeness checks. Preserve actual allowed venue;
+do not relabel or drop holdings. Reject within-query/page duplicates. Across
+completed query groups merge only identical identity, currency, quantity and
+average acquisition price. Keep the first valid indicative market mark; a
+sequential mark change alone does not change inventory identity. Fresh bid/ask,
+not this mark, still sets order prices; the budget uses orderable funds and
+exact owned fill costs. No snapshot mark feeds these execution sizing paths.
+
+Claude twice returned supported-with-limits. Accept its sequential-price
+objection to full-row equality. Do not claim mark divergence was measured in
+this probe, that every rule only tightens validation, or that retained marks
+have independent exchange timestamps. Snapshot time is capture timing, not
+an atomic valuation timestamp. Do not add an uncalibrated divergence threshold,
+new timestamp subsystem or approval gate. Existing invalid-price/identity/
+conflict checks remain. Tests cover both mark-only variation and hard conflicts.
+Read-only recovery then persisted the exact buy fill and matching position.
+The existing finite cycle opportunity moves to tonight with its same identity;
+no replacement order, changed budget, recurring expansion or live behavior.
+
+## 2026-09-23 - Isolate redundant turnover under unchanged model decisions
+
+The linked persistent-position study uses existing H30/context36 LSTMs and
+fixed naive/rule controls, with no training, tuning, GPU or sealed evaluation.
+Only adjacent selected intervals in the same session merge. Both policies have
+identical exposure, gross payoff, terminal times and post-decision common
+session censoring. Net improvement must exactly equal eliminated boundary fees.
+Claude returned supported-with-limits: that improvement is an accounting
+identity; measured boundary counts are empirical, not a newly discovered alpha.
+Retain planned/scored/censored support and matched-parent controls. This is
+seen-data development, not a model selection or a Paper-strategy replacement.

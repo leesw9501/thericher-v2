@@ -21,6 +21,44 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+2026-09-23 evening recovery supersedes the earlier unknown-fill status below.
+The same owned SPY buy is fully filled; an exact original-date observation,
+persisted fill ledger and fresh account position agree, with no SPY open order.
+Read-only recovery completed at 10:52:53Z, with no submit/cancel route available.
+Safe evidence under the cycle root in Execution:
+`readonly-recovery-20260923T105253851682Z.json`.
+No sell leg exists yet. Exit, final flatness, fees, settled cash and net PnL
+remain unobserved; the company objective is still open.
+
+Root cause established: a NASD balance query returned valid holdings from
+another allowed US venue. The old parser rejected that row. Retain all three
+query/pagination paths, preserve each actual venue, and coalesce matching
+inventory only across completed query groups. Within-query duplicates and
+quantity/cost-basis/currency conflicts still fail. First indicative market
+marks remain separate from fresh executable quotes. All seven state consumers
+are rebuilt with matching changed-source hashes; 507 focused tests pass.
+The earlier authentication rejection and transient transport timeouts remain
+their own failures, not the explanation of every previous error.
+
+The existing fixed-cycle task now has one recovery opportunity at 2026-09-23
+22:35 KST, expiry 23:10 and the same 25-minute limit. Action, principal, cycle
+identity and last-run are unchanged; no task was manually started. It must
+reconcile the same buy before exiting only owned inventory. The 23:50 budget
+strategy retains its existing allocation, ownership and weekday schedule.
+
+Parallel CPU research completed `persistent-position-h30-c36-v1`: all 72
+parent controls and 72 policy pairs pass in 317.730s. Merging adjacent selected
+intervals preserves gross exposure and saves exactly the removed boundary
+fees. High-turnover rules remain aggregate-negative at 3/5bps; retained LSTMs
+only make four trades, with no removable boundaries or improvement. No model
+training, new weights, GPU or Paper strategy replacement. Exact hashes and
+support counts are in Research. Next research should inspect predictive signal,
+not repeat the now-closed turnover comparison.
+Verification: 587 focused cases passed; clean-root eight-worker authority
+passed 4,545 / 19 skips in 317.15s with managed cleanup and exit zero. Ruff,
+default/research Compose using `.env.example`, and diff checks pass. No test,
+research or manually invoked Paper worker remains.
+
 2026-09-23 continuation: the model-family comparison completed 4 LightGBM,
 8 dilated-TCN and 8 compact-Transformer models in networkless Docker. CPU: 96
 cells/89.446s; CUDA: 48 cells/499.058s. All 84 matched parent controls reproduce.

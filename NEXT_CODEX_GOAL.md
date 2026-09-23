@@ -22,27 +22,40 @@ classification, plus these policy conflicts. It does not deploy an image,
 invoke a broker/task, fix the Paper state machine, train, or prove a pair result.
 See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
-## Current Progress (2026-09-22 KST)
+## Current Progress (2026-09-23 KST)
 
-2026-09-23 priority: recover exact owned cycle spy-fill-20260922-v1 after the
-history-only numeric-padding repair. Its buy was acknowledged, but the initial
-20-visit result was pending/awaiting_fill_observation, not a fill. The bounded
-read-only history probe found one numeric-equivalent, otherwise fully bound
-row; do not create another entry, change persisted IDs or reset ownership.
-The23:50 budget input first-attestation clock bug is repaired without relaxing
-availability checks; its actual10-percent strategy result remains unobserved.
-Seven images and 21 changed-source hashes match. The corrected same-cycle
-resume at 15:32:38Z returned recovery_required/evidence_unavailable and exited.
-A single separate snapshot attempt at 00:36:48 KST returned auth_rejected
-before account parsing; earlier failure causes remain unknown. No worker is
-active. Execution retains the exact evidence pointer and acknowledged buy;
-diagnose/recover that existing exposure without submitting a replacement.
+2026-09-23 evening: exact owned cycle spy-fill-20260922-v1 now has a confirmed
+full buy fill, persisted original-date/intent binding, matching fresh SPY
+position and no SPY open order. Read-only recovery at 10:52:53Z used no order
+route. Execution records the exact external receipt. The observed blocker was
+a NASD balance response containing another valid US venue, not unavailable
+credentials. The parser now preserves row venues and merges only matching
+inventory across completed queries; all three queries/pagination and conflict
+checks remain. All seven consumers are rebuilt; 507 focused tests pass.
+The prior auth/transport failures are preserved as separate observations.
+
+Next: the SAME fixed-cycle task runs at 2026-09-23 22:35 KST, expires 23:10,
+with action/principal/identity unchanged. It must reobserve the existing fill
+and position before selling only owned inventory. No exit leg exists yet;
+fees, settled cash, net PnL and lifecycle closure remain unknown. The 23:50
+10-percent strategy schedule is unchanged; it cannot take over the cycle's
+unresolved SPY inventory. No replacement buy or funding reset.
 
 Parallel research completed model-family-h30-c36-v1:4 LightGBM and16
 TCN/Transformer fits,144 cells and84 reproduced parent controls; all20 models
 are external and the GPU lock is released. None is positive across both folds
 at3/5bps. No model selection or Paper dependency. The next ready research
-package compares persistent target positions with repeated H30 roundtrips.
+package compared persistent target positions with repeated H30 roundtrips.
+That comparison is now complete: 72 pairs / 72 parent controls, CPU 317.730s,
+equal gross exposure and exact eliminated-fee differences. Retained LSTMs have
+four isolated trades and no merging benefit; the active rules remain negative
+in aggregate at 3/5bps. No training, GPU, winner or Paper replacement. Next
+parallel research should diagnose predictive signal/calibration on fixed
+forecasts, not rerun the completed parameter or turnover matrices.
+Latest verification: 587 focused cases; 4,545 full passed / 19 skips in 317.15s,
+eight workers, clean helper exit. The actual sell/flat lifecycle remains open.
+
+Earlier package verification:
 Final integration: 718 changed-path serial tests; 4,405 full passed / 19 skips,
 eight workers, 339.16s, clean helper exit. This package is verified, but the
 company objective is not complete until its actual lifecycle is reconciled.
@@ -198,10 +211,12 @@ funding binding or inventing another manual-approval or profitability gate.
 ### Engine Research: Parallel Preparation
 
 - Operator priority: broaden model families beyond LSTM configurations.
-  First compare LightGBM and existing TCN/compact attention against matched
-  linear/LSTM/rule controls under a new linked development contract, preserving
-  payoff, eligibility, temporal splits and costs. Do not reopen the closed
-  48-LSTM matrix or change tonight's baseline Paper strategy.
+  The linked LightGBM/TCN/compact-attention comparison and fixed-weight
+  persistent-position comparison are complete, as recorded above. The next
+  bounded package should diagnose predictive signal/calibration on fixed
+  forecasts before deciding on another fit or a distinct mechanism. Preserve
+  payoff, eligibility, temporal splits and costs; do not reopen either closed
+  matrix or change tonight's baseline Paper strategy.
   TimesFM 2.5 is selected as the public-model runtime; 3.0's separate
   noncommercial/nonproduction restrictions are not waived by personal use.
   The pinned 2.5 synthetic CPU/CUDA check is runtime evidence only, not a
@@ -214,9 +229,9 @@ funding binding or inventing another manual-approval or profitability gate.
   144 cells and 13,248 updates. All 48 models are retained externally. Results
   are cost-sensitive and often inactive; no robust winner or Paper input.
   Detailed custody, hashes and limitations are in Research. This closed run
-  is not a fresh holdout and must not be silently rerun or retuned. A later
-  linked package may compare persistent target positions against independent
-  roundtrips to distinguish predictive skill from exit/re-entry costs.
+  is not a fresh holdout and must not be silently rerun or retuned. The linked
+  H30/context36 persistent-position comparison is now complete above; its cost
+  identity is not a predictive-skill result.
 - A one-shot thread follow-up (`thericher-paper`) is installed for
   2026-09-23 00:20 KST to reattach both existing Paper opportunities. It does
   not start another worker/order or expand the Windows task schedules.

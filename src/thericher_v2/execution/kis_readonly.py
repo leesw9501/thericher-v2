@@ -693,16 +693,25 @@ class KisPaperReadOnlyClient:
         access_token = self._access_token or self._issue_access_token()
         captured_at = datetime.now(UTC)
         open_orders = self._open_orders(access_token, captured_at)
-        positions: list[KisPaperPosition] = []
+        positions: dict[tuple[str, str], KisPaperPosition] = {}
         for exchange in KIS_PAPER_US_EXCHANGES:
-            positions.extend(self._balance_positions(access_token, exchange, captured_at))
-        _ensure_unique_positions(positions)
+            # A query may return other US venues; merge only completed query groups.
+            for position in self._balance_positions(access_token, exchange, captured_at):
+                key = (position.exchange, position.symbol)
+                prior = positions.get(key)
+                if prior is None:
+                    positions[key] = position
+                elif (prior.currency, prior.quantity, prior.average_price) != (
+                    position.currency, position.quantity, position.average_price
+                ):
+                    raise KisPaperReadOnlyError("balance_response_duplicate")
+                # Retain the first indicative mark; sequential queries are not atomic.
         cash, orderable_funds = self._cash_and_orderable_funds(access_token, captured_at)
         return KisPaperReadOnlySnapshot(
             identity=KisPaperAccountIdentity(self._config.masked_account_identity, captured_at),
             cash=cash,
             orderable_funds=orderable_funds,
-            positions=tuple(sorted(positions, key=lambda item: (item.exchange, item.symbol))),
+            positions=tuple(positions[key] for key in sorted(positions)),
             open_orders=open_orders,
             captured_at=captured_at,
         )
@@ -1015,9 +1024,10 @@ class KisPaperReadOnlyClient:
                 "balance_rejected",
                 endpoint=KIS_PAPER_BALANCE_ENDPOINT,
             )
-            positions.extend(_parse_balance_positions(payload, exchange, captured_at))
+            positions.extend(_parse_balance_positions(payload, captured_at))
             continuation = response.header("tr_cont").strip().upper()
             if continuation not in {"M", "F"}:
+                _ensure_unique_positions(positions)
                 return positions
             query = {
                 **query,
@@ -1624,7 +1634,6 @@ def safe_kis_paper_upstream_code(value: object) -> str | None:
 
 def _parse_balance_positions(
     payload: Mapping[str, Any],
-    expected_exchange: str,
     captured_at: datetime,
 ) -> list[KisPaperPosition]:
     raw_rows = payload.get("output1")
@@ -1644,7 +1653,7 @@ def _parse_balance_positions(
         if quantity < 0:
             raise KisPaperReadOnlyError("balance_response_incomplete")
         exchange = _response_text(row, "ovrs_excg_cd", "balance_response_incomplete").upper()
-        if exchange != expected_exchange:
+        if exchange not in KIS_PAPER_US_EXCHANGES:
             raise KisPaperReadOnlyError("balance_response_incomplete")
         average_price = _response_decimal(row, "pchs_avg_pric", "balance_response_incomplete")
         market_price = _response_decimal(row, "now_pric2", "balance_response_incomplete")

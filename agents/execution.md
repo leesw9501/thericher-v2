@@ -14,6 +14,39 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+2026-09-23 19:52 KST: the SAME cycle's buy is fully filled, its exact fill is
+persisted, and fresh account SPY quantity matches with no SPY open order.
+No sell leg exists. The read-only recovery used the existing pending-run
+entry with a read-only transport, not a submit/cancel call. Safe receipt:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866\readonly-recovery-20260923T105253851682Z.json`.
+Its earlier `readonly-recovery-20260923T104838854818Z.json` failed with
+transport_failure and established no new fill/position. The later successful
+attempt supersedes current recovery availability, not that historical fact.
+The adjacent `venue-capability-20260923T105129846822Z.json` independently
+completed all three venue queries and bound the full fill to reported holdings.
+
+The measured parser fault was the assumed query-venue filter: NASD included
+a positive holding with another allowed reported US venue. Snapshot parsing
+now preserves actual venue and completes all NASD/NYSE/AMEX pages; same-query
+duplicates still fail. Across completed query groups only identical currency,
+quantity and average acquisition price merge. The first positive market mark
+is retained as indicative, not an executable quote or atomic valuation.
+Conflicts/invalid rows/later-query failures still prevent a complete snapshot.
+Focused integration: 507 passed. Seven rebuilt consumers match the changed
+source. Session image:
+`sha256:65c5183d0f9d21e44127c9edc122bf5b2165af8a26e74f782b5112990688c0a0`.
+
+The existing fixed-cycle task has one next opportunity at 2026-09-23 22:35 KST,
+expiry 23:10, unchanged action/principal and 25-minute limit. Last-run remains
+2026-09-22 22:35; it was not manually started. Recover the same buy before
+the owned exit; no new entry identity or recurring schedule. The 23:50 daily
+budget strategy is unchanged. Current recovery class: resume, awaiting the
+owned regular-session exit opportunity. Final flatness, fees, settled cash
+and net PnL remain unobserved. The company lifecycle objective is not complete.
+
+Earlier attempts below retain their historical scope; unknown fill and old
+next_due statements are superseded by the current facts above.
+
 2026-09-23 active recovery: actual cycle reference
 `e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866`
 is the JSON-string SHA256 of `spy-fill-20260922-v1`. The22:35 task returned

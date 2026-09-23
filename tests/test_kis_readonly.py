@@ -141,6 +141,26 @@ class FakeKisTransport:
         raise AssertionError("unexpected KIS request")
 
 
+@dataclass
+class ScriptedBalanceTransport(FakeKisTransport):
+    balance_pages: dict[str, list[KisHttpResponse | KisPaperReadOnlyError]] = field(
+        default_factory=dict
+    )
+
+    def request(self, request: KisHttpRequest) -> KisHttpResponse:
+        if request.headers.get("tr_id") != KIS_PAPER_BALANCE_ENDPOINT.tr_id:
+            return super().request(request)
+        self.requests.append(request)
+        pages = self.balance_pages.get(request.query["OVRS_EXCG_CD"])
+        if pages is None:
+            return _balance_page([])
+        assert pages, "unexpected additional balance page"
+        response = pages.pop(0)
+        if isinstance(response, KisPaperReadOnlyError):
+            raise response
+        return response
+
+
 def test_requires_the_exact_virtual_paper_host_before_any_network(monkeypatch) -> None:
     def fail_network(*_args: object, **_kwargs: object) -> None:
         raise AssertionError("rejected host must not reach the network")
@@ -503,6 +523,209 @@ def test_virtual_balance_request_contract_covers_initial_and_continuation_pages(
             "CTX_AREA_FK200": "",
             "CTX_AREA_NK200": "",
         }
+
+
+def test_balance_cross_scope_rows_keep_reported_venues_and_all_query_routes() -> None:
+    nasdaq = _position_payload() | {"ovrs_pdno": "QQQ"}
+    amex = _position_payload() | {"ovrs_excg_cd": "AMEX"}
+    transport = ScriptedBalanceTransport(balance_pages={"NASD": [_balance_page([nasdaq, amex])]})
+
+    snapshot = KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert [(p.exchange, p.symbol) for p in snapshot.positions] == [
+        ("AMEX", "SPY"), ("NASD", "QQQ"),
+    ]
+    assert all(p.quantity == 2 and p.currency == "USD" for p in snapshot.positions)
+    assert [
+        request.query["OVRS_EXCG_CD"] for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_BALANCE_ENDPOINT.tr_id
+    ] == ["NASD", "NYSE", "AMEX"]
+    assert transport.requests[-1].headers["tr_id"] == KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT.tr_id
+
+
+@pytest.mark.parametrize("continued", [False, True])
+def test_identical_typed_positions_coalesce_only_across_completed_queries(continued) -> None:
+    row = _position_payload() | {"ovrs_excg_cd": "AMEX"}
+    equivalent = row | {"ovrs_cblc_qty": "2.0", "pchs_avg_pric": "500.00"}
+    nasdaq_pages = (
+        [_balance_page([], continued=True), _balance_page([row])]
+        if continued else [_balance_page([row])]
+    )
+    transport = ScriptedBalanceTransport(balance_pages={
+        "NASD": nasdaq_pages,
+        "NYSE": [_balance_page([equivalent])],
+        "AMEX": [_balance_page([row])],
+    })
+
+    snapshot = KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert len(snapshot.positions) == 1
+    position = snapshot.positions[0]
+    assert (position.exchange, position.symbol, position.quantity) == ("AMEX", "SPY", 2)
+    assert (position.average_price, position.market_price) == (500, 510)
+    assert all(not pages for pages in transport.balance_pages.values())
+    requests = [
+        request for request in transport.requests
+        if request.headers.get("tr_id") == KIS_PAPER_BALANCE_ENDPOINT.tr_id
+    ]
+    assert [request.query["OVRS_EXCG_CD"] for request in requests] == (
+        ["NASD", "NASD", "NYSE", "AMEX"] if continued else ["NASD", "NYSE", "AMEX"]
+    )
+    if continued:
+        assert requests[1].headers["tr_cont"] == "N"
+        assert requests[1].query["CTX_AREA_FK200"] == "synthetic-fk"
+        assert requests[1].query["CTX_AREA_NK200"] == "synthetic-nk"
+
+
+def test_position_coalescing_key_includes_both_reported_venue_and_symbol() -> None:
+    row = _position_payload()
+    transport = ScriptedBalanceTransport(balance_pages={"NASD": [_balance_page([
+        row,
+        row | {"ovrs_excg_cd": "AMEX"},
+        row | {"ovrs_pdno": "QQQ"},
+    ])]})
+
+    snapshot = KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert [(p.exchange, p.symbol) for p in snapshot.positions] == [
+        ("AMEX", "SPY"), ("NASD", "QQQ"), ("NASD", "SPY"),
+    ]
+
+
+@pytest.mark.parametrize("query", ["NYSE", "AMEX"])
+@pytest.mark.parametrize("change", [
+    {"pchs_avg_pric": "501"},
+    {"ovrs_cblc_qty": "3"},
+    {"tr_crcy_cd": "KRW"},
+])
+def test_cross_query_position_conflicts_never_overwrite_or_sum(query, change) -> None:
+    row = _position_payload() | {"ovrs_excg_cd": "AMEX"}
+    transport = ScriptedBalanceTransport(balance_pages={
+        "NASD": [_balance_page([row])],
+        query: [_balance_page([row | change])],
+    })
+
+    with pytest.raises(KisPaperReadOnlyError, match="^balance_response_duplicate$"):
+        KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert transport.requests[-1].headers["tr_id"] == KIS_PAPER_BALANCE_ENDPOINT.tr_id
+
+
+def test_cross_query_mark_changes_preserve_first_indicative_price() -> None:
+    row = _position_payload() | {"ovrs_excg_cd": "AMEX"}
+    transport = ScriptedBalanceTransport(balance_pages={
+        "NASD": [_balance_page([row])],
+        "NYSE": [_balance_page([row | {"now_pric2": "511"}])],
+        "AMEX": [_balance_page([row | {"now_pric2": "509"}])],
+    })
+
+    snapshot = KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert len(snapshot.positions) == 1
+    position = snapshot.positions[0]
+    assert (position.exchange, position.symbol, position.quantity) == ("AMEX", "SPY", 2)
+    assert position.average_price == 500
+    assert position.market_price == 510
+    assert all(not pages for pages in transport.balance_pages.values())
+
+
+@pytest.mark.parametrize("query", ["NASD", "NYSE", "AMEX"])
+@pytest.mark.parametrize("across_pages", [False, True])
+@pytest.mark.parametrize("change", [{}, {"ovrs_cblc_qty": "3"}, {"now_pric2": "511"}])
+def test_duplicate_positions_inside_one_query_are_never_coalesced(
+    query, across_pages, change,
+) -> None:
+    row = _position_payload() | {"ovrs_excg_cd": "AMEX"}
+    duplicate = row | change
+    pages = (
+        [_balance_page([row], continued=True), _balance_page([duplicate])]
+        if across_pages else [_balance_page([row, duplicate])]
+    )
+    transport = ScriptedBalanceTransport(balance_pages={query: pages})
+
+    with pytest.raises(KisPaperReadOnlyError, match="^balance_response_duplicate$"):
+        KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+
+@pytest.mark.parametrize("query", ["NYSE", "AMEX"])
+@pytest.mark.parametrize("failure", ["transport", "provider", "continuation"])
+def test_successful_cross_scope_rows_do_not_hide_later_query_failure(query, failure) -> None:
+    row = _position_payload() | {"ovrs_excg_cd": "AMEX"}
+    if failure == "transport":
+        response = KisPaperReadOnlyError("transport_failure")
+        expected = "transport_failure"
+    elif failure == "provider":
+        response = KisHttpResponse.from_payload({"rt_cd": "1"}, status_code=500)
+        expected = "balance_rejected"
+    else:
+        response = KisHttpResponse.from_payload(
+            {"rt_cd": "0", "output1": [row]}, headers={"tr_cont": "M"},
+        )
+        expected = "balance_response_incomplete"
+    transport = ScriptedBalanceTransport(balance_pages={
+        "NASD": [_balance_page([row])],
+        query: [response],
+    })
+
+    with pytest.raises(KisPaperReadOnlyError, match=f"^{expected}$"):
+        KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert transport.requests[-1].query["OVRS_EXCG_CD"] == query
+    assert not any(
+        request.headers.get("tr_id") == KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT.tr_id
+        for request in transport.requests
+    )
+
+
+def test_cross_query_merge_waits_for_remaining_pages_before_accepting_a_group() -> None:
+    row = _position_payload() | {"ovrs_excg_cd": "AMEX"}
+    transport = ScriptedBalanceTransport(balance_pages={
+        "NASD": [_balance_page([row])],
+        "NYSE": [
+            _balance_page([row], continued=True),
+            KisPaperReadOnlyError("transport_failure"),
+        ],
+    })
+
+    with pytest.raises(KisPaperReadOnlyError, match="^transport_failure$"):
+        KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+    assert transport.requests[-1].headers["tr_cont"] == "N"
+
+
+@pytest.mark.parametrize("venue", ["HKEX", "NAS", "AMEX.extra", "", None])
+def test_cross_scope_balance_still_rejects_foreign_or_invalid_venues(venue) -> None:
+    transport = ScriptedBalanceTransport(balance_pages={"NASD": [_balance_page([
+        _position_payload() | {"ovrs_excg_cd": venue},
+    ])]})
+
+    with pytest.raises(KisPaperReadOnlyError, match="^balance_response_incomplete$"):
+        KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+
+@pytest.mark.parametrize("field_name", ["pchs_avg_pric", "now_pric2"])
+@pytest.mark.parametrize("value", [None, "", "0", "-1", "NaN", "Infinity", "invalid"])
+def test_cross_scope_balance_does_not_relax_positive_price_fields(field_name, value) -> None:
+    row = _position_payload() | {"ovrs_excg_cd": "AMEX", field_name: value}
+    transport = ScriptedBalanceTransport(balance_pages={"NASD": [_balance_page([row])]})
+
+    with pytest.raises(KisPaperReadOnlyError, match="^balance_response_incomplete$"):
+        KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
+
+
+@pytest.mark.parametrize("change", [
+    {"ovrs_cblc_qty": None},
+    {"ovrs_cblc_qty": "-1"},
+    {"ovrs_cblc_qty": "NaN"},
+    {"ovrs_pdno": ""},
+    {"tr_crcy_cd": ""},
+])
+def test_cross_scope_balance_still_requires_valid_inventory_fields(change) -> None:
+    row = _position_payload() | {"ovrs_excg_cd": "AMEX"} | change
+    transport = ScriptedBalanceTransport(balance_pages={"NASD": [_balance_page([row])]})
+
+    with pytest.raises(KisPaperReadOnlyError, match="^balance_response_incomplete$"):
+        KisPaperReadOnlyClient(config=_config(), transport=transport).snapshot()
 
 
 def test_no_order_tr_ids_or_actions_are_reachable() -> None:
@@ -1141,6 +1364,13 @@ def _position_payload() -> dict[str, str]:
         "pchs_avg_pric": "500",
         "now_pric2": "510",
     }
+
+
+def _balance_page(rows: list[object], *, continued: bool = False) -> KisHttpResponse:
+    payload = {"rt_cd": "0", "output1": rows}
+    if continued:
+        payload |= {"ctx_area_fk200": "synthetic-fk", "ctx_area_nk200": "synthetic-nk"}
+    return KisHttpResponse.from_payload(payload, headers={"tr_cont": "M" if continued else ""})
 
 
 def _open_order_payload(

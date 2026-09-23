@@ -17,6 +17,28 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+Completed `persistent-position-h30-c36-v1`: CPU re-inference of all eight
+retained context36/H30 LSTMs and fixed cash/long/previous-bar/SMA controls.
+72 paired cells (144 policy cells), all 72 parent controls reproduced in
+317.730 supervised seconds, with no training, GPU, tuning or new holdout.
+Contract: `sha256:823c8f6ca908f6965bc015cc196da9ae3a12a1630376932b74a20daebbcad41b`.
+Summary: `sha256:aa432d909f42d76d1d0f9233d0e177ff67685a1f568f2f56d780d5fdf02710b0`.
+Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\persistent-position-h30-c36-v1`.
+
+Every policy pair has exactly equal gross payoff and exposure; net difference
+equals removed boundary fees. This verifies an accounting identity, not alpha.
+At each cost, always-long roundtrips fall from 1,499 to 250, previous-bar from
+843 to 455, and SMA from 863 to 388 across four symbol/fold cells. Their combined
+independent-trade net remains negative at 3/5bps; totals are not portfolio NAV.
+The LSTMs have only four trades across eight cells, no removable boundaries,
+and no cost improvement. Six cells are inactive. All four folds retain their
+377/372/378/372 decisions and 63/62/63/62 blocks; no session was censored.
+Do not retune thresholds or describe merging as predictive improvement.
+80 focused synthetic/runner tests pass; independent static review found no
+blocker. Container/worker/scratch exited; no new weights or GPU appointment.
+The next question is predictive signal/calibration rather than another
+same-matrix fit or further optimization of already-absent LSTM turnover.
+
 Completed bounded comparison: `model-family-h30-c36-v1`, linked to the existing
 FirstRate H30 family. Fixed H30/context36, unchanged two session folds and
 1/3/5-bps costs; four LightGBM fits precede sixteen TCN/Transformer fits.
@@ -41,9 +63,8 @@ trades mean this fixed rule never crosses6bps, not a universal architecture
 failure. Models/configs occupy500,891 bytes externally and all passed numeric
 or native-text restoration and exact decision parity.225 focused tests pass.
 Both containers and scratch jobs exited, GPU lock absent; recovery complete.
-Next bounded research: compare a persistent target-position rule against
-repeated fixed-H roundtrips, keeping old weights and cost/availability facts
-fixed. Do not select new parameters from this closed matrix.
+The recommended persistent-position comparison is now completed above.
+Do not select new parameters from either closed matrix.
 
 2026-09-22 public-model decision: use official Apache-2.0 TimesFM 2.5, not the
 3.0 weights whose separate license excludes revenue/production uses and also
@@ -59,8 +80,9 @@ model selection, or Paper qualification. The model card lists pretraining
 sources, but their exact overlap with our financial panel is not verified.
 That recommended predictive breadth is now completed above, with fixed naive
 and LSTM controls and a full-context dilated TCN.
-Do not silently retune the closed 48-LSTM matrix. A later target-position
-comparison remains useful for separating turnover cost from prediction error.
+Do not silently retune the closed 48-LSTM matrix. The completed target-position
+comparison above separates turnover cost from prediction error without
+establishing a new predictive edge.
 
 The exact `timesfm-2p5-offline-runtime-20260922-v3` synthetic appointment
 completed CPU (8.882s) then RTX4090 CUDA (6.730s), four contexts12/36/128/256,

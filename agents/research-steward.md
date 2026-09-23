@@ -5,6 +5,14 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Latest closed CPU-only package: `persistent-position-h30-c36-v1`, same family,
+contract `sha256:823c8f6ca908f6965bc015cc196da9ae3a12a1630376932b74a20daebbcad41b`.
+Completed 72 paired cells / 72 parent controls in 317.730 of 600 supervised
+seconds. Summary `sha256:aa432d909f42d76d1d0f9233d0e177ff67685a1f568f2f56d780d5fdf02710b0`.
+Registry records non_promoting_completed. CPU container/worker/scratch exited;
+no training, retained new weights, GPU appointment, holdout or Paper promotion.
+Recovery complete. Engine Research owns interpretation and the next hypothesis.
+
 Completed appointment: `model-family-h30-c36-v1`, contract
 `sha256:9625f31d0fc0d879a106cc0fad3d058752658728c6a310d0684b9610c749cb0a`.
 Same FirstRate H30 family, fixed context36, no sealed evaluation or selection.
