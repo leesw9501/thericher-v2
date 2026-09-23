@@ -21,6 +21,17 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+2026-09-24 00:20 KST follow-up: the September23 23:50 budget run again returned
+no_intent/daily_receipt_not_eligible. Offline existing-state parsing finds no
+budget binding or budget intents; the exact diagnostic cycle still has its
+retained full BUY and unresolved zero-fill SELL. No fresh account observation
+was requested. That budget reason combines input, decision-class and validity
+conditions, so neither a repeated clock bug nor a neutral signal is established.
+Execution retains the exact result/hash. Next separate those categorical causes
+without relaxing predicates, alongside the existing linked-exit work. The
+obsolete one-shot thericher-paper app follow-up is deleted; Windows owners and
+their schedules are unchanged. The company objective remains open.
+
 2026-09-23 late-evening continuation advanced the SAME Paper cycle: its SELL
 was actually acknowledged, not filled, then received one exact-ID cancel.
 Later complete reads show original remaining zero plus a unique distinct

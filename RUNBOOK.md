@@ -14,6 +14,14 @@ mode must fail before paper credentials are used.
 
 ### Ten-Percent Strategy Trial
 
+September24 offline follow-up: the September23 23:50 owner again returned
+no_intent/daily_receipt_not_eligible with no budget binding/intents. This reason
+currently combines input status, decision class and receipt validity; it cannot
+prove a clock regression, stale input or neutral signal by itself. Preserve
+these checks and isolate the exact categorical cause in the next repair.
+The Windows owner remains due September24 23:50 KST. Only the obsolete dated
+app follow-up thericher-paper was deleted; no Windows task/order was invoked.
+
 2026-09-23 correction: the budget receipt loader now samples the real decision
 clock after input loading/availability attestation. The old equality caused
 the23:50 first-use receipt to abstain despite September21 coverage. Do not add

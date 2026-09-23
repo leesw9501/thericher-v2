@@ -24,6 +24,14 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-23 KST)
 
+September24 offline follow-up: the September23 23:50 budget owner again emitted
+no_intent/daily_receipt_not_eligible, with no private budget binding or intents.
+The exact input-status/decision-class/validity cause is not retained. Isolate
+it categorically in the next Execution package, without relaxing predicates or
+assuming the earlier clock fault recurred. The same-cycle recovery below stays
+open; Windows budget next_due is September24 23:50 KST. See Execution's exact
+receipt/hash. No new broker call, worker or schedule belongs to this follow-up.
+
 Latest same-cycle recovery: the owned SELL was acknowledged but stayed unfilled.
 One exact-ID cancellation was accepted; subsequent original-date reads show
 remaining zero and one distinct matching cancellation lineage with full
@@ -282,9 +290,10 @@ funding binding or inventing another manual-approval or profitability gate.
   is not a fresh holdout and must not be silently rerun or retuned. The linked
   H30/context36 persistent-position comparison is now complete above; its cost
   identity is not a predictive-skill result.
-- A one-shot thread follow-up (`thericher-paper`) is installed for
-  2026-09-23 00:20 KST to reattach both existing Paper opportunities. It does
-  not start another worker/order or expand the Windows task schedules.
+- The dated one-shot thread follow-up (`thericher-paper`) was consumed and
+  deleted on2026-09-24 after offline reattachment. It is not a recurring worker;
+  Windows task ownership/schedules remain unchanged. Current results are in
+  Execution, not an automatically chained follow-up.
 - Freeze one development-only comparison on existing ETF data: a small rule
   and linear baseline with the same feature timing, target payoff, replay,
   costs, naive comparator, temporal split, and finite window/trial budget.

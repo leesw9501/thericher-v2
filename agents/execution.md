@@ -14,6 +14,26 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+2026-09-24 follow-up: the September23 23:50 budget owner exited with
+no_intent/daily_receipt_not_eligible, not a submit or fill. Exact safe result:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\daily-spy-20260923T145002456534Z\outcome.json`,
+observed_at2026-09-23T14:50:04.156519Z, SHA256
+`e997d28ef65231428c9c1a1cf6824478e3f2178db1f664f127443386c2b0fad0`.
+The prior September22 result has the same category, but not a proven common
+cause. Source combines input_status, enter/exit decision class and receipt
+validity into this reason; direction and failed predicate are not retained.
+Next diagnose those categories without assuming a clock regression or a hold
+signal, weakening timing, or adopting the diagnostic position.
+Networkless read-only private-volume parsing confirms the exact cycle/leg
+fingerprints and active ownership, retained full BUY and zero-fill SELL;
+SELL remains outcome_unknown with unavailable current fill. Stable bytes,
+no budget binding and zero bs-* state files were observed. This is retained
+inventory evidence, not fresh account/flatness, fees, settled cash or net PnL.
+Both Windows owners are Ready; budget next_due2026-09-24 23:50 KST, finite
+cycle has no next run. No worker/order/task was invoked or schedule changed.
+The expired-date one-shot app follow-up thericher-paper was deleted, not any
+Windows owner. This documentation-only observation made no credential/API read.
+
 2026-09-23 23:45 KST: SAME cycle's sell was actually acknowledged, remained
 zero-filled, and received one exact-ID cancellation (no replacement order).
 The latest read-only observation confirms original remaining quantity zero,
