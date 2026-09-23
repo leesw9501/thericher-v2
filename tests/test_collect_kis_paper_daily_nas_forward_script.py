@@ -52,9 +52,11 @@ def test_rejects_noncanonical_execution_roots_before_loading_configuration(
     }
 
 
-def test_verified_current_cache_skips_configuration_client_and_page_requests(
+@pytest.mark.parametrize("target_status", ["ready", "deferred"])
+def test_preflight_requires_ready_targets_even_when_latest_dates_are_retained(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
+    target_status: str,
 ) -> None:
     script = _script_module()
     cache_payload = {
@@ -67,6 +69,12 @@ def test_verified_current_cache_skips_configuration_client_and_page_requests(
         frozen_boundary=datetime(2026, 7, 24, tzinfo=UTC).date(),
         rows_by_symbol={
             symbol: (cached_row,) for symbol in script.KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+        },
+        targets_by_key={
+            f"{symbol}/NAS": SimpleNamespace(
+                status=target_status if symbol == "AAPL" else "ready"
+            )
+            for symbol in script.KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
         },
         safe_payload=lambda: cache_payload,
     )
@@ -96,6 +104,15 @@ def test_verified_current_cache_skips_configuration_client_and_page_requests(
     )
 
     output = json.loads(capsys.readouterr().out)
+    if target_status == "deferred":
+        assert exit_code == 10
+        assert not receipt_inputs
+        assert output["status"] == "collection_required"
+        assert output["reason"] == "forward_cache_targets_not_ready"
+        assert output["cache"] == cache_payload
+        assert output["configuration_loaded"] is False
+        assert output["market_data_request_attempt_count"] == 0
+        return
     assert exit_code == 0
     assert output == {
         "cache": cache_payload,

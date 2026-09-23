@@ -134,6 +134,21 @@ outer container 660s; actual supervised time 317.730s. All 72 parent controls,
 72 policy pairs and common-support checks passed. The container exited.
 Generated summaries remain external; no new model weights exist for this study.
 
+### Fixed Forecast Diagnostic
+
+`scripts/run_firstrate_forecast_diagnostic.py` owns the completed
+`fixed-forecast-diagnostic-h30-c36-v1` package, not a recurring job.
+It reuses all28 frozen H30/context36 weights on CPU, checks84 parent replay
+cells, and retains only aggregate dispersion, error, fixed-bin and descriptive
+correlation/calibration facts. No forecast rows, new weights or fitted policy.
+Contract/result hashes and interpretation are in Engine Research. Artifacts
+are under the existing external FirstRate H30 family root. The actual run
+completed in84.497s under a600s supervisor/660s container ceiling; do not rerun
+or overwrite its started/summary records. It used the pinned research image,
+network disabled, 2CPU/6GB, no GPU/credentials, read-only source/data and the
+same hash-checked offline LightGBM wheel described below. `--freeze` is
+metadata-only; `--run` requires its exact `--contract-sha256`.
+
 ### Fixed Model-Family Comparison
 
 `scripts/run_firstrate_family_comparison.py` owns the finite
@@ -246,7 +261,7 @@ names in this table have the prefix `thericher-kis-paper-`; times are KST.
 | `daily-spy-head`, `daily-spy-session` | Retained: 22:15 and 23:50 Mon-Fri; input collection and the scoped 10-percent aggregate-budget baseline trial. Daily session uses the host budget launcher, 24 visits, 25-minute task limit. |
 | `snapshot-observer` | Retained: every four minutes for ten hours from 21:20 Mon-Fri; no cadence change without freshness/load evidence. |
 | `daily-pair-forward` | Retained: 06:55 Tue-Sat; host runner now uses existing v2 profile/preflight/collector and v2 guard-receipt lineage. v1 remains untouched. |
-| `daily-nas-forward` | Retained: 06:40 Tue-Sat; latest safe reason is `nas_forward_cache_unavailable/reconcile`, requiring scoped Data recovery. Code 20 does not prove quarantine. |
+| `daily-nas-forward` | Retained: 06:40 Tue-Sat; deployed target-local recovery now records six overlap conflicts, zero new rows. Prior snapshots remain valid; revision-retaining recovery is next. Code 20 alone never proves quarantine. |
 | `d1-prospective-observation-pairing` | Final later opportunity 2026-09-22 23:20. Both triggers expire 2026-09-23 00:00. Fresh first observation is recorded, not a complete pair. |
 | `daily-backfill`, `daily-broad-backfill` | Disabled: exact historical cursors terminal, respectively 3/3 and 2,119/2,119 targets. This is not a claim of unlimited historical coverage. |
 | `daily-spy-stability-observer`, `spy-prefix-negative-control`, `spy-prefix-feasibility` | Disabled finite diagnostic studies; commands and immutable results retained. |
@@ -384,11 +399,19 @@ observations before requery. Fees, settled cash and net PnL remain unobserved.
 The next explicit fillable cycle must use fresh ask/bid limits and exit only
 its confirmed inventory; this patch does not alter the immediate-cancel default.
 
-NAS-forward failure receipts now retain fixed `failure_stage`/`failure_category`
-and optional frozen-universe symbol. Existing generic receipts cannot establish
-an overlap conflict. The offline loader validated all six snapshots; do not
-reset that real cache based on the old exit-20 classification. Deploy only its
-collector/preflight images and inspect the next naturally owned failure stage.
+NAS-forward now isolates only measured stored/incoming overlap conflicts by
+target. Prior rows remain immutable; valid other targets can publish atomically.
+Failed targets cannot qualify a fresh run, cache-current preflight or historical-
+forward projection. Collector/preflight/observation images are deployed. The
+actual September23 six-page run returned deferred with six overlap conflicts,
+zero accepted/changed targets and two retained common sessions; generation3
+records failure counters only. A read-only AAPL page then isolated one numeric
+close/volume change among two overlapping rows, with41 incoming rows available.
+Other symbols' differing fields remain unknown. Exact receipts are in Data.
+No historical reset, dropped conflict, correct-version inference or schedule
+change follows. Next bounded Data repair should retain observed-at versions
+through existing snapshot machinery instead of repeating an immutable-merge
+failure. The existing NAS06:40/pair06:55 next runs remain September24 KST.
 
 ### Open/Open Development Comparison
 

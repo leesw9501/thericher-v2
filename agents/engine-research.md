@@ -17,6 +17,34 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+Completed `fixed-forecast-diagnostic-h30-c36-v1` on CPU in 84.497s: all28
+retained LSTM/LightGBM/TCN/attention models reloaded, all84 parent model/cost
+cells reproduced, no training, GPU, new weights, retuning or held-out data.
+Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\fixed-forecast-diagnostic-h30-c36-v1`.
+Contract: `sha256:d3fa577bbf005492c340e9147c76b71ab8f35c4440240adb792e45fcd9874ab8`.
+Summary: `sha256:47ed62aa043511e01f5550a5e81fb26a5d0d4b8081ce373453ea1d4b8aeb0b8f`.
+Scored counts remain377/372/378/372 with63/62/63/62 history blocks, no future
+censoring. Fixed >6bps selections: LSTM4, LightGBM36, TCN14, attention0.
+Prediction standard deviations are approximately0.60-2.66bps across cells;
+21/28 cells have worse MSE than the TRAIN-mean forecast. Seven improve it,
+but no same-symbol/family/seed repeats that improvement in both folds.
+These are seen-data descriptive reads, not independent skill tests. Counts
+and dispersion explain sparse action; OLS slopes/correlations must not become
+fitted calibration or a threshold choice on these same evaluation outcomes.
+Claude supported the diagnostic with these limits. Independent review found
+and main fixed a worker-payload field-validation gap before the actual run;
+112 focused numerical/integration/runner tests pass.
+
+Next bounded research question: one fixed opening-range breakout, not another
+same-feature parameter sweep. Draft: first30 regular-session minutes define
+the high; first subsequent completed M5 close above it signals a next-open
+entry; one entry/session, fixed pre-close exit, no overnight. Freeze exact
+early-close/missing-bar behavior, two seen-data folds, 1/3/5bps costs and
+time-matched long/cash controls before any outcome is read. Kill on leakage,
+insufficient complete sessions, or failure to repeat cost3bps control-relative
+improvement across folds. This is a proposed CPU DEVELOPMENT package, not yet
+frozen/dispatched and not a Paper strategy replacement.
+
 Completed `persistent-position-h30-c36-v1`: CPU re-inference of all eight
 retained context36/H30 LSTMs and fixed cash/long/previous-bar/SMA controls.
 72 paired cells (144 policy cells), all 72 parent controls reproduced in
@@ -36,8 +64,8 @@ and no cost improvement. Six cells are inactive. All four folds retain their
 Do not retune thresholds or describe merging as predictive improvement.
 80 focused synthetic/runner tests pass; independent static review found no
 blocker. Container/worker/scratch exited; no new weights or GPU appointment.
-The next question is predictive signal/calibration rather than another
-same-matrix fit or further optimization of already-absent LSTM turnover.
+The subsequent fixed-forecast diagnostic is complete above. Do not reopen
+this closed matrix or optimize already-absent LSTM turnover.
 
 Completed bounded comparison: `model-family-h30-c36-v1`, linked to the existing
 FirstRate H30 family. Fixed H30/context36, unchanged two session folds and

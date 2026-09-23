@@ -5,6 +5,14 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Latest closed CPU-only diagnostic: `fixed-forecast-diagnostic-h30-c36-v1`.
+Contract `sha256:d3fa577bbf005492c340e9147c76b71ab8f35c4440240adb792e45fcd9874ab8`;
+summary `sha256:47ed62aa043511e01f5550a5e81fb26a5d0d4b8081ce373453ea1d4b8aeb0b8f`.
+All28 retained models and84 parent cost cells reattached in84.497/600 CPU
+seconds; no new training, weights, GPU reservation, sealed evaluation or
+selection. Registry: non_promoting_completed. Container/child/scratch exited;
+recovery complete. Next distinct entry hypothesis belongs to Engine Research.
+
 Latest closed CPU-only package: `persistent-position-h30-c36-v1`, same family,
 contract `sha256:823c8f6ca908f6965bc015cc196da9ae3a12a1630376932b74a20daebbcad41b`.
 Completed 72 paired cells / 72 parent controls in 317.730 of 600 supervised

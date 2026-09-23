@@ -260,7 +260,8 @@ def _run_preflight(
             ),
             exit_code=_RECOVERY_EXIT,
         )
-    if all(
+    targets_ready = all(target.status == "ready" for target in cache.targets_by_key.values())
+    if targets_ready and all(
         any(row.session_date == eligible_through for row in cache.rows_by_symbol[symbol])
         for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
     ):
@@ -281,6 +282,7 @@ def _run_preflight(
                 observed_at,
                 eligible_through=eligible_through,
                 cache_payload=cache.safe_payload(),
+                targets_ready=targets_ready,
             ),
             sort_keys=True,
         )
@@ -311,10 +313,14 @@ def _collection_required_payload(
     *,
     eligible_through: date,
     cache_payload: Mapping[str, object] | None,
+    targets_ready: bool = True,
 ) -> dict[str, object]:
     payload: dict[str, object] = {
         "status": "collection_required",
-        "reason": "forward_cache_missing_latest_completed_session",
+        "reason": (
+            "forward_cache_missing_latest_completed_session"
+            if targets_ready else "forward_cache_targets_not_ready"
+        ),
         "observed_at_bucket": observed_at.strftime("%Y-%m-%dT%H:00Z"),
         "eligible_through_session": eligible_through.isoformat(),
         "configuration_loaded": False,

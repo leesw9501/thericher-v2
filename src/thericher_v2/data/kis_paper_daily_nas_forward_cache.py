@@ -338,6 +338,8 @@ class KisPaperDailyNasForwardRun:
     changed_target_count: int
     prospective_input_status: Literal["ready", "input_unavailable"]
     recovery: Literal["complete", "resume", "reconcile"]
+    # The persisted reason is shared with fetch failures; the stage belongs to this run.
+    overlap_conflict_symbols: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
@@ -355,6 +357,14 @@ class KisPaperDailyNasForwardRun:
             or self.categorical_failure_count < 0
             or not 0 <= self.changed_target_count <= len(_TARGET_KEYS)
             or self.prospective_input_status not in {"ready", "input_unavailable"}
+            or len(set(self.overlap_conflict_symbols)) != len(self.overlap_conflict_symbols)
+            or len(self.overlap_conflict_symbols) > self.categorical_failure_count
+            or any(
+                symbol not in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS
+                or self.cache.targets_by_key[f"{symbol}/{NAS_EXCHANGE}"].last_reason
+                != "daily_duplicate_conflict"
+                for symbol in self.overlap_conflict_symbols
+            )
         ):
             raise ValueError("NAS forward run is invalid")
 
@@ -381,8 +391,16 @@ class KisPaperDailyNasForwardRun:
         if self.categorical_failure_count:
             payload["target_failures"] = [
                 {
-                    "failure_stage": "target_fetch",
-                    "failure_category": target.last_reason,
+                    "failure_stage": (
+                        "overlap_reconciliation"
+                        if target_key.split("/", maxsplit=1)[0] in self.overlap_conflict_symbols
+                        else "target_fetch"
+                    ),
+                    "failure_category": (
+                        "duplicate_conflict"
+                        if target_key.split("/", maxsplit=1)[0] in self.overlap_conflict_symbols
+                        else target.last_reason
+                    ),
                     "failure_symbol": target_key.split("/", maxsplit=1)[0],
                 }
                 for target_key, target in self.cache.targets_by_key.items()
@@ -483,6 +501,8 @@ def commit_kis_paper_daily_nas_forward_observation(
         )
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
     repository = _repository_root(repo_root)
+    effective_failures = dict(failure_reasons_by_symbol)
+    overlap_conflict_symbols: list[str] = []
     with kis_paper_daily_nas_forward_failure_context("cache_access"):
         root = _external_root(Path(cache_root), repository, create=True)
     with (
@@ -504,20 +524,35 @@ def commit_kis_paper_daily_nas_forward_observation(
             with kis_paper_daily_nas_forward_failure_context("verified_base_load", symbol=symbol):
                 target = _target_document(index, target_key)
                 existing = _load_target_rows(root=root, target=target, symbol=symbol)
-            if symbol in failure_reasons_by_symbol:
+            if symbol in effective_failures:
                 target_updates[target_key] = _failure_target_document(
                     target,
-                    failure_reasons_by_symbol[symbol],
+                    effective_failures[symbol],
                 )
                 merged_by_symbol[symbol] = existing
                 continue
             incoming = tuple(
                 row for row in rows_by_symbol[symbol] if row.session_date > frozen_boundary
             )
-            with kis_paper_daily_nas_forward_failure_context(
-                "overlap_reconciliation", symbol=symbol
-            ):
-                merged = _merge_rows(existing, incoming, symbol=symbol)
+            try:
+                with kis_paper_daily_nas_forward_failure_context(
+                    "overlap_reconciliation", symbol=symbol
+                ):
+                    merged = _merge_rows(existing, incoming, symbol=symbol)
+            except KisPaperDailyNasForwardCacheError as error:
+                if get_kis_paper_daily_nas_forward_failure_details(error) != {
+                    "failure_stage": "overlap_reconciliation",
+                    "failure_category": "duplicate_conflict",
+                    "failure_symbol": symbol,
+                }:
+                    raise
+                effective_failures[symbol] = "daily_duplicate_conflict"
+                overlap_conflict_symbols.append(symbol)
+                target_updates[target_key] = _failure_target_document(
+                    target, effective_failures[symbol]
+                )
+                merged_by_symbol[symbol] = existing
+                continue
             merged_by_symbol[symbol] = merged
             if merged != existing:
                 raw_payload = _compressed_rows(merged)
@@ -571,7 +606,7 @@ def commit_kis_paper_daily_nas_forward_observation(
             with kis_paper_daily_nas_forward_failure_context("cache_publish"):
                 _write_json_atomic(root / _INDEX_FILENAME, updated_index)
         common_sessions = _common_forward_sessions(merged_by_symbol)
-        prospective_input_ready = _is_forward_projection_ready(
+        prospective_input_ready = not effective_failures and _is_forward_projection_ready(
             common_sessions,
             frozen_boundary=frozen_boundary,
         )
@@ -581,7 +616,7 @@ def commit_kis_paper_daily_nas_forward_observation(
                 repo_root=repository,
             )
 
-    failures = len(failure_reasons_by_symbol)
+    failures = len(effective_failures)
     has_rows = any(cache.rows_by_symbol.values())
     status: Literal[
         "ready", "partial", "deferred", "input_unavailable", "source_limited", "unchanged"
@@ -602,11 +637,12 @@ def commit_kis_paper_daily_nas_forward_observation(
         status=status,
         observed_at=observed,
         cache=cache,
-        accepted_page_count=len(rows_by_symbol),
+        accepted_page_count=len(rows_by_symbol) - len(overlap_conflict_symbols),
         categorical_failure_count=failures,
         changed_target_count=len(changed_symbols),
         prospective_input_status="ready" if prospective_input_ready else "input_unavailable",
         recovery="resume" if failures else "complete",
+        overlap_conflict_symbols=tuple(overlap_conflict_symbols),
     )
 
 
@@ -687,6 +723,8 @@ def build_kis_paper_daily_nas_historical_forward_projection(
         or frozen_panel.common_sessions[-1] != boundary
     ):
         raise ValueError("historical-forward boundary is invalid")
+    if any(target.status == "deferred" for target in forward_cache.targets_by_key.values()):
+        raise ValueError("NAS historical-forward projection has deferred targets")
     context_by_symbol: dict[str, tuple[Bar, ...]] = {}
     forward_by_symbol: dict[str, tuple[Bar, ...]] = {}
     for symbol in KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS:

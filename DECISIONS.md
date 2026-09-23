@@ -9964,3 +9964,17 @@ Claude returned supported-with-limits: that improvement is an accounting
 identity; measured boundary counts are empirical, not a newly discovered alpha.
 Retain planned/scored/censored support and matched-parent controls. This is
 seen-data development, not a model selection or a Paper-strategy replacement.
+
+## 2026-09-23 - Isolate NAS overlap conflicts by target
+
+The owned NAS receipt proved a stored/incoming AAPL duplicate conflict, not
+corrupt retained bytes. Catch only that exact merge error per target; retain
+the original snapshot and categorical failure while committing independently
+valid targets. Base-load/corruption/publication failures still abort. Preserve
+the fixed universe, atomic index, request pacing and scheduler. A partial run,
+preflight and forward projection must not treat a deferred target as fresh.
+Claude supported this with limits. Do not adopt its suggested ban on a second
+attempt receipt or all metadata generation changes: immutable attempt evidence
+and failure counters remain legitimate, but never count them as new rows.
+The bounded deployed attempt found all6 conflicts, so no coverage advanced.
+Do not infer the correct value or reset old snapshots from that observation.

@@ -83,43 +83,363 @@ def test_preboundary_rows_are_not_retained_and_initial_index_is_recoverable(tmp_
     assert second.cache.common_sessions == (date(2026, 7, 27),)
 
 
-def test_conflicting_duplicate_does_not_publish_or_replace_prior_snapshot(tmp_path: Path) -> None:
+@pytest.mark.parametrize(
+    "conflict_symbols",
+    [("AAPL",), ("META",), ("NVDA",), ("AAPL", "NVDA"), KIS_PAPER_DAILY_HISTORY_PANEL_SYMBOLS],
+)
+def test_overlap_conflicts_preserve_failed_snapshots_and_commit_only_unaffected_targets(
+    tmp_path: Path,
+    conflict_symbols: tuple[str, ...],
+) -> None:
     cache_root = tmp_path / "external" / "forward"
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
     first = commit_kis_paper_daily_nas_forward_observation(
-        rows_by_symbol=_rows_for_all((date(2026, 7, 27),)),
+        rows_by_symbol=_rows_for_all(_sessions(27, 28, 29)),
         failure_reasons_by_symbol={},
         cache_root=cache_root,
         repo_root=repo_root,
     )
-    index_bytes = (cache_root / "index.json").read_bytes()
-    conflicting = _rows_for_all((date(2026, 7, 27),))
-    conflicting["AAPL"] = (_row("AAPL", date(2026, 7, 27), close=Decimal("999")),)
-
-    snapshots = {path: path.read_bytes() for path in cache_root.rglob("*.csv.gz")}
-    with pytest.raises(KisPaperDailyNasForwardCacheError, match="duplicate conflict") as caught:
-        commit_kis_paper_daily_nas_forward_observation(
-            rows_by_symbol=conflicting,
-            failure_reasons_by_symbol={},
-            cache_root=cache_root,
-            repo_root=repo_root,
+    index = json.loads((cache_root / "index.json").read_bytes())
+    conflicting = _rows_for_all(_sessions(27, 28, 29, 30))
+    for symbol in conflict_symbols:
+        conflicting[symbol] = (
+            _row(symbol, date(2026, 7, 27), close=Decimal("999")),
+            *conflicting[symbol][1:],
         )
+    snapshots = {path: path.read_bytes() for path in cache_root.rglob("*.csv.gz")}
+    run = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=conflicting,
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
 
-    assert (cache_root / "index.json").read_bytes() == index_bytes
-    assert {path: path.read_bytes() for path in cache_root.rglob("*.csv.gz")} == snapshots
-    assert get_kis_paper_daily_nas_forward_failure_details(caught.value) == {
-        "failure_stage": "overlap_reconciliation",
-        "failure_category": "duplicate_conflict",
-        "failure_symbol": "AAPL",
-    }
+    assert run.status == ("deferred" if len(conflict_symbols) == 6 else "partial")
+    assert run.recovery == "resume"
+    assert run.accepted_page_count == run.changed_target_count == 6 - len(conflict_symbols)
+    assert run.categorical_failure_count == len(conflict_symbols)
+    assert run.prospective_input_status == "input_unavailable"
+    assert run.cache.common_sessions == first.cache.common_sessions == _sessions(27, 28, 29)
+    assert {path: path.read_bytes() for path in snapshots} == snapshots
+    assert len(tuple(cache_root.rglob("*.csv.gz"))) == 12 - len(conflict_symbols)
+    updated = json.loads((cache_root / "index.json").read_bytes())
+    assert updated["generation"] == index["generation"] + 1
+    for prior, target in zip(index["targets"], updated["targets"], strict=True):
+        symbol = target["target_key"].split("/")[0]
+        if symbol in conflict_symbols:
+            assert target == {
+                **prior,
+                "status": "deferred",
+                "categorical_failure_count": prior["categorical_failure_count"] + 1,
+                "last_reason": "daily_duplicate_conflict",
+            }
+            assert run.cache.rows_by_symbol[symbol] == first.cache.rows_by_symbol[symbol]
+        else:
+            assert target["status"] == "ready"
+            assert target["accepted_page_count"] == 2
+            assert target["categorical_failure_count"] == 0
+            assert run.cache.rows_by_symbol[symbol] == conflicting[symbol]
+    assert run.safe_payload()["target_failures"] == [
+        {
+            "failure_stage": "overlap_reconciliation",
+            "failure_category": "duplicate_conflict",
+            "failure_symbol": symbol,
+        }
+        for symbol in conflict_symbols
+    ]
+    _assert_source_safe(run.safe_payload())
     assert (
         load_verified_kis_paper_daily_nas_forward_cache(
             cache_root=cache_root,
             repo_root=repo_root,
         ).cache_hash
-        == first.cache.cache_hash
+        == run.cache.cache_hash
     )
+
+    repeated = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=conflicting,
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    assert repeated.status == run.status
+    assert repeated.prospective_input_status == "input_unavailable"
+    assert repeated.changed_target_count == 0
+    assert repeated.categorical_failure_count == len(conflict_symbols)
+    assert repeated.accepted_page_count == 6 - len(conflict_symbols)
+    assert repeated.safe_payload()["target_failures"] == run.safe_payload()["target_failures"]
+    assert {path: path.read_bytes() for path in snapshots} == snapshots
+    assert len(tuple(cache_root.rglob("*.csv.gz"))) == 12 - len(conflict_symbols)
+    for symbol in conflict_symbols:
+        target = repeated.cache.targets_by_key[f"{symbol}/NAS"]
+        assert target.accepted_page_count == 1
+        assert target.categorical_failure_count == 2
+
+
+def test_overlap_and_fetch_failures_share_counts_but_preserve_distinct_stages(
+    tmp_path: Path,
+) -> None:
+    cache_root = tmp_path / "external"
+    repo_root = tmp_path / "repo"
+    commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=_rows_for_all(_sessions(27, 28, 29)),
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    rows = _rows_for_all(_sessions(27, 28, 29, 30))
+    rows["AAPL"] = (_row("AAPL", date(2026, 7, 27), close=Decimal("999")),)
+    rows.pop("MSFT")
+    failures = {"MSFT": "daily_duplicate_conflict"}
+    run = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=rows,
+        failure_reasons_by_symbol=MappingProxyType(failures),
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    assert failures == {"MSFT": "daily_duplicate_conflict"}
+    assert run.status == "partial"
+    assert run.accepted_page_count == run.changed_target_count == 4
+    assert run.categorical_failure_count == 2
+    assert run.prospective_input_status == "input_unavailable"
+    assert run.cache.common_sessions == _sessions(27, 28, 29)
+    assert run.safe_payload()["target_failures"] == [
+        {
+            "failure_stage": "overlap_reconciliation",
+            "failure_category": "duplicate_conflict",
+            "failure_symbol": "AAPL",
+        },
+        {
+            "failure_stage": "target_fetch",
+            "failure_category": "daily_duplicate_conflict",
+            "failure_symbol": "MSFT",
+        },
+    ]
+
+
+def test_fetch_failure_does_not_qualify_a_fresh_run_from_old_common_sessions(
+    tmp_path: Path,
+) -> None:
+    cache_root = tmp_path / "external"
+    repo_root = tmp_path / "repo"
+    first = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=_rows_for_all(_sessions(27, 28, 29)),
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    rows = _rows_for_all(_sessions(27, 28, 29, 30))
+    rows.pop("MSFT")
+    run = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=rows,
+        failure_reasons_by_symbol={"MSFT": "transport_failure"},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    assert run.status == "partial"
+    assert run.prospective_input_status == "input_unavailable"
+    assert run.cache.common_sessions == first.cache.common_sessions
+    assert run.cache.rows_by_symbol["MSFT"] == first.cache.rows_by_symbol["MSFT"]
+    assert (
+        run.cache.targets_by_key["MSFT/NAS"].rows_sha256
+        == first.cache.targets_by_key["MSFT/NAS"].rows_sha256
+    )
+
+
+def test_compatible_later_batch_resolves_only_current_failure_and_retry_adds_no_rows(
+    tmp_path: Path,
+) -> None:
+    cache_root = tmp_path / "external"
+    repo_root = tmp_path / "repo"
+    commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=_rows_for_all(_sessions(27, 28, 29)),
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    good_rows = _rows_for_all(_sessions(27, 28, 29, 30))
+    conflicting = dict(good_rows)
+    conflicting["AAPL"] = (
+        _row("AAPL", date(2026, 7, 27), close=Decimal("999")),
+        *good_rows["AAPL"][1:],
+    )
+    partial = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=conflicting,
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    prior_snapshots = {path: path.read_bytes() for path in cache_root.rglob("*.csv.gz")}
+    resolved = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=good_rows,
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+
+    assert resolved.status == "ready"
+    assert resolved.recovery == "complete"
+    assert resolved.changed_target_count == 1
+    assert resolved.accepted_page_count == 6
+    assert resolved.categorical_failure_count == 0
+    assert resolved.prospective_input_status == "ready"
+    assert "target_failures" not in resolved.safe_payload()
+    assert resolved.cache.common_sessions == _sessions(27, 28, 29, 30)
+    assert dict(resolved.cache.rows_by_symbol) == good_rows
+    target = resolved.cache.targets_by_key["AAPL/NAS"]
+    assert target.status == "ready"
+    assert target.last_reason is None
+    assert target.categorical_failure_count == 1
+    assert target.accepted_page_count == 2
+    assert {path: path.read_bytes() for path in prior_snapshots} == prior_snapshots
+    assert partial.safe_payload()["target_failures"][0]["failure_stage"] == "overlap_reconciliation"
+    assert partial.cache.targets_by_key["AAPL/NAS"].row_count == 3
+
+    snapshots = {path: path.read_bytes() for path in cache_root.rglob("*.csv.gz")}
+    repeated = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=good_rows,
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    assert repeated.status == "unchanged"
+    assert repeated.changed_target_count == 0
+    assert repeated.categorical_failure_count == 0
+    assert repeated.cache.common_sessions == resolved.cache.common_sessions
+    assert "target_failures" not in repeated.safe_payload()
+    assert {path: path.read_bytes() for path in cache_root.rglob("*.csv.gz")} == snapshots
+
+
+@pytest.mark.parametrize("failure", ["overlap", "fetch"])
+def test_prospective_projection_rejects_deferred_target_but_historical_loader_stays_valid(
+    tmp_path: Path,
+    failure: str,
+) -> None:
+    cache_root = tmp_path / "external"
+    repo_root = tmp_path / "repo"
+    panel = _frozen_panel(tmp_path / "frozen")
+    first = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=_rows_for_all(_sessions(27, 28, 29)),
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    rows = _rows_for_all(_sessions(27, 28, 29, 30))
+    failures = {}
+    if failure == "overlap":
+        rows["AAPL"] = (_row("AAPL", date(2026, 7, 27), close=Decimal("999")),)
+    else:
+        rows.pop("AAPL")
+        failures["AAPL"] = "transport_failure"
+    run = commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=rows,
+        failure_reasons_by_symbol=failures,
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    before = {path: path.read_bytes() for path in cache_root.rglob("*") if path.is_file()}
+    loaded = load_verified_kis_paper_daily_nas_forward_cache(
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    assert loaded.cache_hash == run.cache.cache_hash
+    assert loaded.rows_by_symbol["AAPL"] == first.cache.rows_by_symbol["AAPL"]
+    assert loaded.common_sessions == first.cache.common_sessions == _sessions(27, 28, 29)
+    with pytest.raises(ValueError, match="projection has deferred targets"):
+        build_kis_paper_daily_nas_historical_forward_projection(
+            frozen_panel=panel,
+            forward_cache=loaded,
+        )
+    assert {path: path.read_bytes() for path in cache_root.rglob("*") if path.is_file()} == before
+
+
+@pytest.mark.parametrize(
+    ("surface", "error", "stage", "category"),
+    [
+        (
+            "_merge_rows", KisPaperDailyNasForwardCacheError("synthetic-private-detail"),
+            "overlap_reconciliation", "cache_contract",
+        ),
+        ("_merge_rows", OSError("synthetic-private-detail"), "overlap_reconciliation", "io_error"),
+        (
+            "_merge_rows", ValueError("synthetic-private-detail"),
+            "overlap_reconciliation", "value_error",
+        ),
+        (
+            "_load_target_rows",
+            KisPaperDailyNasForwardCacheError(
+                "synthetic-private-detail", category="duplicate_conflict"
+            ),
+            "verified_base_load", "duplicate_conflict",
+        ),
+    ],
+)
+def test_unrelated_failure_after_overlap_still_aborts_without_publishing(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    surface: str,
+    error: Exception,
+    stage: str,
+    category: str,
+) -> None:
+    cache_root = tmp_path / "external"
+    repo_root = tmp_path / "repo"
+    commit_kis_paper_daily_nas_forward_observation(
+        rows_by_symbol=_rows_for_all(_sessions(27, 28, 29)),
+        failure_reasons_by_symbol={},
+        cache_root=cache_root,
+        repo_root=repo_root,
+    )
+    before = {path: path.read_bytes() for path in cache_root.rglob("*") if path.is_file()}
+    rows = _rows_for_all(_sessions(27, 28, 29, 30))
+    rows["AAPL"] = (_row("AAPL", date(2026, 7, 27), close=Decimal("999")),)
+    original = getattr(forward_cache, surface)
+
+    def fail_late(*args: object, **kwargs: object) -> object:
+        if kwargs.get("symbol") == "NVDA" and (surface == "_load_target_rows" or args[0]):
+            raise error
+        return original(*args, **kwargs)
+
+    monkeypatch.setattr(forward_cache, surface, fail_late)
+    with pytest.raises(type(error)) as caught:
+        commit_kis_paper_daily_nas_forward_observation(
+            rows_by_symbol=rows,
+            failure_reasons_by_symbol={},
+            cache_root=cache_root,
+            repo_root=repo_root,
+        )
+    assert caught.value is error
+    details = get_kis_paper_daily_nas_forward_failure_details(error)
+    assert details == {
+        "failure_stage": stage,
+        "failure_category": category,
+        "failure_symbol": "NVDA",
+    }
+    assert str(error) not in json.dumps(details)
+    assert {path: path.read_bytes() for path in cache_root.rglob("*") if path.is_file()} == before
+
+
+def test_conflicting_duplicates_within_incoming_batch_still_fail_before_cache_access(
+    tmp_path: Path,
+) -> None:
+    rows = _rows_for_all(_sessions(27, 28, 29))
+    rows["AAPL"] += (_row("AAPL", date(2026, 7, 27), close=Decimal("999")),)
+    cache_root = tmp_path / "external"
+    with pytest.raises(KisPaperDailyNasForwardCacheError) as caught:
+        commit_kis_paper_daily_nas_forward_observation(
+            rows_by_symbol=rows,
+            failure_reasons_by_symbol={},
+            cache_root=cache_root,
+            repo_root=tmp_path / "repo",
+        )
+    assert get_kis_paper_daily_nas_forward_failure_details(caught.value) == {
+        "failure_stage": "observation_input",
+        "failure_category": "duplicate_conflict",
+    }
+    assert not cache_root.exists()
 
 
 @pytest.mark.parametrize("fault", ["index", "snapshot", "boundary"])

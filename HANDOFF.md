@@ -21,6 +21,31 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+2026-09-23 parallel continuation: fixed-weight forecast diagnosis completed
+all28 models and84 parent replay cells in84.497 CPU seconds. Of28 model/fold
+cells,21 have worse MSE than TRAIN mean; no same-symbol/family/seed improves
+both folds. Forecast dispersion is narrow and the fixed6bps criterion is
+rarely crossed. Do not fit calibration or lower thresholds on these seen
+outcomes. Research's next proposed bounded CPU hypothesis is an opening-range
+breakout with matched long/cash controls. No training/GPU/Paper policy change.
+
+Data reattached QQQ/SPY v2 at41 common daily sessions through September22,
+23 more per target than bootstrap. The finite D1 observer ended with a valid
+later `disqualified/identity_mismatch` result; no schedule extension. NAS's
+measured overlap fault now has target-local handling, immutable prior rows,
+partial-run accounting and deferred-target consumer checks. Three NAS images
+are rebuilt; the actual bounded6-page run at11:27:54Z found conflicts in ALL6
+targets, so accepted/changed are0/0 and old common coverage stays2 sessions.
+This repairs failure isolation, not data growth. Exact receipts are in Data.
+One read-only AAPL page further found a numeric close/volume change in1 of2
+overlapping rows, with41 incoming rows. Revision-aware observed-at retention,
+not resetting prior data, is the next bounded Data recovery question.
+Tonight's22:35 fixed SPY exit and23:50 budget task remain unchanged. No account,
+order or live endpoint was called by this continuation.
+Verification for this isolated continuation: 194 focused tests passed in
+32.50s; Ruff and both sample-env Compose configurations pass. The full suite
+was not repeated, and the company lifecycle objective remains open.
+
 2026-09-23 evening recovery supersedes the earlier unknown-fill status below.
 The same owned SPY buy is fully filled; an exact original-date observation,
 persisted fill ledger and fresh account position agree, with no SPY open order.
