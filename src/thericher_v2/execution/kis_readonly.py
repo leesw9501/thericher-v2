@@ -840,7 +840,13 @@ class KisPaperReadOnlyClient:
             )
         except (KisPaperReadOnlyError, ValueError, InvalidOperation):
             return KisPaperExecutionObservation(**base, status="fields_invalid")
-        return KisPaperExecutionObservation(**base, status="available", fill=fill)
+        return KisPaperExecutionObservation(
+            **base, status="available", fill=fill,
+            cancellation_confirmed=_zero_fill_cancel_lineage(
+                history, row, fill, raw_order_id=raw_order_id, order_date=order_date,
+                symbol=symbol, exchange=exchange, side=side,
+            ),
+        )
 
     def inspect_order_history_terminal_fields(
         self,
@@ -1460,6 +1466,59 @@ def _history_order_id_matches(candidate: object, raw_order_id: str) -> bool:
         return False
     positive_id = raw_order_id.lstrip("0")
     return bool(positive_id) and candidate.lstrip("0") == positive_id
+
+
+def _zero_fill_cancel_lineage(
+    history: _KisPaperOrderHistoryRows,
+    original: Mapping[str, Any],
+    fill: KisPaperCumulativeFill,
+    *,
+    raw_order_id: str,
+    order_date: str,
+    symbol: str,
+    exchange: str,
+    side: str,
+) -> bool:
+    # A zero remainder alone is not cancellation. Require its distinct, exact
+    # same-date cancel lineage as well; partial-fill/amendment chains stay unknown.
+    if (
+        fill.quantity != 0
+        or fill.remaining_quantity != 0
+        or original.get("rvse_cncl_dvsn") != "00"
+        or len(history.lineage_matches) != 1
+    ):
+        return False
+    cancel = history.lineage_matches[0]
+    cancel_id = cancel.get("odno")
+    if (
+        cancel.get("rvse_cncl_dvsn") != "02"
+        or not isinstance(cancel_id, str)
+        or (cancel_id.isdecimal() and not cancel_id.lstrip("0"))
+        or _history_order_id_matches(cancel.get("odno"), raw_order_id)
+        or not _history_order_id_matches(cancel.get("orgn_odno"), raw_order_id)
+        or (cancel.get("ord_dt"), cancel.get("pdno"), cancel.get("ovrs_excg_cd"),
+            cancel.get("sll_buy_dvsn_cd"), cancel.get("tr_crcy_cd"))
+        != (order_date, symbol, exchange, {"buy": "02", "sell": "01"}[side], "USD")
+    ):
+        return False
+    for row in (original, cancel):
+        code, name = row.get("rjct_rson"), row.get("rjct_rson_name")
+        if (
+            not isinstance(code, str) or code.strip().strip("0")
+            or not isinstance(name, str) or name.strip()
+        ):
+            return False
+    try:
+        return (
+            _response_decimal(cancel, "ft_ord_qty", "ccnl_response_incomplete")
+            == fill.requested_quantity
+            and all(
+                _response_decimal(cancel, key, "ccnl_response_incomplete") == 0
+                for key in ("ft_ccld_qty", "ft_ccld_amt3", "nccs_qty")
+            )
+        )
+    except KisPaperReadOnlyError:
+        return False
 
 
 def _valid_same_day_order_id_query(query: Mapping[str, str]) -> bool:

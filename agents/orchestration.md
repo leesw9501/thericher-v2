@@ -14,34 +14,29 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 
 | Work | Owner / resource | Current fact and dispatch |
 | --- | --- | --- |
-| SPY lifecycle recovery | Execution / existing private state | Owned22:35 run returned recovery_required/evidence_unavailable after one visit. Offline exact-cycle parsing reattaches fresh full buy fill at13:35:02.799196Z, but no sell state. Task nowReady/no next run; no worker. Next localize post-entry failure and resume SAME cycle, never replacement buy. Exact observation is in Execution; flatness/PnL remain unknown. |
+| SPY lifecycle recovery | Execution / existing private state | Same-cycle SELL acknowledged, unfilled, exact-ID cancel accepted; original+cancel lineage has zero fill/remaining, position still owned. Narrow repair verified/deployed.14:40Z auth failed;14:44Z SELL recovery observation unavailable despite later account/history success, so durable SELL remains outcome_unknown. Next exact recovery then linked exit continuation, no identity reset/new buy. Flatness/PnL remain unknown; no schedule change. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | The previous 23:50 strategy returned no_intent/daily_receipt_not_eligible; the post-load clock fix is deployed. Next due 2026-09-23 23:50 KST, unchanged. The 10-percent policy and shared SPY ownership remain unchanged; no strategy trade is claimed. |
 | Opening-range development | Engine Research / completed CPU worker | Fixed rule/two seen folds/three costs completed12 cells,159 one-share roundtrips in259.329s. First-fold positive/second-fold negative at3bps, descriptive criterion not met. No retuning, training, GPU or Paper replacement; immutable result/custody closed. Next main priority is the owned Paper exit. |
 | Data collection / finite D1 measurement | Data / existing tasks | V2 pair remains41 common sessions. NAS revision-retaining run at13:21:08Z also advanced6 targets to41 sessions,234 added rows,6 whole-page vintages. Old values remain; a mixed first-retained view is not PIT/final. Exact hash/as-of reads permit scoped developmental use. Existing NAS/pair due September24 06:40/06:55 KST; no schedule expansion. |
 | GPU | Research Steward / allocation released | No owned training process or successor appointment. The completed position-policy study used CPU only; retained LSTM, LightGBM, TCN, attention and TimesFM artifacts remain external and unchanged. |
-| Verification | Orchestrator / completed isolated test workers | This continuation passed127 NAS tests in9.40s and109 research/runner tests in5.39s; Ruff and both sample-env Compose configurations pass. No full-suite rerun for isolated role packages; preceding shared-Execution authority remains4,545 passed/19 skips. Both bounded runtime workers exited. |
+| Verification | Orchestrator / completed authority run | Cancellation-focused coverage704 passes; final eight-worker authority5,097/19 skips,326.74s, clean helper exit. Ruff/both sample-env Compose configs pass. Seven rebuilt consumers match28 source hashes. No test worker remains. |
 
 ## Bottleneck And Reversible Improvement
 
-Three temporary agents implemented the independent ORB research package, tested
-Data retention, and reviewed research; the orchestrator integrated/deployed Data
-and ran the bounded collector. All temporary assignments are closed.
-No market wait became foreground idle.
-The sell/flat opportunity remains Execution-owned. This continuation called
-only six daily-market pages, not account/order/live endpoints.
+Main work stayed on actual Paper recovery while temporary agents implemented
+closed diagnostics, wrote cancellation regressions and independently reviewed
+the recovery change. These bounded assignments are complete. No new research
+campaign was dispatched merely to fill GPU utilization.
 
-The measured improvement is revision retention instead of discarding all new
-dates on an old overlap conflict:234 rows now added. Old and incoming whole
-snapshots remain independently verifiable, not automatically final/qualified.
-The observation image reused its pinned CUDA runtime with a source-only overlay
-in5 seconds instead of the previous six-minute dependency reinstall. No runtime
-replacement, new worker, schedule or approval gate. ORB review narrows claims
-to descriptive comparisons under the known source-clock/censoring limitations.
-
-Only the existing fixed-cycle one-shot trigger moved to tonight, with the same
-action, principal, identity and expiry duration. No new buy, recurring worker
-or follow-up chain was created. The daily strategy's 23:50 trigger is unchanged.
-External waits stay with their owners, not a foreground sleep.
+Measured bottleneck: generic unknown state despite exact zero-fill cancellation
+lineage. The reversible improvement is narrow source-bound cancellation
+reconciliation with unchanged intent identity and order authority; it is now
+verified/deployed. Runtime transition remains unobserved after a scoped auth
+failure and unavailable SELL recovery. Do not turn those into a global wait:
+linked exit implementation is ready while exact recovery remains separately
+owned. The final full suite covers all related repairs; no redundant rerun.
+No new scheduler or foreground market wait. Existing23:50 strategy owner and
+Data next_due remain unchanged; neither may adopt the diagnostic inventory.
 
 C: remains measured-fast test scratch; data/models remain D:. Retained failed
 root `C:\trpy\runs\r-7784b455` is inactive and untouched, not a lease. No cleanup

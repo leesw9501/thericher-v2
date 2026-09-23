@@ -8,6 +8,7 @@ from decimal import Decimal, InvalidOperation
 
 import pytest
 
+from thericher_v2.execution import kis_paper_canary as canary
 from thericher_v2.execution import kis_paper_spy_fill_cycle as cycle
 from thericher_v2.execution.emergency import EmergencyStore, PaperExecutionControlStore
 from thericher_v2.execution.kis_paper_canary import (
@@ -866,24 +867,323 @@ def test_pre_intent_failure_adds_only_closed_diagnostics(
 
 
 @pytest.mark.parametrize("existing_leg", [False, True])
-def test_post_intent_or_recovery_failure_has_no_stale_pre_intent_stage(
-    setup, monkeypatch, existing_leg
+@pytest.mark.parametrize(
+    "error_type,category",
+    [
+        (KisPaperCanaryError, "canary_error"),
+        (cycle.KisPaperReadOnlyError, "readonly_error"),
+        (cycle.KisPaperQuoteError, "quote_error"),
+        (OSError, "io_error"),
+        (InvalidOperation, "decimal_error"),
+        (ValueError, "validation_error"),
+        (TypeError, "validation_error"),
+    ],
+)
+def test_post_intent_or_recovery_failure_reports_leg_run(
+    setup, monkeypatch, existing_leg, error_type, category
 ):
     paths, client, visit = setup
     if existing_leg:
         assert visit().status == "pending"
 
     def fail(*args, **kwargs):
-        raise OSError("synthetic-private-path")
+        _raise_private_error(error_type)
 
     monkeypatch.setattr(cycle, "_run_kis_paper_canary", fail)
     outcome = visit()
-    assert (outcome.status, outcome.reason_code) == ("recovery_required", "evidence_unavailable")
-    assert "failure_stage" not in outcome.safe_payload()
-    assert "failure_category" not in outcome.safe_payload()
+    _assert_closed_failure(outcome, "leg_run", category)
     assert _state(paths, "buy").read() is not None
     assert client.submits == (["buy"] if existing_leg else [])
     assert client.cancels == []
+
+
+def _raise_private_error(error_type):
+    class PrivateError(error_type):
+        def __str__(self):
+            raise AssertionError("exception text must not be inspected")
+
+    raise PrivateError("synthetic-private-provider-body")
+
+
+def _assert_closed_failure(outcome, stage, category):
+    assert (outcome.status, outcome.reason_code) == ("recovery_required", "evidence_unavailable")
+    assert isinstance(outcome.failure_stage, cycle._FailureStage)
+    assert isinstance(outcome.failure_category, cycle._FailureCategory)
+    payload = outcome.safe_payload()
+    legacy = replace(outcome, failure_stage=None, failure_category=None).safe_payload()
+    assert payload == legacy | {"failure_stage": stage, "failure_category": category}
+    encoded = json.dumps({key: value for key, value in payload.items() if key != "observed_at"})
+    for private in (
+        "synthetic-private-provider-body", "synthetic-cycle", "SYNTHETIC", *ENV.values()
+    ):
+        assert private not in encoded
+
+
+@pytest.mark.parametrize(
+    "target,error_type,stage,category",
+    [
+        ("state", OSError, "private_state_read", "io_error"),
+        ("emergency", OSError, "emergency_read", "io_error"),
+        ("snapshot", cycle.KisPaperReadOnlyError, "account_snapshot", "readonly_error"),
+        ("book", TypeError, "account_validation", "validation_error"),
+        ("fill", KisPaperCanaryError, "recovery_validation", "canary_error"),
+        ("control", ValueError, "control_read", "validation_error"),
+        ("quote", cycle.KisPaperQuoteError, "quote_fetch", "quote_error"),
+        ("price", InvalidOperation, "quote_validation", "decimal_error"),
+        ("intent", OSError, "leg_intent_record", "io_error"),
+        ("binding", OSError, "leg_binding_write", "io_error"),
+        ("ownership", OSError, "recovery_binding_write", "io_error"),
+    ],
+)
+def test_existing_leg_failure_reports_current_operation(
+    setup, monkeypatch, target, error_type, stage, category
+):
+    paths, client, visit = setup
+    assert visit().status == "pending"
+    entry_ref = _state(paths, "buy").read().intent.fingerprint
+    if target == "ownership":
+        (paths["state_root"] / ".spy_fill_active.json").unlink()
+    owner, attribute = {
+        "state": (KisPaperCanaryStateStore, "read"),
+        "emergency": (EmergencyStore, "read"),
+        "snapshot": (client, "snapshot"),
+        "book": (cycle, "_spy_book"),
+        "fill": (cycle, "_require_current_fill"),
+        "control": (PaperExecutionControlStore, "read"),
+        "quote": (client, "fetch_spy_limit_input"),
+        "price": (cycle, "derive_kis_paper_marketable_limit"),
+        "intent": (KisPaperCanaryStateStore, "record_intent"),
+        "binding": (cycle, "_atomic_json"),
+        "ownership": (cycle, "_atomic_json"),
+    }[target]
+    run = cycle._run_kis_paper_canary
+    failures = []
+
+    def fail(*args, **kwargs):
+        failures.append(target)
+        _raise_private_error(error_type)
+
+    with monkeypatch.context() as patch:
+        def recover_then_inject(**kwargs):
+            outcome = run(**kwargs)
+            patch.setattr(owner, attribute, fail)
+            return outcome
+
+        patch.setattr(cycle, "_run_kis_paper_canary", recover_then_inject)
+        _assert_closed_failure(visit(), stage, category)
+    assert failures == [target]
+    assert _state(paths, "buy").read().intent.fingerprint == entry_ref
+    assert client.submits == ["buy"] and client.cancels == []
+    assert visit().status == "complete"
+    assert visit().status == "complete"
+    assert client.submits == ["buy", "sell"]
+
+
+def test_existing_unsubmitted_leg_reconciliation_failure_is_categorical(setup, monkeypatch):
+    paths, client, visit = setup
+    with monkeypatch.context() as patch:
+        patch.setattr(cycle, "_run_kis_paper_canary", lambda **kw: _raise_private_error(OSError))
+        _assert_closed_failure(visit(), "leg_run", "io_error")
+    assert _state(paths, "buy").read().phase == "intent_recorded"
+    with monkeypatch.context() as patch:
+        patch.setattr(
+            client, "reconcile", lambda *a, **kw: _raise_private_error(KisPaperCanaryError)
+        )
+        _assert_closed_failure(visit(), "recovery_reconcile", "canary_error")
+    assert client.submits == [] and client.cancels == []
+    assert visit().status == "pending"
+    assert visit().status == "complete"
+    assert client.submits == ["buy", "sell"]
+
+
+@pytest.mark.parametrize(
+    "target,error_type,stage,category",
+    [
+        ("price", InvalidOperation, "quote_validation", "decimal_error"),
+        ("reconcile", KisPaperCanaryError, "recovery_reconcile", "canary_error"),
+        ("record", OSError, "recovery_fill_record", "io_error"),
+        ("fill", ValueError, "recovery_validation", "validation_error"),
+        ("snapshot", cycle.KisPaperReadOnlyError, "account_snapshot", "readonly_error"),
+        ("book", TypeError, "account_validation", "validation_error"),
+    ],
+)
+def test_exit_callback_failure_reports_current_operation(
+    setup, monkeypatch, target, error_type, stage, category
+):
+    paths, client, visit = setup
+    assert visit().status == "pending"
+    owner, attribute = {
+        "price": (cycle, "derive_kis_paper_marketable_limit"),
+        "reconcile": (client, "reconcile"),
+        "record": (cycle, "_record_reconciliation_fill"),
+        "fill": (cycle, "_require_current_fill"),
+        "snapshot": (client, "snapshot"),
+        "book": (cycle, "_spy_book"),
+    }[target]
+    run = cycle._run_kis_paper_canary
+    failures = []
+
+    def fail(*args, **kwargs):
+        failures.append(target)
+        _raise_private_error(error_type)
+
+    with monkeypatch.context() as patch:
+        def run_with_injected_callback(**kwargs):
+            if kwargs["decision"].side == "sell":
+                permitted = kwargs["submit_permitted"]
+
+                def inject(submit_at):
+                    if target == "snapshot":
+                        reconcile = client.reconcile
+
+                        def reconcile_then_inject(*args, **kwargs):
+                            outcome = reconcile(*args, **kwargs)
+                            patch.setattr(owner, attribute, fail)
+                            return outcome
+
+                        patch.setattr(client, "reconcile", reconcile_then_inject)
+                    else:
+                        patch.setattr(owner, attribute, fail)
+                    return permitted(submit_at)
+
+                kwargs["submit_permitted"] = inject
+            return run(**kwargs)
+
+        patch.setattr(cycle, "_run_kis_paper_canary", run_with_injected_callback)
+        _assert_closed_failure(visit(), stage, category)
+    assert failures == [target]
+    assert _state(paths, "sell").read().phase == "intent_recorded"
+    assert client.submits == ["buy"] and client.cancels == []
+    assert visit().status == "complete"
+    assert visit().status == "complete"
+    assert client.submits == ["buy", "sell"]
+
+
+@pytest.mark.parametrize(
+    "target,stage",
+    [
+        ("snapshot", "account_snapshot"),
+        ("book", "account_validation"),
+        ("release", "ownership_release"),
+    ],
+)
+def test_post_exit_closure_failure_reports_current_operation(setup, monkeypatch, target, stage):
+    paths, client, visit = setup
+    assert visit().status == "pending"
+    active_path = paths["state_root"] / ".spy_fill_active.json"
+    owner, attribute = {
+        "snapshot": (client, "snapshot"),
+        "book": (cycle, "_spy_book"),
+        "release": (type(active_path), "unlink"),
+    }[target]
+    original = getattr(owner, attribute)
+    run = cycle._run_kis_paper_canary
+    failures = []
+
+    def fail(*args, **kwargs):
+        if target == "release" and args[0] != active_path:
+            return original(*args, **kwargs)
+        failures.append(target)
+        _raise_private_error(OSError)
+
+    with monkeypatch.context() as patch:
+        def run_then_inject(**kwargs):
+            outcome = run(**kwargs)
+            if kwargs["decision"].side == "sell":
+                patch.setattr(owner, attribute, fail)
+            return outcome
+
+        patch.setattr(cycle, "_run_kis_paper_canary", run_then_inject)
+        _assert_closed_failure(visit(), stage, "io_error")
+    assert failures == [target]
+    assert active_path.exists()
+    assert _state(paths, "sell").read().current_fill.quantity == 1
+    assert visit().status == "complete"
+    assert visit().status == "complete"
+    assert client.submits == ["buy", "sell"] and client.cancels == []
+
+
+@pytest.mark.parametrize(
+    "target,stage",
+    [
+        ("transition", "recovery_transition"),
+        ("cancel", "recovery_cancel"),
+        ("fill", "recovery_fill_record"),
+    ],
+)
+def test_existing_leg_containment_failure_is_categorical(setup, monkeypatch, target, stage):
+    paths, client, visit = setup
+    client.fill_immediately = False
+    assert visit().status == "pending"
+    client.now += timedelta(seconds=301)
+    owner, attribute = {
+        "transition": (KisPaperCanaryStateStore, "transition"),
+        "cancel": (cycle, "_cancel_submitted_canary"),
+        "fill": (cycle, "_record_reconciliation_fill"),
+    }[target]
+    run = cycle._run_kis_paper_canary
+    failures = []
+
+    def fail(*args, **kwargs):
+        failures.append(target)
+        _raise_private_error(OSError)
+
+    with monkeypatch.context() as patch:
+        def recover_then_inject(**kwargs):
+            outcome = run(**kwargs)
+            if target == "transition":
+                store = _state(paths, "buy")
+                store._write_unlocked(replace(store.read(), phase="outcome_unknown"))
+            patch.setattr(owner, attribute, fail)
+            return outcome
+
+        patch.setattr(cycle, "_run_kis_paper_canary", recover_then_inject)
+        _assert_closed_failure(visit(), stage, "io_error")
+    assert failures == [target]
+    assert client.submits == ["buy"]
+    assert client.cancels == ([("buy", "SYNTHETIC-BUY")] if target == "fill" else [])
+    visit()
+    assert client.submits == ["buy"]
+
+
+@pytest.mark.parametrize("side", ["buy", "sell"])
+@pytest.mark.parametrize("existing_leg", [False, True])
+def test_leg_projection_failure_after_fill_persistence_never_duplicates_submit(
+    setup, monkeypatch, side, existing_leg
+):
+    paths, client, visit = setup
+    if side == "sell":
+        assert visit().status == "pending"
+    if existing_leg:
+        client.fill_immediately = False
+        assert visit().status == "pending"
+        state = _state(paths, side).read()
+        assert state.submit_response_category == "acknowledged_order_reference"
+        assert state.current_fill.quantity == 0
+        client.orders[side].update(quantity=1, open=False)
+        client.fill_immediately = True
+    write = canary._write_runtime_projection
+    failures = []
+
+    def fail_projection(**kwargs):
+        if kwargs["state"].intent.side == side:
+            state = _state(paths, side).read()
+            assert state.current_fill.quantity == 1
+            assert state.submit_response_category == "acknowledged_order_reference"
+            failures.append(state.intent.fingerprint)
+            _raise_private_error(OSError)
+        return write(**kwargs)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(canary, "_write_runtime_projection", fail_projection)
+        for _ in range(2):
+            _assert_closed_failure(visit(), "leg_run", "io_error")
+    assert len(failures) == 2 and failures[0] == failures[1]
+    assert client.submits == (["buy"] if side == "buy" else ["buy", "sell"])
+    assert client.cancels == []
+    assert visit().status == "complete"
+    assert visit().status == "complete"
+    assert client.submits == ["buy", "sell"]
 
 
 def test_initial_ownership_write_failure_preserves_binding_and_same_cycle_recovery(

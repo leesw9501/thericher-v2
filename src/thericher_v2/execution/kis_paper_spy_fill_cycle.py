@@ -72,6 +72,16 @@ class _FailureStage(StrEnum):
     QUOTE_FETCH = "quote_fetch"
     QUOTE_VALIDATION = "quote_validation"
     INITIAL_BINDING_WRITE = "initial_binding_write"
+    RECOVERY_RECONCILE = "recovery_reconcile"
+    RECOVERY_VALIDATION = "recovery_validation"
+    RECOVERY_TRANSITION = "recovery_transition"
+    RECOVERY_CANCEL = "recovery_cancel"
+    RECOVERY_FILL_RECORD = "recovery_fill_record"
+    RECOVERY_BINDING_WRITE = "recovery_binding_write"
+    OWNERSHIP_RELEASE = "ownership_release"
+    LEG_INTENT_RECORD = "leg_intent_record"
+    LEG_BINDING_WRITE = "leg_binding_write"
+    LEG_RUN = "leg_run"
 
 
 class _FailureCategory(StrEnum):
@@ -158,7 +168,7 @@ def run_kis_paper_spy_fill_cycle(
         return KisPaperSpyFillCycleOutcome("preview", "preview", observed_at)
     if not is_us_equity_regular_session_window(observed_at):
         return KisPaperSpyFillCycleOutcome("not_due", "outside_regular_session", observed_at)
-    failure_stage: _FailureStage | None = _FailureStage.CONFIGURATION
+    failure_stage = _FailureStage.CONFIGURATION
     try:
         mode = environment.get("THERICHER_MODE", "off")
         if isinstance(mode, str) and mode.strip().lower() == "kis_live":
@@ -211,6 +221,8 @@ def run_kis_paper_spy_fill_cycle(
             )
 
         def run_leg(side, *, permitted=None):
+            nonlocal failure_stage
+            failure_stage = _FailureStage.LEG_RUN
             state = states[side]
             intent = state.intent
             decision_type = (
@@ -244,6 +256,7 @@ def run_kis_paper_spy_fill_cycle(
                 require_existing_state=True,
                 price_contract_ref=intent.price_contract_ref,
             )
+            failure_stage = _FailureStage.PRIVATE_STATE_READ
             states[side] = stores[side].read()
             return outcome.reconciliation
 
@@ -282,20 +295,18 @@ def run_kis_paper_spy_fill_cycle(
                 if other_active and not all(_filled(state) for state in states.values()):
                     raise _RecoveryRequired("another_cycle_unresolved")
 
-                # Diagnostics must not label existing-leg recovery as a pre-intent failure.
-                pre_intent = all(state is None for state in states.values())
-                failure_stage = None
                 reconciliations = {}
                 for side, state in states.items():
                     if state is not None:
                         if state.phase == "intent_recorded":
+                            failure_stage = _FailureStage.RECOVERY_RECONCILE
                             reconciliations[side] = client.reconcile(state, now=at())
                         else:
                             reconciliations[side] = run_leg(side)
                 # Known-order containment precedes fill/position contradiction checks.
-                failure_stage = _FailureStage.EMERGENCY_READ if pre_intent else None
+                failure_stage = _FailureStage.EMERGENCY_READ
                 emergency = EmergencyStore(emergency_state_path).read()
-                failure_stage = None
+                failure_stage = _FailureStage.RECOVERY_VALIDATION
                 for side, rec in reconciliations.items():
                     state = states[side]
                     order_at = state.submission_started_at or state.submitted_at
@@ -308,6 +319,7 @@ def run_kis_paper_spy_fill_cycle(
                         state, rec.snapshot
                     ):
                         if state.phase != "submitted":
+                            failure_stage = _FailureStage.RECOVERY_TRANSITION
                             state = stores[side].transition(
                                 state.intent,
                                 expected=frozenset({state.phase}),
@@ -315,6 +327,7 @@ def run_kis_paper_spy_fill_cycle(
                                 reason_code="reconciliation_unresolved",
                                 now=at(),
                             )
+                        failure_stage = _FailureStage.RECOVERY_CANCEL
                         state, rec = _cancel_submitted_canary(
                             client=client,
                             state_store=stores[side],
@@ -322,17 +335,18 @@ def run_kis_paper_spy_fill_cycle(
                             reconciliation=rec,
                             observed_at=at(),
                         )
+                        failure_stage = _FailureStage.RECOVERY_FILL_RECORD
                         states[side] = _record_reconciliation_fill(
                             stores[side], state, rec, observed_at=at()
                         )
                         # A cancellation/fill race is resolved on the next visit, never guessed.
                         return result("pending", "cancellation_reconciled")
 
-                failure_stage = _FailureStage.ACCOUNT_SNAPSHOT if pre_intent else None
+                failure_stage = _FailureStage.ACCOUNT_SNAPSHOT
                 snapshot = client.snapshot()
-                failure_stage = _FailureStage.ACCOUNT_VALIDATION if pre_intent else None
+                failure_stage = _FailureStage.ACCOUNT_VALIDATION
                 position, open_orders = _spy_book(snapshot, at(), config)
-                failure_stage = None
+                failure_stage = _FailureStage.RECOVERY_VALIDATION
                 entry, exit_state = states["buy"], states["sell"]
                 if (
                     exit_state is None
@@ -341,6 +355,7 @@ def run_kis_paper_spy_fill_cycle(
                     and _entry_not_submitted(entry, at())
                 ):
                     if not other_active:
+                        failure_stage = _FailureStage.OWNERSHIP_RELEASE
                         active_path.unlink(missing_ok=True)
                     return result("no_intent", "entry_not_submitted")
                 awaiting_history = False
@@ -356,10 +371,12 @@ def run_kis_paper_spy_fill_cycle(
                     if not _filled(entry) or position != 0 or open_orders:
                         raise _RecoveryRequired("closure_contradiction")
                     if not other_active:
+                        failure_stage = _FailureStage.OWNERSHIP_RELEASE
                         active_path.unlink(missing_ok=True)
                     return result("complete", "exact_fills_flat")
                 if entry is not None and not _filled(entry) and not open_orders and position == 0:
                     if entry.phase == "cancelled" and exit_state is None:
+                        failure_stage = _FailureStage.OWNERSHIP_RELEASE
                         active_path.unlink(missing_ok=True)
                         return result("cancelled", "entry_unfilled_flat")
 
@@ -382,16 +399,20 @@ def run_kis_paper_spy_fill_cycle(
                     return result("no_intent", "emergency_stop_new_orders")
                 if current is not None and at() >= current.intent.valid_until:
                     raise _RecoveryRequired("exit_not_submitted_expired")
-                failure_stage = _FailureStage.CONTROL_READ if pre_intent else None
+                failure_stage = _FailureStage.CONTROL_READ
                 control = PaperExecutionControlStore(execution_control_path).read()
                 if control.pause_buys if side == "buy" else control.pause_sells:
                     return result("no_intent", f"pause_{side}s_active")
 
-                failure_stage = _FailureStage.QUOTE_FETCH if pre_intent else None
+                failure_stage = _FailureStage.QUOTE_FETCH
                 quote = client.fetch_spy_limit_input(observed_at=at())
-                failure_stage = _FailureStage.QUOTE_VALIDATION if pre_intent else None
+                failure_stage = _FailureStage.QUOTE_VALIDATION
                 price = derive_kis_paper_marketable_limit(quote, side=side, observed_at=at())
-                failure_stage = _FailureStage.INITIAL_BINDING_WRITE if pre_intent else None
+                failure_stage = (
+                    _FailureStage.INITIAL_BINDING_WRITE
+                    if saved is None
+                    else _FailureStage.RECOVERY_BINDING_WRITE
+                )
                 if saved is None:
                     _atomic_json(binding_path, binding)
                 if active is None:
@@ -399,8 +420,8 @@ def run_kis_paper_spy_fill_cycle(
                         active_path,
                         {"cycle_ref": _digest(cycle_id), "account_ref": binding["account_ref"]},
                     )
-                failure_stage = None
                 if current is None:
+                    failure_stage = _FailureStage.LEG_INTENT_RECORD
                     decision_type = (
                         KisPaperCanaryBuyDecision if side == "buy" else KisPaperCanarySellDecision
                     )
@@ -421,45 +442,62 @@ def run_kis_paper_spy_fill_cycle(
                         now=at(),
                     )
                     states[side] = current
+                failure_stage = _FailureStage.LEG_BINDING_WRITE
                 binding[side + "_intent_ref"] = current.intent.fingerprint
                 _atomic_json(binding_path, binding)
 
                 def permitted(submit_at):
+                    nonlocal failure_stage
                     if not is_us_equity_regular_session_window(submit_at):
                         return False
+                    failure_stage = _FailureStage.QUOTE_VALIDATION
                     fresh_price = derive_kis_paper_marketable_limit(
                         quote, side=side, observed_at=at()
                     )
                     if fresh_price != current.intent.limit_price:
                         raise _RecoveryRequired("unsubmitted_price_changed")
                     if side == "sell":
+                        failure_stage = _FailureStage.RECOVERY_RECONCILE
                         rec = client.reconcile(states["buy"], now=at())
+                        failure_stage = _FailureStage.RECOVERY_FILL_RECORD
                         states["buy"] = _record_reconciliation_fill(
                             stores["buy"], states["buy"], rec, observed_at=at()
                         )
+                        failure_stage = _FailureStage.RECOVERY_VALIDATION
                         _require_current_fill(states["buy"], at())
                         if not _filled(states["buy"]):
                             raise _RecoveryRequired("entry_fill_unavailable")
-                    quantity, orders = _spy_book(client.snapshot(), at(), config)
+                    failure_stage = _FailureStage.ACCOUNT_SNAPSHOT
+                    fresh_snapshot = client.snapshot()
+                    failure_stage = _FailureStage.ACCOUNT_VALIDATION
+                    quantity, orders = _spy_book(fresh_snapshot, at(), config)
                     if quantity != expected_position or orders:
                         raise _RecoveryRequired("pre_submit_ownership_changed")
+                    failure_stage = _FailureStage.LEG_RUN
                     return True
 
                 rec = run_leg(side, permitted=permitted)
+                failure_stage = _FailureStage.RECOVERY_VALIDATION
                 current = states[side]
                 if current.phase == "intent_recorded":
                     # No entry POST means no cycle-owned inventory to reserve on worker exit.
                     if side == "buy" and states["sell"] is None:
+                        failure_stage = _FailureStage.OWNERSHIP_RELEASE
                         active_path.unlink(missing_ok=True)
                     return result("no_intent", "submission_not_started")
                 if _awaiting_history(current, rec.snapshot, at(), config):
                     return result("pending", "awaiting_fill_observation")
                 _require_current_fill(current, at())
                 if side == "sell" and _filled(current):
-                    quantity, orders = _spy_book(client.snapshot(), at(), config)
+                    failure_stage = _FailureStage.ACCOUNT_SNAPSHOT
+                    snapshot = client.snapshot()
+                    failure_stage = _FailureStage.ACCOUNT_VALIDATION
+                    quantity, orders = _spy_book(snapshot, at(), config)
+                    failure_stage = _FailureStage.RECOVERY_VALIDATION
                     _require_current_fill(states["buy"], at())
                     if quantity != 0 or orders:
                         raise _RecoveryRequired("closure_contradiction")
+                    failure_stage = _FailureStage.OWNERSHIP_RELEASE
                     active_path.unlink(missing_ok=True)
                     return result("complete", "exact_fills_flat")
                 if _filled(current) or _own_open(current, rec.snapshot):
@@ -479,7 +517,7 @@ def run_kis_paper_spy_fill_cycle(
         return KisPaperSpyFillCycleOutcome(
             "recovery_required", "evidence_unavailable", at(),
             failure_stage=failure_stage,
-            failure_category=None if failure_stage is None else _failure_category(error),
+            failure_category=_failure_category(error),
         )
 
 

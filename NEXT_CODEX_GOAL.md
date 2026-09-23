@@ -24,6 +24,29 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-23 KST)
 
+Latest same-cycle recovery: the owned SELL was acknowledged but stayed unfilled.
+One exact-ID cancellation was accepted; subsequent original-date reads show
+remaining zero and one distinct matching cancellation lineage with full
+quantity/zero fill/zero amount/no rejection. The cycle still owns one SPY.
+The prior generic recovery leaves this history-present cancellation unknown.
+The narrow parser/recovery repair and post-entry categorical diagnostics are
+implemented with704 focused passing tests. Final authority passes5,097/19
+skips in326.74s; seven deployed consumers match28 changed-source hashes.
+Runtime reattachment is not complete:14:40Z auth_rejected, then14:44Z SELL
+reconciliation unavailable despite later account/history reads succeeding.
+Durable SELL remains outcome_unknown, not cancelled. Exact safe receipts are
+in Execution. No replacement or new entry was submitted.
+
+Next bounded Execution work after cancellation reattachment: implement a
+durable linked exit continuation for the SAME buy inventory. Preserve the
+cancelled leg and its raw identity, persist any successor intent before POST,
+and reconcile all owned fills/position before pricing the residual exit.
+Do not change the old intent, reset the cycle, adopt inventory into the budget
+strategy, or treat cancel acknowledgement alone as terminal. Reconcile exact
+terminal cancellation first; a fresh priced successor is distinct from retrying
+an unknown POST. This is ordinary authorized Paper recovery, not an approval
+wait or another market-observation gate. The company objective remains open.
+
 2026-09-23 evening: exact owned cycle spy-fill-20260922-v1 now has a confirmed
 full buy fill, persisted original-date/intent binding, matching fresh SPY
 position and no SPY open order. Read-only recovery at 10:52:53Z used no order

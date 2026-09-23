@@ -146,6 +146,7 @@ class KisPaperExecutionObservation:
     status: str
     fill: KisPaperCumulativeFill | None = None
     observed_at: datetime | None = None
+    cancellation_confirmed: bool = False
 
     def __post_init__(self) -> None:
         if (
@@ -169,3 +170,13 @@ class KisPaperExecutionObservation:
             require_utc(self.observed_at)
             if self.fill is not None and self.fill.observed_at != self.observed_at:
                 raise ValueError("execution observation time mismatch")
+        if type(self.cancellation_confirmed) is not bool or (
+            self.cancellation_confirmed
+            and (
+                self.row_count < 2
+                or self.fill is None
+                or self.fill.quantity != 0
+                or self.fill.remaining_quantity != 0
+            )
+        ):
+            raise ValueError("cancellation observation invalid")

@@ -44,6 +44,7 @@ from .kis_paper_order_fields import (
     map_kis_paper_us_sell_limit_order_fields,
 )
 from .kis_paper_quote import (
+    KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
     KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
     KIS_PAPER_US_SPY_ASKING_PRICE_PATH,
     KIS_PAPER_US_SPY_PRICE_DETAIL_PATH,
@@ -1458,6 +1459,7 @@ def _run_kis_paper_canary(
             client=client,
             observed_at=observed_at,
             allow_order_side_effects=False,
+            clock=lambda: _canary_now(now=now, clock=clock),
         )
     elif not execute:
         # Preview persists the intent but never reads credentials or calls KIS.
@@ -1471,6 +1473,7 @@ def _run_kis_paper_canary(
             client=client,
             observed_at=observed_at,
             allow_order_side_effects=True,
+            clock=lambda: _canary_now(now=now, clock=clock),
         )
     elif observed_at >= intent.valid_until:
         state = state_store.transition(
@@ -2045,6 +2048,7 @@ def _recover_existing_canary(
     client: KisPaperCanaryClient | None,
     observed_at: datetime,
     allow_order_side_effects: bool,
+    clock: Callable[[], datetime],
 ) -> tuple[KisPaperCanaryState, KisPaperCanaryReconciliation]:
     try:
         if client is None:
@@ -2059,6 +2063,22 @@ def _recover_existing_canary(
             reconciliation,
             observed_at=observed_at,
         )
+        if (
+            state.phase in {"submitted", "cancel_started", "outcome_unknown"}
+            and reconciliation.execution is not None
+            and reconciliation.execution.cancellation_confirmed
+        ):
+            reconciled_at = clock()
+            if _confirmed_zero_fill_cancel(
+                state, reconciliation, environment=environment, now=reconciled_at
+            ):
+                return state_store.transition(
+                    state.intent,
+                    expected=frozenset({state.phase}),
+                    phase="cancelled",
+                    reason_code="reconciliation_clean",
+                    now=reconciled_at,
+                ), reconciliation
         if (
             allow_order_side_effects
             and state.phase == "outcome_unknown"
@@ -2133,9 +2153,40 @@ def _recover_existing_canary(
                 if reconciliation.status == "clean"
                 else "reconciliation_unresolved"
             ),
-            now=observed_at,
+            now=max(observed_at, state.updated_at),
         )
     return state, reconciliation
+
+
+def _confirmed_zero_fill_cancel(state, reconciliation, *, environment, now) -> bool:
+    observation, snapshot = reconciliation.execution, reconciliation.snapshot
+    if (
+        observation is None or not observation.cancellation_confirmed
+        or state.current_fill is None or state.current_fill != observation.fill
+        or not timedelta(0) <= now - observation.fill.observed_at
+        <= KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE
+        or snapshot is None or reconciliation.account_status != "available"
+        or not reconciliation.matching_ccnl or reconciliation.matching_open_order
+        or not snapshot.open_orders.complete
+        or state.broker_order_id is None
+        or (state.submission_started_at or state.submitted_at) is None
+        or any(
+            (order.symbol, order.exchange) == (state.intent.symbol, state.intent.exchange)
+            for order in snapshot.open_orders.orders
+        )
+    ):
+        return False
+    config = load_kis_paper_config_from_environment(environment)
+    times = [
+        observation.fill.observed_at, snapshot.captured_at, snapshot.identity.captured_at,
+        snapshot.open_orders.captured_at, snapshot.cash.captured_at,
+        snapshot.orderable_funds.captured_at,
+        *(item.captured_at for item in snapshot.positions),
+    ]
+    return snapshot.identity.masked_account == config.masked_account_identity and all(
+        timedelta(seconds=-5) <= now - timestamp <= KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE
+        for timestamp in times
+    )
 
 
 def _conflicts_with_intent_open_order(

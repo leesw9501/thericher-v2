@@ -76,6 +76,38 @@ helper exit; Ruff and both sample-env Compose configurations passed.
 
 ### Existing SPY Cycle Recovery
 
+Latest 2026-09-23 late-evening status supersedes the old no-sell facts below.
+The existing buy is full; its same-cycle sell was acknowledged, unfilled, and
+received one exact-ID cancel. Later complete observations bind original
+remaining zero to a distinct same-date cancel lineage with matching full
+quantity and no execution/rejection. One owned SPY remains. No replacement
+order or schedule change has occurred. Exact receipts are in Execution.
+
+The narrow repair is verified and deployed to seven consumers (28 matching
+changed-source hashes):704 focused tests,5,097 full passed/19 skips, eight
+workers,326.74s, clean helper exit; Ruff and both sample-env Compose configs.
+Actual reattachment at14:40Z failed authentication; at14:44Z the SELL recovery
+observation remained unavailable even though subsequent account/history reads
+succeeded. Its persisted state is still outcome_unknown. The probe's overall
+complete status means its steps ended, NOT that every leg recovered. Inspect
+the exact leg's cancellation_confirmed/account/fill/phase fields; never combine
+later independent history/account calls into its missing transition evidence.
+The old14:10Z worker-outcome also predates this read-only probe; it is not a
+current cancellation-state receipt. Do not repeat the already accepted cancel.
+
+The additive `cancellation_confirmed` observation is true only for this narrow
+zero-fill original-plus-cancel lineage, never for absence, a status label,
+cancel ACK, remaining zero alone, partial fills, or incomplete/duplicate rows.
+Existing pending recovery uses the current persisted fill and fresh complete
+account (no same-instrument open order) before marking it cancelled. It reads
+the completion clock after network work. Future fill observations do not
+qualify; unknown-state transitions preserve monotonic stored timestamps.
+The flag is transient; there is no private-state schema migration or new order
+capability. The next exit must have a linked new intent after confirmed cancel,
+not an edited/reused old intent or reset funding/cycle binding.
+Official field references: [history fields](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/inquire_ccnl/chk_inquire_ccnl.py),
+[cancel code 02 versus modify 01](https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/order_rvsecncl/order_rvsecncl.py).
+
 Current as of 2026-09-23 19:52 KST: the original buy's full fill is persisted
 and its position agrees, with no SPY open order. No sell leg exists. Exact safe
 receipt: `readonly-recovery-20260923T105253851682Z.json` in the cycle root below.

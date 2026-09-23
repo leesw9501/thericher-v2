@@ -21,12 +21,30 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
-Latest22:35 owned Paper result: `recovery_required/evidence_unavailable` after
-one visit. Offline exact-cycle parsing confirms a fresh full buy fill at
-13:35:02.799196Z and no sell state. No exit/flat/PnL success is claimed.
-Execution holds the immutable observation; next priority is post-entry failure
-localization/recovery of the SAME cycle, not a new entry. No task rescheduled
-or order submitted by this continuation; the23:50 budget owner is unchanged.
+2026-09-23 late-evening continuation advanced the SAME Paper cycle: its SELL
+was actually acknowledged, not filled, then received one exact-ID cancel.
+Later complete reads show original remaining zero plus a unique distinct
+full-quantity zero-fill cancellation lineage; the cycle still owns one SPY.
+No replacement buy/sell, state reset, strategy allocation or schedule change.
+The23:50 budget owner cannot adopt this diagnostic inventory.
+
+The concrete code gap is now identified: generic recovery kept a cancelled
+order unknown whenever its original row remained in history. A narrow typed
+lineage confirmation and existing-state transition repair are implemented;
+partial-fill/ambiguous/incomplete/stale evidence stays unresolved. The original
+22:35 generic exception is still not retrospectively explained. Closed-stage
+diagnostics now cover post-entry recovery too, without exception/private text.
+704 focused tests pass, including independent cancellation regressions. Final
+eight-worker authority passes5,097/19 skips in326.74s with clean helper exit;
+Ruff and both sample-env Compose configurations pass. Seven rebuilt consumers
+match all28 changed-source hashes. Exact deployment/receipts are in Execution.
+The14:40Z reattachment was auth_rejected. The14:44Z read-only attempt restored
+buy/account/history visibility, but its SELL reconciliation was unavailable:
+durable SELL remains outcome_unknown. Later reads in that same attempt again
+show cancel lineage/no open SPY/one owned share, not an atomic recovery proof.
+Next recover that exact cancelled leg, then implement a linked exit continuation,
+not reuse of its identity/price or an unrelated fresh cycle. Lifecycle closure,
+fees, settled cash and net PnL are not yet established.
 
 2026-09-23 22:21 KST: the NAS retention repair is now runtime-confirmed.
 All six targets advanced from2 to41 daily rows (234 added rows); six immutable

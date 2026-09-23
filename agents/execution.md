@@ -14,6 +14,42 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+2026-09-23 23:45 KST: SAME cycle's sell was actually acknowledged, remained
+zero-filled, and received one exact-ID cancellation (no replacement order).
+The latest read-only observation confirms original remaining quantity zero,
+one distinct same-date cancellation lineage with matching instrument/side/
+currency/full quantity, zero execution/amount/remaining, and no rejection.
+The account still holds the cycle's one SPY share; neither NASD nor AMEX
+open-order query contains an SPY order. This is not an exit or net-PnL result.
+The former generic recovery ignored this history-present cancellation. The
+narrow typed lineage confirmation/recovery repair is now verified and deployed,
+with no private schema or order-authority change.704 focused cases and final
+eight-worker authority5,097/19 skips in326.74s pass with clean helper exit.
+Ruff and both sample-env Compose configurations pass. Seven rebuilt consumers
+match28 changed-source hashes. Current session image:
+`sha256:d5445e90646099cb9b31336d6e422205e2b48d5898e48006abc11359c97c84f1`.
+Claude supported-with-limits and independent review found no concrete blocker.
+The14:40Z read-only reattachment failed authentication. At14:44Z BUY and later
+account/history reads succeeded, but SELL recovery itself was unavailable;
+the durable SELL remains outcome_unknown, with its retained totals preserved.
+Do not call this cancelled runtime recovery or merge the later observations
+into the missing transition. No further cancel or replacement was attempted.
+Next reattach this exact cancelled leg, then implement a linked residual exit;
+never reset/re-submit the old intent or adopt it into the budget strategy.
+Exact source-safe cancellation observation:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866\sell-reconcile-probe-20260923T142238535623Z.json`.
+SHA256:`cf6c64437bcb3e2d8029c11116187585729199073a98003e463edad48bdf183c`.
+Latest partial recovery observation (same root):
+`sell-reconcile-probe-20260923T144451059926Z.json`, SHA256
+`162e1939dbc83cc4df15dfe156ee06afc9fc2d7ea594ea3db77c326b923d8675`.
+Earlier auth failure:`sell-reconcile-probe-20260923T144018015465Z.json`, SHA256
+`ea59c9426a6ce593601b88be1ceffa2ee38a5525022470dbcee74fec89be8045`.
+The mutable worker-outcome remains its older14:10Z leg_outcome_unresolved;
+probe completion does not update that worker or prove a filled exit.
+No scheduler changed. The23:50 budget owner cannot adopt this inventory.
+
+Earlier scheduled-attempt facts below are superseded only by these observations.
+
 2026-09-23 22:35 KST owned task ran and exited after one visit:
 `recovery_required/evidence_unavailable`, not a completed exit. The existing
 private-state parser and exact cycle/leg checks independently reattached a
