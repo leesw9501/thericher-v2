@@ -14,6 +14,45 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+Latest September24 13:31:02Z same-cycle worker stopped after one visit with
+recovery_required/current_fill_unavailable. Exactly one successor is bound and
+recorded before submission; its phase is outcome_unknown with no broker ID,
+reason submit_kis_rejected, legacy category provider_rejected. The preceding
+classifier also mapped missing/noncanonical result codes to that category;
+raw response structure was not retained, so explicit rejection is unproved.
+Do not repost the tail, rewrite its category or release its inventory owner.
+Immutable offline observation:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866\offline-observation-20260924T133153071948Z.json`,
+SHA256 `cc5ddc8590a0bfbbc7371e42bdab9f9674c92e23f3ed56888e77e9892822056d`.
+The13:35:13Z read-only probe uses7 requests/6.071s and finds one owned SPY,
+zero SPY opens, zero current-day SPY history and no exact open candidate.
+Exact receipt under the same root: `successor-readonly-20260924T133513171769Z.json`,
+SHA256 `5e5c351ac06ff20a1329610185f06e90381a672a855d3dc0b399d8e740c024e6`.
+These absence facts do not prove rejection, cancellation or fill. The worker
+has exited; no competing order, manual task, reset or schedule expansion.
+Fees, settled cash, net PnL and lifecycle closure remain not_observed.
+
+Diagnostic-only correction: new missing/invalid result-code and contradictory
+rejection/reference categories now survive exception/state/evidence/lifecycle.
+All errors remain outcome_unknown; legacy records and ID-less recovery scope
+are unchanged.399 focused tests/1 skip plus80 independent research tests pass;
+full authority5,348 passed/19 skipped, eight workers,323.48s and clean helper
+exit. Ruff/both sample-env Compose configs pass. Eight rebuilt consumers match
+all40 selected source hashes; session image:
+`sha256:8d30d9c5be825470f50284054938fd76bc17087e9a1a016bdf40958a8f3a6505`.
+Independent review confirms the narrowed scope, not a terminal adjudication.
+Second read-only probe at13:58:04Z:7 requests/6.084s, complete current-day
+history, one owned SPY and zero open/history/exact-match rows. No order was
+submitted or state reclassified. Exact immutable receipt under the same root:
+`successor-readonly-20260924T135804994097Z.json`, SHA256
+`d38f3a509e435a1274792daff015c54dfc7c037d2197db30c493c04070548628`.
+No repeated foreground polling follows this bounded retry. The exact unknown
+tail needs a positively bound broker/terminal fact; buy/cancel facts remain
+valid separately. Budget owner is Ready/next_due September24 23:50 KST; its
+10-percent policy and ownership isolation are unchanged. Finite cycle has no
+next trigger. Claude supported-with-limits this scope; its review pointer is
+in orchestration. The company objective remains open, not awaiting approval.
+
 Current September24 evening: original SELL is now durably cancelled, not
 outcome_unknown. Read-only recovery at2026-09-24T12:59:24.085215Z confirms
 cancellation_confirmed=true, available account, matching history, no matching
@@ -40,7 +79,8 @@ Compose configurations pass. Eight rebuilt services match32 changed-source
 hashes. Session image:
 `sha256:7542453db5d4861425bf457bd2d333021d08f1c27ed4d2c30eb052985119da52`.
 Independent read-only review found no concrete successor regression. No real
-successor POST/fill has yet occurred. Earlier facts below are historical.
+successor fill has occurred. Its later single POST attempt is described above;
+earlier facts below retain their own historical scope.
 
 2026-09-24 follow-up: the September23 23:50 budget owner exited with
 no_intent/daily_receipt_not_eligible, not a submit or fill. Exact safe result:

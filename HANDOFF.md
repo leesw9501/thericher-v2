@@ -21,12 +21,42 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Latest September24 regular-session result: the linked successor intent was
+persisted and its POST was attempted once, but no broker identity was obtained.
+The legacy response category is provider_rejected; that old classifier also
+used this category for a missing/invalid result code, so this is NOT proof of
+terminal rejection. State remains outcome_unknown. A bounded read-only check
+at13:35:13Z finds one owned SPY, zero SPY opens and zero current-day SPY history
+rows. Absence does not close the unknown attempt. Exact receipts are in
+Execution; no identity reset, repeated POST or substitute exit followed.
+The classifier correction now distinguishes missing/invalid codes and a
+rejection/reference contradiction, with phases/recovery eligibility unchanged.
+399 focused tests/1 skip plus80 research tests pass. Final eight-worker
+authority:5,348 passed/19 skipped in323.48s, clean helper exit; Ruff and both
+sample-env Compose configurations pass. Eight rebuilt consumers match all40
+selected source hashes. The second correction is deployed; it changes no
+legacy state or recovery eligibility. A second bounded read-only probe at
+13:58:04Z again finds one SPY/no opens/no current-day history. No exact terminal
+fact is available; the company objective remains open, not awaiting approval.
+Parallel Engine completed the fixed low-turnover calendar study:54 cells,
+84/79 paired months per ETF with no missing pair. All six candidate means at
+20bps are negative and below the fixed comparison day. The descriptive
+criterion was not met; no model/Paper selection, GPU or retuning. The one-CPU,
+1GiB networkless run exited in4.18s including startup. Exact contract/result
+and source limitations are in Engine Research;80 focused tests passed.
+
+The existing local dashboard had exited four weeks earlier. It is now restarted
+with its original configuration, loopback-only127.0.0.1:8787, no KIS credentials
+or private-intent mount. Health=ok and mode=off; directional controls unchanged.
+It does not submit an order and does not turn old snapshots into current ones.
+
 Current September24 evening: read-only recovery of the SAME original SELL
 now confirms cancellation and persists phase=cancelled. The exact observation
 at12:59:24Z has cancellation_confirmed, fresh zero-fill/zero-remaining history,
 available account and no SPY open order. One cycle-owned SPY remains. Execution
 holds its exact receipt/hash; no additional cancel or order was sent.
-The linked successor exit is implemented and deployed, not yet submitted/filled.
+The linked successor exit implementation is deployed; its later attempted
+runtime continuation is the unresolved result above, not a filled exit.
 
 The stale daily SPY head was separately refreshed through September23 (99 rows,
 one page). Its actual baseline now evaluates ready/exit with first availability
@@ -38,7 +68,8 @@ Verification:628 changed-path serial passes,5,226 full passes/19 skips with
 eight workers in335.47s and clean helper exit. Ruff/both sample-env Compose
 configs pass. Eight rebuilt services match32 changed-source hashes. Independent
 review found no concrete successor regression; Claude supported-with-limits.
-No schedule changed. Next resume the exact cycle in the regular session.
+No schedule changed. The subsequent single continuation attempt is the
+unresolved current result above, not permission for another POST.
 
 Earlier observations below retain their own timestamps; the current paragraph
 supersedes their unknown-cancellation and stale-input status only.

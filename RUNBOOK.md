@@ -84,12 +84,28 @@ helper exit; Ruff and both sample-env Compose configurations passed.
 
 ### Existing SPY Cycle Recovery
 
+Latest September24 regular-session continuation attempted one linked successor.
+It is now outcome_unknown/no broker identity, with a legacy provider_rejected
+category that does not prove explicit rejection. The13:35Z read-only query
+finds one owned SPY and no SPY open/history row. Preserve that exact tail and
+all original identities; absence alone cannot authorize replay or a substitute
+exit. The diagnostic-only classifier change does not rewrite this legacy
+attempt or widen ID-less recovery. Execution retains the immutable evidence.
+The second13:58Z read-only probe again has one SPY/no opens/no current-day
+history; both inquiries use the attempted POST's exact New York date. Do not
+reinterpret a missing row or old ambiguous category as a terminal result.
+The correction is deployed to all eight consumers (40 matching source hashes).
+399 focused/1 skip plus80 research tests and full5,348/19 skipped in323.48s
+pass; eight workers/clean helper exit, Ruff/both Compose configs. No schedule
+changed; existing budget owner remains due September24 23:50 KST. Its exit
+signal does not adopt diagnostic inventory or imply any submitted/fill result.
+
 Current September24 evening: exact read-only reconciliation restored the
 original SELL to cancelled, with cancellation_confirmed, fresh zero-fill and
 available account evidence. One owned SPY remains; original IDs and accepted
 cancel are unchanged. Execution holds the12:59:24Z receipt/hash. Do not send
 the accepted cancellation again or reset the cycle. Linked-successor code is
-verified/deployed; no successor POST or flatness has yet been observed.
+verified/deployed; the later unresolved successor attempt is described above.
 The daily head has separately refreshed through September23 and yields exit;
 the23:50 budget strategy cannot adopt the diagnostic inventory or force entry.
 The earlier statuses below retain their timestamps, not the current phase.

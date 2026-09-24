@@ -182,6 +182,9 @@ _SAFE_SUBMIT_RESPONSE_CATEGORIES = frozenset(
         "legacy_response_incomplete",
         "not_observed",
         "payload_invalid",
+        "result_code_missing",
+        "result_code_invalid",
+        "rejection_with_order_reference",
         "provider_rejected",
         "success_order_reference_missing",
         "success_output_missing",
@@ -1227,7 +1230,10 @@ class KisPaperCanaryClient:
                 upstream_code=_submit_response_upstream_code(response),
                 submit_response_category=probe.category,
             )
-        if probe.category == "payload_invalid":
+        if probe.category in {
+            "payload_invalid", "result_code_missing", "result_code_invalid",
+            "rejection_with_order_reference",
+        }:
             raise KisPaperCanaryError(
                 "submit_response_incomplete",
                 submit_response_category=probe.category,
@@ -2293,10 +2299,32 @@ def inspect_kis_paper_buy_limit_response(
             upstream_code_state="not_checked",
         )
     upstream_code_state = _payload_upstream_code_state(payload)
-    if payload.get("rt_cd") != "0":
+    if "rt_cd" not in payload:
+        category = "result_code_missing"
+    elif not isinstance(payload["rt_cd"], str) or payload["rt_cd"] not in {"0", "1"}:
+        category = "result_code_invalid"
+    elif payload["rt_cd"] == "1":
+        output = payload.get("output")
+        if "output" in payload and not isinstance(output, Mapping):
+            category = "payload_invalid"
+        elif any(
+            key.upper() == "ODNO" and not isinstance(value, str)
+            for fields in (payload, output or {}) for key, value in fields.items()
+        ):
+            category = "payload_invalid"
+        elif any(
+            key.upper() == "ODNO" and value != ""
+            for fields in (payload, output or {}) for key, value in fields.items()
+        ):
+            category = "rejection_with_order_reference"
+        else:
+            category = "provider_rejected"
+    else:
+        category = None
+    if category is not None:
         return KisPaperSubmitResponseProbe(
             http_status_class=http_status_class,
-            category="provider_rejected",
+            category=category,
             upstream_code_state=upstream_code_state,
         )
     output = payload.get("output")

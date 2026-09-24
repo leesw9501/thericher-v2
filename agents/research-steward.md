@@ -5,6 +5,16 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Latest CPU appointment is closed: `tiingo-d1-first-session-month-development-v1`.
+Contract `sha256:cd61ca5b78138374cf916dbf82f943b7ecd1705710097ced3b142e32ac6d80c9`;
+summary `sha256:3e8f6a8bc05d4ef175a8caae62eaae7f8b95d61cf5b0b7db01708bafbb64b30e`.
+All54 frozen seen-data cells completed in4.18s including container startup,
+under the existing600-second supervisor and one-CPU/1GiB networkless Docker
+scope. Registry non_promoting_completed, no GPU/holdout/training/model
+selection or Paper input. Container/child exited and no appointment remains.
+The descriptive criterion was not met; details and source limitations belong
+to Engine Research. Existing Execution schedules/resources are unchanged.
+
 Latest closed CPU-only appointment: `firstrate-m5-opening-range-development-20260923-v1`,
 contract `sha256:8a02e63b4e2d08b5993625c20c2429d1bb62807bd86663bd87e0190d5143a83c`.
 One fixed rule/three costs/two symbols/two seen folds; no fitted parameters,

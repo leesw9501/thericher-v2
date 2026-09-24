@@ -14,27 +14,38 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 
 | Work | Owner / resource | Current fact and dispatch |
 | --- | --- | --- |
-| SPY lifecycle recovery | Execution / existing private state | September24 12:59Z read-only recovery now persists the original SELL as cancelled with exact fresh zero-fill cancellation proof. One owned SPY remains. Append-only successor is verified/deployed with independent review. Resume the SAME cycle, no original identity reset or new buy. |
+| SPY lifecycle recovery | Execution / existing private state | Same-cycle successor attempted once13:31Z, legacy provider_rejected but no broker ID, outcome_unknown. Read-only13:35Z and13:58Z: one owned SPY, no opens/current-day history. Worker exited; absence cannot close it and no substitute/repost follows. Diagnostic-only response classification is verified/deployed; actual closure remains open. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | Refreshed September23 input evaluates ready/exit. September23 historical no-intent predicate remains unproved. Closed predicate diagnostics are implemented without weakening eligibility. Windows owner next_due September24 23:50 KST;10-percent policy unchanged and no adoption of diagnostic inventory. |
-| Opening-range development | Engine Research / completed CPU worker | Fixed rule/two seen folds/three costs completed12 cells,159 one-share roundtrips in259.329s. First-fold positive/second-fold negative at3bps, descriptive criterion not met. No retuning, training, GPU or Paper replacement; immutable result/custody closed. Next main priority is the owned Paper exit. |
+| Low-turnover development | Engine Research / closed CPU package | Fixed first-session-of-month versus11th/cash completed54 cells on existing Tiingo data in4.18s including startup.84/79 paired months per symbol, no missing pair. All six stress-cost candidate means negative and below the comparator; descriptive criterion not met. No retuning, GPU, new weights or Paper input. Exact contract/result in Research. |
+| Local console | Execution / existing loopback web | Existing stopped container restarted with configuration unchanged.127.0.0.1:8787 health=ok, no broker credentials/private mount; mode=off, directional pauses unchanged. Current account projection was unavailable before the new execution observation. No public serving or order from dashboard startup. |
 | Data collection / finite D1 measurement | Data / existing tasks | SPY strategy head refreshed13:06Z:99 rows through September23. Failure-exit repair deployed; existing22:15 owner ran, next due September25 22:15 KST. NAS/pair previous41-session evidence remains historical; no new broad-cache claim. Finite D1 remains closed, not a prerequisite. |
 | GPU | Research Steward / allocation released | No owned training process or successor appointment. The completed position-policy study used CPU only; retained LSTM, LightGBM, TCN, attention and TimesFM artifacts remain external and unchanged. |
-| Verification | Orchestrator / completed integration |628 changed-path serial passes;5,226 full passes/19 skips with eight workers in335.47s and clean helper exit. Ruff/both Compose configs pass. Eight rebuilt services match32 changed-source hashes; no test worker remains. |
+| Verification | Orchestrator / completed integration |399 focused/1 skip plus80 research passes;5,348 full passes/19 skips with eight workers in323.48s and clean helper exit. Ruff/both Compose configs pass. Eight rebuilt services match40 selected-source hashes; no test worker remains. |
 
 ## Bottleneck And Reversible Improvement
 
-Main restored the exact cancellation and fresh baseline input while temporary
-agents implemented linked exits, closed diagnostics and collection failure
-exits. Independent review found no concrete successor safety regression.
-Measured bottleneck is now the missing executable continuation after a proven
-cancel, not account permission or D1. The append-only successor preserves
-old identities and makes that residual exit restart-recoverable. A separate
-post-callback deadline check prevents a slow permission read from marking an
-expired, never-sent request as submission_started. Both use existing paths.
-Combined authority and matching-consumer deployment are complete; next resume
-the owned cycle. Engine Research is independently preparing one distinct
-low-turnover package on existing data. No new scheduler, foreground market wait or manufactured GPU
-training. Existing23:50 strategy and Data owners remain unchanged.
+The remaining execution block is the successor's missing broker identity and
+ambiguous old response category, not permission, GPU readiness or D1. The
+original plan was exact cancellation -> append-only residual exit -> filled
+exit/flat reconciliation -> gross accounting. Cancellation and continuation
+implementation are done; the actual successor POST is unresolved. The retained
+category cannot distinguish rejection from malformed response. One bounded
+read-only probe found no candidate; absence is not terminal evidence.
+Ready alternatives were diagnostic-only response preservation (Execution,
+synthetic tests, no phase/authority change) and the distinct frozen monthly
+CPU hypothesis (Research,54 cells, fixed costs/comparator). Both now have
+completion evidence; diagnostic integration/deployment is complete. These
+packages do not erase the unresolved order or claim lifecycle completion.
+Recover the SAME identity only from an exact broker match/terminal fact; an
+operator-visible categorical error may narrow the cause but is not approval.
+Claude supported-with-limits this exact scope; external review is
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-unknown-successor-20260924.json`.
+Its prior-session-query concern does not apply: the existing probe uses the
+POST's exact New York date. A suggested sellable-quantity check is unobserved
+and could not independently prove this order's terminal outcome. Original
+entry/zero-fill-cancel facts remain valid; only the residual exit is unresolved.
+Do not reset/repost it or manufacture another research tuning pass to mask
+this block. Existing23:50 strategy and Data owners continue independently.
 
 C: remains measured-fast test scratch; data/models remain D:. Retained failed
 root `C:\trpy\runs\r-7784b455` is inactive and untouched, not a lease. No cleanup

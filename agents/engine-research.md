@@ -17,6 +17,29 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+Latest completed CPU study: `tiingo-d1-first-session-month-development-v1`.
+Fixed first NYSE session each month, same-day open/close, versus fixed11th
+session and cash; SPY/QQQ/IWM,2013-2019 and2020-July2026,5/10/20bps all-in
+roundtrip. All54 cells completed with84/79 paired months per symbol and no
+censored pair. At20bps all six candidate means are negative and below the
+fixed comparison day: `descriptive_criterion_not_met`. No retuning or winner.
+This is seen-data descriptive evidence, not a new holdout, statistical
+rejection, portfolio NAV or executable auction-price claim. Shared same-day
+scaling cancels, but independent price revisions and cost/fill uncertainty do
+not. No event-based exclusions, cross-day feature, training or GPU allocation.
+Independent static review and80 synthetic tests pass. Claude's frozen-contract
+challenge was supported-with-limits; its unverified no-split suggestion was
+not adopted. The existing Docker base image used one CPU/1GiB, network=none,
+read-only source/data and the existing600-second process supervisor. The
+actual run exited zero in4.18s including container startup; no child remains.
+Root: `D:\thericher-v2\model-artifacts\research\tiingo-d1-first-session-month-development-v1`.
+Contract: `sha256:cd61ca5b78138374cf916dbf82f943b7ecd1705710097ced3b142e32ac6d80c9`.
+Summary: `sha256:3e8f6a8bc05d4ef175a8caae62eaae7f8b95d61cf5b0b7db01708bafbb64b30e`.
+Source is the existing August9 Tiingo snapshot, overlapping prior studies,
+not newly acquired independent data. Registry outcome non_promoting_completed;
+no model, Paper input or successor compute appointment. Do not reopen this
+fixed comparison by optimizing the calendar day on its observed outcomes.
+
 Completed `fixed-forecast-diagnostic-h30-c36-v1` on CPU in 84.497s: all28
 retained LSTM/LightGBM/TCN/attention models reloaded, all84 parent model/cost
 cells reproduced, no training, GPU, new weights, retuning or held-out data.
@@ -627,9 +650,9 @@ dispatch restrictions. The current development package is described above.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | Existing controls remain rejected or structurally sparse | Freeze a new development-only hypothesis on existing lawful data; test action-invariant features rather than retrospectively weakening the closed mask |
-| Classical ML/statistical | Existing L2 result remains rejected | Match label and replay payoff in a linked development contract; separate past-known eligibility from future outcome censoring |
-| Sequence/DL/public model | Existing runtime/representation studies remain closed | After CPU feedback, freeze a finite small sequence comparison with explicit source assumptions and GPU custody; no D1 dependency or automatic promotion |
+| Technical/chart and momentum/regime | Opening-range and fixed monthly-day studies completed; descriptive criteria not met | A separately declared mechanism or replication, not a search for a better day/threshold on these results |
+| Classical ML/statistical | Ridge/LightGBM comparisons and fixed-forecast diagnostics completed without stable post-cost advantage | New target/feature mechanism and matched payoff, preserving already-seen sample lineage |
+| Sequence/DL/public model | LSTM/TCN/attention comparisons completed; TimesFM2.5 synthetic runtime works | A distinct finite campaign with naive controls and explicit source assumptions; no D1 dependency or GPU-utilization-only training |
 | Portfolio/allocation/meta-decision | Deterministic allocation foundation exists | Fixed-baseline risk/sizing development may use aligned source-local data; candidate ensembles still need the existing independent aligned-evidence contract |
 
 The fresh QQQ/SPY intraday terminal remains
@@ -714,9 +737,12 @@ developmental study or a separately scoped baseline Paper experiment.
 
 ## Active Constraint And Handoff
 
-Dispatch the ready development comparison above. Keep the original FirstRate
-losses and Tiingo sample shortage intact; neither proves all model families
-unusable. A later independent performance claim needs genuinely unseen evidence.
+The current monthly-day comparison is completed, not awaiting dispatch.
+Keep prior FirstRate losses and each Tiingo study's scoped limitations intact;
+none proves every model family unusable. No frozen research worker/appointment
+remains. A distinct development package may reuse seen data with that label;
+a later independent performance claim needs genuinely unseen evidence. The
+exact unresolved Paper successor is not a general research permission hold.
 
 The completed source-isolated CUDA appointment proved only loader, geometry,
 finite-run, and cleanup facts. It cannot change the unavailable QQQ/SPY causal

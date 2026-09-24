@@ -24,10 +24,26 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-24 KST)
 
+Latest13:31Z actual continuation is recovery_required/current_fill_unavailable.
+Exactly one successor is linked/persisted and attempted; its broker identity
+is absent, phase outcome_unknown and legacy category provider_rejected. That
+category cannot distinguish explicit rejection from missing result fields.
+Read-only13:35Z evidence has one SPY, no open SPY order and no current-day SPY
+history. Do not infer a terminal outcome from absence or repeat the POST.
+The diagnostic-only classifier correction is verified/deployed while
+retaining this exact unresolved scope; the second13:58Z read-only probe still
+finds no bound outcome. Final authority passes5,348/19 skips in323.48s, with
+eight workers/clean helper exit, Ruff/both Compose configs and40 matching
+source hashes across eight consumers. Independent low-turnover CPU research has
+completed54 cells with no missing paired month; its descriptive criterion
+was not met, with no retuning, GPU allocation or Paper input. Exact contract
+and result are in Engine Research; it is not a dependency on order recovery.
+The company lifecycle objective is still open, not an approval wait.
+
 Current evening recovery: the original SELL now persists cancelled with exact
 fresh zero-fill cancellation proof, available account and no SPY open order.
 One owned SPY remains. The append-only linked exit continuation is verified
-and deployed; next resume this SAME cycle without replacing its buy or old sell.
+and deployed; its one attempted runtime continuation is summarized above.
 The current daily SPY input was refreshed through September23 and evaluates
 ready/exit, not an entry signal. Closed no-intent diagnostics and nonzero
 collection-failure exits are integrated alongside the recovery. Current
