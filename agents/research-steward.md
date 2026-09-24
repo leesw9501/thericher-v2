@@ -5,7 +5,20 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
-Latest CPU appointment closed: `firstrate-m5-transition-cost-development-v1`,
+Latest closed CPU appointment: `firstrate-m5-causal-features-development-v1`: four raw-window
+and four15-feature Ridge fits,32 new paired cells and96 exact parent controls.
+Existing networkless sklearn image, one CPU/2GiB/900s; no GPU, new runtime,
+saved weights, holdout or Paper input. Contract:
+`sha256:95f522834a8d846b9f600602e9a9a1efa8fbcaecbb55a328f9cfcbbc6995866d`.
+Completed in142.123s including startup. All32 new pairs and the exact96-cell
+parent result passed the offline reader. Summary:
+`sha256:57ded7f558db276fde1bdd058d67eae4db10356a91d279085f0c1f29f5ee417b`.
+347 integrated tests pass in22.70s; independent static review found no issue.
+Registry non_promoting_completed, worker/container/agents exited. No active
+CPU/GPU appointment remains. Research owns the negative-gross interpretation
+and next fixed nonlinear interaction hypothesis; no winner or Paper promotion.
+
+Previous CPU appointment closed: `firstrate-m5-transition-cost-development-v1`,
 contract `sha256:140944b6be72926440582fa317dc1de1cabc98440fb1cd140f680cec717e53d1`.
 One CPU/2GiB/900s/networkless existing Docker; four unchanged final Ridge fits,
 six fixed policies,96 paired cells and48 parent-control reproductions. No GPU,
@@ -15,8 +28,8 @@ controls validated by the offline reader. Summary:
 `sha256:a164d95f7632c0e181c08c6fbbde4b2eb64da347fcb592c0cc3d72f24390080f`.
 207 focused tests and independent static review pass. Worker/container exited;
 registry non_promoting_completed and no active CPU/GPU appointment remains.
-Research owns the negative/cost-sensitive interpretation and next causal-feature
-comparison. Existing Execution ownership/schedules were not touched.
+Research owns the negative/cost-sensitive interpretation; its causal-feature
+follow-up is closed above. Existing Execution ownership/schedules were not touched.
 
 Previous CPU appointment closed: `firstrate-m5-policy-graph-development-v1`.
 Contract `sha256:74087f84dc70001685689ffb1747fe47b6a76587aba4e5345c2952a9806688d4`;

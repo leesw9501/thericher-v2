@@ -2,28 +2,32 @@
 
 ## Latest Bounded Research
 
-`scripts/run_firstrate_transition_policy.py` reuses the immutable CPU supervisor:
+`scripts/run_firstrate_causal_features.py` reuses the immutable CPU supervisor:
 `--freeze` binds source metadata/code before rows are loaded;
 `--run --contract-sha256 <exact hash>` owns one finite attempt, never an
 automatic retune/retry. Root:
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-transition-cost-development-v1`.
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-causal-features-development-v1`.
 Use the existing pinned sklearn image from its contract, one CPU/2GiB,
 900-second supervisor, network disabled, source/data read-only, and only the
 external artifact mount writable. No credentials, KIS, GPU or saved weights.
-The summary contains96 paired policy/cost cells, four fixed Ridge fits and48
-exact parent controls, plus transition counts and fixed-share open-mark
-drawdown, not portfolio NAV. Each target expires after30 minutes unless the
-next contiguous same-session target continues it. Gap/terminal exits still
-pay sell fees; decision-time utility uses nominal costs, not future prices.
-Every cost/planner cell reuses the same target sequence; no cost-specific fit.
-The one-pass attempt is completed and closed in115.171s including startup;
-do not rerun it. All96 pairs/48 controls and the result hash were independently
-read back.207 focused tests pass; worker/container exited. Exact contract/result
-hashes, cost-sensitive negative results and development limitations are in Research.
-The parent composed-policy and older Tiingo geometry directories remain
-closed. None is a Paper consumer or permission condition for independent
-Execution work. A stateful-vs-stateless net difference may include changed
-exposure; only a single policy's repeated-vs-merged saving is fee-only.
+Four raw-window Ridge fits must reproduce the full96-cell parent result;
+four feature Ridge fits produce32 new paired cells. The15 fixed columns
+summarize3/12/36 completed bars; scaling is TRAIN-only. No feature/alpha/window
+search. The fixed >6bps and position-state policies retain their3bps decision
+basis while1/3/5/10bps replay changes accounting only. Each H30 lease expires
+unless contiguous same-session input extends it; all expiry exits pay fees.
+The final summary publishes hashes/counts/aggregate research accounting only,
+not forecasts, rows or weights. Source-clock, zero-latency, common posthoc
+censoring and reused-development-data limitations remain. This comparison
+bundles representation/dimensionality/scaling; it does not isolate one feature's
+causal effect. The attempt completed in142.123s including startup;347 focused
+tests and exact offline readback pass. Both new policies have negative gross
+sums; no selected model. The worker/container exited and this attempt is closed.
+Exact immutable contract/result and limitations belong to Research.
+The parent transition/composed-policy studies remain closed. None is a Paper
+consumer or permission condition for independent Execution work. Differences
+between policies may include exposure changes; only a single policy's
+repeated-versus-merged saving is fee-only.
 
 ## Modes
 

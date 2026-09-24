@@ -21,25 +21,25 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
-Current September25 Research continuation: position-aware transition utility
-is implemented and exercised after the composed-policy slice. Four unchanged
-Ridge fits reproduce all48 parent controls; six policies/96 paired cells finish
-in115.171s in existing networkless CPU Docker. Entry/hold/exit utility uses a
-fixed3bps/side cost and calendar-known terminal boundary;30-minute target leases
-pay exit fees even across gaps. At3bps the state-aware mechanical one-share
-net sum is-40.3905 versus stateless-56.5418, but the previous Ridge rule is
-better at-17.6970. All four state-aware folds are negative. Lower turnover
-comes with greater exposure, so the improvement is not purely fee savings.
-These are development-slice sums, not portfolio/account returns or a selected
-profitable engine.207 focused tests pass in12.06s; independent static review,
-immutable result readback, Ruff and both sample-env Compose configs pass.
-Artifacts, exact pins, costs and limitations are in Engine Research. The
-contract-only Claude review is supported-with-limits, not a result endorsement.
-No KIS, credentials, orders, tasks, new data, GPU, saved fitted weights or
-runtime replacement in this package. Company lifecycle and its unknown
-successor remain unchanged. Next Research package is TRAIN-only causal
-trend/volatility/volume features versus the raw-window Ridge, reusing the
-tested transition layer without tuning this closed experiment's thresholds.
+Current September25 Research continuation: the fixed causal-feature comparison
+completed four raw/four15-feature Ridge fits in142.123s of networkless CPU
+Docker time. All96 parent cells reproduce exactly;32 new paired cells compare
+completed3/12/36-bar trend/volatility/volume features under unchanged hurdle and
+position-state policies. At3bps the mechanical one-share feature-hurdle net
+sum is-9.5978 versus raw-17.6970; feature-stateful is-36.0645 versus raw-40.3905.
+Both new policies have negative GROSS sums (-4.0082/-4.2286), so smaller
+losses do not establish improved prediction. These are seen-data slice sums,
+not portfolio/account returns or profitable-model selection. No threshold
+rescue or Paper replacement follows.347 focused tests pass in22.70s;
+independent static review, immutable readback, Ruff and both sample-env Compose
+configs pass. Exact root/pins and limitations are in Engine Research. Claude
+reviewed the contract only, supported-with-limits; it did not endorse results.
+Three disjoint agents and the CPU worker/container are finished. No KIS,
+credentials, orders, task changes, new data, GPU, saved weights or new runtime.
+The company lifecycle and unknown successor remain open with no fresh broker
+observation in this package. Next Research tests one fixed shallow-tree
+interaction hypothesis on these same15 features with TRAIN-only fitting,
+unchanged Ridge/cash controls and no feature/threshold/cost sweep.
 
 The preceding composed study remains closed:16 Ridge/four tree fits and160
 pairs. Its positive tree sum came from only two SPY earlier-fold trades, while
