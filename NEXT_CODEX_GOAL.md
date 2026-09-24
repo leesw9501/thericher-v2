@@ -24,13 +24,14 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-25 KST)
 
-Independent composed-policy Research package completed16 Ridge/four tree fits
-and160 paired cells in126.944s, with229 focused passing tests. Same-session
-local-paper entry/hold/exit now consumes rule/ML experts and fixed/learned
-fusion. The tree is positive only over two first-fold SPY trades; majority
-is negative in all four folds at3bps/side. This is development, not a selected
-profitable engine, Paper strategy or company-objective closure. Exact artifacts
-and the next position-aware transition-cost package are in Research.
+Independent position-aware Research package completed four unchanged Ridge
+fits/96 paired cells in115.171s, reproducing all48 parent controls.207 focused
+tests pass. At3bps/side the state-aware net sum improves stateless-56.5418 to
+-40.3905 but remains below the prior Ridge baseline-17.6970; these are seen-data
+one-share slice sums, not portfolio NAV or a profitable model. All four folds
+are negative. No GPU, KIS, new data or Paper-strategy change. Research retains
+the exact immutable result and next TRAIN-only causal-feature package. Neither
+this nor the preceding composed-policy study closes the company lifecycle.
 
 The current daily-SPY budget path was rechecked once at15:40Z after deploying
 closed stage/type diagnostics and meaningful CLI failure exits. It now returns
@@ -331,9 +332,15 @@ funding binding or inventing another manual-approval or profitability gate.
   performance is not a prerequisite for this exploratory composition. Keep
   seen-data limitations and exact results in Research. This independent
   package does not complete or block the outstanding Paper lifecycle.
-  Next bounded research work is position-aware entry/hold/exit utility and
-  transition-cost treatment, using fixed controls and explicitly developmental
-  evidence. Do not select the two-trade tree or reopen its closed matrix.
+  The position-aware follow-up is now complete: four unchanged Ridge fits,
+  six policies/96 paired cells and48 exact parent controls. It reduced losses
+  against stateless utility but did not beat the prior Ridge baseline or cash
+  at3bps. Next compare fixed causal trend/volatility/volume features against
+  raw-window Ridge, with TRAIN-only fitting/scaling and the tested transition
+  layer under a distinct finite development contract. Keep common support,
+  naive controls and future-input invariance; no cost/threshold search or
+  claim of fresh independent data. Do not select the two-trade tree or reopen
+  either closed matrix. This is parallel Research, not a second company goal.
 - Operator priority: broaden model families beyond LSTM configurations.
   The linked LightGBM/TCN/compact-attention comparison and fixed-weight
   persistent-position and fixed-forecast comparisons are complete above.

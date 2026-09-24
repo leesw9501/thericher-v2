@@ -302,6 +302,17 @@ All arms share one fixed decision basis; varying costs and repeated-versus-
 merged accounting never refits a model. It is not learned sizing, overnight
 accounting, multiasset allocation, an independent holdout or a KIS consumer.
 
+The next research slice isolates position state from forecasting:
+`transition_cost_policy` chooses a binary target using
+`x * forecast_bps - cost * abs(x - prior_position) - cost * x * terminal`.
+The position is the simulated prior filled target under the local-paper
+instant-fill assumption, not a broker balance. Each H30 target expires unless
+a contiguous same-session decision extends it. Calendar-terminal liquidation
+and missing-input expiry both pay actual replay exit fees. Stateful/stateless
+controls share forecasts and a fixed decision cost; accounting cost variants
+do not recompute targets. This is a myopic heuristic, not an optimal-control
+solver, calibrated net-edge estimate, new sizing rule or KIS adapter.
+
 The first paper candidate is a fixed, simple bar-only baseline with a small
 virtual exposure. It may collect KIS Paper evidence when long historical
 validation is limited, provided the input grade and missing-data behavior are

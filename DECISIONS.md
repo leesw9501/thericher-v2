@@ -10017,3 +10017,20 @@ Claude returned supported-with-limits and requested the explicit fixed-basis
 declaration. The engine output is a target, never broker authority. D1 overnight
 holding/sizing and DL experts are later increments, not implemented claims.
 The unresolved exact Paper successor and its recovery ownership are unchanged.
+
+## 2026-09-25 - Isolate position state and transition costs from forecasting
+
+Use one new seen-data development contract with the prior final Ridge/scaler
+unchanged: four fits must reproduce their hashes and all48 Ridge/cash/long
+control cells. Compare the fixed6bps rule, stateful and stateless transition
+utility, TRAIN-mean stateful control, cash and long. The fixed decision basis
+is3bps/side;1/3/5/10bps replay is accounting sensitivity. A next-window target
+pays a buy/sell cost only when position changes; terminal and missing-input
+expiry exits are still charged. The calendar, not the final available row,
+defines terminal decisions. Whole-session censoring follows all decisions.
+
+Claude supported-with-limits: this is a one-step nominal-bps heuristic, not
+optimal control, fresh validation or an exact breakeven rule. Different
+policies may change exposure, so their net differences are not just fee
+savings. Existing held/flat broker ownership, Paper authority and live ban
+are untouched. No threshold search, GPU, retained fitted weights or selection.

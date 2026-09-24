@@ -2,20 +2,28 @@
 
 ## Latest Bounded Research
 
-`scripts/run_firstrate_policy_graph.py` reuses the immutable CPU supervisor:
+`scripts/run_firstrate_transition_policy.py` reuses the immutable CPU supervisor:
 `--freeze` binds source metadata/code before rows are loaded;
 `--run --contract-sha256 <exact hash>` owns one finite attempt, never an
 automatic retune/retry. Root:
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-policy-graph-development-v1`.
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-transition-cost-development-v1`.
 Use the existing pinned sklearn image from its contract, one CPU/2GiB,
 900-second supervisor, network disabled, source/data read-only, and only the
 external artifact mount writable. No credentials, KIS, GPU or saved weights.
-The summary contains all160 paired policy/cost cells, chronological OOF fit
-facts and cumulative fixed-share open-mark drawdown, not portfolio NAV.
+The summary contains96 paired policy/cost cells, four fixed Ridge fits and48
+exact parent controls, plus transition counts and fixed-share open-mark
+drawdown, not portfolio NAV. Each target expires after30 minutes unless the
+next contiguous same-session target continues it. Gap/terminal exits still
+pay sell fees; decision-time utility uses nominal costs, not future prices.
 Every cost/planner cell reuses the same target sequence; no cost-specific fit.
-Exact contract/result hashes and development limitations are in Research.
-The previous Tiingo geometry directory is also closed; neither study is a
-Paper consumer or permission condition for independent Execution work.
+The one-pass attempt is completed and closed in115.171s including startup;
+do not rerun it. All96 pairs/48 controls and the result hash were independently
+read back.207 focused tests pass; worker/container exited. Exact contract/result
+hashes, cost-sensitive negative results and development limitations are in Research.
+The parent composed-policy and older Tiingo geometry directories remain
+closed. None is a Paper consumer or permission condition for independent
+Execution work. A stateful-vs-stateless net difference may include changed
+exposure; only a single policy's repeated-vs-merged saving is fee-only.
 
 ## Modes
 

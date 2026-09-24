@@ -17,56 +17,64 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
-Latest completed study: `firstrate-m5-policy-graph-development-v1`.
-Trend/reversion/Ridge experts, fixed majority, three leave-one-out blends,
-depth-two utility tree and cash/long controls now feed actual same-session
-local-paper entry/hold/exit replay. Sixteen Ridge/four tree fits use strictly
-chronological inner OOF and prefix-only scaling. All targets are frozen before
-EVAL outcomes. Fixed3bps/side standalone decision basis;1/3/5/10bps and
-repeated/persistent plans are accounting sensitivities, not additional fits
-or independent observations. No overnight, learned sizing or portfolio NAV.
+Latest completed study: `firstrate-m5-transition-cost-development-v1`.
+Four unchanged final Ridge fits reproduce the parent model/scaler identities
+and all48 Ridge/cash/long control cells. Six policies,96 paired cells/192
+planner cells use the same M5/context36/H30 support. Utility now distinguishes
+entry from holding: `U(x,q)=x*f-3*abs(x-q)-3*x*terminal`, with0/1 targets and
+cash on ties. Terminal is calendar-known, not the last observed row. Targets
+expire after30 minutes unless a contiguous same-session decision continues
+them; gap/terminal exits pay fees. The stateless ablation fixes utility q=0
+but keeps ordinary position accounting. This is a myopic nominal-cost rule,
+not optimal control, exact breakeven or broker-position management.
 
-All160 pairs/320 policy cells complete. SPY earlier/later and QQQ earlier/later
-retain377/372/378/372 decisions and63/62/63/62 history blocks; no future
-censoring. TRAIN counts4464/6726/4464/6732. Below are mechanical sums across
-the four fixed-one-share development slices, not a capital-normalized portfolio:
+SPY earlier/later and QQQ earlier/later retain377/372/378/372 decisions and
+63/62/63/62 history blocks; no future censoring. TRAIN counts4464/6726/4464/6732.
+Below are mechanical sums across four fixed-one-share development slices,
+not a capital-normalized portfolio, actual account result or fresh evidence:
 
-| Policy | Persistent roundtrips | Net USD at3bps/side | Net USD at5bps/side |
-| --- | ---: | ---: | ---: |
-| Trend | 388 | -70.2281 | -131.3025 |
-| Reversion | 262 | -65.7744 | -107.1143 |
-| Ridge | 162 | -17.6970 | -42.5761 |
-| Majority | 145 | -10.8940 | -33.1612 |
-| Utility tree | 2 | 1.3782 | 1.0404 |
-| Without trend | 24 | -2.7627 | -6.4173 |
-| Without reversion | 112 | -5.5199 | -22.7053 |
-| Without Ridge | 12 | -3.2758 | -5.1462 |
-| Cash | 0 | 0 | 0 |
-| Always long | 250 | -56.0780 | -95.3601 |
+| Policy | Persistent roundtrips | Exposure minutes | Net USD at3bps/side | Net USD at5bps/side |
+| --- | ---: | ---: | ---: | ---: |
+| Previous Ridge >6bps | 162 | 5370 | -17.6970 | -42.5761 |
+| Position-aware Ridge | 274 | 23070 | -40.3905 | -83.3525 |
+| Stateless utility Ridge | 329 | 12990 | -56.5418 | -107.9581 |
+| TRAIN mean / cash | 0 | 0 | 0 | 0 |
+| Always long | 250 | 44970 | -56.0780 | -95.3601 |
 
-The tree's two trades occur only in SPY's earlier fold; all other folds are
-flat. Positive utility nominations often name an inactive expert and then
-abstain, as frozen; nomination counts are NOT trades. This is insufficient
-economic evidence, not a selected profitable ensemble. Majority is negative
-in every fold at3bps. Trend merging cuts863 roundtrips to388 with identical
-gross21.3843; net3 improves from-181.5385 to-70.2281 solely by eliminated fees.
-Retain all controls and do not tune thresholds/tree depth on these outcomes.
+Position-aware utility improves the stateless comparison in all four folds,
+but each fold is still negative at3bps and the previous Ridge rule is better.
+The16.1513 net improvement comprises12.6798 lower fees and3.4715 changed gross
+payoff, with10080 more exposure minutes; it is NOT all fee savings. Worst
+single-fold open-mark drawdown is27.6256 versus25.9460 for stateless, not a
+portfolio drawdown. At1bps the position-aware sum is+2.5704, then negative at
+3/5/10bps; this does not establish cost-robust alpha or select a winner.
+Within that SAME policy, persistent/repeated plans retain identical gross
+24.0525 while reducing769 roundtrips to274 and saving116.4750 at3bps. Only
+this within-policy planner difference is a fee identity. Planned transitions:
+274 entries,495 holds,123 ordinary exits and151 expiry exits.
 
-Existing networkless sklearn Docker, one CPU/2GiB/900s, completed in126.944s
-including startup; worker/container exited.229 focused tests pass in39.86s,
-including real synthetic OOF/replay, future-OHLC invariance and cost parity.
-Independent review found a nested-output publication gap; it was fixed and
-rechecked before freezing. No GPU, saved fitted weights, fresh holdout or
-KIS input. Existing seen FirstRate data/source-clock and expanding-fold limits
-remain; this is engineering/development evidence, not executable profitability.
-Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-policy-graph-development-v1`.
-Contract: `sha256:74087f84dc70001685689ffb1747fe47b6a76587aba4e5345c2952a9806688d4`.
-Summary: `sha256:9df32417e4e3abca22cf1f7540bb3c2ae51645a972c0aadd3da1486295f1a736`.
-Claude contract/result verdicts supported-with-limits for mechanics only;
-adjacent `-review.json` and `-result-review.json`. Two trades cannot establish
-economic value. Inactive-winner cash is explicitly frozen and synthetic-tested,
-not an unreachable-active bug or permission quota. Neither zero latency nor
-unverified source facts supplies a rigorous real-return bound.
+The existing networkless sklearn Docker used one CPU/2GiB/900s and completed
+in115.171s including startup; worker/container exited.207 focused tests pass
+in12.06s, including future-outcome invariance, lease exits, local-paper fee
+parity, all parent controls and closed aggregate outputs. Independent static
+review found no concrete issue. A separate offline reader verified the exact
+immutable result. No GPU, saved fitted weights, new data, holdout or KIS input.
+Seen FirstRate source-clock/revision, zero-latency and expanding-fold limits
+remain; no cost/threshold tuning or Paper promotion follows.
+Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-transition-cost-development-v1`.
+Contract: `sha256:140944b6be72926440582fa317dc1de1cabc98440fb1cd140f680cec717e53d1`.
+Summary: `sha256:a164d95f7632c0e181c08c6fbbde4b2eb64da347fcb592c0cc3d72f24390080f`.
+Claude's contract-only verdict was supported-with-limits; exact external
+receipt: `D:\thericher-v2\model-artifacts\research\firstrate-m5-transition-cost-development-v1-review.json`.
+It did not independently review or endorse these real-data results.
+
+The parent composed-policy study remains closed:16 Ridge/four tree fits and
+160 paired cells in126.944s. Its tree earned+1.3782 at3bps over only two SPY
+earlier-fold trades; other folds were flat. Majority was negative in every
+fold. No profitable ensemble was selected. Prior details remain in Git and
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-policy-graph-development-v1`.
+Parent contract: `sha256:74087f84dc70001685689ffb1747fe47b6a76587aba4e5345c2952a9806688d4`.
+Parent summary: `sha256:9df32417e4e3abca22cf1f7540bb3c2ae51645a972c0aadd3da1486295f1a736`.
 
 Previous geometry Ridge study remains closed, with12 fits/108 cells and
 cost-fragile results;11/12 MSEs worse than TRAIN mean. Exact evidence:
@@ -709,7 +717,7 @@ dispatch restrictions. The current development package is described above.
 | Technical/chart and momentum/regime | Opening-range and fixed monthly-day studies completed; descriptive criteria not met | A separately declared mechanism or replication, not a search for a better day/threshold on these results |
 | Classical ML/statistical | Ridge/LightGBM comparisons and fixed-forecast diagnostics completed without stable post-cost advantage | New target/feature mechanism and matched payoff, preserving already-seen sample lineage |
 | Sequence/DL/public model | LSTM/TCN/attention comparisons completed; TimesFM2.5 synthetic runtime works | A distinct finite campaign with naive controls and explicit source assumptions; no D1 dependency or GPU-utilization-only training |
-| Portfolio/allocation/meta-decision | First rule/ML/fixed-blend/utility-tree composition completed; two tree trades do not prove skill | Next bounded development package: position-aware entry/hold/exit and transition-cost utility with fixed naive controls; later independent evaluation precedes deployment claims, not exploratory composition |
+| Portfolio/allocation/meta-decision | Composed-policy and position-aware transition utility completed; no cost-robust advantage | Reuse the tested lease/fee layer for a distinct TRAIN-only causal-feature comparison; do not tune utility costs/thresholds on these observed outcomes |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and
@@ -793,16 +801,22 @@ developmental study or a separately scoped baseline Paper experiment.
 
 ## Active Constraint And Handoff
 
-The current composed-policy comparison is completed, not awaiting dispatch.
+The composed-policy and position-aware comparisons are completed, not awaiting dispatch.
 Keep prior FirstRate losses and each Tiingo study's scoped limitations intact;
 none proves every model family unusable. No frozen research worker/appointment
 remains. A distinct development package may reuse seen data with that label;
 a later independent performance claim needs genuinely unseen evidence. The
 exact unresolved Paper successor is not a general research permission hold.
-Next Research package should improve the position-aware decision/reward
-contract and test transition costs, rather than expand model names or choose
-this two-trade tree. Freeze any subsequent fit as a distinct development
-contract with linked seen-data lineage; do not overwrite/reopen this run.
+Next Research package: compare fixed completed-bar trend/volatility/volume
+features against the unchanged raw-window Ridge forecast, using TRAIN-only
+fitting/scaling and the existing local-paper transition layer. Freeze a finite
+fit/control budget and common support before outcome access; keep the same
+cost basis rather than tuning thresholds or selecting this two-trade tree.
+This is a new seen-data development contract, not a new independent sample.
+Strongest kill tests are future-input changes to an earlier feature/target,
+TRAIN/EVAL leakage, or mismatch of the unchanged Ridge controls. A negative
+result closes its declared mechanism, not all engine research. No worker or
+compute appointment is implied until this separate package is dispatched.
 
 The completed source-isolated CUDA appointment proved only loader, geometry,
 finite-run, and cleanup facts. It cannot change the unavailable QQQ/SPY causal

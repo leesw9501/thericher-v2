@@ -5,7 +5,20 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
-Latest CPU appointment closed: `firstrate-m5-policy-graph-development-v1`.
+Latest CPU appointment closed: `firstrate-m5-transition-cost-development-v1`,
+contract `sha256:140944b6be72926440582fa317dc1de1cabc98440fb1cd140f680cec717e53d1`.
+One CPU/2GiB/900s/networkless existing Docker; four unchanged final Ridge fits,
+six fixed policies,96 paired cells and48 parent-control reproductions. No GPU,
+new forecast architecture, sealed holdout, retained fitted weights or Paper
+input. Completed in115.171s including startup; all96 pairs and48 exact parent
+controls validated by the offline reader. Summary:
+`sha256:a164d95f7632c0e181c08c6fbbde4b2eb64da347fcb592c0cc3d72f24390080f`.
+207 focused tests and independent static review pass. Worker/container exited;
+registry non_promoting_completed and no active CPU/GPU appointment remains.
+Research owns the negative/cost-sensitive interpretation and next causal-feature
+comparison. Existing Execution ownership/schedules were not touched.
+
+Previous CPU appointment closed: `firstrate-m5-policy-graph-development-v1`.
 Contract `sha256:74087f84dc70001685689ffb1747fe47b6a76587aba4e5345c2952a9806688d4`;
 summary `sha256:9df32417e4e3abca22cf1f7540bb3c2ae51645a972c0aadd3da1486295f1a736`.
 16 Ridge/four trees and160 paired cells completed in126.944s including
@@ -14,8 +27,8 @@ cost/planner variants spend no new fit or selection. No GPU, saved fitted
 weights, sealed holdout, model selection or KIS input. Registry records
 non_promoting_completed; worker/container exited and no appointment remains.
 229 focused tests pass; independent review correction/recheck complete.
-Research owns the two-trade/cost-fragile interpretation and next position-aware
-policy design. Previous geometry/monthly and sequence appointments remain
+Research owns the two-trade/cost-fragile interpretation; its position-aware
+follow-up is closed above. Previous geometry/monthly and sequence appointments remain
 closed with their external artifacts, not fresh evaluation allocations.
 
 Latest CPU appointment is closed: `tiingo-d1-first-session-month-development-v1`.

@@ -21,22 +21,31 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
-Current September25 Research continuation: the operator-approved composed
-policy slice is implemented and exercised, not only documented. Existing
-SPY/QQQ M5/H30 data feeds trend/reversion/Ridge experts, majority/ablation
-controls and an OOF-trained shallow utility tree, then stateful local-paper
-entry/hold/exit replay.16 Ridge/four tree fits,160 paired cells complete in
-126.944s CPU Docker time. At3bps/side the tree's mechanical one-share net sum
-is+1.3782 but from ONLY two SPY earlier-fold trades; other folds are flat.
-Majority145 trades net-10.8940, with all four folds negative. No profitable
-model selection, independent holdout or Paper replacement is established.
-229 focused tests pass; independent review repaired a nested-output gap.
-Contract/result/exact limits are in Engine Research. Policy/architecture now
-explicitly allow bounded exploratory composition without a profitable-member
-prerequisite. Next Research priority is position-aware transition-cost utility,
-not more isolated model names or tuning this closed result. No KIS, credentials,
-orders, tasks, GPU, runtime replacement or new fitted-weight retention in this
-package. The company lifecycle remains open; its unknown successor is unchanged.
+Current September25 Research continuation: position-aware transition utility
+is implemented and exercised after the composed-policy slice. Four unchanged
+Ridge fits reproduce all48 parent controls; six policies/96 paired cells finish
+in115.171s in existing networkless CPU Docker. Entry/hold/exit utility uses a
+fixed3bps/side cost and calendar-known terminal boundary;30-minute target leases
+pay exit fees even across gaps. At3bps the state-aware mechanical one-share
+net sum is-40.3905 versus stateless-56.5418, but the previous Ridge rule is
+better at-17.6970. All four state-aware folds are negative. Lower turnover
+comes with greater exposure, so the improvement is not purely fee savings.
+These are development-slice sums, not portfolio/account returns or a selected
+profitable engine.207 focused tests pass in12.06s; independent static review,
+immutable result readback, Ruff and both sample-env Compose configs pass.
+Artifacts, exact pins, costs and limitations are in Engine Research. The
+contract-only Claude review is supported-with-limits, not a result endorsement.
+No KIS, credentials, orders, tasks, new data, GPU, saved fitted weights or
+runtime replacement in this package. Company lifecycle and its unknown
+successor remain unchanged. Next Research package is TRAIN-only causal
+trend/volatility/volume features versus the raw-window Ridge, reusing the
+tested transition layer without tuning this closed experiment's thresholds.
+
+The preceding composed study remains closed:16 Ridge/four tree fits and160
+pairs. Its positive tree sum came from only two SPY earlier-fold trades, while
+majority was negative in every fold. It established no profitable ensemble.
+Bounded exploratory composition needs no standalone profitable-member gate;
+later performance/deployment claims still need appropriate evidence.
 
 Previous September25 00:40 KST: the daily-SPY budget path now reaches
 no_intent/existing_inventory_or_order_conflict using the current input and
