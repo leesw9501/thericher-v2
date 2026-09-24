@@ -5,6 +5,17 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Latest CPU appointment closed: `tiingo-d1-ohlc-geometry-ridge-development-v1`.
+Contract `sha256:3a5262cd8fc5f5cca44185e6298a9031786a92e9ee974271be9ce6b910a8d220`;
+summary `sha256:47c7add7624eef595e93955c60b11debd8180c76319549cd42f553c61eca7289`.
+12 fixed fits/108 cells completed in9.43s including startup within the single
+600-second budget, one CPU/1GiB/networkless Docker. No GPU appointment,
+holdout, retained fitted weights or model selection. All artifacts under the
+external Research root; registry non_promoting_completed, worker/container
+exited. Source/expanded-fold overlap is explicitly development-only, not new
+replication.133 focused tests and independent review pass. No successor compute
+reservation. Research owns the cost-fragile interpretation, not a Paper input.
+
 Latest CPU appointment is closed: `tiingo-d1-first-session-month-development-v1`.
 Contract `sha256:cd61ca5b78138374cf916dbf82f943b7ecd1705710097ced3b142e32ac6d80c9`;
 summary `sha256:3e8f6a8bc05d4ef175a8caae62eaae7f8b95d61cf5b0b7db01708bafbb64b30e`.

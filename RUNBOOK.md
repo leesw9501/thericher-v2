@@ -1,5 +1,17 @@
 # Runbook
 
+## Latest Bounded Research
+
+`scripts/run_tiingo_geometry_ridge_development.py` reuses the existing immutable
+CPU runner with separate `--freeze` and `--run --contract-sha256` modes. The
+completed single-pass study is under
+`D:\thericher-v2\model-artifacts\research\tiingo-d1-ohlc-geometry-ridge-development-v1`.
+Do not rerun, overwrite or retune that closed directory. Its12 fits/108 cells
+used the existing pinned sklearn image, one CPU/1GiB, no network/GPU and
+read-only source/data mounts; only the external artifact mount was writable.
+Exact contract/result hashes and interpretation are in Engine Research.
+No new runtime, schedule, broker route, fitted-weight retention or Paper input.
+
 ## Modes
 
 - `off`: no broker work; data/research and local simulation are available.

@@ -34,7 +34,10 @@ Existing owner next_due September25 23:50 KST, RestartCount=0. Exact outcomes
 and deployment hashes are in Execution. Company lifecycle closure still needs
 positive successor terminal/fill evidence;15:25Z read-only absence did not
 provide it. Do not repost/reset that unknown leg. Independent CPU geometry
-research continues without changing this single company objective.
+research completed12 fits/108 cells and133 focused tests, with a verified
+one-pass result. Cost-fragile positive development means do not select a
+winner or replace Paper; Research retains all comparisons. This does not
+change the single company objective or justify another same-data tuning pass.
 
 Latest13:31Z actual continuation is recovery_required/current_fill_unavailable.
 Exactly one successor is linked/persisted and attempted; its broker identity

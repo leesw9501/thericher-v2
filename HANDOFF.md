@@ -36,8 +36,14 @@ One fresh15:25Z read-only probe still finds one owned SPY/no open or history
 match for the exact successor date. Its unknown POST remains unresolved,
 not rejected or filled. No repeated foreground probe or substitute follows.
 The22:15 Data owner produced a separately verified99-row head through Sep23.
-Parallel Research is implementing a frozen5/20-session OHLC-geometry Ridge
-development comparison on existing Tiingo data; no actual run/result yet.
+Parallel Research completed the frozen5/20-session OHLC-geometry Ridge study:
+12 fits/108 cells in9.43s CPU Docker time including startup,133 focused tests,
+independent review and verified immutable results. Ridge5 SPY/QQQ have positive
+mean net values in both seen folds at10bps but all three symbols' later folds
+are negative at20bps;11/12 model MSEs are worse than TRAIN mean. No winner,
+retuning, GPU, retained new weights or Paper input. Exact contract/result and
+source limits are in Research. This is progress on model research, not closure
+of the outstanding unknown Paper successor.
 
 Latest September24 regular-session result: the linked successor intent was
 persisted and its POST was attempted once, but no broker identity was obtained.

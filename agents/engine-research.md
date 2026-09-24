@@ -17,6 +17,43 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
+Latest completed model study: `tiingo-d1-ohlc-geometry-ridge-development-v1`.
+Twelve fixed Ridge fits (3 ETFs x5/20-session windows x2 expanding folds),
+four controls and5/10/20bps all-in costs produce108 cells. Past-only OHLC
+geometry includes the completed decision day; target is next scheduled
+open-to-close return. TRAIN-only normalization and20-session label purge;
+fixed long/flat forecast>20bps at every cost. All three symbols retain2997/
+4759 TRAIN and1762/1653 DEV observations,84/79 disjoint21-session DEV blocks,
+zero input exclusions or outcome censoring. No cross-symbol row deletion.
+
+Ridge5 mean net bps per eligible decision at10bps, earlier/later folds:
+SPY0.796729/0.257291, QQQ0.759099/0.348516, IWM0.256378/-0.157962.
+Ridge5 trade counts27/49,87/89,32/78 respectively. At20bps every later-fold
+mean is negative; Ridge20 is negative in every symbol/fold at10 and20bps.
+Eleven of12 fitted model/fold MSEs exceed the TRAIN-mean forecast's MSE;
+only IWM5 later-fold slightly improves it. Full six two-fold comparisons,
+controls and identical cross-cost action hashes are retained, with no selected
+winner, statistical test or threshold retuning. Positive analytical means
+are not proof of executable profitability or portfolio returns.
+
+Existing sklearn-capable image, networkless/read-only source and data,
+one CPU/1GiB/600s budget; one pass completed in9.43s including container
+startup.133 focused synthetic/integration tests pass; independent frozen-code
+review found no issue. Claude contract/result verdicts supported-with-limits.
+No GPU, retained fitted weights, holdout, depth allocation or Paper consumer.
+Source is the same already-seen August9 Tiingo snapshot; expanding second
+TRAIN includes first DEV. Non-PIT/revision/auction/cost assumptions remain.
+The synthetic invariance tests do not prove historical availability or price
+revision neutrality, and no confidence/null-significance claim was computed.
+Root: `D:\thericher-v2\model-artifacts\research\tiingo-d1-ohlc-geometry-ridge-development-v1`.
+Contract: `sha256:3a5262cd8fc5f5cca44185e6298a9031786a92e9ee974271be9ce6b910a8d220`.
+Summary: `sha256:47c7add7624eef595e93955c60b11debd8180c76319549cd42f553c61eca7289`.
+Both review receipts are adjacent to that root, ending `-review.json` and
+`-result-review.json`. Registry non_promoting_completed; container/worker
+exited. No automatic parameter sweep to rescue this closed comparison.
+Next research preparation should target a separately frozen lower-turnover
+or later-data hypothesis, not reinterpret these folds as unseen validation.
+
 Latest completed CPU study: `tiingo-d1-first-session-month-development-v1`.
 Fixed first NYSE session each month, same-day open/close, versus fixed11th
 session and cash; SPY/QQQ/IWM,2013-2019 and2020-July2026,5/10/20bps all-in
