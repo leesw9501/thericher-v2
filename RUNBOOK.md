@@ -14,6 +14,18 @@ mode must fail before paper credentials are used.
 
 ### Ten-Percent Strategy Trial
 
+Current September25: budget CLI exit0 means preview/not_due/no_intent or
+order_complete, never an inferred fill. Recovery/unexpected status returns20;
+pending/deadline exhaustion returns21. The host launcher reports worker_failed
+for nonzero exits without relaunching. Verified Windows RestartCount=0;
+existing23:50 cadence and visit bounds are unchanged. Legacy non-budget exit
+behavior remains unchanged. Outcome failure_diagnostic is a closed stage/type/
+optional local-code projection, not exception or raw response text.
+The one15:40Z retry reached no_intent/existing_inventory_or_order_conflict.
+No diagnostic inventory adoption/order followed; the earlier14:50Z generic
+failure cannot be retrospectively explained. Exact receipts are in Execution.
+The unknown linked successor remains owned; do not reset or repost it.
+
 September24 offline follow-up: the September23 23:50 owner again returned
 no_intent/daily_receipt_not_eligible with no budget binding/intents. This reason
 currently combines input status, decision class and receipt validity; it cannot

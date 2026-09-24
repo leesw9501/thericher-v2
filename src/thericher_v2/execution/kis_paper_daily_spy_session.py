@@ -850,7 +850,7 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main(argv: Sequence[str] | None = None) -> None:
+def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     deadline = time.monotonic() + 1200 if args.budget_trial else None
@@ -867,6 +867,7 @@ def main(argv: Sequence[str] | None = None) -> None:
             parser.error("paper_configuration_unavailable")
 
     visits = args.budget_visits if args.budget_trial else 1
+    last_status = None
     for visit in range(visits):
         if deadline is not None and time.monotonic() >= deadline:
             break
@@ -889,6 +890,7 @@ def main(argv: Sequence[str] | None = None) -> None:
             client=client,
         )
         print(json.dumps(outcome.safe_payload(), sort_keys=True), flush=True)
+        last_status = outcome.status
         if deadline is None or outcome.status != "pending" or visit + 1 == visits:
             break
         remaining = deadline - time.monotonic()
@@ -896,6 +898,12 @@ def main(argv: Sequence[str] | None = None) -> None:
             break
         time.sleep(min(15, remaining))
 
+    if not args.budget_trial:
+        return 0
+    if last_status is None or last_status == "pending":
+        return 21
+    return 0 if last_status in {"preview", "not_due", "no_intent", "order_complete"} else 20
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

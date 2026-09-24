@@ -21,6 +21,24 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Current September25 00:40 KST: the daily-SPY budget path now reaches
+no_intent/existing_inventory_or_order_conflict using the current input and
+fresh account. It does not adopt the diagnostic SPY, submit a new order or
+reset the fixed10-percent budget. The prior23:50 owned run was
+recovery_required/evidence_unavailable; its historical cause remains unknown.
+Closed stage/type diagnostics and truthful budget CLI exits are now deployed
+to the daily-SPY consumer only, with both changed-source hashes matched.
+426 focused tests and independent review pass; no order/recovery predicate
+or retry/schedule was changed. Scheduler RestartCount=0. Execution holds the
+exact outcomes, hashes and deployment identity. Full company verification was
+not repeated for this isolated package; the previous authority remains below.
+One fresh15:25Z read-only probe still finds one owned SPY/no open or history
+match for the exact successor date. Its unknown POST remains unresolved,
+not rejected or filled. No repeated foreground probe or substitute follows.
+The22:15 Data owner produced a separately verified99-row head through Sep23.
+Parallel Research is implementing a frozen5/20-session OHLC-geometry Ridge
+development comparison on existing Tiingo data; no actual run/result yet.
+
 Latest September24 regular-session result: the linked successor intent was
 persisted and its POST was attempted once, but no broker identity was obtained.
 The legacy response category is provider_rejected; that old classifier also

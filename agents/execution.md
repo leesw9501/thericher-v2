@@ -14,6 +14,46 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+September25 00:40 KST: the current10-percent strategy retry completed one
+owned visit with no_intent/existing_inventory_or_order_conflict. Fresh input
+and account reached the ownership check; no order, adoption, budget reset,
+unknown-leg retry or schedule change. Exact result:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\daily-spy-20260924T153956542928Z\outcome.json`,
+SHA256 `0ce77b8563f2f3a03b57c6c4a236cd00544e79f9e3c62ef2980df3ac74697f1b`.
+The23:50 owner had failed recovery_required/evidence_unavailable at14:50:06Z:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\daily-spy-20260924T145002779622Z\outcome.json`,
+SHA256 `dcdb62d852ccc88fd123d5e3096ead3b4bd0a3d37f4bad0a0ddeb76986d26007`.
+Its cause is not reconstructible from that generic receipt. Current success
+does not identify it. Task next_due September25 23:50 KST, RestartCount=0.
+
+The additive failure_diagnostic now retains only closed stage/category and
+allowlisted typed codes, never exception messages or broker/private values.
+Budget CLI exits20 on recovery/unexpected status and21 on exhausted pending
+visits/deadline; benign terminals remain0 and legacy mode is unchanged. No
+extra visit, retry, predicate or state schema change.426 focused tests and
+independent static review pass. Both changed-source hashes match in the
+only rebuilt consumer, daily-SPY image
+`sha256:b350ac309199b87abd414ef5340e57640495368784973441661f6a4005668ee7`.
+No full authority rerun for this isolated role package. The attempted inactive
+test-scratch cleanup was denied by tool policy; `C:\trpy\budget-diag-d6bba0237b`
+is retained, not claimed cleaned or bypassed through another tool.
+
+The successor remains outcome_unknown/no broker identity. Fresh bounded
+read-only check15:25:58Z:7 requests/16.681s, complete exact POST-date history,
+one owned SPY, zero SPY opens/history/exact candidates. No state reclassification.
+Receipt under the exact cycle root below:
+`successor-readonly-20260924T152558777344Z.json`, SHA256
+`30668dba95e9fd7b5acd4b45423a81a993b417ed28c52c5e2f24c19cecce8918`.
+The15:25:17Z offline receipt confirms stable cycle/leg bytes and bindings;
+`offline-observation-20260924T152517481170Z.json`, SHA256
+`f5c8ac97be8001d01d86bdc08deeb3b250f1349fb2dc173f6fbae7db44d6f30b`.
+Cached account unavailability there is stale evidence, not flatness.
+No repeated foreground polling follows. Official pinned SELL request audit
+found no concrete TR/venue/body/hashkey defect; this is not proof the request
+was accepted or rejected. The old category is ambiguous and no raw response
+was retained. Exact terminal identity, filled exit, settled cash and net PnL
+remain unavailable; company objective is open, not waiting for authorization.
+
 Latest September24 13:31:02Z same-cycle worker stopped after one visit with
 recovery_required/current_fill_unavailable. Exactly one successor is bound and
 recorded before submission; its phase is outcome_unknown with no broker ID,

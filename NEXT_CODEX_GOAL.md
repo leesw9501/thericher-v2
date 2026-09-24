@@ -22,7 +22,19 @@ classification, plus these policy conflicts. It does not deploy an image,
 invoke a broker/task, fix the Paper state machine, train, or prove a pair result.
 See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
-## Current Progress (2026-09-24 KST)
+## Current Progress (2026-09-25 KST)
+
+The current daily-SPY budget path was rechecked once at15:40Z after deploying
+closed stage/type diagnostics and meaningful CLI failure exits. It now returns
+no_intent/existing_inventory_or_order_conflict, with no new order or adoption
+of the diagnostic SPY. The prior23:50 generic failure remains unattributed;
+the new success is not a retrospective explanation.426 focused tests and
+independent review pass; no strategy, recovery, identity or schedule change.
+Existing owner next_due September25 23:50 KST, RestartCount=0. Exact outcomes
+and deployment hashes are in Execution. Company lifecycle closure still needs
+positive successor terminal/fill evidence;15:25Z read-only absence did not
+provide it. Do not repost/reset that unknown leg. Independent CPU geometry
+research continues without changing this single company objective.
 
 Latest13:31Z actual continuation is recovery_required/current_fill_unavailable.
 Exactly one successor is linked/persisted and attempted; its broker identity

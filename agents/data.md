@@ -40,6 +40,18 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
+September25 offline reattachment verifies the actual22:15 owner head:
+`kis.paper.private.daily.head-v1.snapshot=20260924T131502508023Z-86ed43c76f90-spy-ams-v1`,
+dataset `sha256:e0b7856b3c3fa0c2add2f346c326d88959b94a12776d1457e3ca2f5781a5ecd3`.
+99 completed rows through September23, collected13:15:02Z under the existing
+daily-head/v1 root. This supersedes the manual13:06 recovery snapshot for the
+current consumer only. Existing first-availability receipt under
+`D:\thericher-v2\model-artifacts\_control\kis-paper-daily-spy-input-availability-v1\3c6b971f3fc81ae6e1d706167f35f1999c48cd1ba9f9c6e4b7847500a3400f52.json`
+is14:50:02.795428Z. Current baseline is ready/exit with validity through20:00Z,
+not an entry, profitable model or retrospective explanation of the failed
+budget run. No new data collection was needed for this read. Existing head
+owner next_due September25 22:15 KST. No broader cache/finality claim.
+
 September24 evening: the daily SPY strategy-head cache had remained at
 September21 despite a scheduled exit0. One existing-client page now retains
 99 completed rows through September23, collected13:06:22Z. Exact safe receipt:
