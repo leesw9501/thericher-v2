@@ -21,7 +21,24 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
-Current September25 00:40 KST: the daily-SPY budget path now reaches
+Current September25 Research continuation: the operator-approved composed
+policy slice is implemented and exercised, not only documented. Existing
+SPY/QQQ M5/H30 data feeds trend/reversion/Ridge experts, majority/ablation
+controls and an OOF-trained shallow utility tree, then stateful local-paper
+entry/hold/exit replay.16 Ridge/four tree fits,160 paired cells complete in
+126.944s CPU Docker time. At3bps/side the tree's mechanical one-share net sum
+is+1.3782 but from ONLY two SPY earlier-fold trades; other folds are flat.
+Majority145 trades net-10.8940, with all four folds negative. No profitable
+model selection, independent holdout or Paper replacement is established.
+229 focused tests pass; independent review repaired a nested-output gap.
+Contract/result/exact limits are in Engine Research. Policy/architecture now
+explicitly allow bounded exploratory composition without a profitable-member
+prerequisite. Next Research priority is position-aware transition-cost utility,
+not more isolated model names or tuning this closed result. No KIS, credentials,
+orders, tasks, GPU, runtime replacement or new fitted-weight retention in this
+package. The company lifecycle remains open; its unknown successor is unchanged.
+
+Previous September25 00:40 KST: the daily-SPY budget path now reaches
 no_intent/existing_inventory_or_order_conflict using the current input and
 fresh account. It does not adopt the diagnostic SPY, submit a new order or
 reset the fixed10-percent budget. The prior23:50 owned run was

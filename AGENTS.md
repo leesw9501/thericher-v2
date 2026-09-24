@@ -351,6 +351,14 @@ research, and model-side PnL attribution.
   availability assumptions. This is evidence custody, not a manual approval
   gate and never blocks a separately scoped paper canary or exploratory study.
 - Maintain breadth, depth, ensemble, and replication queues when useful.
+- Bounded exploratory policy composition may jointly specify rule/ML experts,
+  a fixed blend and a small learned gate as one development campaign. It does
+  not require profitable standalone members or invoke Cross-Track Synthesis.
+  Use chronological out-of-fold expert predictions for learned fusion, freeze
+  all decisions before evaluation outcomes, and compare cost/turnover against
+  the fixed blend and cash. Seen-data findings do not become fresh replication
+  or a deployment claim. This does not relax independently evaluated promotion
+  or the separate Execution boundary.
 - Treat GPU utilization as a consequence of eligible research, not a KPI.
 - Submit ready frozen campaigns to Research Steward for scarce-resource
   allocation. Do not invent training merely to increase utilization.

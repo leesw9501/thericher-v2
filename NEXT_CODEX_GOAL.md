@@ -24,6 +24,14 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-25 KST)
 
+Independent composed-policy Research package completed16 Ridge/four tree fits
+and160 paired cells in126.944s, with229 focused passing tests. Same-session
+local-paper entry/hold/exit now consumes rule/ML experts and fixed/learned
+fusion. The tree is positive only over two first-fold SPY trades; majority
+is negative in all four folds at3bps/side. This is development, not a selected
+profitable engine, Paper strategy or company-objective closure. Exact artifacts
+and the next position-aware transition-cost package are in Research.
+
 The current daily-SPY budget path was rechecked once at15:40Z after deploying
 closed stage/type diagnostics and meaningful CLI failure exits. It now returns
 no_intent/existing_inventory_or_order_conflict, with no new order or adoption
@@ -311,6 +319,21 @@ funding binding or inventing another manual-approval or profitability gate.
 
 ### Engine Research: Parallel Preparation
 
+- Current operator-approved direction: compare a composed target-position
+  policy, not only more isolated forecasting architectures. The bounded
+  `firstrate-m5-policy-graph-development-v1` package uses existing SPY/QQQ
+  M5/H30 same-session data, trend/reversion/Ridge experts, majority and
+  leave-one-out controls, and a depth-two utility gate trained on chronological
+  out-of-fold forecasts. Reuse existing local-paper position replay; freeze
+  decisions once and compare repeated/merged holding at1/3/5/10bps per side.
+  Completed one CPU pass,16 Ridge/four tree fits,160 paired cells; no new GPU/runtime,
+  overnight accounting, learned sizing or KIS consumer. Standalone positive
+  performance is not a prerequisite for this exploratory composition. Keep
+  seen-data limitations and exact results in Research. This independent
+  package does not complete or block the outstanding Paper lifecycle.
+  Next bounded research work is position-aware entry/hold/exit utility and
+  transition-cost treatment, using fixed controls and explicitly developmental
+  evidence. Do not select the two-trade tree or reopen its closed matrix.
 - Operator priority: broaden model families beyond LSTM configurations.
   The linked LightGBM/TCN/compact-attention comparison and fixed-weight
   persistent-position and fixed-forecast comparisons are complete above.
@@ -338,9 +361,8 @@ funding binding or inventing another manual-approval or profitability gate.
   deleted on2026-09-24 after offline reattachment. It is not a recurring worker;
   Windows task ownership/schedules remain unchanged. Current results are in
   Execution, not an automatically chained follow-up.
-- Freeze one development-only comparison on existing ETF data: a small rule
-  and linear baseline with the same feature timing, target payoff, replay,
-  costs, naive comparator, temporal split, and finite window/trial budget.
+- The composed-policy package above replaces the generic rule/linear research
+  assignment; do not create an additional unbounded model-name sweep.
 - Already-seen data may be development data, never a fresh holdout or a way to
   reverse an old frozen result. Preserve family lineage and report exclusions.
 - Run CPU feedback first. A ready, independently scoped small LSTM/TCN campaign

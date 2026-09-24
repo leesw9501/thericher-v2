@@ -9997,3 +9997,23 @@ unmeasured magnitude/count tolerances or repeated-agreement auto-finality:
 they neither prove correctness nor justify another collection gate. NAS here
 means the exchange code, not a network filesystem; existing local locking,
 immutable creation, hash checks and atomic-index publication are retained.
+
+## 2026-09-25 - Prioritize small policy composition over model-name expansion
+
+The operator approved testing a composed trading engine, not only isolated
+forecast architectures. Start with existing SPY/QQQ M5 data and same-session
+H30 execution: trend, reversion and Ridge experts; fixed majority and
+leave-one-out controls; one shallow utility tree fitted on chronological
+out-of-fold upstream forecasts. Reuse local-paper replay and the existing
+position planner to separate predictive contribution from avoided boundary
+fees. No new runtime, scheduler, agent lane, approval or positive-standalone
+profit prerequisite is needed for this development experiment.
+
+Freeze one 3bps/side standalone decision basis for all accounting sensitivities
+(1/3/5/10bps and repeated versus persistent positions), with 16 Ridge and four
+tree fits. Already-seen FirstRate history remains developmental; correlated
+symbols, expanding folds, source-clock limits and cost fragility remain visible.
+Claude returned supported-with-limits and requested the explicit fixed-basis
+declaration. The engine output is a target, never broker authority. D1 overnight
+holding/sizing and DL experts are later increments, not implemented claims.
+The unresolved exact Paper successor and its recovery ownership are unchanged.

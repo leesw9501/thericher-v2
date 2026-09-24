@@ -17,42 +17,61 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
-Latest completed model study: `tiingo-d1-ohlc-geometry-ridge-development-v1`.
-Twelve fixed Ridge fits (3 ETFs x5/20-session windows x2 expanding folds),
-four controls and5/10/20bps all-in costs produce108 cells. Past-only OHLC
-geometry includes the completed decision day; target is next scheduled
-open-to-close return. TRAIN-only normalization and20-session label purge;
-fixed long/flat forecast>20bps at every cost. All three symbols retain2997/
-4759 TRAIN and1762/1653 DEV observations,84/79 disjoint21-session DEV blocks,
-zero input exclusions or outcome censoring. No cross-symbol row deletion.
+Latest completed study: `firstrate-m5-policy-graph-development-v1`.
+Trend/reversion/Ridge experts, fixed majority, three leave-one-out blends,
+depth-two utility tree and cash/long controls now feed actual same-session
+local-paper entry/hold/exit replay. Sixteen Ridge/four tree fits use strictly
+chronological inner OOF and prefix-only scaling. All targets are frozen before
+EVAL outcomes. Fixed3bps/side standalone decision basis;1/3/5/10bps and
+repeated/persistent plans are accounting sensitivities, not additional fits
+or independent observations. No overnight, learned sizing or portfolio NAV.
 
-Ridge5 mean net bps per eligible decision at10bps, earlier/later folds:
-SPY0.796729/0.257291, QQQ0.759099/0.348516, IWM0.256378/-0.157962.
-Ridge5 trade counts27/49,87/89,32/78 respectively. At20bps every later-fold
-mean is negative; Ridge20 is negative in every symbol/fold at10 and20bps.
-Eleven of12 fitted model/fold MSEs exceed the TRAIN-mean forecast's MSE;
-only IWM5 later-fold slightly improves it. Full six two-fold comparisons,
-controls and identical cross-cost action hashes are retained, with no selected
-winner, statistical test or threshold retuning. Positive analytical means
-are not proof of executable profitability or portfolio returns.
+All160 pairs/320 policy cells complete. SPY earlier/later and QQQ earlier/later
+retain377/372/378/372 decisions and63/62/63/62 history blocks; no future
+censoring. TRAIN counts4464/6726/4464/6732. Below are mechanical sums across
+the four fixed-one-share development slices, not a capital-normalized portfolio:
 
-Existing sklearn-capable image, networkless/read-only source and data,
-one CPU/1GiB/600s budget; one pass completed in9.43s including container
-startup.133 focused synthetic/integration tests pass; independent frozen-code
-review found no issue. Claude contract/result verdicts supported-with-limits.
-No GPU, retained fitted weights, holdout, depth allocation or Paper consumer.
-Source is the same already-seen August9 Tiingo snapshot; expanding second
-TRAIN includes first DEV. Non-PIT/revision/auction/cost assumptions remain.
-The synthetic invariance tests do not prove historical availability or price
-revision neutrality, and no confidence/null-significance claim was computed.
-Root: `D:\thericher-v2\model-artifacts\research\tiingo-d1-ohlc-geometry-ridge-development-v1`.
-Contract: `sha256:3a5262cd8fc5f5cca44185e6298a9031786a92e9ee974271be9ce6b910a8d220`.
-Summary: `sha256:47c7add7624eef595e93955c60b11debd8180c76319549cd42f553c61eca7289`.
-Both review receipts are adjacent to that root, ending `-review.json` and
-`-result-review.json`. Registry non_promoting_completed; container/worker
-exited. No automatic parameter sweep to rescue this closed comparison.
-Next research preparation should target a separately frozen lower-turnover
-or later-data hypothesis, not reinterpret these folds as unseen validation.
+| Policy | Persistent roundtrips | Net USD at3bps/side | Net USD at5bps/side |
+| --- | ---: | ---: | ---: |
+| Trend | 388 | -70.2281 | -131.3025 |
+| Reversion | 262 | -65.7744 | -107.1143 |
+| Ridge | 162 | -17.6970 | -42.5761 |
+| Majority | 145 | -10.8940 | -33.1612 |
+| Utility tree | 2 | 1.3782 | 1.0404 |
+| Without trend | 24 | -2.7627 | -6.4173 |
+| Without reversion | 112 | -5.5199 | -22.7053 |
+| Without Ridge | 12 | -3.2758 | -5.1462 |
+| Cash | 0 | 0 | 0 |
+| Always long | 250 | -56.0780 | -95.3601 |
+
+The tree's two trades occur only in SPY's earlier fold; all other folds are
+flat. Positive utility nominations often name an inactive expert and then
+abstain, as frozen; nomination counts are NOT trades. This is insufficient
+economic evidence, not a selected profitable ensemble. Majority is negative
+in every fold at3bps. Trend merging cuts863 roundtrips to388 with identical
+gross21.3843; net3 improves from-181.5385 to-70.2281 solely by eliminated fees.
+Retain all controls and do not tune thresholds/tree depth on these outcomes.
+
+Existing networkless sklearn Docker, one CPU/2GiB/900s, completed in126.944s
+including startup; worker/container exited.229 focused tests pass in39.86s,
+including real synthetic OOF/replay, future-OHLC invariance and cost parity.
+Independent review found a nested-output publication gap; it was fixed and
+rechecked before freezing. No GPU, saved fitted weights, fresh holdout or
+KIS input. Existing seen FirstRate data/source-clock and expanding-fold limits
+remain; this is engineering/development evidence, not executable profitability.
+Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-policy-graph-development-v1`.
+Contract: `sha256:74087f84dc70001685689ffb1747fe47b6a76587aba4e5345c2952a9806688d4`.
+Summary: `sha256:9df32417e4e3abca22cf1f7540bb3c2ae51645a972c0aadd3da1486295f1a736`.
+Claude contract/result verdicts supported-with-limits for mechanics only;
+adjacent `-review.json` and `-result-review.json`. Two trades cannot establish
+economic value. Inactive-winner cash is explicitly frozen and synthetic-tested,
+not an unreachable-active bug or permission quota. Neither zero latency nor
+unverified source facts supplies a rigorous real-return bound.
+
+Previous geometry Ridge study remains closed, with12 fits/108 cells and
+cost-fragile results;11/12 MSEs worse than TRAIN mean. Exact evidence:
+`D:\thericher-v2\model-artifacts\research\tiingo-d1-ohlc-geometry-ridge-development-v1`.
+Its full facts remain in Git and its immutable summary, not a new tuning seed.
 
 Latest completed CPU study: `tiingo-d1-first-session-month-development-v1`.
 Fixed first NYSE session each month, same-day open/close, versus fixed11th
@@ -690,7 +709,7 @@ dispatch restrictions. The current development package is described above.
 | Technical/chart and momentum/regime | Opening-range and fixed monthly-day studies completed; descriptive criteria not met | A separately declared mechanism or replication, not a search for a better day/threshold on these results |
 | Classical ML/statistical | Ridge/LightGBM comparisons and fixed-forecast diagnostics completed without stable post-cost advantage | New target/feature mechanism and matched payoff, preserving already-seen sample lineage |
 | Sequence/DL/public model | LSTM/TCN/attention comparisons completed; TimesFM2.5 synthetic runtime works | A distinct finite campaign with naive controls and explicit source assumptions; no D1 dependency or GPU-utilization-only training |
-| Portfolio/allocation/meta-decision | Deterministic allocation foundation exists | Fixed-baseline risk/sizing development may use aligned source-local data; candidate ensembles still need the existing independent aligned-evidence contract |
+| Portfolio/allocation/meta-decision | First rule/ML/fixed-blend/utility-tree composition completed; two tree trades do not prove skill | Next bounded development package: position-aware entry/hold/exit and transition-cost utility with fixed naive controls; later independent evaluation precedes deployment claims, not exploratory composition |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and
@@ -774,12 +793,16 @@ developmental study or a separately scoped baseline Paper experiment.
 
 ## Active Constraint And Handoff
 
-The current monthly-day comparison is completed, not awaiting dispatch.
+The current composed-policy comparison is completed, not awaiting dispatch.
 Keep prior FirstRate losses and each Tiingo study's scoped limitations intact;
 none proves every model family unusable. No frozen research worker/appointment
 remains. A distinct development package may reuse seen data with that label;
 a later independent performance claim needs genuinely unseen evidence. The
 exact unresolved Paper successor is not a general research permission hold.
+Next Research package should improve the position-aware decision/reward
+contract and test transition costs, rather than expand model names or choose
+this two-trade tree. Freeze any subsequent fit as a distinct development
+contract with linked seen-data lineage; do not overwrite/reopen this run.
 
 The completed source-isolated CUDA appointment proved only loader, geometry,
 finite-run, and cleanup facts. It cannot change the unavailable QQQ/SPY causal

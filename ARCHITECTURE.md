@@ -267,6 +267,12 @@ a completed higher-timeframe signal.
 
 ### Layered Proof Rule
 
+This is a complexity and promotion rule, not a ban on testing a small composed
+policy before standalone experts are profitable. Development may compare
+jointly declared experts, a fixed blend and a small learned gate in one bounded
+campaign. Learned fusion consumes chronological out-of-fold expert outputs;
+the fixed blend is the comparator, not a profitability prerequisite.
+
 The graph is a destination architecture, not permission to build six learned
 layers at once. Each layer must earn its complexity against a simpler frozen
 baseline on one new eligible campaign contract:
@@ -287,6 +293,14 @@ layer may train on a prediction produced in-sample by an upstream expert. The
 final temporal holdout remains untouched until the entire preceding layer set is
 frozen. A failed incremental comparison removes that layer from the candidate
 graph rather than being tuned around indefinitely.
+
+The first executable composition slice is `firstrate_policy_graph`: SPY/QQQ
+M5/H30, trend/reversion/Ridge experts, majority/leave-one-out controls and a
+depth-two utility tree. The existing position planner converts binary target
+exposure into same-session entry/hold/exit spans and replays `local_paper`.
+All arms share one fixed decision basis; varying costs and repeated-versus-
+merged accounting never refits a model. It is not learned sizing, overnight
+accounting, multiasset allocation, an independent holdout or a KIS consumer.
 
 The first paper candidate is a fixed, simple bar-only baseline with a small
 virtual exposure. It may collect KIS Paper evidence when long historical
@@ -592,8 +606,9 @@ reproducibility and simple falsification controls.
 
 Data publishes immutable, source-separated snapshots; Research turns each
 eligible snapshot into a bounded breadth queue without reopening its bytes.
-The first pass compares genuinely different families and fixed naive baselines,
-then sends only independently replicated candidates to depth or ensemble work.
+The first pass compares genuinely different families and fixed naive baselines.
+Independent replication supports deployment-oriented depth/ensemble selection;
+bounded exploratory composition may be part of development before that point.
 One GPU job owns the device at a time, while CPU feature preparation,
 validation, and Data collection continue. A small control corpus can validate
 the path but cannot keep the GPU busy through parameter churn or qualify a

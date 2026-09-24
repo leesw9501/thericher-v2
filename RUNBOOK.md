@@ -2,15 +2,20 @@
 
 ## Latest Bounded Research
 
-`scripts/run_tiingo_geometry_ridge_development.py` reuses the existing immutable
-CPU runner with separate `--freeze` and `--run --contract-sha256` modes. The
-completed single-pass study is under
-`D:\thericher-v2\model-artifacts\research\tiingo-d1-ohlc-geometry-ridge-development-v1`.
-Do not rerun, overwrite or retune that closed directory. Its12 fits/108 cells
-used the existing pinned sklearn image, one CPU/1GiB, no network/GPU and
-read-only source/data mounts; only the external artifact mount was writable.
-Exact contract/result hashes and interpretation are in Engine Research.
-No new runtime, schedule, broker route, fitted-weight retention or Paper input.
+`scripts/run_firstrate_policy_graph.py` reuses the immutable CPU supervisor:
+`--freeze` binds source metadata/code before rows are loaded;
+`--run --contract-sha256 <exact hash>` owns one finite attempt, never an
+automatic retune/retry. Root:
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-policy-graph-development-v1`.
+Use the existing pinned sklearn image from its contract, one CPU/2GiB,
+900-second supervisor, network disabled, source/data read-only, and only the
+external artifact mount writable. No credentials, KIS, GPU or saved weights.
+The summary contains all160 paired policy/cost cells, chronological OOF fit
+facts and cumulative fixed-share open-mark drawdown, not portfolio NAV.
+Every cost/planner cell reuses the same target sequence; no cost-specific fit.
+Exact contract/result hashes and development limitations are in Research.
+The previous Tiingo geometry directory is also closed; neither study is a
+Paper consumer or permission condition for independent Execution work.
 
 ## Modes
 

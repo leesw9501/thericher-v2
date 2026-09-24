@@ -5,16 +5,18 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
-Latest CPU appointment closed: `tiingo-d1-ohlc-geometry-ridge-development-v1`.
-Contract `sha256:3a5262cd8fc5f5cca44185e6298a9031786a92e9ee974271be9ce6b910a8d220`;
-summary `sha256:47c7add7624eef595e93955c60b11debd8180c76319549cd42f553c61eca7289`.
-12 fixed fits/108 cells completed in9.43s including startup within the single
-600-second budget, one CPU/1GiB/networkless Docker. No GPU appointment,
-holdout, retained fitted weights or model selection. All artifacts under the
-external Research root; registry non_promoting_completed, worker/container
-exited. Source/expanded-fold overlap is explicitly development-only, not new
-replication.133 focused tests and independent review pass. No successor compute
-reservation. Research owns the cost-fragile interpretation, not a Paper input.
+Latest CPU appointment closed: `firstrate-m5-policy-graph-development-v1`.
+Contract `sha256:74087f84dc70001685689ffb1747fe47b6a76587aba4e5345c2952a9806688d4`;
+summary `sha256:9df32417e4e3abca22cf1f7540bb3c2ae51645a972c0aadd3da1486295f1a736`.
+16 Ridge/four trees and160 paired cells completed in126.944s including
+startup, within one CPU/2GiB/900s/networkless Docker. All targets frozen once;
+cost/planner variants spend no new fit or selection. No GPU, saved fitted
+weights, sealed holdout, model selection or KIS input. Registry records
+non_promoting_completed; worker/container exited and no appointment remains.
+229 focused tests pass; independent review correction/recheck complete.
+Research owns the two-trade/cost-fragile interpretation and next position-aware
+policy design. Previous geometry/monthly and sequence appointments remain
+closed with their external artifacts, not fresh evaluation allocations.
 
 Latest CPU appointment is closed: `tiingo-d1-first-session-month-development-v1`.
 Contract `sha256:cd61ca5b78138374cf916dbf82f943b7ecd1705710097ced3b142e32ac6d80c9`;

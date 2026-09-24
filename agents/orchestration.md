@@ -16,11 +16,11 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Successor unknown/no broker ID remains unchanged. One15:25Z read-only check again finds one owned SPY/no opens/no exact POST-date history candidate. Absence cannot close it; no repost/reset/substitute. Exact receipts in Execution; no worker remains. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | September24 23:50 owner failed evidence_unavailable. Isolated diagnostic/CLI-exit repair deployed, then one15:40Z retry reached no_intent/existing_inventory_or_order_conflict. No adoption or new order; historical cause still unknown. Existing owner next_due September25 23:50 KST, RestartCount=0;10-percent policy unchanged. |
-| Geometry model development | Engine Research / closed CPU package |12 fits/108 cost cells completed in9.43s with one CPU/1GiB/networkless Docker;133 focused passes and independent review. Some Ridge5 net means positive at10bps, all later folds negative at20bps,11/12 MSEs worse than TRAIN mean. No winner/retuning/Paper input. Exact hashes in Research; no worker remains. |
+| Composed-policy development | Engine Research / closed CPU package | Trend/reversion/Ridge, fixed majority/ablations and shallow OOF tree now feed existing stateful local-paper replay.16 Ridge/four tree fits,160 pairs complete in126.944s. Tree positive only on two first-fold SPY trades; majority negative at3bps. No winner/KIS input. Next bounded package is position-aware transition-cost utility. Exact hashes in Research; no worker remains. |
 | Local console | Execution / existing loopback web | Existing stopped container restarted with configuration unchanged.127.0.0.1:8787 health=ok, no broker credentials/private mount; mode=off, directional pauses unchanged. Current account projection was unavailable before the new execution observation. No public serving or order from dashboard startup. |
 | Data collection / finite D1 measurement | Data / existing tasks | Actual22:15 owner head now verified:99 rows through September23, collected13:15:02Z, current baseline ready/exit. Exact Data hash/availability retained; next_due September25 22:15 KST. No broader-cache/finality claim. Finite D1 remains closed, not a prerequisite. |
 | GPU | Research Steward / allocation released | No owned training process or successor appointment. The completed position-policy study used CPU only; retained LSTM, LightGBM, TCN, attention and TimesFM artifacts remain external and unchanged. |
-| Verification | Orchestrator / isolated packages complete |426 Execution tests pass in19.37s,133 research/integration tests in13.83s; independent reviews clean. Ruff and both Compose configs pass. Daily-SPY only rebuilt with two matching hashes; Research used its existing pinned image with RO source mounts. No full-suite rerun/company-completion claim. |
+| Verification | Orchestrator / isolated Research package complete |229 focused/related tests pass in39.86s; independent review found and rechecked a fixed nested-output gap. Ruff/both sample-env Compose configs pass. Research used its existing pinned image with RO source/data; no Execution rebuild, full-suite rerun or company-completion claim. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -52,6 +52,17 @@ Do not reset/repost it or manufacture another research tuning pass to mask
 this block. Existing23:50 strategy and Data owners continue independently.
 The15:25Z original-date absence adds no terminal evidence. Source-audit of the
 official SELL contract found no concrete request defect; do not invent one.
+
+Latest handoff review: no Data/Execution resource was needed by the composed
+policy package. Two disjoint implementation agents built expert/OOF fusion and
+replay/risk, while the orchestrator integrated the finite runner; independent
+review closed the output-shape defect. The existing CPU image ran the fixed
+study while focused synthetic tests ran on isolated C: scratch. The reversible
+improvement is jointly declared exploratory composition without a standalone
+profit gate, reusing exact payoff spans within each fold to avoid duplicate
+Paper replay. CPU job is closed; no GPU was needed. Next ready Research package
+is position-aware transition costs; an inactive nominated expert causing cash
+is recorded as the frozen routing behavior, not silently changed after results.
 
 C: remains measured-fast test scratch; data/models remain D:. Retained failed
 root `C:\trpy\runs\r-7784b455` is inactive and untouched, not a lease. No cleanup
