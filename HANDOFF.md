@@ -21,6 +21,28 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Current September24 evening: read-only recovery of the SAME original SELL
+now confirms cancellation and persists phase=cancelled. The exact observation
+at12:59:24Z has cancellation_confirmed, fresh zero-fill/zero-remaining history,
+available account and no SPY open order. One cycle-owned SPY remains. Execution
+holds its exact receipt/hash; no additional cancel or order was sent.
+The linked successor exit is implemented and deployed, not yet submitted/filled.
+
+The stale daily SPY head was separately refreshed through September23 (99 rows,
+one page). Its actual baseline now evaluates ready/exit with first availability
+13:06:56Z. This does not force a buy or move diagnostic inventory into the
+10-percent strategy. The September23 no-intent cause remains retrospectively
+unknown. Closed predicate diagnostics, nonzero collection failure exits and a
+post-permission-callback expiry check are part of the current repair.
+Verification:628 changed-path serial passes,5,226 full passes/19 skips with
+eight workers in335.47s and clean helper exit. Ruff/both sample-env Compose
+configs pass. Eight rebuilt services match32 changed-source hashes. Independent
+review found no concrete successor regression; Claude supported-with-limits.
+No schedule changed. Next resume the exact cycle in the regular session.
+
+Earlier observations below retain their own timestamps; the current paragraph
+supersedes their unknown-cancellation and stale-input status only.
+
 2026-09-24 00:20 KST follow-up: the September23 23:50 budget run again returned
 no_intent/daily_receipt_not_eligible. Offline existing-state parsing finds no
 budget binding or budget intents; the exact diagnostic cycle still has its

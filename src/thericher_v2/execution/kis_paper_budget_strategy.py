@@ -65,6 +65,34 @@ BUDGET_FRACTION = Decimal("0.10")
 _RUN_ID = re.compile(r"bs-[0-9a-f]{64}")
 _SHA = re.compile(r"sha256:[0-9a-f]{64}")
 _ORDER_LIFETIME = timedelta(minutes=5)
+_DAILY_RECEIPT_DIAGNOSTIC_CATEGORIES = {
+    "failed_predicate": frozenset(
+        {"input_status", "decision_class", "future_decision", "expired_validity"}
+    ),
+    "input_status": frozenset(
+        {
+            "ready",
+            "missing",
+            "stale",
+            "incomplete",
+            "duplicate",
+            "non_contiguous",
+            "misaligned",
+            "future",
+            "unqualified",
+        }
+    ),
+    "decision_class": frozenset({"enter", "exit", "abstain"}),
+    "reason_class": frozenset(
+        {
+            "eligible_enter",
+            "eligible_exit",
+            "input_unavailable",
+            "model_abstain",
+            "non_entry_proposal",
+        }
+    ),
+}
 
 
 @dataclass(frozen=True)
@@ -72,9 +100,10 @@ class KisPaperBudgetOutcome:
     status: str
     reason_code: str
     observed_at: datetime
+    daily_receipt_diagnostic: Mapping[str, str] | None = None
 
     def safe_payload(self) -> dict[str, object]:
-        return {
+        payload: dict[str, object] = {
             "kind": "kis_paper_spy_budget_strategy",
             "status": self.status,
             "reason_code": self.reason_code,
@@ -85,6 +114,19 @@ class KisPaperBudgetOutcome:
             "basis": "provisional_usd_orderable_funds_not_settled_cash",
             "net_pnl": "not_observed",
         }
+        if (
+            self.status == "no_intent"
+            and self.reason_code == "daily_receipt_not_eligible"
+            and self.daily_receipt_diagnostic is not None
+        ):
+            diagnostic = {}
+            for key, categories in _DAILY_RECEIPT_DIAGNOSTIC_CATEGORIES.items():
+                value = self.daily_receipt_diagnostic.get(key)
+                diagnostic[key] = (
+                    value if isinstance(value, str) and value in categories else "unrecognized"
+                )
+            payload["daily_receipt_diagnostic"] = diagnostic
+        return payload
 
 
 @dataclass(frozen=True, repr=False)
@@ -255,8 +297,8 @@ def run_kis_paper_budget_strategy(
         return KisPaperBudgetOutcome("preview", "preview", observed_at)
     paths_valid = False
 
-    def result(status, reason):
-        outcome = KisPaperBudgetOutcome(status, reason, at())
+    def result(status, reason, *, daily_receipt_diagnostic=None):
+        outcome = KisPaperBudgetOutcome(status, reason, at(), daily_receipt_diagnostic)
         destination = (
             artifact_root / "execution" / "kis-paper-spy-budget" / session_id / "outcome.json"
         )
@@ -434,12 +476,31 @@ def run_kis_paper_budget_strategy(
                     receipt = receipt_loader(at())
                 except (OSError, ValueError):
                     return result("no_intent", "daily_input_unavailable")
+                receipt_checked_at = None
                 if (
                     receipt.input_status != "ready"
                     or receipt.decision_class not in {"enter", "exit"}
-                    or not receipt.decided_at <= at() < receipt.valid_until
+                    or not receipt.decided_at <= (receipt_checked_at := at()) < receipt.valid_until
                 ):
-                    return result("no_intent", "daily_receipt_not_eligible")
+                    # Report the first failed predicate using its original clock sample.
+                    return result(
+                        "no_intent",
+                        "daily_receipt_not_eligible",
+                        daily_receipt_diagnostic={
+                            "failed_predicate": (
+                                "input_status"
+                                if receipt.input_status != "ready"
+                                else "decision_class"
+                                if receipt.decision_class not in {"enter", "exit"}
+                                else "future_decision"
+                                if receipt_checked_at < receipt.decided_at
+                                else "expired_validity"
+                            ),
+                            "input_status": receipt.input_status,
+                            "decision_class": receipt.decision_class,
+                            "reason_class": receipt.reason_class,
+                        },
+                    )
                 side = "buy" if receipt.decision_class == "enter" else "sell"
                 controls = PaperExecutionControlStore(execution_control_path).read()
                 if controls.pause_buys if side == "buy" else controls.pause_sells:

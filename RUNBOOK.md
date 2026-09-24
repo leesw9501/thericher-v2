@@ -84,6 +84,30 @@ helper exit; Ruff and both sample-env Compose configurations passed.
 
 ### Existing SPY Cycle Recovery
 
+Current September24 evening: exact read-only reconciliation restored the
+original SELL to cancelled, with cancellation_confirmed, fresh zero-fill and
+available account evidence. One owned SPY remains; original IDs and accepted
+cancel are unchanged. Execution holds the12:59:24Z receipt/hash. Do not send
+the accepted cancellation again or reset the cycle. Linked-successor code is
+verified/deployed; no successor POST or flatness has yet been observed.
+The daily head has separately refreshed through September23 and yields exit;
+the23:50 budget strategy cannot adopt the diagnostic inventory or force entry.
+The earlier statuses below retain their timestamps, not the current phase.
+
+Successor recovery is append-only in the existing private cycle binding:
+persist one deterministic link and immutable intent plan before its ledger,
+mark that exact prefix recorded before POST, and never repost a started or
+unknown attempt. Each predecessor must have fresh typed zero-fill cancellation
+proof; account ownership/open orders, pause controls and session are rechecked.
+Only the committed exact tail shares the SPY owner. Original IDs/prices remain
+unchanged. Partial or ambiguous ancestors cannot create a successor. An expired
+never-sent successor remains scoped unresolved rather than being repriced.
+The generic canary also rechecks time after a slow permission callback, before
+recording submission_started. The sequence releases ownership only after exact
+exit fills and fresh flat-account evidence. Gross flows are not settled cash
+or net PnL. Tests:628 serial,5,226 parallel/19 skips,335.47s; all32 source hashes
+match across eight rebuilt images. No scheduler expansion or new runtime.
+
 Latest 2026-09-23 late-evening status supersedes the old no-sell facts below.
 The existing buy is full; its same-cycle sell was acknowledged, unfilled, and
 received one exact-ID cancel. Later complete observations bind original

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import socket
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import replace
 from datetime import UTC, datetime, timedelta
@@ -8,7 +10,8 @@ from decimal import Decimal
 
 import pytest
 
-from thericher_v2.contracts import decision_instrument_binding_ref
+from thericher_v2.contracts import Bar, Timeframe, decision_instrument_binding_ref
+from thericher_v2.data.kis_paper_daily_spy_input import KisPaperDailySpyInput
 from thericher_v2.execution import kis_paper_budget_strategy as budget
 from thericher_v2.execution.kis_paper_canary import (
     KisPaperCanaryClient,
@@ -34,6 +37,9 @@ from thericher_v2.execution.kis_readonly import (
     KisPaperReadOnlySnapshot,
 )
 from thericher_v2.research.decision_receipt import ResearchDecisionReceipt, _derive_decision_id
+from thericher_v2.research.kis_paper_daily_spy_baseline import (
+    evaluate_kis_paper_daily_spy_baseline,
+)
 
 D = Decimal
 NOW = datetime(2026, 9, 22, 14, 30, tzinfo=UTC)
@@ -45,17 +51,26 @@ ENV = {
 }
 
 
-def receipt(at, action="enter", digit="a", symbol="SPY"):
+def receipt(
+    at,
+    action="enter",
+    digit="a",
+    symbol="SPY",
+    *,
+    input_status="ready",
+    reason_class=None,
+    valid_until=None,
+):
     fields = dict(
         campaign_ref="ref:" + digit * 64,
         model_ref="ref:" + "2" * 64,
         input_manifest_ref="sha256:" + "3" * 64,
         proposal_ref="ref:" + "4" * 64,
         decision_class=action,
-        input_status="ready",
+        input_status=input_status,
         decided_at=at,
-        valid_until=at + timedelta(minutes=10),
-        reason_class="eligible_" + action,
+        valid_until=valid_until if valid_until is not None else at + timedelta(minutes=10),
+        reason_class=reason_class or "eligible_" + action,
         instrument_binding_ref=decision_instrument_binding_ref(
             symbol=symbol,
             market="US",
@@ -65,6 +80,15 @@ def receipt(at, action="enter", digit="a", symbol="SPY"):
         schema_version=1,
     )
     return ResearchDecisionReceipt(decision_id=_derive_decision_id(**fields), **fields)
+
+
+@pytest.fixture(autouse=True)
+def no_network(monkeypatch):
+    def forbidden(*args, **kwargs):
+        pytest.fail("budget tests must not use the network")
+
+    monkeypatch.setattr(socket, "create_connection", forbidden)
+    monkeypatch.setattr(urllib.request, "urlopen", forbidden)
 
 
 class Broker(KisPaperCanaryClient):
@@ -532,3 +556,199 @@ def test_invalid_owned_private_state_is_a_scoped_spy_conflict(harness):
     (root / (binding["orders"][0]["run_id"] + ".json")).write_text("invalid synthetic state")
     assert budget.conflicts_with_budget_strategy(root, "legacy", "SPY")
     assert not budget.conflicts_with_budget_strategy(root, "legacy", "QQQ")
+
+
+@pytest.mark.parametrize(
+    "input_status,action,reason_class,decision_offset,validity_offset,failed_predicate",
+    [
+        (status, "abstain", "input_unavailable", 0, 0, "input_status")
+        for status in (
+            "missing",
+            "stale",
+            "incomplete",
+            "duplicate",
+            "non_contiguous",
+            "misaligned",
+            "future",
+            "unqualified",
+        )
+    ]
+    + [
+        ("ready", "abstain", reason, 0, 0, "decision_class")
+        for reason in ("model_abstain", "non_entry_proposal")
+    ]
+    + [
+        ("ready", action, "eligible_" + action, start, end, failure)
+        for action in ("enter", "exit")
+        for start, end, failure in (
+            (1, 600, "future_decision"),
+            (-600, 0, "expired_validity"),
+            (-600, -1, "expired_validity"),
+            (0, 0, "expired_validity"),
+        )
+    ],
+)
+def test_daily_receipt_diagnostic_preserves_rejection_and_short_circuit_clock(
+    harness,
+    input_status,
+    action,
+    reason_class,
+    decision_offset,
+    validity_offset,
+    failed_predicate,
+):
+    root, client, args = harness
+    signal = receipt(
+        NOW + timedelta(microseconds=decision_offset),
+        action,
+        input_status=input_status,
+        reason_class=reason_class,
+        valid_until=NOW + timedelta(microseconds=validity_offset),
+    )
+    expected_clock_calls = 4 if failed_predicate in {"input_status", "decision_class"} else 5
+    clock_calls = []
+
+    def clock():
+        clock_calls.append(None)
+        # Outcome serialization must not reclassify using this later timestamp.
+        return NOW + timedelta(minutes=20) if len(clock_calls) >= expected_clock_calls else NOW
+
+    outcome = budget.run_kis_paper_budget_strategy(
+        **{**args, "receipt_loader": lambda _: signal, "clock": clock, "session_id": "diagnostic"}
+    )
+    assert (outcome.status, outcome.reason_code) == ("no_intent", "daily_receipt_not_eligible")
+    payload = outcome.safe_payload()
+    assert payload["daily_receipt_diagnostic"] == {
+        "failed_predicate": failed_predicate,
+        "input_status": input_status,
+        "decision_class": action,
+        "reason_class": reason_class,
+    }
+    assert len(clock_calls) == expected_clock_calls
+    assert not client.calls and not client.submits and not client.cancels
+    assert not (root / budget.BUDGET_FILE).exists() and not list(root.glob("bs-*.json"))
+    destination = args["artifact_root"] / "execution/kis-paper-spy-budget/diagnostic/outcome.json"
+    assert json.loads(destination.read_text()) == payload
+    assert signal.decision_id not in json.dumps(payload)
+    assert signal.input_manifest_ref not in json.dumps(payload)
+
+
+@pytest.mark.parametrize("action", ["enter", "exit"])
+@pytest.mark.parametrize("decision_offset,validity_offset", [(0, 1), (-600, 1)])
+def test_daily_receipt_eligible_time_boundaries_do_not_gain_diagnostic(
+    harness,
+    action,
+    decision_offset,
+    validity_offset,
+):
+    _root, client, args = harness
+    # Stop an eligible receipt at the existing account-conflict check.
+    client.foreign = D(7)
+    signal = receipt(
+        NOW + timedelta(microseconds=decision_offset),
+        action,
+        valid_until=NOW + timedelta(microseconds=validity_offset),
+    )
+    outcome = budget.run_kis_paper_budget_strategy(**{**args, "receipt_loader": lambda _: signal})
+    assert outcome.reason_code == "existing_inventory_or_order_conflict"
+    assert "daily_receipt_diagnostic" not in outcome.safe_payload()
+    assert client.calls == ["snapshot"] and not client.submits
+
+
+@pytest.mark.parametrize(
+    "unsafe", ["raw_error_account_12345678_price_600.01", {"secret": "x"}, None]
+)
+def test_daily_receipt_diagnostic_serialization_is_closed(unsafe):
+    diagnostic = dict.fromkeys(
+        ("failed_predicate", "input_status", "decision_class", "reason_class"), unsafe
+    )
+    diagnostic["price"] = "600.01"
+    diagnostic["decision_id"] = "private-id"
+    diagnostic["error"] = "raw-provider-error"
+    outcome = budget.KisPaperBudgetOutcome(
+        "no_intent", "daily_receipt_not_eligible", NOW, diagnostic
+    )
+    assert outcome.safe_payload()["daily_receipt_diagnostic"] == {
+        "failed_predicate": "unrecognized",
+        "input_status": "unrecognized",
+        "decision_class": "unrecognized",
+        "reason_class": "unrecognized",
+    }
+    for status, reason in (("preview", "preview"), ("no_intent", "daily_input_unavailable")):
+        assert (
+            "daily_receipt_diagnostic"
+            not in replace(outcome, status=status, reason_code=reason).safe_payload()
+        )
+
+
+def test_legacy_budget_outcome_payload_is_unchanged():
+    assert budget.KisPaperBudgetOutcome(
+        "no_intent", "daily_receipt_not_eligible", NOW
+    ).safe_payload() == {
+        "kind": "kis_paper_spy_budget_strategy",
+        "status": "no_intent",
+        "reason_code": "daily_receipt_not_eligible",
+        "observed_at": NOW.isoformat(),
+        "paper_only": True,
+        "allocation_fraction": "0.10",
+        "decision_use": "existing_baseline_direction_only",
+        "basis": "provisional_usd_orderable_funds_not_settled_cash",
+        "net_pnl": "not_observed",
+    }
+
+
+@pytest.mark.parametrize(
+    "previous_day,last_day,available_at,status,proposal_reason",
+    [
+        (18, 21, NOW, "future", "daily_input_not_yet_available"),
+        (17, 18, NOW - timedelta(days=1), "stale", "daily_input_execution_window_expired"),
+        (17, 18, NOW, "stale", "daily_input_available_after_execution_session"),
+        (17, 21, NOW - timedelta(hours=1), "non_contiguous", "daily_input_sessions_non_contiguous"),
+    ],
+)
+def test_baseline_input_failures_keep_only_the_available_closed_receipt_reason(
+    harness,
+    previous_day,
+    last_day,
+    available_at,
+    status,
+    proposal_reason,
+):
+    root, client, args = harness
+    bars = tuple(
+        Bar(
+            symbol="SPY",
+            market="US",
+            timeframe=Timeframe.D1,
+            start_ts=NOW.replace(day=day, hour=0, minute=0),
+            open=D(600),
+            high=D(602),
+            low=D(599),
+            close=D(601),
+            volume=D(1000),
+            complete=True,
+        )
+        for day in (previous_day, last_day)
+    )
+    input = KisPaperDailySpyInput(
+        bars=bars,
+        catalog_dataset_id="synthetic-daily",
+        catalog_dataset_hash="sha256:" + "a" * 64,
+        last_consumed_session=bars[-1].start_ts.date(),
+        first_available_at=available_at,
+        input_manifest_ref="sha256:" + "b" * 64,
+        availability_record_path=root / "unused.json",
+    )
+    evaluation = evaluate_kis_paper_daily_spy_baseline(input, as_of=NOW)
+    assert evaluation.proposal.reason == proposal_reason
+    outcome = budget.run_kis_paper_budget_strategy(
+        **{**args, "receipt_loader": lambda _: evaluation.receipt}
+    )
+    assert (outcome.status, outcome.reason_code) == ("no_intent", "daily_receipt_not_eligible")
+    assert outcome.safe_payload()["daily_receipt_diagnostic"] == {
+        "failed_predicate": "input_status",
+        "input_status": status,
+        "decision_class": "abstain",
+        "reason_class": "input_unavailable",
+    }
+    assert not client.calls and not (root / budget.BUDGET_FILE).exists()

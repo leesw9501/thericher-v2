@@ -1549,6 +1549,15 @@ def _run_kis_paper_canary(
                     reason_code="session_closed",
                     now=submit_at,
                 )
+            elif (submit_at := _canary_now(now=now, clock=clock)) >= intent.valid_until:
+                # The permission callback may have performed slow account reads.
+                state = state_store.transition(
+                    intent,
+                    expected=frozenset({"intent_recorded"}),
+                    phase="intent_recorded",
+                    reason_code="intent_expired",
+                    now=submit_at,
+                )
             else:
                 state = state_store.transition(
                     intent,

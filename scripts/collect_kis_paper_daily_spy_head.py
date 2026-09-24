@@ -16,6 +16,7 @@ from thericher_v2.execution.kis_market_data import (
 )
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_CONTROL_DIRECTORY,
+    KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
     KisPaperMarketDataRateGate,
     KisPaperMarketDataTokenStartGate,
 )
@@ -26,6 +27,23 @@ from thericher_v2.execution.kis_paper_daily_spy_head import (
 )
 
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+_RECOVERY_EXIT = 20
+_MARKET_DATA_FAILURE_CATEGORIES = frozenset(
+    {
+        "config_missing",
+        "paper_host_required",
+        "request_not_allowlisted",
+        "redirect_rejected",
+        "transport_failure",
+        "response_invalid",
+        "daily_response_invalid",
+        "daily_page_limit_exceeded",
+        "rate_limited",
+        "auth_rejected",
+        "auth_response_invalid",
+        KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON,
+    }
+)
 
 
 def main(
@@ -33,7 +51,7 @@ def main(
     *,
     clock: Callable[[], datetime] = lambda: datetime.now(UTC),
     dotenv_path: Path = _REPOSITORY_ROOT / ".env",
-) -> None:
+) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--cache-root", type=Path, default=KIS_PAPER_DAILY_SPY_HEAD_ROOT)
@@ -41,39 +59,74 @@ def main(
     args = parser.parse_args(argv)
     if not args.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
-        return
+        return 0
+    failure_stage = "environment"
     try:
         config = load_kis_paper_market_data_config(dotenv_path)
+        failure_stage = "control_gate"
         request_gate = KisPaperMarketDataRateGate(
             control_root=_shared_control_root(Path(args.cache_root))
         )
         token_start_gate = KisPaperMarketDataTokenStartGate(
             control_root=_shared_control_root(Path(args.cache_root))
         )
-        result = collect_kis_paper_daily_spy_head_once(
-            KisPaperMarketDataClient(
-                config=config,
-                transport=UrllibKisPaperMarketDataTransport(
-                    request_gate=request_gate,
-                    token_start_gate=token_start_gate,
-                ),
+        failure_stage = "client_setup"
+        client = KisPaperMarketDataClient(
+            config=config,
+            transport=UrllibKisPaperMarketDataTransport(
+                request_gate=request_gate,
+                token_start_gate=token_start_gate,
             ),
+        )
+        failure_stage = "collection"
+        result = collect_kis_paper_daily_spy_head_once(
+            client,
             cache_root=args.cache_root,
             repository_root=args.repository_root,
             observed_at=clock(),
         )
-    except KisPaperMarketDataError:
+        payload = result.safe_payload()
+    except Exception as error:
+        # Exception messages can contain provider bodies or private paths.
+        reason = "daily_head_unavailable"
+        if isinstance(error, KisPaperMarketDataError):
+            reason = "market_data_unavailable"
+            category = "market_data_error"
+            if (
+                len(error.args) == 1
+                and type(error.args[0]) is str
+                and error.args[0] in _MARKET_DATA_FAILURE_CATEGORIES
+            ):
+                category = error.args[0]
+        elif isinstance(error, KisPaperDailySpyHeadError):
+            category = "head_contract"
+        elif isinstance(error, OSError):
+            category = "io_error"
+        elif isinstance(error, ValueError):
+            category = "invalid_input"
+        else:
+            category = "unexpected_error"
         print(
             json.dumps(
-                {"status": "unavailable", "reason": "market_data_unavailable"},
+                {
+                    "status": "unavailable",
+                    "reason": reason,
+                    "failure_stage": failure_stage,
+                    "failure_category": category,
+                },
                 sort_keys=True,
             )
         )
-        return
-    except (KisPaperDailySpyHeadError, OSError, ValueError):
-        print(json.dumps({"status": "unavailable", "reason": "daily_head_unavailable"}))
-        return
-    print(json.dumps(result.safe_payload(), sort_keys=True))
+        return _RECOVERY_EXIT
+    if result.status == "unavailable":
+        payload.update(
+            failure_stage="collection",
+            failure_category="insufficient_completed_rows",
+        )
+        print(json.dumps(payload, sort_keys=True))
+        return _RECOVERY_EXIT
+    print(json.dumps(payload, sort_keys=True))
+    return 0
 
 
 def _shared_control_root(cache_root: Path) -> Path:
@@ -85,4 +138,4 @@ def _shared_control_root(cache_root: Path) -> Path:
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

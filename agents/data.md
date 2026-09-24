@@ -40,6 +40,22 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
+September24 evening: the daily SPY strategy-head cache had remained at
+September21 despite a scheduled exit0. One existing-client page now retains
+99 completed rows through September23, collected13:06:22Z. Exact safe receipt:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\head-recovery-20260924T130623723850Z.json`,
+SHA256 `7d3c3911c7a47cdcd47c4e9227172cfe14e952dfceb3005b207738c36d877ab7`.
+Dataset hash `sha256:bb5e1bdaf1726e4b97fe9a47491a8977f208a447766e15e0471e0d8d41f6cee3`;
+raw rows remain in `D:\market_data\us_equities\kis_paper_private\daily-head\v1`.
+The existing baseline observes ready/exit from this snapshot. This is not a
+Paper fill, predictive skill, provider finality or explanation of the earlier
+failed run. The CLI now returns exit20 and closed stage/category diagnostics
+for unavailable collection; successful output is unchanged.35 focused tests
+and the combined5,226-pass authority suite pass; the head image is rebuilt and
+hash-matched. Its existing22:15 KST owner ran again with exit0, next due
+September25 22:15 KST. That task exit alone is not fresh collection evidence;
+the13:06Z receipt above proves the actual recovery. No schedule/cadence change.
+
 2026-09-23 evening offline reattachment: the QQQ/SPY v2 cache now has 41 rows
 per target and 41 common sessions, July27 through September22, generation2.
 That is 23 more sessions per target than its bound bootstrap, not M1 coverage.

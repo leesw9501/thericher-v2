@@ -14,6 +14,34 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+Current September24 evening: original SELL is now durably cancelled, not
+outcome_unknown. Read-only recovery at2026-09-24T12:59:24.085215Z confirms
+cancellation_confirmed=true, available account, matching history, no matching
+open order and fresh zero quantity/remaining. One cycle-owned SPY remains;
+there is no exit fill or flatness. No order/cancel was issued by this probe.
+Exact immutable receipt under the existing cycle root:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\e6ad99be327e7ece5fb77ca234f75d9c2fbf266277cabbf0221a7d44b5204866\sell-reconcile-probe-20260924T125924085264Z.json`.
+SHA256 `0e9adfac6c3f099342133b053bdbcd9404a79414f2e9c3707eaedd291b46440f`.
+The deployed source repair links a distinct residual SELL to that terminal
+ancestor while preserving every original identity. Started/unknown submissions
+are never reposted; broker client-ID deduplication is not assumed. Claude's
+corrected supported-with-limits challenge is retained externally as
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-successor-exit-20260924.json`.
+
+Data refreshed SPY through September23; the existing baseline now returns
+ready/exit. Exact input-only evaluation (no order/account call):
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\input-diagnosis-20260924T130656425437Z.json`,
+SHA256 `2f3c95411f0b044fc54efe895365b70f54b3e865c5b2d394c27b8cd953765cea`.
+The budget owner remains due September24 23:50 KST, with unchanged 10-percent
+allocation and no right to adopt diagnostic inventory. No forced entry signal.
+Current verification:628 changed-path serial passes; full eight-worker authority
+5,226 passes/19 skips in335.47s, clean helper exit; Ruff and both sample-env
+Compose configurations pass. Eight rebuilt services match32 changed-source
+hashes. Session image:
+`sha256:7542453db5d4861425bf457bd2d333021d08f1c27ed4d2c30eb052985119da52`.
+Independent read-only review found no concrete successor regression. No real
+successor POST/fill has yet occurred. Earlier facts below are historical.
+
 2026-09-24 follow-up: the September23 23:50 budget owner exited with
 no_intent/daily_receipt_not_eligible, not a submit or fill. Exact safe result:
 `D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\daily-spy-20260923T145002456534Z\outcome.json`,

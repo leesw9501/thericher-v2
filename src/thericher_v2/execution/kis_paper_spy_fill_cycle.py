@@ -41,6 +41,7 @@ from .kis_paper_canary import (
     _run_kis_paper_canary,
     exclusive_kis_paper_canary_state_lock,
 )
+from .kis_paper_fill_accounting import KisPaperExecutionObservation
 from .kis_paper_quote import (
     KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
     KisPaperQuoteError,
@@ -208,16 +209,19 @@ def run_kis_paper_spy_fill_cycle(
             for side in ("buy", "sell")
         }
         states = {}
+        exit_keys = ["sell"]
 
         def result(status, reason):
+            flows = [
+                None if states.get(key) is None else states[key].gross_cashflow_contribution
+                for key in exit_keys
+            ]
             return KisPaperSpyFillCycleOutcome(
                 status,
                 reason,
                 at(),
-                *[
-                    None if states.get(side) is None else states[side].gross_cashflow_contribution
-                    for side in ("buy", "sell")
-                ],
+                None if states.get("buy") is None else states["buy"].gross_cashflow_contribution,
+                None if None in flows else sum(flows, Decimal(0)),
             )
 
         def run_leg(side, *, permitted=None):
@@ -226,7 +230,7 @@ def run_kis_paper_spy_fill_cycle(
             state = states[side]
             intent = state.intent
             decision_type = (
-                KisPaperCanaryBuyDecision if side == "buy" else KisPaperCanarySellDecision
+                KisPaperCanaryBuyDecision if intent.side == "buy" else KisPaperCanarySellDecision
             )
             outcome = _run_kis_paper_canary(
                 decision=decision_type(
@@ -276,23 +280,19 @@ def run_kis_paper_spy_fill_cycle(
                 if active is not None and saved is None:
                     raise _RecoveryRequired("cycle_binding_missing")
                 if saved is not None:
-                    if (
-                        not isinstance(saved, dict)
-                        or set(saved) != set(binding)
-                        or any(
-                            saved[key] != value
-                            for key, value in binding.items()
-                            if key not in {"buy_intent_ref", "sell_intent_ref"}
-                        )
-                    ):
-                        raise _RecoveryRequired("cycle_binding_mismatch")
+                    _validate_binding(saved, binding)
                     binding = saved
                 for side, store in stores.items():
                     states[side] = store.read()
                     _validate_leg(states[side], binding, side, saved is not None)
+                successor_intents = _load_successors(binding, root, stores, states)
+                exit_keys.extend(intent.run_id for intent in successor_intents)
                 if states["sell"] is not None and states["buy"] is None:
                     raise _RecoveryRequired("leg_binding_mismatch")
-                if other_active and not all(_filled(state) for state in states.values()):
+                if other_active and not (
+                    _filled(states["buy"]) and _filled(states[exit_keys[-1]])
+                    and all(states[key].phase == "cancelled" for key in exit_keys[:-1])
+                ):
                     raise _RecoveryRequired("another_cycle_unresolved")
 
                 reconciliations = {}
@@ -347,7 +347,7 @@ def run_kis_paper_spy_fill_cycle(
                 failure_stage = _FailureStage.ACCOUNT_VALIDATION
                 position, open_orders = _spy_book(snapshot, at(), config)
                 failure_stage = _FailureStage.RECOVERY_VALIDATION
-                entry, exit_state = states["buy"], states["sell"]
+                entry, exit_state = states["buy"], states[exit_keys[-1]]
                 if (
                     exit_state is None
                     and position == 0
@@ -367,6 +367,8 @@ def run_kis_paper_spy_fill_cycle(
                             _require_current_fill(state, at())
                 if awaiting_history:
                     return result("pending", "awaiting_fill_observation")
+                for key in exit_keys[:-1]:
+                    _require_cancelled_exit(states[key], reconciliations[key], at(), config)
                 if exit_state is not None and _filled(exit_state):
                     if not _filled(entry) or position != 0 or open_orders:
                         raise _RecoveryRequired("closure_contradiction")
@@ -381,10 +383,11 @@ def run_kis_paper_spy_fill_cycle(
                         return result("cancelled", "entry_unfilled_flat")
 
                 side = "sell" if _filled(entry) else "buy"
+                leg_key = exit_keys[-1] if side == "sell" else "buy"
                 expected_position = Decimal(1) if side == "sell" else Decimal(0)
                 if position != expected_position:
                     raise _RecoveryRequired("position_contradiction")
-                current = states[side]
+                current = states[leg_key]
                 if open_orders:
                     if (
                         current is not None
@@ -393,11 +396,24 @@ def run_kis_paper_spy_fill_cycle(
                     ):
                         return result("pending", "own_order_open")
                     raise _RecoveryRequired("foreign_or_conflicting_open_order")
-                if current is not None and current.phase != "intent_recorded":
+                successor_needed = (
+                    side == "sell" and current is not None and current.phase == "cancelled"
+                )
+                if successor_needed:
+                    _require_cancelled_exit(current, reconciliations[leg_key], at(), config)
+                elif current is not None and current.phase != "intent_recorded":
                     raise _RecoveryRequired("leg_outcome_unresolved")
                 if emergency.blocks_new_orders:
                     return result("no_intent", "emergency_stop_new_orders")
-                if current is not None and at() >= current.intent.valid_until:
+                planned = (
+                    successor_intents[-1]
+                    if side == "sell" and successor_intents and not successor_needed
+                    else None
+                )
+                unsubmitted = planned or (
+                    None if successor_needed or current is None else current.intent
+                )
+                if unsubmitted is not None and at() >= unsubmitted.valid_until:
                     raise _RecoveryRequired("exit_not_submitted_expired")
                 failure_stage = _FailureStage.CONTROL_READ
                 control = PaperExecutionControlStore(execution_control_path).read()
@@ -420,30 +436,41 @@ def run_kis_paper_spy_fill_cycle(
                         active_path,
                         {"cycle_ref": _digest(cycle_id), "account_ref": binding["account_ref"]},
                     )
+                if successor_needed:
+                    run_id = _successor_run_id(binding, len(successor_intents) + 1)
+                    store = KisPaperCanaryStateStore(root / (run_id + ".json"))
+                    if store.read() is not None:
+                        raise _RecoveryRequired("successor_state_unbound")
+                    planned = _new_intent(run_id, "sell", price, quote, at())
+                    # The immutable plan precedes the ledger write. Only the recorded
+                    # prefix advances afterward; no linked identity is ever replaced.
+                    binding.setdefault("sell_successors", []).append({
+                        "run_id": run_id,
+                        "predecessor_run_id": current.intent.run_id,
+                        "predecessor_intent_ref": current.intent.fingerprint,
+                        "intent_ref": planned.fingerprint,
+                        "intent": planned.to_dict(),
+                    })
+                    binding.setdefault("sell_successors_recorded", len(successor_intents))
+                    failure_stage = _FailureStage.LEG_BINDING_WRITE
+                    _atomic_json(binding_path, binding)
+                    successor_intents.append(planned)
+                    exit_keys.append(run_id)
+                    leg_key, current = run_id, None
+                    stores[leg_key], states[leg_key] = store, None
                 if current is None:
                     failure_stage = _FailureStage.LEG_INTENT_RECORD
-                    decision_type = (
-                        KisPaperCanaryBuyDecision if side == "buy" else KisPaperCanarySellDecision
-                    )
-                    decision = decision_type(
-                        decision_id="decision-" + binding[side + "_run_id"],
-                        symbol="SPY",
-                        exchange="AMEX",
-                        quantity=Decimal(1),
-                        limit_price=price,
-                        decision_as_of=min(at(), quote.quoted_at),
-                        valid_until=quote.quoted_at + KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
-                    )
-                    current = stores[side].record_intent(
-                        KisPaperCanaryIntent.from_decision(
-                            decision, run_id=binding[side + "_run_id"]
-                        ),
+                    current = stores[leg_key].record_intent(
+                        planned or _new_intent(binding[side + "_run_id"], side, price, quote, at()),
                         cancel_after_submit=False,
                         now=at(),
                     )
-                    states[side] = current
+                    states[leg_key] = current
                 failure_stage = _FailureStage.LEG_BINDING_WRITE
-                binding[side + "_intent_ref"] = current.intent.fingerprint
+                if planned is not None:
+                    binding["sell_successors_recorded"] = len(successor_intents)
+                else:
+                    binding[side + "_intent_ref"] = current.intent.fingerprint
                 _atomic_json(binding_path, binding)
 
                 def permitted(submit_at):
@@ -467,18 +494,41 @@ def run_kis_paper_spy_fill_cycle(
                         _require_current_fill(states["buy"], at())
                         if not _filled(states["buy"]):
                             raise _RecoveryRequired("entry_fill_unavailable")
+                        for key in exit_keys[:-1]:
+                            failure_stage = _FailureStage.RECOVERY_RECONCILE
+                            rec = client.reconcile(states[key], now=at())
+                            failure_stage = _FailureStage.RECOVERY_FILL_RECORD
+                            states[key] = _record_reconciliation_fill(
+                                stores[key], states[key], rec, observed_at=at()
+                            )
+                            reconciliations[key] = rec
+                            failure_stage = _FailureStage.RECOVERY_VALIDATION
+                            _require_cancelled_exit(states[key], rec, at(), config)
                     failure_stage = _FailureStage.ACCOUNT_SNAPSHOT
                     fresh_snapshot = client.snapshot()
                     failure_stage = _FailureStage.ACCOUNT_VALIDATION
                     quantity, orders = _spy_book(fresh_snapshot, at(), config)
                     if quantity != expected_position or orders:
                         raise _RecoveryRequired("pre_submit_ownership_changed")
+                    if planned is not None:
+                        failure_stage = _FailureStage.RECOVERY_VALIDATION
+                        _require_current_fill(states["buy"], at())
+                        for key in exit_keys[:-1]:
+                            _require_cancelled_exit(states[key], reconciliations[key], at(), config)
+                        failure_stage = _FailureStage.CONTROL_READ
+                        if PaperExecutionControlStore(execution_control_path).read().pause_sells:
+                            raise _RecoveryRequired("pause_sells_active")
+                        failure_stage = _FailureStage.EMERGENCY_READ
+                        if EmergencyStore(emergency_state_path).read().blocks_new_orders:
+                            raise _RecoveryRequired("emergency_stop_new_orders")
+                        if not is_us_equity_regular_session_window(at()):
+                            return False
                     failure_stage = _FailureStage.LEG_RUN
                     return True
 
-                rec = run_leg(side, permitted=permitted)
+                rec = run_leg(leg_key, permitted=permitted)
                 failure_stage = _FailureStage.RECOVERY_VALIDATION
-                current = states[side]
+                current = states[leg_key]
                 if current.phase == "intent_recorded":
                     # No entry POST means no cycle-owned inventory to reserve on worker exit.
                     if side == "buy" and states["sell"] is None:
@@ -495,6 +545,8 @@ def run_kis_paper_spy_fill_cycle(
                     quantity, orders = _spy_book(snapshot, at(), config)
                     failure_stage = _FailureStage.RECOVERY_VALIDATION
                     _require_current_fill(states["buy"], at())
+                    for key in exit_keys[:-1]:
+                        _require_cancelled_exit(states[key], reconciliations[key], at(), config)
                     if quantity != 0 or orders:
                         raise _RecoveryRequired("closure_contradiction")
                     failure_stage = _FailureStage.OWNERSHIP_RELEASE
@@ -559,25 +611,167 @@ def conflicts_with_active_spy_fill_cycle(state_root: Path, run_id: str, symbol: 
             for value in active.values()
         ):
             return True
-        return run_id not in {f"sf-{active['cycle_ref']}-b", f"sf-{active['cycle_ref']}-s"}
-    except (OSError, ValueError, TypeError):
+        if run_id in {f"sf-{active['cycle_ref']}-b", f"sf-{active['cycle_ref']}-s"}:
+            return False
+        binding = _read_json(state_root / ".spy_fill_cycles" / (active["cycle_ref"] + ".json"))
+        if binding is None or not _is_safe_session_id(binding.get("cycle_id")):
+            return True
+        expected = _binding_identity(binding["cycle_id"], active["account_ref"])
+        if _digest(binding["cycle_id"]) != active["cycle_ref"]:
+            return True
+        _validate_binding(binding, expected)
+        stores, states = {}, {}
+        for side in ("buy", "sell"):
+            states[side] = KisPaperCanaryStateStore(
+                state_root / (binding[side + "_run_id"] + ".json")
+            ).read()
+            _validate_leg(states[side], binding, side, True)
+        intents = _load_successors(binding, state_root, stores, states)
+        if not intents or binding["sell_successors_recorded"] != len(intents):
+            return True
+        return run_id != intents[-1].run_id
+    except (OSError, ValueError, TypeError, KeyError, KisPaperCanaryError, _RecoveryRequired):
         return True
 
 
 def _binding(cycle_id, config) -> dict:
+    return _binding_identity(cycle_id, _digest(
+        ["kis_paper", config.base_url, config.account_number, config.account_product_code]
+    ))
+
+
+def _binding_identity(cycle_id, account_ref) -> dict:
     digest = _digest(cycle_id)
     return {
         "kind": "kis_paper_spy_fill_cycle_v1",
         "cycle_id": cycle_id,
-        "account_ref": _digest(
-            ["kis_paper", config.base_url, config.account_number, config.account_product_code]
-        ),
+        "account_ref": account_ref,
         "buy_run_id": f"sf-{digest}-b",
         "sell_run_id": f"sf-{digest}-s",
         "initial_flat": True,
         "buy_intent_ref": None,
         "sell_intent_ref": None,
     }
+
+
+def _validate_binding(saved, expected):
+    if (
+        not isinstance(saved, dict)
+        or set(saved) not in (
+            set(expected), set(expected) | {"sell_successors", "sell_successors_recorded"}
+        )
+        or any(
+            saved[key] != value for key, value in expected.items()
+            if key not in {"buy_intent_ref", "sell_intent_ref"}
+        )
+    ):
+        raise _RecoveryRequired("cycle_binding_mismatch")
+
+
+def _successor_run_id(binding, index):
+    return "sf-" + _digest([binding["sell_run_id"], "exit", index]) + "-x"
+
+
+def _load_successors(binding, root, stores, states):
+    links = binding.get("sell_successors", [])
+    recorded = binding.get("sell_successors_recorded", 0)
+    if (
+        not isinstance(links, list) or type(recorded) is not int
+        or recorded < 0 or recorded not in {len(links), len(links) - 1}
+    ):
+        raise _RecoveryRequired("successor_binding_mismatch")
+    predecessor = states["sell"]
+    intents = []
+    for index, link in enumerate(links, 1):
+        if (
+            not isinstance(link, dict)
+            or set(link) != {
+                "run_id", "predecessor_run_id", "predecessor_intent_ref", "intent_ref", "intent"
+            }
+            or states["buy"] is None or binding["buy_intent_ref"] is None
+            or predecessor is None or binding["sell_intent_ref"] is None
+            or link["run_id"] != _successor_run_id(binding, index)
+            or link["predecessor_run_id"] != predecessor.intent.run_id
+            or link["predecessor_intent_ref"] != predecessor.intent.fingerprint
+        ):
+            raise _RecoveryRequired("successor_binding_mismatch")
+        try:
+            payload = link["intent"]
+            intent = KisPaperCanaryIntent(**(payload | {
+                "quantity": Decimal(payload["quantity"]),
+                "limit_price": Decimal(payload["limit_price"]),
+                "created_at": datetime.fromisoformat(payload["created_at"]),
+                "valid_until": datetime.fromisoformat(payload["valid_until"]),
+            }))
+            if (
+                intent.to_dict() != payload or intent.run_id != link["run_id"]
+                or intent.fingerprint != link["intent_ref"]
+                or intent.side != "sell"
+                or intent.created_at < predecessor.intent.created_at
+            ):
+                raise ValueError("invalid successor intent")
+        except (TypeError, ValueError, KeyError, DecimalException) as error:
+            raise _RecoveryRequired("successor_binding_mismatch") from error
+        store = KisPaperCanaryStateStore(root / (intent.run_id + ".json"))
+        state = store.read()
+        leg_binding = binding | {
+            "sell_run_id": intent.run_id, "sell_intent_ref": intent.fingerprint
+        }
+        if state is None:
+            if index <= recorded:
+                raise _RecoveryRequired("leg_state_missing")
+            # Validate even a planned intent whose ledger write never happened.
+            if (
+                (intent.symbol, intent.exchange, intent.quantity) != ("SPY", "AMEX", 1)
+                or intent.client_order_id != "canary-" + intent.run_id
+                or intent.decision_id != "decision-" + intent.run_id
+            ):
+                raise _RecoveryRequired("successor_binding_mismatch")
+        else:
+            _validate_leg(state, leg_binding, "sell", True)
+            if index > recorded and state.phase != "intent_recorded":
+                raise _RecoveryRequired("successor_binding_mismatch")
+        stores[intent.run_id], states[intent.run_id] = store, state
+        intents.append(intent)
+        predecessor = state
+    return intents
+
+
+def _new_intent(run_id, side, price, quote, now):
+    decision_type = KisPaperCanaryBuyDecision if side == "buy" else KisPaperCanarySellDecision
+    return KisPaperCanaryIntent.from_decision(
+        decision_type(
+            decision_id="decision-" + run_id,
+            symbol="SPY",
+            exchange="AMEX",
+            quantity=Decimal(1),
+            limit_price=price,
+            decision_as_of=min(now, quote.quoted_at),
+            valid_until=quote.quoted_at + KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
+        ),
+        run_id=run_id,
+    )
+
+
+def _require_cancelled_exit(state, reconciliation, now, config):
+    observation = reconciliation.execution
+    if (
+        state.phase != "cancelled"
+        or not isinstance(observation, KisPaperExecutionObservation)
+        or not observation.cancellation_confirmed
+        or observation.status != "available"
+        or state.current_fill is None or state.current_fill != observation.fill
+        or state.current_fill.quantity != 0 or state.current_fill.remaining_quantity != 0
+        or state.current_fill.gross_amount != 0
+        or reconciliation.status != "clean" or reconciliation.account_status != "available"
+        or reconciliation.matching_open_order or not reconciliation.matching_ccnl
+        or reconciliation.snapshot is None
+        or state.broker_order_id is None
+        or (state.submission_started_at or state.submitted_at) is None
+    ):
+        raise _RecoveryRequired("exit_cancellation_unconfirmed")
+    _require_current_fill(state, now)
+    _spy_book(reconciliation.snapshot, now, config)
 
 
 def _validate_leg(state, binding, side, bound):
@@ -602,6 +796,7 @@ def _validate_leg(state, binding, side, bound):
                     state.broker_order_id,
                     state.submission_started_at,
                     state.submitted_at,
+                    state.submit_response_category,
                     state.cumulative_fill,
                 )
             )

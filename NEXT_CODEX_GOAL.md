@@ -22,7 +22,20 @@ classification, plus these policy conflicts. It does not deploy an image,
 invoke a broker/task, fix the Paper state machine, train, or prove a pair result.
 See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
-## Current Progress (2026-09-23 KST)
+## Current Progress (2026-09-24 KST)
+
+Current evening recovery: the original SELL now persists cancelled with exact
+fresh zero-fill cancellation proof, available account and no SPY open order.
+One owned SPY remains. The append-only linked exit continuation is verified
+and deployed; next resume this SAME cycle without replacing its buy or old sell.
+The current daily SPY input was refreshed through September23 and evaluates
+ready/exit, not an entry signal. Closed no-intent diagnostics and nonzero
+collection-failure exits are integrated alongside the recovery. Current
+verification:628 serial and5,226 parallel passes/19 skips (335.47s), Ruff/both
+Compose configs; eight rebuilt services match32 changed-source hashes. Actual filled exit,
+owned-flat reconciliation and lifecycle closure are still outstanding.
+
+The older observations below retain their original scope and timestamps.
 
 September24 offline follow-up: the September23 23:50 budget owner again emitted
 no_intent/daily_receipt_not_eligible, with no private budget binding or intents.
