@@ -21,25 +21,28 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
-Current September25 Research continuation: the fixed causal-feature comparison
-completed four raw/four15-feature Ridge fits in142.123s of networkless CPU
-Docker time. All96 parent cells reproduce exactly;32 new paired cells compare
-completed3/12/36-bar trend/volatility/volume features under unchanged hurdle and
-position-state policies. At3bps the mechanical one-share feature-hurdle net
-sum is-9.5978 versus raw-17.6970; feature-stateful is-36.0645 versus raw-40.3905.
-Both new policies have negative GROSS sums (-4.0082/-4.2286), so smaller
-losses do not establish improved prediction. These are seen-data slice sums,
-not portfolio/account returns or profitable-model selection. No threshold
-rescue or Paper replacement follows.347 focused tests pass in22.70s;
+Current September25 Research continuation: the fixed feature-boosting comparison
+completed four unchanged feature-Ridge and four64-tree fits in67.879s of
+networkless CPU Docker time. All32 Ridge controls reproduce exactly;32 new
+paired cells keep identical15 features, H30 targets, leases and cost assumptions.
+At3bps the mechanical one-share boosted-hurdle net sum is-8.0852 versus
+Ridge-9.5978; boosted-stateful is-17.6684 versus Ridge-36.0645. Both boosted
+policies have positive gross sums but negative net in all four3bps folds.
+The stateful1bps sum+2.5294 does not justify choosing a cheaper cost or model.
+These are seen-data slice sums, not portfolio/account returns or profitable
+model selection. No threshold rescue or Paper replacement follows.
+588 focused/related tests pass in56.87s;
 independent static review, immutable readback, Ruff and both sample-env Compose
 configs pass. Exact root/pins and limitations are in Engine Research. Claude
-reviewed the contract only, supported-with-limits; it did not endorse results.
+reviewed the contract and supplied aggregate interpretation, both
+supported-with-limits, not an independent experiment or endorsement of alpha.
 Three disjoint agents and the CPU worker/container are finished. No KIS,
 credentials, orders, task changes, new data, GPU, saved weights or new runtime.
 The company lifecycle and unknown successor remain open with no fresh broker
-observation in this package. Next Research tests one fixed shallow-tree
-interaction hypothesis on these same15 features with TRAIN-only fitting,
-unchanged Ridge/cash controls and no feature/threshold/cost sweep.
+observation in this package. Next Research predeclares one lower-turnover,
+longer-holding mechanism with lawful existing input, matched controls and
+explicit payoff/timing, not another H30 hyperparameter rescue. No additional
+worker, collection or compute appointment has been dispatched.
 
 The preceding composed study remains closed:16 Ridge/four tree fits and160
 pairs. Its positive tree sum came from only two SPY earlier-fold trades, while

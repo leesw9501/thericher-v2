@@ -336,12 +336,16 @@ funding binding or inventing another manual-approval or profitability gate.
   against stateless utility but did not beat the prior Ridge baseline or cash
   at3bps. The fixed15-feature comparison is also complete: four raw/four
   feature Ridge fits,32 new pairs and96 exact controls. Both new policies
-  have negative gross sums despite reduced exposure/losses. Next test one
-  fixed shallow boosted-tree interaction hypothesis on the same15 features,
-  TRAIN-only fits, unchanged Ridge/cash controls and the same lease/replay.
-  Freeze its finite contract; no EVAL early stopping, feature/threshold/cost
-  search, independent-data claim or reopening closed matrices. Do not select
-  the earlier two-trade tree. This is parallel Research, not a second company goal.
+  have negative gross sums despite reduced exposure/losses. The fixed boosted
+  comparison is now complete: four feature-Ridge/four64-tree fits,32 exact
+  controls and32 new pairs in67.879s. Gross improves, but both new policies
+  lose in all four3bps folds. The stateful1bps positive is not a winner.
+  Next predeclare one lower-turnover/longer-holding mechanism using existing
+  lawful data, matched cash/passive controls and explicit input/payoff timing.
+  First bind its required coverage/session/corporate-action semantics; do not
+  silently extend H30 leases or search the closed feature/tree matrix.
+  No independent-data claim, threshold/cost rescue or two-trade-tree selection.
+  This is parallel Research, not a second company goal or a Paper prerequisite.
 - Operator priority: broaden model families beyond LSTM configurations.
   The linked LightGBM/TCN/compact-attention comparison and fixed-weight
   persistent-position and fixed-forecast comparisons are complete above.

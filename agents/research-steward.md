@@ -5,18 +5,27 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
-Latest closed CPU appointment: `firstrate-m5-causal-features-development-v1`: four raw-window
-and four15-feature Ridge fits,32 new paired cells and96 exact parent controls.
-Existing networkless sklearn image, one CPU/2GiB/900s; no GPU, new runtime,
-saved weights, holdout or Paper input. Contract:
+Latest closed CPU appointment: `firstrate-m5-feature-boosting-development-v1`.
+Four feature-Ridge control fits and four fixed64 depth2-tree fits,64 paired
+cells. Existing networkless sklearn Docker, one CPU/2GiB/900s. No GPU, saved
+weights, holdout, runtime change or Paper input. Contract:
+`sha256:15a55ae80ffed75eeaa4391e709c18d33186745e790d5eb0fedd47f57a64075d`.
+Completed in67.879s including startup. All32 new pairs and32 exact Ridge
+controls passed the offline reader; old96 raw/naive cells remain reference
+only. Summary:
+`sha256:379d80823edc5df4128dcec534aea7e0d9c696b892d0b2d63735a692e556a0ef`.
+588 focused/related tests pass in56.87s; independent static review found no
+issue. Registry non_promoting_completed, worker/container/agents exited. No
+active CPU/GPU appointment remains. Research owns the cost-sensitive negative
+interpretation and next independently predeclared lower-turnover mechanism;
+no winner, rescue tuning, Paper promotion or implied resource appointment.
+
+Feature-Ridge parent remains closed with32 new pairs/96 reproduced raw
+controls in142.123s. Contract:
 `sha256:95f522834a8d846b9f600602e9a9a1efa8fbcaecbb55a328f9cfcbbc6995866d`.
-Completed in142.123s including startup. All32 new pairs and the exact96-cell
-parent result passed the offline reader. Summary:
-`sha256:57ded7f558db276fde1bdd058d67eae4db10356a91d279085f0c1f29f5ee417b`.
-347 integrated tests pass in22.70s; independent static review found no issue.
-Registry non_promoting_completed, worker/container/agents exited. No active
-CPU/GPU appointment remains. Research owns the negative-gross interpretation
-and next fixed nonlinear interaction hypothesis; no winner or Paper promotion.
+Summary: `sha256:57ded7f558db276fde1bdd058d67eae4db10356a91d279085f0c1f29f5ee417b`.
+Its negative-gross result remains intact; four feature fits/cells were exactly
+reproduced by the child, not retuned.
 
 Previous CPU appointment closed: `firstrate-m5-transition-cost-development-v1`,
 contract `sha256:140944b6be72926440582fa317dc1de1cabc98440fb1cd140f680cec717e53d1`.

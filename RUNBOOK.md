@@ -2,27 +2,32 @@
 
 ## Latest Bounded Research
 
-`scripts/run_firstrate_causal_features.py` reuses the immutable CPU supervisor:
+`scripts/run_firstrate_feature_boosting.py` reuses the immutable CPU supervisor:
 `--freeze` binds source metadata/code before rows are loaded;
 `--run --contract-sha256 <exact hash>` owns one finite attempt, never an
 automatic retune/retry. Root:
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-causal-features-development-v1`.
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1`.
 Use the existing pinned sklearn image from its contract, one CPU/2GiB,
 900-second supervisor, network disabled, source/data read-only, and only the
 external artifact mount writable. No credentials, KIS, GPU or saved weights.
-Four raw-window Ridge fits must reproduce the full96-cell parent result;
-four feature Ridge fits produce32 new paired cells. The15 fixed columns
-summarize3/12/36 completed bars; scaling is TRAIN-only. No feature/alpha/window
-search. The fixed >6bps and position-state policies retain their3bps decision
+Four feature-Ridge fits reproduce32 exact parent cells and four model/scaler/
+forecast/action identities; four boosted fits produce32 new paired cells.
+The older96 raw/naive cells are historical reference only, not refitted.
+The same15 columns summarize3/12/36 completed bars; fixed64 depth2 trees,
+leaf64, learning rate0.05, seed911 use full TRAIN with no scaling or EVAL
+early stopping. No feature/model/threshold search. The fixed >6bps and
+position-state policies retain their3bps decision
 basis while1/3/5/10bps replay changes accounting only. Each H30 lease expires
 unless contiguous same-session input extends it; all expiry exits pay fees.
 The final summary publishes hashes/counts/aggregate research accounting only,
 not forecasts, rows or weights. Source-clock, zero-latency, common posthoc
 censoring and reused-development-data limitations remain. This comparison
-bundles representation/dimensionality/scaling; it does not isolate one feature's
-causal effect. The attempt completed in142.123s including startup;347 focused
-tests and exact offline readback pass. Both new policies have negative gross
-sums; no selected model. The worker/container exited and this attempt is closed.
+bundles estimator capacity/scaling; it does not isolate causal interactions.
+The attempt completed in67.879s including startup;588 focused/related tests
+and exact offline readback pass. Both new policies have positive gross sums
+but lose in all four3bps folds; the stateful1bps positive is not a model
+selection. The worker/container exited and this attempt is closed. sklearn's
+criterion deprecation warning was nonfatal; no dependency/runtime change.
 Exact immutable contract/result and limitations belong to Research.
 The parent transition/composed-policy studies remain closed. None is a Paper
 consumer or permission condition for independent Execution work. Differences

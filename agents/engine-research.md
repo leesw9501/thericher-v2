@@ -17,15 +17,15 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
-Latest completed study: `firstrate-m5-causal-features-development-v1`.
-Four unchanged raw-window Ridge fits reproduce the entire96-cell parent
-result, including model/scaler identities and support. Four new fixed Ridge
-fits consume15 completed-bar features: return, close-return volatility, mean
-range/body and recent-relative logvolume at3/12/36 M5 bars. Scaling uses TRAIN
-only. The >6bps hurdle and existing position-state utility produce32 new
-paired cells/64 planner cells, with fixed3bps decision cost and1/3/5/10bps
-accounting sensitivity. No feature/window/alpha search or extra model family.
-All targets precede EVAL outcomes and common missing-future censoring.
+Latest completed study: `firstrate-m5-feature-boosting-development-v1`.
+Four unchanged15-feature Ridge fits reproduce32 parent cells and all four
+model/scaler/forecast/action identities. Four fixed gradient-boosting fits use
+the same features:64 depth2 trees, leaf64, learning rate0.05, seed911. No tree
+scaling, internal validation split, early stopping, feature/window/parameter
+search or EVAL fitting. The >6bps hurdle and existing position-state utility
+produce32 new paired cells,64 total, at1/3/5/10bps accounting sensitivity.
+All decisions use the unchanged3bps basis and precede EVAL payoff/censoring.
+Older96 raw/naive cells stay immutable historical references, not new fits.
 
 SPY earlier/later and QQQ earlier/later retain377/372/378/372 decisions and
 63/62/63/62 history blocks; no future censoring. TRAIN counts4464/6726/4464/6732.
@@ -34,43 +34,54 @@ not a capital-normalized portfolio, actual account result or fresh evidence:
 
 | Policy | Persistent roundtrips | Exposure minutes | Gross USD | Net USD at3bps/side | Net USD at5bps/side |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Raw-window Ridge >6bps | 162 | 5370 | 19.6224 | -17.6970 | -42.5761 |
 | Feature Ridge >6bps | 24 | 840 | -4.0082 | -9.5978 | -13.3244 |
-| Raw-window stateful Ridge | 274 | 23070 | 24.0525 | -40.3905 | -83.3525 |
+| Boosted features >6bps | 51 | 1950 | 2.5808 | -8.0852 | -15.1958 |
 | Feature stateful Ridge | 138 | 15600 | -4.2286 | -36.0645 | -57.2889 |
+| Boosted features stateful | 135 | 20430 | 12.6294 | -17.6684 | -37.8680 |
 | Cash | 0 | 0 | 0 | 0 | 0 |
 
-Both new policies are negative even before fees in aggregate; smaller net
-losses and lower exposure do not establish better prediction. At1bps their
-net sums remain-5.8713/-14.8412. The feature hurdle's3bps fold nets are
--5.9806/-1.3582/-2.2590/0; its final QQQ fold has no trade. Feature-stateful
-nets are-10.4484/-7.8098/-7.9386/-9.8677. No profitable winner or Paper input.
-The comparison bundles features, dimensionality and scaling, not an isolated
-causal feature effect. Across-policy net differences include different gross
-payoff and exposure. Within the feature-stateful policy only, merging520
-roundtrips into138 preserves gross/exposure and saves86.7390 at3bps; that is
-an accounting identity, not alpha. Its138 entries/382 holds/16 ordinary exits/
-122 expiry exits reconcile. All expiry fees remain charged.
+Boosting's positive gross sums do not cover3bps fees. Every new3bps fold is
+negative: hurdle-2.1148/-0.2582/-4.0954/-1.6168 and stateful
+-1.4890/-0.2582/-5.3449/-10.5763 (SPY early/late, QQQ early/late).
+At1bps the stateful sum is+2.5294 but hurdle remains-0.9746; this accounting
+sensitivity cannot select a cheaper execution assumption or a profitable model.
+The comparison bundles estimator capacity and scaling, not proof of causal
+feature interactions. Different gross payoff/exposure confound cross-policy
+comparisons. Within boosted-stateful alone, merging681 roundtrips into135
+preserves gross/exposure and saves122.2570 at3bps: accounting, not alpha.
+Its135 entries/546 holds/17 ordinary exits/118 expiry exits reconcile.
+All expiry fees remain charged. Forecasts above6bps number4/1/57/3; per-fold
+population standard deviations are2.178/1.117/2.678/1.280bps. These predeclared
+diagnostics do not trigger threshold retuning or universal model-family rejection.
 
-Existing networkless sklearn Docker, one CPU/2GiB/900s, completed in142.123s
-including startup. Worker/container and three agents exited.347 focused tests
-pass in22.70s, including real synthetic eight-fit replay, future-input
-invariance, TRAIN-only scaling, exact parent reproduction and closed outputs.
+Existing networkless sklearn Docker, one CPU/2GiB/900s, completed in67.879s
+including startup. Worker/container and three agents exited.588 focused/related
+tests pass in56.87s, including synthetic eight-fit replay, future-input
+invariance, TRAIN-only fitting, exact parent reproduction and closed outputs.
 Independent static review found no issue; a separate offline reader verified
 the actual immutable result. Ruff and both sample-env Compose configs pass.
 No GPU, saved fitted weights, new data, holdout, KIS or shared-runtime change.
 Seen FirstRate source-clock/revision, zero-latency and expanding-fold limits
 remain; no threshold retuning or profitability/deployment claim follows.
-Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-causal-features-development-v1`.
-Contract: `sha256:95f522834a8d846b9f600602e9a9a1efa8fbcaecbb55a328f9cfcbbc6995866d`.
-Summary: `sha256:57ded7f558db276fde1bdd058d67eae4db10356a91d279085f0c1f29f5ee417b`.
-Claude's contract-only verdict was supported-with-limits; it did not review
-the real-data outcome. Exact receipt with accepted limits and corrections:
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-causal-features-development-v1-review.json`.
+Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1`.
+Contract: `sha256:15a55ae80ffed75eeaa4391e709c18d33186745e790d5eb0fedd47f57a64075d`.
+Summary: `sha256:379d80823edc5df4128dcec534aea7e0d9c696b892d0b2d63735a692e556a0ef`.
+Claude's contract verdict was supported-with-limits. Exact receipt with accepted
+limits and corrections:
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1-review.json`.
+The separate supplied-aggregate outcome/direction review also returned
+supported-with-limits. It is not independent execution or alpha endorsement;
+unsupported bias-direction and trade-count-as-exposure comments were not adopted.
+Receipt: `D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1-outcome-review.json`.
 
-The preceding transition-policy study is closed and reproduced exactly here.
+The feature-Ridge parent remains closed with its negative gross sums unchanged.
+Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-causal-features-development-v1`.
+Parent contract: `sha256:95f522834a8d846b9f600602e9a9a1efa8fbcaecbb55a328f9cfcbbc6995866d`.
+Parent summary: `sha256:57ded7f558db276fde1bdd058d67eae4db10356a91d279085f0c1f29f5ee417b`.
+
+The preceding transition-policy study is closed, reproduced by the Ridge parent.
 Its raw-stateful274 roundtrips and negative3bps folds remain unchanged;
-the new138-trade feature policy does not rewrite its parent. Exact parent root:
+the138-trade feature policy does not rewrite its parent. Exact parent root:
 `D:\thericher-v2\model-artifacts\research\firstrate-m5-transition-cost-development-v1`.
 Parent contract: `sha256:140944b6be72926440582fa317dc1de1cabc98440fb1cd140f680cec717e53d1`.
 Parent summary: `sha256:a164d95f7632c0e181c08c6fbbde4b2eb64da347fcb592c0cc3d72f24390080f`.
@@ -722,9 +733,9 @@ dispatch restrictions. The current development package is described above.
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
 | Technical/chart and momentum/regime | Opening-range and fixed monthly-day studies completed; descriptive criteria not met | A separately declared mechanism or replication, not a search for a better day/threshold on these results |
-| Classical ML/statistical | Fixed15-feature Ridge completed; both policies have negative gross sums and no profitable winner | One finite shallow-tree interaction hypothesis on the same fixed features and costs; TRAIN-only fitting and exact Ridge controls, not a parameter sweep |
+| Classical ML/statistical | Fixed15-feature Ridge and boosted-tree comparisons complete; both boosted policies lose in every3bps fold | No H30 parameter rescue; next predeclare a lower-turnover/longer-holding mechanism with lawful existing input and matched controls |
 | Sequence/DL/public model | LSTM/TCN/attention comparisons completed; TimesFM2.5 synthetic runtime works | A distinct finite campaign with naive controls and explicit source assumptions; no D1 dependency or GPU-utilization-only training |
-| Portfolio/allocation/meta-decision | Composed-policy, transition utility and feature-Ridge comparisons completed; no cost-robust advantage | Reuse the tested lease/fee layer for the declared interaction comparison; do not tune utility costs/thresholds or pick the two-trade tree |
+| Portfolio/allocation/meta-decision | Composed-policy, transition utility and feature comparisons complete; no cost-robust advantage | Carry forward exact accounting and ownership, not the least-negative model; a longer hold needs its own payoff/session contract |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and
@@ -808,23 +819,24 @@ developmental study or a separately scoped baseline Paper experiment.
 
 ## Active Constraint And Handoff
 
-The composed-policy, position-aware and causal-feature comparisons are completed.
+The composed-policy, position-aware, causal-feature and fixed-boosting comparisons
+are completed.
 Keep prior FirstRate losses and each Tiingo study's scoped limitations intact;
 none proves every model family unusable. No frozen research worker/appointment
 remains. A distinct development package may reuse seen data with that label;
 a later independent performance claim needs genuinely unseen evidence. The
 exact unresolved Paper successor is not a general research permission hold.
-Next Research package tests whether trend depends nonlinearly on past volatility
-and relative volume, rather than assuming their effects are additive. Use one
-fixed shallow boosted-tree configuration from the existing sklearn runtime,
-four TRAIN-only fits on these unchanged15 features, no early-stopping EVAL
-access, no feature/threshold/cost search and unchanged Ridge/cash controls.
-Freeze its finite contract before rows/outcomes; reuse the supervisor and
-lease/replay rather than building another worker framework. Preserve the
-seen-data lineage. Strongest kill tests remain future-input leakage,
-EVAL influence on fitting, control mismatch and support/cost drift. This is
-development, not independent replication or selection of today's least loss.
-No worker or compute appointment is implied until the package is dispatched.
+Do not continue a H30 architecture/threshold rescue on these same outcomes.
+Next Research first binds existing lawful input to one predeclared lower-turnover,
+longer-holding mechanism, with matched cash/passive controls and explicit
+decision/entry/exit timing. A longer hold changes the payoff and session contract;
+do not silently stretch H30 leases or use future corporate-action knowledge.
+Freeze one finite development contract before outcomes, reuse existing runtimes,
+and keep reused samples labeled seen. Kill on unavailable required timing/input,
+future leakage or accounting mismatch; do not replace a failed hypothesis with
+an unbounded model sweep. This is no claim that longer holding will be profitable.
+Exact Paper recovery remains the independent main path. No new appointment or
+external collection is implied by this next-package direction.
 
 The completed source-isolated CUDA appointment proved only loader, geometry,
 finite-run, and cleanup facts. It cannot change the unavailable QQQ/SPY causal
