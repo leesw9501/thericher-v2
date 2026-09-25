@@ -2,37 +2,39 @@
 
 ## Latest Bounded Research
 
-`scripts/run_firstrate_feature_boosting.py` reuses the immutable CPU supervisor:
+`scripts/run_firstrate_session_h180.py` reuses the immutable bounded supervisor:
 `--freeze` binds source metadata/code before rows are loaded;
 `--run --contract-sha256 <exact hash>` owns one finite attempt, never an
 automatic retune/retry. Root:
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1`.
-Use the existing pinned sklearn image from its contract, one CPU/2GiB,
-900-second supervisor, network disabled, source/data read-only, and only the
-external artifact mount writable. No credentials, KIS, GPU or saved weights.
-Four feature-Ridge fits reproduce32 exact parent cells and four model/scaler/
-forecast/action identities; four boosted fits produce32 new paired cells.
-The older96 raw/naive cells are historical reference only, not refitted.
-The same15 columns summarize3/12/36 completed bars; fixed64 depth2 trees,
-leaf64, learning rate0.05, seed911 use full TRAIN with no scaling or EVAL
-early stopping. No feature/model/threshold search. The fixed >6bps and
-position-state policies retain their3bps decision
-basis while1/3/5/10bps replay changes accounting only. Each H30 lease expires
-unless contiguous same-session input extends it; all expiry exits pay fees.
-The final summary publishes hashes/counts/aggregate research accounting only,
-not forecasts, rows or weights. Source-clock, zero-latency, common posthoc
-censoring and reused-development-data limitations remain. This comparison
-bundles estimator capacity/scaling; it does not isolate causal interactions.
-The attempt completed in67.879s including startup;588 focused/related tests
-and exact offline readback pass. Both new policies have positive gross sums
-but lose in all four3bps folds; the stateful1bps positive is not a model
-selection. The worker/container exited and this attempt is closed. sklearn's
-criterion deprecation warning was nonfatal; no dependency/runtime change.
-Exact immutable contract/result and limitations belong to Research.
-The parent transition/composed-policy studies remain closed. None is a Paper
-consumer or permission condition for independent Execution work. Differences
-between policies may include exposure changes; only a single policy's
-repeated-versus-merged saving is fee-only.
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-single-session-h180-development-v1`.
+Use the existing pinned Torch image
+`sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039`,
+GPU enabled,2 CPU/4GiB host RAM,1800-second supervisor, network disabled,
+source/data read-only, only the external artifact mount writable. No env-file,
+credentials, KIS, new dependency/image or scheduler. The supervisor parent owns
+the canonical GPU lock until its child exits/is reaped, including timeout.
+
+One full-session EVAL decision uses36 completed M5 bars, entry12:30/exit15:30
+ET opens, fixed >6bps forecast gate,1/3/5bps accounting-only sensitivity.
+Four CPU Ridge fits and cash/long/SMA/TRAIN-mean controls run before16 fixed
+TCN/attention CUDA fits. Two seeds each,32epochs, batch128, no EVAL fitting or
+early stopping. The fixed mean of four GPU forecasts excludes Ridge and learns
+no weight. TRAIN scalers and16 numeric NPZ/configs stay in external models/.
+Reload checks numeric tolerance and identical member/ensemble decisions.
+The final summary contains only aggregate development facts and hashes.
+
+The local GPU allocator uses min(90 percent of total, free minus1GiB), rather
+than the old per-study4GiB cap. No permission wait or artificial VRAM padding.
+Actual CPU/CUDA run completed120 cells in260.569s; offline contract/result/
+model hashes validate. All active policy aggregate nets are negative at3/5bps.
+479 focused/related tests pass in45.26s; Ruff/both sample-env Compose configs
+and synthetic CUDA fit/reload pass. No full-suite run for this isolated package.
+Source-clock/revision/finality, zero-latency, seen-data and dependent-fold limits
+remain. This does not select a model or create a Paper input. The container
+exited, lock released, registry non_promoting_completed; never rerun its closed
+immutable path. Engine Research holds exact pins, results and next hypothesis.
+Previous feature-boosting/transition studies remain immutable references, not
+a permission condition for independent Paper recovery.
 
 ## Modes
 

@@ -17,62 +17,71 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
-Latest completed study: `firstrate-m5-feature-boosting-development-v1`.
-Four unchanged15-feature Ridge fits reproduce32 parent cells and all four
-model/scaler/forecast/action identities. Four fixed gradient-boosting fits use
-the same features:64 depth2 trees, leaf64, learning rate0.05, seed911. No tree
-scaling, internal validation split, early stopping, feature/window/parameter
-search or EVAL fitting. The >6bps hurdle and existing position-state utility
-produce32 new paired cells,64 total, at1/3/5/10bps accounting sensitivity.
-All decisions use the unchanged3bps basis and precede EVAL payoff/censoring.
-Older96 raw/naive cells stay immutable historical references, not new fits.
+Latest completed study: `firstrate-m5-single-session-h180-development-v1`.
+One EVAL decision per full session, using36 completed M5 bars at12:30 ET and
+a12:30-to15:30 open/open H180 payoff. Early closes are excluded by calendar;
+no overnight position or silent extension of an old H30 lease. Four Ridge
+fits precede16 CUDA fits: TCN/compact attention, seeds101/103,32 fixed epochs.
+The uniform-four mean is predeclared, excludes Ridge and learns no weights.
+All model decisions use nominal >6bps;1/3/5bps costs change accounting only.
 
-SPY earlier/later and QQQ earlier/later retain377/372/378/372 decisions and
-63/62/63/62 history blocks; no future censoring. TRAIN counts4464/6726/4464/6732.
-Below are mechanical sums across four fixed-one-share development slices,
-not a capital-normalized portfolio, actual account result or fresh evidence:
+SPY earlier/later and QQQ earlier/later TRAIN rows are744/1116/744/1122,
+with124/186/124/187 history blocks. EVAL has62/62/63/62 full outcomes and no
+future censoring; one SPY earlier session lacks past input. TRAIN normalization
+and strict label purge precede EVAL. Overlapping TRAIN samples and expanding
+folds are dependent. All120 cells and16 retained models validate offline.
+Below are mechanical sums of four fixed-one-share seen-data slices, not
+portfolio/NAV returns, actual account PnL or independent performance evidence:
 
-| Policy | Persistent roundtrips | Exposure minutes | Gross USD | Net USD at3bps/side | Net USD at5bps/side |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Feature Ridge >6bps | 24 | 840 | -4.0082 | -9.5978 | -13.3244 |
-| Boosted features >6bps | 51 | 1950 | 2.5808 | -8.0852 | -15.1958 |
-| Feature stateful Ridge | 138 | 15600 | -4.2286 | -36.0645 | -57.2889 |
-| Boosted features stateful | 135 | 20430 | 12.6294 | -17.6684 | -37.8680 |
-| Cash | 0 | 0 | 0 | 0 | 0 |
+| Policy | Roundtrips | Gross USD | Net USD at3bps/side | Net USD at5bps/side |
+| --- | ---: | ---: | ---: | ---: |
+| Cash | 0 | 0 | 0 | 0 |
+| Matched H180 long | 249 | 5.2264 | -53.4409 | -92.5517 |
+| SMA3/12 | 158 | -23.9175 | -61.1475 | -85.9663 |
+| TRAIN mean | 125 | 6.1020 | -20.4132 | -38.0901 |
+| Ridge | 116 | -14.0042 | -41.2326 | -59.3845 |
+| TCN101 | 103 | -26.2970 | -50.4029 | -66.4722 |
+| TCN103 | 87 | 3.6010 | -17.0389 | -30.7983 |
+| Attention101 | 104 | 3.2429 | -21.1992 | -37.4936 |
+| Attention103 | 120 | 11.9238 | -16.0716 | -34.7351 |
+| Uniform four | 90 | -6.7460 | -27.9622 | -42.1065 |
 
-Boosting's positive gross sums do not cover3bps fees. Every new3bps fold is
-negative: hurdle-2.1148/-0.2582/-4.0954/-1.6168 and stateful
--1.4890/-0.2582/-5.3449/-10.5763 (SPY early/late, QQQ early/late).
-At1bps the stateful sum is+2.5294 but hurdle remains-0.9746; this accounting
-sensitivity cannot select a cheaper execution assumption or a profitable model.
-The comparison bundles estimator capacity and scaling, not proof of causal
-feature interactions. Different gross payoff/exposure confound cross-policy
-comparisons. Within boosted-stateful alone, merging681 roundtrips into135
-preserves gross/exposure and saves122.2570 at3bps: accounting, not alpha.
-Its135 entries/546 holds/17 ordinary exits/118 expiry exits reconcile.
-All expiry fees remain charged. Forecasts above6bps number4/1/57/3; per-fold
-population standard deviations are2.178/1.117/2.678/1.280bps. These predeclared
-diagnostics do not trigger threshold retuning or universal model-family rejection.
+Uniform-fold3bps nets are+0.1937/-16.2596/-2.2782/-9.6181. Only two of16
+individual DL fold MSEs improve on TRAIN mean, both attention101 later folds;
+no architecture/seed improves it in both folds of either symbol. All four
+ensemble and Ridge MSEs are worse than TRAIN mean. Every DL TRAIN loss fell,
+so successful fitting does not imply useful prediction. No winner, seed
+selection, threshold/cost rescue or universal family rejection follows.
 
-Existing networkless sklearn Docker, one CPU/2GiB/900s, completed in67.879s
-including startup. Worker/container and three agents exited.588 focused/related
-tests pass in56.87s, including synthetic eight-fit replay, future-input
-invariance, TRAIN-only fitting, exact parent reproduction and closed outputs.
-Independent static review found no issue; a separate offline reader verified
-the actual immutable result. Ruff and both sample-env Compose configs pass.
-No GPU, saved fitted weights, new data, holdout, KIS or shared-runtime change.
-Seen FirstRate source-clock/revision, zero-latency and expanding-fold limits
-remain; no threshold retuning or profitability/deployment claim follows.
-Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1`.
+Existing networkless Torch2.7.0+cu128 Docker completed CPU-first/CUDA work in
+260.569s including startup, under2 CPU/4GiB host RAM and one1800s supervisor.
+RTX4090 allocation budget23,030,923,264 bytes supersedes the inherited4GiB
+cap only for this new study; actual peak Torch allocation75,395,072 bytes.
+Small data/models do not need the whole card. All16 numeric NPZ weights,
+scalers and configs remain outside Git; reload checks prediction tolerance
+and exact member/ensemble decisions. Parent owns the GPU lock across timeout
+and child reaping. Container exited and lock is released. No new data/runtime,
+holdout, KIS, schedule or Paper consumer. Source-clock/revision/finality and
+zero-latency assumptions remain unverified.
+Verification:479 focused/related tests pass in45.26s, including76 new cases.
+Independent source review fixed float precision in reload decisions and parent
+GPU-lock ownership before freezing; re-review found no further issue. Actual
+synthetic CUDA fits/reload, Ruff and both sample-env Compose configs pass.
+All16 NPZ and16 config files total274,432 bytes. Full company authority was not
+repeated for this isolated research package; the company objective remains open.
+Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-single-session-h180-development-v1`.
+Contract: `sha256:9e53a350a4afa6020cfb56fd01c332f75e7a8fed53442b90bf95057b396c5427`.
+Summary: `sha256:97fdc734f10b402600cfb1626e0fcb568a30f20d29bdc2d01d76f8a186f94dbf`.
+Claude's supplied-contract verdict was supported-with-limits, not independent
+execution or alpha endorsement. Accepted limits and rejected assumptions:
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-single-session-h180-development-v1-review.json`.
+
+The preceding feature-boosting study remains closed: four Ridge/four64-tree
+fits,64 cells in67.879s. Boosted hurdle/stateful nets were-8.0852/-17.6684
+at3bps, negative in every fold. Its full comparison remains in Git and
+`D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1`.
 Contract: `sha256:15a55ae80ffed75eeaa4391e709c18d33186745e790d5eb0fedd47f57a64075d`.
 Summary: `sha256:379d80823edc5df4128dcec534aea7e0d9c696b892d0b2d63735a692e556a0ef`.
-Claude's contract verdict was supported-with-limits. Exact receipt with accepted
-limits and corrections:
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1-review.json`.
-The separate supplied-aggregate outcome/direction review also returned
-supported-with-limits. It is not independent execution or alpha endorsement;
-unsupported bias-direction and trade-count-as-exposure comments were not adopted.
-Receipt: `D:\thericher-v2\model-artifacts\research\firstrate-m5-feature-boosting-development-v1-outcome-review.json`.
 
 The feature-Ridge parent remains closed with its negative gross sums unchanged.
 Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-causal-features-development-v1`.
@@ -733,9 +742,9 @@ dispatch restrictions. The current development package is described above.
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
 | Technical/chart and momentum/regime | Opening-range and fixed monthly-day studies completed; descriptive criteria not met | A separately declared mechanism or replication, not a search for a better day/threshold on these results |
-| Classical ML/statistical | Fixed15-feature Ridge and boosted-tree comparisons complete; both boosted policies lose in every3bps fold | No H30 parameter rescue; next predeclare a lower-turnover/longer-holding mechanism with lawful existing input and matched controls |
-| Sequence/DL/public model | LSTM/TCN/attention comparisons completed; TimesFM2.5 synthetic runtime works | A distinct finite campaign with naive controls and explicit source assumptions; no D1 dependency or GPU-utilization-only training |
-| Portfolio/allocation/meta-decision | Composed-policy, transition utility and feature comparisons complete; no cost-robust advantage | Carry forward exact accounting and ownership, not the least-negative model; a longer hold needs its own payoff/session contract |
+| Classical ML/statistical | H180 Ridge and prior feature/boosted comparisons complete, negative3/5bps aggregate nets | Prepare common-timestamp cross-ETF information/pooling controls; no same-input threshold/cost rescue |
+| Sequence/DL/public model | H180 TCN/attention16 CUDA fits and numeric reload completed; TimesFM2.5 synthetic runtime works | Test a distinct information hypothesis before model size/search; GPU approval/runtime are not blockers |
+| Portfolio/allocation/meta-decision | H180 fixed uniform-four blend is negative and all four MSEs worse than TRAIN mean | Keep all outcomes; do not select seeds/weights from these same results or infer that ensemble complexity creates signal |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and
@@ -819,22 +828,23 @@ developmental study or a separately scoped baseline Paper experiment.
 
 ## Active Constraint And Handoff
 
-The composed-policy, position-aware, causal-feature and fixed-boosting comparisons
-are completed.
+The composed-policy, position-aware, causal-feature, fixed-boosting and H180
+CPU/CUDA comparisons are completed.
 Keep prior FirstRate losses and each Tiingo study's scoped limitations intact;
 none proves every model family unusable. No frozen research worker/appointment
 remains. A distinct development package may reuse seen data with that label;
 a later independent performance claim needs genuinely unseen evidence. The
 exact unresolved Paper successor is not a general research permission hold.
 Do not continue a H30 architecture/threshold rescue on these same outcomes.
-Next Research first binds existing lawful input to one predeclared lower-turnover,
-longer-holding mechanism, with matched cash/passive controls and explicit
-decision/entry/exit timing. A longer hold changes the payoff and session contract;
-do not silently stretch H30 leases or use future corporate-action knowledge.
-Freeze one finite development contract before outcomes, reuse existing runtimes,
-and keep reused samples labeled seen. Kill on unavailable required timing/input,
-future leakage or accounting mismatch; do not replace a failed hypothesis with
-an unbounded model sweep. This is no claim that longer holding will be profitable.
+The lower-turnover H180 experiment did not establish useful prediction; larger
+models or longer training alone are not the next hypothesis. Next preparation
+binds SPY/QQQ common past-only timestamps for a cross-ETF information/pooling
+comparison, with single-ETF and TRAIN-mean controls and unchanged payoff.
+Freeze one finite developmental contract before outputs; never use a later
+peer bar, future peer outcome or full-sample normalization. Reused samples stay
+seen-data, not independent confirmation. Kill on timing/support mismatch or
+failure to add value over the matched control without costs/threshold rescue.
+No broad parameter/architecture search or GPU memory-padding job is assigned.
 Exact Paper recovery remains the independent main path. No new appointment or
 external collection is implied by this next-package direction.
 

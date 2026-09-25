@@ -626,6 +626,14 @@ or independent-performance qualification. Provisional Paper experiments remain
 subject to their own reproducible inputs and deterministic execution controls,
 not a profitability requirement. Unclear rights still require operator input.
 
+On 2026-09-25 the operator reaffirmed autonomous use of the existing local GPU
+for useful research. No further GPU-use approval is needed. Old per-campaign
+memory or duration settings are not project-wide permission limits: a new
+frozen campaign may use a measured available-VRAM budget and a suitable finite
+training budget. Preserve existing frozen runs, shared GPU ownership, desktop
+headroom and external artifact storage. Do not leave eligible training idle
+for D1/Paper/profitability approval, or allocate dummy work just to fill memory.
+
 Read-only Paper reconciliation may repeat through the owned, serialized path
 using exact persisted identity. Prior-attempt evidence is recovery history, not
 a one-attempt quota or permission prerequisite. An unknown submission outcome

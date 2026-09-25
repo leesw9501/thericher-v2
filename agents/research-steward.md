@@ -5,6 +5,26 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Closed `firstrate-m5-single-session-h180-development-v1`: existing FirstRate
+SPY/QQQ, one EVAL decision per full session, H180, four CPU Ridge fits then16
+fixed TCN/attention fits at32epochs plus their predeclared uniform blend.
+All120 cells completed in260.569s. Operator GPU authority is reaffirmed, not
+newly required. The new allocation used23,030,923,264 bytes of available VRAM
+budget instead of the historical4GiB cap; peak Torch use75,395,072 bytes.
+RTX4090/Torch2.7.0+cu128 runtime and historical campaign sources are unchanged.
+Contract:
+`sha256:9e53a350a4afa6020cfb56fd01c332f75e7a8fed53442b90bf95057b396c5427`.
+Summary:
+`sha256:97fdc734f10b402600cfb1626e0fcb568a30f20d29bdc2d01d76f8a186f94dbf`.
+All16 numeric models/scalers/configs remain under the external Research root;
+prediction tolerance, exact member/blend decisions and immutable hashes pass.
+The single1800-second supervisor parent owned the lock across CPU-first/CUDA
+work and child reaping. Container exited, canonical GPU lock absent, no next
+appointment remains. Registry non_promoting_completed; no holdout, KIS, model
+selection or Paper input. Research owns the negative/cost-sensitive findings.
+Next information/pooling preparation needs its own finite comparison, not
+automatic depth allocation or training merely to fill the GPU.
+
 Latest closed CPU appointment: `firstrate-m5-feature-boosting-development-v1`.
 Four feature-Ridge control fits and four fixed64 depth2-tree fits,64 paired
 cells. Existing networkless sklearn Docker, one CPU/2GiB/900s. No GPU, saved
@@ -17,7 +37,7 @@ only. Summary:
 588 focused/related tests pass in56.87s; independent static review found no
 issue. Registry non_promoting_completed, worker/container/agents exited. No
 active CPU/GPU appointment remains. Research owns the cost-sensitive negative
-interpretation and next independently predeclared lower-turnover mechanism;
+interpretation and the completed lower-turnover comparison above;
 no winner, rescue tuning, Paper promotion or implied resource appointment.
 
 Feature-Ridge parent remains closed with32 new pairs/96 reproduced raw

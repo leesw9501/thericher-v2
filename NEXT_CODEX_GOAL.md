@@ -24,13 +24,21 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-25 KST)
 
-Independent causal-feature Research package completed four raw/four feature
-Ridge fits,32 new paired cells and96 exact parent controls in142.123s.
-347 focused tests pass in22.70s. Both new policies have negative gross sums;
-smaller net losses do not establish better prediction or a profitable model.
-No GPU, KIS, new data or Paper-strategy change. Exact results and the next fixed
-nonlinear interaction package are in Research. This completed isolated package
-does not close or replace the outstanding company lifecycle objective.
+Independent H180 Research completed four Ridge/16 CUDA fits and120 cells in
+260.569s. One daily3h hold, matched controls, fixed TCN/attention seeds and
+uniform-four mean;32epochs, no EVAL early stopping/search. All active policies'
+four-slice sums remain negative at3/5bps; uniform-four MSE is worse than TRAIN
+mean in all folds. All16 numeric models reload with identical decisions and
+remain external. The operator reaffirmed useful local GPU use; the new study
+replaced the inherited4GiB cap with measured available VRAM, without changing
+historical frozen runs or runtime. Worker exited/GPU lock released. Exact
+evidence and source limitations are in Research, not a Paper replacement.
+479 focused/related tests pass in45.26s; Ruff/both Compose configs, actual CUDA
+fit/reload and immutable readback pass. Full company authority was not repeated.
+Next parallel preparation tests whether aligned cross-ETF information/pooling
+adds value over fixed single-ETF controls, not bigger same-input models or a
+least-negative-seed selection. The unknown Paper successor still needs actual
+recovery; this research package does not close the single company objective.
 
 The current daily-SPY budget path was rechecked once at15:40Z after deploying
 closed stage/type diagnostics and meaningful CLI failure exits. It now returns
@@ -340,10 +348,13 @@ funding binding or inventing another manual-approval or profitability gate.
   comparison is now complete: four feature-Ridge/four64-tree fits,32 exact
   controls and32 new pairs in67.879s. Gross improves, but both new policies
   lose in all four3bps folds. The stateful1bps positive is not a winner.
-  Next predeclare one lower-turnover/longer-holding mechanism using existing
-  lawful data, matched cash/passive controls and explicit input/payoff timing.
-  First bind its required coverage/session/corporate-action semantics; do not
-  silently extend H30 leases or search the closed feature/tree matrix.
+  The distinct H180 daily-decision study is also complete: four Ridge and16
+  TCN/attention fits,120 cells and fixed equal ensemble. All policy aggregate
+  nets remain negative at3/5bps; no cheapest-cost/seed/model selection.
+  Next bind common SPY/QQQ past-only timestamps for one cross-ETF information/
+  pooling hypothesis, with matched single-ETF controls and a finite unchanged
+  payoff. Predeclare the comparison before outcome inspection; aligned history
+  cannot use a later peer bar or masquerade as independent unseen evidence.
   No independent-data claim, threshold/cost rescue or two-trade-tree selection.
   This is parallel Research, not a second company goal or a Paper prerequisite.
 - Operator priority: broaden model families beyond LSTM configurations.

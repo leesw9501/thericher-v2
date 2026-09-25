@@ -21,28 +21,35 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
-Current September25 Research continuation: the fixed feature-boosting comparison
-completed four unchanged feature-Ridge and four64-tree fits in67.879s of
-networkless CPU Docker time. All32 Ridge controls reproduce exactly;32 new
-paired cells keep identical15 features, H30 targets, leases and cost assumptions.
-At3bps the mechanical one-share boosted-hurdle net sum is-8.0852 versus
-Ridge-9.5978; boosted-stateful is-17.6684 versus Ridge-36.0645. Both boosted
-policies have positive gross sums but negative net in all four3bps folds.
-The stateful1bps sum+2.5294 does not justify choosing a cheaper cost or model.
-These are seen-data slice sums, not portfolio/account returns or profitable
-model selection. No threshold rescue or Paper replacement follows.
-588 focused/related tests pass in56.87s;
-independent static review, immutable readback, Ruff and both sample-env Compose
-configs pass. Exact root/pins and limitations are in Engine Research. Claude
-reviewed the contract and supplied aggregate interpretation, both
-supported-with-limits, not an independent experiment or endorsement of alpha.
-Three disjoint agents and the CPU worker/container are finished. No KIS,
-credentials, orders, task changes, new data, GPU, saved weights or new runtime.
-The company lifecycle and unknown successor remain open with no fresh broker
-observation in this package. Next Research predeclares one lower-turnover,
-longer-holding mechanism with lawful existing input, matched controls and
-explicit payoff/timing, not another H30 hyperparameter rescue. No additional
-worker, collection or compute appointment has been dispatched.
+Current September25 Research continuation: the single-session H180 study
+completed four Ridge and16 CUDA TCN/attention fits, plus the fixed uniform-four
+blend and matched controls,120 cells total, in260.569s. One daily decision
+holds12:30-to15:30 ET, with36 completed M5 inputs and32 fixed training epochs.
+At3bps/side every active policy's four-slice one-share net sum is negative;
+uniform-four is-27.9622 and Ridge-41.2326. The ensemble MSE is worse than TRAIN
+mean in all four folds. This is seen-data development, not portfolio returns,
+model selection or a verdict against all DL. All16 models reload with exact
+decision parity and remain external. Exact pins/results are in Engine Research.
+
+The operator reaffirmed autonomous useful local GPU work; AGENTS records it.
+The historical4GiB allocation was a per-study cap, not an approval boundary.
+This study uses measured available VRAM:23,030,923,264-byte budget on RTX4090,
+75,395,072-byte peak Torch allocation for these small models. Existing pinned
+Torch2.7/CUDA12.8 and image remain unchanged. Real synthetic GPU fit/reload
+and final immutable readback pass. Independent review corrected float32
+threshold/reload inconsistency and moved GPU-lock ownership to the supervisor
+parent before source freeze; targeted re-review found no further issue.
+Claude's pre-run contract verdict is supported-with-limits, not alpha approval.
+479 focused/related tests pass in45.26s; Ruff, both sample-env Compose configs
+and diff checks pass. Full company authority was not repeated for this isolated
+Research package with unchanged shared runtime/Execution paths.
+Worker/container exited and GPU lock released. No KIS, credentials, orders,
+task changes, new data/runtime or Paper input belongs to this package.
+The company lifecycle and unknown successor remain open; current owner still
+has September25 23:50 KST next_due. Research must not select the least-negative
+seed or enlarge same-input training solely for utilization. Next parallel
+preparation is an aligned cross-ETF information/pooling hypothesis with fixed
+controls, before further architecture size/search; exact recovery stays primary.
 
 The preceding composed study remains closed:16 Ridge/four tree fits and160
 pairs. Its positive tree sum came from only two SPY earlier-fold trades, while
