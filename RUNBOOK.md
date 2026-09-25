@@ -2,38 +2,48 @@
 
 ## Latest Bounded Research
 
-`scripts/run_firstrate_session_h180.py` reuses the immutable bounded supervisor:
+`scripts/run_timesfm_return_development.py` reuses the immutable bounded supervisor:
 `--freeze` binds source metadata/code before rows are loaded;
 `--run --contract-sha256 <exact hash>` owns one finite attempt, never an
 automatic retune/retry. Root:
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-single-session-h180-development-v1`.
+`D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1`.
 Use the existing pinned Torch image
 `sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039`,
-GPU enabled,2 CPU/4GiB host RAM,1800-second supervisor, network disabled,
+GPU enabled,2 CPU/6GiB host RAM,600-second supervisor, network disabled,
 source/data read-only, only the external artifact mount writable. No env-file,
-credentials, KIS, new dependency/image or scheduler. The supervisor parent owns
+credentials, KIS, new base dependency/image or scheduler. The supervisor parent owns
 the canonical GPU lock until its child exits/is reaped, including timeout.
 
-One full-session EVAL decision uses36 completed M5 bars, entry12:30/exit15:30
-ET opens, fixed >6bps forecast gate,1/3/5bps accounting-only sensitivity.
-Four CPU Ridge fits and cash/long/SMA/TRAIN-mean controls run before16 fixed
-TCN/attention CUDA fits. Two seeds each,32epochs, batch128, no EVAL fitting or
-early stopping. The fixed mean of four GPU forecasts excludes Ridge and learns
-no weight. TRAIN scalers and16 numeric NPZ/configs stay in external models/.
-Reload checks numeric tolerance and identical member/ensemble decisions.
-The final summary contains only aggregate development facts and hashes.
+The existing `timesfm-2.0.2-py3-none-any.whl` SHA256 is
+`c7bde94beb1651e1251cdf1e9d09cf6f015e0218d038a4a836a170dc70b08071`.
+Verify before installing `--no-index --no-deps` into disposable `/tmp/timesfm`,
+never the host or base/Paper image. Keep HF Hub offline/telemetry disabled.
+The read-only container uses256MiB `/tmp` tmpfs and PYTHONPATH includes this
+temporary package plus `/app/src`; weights remain under the external artifact
+mount. The adapter loads local safetensors directly, not a Hub download helper.
+
+Each input has128 prior raw daily intraday returns; the TimesFM median predicts
+the next session open/close return. Jan-Mar and Apr-Jul2026 have61/84 targets
+per SPY/QQQ/IWM. CPU controls precede CUDA; no training/weight update. Fixed
+forecast >20bps acts long/flat under5/10/20bps all-in round-trip accounting.
+Histories may predate the checkpoint; all target dates postdate the exact
+official October2025 weights. Raw revised data and next-open availability
+assumptions remain; this is not an independent holdout or a price-level test.
+Per-context normalization/attention is independent even in a mixed-date batch;
+do not transfer this fact to Chronos-2's related-series group attention.
+Only aggregate development facts and hashes are retained, not predictions.
 
 The local GPU allocator uses min(90 percent of total, free minus1GiB), rather
 than the old per-study4GiB cap. No permission wait or artificial VRAM padding.
-Actual CPU/CUDA run completed120 cells in260.569s; offline contract/result/
-model hashes validate. All active policy aggregate nets are negative at3/5bps.
-479 focused/related tests pass in45.26s; Ruff/both sample-env Compose configs
-and synthetic CUDA fit/reload pass. No full-suite run for this isolated package.
-Source-clock/revision/finality, zero-latency, seen-data and dependent-fold limits
-remain. This does not select a model or create a Paper input. The container
+Actual run completed435 forecasts/90 cells in31.213s including offline package
+installation/startup; peak allocation1,033,671,168 bytes. Offline contract,
+source/asset and exact summary hashes validate. Small positive SPY proxy means
+do not establish profitability; QQQ/IWM are not consistent.325 focused/related
+tests pass in20.51s; Ruff/both sample-env Compose configs pass. No full-suite
+run for this isolated package. This does not select a model or create a Paper input. The container
 exited, lock released, registry non_promoting_completed; never rerun its closed
 immutable path. Engine Research holds exact pins, results and next hypothesis.
-Previous feature-boosting/transition studies remain immutable references, not
+Previous H180/feature-boosting/transition studies remain immutable references, not
 a permission condition for independent Paper recovery.
 
 ## Modes

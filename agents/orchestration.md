@@ -16,11 +16,11 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Successor unknown/no broker ID remains unchanged. One15:25Z read-only check again finds one owned SPY/no opens/no exact POST-date history candidate. Absence cannot close it; no repost/reset/substitute. Exact receipts in Execution; no worker remains. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | September24 23:50 owner failed evidence_unavailable. Isolated diagnostic/CLI-exit repair deployed, then one15:40Z retry reached no_intent/existing_inventory_or_order_conflict. No adoption or new order; historical cause still unknown. Existing owner next_due September25 23:50 KST, RestartCount=0;10-percent policy unchanged. |
-| Fixed single-session H180 comparison | Engine Research / completed | Four Ridge/16 CUDA fits and120 cells completed in260.569s. Every active policy's four-slice aggregate net is negative at3/5bps. All16 external models pass reload/readback; no winner or Paper dependency. Next preparation is a fixed aligned cross-ETF information/pooling comparison, not same-input model-size search. |
+| Foundation-model daily-return comparison | Engine Research / complete | TimesFM2.5 ran435 real-data zero-shot forecasts/90 cells in31.213s. Limited SPY positive accounting observation, no selected model or Paper input. Next ready preparation is pinned Chronos-2 plus same-origin cross-ETF controls; not an active/frozen appointment. Exact results/limits belong to Research. |
 | Local console | Execution / existing loopback web | Existing stopped container restarted with configuration unchanged.127.0.0.1:8787 health=ok, no broker credentials/private mount; mode=off, directional pauses unchanged. Current account projection was unavailable before the new execution observation. No public serving or order from dashboard startup. |
 | Data collection / finite D1 measurement | Data / existing tasks | Actual22:15 owner head now verified:99 rows through September23, collected13:15:02Z, current baseline ready/exit. Exact Data hash/availability retained; next_due September25 22:15 KST. No broader-cache/finality claim. Finite D1 remains closed, not a prerequisite. |
-| GPU | Research Steward / released | Actual RTX4090/Torch2.7 CUDA12.8 campaign completed; container exited and canonical GPU lock absent. Available-VRAM budget23,030,923,264 bytes instead of old4GiB cap; actual small-model peak75,395,072 bytes. No new appointment, approval wait or runtime change. |
-| Verification | Orchestrator / isolated Research package |479 focused/related tests pass in45.26s; actual CPU/CUDA run, synthetic GPU fit/reload, independent source review and immutable readback pass. Ruff/both sample-env Compose configs and diff checks pass. No Execution rebuild, full-suite rerun or company-completion claim. |
+| GPU | Research Steward / available | TimesFM completed; peak allocation1,033,671,168 bytes with23,030,923,264-byte available-VRAM budget. Canonical lock absent/container exited. No permission/runtime block or background training claim. |
+| Verification | Orchestrator / isolated Research package |325 focused/related tests pass in20.51s; actual CPU-first/CUDA run, independent source review and immutable readback pass. Ruff/both sample-env Compose configs pass. No Execution rebuild, full-suite rerun or company-completion claim. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -53,22 +53,23 @@ this block. Existing23:50 strategy and Data owners continue independently.
 The15:25Z original-date absence adds no terminal evidence. Source-audit of the
 official SELL contract found no concrete request defect; do not invent one.
 
-Latest handoff review: Data/test, Execution/review and Infra/learner agents
-worked disjoint packages; the orchestrator integrated the H180 comparison.
-All agents and actual CPU/CUDA container are closed. Reversible improvement:
-the new learner preloads its small fold tensors once on CUDA and uses a
-measured available-VRAM allocation, not a project-wide4GiB ceiling. Parent
-supervisor owns the GPU lock across worker failure/timeout. Existing runtime,
-architectures, supervisor and replay are reused; no background sweep or worker
-framework was added. Independent tests ran alongside the one actual pass.
-The3h hold/four-model blend still fails to establish useful post-cost signal;
-this is not evidence to maximize model size, select seeds or lower costs.
-Next ready preparation is common-timestamp cross-ETF information/pooling with
-fixed single-ETF controls and no future peer input. No new campaign is frozen.
-Paper recovery remains independently open; safe scheduler/receipt reattachment
-at08:08-08:10Z found no newer result and preserved the23:50 KST owner next_due.
-No fresh broker call or outcome is inferred. Claude's contract-only
-supported-with-limits review and corrections are linked by Research.
+Latest handoff review: Data/test, public-source/implementation review and
+Execution agents worked disjoint packages; the orchestrator integrated the
+TimesFM real-data comparison. All agents and the actual CUDA container are
+closed. Reversible improvement: a dated exact checkpoint may support a bounded
+post-checkpoint development target despite undisclosed instrument membership;
+do not turn unknown domain overlap into a blanket GPU/research prohibition.
+Claude challenged this interpretation; accepted limits and rejected overclaims
+are linked by Research. The existing networkless runtime/adapter/supervisor
+were reused; no new worker framework or automatic tuning sweep. Independent
+CPU tests ran alongside the actual inference pass. Small positive SPY proxy
+returns do not justify symbol selection, fine-tuning or threshold rescue.
+Next ready packages are original-POST-date ID-less recovery diagnostics
+(Execution, synthetic-first, no adoption/closure/repost) and pinned Chronos-2
+same-origin cross-ETF preparation (Research, no future peer context). Paper
+recovery remains independently open; source-safe September25~19:45 KST
+reattachment found no newer outcome and preserved the23:50 KST owner next_due.
+No fresh broker call or fill is inferred from that check.
 
 C: remains measured-fast test scratch; data/models remain D:. Retained failed
 root `C:\trpy\runs\r-7784b455` is inactive and untouched, not a lease. No cleanup
@@ -77,5 +78,5 @@ guard was relaxed. Tool policy denied cleanup of inactive focused-test root
 The earlier test agent's `C:\trpy\cfint-ad031d8198` cleanup was likewise denied
 and left intact. Its test process is finished; this is not a research block.
 Historical evidence stays in Git, DECISIONS and RUNBOOK.
-This package's inactive scratch `C:\trpy\h180-e19ca5375a` and role-test
-roots were retained intact; no recursive cleanup or guard workaround was attempted.
+This package's inactive `C:\trpy\tfm-*` and role-test scratch roots were retained
+intact; no recursive cleanup or guard workaround was attempted.

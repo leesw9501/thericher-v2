@@ -10034,3 +10034,44 @@ optimal control, fresh validation or an exact breakeven rule. Different
 policies may change exposure, so their net differences are not just fee
 savings. Existing held/flat broker ownership, Paper authority and live ban
 are untouched. No threshold search, GPU, retained fitted weights or selection.
+
+## 2026-09-25 - Test TimesFM on post-checkpoint daily returns
+
+The operator requested actual foundation-model consideration after the local
+TCN/attention study. Reuse the already downloaded Apache-2.0 TimesFM2.5 model
+and pinned offline runtime, not another model download or framework change.
+The official weight-changing commit
+`d418f3e8a8fa79d655b391c158f0ee8d68fe68c9`, dated2025-10-01, installs LFS
+SHA256 `2f776efe6245e42b24bc4153ffdf61810140210e4bd3b01fb21f7aa779ab6ce8`.
+The retained2025-10-02 revision points to those same bytes. Main and the
+source reviewer re-retrieved the official commit, pointer and model card:
+https://huggingface.co/google/timesfm-2.5-200m-pytorch/commit/d418f3e8a8fa79d655b391c158f0ee8d68fe68c9
+https://huggingface.co/google/timesfm-2.5-200m-pytorch/blob/1d952420fba87f3c6dee4f240de0f1a0fbc790e3/README.md
+
+This establishes a scoped post-checkpoint target interpretation under trusted
+publisher history, not independent timestamp notarization or disclosed corpus
+membership. January-July2026 targets cannot have been actual future outcomes
+in those earlier bytes under that assumption. Earlier context/instrument
+overlap remains possible; no universal unknown-corpus exemption is introduced.
+Source revisions, researcher adaptation and unseen-instrument claims are
+separate issues. AGENTS clarifies this narrow distinction rather than keeping
+every foundation model at synthetic-only status forever.
+
+Freeze one128-session/horizon-one zero-shot comparison on raw same-day
+`10000*(close/open-1)` histories, predicting next-session open/close return.
+Targets split descriptively into January-March and April-July2026; earlier
+context starts in2025. Use signed median forecasts, context-only normalization,
+fixed >20bps long/flat decisions, cash/long/previous-return/rolling-mean controls
+and5/10/20bps all-in round-trip cost sensitivity. No fine-tuning, model/seed
+selection, pooled independence claim, local-paper parity or Paper consumer.
+Raw/raw same-day ratios cancel only a common daily multiplier, not independent
+revisions or publication latency. Existing Tiingo snapshots stay seen/non-PIT.
+
+Claude's supplied-facts verdict was supported-with-limits. Accepted: separate
+descriptive forecast error from PnL and retain adaptive/correlated-source limits.
+Not adopted: claimed corpus membership, numeric effective sample size~1, or
+the claim that same-day ratios mostly cancel non-PIT revisions; none was shown.
+Exact external review:
+`D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1-review.json`.
+This comparison advances Engine research without changing the unresolved KIS
+successor, its owned schedule, model weights or the execution runtime.

@@ -346,6 +346,12 @@ research, and model-side PnL attribution.
   coverage against a campaign's validation/holdout may support only an
   isolated non-promoting representation or runtime study, never a comparative
   result, ensemble input, or promotion claim.
+  An exact checkpoint hash tied to a trusted official dated release before
+  every evaluation target can resolve temporal target overlap for a bounded
+  post-checkpoint development comparison. Keep the undisclosed corpus and
+  possible earlier-context/instrument overlap explicit; this is not an
+  out-of-domain, independent-holdout or Paper qualification. Revised source
+  values and outcome-informed research choices remain separate limitations.
 - A post-cost comparative, ensemble, or paper-candidate claim carries an
   Execution-attested replay-parity record for its cost, latency, fill, and
   availability assumptions. This is evidence custody, not a manual approval

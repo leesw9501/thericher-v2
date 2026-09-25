@@ -24,21 +24,21 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-09-25 KST)
 
-Independent H180 Research completed four Ridge/16 CUDA fits and120 cells in
-260.569s. One daily3h hold, matched controls, fixed TCN/attention seeds and
-uniform-four mean;32epochs, no EVAL early stopping/search. All active policies'
-four-slice sums remain negative at3/5bps; uniform-four MSE is worse than TRAIN
-mean in all folds. All16 numeric models reload with identical decisions and
-remain external. The operator reaffirmed useful local GPU use; the new study
-replaced the inherited4GiB cap with measured available VRAM, without changing
-historical frozen runs or runtime. Worker exited/GPU lock released. Exact
-evidence and source limitations are in Research, not a Paper replacement.
-479 focused/related tests pass in45.26s; Ruff/both Compose configs, actual CUDA
-fit/reload and immutable readback pass. Full company authority was not repeated.
-Next parallel preparation tests whether aligned cross-ETF information/pooling
-adds value over fixed single-ETF controls, not bigger same-input models or a
-least-negative-seed selection. The unknown Paper successor still needs actual
-recovery; this research package does not close the single company objective.
+Independent TimesFM2.5 Research completed435 real-data zero-shot forecasts
+and90 fixed policy/cost cells in31.213s CUDA time including startup. Fixed128
+past daily intraday returns, next-session open/close payoff;2026 targets follow
+the exact public2025 checkpoint. SPY's two20bps groups are positive on just4/6
+trades; QQQ/IWM are negative, and zero-return MSE beats TimesFM in all six.
+This is revised seen-data analytical development, not NAV/actual fills, an
+independent holdout, a selected model or a Paper replacement. Existing weights
+and runtime unchanged, no fine-tuning/download.325 focused tests, Ruff/both
+Compose configs and immutable readback pass; container/GPU lock released.
+Exact provenance, limitations and metrics are in Research/DECISIONS.
+Next parallel preparation is one matched Chronos-2/cross-ETF information
+comparison, with dated weights and same-origin inputs, not hindsight SPY-only
+selection. At19:45 KST Execution reattached no newer owned outcome and preserved
+the23:50 next_due. The same unknown successor still needs exact recovery;
+this package does not close or replace the single company objective.
 
 The current daily-SPY budget path was rechecked once at15:40Z after deploying
 closed stage/type diagnostics and meaningful CLI failure exits. It now returns
@@ -292,6 +292,10 @@ funding binding or inventing another manual-approval or profitability gate.
 2. Reproduce and repair date-crossing reconciliation: use persisted submission
    identity/time for history queries, not the date of the recovery invocation.
    Keep unavailable/ambiguous evidence unknown rather than guessing a fill.
+   ID-less recovery currently searches only opens. Add diagnostic original-POST-
+   date history candidate classification using existing complete pagination;
+   distinguish absent/unique/ambiguous/incomplete without automatically adopting
+   an ID, inferring terminal state, repeating POST or resetting private identity.
 3. Reproduce and repair the never-submitted-intent case: an unrelated open
    order is not proof that this intent was submitted. Preserve exposure checks,
    but distinguish an actual unknown side effect from a pre-submit conflict.
@@ -367,9 +371,14 @@ funding binding or inventing another manual-approval or profitability gate.
   mechanism or replication, preserving seen-data and source-clock limitations.
   TimesFM 2.5 is selected as the public-model runtime; 3.0's separate
   noncommercial/nonproduction restrictions are not waived by personal use.
-  The pinned 2.5 synthetic CPU/CUDA check is runtime evidence only, not a
-  predictive benchmark. Source/pretraining scope affects only that public
-  model's claims, not the ready locally trained comparison. See DECISIONS.
+  The pinned 2.5 synthetic CPU/CUDA check remains runtime evidence only.
+  Its new post-checkpoint January-July2026 daily-return comparison is complete
+  above. Keep temporal target separation distinct from unknown instrument/
+  context overlap, source revisions and seen-data adaptation. Next source/
+  runtime preparation may compare Chronos-2 with same-origin cross-ETF inputs;
+  no model/runtime is yet adopted, and group attention must not see later
+  forecast-origin contexts. Do not choose SPY or tune after the ten-trade
+  positive. The existing single-ETF controls/payoff remain matched. See DECISIONS.
 - `regular-session-cost-matrix-v2` completed on 2026-09-22 without changing
   tonight's Paper paths. Full regular-session TRAIN windows grew support to
   2,232-6,732 rows per fit; contexts12/36 and horizons30/60/120 share fixed costs.

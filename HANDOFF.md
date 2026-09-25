@@ -21,35 +21,36 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
-Current September25 Research continuation: the single-session H180 study
-completed four Ridge and16 CUDA TCN/attention fits, plus the fixed uniform-four
-blend and matched controls,120 cells total, in260.569s. One daily decision
-holds12:30-to15:30 ET, with36 completed M5 inputs and32 fixed training epochs.
-At3bps/side every active policy's four-slice one-share net sum is negative;
-uniform-four is-27.9622 and Ridge-41.2326. The ensemble MSE is worse than TRAIN
-mean in all four folds. This is seen-data development, not portfolio returns,
-model selection or a verdict against all DL. All16 models reload with exact
-decision parity and remain external. Exact pins/results are in Engine Research.
+Current September25 Research continuation: TimesFM2.5 has now run on real
+SPY/QQQ/IWM data, not only synthetic inputs. Existing pinned weights made435
+zero-shot forecasts from128 past daily intraday returns to the next session's
+open/close return,90 analytical policy/cost cells, in31.213s on RTX4090.
+All2026 targets postdate the exact official October2025 checkpoint. This
+scoped temporal fact permits a development comparison; unknown earlier
+instrument/context overlap, revised seen data and adaptive choices remain.
+No fine-tuning, model download, price-level benchmark or Paper consumer.
 
-The operator reaffirmed autonomous useful local GPU work; AGENTS records it.
-The historical4GiB allocation was a per-study cap, not an approval boundary.
-This study uses measured available VRAM:23,030,923,264-byte budget on RTX4090,
-75,395,072-byte peak Torch allocation for these small models. Existing pinned
-Torch2.7/CUDA12.8 and image remain unchanged. Real synthetic GPU fit/reload
-and final immutable readback pass. Independent review corrected float32
-threshold/reload inconsistency and moved GPU-lock ownership to the supervisor
-parent before source freeze; targeted re-review found no further issue.
-Claude's pre-run contract verdict is supported-with-limits, not alpha approval.
-479 focused/related tests pass in45.26s; Ruff, both sample-env Compose configs
-and diff checks pass. Full company authority was not repeated for this isolated
-Research package with unchanged shared runtime/Execution paths.
-Worker/container exited and GPU lock released. No KIS, credentials, orders,
-task changes, new data/runtime or Paper input belongs to this package.
-The company lifecycle and unknown successor remain open; current owner still
-has September25 23:50 KST next_due. Research must not select the least-negative
-seed or enlarge same-input training solely for utilization. Next parallel
-preparation is an aligned cross-ETF information/pooling hypothesis with fixed
-controls, before further architecture size/search; exact recovery stays primary.
+At20bps all-in round-trip costs, SPY's two groups are positive but contain
+only4/6 trades; QQQ/IWM groups are negative. TimesFM beats rolling-mean MSE
+in2/6 groups but loses to zero-return MSE in all six. Preserve the positive
+SPY observation without picking a symbol/model, retuning or claiming practical
+profitability. This is unit-notional analytical accounting, not actual fills
+or NAV. Exact table, source/contract/result pins are in Engine Research.
+GPU peak allocation1,033,671,168 bytes; parent lock released/container exited.
+325 focused tests pass in20.51s; Ruff, both Compose configs and immutable
+readback pass. New result-reader type/hash checks were fixed before freezing.
+Independent review verified per-context batch isolation in the installed wheel.
+No shared Execution/runtime change or full company-suite rerun.
+
+Execution independently reattached unchanged evidence at19:45 KST: successor
+still unknown/no broker ID, no newer result, no active scoped owner. Preserve
+the existing September25 23:50 KST next_due and exact identity; no repost.
+Next primary code package can add diagnostic original-POST-date history
+classification to ID-less recovery, without adopting an ID or inventing a
+terminal result. Next Research preparation is a matched Chronos-2/cross-ETF
+information comparison, with exact dated weights and same-origin peer inputs;
+no new campaign/model/runtime has been acquired or allocated. Company lifecycle
+remains open. Prior H180/boosted studies and their external weights stay closed.
 
 The preceding composed study remains closed:16 Ridge/four tree fits and160
 pairs. Its positive tree sum came from only two SPY earlier-fold trades, while

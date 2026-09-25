@@ -5,6 +5,25 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+Closed `timesfm-2p5-tiingo-intraday-return-development-v1`: one zero-shot
+CUDA inference on435 post-checkpoint ETF target dates,90 fixed policy/cost
+cells,31.213s including offline wheel install/startup. CPU controls preceded
+inference; no fine-tuning, weight update, selection or sealed holdout.
+Existing Apache TimesFM2.5 bytes and pinned Torch2.7.0+cu128 remain unchanged.
+RTX4090 peak allocation1,033,671,168 bytes against23,030,923,264 available-VRAM
+budget;2 CPU/6GiB host RAM/600s supervisor. Parent held the canonical GPU lock
+through child completion, then released it. Container/agents closed, registry
+non_promoting_completed; no active appointment. Contract:
+`sha256:f8947da5f099267348e61f492e22462a319172edbbcbe1fcb662031ccf5d9ff9`.
+Summary:
+`sha256:ba936e9d99a34f7366351c9a1337801005a6d49ae24fe55e894ea44eee7244b3`.
+Root: `D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1`.
+Dataset remains seen/non-PIT; exact dated-weight interpretation is in DECISIONS.
+Research owns the small-sample/cost-sensitive results; they do not reserve
+depth training or select SPY. Chronos-2 is next source/runtime preparation,
+not a frozen campaign or GPU reservation. No retained new weights/predictions,
+new model download, KIS call or Paper input followed.
+
 Closed `firstrate-m5-single-session-h180-development-v1`: existing FirstRate
 SPY/QQQ, one EVAL decision per full session, H180, four CPU Ridge fits then16
 fixed TCN/attention fits at32epochs plus their predeclared uniform blend.

@@ -40,6 +40,16 @@ research artifacts remain under `D:\thericher-v2\model-artifacts`.
 
 ## Active Objective
 
+September25 Research input reattestation: the existing August9 raw Tiingo ETF
+snapshot supports435 January-July2026 target histories, each with128 prior
+scheduled sessions (145 per SPY/QQQ/IWM). Date/hash-only preparation found no
+missing required history; the completed actual study also observed all targets.
+No acquisition or source mutation. Raw same-day open/close scaling does not
+resolve independent price revisions or next-open availability. This distinct
+TimesFM development scope does not reopen the closed Tiingo rotation or qualify
+a Paper input. Exact source/contract/result pins and outcomes belong to Engine
+Research; no Data collector or GPU appointment remains from this preparation.
+
 September25 offline reattachment verifies the actual22:15 owner head:
 `kis.paper.private.daily.head-v1.snapshot=20260924T131502508023Z-86ed43c76f90-spy-ams-v1`,
 dataset `sha256:e0b7856b3c3fa0c2add2f346c326d88959b94a12776d1457e3ca2f5781a5ecd3`.

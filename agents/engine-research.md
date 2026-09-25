@@ -17,64 +17,73 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State
 
-Latest completed study: `firstrate-m5-single-session-h180-development-v1`.
-One EVAL decision per full session, using36 completed M5 bars at12:30 ET and
-a12:30-to15:30 open/open H180 payoff. Early closes are excluded by calendar;
-no overnight position or silent extension of an old H30 lease. Four Ridge
-fits precede16 CUDA fits: TCN/compact attention, seeds101/103,32 fixed epochs.
-The uniform-four mean is predeclared, excludes Ridge and learns no weights.
-All model decisions use nominal >6bps;1/3/5bps costs change accounting only.
+Latest completed study: `timesfm-2p5-tiingo-intraday-return-development-v1`.
+The existing200M TimesFM2.5 checkpoint now consumed real market histories,
+not only synthetic input:435 zero-shot forecasts,90 fixed policy/cost cells.
+Each signed input is128 prior raw daily intraday returns `10000*(close/open-1)`;
+the median predicts the next scheduled session's open/close return. No training,
+fine-tuning, weights update, positivity clamp or future covariate. Histories
+can predate the checkpoint; every target is January-July2026, after the exact
+public October2025 weight hash. The official dated-weight interpretation and
+unknown-corpus/source limitations are in DECISIONS, not a new promotion claim.
 
-SPY earlier/later and QQQ earlier/later TRAIN rows are744/1116/744/1122,
-with124/186/124/187 history blocks. EVAL has62/62/63/62 full outcomes and no
-future censoring; one SPY earlier session lacks past input. TRAIN normalization
-and strict label purge precede EVAL. Overlapping TRAIN samples and expanding
-folds are dependent. All120 cells and16 retained models validate offline.
-Below are mechanical sums of four fixed-one-share seen-data slices, not
-portfolio/NAV returns, actual account PnL or independent performance evidence:
+Each symbol has61 January-March and84 April-July targets, no past exclusions
+or future censoring. The fixed >20bps long/flat threshold is identical across
+5/10/20bps all-in round-trip costs. Cash, unconditional intraday long, previous
+return and rolling128 mean use the same observations. The table reports
+TimesFM mean net bps per observed session, with flat sessions included; these
+are analytical unit-notional returns, NOT portfolio NAV or broker/local-paper
+fill parity. No overnight holding or pooled independent-sample claim.
 
-| Policy | Roundtrips | Gross USD | Net USD at3bps/side | Net USD at5bps/side |
+| Symbol / period | Targets | Trades | Mean net at10bps | Mean net at20bps |
 | --- | ---: | ---: | ---: | ---: |
-| Cash | 0 | 0 | 0 | 0 |
-| Matched H180 long | 249 | 5.2264 | -53.4409 | -92.5517 |
-| SMA3/12 | 158 | -23.9175 | -61.1475 | -85.9663 |
-| TRAIN mean | 125 | 6.1020 | -20.4132 | -38.0901 |
-| Ridge | 116 | -14.0042 | -41.2326 | -59.3845 |
-| TCN101 | 103 | -26.2970 | -50.4029 | -66.4722 |
-| TCN103 | 87 | 3.6010 | -17.0389 | -30.7983 |
-| Attention101 | 104 | 3.2429 | -21.1992 | -37.4936 |
-| Attention103 | 120 | 11.9238 | -16.0716 | -34.7351 |
-| Uniform four | 90 | -6.7460 | -27.9622 | -42.1065 |
+| SPY Jan-Mar | 61 | 4 | +1.1501 | +0.4944 |
+| SPY Apr-Jul | 84 | 6 | +1.6047 | +0.8904 |
+| QQQ Jan-Mar | 61 | 10 | +1.0302 | -0.6092 |
+| QQQ Apr-Jul | 84 | 30 | -1.0237 | -4.5952 |
+| IWM Jan-Mar | 61 | 7 | -3.8728 | -5.0203 |
+| IWM Apr-Jul | 84 | 8 | -2.7714 | -3.7237 |
 
-Uniform-fold3bps nets are+0.1937/-16.2596/-2.2782/-9.6181. Only two of16
-individual DL fold MSEs improve on TRAIN mean, both attention101 later folds;
-no architecture/seed improves it in both folds of either symbol. All four
-ensemble and Ridge MSEs are worse than TRAIN mean. Every DL TRAIN loss fell,
-so successful fitting does not imply useful prediction. No winner, seed
-selection, threshold/cost rescue or universal family rejection follows.
+SPY's ten trades are a limited positive development observation, not selection
+of a profitable model/symbol. TimesFM MSE improves rolling mean in2/6 groups
+and MAE in3/6, but MSE is worse than zero-return in all six. Forecast error and
+thresholded payoff answer different questions. Rolling mean never trades at
+the fixed threshold. No lower-cost/threshold/context rescue or fine-tuning on
+these outcomes follows; preserve every comparison and the revised seen-data,
+correlated-ETF/overlapping-context and assumed-next-open availability limits.
 
-Existing networkless Torch2.7.0+cu128 Docker completed CPU-first/CUDA work in
-260.569s including startup, under2 CPU/4GiB host RAM and one1800s supervisor.
-RTX4090 allocation budget23,030,923,264 bytes supersedes the inherited4GiB
-cap only for this new study; actual peak Torch allocation75,395,072 bytes.
-Small data/models do not need the whole card. All16 numeric NPZ weights,
-scalers and configs remain outside Git; reload checks prediction tolerance
-and exact member/ensemble decisions. Parent owns the GPU lock across timeout
-and child reaping. Container exited and lock is released. No new data/runtime,
-holdout, KIS, schedule or Paper consumer. Source-clock/revision/finality and
-zero-latency assumptions remain unverified.
-Verification:479 focused/related tests pass in45.26s, including76 new cases.
-Independent source review fixed float precision in reload decisions and parent
-GPU-lock ownership before freezing; re-review found no further issue. Actual
-synthetic CUDA fits/reload, Ruff and both sample-env Compose configs pass.
-All16 NPZ and16 config files total274,432 bytes. Full company authority was not
-repeated for this isolated research package; the company objective remains open.
+Existing networkless Torch2.7.0+cu128 image with offline hash-verified TimesFM
+2.0.2 wheel completed in31.213s including installation/startup. RTX4090 peak
+allocation1,033,671,168 bytes, available-VRAM budget23,030,923,264 bytes.
+2 CPU/6GiB host RAM and600s supervisor; parent held/released canonical GPU lock.
+Independent inert-wheel review confirmed per-context statistics/attention,
+not cross-series leakage from later contexts in the batch. Source review found
+no blocking issue;52 new tests exposed/fixed five malformed-result checks
+before freeze. Combined325 focused tests pass in20.51s, Ruff/both Compose
+configs and separate immutable readback pass. No full-suite rerun for this
+isolated package. Worker/container/agents closed; registry non_promoting_completed.
+Existing weights remain unchanged/external; no new model download, market
+acquisition, predictions retained, KIS call, schedule or Paper input.
+Root: `D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1`.
+Contract: `sha256:f8947da5f099267348e61f492e22462a319172edbbcbe1fcb662031ccf5d9ff9`.
+Summary: `sha256:ba936e9d99a34f7366351c9a1337801005a6d49ae24fe55e894ea44eee7244b3`.
+Claude's supplied-contract review was supported-with-limits; corrections:
+`D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1-review.json`.
+Outcome review supports runtime viability, not predictive skill. Retain the
+small-sample caution; reject an unmeasured single-session reversal, the claim
+that worse MSE proves no directional value, and the claim that fixed actions
+invalidate cost sensitivity. Fixed actions deliberately separate accounting
+sensitivity from strategy retuning; they do not establish robustness either.
+Categorical verdicts and adjudication:
+`D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1\outcome-review.json`.
+
+Previous H180 study remains closed: four Ridge/16 TCN-attention fits,120 cells,
+260.569s; uniform-four net sum-27.9622 at3bps and MSE worse than TRAIN mean
+in all four folds. No winner or universal DL rejection. Its16 retained models
+and complete accounting remain in Git/external evidence, not a new allocation.
 Root: `D:\thericher-v2\model-artifacts\research\firstrate-m5-single-session-h180-development-v1`.
 Contract: `sha256:9e53a350a4afa6020cfb56fd01c332f75e7a8fed53442b90bf95057b396c5427`.
 Summary: `sha256:97fdc734f10b402600cfb1626e0fcb568a30f20d29bdc2d01d76f8a186f94dbf`.
-Claude's supplied-contract verdict was supported-with-limits, not independent
-execution or alpha endorsement. Accepted limits and rejected assumptions:
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-single-session-h180-development-v1-review.json`.
 
 The preceding feature-boosting study remains closed: four Ridge/four64-tree
 fits,64 cells in67.879s. Boosted hurdle/stateful nets were-8.0852/-17.6684
@@ -743,7 +752,7 @@ dispatch restrictions. The current development package is described above.
 | --- | --- | --- |
 | Technical/chart and momentum/regime | Opening-range and fixed monthly-day studies completed; descriptive criteria not met | A separately declared mechanism or replication, not a search for a better day/threshold on these results |
 | Classical ML/statistical | H180 Ridge and prior feature/boosted comparisons complete, negative3/5bps aggregate nets | Prepare common-timestamp cross-ETF information/pooling controls; no same-input threshold/cost rescue |
-| Sequence/DL/public model | H180 TCN/attention16 CUDA fits and numeric reload completed; TimesFM2.5 synthetic runtime works | Test a distinct information hypothesis before model size/search; GPU approval/runtime are not blockers |
+| Sequence/DL/public model | TimesFM2.5 real-data zero-shot comparison completed:435 forecasts/90 cells; no selected model | Prepare Chronos-2 matched-payoff and same-origin cross-ETF comparison; pin source/weights/runtime before a finite run, not a TimesFM threshold rescue |
 | Portfolio/allocation/meta-decision | H180 fixed uniform-four blend is negative and all four MSEs worse than TRAIN mean | Keep all outcomes; do not select seeds/weights from these same results or infer that ensemble complexity creates signal |
 
 The fresh QQQ/SPY intraday terminal remains
@@ -776,7 +785,9 @@ candidate matrix.
 | StockMixer, MASTER, CMLF | `source_retrieved_source_only` cross-sectional and multi-granularity structural references | StockMixer claims indicator/temporal/stock mixing but has no disclosed license in its retrieved official repository. MASTER's official MIT code is China-equity/Qlib scoped and its README reports a validation-data processor defect and later source substitution. CMLF claims adaptive multi-granularity fusion but exposes no code/license or compatible scope. None supplies a KIS-compatible universe, point-in-time availability, feature contract, model code, weight, campaign, or Paper input. |
 | FinRL | MIT `rl_environment_interface_reference_only` | Its official classic framework is an educational/research train-test-trade pipeline that assumes external data and a new DRL runtime. Exclude its data preprocessing, same-bar reward timing, and cost/fill conventions; only its environment-to-agent separation is a future allocation-design reference. No package, code, data, weight, runtime, campaign, or Paper route is adopted. |
 | Heston et al.; Gao et al. | Re-retrieved source-only completed-30-minute OHLCV mechanism references | Their claimed intraday continuation/momentum effects require a fresh, causal, full-session input and a separately frozen campaign before any test. No parameter, model, data, campaign, GPU, ensemble, or Paper adoption follows. |
-| Chronos, TimesFM, Granite | Isolated source/runtime studies only | Unknown or incompatible financial pretraining/evaluation scope prevents comparative or Paper use. |
+| TimesFM2.5 | Existing pinned Apache-2.0 weights; real-data daily-return comparison completed on CUDA | Official October2025 exact-weight history supports January-July2026 target scope under trusted publisher dates. Context/instrument overlap and revised seen data remain explicit; no independent/Paper claim. |
+| Chronos-T5, Granite | Prior isolated source/runtime studies | Their old source contracts stay unchanged; no automatic extension to a market comparison or Paper input. |
+| Chronos-2 | Official model card re-retrieved2026-09-25; Apache-2.0,120M encoder, past covariates and related-series group attention | Next candidate for aligned cross-ETF information, not yet downloaded, pinned, installed or tested here. A later package must bind exact dated weights/runtime and isolate each forecast origin; do not mix later contexts into a cross-learning group. |
 | MOMENT, Time-MoE | MIT / Apache-2.0 `source_retrieved_source_only` references | MOMENT is a general patch-reconstruction representation family with a Python 3.11 recommendation; Time-MoE is a general autoregressive MoE forecasting family whose official usage specifies `trust_remote_code=True` and a separate Transformers version. Financial pretraining/evaluation scope is not disclosed for either. No code, package, weight, model, campaign, GPU, ensemble, or Paper route is adopted. |
 | PyPortfolioOpt HRP | Source-only allocation reference | Requires causal candidate returns, PIT universe, and completed rolling windows. |
 
@@ -810,6 +821,14 @@ MOMENT and Time-MoE source-only evidence:
 Public source proposals never authorize code import, weight download, training,
 ensemble use, or Paper routing on their own.
 
+Chronos-2 official sources re-retrieved2026-09-25:
+https://huggingface.co/amazon/chronos-2
+https://github.com/amazon-science/chronos-forecasting
+Its related-series group attention is relevant to the next cross-ETF question,
+unlike TimesFM's independent per-series batches. Future covariates in examples
+are not permission to pass future market values. No AWS/cloud service or paid
+runtime is proposed. Source benchmark claims are not equity-profit evidence.
+
 ## Promotion Sequence
 
 This sequence is for independent/promoted claims, not permission to start a
@@ -828,22 +847,26 @@ developmental study or a separately scoped baseline Paper experiment.
 
 ## Active Constraint And Handoff
 
-The composed-policy, position-aware, causal-feature, fixed-boosting and H180
-CPU/CUDA comparisons are completed.
+The composed-policy, position-aware, causal-feature, fixed-boosting, H180 and
+TimesFM daily-return comparisons are completed.
 Keep prior FirstRate losses and each Tiingo study's scoped limitations intact;
 none proves every model family unusable. No frozen research worker/appointment
 remains. A distinct development package may reuse seen data with that label;
 a later independent performance claim needs genuinely unseen evidence. The
 exact unresolved Paper successor is not a general research permission hold.
 Do not continue a H30 architecture/threshold rescue on these same outcomes.
-The lower-turnover H180 experiment did not establish useful prediction; larger
-models or longer training alone are not the next hypothesis. Next preparation
-binds SPY/QQQ common past-only timestamps for a cross-ETF information/pooling
-comparison, with single-ETF and TRAIN-mean controls and unchanged payoff.
-Freeze one finite developmental contract before outputs; never use a later
-peer bar, future peer outcome or full-sample normalization. Reused samples stay
-seen-data, not independent confirmation. Kill on timing/support mismatch or
-failure to add value over the matched control without costs/threshold rescue.
+The lower-turnover H180 experiment did not establish useful prediction;
+TimesFM adds a small SPY observation, not a selected winner. Larger models or
+longer training alone are not the next hypothesis. Next preparation pins
+Chronos-2 source/dated weights/runtime and binds SPY/QQQ/IWM common past-only
+timestamps. Compare isolated and same-origin cross-ETF contexts with unchanged
+daily payoff/cost/threshold and naive controls. Its group attention must never
+mix later-origin contexts into an earlier forecast. Freeze one finite
+developmental contract before outputs; never use a future peer outcome or
+full-sample normalization. Reused samples stay seen-data, not independent
+confirmation. Kill on timing/support mismatch or failure to add value over
+the matched control without costs/threshold rescue. Do not infer that the
+next source/model is runtime-ready merely because its official card was read.
 No broad parameter/architecture search or GPU memory-padding job is assigned.
 Exact Paper recovery remains the independent main path. No new appointment or
 external collection is implied by this next-package direction.
