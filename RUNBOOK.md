@@ -23,7 +23,15 @@ NASD orderable funds at the ORIGINAL limit are required immediately before any
 BUY, including a restart without a tag. Original unbound intent recovery uses
 its retained decision receipt, exact price/TTL/fingerprint, not a refreshed
 quote. Unknown outcomes remain reconciliation-only. No new tagged runtime has
-yet occurred; deploy the reviewed sources before assigning a next-session visit.
+yet occurred; reviewed sources are deployed with40 matching critical hashes.
+One existing-runner opportunity is installed as
+`thericher-kis-paper-qqq-unit-20261006` for October6 00:20-00:21 KST, fixed tag
+`opportunity-20261006T0020KST-v1`,25-minute task limit/IgnoreNew/no restart/no
+missed-run replay. Do not manually start it or replace the tag. Preserve the
+expired definition and exact private recovery identity after its one trigger.
+The `qqq-paper` chat follow-up is one-shot at00:45 KST, not a standing report.
+Registration/task exit is not a submit/fill; use exact immutable outcomes and
+strict private projection only. Computer/Docker/app must remain running.
 
 `scripts/probe_kis_paper_minute_capability.py --execute --target QQQ/NAS
 --max-pages 2 --explicit-older-key-once` already completed once at18:25:32Z:

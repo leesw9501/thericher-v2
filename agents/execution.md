@@ -29,6 +29,17 @@ QQQ request was submitted. The old rejected attempt and unknown SPY remain as
 recorded below. Numeric errors now have source-derived categorical diagnostics
 for future responses only; no retroactive attribution of the old null code.
 
+Owned next_due: `thericher-kis-paper-qqq-unit-20261006`, October6 00:20 KST
+(October5 15:20 UTC), trigger expires00:21. Same cycle and fixed explicit tag
+`opportunity-20261006T0020KST-v1`;24 visits/25-minute outer task limit, hidden
+interactive Limited principal, IgnoreNew/no restart/no missed-run replay.
+Independent source-safe static review passes; task is Ready, never invoked
+manually. This registration is not submit/fill evidence. Existing strategy
+owner remains23:50/25 minutes, leaving a five-minute scheduled gap; private
+locks still protect cross-caller ownership. One chat follow-up `qqq-paper`
+at October6 00:45 KST inspects the exact result and continues ready work;
+no recurrence or replacement follow-up chain. Computer/Docker/app must be on.
+
 Current independent QQQ readiness package is implemented, not yet deployed:
 one QQQ/NASD unit cycle through the existing daily-SPY service and shared budget
 file/locks. V2 retains the exact original basis and charges legacy SPY custody;

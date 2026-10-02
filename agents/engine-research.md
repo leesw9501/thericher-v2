@@ -17,6 +17,29 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+Current independent implementation: one pure equal-elapsed M1/M5 adapter and
+synthetic tests, not a fit or GPU campaign. Context30/120 minutes means M1
+30/120 versus M5 six/24 bars, common cutoff/entry/exit support. Ten TRAIN
+sessions, July7 purge, five descriptive comparison sessions; latest five are
+excluded from THIS package, not globally unseen data. Rule/logistic/TCN and
+cash/long form one120-cell budget, not independent per-cell experiments.
+Five synchronized session blocks give32 sign patterns; the fraction is
+descriptive, not a significance claim or independent ETF/day count. Full-context
+TCN kernels differ in parameter capacity, so a difference cannot be attributed
+solely to resolution. No real outcomes/fits/weights/holdout or Paper input yet.
+Independent WIP review found date relabeling could bypass absolute TRAIN
+anchors; the source owner is fixing canonical session identity before freeze.
+
+Primary sources re-retrieved October3: TCN causal convolution/context design,
+https://arxiv.org/abs/1803.01271; joint trend/sizing and turnover-aware loss,
+https://arxiv.org/abs/1904.04912; regime/turnover-aware portfolio design,
+https://arxiv.org/abs/2601.05975 and https://github.com/kieranjwood/deepm.
+These are mechanism references, not US-ETF profit evidence or framework import.
+The futures/universe/data requirements do not match this small ETF panel.
+Official https://github.com/google-research/timesfm still distinguishes
+Apache2.0 weights through2.5 from3.0 non-commercial/non-production weights.
+Keep the already-used2.5 checkpoint; no3.0 rights acceptance or runtime adoption.
+
 Completed frozen-policy August/September readback on one new adjusted vintage:
 zero fits/new weights,12 learned monthly actions,126 cells,36 matched-exposure
 identity checks,36 forwards/171 Decimal replays. Original TRAIN risk constants

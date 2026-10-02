@@ -30,7 +30,8 @@ not expand live authority or reset capital.
   outcomes remain reconciliation-only.535 changed-path serial tests and full
   authority7,548 passes/22 skips/317.29s/eight workers/clean helper exit pass.
   Ruff/default and research Compose pass. Eight rebuilt Paper consumers match
-  40 source hashes. The actual next tagged visit remains unobserved.
+  40 source hashes. One next-session opportunity is installed for October6
+  00:20 KST with one00:45 chat follow-up; the actual tagged visit is unobserved.
 - Frozen linear/LSTM policies were evaluated without fitting on six later
   ETF/month windows: 126 cells, 36 matched identities, zero fits. Both beat cash
   in five windows but their own TRAIN-risk control in one; no selected model.
