@@ -35,7 +35,22 @@ consumers match32 critical source hashes. Current daily-SPY/QQQ service image
 `sha256:2e11369218db7cd8795fee042117bd898526e9eade5fdbe4a089f80f77509d6f`.
 Fixed QQQ cycle `qqq-unit-20261003-v1`, opaque scope
 `sha256:1b82974f43481c6a5116e9ade47e32fa05317bca142bfa5f07f382642f0194ca`.
-Runtime pending. Broker orderable funds
+Actual one-visit runtime at18:47:59Z attempted one QQQ BUY POST, then received
+fresh typed rejection/no broker reference. State is rejected/closed, selected
+owned replay zero; no BUY/SELL fill and no round-trip completion. Worker exited
+`unit_cycle_not_completed/entry_finalized`. Read-only strict private parsers
+validate aggregate projection, and old SPY protected bytes are unchanged.
+Safe upstream code is absent/invalid after filtering; no cause can be inferred
+from that null. Do not reset this identity or blindly repeat the request.
+Exact outcome:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\1b82974f43481c6a5116e9ade47e32fa05317bca142bfa5f07f382642f0194ca\budget-20261002T184759018197Z\outcome.json`,
+SHA256 `4680aa3646a6d8192c67deed488d08d05d2e46ab66cdbd8fdc54463075167f02`.
+Its no_intent category combines never-submitted/rejected cases; the exact typed
+private readback above proves this visit WAS a rejected submit, not no attempt.
+Fees/settled cash/net PnL and an actual filled QQQ lifecycle remain unobserved.
+Existing loopback-only web container restarted unchanged; health=ok,
+broker_calls=false at127.0.0.1:8787. No public bind or dashboard broker request.
+Broker orderable funds
 remain a provisional USD SPY-reference query, not exact QQQ-at-limit buying power.
 
 October3 isolated readiness package: `kis_paper_portfolio_budget.py` now

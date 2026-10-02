@@ -37,7 +37,10 @@ JSON applies to acknowledgements too.874 changed-path serial tests pass;
 shared-core authority7,141/22 skips,310.47s/eight workers/clean helper;134
 boundary-focused tests, Ruff/both Compose pass. Narrow caller lock fix passes
 41 focused/278 integrated tests afterward; eight rebuilt consumers match32
-source hashes. Actual round trip still pending. The early failed
+source hashes. Actual one-visit QQQ attempt is typed rejected/closed/no broker
+reference, no fills, no round trip; old SPY bytes unchanged. Safe upstream code
+not retained, actual cause unknown; public-source diagnostic continues without
+blind retry/reset. Exact outcome belongs to Execution. The early failed
 authority run is not counted as verification.
 Data's actual two-page QQQ probe accepted two full pages and120 new nonoverlap
 older keys despite absent/unrecognized continuation headers. Default collection
