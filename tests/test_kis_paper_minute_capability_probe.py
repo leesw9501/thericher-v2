@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 import json
+import socket
+import urllib.request
+from dataclasses import replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
 import pytest
 
+import thericher_v2.execution.kis_market_data as market_data
 from thericher_v2.data.kis_paper_minute_capability_probe import (
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS,
@@ -196,6 +200,7 @@ def test_probe_repeats_one_terminal_head_to_measure_token_reuse_and_request_spac
     assert outcome.categorical_limit_or_error_count == 0
     assert outcome.calibration_fact == "single_client_terminal_head_reuse_under_existing_gate"
     assert all(query.continuation_next is None for query in client.queries)
+    assert "explicit_older_key_once" not in outcome.safe_payload()
 
 
 def test_probe_allows_spy_nas_prior_day_scope_from_its_first_request() -> None:
@@ -358,8 +363,7 @@ def test_probe_records_the_installed_one_second_pace_without_retaining_rows() ->
         ]
     )
     request_starts = tuple(
-        datetime(2026, 7, 24, 12, 0, tzinfo=UTC) + timedelta(seconds=index)
-        for index in range(3)
+        datetime(2026, 7, 24, 12, 0, tzinfo=UTC) + timedelta(seconds=index) for index in range(3)
     )
 
     outcome = run_kis_paper_minute_capability_probe(
@@ -453,6 +457,231 @@ def test_probe_evidence_stays_outside_repository_and_is_source_safe(tmp_path: Pa
     assert path.is_relative_to(artifact_root)
     assert json.loads(path.read_text(encoding="utf-8")) == outcome.safe_payload()
     assert "12345.67" not in path.read_text(encoding="utf-8")
+
+
+@pytest.fixture
+def offline_explicit_probe(monkeypatch):
+    def deny(*_args, **_kwargs):
+        raise AssertionError("real network, credentials and state must remain untouched")
+
+    monkeypatch.setattr(socket, "create_connection", deny)
+    monkeypatch.setattr(socket.socket, "connect", deny)
+    monkeypatch.setattr(urllib.request, "urlopen", deny)
+    monkeypatch.setattr(market_data, "load_kis_paper_market_data_config", deny)
+    monkeypatch.setattr(market_data.UrllibKisPaperMarketDataTransport, "request", deny)
+
+
+def _full_head():
+    oldest = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    return _page(tuple(oldest + timedelta(minutes=index) for index in range(120)), None)
+
+
+def _explicit_probe(client, **kwargs):
+    return run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=(),
+        observed_at=datetime(2026, 7, 25, tzinfo=UTC),
+        explicit_older_key_once=True,
+        monotonic_clock=_monotonic(0.0, 2.0),
+        **kwargs,
+    )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+def test_full_legacy_head_still_repeats_without_explicit_opt_in():
+    head = _full_head()
+    client = _MinuteClient([head, head, head])
+    outcome = run_kis_paper_minute_capability_probe(
+        client=client,
+        request_start_times=(),
+        monotonic_clock=_monotonic(0.0, 2.0),
+    )
+    assert len(client.queries) == 2
+    assert all(query.continuation_next is None for query in client.queries)
+    assert all(query.include_previous_day is False for query in client.queries)
+    assert outcome.probe_pattern_category == "terminal_head_repeat"
+    assert "explicit_older_key_once" not in outcome.safe_payload()
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize("signal", ["blank_or_absent", "unrecognized_nonblank"])
+def test_explicit_no_mf_full_head_requests_one_older_page_with_previous_day(signal, capsys):
+    head = replace(_full_head(), continuation_signal=signal, more="1")
+    oldest = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    older = replace(
+        _page(tuple(oldest - timedelta(minutes=index) for index in range(1, 121)), "1"),
+        more="private-body-metadata",
+    )
+    client = _MinuteClient([head, older, KisPaperMarketDataError("must_not_request_page3")])
+    outcome = _explicit_probe(client, max_pages=3)
+    assert len(client.queries) == 2
+    assert client.queries[0].include_previous_day is False
+    assert client.queries[0].continuation_next is None
+    assert client.queries[1].include_previous_day is True
+    assert client.queries[1].continuation_next == "1"
+    assert client.queries[1].continuation_key == "20260724092900"
+    assert all((query.symbol, query.exchange) == ("QQQ", "NAS") for query in client.queries)
+    assert outcome.minute_page_request_count == 2
+    assert outcome.token_request_count == 1
+    assert outcome.accepted_page_count == 2
+    assert outcome.explicit_older_key_category == "older_keys_observed"
+    assert outcome.new_older_key_count == 120 and outcome.overlap_key_count == 0
+    assert outcome.cursor_progress_category == "strictly_backward_nonoverlapping"
+    assert outcome.continuation_signal_categories == (signal, "recognized_continuation")
+    assert outcome.body_more_categories == ("one", "other_nonblank")
+    assert len(client._responses) == 1
+    serialized = json.dumps(outcome.safe_payload())
+    for forbidden in (
+        "12345.67",
+        "20260724",
+        "20260724092900",
+        "private-body-metadata",
+        "2026-07-25T00:00:00+00:00",
+    ):
+        assert forbidden not in serialized
+    assert outcome.safe_payload()["raw_market_data_retained"] is False
+    assert outcome.calibration_fact == "single_client_explicit_older_key_measurement_only"
+    assert capsys.readouterr() == ("", "")
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize("case", ["overlap", "repeat", "newer", "rejected", "duplicate"])
+def test_explicit_page2_kill_cases_close_without_retry(case):
+    head = _full_head()
+    oldest = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    if case == "rejected":
+        second = KisPaperMarketDataError("minute_response_rejected")
+    elif case == "repeat":
+        second = head
+    elif case == "newer":
+        second = _page((oldest + timedelta(minutes=121),), None)
+    elif case == "duplicate":
+        second = _page((oldest - timedelta(minutes=1),) * 2, None)
+    else:
+        second = _page((oldest, oldest - timedelta(minutes=1)), None)
+    client = _MinuteClient([head, second, head])
+    outcome = _explicit_probe(client)
+    assert len(client.queries) == 2 and len(client._responses) == 1
+    assert client.queries[1].include_previous_day is True
+    assert client.queries[1].continuation_next == "1"
+    assert outcome.minute_page_request_count == 2
+    assert (
+        outcome.explicit_older_key_category
+        == {
+            "overlap": "overlap_with_older_keys",
+            "repeat": "no_older_keys",
+            "newer": "no_older_keys",
+            "rejected": "page2_rejected",
+            "duplicate": "duplicate_keys",
+        }[case]
+    )
+    assert outcome.new_older_key_count == (1 if case in {"overlap", "duplicate"} else 0)
+    assert outcome.overlap_key_count == {"overlap": 1, "repeat": 120}.get(case, 0)
+    assert outcome.accepted_page_count == (1 if case == "rejected" else 2)
+    assert outcome.continuation_category == (
+        "continuation_failed" if case == "rejected" else "duplicate_conflict"
+    )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize("case", ["short", "recognized_header", "duplicate_head", "head_rejected"])
+def test_explicit_request_requires_full_head_and_no_recognized_header(case):
+    head = _full_head()
+    if case == "short":
+        head = replace(head, bars=head.bars[:-1])
+    elif case == "recognized_header":
+        head = replace(head, next_cursor="1", continuation_signal="recognized_continuation")
+    elif case == "duplicate_head":
+        head = replace(head, bars=(head.bars[0],) * 120)
+    else:
+        head = KisPaperMarketDataError("minute_response_rejected")
+    client = _MinuteClient([head, _full_head()])
+    outcome = _explicit_probe(client)
+    assert len(client.queries) == 1
+    assert outcome.new_older_key_count == outcome.overlap_key_count == 0
+    assert (
+        outcome.explicit_older_key_category
+        == {
+            "short": "head_not_full",
+            "recognized_header": "header_continuation_present",
+            "duplicate_head": "duplicate_keys",
+            "head_rejected": "head_unavailable",
+        }[case]
+    )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize(
+    "kwargs",
+    [
+        {"target": ("SPY", "AMS")},
+        {"target": ("SPY", "NAS")},
+        {"target": ("IWM", "AMS")},
+        {"include_previous_day": True},
+        {"max_pages": 1},
+    ],
+)
+def test_explicit_scope_rejected_before_client_request(kwargs):
+    client = _MinuteClient([])
+    with pytest.raises(ValueError, match="explicit older-key probe requires"):
+        _explicit_probe(client, **kwargs)
+    assert client.queries == []
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize("second_rejected", [False, True])
+def test_existing_client_allowlist_sends_next1_pinc1_without_mf_or_production_changes(
+    second_rejected,
+):
+    head = _full_head()
+    oldest = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
+    older = _page((oldest - timedelta(minutes=1),), None)
+    requests = []
+    pages = iter([head, older])
+
+    class Transport:
+        def request(self, request):
+            requests.append(request)
+            if request.method == "POST":
+                return market_data.KisMarketDataResponse.from_payload(
+                    {"access_token": "fake-token"}
+                )
+            assert market_data._is_approved_minute_request(request)
+            if len(requests) == 3 and second_rejected:
+                return market_data.KisMarketDataResponse.from_payload(
+                    {"rt_cd": "1", "msg1": "private-response-body"}
+                )
+            page = next(pages)
+            return market_data.KisMarketDataResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "output1": {"more": "1"},
+                    "output2": [bar.as_document() for bar in page.bars],
+                }
+            )
+
+    client = market_data.KisPaperMarketDataClient(
+        config=market_data.KisPaperMarketDataConfig(app_key="fake-key", app_secret="fake-secret"),
+        transport=Transport(),
+        max_minute_page_attempts=2,
+    )
+    outcome = _explicit_probe(client)
+    assert len(requests) == 3 and requests[0].method == "POST"
+    assert requests[1].query["PINC"] == "0" and requests[1].query["NEXT"] == ""
+    assert requests[2].query["PINC"] == "1" and requests[2].query["NEXT"] == "1"
+    assert requests[2].query["KEYB"] == "20260724092900"
+    assert requests[2].headers["tr_cont"] == "N"
+    assert outcome.minute_page_request_count == 2 and outcome.token_request_count == 1
+    assert outcome.continuation_signal_categories == (
+        ("blank_or_absent",) if second_rejected else ("blank_or_absent", "blank_or_absent")
+    )
+    assert outcome.new_older_key_count == (0 if second_rejected else 1)
+    assert outcome.explicit_older_key_category == (
+        "page2_rejected" if second_rejected else "older_keys_observed"
+    )
+    payload = json.dumps(outcome.safe_payload())
+    assert not any(secret in payload for secret in ("fake-token", "fake-key", "fake-secret"))
+    assert "private-response-body" not in payload
 
 
 def _page(

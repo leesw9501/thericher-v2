@@ -21,6 +21,20 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Latest October3 integration: common-store QQQ unit-cycle readiness and fresh
+typed submit rejection are implemented;874 changed-path serial tests pass.
+One shared10-percent basis counts legacy SPY and QQQ, with no private reset or
+inventory adoption. Shared-core authority now passes7,141/22 skips in310.47s,
+eight workers/clean helper, Ruff/both Compose. The first34.20s run stopped on an
+obsolete fresh-rejection expectation and is not authority;134 boundary-focused
+tests pass after correcting only that fresh expectation. Independent review's
+post-visit caller lock fix is a separately focused package before runtime.
+Runtime is still pending; old SPY unknown is
+not reclassified or replaced. Data's actual two-request probe found120 new
+older QQQ minute keys despite missing continuation headers.45 focused tests;
+exact receipt/counts belong to Data. A bounded retention improvement is owned
+next, not a claim that the production collector already has full sessions.
+
 October2/3 continuation: disjoint Data inventory, Engine adapter/acquisition,
 independent adversarial tests/source review and CPU allocation implementation
 ran as temporary role agents. Actual Chronos-2 CUDA study completed1,305 scored

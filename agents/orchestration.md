@@ -17,11 +17,11 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
 | Research | Engine Research / finite net-utility appointment complete | Two pooled linear/LSTM CUDA fits completed128 epochs each,126 cells/81.300s.49 focused tests and immutable readback pass; risk-control comparison weak, no selected model or Paper input. Exact facts belong to Research/Steward; prior studies remain immutable. |
-| Independent Paper readiness | Execution / common-store integration owned |234 pure/555 related tests pass. Now integrate the SAME existing budget file/lock order with explicit QQQ unit-cycle owner; all writers count its reservation. No runtime/private IO or deployment yet, no second10-percent basis or SPY identity replacement. |
+| Independent Paper readiness | Execution / common store verified, caller timing fix owned | Shared-core authority7,141/22 skips passes. SAME budget file/basis/locks count legacy SPY and QQQ. Narrow post-visit lock fix is independently identified; focus-test and rebuild caller before one fixed unit cycle. No old SPY replacement. |
 | Local console | Execution / existing loopback web | Existing stopped container restarted with configuration unchanged.127.0.0.1:8787 health=ok, no broker credentials/private mount; mode=off, directional pauses unchanged. Current account projection was unavailable before the new execution observation. No public serving or order from dashboard startup. |
-| Data collection / finite D1 measurement | Data / existing tasks, vintage reader complete | Independent Tiingo context acquisition succeeded in three requests,945 rows. New-vintage adjusted reader and six252-return August/September windows verify;155 combined tests/3 native-symlink skips. Old snapshot unchanged, no dataset/Paper qualification. Invoked source-only pagination review examines actual head progress without starting a collector. |
+| Data collection / finite D1 measurement | Data / existing tasks and bounded retention improvement | Actual two-page QQQ probe returned120 new older keys with no recognized M/F header,45 tests pass. Default collector unchanged; opt-in bounded retention package next. Source-safe exact evidence belongs to Data. New Tiingo six-window reader remains verified/non-promoting. |
 | GPU | Research Steward / available after useful training | Latest linear/LSTM appointment completed, lock released/container exited; no permission/runtime block. No background-training claim or eligible frozen depth job. CPU Data/Execution packages continue on disjoint resources. |
-| Verification | Orchestrator / integration and weekly serial complete | Final shared authority6,341/19 skips,307.80s/eight workers/clean helper,353 changed-path tests and16 deployed hashes. Weekly serial baseline6,341/19/35warnings,1,892.93s completed while role work ran. New isolated reader/holding/momentum150 passes/2 native-symlink skips; Ruff/default and all-profile sample-env Compose pass. Roots retained; no guard change. |
+| Verification | Orchestrator / shared-core authority complete |874 serial plus134 boundary-focused tests (overlap),7,141/22 skips in310.47s, eight workers/clean helper; Ruff/both Compose. First failed run is not authority. Narrow caller timing fix has its own focused verification; no redundant weekly serial run or root cleanup. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -54,13 +54,13 @@ Current bounded alternatives, not a second goal/backlog:
 Both remain inside standing authority; no operator decision is requested.
 Claude's actual weekly-limit failure is review_unavailable, not agreement:
 `D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-idless-history-20261002.json`.
-Current reversible improvement: metadata-only full-calendar round-trip testing
-exposed a1,246,348-byte draft training contract above the existing1MiB reader
-limit before any attempt was frozen. Calendar offsets reduce it to188,621 bytes
-with the same132/84/79 month counts, without widening a generic reader or
-spending another failed GPU attempt. Independent Data/Execution
-continue on disjoint resources. No foreground timer wait, new agent stateboard,
-schedule, approval or utilization target was introduced.
+Current reversible improvement: a two-GET capability measurement disproved
+header-only terminal inference for a full QQQ minute page:120 extra older keys
+arrived despite missing M/F. Data now owns bounded opt-in retention rather than
+repeating a source-limited conclusion. Measured pacing/default paths stay fixed
+until the exact integration passes. Independent QQQ Paper uses the common basis
+instead of waiting on one unresolvable SPY identity. No new permission, schedule,
+stateboard, unbounded retry or foreground sleep.
 
 Superseded dispatch/history is retained in Git and the lane evidence pointers,
 not duplicated here as a second queue. C: remains measured-fast test scratch;

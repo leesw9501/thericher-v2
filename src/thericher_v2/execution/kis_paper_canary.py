@@ -251,6 +251,30 @@ class KisPaperCanaryError(RuntimeError):
         super().__init__(code)
 
 
+class KisPaperSubmitRejected(KisPaperCanaryError):
+    """A fresh, unambiguous virtual-order rejection, not a legacy category."""
+
+    def __init__(self, *, upstream_code: str | None = None) -> None:
+        super().__init__(
+            "submit_kis_rejected",
+            upstream_code=upstream_code,
+            submit_response_category="provider_rejected",
+        )
+
+
+def _unique_submit_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("submit response is invalid")
+        result[key] = value
+    return result
+
+
+def _reject_submit_constant(_value):
+    raise ValueError("submit response is invalid")
+
+
 @dataclass(frozen=True, repr=False)
 class KisPaperSubmitResponseProbe:
     """Category-only view of one virtual buy-limit response."""
@@ -1253,6 +1277,17 @@ class KisPaperCanaryClient:
                 upstream_code=_submit_response_upstream_code(response),
                 submit_response_category=probe.category,
             )
+        # Neither acknowledgement nor rejection may rely on ambiguous JSON.
+        try:
+            payload = json.loads(
+                response.body.decode("utf-8"),
+                object_pairs_hook=_unique_submit_object,
+                parse_constant=_reject_submit_constant,
+            )
+        except (ValueError, UnicodeDecodeError):
+            raise KisPaperCanaryError(
+                "submit_response_incomplete", submit_response_category="payload_invalid"
+            ) from None
         if probe.category in {
             "payload_invalid", "result_code_missing", "result_code_invalid",
             "rejection_with_order_reference",
@@ -1262,11 +1297,8 @@ class KisPaperCanaryClient:
                 submit_response_category=probe.category,
             )
         if probe.category == "provider_rejected":
-            payload = response.payload()
-            raise KisPaperCanaryError(
-                "submit_kis_rejected",
+            raise KisPaperSubmitRejected(
                 upstream_code=safe_kis_paper_upstream_code(payload.get("msg_cd")),
-                submit_response_category=probe.category,
             )
         if probe.category == "success_output_missing":
             raise KisPaperCanaryError(
@@ -1283,7 +1315,6 @@ class KisPaperCanaryClient:
                 "submit_transport_unknown",
                 submit_response_category="transport_unavailable",
             )
-        payload = response.payload()
         output = payload.get("output")
         if not isinstance(output, Mapping):  # Defensive: probe already checked this shape.
             raise KisPaperCanaryError(
@@ -1603,11 +1634,14 @@ def _run_kis_paper_canary(
                         clock=clock,
                     )
                 except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
+                    rejected = isinstance(error, KisPaperSubmitRejected)
                     state = state_store.transition(
                         intent,
                         expected=frozenset({"submission_started"}),
-                        phase="outcome_unknown",
-                        reason_code=_safe_submit_failure_reason(error),
+                        phase="rejected" if rejected else "outcome_unknown",
+                        reason_code=(
+                            "submit_rejected" if rejected else _safe_submit_failure_reason(error)
+                        ),
                         now=submit_at,
                         submit_upstream_code=_safe_submit_upstream_code(error),
                         submit_response_category=_safe_submit_response_category(error),

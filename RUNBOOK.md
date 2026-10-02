@@ -1,5 +1,27 @@
 # Runbook
 
+## Independent QQQ Unit Cycle
+
+`scripts/run_kis_paper_qqq_unit_cycle.py --cycle-id qqq-unit-20261003-v1`
+defaults to no-credential/no-write preview. After shared-runtime authority and
+compatible Paper-image deployment, explicit `--execute` uses the existing
+`kis-paper-daily-spy-session` service, sample Compose env and named Paper-only
+credential loader. No new task/service. Keep this one cycle ID on recovery.
+One client/token,24 visits/15-second observation cadence/1,200-second worker
+bound; parent timeout stops only its exact labeled container. Summary exposes
+categorical status/counts and opaque identity, never private prices/order IDs.
+Shared private budget V2 retains the original10-percent basis and both owners;
+legacy SPY remains charged/unknown. Deploy compatible budget writers first.
+`unit_cycle_complete` needs exact full BUY and SELL plus owned-flat account
+reconciliation. No-intent, rejection, cancellation, task exit or absent history
+is not a filled round trip. Fees/settled cash/net PnL remain unobserved.
+
+`scripts/probe_kis_paper_minute_capability.py --execute --target QQQ/NAS
+--max-pages 2 --explicit-older-key-once` already completed once at18:25:32Z:
+two120-row pages/120 new older keys/zero overlap, no recognized M/F. This opt-in
+probe discards rows; exact evidence belongs to Data. Do not repeatedly probe the
+same question. A bounded collector integration is the next useful Data step.
+
 ## Latest Bounded Research
 
 `scripts/acquire_tiingo_adjusted_context_20261003.py` defaults to plan-only;

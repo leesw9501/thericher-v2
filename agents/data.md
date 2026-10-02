@@ -13,6 +13,19 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
+18:25:32Z bounded explicit older-key measurement completed with one token and
+two accepted full120-row QQQ/NAS pages. No recognized M/F header; both body
+more fields zero, yet page2 yielded120 new older keys/zero overlaps and
+contiguous same-exchange-date coverage. Under5 seconds/no categorical errors;
+single token reused, measured existing gate unchanged. Raw rows discarded.
+Receipt `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\20261002T182532841936Z-d8a92571fc17d02c.json`,
+SHA256 `d8a92571fc17d02c19ac2ecd6384150ea52179086a8ac0f3e1544d7861b04e45`.
+45 focused tests pass. Header-only termination can truncate useful coverage;
+this does not establish unlimited history, a full session or provider finality.
+Next owned package adds explicit bounded backward-page retention without a new
+schedule, retry flood, pacing change or competing cache writer. Default paths
+remain unchanged until that specific integration is verified.
+
 New standard-EOD context acquisition at17:45:37Z October2: exactly three
 approved Tiingo requests succeeded in3.643s. SPY/QQQ/IWM each315 sessions,
 945 total rows, requested July1 2025-September30 2026;268,744 retained bytes.

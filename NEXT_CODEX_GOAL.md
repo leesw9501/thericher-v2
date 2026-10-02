@@ -24,6 +24,24 @@ See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
 ## Current Progress (2026-10-03 KST)
 
+Bounded independent Paper-readiness package: implement/deploy one QQQ/NASD
+unit BUY -> exact fill -> SELL -> exact owned-flat replay through the existing
+daily-SPY Docker service, with the SAME private budget file, lock order and
+initial10-percent basis. Charge legacy SPY entry cost/unknown reservations;
+never adopt account inventory or replace/repost/reset the unknown SPY tail.
+One fixed cycle identity,24 visits/1,200 worker seconds, no new schedule. This
+is execution connectivity only, not a model decision or old-goal completion.
+Fresh explicit HTTP200/string1/no-ID rejection is terminal only via the new
+typed exception; malformed/ambiguous/legacy responses remain unknown. Strict
+JSON applies to acknowledgements too.874 changed-path serial tests pass;
+shared-core authority7,141/22 skips,310.47s/eight workers/clean helper;134
+boundary-focused tests, Ruff/both Compose pass. Narrow caller lock fix and
+compatible deployment/actual round trip still pending. The early failed
+authority run is not counted as verification.
+Data's actual two-page QQQ probe accepted two full pages and120 new nonoverlap
+older keys despite absent/unrecognized continuation headers. Default collection
+is unchanged; Data owns an opt-in bounded retention improvement next.
+
 The primary ID-less-history diagnostic package is implemented: original-POST-
 date candidate classification only, no adoption/terminal inference/repost/reset.
 353 changed-path serial tests pass. Eight Paper consumers rebuilt with16 matching

@@ -10,9 +10,11 @@ import pytest
 SCRIPT = Path(__file__).parents[1] / "scripts" / "probe_kis_paper_minute_capability.py"
 
 
+@pytest.mark.parametrize("arguments", [[], ["--explicit-older-key-once"]])
 def test_probe_script_requires_explicit_execution_without_loading_credentials(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
+    arguments: list[str],
 ) -> None:
     script = _load_script()
     monkeypatch.setattr(
@@ -21,7 +23,7 @@ def test_probe_script_requires_explicit_execution_without_loading_credentials(
         lambda _: (_ for _ in ()).throw(AssertionError("credentials must stay unread")),
     )
 
-    assert script.main([]) == 0
+    assert script.main(arguments) == 0
 
     assert json.loads(capsys.readouterr().out) == {
         "reason": "execute_flag_required",
@@ -79,10 +81,12 @@ def test_probe_script_rejects_candidate_scope_expansion_before_credentials(
         script.main(arguments)
 
 
+@pytest.mark.parametrize("explicit_older_key", [False, True])
 def test_probe_script_records_one_second_candidate_through_data_only_route(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
     tmp_path: Path,
+    explicit_older_key: bool,
 ) -> None:
     script = _load_script()
     observed: dict[str, object] = {}
@@ -120,24 +124,25 @@ def test_probe_script_records_one_second_candidate_through_data_only_route(
                     "raw_market_data_retained": False,
                     "route_class": "kis_paper_market_data",
                     "status": "complete",
-                }
+                },
             ),
             evidence_path=tmp_path / "artifact.json",
         )
 
     monkeypatch.setattr(script, "probe_and_write_kis_paper_minute_capability", probe_and_write)
 
+    scope_arguments = (
+        ["--explicit-older-key-once", "--target", "QQQ/NAS", "--max-pages", "3"]
+        if explicit_older_key
+        else ["--include-previous-day", "--target", "SPY/AMS", "--max-pages", "1"]
+    )
     assert (
         script.main(
             [
                 "--execute",
                 "--artifact-root",
                 str(tmp_path / "artifacts"),
-                "--include-previous-day",
-                "--target",
-                "SPY/AMS",
-                "--max-pages",
-                "1",
+                *scope_arguments,
                 "--minimum-request-interval-seconds",
                 "1.0",
             ]
@@ -153,12 +158,13 @@ def test_probe_script_records_one_second_candidate_through_data_only_route(
     probe = observed["probe"]
     assert isinstance(probe, dict)
     assert probe["tested_request_interval_seconds"] == 1.0
-    assert probe["max_pages"] == 1
-    assert probe["include_previous_day"] is True
-    assert probe["target"] == ("SPY", "AMS")
+    assert probe["max_pages"] == (2 if explicit_older_key else 1)
+    assert probe["include_previous_day"] is (not explicit_older_key)
+    assert probe["target"] == (("QQQ", "NAS") if explicit_older_key else ("SPY", "AMS"))
+    assert probe["explicit_older_key_once"] is explicit_older_key
     client = probe["client"]
     assert isinstance(client, dict)
-    assert client["client"]["max_minute_page_attempts"] == 1
+    assert client["client"]["max_minute_page_attempts"] == (2 if explicit_older_key else 1)
     assert json.loads(capsys.readouterr().out) == {
         "evidence_path": str(tmp_path / "artifact.json"),
         "paper_only": True,
@@ -169,6 +175,28 @@ def test_probe_script_records_one_second_candidate_through_data_only_route(
     source = SCRIPT.read_text(encoding="utf-8")
     assert "KIS_PAPER_ACCOUNT" not in source
     assert "KIS_LIVE_" not in source
+
+
+@pytest.mark.parametrize(
+    "arguments",
+    [
+        ["--target", "SPY/AMS"],
+        ["--target", "IWM/AMS"],
+        ["--include-previous-day"],
+        ["--max-pages", "1"],
+    ],
+)
+def test_explicit_older_key_scope_is_validated_before_credentials(monkeypatch, arguments):
+    script = _load_script()
+
+    def deny(*_args, **_kwargs):
+        raise AssertionError("credentials, gates and transport must stay untouched")
+
+    monkeypatch.setattr(script, "load_kis_paper_market_data_config", deny)
+    monkeypatch.setattr(script, "KisPaperMarketDataRateGate", deny)
+    monkeypatch.setattr(script, "UrllibKisPaperMarketDataTransport", deny)
+    with pytest.raises(SystemExit, match="2"):
+        script.main(["--execute", "--explicit-older-key-once", *arguments])
 
 
 def _load_script() -> ModuleType:

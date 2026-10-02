@@ -24,6 +24,7 @@ from thericher_v2.execution.kis_market_data import (
     KIS_PAPER_MINUTE_MAX_ROWS,
     KisPaperMarketDataCallCounts,
     KisPaperMarketDataError,
+    KisPaperMinuteContinuationSignal,
     KisPaperMinutePage,
     KisPaperMinuteQuery,
 )
@@ -32,13 +33,10 @@ from thericher_v2.execution.kis_market_data_rate_gate import (
 )
 
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET = ("QQQ", "NAS")
-KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS = frozenset(
-    {"QQQ/NAS/1m", "SPY/AMS/1m"}
-)
+KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS = frozenset({"QQQ/NAS/1m", "SPY/AMS/1m"})
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS = frozenset({"SPY/NAS/1m"})
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS = frozenset(
-    f"{symbol}/{exchange}/1m"
-    for symbol, exchange in KIS_PAPER_MINUTE_CURRENT_HEAD_ONLY_TARGETS
+    f"{symbol}/{exchange}/1m" for symbol, exchange in KIS_PAPER_MINUTE_CURRENT_HEAD_ONLY_TARGETS
 )
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS = (
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS
@@ -83,6 +81,18 @@ _CursorProgressCategory = Literal[
     "terminal_head_repeat",
     "strictly_backward_nonoverlapping",
     "duplicate_or_not_older",
+]
+_BodyMoreCategory = Literal["blank_or_absent", "zero", "one", "other_nonblank"]
+_ExplicitOlderKeyCategory = Literal[
+    "not_requested",
+    "head_unavailable",
+    "head_not_full",
+    "header_continuation_present",
+    "duplicate_keys",
+    "older_keys_observed",
+    "overlap_with_older_keys",
+    "no_older_keys",
+    "page2_rejected",
 ]
 
 
@@ -163,6 +173,12 @@ class KisPaperMinuteCapabilityProbeOutcome:
     include_previous_day: bool = False
     target_key: str = "QQQ/NAS/1m"
     schema_version: int = SCHEMA_VERSION
+    explicit_older_key_once: bool = False
+    continuation_signal_categories: tuple[KisPaperMinuteContinuationSignal, ...] = ()
+    body_more_categories: tuple[_BodyMoreCategory, ...] = ()
+    explicit_older_key_category: _ExplicitOlderKeyCategory = "not_requested"
+    new_older_key_count: int = 0
+    overlap_key_count: int = 0
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
@@ -196,15 +212,57 @@ class KisPaperMinuteCapabilityProbeOutcome:
             raise ValueError("capability probe observation is invalid")
         if len(self.page_progress_categories) != self.accepted_page_count:
             raise ValueError("capability probe page progress is invalid")
+        if type(self.explicit_older_key_once) is not bool:
+            raise ValueError("capability probe explicit older-key mode is invalid")
+        if self.explicit_older_key_once:
+            if (
+                self.target_key != "QQQ/NAS/1m"
+                or self.include_previous_day
+                or self.minute_page_request_count > 2
+                or self.accepted_page_count > 2
+                or len(self.continuation_signal_categories) != self.accepted_page_count
+                or len(self.body_more_categories) != self.accepted_page_count
+                or any(
+                    signal
+                    not in {"recognized_continuation", "blank_or_absent", "unrecognized_nonblank"}
+                    for signal in self.continuation_signal_categories
+                )
+                or any(
+                    signal not in {"blank_or_absent", "zero", "one", "other_nonblank"}
+                    for signal in self.body_more_categories
+                )
+                or self.explicit_older_key_category
+                not in {
+                    "head_unavailable",
+                    "head_not_full",
+                    "header_continuation_present",
+                    "duplicate_keys",
+                    "older_keys_observed",
+                    "overlap_with_older_keys",
+                    "no_older_keys",
+                    "page2_rejected",
+                }
+                or any(
+                    type(count) is not int or not 0 <= count <= KIS_PAPER_MINUTE_MAX_ROWS
+                    for count in (self.new_older_key_count, self.overlap_key_count)
+                )
+            ):
+                raise ValueError("capability probe explicit older-key facts are invalid")
+        elif (
+            self.continuation_signal_categories
+            or self.body_more_categories
+            or self.explicit_older_key_category != "not_requested"
+            or self.new_older_key_count
+            or self.overlap_key_count
+        ):
+            raise ValueError("capability probe explicit older-key facts require opt-in")
         if self.accepted_page_count == 0:
             if self.page_progress_categories or self.cursor_progress_category != "not_observed":
                 raise ValueError("capability probe page progress is invalid")
             return
         if self.page_progress_categories[0] not in {"initial", "duplicate_within_page"}:
             raise ValueError("capability probe page progress is invalid")
-        if any(
-            category == "initial" for category in self.page_progress_categories[1:]
-        ):
+        if any(category == "initial" for category in self.page_progress_categories[1:]):
             raise ValueError("capability probe page progress is invalid")
         if "duplicate_within_page" in self.page_progress_categories[:-1]:
             raise ValueError("capability probe page progress is invalid")
@@ -215,7 +273,7 @@ class KisPaperMinuteCapabilityProbeOutcome:
     def safe_payload(self) -> dict[str, object]:
         """Return metadata-only evidence that cannot contain provider rows."""
 
-        return {
+        payload = {
             "schema_version": self.schema_version,
             "kind": "kis_paper_minute_capability_probe",
             "status": self.status,
@@ -249,6 +307,18 @@ class KisPaperMinuteCapabilityProbeOutcome:
             "calibration_fact": self.calibration_fact,
             "pacing_recalibration_fact": self.pacing_recalibration_fact,
         }
+        if self.explicit_older_key_once:
+            payload.pop("observed_at")
+            payload.update(
+                request_scope="current_head_then_explicit_older_key",
+                explicit_older_key_once=True,
+                continuation_signal_categories=list(self.continuation_signal_categories),
+                body_more_categories=list(self.body_more_categories),
+                explicit_older_key_category=self.explicit_older_key_category,
+                new_older_key_count=self.new_older_key_count,
+                overlap_key_count=self.overlap_key_count,
+            )
+        return payload
 
 
 @dataclass(frozen=True)
@@ -274,12 +344,18 @@ def run_kis_paper_minute_capability_probe(
     observed_at: datetime | None = None,
     max_pages: int = KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     repeat_terminal_head_once: bool = True,
+    explicit_older_key_once: bool = False,
     include_previous_day: bool = False,
     target: tuple[str, str] = KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET,
     tested_request_interval_seconds: float = KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     monotonic_clock: Callable[[], float],
 ) -> KisPaperMinuteCapabilityProbeOutcome:
-    """Read at most three allowlisted minute pages and discard their raw contents."""
+    """Read bounded allowlisted pages and discard their raw contents.
+
+    Opt-in QQQ/NAS uses at most two GETs: a current head (PINC=0), then only
+    after a full head without recognized M/F, an explicit NEXT=1/PINC=1 request
+    at oldest exchange timestamp minus one minute. This is not a collector.
+    """
 
     if type(max_pages) is not int or not (
         1 <= max_pages <= KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES
@@ -289,10 +365,16 @@ def run_kis_paper_minute_capability_probe(
         raise TypeError("capability probe terminal head repeat must be a boolean")
     if type(include_previous_day) is not bool:
         raise TypeError("capability probe previous-day inclusion must be a boolean")
+    if type(explicit_older_key_once) is not bool:
+        raise TypeError("capability probe explicit older-key mode must be a boolean")
     if not _is_supported_tested_interval(tested_request_interval_seconds):
         raise ValueError("capability probe tested request interval is invalid")
     symbol, exchange = _normalize_probe_target(target)
     target_key = f"{symbol}/{exchange}/1m"
+    if explicit_older_key_once:
+        if target_key != "QQQ/NAS/1m" or include_previous_day or max_pages < 2:
+            raise ValueError("explicit older-key probe requires QQQ/NAS current head and two pages")
+        max_pages = 2
     if target_key in KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS and (
         max_pages != 1 or include_previous_day
     ):
@@ -307,13 +389,21 @@ def run_kis_paper_minute_capability_probe(
     duplicate_or_not_older = False
     continuation_attempted = False
     terminal_head_repeat_count = 0
+    header_signals: list[KisPaperMinuteContinuationSignal] = []
+    body_signals: list[_BodyMoreCategory] = []
+    explicit_attempted = False
+    explicit_category: _ExplicitOlderKeyCategory = (
+        "head_unavailable" if explicit_older_key_once else "not_requested"
+    )
+    new_older_key_count = 0
+    overlap_key_count = 0
 
     try:
         for _page_number in range(max_pages):
             query = KisPaperMinuteQuery(
                 exchange=exchange,
                 symbol=symbol,
-                include_previous_day=include_previous_day,
+                include_previous_day=include_previous_day or explicit_attempted,
                 continuation_next="1" if cursor_key is not None else None,
                 continuation_key=cursor_key,
             )
@@ -330,6 +420,40 @@ def run_kis_paper_minute_capability_probe(
             )
             pages.append(facts)
             page_progress_categories.append(progress_category)
+            if explicit_older_key_once:
+                header_signals.append(page.continuation_signal)
+                body_signals.append(_body_more_category(page.more))
+                if explicit_attempted:
+                    keys = set(facts.timestamps)
+                    overlap_key_count = len(keys.intersection(pages[0].timestamps))
+                    new_older_key_count = sum(stamp < pages[0].oldest for stamp in keys)
+                    explicit_category = (
+                        "duplicate_keys"
+                        if facts.has_duplicate_timestamps
+                        else "no_older_keys"
+                        if not new_older_key_count
+                        else "overlap_with_older_keys"
+                        if overlap_key_count
+                        else "older_keys_observed"
+                    )
+                    break
+                if facts.has_duplicate_timestamps:
+                    explicit_category = "duplicate_keys"
+                    duplicate_or_not_older = True
+                    break
+                if facts.continuation_available or page.continuation_signal not in {
+                    "blank_or_absent",
+                    "unrecognized_nonblank",
+                }:
+                    explicit_category = "header_continuation_present"
+                    break
+                if facts.row_count != KIS_PAPER_MINUTE_MAX_ROWS:
+                    explicit_category = "head_not_full"
+                    break
+                cursor_key = _cursor_key_for_next_page(page)
+                explicit_attempted = True
+                explicit_category = "page2_rejected"
+                continue
             if progress_category in {"duplicate_within_page", "overlap_or_not_older"}:
                 duplicate_or_not_older = True
                 break
@@ -369,7 +493,12 @@ def run_kis_paper_minute_capability_probe(
         failure=failure,
         continuation_attempted=continuation_attempted,
         cursor_stalled=cursor_stalled,
-        duplicate_or_not_older=duplicate_or_not_older,
+        duplicate_or_not_older=duplicate_or_not_older
+        or (
+            explicit_older_key_once
+            and len(pages) == 2
+            and page_progress_categories[-1] in {"duplicate_within_page", "overlap_or_not_older"}
+        ),
     )
     cursor_progress_category = _cursor_progress_category(page_progress_categories)
     probe_pattern_category = _probe_pattern_category(
@@ -416,7 +545,9 @@ def run_kis_paper_minute_capability_probe(
         ),
         categorical_limit_or_error_count=int(failure is not None),
         elapsed_time_category=_elapsed_time_category(elapsed_seconds),
-        calibration_fact=_calibration_fact(
+        calibration_fact="single_client_explicit_older_key_measurement_only"
+        if explicit_older_key_once
+        else _calibration_fact(
             status=status,
             accepted_page_count=accepted_pages,
             probe_pattern_category=probe_pattern_category,
@@ -433,6 +564,12 @@ def run_kis_paper_minute_capability_probe(
         ),
         include_previous_day=include_previous_day,
         target_key=f"{symbol}/{exchange}/1m",
+        explicit_older_key_once=explicit_older_key_once,
+        continuation_signal_categories=tuple(header_signals),
+        body_more_categories=tuple(body_signals),
+        explicit_older_key_category=explicit_category,
+        new_older_key_count=new_older_key_count,
+        overlap_key_count=overlap_key_count,
     )
 
 
@@ -481,6 +618,7 @@ def probe_and_write_kis_paper_minute_capability(
     observed_at: datetime | None = None,
     max_pages: int = KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES,
     repeat_terminal_head_once: bool = True,
+    explicit_older_key_once: bool = False,
     include_previous_day: bool = False,
     target: tuple[str, str] = KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET,
     tested_request_interval_seconds: float = KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
@@ -492,6 +630,7 @@ def probe_and_write_kis_paper_minute_capability(
         observed_at=observed_at,
         max_pages=max_pages,
         repeat_terminal_head_once=repeat_terminal_head_once,
+        explicit_older_key_once=explicit_older_key_once,
         include_previous_day=include_previous_day,
         target=target,
         tested_request_interval_seconds=tested_request_interval_seconds,
@@ -519,6 +658,14 @@ def _page_facts(page: KisPaperMinutePage) -> _PageFacts:
         continuation_available=page.next_cursor is not None,
         row_count=len(page.bars),
     )
+
+
+def _body_more_category(more: str) -> _BodyMoreCategory:
+    if not more.strip():
+        return "blank_or_absent"
+    if more.strip() == "0":
+        return "zero"
+    return "one" if more.strip() == "1" else "other_nonblank"
 
 
 def _normalize_probe_target(target: object) -> tuple[str, str]:
@@ -618,8 +765,7 @@ def _cursor_progress_category(
     if tuple(page_progress_categories) == ("initial", "terminal_head_repeat"):
         return "terminal_head_repeat"
     if all(
-        category == "strictly_older_nonoverlapping"
-        for category in page_progress_categories[1:]
+        category == "strictly_older_nonoverlapping" for category in page_progress_categories[1:]
     ):
         return "strictly_backward_nonoverlapping"
     return "duplicate_or_not_older"

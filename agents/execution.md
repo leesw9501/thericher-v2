@@ -14,6 +14,24 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+Current independent QQQ readiness package is implemented, not yet deployed:
+one QQQ/NASD unit cycle through the existing daily-SPY service and shared budget
+file/locks. V2 retains the exact original basis and charges legacy SPY custody;
+all budget writers replay QQQ reservations/fills, without snapshot adoption.
+BUY must have its own exact full fill before SELL; only exact closed BUY/SELL
+and reconciled zero QQQ inventory are round-trip evidence. Fixed cycle/24 visits,
+one client/token,1,200-second worker bound; no new scheduler or funding reset.
+Fresh explicit submit rejection now has a typed disposition; strict unique,
+finite JSON guards BOTH rejection and acknowledgement. Legacy generic rejected
+category/unknown phase is never released or reclassified. Independent review
+found/fixed malformed acknowledgement bypass;244 focused/874 changed-path tests
+pass. Shared-core authority7,141/22 skips,310.47s/eight workers/clean helper;
+134 boundary-focused tests and Ruff/both sample-env Compose pass. First early
+run failed an old fresh-rejection expectation, not authority. Independent
+caller review found conservative post-visit clock/read race; its existing-lock
+repair and fresh image source checks precede runtime. Broker orderable funds
+remain a provisional USD SPY-reference query, not exact QQQ-at-limit buying power.
+
 October3 isolated readiness package: `kis_paper_portfolio_budget.py` now
 projects one unchanged initial10-percent basis across explicitly bound SPY/AMEX
 and QQQ/NASD owners. Known entry cost and unresolved BUY reservations remain

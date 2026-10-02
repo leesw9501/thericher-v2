@@ -1677,7 +1677,7 @@ def test_non_success_submit_response_is_unknown_and_never_resubmitted(
     assert _submission_count(transport) == 1
 
 
-def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Path) -> None:
+def test_explicit_submit_rejection_is_terminal_and_never_resubmitted(tmp_path: Path) -> None:
     transport = FakeKisPaperCanaryTransport(submit_result_code="1")
     state_path = tmp_path / "private" / "result-unknown-1.json"
     paths = _paths(tmp_path)
@@ -1693,8 +1693,8 @@ def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Pa
         **paths,
     )
 
-    assert first.phase == "outcome_unknown"
-    assert first.reason_code == "submit_kis_rejected"
+    assert first.phase == "rejected"
+    assert first.reason_code == "submit_rejected"
     assert _submission_count(transport) == 1
 
     transport.submit_result_code = None
@@ -1710,7 +1710,7 @@ def test_non_success_submit_result_is_unknown_and_never_resubmitted(tmp_path: Pa
         **paths,
     )
 
-    assert second.phase == "outcome_unknown"
+    assert second.phase == "rejected"
     assert _submission_count(transport) == 1
 
 
@@ -1919,8 +1919,8 @@ def test_submit_rejection_projects_valid_upstream_code(tmp_path: Path) -> None:
         **_paths(tmp_path),
     )
 
-    assert outcome.phase == "outcome_unknown"
-    assert outcome.reason_code == "submit_kis_rejected"
+    assert outcome.phase == "rejected"
+    assert outcome.reason_code == "submit_rejected"
     assert outcome.submit_upstream_code == safe_message_code
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
     runtime = outcome.runtime_path.read_text(encoding="utf-8")
@@ -1954,8 +1954,8 @@ def test_submit_failure_evidence_omits_invalid_upstream_code(tmp_path: Path) -> 
         **_paths(tmp_path),
     )
 
-    assert outcome.phase == "outcome_unknown"
-    assert outcome.reason_code == "submit_kis_rejected"
+    assert outcome.phase == "rejected"
+    assert outcome.reason_code == "submit_rejected"
     assert outcome.submit_upstream_code is None
     evidence = outcome.evidence_path.read_text(encoding="utf-8")
     runtime = outcome.runtime_path.read_text(encoding="utf-8")

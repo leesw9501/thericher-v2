@@ -86,7 +86,7 @@ def test_permission_callback_expiry_does_not_record_a_never_sent_attempt(
     ({"rt_cd": "0", "output": {}}, "success_order_reference_missing"),
 ])
 @pytest.mark.parametrize("side", ["buy", "sell"])
-def test_response_structure_survives_unknown_state_without_repost(
+def test_response_structure_preserves_fresh_disposition_without_repost(
     tmp_path, payload, category, side,
 ):
     class Transport(FakeKisPaperCanaryTransport):
@@ -101,6 +101,7 @@ def test_response_structure_survives_unknown_state_without_repost(
     transport = Transport()
     paths = _paths(tmp_path)
     state_path = tmp_path / "private" / "structure-unknown.json"
+    expected_phase = "rejected" if category == "provider_rejected" else "outcome_unknown"
     for _ in range(2):
         outcome = run_kis_paper_canary(
             decision=_decision() if side == "buy" else _sell_decision(),
@@ -108,13 +109,13 @@ def test_response_structure_survives_unknown_state_without_repost(
             state_path=state_path, execute=True, cancel_after_submit=False,
             transport=transport, now=NOW, **paths,
         )
-        assert outcome.phase == "outcome_unknown"
+        assert outcome.phase == expected_phase
         assert outcome.submit_response_category == category
         state = KisPaperCanaryStateStore(state_path).read()
         assert state.submit_response_category == category and state.broker_order_id is None
         fact = read_paper_canary_lifecycle_fact(outcome.evidence_path)
         assert fact.submit_response_category == category
-        assert fact.lifecycle_state == "outcome_unknown"
+        assert fact.lifecycle_state == expected_phase
         assert "SYNTHETIC-PRIVATE" not in outcome.evidence_path.read_text()
         assert sum(
             request.method == "POST" and request.url.endswith(KIS_PAPER_US_BUY_LIMIT_ORDER_PATH)

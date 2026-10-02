@@ -45,6 +45,11 @@ def main(
 ) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument(
+        "--explicit-older-key-once",
+        action="store_true",
+        help="QQQ/NAS only: full no-M/F head, then one NEXT=1/PINC=1 older-key request",
+    )
     parser.add_argument("--include-previous-day", action="store_true")
     parser.add_argument(
         "--target",
@@ -80,10 +85,13 @@ def main(
         <= args.minimum_request_interval_seconds
         <= KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
     ):
-        parser.error(
-            "--minimum-request-interval-seconds must be between 1.0 and the current gate"
-        )
+        parser.error("--minimum-request-interval-seconds must be between 1.0 and the current gate")
     target_key = f"{args.target}/1m"
+    if args.explicit_older_key_once and (
+        args.target != "QQQ/NAS" or args.include_previous_day or args.max_pages < 2
+    ):
+        parser.error("explicit older-key mode requires QQQ/NAS current head and at least two pages")
+    max_pages = 2 if args.explicit_older_key_once else args.max_pages
     if target_key in KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS and (
         args.max_pages != 1 or args.include_previous_day
     ):
@@ -107,7 +115,7 @@ def main(
                     control_root=control_root,
                 ),
             ),
-            max_minute_page_attempts=args.max_pages,
+            max_minute_page_attempts=max_pages,
         )
         result = probe_and_write_kis_paper_minute_capability(
             client=client,
@@ -115,7 +123,8 @@ def main(
             artifact_root=args.artifact_root,
             repository_root=_REPOSITORY_ROOT,
             observed_at=clock(),
-            max_pages=args.max_pages,
+            max_pages=max_pages,
+            explicit_older_key_once=args.explicit_older_key_once,
             include_previous_day=args.include_previous_day,
             target=(symbol, exchange),
             tested_request_interval_seconds=args.minimum_request_interval_seconds,
