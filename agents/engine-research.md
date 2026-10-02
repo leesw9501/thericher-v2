@@ -84,9 +84,53 @@ Root `D:\thericher-v2\model-artifacts\research\tiingo-d1-volatility-allocation-d
 Contract `sha256:41129dfbf253a698528cd7b5568f8dfaaf1544a2dc95460a962187af5240cc81`.
 Summary `sha256:9963b4dcaaab60392e7cd946dd253188c6da52f4bb44bccf6e2f9b4ef4b41151`.
 Registry non_promoting_completed; no fitting, saved weights or Paper input.
-Next Data preparation checks existing adjusted-price retention and source semantics
-before a separately declared low-turnover/overnight consumer. No new acquisition,
-predictive contract or campaign is implied by that capability check.
+Distinct `tiingo-adjusted-monthly-holding-development-v1` is also complete:
+22 prior adjusted close-to-close returns, TRAIN2001-2012 median variance;
+target stock weight is set monthly from the previous completed close, with
+overnight fractional adjusted-unit holding and zero-interest cash. Post-fee
+target solving charges actual traded notional, including entry and liquidation,
+not a daily round trip. Four policies/three per-side costs2.5/5/10bps,72 cells.
+No missing support;1,762/1,653 EVAL sessions and84/79 monthly opportunities.
+TRAIN has3,017 sessions/3,014 warm variances per ETF. One CPU/2GiB/network none,
+600s supervisor;3.177s reservation-to-summary, not container startup.
+
+At stress10bps per side, normalized starting NAV1 gives:
+
+| Symbol / period | Vol-managed NAV | TRAIN-risk-control NAV | Buy/hold NAV | Vol-managed / buy-hold close drawdown |
+| --- | ---: | ---: | ---: | ---: |
+| SPY2013-2019 |2.1672|1.7560|2.5414|15.73% /19.34%|
+| SPY2020-Jul2026 |1.9912|1.7723|2.5295|20.82% /33.70%|
+| QQQ2013-2019 |3.0709|2.0347|3.4257|15.84% /22.79%|
+| QQQ2020-Jul2026 |2.6270|2.0386|3.3311|20.42% /35.12%|
+| IWM2013-2019 |1.8688|1.6971|2.1066|25.73% /26.80%|
+| IWM2020-Jul2026 |1.3564|1.6071|1.8881|32.74% /41.07%|
+
+All six beat zero-interest cash, five beat the TRAIN-risk-matched constant,
+and all trail buy/hold while reducing its close-mark drawdown. Managed trades
+are24-64 per fold versus buy/hold's two. This is an analytical NAV result,
+not a robust edge, selected ETF/model, source-paper replication or actual PnL.
+Risk matching is fixed on TRAIN, not equality of EVAL risk; ETF correlation,
+revised seen data, provider-adjusted marks, assumed availability/auction access
+and omitted cash interest remain material. No additional dividend/split credit.
+Independent synthetic ledger/causality review found no blocker;100 current
+reader/holding tests pass,2 native-symlink tests skip. Immutable readback passes.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-adjusted-monthly-holding-development-v1`.
+Contract `sha256:920cdb14688a76d03e17ac58b8e82eeffe95997c6f8f9b1909738c2117f55429`.
+Summary `sha256:2b45317b6f25ea2addfdbd303b15cc06cfc849aafcc80d771cff1da31e8b0c07`.
+Registry non_promoting_completed; frozen code/attempt must not be retuned.
+
+The next distinct package is fixed12-calendar-month positive adjusted-close
+momentum with monthly overnight holding and the same ledger/cost controls,
+not a lookback search. TRAIN2002-2012 after calendar warmup; actual outcomes
+have not been read. Implementation and independent review are owned.
+Main re-retrieved Antonacci's original monthly excess-return/T-bill mechanism
+and DeePM's original cost-aware portfolio objective plus pinned official MIT
+source. Neither source's results apply to these ETFs; no upstream code, data,
+weights, framework, optimizer sweep or source manuscript is adopted. A learned
+net-utility comparison needs its own finite contract/ledger parity, not more
+MSE-only forecast sweeps. Exact source receipt:
+`D:\thericher-v2\model-artifacts\research\engine-source-retrieval\monthly-holding-next-mechanisms-main-20261003-v1.json`,
+SHA256 `cfa5ad7a4c2d0338b5bf5db7197d5d61b934b1e54fc2346b61d57bd84b9b496f`.
 Source proposals independently retrieved by the orchestrator:
 [volatility-managed portfolios](https://law.yale.edu/sites/default/files/area/workshop/leo/leo17_moreira.pdf),
 [same-clock intraday continuation](https://arxiv.org/abs/1005.3535),
@@ -829,10 +873,10 @@ dispatch restrictions. The current development package is described above.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | Opening-range and fixed monthly-day studies completed; descriptive criteria not met | A separately declared mechanism or replication, not a search for a better day/threshold on these results |
+| Technical/chart and momentum/regime | Intraday/calendar studies closed; distinct monthly12-month momentum implementation/review owned | Freeze one fixed cash-adaptation after synthetic review; no lookback search or outcome-driven shift |
 | Classical ML/statistical | H180 Ridge and prior feature/boosted comparisons complete, negative3/5bps aggregate nets | Prepare common-timestamp cross-ETF information/pooling controls; no same-input threshold/cost rescue |
-| Sequence/DL/public model | TimesFM2.5 real-data zero-shot comparison completed:435 forecasts/90 cells; no selected model | Prepare Chronos-2 matched-payoff and same-origin cross-ETF comparison; pin source/weights/runtime before a finite run, not a TimesFM threshold rescue |
-| Portfolio/allocation/meta-decision | H180 fixed uniform-four blend is negative and all four MSEs worse than TRAIN mean | Keep all outcomes; do not select seeds/weights from these same results or infer that ensemble complexity creates signal |
+| Sequence/DL/public model | TimesFM435 forecasts/90 cells and Chronos-2 matched1,305 forecasts/126 cells completed; no selected model | A cost-aware held-position objective is source-retrieved for future finite learning; no same-input forecast/threshold rescue or GPU-utilization job |
+| Portfolio/allocation/meta-decision | Daily flatten loses after costs; monthly volatility holding beats cash6/6 and TRAIN-risk-control5/6, trails buy/hold6/6 | Keep full NAV/turnover/drawdown comparisons; no same-data weight/ETF selection or deployment claim |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and
@@ -866,7 +910,7 @@ candidate matrix.
 | Heston et al.; Gao et al. | Re-retrieved source-only completed-30-minute OHLCV mechanism references | Their claimed intraday continuation/momentum effects require a fresh, causal, full-session input and a separately frozen campaign before any test. No parameter, model, data, campaign, GPU, ensemble, or Paper adoption follows. |
 | TimesFM2.5 | Existing pinned Apache-2.0 weights; real-data daily-return comparison completed on CUDA | Official October2025 exact-weight history supports January-July2026 target scope under trusted publisher dates. Context/instrument overlap and revised seen data remain explicit; no independent/Paper claim. |
 | Chronos-T5, Granite | Prior isolated source/runtime studies | Their old source contracts stay unchanged; no automatic extension to a market comparison or Paper input. |
-| Chronos-2 | Official model card re-retrieved2026-09-25; Apache-2.0,120M encoder, past covariates and related-series group attention | Next candidate for aligned cross-ETF information, not yet downloaded, pinned, installed or tested here. A later package must bind exact dated weights/runtime and isolate each forecast origin; do not mix later contexts into a cross-learning group. |
+| Chronos-2 | Official Apache-2.0,120M dated/hash-pinned external checkpoint; matched real-data CUDA comparison completed | Same-origin cross-ETF and duplicate-self controls completed with no robust winner. Unknown corpus and revised seen-data limitations remain; no Paper/depth selection. Exact evidence is in Current Research State. |
 | MOMENT, Time-MoE | MIT / Apache-2.0 `source_retrieved_source_only` references | MOMENT is a general patch-reconstruction representation family with a Python 3.11 recommendation; Time-MoE is a general autoregressive MoE forecasting family whose official usage specifies `trust_remote_code=True` and a separate Transformers version. Financial pretraining/evaluation scope is not disclosed for either. No code, package, weight, model, campaign, GPU, ensemble, or Paper route is adopted. |
 | PyPortfolioOpt HRP | Source-only allocation reference | Requires causal candidate returns, PIT universe, and completed rolling windows. |
 

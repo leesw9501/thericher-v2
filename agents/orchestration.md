@@ -14,13 +14,13 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 
 | Work | Owner / resource | Current fact and dispatch |
 | --- | --- | --- |
-| SPY lifecycle recovery | Execution / existing private state | Original-POST-date diagnostic verified/deployed; one15:24Z read-only visit returned auth_rejected with no history evidence. Same unknown identity preserved. Continue Data preparation before one bounded retry, retaining categorical cause; no adoption/closure/repost. Exact evidence belongs to Execution. |
+| SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / two packages complete | Chronos-2 CUDA1,305 forecasts/126 cells/72 parent controls and CPU volatility-allocation72 cells complete. Mixed small positives/no selected model in the former, no advantage over risk-matched/cash in the latter. Data checks existing adjusted fields for a distinct lower-turnover mechanism; no campaign allocated yet. Exact facts belong to Research. |
+| Research | Engine Research / three packages complete, distinct momentum owned | Chronos-2 CUDA1,305 forecasts/126 cells/72 parent controls, daily-flatten allocation72 cells and monthly overnight NAV72 cells complete. Last beats cash6/6/risk-control5/6 but trails buy/hold6/6. Fixed12-month momentum implementation plus independent review is dispatched; source-derived net-utility learning remains a future finite contract. Exact facts belong to Research. |
 | Local console | Execution / existing loopback web | Existing stopped container restarted with configuration unchanged.127.0.0.1:8787 health=ok, no broker credentials/private mount; mode=off, directional pauses unchanged. Current account projection was unavailable before the new execution observation. No public serving or order from dashboard startup. |
 | Data collection / finite D1 measurement | Data / existing tasks | SPY head99 rows/NAS and pair48 sessions through October1; head intraday incomplete. Current collection owners/next_due unchanged; finite D1 closed, not a company prerequisite. Next intraday October3 00:29, NAS06:40/pair06:55, head October5 22:15 KST. |
 | GPU | Research Steward / available | Chronos appointment completed, lock released/container exited; no permission/runtime block. No ready frozen depth appointment or background-training claim; eligible next Research remains an independently scoped mechanism. |
-| Verification | Orchestrator / integration complete | Final6,341/19 skips,307.80s, eight workers/clean helper exit,353 changed-path tests, Ruff/both Compose configs and16 matching source hashes across eight images. First equal-count run failed cleanup; fixture's own link teardown fixed, inactive failed root retained without relaxed guard. Research completed during verification. |
+| Verification | Orchestrator / integration and weekly serial complete | Final shared authority6,341/19 skips,307.80s/eight workers/clean helper,353 changed-path tests and16 deployed hashes. Weekly serial baseline6,341/19/35warnings,1,892.93s completed while role work ran. New isolated reader/holding100 passes/2 native-symlink skips; Ruff/default and all-profile sample-env Compose pass. Roots retained; no guard change. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -30,17 +30,19 @@ major-work graph: exact original cancellation -> append-only residual exit ->
 exact filled exit/owned-flat account reconciliation -> gross accounting.
 Cancellation/continuation code are complete; that one attempted exit is unknown.
 Current bounded alternatives, not a second goal/backlog:
-- Execution / existing Paper private locks: run the diagnostic on original POST
-  date, then query the already-confirmed buy and cancelled original sell as
-  source-visibility controls. Complete with one categorical/hash-bound receipt;
+- Execution / existing Paper private locks: completed the original-date diagnostic
+  and known buy/cancelled-sell controls. Controls are visible, unknown tail absent;
+  one categorical/hash-bound receipt preserves the unresolved identity. No further
+  repeat observation is ready without a new material recovery fact;
   strongest kill is an order side effect, private-byte mutation or inferred
   terminal/adoption. On unavailable history, preserve identity and localize that
   reader/provider fact; never repost the tail or make it a global permission hold.
-- Data / existing lawful Tiingo snapshot: check retained adjusted-field definitions
-  and hashes for a distinct lower-turnover/overnight Research consumer. Complete
-  with source/coverage capabilities only; strongest kill is unclear adjustment
-  semantics or pretending revisions are historical availability. Next recovery is
-  a source-separated adaptation or input_unavailable, not new acquisition/approval.
+- Data / existing lawful Tiingo snapshot: isolated pinned adjusted-mark reader
+  complete; Research /1 CPU monthly overnight study completed with independently
+  checked post-fee NAV. Next fixed12-month positive adjusted-close momentum is
+  implementing with independent review, then one immutable pass; strongest kills
+  are future-month close leakage, shifted history endpoints or unbalanced cash.
+  No new acquisition, broker parity, holdout, lookback sweep or approval.
 
 Both remain inside standing authority; no operator decision is requested.
 Claude's actual weekly-limit failure is review_unavailable, not agreement:

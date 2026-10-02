@@ -19,6 +19,22 @@ TRAIN-risk-matched constant/long/cash controls.72 cells,3.949s reserved duration
 All six20bps groups lose to risk-matched/cash. This daily adaptation does not
 reject a separate monthly holding mechanism. Exact pins belong to Research.
 
+`scripts/run_tiingo_monthly_holding_development.py` completed its distinct
+72-cell adjusted-mark NAV study once. Metadata-only `--freeze` precedes rows;
+`--run --contract-sha256 <exact pin>` reserves one immutable attempt. Closed
+root/pins/results are in Engine Research; never rerun or change frozen code.
+Use existing base image
+`sha256:09144e4bfc5e76f0d7f905f57f7996d39cd576d014f0717ed18614a047cc75c1`,
+1 CPU/2GiB/600s, network none, read-only src/scripts/data and artifact root.
+Only this study directory and existing `_control/ledger` are writable nested
+mounts. No credential env-file, broker path, GPU, image/dependency change or
+extra dividend credit. Target is prior-close monthly allocation, not daily
+flatten; fees include actual post-fee rebalance turnover and final liquidation.
+100 new focused tests/2 native-symlink skips and immutable readback pass.
+Weekly serial baseline completed6,341/19 skips,35 warnings,1,892.93s on
+`C:\trpy\weekly-20261003-a6b6a9b`; it predates collection of these new tests.
+Focused/weekly scratch is retained without unsafe recursive cleanup.
+
 Shared-runtime authority passed6,341/19 skips, eight workers,307.80s and clean
 helper exit;353 changed-path serial tests, Ruff/both sample-env Compose configs,
 eight rebuilt consumers/16 changed-source hashes pass. First equal-count run
@@ -32,8 +48,10 @@ only; no ID adoption, terminal inference or broker retry. One owned read-only
 visit at15:24Z failed authentication before history; exact evidence in Execution.
 Do not retry the control with a missing same-client token or infer credentials
 are wrong from that category. Same unknown successor and existing schedules
-remain intact. Read-only recovery may retry after independent ready work, without
-a foreground cooldown sleep or new permission. The company objective stays open.
+remain intact. The later15:37Z visit succeeded with available known BUY/cancel
+controls and stable private bytes, but zero unknown-tail candidates. No terminal
+inference follows; do not repeatedly poll absence. Exact receipt/hash is in
+Execution. The company objective stays open; independent ready work continues.
 
 `scripts/run_timesfm_return_development.py` reuses the immutable bounded supervisor:
 `--freeze` binds source metadata/code before rows are loaded;

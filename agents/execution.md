@@ -28,7 +28,20 @@ fixture teardown was fixed; failed `C:\trpy\runs\r-07a471bd` is retained unchang
 Current session image:
 `sha256:09144e4bfc5e76f0d7f905f57f7996d39cd576d014f0717ed18614a047cc75c1`.
 
-One read-only original-date visit at15:24:49Z returned auth_rejected and
+Latest15:37:28Z bounded read-only original-date diagnostic succeeded:9 requests
+in8.071s, available account, one owned SPY and no SPY open order. Known BUY
+history is available with its exact identity; original SELL history is available
+with its exact cancellation confirmation. The unknown successor's original-date
+candidate set is absent (zero rows/candidates), not a terminal rejection or fill.
+Reconciliation remains unresolved; private order bytes are unchanged. No order
+route, recovered identity, state reclassification, inventory adoption or reset.
+Exact receipt under the existing cycle root below:
+`idless-history-20261002T153728812242Z.json`, SHA256
+`218274247b7148c1819e3f357d556c8f75b56ff0a45283ce0528d9a53b6caed3`.
+Known-order controls falsify blanket history unavailability for this visit; they
+do not prove why the successor is absent. Do not repeatedly poll that absence.
+
+The earlier read-only original-date visit at15:24:49Z returned auth_rejected and
 unavailable; no historical candidate or known-order control result was observed.
 It made two token attempts because the one-off probe incorrectly tried its
 control after failed authentication; the probe now skips that control without a
@@ -37,8 +50,9 @@ Exact receipt under the existing cycle root below:
 `idless-history-20261002T152449454462Z.json`, SHA256
 `bf90f4be219ddd859d3f4d74bc89badb0511e38b60315b8a118e240570f51a72`.
 This does not prove invalid credentials, provider downtime or a cooldown cause;
-raw error bodies were not retained. Independent Data/Research continue without
-foreground waiting; another bounded owned read can retry after their handoff.
+raw error bodies were not retained. The later success does not retrospectively
+identify this failure's cause. Independent Data/Research continue without
+foreground waiting.
 
 The exact fresh offline read was14:57:29Z, with stable
 cycle/leg bytes, one persisted successor outcome_unknown/no identity, confirmed

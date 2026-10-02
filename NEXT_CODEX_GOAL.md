@@ -31,10 +31,11 @@ source hashes. Shared authority passes after fixing a synthetic fixture's
 own hard-link teardown; the initial6,341-pass/19-skip run failed guarded cleanup
 and is not authority. Final6,341 passes/19 skips,307.80s, eight workers/clean
 helper exit, Ruff/both Compose configurations. Preserve the failed inactive root.
-One15:24:49Z diagnostic returned auth_rejected without history/control evidence;
-skip controls without the same client's valid token. Next retry one bounded
-read-only diagnostic through the named existing cycle owner,
-including known BUY/original-cancel history controls, before interpreting absence.
+The15:37:28Z bounded read-only diagnostic succeeded: known BUY and cancelled
+original SELL history are visible, one owned SPY/no open SPY order, but zero
+original-date candidates for the unknown successor. Nine requests/8.071s;
+private order bytes unchanged. Absence is not rejection/fill/terminal proof.
+The preceding15:24Z authentication failure remains a separate observation.
 Same unknown successor remains the only unresolved exit; no company closure.
 
 Independent Research completed matched official Chronos-2 CUDA inference:
@@ -45,7 +46,15 @@ and cash. Both are revised seen-data analytical work, not broker parity, fresh
 holdouts or Paper replacements. Exact contract/results are in Engine Research.
 No new tuning sweep, cost rescue or GPU-utilization training follows. Data checks
 existing adjusted-field retention/semantics for a distinct low-turnover overnight
-consumer, without acquisition or a frozen campaign yet.
+consumer. The isolated adjusted-mark reader and independently reviewed monthly
+NAV study are complete:72 cells/3.177s, stress-cost NAV above cash6/6 and fixed
+TRAIN-risk-control5/6, below buy/hold6/6 with lower close drawdown. No winner,
+broker parity or Paper replacement.100 new tests pass/2 native-symlink skips;
+weekly serial baseline passes6,341/19 in1,892.93s while new-role work proceeds.
+Next distinct Research package is fixed12-calendar-month momentum under the
+same NAV/cost assumptions; implementation/review owned, no actual outcome yet.
+Official turnover-aware learned-portfolio sources are retrieved for a later
+finite net-utility contract, not an upstream framework/runtime adoption.
 
 Existing Data owners now retain48 NAS/pair sessions through October1 and99 SPY
 head rows through that date. Intraday head still has no complete regular session.

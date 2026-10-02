@@ -22,8 +22,15 @@ also closed:72 cells in3.949s,1 CPU/1GiB/600s, no fitting/weights/holdout.
 Contract `sha256:41129dfbf253a698528cd7b5568f8dfaaf1544a2dc95460a962187af5240cc81`;
 summary `sha256:9963b4dcaaab60392e7cd946dd253188c6da52f4bb44bccf6e2f9b4ef4b41151`.
 Root `D:\thericher-v2\model-artifacts\research\tiingo-d1-volatility-allocation-development-v1`.
-Registry non_promoting_completed. Data's adjusted-field capability check is
-not a market campaign or GPU allocation; Research owns the next declared mechanism.
+Registry non_promoting_completed. Distinct adjusted-monthly holding CPU
+appointment also completed72 cells in3.177s,1 CPU/2GiB/600s/network none;
+no fitting, retained predictions/weights, holdout or GPU use. Contract
+`sha256:920cdb14688a76d03e17ac58b8e82eeffe95997c6f8f9b1909738c2117f55429`;
+summary `sha256:2b45317b6f25ea2addfdbd303b15cc06cfc849aafcc80d771cff1da31e8b0c07`.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-adjusted-monthly-holding-development-v1`.
+Registry non_promoting_completed; parent frozen code is unchanged. Monthly
+momentum is a separately owned CPU implementation/review, not yet a frozen
+campaign, GPU appointment or depth allocation. Research owns its interpretation.
 Do not allocate depth training from a two-trade positive or fabricate work for
 utilization. Actual Claude weekly-limit failure is review_unavailable, not a verdict.
 

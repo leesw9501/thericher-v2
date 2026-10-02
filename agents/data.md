@@ -57,7 +57,17 @@ The linked exact CRSP method was unavailable, so a separate reader may describe
 adjClose ratios only as provider-adjusted return marks, not independently proved
 reinvestment, historical PIT or broker share/cash accounting. Never add divCash
 or splitFactor again to those adjusted ratios. No new data is needed through
-August7 for this distinct low-turnover proxy; no campaign/consumer exists yet.
+August7 for this distinct low-turnover proxy.
+
+The isolated `tiingo_adjusted_etf_daily.py` reader now verifies the fixed
+canonical/manifest/raw hashes, exact raw/canonical dates and stream, finite
+adjusted OHLC geometry, and unlinked paths before exposing immutable Decimal
+marks in memory. No frozen normalizer/snapshot was changed and no event cash or
+split factor is added.55 synthetic tests pass,2 native-symlink tests skip on
+this host; portable reparse/symlink and real hard-link rejection pass.
+Research's separately frozen monthly holding consumer completed72 cells using
+these marks with no missing TRAIN/EVAL support. This does not qualify broker
+shares, historical availability, a dataset promotion or another source vintage.
 
 ## Recorded Source Contracts
 

@@ -54,11 +54,26 @@ Do not count the first run as authority.
 Claude CLI is review_unavailable/weekly limit, not support or approval;
 `D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-idless-history-20261002.json`.
 The same unknown successor remains unresolved; this package does not close or
-replace the company objective. The15:24:49Z read-only diagnostic returned
-auth_rejected/unavailable before history/control evidence. Its one-off probe
-now skips controls without a valid same-client token; no order/state mutation.
-Exact receipt is in Execution. Continue independent preparation, then retry a
-bounded owned read with safe token-error categorization; never repost that leg.
+replace the company objective. The15:37:28Z bounded read-only diagnostic succeeded
+with known BUY/original-cancel history controls, one owned SPY and no open SPY
+order. Unknown successor candidates remain absent on its original POST date;
+this is not terminal rejection/fill evidence. Nine requests/8.071s, unchanged
+private order bytes; no order or state mutation. Exact receipt/hash is in
+Execution. Prior15:24Z authentication failure stays separate and unattributed.
+Do not repeatedly poll absence or repost that leg. Data/Research completed
+the isolated adjusted-mark reader and72-cell monthly overnight NAV study;
+independent review preceded its one actual pass.
+At10bps per side all six ETF/fold groups beat cash and five beat their fixed
+TRAIN-risk-control, but all trail buy/hold while reducing its close drawdown.
+Exact normalized NAVs/limitations/immutable pins belong to Research.100 new
+reader/holding tests pass,2 native-symlink tests skip; independent synthetic
+oracle and actual immutable readback pass. Monthly12-month momentum is now a
+distinct implementation/review package; no actual momentum outcome yet.
+Official Antonacci/DeePM sources are independently retrieved, not imported.
+Weekly serial compatibility of the collected baseline completed6,341/19 skips,
+35 deprecation warnings,1,892.93s; it excludes these new role files. Research
+ran alongside it, not as a foreground wait. This is diagnostic, not new-goal
+authority or company completion.
 
 Current September25 Research continuation: TimesFM2.5 has now run on real
 SPY/QQQ/IWM data, not only synthetic inputs. Existing pinned weights made435
