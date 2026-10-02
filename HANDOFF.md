@@ -57,10 +57,37 @@ SPY collects120 in7.276s/shell exit1. Earlier345-minute coverage is a historical
 receipt, not current-input qualification. Original bytes and the separate
 historical21 complete sessions remain; next owned head run06:20 KST is unchanged.
 No full-session/finality claim. Exact paths/hashes and limitations belong to Data.
-Data now owns a narrow same-candidate retention repair: after permitted exact
-old-head quarantine, persist markers/recheck fingerprints then retain the already
-fetched fresh page. No extra request/new worker/history reset; crash tests and
-independent review precede runtime reliance.
+Data's same-candidate/mature-overlap fixes are integrated in `e2c1c84`:
+290 serial tests/13.98s/independent review; full7,660 passes/22 skips/316.29s/
+eight workers/clean helper, Ruff/both Compose pass. Ten existing consumers match
+all583 source Python/PowerShell files. Actual21:25:20Z direct capture succeeds:
+QQQ480/SPY120 rows, QQQ October2 full390-minute session. Existing offline input
+and M1/M5/M10/H1/H3 preparation verify390/78/39/6/2 bars; H1/H3 terminal30-minute
+buckets remain excluded. This is not paired SPY data, finality/PIT, Scheduler
+origin, model profitability or Paper evidence. Exact pins belong to Data.
+Prior06:20 task's mixed/recovery receipt stays separate. No foreground wait;
+Data now enables the proved QQQ continuation inside that existing4/8-page owner,
+not a new task or schedule. Research seeks a distinct cost-aware source proposal.
+Existing4/8-page owner pagination is now implemented/focused-verified. Actual
+21:48:32Z eight-page-ceiling capture retains QQQ720/SPY120 rows; six QQQ pages
+accepted before seventh-page minute_response_invalid. QQQ390-minute regular
+coverage remains. Failed response subtype unknown; partial is not success,
+provider exhaustion or rate limiting. Exact bindings belong to Data.
+Source-derived fixed-band research also completed144 continuous-fold cells,
+zero predictive fits/weights/GPU/holdout,1.799s CPU Docker.112 focused tests,
+independent source review and exact immutable readback pass. Turnover decreases
+but stress NAV worsens; primary kill applies, no tuning or Paper claim. Exact
+source proposal/contract/result pins belong to Research/Steward. Public online
+expert aggregation is a source-only reuse/distinctness check, not a new campaign.
+Integrated Data/research authority passes7,743 tests/22 skips/317.32s/eight
+workers, clean helper exit;190 Data serial and112 research serial tests, Ruff
+and both Compose configs pass. Ten existing Data consumers now match all584
+source files in image
+`sha256:5f975bc91058df3742583fe355834c534101e30089ace4a16d959c7995f0babc`.
+Independent fixed-band readback verifies15 source pins/144 fee identities/
+36 center groups/48 paired centers/24 cash and24 long controls; primary kill
+reproduces. Older-date minute feasibility and causal online-mixture preparation
+remain independent ready work, not a foreground wait on Monday's Paper visit.
 Engine Research completed frozen-policy inference on six new-vintage ETF/month
 windows:126 cells/36 matched identities/zero fits,8.641s Docker CPU run.86 tests,
 independent review and exact RO readback pass. Both beat cash5/6, own-risk1/6,

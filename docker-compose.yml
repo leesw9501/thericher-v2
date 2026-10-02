@@ -1230,6 +1230,7 @@ services:
       - --skip-legacy-preparation
       - --pages-per-target
       - "4"
+      - --explicit-qqq-head-continuation
       - --preparation-artifact-root
       - /app/model_artifacts
       - --runtime-projection

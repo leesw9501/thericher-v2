@@ -5,6 +5,17 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October3 fixed-band CPU package closed, no GPU appointment or holdout spend:
+`tiingo-fixed-band-continuous-development-v1`,144 cells/zero predictive fits,
+1CPU/2GiB/network none/180-second cap,1.799s worker time. Metadata freeze and
+112 focused tests/final independent source review preceded actual execution;
+exact read-only source/contract/result verification passes. Contract
+`sha256:b9bc2842e5304e5c4149554ecad968868e40a061c60a997adb60dece194478e9`;
+summary `sha256:6300b535e803366fe576f95c78db780461f032ea48e4a07bd7dcc69cb9ee10b0`;
+root `D:\thericher-v2\model-artifacts\research\tiingo-fixed-band-continuous-development-v1`.
+Registry non_promoting_completed; child/container exited. Research owns its
+stress-NAV kill, not a new scarce-depth or Paper allocation.
+
 October3 latest finite CUDA appointment closed:
 `kis-equal-minute-resolution-development-v1`, four logistic/four TCN fits,
 120 development cells, one300-second budget/2CPU/6GiB/network none appointment.

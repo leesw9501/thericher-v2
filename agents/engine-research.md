@@ -17,6 +17,40 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+Latest source-derived fixed-band package completed. Existing Decimal50 replay
+now optionally clamps actual predecision OPEN exposure into center+/-0.1,
+clipped[0,1]. Default replay is unchanged; terminal CLOSE always liquidates.
+Finite Decimal callback validation closes an independent-review defect where
+bool could silently become0/100-percent allocation.112 focused tests/2.88s,
+Ruff and final source review pass; no new runtime or broker path.
+One metadata-frozen CPU study carries capital across months within each fold,
+not across folds. Existing TRAIN2001-2012 variance/risk calibration, three ETFs,
+two seen comparison periods, six policies and0/2.5/5/10bps form144 cells.
+Actual pinned offline1CPU/2GiB/180s Docker run completed in1.799s worker time;
+zero predictive fits, weights, GPU allocation or holdout spend. Exact read-only
+source/contract/summary/fee/center-hash/paired-math readback passes.
+Mean stress band-minus-direct NAV delta-0.104884986156, turnover saving
+6.384099408956 initial-NAV units, minimum leave-one-ETF-out delta-0.144494762197:
+the predeclared primary kill applies. These are descriptive fold NAV-unit
+differences, not annual returns or alpha. Band alters exposure as well as fees;
+controls are not exposure-matched. No winner, tuning rescue or Paper input.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-fixed-band-continuous-development-v1`;
+contract `sha256:b9bc2842e5304e5c4149554ecad968868e40a061c60a997adb60dece194478e9`;
+summary `sha256:6300b535e803366fe576f95c78db780461f032ea48e4a07bd7dcc69cb9ee10b0`.
+Custody non_promoting_completed; worker/container exited, no active appointment.
+
+Two public proposals were independently re-retrieved, without code adoption:
+No-Transaction Band option hedging (arXiv2103.01775, official MIT repository),
+and expert portfolio aggregation (arXiv2111.15365v4, code rights not_disclosed).
+The former's simulated30-day derivatives and omitted terminal cost do not
+establish ETF alpha; the latter's US-stock1987-2016 tests are not evidence for
+our post-cost hierarchical gate. Exact source-safe receipt:
+`D:\thericher-v2\model-artifacts\research\source-discovery\cost-aware-policy-20261003.json`,
+SHA256 `64776177f42e1bbae15a6d4a3f36400929fa9f9fae06fee02178a83867dfa070`.
+Next source-only package checks whether causal online expert aggregation is a
+distinct small hypothesis or duplicates existing policy-graph work. It owns no
+fits/weights/holdout yet and cannot turn these rejected results into an ensemble.
+
 Completed one finite equal-elapsed M1/M5 CUDA development experiment.
 Context30/120 minutes means M1
 30/120 versus M5 six/24 bars, common cutoff/entry/exit support. Ten TRAIN

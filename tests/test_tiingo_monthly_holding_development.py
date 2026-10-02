@@ -146,6 +146,269 @@ def test_piecewise_postfee_target_and_cash_closure(stock, weight):
     assert abs(x - expected) < Decimal("1e-40")
 
 
+@pytest.mark.parametrize(
+    "center,stock,nav,expected",
+    [
+        (".5", "0", "1", ".4"),
+        (".5", ".4", "1", ".4"),
+        (".5", ".55", "1", ".55"),
+        (".5", ".6", "1", ".6"),
+        (".5", "1", "1", ".6"),
+        ("0", ".05", "1", ".05"),
+        ("0", ".5", "1", ".1"),
+        ("1", "0", "1", ".9"),
+        ("1", "1", "1", "1"),
+        (".5", "1.1", "2", ".55"),
+    ],
+)
+def test_fixed_band_clips_actual_exposure_and_edges(center, stock, nav, expected):
+    assert s.fixed_band_target(*map(Decimal, (center, stock, nav))) == Decimal(expected)
+
+
+@pytest.mark.parametrize(
+    "field,bad",
+    [
+        ("center", Decimal("-.01")),
+        ("center", Decimal("1.01")),
+        ("center", Decimal("NaN")),
+        ("center", Decimal("sNaN")),
+        ("center", Decimal("Infinity")),
+        ("center", 0.5),
+        ("stock", Decimal("-.01")),
+        ("stock", Decimal("1.01")),
+        ("stock", Decimal("NaN")),
+        ("stock", 0),
+        ("nav", Decimal(0)),
+        ("nav", Decimal(-1)),
+        ("nav", Decimal("NaN")),
+        ("nav", Decimal("Infinity")),
+        ("nav", True),
+    ],
+)
+def test_fixed_band_rejects_invalid_inputs_before_division(field, bad):
+    values = dict(center=Decimal(".5"), stock=Decimal(".5"), nav=Decimal(1))
+    values[field] = bad
+    with pytest.raises(ValueError, match="fixed_band_input"):
+        s.fixed_band_target(**values)
+
+
+def test_fixed_band_uses_local_decimal50_without_changing_caller_context():
+    with localcontext() as context:
+        context.prec = 8
+        actual = s.fixed_band_target(Decimal(".5"), Decimal(4), Decimal(7))
+        assert context.prec == 8
+    assert actual == Decimal(4) / 7
+
+
+@pytest.fixture
+def band_path():
+    days = (
+        "2024-01-02",
+        "2024-01-03",
+        "2024-02-01",
+        "2024-02-02",
+        "2024-03-01",
+        "2024-03-04",
+        "2024-04-01",
+        "2024-04-02",
+    )
+    marks = (
+        ("1", "1.2"),
+        ("1.3", "1.5"),
+        ("2", "2.2"),
+        ("2.4", "3"),
+        ("4", "3.2"),
+        ("3.4", "2"),
+        ("1", ".9"),
+        ("1.1", "1"),
+    )
+    rows = {}
+    for day, (opening, closing) in zip(days, marks, strict=True):
+        o, c = Decimal(opening), Decimal(closing)
+        rows[day] = data.AdjustedEtfRow("SPY", date.fromisoformat(day), o, max(o, c), min(o, c), c)
+    return days, rows, dict.fromkeys((0, 2, 4, 6), Decimal(".5"))
+
+
+@pytest.mark.parametrize("cost", s.COSTS)
+def test_fixed_band_gap_drift_independent_postfee_reconstruction(band_path, monkeypatch, cost):
+    days, rows, actions = band_path
+    targets, events = [], []
+    original = s.rebalance
+
+    def transform(center, stock, nav):
+        target = s.fixed_band_target(center, stock, nav)
+        targets.append((stock / nav, target))
+        return target
+
+    def capture(stock, nav, weight, fee):
+        result = original(stock, nav, weight, fee)
+        events.append((stock, nav, weight, result))
+        return result
+
+    monkeypatch.setattr(s, "rebalance", capture)
+    actual = s.replay(
+        rows,
+        days,
+        (0, len(days)),
+        actions,
+        cost,
+        deadline=time.monotonic() + 30,
+        target_transform=transform,
+    )
+    fee, cash, units = Decimal(cost) / 10000, Decimal(1), Decimal(0)
+    fees, turnover, navs, expected_events = Decimal(0), Decimal(0), [], []
+    for i, day in enumerate(days):
+        row = rows[day]
+        if i in actions:
+            stock, nav = units * row.adj_open, cash + units * row.adj_open
+            weight = Decimal(".4") if i in (0, 6) else Decimal(".6")
+            if i == 2:
+                delta = Decimal(0)
+                weight = stock / nav
+            else:
+                denominator = 1 + fee * weight if i in (0, 6) else 1 - fee * weight
+                delta = (weight * nav - stock) / denominator
+            paid = fee * abs(delta)
+            cash -= delta + paid
+            units += delta / row.adj_open
+            fees, turnover = fees + paid, turnover + abs(delta)
+            expected_events.append((weight, paid, abs(delta)))
+        nav = cash + units * row.adj_close
+        if i == len(days) - 1:
+            liquidated = units * row.adj_close
+            paid = fee * liquidated
+            cash, units = nav - paid, Decimal(0)
+            fees, turnover = fees + paid, turnover + liquidated
+            expected_events.append((Decimal(0), paid, liquidated))
+            nav = cash
+        navs.append(nav)
+    exposures = (Decimal(0), Decimal(4) / 7, Decimal(8) / 11, Decimal(3) / 11)
+    projected = (Decimal(".4"), Decimal(4) / 7, Decimal(".6"), Decimal(".4"))
+    assert len(targets) == 4 and len(events) == 5 and actual["trades"] == 4
+    for (exposure, target), prior, expected in zip(targets, exposures, projected, strict=True):
+        assert abs(exposure - prior) < s.EPS and abs(target - expected) < s.EPS
+    for (stock, nav, weight, (value, remaining, paid, traded)), expected in zip(
+        events, expected_events, strict=True
+    ):
+        assert abs(weight - expected[0]) < s.EPS
+        assert abs(paid - expected[1]) < s.EPS and abs(traded - expected[2]) < s.EPS
+        assert traded == abs(value - stock) and paid == fee * traded
+        assert abs(value + remaining + paid - nav) < s.EPS
+        assert abs(value / (value + remaining) - weight) < s.EPS
+    assert events[1][3][2:] == (Decimal(0), Decimal(0))
+    assert events[-1][2] == 0 and events[-1][3][0] == 0
+    assert all(abs(a - b) < s.EPS for a, b in zip(actual["navs"], navs, strict=True))
+    assert abs(actual["final_nav"] - cash) < s.EPS
+    assert abs(actual["fees_initial_nav"] - fees) < s.EPS
+    assert abs(actual["turnover_initial_nav"] - turnover) < s.EPS
+
+
+@pytest.mark.parametrize("cost", s.COSTS)
+@pytest.mark.parametrize("center", (Decimal(0), Decimal(".5"), Decimal(1)))
+def test_replay_default_none_and_identity_transform_parity(sample, cost, center):
+    actions = dict.fromkeys(policy(sample), center)
+    rows, days = index(sample), sample.days
+    bounds = sample.contract["plan"]["periods"][0]["bounds"]
+    kwargs = dict(deadline=time.monotonic() + 30)
+    expected = s.replay(rows, days, bounds, actions, cost, **kwargs)
+    assert s.replay(rows, days, bounds, actions, cost, target_transform=None, **kwargs) == expected
+    assert (
+        s.replay(
+            rows,
+            days,
+            bounds,
+            actions,
+            cost,
+            target_transform=lambda center, stock, nav: center,
+            **kwargs,
+        )
+        == expected
+    )
+
+
+@pytest.mark.parametrize("mutation", ("own_close", "future_payoffs"))
+def test_fixed_band_future_payoffs_cannot_change_current_target(band_path, mutation):
+    days, rows, actions = band_path
+    changed, trace = dict(rows), []
+    for i, day in enumerate(days):
+        if i == 4 or mutation == "future_payoffs" and i > 4:
+            row = rows[day]
+            opening = row.adj_open * 3 if i > 4 else row.adj_open
+            closing = row.adj_close * 3
+            changed[day] = replace(
+                row,
+                adj_open=opening,
+                adj_close=closing,
+                adj_high=max(opening, closing),
+                adj_low=min(opening, closing),
+            )
+
+    def transform(center, stock, nav):
+        target = s.fixed_band_target(center, stock, nav)
+        trace.append((center, stock, nav, target))
+        return target
+
+    kwargs = dict(deadline=time.monotonic() + 30, target_transform=transform)
+    original = s.replay(rows, days, (0, len(days)), actions, "10", **kwargs)
+    before = trace[:]
+    trace.clear()
+    mutated = s.replay(changed, days, (0, len(days)), actions, "10", **kwargs)
+    assert trace[:3] == before[:3]
+    assert mutated["navs"][:4] == original["navs"][:4]
+    assert mutated["navs"] != original["navs"]
+
+
+@pytest.mark.parametrize(
+    "malformed",
+    [
+        True,
+        False,
+        0.5,
+        1.0,
+        0,
+        1,
+        Decimal("NaN"),
+        Decimal("sNaN"),
+        Decimal("Infinity"),
+        Decimal("-Infinity"),
+        Decimal("-.01"),
+        Decimal("1.01"),
+        object(),
+    ],
+)
+def test_replay_rejects_malformed_transform_result_before_ledger(band_path, monkeypatch, malformed):
+    days, rows, actions = band_path
+
+    def forbidden(*args, **kwargs):
+        pytest.fail("malformed callback result reached ledger")
+
+    monkeypatch.setattr(s, "rebalance", forbidden)
+    with pytest.raises(ValueError, match="target_transform_result"):
+        s.replay(
+            rows,
+            days,
+            (0, len(days)),
+            actions,
+            "5",
+            deadline=time.monotonic() + 30,
+            target_transform=lambda center, stock, nav: malformed,
+        )
+
+
+def test_replay_rejects_noncallable_transform(band_path):
+    days, rows, actions = band_path
+    with pytest.raises(ValueError, match="target_transform"):
+        s.replay(
+            rows,
+            days,
+            (0, len(days)),
+            actions,
+            "5",
+            deadline=time.monotonic() + 30,
+            target_transform=False,
+        )
+
+
 def test_passive_only_initial_final_costs_and_first_last_daily_returns(sample):
     actions = dict.fromkeys(policy(sample), Decimal(1))
     r = replay(sample, actions, "10")

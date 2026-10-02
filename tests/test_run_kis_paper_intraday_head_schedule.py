@@ -12,10 +12,46 @@ from thericher_v2.ops.kis_paper_prospective_qqq_validation import (
 )
 
 SCRIPT = (
-    Path(__file__).resolve().parents[1]
-    / "scripts"
-    / "run_kis_paper_intraday_head_schedule.ps1"
+    Path(__file__).resolve().parents[1] / "scripts" / "run_kis_paper_intraday_head_schedule.ps1"
 )
+
+
+@pytest.fixture(autouse=True)
+def isolate_powershell_scheduler(monkeypatch: pytest.MonkeyPatch) -> None:
+    run = subprocess.run
+    guards = (
+        "$PSModuleAutoLoadingPreference = 'None'\n"
+        "Import-Module Microsoft.PowerShell.Utility\n"
+        "Import-Module Microsoft.PowerShell.Management\n"
+    ) + "\n".join(
+        f"function global:{name} {{ throw 'Scheduler access forbidden in synthetic test' }}"
+        for name in (
+            "Get-ScheduledTask",
+            "Get-ScheduledTaskInfo",
+            "Register-ScheduledTask",
+            "Unregister-ScheduledTask",
+            "Set-ScheduledTask",
+            "Start-ScheduledTask",
+            "Stop-ScheduledTask",
+            "Enable-ScheduledTask",
+            "Disable-ScheduledTask",
+            "Export-ScheduledTask",
+            "New-ScheduledTask",
+            "New-ScheduledTaskAction",
+            "New-ScheduledTaskTrigger",
+            "New-ScheduledTaskSettingsSet",
+            "New-ScheduledTaskPrincipal",
+        )
+    )
+
+    def synthetic_run(args: list[str], **kwargs: object) -> subprocess.CompletedProcess:
+        assert args[0] == "powershell.exe" and "-Command" in args
+        args = list(args)
+        position = args.index("-Command") + 1
+        args[position] = guards + "\n" + args[position]
+        return run(args, **kwargs)
+
+    monkeypatch.setattr(subprocess, "run", synthetic_run)
 
 
 def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
@@ -69,7 +105,7 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "prospective_validation_status" in source
     assert "prospective_spy_cycle_exit_code" in source
     assert "prospective_spy_cycle_status" in source
-    assert "$prospectiveSpyCycleStatus = \"not_applicable\"" in source
+    assert '$prospectiveSpyCycleStatus = "not_applicable"' in source
     assert "$collectionStartedAt = (Get-Date).ToUniversalTime()" in source
     assert "$collectionReturnedAt = (Get-Date).ToUniversalTime()" in source
     assert "$scheduleRunId = New-ScheduleRunId -ObservedAt $collectionStartedAt" in source
@@ -77,11 +113,11 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     assert "$CollectionPostClosePagesPerTarget = 8" in source
     assert "function Get-CollectionPagesPerTarget" in source
     assert (
-        "$collectionPagesPerTarget = Get-CollectionPagesPerTarget "
-        "-ObservedAt $collectionStartedAt"
+        "$collectionPagesPerTarget = Get-CollectionPagesPerTarget -ObservedAt $collectionStartedAt"
     ) in source
     assert "$collectionCommand = @(\n" in source
     assert "[string]$collectionPagesPerTarget," in source
+    assert source.count('"--explicit-qqq-head-continuation",') == 1
     assert '"--schedule-run-id",' in source
     assert "$scheduleRunId" in source
     assert "Get-UniqueSafeSessionCaptureTerminalBinding" in source
@@ -135,9 +171,11 @@ def test_head_schedule_writes_diagnostic_invocation_receipts_around_collection()
     assert "-CollectionFailureCategory $collectionFailureCategory" in source
     assert "-ScheduleObservedAt $scheduleObservedAtMarker" in source
     assert "-CompletedAt $dispatchCompletedAtMarker" in source
-    assert source.index("$scheduleReceipt = Invoke-HeadProfileService") < source.index(
-        "$dispatchCompletedAt = (Get-Date).ToUniversalTime()"
-    ) < terminal_write
+    assert (
+        source.index("$scheduleReceipt = Invoke-HeadProfileService")
+        < source.index("$dispatchCompletedAt = (Get-Date).ToUniversalTime()")
+        < terminal_write
+    )
     assert "Invocation receipts are diagnostic. They cannot defer collection." in source
 
 
@@ -191,11 +229,7 @@ def test_head_schedule_classifies_only_one_exact_safe_collection_failure_payload
         (
             "$ErrorActionPreference = 'Stop'",
             function_source,
-            (
-                "$encodedLines = '"
-                + encoded_lines
-                + "'"
-            ),
+            ("$encodedLines = '" + encoded_lines + "'"),
             (
                 "$lines = [System.Text.Encoding]::ASCII.GetString("
                 "[Convert]::FromBase64String($encodedLines)) | ConvertFrom-Json"
@@ -246,6 +280,49 @@ def test_head_schedule_uses_deeper_pages_only_for_the_bounded_post_close_window(
 
     assert result.returncode == 0, result.stderr
     assert result.stdout.strip() == "4,8,4,8,4"
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+@pytest.mark.parametrize(
+    ("observed_at", "pages"), [("2026-07-06T19:24:00Z", 4), ("2026-07-06T21:20:00Z", 8)]
+)
+def test_existing_collection_override_enables_explicit_qqq_at_both_budgets(
+    observed_at: str, pages: int
+) -> None:
+    source = SCRIPT.read_text(encoding="ascii")
+    selector = source[
+        source.index("$CollectionBasePagesPerTarget = 4") : source.index(
+            "function Invoke-HeadProfileService"
+        )
+    ]
+    collection = source[
+        source.index("$collectionCommand = @(") : source.index(
+            "$collection = Invoke-HeadProfileService"
+        )
+    ]
+    command = "\n".join(
+        (
+            "$ErrorActionPreference = 'Stop'",
+            selector,
+            "$scheduleRunId = 'intraday-head-synthetic'",
+            "$collectionPagesPerTarget = Get-CollectionPagesPerTarget "
+            f"-ObservedAt ([datetime]'{observed_at}')",
+            collection,
+            "$collectionCommand -join '|'",
+        )
+    )
+    result = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", command],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+    assert result.returncode == 0, result.stderr
+    arguments = result.stdout.strip().split("|")
+    assert arguments.count("--explicit-qqq-head-continuation") == 1
+    assert arguments[arguments.index("--pages-per-target") + 1] == str(pages)
+    assert arguments[arguments.index("--mode") + 1] == "session-capture"
 
 
 def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it() -> None:
@@ -423,9 +500,9 @@ def test_head_schedule_accepts_actual_validator_safe_payload(tmp_path: Path) -> 
     )
 
     assert result.returncode == 0, result.stderr
-    assert "kis-paper-prospective-qqq-validation" in log_path.read_text(
-        encoding="ascii"
-    ).splitlines()
+    assert (
+        "kis-paper-prospective-qqq-validation" in log_path.read_text(encoding="ascii").splitlines()
+    )
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
@@ -457,9 +534,9 @@ def test_head_schedule_uses_a_safe_session_payload_before_a_trailing_idless_stat
     )
 
     assert result.returncode == 0, result.stderr
-    assert "kis-paper-prospective-qqq-validation" in log_path.read_text(
-        encoding="ascii"
-    ).splitlines()
+    assert (
+        "kis-paper-prospective-qqq-validation" in log_path.read_text(encoding="ascii").splitlines()
+    )
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
@@ -557,8 +634,10 @@ def test_head_schedule_rejects_an_invalid_capture_binding_category(tmp_path: Pat
             False,
         ),
         (
-            ('{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
-             '"session_id":"qqq-unit"}',),
+            (
+                '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
+                '"session_id":"qqq-unit"}',
+            ),
             (
                 '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
                 '"session_id":"qqq-other"}',
@@ -566,8 +645,10 @@ def test_head_schedule_rejects_an_invalid_capture_binding_category(tmp_path: Pat
             True,
         ),
         (
-            ('{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
-             '"session_id":"qqq-unit"}',),
+            (
+                '{"kind":"kis_paper_prospective_qqq_session","status":"no_intent",'
+                '"session_id":"qqq-unit"}',
+            ),
             (
                 '{"kind":"kis_paper_prospective_qqq_validation","status":"validated",'
                 '"session_id":"qqq-unit-a"}',
@@ -647,8 +728,9 @@ def _fake_dispatch_command(
     )
     if capture_binding_payload is not None:
         capture_payload = (
-            '{"kind":"kis_paper_intraday_session_capture","targets":[],' +
-            capture_binding_payload + '}'
+            '{"kind":"kis_paper_intraday_session_capture","targets":[],'
+            + capture_binding_payload
+            + "}"
         )
     escaped_capture_payload = capture_payload.replace("'", "''")
     binding_guard = "$false"

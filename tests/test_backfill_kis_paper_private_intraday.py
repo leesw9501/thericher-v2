@@ -636,6 +636,8 @@ def test_intraday_head_docker_profile_mounts_only_the_explicit_preparation_artif
     assert 'profiles: ["kis-paper-intraday-head"]' in section
     assert "- --mode\n      - session-capture" in section
     assert "- --skip-legacy-preparation" in section
+    assert '- --pages-per-target\n      - "4"' in section
+    assert "- --explicit-qqq-head-continuation" in section
     assert "- --mode\n      - head" not in section
     assert "--preparation-artifact-root" in section
     assert "/app/model_artifacts" in section
@@ -831,11 +833,11 @@ def test_explicit_head_continuation_rejects_other_modes_before_setup(
     assert error.value.code == 2
     output = capsys.readouterr()
     assert output.out == ""
-    assert "requires head/session-capture collection and 1..4 pages" in output.err
+    assert "requires head/session-capture collection and 1..8 pages" in output.err
 
 
 @pytest.mark.parametrize("mode", ["head", "session-capture"])
-@pytest.mark.parametrize("pages", ["-1", "0", "5", "8"])
+@pytest.mark.parametrize("pages", ["-1", "0", "9"])
 def test_explicit_head_continuation_rejects_invalid_budget_before_setup(
     monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str, pages: str
 ) -> None:
@@ -856,7 +858,7 @@ def test_explicit_head_continuation_rejects_invalid_budget_before_setup(
     assert error.value.code == 2
     output = capsys.readouterr()
     assert output.out == ""
-    assert "requires head/session-capture collection and 1..4 pages" in output.err
+    assert "requires head/session-capture collection and 1..8 pages" in output.err
 
 
 @pytest.mark.parametrize("mode", ["head", "session-capture"])
@@ -895,7 +897,7 @@ def test_explicit_head_continuation_without_execute_stays_plan_only(
 
 
 @pytest.mark.parametrize("mode", ["head", "session-capture"])
-@pytest.mark.parametrize("pages", [1, 2, 3, 4])
+@pytest.mark.parametrize("pages", range(1, 9))
 def test_explicit_head_continuation_is_forwarded_through_one_fake_client(
     monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str, pages: int
 ) -> None:

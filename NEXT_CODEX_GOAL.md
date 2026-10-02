@@ -39,10 +39,11 @@ not expand live authority or reset capital.
 - Independent equal-minute M1/M5 study now completed4linear/4TCN fits/120 cells
   in10.753s CUDA after frozen metadata/CPU smoke.99 focused tests/readback pass.
   Primary TCN stress-net kill applies; no selected model/Paper input or tuning.
-- Latest20:44:33Z head capture quarantines QQQ minute_duplicate_conflict/zero
-  new rows while SPY collects120. The earlier480-row/345-minute QQQ receipt is
-  not current qualification. The separate older native-minute catalog retains
-  21 shared complete SPY/QQQ sessions; current head conflict does not block it.
+- Data repair `e2c1c84` is verified/deployed:290 serial/full7,660 passes/22 skips.
+  Actual21:25:20Z direct capture retains QQQ480/SPY120 rows; QQQ390 regular
+  minutes and all five input timeframes verify. This is not Scheduler-origin,
+  finality/PIT, a complete SPY pair or Paper evidence. Separate historical21
+  shared sessions remain unchanged; current-head shortcomings do not block them.
 
 ## Owned Work Packages
 
@@ -64,12 +65,21 @@ not expand live authority or reset capital.
    Adapter38 tests/source review and actual480-window geometry smoke now pass;
    Finite eight-fit/120-cell contract, CPU smoke and CUDA appointment completed;
    preserve its stress-net rejection rather than tune from comparison outcomes.
+   A distinct source-derived fixed-band continuous-fold study also completed:
+   144 cells/zero fits/1.799s CPU,112 focused tests and exact readback. It reduces
+   turnover but loses stress NAV against direct targets; retain the kill. A
+   source-only online-expert feasibility check must establish distinct value
+   versus existing policy graphs before a new contract or training dispatch.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download
    is needed for the ready research adapter.
-   Data owns the narrow already-fetched replacement repair after permitted old-
-   head quarantine, with durable markers/rechecked fingerprints and crash tests.
+   Same-candidate replacement/maturity repairs completed. Enable proved explicit
+   QQQ continuation in the existing4/8-page owner; preserve strict older-key,
+   same-date, serial pacing and finite scope. Actual8-page-ceiling capture retains
+   six QQQ pages/720 rows, then invalid seventh page; QQQ390 regular minutes
+   remain. Exact subtype unknown; do not relabel partial as success/exhaustion.
+   No new task/schedule or cursor reset.
 
 ## Completion Evidence And Failure Conditions
 

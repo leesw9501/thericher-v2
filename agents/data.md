@@ -25,20 +25,68 @@ this does not establish unlimited history, a full session or provider finality.
 The opt-in retention package is integrated in `843968d`: QQQ head/session-capture
 only,1-4 pages, defaults/SPY/historical cursor unchanged. Main123 focused tests
 pass; independent review confirms crash recovery preserves the historical cursor.
-Latest bounded post-close capture20:44:33Z completed in7.276s/shell exit1:
-QQQ minute_duplicate_conflict/quarantined/zero new rows; SPY collected120.
-The current QQQ capture has no complete regular session or new chunk. Earlier
-19:15:31Z retained480 QQQ rows/345 regular minutes at that time; that historical
-receipt cannot qualify a later quarantined input. Preserve all original bytes.
-This is a revised retained-cache conflict, not proof that older-key continuation
-failed or that the separate historical21-session research input is absent.
-Exact latest capture:
-`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T204433019960Z-def19bd033595bc3.json`,
-SHA256 `def19bd033595bc3051cf8976fd1d4c0c9af8c2b1e9548bc80795b46432102e9`.
-Head index generation239/SHA256
-`1d9eb0199246b03f5ad07a3ae22ac1f0fcf693ee3d6f5983af703479c7aedb2c`.
-Existing intraday-head owner was Ready, last04:24/next06:20 KST October3.
-No new schedule, historical cursor reset, finality claim or pacing change.
+Latest direct bounded capture21:25:20Z succeeded in7.225s: QQQ480/SPY120
+rows, QQQ October2 regular session390/390, no missing minute. This follows
+`e2c1c84`: persist exact predecessor quarantine, recheck fingerprints, retain
+the same already-fetched replacement; mature identical retained overlaps can
+complete a previously forming bar without rewriting either snapshot. No extra
+API retry, historical cursor reset, reader rights or pacing change.
+290 changed-path serial tests/13.98s, independent review and full authority
+7,660 passes/22 skips/316.29s/eight workers/clean helper exit pass; Ruff/default
+and research Compose pass. Ten consumers share image
+`sha256:67f5b6590390bc14f1f22f064baad5fb6038d9ea216e351360d5f63315940969`;
+all583 source Python/PowerShell files match. Source-snapshot custody is exact;
+whole-chunk quarantine can reduce uncovered support and never fills a gap.
+Exact current direct capture:
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T212520432377Z-784fce24230bb20a.json`,
+SHA256 `784fce24230bb20a8dd74255ed337f73baa26a88412b18dfcb7890cd8ab6e826`.
+Head index generation244/SHA256
+`f391aa094511e2e7817c5f171f4de288aea1d353f064bd2ee722d6eebef0fba9`.
+Independent existing-loader input preparation verifies390 complete QQQ bars;
+input SHA256 `a22ba010207705ac8133d5c4a41bfa6553a29790b74cf03e868682d3f2bc8fda`.
+M1/M5/M10/H1/H3 counts390/78/39/6/2; H1/H3 each skip one terminal30-minute
+bucket. No labels/fits/raw-value output. Complete retention is not provider
+finality, decision-time availability, a matched SPY session or Paper qualification.
+This is direct-worker evidence, not claimed Scheduler-origin evidence.
+
+The prior06:20 KST owned task used the previous image: exact offline reader
+validates collection_exit_nonzero/mixed QQQ-collected and SPY-retained-conflict
+quarantine. QQQ current coverage39/390 at index generation241; no causal
+attestation, availability not_applicable/legacy_unbound, input_unavailable.
+Exact terminal `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule\intraday-head-20261002T2120011697109Z.json`,
+SHA256 `d090d2c63de07a19d608691efd92412caece4649a961596f42b0392cd1af6a93`;
+bound capture SHA256 `506dbebb4d69d16e96a29f732abce9e2eb426e2bd277720687a6d15f53100535`.
+Marker-present provenance assumes an honest host; it is not cryptographic OS
+Scheduler proof. Operational logging remains disabled. Do not reinterpret
+the later direct capture as this scheduled run. Existing owner is Ready;
+next_due October6 00:29 KST. No task was manually invoked or newly installed.
+Existing owner now forwards explicit QQQ continuation within its existing
+regular4/post-close8-page budgets; default Compose remains4. Main190 serial
+tests/18.20s and independent source review pass. One actual eight-page-ceiling
+capture at21:48:32Z retains six accepted QQQ pages/720 unique rows, then a
+seventh-page minute_response_invalid; SPY retains120. This is partial, not
+eight accepted pages, successful termination, a rate limit or source exhaustion.
+The failed page subtype was not retained; mixed-date boundary versus malformed
+payload remains unknown. Preserve the valid prefix; no blind retry or source
+relaxation is justified. Current QQQ regular coverage remains390/390.
+Exact safe capture:
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T214832648062Z-790d6304656b4f30.json`,
+SHA256 `790d6304656b4f306bed6ebf0fd5507e4259f81638012b35dcf84bbdf3a498b0`.
+Bound QQQ manifest:
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\snapshots\snapshot=20261002T214832Z-000244-qqq-nas-m1-v1\manifest.json`,
+SHA256 `f28c868e49140346c42e11fbf4f7cbac2e78c15a20f61000e0a51cef12ba99a2`.
+Index generation247/SHA256
+`d6315ef8c8e56a00a492b6340e82cffae37c7547d142a8ee763a014918fd8893`.
+One client/token and measured pacing remain unchanged. This extends an existing
+automatic collection path, not a new task, historical cursor or permission gate.
+Integration authority passes:190 Data serial plus112 research serial tests;
+full7,743 passes/22 skips/317.32s/eight workers/clean helper exit, Ruff/default
+and research Compose. Ten existing Data consumers now share verified image
+`sha256:5f975bc91058df3742583fe355834c534101e30089ace4a16d959c7995f0babc`;
+all584 source Python/PowerShell files match the integrated working tree.
+No task was manually invoked or schedule changed during this publication.
+Next source-only capability package checks the existing private minute path
+for a two-key older-date probe; no new calls or historical reach claim yet.
 
 Independent historical inventory at19:15:58Z: QQQ20,138/SPY19,507 retained M1
 rows,21 shared complete regular sessions June22-July21 2026;8,190 regular

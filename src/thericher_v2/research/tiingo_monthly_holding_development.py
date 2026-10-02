@@ -275,6 +275,20 @@ def _decimal(function):
 
 
 @_decimal
+def fixed_band_target(center, stock, nav):
+    """Project actual OPEN exposure into a fixed, clipped +/-0.1 center band."""
+    require(
+        all(isinstance(v, Decimal) and v.is_finite() for v in (center, stock, nav))
+        and 0 <= center <= 1
+        and nav > 0
+        and 0 <= stock <= nav,
+        "fixed_band_input",
+    )
+    lower, upper = max(Decimal(0), center - Decimal(".1")), min(Decimal(1), center + Decimal(".1"))
+    return min(upper, max(lower, stock / nav))
+
+
+@_decimal
 def rebalance(stock, nav, weight, fee):
     """Solve post-fee target exactly in notional space; suppress Decimal arithmetic dust."""
     require(nav > 0 and 0 <= stock <= nav and 0 <= weight <= 1 and 0 <= fee < 1, "ledger_input")
@@ -303,7 +317,8 @@ def rebalance(stock, nav, weight, fee):
 
 
 @_decimal
-def replay(rows, days, bounds, actions, cost_bps, *, deadline):
+def replay(rows, days, bounds, actions, cost_bps, *, deadline, target_transform=None):
+    require(target_transform is None or callable(target_transform), "target_transform")
     cash, units, previous = Decimal(1), Decimal(0), Decimal(1)
     fees, turnover, trades, navs, returns = Decimal(0), Decimal(0), 0, [], []
     fee = Decimal(cost_bps) / 10000
@@ -313,7 +328,14 @@ def replay(rows, days, bounds, actions, cost_bps, *, deadline):
         require(valid(row), "calendar_gap_or_invalid_bar")
         if i in actions:
             stock = units * row.adj_open
-            value, cash, paid, traded = rebalance(stock, cash + stock, actions[i], fee)
+            weight = actions[i]
+            if target_transform is not None:
+                weight = target_transform(weight, stock, cash + stock)
+                require(
+                    isinstance(weight, Decimal) and weight.is_finite() and 0 <= weight <= 1,
+                    "target_transform_result",
+                )
+            value, cash, paid, traded = rebalance(stock, cash + stock, weight, fee)
             units = value / row.adj_open
             fees, turnover, trades = fees + paid, turnover + traded, trades + int(traded > 0)
         nav = cash + units * row.adj_close

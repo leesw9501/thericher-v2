@@ -79,12 +79,12 @@ def main(
     args = parser.parse_args(argv)
     if args.explicit_qqq_head_continuation and (
         args.mode not in {"head", "session-capture"}
-        or not 1 <= args.pages_per_target <= 4
+        or not 1 <= args.pages_per_target <= 8
         or args.project_only
     ):
         parser.error(
             "--explicit-qqq-head-continuation requires head/session-capture collection "
-            "and 1..4 pages"
+            "and 1..8 pages"
         )
     observed_at = clock()
     if args.project_only:

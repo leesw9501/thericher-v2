@@ -373,10 +373,10 @@ def _run_kis_paper_private_intraday_cycle(
     if type(explicit_qqq_head_continuation) is not bool:
         raise ValueError("explicit QQQ head continuation must be a boolean")
     if explicit_qqq_head_continuation and (
-        resume_cursor or pages_per_target > 4 or targets != KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+        resume_cursor or pages_per_target > 8 or targets != KIS_PAPER_PRIVATE_INTRADAY_TARGETS
     ):
         raise ValueError(
-            "explicit QQQ head continuation requires QQQ/SPY head mode, at most four pages"
+            "explicit QQQ head continuation requires QQQ/SPY head mode, at most eight pages"
         )
     if not code_revision.strip() or "\n" in code_revision:
         raise ValueError("private intraday code revision is invalid")
@@ -694,6 +694,12 @@ def _collect_target(
                     )
                 except (ValueError, OverflowError) as error:
                     raise KisPaperMarketDataError("minute_cursor_invalid") from error
+            if (
+                explicit_qqq_head_continuation
+                and next_cursor is not None
+                and next_cursor.keyb[:8] != page.bars[0].exchange_date
+            ):
+                next_cursor = None
             if next_cursor is not None and next_cursor == cursor:
                 raise KisPaperMarketDataError("minute_cursor_stalled")
             # A page joins the durable candidate only after its cursor and all
@@ -759,9 +765,15 @@ def _validate_explicit_qqq_head_page(
     korea_stamps = [_korea_stamp(row) for row in page.bars]
     if len(set(exchange_stamps)) != len(page.bars) or len(set(korea_stamps)) != len(page.bars):
         raise KisPaperMarketDataError("minute_response_invalid")
+    if len({row.exchange_date for row in page.bars}) != 1:
+        raise KisPaperMarketDataError("minute_response_invalid")
     if cursor is not None:
         requested_stamp = f"{cursor.keyb[:8]}T{cursor.keyb[8:]}"
-        if max(exchange_stamps) > requested_stamp or max(korea_stamps) >= min(retained_rows):
+        if (
+            page.bars[0].exchange_date != next(iter(retained_rows.values())).exchange_date
+            or max(exchange_stamps) > requested_stamp
+            or max(korea_stamps) >= min(retained_rows)
+        ):
             raise KisPaperMarketDataError("minute_cursor_stalled")
 
 

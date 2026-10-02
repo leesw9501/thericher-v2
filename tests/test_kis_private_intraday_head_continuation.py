@@ -177,13 +177,68 @@ def test_four_headerless_pages_are_retained_and_historical_cursor_unchanged(
     assert capsys.readouterr() == ("", "")
 
 
-@pytest.mark.parametrize("budget", [1, 2, 3, 4])
+@pytest.mark.parametrize("budget", range(1, 9))
 def test_opt_in_obeys_exact_page_budget(tmp_path: Path, budget: int) -> None:
-    client = _Client([_page(_rows(120, offset=offset)) for offset in (360, 240, 120, 0)])
+    rows = _rows(960, offset=-570)
+    client = _Client([_page(rows[offset : offset + 120]) for offset in range(840, -1, -120)])
     results = _run(tmp_path, client, pages_per_target=budget)
     assert results[0].row_count == 120 * budget
     assert len(client.queries) == budget + 1
-    assert len(client.responses["QQQ"]) == 4 - budget
+    assert len(client.responses["QQQ"]) == 8 - budget
+    for query, offset in zip(client.queries[1:budget], range(840, 0, -120), strict=False):
+        oldest = rows[offset]
+        expected = datetime.strptime(
+            oldest.exchange_date + oldest.exchange_time, "%Y%m%d%H%M%S"
+        ) - timedelta(minutes=1)
+        assert query.continuation_key == expected.strftime("%Y%m%d%H%M%S")
+        assert query.continuation_next == "1" and query.include_previous_day
+    assert len(_catalog(tmp_path).bars) == 120 * budget
+    chunk = _index(tmp_path)["targets"][0]["chunks"][-1]
+    manifest = json.loads((tmp_path / "market-data" / "v1" / chunk["manifest_path"]).read_text())
+    assert len(manifest["pages"]) == budget
+    assert chunk["input_cursor"] is None and chunk["output_cursor"] is None
+
+
+@pytest.mark.parametrize("failure", ["rate_limited", "prior_day", "mixed_day"])
+def test_eighth_page_failure_retains_only_seven_same_day_pages(
+    tmp_path: Path, failure: str
+) -> None:
+    rows = _rows(960, offset=-570)
+    pages = [_page(rows[offset : offset + 120]) for offset in range(840, 0, -120)]
+    if failure == "rate_limited":
+        pages.append(KisPaperMarketDataError("rate_limited"))
+    elif failure == "prior_day":
+        pages.append(_page(_rows(120, offset=-690)))
+    else:
+        pages.append(_page(_rows(120, offset=-630)))
+    client = _Client(pages + [_page(rows[:120])])
+    result = _run(tmp_path, client, pages_per_target=8)[0]
+    assert (result.status, result.row_count, result.reason) == (
+        "partial",
+        840,
+        {
+            "rate_limited": "rate_limited",
+            "prior_day": "minute_cursor_stalled",
+            "mixed_day": "minute_response_invalid",
+        }[failure],
+    )
+    assert len(_catalog(tmp_path).bars) == 840
+    assert [query.symbol for query in client.queries] == ["QQQ"] * 8 + ["SPY"]
+    assert len(client.responses["QQQ"]) == 1
+    chunk = _index(tmp_path)["targets"][0]["chunks"][-1]
+    assert chunk["input_cursor"] is None and chunk["output_cursor"] is None
+
+
+@pytest.mark.parametrize("signal", ["blank_or_absent", "recognized_continuation"])
+def test_midnight_cursor_stops_without_requesting_previous_exchange_day(
+    tmp_path: Path, signal: str
+) -> None:
+    rows = _rows(120, offset=-570)
+    client = _Client([_page(rows, signal=signal), _page(_rows(120, offset=-690))])
+    result = _run(tmp_path, client, pages_per_target=8)[0]
+    assert (result.status, result.row_count) == ("collected", 120)
+    assert [query.symbol for query in client.queries] == ["QQQ", "SPY"]
+    assert len(client.responses["QQQ"]) == 1
 
 
 def test_recover_published_head_after_index_failure_preserves_historical_cursor(
@@ -396,9 +451,7 @@ def test_flag_type_rejected_before_cache_or_request(tmp_path: Path, flag: object
     assert not (tmp_path / "market-data").exists()
 
 
-@pytest.mark.parametrize(
-    "options", [{"resume_cursor": True}, {"pages_per_target": 5}, {"pages_per_target": 8}]
-)
+@pytest.mark.parametrize("options", [{"resume_cursor": True}, {"pages_per_target": 9}])
 def test_scope_or_budget_rejected_before_cache_or_request(
     tmp_path: Path, options: dict[str, object]
 ) -> None:
@@ -450,7 +503,8 @@ def test_real_client_fake_transport_reuses_token_and_sends_next_one_pinc_one(
     class Transport:
         def __init__(self) -> None:
             self.requests: list[KisMarketDataRequest] = []
-            self.qqq_pages = [_rows(120, offset=offset) for offset in (360, 240, 120, 0)]
+            rows = _rows(960, offset=-570)
+            self.qqq_pages = [rows[offset : offset + 120] for offset in range(840, -1, -120)]
 
         def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
             market_data._validate_request(request)
@@ -470,15 +524,15 @@ def test_real_client_fake_transport_reuses_token_and_sends_next_one_pinc_one(
     client = KisPaperMarketDataClient(
         config=KisPaperMarketDataConfig(app_key="synthetic-key", app_secret="synthetic-secret"),
         transport=transport,
-        max_minute_page_attempts=8,
+        max_minute_page_attempts=16,
     )
-    assert _run(tmp_path, client)[0].row_count == 480
+    assert _run(tmp_path, client, pages_per_target=8)[0].row_count == 960
     assert client.call_counts.token_attempts == 1
-    assert client.call_counts.minute_page_attempts == 5
+    assert client.call_counts.minute_page_attempts == 9
     assert client.call_counts.daily_page_attempts == 0
     gets = [request for request in transport.requests if request.method == "GET"]
     assert gets[0].query["PINC"] == "0" and gets[0].query["NEXT"] == ""
-    for request in gets[1:4]:
+    for request in gets[1:8]:
         assert request.query["PINC"] == request.query["NEXT"] == "1"
         assert request.headers["tr_cont"] == "N"
         assert request.query["SYMB"] == "QQQ" and request.query["EXCD"] == "NAS"
