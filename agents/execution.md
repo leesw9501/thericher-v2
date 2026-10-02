@@ -14,6 +14,21 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October3 exact-orderability/restart package: independent final review closes
+both call-time funds bypass and unbound intent crash recovery defects.535
+changed-path serial tests pass in10.00s; full authority7,548 passes/22 skips,
+317.29s/eight workers/clean helper exit, Ruff/default and research Compose pass.
+Eight rebuilt Paper consumers match40 critical source hashes. Current service:
+`sha256:ceac0e3c0d11723d6b3c46a59a8c917b6dca4291128915227e9cce1778289d63`.
+All QQQ BUYs recheck original-limit funds even without a caller tag.
+Orphan recovery replays the original frozen receipt/price/TTL/fingerprint; no
+fresh input can bypass a possible side effect. Explicit distinct request tags
+may follow only positively proven rejection; the same tag cannot repost.
+The regular session closed before verification/deployment finished; no new
+QQQ request was submitted. The old rejected attempt and unknown SPY remain as
+recorded below. Numeric errors now have source-derived categorical diagnostics
+for future responses only; no retroactive attribution of the old null code.
+
 Current independent QQQ readiness package is implemented, not yet deployed:
 one QQQ/NASD unit cycle through the existing daily-SPY service and shared budget
 file/locks. V2 retains the exact original basis and charges legacy SPY custody;

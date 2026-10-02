@@ -5,10 +5,9 @@ This is the shared-resource and dispatch projection, not another backlog.
 
 ## Active Company Objective
 
-`kis-paper-spy-restart-safe-lifecycle-v1`. The 2026-09-21 operator-approved
-partial reset superseded the incomplete D1-pair company objective without
-claiming a pair, deployment, model, or Paper success. See `HANDOFF.md` for the
-bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
+`qqq-restart-safe-unit-paper-v1`. October3 reversible reassignment supersedes
+the SPY objective while INCOMPLETE, preserving its unknown identity/costs and
+all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only.
 
 ## Ready / Owned / Due
 
@@ -16,17 +15,17 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / finite net-utility appointment complete | Two pooled linear/LSTM CUDA fits completed128 epochs each,126 cells/81.300s.49 focused tests and immutable readback pass; risk-control comparison weak, no selected model or Paper input. Exact facts belong to Research/Steward; prior studies remain immutable. |
-| Independent Paper readiness | Execution / common store deployed; rejection diagnostic owned | One QQQ BUY actually attempted and typed rejected/closed, no fills/round trip. Aggregate replay valid, old SPY unchanged. No safe retained error code; public-source diagnostic proceeds, no blind retry/reset or global pause. Exact outcome belongs to Execution. |
+| Research | Engine Research / CPU frozen-policy readback complete | New August/September126 cells/36 matched identities/zero fits,8.641s actual Docker command;86 tests/review/exact RO readback pass. Both cash5/6/own-risk1/6/long1/6; no selected winner or Paper input. Prior studies/weights immutable; distinct research contrast being assessed. |
+| Independent Paper readiness | Execution / deployed exact-orderability and restart package | Independent review closes exact-funds restart bypass and orphan-custody defects;535 serial passes and full authority. Eight consumers/40 baked hashes match. Session closed before a fresh tag; assign one bounded next-session opportunity. Old QQQ rejection/SPY unknown unchanged, no fill claim. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
-| Data collection / finite D1 measurement | Data / existing tasks and bounded retention improvement | Actual two-page QQQ probe returned120 new older keys with no recognized M/F header,45 tests pass. Default collector unchanged; opt-in bounded retention package next. Source-safe exact evidence belongs to Data. New Tiingo six-window reader remains verified/non-promoting. |
+| Data collection / finite D1 measurement | Data / existing cache and opt-in retention | `843968d` integrated,123 focused tests/review.19:15:31Z QQQ480 rows retained,345/390 regular minutes, last45 still future. SPY conflict quarantined/shell exit1. No full-session/finality claim;04:24 KST task unchanged. Exact facts belong to Data. |
 | GPU | Research Steward / available after useful training | Latest linear/LSTM appointment completed, lock released/container exited; no permission/runtime block. No background-training claim or eligible frozen depth job. CPU Data/Execution packages continue on disjoint resources. |
-| Verification | Orchestrator / shared-core authority complete |874 serial plus134 boundary-focused tests (overlap),7,141/22 skips in310.47s, eight workers/clean helper; Ruff/both Compose. First failed run is not authority. Narrow caller timing fix has its own focused verification; no redundant weekly serial run or root cleanup. |
+| Verification | Orchestrator / new shared-core authority complete |535 changed-path serial/10.00s and independent review pass;7,548/22 skips/317.29s/8 workers/clean helper exit, Ruff/default and research Compose pass. Prior7,141/22 excludes this package. Earlier partial run failed a synthetic two-digit substring assertion, not secret leakage; its root is retained, not authority. |
 
 ## Bottleneck And Reversible Improvement
 
-Current October3 throughput review: the exact successor's unretained broker
-identity/ambiguous old response is still the company closure block. Original
+Current October3 throughput review: the exact SPY successor's unretained broker
+identity/ambiguous old response blocks only its superseded lifecycle. Original
 major-work graph: exact original cancellation -> append-only residual exit ->
 exact filled exit/owned-flat account reconciliation -> gross accounting.
 Cancellation/continuation code are complete; that one attempted exit is unknown.

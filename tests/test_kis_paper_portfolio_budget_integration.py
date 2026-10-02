@@ -153,7 +153,26 @@ class Broker(KisPaperCanaryClient):
 
     def fetch_qqq_limit_input(self, *, observed_at):
         return KisPaperSpyLimitInput(
-            D(600), 2, D("0.01"), observed_at, best_bid=D(600), best_ask=D(600),
+            D(600),
+            2,
+            D("0.01"),
+            observed_at,
+            best_bid=D(600),
+            best_ask=D(600),
+        )
+
+    def orderable_funds_at_limit(self, *, symbol, exchange, limit_price):
+        assert (symbol, exchange) == ("QQQ", "NASD")
+        return (
+            KisPaperCashSnapshot("USD", self.funds, self.now),
+            KisPaperOrderableFundsSnapshot(
+                "USD",
+                self.funds,
+                exchange,
+                symbol,
+                limit_price,
+                self.now,
+            ),
         )
 
     def submit_limit(self, intent, **kwargs):
@@ -359,7 +378,10 @@ def test_legacy_unknown_is_charged_but_qqq_exact_cycle_releases_only_its_cost(ha
 @pytest.mark.parametrize("window", ["before_reference", "before_post", "after_post"])
 @pytest.mark.parametrize("with_legacy", [False, True])
 def test_crash_restart_reservations_reach_default_spy_writer(
-    harness, monkeypatch, window, with_legacy,
+    harness,
+    monkeypatch,
+    window,
+    with_legacy,
 ):
     root, client, args = harness
     legacy_bytes = legacy_spy(root, client) if with_legacy else {}
@@ -402,11 +424,9 @@ def test_crash_restart_reservations_reach_default_spy_writer(
         assert outcome.status == "order_complete"
         assert client.submits[-1].symbol == "SPY" and client.submits[-1].quantity == 2
     binding = budget._load_binding(root)
-    assert (
-        budget.project_budget(root, binding).entry_cost
-        + (budget.project_budget(root, binding).reserved_buys)
-        == (1200 if with_legacy else 1800)
-    )
+    assert budget.project_budget(root, binding).entry_cost + (
+        budget.project_budget(root, binding).reserved_buys
+    ) == (1200 if with_legacy else 1800)
 
 
 def test_unknown_spy_buy_does_not_block_distinct_qqq_owner(harness):
@@ -675,9 +695,10 @@ def test_qqq_outcome_and_canonical_receipt_cannot_replace_scheduled_spy_evidence
     assert len(canonical) == 1 and json.loads(canonical[0].read_text()) == receipt(NOW).to_payload()
     assert not (spy_root / "decisions" / canonical[0].name).exists()
     assert '"unit-cycle"' not in json.dumps(payload)
-    assert not any(ENV[key] in json.dumps(payload) for key in (
-        "KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET", "KIS_PAPER_ACCOUNT_NO"
-    ))
+    assert not any(
+        ENV[key] in json.dumps(payload)
+        for key in ("KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET", "KIS_PAPER_ACCOUNT_NO")
+    )
     spy = budget.run_kis_paper_budget_strategy(**spy_args(args))
     assert spy.safe_payload()["kind"] == "kis_paper_spy_budget_strategy"
     assert spy.safe_payload()["decision_use"] == "existing_baseline_direction_only"
@@ -695,18 +716,28 @@ def test_qqq_preview_has_scope_but_no_io(harness):
     assert not root.exists() and not client.submits
 
 
-@pytest.mark.parametrize("field,value", [
-    ("instrument", "SPY"), ("exchange", "NAS"), ("owned_cycle_ref", "unit-cycle"),
-])
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("instrument", "SPY"),
+        ("exchange", "NAS"),
+        ("owned_cycle_ref", "unit-cycle"),
+    ],
+)
 def test_outcome_scope_cannot_mix_or_expose_cycle_identity(field, value):
     fields = {"instrument": "QQQ", "exchange": "NASD", "owned_cycle_ref": "sha256:" + "1" * 64}
     with pytest.raises(ValueError, match="scope"):
         budget.KisPaperBudgetOutcome("preview", "preview", NOW, **(fields | {field: value}))
 
 
-@pytest.mark.parametrize("field,value", [
-    ("quantity", True), ("gross_amount", 0.0), ("observed_at", True),
-])
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("quantity", True),
+        ("gross_amount", 0.0),
+        ("observed_at", True),
+    ],
+)
 def test_retained_terminal_nested_fill_is_strict(harness, field, value):
     root, client, args = harness
     client.fill_fraction = D(0)

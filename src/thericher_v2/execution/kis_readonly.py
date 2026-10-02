@@ -53,6 +53,13 @@ MAX_KIS_PAPER_BALANCE_PAGES = 10
 KIS_PAPER_SAME_DAY_ORDER_ID_MAX_PAGES = 2
 DEFAULT_KIS_PAPER_REQUEST_INTERVAL_SECONDS = 1.0
 _SAFE_KIS_PAPER_UPSTREAM_CODE = re.compile(r"[A-Z][A-Z0-9]{1,15}", re.ASCII)
+_KIS_PAPER_NUMERIC_ERROR_CATEGORIES = {
+    "90070000": "paper_account_user_mismatch",
+    "40910000": "paper_account_expired",
+}
+_KIS_PAPER_SAFE_NUMERIC_ERROR_CATEGORIES = frozenset(
+    {*_KIS_PAPER_NUMERIC_ERROR_CATEGORIES.values(), "paper_numeric_unclassified"}
+)
 _RAW_KIS_PAPER_ORDER_ID = re.compile(r"[A-Za-z0-9_-]{1,64}", re.ASCII)
 _KIS_PAPER_TERMINAL_FIELD_NAMES = frozenset(
     {
@@ -233,9 +240,12 @@ class KisHttpResponse:
             body=json.dumps(payload, separators=(",", ":")).encode("utf-8"),
         )
 
-    def payload(self) -> Mapping[str, Any]:
+    def payload(self, *, reject_duplicate_keys: bool = False) -> Mapping[str, Any]:
         try:
-            decoded = json.loads(self.body.decode("utf-8"))
+            decoded = json.loads(
+                self.body.decode("utf-8"),
+                object_pairs_hook=_unique_response_object if reject_duplicate_keys else None,
+            )
         except (UnicodeDecodeError, json.JSONDecodeError) as error:
             raise KisPaperReadOnlyError("response_invalid") from error
         if not isinstance(decoded, Mapping):
@@ -732,6 +742,42 @@ class KisPaperReadOnlyClient:
             captured_at=captured_at,
         )
 
+    def orderable_funds_at_limit(
+        self,
+        *,
+        symbol: str,
+        exchange: str,
+        limit_price: Decimal,
+    ) -> tuple[KisPaperCashSnapshot, KisPaperOrderableFundsSnapshot]:
+        """Read QQQ/NASD buying power at one exact proposed limit, in memory only.
+
+        Uses official inquire_psamount at d8c7f7936793f85dc1e9c364ba5dc66832353f8c
+        (23 integer / 8 fractional price digits). No rounding or submission claim;
+        this observation cannot explain a previous rejection or attest settled cash.
+        """
+
+        if type(symbol) is not str or symbol != "QQQ":
+            raise KisPaperReadOnlyError("orderability_symbol_invalid")
+        if type(exchange) is not str or exchange != "NASD":
+            raise KisPaperReadOnlyError("orderability_exchange_invalid")
+        if (
+            type(limit_price) is not Decimal
+            or not limit_price.is_finite()
+            or limit_price <= 0
+            or limit_price.as_tuple().exponent < -8
+            or limit_price.adjusted() >= 23
+        ):
+            raise KisPaperReadOnlyError("orderability_price_invalid")
+        access_token = self._access_token or self._issue_access_token()
+        return self._cash_and_orderable_funds(
+            access_token,
+            datetime.now(UTC),
+            symbol=symbol,
+            exchange=exchange,
+            limit_price=limit_price,
+            exact=True,
+        )
+
     def observe_same_day_order_id(
         self,
         raw_order_id: str,
@@ -1119,6 +1165,11 @@ class KisPaperReadOnlyClient:
         self,
         access_token: str,
         captured_at: datetime,
+        *,
+        symbol: str = KIS_PAPER_ORDERABLE_REFERENCE_SYMBOL,
+        exchange: str = KIS_PAPER_ORDERABLE_REFERENCE_EXCHANGE,
+        limit_price: Decimal = KIS_PAPER_ORDERABLE_REFERENCE_PRICE,
+        exact: bool = False,
     ) -> tuple[KisPaperCashSnapshot, KisPaperOrderableFundsSnapshot]:
         response = self._read_only_get(
             KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT,
@@ -1126,18 +1177,38 @@ class KisPaperReadOnlyClient:
             query={
                 "CANO": self._config.account_number,
                 "ACNT_PRDT_CD": self._config.account_product_code,
-                "OVRS_EXCG_CD": KIS_PAPER_ORDERABLE_REFERENCE_EXCHANGE,
-                "OVRS_ORD_UNPR": str(KIS_PAPER_ORDERABLE_REFERENCE_PRICE),
-                "ITEM_CD": KIS_PAPER_ORDERABLE_REFERENCE_SYMBOL,
+                "OVRS_EXCG_CD": exchange,
+                "OVRS_ORD_UNPR": format(limit_price, "f"),
+                "ITEM_CD": symbol,
             },
         )
         payload = _successful_payload(
             response,
             "orderable_funds_rejected",
             endpoint=KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT,
+            reject_duplicate_keys=exact,
         )
+        if exact:
+            continuation = response.header("tr_cont").strip().upper()
+            if continuation in {"M", "F"}:
+                raise KisPaperReadOnlyError("orderable_funds_pagination_incomplete")
+            if continuation not in {"", "D", "E"}:
+                raise KisPaperReadOnlyError("orderable_funds_response_incomplete")
         output = payload.get("output")
+        if exact and isinstance(output, list):
+            if len(output) > 1:
+                raise KisPaperReadOnlyError("orderable_funds_response_duplicate")
+            output = output[0] if output else None
         if not isinstance(output, Mapping):
+            raise KisPaperReadOnlyError("orderable_funds_response_incomplete")
+        if exact and (
+            output.get("tr_crcy_cd") != "USD"
+            or any(
+                not isinstance(output.get(key), str)
+                or re.fullmatch(r"[0-9]+(?:\.[0-9]+)?", output[key], re.ASCII) is None
+                for key in ("ord_psbl_frcr_amt", "ovrs_ord_psbl_amt")
+            )
+        ):
             raise KisPaperReadOnlyError("orderable_funds_response_incomplete")
         currency = _response_text(output, "tr_crcy_cd", "orderable_funds_response_incomplete")
         available_cash = _response_decimal(
@@ -1155,9 +1226,9 @@ class KisPaperReadOnlyClient:
             KisPaperOrderableFundsSnapshot(
                 currency=currency,
                 orderable_funds=orderable_funds,
-                reference_exchange=KIS_PAPER_ORDERABLE_REFERENCE_EXCHANGE,
-                reference_symbol=KIS_PAPER_ORDERABLE_REFERENCE_SYMBOL,
-                reference_price=KIS_PAPER_ORDERABLE_REFERENCE_PRICE,
+                reference_exchange=exchange,
+                reference_symbol=symbol,
+                reference_price=limit_price,
                 captured_at=captured_at,
             ),
         )
@@ -1675,14 +1746,28 @@ def _require_http_success(response: KisHttpResponse, code: str) -> None:
         raise KisPaperReadOnlyError(code)
 
 
+def _unique_response_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for key, value in pairs:
+        if key in result:
+            raise KisPaperReadOnlyError("response_invalid")
+        result[key] = value
+    return result
+
+
 def _successful_payload(
     response: KisHttpResponse,
     code: str,
     *,
     endpoint: KisPaperReadOnlyEndpoint,
+    reject_duplicate_keys: bool = False,
 ) -> Mapping[str, Any]:
     try:
-        payload = response.payload()
+        payload = (
+            response.payload(reject_duplicate_keys=True)
+            if reject_duplicate_keys
+            else response.payload()
+        )
     except KisPaperReadOnlyError as error:
         if response.status_code != 200:
             raise KisPaperReadOnlyError(
@@ -1746,11 +1831,20 @@ def validate_kis_paper_readonly_diagnostic(diagnostic: Mapping[str, str]) -> Non
 
 
 def safe_kis_paper_upstream_code(value: object) -> str | None:
-    """Keep only a short KIS-style code; never normalize arbitrary response text."""
+    """Keep KIS-style codes or closed categories, never numeric codes or free text.
 
+    Numeric meanings follow KIS's public Paper API notice dated 2026-08-25,
+    post 747384fe-f047-495c-8548-769c8e6f4c15. They diagnose only this response.
+    """
+
+    if not isinstance(value, str):
+        return None
+    if value in _KIS_PAPER_SAFE_NUMERIC_ERROR_CATEGORIES:
+        return value
+    if re.fullmatch(r"[0-9]{8}", value, re.ASCII) is not None:
+        return _KIS_PAPER_NUMERIC_ERROR_CATEGORIES.get(value, "paper_numeric_unclassified")
     if (
-        not isinstance(value, str)
-        or _SAFE_KIS_PAPER_UPSTREAM_CODE.fullmatch(value) is None
+        _SAFE_KIS_PAPER_UPSTREAM_CODE.fullmatch(value) is None
         or not any("0" <= character <= "9" for character in value)
     ):
         return None

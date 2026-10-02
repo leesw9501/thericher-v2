@@ -22,9 +22,36 @@ Receipt `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\
 SHA256 `d8a92571fc17d02c19ac2ecd6384150ea52179086a8ac0f3e1544d7861b04e45`.
 45 focused tests pass. Header-only termination can truncate useful coverage;
 this does not establish unlimited history, a full session or provider finality.
-Next owned package adds explicit bounded backward-page retention without a new
-schedule, retry flood, pacing change or competing cache writer. Default paths
-remain unchanged until that specific integration is verified.
+The opt-in retention package is integrated in `843968d`: QQQ head/session-capture
+only,1-4 pages, defaults/SPY/historical cursor unchanged. Main123 focused tests
+pass; independent review confirms crash recovery preserves the historical cursor.
+First actual retained capture at19:10:19Z returned QQQ retained-cache conflict/
+quarantined/zero new rows and SPY collected120. Quarantined original bytes remain;
+this is not evidence that older-key continuation failed. One fresh bounded capture
+is ready after the existing token-start guard, before the04:24 KST scheduled owner.
+Exact capture:
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T191019427403Z-1eb8035a2196f788.json`,
+SHA256 `1eb8035a2196f788622ebdabdacd520dfc06d993db5c94a14fb2c0ddb32135f9`.
+The19:15:15 guard-deferred capture made no market requests; its exact receipt
+is `20261002T191515899923Z-9d7c963e49ede946.json` in the same directory,
+SHA256 `9d7c963e49ede9460ea885edf8e324195080d284fd57ff6bcf7f21dce99340c7`.
+Fresh19:15:31Z capture then retained480 QQQ rows from four accepted pages and
+345/390 current regular minutes;45 trailing minutes were still future. Zero
+overlap conflicts for QQQ. SPY had a retained-cache conflict/quarantine/no new
+rows, so shell exit1 is not QQQ collection failure. Capture `complete` means
+QQQ collection succeeded, not a complete regular session or whole-command success.
+Exact capture `20261002T191531035954Z-bd9e370cc389f1b3.json` in the same directory,
+SHA256 `bd9e370cc389f1b3796531995645b3b4c30f8ddd4f4273c7de646e44290adeec`.
+No new schedule, historical cursor reset, finality claim or pacing change.
+
+Independent historical inventory at19:15:58Z: QQQ20,138/SPY19,507 retained M1
+rows,21 shared complete regular sessions June22-July21 2026;8,190 regular
+minutes per symbol. Exact historical index:
+`D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json`,
+SHA256 `f816b940c3419caec4bdd1595b79615e6895782dad012edc12785aef6f05a53f`.
+Existing verified catalog/input/resampling APIs can consume this scope as
+revised development data. It is separate from current heads; completeness
+does not establish provider finality or historical decision-time availability.
 
 New standard-EOD context acquisition at17:45:37Z October2: exactly three
 approved Tiingo requests succeeded in3.643s. SPY/QQQ/IWM each315 sessions,

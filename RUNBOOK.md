@@ -16,13 +16,40 @@ legacy SPY remains charged/unknown. Deploy compatible budget writers first.
 reconciliation. No-intent, rejection, cancellation, task exit or absent history
 is not a filled round trip. Fees/settled cash/net PnL remain unobserved.
 
+An explicit distinct `--entry-request-id` may append one fresh BUY only after
+every earlier BUY in that same cycle is positively rejected/closed. Reuse the
+same request tag on restart; never select a new tag automatically. Exact QQQ/
+NASD orderable funds at the ORIGINAL limit are required immediately before any
+BUY, including a restart without a tag. Original unbound intent recovery uses
+its retained decision receipt, exact price/TTL/fingerprint, not a refreshed
+quote. Unknown outcomes remain reconciliation-only. No new tagged runtime has
+yet occurred; deploy the reviewed sources before assigning a next-session visit.
+
 `scripts/probe_kis_paper_minute_capability.py --execute --target QQQ/NAS
 --max-pages 2 --explicit-older-key-once` already completed once at18:25:32Z:
 two120-row pages/120 new older keys/zero overlap, no recognized M/F. This opt-in
 probe discards rows; exact evidence belongs to Data. Do not repeatedly probe the
-same question. A bounded collector integration is the next useful Data step.
+same question. The integrated retention path is:
+`uv run --extra dev python scripts/backfill_kis_paper_private_intraday.py
+--execute --mode session-capture --pages-per-target 4
+--explicit-qqq-head-continuation --skip-legacy-preparation`.
+It uses the existing named Paper-market loader, gate and cache lock, with at most
+four QQQ pages and unchanged SPY/default behavior. Run only without an active
+same-cache owner. A retained-cache conflict may quarantine its predecessor and
+reject this exact capture; preserve original bytes and obtain a fresh bounded
+capture when the token-start guard permits. Do not infer full-session coverage,
+provider finality or scheduler origin from this direct invocation.
 
 ## Latest Bounded Research
+
+`scripts/run_tiingo_monthly_frozen_policy_readback.py` already completed one
+metadata freeze and one CPU inference attempt on August/September2026. Same
+pinned Torch image/network none/2 CPU/2GiB/120s, source/data/parent artifacts RO,
+only the exact new study directory writable; no env-file or GPU.126 cells and36
+matched identities pass exact RO readback. Root/pins/limitations belong to
+Research. Do not rerun, overwrite the contract or recalibrate parent TRAIN
+constants. Default preview is metadata-only/no-write; a new question needs a
+distinct contract rather than reopening this result.
 
 `scripts/acquire_tiingo_adjusted_context_20261003.py` defaults to plan-only;
 explicit `--acquire` already completed three approved standard-EOD requests

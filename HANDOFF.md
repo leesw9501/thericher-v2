@@ -14,12 +14,39 @@ immutable external artifacts retain history.
 
 ## Active Company Objective
 
-`kis-paper-spy-restart-safe-lifecycle-v1` is the active implementation objective.
-The operator approved the 2026-09-21 partial reset: the D1-pair objective is
-superseded while incomplete, not successfully completed. D1 stays an independent
-Data measurement; it does not block Execution recovery or offline development.
+`qqq-restart-safe-unit-paper-v1` is the active objective as of October3 KST.
+The SPY lifecycle objective is superseded while INCOMPLETE, not completed.
+Its unknown successor/private identity and budget charges remain unchanged;
+absent history cannot establish its outcome. Do not repost/reset/adopt that leg.
+Independent QQQ Paper readiness and offline research continue inside standing
+authority. D1 remains Data-only; no unavailable observation blocks all lanes.
 
 ## Continued Implementation (2026-09-22 KST)
+
+Latest October3 Paper continuation is independently reviewed and deployed:
+exact QQQ-at-limit funds before every BUY, explicit distinct rejected-entry
+tags, original frozen orphan-intent recovery, bounded future numeric error
+categories.535 changed-path serial tests/10.00s; full authority7,548 passes/
+22 skips/317.29s/eight workers/clean helper exit, Ruff/default and research
+Compose pass. Eight images match40 critical source hashes; session image
+`sha256:ceac0e3c0d11723d6b3c46a59a8c917b6dca4291128915227e9cce1778289d63`.
+Prior partial failure was a synthetic two-digit substring assertion, not secret
+leakage or authority; retained scratch is untouched. No new tagged runtime
+before session close. Old SPY unknown/QQQ positive rejection remain unchanged.
+
+Latest bounded Data package `843968d`: opt-in QQQ head retention follows up to
+four strictly older pages without changing SPY/defaults or historical cursors.
+Main123 focused tests and independent final review pass. After19:10Z QQQ head
+conflict quarantine and one token-guard deferral,19:15:31Z retained480 QQQ rows,
+345/390 regular minutes with45 still-future trailing minutes. SPY conflict
+quarantined/no new rows, so shell exit1 is not QQQ failure. Original bytes remain;
+no full-session/finality claim. Exact paths/hashes and limitations belong to Data.
+Engine Research completed frozen-policy inference on six new-vintage ETF/month
+windows:126 cells/36 matched identities/zero fits,8.641s Docker CPU run.86 tests,
+independent review and exact RO readback pass. Both beat cash5/6, own-risk1/6,
+long1/6; no selected winner or Paper input. Exact pins belong to Research.
+Paper rejection cause unknown;
+exact-price QQQ orderability and future categorical error diagnostics are owned.
 
 Latest October3 integration: common-store QQQ unit-cycle readiness and fresh
 typed submit rejection are implemented;874 changed-path serial tests pass.

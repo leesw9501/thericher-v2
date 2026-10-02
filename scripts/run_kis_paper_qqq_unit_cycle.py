@@ -74,6 +74,13 @@ def _validate_visits(visits: int) -> None:
         raise ValueError("invalid_visit_bound")
 
 
+def _validate_entry_request_id(value: str | None) -> None:
+    if value is not None and (
+        type(value) is not str or re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,79}", value) is None
+    ):
+        raise ValueError("invalid_entry_request_identity")
+
+
 def _canonical_cycle_id(cycle_id: str) -> str:
     if (
         not isinstance(cycle_id, str)
@@ -135,13 +142,34 @@ def _inspect_cycle(state_root: Path, cycle_id: str, at: datetime) -> _CycleView:
     records = budget._orders(binding, cycle_id)
     projection = budget.project_budget(state_root, binding, qqq_cycle_id=cycle_id, as_of=at)
     states = [budget._state(state_root, row, symbol="QQQ", exchange="NASD") for row in records]
-    if any(state.intent.quantity != 1 for state in states) or (
-        states
-        and (
-            states[0].intent.side != "buy"
-            or any(state.intent.side != "sell" for state in states[1:])
+    if any(state.intent.quantity != 1 for state in states):
+        raise ValueError("unit_cycle_state_conflict")
+    entries = [
+        (row, state)
+        for row, state in zip(records, states, strict=True)
+        if state.intent.side == "buy"
+    ]
+    accepted_entries = [
+        state
+        for row, state in entries
+        if not budget._qqq_rejected_entry(
+            row, state, binding["terminal_evidence"].get(row["run_id"])
         )
-    ):
+    ]
+    seen_sell = seen_entry = False
+    for row, state in zip(records, states, strict=True):
+        if state.intent.side == "sell":
+            seen_sell = True
+        elif state.intent.side != "buy" or seen_sell:
+            raise ValueError("unit_cycle_state_conflict")
+        elif budget._qqq_rejected_entry(
+            row, state, binding["terminal_evidence"].get(row["run_id"])
+        ):
+            if seen_entry:
+                raise ValueError("unit_cycle_state_conflict")
+        else:
+            seen_entry = True
+    if len(accepted_entries) > 1 or (seen_sell and len(accepted_entries) != 1):
         raise ValueError("unit_cycle_state_conflict")
     reference.update(
         basis_ref=binding["basis_ref"],
@@ -159,12 +187,13 @@ def _inspect_cycle(state_root: Path, cycle_id: str, at: datetime) -> _CycleView:
         selected_quantity=str(projection.quantity),
     )
     input_ref = "sha256:" + budget._digest(reference)
-    buy_fills = int(bool(states and records[0]["closed"] and _filled_unit(states[0])))
+    buy_fills = sum(int(row["closed"] and _filled_unit(state)) for row, state in entries)
     sell_fills = sum(
         int(row["closed"] and _filled_unit(state))
-        for row, state in zip(records[1:], states[1:], strict=True)
+        for row, state in zip(records, states, strict=True)
+        if state.intent.side == "sell"
     )
-    if sell_fills > 1 or (sell_fills and not buy_fills):
+    if buy_fills > 1 or sell_fills > 1 or (sell_fills and not buy_fills):
         raise ValueError("unit_cycle_fill_conflict")
     if records and not records[-1]["closed"]:
         status = "pending"
@@ -186,11 +215,26 @@ def _inspect_cycle(state_root: Path, cycle_id: str, at: datetime) -> _CycleView:
     return _CycleView(status, buy_fills, sell_fills, input_ref)
 
 
-def _receipt(state_root: Path, cycle_id: str, at: datetime) -> ResearchDecisionReceipt:
+def _receipt(
+    state_root: Path, cycle_id: str, at: datetime, entry_request_id: str | None = None
+) -> ResearchDecisionReceipt:
+    _validate_entry_request_id(entry_request_id)
     view = _inspect_cycle(state_root, cycle_id, at)
     if view.status == "pending":
         raise ValueError("pending_recovery_must_precede_receipt")
     action = {"entry_ready": "enter", "exit_ready": "exit"}.get(view.status, "abstain")
+    if view.status == "entry_finalized" and entry_request_id is not None:
+        binding = budget._load_binding(state_root)
+        records = budget._orders(binding, cycle_id)
+        if records and all(
+            budget._qqq_rejected_entry(
+                row,
+                budget._state(state_root, row, symbol="QQQ", exchange="NASD"),
+                binding["terminal_evidence"].get(row["run_id"]),
+            )
+            for row in records
+        ):
+            action = "enter"
     proposal_ref = "ref:" + budget._digest([_cycle_ref(cycle_id), view.input_ref, action])
     proposal = TargetExposureProposal(
         proposal_id=proposal_ref,
@@ -223,6 +267,7 @@ def run_worker(
     cycle_id: str,
     execute: bool,
     visits: int = 24,
+    entry_request_id: str | None = None,
     environment: Mapping[str, str] | None = None,
     state_root: Path = Path("/app/private/canary"),
     runtime_projection_path: Path = Path("/app/runtime/state/kis_paper_canary.json"),
@@ -234,6 +279,7 @@ def run_worker(
     clock=None,
 ) -> dict[str, object]:
     _validate_visits(visits)
+    _validate_entry_request_id(entry_request_id)
     if not isinstance(cycle_id, str) or re.fullmatch(r"qqq-unit-[0-9a-f]{64}", cycle_id) is None:
         raise ValueError("invalid_worker_cycle_identity")
     if not execute:
@@ -250,7 +296,11 @@ def run_worker(
             if time.monotonic() >= deadline:
                 return _summary(cycle_id, "worker_time_budget_exhausted", completed_visits, view)
             outcome = budget.run_kis_paper_budget_strategy(
-                receipt_loader=lambda at: _receipt(state_root, cycle_id, at),
+                receipt_loader=lambda at: (
+                    _receipt(state_root, cycle_id, at)
+                    if entry_request_id is None
+                    else _receipt(state_root, cycle_id, at, entry_request_id)
+                ),
                 environment=source,
                 state_root=state_root,
                 runtime_projection_path=runtime_projection_path,
@@ -263,6 +313,11 @@ def run_worker(
                 client=client,
                 clock=clock,
                 qqq_cycle_id=cycle_id,
+                **(
+                    {"qqq_entry_request_id": entry_request_id}
+                    if entry_request_id is not None
+                    else {}
+                ),
             )
             completed_visits += 1
             payload = outcome.safe_payload()
@@ -288,6 +343,8 @@ def run_worker(
                         cycle_id,
                         require_utc(clock() if clock else datetime.now(UTC)),
                     )
+            if time.monotonic() >= deadline:
+                return _summary(cycle_id, "worker_time_budget_exhausted", completed_visits, view)
             if view.status == "complete":
                 return _summary(cycle_id, "unit_cycle_complete", completed_visits, view)
             if view.status == "entry_finalized":
@@ -398,8 +455,16 @@ def _stop_owned_container(name, invocation, common) -> str:
         return "ownership_unconfirmed"
 
 
-def run(*, project_root: Path, execute: bool, cycle_id: str, visits: int = 24):
+def run(
+    *,
+    project_root: Path,
+    execute: bool,
+    cycle_id: str,
+    visits: int = 24,
+    entry_request_id: str | None = None,
+):
     _validate_visits(visits)
+    _validate_entry_request_id(entry_request_id)
     cycle_id = _canonical_cycle_id(cycle_id)
     if not execute:
         return _summary(cycle_id, "preview")
@@ -470,6 +535,8 @@ def run(*, project_root: Path, execute: bool, cycle_id: str, visits: int = 24):
             "--visits",
             str(visits),
         ]
+        if entry_request_id is not None:
+            command.extend(["--entry-request-id", entry_request_id])
         try:
             completed = subprocess.run(
                 command,
@@ -511,15 +578,22 @@ def main(argv: list[str] | None = None) -> int:
         parser.add_argument("--worker", action="store_true")
         parser.add_argument("--cycle-id", required=True)
         parser.add_argument("--visits", type=int, default=24)
+        parser.add_argument("--entry-request-id")
         args = parser.parse_args(argv)
         result = (
-            run_worker(cycle_id=args.cycle_id, execute=args.execute, visits=args.visits)
+            run_worker(
+                cycle_id=args.cycle_id,
+                execute=args.execute,
+                visits=args.visits,
+                entry_request_id=args.entry_request_id,
+            )
             if args.worker
             else run(
                 project_root=args.project_root,
                 cycle_id=args.cycle_id,
                 execute=args.execute,
                 visits=args.visits,
+                entry_request_id=args.entry_request_id,
             )
         )
     except Exception:

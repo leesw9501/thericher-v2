@@ -1208,11 +1208,14 @@ def test_untrusted_kis_message_code_is_omitted_from_runtime_diagnostic(value: ob
             endpoint=KIS_PAPER_BALANCE_ENDPOINT,
         )
 
-    assert raised.value.diagnostic == {
+    expected = {
         "endpoint": "balance",
         "tr_id": KIS_PAPER_BALANCE_ENDPOINT.tr_id,
         "http_status": "403",
     }
+    if value == "12345678":
+        expected["upstream_code"] = "paper_numeric_unclassified"
+    assert raised.value.diagnostic == expected
 
 
 @pytest.mark.parametrize(

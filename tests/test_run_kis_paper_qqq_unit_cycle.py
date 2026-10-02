@@ -166,8 +166,34 @@ def test_host_filters_live_names_before_values_and_uses_named_paper_loader(dispa
     assert "--no-deps" in command and "never" in command
     assert {k: v for k, v in options["env"].items() if k.startswith("KIS_")} == ENV
     assert NAMED_CYCLE not in " ".join(command)
-    assert all(value not in " ".join(command) for value in ENV.values())
+    assert all(value not in command for value in ENV.values())
+    assert all(value not in " ".join(command) for value in ENV.values() if len(value) >= 8)
+    assert not any(argument in {"--env", "-e"} for argument in command)
     assert "SPY" not in json.dumps(result)
+
+
+def test_named_request_crosses_dispatch_without_changing_cycle(dispatch):
+    calls, _, args = dispatch
+    result = runner.run(**args, entry_request_id="distinct-entry-2")
+    command = calls[1][0]
+    assert command[command.index("--entry-request-id") + 1] == "distinct-entry-2"
+    assert command[command.index("--cycle-id") + 1] == CYCLE
+    assert result["owned_cycle_ref"] == runner._cycle_ref(CYCLE)
+
+
+@pytest.mark.parametrize("value", ["", " ", "../entry", "a" * 81, True, 1, "entry\n2"])
+@pytest.mark.parametrize("mode", ["host", "worker"])
+def test_invalid_entry_identity_fails_before_external_access(value, mode):
+    with pytest.raises(ValueError, match="invalid_entry_request_identity"):
+        if mode == "host":
+            runner.run(
+                project_root=Path("unused"),
+                execute=True,
+                cycle_id=NAMED_CYCLE,
+                entry_request_id=value,
+            )
+        else:
+            runner.run_worker(cycle_id=CYCLE, execute=True, entry_request_id=value)
 
 
 def test_live_mode_stops_before_paper_loader_or_dispatch(monkeypatch):
@@ -359,10 +385,20 @@ def worker(monkeypatch, tmp_path):
     return client, created, sleeps, args
 
 
-def test_worker_one_client_buy_then_exact_sell_and_same_cycle_never_rebuys(worker):
+def test_worker_one_client_buy_then_exact_sell_and_same_cycle_never_rebuys(worker, monkeypatch):
     client, created, sleeps, args = worker
+    original_core = runner.budget.run_kis_paper_budget_strategy
+    outcomes = []
+
+    def core(**kwargs):
+        outcome = original_core(**kwargs)
+        outcomes.append(outcome.safe_payload())
+        return outcome
+
+    monkeypatch.setattr(runner.budget, "run_kis_paper_budget_strategy", core)
     result = runner.run_worker(**args)
-    assert result == complete_result()
+    assert outcomes[0]["status"] == "order_complete", outcomes[0].get("failure_diagnostic")
+    assert result == complete_result(), outcomes
     assert len(created) == 1 and sleeps == [15]
     assert [intent.side for intent in client.submits] == ["buy", "sell"]
     binding = runner.budget._load_binding(args["state_root"])
@@ -513,6 +549,72 @@ def test_rejected_entry_finalizes_without_rebuy(worker):
     assert len(client.submits) == 1
 
 
+def test_distinct_named_entry_preserves_rejections_and_restart_identity(worker, monkeypatch):
+    from thericher_v2.execution.kis_paper_canary import KisPaperSubmitRejected
+
+    client, _, _, args = worker
+    original_submit = client._submit_selected
+    reject = True
+    funds_queries = []
+
+    def submit(intent, binding):
+        if reject:
+            client.submits.append(intent)
+            raise KisPaperSubmitRejected()
+        return original_submit(intent, binding)
+
+    def funds(*, symbol, exchange, limit_price):
+        assert (symbol, exchange) == ("QQQ", "NASD")
+        funds_queries.append(limit_price)
+        snapshot = client.snapshot()
+        return snapshot.cash, replace(
+            snapshot.orderable_funds,
+            reference_symbol="QQQ",
+            reference_exchange="NASD",
+            reference_price=limit_price,
+        )
+
+    monkeypatch.setattr(client, "_submit_selected", submit)
+    monkeypatch.setattr(client, "orderable_funds_at_limit", funds)
+    assert runner.run_worker(**args, visits=1)["replay_status"] == "entry_finalized"
+    first_path = args["state_root"] / (client.submits[0].run_id + ".json")
+    first_bytes = first_path.read_bytes()
+    original_binding = runner.budget._load_binding(args["state_root"])
+    named = {**args, "entry_request_id": "entry-2"}
+    assert runner.run_worker(**named, visits=1)["replay_status"] == "entry_finalized"
+    assert len(client.submits) == 2 and len(funds_queries) == 3
+    second_path = args["state_root"] / (client.submits[1].run_id + ".json")
+    second_bytes = second_path.read_bytes()
+    client.now += timedelta(seconds=2)
+    assert runner.run_worker(**named, visits=1)["status"] == "unit_cycle_not_completed"
+    assert len(client.submits) == 2
+    reject = False
+    result = runner.run_worker(**{**args, "entry_request_id": "entry-3"})
+    assert result["status"] == "unit_cycle_complete"
+    assert (result["closed_buy_fill_count"], result["closed_sell_fill_count"]) == (1, 1)
+    assert [intent.side for intent in client.submits] == ["buy", "buy", "buy", "sell"]
+    assert first_path.read_bytes() == first_bytes and second_path.read_bytes() == second_bytes
+    final_binding = runner.budget._load_binding(args["state_root"])
+    for key in ("basis_usd", "allocated_usd", "basis_ref", "account_ref"):
+        assert final_binding[key] == original_binding[key]
+    assert len(runner.budget._orders(final_binding, CYCLE)) == 4
+    assert (
+        runner.run_worker(**{**args, "entry_request_id": "entry-4"})["status"]
+        == "unit_cycle_complete"
+    )
+    assert len(client.submits) == 4
+
+
+def test_named_request_cannot_skip_unknown_entry_recovery(worker, monkeypatch):
+    client, _, _, args = worker
+    client.unknown = True
+    assert runner.run_worker(**args, visits=1)["replay_status"] == "pending"
+    monkeypatch.setattr(runner, "_receipt", forbidden)
+    monkeypatch.setattr(client, "orderable_funds_at_limit", forbidden)
+    result = runner.run_worker(**args, visits=1, entry_request_id="different-entry")
+    assert result["replay_status"] == "pending" and len(client.submits) == 1
+
+
 def test_canceled_zero_fill_sell_does_not_complete_cycle(worker):
     client, _, _, args = worker
     assert runner.run_worker(**args, visits=1)["replay_status"] == "exit_ready"
@@ -601,6 +703,32 @@ def test_core_call_finishing_after_worker_budget_is_not_success(worker, monkeypa
     result = runner.run_worker(**args)
     assert result["status"] == "worker_time_budget_exhausted"
     assert result["visits_completed"] == 1 and len(client.submits) == 1
+
+
+def test_locked_inspection_finishing_after_deadline_cannot_report_success(worker, monkeypatch):
+    client, _, _, args = worker
+    elapsed = 0
+    original = runner._inspect_cycle
+
+    def inspect(*positional):
+        nonlocal elapsed
+        view = original(*positional)
+        if view.status == "complete":
+            elapsed = 1201
+        return view
+
+    def sleep(seconds):
+        nonlocal elapsed
+        elapsed += seconds
+        client.now += timedelta(seconds=seconds)
+
+    monkeypatch.setattr(runner, "_inspect_cycle", inspect)
+    monkeypatch.setattr(runner, "time", SimpleNamespace(monotonic=lambda: elapsed, sleep=sleep))
+    result = runner.run_worker(**args)
+    assert result["status"] == "worker_time_budget_exhausted"
+    assert result["closed_buy_fill_count"] == result["closed_sell_fill_count"] == 1
+    assert runner._exit_code(result) == 21
+    assert [intent.side for intent in client.submits] == ["buy", "sell"]
 
 
 def test_worker_live_mode_reads_no_credential_values(monkeypatch):

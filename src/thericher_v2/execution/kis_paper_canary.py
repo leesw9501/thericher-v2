@@ -86,8 +86,10 @@ from .kis_readonly import (
     KisHttpRequest,
     KisHttpResponse,
     KisHttpTransport,
+    KisPaperCashSnapshot,
     KisPaperConfig,
     KisPaperIdlessHistoryObservation,
+    KisPaperOrderableFundsSnapshot,
     KisPaperReadOnlyClient,
     KisPaperReadOnlyError,
     KisPaperReadOnlySnapshot,
@@ -983,6 +985,27 @@ class KisPaperCanaryClient:
             access_token=self._issue_access_token(),
         ).snapshot()
 
+    def orderable_funds_at_limit(
+        self,
+        *,
+        symbol: str,
+        exchange: str,
+        limit_price: Decimal,
+    ) -> tuple[KisPaperCashSnapshot, KisPaperOrderableFundsSnapshot]:
+        reader = KisPaperReadOnlyClient(
+            config=self._config,
+            transport=self._transport,
+            access_token=self._access_token,
+        )
+        try:
+            return reader.orderable_funds_at_limit(
+                symbol=symbol,
+                exchange=exchange,
+                limit_price=limit_price,
+            )
+        finally:
+            self._access_token = reader._access_token
+
     def reconcile(
         self,
         state: KisPaperCanaryState,
@@ -1289,7 +1312,9 @@ class KisPaperCanaryClient:
                 "submit_response_incomplete", submit_response_category="payload_invalid"
             ) from None
         if probe.category in {
-            "payload_invalid", "result_code_missing", "result_code_invalid",
+            "payload_invalid",
+            "result_code_missing",
+            "result_code_invalid",
             "rejection_with_order_reference",
         }:
             raise KisPaperCanaryError(
@@ -2233,12 +2258,17 @@ def _recover_existing_canary(
 def _confirmed_zero_fill_cancel(state, reconciliation, *, environment, now) -> bool:
     observation, snapshot = reconciliation.execution, reconciliation.snapshot
     if (
-        observation is None or not observation.cancellation_confirmed
-        or state.current_fill is None or state.current_fill != observation.fill
-        or not timedelta(0) <= now - observation.fill.observed_at
+        observation is None
+        or not observation.cancellation_confirmed
+        or state.current_fill is None
+        or state.current_fill != observation.fill
+        or not timedelta(0)
+        <= now - observation.fill.observed_at
         <= KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE
-        or snapshot is None or reconciliation.account_status != "available"
-        or not reconciliation.matching_ccnl or reconciliation.matching_open_order
+        or snapshot is None
+        or reconciliation.account_status != "available"
+        or not reconciliation.matching_ccnl
+        or reconciliation.matching_open_order
         or not snapshot.open_orders.complete
         or state.broker_order_id is None
         or (state.submission_started_at or state.submitted_at) is None
@@ -2250,8 +2280,11 @@ def _confirmed_zero_fill_cancel(state, reconciliation, *, environment, now) -> b
         return False
     config = load_kis_paper_config_from_environment(environment)
     times = [
-        observation.fill.observed_at, snapshot.captured_at, snapshot.identity.captured_at,
-        snapshot.open_orders.captured_at, snapshot.cash.captured_at,
+        observation.fill.observed_at,
+        snapshot.captured_at,
+        snapshot.identity.captured_at,
+        snapshot.open_orders.captured_at,
+        snapshot.cash.captured_at,
         snapshot.orderable_funds.captured_at,
         *(item.captured_at for item in snapshot.positions),
     ]
@@ -2366,12 +2399,14 @@ def inspect_kis_paper_buy_limit_response(
             category = "payload_invalid"
         elif any(
             key.upper() == "ODNO" and not isinstance(value, str)
-            for fields in (payload, output or {}) for key, value in fields.items()
+            for fields in (payload, output or {})
+            for key, value in fields.items()
         ):
             category = "payload_invalid"
         elif any(
             key.upper() == "ODNO" and value != ""
-            for fields in (payload, output or {}) for key, value in fields.items()
+            for fields in (payload, output or {})
+            for key, value in fields.items()
         ):
             category = "rejection_with_order_reference"
         else:
