@@ -13,7 +13,9 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
-Data's read-only inventory at October2 23:38 KST found:
+Data's read-only inventory at October3 02:12-02:16 KST reattached the named
+current pointers (Scheduler facts at02:14:45); unchanged daily scopes retain
+their original collection timestamps:
 - SPY strategy head:99 rows through October1, collected October2 22:15:02;
   next owned refresh October5 22:15 KST. Exact manifest:
   `D:\market_data\us_equities\kis_paper_private\daily-head\v1\snapshot=20261002T131502303890Z-be45f6ea8bdd-spy-ams-v1\manifest.json`,
@@ -29,12 +31,30 @@ Data's read-only inventory at October2 23:38 KST found:
   qualify the legacy input. Next owner October3 06:55 KST.
   `D:\thericher-v2\model-artifacts\data\kis-paper-daily-pair-forward-v2\run=20261001T215509110716Z-8af295a3aaf84ba5\receipt.json`,
   SHA256 `e002e50c4da219298352117d93b0b03652ee705ff03695963798415cb39def2f`.
-- Intraday head:96 QQQ/97 SPY chunks,12 added per symbol since September25;
-  October1 QQQ covers159/390 regular minutes, zero complete head sessions.
+- Intraday head:97 QQQ/98 SPY chunks, one new chunk each after the00:29 owner;
+  its bound capture has120 rows per target. October2 QQQ covers119/390 regular
+  minutes (271 missing), zero complete head sessions. October1's159/390 is a
+  different session, not a reduction of the same session's coverage.
   This is separate from the historical cursor's21 complete shared sessions.
-  Dispatcher completion is not complete coverage. Next owner October3 00:29 KST.
-  Capture `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261001T212002741954Z-f594abd6546ecada.json`,
-  SHA256 `f594abd6546ecadad36a9cf4226b7c4d513dab1e9c473c2f3a24226367bbb4ed`.
+  Dispatcher completion is not complete coverage. Next owner October3 02:28 KST.
+  Capture `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T152902086053Z-73f43884218f3030.json`,
+  SHA256 `73f43884218f3030cef6032865542a3aff16f6cd264149b9401354b15406a149`.
+  Main independently recomputed the pointer, schedule, invocation, capture and
+  index hashes and read the existing offline schedule fact. Exact schedule
+  `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule\intraday-head-20261002T1529010864419Z.json`,
+  SHA256 `83a34ca70bdaeb96ef97ff1e59502ebca6ec2e5d5376130fa4fc34ca32d09691`;
+  exact invocation terminal under `execution\kis-paper-intraday-head-invocation-v1`
+  for that same run, SHA256
+  `3cac5549cc739049ba0ee219a85cf43a4a5d0b99a53d8a42a94701ca309d6411`.
+  Current pointer SHA256 `56a09ef6213dff3a48c25a7106b22da9720d4387aac6e2642a75749ab7986a0a`;
+  index generation233, SHA256
+  `ea318f8baefe691000cc33135f96df18d4730456e660bcc3ab85cecd9ba92170`.
+  Capture/availability bindings verify; causal attestation is not recorded and
+  input is input_unavailable/session_coverage_incomplete. Decision-time
+  availability/provider finality remain not_observed. This is marker-present
+  provenance under the assumed-honest host, not independent proof of OS Scheduler
+  origin. The recovery-only reader returns evidence_unavailable because this
+  terminal is not collection_exit_nonzero, not because the capture is missing.
 
 No collector, broker call, scheduler or data acquisition was started by this
 inventory. Existing immutable Tiingo input supplied the matched Chronos-2

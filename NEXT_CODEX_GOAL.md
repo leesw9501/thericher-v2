@@ -59,9 +59,17 @@ separately owned QQQ baseline's feasibility only; no new broker/schedule action
 or resolution of the unknown SPY leg is implied.
 Official turnover-aware learned-portfolio sources are retrieved for a later
 finite net-utility contract, not an upstream framework/runtime adoption.
+The causal monthly input and differentiable NAV package now has109 passing
+synthetic CPU tests, including gradient/reconstruction and Decimal ledger
+parity. Two fixed pooled linear/LSTM fits are implementation-owned, not trained
+or GPU-allocated yet; freeze the final contract before fitting. The pure shared
+SPY/QQQ budget projection has234 new and555 related passing tests after fixing
+two independently reproduced defects. It is not deployed common-cap enforcement,
+an owned QQQ round trip or evidence that the SPY lifecycle is complete.
 
 Existing Data owners now retain48 NAS/pair sessions through October1 and99 SPY
-head rows through that date. Intraday head still has no complete regular session.
+head rows through that date. Current intraday head has97/98 QQQ/SPY chunks;
+October2 QQQ covers119/390 regular minutes, still no complete head session.
 October2 23:50 budget owner returns no_intent/ownership conflict; next October5
 23:50 KST. No new order, schedule, funding reset or permission wait. Claude CLI
 weekly-limit failure is review_unavailable, not a substantive review verdict.

@@ -79,6 +79,20 @@ ran alongside it, not as a foreground wait. This is diagnostic, not new-goal
 authority or company completion. Execution is reviewing whether a separately
 owned QQQ baseline could advance Paper readiness without touching the unknown
 SPY leg; no new broker call, order, scope or schedule follows from that review.
+That review found concrete aggregate-budget and owned-entry gaps. The new pure
+SPY/QQQ common10-percent projection has234 synthetic/555 related passes after
+independent broker-alias and nested-cancel-proof repairs; independent rereview
+confirms both and the feature-precision repair,343 combined focused passes.
+It does not enforce a deployed budget or authorize account-position adoption.
+Causal monthly inputs and differentiable overnight NAV now have109 passing
+synthetic CPU tests, including optimizer/reconstruction and precision/gradient
+parity. The finite linear/LSTM net-utility trainer is implementation-owned;
+no fit or GPU appointment yet. Metadata-only review measured an oversized
+draft contract before freezing. Calendar offsets compact it from1,246,348 to
+188,621 bytes while preserving132 TRAIN and84/79 EVAL months.
+Data reattached the00:29 current intraday chain:97/98 QQQ/SPY chunks, October2
+QQQ119/390 minutes, still incomplete/no causal attestation. Main hashes and
+existing reader agree; next owner02:28, no manual collector/task invocation.
 
 Current September25 Research continuation: TimesFM2.5 has now run on real
 SPY/QQQ/IWM data, not only synthetic inputs. Existing pinned weights made435

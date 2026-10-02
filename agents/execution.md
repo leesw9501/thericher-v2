@@ -14,6 +14,22 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October3 isolated readiness package: `kis_paper_portfolio_budget.py` now
+projects one unchanged initial10-percent basis across explicitly bound SPY/AMEX
+and QQQ/NASD owners. Known entry cost and unresolved BUY reservations remain
+charged once; an unknown zero-fill SELL does not release cost. Positive exact
+SELL fills release only that owner's proportional entry cost, never profits or
+another owner's inventory. No account snapshot adoption or private-state IO.
+Independent review reproduced broker-reference aliases and forged nested
+cancellation fills; both are repaired with exact market-date/account alias
+checks and strict nested fill validation.234 new synthetic cases and555 related
+budget/fill/history tests pass; independent rereview confirms both original
+reproductions now reject. This is pure in-memory
+calculation, NOT deployed aggregate enforcement or an independent QQQ cycle.
+Next implementation must connect caller-verified owner/account custody,
+persisted common basis/reservations before POST, and fresh broker buying power;
+existing SPY bytes, owners and order routes remain unchanged.
+
 October3 00:24 KST: new ID-less original-POST-date diagnostic is implemented
 and deployed to the existing eight Paper consumers. It returns only candidate
 status absent/unique/ambiguous/incomplete and counts, never historical IDs,
@@ -561,7 +577,8 @@ inventory; it need not wait for the old cancelled row to reappear.
 
 | Work | Owner | Next action |
 | --- | --- | --- |
-| Virtual-Paper lifecycle canary | Execution / existing quote-session owner | New-image direct session is `cancelled/clean` with valid durable attempt time; seven private-state consumers are compatible. Next: exact terminal quantity/accounting support and a fillable cycle. Do not duplicate an active worker or resubmit an unresolved intent. |
+| Existing SPY lifecycle | Execution / exact private cycle | Known BUY/full fill and original SELL/zero-fill cancellation are observed; one successor is outcome_unknown/no broker identity. Latest original-date diagnostic has no candidate, not terminal proof. Preserve identity/bytes; no repeated absence polling or repost. |
+| Independent QQQ Paper readiness | Execution / isolated pure budget package | Cross-owner common10-percent math is implemented/tested, not deployed. Next connect persistent custody and an exact owned entry/exit cycle; do not use the snapshot-based QQQ resolver to adopt inventory or allocate a second10percent. |
 | Historical lifecycle closure | Execution | The 2026-08-11 assessment closed its evidence review only, leaving an unresolved intent. Repeated exact-bound read-only reconciliation is permitted; runtime recovery is still outstanding under the new company objective. |
 | Read-only account snapshot | Existing observer task | The existing four-minute task remains the sole recurring owner. |
 | QQQ/SPY intraday causal evidence | Data-owned `thericher-kis-paper-intraday-head` task | The first post-writer bound task path is one comparable `collection_exit_nonzero / reason_unavailable` category. The later successful partial terminal is Data-only and noncomparable, so Execution consumes no causal-qualified model input; the existing QQQ provisional route remains separately task-owned. |

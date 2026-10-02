@@ -2,6 +2,17 @@
 
 ## Latest Bounded Research
 
+October3 isolated preparation: monthly input/utility modules have109 passing
+synthetic tests, including CPU Torch optimizer, numeric reconstruction,
+Decimal ledger and gradient/context invariance. The new portfolio-budget math
+has234 synthetic and555 related passes; independent rereview confirms all
+three reproduced defects were repaired. None reads private source/account
+state or deploys a new Paper cap. Tests use isolated retained C: scratch.
+The finite net-utility trainer is still implementation-owned, not trained.
+Its dynamic runtime pins require freezing inside the existing pinned Docker
+CPU image, not the host's CPU-only Torch version. The full calendar contract
+is compacted to188,621 bytes before freeze; no generic reader limit is changed.
+
 October3: `scripts/run_chronos2_return_development.py` completed its immutable
 one-pass comparison under the same pinned Torch image below. Use network none,
 read-only source/model/data, external artifacts writable,2 CPU/6GiB,900s and

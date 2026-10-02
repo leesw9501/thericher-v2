@@ -17,6 +17,28 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+Current implementation package: `adjusted_monthly_policy_inputs.py` separates
+252 past signed returns (253 scheduled closes ending before monthly OPEN)
+from realized gap/daily adjusted-close payoff marks. It requires a complete
+calendar-bracketed month, not next month's source OPEN. The new differentiable
+NAV math mirrors the unchanged Decimal monthly ledger, including overnight
+carry, post-fee target solving, ragged daily marks and final CLOSE liquidation.
+109 synthetic tests pass, including real CPU Torch optimizer/reconstruction,
+ambient Decimal-context invariance and gradient checks. Independent review also
+ran30 randomized Decimal-ledger and90 finite-difference checks; its context-
+precision finding was fixed before any campaign freeze. No actual training
+or GPU appointment follows from these helper tests.
+
+Engine Research owns implementation of one finite net-utility campaign:
+pooled shared linear/LSTM16 models on complete2002-2012 months, one252-return
+window, fixed128 epochs/seed101, train10bps per side, final epoch only. Compare
+2013-2019/2020-July2026 against cash/long/fixed-half and per-model TRAIN-risk
+controls at2.5/5/10bps, without selecting costs/models/epochs. Main must freeze
+the final source/code/runtime contract inside the pinned Docker CPU image,
+then dispatch CPU-first/CUDA work through the existing exclusive GPU supervisor.
+This is implementation-owned, not a background fit, depth selection or Paper
+candidate. The fixed prior research remains immutable.
+
 Completed `chronos2-tiingo-return-group-development-v1`: official120M Chronos-2,
 same immutable Tiingo input/payoff and128 past signed intraday returns as the
 TimesFM reference below. Single-series, same-origin SPY/QQQ/IWM attention and
@@ -903,7 +925,7 @@ dispatch restrictions. The current development package is described above.
 | --- | --- | --- |
 | Technical/chart and momentum/regime | Fixed monthly12-month cash adaptation completed72 cells; no buy/hold advantage | Preserve its controls for a finite learned holding-policy comparison; no lookback search or outcome-driven shift |
 | Classical ML/statistical | H180 Ridge and prior feature/boosted comparisons complete, negative3/5bps aggregate nets | Prepare common-timestamp cross-ETF information/pooling controls; no same-input threshold/cost rescue |
-| Sequence/DL/public model | TimesFM435 forecasts/90 cells and Chronos-2 matched1,305 forecasts/126 cells completed; no selected model | A cost-aware held-position objective is source-retrieved for future finite learning; no same-input forecast/threshold rescue or GPU-utilization job |
+| Sequence/DL/public model | TimesFM435 forecasts/90 cells and Chronos-2 matched1,305 forecasts/126 cells completed; no selected model | Implement the finite pooled linear/LSTM net-utility contract using the new causal monthly inputs; freeze before fitting, no forecast/threshold rescue or utilization job |
 | Portfolio/allocation/meta-decision | Daily flatten loses after costs; monthly volatility holding beats cash6/6 and TRAIN-risk-control5/6, trails buy/hold6/6 | Keep full NAV/turnover/drawdown comparisons; no same-data weight/ETF selection or deployment claim |
 
 The fresh QQQ/SPY intraday terminal remains
@@ -1002,22 +1024,21 @@ The composed-policy, position-aware, causal-feature, fixed-boosting, H180 and
 TimesFM daily-return comparisons are completed.
 Keep prior FirstRate losses and each Tiingo study's scoped limitations intact;
 none proves every model family unusable. No frozen research worker/appointment
-remains. A distinct development package may reuse seen data with that label;
+remains yet; the new net-utility implementation is owned, not dispatched.
+A distinct development package may reuse seen data with that label;
 a later independent performance claim needs genuinely unseen evidence. The
 exact unresolved Paper successor is not a general research permission hold.
 Do not continue a H30 architecture/threshold rescue on these same outcomes.
 The lower-turnover H180 experiment did not establish useful prediction;
 TimesFM adds a small SPY observation, not a selected winner. Larger models or
-longer training alone are not the next hypothesis. Next preparation pins
-Chronos-2 source/dated weights/runtime and binds SPY/QQQ/IWM common past-only
-timestamps. Compare isolated and same-origin cross-ETF contexts with unchanged
-daily payoff/cost/threshold and naive controls. Its group attention must never
-mix later-origin contexts into an earlier forecast. Freeze one finite
-developmental contract before outputs; never use a future peer outcome or
-full-sample normalization. Reused samples stay seen-data, not independent
-confirmation. Kill on timing/support mismatch or failure to add value over
-the matched control without costs/threshold rescue. Do not infer that the
-next source/model is runtime-ready merely because its official card was read.
+longer training alone are not the next hypothesis. Chronos-2's matched
+same-origin comparison is complete, not a ready second dispatch. The current
+finite net-utility package directly tests cost-aware held-position learning;
+its forecast input remains prior-only and its realized payoff is isolated.
+Freeze source, runtime, two fits, costs and complete-month split before outputs.
+Reused samples remain seen-data, not independent confirmation. Kill on
+timing/support mismatch, ledger/gradient inconsistency or failure to add value
+over TRAIN-risk controls without outcome-driven rescue.
 No broad parameter/architecture search or GPU memory-padding job is assigned.
 Exact Paper recovery remains the independent main path. No new appointment or
 external collection is implied by this next-package direction.
