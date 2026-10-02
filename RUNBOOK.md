@@ -8,10 +8,19 @@ Decimal ledger and gradient/context invariance. The new portfolio-budget math
 has234 synthetic and555 related passes; independent rereview confirms all
 three reproduced defects were repaired. None reads private source/account
 state or deploys a new Paper cap. Tests use isolated retained C: scratch.
-The finite net-utility trainer is still implementation-owned, not trained.
-Its dynamic runtime pins require freezing inside the existing pinned Docker
-CPU image, not the host's CPU-only Torch version. The full calendar contract
-is compacted to188,621 bytes before freeze; no generic reader limit is changed.
+`scripts/run_tiingo_monthly_net_utility_development.py` completed one actual
+CPU-first/CUDA attempt: two128-epoch fits,126 cells,81.300s,49 focused tests
+and immutable readback pass. Root/pins/results belong to Research/Steward.
+Do not rerun or edit the frozen harness. Same pinned Torch2.7.0+cu128 image,
+2 CPU/6GiB/900s/network none; read-only src/scripts/data/artifact root, only the
+exact study directory, existing `_control/ledger` and canonical GPU-lock directory
+writable. No env-file/credentials/broker or image change. Final NPZ arrays use
+strict numeric schemas/allow_pickle=False; CPU reconstruction is checked.
+Dynamic runtime pins require metadata freeze AND offline readback inside the
+same Docker image, not host Torch2.13 CPU. The full calendar contract is188,626
+pinned-image bytes; no generic reader limit changed. Worker/container exited,
+GPU lock released. Both learned policies trail their own TRAIN-risk controls
+in most/all folds; no selected model, retune, holdout or Paper promotion.
 
 October3: `scripts/run_chronos2_return_development.py` completed its immutable
 one-pass comparison under the same pinned Torch image below. Use network none,

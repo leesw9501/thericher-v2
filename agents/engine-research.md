@@ -27,17 +27,47 @@ carry, post-fee target solving, ragged daily marks and final CLOSE liquidation.
 ambient Decimal-context invariance and gradient checks. Independent review also
 ran30 randomized Decimal-ledger and90 finite-difference checks; its context-
 precision finding was fixed before any campaign freeze. No actual training
-or GPU appointment follows from these helper tests.
+or GPU appointment follows from these helper tests alone.
 
-Engine Research owns implementation of one finite net-utility campaign:
-pooled shared linear/LSTM16 models on complete2002-2012 months, one252-return
-window, fixed128 epochs/seed101, train10bps per side, final epoch only. Compare
-2013-2019/2020-July2026 against cash/long/fixed-half and per-model TRAIN-risk
-controls at2.5/5/10bps, without selecting costs/models/epochs. Main must freeze
-the final source/code/runtime contract inside the pinned Docker CPU image,
-then dispatch CPU-first/CUDA work through the existing exclusive GPU supervisor.
-This is implementation-owned, not a background fit, depth selection or Paper
-candidate. The fixed prior research remains immutable.
+Completed `tiingo-adjusted-monthly-net-utility-development-v1`: two pooled
+shared linear/LSTM16 fits, complete2002-2012 months, one252-return window,
+fixed128 epochs/seed101, TRAIN10bps per side, final epoch only.132 TRAIN months
+per ETF;84/79 EVAL months across2013-2019/2020-July2026. Seven policies at
+2.5/5/10bps produced126 cells, without selecting costs/models/epochs.
+Pinned Docker CPU smoke preceded actual CUDA fitting; RTX4090/Torch2.7.0+cu128,
+2 CPU/6GiB/network none/900s supervisor,81.300s reservation-to-summary.
+Peak262,698,496 bytes against23,030,923,264 available-VRAM budget. Numeric final
+NPZ weights reconstruct on CPU; exact contract/source/weight/result readback
+passes in the same pinned image without GPU. Worker/container exited and the
+canonical GPU lock is absent.49 focused synthetic tests pass, no skips.
+
+At10bps per side, normalized starting NAV1 gives:
+
+| Symbol / period | Linear NAV | LSTM NAV | Linear own-risk NAV | LSTM own-risk NAV | Buy/hold NAV |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| SPY2013-2019 |1.7212|1.5265|1.7318|1.7093|2.5414|
+| SPY2020-Jul2026 |1.5778|1.4314|1.7481|1.7257|2.5295|
+| QQQ2013-2019 |1.9220|1.7900|2.1023|2.0657|3.4257|
+| QQQ2020-Jul2026 |1.9366|1.5419|2.1042|2.0687|3.3311|
+| IWM2013-2019 |1.6795|1.4345|1.6518|1.5984|2.1066|
+| IWM2020-Jul2026 |1.3698|1.2042|1.5725|1.5307|1.8881|
+
+Both beat zero-interest cash6/6 and trail buy/hold6/6. Linear beats its own
+TRAIN-risk constant1/6, LSTM0/6;85/80 monthly trades versus two for buy/hold.
+Positive development NAV is not alpha, an independently evaluated portfolio,
+or actual PnL. The strongest risk-control test does not support selecting
+either learned policy. Revised/non-PIT seen data, correlated surviving ETFs,
+provider-adjusted marks, assumed OPEN availability and no broker parity remain.
+No rerun, tuning rescue, holdout, ensemble selection or Paper replacement.
+DeePM is a turnover-aware concept reference, not a Sharpe/SoftMin replication.
+
+Root `D:\thericher-v2\model-artifacts\research\tiingo-adjusted-monthly-net-utility-development-v1`.
+Contract `sha256:e3499c501a0c494b3766cb868385780ab6a478e9084e03dfcc5469956a1c1941`;
+summary `sha256:ccbece56af83c34c9b7df0563172ff89e38490904372b0824b0104fc123f483c`.
+Final linear/LSTM weight hashes:
+`sha256:599cbbd75c9a37a0fead6c2635aae5d394cb9ad1b6de92744082d6b867c43084` /
+`sha256:3f540bb76f5eb2f9ce566f33a9cbff7a3641c296d542e2edb5ad9b5d36012df9`.
+Registry non_promoting_completed. Prior frozen families remain unchanged.
 
 Completed `chronos2-tiingo-return-group-development-v1`: official120M Chronos-2,
 same immutable Tiingo input/payoff and128 past signed intraday returns as the

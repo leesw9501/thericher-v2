@@ -61,8 +61,11 @@ Official turnover-aware learned-portfolio sources are retrieved for a later
 finite net-utility contract, not an upstream framework/runtime adoption.
 The causal monthly input and differentiable NAV package now has109 passing
 synthetic CPU tests, including gradient/reconstruction and Decimal ledger
-parity. Two fixed pooled linear/LSTM fits are implementation-owned, not trained
-or GPU-allocated yet; freeze the final contract before fitting. The pure shared
+parity. Two fixed pooled linear/LSTM fits now completed128 epochs each on CUDA:
+126 cells/81.300s, peak262,698,496 bytes.49 focused tests and immutable numeric
+weight/source/result readback pass. Both beat cash6/6, own-risk controls only
+1/6 linear and0/6 LSTM; both trail buy/hold6/6. No model selected or Paper input.
+Exact pins/table belong to Research/Steward; GPU lock released. The pure shared
 SPY/QQQ budget projection has234 new and555 related passing tests after fixing
 two independently reproduced defects. It is not deployed common-cap enforcement,
 an owned QQQ round trip or evidence that the SPY lifecycle is complete.

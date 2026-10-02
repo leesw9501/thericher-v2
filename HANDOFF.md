@@ -86,10 +86,15 @@ confirms both and the feature-precision repair,343 combined focused passes.
 It does not enforce a deployed budget or authorize account-position adoption.
 Causal monthly inputs and differentiable overnight NAV now have109 passing
 synthetic CPU tests, including optimizer/reconstruction and precision/gradient
-parity. The finite linear/LSTM net-utility trainer is implementation-owned;
-no fit or GPU appointment yet. Metadata-only review measured an oversized
+parity. The finite linear/LSTM net-utility trainer has now completed actual
+CUDA training: two128-epoch fits,126 cells,81.300s,262,698,496-byte peak allocation.
+49 trainer tests and immutable source/NPZ/result readback pass in the pinned
+Torch2.7.0+cu128 image. Both beat cash6/6; linear beats its own TRAIN-risk constant
+1/6, LSTM0/6, both trail buy/hold6/6. No winner, holdout, ensemble or Paper input.
+Exact pins/table belong to Research/Steward; lock released/container exited.
+Metadata-only review measured an oversized
 draft contract before freezing. Calendar offsets compact it from1,246,348 to
-188,621 bytes while preserving132 TRAIN and84/79 EVAL months.
+188,626 pinned-image bytes while preserving132 TRAIN and84/79 EVAL months.
 Data reattached the00:29 current intraday chain:97/98 QQQ/SPY chunks, October2
 QQQ119/390 minutes, still incomplete/no causal attestation. Main hashes and
 existing reader agree; next owner02:28, no manual collector/task invocation.

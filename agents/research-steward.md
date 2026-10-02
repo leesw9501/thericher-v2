@@ -5,6 +5,21 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October3 latest appointment closed:
+`tiingo-adjusted-monthly-net-utility-development-v1`. CPU-first, two pooled
+CUDA linear/LSTM fits at128 epochs each,126 development cells, no holdout or
+selection. Contract
+`sha256:e3499c501a0c494b3766cb868385780ab6a478e9084e03dfcc5469956a1c1941`;
+summary `sha256:ccbece56af83c34c9b7df0563172ff89e38490904372b0824b0104fc123f483c`.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-adjusted-monthly-net-utility-development-v1`.
+Same pinned Torch2.7.0+cu128 image, network none,2 CPU/6GiB/900s supervisor;
+81.300s reservation-to-summary, RTX4090 peak262,698,496 bytes against
+23,030,923,264-byte available-VRAM budget. Final numeric NPZ weights are external,
+CPU reconstruction and immutable readback pass. Registry non_promoting_completed;
+child/container exited, canonical GPU lock absent.49 focused tests pass.
+No active compute appointment. Research owns the weak risk-control comparison;
+do not grant depth, ensemble or Paper custody from positive development NAV.
+
 October3 KST: closed `chronos2-tiingo-return-group-development-v1` after one
 CPU-first/CUDA zero-shot appointment,1,305 scored forecasts/126 fixed cells,
 30.163s reserved-attempt duration.72 parent controls reproduced. Existing
