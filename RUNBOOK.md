@@ -35,6 +35,18 @@ Weekly serial baseline completed6,341/19 skips,35 warnings,1,892.93s on
 `C:\trpy\weekly-20261003-a6b6a9b`; it predates collection of these new tests.
 Focused/weekly scratch is retained without unsafe recursive cleanup.
 
+`scripts/run_tiingo_monthly_momentum_development.py` completed its distinct
+72-cell fixed12-calendar-month study once, reusing the unchanged adjusted
+reader and overnight ledger. Same metadata-only freeze/single-attempt CLI and
+CPU/container/mount limits above; root/pins/results in Engine Research.
+TRAIN2002-2012 after warmup; prior completed month-end versus exactly12-month-
+earlier close, no nearest-date replacement. Unique required support includes
+the13 historical month-end closes and every scored session. Zero-interest
+cash is our own adaptation, not the paper's Treasury-bill excess-return rule.
+150 current reader/holding/momentum focused tests pass,2 native-symlink skips;
+independent review and immutable readback pass. No new prediction/model/weight,
+GPU, broker, source dataset, runtime or schedule.
+
 Shared-runtime authority passed6,341/19 skips, eight workers,307.80s and clean
 helper exit;353 changed-path serial tests, Ruff/both sample-env Compose configs,
 eight rebuilt consumers/16 changed-source hashes pass. First equal-count run

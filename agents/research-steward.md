@@ -28,9 +28,15 @@ no fitting, retained predictions/weights, holdout or GPU use. Contract
 `sha256:920cdb14688a76d03e17ac58b8e82eeffe95997c6f8f9b1909738c2117f55429`;
 summary `sha256:2b45317b6f25ea2addfdbd303b15cc06cfc849aafcc80d771cff1da31e8b0c07`.
 Root `D:\thericher-v2\model-artifacts\research\tiingo-adjusted-monthly-holding-development-v1`.
-Registry non_promoting_completed; parent frozen code is unchanged. Monthly
-momentum is a separately owned CPU implementation/review, not yet a frozen
-campaign, GPU appointment or depth allocation. Research owns its interpretation.
+Registry non_promoting_completed; parent frozen code is unchanged. Distinct
+monthly momentum also completed72 cells in2.878s under the same1 CPU/2GiB/600s
+networkless resources, no fitting/holdout/GPU. Contract
+`sha256:1889637db6257008f75ffc92447a47798dc7e23639011f49aa9a8f99842edfac`;
+summary `sha256:2072fd77fef0f6c203c8d0aad87a94a75858cc751fb00a869b0bafb47a3db89d`.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-adjusted-monthly-momentum-development-v1`.
+Registry non_promoting_completed, worker/container exited. No active compute
+appointment; retrieved net-utility references do not allocate a training job.
+Research owns interpretation and its next finite learning contract.
 Do not allocate depth training from a two-trade positive or fabricate work for
 utilization. Actual Claude weekly-limit failure is review_unavailable, not a verdict.
 

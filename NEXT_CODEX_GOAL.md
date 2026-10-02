@@ -51,8 +51,12 @@ NAV study are complete:72 cells/3.177s, stress-cost NAV above cash6/6 and fixed
 TRAIN-risk-control5/6, below buy/hold6/6 with lower close drawdown. No winner,
 broker parity or Paper replacement.100 new tests pass/2 native-symlink skips;
 weekly serial baseline passes6,341/19 in1,892.93s while new-role work proceeds.
-Next distinct Research package is fixed12-calendar-month momentum under the
-same NAV/cost assumptions; implementation/review owned, no actual outcome yet.
+Distinct fixed12-calendar-month momentum also completed72 cells/2.878s:
+beats cash6/6/risk-control4/6, trails buy/hold6/6 and worsens one close drawdown.
+150 current new-reader/holding/momentum tests pass/2 native-symlink skips;
+no lookback search, selected winner or Paper input. Execution reviews a
+separately owned QQQ baseline's feasibility only; no new broker/schedule action
+or resolution of the unknown SPY leg is implied.
 Official turnover-aware learned-portfolio sources are retrieved for a later
 finite net-utility contract, not an upstream framework/runtime adoption.
 

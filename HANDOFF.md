@@ -67,13 +67,18 @@ At10bps per side all six ETF/fold groups beat cash and five beat their fixed
 TRAIN-risk-control, but all trail buy/hold while reducing its close drawdown.
 Exact normalized NAVs/limitations/immutable pins belong to Research.100 new
 reader/holding tests pass,2 native-symlink tests skip; independent synthetic
-oracle and actual immutable readback pass. Monthly12-month momentum is now a
-distinct implementation/review package; no actual momentum outcome yet.
+oracle and actual immutable readback pass. Distinct monthly12-month momentum
+also completed72 cells/2.878s: beats cash6/6 and TRAIN-risk-control4/6, trails
+buy/hold6/6; drawdown improves only2/6 and worsens one.150 current focused
+reader/holding/momentum tests pass/2 native-symlink skips, independent review
+and exact immutable readback pass. Neither family is a selected Paper model.
 Official Antonacci/DeePM sources are independently retrieved, not imported.
 Weekly serial compatibility of the collected baseline completed6,341/19 skips,
 35 deprecation warnings,1,892.93s; it excludes these new role files. Research
 ran alongside it, not as a foreground wait. This is diagnostic, not new-goal
-authority or company completion.
+authority or company completion. Execution is reviewing whether a separately
+owned QQQ baseline could advance Paper readiness without touching the unknown
+SPY leg; no new broker call, order, scope or schedule follows from that review.
 
 Current September25 Research continuation: TimesFM2.5 has now run on real
 SPY/QQQ/IWM data, not only synthetic inputs. Existing pinned weights made435

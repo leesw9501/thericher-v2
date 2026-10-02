@@ -119,10 +119,38 @@ Contract `sha256:920cdb14688a76d03e17ac58b8e82eeffe95997c6f8f9b1909738c2117f5542
 Summary `sha256:2b45317b6f25ea2addfdbd303b15cc06cfc849aafcc80d771cff1da31e8b0c07`.
 Registry non_promoting_completed; frozen code/attempt must not be retuned.
 
-The next distinct package is fixed12-calendar-month positive adjusted-close
-momentum with monthly overnight holding and the same ledger/cost controls,
-not a lookback search. TRAIN2002-2012 after calendar warmup; actual outcomes
-have not been read. Implementation and independent review are owned.
+Distinct `tiingo-adjusted-monthly-momentum-development-v1` is complete:
+fixed12-calendar-month positive adjusted-close momentum, equality flat,
+monthly overnight holding under the same ledger/cost controls. Jan2013 uses
+Dec2012/Dec2011 closes, not a shifted12-session/month selection. TRAIN2002-2012
+uses2,769 scored days/132 months with2,782 unique support dates;2001 is warmup
+only. EVAL groups have1,775/1,666 support dates and1,762/1,653 scored days;
+no missing/invalid support.72 cells, one CPU/2GiB/600s/network none,2.878s
+reserved duration. No fitting, parameter search, holdout or GPU appointment.
+
+Stress10bps per-side analytical NAV (initial1):
+
+| Symbol / period | Momentum NAV | TRAIN-risk-control NAV | Buy/hold NAV | Momentum trades |
+| --- | ---: | ---: | ---: | ---: |
+| SPY2013-2019 |1.9151|1.7478|2.5414|8|
+| SPY2020-Jul2026 |2.1515|1.7640|2.5295|6|
+| QQQ2013-2019 |2.8119|2.2213|3.4257|8|
+| QQQ2020-Jul2026 |3.2044|2.2188|3.3311|4|
+| IWM2013-2019 |1.4711|1.6531|2.1066|8|
+| IWM2020-Jul2026 |1.2248|1.5735|1.8881|14|
+
+All six beat zero-interest cash, four beat TRAIN-risk-control, none beats
+buy/hold. Close drawdown improves buy/hold in2/6, equals it in3/6 and worsens
+in IWM2013-2019 (28.98% versus26.80%). Low turnover alone is not a robust edge.
+Do not choose QQQ, tune lookback or blend these seen outcomes into a winner.
+Independent synthetic review and six falsification probe groups found no blocker;
+50 new tests pass,150 reader/holding/momentum tests pass with2 native-symlink
+skips; exact immutable readback passes. All adjusted/non-PIT/availability/cash-
+interest and non-replication limitations above remain. Parent code is unchanged.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-adjusted-monthly-momentum-development-v1`.
+Contract `sha256:1889637db6257008f75ffc92447a47798dc7e23639011f49aa9a8f99842edfac`.
+Summary `sha256:2072fd77fef0f6c203c8d0aad87a94a75858cc751fb00a869b0bafb47a3db89d`.
+Registry non_promoting_completed; no retuning/retry of this closed study.
 Main re-retrieved Antonacci's original monthly excess-return/T-bill mechanism
 and DeePM's original cost-aware portfolio objective plus pinned official MIT
 source. Neither source's results apply to these ETFs; no upstream code, data,
@@ -873,7 +901,7 @@ dispatch restrictions. The current development package is described above.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | Intraday/calendar studies closed; distinct monthly12-month momentum implementation/review owned | Freeze one fixed cash-adaptation after synthetic review; no lookback search or outcome-driven shift |
+| Technical/chart and momentum/regime | Fixed monthly12-month cash adaptation completed72 cells; no buy/hold advantage | Preserve its controls for a finite learned holding-policy comparison; no lookback search or outcome-driven shift |
 | Classical ML/statistical | H180 Ridge and prior feature/boosted comparisons complete, negative3/5bps aggregate nets | Prepare common-timestamp cross-ETF information/pooling controls; no same-input threshold/cost rescue |
 | Sequence/DL/public model | TimesFM435 forecasts/90 cells and Chronos-2 matched1,305 forecasts/126 cells completed; no selected model | A cost-aware held-position objective is source-retrieved for future finite learning; no same-input forecast/threshold rescue or GPU-utilization job |
 | Portfolio/allocation/meta-decision | Daily flatten loses after costs; monthly volatility holding beats cash6/6 and TRAIN-risk-control5/6, trails buy/hold6/6 | Keep full NAV/turnover/drawdown comparisons; no same-data weight/ETF selection or deployment claim |

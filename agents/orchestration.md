@@ -16,11 +16,12 @@ bounded bootstrap and `NEXT_CODEX_GOAL.md` for actual completion evidence.
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / three packages complete, distinct momentum owned | Chronos-2 CUDA1,305 forecasts/126 cells/72 parent controls, daily-flatten allocation72 cells and monthly overnight NAV72 cells complete. Last beats cash6/6/risk-control5/6 but trails buy/hold6/6. Fixed12-month momentum implementation plus independent review is dispatched; source-derived net-utility learning remains a future finite contract. Exact facts belong to Research. |
+| Research | Engine Research / four packages complete | Chronos-2 CUDA1,305 forecasts/126 cells/72 parent controls plus72 cells each for daily flatten, monthly volatility holding and monthly momentum complete. Monthly studies beat cash but trail buy/hold; no selected model. Source-derived net-utility learning needs its own finite contract. Exact facts belong to Research. |
+| Independent Paper feasibility | Invoked Execution review / source only | Inspect reusable QQQ baseline/owned-scope paths without private-state reads or broker calls. Unknown SPY identity stays intact; no order, schedule or company-closure claim follows from review. |
 | Local console | Execution / existing loopback web | Existing stopped container restarted with configuration unchanged.127.0.0.1:8787 health=ok, no broker credentials/private mount; mode=off, directional pauses unchanged. Current account projection was unavailable before the new execution observation. No public serving or order from dashboard startup. |
 | Data collection / finite D1 measurement | Data / existing tasks | SPY head99 rows/NAS and pair48 sessions through October1; head intraday incomplete. Current collection owners/next_due unchanged; finite D1 closed, not a company prerequisite. Next intraday October3 00:29, NAS06:40/pair06:55, head October5 22:15 KST. |
 | GPU | Research Steward / available | Chronos appointment completed, lock released/container exited; no permission/runtime block. No ready frozen depth appointment or background-training claim; eligible next Research remains an independently scoped mechanism. |
-| Verification | Orchestrator / integration and weekly serial complete | Final shared authority6,341/19 skips,307.80s/eight workers/clean helper,353 changed-path tests and16 deployed hashes. Weekly serial baseline6,341/19/35warnings,1,892.93s completed while role work ran. New isolated reader/holding100 passes/2 native-symlink skips; Ruff/default and all-profile sample-env Compose pass. Roots retained; no guard change. |
+| Verification | Orchestrator / integration and weekly serial complete | Final shared authority6,341/19 skips,307.80s/eight workers/clean helper,353 changed-path tests and16 deployed hashes. Weekly serial baseline6,341/19/35warnings,1,892.93s completed while role work ran. New isolated reader/holding/momentum150 passes/2 native-symlink skips; Ruff/default and all-profile sample-env Compose pass. Roots retained; no guard change. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -39,10 +40,15 @@ Current bounded alternatives, not a second goal/backlog:
   reader/provider fact; never repost the tail or make it a global permission hold.
 - Data / existing lawful Tiingo snapshot: isolated pinned adjusted-mark reader
   complete; Research /1 CPU monthly overnight study completed with independently
-  checked post-fee NAV. Next fixed12-month positive adjusted-close momentum is
-  implementing with independent review, then one immutable pass; strongest kills
-  are future-month close leakage, shifted history endpoints or unbalanced cash.
+  checked post-fee NAV. Fixed12-month momentum also completed one immutable pass,
+  no shifted history or cash imbalance; neither beats buy/hold. Next finite
+  learned holding-policy preparation can use both controls, not retune them.
   No new acquisition, broker parity, holdout, lookback sweep or approval.
+- Invoked Execution / public source and existing code: review smallest independent
+  QQQ Paper baseline feasibility while retaining the unresolved SPY owner. Complete
+  with source-backed CLI/scope findings only; strongest kill is treating absence
+  as terminal, global permission from a marker or unapproved scope substitution.
+  On unready paths, implement only the concrete missing contract, not a new gate.
 
 Both remain inside standing authority; no operator decision is requested.
 Claude's actual weekly-limit failure is review_unavailable, not agreement:
