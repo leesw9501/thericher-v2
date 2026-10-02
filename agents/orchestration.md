@@ -15,10 +15,10 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / pure online-mixture helper complete; stream/accounting feasibility assigned | M1/M5 CUDA and fixed-band CPU studies retain their primary kills. New strictly causal Hedge-style helper passes83 tests but is not BOA reproduction, fitted ensemble or performance evidence. Next establish aligned later-OOS outputs and completed prior-month continuous-ledger feedback; no Paper/GPU claim. |
+| Research | Engine Research / isolated prequential campaign implementation assigned | Pure causal helper83 tests complete. New four-expert fixed-rate/144-cell campaign is being implemented, not frozen/run: exact two TRAIN fits, aligned later decisions, completed-month continuous feedback and own mixed ledger. Independent Validation checks time/cost assumptions; no performance/Paper/GPU claim yet. |
 | Independent Paper readiness | Execution / deployed exact-orderability and one owned opportunity | Independent review/535 serial/full authority pass;8 consumers/40 baked hashes match. New23:04:20Z one-auth/one-GET synthetic-price diagnostic accepted; not actual-limit funds/old rejection explanation. Next_due October6 00:20 KST fixed-tag unit cycle/00:45 chat follow-up, unchanged. No actual tagged submit/fill; SPY unknown protected. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
-| Data collection / finite D1 measurement | Data / current-head continuation deployed; independent historical retention feasibility assigned | Existing4/8-page owner retains six QQQ pages/720 rows then an invalid seventh;390 regular minutes remain. New22:49Z isolated date probe returns120 September1 midday minutes/August3 empty, not a history floor. No cache/cursor changed. Ten consumers/584 sources match5f0e85e, not later opt-in probes. Next_due October6 00:29 KST unchanged. |
+| Data collection / finite D1 measurement | Data / deployed current owner; disjoint dated retention implementation assigned | Existing4/8-page owner retains six QQQ pages/720 rows then an invalid seventh;390 regular minutes remain. New two-date probe returns120 September1 midday minutes/August3 empty, not a history floor. Separate September1 scope adapter is being implemented, not collected; no head/June reset/new task. Next_due October6 00:29 KST unchanged. |
 | GPU | Research Steward / latest resolution appointment closed | Four TCN CUDA fits completed under one frozen budget; lock released/container exited. No permission/runtime block or background-training claim. Stress-net kill gives no ready depth appointment; Data implementation/review continue on disjoint resources. |
 | Verification | Orchestrator / integrated authority plus isolated fast feedback complete |5f0e85e authority7,743 passes/22 skips/317.32s/eight workers/clean helper;190 Data and112 research serial/Ruff/both Compose pass. Later isolated probes/mixture208 tests pass/0.88s; console-entry test-import fault repaired. These are focused package verification, not a replacement full authority or company completion. No active pytest owner. |
 
@@ -45,11 +45,11 @@ retuned. Its pure online-mixture adapter is complete; the next output/accounting
 integration must update from completed prior losses, not whole-comparison
 outcomes or artificial monthly liquidation paths.
 
-Current reversible improvement: keep the company goal as one concise current
-objective rather than an accumulating history. Superseded facts remain in Git,
-lane stateboards and exact immutable evidence. Separate positively rejected
-QQQ requests from unknown SPY recovery and preserve both identities/costs.
-Do not create a blind retry loop or a global permission hold.
+Current reversible improvement: HANDOFF.md reduced from1,801 to149 lines of
+current product/runtime/evidence/resume facts. Superseded handoff remains in
+Git at50d162a and immutable evidence, reducing restart context cost and stale
+instruction ambiguity. The one company objective/unknown SPY/fixed QQQ tag
+stay unchanged; this is not a reporting system or permission hold.
 
 Claude's actual weekly-limit failure remains review_unavailable, not agreement:
 D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-idless-history-20261002.json.

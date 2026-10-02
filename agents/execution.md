@@ -55,7 +55,7 @@ locks still protect cross-caller ownership. One chat follow-up `qqq-paper`
 at October6 00:45 KST inspects the exact result and continues ready work;
 no recurrence or replacement follow-up chain. Computer/Docker/app must be on.
 
-Current independent QQQ readiness package is implemented, not yet deployed:
+Historical pre-deployment QQQ checkpoint, superseded by deployment above:
 one QQQ/NASD unit cycle through the existing daily-SPY service and shared budget
 file/locks. V2 retains the exact original basis and charges legacy SPY custody;
 all budget writers replay QQQ reservations/fills, without snapshot adoption.
