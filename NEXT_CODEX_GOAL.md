@@ -77,6 +77,12 @@ October2 23:50 budget owner returns no_intent/ownership conflict; next October5
 23:50 KST. No new order, schedule, funding reset or permission wait. Claude CLI
 weekly-limit failure is review_unavailable, not a substantive review verdict.
 
+New Tiingo EOD acquisition succeeded:315 sessions per SPY/QQQ/IWM/945 total,
+July2025-September2026, three requests/3.643s.14 focused tests pass. Data owns
+a separately pinned adjusted-vintage consumer; no old snapshot mutation,
+independent holdout or Paper qualification. Execution common-store integration
+continues independently without touching the unknown SPY successor.
+
 ## Retained Progress (2026-09-25 KST)
 
 Independent TimesFM2.5 Research completed435 real-data zero-shot forecasts

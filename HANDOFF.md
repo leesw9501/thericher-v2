@@ -99,6 +99,14 @@ Data reattached the00:29 current intraday chain:97/98 QQQ/SPY chunks, October2
 QQQ119/390 minutes, still incomplete/no causal attestation. Main hashes and
 existing reader agree; next owner02:28, no manual collector/task invocation.
 
+Separate Tiingo standard-EOD acquisition now succeeded in three requests/3.643s:
+new same-vintage July2025-September2026 context,315 rows per ETF/945 total.
+Frozen August9 input remains unchanged.14 synthetic acquisition tests pass;
+source-safe path/hashes belong to Data. Adjusted-vintage consumption is being
+implemented separately, not a dataset/PIT/holdout/Paper qualification. Execution
+owns the common-store SPY/QQQ integration; no new broker order follows from this
+data acquisition or the completed weak learned-policy result.
+
 Current September25 Research continuation: TimesFM2.5 has now run on real
 SPY/QQQ/IWM data, not only synthetic inputs. Existing pinned weights made435
 zero-shot forecasts from128 past daily intraday returns to the next session's

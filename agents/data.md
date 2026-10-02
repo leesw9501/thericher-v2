@@ -13,6 +13,28 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
+New standard-EOD context acquisition at17:45:37Z October2: exactly three
+approved Tiingo requests succeeded in3.643s. SPY/QQQ/IWM each315 sessions,
+945 total rows, requested July1 2025-September30 2026;268,744 retained bytes.
+Same retrieval vintage for past context and August/September targets; do not
+splice old adjusted prices into new ratios. Existing August9 snapshot unchanged.
+Exact new snapshot:
+`D:\market_data\us_equities\tiingo_etf_daily\canonical\snapshot=20261002T174537Z-tiingo-etf-d1-r1`.
+Dataset ID `us_equities.tiingo_etf_daily.snapshot=20261002T174537Z-tiingo-etf-d1-r1`;
+dataset `sha256:b86a26d1c26b9bf687cb09bb1ed8cd6299381ad96bd222222e842f768b22a05b`;
+manifest `sha256:3632b4074e21648ef281ab2eecd41491186b2a7071d4f16a5bf0d10cca9c772e`.
+Raw SPY/QQQ/IWM hashes respectively:
+`sha256:c1715d3b18d98a578cf655925c814a674b5b9e49a5124183e40c6117131e9c59`,
+`sha256:65fd027b9f76d9dcbdbc2c62eef48a319c8dcd783c297212c584d5f2e08d0604`,
+`sha256:72d66a0aa760ef2548ccf47d39f941de9cd208527e976fe01a82248c6b3e2f1b`.
+The one-shot script defaults to plan-only;14 synthetic endpoint/scope/collision/
+output-redaction tests pass. Actual acquisition uses only the existing approved
+Tiingo-token loader; no KIS/live, extra source rights, payment or new schedule.
+Canonical rows remain unadjusted. A separate pinned adjusted-vintage reader is
+implementation-owned; adjusted-field validity and exact model-window coverage
+are not yet attested. Two later months are not an independent holdout or Paper
+qualification. No operator help is needed for this successful acquisition.
+
 Data's read-only inventory at October3 02:12-02:16 KST reattached the named
 current pointers (Scheduler facts at02:14:45); unchanged daily scopes retain
 their original collection timestamps:
