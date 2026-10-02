@@ -27,8 +27,20 @@ Five synchronized session blocks give32 sign patterns; the fraction is
 descriptive, not a significance claim or independent ETF/day count. Full-context
 TCN kernels differ in parameter capacity, so a difference cannot be attributed
 solely to resolution. No real outcomes/fits/weights/holdout or Paper input yet.
-Independent WIP review found date relabeling could bypass absolute TRAIN
-anchors; the source owner is fixing canonical session identity before freeze.
+Independent review found and closed a date-relabeling TRAIN-anchor bypass.
+Main38 synthetic tests/3.07s and Ruff pass; final source
+`sha256:5adb809155c2f63011e2d9f753d5642882f9d9af8dd04219db17c62dd8b1fc17`.
+The temporary source invocation is closed; Orchestrator owns the integration.
+Actual CPU geometry smoke prepares480 windows/5,850 selected M1 bars per symbol
+and all four TRAIN-only normalization geometries in3.144s. No targets/fits/GPU.
+Root `D:\thericher-v2\model-artifacts\research\kis-equal-minute-resolution-input-smoke-r2`;
+contract `sha256:f919156fbdc14dcbe0f0087b905ff517a8439f94508f2d8c67b0ac51ac3a4ec6`;
+outcome `sha256:ea69cdbe7903575059a68ba09f9af4969ebe0b1395df3dc2e7b05d7065d21049`.
+The failed v1 is retained: parent's SPY cache selector NAS was wrong, not absent
+SPY data. r2 explicitly pins QQQ/NAS and SPY/AMS under the same unchanged index
+`sha256:f816b940c3419caec4bdd1595b79615e6895782dad012edc12785aef6f05a53f`.
+Next ready package is one finite rule/logistic/TCN experiment on these geometries,
+with its predictive/cost/resource contract frozen before actual labels/fits.
 
 Primary sources re-retrieved October3: TCN causal convolution/context design,
 https://arxiv.org/abs/1803.01271; joint trend/sizing and turnover-aware loss,

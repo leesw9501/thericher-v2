@@ -57,6 +57,8 @@ not expand live authority or reset capital.
    rule/logistic/TCN versus cash/long, one predeclared development budget.
    Freeze the contract before real fits/outcomes; revised seen-data evidence
    is not a sealed evaluation or Paper input. No new agent/stateboard/runtime.
+   Adapter38 tests/source review and actual480-window geometry smoke now pass;
+   freeze one finite rule/logistic/TCN fit contract next, not a tuning loop.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download

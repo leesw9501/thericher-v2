@@ -38,6 +38,12 @@ October6 00:20 KST, fixed cycle/tag under unchanged shared basis,25-minute
 limit/IgnoreNew/no missed replay/no restart, trigger expires00:21. Independent
 static review passes; no manual invocation or actual result. One `qqq-paper`
 chat follow-up at00:45 KST reads the exact result, not a recurring report.
+Independent M1/M5 adapter now passes38 focused tests and source review; absolute
+TRAIN-anchor relabeling bug repaired. Actual retained-input CPU smoke creates
+480 windows, four TRAIN-only normalizers/3.144s, zero fits/targets/GPU. Corrected
+parent's SPY selector NAS->documented AMS; v1 failed receipt remains immutable.
+Exact r2 pins/limits belong to Engine Research. Next finite model contract is
+ready to implement; no resolution-performance or Paper qualification follows.
 
 Latest bounded Data package `843968d`: opt-in QQQ head retention follows up to
 four strictly older pages without changing SPY/defaults or historical cursors.
