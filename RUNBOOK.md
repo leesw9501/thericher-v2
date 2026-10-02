@@ -8,7 +8,11 @@ for SPY/QQQ/IWM, July1 2025-September30 2026. New timestamped sibling retains
 945 rows/315 per ETF and raw adjusted fields;14 focused tests pass. Exact
 path/hashes belong to Data. Do not rerun for the same scope or splice old
 adjusted marks. Canonical rows remain unadjusted; separate new-vintage reader
-work does not change the frozen August9 reader or an existing campaign.
+`load_verified_adjusted_etf_vintage` requires exact expected dataset ID/hash,
+manifest hash and three raw hashes. Actual315-row per-ETF readback and all six
+252-return August/September windows pass, without reading a future October mark.
+155 combined tests pass/3 native-symlink skips. It changes neither the frozen
+August9 reader nor an existing campaign and provides no PIT/Paper qualification.
 
 October3 isolated preparation: monthly input/utility modules have109 passing
 synthetic tests, including CPU Torch optimizer, numeric reconstruction,

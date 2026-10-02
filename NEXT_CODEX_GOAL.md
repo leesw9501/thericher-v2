@@ -79,8 +79,10 @@ weekly-limit failure is review_unavailable, not a substantive review verdict.
 
 New Tiingo EOD acquisition succeeded:315 sessions per SPY/QQQ/IWM/945 total,
 July2025-September2026, three requests/3.643s.14 focused tests pass. Data owns
-a separately pinned adjusted-vintage consumer; no old snapshot mutation,
-independent holdout or Paper qualification. Execution common-store integration
+a separately pinned adjusted-vintage consumer now verified on all six August/
+September windows,252 returns/21 targets each;155 combined tests/3 native-symlink
+skips. No old snapshot mutation, independent holdout or Paper qualification.
+Execution common-store integration
 continues independently without touching the unknown SPY successor.
 
 ## Retained Progress (2026-09-25 KST)

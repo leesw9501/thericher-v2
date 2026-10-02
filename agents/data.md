@@ -30,10 +30,17 @@ Raw SPY/QQQ/IWM hashes respectively:
 The one-shot script defaults to plan-only;14 synthetic endpoint/scope/collision/
 output-redaction tests pass. Actual acquisition uses only the existing approved
 Tiingo-token loader; no KIS/live, extra source rights, payment or new schedule.
-Canonical rows remain unadjusted. A separate pinned adjusted-vintage reader is
-implementation-owned; adjusted-field validity and exact model-window coverage
-are not yet attested. Two later months are not an independent holdout or Paper
-qualification. No operator help is needed for this successful acquisition.
+Canonical rows remain unadjusted. The separate `tiingo_adjusted_vintage.py`
+reader now verifies exact caller-bound dataset/manifest/three raw hashes,
+raw/canonical date alignment, adjusted geometry and unlinked paths, returning
+immutable in-memory marks without changing the August9 reader. Main actual
+readback passes315 rows each and every August/September model window:252 signed
+returns from253 prior closes,21 payoff sessions per month, six ETF/month windows,
+all feature dates before the decision and no October source row required.
+155 combined reader/input tests pass,3 native-symlink skips; portable reparse
+and real hard-link checks pass. No value-bearing repr, network or credentials
+are needed for readback. Two later months remain revised/non-PIT development,
+not an independent holdout or Paper qualification. No operator help is needed.
 
 Data's read-only inventory at October3 02:12-02:16 KST reattached the named
 current pointers (Scheduler facts at02:14:45); unchanged daily scopes retain

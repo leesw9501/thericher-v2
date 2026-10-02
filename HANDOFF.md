@@ -102,8 +102,10 @@ existing reader agree; next owner02:28, no manual collector/task invocation.
 Separate Tiingo standard-EOD acquisition now succeeded in three requests/3.643s:
 new same-vintage July2025-September2026 context,315 rows per ETF/945 total.
 Frozen August9 input remains unchanged.14 synthetic acquisition tests pass;
-source-safe path/hashes belong to Data. Adjusted-vintage consumption is being
-implemented separately, not a dataset/PIT/holdout/Paper qualification. Execution
+source-safe path/hashes belong to Data. Separate adjusted-vintage reader and
+actual six-month-window input readback now pass;155 combined tests/3 native-
+symlink skips.252 returns/253 context closes and21 targets per month are complete.
+This is not a dataset/PIT/holdout/Paper qualification. Execution
 owns the common-store SPY/QQQ integration; no new broker order follows from this
 data acquisition or the completed weak learned-policy result.
 
