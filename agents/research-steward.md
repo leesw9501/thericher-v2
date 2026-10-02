@@ -5,6 +5,17 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October3 inference-only CPU package closed:
+`tiingo-monthly-frozen-policy-aug-sep-2026-v1`,126 cells/36 matched identities,
+zero fits/new weights/holdout spend. Contract
+`sha256:e0bd3c78321cc4ae7e6b1126692c9c8381d80b41f55d42d48f28c970fc25bd37`;
+summary `sha256:a17b149862861fac6f0653e64296c5a5fed70fbb8709d0bd23708b6c2b00a4a3`.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-monthly-frozen-policy-aug-sep-2026-v1`.
+Existing pinned Torch image, network none/2 CPU/2GiB/120-second supervisor;
+8.641s Docker command duration. Main86 tests/independent review/immutable
+readback pass. No GPU allocation was requested or consumed; no live worker.
+Research owns the weak two-month result, not an allocation for depth or Paper.
+
 October3 latest appointment closed:
 `tiingo-adjusted-monthly-net-utility-development-v1`. CPU-first, two pooled
 CUDA linear/LSTM fits at128 epochs each,126 development cells, no holdout or

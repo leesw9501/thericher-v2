@@ -17,6 +17,25 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+Completed frozen-policy August/September readback on one new adjusted vintage:
+zero fits/new weights,12 learned monthly actions,126 cells,36 matched-exposure
+identity checks,36 forwards/171 Decimal replays. Original TRAIN risk constants
+reproduce all six parent hashes; no recalibration on the new months. Main86
+synthetic tests and independent86-test review pass; actual pinned offline CPU
+run completed in8.641s including Docker startup. Separate read-only exact
+contract/result/weight/code verification passes. No GPU was needed for this
+small inference-only job; existing models/artifacts remain unchanged.
+At10bps per side, both models beat cash5/6 and their own TRAIN-risk constant1/6;
+both beat buy/hold1/6 (IWM September). Linear/LSTM IWM September NAV is
+0.971190369182/0.953662940506: losses, not a profitable candidate. Each single
+monthly action has identical exposure/turnover/cost to its matched constant;
+these identities are integrity checks, not predictive evidence. Two revised,
+non-PIT months remain developmental, not independent holdout/selection/Paper.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-monthly-frozen-policy-aug-sep-2026-v1`.
+Contract `sha256:e0bd3c78321cc4ae7e6b1126692c9c8381d80b41f55d42d48f28c970fc25bd37`;
+summary `sha256:a17b149862861fac6f0653e64296c5a5fed70fbb8709d0bd23708b6c2b00a4a3`.
+Worker/container exited; no retry, extra training or tuning rescue follows.
+
 Current implementation package: `adjusted_monthly_policy_inputs.py` separates
 252 past signed returns (253 scheduled closes ending before monthly OPEN)
 from realized gap/daily adjusted-close payoff marks. It requires a complete
