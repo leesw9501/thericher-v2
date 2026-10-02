@@ -312,7 +312,7 @@ def test_session_capture_preparation_fault_does_not_change_collector_success(
     }
 
 
-def test_session_capture_quarantines_a_complete_head_then_a_future_run_recovers_once(
+def test_session_capture_quarantines_and_retains_same_candidate_once(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
 ) -> None:
@@ -391,11 +391,11 @@ def test_session_capture_quarantines_a_complete_head_then_a_future_run_recovers_
         arguments,
         clock=lambda: datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
         code_revision=lambda _: "git:test",
-    ) == 1
+    ) == 0
     quarantined_index = json.loads(index_path.read_text(encoding="utf-8"))
     quarantined_qqq = _target_state(quarantined_index, "QQQ/NAS/1m")
     assert original_manifest.read_bytes() == original_manifest_bytes
-    assert quarantined_qqq["chunks"] == [
+    assert quarantined_qqq["chunks"][:1] == [
         {
             "historical_note": "quarantined_head_retained_cache_conflict",
             "quarantined_chunk_key": original_chunk["chunk_key"],
@@ -404,6 +404,12 @@ def test_session_capture_quarantines_a_complete_head_then_a_future_run_recovers_
             "raw_market_data_retained": False,
         }
     ]
+    assert len(quarantined_qqq["chunks"]) == 2
+    replacement = quarantined_qqq["chunks"][1]
+    assert replacement["raw_market_data_retained"] is True
+    assert replacement["outcome"] == "committed"
+    assert replacement["manifest_hash"] != original_chunk["manifest_hash"]
+    assert (index_path.parent / replacement["manifest_path"]).is_file()
 
     assert script.main(
         arguments,
@@ -412,6 +418,7 @@ def test_session_capture_quarantines_a_complete_head_then_a_future_run_recovers_
     ) == 0
     recovered_index = json.loads(index_path.read_text(encoding="utf-8"))
     recovered_qqq = _target_state(recovered_index, "QQQ/NAS/1m")
+    assert recovered_qqq["chunks"] == quarantined_qqq["chunks"]
     assert [chunk["raw_market_data_retained"] for chunk in recovered_qqq["chunks"]] == [
         False,
         True,

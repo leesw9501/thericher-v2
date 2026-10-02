@@ -505,20 +505,28 @@ def _run_kis_paper_private_intraday_cycle(
                 if quarantined_retained_head_chunks:
                     index["generation"] = int(index["generation"]) + 1
                 _write_index(root=root, index=index, expected_targets=targets)
-                results.append(
-                    KisPaperPrivateIntradayBackfillRun(
-                        status="rejected",
-                        target_key=target.target_key,
-                        row_count=0,
-                        exact_overlap_rows=0,
-                        reason="minute_duplicate_conflict",
-                        conflict_origin="retained_cache",
-                        retained_head_conflict_disposition=(
-                            "quarantined" if quarantined_retained_head_chunks else "preserved"
-                        ),
+                if quarantined_retained_head_chunks:
+                    # Durable markers must precede a replacement's orphan-recoverable snapshot.
+                    existing_fingerprints = _target_fingerprints(target_state)
+                    conflicting_chunk_keys = _conflicting_retained_chunk_keys(
+                        rows=collected.rows,
+                        target_state=target_state,
                     )
-                )
-                continue
+                if conflicting_chunk_keys:
+                    results.append(
+                        KisPaperPrivateIntradayBackfillRun(
+                            status="rejected",
+                            target_key=target.target_key,
+                            row_count=0,
+                            exact_overlap_rows=0,
+                            reason="minute_duplicate_conflict",
+                            conflict_origin="retained_cache",
+                            retained_head_conflict_disposition=(
+                                "quarantined" if quarantined_retained_head_chunks else "preserved"
+                            ),
+                        )
+                    )
+                    continue
 
             prior_exact_overlap = sum(
                 1 for row in collected.rows if _row_key(row) in existing_fingerprints

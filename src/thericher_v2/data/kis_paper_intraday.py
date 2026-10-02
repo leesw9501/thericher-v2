@@ -332,6 +332,8 @@ def load_verified_kis_paper_private_intraday_catalog(
                 bars_by_start[start_ts] = (bar, fingerprint)
             elif prior[1] != fingerprint:
                 raise ValueError("private intraday cache has conflicting overlap rows")
+            elif bar.complete and not prior[0].complete:
+                bars_by_start[start_ts] = (bar, fingerprint)
         lineage.append({"manifest_hash": manifest_hash, "raw_sha256": raw_hash})
 
     if not bars_by_start:
