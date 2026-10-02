@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import socket
 import subprocess
+import urllib.request
 from datetime import UTC, datetime
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
@@ -122,11 +124,14 @@ def test_intraday_backfill_script_uses_only_injected_paper_values(
     monkeypatch.setattr(script, "KisPaperMarketDataClient", paper_client)
     monkeypatch.setattr(script, "run_kis_paper_private_intraday_backfill_cycle", run_cycle)
 
-    assert script.main(
-        ["--execute", "--pages-per-target", "1"],
-        clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
-        code_revision=lambda _: "git:test",
-    ) == 0
+    assert (
+        script.main(
+            ["--execute", "--pages-per-target", "1"],
+            clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+            code_revision=lambda _: "git:test",
+        )
+        == 0
+    )
 
     assert json.loads(capsys.readouterr().out) == {
         "mode": "backfill",
@@ -145,7 +150,7 @@ def test_intraday_backfill_script_uses_only_injected_paper_values(
                 "row_count": 0,
                 "status": "source_exhausted",
                 "target_key": "SPY/AMS/1m",
-            }
+            },
         ],
     }
 
@@ -207,19 +212,22 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
 
     monkeypatch.setattr(script.subprocess, "run", prepare_child)
 
-    assert script.main(
-        [
-            "--execute",
-            "--mode",
-            "head",
-            "--pages-per-target",
-            "1",
-            "--preparation-artifact-root",
-            str(artifact_root),
-        ],
-        clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
-        code_revision=lambda _: "git:test",
-    ) == 0
+    assert (
+        script.main(
+            [
+                "--execute",
+                "--mode",
+                "head",
+                "--pages-per-target",
+                "1",
+                "--preparation-artifact-root",
+                str(artifact_root),
+            ],
+            clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+            code_revision=lambda _: "git:test",
+        )
+        == 0
+    )
 
     output = capsys.readouterr().out
     assert "must-not-appear-in-parent-output" not in output
@@ -241,7 +249,7 @@ def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
                 "row_count": 120,
                 "status": "collected",
                 "target_key": "SPY/AMS/1m",
-            }
+            },
         ],
     }
     assert len(child_calls) == 1
@@ -304,10 +312,13 @@ def test_intraday_head_can_skip_legacy_preparation_for_data_only_collection(
         lambda **_kwargs: (_ for _ in ()).throw(AssertionError("legacy preparation is skipped")),
     )
 
-    assert script.main(
-        ["--execute", "--mode", "head", "--skip-legacy-preparation"],
-        code_revision=lambda _: "git:test",
-    ) == 0
+    assert (
+        script.main(
+            ["--execute", "--mode", "head", "--skip-legacy-preparation"],
+            code_revision=lambda _: "git:test",
+        )
+        == 0
+    )
 
     assert json.loads(capsys.readouterr().out) == {
         "mode": "head",
@@ -386,19 +397,22 @@ def test_intraday_head_preparation_unavailable_does_not_change_collection_or_fre
     monkeypatch.setattr(script.subprocess, "run", prepare_child)
     runtime_projection = tmp_path / "runtime" / "freshness.json"
 
-    assert script.main(
-        [
-            "--execute",
-            "--mode",
-            "head",
-            "--runtime-projection",
-            str(runtime_projection),
-            "--preparation-artifact-root",
-            str(tmp_path / "model-artifacts"),
-        ],
-        clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
-        code_revision=lambda _: "git:test",
-    ) == 0
+    assert (
+        script.main(
+            [
+                "--execute",
+                "--mode",
+                "head",
+                "--runtime-projection",
+                str(runtime_projection),
+                "--preparation-artifact-root",
+                str(tmp_path / "model-artifacts"),
+            ],
+            clock=lambda: datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+            code_revision=lambda _: "git:test",
+        )
+        == 0
+    )
 
     assert json.loads(capsys.readouterr().out) == {
         "freshness_projection": "written",
@@ -422,7 +436,7 @@ def test_intraday_head_preparation_unavailable_does_not_change_collection_or_fre
                 "row_count": 120,
                 "status": "collected",
                 "target_key": "SPY/AMS/1m",
-            }
+            },
         ],
     }
     assert freshness_writes == [
@@ -471,10 +485,13 @@ def test_intraday_head_or_session_capture_does_not_prepare_after_collector_failu
             ),
         )
 
-    assert script.main(
-        ["--execute", "--mode", mode],
-        code_revision=lambda _: "git:test",
-    ) == 1
+    assert (
+        script.main(
+            ["--execute", "--mode", mode],
+            code_revision=lambda _: "git:test",
+        )
+        == 1
+    )
 
     assert json.loads(capsys.readouterr().out) == {
         "reason": "config_missing" if failure_stage == "config" else "auth_rejected",
@@ -517,10 +534,13 @@ def test_intraday_head_prepares_for_collected_qqq_despite_other_target_failure(
 
     monkeypatch.setattr(script.subprocess, "run", prepare_child)
 
-    assert script.main(
-        ["--execute", "--mode", "head"],
-        code_revision=lambda _: "git:test",
-    ) == 1
+    assert (
+        script.main(
+            ["--execute", "--mode", "head"],
+            code_revision=lambda _: "git:test",
+        )
+        == 1
+    )
 
     assert json.loads(capsys.readouterr().out) == {
         "mode": "head",
@@ -575,10 +595,13 @@ def test_intraday_head_returns_nonzero_for_incomplete_collector_results(
         lambda *args, **kwargs: child_calls.append((args, kwargs)),
     )
 
-    assert script.main(
-        ["--execute", "--mode", "head"],
-        code_revision=lambda _: "git:test",
-    ) == 1
+    assert (
+        script.main(
+            ["--execute", "--mode", "head"],
+            code_revision=lambda _: "git:test",
+        )
+        == 1
+    )
 
     assert json.loads(capsys.readouterr().out) == {
         "mode": "head",
@@ -645,9 +668,9 @@ def test_intraday_head_profile_has_a_cpu_only_offline_observation_service() -> N
 
 def test_intraday_head_profile_has_a_credential_free_pair_observation_service() -> None:
     compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
-    section = compose.split(
-        "\n  kis-paper-intraday-pair-observation:\n", maxsplit=1
-    )[1].split("\n  kis-readonly:\n", maxsplit=1)[0]
+    section = compose.split("\n  kis-paper-intraday-pair-observation:\n", maxsplit=1)[1].split(
+        "\n  kis-readonly:\n", maxsplit=1
+    )[0]
 
     assert 'profiles: ["kis-paper-intraday-head"]' in section
     assert "target: base" in section
@@ -665,9 +688,9 @@ def test_intraday_head_profile_has_a_credential_free_pair_observation_service() 
 def test_intraday_head_profile_separates_offline_replay_from_qqq_paper_execution() -> None:
     compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
     assert "\n  kis-paper-prospective-loop:\n" not in compose
-    execution = compose.split(
-        "\n  kis-paper-prospective-qqq-session:\n", maxsplit=1
-    )[1].split("\n  kis-paper-receipt-observer:\n", maxsplit=1)[0]
+    execution = compose.split("\n  kis-paper-prospective-qqq-session:\n", maxsplit=1)[1].split(
+        "\n  kis-paper-receipt-observer:\n", maxsplit=1
+    )[0]
 
     assert 'profiles: ["kis-paper-intraday-head"]' in execution
     assert "thericher_v2.execution.kis_paper_prospective_qqq_session" in execution
@@ -745,7 +768,7 @@ def test_intraday_historical_probe_uses_a_separate_cache_without_seed_cursor(
                 "row_count": 120,
                 "status": "collected",
                 "target_key": "SPY/AMS/1m",
-            }
+            },
         ],
     }
 
@@ -793,10 +816,229 @@ def test_current_code_revision_marks_staged_or_untracked_work_dirty(
     ]
 
 
-def _load_script() -> ModuleType:
-    script_path = (
-        Path(__file__).parents[1] / "scripts" / "backfill_kis_paper_private_intraday.py"
+@pytest.mark.parametrize("mode", ["backfill", "historical-probe"])
+@pytest.mark.parametrize("execute", [False, True])
+def test_explicit_head_continuation_rejects_other_modes_before_setup(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str, execute: bool
+) -> None:
+    script = _load_script()
+    _deny_cli_setup(script, monkeypatch)
+    args = ["--mode", mode, "--explicit-qqq-head-continuation"]
+    if execute:
+        args.append("--execute")
+    with pytest.raises(SystemExit) as error:
+        script.main(args, clock=_deny_cli_call)
+    assert error.value.code == 2
+    output = capsys.readouterr()
+    assert output.out == ""
+    assert "requires head/session-capture collection and 1..4 pages" in output.err
+
+
+@pytest.mark.parametrize("mode", ["head", "session-capture"])
+@pytest.mark.parametrize("pages", ["-1", "0", "5", "8"])
+def test_explicit_head_continuation_rejects_invalid_budget_before_setup(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str, pages: str
+) -> None:
+    script = _load_script()
+    _deny_cli_setup(script, monkeypatch)
+    with pytest.raises(SystemExit) as error:
+        script.main(
+            [
+                "--execute",
+                "--mode",
+                mode,
+                "--pages-per-target",
+                pages,
+                "--explicit-qqq-head-continuation",
+            ],
+            clock=_deny_cli_call,
+        )
+    assert error.value.code == 2
+    output = capsys.readouterr()
+    assert output.out == ""
+    assert "requires head/session-capture collection and 1..4 pages" in output.err
+
+
+@pytest.mark.parametrize("mode", ["head", "session-capture"])
+def test_explicit_head_continuation_cannot_trigger_project_only_io(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str
+) -> None:
+    script = _load_script()
+    _deny_cli_setup(script, monkeypatch)
+    with pytest.raises(SystemExit) as error:
+        script.main(
+            [
+                "--project-only",
+                "--mode",
+                mode,
+                "--runtime-projection",
+                "unused.json",
+                "--explicit-qqq-head-continuation",
+            ],
+            clock=_deny_cli_call,
+        )
+    assert error.value.code == 2
+    assert capsys.readouterr().out == ""
+
+
+@pytest.mark.parametrize("mode", ["head", "session-capture"])
+def test_explicit_head_continuation_without_execute_stays_plan_only(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str
+) -> None:
+    script = _load_script()
+    _deny_cli_setup(script, monkeypatch)
+    assert script.main(["--mode", mode, "--explicit-qqq-head-continuation"]) == 0
+    assert json.loads(capsys.readouterr().out) == {
+        "status": "not_executed",
+        "reason": "execute_flag_required",
+    }
+
+
+@pytest.mark.parametrize("mode", ["head", "session-capture"])
+@pytest.mark.parametrize("pages", [1, 2, 3, 4])
+def test_explicit_head_continuation_is_forwarded_through_one_fake_client(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str, pages: int
+) -> None:
+    script = _load_script()
+    _deny_cli_setup(script, monkeypatch)
+    calls = _fake_cli_collection(script, monkeypatch)
+    assert (
+        script.main(
+            [
+                "--execute",
+                "--mode",
+                mode,
+                "--pages-per-target",
+                str(pages),
+                "--skip-legacy-preparation",
+                "--explicit-qqq-head-continuation",
+            ],
+            code_revision=lambda _root: "synthetic-revision",
+        )
+        == 0
     )
+    assert calls["config"] == 1
+    assert len(calls["clients"]) == len(calls["cycles"]) == 1
+    cycle = calls["cycles"][0]
+    assert cycle["client"] is calls["clients"][0]["instance"]
+    assert calls["clients"][0]["kwargs"]["max_minute_page_attempts"] == 2 * pages
+    assert cycle["pages_per_target"] == pages
+    assert cycle["explicit_qqq_head_continuation"] is True
+    assert cycle["resume_cursor"] is False
+    assert cycle["quarantine_retained_head_conflicts"] is True
+    assert cycle["cache_root"].name == "intraday-head"
+    assert len(calls["captures"]) == (1 if mode == "session-capture" else 0)
+    if calls["captures"]:
+        assert calls["captures"][0]["runs"] is calls["runs"]
+    output = capsys.readouterr()
+    assert output.err == ""
+    assert json.loads(output.out)["mode"] == mode
+    assert "synthetic-secret" not in output.out and "synthetic-raw-row" not in output.out
+
+
+@pytest.mark.parametrize("mode", ["backfill", "head", "historical-probe", "session-capture"])
+def test_absent_explicit_flag_keeps_legacy_kwargs_and_eight_page_budget(
+    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str
+) -> None:
+    script = _load_script()
+    _deny_cli_setup(script, monkeypatch)
+    calls = _fake_cli_collection(script, monkeypatch)
+    assert (
+        script.main(
+            ["--execute", "--mode", mode, "--pages-per-target", "8", "--skip-legacy-preparation"],
+            code_revision=lambda _root: "synthetic-revision",
+        )
+        == 0
+    )
+    cycle = calls["cycles"][0]
+    assert "explicit_qqq_head_continuation" not in cycle
+    assert cycle["pages_per_target"] == 8
+    assert cycle["resume_cursor"] == (mode == "backfill")
+    assert calls["clients"][0]["kwargs"]["max_minute_page_attempts"] == 16
+    assert json.loads(capsys.readouterr().out)["mode"] == mode
+
+
+def _deny_cli_call(*_args: object, **_kwargs: object) -> object:
+    raise AssertionError("unexpected network, credentials, IO or subprocess setup")
+
+
+def _deny_cli_setup(script: ModuleType, monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(socket, "create_connection", _deny_cli_call)
+    monkeypatch.setattr(socket.socket, "connect", _deny_cli_call)
+    monkeypatch.setattr(urllib.request, "urlopen", _deny_cli_call)
+    monkeypatch.setattr(script.subprocess, "run", _deny_cli_call)
+    monkeypatch.setattr(
+        script, "_preparation_artifact_root_from_environment", lambda: Path("unused")
+    )
+    for name in (
+        "_load_paper_config",
+        "load_kis_paper_market_data_config",
+        "KisPaperMarketDataClient",
+        "UrllibKisPaperMarketDataTransport",
+        "KisPaperMarketDataRateGate",
+        "KisPaperMarketDataTokenStartGate",
+        "run_kis_paper_private_intraday_backfill_cycle",
+        "build_and_write_kis_paper_intraday_session_capture",
+        "_write_freshness_projection",
+        "_prepare_head_observation",
+        "_current_code_revision",
+        "_base_cache_root",
+        "_cache_root",
+    ):
+        monkeypatch.setattr(script, name, _deny_cli_call)
+
+
+def _fake_cli_collection(script: ModuleType, monkeypatch: pytest.MonkeyPatch) -> dict[str, object]:
+    calls: dict[str, object] = {"config": 0, "clients": [], "cycles": [], "captures": []}
+    runs = tuple(
+        KisPaperPrivateIntradayBackfillRun(
+            status="collected", target_key=target, row_count=120, exact_overlap_rows=0
+        )
+        for target in ("QQQ/NAS/1m", "SPY/AMS/1m")
+    )
+    calls["runs"] = runs
+
+    def config(_path: Path) -> object:
+        calls["config"] += 1
+        return SimpleNamespace(app_key="synthetic-key", app_secret="synthetic-secret")
+
+    def client(**kwargs: object) -> object:
+        instance = object()
+        calls["clients"].append({"instance": instance, "kwargs": kwargs})
+        return instance
+
+    def cycle(**kwargs: object) -> object:
+        calls["cycles"].append(kwargs)
+        return runs
+
+    def capture(**kwargs: object) -> object:
+        calls["captures"].append(kwargs)
+        return SimpleNamespace(safe_output_payload=lambda: {"status": "retained_partial"})
+
+    monkeypatch.setattr(script, "_load_paper_config", config)
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", client)
+    monkeypatch.setattr(script, "run_kis_paper_private_intraday_backfill_cycle", cycle)
+    monkeypatch.setattr(script, "build_and_write_kis_paper_intraday_session_capture", capture)
+    monkeypatch.setattr(script, "_base_cache_root", lambda: Path("unused") / "intraday")
+    monkeypatch.setattr(
+        script,
+        "_cache_root",
+        lambda mode: (
+            Path("unused")
+            / ("intraday-head" if mode in {"head", "session-capture"} else "intraday")
+        ),
+    )
+    for name in (
+        "UrllibKisPaperMarketDataTransport",
+        "KisPaperMarketDataRateGate",
+        "KisPaperMarketDataTokenStartGate",
+    ):
+        monkeypatch.setattr(script, name, lambda **_kwargs: object())
+    return calls
+
+
+def _load_script() -> ModuleType:
+    script_path = Path(__file__).parents[1] / "scripts" / "backfill_kis_paper_private_intraday.py"
     spec = importlib.util.spec_from_file_location(
         "backfill_kis_paper_private_intraday_for_test",
         script_path,

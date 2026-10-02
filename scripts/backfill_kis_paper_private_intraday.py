@@ -63,6 +63,7 @@ def main(
     parser.add_argument("--project-only", action="store_true")
     parser.add_argument("--skip-legacy-preparation", action="store_true")
     parser.add_argument("--pages-per-target", type=int, default=2)
+    parser.add_argument("--explicit-qqq-head-continuation", action="store_true")
     parser.add_argument(
         "--mode",
         choices=("backfill", "head", "historical-probe", "session-capture"),
@@ -76,6 +77,15 @@ def main(
     parser.add_argument("--runtime-projection", type=Path)
     parser.add_argument("--schedule-run-id", type=validate_schedule_run_id)
     args = parser.parse_args(argv)
+    if args.explicit_qqq_head_continuation and (
+        args.mode not in {"head", "session-capture"}
+        or not 1 <= args.pages_per_target <= 4
+        or args.project_only
+    ):
+        parser.error(
+            "--explicit-qqq-head-continuation requires head/session-capture collection "
+            "and 1..4 pages"
+        )
     observed_at = clock()
     if args.project_only:
         if args.runtime_projection is None:
@@ -128,6 +138,11 @@ def main(
             # the next task-owned capture can attach a compatible replacement.
             quarantine_retained_head_conflicts=args.mode in {"head", "session-capture"},
             observed_at=observed_at,
+            **(
+                {"explicit_qqq_head_continuation": True}
+                if args.explicit_qqq_head_continuation
+                else {}
+            ),
         )
         session_capture = (
             build_and_write_kis_paper_intraday_session_capture(

@@ -250,11 +250,16 @@ def run_kis_paper_private_intraday_backfill_cycle(
     pages_per_target: int = 2,
     resume_cursor: bool = True,
     quarantine_retained_head_conflicts: bool = False,
+    explicit_qqq_head_continuation: bool = False,
     observed_at: datetime | None = None,
     sleeper: Callable[[float], None] = time.sleep,
     monotonic_clock: Callable[[], float] = time.monotonic,
 ) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
-    """Collect the unchanged QQQ/SPY private intraday target scope."""
+    """Collect QQQ/SPY; optionally try full-page QQQ head older keys, at most four pages.
+
+    The explicit option requires head mode and changes neither SPY nor the
+    historical cursor. Retained source rows do not attest session availability.
+    """
 
     return _run_kis_paper_private_intraday_cycle(
         client=client,
@@ -265,6 +270,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
         pages_per_target=pages_per_target,
         resume_cursor=resume_cursor,
         quarantine_retained_head_conflicts=quarantine_retained_head_conflicts,
+        explicit_qqq_head_continuation=explicit_qqq_head_continuation,
         observed_at=observed_at,
         sleeper=sleeper,
         monotonic_clock=monotonic_clock,
@@ -345,6 +351,7 @@ def _run_kis_paper_private_intraday_cycle(
     observed_at: datetime | None,
     sleeper: Callable[[float], None],
     monotonic_clock: Callable[[], float],
+    explicit_qqq_head_continuation: bool = False,
 ) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
     """Collect bounded source pages with optional historical-cursor resumption.
 
@@ -363,6 +370,14 @@ def _run_kis_paper_private_intraday_cycle(
         raise ValueError("head conflict quarantine must be a boolean")
     if quarantine_retained_head_conflicts and resume_cursor:
         raise ValueError("head conflict quarantine requires head mode")
+    if type(explicit_qqq_head_continuation) is not bool:
+        raise ValueError("explicit QQQ head continuation must be a boolean")
+    if explicit_qqq_head_continuation and (
+        resume_cursor or pages_per_target > 4 or targets != KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+    ):
+        raise ValueError(
+            "explicit QQQ head continuation requires QQQ/SPY head mode, at most four pages"
+        )
     if not code_revision.strip() or "\n" in code_revision:
         raise ValueError("private intraday code revision is invalid")
     observed = require_utc(observed_at or datetime.now(UTC), "observed_at")
@@ -427,6 +442,9 @@ def _run_kis_paper_private_intraday_cycle(
                 input_cursor=input_cursor,
                 pages_per_target=pages_per_target,
                 before_request=pacer.wait_before_request,
+                explicit_qqq_head_continuation=(
+                    explicit_qqq_head_continuation and target.target_key == "QQQ/NAS/1m"
+                ),
             )
             if not resume_cursor:
                 collected = _CollectedTarget(
@@ -619,6 +637,7 @@ def _collect_target(
     input_cursor: KisPaperPrivateIntradayCursor | None,
     pages_per_target: int,
     before_request: Callable[[], None],
+    explicit_qqq_head_continuation: bool = False,
 ) -> _CollectedTarget:
     rows_by_key: dict[str, KisPaperMinuteRawBar] = {}
     pages: list[dict[str, object]] = []
@@ -629,6 +648,7 @@ def _collect_target(
             query = KisPaperMinuteQuery(
                 exchange=target.exchange,
                 symbol=target.symbol,
+                include_previous_day=explicit_qqq_head_continuation and cursor is not None,
                 continuation_next=cursor.next_value if cursor is not None else None,
                 continuation_key=cursor.keyb if cursor is not None else None,
             )
@@ -646,7 +666,26 @@ def _collect_target(
                     prospective_duplicates += 1
                 else:
                     raise _CandidateBatchDuplicateConflict("minute_duplicate_conflict")
+            if explicit_qqq_head_continuation:
+                _validate_explicit_qqq_head_page(
+                    page=page, cursor=cursor, retained_rows=rows_by_key
+                )
             next_cursor = _cursor_from_page(page)
+            if (
+                explicit_qqq_head_continuation
+                and next_cursor is None
+                and page.continuation_signal in {"blank_or_absent", "unrecognized_nonblank"}
+                and len(page.bars) == 120
+                and page_number < pages_per_target
+            ):
+                # This is a caller-derived request, not a provider continuation signal.
+                try:
+                    next_cursor = KisPaperPrivateIntradayCursor(
+                        next_value="1",
+                        keyb=_one_exchange_minute_before(min(page.bars, key=_exchange_stamp)),
+                    )
+                except (ValueError, OverflowError) as error:
+                    raise KisPaperMarketDataError("minute_cursor_invalid") from error
             if next_cursor is not None and next_cursor == cursor:
                 raise KisPaperMarketDataError("minute_cursor_stalled")
             # A page joins the durable candidate only after its cursor and all
@@ -698,6 +737,24 @@ def _collect_target(
         status="collected",
         reason=None,
     )
+
+
+def _validate_explicit_qqq_head_page(
+    *,
+    page: KisPaperMinutePage,
+    cursor: KisPaperPrivateIntradayCursor | None,
+    retained_rows: Mapping[str, KisPaperMinuteRawBar],
+) -> None:
+    if (page.query.symbol, page.query.exchange) != ("QQQ", "NAS"):
+        raise KisPaperMarketDataError("minute_response_invalid")
+    exchange_stamps = [_exchange_stamp(row) for row in page.bars]
+    korea_stamps = [_korea_stamp(row) for row in page.bars]
+    if len(set(exchange_stamps)) != len(page.bars) or len(set(korea_stamps)) != len(page.bars):
+        raise KisPaperMarketDataError("minute_response_invalid")
+    if cursor is not None:
+        requested_stamp = f"{cursor.keyb[:8]}T{cursor.keyb[8:]}"
+        if max(exchange_stamps) > requested_stamp or max(korea_stamps) >= min(retained_rows):
+            raise KisPaperMarketDataError("minute_cursor_stalled")
 
 
 def sanitize_kis_paper_private_intraday_failure_reason(value: BaseException | str) -> str:
@@ -1451,10 +1508,13 @@ def _recover_orphan_snapshots(
         recovered_chunk["manifest_hash"] = manifest_hash
         _validate_chunk(chunk=recovered_chunk, target=target)
         chunks.append(recovered_chunk)
-        output_cursor = KisPaperPrivateIntradayCursor.from_document(
-            recovered_chunk["output_cursor"]
-        )
-        state["next_cursor"] = output_cursor.as_document() if output_cursor is not None else None
+        if recovered_chunk.get("collection_scope") == "historical":
+            output_cursor = KisPaperPrivateIntradayCursor.from_document(
+                recovered_chunk["output_cursor"]
+            )
+            state["next_cursor"] = (
+                output_cursor.as_document() if output_cursor is not None else None
+            )
         recovered_reason = recovered_chunk["reason"]
         if recovered_reason is not None and not isinstance(recovered_reason, str):
             raise ValueError("private intraday snapshot is invalid")
