@@ -23,6 +23,20 @@ authority. D1 remains Data-only; no unavailable observation blocks all lanes.
 
 ## Continued Implementation (2026-09-22 KST)
 
+Latest isolated preparation after5f0e85e: two-date QQQ minute diagnostic
+returns120 September1 midday rows and empty August3/partial; no cache/cursor
+change or endpoint-wide history-floor inference.90 focused tests/source review.
+One read-only QQQ synthetic-price orderability diagnostic succeeds with one
+auth/one GET/zero orders; actual-limit funds/old rejection cause remain separate.
+Native approved Paper loader and source-safe UTC/path/hash receipt are tested.
+Pure causal online-mixture helper passes83 tests, but no actual campaign,
+expert-output stream or profitability result exists yet. Exact evidence and
+next packages belong to Data/Execution/Research. Company Paper objective stays
+open for October6; old SPY identity and fixed QQQ tag are unchanged.208 focused
+tests pass in0.88s with the pytest console entry, Ruff/both Compose pass.
+Independent final review is clean; the earlier7,743-pass full suite predates
+these isolated packages and is not claimed as their authority.
+
 Latest October3 Paper continuation is independently reviewed and deployed:
 exact QQQ-at-limit funds before every BUY, explicit distinct rejected-entry
 tags, original frozen orphan-intent recovery, bounded future numeric error
@@ -82,7 +96,7 @@ expert aggregation is a source-only reuse/distinctness check, not a new campaign
 Integrated Data/research authority passes7,743 tests/22 skips/317.32s/eight
 workers, clean helper exit;190 Data serial and112 research serial tests, Ruff
 and both Compose configs pass. Ten existing Data consumers now match all584
-source files in image
+source files at revision5f0e85e in image
 `sha256:5f975bc91058df3742583fe355834c534101e30089ace4a16d959c7995f0babc`.
 Independent fixed-band readback verifies15 source pins/144 fee identities/
 36 center groups/48 paired centers/24 cash and24 long controls; primary kill

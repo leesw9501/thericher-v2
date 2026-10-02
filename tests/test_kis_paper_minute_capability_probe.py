@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import socket
 import urllib.request
@@ -10,13 +11,18 @@ from pathlib import Path
 
 import pytest
 
+import thericher_v2.data.kis_paper_minute_capability_probe as capability_probe
 import thericher_v2.execution.kis_market_data as market_data
 from thericher_v2.data.kis_paper_minute_capability_probe import (
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_OBSERVED_TARGET_KEYS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS,
+    KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS,
+    KisPaperMinuteFixedKeyProbeOutcome,
+    probe_and_write_kis_paper_minute_fixed_key_capability,
     run_kis_paper_minute_capability_probe,
+    run_kis_paper_minute_fixed_key_probe,
     write_kis_paper_minute_capability_probe_evidence,
 )
 from thericher_v2.execution.kis_market_data import (
@@ -694,6 +700,354 @@ def _page(
         next_cursor=next_cursor,
         more="",
     )
+
+
+def _fixed_key_page(key: str, *, offset: int = 0, duplicate: bool = False):
+    timestamp = datetime.strptime(key, "%Y%m%d%H%M%S") + timedelta(minutes=offset)
+    stamps = (timestamp, timestamp if duplicate else timestamp - timedelta(minutes=1))
+    return replace(
+        _page(stamps, None),
+        query=KisPaperMinuteQuery(
+            symbol="QQQ",
+            exchange="NAS",
+            include_previous_day=True,
+            continuation_next="1",
+            continuation_key=key,
+        ),
+    )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize("header", [None, "M", "F", "D", ""])
+def test_fixed_keys_use_two_gets_one_token_and_ignore_all_continuation_headers(header):
+    requests = []
+
+    class Transport:
+        def request(self, request):
+            market_data._validate_request(request)
+            requests.append(request)
+            if request.method == "POST":
+                return market_data.KisMarketDataResponse.from_payload(
+                    {"access_token": "synthetic-private-token"}
+                )
+            page = _fixed_key_page(request.query["KEYB"])
+            return market_data.KisMarketDataResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "msg1": "synthetic-private-provider-body",
+                    "output1": {"more": "1", "next": "provider-key-must-not-be-followed"},
+                    "output2": [bar.as_document() for bar in page.bars],
+                },
+                headers={} if header is None else {"tr_cont": header},
+            )
+
+    client = market_data.KisPaperMarketDataClient(
+        config=market_data.KisPaperMarketDataConfig(
+            app_key="synthetic-private-key", app_secret="synthetic-private-secret"
+        ),
+        transport=Transport(),
+        max_minute_page_attempts=2,
+    )
+    outcome = run_kis_paper_minute_fixed_key_probe(
+        client=client, observed_at=datetime(2026, 10, 3, tzinfo=UTC)
+    )
+    gets = [request for request in requests if request.method == "GET"]
+    assert len(requests) == 3 and requests[0].method == "POST"
+    assert (
+        tuple(request.query["KEYB"] for request in gets) == KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS
+    )
+    assert all(
+        request.query["PINC"] == request.query["NEXT"] == "1"
+        and request.query["SYMB"] == "QQQ"
+        and request.query["EXCD"] == "NAS"
+        and request.headers["tr_cont"] == "N"
+        for request in gets
+    )
+    assert outcome.call_counts == KisPaperMarketDataCallCounts(1, 2, 0)
+    assert all(page.category == "requested_date_observed" for page in outcome.pages)
+    payload = json.dumps(outcome.safe_payload())
+    assert all(
+        value not in payload
+        for value in (
+            "synthetic-private-token",
+            "synthetic-private-key",
+            "synthetic-private-secret",
+            "synthetic-private-provider-body",
+            "provider-key-must-not-be-followed",
+            "12345.67",
+        )
+    )
+    with pytest.raises(KisPaperMarketDataError, match="minute_page_limit_exceeded"):
+        client.fetch_minute_page(_fixed_key_page(outcome.pages[0].requested_key).query)
+    assert len(requests) == 3
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize("offset", [0, -1, -1440, 1, 44640])
+def test_fixed_key_date_honoring_rejects_newer_time_or_latest_fallback(offset):
+    client = _MinuteClient(
+        [_fixed_key_page(key, offset=offset) for key in KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS]
+    )
+    outcome = run_kis_paper_minute_fixed_key_probe(
+        client=client, observed_at=datetime(2026, 10, 3, tzinfo=UTC)
+    )
+    expected = (
+        "newer_than_key"
+        if offset > 0
+        else "earlier_only"
+        if offset <= -1440
+        else "requested_date_observed"
+    )
+    assert [page.category for page in outcome.pages] == [expected, expected]
+    assert tuple(query.continuation_key for query in client.queries) == (
+        KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS
+    )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+def test_both_fixed_keys_returning_identical_latest_window_never_claim_date_honoring():
+    latest = _page((datetime(2026, 10, 2, 17, 48, tzinfo=UTC),), None)
+    client = _MinuteClient(
+        [
+            replace(latest, query=_fixed_key_page(key).query)
+            for key in KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS
+        ]
+    )
+    outcome = run_kis_paper_minute_fixed_key_probe(
+        client=client, observed_at=datetime(2026, 10, 3, tzinfo=UTC)
+    )
+    assert outcome.status == "complete"
+    assert [page.category for page in outcome.pages] == ["newer_than_key"] * 2
+    assert outcome.pages[0].oldest_exchange_key == outcome.pages[1].oldest_exchange_key
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize(
+    "reason,category",
+    [
+        ("minute_response_empty", "empty"),
+        ("minute_response_rejected", "rejected"),
+        ("minute_response_invalid", "invalid"),
+        ("minute_exchange_timestamp_invalid", "invalid"),
+    ],
+)
+def test_fixed_key_semantic_failure_does_not_retry_or_suppress_second_key(reason, category):
+    client = _MinuteClient(
+        [
+            KisPaperMarketDataError(reason),
+            _fixed_key_page(KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS[1]),
+        ]
+    )
+    outcome = run_kis_paper_minute_fixed_key_probe(
+        client=client, observed_at=datetime(2026, 10, 3, tzinfo=UTC)
+    )
+    assert [page.category for page in outcome.pages] == [category, "requested_date_observed"]
+    assert outcome.pages[0].row_count == 0 and outcome.pages[0].oldest_exchange_key is None
+    assert len(client.queries) == 2 and len({q.continuation_key for q in client.queries}) == 2
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+def test_fixed_key_untrusted_failure_stops_without_printing_exception_text():
+    client = _MinuteClient([KisPaperMarketDataError("synthetic-private-token body account")])
+    outcome = run_kis_paper_minute_fixed_key_probe(
+        client=client, observed_at=datetime(2026, 10, 3, tzinfo=UTC)
+    )
+    assert len(client.queries) == 1 and outcome.pages[0].category == "rejected"
+    assert "synthetic-private" not in json.dumps(outcome.safe_payload())
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize(
+    "failure",
+    [
+        "auth_rejected",
+        "auth_response_invalid",
+        "token_request_not_due",
+        "transport_failure",
+    ],
+)
+def test_fixed_key_auth_failure_never_attempts_a_second_token_or_any_get(failure):
+    requests = []
+
+    class Transport:
+        def request(self, request):
+            market_data._validate_request(request)
+            requests.append(request)
+            assert request.method == "POST"
+            if failure == "token_request_not_due":
+                raise KisPaperMarketDataError(
+                    market_data.KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON
+                )
+            if failure == "transport_failure":
+                raise KisPaperMarketDataError("transport_failure")
+            return market_data.KisMarketDataResponse.from_payload(
+                {"private-error": "synthetic-private-body"},
+                status_code=403 if failure == "auth_rejected" else 200,
+            )
+
+    client = market_data.KisPaperMarketDataClient(
+        config=market_data.KisPaperMarketDataConfig(app_key="fake-key", app_secret="fake-secret"),
+        transport=Transport(),
+        max_minute_page_attempts=2,
+    )
+    outcome = run_kis_paper_minute_fixed_key_probe(
+        client=client, observed_at=datetime(2026, 10, 3, tzinfo=UTC)
+    )
+    assert len(requests) == 1 and requests[0].method == "POST"
+    assert outcome.call_counts.token_attempts == (0 if failure == "token_request_not_due" else 1)
+    assert outcome.call_counts.minute_page_attempts == 0
+    assert len(outcome.pages) == 1 and outcome.pages[0].category == "rejected"
+    assert "synthetic-private-body" not in json.dumps(outcome.safe_payload())
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize(
+    "failure,category",
+    [
+        ("empty", "empty"),
+        ("rejected", "rejected"),
+        ("invalid", "invalid"),
+    ],
+)
+def test_fixed_key_market_failure_uses_the_valid_token_for_second_independent_key(
+    failure, category
+):
+    requests = []
+    get_count = 0
+
+    class Transport:
+        def request(self, request):
+            nonlocal get_count
+            market_data._validate_request(request)
+            requests.append(request)
+            if request.method == "POST":
+                return market_data.KisMarketDataResponse.from_payload(
+                    {"access_token": "fake-token"}
+                )
+            get_count += 1
+            if get_count == 1:
+                payload = {
+                    "empty": {"rt_cd": "0", "output1": {}, "output2": []},
+                    "rejected": {"rt_cd": "1", "msg1": "synthetic-private-body"},
+                    "invalid": {"rt_cd": "0", "output1": [], "output2": []},
+                }[failure]
+            else:
+                page = _fixed_key_page(request.query["KEYB"])
+                payload = {
+                    "rt_cd": "0",
+                    "output1": {"more": "0"},
+                    "output2": [bar.as_document() for bar in page.bars],
+                }
+            return market_data.KisMarketDataResponse.from_payload(payload)
+
+    client = market_data.KisPaperMarketDataClient(
+        config=market_data.KisPaperMarketDataConfig(app_key="fake-key", app_secret="fake-secret"),
+        transport=Transport(),
+        max_minute_page_attempts=2,
+    )
+    outcome = run_kis_paper_minute_fixed_key_probe(
+        client=client, observed_at=datetime(2026, 10, 3, tzinfo=UTC)
+    )
+    assert [request.method for request in requests] == ["POST", "GET", "GET"]
+    assert outcome.call_counts == KisPaperMarketDataCallCounts(1, 2, 0)
+    assert [page.category for page in outcome.pages] == [category, "requested_date_observed"]
+    assert [request.query["KEYB"] for request in requests[1:]] == list(
+        KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS
+    )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize(
+    "keys,reason",
+    [
+        (("20260901120000", "20260901120000"), "distinct dates"),
+        (("20260901120000", "20260803130000"), "same exchange clock"),
+        (("20260901120000", "20260230120000"), "exchange key is invalid"),
+    ],
+)
+def test_future_fixed_constant_edit_cannot_silently_change_calendar_question(
+    monkeypatch, keys, reason
+):
+    monkeypatch.setattr(capability_probe, "KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS", keys)
+
+    class UnusedClient:
+        @property
+        def call_counts(self):
+            raise AssertionError("client must remain untouched")
+
+    with pytest.raises(ValueError, match=reason):
+        run_kis_paper_minute_fixed_key_probe(
+            client=UnusedClient(), observed_at=datetime(2026, 10, 3, tzinfo=UTC), keys=keys
+        )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+@pytest.mark.parametrize(
+    "keys",
+    [
+        (),
+        ("20260901120000",),
+        ("20260901120000", "20260901120000"),
+        ("20260901120000", "20260230120000"),
+        ("20260901120000", "2026080312000x"),
+        ["20260901120000", "20260803120000"],
+    ],
+)
+def test_fixed_key_invalid_plan_fails_before_client_access(keys):
+    class UnusedClient:
+        @property
+        def call_counts(self):
+            raise AssertionError("client must remain untouched")
+
+    with pytest.raises(ValueError, match="predeclared"):
+        run_kis_paper_minute_fixed_key_probe(
+            client=UnusedClient(), observed_at=datetime(2026, 10, 3, tzinfo=UTC), keys=keys
+        )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+def test_fixed_key_evidence_hash_only_metadata_and_no_cache_access(tmp_path, monkeypatch):
+    import thericher_v2.data.kis_paper_intraday as reader
+    import thericher_v2.execution.kis_private_intraday_backfill as backfill
+
+    def deny(*_args, **_kwargs):
+        raise AssertionError("cache and collector access forbidden")
+
+    monkeypatch.setattr(reader, "load_verified_kis_paper_private_intraday_catalog", deny)
+    monkeypatch.setattr(backfill, "run_kis_paper_private_intraday_backfill_cycle", deny)
+    monkeypatch.setattr(backfill, "_read_or_create_index", deny)
+    client = _MinuteClient(
+        [
+            _fixed_key_page(key, duplicate=index == 0)
+            for index, key in enumerate(KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS)
+        ]
+    )
+    result = probe_and_write_kis_paper_minute_fixed_key_capability(
+        client=client,
+        observed_at=datetime(2026, 10, 3, tzinfo=UTC),
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repo",
+    )
+    encoded = result.evidence_path.read_bytes()
+    assert result.evidence_sha256 == "sha256:" + hashlib.sha256(encoded).hexdigest()
+    assert result.evidence_path.name.startswith("fixed-key-pair-")
+    assert result.evidence_path.parent == (
+        tmp_path / "artifacts" / "data" / "kis-paper-minute-capability-probe"
+    )
+    assert json.loads(encoded) == result.outcome.safe_payload()
+    assert [page.category for page in result.outcome.pages] == [
+        "invalid",
+        "requested_date_observed",
+    ]
+    assert list((tmp_path / "artifacts").rglob("*.*")) == [result.evidence_path]
+    assert not (tmp_path / "repo").exists()
+    assert b"12345.67" not in encoded and b"ohlcv" not in encoded
+    with pytest.raises(ValueError, match="outcome"):
+        KisPaperMinuteFixedKeyProbeOutcome(
+            result.outcome.observed_at,
+            tuple(reversed(result.outcome.pages)),
+            result.outcome.call_counts,
+        )
 
 
 def _bar(timestamp: datetime) -> KisPaperMinuteRawBar:

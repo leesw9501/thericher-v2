@@ -68,8 +68,10 @@ not expand live authority or reset capital.
    A distinct source-derived fixed-band continuous-fold study also completed:
    144 cells/zero fits/1.799s CPU,112 focused tests and exact readback. It reduces
    turnover but loses stress NAV against direct targets; retain the kill. A
-   source-only online-expert feasibility check must establish distinct value
-   versus existing policy graphs before a new contract or training dispatch.
+  causal online-expert helper now passes83 synthetic tests; it differs from the
+  static graph but has no actual output stream/campaign/performance claim.
+  Prepare aligned later-OOS outputs and prior completed continuous-ledger
+  feedback under one new frozen contract before training or evaluation.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download
@@ -80,6 +82,14 @@ not expand live authority or reset capital.
    six QQQ pages/720 rows, then invalid seventh page; QQQ390 regular minutes
    remain. Exact subtype unknown; do not relabel partial as success/exhaustion.
    No new task/schedule or cursor reset.
+   The isolated two-date probe now returns120 September1 midday QQQ minutes
+   and an empty August3 response, not a global history floor. Next check the
+   smallest independently scoped regular-session retention path.
+
+The independent QQQ synthetic-price orderability diagnostic received a typed
+accepted response at23:04:20Z, one auth/one GET/zero orders. This does not prove
+funds at the actual order limit, explain the old rejection or complete this
+objective. Exact receipt and limitations belong to Execution.
 
 ## Completion Evidence And Failure Conditions
 

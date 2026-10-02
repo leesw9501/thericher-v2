@@ -16,6 +16,8 @@ from thericher_v2.data.kis_paper_minute_capability_probe import (
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS,
     KIS_PAPER_MINUTE_CAPABILITY_PROBE_NATIVE_TARGET_KEYS,
     probe_and_write_kis_paper_minute_capability,
+    probe_and_write_kis_paper_minute_fixed_key_capability,
+    validate_kis_paper_minute_fixed_key_probe,
 )
 from thericher_v2.execution.kis_market_data import (
     KisPaperMarketDataClient,
@@ -45,10 +47,16 @@ def main(
 ) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true")
-    parser.add_argument(
+    key_mode = parser.add_mutually_exclusive_group()
+    key_mode.add_argument(
         "--explicit-older-key-once",
         action="store_true",
         help="QQQ/NAS only: full no-M/F head, then one NEXT=1/PINC=1 older-key request",
+    )
+    key_mode.add_argument(
+        "--fixed-historical-key-pair",
+        action="store_true",
+        help="QQQ/NAS only: two fixed independent historical KEYB requests, metadata only",
     )
     parser.add_argument("--include-previous-day", action="store_true")
     parser.add_argument(
@@ -74,6 +82,10 @@ def main(
         default=KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
     )
     args = parser.parse_args(argv)
+    if args.fixed_historical_key_pair:
+        if args.target != "QQQ/NAS" or args.include_previous_day or args.max_pages not in {2, 3}:
+            parser.error("fixed historical keys require QQQ/NAS, two pages and no head-mode flags")
+        validate_kis_paper_minute_fixed_key_probe()
     if not args.execute:
         print(json.dumps({"status": "not_executed", "reason": "execute_flag_required"}))
         return 0
@@ -91,7 +103,9 @@ def main(
         args.target != "QQQ/NAS" or args.include_previous_day or args.max_pages < 2
     ):
         parser.error("explicit older-key mode requires QQQ/NAS current head and at least two pages")
-    max_pages = 2 if args.explicit_older_key_once else args.max_pages
+    max_pages = (
+        2 if args.explicit_older_key_once or args.fixed_historical_key_pair else args.max_pages
+    )
     if target_key in KIS_PAPER_MINUTE_CAPABILITY_PROBE_CANDIDATE_TARGET_KEYS and (
         args.max_pages != 1 or args.include_previous_day
     ):
@@ -117,19 +131,27 @@ def main(
             ),
             max_minute_page_attempts=max_pages,
         )
-        result = probe_and_write_kis_paper_minute_capability(
-            client=client,
-            request_start_times=request_start_times,
-            artifact_root=args.artifact_root,
-            repository_root=_REPOSITORY_ROOT,
-            observed_at=clock(),
-            max_pages=max_pages,
-            explicit_older_key_once=args.explicit_older_key_once,
-            include_previous_day=args.include_previous_day,
-            target=(symbol, exchange),
-            tested_request_interval_seconds=args.minimum_request_interval_seconds,
-            monotonic_clock=monotonic_clock,
-        )
+        if args.fixed_historical_key_pair:
+            result = probe_and_write_kis_paper_minute_fixed_key_capability(
+                client=client,
+                artifact_root=args.artifact_root,
+                repository_root=_REPOSITORY_ROOT,
+                observed_at=clock(),
+            )
+        else:
+            result = probe_and_write_kis_paper_minute_capability(
+                client=client,
+                request_start_times=request_start_times,
+                artifact_root=args.artifact_root,
+                repository_root=_REPOSITORY_ROOT,
+                observed_at=clock(),
+                max_pages=max_pages,
+                explicit_older_key_once=args.explicit_older_key_once,
+                include_previous_day=args.include_previous_day,
+                target=(symbol, exchange),
+                tested_request_interval_seconds=args.minimum_request_interval_seconds,
+                monotonic_clock=monotonic_clock,
+            )
     except (KisPaperMarketDataError, OSError, ValueError):
         print(
             json.dumps(
@@ -143,9 +165,12 @@ def main(
         )
         return 2
 
+    payload = {**result.outcome.safe_payload(), "evidence_path": str(result.evidence_path)}
+    if args.fixed_historical_key_pair:
+        payload["evidence_sha256"] = result.evidence_sha256
     print(
         json.dumps(
-            {**result.outcome.safe_payload(), "evidence_path": str(result.evidence_path)},
+            payload,
             sort_keys=True,
         )
     )

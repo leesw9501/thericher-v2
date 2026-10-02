@@ -46,6 +46,7 @@ KIS_PAPER_MINUTE_CAPABILITY_PROBE_TARGET_KEYS = (
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_MAX_PAGES = 3
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_ARTIFACT_DIRECTORY = "data/kis-paper-minute-capability-probe"
 KIS_PAPER_MINUTE_CAPABILITY_PROBE_MIN_INTERVAL_SECONDS = 1.0
+KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS = ("20260901120000", "20260803120000")
 
 _SAFE_FAILURE_REASONS = frozenset(
     {
@@ -323,8 +324,233 @@ class KisPaperMinuteCapabilityProbeOutcome:
 
 @dataclass(frozen=True)
 class KisPaperMinuteCapabilityProbeResult:
-    outcome: KisPaperMinuteCapabilityProbeOutcome
+    outcome: KisPaperMinuteCapabilityProbeOutcome | KisPaperMinuteFixedKeyProbeOutcome
     evidence_path: Path
+    evidence_sha256: str | None = None
+
+
+@dataclass(frozen=True)
+class KisPaperMinuteFixedKeyPageFacts:
+    requested_key: str
+    category: Literal[
+        "requested_date_observed", "earlier_only", "newer_than_key", "empty", "rejected", "invalid"
+    ]
+    row_count: int = 0
+    unique_timestamp_count: int = 0
+    oldest_exchange_key: str | None = None
+    newest_exchange_key: str | None = None
+
+    def __post_init__(self) -> None:
+        if (
+            self.requested_key not in KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS
+            or self.category
+            not in {
+                "requested_date_observed",
+                "earlier_only",
+                "newer_than_key",
+                "empty",
+                "rejected",
+                "invalid",
+            }
+            or type(self.row_count) is not int
+            or type(self.unique_timestamp_count) is not int
+            or not 0 <= self.unique_timestamp_count <= self.row_count <= KIS_PAPER_MINUTE_MAX_ROWS
+            or (self.oldest_exchange_key is None) != (self.newest_exchange_key is None)
+            or bool(self.row_count) != (self.oldest_exchange_key is not None)
+        ):
+            raise ValueError("fixed-key probe page facts are invalid")
+        if self.row_count:
+            for key in (self.oldest_exchange_key, self.newest_exchange_key):
+                _validate_exchange_key(key)
+            if self.oldest_exchange_key > self.newest_exchange_key:
+                raise ValueError("fixed-key probe timestamp bounds are invalid")
+        if self.category in {"requested_date_observed", "earlier_only", "newer_than_key"}:
+            expected = (
+                "newer_than_key"
+                if self.newest_exchange_key is not None
+                and self.newest_exchange_key > self.requested_key
+                else "requested_date_observed"
+                if self.newest_exchange_key is not None
+                and self.newest_exchange_key[:8] == self.requested_key[:8]
+                else "earlier_only"
+            )
+            if (
+                not self.row_count
+                or self.row_count != self.unique_timestamp_count
+                or self.category != expected
+            ):
+                raise ValueError("fixed-key probe date classification is invalid")
+        elif self.category != "invalid" and self.row_count:
+            raise ValueError("fixed-key probe failure cannot retain page facts")
+
+
+@dataclass(frozen=True)
+class KisPaperMinuteFixedKeyProbeOutcome:
+    observed_at: datetime
+    pages: tuple[KisPaperMinuteFixedKeyPageFacts, ...]
+    call_counts: KisPaperMarketDataCallCounts
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "observed_at", require_utc(self.observed_at, "observed_at"))
+        object.__setattr__(self, "pages", tuple(self.pages))
+        if (
+            not 1 <= len(self.pages) <= 2
+            or any(type(page) is not KisPaperMinuteFixedKeyPageFacts for page in self.pages)
+            or tuple(page.requested_key for page in self.pages)
+            != KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS[: len(self.pages)]
+            or self.call_counts.daily_page_attempts != 0
+            or not 0 <= self.call_counts.minute_page_attempts <= 2
+            or not 0 <= self.call_counts.token_attempts <= 1
+        ):
+            raise ValueError("fixed-key probe outcome is invalid")
+
+    @property
+    def status(self) -> Literal["complete", "partial", "unavailable"]:
+        parsed = sum(
+            page.category in {"requested_date_observed", "earlier_only", "newer_than_key"}
+            for page in self.pages
+        )
+        return "complete" if parsed == 2 else "partial" if parsed else "unavailable"
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": SCHEMA_VERSION,
+            "kind": "kis_paper_minute_fixed_historical_key_probe",
+            "status": self.status,
+            "paper_only": True,
+            "route_class": "kis_paper_market_data",
+            "target_key": "QQQ/NAS/1m",
+            "observed_at": self.observed_at.isoformat(),
+            "request_scope": "two_fixed_independent_historical_keys",
+            "requested_keys": list(KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS),
+            "max_minute_page_attempts": 2,
+            "token_request_count": self.call_counts.token_attempts,
+            "minute_page_request_count": self.call_counts.minute_page_attempts,
+            "daily_page_request_count": self.call_counts.daily_page_attempts,
+            "raw_market_data_retained": False,
+            "exchange_timestamp_semantics": "observed_unqualified",
+            "pages": [
+                {
+                    "requested_key": page.requested_key,
+                    "category": page.category,
+                    "row_count": page.row_count,
+                    "unique_timestamp_count": page.unique_timestamp_count,
+                    "oldest_exchange_key": page.oldest_exchange_key,
+                    "newest_exchange_key": page.newest_exchange_key,
+                }
+                for page in self.pages
+            ],
+        }
+
+
+def _validate_exchange_key(key: object) -> None:
+    if not isinstance(key, str) or len(key) != 14 or not key.isascii() or not key.isdigit():
+        raise ValueError("fixed-key probe exchange key is invalid")
+    try:
+        datetime.strptime(key, "%Y%m%d%H%M%S")
+    except ValueError as error:
+        raise ValueError("fixed-key probe exchange key is invalid") from error
+
+
+def validate_kis_paper_minute_fixed_key_probe(
+    keys: tuple[str, str] = KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS,
+) -> None:
+    if type(keys) is not tuple or len(keys) != 2 or keys != KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS:
+        raise ValueError("fixed-key probe requires the predeclared two keys")
+    for key in keys:
+        _validate_exchange_key(key)
+    if keys[0][:8] == keys[1][:8] or keys[0][8:] != keys[1][8:]:
+        raise ValueError("fixed-key probe requires distinct dates at the same exchange clock")
+
+
+def run_kis_paper_minute_fixed_key_probe(
+    *,
+    client: KisPaperMinuteCapabilityProbeClient,
+    observed_at: datetime,
+    keys: tuple[str, str] = KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS,
+) -> KisPaperMinuteFixedKeyProbeOutcome:
+    """Measure fixed continuation keys, not a documented arbitrary-date start guarantee."""
+    validate_kis_paper_minute_fixed_key_probe(keys)
+    captured_at = require_utc(observed_at, "observed_at")
+    if client.call_counts != KisPaperMarketDataCallCounts(0, 0, 0):
+        raise ValueError("fixed-key probe requires an unused single client")
+    pages = []
+    for key in keys:
+        query = KisPaperMinuteQuery(
+            symbol="QQQ",
+            exchange="NAS",
+            include_previous_day=True,
+            continuation_next="1",
+            continuation_key=key,
+        )
+        try:
+            page = client.fetch_minute_page(query)
+            if page.query != query:
+                raise KisPaperMarketDataError("minute_response_invalid")
+            facts = _page_facts(page)
+            category = (
+                "invalid"
+                if facts.has_duplicate_timestamps
+                else "newer_than_key"
+                if facts.newest.strftime("%Y%m%d%H%M%S") > key
+                else "requested_date_observed"
+                if facts.newest.strftime("%Y%m%d") == key[:8]
+                else "earlier_only"
+            )
+            pages.append(
+                KisPaperMinuteFixedKeyPageFacts(
+                    requested_key=key,
+                    category=category,
+                    row_count=facts.row_count,
+                    unique_timestamp_count=len(set(facts.timestamps)),
+                    oldest_exchange_key=facts.oldest.strftime("%Y%m%d%H%M%S"),
+                    newest_exchange_key=facts.newest.strftime("%Y%m%d%H%M%S"),
+                )
+            )
+        except KisPaperMarketDataError as error:
+            reason = str(error)
+            category = (
+                "empty"
+                if reason == "minute_response_empty"
+                else "invalid"
+                if reason
+                in {
+                    "minute_response_invalid",
+                    "minute_exchange_timestamp_invalid",
+                    "minute_ohlc_invalid",
+                    "minute_open_invalid",
+                    "minute_high_invalid",
+                    "minute_low_invalid",
+                    "minute_last_invalid",
+                    "minute_volume_invalid",
+                }
+                else "rejected"
+            )
+            pages.append(KisPaperMinuteFixedKeyPageFacts(key, category))
+            # Only parsed market-page failures may continue with the already valid token.
+            if category == "rejected" and reason != "minute_response_rejected":
+                break
+    return KisPaperMinuteFixedKeyProbeOutcome(captured_at, tuple(pages), client.call_counts)
+
+
+def probe_and_write_kis_paper_minute_fixed_key_capability(
+    *,
+    client: KisPaperMinuteCapabilityProbeClient,
+    artifact_root: Path,
+    repository_root: Path,
+    observed_at: datetime,
+) -> KisPaperMinuteCapabilityProbeResult:
+    outcome = run_kis_paper_minute_fixed_key_probe(client=client, observed_at=observed_at)
+    path = write_kis_paper_minute_capability_probe_evidence(
+        outcome,
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+    )
+    return KisPaperMinuteCapabilityProbeResult(
+        outcome,
+        path,
+        "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest(),
+    )
 
 
 @dataclass(frozen=True)
@@ -574,7 +800,7 @@ def run_kis_paper_minute_capability_probe(
 
 
 def write_kis_paper_minute_capability_probe_evidence(
-    outcome: KisPaperMinuteCapabilityProbeOutcome,
+    outcome: KisPaperMinuteCapabilityProbeOutcome | KisPaperMinuteFixedKeyProbeOutcome,
     *,
     artifact_root: Path,
     repository_root: Path,
@@ -588,10 +814,11 @@ def write_kis_paper_minute_capability_probe_evidence(
     payload = json.dumps(outcome.safe_payload(), ensure_ascii=True, sort_keys=True) + "\n"
     encoded = payload.encode("utf-8")
     digest = hashlib.sha256(encoded).hexdigest()[:16]
+    prefix = "fixed-key-pair-" if isinstance(outcome, KisPaperMinuteFixedKeyProbeOutcome) else ""
     destination = (
         root
         / KIS_PAPER_MINUTE_CAPABILITY_PROBE_ARTIFACT_DIRECTORY
-        / f"{outcome.observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{digest}.json"
+        / f"{prefix}{outcome.observed_at.strftime('%Y%m%dT%H%M%S%fZ')}-{digest}.json"
     )
     _validate_artifact_destination(destination=destination, artifact_root=root)
     if destination.exists():

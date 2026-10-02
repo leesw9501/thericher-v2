@@ -14,6 +14,21 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+The isolated read-only QQQ/NASD VTTS3007R diagnostic received an accepted,
+typed response at2026-10-02 23:04:20 UTC: one token POST/one GET/zero orders,
+no retry or state reset. Synthetic public price1 tests endpoint acceptance
+only; it is NOT actual-limit buying power, Monday's submit/fill readiness or
+an explanation of the older null-code rejection. No private account values
+are logged or retained. Native execution uses the existing Paper-only `.env`
+whitelist; Docker uses the Paper environment.35 focused tests plus independent
+final source review pass;208 combined isolated tests/Ruff/both Compose pass.
+Exact metadata receipt:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-orderability-probe\2b5d45092d9842aa88ee2413f6637668.json`,
+SHA256 `4df54700b64c4eb84ecd327efd90671786b4c553f271d1a134eb6e3accd778d2`.
+The existing unit runner still checks funds at its ORIGINAL order limit before
+BUY. The installed October6 opportunity/tag and old private identities remain
+unchanged; this diagnostic is not its scheduled runtime result.
+
 October3 exact-orderability/restart package: independent final review closes
 both call-time funds bypass and unbound intent crash recovery defects.535
 changed-path serial tests pass in10.00s; full authority7,548 passes/22 skips,

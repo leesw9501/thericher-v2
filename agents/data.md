@@ -13,6 +13,20 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
+The isolated two-date probe completed at22:49:37Z with one token/two minute
+requests/zero daily requests in2.582s. QQQ/NAS key20260901120000 returned120
+unique native M1 rows spanning September1 10:01-12:00 exchange time;
+key20260803120000 returned empty. Status partial: this proves one requested
+historical midday interval, not August's absence, an endpoint-wide earliest
+date, a complete session, PIT/finality or a daily quota. Rows were discarded;
+no cache/cursor was reset or changed.90 focused tests and independent source
+review pass. Exact metadata-only receipt:
+`D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\fixed-key-pair-20261002T224937028955Z-f0d4c37e9dcdd33e.json`,
+SHA256 `f0d4c37e9dcdd33ef71dbe5db877a30940ddff4069e71cfcc1eac64e8d0a95bc`.
+Next bounded package checks existing-path reuse for independently scoped
+September1 regular-session retention, without reseeding June's cursor or the
+current head. A missing response does not block independent research/Paper.
+
 18:25:32Z bounded explicit older-key measurement completed with one token and
 two accepted full120-row QQQ/NAS pages. No recognized M/F header; both body
 more fields zero, yet page2 yielded120 new older keys/zero overlaps and
@@ -83,10 +97,10 @@ Integration authority passes:190 Data serial plus112 research serial tests;
 full7,743 passes/22 skips/317.32s/eight workers/clean helper exit, Ruff/default
 and research Compose. Ten existing Data consumers now share verified image
 `sha256:5f975bc91058df3742583fe355834c534101e30089ace4a16d959c7995f0babc`;
-all584 source Python/PowerShell files match the integrated working tree.
+all584 source Python/PowerShell files match revision5f0e85e. New standalone
+diagnostic/mixture files are not deployed or used by those scheduled consumers.
 No task was manually invoked or schedule changed during this publication.
-Next source-only capability package checks the existing private minute path
-for a two-key older-date probe; no new calls or historical reach claim yet.
+The separate fixed-key probe above now supplies its narrowly measured result.
 
 Independent historical inventory at19:15:58Z: QQQ20,138/SPY19,507 retained M1
 rows,21 shared complete regular sessions June22-July21 2026;8,190 regular

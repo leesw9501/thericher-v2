@@ -33,6 +33,16 @@ The `qqq-paper` chat follow-up is one-shot at00:45 KST, not a standing report.
 Registration/task exit is not a submit/fill; use exact immutable outcomes and
 strict private projection only. Computer/Docker/app must remain running.
 
+The standalone `uv run --extra dev python
+scripts/probe_kis_paper_qqq_orderability.py --execute` already completed one
+read-only diagnostic at23:04:20Z. It allows only one token POST and one QQQ/NASD
+VTTS3007R GET at synthetic public price1. Native uses the existing Paper-only
+`.env` whitelist, Docker the Paper environment; the shared Data token-start
+guard yields its due time without sleeping. Preview has no operational I/O.
+Only categorical UTC/path/hash metadata is retained externally.35 tests pass.
+Endpoint acceptance is not actual-limit funds or prior-rejection explanation;
+do not rerun an answered question or replace the installed unit runner/tag.
+
 `scripts/probe_kis_paper_minute_capability.py --execute --target QQQ/NAS
 --max-pages 2 --explicit-older-key-once` already completed once at18:25:32Z:
 two120-row pages/120 new older keys/zero overlap, no recognized M/F. This opt-in
@@ -48,7 +58,20 @@ reject this exact capture; preserve original bytes and obtain a fresh bounded
 capture when the token-start guard permits. Do not infer full-session coverage,
 provider finality or scheduler origin from this direct invocation.
 
+The separate `--fixed-historical-key-pair --max-pages 2` minute probe completed
+one fixed September1/August3 midday pair. It returned120 September1 minutes and
+an empty August3 page/partial; rows discarded, no cache/cursor changed.90 tests
+pass. Evidence belongs to Data. Neither arbitrary historical KEY support nor
+an endpoint-wide earliest date is officially guaranteed by this observation.
+
 ## Latest Bounded Research
+
+The new pure `causal_expert_mixture` module separates target projection from
+feedback updates. The caller must provide strictly prior completed-loss UTC
+availability and advance its watermark; the helper does not observe completion,
+account for fees or run a model.83 synthetic tests pass. Actual aligned expert
+streams, continuous feedback accounting and a frozen campaign remain next;
+do not treat the helper as training or a deployable ensemble.
 
 `scripts/run_tiingo_monthly_frozen_policy_readback.py` already completed one
 metadata freeze and one CPU inference attempt on August/September2026. Same

@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
+from datetime import UTC, datetime
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 
@@ -10,7 +12,14 @@ import pytest
 SCRIPT = Path(__file__).parents[1] / "scripts" / "probe_kis_paper_minute_capability.py"
 
 
-@pytest.mark.parametrize("arguments", [[], ["--explicit-older-key-once"]])
+@pytest.mark.parametrize(
+    "arguments",
+    [
+        [],
+        ["--explicit-older-key-once"],
+        ["--fixed-historical-key-pair"],
+    ],
+)
 def test_probe_script_requires_explicit_execution_without_loading_credentials(
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
@@ -197,6 +206,158 @@ def test_explicit_older_key_scope_is_validated_before_credentials(monkeypatch, a
     monkeypatch.setattr(script, "UrllibKisPaperMarketDataTransport", deny)
     with pytest.raises(SystemExit, match="2"):
         script.main(["--execute", "--explicit-older-key-once", *arguments])
+
+
+@pytest.mark.parametrize(
+    "arguments",
+    [
+        ["--explicit-older-key-once"],
+        ["--include-previous-day"],
+        ["--target", "SPY/AMS"],
+        ["--target", "IWM/AMS"],
+        ["--max-pages", "1"],
+        ["--max-pages", "4"],
+        ["--historical-key", "20260901120000"],
+    ],
+)
+def test_fixed_key_cli_invalid_scope_fails_before_all_setup(monkeypatch, arguments):
+    script = _load_script()
+
+    def deny(*_args, **_kwargs):
+        raise AssertionError("credentials, gates and transport must remain untouched")
+
+    for name in (
+        "load_kis_paper_market_data_config",
+        "KisPaperMarketDataRateGate",
+        "KisPaperMarketDataTokenStartGate",
+        "UrllibKisPaperMarketDataTransport",
+        "KisPaperMarketDataClient",
+        "probe_and_write_kis_paper_minute_capability",
+        "probe_and_write_kis_paper_minute_fixed_key_capability",
+    ):
+        monkeypatch.setattr(script, name, deny)
+    with pytest.raises(SystemExit, match="2"):
+        script.main(["--execute", "--fixed-historical-key-pair", *arguments])
+
+
+def test_fixed_key_cli_validates_frozen_keys_before_credentials(monkeypatch):
+    script = _load_script()
+    events = []
+
+    def invalid_plan():
+        events.append("plan")
+        raise ValueError("synthetic invalid fixed keys")
+
+    def deny(*_args, **_kwargs):
+        raise AssertionError("credentials must remain unread")
+
+    monkeypatch.setattr(script, "validate_kis_paper_minute_fixed_key_probe", invalid_plan)
+    monkeypatch.setattr(script, "load_kis_paper_market_data_config", deny)
+    with pytest.raises(ValueError, match="invalid fixed keys"):
+        script.main(["--execute", "--fixed-historical-key-pair"])
+    assert events == ["plan"]
+
+
+@pytest.mark.parametrize("page_arguments", [[], ["--max-pages", "2"], ["--max-pages", "3"]])
+def test_fixed_key_cli_single_capped_client_metadata_hash_and_no_head_path(
+    monkeypatch, tmp_path, capsys, page_arguments
+):
+    import thericher_v2.execution.kis_market_data as market_data
+    from thericher_v2.data.kis_paper_minute_capability_probe import (
+        KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS,
+    )
+
+    script = _load_script()
+    clients, requests, configurations = [], [], []
+
+    def config(_path):
+        configurations.append(_path)
+        return market_data.KisPaperMarketDataConfig(
+            app_key="synthetic-private-app-key", app_secret="synthetic-private-secret"
+        )
+
+    class Transport:
+        def __init__(self, **_kwargs):
+            pass
+
+        def request(self, request):
+            market_data._validate_request(request)
+            requests.append(request)
+            if request.method == "POST":
+                return market_data.KisMarketDataResponse.from_payload(
+                    {"access_token": "synthetic-private-token"}
+                )
+            key = request.query["KEYB"]
+            return market_data.KisMarketDataResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "msg1": "synthetic-private-body",
+                    "output1": {"more": "0"},
+                    "output2": [
+                        {
+                            "xymd": key[:8],
+                            "xhms": key[8:],
+                            "kymd": key[:8],
+                            "khms": key[8:],
+                            "open": "12345.67",
+                            "high": "12346.67",
+                            "low": "12344.67",
+                            "last": "12345.67",
+                            "evol": "100",
+                        }
+                    ],
+                },
+            )
+
+    def client(**kwargs):
+        assert kwargs["max_minute_page_attempts"] == 2
+        instance = market_data.KisPaperMarketDataClient(**kwargs)
+        clients.append(instance)
+        return instance
+
+    def deny(*_args, **_kwargs):
+        raise AssertionError("old head probe must not run")
+
+    monkeypatch.setattr(script, "load_kis_paper_market_data_config", config)
+    monkeypatch.setattr(script, "UrllibKisPaperMarketDataTransport", Transport)
+    monkeypatch.setattr(script, "KisPaperMarketDataClient", client)
+    monkeypatch.setattr(script, "KisPaperMarketDataRateGate", lambda **_kwargs: object())
+    monkeypatch.setattr(script, "KisPaperMarketDataTokenStartGate", lambda **_kwargs: object())
+    monkeypatch.setattr(script, "probe_and_write_kis_paper_minute_capability", deny)
+    assert (
+        script.main(
+            [
+                "--execute",
+                "--fixed-historical-key-pair",
+                "--artifact-root",
+                str(tmp_path / "artifacts"),
+                *page_arguments,
+            ],
+            clock=lambda: datetime(2026, 10, 3, tzinfo=UTC),
+        )
+        == 0
+    )
+    output = capsys.readouterr()
+    payload = json.loads(output.out)
+    assert output.err == "" and len(clients) == len(configurations) == 1
+    assert [request.query["KEYB"] for request in requests if request.method == "GET"] == list(
+        KIS_PAPER_MINUTE_FIXED_HISTORICAL_KEYS
+    )
+    assert len(requests) == 3 and payload["minute_page_request_count"] == 2
+    assert payload["token_request_count"] == 1 and payload["raw_market_data_retained"] is False
+    encoded = Path(payload["evidence_path"]).read_bytes()
+    assert payload["evidence_sha256"] == "sha256:" + hashlib.sha256(encoded).hexdigest()
+    assert all(
+        value not in output.out + encoded.decode("ascii")
+        for value in (
+            "12345.67",
+            "synthetic-private-app-key",
+            "synthetic-private-secret",
+            "synthetic-private-token",
+            "synthetic-private-body",
+        )
+    )
+    assert [page["category"] for page in payload["pages"]] == ["requested_date_observed"] * 2
 
 
 def _load_script() -> ModuleType:
