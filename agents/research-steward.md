@@ -5,6 +5,21 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October3 latest finite CUDA appointment closed:
+`kis-equal-minute-resolution-development-v1`, four logistic/four TCN fits,
+120 development cells, one300-second budget/2CPU/6GiB/network none appointment.
+Metadata-only contract preceded synthetic CPU smoke7.652s and CUDA10.753s.
+Root `D:\thericher-v2\model-artifacts\research\kis-equal-minute-resolution-development-v1`;
+contract `sha256:ad8f9dbf89e8d7543cd6f0e092c335db2278cf3039b9b86a3550f20d5f7956fe`;
+CPU `sha256:e7fba28f24e5f36842564a179979c293d9274e3fc4ce09c2f6b9b43a500f8db2`;
+CUDA `sha256:3d0b2b42c94cd28b5316065708b0059dab3ff7153ba59e44d9d42023edea4ad5`.
+Pinned Torch2.7.0+cu128, exclusive canonical lock held through child reaping.
+99 focused tests/source review/immutable readback pass. Registry trial1,
+holdout none/non_promoting_completed; no retained weights or predictions.
+Child/container exited and lock absent. VRAM peak was not instrumented;
+post-run nvidia-smi is not a measurement of training utilization. Research owns
+the stress-cost kill; no depth/ensemble/Paper appointment follows from it.
+
 October3 inference-only CPU package closed:
 `tiingo-monthly-frozen-policy-aug-sep-2026-v1`,126 cells/36 matched identities,
 zero fits/new weights/holdout spend. Contract

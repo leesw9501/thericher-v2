@@ -25,23 +25,19 @@ this does not establish unlimited history, a full session or provider finality.
 The opt-in retention package is integrated in `843968d`: QQQ head/session-capture
 only,1-4 pages, defaults/SPY/historical cursor unchanged. Main123 focused tests
 pass; independent review confirms crash recovery preserves the historical cursor.
-First actual retained capture at19:10:19Z returned QQQ retained-cache conflict/
-quarantined/zero new rows and SPY collected120. Quarantined original bytes remain;
-this is not evidence that older-key continuation failed. One fresh bounded capture
-is ready after the existing token-start guard, before the04:24 KST scheduled owner.
-Exact capture:
-`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T191019427403Z-1eb8035a2196f788.json`,
-SHA256 `1eb8035a2196f788622ebdabdacd520dfc06d993db5c94a14fb2c0ddb32135f9`.
-The19:15:15 guard-deferred capture made no market requests; its exact receipt
-is `20261002T191515899923Z-9d7c963e49ede946.json` in the same directory,
-SHA256 `9d7c963e49ede9460ea885edf8e324195080d284fd57ff6bcf7f21dce99340c7`.
-Fresh19:15:31Z capture then retained480 QQQ rows from four accepted pages and
-345/390 current regular minutes;45 trailing minutes were still future. Zero
-overlap conflicts for QQQ. SPY had a retained-cache conflict/quarantine/no new
-rows, so shell exit1 is not QQQ collection failure. Capture `complete` means
-QQQ collection succeeded, not a complete regular session or whole-command success.
-Exact capture `20261002T191531035954Z-bd9e370cc389f1b3.json` in the same directory,
-SHA256 `bd9e370cc389f1b3796531995645b3b4c30f8ddd4f4273c7de646e44290adeec`.
+Latest bounded post-close capture20:44:33Z completed in7.276s/shell exit1:
+QQQ minute_duplicate_conflict/quarantined/zero new rows; SPY collected120.
+The current QQQ capture has no complete regular session or new chunk. Earlier
+19:15:31Z retained480 QQQ rows/345 regular minutes at that time; that historical
+receipt cannot qualify a later quarantined input. Preserve all original bytes.
+This is a revised retained-cache conflict, not proof that older-key continuation
+failed or that the separate historical21-session research input is absent.
+Exact latest capture:
+`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T204433019960Z-def19bd033595bc3.json`,
+SHA256 `def19bd033595bc3051cf8976fd1d4c0c9af8c2b1e9548bc80795b46432102e9`.
+Head index generation239/SHA256
+`1d9eb0199246b03f5ad07a3ae22ac1f0fcf693ee3d6f5983af703479c7aedb2c`.
+Existing intraday-head owner was Ready, last04:24/next06:20 KST October3.
 No new schedule, historical cursor reset, finality claim or pacing change.
 
 Independent historical inventory at19:15:58Z: QQQ20,138/SPY19,507 retained M1

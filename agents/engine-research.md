@@ -17,8 +17,8 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
-Current independent implementation: one pure equal-elapsed M1/M5 adapter and
-synthetic tests, not a fit or GPU campaign. Context30/120 minutes means M1
+Completed one finite equal-elapsed M1/M5 CUDA development experiment.
+Context30/120 minutes means M1
 30/120 versus M5 six/24 bars, common cutoff/entry/exit support. Ten TRAIN
 sessions, July7 purge, five descriptive comparison sessions; latest five are
 excluded from THIS package, not globally unseen data. Rule/logistic/TCN and
@@ -26,7 +26,7 @@ cash/long form one120-cell budget, not independent per-cell experiments.
 Five synchronized session blocks give32 sign patterns; the fraction is
 descriptive, not a significance claim or independent ETF/day count. Full-context
 TCN kernels differ in parameter capacity, so a difference cannot be attributed
-solely to resolution. No real outcomes/fits/weights/holdout or Paper input yet.
+solely to resolution. No holdout, selected model or Paper input follows.
 Independent review found and closed a date-relabeling TRAIN-anchor bypass.
 Main38 synthetic tests/3.07s and Ruff pass; final source
 `sha256:5adb809155c2f63011e2d9f753d5642882f9d9af8dd04219db17c62dd8b1fc17`.
@@ -39,8 +39,36 @@ outcome `sha256:ea69cdbe7903575059a68ba09f9af4969ebe0b1395df3dc2e7b05d7065d21049
 The failed v1 is retained: parent's SPY cache selector NAS was wrong, not absent
 SPY data. r2 explicitly pins QQQ/NAS and SPY/AMS under the same unchanged index
 `sha256:f816b940c3419caec4bdd1595b79615e6895782dad012edc12785aef6f05a53f`.
-Next ready package is one finite rule/logistic/TCN experiment on these geometries,
-with its predictive/cost/resource contract frozen before actual labels/fits.
+The actual metadata freeze initially failed before targets/fits because the
+reused artifact reader's2MiB cap was smaller than the4,232,279-byte index.
+Only this index read now has a measured8MiB cap; original identity/pin checks
+remain.61 launcher tests plus38 helper tests pass in10.26s; Ruff/independent
+source review pass. Exact launcher SHA256
+`8aecabc966a508cc8db26982d21e67c1d610124eac32e4210f4e0fe3a1b3816d`.
+
+Metadata-only contract froze before real labels, then7.652s pinned-Docker
+synthetic CPU smoke preceded one10.753s CUDA appointment. Four pooled80-window
+logistic fits and four full-context TCN16 fits at8epochs produced120 cells,
+with20 comparison decisions per symbol. No model weights/predictions retained.
+At stress6bps per side, all eight momentum cells lose to cash; linear is cash
+in all eight; TCN has one positive cell but pooled mean net-unit payoff is
+-4.7133bps. TCN pooled M1 means at30/120-minute context are-4.4792/-1.1026bps,
+versus M5-4.1095/-9.1619bps. Primary M1 stress mean is negative, so the frozen
+nonpositive_stress_net kill applies despite a positive average resolution delta.
+No favorable cell is selected;32-pattern family fraction0.125 is descriptive,
+not a p-value. These are equal-unit30-minute payoff proxies, not portfolio NAV,
+actual fees, settled cash or broker PnL. Five seen/revised session blocks are
+not independent evaluation or provider-final/PIT data.
+
+Root `D:\thericher-v2\model-artifacts\research\kis-equal-minute-resolution-development-v1`;
+contract `sha256:ad8f9dbf89e8d7543cd6f0e092c335db2278cf3039b9b86a3550f20d5f7956fe`;
+CPU summary `sha256:e7fba28f24e5f36842564a179979c293d9274e3fc4ce09c2f6b9b43a500f8db2`;
+CUDA summary `sha256:3d0b2b42c94cd28b5316065708b0059dab3ff7153ba59e44d9d42023edea4ad5`.
+Exact source/contract/worker-summary/120-cell read-only Docker verification
+passes. Registry non_promoting_completed, container exited/GPU lock absent.
+Do not run an outcome-informed tuning rescue. Current Data replacement repair
+may change its source pin after this readback; retained contract/result pins
+remain the evidence, not a claim that later mutable source still matches.
 
 Primary sources re-retrieved October3: TCN causal convolution/context design,
 https://arxiv.org/abs/1803.01271; joint trend/sizing and turnover-aware loss,

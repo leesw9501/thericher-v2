@@ -36,9 +36,13 @@ not expand live authority or reset capital.
   ETF/month windows: 126 cells, 36 matched identities, zero fits. Both beat cash
   in five windows but their own TRAIN-risk control in one; no selected model.
   TimesFM and Chronos CUDA studies also completed without a robust winner.
-- Data retained one bounded QQQ head capture with 480 rows and 345/390 regular
-  minutes at its capture time. This is not a complete session or finality proof.
-  The older native-minute catalog has 21 shared complete SPY/QQQ sessions.
+- Independent equal-minute M1/M5 study now completed4linear/4TCN fits/120 cells
+  in10.753s CUDA after frozen metadata/CPU smoke.99 focused tests/readback pass.
+  Primary TCN stress-net kill applies; no selected model/Paper input or tuning.
+- Latest20:44:33Z head capture quarantines QQQ minute_duplicate_conflict/zero
+  new rows while SPY collects120. The earlier480-row/345-minute QQQ receipt is
+  not current qualification. The separate older native-minute catalog retains
+  21 shared complete SPY/QQQ sessions; current head conflict does not block it.
 
 ## Owned Work Packages
 
@@ -58,11 +62,14 @@ not expand live authority or reset capital.
    Freeze the contract before real fits/outcomes; revised seen-data evidence
    is not a sealed evaluation or Paper input. No new agent/stateboard/runtime.
    Adapter38 tests/source review and actual480-window geometry smoke now pass;
-   freeze one finite rule/logistic/TCN fit contract next, not a tuning loop.
+   Finite eight-fit/120-cell contract, CPU smoke and CUDA appointment completed;
+   preserve its stress-net rejection rather than tune from comparison outcomes.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download
    is needed for the ready research adapter.
+   Data owns the narrow already-fetched replacement repair after permitted old-
+   head quarantine, with durable markers/rechecked fingerprints and crash tests.
 
 ## Completion Evidence And Failure Conditions
 

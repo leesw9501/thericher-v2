@@ -42,16 +42,25 @@ Independent M1/M5 adapter now passes38 focused tests and source review; absolute
 TRAIN-anchor relabeling bug repaired. Actual retained-input CPU smoke creates
 480 windows, four TRAIN-only normalizers/3.144s, zero fits/targets/GPU. Corrected
 parent's SPY selector NAS->documented AMS; v1 failed receipt remains immutable.
-Exact r2 pins/limits belong to Engine Research. Next finite model contract is
-ready to implement; no resolution-performance or Paper qualification follows.
+Exact r2 pins/limits belong to Engine Research. The finite eight-fit/120-cell
+experiment now completed:99 focused tests/source review/immutable readback,
+metadata freeze,7.652s CPU smoke then10.753s actual CUDA. TCN's primary M1
+stress-cost mean loses to cash; linear is cash. No favorable cell/model is
+selected, no weights retained or Paper input. Exact contract/result pins and
+limitations belong to Research/Steward; child/container exited/GPU lock absent.
 
 Latest bounded Data package `843968d`: opt-in QQQ head retention follows up to
 four strictly older pages without changing SPY/defaults or historical cursors.
-Main123 focused tests and independent final review pass. After19:10Z QQQ head
-conflict quarantine and one token-guard deferral,19:15:31Z retained480 QQQ rows,
-345/390 regular minutes with45 still-future trailing minutes. SPY conflict
-quarantined/no new rows, so shell exit1 is not QQQ failure. Original bytes remain;
-no full-session/finality claim. Exact paths/hashes and limitations belong to Data.
+Main123 focused tests and independent final review pass. Latest20:44:33Z
+post-close capture quarantines QQQ minute_duplicate_conflict/zero new rows;
+SPY collects120 in7.276s/shell exit1. Earlier345-minute coverage is a historical
+receipt, not current-input qualification. Original bytes and the separate
+historical21 complete sessions remain; next owned head run06:20 KST is unchanged.
+No full-session/finality claim. Exact paths/hashes and limitations belong to Data.
+Data now owns a narrow same-candidate retention repair: after permitted exact
+old-head quarantine, persist markers/recheck fingerprints then retain the already
+fetched fresh page. No extra request/new worker/history reset; crash tests and
+independent review precede runtime reliance.
 Engine Research completed frozen-policy inference on six new-vintage ETF/month
 windows:126 cells/36 matched identities/zero fits,8.641s Docker CPU run.86 tests,
 independent review and exact RO readback pass. Both beat cash5/6, own-risk1/6,
