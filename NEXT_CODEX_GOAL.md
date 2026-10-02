@@ -35,8 +35,9 @@ Fresh explicit HTTP200/string1/no-ID rejection is terminal only via the new
 typed exception; malformed/ambiguous/legacy responses remain unknown. Strict
 JSON applies to acknowledgements too.874 changed-path serial tests pass;
 shared-core authority7,141/22 skips,310.47s/eight workers/clean helper;134
-boundary-focused tests, Ruff/both Compose pass. Narrow caller lock fix and
-compatible deployment/actual round trip still pending. The early failed
+boundary-focused tests, Ruff/both Compose pass. Narrow caller lock fix passes
+41 focused/278 integrated tests afterward; eight rebuilt consumers match32
+source hashes. Actual round trip still pending. The early failed
 authority run is not counted as verification.
 Data's actual two-page QQQ probe accepted two full pages and120 new nonoverlap
 older keys despite absent/unrecognized continuation headers. Default collection

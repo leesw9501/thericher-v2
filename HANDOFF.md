@@ -28,7 +28,10 @@ inventory adoption. Shared-core authority now passes7,141/22 skips in310.47s,
 eight workers/clean helper, Ruff/both Compose. The first34.20s run stopped on an
 obsolete fresh-rejection expectation and is not authority;134 boundary-focused
 tests pass after correcting only that fresh expectation. Independent review's
-post-visit caller lock fix is a separately focused package before runtime.
+post-visit caller lock fix now passes41 focused/278 integrated tests (overlap);
+it was tested after, not included in, the shared-core authority above. Eight
+rebuilt consumers match32 source hashes, session image
+`sha256:2e11369218db7cd8795fee042117bd898526e9eade5fdbe4a089f80f77509d6f`.
 Runtime is still pending; old SPY unknown is
 not reclassified or replaced. Data's actual two-request probe found120 new
 older QQQ minute keys despite missing continuation headers.45 focused tests;

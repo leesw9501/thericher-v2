@@ -28,8 +28,14 @@ found/fixed malformed acknowledgement bypass;244 focused/874 changed-path tests
 pass. Shared-core authority7,141/22 skips,310.47s/eight workers/clean helper;
 134 boundary-focused tests and Ruff/both sample-env Compose pass. First early
 run failed an old fresh-rejection expectation, not authority. Independent
-caller review found conservative post-visit clock/read race; its existing-lock
-repair and fresh image source checks precede runtime. Broker orderable funds
+caller review found conservative post-visit clock/read race; repaired using the
+same session->canary locks and clock sampled inside. Its41 focused/278 related
+tests pass after the shared-core authority, not inside that run. Eight rebuilt
+consumers match32 critical source hashes. Current daily-SPY/QQQ service image
+`sha256:2e11369218db7cd8795fee042117bd898526e9eade5fdbe4a089f80f77509d6f`.
+Fixed QQQ cycle `qqq-unit-20261003-v1`, opaque scope
+`sha256:1b82974f43481c6a5116e9ade47e32fa05317bca142bfa5f07f382642f0194ca`.
+Runtime pending. Broker orderable funds
 remain a provisional USD SPY-reference query, not exact QQQ-at-limit buying power.
 
 October3 isolated readiness package: `kis_paper_portfolio_budget.py` now
