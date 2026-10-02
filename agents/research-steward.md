@@ -5,6 +5,28 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October3 KST: closed `chronos2-tiingo-return-group-development-v1` after one
+CPU-first/CUDA zero-shot appointment,1,305 scored forecasts/126 fixed cells,
+30.163s reserved-attempt duration.72 parent controls reproduced. Existing
+Torch image/runtime unchanged; official Apache-2.0 external checkpoint acquired.
+Contract `sha256:8bc0cfc2708becd5bd01fc092ddaf332804f28b663fe2a8d5b630ea72de9194b`;
+summary `sha256:6cb6e776293d5e1287e0670c952a0072691983b6678b40adc04a69b4dba5da4b`.
+Root `D:\thericher-v2\model-artifacts\research\chronos2-tiingo-return-group-development-v1`.
+RTX4090 peak487,938,048 bytes, available-VRAM budget23,030,923,264;2 CPU/6GiB,
+900s supervisor held the canonical GPU lock through child reaping. Container
+exited/lock released, registry non_promoting_completed. No fitting, selected
+ensemble, saved predictions, holdout or Paper input. Research owns interpretation.
+The source-isolated runtime smoke is not another predictive allocation.
+No active GPU appointment. The independent CPU volatility-allocation appointment
+also closed:72 cells in3.949s,1 CPU/1GiB/600s, no fitting/weights/holdout.
+Contract `sha256:41129dfbf253a698528cd7b5568f8dfaaf1544a2dc95460a962187af5240cc81`;
+summary `sha256:9963b4dcaaab60392e7cd946dd253188c6da52f4bb44bccf6e2f9b4ef4b41151`.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-d1-volatility-allocation-development-v1`.
+Registry non_promoting_completed. Data's adjusted-field capability check is
+not a market campaign or GPU allocation; Research owns the next declared mechanism.
+Do not allocate depth training from a two-trade positive or fabricate work for
+utilization. Actual Claude weekly-limit failure is review_unavailable, not a verdict.
+
 Closed `timesfm-2p5-tiingo-intraday-return-development-v1`: one zero-shot
 CUDA inference on435 post-checkpoint ETF target dates,90 fixed policy/cost
 cells,31.213s including offline wheel install/startup. CPU controls preceded
@@ -20,9 +42,8 @@ Summary:
 Root: `D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1`.
 Dataset remains seen/non-PIT; exact dated-weight interpretation is in DECISIONS.
 Research owns the small-sample/cost-sensitive results; they do not reserve
-depth training or select SPY. Chronos-2 is next source/runtime preparation,
-not a frozen campaign or GPU reservation. No retained new weights/predictions,
-new model download, KIS call or Paper input followed.
+depth training or select SPY. The distinct Chronos-2 continuation is now closed
+above; TimesFM's own bytes/predictions/holdout state remain unchanged.
 
 Closed `firstrate-m5-single-session-h180-development-v1`: existing FirstRate
 SPY/QQQ, one EVAL decision per full session, H180, four CPU Ridge fits then16

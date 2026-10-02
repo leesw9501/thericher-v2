@@ -2,6 +2,39 @@
 
 ## Latest Bounded Research
 
+October3: `scripts/run_chronos2_return_development.py` completed its immutable
+one-pass comparison under the same pinned Torch image below. Use network none,
+read-only source/model/data, external artifacts writable,2 CPU/6GiB,900s and
+HF_HUB_OFFLINE/TRANSFORMERS_OFFLINE/HF_HUB_DISABLE_TELEMETRY/DO_NOT_TRACK=1.
+Direct local constructors/safetensors, no Hub loader or dependency replacement.
+Exactly one aligned origin per cross-series trio; isolated and duplicate-self
+controls.1,305 scored forecasts/126 cells/72 exact parent controls,30.163s from
+attempt reservation; code/asset/result readback passes. No training/selection.
+Root/pins/results in Engine Research; do not rerun its closed attempt.
+
+`scripts/run_tiingo_volatility_allocation_development.py` also completed once:
+TRAIN2001-2012,22 prior-session inverse variance, fixed daily flatten with
+TRAIN-risk-matched constant/long/cash controls.72 cells,3.949s reserved duration,
+1 CPU/1GiB/600s, network none; existing base image/source/data read-only mounts.
+All six20bps groups lose to risk-matched/cash. This daily adaptation does not
+reject a separate monthly holding mechanism. Exact pins belong to Research.
+
+Shared-runtime authority passed6,341/19 skips, eight workers,307.80s and clean
+helper exit;353 changed-path serial tests, Ruff/both sample-env Compose configs,
+eight rebuilt consumers/16 changed-source hashes pass. First equal-count run
+failed cleanup due a new synthetic hard-link fixture; fix only that fixture's
+own teardown, never relax the helper or delete retained failed roots.
+`C:\trpy\runs\r-07a471bd` is inactive/retained. GPU/CPU studies ran independently
+of this verification. Claude actual weekly-limit response is review_unavailable.
+
+Original-POST-date ID-less history now projects absent/unique/ambiguous/incomplete
+only; no ID adoption, terminal inference or broker retry. One owned read-only
+visit at15:24Z failed authentication before history; exact evidence in Execution.
+Do not retry the control with a missing same-client token or infer credentials
+are wrong from that category. Same unknown successor and existing schedules
+remain intact. Read-only recovery may retry after independent ready work, without
+a foreground cooldown sleep or new permission. The company objective stays open.
+
 `scripts/run_timesfm_return_development.py` reuses the immutable bounded supervisor:
 `--freeze` binds source metadata/code before rows are loaded;
 `--run --contract-sha256 <exact hash>` owns one finite attempt, never an

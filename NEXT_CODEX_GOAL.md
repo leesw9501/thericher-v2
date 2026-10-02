@@ -22,7 +22,38 @@ classification, plus these policy conflicts. It does not deploy an image,
 invoke a broker/task, fix the Paper state machine, train, or prove a pair result.
 See `HANDOFF.md` for the verified bootstrap and subsequent implementation work.
 
-## Current Progress (2026-09-25 KST)
+## Current Progress (2026-10-03 KST)
+
+The primary ID-less-history diagnostic package is implemented: original-POST-
+date candidate classification only, no adoption/terminal inference/repost/reset.
+353 changed-path serial tests pass. Eight Paper consumers rebuilt with16 matching
+source hashes. Shared authority passes after fixing a synthetic fixture's
+own hard-link teardown; the initial6,341-pass/19-skip run failed guarded cleanup
+and is not authority. Final6,341 passes/19 skips,307.80s, eight workers/clean
+helper exit, Ruff/both Compose configurations. Preserve the failed inactive root.
+One15:24:49Z diagnostic returned auth_rejected without history/control evidence;
+skip controls without the same client's valid token. Next retry one bounded
+read-only diagnostic through the named existing cycle owner,
+including known BUY/original-cancel history controls, before interpreting absence.
+Same unknown successor remains the only unresolved exit; no company closure.
+
+Independent Research completed matched official Chronos-2 CUDA inference:
+1,305 scored forecasts/126 cells/72 exact parent controls,30.163s, mixed small
+benefits and no robust winner. CPU22-session volatility-allocation adaptation
+completed72 cells/3.949s; all six20bps groups lose to TRAIN-risk-matched exposure
+and cash. Both are revised seen-data analytical work, not broker parity, fresh
+holdouts or Paper replacements. Exact contract/results are in Engine Research.
+No new tuning sweep, cost rescue or GPU-utilization training follows. Data checks
+existing adjusted-field retention/semantics for a distinct low-turnover overnight
+consumer, without acquisition or a frozen campaign yet.
+
+Existing Data owners now retain48 NAS/pair sessions through October1 and99 SPY
+head rows through that date. Intraday head still has no complete regular session.
+October2 23:50 budget owner returns no_intent/ownership conflict; next October5
+23:50 KST. No new order, schedule, funding reset or permission wait. Claude CLI
+weekly-limit failure is review_unavailable, not a substantive review verdict.
+
+## Retained Progress (2026-09-25 KST)
 
 Independent TimesFM2.5 Research completed435 real-data zero-shot forecasts
 and90 fixed policy/cost cells in31.213s CUDA time including startup. Fixed128

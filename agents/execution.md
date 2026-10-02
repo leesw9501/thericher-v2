@@ -14,6 +14,48 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October3 00:24 KST: new ID-less original-POST-date diagnostic is implemented
+and deployed to the existing eight Paper consumers. It returns only candidate
+status absent/unique/ambiguous/incomplete and counts, never historical IDs,
+state transitions, fills or permission. Existing open-ID recovery is unchanged;
+known-ID paths reuse the same complete fixed pagination. Unknown headers and
+malformed original-order kinds are incomplete.353 changed-path tests pass.
+Final full authority:6,341 passes/19 skips, eight workers,307.80s/clean helper
+exit; Ruff/both sample-env Compose configs and16 source hashes across eight
+images pass. First run's equal test count is NOT authority: its synthetic
+hard-link fixture left a link, triggering guarded cleanup failure. Only that
+fixture teardown was fixed; failed `C:\trpy\runs\r-07a471bd` is retained unchanged.
+Current session image:
+`sha256:09144e4bfc5e76f0d7f905f57f7996d39cd576d014f0717ed18614a047cc75c1`.
+
+One read-only original-date visit at15:24:49Z returned auth_rejected and
+unavailable; no historical candidate or known-order control result was observed.
+It made two token attempts because the one-off probe incorrectly tried its
+control after failed authentication; the probe now skips that control without a
+valid same-client token. No order route or private-state reclassification.
+Exact receipt under the existing cycle root below:
+`idless-history-20261002T152449454462Z.json`, SHA256
+`bf90f4be219ddd859d3f4d74bc89badb0511e38b60315b8a118e240570f51a72`.
+This does not prove invalid credentials, provider downtime or a cooldown cause;
+raw error bodies were not retained. Independent Data/Research continue without
+foreground waiting; another bounded owned read can retry after their handoff.
+
+The exact fresh offline read was14:57:29Z, with stable
+cycle/leg bytes, one persisted successor outcome_unknown/no identity, confirmed
+buy/full fill and original sell/cancelled-zero-fill. Snapshot14:56:07Z was available
+with SPY exposure and no open SPY order, not an exit or accounting close.
+Exact `offline-observation-20261002T145730093023Z.json`, SHA256
+`1d70e8ae6d908370425c74a2d912cc1e87568e3fdffbf7df70d01ac608a3f8e8`.
+October2 23:50 budget owner again returned no_intent/ownership conflict:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\daily-spy-20261002T145002150013Z\outcome.json`,
+SHA256 `b51731dc0e332406c30830633133f7dd7c1f9a95218da57cef73b3680e729382`.
+Ready/next_due October5 23:50 KST. No new submit/cancel/fill, adoption/reset or
+schedule change. Unknown exit identity, owned-flat/settled cash/fees/net PnL and
+company lifecycle closure remain unobserved. Claude weekly-limit response is
+review_unavailable, not agreement; exact categorical review pointer is in HANDOFF.
+
+The prior-scope observations below retain their original timestamps.
+
 September25 00:40 KST: the current10-percent strategy retry completed one
 owned visit with no_intent/existing_inventory_or_order_conflict. Fresh input
 and account reached the ownership check; no order, adoption, budget reset,

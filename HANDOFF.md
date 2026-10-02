@@ -21,6 +21,45 @@ Data measurement; it does not block Execution recovery or offline development.
 
 ## Continued Implementation (2026-09-22 KST)
 
+October2/3 continuation: disjoint Data inventory, Engine adapter/acquisition,
+independent adversarial tests/source review and CPU allocation implementation
+ran as temporary role agents. Actual Chronos-2 CUDA study completed1,305 scored
+forecasts/126 cells,72 exact TimesFM controls,30.163s reserved-attempt duration.
+Same-origin trio and duplicate-self placebo prevent cross-origin group leakage.
+Official120M Apache checkpoint acquired externally; existing Torch image/runtime
+unchanged. Mixed/tiny positive results do not select a model or Paper input.
+Independent22-session volatility-allocation CPU study completed72 cells in3.949s;
+at20bps all six groups lose to cash and TRAIN-risk-matched constant exposure.
+The daily-flatten adaptation is not a rejection of monthly holding. Exact tables,
+model/source and immutable campaign pins belong to Engine Research/Steward.
+
+Data inventory now has six NAS targets/QQQ-SPY pair at48 sessions through October1
+and99-row SPY head through that date. Intraday head retains96/97 chunks but no
+complete regular session; do not confuse this with the older21-session cursor.
+Current owners continue; no new schedule or collection scope. October2 23:50
+budget owner again produced no_intent/existing_inventory_or_order_conflict,
+not a submit/fill. Exact current receipt is in Execution.
+
+Execution adds original-POST-date ID-less history candidate counts only:
+absent/unique/ambiguous/incomplete. No historical ID adoption, terminal inference,
+order retry/reset or private identity/schema change.353 focused tests pass;
+malformed continuation/kind cases are closed as incomplete. Eight rebuilt Paper
+consumers match16 changed-source hashes. Shared-runtime authority is complete:
+first full run had6,341 passes/19 skips but failed guarded cleanup because a new
+synthetic hard-link test left its own link. Fixed that fixture's exact-link
+teardown, retained failed `C:\trpy\runs\r-07a471bd` untouched, and reran on a fresh
+child without weakening the helper. Final6,341 passes/19 skips,307.80s, eight
+workers and clean helper exit; Ruff/both sample-env Compose configs pass.
+Do not count the first run as authority.
+Claude CLI is review_unavailable/weekly limit, not support or approval;
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-idless-history-20261002.json`.
+The same unknown successor remains unresolved; this package does not close or
+replace the company objective. The15:24:49Z read-only diagnostic returned
+auth_rejected/unavailable before history/control evidence. Its one-off probe
+now skips controls without a valid same-client token; no order/state mutation.
+Exact receipt is in Execution. Continue independent preparation, then retry a
+bounded owned read with safe token-error categorization; never repost that leg.
+
 Current September25 Research continuation: TimesFM2.5 has now run on real
 SPY/QQQ/IWM data, not only synthetic inputs. Existing pinned weights made435
 zero-shot forecasts from128 past daily intraday returns to the next session's

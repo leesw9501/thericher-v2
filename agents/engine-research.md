@@ -15,7 +15,86 @@ Before a predictive campaign or GPU appointment, freeze its dataset, target,
 temporal split, feature availability, timeframe/window matrix, cost model,
 naive baseline, compute stop rule, artifact root, and strongest kill test.
 
-## Current Research State
+## Current Research State (2026-10-03 KST)
+
+Completed `chronos2-tiingo-return-group-development-v1`: official120M Chronos-2,
+same immutable Tiingo input/payoff and128 past signed intraday returns as the
+TimesFM reference below. Single-series, same-origin SPY/QQQ/IWM attention and
+duplicate-self placebo were frozen before inference. No group contains a later
+forecast origin. Fixed >20bps long/flat decisions;5/10/20bps round-trip accounting.
+145 origins,1,305 scored forecasts,126 cells; duplicate-self makes2,175 native
+output rows across725 calls. All72 parent controls/cohorts/naive metrics match.
+
+RTX4090 completed in30.163s from attempt reservation to summary (not container
+startup). Peak allocation487,938,048 bytes with23,030,923,264-byte VRAM budget.
+The existing Torch2.7.0+cu128 image was unchanged;2 CPU/6GiB/900s supervisor,
+network none, read-only source/data, canonical GPU lock released. One real-weight
+CPU synthetic smoke took5.352s. No fitting, fine-tuning, selected weights,
+retained predictions, sealed holdout, broker calls or Paper replacement.
+
+| Symbol / period | Targets | Isolated20bps mean / trades | Trio20bps mean / trades | Duplicate20bps mean / trades |
+| --- | ---: | ---: | ---: | ---: |
+| SPY Jan-Mar |61|0 /0|0 /0|0 /0|
+| SPY Apr-Jul |84|0 /0|+0.5253 /2|0 /0|
+| QQQ Jan-Mar |61|-0.3306 /1|-0.3306 /1|-0.3306 /1|
+| QQQ Apr-Jul |84|-7.0231 /19|-5.0106 /17|-7.0231 /19|
+| IWM Jan-Mar |61|0 /0|+1.0881 /2|0 /0|
+| IWM Apr-Jul |84|-1.8292 /4|-4.8339 /11|-1.8292 /4|
+
+These are mean analytical net bps per observed session, including flat days,
+not NAV, broker parity or realized PnL. Trio beats zero-return MSE in1/6 groups;
+isolated and duplicate do so in0/6. The duplicate placebo's identical accounting
+does not prove identical underlying forecasts. Mixed benefits and two-trade
+positives do not select a model, symbol, ensemble or threshold. Keep revised
+seen-data, correlated ETF/context, unknown corpus and assumed availability limits.
+
+Official Apache-2.0 model checkpoint95a9710 is dated October30 2025, before all
+2026 targets. Config/weight SHA256s are checked at load, direct safetensors and
+constructors only; no remote code/Hub lookup. Model root:
+`D:\thericher-v2\model-artifacts\foundation-models\chronos-2\95a9710e2596287d08352589f42634fa5abdf0a7`.
+Source/runtime evidence:
+`D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos2-runtime-20261002-v1\source-retrieval.json`
+and `runtime-verification.json` in the same directory. Existing runtime modules
+match official source/wheel; no dependency replacement. D: remains40.19% free.
+100 adapter and57 harness tests pass, plus52 matched TimesFM tests (209 combined).
+Independent source review found no blocker; exact immutable readback passed.
+Claude CLI returned review_unavailable/weekly limit, not agreement; no promotion
+or authority change relies on it.
+
+Campaign root:
+`D:\thericher-v2\model-artifacts\research\chronos2-tiingo-return-group-development-v1`.
+Contract `sha256:8bc0cfc2708becd5bd01fc092ddaf332804f28b663fe2a8d5b630ea72de9194b`.
+Summary `sha256:6cb6e776293d5e1287e0670c952a0072691983b6678b40adc04a69b4dba5da4b`.
+Registry non_promoting_completed; never rerun/retune this closed attempt.
+
+Completed CPU allocation track `tiingo-d1-volatility-allocation-development-v1`:
+one22-prior-session inverse-variance daily ETF adaptation, TRAIN2001-2012 median
+variance and risk-matched constant,2013-2019/2020-July2026 descriptive comparison.
+Each ETF has1,762/1,653 observed targets, no exclusions/censoring.72 cells,
+3.949s from reservation to summary,1 CPU/1GiB/600s/networkless supervisor.
+At20bps the six vol-managed mean nets range-14.4691 to-18.9007bps; every group
+loses to its TRAIN-risk-matched constant by4.8469-7.2387bps. Mean exposure is
+0.8092-0.9625; risk-control constants0.5275-0.6472. Lower losses than always-long
+do not establish an edge against risk-matched exposure or cash. Daily turnover
+cost is charged proportional to actual exposure; no cross-ETF independent-sample
+or NAV claim. This daily-flatten adaptation does not reject the original monthly
+factor result or a distinct low-turnover overnight holding mechanism.
+39 synthetic tests and independent source review pass; immutable readback passes.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-d1-volatility-allocation-development-v1`.
+Contract `sha256:41129dfbf253a698528cd7b5568f8dfaaf1544a2dc95460a962187af5240cc81`.
+Summary `sha256:9963b4dcaaab60392e7cd946dd253188c6da52f4bb44bccf6e2f9b4ef4b41151`.
+Registry non_promoting_completed; no fitting, saved weights or Paper input.
+Next Data preparation checks existing adjusted-price retention and source semantics
+before a separately declared low-turnover/overnight consumer. No new acquisition,
+predictive contract or campaign is implied by that capability check.
+Source proposals independently retrieved by the orchestrator:
+[volatility-managed portfolios](https://law.yale.edu/sites/default/files/area/workshop/leo/leo17_moreira.pdf),
+[same-clock intraday continuation](https://arxiv.org/abs/1005.3535),
+[Chronos-2 cross-series forecasting](https://arxiv.org/abs/2510.15821).
+The first and third are consumed by bounded packages; the intraday proposal
+needs its own source-local complete-session contract, not a new agent/backlog.
+
+## Closed TimesFM Reference
 
 Latest completed study: `timesfm-2p5-tiingo-intraday-return-development-v1`.
 The existing200M TimesFM2.5 checkpoint now consumed real market histories,

@@ -87,6 +87,7 @@ from .kis_readonly import (
     KisHttpResponse,
     KisHttpTransport,
     KisPaperConfig,
+    KisPaperIdlessHistoryObservation,
     KisPaperReadOnlyClient,
     KisPaperReadOnlyError,
     KisPaperReadOnlySnapshot,
@@ -732,6 +733,7 @@ class KisPaperCanaryReconciliation:
     reason_code: str | None = None
     recovered_broker_order_id: str | None = field(default=None, repr=False)
     execution: KisPaperExecutionObservation | None = field(default=None, repr=False)
+    idless_history: KisPaperIdlessHistoryObservation | None = None
 
     @property
     def position_count(self) -> int:
@@ -768,6 +770,11 @@ class KisPaperCanaryOutcome:
             "account_status": self.reconciliation.account_status,
             "position_count": self.reconciliation.position_count,
             "open_order_count": self.reconciliation.open_order_count,
+            "idless_history": (
+                None
+                if self.reconciliation.idless_history is None
+                else self.reconciliation.idless_history.safe_payload()
+            ),
         }
 
 
@@ -992,6 +999,21 @@ class KisPaperCanaryClient:
                     limit_price=state.intent.limit_price,
                 )
             )
+            idless_history = (
+                read_only_client.inspect_idless_order_history(
+                    order_at=order_at,
+                    symbol=state.intent.symbol,
+                    exchange=state.intent.exchange,
+                    side=state.intent.side,
+                    quantity=state.intent.quantity,
+                    limit_price=state.intent.limit_price,
+                )
+                if state.phase == "outcome_unknown"
+                and state.broker_order_id is None
+                and order_at is not None
+                and recovered_broker_order_id is None
+                else None
+            )
         except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
             return _unavailable_reconciliation(reason_code=_safe_reconciliation_reason_code(error))
         order_reference = (
@@ -1028,6 +1050,7 @@ class KisPaperCanaryClient:
             status=status,
             recovered_broker_order_id=recovered_broker_order_id,
             execution=same_day_order,
+            idless_history=idless_history,
         )
 
     def fetch_spy_quote(self) -> KisPaperSpyQuote:
@@ -2555,6 +2578,11 @@ def _write_evidence(
             "ccnl_row_count": reconciliation.ccnl_row_count,
             "matching_open_order": reconciliation.matching_open_order,
             "matching_ccnl": reconciliation.matching_ccnl,
+            "idless_history": (
+                None
+                if reconciliation.idless_history is None
+                else reconciliation.idless_history.safe_payload()
+            ),
         },
         "emergency": {
             "stop_new_orders": bool(getattr(emergency, "stop_new_orders", True)),

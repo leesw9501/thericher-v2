@@ -568,6 +568,22 @@ class _KisPaperOrderHistoryRows:
 
 
 @dataclass(frozen=True)
+class KisPaperIdlessHistoryObservation:
+    """Diagnostic candidates only; no recovered identity or terminal proof."""
+
+    status: Literal["absent", "unique", "ambiguous", "incomplete"]
+    row_count: int = 0
+    candidate_count: int = 0
+
+    def safe_payload(self) -> dict[str, str | int]:
+        return {
+            "status": self.status,
+            "row_count": self.row_count,
+            "candidate_count": self.candidate_count,
+        }
+
+
+@dataclass(frozen=True)
 class KisPaperReadOnlySnapshot:
     identity: KisPaperAccountIdentity
     cash: KisPaperCashSnapshot
@@ -902,6 +918,65 @@ class KisPaperReadOnlyClient:
             or _RAW_KIS_PAPER_ORDER_ID.fullmatch(raw_order_id) is None
         ):
             raise KisPaperReadOnlyError("order_id_invalid")
+        rows = self._read_order_date_rows(order_at=order_at)
+        return _KisPaperOrderHistoryRows(
+            row_count=len(rows),
+            direct_matches=tuple(
+                row for row in rows if _history_order_id_matches(row["odno"], raw_order_id)
+            ),
+            lineage_matches=tuple(
+                row for row in rows if _history_order_id_matches(row.get("orgn_odno"), raw_order_id)
+            ),
+        )
+
+    def inspect_idless_order_history(
+        self,
+        *,
+        order_at: datetime,
+        symbol: str,
+        exchange: str,
+        side: Literal["buy", "sell"],
+        quantity: Decimal,
+        limit_price: Decimal,
+    ) -> KisPaperIdlessHistoryObservation:
+        """Count original-order candidates on the persisted POST date, without adoption."""
+
+        order_date = (
+            require_utc(order_at).astimezone(ZoneInfo("America/New_York")).strftime("%Y%m%d")
+        )
+        identity = (order_date, symbol, exchange, {"buy": "02", "sell": "01"}[side], "USD")
+        fields = ("ord_dt", "pdno", "ovrs_excg_cd", "sll_buy_dvsn_cd", "tr_crcy_cd")
+        try:
+            rows = self._read_order_date_rows(order_at=order_at)
+            count = 0
+            for row in rows:
+                if any(not isinstance(row.get(key), str) or not row[key] for key in fields):
+                    raise KisPaperReadOnlyError("ccnl_response_incomplete")
+                if tuple(row[key] for key in fields) != identity:
+                    continue
+                kind, original = row.get("rvse_cncl_dvsn"), row.get("orgn_odno")
+                if (
+                    not isinstance(kind, str)
+                    or kind not in {"00", "01", "02"}
+                    or not isinstance(original, str)
+                ):
+                    raise KisPaperReadOnlyError("ccnl_response_incomplete")
+                if kind != "00" or original.strip("0"):
+                    continue
+                requested = _response_decimal(row, "ft_ord_qty", "ccnl_response_incomplete")
+                price = _response_decimal(row, "ft_ord_unpr3", "ccnl_response_incomplete")
+                count += requested == quantity and price == limit_price
+            return KisPaperIdlessHistoryObservation(
+                status="absent" if count == 0 else "unique" if count == 1 else "ambiguous",
+                row_count=len(rows),
+                candidate_count=count,
+            )
+        except KisPaperReadOnlyError:
+            return KisPaperIdlessHistoryObservation(status="incomplete")
+
+    def _read_order_date_rows(self, *, order_at: datetime) -> tuple[Mapping[str, Any], ...]:
+        """Complete the same fixed bounded query before any identity interpretation."""
+
         normalized_order_at = require_utc(order_at, "order_at")
         access_token = self._access_token or self._issue_access_token()
         eastern_date = normalized_order_at.astimezone(ZoneInfo("America/New_York")).strftime(
@@ -924,9 +999,7 @@ class KisPaperReadOnlyClient:
             "CTX_AREA_FK200": "",
         }
         continuation_header = ""
-        row_count = 0
-        direct_matches: list[Mapping[str, Any]] = []
-        lineage_matches: list[Mapping[str, Any]] = []
+        rows: list[Mapping[str, Any]] = []
         for _page in range(KIS_PAPER_SAME_DAY_ORDER_ID_MAX_PAGES):
             response = self._read_only_get(
                 KIS_PAPER_SAME_DAY_ORDER_ID_ENDPOINT,
@@ -951,19 +1024,12 @@ class KisPaperReadOnlyClient:
                     or _RAW_KIS_PAPER_ORDER_ID.fullmatch(candidate) is None
                 ):
                     raise KisPaperReadOnlyError("ccnl_response_incomplete")
-                row_count += 1
-                if _history_order_id_matches(candidate, raw_order_id):
-                    direct_matches.append(row)
-                original_order_id = row.get("orgn_odno")
-                if _history_order_id_matches(original_order_id, raw_order_id):
-                    lineage_matches.append(row)
+                rows.append(row)
             continuation = response.header("tr_cont").strip().upper()
+            if continuation not in {"", "D", "E", "M", "F"}:
+                raise KisPaperReadOnlyError("ccnl_response_incomplete")
             if continuation not in {"M", "F"}:
-                return _KisPaperOrderHistoryRows(
-                    row_count=row_count,
-                    direct_matches=tuple(direct_matches),
-                    lineage_matches=tuple(lineage_matches),
-                )
+                return tuple(rows)
             query = {
                 **query,
                 "CTX_AREA_FK200": _response_text(

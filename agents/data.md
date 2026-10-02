@@ -11,7 +11,55 @@ resampling, manifests, temporal splits, and quality facts. It does not select
 strategies, fit models, or make execution decisions. KIS Paper market-data
 collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
-## Current Sources
+## Current Coverage (2026-10-03 KST)
+
+Data's read-only inventory at October2 23:38 KST found:
+- SPY strategy head:99 rows through October1, collected October2 22:15:02;
+  next owned refresh October5 22:15 KST. Exact manifest:
+  `D:\market_data\us_equities\kis_paper_private\daily-head\v1\snapshot=20261002T131502303890Z-be45f6ea8bdd-spy-ams-v1\manifest.json`,
+  SHA256 `65b83327698ba063656498d01290329424852ad42d26dee20f2e0de7c9ec2574`.
+- NAS forward: six targets at48 sessions through October1; since September25,
+  36 accepted pages and36 overlap-conflict observations across six runs.
+  48 whole-page revision snapshots retained. Latest consumer is deferred,
+  not a claim of zero collection. Next owner October3 06:40 KST.
+  Receipt `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20261001T214005252534Z-7a059e975ecf\receipt.json`,
+  SHA256 `99acd5f8cffd5c208ecbac888992913281ed0a7ae5382af9c28af097a13548e8`.
+- QQQ/SPY v2 forward:48 common sessions through October1;12 accepted pages
+  and12 overlap conflicts across six runs. Latest partial receipt does not
+  qualify the legacy input. Next owner October3 06:55 KST.
+  `D:\thericher-v2\model-artifacts\data\kis-paper-daily-pair-forward-v2\run=20261001T215509110716Z-8af295a3aaf84ba5\receipt.json`,
+  SHA256 `e002e50c4da219298352117d93b0b03652ee705ff03695963798415cb39def2f`.
+- Intraday head:96 QQQ/97 SPY chunks,12 added per symbol since September25;
+  October1 QQQ covers159/390 regular minutes, zero complete head sessions.
+  This is separate from the historical cursor's21 complete shared sessions.
+  Dispatcher completion is not complete coverage. Next owner October3 00:29 KST.
+  Capture `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261001T212002741954Z-f594abd6546ecada.json`,
+  SHA256 `f594abd6546ecadad36a9cf4226b7c4d513dab1e9c473c2f3a24226367bbb4ed`.
+
+No collector, broker call, scheduler or data acquisition was started by this
+inventory. Existing immutable Tiingo input supplied the matched Chronos-2
+development comparison; all435 target observations and72 parent controls were
+reproduced, without source mutation, new rights or Paper qualification. Exact
+Research result belongs to Engine Research. No operator data request arose.
+
+October3 00:22 KST adjusted-field capability check: all21,922 retained Tiingo
+raw rows preserve adjOpen/High/Low/Close, divCash and splitFactor, with no missing,
+null, invalid numeric, duplicate dates or adjusted-OHLC geometry failure.
+SPY8,438/QQQ6,896/IWM6,588 rows through August7 2026. Frozen canonical rows retain
+events but drop adjusted OHLC; do not change that frozen normalizer/snapshot.
+Raw files under that exact snapshot's `raw` directory verified SHA256:
+SPY `20663908257f2bbd1c3f58d4882d0f2ddb5417f0232c5e4eba798bebc9b948d1`,
+QQQ `e656fdadb140c06dd6228f8a87ccd092f3217a5f763f68a984e74c197e6c5554`,
+IWM `e01df2cb4a4efd3a9006d6d0327022fdb081ddfd6e08ef6da0b72364248eb2b4`.
+[Official Tiingo EOD documentation](https://www.tiingo.com/documentation/end-of-day)
+defines dividend/split-adjusted OHLC; historical adjustment can be revised.
+The linked exact CRSP method was unavailable, so a separate reader may describe
+adjClose ratios only as provider-adjusted return marks, not independently proved
+reinvestment, historical PIT or broker share/cash accounting. Never add divCash
+or splitFactor again to those adjusted ratios. No new data is needed through
+August7 for this distinct low-turnover proxy; no campaign/consumer exists yet.
+
+## Recorded Source Contracts
 
 The recorded source grades below describe their named consumers and completed
 contracts. Under the 2026-09-21 reset they do not prohibit a new development-only
