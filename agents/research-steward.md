@@ -5,6 +5,25 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October3 pooled-return CUDA appointment closed/non_promoting_completed:
+`kis-pooled-patch-return-development-v1`. Forty dated source pins and one
+three-fit/42-cell contract froze before labels;960 overlapping TRAIN windows
+from10 shared days, nine seen comparison days/72 decisions, no sealed spend.
+Six synthetic CPU smoke fits/zero actual fits preceded one ridge CPU fit and
+two CUDA fits, LSTM16/patch16 at128 epochs. Pinned Torch2.7.0+cu128 image,
+network none/2CPU/6GiB/swap0/300-second supervisor; exclusive canonical lock
+held through child reaping. Child/container exited/lock absent, no active
+appointment. Duration/peak VRAM were not instrumented; post-run display
+utilization is not training usage. No weights or checkpoint retained.
+Root `D:\thericher-v2\model-artifacts\research\kis-pooled-patch-return-development-v1`;
+contract `sha256:becd4875246e0c601d437b0af9f771dbab37961fa7c4c7631a3e674146b510bf`;
+CPU `sha256:2584f7d3756330a8b4d2902c02b46bc0da1a955cf8b0ff5bedfa2319beff3a55`;
+CUDA `sha256:80ea4b867b544ddee3b42a88690a512aaba1c45e4d2d49c9bd4715cde5b843a0`.
+153 pinned-runtime tests/zero skips, independent source review and exact RO
+42-cell replay pass. Research owns the all-flat/predeclared kills; no depth,
+ensemble or Paper allocation follows. Current-source optional SPY custody
+does not relabel earlier downside contract hashes.
+
 October3 dated QQQ downside CPU package closed/non_promoting_completed:
 `kis-qqq-dated-downside-development-v1`, one quantile-tree/one linear fit,
 18 development cells; no GPU appointment, retained weights or sealed spend.

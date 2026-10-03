@@ -15,12 +15,12 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / downside CPU and patch preparation closed | Two real fits/18 cells/zero tree trades trigger the primary kill;66 focused tests/final review/actual CPU/RO readback complete. Separate completed-patch builder leaves old IDs/defaults unchanged;59 pinned Torch CPU tests/final independent review pass. No patch campaign/GPU/holdout/Paper input; a distinct pooled/transfer contract follows actual matched input, not downside retuning. |
+| Research | Engine Research / pure time-of-day feature preparation owned | Pooled-return three fits/42 cells closed, all learned policies flat/all frozen kills;153 pinned-runtime tests/RO replay pass. One original14-prior-session open-move band helper/tests prepares a distinct mechanism, no targets/fits/GPU/Paper. Old outcomes/defaults unchanged. |
 | Independent Paper readiness | Execution / deployed exact-orderability and one owned opportunity | Independent review/535 serial/full authority pass;8 consumers/40 baked hashes match. New23:04:20Z one-auth/one-GET synthetic-price diagnostic accepted; not actual-limit funds/old rejection explanation. Next_due October6 00:20 KST fixed-tag unit cycle/00:45 chat follow-up, unchanged. No actual tagged submit/fill; SPY unknown protected. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
-| Data collection / finite D1 measurement | Data / matched September panel complete | BothQQQ/SPY20 dates/7,800 regular minutes each verify all five timeframes. SPY80 accepted GETs/one token/88.676s/zero failures; all QQQ/legacy indexes unchanged. No active native collector. Ten new Data aliases match591 sources, no task/service/schedule/Paper-alias change; current owner next_due October6 00:29 KST unchanged. |
-| GPU | Research Steward / causal appointment closed | Two linear/LSTM CUDA fits finished; canonical lock absent/child reaped. Peak262,698,496 bytes; no runtime/permission block or active worker. No robust winner/depth grant; distinct CPU/Data preparation continues. |
-| Verification | Orchestrator / shared-runtime authority complete | Parent changed-path Data/core/patch184 passes/16.92s and pinned Torch59 passes/3.33s. Full8,186 passes/22 skips/35 warnings/317.40s/eight workers/clean helper matches8,208 collected tests. Ruff/both Compose pass;591 baked sources/ten Data aliases match. No active pytest owner. Earlier failed scratch untouched. |
+| Data collection / finite D1 measurement | Data / dated-close-key temporal reach owned | September20/October2 matched days complete. One bounded32-GET/one-client package checks QQQ/SPY May1/June1/July1/August3 close-derived keys in dedicated roots, preserving old indexes; partial/missing cannot become global history floor. Earlier midday probe did not answer this scope. Ten deployed aliases match923f2fb/591 sources; current owner next_due October6 00:29 KST unchanged. |
+| GPU | Research Steward / pooled-return appointment closed | LSTM/patch CUDA fits finished after ridge CPU; canonical lock absent/child reaped. Duration/peak not instrumented, no active worker or runtime/permission block. No robust winner/depth grant; broader-data preparation continues. |
+| Verification | Orchestrator / isolated research verified | Latest shared-source authority8,186 passes/22 skips/317.40s/eight workers/clean helper predates pooled-return package. That isolated package now153 focused/pinned-runtime passes20.75s/zero skips, source review and actual RO replay pass. Ruff/default+research Compose/diff check pass; no repeated full suite or active pytest owner. Earlier failed scratch untouched. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -45,9 +45,11 @@ retuned. Its online-mixture campaign now uses completed prior losses and a
 separate continuous mixed ledger. Small fragile seen-data gains do not become
 independent evaluation or Paper qualification.
 
-Current reversible improvement: reuse the measured dated-minute path with
-independent per-session storage and one client/token, expanding useful research
-input without repeating midday probes or resetting existing owners. Compact
+Current reversible improvement: extend measured dated-close-key reach to four
+fixed earlier monthly contexts with one reusable client and dedicated storage,
+rather than retune all-flat September results or repeat the answered midday
+probe. This prepares useful broader TRAIN coverage without resetting owners.
+Compact
 HANDOFF preserves current facts; superseded1,801-line history remains in Git at
 50d162a. The one company objective/unknown SPY/fixed QQQ tag stay unchanged.
 

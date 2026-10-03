@@ -17,6 +17,38 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+The pooled return campaign is complete/non_promoting_completed:
+`kis-pooled-patch-return-development-v1`. Forty exact QQQ/NAS and SPY/AMS
+dated sources freeze before labels. Ten shared TRAIN days provide960 overlapping
+M5/120-minute windows; September17 is embargoed and nine seen comparison days
+provide72 decisions. These are10/9 shared blocks, not960 independent examples.
+TRAIN-only normalization; next M1 OPEN entry, OPEN30 minutes later exit.
+One pooled ridge CPU fit precedes one LSTM16 and one completed-patch16 CUDA
+fit, fixed seed107/128 epochs,6bps decision hurdle. Seven fixed policies,
+two ETFs and3/4.5/6bps per side form42 cells under one300-second appointment.
+Six synthetic CPU smoke fits are separate from the three actual fits.
+All three learned policies and TRAIN-mean control emit zero comparison trades.
+Patch stress net and increments versus ridge/LSTM are0 unit bps; every frozen
+kill applies, including ETF/shared-day deletion. Momentum and always-long lose
+after stress costs. No profitable candidate, threshold rescue, selected ensemble,
+weights, sealed spend or Paper input. Capacity/feature-exchangeability confounds,
+revised/seen data and unobserved PIT/finality remain explicit.
+Actions are sealed as an immutable tuple/hash in memory BEFORE comparison
+payoffs; there is no separate durable pre-payoff receipt. Exact read-only
+source/contract/cohort/action/fee/42-cell replay passes, but unretained learned
+inference cannot be independently reconstructed. Pinned Torch2.7.0+cu128,
+2CPU/6GiB/network none; canonical GPU lock held through supervisor reaping.
+Container exited/lock absent; duration/VRAM peak were not instrumented.
+153 focused tests pass locally and in the pinned Docker runtime20.75s/zero
+skips; independent source review supported-with-limits/no material P1/P2.
+Root `D:\thericher-v2\model-artifacts\research\kis-pooled-patch-return-development-v1`;
+contract `sha256:becd4875246e0c601d437b0af9f771dbab37961fa7c4c7631a3e674146b510bf`;
+smoke `sha256:2584f7d3756330a8b4d2902c02b46bc0da1a955cf8b0ff5bedfa2319beff3a55`;
+CUDA `sha256:80ea4b867b544ddee3b42a88690a512aaba1c45e4d2d49c9bd4715cde5b843a0`.
+The metadata reader's optional SPY target leaves QQQ defaults/old contracts
+unchanged. Latest8,186-test authority predates this isolated package; focused
+verification covers it, not a claim of a repeated full suite.
+
 The dated QQQ downside-hurdle CPU campaign is complete, not a winner:
 `kis-qqq-dated-downside-development-v1`. Twenty September2-30 sessions bind
 exact dated indexes/manifests/raw hashes; ten TRAIN sessions/40 examples,

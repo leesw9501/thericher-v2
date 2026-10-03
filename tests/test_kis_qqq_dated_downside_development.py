@@ -336,6 +336,33 @@ def test_freeze_source_projection_metadata_only_exact_twenty_dates(metadata):
         )
 
 
+def test_metadata_optional_target_preserves_qqq_default_and_spy_custody(metadata):
+    indices, pins = metadata
+    assert cli.source_metadata(Path("/synthetic"), pins) == cli.source_metadata(
+        Path("/synthetic"), pins, target=("QQQ", "NAS")
+    )
+    for day, index in indices.items():
+        state = index["targets"][0]
+        state.update(target_key="SPY/AMS/1m", symbol="SPY", exchange="AMS")
+        for chunk in state["chunks"]:
+            chunk["chunk_key"] = _legacy_chunk_key(
+                target_key=state["target_key"], input_cursor=chunk["input_cursor"]
+            )
+        pins[str(day)] = r.digest(r.encode(index))
+    sources = cli.source_metadata(Path("/synthetic"), pins, target=("SPY", "AMS"))
+    assert all(s["root"].startswith("spy-") for s in sources)
+    assert all(s["dataset_id"] == "kis.paper.private.intraday.spy.ams.m1.v1" for s in sources)
+    with pytest.raises(ValueError):
+        cli.source_metadata(Path("/synthetic"), pins)
+
+
+@pytest.mark.parametrize("target", (("SPY", "NAS"), ("QQQ", "AMS"), ["QQQ", "NAS"], None))
+def test_metadata_unknown_target_rejected_before_reads(monkeypatch, target):
+    monkeypatch.setattr(cli.h, "_read", lambda *_: pytest.fail("unknown target read"))
+    with pytest.raises(ValueError, match="target"):
+        cli.source_metadata(Path("/synthetic"), {}, target=target)
+
+
 def _split_recovered_index(index, day):
     state = index["targets"][0]
     original = state["chunks"][0]
@@ -380,9 +407,9 @@ def test_partial_then_recovered_two_chunks_keep_full_480_lineage(metadata, monke
     observed = []
     validator = cli._validate_dated_qqq_state
 
-    def validate(index, *, session_date, observed_at):
+    def validate(index, *, session_date, observed_at, target=("QQQ", "NAS")):
         observed.append((session_date, observed_at))
-        return validator(index, session_date=session_date, observed_at=observed_at)
+        return validator(index, session_date=session_date, observed_at=observed_at, target=target)
 
     monkeypatch.setattr(cli, "_validate_dated_qqq_state", validate)
     source = next(s for s in cli.source_metadata(Path("/synthetic"), pins) if s["date"] == str(day))

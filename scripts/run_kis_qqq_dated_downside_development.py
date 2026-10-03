@@ -86,7 +86,8 @@ def paths(artifacts, inputs):
     return output
 
 
-def source_metadata(inputs, pins):
+def source_metadata(inputs, pins, *, target=("QQQ", "NAS")):
+    require(type(target) is tuple and target in (("QQQ", "NAS"), ("SPY", "AMS")), "target")
     require(
         type(pins) is dict
         and set(pins) == {str(d) for d in r.DATES}
@@ -95,21 +96,21 @@ def source_metadata(inputs, pins):
     )
     sources = []
     for day in r.DATES:
-        relative = kis_paper_qqq_dated_session_cache_root(day).name
+        relative = kis_paper_qqq_dated_session_cache_root(day, target=target).name
         root = inputs / relative / "v1"
         raw = h._read(root / "index.json", limit=INDEX_LIMIT)
         require(digest(raw) == pins[str(day)], "index_changed")
         index = json.loads(raw, object_pairs_hook=h._object, parse_constant=h._invalid_constant)
         metadata = data.validate_kis_paper_private_intraday_v1_index_metadata(
-            index, expected_targets=(("QQQ", "NAS"),)
+            index, expected_targets=(target,)
         )
-        target = metadata.targets[0]
-        require(bool(target.retained_chunks), "source_empty")
-        observation = max(c.collected_at for c in target.retained_chunks)
-        _validate_dated_qqq_state(index, session_date=day, observed_at=observation)
+        retained = metadata.targets[0]
+        require(bool(retained.retained_chunks), "source_empty")
+        observation = max(c.collected_at for c in retained.retained_chunks)
+        _validate_dated_qqq_state(index, session_date=day, observed_at=observation, target=target)
         lineage, manifests, observed = [], {}, {}
         previous_minimum = None
-        for chunk in target.retained_chunks:
+        for chunk in retained.retained_chunks:
             instants = tuple(data._korea_timestamp_key_to_utc(stamp) for stamp, _ in chunk.rows)
             local = tuple(t.astimezone(US_EQUITY_EASTERN) for t in instants)
             require(
@@ -157,7 +158,7 @@ def source_metadata(inputs, pins):
             manifest = h._json(path, manifest_pin)
             _, declared_raw = data._validate_manifest(
                 manifest=manifest,
-                target=data.KisPaperPrivateIntradayTarget("QQQ", "NAS"),
+                target=data.KisPaperPrivateIntradayTarget(*target),
                 chunk=chunk,
             )
             require(declared_raw == raw_pin, "manifest_raw_binding")
@@ -171,7 +172,7 @@ def source_metadata(inputs, pins):
                 date=str(day),
                 root=relative,
                 index_sha256=pins[str(day)],
-                dataset_id="kis.paper.private.intraday.qqq.nas.m1.v1",
+                dataset_id=f"kis.paper.private.intraday.{target[0].lower()}.{target[1].lower()}.m1.v1",
                 dataset_sha256=data._dataset_hash(index_bytes=raw, lineage=lineage),
                 manifests=manifests,
             )

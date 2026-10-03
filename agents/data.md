@@ -13,6 +13,22 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
+The bounded October1/2 context extension is complete for QQQ/NAS and SPY/AMS:
+four independent date/symbol scopes,16 GETs/one client/token/17.976s, no retry
+or next_due. Each source verifies390/78/39/6/2 regular input bars. All September,
+June/head indexes and frozen acquisition sources stayed unchanged. Parent
+independently reopens exact indexes/manifests/raw sources, verifies dated custody,
+source catalog and `require_complete_kis_paper_private_intraday_session` slice
+IDs/hashes and all timeframes. A session-slice identity differs intentionally
+from the feature adapter's selected-sessions identity; do not conflate them.
+The writer's original expression is not attested, but the declared slice fields
+now independently recompute. Revised/seen later calendar data, not fresh holdout,
+decision-time/PIT/finality or Paper evidence. Exact immutable direct receipt:
+`D:\thericher-v2\model-artifacts\data\kis-paper-spy-dated-panel\october-20261001-02-four-scopes-20261003T014554040014Z-e3a898f0999b.json`,
+SHA256 `bcb6e79048c62823235a3f179b92dd62c19439d8472cd1b93eec25e9cc41a9fe`.
+This adds two shared session blocks/1,560 regular minutes, not four independent
+market days. September remains the separate frozen input for the next study.
+
 Matched SPY/AMS September2-30 retention is now canonically complete:20 dates,
 9,600 native/7,800 regular M1 rows; M1/M5/M10/H1/H3 totals7,800/1,560/780/120/40.
 One client/token,80 accepted GETs/zero categorical failures,88.676s; no retry,

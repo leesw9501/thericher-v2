@@ -91,6 +91,21 @@ answered scope; exact complete/index/readback receipts belong to Data.
 
 ## Latest Bounded Research
 
+`scripts/run_kis_pooled_patch_return_development.py` completed `--freeze`,
+`--cpu-smoke`, `--cuda` and exact RO `--verify`. Only freeze accepts both
+`--qqq-index-pins` and `--spy-index-pins`; later modes require the contract pin,
+CUDA also the smoke-summary pin, verify the CUDA-summary pin. Existing pinned
+Torch2.7 image/network none/2CPU/6GiB/swap0/300-second supervisor, source/data RO,
+exact external study and existing ledger RW for dispatch. CUDA alone gets
+`--gpus all`, CUBLAS deterministic config and canonical GPU-lock directory RW.
+All verify mounts are RO/no GPU/no fitting.153 pinned-runtime tests pass.
+Forty sources/960 overlapping TRAIN windows/72 decisions/42 cells; ridge CPU
+then LSTM/patch CUDA, six separate synthetic smoke fits. All three policies
+remain flat and every predeclared kill applies. Do not rerun, retune the hurdle,
+retain rescue weights or claim Paper qualification. Actions seal in memory
+before comparison payoff computation; no durable pre-payoff receipt or learned
+inference reconstruction is claimed. Exact root/pins belong to Research boards.
+
 `scripts/run_kis_qqq_dated_downside_development.py` completed metadata-only
 `--freeze`, synthetic `--cpu-smoke`, two-fit/18-cell `--cpu`, and exact RO
 `--verify` on the20-session QQQ dated panel. Pass index pins only to freeze;

@@ -77,8 +77,16 @@ not expand live authority or reset capital.
    Preserve source pins/costs/kills; no tuning rescue or Paper/holdout claim.
    The separate completed-patch/channel-independent Torch preparation now
    passes59 pinned CPU tests/final review with old IDs/defaults unchanged.
-   Use the actual matched QQQ/SPY panel for a distinct frozen pooled/transfer
-   hypothesis, not a relabeled downside rerun, selected ensemble or GPU filler.
+   The distinct pooled-return campaign now completed metadata freeze, six
+   synthetic CPU smoke fits and three actual fits (ridge CPU, LSTM/patch CUDA)
+   on40 dated sources:960 overlapping TRAIN windows/ten shared days, embargo
+   September17,72 decisions/nine seen comparison days,42 cells. All three
+   learned policies remain flat; every frozen kill applies.153 pinned-runtime
+   tests/zero skips, independent source review and exact RO42-cell readback
+   pass. No threshold rescue, selected ensemble, weights, holdout or Paper
+   input. Exact pins belong to Research boards. Prefer a distinct mechanism
+   and useful broader temporal coverage over another seen-data architecture
+   sweep. The company Paper objective remains OPEN.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download

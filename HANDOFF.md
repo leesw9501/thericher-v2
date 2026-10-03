@@ -94,11 +94,15 @@ Matched SPY/AMS September2-30 is also complete:20 dates/7,800 regular minutes,
 same five-timeframe totals,80 accepted GETs/one token/88.676s/zero failures.
 All September QQQ and legacy indexes stayed unchanged. The pair has20 shared
 market-session blocks, not40 independent samples. Exact receipts belong to Data.
+October1/2 adds two matched later session blocks/1,560 regular minutes,
+16 GETs/one token/17.976s, preserving all September/legacy bytes. Parent exact
+source/day-slice/resampling readback passes. This is revised/seen context,
+not fresh holdout; exact receipt and slice-vs-selected identity note belong to Data.
 
 Tiingo standard EOD SPY/QQQ/IWM acquisition retained945 rows/315 per ETF from
 one new July2025-September2026 vintage. Do not splice adjusted vintages.
 Market data remains D:\market_data; artifacts D:\thericher-v2\model-artifacts
-(/app/model_artifacts in Docker). D: free40.2 percent/C:25.9 percent at23:11Z.
+(/app/model_artifacts in Docker). D: free40.2 percent/C:25.46 percent at01:40Z.
 Preserve15-percent D: floor. Test scratch prefers measured-fast local C:\trpy.
 
 ## Research And Resources
@@ -135,9 +139,17 @@ Metadata geometry/cursor custody/first-creation defects are repaired and
 independently reviewed;66 focused tests and exact RO result verification pass.
 No weights, GPU, holdout, retuning or Paper input. Exact pins belong to Research.
 Separate completed-patch/channel-independent Torch preparation passes59 pinned
-CPU tests/final independent review. Old model IDs/defaults are unchanged; no
-new patch campaign/training/promotion is claimed. Freeze the next distinct
-pooled/transfer hypothesis on actual matched inputs before labels or fits.
+CPU tests/final independent review; old model IDs/defaults remain unchanged.
+The distinct pooled-return campaign now freezes40 September QQQ/SPY sources,
+then runs six synthetic CPU smoke fits and three actual fits: ridge CPU followed
+by LSTM/patch CUDA. Ten shared TRAIN days/960 overlapping M5/120-minute windows,
+one embargo day/nine seen comparison days/72 decisions,42 cost cells. All three
+learned policies remain flat; stress net/increments0 unit bps trigger all frozen
+kills. No threshold rescue, winner, weights, holdout or Paper input.153 pinned
+runtime tests/zero skips and exact source/cohort/action/fee/math readback pass.
+Actions seal in memory before comparison payoffs, not a separate durable receipt;
+unretained learned inference is not reconstructed. Canonical appointment closed,
+duration/VRAM peak not instrumented. Exact pins belong to Research stateboards.
 
 Public mechanisms were independently re-retrieved from primary papers/repos.
 TimesFM2.5 Apache weights are already used;3.0 non-production rights are not
@@ -156,6 +168,8 @@ Ruff/default and research Compose pass. The earlier mixture run passed assertion
 but failed hardlink cleanup; it is not authority. Only the test's exact alias
 cleanup was repaired; C:\trpy\runs\r-73d1a88d remains untouched.
 Weekly serial compatibility6,341 passes/19 skips predates those additions.
+The later isolated pooled-return package has153 focused local/pinned Docker
+passes; the8,186-test authority above predates it. No repeat full suite is claimed.
 
 At company/shared-runtime integration follow AGENTS.md: changed-path serial,
 scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and both sample-env
