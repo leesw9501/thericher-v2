@@ -5,6 +5,21 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October3 dated QQQ downside CPU package closed/non_promoting_completed:
+`kis-qqq-dated-downside-development-v1`, one quantile-tree/one linear fit,
+18 development cells; no GPU appointment, retained weights or sealed spend.
+Metadata-only source/dated-frontier freeze preceded four synthetic smoke fits
+(zero actual fits), then the two actual fits. Existing pinned Torch/sklearn
+image,2CPU/2GiB/network none/120-second parent supervisor; child/container
+reaped. Exact read-only source/contract/result math verification passes.
+Root `D:\thericher-v2\model-artifacts\research\kis-qqq-dated-downside-development-v1`;
+contract `sha256:09f4e730df8dc72f9232c48849eb7b7ef787fd446eceea094ee52e4e6e1aa5aa`;
+smoke `sha256:5cb12caa42ac1507900fcc30189770d449508300876dacd0cd0ac4cd1ab8fa85`;
+CPU `sha256:e86d393a71691a3493a590275ef5fd6b67927890a609fe942a5f0ced04127ed0`.
+No exact worker duration/peak was instrumented. Research owns its zero-trade
+stress-net kill; this is not a depth, ensemble or Paper allocation.66 focused
+tests/final independent review cover the isolated launcher repairs.
+
 October3 causal-mixture CUDA appointment closed/non_promoting_completed:
 `tiingo-causal-expert-mixture-development-v1`,two pooled linear/LSTM fits,
 144 development cells/no sealed spend. Fixed source/data/timing/rate/cost/kill

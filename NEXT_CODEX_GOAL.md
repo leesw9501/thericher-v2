@@ -71,9 +71,10 @@ not expand live authority or reset capital.
    research contract only when an additional usable dated panel is verified.
    That panel is now verified. The distinct CPU downside-hurdle package uses
    ten TRAIN sessions/one embargo/nine comparison blocks, fixed M5/120-minute
-   context, two fits/18 cells. Repair the independently found480/390 metadata
-   scope and missing dated custody checks before actual freeze/CPU execution;
-   preserve all source pins, costs and predeclared kills. No Paper/holdout claim.
+   context, two fits/18 cells, and is complete after geometry/cursor/creation
+   repairs,66 focused tests/final review and exact RO readback. The quantile
+   tree makes zero trades/stress net0 unit bps; its predeclared kill applies.
+   Preserve source pins/costs/kills; no tuning rescue or Paper/holdout claim.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download
@@ -87,7 +88,8 @@ not expand live authority or reset capital.
    The isolated probe established a useful September1 interval, not a history
    floor. Its subsequent independent retention now verifies480 native/390
    regular QQQ minutes and390/78/39/6/2 input timeframes, four GETs/one token.
-   Ten Data aliases match589 baked source files; no schedule/default-scope change.
+   Final Data publication matches591 baked source files across ten aliases;
+   no task/service invocation or schedule/default-scope/Paper-alias change.
    The finite September2-30 QQQ panel now adds20 complete regular sessions/
    7,800 M1 bars and1,560 M5/780 M10/120 H1/40 H3 bars. First limit preserved
    accepted prefixes; recovery skipped complete dates,59 GETs/one token/64.956s.

@@ -40,6 +40,11 @@ SHA256 `a5dba46f82cf332a30458a89a15a3acd73998e3a351ff287ed6cf05dd316e140`;
 SHA256 `13f6dffb3fab22c747e7f8c6d6fa1e5acc4fef526fa3af680979f682e037ac65`.
 Readback reopens exact indexes/immutable manifests/raw hashes through the existing
 loader and complete-session/resampling APIs, not a latest-artifact scan.
+Final Data publication matches591 baked Python/PowerShell files across ten
+existing aliases, image
+`sha256:1d859db1eb2da6a88589d903ccde6ee5cf837146ff315a5aef9cdcc355c5db4e`.
+No task/service invocation, schedule change or Paper-alias publication occurred.
+The earlier589-file attestation is historical, not this current source snapshot.
 
 Latest independently scoped September1 QQQ/NAS retention completed at23:41:47Z:
 four minute GETs/one token,480 unique rows/zero overlaps in5.217s. Existing

@@ -17,6 +17,34 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+The dated QQQ downside-hurdle CPU campaign is complete, not a winner:
+`kis-qqq-dated-downside-development-v1`. Twenty September2-30 sessions bind
+exact dated indexes/manifests/raw hashes; ten TRAIN sessions/40 examples,
+September17 embargo and nine comparison sessions/36 decisions. Fixed M5
+120-minute context/four features/four daily anchors; entry next M1 OPEN,
+exit30 minutes later. One fixed quantile0.25 histogram tree and one logistic
+fit, six policies/3,4.5,6bps per side produce18 development cells. Four synthetic
+smoke fits are separate from the two actual fits. Network-none/2CPU/2GiB,
+120-second supervisor; no GPU, new dependency, weights or holdout spend.
+The tree emits zero trades, stress mean net0 unit bps: the predeclared
+nonpositive_stress_net kill applies. Mean increments versus linear/momentum
+are+0.929351784098/+6.029588453068 unit bps, representing avoided losses,
+not positive return. No threshold/parameter rescue, ensemble or Paper input.
+Exact read-only contract/source/cohort/action/fee/math verification passes;
+it cannot independently reconstruct unretained learned inference. One ETF,
+correlated small session blocks, revised seen data, assumed fees and unobserved
+PIT/provider finality remain limitations. Before actual freeze, independent
+review closed480-native/390-regular geometry and missing dated cursor custody
+faults; first-creation path regression is also covered.66 focused tests/5.25s
+and final independent source review pass. Data's earlier8,092-test authority
+predates these isolated repairs and is not their verification claim.
+Root `D:\thericher-v2\model-artifacts\research\kis-qqq-dated-downside-development-v1`;
+contract `sha256:09f4e730df8dc72f9232c48849eb7b7ef787fd446eceea094ee52e4e6e1aa5aa`;
+smoke `sha256:5cb12caa42ac1507900fcc30189770d449508300876dacd0cd0ac4cd1ab8fa85`;
+CPU `sha256:e86d393a71691a3493a590275ef5fd6b67927890a609fe942a5f0ced04127ed0`.
+Custody non_promoting_completed; child/container exited. Broader dated input
+and an independently specified mechanism are preferable to retuning this result.
+
 The distinct causal four-expert development campaign is complete: linear/LSTM16,
 12-month momentum and TRAIN-risk constant; uniform initial weights/fixed rate0.1,
 strictly prior completed-month feedback from continuous10bps expert ledgers,

@@ -84,6 +84,20 @@ or reset indexes. Exact first/complete/readback evidence belongs to Data.
 
 ## Latest Bounded Research
 
+`scripts/run_kis_qqq_dated_downside_development.py` completed metadata-only
+`--freeze`, synthetic `--cpu-smoke`, two-fit/18-cell `--cpu`, and exact RO
+`--verify` on the20-session QQQ dated panel. Pass index pins only to freeze;
+later modes bind the contract hash, CPU also the smoke-summary hash and verify
+the CPU-summary hash. No credentials/env-file, network, GPU or new dependency.
+Use existing pinned Torch/sklearn image with RO sources/input; only the exact
+external study and existing registry ledger are writable for dispatch. Verify
+mounts are all RO.2CPU/2GiB/120-second parent supervisor.66 focused tests and
+final independent review cover geometry/cursor/first-creation repairs.
+Tree emits zero comparison trades/stress net0 unit bps: preserve the primary
+kill. No overwrite, repeated fit, threshold rescue, holdout or Paper input.
+Exact root/contract/smoke/CPU hashes belong to Engine Research/Research Steward.
+Readback validates committed actions/fees/math, not unretained learned inference.
+
 The new pure `causal_expert_mixture` module separates target projection from
 feedback updates. The caller must provide strictly prior completed-loss UTC
 availability and advance its watermark; the helper does not observe completion,

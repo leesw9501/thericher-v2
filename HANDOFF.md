@@ -75,9 +75,9 @@ page. Partial/subtype unknown is not success, exhaustion or a provider rate cap.
 SPY120 is not a complete matched session. Direct capture is not Scheduler proof.
 
 Existing Data owner is Ready, next_due October6 00:29 KST. Earlier06:20 mixed/
-recovery receipt remains separate. Ten existing Data consumers match all589
-source files in the dated-session integration, image:
-sha256:7f305d50e7496d49c5ae7c29d95cd04c06fd34854313ff91789df5014705531f.
+recovery receipt remains separate. Ten existing Data consumers match all591
+source files in the dated-panel integration, image:
+sha256:1d859db1eb2da6a88589d903ccde6ee5cf837146ff315a5aef9cdcc355c5db4e.
 Publication invoked no task/service and changed no schedule or default scope.
 
 The isolated two-date probe returned120 September1 midday QQQ minutes and
@@ -124,10 +124,12 @@ TRAIN-risk control. No robust winner, BOA reproduction, holdout or Paper input.
 Independent readback verifies25 pins/144 fee identities/48 action-hash groups.
 Two numeric NPZs remain on D: with exact hashes/CPU reconstruction; Torch peak
 262,698,496 bytes. Appointment closed; exact evidence belongs to Research boards.
-The distinct QQQ downside-hurdle CPU package is preparing a two-fit/18-cell
-comparison on the dated panel. Independent review found a480-versus390 metadata
-scope error and missing dated cursor custody; repair before actual freeze/run.
-The Data panel is valid; this experiment fault does not hold independent Paper.
+The distinct QQQ downside-hurdle CPU campaign completed two fits/18 cells on
+ten TRAIN/one embargo/nine comparison sessions. Its tree makes zero trades;
+stress net0 unit bps triggers the predeclared kill, not a profitable model.
+Metadata geometry/cursor custody/first-creation defects are repaired and
+independently reviewed;66 focused tests and exact RO result verification pass.
+No weights, GPU, holdout, retuning or Paper input. Exact pins belong to Research.
 
 Public mechanisms were independently re-retrieved from primary papers/repos.
 TimesFM2.5 Apache weights are already used;3.0 non-production rights are not
@@ -140,7 +142,8 @@ Do not repeatedly invoke that unchanged failure or pause independent ready work.
 Latest dated-panel Data integration:231 changed-path Data passes; full8,092
 passed/22 skipped/35 warnings/321.26s/eight workers/clean helper exit. Research
 downside52 initial focused passes missed two source-review faults; its isolated
-repair needs focused retesting/review before execution, not company completion.
+repair now passes66 focused tests/final review and actual CPU/RO readback.
+The full Data run predates that isolated repair, not a claim of its coverage.
 Ruff/default and research Compose pass. The earlier mixture run passed assertions
 but failed hardlink cleanup; it is not authority. Only the test's exact alias
 cleanup was repaired; C:\trpy\runs\r-73d1a88d remains untouched.
