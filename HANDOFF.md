@@ -84,9 +84,12 @@ The isolated two-date probe returned120 September1 midday QQQ minutes and
 empty August3/partial, one token/two requests/zero daily. Raw rows discarded;
 no cursor/cache change. Do not infer a global history floor. The subsequent
 independently scoped September1 adapter retained480 QQQ rows with four GETs/
-one token in5.217s. Existing readers verify390 regular minutes and five
-timeframes390/78/39/6/2. No June/current-head reset or new scheduler; finality/PIT
-not_observed. Exact manifest/index/input hashes belong to agents/data.md.
+one token in5.217s. The subsequent September2-30 panel adds20 complete QQQ
+sessions/7,800 regular minutes, five-timeframe totals7,800/1,560/780/120/40.
+One rate-limited first attempt preserved five sessions and a prefix; recovery
+skipped them and finished in64.956s/59 GETs/one token. Fresh-process next_due
+now includes its token-start guard, never an in-memory-client sleep. No existing
+index reset or new schedule; finality/PIT not_observed. Exact evidence belongs to Data.
 
 Tiingo standard EOD SPY/QQQ/IWM acquisition retained945 rows/315 per ETF from
 one new July2025-September2026 vintage. Do not splice adjusted vintages.
@@ -121,6 +124,10 @@ TRAIN-risk control. No robust winner, BOA reproduction, holdout or Paper input.
 Independent readback verifies25 pins/144 fee identities/48 action-hash groups.
 Two numeric NPZs remain on D: with exact hashes/CPU reconstruction; Torch peak
 262,698,496 bytes. Appointment closed; exact evidence belongs to Research boards.
+The distinct QQQ downside-hurdle CPU package is preparing a two-fit/18-cell
+comparison on the dated panel. Independent review found a480-versus390 metadata
+scope error and missing dated cursor custody; repair before actual freeze/run.
+The Data panel is valid; this experiment fault does not hold independent Paper.
 
 Public mechanisms were independently re-retrieved from primary papers/repos.
 TimesFM2.5 Apache weights are already used;3.0 non-production rights are not
@@ -130,9 +137,11 @@ Do not repeatedly invoke that unchanged failure or pause independent ready work.
 
 ## Verification And Resume
 
-Latest dated/mixture integration:185 Data serial/156 research serial, final full
-8,014 passed/22 skipped/35 warnings/326.01s/eight workers/clean helper exit.
-Ruff/default and research Compose pass. The first full run passed assertions
+Latest dated-panel Data integration:231 changed-path Data passes; full8,092
+passed/22 skipped/35 warnings/321.26s/eight workers/clean helper exit. Research
+downside52 initial focused passes missed two source-review faults; its isolated
+repair needs focused retesting/review before execution, not company completion.
+Ruff/default and research Compose pass. The earlier mixture run passed assertions
 but failed hardlink cleanup; it is not authority. Only the test's exact alias
 cleanup was repaired; C:\trpy\runs\r-73d1a88d remains untouched.
 Weekly serial compatibility6,341 passes/19 skips predates those additions.

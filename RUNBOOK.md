@@ -72,6 +72,16 @@ cache/index/manifest and input pins belong to Data. Do not reseed a complete
 scope, replace June/current-head cursors, infer a global history floor or treat
 direct evidence as Scheduler/PIT/finality proof. No new task or schedule.
 
+`--session-date YYYY-MM-DD` now binds a closed regular2026 date, date-derived
+key and independent root. `--september-panel` predeclares September2-30's20
+sessions/at most80 GETs, one reusable client/token; never override its roots or
+dates. Preview performs no I/O. Execute skips canonical-complete caches and
+resumes exact per-date prefixes, yielding shared cooldown with next_due. Because
+this native process exits, reentry also needs fresh-token eligibility; this is
+not a token lifetime or an authenticated-client sleep. The panel already
+completed20/20 and verified7,800 regular minutes; do not rerun answered collection
+or reset indexes. Exact first/complete/readback evidence belongs to Data.
+
 ## Latest Bounded Research
 
 The new pure `causal_expert_mixture` module separates target projection from

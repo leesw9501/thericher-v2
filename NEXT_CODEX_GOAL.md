@@ -69,6 +69,11 @@ not expand live authority or reset capital.
    326.01s/eight workers/clean helper, Ruff/both Compose pass. Do not retune
    seen outcomes or create a new stateboard/runtime. Prepare a distinct finite
    research contract only when an additional usable dated panel is verified.
+   That panel is now verified. The distinct CPU downside-hurdle package uses
+   ten TRAIN sessions/one embargo/nine comparison blocks, fixed M5/120-minute
+   context, two fits/18 cells. Repair the independently found480/390 metadata
+   scope and missing dated custody checks before actual freeze/CPU execution;
+   preserve all source pins, costs and predeclared kills. No Paper/holdout claim.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download
@@ -83,10 +88,13 @@ not expand live authority or reset capital.
    floor. Its subsequent independent retention now verifies480 native/390
    regular QQQ minutes and390/78/39/6/2 input timeframes, four GETs/one token.
    Ten Data aliases match589 baked source files; no schedule/default-scope change.
-   Next ready package expands the proved path to a finite past-session QQQ
-   panel with one reusable serial client/token and exact per-date recovery,
-   preserving head/June cursors and original evidence. Data limitations stay
-   explicit; they do not create a general research/Paper approval hold.
+   The finite September2-30 QQQ panel now adds20 complete regular sessions/
+   7,800 M1 bars and1,560 M5/780 M10/120 H1/40 H3 bars. First limit preserved
+   accepted prefixes; recovery skipped complete dates,59 GETs/one token/64.956s.
+   All original indexes stayed unchanged. Canonical readback and exact source
+   metadata are in Data's stateboard. Data integration authority8,092 passes/
+   22 skips/321.26s/clean helper; no task/schedule or permanent throttle change.
+   Limitations do not create a general research/Paper approval hold.
 
 The independent QQQ synthetic-price orderability diagnostic received a typed
 accepted response at23:04:20Z, one auth/one GET/zero orders. This does not prove

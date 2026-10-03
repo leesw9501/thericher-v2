@@ -13,6 +13,34 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
+The finite September2-30 QQQ/NAS panel is now canonically complete:20 sessions,
+9,600 native/7,800 regular M1 rows; M1/M5/M10/H1/H3 totals7,800/1,560/780/120/40.
+Each independent `intraday-dated\qqq-YYYYMMDD` v1 cache binds its calendar date,
+closed regular session, initial close-minus-one-minute key and resumable frontier.
+First invocation retained five complete sessions/one120-row prefix:22 GET attempts,
+one token,24.468s, one recognized rate_limited response. Recovery skipped complete
+dates without changing bytes and finished with59 GETs/one token/64.956s. Across
+the two attempts,80 accepted pages/one failed request; no daily quota/history-floor
+claim or permanent pacing change. The measured one-second shared/collector pace
+remains; long cooldown yields. Fresh-process next_due now also accounts for its
+token-start guard, not a wait on an already authenticated in-memory client.
+Original June/head/September1 indexes stayed byte-unchanged. Finality/PIT remain
+not_observed; direct-worker source evidence is not Scheduler or Paper evidence.
+231 Data focused regression tests and independent reviews pass; integration
+authority8,092 passes/22 skips/35 warnings/321.26s/eight workers/clean helper.
+Exact immutable external evidence under
+`D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-panel`:
+first `september-20261003T002748463542Z.json`,
+SHA256 `7bc4b4aaa9ea50fed2ac319fca508de7dc5d4230baa2310add6b2ad00462a5a5`;
+complete `september-20261003T003421755991Z.json`,
+SHA256 `50450e2a19e0315eb52f76779ee4dc42b36eaf0e50430f7c40504e1f7b939270`;
+`september-index-pins-20261003.json`,
+SHA256 `a5dba46f82cf332a30458a89a15a3acd73998e3a351ff287ed6cf05dd316e140`;
+`september-canonical-readback-20261003.json`,
+SHA256 `13f6dffb3fab22c747e7f8c6d6fa1e5acc4fef526fa3af680979f682e037ac65`.
+Readback reopens exact indexes/immutable manifests/raw hashes through the existing
+loader and complete-session/resampling APIs, not a latest-artifact scan.
+
 Latest independently scoped September1 QQQ/NAS retention completed at23:41:47Z:
 four minute GETs/one token,480 unique rows/zero overlaps in5.217s. Existing
 canonical readers verify390/390 regular minutes and M1/M5/M10/H1/H3 counts
@@ -34,9 +62,8 @@ SHA256 `333d8863c63de0885c4d5bd76e94667ad3b87e9dde2aa1075142bc6e7df7f56b`;
 index `v1\index.json`,
 SHA256 `05ee1405aa68c8514988b124c696930ba62614259e618b6b45f2b75af7f9f8bf`;
 prepared input `sha256:82f211e67c9cfa5bce015d0edb36de3401fa84ec9b64ef7002d51438bda66483`.
-Next ready Data package expands this proved independent dated scope to a finite
-past-session QQQ panel, one serial reusable client/token with per-date recovery;
-no new task, arbitrary history-floor inference or research/Paper permission hold.
+The finite dated-panel extension is complete as recorded above. Old589-file
+image attestation below is its prior deployment, not the current code snapshot.
 
 The isolated two-date probe completed at22:49:37Z with one token/two minute
 requests/zero daily requests in2.582s. QQQ/NAS key20260901120000 returned120

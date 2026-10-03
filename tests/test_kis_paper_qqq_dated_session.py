@@ -30,12 +30,16 @@ def scope(tmp_path, monkeypatch):
     return root, repo
 
 
-def rows(start="0800", count=480):
-    stamp = datetime.strptime("20260901" + start, "%Y%m%d%H%M")
+def rows(start="0800", count=480, session_date=date(2026, 9, 1)):
+    from zoneinfo import ZoneInfo
+
+    from thericher_v2.data.us_equity_session import US_EQUITY_EASTERN
+
+    stamp = datetime.strptime(session_date.strftime("%Y%m%d") + start, "%Y%m%d%H%M")
     result = []
     for i in range(count):
         exchange = stamp + timedelta(minutes=i)
-        korea = exchange + timedelta(hours=13)
+        korea = exchange.replace(tzinfo=US_EQUITY_EASTERN).astimezone(ZoneInfo("Asia/Seoul"))
         result.append(
             KisPaperMinuteRawBar(
                 exchange_date=exchange.strftime("%Y%m%d"),
@@ -90,8 +94,12 @@ def run(scope, client, **kwargs):
     )
 
 
-def complete(scope):
-    return collector.kis_paper_qqq_dated_session_complete(cache_root=scope[0], repo_root=scope[1])
+def complete(scope, session_date=date(2026, 9, 1)):
+    return collector.kis_paper_qqq_dated_session_complete(
+        cache_root=scope[0],
+        repo_root=scope[1],
+        session_date=session_date,
+    )
 
 
 def test_four_full_terminal_pages_are_exactly_complete_and_never_restart(scope):
@@ -353,7 +361,8 @@ def test_native_config_only_uses_approved_dotenv_whitelist(monkeypatch):
     "args",
     [
         ["--pages", "5"],
-        ["--session-date", "2026-08-03"],
+        ["--session-date", "2026-09-07"],
+        ["--session-date", "2027-01-04"],
         ["--cache-root", "D:/market_data/us_equities/kis_paper_private/intraday"],
     ],
 )
@@ -455,3 +464,310 @@ def test_cli_preserves_nonretaining_reason_without_catalog_read(
     payload = json.loads(capsys.readouterr().out)
     assert payload["status"] == "incomplete" and payload["reason"] == reason
     assert payload["regular_session_complete"] is False
+
+
+@pytest.mark.parametrize("day", [date(2026, 2, 2), date(2026, 9, 2)])
+def test_calendar_derived_dated_root_keys_and_dst_are_causally_bound(scope, day):
+    root = collector.kis_paper_qqq_dated_session_cache_root(day)
+    client = Client(pages(rows(session_date=day)), root)
+    result = run((root, scope[1]), client, session_date=day)
+    assert result.row_count == 480 and complete((root, scope[1]), day)
+    assert root.name == f"qqq-{day:%Y%m%d}"
+    assert client.queries[0].continuation_key == f"{day:%Y%m%d}155900"
+    assert collector.kis_paper_qqq_dated_session_initial_key(day) == f"{day:%Y%m%d}155900"
+
+
+@pytest.mark.parametrize(
+    "day,observed",
+    [
+        (date(2025, 9, 2), datetime(2026, 10, 3, tzinfo=UTC)),
+        (date(2026, 9, 5), datetime(2026, 10, 3, tzinfo=UTC)),
+        (date(2026, 9, 7), datetime(2026, 10, 3, tzinfo=UTC)),
+        (date(2026, 11, 27), datetime(2026, 12, 1, tzinfo=UTC)),
+        (date(2026, 10, 5), datetime(2026, 10, 3, tzinfo=UTC)),
+        (date(2026, 10, 2), datetime(2026, 10, 2, 19, 59, tzinfo=UTC)),
+    ],
+)
+def test_nonregular_open_or_future_dates_fail_before_cache_io(scope, day, observed):
+    root = scope[0].parent / f"qqq-{day:%Y%m%d}"
+    client = Client([])
+    with pytest.raises(ValueError):
+        collector.run_kis_paper_qqq_dated_session_cycle(
+            client=client,
+            cache_root=root,
+            repo_root=scope[1],
+            code_revision="synthetic",
+            session_date=day,
+            observed_at=observed,
+        )
+    assert not root.exists() and not client.queries
+
+
+def test_date_root_mismatch_does_not_read_or_mutate_existing_scope(scope):
+    run(scope, Client(pages()[:1]), pages=1)
+    path = scope[0] / "v1/index.json"
+    before = path.read_bytes()
+    with pytest.raises(ValueError):
+        run(scope, Client([]), session_date=date(2026, 9, 2))
+    assert path.read_bytes() == before
+
+
+def test_malformed_dated_cursor_time_cannot_reach_client(scope):
+    run(scope, Client(pages()[:1]), pages=1)
+    path = scope[0] / "v1/index.json"
+    document = json.loads(path.read_text())
+    state = document["targets"][0]
+    wrong = {"next": "1", "keyb": "20260901096000"}
+    state["next_cursor"] = wrong
+    state["chunks"][0]["output_cursor"] = wrong
+    path.write_text(json.dumps(document))
+    client = Client([])
+    with pytest.raises(ValueError, match="dated-session cursor is invalid"):
+        run(scope, client)
+    assert not client.queries
+
+
+def test_generalized_date_orphan_recovery_preserves_another_date(scope, monkeypatch):
+    run(scope, Client(pages()[:1]), pages=1)
+    previous = scope[0] / "v1/index.json"
+    previous_bytes = previous.read_bytes()
+    day = date(2026, 9, 2)
+    root = collector.kis_paper_qqq_dated_session_cache_root(day)
+    original = collector._write_index
+
+    def fail(*, root, index, **kwargs):
+        if index["generation"] == 1:
+            raise OSError("synthetic orphan")
+        return original(root=root, index=index, **kwargs)
+
+    monkeypatch.setattr(collector, "_write_index", fail)
+    with pytest.raises(OSError):
+        run((root, scope[1]), Client(pages(rows(session_date=day))), session_date=day)
+    monkeypatch.setattr(collector, "_write_index", original)
+    client = Client([])
+    assert run((root, scope[1]), client, session_date=day).status == "recovered"
+    assert not client.queries and complete((root, scope[1]), day)
+    assert previous.read_bytes() == previous_bytes
+
+
+def panel_cli(scope, monkeypatch, *, failure=None):
+    from types import SimpleNamespace
+
+    cli = script()
+    sources = {
+        day.strftime("%Y%m%d"): pages(rows(session_date=day))
+        for day in cli._september_panel_dates()
+    }
+    requests = []
+    token_due = datetime(2026, 10, 3, 0, 5, tzinfo=UTC)
+
+    class Transport:
+        def request(self, request):
+            requests.append(request)
+            if request.method == "POST":
+                if failure == "token_request_not_due":
+                    raise KisPaperMarketDataError("token_request_not_due")
+                if failure in {"auth_rejected", "auth_response_invalid"}:
+                    return KisMarketDataResponse.from_payload(
+                        {"raw-secret": "never print"},
+                        status_code=403 if failure == "auth_rejected" else 200,
+                    )
+                return KisMarketDataResponse.from_payload({"access_token": "never-print-token"})
+            key = request.query["KEYB"]
+            source = sources[key[:8]].pop(0)
+            if failure == "partial_invalid" and key == "20260902135900":
+                return KisMarketDataResponse.from_payload({"rt_cd": "0", "output2": "bad"})
+            if key[:8] == "20260902" and failure in {"empty", "invalid", "latest"}:
+                if failure == "empty":
+                    source = ()
+                elif failure == "latest":
+                    source = tuple(replace(row, exchange_date="20261002") for row in source)
+                else:
+                    return KisMarketDataResponse.from_payload({"rt_cd": "0", "output2": "bad"})
+            if failure == "rate_limited" and key == "20260902135900":
+                raise KisPaperMarketDataError("rate_limited")
+            return KisMarketDataResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "output1": {"next": "", "more": "0"},
+                    "output2": [row.as_document() for row in source],
+                }
+            )
+
+    gate = SimpleNamespace(
+        snapshot=lambda: SimpleNamespace(
+            last_request_started_at_utc=None,
+            retry_not_before_utc=token_due,
+            next_token_request_not_before_utc=token_due,
+        )
+    )
+    monkeypatch.setattr(cli, "_REPO_ROOT", scope[1])
+    monkeypatch.setattr(cli, "KIS_PAPER_QQQ_DATED_CACHE_ROOT", scope[0])
+    monkeypatch.setattr(
+        cli,
+        "_load_paper_config",
+        lambda: KisPaperMarketDataConfig(
+            app_key="never-print-key", app_secret="never-print-secret"
+        ),
+    )
+    monkeypatch.setattr(cli, "UrllibKisPaperMarketDataTransport", lambda **_: Transport())
+    monkeypatch.setattr(cli, "KisPaperMarketDataRateGate", lambda **_: gate)
+    monkeypatch.setattr(cli, "KisPaperMarketDataTokenStartGate", lambda **_: gate)
+    original = cli.run_kis_paper_qqq_dated_session_cycle
+    monkeypatch.setattr(
+        cli,
+        "run_kis_paper_qqq_dated_session_cycle",
+        lambda **kw: original(**kw, sleeper=lambda _: None, monotonic_clock=lambda: 0.0),
+    )
+    return cli, requests
+
+
+def test_panel_eighty_gets_one_client_one_token_then_skips_complete_bytes(
+    scope, monkeypatch, capsys
+):
+    cli, requests = panel_cli(scope, monkeypatch)
+
+    def clock():
+        return datetime(2026, 10, 3, tzinfo=UTC)
+
+    assert (
+        cli.main(["--execute", "--september-panel", "--code-revision", "synthetic"], clock=clock)
+        == 0
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["complete_session_count"] == payload["planned_session_count"] == 20
+    assert payload["minute_page_attempts"] == 80 and payload["token_attempts"] == 1
+    assert [r.method for r in requests].count("POST") == 1
+    assert [r.method for r in requests].count("GET") == 80
+    assert "20260901" not in {r.query["KEYB"][:8] for r in requests if r.method == "GET"}
+    before = {path: path.read_bytes() for path in scope[0].parent.glob("qqq-*/v1/index.json")}
+    requests.clear()
+    assert (
+        cli.main(["--execute", "--september-panel", "--code-revision", "synthetic"], clock=clock)
+        == 0
+    )
+    assert requests == []
+    assert all(path.read_bytes() == content for path, content in before.items())
+    repeated = json.loads(capsys.readouterr().out)
+    assert repeated["minute_page_attempts"] == repeated["token_attempts"] == 0
+
+
+@pytest.mark.parametrize("failure", ["empty", "invalid", "latest", "partial_invalid"])
+def test_panel_date_local_failures_continue_independent_dates(scope, monkeypatch, capsys, failure):
+    cli, requests = panel_cli(scope, monkeypatch, failure=failure)
+    assert (
+        cli.main(
+            ["--execute", "--september-panel", "--code-revision", "synthetic"],
+            clock=lambda: datetime(2026, 10, 3, tzinfo=UTC),
+        )
+        == 1
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["complete_session_count"] == 19 and payload["session_count"] == 20
+    assert payload["minute_page_attempts"] == (78 if failure == "partial_invalid" else 77)
+    assert payload["token_attempts"] == 1
+    assert payload["sessions"][0]["regular_session_complete"] is False
+    assert len([r for r in requests if r.method == "POST"]) == 1
+    if failure == "partial_invalid":
+        record = payload["sessions"][0]
+        assert record["collection_status"] == "partial" and record["row_count"] == 120
+        day = date(2026, 9, 2)
+        root = collector.kis_paper_qqq_dated_session_cache_root(day)
+        state = json.loads((root / "v1/index.json").read_text())["targets"][0]
+        assert state["next_cursor"]["keyb"] == "20260902135900"
+        resume = Client(pages(rows(session_date=day))[1:])
+        run((root, scope[1]), resume, session_date=day)
+        assert resume.queries[0].continuation_key == "20260902135900"
+        assert len(resume.queries) == 3 and complete((root, scope[1]), day)
+
+
+@pytest.mark.parametrize(
+    "failure", ["token_request_not_due", "auth_rejected", "auth_response_invalid"]
+)
+def test_panel_failed_authentication_never_retries_fresh_post(scope, monkeypatch, capsys, failure):
+    cli, requests = panel_cli(scope, monkeypatch, failure=failure)
+    assert (
+        cli.main(
+            ["--execute", "--september-panel", "--code-revision", "synthetic"],
+            clock=lambda: datetime(2026, 10, 3, tzinfo=UTC),
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    payload = json.loads(output)
+    assert len(requests) == 1 and requests[0].method == "POST"
+    assert payload["session_count"] == 1 and payload["minute_page_attempts"] == 0
+    if failure == "token_request_not_due":
+        assert payload["next_due"] == "2026-10-03T00:05:00Z"
+        assert payload["token_attempts"] == 0
+    else:
+        assert payload["token_attempts"] == 1
+    assert "never print" not in output
+
+
+def test_panel_shared_cooldown_yields_with_prefix_and_next_due(scope, monkeypatch, capsys):
+    cli, requests = panel_cli(scope, monkeypatch, failure="rate_limited")
+    assert (
+        cli.main(
+            ["--execute", "--september-panel", "--code-revision", "synthetic"],
+            clock=lambda: datetime(2026, 10, 3, tzinfo=UTC),
+        )
+        == 1
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["next_due"] == "2026-10-03T00:05:00Z"
+    assert payload["session_count"] == 1 and payload["sessions"][0]["row_count"] == 120
+    assert len(requests) == 3
+    sleeps = []
+    monkeypatch.setattr(cli.time, "sleep", sleeps.append)
+    cli._yield_long_cooldown(0.5)
+    with pytest.raises(KisPaperMarketDataError, match="rate_limited"):
+        cli._yield_long_cooldown(60)
+    assert sleeps == [0.5]
+
+
+def test_panel_restart_due_includes_fresh_process_token_guard():
+    from types import SimpleNamespace
+
+    cli = script()
+    minute_due = datetime(2026, 10, 3, 0, 1, tzinfo=UTC)
+    token_due = minute_due + timedelta(minutes=4)
+    request_gate = SimpleNamespace(
+        snapshot=lambda: SimpleNamespace(
+            retry_not_before_utc=minute_due,
+            last_request_started_at_utc=minute_due - timedelta(seconds=60),
+        )
+    )
+    token_gate = SimpleNamespace(
+        snapshot=lambda: SimpleNamespace(next_token_request_not_before_utc=token_due)
+    )
+    assert cli._shared_next_due("rate_limited", request_gate, token_gate) == "2026-10-03T00:05:00Z"
+
+
+def test_panel_preview_no_io_and_finite_calendar_budget(monkeypatch, capsys):
+    cli = script()
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("preview IO")
+
+    monkeypatch.setattr(Path, "lstat", forbidden)
+    monkeypatch.setattr(Path, "exists", forbidden)
+    monkeypatch.setattr(cli, "_load_paper_config", forbidden)
+    assert cli.main(["--september-panel"], clock=lambda: datetime(2026, 10, 3, tzinfo=UTC)) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["max_gets"] == 80 and len(payload["session_dates"]) == 20
+    assert payload["session_dates"][0] == "2026-09-02"
+    assert payload["session_dates"][-1] == "2026-09-30"
+    assert "2026-09-07" not in payload["session_dates"]
+    with pytest.raises(SystemExit):
+        cli.main(["--september-panel"], clock=lambda: datetime(2026, 9, 29, tzinfo=UTC))
+
+
+@pytest.mark.parametrize(
+    "args", [["--pages", "5"], ["--session-date", "2026-09-02"], ["--cache-root", "D:/elsewhere"]]
+)
+def test_panel_invalid_overrides_fail_before_native_credentials(monkeypatch, args):
+    cli = script()
+    monkeypatch.setattr(cli, "_load_paper_config", lambda: pytest.fail("credentials"))
+    with pytest.raises(SystemExit):
+        cli.main(["--september-panel", "--execute", "--code-revision", "synthetic", *args])
