@@ -110,8 +110,12 @@ August31 QQQ/SPY each390/78/39/6/2, August10/17 four scoped-empty queries;
 12 GETs/eight accepted/four empty/one token/14.756s,63 protected indexes unchanged.
 No global history-floor/finality/PIT claim. A paired head-continuation repair
 is verified/deployed because the old option applied only to QQQ and left SPY120;
-old defaults/tasks/budgets remain unchanged. A distinct11-scope/44-GET acquisition
-owns August24-28 QQQ/SPY plus September1SPY; no closed-query retry/foreground wait.
+old defaults/tasks/budgets remain unchanged. The distinct11-scope acquisition
+also closed: August28 both ETFs/September1SPY complete, eight August24-27 queries
+empty;20 GETs/one token/22.919s,69 index/13 prior receipt hashes unchanged.
+Recent independently verified dated scopes now span25 shared regular days
+August28-October2/9,750 M1 per ETF, not a new combined dataset/50 IID days.
+No remaining collector/next_due, global floor or old-query retry; Data owns pins.
 
 Tiingo standard EOD SPY/QQQ/IWM acquisition retained945 rows/315 per ETF from
 one new July2025-September2026 vintage. Do not splice adjusted vintages.

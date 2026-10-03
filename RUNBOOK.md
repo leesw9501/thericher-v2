@@ -108,6 +108,13 @@ QQQ/SPY each verify390/78/39/6/2; August10/17's four queries return empty.
 Twelve GETs/eight accepted/four empty, one client/token/14.756s,63 protected
 indexes unchanged, no next_due. Exact immutable receipt belongs to Data.
 Do not retry these answered scopes or infer a provider-wide earliest date.
+The later eleven-scope August24-28 QQQ/SPY+September1SPY package also closed:
+August28 pair/Sep1SPY complete, eight earlier queries empty;20 GETs/one reused
+token/22.919s. Exact single-session readback390/78/39/6/2 passes;69 old index/
+13 prior receipt hashes unchanged, all processes reaped/no next_due. The dated
+scopes now cover25 shared recent regular dates; this is not a newly frozen
+combined research dataset or provider-wide earliest-date proof. Exact receipt
+and source pointers belong to Data. Do not rerun the answered package.
 
 ## Latest Bounded Research
 

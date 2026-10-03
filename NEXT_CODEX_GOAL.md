@@ -132,8 +132,11 @@ not expand live authority or reset capital.
    passes parent460 serial/full8,570/22/325.47s/eight workers/clean helper,
    Ruff/both Compose. Ten Data aliases match600 baked hashes; old defaults/
    task times/Paper aliases unchanged. Actual SPY paired-head yield unobserved;
-   no new task/rate layer or manually invoked Scheduler job. Distinct acquisition
-   owns only August24-28 QQQ/SPY+September1SPY,11 scopes/44-GET maximum.
+   no new task/rate layer or manually invoked Scheduler job. The distinct11-scope
+   acquisition is now closed: August28 pair/September1SPY complete, eight
+   August24-27 queries empty,20 GETs/one token/22.919s with69 old indexes/13
+   receipts unchanged. Recent coverage spans25 shared complete regular dates,
+   not50 independent blocks or a newly frozen combined research input.
    Final SPY/patch shared-source authority8,186 passes/22 skips/317.40s/eight
    workers/clean helper, Ruff/both Compose pass. Ten Data aliases match591
    baked sources; no task/service invocation or Paper/schedule change.

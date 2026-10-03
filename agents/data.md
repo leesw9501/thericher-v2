@@ -54,9 +54,23 @@ pass. Ten existing Data aliases match600 source/configuration hashes, image
 No task/service invocation, scheduler/timing/budget/pace or Paper-alias change.
 Actual paired-head SPY provider yield remains unobserved; do not call this a
 complete real capture or substitute dated-scope evidence for head evidence.
-Current distinct acquisition owns only August24-28 QQQ/SPY and September1SPY,
-11 dedicated dated scopes/44-GET ceiling/one reused client. Old answered roots
-remain protected; no Data wait blocks Research or the separate Paper opportunity.
+The distinct August24-28 QQQ/SPY+September1SPY acquisition is also closed:
+all11 scopes attempted, August28 both ETFs and September1SPY complete;
+August24-27's eight exact queries empty. Twenty GETs/12 accepted pages/eight
+empty, one reused client/token/22.918540s; no cooldown/next_due. Fourteen
+synthetic projection checks and fresh-process canonical SINGLE-session readback
+pass, each complete scope480 native/390 regular rows,390/78/39/6/2 bars.
+Parent verifies final/prior receipt chain, all11 current indexes,69 protected
+index hashes and13 previous receipt hashes unchanged. All owned processes
+reaped. Exact immutable receipt:
+`D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-panel\eleven-scopes-final-20261003T034126454266Z-11b62069ab6d.json`,
+SHA256 `11b62069ab6d58f5bc26ec050609b228d64faf8105d93eff7b01a0ad35f6432b`.
+No provider-wide floor, PIT/finality/holdout/Paper qualification or new schedule.
+Do not repeat answered queries. The separate verified dated scopes now cover25
+shared recent regular dates August28-October2:9,750 M1/1,950 M5/975 M10/150 H1/
+50 H3 per ETF, not50 independent days or a newly frozen combined dataset.
+Legacy21 June/July shared sessions and their source identities remain separate.
+Data acquisition package closed; current-data owners and Paper opportunity remain.
 
 The bounded October1/2 context extension is complete for QQQ/NAS and SPY/AMS:
 four independent date/symbol scopes,16 GETs/one client/token/17.976s, no retry
