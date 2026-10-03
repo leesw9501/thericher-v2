@@ -81,6 +81,13 @@ this native process exits, reentry also needs fresh-token eligibility; this is
 not a token lifetime or an authenticated-client sleep. The panel already
 completed20/20 and verified7,800 regular minutes; do not rerun answered collection
 or reset indexes. Exact first/complete/readback evidence belongs to Data.
+The existing CLI now accepts explicit `--target SPY/AMS` with a closed
+`--session-date` or the same `--september-panel`; default remains QQQ/NAS.
+SPY uses only its dedicated `spy-YYYYMMDD` roots and exact target/date/cursor
+checks; no new wrapper/task/schedule. The SPY panel already completed20/20,
+80 GETs/one token/88.676s/zero failures, verified7,800 regular minutes and
+all five timeframes. QQQ/legacy indexes stayed unchanged. Do not rerun this
+answered scope; exact complete/index/readback receipts belong to Data.
 
 ## Latest Bounded Research
 
@@ -97,6 +104,15 @@ Tree emits zero comparison trades/stress net0 unit bps: preserve the primary
 kill. No overwrite, repeated fit, threshold rescue, holdout or Paper input.
 Exact root/contract/smoke/CPU hashes belong to Engine Research/Research Steward.
 Readback validates committed actions/fees/math, not unretained learned inference.
+
+`build_torch_patch_sequence_model` is a separate research-only builder in
+`sequence_architecture_models.py`; old IDs/defaults/builders are unchanged.
+Whole nonoverlapping completed patches, shared per-channel weights, causal
+patch mask and fixed mean channel aggregation; scalar score, not probability.
+Caller owns bar cutoff and TRAIN normalization.59 pinned Torch2.7 CPU tests
+pass, including prefix/channel/batch invariance and backpropagation. No GPU,
+checkpoint, installed dependency, real-data fitting or PatchTST reproduction.
+Freeze a distinct finite campaign before using it with actual market targets.
 
 The new pure `causal_expert_mixture` module separates target projection from
 feedback updates. The caller must provide strictly prior completed-loss UTC

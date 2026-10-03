@@ -94,11 +94,12 @@ def run(scope, client, **kwargs):
     )
 
 
-def complete(scope, session_date=date(2026, 9, 1)):
+def complete(scope, session_date=date(2026, 9, 1), target=("QQQ", "NAS")):
     return collector.kis_paper_qqq_dated_session_complete(
         cache_root=scope[0],
         repo_root=scope[1],
         session_date=session_date,
+        target=target,
     )
 
 
@@ -550,7 +551,7 @@ def test_generalized_date_orphan_recovery_preserves_another_date(scope, monkeypa
     assert previous.read_bytes() == previous_bytes
 
 
-def panel_cli(scope, monkeypatch, *, failure=None):
+def panel_cli(scope, monkeypatch, *, failure=None, target=("QQQ", "NAS")):
     from types import SimpleNamespace
 
     cli = script()
@@ -574,6 +575,7 @@ def panel_cli(scope, monkeypatch, *, failure=None):
                     )
                 return KisMarketDataResponse.from_payload({"access_token": "never-print-token"})
             key = request.query["KEYB"]
+            assert (request.query["SYMB"], request.query["EXCD"]) == target
             source = sources[key[:8]].pop(0)
             if failure == "partial_invalid" and key == "20260902135900":
                 return KisMarketDataResponse.from_payload({"rt_cd": "0", "output2": "bad"})
@@ -622,32 +624,47 @@ def panel_cli(scope, monkeypatch, *, failure=None):
     return cli, requests
 
 
+@pytest.mark.parametrize("target", [("QQQ", "NAS"), ("SPY", "AMS")])
 def test_panel_eighty_gets_one_client_one_token_then_skips_complete_bytes(
-    scope, monkeypatch, capsys
+    scope, monkeypatch, capsys, target
 ):
-    cli, requests = panel_cli(scope, monkeypatch)
+    previous = {}
+    if target[0] == "SPY":
+        run(scope, Client(pages()))
+        previous = {path: path.read_bytes() for path in scope[0].rglob("*") if path.is_file()}
+    cli, requests = panel_cli(scope, monkeypatch, target=target)
+    arguments = [
+        "--execute",
+        "--september-panel",
+        "--code-revision",
+        "synthetic",
+        "--target",
+        "/".join(target),
+    ]
 
     def clock():
         return datetime(2026, 10, 3, tzinfo=UTC)
 
-    assert (
-        cli.main(["--execute", "--september-panel", "--code-revision", "synthetic"], clock=clock)
-        == 0
-    )
+    assert cli.main(arguments, clock=clock) == 0
     payload = json.loads(capsys.readouterr().out)
     assert payload["complete_session_count"] == payload["planned_session_count"] == 20
     assert payload["minute_page_attempts"] == 80 and payload["token_attempts"] == 1
     assert [r.method for r in requests].count("POST") == 1
     assert [r.method for r in requests].count("GET") == 80
     assert "20260901" not in {r.query["KEYB"][:8] for r in requests if r.method == "GET"}
-    before = {path: path.read_bytes() for path in scope[0].parent.glob("qqq-*/v1/index.json")}
+    if target[0] == "SPY":
+        assert payload["target_key"] == "SPY/AMS/1m"
+    else:
+        assert "target_key" not in payload
+    before = {
+        path: path.read_bytes()
+        for path in scope[0].parent.glob(f"{target[0].lower()}-*/v1/index.json")
+    }
     requests.clear()
-    assert (
-        cli.main(["--execute", "--september-panel", "--code-revision", "synthetic"], clock=clock)
-        == 0
-    )
+    assert cli.main(arguments, clock=clock) == 0
     assert requests == []
     assert all(path.read_bytes() == content for path, content in before.items())
+    assert all(path.read_bytes() == content for path, content in previous.items())
     repeated = json.loads(capsys.readouterr().out)
     assert repeated["minute_page_attempts"] == repeated["token_attempts"] == 0
 
@@ -771,3 +788,220 @@ def test_panel_invalid_overrides_fail_before_native_credentials(monkeypatch, arg
     monkeypatch.setattr(cli, "_load_paper_config", lambda: pytest.fail("credentials"))
     with pytest.raises(SystemExit):
         cli.main(["--september-panel", "--execute", "--code-revision", "synthetic", *args])
+
+
+def test_spy_dated_session_and_complete_skip_never_alter_completed_qqq(scope):
+    run(scope, Client(pages()))
+    previous = {path: path.read_bytes() for path in scope[0].rglob("*") if path.is_file()}
+    spy = (
+        collector.kis_paper_qqq_dated_session_cache_root(date(2026, 9, 1), target=("SPY", "AMS")),
+        scope[1],
+    )
+    client = Client(pages(), spy[0])
+    result = run(spy, client, target=("SPY", "AMS"))
+    assert result.target_key == "SPY/AMS/1m" and result.row_count == 480
+    assert complete(spy, target=("SPY", "AMS")) and complete(scope)
+    assert spy[0].name == "spy-20260901"
+    assert all((query.symbol, query.exchange) == ("SPY", "AMS") for query in client.queries)
+    assert all(
+        query.include_previous_day and query.continuation_next == "1" for query in client.queries
+    )
+    manifest = json.loads(result.manifest_path.read_text())
+    assert manifest["source"]["symbol"] == "SPY" and manifest["source"]["exchange"] == "AMS"
+    before = {path: path.read_bytes() for path in spy[0].rglob("*") if path.is_file()}
+    repeated = Client([])
+    assert run(spy, repeated, target=("SPY", "AMS")).reason == "dated_session_complete"
+    assert not repeated.queries
+    assert all(path.read_bytes() == content for path, content in previous.items())
+    assert all(path.read_bytes() == content for path, content in before.items())
+
+
+@pytest.mark.parametrize(
+    "target",
+    [("SPY", "NAS"), ("QQQ", "AMS"), ("IWM", "AMS"), ("spy", "AMS"), ["SPY", "AMS"], (), ("SPY",)],
+)
+def test_unsupported_dated_target_rejects_before_io(scope, monkeypatch, target):
+    def forbidden(*args, **kwargs):
+        pytest.fail("unsupported target must not inspect any path")
+
+    monkeypatch.setattr(Path, "lstat", forbidden)
+    client = Client([])
+    with pytest.raises(ValueError, match="dated-session target"):
+        run(scope, client, target=target)
+    assert not client.queries
+
+
+@pytest.mark.parametrize("target", ["SPY/NAS", "QQQ/AMS", "IWM/AMS", "spy/AMS"])
+def test_cli_unsupported_target_rejects_before_credentials(monkeypatch, target):
+    cli = script()
+    monkeypatch.setattr(cli, "_load_paper_config", lambda: pytest.fail("credentials"))
+    with pytest.raises(SystemExit):
+        cli.main(["--execute", "--target", target, "--code-revision", "synthetic"])
+
+
+@pytest.mark.parametrize("bad", ["qqq_root", "wrong_date", "overlapping_parent"])
+def test_spy_root_binding_cannot_reuse_or_overlap_qqq(scope, monkeypatch, bad):
+    cli = script()
+    monkeypatch.setattr(cli, "_REPO_ROOT", scope[1])
+    monkeypatch.setattr(cli, "_load_paper_config", lambda: pytest.fail("credentials"))
+    root = {
+        "qqq_root": scope[0],
+        "wrong_date": scope[0].parent / "spy-20260902",
+        "overlapping_parent": scope[0].parent,
+    }[bad]
+    with pytest.raises(SystemExit):
+        cli.main(
+            [
+                "--execute",
+                "--target",
+                "SPY/AMS",
+                "--session-date",
+                "2026-09-01",
+                "--cache-root",
+                str(root),
+                "--code-revision",
+                "synthetic",
+            ]
+        )
+    assert not root.exists()
+
+
+@pytest.mark.parametrize("bad", ["symbol", "exchange", "date", "key", "overlap"])
+def test_spy_page_binding_rejects_injection_preserving_only_valid_prefix(scope, bad):
+    spy = (
+        collector.kis_paper_qqq_dated_session_cache_root(date(2026, 9, 1), target=("SPY", "AMS")),
+        scope[1],
+    )
+    source = pages()
+    client = Client(source[:2])
+    original = client.fetch_minute_page
+
+    def fetch(query, **kwargs):
+        page = original(query, **kwargs)
+        if len(client.queries) == 2:
+            if bad == "symbol":
+                return replace(page, query=replace(query, symbol="QQQ", exchange="NAS"))
+            if bad == "exchange":
+                forged = replace(query)
+                object.__setattr__(forged, "exchange", "NAS")
+                return replace(page, query=forged)
+            if bad == "key":
+                return replace(page, query=replace(query, continuation_key="20260901155900"))
+            if bad == "date":
+                return replace(
+                    page, bars=tuple(replace(row, exchange_date="20260902") for row in page.bars)
+                )
+            return replace(page, bars=source[0])
+        return page
+
+    client.fetch_minute_page = fetch
+    result = run(spy, client, target=("SPY", "AMS"))
+    assert result.status == "partial" and result.reason == "minute_response_invalid"
+    assert result.row_count == 120 and not complete(spy, target=("SPY", "AMS"))
+    state = json.loads((spy[0] / "v1/index.json").read_text())["targets"][0]
+    assert state["target_key"] == "SPY/AMS/1m"
+    assert state["next_cursor"]["keyb"] == "20260901135900"
+
+
+def test_spy_frontier_tamper_rejects_without_reseed(scope):
+    spy = (
+        collector.kis_paper_qqq_dated_session_cache_root(date(2026, 9, 1), target=("SPY", "AMS")),
+        scope[1],
+    )
+    run(spy, Client(pages()[:1]), pages=1, target=("SPY", "AMS"))
+    path = spy[0] / "v1/index.json"
+    document = json.loads(path.read_text())
+    document["targets"][0]["next_cursor"]["keyb"] = "20260901155900"
+    path.write_text(json.dumps(document))
+    before = path.read_bytes()
+    client = Client([])
+    with pytest.raises(ValueError, match="dated-session custody"):
+        run(spy, client, target=("SPY", "AMS"))
+    assert not client.queries and path.read_bytes() == before
+
+
+def test_spy_scope_rejects_qqq_index_custody_without_relabel_or_fetch(scope):
+    run(scope, Client(pages()))
+    previous = {path: path.read_bytes() for path in scope[0].rglob("*") if path.is_file()}
+    spy = (
+        collector.kis_paper_qqq_dated_session_cache_root(date(2026, 9, 1), target=("SPY", "AMS")),
+        scope[1],
+    )
+    path = spy[0] / "v1/index.json"
+    path.parent.mkdir(parents=True)
+    original = (scope[0] / "v1/index.json").read_bytes()
+    path.write_bytes(original)
+    client = Client([])
+    with pytest.raises(ValueError, match="private intraday index is invalid"):
+        run(spy, client, target=("SPY", "AMS"))
+    assert not client.queries and path.read_bytes() == original
+    assert all(path.read_bytes() == content for path, content in previous.items())
+
+
+def test_spy_orphan_recovers_without_fetch_or_mutation_of_completed_qqq(scope, monkeypatch):
+    run(scope, Client(pages()))
+    previous = {path: path.read_bytes() for path in scope[0].rglob("*") if path.is_file()}
+    spy = (
+        collector.kis_paper_qqq_dated_session_cache_root(date(2026, 9, 1), target=("SPY", "AMS")),
+        scope[1],
+    )
+    original = collector._write_index
+
+    def fail(*, root, index, **kwargs):
+        if index["generation"] == 1:
+            raise OSError("synthetic SPY publication crash")
+        return original(root=root, index=index, **kwargs)
+
+    monkeypatch.setattr(collector, "_write_index", fail)
+    with pytest.raises(OSError):
+        run(spy, Client(pages()), target=("SPY", "AMS"))
+    monkeypatch.setattr(collector, "_write_index", original)
+    recovered = Client([])
+    assert run(spy, recovered, target=("SPY", "AMS")).status == "recovered"
+    assert not recovered.queries and complete(spy, target=("SPY", "AMS"))
+    assert all(path.read_bytes() == content for path, content in previous.items())
+
+
+@pytest.mark.parametrize("failure", ["partial_invalid", "token_request_not_due", "rate_limited"])
+def test_spy_panel_retains_partial_and_shared_next_due_semantics(
+    scope, monkeypatch, capsys, failure
+):
+    cli, requests = panel_cli(scope, monkeypatch, failure=failure, target=("SPY", "AMS"))
+    assert (
+        cli.main(
+            [
+                "--execute",
+                "--target",
+                "SPY/AMS",
+                "--september-panel",
+                "--code-revision",
+                "synthetic",
+            ],
+            clock=lambda: datetime(2026, 10, 3, tzinfo=UTC),
+        )
+        == 1
+    )
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["target_key"] == "SPY/AMS/1m"
+    assert sum(request.method == "POST" for request in requests) == 1
+    if failure == "partial_invalid":
+        assert payload["complete_session_count"] == 19
+        assert payload["minute_page_attempts"] == 78
+        assert payload["sessions"][0]["row_count"] == 120
+    else:
+        assert payload["session_count"] == 1 and payload["next_due"] == "2026-10-03T00:05:00Z"
+
+
+def test_spy_preview_keeps_no_io_and_default_date(monkeypatch, capsys):
+    cli = script()
+
+    def forbidden(*args, **kwargs):
+        pytest.fail("preview IO")
+
+    monkeypatch.setattr(Path, "lstat", forbidden)
+    monkeypatch.setattr(Path, "exists", forbidden)
+    monkeypatch.setattr(cli, "_load_paper_config", forbidden)
+    assert cli.main(["--target", "SPY/AMS"]) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["target_key"] == "SPY/AMS/1m" and payload["max_gets"] == 4
+    assert payload["session_dates"] == ["2026-09-01"]

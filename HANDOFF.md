@@ -77,7 +77,7 @@ SPY120 is not a complete matched session. Direct capture is not Scheduler proof.
 Existing Data owner is Ready, next_due October6 00:29 KST. Earlier06:20 mixed/
 recovery receipt remains separate. Ten existing Data consumers match all591
 source files in the dated-panel integration, image:
-sha256:1d859db1eb2da6a88589d903ccde6ee5cf837146ff315a5aef9cdcc355c5db4e.
+sha256:ebe0c0d3814c8f5dec20cc26d07972132cf1f13cc2f92fe2ab89135ec4949a8c.
 Publication invoked no task/service and changed no schedule or default scope.
 
 The isolated two-date probe returned120 September1 midday QQQ minutes and
@@ -90,6 +90,10 @@ One rate-limited first attempt preserved five sessions and a prefix; recovery
 skipped them and finished in64.956s/59 GETs/one token. Fresh-process next_due
 now includes its token-start guard, never an in-memory-client sleep. No existing
 index reset or new schedule; finality/PIT not_observed. Exact evidence belongs to Data.
+Matched SPY/AMS September2-30 is also complete:20 dates/7,800 regular minutes,
+same five-timeframe totals,80 accepted GETs/one token/88.676s/zero failures.
+All September QQQ and legacy indexes stayed unchanged. The pair has20 shared
+market-session blocks, not40 independent samples. Exact receipts belong to Data.
 
 Tiingo standard EOD SPY/QQQ/IWM acquisition retained945 rows/315 per ETF from
 one new July2025-September2026 vintage. Do not splice adjusted vintages.
@@ -130,6 +134,10 @@ stress net0 unit bps triggers the predeclared kill, not a profitable model.
 Metadata geometry/cursor custody/first-creation defects are repaired and
 independently reviewed;66 focused tests and exact RO result verification pass.
 No weights, GPU, holdout, retuning or Paper input. Exact pins belong to Research.
+Separate completed-patch/channel-independent Torch preparation passes59 pinned
+CPU tests/final independent review. Old model IDs/defaults are unchanged; no
+new patch campaign/training/promotion is claimed. Freeze the next distinct
+pooled/transfer hypothesis on actual matched inputs before labels or fits.
 
 Public mechanisms were independently re-retrieved from primary papers/repos.
 TimesFM2.5 Apache weights are already used;3.0 non-production rights are not
@@ -139,11 +147,11 @@ Do not repeatedly invoke that unchanged failure or pause independent ready work.
 
 ## Verification And Resume
 
-Latest dated-panel Data integration:231 changed-path Data passes; full8,092
-passed/22 skipped/35 warnings/321.26s/eight workers/clean helper exit. Research
-downside52 initial focused passes missed two source-review faults; its isolated
-repair now passes66 focused tests/final review and actual CPU/RO readback.
-The full Data run predates that isolated repair, not a claim of its coverage.
+Latest SPY/patch shared-source integration:184 changed-path serial passes,
+59 pinned Torch CPU passes; full8,186 passed/22 skipped/35 warnings/317.40s,
+eight workers/clean helper, matching8,208 collection. Research downside's later
+isolated repairs are included now; its earlier52-test result missed two faults.
+Actual downside CPU/RO readback and all final independent source reviews pass.
 Ruff/default and research Compose pass. The earlier mixture run passed assertions
 but failed hardlink cleanup; it is not authority. Only the test's exact alias
 cleanup was repaired; C:\trpy\runs\r-73d1a88d remains untouched.

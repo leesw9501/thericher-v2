@@ -13,6 +13,33 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
+Matched SPY/AMS September2-30 retention is now canonically complete:20 dates,
+9,600 native/7,800 regular M1 rows; M1/M5/M10/H1/H3 totals7,800/1,560/780/120/40.
+One client/token,80 accepted GETs/zero categorical failures,88.676s; no retry,
+new pace, schedule or history-floor claim. Dedicated `spy-YYYYMMDD` caches;
+all21 September QQQ indexes and legacy June/head indexes stayed byte-unchanged.
+QQQ and SPY now share20 September sessions/15,600 regular minutes in total,
+not40 independent market-session blocks. Existing loader verifies exact target,
+dated cursor/manifest/raw bindings, complete regular support and resampling.
+Source/PIT/finality remain revised/not_observed; direct collection is not
+Scheduler or Paper evidence. Parent changed-path Data/core/patch184 tests pass;
+final independent review supports scope with no material P1/P2.
+Exact immutable evidence under
+`D:\thericher-v2\model-artifacts\data\kis-paper-spy-dated-panel`:
+complete `september-20261003T012339735778Z.json`,
+SHA256 `85b418a056c5d41e76abff949a5ca2b9d0d2f2ecd4b3c3a624930cfffe68ebe9`;
+`september-index-pins-20261003.json`,
+SHA256 `2e2b8b1e772fce3659a42784bd97d82d2ea0010ffec50167b4ce588dd3063b1b`;
+`september-canonical-readback-20261003.json`,
+SHA256 `3056846edb155addfcf4406fd8a89369395cb3a26e5577d42a8346a7467906bf`.
+Core/CLI/tests hashes are frozen in the complete receipt. Acquisition is closed;
+do not rerun completed scopes or reset indexes. Current-data owners continue.
+Final integration authority8,186 passes/22 skips/35 warnings/317.40s/eight
+workers/clean helper matches8,208 collected tests; Ruff/both Compose pass.
+Ten existing Data aliases match591 sources, image
+`sha256:ebe0c0d3814c8f5dec20cc26d07972132cf1f13cc2f92fe2ab89135ec4949a8c`.
+Publication invokes no task/service and changes no schedule or Paper alias.
+
 The finite September2-30 QQQ/NAS panel is now canonically complete:20 sessions,
 9,600 native/7,800 regular M1 rows; M1/M5/M10/H1/H3 totals7,800/1,560/780/120/40.
 Each independent `intraday-dated\qqq-YYYYMMDD` v1 cache binds its calendar date,
@@ -40,11 +67,11 @@ SHA256 `a5dba46f82cf332a30458a89a15a3acd73998e3a351ff287ed6cf05dd316e140`;
 SHA256 `13f6dffb3fab22c747e7f8c6d6fa1e5acc4fef526fa3af680979f682e037ac65`.
 Readback reopens exact indexes/immutable manifests/raw hashes through the existing
 loader and complete-session/resampling APIs, not a latest-artifact scan.
-Final Data publication matches591 baked Python/PowerShell files across ten
+Earlier QQQ Data publication matches591 baked Python/PowerShell files across ten
 existing aliases, image
 `sha256:1d859db1eb2da6a88589d903ccde6ee5cf837146ff315a5aef9cdcc355c5db4e`.
 No task/service invocation, schedule change or Paper-alias publication occurred.
-The earlier589-file attestation is historical, not this current source snapshot.
+This1d859 image and earlier589-file attestation predate the SPY/patch publication.
 
 Latest independently scoped September1 QQQ/NAS retention completed at23:41:47Z:
 four minute GETs/one token,480 unique rows/zero overlaps in5.217s. Existing

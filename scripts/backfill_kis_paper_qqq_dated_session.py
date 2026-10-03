@@ -1,4 +1,4 @@
-"""One bounded native QQQ dated session or predeclared September panel invocation."""
+"""One bounded native QQQ/SPY dated session or predeclared September panel invocation."""
 
 from __future__ import annotations
 
@@ -45,12 +45,15 @@ def main(
 ) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
+    parser.add_argument("--target", choices=("QQQ/NAS", "SPY/AMS"), default="QQQ/NAS")
     parser.add_argument("--pages", type=int, default=4)
     parser.add_argument("--session-date", type=date.fromisoformat)
     parser.add_argument("--cache-root", type=Path)
     parser.add_argument("--september-panel", action="store_true")
     parser.add_argument("--code-revision")
     args = parser.parse_args(argv)
+    symbol, exchange = args.target.split("/")
+    target = (symbol, exchange)
     if args.september_panel and (args.session_date is not None or args.cache_root is not None):
         parser.error("--september-panel cannot override its predeclared dates or roots")
     observed = clock()
@@ -64,8 +67,8 @@ def main(
             args.cache_root
             or (
                 KIS_PAPER_QQQ_DATED_CACHE_ROOT
-                if day == KIS_PAPER_QQQ_DATED_SESSION
-                else kis_paper_qqq_dated_session_cache_root(day)
+                if day == KIS_PAPER_QQQ_DATED_SESSION and target == ("QQQ", "NAS")
+                else kis_paper_qqq_dated_session_cache_root(day, target=target)
             )
             for day in dates
         )
@@ -88,9 +91,12 @@ def main(
                 pages=args.pages,
                 inspect_paths=False,
                 observed_at=observed,
+                target=target,
             )
     except ValueError:
-        parser.error("closed 2026 regular QQQ sessions, bound date roots and 1..4 pages required")
+        parser.error(
+            "closed 2026 regular native sessions, bound target/date roots and 1..4 pages required"
+        )
     if not args.execute:
         print(
             json.dumps(
@@ -100,6 +106,7 @@ def main(
                     "session_dates": [day.isoformat() for day in dates],
                     "max_gets": len(dates) * args.pages,
                     "reason": "execute_flag_required",
+                    **({"target_key": f"{symbol}/{exchange}/1m"} if symbol == "SPY" else {}),
                 }
             )
         )
@@ -114,6 +121,7 @@ def main(
                 session_date=day,
                 pages=args.pages,
                 observed_at=observed,
+                target=target,
             )
         config = _load_paper_config()
         control_root = KIS_PAPER_PRIVATE_INTRADAY_CACHE_ROOT.parent / (
@@ -142,6 +150,7 @@ def main(
                 observed=observed,
                 request_gate=request_gate,
                 token_gate=token_gate,
+                target=target,
             )
             print(json.dumps(payload, sort_keys=True))
             return 0 if payload["status"] == "complete" else 1
@@ -153,6 +162,7 @@ def main(
             session_date=dates[0],
             pages=args.pages,
             observed_at=observed,
+            target=target,
         )
         complete = result.status in {"collected", "partial", "recovered"} and (
             kis_paper_qqq_dated_session_complete(
@@ -160,9 +170,11 @@ def main(
                 repo_root=_REPO_ROOT,
                 session_date=dates[0],
                 observed_at=observed,
+                target=target,
             )
         )
         payload = {
+            **({"target_key": result.target_key} if symbol == "SPY" else {}),
             "status": "complete" if complete else "incomplete",
             "collection_status": result.status,
             "reason": result.reason,
@@ -247,6 +259,7 @@ def _collect_panel(
     observed: datetime,
     request_gate: KisPaperMarketDataRateGate,
     token_gate: KisPaperMarketDataTokenStartGate,
+    target: tuple[str, str] = ("QQQ", "NAS"),
 ) -> dict[str, object]:
     sessions = []
     next_due = None
@@ -260,6 +273,7 @@ def _collect_panel(
                 session_date=day,
                 pages=pages,
                 observed_at=observed,
+                target=target,
             )
             complete = result.status in {"collected", "partial", "recovered"} and (
                 kis_paper_qqq_dated_session_complete(
@@ -267,6 +281,7 @@ def _collect_panel(
                     repo_root=_REPO_ROOT,
                     session_date=day,
                     observed_at=observed,
+                    target=target,
                 )
             )
             record = {
@@ -307,6 +322,7 @@ def _collect_panel(
     counts = client.call_counts
     complete_count = sum(item["regular_session_complete"] for item in sessions)
     return {
+        **({"target_key": f"{target[0]}/{target[1]}/1m"} if target[0] == "SPY" else {}),
         "status": "complete" if complete_count == len(dates) else "incomplete",
         "planned_session_count": len(dates),
         "session_count": len(sessions),

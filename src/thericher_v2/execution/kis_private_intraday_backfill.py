@@ -351,8 +351,10 @@ def validate_kis_paper_qqq_dated_session_request(
     pages: int,
     inspect_paths: bool = True,
     observed_at: datetime | None = None,
+    target: tuple[str, str] = ("QQQ", "NAS"),
 ) -> Path:
     """Bind this finite request before credentials; preview performs no filesystem IO."""
+    target = _dated_session_target(target)
     _dated_qqq_keys(session_date, observed_at=observed_at)
     root = Path(cache_root)
     if (
@@ -361,7 +363,7 @@ def validate_kis_paper_qqq_dated_session_request(
         or not 1 <= pages <= 4
         or type(inspect_paths) is not bool
         or not root.is_absolute()
-        or root != kis_paper_qqq_dated_session_cache_root(session_date)
+        or root != kis_paper_qqq_dated_session_cache_root(session_date, target=target)
         or root.is_relative_to(Path(repo_root))
     ):
         raise ValueError("QQQ dated-session request is invalid")
@@ -383,11 +385,26 @@ def validate_kis_paper_qqq_dated_session_request(
     return root
 
 
-def kis_paper_qqq_dated_session_cache_root(session_date: date) -> Path:
+def _dated_session_target(target: tuple[str, str]) -> tuple[str, str]:
+    if (
+        type(target) is not tuple
+        or any(type(value) is not str for value in target)
+        or target not in KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+    ):
+        raise ValueError("dated-session target must be QQQ/NAS or SPY/AMS")
+    return target
+
+
+def kis_paper_qqq_dated_session_cache_root(
+    session_date: date,
+    *,
+    target: tuple[str, str] = ("QQQ", "NAS"),
+) -> Path:
     """Use exactly one independent external v1 parent per explicit date."""
+    target = _dated_session_target(target)
     if type(session_date) is not date or session_date.year != 2026:
         raise ValueError("QQQ dated-session date is invalid")
-    return KIS_PAPER_QQQ_DATED_CACHE_ROOT.parent / f"qqq-{session_date:%Y%m%d}"
+    return KIS_PAPER_QQQ_DATED_CACHE_ROOT.parent / f"{target[0].lower()}-{session_date:%Y%m%d}"
 
 
 def _dated_qqq_keys(
@@ -424,6 +441,7 @@ def kis_paper_qqq_dated_session_complete(
     repo_root: Path,
     session_date: date = KIS_PAPER_QQQ_DATED_SESSION,
     observed_at: datetime | None = None,
+    target: tuple[str, str] = ("QQQ", "NAS"),
 ) -> bool:
     """Only the verified canonical reader can establish the regular-minute cohort."""
     validate_kis_paper_qqq_dated_session_request(
@@ -432,6 +450,7 @@ def kis_paper_qqq_dated_session_complete(
         session_date=session_date,
         pages=4,
         observed_at=observed_at,
+        target=target,
     )
     from thericher_v2.data.kis_paper_intraday import (
         load_verified_kis_paper_private_intraday_catalog,
@@ -445,8 +464,8 @@ def kis_paper_qqq_dated_session_complete(
         catalog = load_verified_kis_paper_private_intraday_catalog(
             cache_root=cache_root,
             repo_root=repo_root,
-            symbol="QQQ",
-            exchange="NAS",
+            symbol=target[0],
+            exchange=target[1],
         )
         require_complete_kis_paper_private_intraday_session(catalog, session=session.window)
     except ValueError as error:
@@ -471,21 +490,23 @@ def run_kis_paper_qqq_dated_session_cycle(
     observed_at: datetime | None = None,
     sleeper: Callable[[float], None] = time.sleep,
     monotonic_clock: Callable[[], float] = time.monotonic,
+    target: tuple[str, str] = ("QQQ", "NAS"),
 ) -> KisPaperPrivateIntradayBackfillRun:
-    """One explicit closed-date QQQ invocation; never borrow or reseed another cursor."""
+    """One explicit native closed-date invocation; never borrow or reseed another cursor."""
     validate_kis_paper_qqq_dated_session_request(
         cache_root=cache_root,
         repo_root=repo_root,
         session_date=session_date,
         pages=pages,
         observed_at=observed_at,
+        target=target,
     )
     return _run_kis_paper_private_intraday_cycle(
         client=client,
         cache_root=cache_root,
         repo_root=repo_root,
         code_revision=code_revision,
-        targets=(("QQQ", "NAS"),),
+        targets=(target,),
         pages_per_target=pages,
         resume_cursor=True,
         quarantine_retained_head_conflicts=False,
@@ -521,6 +542,10 @@ def _run_kis_paper_private_intraday_cycle(
     """
 
     targets = _normalize_private_intraday_targets(targets)
+    if dated_qqq_session:
+        if len(targets) != 1:
+            raise ValueError("dated-session target scope is invalid")
+        _dated_session_target(targets[0])
     if type(pages_per_target) is not int or pages_per_target <= 0:
         raise ValueError("pages_per_target must be a positive integer")
     if type(resume_cursor) is not bool:
@@ -573,14 +598,24 @@ def _run_kis_paper_private_intraday_cycle(
             index, resume_cursor=resume_cursor
         )
         if dated_qqq_session:
-            _validate_dated_qqq_state(index, session_date=dated_qqq_session, observed_at=observed)
+            _validate_dated_qqq_state(
+                index,
+                session_date=dated_qqq_session,
+                observed_at=observed,
+                target=targets[0],
+            )
         _attest_committed_snapshots(root=root, index=index)
         recovered = _recover_orphan_snapshots(root=root, index=index)
         recovered_by_target: dict[str, list[_RecoveredSnapshot]] = {}
         for item in recovered:
             recovered_by_target.setdefault(item.target.target_key, []).append(item)
         if dated_qqq_session:
-            _validate_dated_qqq_state(index, session_date=dated_qqq_session, observed_at=observed)
+            _validate_dated_qqq_state(
+                index,
+                session_date=dated_qqq_session,
+                observed_at=observed,
+                target=targets[0],
+            )
         if removed_candidate_chunks or recovered:
             _attest_committed_snapshots(root=root, index=index)
             _write_index(root=root, index=index, expected_targets=targets)
@@ -604,6 +639,7 @@ def _run_kis_paper_private_intraday_cycle(
                     repo_root=repo_root,
                     session_date=dated_qqq_session,
                     observed_at=observed,
+                    target=(symbol, exchange),
                 )
                 if (
                     complete
@@ -880,6 +916,7 @@ def _collect_target(
                     cursor=cursor,
                     retained_rows=rows_by_key,
                     session_date=dated_qqq_session,
+                    target=(target.symbol, target.exchange),
                 )
             prospective_rows = dict(rows_by_key)
             prospective_duplicates = 0
@@ -992,10 +1029,11 @@ def _validate_dated_qqq_state(
     *,
     session_date: date,
     observed_at: datetime,
+    target: tuple[str, str] = ("QQQ", "NAS"),
 ) -> None:
     initial_key = kis_paper_qqq_dated_session_initial_key(session_date, observed_at=observed_at)
     floor_key = f"{session_date:%Y%m%d}000000"
-    state = _index_target(index=index, target=KisPaperPrivateIntradayTarget("QQQ", "NAS"))
+    state = _index_target(index=index, target=KisPaperPrivateIntradayTarget(*target))
     cursor = KisPaperPrivateIntradayCursor.from_document(state["next_cursor"])
     if cursor is None or not floor_key <= cursor.keyb <= initial_key:
         raise ValueError("QQQ dated-session cursor is invalid")
@@ -1028,12 +1066,13 @@ def _validate_dated_qqq_page(
     cursor: KisPaperPrivateIntradayCursor | None,
     retained_rows: Mapping[str, KisPaperMinuteRawBar],
     session_date: date,
+    target: tuple[str, str] = ("QQQ", "NAS"),
 ) -> None:
     stamps = [_exchange_stamp(row).replace("T", "") for row in page.bars]
     korea = [_korea_stamp(row) for row in page.bars]
     if (
         cursor is None
-        or (page.query.symbol, page.query.exchange) != ("QQQ", "NAS")
+        or (page.query.symbol, page.query.exchange) != target
         or page.query.continuation_key != cursor.keyb
         or page.query.continuation_next != cursor.next_value
         or page.query.include_previous_day is not True

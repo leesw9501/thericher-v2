@@ -75,6 +75,10 @@ not expand live authority or reset capital.
    repairs,66 focused tests/final review and exact RO readback. The quantile
    tree makes zero trades/stress net0 unit bps; its predeclared kill applies.
    Preserve source pins/costs/kills; no tuning rescue or Paper/holdout claim.
+   The separate completed-patch/channel-independent Torch preparation now
+   passes59 pinned CPU tests/final review with old IDs/defaults unchanged.
+   Use the actual matched QQQ/SPY panel for a distinct frozen pooled/transfer
+   hypothesis, not a relabeled downside rerun, selected ensemble or GPU filler.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download
@@ -97,6 +101,14 @@ not expand live authority or reset capital.
    metadata are in Data's stateboard. Data integration authority8,092 passes/
    22 skips/321.26s/clean helper; no task/schedule or permanent throttle change.
    Limitations do not create a general research/Paper approval hold.
+   Matched SPY/AMS September retention is also complete:20 sessions/7,800
+   regular minutes/same five-timeframe totals,80 GETs/one token/88.676s with
+   zero failures. Canonical readback passes, QQQ/legacy indexes unchanged.
+   The pair is20 common session blocks, not40 independent samples. No new
+   task/schedule, default QQQ change, finality/PIT or Paper-input claim.
+   Final SPY/patch shared-source authority8,186 passes/22 skips/317.40s/eight
+   workers/clean helper, Ruff/both Compose pass. Ten Data aliases match591
+   baked sources; no task/service invocation or Paper/schedule change.
 
 The independent QQQ synthetic-price orderability diagnostic received a typed
 accepted response at23:04:20Z, one auth/one GET/zero orders. This does not prove

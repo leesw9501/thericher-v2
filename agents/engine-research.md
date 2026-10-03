@@ -45,6 +45,32 @@ CPU `sha256:e86d393a71691a3493a590275ef5fd6b67927890a609fe942a5f0ced04127ed0`.
 Custody non_promoting_completed; child/container exited. Broader dated input
 and an independently specified mechanism are preferable to retuning this result.
 
+The small completed-patch, channel-independent Torch encoder preparation is
+complete, separate from old architecture IDs/defaults. Shared weights, causal
+whole-patch attention and fixed channel aggregation are an architectural probe,
+not a full PatchTST reproduction or a pretrained trading model.59 local CPU
+tests/2.11s and59 pinned Torch2.7 Docker CPU tests/3.33s pass, zero skips; final
+independent source review finds no actionable P1/P2. Pure test dependencies
+were mounted RO; no runtime install, GPU or real-market fitting occurred.
+Source `sha256:a2b4e1379419cd2d26658b751a4f22e577335cf732eddcf959efe3cef284b9c5`.
+Shared-source authority now8,186 passes/22 skips/317.40s/eight workers/clean
+helper, Ruff/both Compose pass, including the downside's isolated repairs.
+Caller owns completed-bar cutoff/normalization; incomplete patches, invalid
+dtype/device/nonfinite input fail. Data's matched SPY adapter proceeds separately.
+A later campaign must
+freeze its own pooled/transfer hypothesis, context, splits, costs and finite
+compute/kill rules before labels/fits; this preparation has no training grant.
+Primary papers re-retrieved October3 show complementary directions, not an
+architecture winner for our data: arXiv2603.01820v1 benchmarks daily multiasset
+futures/feature-gated temporal models; arXiv2606.09420v1 uses CRSP2018-2024
+daily stocks and shows constrained net portfolios can erase gross signals.
+Neither supplies free compatible intraday data or disclosed adoptable code.
+PatchTST arXiv2211.14730/official Apache-2.0 source supports completed patching
+and shared channel weights; its generic forecasting gains are not ETF alpha.
+No external code/checkpoint/runtime was adopted. Exact source-only receipt:
+`D:\thericher-v2\model-artifacts\research\source-discovery\architecture-cost-transfer-20261003.json`,
+SHA256 `c5cbdcf78a9d35d0a73e0dbc1632a86d5cbe9d437aa8e2351dc717b114ba93f5`.
+
 The distinct causal four-expert development campaign is complete: linear/LSTM16,
 12-month momentum and TRAIN-risk constant; uniform initial weights/fixed rate0.1,
 strictly prior completed-month feedback from continuous10bps expert ledgers,
