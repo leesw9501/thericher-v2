@@ -1356,6 +1356,11 @@ research profitability. No research/permission/GPU runtime block exists.
 September20 matched QQQ/SPY days and October1/2 context are complete revised
 development inputs; old unavailable causal consumers stay scoped to their own
 contracts. They do not block these sources or the separate Paper opportunity.
+Data's subsequent dated acquisition is closed and fills August28/31 and SPY
+September1. With the existing QQQSeptember1 source, recent per-session coverage
+spans25 shared regular days August28-October2,9,750 M1 per ETF. This is useful
+development coverage, not50 independent blocks or a new combined campaign.
+Do not reuse the closed20-date contracts as though their source pins changed.
 Net-utility, public-model, fixed-band, causal-mixture, downside and pooled-patch
 campaigns are closed; retain their kills/controls and do not repeat them.
 Current time-of-day feature,60-case input preparation and12-cell FirstRate
@@ -1368,8 +1373,8 @@ Official author PDF/university text was read with the web tool; direct fetch
 Exact source-only receipt:
 `D:\thericher-v2\model-artifacts\research\source-discovery\intraday-mechanism-20261003.json`,
 SHA256 `b81abdb76587cf05184eb028a73953022d41054a2c112cb91fcd1e312f33e885`.
-Data's distinct dated-close-key reach package prepares broader TRAIN coverage;
-only that worker yields on quota/token due. Preserve all existing identities.
+Data's dated-close-key reach packages are closed; no collector wait remains.
+Preserve their exact source identities and scoped-empty findings.
 No active campaign or GPU appointment remains. A next distinct mechanism needs
 its own frozen entry/exit/cost/control contract, not a changed hurdle or repeated
 architecture run; broader existing FirstRate inputs are available independently
