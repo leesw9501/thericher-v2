@@ -88,6 +88,12 @@ checks; no new wrapper/task/schedule. The SPY panel already completed20/20,
 80 GETs/one token/88.676s/zero failures, verified7,800 regular minutes and
 all five timeframes. QQQ/legacy indexes stayed unchanged. Do not rerun this
 answered scope; exact complete/index/readback receipts belong to Data.
+The exact May1/June1/July1/August3 older-date close-key study is answered with
+eight empty pages, zero complete scopes/no rate limit; do not retry those
+queries or infer a global history floor. Immutable first/recovery receipts
+remain under the existing QQQ dated-panel artifact root; Data's stateboard
+records the corrected list-shaped index projection and preserved56 hashes.
+The independent August10/17/31 near-boundary package owns its24-GET limit.
 
 ## Latest Bounded Research
 

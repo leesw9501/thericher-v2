@@ -98,6 +98,11 @@ October1/2 adds two matched later session blocks/1,560 regular minutes,
 16 GETs/one token/17.976s, preserving all September/legacy bytes. Parent exact
 source/day-slice/resampling readback passes. This is revised/seen context,
 not fresh holdout; exact receipt and slice-vs-selected identity note belong to Data.
+Eight older May1/June1/July1/August3 QQQ/SPY close-key queries are scoped empty,
+not rate-limited or a global history floor. The receipt writer's list-shape fault
+is repaired; recovery7 GETs/12.114s, original+recovery8 GETs/zero accepted,
+56 old index hashes unchanged. A separate finite August10/17/31 reach package
+is owned; no Data wait blocks the broader FirstRate mechanism study.
 
 Tiingo standard EOD SPY/QQQ/IWM acquisition retained945 rows/315 per ETF from
 one new July2025-September2026 vintage. Do not splice adjusted vintages.

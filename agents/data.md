@@ -13,6 +13,25 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
+One bounded older close-key package is closed:QQQ/NAS and SPY/AMS May1,
+June1,July1,August3 all return `minute_response_empty` for their exact queries,
+8 total GETs/0 accepted pages/0 complete sessions. This is scoped source
+unavailability, NOT a rate limit or global history floor. The first May1 QQQ
+attempt's inline projection wrongly treated index.targets as a mapping; the
+list-shaped projection was repaired and11 synthetic checks preceded recovery.
+The first attempt used one client/token/one GET; recovery used one new
+client/token/seven GETs/12.113816s, no original May1 retry. All56 protected
+indexes/predecessor receipt remained byte-unchanged; parent hash readback passes.
+No raw rows retained, slice/resampling not applicable, no retry/next_due remains.
+Exact receipts under `D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-panel`:
+`train-eight-scopes-20261003T022702121188Z-5a3aa02dcdca.json`,
+SHA256 `e45aadb942d2d22e8e3b7eb89441ecbe4c89eaa26930cad2c3dfe381d674607a`;
+`train-eight-scopes-continuation-20261003T023317844130Z-d6879d784d36.json`,
+SHA256 `aa26c137838e54ba589bf894ca6bd5d72f2d019749b7880d3c75b8a48748ef93`.
+Next bounded package owns only August10/17/31 QQQ/SPY close-key reach, one
+reusable client/24-GET ceiling/dedicated roots. It does not retry the eight
+closed queries or block broader existing FirstRate research/Paper opportunity.
+
 The bounded October1/2 context extension is complete for QQQ/NAS and SPY/AMS:
 four independent date/symbol scopes,16 GETs/one client/token/17.976s, no retry
 or next_due. Each source verifies390/78/39/6/2 regular input bars. All September,
