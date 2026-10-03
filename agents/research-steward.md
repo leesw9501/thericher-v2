@@ -5,6 +5,18 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+The time-of-day input geometry package is closed/non_promoting_completed,
+not a GPU/predictive appointment:40 dated sources,14 warmup sessions plus
+six shared scored days/60 feature cases,0 targets/fits/weights/sealed spend.
+CPU2/2GiB/network none/90-second outer bound. Exact RO source/feature-commitment
+reconstruction passes. Original inline adapter-field failure remains; corrected
+existing resampler recovery completed without changing source/feature contracts.
+Root `D:\thericher-v2\model-artifacts\research\kis-time-of-day-noise-band-input-smoke-v1`;
+contract `sha256:46c34768c21aca0b8f022bc68a9bc002355bda379251c5f79c993b2e36b9606b`;
+summary `sha256:053a3e38ee6ce27c91f059d53164c7e1fca2e3a60f78b184696e0669d25e4a6a`.
+No feature values or process persist. Research's next distinct zero-fit mechanism
+study is implementation-owned, not frozen/evaluated or a compute allocation.
+
 October3 pooled-return CUDA appointment closed/non_promoting_completed:
 `kis-pooled-patch-return-development-v1`. Forty dated source pins and one
 three-fit/42-cell contract froze before labels;960 overlapping TRAIN windows

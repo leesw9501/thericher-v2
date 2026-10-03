@@ -150,6 +150,10 @@ runtime tests/zero skips and exact source/cohort/action/fee/math readback pass.
 Actions seal in memory before comparison payoffs, not a separate durable receipt;
 unretained learned inference is not reconstructed. Canonical appointment closed,
 duration/VRAM peak not instrumented. Exact pins belong to Research stateboards.
+The distinct14-prior-session time-of-day feature is also prepared:100 tests,
+60 real QQQ/SPY input cases and exact RO prefix/source reconstruction pass.
+No targets/fits/GPU or performance result. Next bounded hypothesis may use
+broader existing FirstRate data; KIS older-date reach is not its dependency.
 
 Public mechanisms were independently re-retrieved from primary papers/repos.
 TimesFM2.5 Apache weights are already used;3.0 non-production rights are not

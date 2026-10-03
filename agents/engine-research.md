@@ -17,6 +17,30 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+The original time-of-day feature preparation and real-input smoke are complete:
+`intraday_noise_band.py` computes fourteen strictly prior sessions' mean
+absolute CLOSE/OPEN move at the same elapsed M5 cutoff, anchored to today's
+OPEN. Homogeneous complete prefixes, UTC/DST alignment and missingness are
+tested; future OHLCV is unread by the helper. No previous-close gap adjustment,
+shorting, leverage, entry/exit rule, target or paper reproduction is implied.
+100 feature tests pass; parent feature/VWAP group111 passes/one known skip1.88s.
+Source `sha256:191bbe38e29b2c5a88d9b83e408527f67e34f4c445336c75bc0f77820db3ba2a`.
+Forty September QQQ/SPY metadata pins froze before real feature construction.
+Fourteen warmup sessions plus six shared later days/five cutoffs produce60
+feature cases,30 per ETF, not twelve independent days. Whole-source and
+prefix-only outputs agree; exact RO reconstruction/source/hash verification
+passes. Pinned offline2CPU/2GiB/90-second bound,0 targets/fits/GPU/weights;
+feature values remain in memory, only their commitment is retained. The first
+inline attempt used an absent adapter.inputs attribute before any feature
+calculation; its immutable failure remains. Recovery uses the existing verified
+catalog resampler, not an invented adapter field.5.816s recovery command and
+5.559s RO readback completed; these are command times, not worker timings.
+Root `D:\thericher-v2\model-artifacts\research\kis-time-of-day-noise-band-input-smoke-v1`;
+contract `sha256:46c34768c21aca0b8f022bc68a9bc002355bda379251c5f79c993b2e36b9606b`;
+summary `sha256:053a3e38ee6ce27c91f059d53164c7e1fca2e3a60f78b184696e0669d25e4a6a`.
+Custody non_promoting_completed, source/revised/PIT/finality limitations remain.
+This prepares a distinct hypothesis; it is not a performance result or Paper input.
+
 The pooled return campaign is complete/non_promoting_completed:
 `kis-pooled-patch-return-development-v1`. Forty exact QQQ/NAS and SPY/AMS
 dated sources freeze before labels. Ten shared TRAIN days provide960 overlapping
@@ -48,6 +72,11 @@ CUDA `sha256:80ea4b867b544ddee3b42a88690a512aaba1c45e4d2d49c9bd4715cde5b843a0`.
 The metadata reader's optional SPY target leaves QQQ defaults/old contracts
 unchanged. Latest8,186-test authority predates this isolated package; focused
 verification covers it, not a claim of a repeated full suite.
+
+Closed references below retain exact scoped findings. Statements about an old
+unavailable input or a then-pending worker are historical, not current dispatch
+facts. Current readiness is in Current Tracks and Active Constraint And Handoff;
+immutable family history/custody must never be reset by this projection.
 
 The dated QQQ downside-hurdle CPU campaign is complete, not a winner:
 `kis-qqq-dated-downside-development-v1`. Twenty September2-30 sessions bind
@@ -1194,10 +1223,10 @@ dispatch restrictions. The current development package is described above.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | Fixed monthly12-month cash adaptation completed72 cells; no buy/hold advantage | Preserve its controls for a finite learned holding-policy comparison; no lookback search or outcome-driven shift |
-| Classical ML/statistical | H180 Ridge and prior feature/boosted comparisons complete, negative3/5bps aggregate nets | Prepare common-timestamp cross-ETF information/pooling controls; no same-input threshold/cost rescue |
-| Sequence/DL/public model | TimesFM435 forecasts/90 cells and Chronos-2 matched1,305 forecasts/126 cells completed; no selected model | Implement the finite pooled linear/LSTM net-utility contract using the new causal monthly inputs; freeze before fitting, no forecast/threshold rescue or utilization job |
-| Portfolio/allocation/meta-decision | Daily flatten loses after costs; monthly volatility holding beats cash6/6 and TRAIN-risk-control5/6, trails buy/hold6/6 | Keep full NAV/turnover/drawdown comparisons; no same-data weight/ETF selection or deployment claim |
+| Technical/chart and momentum/regime | Original14-prior-session time-of-day helper/100 tests and60-case real-input smoke complete | Freeze a distinct entry/exit/cost/replay development contract before payoffs, preferably broad existing FirstRate coverage; not a paper reproduction |
+| Classical ML/statistical | Dated downside tree/logistic and pooled ridge actual fits complete, all flat at their fixed hurdles | Use useful broader temporal coverage and a distinct mechanism; no seen threshold/cost rescue |
+| Sequence/DL/public model | Pooled LSTM/patch actual CUDA fits complete, both flat; TimesFM/Chronos-2 comparisons also closed | No repeat dispatch or selected winner; next bounded campaign needs its own hypothesis/data/compute contract |
+| Portfolio/allocation/meta-decision | Continuous fixed band fails stress NAV; causal expert mixture's tiny gain depends on QQQ and loses risk control | Preserve the full controls/lineage; no same-data weight/ETF selection or Paper qualification |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and
@@ -1291,30 +1320,25 @@ developmental study or a separately scoped baseline Paper experiment.
 
 ## Active Constraint And Handoff
 
-The composed-policy, position-aware, causal-feature, fixed-boosting, H180 and
-TimesFM daily-return comparisons are completed.
-Keep prior FirstRate losses and each Tiingo study's scoped limitations intact;
-none proves every model family unusable. No frozen research worker/appointment
-remains yet; the new net-utility implementation is owned, not dispatched.
-A distinct development package may reuse seen data with that label;
-a later independent performance claim needs genuinely unseen evidence. The
-exact unresolved Paper successor is not a general research permission hold.
-Do not continue a H30 architecture/threshold rescue on these same outcomes.
-The lower-turnover H180 experiment did not establish useful prediction;
-TimesFM adds a small SPY observation, not a selected winner. Larger models or
-longer training alone are not the next hypothesis. Chronos-2's matched
-same-origin comparison is complete, not a ready second dispatch. The current
-finite net-utility package directly tests cost-aware held-position learning;
-its forecast input remains prior-only and its realized payoff is isolated.
-Freeze source, runtime, two fits, costs and complete-month split before outputs.
-Reused samples remain seen-data, not independent confirmation. Kill on
-timing/support mismatch, ledger/gradient inconsistency or failure to add value
-over TRAIN-risk controls without outcome-driven rescue.
-No broad parameter/architecture search or GPU memory-padding job is assigned.
-Exact Paper recovery remains the independent main path. No new appointment or
-external collection is implied by this next-package direction.
-
-The completed source-isolated CUDA appointment proved only loader, geometry,
-finite-run, and cleanup facts. It cannot change the unavailable QQQ/SPY causal
-input, create a predictive candidate, or feed KIS Paper. Its lineage is closed
-to selection; a later distinct ready track needs its own frozen contract.
+The company QQQ Paper opportunity remains October6 00:20 KST, independent of
+research profitability. No research/permission/GPU runtime block exists.
+September20 matched QQQ/SPY days and October1/2 context are complete revised
+development inputs; old unavailable causal consumers stay scoped to their own
+contracts. They do not block these sources or the separate Paper opportunity.
+Net-utility, public-model, fixed-band, causal-mixture, downside and pooled-patch
+campaigns are closed; retain their kills/controls and do not repeat them.
+Current time-of-day feature and60-case real-input preparation are closed.
+Their14 prior session prefixes/current OPEN/completed M5 cutoff introduce no
+previous-close gap, short, leverage, target, fitting or Paper input. The source's
+2007-2024 SPY/VIX/IQFeed return claims do not transfer to this variant.
+Official author PDF/university text was read with the web tool; direct fetch
+403 is separately retained, not a fabricated raw-source hash or code license.
+Exact source-only receipt:
+`D:\thericher-v2\model-artifacts\research\source-discovery\intraday-mechanism-20261003.json`,
+SHA256 `b81abdb76587cf05184eb028a73953022d41054a2c112cb91fcd1e312f33e885`.
+Data's distinct dated-close-key reach package prepares broader TRAIN coverage;
+only that worker yields on quota/token due. Preserve all existing identities.
+No active campaign or GPU appointment remains. Next mechanism evaluation needs
+its own frozen entry/exit/cost/control contract, not a changed hurdle or repeated
+architecture run; broader existing FirstRate inputs are available independently
+of the exact KIS older-date probe. Do not make that probe a research wait.

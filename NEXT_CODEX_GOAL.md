@@ -87,6 +87,12 @@ not expand live authority or reset capital.
    input. Exact pins belong to Research boards. Prefer a distinct mechanism
    and useful broader temporal coverage over another seen-data architecture
    sweep. The company Paper objective remains OPEN.
+   The distinct14-prior-session time-of-day feature now passes100 focused
+   tests and60 real QQQ/SPY input cases/RO reconstruction. No target/fitting,
+   performance/Paper claim or new runtime. Next freeze an original bounded
+   long-only entry/exit/cost/control development contract on broader existing
+   FirstRate coverage; do not repeat prior first30/final30 or ORB studies or
+   wait for the exact older-date KIS probe. Source claims are not our results.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download

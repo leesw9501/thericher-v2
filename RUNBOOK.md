@@ -91,6 +91,16 @@ answered scope; exact complete/index/readback receipts belong to Data.
 
 ## Latest Bounded Research
 
+The original research-only `build_intraday_noise_band` accepts exactly14
+prior `NoiseBandHistoryEntry` session prefixes/current completed M5 cutoff;
+calendar/source availability and future targets remain caller-owned.100 focused
+tests and60 real QQQ/SPY geometry cases/prefix-only RO reconstruction pass.
+Use the existing verified catalog resampler, not a nonexistent adapter.inputs
+field. No forecast/strategy/profit claim, fitting, GPU, retained feature values
+or Paper input. Exact metadata contract/result and original failed attempt are
+under `D:\thericher-v2\model-artifacts\research\kis-time-of-day-noise-band-input-smoke-v1`.
+Do not rerun answered preparation; freeze a distinct costed mechanism study.
+
 `scripts/run_kis_pooled_patch_return_development.py` completed `--freeze`,
 `--cpu-smoke`, `--cuda` and exact RO `--verify`. Only freeze accepts both
 `--qqq-index-pins` and `--spy-index-pins`; later modes require the contract pin,
