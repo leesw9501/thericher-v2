@@ -620,7 +620,7 @@ $collectionCommand = @(
     "--skip-legacy-preparation",
     "--pages-per-target",
     [string]$collectionPagesPerTarget,
-    "--explicit-qqq-head-continuation",
+    "--explicit-pair-head-continuation",
     "--preparation-artifact-root",
     "/app/model_artifacts",
     "--runtime-projection",

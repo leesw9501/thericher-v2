@@ -75,10 +75,14 @@ page. Partial/subtype unknown is not success, exhaustion or a provider rate cap.
 SPY120 is not a complete matched session. Direct capture is not Scheduler proof.
 
 Existing Data owner is Ready, next_due October6 00:29 KST. Earlier06:20 mixed/
-recovery receipt remains separate. Ten existing Data consumers match all591
-source files in the dated-panel integration, image:
-sha256:ebe0c0d3814c8f5dec20cc26d07972132cf1f13cc2f92fe2ab89135ec4949a8c.
-Publication invoked no task/service and changed no schedule or default scope.
+recovery receipt remains separate. Paired-head integration passed agent341,
+parent460 serial tests/full8,570 passes/22 skips/325.47s/eight workers/clean
+helper, matching8,592 collected. Ten existing Data consumers match600 source/
+configuration hashes, image:
+sha256:289b72095047fa59fb7eb54ab318caed59cce375eae7175eb1b4742bb7c40ce9.
+Existing head owner uses new explicit pair flag; old QQQ-only/default behavior
+is unchanged. No task/service invocation, schedule or Paper-alias change.
+Actual paired-head SPY yield remains unobserved, not a completed capture.
 
 The isolated two-date probe returned120 September1 midday QQQ minutes and
 empty August3/partial, one token/two requests/zero daily. Raw rows discarded;
@@ -101,8 +105,13 @@ not fresh holdout; exact receipt and slice-vs-selected identity note belong to D
 Eight older May1/June1/July1/August3 QQQ/SPY close-key queries are scoped empty,
 not rate-limited or a global history floor. The receipt writer's list-shape fault
 is repaired; recovery7 GETs/12.114s, original+recovery8 GETs/zero accepted,
-56 old index hashes unchanged. A separate finite August10/17/31 reach package
-is owned; no Data wait blocks the broader FirstRate mechanism study.
+56 old index hashes unchanged. The separate August10/17/31 package is closed:
+August31 QQQ/SPY each390/78/39/6/2, August10/17 four scoped-empty queries;
+12 GETs/eight accepted/four empty/one token/14.756s,63 protected indexes unchanged.
+No global history-floor/finality/PIT claim. A paired head-continuation repair
+is verified/deployed because the old option applied only to QQQ and left SPY120;
+old defaults/tasks/budgets remain unchanged. A distinct11-scope/44-GET acquisition
+owns August24-28 QQQ/SPY plus September1SPY; no closed-query retry/foreground wait.
 
 Tiingo standard EOD SPY/QQQ/IWM acquisition retained945 rows/315 per ETF from
 one new July2025-September2026 vintage. Do not splice adjusted vintages.
@@ -157,8 +166,13 @@ unretained learned inference is not reconstructed. Canonical appointment closed,
 duration/VRAM peak not instrumented. Exact pins belong to Research stateboards.
 The distinct14-prior-session time-of-day feature is also prepared:100 tests,
 60 real QQQ/SPY input cases and exact RO prefix/source reconstruction pass.
-No targets/fits/GPU or performance result. Next bounded hypothesis may use
-broader existing FirstRate data; KIS older-date reach is not its dependency.
+No targets/fits/GPU or performance result from that input smoke. Its subsequent
+FirstRate band recipe now completes12 cells/zero fits: primary later-fold net
+losses kill it despite positive matched-control increments in all four groups.
+Archive-write verifier defect is repaired in same-family v2; original41.238s/
+corrected39.363s workers have identical normalized cells/actions. Exact ALL-RO
+source/action/cost replay and final independent review pass. Original result/
+source remain immutable; no cost rescue/NAV/winner/Paper claim. Research owns pins.
 
 Public mechanisms were independently re-retrieved from primary papers/repos.
 TimesFM2.5 Apache weights are already used;3.0 non-production rights are not
@@ -179,6 +193,10 @@ cleanup was repaired; C:\trpy\runs\r-73d1a88d remains untouched.
 Weekly serial compatibility6,341 passes/19 skips predates those additions.
 The later isolated pooled-return package has153 focused local/pinned Docker
 passes; the8,186-test authority above predates it. No repeat full suite is claimed.
+The subsequent paired-head/band shared integration supersedes that authority:
+parent460 changed-path serial passes25.61s; full8,570/22/35 warnings/325.47s,
+eight workers/clean helper exit0, matching8,592 collection. It includes the
+later isolated pooled/helper/band packages; final Ruff/both Compose pass.
 
 At company/shared-runtime integration follow AGENTS.md: changed-path serial,
 scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and both sample-env

@@ -5,6 +5,18 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+FirstRate time-of-day band family closed/non_promoting_completed after12 cells,
+zero fits/GPU/weights/sealed spend. Root
+`D:\thericher-v2\model-artifacts\research\firstrate-time-of-day-band-development-20261003-v2`;
+contract `sha256:b790a6355210997bd3b7dacd198e6ce34692e7f1ef8833f03e152abad378d565`;
+summary `sha256:03e24e1664768e3ce16ade1f12eb9229fa8fe7bd6fee6ccd2dc1fcd3bcb95dc5`.
+Same-family v1 original41.238s and corrected v2 worker39.363s preserve identical
+normalized actions/cells; original source/result remain immutable. The only
+repair moves readback control locks to scratch with real fail-closed semantics;
+exact all-RO reconstruction passes. No repeated selection or extra hypothesis
+allocation. Research owns the later-fold net-loss kill; no depth/ensemble/Paper
+grant follows. CPU1/2GiB/network none/300-second supervisor; all workers reaped.
+
 The time-of-day input geometry package is closed/non_promoting_completed,
 not a GPU/predictive appointment:40 dated sources,14 warmup sessions plus
 six shared scored days/60 feature cases,0 targets/fits/weights/sealed spend.
@@ -14,8 +26,8 @@ existing resampler recovery completed without changing source/feature contracts.
 Root `D:\thericher-v2\model-artifacts\research\kis-time-of-day-noise-band-input-smoke-v1`;
 contract `sha256:46c34768c21aca0b8f022bc68a9bc002355bda379251c5f79c993b2e36b9606b`;
 summary `sha256:053a3e38ee6ce27c91f059d53164c7e1fca2e3a60f78b184696e0669d25e4a6a`.
-No feature values or process persist. Research's next distinct zero-fit mechanism
-study is implementation-owned, not frozen/evaluated or a compute allocation.
+No feature values or process persist. The subsequent zero-fit mechanism above
+is also closed; no active research appointment remains.
 
 October3 pooled-return CUDA appointment closed/non_promoting_completed:
 `kis-pooled-patch-return-development-v1`. Forty dated source pins and one

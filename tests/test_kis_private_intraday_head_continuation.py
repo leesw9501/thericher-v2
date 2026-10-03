@@ -5,7 +5,7 @@ import socket
 import urllib.request
 from collections.abc import Callable
 from dataclasses import replace
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
@@ -13,7 +13,11 @@ import pytest
 
 import thericher_v2.execution.kis_market_data as market_data
 import thericher_v2.execution.kis_private_intraday_backfill as collector
-from thericher_v2.data.kis_paper_intraday import load_verified_kis_paper_private_intraday_catalog
+from thericher_v2.data.kis_paper_intraday import (
+    load_verified_kis_paper_private_intraday_catalog,
+    require_complete_kis_paper_private_intraday_session,
+)
+from thericher_v2.data.us_equity_session import us_equity_2026_session
 from thericher_v2.execution.kis_market_data import (
     KisMarketDataRequest,
     KisMarketDataResponse,
@@ -40,8 +44,15 @@ def deny_external_access(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 class _Client:
-    def __init__(self, qqq: list[KisPaperMinutePage | KisPaperMarketDataError]) -> None:
-        self.responses = {"QQQ": list(qqq), "SPY": [_page(_rows(120), symbol="SPY")]}
+    def __init__(
+        self,
+        qqq: list[KisPaperMinutePage | KisPaperMarketDataError],
+        spy: list[KisPaperMinutePage | KisPaperMarketDataError] | None = None,
+    ) -> None:
+        self.responses = {
+            "QQQ": list(qqq),
+            "SPY": list(spy) if spy is not None else [_page(_rows(120), symbol="SPY")],
+        }
         self.queries: list[KisPaperMinuteQuery] = []
         self.paced_calls = 0
 
@@ -126,6 +137,250 @@ def _catalog(tmp_path: Path) -> object:
 
 def _index(tmp_path: Path) -> dict[str, object]:
     return json.loads((tmp_path / "market-data" / "v1" / "index.json").read_text())
+
+
+def _run_pair(tmp_path: Path, client: object, **kwargs: object) -> tuple[object, ...]:
+    return _run(
+        tmp_path,
+        client,
+        explicit_qqq_head_continuation=False,
+        explicit_pair_head_continuation=True,
+        **kwargs,
+    )
+
+
+@pytest.mark.parametrize(
+    "signal", ["blank_or_absent", "unrecognized_nonblank", "recognized_continuation"]
+)
+@pytest.mark.parametrize("descending", [False, True])
+def test_paired_head_retains_complete_sessions_serially_without_cursor_changes(
+    tmp_path: Path, signal: str, descending: bool
+) -> None:
+    rows = _rows(480, offset=-90)
+    seed = _Client(
+        *[
+            [_page(rows[360:], symbol=symbol, signal="recognized_continuation")]
+            for symbol in ("QQQ", "SPY")
+        ]
+    )
+    _run(
+        tmp_path, seed, pages_per_target=1, resume_cursor=True, explicit_qqq_head_continuation=False
+    )
+    prior_cursors = [state["next_cursor"] for state in _index(tmp_path)["targets"]]
+    assert all(cursor is not None for cursor in prior_cursors)
+    prior_manifests = {
+        path: path.read_bytes()
+        for path in (tmp_path / "market-data/v1/snapshots").glob("*/manifest.json")
+    }
+    responses = []
+    for symbol in ("QQQ", "SPY"):
+        responses.append(
+            [
+                _page(
+                    tuple(reversed(rows[offset : offset + 120]))
+                    if descending
+                    else rows[offset : offset + 120],
+                    symbol=symbol,
+                    signal=signal,
+                )
+                for offset in (360, 240, 120, 0)
+            ]
+        )
+    client = _Client(*responses)
+    sleeps: list[float] = []
+    results = _run_pair(tmp_path, client, sleeper=sleeps.append)
+    assert [(result.status, result.row_count) for result in results] == [("collected", 480)] * 2
+    assert [query.symbol for query in client.queries] == ["QQQ"] * 4 + ["SPY"] * 4
+    assert client.paced_calls == len(sleeps) == 8
+    for offset, symbol, exchange in ((0, "QQQ", "NAS"), (4, "SPY", "AMS")):
+        queries = client.queries[offset : offset + 4]
+        assert queries[0].continuation_next is None and not queries[0].include_previous_day
+        for query, page_offset in zip(queries[1:], (360, 240, 120), strict=True):
+            assert (query.symbol, query.exchange) == (symbol, exchange)
+            assert query.continuation_key == collector._one_exchange_minute_before(
+                rows[page_offset]
+            )
+            assert query.continuation_next == "1" and query.include_previous_day
+        catalog = load_verified_kis_paper_private_intraday_catalog(
+            cache_root=tmp_path / "market-data",
+            repo_root=tmp_path / "repo",
+            symbol=symbol,
+            exchange=exchange,
+        )
+        session = us_equity_2026_session(date(2026, 7, 22))
+        assert (
+            len(
+                require_complete_kis_paper_private_intraday_session(
+                    catalog, session=session.window
+                ).bars
+            )
+            == 390
+        )
+    assert [state["next_cursor"] for state in _index(tmp_path)["targets"]] == prior_cursors
+    assert all(path.read_bytes() == blob for path, blob in prior_manifests.items())
+    for state in _index(tmp_path)["targets"]:
+        assert state["chunks"][-1]["collection_scope"] == "head"
+        assert state["chunks"][-1]["input_cursor"] is None
+        assert state["chunks"][-1]["output_cursor"] is None
+
+
+@pytest.mark.parametrize("symbol", ["QQQ", "SPY"])
+@pytest.mark.parametrize(
+    "failure",
+    [
+        "wrong_symbol",
+        "wrong_exchange",
+        "prior_day",
+        "mixed_day",
+        "unordered_exchange",
+        "unordered_korea",
+        "repeat",
+        "overlap",
+        "canonical_overlap",
+        "duplicate_exchange",
+        "duplicate_korea",
+        "rate_limited",
+    ],
+)
+def test_paired_invalid_page_preserves_prefix_and_stops_only_its_target(
+    tmp_path: Path, symbol: str, failure: str
+) -> None:
+    head = _rows(120, offset=120)
+    older = _rows(120)
+    candidate = _page(older, symbol=symbol)
+    if failure == "wrong_symbol":
+        candidate = _page(older, symbol="SPY" if symbol == "QQQ" else "QQQ")
+    elif failure == "wrong_exchange":
+        query = replace(candidate.query)
+        object.__setattr__(query, "exchange", "AMS" if symbol == "QQQ" else "NAS")
+        candidate = replace(candidate, query=query)
+    elif failure == "prior_day":
+        candidate = _page(_rows(120, offset=-690), symbol=symbol)
+    elif failure == "mixed_day":
+        candidate = _page(_rows(120, offset=-630), symbol=symbol)
+    elif failure == "unordered_exchange":
+        candidate = _page((older[1], older[0], *older[2:]), symbol=symbol)
+    elif failure == "unordered_korea":
+        candidate = _page(
+            tuple(
+                replace(row, korea_date=other.korea_date, korea_time=other.korea_time)
+                for row, other in zip(older, reversed(older), strict=True)
+            ),
+            symbol=symbol,
+        )
+    elif failure == "repeat":
+        candidate = _page(head, symbol=symbol)
+    elif failure == "overlap":
+        candidate = _page(_rows(120, offset=1), symbol=symbol)
+    elif failure == "canonical_overlap":
+        candidate = _page(
+            tuple(
+                replace(row, korea_date=other.korea_date, korea_time=other.korea_time)
+                for row, other in zip(older, head, strict=True)
+            ),
+            symbol=symbol,
+        )
+    elif failure == "duplicate_exchange":
+        candidate = _page(
+            (older[0], replace(older[1], exchange_time=older[0].exchange_time), *older[2:]),
+            symbol=symbol,
+        )
+    elif failure == "duplicate_korea":
+        candidate = _page(
+            (older[0], replace(older[1], korea_time=older[0].korea_time), *older[2:]), symbol=symbol
+        )
+    elif failure == "rate_limited":
+        candidate = KisPaperMarketDataError("rate_limited")
+    full = [
+        _page(_rows(120, offset=offset), symbol="SPY" if symbol == "QQQ" else "QQQ")
+        for offset in (360, 240, 120, 0)
+    ]
+    failing = [_page(head, symbol=symbol), candidate, _page(older, symbol=symbol)]
+    client = _Client(failing, full) if symbol == "QQQ" else _Client(full, failing)
+    results = _run_pair(tmp_path, client)
+    failed, other = results if symbol == "QQQ" else reversed(results)
+    assert failed.status == "partial" and failed.row_count == 120
+    assert failed.reason == (
+        "rate_limited"
+        if failure == "rate_limited"
+        else "minute_cursor_stalled"
+        if failure in {"prior_day", "repeat", "overlap", "canonical_overlap"}
+        else "minute_response_invalid"
+    )
+    assert other.status == "collected" and other.row_count == 480
+    assert len(client.responses[symbol]) == 1 and len(client.queries) == 6
+    catalog = load_verified_kis_paper_private_intraday_catalog(
+        cache_root=tmp_path / "market-data",
+        repo_root=tmp_path / "repo",
+        symbol=symbol,
+        exchange="NAS" if symbol == "QQQ" else "AMS",
+    )
+    assert len(catalog.bars) == 120
+
+
+@pytest.mark.parametrize("symbol", ["QQQ", "SPY"])
+def test_paired_checker_enforces_requested_frontier_even_without_overlap(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, symbol: str
+) -> None:
+    original = collector._one_exchange_minute_before
+    monkeypatch.setattr(
+        collector,
+        "_one_exchange_minute_before",
+        lambda row: (
+            datetime.strptime(original(row), "%Y%m%d%H%M%S") - timedelta(hours=1)
+        ).strftime("%Y%m%d%H%M%S"),
+    )
+    pages = [_page(_rows(120, offset=120), symbol=symbol), _page(_rows(120), symbol=symbol)]
+    other = [_page(_rows(1), symbol="SPY" if symbol == "QQQ" else "QQQ")]
+    client = _Client(pages, other) if symbol == "QQQ" else _Client(other, pages)
+    result = _run_pair(tmp_path, client, pages_per_target=2)[0 if symbol == "QQQ" else 1]
+    assert (result.status, result.row_count, result.reason) == (
+        "partial",
+        120,
+        "minute_cursor_stalled",
+    )
+
+
+@pytest.mark.parametrize("signal", ["blank_or_absent", "recognized_continuation"])
+@pytest.mark.parametrize("count", [1, 119, 120])
+def test_paired_short_or_midnight_terminal_does_not_request_another_day(
+    tmp_path: Path, signal: str, count: int
+) -> None:
+    rows = _rows(count, offset=-570 if count == 120 else 0)
+    client = _Client(
+        *[
+            [_page(rows, symbol=symbol, signal=signal), _page(_rows(120), symbol=symbol)]
+            for symbol in ("QQQ", "SPY")
+        ]
+    )
+    assert [result.row_count for result in _run_pair(tmp_path, client, pages_per_target=8)] == [
+        count
+    ] * 2
+    assert [query.symbol for query in client.queries] == ["QQQ", "SPY"]
+
+
+@pytest.mark.parametrize("signal", ["blank_or_absent", "recognized_continuation"])
+def test_pair_nonolder_derived_cursor_rejects_before_retaining_page(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, signal: str
+) -> None:
+    head = _rows(120, offset=120)
+    monkeypatch.setattr(
+        collector,
+        "_one_exchange_minute_before",
+        lambda row: row.exchange_date + row.exchange_time,
+    )
+    client = _Client(
+        [_page(head, signal=signal)],
+        [_page(_rows(1), symbol="SPY")],
+    )
+    result = _run_pair(tmp_path, client)[0]
+    assert (result.status, result.row_count, result.reason) == (
+        "rejected",
+        0,
+        "minute_cursor_stalled",
+    )
+    assert [query.symbol for query in client.queries] == ["QQQ", "SPY"]
+    assert _index(tmp_path)["targets"][0]["chunks"] == []
 
 
 @pytest.mark.parametrize("signal", ["blank_or_absent", "unrecognized_nonblank"])
@@ -442,24 +697,76 @@ def test_conflicting_overlap_still_rejects_entire_candidate_batch(tmp_path: Path
     assert len(client.queries) == 3
 
 
+@pytest.mark.parametrize(
+    "option", ["explicit_qqq_head_continuation", "explicit_pair_head_continuation"]
+)
 @pytest.mark.parametrize("flag", [None, 1, "true"])
-def test_flag_type_rejected_before_cache_or_request(tmp_path: Path, flag: object) -> None:
+def test_flag_type_rejected_before_cache_or_request(
+    tmp_path: Path, flag: object, option: str
+) -> None:
     client = _Client([])
     with pytest.raises(ValueError, match="must be a boolean"):
-        _run(tmp_path, client, explicit_qqq_head_continuation=flag)
+        _run(tmp_path, client, **{"explicit_qqq_head_continuation": False, option: flag})
     assert client.queries == []
     assert not (tmp_path / "market-data").exists()
 
 
 @pytest.mark.parametrize("options", [{"resume_cursor": True}, {"pages_per_target": 9}])
+@pytest.mark.parametrize(
+    "option", ["explicit_qqq_head_continuation", "explicit_pair_head_continuation"]
+)
 def test_scope_or_budget_rejected_before_cache_or_request(
-    tmp_path: Path, options: dict[str, object]
+    tmp_path: Path, options: dict[str, object], option: str
 ) -> None:
     client = _Client([])
     with pytest.raises(ValueError, match="requires QQQ/SPY head mode"):
-        _run(tmp_path, client, **options)
+        _run(tmp_path, client, **{"explicit_qqq_head_continuation": False, option: True}, **options)
     assert client.queries == []
     assert not (tmp_path / "market-data").exists()
+
+
+def test_paired_and_qqq_options_cannot_be_combined(tmp_path: Path) -> None:
+    client = _Client([])
+    with pytest.raises(ValueError, match="mutually exclusive"):
+        _run(tmp_path, client, explicit_pair_head_continuation=True)
+    assert client.queries == [] and not (tmp_path / "market-data").exists()
+
+
+@pytest.mark.parametrize("targets", [(("IWM", "AMS"),), (("QQQ", "NAS"),)])
+def test_pair_option_cannot_widen_iwm_or_dated_scope(tmp_path: Path, targets: tuple) -> None:
+    client = _Client([])
+    with pytest.raises(ValueError, match="requires QQQ/SPY head mode"):
+        collector._run_kis_paper_private_intraday_cycle(
+            client=client,
+            cache_root=tmp_path / "market-data",
+            repo_root=tmp_path / "repo",
+            code_revision="synthetic-pair",
+            targets=targets,
+            pages_per_target=4,
+            resume_cursor=False,
+            quarantine_retained_head_conflicts=False,
+            explicit_pair_head_continuation=True,
+            dated_qqq_session=date(2026, 7, 22) if targets[0][0] == "QQQ" else None,
+            observed_at=datetime(2026, 7, 24, tzinfo=UTC),
+            sleeper=lambda _seconds: None,
+            monotonic_clock=lambda: 0.0,
+        )
+    assert client.queries == [] and not (tmp_path / "market-data").exists()
+
+
+@pytest.mark.parametrize("symbol", ["QQQ", "SPY"])
+def test_pair_invalid_first_head_rejects_only_its_target(tmp_path: Path, symbol: str) -> None:
+    wrong = [_page(_rows(120), symbol="SPY" if symbol == "QQQ" else "QQQ")]
+    good = [
+        _page(_rows(120, offset=offset), symbol="SPY" if symbol == "QQQ" else "QQQ")
+        for offset in (360, 240, 120, 0)
+    ]
+    client = _Client(wrong, good) if symbol == "QQQ" else _Client(good, wrong)
+    results = _run_pair(tmp_path, client)
+    assert results[0 if symbol == "QQQ" else 1].row_count == 0
+    assert results[0 if symbol == "QQQ" else 1].status == "rejected"
+    assert results[1 if symbol == "QQQ" else 0].row_count == 480
+    assert len(client.queries) == 5
 
 
 def test_default_still_stops_on_full_headerless_head(tmp_path: Path) -> None:
@@ -483,7 +790,8 @@ def test_default_header_continuation_still_accepts_exact_overlap(tmp_path: Path)
     assert client.queries[1].continuation_next == "1"
 
 
-def test_existing_cache_lock_still_prevents_all_requests(tmp_path: Path) -> None:
+@pytest.mark.parametrize("paired", [False, True])
+def test_existing_cache_lock_still_prevents_all_requests(tmp_path: Path, paired: bool) -> None:
     repo = tmp_path / "repo"
     repo.mkdir()
     root = collector._backfill_root(cache_root=tmp_path / "market-data", repo_root=repo)
@@ -491,27 +799,31 @@ def test_existing_cache_lock_still_prevents_all_requests(tmp_path: Path) -> None
     assert lock is not None
     client = _Client([])
     try:
-        assert [result.status for result in _run(tmp_path, client)] == ["locked", "locked"]
+        run = _run_pair if paired else _run
+        assert [result.status for result in run(tmp_path, client)] == ["locked", "locked"]
         assert client.queries == []
     finally:
         collector._release_worker_lock(lock)
 
 
+@pytest.mark.parametrize("paired", [False, True])
 def test_real_client_fake_transport_reuses_token_and_sends_next_one_pinc_one(
     tmp_path: Path,
+    paired: bool,
 ) -> None:
     class Transport:
         def __init__(self) -> None:
             self.requests: list[KisMarketDataRequest] = []
             rows = _rows(960, offset=-570)
             self.qqq_pages = [rows[offset : offset + 120] for offset in range(840, -1, -120)]
+            self.spy_pages = [rows[offset : offset + 120] for offset in range(840, -1, -120)]
 
         def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
             market_data._validate_request(request)
             self.requests.append(request)
             if request.method == "POST":
                 return KisMarketDataResponse.from_payload({"access_token": "synthetic-token"})
-            rows = self.qqq_pages.pop(0) if request.query["SYMB"] == "QQQ" else _rows(120)
+            rows = (self.qqq_pages if request.query["SYMB"] == "QQQ" else self.spy_pages).pop(0)
             return KisMarketDataResponse.from_payload(
                 {
                     "rt_cd": "0",
@@ -526,9 +838,11 @@ def test_real_client_fake_transport_reuses_token_and_sends_next_one_pinc_one(
         transport=transport,
         max_minute_page_attempts=16,
     )
-    assert _run(tmp_path, client, pages_per_target=8)[0].row_count == 960
+    run = _run_pair if paired else _run
+    results = run(tmp_path, client, pages_per_target=8)
+    assert [result.row_count for result in results] == [960, 960 if paired else 120]
     assert client.call_counts.token_attempts == 1
-    assert client.call_counts.minute_page_attempts == 9
+    assert client.call_counts.minute_page_attempts == (16 if paired else 9)
     assert client.call_counts.daily_page_attempts == 0
     gets = [request for request in transport.requests if request.method == "GET"]
     assert gets[0].query["PINC"] == "0" and gets[0].query["NEXT"] == ""
@@ -536,4 +850,9 @@ def test_real_client_fake_transport_reuses_token_and_sends_next_one_pinc_one(
         assert request.query["PINC"] == request.query["NEXT"] == "1"
         assert request.headers["tr_cont"] == "N"
         assert request.query["SYMB"] == "QQQ" and request.query["EXCD"] == "NAS"
-    assert gets[-1].query["SYMB"] == "SPY" and gets[-1].query["NEXT"] == ""
+    assert gets[8].query["SYMB"] == "SPY" and gets[8].query["NEXT"] == ""
+    if paired:
+        for request in gets[9:]:
+            assert request.query["SYMB"] == "SPY" and request.query["EXCD"] == "AMS"
+            assert request.query["PINC"] == request.query["NEXT"] == "1"
+            assert request.headers["tr_cont"] == "N"

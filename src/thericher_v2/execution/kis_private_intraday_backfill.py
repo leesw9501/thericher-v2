@@ -256,14 +256,16 @@ def run_kis_paper_private_intraday_backfill_cycle(
     resume_cursor: bool = True,
     quarantine_retained_head_conflicts: bool = False,
     explicit_qqq_head_continuation: bool = False,
+    explicit_pair_head_continuation: bool = False,
     observed_at: datetime | None = None,
     sleeper: Callable[[float], None] = time.sleep,
     monotonic_clock: Callable[[], float] = time.monotonic,
 ) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
-    """Collect QQQ/SPY; optionally try full-page QQQ head older keys, at most four pages.
+    """Collect QQQ/SPY with separate QQQ-only or paired bounded head opt-ins.
 
-    The explicit option requires head mode and changes neither SPY nor the
-    historical cursor. Retained source rows do not attest session availability.
+    Both options require head mode and at most eight pages per target. The
+    QQQ-only option leaves SPY unchanged; neither changes historical cursors
+    or attests source availability.
     """
 
     return _run_kis_paper_private_intraday_cycle(
@@ -276,6 +278,7 @@ def run_kis_paper_private_intraday_backfill_cycle(
         resume_cursor=resume_cursor,
         quarantine_retained_head_conflicts=quarantine_retained_head_conflicts,
         explicit_qqq_head_continuation=explicit_qqq_head_continuation,
+        explicit_pair_head_continuation=explicit_pair_head_continuation,
         observed_at=observed_at,
         sleeper=sleeper,
         monotonic_clock=monotonic_clock,
@@ -531,6 +534,7 @@ def _run_kis_paper_private_intraday_cycle(
     sleeper: Callable[[float], None],
     monotonic_clock: Callable[[], float],
     explicit_qqq_head_continuation: bool = False,
+    explicit_pair_head_continuation: bool = False,
     dated_qqq_session: date | None = None,
 ) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
     """Collect bounded source pages with optional historical-cursor resumption.
@@ -556,11 +560,24 @@ def _run_kis_paper_private_intraday_cycle(
         raise ValueError("head conflict quarantine requires head mode")
     if type(explicit_qqq_head_continuation) is not bool:
         raise ValueError("explicit QQQ head continuation must be a boolean")
+    if type(explicit_pair_head_continuation) is not bool:
+        raise ValueError("explicit paired head continuation must be a boolean")
+    if explicit_qqq_head_continuation and explicit_pair_head_continuation:
+        raise ValueError("head continuation options are mutually exclusive")
     if explicit_qqq_head_continuation and (
         resume_cursor or pages_per_target > 8 or targets != KIS_PAPER_PRIVATE_INTRADAY_TARGETS
     ):
         raise ValueError(
             "explicit QQQ head continuation requires QQQ/SPY head mode, at most eight pages"
+        )
+    if explicit_pair_head_continuation and (
+        resume_cursor
+        or pages_per_target > 8
+        or targets != KIS_PAPER_PRIVATE_INTRADAY_TARGETS
+        or dated_qqq_session is not None
+    ):
+        raise ValueError(
+            "explicit paired head continuation requires QQQ/SPY head mode, at most eight pages"
         )
     if not code_revision.strip() or "\n" in code_revision:
         raise ValueError("private intraday code revision is invalid")
@@ -685,6 +702,7 @@ def _run_kis_paper_private_intraday_cycle(
                 explicit_qqq_head_continuation=(
                     explicit_qqq_head_continuation and target.target_key == "QQQ/NAS/1m"
                 ),
+                explicit_pair_head_continuation=explicit_pair_head_continuation,
                 dated_qqq_session=dated_qqq_session,
                 observed_at=observed,
             )
@@ -888,6 +906,7 @@ def _collect_target(
     pages_per_target: int,
     before_request: Callable[[], None],
     explicit_qqq_head_continuation: bool = False,
+    explicit_pair_head_continuation: bool = False,
     dated_qqq_session: date | None = None,
     observed_at: datetime | None = None,
 ) -> _CollectedTarget:
@@ -895,14 +914,13 @@ def _collect_target(
     pages: list[dict[str, object]] = []
     duplicate_rows = 0
     cursor = input_cursor
+    explicit_head_continuation = explicit_qqq_head_continuation or explicit_pair_head_continuation
     try:
         for page_number in range(1, pages_per_target + 1):
             query = KisPaperMinuteQuery(
                 exchange=target.exchange,
                 symbol=target.symbol,
-                include_previous_day=(
-                    explicit_qqq_head_continuation or dated_qqq_session is not None
-                )
+                include_previous_day=(explicit_head_continuation or dated_qqq_session is not None)
                 and cursor is not None,
                 continuation_next=cursor.next_value if cursor is not None else None,
                 continuation_key=cursor.keyb if cursor is not None else None,
@@ -910,6 +928,10 @@ def _collect_target(
             page = client.fetch_minute_page(query, before_request=before_request)
             if not page.bars:
                 raise KisPaperMarketDataError("minute_response_empty")
+            if explicit_pair_head_continuation:
+                _validate_explicit_head_page(
+                    page=page, target=target, cursor=cursor, retained_rows=rows_by_key
+                )
             if dated_qqq_session:
                 _validate_dated_qqq_page(
                     page=page,
@@ -941,7 +963,7 @@ def _collect_target(
                     _one_exchange_minute_before(min(page.bars, key=_exchange_stamp)),
                 )
             if (
-                explicit_qqq_head_continuation
+                explicit_head_continuation
                 and next_cursor is None
                 and page.continuation_signal in {"blank_or_absent", "unrecognized_nonblank"}
                 and len(page.bars) == 120
@@ -956,11 +978,23 @@ def _collect_target(
                 except (ValueError, OverflowError) as error:
                     raise KisPaperMarketDataError("minute_cursor_invalid") from error
             if (
-                explicit_qqq_head_continuation
+                explicit_head_continuation
                 and next_cursor is not None
                 and next_cursor.keyb[:8] != page.bars[0].exchange_date
             ):
                 next_cursor = None
+            if explicit_pair_head_continuation and len(page.bars) < 120:
+                next_cursor = None
+            if (
+                explicit_pair_head_continuation
+                and next_cursor is not None
+                and (
+                    next_cursor.keyb
+                    >= min(_exchange_stamp(row) for row in page.bars).replace("T", "")
+                    or (cursor is not None and next_cursor.keyb >= cursor.keyb)
+                )
+            ):
+                raise KisPaperMarketDataError("minute_cursor_stalled")
             if next_cursor is not None and next_cursor == cursor:
                 raise KisPaperMarketDataError("minute_cursor_stalled")
             # A page joins the durable candidate only after its cursor and all
@@ -1107,6 +1141,44 @@ def _validate_explicit_qqq_head_page(
             page.bars[0].exchange_date != next(iter(retained_rows.values())).exchange_date
             or max(exchange_stamps) > requested_stamp
             or max(korea_stamps) >= min(retained_rows)
+        ):
+            raise KisPaperMarketDataError("minute_cursor_stalled")
+
+
+def _validate_explicit_head_page(
+    *,
+    page: KisPaperMinutePage,
+    target: KisPaperPrivateIntradayTarget,
+    cursor: KisPaperPrivateIntradayCursor | None,
+    retained_rows: Mapping[str, KisPaperMinuteRawBar],
+) -> None:
+    if (target.symbol, target.exchange) not in KIS_PAPER_PRIVATE_INTRADAY_TARGETS or (
+        page.query.symbol,
+        page.query.exchange,
+    ) != (target.symbol, target.exchange):
+        raise KisPaperMarketDataError("minute_response_invalid")
+    exchange_stamps = [_exchange_stamp(row) for row in page.bars]
+    korea_stamps = [_korea_stamp(row) for row in page.bars]
+    if (
+        len(set(exchange_stamps)) != len(page.bars)
+        or len(set(korea_stamps)) != len(page.bars)
+        or len({row.exchange_date for row in page.bars}) != 1
+        or not any(
+            exchange_stamps == sorted(exchange_stamps, reverse=reverse)
+            and korea_stamps == sorted(korea_stamps, reverse=reverse)
+            for reverse in (False, True)
+        )
+    ):
+        raise KisPaperMarketDataError("minute_response_invalid")
+    if cursor is not None:
+        requested_stamp = f"{cursor.keyb[:8]}T{cursor.keyb[8:]}"
+        if (
+            not retained_rows
+            or page.bars[0].exchange_date != cursor.keyb[:8]
+            or any(row.exchange_date != cursor.keyb[:8] for row in retained_rows.values())
+            or max(exchange_stamps) > requested_stamp
+            or max(exchange_stamps) >= min(_exchange_stamp(row) for row in retained_rows.values())
+            or max(korea_stamps) >= min(_korea_stamp(row) for row in retained_rows.values())
         ):
             raise KisPaperMarketDataError("minute_cursor_stalled")
 

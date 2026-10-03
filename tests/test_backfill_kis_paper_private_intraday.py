@@ -820,12 +820,19 @@ def test_current_code_revision_marks_staged_or_untracked_work_dirty(
 
 @pytest.mark.parametrize("mode", ["backfill", "historical-probe"])
 @pytest.mark.parametrize("execute", [False, True])
+@pytest.mark.parametrize(
+    "flag", ["--explicit-qqq-head-continuation", "--explicit-pair-head-continuation"]
+)
 def test_explicit_head_continuation_rejects_other_modes_before_setup(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str, execute: bool
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    mode: str,
+    execute: bool,
+    flag: str,
 ) -> None:
     script = _load_script()
     _deny_cli_setup(script, monkeypatch)
-    args = ["--mode", mode, "--explicit-qqq-head-continuation"]
+    args = ["--mode", mode, flag]
     if execute:
         args.append("--execute")
     with pytest.raises(SystemExit) as error:
@@ -838,8 +845,15 @@ def test_explicit_head_continuation_rejects_other_modes_before_setup(
 
 @pytest.mark.parametrize("mode", ["head", "session-capture"])
 @pytest.mark.parametrize("pages", ["-1", "0", "9"])
+@pytest.mark.parametrize(
+    "flag", ["--explicit-qqq-head-continuation", "--explicit-pair-head-continuation"]
+)
 def test_explicit_head_continuation_rejects_invalid_budget_before_setup(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str, pages: str
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    mode: str,
+    pages: str,
+    flag: str,
 ) -> None:
     script = _load_script()
     _deny_cli_setup(script, monkeypatch)
@@ -851,7 +865,7 @@ def test_explicit_head_continuation_rejects_invalid_budget_before_setup(
                 mode,
                 "--pages-per-target",
                 pages,
-                "--explicit-qqq-head-continuation",
+                flag,
             ],
             clock=_deny_cli_call,
         )
@@ -862,8 +876,14 @@ def test_explicit_head_continuation_rejects_invalid_budget_before_setup(
 
 
 @pytest.mark.parametrize("mode", ["head", "session-capture"])
+@pytest.mark.parametrize(
+    "flag", ["--explicit-qqq-head-continuation", "--explicit-pair-head-continuation"]
+)
 def test_explicit_head_continuation_cannot_trigger_project_only_io(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    mode: str,
+    flag: str,
 ) -> None:
     script = _load_script()
     _deny_cli_setup(script, monkeypatch)
@@ -875,7 +895,7 @@ def test_explicit_head_continuation_cannot_trigger_project_only_io(
                 mode,
                 "--runtime-projection",
                 "unused.json",
-                "--explicit-qqq-head-continuation",
+                flag,
             ],
             clock=_deny_cli_call,
         )
@@ -884,12 +904,18 @@ def test_explicit_head_continuation_cannot_trigger_project_only_io(
 
 
 @pytest.mark.parametrize("mode", ["head", "session-capture"])
+@pytest.mark.parametrize(
+    "flag", ["--explicit-qqq-head-continuation", "--explicit-pair-head-continuation"]
+)
 def test_explicit_head_continuation_without_execute_stays_plan_only(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    mode: str,
+    flag: str,
 ) -> None:
     script = _load_script()
     _deny_cli_setup(script, monkeypatch)
-    assert script.main(["--mode", mode, "--explicit-qqq-head-continuation"]) == 0
+    assert script.main(["--mode", mode, flag]) == 0
     assert json.loads(capsys.readouterr().out) == {
         "status": "not_executed",
         "reason": "execute_flag_required",
@@ -898,8 +924,15 @@ def test_explicit_head_continuation_without_execute_stays_plan_only(
 
 @pytest.mark.parametrize("mode", ["head", "session-capture"])
 @pytest.mark.parametrize("pages", range(1, 9))
+@pytest.mark.parametrize(
+    "flag", ["--explicit-qqq-head-continuation", "--explicit-pair-head-continuation"]
+)
 def test_explicit_head_continuation_is_forwarded_through_one_fake_client(
-    monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str], mode: str, pages: int
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    mode: str,
+    pages: int,
+    flag: str,
 ) -> None:
     script = _load_script()
     _deny_cli_setup(script, monkeypatch)
@@ -913,7 +946,7 @@ def test_explicit_head_continuation_is_forwarded_through_one_fake_client(
                 "--pages-per-target",
                 str(pages),
                 "--skip-legacy-preparation",
-                "--explicit-qqq-head-continuation",
+                flag,
             ],
             code_revision=lambda _root: "synthetic-revision",
         )
@@ -925,7 +958,12 @@ def test_explicit_head_continuation_is_forwarded_through_one_fake_client(
     assert cycle["client"] is calls["clients"][0]["instance"]
     assert calls["clients"][0]["kwargs"]["max_minute_page_attempts"] == 2 * pages
     assert cycle["pages_per_target"] == pages
-    assert cycle["explicit_qqq_head_continuation"] is True
+    selected = flag.removeprefix("--").replace("-", "_")
+    assert cycle[selected] is True
+    other = (
+        "explicit_qqq_head_continuation" if "pair" in flag else "explicit_pair_head_continuation"
+    )
+    assert other not in cycle
     assert cycle["resume_cursor"] is False
     assert cycle["quarantine_retained_head_conflicts"] is True
     assert cycle["cache_root"].name == "intraday-head"
@@ -954,10 +992,28 @@ def test_absent_explicit_flag_keeps_legacy_kwargs_and_eight_page_budget(
     )
     cycle = calls["cycles"][0]
     assert "explicit_qqq_head_continuation" not in cycle
+    assert "explicit_pair_head_continuation" not in cycle
     assert cycle["pages_per_target"] == 8
     assert cycle["resume_cursor"] == (mode == "backfill")
     assert calls["clients"][0]["kwargs"]["max_minute_page_attempts"] == 16
     assert json.loads(capsys.readouterr().out)["mode"] == mode
+
+
+@pytest.mark.parametrize(
+    "flags",
+    [
+        ["--explicit-qqq-head-continuation", "--explicit-pair-head-continuation"],
+        ["--explicit-pair-head-continuation=true"],
+    ],
+)
+def test_paired_cli_invalid_flags_rejected_before_setup(
+    monkeypatch: pytest.MonkeyPatch, flags: list[str]
+) -> None:
+    script = _load_script()
+    _deny_cli_setup(script, monkeypatch)
+    with pytest.raises(SystemExit) as error:
+        script.main(["--execute", "--mode", "head", *flags], clock=_deny_cli_call)
+    assert error.value.code == 2
 
 
 def _deny_cli_call(*_args: object, **_kwargs: object) -> object:

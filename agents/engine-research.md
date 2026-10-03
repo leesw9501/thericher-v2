@@ -17,6 +17,37 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+The original FirstRate time-of-day band development recipe is complete and
+`recipe_killed`: same fourteen SCHEDULED prior-session prefixes, first strict
+semi-hourly upper-band close, next-M5-OPEN long entry/last-M5-OPEN exit, one share.
+Both ETFs/two seen chronological folds/1,3,5bps-side costs yield12 cells, zero
+fits/GPU/weights/holdout. Each fold has63 scheduled sessions; complete SPY62/63,
+QQQ63/63; scored trades SPY23/27, QQQ32/23. At primary3bps-side costs, net unit-bps
+SUMS are SPY+395.047943/-291.938855 and QQQ+406.158649/-108.492500. In-fold
+matched-time long increments are positive in all four groups, but the two later
+net losses trigger the frozen kill. These are not NAV returns, independent
+performance, deployable controls or KIS PnL. No threshold/cost/ETF rescue.
+All four decision tuples freeze in memory before full-session censoring.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-time-of-day-band-development-20261003-v2`;
+contract `sha256:b790a6355210997bd3b7dacd198e6ce34692e7f1ef8833f03e152abad378d565`;
+summary `sha256:03e24e1664768e3ce16ade1f12eb9229fa8fe7bd6fee6ccd2dc1fcd3bcb95dc5`.
+Original v1 worker41.238s/12 cells remains immutable; its archive-write readback
+failed. Same-family v2 changes only verification control locks to temporary
+scratch, preserving real EmergencyStore parsing/stopped/malformed fail-closed
+behavior. Corrected worker39.363s, exact ALL-RO source/action/control/fee replay
+passes; all normalized v1/v2 cells/actions agree. No recipe/selection change.
+`readback-repair.json` SHA256
+`ba18371bef2b420bb40614c4283f1384306249040a162980f6e7233e9f6b7bd5`
+links both original pins and retained183a849a source snapshot. Independent final
+source review supported-with-limits/no remaining material P1/P2; fees-only,
+zero-latency/seen/revised source, censoring and no KIS parity remain limitations.
+Final formatting is AST-identical, but does not rewrite the frozen code pin.
+Archival replay mounts exact `frozen-study-source.py` over the current study
+module, SHA256 `5840e26354cf30e8119c251561bacba1cd8ff831f215455d6a1c688db9ed7d28`;
+that exact frozen-source ALL-RO reconstruction also passes. Committed formatting
+SHA256 `56275776d297b54dc5bf1c0efe0f395d63a75c4ef900b48449c6b17f7613eec6`.
+Final113 mechanism tests include unsafe archive controls; helper100 are separate.
+
 The original time-of-day feature preparation and real-input smoke are complete:
 `intraday_noise_band.py` computes fourteen strictly prior sessions' mean
 absolute CLOSE/OPEN move at the same elapsed M5 cutoff, anchored to today's
@@ -1223,7 +1254,7 @@ dispatch restrictions. The current development package is described above.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | Original14-prior-session time-of-day helper/100 tests and60-case real-input smoke complete | Freeze a distinct entry/exit/cost/replay development contract before payoffs, preferably broad existing FirstRate coverage; not a paper reproduction |
+| Technical/chart and momentum/regime | Original FirstRate time-of-day band completed12 cost cells/zero fits; later-fold net losses kill recipe despite positive matched-control increments | Preserve kills; a distinct causal mechanism/replication needs a fresh bounded contract, not cost/threshold/ETF rescue |
 | Classical ML/statistical | Dated downside tree/logistic and pooled ridge actual fits complete, all flat at their fixed hurdles | Use useful broader temporal coverage and a distinct mechanism; no seen threshold/cost rescue |
 | Sequence/DL/public model | Pooled LSTM/patch actual CUDA fits complete, both flat; TimesFM/Chronos-2 comparisons also closed | No repeat dispatch or selected winner; next bounded campaign needs its own hypothesis/data/compute contract |
 | Portfolio/allocation/meta-decision | Continuous fixed band fails stress NAV; causal expert mixture's tiny gain depends on QQQ and loses risk control | Preserve the full controls/lineage; no same-data weight/ETF selection or Paper qualification |
@@ -1327,7 +1358,8 @@ development inputs; old unavailable causal consumers stay scoped to their own
 contracts. They do not block these sources or the separate Paper opportunity.
 Net-utility, public-model, fixed-band, causal-mixture, downside and pooled-patch
 campaigns are closed; retain their kills/controls and do not repeat them.
-Current time-of-day feature and60-case real-input preparation are closed.
+Current time-of-day feature,60-case input preparation and12-cell FirstRate
+mechanism comparison are closed; its frozen net-loss kill remains.
 Their14 prior session prefixes/current OPEN/completed M5 cutoff introduce no
 previous-close gap, short, leverage, target, fitting or Paper input. The source's
 2007-2024 SPY/VIX/IQFeed return claims do not transfer to this variant.
@@ -1338,7 +1370,7 @@ Exact source-only receipt:
 SHA256 `b81abdb76587cf05184eb028a73953022d41054a2c112cb91fcd1e312f33e885`.
 Data's distinct dated-close-key reach package prepares broader TRAIN coverage;
 only that worker yields on quota/token due. Preserve all existing identities.
-No active campaign or GPU appointment remains. Next mechanism evaluation needs
+No active campaign or GPU appointment remains. A next distinct mechanism needs
 its own frozen entry/exit/cost/control contract, not a changed hurdle or repeated
 architecture run; broader existing FirstRate inputs are available independently
 of the exact KIS older-date probe. Do not make that probe a research wait.

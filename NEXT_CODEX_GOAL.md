@@ -87,12 +87,14 @@ not expand live authority or reset capital.
    input. Exact pins belong to Research boards. Prefer a distinct mechanism
    and useful broader temporal coverage over another seen-data architecture
    sweep. The company Paper objective remains OPEN.
-   The distinct14-prior-session time-of-day feature now passes100 focused
-   tests and60 real QQQ/SPY input cases/RO reconstruction. No target/fitting,
-   performance/Paper claim or new runtime. Next freeze an original bounded
-   long-only entry/exit/cost/control development contract on broader existing
-   FirstRate coverage; do not repeat prior first30/final30 or ORB studies or
-   wait for the exact older-date KIS probe. Source claims are not our results.
+   The distinct14-prior-session time-of-day feature/60-case input preparation
+   and original FirstRate long-only mechanism are now closed. Twelve cost
+   cells/zero fits: later-fold losses trigger the predeclared kill despite
+   positive matched-control increments. Same-family scratch-control readback
+   repair preserves original artifacts and identical normalized actions/cells;
+   exact ALL-RO replay/final review pass. Parent113 mechanism tests plus prior
+   100 helper tests pass. No cost/threshold rescue, NAV/winner/Paper claim.
+   Exact contracts/results belong to Research, not another goal or gate.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download
@@ -120,6 +122,18 @@ not expand live authority or reset capital.
    zero failures. Canonical readback passes, QQQ/legacy indexes unchanged.
    The pair is20 common session blocks, not40 independent samples. No new
    task/schedule, default QQQ change, finality/PIT or Paper-input claim.
+   October1/2 and August31 paired sessions also verify390/78/39/6/2 per symbol;
+   eight earlier monthly and four August10/17 queries are scoped-empty, not a
+   provider-wide history floor. All protected index hashes stay unchanged.
+   Data now owns an explicit paired QQQ/SPY head-continuation repair because
+   the previous option applies only to QQQ and leaves current SPY120. Keep
+   the old QQQ-only flag/defaults, strict exact target/date/cursor/no-overlap
+   checks and existing task times/budgets. This shared-runtime package now
+   passes parent460 serial/full8,570/22/325.47s/eight workers/clean helper,
+   Ruff/both Compose. Ten Data aliases match600 baked hashes; old defaults/
+   task times/Paper aliases unchanged. Actual SPY paired-head yield unobserved;
+   no new task/rate layer or manually invoked Scheduler job. Distinct acquisition
+   owns only August24-28 QQQ/SPY+September1SPY,11 scopes/44-GET maximum.
    Final SPY/patch shared-source authority8,186 passes/22 skips/317.40s/eight
    workers/clean helper, Ruff/both Compose pass. Ten Data aliases match591
    baked sources; no task/service invocation or Paper/schedule change.

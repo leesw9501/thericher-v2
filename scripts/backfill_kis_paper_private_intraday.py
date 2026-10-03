@@ -63,7 +63,9 @@ def main(
     parser.add_argument("--project-only", action="store_true")
     parser.add_argument("--skip-legacy-preparation", action="store_true")
     parser.add_argument("--pages-per-target", type=int, default=2)
-    parser.add_argument("--explicit-qqq-head-continuation", action="store_true")
+    continuation = parser.add_mutually_exclusive_group()
+    continuation.add_argument("--explicit-qqq-head-continuation", action="store_true")
+    continuation.add_argument("--explicit-pair-head-continuation", action="store_true")
     parser.add_argument(
         "--mode",
         choices=("backfill", "head", "historical-probe", "session-capture"),
@@ -77,14 +79,13 @@ def main(
     parser.add_argument("--runtime-projection", type=Path)
     parser.add_argument("--schedule-run-id", type=validate_schedule_run_id)
     args = parser.parse_args(argv)
-    if args.explicit_qqq_head_continuation and (
+    if (args.explicit_qqq_head_continuation or args.explicit_pair_head_continuation) and (
         args.mode not in {"head", "session-capture"}
         or not 1 <= args.pages_per_target <= 8
         or args.project_only
     ):
         parser.error(
-            "--explicit-qqq-head-continuation requires head/session-capture collection "
-            "and 1..8 pages"
+            "explicit head continuation requires head/session-capture collection and 1..8 pages"
         )
     observed_at = clock()
     if args.project_only:
@@ -141,7 +142,11 @@ def main(
             **(
                 {"explicit_qqq_head_continuation": True}
                 if args.explicit_qqq_head_continuation
-                else {}
+                else (
+                    {"explicit_pair_head_continuation": True}
+                    if args.explicit_pair_head_continuation
+                    else {}
+                )
             ),
         )
         session_capture = (

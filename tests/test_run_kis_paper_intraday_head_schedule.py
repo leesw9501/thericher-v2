@@ -117,7 +117,8 @@ def test_head_schedule_dispatcher_persists_terminal_recovery_evidence() -> None:
     ) in source
     assert "$collectionCommand = @(\n" in source
     assert "[string]$collectionPagesPerTarget," in source
-    assert source.count('"--explicit-qqq-head-continuation",') == 1
+    assert source.count('"--explicit-pair-head-continuation",') == 1
+    assert "--explicit-qqq-head-continuation" not in source
     assert '"--schedule-run-id",' in source
     assert "$scheduleRunId" in source
     assert "Get-UniqueSafeSessionCaptureTerminalBinding" in source
@@ -286,7 +287,7 @@ def test_head_schedule_uses_deeper_pages_only_for_the_bounded_post_close_window(
 @pytest.mark.parametrize(
     ("observed_at", "pages"), [("2026-07-06T19:24:00Z", 4), ("2026-07-06T21:20:00Z", 8)]
 )
-def test_existing_collection_override_enables_explicit_qqq_at_both_budgets(
+def test_existing_collection_override_enables_explicit_pair_at_both_budgets(
     observed_at: str, pages: int
 ) -> None:
     source = SCRIPT.read_text(encoding="ascii")
@@ -320,9 +321,16 @@ def test_existing_collection_override_enables_explicit_qqq_at_both_budgets(
     )
     assert result.returncode == 0, result.stderr
     arguments = result.stdout.strip().split("|")
-    assert arguments.count("--explicit-qqq-head-continuation") == 1
+    assert arguments.count("--explicit-pair-head-continuation") == 1
+    assert "--explicit-qqq-head-continuation" not in arguments
     assert arguments[arguments.index("--pages-per-target") + 1] == str(pages)
     assert arguments[arguments.index("--mode") + 1] == "session-capture"
+    assert arguments[arguments.index("--schedule-run-id") + 1] == "intraday-head-synthetic"
+    assert arguments[arguments.index("--preparation-artifact-root") + 1] == "/app/model_artifacts"
+    assert (
+        arguments[arguments.index("--runtime-projection") + 1]
+        == "/app/runtime/state/kis_paper_intraday_freshness.json"
+    )
 
 
 def test_head_schedule_runs_qqq_route_only_after_collection_and_revalidates_it() -> None:

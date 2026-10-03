@@ -57,6 +57,16 @@ same-cache owner. A retained-cache conflict may quarantine its predecessor and
 reject this exact capture; preserve original bytes and obtain a fresh bounded
 capture when the token-start guard permits. Do not infer full-session coverage,
 provider finality or scheduler origin from this direct invocation.
+The existing head owner now explicitly uses `--explicit-pair-head-continuation`
+instead. This new option applies the same strict per-target/session/frontier/
+no-overlap bounded continuation to QQQ/NAS AND SPY/AMS; the old QQQ-only option
+and defaults remain unchanged and both options are mutually exclusive. Same
+head/session-capture/1..8 guards apply before credentials. Agent341/parent460
+serial tests and full8,570/22/325.47s/clean eight-worker authority pass, with
+Ruff/both Compose. Ten existing Data aliases match600 source/config hashes,
+image `sha256:289b72095047fa59fb7eb54ab318caed59cce375eae7175eb1b4742bb7c40ce9`.
+No task/service invocation or schedule/pace/Paper-alias change. Actual SPY head
+yield remains unobserved; dated SPY390 is not proof of that head result.
 
 The separate `--fixed-historical-key-pair --max-pages 2` minute probe completed
 one fixed September1/August3 midday pair. It returned120 September1 minutes and
@@ -93,9 +103,30 @@ eight empty pages, zero complete scopes/no rate limit; do not retry those
 queries or infer a global history floor. Immutable first/recovery receipts
 remain under the existing QQQ dated-panel artifact root; Data's stateboard
 records the corrected list-shaped index projection and preserved56 hashes.
-The independent August10/17/31 near-boundary package owns its24-GET limit.
+The independent August10/17/31 near-boundary package also closed: August31
+QQQ/SPY each verify390/78/39/6/2; August10/17's four queries return empty.
+Twelve GETs/eight accepted/four empty, one client/token/14.756s,63 protected
+indexes unchanged, no next_due. Exact immutable receipt belongs to Data.
+Do not retry these answered scopes or infer a provider-wide earliest date.
 
 ## Latest Bounded Research
+
+`scripts/run_firstrate_time_of_day_band.py` reuses the existing single-attempt
+CPU supervisor: metadata-only `--freeze`, then `--run --contract-sha256` with
+external artifact/input roots. Same-family corrected scope
+`firstrate-time-of-day-band-development-20261003-v2` already completed12 cells,
+zero fits/GPU,39.363s worker. Sources/market RO, exact study/ledger RW only for
+dispatch; pinned offline1CPU/2GiB/300-second bound. Exact module `readback`
+receives contract/summary pins with ALL artifact mounts RO; its real emergency
+control locks use isolated tmpfs scratch, not evidence. Retained stopped or
+malformed controls fail closed. Original v1 source/result/failed archive-write
+attempt remain linked by `readback-repair.json`; normalized12 cells/actions
+are unchanged. Primary later-fold losses kill this recipe; no cost rescue,
+NAV/independent-performance/Paper claim. Do not repeat answered comparisons.
+For archival replay, mount its exact `frozen-study-source.py` RO over
+`/workspace/src/thericher_v2/research/firstrate_time_of_day_band.py`; final
+committed formatting is AST-identical but has a different byte hash. The frozen
+pin is preserved, not rewritten; this exact overlay/ALL-RO reconstruction passes.
 
 The original research-only `build_intraday_noise_band` accepts exactly14
 prior `NoiseBandHistoryEntry` session prefixes/current completed M5 cutoff;

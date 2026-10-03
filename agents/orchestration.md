@@ -15,12 +15,12 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / FirstRate time-of-day mechanism implementation owned | Original14-prior-session helper/100 tests/60 real-input cases closed,0 targets/fits/GPU. One distinct12-cell/zero-fit development implementation owns fixed long-only first semi-hourly band-cross entry/last-M5-OPEN exit and matched-time controls on existing FirstRate data. No actual freeze/evaluation/Paper; KIS temporal reach is not its dependency. |
+| Research | Engine Research / FirstRate time-of-day mechanism closed | Twelve actual cost cells/zero fits; later-fold losses trigger primary kill despite positive matched-control increments. Original41.238s/corrected39.363s workers have identical normalized actions/cells; scratch-control repair preserves archive bytes/real fail-closed semantics, ALL-RO replay passes. No active campaign/GPU/Paper input. |
 | Independent Paper readiness | Execution / deployed exact-orderability and one owned opportunity | Independent review/535 serial/full authority pass;8 consumers/40 baked hashes match. New23:04:20Z one-auth/one-GET synthetic-price diagnostic accepted; not actual-limit funds/old rejection explanation. Next_due October6 00:20 KST fixed-tag unit cycle/00:45 chat follow-up, unchanged. No actual tagged submit/fill; SPY unknown protected. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
-| Data collection / finite D1 measurement | Data / August near-boundary reach owned | EightMay1/June1/July1/Aug3 queries close scoped-empty,8 GETs/zero accepted/no observed rate limit; writer fault repaired,56 old hashes unchanged. New24-GET/one-client package owns August10/17/31QQQ+SPY dedicated roots, no old-query retries/globalfloor. September20/October2 matched days remain complete;923f2fb/591-source Data deployment/October6 00:29 owner unchanged. |
+| Data collection / finite D1 measurement | Data / paired-head deployed; distinct dated acquisition owned | New pair opt-in verified/deployed with ten aliases/600 baked hashes; old option/defaults/task times/pace unchanged, actual SPY-head yield not observed. August31 pair complete; new11-scope/44-GET acquisition owns August24-28 QQQ/SPY+September1SPY only. Protected prior indexes/October6 00:29 owner unchanged. |
 | GPU | Research Steward / pooled-return appointment closed | LSTM/patch CUDA fits finished after ridge CPU; canonical lock absent/child reaped. Duration/peak not instrumented, no active worker or runtime/permission block. No robust winner/depth grant; broader-data preparation continues. |
-| Verification | Orchestrator / isolated research verified | Latest full8,186/22/317.40s predates pooled-return/time-of-day packages. Pooled153 pinned-runtime passes/RO replay; time-of-day100 tests plus parent feature/VWAP111/one known skip1.88s and60 real-input/RO cases pass. Ruff/default+research Compose/diff check pass; no repeated full suite or active pytest owner. Earlier failed scratch untouched. |
+| Verification | Orchestrator / shared integration complete | Parent460 serial passes25.61s, full8,570/22/325.47s/eight workers/clean helper, matching8,592 collection; Ruff/default+research Compose pass. Includes later pooled/helper/band/pair changes. No active pytest owner; earlier scratch untouched. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -45,10 +45,12 @@ retuned. Its online-mixture campaign now uses completed prior losses and a
 separate continuous mixed ledger. Small fragile seen-data gains do not become
 independent evaluation or Paper qualification.
 
-Current reversible improvement: extend measured dated-close-key reach to four
-fixed earlier monthly contexts with one reusable client and dedicated storage,
-rather than retune all-flat September results or repeat the answered midday
-probe. This prepares useful broader TRAIN coverage without resetting owners.
+Current reversible improvement: apply proved same-date serial older-key head
+continuation to SPY through a new explicit paired option, not silently widen the
+old QQQ-only contract. This repairs the concrete SPY120 current-data code path
+without a new task/pace/permission process; reviewed shared integration/image
+publication is complete, actual paired-head yield remains unobserved. Earlier
+answered reach queries stay closed; distinct acquisition uses new dates only.
 Compact
 HANDOFF preserves current facts; superseded1,801-line history remains in Git at
 50d162a. The one company objective/unknown SPY/fixed QQQ tag stay unchanged.

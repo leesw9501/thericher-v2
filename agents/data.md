@@ -28,9 +28,35 @@ Exact receipts under `D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-p
 SHA256 `e45aadb942d2d22e8e3b7eb89441ecbe4c89eaa26930cad2c3dfe381d674607a`;
 `train-eight-scopes-continuation-20261003T023317844130Z-d6879d784d36.json`,
 SHA256 `aa26c137838e54ba589bf894ca6bd5d72f2d019749b7880d3c75b8a48748ef93`.
-Next bounded package owns only August10/17/31 QQQ/SPY close-key reach, one
-reusable client/24-GET ceiling/dedicated roots. It does not retry the eight
-closed queries or block broader existing FirstRate research/Paper opportunity.
+The distinct August10/17/31 close-key package is now closed: August31 QQQ/NAS
+and SPY/AMS each return four accepted pages/390 regular minutes, with exact
+M1/M5/M10/H1/H3 counts390/78/39/6/2. August10/17's four queries are scoped-empty,
+not a provider-wide earliest-date or rate-limit conclusion. Twelve GETs/eight
+accepted/four empty, one client/token/14.756493s, no retry/next_due. Fresh-process
+exact index/manifest/catalog and SINGLE-session slice verification passes;
+parent verifies the prior-receipt chain, six current indexes and all63 protected
+index hashes unchanged. Processes reaped, no collector/lock remains. Exact receipt:
+`D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-panel\august-near-boundary-six-scopes-20261003T030327943616Z-09dd6c442cdf.json`,
+SHA256 `09dd6c442cdff4eb5df50524b5f476004a689b8ff0b163d437bb51e33e3bf51d`.
+No PIT/finality/fresh-holdout/Paper qualification follows. Do not repeat answered
+queries. Existing FirstRate research and the separate Paper opportunity continue.
+
+Current integration ownership: explicit paired QQQ/SPY head option implemented
+with the same strict per-target/session/cursor/prefix checks. The old QQQ-only
+option/defaults stay unchanged; the existing head owner may use the new option
+without a new task, rate layer or schedule. Current SPY head120 versus dated
+SPY390 motivates this repair. Agent341 focused tests pass; parent460 changed-path
+serial tests25.61s and independent diff review support scope/no P1/P2.
+Shared authority is complete:8,570 passes/22 skips/35 warnings/325.47s/eight
+workers/clean helper exit0, matching8,592 collected; Ruff/both sample-env Compose
+pass. Ten existing Data aliases match600 source/configuration hashes, image
+`sha256:289b72095047fa59fb7eb54ab318caed59cce375eae7175eb1b4742bb7c40ce9`.
+No task/service invocation, scheduler/timing/budget/pace or Paper-alias change.
+Actual paired-head SPY provider yield remains unobserved; do not call this a
+complete real capture or substitute dated-scope evidence for head evidence.
+Current distinct acquisition owns only August24-28 QQQ/SPY and September1SPY,
+11 dedicated dated scopes/44-GET ceiling/one reused client. Old answered roots
+remain protected; no Data wait blocks Research or the separate Paper opportunity.
 
 The bounded October1/2 context extension is complete for QQQ/NAS and SPY/AMS:
 four independent date/symbol scopes,16 GETs/one client/token/17.976s, no retry
@@ -71,9 +97,9 @@ Core/CLI/tests hashes are frozen in the complete receipt. Acquisition is closed;
 do not rerun completed scopes or reset indexes. Current-data owners continue.
 Final integration authority8,186 passes/22 skips/35 warnings/317.40s/eight
 workers/clean helper matches8,208 collected tests; Ruff/both Compose pass.
-Ten existing Data aliases match591 sources, image
+Prior SPY/patch publication matched591 sources, image
 `sha256:ebe0c0d3814c8f5dec20cc26d07972132cf1f13cc2f92fe2ab89135ec4949a8c`.
-Publication invokes no task/service and changes no schedule or Paper alias.
+That prior publication is superseded by the paired-head integration above.
 
 The finite September2-30 QQQ/NAS panel is now canonically complete:20 sessions,
 9,600 native/7,800 regular M1 rows; M1/M5/M10/H1/H3 totals7,800/1,560/780/120/40.
