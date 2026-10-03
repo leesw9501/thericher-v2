@@ -15,12 +15,12 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / isolated prequential campaign implementation assigned | Pure causal helper83 tests complete. New four-expert fixed-rate/144-cell campaign is being implemented, not frozen/run: exact two TRAIN fits, aligned later decisions, completed-month continuous feedback and own mixed ledger. Independent Validation checks time/cost assumptions; no performance/Paper/GPU claim yet. |
+| Research | Engine Research / prequential campaign closed | Two CUDA fits/144 cells after freeze/CPU smoke; independent readback25 pins/144 fee identities pass. Tiny stress gain disappears without QQQ and loses risk control; no winner/Paper input. Models retained on D:, no ongoing worker. |
 | Independent Paper readiness | Execution / deployed exact-orderability and one owned opportunity | Independent review/535 serial/full authority pass;8 consumers/40 baked hashes match. New23:04:20Z one-auth/one-GET synthetic-price diagnostic accepted; not actual-limit funds/old rejection explanation. Next_due October6 00:20 KST fixed-tag unit cycle/00:45 chat follow-up, unchanged. No actual tagged submit/fill; SPY unknown protected. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
-| Data collection / finite D1 measurement | Data / deployed current owner; disjoint dated retention implementation assigned | Existing4/8-page owner retains six QQQ pages/720 rows then an invalid seventh;390 regular minutes remain. New two-date probe returns120 September1 midday minutes/August3 empty, not a history floor. Separate September1 scope adapter is being implemented, not collected; no head/June reset/new task. Next_due October6 00:29 KST unchanged. |
-| GPU | Research Steward / latest resolution appointment closed | Four TCN CUDA fits completed under one frozen budget; lock released/container exited. No permission/runtime block or background-training claim. Stress-net kill gives no ready depth appointment; Data implementation/review continue on disjoint resources. |
-| Verification | Orchestrator / integrated authority plus isolated fast feedback complete |5f0e85e authority7,743 passes/22 skips/317.32s/eight workers/clean helper;190 Data and112 research serial/Ruff/both Compose pass. Later isolated probes/mixture208 tests pass/0.88s; console-entry test-import fault repaired. These are focused package verification, not a replacement full authority or company completion. No active pytest owner. |
+| Data collection / finite D1 measurement | Data / deployed current owner; next dated-panel package ready | September1 independent scope retains480 QQQ native/390 regular minutes/five timeframes, four GETs/one token/5.217s. Ten Data aliases589 source hashes match; no task/schedule/default change. Next ready bounded package: serial finite September QQQ panel, per-date durable recovery, one reusable client/token. Current owner next_due October6 00:29 KST unchanged. |
+| GPU | Research Steward / causal appointment closed | Two linear/LSTM CUDA fits finished; canonical lock absent/child reaped. Peak262,698,496 bytes; no runtime/permission block or active worker. No robust winner/depth grant; distinct CPU/Data preparation continues. |
+| Verification | Orchestrator / integration authority complete |185 Data/156 research serial tests; final full8,014 passes/22 skips/35 warnings/326.01s/eight workers/clean helper, Ruff/both Compose pass. First assertion-passing run failed cleanup, not authority; only exact test alias cleanup fixed. Failed root retained untouched. No active pytest owner. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -37,19 +37,19 @@ The same-candidate and mature-overlap fixes are complete, producing a retained
 inside the existing finite owner, not a new platform, permission gate or task.
 Its invalid seventh page does not erase the retained prefix or complete regular
 session. Two exact older-date keys now establish one useful September1 midday
-interval and one empty August3 response. Data checks existing-path reuse for a
-distinct retained regular-session scope before another bounded acquisition.
-Engine Research independently
+interval and one empty August3 response. The independent retained September1
+scope now proves390 regular minutes, enabling a finite past-session panel rather
+than another same-question probe or cursor reset. Engine Research independently
 completed a cost-aware fixed-band experiment; it also fails net NAV and is not
-retuned. Its pure online-mixture adapter is complete; the next output/accounting
-integration must update from completed prior losses, not whole-comparison
-outcomes or artificial monthly liquidation paths.
+retuned. Its online-mixture campaign now uses completed prior losses and a
+separate continuous mixed ledger. Small fragile seen-data gains do not become
+independent evaluation or Paper qualification.
 
-Current reversible improvement: HANDOFF.md reduced from1,801 to149 lines of
-current product/runtime/evidence/resume facts. Superseded handoff remains in
-Git at50d162a and immutable evidence, reducing restart context cost and stale
-instruction ambiguity. The one company objective/unknown SPY/fixed QQQ tag
-stay unchanged; this is not a reporting system or permission hold.
+Current reversible improvement: reuse the measured dated-minute path with
+independent per-session storage and one client/token, expanding useful research
+input without repeating midday probes or resetting existing owners. Compact
+HANDOFF preserves current facts; superseded1,801-line history remains in Git at
+50d162a. The one company objective/unknown SPY/fixed QQQ tag stay unchanged.
 
 Claude's actual weekly-limit failure remains review_unavailable, not agreement:
 D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-idless-history-20261002.json.

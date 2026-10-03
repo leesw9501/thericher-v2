@@ -24,7 +24,7 @@ not expand live authority or reset capital.
   2026-10-02 18:47:59 UTC was positively rejected without a broker reference.
   No QQQ fill or round trip has been observed. Exact receipt belongs to
   C:\Users\Public\Documents\thericher-v2\agents\execution.md.
-- The next bounded package adds exact QQQ-at-limit orderable funds, categorical
+- Integrated changes add exact QQQ-at-limit orderable funds, categorical
   numeric errors, and explicit distinct request tags only after positive
   rejection. Same-tag restart preserves the original intent/price/TTL. Unknown
   outcomes remain reconciliation-only.535 changed-path serial tests and full
@@ -47,8 +47,9 @@ not expand live authority or reset capital.
 
 ## Owned Work Packages
 
-1. Execution: independently review and verify the exact-orderability and
-   rejected-entry/restart changes, then deploy matching existing Paper images.
+1. Execution: exact-orderability/rejected-entry/restart changes are reviewed,
+   verified and deployed. Inspect only the installed opportunity's exact result
+   after its owned run; missing/task exit/rejection is not a successful fill.
    Use fixed cycle `qqq-unit-20261003-v1`; one new explicit request tag is a
    distinct request, never an automatic retry of the rejected or unknown one.
    One client/token, at most 24 visits and 1,200 worker seconds; same shared
@@ -57,21 +58,17 @@ not expand live authority or reset capital.
    opportunity to the existing runner. Do not foreground-wait, repeatedly
    launch outside-session visits, invent a recurring worker or replace the
    existing strategy owner. Retain the exact tag for recovery.
-3. Engine Research may proceed independently with a small equal-elapsed-minute
-   M1/M5 adapter: 30/120-minute contexts, identical cutoff/payoff support,
-   rule/logistic/TCN versus cash/long, one predeclared development budget.
-   Freeze the contract before real fits/outcomes; revised seen-data evidence
-   is not a sealed evaluation or Paper input. No new agent/stateboard/runtime.
-   Adapter38 tests/source review and actual480-window geometry smoke now pass;
-   Finite eight-fit/120-cell contract, CPU smoke and CUDA appointment completed;
-   preserve its stress-net rejection rather than tune from comparison outcomes.
-   A distinct source-derived fixed-band continuous-fold study also completed:
-   144 cells/zero fits/1.799s CPU,112 focused tests and exact readback. It reduces
-   turnover but loses stress NAV against direct targets; retain the kill. A
-  causal online-expert helper now passes83 synthetic tests; it differs from the
-  static graph but has no actual output stream/campaign/performance claim.
-  Prepare aligned later-OOS outputs and prior completed continuous-ledger
-  feedback under one new frozen contract before training or evaluation.
+3. Engine Research independently completed the equal-minute M1/M5 eight-fit/
+   120-cell contrast and fixed-band144-cell study; both retain their primary
+   kills. The new causal four-expert campaign completed two CUDA TRAIN fits/
+   144 cells after metadata freeze/CPU smoke, with strictly prior completed
+   continuous-ledger feedback and its own mixed-cost ledger. Mean stress NAV
+   gain+0.000390539797 is fragile/QQQ-dependent and loses the TRAIN-risk control;
+   no winner or Paper input. Two strict numeric NPZs remain externally on D:.
+   Independent math readback and final full authority8,014 passes/22 skips/
+   326.01s/eight workers/clean helper, Ruff/both Compose pass. Do not retune
+   seen outcomes or create a new stateboard/runtime. Prepare a distinct finite
+   research contract only when an additional usable dated panel is verified.
 4. Data keeps existing useful current-data owners running. Preserve immutable
    conflicting captures; distinguish session completeness, source finality and
    decision-time availability. No blind historical cursor reset or new download
@@ -82,9 +79,14 @@ not expand live authority or reset capital.
    six QQQ pages/720 rows, then invalid seventh page; QQQ390 regular minutes
    remain. Exact subtype unknown; do not relabel partial as success/exhaustion.
    No new task/schedule or cursor reset.
-   The isolated two-date probe now returns120 September1 midday QQQ minutes
-   and an empty August3 response, not a global history floor. Next check the
-   smallest independently scoped regular-session retention path.
+   The isolated probe established a useful September1 interval, not a history
+   floor. Its subsequent independent retention now verifies480 native/390
+   regular QQQ minutes and390/78/39/6/2 input timeframes, four GETs/one token.
+   Ten Data aliases match589 baked source files; no schedule/default-scope change.
+   Next ready package expands the proved path to a finite past-session QQQ
+   panel with one reusable serial client/token and exact per-date recovery,
+   preserving head/June cursors and original evidence. Data limitations stay
+   explicit; they do not create a general research/Paper approval hold.
 
 The independent QQQ synthetic-price orderability diagnostic received a typed
 accepted response at23:04:20Z, one auth/one GET/zero orders. This does not prove

@@ -64,14 +64,29 @@ an empty August3 page/partial; rows discarded, no cache/cursor changed.90 tests
 pass. Evidence belongs to Data. Neither arbitrary historical KEY support nor
 an endpoint-wide earliest date is officially guaranteed by this observation.
 
+`uv run --extra dev python scripts/backfill_kis_paper_qqq_dated_session.py`
+previews without I/O. Its one `--execute --code-revision sha256:<collector-hash>`
+September1 scope already retained480 rows/four GETs/one token,390/390 regular
+minutes. The existing reader/resampler confirms390/78/39/6/2 bars. Exact source,
+cache/index/manifest and input pins belong to Data. Do not reseed a complete
+scope, replace June/current-head cursors, infer a global history floor or treat
+direct evidence as Scheduler/PIT/finality proof. No new task or schedule.
+
 ## Latest Bounded Research
 
 The new pure `causal_expert_mixture` module separates target projection from
 feedback updates. The caller must provide strictly prior completed-loss UTC
 availability and advance its watermark; the helper does not observe completion,
-account for fees or run a model.83 synthetic tests pass. Actual aligned expert
-streams, continuous feedback accounting and a frozen campaign remain next;
-do not treat the helper as training or a deployable ensemble.
+account for fees or run a model.83 synthetic tests pass. The distinct
+`scripts/run_tiingo_causal_expert_mixture_development.py` campaign now completed
+metadata freeze, CPU smoke and two CUDA fits/144 cells. `--verify` reads only
+the exact frozen source/data/result/strict numeric NPZs; no training or GPU.
+Use the existing pinned Torch image/network none/RO sources and data, only the
+exact external study root writable during execution, no credential/env-file.
+Fixed rate0.1 consumes prior completed continuous-month feedback; the mixed
+target has its own cost ledger. Root/pins/results belong to Research boards.
+Tiny QQQ-dependent development gain is not a winner, fresh holdout or Paper input;
+do not repeat the answered campaign or retune it from these outcomes.
 
 `scripts/run_tiingo_monthly_frozen_policy_readback.py` already completed one
 metadata freeze and one CPU inference attempt on August/September2026. Same

@@ -18,7 +18,7 @@ import time
 import uuid
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Literal, Protocol
 
@@ -52,6 +52,11 @@ KIS_PAPER_PRIVATE_INTRADAY_MIN_REQUEST_INTERVAL_SECONDS = (
     KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS
 )
 KIS_PAPER_PRIVATE_INTRADAY_TARGETS = (("QQQ", "NAS"), ("SPY", "AMS"))
+KIS_PAPER_QQQ_DATED_SESSION = date(2026, 9, 1)
+KIS_PAPER_QQQ_DATED_INITIAL_KEY = "20260901155900"
+KIS_PAPER_QQQ_DATED_CACHE_ROOT = (
+    KIS_PAPER_MARKET_DATA_ROOT / "us_equities/kis_paper_private/intraday-dated/qqq-20260901"
+)
 KIS_PAPER_IWM_CURRENT_HEAD_TARGET = ("IWM", "AMS")
 _RAW_MINUTE_COLUMNS = (
     "xymd",
@@ -338,6 +343,115 @@ def validate_kis_paper_iwm_current_head_request(
     )
 
 
+def validate_kis_paper_qqq_dated_session_request(
+    *,
+    cache_root: Path,
+    repo_root: Path,
+    session_date: date,
+    pages: int,
+    inspect_paths: bool = True,
+) -> Path:
+    """Bind this finite request before credentials; preview performs no filesystem IO."""
+    root = Path(cache_root)
+    if (
+        type(session_date) is not date
+        or session_date != KIS_PAPER_QQQ_DATED_SESSION
+        or type(pages) is not int
+        or not 1 <= pages <= 4
+        or type(inspect_paths) is not bool
+        or not root.is_absolute()
+        or root != KIS_PAPER_QQQ_DATED_CACHE_ROOT
+        or root.is_relative_to(Path(repo_root))
+    ):
+        raise ValueError("QQQ dated-session request is invalid")
+    if inspect_paths:
+        # Reject junctions as well as symlinks, including retained descendants.
+        candidates = [root, *root.parents]
+        while candidates:
+            candidate = candidates.pop()
+            try:
+                info = candidate.lstat()
+            except FileNotFoundError:
+                continue
+            if getattr(info, "st_file_attributes", 0) & 0x400 or candidate.is_symlink():
+                raise ValueError("QQQ dated-session path is invalid")
+            if candidate.is_relative_to(root) and candidate.is_dir():
+                candidates.extend(candidate.iterdir())
+        if root.resolve().is_relative_to(Path(repo_root).resolve()):
+            raise ValueError("QQQ dated-session path is invalid")
+    return root
+
+
+def kis_paper_qqq_dated_session_complete(*, cache_root: Path, repo_root: Path) -> bool:
+    """Only the verified canonical reader can establish the fixed 390-minute cohort."""
+    validate_kis_paper_qqq_dated_session_request(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        session_date=KIS_PAPER_QQQ_DATED_SESSION,
+        pages=4,
+    )
+    from thericher_v2.data.kis_paper_intraday import (
+        load_verified_kis_paper_private_intraday_catalog,
+        require_complete_kis_paper_private_intraday_session,
+    )
+    from thericher_v2.data.us_equity_session import us_equity_2026_session
+
+    session = us_equity_2026_session(KIS_PAPER_QQQ_DATED_SESSION)
+    assert session is not None
+    try:
+        catalog = load_verified_kis_paper_private_intraday_catalog(
+            cache_root=cache_root,
+            repo_root=repo_root,
+            symbol="QQQ",
+            exchange="NAS",
+        )
+        require_complete_kis_paper_private_intraday_session(catalog, session=session.window)
+    except ValueError as error:
+        if str(error) not in {
+            "private intraday session is incomplete",
+            "private intraday session has no source bars",
+            "private intraday cache has no retained bars",
+        }:
+            raise
+        return False
+    return True
+
+
+def run_kis_paper_qqq_dated_session_cycle(
+    *,
+    client: KisPaperPrivateIntradayClient,
+    cache_root: Path,
+    repo_root: Path,
+    code_revision: str,
+    session_date: date = KIS_PAPER_QQQ_DATED_SESSION,
+    pages: int = 4,
+    observed_at: datetime | None = None,
+    sleeper: Callable[[float], None] = time.sleep,
+    monotonic_clock: Callable[[], float] = time.monotonic,
+) -> KisPaperPrivateIntradayBackfillRun:
+    """One fixed-date QQQ invocation; never borrow or reseed another cursor."""
+    validate_kis_paper_qqq_dated_session_request(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        session_date=session_date,
+        pages=pages,
+    )
+    return _run_kis_paper_private_intraday_cycle(
+        client=client,
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision=code_revision,
+        targets=(("QQQ", "NAS"),),
+        pages_per_target=pages,
+        resume_cursor=True,
+        quarantine_retained_head_conflicts=False,
+        observed_at=observed_at,
+        sleeper=sleeper,
+        monotonic_clock=monotonic_clock,
+        dated_qqq_session=True,
+    )[0]
+
+
 def _run_kis_paper_private_intraday_cycle(
     *,
     client: KisPaperPrivateIntradayClient,
@@ -352,6 +466,7 @@ def _run_kis_paper_private_intraday_cycle(
     sleeper: Callable[[float], None],
     monotonic_clock: Callable[[], float],
     explicit_qqq_head_continuation: bool = False,
+    dated_qqq_session: bool = False,
 ) -> tuple[KisPaperPrivateIntradayBackfillRun, ...]:
     """Collect bounded source pages with optional historical-cursor resumption.
 
@@ -397,17 +512,26 @@ def _run_kis_paper_private_intraday_cycle(
     try:
         index = _read_or_create_index(
             root,
-            hydrate_source_exhaustion=resume_cursor,
+            hydrate_source_exhaustion=resume_cursor and not dated_qqq_session,
             expected_targets=targets,
+            initial_cursor=(
+                KisPaperPrivateIntradayCursor("1", KIS_PAPER_QQQ_DATED_INITIAL_KEY)
+                if dated_qqq_session
+                else None
+            ),
         )
         removed_candidate_chunks = _remove_candidate_batch_conflicted_chunks(
             index, resume_cursor=resume_cursor
         )
+        if dated_qqq_session:
+            _validate_dated_qqq_state(index)
         _attest_committed_snapshots(root=root, index=index)
         recovered = _recover_orphan_snapshots(root=root, index=index)
         recovered_by_target: dict[str, list[_RecoveredSnapshot]] = {}
         for item in recovered:
             recovered_by_target.setdefault(item.target.target_key, []).append(item)
+        if dated_qqq_session:
+            _validate_dated_qqq_state(index)
         if removed_candidate_chunks or recovered:
             _attest_committed_snapshots(root=root, index=index)
             _write_index(root=root, index=index, expected_targets=targets)
@@ -425,7 +549,29 @@ def _run_kis_paper_private_intraday_cycle(
                 if resume_cursor
                 else None
             )
-            if resume_cursor and _target_source_is_exhausted(target_state):
+            if dated_qqq_session and target_state["chunks"]:
+                complete = kis_paper_qqq_dated_session_complete(
+                    cache_root=cache_root,
+                    repo_root=repo_root,
+                )
+                if complete or input_cursor.keyb < "20260901093000":
+                    results.append(
+                        KisPaperPrivateIntradayBackfillRun(
+                            status="recovered",
+                            target_key=target.target_key,
+                            row_count=0,
+                            exact_overlap_rows=0,
+                            reason="dated_session_complete"
+                            if complete
+                            else "dated_session_incomplete",
+                        )
+                    )
+                    continue
+            if (
+                resume_cursor
+                and not dated_qqq_session
+                and _target_source_is_exhausted(target_state)
+            ):
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
                         status="source_exhausted",
@@ -445,6 +591,7 @@ def _run_kis_paper_private_intraday_cycle(
                 explicit_qqq_head_continuation=(
                     explicit_qqq_head_continuation and target.target_key == "QQQ/NAS/1m"
                 ),
+                dated_qqq_session=dated_qqq_session,
             )
             if not resume_cursor:
                 collected = _CollectedTarget(
@@ -549,7 +696,7 @@ def _run_kis_paper_private_intraday_cycle(
                     "source_exhausted"
                     if _collected_target_source_is_exhausted(
                         collected=collected,
-                        resume_cursor=resume_cursor,
+                        resume_cursor=resume_cursor and not dated_qqq_session,
                     )
                     else "already_cached"
                 )
@@ -591,7 +738,7 @@ def _run_kis_paper_private_intraday_cycle(
                 "source_exhausted"
                 if _collected_target_source_is_exhausted(
                     collected=collected,
-                    resume_cursor=resume_cursor,
+                    resume_cursor=resume_cursor and not dated_qqq_session,
                 )
                 else collected.reason
             )
@@ -646,6 +793,7 @@ def _collect_target(
     pages_per_target: int,
     before_request: Callable[[], None],
     explicit_qqq_head_continuation: bool = False,
+    dated_qqq_session: bool = False,
 ) -> _CollectedTarget:
     rows_by_key: dict[str, KisPaperMinuteRawBar] = {}
     pages: list[dict[str, object]] = []
@@ -656,13 +804,16 @@ def _collect_target(
             query = KisPaperMinuteQuery(
                 exchange=target.exchange,
                 symbol=target.symbol,
-                include_previous_day=explicit_qqq_head_continuation and cursor is not None,
+                include_previous_day=(explicit_qqq_head_continuation or dated_qqq_session)
+                and cursor is not None,
                 continuation_next=cursor.next_value if cursor is not None else None,
                 continuation_key=cursor.keyb if cursor is not None else None,
             )
             page = client.fetch_minute_page(query, before_request=before_request)
             if not page.bars:
                 raise KisPaperMarketDataError("minute_response_empty")
+            if dated_qqq_session:
+                _validate_dated_qqq_page(page=page, cursor=cursor, retained_rows=rows_by_key)
             prospective_rows = dict(rows_by_key)
             prospective_duplicates = 0
             for row in page.bars:
@@ -679,6 +830,12 @@ def _collect_target(
                     page=page, cursor=cursor, retained_rows=rows_by_key
                 )
             next_cursor = _cursor_from_page(page)
+            if dated_qqq_session:
+                # Retain a resumable frontier even on the last budgeted/short page.
+                next_cursor = KisPaperPrivateIntradayCursor(
+                    "1",
+                    _one_exchange_minute_before(min(page.bars, key=_exchange_stamp)),
+                )
             if (
                 explicit_qqq_head_continuation
                 and next_cursor is None
@@ -707,6 +864,9 @@ def _collect_target(
             rows_by_key = prospective_rows
             duplicate_rows += prospective_duplicates
             pages.append(_page_document(page=page, page_number=page_number))
+            if dated_qqq_session and (len(page.bars) < 120 or next_cursor.keyb < "20260901093000"):
+                cursor = next_cursor
+                break
             if next_cursor is None:
                 cursor = None
                 break
@@ -751,6 +911,48 @@ def _collect_target(
         status="collected",
         reason=None,
     )
+
+
+def _validate_dated_qqq_state(index: Mapping[str, object]) -> None:
+    state = _index_target(index=index, target=KisPaperPrivateIntradayTarget("QQQ", "NAS"))
+    cursor = KisPaperPrivateIntradayCursor.from_document(state["next_cursor"])
+    if cursor is None or not "20260901000000" <= cursor.keyb <= KIS_PAPER_QQQ_DATED_INITIAL_KEY:
+        raise ValueError("QQQ dated-session cursor is invalid")
+    expected = KisPaperPrivateIntradayCursor("1", KIS_PAPER_QQQ_DATED_INITIAL_KEY).as_document()
+    for chunk in state["chunks"]:
+        if chunk["collection_scope"] != "historical" or chunk["input_cursor"] != expected:
+            raise ValueError("QQQ dated-session custody is invalid")
+        following = KisPaperPrivateIntradayCursor.from_document(chunk["output_cursor"])
+        if following is None or not "20260901000000" <= following.keyb < expected["keyb"]:
+            raise ValueError("QQQ dated-session custody is invalid")
+        expected = following.as_document()
+    if cursor.as_document() != expected:
+        raise ValueError("QQQ dated-session custody is invalid")
+
+
+def _validate_dated_qqq_page(
+    *,
+    page: KisPaperMinutePage,
+    cursor: KisPaperPrivateIntradayCursor | None,
+    retained_rows: Mapping[str, KisPaperMinuteRawBar],
+) -> None:
+    stamps = [_exchange_stamp(row).replace("T", "") for row in page.bars]
+    korea = [_korea_stamp(row) for row in page.bars]
+    if (
+        cursor is None
+        or (page.query.symbol, page.query.exchange) != ("QQQ", "NAS")
+        or page.query.continuation_key != cursor.keyb
+        or page.query.continuation_next != cursor.next_value
+        or page.query.include_previous_day is not True
+        or not 1 <= len(stamps) <= 120
+        or len(set(stamps)) != len(stamps)
+        or len(set(korea)) != len(korea)
+        or any(stamp[:8] != "20260901" or stamp[-2:] != "00" for stamp in stamps)
+        or max(stamps) > cursor.keyb
+        or min(stamps) <= "20260901000000"
+        or (retained_rows and max(korea) >= min(retained_rows))
+    ):
+        raise KisPaperMarketDataError("minute_response_invalid")
 
 
 def _validate_explicit_qqq_head_page(
@@ -1073,6 +1275,7 @@ def _read_or_create_index(
     *,
     hydrate_source_exhaustion: bool,
     expected_targets: tuple[tuple[str, str], ...] = KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
+    initial_cursor: KisPaperPrivateIntradayCursor | None = None,
 ) -> dict[str, object]:
     expected_targets = _normalize_private_intraday_targets(expected_targets)
     path = root / KIS_PAPER_PRIVATE_INTRADAY_INDEX_FILENAME
@@ -1087,7 +1290,7 @@ def _read_or_create_index(
                     "target_key": KisPaperPrivateIntradayTarget(*target).target_key,
                     "symbol": target[0],
                     "exchange": target[1],
-                    "next_cursor": None,
+                    "next_cursor": initial_cursor.as_document() if initial_cursor else None,
                     "last_reason": None,
                     "last_conflict_origin": None,
                     "last_observed_at_utc": None,

@@ -5,6 +5,26 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October3 causal-mixture CUDA appointment closed/non_promoting_completed:
+`tiingo-causal-expert-mixture-development-v1`,two pooled linear/LSTM fits,
+144 development cells/no sealed spend. Fixed source/data/timing/rate/cost/kill
+metadata preceded8.022s CPU smoke/zero fits. Existing pinned Torch2.7+cu128 image,
+2CPU/6GiB/network none/900s parent bound, canonical GPU lock held through child
+reaping. Both container and appointment ended; no ongoing GPU worker. CUDA
+duration was not retained; a sampled48-percent utilization is not a run average.
+Torch peak262,698,496 bytes against23,030,923,264-byte available-VRAM budget.
+Exact root `D:\thericher-v2\model-artifacts\research\tiingo-causal-expert-mixture-development-v1`;
+precommit `sha256:b900a1bb6c37633a857ed1e4c7b9d53b0b391b5f93056843820477e0f51ce944`;
+CUDA summary `sha256:f90858cbaa644bfaffe56e151fc50cd231ffda68864913aff57f950518889333`.
+Two strict numeric NPZs retained under that external root, no pickle/code:
+`weights-linear.npz`,
+SHA256 `599cbbd75c9a37a0fead6c2635aae5d394cb9ad1b6de92744082d6b867c43084`;
+`weights-lstm.npz`,
+SHA256 `3f540bb76f5eb2f9ce566f33a9cbff7a3641c296d542e2edb5ad9b5d36012df9`.
+CPU prediction reconstruction within1e-6 and exact RO source/result/NPZ readback
+pass. Independent metadata math review agrees with the tiny QQQ-dependent gain,
+not a robust winner; Research owns interpretation, no depth/Paper promotion.
+
 October3 fixed-band CPU package closed, no GPU appointment or holdout spend:
 `tiingo-fixed-band-continuous-development-v1`,144 cells/zero predictive fits,
 1CPU/2GiB/network none/180-second cap,1.799s worker time. Metadata freeze and

@@ -17,14 +17,38 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-03 KST)
 
+The distinct causal four-expert development campaign is complete: linear/LSTM16,
+12-month momentum and TRAIN-risk constant; uniform initial weights/fixed rate0.1,
+strictly prior completed-month feedback from continuous10bps expert ledgers,
+and a separate Decimal50 mixed-policy ledger. Two pooled TRAIN2002-2012 fits,
+seed101/128 epochs; six later seen ETF/fold groups, eight policies/three costs
+yield144 cells. No monthly reset, whole-period feedback or averaged expert NAV.
+Metadata froze before real targets/fits;8.022s synthetic CPU smoke/zero fits
+preceded CUDA. Exact RO verification passes; two external numeric NPZs reconstruct
+on CPU. Independent validation recomputes25 source pins/144 unique cells/48
+cost-invariant action groups/144 fee identities,18 cash and18 always-long controls.
+Primary10bps online-minus-fixed-blend mean NAV delta+0.000390539797,
+kill_applied=false. It loses TRAIN-risk constant by0.064010583668 NAV units;
+leave-QQQ-out delta-0.000781313792. This fragile seen-data gain is not annual
+return, alpha, a winner, BOA reproduction, sealed evaluation or Paper input.
+Do not retune the rate/experts or rewrite the predeclared kill from these outcomes.
+Root `D:\thericher-v2\model-artifacts\research\tiingo-causal-expert-mixture-development-v1`;
+precommit `sha256:b900a1bb6c37633a857ed1e4c7b9d53b0b391b5f93056843820477e0f51ce944`;
+CPU `sha256:ff89896f723fe1320052d52535c2d75856f2e5306f70fa3e5b7bfe73bccb6640`;
+CUDA `sha256:f90858cbaa644bfaffe56e151fc50cd231ffda68864913aff57f950518889333`.
+Actual metadata duration/peak and weight custody belong to Research Steward.
+73 new campaign plus83 helper serial tests pass; final integration authority
+8,014 passes/22 skips/326.01s/eight workers/clean helper, Ruff/both Compose pass.
+
 The pure causal online-mixture preparation is implemented: independent convex
 target projection and exponential completed-loss/Hedge-style weight updates,
 strictly prior UTC feedback plus an advancing caller-owned watermark. Finite
 float64/simplex checks and numerical extremes are tested; inputs are unchanged
 and output weights are read-only.83 focused tests/0.23s and Ruff pass.
 Source `sha256:0d805c411debb530e7e2913de3c0a8056207634bf6f66598b6a4f47b51fdf785`.
-This is not BOA reproduction, an actual expert-output stream, a fitted ensemble
-or a performance result. The distinct hypothesis is causal adaptation versus
+The helper alone is not BOA reproduction, a fitted ensemble or a performance
+result; its distinct campaign above now has actual development output. The
+distinct hypothesis is causal adaptation versus
 the existing static vote/utility tree. Next preparation must align genuinely
 later-OOS expert decisions, use completed prior-month continuous-ledger losses,
 and give the mixed target its own cost/turnover ledger. Never average expert
@@ -63,8 +87,8 @@ our post-cost hierarchical gate. Exact source-safe receipt:
 `D:\thericher-v2\model-artifacts\research\source-discovery\cost-aware-policy-20261003.json`,
 SHA256 `64776177f42e1bbae15a6d4a3f36400929fa9f9fae06fee02178a83867dfa070`.
 Source-only feasibility found a distinct online mechanism; the pure helper
-above is complete. No actual campaign, fits, retained weights or holdout use
-yet; it cannot turn the rejected studies into a profitable ensemble claim.
+above is complete and the separately frozen development campaign has run.
+Neither source nor campaign turns rejected studies into a profitable/Paper claim.
 
 Completed one finite equal-elapsed M1/M5 CUDA development experiment.
 Context30/120 minutes means M1

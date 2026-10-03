@@ -13,6 +13,31 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-03 KST)
 
+Latest independently scoped September1 QQQ/NAS retention completed at23:41:47Z:
+four minute GETs/one token,480 unique rows/zero overlaps in5.217s. Existing
+canonical readers verify390/390 regular minutes and M1/M5/M10/H1/H3 counts
+390/78/39/6/2; hourly buckets omit the terminal30-minute fragment. Preview has
+no I/O; execute pins the initial20260901155900 key before the first request,
+reuses one client, and resumes its own cursor. Full pages advance oldest minus
+one minute even without continuation headers; query/date/overlap guards remain.
+Core defaults, June/current-head cursors, task definitions and pace are unchanged.
+Direct retention is not Scheduler proof or provider/PIT finality; those remain
+not_observed. Partial/empty results describe only this exact scope.
+185 changed-path Data serial tests and independent source review pass. Final
+integration authority8,014 passes/22 skips/326.01s/eight workers/clean helper,
+Ruff and both Compose pass. Ten existing Data aliases match all589 baked source
+files, image `sha256:7f305d50e7496d49c5ae7c29d95cd04c06fd34854313ff91789df5014705531f`.
+No task/service was invoked or schedule expanded during publication.
+Exact scope `D:\market_data\us_equities\kis_paper_private\intraday-dated\qqq-20260901`:
+manifest `v1\snapshots\snapshot=20261002T234147Z-000000-qqq-nas-m1-v1\manifest.json`,
+SHA256 `333d8863c63de0885c4d5bd76e94667ad3b87e9dde2aa1075142bc6e7df7f56b`;
+index `v1\index.json`,
+SHA256 `05ee1405aa68c8514988b124c696930ba62614259e618b6b45f2b75af7f9f8bf`;
+prepared input `sha256:82f211e67c9cfa5bce015d0edb36de3401fa84ec9b64ef7002d51438bda66483`.
+Next ready Data package expands this proved independent dated scope to a finite
+past-session QQQ panel, one serial reusable client/token with per-date recovery;
+no new task, arbitrary history-floor inference or research/Paper permission hold.
+
 The isolated two-date probe completed at22:49:37Z with one token/two minute
 requests/zero daily requests in2.582s. QQQ/NAS key20260901120000 returned120
 unique native M1 rows spanning September1 10:01-12:00 exchange time;
@@ -23,9 +48,8 @@ no cache/cursor was reset or changed.90 focused tests and independent source
 review pass. Exact metadata-only receipt:
 `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\fixed-key-pair-20261002T224937028955Z-f0d4c37e9dcdd33e.json`,
 SHA256 `f0d4c37e9dcdd33ef71dbe5db877a30940ddff4069e71cfcc1eac64e8d0a95bc`.
-Next bounded package checks existing-path reuse for independently scoped
-September1 regular-session retention, without reseeding June's cursor or the
-current head. A missing response does not block independent research/Paper.
+The subsequent independent September1 retention is complete as recorded above;
+the probe itself remains rows-discarded. Missing responses do not block other lanes.
 
 18:25:32Z bounded explicit older-key measurement completed with one token and
 two accepted full120-row QQQ/NAS pages. No recognized M/F header; both body

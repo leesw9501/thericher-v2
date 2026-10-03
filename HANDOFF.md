@@ -75,16 +75,18 @@ page. Partial/subtype unknown is not success, exhaustion or a provider rate cap.
 SPY120 is not a complete matched session. Direct capture is not Scheduler proof.
 
 Existing Data owner is Ready, next_due October6 00:29 KST. Earlier06:20 mixed/
-recovery receipt remains separate. Ten existing Data consumers match all584
-source files AT REVISION5f0e85e, image:
-sha256:5f975bc91058df3742583fe355834c534101e30089ace4a16d959c7995f0babc.
-Later standalone probes/mixture code are not deployed or used by those owners.
+recovery receipt remains separate. Ten existing Data consumers match all589
+source files in the dated-session integration, image:
+sha256:7f305d50e7496d49c5ae7c29d95cd04c06fd34854313ff91789df5014705531f.
+Publication invoked no task/service and changed no schedule or default scope.
 
 The isolated two-date probe returned120 September1 midday QQQ minutes and
 empty August3/partial, one token/two requests/zero daily. Raw rows discarded;
-no cursor/cache change. Do not infer a global history floor. Data is preparing
-a separately scoped September1 full-session retention adapter, not reseeding
-June/current head or adding a scheduler. Exact paths/hashes belong to agents/data.md.
+no cursor/cache change. Do not infer a global history floor. The subsequent
+independently scoped September1 adapter retained480 QQQ rows with four GETs/
+one token in5.217s. Existing readers verify390 regular minutes and five
+timeframes390/78/39/6/2. No June/current-head reset or new scheduler; finality/PIT
+not_observed. Exact manifest/index/input hashes belong to agents/data.md.
 
 Tiingo standard EOD SPY/QQQ/IWM acquisition retained945 rows/315 per ETF from
 one new July2025-September2026 vintage. Do not splice adjusted vintages.
@@ -110,15 +112,15 @@ Frozen-policy later-month readback completed126 cells/zero fits without a
 robust risk-control advantage. Exact contracts/results and prior studies belong
 to agents/engine-research.md and agents/research-steward.md.
 
-Pure causal_expert_mixture is implemented/tested, not BOA reproduction,
-a fitted ensemble or a performance claim. Next bounded Engine package builds
-one distinct prequential development comparison: four fixed experts
-(linear/LSTM/momentum/TRAIN-risk constant), uniform start/fixed rate0.1,
-strictly prior completed-month continuous-ledger loss, its own mixed-cost ledger.
-Exactly two TRAIN2002-2012 fits, later seen folds,144 cells; freeze metadata/
-timing/costs/kill/budget before actual targets, CPU smoke before CUDA.
-No old source-pin bypass, monthly reset, sealed holdout, selection or Paper input.
-Independent Validation challenges causality/fees; Data preparation runs parallel.
+The causal four-expert development campaign completed two CUDA TRAIN2002-2012
+fits/144 cells after metadata freeze and8.022s CPU smoke. Fixed rate0.1 uses
+strictly prior completed-month continuous-ledger feedback and its own mixed-cost
+ledger. Stress online-minus-fixed-blend mean NAV delta+0.000390539797 does not
+trigger the predeclared kill, but drops below zero without QQQ and loses the
+TRAIN-risk control. No robust winner, BOA reproduction, holdout or Paper input.
+Independent readback verifies25 pins/144 fee identities/48 action-hash groups.
+Two numeric NPZs remain on D: with exact hashes/CPU reconstruction; Torch peak
+262,698,496 bytes. Appointment closed; exact evidence belongs to Research boards.
 
 Public mechanisms were independently re-retrieved from primary papers/repos.
 TimesFM2.5 Apache weights are already used;3.0 non-production rights are not
@@ -128,11 +130,11 @@ Do not repeatedly invoke that unchanged failure or pause independent ready work.
 
 ## Verification And Resume
 
-5f0e85e integrated authority:190 Data serial/112 research serial, full7,743
-passed/22 skipped/35 warnings/317.32s/eight workers/clean helper, Ruff/default
-and research Compose pass. Later isolated probes/mixture:208 focused passes/
-0.88s, Ruff/both Compose/independent review. This is not a later full authority.
-A pytest console-import failure was repaired; retained failed scratch is untouched.
+Latest dated/mixture integration:185 Data serial/156 research serial, final full
+8,014 passed/22 skipped/35 warnings/326.01s/eight workers/clean helper exit.
+Ruff/default and research Compose pass. The first full run passed assertions
+but failed hardlink cleanup; it is not authority. Only the test's exact alias
+cleanup was repaired; C:\trpy\runs\r-73d1a88d remains untouched.
 Weekly serial compatibility6,341 passes/19 skips predates those additions.
 
 At company/shared-runtime integration follow AGENTS.md: changed-path serial,
