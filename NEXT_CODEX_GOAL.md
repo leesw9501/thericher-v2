@@ -14,10 +14,15 @@ position reconciliation. This is execution readiness, not profitability or live.
   At most24 visits/1,200 worker seconds,25-minute task limit, IgnoreNew,
   no restart/missed replay, trigger expiry00:21. Inspect its exact retained
   outcome after the owned run; do not manually duplicate/reset/substitute it.
+  Opportunity consumed: fresh exact-tag BUY submit was positively rejected/
+  closed as `paper_account_expired`; zero BUY/SELL fills, no round trip.
+  Scheduler Ready/last00:20/result23/no next trigger; exact worker absent.
 - Existing strategy remains October5 23:50 KST; paired-head collection remains
-  October6 00:29. One same-chat `qqq-paper` follow-up is00:45, not recurring.
+  October6 00:29; their results are not attributed by this QQQ follow-up.
+  One-shot `qqq-paper` inspected the actual result and was deleted, no chain.
 - October2 QQQ BUY was positively rejected without a broker reference.
-  No QQQ fill/round trip or new tagged result is observed. Same-tag recovery
+  The later fixed-tag result is the positive expiry rejection above, NOT
+  a cause attribution for October2. No QQQ fill/round trip. Same-tag recovery
   retains original price/TTL/identity; an unknown outcome reconciles only.
 - SPY's superseded lifecycle remains INCOMPLETE. Preserve unknown successor,
   original private bytes/cost/reservations; absent history is not an outcome.
@@ -32,7 +37,13 @@ position reconciliation. This is execution readiness, not profitability or live.
    no-intent, unknown outcome and fees/settled-cash/PnL limitations narrowly.
    Do not infer a fill from task exit, registration, cancellation or zero replay
    quantity. If rejected, diagnose its concrete retained category rather than
-   blindly retry. No foreground wait for tonight's owner.
+   blindly retry. This owned opportunity is consumed, no new QQQ next_due.
+   Operator help is mock-account renewal/API reapplication through the broker's
+   private app/site, not permission to use Paper. Preserve old account/budget/
+   unknown SPY custody; any replacement account requires separate identity
+   handling before a future owned opportunity. Do not delete API registrations,
+   change credentials, reset state or substitute a request in this follow-up.
+   Exact evidence and official source are in agents/execution.md.
 2. Data keeps useful current-data owners running. October5 normalized D/E
    terminal repair is verified/deployed to ten Data aliases/602 unique hashes;
    old defaults/scopes/pace/schedules are unchanged. Actual new head/header yield

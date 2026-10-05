@@ -14,6 +14,50 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October6 00:20 KST owned opportunity returned a fresh positive QQQ BUY
+rejection, NOT a never-attempted no-intent. Exact fixed public request tag
+`opportunity-20261006T0020KST-v1` matches one strictly parsed private intent;
+created15:20:10.070467Z, submission started15:20:21.746069Z, rejected/closed
+with matching retained terminal proof. No broker acknowledgement, BUY/SELL
+fill or current owned-flat account reconciliation is observed. The safe typed
+category is `paper_account_expired`; it describes this response only, not
+the older null-code rejection. Shared aggregate projection validates and
+the budget/referenced owner bytes stayed stable throughout the read-only
+inspection. Original10-percent basis and unknown SPY custody are preserved.
+Exact time-bound outcome at15:20:22.772807Z:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\1b82974f43481c6a5116e9ade47e32fa05317bca142bfa5f07f382642f0194ca\budget-20261005T152001717041Z\outcome.json`,
+SHA256 `e576c1e6fffada3a68d098dde3079ee990930a52b0bb968191dc9d64968d184f`.
+Its `no_intent/order_not_submitted_or_rejected` category alone is insufficient;
+the exact request/private terminal readback proves the rejected submission.
+Source-safe offline projection/Claude failure receipt alongside that outcome:
+`offline-observation-20261005T155648Z.json`, SHA256
+`38397e4e9cb8d9687e40ec0c893ac64f88411a2fce8ee601ae27342ba4a430bf`.
+This is host-local typed readback/time correlation, not cryptographic Scheduler
+origin proof or current account-flat evidence.
+Scheduler is Ready, last00:20 KST/result23, no next trigger; exact worker absent.
+Exit23 alone was not used as order evidence. Fees/settled cash/net PnL remain
+unobserved; `qqq-restart-safe-unit-paper-v1` remains OPEN/incomplete.
+
+Operator help: KIS's official Paper notice advises replacing an expired mock
+account and reapplying for its mock API, independently of API-key validity:
+https://apiportal.koreainvestment.com/intro.
+Confirm the mock account in the broker's app/site, then follow its reapplication
+steps privately; never paste new values into chat. Account replacement is NOT
+an identity/budget reset: preserve old state/evidence, and treat any new account
+as separately scoped custody before a future owned opportunity. No registration,
+credential change, new tag, substitute submit or schedule change occurred here.
+The expired task definition remains; one-shot `qqq-paper` was deleted after
+inspection. Claude exit1/uncategorized is `review_unavailable`, not agreement.
+Readback used the existing strict unlocked parser on a network-none, ALL-RO
+container because the ordinary store read creates a lock file; before/after
+hashes checked read stability. No production parser/lock was modified.
+Focused numeric-category/QQQ-runner feedback:110 pass/no skips in2.74s with
+the managed short temp helper/two workers/clean exit; Ruff and default/research
+sample-env Compose configurations pass. Initial default-long-temp run stopped
+at84 passes/one persist/io_error failure; it is not authority and its scratch
+is retained. No production code was changed to obtain the passing result.
+Documentation-only result integration does not rerun full-suite authority.
+
 The isolated read-only QQQ/NASD VTTS3007R diagnostic received an accepted,
 typed response at2026-10-02 23:04:20 UTC: one token POST/one GET/zero orders,
 no retry or state reset. Synthetic public price1 tests endpoint acceptance
@@ -44,16 +88,16 @@ QQQ request was submitted. The old rejected attempt and unknown SPY remain as
 recorded below. Numeric errors now have source-derived categorical diagnostics
 for future responses only; no retroactive attribution of the old null code.
 
-Owned next_due: `thericher-kis-paper-qqq-unit-20261006`, October6 00:20 KST
+Consumed opportunity: `thericher-kis-paper-qqq-unit-20261006`, October6 00:20 KST
 (October5 15:20 UTC), trigger expires00:21. Same cycle and fixed explicit tag
 `opportunity-20261006T0020KST-v1`;24 visits/25-minute outer task limit, hidden
 interactive Limited principal, IgnoreNew/no restart/no missed-run replay.
-Independent source-safe static review passes; task is Ready, never invoked
-manually. This registration is not submit/fill evidence. Existing strategy
+Independent source-safe static review passes; task was never invoked manually.
+Its actual rejected result is recorded above. Existing strategy
 owner remains23:50/25 minutes, leaving a five-minute scheduled gap; private
 locks still protect cross-caller ownership. One chat follow-up `qqq-paper`
-at October6 00:45 KST inspects the exact result and continues ready work;
-no recurrence or replacement follow-up chain. Computer/Docker/app must be on.
+at October6 00:45 KST inspected the exact result and was then deleted;
+no recurrence or replacement follow-up chain. No QQQ next_due is assigned.
 
 Historical pre-deployment QQQ checkpoint, superseded by deployment above:
 one QQQ/NASD unit cycle through the existing daily-SPY service and shared budget

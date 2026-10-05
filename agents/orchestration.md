@@ -16,13 +16,24 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
 | Research | Engine Research / three distinct October5 packages closed | Four paired KIS fits/48 cells and three joint-allocation CUDA fits/21 cells fail frozen kills. A separate source-derived first30-closing29 rule completes60 CPU cells/zero fits; all stress ETF/fold NAVs lose cash and fixed exposure controls. Numeric joint models/exact readbacks retained; no rescued winner/Paper input or active role worker. |
-| Independent Paper readiness | Execution / deployed exact-orderability and one owned opportunity | Independent review/535 serial/full authority pass;8 consumers/40 baked hashes match. New23:04:20Z one-auth/one-GET synthetic-price diagnostic accepted; not actual-limit funds/old rejection explanation. Next_due October6 00:20 KST fixed-tag unit cycle/00:45 chat follow-up, unchanged. No actual tagged submit/fill; SPY unknown protected. |
+| Independent Paper readiness | Execution / consumed exact-tag opportunity | October6 00:20 owner actually submitted a BUY; positive time-bound rejection/closed terminal proof, category paper_account_expired, no acknowledgement or BUY/SELL fills. Aggregate/owner readback validates and bytes stable; original budget/unknown SPY protected. Ready/last00:20/result23/no next trigger; exact worker absent. Operator account renewal help needed; no registration/credential/tag/budget/schedule change. One-shot qqq-paper deleted, no replacement chain. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
 | Data collection / finite D1 measurement | Data / terminal repair deployed; broader inventory closed | Official D/E known-terminal repair prevents full-page unknown-header fallback. Ten Data aliases/602 unique baked files match new846a900b image; actual provider/head yield unobserved. Recent25 shared KIS days; FirstRate251 scheduled2022-23 dates/250 shared complete sessions independently checked. No historical collector due; October6 00:29 owner/defaults/tasks/pace/Paper images unchanged. Input-local missingness does not block other prefixes. |
 | GPU | Research Steward / both October5 appointments closed | Paired LSTM/attention and subsequent three joint-allocation CUDA fits complete; latter10.965463s/peak68,181,504 bytes. Canonical lock/container reaped. No active appointment, environment/permission block or undispatched frozen campaign. Another useful hypothesis needs preparation, not training for utilization alone. |
 | Verification | Orchestrator / shared integration complete; isolated research verified | Shared-runtime b677261 passed391 serial/one skip,90 pinned Torch CPU tests/full8,736/22/eight workers/clean helper; Ruff/both sample Compose pass. Context/joint utility integration226/no skips passes host3.51s/pinned6.54s. Later first30 scope passes98 related/47 pinned synthetic checks plus independent review and exact terminal-bound ALL-RO replay. No repeated full-suite or baked research-helper claim. No active pytest owner; older scratch untouched. |
 
 ## Bottleneck And Reversible Improvement
+
+October6 result integration separates an actual provider account-expiry
+rejection from never-submitted no-intent. This closes the opportunity, not the
+OPEN company lifecycle. Operator login/account-registration help is required
+for that endpoint outcome; it is not a new approval or global research hold.
+Original execution graph remains exact funds -> persisted unit BUY -> exact
+fill -> unit SELL -> current owned-flat reconciliation. No fill stage completed.
+The reversible improvement is to stop blind retry of the consumed request and
+preserve its exact category/custody while independent research preparation
+continues. Claude exit1/uncategorized is review_unavailable, never agreement.
+No recurring worker, new next_due, private migration or scheduler expansion.
 
 Current October5 throughput review: old SPY's unavailable successor identity
 blocks its exact superseded lifecycle only. Reassignment while incomplete

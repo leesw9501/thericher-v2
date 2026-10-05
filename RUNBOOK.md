@@ -22,16 +22,30 @@ same request tag on restart; never select a new tag automatically. Exact QQQ/
 NASD orderable funds at the ORIGINAL limit are required immediately before any
 BUY, including a restart without a tag. Original unbound intent recovery uses
 its retained decision receipt, exact price/TTL/fingerprint, not a refreshed
-quote. Unknown outcomes remain reconciliation-only. No new tagged runtime has
-yet occurred; reviewed sources are deployed with40 matching critical hashes.
+quote. Unknown outcomes remain reconciliation-only. Reviewed sources are
+deployed with40 matching critical hashes. October6's fixed-tag runtime DID
+submit a BUY, positively rejected/closed as `paper_account_expired`; no fill.
 One existing-runner opportunity is installed as
 `thericher-kis-paper-qqq-unit-20261006` for October6 00:20-00:21 KST, fixed tag
 `opportunity-20261006T0020KST-v1`,25-minute task limit/IgnoreNew/no restart/no
 missed-run replay. Do not manually start it or replace the tag. Preserve the
 expired definition and exact private recovery identity after its one trigger.
-The `qqq-paper` chat follow-up is one-shot at00:45 KST, not a standing report.
+The `qqq-paper` chat follow-up inspected the result and was deleted; no chain.
 Registration/task exit is not a submit/fill; use exact immutable outcomes and
 strict private projection only. Computer/Docker/app must remain running.
+
+For this account-expiry response, KIS's official notice directs mock-account
+replacement and mock API reapplication, independent of API-key validity:
+https://apiportal.koreainvestment.com/intro.
+The operator confirms the mock account via the broker's app/site and performs
+any login/registration steps privately. Do not infer expiry from an older null
+code, renew a token as an account fix, or blindly repost the closed request.
+Retain the original10-percent basis, unknown SPY custody and old private state;
+new account identity is a separate migration, not automatic budget adoption.
+Exact outcome/hash/time-bound typed readback are in agents/execution.md.
+For offline ALL-RO inspection, use the existing strict unlocked state parser
+and before/after hashes; ordinary store.read needs a writable lock file.
+This readback did not change production locking or prove current account flat.
 
 The standalone `uv run --extra dev python
 scripts/probe_kis_paper_qqq_orderability.py --execute` already completed one

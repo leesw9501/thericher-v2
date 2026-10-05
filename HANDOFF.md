@@ -27,8 +27,11 @@ Absent original-date history does not identify its outcome. Never repost,
 reset, substitute or adopt that leg. A distinct QQQ job and independent lanes
 continue without a global hold.
 
-QQQ's October2 18:47:59 UTC BUY was positively rejected without a broker
-reference; no QQQ fill/round trip is observed. Completion requires exact full
+QQQ's October6 00:20 KST scheduled BUY was actually submitted and positively
+rejected/closed as `paper_account_expired`, with no acknowledgement or fill.
+Exact public tag/time/private terminal binding validates; the old October2
+null-code rejection still has no inferred cause. No round trip is observed.
+Completion requires exact full
 BUY and SELL linked to persisted requests plus owned-flat reconciliation.
 Rejection, no-intent, cancellation, task exit and absent history are not success.
 Fees, settled cash and net broker PnL remain unobserved unless independently seen.
@@ -48,14 +51,24 @@ at23:04:20Z, one auth/one GET/zero orders. This is endpoint acceptance only,
 not actual-limit funds, prior-rejection explanation or Monday's fill readiness.
 Exact metadata-only receipt and limitations are in agents/execution.md.
 
-One owned task thericher-kis-paper-qqq-unit-20261006 is Ready/unobserved:
+The owned task thericher-kis-paper-qqq-unit-20261006 has consumed its opportunity:
 October6 00:20 KST = October5 15:20 UTC, fixed cycle qqq-unit-20261003-v1 and
 tag opportunity-20261006T0020KST-v1. Twenty-four visits,1,200 worker seconds,
-25-minute outer limit, IgnoreNew/no restart/no missed replay; trigger expires
-00:21. Do not manually invoke, reset the tag or substitute an order.
+25-minute outer limit, IgnoreNew/no restart/no missed replay; trigger expired
+00:21. Scheduler Ready/last00:20/result23/no next trigger; exact worker absent.
+Outcome15:20:22.772807Z is no_intent/order_not_submitted_or_rejected, but strict
+private readback proves one actual BUY submit, positive closed rejection and
+zero exact BUY/SELL fills. Aggregate custody validates/read bytes stable.
+Exact external pointer/hash and limitations are in agents/execution.md.
+Do not manually invoke, reset the tag or substitute an order.
 Existing strategy remains October5 23:50 KST with its own locks/budget.
-One same-chat qqq-paper follow-up at October6 00:45 KST reads the exact result,
-quiet while non-actionable; no recurring chain. Computer/Docker/app must be on.
+The same-chat qqq-paper follow-up read this result and was deleted; no new
+follow-up chain, recurring worker or QQQ next_due. Operator help is needed for
+KIS mock-account renewal/API reapplication, not another permission gate.
+Official guidance: https://apiportal.koreainvestment.com/intro.
+New account custody must not silently inherit the old account's budget or
+unknown SPY orders. Existing source-safe research preparation continues;
+no registration/credentials/private-state/schedule change occurred here.
 
 Loopback dashboard http://127.0.0.1:8787 is running/last health=ok,
 broker_calls=false. No public exposure. Unrelated repo-app-1 is not project-owned.
