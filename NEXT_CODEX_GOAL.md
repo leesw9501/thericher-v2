@@ -75,6 +75,11 @@ position reconciliation. This is execution readiness, not profitability or live.
    This is a distinct29-minute seen-data variant, not source-paper replication
    or a reason to retune the original fixed first30 contract.
    Public papers are mechanism references, not our market-profit evidence.
+   October6 independent forward-variance target helper is synthetic-verified:
+   115 new cases/187 context integration/297 combined Paper-research tests pass.
+   It is not a real-data campaign, model or Paper input. Next ready CPU package
+   is source/hash-bound scheduled-key target/input smoke before a predictive
+   contract; do not wait for mock-account renewal or retune killed families.
 
 ## Completion And Verification
 

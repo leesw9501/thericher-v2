@@ -15,7 +15,28 @@ Before a predictive campaign or GPU appointment, freeze its dataset, target,
 temporal split, feature availability, timeframe/window matrix, cost model,
 naive baseline, compute stop rule, artifact root, and strongest kill test.
 
-## Current Research State (2026-10-05 KST)
+## Current Research State (2026-10-06 KST)
+
+Independent forward-risk target preparation is complete, not a predictive
+campaign or another return/allocation rescue. New pure
+`src/thericher_v2/research/intraday_variance_targets.py` constructs squared
+adjacent log-OPEN differences over a declared horizon (default60 minutes),
+entry at decision+1 minute. It needs61 exact complete M1 bars and retains only
+typed geometry/variance; label availability is the final bar END, not its OPEN.
+Exact order/identity/session/UTC/completion/value checks include early closes;
+Decimal log differences avoid extreme-price float ratio overflow/underflow.
+115 synthetic cases plus existing completed-context tests yield187 serial
+passes; added future-price/missing/incomplete mutations leave past120-bar
+context and its naive61-OPEN input unchanged while labels change or fail.
+Integrated focused Paper/research feedback297/no skips passes2.92s with the
+managed short temp helper/two workers/clean exit; Ruff/both sample Compose pass.
+This is code/synthetic geometry only: no real-data labels, cohort, fit, model,
+GPU appointment, sealed spend, source-clock qualification or Paper input.
+The invoked role completed and exited; no worker remains. Next ready CPU step
+is a finite source/hash-bound target/input smoke over the already retained
+scheduled FirstRate keys, accounting for input and target missingness separately
+before any predictive contract. Do not reopen the three closed October5 families
+or label revised/seen data independent. Account renewal does not block this work.
 
 First30-to-closing29 is closed/non_promoting_completed, family/root
 `D:\thericher-v2\model-artifacts\research\firstrate-first30-closing29-development-20261005-v1`.

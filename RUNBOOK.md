@@ -192,6 +192,13 @@ and source pointers belong to Data. Do not rerun the answered package.
 
 ## Latest Bounded Research
 
+The October6 pure `intraday_variance_targets.py` helper has no CLI or external
+side effects. Focused tests are `tests/test_intraday_variance_targets.py` and
+`tests/test_paired_completed_context.py`:187 serial passes, including future
+target faults leaving past inputs unchanged. A60-minute label needs61 completed
+M1 OPENs from decision+1 minute; availability is the last bar END. This is
+synthetic preparation only, not real-data labels/training/GPU/Paper evidence.
+
 `scripts/run_firstrate_time_of_day_band.py` reuses the existing single-attempt
 CPU supervisor: metadata-only `--freeze`, then `--run --contract-sha256` with
 external artifact/input roots. Same-family corrected scope

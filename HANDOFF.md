@@ -138,6 +138,16 @@ Preserve15-percent D: floor. Test scratch prefers measured-fast local C:\trpy.
 
 ## Research And Resources
 
+October6 independent Engine package adds pure forward M1 realized-variance
+labels: default60-minute next-minute-entry target,61 completed OPEN bars and
+last-bar-END availability.115 synthetic/187 context integration/297 combined
+Paper-research focused tests pass; managed two-worker helper cleans its root.
+Future target faults do not alter past120-bar context or naive baseline inputs.
+No real-data target pass, fit, GPU campaign, model selection or Paper input;
+temporary role exited. Next bounded CPU source/hash-bound smoke is independent
+of mock-account renewal. Exact constructor/tests and limits are in the Engine
+stateboard; prior closed families remain unchanged.
+
 October5 first30-to-closing29 long/flat mechanism also completed60 CPU cells,
 zero fits/GPU/weights. TRAIN uses125 causal signs per ETF only for fixed
 exposure; seen April-June/July-September groups have QQQ62/63 and SPY61/63

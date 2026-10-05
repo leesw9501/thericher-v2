@@ -5,6 +5,11 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October6 pure forward-variance target helper is focused-verified/synthetic only;
+zero real-data targets, fits, weights, GPU appointment or sealed spend.
+Engine owns the next bounded CPU input/target preparation; no new campaign
+allocation is claimed and Paper account expiry does not block research.
+
 October5 first30-closing29 CPU family closed/non_promoting_completed,60 cells,
 zero fits/GPU/weights/sealed spend, no appointment or successor allocation.
 Root `D:\thericher-v2\model-artifacts\research\firstrate-first30-closing29-development-20261005-v1`;
