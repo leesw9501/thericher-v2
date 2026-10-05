@@ -511,11 +511,16 @@ def test_full_legacy_head_still_repeats_without_explicit_opt_in():
 
 @pytest.mark.usefixtures("offline_explicit_probe")
 @pytest.mark.parametrize("signal", ["blank_or_absent", "unrecognized_nonblank"])
-def test_explicit_no_mf_full_head_requests_one_older_page_with_previous_day(signal, capsys):
+@pytest.mark.parametrize("older_signal", ["recognized_continuation", "recognized_terminal"])
+def test_explicit_no_mf_full_head_requests_one_older_page_with_previous_day(
+    signal, older_signal, capsys
+):
     head = replace(_full_head(), continuation_signal=signal, more="1")
     oldest = datetime(2026, 7, 24, 9, 30, tzinfo=UTC)
     older = replace(
         _page(tuple(oldest - timedelta(minutes=index) for index in range(1, 121)), "1"),
+        next_cursor="1" if older_signal == "recognized_continuation" else None,
+        continuation_signal=older_signal,
         more="private-body-metadata",
     )
     client = _MinuteClient([head, older, KisPaperMarketDataError("must_not_request_page3")])
@@ -533,7 +538,7 @@ def test_explicit_no_mf_full_head_requests_one_older_page_with_previous_day(sign
     assert outcome.explicit_older_key_category == "older_keys_observed"
     assert outcome.new_older_key_count == 120 and outcome.overlap_key_count == 0
     assert outcome.cursor_progress_category == "strictly_backward_nonoverlapping"
-    assert outcome.continuation_signal_categories == (signal, "recognized_continuation")
+    assert outcome.continuation_signal_categories == (signal, older_signal)
     assert outcome.body_more_categories == ("one", "other_nonblank")
     assert len(client._responses) == 1
     serialized = json.dumps(outcome.safe_payload())
@@ -590,13 +595,17 @@ def test_explicit_page2_kill_cases_close_without_retry(case):
 
 
 @pytest.mark.usefixtures("offline_explicit_probe")
-@pytest.mark.parametrize("case", ["short", "recognized_header", "duplicate_head", "head_rejected"])
+@pytest.mark.parametrize(
+    "case", ["short", "recognized_header", "recognized_terminal", "duplicate_head", "head_rejected"]
+)
 def test_explicit_request_requires_full_head_and_no_recognized_header(case):
     head = _full_head()
     if case == "short":
         head = replace(head, bars=head.bars[:-1])
     elif case == "recognized_header":
         head = replace(head, next_cursor="1", continuation_signal="recognized_continuation")
+    elif case == "recognized_terminal":
+        head = replace(head, continuation_signal="recognized_terminal")
     elif case == "duplicate_head":
         head = replace(head, bars=(head.bars[0],) * 120)
     else:
@@ -610,10 +619,31 @@ def test_explicit_request_requires_full_head_and_no_recognized_header(case):
         == {
             "short": "head_not_full",
             "recognized_header": "header_continuation_present",
+            "recognized_terminal": "header_continuation_present",
             "duplicate_head": "duplicate_keys",
             "head_rejected": "head_unavailable",
         }[case]
     )
+
+
+@pytest.mark.usefixtures("offline_explicit_probe")
+def test_recognized_terminal_category_is_written_without_a_raw_header(tmp_path: Path) -> None:
+    client = _MinuteClient(
+        [replace(_full_head(), continuation_signal="recognized_terminal"), _full_head()]
+    )
+    outcome = _explicit_probe(client)
+    assert outcome.accepted_page_count == outcome.minute_page_request_count == 1
+    assert len(client._responses) == 1
+    assert outcome.continuation_signal_categories == ("recognized_terminal",)
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    path = write_kis_paper_minute_capability_probe_evidence(
+        outcome, artifact_root=tmp_path / "artifacts", repository_root=repository
+    )
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert payload == outcome.safe_payload()
+    assert payload["continuation_signal_categories"] == ["recognized_terminal"]
+    assert "tr_cont" not in payload and payload["raw_market_data_retained"] is False
 
 
 @pytest.mark.usefixtures("offline_explicit_probe")

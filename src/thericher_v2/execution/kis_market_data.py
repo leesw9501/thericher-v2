@@ -51,6 +51,7 @@ KIS_PAPER_MINUTE_SYMBOL_EXCHANGES = {
 KIS_PAPER_MINUTE_CURRENT_HEAD_ONLY_TARGETS = frozenset({("IWM", "AMS")})
 KisPaperMinuteContinuationSignal = Literal[
     "recognized_continuation",
+    "recognized_terminal",
     "blank_or_absent",
     "unrecognized_nonblank",
 ]
@@ -632,11 +633,14 @@ class KisPaperMinutePage:
             )
         if not isinstance(signal, str) or signal not in {
             "recognized_continuation",
+            "recognized_terminal",
             "blank_or_absent",
             "unrecognized_nonblank",
         }:
             raise KisPaperMarketDataError("minute_response_invalid")
-        if (self.next_cursor == "1") != (signal == "recognized_continuation"):
+        if (self.next_cursor == "1") != (signal == "recognized_continuation") or (
+            signal == "recognized_terminal" and self.next_cursor is not None
+        ):
             raise KisPaperMarketDataError("minute_response_invalid")
         object.__setattr__(self, "continuation_signal", signal)
 
@@ -754,6 +758,8 @@ class KisPaperMarketDataClient:
         continuation_signal: KisPaperMinuteContinuationSignal
         if next_cursor is not None:
             continuation_signal = "recognized_continuation"
+        elif continuation in {"D", "E"}:
+            continuation_signal = "recognized_terminal"
         elif continuation_header is None or not continuation_header.strip():
             continuation_signal = "blank_or_absent"
         else:

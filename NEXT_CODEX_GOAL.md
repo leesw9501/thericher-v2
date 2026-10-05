@@ -2,180 +2,78 @@
 
 ## Objective
 
-Complete `qqq-restart-safe-unit-paper-v1`: obtain a bounded, restart-safe
-QQQ/NASD unit Paper execution result through the existing shared initial
-10-percent budget, with exact intent -> submission -> fill/rejection -> owned
-position reconciliation. This is execution readiness, not a profitable-model
-or live claim.
+Complete `qqq-restart-safe-unit-paper-v1` (OPEN): obtain one bounded,
+restart-safe QQQ/NASD unit Paper BUY -> SELL cycle using the existing shared
+initial10-percent budget, with exact intents, submissions, fills and owned-flat
+position reconciliation. This is execution readiness, not profitability or live.
 
-## Reassignment (2026-10-03 KST)
+## Owned Runtime Opportunity
 
-`kis-paper-spy-restart-safe-lifecycle-v1` is superseded while INCOMPLETE, not
-completed. Its unknown SPY successor, original private bytes, entry cost,
-reservations and evidence remain under Execution custody. Absent original-date
-history does not identify its outcome. Do not repost, replace, reset or adopt
-that leg. A distinct correctly scoped QQQ job must not wait on that identity.
-This reversible prioritization uses standing private Paper authority; it does
-not expand live authority or reset capital.
+- `thericher-kis-paper-qqq-unit-20261006`: October6 00:20 KST, fixed cycle
+  `qqq-unit-20261003-v1`, tag `opportunity-20261006T0020KST-v1`.
+  At most24 visits/1,200 worker seconds,25-minute task limit, IgnoreNew,
+  no restart/missed replay, trigger expiry00:21. Inspect its exact retained
+  outcome after the owned run; do not manually duplicate/reset/substitute it.
+- Existing strategy remains October5 23:50 KST; paired-head collection remains
+  October6 00:29. One same-chat `qqq-paper` follow-up is00:45, not recurring.
+- October2 QQQ BUY was positively rejected without a broker reference.
+  No QQQ fill/round trip or new tagged result is observed. Same-tag recovery
+  retains original price/TTL/identity; an unknown outcome reconciles only.
+- SPY's superseded lifecycle remains INCOMPLETE. Preserve unknown successor,
+  original private bytes/cost/reservations; absent history is not an outcome.
+  Never repost/reset/adopt it. Distinct correctly scoped QQQ work continues.
+- Paper image remains
+  `sha256:ceac0e3c0d11723d6b3c46a59a8c917b6dca4291128915227e9cce1778289d63`.
+  October5 Data publication does not update Paper consumers or tonight's task.
 
-## Current Evidence
+## Ready Parallel Packages
 
-- Shared-budget QQQ dispatcher is integrated. One actual QQQ BUY attempt at
-  2026-10-02 18:47:59 UTC was positively rejected without a broker reference.
-  No QQQ fill or round trip has been observed. Exact receipt belongs to
-  C:\Users\Public\Documents\thericher-v2\agents\execution.md.
-- Integrated changes add exact QQQ-at-limit orderable funds, categorical
-  numeric errors, and explicit distinct request tags only after positive
-  rejection. Same-tag restart preserves the original intent/price/TTL. Unknown
-  outcomes remain reconciliation-only.535 changed-path serial tests and full
-  authority7,548 passes/22 skips/317.29s/eight workers/clean helper exit pass.
-  Ruff/default and research Compose pass. Eight rebuilt Paper consumers match
-  40 source hashes. One next-session opportunity is installed for October6
-  00:20 KST with one00:45 chat follow-up; the actual tagged visit is unobserved.
-- Frozen linear/LSTM policies were evaluated without fitting on six later
-  ETF/month windows: 126 cells, 36 matched identities, zero fits. Both beat cash
-  in five windows but their own TRAIN-risk control in one; no selected model.
-  TimesFM and Chronos CUDA studies also completed without a robust winner.
-- Independent equal-minute M1/M5 study now completed4linear/4TCN fits/120 cells
-  in10.753s CUDA after frozen metadata/CPU smoke.99 focused tests/readback pass.
-  Primary TCN stress-net kill applies; no selected model/Paper input or tuning.
-- Data repair `e2c1c84` is verified/deployed:290 serial/full7,660 passes/22 skips.
-  Actual21:25:20Z direct capture retains QQQ480/SPY120 rows; QQQ390 regular
-  minutes and all five input timeframes verify. This is not Scheduler-origin,
-  finality/PIT, a complete SPY pair or Paper evidence. Separate historical21
-  shared sessions remain unchanged; current-head shortcomings do not block them.
+1. Execution owns the exact runtime result and reconciliation. Record rejection,
+   no-intent, unknown outcome and fees/settled-cash/PnL limitations narrowly.
+   Do not infer a fill from task exit, registration, cancellation or zero replay
+   quantity. If rejected, diagnose its concrete retained category rather than
+   blindly retry. No foreground wait for tonight's owner.
+2. Data keeps useful current-data owners running. October5 normalized D/E
+   terminal repair is verified/deployed to ten Data aliases/602 unique hashes;
+   old defaults/scopes/pace/schedules are unchanged. Actual new head/header yield
+   is unobserved. Recent KIS coverage is25 shared complete days/9,750 M1 per ETF;
+   older21 shared June/July sessions retain their separate identities. A bounded
+   broader FirstRate chronological-readiness inventory is assigned using existing
+   canonical sources, not a new collection or a model/Paper qualification.
+3. Engine Research's paired-lag family is closed: four actual fits/48 cells,
+   Attention stress mean net-1.605736673358 unit bps loses own Ridge; net/increment/
+   ETF/day kills apply. No threshold/cost rescue, weights, winner or Paper input.
+   Existing foundation-model, net-utility, band and pooled studies stay closed.
+   Use Data's broader-input facts for the next distinct finite contract; prefer
+   causal chronological coverage and existing compatible utility helpers over
+   another same-panel architecture sweep or duplicated research infrastructure.
+   Public papers are mechanism references, not our market-profit evidence.
 
-## Owned Work Packages
+## Completion And Verification
 
-1. Execution: exact-orderability/rejected-entry/restart changes are reviewed,
-   verified and deployed. Inspect only the installed opportunity's exact result
-   after its owned run; missing/task exit/rejection is not a successful fill.
-   Use fixed cycle `qqq-unit-20261003-v1`; one new explicit request tag is a
-   distinct request, never an automatic retry of the rejected or unknown one.
-   One client/token, at most 24 visits and 1,200 worker seconds; same shared
-   budget/locks. Keep SPY protected bytes unchanged.
-2. If the regular session has closed, assign one bounded next-session
-   opportunity to the existing runner. Do not foreground-wait, repeatedly
-   launch outside-session visits, invent a recurring worker or replace the
-   existing strategy owner. Retain the exact tag for recovery.
-3. Engine Research independently completed the equal-minute M1/M5 eight-fit/
-   120-cell contrast and fixed-band144-cell study; both retain their primary
-   kills. The new causal four-expert campaign completed two CUDA TRAIN fits/
-   144 cells after metadata freeze/CPU smoke, with strictly prior completed
-   continuous-ledger feedback and its own mixed-cost ledger. Mean stress NAV
-   gain+0.000390539797 is fragile/QQQ-dependent and loses the TRAIN-risk control;
-   no winner or Paper input. Two strict numeric NPZs remain externally on D:.
-   Independent math readback and final full authority8,014 passes/22 skips/
-   326.01s/eight workers/clean helper, Ruff/both Compose pass. Do not retune
-   seen outcomes or create a new stateboard/runtime. Prepare a distinct finite
-   research contract only when an additional usable dated panel is verified.
-   That panel is now verified. The distinct CPU downside-hurdle package uses
-   ten TRAIN sessions/one embargo/nine comparison blocks, fixed M5/120-minute
-   context, two fits/18 cells, and is complete after geometry/cursor/creation
-   repairs,66 focused tests/final review and exact RO readback. The quantile
-   tree makes zero trades/stress net0 unit bps; its predeclared kill applies.
-   Preserve source pins/costs/kills; no tuning rescue or Paper/holdout claim.
-   The separate completed-patch/channel-independent Torch preparation now
-   passes59 pinned CPU tests/final review with old IDs/defaults unchanged.
-   The distinct pooled-return campaign now completed metadata freeze, six
-   synthetic CPU smoke fits and three actual fits (ridge CPU, LSTM/patch CUDA)
-   on40 dated sources:960 overlapping TRAIN windows/ten shared days, embargo
-   September17,72 decisions/nine seen comparison days,42 cells. All three
-   learned policies remain flat; every frozen kill applies.153 pinned-runtime
-   tests/zero skips, independent source review and exact RO42-cell readback
-   pass. No threshold rescue, selected ensemble, weights, holdout or Paper
-   input. Exact pins belong to Research boards. Prefer a distinct mechanism
-   and useful broader temporal coverage over another seen-data architecture
-   sweep. The company Paper objective remains OPEN.
-   The distinct14-prior-session time-of-day feature/60-case input preparation
-   and original FirstRate long-only mechanism are now closed. Twelve cost
-   cells/zero fits: later-fold losses trigger the predeclared kill despite
-   positive matched-control increments. Same-family scratch-control readback
-   repair preserves original artifacts and identical normalized actions/cells;
-   exact ALL-RO replay/final review pass. Parent113 mechanism tests plus prior
-   100 helper tests pass. No cost/threshold rescue, NAV/winner/Paper claim.
-   Exact contracts/results belong to Research, not another goal or gate.
-4. Data keeps existing useful current-data owners running. Preserve immutable
-   conflicting captures; distinguish session completeness, source finality and
-   decision-time availability. No blind historical cursor reset or new download
-   is needed for the ready research adapter.
-   Same-candidate replacement/maturity repairs completed. Enable proved explicit
-   QQQ continuation in the existing4/8-page owner; preserve strict older-key,
-   same-date, serial pacing and finite scope. Actual8-page-ceiling capture retains
-   six QQQ pages/720 rows, then invalid seventh page; QQQ390 regular minutes
-   remain. Exact subtype unknown; do not relabel partial as success/exhaustion.
-   No new task/schedule or cursor reset.
-   The isolated probe established a useful September1 interval, not a history
-   floor. Its subsequent independent retention now verifies480 native/390
-   regular QQQ minutes and390/78/39/6/2 input timeframes, four GETs/one token.
-   Final Data publication matches591 baked source files across ten aliases;
-   no task/service invocation or schedule/default-scope/Paper-alias change.
-   The finite September2-30 QQQ panel now adds20 complete regular sessions/
-   7,800 M1 bars and1,560 M5/780 M10/120 H1/40 H3 bars. First limit preserved
-   accepted prefixes; recovery skipped complete dates,59 GETs/one token/64.956s.
-   All original indexes stayed unchanged. Canonical readback and exact source
-   metadata are in Data's stateboard. Data integration authority8,092 passes/
-   22 skips/321.26s/clean helper; no task/schedule or permanent throttle change.
-   Limitations do not create a general research/Paper approval hold.
-   Matched SPY/AMS September retention is also complete:20 sessions/7,800
-   regular minutes/same five-timeframe totals,80 GETs/one token/88.676s with
-   zero failures. Canonical readback passes, QQQ/legacy indexes unchanged.
-   The pair is20 common session blocks, not40 independent samples. No new
-   task/schedule, default QQQ change, finality/PIT or Paper-input claim.
-   October1/2 and August31 paired sessions also verify390/78/39/6/2 per symbol;
-   eight earlier monthly and four August10/17 queries are scoped-empty, not a
-   provider-wide history floor. All protected index hashes stay unchanged.
-   Data now owns an explicit paired QQQ/SPY head-continuation repair because
-   the previous option applies only to QQQ and leaves current SPY120. Keep
-   the old QQQ-only flag/defaults, strict exact target/date/cursor/no-overlap
-   checks and existing task times/budgets. This shared-runtime package now
-   passes parent460 serial/full8,570/22/325.47s/eight workers/clean helper,
-   Ruff/both Compose. Ten Data aliases match600 baked hashes; old defaults/
-   task times/Paper aliases unchanged. Actual SPY paired-head yield unobserved;
-   no new task/rate layer or manually invoked Scheduler job. The distinct11-scope
-   acquisition is now closed: August28 pair/September1SPY complete, eight
-   August24-27 queries empty,20 GETs/one token/22.919s with69 old indexes/13
-   receipts unchanged. Recent coverage spans25 shared complete regular dates,
-   not50 independent blocks or a newly frozen combined research input.
-   Final SPY/patch shared-source authority8,186 passes/22 skips/317.40s/eight
-   workers/clean helper, Ruff/both Compose pass. Ten Data aliases match591
-   baked sources; no task/service invocation or Paper/schedule change.
+Success requires exact full BUY and SELL fills plus current owned-flat QQQ
+reconciliation. Rejection/no-intent/task exit/absent history is not completion.
+Keep fees, settled cash and net broker PnL unobserved unless independently seen.
+Do not replace this company objective merely because an independent package
+finishes. A genuine reassignment must say INCOMPLETE and preserve prior custody.
 
-The independent QQQ synthetic-price orderability diagnostic received a typed
-accepted response at23:04:20Z, one auth/one GET/zero orders. This does not prove
-funds at the actual order limit, explain the old rejection or complete this
-objective. Exact receipt and limitations belong to Execution.
+October5 shared-runtime integration passed391 serial/one skip plus90 pinned
+Torch CPU tests, full8,736 passes/22 skips/329.15s/eight workers/clean helper,
+matching8,758 collected; Ruff/default+research sample Compose pass. Exact source/
+cohort/action/cost readback verifies48 cells without refitting. Follow the
+changed-path/parallel verification policy in AGENTS.md for further code changes;
+documentation-only refresh does not repeat the full suite.
 
-## Completion Evidence And Failure Conditions
+Current evidence and recovery paths live in
+`C:\Users\Public\Documents\thericher-v2\HANDOFF.md` and its active role boards,
+not this file's historical diary. Policy:
+`C:\Users\Public\Documents\thericher-v2\AGENTS.md`.
+Never read/route KIS_LIVE_*, spend money, accept unclear rights or expose a public
+service. Named Paper paths/sizing/schedules are already authorized. Never print
+secrets, private broker values or raw market rows. Data stays D:\market_data;
+generated artifacts stay D:\thericher-v2\model-artifacts. Claude failure is
+review_unavailable, not agreement or a global hold.
 
-An actual successful unit cycle requires exact full BUY and SELL fills linked
-to their persisted requests and broker identity, plus current owned-flat QQQ
-account reconciliation. Rejection, no-intent, cancellation, task exit, zero
-replay quantity or absent history is NOT success. Retain fees, settled cash and
-net PnL as unobserved unless independently observed.
-
-A positive provider rejection closes only that tagged attempt. Diagnose its
-retained categorical reason and fix its concrete cause; do not retry blindly.
-Unknown submission, altered identity/basis, foreign inventory adoption,
-call-time funding mismatch or stale intent fails only that exact package.
-Every independent ready lane continues. Reassign an unresolvable company goal
-explicitly while incomplete rather than fabricate successful completion.
-
-## Verification And Authority
-
-Follow C:\Users\Public\Documents\thericher-v2\AGENTS.md: changed-path serial
-tests, scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff, default and
-research-profile Compose configs using .env.example; verify baked source
-hashes before runtime reliance. Focused isolated research packages need their
-own tests, not a repeated full suite for documentation-only changes.
-
-Never read/route KIS_LIVE_*, spend money or expose a public service. Named
-Paper credential/account/data/order paths and goal-owned schedules are already
-authorized. Never print/persist secrets or raw private broker values. Market
-data stays under D:\market_data; generated artifacts under
-D:\thericher-v2\model-artifacts. Claude weekly-limit failure is
-review_unavailable, not agreement; do not turn it into a global hold.
-
-At the next material boundary, verify/commit/push owned changes, refresh the
-current stateboards, replace this file with exactly one next company objective
-and continue. Do not create per-agent next-goal files.
+Commit/push verified owned packages while this objective remains active. At its
+material completion boundary refresh stateboards, replace this file with exactly
+one next company objective, and continue; no per-agent next-goal files.

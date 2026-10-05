@@ -5,6 +5,24 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October5 paired-lag appointment closed/non_promoting_completed, four actual fits
+and48 development cells, zero sealed spend. Fifty dated source pins/25 shared
+days;12 TRAIN/one embargo/12 seen comparison blocks, one500-second family budget.
+Two Ridge CPU fits and LSTM/compact-attention CUDA fits followed eight synthetic
+CPU smoke fits; no retained weights. Worker12.249452s, Torch peak121,579,520 bytes.
+Pinned existing2.7.0+cu128 image/2CPU/6GiB/swap0/network none; canonical lock held
+through child reaping, container/lock absent afterward. No active appointment.
+Root `D:\thericher-v2\model-artifacts\research\kis-paired-lag-development-20261005-v1`;
+contract `sha256:540f72fa1cfb7c23637352cfefa654c78978647654a0a84bcf6db0444474bce8`;
+CUDA `sha256:68e4fce0d5f1bbbf8cdd53d101e2fde96baf82a8d8e937401caeeda745453a7d`.
+90 pinned CPU tests/exact ALL-RO48-cell readback pass; Research owns negative
+stress-net/increment/ETF/day kills. This grants no depth, ensemble or Paper use.
+Initial metadata registration was recovered idempotently with its exact existing
+contract before targets/fits by correcting only the parent ledger mount.
+Registry record hash`86c1be62981ac1337f72646c15402c2549be84b52e6db729045d9609c9abb544`
+belongs to the append-only October ledger, not a hash of its mutable whole file.
+Broader FirstRate Data readiness is assigned, not another GPU appointment.
+
 FirstRate time-of-day band family closed/non_promoting_completed after12 cells,
 zero fits/GPU/weights/sealed spend. Root
 `D:\thericher-v2\model-artifacts\research\firstrate-time-of-day-band-development-20261003-v2`;

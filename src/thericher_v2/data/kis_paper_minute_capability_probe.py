@@ -225,7 +225,12 @@ class KisPaperMinuteCapabilityProbeOutcome:
                 or len(self.body_more_categories) != self.accepted_page_count
                 or any(
                     signal
-                    not in {"recognized_continuation", "blank_or_absent", "unrecognized_nonblank"}
+                    not in {
+                        "recognized_continuation",
+                        "recognized_terminal",
+                        "blank_or_absent",
+                        "unrecognized_nonblank",
+                    }
                     for signal in self.continuation_signal_categories
                 )
                 or any(

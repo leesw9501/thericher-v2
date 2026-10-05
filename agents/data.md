@@ -11,7 +11,26 @@ resampling, manifests, temporal splits, and quality facts. It does not select
 strategies, fit models, or make execution decisions. KIS Paper market-data
 collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
-## Current Coverage (2026-10-03 KST)
+## Current Coverage (2026-10-05 KST)
+
+The bounded terminal-header repair is integrated/deployed. Official KIS minute
+example continues M/F; the legacy example explicitly identifies D/E as terminal.
+Normalized D/E now produce `recognized_terminal`, not the unknown-header class
+that could enter a full-page older-key fallback. Collector implementation,
+blank/unknown fallback, M/F, old receipts, scopes, schedules and pace stay intact.
+Parent391 serial passes/one skip8.88s, agent442/9.09s, independent review and
+full8,736 passes/22 skips/35 warnings/329.15s/eight workers/clean exit pass,
+matching8,758 collected; Ruff/default+research sample Compose pass.
+Ten existing Data aliases share image
+`sha256:846a900b8e1488f5018fecee2024276fe8fd33a3235c0fef4232298b96b4616f`;
+all602 unique baked source/configuration hashes match. No task/service invocation,
+Paper-alias change, credential/provider call or scope/rate/schedule change.
+Actual provider D/E yield remains unobserved, not a complete-capture claim.
+Exact publication: `D:\thericher-v2\model-artifacts\data\kis-terminal-header-publication-20261005.json`,
+SHA256 `8faa10fe7a92e1b1b6b0a9ba8b2f935cde0a06648555ad8ea73d1977dfb1852e`.
+Its bound official-source receipt explains the recalibration fact. The next
+existing paired-head opportunity remains October6 00:29 KST. A separate bounded
+FirstRate readiness inventory is assigned; it does not collect, train or promote.
 
 One bounded older close-key package is closed:QQQ/NAS and SPY/AMS May1,
 June1,July1,August3 all return `minute_response_empty` for their exact queries,
@@ -41,7 +60,7 @@ SHA256 `09dd6c442cdff4eb5df50524b5f476004a689b8ff0b163d437bb51e33e3bf51d`.
 No PIT/finality/fresh-holdout/Paper qualification follows. Do not repeat answered
 queries. Existing FirstRate research and the separate Paper opportunity continue.
 
-Current integration ownership: explicit paired QQQ/SPY head option implemented
+Prior paired-head integration: explicit paired QQQ/SPY head option implemented
 with the same strict per-target/session/cursor/prefix checks. The old QQQ-only
 option/defaults stay unchanged; the existing head owner may use the new option
 without a new task, rate layer or schedule. Current SPY head120 versus dated
@@ -49,8 +68,9 @@ SPY390 motivates this repair. Agent341 focused tests pass; parent460 changed-pat
 serial tests25.61s and independent diff review support scope/no P1/P2.
 Shared authority is complete:8,570 passes/22 skips/35 warnings/325.47s/eight
 workers/clean helper exit0, matching8,592 collected; Ruff/both sample-env Compose
-pass. Ten existing Data aliases match600 source/configuration hashes, image
+pass. At that publication ten Data aliases matched600 source/configuration hashes, image
 `sha256:289b72095047fa59fb7eb54ab318caed59cce375eae7175eb1b4742bb7c40ce9`.
+That image is superseded by the October5 terminal-header publication above.
 No task/service invocation, scheduler/timing/budget/pace or Paper-alias change.
 Actual paired-head SPY provider yield remains unobserved; do not call this a
 complete real capture or substitute dated-scope evidence for head evidence.

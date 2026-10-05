@@ -125,6 +125,26 @@ Preserve15-percent D: floor. Test scratch prefers measured-fast local C:\trpy.
 
 ## Research And Resources
 
+October5 own-versus-peer information campaign completed four actual fits:
+own/paired Ridge CPU and LSTM/compact-attention CUDA on50 dated sources/25 shared
+sessions.12 TRAIN/one embargo/12 seen comparison days,96 decisions/48 cost cells.
+Attention stress net mean-1.605736673358 unit bps loses own Ridge; net/increment/
+ETF/day kills apply. Worker12.249452s/Torch peak121,579,520 bytes,90 pinned CPU
+tests and exact ALL-RO readback pass. No winner/Paper input/retained weights.
+Exact pins,38-file frozen-source snapshot and metadata-only registration recovery
+belong to Research boards. Source-only papers were independently re-retrieved;
+new Claude exit1 is review_unavailable, not agreement or a quota inference.
+Broader existing FirstRate chronological readiness is now assigned in parallel;
+do not rescue this closed recipe by changing its threshold/cost or an ETF.
+
+October5 terminal-header repair is also verified/deployed to ten Data aliases:
+official D/E terminal categories now avoid the unknown-header older-key fallback.
+Scope/rate/scheduler/Paper image unchanged; no provider/task/service invocation.
+Parent391 serial/one skip and full8,736/22/329.15s/eight workers/clean exit match
+8,758 collected; Ruff/both sample Compose pass.602 unique baked hashes match
+image `sha256:846a900b8e1488f5018fecee2024276fe8fd33a3235c0fef4232298b96b4616f`.
+Actual provider/header/head yield remains unobserved. Data owns exact receipt.
+
 Actual CUDA work has run on RTX4090/Torch2.7.0+cu128, including linear/LSTM,
 TimesFM2.5, Chronos-2 and TCN studies. No GPU permission/runtime block exists.
 Canonical GPU lock owns an appointment through child reaping; no active

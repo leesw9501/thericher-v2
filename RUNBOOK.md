@@ -65,8 +65,36 @@ head/session-capture/1..8 guards apply before credentials. Agent341/parent460
 serial tests and full8,570/22/325.47s/clean eight-worker authority pass, with
 Ruff/both Compose. Ten existing Data aliases match600 source/config hashes,
 image `sha256:289b72095047fa59fb7eb54ab318caed59cce375eae7175eb1b4742bb7c40ce9`.
+That previous image is superseded by the October5 terminal-header image
+`sha256:846a900b8e1488f5018fecee2024276fe8fd33a3235c0fef4232298b96b4616f`.
+Official normalized D/E now classify as recognized_terminal and stop even a
+full120-row page; M/F and blank/unknown fallback/defaults remain unchanged.
+Parent391 serial/one skip/full8,736 passes/22 skips/329.15s/eight workers/clean
+helper, Ruff/both sample Compose pass.602 unique baked hashes/ten Data aliases
+match; exact publication evidence is in agents/data.md.
 No task/service invocation or schedule/pace/Paper-alias change. Actual SPY head
 yield remains unobserved; dated SPY390 is not proof of that head result.
+
+## Paired-Lag Development Readback
+
+`scripts/run_kis_paired_lag_development.py` defaults to metadata-only preview.
+The October5 four-fit/48-cell family is closed; do not refit or change its kill
+recipe. Exact contract/CPU/CUDA pins and outside-Git artifacts belong to
+agents/engine-research.md. `--verify --contract-sha256 <exact-pin>
+--summary-sha256 <exact-pin>` uses the existing pinned Torch image,2CPU/6GiB/
+swap0/network none, read-only src/scripts, dated input at /input and artifacts
+at /artifacts. Verification needs no GPU, ledger write or broker access and
+does not reconstruct unretained learned inference.38 frozen source files are
+externally archived; after a source change overlay the exact contract-pinned
+files at their original /app paths rather than rewrite the contract.
+For a future metadata freeze the existing registry needs only its exact
+/artifacts/_control/ledger writer mount; do not mistake a read-only mount fault
+for unavailable data or a model failure. For actual CUDA only, set
+CUBLAS_WORKSPACE_CONFIG=:4096:8 before Python starts and keep canonical GPU
+locks writable through child reaping. Root /artifacts can stay read-only with
+only the new campaign/ledger/lock subpaths writable. No .env mount is required.
+
+## Dated Minute Collection
 
 The separate `--fixed-historical-key-pair --max-pages 2` minute probe completed
 one fixed September1/August3 midday pair. It returned120 September1 minutes and

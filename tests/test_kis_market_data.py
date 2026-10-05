@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import urllib.request
-from datetime import UTC, datetime
+from dataclasses import replace
+from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
@@ -157,28 +158,68 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
     [
         (None, "blank_or_absent"),
         ("", "blank_or_absent"),
+        (" \t", "blank_or_absent"),
         ("unexpected", "unrecognized_nonblank"),
+        ("D", "recognized_terminal"),
+        ("E", "recognized_terminal"),
+        (" d ", "recognized_terminal"),
+        (" e ", "recognized_terminal"),
     ],
 )
+@pytest.mark.parametrize("count", [119, 120])
+@pytest.mark.parametrize("target", [("QQQ", "NAS"), ("SPY", "AMS")])
 def test_minute_client_keeps_only_a_safe_terminal_continuation_category(
-    continuation: str | None, expected_signal: str
+    continuation: str | None, expected_signal: str, count: int, target: tuple[str, str]
 ) -> None:
+    start = datetime(2026, 7, 17, 9, 30)
     client = KisPaperMarketDataClient(
         config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
         transport=_RecordingTransport(
-            [_token(), _page("155900", "154000", next_value="0", continuation=continuation)]
+            [
+                _token(),
+                KisMarketDataResponse.from_payload(
+                    {
+                        "rt_cd": "0",
+                        "output1": {"next": "1", "more": "1"},
+                        "output2": [
+                            _row((start + timedelta(minutes=index)).strftime("%H%M%S"))
+                            for index in range(count)
+                        ],
+                    },
+                    headers={} if continuation is None else {"TR_CONT": continuation},
+                ),
+            ]
         ),
     )
 
-    page = client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="SPY"))
+    page = client.fetch_minute_page(KisPaperMinuteQuery(symbol=target[0], exchange=target[1]))
 
     assert page.next_cursor is None
     assert page.continuation_signal == expected_signal
+    assert len(page.bars) == count
+    assert page.more == "1"
 
 
-def test_minute_client_accepts_f_continuation_header() -> None:
+@pytest.mark.parametrize("continuation", ["M", "F", " m ", " f "])
+def test_minute_client_accepts_full_continuation_page_despite_body_more_zero(
+    continuation: str,
+) -> None:
+    start = datetime(2026, 7, 17, 9, 30)
     transport = _RecordingTransport(
-        [_token(), _page("195900", "180000", next_value="", continuation="F")]
+        [
+            _token(),
+            KisMarketDataResponse.from_payload(
+                {
+                    "rt_cd": "0",
+                    "output1": {"next": "0", "more": "0"},
+                    "output2": [
+                        _row((start + timedelta(minutes=index)).strftime("%H%M%S"))
+                        for index in range(120)
+                    ],
+                },
+                headers={"tr_cont": continuation},
+            ),
+        ]
     )
     client = KisPaperMinuteClient(
         config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
@@ -188,6 +229,24 @@ def test_minute_client_accepts_f_continuation_header() -> None:
     page = client.fetch_page(KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"))
 
     assert page.next_cursor == "1"
+    assert page.continuation_signal == "recognized_continuation"
+    assert len(page.bars) == 120 and page.more == "0"
+
+
+@pytest.mark.parametrize("next_cursor", [None, "1", "0", "invalid", ""])
+def test_recognized_terminal_page_requires_no_cursor(next_cursor: str | None) -> None:
+    page = KisPaperMinutePage(
+        query=KisPaperMinuteQuery(symbol="QQQ", exchange="NAS"),
+        bars=(kis_market_data._parse_minute_bar(_row("155900")),),
+        next_cursor=None,
+        more="0",
+        continuation_signal="recognized_terminal",
+    )
+    if next_cursor is None:
+        assert replace(page, next_cursor=next_cursor).continuation_signal == "recognized_terminal"
+    else:
+        with pytest.raises(KisPaperMarketDataError, match="^minute_response_invalid$"):
+            replace(page, next_cursor=next_cursor)
 
 
 def test_historical_session_reuses_one_token_for_daily_and_minute_metadata_reads() -> None:

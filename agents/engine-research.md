@@ -15,7 +15,50 @@ Before a predictive campaign or GPU appointment, freeze its dataset, target,
 temporal split, feature availability, timeframe/window matrix, cost model,
 naive baseline, compute stop rule, artifact root, and strongest kill test.
 
-## Current Research State (2026-10-03 KST)
+## Current Research State (2026-10-05 KST)
+
+`kis-paired-lag-development-20261005-v1` is closed/non_promoting_completed.
+Fifty separate dated source pins/25 shared sessions froze before targets:
+12 TRAIN blocks through September15, September16 embargo,12 seen comparison
+blocks September17-October2. M5/60-minute context uses own4+peer4 channels;
+next-M1-OPEN to OPEN60 minutes later payoff.1,296 overlapping TRAIN windows are
+12 shared blocks, not IID examples;96 decisions are12 blocks, not24 ETF days.
+Eight synthetic CPU smoke fits preceded four actual fits: own/paired Ridge CPU,
+paired LSTM/compact-attention CUDA,128 epochs/final epoch only.48 cost cells;
+no threshold, cost, architecture or ETF rescue. Attention stress mean net
+`-1.605736673358` unit bps/decision loses own Ridge by`-0.457462665101`;
+own/paired Ridge, LSTM and Attention all have negative stress means per ETF.
+Nonpositive net/increment, ETF dependence and shared-day dependence kills apply.
+Primary Attention trade counts QQQ7/SPY4; this is not NAV or settled broker PnL.
+Worker12.249452s/Torch peak121,579,520 bytes; canonical GPU lock/container reaped.
+90 pinned Torch2.7+cu128 CPU tests/no skips22.08s and exact ALL-RO48-cell
+source/cohort/actions/cost/kills readback pass. Learned inference is unretained
+and not independently reconstructed. No weights, winner, ensemble, holdout,
+Paper input or runtime change. Verified-loader reconstruction fixes the sealed
+catalog audit fault; importing the runner no longer mutates CUBLAS environment.
+Root `D:\thericher-v2\model-artifacts\research\kis-paired-lag-development-20261005-v1`;
+contract `sha256:540f72fa1cfb7c23637352cfefa654c78978647654a0a84bcf6db0444474bce8`;
+CPU `sha256:da74ba32c7864deb00a0faf18a6a0b75c7028f8c385a667e287c03b1e8b1f333`;
+CUDA `sha256:68e4fce0d5f1bbbf8cdd53d101e2fde96baf82a8d8e937401caeeda745453a7d`.
+All38 frozen code pins also match the external
+`D:\thericher-v2\model-artifacts\research\kis-paired-lag-frozen-source-20261005` snapshot.
+Initial metadata registration lacked the ledger writer mount; exact contract
+verification/idempotent registration recovered before targets/fits, with no
+rewritten precommit. Recovery evidence is
+`D:\thericher-v2\model-artifacts\research\kis-paired-lag-freeze-recovery-20261005.json`.
+
+DeltaLag, Deep Momentum Networks and dynamic-cost trading were independently
+re-retrieved as mechanism references, not financial benchmarks or code adoption.
+DeltaLag is daily broad equities, the other two are futures/different costs;
+ordinary temporal attention here is not their reproduction. Source-only receipt:
+`D:\thericher-v2\model-artifacts\research\source-discovery\cross-asset-cost-20261005-engine-retrieval.json`,
+SHA256 `28bfa6bffe3b0caaa6c3ce72b4a0342b617d59573023f95a6600f51d3db81934`.
+The actual new Claude invocation failed exit1/cause uncategorized; this is
+review_unavailable, not agreement or an inferred quota. Its exact source-safe
+receipt is `D:\thericher-v2\model-artifacts\research\source-discovery\claude-paired-lag-drift-20261005.json`.
+Next preparation checks broader existing FirstRate chronological coverage before
+another finite campaign. Reuse existing net-utility helpers where compatible;
+do not add a duplicate objective or retune this closed48-cell recipe.
 
 The original FirstRate time-of-day band development recipe is complete and
 `recipe_killed`: same fourteen SCHEDULED prior-session prefixes, first strict

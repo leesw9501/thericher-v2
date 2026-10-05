@@ -15,16 +15,16 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / FirstRate time-of-day mechanism closed | Twelve actual cost cells/zero fits; later-fold losses trigger primary kill despite positive matched-control increments. Original41.238s/corrected39.363s workers have identical normalized actions/cells; scratch-control repair preserves archive bytes/real fail-closed semantics, ALL-RO replay passes. No active campaign/GPU/Paper input. |
+| Research | Engine Research / paired-lag closed, broader input preparation | October5 four actual fits/48 cells complete on25 paired dates/50 pins, M5/60-minute context/60-minute payoff,12 TRAIN/one embargo/12 seen comparison days. Attention stress net-1.605736673358 unit bps loses own Ridge; frozen net/increment/ETF/day kills apply.90 pinned CPU tests/exact ALL-RO replay pass, no winner/Paper input. Data now inventories broader existing FirstRate coverage; no duplicate utility helper or rescue sweep. |
 | Independent Paper readiness | Execution / deployed exact-orderability and one owned opportunity | Independent review/535 serial/full authority pass;8 consumers/40 baked hashes match. New23:04:20Z one-auth/one-GET synthetic-price diagnostic accepted; not actual-limit funds/old rejection explanation. Next_due October6 00:20 KST fixed-tag unit cycle/00:45 chat follow-up, unchanged. No actual tagged submit/fill; SPY unknown protected. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
-| Data collection / finite D1 measurement | Data / paired-head deployed; dated acquisition closed | New pair opt-in verified/deployed with ten aliases/600 hashes; actual SPY-head yield unobserved. Eleven new dated queries close: August28 pair/Sep1SPY complete/eight empty,20 GETs/one token/22.919s;69 indexes/13 receipts unchanged/no collector due. Recent25 shared complete days; October6 00:29 owner/old defaults/tasks/pace unchanged. |
-| GPU | Research Steward / pooled-return appointment closed | LSTM/patch CUDA fits finished after ridge CPU; canonical lock absent/child reaped. Duration/peak not instrumented, no active worker or runtime/permission block. No robust winner/depth grant; broader-data preparation continues. |
-| Verification | Orchestrator / shared integration complete | Parent460 serial passes25.61s, full8,570/22/325.47s/eight workers/clean helper, matching8,592 collection; Ruff/default+research Compose pass. Includes later pooled/helper/band/pair changes. No active pytest owner; earlier scratch untouched. |
+| Data collection / finite D1 measurement | Data / terminal repair deployed; broader input inventory | Official D/E known-terminal repair prevents full-page unknown-header fallback. Ten Data aliases/602 unique baked files match new846a900b image; actual provider/head yield unobserved. Recent25 shared complete KIS days, no historical collector due. October6 00:29 owner/defaults/tasks/pace/Paper images unchanged; bounded FirstRate inventory owns no GPU or mutable cache. |
+| GPU | Research Steward / paired-lag appointment closed | Four actual fits complete including LSTM/attention CUDA, worker12.249452s/Torch peak121,579,520 bytes. Canonical lock/container reaped; no active appointment or environment/permission block. Broader-input preparation is not an appointment or a utilization target. |
+| Verification | Orchestrator / shared integration complete | Parent391 serial/one skip8.88s,90 pinned Torch CPU tests/no skips22.08s, full8,736/22/329.15s/eight workers/clean helper, matching8,758 collected; Ruff/default+research Compose pass. Isolated frozen study/readback and source-only publication also pass. No active pytest owner; retained older scratch untouched. |
 
 ## Bottleneck And Reversible Improvement
 
-Current October3 throughput review: old SPY's unavailable successor identity
+Current October5 throughput review: old SPY's unavailable successor identity
 blocks its exact superseded lifecycle only. Reassignment while incomplete
 removes that company-wide dependency without inventing terminal proof, changing
 private state or resetting the shared basis. QQQ runtime now belongs to the
@@ -45,7 +45,23 @@ retuned. Its online-mixture campaign now uses completed prior losses and a
 separate continuous mixed ledger. Small fragile seen-data gains do not become
 independent evaluation or Paper qualification.
 
-Current reversible improvement: apply proved same-date serial older-key head
+October5 ready-work dispatch kept the Paper opportunity owned rather than
+foreground-waiting: Engine Research completed one cross-asset-input comparison,
+Data's regression found a real terminal-classification fault and repaired it
+after official-source verification, while invoked Strategy Discovery delivered
+primary-source evidence. No role edits
+another lane or touches the installed Paper task, protected SPY identity or
+shared budget. Current source-only Claude invocation failed exit1 with no
+categorized cause; it is review_unavailable, not agreement or a quota inference.
+Evidence: D:\thericher-v2\model-artifacts\research\source-discovery\claude-paired-lag-drift-20261005.json.
+Current reversible improvement: with the short-panel paired model failing its
+frozen kills, dispatch one existing FirstRate chronological-input readiness
+package instead of retuning its hurdle or adding another same-panel model.
+This changes preparation direction only, not a selected strategy or Paper input.
+38 exact frozen code files are externally retained for reproducible old readback;
+the existing contract/ledger/lock path is reused, not another report platform.
+
+Previous reversible improvement: apply proved same-date serial older-key head
 continuation to SPY through a new explicit paired option, not silently widen the
 old QQQ-only contract. This repairs the concrete SPY120 current-data code path
 without a new task/pace/permission process; reviewed shared integration/image

@@ -73,6 +73,7 @@ FactResultClass = Literal[
 ]
 ContinuationSignal = Literal[
     "recognized_continuation",
+    "recognized_terminal",
     "blank_or_absent",
     "unrecognized_nonblank",
     "not_recorded_legacy",
@@ -107,6 +108,7 @@ class KisSpyPaginatedPrefixPage:
             )
         if not isinstance(signal, str) or signal not in {
             "recognized_continuation",
+            "recognized_terminal",
             "blank_or_absent",
             "unrecognized_nonblank",
             "not_recorded_legacy",
@@ -363,6 +365,7 @@ class KisSpyPaginatedPrefixObservation:
             or self.terminal_continuation_signal
             not in {
                 "recognized_continuation",
+                "recognized_terminal",
                 "blank_or_absent",
                 "unrecognized_nonblank",
                 "not_recorded_legacy",
@@ -491,6 +494,7 @@ class KisSpyPaginatedPrefixCapabilityFact:
             or self.terminal_continuation_signal
             not in {
                 "recognized_continuation",
+                "recognized_terminal",
                 "blank_or_absent",
                 "unrecognized_nonblank",
                 "not_recorded_legacy",
@@ -769,6 +773,7 @@ def read_spy_paginated_prefix_capability_fact_from_artifact_root(
                 or terminal_continuation_signal
                 not in {
                     "recognized_continuation",
+                    "recognized_terminal",
                     "blank_or_absent",
                     "unrecognized_nonblank",
                     "not_recorded_legacy",
@@ -1464,6 +1469,7 @@ def _load_collection_run(
             or terminal_continuation_signal
             not in {
                 "recognized_continuation",
+                "recognized_terminal",
                 "blank_or_absent",
                 "unrecognized_nonblank",
                 "not_recorded_legacy",
@@ -1623,6 +1629,7 @@ def _page_continuation_signal(page: object) -> ContinuationSignal:
         return "recognized_continuation" if advertised else "blank_or_absent"
     if not isinstance(signal, str) or signal not in {
         "recognized_continuation",
+        "recognized_terminal",
         "blank_or_absent",
         "unrecognized_nonblank",
     }:
@@ -1665,6 +1672,7 @@ def _page_from_document(value: object) -> KisSpyPaginatedPrefixPage:
         or signal
         not in {
             "recognized_continuation",
+            "recognized_terminal",
             "blank_or_absent",
             "unrecognized_nonblank",
             "not_recorded_legacy",

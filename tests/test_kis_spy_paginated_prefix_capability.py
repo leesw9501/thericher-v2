@@ -5,7 +5,7 @@ import importlib.util
 import json
 import subprocess
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -71,7 +71,10 @@ class _ResponseTransport:
         return self._responses.pop(0)
 
 
-def test_paginated_full_prefix_is_exactly_bound_to_one_clean_fresh_run(tmp_path: Path) -> None:
+@pytest.mark.parametrize("terminal_signal", ["blank_or_absent", "recognized_terminal"])
+def test_paginated_full_prefix_is_exactly_bound_to_one_clean_fresh_run(
+    tmp_path: Path, terminal_signal: str
+) -> None:
     repository, cache_root, artifact_root = _roots(tmp_path)
     run_id = capability.run_id_for_session(_SESSION_DATE)
     cutoff = _cutoff(_SESSION_DATE)
@@ -85,6 +88,7 @@ def test_paginated_full_prefix_is_exactly_bound_to_one_clean_fresh_run(tmp_path:
     )
     calls: list[tuple[str | None, str | None]] = []
     pages = _prefix_pages(_SESSION_DATE)
+    pages[-1] = replace(pages[-1], continuation_signal=terminal_signal)
 
     def fetch_page(next_value: str | None, keyb: str | None) -> _Page:
         calls.append((next_value, keyb))
@@ -134,11 +138,16 @@ def test_paginated_full_prefix_is_exactly_bound_to_one_clean_fresh_run(tmp_path:
     assert observation.complete_minute_count == 360
     assert observation.missing_minute_count == 0
     assert observation.page_seam_status == "continuous"
-    assert observation.terminal_continuation_signal == "blank_or_absent"
+    assert observation.terminal_continuation_signal == terminal_signal
     manifest = json.loads(run.manifest_path.read_text(encoding="ascii"))
-    assert manifest["collection"]["terminal_continuation_signal"] == "blank_or_absent"
+    assert manifest["collection"]["terminal_continuation_signal"] == terminal_signal
     payload = json.loads(observation.artifact_path.read_text(encoding="ascii"))
-    assert payload["collection"]["terminal_continuation_signal"] == "blank_or_absent"
+    assert payload["collection"]["terminal_continuation_signal"] == terminal_signal
+    fact = capability.read_spy_paginated_prefix_capability_fact_from_artifact_root(
+        artifact_root=artifact_root, repository_root=repository, session_date=_SESSION_DATE
+    )
+    assert fact.terminal_continuation_signal == terminal_signal
+    assert fact.result_class == "post_collection_completed_prefix"
     assert payload["timing"]["collection_started_at"] == {
         "eastern": "2026-08-03T15:30:01-04:00",
         "eastern_dst": True,
@@ -282,8 +291,9 @@ def test_legacy_zero_page_receipt_has_no_terminal_continuation_signal(tmp_path: 
     assert fact.terminal_continuation_signal is None
 
 
-def test_unrecognized_terminal_continuation_is_retained_only_as_a_safe_category(
-    tmp_path: Path,
+@pytest.mark.parametrize("signal", ["unrecognized_nonblank", "recognized_terminal"])
+def test_terminal_continuation_is_retained_only_as_a_safe_category(
+    tmp_path: Path, signal: str,
 ) -> None:
     repository, cache_root, artifact_root = _roots(tmp_path)
     run_id = capability.run_id_for_session(_SESSION_DATE)
@@ -301,7 +311,7 @@ def test_unrecognized_terminal_continuation_is_retained_only_as_a_safe_category(
         fetch_page=lambda _next, _key: _Page(
             bars=first_page.bars,
             next_cursor=None,
-            continuation_signal="unrecognized_nonblank",
+            continuation_signal=signal,
         )
     )
     capability.write_spy_paginated_prefix_collection_run(
@@ -333,14 +343,48 @@ def test_unrecognized_terminal_continuation_is_retained_only_as_a_safe_category(
     )
 
     assert collection.status == "collected"
-    assert collection.pages[-1].continuation_signal == "unrecognized_nonblank"
+    assert collection.pages[-1].continuation_signal == signal
     assert observation.status == "incomplete_prefix"
-    assert observation.terminal_continuation_signal == "unrecognized_nonblank"
+    assert observation.terminal_continuation_signal == signal
     assert fact.result_class == "measurement_incomplete_or_invalid"
-    assert fact.terminal_continuation_signal == "unrecognized_nonblank"
+    assert fact.terminal_continuation_signal == signal
     payload = json.loads(observation.artifact_path.read_text(encoding="ascii"))
-    assert payload["collection"]["terminal_continuation_signal"] == "unrecognized_nonblank"
+    assert payload["collection"]["terminal_continuation_signal"] == signal
     assert "tr_cont" not in json.dumps(payload, sort_keys=True)
+
+
+@pytest.mark.parametrize("advertised", [False, True])
+def test_terminal_page_cannot_advertise_continuation(advertised: bool) -> None:
+    rows = tuple(row.as_document() for row in _prefix_pages(_SESSION_DATE)[0].bars)
+    if advertised:
+        with pytest.raises(ValueError, match="continuation signal is invalid"):
+            capability.KisSpyPaginatedPrefixPage(
+                index=1,
+                rows=rows,
+                continuation_advertised=advertised,
+                continuation_signal="recognized_terminal",
+            )
+    else:
+        page = capability.KisSpyPaginatedPrefixPage(
+            index=1,
+            rows=rows,
+            continuation_advertised=advertised,
+            continuation_signal="recognized_terminal",
+        )
+        assert page.continuation_signal == "recognized_terminal"
+
+
+@pytest.mark.parametrize("advertised", [False, True])
+def test_legacy_page_document_without_signal_remains_readable(advertised: bool) -> None:
+    page = capability._page_from_document(
+        {
+            "index": 1,
+            "rows": [row.as_document() for row in _prefix_pages(_SESSION_DATE)[0].bars],
+            "continuation_advertised": advertised,
+        }
+    )
+    assert page.continuation_signal == "not_recorded_legacy"
+    assert page.continuation_advertised is advertised
 
 
 def test_negative_control_detects_preexisting_planned_run_and_blocks_collection(

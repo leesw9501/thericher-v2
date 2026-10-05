@@ -341,7 +341,9 @@ def test_paired_checker_enforces_requested_frontier_even_without_overlap(
     )
 
 
-@pytest.mark.parametrize("signal", ["blank_or_absent", "recognized_continuation"])
+@pytest.mark.parametrize(
+    "signal", ["blank_or_absent", "unrecognized_nonblank", "recognized_continuation"]
+)
 @pytest.mark.parametrize("count", [1, 119, 120])
 def test_paired_short_or_midnight_terminal_does_not_request_another_day(
     tmp_path: Path, signal: str, count: int
@@ -353,10 +355,80 @@ def test_paired_short_or_midnight_terminal_does_not_request_another_day(
             for symbol in ("QQQ", "SPY")
         ]
     )
-    assert [result.row_count for result in _run_pair(tmp_path, client, pages_per_target=8)] == [
-        count
+    results = _run_pair(tmp_path, client, pages_per_target=8)
+    assert [(result.status, result.row_count, result.reason) for result in results] == [
+        ("collected", count, None)
     ] * 2
     assert [query.symbol for query in client.queries] == ["QQQ", "SPY"]
+    assert all(len(pages) == 1 for pages in client.responses.values())
+    for state in _index(tmp_path)["targets"]:
+        assert state["next_cursor"] is None
+        assert state["chunks"][-1]["input_cursor"] is None
+        assert state["chunks"][-1]["output_cursor"] is None
+
+
+@pytest.mark.parametrize("symbol", ["QQQ", "SPY"])
+@pytest.mark.parametrize("terminal_page", [1, 2])
+@pytest.mark.parametrize("mode", ["pair", "qqq", "default"])
+def test_full_recognized_terminal_page_stops_at_exact_frontier(
+    tmp_path: Path, symbol: str, terminal_page: int, mode: str
+) -> None:
+    responses = []
+    for target_symbol in ("QQQ", "SPY"):
+        pages = [
+            _page(
+                _rows(120, offset=(4 - page_number) * 120),
+                symbol=target_symbol,
+                signal="recognized_terminal"
+                if target_symbol == symbol and page_number == terminal_page
+                else "recognized_continuation",
+            )
+            for page_number in range(1, 5)
+        ]
+        responses.append(pages)
+    client = _Client(*responses)
+    if mode == "pair":
+        results = _run_pair(tmp_path, client)
+    else:
+        results = _run(tmp_path, client, explicit_qqq_head_continuation=(mode == "qqq"))
+    target_index = 0 if symbol == "QQQ" else 1
+    assert [(result.status, result.row_count, result.reason) for result in results] == [
+        ("collected", 120 * (terminal_page if index == target_index else 4), None)
+        for index in range(2)
+    ]
+    assert [query.symbol for query in client.queries] == ["QQQ"] * (
+        terminal_page if symbol == "QQQ" else 4
+    ) + ["SPY"] * (terminal_page if symbol == "SPY" else 4)
+    assert len(client.responses[symbol]) == 4 - terminal_page
+    for target_symbol, exchange in (("QQQ", "NAS"), ("SPY", "AMS")):
+        queries = [query for query in client.queries if query.symbol == target_symbol]
+        assert queries[0].continuation_next is None and not queries[0].include_previous_day
+        frontiers = ("20260722152900", "20260722132900", "20260722112900")
+        for query, frontier in zip(queries[1:], frontiers[: len(queries) - 1], strict=True):
+            assert query.exchange == exchange and query.continuation_next == "1"
+            assert query.continuation_key == frontier
+            assert query.include_previous_day is (
+                mode == "pair" or (mode == "qqq" and target_symbol == "QQQ")
+            )
+        catalog = load_verified_kis_paper_private_intraday_catalog(
+            cache_root=tmp_path / "market-data",
+            repo_root=tmp_path / "repo",
+            symbol=target_symbol,
+            exchange=exchange,
+        )
+        count = terminal_page if target_symbol == symbol else 4
+        expected_rows = _rows(120 * count, offset=(4 - count) * 120)
+        assert [bar.start_ts for bar in catalog.bars] == [
+            datetime.strptime(row.korea_date + row.korea_time, "%Y%m%d%H%M%S")
+            .replace(tzinfo=UTC)
+            - timedelta(hours=9)
+            for row in expected_rows
+        ]
+    for state in _index(tmp_path)["targets"]:
+        chunk = state["chunks"][-1]
+        assert state["next_cursor"] is None
+        assert chunk["collection_scope"] == "head"
+        assert chunk["input_cursor"] is None and chunk["output_cursor"] is None
 
 
 @pytest.mark.parametrize("signal", ["blank_or_absent", "recognized_continuation"])
@@ -542,18 +614,64 @@ def test_recover_published_head_after_index_failure_preserves_historical_cursor(
 
 
 @pytest.mark.parametrize("count", [1, 119])
-def test_short_headerless_head_stops_without_older_request(tmp_path: Path, count: int) -> None:
-    client = _Client([_page(_rows(count)), _page(_rows(120))])
+@pytest.mark.parametrize("signal", ["blank_or_absent", "unrecognized_nonblank"])
+def test_short_headerless_head_stops_without_older_request(
+    tmp_path: Path, count: int, signal: str
+) -> None:
+    client = _Client([_page(_rows(count), signal=signal), _page(_rows(120))])
     assert _run(tmp_path, client)[0].row_count == count
     assert len(client.queries) == 2
     assert len(client.responses["QQQ"]) == 1
 
 
-def test_short_older_page_is_retained_then_stops(tmp_path: Path) -> None:
-    client = _Client([_page(_rows(120, offset=120)), _page(_rows(119)), _page(_rows(120))])
-    assert _run(tmp_path, client)[0].row_count == 239
-    assert len(_catalog(tmp_path).bars) == 239
-    assert len(client.queries) == 3
+@pytest.mark.parametrize("paired", [False, True])
+@pytest.mark.parametrize("count", [1, 119])
+@pytest.mark.parametrize("signal", ["blank_or_absent", "unrecognized_nonblank"])
+def test_short_older_page_is_retained_then_stops(
+    tmp_path: Path, paired: bool, count: int, signal: str
+) -> None:
+    responses = [
+        [
+            _page(_rows(120, offset=120), symbol=symbol),
+            _page(_rows(count, offset=120 - count), symbol=symbol, signal=signal),
+            _page(_rows(120), symbol=symbol),
+        ]
+        for symbol in ("QQQ", "SPY")
+    ]
+    client = _Client(*responses)
+    run = _run_pair if paired else _run
+    results = run(tmp_path, client)
+    assert [(result.status, result.row_count, result.reason) for result in results] == [
+        ("collected", 120 + count, None),
+        ("collected", 120 + count if paired else 120, None),
+    ]
+    assert [query.symbol for query in client.queries] == ["QQQ"] * 2 + ["SPY"] * (
+        2 if paired else 1
+    )
+    for symbol, exchange in (("QQQ", "NAS"), ("SPY", "AMS")):
+        queries = [query for query in client.queries if query.symbol == symbol]
+        assert queries[0].continuation_next is None and not queries[0].include_previous_day
+        if len(queries) == 2:
+            assert queries[1].exchange == exchange
+            assert queries[1].continuation_next == "1" and queries[1].include_previous_day
+            assert queries[1].continuation_key == "20260722112900"
+        assert len(client.responses[symbol]) == (1 if len(queries) == 2 else 2)
+        catalog = load_verified_kis_paper_private_intraday_catalog(
+            cache_root=tmp_path / "market-data",
+            repo_root=tmp_path / "repo",
+            symbol=symbol,
+            exchange=exchange,
+        )
+        expected_rows = _rows(
+            120 + count if len(queries) == 2 else 120,
+            offset=120 - count if len(queries) == 2 else 120,
+        )
+        assert [bar.start_ts for bar in catalog.bars] == [
+            datetime.strptime(row.korea_date + row.korea_time, "%Y%m%d%H%M%S")
+            .replace(tzinfo=UTC)
+            - timedelta(hours=9)
+            for row in expected_rows
+        ]
 
 
 @pytest.mark.parametrize("failure", ["repeat", "overlap", "newer", "canonical_overlap"])
@@ -769,11 +887,26 @@ def test_pair_invalid_first_head_rejects_only_its_target(tmp_path: Path, symbol:
     assert len(client.queries) == 5
 
 
-def test_default_still_stops_on_full_headerless_head(tmp_path: Path) -> None:
-    client = _Client([_page(_rows(120, offset=120)), _page(_rows(120))])
-    result = _run(tmp_path, client, explicit_qqq_head_continuation=False)[0]
-    assert (result.status, result.row_count) == ("collected", 120)
-    assert len(client.queries) == 2
+@pytest.mark.parametrize("signal", ["blank_or_absent", "unrecognized_nonblank"])
+@pytest.mark.parametrize("count", [1, 119, 120])
+def test_default_still_stops_on_headerless_head(
+    tmp_path: Path, signal: str, count: int
+) -> None:
+    client = _Client(
+        *[
+            [
+                _page(_rows(count, offset=120), symbol=symbol, signal=signal),
+                _page(_rows(120), symbol=symbol),
+            ]
+            for symbol in ("QQQ", "SPY")
+        ]
+    )
+    results = _run(tmp_path, client, explicit_qqq_head_continuation=False)
+    assert [(result.status, result.row_count, result.reason) for result in results] == [
+        ("collected", count, None)
+    ] * 2
+    assert [query.symbol for query in client.queries] == ["QQQ", "SPY"]
+    assert all(len(pages) == 1 for pages in client.responses.values())
 
 
 def test_default_header_continuation_still_accepts_exact_overlap(tmp_path: Path) -> None:
