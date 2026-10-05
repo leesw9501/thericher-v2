@@ -5,6 +5,16 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October5 first30-closing29 CPU family closed/non_promoting_completed,60 cells,
+zero fits/GPU/weights/sealed spend, no appointment or successor allocation.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-first30-closing29-development-20261005-v1`;
+contract `sha256:c026e893d47478c56d924e05d477f377eca21bd3b54e4ea9b2ecdf2835596853`;
+result `sha256:ed5c934debdb54699d3f3f4b098c00d16ab51b71649e2bd0770bb5928ee2721a`.
+The append-only registry has exact frozen/outcome custody; ALL-RO readback
+independently binds result bytes to terminal receipt/ledger. Seen-source history
+and original21-session KIS contract remain unchanged. Research owns interpretation,
+not a new GPU/depth/Paper entitlement. Worker4.940231s/container reaped.
+
 October5 joint-allocation appointment closed/non_promoting_completed, three
 actual CUDA fits/21 cells/zero sealed spend under one300-second family budget.
 FirstRate160 TRAIN/one embargo/90 previously seen comparison sessions; two

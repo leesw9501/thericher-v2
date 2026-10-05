@@ -125,6 +125,19 @@ Preserve15-percent D: floor. Test scratch prefers measured-fast local C:\trpy.
 
 ## Research And Resources
 
+October5 first30-to-closing29 long/flat mechanism also completed60 CPU cells,
+zero fits/GPU/weights. TRAIN uses125 causal signs per ETF only for fixed
+exposure; seen April-June/July-September groups have QQQ62/63 and SPY61/63
+observations, one scoped missing SPY opening input, zero target censoring.
+Stress5bps-side candidate NAV returns are QQQ-3.9516/-6.1019percent and
+SPY-3.2619/-5.8961percent, below TRAIN-exposure controls in every group.
+Net/increment/day kills apply; no cost/window/ETF rescue, source-paper
+replication or Paper input.47 pinned synthetic checks/98 related tests pass;
+independent source review's four binding/smoke defects are fixed. ALL-RO
+source/action/NAV/exact terminal-ledger replay passes,11 critical code pins
+are externally preserved. Worker4.940231s; no child or appointment remains.
+Exact root/pins and source/Claude limitations belong to Research boards.
+
 October5 joint QQQ/SPY/cash allocation additionally completed three CUDA fits/
 21 cost cells on broader FirstRate160 TRAIN/one embargo/90 seen comparison days.
 Two completed M1 windows30/120 share one budget. Primary120 stress6bps-side

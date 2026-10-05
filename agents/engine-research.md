@@ -17,6 +17,39 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-05 KST)
 
+First30-to-closing29 is closed/non_promoting_completed, family/root
+`D:\thericher-v2\model-artifacts\research\firstrate-first30-closing29-development-20261005-v1`.
+Primary long/flat sign is prior scheduled final M1 CLOSE to current completed
+first30 CLOSE; equality flat, no stale predecessor or whole-day future mask.
+Each ETF/fold starts separate NAV1; entry close-30 OPEN/exit close-1 OPEN,
+including early closes, zero overnight/short/leverage. This29-minute variant
+is not Gao et al.'s1993-2013 SPY result or the older21-day signed KIS contract.
+125 TRAIN signs per ETF freeze an exposure-only control, no TRAIN payoffs/fits.
+Seen April-June/July-September observations QQQ62/63/SPY61/63; SPY has one
+opening-input shortfall, no target censoring. Candidate active counts31/36/33/41.
+Five policies/three1/3/5bps-side costs/four groups yield60 cells, zero GPU/weights.
+Stress candidate NAV returns QQQ-0.039516104304/-0.061019227296 and
+SPY-0.032618756537/-0.058961257859 lose fixed exposure controls in every group.
+Frozen net/increment/day-deletion kills apply; no best-cost/ETF/window rescue,
+independent holdout, original-paper rejection or Paper input.
+Source/contract/action/ordered execution/NAV/terminal-ledger ALL-RO replay passes.
+Pre-payoff commitment flushes/fsyncs; rows are parsed in memory, not physically
+target-isolated.47 pinned synthetic checks include early-close OPEN/CLOSE/
+drawdown/censoring/increment/day-deletion tests;98 related tests pass8.91s.
+Independent final review confirms four binding/smoke P2s fixed/no new P1/P2.
+Worker4.940231s/2CPU/2GiB/network none/120s bound;11 critical code pins are
+externally snapshotted, not a complete dependency bundle. No child remains.
+Contract `sha256:c026e893d47478c56d924e05d477f377eca21bd3b54e4ea9b2ecdf2835596853`;
+result `sha256:ed5c934debdb54699d3f3f4b098c00d16ab51b71649e2bd0770bb5928ee2721a`;
+commitment `sha256:23a60f4260bfab3d6ee2045ca39dc45e32d1b809a735ed76bef741ab747d6a0f`.
+Primary university source re-retrieved through web; publisher403 is not a source
+byte hash. Copyright is reference-only, no manuscript/code/weight adoption:
+https://profiles.wustl.edu/en/publications/market-intraday-momentum/.
+Claude invocation exit1/uncategorized remains review_unavailable, not agreement:
+`D:\thericher-v2\model-artifacts\research\source-discovery\claude-first30-closing29-drift-20261005.json`.
+Revised/seen source clocks/actions/finality/PIT, cash interest, risk matching,
+fees-only endpoint fills and absent Execution parity remain limitations.
+
 Joint daily-flat QQQ/SPY/cash allocation is also closed/non_promoting_completed,
 family `firstrate-paired-allocation-development-20261005-v1`, actual root
 `D:\thericher-v2\model-artifacts\research\firstrate-paired-allocation-development-20261005-v2`.
@@ -1352,7 +1385,7 @@ dispatch restrictions. The current development package is described above.
 
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
-| Technical/chart and momentum/regime | Original FirstRate time-of-day band completed12 cost cells/zero fits; later-fold net losses kill recipe despite positive matched-control increments | Preserve kills; a distinct causal mechanism/replication needs a fresh bounded contract, not cost/threshold/ETF rescue |
+| Technical/chart and momentum/regime | First30-closing29 completed60 CPU cells/zero fits; all four stress ETF/fold NAVs lose cash and fixed exposure controls. Earlier time-of-day band remains killed | Preserve kills; no cost/threshold/window/ETF rescue or original-paper rejection; a distinct question needs its own finite contract |
 | Classical ML/statistical | Paired-lag own/peer Ridge fits now trade but have negative stress net; earlier downside/pooled fits stay closed | Broader FirstRate input geometry is ready; freeze a distinct mechanism, not seen threshold/cost rescue |
 | Sequence/DL/public model | Paired LSTM/attention actual CUDA fits complete, both stress-negative; TimesFM/Chronos/TCN/patch history unchanged | Source-independent five-timeframe completed inputs pass target-free smoke; new campaign needs its own shared finite compute contract |
 | Portfolio/allocation/meta-decision | Joint daily-flat allocation completed three CUDA fits/21 cells; primary120 loses stress NAV and constant/EW controls; numeric weights and exact CPU inference retained | Preserve kills/seen-source history; no same-data window/fee/ETF rescue or Paper qualification; a distinct future question needs its own finite contract |

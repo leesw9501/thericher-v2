@@ -3515,6 +3515,40 @@ D:\thericher-v2\model-artifacts
 /app/model_artifacts
 ```
 
+### Closed First30 / Closing29 Readback
+
+The October5 finite long/flat source-local study is closed, not a reusable
+worker or permission to repeat/tune its seen-data outcomes. Its external root:
+`D:\thericher-v2\model-artifacts\research\firstrate-first30-closing29-development-20261005-v1`.
+47 synthetic checks and98 related tests pass;60 actual fee cells fail frozen
+net/increment/day criteria. Its result hash is
+`sha256:ed5c934debdb54699d3f3f4b098c00d16ab51b71649e2bd0770bb5928ee2721a`.
+Contract hash is canonical JSON without the file's trailing newline, not its
+precommit file-byte hash. Original KIS signed21-session contract stays unchanged.
+
+Readback only, no fits, GPU, provider, broker, credential or ledger write:
+
+```powershell
+$study = 'D:/thericher-v2/model-artifacts/research/firstrate-first30-closing29-development-20261005-v1'
+docker run --rm --network none --cpus 2 --memory 2g --memory-swap 2g --read-only `
+  --tmpfs /tmp:rw,size=256m -e PYTHONPATH=/app/src -e PYTHONDONTWRITEBYTECODE=1 `
+  -e OMP_NUM_THREADS=2 -e OPENBLAS_NUM_THREADS=2 `
+  -v C:/Users/Public/Documents/thericher-v2/src:/app/src:ro `
+  -v D:/market_data:/market:ro -v "${study}:/study:ro" `
+  -v D:/thericher-v2/model-artifacts:/artifacts:ro `
+  -v D:/thericher-v2/model-artifacts/data-receipts/firstrate-free-intraday/firstrate-free-intraday-source-local-normalization-v1.json:/normalization.json:ro `
+  sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039 `
+  python -B /study/source.py --verify
+```
+
+The reader validates source/code pins, registry identity, ordered execution
+and weight commitment, all60 NAV cells,32 future-feature checks, and exact
+result/terminal-ledger linkage. Eleven critical code pins are preserved under
+`frozen-source`; if current code differs, overlay those exact files read-only.
+Other imports still use the verified runtime/Git revision, not an entire frozen
+dependency bundle. This is seen-source fractional endpoint accounting, not
+original-paper replication, executable fill parity or Paper qualification.
+
 ### FirstRate Free M1 Source-Local Normalization
 
 Normalize only the staged, acquisition-receipt-bound SPY/QQQ ZIPs with:

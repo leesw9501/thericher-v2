@@ -58,6 +58,11 @@ position reconciliation. This is execution readiness, not profitability or live.
    weights and exact ALL-RO CPU inference/NAV replay are retained outside Git.
    226 focused tests/no skips pass locally and in pinned Docker. Original mount
    failure remains; v2 repairs runtime only. No rescued winner or Paper input.
+   First30-to-closing29 long/flat rule also closes60 CPU cells/zero fits;
+   all four stress ETF/fold NAVs are negative and lose fixed exposure controls.
+   47 synthetic checks/98 related tests/ALL-RO terminal-bound replay pass.
+   This is a distinct29-minute seen-data variant, not source-paper replication
+   or a reason to retune the original fixed first30 contract.
    Public papers are mechanism references, not our market-profit evidence.
 
 ## Completion And Verification
