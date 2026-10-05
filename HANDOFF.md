@@ -125,6 +125,16 @@ Preserve15-percent D: floor. Test scratch prefers measured-fast local C:\trpy.
 
 ## Research And Resources
 
+October5 joint QQQ/SPY/cash allocation additionally completed three CUDA fits/
+21 cost cells on broader FirstRate160 TRAIN/one embargo/90 seen comparison days.
+Two completed M1 windows30/120 share one budget. Primary120 stress6bps-side
+fractional NAV loses13.7386 percent and loses constant/EW; all frozen kills apply.
+Numeric-only weights/scalers stay D: and exact ALL-RO CPU inference/NAV replay
+passes. Original root-mount failure is preserved; same-family v2 runtime repair
+changed no recipe.226 focused tests pass locally3.51s/pinned6.54s, no skips.
+No selected winner, independent holdout, Paper input or new GPU job remains.
+Exact source/contract/result/model custody belongs to Research boards.
+
 October5 own-versus-peer information campaign completed four actual fits:
 own/paired Ridge CPU and LSTM/compact-attention CUDA on50 dated sources/25 shared
 sessions.12 TRAIN/one embargo/12 seen comparison days,96 decisions/48 cost cells.

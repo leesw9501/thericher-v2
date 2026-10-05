@@ -5,6 +5,23 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October5 joint-allocation appointment closed/non_promoting_completed, three
+actual CUDA fits/21 cells/zero sealed spend under one300-second family budget.
+FirstRate160 TRAIN/one embargo/90 previously seen comparison sessions; two
+M1 windows30/120 share the budget, no per-window multiplier or selection.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-paired-allocation-development-20261005-v2`;
+contract `sha256:561478fd4bb1a033148830cea01b6386f772ea2007db02950f6ca54d8628bf13`;
+result `sha256:0b1f9f2c611f9766c228c0af6b7722bb8f08d0f296fbe2a83f02c89f8b71da97`.
+Worker10.965463s/peak68,181,504 bytes; existing Torch image/2CPU/6GiB/networknone,
+canonical lock held through completion and removed; no active GPU job remains.
+Three external numeric-only JSON models and exact ALL-RO inference/21-cell
+replay retained; Research owns failed net/increment/half/day kills, no depth,
+ensemble or Paper grant.226 focused tests pass locally and in pinned runtime.
+Original same-family v1 failed at canonical-root mount before any actual fit;
+its immutable failure/start/contract remain, v2 corrects only runtime mapping
+and smoke binding. Registry index1 is identity-scoped because source-path pins
+changed, not erasure of the earlier failure or prior seen-source campaigns.
+
 October5 paired-lag appointment closed/non_promoting_completed, four actual fits
 and48 development cells, zero sealed spend. Fifty dated source pins/25 shared
 days;12 TRAIN/one embargo/12 seen comparison blocks, one500-second family budget.
@@ -21,7 +38,8 @@ Initial metadata registration was recovered idempotently with its exact existing
 contract before targets/fits by correcting only the parent ledger mount.
 Registry record hash`86c1be62981ac1337f72646c15402c2549be84b52e6db729045d9609c9abb544`
 belongs to the append-only October ledger, not a hash of its mutable whole file.
-Broader FirstRate Data readiness is assigned, not another GPU appointment.
+Broader FirstRate Data readiness/input geometry is complete; the separately
+frozen joint-allocation appointment above is also closed, not an idle ready job.
 
 FirstRate time-of-day band family closed/non_promoting_completed after12 cells,
 zero fits/GPU/weights/sealed spend. Root

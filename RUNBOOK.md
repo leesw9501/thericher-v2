@@ -106,6 +106,26 @@ for H1/H3). It never fills missing minutes or crosses the declared session.
 bound. This uses mounted verified code, not an assumption that Data aliases
 contain the new helper. Source/model/Paper qualification is not implied.
 
+## Joint Allocation Readback
+
+`paired_allocation_utility.py` exposes NumPy/Torch/Decimal daily-flat NAV and
+explicit next-M1-OPEN/last-session-M1-OPEN times. Float64 weights[N,3] are
+QQQ/SPY/cash; fixed NumPy growth[N,2] is QQQ/SPY. Post-entry-fee weights share
+one NAV1, actual purchase and marked-liquidation fees, no overnight or leverage.
+Reuse the existing net-utility function, not sum independent monthly sleeves.
+
+The finite external family is closed, not a new repo worker or scheduler:
+`D:\thericher-v2\model-artifacts\research\firstrate-paired-allocation-development-20261005-v2\source.py --verify`.
+It reconstructs numeric-only model JSON inference and21 cells without fitting,
+GPU or writes. Use the existing pinned Torch image,2CPU/6GiB/network none,
+read-only /study, /app/src, /artifacts and /normalization.json; critically,
+mount D:/market_data at /market, not its FirstRate subfolder. The receipt uses
+market-root-relative canonical paths.14 critical code files are snapshotted,
+not an entire import bundle; use the verified repository/runtime for remaining
+imports. v1's wrong-root failure/start/contract remain immutable and registered;
+do not rerun it or reset its marker. v2 fixed only mapping and CPU-contract
+binding, retaining the recipe/shared three-fit budget. No Paper input follows.
+
 ## Dated Minute Collection
 
 The separate `--fixed-historical-key-pair --max-pages 2` minute probe completed

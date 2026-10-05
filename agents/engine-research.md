@@ -17,6 +17,41 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-05 KST)
 
+Joint daily-flat QQQ/SPY/cash allocation is also closed/non_promoting_completed,
+family `firstrate-paired-allocation-development-20261005-v1`, actual root
+`D:\thericher-v2\model-artifacts\research\firstrate-paired-allocation-development-20261005-v2`.
+One shared300-second budget covered three CUDA fits: learned constant allocation
+and linear softmax policies with completed30/120-minute M1 inputs at open+150min.
+160 scheduled TRAIN days/one embargo/90 seen comparison days; no future full-day
+mask. Entry is next M1 OPEN, exit last session M1 OPEN; actual notional fees and
+one shared fractional NAV, flat each day, not independently funded sleeves.
+All comparison weights were durably committed before payoff calculation.
+Primary120 stress6bps-side NAV return is-0.13738611929734257, versus constant
+-0.02772973189409822/equal-weight-0.13026533487740266. Net/increment/chronological-
+half/day-deletion kills apply.30-minute ablation also loses; no best-window
+selection, threshold/cost rescue, independent holdout or Paper input.
+Worker10.965463s/Torch peak68,181,504 bytes; container/lock reaped. Three numeric-
+only model JSONs retain coefficients and TRAIN scalers outside Git. ALL-RO CPU
+reconstructs exact inference/actions/21 fee cells and20 future-feature checks;
+weights/NAV tolerances1e-10. Source rows are loaded in memory: the commitment's
+target-read flag means no comparison payoff calculation, not no physical parsing.
+Contract `sha256:561478fd4bb1a033148830cea01b6386f772ea2007db02950f6ca54d8628bf13`;
+result `sha256:0b1f9f2c611f9766c228c0af6b7722bb8f08d0f296fbe2a83f02c89f8b71da97`;
+action `sha256:db7be83242ce08c5171a6bd60d9f963186ee898c2c5b9205b43db60872a17525`.
+Fourteen critical code pins are externally snapshotted; remaining imports use
+the verified repository/runtime, not a claim that14 files are a full dependency bundle.
+Original v1 mount error failed before data targets/fits; original source, start
+marker, contract12146043 and failed registry outcome remain unchanged. v2 fixes
+only canonical-root mapping and binds CPU smoke to its contract, no model retuning.
+Registry trial1 is identity-scoped after source-path correction, not a reset of
+known prior trials. New helper88 tests plus integrated226/no skips pass locally
+3.51s and pinned Torch2.7+cu1286.54s; independent review's two binding defects
+are fixed. This isolated package does not claim another full-suite authority.
+DIN/DeepDow source review is mechanism-only, no dependency/model adoption:
+`D:\thericher-v2\model-artifacts\research\source-discovery\portfolio-objective-source-review-20261005.json`.
+New Claude exit1/uncategorized remains review_unavailable, not agreement:
+`D:\thericher-v2\model-artifacts\research\source-discovery\claude-paired-allocation-drift-20261005.json`.
+
 `kis-paired-lag-development-20261005-v1` is closed/non_promoting_completed.
 Fifty separate dated source pins/25 shared sessions froze before targets:
 12 TRAIN blocks through September15, September16 embargo,12 seen comparison
@@ -1320,7 +1355,7 @@ dispatch restrictions. The current development package is described above.
 | Technical/chart and momentum/regime | Original FirstRate time-of-day band completed12 cost cells/zero fits; later-fold net losses kill recipe despite positive matched-control increments | Preserve kills; a distinct causal mechanism/replication needs a fresh bounded contract, not cost/threshold/ETF rescue |
 | Classical ML/statistical | Paired-lag own/peer Ridge fits now trade but have negative stress net; earlier downside/pooled fits stay closed | Broader FirstRate input geometry is ready; freeze a distinct mechanism, not seen threshold/cost rescue |
 | Sequence/DL/public model | Paired LSTM/attention actual CUDA fits complete, both stress-negative; TimesFM/Chronos/TCN/patch history unchanged | Source-independent five-timeframe completed inputs pass target-free smoke; new campaign needs its own shared finite compute contract |
-| Portfolio/allocation/meta-decision | Continuous fixed band fails stress NAV; causal expert mixture's tiny gain depends on QQQ and loses risk control | Preserve the full controls/lineage; no same-data weight/ETF selection or Paper qualification |
+| Portfolio/allocation/meta-decision | Joint daily-flat allocation completed three CUDA fits/21 cells; primary120 loses stress NAV and constant/EW controls; numeric weights and exact CPU inference retained | Preserve kills/seen-source history; no same-data window/fee/ETF rescue or Paper qualification; a distinct future question needs its own finite contract |
 
 The fresh QQQ/SPY intraday terminal remains
 `input_unavailable/session_coverage_incomplete` despite verified capture and

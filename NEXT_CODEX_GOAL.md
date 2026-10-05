@@ -51,6 +51,13 @@ position reconciliation. This is execution readiness, not profitability or live.
    broader-input facts for the next distinct finite predictive contract; prefer
    causal chronological coverage and existing compatible utility helpers over
    another same-panel architecture sweep or duplicated research infrastructure.
+   The subsequent joint QQQ/SPY/cash daily-flat allocation is also closed:
+   three CUDA fits/21 cells,160 TRAIN/one embargo/90 seen comparison days,
+   30/120-minute M1 windows under one budget. Primary120 stress NAV-13.7386percent
+   loses constant/EW; frozen net/increment/half/day kills apply. Numeric model
+   weights and exact ALL-RO CPU inference/NAV replay are retained outside Git.
+   226 focused tests/no skips pass locally and in pinned Docker. Original mount
+   failure remains; v2 repairs runtime only. No rescued winner or Paper input.
    Public papers are mechanism references, not our market-profit evidence.
 
 ## Completion And Verification
@@ -66,7 +73,9 @@ Torch CPU tests, full8,736 passes/22 skips/329.15s/eight workers/clean helper,
 matching8,758 collected; Ruff/default+research sample Compose pass. Exact source/
 cohort/action/cost readback verifies48 cells without refitting. Follow the
 changed-path/parallel verification policy in AGENTS.md for further code changes;
-documentation-only refresh does not repeat the full suite.
+documentation-only refresh or an isolated focused-verified research helper does
+not repeat the full suite. October5 subsequent226-test integration covers the
+new joint utility/helper, not a claim that the earlier full suite included it.
 
 Current evidence and recovery paths live in
 `C:\Users\Public\Documents\thericher-v2\HANDOFF.md` and its active role boards,
