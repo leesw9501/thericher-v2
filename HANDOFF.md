@@ -134,8 +134,14 @@ tests and exact ALL-RO readback pass. No winner/Paper input/retained weights.
 Exact pins,38-file frozen-source snapshot and metadata-only registration recovery
 belong to Research boards. Source-only papers were independently re-retrieved;
 new Claude exit1 is review_unavailable, not agreement or a quota inference.
-Broader existing FirstRate chronological readiness is now assigned in parallel;
-do not rescue this closed recipe by changing its threshold/cost or an ETF.
+Broader existing FirstRate chronology now verifies250 shared complete2022-23
+sessions/251 scheduled dates and a160-TRAIN-session metadata proposal. The new
+paired completed-context helper handles all five intraday timeframes, exposes
+H1/H3 lag and ignores future bars.79 focused tests/2,008 actual target-free cases/
+1,998 available/10 exact input shortfalls/78 mutation checks/ALL-RO replay pass.
+This is input preparation, zero targets/fits/GPU/qualification, not a fresh
+holdout. Exact external pins/source snapshots belong to Data/Research boards.
+Do not rescue the closed recipe by changing its threshold/cost or an ETF.
 
 October5 terminal-header repair is also verified/deployed to ten Data aliases:
 official D/E terminal categories now avoid the unknown-header older-key fallback.

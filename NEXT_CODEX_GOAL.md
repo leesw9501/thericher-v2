@@ -37,14 +37,18 @@ position reconciliation. This is execution readiness, not profitability or live.
    terminal repair is verified/deployed to ten Data aliases/602 unique hashes;
    old defaults/scopes/pace/schedules are unchanged. Actual new head/header yield
    is unobserved. Recent KIS coverage is25 shared complete days/9,750 M1 per ETF;
-   older21 shared June/July sessions retain their separate identities. A bounded
-   broader FirstRate chronological-readiness inventory is assigned using existing
-   canonical sources, not a new collection or a model/Paper qualification.
+   older21 shared June/July sessions retain their separate identities. Broader
+   FirstRate readiness now verifies250 shared complete2022-23 sessions from251
+   scheduled dates. The160 TRAIN-session split is a seen-data proposal, not a
+   new collection, independent holdout or model/Paper qualification.
 3. Engine Research's paired-lag family is closed: four actual fits/48 cells,
    Attention stress mean net-1.605736673358 unit bps loses own Ridge; net/increment/
    ETF/day kills apply. No threshold/cost rescue, weights, winner or Paper input.
    Existing foundation-model, net-utility, band and pooled studies stay closed.
-   Use Data's broader-input facts for the next distinct finite contract; prefer
+   Source-independent M1/M5/M10/H1/H3 input preparation is also complete:
+   79 focused tests,2,008 actual paired cases/1,998 available/10 exact shortfalls,
+   78 future-mutation checks and ALL-RO replay; zero targets/fits/GPU. Use these
+   broader-input facts for the next distinct finite predictive contract; prefer
    causal chronological coverage and existing compatible utility helpers over
    another same-panel architecture sweep or duplicated research infrastructure.
    Public papers are mechanism references, not our market-profit evidence.

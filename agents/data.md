@@ -29,8 +29,20 @@ Actual provider D/E yield remains unobserved, not a complete-capture claim.
 Exact publication: `D:\thericher-v2\model-artifacts\data\kis-terminal-header-publication-20261005.json`,
 SHA256 `8faa10fe7a92e1b1b6b0a9ba8b2f935cde0a06648555ad8ea73d1977dfb1852e`.
 Its bound official-source receipt explains the recalibration fact. The next
-existing paired-head opportunity remains October6 00:29 KST. A separate bounded
-FirstRate readiness inventory is assigned; it does not collect, train or promote.
+existing paired-head opportunity remains October6 00:29 KST.
+
+FirstRate broader-input readiness is now measured, not merely assigned:
+251 scheduled NYSE dates September30,2022-September29,2023,250 shared complete
+regular sessions (248 full390-minute/two210-minute early closes). SPY June5
+lacks four expected minutes; retain that one source-local limitation, not a
+whole-panel block. A160-TRAIN/one embargo/90 scheduled comparison proposal
+preserves prior seen-data reuse; it is not an untouched holdout or campaign.
+Parent verifies12 metadata/code/contract pointers plus both canonical CSV hashes.
+Exact receipt: `D:\thericher-v2\model-artifacts\research\source-discovery\firstrate-broader-input-readiness-20261005.json`,
+SHA256 `84fff32e0ee07f17f53cd9941f3321507e7b8d379e4e9b531ef2a6693b3bc57d`.
+No acquisition, credential/provider call, model, rights or qualification change.
+Research's target-free completed-context smoke consumes the existing M1 sources;
+its eight-cell prefix availability is separate from whole-session completeness.
 
 One bounded older close-key package is closed:QQQ/NAS and SPY/AMS May1,
 June1,July1,August3 all return `minute_response_empty` for their exact queries,

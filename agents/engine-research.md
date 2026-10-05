@@ -56,9 +56,29 @@ SHA256 `28bfa6bffe3b0caaa6c3ce72b4a0342b617d59573023f95a6600f51d3db81934`.
 The actual new Claude invocation failed exit1/cause uncategorized; this is
 review_unavailable, not agreement or an inferred quota. Its exact source-safe
 receipt is `D:\thericher-v2\model-artifacts\research\source-discovery\claude-paired-lag-drift-20261005.json`.
-Next preparation checks broader existing FirstRate chronological coverage before
-another finite campaign. Reuse existing net-utility helpers where compatible;
-do not add a duplicate objective or retune this closed48-cell recipe.
+Broader FirstRate readiness is now checked:251 scheduled2022-23 dates/250 shared
+complete sessions,160 TRAIN-session metadata proposal with one embargo/90 later
+scheduled dates. All were previously seen; old campaigns/pins are not reset.
+The small source-independent `paired_completed_context.py` now constructs exact
+completed own/peer inputs for M1/M5/M10/H1/H3, exposing the latest complete end
+and its lag rather than consuming a partial H1/H3 bucket. It validates only
+the required past prefix, not later full-session/target availability.
+79 focused tests pass1.27s, including early-close/DST/future perturbation and
+large-window source shortfall before grid allocation; Ruff passes.
+Eight input-only cells include30/120 M1,12/60 M5,12 M10,one H1,one/two H3 bars.
+Actual251 scheduled dates yield2,008 paired cases:1,998 available/10 exact input
+shortfalls; early closes and June5 gaps remain visible.78 prefix/future-mutation
+checks and exact ALL-RO commitment reproduction pass. Zero targets/fits/GPU/
+weights/costs/performance or Paper claims. Normalized source clocks, finality,
+corporate actions and historical availability remain assumptions/limitations.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-paired-context-input-smoke-20261005`;
+precommit `sha256:a6559daab618ef3bdf208574a4da7984a3bc9f28d3d7d27e1229f15c99c18e09`;
+result `sha256:802aced4519c43120a2276bfee371b9781ce361e82834f9d0963ff024308bcc6`;
+input commitment `sha256:5c3bb2f3cacd9a0babf17efd05e50de108f5bca15b46b1cbaa978a73fb59df1b`.
+Six contract-pinned source files are also externally preserved under frozen-source.
+Next predictive package must freeze its own distinct hypothesis/target/cost/
+compute contract, retaining every prior seen-source trial. Reuse existing
+compatible net-utility helpers; no duplicate objective or closed-recipe rescue.
 
 The original FirstRate time-of-day band development recipe is complete and
 `recipe_killed`: same fourteen SCHEDULED prior-session prefixes, first strict
@@ -1298,8 +1318,8 @@ dispatch restrictions. The current development package is described above.
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
 | Technical/chart and momentum/regime | Original FirstRate time-of-day band completed12 cost cells/zero fits; later-fold net losses kill recipe despite positive matched-control increments | Preserve kills; a distinct causal mechanism/replication needs a fresh bounded contract, not cost/threshold/ETF rescue |
-| Classical ML/statistical | Dated downside tree/logistic and pooled ridge actual fits complete, all flat at their fixed hurdles | Use useful broader temporal coverage and a distinct mechanism; no seen threshold/cost rescue |
-| Sequence/DL/public model | Pooled LSTM/patch actual CUDA fits complete, both flat; TimesFM/Chronos-2 comparisons also closed | No repeat dispatch or selected winner; next bounded campaign needs its own hypothesis/data/compute contract |
+| Classical ML/statistical | Paired-lag own/peer Ridge fits now trade but have negative stress net; earlier downside/pooled fits stay closed | Broader FirstRate input geometry is ready; freeze a distinct mechanism, not seen threshold/cost rescue |
+| Sequence/DL/public model | Paired LSTM/attention actual CUDA fits complete, both stress-negative; TimesFM/Chronos/TCN/patch history unchanged | Source-independent five-timeframe completed inputs pass target-free smoke; new campaign needs its own shared finite compute contract |
 | Portfolio/allocation/meta-decision | Continuous fixed band fails stress NAV; causal expert mixture's tiny gain depends on QQQ and loses risk control | Preserve the full controls/lineage; no same-data weight/ETF selection or Paper qualification |
 
 The fresh QQQ/SPY intraday terminal remains
@@ -1402,7 +1422,8 @@ contracts. They do not block these sources or the separate Paper opportunity.
 Data's subsequent dated acquisition is closed and fills August28/31 and SPY
 September1. With the existing QQQSeptember1 source, recent per-session coverage
 spans25 shared regular days August28-October2,9,750 M1 per ETF. This is useful
-development coverage, not50 independent blocks or a new combined campaign.
+development coverage, not50 independent blocks. The new paired-lag contract
+explicitly froze50 separate source identities; it does not rewrite older pins.
 Do not reuse the closed20-date contracts as though their source pins changed.
 Net-utility, public-model, fixed-band, causal-mixture, downside and pooled-patch
 campaigns are closed; retain their kills/controls and do not repeat them.

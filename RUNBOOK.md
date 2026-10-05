@@ -94,6 +94,18 @@ CUBLAS_WORKSPACE_CONFIG=:4096:8 before Python starts and keep canonical GPU
 locks writable through child reaping. Root /artifacts can stay read-only with
 only the new campaign/ledger/lock subpaths writable. No .env mount is required.
 
+The subsequent isolated `paired_completed_context.py` helper is source-independent
+and has no file/provider/credential/target access. Supply explicit own/peer
+symbols, trusted M1 streams, the actual session and aware observed_at; it returns
+the last requested completed bars and completed_through (which may lag observed_at
+for H1/H3). It never fills missing minutes or crosses the declared session.
+79 focused tests and an eight-cell FirstRate target-free smoke pass. Exact
+`D:\thericher-v2\model-artifacts\research\firstrate-paired-context-input-smoke-20261005\source.py
+--verify` reconstructs2,008 cases with /study, /normalization.json, /market and
+/app/src read-only, base image846a900b/2CPU/2GiB/swap0/network none/150s outer
+bound. This uses mounted verified code, not an assumption that Data aliases
+contain the new helper. Source/model/Paper qualification is not implied.
+
 ## Dated Minute Collection
 
 The separate `--fixed-historical-key-pair --max-pages 2` minute probe completed

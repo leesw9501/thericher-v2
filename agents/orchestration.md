@@ -15,12 +15,12 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
-| Research | Engine Research / paired-lag closed, broader input preparation | October5 four actual fits/48 cells complete on25 paired dates/50 pins, M5/60-minute context/60-minute payoff,12 TRAIN/one embargo/12 seen comparison days. Attention stress net-1.605736673358 unit bps loses own Ridge; frozen net/increment/ETF/day kills apply.90 pinned CPU tests/exact ALL-RO replay pass, no winner/Paper input. Data now inventories broader existing FirstRate coverage; no duplicate utility helper or rescue sweep. |
+| Research | Engine Research / paired-lag closed, broader input preparation complete | Four actual fits/48 cells on25 paired KIS dates fail frozen stress-net/increment/dependence kills; no winner/Paper input. Broader FirstRate target-free input preparation passes79 focused tests and exact ALL-RO2,008-case replay/78 mutation checks. A temporary read-only design assignment checks one distinct next hypothesis against existing helpers and prior seen-source trials; no predictive campaign or GPU appointment is dispatched yet. |
 | Independent Paper readiness | Execution / deployed exact-orderability and one owned opportunity | Independent review/535 serial/full authority pass;8 consumers/40 baked hashes match. New23:04:20Z one-auth/one-GET synthetic-price diagnostic accepted; not actual-limit funds/old rejection explanation. Next_due October6 00:20 KST fixed-tag unit cycle/00:45 chat follow-up, unchanged. No actual tagged submit/fill; SPY unknown protected. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
-| Data collection / finite D1 measurement | Data / terminal repair deployed; broader input inventory | Official D/E known-terminal repair prevents full-page unknown-header fallback. Ten Data aliases/602 unique baked files match new846a900b image; actual provider/head yield unobserved. Recent25 shared complete KIS days, no historical collector due. October6 00:29 owner/defaults/tasks/pace/Paper images unchanged; bounded FirstRate inventory owns no GPU or mutable cache. |
+| Data collection / finite D1 measurement | Data / terminal repair deployed; broader inventory closed | Official D/E known-terminal repair prevents full-page unknown-header fallback. Ten Data aliases/602 unique baked files match new846a900b image; actual provider/head yield unobserved. Recent25 shared KIS days; FirstRate251 scheduled2022-23 dates/250 shared complete sessions independently checked. No historical collector due; October6 00:29 owner/defaults/tasks/pace/Paper images unchanged. Input-local missingness does not block other prefixes. |
 | GPU | Research Steward / paired-lag appointment closed | Four actual fits complete including LSTM/attention CUDA, worker12.249452s/Torch peak121,579,520 bytes. Canonical lock/container reaped; no active appointment or environment/permission block. Broader-input preparation is not an appointment or a utilization target. |
-| Verification | Orchestrator / shared integration complete | Parent391 serial/one skip8.88s,90 pinned Torch CPU tests/no skips22.08s, full8,736/22/329.15s/eight workers/clean helper, matching8,758 collected; Ruff/default+research Compose pass. Isolated frozen study/readback and source-only publication also pass. No active pytest owner; retained older scratch untouched. |
+| Verification | Orchestrator / shared integration complete; isolated helper verified | Shared-runtime commit b677261 passed391 serial/one skip,90 pinned Torch CPU tests and full8,736/22/329.15s/eight workers/clean helper, matching8,758 collected; Ruff/default+research Compose pass. Subsequent source-independent helper passes79 focused tests/independent source review/ALL-RO input replay; no claim of another full-suite run or baked helper publication. No active pytest owner; retained older scratch untouched. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -54,9 +54,11 @@ another lane or touches the installed Paper task, protected SPY identity or
 shared budget. Current source-only Claude invocation failed exit1 with no
 categorized cause; it is review_unavailable, not agreement or a quota inference.
 Evidence: D:\thericher-v2\model-artifacts\research\source-discovery\claude-paired-lag-drift-20261005.json.
-Current reversible improvement: with the short-panel paired model failing its
-frozen kills, dispatch one existing FirstRate chronological-input readiness
-package instead of retuning its hurdle or adding another same-panel model.
+Current reversible improvement: the broader FirstRate readiness package is
+closed and consumed by one small source-independent completed-context helper.
+The real input smoke includes all scheduled dates rather than a future-aware
+full-session mask: only10 of2,008 exact input cases fail. A read-only Engine
+assignment now checks a distinct next hypothesis before new targets or fits.
 This changes preparation direction only, not a selected strategy or Paper input.
 38 exact frozen code files are externally retained for reproducible old readback;
 the existing contract/ledger/lock path is reused, not another report platform.
