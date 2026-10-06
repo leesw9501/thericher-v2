@@ -14,14 +14,26 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
-October6 operator reports mock investment was reapplied for after suspected
-expiry. This is operator-reported registration, not runtime readiness or proof
-of old-account expiry. Operator confirms only mock investment was reapplied;
-new API registration and local KIS_PAPER_* update are still outstanding.
-Next action is new Paper API registration and the private four-field update,
-then owned virtual-only account/linkage checking. Preserve all old private
-state, unknown SPY custody and rejected QQQ evidence; a changed account must
-not inherit old account identity or budget bytes. No new call/order occurred.
+October6 operator reports reapplication and local .env update. At22:26:57 KST
+the existing named read-only discovery collected a complete virtual snapshot:
+one auth POST/five account GETs, two positions, zero open orders, empty typed
+reconciliation reasons. The four-field whitelist is valid; mode remains off.
+Network-none RO private read at /app/private/canary confirms the refreshed
+account identity matches the retained budget. No migration/reset is needed;
+original10-percent basis, unknown SPY custody and closed QQQ requests remain.
+An initial parent-directory check found no binding only at the wrong level;
+the corrected canonical-root read above is the account-custody evidence.
+Exact direct-discovery receipt:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-readonly\20261006T132657156639Z-collected.json`,
+SHA256 `657b5b121c2d4abf853d53a637d3f1517dfb5524d8189054dc132b40807d4984`.
+Read completeness is not order entitlement, old-order resolution, strategy-
+owned inventory, fees/settled cash or a filled round trip. No raw/private values,
+live reads, order submit/modify/cancel, budget writes or schedule changes.
+Token-start ownership was respected; no foreground cooldown/retry. Next owned
+QQQ opportunity must keep the cycle/budget and use an explicit distinct entry
+tag only after all prior entries are positively closed. No new opportunity yet.
+Temporary source reviewer exited; changed-account isolation was not enacted
+because the canonical identity comparison matches.
 
 October6 00:20 KST owned opportunity returned a fresh positive QQQ BUY
 rejection, NOT a never-attempted no-intent. Exact fixed public request tag
@@ -73,8 +85,9 @@ notes the sample's SELL documentation and executable branch disagree, and
 Accept/blank tr_cont headers differ. These are not established causes of this
 BUY rejection; do not change the SELL route from the contradictory demo alone:
 https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/order/order.py.
-No KIS/auth/order call, live read, registration, credential/state/budget change,
-new request or schedule change occurred in this clarification. Preserve old
+The earlier screenshot/source clarification used no KIS/auth/order call, live
+read, registration, credential/state/budget change, new request or schedule
+change. The subsequent operator update/direct read is recorded above. Preserve old
 custody if a later account replacement is actually necessary.
 The expired task definition remains; one-shot `qqq-paper` was deleted after
 inspection. Claude exit1/uncategorized is `review_unavailable`, not agreement.

@@ -27,12 +27,14 @@ Absent original-date history does not identify its outcome. Never repost,
 reset, substitute or adopt that leg. A distinct QQQ job and independent lanes
 continue without a global hold.
 
-October6 operator reports mock-investment reapplication after suspected expiry.
-Only mock investment was reapplied; API reapplication and local KIS_PAPER_*
-refresh remain outstanding. Do not
-equate registration with account readiness. Next Execution step is the private
-configuration/linkage check, preserving old account custody without resetting
-or copying its budget into a changed account. No new broker call/order here.
+October6 refreshed Paper .env passes the authorized whitelist; mode is off.
+22:26:57 KST direct read-only discovery succeeds: one auth/five GETs, complete
+account snapshot/two positions/zero opens. Canonical RO private binding matches
+the retained account, so no custody/budget migration is necessary. Exact safe
+receipt/hash is in Execution. This proves reads, not order entitlement, old SPY
+resolution, owned-flat state or a new fill. No orders, reset or schedule change.
+Next Execution package is a correctly scoped fresh QQQ entry under the existing
+cycle/aggregate10-percent basis, preserving all prior closed/unknown evidence.
 
 QQQ's October6 00:20 KST scheduled BUY was actually submitted and positively
 rejected/closed as `paper_account_expired`, with no acknowledgement or fill.
@@ -84,10 +86,14 @@ SELL sample documentation/branch conflict is separate, not this BUY's cause.
 Neither proves the portal account registration or actual trading entitlement.
 New account custody must not silently inherit the old account's budget or
 unknown SPY orders. Existing source-safe research preparation continues;
-no registration/credentials/private-state/schedule change occurred here.
+the earlier screenshot/source clarification did not change registration,
+credentials, private state or schedules. The subsequent operator update and
+successful direct read are recorded above; no further setup hold remains.
 
-Loopback dashboard http://127.0.0.1:8787 is running/last health=ok,
-broker_calls=false. No public exposure. Unrelated repo-app-1 is not project-owned.
+Loopback dashboard http://127.0.0.1:8787 last observed health=ok/broker_calls=false;
+October6 connection-check inventory shows no active project web container.
+It was not restarted in this read-only check. No public exposure.
+Unrelated repo-app-1 is not project-owned.
 
 ## Data Ready / Owned / Due
 

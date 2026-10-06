@@ -33,11 +33,12 @@ position reconciliation. This is execution readiness, not profitability or live.
 
 ## Ready Parallel Packages
 
-Operator reports October6 mock-investment reapplication after suspected expiry.
-Only mock investment was reapplied; API/.env steps remain outstanding.
-Complete API reapplication and local KIS_PAPER_* refresh privately before the
-next owned virtual-only connection check. Registration alone is not readiness;
-preserve old account custody and do not copy its budget to a changed account.
+October6 refreshed Paper configuration is valid/mode off.22:26:57 KST direct
+read-only discovery succeeds: complete account snapshot/two positions/zero
+opens, one auth/five GETs. Canonical RO binding matches retained account custody;
+no migration/reset/new basis. This does not prove order entitlement or a fill.
+Next Execution work is a fresh explicitly tagged QQQ opportunity under the
+existing cycle/10-percent basis, not replay of the rejected/consumed request.
 
 1. Execution owns the exact runtime result and reconciliation. Record rejection,
    no-intent, unknown outcome and fees/settled-cash/PnL limitations narrowly.
@@ -46,12 +47,13 @@ preserve old account custody and do not copy its budget to a changed account.
    blindly retry. This owned opportunity is consumed, no new QQQ next_due.
    Operator confirms2027-06-22 is API application validity, not an observed
    mock-account expiry. Its screenshot says mock investment is at most three
-   months and cannot renew. For the reapplied account, check My Accounts and its private
-   API account linkage; do not demand reissue merely from the error label.
-   Current local Paper config matches persisted custody; official BUY routing/
-   body audit found no mismatch, but portal status remains unverified. Preserve old account/
-   budget/unknown SPY custody. Only the operator updates new credentials locally;
-   do not delete registrations, reset old state or substitute its closed request.
+   months and cannot renew. Refreshed config now passes direct account reads and
+   matches retained custody; do not demand another reissue from the old label.
+   Official BUY routing/body audit found no mismatch; order entitlement after
+   reapplication remains unobserved. Preserve budget/unknown SPY custody and
+   closed requests. Declare any new entry tag/opportunity explicitly, using
+   fresh exact-limit funds and existing intent-before-submit/recovery contracts.
+   No new request or opportunity was installed by this read-only check.
    Exact evidence and official source are in agents/execution.md.
 2. Data keeps useful current-data owners running. October5 normalized D/E
    terminal repair is verified/deployed to ten Data aliases/602 unique hashes;

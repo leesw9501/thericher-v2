@@ -14,29 +14,28 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | Work | Owner / resource | Current fact and dispatch |
 | --- | --- | --- |
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
-| Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
+| Aggregate strategy sizing | Execution / existing strategy and private intent store | Prior no_intent/existing_inventory_or_order_conflict remains scoped. Current Scheduler Ready, lastOctober5 23:50/nextOctober6 23:50 KST; task exit is not a new runtime outcome.10-percent policy unchanged. |
 | Research | Engine Research / closed families; independent CPU target preparation complete | October5 paired/joint/first30 families retain their kills. New pure forward-variance labels pass115 synthetic cases;187 combined context tests and297 focused Paper/research tests pass. No real-data labels/fits/GPU/selection/Paper input. Invoked role exited. Next ready package is source/hash-bound scheduled-key target/input smoke, not a same-family rescue or account wait. |
-| Independent Paper readiness | Execution / consumed exact-tag opportunity | Actual BUY positively rejected/closed, category paper_account_expired, no fills. Operator's2027-06-22 is API application validity; actual mock expiry/portal linkage unverified. Offline Paper config matches persisted custody and official request source. Next check actual My Accounts status privately, not unconditional API reissue. Original budget/unknown SPY protected; Ready/no next trigger/no worker; no credential/state/tag/schedule change. One-shot qqq-paper deleted. |
-| Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
+| Independent Paper readiness | Execution / read-verified refreshed configuration |22:26:57 KST complete direct account discovery: two positions/zero opens, one auth/five GETs; canonical RO account binding matches retained budget. Old BUY rejection/unknown SPY stay unchanged; no migration/reset/order/new opportunity. Next ready Execution package is a fresh explicitly tagged QQQ entry under retained cycle/10-percent basis, not another registration hold. |
+| Local console | Execution / existing loopback web | Prior127.0.0.1:8787 health=ok/broker_calls=false is historical. Current connection-check Docker inventory has no active project web container; not restarted here. No public exposure or control change. |
 | Data collection / finite D1 measurement | Data / terminal repair deployed; broader inventory closed | Official D/E known-terminal repair prevents full-page unknown-header fallback. Ten Data aliases/602 unique baked files match new846a900b image; actual provider/head yield unobserved. Recent25 shared KIS days; FirstRate251 scheduled2022-23 dates/250 shared complete sessions independently checked. No historical collector due; October6 00:29 owner/defaults/tasks/pace/Paper images unchanged. Input-local missingness does not block other prefixes. |
 | GPU | Research Steward / both October5 appointments closed | Paired LSTM/attention and subsequent three joint-allocation CUDA fits complete; latter10.965463s/peak68,181,504 bytes. Canonical lock/container reaped. No active appointment, environment/permission block or undispatched frozen campaign. Another useful hypothesis needs preparation, not training for utilization alone. |
 | Verification | Orchestrator / shared integration complete; isolated research/result integration verified | Prior full8,736/22 authority remains historical. October6 target/context187 serial and combined Paper/research297/no skips/two workers/clean managed helper pass; Ruff/both sample Compose pass. First default-long-temp Paper feedback failed persist/io_error after84 passes; preserved, not authority. No full-suite repeat, baked helper publication or active pytest owner; old scratch untouched. |
 
 ## Bottleneck And Reversible Improvement
 
-Operator confirms October6 mock-investment reapplication only; API/.env refresh
-remains outstanding and runtime linkage unconfirmed. Next Execution action is private
-configuration/linkage checking with old account custody preserved, not blind
-reposting. This scoped input does not delay ready historical CPU research.
+Operator's refreshed .env is valid/mode off and direct account reads now succeed.
+Canonical RO identity matches retained custody, so an unnecessary new-account
+migration is avoided. Next Execution package is a fresh explicit QQQ opportunity
+under the existing cycle/budget, not blind reposting or another setup hold.
+No task is manually invoked/changed here; old Scheduler opportunity is consumed.
+Ready historical CPU research remains independent. Temporary custody reviewer
+exited; its changed-account alternative is not needed for this observed identity.
 
-October6 result integration separates an actual provider categorized
-rejection from never-submitted no-intent. This closes the opportunity, not the
-OPEN company lifecycle. API expiry2027-06-22 is not proof of actual mock-account
-validity. Operator help is a private My Accounts/API-linkage check, not immediate
-reissue, a new approval or global research hold. Local config/custody and official
-BUY routing/body checks match; actual portal trading status remains unverified.
-Application screenshot states mock investment is at most three months without
-renewal; one-year API validity is not an actual investment end date.
+The consumed October6 opportunity remains a positive categorized rejection,
+not a filled cycle. Refreshed read health supersedes the setup wait without
+rewriting that rejection or asserting current order entitlement. No further
+operator setup decision is identified by the successful read-only check.
 Original execution graph remains exact funds -> persisted unit BUY -> exact
 fill -> unit SELL -> current owned-flat reconciliation. No fill stage completed.
 The reversible improvement is to stop blind retry of the consumed request and
