@@ -56,6 +56,15 @@ Do not infer expiry from an older null code, renew a token as an account fix,
 or blindly repost the closed request.
 Retain the original10-percent basis, unknown SPY custody and old private state;
 new account identity is a separate migration, not automatic budget adoption.
+Operator confirms October6 mock-investment reapplication only; API/.env steps
+remain outstanding. Complete its Paper API
+application, then privately update C:\Users\Public\Documents\thericher-v2\.env:
+KIS_PAPER_APP_KEY, KIS_PAPER_APP_SECRET, KIS_PAPER_ACCOUNT_NO and
+KIS_PAPER_ACCOUNT_PRODUCT_CODE. Keep THERICHER_MODE=off and KIS_LIVE_* untouched.
+Never paste values into chat. After the update, Execution checks the named
+virtual-only account/config path; a changed account needs separately scoped
+custody, not deletion or rewriting of the old private store. Reapplication is
+operator-reported only; no new runtime success, fill or budget binding yet.
 Exact outcome/hash/time-bound typed readback are in agents/execution.md.
 For offline ALL-RO inspection, use the existing strict unlocked state parser
 and before/after hashes; ordinary store.read needs a writable lock file.

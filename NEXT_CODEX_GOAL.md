@@ -33,6 +33,12 @@ position reconciliation. This is execution readiness, not profitability or live.
 
 ## Ready Parallel Packages
 
+Operator reports October6 mock-investment reapplication after suspected expiry.
+Only mock investment was reapplied; API/.env steps remain outstanding.
+Complete API reapplication and local KIS_PAPER_* refresh privately before the
+next owned virtual-only connection check. Registration alone is not readiness;
+preserve old account custody and do not copy its budget to a changed account.
+
 1. Execution owns the exact runtime result and reconciliation. Record rejection,
    no-intent, unknown outcome and fees/settled-cash/PnL limitations narrowly.
    Do not infer a fill from task exit, registration, cancellation or zero replay
@@ -40,12 +46,12 @@ position reconciliation. This is execution readiness, not profitability or live.
    blindly retry. This owned opportunity is consumed, no new QQQ next_due.
    Operator confirms2027-06-22 is API application validity, not an observed
    mock-account expiry. Its screenshot says mock investment is at most three
-   months and cannot renew. First check mock-trading My Accounts and its private
+   months and cannot renew. For the reapplied account, check My Accounts and its private
    API account linkage; do not demand reissue merely from the error label.
    Current local Paper config matches persisted custody; official BUY routing/
    body audit found no mismatch, but portal status remains unverified. Preserve old account/
-   budget/unknown SPY custody. Do not delete API registrations, change credentials,
-   reset state or substitute a request during account-status clarification.
+   budget/unknown SPY custody. Only the operator updates new credentials locally;
+   do not delete registrations, reset old state or substitute its closed request.
    Exact evidence and official source are in agents/execution.md.
 2. Data keeps useful current-data owners running. October5 normalized D/E
    terminal repair is verified/deployed to ten Data aliases/602 unique hashes;

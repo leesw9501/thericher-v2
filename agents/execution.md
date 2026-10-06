@@ -14,6 +14,15 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October6 operator reports mock investment was reapplied for after suspected
+expiry. This is operator-reported registration, not runtime readiness or proof
+of old-account expiry. Operator confirms only mock investment was reapplied;
+new API registration and local KIS_PAPER_* update are still outstanding.
+Next action is new Paper API registration and the private four-field update,
+then owned virtual-only account/linkage checking. Preserve all old private
+state, unknown SPY custody and rejected QQQ evidence; a changed account must
+not inherit old account identity or budget bytes. No new call/order occurred.
+
 October6 00:20 KST owned opportunity returned a fresh positive QQQ BUY
 rejection, NOT a never-attempted no-intent. Exact fixed public request tag
 `opportunity-20261006T0020KST-v1` matches one strictly parsed private intent;

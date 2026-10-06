@@ -27,6 +27,13 @@ Absent original-date history does not identify its outcome. Never repost,
 reset, substitute or adopt that leg. A distinct QQQ job and independent lanes
 continue without a global hold.
 
+October6 operator reports mock-investment reapplication after suspected expiry.
+Only mock investment was reapplied; API reapplication and local KIS_PAPER_*
+refresh remain outstanding. Do not
+equate registration with account readiness. Next Execution step is the private
+configuration/linkage check, preserving old account custody without resetting
+or copying its budget into a changed account. No new broker call/order here.
+
 QQQ's October6 00:20 KST scheduled BUY was actually submitted and positively
 rejected/closed as `paper_account_expired`, with no acknowledgement or fill.
 Exact public tag/time/private terminal binding validates; the old October2

@@ -24,6 +24,11 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 
 ## Bottleneck And Reversible Improvement
 
+Operator confirms October6 mock-investment reapplication only; API/.env refresh
+remains outstanding and runtime linkage unconfirmed. Next Execution action is private
+configuration/linkage checking with old account custody preserved, not blind
+reposting. This scoped input does not delay ready historical CPU research.
+
 October6 result integration separates an actual provider categorized
 rejection from never-submitted no-intent. This closes the opportunity, not the
 OPEN company lifecycle. API expiry2027-06-22 is not proof of actual mock-account
