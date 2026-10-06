@@ -22,8 +22,10 @@ position reconciliation. This is execution readiness, not profitability or live.
   expansion, original intent price/TTL refresh or unknown SPY reset.
   Actual v2 result23:10:46 KST: BUY submitted then positively rejected/closed
   as paper_account_expired, no acknowledgement/fills. The delay fix works;
-  actual mock-account validity/API linkage is still not observed. Operator
-  was asked to compare the actual investment end date and registration privately.
+  operator now confirms active actual investment period and matching API
+  registration. Server-side overseas order entitlement remains unobserved;
+  the response label is not proof of actual expiry. Current local Compose
+  projection matches all four refreshed fields and virtual route/mode.
   Do not blindly retry the unchanged rejection or infer a successful round trip.
 - `thericher-kis-paper-qqq-unit-20261006`: October6 00:20 KST, fixed cycle
   `qqq-unit-20261003-v1`, tag `opportunity-20261006T0020KST-v1`.
@@ -55,7 +57,8 @@ read-only discovery succeeds: complete account snapshot/two positions/zero
 opens, one auth/five GETs. Canonical RO binding matches retained account custody;
 no migration/reset/new basis. This does not prove order entitlement or a fill.
 Both foreground opportunities are consumed. Next Execution work is account-
-entitlement clarification, not replay of either closed tag. Independent research
+entitlement clarification with KIS VOC, not replay of either closed tag or
+another request to confirm the already-reported account period. Independent research
 and existing Data refresh continue without a global pause or new approval gate.
 
 1. Execution owns the exact runtime result and reconciliation. Record rejection,
@@ -67,8 +70,11 @@ and existing Data refresh continue without a global pause or new approval gate.
    mock-account expiry. Its screenshot says mock investment is at most three
    months and cannot renew. Refreshed config now passes direct account reads and
    matches retained custody; do not demand another reissue from the old label.
-   Official BUY routing/body audit found no mismatch; order entitlement after
-   reapplication remains unobserved. Preserve budget/unknown SPY custody and
+   Operator confirms the actual mock period is active and the registered
+   account matches. Local dispatch/config projection and official BUY routing/
+   body audit found no concrete mismatch. Ask KIS VOC to clarify overseas mock
+   order entitlement/API linkage; neither a propagation delay nor automatic
+   reissue is an established fix. Preserve budget/unknown SPY custody and
    closed requests. Declare any new entry tag/opportunity explicitly, using
    fresh exact-limit funds and existing intent-before-submit/recovery contracts.
    No new request or opportunity was installed by this read-only check.

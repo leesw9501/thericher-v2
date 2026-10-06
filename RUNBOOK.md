@@ -50,7 +50,39 @@ Standing mock trading -> Menu -> Stock balance/profit (or futures balance).
 Privately compare that account with API registration and local Paper config;
 report only active/expired/mismatched, never account identifiers or secret values.
 Only confirmed account expiry warrants the notice's reissue/reapplication
-procedure. An active matching account instead calls for KIS support clarification.
+procedure. Operator NOW confirms the actual investment period is active and
+the account matches KIS Developers registration. Do not ask for that same
+confirmation again. `paper_account_expired` is the retained response category,
+not an independent observation of actual expiry. KIS's notice directs cases
+outside its listed explanations to VOC (customer inquiry).
+
+October6 local diagnostic confirms current .env-to-Compose four-field equality,
+the virtual host/mode, stock-mock prefix and product01. No concrete official US
+BUY path/TR-ID/body mismatch was identified. This is not a replay of prior wire
+bytes or independent server-side entitlement; no new broker calls were made.
+Use the following minimal inquiry via KIS Developers/customer support. Do not
+include API keys, secrets, access tokens, private state, or raw broker bodies.
+If support needs an account number, provide it only through its authenticated
+private support form, never this chat or project evidence.
+
+```text
+My actual stock-mock investment period is active, and its account matches
+KIS Developers registration. Token issuance and account/position reads succeed.
+At 2026-10-06 23:10:46 KST, a QQQ/NASD limit BUY was rejected with the category
+we map from 40910000. Endpoint: /uapi/overseas-stock/v1/trading/order;
+mock BUY TR ID: VTTT1002U; order type: 00. No acknowledgement or fill.
+Please check US/overseas stock mock-order entitlement and API account linkage.
+Does a separate overseas mock entitlement or investment period apply?
+If reapplication needs server-side reflection, specify the required action
+and expected timing. The notice's expired-account explanation does not match
+the currently active investment period; please identify the applicable cause.
+```
+
+No official propagation interval or token-renewal remedy was identified. Do not
+invent a wait or blindly reissue credentials. Resume a distinct explicit request
+after a concrete corrective fact, preserving the original budget and rejected
+records. No approval gate or general pause is introduced. Safe diagnostic:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\active-account-dispatch-diagnostic-20261006-v1.json`.
 Local config-to-custody match does not prove portal registration. No BUY routing/
 body mismatch was found against the current official US Paper order sample;
 its separate SELL documentation/branch conflict does not explain this BUY.

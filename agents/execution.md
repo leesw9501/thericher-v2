@@ -40,9 +40,11 @@ as paper_account_expired, no ack or BUY/SELL fill. Exact terminal binding and
 aggregate budget validate in network-none ALL-RO projection; read bytes stable.
 This is a real rejection, NOT another expiry/no-submit or an inferred fill.
 The official KIS notice re-retrieved October6 maps the numeric response to
-expired mock accounts and distinguishes API validity; active mock-account
-expiry/portal linkage remain unobserved. Operator was asked to privately compare
-actual investment end date and registered account, with status only/no values.
+expired mock accounts and distinguishes API validity. Operator NOW confirms
+active actual investment period and matching KIS Developers registration.
+This operator report contradicts a simple expiry explanation; it is not an
+independent server-side overseas order-entitlement observation. Do not ask for
+the same period/account confirmation again or describe the account as expired.
 Do not blindly retry this unchanged response, renew tokens as an account fix,
 reset the original10-percent basis/unknown SPY, or stop independent research.
 Exact outcome:
@@ -63,6 +65,24 @@ No worker remains. Fees/settled cash/net broker PnL and current owned-flat
 reconciliation remain unobserved. Loopback web is restored, health ok/
 broker_calls false,127.0.0.1:8787 only; no inherited KIS environment/runtime
 write mount or public exposure. Unrelated repo-app-1 stays unchanged.
+
+October6 active-account diagnostic rechecks the current dispatch locally:
+Compose accepts all four whitelisted Paper fields unchanged from .env, mode/
+host remain virtual, no unexpected KIS environment names; stock mock prefix
+and product01 match. No credentials, raw values or prior wire environment are
+retained. The official US mock BUY path/TR ID/NASD/limit body has no concrete
+mismatch found; this audit does not prove every earlier wire byte or entitlement.
+Official notice sends non-applicable expiry/mismatch cases to KIS VOC. Next
+action is overseas mock-order eligibility/API-linkage clarification using the
+RUNBOOK inquiry. No supported propagation SLA or token-renewal fix was found.
+No new broker call/order/schedule/budget change. Claude again exits1 with no
+substantive verdict: review_unavailable, NOT agreement. Source-safe diagnostic:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\active-account-dispatch-diagnostic-20261006-v1.json`,
+SHA256 fc0fd9233a7515ffd4b4841150930591fe4f8f4ce50d81d07eb1655fdf4da84e.
+Documentation-only diagnostic passes111 focused numeric-category/QQQ-runner
+tests with one clean helper worker/2.99s, Ruff and both sample-env Compose
+profiles. No shared implementation changed or full-suite rerun was required;
+the previous9,072/22 shared-runtime authority remains a separate result.
 
 October6 operator reports reapplication and local .env update. At22:26:57 KST
 the existing named read-only discovery collected a complete virtual snapshot:

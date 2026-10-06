@@ -29,9 +29,14 @@ revalidate its account clocks/ownership and retain exact-price funds and wire
 deadline. Permit only an exact closed expired never-sent prefix for a NEW
 explicit tag, without rewriting original intent/TTL or weakening unknown recovery.
 v2 actually reached submission6.365s after intent creation, then the provider
-positively rejected it. The current Paper bottleneck is account entitlement/
-portal linkage, not a software approval or GPU dependency. The operator was
-asked for status only; do not request keys/IDs or demand blind reissue.
+positively rejected it. The current Paper bottleneck is an unexplained provider
+order rejection on an operator-confirmed active matching account, not a
+software approval or GPU dependency. Server-side entitlement/API linkage
+is the next question, not an established root cause.
+Operator confirms active mock period and matching registration. Local fresh-
+config/Compose/virtual-route projection finds no concrete mismatch; it does
+not reconstruct the prior wire. The next discriminating action is KIS VOC
+clarification, not repeating the reported status, key reissue or token renewal.
 
 ## Blocked-Goal Alternatives
 
@@ -41,7 +46,7 @@ Full cycle is not complete; do not replace the goal by calling preparation succe
 
 | Ready package | Owner / resource / approach | Bounded evidence / strongest kill / recovery |
 | --- | --- | --- |
-| Account entitlement clarification | Execution / official public sources and operator's private portal comparison | Verify actual investment end date/API registered account, not API expiry. Official notice re-retrieved; mismatch or still-expired request kills blind retry. Active matching account needs KIS VOC clarification, not another order or live route. |
+| Account entitlement clarification | Execution / official sources and KIS VOC | Operator confirms active matching mock account; local four-field Compose/stock-product/virtual-route parity holds and no concrete BUY request mismatch was found. Use RUNBOOK's inquiry for overseas order eligibility/API linkage. An unchanged rejection without a concrete fix kills that retry, not another lane; no blanket account-expired assertion, automatic reissue or live route. |
 | Forward-risk CPU baseline | Engine Research / retained seen FirstRate source | Freeze chronological TRAIN-only transforms, past-variance and TRAIN-mean controls before fitting. Exact pinned replay/loss/missingness evidence; future-dependence or failure against controls kills this candidate only. Continue while Paper setup is unresolved. |
 | Current collection maintenance | Data / existing named refresh worker | Preserve owned cursor/scope/pace/next_due and independently read exact next receipt. A missing or failed receipt is not coverage or finality; recover that owner without opening a new collector/schedule. |
 
@@ -49,5 +54,7 @@ Claude's falsification challenge of the actual rejection/alternatives exited1/
 uncategorized: review_unavailable, NOT agreement or independent-lane hold.
 Evidence:
 D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\claude-refreshed-rejection-alternatives-20261006-v1.json.
-No reserved paid/live/public authority is sought; account status information is
+The subsequent active-account challenge is also review_unavailable/exit1,
+not agreement. Current local diagnostic pointer belongs to agents/execution.md.
+No reserved paid/live/public authority is sought; server-side clarification is
 needed for this execution leg only. There is no foreground timer or new worker.

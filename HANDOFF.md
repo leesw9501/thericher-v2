@@ -37,8 +37,17 @@ Both new foreground tags are now consumed under the existing cycle/budget.
 v1 expired BEFORE any submission; verified recovery repair removes redundant
 pre-submit account reads without extending TTL. v2 actually submitted at
 23:10:46 KST and was positively rejected/closed as paper_account_expired,
-no acknowledgement or fill. Actual investment end date/API account linkage
-needs operator status clarification; there is no new approval or global hold.
+no acknowledgement or fill. Operator now confirms the actual investment
+period is ACTIVE and the account matches KIS Developers registration. This is
+operator-reported status, not independent server-side order entitlement.
+The error label does not establish actual expiry. October6 local in-process
+Compose projection matches all four refreshed Paper fields, virtual host/mode,
+stock-mock prefix and product01; no unexpected KIS names or broker calls.
+No concrete BUY route/body mismatch was found against the official example.
+KIS's notice sends cases outside its listed explanations to VOC: next action
+is overseas mock-order entitlement/API linkage clarification, not another blind
+reissue or token renewal. Safe diagnostic pointer and inquiry are in Execution
+and RUNBOOK. There is no new approval or global hold.
 Original budget/unknown SPY/closed records remain; exact evidence belongs to
 Execution. Next independent research package is forward-risk CPU baselines.
 
