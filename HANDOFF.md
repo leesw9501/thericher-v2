@@ -63,9 +63,18 @@ Exact external pointer/hash and limitations are in agents/execution.md.
 Do not manually invoke, reset the tag or substitute an order.
 Existing strategy remains October5 23:50 KST with its own locks/budget.
 The same-chat qqq-paper follow-up read this result and was deleted; no new
-follow-up chain, recurring worker or QQQ next_due. Operator help is needed for
-KIS mock-account renewal/API reapplication, not another permission gate.
+follow-up chain, recurring worker or QQQ next_due. Operator confirms the
+2027-06-22 expiry/disabled renewal belongs to API application status. API and
+mock-account validity are separate; actual mock-account expiry/linkage remains
+unverified. The application screenshot states mock investment is at most three
+months with no renewal; the API date is not its investment end date.
+Inspect actual mock-trading My Accounts and compare its account
+privately before reissue; the earlier unconditional renewal advice is withdrawn.
 Official guidance: https://apiportal.koreainvestment.com/intro.
+Offline current Paper config matches persisted account custody and virtual-only
+route; official US Paper BUY routing/body comparison finds no concrete mismatch.
+SELL sample documentation/branch conflict is separate, not this BUY's cause.
+Neither proves the portal account registration or actual trading entitlement.
 New account custody must not silently inherit the old account's budget or
 unknown SPY orders. Existing source-safe research preparation continues;
 no registration/credentials/private-state/schedule change occurred here.
@@ -145,7 +154,7 @@ Paper-research focused tests pass; managed two-worker helper cleans its root.
 Future target faults do not alter past120-bar context or naive baseline inputs.
 No real-data target pass, fit, GPU campaign, model selection or Paper input;
 temporary role exited. Next bounded CPU source/hash-bound smoke is independent
-of mock-account renewal. Exact constructor/tests and limits are in the Engine
+of account-status clarification. Exact constructor/tests and limits are in the Engine
 stateboard; prior closed families remain unchanged.
 
 October5 first30-to-closing29 long/flat mechanism also completed60 CPU cells,

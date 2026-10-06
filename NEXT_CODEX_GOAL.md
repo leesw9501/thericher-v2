@@ -21,7 +21,7 @@ position reconciliation. This is execution readiness, not profitability or live.
   October6 00:29; their results are not attributed by this QQQ follow-up.
   One-shot `qqq-paper` inspected the actual result and was deleted, no chain.
 - October2 QQQ BUY was positively rejected without a broker reference.
-  The later fixed-tag result is the positive expiry rejection above, NOT
+  The later fixed-tag result is the positive categorized rejection above, NOT
   a cause attribution for October2. No QQQ fill/round trip. Same-tag recovery
   retains original price/TTL/identity; an unknown outcome reconciles only.
 - SPY's superseded lifecycle remains INCOMPLETE. Preserve unknown successor,
@@ -38,11 +38,14 @@ position reconciliation. This is execution readiness, not profitability or live.
    Do not infer a fill from task exit, registration, cancellation or zero replay
    quantity. If rejected, diagnose its concrete retained category rather than
    blindly retry. This owned opportunity is consumed, no new QQQ next_due.
-   Operator help is mock-account renewal/API reapplication through the broker's
-   private app/site, not permission to use Paper. Preserve old account/budget/
-   unknown SPY custody; any replacement account requires separate identity
-   handling before a future owned opportunity. Do not delete API registrations,
-   change credentials, reset state or substitute a request in this follow-up.
+   Operator confirms2027-06-22 is API application validity, not an observed
+   mock-account expiry. Its screenshot says mock investment is at most three
+   months and cannot renew. First check mock-trading My Accounts and its private
+   API account linkage; do not demand reissue merely from the error label.
+   Current local Paper config matches persisted custody; official BUY routing/
+   body audit found no mismatch, but portal status remains unverified. Preserve old account/
+   budget/unknown SPY custody. Do not delete API registrations, change credentials,
+   reset state or substitute a request during account-status clarification.
    Exact evidence and official source are in agents/execution.md.
 2. Data keeps useful current-data owners running. October5 normalized D/E
    terminal repair is verified/deployed to ten Data aliases/602 unique hashes;
@@ -79,7 +82,7 @@ position reconciliation. This is execution readiness, not profitability or live.
    115 new cases/187 context integration/297 combined Paper-research tests pass.
    It is not a real-data campaign, model or Paper input. Next ready CPU package
    is source/hash-bound scheduled-key target/input smoke before a predictive
-   contract; do not wait for mock-account renewal or retune killed families.
+   contract; do not wait for account-status clarification or retune killed families.
 
 ## Completion And Verification
 

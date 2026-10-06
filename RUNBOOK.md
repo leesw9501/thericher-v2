@@ -34,12 +34,26 @@ The `qqq-paper` chat follow-up inspected the result and was deleted; no chain.
 Registration/task exit is not a submit/fill; use exact immutable outcomes and
 strict private projection only. Computer/Docker/app must remain running.
 
-For this account-expiry response, KIS's official notice directs mock-account
-replacement and mock API reapplication, independent of API-key validity:
+For the account-expiry response category, KIS's official notice distinguishes
+mock-account validity from API application/key validity:
 https://apiportal.koreainvestment.com/intro.
-The operator confirms the mock account via the broker's app/site and performs
-any login/registration steps privately. Do not infer expiry from an older null
-code, renew a token as an account fix, or blindly repost the closed request.
+Operator's2027-06-22/disabled renewal is on API application status; it does not
+establish the actual mock account's expiry. Do not delete/reissue the API first.
+The supplied application screenshot states mock investment lasts at most three
+months and cannot renew; its one-year API date is not the investment end date.
+Check the actual account at the broker website: Trading -> Mock trading ->
+Stocks/Futures-options mock trading -> Mock trading guide -> My Accounts.
+Alternatively in the broker app: Menu -> Mock trading -> Mock login ->
+Standing mock trading -> Menu -> Stock balance/profit (or futures balance).
+Privately compare that account with API registration and local Paper config;
+report only active/expired/mismatched, never account identifiers or secret values.
+Only confirmed account expiry warrants the notice's reissue/reapplication
+procedure. An active matching account instead calls for KIS support clarification.
+Local config-to-custody match does not prove portal registration. No BUY routing/
+body mismatch was found against the current official US Paper order sample;
+its separate SELL documentation/branch conflict does not explain this BUY.
+Do not infer expiry from an older null code, renew a token as an account fix,
+or blindly repost the closed request.
 Retain the original10-percent basis, unknown SPY custody and old private state;
 new account identity is a separate migration, not automatic budget adoption.
 Exact outcome/hash/time-bound typed readback are in agents/execution.md.

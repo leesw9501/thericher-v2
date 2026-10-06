@@ -16,7 +16,7 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 | SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
 | Aggregate strategy sizing | Execution / existing strategy and private intent store | October2 23:50 owner returns no_intent/existing_inventory_or_order_conflict. No adoption/new order/reset. Ready, next_due October5 23:50 KST;10-percent policy unchanged. |
 | Research | Engine Research / closed families; independent CPU target preparation complete | October5 paired/joint/first30 families retain their kills. New pure forward-variance labels pass115 synthetic cases;187 combined context tests and297 focused Paper/research tests pass. No real-data labels/fits/GPU/selection/Paper input. Invoked role exited. Next ready package is source/hash-bound scheduled-key target/input smoke, not a same-family rescue or account wait. |
-| Independent Paper readiness | Execution / consumed exact-tag opportunity | October6 00:20 owner actually submitted a BUY; positive time-bound rejection/closed terminal proof, category paper_account_expired, no acknowledgement or BUY/SELL fills. Aggregate/owner readback validates and bytes stable; original budget/unknown SPY protected. Ready/last00:20/result23/no next trigger; exact worker absent. Operator account renewal help needed; no registration/credential/tag/budget/schedule change. One-shot qqq-paper deleted, no replacement chain. |
+| Independent Paper readiness | Execution / consumed exact-tag opportunity | Actual BUY positively rejected/closed, category paper_account_expired, no fills. Operator's2027-06-22 is API application validity; actual mock expiry/portal linkage unverified. Offline Paper config matches persisted custody and official request source. Next check actual My Accounts status privately, not unconditional API reissue. Original budget/unknown SPY protected; Ready/no next trigger/no worker; no credential/state/tag/schedule change. One-shot qqq-paper deleted. |
 | Local console | Execution / existing loopback web | Rechecked container was exited, then restarted unchanged.127.0.0.1:8787 health=ok/broker_calls=false. No public bind, credential read, dashboard broker call or control change. |
 | Data collection / finite D1 measurement | Data / terminal repair deployed; broader inventory closed | Official D/E known-terminal repair prevents full-page unknown-header fallback. Ten Data aliases/602 unique baked files match new846a900b image; actual provider/head yield unobserved. Recent25 shared KIS days; FirstRate251 scheduled2022-23 dates/250 shared complete sessions independently checked. No historical collector due; October6 00:29 owner/defaults/tasks/pace/Paper images unchanged. Input-local missingness does not block other prefixes. |
 | GPU | Research Steward / both October5 appointments closed | Paired LSTM/attention and subsequent three joint-allocation CUDA fits complete; latter10.965463s/peak68,181,504 bytes. Canonical lock/container reaped. No active appointment, environment/permission block or undispatched frozen campaign. Another useful hypothesis needs preparation, not training for utilization alone. |
@@ -24,10 +24,14 @@ all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only
 
 ## Bottleneck And Reversible Improvement
 
-October6 result integration separates an actual provider account-expiry
+October6 result integration separates an actual provider categorized
 rejection from never-submitted no-intent. This closes the opportunity, not the
-OPEN company lifecycle. Operator login/account-registration help is required
-for that endpoint outcome; it is not a new approval or global research hold.
+OPEN company lifecycle. API expiry2027-06-22 is not proof of actual mock-account
+validity. Operator help is a private My Accounts/API-linkage check, not immediate
+reissue, a new approval or global research hold. Local config/custody and official
+BUY routing/body checks match; actual portal trading status remains unverified.
+Application screenshot states mock investment is at most three months without
+renewal; one-year API validity is not an actual investment end date.
 Original execution graph remains exact funds -> persisted unit BUY -> exact
 fill -> unit SELL -> current owned-flat reconciliation. No fill stage completed.
 The reversible improvement is to stop blind retry of the consumed request and
@@ -38,7 +42,7 @@ One temporary Engine role was dispatched in parallel with exact result/docs
 integration, completed the two-file pure target package, then exited. The
 parent added a cross-helper future-mutation test rather than retraining a killed
 model or introducing a new worker/report. Ready historical CPU preparation has
-no dependency on operator mock-account renewal; no GPU campaign is yet frozen.
+no dependency on account-status clarification; no GPU campaign is yet frozen.
 
 Current October5 throughput review: old SPY's unavailable successor identity
 blocks its exact superseded lifecycle only. Reassignment while incomplete

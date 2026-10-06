@@ -38,14 +38,35 @@ Scheduler is Ready, last00:20 KST/result23, no next trigger; exact worker absent
 Exit23 alone was not used as order evidence. Fees/settled cash/net PnL remain
 unobserved; `qqq-restart-safe-unit-paper-v1` remains OPEN/incomplete.
 
-Operator help: KIS's official Paper notice advises replacing an expired mock
-account and reapplying for its mock API, independently of API-key validity:
-https://apiportal.koreainvestment.com/intro.
-Confirm the mock account in the broker's app/site, then follow its reapplication
-steps privately; never paste new values into chat. Account replacement is NOT
-an identity/budget reset: preserve old state/evidence, and treat any new account
-as separately scoped custody before a future owned opportunity. No registration,
-credential change, new tag, substitute submit or schedule change occurred here.
+October6 operator clarification:2027-06-22 and disabled renewal are displayed
+on KIS Developers API application status, NOT the mock-trading My Accounts
+screen. API validity and mock-account validity are distinct according to the
+official notice: https://apiportal.koreainvestment.com/intro.
+The supplied application-status screenshot also states that mock investment
+lasts at most three months and mock renewal is unavailable. Its one-year API
+date does not establish the actual investment end date; no personal screenshot
+values or screenshot copy are retained in project records.
+The response category remains exact evidence, but actual mock-account expiry
+and portal-to-API account linkage are not independently observed. The earlier
+unconditional reissue instruction is withdrawn; do not delete/renew API keys
+or replace the account merely from the response label or API date.
+First inspect the actual mock-trading My Accounts status and privately compare
+its account with API registration and local Paper configuration. No values
+should be pasted into chat. If the same actual account is active and correctly
+registered, the simple expiry explanation is contradicted and KIS support
+must clarify the response. Reissue guidance applies only to confirmed expiry.
+Local offline whitelist comparison validates the stock-mock account shape,
+virtual-only route and equality with existing persisted budget identity; this
+does NOT verify the broker's portal linkage. Current official overseas order
+sample matches our path/US Paper BUY TR ID/NASD-AMEX/order-type and body
+conventions; no BUY routing/body mismatch was found. Independent source audit
+notes the sample's SELL documentation and executable branch disagree, and
+Accept/blank tr_cont headers differ. These are not established causes of this
+BUY rejection; do not change the SELL route from the contradictory demo alone:
+https://github.com/koreainvestment/open-trading-api/blob/main/examples_llm/overseas_stock/order/order.py.
+No KIS/auth/order call, live read, registration, credential/state/budget change,
+new request or schedule change occurred in this clarification. Preserve old
+custody if a later account replacement is actually necessary.
 The expired task definition remains; one-shot `qqq-paper` was deleted after
 inspection. Claude exit1/uncategorized is `review_unavailable`, not agreement.
 Readback used the existing strict unlocked parser on a network-none, ALL-RO
@@ -57,6 +78,8 @@ sample-env Compose configurations pass. Initial default-long-temp run stopped
 at84 passes/one persist/io_error failure; it is not authority and its scratch
 is retained. No production code was changed to obtain the passing result.
 Documentation-only result integration does not rerun full-suite authority.
+The clarification's source-safe Claude challenge again exited1/uncategorized;
+it is review_unavailable, not a supporting verdict or a global research hold.
 
 The isolated read-only QQQ/NASD VTTS3007R diagnostic received an accepted,
 typed response at2026-10-02 23:04:20 UTC: one token POST/one GET/zero orders,
