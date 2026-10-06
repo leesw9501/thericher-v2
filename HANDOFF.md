@@ -33,8 +33,14 @@ account snapshot/two positions/zero opens. Canonical RO private binding matches
 the retained account, so no custody/budget migration is necessary. Exact safe
 receipt/hash is in Execution. This proves reads, not order entitlement, old SPY
 resolution, owned-flat state or a new fill. No orders, reset or schedule change.
-Next Execution package is a correctly scoped fresh QQQ entry under the existing
-cycle/aggregate10-percent basis, preserving all prior closed/unknown evidence.
+Both new foreground tags are now consumed under the existing cycle/budget.
+v1 expired BEFORE any submission; verified recovery repair removes redundant
+pre-submit account reads without extending TTL. v2 actually submitted at
+23:10:46 KST and was positively rejected/closed as paper_account_expired,
+no acknowledgement or fill. Actual investment end date/API account linkage
+needs operator status clarification; there is no new approval or global hold.
+Original budget/unknown SPY/closed records remain; exact evidence belongs to
+Execution. Next independent research package is forward-risk CPU baselines.
 
 QQQ's October6 00:20 KST scheduled BUY was actually submitted and positively
 rejected/closed as `paper_account_expired`, with no acknowledgement or fill.
@@ -50,11 +56,15 @@ Fees, settled cash and net broker PnL remain unobserved unless independently see
 Exact QQQ-at-ORIGINAL-limit funds before every BUY, same-tag original intent/
 price/TTL recovery, orphan binding recovery and categorical future numeric errors
 are integrated and independently reviewed. Unknown outcomes reconcile only.
-Distinct explicit tags may follow only positively rejected/closed prefixes.
+Distinct explicit tags may follow positive rejection or exact retained proof
+of a closed expired never-sent BUY, never an unknown/started/acknowledged request.
 The old null-code rejection has no inferred cause.
 
-Eight existing Paper consumers match40 critical hashes; current Paper image:
-sha256:ceac0e3c0d11723d6b3c46a59a8c917b6dca4291128915227e9cce1778289d63.
+Eight existing Paper consumers match607 source/lock hashes; current Paper image:
+sha256:0ff015deadbfaea80525f69f4d8d94ad5847018a6229cd376864c41f5017b53b.
+Fresh canary reconciliation feeds the budget's identity/ownership checks;
+exact-limit funds, current timestamps and before-wire deadline remain enforced.
+No scheduler or private budget reset; exact deployment pointer is in Execution.
 The standalone synthetic-price read-only diagnostic accepted one typed response
 at23:04:20Z, one auth/one GET/zero orders. This is endpoint acceptance only,
 not actual-limit funds, prior-rejection explanation or Monday's fill readiness.
@@ -91,8 +101,9 @@ credentials, private state or schedules. The subsequent operator update and
 successful direct read are recorded above; no further setup hold remains.
 
 Loopback dashboard http://127.0.0.1:8787 last observed health=ok/broker_calls=false;
-October6 connection-check inventory shows no active project web container.
-It was not restarted in this read-only check. No public exposure.
+October6 Infra restored the existing web-only service without build/dependencies
+or operational .env; listener is127.0.0.1:8787 only, runtime mount RO/no KIS env.
+Parent health read confirms ok/broker_calls false. No public exposure or controls.
 Unrelated repo-app-1 is not project-owned.
 
 ## Data Ready / Owned / Due
@@ -159,6 +170,15 @@ Market data remains D:\market_data; artifacts D:\thericher-v2\model-artifacts
 Preserve15-percent D: floor. Test scratch prefers measured-fast local C:\trpy.
 
 ## Research And Resources
+
+October6 source/hash-bound forward-variance target/input smoke is complete.
+All251 scheduled paired past120-M1 inputs are available;249 next60-minute targets
+per ETF and two early-close shortfalls remain separately visible.40 new tests/
+227 focused passes,532 mutation checks and parent independent ALL-RO Docker
+replay match exact commitments. Root/pins belong to Engine Research. No fits,
+GPU appointment, selection, independent holdout or Paper claim; this is revised/
+seen development preparation, not new market data or a killed-family rescue.
+Next ready package freezes chronological TRAIN-only risk baselines before fits.
 
 October6 independent Engine package adds pure forward M1 realized-variance
 labels: default60-minute next-minute-entry target,61 completed OPEN bars and
@@ -279,6 +299,14 @@ D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-idless
 Do not repeatedly invoke that unchanged failure or pause independent ready work.
 
 ## Verification And Resume
+
+Latest October6 shared execution recovery/research integration:362 changed-path
+one-worker passes/12.77s, full9,072 passed/22 skipped/35 warnings/349.27s,
+eight workers/clean helper exit, matching9,094 collected. Ruff and default/
+research-profile sample-env Compose pass. Independent source review no findings;
+Python3.12 new image imports and607 baked hashes match. Claude fix/alternatives
+exit1/uncategorized are review_unavailable, not agreement. No full-suite rerun
+is needed for this subsequent documentation integration alone.
 
 Latest SPY/patch shared-source integration:184 changed-path serial passes,
 59 pinned Torch CPU passes; full8,186 passed/22 skipped/35 warnings/317.40s,

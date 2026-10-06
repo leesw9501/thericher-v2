@@ -661,8 +661,51 @@ def _qqq_rejected_entry(record, state, evidence) -> bool:
         return False
 
 
+def _qqq_closed_unfilled_entry(record, state, evidence) -> bool:
+    """A new tag may follow an exact rejection or expired never-sent BUY."""
+    if _qqq_rejected_entry(record, state, evidence):
+        return True
+    if (
+        not isinstance(record, dict)
+        or set(record) != {"run_id", "intent_ref", "closed"}
+        or record.get("closed") is not True
+        or type(state) is not KisPaperCanaryState
+        or (state.intent.symbol, state.intent.exchange, state.intent.side, state.intent.quantity)
+        != ("QQQ", "NASD", "buy", Decimal(1))
+        or record.get("run_id") != state.intent.run_id
+        or record.get("intent_ref") != state.intent.fingerprint
+        or state.phase != "intent_recorded"
+        or state.reason_code != "intent_expired"
+        or state.updated_at < state.intent.valid_until
+        or state.cancel_after_submit
+        or state.fill_observation_status != "not_observed"
+        or any(
+            value is not None
+            for value in (
+                state.submission_started_at,
+                state.submitted_at,
+                state.broker_order_id,
+                state.cumulative_fill,
+                state.fill_observed_at,
+                state.submit_response_category,
+                state.submit_upstream_code,
+            )
+        )
+        or not isinstance(evidence, dict)
+        or set(evidence) != {"state", "cancellation"}
+        or evidence["cancellation"] is not None
+    ):
+        return False
+    try:
+        return KisPaperCanaryState.from_dict(evidence["state"]) == state and _digest(
+            evidence["state"]
+        ) == _digest(state.to_dict())
+    except (ValueError, TypeError, KeyError, AttributeError, DecimalException):
+        return False
+
+
 def _qqq_filled_entry(records, states, terminal_evidence) -> KisPaperCanaryState | None:
-    """Accept only rejected BUY prefix -> one filled BUY -> unit SELL suffix."""
+    """Accept closed unfilled BUY prefix -> one filled BUY -> unit SELL suffix."""
     if len(records) != len(states):
         return None
     entry = None
@@ -680,7 +723,7 @@ def _qqq_filled_entry(records, states, terminal_evidence) -> KisPaperCanaryState
             if state.intent.side != "sell":
                 return None
             continue
-        if _qqq_rejected_entry(record, state, evidence):
+        if _qqq_closed_unfilled_entry(record, state, evidence):
             continue
         if (
             state.intent.side != "buy"
@@ -980,17 +1023,18 @@ def run_kis_paper_budget_strategy(
                 client=client,
                 now=now,
                 clock=clock,
-                submit_permitted=permitted,
+                submit_permitted=is_us_equity_regular_session_window,
+                submit_reconciliation_check=permitted,
                 execution_control_path=execution_control_path,
                 require_existing_state=True,
                 price_contract_ref=intent.price_contract_ref,
             )
 
-        def fresh_book():
+        def fresh_book(snapshot=None):
             nonlocal failure_stage
             previous_stage = failure_stage
             failure_stage = "account"
-            snapshot = client.snapshot()
+            snapshot = client.snapshot() if snapshot is None else snapshot
             if qqq_cycle_id is None:
                 quantity, opens = _spy_book(snapshot, at(), config)
             else:
@@ -1030,21 +1074,24 @@ def run_kis_paper_budget_strategy(
             return quantity, opens, funds
 
         def permitted(binding, state):
-            def check(submit_at):
+            def check(reconciliation, submit_at):
                 nonlocal failure_stage
                 previous_stage = failure_stage
                 if not is_us_equity_regular_session_window(submit_at):
                     return False
                 failure_stage = "ownership"
                 owned = project(binding)
-                quantity, opens, funds = fresh_book()
+                if reconciliation.snapshot is None:
+                    raise _RecoveryRequired("snapshot_unavailable")
+                # Reuse the canary's just-read account, revalidating its timestamps.
+                quantity, opens, funds = fresh_book(reconciliation.snapshot)
                 if opens or quantity != owned.quantity:
                     raise _RecoveryRequired("pre_submit_ownership_changed")
                 if state.intent.side == "buy":
                     if qqq_cycle_id is not None:
                         funds = min(funds, exact_qqq_funds(state.intent.limit_price))
                         if not all(
-                            _qqq_rejected_entry(
+                            _qqq_closed_unfilled_entry(
                                 row,
                                 read_state(row),
                                 binding["terminal_evidence"].get(row["run_id"]),
@@ -1205,7 +1252,7 @@ def run_kis_paper_budget_strategy(
             ):
                 raise _RecoveryRequired("budget_intent_mismatch")
             if not all(
-                _qqq_rejected_entry(
+                _qqq_closed_unfilled_entry(
                     row, read_state(row), binding["terminal_evidence"].get(row["run_id"])
                 )
                 for row in _orders(binding, qqq_cycle_id)
@@ -1427,7 +1474,7 @@ def run_kis_paper_budget_strategy(
                         if qqq_entry_request_id is None:
                             return result("no_intent", "target_already_satisfied")
                         if not all(
-                            _qqq_rejected_entry(
+                            _qqq_closed_unfilled_entry(
                                 row,
                                 read_state(row),
                                 binding["terminal_evidence"].get(row["run_id"]),

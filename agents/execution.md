@@ -14,6 +14,56 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October6 foreground opportunities are consumed; company goal remains OPEN.
+Tag reapplied-account-20261006-v1 expired before any submission/ack/fill.
+Intent created13:46:06Z, expiry transition13:46:50Z; strict RO readback validates
+the exact tag and budget. Redundant pre-submit full-account reads caused the
+delay. Repair reuses the canary's fresh snapshot, rechecks identity/timestamps/
+complete open orders, retains exact ORIGINAL-limit funds and final/before-wire
+expiry checks. Original TTL/price is never refreshed. A distinct explicit tag
+may follow an exact closed expired never-sent BUY as well as positive rejection;
+unknown/started/acknowledged/filled or mismatched evidence never qualifies.
+362 changed-path one-worker tests/12.77s, full9,072 passes/22 skips/349.27s/eight
+workers/clean helper exit match9,094 collected; Ruff/both sample-env Compose
+profiles pass. Independent source review closes stale/future snapshot, hook
+exception and runner same/new-tag coverage gaps with no remaining finding.
+Eight compatible Paper aliases now share
+sha256:0ff015deadbfaea80525f69f4d8d94ad5847018a6229cd376864c41f5017b53b;
+607 source/lock hashes match; Python3.12.15 imports the hooks. No schedule change.
+Deployment receipt under the existing QQQ root:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\deployment-expired-unsubmitted-recovery-20261006-v1.json`,
+SHA256 fca402f5d2a00cee98732030a47aa15738bbc20c474efd6355374b7199588c21.
+
+New v2 tag reapplied-account-20261006-v2 actually submitted a BUY at14:10:46.389499Z
+(23:10:46 KST),6.365s after intent creation, then positively rejected/closed
+as paper_account_expired, no ack or BUY/SELL fill. Exact terminal binding and
+aggregate budget validate in network-none ALL-RO projection; read bytes stable.
+This is a real rejection, NOT another expiry/no-submit or an inferred fill.
+The official KIS notice re-retrieved October6 maps the numeric response to
+expired mock accounts and distinguishes API validity; active mock-account
+expiry/portal linkage remain unobserved. Operator was asked to privately compare
+actual investment end date and registered account, with status only/no values.
+Do not blindly retry this unchanged response, renew tokens as an account fix,
+reset the original10-percent basis/unknown SPY, or stop independent research.
+Exact outcome:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\1b82974f43481c6a5116e9ade47e32fa05317bca142bfa5f07f382642f0194ca\budget-20261006T141028966436Z\outcome.json`,
+SHA256 73ec740685b277e0bb51b98ff467013c1277fee805347c803b02948be06e8a96.
+Exact safe projection:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\offline-reapplied-account-20261006-v2.json`,
+SHA256 fc5f9cf2fe7edc76d6a9d2950064e32455ba6f5c564da9bda784477454336048.
+Prior v1 projection same root:offline-reapplied-account-20261006-v1.json,
+SHA256 afd87fbd293148a6d7bc47d304a3d057d188366e070935a864b11faaa064aeb7.
+Claude fix and actual-rejection alternatives both exit1/uncategorized,
+review_unavailable, NOT agreement:
+claude-expired-unsubmitted-recovery-20261006-v1.json SHA256
+dccc611e5c1aaf6be7e8b19e392936ac5099f5e4bbd077bb4b0f2a5dd3e865ef;
+claude-refreshed-rejection-alternatives-20261006-v1.json SHA256
+dd817eb3e07520efe1aa204f94a55fc7ac5edb48009cae0eccce5cbabd7c51a9.
+No worker remains. Fees/settled cash/net broker PnL and current owned-flat
+reconciliation remain unobserved. Loopback web is restored, health ok/
+broker_calls false,127.0.0.1:8787 only; no inherited KIS environment/runtime
+write mount or public exposure. Unrelated repo-app-1 stays unchanged.
+
 October6 operator reports reapplication and local .env update. At22:26:57 KST
 the existing named read-only discovery collected a complete virtual snapshot:
 one auth POST/five account GETs, two positions, zero open orders, empty typed

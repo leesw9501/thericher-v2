@@ -9,6 +9,22 @@ position reconciliation. This is execution readiness, not profitability or live.
 
 ## Owned Runtime Opportunity
 
+- New operator-directed foreground opportunity: fixed cycle
+  `qqq-unit-20261003-v1`, fresh explicit tag `reapplied-account-20261006-v1`.
+  Use the existing bounded QQQ runner/retained aggregate basis. This is a new
+  scoped request after positively closed entries, not replay/reset of the old
+  task. No schedule expansion. In-process exact-limit funds, identity, quote,
+  intent persistence and reconciliation contracts remain authoritative.
+  Actual result: expired intent_recorded, submission_started absent, no ack/fill.
+  Exact terminal readback is in Execution. No provider rejection is inferred.
+  After verified recovery repair and compatible deployment, new explicit tag
+  `reapplied-account-20261006-v2` continues this SAME cycle/budget. No schedule
+  expansion, original intent price/TTL refresh or unknown SPY reset.
+  Actual v2 result23:10:46 KST: BUY submitted then positively rejected/closed
+  as paper_account_expired, no acknowledgement/fills. The delay fix works;
+  actual mock-account validity/API linkage is still not observed. Operator
+  was asked to compare the actual investment end date and registration privately.
+  Do not blindly retry the unchanged rejection or infer a successful round trip.
 - `thericher-kis-paper-qqq-unit-20261006`: October6 00:20 KST, fixed cycle
   `qqq-unit-20261003-v1`, tag `opportunity-20261006T0020KST-v1`.
   At most24 visits/1,200 worker seconds,25-minute task limit, IgnoreNew,
@@ -27,9 +43,10 @@ position reconciliation. This is execution readiness, not profitability or live.
 - SPY's superseded lifecycle remains INCOMPLETE. Preserve unknown successor,
   original private bytes/cost/reservations; absent history is not an outcome.
   Never repost/reset/adopt it. Distinct correctly scoped QQQ work continues.
-- Paper image remains
-  `sha256:ceac0e3c0d11723d6b3c46a59a8c917b6dca4291128915227e9cce1778289d63`.
-  October5 Data publication does not update Paper consumers or tonight's task.
+- October6 compatible Paper image:
+  `sha256:0ff015deadbfaea80525f69f4d8d94ad5847018a6229cd376864c41f5017b53b`.
+  Eight existing consumers/607 source-and-lock hashes match. No task or budget
+  reset. Exact deployment and typed v1/v2 evidence belong to Execution.
 
 ## Ready Parallel Packages
 
@@ -37,8 +54,9 @@ October6 refreshed Paper configuration is valid/mode off.22:26:57 KST direct
 read-only discovery succeeds: complete account snapshot/two positions/zero
 opens, one auth/five GETs. Canonical RO binding matches retained account custody;
 no migration/reset/new basis. This does not prove order entitlement or a fill.
-Next Execution work is a fresh explicitly tagged QQQ opportunity under the
-existing cycle/10-percent basis, not replay of the rejected/consumed request.
+Both foreground opportunities are consumed. Next Execution work is account-
+entitlement clarification, not replay of either closed tag. Independent research
+and existing Data refresh continue without a global pause or new approval gate.
 
 1. Execution owns the exact runtime result and reconciliation. Record rejection,
    no-intent, unknown outcome and fees/settled-cash/PnL limitations narrowly.
@@ -88,11 +106,21 @@ existing cycle/10-percent basis, not replay of the rejected/consumed request.
    Public papers are mechanism references, not our market-profit evidence.
    October6 independent forward-variance target helper is synthetic-verified:
    115 new cases/187 context integration/297 combined Paper-research tests pass.
-   It is not a real-data campaign, model or Paper input. Next ready CPU package
-   is source/hash-bound scheduled-key target/input smoke before a predictive
-   contract; do not wait for account-status clarification or retune killed families.
+   Source/hash-bound target/input smoke is now complete:251 available paired
+   inputs,249 available60-minute targets per ETF/two early-close shortfalls,
+   40 new tests/227 focused passes and532 mutations; independent ALL-RO replay
+   matches. No fits/GPU/selection/Paper claim. Next ready CPU package is a
+   distinct chronological forward-risk baseline contract with TRAIN-only
+   transforms and past-variance/TRAIN-mean controls, not a killed-family rescue.
 
 ## Completion And Verification
+
+October6 shared execution recovery and research integration passes362 changed-
+path tests in one worker/12.77s, full9,072 passes/22 skips/349.27s/eight workers/
+clean helper exit, matching9,094 collected. Ruff and default/research-profile
+sample-env Compose pass. Independent source review finds no remaining defect;
+Claude recovery/alternatives challenges are review_unavailable/uncategorized,
+NOT agreement. This verification/deployment is not company completion.
 
 Success requires exact full BUY and SELL fills plus current owned-flat QQQ
 reconciliation. Rejection/no-intent/task exit/absent history is not completion.

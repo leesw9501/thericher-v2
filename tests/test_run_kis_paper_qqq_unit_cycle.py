@@ -549,6 +549,37 @@ def test_rejected_entry_finalizes_without_rebuy(worker):
     assert len(client.submits) == 1
 
 
+def test_expired_unsubmitted_entry_new_tag_completes_without_rewriting_old_request(
+    worker, monkeypatch,
+):
+    client, _created, _sleeps, args = worker
+    root = args["state_root"]
+    reconcile = client.reconcile
+
+    def slow(state, *, now):
+        client.now = state.intent.valid_until
+        return reconcile(state, now=client.now)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(client, "reconcile", slow)
+        first = runner.run_worker(**(args | {"entry_request_id": "expired-a"}))
+    assert first["status"] == "unit_cycle_not_completed" and not client.submits
+    before = runner.budget._load_binding(root)
+    row = before["qqq"]["orders"][0]
+    path = root / (row["run_id"] + ".json")
+    original = path.read_bytes()
+    assert runner._receipt(root, CYCLE, client.now, "expired-a").decision_class == "enter"
+    same = runner.run_worker(**(args | {"entry_request_id": "expired-a"}))
+    assert same["status"] == "unit_cycle_not_completed" and not client.submits
+    result = runner.run_worker(**(args | {"entry_request_id": "fresh-b"}))
+    assert result["status"] == "unit_cycle_complete"
+    assert result["closed_buy_fill_count"] == result["closed_sell_fill_count"] == 1
+    assert path.read_bytes() == original
+    after = runner.budget._load_binding(root)
+    assert after["basis_ref"] == before["basis_ref"]
+    assert after["terminal_evidence"][row["run_id"]] == before["terminal_evidence"][row["run_id"]]
+
+
 def test_distinct_named_entry_preserves_rejections_and_restart_identity(worker, monkeypatch):
     from thericher_v2.execution.kis_paper_canary import KisPaperSubmitRejected
 

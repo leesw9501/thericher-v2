@@ -17,7 +17,9 @@ reconciliation. No-intent, rejection, cancellation, task exit or absent history
 is not a filled round trip. Fees/settled cash/net PnL remain unobserved.
 
 An explicit distinct `--entry-request-id` may append one fresh BUY only after
-every earlier BUY in that same cycle is positively rejected/closed. Reuse the
+every earlier BUY is positively rejected/closed OR has exact retained terminal
+proof of expiry without any submission start, acknowledgement or fill. An
+unknown/started request never qualifies. Reuse the
 same request tag on restart; never select a new tag automatically. Exact QQQ/
 NASD orderable funds at the ORIGINAL limit are required immediately before any
 BUY, including a restart without a tag. Original unbound intent recovery uses
@@ -70,6 +72,12 @@ look for the budget at its parent /app/private or infer absence from that level.
 No new account root/budget, order or schedule was created. Read success does
 not prove current order entitlement or resolve the old SPY outcome. Exact safe
 discovery pointer/hash and next scoped QQQ action are in agents/execution.md.
+The first refreshed-account foreground tag `reapplied-account-20261006-v1`
+expired BEFORE submission; it is not another provider rejection. The bounded
+repair reuses the canary's fresh reconciliation snapshot for budget ownership
+checks, revalidating timestamps/identity/completeness instead of repeating the
+full account GET chain. Exact ORIGINAL-limit funds and final/before-wire expiry
+checks remain. Never extend/refresh a persisted intent or erase its terminal.
 Exact outcome/hash/time-bound typed readback are in agents/execution.md.
 For offline ALL-RO inspection, use the existing strict unlocked state parser
 and before/after hashes; ordinary store.read needs a writable lock file.
@@ -116,6 +124,22 @@ helper, Ruff/both sample Compose pass.602 unique baked hashes/ten Data aliases
 match; exact publication evidence is in agents/data.md.
 No task/service invocation or schedule/pace/Paper-alias change. Actual SPY head
 yield remains unobserved; dated SPY390 is not proof of that head result.
+
+## Forward-Risk Input Readback
+
+`scripts/run_firstrate_forward_variance_smoke.py` freezes and verifies only
+past120-M1 paired inputs and separate next60-minute variance support. Its
+external root is
+`D:\thericher-v2\model-artifacts\research\firstrate-forward-variance-target-input-smoke-20261006-v1`.
+Use its `verify` mode with the exact retained contract, FirstRate canonical
+source, normalization receipt and parent precommit pins; do not rerun `freeze`
+or overwrite an existing artifact. In the declared846a900b image, mount source,
+scripts, market, study, normalization and parent lineage RO; network none,
+2CPU/2GiB/120-second compute bound, no credentials/private execution volumes.
+October6 independent replay matches251 paired inputs/249 targets per ETF/two
+early-close shortfalls and532 mutations; no model fit/GPU or predictive claim.
+Input eligibility never depends on future support. Engine owns a fresh
+chronological CPU baseline contract next; seen/revised source is not a holdout.
 
 ## Paired-Lag Development Readback
 

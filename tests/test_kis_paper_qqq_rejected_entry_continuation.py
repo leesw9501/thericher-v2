@@ -4,7 +4,7 @@ import copy
 import socket
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import replace
+from dataclasses import asdict, replace
 from datetime import timedelta
 from decimal import Decimal
 
@@ -29,6 +29,7 @@ from thericher_v2.execution.kis_readonly import (
     KisPaperOrderableFundsSnapshot,
     KisPaperReadOnlyError,
 )
+from thericher_v2.research.decision_receipt import ResearchDecisionReceipt, _derive_decision_id
 
 D = Decimal
 
@@ -151,6 +152,137 @@ def persist_binding(root, binding):
         binding["qqq"]["orders"],
     ).fingerprint
     budget._atomic_json(root / budget.BUDGET_FILE, binding)
+
+
+def expire_unsubmitted(harness, monkeypatch):
+    root, client, args = harness
+    original = client.reconcile
+
+    def slow_reconcile(state, *, now):
+        client.now = state.intent.valid_until
+        return original(state, now=client.now)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(client, "reconcile", slow_reconcile)
+        assert run(args).reason_code == "order_not_submitted_or_rejected"
+    binding = budget._load_binding(root)
+    state = states(root, binding)[0]
+    assert state.reason_code == "intent_expired"
+    assert not client.submits and state.submission_started_at is None
+    return binding
+
+
+def test_expired_never_submitted_prefix_allows_new_tag_not_old_tag(harness, monkeypatch):
+    root, client, args = harness
+    before = expire_unsubmitted(harness, monkeypatch)
+    row = before["qqq"]["orders"][0]
+    state = states(root, before)[0]
+    old_bytes = (root / (row["run_id"] + ".json")).read_bytes()
+    proof = before["terminal_evidence"][row["run_id"]]
+    assert budget._qqq_closed_unfilled_entry(row, state, proof)
+    assert not budget._qqq_rejected_entry(row, state, proof)
+    client.mode = "accept"
+    assert run(args).reason_code == "decision_already_processed"
+    assert not client.submits
+    client.now += timedelta(seconds=1)
+    assert run(args, "entry-b", digit="b").status == "order_complete"
+    client.now += timedelta(seconds=1)
+    assert run(args, "entry-b", action="exit", digit="c").status == "order_complete"
+    after = budget._load_binding(root)
+    assert all(after[key] == before[key] for key in ("basis_ref", "allocated_usd", "legacy_spy"))
+    assert after["terminal_evidence"][row["run_id"]] == proof
+    assert (root / (row["run_id"] + ".json")).read_bytes() == old_bytes
+    assert [intent.side for intent in client.submits] == ["buy", "sell"]
+    assert budget.project_budget(root, after, qqq_cycle_id="unit-cycle").quantity == 0
+
+
+@pytest.mark.parametrize("change", [
+    "open", "unexpired", "unknown", "started", "ack", "category", "reason",
+    "wrong_ref", "missing_proof", "changed_proof", "cancelled", "wrong_side",
+])
+def test_expired_prefix_requires_exact_no_side_effect_terminal_proof(
+    harness, monkeypatch, change,
+):
+    root, _client, _args = harness
+    binding = expire_unsubmitted(harness, monkeypatch)
+    row = copy.deepcopy(binding["qqq"]["orders"][0])
+    state = states(root, binding)[0]
+    evidence = copy.deepcopy(binding["terminal_evidence"][row["run_id"]])
+    if change == "open":
+        row["closed"] = False
+    elif change == "unexpired":
+        state = replace(state, updated_at=state.intent.valid_until - timedelta(microseconds=1))
+    elif change == "unknown":
+        state = replace(state, phase="outcome_unknown")
+    elif change == "started":
+        state = replace(state, submission_started_at=state.intent.created_at)
+    elif change == "ack":
+        state = replace(state, broker_order_id="synthetic-ack")
+    elif change == "category":
+        state = replace(state, submit_response_category="payload_invalid")
+    elif change == "reason":
+        state = replace(state, reason_code="reconciliation_unavailable")
+    elif change == "wrong_ref":
+        row["intent_ref"] = "sha256:" + "0" * 64
+    elif change == "missing_proof":
+        evidence = None
+    elif change == "changed_proof":
+        evidence["state"]["updated_at"] = (state.updated_at + timedelta(seconds=1)).isoformat()
+    elif change == "cancelled":
+        state = replace(state, cancel_after_submit=True)
+    else:
+        state = replace(state, intent=replace(state.intent, side="sell"))
+    # Keep the terminal bytes equal where testing a semantic contradiction.
+    if evidence is not None and change not in {"changed_proof", "wrong_ref", "open"}:
+        evidence["state"] = state.to_dict()
+    assert not budget._qqq_closed_unfilled_entry(row, state, evidence)
+
+
+def test_slow_snapshot_uses_one_pre_submit_reconciliation_not_an_extra_account_read(
+    harness, monkeypatch,
+):
+    _root, client, args = harness
+    client.mode = "accept"
+    snapshot = client.snapshot
+    calls = []
+
+    def slow_snapshot():
+        calls.append(client.now)
+        client.now += timedelta(seconds=30 if len(calls) == 1 else 20)
+        return snapshot()
+
+    def short_receipt(at):
+        fields = asdict(receipt(at))
+        fields.pop("decision_id")
+        fields["valid_until"] = at + timedelta(seconds=60)
+        return ResearchDecisionReceipt(decision_id=_derive_decision_id(**fields), **fields)
+
+    monkeypatch.setattr(client, "snapshot", slow_snapshot)
+    outcome = budget.run_kis_paper_budget_strategy(
+        **(args | {"qqq_entry_request_id": "entry-a", "receipt_loader": short_receipt})
+    )
+    assert outcome.status == "order_complete"
+    assert len(client.submits) == 1 and len(calls) == 4
+    assert len(client.exact_reads) == 2
+
+
+@pytest.mark.parametrize("seconds", [-121, 6])
+def test_reused_pre_submit_snapshot_rejects_stale_or_future_clock(
+    harness, monkeypatch, seconds,
+):
+    _root, client, args = harness
+    client.mode = "accept"
+    reconcile = client.reconcile
+
+    def changed(state, *, now):
+        fact = reconcile(state, now=now)
+        return replace(fact, snapshot=replace(
+            fact.snapshot, captured_at=client.now + timedelta(seconds=seconds)
+        ))
+
+    monkeypatch.setattr(client, "reconcile", changed)
+    assert run(args).reason_code == "snapshot_unavailable"
+    assert not client.submits
 
 
 def test_rejected_prefix_filled_buy_sell_preserves_custody_and_basis(harness):
@@ -596,7 +728,11 @@ def test_orphan_expiry_cannot_refresh_original_price_or_validity(harness, monkey
     assert binding["qqq"]["orders"][0]["closed"]
     assert states(root, binding)[0].intent == state.intent and path.read_bytes() == old_receipt
     assert run(args, "orphan-entry", digit="d").reason_code == "decision_already_processed"
-    assert run(args, "distinct-entry", digit="d").reason_code == "target_already_satisfied"
+    # A distinct tag may proceed without refreshing the original orphan.
+    assert run(args, "distinct-entry", digit="d").reason_code == "order_not_submitted_or_rejected"
+    assert len(client.submits) == 1
+    assert states(root, budget._load_binding(root))[0].intent == state.intent
+    assert path.read_bytes() == old_receipt
 
 
 @pytest.mark.parametrize("change", ["started", "wrong_side", "wrong_symbol", "quantity"])

@@ -1,116 +1,53 @@
 # Codex Orchestration Stateboard (제품개발 총괄)
 
-`AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
-This is the shared-resource and dispatch projection, not another backlog.
+`AGENTS.md` owns policy; `NEXT_CODEX_GOAL.md` is the single company objective.
+This is a current shared-resource projection, not a lane history or second goal.
+Superseded facts remain searchable in Git and external lane evidence.
 
 ## Active Company Objective
 
-`qqq-restart-safe-unit-paper-v1`. October3 reversible reassignment supersedes
-the SPY objective while INCOMPLETE, preserving its unknown identity/costs and
-all evidence. No SPY terminal outcome or QQQ fill is claimed. D1 stays Data-only.
+`qqq-restart-safe-unit-paper-v1` remains OPEN: no QQQ fill/round trip.
+Superseded SPY remains INCOMPLETE with unknown successor custody preserved.
+No initial10-percent budget reset, live route or new permission gate.
 
 ## Ready / Owned / Due
 
-| Work | Owner / resource | Current fact and dispatch |
+| Shared work/resource | Owner | Current dispatch fact |
 | --- | --- | --- |
-| SPY lifecycle recovery | Execution / existing private state | Latest15:37Z bounded read succeeds with known BUY/cancel controls, owned SPY/no opens, but unknown-tail candidate set absent. Private bytes unchanged; no terminal inference/closure/repost. Prior15:24Z auth failure remains separate. Do not repeatedly poll absence; exact evidence belongs to Execution. |
-| Aggregate strategy sizing | Execution / existing strategy and private intent store | Prior no_intent/existing_inventory_or_order_conflict remains scoped. Current Scheduler Ready, lastOctober5 23:50/nextOctober6 23:50 KST; task exit is not a new runtime outcome.10-percent policy unchanged. |
-| Research | Engine Research / closed families; independent CPU target preparation complete | October5 paired/joint/first30 families retain their kills. New pure forward-variance labels pass115 synthetic cases;187 combined context tests and297 focused Paper/research tests pass. No real-data labels/fits/GPU/selection/Paper input. Invoked role exited. Next ready package is source/hash-bound scheduled-key target/input smoke, not a same-family rescue or account wait. |
-| Independent Paper readiness | Execution / read-verified refreshed configuration |22:26:57 KST complete direct account discovery: two positions/zero opens, one auth/five GETs; canonical RO account binding matches retained budget. Old BUY rejection/unknown SPY stay unchanged; no migration/reset/order/new opportunity. Next ready Execution package is a fresh explicitly tagged QQQ entry under retained cycle/10-percent basis, not another registration hold. |
-| Local console | Execution / existing loopback web | Prior127.0.0.1:8787 health=ok/broker_calls=false is historical. Current connection-check Docker inventory has no active project web container; not restarted here. No public exposure or control change. |
-| Data collection / finite D1 measurement | Data / terminal repair deployed; broader inventory closed | Official D/E known-terminal repair prevents full-page unknown-header fallback. Ten Data aliases/602 unique baked files match new846a900b image; actual provider/head yield unobserved. Recent25 shared KIS days; FirstRate251 scheduled2022-23 dates/250 shared complete sessions independently checked. No historical collector due; October6 00:29 owner/defaults/tasks/pace/Paper images unchanged. Input-local missingness does not block other prefixes. |
-| GPU | Research Steward / both October5 appointments closed | Paired LSTM/attention and subsequent three joint-allocation CUDA fits complete; latter10.965463s/peak68,181,504 bytes. Canonical lock/container reaped. No active appointment, environment/permission block or undispatched frozen campaign. Another useful hypothesis needs preparation, not training for utilization alone. |
-| Verification | Orchestrator / shared integration complete; isolated research/result integration verified | Prior full8,736/22 authority remains historical. October6 target/context187 serial and combined Paper/research297/no skips/two workers/clean managed helper pass; Ruff/both sample Compose pass. First default-long-temp Paper feedback failed persist/io_error after84 passes; preserved, not authority. No full-suite repeat, baked helper publication or active pytest owner; old scratch untouched. |
+| QQQ execution | Execution / existing private volume | Both October6 foreground tags consumed: v1 never submitted/expired; v2 actual BUY positively rejected/closed as paper_account_expired. Exact typed readback/deployment evidence belongs to Execution. No worker or fresh QQQ next_due. |
+| Shared private writers | Execution / compatible eight images | New0ff015de image/607 source-lock hashes match after362 one-worker and9,072/22 full verification. Unknown SPY and original allocation preserved. Strategy Ready/next October6 23:50 KST; exit code is not an order result. |
+| Current Data refresh | Data / existing scheduler | Intraday head Ready/next October7 00:29 KST; last October6 06:20/result1 does not prove its cause or data outcome. Scope/rate/schedules unchanged. |
+| Read-only observer / console | Execution / separate existing owners | Observer Ready/next October6 23:20 KST. Existing credential-free web restored and healthy at127.0.0.1:8787 only; broker_calls false, no public/control change. |
+| Independent research | Engine Research / CPU | Source/hash-bound input/target smoke complete;251 paired inputs/249 targets per ETF, two early-close shortfalls, exact ALL-RO replay. No fit/selection/Paper claim. Next ready package is a distinct chronological forward-risk CPU baseline contract. |
+| GPU/evaluation | Research Steward | No active appointment or frozen undispatched GPU campaign. Environment/authority is not a block; prior killed families stay closed. CPU risk-baseline preparation is independent of account clarification. |
+| Git / tests / invoked roles | Orchestrator | Infra, Engine and independent Review assignments delivered and exited. Full9,072/22 authority matches9,094 collected/eight workers/clean helper; Ruff/both sample Compose profiles pass. No competing Git or pytest owner. |
 
 ## Bottleneck And Reversible Improvement
 
-Operator's refreshed .env is valid/mode off and direct account reads now succeed.
-Canonical RO identity matches retained custody, so an unnecessary new-account
-migration is avoided. Next Execution package is a fresh explicit QQQ opportunity
-under the existing cycle/budget, not blind reposting or another setup hold.
-No task is manually invoked/changed here; old Scheduler opportunity is consumed.
-Ready historical CPU research remains independent. Temporary custody reviewer
-exited; its changed-account alternative is not needed for this observed identity.
+The measured pre-submit delay is repaired: reuse the just-read canary snapshot,
+revalidate its account clocks/ownership and retain exact-price funds and wire
+deadline. Permit only an exact closed expired never-sent prefix for a NEW
+explicit tag, without rewriting original intent/TTL or weakening unknown recovery.
+v2 actually reached submission6.365s after intent creation, then the provider
+positively rejected it. The current Paper bottleneck is account entitlement/
+portal linkage, not a software approval or GPU dependency. The operator was
+asked for status only; do not request keys/IDs or demand blind reissue.
 
-The consumed October6 opportunity remains a positive categorized rejection,
-not a filled cycle. Refreshed read health supersedes the setup wait without
-rewriting that rejection or asserting current order entitlement. No further
-operator setup decision is identified by the successful read-only check.
-Original execution graph remains exact funds -> persisted unit BUY -> exact
-fill -> unit SELL -> current owned-flat reconciliation. No fill stage completed.
-The reversible improvement is to stop blind retry of the consumed request and
-preserve its exact category/custody while independent research preparation
-continues. Claude exit1/uncategorized is review_unavailable, never agreement.
-No recurring worker, new next_due, private migration or scheduler expansion.
-One temporary Engine role was dispatched in parallel with exact result/docs
-integration, completed the two-file pure target package, then exited. The
-parent added a cross-helper future-mutation test rather than retraining a killed
-model or introducing a new worker/report. Ready historical CPU preparation has
-no dependency on account-status clarification; no GPU campaign is yet frozen.
+## Blocked-Goal Alternatives
 
-Current October5 throughput review: old SPY's unavailable successor identity
-blocks its exact superseded lifecycle only. Reassignment while incomplete
-removes that company-wide dependency without inventing terminal proof, changing
-private state or resetting the shared basis. QQQ runtime now belongs to the
-October6 opportunity, not a foreground wait. Existing Data tasks continue.
+Exact blocking fact: no accepted QQQ order after the refreshed configuration.
+Original graph: exact funds -> persisted BUY -> exact fill -> SELL -> owned flat.
+Full cycle is not complete; do not replace the goal by calling preparation success.
 
-The retained21-session input supported a completed frozen M1/M5 contrast,
-not an outcome-informed sweep. Its stress-net failure does not hold Paper.
-The same-candidate and mature-overlap fixes are complete, producing a retained
-390-minute QQQ input in one real capture. Automatic continuation is now enabled
-inside the existing finite owner, not a new platform, permission gate or task.
-Its invalid seventh page does not erase the retained prefix or complete regular
-session. Two exact older-date keys now establish one useful September1 midday
-interval and one empty August3 response. The independent retained September1
-scope now proves390 regular minutes, enabling a finite past-session panel rather
-than another same-question probe or cursor reset. Engine Research independently
-completed a cost-aware fixed-band experiment; it also fails net NAV and is not
-retuned. Its online-mixture campaign now uses completed prior losses and a
-separate continuous mixed ledger. Small fragile seen-data gains do not become
-independent evaluation or Paper qualification.
+| Ready package | Owner / resource / approach | Bounded evidence / strongest kill / recovery |
+| --- | --- | --- |
+| Account entitlement clarification | Execution / official public sources and operator's private portal comparison | Verify actual investment end date/API registered account, not API expiry. Official notice re-retrieved; mismatch or still-expired request kills blind retry. Active matching account needs KIS VOC clarification, not another order or live route. |
+| Forward-risk CPU baseline | Engine Research / retained seen FirstRate source | Freeze chronological TRAIN-only transforms, past-variance and TRAIN-mean controls before fitting. Exact pinned replay/loss/missingness evidence; future-dependence or failure against controls kills this candidate only. Continue while Paper setup is unresolved. |
+| Current collection maintenance | Data / existing named refresh worker | Preserve owned cursor/scope/pace/next_due and independently read exact next receipt. A missing or failed receipt is not coverage or finality; recover that owner without opening a new collector/schedule. |
 
-October5 ready-work dispatch kept the Paper opportunity owned rather than
-foreground-waiting: Engine Research completed one cross-asset-input comparison,
-Data's regression found a real terminal-classification fault and repaired it
-after official-source verification, while invoked Strategy Discovery delivered
-primary-source evidence. No role edits
-another lane or touches the installed Paper task, protected SPY identity or
-shared budget. Current source-only Claude invocation failed exit1 with no
-categorized cause; it is review_unavailable, not agreement or a quota inference.
-Evidence: D:\thericher-v2\model-artifacts\research\source-discovery\claude-paired-lag-drift-20261005.json.
-Current reversible improvement: the broader FirstRate readiness package is
-closed and consumed by one small source-independent completed-context helper.
-The real input smoke includes all scheduled dates rather than a future-aware
-full-session mask: only10 of2,008 exact input cases fail. The design assignment
-was consumed by one joint daily-flat allocation experiment, reusing existing
-fee/utility semantics and retaining numeric weights for independent inference.
-Its original wrong-root mount failed before targets/fits; original evidence is
-preserved and same-family v2 runtime-only recovery completed. No model rescue,
-new framework/scheduler, selected strategy or Paper input follows.
-The next distinct first30-closing29 mechanism also completed without a GPU,
-reusing the same fee helper rather than duplicating a ledger. Its failed stress
-net/increment/day criteria stay closed;47 synthetic checks and exact terminal-
-bound readback expose real causality/accounting semantics, not a permission gate.
-38 exact frozen code files are externally retained for reproducible old readback;
-the existing contract/ledger/lock path is reused, not another report platform.
-
-Previous reversible improvement: apply proved same-date serial older-key head
-continuation to SPY through a new explicit paired option, not silently widen the
-old QQQ-only contract. This repairs the concrete SPY120 current-data code path
-without a new task/pace/permission process; reviewed shared integration/image
-publication is complete, actual paired-head yield remains unobserved. Earlier
-answered reach queries stay closed; distinct acquisition added three complete
-symbol/date scopes and is now closed. There is no hidden collector or next_due.
-Compact
-HANDOFF preserves current facts; superseded1,801-line history remains in Git at
-50d162a. The one company objective/unknown SPY/fixed QQQ tag stay unchanged.
-
-Claude's actual weekly-limit failure remains review_unavailable, not agreement:
-D:\thericher-v2\model-artifacts\execution\kis-paper-spy-fill-cycle\claude-idless-history-20261002.json.
-Independent reviews closed the concrete restart defects; they cannot grant
-live authority. No operator decision is requested.
-
-C: remains measured-fast test scratch; data/models remain D:. Retained failed
-scratch is untouched. The latest full authority passed/cleaned only its own
-fresh managed child. Prior partial runs are not authority. No long foreground
-sleep, new recurring report or shadow goal is present.
+Claude's falsification challenge of the actual rejection/alternatives exited1/
+uncategorized: review_unavailable, NOT agreement or independent-lane hold.
+Evidence:
+D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\claude-refreshed-rejection-alternatives-20261006-v1.json.
+No reserved paid/live/public authority is sought; account status information is
+needed for this execution leg only. There is no foreground timer or new worker.

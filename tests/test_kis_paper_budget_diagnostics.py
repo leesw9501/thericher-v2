@@ -169,15 +169,21 @@ def test_nested_permit_failure_and_successful_stage_restore(harness, monkeypatch
     _root, client, args = harness
 
     def run(**kwargs):
+        reconciliation = client.reconcile(
+            budget.KisPaperCanaryStateStore(kwargs["state_path"]).read(), now=NOW
+        )
         if point == "projection":
             monkeypatch.setattr(budget, "project_budget", fail_with(ValueError))
         elif point == "account":
             monkeypatch.setattr(
-                client, "snapshot", fail_with(budget.KisPaperReadOnlyError, "balance_rejected")
+                budget, "_spy_book", fail_with(budget.KisPaperReadOnlyError, "balance_rejected")
             )
         elif point == "ownership":
             client.foreign = 1
-        assert kwargs["submit_permitted"](NOW)
+            reconciliation = client.reconcile(
+                budget.KisPaperCanaryStateStore(kwargs["state_path"]).read(), now=NOW
+            )
+        assert kwargs["submit_reconciliation_check"](reconciliation, NOW)
         fail_with(ValueError)()
 
     monkeypatch.setattr(budget, "_run_kis_paper_canary", run)

@@ -1489,6 +1489,8 @@ def _run_kis_paper_canary(
     now: datetime | None = None,
     clock: Callable[[], datetime] | None = None,
     submit_permitted: Callable[[datetime], bool] | None = None,
+    submit_reconciliation_check: Callable[[KisPaperCanaryReconciliation, datetime], bool]
+    | None = None,
     execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
     require_existing_state: bool = False,
     price_contract_ref: str | None = None,
@@ -1633,6 +1635,16 @@ def _run_kis_paper_canary(
                     phase="intent_recorded",
                     reason_code="session_closed",
                     now=submit_at,
+                )
+            elif submit_reconciliation_check is not None and not submit_reconciliation_check(
+                reconciliation, submit_at
+            ):
+                state = state_store.transition(
+                    intent,
+                    expected=frozenset({"intent_recorded"}),
+                    phase="intent_recorded",
+                    reason_code="reconciliation_unresolved",
+                    now=_canary_now(now=now, clock=clock),
                 )
             elif (submit_at := _canary_now(now=now, clock=clock)) >= intent.valid_until:
                 # The permission callback may have performed slow account reads.
@@ -1785,6 +1797,8 @@ def run_kis_paper_canary(
     now: datetime | None = None,
     clock: Callable[[], datetime] | None = None,
     submit_permitted: Callable[[datetime], bool] | None = None,
+    submit_reconciliation_check: Callable[[KisPaperCanaryReconciliation, datetime], bool]
+    | None = None,
     execution_control_path: Path = DEFAULT_KIS_PAPER_CANARY_EXECUTION_CONTROL,
     price_contract_ref: str | None = None,
     reuse_existing_intent_if_same_decision: bool = False,
@@ -1811,6 +1825,7 @@ def run_kis_paper_canary(
             now=now,
             clock=clock,
             submit_permitted=submit_permitted,
+            submit_reconciliation_check=submit_reconciliation_check,
             execution_control_path=execution_control_path,
             price_contract_ref=price_contract_ref,
             reuse_existing_intent_if_same_decision=reuse_existing_intent_if_same_decision,

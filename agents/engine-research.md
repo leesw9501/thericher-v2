@@ -17,26 +17,43 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-06 KST)
 
-Independent forward-risk target preparation is complete, not a predictive
-campaign or another return/allocation rescue. New pure
-`src/thericher_v2/research/intraday_variance_targets.py` constructs squared
-adjacent log-OPEN differences over a declared horizon (default60 minutes),
-entry at decision+1 minute. It needs61 exact complete M1 bars and retains only
-typed geometry/variance; label availability is the final bar END, not its OPEN.
-Exact order/identity/session/UTC/completion/value checks include early closes;
-Decimal log differences avoid extreme-price float ratio overflow/underflow.
-115 synthetic cases plus existing completed-context tests yield187 serial
-passes; added future-price/missing/incomplete mutations leave past120-bar
-context and its naive61-OPEN input unchanged while labels change or fail.
-Integrated focused Paper/research feedback297/no skips passes2.92s with the
-managed short temp helper/two workers/clean exit; Ruff/both sample Compose pass.
-This is code/synthetic geometry only: no real-data labels, cohort, fit, model,
-GPU appointment, sealed spend, source-clock qualification or Paper input.
-The invoked role completed and exited; no worker remains. Next ready CPU step
-is a finite source/hash-bound target/input smoke over the already retained
-scheduled FirstRate keys, accounting for input and target missingness separately
-before any predictive contract. Do not reopen the three closed October5 families
-or label revised/seen data independent. Account renewal does not block this work.
+Forward-risk target/input preparation is complete, revised/seen development
+only, not a predictive campaign or return/allocation rescue. The new pure
+`forward_variance_smoke.py` and `run_firstrate_forward_variance_smoke.py` reuse
+`intraday_variance_targets.py`, `paired_completed_context.py`, the verified
+FirstRate loader/normalization contract and the retained scheduled-date hash.
+The finite contract froze/fsynced BEFORE source-value parsing: one decision
+per scheduled date at min(open+150min, close-10min), own/peer past120 completed
+M1 inputs, one60-minute squared adjacent log-OPEN target from decision+1min,
+61 complete bars/final bar END availability at decision+62min. Past inputs and
+each symbol's forward support are separate; no whole-session/future mask.
+Actual source counts QQQ210,482/SPY207,824, regular M1 counts97,530/97,526.
+All251 scheduled paired inputs are available; each ETF has249 available targets
+and two session-horizon shortfalls (2022-11-25/2023-07-03 early closes).
+June5 source gaps remain visible in source counts, not a global input exclusion.
+502 prefix/future-removal,6 future-value/completion,8 target-only and16 forward
+missing/incomplete checks pass; exact ALL-RO replay matches both commitments.
+40 new synthetic tests plus target/context coverage yield227 passes/no skips
+in1.91s/two helper workers; Ruff passes. Initial import-guard failure exposed the
+legacy calendar helper's execution imports; the runner instead calls the same
+pinned NYSE5.4.0 API directly and verifies the exact retained date-set hash.
+Offline2CPU/2GiB/RO-source containers exited under a120-second hard bound;
+focused pytest ownership is released. No fit/GPU/selection/holdout, raw values,
+weights, predictive metrics, broker call, performance or Paper claim.
+Successful test child cleaned; initial failed `C:\trpy\runs\r-8ed1a30b` remains
+inactive after policy-rejected manual cleanup, with no lease/worker; helper
+mutex is confirmed available. This retained sibling is not an authority hold.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-forward-variance-target-input-smoke-20261006-v1`;
+contract `sha256:ae8bffb356c82d4a99f885ce17aecf7e1b14ac12822e317efcaac95b183a2e11`;
+result `sha256:d7d3761265f6484b52db5e00c8f1a26fee7ba24e853da4e67bdc634179832ce8`.
+Revised/seen source clocks, actions, finality and historical availability remain
+unqualified; physical parsing is not target-isolated, and251 shared blocks are
+not502 independent observations. Recovery complete; no research worker remains.
+Next ready step is a distinct frozen forward-risk DEVELOPMENT predictive
+contract with chronological session blocks, TRAIN-only transforms, declared
+past-variance/TRAIN-mean baselines, fixed loss and finite CPU stop/kill tests.
+Preserve prior seen-source trials and all three closed October5 families; no
+retuning, independent-data relabeling or automatic Paper qualification.
 
 First30-to-closing29 is closed/non_promoting_completed, family/root
 `D:\thericher-v2\model-artifacts\research\firstrate-first30-closing29-development-20261005-v1`.

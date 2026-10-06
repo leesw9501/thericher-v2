@@ -60,6 +60,58 @@ def test_permission_callback_expiry_does_not_record_a_never_sent_attempt(
         assert _submission_count(transport) == 1
 
 
+@pytest.mark.parametrize("delay_seconds,allowed", [(0, False), (299, True), (300, True)])
+def test_snapshot_check_reuses_reconciliation_and_rechecks_deadline(
+    tmp_path, delay_seconds, allowed,
+):
+    transport = FakeKisPaperCanaryTransport()
+    current = [NOW]
+    checks = []
+    state_path = tmp_path / "private" / "snapshot-check.json"
+
+    def check(reconciliation, at):
+        assert reconciliation.account_status == "available"
+        assert reconciliation.snapshot is not None
+        checks.append(at)
+        current[0] += timedelta(seconds=delay_seconds)
+        return allowed
+
+    run_kis_paper_canary(
+        decision=_decision(), run_id="snapshot-check", environment=_paper_environment(),
+        state_path=state_path, execute=True, cancel_after_submit=False, transport=transport,
+        clock=lambda: current[0], submit_reconciliation_check=check, **_paths(tmp_path),
+    )
+    state = KisPaperCanaryStateStore(state_path).read()
+    assert checks == [NOW]
+    if allowed and delay_seconds < 300:
+        assert state.submission_started_at == current[0]
+        assert _submission_count(transport) == 1
+    else:
+        assert state.phase == "intent_recorded" and state.submission_started_at is None
+        assert _submission_count(transport) == 0
+        assert state.reason_code == (
+            "reconciliation_unresolved" if not allowed else "intent_expired"
+        )
+
+
+def test_snapshot_check_exception_precedes_submission_marker_and_wire(tmp_path):
+    transport = FakeKisPaperCanaryTransport()
+    state_path = tmp_path / "private" / "snapshot-check-fault.json"
+
+    def fail(_reconciliation, _at):
+        raise ValueError("synthetic-check-fault")
+
+    with pytest.raises(ValueError, match="synthetic-check-fault"):
+        run_kis_paper_canary(
+            decision=_decision(), run_id="snapshot-check-fault", environment=_paper_environment(),
+            state_path=state_path, execute=True, cancel_after_submit=False, transport=transport,
+            now=NOW, submit_reconciliation_check=fail, **_paths(tmp_path),
+        )
+    state = KisPaperCanaryStateStore(state_path).read()
+    assert state.phase == "intent_recorded" and state.submission_started_at is None
+    assert _submission_count(transport) == 0
+
+
 @pytest.mark.parametrize(("payload", "category"), [
     ({}, "result_code_missing"),
     ({"output": {"ODNO": "SYNTHETIC-PRIVATE"}}, "result_code_missing"),

@@ -152,7 +152,7 @@ def _inspect_cycle(state_root: Path, cycle_id: str, at: datetime) -> _CycleView:
     accepted_entries = [
         state
         for row, state in entries
-        if not budget._qqq_rejected_entry(
+        if not budget._qqq_closed_unfilled_entry(
             row, state, binding["terminal_evidence"].get(row["run_id"])
         )
     ]
@@ -162,7 +162,7 @@ def _inspect_cycle(state_root: Path, cycle_id: str, at: datetime) -> _CycleView:
             seen_sell = True
         elif state.intent.side != "buy" or seen_sell:
             raise ValueError("unit_cycle_state_conflict")
-        elif budget._qqq_rejected_entry(
+        elif budget._qqq_closed_unfilled_entry(
             row, state, binding["terminal_evidence"].get(row["run_id"])
         ):
             if seen_entry:
@@ -227,7 +227,7 @@ def _receipt(
         binding = budget._load_binding(state_root)
         records = budget._orders(binding, cycle_id)
         if records and all(
-            budget._qqq_rejected_entry(
+            budget._qqq_closed_unfilled_entry(
                 row,
                 budget._state(state_root, row, symbol="QQQ", exchange="NASD"),
                 binding["terminal_evidence"].get(row["run_id"]),
