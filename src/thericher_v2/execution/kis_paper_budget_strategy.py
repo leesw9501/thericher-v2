@@ -14,6 +14,7 @@ from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import ROUND_FLOOR, Decimal, DecimalException
+from fractions import Fraction
 from pathlib import Path
 
 from thericher_v2.contracts import require_utc
@@ -42,6 +43,9 @@ from .kis_paper_portfolio_budget import (
     KisPaperPortfolioOwnerBinding,
     KisPaperPortfolioStateRef,
     project_kis_paper_portfolio_budget,
+)
+from .kis_paper_portfolio_budget import (
+    _decimal as _exact_decimal,
 )
 from .kis_paper_quote import (
     KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
@@ -799,6 +803,146 @@ def _retained_terminal(current, payload):
     # A dated cancellation fact survives a later unavailable read. Never rewrite
     # the live canary state or invent an observation timestamp to retain it.
     return (saved if proof is not None else current), proof
+
+
+@dataclass(frozen=True, repr=False)
+class KisPaperGrossRoundTrip:
+    """Private exact cumulative cashflows, not fees, settled cash or net PnL."""
+
+    buy_gross_usd: Decimal
+    sell_gross_usd: Decimal
+    gross_realized_usd: Decimal
+    fill_refs: tuple[str, str]
+
+    def __post_init__(self):
+        if (
+            any(
+                type(value) is not Decimal or not value.is_finite()
+                for value in (self.buy_gross_usd, self.sell_gross_usd, self.gross_realized_usd)
+            )
+            or self.buy_gross_usd <= 0
+            or self.sell_gross_usd <= 0
+            or Fraction(self.gross_realized_usd)
+            != Fraction(self.sell_gross_usd) - Fraction(self.buy_gross_usd)
+            or type(self.fill_refs) is not tuple
+            or len(self.fill_refs) != 2
+            or any(type(ref) is not str or _SHA.fullmatch(ref) is None for ref in self.fill_refs)
+            or len(set(self.fill_refs)) != 2
+        ):
+            raise ValueError("gross_roundtrip_invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "source": "kis_paper",
+            "currency": "USD",
+            "status": "gross_realized_observed",
+            "gross_pnl_sign": (
+                "positive"
+                if self.gross_realized_usd > 0
+                else "negative"
+                if self.gross_realized_usd < 0
+                else "zero"
+            ),
+            "matched_fill_count": 2,
+            "roundtrip_count": 1,
+            "owned_flat": True,
+            "fees": "not_observed",
+            "settled_cash": "not_observed",
+            "net_pnl": "not_observed",
+        }
+
+
+def project_qqq_unit_gross_pnl(
+    *,
+    binding: Mapping[str, object],
+    states: Mapping[str, KisPaperCanaryState],
+    cycle_id: str,
+    expected_account_ref: str,
+    expected_basis_ref: str,
+    expected_owner_ref: str,
+    as_of: datetime,
+) -> KisPaperGrossRoundTrip:
+    """Replay one caller-bound closed QQQ pair without IO or accumulating fills.
+
+    Account proof comes from caller-verified custody, never from the fills.
+    Each cumulative final state contributes once; reruns add nothing. Other
+    owners are outside this projection, not silently reconciled by it.
+    """
+    if (
+        not isinstance(binding, Mapping)
+        or set(binding) != _V2_KEYS
+        or type(binding["version"]) is not int
+        or binding["version"] != 2
+        or not isinstance(expected_account_ref, str)
+        or re.fullmatch(r"[0-9a-f]{64}", expected_account_ref) is None
+        or binding["account_ref"] != expected_account_ref
+        or not isinstance(states, Mapping)
+    ):
+        raise ValueError("gross_roundtrip_binding_invalid")
+    require_utc(as_of)
+    basis = _basis(binding)
+    if Fraction(basis.allocated_usd) != Fraction(basis.basis_usd) * Fraction(BUDGET_FRACTION):
+        raise ValueError("gross_roundtrip_basis_invalid")
+    owner_id = _owner_id(binding, cycle_id)
+    records = _orders(binding, cycle_id)
+    _validate_orders(records, _QQQ_RUN_ID)
+    terminal = binding["terminal_evidence"]
+    if (
+        not isinstance(terminal, Mapping)
+        or any(record["closed"] is not True for record in records)
+        or set(states) != {record["run_id"] for record in records}
+    ):
+        raise ValueError("gross_roundtrip_incomplete")
+    ordered = tuple(states[record["run_id"]] for record in records)
+    entry = _qqq_filled_entry(records, ordered, terminal)
+    if entry is None:
+        raise ValueError("gross_roundtrip_entry_invalid")
+    index = ordered.index(entry)
+    if len(ordered) != index + 2:
+        raise ValueError("gross_roundtrip_pair_invalid")
+    exit_state = ordered[-1]
+    if (
+        exit_state.intent.side != "sell"
+        or exit_state.broker_order_id is None
+        or (exit_state.submission_started_at or exit_state.submitted_at) is None
+        or exit_state.cumulative_fill is None
+        or exit_state.cumulative_fill.quantity != 1
+    ):
+        raise ValueError("gross_roundtrip_exit_invalid")
+    for state in ordered:
+        if state.fill_observation_status in {"conflict", "identity_mismatch"}:
+            raise ValueError("gross_roundtrip_fill_conflict")
+        _retained_terminal(state, terminal.get(state.intent.run_id))
+    owner = _owner(binding, owner_id, "QQQ", "NASD", records)
+    replay = project_kis_paper_portfolio_budget(
+        basis=basis,
+        expected_basis_ref=expected_basis_ref,
+        owners=(owner,),
+        expected_owner_refs={owner_id: expected_owner_ref},
+        states=states,
+        as_of=as_of,
+    )
+    if (
+        binding["basis_ref"] != expected_basis_ref
+        or binding["qqq"]["owner_ref"] != expected_owner_ref
+    ):
+        raise ValueError("gross_roundtrip_custody_mismatch")
+    if any(
+        value != 0
+        for value in (
+            replay.stocks_by_owner[0].quantity,
+            replay.entry_cost,
+            replay.reserved_buys,
+        )
+    ):
+        raise ValueError("gross_roundtrip_not_flat")
+    buy, sell = entry.cumulative_fill, exit_state.cumulative_fill
+    return KisPaperGrossRoundTrip(
+        buy.gross_amount,
+        sell.gross_amount,
+        _exact_decimal(Fraction(sell.gross_amount) - Fraction(buy.gross_amount)),
+        (buy.identity_ref, sell.identity_ref),
+    )
 
 
 def _migrate_binding(root, binding, config, qqq_cycle_id, *, as_of):

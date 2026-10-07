@@ -5,6 +5,17 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October8 causal-volume appointment closed/non_promoting_completed: one actual
+CUDA GRU32 and one CPU Ridge, no sealed spend. Models/frozen code retained in
+`D:\thericher-v2\model-artifacts\research\firstrate-causal-volume-sequence-development-20261008-v1`.
+Contract97f39d3e.../result93b42e1e.../canonical model1cc3d7d0...; exact hashes and
+losses in Engine Research. Frozen/outcome registry custody recorded, worker
+exited/GPU lock absent; independent ALL-RO CPU inference replay/zero refits
+matches. Entire premise rejected; no further training allocation or Paper grant.
+Optional-dependency tests and registry-only recovery are independent code fixes,
+not another appointment. RTX4090 was actually used; peak/utilization not measured.
+No active GPU job or ready frozen successor. Research owns next hypothesis prep.
+
 October6 forward-variance target/input preparation is source/hash-bound and
 complete:251 paired past inputs/249 supported targets per ETF/two early-close
 shortfalls;532 mutations and independent ALL-RO replay match. No fits/weights,

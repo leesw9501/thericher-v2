@@ -20,37 +20,35 @@ Never log secrets, account/order identifiers, raw broker values or market rows.
 
 ## Active Company Objective
 
-`qqq-restart-safe-unit-paper-v1` COMPLETED on the NEW account October7:
-QQQ/NASD unit BUY and SELL, exact full linked fills, both terminal outcomes
-order_complete/exact_order_and_position_reconciled, owned replay flat and
-current22:36:07 KST account snapshot QQQ-flat/zero QQQ opens.
-Actual submissions22:34:07/22:34:45 KST; closure22:34:57 KST/two worker visits.
-This is Paper connectivity, not strategy profitability/live. Fees, settled
-cash and net broker PnL remain not_observed.
+`new-account-paper-fill-accounting-v1` COMPLETED October8. Actual QQQ full
+BUY/SELL cumulative fills yield NEGATIVE gross realized USD sign, one owned-flat
+round trip/two fills, exact independent cashflow arithmetic and three identical
+restart replays. No new broker call/order; amounts remain private. Fees,
+settled cash/net PnL remain unknown; this canary is not a winning-strategy claim.
+One pure projector reuses account/basis/owner/intent/fill/terminal custody.
+Independent review fixes reject conflicting observations and require frozen
+caller expectations; external v2 freezes/checks source hashes before/after.
+Receipt `D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\gross-roundtrip-new-account-20261008-v2\outcome.json`,
+SHA256 c2fbf15660751ae50c23a6e81b5c2d62f7a55b581504d9157c0c613112adf45f.
+Assumed-honest host consistency, not cryptographic broker provenance.
+467 changed-path serial passes; full9,351 passes/22 skips/35 warnings/335.91s,
+eight workers/clean helper,9,373 collected; Ruff/both sample Compose pass.
 
-`firstrate-forward-risk-baseline-development-v1` is now COMPLETED, overall
-incremental-risk premise REJECTED. Two actual CPU Ridge fits/21.23s,159 TRAIN
-and89 comparison targets per ETF; QQQ beats both controls but SPY fails past
-variance in all90/first45 and their shared-date deletions. No QQQ-only rescue,
-retuning, profitability or Paper qualification. Independent ALL-RO replay
-matches in20.571s/zero refits;611 mutations pass. Exact external contract/model/
-result pins and limitations are in agents/engine-research.md and RUNBOOK.md.
-162 focused serial passes; full9,260 passes/22 skips/35 warnings/480.64s/eight
-workers/clean helper, matching9,282 collected; Ruff/both sample Compose pass.
-Next single company objective: `new-account-paper-fill-accounting-v1`, exact
-new-account QQQ fill-derived gross realized PnL without double counting.
-Scheduled Paper/Data are independent, not held on research outcomes. GPU
-research preparation runs independently; no profit approval is required.
+Independent causal-volume research also completed one ACTUAL CUDA GRU32 and
+one CPU Ridge on retained QQQ/SPY M1. Entire premise REJECTED: GRU loses Ridge
+on both ETFs and both halves.1,274 TRAIN rows/356 comparison keys per ETF,
+3,012 future mutations/720 target-blind forecasts, exact ALL-RO zero-refit CPU
+replay. Models/frozen code outside Git; no GPU job/lock/sealed spend or Paper
+promotion remains. Exact contract/result/model pins are in Engine Research.
+Registry-only recovery and optional-Torch test portability remain a bounded
+implementation package, not a repeat fit. Claude challenge is unavailable
+(authentication_expired), not agreement; independent Validation supplied review.
+Closed forward-risk CPU family remains rejected with exact evidence in Research.
 
-October7 local probe verifies RTX4090/PyTorch2.7.0+cu128 CUDA matrix operation
-inside existing research image d6b43213, networknone/no credentials. GPU is
-available, not authorization/runtime blocked. No research training is active;
-the current small two-feature Ridge baseline was deliberately CPU. A bounded
-Engine next-hypothesis review proposes a distinct retained-data causal-volume
-GRU study; target/scorer/runner implementation is the next preparation package,
-not a dummy utilization job or a frozen appointment. Exact proposal is in the
-Research stateboard. Accounting source review also completed; both invoked
-preparation roles exit rather than masquerade as persistent training workers.
+Next single company objective is `paper-accounting-console-v1`: show existing
+fresh SPY account facts alongside hash-pinned historical QQQ gross sign in the
+credential-free loopback console. No private order mount/new broker call or
+account-vs-owned/PnL/freshness conflation. Current Research/Data continue.
 
 Corrected .env uses a DIFFERENT mock account. Existing logical private volume
 now points to `thericher-v2-paper-canary-private-acct-20261007-v1`; all seven
@@ -70,12 +68,15 @@ Paper image remains
 sha256:0ff015deadbfaea80525f69f4d8d94ad5847018a6229cd376864c41f5017b53b.
 No broker-code rebuild, new task or schedule change. Intent-before-wire,
 exact-limit funds, locks and unknown-outcome reconciliation remain.
-Completed cycle `qqq-unit-new-account-20261007-v1`/tag
+Completed canonical cycle
+`qqq-unit-108e0e99872a0aac8d13d5bee4fcb6e28b83298fb29e0c41125ec808c34e3381`/tag
 `new-account-20261007-v1` keeps exact identity on restart; a complete replay
 cannot select another entry. Never route old-account recovery here.
 
-Existing SPY strategy Ready/next23:50 KST October7; Data head next00:29 KST
-October8. Task time/exit is not evidence of its next order/capture.
+SPY October7 23:50 public result is order_complete/exact_order_and_position_reconciled,
+with account-level one SPY position record/zero opens at00:12:43 KST. Private
+strategy ownership/PnL is not yet reattached. Scheduler Ready/next October8
+23:50; Data head next00:29 KST October8. Task exit is not fill/capture evidence.
 Old prospective QQQ child bypassed shared allocation custody. ONLY that child's
 --execute flag is removed; collection/named budget executors stay enabled.
 Exact offline preview/no-validation tuple is tested; actual next scheduled

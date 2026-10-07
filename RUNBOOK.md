@@ -2,7 +2,23 @@
 
 ## Independent QQQ Unit Cycle
 
-October7 NEW-account cycle `qqq-unit-new-account-20261007-v1` with explicit
+October8 offline gross accounting is complete/NEGATIVE sign/two exact fills,
+one owned-flat round trip/three matching restart replays. Fees, settled cash
+and net PnL remain unobserved, not a strategy-performance claim. No new broker
+call/order. Source-pinned reader and categorical receipt:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\gross-roundtrip-new-account-20261008-v2\replay.py`;
+same directory `outcome.json` SHA256
+c2fbf15660751ae50c23a6e81b5c2d62f7a55b581504d9157c0c613112adf45f.
+Reader uses existing Paper-only config whitelist in host memory for account
+proof, no live route; container has no credentials/network and private volume
+is RO. Private financial values never leave the process. Basis/owner refs
+come from a byte-stable frozen snapshot; cryptographic broker origin and
+historical absence of coherent host tampering are not proven.
+The former descriptive cycle label was not the persisted ID. Preserve the
+canonical cycle below, its79c8baac... public scope and original tag; no reset.
+
+October7 NEW-account cycle
+`qqq-unit-108e0e99872a0aac8d13d5bee4fcb6e28b83298fb29e0c41125ec808c34e3381` with explicit
 tag `new-account-20261007-v1` completed at22:34:57 KST: exact full unit BUY
 and SELL, exact order/position reconciliation, zero pending requests, and
 current22:36:07 KST runtime QQQ-flat/zero opens. Use the existing runner on
@@ -19,6 +35,10 @@ The existing intraday-head QQQ child now defaults to observational preview,
 because its bare canary path lacks the shared budget. Data collection and named
 budget executors continue; preview has no broker call or validator and is not
 a fill. Runtime preview success after this change remains unobserved.
+SPY October7 23:50 has an exact public order_complete outcome, but dispatch
+is not hash-bound; fresh00:12:43 account projection shows one SPY position
+record/zero opens, not independently proven strategy ownership or SPY PnL.
+Existing SPY next due October8 23:50/Data head00:29; neither manually invoked.
 The following October6 command/diagnosis is historical OLD-account material.
 
 October7 account correction supersedes the October6 VOC-first setup diagnosis

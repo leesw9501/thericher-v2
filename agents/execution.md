@@ -14,6 +14,40 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October8 `new-account-paper-fill-accounting-v1` is complete. One pure projector
+in the existing budget module independently receives frozen account/basis/owner
+expectations, validates exact terminal cumulative fills and replays only the
+QQQ owner. Actual network-none/all-RO private replay gives NEGATIVE gross USD
+sign, two matched fills/one owned-flat round trip and three identical restart
+replays. No quote/limit/funds substitution, broker call, new order, budget reset
+or private-state mutation. Contradictory fill observations reject this segment;
+an unavailable later read may retain unchanged proven cumulative totals.
+Fees, settled cash and net PnL remain not_observed; one canary loss is not a
+strategy-performance conclusion. Source hashes are frozen before dispatch and
+checked afterward; independent Validation supports the narrow result under
+assumed-honest host custody, not cryptographic broker provenance.
+Receipt `D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\gross-roundtrip-new-account-20261008-v2\outcome.json`;
+SHA256 `c2fbf15660751ae50c23a6e81b5c2d62f7a55b581504d9157c0c613112adf45f`.
+Original v1 receipt/source remain; v2 adds the independent-review source guards.
+Canonical cycle is `qqq-unit-108e0e99872a0aac8d13d5bee4fcb6e28b83298fb29e0c41125ec808c34e3381`;
+79c8baac... is its immutable public scope. The former human-readable
+`qqq-unit-new-account-20261007-v1` label was NOT the persisted cycle identity.
+This corrects documentation only; do not rewrite private identity or retry it.
+29 accounting tests and467 related serial tests pass using a fresh C:\trpy
+child. The first long default-temp run failed on path length; short-root rerun
+passes without a code change. Full integration:9,351 passes/22 skips/35 warnings,
+335.91s/eight workers/clean helper,9,373 collected; Ruff/both sample Compose pass.
+
+Existing SPY23:50 October7 opportunity produced the exact public outcome
+`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\daily-spy-20261007T145001890278Z\outcome.json`,
+SHA256 `e0c289caff41462608b5a5f937278cdc39a894eea8b92a247dfc9b0c73298654`:
+order_complete/exact_order_and_position_reconciled at23:50:44 KST. Scheduler
+Ready/exit0/next October8 23:50; dispatch is not hash-bound to that outcome.
+00:12:43 categorical loopback projection shows one SPY account position record
+and zero SPY opens; that is account-level evidence, not strategy ownership or
+a SPY round trip/PnL. Exact private SPY custody remains a separate package.
+Data's00:29 October8 opportunity remains owned, not manually invoked.
+
 October7 corrected-account QQQ/NASD unit cycle COMPLETED at22:34:57 KST:
 public cycle `qqq-unit-new-account-20261007-v1`, explicit entry tag
 `new-account-20261007-v1`. Two worker visits, one actual BUY submission and
@@ -25,10 +59,9 @@ and owned replay quantity zero. Fresh22:36:07 KST runtime snapshot independently
 has QQQ flat/zero QQQ opens. This is execution connectivity, not model profit.
 Fees, settled cash and net broker PnL remain not_observed.
 
-Next company package is `new-account-paper-fill-accounting-v1`: reuse these
-exact two closed current-account fills for pure gross realized PnL/restart
-replay. No new quote, order, account call, budget reset or scheduler is needed.
-Private amounts stay private; accounting evidence has not yet been produced.
+The exact closed pair now has gross accounting evidence above. Next product
+package exposes only its categorical historical sign in the existing dashboard,
+separate from fresh SPY account facts; never infer current flatness from it.
 
 Minimal cutover remaps the existing logical private volume to
 `thericher-v2-paper-canary-private-acct-20261007-v1`; all seven consumers keep

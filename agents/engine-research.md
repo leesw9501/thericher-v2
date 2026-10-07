@@ -15,7 +15,35 @@ Before a predictive campaign or GPU appointment, freeze its dataset, target,
 temporal split, feature availability, timeframe/window matrix, cost model,
 naive baseline, compute stop rule, artifact root, and strongest kill test.
 
-## Current Research State (2026-10-07 KST)
+## Current Research State (2026-10-08 KST)
+
+Causal-volume sequence family completed one ACTUAL CUDA GRU32/128 epochs and
+one CPU Ridge fit from retained QQQ/SPY sources. Frozen160/1/90 dates and four
+slots produce2,008 scheduled keys/1,274 TRAIN fit rows; each ETF has356 eligible
+comparison keys across90 dates. Past120min/24 M5 inputs, next30min volume at
+C+1..C+30/availabilityC+31; TRAIN-only scaling and day-weighted log-volume loss.
+All90 loss GRU/Ridge: QQQ0.373469/0.300067; SPY0.356540/0.294429. Both ETFs and
+halves fail the predeclared every-control5-percent improvement kill: REJECTED,
+no seed/window/ETF rescue, ensemble, profit, impact, capacity or Paper claim.
+3,012 future-removal/value/support mutations and720 target-blind forecasts pass.
+Independent ALL-RO replay restores numeric weights on CPU, matches exact
+cohorts/forecasts/losses, ZERO refits/GPU allocation. Runtime2.7.0+cu128 on the
+existing Docker image,2CPU/6GiB/networknone; job exited/canonical GPU lock absent.
+No utilization/peak-memory statistic was instrumented; fit success is the
+evidence, not an idle post-run display sample.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-causal-volume-sequence-development-20261008-v1`;
+contract `sha256:97f39d3e2ae3928eae165149055b057c879d5e8ce839c20c095f38d0d862fd1b`;
+result `sha256:93b42e1e999afe437111b36ecb6e10ddfd9bd2c17c40e46fd143d4ba27ac25a3`;
+canonical numeric model `sha256:1cc3d7d00a16f0702b2de5c457d3fd75ef695967317475a4246107d50b9f29a5`.
+Frozen code and models stay outside Git. Registry frozen/outcome both recorded.
+62 focused tests pass. Invoked independent review found optional-Torch test
+portability and registry-only recovery gaps; reversible fixes are role-owned,
+not a repeat fit or a reopening of this failed hypothesis. The frozen v1 runner
+remains the replay source. No ready frozen successor training campaign exists.
+Research now prioritizes a genuinely different evidence-backed hypothesis,
+not GPU utilization or further tuning of this closed family.
+Claude challenge exited1/authentication_expired/review_unavailable, not agreement:
+`D:\thericher-v2\model-artifacts\research\source-discovery\claude-accounting-volume-20261008-v1.json`.
 
 `firstrate-forward-risk-baseline-development-v1` completed two actual CPU fits
 in21.23s, with159/160 positive TRAIN and89/90 comparison observations per ETF.
@@ -46,25 +74,9 @@ allocation, broker call, returns, PnL or promotion. Same revised/seen source,
 source clocks/actions/finality/PIT and conditional complete-case limits remain.
 Claude supplied-result challenge exited1/review_unavailable, NOT agreement:
 `D:\thericher-v2\model-artifacts\research\source-discovery\claude-forward-risk-result-20261007-v1.json`.
-Next product priority is Execution's actual-fill accounting, independent of
-research scores. No genuinely ready new frozen predictive/GPU campaign exists;
-closed risk/return/allocation/foundation families stay closed.
-GPU capability is freshly verified in existing research image d6b43213:
-RTX4090/Torch2.7.0+cu128 CUDA matrix operation succeeds/networknone/no fits.
-Bounded next-hypothesis review completed: a causal-volume sequence study is a
-concrete independent preparation package, not a frozen appointment or training
-result. Existing QQQ/SPY FirstRate M1 sources suffice for proposed past120min/
-24 completed M5 own/peer log-volume inputs and next30min total-share-volume
-target. Proposed one pooled GRU32/seed101/128 epochs has TRAIN-slot mean,
-trailing-volume persistence, seasonality-scaled persistence and Ridge controls;
-fixed160/1/90 shared-date split and45/45 halves, day-weighted log-volume error,
-strict5-percent improvement over every control in both ETFs/halves/date deletions.
-No return, impact, fillability, capacity or profit claim follows volume accuracy.
-Before dispatch, implement the target/scorer, exact offset support counts and
-causal tests, then freeze its one-cell contract/finite600-second compute and
-external artifact root. Reuse completed-context/GRU construction, not a new
-runtime. Preserve seen-source history and closed return/risk recipes. Preparation
-is ready independently of Execution accounting, not an operator-approval wait.
+Closed risk/return/allocation/foundation families stay closed. Execution's actual
+QQQ accounting is complete independently of these research scores. No genuinely
+ready frozen GPU successor exists; the completed volume campaign is above.
 
 ## Prior Target And Input Preparation
 

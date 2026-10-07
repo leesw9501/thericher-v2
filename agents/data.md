@@ -11,7 +11,16 @@ resampling, manifests, temporal splits, and quality facts. It does not select
 strategies, fit models, or make execution decisions. KIS Paper market-data
 collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
-## Current Coverage (2026-10-07 KST)
+## Current Coverage (2026-10-08 KST)
+
+Causal-volume consumer reattests both original CSV/normalization/lineage hashes
+and251 shared dates, without acquiring or changing sources. Its fixed four-slot
+geometry has2,008 scheduled keys:1,274 TRAIN fit rows and356 comparison keys
+per ETF/90 dates. Comparison exclusions:4 calendar-input,2 calendar-target,
+2 required-past-M1 shortfalls, not a whole-panel block. C+1..C+30 target support
+does not affect past-input masks. Models/losses belong to Research, not a Data
+qualification, current availability or Paper input. Current head00:29 October8
+remains task-owned/unobserved; no collector/cursor/pace/schedule expansion.
 
 The forward-risk consumer reattests the existing normalization/lineage, both
 canonical CSV hashes and251 scheduled NYSE dates without acquisition or source
