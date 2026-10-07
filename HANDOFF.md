@@ -20,9 +20,41 @@ Never log secrets, account/order identifiers, raw broker values or market rows.
 
 ## Active Company Objective
 
-Next company objective is kis-paper-head-authentication-cause-recovery-v1:
-one existing-client token/at-most-one-page capability probe and measured
-reversible repair, not an approval wait or more price-only architecture rerolls.
+Next company objective is board-yield-curve-monthly-policy-development-v1:
+one costed fixed monthly basket/cash policy using new Board-direct macro input,
+not another closed price-only architecture reroll. Exactly one rule/zero fits;
+no GPU, sealed holdout, model/Paper promotion or parameter rescue.
+Prior goal completed its bounded capability question: normalized standalone
+Paper token HTTP2xx/code absent, same-client QQQ/NAS GET parsed120 rows at
+05:50:28.931854-05:50:30.301989 KST October8. Source/independent review closes
+two categorical-observation defects;68 parent serial tests pass/.57s.
+Full authority10,560passes/22skips/35warnings333.61s,eightworkers,
+10,582 collected/clean helper/exit0. Ruff/default+research+accounting sample
+Compose pass. No required worker/test session remains at this boundary.
+Exact receiptc9b1102c...:
+`D:\thericher-v2\model-artifacts\data\kis-paper-head-authentication-cause-recovery-v1\kis-paper-auth-capability-probe-v1\auth-page-20261007T205028931854Z\receipt.json`.
+Source/image/scope dispatch record:
+`D:\thericher-v2\model-artifacts\data\kis-paper-head-authentication-cause-recovery-v1\dispatch-20261008-v1.json`.
+No account/order/task/schedule/cache/cursor action or raw/token retention.
+Original04:24 token4xx root cause remains UNKNOWN. Standalone parsed-page success
+is not owned-head recovery, complete-session coverage, finality or causal input.
+Existing head next06:20 KST stays owned; inspect its exact chain when available,
+never foreground-wait or infer a result from exit/missing evidence.
+
+Board-direct2Y/10Y source acquired/re-retrieved as exact matching bytes; parent
+offline raw->canonical reconstruction passes without network/writes. Snapshot:
+`D:\market_data\us_equities\federal_reserve_h15\snapshot=20261007T204212Z`.
+Manifest6b2c6242.../source-attestationd7f6ea42.../raw23331130...;
+12584/16176 valid dates to2026-10-06,12584 common. Three bounded HTTPrequests
+total,1573033 data/metadata bytes, zero fits/GPU. Original manifest's no-raw
+fact stays immutable; new source-attestation owns later retained public bytes.
+Board public-domain/citation terms do not transfer to FRED/ALFRED services:
+their development-use restriction keeps existing FRED-derived bytes off this
+research path. Monthly30-calendar-day lag/7-day freshness is an explicit
+revised/non-PIT development assumption, not first-publication evidence.
+Current Claude recovery/macro challenges are CLI-nonzero/unavailable, not
+agreement; actual independent reviewers supplied scoped source criticism.
+
 The signed-clock family completed/rejected54 cells; primary5bps first45 has
 zero entries/growth, last45 two entries and net growth-.00109647/utility-.00618436.
 Contract7186a6c9.../resultcbbaad81...; exact root and620-file frozen source:

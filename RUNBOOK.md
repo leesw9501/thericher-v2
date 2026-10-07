@@ -1,5 +1,42 @@
 # Runbook
 
+## Current Board Macro Policy Preparation
+
+NEXT_CODEX_GOAL.md owns board-yield-curve-monthly-policy-development-v1.
+Exact source: D:\market_data\us_equities\federal_reserve_h15\snapshot=20261007T204212Z.
+Manifest SHA2566b2c62423470f12c17d22a634d4d5018ed7f6682d5a5875bc08c6ffd9e49e393;
+source-attestation SHA256d7f6ea428eb2d9a834cd39d2969dd435a678d3e45c4838f21268d1eb68697fd3;
+raw response SHA256233311307ac2f3acf08ae34d5ca3677bba695ce69e7e78d513390a85ffc7d5a9.
+Canonical2Y e67bc77bf95651a62bc00f758078b9ffb9de6942645e966b78d5f6e0a4c8560c;
+10Y bb80f7eb1203274473b5a553d8711e7dce95338c85dba1f7fcead46cd4b9f3fd.
+Original acquisition manifest unchanged; later independent retrieval/raw retention
+has its own immutable source-attestation. No permission latch or new download.
+Rights: https://www.federalreserve.gov/disclaimer.htm, cite Board direct source.
+Do not substitute/relabel existing FRED/ALFRED files; current FRED legal terms
+restrict development use. This snapshot is revised/non-PIT, not publication proof.
+Freeze next one-rule contract/runtime before ETF outcomes. No actual macro study
+has run yet; use the current goal's synthetic/asof/ledger tests before dispatch.
+
+## Bounded Paper Authentication Capability
+
+Actual2026-10-08 05:50 KST normalized standalone probe parsed120 QQQ/NAS rows
+after tokenHTTP2xx/code absent, one same-client token/page dispatch each.
+Receipt: D:\thericher-v2\model-artifacts\data\kis-paper-head-authentication-cause-recovery-v1\kis-paper-auth-capability-probe-v1\auth-page-20261007T205028931854Z\receipt.json.
+SHA256c9b1102cb8244a859739f08925460a5af48cec4e7780f008ba1fcee223f0c403.
+Source/runtime/isolation pins: same root's dispatch-20261008-v1.json.
+Probe runner's optional --head-page-once preserves legacy token-only mode,
+one POST/one QQQ/NAS GET/60s initiation/15s request timeout and at most1s owned
+normal transport pacing; external cooldown/race yields owned next_due.
+Use only the approved two-key loader, isolated child environment and explicit
+sample env file if Compose is used. Never print credentials/command env/bodies.
+No raw row/token retention, account/order request, cache/cursor or schedule action.
+Do not rerun this already-answered capability merely to reproduce success.
+Dispatch counts are not wire-capture evidence. Original04:24 root cause and
+owned head runtime recovery remain unknown until exact scheduler receipts exist.
+Official sample README's once-per-minute token guidance is not the local300s
+guard, token lifetime, or proof of observer/head POST ordering or EGW00133 meaning:
+https://github.com/koreainvestment/open-trading-api.
+
 ## Signed Cross-Day Clock Study (Closed)
 
 `firstrate-cross-day-clock-continuation-development-v1` completed/rejected54 cells.

@@ -8,6 +8,22 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
+Active company objective: board-yield-curve-monthly-policy-development-v1.
+Ready distinct input: Board direct H15 snapshot20261007T204212Z under
+D:\market_data\us_equities\federal_reserve_h15;2Y12584/10Y16176 valid dates,
+12584 common through2026-10-06. Exact re-retrieved raw/hash-to-canonical parent
+readback passes. Manifest6b2c6242.../attestationd7f6ea42...; full pins in RUNBOOK.
+FRED/ALFRED-derived support files are excluded under development-use terms;
+Board-direct public-domain/citation source is separate, never relabeled bytes.
+Prepare one fixed monthly10Y-2Y>0 basket/cash rule with30-calendar-day lag and
+7-day stale bound, both explicit non-PIT assumptions. Zero predictive fits/
+GPU/selection; shared costed portfolio versus cash/passive/TRAIN target-activity
+control. Fixed10bps two-period NAV/utility kill; no results observed yet.
+Economic source is inspiration, not near-term-forward-spread replication or
+evidence that recession prediction yields tradable stock profits.
+Claude join challenge: review_unavailable/cli_nonzero, not substantive verdict:
+D:\thericher-v2\model-artifacts\research\source-discovery\claude-board-yield-curve-monthly-policy-20261008-v1.json.
+
 Signed cross-day same-clock family COMPLETE/REJECTED54 cells: six policies,
 three fixed costs, continuous90/first45/last45 views of one shared cash account.
 Exact20 prior scheduled dates/three clocks; common past-only OPEN endpoints,
