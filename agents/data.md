@@ -22,9 +22,19 @@ Source-only input-origin audit: current inspecting Process/User/Machine scopes
 have neither Paper key supplied and no named Compose override; no mismatch
 measured. Launcher may inherit shell values, but scheduled child is unattested.
 Do not repair a hypothetical stale key or label it the actual4xx cause.
-Current goal: kis-native-timesfm-m5-24-development-v1. Data reattests exact
-fixed25 dated KIS inputs before one bounded comparison; current partial head
-is not added to that panel. Prior head-conflict recovery is complete as scoped.
+Current goal: kis-native-timesfm-m5-24-development-v1. Exact25 dated shared
+August28-October2 inputs reattested:50 named source partitions/51 pinned
+snapshots,9750 regular M1 each,150 complete120-M1 contexts and300 present
+forward endpoints. No numeric payoff/price suitability or availability claim.
+Immutable commitment: A/research/kis-native-timesfm-m5-24-development-v1/input-commitment.json,
+SHA5a717d52d23f9a5af9a4e4b240e8cebaa631734033fcd9c88a41e847570d33d9.
+Current partial head is excluded; prior head recovery is complete as scoped.
+Independent October7 geometry: QQQ389/390 regular M1, missing12:42 ET;
+SPY390/390. Both09:30-15:59 ET, no forming regular rows. QQQ gap cause
+unknown, not a forming cutoff; eighth-page failure still makes collection
+partial. Exact manifest/raw hashes+indexgen257 verified, no finality upgrade.
+Receipt: A/data/head-r8/intraday-head-20261007T224943408578Z/regular-session-geometry.json,
+SHA7bdeed6c65f423e34352571f8bab06cf3b52b0e75dafb318389f3f39b2cecae2.
 Existing due-time ownership does not hold independent Research preparation.
 v1 actual direct07:21: seven valid pages/840 rows per target, one retained
 conflicting chunk/minute, zero old-onlyloss; onlyfresh_not_collected blocks.
@@ -39,8 +49,8 @@ availability/finality not_observed. Exact root HANDOFF/RUNBOOK. No OS-origin
 proof or complete-session/model/Paper claim. Orphan recovery keeps partial and
 omits original-call minute fields from new projection, preserving manifest.
 Full authority11098passes/22skips338.41s/11120collected/eightworkers/clean exit;
-Ruff/three sample Compose pass. Fixed25-session readiness is a next-package
-question, not a reason to hold this measured collector recovery.
+Ruff/three sample Compose pass. Fixed25-session inputs are ready and consumed
+by the bounded model study, not a permission hold on other useful work.
 Tiingo-specific new-source rights hold: https://app.tiingo.com/tos/ updatedOct6
 section1.6(a), Starter/Trial durable source/derived products prohibited.
 Plan/notice/supplemental/applicability unknown; operator asked. No new Tiingo

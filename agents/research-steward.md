@@ -8,10 +8,15 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-08 KST)
 
-- No active research worker, GPU appointment or sealed-evaluation allocation.
-  Accepted terminal handoffs report canonical GPU and CPU-attempt locks absent;
-  this is custody evidence, not a fresh hardware/process probe.
-- No actual frozen next GPU campaign is ready or reserved.
+- KIS-native TimesFM M5-24 familytrial1 is COMPLETE/REJECTED30 cells;
+  contract08d5e48b.../result6d495339..., registry non_promoting_completed.
+  One CUDA invocation17.644733515s/peak1058705920bytes/zero fits or new weights;
+  parent20.166s confirms exact container absence before canonical lease release.
+  ALL-RO8.013s exact30-cell replay has zero inference. No active campaign or
+  sealed allocation follows; this is owned terminal evidence, not a hardware
+  utilization target or general CUDA restriction.
+  Exact root: D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
+- No next predictive GPU campaign is yet frozen or reserved.
 - Goal7 `board-yield-curve-monthly-policy-development-v1` completed/rejected24
   cells, exact ALL-RO readback. Zero fits/GPU/sealed spend and no successor
   allocation. Existing foundation checkpoint metadata preparation is not a

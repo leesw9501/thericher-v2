@@ -8,9 +8,30 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
-Active company objective: kis-native-timesfm-m5-24-development-v1; exact fixed
-KIS25-session source attestation and M5-24/20log-bps/30cell contract precede one
-bounded CUDA batch. No actual new inference/allocation before freeze.
+Current kis-native-timesfm-m5-24-development-v1 is COMPLETE/REJECTED30 cells.
+Exact25 shared KIS sessions August28-October2, M5 context24/120 past M1,
+fixed20log-bps score and three clocks; one continuous NAV per policy/cost.
+First12 at10bps side: TimesFM zero trades/growth, cannot beat cash. Last13:
+two fill legs/one instrument roundtrip, normalized growth-.0007175703 and
+utility-.013960918, below cash. Decimal50/1e-10 original kill rejects;
+no threshold/window rescue, holdout, Paper input or profit claim.
+Actual CUDA inference17.644733515s, peak1058705920bytes, one adapter invocation
+for150 contexts, zero fits/retained new weights. Parent20.166s, container reaped;
+ALL-RO Docker8.013s reproduces exact30 cells/actions with zero new inference.
+Root: D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
+Contract08d5e48bfed8de2de53a026f3d236bbf931d89a47d7cf48fc23737460d0abbc8;
+result6d495339fa5d43bd4852bc985acd98788afc8d376bf21bca063f76b64803b53c.
+Input5a717d52... and629-file source treec62edd62... frozen before outcomes;
+registry non_promoting_completed/familytrial1/no sealed spend. Revised/seen
+KIS, ex-post coverage, availability/finality not_observed, undisclosed model
+corpus and ideal fractional OPEN fills remain developmental limitations.
+469 focused parent tests31.72s;94 new module cases. Independent177-file
+binding/pure CPU1.94s exact30-cell replay and Decimal kill agree; hostPython
+3.14.3 differs from pinned Docker3.12.14, so it supplements the pinned replay.
+Source629/input commitment unchanged, canonical GPU lease absent; independent
+custody review supported-with-limits/noP1/P2. Full11192passes/22skips/35warnings
+343.28s,eightworkers/11214collected5.14s/clean helper/exit0; Ruff/three sample
+Compose pass. No required model/test worker remains.
 Engine independent package complete/independently accepted: source-free SPY/TLT/GLD named
 input/ledger prototype; parent233 focused tests pass. Exact previous calendar
 CLOSE history, common caller-bound vintage, required marks/no date deletion,

@@ -2,119 +2,99 @@
 
 ## Objective
 
-Complete kis-native-timesfm-m5-24-development-v1: determine whether the existing
-official TimesFM2.5 checkpoint adds costed short-horizon decision value on the
-fixed retained QQQ/SPY KIS minute panel, using one zero-shot recipe and one
-bounded CUDA appointment. This is development evidence, not model promotion.
+Complete kis-cross-asset-d1-input-foundation-v1: acquire and freeze useful
+KIS-native SPY/TLT/GLD daily inputs for a first long-horizon cross-asset engine
+campaign. The product result is a reusable exact input, not a new gate/report.
+Current TimesFM M5-24 family is complete/rejected; do not rescue its recipe.
 
 Read HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards after
 C:\Users\Public\Documents\thericher-v2\scripts\start_next_codex_task.ps1.
 
-## Starting Evidence And Scope
+## Starting Facts
 
-Head retained-conflict recovery completed: final image b7fcf975...; exact
-October8 07:49 direct run intraday-head-20261007T224943408578Z admits seven
-pages/840 rows per ETF, keeps partial/eighth mixed-date failure and zero
-old-only active-key loss. Exact immutable chain and limitations in HANDOFF.
-No complete-session, availability/finality or model/Paper claim follows.
+SPY/AMS retained D1 metadata has4756 dates,2007-08-21 through2026-07-17.
+Pinned broad generation26368 excludes these three ETFs; TLT/GLD coverage in
+other scopes is unknown. TLT/NAS and GLD/AMS are bounded capability questions,
+not an approval wait. Existing named cross_asset_etf_input/three_asset_nav
+prototype and233 focused tests are integrated. Existing Paper/private budget/
+account/web/schedules and the old isolated account remain unchanged.
 
-Use only the pre-existing 25 shared regular sessions August28-October2,
-9750 M1 per ETF, through their exact named source scopes. Data must reattest
-and pin those inputs before actual model work. Do not add October7, pick a
-latest artifact, select dates using later payoffs, or fill missing required
-inputs from another vintage. Failed required context/marks make the declared
-block input_unavailable; never remove a difficult date to improve a result.
+Tiingo new acquisition/fit/numeric readback remains source-specifically deferred
+pending actual plan/notice/supplemental rights. No Tiingo/Norgate/FRED/FINRA
+substitution, payment or uncertain-rights acceptance.
 
-Tiingo acquisition/fit/numeric readback remains source-specifically deferred
-pending actual plan/notice/supplemental rights. This KIS-only objective is
-independent. Do not use Tiingo/Norgate/FINRA/FRED inputs, credentials or source
-values. Existing Paper scheduler/private account/budget/web remain unchanged.
+## Owned Data Work
 
-## Frozen Economic Recipe
+Use standing-authorized KIS_PAPER_* only through the existing selective named
+loader/client and virtual host. Never read KIS_LIVE_* or generic .env contents.
+No account/order endpoint, scheduler invocation/expansion or broker side effect.
 
-Before any outcome is read, freeze exact dataset/source hashes, checkpoint/
-config/runtime/source hashes, date list, costs, cell count, baseline semantics,
-kill test and a family-level300-second compute stop rule in existing custody.
+First freeze a capability scope: SPY/AMS,TLT/NAS,GLD/AMS; dailyprice
+HHDFS76240000/GUBN0; MODP0/1 at BYMD20261007 for each, plus one MODP0 historical
+BYMD20071231 request for TLT and GLD. At most8 GETs+1 token POST, one reusable
+client, existing measured shared1-second request gate/300-second token-start
+guard. Modes remain opaque; identical responses do not prove adjustment,
+dividends,total return, finality or unlimited temporal reach.
 
-- One context:24 completed M5 OPENs (120 M1 minutes), regular-session anchored.
-- Decisions11:30,13:00,14:30 Eastern, exact past required intervals only.
-- Input10000*log(OPEN/last past OPEN), fixed float32 model adapter.
-- Horizon8: point1 forecasts decision+5 minutes, point7 decision+35 minutes.
-  Their difference is expected30-minute log return in log-bps.
-- TimesFM, prior23 OPEN-log-return mean*6 and last OPEN-log-return*6 take
-  a long position only when expected log-bps strictly exceed20.
-- Controls also include cash and unconditional long; unconditional long
-  bypasses the20-log-bps filter. No scaling/calibration/threshold/window search.
-- Shared NAV:QQQ/SPY each at most50 percent, unused slice remains cash.
-  Entry/exit at M1 OPEN decision+5/+35; nonoverlapping slots, flat after each.
-  Reuse clock_portfolio_nav local_paper fractional cashflow semantics.
-- Fixed side costs2.5/5/10bps; first12 and last13 chronological sessions.
-  Five policies*three costs*two blocks=30 cells; zero fits/holdout spend.
-  At most75 paired slots/150 instrument forecasts; effective sample at most
-  25 session blocks, not150 independent observations.
-- Seal all policy actions before reading payoff marks. Report invalid/missing
-  marks separately from past-input availability; no future whole-day mask.
-- Strongest kill at10bps side: TimesFM must have positive net growth and beat
-  every control in net growth AND existing daily-log utility in BOTH blocks.
-  Use fixed Decimal/tolerance semantics; zero trades do not pass. Failure
-  rejects this recipe without window/clock/cost/symbol or model rescue.
+Retain authorized raw market responses only in a fresh named D:\market_data
+scope, never Git/logs/Claude. External receipts expose only counts/date bounds,
+cursor, exact source/code hashes and categorical outcomes. Verify required
+schema/duplicate/overlap/cursor behavior; stop the affected probe on auth,
+rate,transport,conflict or nonadvancing-cursor failure. Preserve exact failure,
+yield owned next_due for a cooldown, continue another ready lane.
 
-This checkpoint's trusted official dated release precedes2026 targets, but
-pretraining period/instrument scope is not_disclosed. Revised/seen KIS prices,
-ex-post source coverage, unknown historical availability/finality and ideal
-fractional OPEN fills remain explicit. This is not an independent holdout,
-out-of-domain proof, Execution input or Paper candidate.
+If the probe establishes useful scope, reuse ordinary MODP0 collection for
+fixed2007-08-21 through2026-10-07, with one named serial collector and durable
+per-ETF cursor in a separate canonical trio scope. Reuse verified existing
+SPY source bytes when compatible; never relabel old vintage as fresh. Each
+finite appointment allows at most180 accepted/attempted GET pages and900
+seconds, with shared gate and a valid retained token; this is a worker budget,
+not a provider quota or a delay for another lane. No request flood, unbounded
+retry, historical cursor reset or symbol fallback. On useful remaining scope,
+resume the exact cursor when due. Record accepted/failure counts, bounds,
+remaining estimate/ETA or unknown, owned next_due and recovery class.
 
-## Disjoint Parallel Work
+Preserve the D:15-percent free-space floor. Pin source manifestations/catalogs
+before research depends on them. Missing assets/date marks remain explicit;
+no future payoff/date selection, corporate-action repair guess or quality gate.
 
-Data: reattest exact25 dated sources/index metadata, freeze only the required
-past context/forward endpoints and source-safe count/hash facts. Separately
-finish the new head's exact regular-session geometry if not already known.
-No provider request, cache mutation, scheduler change or global quality gate.
+## Parallel Research Preparation
 
-Engine Research: implement the smallest pure M5-24 context/decision adapter and
-finite external campaign consumer around existing timesfm_local,
-paired_completed_context and clock_portfolio_nav. Focused synthetic tests
-cover horizon alignment, future mutation, clock/DST geometry, missing required
-bars/marks, control threshold semantics, scale invariance and cost arithmetic.
-Use no new framework/model/platform or report family.
+Engine Research owns a small pure calendar-month signal adapter around the
+existing named trio prototype:12-calendar-month price momentum known at the
+previous scheduled session CLOSE, rebalanced at the next scheduled session
+OPEN, fixed one-third positive sleeves and inactive slices in cash.
+Use exact previous calendar-year cutoff (Feb29 clamped), caller-frozen scheduled
+calendar, no older observation substitution or future whole-day mask. Controls
+cash/passive balanced/TRAIN activity exposure and continuous shared capital
+remain a later frozen campaign, not current performance claims.
 
-Execution/Research Steward: independently attest fixed analytical fill/cost/
-availability semantics and exact exclusive GPU family appointment in existing
-custody; do not select strategy or invoke broker/account/order endpoints.
-Existing Paper due-times never hold this independent package.
+Add focused synthetic tests for calendar-month/leap-day/early-close alignment,
+past-only dependence, required-gap handling, no renormalization, shared-NAV
+carry/fees and source isolation. Do not fit models, read actual payoff outcomes,
+allocate GPU, tune thresholds/windows or create a new framework/platform.
+Separately prepare a concise TRAIN-only downside/hedge-failure classifier
+hypothesis; no per-track stateboard or premature model allocation.
 
-Validation: receive only frozen output/code/input commitments; reproduce exact
-actions/cashflow/30 cells with read-only mounts and zero inference/refit.
-Challenge kill and compare original precision; no tuning.
+Execution independently attests OPEN/fee/carry/availability semantics, without
+account/broker calls. Temporary independent review may inspect frozen source
+contracts; model Validation is invoked only after an actual candidate exists.
 
-Orchestrator: ask Claude for a concise falsification-first checkpoint before
-relying on the new comparison. CLI failure is review_unavailable, not agreement
-or a foreground wait. Integrate independent corrections before actual run.
+## Completion
 
-## Runtime And Completion
+Exact scoped capability result and reusable trio input commitment, or bounded
+source-specific failure with durable recovery cursor; source-safe useful coverage
+facts and limitations. Pure adapter/tests and independent leakage/cost review.
+No adjusted/total-return/PIT/finality/Paper qualification follows automatically.
 
-CPU deterministic synthetic smoke first, without market outcomes or model
-weights. Then use the existing pinned Torch2.7+cu128/TimesFM2.0.2 runtime and
-hash-verified local Apache2.0 config/safetensors only. No download, Hub call,
-trust_remote_code, credentials or network. One CUDA batch for at most150
-contexts; no fine-tuning, retained new weights or model selection. Use the
-existing canonical GPU lease, network-none Docker,2CPU/6GiB, immutable source/
-market/model mounts and artifacts only under
-D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
-A technical fault stays explicit; recover boundedly without economic changes,
-duplicate inference, budget reset or deleting original evidence.
+Ask Claude for a concise falsification-first source/calendar challenge before
+relying on changed join semantics. review_unavailable is not agreement or wait.
+Run AGENTS.md changed-path serial/eight-worker clean-root authority,Ruff and
+all three sample Compose configurations. Commit/push owned changes, refresh
+current stateboards/HANDOFF/RUNBOOK and replace this file with exactly one
+material next company objective. Continue ready work until a genuinely reserved
+operator decision, not a lane-local source or cooldown failure.
 
-Complete with exact frozen contract/custody, actual runtime outcome and
-GPU/elapsed facts, source-safe30-cell result or bounded input/runtime failure,
-read-only action/NAV reconstruction, and independent original-precision kill.
-Do not turn a developmental survivor into Paper/live authority.
-
-Run AGENTS.md changed-path serial/eight-worker clean-root authority, Ruff,
-sample default/research/accounting Compose. Verify, commit/push owned changes,
-refresh current stateboards/HANDOFF/RUNBOOK, replace this file with exactly one
-material next company objective and continue until a genuine reserved decision.
-
-Keep market data D:\market_data and artifacts D:\thericher-v2\model-artifacts.
-Never read KIS_LIVE_*, enable real money, buy anything, accept unclear rights,
-expose a public service or replace a major runtime without operator authority.
+Keep data D:\market_data and artifacts D:\thericher-v2\model-artifacts.
+No live money, KIS_LIVE_*, paid commitment, public service, unclear rights or
+major runtime replacement without operator authority.

@@ -20,12 +20,25 @@ Never log secrets, account/order identifiers, raw broker values or market rows.
 
 ## Active Company Objective
 
-Next company objective is kis-native-timesfm-m5-24-development-v1: one fixed
-zero-shot TimesFM comparison on the exact25 retained KIS QQQ/SPY sessions,
-30 cost/policy/block cells and one300-second CUDA appointment. Data pins exact
-inputs before model work; Engine freezes actions before payoff read; Execution
-attests analytical parity/custody and Validation reconstructs read-only results.
-No Tiingo input, refit/selection, independent holdout or Paper promotion.
+Current kis-native-timesfm-m5-24-development-v1 is COMPLETE/REJECTED30 cells;
+integration verification/independent terminal review complete. Exact25
+retained KIS QQQ/SPY sessions, one M5-24/20log-bps recipe, zero fits/holdout.
+Actual CUDA17.644733515s/peak1058705920bytes/one150-context invocation;
+parent20.166s reaped container, ALL-RO8.013s reproduces actions/30 cells.
+At10bps side TimesFM first12 has zero trades/growth; last13 one roundtrip,
+growth-.0007175703/utility-.013960918, fails cash. No rescue or Paper promotion.
+Exact root: D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
+Contract08d5e48bfed8de2de53a026f3d236bbf931d89a47d7cf48fc23737460d0abbc8;
+result6d495339fa5d43bd4852bc985acd98788afc8d376bf21bca063f76b64803b53c.
+Input5a717d52.../629-file source treec62edd62... frozen before outcomes.
+GPU familytrial1/non_promoting_completed; no next allocation/new weights.
+Undisclosed corpus, seen/revised KIS, unknown availability/finality and ideal
+fractional OPEN fills remain development-only limitations. No Tiingo input.
+Parent469 serial passes31.72s; full11192passes/22skips/35warnings343.28s,
+eightworkers/11214collected/clean helper and exit0. Ruff/three sample Compose
+pass. Independent177-file/pure replay/Decimal kill and terminal custody agree;
+source/input unchanged and canonical GPU lease absent. No required session
+remains. Old authority figures below are historical, not current.
 Previous kis-paper-head-retained-conflict-recovery-v1 is complete as scoped:
 useful partial-prefix retention without historical reset or quality promotion.
 Source-free named SPY/TLT/GLD input/shared-ledger prototype is independently
@@ -50,6 +63,9 @@ independent raw-price proof. Prior07:21 rejected attempt remains immutable.
 Task-owned current pointer/next_due unchanged; direct markers do not prove OS
 scheduler origin. Orphan restart preserves partial/reason and omits prior-call
 minute diagnostics from the new projection; original manifest remains intact.
+Independent exact October7 regular geometry is QQQ389/390, missing12:42 ET,
+SPY390/390; no forming regular rows, QQQ gap cause unknown. Receipt/hash in
+agents/data.md. This partial head stays outside the fixed25-session study.
 No complete-session, model/Paper qualification or PnL claim. Independent runtime
 reattachment supported-with-limits; current company authority11098passes/22skips/
 35warnings338.41s,eightworkers/11120collected/clean helper and exit0. Ruff and

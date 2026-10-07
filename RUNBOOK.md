@@ -1,5 +1,38 @@
 # Runbook
 
+## Closed KIS Native Foundation Study
+
+D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1
+contains immutable input-commitment.json, source-freeze.json, precommit.json,
+custody-binding.json, actions.json, worker-result.json and parent smoke/run/
+verify start+terminal receipts. Do not repeat --run or reset identities.
+Contract SHA25608d5e48bfed8de2de53a026f3d236bbf931d89a47d7cf48fc23737460d0abbc8;
+result SHA2566d495339fa5d43bd4852bc985acd98788afc8d376bf21bca063f76b64803b53c;
+input SHA2565a717d52d23f9a5af9a4e4b240e8cebaa631734033fcd9c88a41e847570d33d9;
+frozen-source sibling629 files/treec62edd6260f0fbfd1f569a17587053c4c6c328da2ba9b8d37deff89866163837.
+Actual pinned network-none TimesFM2.5 CUDA17.644733515s/peak1058705920bytes,
+one150-context adapter invocation, zero fits/holdout/new weights. Parent20.166s
+contains/reaps before GPU lease release. CPU smoke2.527s; ALL-RO8.013s exact
+30-cell/action replay with zero inference. Five policies/three side costs/two
+views share continuous25-session capital; not independent samples or fresh
+capital per view. At10bps TimesFM zero trades first12, last13 growth-.0007175703,
+utility-.013960918; strongest kill rejects, not a Paper candidate.
+Unknown model corpus, revised/seen raw KIS, unobserved availability/finality and
+ideal fractional OPENfills remain. Claude review_unavailable is not agreement.
+Independent source reviewers and actual terminal reviewers remain separate.
+Independent177 boundfiles/1.94s pureCPU action/NAV replay and original-precision
+kill agree; hostPython3.14.3 supplements pinnedDocker3.12.14 rather than replacing
+it. Source/input unchanged, canonicallease absent. Current goal verification:
+469 serial31.72s;full11192passes/22skips/35warnings343.28s/eightworkers/
+11214collected/clean helper/exit0. Ruff/all three sample Compose pass.
+
+Exact later head geometry receipt:
+D:\thericher-v2\model-artifacts\data\head-r8\intraday-head-20261007T224943408578Z\regular-session-geometry.json
+SHA2567bdeed6c65f423e34352571f8bab06cf3b52b0e75dafb318389f3f39b2cecae2.
+QQQ389/390 regular M1 (12:42 ET absent), SPY390/390; no forming regular rows.
+Partial eighth-page failure and finality/availability limitations remain;
+October7 is not included in this study.
+
 ## Current Head Recovery And Closed Macro Policy
 
 Tiingo source-specific rights uncertainty: https://app.tiingo.com/tos/,

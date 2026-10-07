@@ -14,6 +14,14 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+Current KIS-native TimesFM analytical study completed/rejected30 cells;
+Execution independently reviewed continuous shared NAV, exact notional fees,
+fractional ROUND_DOWN1e-40 units, cash/flat carry and two-block capital.
+These local_paper analytical OPEN fills are not broker-fill/rounding parity.
+No model is promoted, and no private account, order, budget, scheduler or web
+path was invoked/changed by this study. Runtime/custody pointers:
+D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
+
 October8 source-only accounting knowledge, retrieved05:07 KST from official KIS
 samples pinned to `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc`, supports PnL
 attribution/recovery, not a profit gate. `inquire-period-trans` documents
