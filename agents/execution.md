@@ -14,26 +14,58 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
-October7 operator found the previous mock account in .env and corrected it.
-Fresh named direct discovery at22:00:13 KST succeeds: one auth/five GETs,
-complete USD account, zero positive-quantity positions and zero open orders,
-no reconciliation reasons. Fresh client uses only four approved Paper fields;
-token stays in memory, no order is called. Parser excludes zero-quantity rows.
-This agrees with the new-account mobile view. Exact immutable safe receipt:
+October7 corrected-account QQQ/NASD unit cycle COMPLETED at22:34:57 KST:
+public cycle `qqq-unit-new-account-20261007-v1`, explicit entry tag
+`new-account-20261007-v1`. Two worker visits, one actual BUY submission and
+one actual SELL submission, each with an exact full one-share fill. Both
+immutable outcomes are order_complete/exact_order_and_position_reconciled.
+Independent network-none/all-RO strict canonical parsing confirms current
+account binding, exact request/intent/fill/terminal links, no pending request,
+and owned replay quantity zero. Fresh22:36:07 KST runtime snapshot independently
+has QQQ flat/zero QQQ opens. This is execution connectivity, not model profit.
+Fees, settled cash and net broker PnL remain not_observed.
+
+Minimal cutover remaps the existing logical private volume to
+`thericher-v2-paper-canary-private-acct-20261007-v1`; all seven consumers keep
+the same roots/access (five RW/two RO). Empty-root no-broker probe passed.
+New V2 freezes THIS account's own provisional10-percent basis once, shared by
+QQQ and SPY; legacy_spy is absent. Old physical
+`thericher-v2_thericher-v2-paper-canary-private` remains untouched/unreferenced:
+105 files, identical before/after aggregate SHA
+ace0afb792960064d6d255aead452d7daaaef6172e3a2eaa9f286485a9d629da.
+Old QQQ/unknown SPY are still INCOMPLETE, not adopted, cleared or routed here.
+No archival/migration framework, broker-code/image rebuild or schedule change.
+Current Paper image remains0ff015deadbfaea80525f69f4d8d94ad5847018a6229cd376864c41f5017b53b.
+
+Exact safe offline projection:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\offline-new-account-20261007-v1.json`,
+SHA256485ea347ba6a7e0ac4af1af453602bfcfc0e303d8eb248157e337a3f85069413.
+Exact source-safe BUY/SELL outcomes are linked and hashed in that projection
+under the cycle-scoped79c8baac... root; no raw/account/order identifiers retained.
+The direct current-account discovery22:00:13 KST/zero positions/zero opens is
+separate read-only setup evidence:
 `D:\thericher-v2\model-artifacts\execution\kis-paper-readonly\20261007T130013831902Z-collected.json`,
 SHA256242a9488b11ab741a3ea584d75ca378b99ff7eb3e5114aff9b626ad1533bd032.
-Network-none RO strict canonical budget parsing independently confirms current
-account differs from old retained binding; binding bytes remain unchanged.
-No adoption/migration, new root/budget, order, schedule or live credential use.
-Next ready Execution package isolates new-account custody/provisional10-percent
-basis under standing authority. Preserve old QQQ requests and unknown SPY as
-incomplete; never route their recovery to the new account or inherit their basis.
-Read success is not order entitlement, a fill, old-inventory closure, settled
-cash or net PnL. VOC-first diagnosis is superseded by this concrete stale-config
-finding; reconsider server-side entitlement only if a corrected scoped call fails.
-Documentation-only refresh:370 focused read-only/config/portfolio-budget tests
-pass in one clean helper worker/1.17s; Ruff and both sample-env Compose profiles
-pass. No runtime source change, full-suite rerun or company-goal completion.
+October6 expiry rejections described PREVIOUS .env config, not this new account.
+
+Independent review found the old intraday-head prospective QQQ child could
+call a bare canary outside shared10-percent custody and sell the unit owner's
+position. Scope containment removes ONLY its Compose --execute flag.
+Its preview has no credential/broker path; dispatcher and offline reader now
+accept only the exact zero-exit/no-validation preview tuple. Existing actual
+no_intent/canary_completed validation stays required. Collection and named
+budget executors continue; no global pause/new permission check. Actual next
+scheduled preview is not yet observed. Existing SPY strategy next due23:50 KST;
+Data head next due October8 00:29 KST, neither manually invoked or rescheduled.
+Loopback127.0.0.1:8787/health is ok/broker_calls false. QQQ worker is absent.
+
+Changed-path serial integration564 passes/no skips/17.42s/one clean worker.
+Independent review and scoped tests cover preview/ownership and CPU research.
+Claude volume/recovery challenge exited1/review_unavailable, NOT agreement:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\claude-new-account-volume-20261007-v1.json`.
+Full integration authority is recorded in HANDOFF; Paper closure is not live
+authority or an engine promotion. Keep this completed identity on restart;
+do not choose another entry tag just because the worker has stopped.
 
 The following October6 attempts describe the PREVIOUS local account config.
 October6 foreground opportunities are consumed; company goal remains OPEN.

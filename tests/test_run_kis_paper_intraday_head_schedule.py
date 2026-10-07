@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 
+import thericher_v2.execution.kis_paper_prospective_qqq_session as qqq_session
 from thericher_v2.ops.kis_paper_prospective_qqq_validation import (
     KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
     KisPaperProspectiveQqqValidation,
@@ -464,6 +465,59 @@ def test_head_schedule_dispatches_qqq_before_slower_observers(tmp_path: Path) ->
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+def test_head_schedule_accepts_actual_preview_without_validation(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    def broker_forbidden(*args: object, **kwargs: object) -> None:
+        raise AssertionError("observational session must not access the broker")
+
+    monkeypatch.setattr(qqq_session, "KisPaperCanaryClient", broker_forbidden)
+    monkeypatch.setattr(qqq_session, "load_kis_paper_config_from_environment", broker_forbidden)
+    outcome = qqq_session.run_kis_paper_prospective_qqq_session(
+        environment={},
+        cache_root=tmp_path / "missing-cache",
+        local_paper_state_root=tmp_path / "local-paper",
+        state_root=tmp_path / "private",
+        artifact_root=tmp_path / "artifacts",
+        repository_root=tmp_path / "repository",
+        execute=False,
+        cancel_after_submit=True,
+        session_id="qqq-observational-preview",
+    )
+    assert (outcome.status, outcome.reason_code) == ("preview", "preview")
+    assert outcome.canary is None
+    assert not (tmp_path / "private").exists()
+    log_path = tmp_path / "fake-docker-services.log"
+    result = subprocess.run(
+        [
+            "powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command",
+            _fake_dispatch_command(
+                script_path=SCRIPT,
+                project_root=SCRIPT.parents[1],
+                log_path=log_path,
+                qqq_session_payloads=(json.dumps(outcome.safe_payload(), sort_keys=True),),
+            ),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+    assert result.returncode == 0, result.stderr
+    services = log_path.read_text(encoding="ascii").splitlines()
+    assert services[:2] == ["kis-paper-intraday-head", "kis-paper-prospective-qqq-session"]
+    assert "kis-paper-prospective-qqq-validation" not in services
+    assert "kis-paper-intraday-pair-observation" in services
+    assert services[-1] == "kis-paper-intraday-head-receipt"
+    payloads = [json.loads(line) for line in result.stdout.splitlines() if line.startswith("{")]
+    terminal = next(p for p in payloads if p["kind"] == "kis_paper_intraday_head_schedule")
+    assert terminal["prospective_session_status"] == "preview"
+    assert terminal["prospective_validation_status"] == "not_applicable"
+    assert terminal["prospective_validation_contract"] is None
+    assert terminal["collection_exit_code"] == terminal["terminal_exit_code"] == 0
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
 def test_head_schedule_accepts_actual_validator_safe_payload(tmp_path: Path) -> None:
     session_id = "qqq-validator-contract"
     validator_stdout = json.dumps(
@@ -792,6 +846,9 @@ function docker.exe {{
             Write-Output $capturePayload
         }}
         'kis-paper-prospective-qqq-session' {{
+            if ($dockerArgs -contains '--execute') {{
+                throw 'observational child must use its unchanged default command'
+            }}
 {escaped_qqq_session_payloads}
         }}
         'kis-paper-prospective-qqq-validation' {{
@@ -817,9 +874,17 @@ function docker.exe {{
         }}
         'kis-paper-intraday-head-receipt' {{
             $sessionId = Get-FakeArgumentValue -Values $dockerArgs -Name '--prospective-session-id'
+            $sessionStatus = Get-FakeArgumentValue `
+                -Values $dockerArgs -Name '--prospective-session-status'
             $validationSessionId = Get-FakeArgumentValue `
                 -Values $dockerArgs `
                 -Name '--prospective-validation-session-id'
+            $validationStatus = Get-FakeArgumentValue `
+                -Values $dockerArgs -Name '--prospective-validation-status'
+            $validationExitCode = Get-FakeArgumentValue `
+                -Values $dockerArgs -Name '--prospective-validation-exit-code'
+            $validationContract = Get-FakeArgumentValue `
+                -Values $dockerArgs -Name '--prospective-validation-contract'
             $captureRunId = Get-FakeArgumentValue `
                 -Values $dockerArgs `
                 -Name '--session-capture-run-id'
@@ -855,6 +920,17 @@ function docker.exe {{
                 Write-Output (
                     '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"recovery",' +
                     '"terminal":{{"status":"recovery","scheduler_exit_code":20}}}}'
+                )
+            }} elseif (
+                $sessionStatus -eq 'preview' `
+                    -and $validationStatus -eq 'not_applicable' `
+                    -and $validationExitCode -eq '0' `
+                    -and $null -eq $validationSessionId `
+                    -and $null -eq $validationContract
+            ) {{
+                Write-Output (
+                    '{{"kind":"kis_paper_intraday_head_schedule_receipt","status":"complete",' +
+                    '"terminal":{{"status":"complete","scheduler_exit_code":0}}}}'
                 )
             }} elseif ($null -eq $validationSessionId -or $validationSessionId -ne $sessionId) {{
                 Write-Output (

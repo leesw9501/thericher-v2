@@ -2,172 +2,89 @@
 
 ## Objective
 
-Complete `qqq-restart-safe-unit-paper-v1` (OPEN): obtain one bounded,
-restart-safe QQQ/NASD unit Paper BUY -> SELL cycle under the initial10-percent
-aggregate allocation instruction, with exact intents, submissions, fills and owned-flat
-position reconciliation. This is execution readiness, not profitability or live.
-The old numerical basis remains old-account-bound; never inherit it on replacement.
+Run `firstrate-forward-risk-baseline-development-v1`: the first source-bound
+chronological CPU variance-prediction comparison and independent replay.
+Determine whether own/peer trailing variance beats two naive controls.
+This is seen-source DEVELOPMENT risk research, not returns, profit, a holdout
+or Paper qualification. Exactly one company objective; independent Paper/Data
+continue under standing authority.
 
-## Current Account Correction
+## Starting Evidence
 
-October7 operator corrected previous mock-account values still in .env.
-Fresh discovery22:00:13 KST succeeds/zero positions/zero opens. Offline RO
-canonical binding check confirms a DIFFERENT account, unchanged old bytes.
-October6's read/rejections were old-config evidence, not new-account entitlement.
-Next Execution package isolates new-account custody and provisional10-percent
-basis under standing authority. Preserve old QQQ requests/unknown SPY/allocation;
-do not transfer them or route their recovery to the new account. Any new cycle
-and opportunity must be explicitly account-scoped; old fixed cycle is INCOMPLETE.
-This check creates no root/budget/order/schedule or migration. Exact current
-receipt/hash is in agents/execution.md. Reads do not prove orders or complete
-the company objective; independent Data/Research continue.
+`qqq-restart-safe-unit-paper-v1` completed October7 at22:34:57 KST on the
+corrected account: actual unit BUY/SELL, exact full linked fills and owned-flat.
+New private volume/own provisional10-percent shared basis are isolated;
+old QQQ/unknown SPY remain INCOMPLETE and untouched. See agents/execution.md.
+Do not replay a fresh entry or call connectivity a model-performance result.
 
-## Historical Old-Account Runtime Opportunity
+Engine has source/hash-bound preparation for251 scheduled paired QQQ/SPY dates,
+all past120-M1 inputs,249 supported60-minute targets per ETF/two early-close
+shortfalls,532 causal mutations and independent ALL-RO replay. Pure
+`forward_variance_baseline.py` is reviewed/synthetic-verified, no source fits.
+Root: `D:\thericher-v2\model-artifacts\research\firstrate-forward-variance-target-input-smoke-20261006-v1`.
+Prior killed return/allocation/foundation families stay closed.
 
-- New operator-directed foreground opportunity: fixed cycle
-  `qqq-unit-20261003-v1`, fresh explicit tag `reapplied-account-20261006-v1`.
-  Use the existing bounded QQQ runner/retained aggregate basis. This is a new
-  scoped request after positively closed entries, not replay/reset of the old
-  task. No schedule expansion. In-process exact-limit funds, identity, quote,
-  intent persistence and reconciliation contracts remain authoritative.
-  Actual result: expired intent_recorded, submission_started absent, no ack/fill.
-  Exact terminal readback is in Execution. No provider rejection is inferred.
-  After verified recovery repair and compatible deployment, new explicit tag
-  `reapplied-account-20261006-v2` continues this SAME cycle/budget. No schedule
-  expansion, original intent price/TTL refresh or unknown SPY reset.
-  Actual v2 result23:10:46 KST: BUY submitted then positively rejected/closed
-  as paper_account_expired, no acknowledgement/fills. The delay fix works;
-  operator now confirms active actual investment period and matching API
-  registration. Server-side overseas order entitlement remains unobserved;
-  the response label is not proof of actual expiry. Current local Compose
-  projection matches all four refreshed fields and virtual route/mode.
-  Do not blindly retry the unchanged rejection or infer a successful round trip.
-- `thericher-kis-paper-qqq-unit-20261006`: October6 00:20 KST, fixed cycle
-  `qqq-unit-20261003-v1`, tag `opportunity-20261006T0020KST-v1`.
-  At most24 visits/1,200 worker seconds,25-minute task limit, IgnoreNew,
-  no restart/missed replay, trigger expiry00:21. Inspect its exact retained
-  outcome after the owned run; do not manually duplicate/reset/substitute it.
-  Opportunity consumed: fresh exact-tag BUY submit was positively rejected/
-  closed as `paper_account_expired`; zero BUY/SELL fills, no round trip.
-  Scheduler Ready/last00:20/result23/no next trigger; exact worker absent.
-- Existing strategy remains October5 23:50 KST; paired-head collection remains
-  October6 00:29; their results are not attributed by this QQQ follow-up.
-  One-shot `qqq-paper` inspected the actual result and was deleted, no chain.
-- October2 QQQ BUY was positively rejected without a broker reference.
-  The later fixed-tag result is the positive categorized rejection above, NOT
-  a cause attribution for October2. No QQQ fill/round trip. Same-tag recovery
-  retains original price/TTL/identity; an unknown outcome reconciles only.
-- SPY's superseded lifecycle remains INCOMPLETE. Preserve unknown successor,
-  original private bytes/cost/reservations; absent history is not an outcome.
-  Never repost/reset/adopt it. Distinct correctly scoped QQQ work continues.
-- October6 compatible Paper image:
-  `sha256:0ff015deadbfaea80525f69f4d8d94ad5847018a6229cd376864c41f5017b53b`.
-  Eight existing consumers/607 source-and-lock hashes match. No task or budget
-  reset. Exact deployment and typed v1/v2 evidence belong to Execution.
+## Work Packages
 
-## Ready Parallel Packages
+Engine Research owns one offline CPU attempt. Freeze exact existing source/date
+hashes, code/dependency pins, split, inputs, loss, controls and stop rule BEFORE
+source values. Reuse smoke loading/normalization and pure helpers, not another
+platform or scheduler.
 
-October6 historical Paper configuration is valid/mode off.22:26:57 KST direct
-read-only discovery succeeds: complete account snapshot/two positions/zero
-opens, one auth/five GETs. Canonical RO binding matches retained account custody;
-no migration/reset/new basis then. October7 proves the previous account was
-still in .env. Both tags are consumed. Next Execution work is new-account
-isolation, not VOC-first entitlement clarification or replay of closed tags.
-Independent research
-and existing Data refresh continue without a global pause or new approval gate.
+- First160 scheduled sessions TRAIN, one embargo, remaining90 seen comparison;
+  split before exclusions; two fixed45-session halves. ETFs share date blocks.
+- Decision C=min(open+150min, close-10min). One60-minute next-OPEN variance
+  target,61 completed M1 OPENs starting C+1min, available C+62min.
+- Two fixed features: own/peer trailing variance from120 completed M1 OPEN
+  observations/119 adjacent returns before C. No future-support eligibility mask.
+- One unchanged L2=1 log-variance Ridge per ETF/two actual fits, TRAIN-only
+  population scaling; no tuning, alternate horizon, smearing, refit or selection.
+- Own-past variance scaled60/119 and same-cohort TRAIN mean are controls.
+  Fixed normalized QLIKE on a common positive-target cohort; preserve scheduled
+  denominators, zero/missing exclusions and forecast clip/floor flags.
+  Never floor targets; negative/nonfinite values invalidate the attempt.
+- Actual offline worker: two CPU threads/2GiB/120 seconds, network none/source
+  RO/artifacts outside Git. Timeout or causal/source failure closes that attempt;
+  diagnose its concrete fault without automatic recipe changes. No GPU/holdout.
 
-1. Execution owns the exact runtime result and reconciliation. Record rejection,
-   no-intent, unknown outcome and fees/settled-cash/PnL limitations narrowly.
-   Do not infer a fill from task exit, registration, cancellation or zero replay
-   quantity. If rejected, diagnose its concrete retained category rather than
-   blindly retry. This owned opportunity is consumed, no new QQQ next_due.
-   Operator confirms2027-06-22 is API application validity, not an observed
-   mock-account expiry. Its screenshot says mock investment is at most three
-   months and cannot renew. October6 config read matched OLD custody; October7
-   corrected config reads a different account. Do not demand reissue from the label.
-   Operator confirms the actual mock period is active and the registered
-   account matches. That portal report was not local-config identity proof:
-   October7 found and fixed the old account in .env. Compose equality/BUY audit
-   did not catch portal mismatch. Isolate the new account before future orders;
-   VOC is conditional on a corrected scoped failure. Preserve OLD budget/SPY and
-   closed requests. Declare any new entry tag/opportunity explicitly, using
-   fresh exact-limit funds and existing intent-before-submit/recovery contracts.
-   No new request or opportunity was installed by this read-only check.
-   Exact evidence and official source are in agents/execution.md.
-2. Data keeps useful current-data owners running. October5 normalized D/E
-   terminal repair is verified/deployed to ten Data aliases/602 unique hashes;
-   old defaults/scopes/pace/schedules are unchanged. Actual new head/header yield
-   is unobserved. Recent KIS coverage is25 shared complete days/9,750 M1 per ETF;
-   older21 shared June/July sessions retain their separate identities. Broader
-   FirstRate readiness now verifies250 shared complete2022-23 sessions from251
-   scheduled dates. The160 TRAIN-session split is a seen-data proposal, not a
-   new collection, independent holdout or model/Paper qualification.
-3. Engine Research's paired-lag family is closed: four actual fits/48 cells,
-   Attention stress mean net-1.605736673358 unit bps loses own Ridge; net/increment/
-   ETF/day kills apply. No threshold/cost rescue, weights, winner or Paper input.
-   Existing foundation-model, net-utility, band and pooled studies stay closed.
-   Source-independent M1/M5/M10/H1/H3 input preparation is also complete:
-   79 focused tests,2,008 actual paired cases/1,998 available/10 exact shortfalls,
-   78 future-mutation checks and ALL-RO replay; zero targets/fits/GPU. Use these
-   broader-input facts for the next distinct finite predictive contract; prefer
-   causal chronological coverage and existing compatible utility helpers over
-   another same-panel architecture sweep or duplicated research infrastructure.
-   The subsequent joint QQQ/SPY/cash daily-flat allocation is also closed:
-   three CUDA fits/21 cells,160 TRAIN/one embargo/90 seen comparison days,
-   30/120-minute M1 windows under one budget. Primary120 stress NAV-13.7386percent
-   loses constant/EW; frozen net/increment/half/day kills apply. Numeric model
-   weights and exact ALL-RO CPU inference/NAV replay are retained outside Git.
-   226 focused tests/no skips pass locally and in pinned Docker. Original mount
-   failure remains; v2 repairs runtime only. No rescued winner or Paper input.
-   First30-to-closing29 long/flat rule also closes60 CPU cells/zero fits;
-   all four stress ETF/fold NAVs are negative and lose fixed exposure controls.
-   47 synthetic checks/98 related tests/ALL-RO terminal-bound replay pass.
-   This is a distinct29-minute seen-data variant, not source-paper replication
-   or a reason to retune the original fixed first30 contract.
-   Public papers are mechanism references, not our market-profit evidence.
-   October6 independent forward-variance target helper is synthetic-verified:
-   115 new cases/187 context integration/297 combined Paper-research tests pass.
-   Source/hash-bound target/input smoke is now complete:251 available paired
-   inputs,249 available60-minute targets per ETF/two early-close shortfalls,
-   40 new tests/227 focused passes and532 mutations; independent ALL-RO replay
-   matches. No fits/GPU/selection/Paper claim. Next ready CPU package is a
-   distinct chronological forward-risk baseline contract with TRAIN-only
-   transforms and past-variance/TRAIN-mean controls, not a killed-family rescue.
+Data reattests only the existing source/date/hash contract required by this
+consumer and keeps current named refresh/cursors running. No new download,
+recursive inventory, finality claim or company-wide quality hold.
 
-## Completion And Verification
+Execution inspects the already-owned SPY23:50 KST opportunity when exact evidence
+exists; preserve the NEW shared10-percent basis and pending identities. No
+substitute canary or reset. Intraday-head QQQ child is observational preview;
+collection and named budget executors continue, independent of research scores.
+Research Steward uses existing family custody; no GPU/sealed spend.
+Temporary Validation replays frozen inputs/targets/TRAIN state/forecasts/losses
+without retuning. Ask Claude for concise causal/missingness/selection challenge;
+October7 review_unavailable/exit1 is NOT agreement or an independent-lane hold.
 
-October6 shared execution recovery and research integration passes362 changed-
-path tests in one worker/12.77s, full9,072 passes/22 skips/349.27s/eight workers/
-clean helper exit, matching9,094 collected. Ruff and default/research-profile
-sample-env Compose pass. Independent source review finds no remaining defect;
-Claude recovery/alternatives challenges are review_unavailable/uncategorized,
-NOT agreement. This verification/deployment is not company completion.
+## Completion And Kill Evidence
 
-Success requires exact full BUY and SELL fills plus current owned-flat QQQ
-reconciliation. Rejection/no-intent/task exit/absent history is not completion.
-Keep fees, settled cash and net broker PnL unobserved unless independently seen.
-Do not replace this company objective merely because an independent package
-finishes. A genuine reassignment must say INCOMPLETE and preserve prior custody.
+Retain exact pins/pre-value freeze, actual two fits, scheduled/eligible/excluded
+counts by split/ETF, fixed Ridge/control losses and independent ALL-RO replay.
+Future-bar/target-support mutation must not alter causal inputs, TRAIN state/
+membership or earlier forecasts. A helper/test alone is not completion.
+Reject the incremental-risk premise unless Ridge beats BOTH controls for each
+ETF, each45-session comparison half and after deleting any one shared date.
+A negative development result completes the experiment; no retuning/promotion.
+Complete-case scores do not generalize to all dates. Revised/seen clocks,
+actions, finality and historical availability remain limitations.
+No coefficients/weights in Git, Paper input, profitable-engine or live claim.
 
-October5 shared-runtime integration passed391 serial/one skip plus90 pinned
-Torch CPU tests, full8,736 passes/22 skips/329.15s/eight workers/clean helper,
-matching8,758 collected; Ruff/default+research sample Compose pass. Exact source/
-cohort/action/cost readback verifies48 cells without refitting. Follow the
-changed-path/parallel verification policy in AGENTS.md for further code changes;
-documentation-only refresh or an isolated focused-verified research helper does
-not repeat the full suite. October5 subsequent226-test integration covers the
-new joint utility/helper, not a claim that the earlier full suite included it.
+## Verification And Continuation
 
-Current evidence and recovery paths live in
-`C:\Users\Public\Documents\thericher-v2\HANDOFF.md` and its active role boards,
-not this file's historical diary. Policy:
-`C:\Users\Public\Documents\thericher-v2\AGENTS.md`.
-Never read/route KIS_LIVE_*, spend money, accept unclear rights or expose a public
-service. Named Paper paths/sizing/schedules are already authorized. Never print
-secrets, private broker values or raw market rows. Data stays D:\market_data;
-generated artifacts stay D:\thericher-v2\model-artifacts. Claude failure is
-review_unavailable, not agreement or a global hold.
+At company integration follow AGENTS.md: changed-path serial tests, then
+`.\scripts\run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot --maxfail=1 --durations=15`,
+Ruff and default/research Compose using `--env-file .env.example`.
+Focused packages do not repeat full authority or complete the company goal.
+Verify actual worker exit/replay; commit/push, refresh boards and replace this
+file with exactly one material next objective.
 
-Commit/push verified owned packages while this objective remains active. At its
-material completion boundary refresh stateboards, replace this file with exactly
-one next company objective, and continue; no per-agent next-goal files.
+Resume with `C:\Users\Public\Documents\thericher-v2\scripts\start_next_codex_task.ps1`,
+HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards. Data stays
+`D:\market_data`; artifacts `D:\thericher-v2\model-artifacts`.
+Never read/route KIS_LIVE_*, print secrets/raw market/broker/account/order values,
+spend, accept unclear rights or expose a public service. Named Paper work,
+sizing and schedules are already authorized.

@@ -1026,7 +1026,6 @@ services:
       - python
       - -m
       - thericher_v2.execution.kis_paper_prospective_qqq_session
-      - --execute
       - --cancel-after-submit
       - --repository-root
       - /app
@@ -1282,3 +1281,4 @@ volumes:
   thericher-v2-runtime:
   thericher-v2-web-emergency:
   thericher-v2-paper-canary-private:
+    name: thericher-v2-paper-canary-private-acct-20261007-v1

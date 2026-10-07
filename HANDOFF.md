@@ -20,112 +20,52 @@ Never log secrets, account/order identifiers, raw broker values or market rows.
 
 ## Active Company Objective
 
-qqq-restart-safe-unit-paper-v1 remains OPEN. The SPY lifecycle objective was
-superseded while INCOMPLETE, not completed. Its unknown successor/private
-identity, original bytes, entry cost and reservations remain unchanged.
-Absent original-date history does not identify its outcome. Never repost,
-reset, substitute or adopt that leg. A distinct QQQ job and independent lanes
-continue without a global hold.
+`qqq-restart-safe-unit-paper-v1` COMPLETED on the NEW account October7:
+QQQ/NASD unit BUY and SELL, exact full linked fills, both terminal outcomes
+order_complete/exact_order_and_position_reconciled, owned replay flat and
+current22:36:07 KST account snapshot QQQ-flat/zero QQQ opens.
+Actual submissions22:34:07/22:34:45 KST; closure22:34:57 KST/two worker visits.
+This is Paper connectivity, not strategy profitability/live. Fees, settled
+cash and net broker PnL remain not_observed.
 
-October7 operator found the PREVIOUS mock account in .env and corrected it.
-Fresh direct discovery at22:00:13 KST succeeds: one auth/five GETs, complete
-USD account, zero positive-quantity positions and zero open orders. This agrees
-with the new-account mobile view. Offline network-none RO canonical budget
-parsing confirms current account differs from the old binding; private bytes
-are unchanged. October6's two-position read and rejected orders were old-config
-evidence, not a new-account expiry/entitlement test. Next Execution work is
-new-account custody and provisional10-percent basis isolation under standing
-authority, never repointing/adopting/resetting old QQQ/unknown SPY/budget state.
-No order, migration, budget or schedule change occurred in this read-only check.
-Current receipt/hash is in Execution; independent Data/Research continue.
+Next single company objective: `firstrate-forward-risk-baseline-development-v1`,
+actual chronological CPU variance prediction and independent replay with fixed
+controls/kill rules. Pure helper is ready; no actual source fit/performance yet.
+Scheduled Paper/Data are independent, not held on research outcomes.
 
-Historical October6 Paper .env passes the authorized whitelist; mode is off.
-22:26:57 KST direct read-only discovery succeeds: one auth/five GETs, complete
-account snapshot/two positions/zero opens. Canonical RO private binding matches
-the retained OLD account, not the newly reapplied account. Exact safe
-receipt/hash is in Execution. This proves reads, not order entitlement, old SPY
-resolution, owned-flat state or a new fill. No orders, reset or schedule change.
-Both new foreground tags are now consumed under the existing cycle/budget.
-v1 expired BEFORE any submission; verified recovery repair removes redundant
-pre-submit account reads without extending TTL. v2 actually submitted at
-23:10:46 KST and was positively rejected/closed as paper_account_expired,
-no acknowledgement or fill. Operator now confirms the actual investment
-period is ACTIVE and the account matches KIS Developers registration. This is
-operator-reported status, not independent server-side order entitlement.
-The error label does not establish actual expiry. October6 local in-process
-Compose projection matches all four refreshed Paper fields, virtual host/mode,
-stock-mock prefix and product01; no unexpected KIS names or broker calls.
-No concrete BUY route/body mismatch was found against the official example.
-The local parity check did not prove portal-to-config identity. Its earlier
-VOC-first recommendation is superseded by October7's concrete stale-config
-correction. Use VOC only if a corrected new-account scoped call still fails;
-there is no established separate overseas signup or new approval/global hold.
-Original budget/unknown SPY/closed records remain; exact evidence belongs to
-Execution. Next independent research package is forward-risk CPU baselines.
-
-QQQ's October6 00:20 KST scheduled BUY was actually submitted and positively
-rejected/closed as `paper_account_expired`, with no acknowledgement or fill.
-Exact public tag/time/private terminal binding validates; the old October2
-null-code rejection still has no inferred cause. No round trip is observed.
-Completion requires exact full
-BUY and SELL linked to persisted requests plus owned-flat reconciliation.
-Rejection, no-intent, cancellation, task exit and absent history are not success.
-Fees, settled cash and net broker PnL remain unobserved unless independently seen.
+Corrected .env uses a DIFFERENT mock account. Existing logical private volume
+now points to `thericher-v2-paper-canary-private-acct-20261007-v1`; all seven
+original roots/access remain. Empty-root probe passed; NEW account's own
+provisional10-percent basis is frozen once/shared by QQQ and SPY.
+Old physical volume is retained unchanged/unreferenced (105 files/same seal).
+Old fixed QQQ and unknown SPY remain INCOMPLETE; no adoption, old recovery,
+migration or archival framework. October6 expiry response was old-config
+evidence, not a diagnosis of this successfully trading new account.
+Exact scoped outcome hashes/ALL-RO projection belong to agents/execution.md.
+Projection: `D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\offline-new-account-20261007-v1.json`,
+SHA256485ea347ba6a7e0ac4af1af453602bfcfc0e303d8eb248157e337a3f85069413.
 
 ## Execution Ready / Owned / Due
 
-Exact QQQ-at-ORIGINAL-limit funds before every BUY, same-tag original intent/
-price/TTL recovery, orphan binding recovery and categorical future numeric errors
-are integrated and independently reviewed. Unknown outcomes reconcile only.
-Distinct explicit tags may follow positive rejection or exact retained proof
-of a closed expired never-sent BUY, never an unknown/started/acknowledged request.
-The old null-code rejection has no inferred cause.
-
-Eight existing Paper consumers match607 source/lock hashes; current Paper image:
+Paper image remains
 sha256:0ff015deadbfaea80525f69f4d8d94ad5847018a6229cd376864c41f5017b53b.
-Fresh canary reconciliation feeds the budget's identity/ownership checks;
-exact-limit funds, current timestamps and before-wire deadline remain enforced.
-No scheduler or private budget reset; exact deployment pointer is in Execution.
-The standalone synthetic-price read-only diagnostic accepted one typed response
-at23:04:20Z, one auth/one GET/zero orders. This is endpoint acceptance only,
-not actual-limit funds, prior-rejection explanation or Monday's fill readiness.
-Exact metadata-only receipt and limitations are in agents/execution.md.
+No broker-code rebuild, new task or schedule change. Intent-before-wire,
+exact-limit funds, locks and unknown-outcome reconciliation remain.
+Completed cycle `qqq-unit-new-account-20261007-v1`/tag
+`new-account-20261007-v1` keeps exact identity on restart; a complete replay
+cannot select another entry. Never route old-account recovery here.
 
-The owned task thericher-kis-paper-qqq-unit-20261006 has consumed its opportunity:
-October6 00:20 KST = October5 15:20 UTC, fixed cycle qqq-unit-20261003-v1 and
-tag opportunity-20261006T0020KST-v1. Twenty-four visits,1,200 worker seconds,
-25-minute outer limit, IgnoreNew/no restart/no missed replay; trigger expired
-00:21. Scheduler Ready/last00:20/result23/no next trigger; exact worker absent.
-Outcome15:20:22.772807Z is no_intent/order_not_submitted_or_rejected, but strict
-private readback proves one actual BUY submit, positive closed rejection and
-zero exact BUY/SELL fills. Aggregate custody validates/read bytes stable.
-Exact external pointer/hash and limitations are in agents/execution.md.
-Do not manually invoke, reset the tag or substitute an order.
-Existing strategy remains October5 23:50 KST with its own locks/budget.
-The same-chat qqq-paper follow-up read this result and was deleted; no new
-follow-up chain, recurring worker or QQQ next_due. Operator confirms the
-2027-06-22 expiry/disabled renewal belongs to API application status. API and
-mock-account validity are separate; actual mock-account expiry/linkage remains
-unverified. The application screenshot states mock investment is at most three
-months with no renewal; the API date is not its investment end date.
-Inspect actual mock-trading My Accounts and compare its account
-privately before reissue; the earlier unconditional renewal advice is withdrawn.
-Official guidance: https://apiportal.koreainvestment.com/intro.
-Offline current Paper config matches persisted account custody and virtual-only
-route; official US Paper BUY routing/body comparison finds no concrete mismatch.
-SELL sample documentation/branch conflict is separate, not this BUY's cause.
-Neither proves the portal account registration or actual trading entitlement.
-New account custody must not silently inherit the old account's budget or
-unknown SPY orders. Existing source-safe research preparation continues;
-the earlier screenshot/source clarification did not change registration,
-credentials, private state or schedules. The subsequent operator update and
-successful direct read are recorded above; no further setup hold remains.
+Existing SPY strategy Ready/next23:50 KST October7; Data head next00:29 KST
+October8. Task time/exit is not evidence of its next order/capture.
+Old prospective QQQ child bypassed shared allocation custody. ONLY that child's
+--execute flag is removed; collection/named budget executors stay enabled.
+Exact offline preview/no-validation tuple is tested; actual next scheduled
+preview is unobserved. No global approval/pause was introduced.
 
-Loopback dashboard http://127.0.0.1:8787 last observed health=ok/broker_calls=false;
-October6 Infra restored the existing web-only service without build/dependencies
-or operational .env; listener is127.0.0.1:8787 only, runtime mount RO/no KIS env.
-Parent health read confirms ok/broker_calls false. No public exposure or controls.
-Unrelated repo-app-1 is not project-owned.
+Loopback `http://127.0.0.1:8787/health` is ok/broker_calls false. Web remains
+credential-free/no private order-state mount/public exposure. QQQ worker exited.
+Old volume seal is unchanged; prior evidence remains in Execution/Git and never
+becomes a new-account recovery dependency.
 
 ## Data Ready / Owned / Due
 
@@ -141,7 +81,7 @@ Eight-page-ceiling capture retained six pages/720 rows, then an invalid seventh
 page. Partial/subtype unknown is not success, exhaustion or a provider rate cap.
 SPY120 is not a complete matched session. Direct capture is not Scheduler proof.
 
-Existing Data owner is Ready, next_due October6 00:29 KST. Earlier06:20 mixed/
+Existing Data owner is Ready, next_due October8 00:29 KST. Earlier06:20 mixed/
 recovery receipt remains separate. Paired-head integration passed agent341,
 parent460 serial tests/full8,570 passes/22 skips/325.47s/eight workers/clean
 helper, matching8,592 collected. Ten existing Data consumers match600 source/
@@ -191,6 +131,13 @@ Market data remains D:\market_data; artifacts D:\thericher-v2\model-artifacts
 Preserve15-percent D: floor. Test scratch prefers measured-fast local C:\trpy.
 
 ## Research And Resources
+
+October7 pure CPU forward-variance baseline helper is independently reviewed:
+fixed L2=1 log-variance Ridge/TRAIN-only scaling, past-variance/TRAIN-mean
+controls, target-blind forecasting/common-positive-target QLIKE and explicit
+zero/missing exclusions.70 new/225 context tests pass. Actual source fits and
+performance remain unobserved. NEXT_CODEX_GOAL.md freezes the distinct two-fit
+160/1/90 seen-development comparison; Paper connectivity is not its promotion.
 
 October6 source/hash-bound forward-variance target/input smoke is complete.
 All251 scheduled paired past120-M1 inputs are available;249 next60-minute targets
@@ -321,39 +268,28 @@ Do not repeatedly invoke that unchanged failure or pause independent ready work.
 
 ## Verification And Resume
 
-Latest October6 shared execution recovery/research integration:362 changed-path
-one-worker passes/12.77s, full9,072 passed/22 skipped/35 warnings/349.27s,
-eight workers/clean helper exit, matching9,094 collected. Ruff and default/
-research-profile sample-env Compose pass. Independent source review no findings;
-Python3.12 new image imports and607 baked hashes match. Claude fix/alternatives
-exit1/uncategorized are review_unavailable, not agreement. No full-suite rerun
-is needed for this subsequent documentation integration alone.
+October7 shared-control/research integration:564 changed-path serial passes/
+no skips/17.42s, then full9,168 passed/22 skipped/35 warnings/400.13s/eight
+workers/clean helper exit, matching9,190 collected. Ruff/default+research-profile
+sample-env Compose pass. Warnings are existing sklearn criterion deprecations.
+Independent review found no remaining actionable integration defect.
+Actual new-account QQQ cycle and ALL-RO exact replay/current flat are verified;
+old105-file seal is unchanged. No active test/QQQ/sub-agent remains.
 
-Latest SPY/patch shared-source integration:184 changed-path serial passes,
-59 pinned Torch CPU passes; full8,186 passed/22 skipped/35 warnings/317.40s,
-eight workers/clean helper, matching8,208 collection. Research downside's later
-isolated repairs are included now; its earlier52-test result missed two faults.
-Actual downside CPU/RO readback and all final independent source reviews pass.
-Ruff/default and research Compose pass. The earlier mixture run passed assertions
-but failed hardlink cleanup; it is not authority. Only the test's exact alias
-cleanup was repaired; C:\trpy\runs\r-73d1a88d remains untouched.
-Weekly serial compatibility6,341 passes/19 skips predates those additions.
-The later isolated pooled-return package has153 focused local/pinned Docker
-passes; the8,186-test authority above predates it. No repeat full suite is claimed.
-The subsequent paired-head/band shared integration supersedes that authority:
-parent460 changed-path serial passes25.61s; full8,570/22/35 warnings/325.47s,
-eight workers/clean helper exit0, matching8,592 collection. It includes the
-later isolated pooled/helper/band packages; final Ruff/both Compose pass.
+Claude volume/recovery and forward-risk challenges exited1/review_unavailable,
+not agreement. Categorical pointers belong to Execution/Engine.
+No repeat full suite for the subsequent documentation-only refresh.
+Earlier baseline/cleanup/deployment evidence remains in Git and lane artifacts.
 
 At company/shared-runtime integration follow AGENTS.md: changed-path serial,
-scripts/run_parallel_tests.ps1 -RequireCleanTempRoot, Ruff and both sample-env
-Compose configurations. Isolated packages may focused-verify/commit while the
-company objective stays open; no repeated full suite for docs-only work.
-Use --env-file .env.example for manual Compose commands, never operational .env.
+scripts/run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot, Ruff and both
+sample-env Compose configurations. Isolated packages may focused-verify/commit
+while a company objective stays active. Use --env-file .env.example for manual
+Compose commands, never operational .env.
 
 Resume with scripts/start_next_codex_task.ps1, NEXT_CODEX_GOAL.md, AGENTS.md,
-RUNBOOK.md and current stateboards. Throughput Review inspects ready/owned/due,
-then dispatches/recover/closes a bounded package; external waits belong to workers,
-not foreground sleeps. Integrate evidence, commit/push owned verified changes.
-Replace NEXT_CODEX_GOAL.md only after actual company completion or an explicit
-incomplete reassignment. No per-agent next goals or new reporting platform.
+RUNBOOK.md and current boards. Review ready/owned/due then dispatch/recover/close
+a bounded package; external waits belong to workers, not foreground sleeps.
+Integrate evidence and commit/push owned changes. Replace NEXT_CODEX_GOAL.md only
+after actual completion or explicit incomplete reassignment.
+No per-agent next goals or reporting platform.

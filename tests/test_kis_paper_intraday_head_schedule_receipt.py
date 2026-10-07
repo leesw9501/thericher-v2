@@ -82,6 +82,105 @@ def test_schedule_receipt_writes_a_complete_source_safe_no_intent_outcome(tmp_pa
     assert b"kis_live" not in rendered
 
 
+def test_preview_receipt_roundtrips_without_validation_or_network(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    def network_forbidden(*args: object, **kwargs: object) -> None:
+        raise AssertionError("preview receipt must stay offline")
+
+    monkeypatch.setattr(socket, "create_connection", network_forbidden)
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **_preview_kwargs(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    original = result.evidence_path.read_bytes()
+    payload = json.loads(original)
+    assert payload["stages"]["prospective_session"]["status"] == "preview"
+    assert payload["stages"]["prospective_validation"] == {
+        "exit_code": 0, "status": "not_applicable", "session_id": None, "contract": None,
+    }
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root, repository_root=repository_root,
+    )
+    assert fact.terminal_status == "complete" and fact.scheduler_exit_code == 0
+    assert result.evidence_path.read_bytes() == original
+    assert str(artifact_root) not in json.dumps(fact.safe_payload(), sort_keys=True)
+
+
+@pytest.mark.parametrize(
+    "overrides",
+    [
+        {"prospective_session_exit_code": 7},
+        {"prospective_session_id": None},
+        {"prospective_validation_exit_code": 1},
+        {"prospective_validation_status": "validated"},
+        {"prospective_validation_status": "not_run"},
+        {"prospective_validation_session_id": "unexpected-validation"},
+        {"prospective_validation_contract": "runtime-freshness-v5"},
+    ],
+)
+def test_malformed_preview_tuple_remains_recovery(tmp_path: Path, overrides) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **(_preview_kwargs() | overrides),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    assert result.terminal_status == "recovery"
+    assert result.scheduler_exit_code == SCHEDULE_DOWNSTREAM_RECOVERY_EXIT_CODE
+    fact = read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+        artifact_root, repository_root=repository_root,
+    )
+    assert fact.terminal_status == "recovery"
+
+
+@pytest.mark.parametrize(
+    ("stage", "field", "value"),
+    [
+        ("prospective_session", "exit_code", 1),
+        ("prospective_session", "session_id", None),
+        ("prospective_validation", "exit_code", 1),
+        ("prospective_validation", "exit_code", False),
+        ("prospective_validation", "status", "validated"),
+        ("prospective_validation", "session_id", "unexpected-validation"),
+        ("prospective_validation", "contract", "runtime-freshness-v5"),
+    ],
+)
+def test_preview_reader_rejects_forged_complete_validation(
+    tmp_path: Path, stage: str, field: str, value: object
+) -> None:
+    repository_root = tmp_path / "repository"
+    repository_root.mkdir()
+    artifact_root = tmp_path / "model-artifacts"
+    result = write_kis_paper_intraday_head_schedule_receipt(
+        **_preview_kwargs(),
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    payload = json.loads(result.evidence_path.read_text(encoding="ascii"))
+    payload["stages"][stage][field] = value
+    result.evidence_path.write_text(json.dumps(payload, sort_keys=True), encoding="ascii")
+    runtime_path = (
+        result.evidence_path.parent / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME
+    )
+    runtime = json.loads(runtime_path.read_text(encoding="ascii"))
+    runtime["receipt_sha256"] = "sha256:" + sha256(result.evidence_path.read_bytes()).hexdigest()
+    runtime_path.write_text(json.dumps(runtime, sort_keys=True), encoding="ascii")
+    with pytest.raises(KisPaperIntradayHeadScheduleReceiptError):
+        read_kis_paper_intraday_head_schedule_fact_from_artifact_root(
+            artifact_root, repository_root=repository_root,
+        )
+
+
 def test_schedule_fact_reads_only_the_task_owned_current_pointer_without_network(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
@@ -1529,6 +1628,16 @@ def _write_capture_receipt(
             ],
         },
     )
+
+
+def _preview_kwargs() -> dict[str, object]:
+    return _complete_kwargs() | {
+        "prospective_session_status": "preview",
+        "prospective_validation_exit_code": 0,
+        "prospective_validation_status": "not_applicable",
+        "prospective_validation_session_id": None,
+        "prospective_validation_contract": None,
+    }
 
 
 def _complete_kwargs() -> dict[str, object]:

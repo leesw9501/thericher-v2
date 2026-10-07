@@ -173,7 +173,9 @@ _SCHEDULE_RUNTIME_KEYS = frozenset(
     }
 )
 _LOOP_STATUSES = frozenset({"embedded", "preview", "no_intent", "unavailable", "not_applicable"})
-_SESSION_STATUSES = frozenset({"no_intent", "canary_completed", "unavailable", "not_applicable"})
+_SESSION_STATUSES = frozenset(
+    {"preview", "no_intent", "canary_completed", "unavailable", "not_applicable"}
+)
 _VALIDATION_STATUSES = frozenset({"validated", "not_run", "unavailable", "not_applicable"})
 _SPY_CYCLE_STATUSES = frozenset(
     {"preview", "no_intent", "canary_completed", "unavailable", "not_applicable"}
@@ -969,6 +971,7 @@ def write_kis_paper_intraday_head_schedule_receipt(
             prospective_validation_exit_code=prospective_validation_exit_code,
             prospective_validation_status=prospective_validation_status,
             prospective_validation_session_id=prospective_validation_session_id,
+            prospective_validation_contract=prospective_validation_contract,
             observation_exit_code=observation_exit_code,
             observation_status=observation_status,
             capture_cycle_exit_code=capture_cycle_exit_code,
@@ -1408,6 +1411,27 @@ def _receipt_terminal_from_payload(payload: Mapping[str, Any]) -> _ScheduleRecei
     stages = payload.get("stages")
     if not isinstance(stages, Mapping):
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+    session = stages.get("prospective_session")
+    if (
+        terminal_status == "complete"
+        and isinstance(session, Mapping)
+        and session.get("status") == "preview"
+    ):
+        validation = stages.get("prospective_validation")
+        if (
+            frozenset(session) != {"exit_code", "status", "session_id"}
+            or _payload_exit_code(session.get("exit_code"), "preview exit code") != 0
+            or not isinstance(validation, Mapping)
+            or frozenset(validation) != {"exit_code", "status", "session_id", "contract"}
+            or not _preview_validation_is_absent(
+                exit_code=validation.get("exit_code"),
+                status=validation.get("status"),
+                session_id=validation.get("session_id"),
+                contract=validation.get("contract"),
+            )
+        ):
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_evidence_invalid")
+        _payload_safe_id(session.get("session_id"), "preview session id")
     availability_status = "not_recorded_legacy"
     availability_binding = None
     availability = stages.get("availability")
@@ -2441,6 +2465,7 @@ def _terminal_outcome(
     prospective_validation_exit_code: int,
     prospective_validation_status: str,
     prospective_validation_session_id: str | None,
+    prospective_validation_contract: str | None,
     observation_exit_code: int,
     observation_status: str,
     capture_cycle_exit_code: int,
@@ -2467,6 +2492,7 @@ def _terminal_outcome(
         prospective_validation_exit_code=prospective_validation_exit_code,
         prospective_validation_status=prospective_validation_status,
         prospective_validation_session_id=prospective_validation_session_id,
+        prospective_validation_contract=prospective_validation_contract,
     )
     if recovery_class is None:
         if prospective_loop_status == "not_applicable":
@@ -2509,6 +2535,18 @@ def _prospective_spy_cycle_recovery_class(
     return None
 
 
+def _preview_validation_is_absent(
+    *, exit_code: object, status: object, session_id: object, contract: object
+) -> bool:
+    return (
+        type(exit_code) is int
+        and exit_code == 0
+        and status == "not_applicable"
+        and session_id is None
+        and contract is None
+    )
+
+
 def _first_downstream_recovery_class(
     *,
     prospective_loop_exit_code: int,
@@ -2519,6 +2557,7 @@ def _first_downstream_recovery_class(
     prospective_validation_exit_code: int,
     prospective_validation_status: str,
     prospective_validation_session_id: str | None,
+    prospective_validation_contract: str | None,
 ) -> str | None:
     if prospective_loop_exit_code != 0:
         return "prospective_loop_exit_nonzero"
@@ -2537,10 +2576,19 @@ def _first_downstream_recovery_class(
         return "prospective_loop_payload_unavailable"
     if prospective_session_exit_code != 0:
         return "prospective_session_exit_nonzero"
-    if prospective_session_status not in {"no_intent", "canary_completed"}:
+    if prospective_session_status not in {"preview", "no_intent", "canary_completed"}:
         return "prospective_session_payload_unavailable"
     if prospective_session_id is None:
         return "prospective_session_id_unavailable"
+    if prospective_session_status == "preview":
+        if _preview_validation_is_absent(
+            exit_code=prospective_validation_exit_code,
+            status=prospective_validation_status,
+            session_id=prospective_validation_session_id,
+            contract=prospective_validation_contract,
+        ):
+            return None
+        return "preview_validation_conflict"
     if prospective_validation_exit_code != 0:
         return "prospective_validation_exit_nonzero"
     if prospective_validation_status != "validated":

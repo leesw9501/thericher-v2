@@ -2,6 +2,25 @@
 
 ## Independent QQQ Unit Cycle
 
+October7 NEW-account cycle `qqq-unit-new-account-20261007-v1` with explicit
+tag `new-account-20261007-v1` completed at22:34:57 KST: exact full unit BUY
+and SELL, exact order/position reconciliation, zero pending requests, and
+current22:36:07 KST runtime QQQ-flat/zero opens. Use the existing runner on
+restart with those same identities; a complete replay does not create another
+entry. Fees/settled cash/net PnL remain unobserved. Exact safe projection:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\offline-new-account-20261007-v1.json`.
+Current logical `thericher-v2-paper-canary-private` resolves to physical
+`thericher-v2-paper-canary-private-acct-20261007-v1`. All seven original mounts
+retain their roots/access. The old physical volume is untouched/unreferenced;
+do not copy it, route old recovery here or delete it. New V2 basis is the NEW
+account's own provisional10-percent allocation, shared by SPY and QQQ once.
+No migration/archive framework, image rebuild or scheduler change was needed.
+The existing intraday-head QQQ child now defaults to observational preview,
+because its bare canary path lacks the shared budget. Data collection and named
+budget executors continue; preview has no broker call or validator and is not
+a fill. Runtime preview success after this change remains unobserved.
+The following October6 command/diagnosis is historical OLD-account material.
+
 October7 account correction supersedes the October6 VOC-first setup diagnosis
 below. Operator found the previous mock account in .env and corrected it.
 Fresh named direct discovery22:00:13 KST succeeds: complete USD account, zero

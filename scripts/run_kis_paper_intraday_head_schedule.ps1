@@ -688,7 +688,7 @@ if ($collectionExitCode -eq 0) {
     $prospectiveSessionPayload = Get-UniqueSafeProfileSessionPayload `
         -Output $prospectiveSession.Output `
         -Kind "kis_paper_prospective_qqq_session" `
-        -AllowedStatuses @("no_intent", "canary_completed")
+        -AllowedStatuses @("preview", "no_intent", "canary_completed")
     $prospectiveSessionId = Get-SafeProfileSessionId -Payload $prospectiveSessionPayload
     if ($null -ne $prospectiveSessionPayload) {
         $prospectiveSessionStatus = [string]$prospectiveSessionPayload.status

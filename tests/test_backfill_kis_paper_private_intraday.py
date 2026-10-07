@@ -691,12 +691,12 @@ def test_intraday_head_profile_separates_offline_replay_from_qqq_paper_execution
     compose = (Path(__file__).parents[1] / "docker-compose.yml").read_text(encoding="utf-8")
     assert "\n  kis-paper-prospective-loop:\n" not in compose
     execution = compose.split("\n  kis-paper-prospective-qqq-session:\n", maxsplit=1)[1].split(
-        "\n  kis-paper-receipt-observer:\n", maxsplit=1
+        "\n  kis-paper-prospective-qqq-validation:\n", maxsplit=1
     )[0]
 
     assert 'profiles: ["kis-paper-intraday-head"]' in execution
     assert "thericher_v2.execution.kis_paper_prospective_qqq_session" in execution
-    assert "--execute" in execution
+    assert "--execute" not in execution
     assert "--cancel-after-submit" in execution
     assert "THERICHER_MODE: kis_paper" in execution
     assert "KIS_PAPER_APP_KEY" in execution

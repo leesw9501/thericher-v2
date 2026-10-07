@@ -9,8 +9,11 @@ October6 forward-variance target/input preparation is source/hash-bound and
 complete:251 paired past inputs/249 supported targets per ETF/two early-close
 shortfalls;532 mutations and independent ALL-RO replay match. No fits/weights,
 GPU appointment or sealed spend. Revised/seen development only. Engine owns the
-next chronological CPU baseline contract, not a return-family rescue; current
-Paper rejection does not block it. Evidence is in agents/engine-research.md.
+next chronological CPU baseline contract, not a return-family rescue. October7
+pure baseline helper is synthetic-verified; actual source fits remain zero,
+with no new GPU appointment or sealed spend. The corrected-account QQQ Paper
+round trip completes independently; it creates no research promotion. Evidence
+is in agents/engine-research.md and agents/execution.md.
 
 October5 first30-closing29 CPU family closed/non_promoting_completed,60 cells,
 zero fits/GPU/weights/sealed spend, no appointment or successor allocation.

@@ -15,7 +15,23 @@ Before a predictive campaign or GPU appointment, freeze its dataset, target,
 temporal split, feature availability, timeframe/window matrix, cost model,
 naive baseline, compute stop rule, artifact root, and strongest kill test.
 
-## Current Research State (2026-10-06 KST)
+## Current Research State (2026-10-07 KST)
+
+Pure CPU `forward_variance_baseline.py` is implemented and independently
+reviewed: fixed L2=1 log-variance Ridge with TRAIN-only population scaling,
+own-past variance and same-TRAIN-cohort mean controls, target-blind forecasts,
+common positive-target QLIKE comparison and explicit zero/missing exclusions.
+70 new tests pass; baseline/smoke/target integration passes225 tests. Combined
+changed-path integration passes564 tests/one worker/no skips/clean helper exit.
+No actual market-source fit, performance, weight, GPU or sealed allocation yet.
+Caller-supplied causality and outcome-dependent complete-case exclusions remain
+limitations, not evidence of profitability. Existing killed families stay closed.
+Next ready package is the distinct source-bound forward-risk CPU DEVELOPMENT
+comparison in NEXT_CODEX_GOAL.md, not a Paper input or return-family rescue.
+Claude direction challenge exited1/review_unavailable, not agreement:
+`D:\thericher-v2\model-artifacts\research\source-discovery\claude-forward-risk-baseline-20261007-v1.json`.
+
+## Prior Target And Input Preparation
 
 Forward-risk target/input preparation is complete, revised/seen development
 only, not a predictive campaign or return/allocation rescue. The new pure
