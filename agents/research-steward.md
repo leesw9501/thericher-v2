@@ -10,10 +10,22 @@ complete:251 paired past inputs/249 supported targets per ETF/two early-close
 shortfalls;532 mutations and independent ALL-RO replay match. No fits/weights,
 GPU appointment or sealed spend. Revised/seen development only. Engine owns the
 next chronological CPU baseline contract, not a return-family rescue. October7
-pure baseline helper is synthetic-verified; actual source fits remain zero,
-with no new GPU appointment or sealed spend. The corrected-account QQQ Paper
-round trip completes independently; it creates no research promotion. Evidence
-is in agents/engine-research.md and agents/execution.md.
+forward-risk family now closed/non_promoting_completed: two actual CPU Ridge
+fits/21.23s,159 eligible TRAIN and89 comparison rows per ETF, overall premise
+rejected by SPY's past-variance control. Exact frozen/outcome registry custody,
+numeric external models and zero-refit ALL-RO replay/20.571s remain. No GPU
+appointment or sealed spend; QQQ-only selection/rescue is not allocated.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-forward-risk-baseline-development-20261007-v1`;
+contract `sha256:dbccc9e43f034e1c8fba12d4d28808279210629d3fcc6cae1d5fcfa9866e420d`;
+result `sha256:d653fe8ef6cf4a921c89ddb0cfac1709a9f866b978a267bdaf48e5745ff3f0da`.
+The corrected-account QQQ Paper round trip completes independently and creates
+no research promotion. Actual-fill accounting is the next product priority;
+there is no ready undispatched frozen GPU campaign. Evidence is in Research
+and Execution stateboards.
+October7 CUDA capability probe passes in existing image d6b43213 on RTX4090/
+Torch2.7.0+cu128; no training fit or appointment. Engine's bounded next-hypothesis
+preparation is active independently of Execution accounting; allocate only
+after its finite useful contract is frozen, without a new operator GPU approval.
 
 October5 first30-closing29 CPU family closed/non_promoting_completed,60 cells,
 zero fits/GPU/weights/sealed spend, no appointment or successor allocation.

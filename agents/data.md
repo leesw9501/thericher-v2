@@ -11,7 +11,16 @@ resampling, manifests, temporal splits, and quality facts. It does not select
 strategies, fit models, or make execution decisions. KIS Paper market-data
 collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
-## Current Coverage (2026-10-05 KST)
+## Current Coverage (2026-10-07 KST)
+
+The forward-risk consumer reattests the existing normalization/lineage, both
+canonical CSV hashes and251 scheduled NYSE dates without acquisition or source
+changes. Fixed160/1/90 split preserves source-local target shortfalls; the two
+early closes yield159 TRAIN/89 comparison positive targets per ETF, not a
+whole-session input exclusion. Actual two-fit/replay evidence belongs to Engine
+Research, not a Data/PIT/finality or Paper qualification. No new collector,
+cache, cursor, pace or rights change. Existing head next_due remains October8
+00:29 KST; actual scheduled paired-head/preview result is still unobserved.
 
 The bounded terminal-header repair is integrated/deployed. Official KIS minute
 example continues M/F; the legacy example explicitly identifies D/E as terminal.

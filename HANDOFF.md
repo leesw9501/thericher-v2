@@ -28,10 +28,26 @@ Actual submissions22:34:07/22:34:45 KST; closure22:34:57 KST/two worker visits.
 This is Paper connectivity, not strategy profitability/live. Fees, settled
 cash and net broker PnL remain not_observed.
 
-Next single company objective: `firstrate-forward-risk-baseline-development-v1`,
-actual chronological CPU variance prediction and independent replay with fixed
-controls/kill rules. Pure helper is ready; no actual source fit/performance yet.
-Scheduled Paper/Data are independent, not held on research outcomes.
+`firstrate-forward-risk-baseline-development-v1` is now COMPLETED, overall
+incremental-risk premise REJECTED. Two actual CPU Ridge fits/21.23s,159 TRAIN
+and89 comparison targets per ETF; QQQ beats both controls but SPY fails past
+variance in all90/first45 and their shared-date deletions. No QQQ-only rescue,
+retuning, profitability or Paper qualification. Independent ALL-RO replay
+matches in20.571s/zero refits;611 mutations pass. Exact external contract/model/
+result pins and limitations are in agents/engine-research.md and RUNBOOK.md.
+162 focused serial passes; full9,260 passes/22 skips/35 warnings/480.64s/eight
+workers/clean helper, matching9,282 collected; Ruff/both sample Compose pass.
+Next single company objective: `new-account-paper-fill-accounting-v1`, exact
+new-account QQQ fill-derived gross realized PnL without double counting.
+Scheduled Paper/Data are independent, not held on research outcomes. GPU
+research preparation runs independently; no profit approval is required.
+
+October7 local probe verifies RTX4090/PyTorch2.7.0+cu128 CUDA matrix operation
+inside existing research image d6b43213, networknone/no credentials. GPU is
+available, not authorization/runtime blocked. No research training is active;
+the current small two-feature Ridge baseline was deliberately CPU. A bounded
+Engine preparation assignment is choosing one genuinely distinct GPU study
+from retained data; it is not a dummy utilization job or a frozen appointment.
 
 Corrected .env uses a DIFFERENT mock account. Existing logical private volume
 now points to `thericher-v2-paper-canary-private-acct-20261007-v1`; all seven
@@ -268,13 +284,14 @@ Do not repeatedly invoke that unchanged failure or pause independent ready work.
 
 ## Verification And Resume
 
-October7 shared-control/research integration:564 changed-path serial passes/
-no skips/17.42s, then full9,168 passed/22 skipped/35 warnings/400.13s/eight
-workers/clean helper exit, matching9,190 collected. Ruff/default+research-profile
+October7 forward-risk integration:162 changed-path serial passes/no skips/1.94s,
+then full9,260 passed/22 skipped/35 warnings/480.64s/eight workers/clean helper
+exit, matching9,282 collected. Ruff/default+research-profile
 sample-env Compose pass. Warnings are existing sklearn criterion deprecations.
 Independent review found no remaining actionable integration defect.
 Actual new-account QQQ cycle and ALL-RO exact replay/current flat are verified;
-old105-file seal is unchanged. No active test/QQQ/sub-agent remains.
+old105-file seal is unchanged. No active test/QQQ/fit worker remains. Bounded
+accounting and GPU-preparation role assignments are active, not broker workers.
 
 Claude volume/recovery and forward-risk challenges exited1/review_unavailable,
 not agreement. Categorical pointers belong to Execution/Engine.

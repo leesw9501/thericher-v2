@@ -17,19 +17,43 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-07 KST)
 
-Pure CPU `forward_variance_baseline.py` is implemented and independently
-reviewed: fixed L2=1 log-variance Ridge with TRAIN-only population scaling,
-own-past variance and same-TRAIN-cohort mean controls, target-blind forecasts,
-common positive-target QLIKE comparison and explicit zero/missing exclusions.
-70 new tests pass; baseline/smoke/target integration passes225 tests. Combined
-changed-path integration passes564 tests/one worker/no skips/clean helper exit.
-No actual market-source fit, performance, weight, GPU or sealed allocation yet.
-Caller-supplied causality and outcome-dependent complete-case exclusions remain
-limitations, not evidence of profitability. Existing killed families stay closed.
-Next ready package is the distinct source-bound forward-risk CPU DEVELOPMENT
-comparison in NEXT_CODEX_GOAL.md, not a Paper input or return-family rescue.
-Claude direction challenge exited1/review_unavailable, not agreement:
-`D:\thericher-v2\model-artifacts\research\source-discovery\claude-forward-risk-baseline-20261007-v1.json`.
+`firstrate-forward-risk-baseline-development-v1` completed two actual CPU fits
+in21.23s, with159/160 positive TRAIN and89/90 comparison observations per ETF.
+Fixed160/1/90 scheduled split,45/45 halves before exclusions, L2=1 log Ridge,
+TRAIN-only scaling, own/peer past119-return variance and two fixed controls.
+Normalized QLIKE order is Ridge / own-past60/119 / same-TRAIN mean:
+
+| ETF | All90 | First45 | Last45 |
+| --- | --- | --- | --- |
+| QQQ | 0.109475 / 0.230770 / 0.322889 | 0.104075 / 0.192624 / 0.292449 | 0.114754 / 0.268067 / 0.352653 |
+| SPY | 0.213841 / 0.193768 / 0.527002 | 0.239396 / 0.183327 / 0.570821 | 0.188854 / 0.203976 / 0.484157 |
+
+Overall incremental-risk premise REJECTED: SPY loses to past variance in all90
+and first45, including every shared-date deletion there. QQQ's better values
+do not permit ETF selection, retuning, a same-data rescue or Paper input.
+Eligible halves44/45 and45/45; one early-close target shortfall in each split,
+no zero targets or forecast clipping/flooring.611 causal mutation checks pass.
+Independent ALL-RO replay matches exact model/scalers/cohort/forecasts/losses
+in20.571s with ZERO refits.162 focused serial tests pass; source review's two
+result-read/registry-recovery findings are fixed and independently rechecked.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-forward-risk-baseline-development-20261007-v1`;
+contract `sha256:dbccc9e43f034e1c8fba12d4d28808279210629d3fcc6cae1d5fcfa9866e420d`;
+result `sha256:d653fe8ef6cf4a921c89ddb0cfac1709a9f866b978a267bdaf48e5745ff3f0da`;
+canonical numeric-model payload `sha256:e8d141162c8e7e7bfa1f18edd277c2a5db2b19b3210f377fcd2196a6b2e327c1`.
+Numeric models and16 exact frozen code copies remain outside Git; replay uses
+the pinned846a900b CPU image/networknone/2CPU/2GiB/120s bound. No GPU, sealed
+allocation, broker call, returns, PnL or promotion. Same revised/seen source,
+source clocks/actions/finality/PIT and conditional complete-case limits remain.
+Claude supplied-result challenge exited1/review_unavailable, NOT agreement:
+`D:\thericher-v2\model-artifacts\research\source-discovery\claude-forward-risk-result-20261007-v1.json`.
+Next product priority is Execution's actual-fill accounting, independent of
+research scores. No genuinely ready new frozen predictive/GPU campaign exists;
+closed risk/return/allocation/foundation families stay closed.
+GPU capability is freshly verified in existing research image d6b43213:
+RTX4090/Torch2.7.0+cu128 CUDA matrix operation succeeds/networknone/no fits.
+Bounded Engine preparation for one distinct retained-data GPU hypothesis runs
+in parallel with accounting, rather than after Execution's external due time.
+It is not yet a frozen campaign, appointment or training result.
 
 ## Prior Target And Input Preparation
 
@@ -65,9 +89,8 @@ result `sha256:d7d3761265f6484b52db5e00c8f1a26fee7ba24e853da4e67bdc634179832ce8`
 Revised/seen source clocks, actions, finality and historical availability remain
 unqualified; physical parsing is not target-isolated, and251 shared blocks are
 not502 independent observations. Recovery complete; no research worker remains.
-Next ready step is a distinct frozen forward-risk DEVELOPMENT predictive
-contract with chronological session blocks, TRAIN-only transforms, declared
-past-variance/TRAIN-mean baselines, fixed loss and finite CPU stop/kill tests.
+Its subsequent forward-risk predictive comparison is completed/rejected above;
+do not repeat this preparation or its two-fit recipe.
 Preserve prior seen-source trials and all three closed October5 families; no
 retuning, independent-data relabeling or automatic Paper qualification.
 
@@ -1440,7 +1463,7 @@ dispatch restrictions. The current development package is described above.
 | Track | Current status | Next valid trigger |
 | --- | --- | --- |
 | Technical/chart and momentum/regime | First30-closing29 completed60 CPU cells/zero fits; all four stress ETF/fold NAVs lose cash and fixed exposure controls. Earlier time-of-day band remains killed | Preserve kills; no cost/threshold/window/ETF rescue or original-paper rejection; a distinct question needs its own finite contract |
-| Classical ML/statistical | Paired-lag own/peer Ridge fits now trade but have negative stress net; earlier downside/pooled fits stay closed | Broader FirstRate input geometry is ready; freeze a distinct mechanism, not seen threshold/cost rescue |
+| Classical ML/statistical | Forward-risk two-fit Ridge comparison is closed/rejected: SPY fails the past-variance control in all90/first45. Paired-lag/downside/pooled history stays closed | No QQQ-only, window, cost or parameter rescue on seen data; a distinct mechanism needs its own finite contract |
 | Sequence/DL/public model | Paired LSTM/attention actual CUDA fits complete, both stress-negative; TimesFM/Chronos/TCN/patch history unchanged | Source-independent five-timeframe completed inputs pass target-free smoke; new campaign needs its own shared finite compute contract |
 | Portfolio/allocation/meta-decision | Joint daily-flat allocation completed three CUDA fits/21 cells; primary120 loses stress NAV and constant/EW controls; numeric weights and exact CPU inference retained | Preserve kills/seen-source history; no same-data window/fee/ETF rescue or Paper qualification; a distinct future question needs its own finite contract |
 
@@ -1536,8 +1559,10 @@ developmental study or a separately scoped baseline Paper experiment.
 
 ## Active Constraint And Handoff
 
-The company QQQ Paper opportunity remains October6 00:20 KST, independent of
-research profitability. No research/permission/GPU runtime block exists.
+Corrected-account QQQ Paper round trip completed October7, independent of
+research profitability. Actual-fill accounting is the next product priority;
+SPY23:50 KST and Data head00:29 KST retain their existing owners. No research/
+permission/GPU runtime block exists.
 September20 matched QQQ/SPY days and October1/2 context are complete revised
 development inputs; old unavailable causal consumers stay scoped to their own
 contracts. They do not block these sources or the separate Paper opportunity.

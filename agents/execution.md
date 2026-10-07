@@ -25,6 +25,11 @@ and owned replay quantity zero. Fresh22:36:07 KST runtime snapshot independently
 has QQQ flat/zero QQQ opens. This is execution connectivity, not model profit.
 Fees, settled cash and net broker PnL remain not_observed.
 
+Next company package is `new-account-paper-fill-accounting-v1`: reuse these
+exact two closed current-account fills for pure gross realized PnL/restart
+replay. No new quote, order, account call, budget reset or scheduler is needed.
+Private amounts stay private; accounting evidence has not yet been produced.
+
 Minimal cutover remaps the existing logical private volume to
 `thericher-v2-paper-canary-private-acct-20261007-v1`; all seven consumers keep
 the same roots/access (five RW/two RO). Empty-root no-broker probe passed.

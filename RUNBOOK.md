@@ -205,8 +205,44 @@ scripts, market, study, normalization and parent lineage RO; network none,
 2CPU/2GiB/120-second compute bound, no credentials/private execution volumes.
 October6 independent replay matches251 paired inputs/249 targets per ETF/two
 early-close shortfalls and532 mutations; no model fit/GPU or predictive claim.
-Input eligibility never depends on future support. Engine owns a fresh
-chronological CPU baseline contract next; seen/revised source is not a holdout.
+Input eligibility never depends on future support. Its subsequent two-fit
+chronological CPU comparison is completed/rejected below; no refit is needed.
+Seen/revised source is not a holdout.
+
+## Forward-Risk Baseline Readback
+
+`scripts/run_firstrate_forward_variance_baseline.py` defaults to a no-I/O plan.
+The October7 two-fit experiment is closed/non_promoting_completed, overall
+incremental-risk premise rejected. QQQ's better scores cannot select a subset.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-forward-risk-baseline-development-20261007-v1`.
+Use `verify` with contract
+`sha256:dbccc9e43f034e1c8fba12d4d28808279210629d3fcc6cae1d5fcfa9866e420d`
+and result
+`sha256:d653fe8ef6cf4a921c89ddb0cfac1709a9f866b978a267bdaf48e5745ff3f0da`.
+Independent ALL-RO replay matches in20.571s with zero fits,159/160 TRAIN and
+89/90 comparison targets per ETF and611 mutations. Models are numeric JSON
+only; never print their coefficients or move them into Git.
+
+Use existing CPU image846a900b/networknone/2CPU/2GiB/read-only filesystem,
+120s compute/130s outer bound and no credential/private execution mounts.
+RO mappings: repo src/scripts -> /app/src,/app/scripts; exact canonical source
+directory -> /market/us_equities/firstrate_free_intraday/canonical; source-local
+normalization -> /input/normalization.json; paired-context precommit ->
+/input/lineage.json; prior target/input smoke root -> /preparation; this root ->
+/study; existing registry ledger -> /artifacts/_control/ledger. Arguments are
+`verify --artifact-root /study --artifact-base /artifacts --market-root /market
+--normalization /input/normalization.json --lineage /input/lineage.json
+--preparation-root /preparation --contract-sha256 <above> --result-sha256 <above>`.
+Pin NumPy2.5.1/Python3.12.15/calendar5.4.0 and two BLAS/OMP threads. If source
+changes, overlay the16 exact copies under this root's `frozen-code` at their
+original /app paths; never rewrite the contract or refit a closed attempt.
+Freeze registration recovery is idempotent for the exact existing contract;
+the exclusive attempt marker prevents duplicate fits. Verify parses one
+anchored result buffer and checks numeric-model hash before use, then recomputes
+TRAIN membership/transforms/normal-equation residual and all forecasts/losses.
+No GPU, holdout, broker call, profit or Paper-input claim. Claude's supplied
+result challenge exited1/review_unavailable, not agreement; categorical receipt
+is under research/source-discovery/claude-forward-risk-result-20261007-v1.json.
 
 ## Paired-Lag Development Readback
 
