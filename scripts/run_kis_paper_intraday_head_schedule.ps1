@@ -273,6 +273,80 @@ function Get-UniqueSafeCollectionFailureCategory {
                         return "reason_unavailable"
                     }
                 }
+                if ($targetProperties -ccontains "retained_head_conflict_diagnostic") {
+                    $expectedTargetProperties += "retained_head_conflict_diagnostic"
+                    $retained = $target.retained_head_conflict_diagnostic
+                    $retainedProperties = @(
+                        "fresh_status", "fresh_reason", "accepted_row_count", "accepted_page_count",
+                        "conflicting_chunk_count", "conflicting_minute_count", "failed_predicates",
+                        "prospective_active_key_loss_count"
+                    )
+                    if (
+                        $null -eq $retained -or $retained -isnot [pscustomobject] `
+                            -or (@($retained.PSObject.Properties.Name | Sort-Object) -join "|") -cne (@($retainedProperties | Sort-Object) -join "|") `
+                            -or $retained.fresh_status -isnot [string] `
+                            -or $retained.fresh_status -cnotin @("collected", "partial") `
+                            -or $retained.failed_predicates -isnot [array] `
+                            -or $PagesPerTarget -notin @(4, 8)
+                    ) {
+                        return "reason_unavailable"
+                    }
+                    foreach ($count in @("accepted_row_count", "accepted_page_count", "conflicting_chunk_count", "conflicting_minute_count", "prospective_active_key_loss_count")) {
+                        $value = $retained.$count
+                        if (
+                            ($value -isnot [long] -and $value -isnot [int]) `
+                                -or $value -lt 0 `
+                                -or ($count -cne "prospective_active_key_loss_count" -and $value -eq 0)
+                        ) {
+                            return "reason_unavailable"
+                        }
+                    }
+                    $allowedPredicates = @(
+                        "quarantine_disabled", "fresh_not_collected", "predecessor_not_head",
+                        "predecessor_input_cursor_present", "predecessor_output_cursor_present",
+                        "predecessor_outcome_reason_ineligible", "predecessor_conflict_origin_present",
+                        "predecessor_identity_invalid", "partial_active_key_loss"
+                    )
+                    foreach ($predicate in $retained.failed_predicates) {
+                        if ($predicate -isnot [string] -or $predicate -cnotin $allowedPredicates) {
+                            return "reason_unavailable"
+                        }
+                    }
+                    $predicates = @($retained.failed_predicates)
+                    if (
+                        ($predicates -join "|") -cne (@($predicates | Sort-Object -Unique) -join "|") `
+                            -or ($predicates -ccontains "fresh_not_collected" -and $retained.fresh_status -cne "partial") `
+                            -or ($retained.fresh_status -ceq "partial" -and $predicates -cnotcontains "fresh_not_collected" -and ($retained.fresh_reason -cne "minute_response_invalid" -or ($retained.prospective_active_key_loss_count -gt 0 -and $predicates -cnotcontains "partial_active_key_loss"))) `
+                            -or ($predicates -ccontains "partial_active_key_loss" -and ($retained.fresh_status -cne "partial" -or $retained.prospective_active_key_loss_count -eq 0)) `
+                            -or ($retained.fresh_status -ceq "collected" -and $null -ne $retained.fresh_reason) `
+                            -or ($retained.fresh_status -ceq "partial" -and ($retained.fresh_reason -isnot [string] -or $retained.fresh_reason -cnotin (@($collectorProviderReasons) + @("config_missing")))) `
+                            -or $retained.accepted_page_count -gt $PagesPerTarget `
+                            -or $retained.accepted_row_count -gt (120 * $retained.accepted_page_count) `
+                            -or $retained.conflicting_minute_count -gt $retained.accepted_row_count `
+                            -or $target.status -cnotin @("collected", "partial", "recovered", "rejected") `
+                            -or (($target.status -ceq "rejected") -ne ($predicates.Count -gt 0))
+                    ) {
+                        return "reason_unavailable"
+                    }
+                    if ($target.status -ceq "rejected") {
+                        if (
+                            $target.reason -cne "minute_duplicate_conflict" `
+                                -or $target.conflict_origin -cne "retained_cache" `
+                                -or $target.row_count -ne 0 -or $target.exact_overlap_rows -ne 0
+                        ) {
+                            return "reason_unavailable"
+                        }
+                    } elseif (
+                        $null -ne $target.conflict_origin `
+                            -or $target.row_count -ne $retained.accepted_row_count `
+                            -or ($target.status -ceq "partial" -and ($retained.fresh_status -cne "partial" -or $target.reason -cne "minute_response_invalid" -or $retained.fresh_reason -cne $target.reason -or $retained.prospective_active_key_loss_count -ne 0)) `
+                            -or ($target.status -cne "partial" -and $retained.fresh_status -cne "collected") `
+                            -or ($target.status -ceq "collected" -and $null -ne $target.reason) `
+                            -or ($target.status -ceq "recovered" -and $target.reason -cnotin @("already_cached", "private_intraday_collector_error"))
+                    ) {
+                        return "reason_unavailable"
+                    }
+                }
                 if ((@($targetProperties | Sort-Object) -join "|") -cne (@($expectedTargetProperties | Sort-Object) -join "|")) {
                     return "reason_unavailable"
                 }

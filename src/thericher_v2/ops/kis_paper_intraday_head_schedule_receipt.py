@@ -25,6 +25,8 @@ from thericher_v2.data.kis_paper_intraday_session_capture import (
     KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES,
     KisPaperIntradaySessionCaptureTarget,
     kis_paper_intraday_head_requested_page_budget,
+    retained_head_conflict_diagnostic_from_payload,
+    validate_retained_head_conflict_diagnostic,
 )
 from thericher_v2.data.kis_qqq_spy_mtf_prospective_observation import (
     KisQqqSpyMtfProspectiveAttempt,
@@ -36,6 +38,9 @@ from thericher_v2.data.kis_qqq_spy_mtf_prospective_observation import (
 from thericher_v2.execution.kis_market_data import (
     validate_kis_paper_minute_failure_diagnostic,
     validate_kis_paper_token_failure_diagnostic,
+)
+from thericher_v2.execution.kis_private_intraday_backfill import (
+    KisPaperRetainedHeadConflictDiagnostic,
 )
 
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND = "kis_paper_intraday_head_schedule_receipt"
@@ -716,7 +721,7 @@ class KisPaperIntradayHeadScheduleFact:
 
 @dataclass(frozen=True)
 class KisPaperIntradayHeadCollectionRecoveryTarget:
-    """One allowlisted target outcome without counts, rows, or receipt paths."""
+    """One allowlisted target outcome with optional conflict counts, never rows or paths."""
 
     target_key: str
     status: str
@@ -733,8 +738,18 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
     requested_pages_per_target: int | None = None
     token_http_status_class: str | None = None
     token_upstream_code: str | None = None
+    retained_head_conflict_diagnostic: KisPaperRetainedHeadConflictDiagnostic | None = None
 
     def __post_init__(self) -> None:
+        if self.retained_head_conflict_diagnostic is not None:
+            validate_retained_head_conflict_diagnostic(
+                self.retained_head_conflict_diagnostic,
+                status=self.status, reason=self.reason,
+                conflict_origin=(
+                    None if self.conflict_origin == "not_applicable" else self.conflict_origin
+                ),
+                page_budget=self.requested_pages_per_target,
+            )
         validate_kis_paper_minute_failure_diagnostic(
             reason=self.reason,
             phase=self.failure_phase,
@@ -801,6 +816,10 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
             payload["token_http_status_class"] = self.token_http_status_class
         if self.token_upstream_code is not None:
             payload["token_upstream_code"] = self.token_upstream_code
+        if self.retained_head_conflict_diagnostic is not None:
+            payload["retained_head_conflict_diagnostic"] = (
+                self.retained_head_conflict_diagnostic.to_payload()
+            )
         return payload
 
 
@@ -2259,6 +2278,19 @@ def _collection_recovery_targets_from_capture_payload(
         ):
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
         try:
+            retained_diagnostic = None
+            if "retained_head_conflict_diagnostic" in value:
+                if receipt_is_legacy:
+                    raise ValueError("session capture conflict provenance is invalid")
+                retained_diagnostic = retained_head_conflict_diagnostic_from_payload(
+                    value["retained_head_conflict_diagnostic"]
+                )
+                validate_retained_head_conflict_diagnostic(
+                    retained_diagnostic,
+                    status=value.get("status"), reason=value.get("reason"),
+                    conflict_origin=conflict_origin,
+                    page_budget=kis_paper_intraday_head_requested_page_budget(payload.get("schedule_run_id")),
+                )
             if present_diagnostics and value["requested_pages_per_target"] != (
                 kis_paper_intraday_head_requested_page_budget(payload.get("schedule_run_id"))
             ):
@@ -2275,6 +2307,7 @@ def _collection_recovery_targets_from_capture_payload(
                 requested_pages_per_target=value.get("requested_pages_per_target"),
                 token_http_status_class=value.get("token_http_status_class"),
                 token_upstream_code=value.get("token_upstream_code"),
+                retained_head_conflict_diagnostic=retained_diagnostic,
                 conflict_origin=(
                     conflict_origin if conflict_origin != "not_recorded_legacy" else None
                 ),
@@ -2305,6 +2338,7 @@ def _collection_recovery_targets_from_capture_payload(
                 requested_pages_per_target=capture_target.requested_pages_per_target,
                 token_http_status_class=capture_target.token_http_status_class,
                 token_upstream_code=capture_target.token_upstream_code,
+                retained_head_conflict_diagnostic=capture_target.retained_head_conflict_diagnostic,
                 conflict_origin=(
                     "not_recorded_legacy"
                     if receipt_is_legacy

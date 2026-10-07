@@ -306,6 +306,26 @@ def test_head_schedule_classifies_only_one_exact_safe_collection_failure_payload
         "token_bad_combo",
         "token_with_minute_fields",
         "token_success_fields",
+        "retained_valid", "retained_partial", "retained_eight", "retained_success",
+        "retained_null", "retained_extra", "retained_missing", "retained_bool",
+        "retained_float", "retained_zero", "retained_row_limit", "retained_minute_limit",
+        "retained_page_limit", "retained_eight_limit", "retained_outcome", "retained_origin",
+        "retained_empty_predicates", "retained_unknown_predicate", "retained_predicate_order",
+        "retained_duplicate_predicate", "retained_string_predicate", "retained_reason",
+        "retained_partial_predicate", "retained_status_case", "retained_target_rows",
+        "retained_partial_success", "retained_partial_eight_success",
+        "retained_partial_success_unknown_reason", "retained_partial_success_other_reason",
+        "retained_partial_success_mismatch", "retained_partial_success_loss",
+        "retained_partial_success_failed", "retained_partial_success_recovered",
+        "retained_partial_loss", "retained_partial_loss_zero", "retained_loss_collected",
+    ] + [
+        f"retained_partial_success_{kind}_{field}"
+        for kind in ("null", "bool", "missing")
+        for field in (
+            "fresh_status", "fresh_reason", "accepted_row_count", "accepted_page_count",
+            "conflicting_chunk_count", "conflicting_minute_count", "failed_predicates",
+            "prospective_active_key_loss_count",
+        )
     ],
 )
 def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: str) -> None:
@@ -347,7 +367,133 @@ def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: s
         ],
     }
     target = payload["targets"][0]
-    if case.startswith("token_"):
+    page_budget = 4
+    if case.startswith("retained_"):
+        for field in (
+            "failure_phase", "failure_code", "failure_page_ordinal", "requested_pages_per_target",
+        ):
+            target.pop(field)
+        target.update(status="rejected", row_count=0, reason="minute_duplicate_conflict",
+                      conflict_origin="retained_cache",
+                      retained_head_conflict_disposition="preserved")
+        retained = {
+            "fresh_status": "collected", "fresh_reason": None,
+            "accepted_row_count": 240, "accepted_page_count": 2,
+            "conflicting_chunk_count": 1, "conflicting_minute_count": 1,
+            "failed_predicates": ["quarantine_disabled"], "prospective_active_key_loss_count": 17,
+        }
+        target["retained_head_conflict_diagnostic"] = retained
+        if case in {"retained_eight", "retained_eight_limit", "retained_partial_eight_success"}:
+            page_budget = 8
+            run_id = "intraday-head-20260728T202000Z"
+            payload["schedule_run_id"] = run_id
+            payload["observed_at"] = "2026-07-28T20:21:00Z"
+            payload["terminal_receipt_binding"].update(schedule_run_id=run_id,
+                                                       observed_at="2026-07-28T20:21:00Z")
+            for item in payload["targets"]:
+                if "requested_pages_per_target" in item:
+                    item["requested_pages_per_target"] = 8
+            retained["accepted_page_count"] = (
+                7 if case == "retained_partial_eight_success" else (
+                    8 if case == "retained_eight" else 9
+                )
+            )
+        if case in {
+            "retained_partial", "retained_partial_predicate",
+            "retained_partial_loss", "retained_partial_loss_zero",
+        }:
+            retained.update(fresh_status="partial", fresh_reason="minute_response_invalid")
+            if case == "retained_partial":
+                retained["failed_predicates"] = ["fresh_not_collected"]
+            elif case == "retained_partial_predicate":
+                retained["prospective_active_key_loss_count"] = 0
+            elif case in {"retained_partial_loss", "retained_partial_loss_zero"}:
+                retained["failed_predicates"] = ["partial_active_key_loss"]
+                if case == "retained_partial_loss_zero":
+                    retained["prospective_active_key_loss_count"] = 0
+        elif (
+            case == "retained_partial_eight_success" or case.startswith("retained_partial_success")
+        ):
+            retained.update(fresh_status="partial", fresh_reason="minute_response_invalid",
+                            failed_predicates=[], prospective_active_key_loss_count=0)
+            target.update(status="partial", row_count=240, reason="minute_response_invalid",
+                          conflict_origin=None, retained_head_conflict_disposition="not_applicable",
+                          failure_phase="head_contract", failure_code="mixed_exchange_dates",
+                          failure_page_ordinal=page_budget, requested_pages_per_target=page_budget)
+            variant = case.removeprefix("retained_partial_success_")
+            kind, _, field = variant.partition("_")
+            if kind in {"null", "bool", "missing"}:
+                if kind == "missing":
+                    retained.pop(field)
+                else:
+                    retained[field] = None if kind == "null" else True
+            elif variant in {"unknown_reason", "other_reason"}:
+                reason = "unknown_reason" if variant == "unknown_reason" else "auth_rejected"
+                retained["fresh_reason"] = target["reason"] = reason
+                for field in (
+                    "failure_phase", "failure_code", "failure_page_ordinal",
+                    "requested_pages_per_target",
+                ):
+                    target.pop(field)
+            elif variant == "mismatch":
+                retained["fresh_reason"] = "auth_rejected"
+            elif variant == "loss":
+                retained["prospective_active_key_loss_count"] = 1
+            elif variant == "failed":
+                retained["failed_predicates"] = ["fresh_not_collected"]
+            elif variant == "recovered":
+                target.update(status="recovered", reason="already_cached")
+                for field in (
+                    "failure_phase", "failure_code", "failure_page_ordinal",
+                    "requested_pages_per_target",
+                ):
+                    target.pop(field)
+        elif case == "retained_success":
+            retained["failed_predicates"] = []
+            target.update(status="collected", row_count=240, reason=None, conflict_origin=None,
+                          retained_head_conflict_disposition="not_applicable")
+            payload["status"] = "complete"
+        elif case == "retained_null":
+            target["retained_head_conflict_diagnostic"] = None
+        elif case == "retained_extra":
+            retained["raw_body"] = "synthetic-secret-must-not-leak"
+        elif case == "retained_missing":
+            retained.pop("fresh_reason")
+        elif case == "retained_bool":
+            retained["accepted_page_count"] = True
+        elif case == "retained_float":
+            retained["accepted_page_count"] = 2.0
+        elif case == "retained_zero":
+            retained["conflicting_chunk_count"] = 0
+        elif case == "retained_row_limit":
+            retained["accepted_row_count"] = 241
+        elif case == "retained_minute_limit":
+            retained["conflicting_minute_count"] = 241
+        elif case == "retained_page_limit":
+            retained["accepted_page_count"] = 5
+        elif case == "retained_outcome":
+            target["status"] = "partial"
+        elif case == "retained_origin":
+            target["conflict_origin"] = "candidate_batch"
+        elif case == "retained_empty_predicates":
+            retained["failed_predicates"] = []
+        elif case == "retained_loss_collected":
+            retained["failed_predicates"] = ["partial_active_key_loss"]
+        elif case == "retained_unknown_predicate":
+            retained["failed_predicates"] = ["synthetic-secret-must-not-leak"]
+        elif case == "retained_predicate_order":
+            retained["failed_predicates"] = ["quarantine_disabled", "predecessor_not_head"]
+        elif case == "retained_duplicate_predicate":
+            retained["failed_predicates"] = ["quarantine_disabled", "quarantine_disabled"]
+        elif case == "retained_string_predicate":
+            retained["failed_predicates"] = "quarantine_disabled"
+        elif case == "retained_reason":
+            retained["fresh_reason"] = "synthetic-secret-must-not-leak"
+        elif case == "retained_status_case":
+            retained["fresh_status"] = "Collected"
+        elif case == "retained_target_rows":
+            target["row_count"] = 1
+    elif case.startswith("token_"):
         for item in payload["targets"]:
             for key in (
                 "failure_phase",
@@ -498,7 +644,7 @@ def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: s
             f"[Convert]::FromBase64String('{encoded}')) | ConvertFrom-Json",
             "Get-UniqueSafeCollectionFailureCategory -Output @($lines) "
             f"-ExpectedScheduleRunId '{expected_run}' "
-            f"-CollectionExitCode {0 if case == 'zero_exit' else 1} -PagesPerTarget 4",
+            f"-CollectionExitCode {0 if case == 'zero_exit' else 1} -PagesPerTarget {page_budget}",
         )
     )
     result = subprocess.run(
@@ -520,6 +666,9 @@ def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: s
             "token_http_only",
             "token_other_2xx",
             "token_normalized_limit",
+            "retained_valid", "retained_partial", "retained_eight", "retained_success",
+            "retained_partial_predicate", "retained_partial_loss",
+            "retained_partial_success", "retained_partial_eight_success",
         }
         else "reason_unavailable"
     )

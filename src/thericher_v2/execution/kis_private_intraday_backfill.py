@@ -101,6 +101,19 @@ KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS = frozenset({"candidate_batch", "ret
 KIS_PAPER_PRIVATE_INTRADAY_RETAINED_HEAD_CONFLICT_DISPOSITIONS = frozenset(
     {"not_applicable", "preserved", "quarantined"}
 )
+_HEAD_CONFLICT_FAILED_PREDICATES = frozenset(
+    {
+        "quarantine_disabled",
+        "fresh_not_collected",
+        "partial_active_key_loss",
+        "predecessor_not_head",
+        "predecessor_input_cursor_present",
+        "predecessor_output_cursor_present",
+        "predecessor_outcome_reason_ineligible",
+        "predecessor_conflict_origin_present",
+        "predecessor_identity_invalid",
+    }
+)
 
 
 class _CandidateBatchDuplicateConflict(KisPaperMarketDataError):
@@ -161,6 +174,89 @@ class KisPaperPrivateIntradayCursor:
 
 
 @dataclass(frozen=True)
+class KisPaperRetainedHeadConflictDiagnostic:
+    """Categories and counts for one candidate-versus-retained comparison."""
+
+    fresh_status: Literal["collected", "partial"]
+    fresh_reason: str | None
+    accepted_row_count: int
+    accepted_page_count: int
+    conflicting_chunk_count: int
+    conflicting_minute_count: int
+    failed_predicates: tuple[str, ...]
+    prospective_active_key_loss_count: int
+
+    def __post_init__(self) -> None:
+        if (
+            type(self.fresh_status) is not str
+            or self.fresh_status not in {"collected", "partial"}
+            or (self.fresh_reason is not None and type(self.fresh_reason) is not str)
+            or (self.fresh_status == "collected" and self.fresh_reason is not None)
+            or (
+                self.fresh_status == "partial"
+                and self.fresh_reason
+                not in _SAFE_FAILURE_REASONS | {"private_intraday_collector_error"}
+            )
+            or any(
+                type(value) is not int or value <= 0
+                for value in (
+                    self.accepted_row_count,
+                    self.accepted_page_count,
+                    self.conflicting_chunk_count,
+                    self.conflicting_minute_count,
+                )
+            )
+            or self.conflicting_minute_count > self.accepted_row_count
+            or type(self.prospective_active_key_loss_count) is not int
+            or self.prospective_active_key_loss_count < 0
+            or not isinstance(self.failed_predicates, tuple)
+            or any(
+                type(value) is not str or value not in _HEAD_CONFLICT_FAILED_PREDICATES
+                for value in self.failed_predicates
+            )
+            or tuple(sorted(set(self.failed_predicates))) != self.failed_predicates
+            or (
+                self.fresh_status == "collected"
+                and bool({"fresh_not_collected", "partial_active_key_loss"}.intersection(
+                    self.failed_predicates
+                ))
+            )
+            or (
+                self.fresh_status == "partial"
+                and "fresh_not_collected" not in self.failed_predicates
+                and (
+                    self.fresh_reason != "minute_response_invalid"
+                    or (
+                        self.prospective_active_key_loss_count > 0
+                        and "partial_active_key_loss" not in self.failed_predicates
+                    )
+                )
+            )
+            or (
+                "partial_active_key_loss" in self.failed_predicates
+                and (
+                    self.fresh_status != "partial"
+                    or self.fresh_reason != "minute_response_invalid"
+                    or self.prospective_active_key_loss_count == 0
+                )
+            )
+        ):
+            raise ValueError("private intraday retained conflict diagnostic is invalid")
+
+    def to_payload(self) -> dict[str, object]:
+        return {
+            "fresh_status": self.fresh_status,
+            "fresh_reason": self.fresh_reason,
+            "accepted_row_count": self.accepted_row_count,
+            "accepted_page_count": self.accepted_page_count,
+            "conflicting_chunk_count": self.conflicting_chunk_count,
+            "conflicting_minute_count": self.conflicting_minute_count,
+            "failed_predicates": list(self.failed_predicates),
+            "prospective_active_key_loss_count": self.prospective_active_key_loss_count,
+        }
+
+
+@dataclass(frozen=True)
 class KisPaperPrivateIntradayBackfillRun:
     status: Literal[
         "collected",
@@ -188,6 +284,7 @@ class KisPaperPrivateIntradayBackfillRun:
     requested_pages_per_target: int | None = None
     token_http_status_class: str | None = None
     token_upstream_code: str | None = None
+    retained_head_conflict_diagnostic: KisPaperRetainedHeadConflictDiagnostic | None = None
 
     def __post_init__(self) -> None:
         if self.status not in {
@@ -221,6 +318,26 @@ class KisPaperPrivateIntradayBackfillRun:
         )
         if self.token_http_status_class is not None and self.status not in {"partial", "rejected"}:
             raise ValueError("private intraday token diagnostic is invalid")
+        if self.retained_head_conflict_diagnostic is not None:
+            if not isinstance(
+                self.retained_head_conflict_diagnostic, KisPaperRetainedHeadConflictDiagnostic
+            ) or self.status not in {"collected", "partial", "recovered", "rejected"}:
+                raise ValueError("private intraday retained conflict diagnostic is invalid")
+            if self.status == "rejected" and self.conflict_origin != "retained_cache":
+                raise ValueError("private intraday retained conflict diagnostic is invalid")
+            if (self.status == "rejected") != bool(
+                self.retained_head_conflict_diagnostic.failed_predicates
+            ):
+                raise ValueError("private intraday retained conflict diagnostic is invalid")
+            diagnostic = self.retained_head_conflict_diagnostic
+            if self.status == "partial" and (
+                diagnostic.fresh_status != "partial"
+                or self.reason != diagnostic.fresh_reason
+                or self.row_count != diagnostic.accepted_row_count
+            ):
+                raise ValueError("private intraday retained conflict diagnostic is invalid")
+            if self.status == "collected" and diagnostic.fresh_status != "collected":
+                raise ValueError("private intraday retained conflict diagnostic is invalid")
         if self.conflict_origin not in KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS | {None}:
             raise ValueError("private intraday conflict origin is invalid")
         if (
@@ -786,6 +903,16 @@ def _run_kis_paper_private_intraday_cycle(
                 rows=collected.rows,
                 target_state=target_state,
             )
+            retained_conflict_diagnostic = (
+                _retained_head_conflict_diagnostic(
+                    collected=collected,
+                    target_state=target_state,
+                    conflicting_chunk_keys=conflicting_chunk_keys,
+                    quarantine_retained_head_conflicts=quarantine_retained_head_conflicts,
+                )
+                if conflicting_chunk_keys
+                else None
+            )
             quarantined_retained_head_chunks = False
             if conflicting_chunk_keys and _can_quarantine_retained_head_conflicts(
                 collected=collected,
@@ -827,6 +954,7 @@ def _run_kis_paper_private_intraday_cycle(
                             retained_head_conflict_disposition=(
                                 "quarantined" if quarantined_retained_head_chunks else "preserved"
                             ),
+                            retained_head_conflict_diagnostic=retained_conflict_diagnostic,
                         )
                     )
                     continue
@@ -881,6 +1009,7 @@ def _run_kis_paper_private_intraday_cycle(
                         requested_pages_per_target=collected.requested_pages_per_target,
                         token_http_status_class=collected.token_http_status_class,
                         token_upstream_code=collected.token_upstream_code,
+                        retained_head_conflict_diagnostic=retained_conflict_diagnostic,
                     )
                 )
                 continue
@@ -935,6 +1064,7 @@ def _run_kis_paper_private_intraday_cycle(
                     requested_pages_per_target=collected.requested_pages_per_target,
                     token_http_status_class=collected.token_http_status_class,
                     token_upstream_code=collected.token_upstream_code,
+                    retained_head_conflict_diagnostic=retained_conflict_diagnostic,
                 )
             )
         return tuple(results)
@@ -947,9 +1077,11 @@ def _recovered_target_run(
     target: KisPaperPrivateIntradayTarget,
     snapshots: list[_RecoveredSnapshot],
 ) -> KisPaperPrivateIntradayBackfillRun:
-    latest = snapshots[-1]
+    partials = [snapshot for snapshot in snapshots if snapshot.chunk["outcome"] == "partial"]
+    latest = partials[-1] if partials else snapshots[-1]
+    # Original failure fields belong to the immutable source, not this invocation.
     return KisPaperPrivateIntradayBackfillRun(
-        status="recovered",
+        status="partial" if partials else "recovered",
         target_key=target.target_key,
         row_count=sum(int(item.chunk["row_count"]) for item in snapshots),
         exact_overlap_rows=sum(int(item.chunk["exact_overlap_rows"]) for item in snapshots),
@@ -1463,7 +1595,7 @@ def _snapshot_manifest(
     observed_at: datetime,
     raw_document: Mapping[str, object],
 ) -> dict[str, object]:
-    return {
+    manifest = {
         "schema_version": SCHEMA_VERSION,
         "kind": "kis_paper_private_intraday_cache",
         "dataset_id": f"kis.paper.private.intraday.{snapshot_name}",
@@ -1509,6 +1641,14 @@ def _snapshot_manifest(
             "response_bodies_persisted": False,
         },
     }
+    if collected.failure_phase is not None:
+        manifest.update(
+            failure_phase=collected.failure_phase,
+            failure_code=collected.failure_code,
+            failure_page_ordinal=collected.failure_page_ordinal,
+            requested_pages_per_target=collected.requested_pages_per_target,
+        )
+    return manifest
 
 
 def _compressed_raw_minute_csv(rows: tuple[KisPaperMinuteRawBar, ...]) -> bytes:
@@ -1881,14 +2021,42 @@ def _can_quarantine_retained_head_conflicts(
     conflicting_chunk_keys: tuple[str, ...],
     quarantine_retained_head_conflicts: bool,
 ) -> bool:
-    """Quarantine only complete fresh head pages, never cursor-backed history."""
+    """Require an eligible fresh observation and every attested head predecessor."""
 
     if (
         not quarantine_retained_head_conflicts
-        or collected.status != "collected"
+        or not (collected.status == "collected" or _is_partial_head_revision_candidate(collected))
         or not conflicting_chunk_keys
     ):
         return False
+    if collected.status == "partial" and _retained_head_conflict_diagnostic(
+        collected=collected,
+        target_state=target_state,
+        conflicting_chunk_keys=conflicting_chunk_keys,
+        quarantine_retained_head_conflicts=quarantine_retained_head_conflicts,
+    ).prospective_active_key_loss_count:
+        return False
+    return all(
+        _is_quarantinable_head_snapshot(chunk)
+        for chunk in _conflicting_retained_chunks(target_state, conflicting_chunk_keys)
+    )
+
+
+def _is_partial_head_revision_candidate(collected: _CollectedTarget) -> bool:
+    return (
+        collected.status == "partial"
+        and collected.reason == "minute_response_invalid"
+        and collected.input_cursor is None
+        and collected.output_cursor is None
+        and collected.conflict_origin is None
+        and bool(collected.rows)
+        and bool(collected.page_documents)
+    )
+
+
+def _conflicting_retained_chunks(
+    target_state: Mapping[str, object], conflicting_chunk_keys: tuple[str, ...]
+) -> tuple[Mapping[str, object], ...]:
     chunks = target_state.get("chunks")
     if not isinstance(chunks, list):
         raise ValueError("private intraday index is invalid")
@@ -1904,19 +2072,84 @@ def _can_quarantine_retained_head_conflicts(
     ]
     if len(matching_chunks) != len(conflicts):
         raise ValueError("private intraday index is invalid")
-    return all(_is_quarantinable_head_snapshot(chunk) for chunk in matching_chunks)
+    return tuple(matching_chunks)
 
 
 def _is_quarantinable_head_snapshot(chunk: Mapping[str, object]) -> bool:
-    return (
-        chunk.get("raw_market_data_retained") is True
-        and chunk.get("collection_scope") == "head"
-        and chunk.get("input_cursor") is None
-        and chunk.get("output_cursor") is None
-        and chunk.get("outcome") == "committed"
-        and isinstance(chunk.get("chunk_key"), str)
-        and _is_sha256(chunk.get("manifest_hash"))
-        and _is_sha256(chunk.get("raw_sha256"))
+    return not _head_snapshot_failed_predicates(chunk)
+
+
+def _head_snapshot_failed_predicates(chunk: Mapping[str, object]) -> tuple[str, ...]:
+    checks = (
+        ("predecessor_not_head", chunk.get("collection_scope") == "head"),
+        ("predecessor_input_cursor_present", chunk.get("input_cursor") is None),
+        ("predecessor_output_cursor_present", chunk.get("output_cursor") is None),
+        (
+            "predecessor_outcome_reason_ineligible",
+            chunk.get("outcome") == "committed"
+            or (
+                chunk.get("outcome") == "partial"
+                and chunk.get("reason") == "minute_response_invalid"
+            ),
+        ),
+        ("predecessor_conflict_origin_present", chunk.get("conflict_origin") is None),
+        (
+            "predecessor_identity_invalid",
+            chunk.get("raw_market_data_retained") is True
+            and isinstance(chunk.get("chunk_key"), str)
+            and _is_sha256(chunk.get("manifest_hash"))
+            and _is_sha256(chunk.get("raw_sha256")),
+        ),
+    )
+    return tuple(name for name, passed in checks if not passed)
+
+
+def _retained_head_conflict_diagnostic(
+    *,
+    collected: _CollectedTarget,
+    target_state: Mapping[str, object],
+    conflicting_chunk_keys: tuple[str, ...],
+    quarantine_retained_head_conflicts: bool,
+) -> KisPaperRetainedHeadConflictDiagnostic:
+    matching = _conflicting_retained_chunks(target_state, conflicting_chunk_keys)
+    failed = {code for chunk in matching for code in _head_snapshot_failed_predicates(chunk)}
+    if not quarantine_retained_head_conflicts:
+        failed.add("quarantine_disabled")
+    if not (collected.status == "collected" or _is_partial_head_revision_candidate(collected)):
+        failed.add("fresh_not_collected")
+    candidates = {_row_key(row): _row_fingerprint(row) for row in collected.rows}
+    removed_keys: set[str] = set()
+    conflict_keys: set[str] = set()
+    for chunk in matching:
+        fingerprints = chunk["row_fingerprints"]
+        assert isinstance(fingerprints, Mapping)
+        removed_keys.update(fingerprints)
+        conflict_keys.update(
+            key
+            for key, fingerprint in fingerprints.items()
+            if key in candidates and candidates[key] != fingerprint
+        )
+    surviving_keys: set[str] = set()
+    chunks = target_state["chunks"]
+    assert isinstance(chunks, list)
+    for chunk in chunks:
+        if (
+            not _is_ignored_collection_chunk(chunk)
+            and chunk["chunk_key"] not in conflicting_chunk_keys
+        ):
+            surviving_keys.update(chunk["row_fingerprints"])
+    active_key_loss_count = len(removed_keys - candidates.keys() - surviving_keys)
+    if _is_partial_head_revision_candidate(collected) and active_key_loss_count:
+        failed.add("partial_active_key_loss")
+    return KisPaperRetainedHeadConflictDiagnostic(
+        fresh_status=collected.status,
+        fresh_reason=collected.reason,
+        accepted_row_count=len(collected.rows),
+        accepted_page_count=len(collected.page_documents),
+        conflicting_chunk_count=len(matching),
+        conflicting_minute_count=len(conflict_keys),
+        failed_predicates=tuple(sorted(failed)),
+        prospective_active_key_loss_count=active_key_loss_count,
     )
 
 
@@ -2041,6 +2274,7 @@ def _recover_orphan_snapshots(
         recovered_chunk["manifest_path"] = str(manifest_path.relative_to(root)).replace("\\", "/")
         recovered_chunk["manifest_hash"] = manifest_hash
         _validate_chunk(chunk=recovered_chunk, target=target)
+        _snapshot_failure_diagnostic(manifest, recovered_chunk)
         chunks.append(recovered_chunk)
         if recovered_chunk.get("collection_scope") == "historical":
             output_cursor = KisPaperPrivateIntradayCursor.from_document(
@@ -2070,6 +2304,34 @@ def _recover_orphan_snapshots(
             )
         )
     return tuple(recovered_snapshots)
+
+
+def _snapshot_failure_diagnostic(
+    manifest: Mapping[str, object], chunk: Mapping[str, object]
+) -> dict[str, object]:
+    fields = {"failure_phase", "failure_code", "failure_page_ordinal", "requested_pages_per_target"}
+    present = fields.intersection(manifest)
+    if not present:
+        return {}
+    if present != fields or any(manifest[field] is None for field in fields):
+        raise ValueError("private intraday snapshot failure diagnostic is invalid")
+    validate_kis_paper_minute_failure_diagnostic(
+        reason=chunk.get("reason"),
+        phase=manifest["failure_phase"],
+        code=manifest["failure_code"],
+        page_ordinal=manifest["failure_page_ordinal"],
+        requested_pages_per_target=manifest["requested_pages_per_target"],
+    )
+    pages = manifest.get("pages")
+    if (
+        chunk.get("outcome") != "partial"
+        or manifest.get("status") != "partial"
+        or not isinstance(pages, list)
+        or not pages
+        or manifest["failure_page_ordinal"] != len(pages) + 1
+    ):
+        raise ValueError("private intraday snapshot failure diagnostic is invalid")
+    return {field: manifest[field] for field in fields}
 
 
 def _attest_committed_snapshots(*, root: Path, index: Mapping[str, object]) -> None:
@@ -2116,6 +2378,19 @@ def _attest_snapshot_chunk(
         or manifest_chunk.get("chunk_key") != chunk["chunk_key"]
     ):
         raise ValueError("private intraday snapshot is invalid")
+    if any(
+        manifest_chunk.get(field) != chunk.get(field)
+        for field in (
+            "collection_scope",
+            "input_cursor",
+            "output_cursor",
+            "outcome",
+            "reason",
+            "conflict_origin",
+        )
+    ):
+        raise ValueError("private intraday snapshot eligibility mismatch")
+    _snapshot_failure_diagnostic(manifest, chunk)
     raw_document = _manifest_raw_document(manifest)
     raw_path = _resolve_child(root=manifest_path.parent, relative=str(raw_document["path"]))
     raw_bytes = raw_path.read_bytes()

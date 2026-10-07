@@ -22,10 +22,31 @@ Source-only input-origin audit: current inspecting Process/User/Machine scopes
 have neither Paper key supplied and no named Compose override; no mismatch
 measured. Launcher may inherit shell values, but scheduled child is unattested.
 Do not repair a hypothetical stale key or label it the actual4xx cause.
-Current goal: kis-paper-head-retained-conflict-recovery-v1. Data owns narrow
-partial-head revision eligibility, immutable manifest attestation, explicit
-active coverage loss and bounded runtime closure. Existing due-time ownership
-does not hold Engine's independent foundation metadata preparation.
+Current goal: kis-native-timesfm-m5-24-development-v1. Data reattests exact
+fixed25 dated KIS inputs before one bounded comparison; current partial head
+is not added to that panel. Prior head-conflict recovery is complete as scoped.
+Existing due-time ownership does not hold independent Research preparation.
+v1 actual direct07:21: seven valid pages/840 rows per target, one retained
+conflicting chunk/minute, zero old-onlyloss; onlyfresh_not_collected blocks.
+That v1 admits no prefix; immutable evidence remains unchanged. Finalv2 is
+head-only publishedb7fcf975...,959 serial passes/independent no materialP1/P2.
+Exact07:49 run intraday-head-20261007T224943408578Z admits840 rows/7pages per
+target, stays partial/minute_response_invalid with eighth mixed_exchange_dates
+excluded. Zero old-onlyloss/emptyfailedpredicates, original456-file/history
+unchanged runtime assertions. Existing readers/independent reviewer bind the
+exact terminal/schedule/capture chain; incomplete/current_session_short remains,
+availability/finality not_observed. Exact root HANDOFF/RUNBOOK. No OS-origin
+proof or complete-session/model/Paper claim. Orphan recovery keeps partial and
+omits original-call minute fields from new projection, preserving manifest.
+Full authority11098passes/22skips338.41s/11120collected/eightworkers/clean exit;
+Ruff/three sample Compose pass. Fixed25-session readiness is a next-package
+question, not a reason to hold this measured collector recovery.
+Tiingo-specific new-source rights hold: https://app.tiingo.com/tos/ updatedOct6
+section1.6(a), Starter/Trial durable source/derived products prohibited.
+Plan/notice/supplemental/applicability unknown; operator asked. No new Tiingo
+acquisition, fit, numeric readback or Tiingo-based cross-source validation.
+Existing bytes remain untouched without indefinite-retention or retroactive-
+breach claim. KIS/pure-code work continues; no named Tiingo Scheduler task found.
 Board reader is now frozen/focused-attested: src/thericher_v2/data/federal_reserve_h15.py;
 read_federal_reserve_h15_snapshot(root), select_h15_asof_pair(snapshot,decision_at=UTC).
 Five exact source hashes, known no-observation codes, latest same-date pair
@@ -96,10 +117,17 @@ retained-byte corruption observed. Oct7 predecessor snapshots000251 QQQ and
 cursor-free head. Only predecessor quarantine predicate outcome==committed
 fails. Exact fresh conflict-set membership/candidate status was not retained,
 so those predecessors are a measured limitation, not a proved complete cause.
-Recommended recovery: preserve immutable bytes/markers/historical cursor;
-narrowly support attested partial head predecessors while retaining fresh
-collected and candidate-batch/historical exclusions. Measure a remaining
-fresh-side contradiction before broadening it. No delete/reset or extra call.
+Recovery final collector SHA256
+2051deab395ef9b443d40e3057c5690d4d6402f2a042d8bdd540dd617f4f4a16;
+tests05ce469290607d5bf12b48ec5bb8a7da4f69d7eeb37c8a292291a5c518231600.
+124 isolated tests pass. Six eligibility fields agree with immutable index_chunk;
+every retained conflicting predecessor must qualify. Fresh known-error partial
+prefix requires zero old-onlyloss; all unknown-error, positive-loss partial,
+history/cursor and mixed predecessor/batch cases remain excluded. Original
+bytes/markers/history survive; distinct active-key loss excludes replacement
+and surviving chunks. Projection keeps partial/error and prior receipts readable.
+Strong kill: canonical8->4/4->8/equal-budget orphan restarts retain original
+manifest diagnostics/hash but cannot project prior-call fields into new capture.
 
 ## Coverage, Cursor And Recovery
 

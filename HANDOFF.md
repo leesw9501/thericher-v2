@@ -20,11 +20,41 @@ Never log secrets, account/order identifiers, raw broker values or market rows.
 
 ## Active Company Objective
 
-Next company objective is kis-paper-head-retained-conflict-recovery-v1:
-restore useful owned head collection with immutable-attested partial-head
-revision handling, original-byte preservation, explicit active coverage loss
-and exact runtime evidence. No historical cursor reset or quality promotion.
-Independent foundation checkpoint metadata readiness preparation continues.
+Next company objective is kis-native-timesfm-m5-24-development-v1: one fixed
+zero-shot TimesFM comparison on the exact25 retained KIS QQQ/SPY sessions,
+30 cost/policy/block cells and one300-second CUDA appointment. Data pins exact
+inputs before model work; Engine freezes actions before payoff read; Execution
+attests analytical parity/custody and Validation reconstructs read-only results.
+No Tiingo input, refit/selection, independent holdout or Paper promotion.
+Previous kis-paper-head-retained-conflict-recovery-v1 is complete as scoped:
+useful partial-prefix retention without historical reset or quality promotion.
+Source-free named SPY/TLT/GLD input/shared-ledger prototype is independently
+accepted,233 focused tests; no actual source coverage or training claimed.
+Current https://app.tiingo.com/tos/ updatedOct6 section1.6(a) prohibits
+Starter/Trial durable source AND derived products. Existing-user transition,
+actual notice, plan and supplemental rights remain unresolved; operator asked.
+Defer new Tiingo acquisition/fit/numeric replay only, not KIS/pure-code work.
+Do not delete historical bytes/results or claim indefinite retention rights.
+
+Head recovery v2 published only to head image b7fcf975...;959 affected serial
+tests pass and independent source review finds no remaining material P1/P2.
+Actual direct07:49:43.408578-07:50:07.074856 KST run
+intraday-head-20261007T224943408578Z admits seven valid pages/840 rows per ETF,
+with one conflicting predecessor/minute and zero old-only active-key loss.
+Both stay partial/minute_response_invalid; eighth page mixed_exchange_dates
+is excluded. Capture/coverage chain verifies but coverage remains incomplete/
+current_session_short; availability/finality not_observed. Exact root:
+D:\thericher-v2\model-artifacts\data\head-r8\intraday-head-20261007T224943408578Z.
+Original456-file/history preservation is the runtime assertion, not an
+independent raw-price proof. Prior07:21 rejected attempt remains immutable.
+Task-owned current pointer/next_due unchanged; direct markers do not prove OS
+scheduler origin. Orphan restart preserves partial/reason and omits prior-call
+minute diagnostics from the new projection; original manifest remains intact.
+No complete-session, model/Paper qualification or PnL claim. Independent runtime
+reattachment supported-with-limits; current company authority11098passes/22skips/
+35warnings338.41s,eightworkers/11120collected/clean helper and exit0. Ruff and
+default/research/accounting sample Compose pass. No required collector/test
+session remains. Prior-goal authority figures below are historical, not current.
 
 Board macro policy COMPLETE/REJECTED24 cells, contract9702c83e.../
 resultd543bdaa... under D:\thericher-v2\model-artifacts\research\board-yield-curve-monthly-policy-development-v1.

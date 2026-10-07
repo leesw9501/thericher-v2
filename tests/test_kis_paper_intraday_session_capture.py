@@ -13,6 +13,7 @@ from thericher_v2.data.kis_paper_intraday_session_capture import (
     KisPaperIntradaySessionCaptureTarget,
     build_and_write_kis_paper_intraday_session_capture,
     kis_paper_intraday_head_requested_page_budget,
+    retained_head_conflict_diagnostic_from_payload,
     validate_schedule_run_id,
     write_kis_paper_intraday_session_capture_evidence,
 )
@@ -88,6 +89,7 @@ def test_session_capture_legacy_targets_have_no_diagnostic_fields() -> None:
     assert "requested_pages_per_target" not in target.to_payload()
     assert "token_http_status_class" not in target.to_payload()
     assert "token_upstream_code" not in target.to_payload()
+    assert "retained_head_conflict_diagnostic" not in target.to_payload()
 
 
 @pytest.mark.parametrize("status_class", ["1xx", "2xx", "3xx", "4xx", "5xx"])
@@ -701,3 +703,211 @@ def _raw_bar(timestamp: datetime) -> KisPaperMinuteRawBar:
         last=Decimal("123.50"),
         volume=Decimal("100"),
     )
+
+
+def _retained_conflict_payload(**changes: object) -> dict[str, object]:
+    return {
+        "fresh_status": "collected", "fresh_reason": None,
+        "accepted_row_count": 240, "accepted_page_count": 2,
+        "conflicting_chunk_count": 1, "conflicting_minute_count": 1,
+        "failed_predicates": ["quarantine_disabled"],
+        "prospective_active_key_loss_count": 17,
+    } | changes
+
+
+@pytest.mark.parametrize("status", ["collected", "partial", "recovered", "rejected"])
+@pytest.mark.parametrize("run_stamp,pages", [("20260728T201959Z", 4), ("20260728T202000Z", 8)])
+def test_retained_conflict_capture_roundtrip_keeps_exact_receipt_chain(
+    tmp_path: Path, status: str, run_stamp: str, pages: int,
+) -> None:
+    diagnostic = retained_head_conflict_diagnostic_from_payload(_retained_conflict_payload(
+        fresh_status="partial" if status == "partial" else "collected",
+        fresh_reason="minute_response_invalid" if status == "partial" else None,
+        accepted_page_count=pages - 1 if status == "partial" else pages,
+        failed_predicates=["quarantine_disabled"] if status == "rejected" else [],
+        prospective_active_key_loss_count=0 if status == "partial" else 17,
+    ))
+    runs = (
+        KisPaperPrivateIntradayBackfillRun(
+            status=status, target_key="QQQ/NAS/1m", row_count=0 if status == "rejected" else 240,
+            exact_overlap_rows=0,
+            reason="minute_duplicate_conflict" if status == "rejected" else (
+                "minute_response_invalid" if status == "partial" else (
+                    "already_cached" if status == "recovered" else None
+                )
+            ),
+            conflict_origin="retained_cache" if status == "rejected" else None,
+            retained_head_conflict_disposition=(
+                "preserved" if status == "rejected" else "not_applicable"
+            ),
+            retained_head_conflict_diagnostic=diagnostic,
+            **({
+                "failure_phase": "head_contract", "failure_code": "mixed_exchange_dates",
+                "failure_page_ordinal": pages, "requested_pages_per_target": pages,
+            } if status == "partial" else {}),
+        ),
+        KisPaperPrivateIntradayBackfillRun(
+            status="collected", target_key="SPY/AMS/1m", row_count=0, exact_overlap_rows=0,
+        ),
+    )
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    result = build_and_write_kis_paper_intraday_session_capture(
+        runs=runs, cache_root=tmp_path / "cache", repository_root=repo,
+        observed_at=datetime(2026, 7, 28, 20, 21, tzinfo=ZoneInfo("UTC")),
+        schedule_run_id="intraday-head-" + run_stamp,
+    )
+    payload = json.loads(result.evidence_path.read_bytes())
+    assert payload["targets"][0]["retained_head_conflict_diagnostic"] == diagnostic.to_payload()
+    assert "retained_head_conflict_diagnostic" not in payload["targets"][1]
+    digest = "sha256:" + hashlib.sha256(result.evidence_path.read_bytes()).hexdigest()
+    assert result.evidence_sha256 == digest
+    assert result.terminal_receipt_binding()["receipt_sha256"] == digest
+    assert result.safe_output_payload()["terminal_receipt_binding"]["receipt_sha256"] == digest
+    if status == "partial":
+        assert payload["status"] == "incomplete"
+        assert result.safe_output_payload()["status"] == "incomplete"
+        target = payload["targets"][0]
+        assert target["status"] == "partial"
+        assert target["reason"] == "minute_response_invalid"
+        assert target["failure_phase"] == "head_contract"
+        assert target["failure_code"] == "mixed_exchange_dates"
+        assert target["failure_page_ordinal"] == pages
+        assert target["requested_pages_per_target"] == pages
+        assert diagnostic.accepted_page_count == pages - 1
+        assert target["row_count"] == diagnostic.accepted_row_count
+        assert target["conflict_origin"] is None
+        assert target["retained_head_conflict_disposition"] == "not_applicable"
+
+
+@pytest.mark.parametrize("field", list(_retained_conflict_payload()))
+def test_retained_conflict_payload_requires_every_field(field: str) -> None:
+    value = _retained_conflict_payload()
+    value.pop(field)
+    with pytest.raises(ValueError, match="diagnostic is invalid"):
+        retained_head_conflict_diagnostic_from_payload(value)
+
+
+@pytest.mark.parametrize("field", [
+    "accepted_row_count", "accepted_page_count", "conflicting_chunk_count",
+    "conflicting_minute_count", "prospective_active_key_loss_count",
+])
+@pytest.mark.parametrize("bad", [True, 1.0, -1, "1"])
+def test_retained_conflict_payload_rejects_noninteger_and_negative_counts(field, bad) -> None:
+    with pytest.raises(ValueError, match="diagnostic is invalid"):
+        retained_head_conflict_diagnostic_from_payload(_retained_conflict_payload(**{field: bad}))
+
+
+@pytest.mark.parametrize("changes", [
+    {"unexpected": "synthetic-secret"}, {"fresh_status": "Collected"},
+    {"fresh_reason": "synthetic-secret"}, {"accepted_row_count": 0},
+    {"conflicting_minute_count": 241}, {"failed_predicates": "quarantine_disabled"},
+    {"failed_predicates": ["synthetic-secret"]},
+    {"failed_predicates": ["quarantine_disabled", "quarantine_disabled"]},
+    {"failed_predicates": ["quarantine_disabled", "predecessor_not_head"]},
+    {"fresh_status": "partial", "fresh_reason": "unknown_reason"},
+])
+def test_retained_conflict_payload_rejects_open_shape_or_categories(changes) -> None:
+    with pytest.raises(ValueError, match="diagnostic is invalid"):
+        retained_head_conflict_diagnostic_from_payload(_retained_conflict_payload(**changes))
+
+
+@pytest.mark.parametrize("value", [None, [], "synthetic-secret"])
+def test_retained_conflict_payload_null_is_not_legacy_absence(value) -> None:
+    with pytest.raises(ValueError, match="diagnostic is invalid"):
+        retained_head_conflict_diagnostic_from_payload(value)
+
+
+@pytest.mark.parametrize("diagnostic_changes,target_changes", [
+    ({"fresh_reason": "auth_rejected"}, {"reason": "auth_rejected"}),
+    ({}, {"reason": "auth_rejected"}),
+    ({"fresh_reason": "auth_rejected"}, {}),
+    ({"prospective_active_key_loss_count": 1}, {}),
+    ({"failed_predicates": ["fresh_not_collected"]}, {}),
+    ({"fresh_status": "collected", "fresh_reason": None}, {}),
+    ({}, {"status": "recovered", "reason": "already_cached"}),
+    ({}, {"conflict_origin": "retained_cache"}),
+    ({}, {"row_count": 239}),
+])
+def test_partial_replacement_requires_exact_reason_zero_loss_and_no_failed_predicates(
+    diagnostic_changes, target_changes,
+) -> None:
+    payload = _retained_conflict_payload(**(dict(
+        fresh_status="partial", fresh_reason="minute_response_invalid",
+        failed_predicates=[], prospective_active_key_loss_count=0,
+    ) | diagnostic_changes))
+    with pytest.raises(ValueError, match="diagnostic is invalid|session capture .*invalid"):
+        diagnostic = retained_head_conflict_diagnostic_from_payload(payload)
+        KisPaperIntradaySessionCaptureTarget(**(dict(
+            target_key="QQQ/NAS/1m", status="partial", row_count=240, exact_overlap_rows=0,
+            reason="minute_response_invalid", retained_head_conflict_diagnostic=diagnostic,
+        ) | target_changes))
+
+
+@pytest.mark.parametrize("stamp,pages", [("20260728T201959Z", 5), ("20260728T202000Z", 9)])
+def test_partial_replacement_cannot_exceed_invocation_page_budget(tmp_path, stamp, pages) -> None:
+    diagnostic = retained_head_conflict_diagnostic_from_payload(_retained_conflict_payload(
+        fresh_status="partial", fresh_reason="minute_response_invalid",
+        failed_predicates=[], prospective_active_key_loss_count=0, accepted_page_count=pages,
+    ))
+    runs = tuple(KisPaperPrivateIntradayBackfillRun(
+        status="partial", target_key=key, row_count=240, exact_overlap_rows=0,
+        reason="minute_response_invalid", retained_head_conflict_diagnostic=diagnostic,
+    ) for key in ("QQQ/NAS/1m", "SPY/AMS/1m"))
+    with pytest.raises(ValueError, match="retained conflict diagnostic is invalid"):
+        build_and_write_kis_paper_intraday_session_capture(
+            runs=runs, cache_root=tmp_path / "cache", repository_root=tmp_path / "repo",
+            observed_at=datetime(2026, 7, 28, 20, 21, tzinfo=ZoneInfo("UTC")),
+            schedule_run_id="intraday-head-" + stamp,
+        )
+
+
+@pytest.mark.parametrize("changes", [
+    {"status": "partial"}, {"status": "locked"}, {"conflict_origin": "candidate_batch"},
+    {"reason": "minute_response_invalid"}, {"row_count": 1}, {"exact_overlap_rows": 1},
+    {"retained_head_conflict_disposition": "not_applicable"},
+])
+def test_retained_conflict_capture_binds_target_outcome_and_provenance(changes) -> None:
+    fields = dict(
+        target_key="QQQ/NAS/1m", status="rejected", row_count=0, exact_overlap_rows=0,
+        reason="minute_duplicate_conflict", conflict_origin="retained_cache",
+        retained_head_conflict_disposition="preserved",
+        retained_head_conflict_diagnostic=retained_head_conflict_diagnostic_from_payload(
+            _retained_conflict_payload()
+        ),
+    ) | changes
+    with pytest.raises(ValueError, match="session capture .*invalid"):
+        KisPaperIntradaySessionCaptureTarget(**fields)
+
+
+@pytest.mark.parametrize("stamp,pages,rows,valid", [
+    ("20260728T201959Z", 4, 480, True), ("20260728T201959Z", 5, 480, False),
+    ("20260728T202000Z", 8, 960, True), ("20260728T202000Z", 9, 960, False),
+    ("20260728T201959Z", 4, 481, False),
+])
+def test_retained_conflict_capture_limits_actual_page_and_row_budget(
+    tmp_path, stamp, pages, rows, valid,
+) -> None:
+    diagnostic = retained_head_conflict_diagnostic_from_payload(_retained_conflict_payload(
+        fresh_status="partial", fresh_reason="minute_response_invalid",
+        accepted_page_count=pages, accepted_row_count=rows,
+        failed_predicates=["fresh_not_collected"],
+    ))
+    runs = tuple(KisPaperPrivateIntradayBackfillRun(
+        status="rejected", target_key=key, row_count=0, exact_overlap_rows=0,
+        reason="minute_duplicate_conflict", conflict_origin="retained_cache",
+        retained_head_conflict_disposition="preserved",
+        retained_head_conflict_diagnostic=diagnostic,
+    ) for key in ("QQQ/NAS/1m", "SPY/AMS/1m"))
+    kwargs = dict(
+        runs=runs, cache_root=tmp_path / "cache", repository_root=tmp_path / "repo",
+        observed_at=datetime(2026, 7, 28, 20, 21, tzinfo=ZoneInfo("UTC")),
+        schedule_run_id="intraday-head-" + stamp,
+    )
+    if valid:
+        result = build_and_write_kis_paper_intraday_session_capture(**kwargs)
+        assert result.outcome.targets[0].retained_head_conflict_diagnostic == diagnostic
+    else:
+        with pytest.raises(ValueError, match="retained conflict diagnostic is invalid"):
+            build_and_write_kis_paper_intraday_session_capture(**kwargs)
+        assert not kwargs["cache_root"].exists()

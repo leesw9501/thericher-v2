@@ -14,7 +14,7 @@ import json
 import os
 import re
 import uuid
-from collections.abc import Sequence
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import UTC, date, datetime, time, timedelta
 from pathlib import Path
@@ -23,6 +23,7 @@ from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.execution.kis_market_data import (
+    KIS_PAPER_MINUTE_MAX_ROWS,
     validate_kis_paper_minute_failure_diagnostic,
     validate_kis_paper_token_failure_diagnostic,
 )
@@ -32,6 +33,7 @@ from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_RETAINED_HEAD_CONFLICT_DISPOSITIONS,
     KIS_PAPER_PRIVATE_INTRADAY_TARGETS,
     KisPaperPrivateIntradayBackfillRun,
+    KisPaperRetainedHeadConflictDiagnostic,
     sanitize_kis_paper_private_intraday_failure_reason,
 )
 
@@ -56,6 +58,71 @@ _CAPTURE_TARGET_KEY = "QQQ/NAS/1m"
 _EASTERN_TZ = ZoneInfo("America/New_York")
 _SCHEDULE_RUN_ID_PATTERN = re.compile(r"\Aintraday-head-[0-9]{8}T[0-9]{6}(?:[0-9]{1,7})?Z\Z")
 KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES = frozenset({"complete", "incomplete"})
+_RETAINED_HEAD_CONFLICT_DIAGNOSTIC_KEYS = frozenset(
+    {
+        "fresh_status", "fresh_reason", "accepted_row_count", "accepted_page_count",
+        "conflicting_chunk_count", "conflicting_minute_count", "failed_predicates",
+        "prospective_active_key_loss_count",
+    }
+)
+
+
+def retained_head_conflict_diagnostic_from_payload(
+    value: object,
+) -> KisPaperRetainedHeadConflictDiagnostic:
+    """Reconstruct only the collector's closed categorical/count DTO."""
+    if (
+        not isinstance(value, Mapping)
+        or set(value) != _RETAINED_HEAD_CONFLICT_DIAGNOSTIC_KEYS
+        or type(value["failed_predicates"]) is not list
+    ):
+        raise ValueError("session capture retained conflict diagnostic is invalid")
+    return KisPaperRetainedHeadConflictDiagnostic(
+        **(dict(value) | {"failed_predicates": tuple(value["failed_predicates"])})
+    )
+
+
+def validate_retained_head_conflict_diagnostic(
+    diagnostic: KisPaperRetainedHeadConflictDiagnostic,
+    *,
+    status: str,
+    reason: str | None,
+    conflict_origin: str | None,
+    page_budget: int | None = None,
+) -> None:
+    """Bind a diagnostic to its target outcome and, when known, invocation budget."""
+    if type(diagnostic) is not KisPaperRetainedHeadConflictDiagnostic:
+        raise ValueError("session capture retained conflict diagnostic is invalid")
+    diagnostic.__post_init__()
+    rejected = status == "rejected"
+    partial = status == "partial"
+    if (
+        status not in {"collected", "partial", "recovered", "rejected"}
+        or rejected != bool(diagnostic.failed_predicates)
+        or (rejected and (
+            reason != "minute_duplicate_conflict" or conflict_origin != "retained_cache"
+        ))
+        or (not rejected and (
+            conflict_origin is not None
+            or diagnostic.fresh_status != ("partial" if partial else "collected")
+            or (partial and (
+                reason != "minute_response_invalid" or diagnostic.fresh_reason != reason
+                or diagnostic.prospective_active_key_loss_count != 0
+            ))
+            or (status == "collected" and reason is not None)
+            or (status == "recovered" and reason not in {
+                "already_cached", "private_intraday_collector_error",
+            })
+        ))
+        or diagnostic.accepted_row_count > (
+            diagnostic.accepted_page_count * KIS_PAPER_MINUTE_MAX_ROWS
+        )
+        or (page_budget is not None and (
+            type(page_budget) is not int or page_budget not in {4, 8}
+            or diagnostic.accepted_page_count > page_budget
+        ))
+    ):
+        raise ValueError("session capture retained conflict diagnostic is invalid")
 
 
 @dataclass(frozen=True)
@@ -77,13 +144,17 @@ class KisPaperIntradaySessionCaptureTarget:
     requested_pages_per_target: int | None = None
     token_http_status_class: str | None = None
     token_upstream_code: str | None = None
+    retained_head_conflict_diagnostic: KisPaperRetainedHeadConflictDiagnostic | None = None
 
     def __post_init__(self) -> None:
         if self.target_key not in _EXPECTED_TARGET_KEYS:
             raise ValueError("session capture target is invalid")
         if self.status not in _CAPTURE_RUN_STATUSES:
             raise ValueError("session capture target status is invalid")
-        if self.row_count < 0 or self.exact_overlap_rows < 0:
+        if (
+            type(self.row_count) is not int or type(self.exact_overlap_rows) is not int
+            or self.row_count < 0 or self.exact_overlap_rows < 0
+        ):
             raise ValueError("session capture target counts are invalid")
         validate_kis_paper_minute_failure_diagnostic(
             reason=self.reason,
@@ -101,6 +172,17 @@ class KisPaperIntradaySessionCaptureTarget:
         )
         if self.token_http_status_class is not None and self.status not in {"partial", "rejected"}:
             raise ValueError("session capture token diagnostic is invalid")
+        if self.retained_head_conflict_diagnostic is not None:
+            diagnostic = self.retained_head_conflict_diagnostic
+            validate_retained_head_conflict_diagnostic(
+                diagnostic, status=self.status, reason=self.reason,
+                conflict_origin=self.conflict_origin,
+            )
+            expected_rows = 0 if self.status == "rejected" else diagnostic.accepted_row_count
+            if self.row_count != expected_rows or (
+                self.status == "rejected" and self.exact_overlap_rows != 0
+            ):
+                raise ValueError("session capture retained conflict diagnostic is invalid")
         if self.reason is not None:
             object.__setattr__(
                 self,
@@ -148,6 +230,10 @@ class KisPaperIntradaySessionCaptureTarget:
             payload["token_http_status_class"] = self.token_http_status_class
         if self.token_upstream_code is not None:
             payload["token_upstream_code"] = self.token_upstream_code
+        if self.retained_head_conflict_diagnostic is not None:
+            payload["retained_head_conflict_diagnostic"] = (
+                self.retained_head_conflict_diagnostic.to_payload()
+            )
         return payload
 
 
@@ -185,6 +271,13 @@ class KisPaperIntradaySessionCaptureOutcome:
         object.__setattr__(self, "schedule_run_id", validate_schedule_run_id(self.schedule_run_id))
         if self.schedule_run_id is not None:
             for target in targets:
+                if target.retained_head_conflict_diagnostic is not None:
+                    validate_retained_head_conflict_diagnostic(
+                        target.retained_head_conflict_diagnostic,
+                        status=target.status, reason=target.reason,
+                        conflict_origin=target.conflict_origin,
+                        page_budget=kis_paper_intraday_head_requested_page_budget(self.schedule_run_id),
+                    )
                 if target.failure_phase is not None and target.requested_pages_per_target != (
                     kis_paper_intraday_head_requested_page_budget(self.schedule_run_id)
                 ):
@@ -459,6 +552,7 @@ def _capture_targets(
             requested_pages_per_target=run.requested_pages_per_target,
             token_http_status_class=run.token_http_status_class,
             token_upstream_code=run.token_upstream_code,
+            retained_head_conflict_diagnostic=run.retained_head_conflict_diagnostic,
         )
         for run in values
     )

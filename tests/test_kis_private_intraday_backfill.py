@@ -899,8 +899,8 @@ def test_head_conflict_quarantines_old_snapshot_and_retains_same_capture(
     assert [chunk["raw_market_data_retained"] for chunk in qqq["chunks"]] == [False, True]
 
 
-@pytest.fixture
-def head_revision_case(tmp_path: Path) -> dict[str, object]:
+@pytest.fixture(params=("committed", "partial"))
+def head_revision_case(tmp_path: Path, request: pytest.FixtureRequest) -> dict[str, object]:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
     cache_root = tmp_path / "market-data" / "head"
@@ -919,27 +919,40 @@ def head_revision_case(tmp_path: Path) -> dict[str, object]:
         monotonic_clock=lambda: 0.0,
     )
     for index, rows in enumerate((historical, original, disjoint)):
-        run_kis_paper_private_intraday_backfill_cycle(
+        partial = index == 1 and request.param == "partial"
+        responses = [
+            _page(
+                symbol="QQQ",
+                exchange="NAS",
+                rows=rows,
+                next_cursor="1" if index == 0 or partial else None,
+            ),
+        ]
+        if partial:
+            responses.append(KisPaperMarketDataError("minute_response_invalid"))
+        responses.append(
+            _page(
+                symbol="SPY",
+                exchange="AMS",
+                rows=historical,
+                next_cursor=None if partial else "1",
+            )
+        )
+        seeded = run_kis_paper_private_intraday_backfill_cycle(
             **(
                 args
                 | {
-                    "client": _MinuteClient(
-                        [
-                            _page(
-                                symbol="QQQ",
-                                exchange="NAS",
-                                rows=rows,
-                                next_cursor="1" if index == 0 else None,
-                            ),
-                            _page(symbol="SPY", exchange="AMS", rows=historical, next_cursor="1"),
-                        ]
-                    ),
+                    "client": _MinuteClient(responses),
+                    "pages_per_target": 2 if partial else 1,
                     "resume_cursor": index == 0,
                     "quarantine_retained_head_conflicts": index != 0,
                     "observed_at": datetime(2026, 7, 22, 5, index, tzinfo=UTC),
                 }
             )
         )
+        if partial:
+            assert seeded[0].status == "partial"
+            assert seeded[0].reason == "minute_response_invalid"
     root = cache_root / KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION
     index_path = root / "index.json"
     before = json.loads(index_path.read_text(encoding="utf-8"))
@@ -1088,7 +1101,9 @@ def test_head_revision_crash_preserves_custody_and_recovers_without_refetch(
         assert revised_bar.close == case["candidate"][0].last
 
 
-@pytest.mark.parametrize("kind", ["mixed_historical", "partial_candidate", "candidate_batch"])
+@pytest.mark.parametrize(
+    "kind", ["mixed_historical", "partial_mixed_historical", "partial_candidate", "candidate_batch"]
+)
 def test_head_revision_never_salvages_cross_scope_or_invalid_candidates(
     head_revision_case: dict[str, object],
     kind: str,
@@ -1096,7 +1111,9 @@ def test_head_revision_never_salvages_cross_scope_or_invalid_candidates(
     case = head_revision_case
     args = case["args"]
     rows = case["candidate"]
-    if kind == "mixed_historical":
+    partial = kind in {"partial_candidate", "partial_mixed_historical"}
+    historical = kind in {"mixed_historical", "partial_mixed_historical"}
+    if historical:
         old = case["historical"][0]
         rows = (*rows, replace(old, high=old.high + Decimal(1), last=old.last + Decimal(1)))
     elif kind == "candidate_batch":
@@ -1106,20 +1123,40 @@ def test_head_revision_never_salvages_cross_scope_or_invalid_candidates(
             symbol="QQQ",
             exchange="NAS",
             rows=rows,
-            next_cursor="1" if kind == "partial_candidate" else None,
+            next_cursor="1" if partial else None,
         )
     ]
-    if kind == "partial_candidate":
-        responses.append(KisPaperMarketDataError("minute_response_empty"))
+    if partial:
+        responses.append(KisPaperMarketDataError(
+            "minute_response_invalid" if historical else "minute_response_empty"
+        ))
     responses.append(_page(symbol="SPY", exchange="AMS", rows=case["historical"], next_cursor=None))
     client = _MinuteClient(responses)
     results = run_kis_paper_private_intraday_backfill_cycle(
-        **(args | {"client": client, "pages_per_target": 2 if kind == "partial_candidate" else 1})
+        **(args | {"client": client, "pages_per_target": 2 if partial else 1})
     )
     assert results[0].status == "rejected" and results[0].reason == "minute_duplicate_conflict"
     assert results[0].conflict_origin == (
         "candidate_batch" if kind == "candidate_batch" else "retained_cache"
     )
+    diagnostic = results[0].retained_head_conflict_diagnostic
+    if kind == "candidate_batch":
+        assert diagnostic is None
+    else:
+        assert diagnostic is not None
+        assert diagnostic.conflicting_minute_count == (2 if historical else 1)
+        assert diagnostic.conflicting_chunk_count == (2 if historical else 1)
+        assert diagnostic.fresh_status == ("partial" if partial else "collected")
+        assert diagnostic.fresh_reason == (
+            ("minute_response_invalid" if historical else "minute_response_empty")
+            if partial else None
+        )
+        assert ("fresh_not_collected" in diagnostic.failed_predicates) == (
+            kind == "partial_candidate"
+        )
+        assert ("predecessor_not_head" in diagnostic.failed_predicates) == (
+            historical
+        )
     index = json.loads(case["index_path"].read_text(encoding="utf-8"))
     target = next(row for row in index["targets"] if row["target_key"] == "QQQ/NAS/1m")
     assert target["chunks"] == case["qqq"]["chunks"]
@@ -1127,7 +1164,7 @@ def test_head_revision_never_salvages_cross_scope_or_invalid_candidates(
     assert all(path.read_bytes() == data for path, data in case["immutable"].items())
     assert len(list(case["root"].glob("snapshots/*/manifest.json"))) == 4
     assert [query.symbol for query in client.queries] == (
-        ["QQQ", "QQQ", "SPY"] if kind == "partial_candidate" else ["QQQ", "SPY"]
+        ["QQQ", "QQQ", "SPY"] if partial else ["QQQ", "SPY"]
     )
 
 
@@ -1157,6 +1194,10 @@ def test_head_revision_with_shorter_support_does_not_backfill_quarantined_rows(
         )
     )
     assert results[0].status == "collected" and results[0].row_count == 1
+    diagnostic = results[0].retained_head_conflict_diagnostic
+    assert diagnostic is not None
+    assert diagnostic.failed_predicates == ()
+    assert diagnostic.prospective_active_key_loss_count == 2
     catalog = load_verified_kis_paper_private_intraday_catalog(
         cache_root=args["cache_root"], repo_root=args["repo_root"], symbol="QQQ", exchange="NAS"
     )
@@ -1298,8 +1339,13 @@ def test_cursor_backed_historical_chunk_cannot_be_quarantined_by_head_option(
     assert qqq["chunks"][0]["output_cursor"] is not None
 
 
+@pytest.mark.parametrize(
+    "reason",
+    ["minute_response_empty", "auth_rejected", "transport_failure", "token_request_not_due"],
+)
 def test_partial_head_snapshot_cannot_be_quarantined_by_head_option(
     tmp_path: Path,
+    reason: str,
 ) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()
@@ -1309,7 +1355,7 @@ def test_partial_head_snapshot_cannot_be_quarantined_by_head_option(
         client=_MinuteClient(
             [
                 _page(symbol="QQQ", exchange="NAS", rows=original_rows, next_cursor="1"),
-                KisPaperMarketDataError("minute_response_empty"),
+                KisPaperMarketDataError(reason),
                 _page(symbol="SPY", exchange="AMS", rows=original_rows, next_cursor=None),
             ]
         ),
@@ -1372,11 +1418,885 @@ def test_partial_head_snapshot_cannot_be_quarantined_by_head_option(
     assert results[0].reason == "minute_duplicate_conflict"
     assert results[0].conflict_origin == "retained_cache"
     assert results[0].retained_head_conflict_disposition == "preserved"
+    assert results[0].retained_head_conflict_diagnostic is not None
+    assert results[0].retained_head_conflict_diagnostic.failed_predicates == (
+        "predecessor_outcome_reason_ineligible",
+    )
     assert original_manifest.read_bytes() == original_manifest_bytes
     index = json.loads(index_path.read_text(encoding="utf-8"))
     qqq = next(target for target in index["targets"] if target["target_key"] == "QQQ/NAS/1m")
     assert qqq["chunks"] == [original_chunk]
     assert qqq["next_cursor"] is None
+
+
+@pytest.mark.parametrize("reverse_chunks", [False, True])
+@pytest.mark.parametrize("fresh_status", ["collected", "partial"])
+def test_mixed_partial_head_predecessors_reject_revision_independent_of_chunk_order(
+    tmp_path: Path,
+    reverse_chunks: bool,
+    fresh_status: str,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "head"
+    rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=3)
+    args = dict(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=2,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=True,
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    for minute, (prefix, reason) in enumerate(
+        ((rows, "minute_response_invalid"), (rows[:1], "auth_rejected"))
+    ):
+        seeded = run_kis_paper_private_intraday_backfill_cycle(
+            **(
+                args
+                | {
+                    "client": _MinuteClient(
+                        [
+                            _page(symbol="QQQ", exchange="NAS", rows=prefix, next_cursor="1"),
+                            KisPaperMarketDataError(reason),
+                            _page(symbol="SPY", exchange="AMS", rows=rows, next_cursor=None),
+                        ]
+                    ),
+                    "observed_at": datetime(2026, 7, 22, 5, minute, tzinfo=UTC),
+                }
+            )
+        )
+        assert seeded[0].status == "partial" and seeded[0].reason == reason
+    root = cache_root / "v1"
+    index_path = root / "index.json"
+    before = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = next(target for target in before["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert len(qqq["chunks"]) == 2
+    assert all(chunk["outcome"] == "partial" for chunk in qqq["chunks"])
+    if reverse_chunks:
+        qqq["chunks"].reverse()
+    index_path.write_text(json.dumps(before), encoding="utf-8")
+    immutable = {
+        path: path.read_bytes()
+        for pattern in ("snapshots/*/manifest.json", "snapshots/*/raw/*.gz")
+        for path in root.glob(pattern)
+    }
+    changed = replace(rows[0], high=rows[0].high + 1, last=rows[0].last + 1)
+    responses = [
+        _page(
+            symbol="QQQ", exchange="NAS", rows=(changed, *rows[1:]),
+            next_cursor="1" if fresh_status == "partial" else None,
+        ),
+    ]
+    if fresh_status == "partial":
+        responses.append(KisPaperMarketDataError("minute_response_invalid"))
+    responses.append(_page(symbol="SPY", exchange="AMS", rows=rows, next_cursor=None))
+    client = _MinuteClient(responses)
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        **(
+            args
+            | {
+                "client": client,
+                "pages_per_target": 2 if fresh_status == "partial" else 1,
+                "observed_at": datetime(2026, 7, 22, 5, 5, tzinfo=UTC),
+            }
+        )
+    )
+    assert results[0].status == "rejected" and results[0].reason == "minute_duplicate_conflict"
+    assert results[0].conflict_origin == "retained_cache"
+    assert results[0].retained_head_conflict_disposition == "preserved"
+    assert results[0].manifest_path is None and results[0].row_count == 0
+    diagnostic = results[0].retained_head_conflict_diagnostic
+    assert diagnostic is not None and diagnostic.fresh_status == fresh_status
+    assert diagnostic.conflicting_chunk_count == 2 and diagnostic.conflicting_minute_count == 1
+    assert diagnostic.failed_predicates == ("predecessor_outcome_reason_ineligible",)
+    assert results[1].status == "recovered"
+    assert [query.symbol for query in client.queries] == (
+        ["QQQ", "QQQ", "SPY"] if fresh_status == "partial" else ["QQQ", "SPY"]
+    )
+    after = json.loads(index_path.read_text(encoding="utf-8"))
+    retained = next(target for target in after["targets"] if target["target_key"] == "QQQ/NAS/1m")
+    assert retained["chunks"] == qqq["chunks"] and retained["next_cursor"] == qqq["next_cursor"]
+    assert after["generation"] == before["generation"]
+    assert {
+        path: path.read_bytes()
+        for pattern in ("snapshots/*/manifest.json", "snapshots/*/raw/*.gz")
+        for path in root.glob(pattern)
+    } == immutable
+
+
+@pytest.mark.parametrize("fresh_status", ["collected", "partial"])
+def test_three_page_partial_head_revision_preserves_bytes_and_measures_fresh_predicate(
+    tmp_path: Path,
+    fresh_status: str,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "head"
+    original = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=360)
+    mixed = (*_rows(start_korea=datetime(2026, 7, 21, 15, 59), count=1), original[0])
+
+    def pages(symbol, exchange, rows, *, fail_fourth=False):
+        result = [
+            _page(
+                symbol=symbol,
+                exchange=exchange,
+                rows=rows[max(0, end - 120) : end],
+                next_cursor=None,
+            )
+            for end in range(len(rows), 0, -120)
+        ]
+        if fail_fourth:
+            result.append(_page(symbol=symbol, exchange=exchange, rows=mixed, next_cursor=None))
+        return result
+
+    args = dict(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=4,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=True,
+        explicit_pair_head_continuation=True,
+        observed_at=datetime(2026, 7, 22, 8, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    initial = run_kis_paper_private_intraday_backfill_cycle(
+        **(
+            args
+            | {
+                "client": _MinuteClient(
+                    pages("QQQ", "NAS", original, fail_fourth=True)
+                    + pages("SPY", "AMS", original, fail_fourth=True)
+                )
+            }
+        )
+    )
+    assert all(run.status == "partial" and run.row_count == 360 for run in initial)
+    assert all(run.failure_page_ordinal == 4 for run in initial)
+    root = cache_root / "v1"
+    index_path = root / "index.json"
+    before = json.loads(index_path.read_text(encoding="utf-8"))
+    old = before["targets"][0]["chunks"][0]
+    immutable = {path: path.read_bytes() for path in root.glob("snapshots/*/*") if path.is_file()}
+    immutable.update({path: path.read_bytes() for path in root.glob("snapshots/*/raw/*.gz")})
+    changed = list(original)
+    changed[100] = replace(changed[100], high=changed[100].high + 1, last=changed[100].last + 1)
+    fresh = tuple(changed if fresh_status == "partial" else changed[:-1])
+    client = _MinuteClient(
+        pages("QQQ", "NAS", fresh, fail_fourth=fresh_status == "partial")
+        + pages("SPY", "AMS", original[:1])
+    )
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        **(args | {"client": client, "observed_at": datetime(2026, 7, 22, 8, 5, tzinfo=UTC)})
+    )
+    diagnostic = results[0].retained_head_conflict_diagnostic
+    assert diagnostic is not None
+    assert diagnostic.fresh_status == fresh_status
+    assert diagnostic.fresh_reason == (
+        "minute_response_invalid" if fresh_status == "partial" else None
+    )
+    assert diagnostic.accepted_page_count == 3
+    assert diagnostic.accepted_row_count == len(fresh)
+    assert diagnostic.conflicting_chunk_count == diagnostic.conflicting_minute_count == 1
+    assert diagnostic.failed_predicates == ()
+    assert diagnostic.prospective_active_key_loss_count == (0 if fresh_status == "partial" else 1)
+    assert results[0].status == fresh_status
+    assert results[1].status == "collected"
+    assert [query.symbol for query in client.queries] == (
+        ["QQQ"] * (4 if fresh_status == "partial" else 3) + ["SPY"]
+    )
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    qqq = index["targets"][0]
+    assert qqq["next_cursor"] == before["targets"][0]["next_cursor"]
+    assert qqq["chunks"][0]["quarantined_manifest_hash"] == old["manifest_hash"]
+    assert qqq["chunks"][0]["quarantined_raw_sha256"] == old["raw_sha256"]
+    assert qqq["chunks"][1]["row_count"] == len(fresh)
+    assert qqq["chunks"][1]["outcome"] == (
+        "partial" if fresh_status == "partial" else "committed"
+    )
+    catalog = load_verified_kis_paper_private_intraday_catalog(
+        cache_root=cache_root, repo_root=repo_root, symbol="QQQ", exchange="NAS"
+    )
+    assert len(catalog.bars) == len(fresh)
+    if fresh_status == "partial":
+        assert results[0].reason == "minute_response_invalid"
+        assert results[0].failure_phase == "head_contract"
+        assert results[0].failure_code == "mixed_exchange_dates"
+        assert results[0].failure_page_ordinal == 4
+    assert private_intraday_backfill._recover_orphan_snapshots(root=root, index=index) == ()
+    assert all(path.read_bytes() == data for path, data in immutable.items())
+
+
+def test_seven_page_partial_revision_and_later_head_observations_preserve_custody(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "head"
+    original = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=840)
+    mixed = (*_rows(start_korea=datetime(2026, 7, 21, 15, 59), count=1), original[0])
+    targets = (("QQQ", "NAS"), ("SPY", "AMS"))
+
+    def pages(rows):
+        return [
+            page
+            for symbol, exchange in targets
+            for page in (
+                *(
+                    _page(
+                        symbol=symbol, exchange=exchange, rows=rows[end - 120:end],
+                        next_cursor=None,
+                    )
+                    for end in range(840, 0, -120)
+                ),
+                _page(symbol=symbol, exchange=exchange, rows=mixed, next_cursor=None),
+            )
+        ]
+
+    args = dict(
+        cache_root=cache_root, repo_root=repo_root, code_revision="git:test",
+        pages_per_target=8, resume_cursor=False, quarantine_retained_head_conflicts=True,
+        explicit_pair_head_continuation=True,
+        sleeper=lambda _seconds: None, monotonic_clock=lambda: 0.0,
+    )
+    historical = _rows(start_korea=datetime(2026, 7, 21, 9, 30), count=2)
+    run_kis_paper_private_intraday_backfill_cycle(
+        **(args | dict(
+            client=_MinuteClient([
+                _page(symbol=symbol, exchange=exchange, rows=historical, next_cursor="1")
+                for symbol, exchange in targets
+            ]),
+            resume_cursor=True, quarantine_retained_head_conflicts=False,
+            explicit_pair_head_continuation=False, pages_per_target=1,
+            observed_at=datetime(2026, 7, 22, 4, 0, tzinfo=UTC),
+        ))
+    )
+    run_kis_paper_private_intraday_backfill_cycle(
+        **(args | dict(client=_MinuteClient(pages(original)),
+                      observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC)))
+    )
+    root = cache_root / "v1"
+    index_path = root / "index.json"
+    before = json.loads(index_path.read_text(encoding="utf-8"))
+    immutable = {
+        path: path.read_bytes()
+        for pattern in ("snapshots/*/manifest.json", "snapshots/*/raw/*.gz")
+        for path in root.glob(pattern)
+    }
+    changed = list(original)
+    changed[100] = replace(changed[100], high=changed[100].high + 1, last=changed[100].last + 1)
+    client = _MinuteClient(pages(tuple(changed)))
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        **(args | dict(client=client, observed_at=datetime(2026, 7, 22, 5, 5, tzinfo=UTC)))
+    )
+    assert [query.symbol for query in client.queries] == ["QQQ"] * 8 + ["SPY"] * 8
+    after = json.loads(index_path.read_text(encoding="utf-8"))
+    for result, previous, current in zip(results, before["targets"], after["targets"], strict=True):
+        assert result.status == "partial" and result.reason == "minute_response_invalid"
+        assert result.row_count == 840 and result.failure_page_ordinal == 8
+        assert result.failure_phase == "head_contract"
+        assert result.failure_code == "mixed_exchange_dates"
+        assert result.requested_pages_per_target == 8
+        diagnostic = result.retained_head_conflict_diagnostic
+        assert diagnostic is not None and len(diagnostic.to_payload()) == 8
+        assert diagnostic.failed_predicates == ()
+        assert diagnostic.prospective_active_key_loss_count == 0
+        assert diagnostic.accepted_page_count == 7
+        assert diagnostic.conflicting_chunk_count == diagnostic.conflicting_minute_count == 1
+        assert current["next_cursor"] == previous["next_cursor"]
+        assert current["chunks"][0] == previous["chunks"][0]
+        assert (
+            current["chunks"][1]["quarantined_manifest_hash"]
+            == previous["chunks"][1]["manifest_hash"]
+        )
+        assert current["chunks"][2]["outcome"] == "partial"
+        assert current["chunks"][2]["input_cursor"] is current["chunks"][2]["output_cursor"] is None
+        manifest = json.loads(result.manifest_path.read_text(encoding="utf-8"))
+        assert manifest["status"] == "partial" and len(manifest["pages"]) == 7
+        assert manifest["failure_page_ordinal"] == manifest["requested_pages_per_target"] == 8
+        catalog = load_verified_kis_paper_private_intraday_catalog(
+            cache_root=cache_root, repo_root=repo_root,
+            symbol=current["symbol"], exchange=current["exchange"],
+        )
+        assert len(catalog.bars) == 842
+    assert all(path.read_bytes() == data for path, data in immutable.items())
+    assert private_intraday_backfill._recover_orphan_snapshots(root=root, index=after) == ()
+
+    repeat = run_kis_paper_private_intraday_backfill_cycle(
+        **(args | dict(client=_MinuteClient(pages(tuple(changed))),
+                      observed_at=datetime(2026, 7, 22, 5, 10, tzinfo=UTC)))
+    )
+    assert all(result.status == "partial" and result.failure_page_ordinal == 8 for result in repeat)
+    repeated_index = json.loads(index_path.read_text(encoding="utf-8"))
+    assert repeated_index["generation"] == after["generation"]
+    changed[200] = replace(changed[200], high=changed[200].high + 1, last=changed[200].last + 1)
+    later = run_kis_paper_private_intraday_backfill_cycle(
+        **(args | dict(client=_MinuteClient(pages(tuple(changed))),
+                      observed_at=datetime(2026, 7, 22, 5, 15, tzinfo=UTC)))
+    )
+    assert all(result.status == "partial" and result.row_count == 840 for result in later)
+    final = json.loads(index_path.read_text(encoding="utf-8"))
+    assert all(current["next_cursor"] == previous["next_cursor"]
+               for current, previous in zip(final["targets"], before["targets"], strict=True))
+    assert private_intraday_backfill._recover_orphan_snapshots(root=root, index=final) == ()
+    assert all(path.read_bytes() == data for path, data in immutable.items())
+
+
+@pytest.mark.parametrize("reason", [
+    "auth_rejected", "rate_limited", "transport_failure", "minute_response_empty",
+    "minute_cursor_stalled", "private-unallowlisted-body",
+])
+def test_partial_head_revision_rejects_other_stop_reasons(
+    head_revision_case: dict[str, object], reason: str,
+) -> None:
+    case = head_revision_case
+    client = _MinuteClient([
+        _page(symbol="QQQ", exchange="NAS", rows=case["candidate"], next_cursor="1"),
+        KisPaperMarketDataError(reason),
+        _page(symbol="SPY", exchange="AMS", rows=case["historical"], next_cursor=None),
+    ])
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        **(case["args"] | dict(client=client, pages_per_target=2))
+    )
+    assert results[0].status == "rejected" and results[0].manifest_path is None
+    diagnostic = results[0].retained_head_conflict_diagnostic
+    assert diagnostic is not None and diagnostic.failed_predicates == ("fresh_not_collected",)
+    index = json.loads(case["index_path"].read_text(encoding="utf-8"))
+    assert index["targets"][0]["chunks"] == case["qqq"]["chunks"]
+    assert [query.symbol for query in client.queries] == ["QQQ", "QQQ", "SPY"]
+    assert all(path.read_bytes() == data for path, data in case["immutable"].items())
+
+
+def test_partial_head_revision_rejects_positive_active_key_loss(
+    head_revision_case: dict[str, object],
+) -> None:
+    case = head_revision_case
+    client = _MinuteClient([
+        _page(symbol="QQQ", exchange="NAS", rows=case["candidate"][:1], next_cursor="1"),
+        KisPaperMarketDataError("minute_response_invalid"),
+        _page(symbol="SPY", exchange="AMS", rows=case["historical"], next_cursor=None),
+    ])
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        **(case["args"] | dict(client=client, pages_per_target=2))
+    )
+    assert results[0].status == "rejected" and results[0].manifest_path is None
+    diagnostic = results[0].retained_head_conflict_diagnostic
+    assert diagnostic is not None and diagnostic.failed_predicates == ("partial_active_key_loss",)
+    assert diagnostic.prospective_active_key_loss_count == 2
+    index = json.loads(case["index_path"].read_text(encoding="utf-8"))
+    assert index["targets"][0]["chunks"] == case["qqq"]["chunks"]
+    assert index["targets"][0]["next_cursor"] == case["qqq"]["next_cursor"]
+    assert all(path.read_bytes() == data for path, data in case["immutable"].items())
+
+
+def test_partial_revision_snapshot_crash_keeps_diagnostic_only_in_original_manifest(
+    head_revision_case: dict[str, object], monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    case = head_revision_case
+    original_index = private_intraday_backfill._write_index
+    original_snapshot = private_intraday_backfill._write_snapshot
+    written = []
+
+    def record_snapshot(**kwargs):
+        result = original_snapshot(**kwargs)
+        written.append(result)
+        return result
+
+    def interrupt_attachment(*, root, index, expected_targets):
+        qqq = index["targets"][0]
+        if written and any(chunk.get("manifest_hash") == written[0][1] for chunk in qqq["chunks"]):
+            raise OSError("synthetic partial snapshot before index")
+        original_index(root=root, index=index, expected_targets=expected_targets)
+
+    client = _MinuteClient([
+        _page(symbol="QQQ", exchange="NAS", rows=case["candidate"], next_cursor="1"),
+        KisPaperMarketDataError(
+            "minute_response_invalid",
+            failure_phase="row_parse", failure_code="required_field_invalid",
+        ),
+    ])
+    with monkeypatch.context() as patch:
+        patch.setattr(private_intraday_backfill, "_write_snapshot", record_snapshot)
+        patch.setattr(private_intraday_backfill, "_write_index", interrupt_attachment)
+        with pytest.raises(OSError, match="synthetic partial snapshot before index"):
+            run_kis_paper_private_intraday_backfill_cycle(
+                **(case["args"] | dict(client=client, pages_per_target=2))
+            )
+    assert len(written) == 1 and [query.symbol for query in client.queries] == ["QQQ", "QQQ"]
+    replacement_bytes = written[0][0].read_bytes()
+    recovery_client = _MinuteClient([
+        _page(symbol="SPY", exchange="AMS", rows=case["historical"], next_cursor=None),
+    ])
+    recovered = run_kis_paper_private_intraday_backfill_cycle(
+        **(case["args"] | dict(client=recovery_client, pages_per_target=2,
+                              observed_at=datetime(2026, 7, 22, 5, 10, tzinfo=UTC)))
+    )
+    result = recovered[0]
+    assert result.status == "partial" and result.reason == "minute_response_invalid"
+    assert result.manifest_hash == written[0][1] and result.manifest_path == written[0][0]
+    assert result.failure_phase is result.failure_code is None
+    assert result.failure_page_ordinal is result.requested_pages_per_target is None
+    original_manifest = json.loads(replacement_bytes)
+    assert original_manifest["failure_phase"] == "row_parse"
+    assert original_manifest["failure_code"] == "required_field_invalid"
+    assert (
+        original_manifest["failure_page_ordinal"]
+        == original_manifest["requested_pages_per_target"] == 2
+    )
+    assert [query.symbol for query in recovery_client.queries] == ["SPY"]
+    index = json.loads(case["index_path"].read_text(encoding="utf-8"))
+    qqq = index["targets"][0]
+    assert qqq["next_cursor"] == case["qqq"]["next_cursor"]
+    assert qqq["chunks"][0] == case["qqq"]["chunks"][0]
+    assert (
+        qqq["chunks"][1]["quarantined_manifest_hash"]
+        == case["qqq"]["chunks"][1]["manifest_hash"]
+    )
+    assert qqq["chunks"][-1]["outcome"] == "partial"
+    assert qqq["chunks"][-1]["reason"] == "minute_response_invalid"
+    assert private_intraday_backfill._recover_orphan_snapshots(root=case["root"], index=index) == ()
+    assert all(path.read_bytes() == data for path, data in case["immutable"].items())
+    assert written[0][0].read_bytes() == replacement_bytes
+
+    from thericher_v2.data.kis_paper_intraday_session_capture import (
+        build_kis_paper_intraday_session_capture_outcome,
+    )
+
+    outcome = build_kis_paper_intraday_session_capture_outcome(
+        runs=recovered, cache_root=case["args"]["cache_root"],
+        repository_root=case["args"]["repo_root"],
+        observed_at=datetime(2026, 7, 22, 5, 10, tzinfo=UTC),
+    )
+    assert outcome.status == "incomplete"
+
+
+@pytest.mark.parametrize(
+    "original_budget,new_budget,original_at,new_at",
+    [
+        (8, 4, "2026-07-22T22:21:00+00:00", "2026-07-23T00:29:00+00:00"),
+        (4, 8, "2026-07-22T19:29:00+00:00", "2026-07-22T22:21:00+00:00"),
+        (4, 4, "2026-07-22T19:29:00+00:00", "2026-07-22T19:30:00+00:00"),
+        (8, 8, "2026-07-22T22:21:00+00:00", "2026-07-22T22:22:00+00:00"),
+    ],
+)
+def test_partial_orphan_new_schedule_capture_never_projects_original_failure_fields(
+    head_revision_case: dict[str, object], monkeypatch: pytest.MonkeyPatch,
+    original_budget: int, new_budget: int, original_at: str, new_at: str,
+) -> None:
+    from thericher_v2.data.kis_paper_intraday_session_capture import (
+        build_and_write_kis_paper_intraday_session_capture,
+        build_kis_paper_intraday_session_capture_outcome,
+        kis_paper_intraday_head_requested_page_budget,
+    )
+    from thericher_v2.ops import kis_paper_intraday_head_schedule_receipt as receipt_reader
+
+    case = head_revision_case
+    original_observed = datetime.fromisoformat(original_at)
+    new_observed = datetime.fromisoformat(new_at)
+    original_run_id = "intraday-head-" + original_observed.strftime("%Y%m%dT%H%M%S%fZ")
+    new_run_id = "intraday-head-" + new_observed.strftime("%Y%m%dT%H%M%S%fZ")
+    assert new_observed > original_observed and new_run_id != original_run_id
+    assert kis_paper_intraday_head_requested_page_budget(original_run_id) == original_budget
+    assert kis_paper_intraday_head_requested_page_budget(new_run_id) == new_budget
+    prefix = list(_rows(
+        start_korea=datetime(2026, 7, 22, 9, 30), count=120 * (original_budget - 1),
+    ))
+    prefix[0] = replace(prefix[0], high=prefix[0].high + 1, last=prefix[0].last + 1)
+    responses = [
+        _page(symbol="QQQ", exchange="NAS", rows=tuple(prefix[end - 120:end]), next_cursor=None)
+        for end in range(len(prefix), 0, -120)
+    ]
+    responses.append(KisPaperMarketDataError(
+        "minute_response_invalid", failure_phase="row_parse", failure_code="required_field_invalid",
+    ))
+    client = _MinuteClient(responses)
+    original_index = private_intraday_backfill._write_index
+    original_snapshot = private_intraday_backfill._write_snapshot
+    written = []
+
+    def record_snapshot(**kwargs):
+        result = original_snapshot(**kwargs)
+        written.append(result)
+        return result
+
+    def interrupt_attachment(*, root, index, expected_targets):
+        if written and any(
+            chunk.get("manifest_hash") == written[0][1] for chunk in index["targets"][0]["chunks"]
+        ):
+            raise OSError("synthetic canonical partial orphan")
+        original_index(root=root, index=index, expected_targets=expected_targets)
+
+    with monkeypatch.context() as patch:
+        patch.setattr(private_intraday_backfill, "_write_snapshot", record_snapshot)
+        patch.setattr(private_intraday_backfill, "_write_index", interrupt_attachment)
+        with pytest.raises(OSError, match="synthetic canonical partial orphan"):
+            run_kis_paper_private_intraday_backfill_cycle(
+                **(case["args"] | dict(
+                    client=client, pages_per_target=original_budget,
+                    explicit_pair_head_continuation=True, observed_at=original_observed,
+                ))
+            )
+    assert [query.symbol for query in client.queries] == ["QQQ"] * original_budget
+    assert len(written) == 1
+    source_path, source_hash = written[0]
+    source_bytes = source_path.read_bytes()
+    assert source_hash == "sha256:" + hashlib.sha256(source_bytes).hexdigest()
+    original_manifest = json.loads(source_bytes)
+    assert original_manifest["status"] == "partial"
+    assert len(original_manifest["pages"]) == original_budget - 1
+    original_fields = {
+        "failure_phase": "row_parse", "failure_code": "required_field_invalid",
+        "failure_page_ordinal": original_budget, "requested_pages_per_target": original_budget,
+    }
+    assert {key: original_manifest[key] for key in original_fields} == original_fields
+
+    recovery_client = _MinuteClient([
+        _page(symbol="SPY", exchange="AMS", rows=case["historical"], next_cursor=None),
+    ])
+    recovered = run_kis_paper_private_intraday_backfill_cycle(
+        **(case["args"] | dict(
+            client=recovery_client, pages_per_target=new_budget,
+            explicit_pair_head_continuation=True, observed_at=new_observed,
+        ))
+    )
+    result = recovered[0]
+    assert result.status == "partial" and result.reason == "minute_response_invalid"
+    assert result.manifest_hash == source_hash and result.manifest_path == source_path
+    assert all(getattr(result, field) is None for field in original_fields)
+    assert [query.symbol for query in recovery_client.queries] == ["SPY"]
+    capture_args = dict(
+        cache_root=case["args"]["cache_root"], repository_root=case["args"]["repo_root"],
+        observed_at=new_observed, schedule_run_id=new_run_id,
+    )
+    capture = build_and_write_kis_paper_intraday_session_capture(runs=recovered, **capture_args)
+    assert capture.outcome.status == "incomplete"
+    assert capture.outcome.targets[0].status == "partial"
+    capture_bytes = capture.evidence_path.read_bytes()
+    payload = json.loads(capture_bytes)
+    assert payload["schedule_run_id"] == new_run_id and payload["status"] == "incomplete"
+    assert not set(original_fields).intersection(payload["targets"][0])
+    assert capture.evidence_sha256 == "sha256:" + hashlib.sha256(capture_bytes).hexdigest()
+    binding = receipt_reader.KisPaperIntradayHeadTerminalReceiptBinding(
+        **(capture.terminal_receipt_binding() | dict(observed_at=new_observed))
+    )
+    receipt_reader._verify_capture_payload_binding(payload, binding)
+    projected = receipt_reader._collection_recovery_targets_from_capture_payload(payload)
+    assert projected[0].status == "partial" and projected[0].reason == "minute_response_invalid"
+    assert all(getattr(projected[0], field) is None for field in original_fields)
+    if original_budget != new_budget:
+        with pytest.raises(ValueError, match="session capture requested page budget is invalid"):
+            build_kis_paper_intraday_session_capture_outcome(
+                runs=(replace(result, **original_fields), recovered[1]), **capture_args,
+            )
+    index = json.loads(case["index_path"].read_text(encoding="utf-8"))
+    private_intraday_backfill._attest_committed_snapshots(root=case["root"], index=index)
+    assert private_intraday_backfill._recover_orphan_snapshots(root=case["root"], index=index) == ()
+    assert source_path.read_bytes() == source_bytes
+    assert all(path.read_bytes() == data for path, data in case["immutable"].items())
+
+
+@pytest.mark.parametrize("resume_cursor", [False, True])
+@pytest.mark.parametrize(
+    "reason", ["minute_response_invalid", "auth_rejected", "minute_response_empty"]
+)
+def test_legacy_partial_orphan_preserves_partial_reason_in_head_and_history(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, resume_cursor: bool, reason: str,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "intraday"
+    rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=3)
+    args = dict(
+        cache_root=cache_root, repo_root=repo_root, code_revision="git:test",
+        pages_per_target=2, resume_cursor=resume_cursor,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None, monotonic_clock=lambda: 0.0,
+    )
+    original_index = private_intraday_backfill._write_index
+
+    def interrupt_attachment(*, root, index, expected_targets):
+        if index["targets"][0]["chunks"]:
+            raise OSError("synthetic legacy partial orphan")
+        original_index(root=root, index=index, expected_targets=expected_targets)
+
+    client = _MinuteClient([
+        _page(symbol="QQQ", exchange="NAS", rows=rows, next_cursor="1"),
+        KisPaperMarketDataError(reason),
+    ])
+    with monkeypatch.context() as patch:
+        patch.setattr(private_intraday_backfill, "_write_index", interrupt_attachment)
+        with pytest.raises(OSError, match="synthetic legacy partial orphan"):
+            run_kis_paper_private_intraday_backfill_cycle(**(args | dict(client=client)))
+    recovery_client = _MinuteClient([
+        _page(symbol="SPY", exchange="AMS", rows=rows, next_cursor=None),
+    ])
+    recovered = run_kis_paper_private_intraday_backfill_cycle(
+        **(args | dict(client=recovery_client))
+    )
+    assert recovered[0].status == "partial" and recovered[0].reason == reason
+    assert recovered[0].failure_phase is recovered[0].failure_code is None
+    assert recovered[0].failure_page_ordinal is recovered[0].requested_pages_per_target is None
+    assert [query.symbol for query in recovery_client.queries] == ["SPY"]
+    root = cache_root / "v1"
+    index = json.loads((root / "index.json").read_text(encoding="utf-8"))
+    assert index["targets"][0]["chunks"][0]["outcome"] == "partial"
+    expected_cursor = {"next": "1", "keyb": "20260722092900"} if resume_cursor else None
+    assert index["targets"][0]["next_cursor"] == expected_cursor
+    assert private_intraday_backfill._recover_orphan_snapshots(root=root, index=index) == ()
+
+
+def test_partial_orphan_is_not_masked_by_later_collected_orphan() -> None:
+    target = private_intraday_backfill.KisPaperPrivateIntradayTarget("QQQ", "NAS")
+    partial = private_intraday_backfill._RecoveredSnapshot(
+        target=target, manifest_path=Path("partial.json"), manifest_hash="sha256:" + "a" * 64,
+        chunk=dict(outcome="partial", reason="auth_rejected", row_count=3, exact_overlap_rows=0),
+    )
+    committed = private_intraday_backfill._RecoveredSnapshot(
+        target=target, manifest_path=Path("committed.json"), manifest_hash="sha256:" + "b" * 64,
+        chunk=dict(outcome="committed", reason=None, row_count=4, exact_overlap_rows=0),
+    )
+    result = private_intraday_backfill._recovered_target_run(
+        target=target, snapshots=[partial, committed]
+    )
+    assert result.status == "partial" and result.reason == "auth_rejected"
+    assert result.manifest_hash == partial.manifest_hash
+
+
+@pytest.mark.parametrize("mutation", [
+    {"failure_phase": None}, {"failure_code": "sensitive-body"},
+    {"failure_page_ordinal": True}, {"failure_page_ordinal": 3},
+    {"requested_pages_per_target": 1}, {"status": "collected"}, {"pages": []},
+])
+def test_snapshot_failure_diagnostic_rejects_invalid_original_metadata(mutation) -> None:
+    manifest = dict(
+        status="partial", pages=[{}],
+        failure_phase="row_parse", failure_code="required_field_invalid",
+        failure_page_ordinal=2, requested_pages_per_target=2,
+    )
+    chunk = dict(outcome="partial", reason="minute_response_invalid")
+    with pytest.raises(ValueError, match="diagnostic is invalid"):
+        private_intraday_backfill._snapshot_failure_diagnostic(manifest | mutation, chunk)
+    with pytest.raises(ValueError, match="diagnostic is invalid"):
+        private_intraday_backfill._snapshot_failure_diagnostic(
+            {key: value for key, value in manifest.items() if key != "failure_code"}, chunk,
+        )
+    assert private_intraday_backfill._snapshot_failure_diagnostic(
+        dict(status="partial", pages=[{}]), chunk,
+    ) == {}
+
+
+def test_partial_conflict_diagnostic_keeps_legacy_rejection_and_scoped_success() -> None:
+    fields = dict(
+        fresh_status="partial", fresh_reason="minute_response_invalid", accepted_row_count=840,
+        accepted_page_count=7, conflicting_chunk_count=1, conflicting_minute_count=1,
+        failed_predicates=("fresh_not_collected",), prospective_active_key_loss_count=0,
+    )
+    legacy = private_intraday_backfill.KisPaperRetainedHeadConflictDiagnostic(**fields)
+    successful = private_intraday_backfill.KisPaperRetainedHeadConflictDiagnostic(
+        **(fields | dict(failed_predicates=()))
+    )
+    assert len(legacy.to_payload()) == len(successful.to_payload()) == 8
+    assert legacy.to_payload()["failed_predicates"] == ["fresh_not_collected"]
+    for mutation in (
+        dict(fresh_reason="auth_rejected", failed_predicates=()),
+        dict(failed_predicates=(), prospective_active_key_loss_count=1),
+        dict(failed_predicates=("partial_active_key_loss",)),
+    ):
+        with pytest.raises(ValueError, match="retained conflict diagnostic is invalid"):
+            private_intraday_backfill.KisPaperRetainedHeadConflictDiagnostic(**(fields | mutation))
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("collection_scope", "historical"),
+        ("input_cursor", {"next": "1", "keyb": "20260722092900"}),
+        ("output_cursor", {"next": "1", "keyb": "20260722092900"}),
+        ("outcome", "partial"),
+        ("reason", "minute_response_empty"),
+        ("conflict_origin", "retained_cache"),
+    ],
+)
+def test_head_eligibility_binds_all_fields_to_hash_matched_immutable_manifest(
+    head_revision_case: dict[str, object],
+    field: str,
+    value: object,
+) -> None:
+    case = head_revision_case
+    index = json.loads(case["index_path"].read_text(encoding="utf-8"))
+    chunk = index["targets"][0]["chunks"][1]
+    manifest_path = case["root"] / chunk["manifest_path"]
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    embedded = manifest["backfill"]["index_chunk"]
+    embedded[field] = "committed" if field == "outcome" and value == embedded[field] else value
+    payload = json.dumps(manifest).encode("utf-8")
+    manifest_path.write_bytes(payload)
+    chunk["manifest_hash"] = "sha256:" + hashlib.sha256(payload).hexdigest()
+    case["index_path"].write_text(json.dumps(index), encoding="utf-8")
+    client = _MinuteClient([])
+    with pytest.raises(ValueError, match="private intraday snapshot eligibility mismatch"):
+        run_kis_paper_private_intraday_backfill_cycle(**(case["args"] | {"client": client}))
+    assert client.queries == []
+    assert manifest_path.read_bytes() == payload
+
+
+def test_index_only_cursor_free_head_forgery_cannot_confer_revision_eligibility(
+    head_revision_case: dict[str, object],
+) -> None:
+    case = head_revision_case
+    index = json.loads(case["index_path"].read_text(encoding="utf-8"))
+    historical = index["targets"][0]["chunks"][0]
+    historical["collection_scope"] = "head"
+    historical["output_cursor"] = None
+    case["index_path"].write_text(json.dumps(index), encoding="utf-8")
+    client = _MinuteClient([])
+    with pytest.raises(ValueError, match="private intraday snapshot eligibility mismatch"):
+        run_kis_paper_private_intraday_backfill_cycle(**(case["args"] | {"client": client}))
+    assert client.queries == []
+    assert all(path.read_bytes() == data for path, data in case["immutable"].items())
+
+
+def test_index_only_partial_reason_forgery_cannot_confer_revision_eligibility(
+    tmp_path: Path,
+) -> None:
+    repo_root = tmp_path / "repo"
+    repo_root.mkdir()
+    cache_root = tmp_path / "market-data" / "head"
+    rows = _rows(start_korea=datetime(2026, 7, 22, 9, 30), count=2)
+    args = dict(
+        cache_root=cache_root,
+        repo_root=repo_root,
+        code_revision="git:test",
+        pages_per_target=2,
+        resume_cursor=False,
+        quarantine_retained_head_conflicts=True,
+        observed_at=datetime(2026, 7, 22, 5, 0, tzinfo=UTC),
+        sleeper=lambda _seconds: None,
+        monotonic_clock=lambda: 0.0,
+    )
+    run_kis_paper_private_intraday_backfill_cycle(
+        **(
+            args
+            | {
+                "client": _MinuteClient(
+                    [
+                        _page(symbol="QQQ", exchange="NAS", rows=rows, next_cursor="1"),
+                        KisPaperMarketDataError("minute_response_empty"),
+                        _page(symbol="SPY", exchange="AMS", rows=rows, next_cursor=None),
+                    ]
+                )
+            }
+        )
+    )
+    index_path = cache_root / "v1/index.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    chunk = index["targets"][0]["chunks"][0]
+    manifest_path = index_path.parent / chunk["manifest_path"]
+    before = manifest_path.read_bytes()
+    chunk["reason"] = "minute_response_invalid"
+    index_path.write_text(json.dumps(index), encoding="utf-8")
+    client = _MinuteClient([])
+    with pytest.raises(ValueError, match="private intraday snapshot eligibility mismatch"):
+        run_kis_paper_private_intraday_backfill_cycle(**(args | {"client": client}))
+    assert client.queries == [] and manifest_path.read_bytes() == before
+
+
+def test_head_revision_counts_distinct_conflicts_and_only_lost_active_keys(
+    head_revision_case: dict[str, object],
+) -> None:
+    case = head_revision_case
+    args = case["args"]
+    for row in case["original"][:2]:
+        run_kis_paper_private_intraday_backfill_cycle(
+            **(
+                args
+                | {
+                    "client": _MinuteClient(
+                        [
+                            _page(symbol="QQQ", exchange="NAS", rows=(row,), next_cursor=None),
+                            _page(
+                                symbol="SPY",
+                                exchange="AMS",
+                                rows=case["historical"],
+                                next_cursor=None,
+                            ),
+                        ]
+                    )
+                }
+            )
+        )
+    results = run_kis_paper_private_intraday_backfill_cycle(
+        **(
+            args
+            | {
+                "client": _MinuteClient(
+                    [
+                        _page(
+                            symbol="QQQ",
+                            exchange="NAS",
+                            rows=(case["candidate"][0],),
+                            next_cursor=None,
+                        ),
+                        _page(
+                            symbol="SPY", exchange="AMS", rows=case["historical"], next_cursor=None
+                        ),
+                    ]
+                )
+            }
+        )
+    )
+    diagnostic = results[0].retained_head_conflict_diagnostic
+    assert diagnostic is not None and diagnostic.failed_predicates == ()
+    assert diagnostic.conflicting_chunk_count == 2 and diagnostic.conflicting_minute_count == 1
+    assert diagnostic.prospective_active_key_loss_count == 1
+    catalog = load_verified_kis_paper_private_intraday_catalog(
+        cache_root=args["cache_root"], repo_root=args["repo_root"], symbol="QQQ", exchange="NAS"
+    )
+    assert len(catalog.bars) == 6
+    assert all(path.read_bytes() == data for path, data in case["immutable"].items())
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("fresh_status", "unknown"),
+        ("fresh_status", []),
+        ("fresh_reason", "sensitive-body"),
+        ("fresh_reason", {}),
+        ("accepted_row_count", True),
+        ("accepted_page_count", 0),
+        ("conflicting_chunk_count", -1),
+        ("conflicting_minute_count", 2),
+        ("failed_predicates", ("sensitive-body",)),
+        ("failed_predicates", ({},)),
+        ("failed_predicates", ("fresh_not_collected",)),
+        ("prospective_active_key_loss_count", -1),
+    ],
+)
+def test_retained_head_conflict_diagnostic_rejects_noncontract_values(field, value) -> None:
+    fields = dict(
+        fresh_status="collected",
+        fresh_reason=None,
+        accepted_row_count=1,
+        accepted_page_count=1,
+        conflicting_chunk_count=1,
+        conflicting_minute_count=1,
+        failed_predicates=(),
+        prospective_active_key_loss_count=0,
+    )
+    with pytest.raises(
+        ValueError, match="^private intraday retained conflict diagnostic is invalid$"
+    ):
+        private_intraday_backfill.KisPaperRetainedHeadConflictDiagnostic(
+            **(fields | {field: value})
+        )
+    valid = private_intraday_backfill.KisPaperRetainedHeadConflictDiagnostic(**fields)
+    assert valid.to_payload()["failed_predicates"] == []
+    assert len(valid.to_payload()) == 8
 
 
 def test_quarantined_head_marker_requires_exact_snapshot_identity() -> None:

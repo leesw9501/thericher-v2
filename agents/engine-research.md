@@ -8,8 +8,36 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
-Active company objective: kis-paper-head-retained-conflict-recovery-v1.
-Engine independent package: existing foundation checkpoint eligibility audit.
+Active company objective: kis-native-timesfm-m5-24-development-v1; exact fixed
+KIS25-session source attestation and M5-24/20log-bps/30cell contract precede one
+bounded CUDA batch. No actual new inference/allocation before freeze.
+Engine independent package complete/independently accepted: source-free SPY/TLT/GLD named
+input/ledger prototype; parent233 focused tests pass. Exact previous calendar
+CLOSE history, common caller-bound vintage, required marks/no date deletion,
+shared NAV1/overnight carry/actual-notional fees/price-scale invariance covered.
+Legacy SYMBOLS/source contracts unchanged; no actual acquisition, market
+outcomes, model/GPU allocation. No source or model publication is needed.
+Retained foundation metadata audit confirms TimesFM90 and Chronos-2 126 actual
+developmental cells; these are not synthetic-only, selection or Paper evidence.
+TimesFM exact official dated weight/source linkage precedes2026 targets, but
+full corpus instrument/period coverage remains not_disclosed. A seven-decision
+monthly successor is low evidence value; choose crossasset input preparation
+rather than another outcome-informed rescue. New vintage/source coverage is
+unobserved; no retained TLT/GLD dataset is claimed.
+Tiingo-specific rights hold: current https://app.tiingo.com/tos/ updatedOct6
+section1.6(a) disallows Starter/Trial durable source AND derived products.
+Account plan, supplemental grant and actual notice/applicability are unknown;
+operator asked. No new Tiingo acquisition, fit or numeric readback; no old-byte
+deletion or indefinite-retention claim. Pure contract and KIS-independent work
+continue. KIS daily trio/modification semantics are a future capability question,
+not an adjusted/total-return substitute already proved.
+Parent and Engine independently re-retrieved AQR author-source12-month mechanism
+and diversification references;58futures/forwards are not a three-ETF long-only
+replication. Source: https://www.aqr.com/Insights/Research/Journal-Article/Time-Series-Momentum.
+Existing actual foundation roots:
+D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1;
+Chronos checkpoint evidence:
+D:\thericher-v2\model-artifacts\research\engine-source-retrieval\chronos2-runtime-20261002-v1\checkpoint-api.json.
 Ready distinct input: Board direct H15 snapshot20261007T204212Z under
 D:\market_data\us_equities\federal_reserve_h15;2Y12584/10Y16176 valid dates,
 12584 common through2026-10-06. Exact re-retrieved raw/hash-to-canonical parent
@@ -34,8 +62,8 @@ No threshold/lag/ETF/model rescue or promotion.87 focused synthetic cases;
 parent changed-path authority448passes/2 expected skips11.02s;
 full10,721passes/22skips333.82s,eightworkers/10,743 collected/clean helper.
 Ruff/three sample Compose pass; independent exact kill/registry review agrees.
-Next independent ready preparation: source/metadata-only existing foundation
-checkpoint eligibility audit, not another architecture reroll or allocation.
+Foundation checkpoint eligibility audit is complete; next preparation is the
+named cross-asset contract above, not another architecture reroll or allocation.
 Economic source is inspiration, not near-term-forward-spread replication or
 evidence that recession prediction yields tradable stock profits.
 Claude join challenge: review_unavailable/cli_nonzero, not substantive verdict:
@@ -112,7 +140,7 @@ eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
 | Queue | Current bounded fact |
 | --- | --- |
 | Breadth | Signed-clock54-cell family is closed/rejected. Next source/input hypothesis must add economic information or universe coverage, not reroll a failed price-only architecture/window. Data authentication recovery is a ready independent product priority. |
-| Depth / GPU | No ready frozen predictive successor. Float64 TCN consumer-GPU timing is not a general CUDA fault or GPU prohibition; new eligible float32 sequence work remains possible under a frozen economic hypothesis. No utilization-only job. |
+| Depth / GPU | Source-only next proposal: fixed KIS-native TimesFM2.5 M5/24-OPEN context, QQQ/SPY three clocks, one20bps threshold,30 policy/cost/block cells. Needs exact25-session input attestation and its own frozen development contract; no reservation/actual inference yet. Float64 TCN timing is not a general CUDA fault. |
 | Ensemble | No current survivor/output set; do not combine rejected families as a rescue. New exploratory composition needs its own chronological out-of-fold contract. |
 | Replication | No selected candidate; revised/seen studies cannot become fresh independent evaluation by renaming them. |
 

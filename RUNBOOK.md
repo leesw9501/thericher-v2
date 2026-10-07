@@ -2,7 +2,40 @@
 
 ## Current Head Recovery And Closed Macro Policy
 
-NEXT_CODEX_GOAL.md owns kis-paper-head-retained-conflict-recovery-v1.
+Tiingo source-specific rights uncertainty: https://app.tiingo.com/tos/,
+updated2026-10-06 section1.6(a) prohibits Starter/Trial persistent Tiingo data
+and derived products. Existing registered transition/notice and applicable
+account/supplemental terms are unknown; operator asked source-safe plan facts.
+Do not run new Tiingo acquisition, fit or numeric readback (including the old
+--verify example below) pending clarification. Do not delete historical files
+or assert permanent retention permission. KIS/pure-code work remains ready.
+Independent rights review agrees with this limitation; Claude attempt was
+execution_policy_rejected/not run, not agreement. Categorical receipt:
+D:\thericher-v2\model-artifacts\research\source-discovery\claude-tiingo-retention-rights-20261008-v1.json.
+
+Head v2 publication/source pins:
+D:\thericher-v2\model-artifacts\data\kis-paper-head-retained-conflict-recovery-v1\publication-20261008-v2.json.
+Image sha256:b7fcf975e516ddfa69c5d657fd9fdf6b35227b7f0e19a2d5716f6867a97c711b;
+Paper/web aliases unchanged.959 affected serial passes/58.43s and final source
+review supported-with-limits. Exact direct07:49 runtime root:
+D:\thericher-v2\model-artifacts\data\head-r8\intraday-head-20261007T224943408578Z.
+Terminalb80a8a5a.../schedule6474faaf.../capturea617a167... reader-verified.
+Both7pages840rows admitted,1conflictingchunk+minute/zero old-onlyloss/empty
+failed predicates; fresh stays partial/minute_response_invalid. Eighth page
+mixed_exchange_dates/head_contract excluded. Coverage incomplete/current_session_short;
+availability/finality not_observed. Orphan restart preserves partial/reason;
+prior-call diagnostics stay immutable and are omitted from the new projection.
+Runtime original456-file/history-index unchanged assertions are not independent
+raw-byte rechecks or price-correctness proof. Prior07:21 rejected attempt remains
+immutable at D:\thericher-v2\model-artifacts\data\head-r8\intraday-head-20261007T222101735526Z.
+Current next_due belongs to the existing task, not either direct run; no task,
+schedule, account or order invocation. Direct provenance is not OS origin proof.
+Independent actual-runtime reattachment supported-with-limits. Full company
+authority11098passes/22skips/35warnings338.41s,eightworkers/11120collected,
+clean helper/exit0; Ruff/three sample Compose pass. No required session remains.
+
+NEXT_CODEX_GOAL.md now owns kis-native-timesfm-m5-24-development-v1; head
+conflict recovery above is complete as scoped, not complete-session evidence.
 Do not delete/reset the head cache or manually invoke a Windows task. Existing
 head owner nextOct9 00:29 KST; narrow source/runtime recovery is owned by Data.
 Exact06:20 chain and measured partial-head predicate facts are in agents/data.md.

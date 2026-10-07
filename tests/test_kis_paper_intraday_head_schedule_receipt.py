@@ -23,6 +23,196 @@ from thericher_v2.ops.kis_paper_intraday_head_schedule_receipt import (
 _COMPOSE = Path(__file__).resolve().parents[1] / "docker-compose.yml"
 
 
+def _retained_conflict_capture_payload() -> dict[str, object]:
+    diagnostic = {
+        "fresh_status": "collected", "fresh_reason": None,
+        "accepted_row_count": 240, "accepted_page_count": 2,
+        "conflicting_chunk_count": 1, "conflicting_minute_count": 1,
+        "failed_predicates": ["quarantine_disabled"],
+        "prospective_active_key_loss_count": 17,
+    }
+    return {
+        "schedule_run_id": "intraday-head-20260728T153000Z",
+        "targets": [
+            {
+                "target_key": "QQQ/NAS/1m", "status": "rejected", "row_count": 0,
+                "exact_overlap_rows": 0, "reason": "minute_duplicate_conflict",
+                "conflict_origin": "retained_cache",
+                "retained_head_conflict_disposition": "preserved",
+                "retained_head_conflict_diagnostic": diagnostic,
+            },
+            {
+                "target_key": "SPY/AMS/1m", "status": "collected", "row_count": 120,
+                "exact_overlap_rows": 0, "reason": None,
+                "conflict_origin": None, "retained_head_conflict_disposition": "not_applicable",
+            },
+        ],
+    }
+
+
+@pytest.mark.parametrize("case", [
+    "valid", "absent", "legacy", "null", "extra", "missing", "bool", "float",
+    "budget", "rows", "origin", "outcome", "row_count", "legacy_with_diagnostic",
+    "unknown_run", "fresh_partial", "successful_replacement",
+    "partial_success", "partial_reason", "partial_reason_mismatch", "partial_loss",
+    "partial_failed_predicate", "partial_loss_rejected",
+])
+def test_recovery_reconstructs_only_closed_bound_retained_conflict_diagnostic(case: str) -> None:
+    payload = _retained_conflict_capture_payload()
+    target, peer = payload["targets"]
+    diagnostic = target["retained_head_conflict_diagnostic"]
+    if case in {"absent", "legacy"}:
+        target.pop("retained_head_conflict_diagnostic")
+    if case in {"legacy", "legacy_with_diagnostic"}:
+        for item in (target, peer):
+            item.pop("conflict_origin")
+            item.pop("retained_head_conflict_disposition")
+    if case == "null":
+        target["retained_head_conflict_diagnostic"] = None
+    elif case == "extra":
+        diagnostic["private_body"] = "synthetic-secret"
+    elif case == "missing":
+        diagnostic.pop("fresh_reason")
+    elif case == "bool":
+        diagnostic["accepted_page_count"] = True
+    elif case == "float":
+        diagnostic["accepted_page_count"] = 2.0
+    elif case == "budget":
+        diagnostic["accepted_page_count"] = 5
+    elif case == "rows":
+        diagnostic["accepted_row_count"] = 241
+    elif case == "origin":
+        target["conflict_origin"] = "candidate_batch"
+    elif case == "outcome":
+        target["status"] = "partial"
+    elif case == "row_count":
+        target["row_count"] = 1
+    elif case == "unknown_run":
+        payload["schedule_run_id"] = "intraday-head-unit"
+    elif case == "fresh_partial":
+        diagnostic.update(fresh_status="partial", fresh_reason="minute_response_invalid",
+                          failed_predicates=["fresh_not_collected"])
+    elif case == "successful_replacement":
+        diagnostic["failed_predicates"] = []
+        target.update(status="collected", row_count=240, reason=None, conflict_origin=None,
+                      retained_head_conflict_disposition="not_applicable")
+    elif case.startswith("partial_"):
+        diagnostic.update(fresh_status="partial", fresh_reason="minute_response_invalid",
+                          failed_predicates=[], prospective_active_key_loss_count=0)
+        target.update(status="partial", row_count=240, reason="minute_response_invalid",
+                      conflict_origin=None, retained_head_conflict_disposition="not_applicable",
+                      failure_phase="head_contract", failure_code="mixed_exchange_dates",
+                      failure_page_ordinal=3, requested_pages_per_target=4)
+        if case == "partial_reason":
+            diagnostic["fresh_reason"] = "auth_rejected"
+            target["reason"] = "auth_rejected"
+        elif case == "partial_reason_mismatch":
+            diagnostic["fresh_reason"] = "auth_rejected"
+        elif case == "partial_loss":
+            diagnostic["prospective_active_key_loss_count"] = 1
+        elif case == "partial_failed_predicate":
+            diagnostic["failed_predicates"] = ["fresh_not_collected"]
+        elif case == "partial_loss_rejected":
+            diagnostic.update(failed_predicates=["partial_active_key_loss"],
+                              prospective_active_key_loss_count=1)
+            target.update(status="rejected", row_count=0, reason="minute_duplicate_conflict",
+                          conflict_origin="retained_cache",
+                          retained_head_conflict_disposition="preserved")
+            for field in (
+                "failure_phase", "failure_code", "failure_page_ordinal",
+                "requested_pages_per_target",
+            ):
+                target.pop(field)
+    if case not in {
+        "valid", "absent", "legacy", "fresh_partial", "successful_replacement",
+        "partial_success", "partial_loss_rejected",
+    }:
+        with pytest.raises(
+            KisPaperIntradayHeadScheduleReceiptError, match="schedule_capture_receipt_invalid",
+        ):
+            schedule_receipt._collection_recovery_targets_from_capture_payload(payload)
+        return
+    result = schedule_receipt._collection_recovery_targets_from_capture_payload(payload)
+    if case in {"absent", "legacy"}:
+        assert "retained_head_conflict_diagnostic" not in result[0].safe_payload()
+    else:
+        assert result[0].safe_payload()["retained_head_conflict_diagnostic"] == diagnostic
+    assert "retained_head_conflict_diagnostic" not in result[1].safe_payload()
+    if case == "partial_success":
+        safe = result[0].safe_payload()
+        assert safe["status"] == "partial"
+        assert safe["reason"] == "minute_response_invalid"
+        assert safe["failure_page_ordinal"] == 3
+        assert safe["failure_phase"] == "head_contract"
+        assert safe["failure_code"] == "mixed_exchange_dates"
+        assert safe["requested_pages_per_target"] == 4
+
+
+@pytest.mark.parametrize("partial", [False, True])
+def test_recovery_retained_conflict_counts_stay_in_exact_capture_hash_chain(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, partial: bool,
+) -> None:
+    def forbidden(*_args, **_kwargs):
+        raise AssertionError("network forbidden")
+    monkeypatch.setattr(socket, "create_connection", forbidden)
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    artifact, cache = tmp_path / "artifacts", tmp_path / "cache"
+    payload = _retained_conflict_capture_payload()
+    if partial:
+        target = payload["targets"][0]
+        target["retained_head_conflict_diagnostic"].update(
+            fresh_status="partial", fresh_reason="minute_response_invalid",
+            failed_predicates=[], prospective_active_key_loss_count=0,
+        )
+        target.update(status="partial", row_count=240, reason="minute_response_invalid",
+                      conflict_origin=None, retained_head_conflict_disposition="not_applicable",
+                      failure_phase="head_contract", failure_code="mixed_exchange_dates",
+                      failure_page_ordinal=3, requested_pages_per_target=4)
+        payload["status"] = "incomplete"
+    run_id = payload["schedule_run_id"]
+    capture = _write_capture_receipt(
+        cache_root=cache, payload_overrides=payload,
+        coverage_status="short" if partial else "complete",
+    )
+    write_kis_paper_intraday_head_schedule_receipt(
+        **(_complete_kwargs() | {"run_id": run_id, "collection_exit_code": 1}),
+        **(capture.binding_kwargs | {"session_capture_run_id": run_id}),
+        artifact_root=artifact, repository_root=repo,
+        observed_at=datetime(2026, 7, 28, 15, 31, tzinfo=UTC),
+    )
+    original = {
+        path: path.read_bytes() for root in (artifact, cache) for path in root.rglob("*.json")
+    }
+    for _ in range(2):
+        fact = schedule_receipt.read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+            artifact, repository_root=repo, capture_cache_root=cache,
+        )
+        safe = fact.safe_payload()
+        assert safe["capture_binding_status"] == "verified"
+        assert safe["targets"][0]["retained_head_conflict_diagnostic"] == (
+            payload["targets"][0]["retained_head_conflict_diagnostic"]
+        )
+        assert "retained_head_conflict_diagnostic" not in safe["targets"][1]
+        if partial:
+            assert safe["targets"][0]["status"] == "partial"
+            assert safe["targets"][0]["reason"] == "minute_response_invalid"
+            assert safe["targets"][0]["failure_page_ordinal"] == 3
+        assert all(
+            word not in json.dumps(safe) for word in ("private_body", "manifest_hash", "raw_sha256")
+        )
+    assert all(path.read_bytes() == raw for path, raw in original.items())
+    mutated = json.loads(capture.path.read_bytes())
+    mutated["targets"][0]["retained_head_conflict_diagnostic"]["accepted_row_count"] = 239
+    capture.path.write_text(json.dumps(mutated), encoding="ascii")
+    read = schedule_receipt.read_kis_paper_intraday_head_collection_recovery_from_artifact_root
+    unavailable = read(
+        artifact, repository_root=repo, capture_cache_root=cache,
+    )
+    assert unavailable.capture_binding_status == "evidence_unavailable"
+    assert unavailable.targets == ()
+
+
 def test_schedule_receipt_writes_a_complete_source_safe_no_intent_outcome(tmp_path: Path) -> None:
     repository_root = tmp_path / "repository"
     repository_root.mkdir()
