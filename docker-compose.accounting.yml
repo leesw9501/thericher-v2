@@ -1,0 +1,9 @@
+services:
+  web:
+    volumes:
+      - type: bind
+        source: D:/thericher-v2/model-artifacts/execution/kis-paper-qqq-unit-cycle/gross-roundtrip-new-account-20261008-v2/outcome.json
+        target: /app/receipts/qqq-gross-roundtrip.json
+        read_only: true
+        bind:
+          create_host_path: false

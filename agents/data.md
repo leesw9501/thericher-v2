@@ -19,8 +19,25 @@ geometry has2,008 scheduled keys:1,274 TRAIN fit rows and356 comparison keys
 per ETF/90 dates. Comparison exclusions:4 calendar-input,2 calendar-target,
 2 required-past-M1 shortfalls, not a whole-panel block. C+1..C+30 target support
 does not affect past-input masks. Models/losses belong to Research, not a Data
-qualification, current availability or Paper input. Current head00:29 October8
-remains task-owned/unobserved; no collector/cursor/pace/schedule expansion.
+qualification, current availability or Paper input. The exact00:29 October8
+head chain is now validated as collector_nonzero/collection_exit_nonzero,
+reason_unavailable; coverage incomplete, not a diagnosed provider failure.
+Run `intraday-head-20261007T1529009204384Z`, completed00:29:18.370635 KST;
+terminal `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-invocation-v1\intraday-head-20261007T1529009204384Z\terminal.json`.
+Scheduler Ready/next_due02:28 KST, no manual invocation or schedule change.
+Bounded metadata reconciliation validates six manifest hashes for October5-7:
+119/390 retained regular minutes per ETF/date, zero additional shared complete
+dates beyond the25-date baseline. October7 was still open at inspection.
+Index generation253/SHA256fa4f30632dc28d8b5cf50bd84f425d11cbaddd13f4d16afd31acab312467cf27
+was byte-stable. Read-only diagnosis is complete: each target retained three
+accepted pages/360 rows then minute_response_invalid on the fourth attempt.
+The failed-page subcause was not recorded. The launcher accepts only a legacy
+not_executed error shape, explaining reason_unavailable for this bound partial.
+11:29 Eastern/forming-bar exclusion explains119 completed regular minutes;
+backward pages cannot supply not-yet-observed future session minutes.
+Next package adds categorical phase/subcode/attempt ordinal to existing owner/
+capture/adapter/reader only, no raw retention, extra request, pacing or schedule
+change. This scoped failure does not defer Research, UI or Paper.
 
 The forward-risk consumer reattests the existing normalization/lineage, both
 canonical CSV hashes and251 scheduled NYSE dates without acquisition or source

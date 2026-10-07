@@ -36,12 +36,25 @@ contract `sha256:97f39d3e2ae3928eae165149055b057c879d5e8ce839c20c095f38d0d862fd1
 result `sha256:93b42e1e999afe437111b36ecb6e10ddfd9bd2c17c40e46fd143d4ba27ac25a3`;
 canonical numeric model `sha256:1cc3d7d00a16f0702b2de5c457d3fd75ef695967317475a4246107d50b9f29a5`.
 Frozen code and models stay outside Git. Registry frozen/outcome both recorded.
-62 focused tests pass. Invoked independent review found optional-Torch test
-portability and registry-only recovery gaps; reversible fixes are role-owned,
-not a repeat fit or a reopening of this failed hypothesis. The frozen v1 runner
-remains the replay source. No ready frozen successor training campaign exists.
-Research now prioritizes a genuinely different evidence-backed hypothesis,
-not GPU utilization or further tuning of this closed family.
+92 focused volume/recovery tests pass. Optional-Torch portability and
+registry-only recovery gaps are fixed; actual idempotent recovery independently
+replays frozen weights with zero fits/GPU probes, then reattaches only registry
+outcome. Registry SHA2565f45f1d465d4ff9204b8648bb563333d34ca90a3639039d29f132bd684677057;
+no attempt/contract/model/result rewrite or reopening of this failed hypothesis.
+The original frozen v1 runner remains its replay source.
+Next distinct hypothesis is joint three-ETF quarterly composition, measuring
+traded payoff after costs rather than volume/risk loss alone. Pure
+joint_portfolio_covariance.py has64 synthetic tests/independent review:252 past
+returns/253 closes, exact caller schedule/vintage/cutoff, immutable private
+numeric output, source-safe facts only. Actual three-date input smoke is being
+prepared externally; no source values, fit, weights or performance inspected yet.
+Current company contract in NEXT_CODEX_GOAL.md fixes a single covariance/momentum
+blend and controls before outcomes. Existing Tiingo monthly replay is single-ETF
+and paired-allocation NAV liquidates daily; neither is reused as a false
+three-position overnight portfolio. New shared-cash fee accounting is needed.
+No ready frozen successor GPU campaign exists; quarterly sample count does not
+justify a deep model merely to occupy the device. CPU portfolio evidence comes
+first, while ready future predictive campaigns remain independently dispatchable.
 Claude challenge exited1/authentication_expired/review_unavailable, not agreement:
 `D:\thericher-v2\model-artifacts\research\source-discovery\claude-accounting-volume-20261008-v1.json`.
 

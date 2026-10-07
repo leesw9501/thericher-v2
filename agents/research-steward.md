@@ -12,9 +12,12 @@ Contract97f39d3e.../result93b42e1e.../canonical model1cc3d7d0...; exact hashes a
 losses in Engine Research. Frozen/outcome registry custody recorded, worker
 exited/GPU lock absent; independent ALL-RO CPU inference replay/zero refits
 matches. Entire premise rejected; no further training allocation or Paper grant.
-Optional-dependency tests and registry-only recovery are independent code fixes,
-not another appointment. RTX4090 was actually used; peak/utilization not measured.
-No active GPU job or ready frozen successor. Research owns next hypothesis prep.
+Optional-dependency tests and registry-only recovery are implemented; actual
+zero-refit registry recovery matches. Neither is another appointment. RTX4090
+was actually used; peak/utilization not measured. No active GPU job or ready
+frozen successor. Research owns next three-ETF quarterly composition study,
+initially CPU-only: sparse quarterly decisions do not justify utilization work.
+Pure target-free covariance helper/smoke preparation allocates no GPU/holdout.
 
 October6 forward-variance target/input preparation is source/hash-bound and
 complete:251 paired past inputs/249 supported targets per ETF/two early-close

@@ -14,6 +14,20 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October8 accounting console is published at http://127.0.0.1:8787. One exact
+historical receipt/hash yields negative gross sign/two fills/one closed round
+trip; fees/settled/net remain unknown. No broker call/private order mount/new
+producer. Desktop/mobile geometry and HTML/JSON agree; missing receipt affects
+only its panel via an optional exact-file RO Compose overlay. Current account
+snapshot was unavailable at publication, correctly UNKNOWN rather than zero.
+00:28:07 KST prior snapshot had one SPY account record/zero opens, not owned PnL.
+Evidence `D:\thericher-v2\model-artifacts\execution\paper-accounting-console-20261008-v1\outcome.json`.
+230 related serial passes/full9,497 passes/22 skips/35 warnings/326.64s/eight
+workers/clean helper,9,519 collected; Ruff/three sample Compose variants pass.
+Next independent package: exact current-account SPY owned-inventory attribution
+from existing strict private parsers. No new order/reset or account-vs-owned
+conflation; an open position is not a realized round trip.
+
 October8 `new-account-paper-fill-accounting-v1` is complete. One pure projector
 in the existing budget module independently receives frozen account/basis/owner
 expectations, validates exact terminal cumulative fills and replays only the
@@ -43,13 +57,14 @@ Existing SPY23:50 October7 opportunity produced the exact public outcome
 SHA256 `e0c289caff41462608b5a5f937278cdc39a894eea8b92a247dfc9b0c73298654`:
 order_complete/exact_order_and_position_reconciled at23:50:44 KST. Scheduler
 Ready/exit0/next October8 23:50; dispatch is not hash-bound to that outcome.
-00:12:43 categorical loopback projection shows one SPY account position record
+00:28:07 categorical loopback projection showed one SPY account position record
 and zero SPY opens; that is account-level evidence, not strategy ownership or
 a SPY round trip/PnL. Exact private SPY custody remains a separate package.
-Data's00:29 October8 opportunity remains owned, not manually invoked.
+Data's00:29 October8 chain is now bound/nonzero/incomplete;02:28 next_due remains
+owned, not manually invoked. It is not a Paper hold.
 
 October7 corrected-account QQQ/NASD unit cycle COMPLETED at22:34:57 KST:
-public cycle `qqq-unit-new-account-20261007-v1`, explicit entry tag
+canonical cycle shown above (old descriptive label corrected), explicit entry tag
 `new-account-20261007-v1`. Two worker visits, one actual BUY submission and
 one actual SELL submission, each with an exact full one-share fill. Both
 immutable outcomes are order_complete/exact_order_and_position_reconciled.

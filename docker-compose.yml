@@ -46,6 +46,10 @@ services:
       - /app/runtime/state/kis_paper_canary.json
       - --market-data-freshness
       - /app/runtime/state/kis_paper_intraday_freshness.json
+      - --qqq-gross-receipt
+      - /app/receipts/qqq-gross-roundtrip.json
+      - --qqq-gross-receipt-sha256
+      - c2fbf15660751ae50c23a6e81b5c2d62f7a55b581504d9157c0c613112adf45f
     environment:
       THERICHER_MODE: off
       THERICHER_DASHBOARD_TOKEN: ${THERICHER_DASHBOARD_TOKEN:-}

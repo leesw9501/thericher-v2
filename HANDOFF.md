@@ -45,10 +45,28 @@ implementation package, not a repeat fit. Claude challenge is unavailable
 (authentication_expired), not agreement; independent Validation supplied review.
 Closed forward-risk CPU family remains rejected with exact evidence in Research.
 
-Next single company objective is `paper-accounting-console-v1`: show existing
-fresh SPY account facts alongside hash-pinned historical QQQ gross sign in the
-credential-free loopback console. No private order mount/new broker call or
-account-vs-owned/PnL/freshness conflation. Current Research/Data continue.
+`paper-accounting-console-v1` COMPLETED: published existing loopback web only,
+with exact hash-pinned historical QQQ negative gross sign/two fills/one round
+trip, separate from current account facts. Default Compose tolerates an absent
+receipt; optional docker-compose.accounting.yml mounts only that exact file RO.
+Actual HTML/JSON agree, desktop1440/mobile390 contents fit. Dashboard source
+hashes match image b98256a9...; no private order mount/broker call/new producer.
+At publication current account snapshot is unavailable (five-minute TTL), so
+positions/open orders stay UNKNOWN;00:28:07 KST had one SPY record/zero opens.
+Historical QQQ remains available and never proves current account flatness.
+Evidence `D:\thericher-v2\model-artifacts\execution\paper-accounting-console-20261008-v1\outcome.json`.
+230 changed-path serial passes16.47s; full9,497 passes/22 skips/35 warnings,
+326.64s/eight workers/clean exit,9,519 collected; Ruff/default+research+overlay
+sample Compose pass. Registry-only volume recovery is implemented/actually
+replayed with zero refits; fixed original contract/models/result stay unchanged.
+Pure three-ETF252-return covariance input helper has64 synthetic passes and
+independent review, no actual input qualification or training yet.
+
+Next objective `joint-etf-quarterly-allocation-development-v1` measures costed
+three-ETF composition, not just prediction loss or lower exposure. One frozen
+covariance/momentum blend and passive/component controls, revised seen data,
+no sealed/Paper promotion. Data diagnoses its exact fourth-page capture fault
+and Execution prepares SPY owned-inventory attribution independently.
 
 Corrected .env uses a DIFFERENT mock account. Existing logical private volume
 now points to `thericher-v2-paper-canary-private-acct-20261007-v1`; all seven
@@ -76,7 +94,8 @@ cannot select another entry. Never route old-account recovery here.
 SPY October7 23:50 public result is order_complete/exact_order_and_position_reconciled,
 with account-level one SPY position record/zero opens at00:12:43 KST. Private
 strategy ownership/PnL is not yet reattached. Scheduler Ready/next October8
-23:50; Data head next00:29 KST October8. Task exit is not fill/capture evidence.
+23:50. Exact Data00:29 chain is collector_nonzero/reason_unavailable/incomplete;
+next_due02:28 KST. Task exit is not fill/capture evidence.
 Old prospective QQQ child bypassed shared allocation custody. ONLY that child's
 --execute flag is removed; collection/named budget executors stay enabled.
 Exact offline preview/no-validation tuple is tested; actual next scheduled
@@ -101,7 +120,12 @@ Eight-page-ceiling capture retained six pages/720 rows, then an invalid seventh
 page. Partial/subtype unknown is not success, exhaustion or a provider rate cap.
 SPY120 is not a complete matched session. Direct capture is not Scheduler proof.
 
-Existing Data owner is Ready, next_due October8 00:29 KST. Earlier06:20 mixed/
+Existing Data owner is Ready, next_due October8 02:28 KST. Exact00:29 nonzero
+chain retained three pages per ETF then fourth-page minute_response_invalid;
+119 complete regular minutes reflect11:29 Eastern forming-bar cutoff, not slow
+collection. Detailed failed-page cause is unknown; Data owns a scoped diagnostic
+repair without extra requests, raw retention or pacing/schedule changes.
+Earlier06:20 mixed/
 recovery receipt remains separate. Paired-head integration passed agent341,
 parent460 serial tests/full8,570 passes/22 skips/325.47s/eight workers/clean
 helper, matching8,592 collected. Ten existing Data consumers match600 source/
@@ -109,7 +133,7 @@ configuration hashes, image:
 sha256:289b72095047fa59fb7eb54ab318caed59cce375eae7175eb1b4742bb7c40ce9.
 Existing head owner uses new explicit pair flag; old QQQ-only/default behavior
 is unchanged. No task/service invocation, schedule or Paper-alias change.
-Actual paired-head SPY yield remains unobserved, not a completed capture.
+October8 paired-head SPY prefix is now observed/partial, not a completed capture.
 
 The isolated two-date probe returned120 September1 midday QQQ minutes and
 empty August3/partial, one token/two requests/zero daily. Raw rows discarded;

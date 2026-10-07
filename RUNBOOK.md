@@ -3280,6 +3280,33 @@ order by itself.
 
 ## Local KIS Paper Operations Console
 
+October8 historical accounting publication uses the existing web service only.
+Default web tolerates a missing receipt. When the exact historical receipt exists,
+add only its optional RO bind; do not mount the artifact root/private order volume:
+
+```powershell
+docker compose --env-file .env.example -f docker-compose.yml -f docker-compose.accounting.yml up -d --no-deps --build web
+```
+
+This host currently has no dashboard token; preserve any locally configured auth
+when using the deployment command on another configuration. It does not start a
+Paper/Data service. URL remains http://127.0.0.1:8787; `/state` exposes only the
+historical sign/count/time/pin projection, never private accounting inputs.
+Current account snapshot's existing five-minute TTL remains unchanged. An
+unavailable current snapshot stays unknown; the historical QQQ receipt remains
+available and cannot prove current flatness. Actual desktop1440/mobile390 fit
+checks and categorical HTML/JSON readback pass. Exact publication receipt:
+`D:\thericher-v2\model-artifacts\execution\paper-accounting-console-20261008-v1\outcome.json`.
+Do not use a screenshot of the account table; retained images crop only the
+source-safe historical panel.
+
+Volume runner `scripts/run_firstrate_causal_volume_sequence.py` supports
+`--mode recover`: exact original frozen contract/result/model/attempt/code hashes,
+existing network-none2CPU/6GiB runtime, every study/source mount RO and registry
+root RW only. It launches original frozen verify on CPU with optimizer/fit/GPU
+probes forbidden, then records the idempotent existing outcome. Actual recovery
+passes with zero fits; never rewrite the original result or repeat training.
+
 Start or rebuild the local-only console with:
 
 ```powershell

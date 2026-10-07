@@ -2,59 +2,91 @@
 
 ## Objective
 
-Complete `paper-accounting-console-v1`: expose existing fresh SPY account facts
-and exact hash-pinned historical QQQ gross accounting in the current credential-
-free loopback dashboard. This improves Paper-state visibility and PnL attribution,
-not strategy profitability. Exactly one company objective.
+Complete `joint-etf-quarterly-allocation-development-v1`: one costed, three-ETF
+joint-composition experiment using retained adjusted D1 data. This improves
+portfolio research and traded-payoff validation, not GPU utilization or a new
+report/gate system. Exactly one company objective.
 
 ## Starting Evidence
 
-QQQ accounting is complete: negative gross sign/two exact fills/one round trip,
-three identical restart replays, fees/settled/net unknown. Exact historical input:
-`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\gross-roundtrip-new-account-20261008-v2\outcome.json`
-SHA256 `c2fbf15660751ae50c23a6e81b5c2d62f7a55b581504d9157c0c613112adf45f`.
-Existing00:12:43 KST account projection has one SPY position record/zero opens;
-that is account-level evidence, not strategy-owned inventory or a SPY round trip.
-The volume GRU/Ridge family completed/rejected with exact zero-refit replay.
+Paper accounting console is published at http://127.0.0.1:8787: historical QQQ
+negative gross sign/two fills/one round trip, current account freshness separate.
+The causal-volume CUDA GRU family is closed/rejected with zero-refit recovery.
+Pure joint_portfolio_covariance.py has64 synthetic tests/independent review.
+Existing monthly NAV is single-ETF; paired NAV liquidates daily. Neither proves
+three-position/shared-cash overnight accounting. All Tiingo periods below are
+revised, previously seen development data, never a fresh holdout.
 
-## Bounded Work
+## Frozen Research Direction
 
-Execution/UI reuses dashboard view/server and existing `/` and `/state` paths.
-SPY positions/open orders already come from sanitized account snapshots. Label
-them account facts; stale/missing stays unknown, never zero. No new collector.
+SPY/QQQ/IWM from the existing exact August9 adjusted Tiingo snapshot; no new
+acquisition. At each quarter's first scheduled NYSE OPEN, use253 prior scheduled
+completed closes/252 returns. One fully invested long-only candidate:
+50% minimum-variance weights (fixed10% diagonal covariance shrinkage) plus
+50% momentum-rank weights (252-session return excluding latest21 sessions,
+average tied ranks, normalize). No leverage, shorts or volatility-target cash
+switch. Hold between quarterly rebalances; no window/blend/cost selection.
 
-Add a small exact-file/hash reader and separate historical QQQ accounting panel.
-Only status/sign/counts/observation time/provenance; no amounts, account/order
-identifiers or private fill state. A historical owned-flat round trip never
-proves current flatness or fresh SPY state. Invalid/missing/substituted bytes
-hide only accounting. Do not import the broker-bearing accounting projector.
-Bind only the exact receipt RO, not the artifact root or private volume.
-No credential, broker, endpoint, scheduler, order, public port or approval change.
-Existing emergency/buy/sell controls remain unchanged.
+TRAIN2002-2012; comparisons2013-2019 and2020-2026-07 separately. Freeze exact
+scheduled windows, source/code pins, decision/execution assumptions, metric
+definition and all missing-input rules before outcomes. Per-side costs2.5/5/10bps
+on actual traded notional, including initial entry/final liquidation. Adjusted
+fractional marks are a hypothetical NAV proxy, not actual shares/dividends/fills.
 
-Tests cover exact pin/schema/category checks, stale-account isolation, HTML/JSON
-agreement, no financial leakage and unchanged read-only GET behavior. Publish
-only the affected local dashboard service after verification; inspect categorical
-real `/state` and the rendered view without outputting private financial values.
-Preserve current Paper/Data service ownership and schedules.
+Controls: quarterly equal-weight, covariance-only, momentum-only and one
+TRAIN-frozen passive beta-matched ETF/cash control. Matching/calibration uses
+TRAIN only; infeasible matching is a scoped unresolved comparison, not repaired
+using evaluation outcomes. Cash earns zero. Freeze one exact matching method
+and log-growth-minus-risk utility before replay, no comparison-driven choice.
 
-Engine Research independently fixes optional-Torch test portability and exact
-registry-only recovery for its completed runner. No repeat fit, contract/result/
-model overwrite, tuning or reopening of the rejected family. GPU appointment
-is closed; prepare a genuinely different evidence-backed hypothesis, not busywork.
-Data00:29 October8 remains task-owned; reattach only through its existing exact
-offline reader when due, without manual invocation or foreground waiting.
+Strongest kill: at10bps in BOTH comparison periods the candidate must improve
+net terminal NAV and fixed utility over passive controls, and utility over both
+component ablations. Lower beta/drawdown alone cannot pass. No claims beyond
+development evidence, sealed access, Paper promotion or execution profitability.
+Quarterly sample count does not currently justify DL; do not allocate dummy GPU
+work. Another genuinely ready frozen predictive campaign may proceed independently.
+
+## Parallel Owned Work
+
+Engine Research first performs the external frozen three-date input smoke
+(2002-01-02,2013-01-02,2020-01-02) and full quarterly input coverage checks.
+Current/future value/support mutations must not affect past inputs; a required
+past gap stays scoped unavailable. Implement a small three-position/shared-cash
+analytical ledger: OPEN rebalance, overnight carry, CLOSE marks, simultaneous
+post-fee NAV solution. Reuse existing conventions, not three funded sleeves.
+Focused synthetic scalar/vector cashflow parity precedes one600-second CPU
+campaign and immutable no-refit replay. No framework/dependency change.
+
+Data adds only allowlisted failed-page phase/subcode/ordinal to the existing
+head collector/capture/launcher/offline reader, preserving outer reason,
+accepted prefix, page validation, pace, cursor and schedules. Exact00:29 chain
+was collector_nonzero/minute_response_invalid after three accepted pages;
+the specific fourth-page fault is unknown.119 completed minutes reflect11:29
+forming-bar cutoff, not a slow collector. Preserve02:28 KST owned next_due.
+No new diagnostic worker, extra request, raw response/log retention or flood.
+Legacy absent diagnostics stay absent; mismatched bindings never gain a cause.
+
+Execution independently prepares/replays exact new-account SPY owned inventory
+using existing strict account/basis/owner/intent/fill parsers. Keep10-percent
+shared basis and QQQ completed identity unchanged; do not adopt old custody.
+Only scoped read-only projection, no substitute order, schedule or budget reset.
+Account records are not strategy ownership; open inventory is not realized PnL.
 
 ## Completion And Continuation
 
-Actual local dashboard correctly separates historical accounting and fresh
-account facts, with tests and independent review. Use AGENTS.md's changed-path
-serial/eight-worker authority, Ruff/default+research sample Compose. Commit/push
-verified owned changes, refresh current boards, replace this file with one
-material next objective and continue ready work.
+Frozen single campaign yields supported-with-limits, rejected or exact
+input-unavailable evidence; no same-data rescue. Independent review and
+zero-refit readback cover actual costs/input availability and accounting.
+Use AGENTS.md changed-path serial/eight-worker authority, Ruff/default+research
+sample Compose (accounting overlay too if changed). Publish only changed owned
+runtime aliases after verification, never rebuild an unaffected Paper route.
 
-Read `C:\Users\Public\Documents\thericher-v2\HANDOFF.md`, AGENTS.md, RUNBOOK.md
-and active boards after the startup script. Market data stays `D:\market_data`;
-artifacts `D:\thericher-v2\model-artifacts`. Never read/route KIS_LIVE_*, print
-secrets/raw broker/account/order values, pay, accept unclear rights or expose a
-public service. Private Paper work is already authorized.
+Verify, commit/push owned changes, refresh current boards, replace this file
+with exactly one material next objective and continue all ready work.
+
+Read C:\Users\Public\Documents\thericher-v2\HANDOFF.md, AGENTS.md, RUNBOOK.md and
+active boards after .\scripts\start_next_codex_task.ps1. Data stays D:\market_data;
+artifacts D:\thericher-v2\model-artifacts. Standing private Paper authority is in
+AGENTS.md. Never read/route KIS_LIVE_*, print secrets/raw broker/account/order
+values, pay, accept unclear rights, expose a public service or replace a major
+runtime without the reserved operator decision.

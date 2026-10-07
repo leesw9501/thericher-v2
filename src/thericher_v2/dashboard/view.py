@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
+import re
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from html import escape
 from pathlib import Path
@@ -27,6 +30,172 @@ from thericher_v2.execution.paper_canary_runtime import (
 )
 from thericher_v2.serialization import to_jsonable
 from thericher_v2.state.event_log import Event, EventStore
+
+_QQQ_RECEIPT_KEYS = frozenset(
+    {
+        "kind",
+        "source",
+        "currency",
+        "status",
+        "gross_pnl_sign",
+        "matched_fill_count",
+        "roundtrip_count",
+        "owned_flat",
+        "fees",
+        "settled_cash",
+        "net_pnl",
+        "observed_at",
+        "broker_calls",
+        "paper_only",
+        "read_only_private_state",
+        "current_account_binding_matches",
+        "canonical_cycle_id",
+        "private_input_bundle_sha256",
+        "independent_signed_cashflow_replay_matches",
+        "restart_replays",
+        "source_outcomes",
+        "projector_sha256",
+        "replay_source_sha256",
+        "source_hashes_unchanged_from_predispatch",
+        "code_sha256",
+        "limitation",
+    }
+)
+_SHA256 = re.compile(r"[0-9a-f]{64}")
+QQQ_GROSS_ACCOUNTING_CYCLE_ID = (
+    "qqq-unit-108e0e99872a0aac8d13d5bee4fcb6e28b83298fb29e0c41125ec808c34e3381"
+)
+
+
+@dataclass(frozen=True)
+class QqqGrossAccountingReceipt:
+    status: str
+    gross_pnl_sign: str
+    matched_fill_count: int
+    roundtrip_count: int
+    observed_at: str
+    receipt_sha256: str
+    source: str = "kis_paper"
+    instrument: str = "QQQ"
+    currency: str = "USD"
+    fees: str = "not_observed"
+    settled_cash: str = "not_observed"
+    net_pnl: str = "not_observed"
+
+
+def _receipt_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
+    result = dict(pairs)
+    if len(result) != len(pairs):
+        raise ValueError("duplicate_receipt_key")
+    return result
+
+
+def read_qqq_gross_accounting_receipt(
+    path: Path | None,
+    expected_sha256: str | None,
+    *,
+    now: datetime | None = None,
+) -> tuple[str, QqqGrossAccountingReceipt | None]:
+    """Read a pinned historical receipt, never private fills or current account state."""
+    if path is None and expected_sha256 is None:
+        return "unknown", None
+    try:
+        if (
+            path is None
+            or not isinstance(expected_sha256, str)
+            or _SHA256.fullmatch(expected_sha256) is None
+            or path.is_symlink()
+            or not path.is_file()
+        ):
+            return "unavailable", None
+        with path.open("rb") as handle:
+            raw = handle.read(65537)
+        if len(raw) > 65536 or hashlib.sha256(raw).hexdigest() != expected_sha256:
+            return "unavailable", None
+        payload = json.loads(raw, object_pairs_hook=_receipt_object)
+        if not isinstance(payload, dict) or set(payload) != _QQQ_RECEIPT_KEYS:
+            return "unavailable", None
+        fixed = {
+            "kind": "kis_paper_qqq_gross_roundtrip_replay_v1",
+            "source": "kis_paper",
+            "currency": "USD",
+            "status": "gross_realized_observed",
+            "fees": "not_observed",
+            "settled_cash": "not_observed",
+            "net_pnl": "not_observed",
+            "limitation": "gross_only_single_roundtrip_not_strategy_profitability",
+        }
+        true_fields = (
+            "paper_only",
+            "owned_flat",
+            "read_only_private_state",
+            "current_account_binding_matches",
+            "independent_signed_cashflow_replay_matches",
+            "source_hashes_unchanged_from_predispatch",
+        )
+        if (
+            any(payload[key] != value for key, value in fixed.items())
+            or any(payload[key] is not True for key in true_fields)
+            or payload["broker_calls"] is not False
+            or payload["gross_pnl_sign"] not in ("positive", "negative", "zero")
+            or any(
+                type(payload[key]) is not int or payload[key] != value
+                for key, value in (
+                    ("matched_fill_count", 2),
+                    ("roundtrip_count", 1),
+                    ("restart_replays", 3),
+                )
+            )
+            or payload["canonical_cycle_id"] != QQQ_GROSS_ACCOUNTING_CYCLE_ID
+        ):
+            return "unavailable", None
+        hashes = [
+            payload[key]
+            for key in ("private_input_bundle_sha256", "projector_sha256", "replay_source_sha256")
+        ]
+        code = payload["code_sha256"]
+        sources = payload["source_outcomes"]
+        if (
+            not isinstance(code, dict)
+            or not code
+            or not isinstance(sources, list)
+            or len(sources) != 2
+            or any(
+                not isinstance(item, dict)
+                or set(item) != {"path", "sha256"}
+                or not isinstance(item["path"], str)
+                or not item["path"]
+                for item in sources
+            )
+        ):
+            return "unavailable", None
+        hashes.extend(code.values())
+        hashes.extend(item["sha256"] for item in sources)
+        if (
+            any(not isinstance(value, str) or _SHA256.fullmatch(value) is None for value in hashes)
+            or len({item["sha256"] for item in sources}) != 2
+            or len({item["path"] for item in sources}) != 2
+        ):
+            return "unavailable", None
+        observed = datetime.fromisoformat(payload["observed_at"])
+        current = now or datetime.now(UTC)
+        if (
+            observed.utcoffset() != timedelta(0)
+            or current.utcoffset() is None
+            or observed > current
+        ):
+            return "unavailable", None
+        # Receipt age does not expire a closed cycle; owned_flat is deliberately not projected.
+        return "available", QqqGrossAccountingReceipt(
+            status=payload["status"],
+            gross_pnl_sign=payload["gross_pnl_sign"],
+            matched_fill_count=payload["matched_fill_count"],
+            roundtrip_count=payload["roundtrip_count"],
+            observed_at=observed.isoformat(),
+            receipt_sha256=expected_sha256,
+        )
+    except (OSError, TypeError, ValueError, RecursionError):
+        return "unavailable", None
 
 
 @dataclass(frozen=True)
@@ -98,6 +267,8 @@ class DashboardSnapshot:
     paper_canary: PaperCanaryRuntimeSnapshot | None = None
     market_data_freshness_status: str = "unknown"
     market_data_freshness: MarketDataFreshnessRuntimeSnapshot | None = None
+    qqq_gross_accounting_status: str = "unknown"
+    qqq_gross_accounting: QqqGrossAccountingReceipt | None = None
 
     def to_dict(self) -> dict[str, object]:
         payload = to_jsonable(self)
@@ -128,6 +299,8 @@ def build_snapshot(
     paper_account_snapshot_path: Path | None = None,
     paper_canary_runtime_path: Path | None = None,
     market_data_freshness_path: Path | None = None,
+    qqq_gross_receipt_path: Path | None = None,
+    qqq_gross_receipt_sha256: str | None = None,
     now: datetime | None = None,
 ) -> DashboardSnapshot:
     current_time = now or datetime.now(UTC)
@@ -186,6 +359,11 @@ def build_snapshot(
         market_data_freshness_path,
         now=current_time,
     )
+    accounting_status, accounting = read_qqq_gross_accounting_receipt(
+        qqq_gross_receipt_path,
+        qqq_gross_receipt_sha256,
+        now=current_time,
+    )
 
     return DashboardSnapshot(
         mode=mode,
@@ -240,6 +418,8 @@ def build_snapshot(
         paper_canary=paper_canary,
         market_data_freshness_status=market_data_freshness_read.status,
         market_data_freshness=market_data_freshness_read.snapshot,
+        qqq_gross_accounting_status=accounting_status,
+        qqq_gross_accounting=accounting,
     )
 
 
@@ -383,6 +563,7 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
     }}
     .tag-local {{ background: var(--green-soft); color: var(--green); }}
     .tag-unknown {{ background: var(--amber-soft); color: var(--amber); }}
+    .receipt-hash {{ overflow-wrap: anywhere; }}
     @media (max-width: 760px) {{
       .shell {{ padding: 16px; }}
       .topbar, .section-header {{ align-items: start; flex-direction: column; gap: 6px; }}
@@ -546,6 +727,8 @@ def render_dashboard(snapshot: DashboardSnapshot, *, form_nonce: str = "") -> st
       {_paper_canary_details(snapshot)}
     </section>
 
+    {_qqq_gross_accounting_details(snapshot)}
+
     <section class="section" aria-labelledby="data-heading">
       <div class="section-header">
         <h2 id="data-heading">Market data freshness</h2>
@@ -589,6 +772,35 @@ def _paper_account_tag(status: str) -> str:
     return "tag-local" if status == "available" else "tag-unknown"
 
 
+def _qqq_gross_accounting_details(snapshot: DashboardSnapshot) -> str:
+    receipt = snapshot.qqq_gross_accounting
+    details = f'<p class="empty">{_text(snapshot.qqq_gross_accounting_status)}</p>'
+    if receipt is not None:
+        details = f"""
+      <div class="overview">
+        <div><span class="label">Gross sign</span>
+          <strong>{_text(receipt.gross_pnl_sign)}</strong></div>
+        <div><span class="label">Matched fills</span>
+          <strong>{receipt.matched_fill_count}</strong></div>
+        <div><span class="label">Closed round trips</span>
+          <strong>{receipt.roundtrip_count}</strong></div>
+        <div><span class="label">Net PnL</span>
+          <strong>{_text(receipt.net_pnl)}</strong></div>
+      </div>
+      <p class="scope">Closed-cycle replay observed {_text(receipt.observed_at)}.
+        Fees: {_text(receipt.fees)}. Settled cash: {_text(receipt.settled_cash)}.</p>
+      <p class="scope receipt-hash">Receipt SHA256: {_text(receipt.receipt_sha256)}</p>"""
+    return f"""
+    <section class="section" aria-labelledby="qqq-accounting-heading">
+      <div class="section-header">
+        <h2 id="qqq-accounting-heading">Historical QQQ gross accounting</h2>
+        <span class="tag {_paper_account_tag(snapshot.qqq_gross_accounting_status)}">
+          {_text(snapshot.qqq_gross_accounting_status)}</span>
+      </div>
+      {details}
+    </section>"""
+
+
 def _paper_canary_details(snapshot: DashboardSnapshot) -> str:
     canary = snapshot.paper_canary
     if canary is None:
@@ -604,14 +816,14 @@ def _paper_canary_details(snapshot: DashboardSnapshot) -> str:
 
 def _market_data_freshness_table(snapshot: MarketDataFreshnessRuntimeSnapshot | None) -> str:
     if snapshot is None:
-        return "<p class=\"empty\">unknown</p>"
+        return '<p class="empty">unknown</p>'
     rows = "".join(
         f"<tr><td>{_text(item.collection_mode)}</td><td>{_text(item.stream)}</td>"
         f"<td>{_text(item.cache_status)}</td>"
         f"<td>{_text(item.latest_collection_outcome)}</td>"
         f"<td>{_optional_text(_datetime_text(item.last_observed_at_utc))}</td>"
-        f"<td class=\"numeric\">{item.retained_chunk_count}</td>"
-        f"<td class=\"numeric\">{item.partial_chunk_count}</td>"
+        f'<td class="numeric">{item.retained_chunk_count}</td>'
+        f'<td class="numeric">{item.partial_chunk_count}</td>'
         f"<td>{_optional_text(item.detail_code)}</td></tr>"
         for item in snapshot.streams
     )
@@ -638,9 +850,7 @@ def _paper_account_details(
 ) -> str:
     if account is None:
         message = (
-            "No fresh KIS paper snapshot"
-            if status == "unknown"
-            else "KIS snapshot unavailable"
+            "No fresh KIS paper snapshot" if status == "unknown" else "KIS snapshot unavailable"
         )
         return f'<p class="scope">{_text(message)}</p>'
     assert account.orderable_foreign_funds is not None
@@ -662,11 +872,11 @@ def _paper_account_details(
           </strong>
         </div>
         <div>
-          <span class="label">Verified positions</span>
+          <span class="label">Account position records</span>
           <strong>{len(account.positions)}</strong>
         </div>
         <div>
-          <span class="label">Verified open orders</span>
+          <span class="label">Account open order records</span>
           <strong>{len(account.open_orders)}</strong>
         </div>
       </div>
@@ -679,11 +889,11 @@ def _paper_account_details(
       </p>
       <div class="two-column">
         <div>
-          <div class="section-header"><h2>KIS positions</h2></div>
+          <div class="section-header"><h2>KIS account positions</h2></div>
           {_paper_positions_table(account)}
         </div>
         <div>
-          <div class="section-header"><h2>KIS open orders</h2></div>
+          <div class="section-header"><h2>KIS account open orders</h2></div>
           {_paper_open_orders_table(account)}
         </div>
       </div>"""
@@ -692,14 +902,14 @@ def _paper_account_details(
 def _paper_positions_table(account: PaperAccountSnapshot) -> str:
     rows = "".join(
         f"<tr><td>{_text(item.exchange)}</td><td>{_text(item.symbol)}</td>"
-        f"<td class=\"numeric\">{_text(item.quantity)}</td><td>{_text(item.currency)}</td></tr>"
+        f'<td class="numeric">{_text(item.quantity)}</td><td>{_text(item.currency)}</td></tr>'
         for item in account.positions
     )
     if not rows:
         rows = _empty_row(4, "No verified KIS positions")
     return (
-        "<div class=\"table-wrap\"><table><thead><tr><th>Exchange</th><th>Symbol</th>"
-        "<th class=\"numeric\">Quantity</th><th>Currency</th></tr></thead><tbody>"
+        '<div class="table-wrap"><table><thead><tr><th>Exchange</th><th>Symbol</th>'
+        '<th class="numeric">Quantity</th><th>Currency</th></tr></thead><tbody>'
         f"{rows}</tbody></table></div>"
     )
 
@@ -708,14 +918,14 @@ def _paper_open_orders_table(account: PaperAccountSnapshot) -> str:
     rows = "".join(
         f"<tr><td>{_text(item.exchange)}</td><td>{_text(item.symbol)}</td>"
         f"<td>{_text(item.side)}</td>"
-        f"<td class=\"numeric\">{_text(item.remaining_quantity)}</td></tr>"
+        f'<td class="numeric">{_text(item.remaining_quantity)}</td></tr>'
         for item in account.open_orders
     )
     if not rows:
         rows = _empty_row(4, "No verified KIS open orders")
     return (
-        "<div class=\"table-wrap\"><table><thead><tr><th>Exchange</th><th>Symbol</th>"
-        "<th>Side</th><th class=\"numeric\">Remaining</th></tr></thead><tbody>"
+        '<div class="table-wrap"><table><thead><tr><th>Exchange</th><th>Symbol</th>'
+        '<th>Side</th><th class="numeric">Remaining</th></tr></thead><tbody>'
         f"{rows}</tbody></table></div>"
     )
 
@@ -859,14 +1069,14 @@ def _positions_table(
     else:
         rows = "".join(
             f"<tr><td>{_text(position.market)}</td><td>{_text(position.symbol)}</td>"
-            f"<td class=\"numeric\">{_text(position.quantity)}</td></tr>"
+            f'<td class="numeric">{_text(position.quantity)}</td></tr>'
             for position in positions or ()
         )
         if not rows:
             rows = _empty_row(3, "No local positions")
     return (
-        "<div class=\"table-wrap\"><table><thead><tr><th>Market</th><th>Symbol</th>"
-        "<th class=\"numeric\">Quantity</th></tr></thead><tbody>"
+        '<div class="table-wrap"><table><thead><tr><th>Market</th><th>Symbol</th>'
+        '<th class="numeric">Quantity</th></tr></thead><tbody>'
         f"{rows}</tbody></table></div>"
     )
 
@@ -882,16 +1092,16 @@ def _decisions_table(
         rows = "".join(
             f"<tr><td>{_text(decision.source)}</td><td>{_text(decision.market)}</td>"
             f"<td>{_text(decision.symbol)}</td><td>{_text(decision.action)}</td>"
-            f"<td class=\"numeric\">{_text(decision.confidence)}</td>"
-            f"<td class=\"numeric\">{_text(decision.expected_edge_bps)}</td></tr>"
+            f'<td class="numeric">{_text(decision.confidence)}</td>'
+            f'<td class="numeric">{_text(decision.expected_edge_bps)}</td></tr>'
             for decision in decisions or ()
         )
         if not rows:
             rows = _empty_row(6, "No decisions recorded")
     return (
-        "<div class=\"table-wrap\"><table><thead><tr><th>Source</th><th>Market</th>"
-        "<th>Symbol</th><th>Action</th><th class=\"numeric\">Confidence</th>"
-        "<th class=\"numeric\">Expected edge bps</th></tr></thead><tbody>"
+        '<div class="table-wrap"><table><thead><tr><th>Source</th><th>Market</th>'
+        '<th>Symbol</th><th>Action</th><th class="numeric">Confidence</th>'
+        '<th class="numeric">Expected edge bps</th></tr></thead><tbody>'
         f"{rows}</tbody></table></div>"
     )
 
@@ -907,23 +1117,23 @@ def _fills_table(
         rows = "".join(
             f"<tr><td>{_text(fill.filled_at)}</td><td>{_text(fill.market)}</td>"
             f"<td>{_text(fill.symbol)}</td><td>{_text(fill.side)}</td>"
-            f"<td class=\"numeric\">{_text(fill.quantity)}</td>"
-            f"<td class=\"numeric\">{_text(fill.price)}</td>"
-            f"<td class=\"numeric\">{_text(fill.fee)}</td></tr>"
+            f'<td class="numeric">{_text(fill.quantity)}</td>'
+            f'<td class="numeric">{_text(fill.price)}</td>'
+            f'<td class="numeric">{_text(fill.fee)}</td></tr>'
             for fill in fills or ()
         )
         if not rows:
             rows = _empty_row(7, "No local fills")
     return (
         "<table><thead><tr><th>Filled at</th><th>Market</th><th>Symbol</th><th>Side</th>"
-        "<th class=\"numeric\">Quantity</th><th class=\"numeric\">Price</th>"
-        "<th class=\"numeric\">Fee</th></tr></thead><tbody>"
+        '<th class="numeric">Quantity</th><th class="numeric">Price</th>'
+        '<th class="numeric">Fee</th></tr></thead><tbody>'
         f"{rows}</tbody></table>"
     )
 
 
 def _empty_row(colspan: int, message: str) -> str:
-    return f"<tr><td class=\"empty\" colspan=\"{colspan}\">{_text(message)}</td></tr>"
+    return f'<tr><td class="empty" colspan="{colspan}">{_text(message)}</td></tr>'
 
 
 def _optional_text(value: str | None) -> str:

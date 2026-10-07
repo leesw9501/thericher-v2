@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import hashlib
 import json
 import re
 import threading
@@ -15,6 +16,7 @@ import pytest
 
 from thericher_v2.contracts import Bar, OrderIntent, Timeframe
 from thericher_v2.dashboard import server as dashboard_server
+from thericher_v2.dashboard import view as dashboard_view
 from thericher_v2.dashboard.server import DashboardServer
 from thericher_v2.dashboard.view import DashboardPosition, build_snapshot, render_dashboard
 from thericher_v2.execution import EmergencyStore, LocalPaperBroker
@@ -47,6 +49,8 @@ def _dashboard(
     *,
     token: str = "",
     paper_account_snapshot_path: Path | None = None,
+    qqq_gross_receipt_path: Path | None = None,
+    qqq_gross_receipt_sha256: str | None = None,
 ):
     events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
     events.bootstrap()
@@ -58,6 +62,8 @@ def _dashboard(
         token=token,
         mode="off",
         paper_account_snapshot_path=paper_account_snapshot_path,
+        qqq_gross_receipt_path=qqq_gross_receipt_path,
+        qqq_gross_receipt_sha256=qqq_gross_receipt_sha256,
     )
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
@@ -89,9 +95,7 @@ def _request(
 
 def _cookies(headers: list[tuple[str, str]]) -> str:
     return "; ".join(
-        value.split(";", 1)[0]
-        for name, value in headers
-        if name.lower() == "set-cookie"
+        value.split(";", 1)[0] for name, value in headers if name.lower() == "set-cookie"
     )
 
 
@@ -325,9 +329,7 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
             status="complete",
             observed_at=observed_at,
             expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
-            orderable_foreign_funds=PaperAccountOrderableForeignFunds(
-                "USD", Decimal("1200.50")
-            ),
+            orderable_foreign_funds=PaperAccountOrderableForeignFunds("USD", Decimal("1200.50")),
             reference_orderability=PaperAccountReferenceOrderability(
                 "USD",
                 Decimal("1199.75"),
@@ -374,7 +376,7 @@ def test_dashboard_renders_only_a_fresh_sanitized_paper_account_snapshot(tmp_pat
     html = render_dashboard(snapshot, form_nonce="form-nonce")
     assert "KIS orderable foreign funds" in html
     assert "Reference orderability" in html
-    assert "KIS positions" in html
+    assert "KIS account positions" in html
     assert "KIS price quotes" in html
     assert "general buying power" in html
     assert "Limit</th>" not in html
@@ -456,9 +458,7 @@ def test_dashboard_hides_prior_account_facts_after_a_rejected_bridge_refresh(tmp
             status="complete",
             observed_at=observed_at,
             expires_at=observed_at + PAPER_ACCOUNT_SNAPSHOT_TTL,
-            orderable_foreign_funds=PaperAccountOrderableForeignFunds(
-                "USD", Decimal("1200.50")
-            ),
+            orderable_foreign_funds=PaperAccountOrderableForeignFunds("USD", Decimal("1200.50")),
             reference_orderability=PaperAccountReferenceOrderability(
                 "USD",
                 Decimal("1199.75"),
@@ -761,11 +761,7 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
         for node in ast.walk(module)
         if isinstance(node, ast.Import)
         for alias in node.names
-    ] + [
-        node.module or ""
-        for node in ast.walk(module)
-        if isinstance(node, ast.ImportFrom)
-    ]
+    ] + [node.module or "" for node in ast.walk(module) if isinstance(node, ast.ImportFrom)]
     assert not any("kis" in module_name.lower() for module_name in imports)
 
     view_source = (repo_root / "src" / "thericher_v2" / "dashboard" / "view.py").read_text(
@@ -777,21 +773,16 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
         for node in ast.walk(view_module)
         if isinstance(node, ast.Import)
         for alias in node.names
-    ] + [
-        node.module or ""
-        for node in ast.walk(view_module)
-        if isinstance(node, ast.ImportFrom)
-    ]
+    ] + [node.module or "" for node in ast.walk(view_module) if isinstance(node, ast.ImportFrom)]
     assert not any("kis_paper_intraday" in module_name for module_name in view_imports)
     assert not any("kis_market_data" in module_name for module_name in view_imports)
+    assert not any("kis_paper_budget_strategy" in module_name for module_name in view_imports)
 
     compose = (repo_root / "docker-compose.yml").read_text(encoding="utf-8")
-    engine_section = compose.split("\n  engine:\n", maxsplit=1)[1].split(
-        "\n  web:\n", maxsplit=1
-    )[0]
-    web_section = compose.split("\n  web:\n", maxsplit=1)[1].split(
-        "\n  research:\n", maxsplit=1
-    )[0]
+    engine_section = compose.split("\n  engine:\n", maxsplit=1)[1].split("\n  web:\n", maxsplit=1)[
+        0
+    ]
+    web_section = compose.split("\n  web:\n", maxsplit=1)[1].split("\n  research:\n", maxsplit=1)[0]
     assert '"127.0.0.1:8787:8787"' in web_section
     assert "--allow-container-bind" in web_section
     assert "KIS_" not in web_section
@@ -802,11 +793,19 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "thericher-v2-web-emergency:/app/emergency" in web_section
     assert "paper_execution_control.json" in web_section
     assert "kis_paper_intraday_freshness.json" in web_section
+    assert "--qqq-gross-receipt" in web_section
+    assert "--qqq-gross-receipt-sha256" in web_section
+    assert "c2fbf15660751ae50c23a6e81b5c2d62f7a55b581504d9157c0c613112adf45f" in web_section
+    assert "type: bind" not in web_section
+    assert "model-artifacts" not in web_section
+    assert "/app/private" not in web_section
+    assert "/app/model_artifacts" not in web_section
+    assert "paper-canary-private" not in web_section
 
     kis_section = compose.split("\n  kis-readonly:\n", maxsplit=1)[1].split(
         "\n  kis-paper-canary:\n", maxsplit=1
     )[0]
-    assert "profiles: [\"kis-readonly\"]" in kis_section
+    assert 'profiles: ["kis-readonly"]' in kis_section
     assert "KIS_PAPER_APP_KEY" in kis_section
     assert "KIS_LIVE" not in kis_section
     assert ".env" not in kis_section
@@ -872,19 +871,92 @@ def test_dashboard_has_no_kis_client_dependency_and_compose_web_is_loopback_boun
     assert "!.env.example" in dockerignore
 
 
+def test_default_compose_web_runs_without_accounting_artifact(tmp_path) -> None:
+    repo_root = Path(__file__).resolve().parents[1]
+    compose = (repo_root / "docker-compose.yml").read_text(encoding="utf-8")
+    web = compose.split("\n  web:\n", maxsplit=1)[1].split("\n  research:\n", maxsplit=1)[0]
+    volumes = [
+        line.strip()
+        for line in web.split("    volumes:\n", maxsplit=1)[1].splitlines()
+        if line.strip() and not line.strip().startswith("#")
+    ]
+    assert volumes == [
+        "- thericher-v2-runtime:/app/runtime:ro",
+        "- thericher-v2-web-emergency:/app/emergency",
+    ]
+    assert "depends_on:" not in web
+    command = [
+        line.strip().removeprefix("- ").strip('"')
+        for line in web.split("    command:\n", maxsplit=1)[1]
+        .split("    environment:\n", maxsplit=1)[0]
+        .splitlines()
+        if line.strip()
+    ]
+    assert command[:3] == ["python", "-m", "thericher_v2.dashboard.server"]
+    args = dashboard_server.build_parser().parse_args(command[3:])
+    assert args.qqq_gross_receipt == Path("/app/receipts/qqq-gross-roundtrip.json")
+    assert args.qqq_gross_receipt_sha256 == (
+        "c2fbf15660751ae50c23a6e81b5c2d62f7a55b581504d9157c0c613112adf45f"
+    )
+    missing_receipt = tmp_path / "unmounted" / args.qqq_gross_receipt.name
+    account = tmp_path / "account.json"
+    _write_spy_account(account, datetime.now(UTC))
+    with _dashboard(
+        tmp_path,
+        paper_account_snapshot_path=account,
+        qqq_gross_receipt_path=missing_receipt,
+        qqq_gross_receipt_sha256=args.qqq_gross_receipt_sha256,
+    ) as (server, _, _):
+        health_status, _, health_body = _request(server, "GET", "/health")
+        state_status, _, state_body = _request(server, "GET", "/state")
+        html_status, _, html = _request(server, "GET", "/")
+    assert health_status == state_status == html_status == 200
+    assert json.loads(health_body) == {"status": "ok", "broker_calls": False}
+    state = json.loads(state_body)
+    assert state["qqq_gross_accounting_status"] == "unavailable"
+    assert state["qqq_gross_accounting"] is None
+    assert state["paper_account_status"] == "available"
+    assert state["paper_account"]["facts"]["positions"][0]["symbol"] == "SPY"
+    assert "Historical QQQ gross accounting" in html and "KIS account positions" in html
+    assert not missing_receipt.exists()
+
+
+def test_accounting_compose_override_binds_only_exact_receipt_read_only() -> None:
+    repo_root = Path(__file__).resolve().parents[1]
+    override = (repo_root / "docker-compose.accounting.yml").read_text(encoding="utf-8")
+    assert override.splitlines() == [
+        "services:",
+        "  web:",
+        "    volumes:",
+        "      - type: bind",
+        "        source: D:/thericher-v2/model-artifacts/execution/kis-paper-qqq-unit-cycle/"
+        "gross-roundtrip-new-account-20261008-v2/outcome.json",
+        "        target: /app/receipts/qqq-gross-roundtrip.json",
+        "        read_only: true",
+        "        bind:",
+        "          create_host_path: false",
+    ]
+
+
 def test_dashboard_rejects_non_loopback_bind_without_the_explicit_docker_exception(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    assert dashboard_server._validated_bind_host(
-        "127.0.0.1",
-        allow_container_bind=False,
-    ) == "127.0.0.1"
+    assert (
+        dashboard_server._validated_bind_host(
+            "127.0.0.1",
+            allow_container_bind=False,
+        )
+        == "127.0.0.1"
+    )
 
     monkeypatch.setattr(dashboard_server, "_is_container_runtime", lambda: True)
-    assert dashboard_server._validated_bind_host(
-        "0.0.0.0",
-        allow_container_bind=True,
-    ) == "0.0.0.0"
+    assert (
+        dashboard_server._validated_bind_host(
+            "0.0.0.0",
+            allow_container_bind=True,
+        )
+        == "0.0.0.0"
+    )
 
     monkeypatch.setattr(dashboard_server, "_is_container_runtime", lambda: False)
     with pytest.raises(ValueError, match="127.0.0.1"):
@@ -893,3 +965,329 @@ def test_dashboard_rejects_non_loopback_bind_without_the_explicit_docker_excepti
         dashboard_server._validated_bind_host("0.0.0.0", allow_container_bind=True)
     with pytest.raises(ValueError, match="127.0.0.1"):
         dashboard_server._validated_bind_host("192.168.0.10", allow_container_bind=True)
+
+
+def _qqq_receipt_payload() -> dict[str, object]:
+    return {
+        "kind": "kis_paper_qqq_gross_roundtrip_replay_v1",
+        "source": "kis_paper",
+        "currency": "USD",
+        "status": "gross_realized_observed",
+        "gross_pnl_sign": "negative",
+        "matched_fill_count": 2,
+        "roundtrip_count": 1,
+        "owned_flat": True,
+        "fees": "not_observed",
+        "settled_cash": "not_observed",
+        "net_pnl": "not_observed",
+        "observed_at": "2026-01-01T00:00:00+00:00",
+        "broker_calls": False,
+        "paper_only": True,
+        "read_only_private_state": True,
+        "current_account_binding_matches": True,
+        "canonical_cycle_id": dashboard_view.QQQ_GROSS_ACCOUNTING_CYCLE_ID,
+        "private_input_bundle_sha256": "b" * 64,
+        "independent_signed_cashflow_replay_matches": True,
+        "restart_replays": 3,
+        "source_hashes_unchanged_from_predispatch": True,
+        "projector_sha256": "c" * 64,
+        "replay_source_sha256": "d" * 64,
+        "code_sha256": {"thericher_v2/execution/kis_paper_budget_strategy.py": "c" * 64},
+        "source_outcomes": [
+            {"path": "D:/evidence/buy/outcome.json", "sha256": "e" * 64},
+            {"path": "D:/evidence/sell/outcome.json", "sha256": "f" * 64},
+        ],
+        "limitation": "gross_only_single_roundtrip_not_strategy_profitability",
+    }
+
+
+def _write_qqq_receipt(path: Path, payload: object) -> str:
+    raw = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode() + b"\n"
+    path.write_bytes(raw)
+    return hashlib.sha256(raw).hexdigest()
+
+
+@pytest.mark.parametrize("sign", ["positive", "negative", "zero"])
+def test_qqq_gross_reader_projects_only_historical_safe_fields(tmp_path, sign) -> None:
+    path = tmp_path / "receipt.json"
+    payload = _qqq_receipt_payload()
+    payload["gross_pnl_sign"] = sign
+    pin = _write_qqq_receipt(path, payload)
+    status, receipt = dashboard_view.read_qqq_gross_accounting_receipt(
+        path,
+        pin,
+        now=datetime(2026, 10, 8, tzinfo=UTC),
+    )
+    assert status == "available" and receipt is not None
+    assert receipt.gross_pnl_sign == sign
+    assert receipt.matched_fill_count == 2 and receipt.roundtrip_count == 1
+    assert receipt.receipt_sha256 == pin
+    assert receipt.net_pnl == receipt.fees == receipt.settled_cash == "not_observed"
+    assert not hasattr(receipt, "owned_flat")
+    assert not hasattr(receipt, "current_account_binding_matches")
+
+
+@pytest.mark.parametrize(
+    "field,bad",
+    [
+        ("kind", "local_paper_roundtrip"),
+        ("source", "kis_live"),
+        ("currency", "KRW"),
+        ("status", "order_complete"),
+        ("gross_pnl_sign", "<script>raw</script>"),
+        ("matched_fill_count", 1),
+        ("matched_fill_count", "2"),
+        ("roundtrip_count", True),
+        ("roundtrip_count", 2),
+        ("restart_replays", True),
+        ("paper_only", 1),
+        ("owned_flat", False),
+        ("broker_calls", 0),
+        ("read_only_private_state", False),
+        ("current_account_binding_matches", False),
+        ("independent_signed_cashflow_replay_matches", False),
+        ("source_hashes_unchanged_from_predispatch", False),
+        ("fees", "0"),
+        ("settled_cash", "0"),
+        ("net_pnl", "negative"),
+        ("canonical_cycle_id", "old-account-cycle"),
+        ("canonical_cycle_id", "qqq-unit-" + "f" * 64),
+        ("projector_sha256", "not-a-hash"),
+        ("code_sha256", {}),
+        ("code_sha256", {"source.py": "not-a-hash"}),
+        ("source_outcomes", []),
+        ("source_outcomes", [{"path": "", "sha256": "e" * 64}] * 2),
+        ("observed_at", "2099-01-01T00:00:00+00:00"),
+        ("observed_at", "2026-01-01T00:00:00"),
+        ("observed_at", "2026-01-01T00:00:00+09:00"),
+        ("observed_at", 123),
+        ("limitation", "strategy_profitable"),
+    ],
+)
+def test_qqq_reader_rejects_schema_and_category_faults_even_with_matching_pin(
+    tmp_path,
+    field,
+    bad,
+) -> None:
+    path = tmp_path / "receipt.json"
+    payload = _qqq_receipt_payload()
+    payload[field] = bad
+    pin = _write_qqq_receipt(path, payload)
+    assert dashboard_view.read_qqq_gross_accounting_receipt(path, pin) == ("unavailable", None)
+
+
+@pytest.mark.parametrize("change", ["missing", "extra_amount", "extra_secret", "not_object"])
+def test_qqq_reader_rejects_nonexact_top_level_shape(tmp_path, change) -> None:
+    path = tmp_path / "receipt.json"
+    payload = _qqq_receipt_payload()
+    if change == "missing":
+        del payload["independent_signed_cashflow_replay_matches"]
+    elif change == "not_object":
+        payload = [payload]
+    else:
+        payload["gross_amount" if change == "extra_amount" else "account_number"] = "private-marker"
+    pin = _write_qqq_receipt(path, payload)
+    assert dashboard_view.read_qqq_gross_accounting_receipt(path, pin) == ("unavailable", None)
+
+
+def test_qqq_reader_checks_raw_hash_and_rejects_duplicate_json_keys(tmp_path) -> None:
+    path = tmp_path / "receipt.json"
+    original = _qqq_receipt_payload()
+    pin = _write_qqq_receipt(path, original)
+    original["gross_pnl_sign"] = "positive"
+    _write_qqq_receipt(path, original)
+    assert dashboard_view.read_qqq_gross_accounting_receipt(path, pin) == ("unavailable", None)
+    raw = path.read_bytes().rstrip()[:-1] + b',"gross_pnl_sign":"negative"}\n'
+    path.write_bytes(raw)
+    assert dashboard_view.read_qqq_gross_accounting_receipt(
+        path,
+        hashlib.sha256(raw).hexdigest(),
+    ) == ("unavailable", None)
+
+
+@pytest.mark.parametrize(
+    "raw",
+    [b"not-json", b"\xff", b" " * 65537, b"[" * 2000 + b"]" * 2000],
+    ids=["invalid_json", "invalid_utf8", "oversized", "deeply_nested"],
+)
+def test_qqq_reader_rejects_malformed_or_oversized_bytes(tmp_path, raw) -> None:
+    path = tmp_path / "receipt.json"
+    path.write_bytes(raw)
+    assert dashboard_view.read_qqq_gross_accounting_receipt(
+        path,
+        hashlib.sha256(raw).hexdigest(),
+    ) == ("unavailable", None)
+
+
+def test_qqq_config_is_optional_and_partial_configuration_never_reads_files(
+    monkeypatch,
+    tmp_path,
+) -> None:
+    monkeypatch.setattr(Path, "open", lambda *a, **k: pytest.fail("unexpected receipt I/O"))
+    read = dashboard_view.read_qqq_gross_accounting_receipt
+    assert read(None, None) == ("unknown", None)
+    assert read(None, "a" * 64) == ("unavailable", None)
+    assert read(tmp_path / "receipt.json", None) == ("unavailable", None)
+    assert read(tmp_path / "receipt.json", "SHA256:bad") == ("unavailable", None)
+
+
+def test_qqq_reader_never_follows_receipt_provenance_or_reads_credentials(
+    monkeypatch,
+    tmp_path,
+) -> None:
+    path = tmp_path / "receipt.json"
+    pin = _write_qqq_receipt(path, _qqq_receipt_payload())
+    opened = []
+    original = Path.open
+
+    def only_receipt(actual, *args, **kwargs):
+        assert actual == path
+        opened.append(actual)
+        return original(actual, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "open", only_receipt)
+    monkeypatch.setattr(dashboard_server.os, "getenv", lambda *a, **k: pytest.fail("credentials"))
+    assert dashboard_view.read_qqq_gross_accounting_receipt(path, pin)[0] == "available"
+    assert opened == [path]
+
+
+def test_qqq_reader_missing_or_unreadable_file_hides_only_accounting(tmp_path, monkeypatch) -> None:
+    path = tmp_path / "receipt.json"
+    pin = "a" * 64
+    assert dashboard_view.read_qqq_gross_accounting_receipt(path, pin) == ("unavailable", None)
+    pin = _write_qqq_receipt(path, _qqq_receipt_payload())
+    monkeypatch.setattr(Path, "open", lambda *a, **k: (_ for _ in ()).throw(PermissionError()))
+    assert dashboard_view.read_qqq_gross_accounting_receipt(path, pin) == ("unavailable", None)
+
+
+def _write_spy_account(path: Path, observed: datetime) -> None:
+    write_paper_account_snapshot(
+        PaperAccountSnapshot(
+            status="complete",
+            observed_at=observed,
+            expires_at=observed + PAPER_ACCOUNT_SNAPSHOT_TTL,
+            orderable_foreign_funds=PaperAccountOrderableForeignFunds("USD", Decimal("1200.50")),
+            reference_orderability=PaperAccountReferenceOrderability(
+                "USD",
+                Decimal("1199.75"),
+                "NASD",
+                "SPY",
+            ),
+            positions=(PaperAccountPosition("NASD", "SPY", "USD", Decimal("2")),),
+            open_orders=(),
+        ),
+        path,
+    )
+
+
+def test_account_freshness_and_historical_gross_are_independent(tmp_path) -> None:
+    observed = datetime(2026, 10, 8, tzinfo=UTC)
+    account, receipt = tmp_path / "account.json", tmp_path / "receipt.json"
+    _write_spy_account(account, observed)
+    pin = _write_qqq_receipt(receipt, _qqq_receipt_payload())
+    events = EventStore(tmp_path / "state.sqlite", tmp_path / "events.jsonl")
+    events.bootstrap()
+    emergency = EmergencyStore(tmp_path / "emergency.json")
+    args = dict(
+        paper_account_snapshot_path=account,
+        qqq_gross_receipt_path=receipt,
+        qqq_gross_receipt_sha256=pin,
+    )
+    fresh = build_snapshot(events, emergency, now=observed + timedelta(seconds=1), **args)
+    stale = build_snapshot(events, emergency, now=observed + PAPER_ACCOUNT_SNAPSHOT_TTL, **args)
+    assert fresh.paper_account_status == "available"
+    assert (
+        fresh.paper_account.positions[0].symbol == "SPY" and fresh.paper_account.open_orders == ()
+    )
+    assert stale.paper_account_status == "unavailable" and stale.paper_account is None
+    assert stale.qqq_gross_accounting == fresh.qqq_gross_accounting
+    assert stale.qqq_gross_accounting_status == "available"
+    html = render_dashboard(stale)
+    assert "KIS snapshot unavailable" in html
+    assert "No verified KIS positions" not in html and "No verified KIS open orders" not in html
+    assert "Historical QQQ gross accounting" in html and ">negative<" in html
+    receipt.write_bytes(b"modified")
+    invalid = build_snapshot(events, emergency, now=observed + timedelta(seconds=1), **args)
+    assert (
+        invalid.qqq_gross_accounting_status == "unavailable"
+        and invalid.qqq_gross_accounting is None
+    )
+    assert invalid.paper_account == fresh.paper_account and invalid.status == fresh.status
+
+
+def test_http_receipt_and_spy_facts_agree_without_leakage_or_get_side_effects(tmp_path) -> None:
+    receipt, account = tmp_path / "receipt.json", tmp_path / "account.json"
+    payload = _qqq_receipt_payload()
+    pin = _write_qqq_receipt(receipt, payload)
+    _write_spy_account(account, datetime.now(UTC))
+    with _dashboard(
+        tmp_path,
+        paper_account_snapshot_path=account,
+        qqq_gross_receipt_path=receipt,
+        qqq_gross_receipt_sha256=pin,
+    ) as (server, events, emergency):
+        events.append(
+            Event(event_type="test_observation", created_at=datetime.now(UTC), payload={})
+        )
+        emergency.stop_new_orders("test_read_only")
+        server.execution_control_store.set_pause_buys(True)
+        paths = (
+            events.db_path,
+            events.jsonl_path,
+            emergency.path,
+            server.execution_control_store.path,
+            account,
+            receipt,
+        )
+        before = {path: path.read_bytes() for path in paths}
+        html_status, _, html = _request(server, "GET", "/")
+        json_status, _, body = _request(server, "GET", "/state")
+        assert html_status == json_status == 200
+        assert {path: path.read_bytes() for path in paths} == before
+    state = json.loads(body)
+    assert state["qqq_gross_accounting_status"] == "available"
+    safe = state["qqq_gross_accounting"]
+    assert safe == {
+        "source": "kis_paper",
+        "instrument": "QQQ",
+        "currency": "USD",
+        "status": "gross_realized_observed",
+        "gross_pnl_sign": "negative",
+        "matched_fill_count": 2,
+        "roundtrip_count": 1,
+        "observed_at": payload["observed_at"],
+        "receipt_sha256": pin,
+        "fees": "not_observed",
+        "settled_cash": "not_observed",
+        "net_pnl": "not_observed",
+    }
+    assert state["paper_account"]["facts"]["positions"][0]["symbol"] == "SPY"
+    assert state["paper_account"]["facts"]["open_orders"] == []
+    assert "KIS account positions" in html and "KIS account open orders" in html
+    assert "Historical QQQ gross accounting" in html and ">negative<" in html and pin in html
+    for marker in (
+        "owned_flat",
+        "private_input_bundle_sha256",
+        "current_account_binding_matches",
+        "canonical_cycle_id",
+        "code_sha256",
+        "source_outcomes",
+        "D:/evidence",
+    ):
+        assert marker not in body and marker not in html
+
+
+def test_dashboard_parser_receipt_defaults_and_explicit_flags() -> None:
+    parser = dashboard_server.build_parser()
+    defaults = parser.parse_args([])
+    assert defaults.qqq_gross_receipt is None and defaults.qqq_gross_receipt_sha256 is None
+    explicit = parser.parse_args(
+        [
+            "--qqq-gross-receipt",
+            "receipt.json",
+            "--qqq-gross-receipt-sha256",
+            "a" * 64,
+        ]
+    )
+    assert explicit.qqq_gross_receipt == Path("receipt.json")
+    assert explicit.qqq_gross_receipt_sha256 == "a" * 64

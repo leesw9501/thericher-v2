@@ -94,6 +94,8 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 paper_account_snapshot_path=self.server.paper_account_snapshot_path,
                 paper_canary_runtime_path=self.server.paper_canary_runtime_path,
                 market_data_freshness_path=self.server.market_data_freshness_path,
+                qqq_gross_receipt_path=self.server.qqq_gross_receipt_path,
+                qqq_gross_receipt_sha256=self.server.qqq_gross_receipt_sha256,
             )
             _html_response(
                 self,
@@ -110,6 +112,8 @@ class DashboardHandler(BaseHTTPRequestHandler):
                 paper_account_snapshot_path=self.server.paper_account_snapshot_path,
                 paper_canary_runtime_path=self.server.paper_canary_runtime_path,
                 market_data_freshness_path=self.server.market_data_freshness_path,
+                qqq_gross_receipt_path=self.server.qqq_gross_receipt_path,
+                qqq_gross_receipt_sha256=self.server.qqq_gross_receipt_sha256,
             )
             _json_response(self, HTTPStatus.OK, snapshot.to_dict())
         elif path == "/health":
@@ -284,6 +288,8 @@ class DashboardServer(ThreadingHTTPServer):
         paper_account_snapshot_path: Path | None = None,
         paper_canary_runtime_path: Path | None = None,
         market_data_freshness_path: Path | None = None,
+        qqq_gross_receipt_path: Path | None = None,
+        qqq_gross_receipt_sha256: str | None = None,
     ) -> None:
         super().__init__(address, DashboardHandler)
         self.event_store = event_store
@@ -296,6 +302,8 @@ class DashboardServer(ThreadingHTTPServer):
         self.paper_account_snapshot_path = paper_account_snapshot_path
         self.paper_canary_runtime_path = paper_canary_runtime_path
         self.market_data_freshness_path = market_data_freshness_path
+        self.qqq_gross_receipt_path = qqq_gross_receipt_path
+        self.qqq_gross_receipt_sha256 = qqq_gross_receipt_sha256
         self.form_nonce = secrets.token_urlsafe(32)
         self.session_value = _session_value(token) if token else ""
 
@@ -330,7 +338,7 @@ def _cookie(name: str, value: str, *, max_age: int | None = None) -> str:
 
 
 def _login_html(*, error: str = "") -> str:
-    error_markup = "" if not error else f"<p role=\"alert\">{error}</p>"
+    error_markup = "" if not error else f'<p role="alert">{error}</p>'
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -419,6 +427,8 @@ def build_parser() -> argparse.ArgumentParser:
         default=Path("runtime/state/kis_paper_intraday_freshness.json"),
     )
     parser.add_argument("--mode", default=os.environ.get("THERICHER_MODE", "off"))
+    parser.add_argument("--qqq-gross-receipt", type=Path)
+    parser.add_argument("--qqq-gross-receipt-sha256")
     parser.add_argument("--token", default=os.environ.get("THERICHER_DASHBOARD_TOKEN", ""))
     return parser
 
@@ -443,6 +453,8 @@ def main() -> None:
         paper_account_snapshot_path=args.paper_account_snapshot,
         paper_canary_runtime_path=args.paper_canary_runtime,
         market_data_freshness_path=args.market_data_freshness,
+        qqq_gross_receipt_path=args.qqq_gross_receipt,
+        qqq_gross_receipt_sha256=args.qqq_gross_receipt_sha256,
     )
     print(f"dashboard listening on http://{host}:{args.port}")
     server.serve_forever()
