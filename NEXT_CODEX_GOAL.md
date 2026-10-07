@@ -24,7 +24,9 @@ Use only the exact retained August9 adjusted Tiingo SPY/QQQ/IWM snapshot.
 All periods are revised, seen and non-PIT development, never a fresh holdout.
 TRAIN2002-2012; comparisons2013-2019 and2020-July2026 separately. Freeze exact
 NYSE schedule, source/code/runtime pins,32 prior completed sessions/31 ordered
-close-return, intraday-return and range observations per ETF. Current decision
+close-return, intraday-return and range observations per ETF: log(C[d]/C[d-1]),
+log(C[d]/O[d]), log(H[d]/L[d]), the last31 dates of32 prior sessions,9x31 layout.
+Compute positive-price log differences to avoid ratio overflow. Current decision
 OPEN, future support and payoffs cannot affect input eligibility. TRAIN-only
 channel scaling; no imputation, source replacement, seed/window/epoch selection.
 
@@ -32,7 +34,10 @@ One small causal TCN: width8/kernel3/dilations1,2,4,8, last-step representation,
 four-way SPY/QQQ/IWM/cash softmax. Compare a full-lag joint linear softmax with
 identical inputs/objective/cadence, a TRAIN-learned constant allocation, cash,
 quarterly equal weight and a TRAIN-frozen beta-matched passive basket/cash.
-Only one seed101,64 final epochs, AdamW learning-rate.001/weight-decay.01.
+Only one seed101. Linear/TCN use512 final full-TRAIN AdamW updates, rate.001/
+decay.01; constant uses1024 final updates, rate.01/decay0, to avoid a near-initial
+weak comparator. Every update uses one continuous TRAIN path/global variance;
+no capital reset, independent minibatch variance or detached prior allocation.
 No early stopping or best-epoch retention. One shared600-second GPU family
 for three fits, at most one appointment; frozen contract/model registry custody.
 CPU synthetic smoke and model/input/cost parity precede actual GPU dispatch.
@@ -43,14 +48,25 @@ Learn252*(mean daily log NAV growth -5*population variance) at10bps per side.
 Replay frozen actions at2.5/5/10bps actual traded notional, initial entry/final
 CLOSE exit, shared cash and overnight carry. No leverage, shorts, independent
 funded sleeves, target-weight-distance fee approximation or cost selection.
-Before freezing, specify actual missing-input/mark behavior, exact sample/block
-counts, fee-face tie convention, numeric tolerances and comparator calibration.
-Beta uses aligned SIMPLE ledger returns; only TRAIN calibration, retain fraction
+Any required-past input or mark gap makes its affected period unavailable for
+the same learned controls; do not repeat target weights or delete losing days.
+Freeze exact sample/block counts before values. Fee-face tie order is
+lexicographic(-1,-1,-1)..(+1,+1,+1); gradients at kinks use that deterministic
+one-sided convention. Weight/sign tolerances1e-12 and relative Decimal-parity
+tolerance1e-10 need synthetic/gradient proof before relying on them.
+Beta comparator is quarterly equal-weight basket/cash, aligned zero-cost TRAIN
+SIMPLE returns vs zero-cost SPY buy-and-hold ledger including entry/end marks.
+Fraction[0,1],64 bisections,45dp lattice and1e-10 residual; unbracketed/residual
+failure is unresolved/no overall pass, never clipping or another basket.
+Only TRAIN calibration, retain fraction
 for zero-search readback. Cash earns zero. Strongest kill at10bps in BOTH periods:
 positive net growth and NAV plus utility improvement over matched passive,
 constant and full-lag linear; utility improvement over full passive exposure.
 Cash avoidance, lower beta/drawdown or one successful period cannot pass.
-Predeclare one fixed-path leave-one-year sensitivity without refitting; do not
+Fixed-path leave-one-year sensitivity deletes identical retained daily-log year
+keys from all controls, including partial2026, then recomputes attribution
+utility. Descriptive only, no rejection rescue, boundary trades/refit/calibration;
+do not
 call deleted-return attribution a newly executed strategy or independent sample.
 
 Generated numeric-only weights, frozen source/contracts and results stay under
