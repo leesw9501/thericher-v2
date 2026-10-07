@@ -96,8 +96,7 @@ def test_minute_client_parses_kis_shaped_page_and_explicit_continuation() -> Non
 
     assert [request.method for request in transport.requests] == ["POST", "GET", "GET"]
     request_paths = [
-        request.url.removeprefix(KIS_PAPER_MARKET_DATA_BASE_URL)
-        for request in transport.requests
+        request.url.removeprefix(KIS_PAPER_MARKET_DATA_BASE_URL) for request in transport.requests
     ]
     assert request_paths == [
         KIS_PAPER_TOKEN_PATH,
@@ -276,8 +275,7 @@ def test_historical_session_reuses_one_token_for_daily_and_minute_metadata_reads
     assert client.call_counts.daily_page_attempts == 1
     assert client.call_counts.minute_page_attempts == 1
     paths = [
-        request.url.removeprefix(KIS_PAPER_MARKET_DATA_BASE_URL)
-        for request in transport.requests
+        request.url.removeprefix(KIS_PAPER_MARKET_DATA_BASE_URL) for request in transport.requests
     ]
     assert paths == [
         KIS_PAPER_TOKEN_PATH,
@@ -680,11 +678,92 @@ def test_minute_client_keeps_rejected_and_malformed_payloads_out_of_empty_catego
 
     with pytest.raises(KisPaperMarketDataError, match="^minute_response_rejected$"):
         rejected_client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="SPY"))
-    with pytest.raises(KisPaperMarketDataError, match="^minute_response_invalid$"):
+    with pytest.raises(KisPaperMarketDataError, match="^minute_response_invalid$") as raised:
         malformed_client.fetch_minute_page(KisPaperMinuteQuery(exchange="AMS", symbol="SPY"))
+    assert raised.value.failure_phase == "response_decode"
+    assert raised.value.failure_code == "envelope_shape_invalid"
 
     assert rejected_client.call_counts.minute_page_attempts == 1
     assert malformed_client.call_counts.minute_page_attempts == 1
+
+
+@pytest.mark.parametrize(
+    ("raw", "code"),
+    [
+        ("synthetic-secret-must-not-leak", "row_not_mapping"),
+        ({"xymd": "synthetic-secret-must-not-leak"}, "required_field_invalid"),
+    ],
+)
+def test_minute_parse_diagnostics_never_include_input_values(raw: object, code: str) -> None:
+    with pytest.raises(KisPaperMarketDataError, match="^minute_response_invalid$") as raised:
+        kis_market_data._parse_minute_bar(raw)
+    assert raised.value.failure_phase == "row_parse"
+    assert raised.value.failure_code == code
+    assert raised.value.args == ("minute_response_invalid",)
+
+
+@pytest.mark.parametrize(
+    ("phase", "code"),
+    [
+        (None, "mixed_exchange_dates"),
+        ("head_contract", "synthetic-secret"),
+        ("row_parse", "mixed_exchange_dates"),
+    ],
+)
+def test_minute_error_rejects_nonallowlisted_diagnostics(phase: str | None, code: str) -> None:
+    with pytest.raises(ValueError, match="^minute failure diagnostic is invalid$"):
+        KisPaperMarketDataError("minute_response_invalid", failure_phase=phase, failure_code=code)
+
+
+@pytest.mark.parametrize(
+    ("arguments", "safe_arguments", "text"),
+    [
+        ((), (), ""),
+        (("auth_rejected",), ("auth_rejected",), "auth_rejected"),
+        (("auth_rejected", "synthetic-sensitive-body"), ("auth_rejected", None), "auth_rejected"),
+        (("auth_rejected", None), ("auth_rejected", None), "auth_rejected"),
+    ],
+)
+def test_market_data_error_preserves_legacy_arity_without_retaining_message(
+    arguments: tuple[object, ...], safe_arguments: tuple[object, ...], text: str
+) -> None:
+    error = KisPaperMarketDataError(*arguments)
+    assert error.args == safe_arguments
+    assert str(error) == text
+    assert error.failure_phase is error.failure_code is None
+    assert "synthetic-sensitive-body" not in repr(error)
+    assert "synthetic-sensitive-body" not in repr(vars(error))
+
+
+def test_market_data_error_legacy_message_cannot_leak_through_valid_diagnostics() -> None:
+    error = KisPaperMarketDataError(
+        "minute_response_invalid",
+        "synthetic-sensitive-body",
+        failure_phase="head_contract",
+        failure_code="mixed_exchange_dates",
+    )
+    assert error.args == ("minute_response_invalid", None)
+    assert str(error) == "minute_response_invalid"
+    assert error.failure_phase == "head_contract"
+    assert error.failure_code == "mixed_exchange_dates"
+    assert "synthetic-sensitive-body" not in repr(error) + repr(vars(error))
+
+
+@pytest.mark.parametrize("failure", ["row_count", "continuation"])
+def test_minute_page_contract_diagnostics_preserve_outer_reason(failure: str) -> None:
+    row = kis_market_data._parse_minute_bar(_row("155900"))
+    with pytest.raises(KisPaperMarketDataError, match="^minute_response_invalid$") as raised:
+        KisPaperMinutePage(
+            query=KisPaperMinuteQuery(symbol="QQQ", exchange="NAS"),
+            bars=(row,) * (121 if failure == "row_count" else 1),
+            next_cursor=None,
+            more="0",
+            continuation_signal="blank_or_absent" if failure == "row_count" else "invalid",
+        )
+    assert raised.value.failure_phase == "page_contract"
+    assert raised.value.failure_code == (
+        "row_count_exceeded" if failure == "row_count" else "continuation_contract_invalid"
+    )
 
 
 def test_minute_raw_bar_rejects_invalid_calendar_timestamps() -> None:
@@ -939,8 +1018,7 @@ def test_urllib_transport_encodes_the_sample_aligned_minute_contract(
         f"{minute_url}?AUTH=&EXCD=NAS&SYMB=QQQ&NMIN=1&PINC=1&NREC=120&FILL=&KEYB=20260717175900&NEXT=1",
     ]
     assert [
-        {name.lower(): value for name, value in request.header_items()}
-        for request in opened[1:]
+        {name.lower(): value for name, value in request.header_items()} for request in opened[1:]
     ] == [
         {
             "authorization": "Bearer test-token",
@@ -988,9 +1066,7 @@ def test_transport_rejects_account_order_and_live_requests_before_opening(
     transport = UrllibKisPaperMarketDataTransport()
 
     with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
-        transport.request(
-            KisMarketDataRequest(method="GET", url=url, headers={}, query={})
-        )
+        transport.request(KisMarketDataRequest(method="GET", url=url, headers={}, query={}))
 
     assert opened is False
 
@@ -1288,9 +1364,7 @@ def test_dotenv_loader_rejects_a_missing_paper_key_before_a_later_live_value(
 ) -> None:
     dotenv_path = tmp_path / ".env"
     dotenv_path.write_bytes(
-        b"THERICHER_MODE=off\n"
-        b"KIS_PAPER_APP_KEY=paper-key\n"
-        b"KIS_LIVE_APP_SECRET=\xff\n"
+        b"THERICHER_MODE=off\nKIS_PAPER_APP_KEY=paper-key\nKIS_LIVE_APP_SECRET=\xff\n"
     )
 
     with pytest.raises(KisPaperMarketDataError, match="config_missing"):
@@ -1368,9 +1442,7 @@ def test_dotenv_loader_accepts_kis_paper_mode_before_the_paper_credentials(tmp_p
 def test_dotenv_loader_rejects_live_mode_before_reading_paper_credentials(tmp_path: Path) -> None:
     dotenv_path = tmp_path / ".env"
     dotenv_path.write_text(
-        "THERICHER_MODE=kis_live\n"
-        "KIS_PAPER_APP_KEY=paper-key\n"
-        "KIS_PAPER_APP_SECRET=paper-secret\n",
+        "THERICHER_MODE=kis_live\nKIS_PAPER_APP_KEY=paper-key\nKIS_PAPER_APP_SECRET=paper-secret\n",
         encoding="utf-8",
     )
 
@@ -1399,9 +1471,7 @@ def test_market_data_loader_rejects_partial_environment_without_dotenv_fallback(
 ) -> None:
     dotenv_path = tmp_path / ".env"
     dotenv_path.write_text(
-        "THERICHER_MODE=off\n"
-        "KIS_PAPER_APP_KEY=dotenv-key\n"
-        "KIS_PAPER_APP_SECRET=dotenv-secret\n",
+        "THERICHER_MODE=off\nKIS_PAPER_APP_KEY=dotenv-key\nKIS_PAPER_APP_SECRET=dotenv-secret\n",
         encoding="utf-8",
     )
 
@@ -1417,9 +1487,7 @@ def test_market_data_loader_rejects_live_environment_before_dotenv_fallback(
 ) -> None:
     dotenv_path = tmp_path / ".env"
     dotenv_path.write_text(
-        "THERICHER_MODE=off\n"
-        "KIS_PAPER_APP_KEY=dotenv-key\n"
-        "KIS_PAPER_APP_SECRET=dotenv-secret\n",
+        "THERICHER_MODE=off\nKIS_PAPER_APP_KEY=dotenv-key\nKIS_PAPER_APP_SECRET=dotenv-secret\n",
         encoding="utf-8",
     )
 

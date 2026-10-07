@@ -16,12 +16,13 @@ import re
 import uuid
 from collections.abc import Sequence
 from dataclasses import dataclass
-from datetime import date, datetime, timedelta
+from datetime import UTC, date, datetime, time, timedelta
 from pathlib import Path
 from typing import Literal
 from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
+from thericher_v2.execution.kis_market_data import validate_kis_paper_minute_failure_diagnostic
 from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION,
     KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS,
@@ -64,9 +65,13 @@ class KisPaperIntradaySessionCaptureTarget:
     exact_overlap_rows: int
     reason: str | None
     conflict_origin: Literal["candidate_batch", "retained_cache"] | None = None
-    retained_head_conflict_disposition: Literal[
-        "not_applicable", "preserved", "quarantined"
-    ] = "not_applicable"
+    retained_head_conflict_disposition: Literal["not_applicable", "preserved", "quarantined"] = (
+        "not_applicable"
+    )
+    failure_phase: str | None = None
+    failure_code: str | None = None
+    failure_page_ordinal: int | None = None
+    requested_pages_per_target: int | None = None
 
     def __post_init__(self) -> None:
         if self.target_key not in _EXPECTED_TARGET_KEYS:
@@ -75,6 +80,15 @@ class KisPaperIntradaySessionCaptureTarget:
             raise ValueError("session capture target status is invalid")
         if self.row_count < 0 or self.exact_overlap_rows < 0:
             raise ValueError("session capture target counts are invalid")
+        validate_kis_paper_minute_failure_diagnostic(
+            reason=self.reason,
+            phase=self.failure_phase,
+            code=self.failure_code,
+            page_ordinal=self.failure_page_ordinal,
+            requested_pages_per_target=self.requested_pages_per_target,
+        )
+        if self.failure_phase is not None and self.status not in {"partial", "rejected"}:
+            raise ValueError("session capture failure diagnostic is invalid")
         if self.reason is not None:
             object.__setattr__(
                 self,
@@ -102,7 +116,7 @@ class KisPaperIntradaySessionCaptureTarget:
             raise ValueError("session capture target conflict disposition is invalid")
 
     def to_payload(self) -> dict[str, object]:
-        return {
+        payload = {
             "target_key": self.target_key,
             "status": self.status,
             "row_count": self.row_count,
@@ -111,6 +125,14 @@ class KisPaperIntradaySessionCaptureTarget:
             "conflict_origin": self.conflict_origin,
             "retained_head_conflict_disposition": self.retained_head_conflict_disposition,
         }
+        if self.failure_phase is not None:
+            payload.update(
+                failure_phase=self.failure_phase,
+                failure_code=self.failure_code,
+                failure_page_ordinal=self.failure_page_ordinal,
+                requested_pages_per_target=self.requested_pages_per_target,
+            )
+        return payload
 
 
 @dataclass(frozen=True)
@@ -145,6 +167,12 @@ class KisPaperIntradaySessionCaptureOutcome:
         if not isinstance(self.current_session_cumulative_coverage, KisIntradayHeadCoverage):
             raise TypeError("session capture cumulative coverage is invalid")
         object.__setattr__(self, "schedule_run_id", validate_schedule_run_id(self.schedule_run_id))
+        if self.schedule_run_id is not None:
+            for target in targets:
+                if target.failure_phase is not None and target.requested_pages_per_target != (
+                    kis_paper_intraday_head_requested_page_budget(self.schedule_run_id)
+                ):
+                    raise ValueError("session capture requested page budget is invalid")
 
     @property
     def current_session_cumulative_coverage_digest(self) -> str:
@@ -357,6 +385,19 @@ def validate_schedule_run_id(value: str | None) -> str | None:
     return value
 
 
+def kis_paper_intraday_head_requested_page_budget(schedule_run_id: str) -> int:
+    """Match the existing launcher's 4/8-page contract at its frozen run start."""
+
+    if validate_schedule_run_id(schedule_run_id) is None:
+        raise ValueError("schedule run ID is invalid")
+    stamp = schedule_run_id.removeprefix("intraday-head-")
+    started_at = datetime.strptime(stamp[:15], "%Y%m%dT%H%M%S").replace(tzinfo=UTC)
+    eastern = started_at.astimezone(_EASTERN_TZ)
+    if eastern.weekday() < 5 and time(16, 20) <= eastern.time() < time(20):
+        return 8
+    return 4
+
+
 def _canonical_json_bytes(payload: dict[str, object]) -> bytes:
     return json.dumps(
         payload,
@@ -384,8 +425,7 @@ def _capture_targets(
     ):
         raise ValueError("session capture collector results are incomplete")
     if any(
-        run.reason == "minute_duplicate_conflict" and run.conflict_origin is None
-        for run in values
+        run.reason == "minute_duplicate_conflict" and run.conflict_origin is None for run in values
     ):
         raise ValueError("session capture conflict provenance is invalid")
     return tuple(
@@ -397,6 +437,10 @@ def _capture_targets(
             reason=run.reason,
             conflict_origin=run.conflict_origin,
             retained_head_conflict_disposition=run.retained_head_conflict_disposition,
+            failure_phase=run.failure_phase,
+            failure_code=run.failure_code,
+            failure_page_ordinal=run.failure_page_ordinal,
+            requested_pages_per_target=run.requested_pages_per_target,
         )
         for run in values
     )

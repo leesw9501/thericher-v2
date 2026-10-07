@@ -60,13 +60,36 @@ Evidence `D:\thericher-v2\model-artifacts\execution\paper-accounting-console-202
 sample Compose pass. Registry-only volume recovery is implemented/actually
 replayed with zero refits; fixed original contract/models/result stay unchanged.
 Pure three-ETF252-return covariance input helper has64 synthetic passes and
-independent review, no actual input qualification or training yet.
+independent review. Actual frozen three-date input smoke completes54 checks per
+process, three identical processes and ALL-RO readback; no training/promotion.
 
-Next objective `joint-etf-quarterly-allocation-development-v1` measures costed
+`joint-etf-quarterly-allocation-development-v1` COMPLETED/REJECTED,30 cells,
+exact ALL-RO no-fit/no-search replay. Both periods have positive hypothetical
+net growth, but the blend fails passive NAV in2013-2019 and minvar utility in
+both periods. Contract609b9513.../resultc562ad04...; exact pins in Research.
+This measured costed
 three-ETF composition, not just prediction loss or lower exposure. One frozen
 covariance/momentum blend and passive/component controls, revised seen data,
-no sealed/Paper promotion. Data diagnoses its exact fourth-page capture fault
-and Execution prepares SPY owned-inventory attribution independently.
+no sealed/Paper promotion. Its first immutable CPU attempt failed before any
+comparison cells: TRAIN beta bisection's intermediate precision was rejected as
+matched_fraction. All three periods' past-input preparation passed separately.
+Numerical-only same-family r2 repair is complete; original failed contract/
+result/source and economic conditions remain, no outcome-based rescue.
+Data's allowlisted phase/code/ordinal repair is frozen/reviewed/published only
+to head alias dfda02f7...; Paper/web aliases unchanged. Cached prefix preserves the
+current failure; reader binds the actual4/8-page invocation budget.
+Legacy constructor0/1/2-arity compatibility is repaired without retaining body.
+853 changed-path serial passes/37.61s; full9,892 passes/22 skips/35 warnings,
+327.94s/eight workers/clean exit,9,914 collected. Ruff/three sample Compose pass.
+Execution independently completed strict SPY owned-inventory replay: one order,
+one matched fill, known owned inventory, Fraction/three restart matches, prior
+QQQ v2 bundle anchors shared-basis continuity. No broker/private-state mutation
+or realized/net-PnL claim. Exact receipt/pin in Execution stateboard.
+Next objective joint-d1-direct-utility-development-v1 tests one small ordered
+joint-path TCN against same-input linear/constant and passive controls. Data
+context, differentiable Execution ledger and Research models are disjoint;
+CPU parity precedes one frozen three-fit600s CUDA campaign. No new permission,
+Paper-profit gate or framework; next head opportunity remains owned02:28 KST.
 
 Corrected .env uses a DIFFERENT mock account. Existing logical private volume
 now points to `thericher-v2-paper-canary-private-acct-20261007-v1`; all seven
@@ -92,8 +115,8 @@ Completed canonical cycle
 cannot select another entry. Never route old-account recovery here.
 
 SPY October7 23:50 public result is order_complete/exact_order_and_position_reconciled,
-with account-level one SPY position record/zero opens at00:12:43 KST. Private
-strategy ownership/PnL is not yet reattached. Scheduler Ready/next October8
+with account-level one SPY position record/zero opens at01:44:07 KST. Private
+strategy ownership is reattached at01:57:28; PnL is not observed. Ready/next October8
 23:50. Exact Data00:29 chain is collector_nonzero/reason_unavailable/incomplete;
 next_due02:28 KST. Task exit is not fill/capture evidence.
 Old prospective QQQ child bypassed shared allocation custody. ONLY that child's

@@ -10,7 +10,9 @@ from zoneinfo import ZoneInfo
 import pytest
 
 from thericher_v2.data.kis_paper_intraday_session_capture import (
+    KisPaperIntradaySessionCaptureTarget,
     build_and_write_kis_paper_intraday_session_capture,
+    kis_paper_intraday_head_requested_page_budget,
     validate_schedule_run_id,
     write_kis_paper_intraday_session_capture_evidence,
 )
@@ -23,10 +25,154 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMinuteRawBar,
 )
 from thericher_v2.execution.kis_private_intraday_backfill import (
+    KisPaperPrivateIntradayBackfillRun,
     run_kis_paper_private_intraday_backfill_cycle,
 )
 
 _KOREA = ZoneInfo("Asia/Seoul")
+
+
+@pytest.mark.parametrize(
+    "diagnostic",
+    [
+        {"failure_phase": "head_contract"},
+        {
+            "failure_phase": "head_contract",
+            "failure_code": "synthetic-secret",
+            "failure_page_ordinal": 4,
+            "requested_pages_per_target": 4,
+        },
+        {
+            "failure_phase": "row_parse",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": 4,
+            "requested_pages_per_target": 4,
+        },
+        {
+            "failure_phase": "head_contract",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": True,
+            "requested_pages_per_target": 4,
+        },
+        {
+            "failure_phase": "head_contract",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": 0,
+            "requested_pages_per_target": 4,
+        },
+    ],
+)
+def test_session_capture_rejects_invalid_optional_diagnostics(
+    diagnostic: dict[str, object],
+) -> None:
+    with pytest.raises(ValueError, match="minute failure diagnostic is invalid"):
+        KisPaperIntradaySessionCaptureTarget(
+            target_key="QQQ/NAS/1m",
+            status="partial",
+            row_count=360,
+            exact_overlap_rows=0,
+            reason="minute_response_invalid",
+            **diagnostic,
+        )
+
+
+def test_session_capture_legacy_targets_have_no_diagnostic_fields() -> None:
+    target = KisPaperIntradaySessionCaptureTarget(
+        target_key="QQQ/NAS/1m",
+        status="partial",
+        row_count=360,
+        exact_overlap_rows=0,
+        reason="minute_response_invalid",
+    )
+    assert not any(key.startswith("failure_") for key in target.to_payload())
+    assert "requested_pages_per_target" not in target.to_payload()
+
+
+@pytest.mark.parametrize("budget", [None, True, 4.0, 0, 2, 9, 999999])
+def test_session_capture_rejects_missing_invalid_or_insufficient_page_budget(
+    budget: object,
+) -> None:
+    with pytest.raises(ValueError, match="minute failure diagnostic is invalid"):
+        KisPaperIntradaySessionCaptureTarget(
+            target_key="QQQ/NAS/1m",
+            status="partial",
+            row_count=360,
+            exact_overlap_rows=0,
+            reason="minute_response_invalid",
+            failure_phase="head_contract",
+            failure_code="mixed_exchange_dates",
+            failure_page_ordinal=4,
+            requested_pages_per_target=budget,
+        )
+
+
+@pytest.mark.parametrize(
+    ("stamp", "expected"),
+    [
+        ("20260105T2119599999999Z", 4),
+        ("20260105T2120000000000Z", 8),
+        ("20260106T0059599999999Z", 8),
+        ("20260106T0100000000000Z", 4),
+        ("20260706T2019599999999Z", 4),
+        ("20260706T2020000000000Z", 8),
+        ("20260706T2359599999999Z", 8),
+        ("20260707T0000000000000Z", 4),
+        ("20260711T2120000000000Z", 4),
+    ],
+)
+def test_session_capture_page_budget_matches_existing_weekday_dst_window(
+    stamp: str, expected: int
+) -> None:
+    assert kis_paper_intraday_head_requested_page_budget(f"intraday-head-{stamp}") == expected
+
+
+@pytest.mark.parametrize(
+    ("run_stamp", "requested_pages", "valid"),
+    [
+        ("20260728T2019599999999Z", 4, True),
+        ("20260728T2020000000000Z", 8, True),
+        ("20260728T2019599999999Z", 8, False),
+        ("20260728T2020000000000Z", 4, False),
+    ],
+)
+def test_session_capture_binds_actual_budget_to_invocation_start_not_capture_clock(
+    tmp_path: Path, run_stamp: str, requested_pages: int, valid: bool
+) -> None:
+    repository_root = tmp_path / "repo"
+    repository_root.mkdir()
+    cache_root = tmp_path / "market-data"
+    runs = tuple(
+        KisPaperPrivateIntradayBackfillRun(
+            status="partial",
+            target_key=key,
+            row_count=0,
+            exact_overlap_rows=0,
+            reason="minute_response_invalid",
+            failure_phase="head_contract",
+            failure_code="mixed_exchange_dates",
+            failure_page_ordinal=requested_pages,
+            requested_pages_per_target=requested_pages,
+        )
+        for key in ("QQQ/NAS/1m", "SPY/AMS/1m")
+    )
+    kwargs = dict(
+        runs=runs,
+        cache_root=cache_root,
+        repository_root=repository_root,
+        observed_at=datetime(2026, 7, 28, 20, 20, 1, tzinfo=ZoneInfo("UTC")),
+        schedule_run_id=f"intraday-head-{run_stamp}",
+    )
+    if not valid:
+        with pytest.raises(ValueError, match="session capture requested page budget is invalid"):
+            build_and_write_kis_paper_intraday_session_capture(**kwargs)
+        assert not cache_root.exists()
+        return
+    capture = build_and_write_kis_paper_intraday_session_capture(**kwargs)
+    persisted = json.loads(capture.evidence_path.read_bytes())
+    assert all(t["requested_pages_per_target"] == requested_pages for t in persisted["targets"])
+    assert "sha256:" + hashlib.sha256(capture.evidence_path.read_bytes()).hexdigest() == (
+        capture.evidence_sha256
+    )
 
 
 class _MinuteClient:

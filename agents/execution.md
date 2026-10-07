@@ -24,9 +24,24 @@ snapshot was unavailable at publication, correctly UNKNOWN rather than zero.
 Evidence `D:\thericher-v2\model-artifacts\execution\paper-accounting-console-20261008-v1\outcome.json`.
 230 related serial passes/full9,497 passes/22 skips/35 warnings/326.64s/eight
 workers/clean helper,9,519 collected; Ruff/three sample Compose variants pass.
-Next independent package: exact current-account SPY owned-inventory attribution
-from existing strict private parsers. No new order/reset or account-vs-owned
-conflation; an open position is not a realized round trip.
+Current-account SPY owned-inventory attribution is now ACTUALLY replayed:
+known_owned_inventory, one exact strategy order/one matched fill, no retained
+fallback, independent Fraction inventory arithmetic and three restart matches.
+Host Paper-only account digest matches; the prior QQQ v2 byte-bundle commitment
+independently anchors the unchanged shared basis/SPY owner custody. Strict
+duplicate-key decoding, exact referenced-state cardinality, source hashes and
+before/after private bytes are checked in a network-none/RO private container.
+No broker call/order/reset/private mutation. This is retained owned inventory,
+not a fresh broker-state comparison, realized round trip or PnL. The public SPY
+outcome remains historical status, not the private fill's exact identity link.
+Observed01:57:28 KST October8;91 focused passes/independent source review.
+Receipt `D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\owned-inventory-20261008-v1\outcome.json`;
+SHA256 `8ed682e6e340a85216828fb0b77e0a359bfc66629a72f355e0a441232e110333`.
+Parent integration853 serial passes37.61s; full9,892 passes/22 skips/35 warnings/
+327.94s/eight workers/clean exit,9,914 collected; Ruff/three sample Compose pass.
+Next owned research package is a small pure differentiable fee/NAV primitive,
+eight analytic trade-sign faces and Decimal/gradient parity. It has no broker
+route and does not replace deterministic sizing or the existing SPY strategy.
 
 October8 `new-account-paper-fill-accounting-v1` is complete. One pure projector
 in the existing budget module independently receives frozen account/basis/owner
@@ -59,7 +74,7 @@ order_complete/exact_order_and_position_reconciled at23:50:44 KST. Scheduler
 Ready/exit0/next October8 23:50; dispatch is not hash-bound to that outcome.
 00:28:07 categorical loopback projection showed one SPY account position record
 and zero SPY opens; that is account-level evidence, not strategy ownership or
-a SPY round trip/PnL. Exact private SPY custody remains a separate package.
+a SPY round trip/PnL. Exact private SPY custody is independently replayed above.
 Data's00:29 October8 chain is now bound/nonzero/incomplete;02:28 next_due remains
 owned, not manually invoked. It is not a Paper hold.
 

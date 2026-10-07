@@ -28,6 +28,7 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMinutePage,
     KisPaperMinuteQuery,
     KisPaperMinuteRawBar,
+    validate_kis_paper_minute_failure_diagnostic,
 )
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
@@ -180,6 +181,11 @@ class KisPaperPrivateIntradayBackfillRun:
     )
     schema_version: int = SCHEMA_VERSION
 
+    failure_phase: str | None = None
+    failure_code: str | None = None
+    failure_page_ordinal: int | None = None
+    requested_pages_per_target: int | None = None
+
     def __post_init__(self) -> None:
         if self.status not in {
             "collected",
@@ -196,6 +202,15 @@ class KisPaperPrivateIntradayBackfillRun:
             raise ValueError("private intraday backfill result is invalid")
         if self.manifest_hash is not None and not _is_sha256(self.manifest_hash):
             raise ValueError("private intraday backfill result is invalid")
+        validate_kis_paper_minute_failure_diagnostic(
+            reason=self.reason,
+            phase=self.failure_phase,
+            code=self.failure_code,
+            page_ordinal=self.failure_page_ordinal,
+            requested_pages_per_target=self.requested_pages_per_target,
+        )
+        if self.failure_phase is not None and self.status not in {"partial", "rejected"}:
+            raise ValueError("private intraday failure diagnostic is invalid")
         if self.conflict_origin not in KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS | {None}:
             raise ValueError("private intraday conflict origin is invalid")
         if (
@@ -230,6 +245,10 @@ class _CollectedTarget:
     status: Literal["collected", "partial", "rejected"]
     reason: str | None
     conflict_origin: _ConflictOrigin | None = None
+    failure_phase: str | None = None
+    failure_code: str | None = None
+    failure_page_ordinal: int | None = None
+    requested_pages_per_target: int | None = None
 
 
 @dataclass
@@ -717,6 +736,10 @@ def _run_kis_paper_private_intraday_cycle(
                     status=collected.status,
                     reason=collected.reason,
                     conflict_origin=collected.conflict_origin,
+                    failure_phase=collected.failure_phase,
+                    failure_code=collected.failure_code,
+                    failure_page_ordinal=collected.failure_page_ordinal,
+                    requested_pages_per_target=collected.requested_pages_per_target,
                 )
             if collected.status == "rejected":
                 _record_target_last_observation(
@@ -734,6 +757,10 @@ def _run_kis_paper_private_intraday_cycle(
                         exact_overlap_rows=0,
                         reason=collected.reason,
                         conflict_origin=collected.conflict_origin,
+                        failure_phase=collected.failure_phase,
+                        failure_code=collected.failure_code,
+                        failure_page_ordinal=collected.failure_page_ordinal,
+                        requested_pages_per_target=collected.requested_pages_per_target,
                     )
                 )
                 continue
@@ -806,12 +833,16 @@ def _run_kis_paper_private_intraday_cycle(
                         else None
                     )
                 last_reason = (
-                    "source_exhausted"
-                    if _collected_target_source_is_exhausted(
-                        collected=collected,
-                        resume_cursor=resume_cursor and not dated_qqq_session,
+                    collected.reason
+                    if collected.status == "partial"
+                    else (
+                        "source_exhausted"
+                        if _collected_target_source_is_exhausted(
+                            collected=collected,
+                            resume_cursor=resume_cursor and not dated_qqq_session,
+                        )
+                        else "already_cached"
                     )
-                    else "already_cached"
                 )
                 _record_target_last_observation(
                     target_state=target_state,
@@ -821,11 +852,17 @@ def _run_kis_paper_private_intraday_cycle(
                 _write_index(root=root, index=index, expected_targets=targets)
                 results.append(
                     KisPaperPrivateIntradayBackfillRun(
-                        status="recovered",
+                        status="partial" if collected.status == "partial" else "recovered",
                         target_key=target.target_key,
                         row_count=len(collected.rows),
                         exact_overlap_rows=(collected.exact_duplicate_rows + prior_exact_overlap),
-                        reason="already_cached",
+                        reason=collected.reason
+                        if collected.status == "partial"
+                        else "already_cached",
+                        failure_phase=collected.failure_phase,
+                        failure_code=collected.failure_code,
+                        failure_page_ordinal=collected.failure_page_ordinal,
+                        requested_pages_per_target=collected.requested_pages_per_target,
                     )
                 )
                 continue
@@ -874,6 +911,10 @@ def _run_kis_paper_private_intraday_cycle(
                     manifest_path=manifest_path,
                     manifest_hash=manifest_hash,
                     reason=collected.reason,
+                    failure_phase=collected.failure_phase,
+                    failure_code=collected.failure_code,
+                    failure_page_ordinal=collected.failure_page_ordinal,
+                    requested_pages_per_target=collected.requested_pages_per_target,
                 )
             )
         return tuple(results)
@@ -1018,6 +1059,20 @@ def _collect_target(
             cursor = next_cursor
     except KisPaperMarketDataError as error:
         reason = sanitize_kis_paper_private_intraday_failure_reason(error)
+        failure_phase, failure_code = error.failure_phase, error.failure_code
+        failure_page_ordinal = page_number if failure_phase is not None else None
+        requested_pages_per_target = pages_per_target if failure_phase is not None else None
+        try:
+            validate_kis_paper_minute_failure_diagnostic(
+                reason=reason,
+                phase=failure_phase,
+                code=failure_code,
+                page_ordinal=failure_page_ordinal,
+                requested_pages_per_target=requested_pages_per_target,
+            )
+        except ValueError:
+            failure_phase = failure_code = failure_page_ordinal = None
+            requested_pages_per_target = None
         conflict_origin: _ConflictOrigin | None = (
             "candidate_batch" if isinstance(error, _CandidateBatchDuplicateConflict) else None
         )
@@ -1034,6 +1089,10 @@ def _collect_target(
                 status="rejected",
                 reason=reason,
                 conflict_origin=conflict_origin,
+                failure_phase=failure_phase,
+                failure_code=failure_code,
+                failure_page_ordinal=failure_page_ordinal,
+                requested_pages_per_target=requested_pages_per_target,
             )
         return _CollectedTarget(
             target=target,
@@ -1045,6 +1104,10 @@ def _collect_target(
             status="partial",
             reason=reason,
             conflict_origin=conflict_origin,
+            failure_phase=failure_phase,
+            failure_code=failure_code,
+            failure_page_ordinal=failure_page_ordinal,
+            requested_pages_per_target=requested_pages_per_target,
         )
     return _CollectedTarget(
         target=target,
@@ -1156,20 +1219,30 @@ def _validate_explicit_head_page(
         page.query.symbol,
         page.query.exchange,
     ) != (target.symbol, target.exchange):
-        raise KisPaperMarketDataError("minute_response_invalid")
+        raise KisPaperMarketDataError(
+            "minute_response_invalid",
+            failure_phase="head_contract",
+            failure_code="response_identity_mismatch",
+        )
     exchange_stamps = [_exchange_stamp(row) for row in page.bars]
     korea_stamps = [_korea_stamp(row) for row in page.bars]
-    if (
-        len(set(exchange_stamps)) != len(page.bars)
-        or len(set(korea_stamps)) != len(page.bars)
-        or len({row.exchange_date for row in page.bars}) != 1
-        or not any(
-            exchange_stamps == sorted(exchange_stamps, reverse=reverse)
-            and korea_stamps == sorted(korea_stamps, reverse=reverse)
-            for reverse in (False, True)
-        )
+    failure_code = None
+    if len(set(exchange_stamps)) != len(page.bars):
+        failure_code = "duplicate_exchange_timestamp"
+    elif len(set(korea_stamps)) != len(page.bars):
+        failure_code = "duplicate_korea_timestamp"
+    elif len({row.exchange_date for row in page.bars}) != 1:
+        failure_code = "mixed_exchange_dates"
+    elif not any(
+        exchange_stamps == sorted(exchange_stamps, reverse=reverse)
+        and korea_stamps == sorted(korea_stamps, reverse=reverse)
+        for reverse in (False, True)
     ):
-        raise KisPaperMarketDataError("minute_response_invalid")
+        failure_code = "timestamp_order_invalid"
+    if failure_code is not None:
+        raise KisPaperMarketDataError(
+            "minute_response_invalid", failure_phase="head_contract", failure_code=failure_code
+        )
     if cursor is not None:
         requested_stamp = f"{cursor.keyb[:8]}T{cursor.keyb[8:]}"
         if (

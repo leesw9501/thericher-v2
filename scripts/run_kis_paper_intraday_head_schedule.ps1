@@ -105,11 +105,17 @@ function Get-ProfilePayload {
 function Get-UniqueSafeCollectionFailureCategory {
     param(
         [Parameter(Mandatory = $true)]
-        [object[]]$Output
+        [object[]]$Output,
+        [string]$ExpectedScheduleRunId = "",
+        [int]$CollectionExitCode = 1,
+        [int]$PagesPerTarget = 8
     )
 
-    # Only the existing collector's exact, source-safe error payload can narrow
-    # a later nonzero. Transport text and every other payload stay unavailable.
+    if ($CollectionExitCode -eq 0) {
+        return "reason_unavailable"
+    }
+    # Accept only an exact error payload or one current bound capture. The
+    # immutable capture reader separately verifies bytes before projecting causes.
     $expectedProperties = @(
         "freshness_projection",
         "reason",
@@ -151,6 +157,121 @@ function Get-UniqueSafeCollectionFailureCategory {
             $payload = $text | ConvertFrom-Json -ErrorAction Stop
         } catch {
             return "reason_unavailable"
+        }
+        if ($payload.kind -ceq "kis_paper_intraday_session_capture") {
+            if ([string]::IsNullOrEmpty($ExpectedScheduleRunId)) {
+                return "reason_unavailable"
+            }
+            $binding = Get-UniqueSafeSessionCaptureTerminalBinding `
+                -Output @($text) -ExpectedScheduleRunId $ExpectedScheduleRunId
+            if (
+                $null -eq $binding `
+                    -or $payload.schedule_run_id -cne $ExpectedScheduleRunId `
+                    -or $payload.status -cnotin @("complete", "incomplete") `
+                    -or $payload.mode -cne "session-capture" `
+                    -or $payload.collection_mode -cne "session_capture" `
+                    -or $payload.route_class -cne "kis_paper_market_data" `
+                    -or $payload.paper_only -isnot [bool] -or -not $payload.paper_only `
+                    -or $payload.current_session_cumulative_coverage_digest -cne $binding.current_session_cumulative_coverage_digest `
+                    -or $payload.current_session_cumulative_coverage_category -cne $binding.current_session_cumulative_coverage_category
+            ) {
+                return "reason_unavailable"
+            }
+            try {
+                $captureTime = [datetimeoffset]$payload.observed_at
+                $bindingTime = [datetimeoffset]$binding.observed_at
+            } catch {
+                return "reason_unavailable"
+            }
+            if ($captureTime -ne $bindingTime) {
+                return "reason_unavailable"
+            }
+            $allowedCaptureProperties = @(
+                "schema_version", "kind", "status", "paper_only", "route_class",
+                "collection_mode", "capture_target_key", "observed_at", "storage",
+                "targets", "coverage", "current_session_cumulative_coverage",
+                "schedule_run_id", "current_session_cumulative_coverage_digest",
+                "current_session_cumulative_coverage_category", "terminal_receipt_binding",
+                "mode", "freshness_projection"
+            )
+            if (@($payload.PSObject.Properties.Name | Where-Object { $_ -cnotin $allowedCaptureProperties }).Count -ne 0) {
+                return "reason_unavailable"
+            }
+            $targets = @($payload.targets)
+            if ($targets.Count -ne 2 -or (@($targets.target_key | Sort-Object) -join "|") -cne "QQQ/NAS/1m|SPY/AMS/1m") {
+                return "reason_unavailable"
+            }
+            $diagnosticCodes = @{
+                response_decode = @("envelope_shape_invalid")
+                row_parse = @("row_not_mapping", "required_field_invalid", "row_constructor_invalid")
+                page_contract = @("row_count_exceeded", "continuation_contract_invalid")
+                head_contract = @("response_identity_mismatch", "duplicate_exchange_timestamp", "duplicate_korea_timestamp", "mixed_exchange_dates", "timestamp_order_invalid")
+            }
+            $failureCount = 0
+            foreach ($target in $targets) {
+                if (
+                    $target.target_key -isnot [string] -or $target.status -isnot [string] `
+                        -or ($target.row_count -isnot [long] -and $target.row_count -isnot [int]) `
+                        -or ($target.exact_overlap_rows -isnot [long] -and $target.exact_overlap_rows -isnot [int]) `
+                        -or $target.row_count -lt 0 -or $target.exact_overlap_rows -lt 0
+                ) {
+                    return "reason_unavailable"
+                }
+                $requiredTargetProperties = @("target_key", "status", "row_count", "exact_overlap_rows", "reason", "conflict_origin", "retained_head_conflict_disposition")
+                $diagnosticProperties = @("failure_phase", "failure_code", "failure_page_ordinal", "requested_pages_per_target")
+                $targetProperties = @($target.PSObject.Properties.Name)
+                $diagnosticCount = @($targetProperties | Where-Object { $_ -cin $diagnosticProperties }).Count
+                $expectedTargetProperties = @($requiredTargetProperties)
+                if ($diagnosticCount -eq 4) {
+                    $expectedTargetProperties += $diagnosticProperties
+                    if (
+                        $target.reason -cne "minute_response_invalid" `
+                            -or $target.status -cnotin @("partial", "rejected") `
+                            -or $target.failure_phase -isnot [string] `
+                            -or $target.failure_code -isnot [string] `
+                            -or $target.failure_phase -cnotin @($diagnosticCodes.Keys) `
+                            -or $target.failure_code -cnotin $diagnosticCodes[$target.failure_phase] `
+                            -or ($target.failure_page_ordinal -isnot [long] -and $target.failure_page_ordinal -isnot [int]) `
+                            -or $target.failure_page_ordinal -lt 1 `
+                            -or ($target.requested_pages_per_target -isnot [long] -and $target.requested_pages_per_target -isnot [int]) `
+                            -or $target.requested_pages_per_target -notin @(4, 8) `
+                            -or $target.requested_pages_per_target -ne $PagesPerTarget `
+                            -or $target.failure_page_ordinal -gt $target.requested_pages_per_target
+                    ) {
+                        return "reason_unavailable"
+                    }
+                } elseif ($diagnosticCount -ne 0) {
+                    return "reason_unavailable"
+                }
+                if ((@($targetProperties | Sort-Object) -join "|") -cne (@($expectedTargetProperties | Sort-Object) -join "|")) {
+                    return "reason_unavailable"
+                }
+                if ($null -eq $target.conflict_origin) {
+                    if ($target.retained_head_conflict_disposition -cne "not_applicable" -or $target.reason -ceq "minute_duplicate_conflict") {
+                        return "reason_unavailable"
+                    }
+                } elseif (
+                    $target.status -cne "rejected" -or $target.reason -cne "minute_duplicate_conflict" `
+                        -or $target.conflict_origin -cnotin @("candidate_batch", "retained_cache") `
+                        -or ($target.conflict_origin -ceq "candidate_batch" -and $target.retained_head_conflict_disposition -cne "not_applicable") `
+                        -or ($target.conflict_origin -ceq "retained_cache" -and $target.retained_head_conflict_disposition -cnotin @("preserved", "quarantined"))
+                ) {
+                    return "reason_unavailable"
+                }
+                if ($target.status -cin @("partial", "rejected")) {
+                    if ($target.reason -isnot [string] -or $target.reason -cnotin $collectorProviderReasons) {
+                        return "reason_unavailable"
+                    }
+                    $failureCount += 1
+                } elseif ($target.status -cnotin @("collected", "recovered", "source_exhausted")) {
+                    return "reason_unavailable"
+                }
+            }
+            if ($failureCount -eq 0) {
+                return "reason_unavailable"
+            }
+            $categories += "collector_provider"
+            continue
         }
         $propertyNames = @($payload.PSObject.Properties.Name | Sort-Object)
         if (
@@ -636,7 +757,9 @@ $collectionReturnedAt = (Get-Date).ToUniversalTime()
 $collectionExitCode = [int]$collection.ExitCode
 $collectionFailureCategory = "reason_unavailable"
 if ($collectionExitCode -ne 0) {
-    $collectionFailureCategory = Get-UniqueSafeCollectionFailureCategory -Output $collection.Output
+    $collectionFailureCategory = Get-UniqueSafeCollectionFailureCategory `
+        -Output $collection.Output -ExpectedScheduleRunId $scheduleRunId `
+        -CollectionExitCode $collectionExitCode -PagesPerTarget $collectionPagesPerTarget
 }
 $scheduleObservedAt = $collectionReturnedAt
 $scheduleObservedAtMarker = $scheduleObservedAt.ToString(

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import runpy
 import socket
 import urllib.request
 from collections.abc import Callable
@@ -16,6 +17,9 @@ import thericher_v2.execution.kis_private_intraday_backfill as collector
 from thericher_v2.data.kis_paper_intraday import (
     load_verified_kis_paper_private_intraday_catalog,
     require_complete_kis_paper_private_intraday_session,
+)
+from thericher_v2.data.kis_paper_intraday_session_capture import (
+    build_and_write_kis_paper_intraday_session_capture,
 )
 from thericher_v2.data.us_equity_session import us_equity_2026_session
 from thericher_v2.execution.kis_market_data import (
@@ -307,6 +311,22 @@ def test_paired_invalid_page_preserves_prefix_and_stops_only_its_target(
         if failure in {"prior_day", "repeat", "overlap", "canonical_overlap"}
         else "minute_response_invalid"
     )
+    if failed.reason == "minute_response_invalid":
+        assert (failed.failure_phase, failed.failure_code, failed.failure_page_ordinal) == (
+            "head_contract",
+            {
+                "wrong_symbol": "response_identity_mismatch",
+                "wrong_exchange": "response_identity_mismatch",
+                "mixed_day": "mixed_exchange_dates",
+                "unordered_exchange": "timestamp_order_invalid",
+                "unordered_korea": "timestamp_order_invalid",
+                "duplicate_exchange": "duplicate_exchange_timestamp",
+                "duplicate_korea": "duplicate_korea_timestamp",
+            }[failure],
+            2,
+        )
+    else:
+        assert failed.failure_phase is failed.failure_code is failed.failure_page_ordinal is None
     assert other.status == "collected" and other.row_count == 480
     assert len(client.responses[symbol]) == 1 and len(client.queries) == 6
     catalog = load_verified_kis_paper_private_intraday_catalog(
@@ -316,6 +336,106 @@ def test_paired_invalid_page_preserves_prefix_and_stops_only_its_target(
         exchange="NAS" if symbol == "QQQ" else "AMS",
     )
     assert len(catalog.bars) == 120
+
+
+@pytest.mark.parametrize("symbol", ["QQQ", "SPY"])
+@pytest.mark.parametrize("attempt_count", [1, 2])
+def test_pair_mixed_fourth_page_keeps_360_and_bound_diagnostic_without_retry(
+    tmp_path: Path, symbol: str, attempt_count: int, capsys: pytest.CaptureFixture[str]
+) -> None:
+    failing = [
+        *[_page(_rows(120, offset=offset), symbol=symbol) for offset in (0, -120, -240)],
+        _page(_rows(120, offset=-630), symbol=symbol),
+        _page(_rows(120, offset=-360), symbol=symbol),
+    ]
+    other_symbol = "SPY" if symbol == "QQQ" else "QQQ"
+    first_observed_at = datetime(2026, 7, 22, 15, 30, tzinfo=UTC)
+    retained_state = retained_manifest_bytes = retained_raw_bytes = None
+    for attempt in range(attempt_count):
+        good = [
+            _page(_rows(120, offset=offset + attempt * 120), symbol=other_symbol)
+            for offset in (360, 240, 120, 0)
+        ]
+        client = _Client(failing, good) if symbol == "QQQ" else _Client(good, failing)
+        observed_at = first_observed_at + timedelta(minutes=attempt)
+        results = _run_pair(tmp_path, client, observed_at=observed_at)
+        state = next(t for t in _index(tmp_path)["targets"] if t["symbol"] == symbol)
+        manifest_path = tmp_path / "market-data" / "v1" / state["chunks"][0]["manifest_path"]
+        manifest = json.loads(manifest_path.read_text())
+        raw_path = manifest_path.parent / manifest["files"]["raw_minute_rows"]["path"]
+        if attempt == 0:
+            retained_state = state["chunks"]
+            retained_manifest_bytes = manifest_path.read_bytes()
+            retained_raw_bytes = raw_path.read_bytes()
+        else:
+            assert state["chunks"] == retained_state
+            assert manifest_path.read_bytes() == retained_manifest_bytes
+            assert raw_path.read_bytes() == retained_raw_bytes
+            assert state["last_reason"] == "minute_response_invalid"
+            assert state["last_observed_at_utc"] == "2026-07-22T15:31:00Z"
+        assert len(client.responses[symbol]) == 1
+        assert len(client.queries) == client.paced_calls == 8
+    failed, other = results if symbol == "QQQ" else reversed(results)
+    assert (failed.status, failed.row_count, failed.reason) == (
+        "partial",
+        360,
+        "minute_response_invalid",
+    )
+    assert (failed.failure_phase, failed.failure_code, failed.failure_page_ordinal) == (
+        "head_contract",
+        "mixed_exchange_dates",
+        4,
+    )
+    assert other.status == "collected" and other.row_count == 480
+    assert failed.requested_pages_per_target == 4
+    script = runpy.run_path(
+        str(Path(__file__).parents[1] / "scripts" / "backfill_kis_paper_private_intraday.py")
+    )
+    assert script["_collection_succeeded"](results) is False
+    assert len(client.responses[symbol]) == 1
+    assert len(client.queries) == client.paced_calls == 8
+    state = next(t for t in _index(tmp_path)["targets"] if t["symbol"] == symbol)
+    chunk = state["chunks"][-1]
+    manifest = json.loads((tmp_path / "market-data" / "v1" / chunk["manifest_path"]).read_text())
+    assert len(manifest["pages"]) == 3
+    assert chunk["input_cursor"] is chunk["output_cursor"] is state["next_cursor"] is None
+    assert not any(key.startswith("failure_") for key in chunk)
+    capture = build_and_write_kis_paper_intraday_session_capture(
+        runs=results,
+        cache_root=tmp_path / "market-data",
+        repository_root=tmp_path / "repo",
+        observed_at=observed_at,
+        schedule_run_id=f"intraday-head-{observed_at.strftime('%Y%m%dT%H%M%SZ')}",
+    )
+    target = next(
+        t for t in capture.safe_output_payload()["targets"] if t["target_key"] == failed.target_key
+    )
+    assert {key: target[key] for key in target if key.startswith("failure_")} == {
+        "failure_phase": "head_contract",
+        "failure_code": "mixed_exchange_dates",
+        "failure_page_ordinal": 4,
+    }
+    assert target["requested_pages_per_target"] == 4
+    assert capture.outcome.observed_at == observed_at
+    assert capsys.readouterr() == ("", "")
+
+
+def test_invalid_error_diagnostic_does_not_change_the_retained_prefix(tmp_path: Path) -> None:
+    error = KisPaperMarketDataError("minute_response_invalid")
+    error.failure_phase = "head_contract"
+    error.failure_code = "synthetic-secret-must-not-leak"
+    client = _Client(
+        [_page(_rows(120, offset=120)), error, _page(_rows(120))],
+        [_page(_rows(1), symbol="SPY")],
+    )
+    failed = _run_pair(tmp_path, client)[0]
+    assert (failed.status, failed.row_count, failed.reason) == (
+        "partial",
+        120,
+        "minute_response_invalid",
+    )
+    assert failed.failure_phase is failed.failure_code is failed.failure_page_ordinal is None
+    assert len(client.responses["QQQ"]) == 1
 
 
 @pytest.mark.parametrize("symbol", ["QQQ", "SPY"])
@@ -419,8 +539,7 @@ def test_full_recognized_terminal_page_stops_at_exact_frontier(
         count = terminal_page if target_symbol == symbol else 4
         expected_rows = _rows(120 * count, offset=(4 - count) * 120)
         assert [bar.start_ts for bar in catalog.bars] == [
-            datetime.strptime(row.korea_date + row.korea_time, "%Y%m%d%H%M%S")
-            .replace(tzinfo=UTC)
+            datetime.strptime(row.korea_date + row.korea_time, "%Y%m%d%H%M%S").replace(tzinfo=UTC)
             - timedelta(hours=9)
             for row in expected_rows
         ]
@@ -667,8 +786,7 @@ def test_short_older_page_is_retained_then_stops(
             offset=120 - count if len(queries) == 2 else 120,
         )
         assert [bar.start_ts for bar in catalog.bars] == [
-            datetime.strptime(row.korea_date + row.korea_time, "%Y%m%d%H%M%S")
-            .replace(tzinfo=UTC)
+            datetime.strptime(row.korea_date + row.korea_time, "%Y%m%d%H%M%S").replace(tzinfo=UTC)
             - timedelta(hours=9)
             for row in expected_rows
         ]
@@ -889,9 +1007,7 @@ def test_pair_invalid_first_head_rejects_only_its_target(tmp_path: Path, symbol:
 
 @pytest.mark.parametrize("signal", ["blank_or_absent", "unrecognized_nonblank"])
 @pytest.mark.parametrize("count", [1, 119, 120])
-def test_default_still_stops_on_headerless_head(
-    tmp_path: Path, signal: str, count: int
-) -> None:
+def test_default_still_stops_on_headerless_head(tmp_path: Path, signal: str, count: int) -> None:
     client = _Client(
         *[
             [

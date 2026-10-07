@@ -7,6 +7,9 @@ from pathlib import Path
 import pytest
 
 import thericher_v2.execution.kis_paper_prospective_qqq_session as qqq_session
+from thericher_v2.data.kis_paper_intraday_session_capture import (
+    kis_paper_intraday_head_requested_page_budget,
+)
 from thericher_v2.ops.kis_paper_prospective_qqq_validation import (
     KIS_PAPER_PROSPECTIVE_QQQ_VALIDATION_CONTRACT_ID,
     KisPaperProspectiveQqqValidation,
@@ -253,6 +256,206 @@ def test_head_schedule_classifies_only_one_exact_safe_collection_failure_payload
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+@pytest.mark.parametrize(
+    "case",
+    [
+        "valid",
+        "spy_only",
+        "legacy",
+        "duplicate",
+        "stale",
+        "wrong_payload_run",
+        "wrong_time",
+        "wrong_digest",
+        "unknown_code",
+        "wrong_phase",
+        "phase_case",
+        "partial_diagnostic",
+        "null_diagnostic",
+        "bool_ordinal",
+        "excess_ordinal",
+        "negative_ordinal",
+        "float_ordinal",
+        "missing_budget",
+        "wrong_budget",
+        "unbounded_budget",
+        "bool_budget",
+        "float_budget",
+        "bool_count",
+        "status_case",
+        "kind_case",
+        "bad_provenance",
+        "missing_expected_run",
+        "unknown_target",
+        "extra_target_field",
+        "extra_payload_field",
+        "unknown_reason",
+        "zero_exit",
+        "no_failed_target",
+    ],
+)
+def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: str) -> None:
+    run_id = "intraday-head-20260728T153000Z"
+    digest = "sha256:" + "b" * 64
+    payload = {
+        "kind": "kis_paper_intraday_session_capture",
+        "mode": "session-capture",
+        "collection_mode": "session_capture",
+        "route_class": "kis_paper_market_data",
+        "paper_only": True,
+        "status": "incomplete",
+        "schedule_run_id": run_id,
+        "observed_at": "2026-07-29T00:30:00+09:00",
+        "current_session_cumulative_coverage_digest": digest,
+        "current_session_cumulative_coverage_category": "incomplete",
+        "terminal_receipt_binding": {
+            "schedule_run_id": run_id,
+            "observed_at": "2026-07-28T15:30:00Z",
+            "receipt_sha256": "sha256:" + "a" * 64,
+            "current_session_cumulative_coverage_digest": digest,
+            "current_session_cumulative_coverage_category": "incomplete",
+        },
+        "targets": [
+            {
+                "target_key": key,
+                "status": "partial",
+                "row_count": 360,
+                "exact_overlap_rows": 0,
+                "reason": "minute_response_invalid",
+                "conflict_origin": None,
+                "retained_head_conflict_disposition": "not_applicable",
+                "failure_phase": "head_contract",
+                "failure_code": "mixed_exchange_dates",
+                "failure_page_ordinal": 4,
+                "requested_pages_per_target": 4,
+            }
+            for key in ("QQQ/NAS/1m", "SPY/AMS/1m")
+        ],
+    }
+    target = payload["targets"][0]
+    if case == "spy_only":
+        payload["status"] = "complete"
+        target.update(status="collected", reason=None, row_count=480)
+        for key in (
+            "failure_phase",
+            "failure_code",
+            "failure_page_ordinal",
+            "requested_pages_per_target",
+        ):
+            target.pop(key)
+    elif case == "legacy":
+        for item in payload["targets"]:
+            for key in (
+                "failure_phase",
+                "failure_code",
+                "failure_page_ordinal",
+                "requested_pages_per_target",
+            ):
+                item.pop(key)
+    elif case == "stale":
+        payload["terminal_receipt_binding"]["schedule_run_id"] = "intraday-head-20260727T153000Z"
+    elif case == "wrong_payload_run":
+        payload["schedule_run_id"] = "intraday-head-20260727T153000Z"
+    elif case == "wrong_time":
+        payload["observed_at"] = "2026-07-28T15:31:00Z"
+    elif case == "wrong_digest":
+        payload["current_session_cumulative_coverage_digest"] = "sha256:" + "c" * 64
+    elif case == "unknown_code":
+        target["failure_code"] = "synthetic-secret-must-not-leak"
+    elif case == "wrong_phase":
+        target["failure_phase"] = "row_parse"
+    elif case == "phase_case":
+        target["failure_phase"] = "Head_Contract"
+    elif case == "partial_diagnostic":
+        target.pop("failure_page_ordinal")
+    elif case == "null_diagnostic":
+        target["failure_phase"] = None
+    elif case == "bool_ordinal":
+        target["failure_page_ordinal"] = True
+    elif case == "excess_ordinal":
+        target["failure_page_ordinal"] = 5
+    elif case == "negative_ordinal":
+        target["failure_page_ordinal"] = -1
+    elif case == "float_ordinal":
+        target["failure_page_ordinal"] = 4.5
+    elif case == "missing_budget":
+        target.pop("requested_pages_per_target")
+    elif case == "wrong_budget":
+        target["requested_pages_per_target"] = 8
+    elif case == "unbounded_budget":
+        target["requested_pages_per_target"] = 999999
+    elif case == "bool_budget":
+        target["requested_pages_per_target"] = True
+    elif case == "float_budget":
+        target["requested_pages_per_target"] = 4.0
+    elif case == "bool_count":
+        target["row_count"] = True
+    elif case == "status_case":
+        target["status"] = "PARTIAL"
+    elif case == "kind_case":
+        payload["kind"] = "KIS_PAPER_INTRADAY_SESSION_CAPTURE"
+    elif case == "bad_provenance":
+        target["conflict_origin"] = "synthetic-secret-must-not-leak"
+    elif case == "unknown_target":
+        target["target_key"] = "IWM/AMS/1m"
+    elif case == "extra_target_field":
+        target["unexpected"] = "synthetic-secret-must-not-leak"
+    elif case == "extra_payload_field":
+        payload["unexpected"] = "synthetic-secret-must-not-leak"
+    elif case == "unknown_reason":
+        target["reason"] = "synthetic-secret-must-not-leak"
+    elif case == "no_failed_target":
+        for item in payload["targets"]:
+            item.update(status="collected", reason=None)
+            for key in (
+                "failure_phase",
+                "failure_code",
+                "failure_page_ordinal",
+                "requested_pages_per_target",
+            ):
+                item.pop(key)
+    lines = [json.dumps(payload)] * (2 if case == "duplicate" else 1)
+    source = SCRIPT.read_text(encoding="ascii")
+    classifier = source[
+        source.index("function Get-UniqueSafeCollectionFailureCategory") : source.index(
+            "function Write-HeadInvocationReceipt"
+        )
+    ]
+    binding = source[
+        source.index("function Get-UniqueSafeSessionCaptureTerminalBinding") : source.index(
+            "function Get-DispatchTerminalExitCode"
+        )
+    ]
+    encoded = base64.b64encode(json.dumps(lines).encode("ascii")).decode("ascii")
+    expected_run = "" if case == "missing_expected_run" else run_id
+    command = "\n".join(
+        (
+            "$ErrorActionPreference = 'Stop'",
+            classifier,
+            binding,
+            "$lines = [System.Text.Encoding]::ASCII.GetString("
+            f"[Convert]::FromBase64String('{encoded}')) | ConvertFrom-Json",
+            "Get-UniqueSafeCollectionFailureCategory -Output @($lines) "
+            f"-ExpectedScheduleRunId '{expected_run}' "
+            f"-CollectionExitCode {0 if case == 'zero_exit' else 1} -PagesPerTarget 4",
+        )
+    )
+    result = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", command],
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=30,
+    )
+    assert result.returncode == 0, result.stderr
+    expected = (
+        "collector_provider" if case in {"valid", "spy_only", "legacy"} else "reason_unavailable"
+    )
+    assert result.stdout.strip() == expected
+    assert "synthetic-secret" not in result.stdout + result.stderr
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
 def test_head_schedule_uses_deeper_pages_only_for_the_bounded_post_close_window() -> None:
     source = SCRIPT.read_text(encoding="ascii")
     start = source.index("$CollectionBasePagesPerTarget = 4")
@@ -282,6 +485,17 @@ def test_head_schedule_uses_deeper_pages_only_for_the_bounded_post_close_window(
 
     assert result.returncode == 0, result.stderr
     assert result.stdout.strip() == "4,8,4,8,4"
+    stamps = (
+        "20260105T211900Z",
+        "20260105T212000Z",
+        "20260706T192400Z",
+        "20260706T212000Z",
+        "20260711T212000Z",
+    )
+    assert result.stdout.strip() == ",".join(
+        str(kis_paper_intraday_head_requested_page_budget(f"intraday-head-{stamp}"))
+        for stamp in stamps
+    )
 
 
 @pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
@@ -490,7 +704,11 @@ def test_head_schedule_accepts_actual_preview_without_validation(
     log_path = tmp_path / "fake-docker-services.log"
     result = subprocess.run(
         [
-            "powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command",
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-Command",
             _fake_dispatch_command(
                 script_path=SCRIPT,
                 project_root=SCRIPT.parents[1],

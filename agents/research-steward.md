@@ -5,6 +5,14 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October8 quarterly joint family closed/non_promoting_completed, CPU only,
+30 fixed cells/zero GPU or sealed allocation. Revised/seen adjusted Tiingo
+source; one technical same-family r2 repair preserves the original failed
+attempt.570s repair bound plus19.50s prior/diagnostic use is below600s family
+ceiling. Contract609b9513.../resultc562ad04...; exact pins and costed findings in
+Engine Research. ALL-RO zero-fit/zero-search replay matches, outcome registered.
+No incremental winner or same-data rescue/depth/Paper allocation follows.
+
 October8 causal-volume appointment closed/non_promoting_completed: one actual
 CUDA GRU32 and one CPU Ridge, no sealed spend. Models/frozen code retained in
 `D:\thericher-v2\model-artifacts\research\firstrate-causal-volume-sequence-development-20261008-v1`.

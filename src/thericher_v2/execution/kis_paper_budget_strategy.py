@@ -47,6 +47,9 @@ from .kis_paper_portfolio_budget import (
 from .kis_paper_portfolio_budget import (
     _decimal as _exact_decimal,
 )
+from .kis_paper_portfolio_budget import (
+    _validated_state as _validated_portfolio_state,
+)
 from .kis_paper_quote import (
     KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
     KisPaperQuoteError,
@@ -286,6 +289,43 @@ class BudgetProjection:
     reserved_buys: Decimal
 
 
+class KisPaperSpyOwnedInventoryError(ValueError):
+    """Scoped categorical replay failure, never an execution permission state."""
+
+
+@dataclass(frozen=True, repr=False)
+class KisPaperSpyOwnedInventory(BudgetProjection):
+    order_count: int
+    matched_fill_count: int
+    retained_fill_count: int
+
+    def __post_init__(self):
+        if (
+            any(
+                type(value) is not Decimal or not value.is_finite() or value < 0
+                for value in (self.quantity, self.entry_cost, self.reserved_buys)
+            )
+            or any(
+                type(value) is not int or value < 0
+                for value in (self.order_count, self.matched_fill_count, self.retained_fill_count)
+            )
+            or not self.retained_fill_count <= self.matched_fill_count <= self.order_count
+        ):
+            raise KisPaperSpyOwnedInventoryError("spy_inventory_result_invalid")
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "kind": "kis_paper_spy_owned_inventory_replay_v1",
+            "source": "kis_paper",
+            "instrument": "SPY",
+            "status": "known_owned_inventory" if self.quantity > 0 else "no_known_owned_inventory",
+            "order_count": self.order_count,
+            "matched_fill_count": self.matched_fill_count,
+            "retained_fill_count": self.retained_fill_count,
+            "limitation": "owned_state_attribution_not_current_broker_state_or_pnl",
+        }
+
+
 def _load_binding(root: Path, account_ref: str | None = None):
     path = root / BUDGET_FILE
     if path.is_symlink():
@@ -476,6 +516,119 @@ def project_budget(
     if cost + reserved > _money(binding["allocated_usd"]):
         raise _RecoveryRequired("budget_exceeded")
     return BudgetProjection(quantity, cost, reserved)
+
+
+def project_spy_owned_inventory(
+    *,
+    binding: Mapping[str, object],
+    states: Mapping[str, KisPaperCanaryState],
+    expected_account_ref: str,
+    expected_basis_ref: str,
+    expected_owner_ref: str,
+    as_of: datetime,
+) -> KisPaperSpyOwnedInventory:
+    """Pure V2 SPY ownership replay, without adopting legacy/account holdings.
+
+    The caller owns strict duplicate-key JSON decoding, namespace provenance and
+    independently frozen expected references. Supply every referenced SPY state
+    exactly once, including closed history; no file/store/credential API is used.
+    """
+    try:
+        if (
+            not isinstance(binding, Mapping)
+            or set(binding) != _V2_KEYS
+            or type(binding["version"]) is not int
+            or binding["version"] != 2
+            or type(expected_account_ref) is not str
+            or re.fullmatch(r"[0-9a-f]{64}", expected_account_ref) is None
+            or binding["account_ref"] != expected_account_ref
+            or type(expected_basis_ref) is not str
+            or _SHA.fullmatch(expected_basis_ref) is None
+            or binding["basis_ref"] != expected_basis_ref
+            or type(expected_owner_ref) is not str
+            or _SHA.fullmatch(expected_owner_ref) is None
+            or binding["spy_owner_ref"] != expected_owner_ref
+            or not isinstance(states, Mapping)
+            or type(as_of) is not datetime
+        ):
+            raise KisPaperSpyOwnedInventoryError("spy_inventory_binding_invalid")
+        if binding["legacy_spy"] is not None:
+            raise KisPaperSpyOwnedInventoryError("spy_inventory_legacy_scope_unsupported")
+        at = require_utc(as_of)
+        qqq = binding["qqq"]
+        if (
+            not isinstance(qqq, dict)
+            or set(qqq) != {"cycle_id", "owner_ref", "orders"}
+            or type(qqq["cycle_id"]) is not str
+            or re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,159}", qqq["cycle_id"]) is None
+            or not isinstance(binding["terminal_evidence"], dict)
+        ):
+            raise KisPaperSpyOwnedInventoryError("spy_inventory_binding_invalid")
+        records = binding["orders"]
+        _validate_orders(records, _RUN_ID)
+        _validate_orders(qqq["orders"], _QQQ_RUN_ID)
+        owners = _owners(binding)
+        if any(owner.fingerprint != expected for owner, expected in owners):
+            raise KisPaperSpyOwnedInventoryError("spy_inventory_owner_mismatch")
+        referenced = {ref.run_id for owner, _ in owners for ref in owner.state_refs}
+        terminal = binding["terminal_evidence"]
+        if not set(terminal) <= referenced:
+            raise KisPaperSpyOwnedInventoryError("spy_inventory_terminal_scope_invalid")
+        if set(states) != {record["run_id"] for record in records}:
+            raise KisPaperSpyOwnedInventoryError("spy_inventory_state_scope_invalid")
+        replay_states, proofs = {}, {}
+        matched = retained = 0
+        for record in records:
+            run_id = record["run_id"]
+            current = _validated_portfolio_state(states[run_id], at)
+            if (
+                record["closed"] is not True
+                or current.phase not in {"submitted", "cancelled", "rejected", "intent_recorded"}
+                or current.fill_observation_status
+                not in {"available", "unavailable", "absent", "not_observed"}
+            ):
+                raise KisPaperSpyOwnedInventoryError("spy_inventory_outcome_unresolved")
+            evidence = terminal.get(run_id)
+            state, proof = _retained_terminal(current, evidence)
+            saved = KisPaperCanaryState.from_dict(evidence["state"])
+            if (
+                saved.phase not in {"submitted", "cancelled", "rejected", "intent_recorded"}
+                or _digest(evidence["state"]) != _digest(saved.to_dict())
+                or (saved.cumulative_fill is not None and saved.current_fill is None)
+            ):
+                raise KisPaperSpyOwnedInventoryError("spy_inventory_terminal_unproven")
+            replay_states[run_id] = state
+            if proof is not None:
+                proofs[run_id] = proof
+            if state.cumulative_fill is not None and state.cumulative_fill.quantity > 0:
+                matched += 1
+                retained += int(current.current_fill is None)
+        spy_owner = owners[0][0]
+        projection = project_kis_paper_portfolio_budget(
+            basis=_basis(binding),
+            expected_basis_ref=expected_basis_ref,
+            owners=(spy_owner,),
+            expected_owner_refs={spy_owner.owner_ref: expected_owner_ref},
+            states=replay_states,
+            as_of=at,
+            cancellation_proofs=proofs,
+        )
+        stock = projection.stocks_by_owner[0]
+        return KisPaperSpyOwnedInventory(
+            stock.quantity, stock.entry_cost, stock.reserved_buys, len(records), matched, retained
+        )
+    except KisPaperSpyOwnedInventoryError:
+        raise
+    except (
+        ValueError,
+        TypeError,
+        KeyError,
+        AttributeError,
+        DecimalException,
+        _RecoveryRequired,
+        KisPaperCanaryError,
+    ):
+        raise KisPaperSpyOwnedInventoryError("spy_inventory_input_invalid") from None
 
 
 def _basis(binding):

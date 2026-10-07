@@ -35,9 +35,22 @@ The failed-page subcause was not recorded. The launcher accepts only a legacy
 not_executed error shape, explaining reason_unavailable for this bound partial.
 11:29 Eastern/forming-bar exclusion explains119 completed regular minutes;
 backward pages cannot supply not-yet-observed future session minutes.
-Next package adds categorical phase/subcode/attempt ordinal to existing owner/
-capture/adapter/reader only, no raw retention, extra request, pacing or schedule
-change. This scoped failure does not defer Research, UI or Paper.
+The categorical phase/subcode/attempt-ordinal repair is now frozen/reviewed in
+existing owner/capture/adapter/reader only.568 focused passes; both review P2s
+closed: cached prefix preserves CURRENT failure/observation, and reader binds
+diagnostic ordinal to the exact invocation4/8-page budget. Full collection
+initially caught a legacy exception-constructor incompatibility before tests;
+0/1/2-argument shape is restored with optional message discarded.403 focused
+passes include unchanged daily-SPY constructor/redaction tests. Parent853 serial
+passes/37.61s; full9,892/22 skips/35 warnings/327.94s/eight workers/clean exit,
+9,914 collected; Ruff/three sample Compose pass. Only head alias is published:
+image dfda02f7e31b772e5532b8035c3036645a9d952a393eeb2ca5b8d13bacc6218b,
+five changed baked hashes match; Paper/web aliases unchanged. Dispatcher remains
+host-side/reader source-bound. Publication receipt
+`D:\thericher-v2\model-artifacts\data\kis-intraday-head-diagnostic-publication-20261008-v1.json`.
+No new raw retention/request/pace/schedule; the
+historical fourth-page subcause remains unknown, not retroactively inferred.
+The scoped failure does not defer Research, UI or Paper.
 
 The forward-risk consumer reattests the existing normalization/lineage, both
 canonical CSV hashes and251 scheduled NYSE dates without acquisition or source

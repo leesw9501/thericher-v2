@@ -90,8 +90,85 @@ _KIS_PAPER_CONFIG_READABLE_ENV_KEYS = _KIS_PAPER_CONFIG_NON_SECRET_KEYS | frozen
 )
 
 
+KIS_PAPER_MINUTE_FAILURE_CODES = {
+    "response_decode": frozenset({"envelope_shape_invalid"}),
+    "row_parse": frozenset(
+        {"row_not_mapping", "required_field_invalid", "row_constructor_invalid"}
+    ),
+    "page_contract": frozenset({"row_count_exceeded", "continuation_contract_invalid"}),
+    "head_contract": frozenset(
+        {
+            "response_identity_mismatch",
+            "duplicate_exchange_timestamp",
+            "duplicate_korea_timestamp",
+            "mixed_exchange_dates",
+            "timestamp_order_invalid",
+        }
+    ),
+}
+
+
+def validate_kis_paper_minute_failure_diagnostic(
+    *,
+    reason: str | None,
+    phase: str | None,
+    code: str | None,
+    page_ordinal: int | None,
+    requested_pages_per_target: int | None = None,
+) -> None:
+    if (
+        phase is None
+        and code is None
+        and page_ordinal is None
+        and requested_pages_per_target is None
+    ):
+        return
+    if (
+        reason != "minute_response_invalid"
+        or type(phase) is not str
+        or type(code) is not str
+        or code not in KIS_PAPER_MINUTE_FAILURE_CODES.get(phase, ())
+        or type(page_ordinal) is not int
+        or page_ordinal <= 0
+        or type(requested_pages_per_target) is not int
+        or not 1 <= requested_pages_per_target <= 8
+        or page_ordinal > requested_pages_per_target
+    ):
+        raise ValueError("minute failure diagnostic is invalid")
+
+
+_ERROR_ARGUMENT_ABSENT = object()
+
+
 class KisPaperMarketDataError(RuntimeError):
     """A non-secret failure reason for the narrow read-only market-data boundary."""
+
+    def __init__(
+        self,
+        code: object = _ERROR_ARGUMENT_ABSENT,
+        message: object = _ERROR_ARGUMENT_ABSENT,
+        *,
+        failure_phase: str | None = None,
+        failure_code: str | None = None,
+    ) -> None:
+        if failure_phase is not None or failure_code is not None:
+            validate_kis_paper_minute_failure_diagnostic(
+                reason=code,
+                phase=failure_phase,
+                code=failure_code,
+                page_ordinal=1,
+                requested_pages_per_target=1,
+            )
+        # Strict legacy adapters use argument arity; never retain the optional body.
+        safe_args = () if code is _ERROR_ARGUMENT_ABSENT else (code,)
+        if message is not _ERROR_ARGUMENT_ABSENT:
+            safe_args += (None,)
+        super().__init__(*safe_args)
+        self.failure_phase = failure_phase
+        self.failure_code = failure_code
+
+    def __str__(self) -> str:
+        return str(self.args[0]) if self.args else ""
 
 
 class _RejectRedirectHandler(urllib.request.HTTPRedirectHandler):
@@ -312,12 +389,9 @@ class UrllibKisPaperDailyAdjustmentProbeTransport(UrllibKisPaperMarketDataTransp
         self._daily_symbol_exchanges = _freeze_daily_symbol_exchanges(daily_symbol_exchanges)
 
     def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
-        if (
-            request.method == "GET"
-            and (
-                urllib.parse.urlsplit(request.url).path != KIS_PAPER_DAILY_PATH
-                or request.daily_adjustment_modes != KIS_PAPER_DAILY_ADJUSTMENT_PROBE_MODES
-            )
+        if request.method == "GET" and (
+            urllib.parse.urlsplit(request.url).path != KIS_PAPER_DAILY_PATH
+            or request.daily_adjustment_modes != KIS_PAPER_DAILY_ADJUSTMENT_PROBE_MODES
         ):
             raise KisPaperMarketDataError("request_not_allowlisted")
         return self._request_with_daily_symbol_exchanges(
@@ -623,25 +697,33 @@ class KisPaperMinutePage:
         if not self.bars:
             raise KisPaperMarketDataError("minute_response_empty")
         if len(self.bars) > KIS_PAPER_MINUTE_MAX_ROWS:
-            raise KisPaperMarketDataError("minute_response_invalid")
+            raise KisPaperMarketDataError(
+                "minute_response_invalid",
+                failure_phase="page_contract",
+                failure_code="row_count_exceeded",
+            )
         signal = self.continuation_signal
         if signal is None:
-            signal = (
-                "recognized_continuation"
-                if self.next_cursor == "1"
-                else "blank_or_absent"
-            )
+            signal = "recognized_continuation" if self.next_cursor == "1" else "blank_or_absent"
         if not isinstance(signal, str) or signal not in {
             "recognized_continuation",
             "recognized_terminal",
             "blank_or_absent",
             "unrecognized_nonblank",
         }:
-            raise KisPaperMarketDataError("minute_response_invalid")
+            raise KisPaperMarketDataError(
+                "minute_response_invalid",
+                failure_phase="page_contract",
+                failure_code="continuation_contract_invalid",
+            )
         if (self.next_cursor == "1") != (signal == "recognized_continuation") or (
             signal == "recognized_terminal" and self.next_cursor is not None
         ):
-            raise KisPaperMarketDataError("minute_response_invalid")
+            raise KisPaperMarketDataError(
+                "minute_response_invalid",
+                failure_phase="page_contract",
+                failure_code="continuation_contract_invalid",
+            )
         object.__setattr__(self, "continuation_signal", signal)
 
 
@@ -704,10 +786,13 @@ class KisPaperMarketDataClient:
         else:
             if query.request_intent != "standard":
                 raise KisPaperMarketDataError("minute_request_intent_requires_probe_route")
-            if _is_minute_current_head_only_target(
-                symbol=query.symbol,
-                exchange=query.exchange,
-            ) and self._max_minute_page_attempts != 1:
+            if (
+                _is_minute_current_head_only_target(
+                    symbol=query.symbol,
+                    exchange=query.exchange,
+                )
+                and self._max_minute_page_attempts != 1
+            ):
                 raise KisPaperMarketDataError(
                     "minute_current_head_only_target_requires_one_page_client"
                 )
@@ -748,7 +833,11 @@ class KisPaperMarketDataClient:
         output1 = payload.get("output1")
         output2 = payload.get("output2")
         if not isinstance(output1, Mapping) or not isinstance(output2, list):
-            raise KisPaperMarketDataError("minute_response_invalid")
+            raise KisPaperMarketDataError(
+                "minute_response_invalid",
+                failure_phase="response_decode",
+                failure_code="envelope_shape_invalid",
+            )
         rows = tuple(_parse_minute_bar(row) for row in output2)
         # KIS documents minute pagination through the response ``tr_cont``
         # header. ``output1.next`` is provider metadata, not a stable cursor.
@@ -1154,7 +1243,11 @@ def _response_header(headers: Mapping[str, str], name: str) -> str | None:
 
 def _parse_minute_bar(raw: object) -> KisPaperMinuteRawBar:
     if not isinstance(raw, Mapping):
-        raise KisPaperMarketDataError("minute_response_invalid")
+        raise KisPaperMarketDataError(
+            "minute_response_invalid",
+            failure_phase="row_parse",
+            failure_code="row_not_mapping",
+        )
     try:
         return KisPaperMinuteRawBar(
             exchange_date=_required_text(raw, "xymd"),
@@ -1170,13 +1263,21 @@ def _parse_minute_bar(raw: object) -> KisPaperMinuteRawBar:
     except KisPaperMarketDataError:
         raise
     except (TypeError, ValueError) as error:
-        raise KisPaperMarketDataError("minute_response_invalid") from error
+        raise KisPaperMarketDataError(
+            "minute_response_invalid",
+            failure_phase="row_parse",
+            failure_code="row_constructor_invalid",
+        ) from error
 
 
 def _required_text(raw: Mapping[str, object], key: str) -> str:
     value = raw.get(key)
     if not isinstance(value, str) or not value.strip():
-        raise KisPaperMarketDataError("minute_response_invalid")
+        raise KisPaperMarketDataError(
+            "minute_response_invalid",
+            failure_phase="row_parse",
+            failure_code="required_field_invalid",
+        )
     return value.strip()
 
 

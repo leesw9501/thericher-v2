@@ -6,53 +6,41 @@ Superseded facts remain searchable in Git and immutable external evidence.
 
 ## Active Company Objective
 
-`paper-accounting-console-v1` COMPLETED: historical sign and current account
-freshness are separated in the published loopback console. Current account
-unavailable stays unknown; exact QQQ receipt is available. No operator block.
-Next `joint-etf-quarterly-allocation-development-v1` measures actual hypothetical
-post-cost three-ETF composition, with Data diagnostics/Execution attribution
-independent. No sealed/Paper model promotion or dummy GPU allocation.
-Independent causal-volume CUDA GRU/Ridge campaign completed/rejected; no Paper
-input or ready frozen GPU successor. Old custody remains untouched/unadopted.
+`joint-etf-quarterly-allocation-development-v1` complete/rejected/30 cells,
+exact ALL-RO replay. Next joint-d1-direct-utility-development-v1 learns ordered
+joint-path allocation: disjoint Data context/Execution fee parity/Research model
+packages, one frozen three-fit CUDA family. Revised/seen only, no Paper grant.
+No reserved operator decision or company-level block exists.
 
 ## Ready / Owned / Due
 
 | Shared resource | Owner | Current dispatch fact |
 | --- | --- | --- |
-| Paper custody | Execution | New physical private volume, all seven original mounts/access. Fresh own provisional10-percent basis shared once by QQQ/SPY. Exact QQQ unit cycle complete/two visits; worker exited/no pending request/current QQQ flat. Old105-file seal unchanged. |
-| Named strategy | Execution / existing scheduler | SPY October7 23:50 public order_complete outcome exists; current account shows one SPY record/zero opens, not independently reattached ownership/PnL. Ready/next October8 23:50, no manual invocation/reset. |
-| Current data | Data / existing scheduler | Exact00:29 head chain collector_nonzero/reason_unavailable; incomplete coverage, no provider-cause inference. Ready/next02:28 KST, no manual invocation. Diagnosis:three accepted pages then unidentified fourth-page invalid response;119 minutes reflect observation cutoff. Next bounded categorical diagnostic repair, no extra request/scope/rate/schedule change. |
-| Research | Engine Research / CPU | VolumeGRU family closed/rejected/zero-refit recovery verified. Covariance helper64 tests/independent supported-with-limits. Next frozen three-date source smoke and one quarterly covariance/momentum composition experiment; shared-cash overnight ledger required before actual outcome reads. |
-| GPU / sealed custody | Research Steward | Existing RTX4090/Torch2.7cu128 actually trained fixed GRU128 epochs. Job exited/lock absent; no sealed spend or ready frozen successor. Do not invent utilization work. |
-| Console / observer | Existing separate owners | Published existing web only, health ok/broker_calls false; exact historical negative sign/two fills/one roundtrip. Current account unavailable at publication stays unknown;00:28:07 snapshot is dated, not current/owned. Desktop/mobile fit and source hash match, no private-state mount/public exposure. |
-| Git / tests / invoked roles | Orchestrator | Accounting c075ce4 pushed; console/recovery/helper integration230 serial passes16.47s/full9,497 passes/22 skips/35 warnings/326.64s/eight workers/clean exit,9,519 collected; Ruff/three sample Compose variants pass. No concurrent Git owner. New role writes start only after this source-stable boundary. |
+| Research / CPU | Engine Research (Hooke), ledger by Execution (Kuhn) | Quarterly30 cells complete/rejected, both periods positive growth but no consistent increment.110 campaign/101 ledger passes, original failed precision attempt retained/r2 economic conditions fixed, zero-fit/search ALL-RO exact. Next model/input/fee shared APIs integrate before training. |
+| SPY ownership | Execution (Kuhn), independent review (Russell) | Actual private RO replay: one order/one matched fill/known ownership, original shared-basis bundle verified, Fraction/three restart matches. No broker/reset/realized PnL. Next pure differentiable analytical ledger, not an order path. |
+| Head diagnostics | Data (Copernicus), independent review (Russell) | Two P2s/legacy ctor compatibility repaired. Head-only dfda02f7 image published after853 serial/full9,892 passes; five changed hashes match. Paper/web unchanged; no invocation/extra request/pace/schedule change. |
+| Existing collection | Data / scheduler | Exact00:29 KST October8 chain incomplete/collector_nonzero/reason_unavailable after three accepted pages. Next_due02:28 KST owned; no manual invocation/inferred cause.119 minutes reflect11:29 ET forming-bar cutoff, not slow collection. |
+| Existing Paper | Execution / scheduler | Corrected-account shared provisional10-percent basis unchanged. QQQ complete/negative gross sign, fees/settled/net unknown. SPY next October8 23:50; account records are not owned inventory. Old105-file custody untouched/unadopted. |
+| GPU / sealed custody | Research Steward | Actual GRU32/128epochs CUDA family completed/rejected, external weights/frozen source/zero-refit recovery verified. Worker/lock absent; zero sealed spend/no frozen ready successor. Quarterly CPU work is not dummy GPU occupancy. |
+| Console / observer | Existing owners | http://127.0.0.1:8787 healthy/historical QQQ panel available. Fresh01:44:07 KST snapshot: SPY account records1/opens0, not owned attribution/PnL. Existing observer continues, no new producer/private dashboard mount. |
+| Git / tests | Orchestrator | c075ce4 and bcb6b61 pushed. Current853 serial37.61s/full9,892 passes/22 skips/35 warnings/327.94s/eight workers/clean helper;9,914 collected. Ruff/three sample Compose pass. Parent owns integration; no competing Git owner. |
 
 ## Bottleneck And Reversible Improvement
 
-Old local account configuration, not new-account entitlement, blocked earlier
-Paper progress. Minimal physical-volume separation plus current-account binding
-proof restored actual trading without an archival/migration framework.
-Review also found a pre-existing bare QQQ child could bypass shared allocation
-and conflict with the named unit position. Reversible operating improvement:
-make that child observational; execute funded research directions only through
-the existing shared-budget owner. This is no approval gate or global pause.
-Actual fill accounting and a distinct CUDA experiment both closed in parallel;
-GPU was not held on Paper profitability. Next product gap is visible, separated
-historical accounting and fresh account facts. Reversible improvement: reuse
-existing snapshot/UI paths plus one exact RO receipt, without a broker mount or
-new producer. Frozen-code replay protects completed jobs during runner repairs.
-Review found a mandatory receipt bind could block web startup when absent.
-Reversible repair completed: default console tolerates absence; a tiny optional Compose
-overlay mounts only the available exact receipt. No new launcher/gate/worker.
+Completed-result recovery and TRAIN beta precision defects are repaired, not
+approval or GPU blocks. Current bottleneck is exact differentiable fee/carry
+parity for a genuinely distinct ordered-path hypothesis. Reversible improvement:
+reuse one shared three-asset ledger and vectorized analytic fee faces, avoiding
+another ad hoc funded-sleeve simulator or serial CUDA day loop.
+Data failures remain visible when the accepted prefix is already cached; the
+immutable reader binds diagnostic ordinal to the actual invocation budget.
+These improve research recovery and collection diagnosis, not gates.
 
-Claude volume/recovery and forward-risk challenges exited1/review_unavailable,
-not agreement. Exact categorical evidence:
-`D:\thericher-v2\model-artifacts\execution\kis-paper-qqq-unit-cycle\claude-new-account-volume-20261007-v1.json`;
-`D:\thericher-v2\model-artifacts\research\source-discovery\claude-forward-risk-baseline-20261007-v1.json`.
-No reserved operator authority is needed and no company-level block exists.
-Current Claude account/volume challenge exited1/authentication_expired, not
-agreement: research/source-discovery/claude-accounting-volume-20261008-v1.json
-under the existing external root. Independent Validation supplies real review.
-The actual supplied-result Claude challenge also exited1/review_unavailable,
-not agreement: research/source-discovery/claude-forward-risk-result-20261007-v1.json
-under the existing external artifact root.
+Existing observer is healthy but recreates its token client each four-minute
+visit. Its source-only runtime review is separate from current research; do not
+replace healthy observation with a new platform or foreground wait. Publish
+only changed Data aliases, not unaffected Paper/web images.
+
+Claude challenge is review_unavailable/authentication_expired, not agreement:
+`D:\thericher-v2\model-artifacts\research\source-discovery\claude-quarterly-joint-allocation-20261008-v1.json`.
+Independent source review supplies actual criticism. No auth wait blocks work.

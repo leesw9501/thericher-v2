@@ -36,9 +36,17 @@ because its bare canary path lacks the shared budget. Data collection and named
 budget executors continue; preview has no broker call or validator and is not
 a fill. Runtime preview success after this change remains unobserved.
 SPY October7 23:50 has an exact public order_complete outcome, but dispatch
-is not hash-bound; fresh00:12:43 account projection shows one SPY position
-record/zero opens, not independently proven strategy ownership or SPY PnL.
-Existing SPY next due October8 23:50/Data head00:29; neither manually invoked.
+is not hash-bound; fresh01:44:07 account projection shows one SPY position
+record/zero opens. Separate01:57:28 strict offline replay proves retained SPY
+strategy-owned inventory: one order/one matched fill, Fraction/three restart
+matches, original shared-basis custody anchored to prior QQQ v2 byte bundle.
+No new broker call/private write or realized/net-PnL claim. Exact one-shot
+receipt `D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\owned-inventory-20261008-v1\outcome.json`,
+SHA2568ed682e6e340a85216828fb0b77e0a359bfc66629a72f355e0a441232e110333.
+Its replay.py uses only the host Paper whitelist, current private volume RO,
+exact public receipts RO, and networknone; do not overwrite/rerun that immutable
+receipt target. Pure in-process restart replay already ran three times.
+Existing SPY next due October8 23:50/Data head02:28; neither manually invoked.
 The following October6 command/diagnosis is historical OLD-account material.
 
 October7 account correction supersedes the October6 VOC-first setup diagnosis
@@ -3300,8 +3308,8 @@ checks and categorical HTML/JSON readback pass. Exact publication receipt:
 Do not use a screenshot of the account table; retained images crop only the
 source-safe historical panel.
 
-Volume runner `scripts/run_firstrate_causal_volume_sequence.py` supports
-`--mode recover`: exact original frozen contract/result/model/attempt/code hashes,
+Volume runner `scripts/run_firstrate_causal_volume_sequence.py` supports the
+positional `recover` mode: exact original frozen contract/result/model/attempt/code hashes,
 existing network-none2CPU/6GiB runtime, every study/source mount RO and registry
 root RW only. It launches original frozen verify on CPU with optimizer/fit/GPU
 probes forbidden, then records the idempotent existing outcome. Actual recovery

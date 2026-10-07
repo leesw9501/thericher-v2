@@ -24,6 +24,7 @@ from thericher_v2.data.kis_intraday_mtf_availability import (
 from thericher_v2.data.kis_paper_intraday_session_capture import (
     KIS_PAPER_INTRADAY_SESSION_CAPTURE_COVERAGE_CATEGORIES,
     KisPaperIntradaySessionCaptureTarget,
+    kis_paper_intraday_head_requested_page_budget,
 )
 from thericher_v2.data.kis_qqq_spy_mtf_prospective_observation import (
     KisQqqSpyMtfProspectiveAttempt,
@@ -32,6 +33,7 @@ from thericher_v2.data.kis_qqq_spy_mtf_prospective_observation import (
     read_kis_qqq_spy_mtf_prospective_attempt,
     read_kis_qqq_spy_mtf_prospective_contract,
 )
+from thericher_v2.execution.kis_market_data import validate_kis_paper_minute_failure_diagnostic
 
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND = "kis_paper_intraday_head_schedule_receipt"
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY = (
@@ -45,9 +47,7 @@ KIS_PAPER_INTRADAY_HEAD_COLLECTION_RECOVERY_FACT_KIND = (
 KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_ARTIFACT_DIRECTORY = (
     "kis-paper-intraday-causal-attestation-v1"
 )
-KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_KIND = (
-    "kis_paper_intraday_head_causal_attestation"
-)
+KIS_PAPER_INTRADAY_HEAD_CAUSAL_ATTESTATION_KIND = "kis_paper_intraday_head_causal_attestation"
 DEFAULT_KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_ROOT = Path(
     r"D:\thericher-v2\model-artifacts"
 )
@@ -56,8 +56,7 @@ _DEFAULT_REPOSITORY_ROOT = Path.cwd()
 
 _SAFE_ID = re.compile(r"[A-Za-z0-9._-]{1,160}", re.ASCII)
 _SCHEDULE_RECEIPT_CLAIM = (
-    "scheduled dispatch observability only; not a model result, PnL claim, "
-    "or broker action"
+    "scheduled dispatch observability only; not a model result, PnL claim, or broker action"
 )
 _SCHEDULE_RECEIPT_ARTIFACT_POLICY = {
     "credentials_in_receipt": False,
@@ -141,25 +140,19 @@ _CAUSAL_ATTESTATION_CLAIM = (
     "proof of provider origin, a model result, PnL claim, or broker action"
 )
 _CAUSAL_ATTESTATION_ORIGINS = frozenset({"independent_observer"})
-_CAUSAL_ATTESTATION_CLOCK_AUTHORITIES = frozenset(
-    {"independent_utc_clock", "not_observed"}
-)
+_CAUSAL_ATTESTATION_CLOCK_AUTHORITIES = frozenset({"independent_utc_clock", "not_observed"})
 _CAUSAL_ATTESTATION_TIMEZONE_DST_SESSION_RULES = frozenset(
     {"America_New_York_IANA_DST", "not_observed"}
 )
 _CAUSAL_ATTESTATION_COMPLETED_BAR_GEOMETRIES = frozenset(
     {"m1_regular_session_complete_through_1530_et", "not_observed"}
 )
-_CAUSAL_ATTESTATION_CHRONOLOGICAL_BOUNDARIES = frozenset(
-    {"non_overlapping", "not_observed"}
-)
+_CAUSAL_ATTESTATION_CHRONOLOGICAL_BOUNDARIES = frozenset({"non_overlapping", "not_observed"})
 _CAUSAL_ATTESTATION_DECISION_TIME_AVAILABILITY = frozenset(
     {"observed_at_decision_time", "not_observed"}
 )
 _CAUSAL_ATTESTATION_PROVIDER_FINALITY = frozenset({"observed_final", "not_observed"})
-_SCHEDULE_RECEIPT_TERMINAL_KEYS = frozenset(
-    {"status", "recovery_class", "scheduler_exit_code"}
-)
+_SCHEDULE_RECEIPT_TERMINAL_KEYS = frozenset({"status", "recovery_class", "scheduler_exit_code"})
 _SCHEDULE_RUNTIME_KEYS = frozenset(
     {
         "schema_version",
@@ -557,9 +550,7 @@ class KisPaperIntradayHeadScheduleFact:
                 "current_session_missing",
                 "current_session_short",
             }:
-                raise KisPaperIntradayHeadScheduleReceiptError(
-                    "schedule_coverage_binding_invalid"
-                )
+                raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
         else:
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_coverage_binding_invalid")
         if self.availability_status not in _AVAILABILITY_STATUSES | {"not_recorded_legacy"}:
@@ -593,9 +584,7 @@ class KisPaperIntradayHeadScheduleFact:
                 assert value is not None
                 _require_sha256(value, name)
         else:
-            raise KisPaperIntradayHeadScheduleReceiptError(
-                "schedule_availability_binding_invalid"
-            )
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_availability_binding_invalid")
         if self.observation_binding_status == "legacy_unbound":
             if (
                 self.observation_attempt_sha256 is not None
@@ -735,8 +724,21 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
     retained_head_conflict_disposition: Literal[
         "not_applicable", "preserved", "quarantined", "not_recorded_legacy"
     ]
+    failure_phase: str | None = None
+    failure_code: str | None = None
+    failure_page_ordinal: int | None = None
+    requested_pages_per_target: int | None = None
 
     def __post_init__(self) -> None:
+        validate_kis_paper_minute_failure_diagnostic(
+            reason=self.reason,
+            phase=self.failure_phase,
+            code=self.failure_code,
+            page_ordinal=self.failure_page_ordinal,
+            requested_pages_per_target=self.requested_pages_per_target,
+        )
+        if self.failure_phase is not None and self.status not in {"partial", "rejected"}:
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
         if self.target_key not in _CAPTURE_TARGET_KEYS:
             raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
         _require_safe_id(self.status, "collection recovery target status")
@@ -769,13 +771,21 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
             raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
 
     def safe_payload(self) -> dict[str, object]:
-        return {
+        payload = {
             "target_key": self.target_key,
             "status": self.status,
             "reason": self.reason,
             "conflict_origin": self.conflict_origin,
             "retained_head_conflict_disposition": self.retained_head_conflict_disposition,
         }
+        if self.failure_phase is not None:
+            payload.update(
+                failure_phase=self.failure_phase,
+                failure_code=self.failure_code,
+                failure_page_ordinal=self.failure_page_ordinal,
+                requested_pages_per_target=self.requested_pages_per_target,
+            )
+        return payload
 
 
 @dataclass(frozen=True)
@@ -1193,8 +1203,10 @@ def _read_current_schedule_terminal(
         artifact_root=artifact_root,
         repository_root=repository_root,
     )
-    runtime_path = root / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY / (
-        KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME
+    runtime_path = (
+        root
+        / KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY
+        / (KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME)
     )
     _require_direct_regular_file(
         root=root,
@@ -2164,10 +2176,13 @@ def _verify_capture_payload_binding(
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
     if _coverage_digest(current_coverage) != coverage_digest:
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
-    if _coverage_category(
-        current_coverage,
-        observed_at=capture_observed_at,
-    ) != coverage_category:
+    if (
+        _coverage_category(
+            current_coverage,
+            observed_at=capture_observed_at,
+        )
+        != coverage_category
+    ):
         raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_binding_mismatch")
     coverage_gap_category = _coverage_gap_category(
         current_coverage,
@@ -2208,13 +2223,33 @@ def _collection_recovery_targets_from_capture_payload(
         else:
             conflict_origin = value["conflict_origin"]
             retained_head_conflict_disposition = value["retained_head_conflict_disposition"]
+        diagnostic_fields = {
+            "failure_phase",
+            "failure_code",
+            "failure_page_ordinal",
+            "requested_pages_per_target",
+        }
+        present_diagnostics = diagnostic_fields.intersection(value)
+        if present_diagnostics and (
+            present_diagnostics != diagnostic_fields
+            or any(value[field] is None for field in diagnostic_fields)
+        ):
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
         try:
+            if present_diagnostics and value["requested_pages_per_target"] != (
+                kis_paper_intraday_head_requested_page_budget(payload.get("schedule_run_id"))
+            ):
+                raise ValueError("session capture requested page budget is invalid")
             capture_target = KisPaperIntradaySessionCaptureTarget(
                 target_key=value.get("target_key"),
                 status=value.get("status"),
                 row_count=value.get("row_count"),
                 exact_overlap_rows=value.get("exact_overlap_rows"),
                 reason=value.get("reason"),
+                failure_phase=value.get("failure_phase"),
+                failure_code=value.get("failure_code"),
+                failure_page_ordinal=value.get("failure_page_ordinal"),
+                requested_pages_per_target=value.get("requested_pages_per_target"),
                 conflict_origin=(
                     conflict_origin if conflict_origin != "not_recorded_legacy" else None
                 ),
@@ -2239,6 +2274,10 @@ def _collection_recovery_targets_from_capture_payload(
                 target_key=capture_target.target_key,
                 status=capture_target.status,
                 reason=capture_target.reason,
+                failure_phase=capture_target.failure_phase,
+                failure_code=capture_target.failure_code,
+                failure_page_ordinal=capture_target.failure_page_ordinal,
+                requested_pages_per_target=capture_target.requested_pages_per_target,
                 conflict_origin=(
                     "not_recorded_legacy"
                     if receipt_is_legacy
@@ -2387,9 +2426,7 @@ def _payload_safe_id(value: object, field_name: str) -> str:
     try:
         _require_safe_id(text, field_name)
     except ValueError as error:
-        raise KisPaperIntradayHeadScheduleReceiptError(
-            f"schedule_{field_name}_invalid"
-        ) from error
+        raise KisPaperIntradayHeadScheduleReceiptError(f"schedule_{field_name}_invalid") from error
     return text
 
 
@@ -2398,9 +2435,7 @@ def _payload_capture_coverage_category(value: object, field_name: str) -> str:
     try:
         _require_capture_coverage_category(text, field_name)
     except ValueError as error:
-        raise KisPaperIntradayHeadScheduleReceiptError(
-            f"schedule_{field_name}_invalid"
-        ) from error
+        raise KisPaperIntradayHeadScheduleReceiptError(f"schedule_{field_name}_invalid") from error
     return text
 
 
@@ -2409,9 +2444,7 @@ def _payload_schedule_run_id(value: object, field_name: str) -> str:
     try:
         _require_schedule_run_id(text, field_name)
     except ValueError as error:
-        raise KisPaperIntradayHeadScheduleReceiptError(
-            f"schedule_{field_name}_invalid"
-        ) from error
+        raise KisPaperIntradayHeadScheduleReceiptError(f"schedule_{field_name}_invalid") from error
     return text
 
 
@@ -2422,9 +2455,7 @@ def _payload_causal_attestation_category(
 ) -> str:
     text = _payload_safe_id(value, field_name)
     if text not in allowed:
-        raise KisPaperIntradayHeadScheduleReceiptError(
-            f"schedule_{field_name}_invalid"
-        )
+        raise KisPaperIntradayHeadScheduleReceiptError(f"schedule_{field_name}_invalid")
     return text
 
 
@@ -2434,9 +2465,7 @@ def _payload_utc(value: object, field_name: str) -> datetime:
     try:
         return _parse_utc(value)
     except argparse.ArgumentTypeError as error:
-        raise KisPaperIntradayHeadScheduleReceiptError(
-            f"schedule_{field_name}_invalid"
-        ) from error
+        raise KisPaperIntradayHeadScheduleReceiptError(f"schedule_{field_name}_invalid") from error
 
 
 def _payload_sha256(value: object, field_name: str) -> str:
@@ -2444,9 +2473,7 @@ def _payload_sha256(value: object, field_name: str) -> str:
     try:
         _require_sha256(text, field_name)
     except ValueError as error:
-        raise KisPaperIntradayHeadScheduleReceiptError(
-            f"schedule_{field_name}_invalid"
-        ) from error
+        raise KisPaperIntradayHeadScheduleReceiptError(f"schedule_{field_name}_invalid") from error
     return text
 
 
@@ -2527,10 +2554,7 @@ def _prospective_spy_cycle_recovery_class(
         return "prospective_spy_cycle_payload_unavailable"
     if prospective_spy_cycle_id is None:
         return "prospective_spy_cycle_id_unavailable"
-    if (
-        prospective_spy_cycle_status == "canary_completed"
-        and prospective_spy_canary_run_id is None
-    ):
+    if prospective_spy_cycle_status == "canary_completed" and prospective_spy_canary_run_id is None:
         return "prospective_spy_canary_run_id_unavailable"
     return None
 
@@ -2823,9 +2847,10 @@ def _require_capture_coverage_category(value: str, name: str) -> None:
 
 def _require_schedule_run_id(value: str, name: str) -> None:
     _require_safe_id(value, name)
-    if value.casefold() == KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME.removesuffix(
-        ".json"
-    ).casefold():
+    if (
+        value.casefold()
+        == KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RUNTIME_ARTIFACT_NAME.removesuffix(".json").casefold()
+    ):
         raise ValueError(f"{name} is reserved")
 
 

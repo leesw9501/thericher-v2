@@ -17,6 +17,40 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-08 KST)
 
+Quarterly joint three-ETF family is COMPLETE/REJECTED. The same-family r2
+numerical repair rounds intermediate beta probes onto the already-declared45dp
+lattice; economic recipe/splits/64 bisections stay fixed. Original v1 failed
+before comparison cells and remains immutable/registered, not erased.
+TRAIN2,769 sessions/44 quarters; comparison1,762/28 and1,653/27; no past/mark
+gaps.30 fixed cells complete, TRAIN beta match succeeds. At10bps-side blend
+terminal NAV is2.545275 (2013-2019) and2.589636 (2020-July2026), versus equal
+weight2.654976/2.567173 and matched basket2.571196/2.498135. Both hypothetical
+periods gain, but first-period NAV fails passive controls and component minvar
+utility beats blend in BOTH periods. Thus no consistent incremental winner;
+positive equity exposure is not alpha or a Paper-profitability claim.
+Independent ALL-RO replay matches all30 cells/restored calibration with zero
+fits/search/writes. One570-second repair dispatch stays inside the shared600s
+family allowance, following19.50s original/diagnostic use. CPU only; zero GPU,
+sealed spend, retained model weights, selection or Paper promotion.
+Root `D:\thericher-v2\model-artifacts\research\joint-etf-quarterly-allocation-development-v1-r2`;
+contract `sha256:609b9513521447b1df0d1e51d3164221175dc278fef469c17dffb69ee26ff66f`;
+result `sha256:c562ad04f6998afcbee2978591900d78f06d14f9f91f3618cbf934a1de7e35a6`.
+Original v1 contract379a8131.../failed result85fef576... and both frozen source
+trees remain external.110 focused passes/source and actual-result independent
+review; parent853 serial passes/full9,892 passes/22 skips/327.94s/eight workers/
+clean exit,9,914 collected; Ruff/three sample Compose pass.
+Next distinct hypothesis is ordered joint-path daily allocation, not another
+TCN forecast reroll. One31-return context/32 past sessions and tiny TCN vs
+same-input full-lag linear/constant; direct net utility/continuous shared cash.
+Execution first proves exact differentiable fees against the Decimal ledger;
+Data supplies causal context. One three-fit600s GPU family only after frozen
+contract/CPU parity. Revised/seen source/closed families remain explicit.
+Primary mechanisms re-retrieved: https://arxiv.org/abs/1904.04912 (futures),
+https://arxiv.org/abs/2005.13665 (different diversified index ETF portfolio).
+They support direct position/objective learning, not this three-equity edge.
+No external code/weights adopted. Claude design check unavailable/auth expired,
+not agreement; independent math/source review continues.
+
 Causal-volume sequence family completed one ACTUAL CUDA GRU32/128 epochs and
 one CPU Ridge fit from retained QQQ/SPY sources. Frozen160/1/90 dates and four
 slots produce2,008 scheduled keys/1,274 TRAIN fit rows; each ETF has356 eligible
@@ -42,16 +76,21 @@ replays frozen weights with zero fits/GPU probes, then reattaches only registry
 outcome. Registry SHA2565f45f1d465d4ff9204b8648bb563333d34ca90a3639039d29f132bd684677057;
 no attempt/contract/model/result rewrite or reopening of this failed hypothesis.
 The original frozen v1 runner remains its replay source.
-Next distinct hypothesis is joint three-ETF quarterly composition, measuring
+Subsequent distinct hypothesis is joint three-ETF quarterly composition, measuring
 traded payoff after costs rather than volume/risk loss alone. Pure
 joint_portfolio_covariance.py has64 synthetic tests/independent review:252 past
 returns/253 closes, exact caller schedule/vintage/cutoff, immutable private
-numeric output, source-safe facts only. Actual three-date input smoke is being
-prepared externally; no source values, fit, weights or performance inspected yet.
-Current company contract in NEXT_CODEX_GOAL.md fixes a single covariance/momentum
-blend and controls before outcomes. Existing Tiingo monthly replay is single-ETF
-and paired-allocation NAV liquidates daily; neither is reused as a false
-three-position overnight portfolio. New shared-cash fee accounting is needed.
+numeric output, source-safe facts only. Actual three-date input smoke is complete:
+all2002/2013/2020 inputs ready,54 causal/geometry checks per process, three fresh
+processes exactly match; independent ALL-RO fresh replay matches. No target,
+fit, weights, GPU or performance claim. Exact external root:
+`D:\thericher-v2\model-artifacts\research\joint-portfolio-covariance-input-smoke-20261008-v1`;
+contract `sha256:899119e3b8d879506f2145c7dc30dea89586c7b4b14c39d1cc4d02b45ca4d0c7`;
+result `sha256:dfcedcb9f963eab815819d3dafd715c51f0dfef2f55fc9af82e81f75afa0b258`.
+Three dates alone did not establish complete quarterly coverage; the actual
+campaign above now supplies it. New shared-cash overnight fee ledger has101
+focused passes/independent review. Old monthly single-ETF or paired daily-flat
+NAV was not reused as a false three-position portfolio.
 No ready frozen successor GPU campaign exists; quarterly sample count does not
 justify a deep model merely to occupy the device. CPU portfolio evidence comes
 first, while ready future predictive campaigns remain independently dispatchable.

@@ -23,6 +23,7 @@ from thericher_v2.ops.kis_paper_intraday_head_schedule_receipt import (
 _CAPTURE_OBSERVED_AT = datetime(2026, 7, 28, 15, 30, tzinfo=UTC)
 _TERMINAL_OBSERVED_AT = datetime(2026, 7, 28, 15, 31, tzinfo=UTC)
 _RUN_ID = "intraday-head-unit"
+_DIAGNOSTIC_RUN_ID = "intraday-head-20260728T1530000000000Z"
 _SECRET_SENTINEL = "fixture-secret-must-not-leak"
 _RAW_SENTINEL = "fixture-raw-minute-bar-must-not-leak"
 _SCRIPT_PATH = (
@@ -97,6 +98,201 @@ def test_collection_recovery_projects_bound_duplicate_conflict_without_sensitive
         str(artifact_root).lower(),
     ):
         assert forbidden.lower() not in rendered
+
+
+@pytest.mark.parametrize(
+    "diagnostic",
+    [
+        {
+            "failure_phase": "head_contract",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": 4,
+            "requested_pages_per_target": 4,
+        },
+        {},
+        {"failure_phase": "head_contract"},
+        {
+            "failure_phase": "head_contract",
+            "failure_code": _SECRET_SENTINEL,
+            "failure_page_ordinal": 4,
+            "requested_pages_per_target": 4,
+        },
+        {
+            "failure_phase": "row_parse",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": 4,
+            "requested_pages_per_target": 4,
+        },
+        {
+            "failure_phase": "head_contract",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": True,
+            "requested_pages_per_target": 4,
+        },
+        {
+            "failure_phase": None,
+            "failure_code": None,
+            "failure_page_ordinal": None,
+            "requested_pages_per_target": None,
+        },
+    ],
+)
+def test_collection_recovery_projects_only_valid_bound_optional_diagnostics(
+    tmp_path: Path, diagnostic: dict[str, object]
+) -> None:
+    repository_root, artifact_root, cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        run_id=_DIAGNOSTIC_RUN_ID,
+        target_status="partial",
+        target_reason="minute_response_invalid",
+        target_provenance={
+            "conflict_origin": None,
+            "retained_head_conflict_disposition": "not_applicable",
+            **diagnostic,
+        },
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+        run_id=_DIAGNOSTIC_RUN_ID,
+    )
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root, repository_root=repository_root, capture_cache_root=cache_root
+    )
+    payload = result.safe_payload()
+    valid = (
+        not diagnostic
+        or diagnostic.get("failure_phase") == "head_contract"
+        and (
+            diagnostic.get("failure_code") == "mixed_exchange_dates"
+            and type(diagnostic.get("failure_page_ordinal")) is int
+            and diagnostic["failure_page_ordinal"] == 4
+            and diagnostic.get("requested_pages_per_target") == 4
+        )
+    )
+    if valid:
+        assert payload["capture_binding_status"] == "verified"
+        for target in payload["targets"]:
+            assert {
+                k: v
+                for k, v in target.items()
+                if k.startswith("failure_") or k == "requested_pages_per_target"
+            } == diagnostic
+    else:
+        assert payload["status"] == "evidence_unavailable" and payload["targets"] == []
+    assert _SECRET_SENTINEL not in json.dumps(payload)
+
+
+def test_collection_recovery_never_projects_mutated_diagnostic_bytes(tmp_path: Path) -> None:
+    repository_root, artifact_root, cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        run_id=_DIAGNOSTIC_RUN_ID,
+        target_status="partial",
+        target_reason="minute_response_invalid",
+        target_provenance={
+            "conflict_origin": None,
+            "retained_head_conflict_disposition": "not_applicable",
+            "failure_phase": "head_contract",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": 4,
+            "requested_pages_per_target": 4,
+        },
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+        run_id=_DIAGNOSTIC_RUN_ID,
+    )
+    capture.path.write_bytes(
+        capture.encoded.replace(b'"failure_page_ordinal":4', b'"failure_page_ordinal":3')
+    )
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root, repository_root=repository_root, capture_cache_root=cache_root
+    )
+    assert result.safe_payload()["targets"] == []
+    assert result.safe_payload()["capture_binding_status"] == "evidence_unavailable"
+
+
+@pytest.mark.parametrize(
+    ("budget", "ordinal"),
+    [(4, 5), (8, 5), (2, 2), (999999, 5), (True, 1), (4.0, 4), (None, 4)],
+)
+def test_collection_recovery_rejects_hash_consistent_unbound_page_budget(
+    tmp_path: Path, budget: object, ordinal: int
+) -> None:
+    repository_root, artifact_root, cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        run_id=_DIAGNOSTIC_RUN_ID,
+        target_status="partial",
+        target_reason="minute_response_invalid",
+        target_provenance={
+            "conflict_origin": None,
+            "retained_head_conflict_disposition": "not_applicable",
+            "failure_phase": "head_contract",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": ordinal,
+            "requested_pages_per_target": budget,
+        },
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+        run_id=_DIAGNOSTIC_RUN_ID,
+    )
+    assert "sha256:" + sha256(capture.path.read_bytes()).hexdigest() == capture.receipt_sha256
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root, repository_root=repository_root, capture_cache_root=cache_root
+    )
+    assert result.safe_payload()["status"] == "evidence_unavailable"
+    assert result.safe_payload()["targets"] == []
+
+
+@pytest.mark.parametrize(
+    ("run_stamp", "budget"),
+    [("20260728T2019599999999Z", 4), ("20260728T2020000000000Z", 8)],
+)
+def test_collection_recovery_verifies_actual_budget_at_frozen_invocation_boundary(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, run_stamp: str, budget: int
+) -> None:
+    monkeypatch.setitem(
+        globals(), "_CAPTURE_OBSERVED_AT", datetime(2026, 7, 28, 20, 20, 1, tzinfo=UTC)
+    )
+    monkeypatch.setitem(
+        globals(), "_TERMINAL_OBSERVED_AT", datetime(2026, 7, 28, 20, 21, tzinfo=UTC)
+    )
+    run_id = f"intraday-head-{run_stamp}"
+    repository_root, artifact_root, cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        run_id=run_id,
+        target_status="partial",
+        target_reason="minute_response_invalid",
+        target_provenance={
+            "conflict_origin": None,
+            "retained_head_conflict_disposition": "not_applicable",
+            "failure_phase": "head_contract",
+            "failure_code": "mixed_exchange_dates",
+            "failure_page_ordinal": budget,
+            "requested_pages_per_target": budget,
+        },
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+        run_id=run_id,
+    )
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root, repository_root=repository_root, capture_cache_root=cache_root
+    )
+    assert result.safe_payload()["capture_binding_status"] == "verified"
+    assert all(t["failure_page_ordinal"] == budget for t in result.safe_payload()["targets"])
 
 
 @pytest.mark.parametrize(
@@ -561,6 +757,7 @@ def _write_capture_receipt(
     target_reason: str | None = "minute_duplicate_conflict",
     target_provenance: dict[str, object] | None = None,
     target_provenance_by_key: dict[str, dict[str, object] | None] | None = None,
+    run_id: str = _RUN_ID,
 ) -> _CaptureReceipt:
     coverage = {
         "complete_regular_session_dates": [],
@@ -572,8 +769,8 @@ def _write_capture_receipt(
     coverage_digest = _sha256_json(coverage)
     payload = {
         "kind": "kis_paper_intraday_session_capture",
-        "schedule_run_id": _RUN_ID,
-        "observed_at": "2026-07-28T15:30:00Z",
+        "schedule_run_id": run_id,
+        "observed_at": _CAPTURE_OBSERVED_AT.isoformat().replace("+00:00", "Z"),
         "current_session_cumulative_coverage_digest": coverage_digest,
         "current_session_cumulative_coverage_category": "incomplete",
         "current_session_cumulative_coverage": coverage,
@@ -624,9 +821,7 @@ def _capture_target_payloads(
     ]
     for target in targets:
         target_provenance = (
-            provenance
-            if provenance_by_key is None
-            else provenance_by_key.get(target["target_key"])
+            provenance if provenance_by_key is None else provenance_by_key.get(target["target_key"])
         )
         if target_provenance is not None:
             target.update(target_provenance)
@@ -658,9 +853,10 @@ def _write_bound_recovery_terminal(
     capture: _CaptureReceipt,
     binding_overrides: dict[str, object] | None = None,
     collection_exit_code: int = 1,
+    run_id: str = _RUN_ID,
 ) -> None:
     binding: dict[str, object] = {
-        "session_capture_run_id": _RUN_ID,
+        "session_capture_run_id": run_id,
         "session_capture_observed_at": _CAPTURE_OBSERVED_AT,
         "session_capture_receipt_sha256": capture.receipt_sha256,
         "session_capture_coverage_digest": capture.coverage_digest,
@@ -669,7 +865,7 @@ def _write_bound_recovery_terminal(
     if binding_overrides is not None:
         binding.update(binding_overrides)
     write_kis_paper_intraday_head_schedule_receipt(
-        run_id=_RUN_ID,
+        run_id=run_id,
         collection_exit_code=collection_exit_code,
         prospective_spy_cycle_exit_code=0,
         prospective_spy_cycle_status="not_applicable",
