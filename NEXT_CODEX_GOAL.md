@@ -39,12 +39,13 @@ Reattach their exact actual results when available; no manual invocation,
 duplicate request, budget reset, quote-price substitute or foreground waiting.
 Preserve the new shared initial10-percent basis and pending identity.
 
-Engine Research independently prepares one finite, genuinely distinct GPU
-developmental hypothesis from retained lawful data. The October7 Docker CUDA
-probe passes; GPU authority/environment is not blocked. Do not resurrect a
-closed recipe or run dummy utilization work. Freeze target/split/controls/
-finite compute before fitting; no training or new appointment is implied by
-the preparation assignment, and it is not an accounting dependency.
+Engine Research's independent ready package is causal-volume target/scorer/
+GRU preparation from retained QQQ/SPY M1 data, proposed past120min/24 M5 inputs
+and next30min volume target. Exact finite split/controls/kill proposal is in
+its stateboard. Docker CUDA passes; no fresh data, new GPU approval or Paper
+result is needed. Implement causal support tests and the bounded runner, then
+freeze target/split/controls/finite compute before fitting. No closed recipe,
+dummy utilization, return/capacity claim or accounting dependency is introduced.
 
 ## Completion And Continuation
 

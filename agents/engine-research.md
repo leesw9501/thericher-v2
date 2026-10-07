@@ -51,9 +51,20 @@ research scores. No genuinely ready new frozen predictive/GPU campaign exists;
 closed risk/return/allocation/foundation families stay closed.
 GPU capability is freshly verified in existing research image d6b43213:
 RTX4090/Torch2.7.0+cu128 CUDA matrix operation succeeds/networknone/no fits.
-Bounded Engine preparation for one distinct retained-data GPU hypothesis runs
-in parallel with accounting, rather than after Execution's external due time.
-It is not yet a frozen campaign, appointment or training result.
+Bounded next-hypothesis review completed: a causal-volume sequence study is a
+concrete independent preparation package, not a frozen appointment or training
+result. Existing QQQ/SPY FirstRate M1 sources suffice for proposed past120min/
+24 completed M5 own/peer log-volume inputs and next30min total-share-volume
+target. Proposed one pooled GRU32/seed101/128 epochs has TRAIN-slot mean,
+trailing-volume persistence, seasonality-scaled persistence and Ridge controls;
+fixed160/1/90 shared-date split and45/45 halves, day-weighted log-volume error,
+strict5-percent improvement over every control in both ETFs/halves/date deletions.
+No return, impact, fillability, capacity or profit claim follows volume accuracy.
+Before dispatch, implement the target/scorer, exact offset support counts and
+causal tests, then freeze its one-cell contract/finite600-second compute and
+external artifact root. Reuse completed-context/GRU construction, not a new
+runtime. Preserve seen-source history and closed return/risk recipes. Preparation
+is ready independently of Execution accounting, not an operator-approval wait.
 
 ## Prior Target And Input Preparation
 

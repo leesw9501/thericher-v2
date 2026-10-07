@@ -23,9 +23,10 @@ no research promotion. Actual-fill accounting is the next product priority;
 there is no ready undispatched frozen GPU campaign. Evidence is in Research
 and Execution stateboards.
 October7 CUDA capability probe passes in existing image d6b43213 on RTX4090/
-Torch2.7.0+cu128; no training fit or appointment. Engine's bounded next-hypothesis
-preparation is active independently of Execution accounting; allocate only
-after its finite useful contract is frozen, without a new operator GPU approval.
+Torch2.7.0+cu128; no training fit or appointment. Engine's next-hypothesis review
+completed with a causal-volume GRU preparation package; target/scorer/runner
+implementation and a finite contract are still missing. This is independent of
+Execution accounting; no new operator GPU approval or Paper result is required.
 
 October5 first30-closing29 CPU family closed/non_promoting_completed,60 cells,
 zero fits/GPU/weights/sealed spend, no appointment or successor allocation.

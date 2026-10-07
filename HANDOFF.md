@@ -46,8 +46,11 @@ October7 local probe verifies RTX4090/PyTorch2.7.0+cu128 CUDA matrix operation
 inside existing research image d6b43213, networknone/no credentials. GPU is
 available, not authorization/runtime blocked. No research training is active;
 the current small two-feature Ridge baseline was deliberately CPU. A bounded
-Engine preparation assignment is choosing one genuinely distinct GPU study
-from retained data; it is not a dummy utilization job or a frozen appointment.
+Engine next-hypothesis review proposes a distinct retained-data causal-volume
+GRU study; target/scorer/runner implementation is the next preparation package,
+not a dummy utilization job or a frozen appointment. Exact proposal is in the
+Research stateboard. Accounting source review also completed; both invoked
+preparation roles exit rather than masquerade as persistent training workers.
 
 Corrected .env uses a DIFFERENT mock account. Existing logical private volume
 now points to `thericher-v2-paper-canary-private-acct-20261007-v1`; all seven
@@ -291,7 +294,8 @@ sample-env Compose pass. Warnings are existing sklearn criterion deprecations.
 Independent review found no remaining actionable integration defect.
 Actual new-account QQQ cycle and ALL-RO exact replay/current flat are verified;
 old105-file seal is unchanged. No active test/QQQ/fit worker remains. Bounded
-accounting and GPU-preparation role assignments are active, not broker workers.
+accounting and GPU-preparation role assignments completed their source-only
+outputs and exit; implementation packages remain ready, not externally blocked.
 
 Claude volume/recovery and forward-risk challenges exited1/review_unavailable,
 not agreement. Categorical pointers belong to Execution/Engine.
