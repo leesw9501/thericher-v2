@@ -23,6 +23,16 @@ Do not repair a hypothetical stale key or label it the actual4xx cause.
 Current goal: board-yield-curve-monthly-policy-development-v1; Data prepares
 the exact licensed Board pair reader/asof selection while owned head recovery
 remains an independent due-time fact, not a company wait.
+Board reader is now frozen/focused-attested: src/thericher_v2/data/federal_reserve_h15.py;
+read_federal_reserve_h15_snapshot(root), select_h15_asof_pair(snapshot,decision_at=UTC).
+Five exact source hashes, known no-observation codes, latest same-date pair
+before finite validation, lag30/maxage7 and no invalid-value fallback.
+Finite zero/negative yields supported; future values cannot mask past signals.
+Private Decimal values hidden from repr; source-safe dates/counts only.
+54 parent isolated serial passes/.18s, independent pure-join review supported-
+with-limits/no P1/P2. Source SHA2566a79c457cf1d0d3cf9311d9516b5ccf3a71debe75ec816efd4bcf1e7ceef1f84.
+Engine consumer/replay and company-boundary authority remain pending; this
+isolated input package is not completion of the company objective.
 Cross-day-clock helper is independently integrated/54-cell study closed/rejected;
 no data qualification or Paper promotion follows from that research result.
 Helper: src/thericher_v2/research/cross_day_clock_context.py, dedicated test.
