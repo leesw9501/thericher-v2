@@ -1,1113 +1,197 @@
-# Data Agent Stateboard (Data Operations)
-
-`AGENTS.md` owns policy and `NEXT_CODEX_GOAL.md` owns the company objective.
-This is a current Data projection, not a run ledger. Git and immutable
-external artifacts retain historical evidence.
-
-## Ownership And Boundaries
-
-Data owns providers, acquisition, provenance, calendars, canonical storage,
-resampling, manifests, temporal splits, and quality facts. It does not select
-strategies, fit models, or make execution decisions. KIS Paper market-data
-collection uses only its named owner path; never read or route `KIS_LIVE_*`.
-
-## Current Coverage (2026-10-08 KST)
-
-Token diagnostics implemented/independently reviewed and published to head alias
-e6f74905...: optional exact1xx..5xx class, exactEGW00201 only with rate_limited;
-legacy absence/local-not-due/transport absence unchanged, no cross-target copy.
-462 parent passes; integrated1033 serial/full10,282/22 skips/330.99s/eight workers/
-clean helper. Five baked hashes match; no manual task/API/pace/schedule change.
-Publication `D:\thericher-v2\model-artifacts\data\kis-head-token-diagnostic-publication-20261008-v1.json`.
-Head source-safe Scheduler next_due04:24 KST October8 (observed04:08); current
-validated terminal remains02:28 until a later exact chain is inspected. Result1
-is not evidence. Observer02:28:07 finalized inside head02:28:01..09 window,
-but actual token POST start ordering/contention is unobserved; no inferred
-shared-token-cache or throttle remedy. Independent research continues.
-
-Next assigned Data package is pure FirstRate20-prior-session same-clock input;
-never use current/future target support to select its history. FINRA inventory
-stopped before row parsing/join/model use: source-specific AI/software rights
-unresolved under official Terms Restrictions(m). Manifest-only2018-Aug1..2026-
-June17/58,620,306 rows/CNMS+FNSQ+FNYX+FORF is not ETF coverage or no-double-count
-proof. Original bytes preserved; no permission inferred from noncommercial use.
-
-Latest owned head result is independently reattached: run
-`intraday-head-20261007T1728010023310Z`, completed02:28:09.811131 KST.
-`collector_nonzero`/`collector_provider`: QQQ `auth_rejected`, SPY
-`token_request_not_due`, zero new attempt rows for both. Authentication subcause
-is unknown; optional minute-page diagnostics are absent because no page was
-accepted. This does not erase retained cache coverage or diagnose its older
-fourth-page failure. No manual invocation or cadence/authority change.
-Exact terminal `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-invocation-v1\intraday-head-20261007T1728010023310Z\terminal.json`,
-SHA256c74590cff0a2b7137d1ed77557b923e844fc84dd75e05c9399bae292c6bafc8b.
-Pure joint D1 helper is ready: exact32 scheduled past Bars, immutable9x31
-relative-price channels, future-support mutation invariance,75 focused passes.
-Research owns scaling, targets and model outcomes; source quality is unchanged.
-Data's next source-only review checks in-memory client/token ownership, not a
-provider retry or permission gate. Older attempts below retain their own times.
-
-Causal-volume consumer reattests both original CSV/normalization/lineage hashes
-and251 shared dates, without acquiring or changing sources. Its fixed four-slot
-geometry has2,008 scheduled keys:1,274 TRAIN fit rows and356 comparison keys
-per ETF/90 dates. Comparison exclusions:4 calendar-input,2 calendar-target,
-2 required-past-M1 shortfalls, not a whole-panel block. C+1..C+30 target support
-does not affect past-input masks. Models/losses belong to Research, not a Data
-qualification, current availability or Paper input. The exact00:29 October8
-head chain is now validated as collector_nonzero/collection_exit_nonzero,
-reason_unavailable; coverage incomplete, not a diagnosed provider failure.
-Run `intraday-head-20261007T1529009204384Z`, completed00:29:18.370635 KST;
-terminal `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-invocation-v1\intraday-head-20261007T1529009204384Z\terminal.json`.
-Scheduler Ready/next_due02:28 KST, no manual invocation or schedule change.
-Bounded metadata reconciliation validates six manifest hashes for October5-7:
-119/390 retained regular minutes per ETF/date, zero additional shared complete
-dates beyond the25-date baseline. October7 was still open at inspection.
-Index generation253/SHA256fa4f30632dc28d8b5cf50bd84f425d11cbaddd13f4d16afd31acab312467cf27
-was byte-stable. Read-only diagnosis is complete: each target retained three
-accepted pages/360 rows then minute_response_invalid on the fourth attempt.
-The failed-page subcause was not recorded. The launcher accepts only a legacy
-not_executed error shape, explaining reason_unavailable for this bound partial.
-11:29 Eastern/forming-bar exclusion explains119 completed regular minutes;
-backward pages cannot supply not-yet-observed future session minutes.
-The categorical phase/subcode/attempt-ordinal repair is now frozen/reviewed in
-existing owner/capture/adapter/reader only.568 focused passes; both review P2s
-closed: cached prefix preserves CURRENT failure/observation, and reader binds
-diagnostic ordinal to the exact invocation4/8-page budget. Full collection
-initially caught a legacy exception-constructor incompatibility before tests;
-0/1/2-argument shape is restored with optional message discarded.403 focused
-passes include unchanged daily-SPY constructor/redaction tests. Parent853 serial
-passes/37.61s; full9,892/22 skips/35 warnings/327.94s/eight workers/clean exit,
-9,914 collected; Ruff/three sample Compose pass. Only head alias is published:
-image dfda02f7e31b772e5532b8035c3036645a9d952a393eeb2ca5b8d13bacc6218b,
-five changed baked hashes match; Paper/web aliases unchanged. Dispatcher remains
-host-side/reader source-bound. Publication receipt
-`D:\thericher-v2\model-artifacts\data\kis-intraday-head-diagnostic-publication-20261008-v1.json`.
-No new raw retention/request/pace/schedule; the
-historical fourth-page subcause remains unknown, not retroactively inferred.
-The scoped failure does not defer Research, UI or Paper.
-
-The forward-risk consumer reattests the existing normalization/lineage, both
-canonical CSV hashes and251 scheduled NYSE dates without acquisition or source
-changes. Fixed160/1/90 split preserves source-local target shortfalls; the two
-early closes yield159 TRAIN/89 comparison positive targets per ETF, not a
-whole-session input exclusion. Actual two-fit/replay evidence belongs to Engine
-Research, not a Data/PIT/finality or Paper qualification. No new collector,
-cache, cursor, pace or rights change. Existing head next_due remains October8
-00:29 KST; actual scheduled paired-head/preview result is still unobserved.
-
-The bounded terminal-header repair is integrated/deployed. Official KIS minute
-example continues M/F; the legacy example explicitly identifies D/E as terminal.
-Normalized D/E now produce `recognized_terminal`, not the unknown-header class
-that could enter a full-page older-key fallback. Collector implementation,
-blank/unknown fallback, M/F, old receipts, scopes, schedules and pace stay intact.
-Parent391 serial passes/one skip8.88s, agent442/9.09s, independent review and
-full8,736 passes/22 skips/35 warnings/329.15s/eight workers/clean exit pass,
-matching8,758 collected; Ruff/default+research sample Compose pass.
-Ten existing Data aliases share image
-`sha256:846a900b8e1488f5018fecee2024276fe8fd33a3235c0fef4232298b96b4616f`;
-all602 unique baked source/configuration hashes match. No task/service invocation,
-Paper-alias change, credential/provider call or scope/rate/schedule change.
-Actual provider D/E yield remains unobserved, not a complete-capture claim.
-Exact publication: `D:\thericher-v2\model-artifacts\data\kis-terminal-header-publication-20261005.json`,
-SHA256 `8faa10fe7a92e1b1b6b0a9ba8b2f935cde0a06648555ad8ea73d1977dfb1852e`.
-Its bound official-source receipt explains the recalibration fact. The next
-existing paired-head opportunity remains October6 00:29 KST.
-
-FirstRate broader-input readiness is now measured, not merely assigned:
-251 scheduled NYSE dates September30,2022-September29,2023,250 shared complete
-regular sessions (248 full390-minute/two210-minute early closes). SPY June5
-lacks four expected minutes; retain that one source-local limitation, not a
-whole-panel block. A160-TRAIN/one embargo/90 scheduled comparison proposal
-preserves prior seen-data reuse; it is not an untouched holdout or campaign.
-Parent verifies12 metadata/code/contract pointers plus both canonical CSV hashes.
-Exact receipt: `D:\thericher-v2\model-artifacts\research\source-discovery\firstrate-broader-input-readiness-20261005.json`,
-SHA256 `84fff32e0ee07f17f53cd9941f3321507e7b8d379e4e9b531ef2a6693b3bc57d`.
-No acquisition, credential/provider call, model, rights or qualification change.
-Research's target-free completed-context smoke consumes the existing M1 sources;
-its eight-cell prefix availability is separate from whole-session completeness.
-
-One bounded older close-key package is closed:QQQ/NAS and SPY/AMS May1,
-June1,July1,August3 all return `minute_response_empty` for their exact queries,
-8 total GETs/0 accepted pages/0 complete sessions. This is scoped source
-unavailability, NOT a rate limit or global history floor. The first May1 QQQ
-attempt's inline projection wrongly treated index.targets as a mapping; the
-list-shaped projection was repaired and11 synthetic checks preceded recovery.
-The first attempt used one client/token/one GET; recovery used one new
-client/token/seven GETs/12.113816s, no original May1 retry. All56 protected
-indexes/predecessor receipt remained byte-unchanged; parent hash readback passes.
-No raw rows retained, slice/resampling not applicable, no retry/next_due remains.
-Exact receipts under `D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-panel`:
-`train-eight-scopes-20261003T022702121188Z-5a3aa02dcdca.json`,
-SHA256 `e45aadb942d2d22e8e3b7eb89441ecbe4c89eaa26930cad2c3dfe381d674607a`;
-`train-eight-scopes-continuation-20261003T023317844130Z-d6879d784d36.json`,
-SHA256 `aa26c137838e54ba589bf894ca6bd5d72f2d019749b7880d3c75b8a48748ef93`.
-The distinct August10/17/31 close-key package is now closed: August31 QQQ/NAS
-and SPY/AMS each return four accepted pages/390 regular minutes, with exact
-M1/M5/M10/H1/H3 counts390/78/39/6/2. August10/17's four queries are scoped-empty,
-not a provider-wide earliest-date or rate-limit conclusion. Twelve GETs/eight
-accepted/four empty, one client/token/14.756493s, no retry/next_due. Fresh-process
-exact index/manifest/catalog and SINGLE-session slice verification passes;
-parent verifies the prior-receipt chain, six current indexes and all63 protected
-index hashes unchanged. Processes reaped, no collector/lock remains. Exact receipt:
-`D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-panel\august-near-boundary-six-scopes-20261003T030327943616Z-09dd6c442cdf.json`,
-SHA256 `09dd6c442cdff4eb5df50524b5f476004a689b8ff0b163d437bb51e33e3bf51d`.
-No PIT/finality/fresh-holdout/Paper qualification follows. Do not repeat answered
-queries. Existing FirstRate research and the separate Paper opportunity continue.
-
-Prior paired-head integration: explicit paired QQQ/SPY head option implemented
-with the same strict per-target/session/cursor/prefix checks. The old QQQ-only
-option/defaults stay unchanged; the existing head owner may use the new option
-without a new task, rate layer or schedule. Current SPY head120 versus dated
-SPY390 motivates this repair. Agent341 focused tests pass; parent460 changed-path
-serial tests25.61s and independent diff review support scope/no P1/P2.
-Shared authority is complete:8,570 passes/22 skips/35 warnings/325.47s/eight
-workers/clean helper exit0, matching8,592 collected; Ruff/both sample-env Compose
-pass. At that publication ten Data aliases matched600 source/configuration hashes, image
-`sha256:289b72095047fa59fb7eb54ab318caed59cce375eae7175eb1b4742bb7c40ce9`.
-That image is superseded by the October5 terminal-header publication above.
-No task/service invocation, scheduler/timing/budget/pace or Paper-alias change.
-Actual paired-head SPY provider yield remains unobserved; do not call this a
-complete real capture or substitute dated-scope evidence for head evidence.
-The distinct August24-28 QQQ/SPY+September1SPY acquisition is also closed:
-all11 scopes attempted, August28 both ETFs and September1SPY complete;
-August24-27's eight exact queries empty. Twenty GETs/12 accepted pages/eight
-empty, one reused client/token/22.918540s; no cooldown/next_due. Fourteen
-synthetic projection checks and fresh-process canonical SINGLE-session readback
-pass, each complete scope480 native/390 regular rows,390/78/39/6/2 bars.
-Parent verifies final/prior receipt chain, all11 current indexes,69 protected
-index hashes and13 previous receipt hashes unchanged. All owned processes
-reaped. Exact immutable receipt:
-`D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-panel\eleven-scopes-final-20261003T034126454266Z-11b62069ab6d.json`,
-SHA256 `11b62069ab6d58f5bc26ec050609b228d64faf8105d93eff7b01a0ad35f6432b`.
-No provider-wide floor, PIT/finality/holdout/Paper qualification or new schedule.
-Do not repeat answered queries. The separate verified dated scopes now cover25
-shared recent regular dates August28-October2:9,750 M1/1,950 M5/975 M10/150 H1/
-50 H3 per ETF, not50 independent days or a newly frozen combined dataset.
-Legacy21 June/July shared sessions and their source identities remain separate.
-Data acquisition package closed; current-data owners and Paper opportunity remain.
-
-The bounded October1/2 context extension is complete for QQQ/NAS and SPY/AMS:
-four independent date/symbol scopes,16 GETs/one client/token/17.976s, no retry
-or next_due. Each source verifies390/78/39/6/2 regular input bars. All September,
-June/head indexes and frozen acquisition sources stayed unchanged. Parent
-independently reopens exact indexes/manifests/raw sources, verifies dated custody,
-source catalog and `require_complete_kis_paper_private_intraday_session` slice
-IDs/hashes and all timeframes. A session-slice identity differs intentionally
-from the feature adapter's selected-sessions identity; do not conflate them.
-The writer's original expression is not attested, but the declared slice fields
-now independently recompute. Revised/seen later calendar data, not fresh holdout,
-decision-time/PIT/finality or Paper evidence. Exact immutable direct receipt:
-`D:\thericher-v2\model-artifacts\data\kis-paper-spy-dated-panel\october-20261001-02-four-scopes-20261003T014554040014Z-e3a898f0999b.json`,
-SHA256 `bcb6e79048c62823235a3f179b92dd62c19439d8472cd1b93eec25e9cc41a9fe`.
-This adds two shared session blocks/1,560 regular minutes, not four independent
-market days. September remains the separate frozen input for the next study.
-
-Matched SPY/AMS September2-30 retention is now canonically complete:20 dates,
-9,600 native/7,800 regular M1 rows; M1/M5/M10/H1/H3 totals7,800/1,560/780/120/40.
-One client/token,80 accepted GETs/zero categorical failures,88.676s; no retry,
-new pace, schedule or history-floor claim. Dedicated `spy-YYYYMMDD` caches;
-all21 September QQQ indexes and legacy June/head indexes stayed byte-unchanged.
-QQQ and SPY now share20 September sessions/15,600 regular minutes in total,
-not40 independent market-session blocks. Existing loader verifies exact target,
-dated cursor/manifest/raw bindings, complete regular support and resampling.
-Source/PIT/finality remain revised/not_observed; direct collection is not
-Scheduler or Paper evidence. Parent changed-path Data/core/patch184 tests pass;
-final independent review supports scope with no material P1/P2.
-Exact immutable evidence under
-`D:\thericher-v2\model-artifacts\data\kis-paper-spy-dated-panel`:
-complete `september-20261003T012339735778Z.json`,
-SHA256 `85b418a056c5d41e76abff949a5ca2b9d0d2f2ecd4b3c3a624930cfffe68ebe9`;
-`september-index-pins-20261003.json`,
-SHA256 `2e2b8b1e772fce3659a42784bd97d82d2ea0010ffec50167b4ce588dd3063b1b`;
-`september-canonical-readback-20261003.json`,
-SHA256 `3056846edb155addfcf4406fd8a89369395cb3a26e5577d42a8346a7467906bf`.
-Core/CLI/tests hashes are frozen in the complete receipt. Acquisition is closed;
-do not rerun completed scopes or reset indexes. Current-data owners continue.
-Final integration authority8,186 passes/22 skips/35 warnings/317.40s/eight
-workers/clean helper matches8,208 collected tests; Ruff/both Compose pass.
-Prior SPY/patch publication matched591 sources, image
-`sha256:ebe0c0d3814c8f5dec20cc26d07972132cf1f13cc2f92fe2ab89135ec4949a8c`.
-That prior publication is superseded by the paired-head integration above.
-
-The finite September2-30 QQQ/NAS panel is now canonically complete:20 sessions,
-9,600 native/7,800 regular M1 rows; M1/M5/M10/H1/H3 totals7,800/1,560/780/120/40.
-Each independent `intraday-dated\qqq-YYYYMMDD` v1 cache binds its calendar date,
-closed regular session, initial close-minus-one-minute key and resumable frontier.
-First invocation retained five complete sessions/one120-row prefix:22 GET attempts,
-one token,24.468s, one recognized rate_limited response. Recovery skipped complete
-dates without changing bytes and finished with59 GETs/one token/64.956s. Across
-the two attempts,80 accepted pages/one failed request; no daily quota/history-floor
-claim or permanent pacing change. The measured one-second shared/collector pace
-remains; long cooldown yields. Fresh-process next_due now also accounts for its
-token-start guard, not a wait on an already authenticated in-memory client.
-Original June/head/September1 indexes stayed byte-unchanged. Finality/PIT remain
-not_observed; direct-worker source evidence is not Scheduler or Paper evidence.
-231 Data focused regression tests and independent reviews pass; integration
-authority8,092 passes/22 skips/35 warnings/321.26s/eight workers/clean helper.
-Exact immutable external evidence under
-`D:\thericher-v2\model-artifacts\data\kis-paper-qqq-dated-panel`:
-first `september-20261003T002748463542Z.json`,
-SHA256 `7bc4b4aaa9ea50fed2ac319fca508de7dc5d4230baa2310add6b2ad00462a5a5`;
-complete `september-20261003T003421755991Z.json`,
-SHA256 `50450e2a19e0315eb52f76779ee4dc42b36eaf0e50430f7c40504e1f7b939270`;
-`september-index-pins-20261003.json`,
-SHA256 `a5dba46f82cf332a30458a89a15a3acd73998e3a351ff287ed6cf05dd316e140`;
-`september-canonical-readback-20261003.json`,
-SHA256 `13f6dffb3fab22c747e7f8c6d6fa1e5acc4fef526fa3af680979f682e037ac65`.
-Readback reopens exact indexes/immutable manifests/raw hashes through the existing
-loader and complete-session/resampling APIs, not a latest-artifact scan.
-Earlier QQQ Data publication matches591 baked Python/PowerShell files across ten
-existing aliases, image
-`sha256:1d859db1eb2da6a88589d903ccde6ee5cf837146ff315a5aef9cdcc355c5db4e`.
-No task/service invocation, schedule change or Paper-alias publication occurred.
-This1d859 image and earlier589-file attestation predate the SPY/patch publication.
-
-Latest independently scoped September1 QQQ/NAS retention completed at23:41:47Z:
-four minute GETs/one token,480 unique rows/zero overlaps in5.217s. Existing
-canonical readers verify390/390 regular minutes and M1/M5/M10/H1/H3 counts
-390/78/39/6/2; hourly buckets omit the terminal30-minute fragment. Preview has
-no I/O; execute pins the initial20260901155900 key before the first request,
-reuses one client, and resumes its own cursor. Full pages advance oldest minus
-one minute even without continuation headers; query/date/overlap guards remain.
-Core defaults, June/current-head cursors, task definitions and pace are unchanged.
-Direct retention is not Scheduler proof or provider/PIT finality; those remain
-not_observed. Partial/empty results describe only this exact scope.
-185 changed-path Data serial tests and independent source review pass. Final
-integration authority8,014 passes/22 skips/326.01s/eight workers/clean helper,
-Ruff and both Compose pass. Ten existing Data aliases match all589 baked source
-files, image `sha256:7f305d50e7496d49c5ae7c29d95cd04c06fd34854313ff91789df5014705531f`.
-No task/service was invoked or schedule expanded during publication.
-Exact scope `D:\market_data\us_equities\kis_paper_private\intraday-dated\qqq-20260901`:
-manifest `v1\snapshots\snapshot=20261002T234147Z-000000-qqq-nas-m1-v1\manifest.json`,
-SHA256 `333d8863c63de0885c4d5bd76e94667ad3b87e9dde2aa1075142bc6e7df7f56b`;
-index `v1\index.json`,
-SHA256 `05ee1405aa68c8514988b124c696930ba62614259e618b6b45f2b75af7f9f8bf`;
-prepared input `sha256:82f211e67c9cfa5bce015d0edb36de3401fa84ec9b64ef7002d51438bda66483`.
-The finite dated-panel extension is complete as recorded above. Old589-file
-image attestation below is its prior deployment, not the current code snapshot.
-
-The isolated two-date probe completed at22:49:37Z with one token/two minute
-requests/zero daily requests in2.582s. QQQ/NAS key20260901120000 returned120
-unique native M1 rows spanning September1 10:01-12:00 exchange time;
-key20260803120000 returned empty. Status partial: this proves one requested
-historical midday interval, not August's absence, an endpoint-wide earliest
-date, a complete session, PIT/finality or a daily quota. Rows were discarded;
-no cache/cursor was reset or changed.90 focused tests and independent source
-review pass. Exact metadata-only receipt:
-`D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\fixed-key-pair-20261002T224937028955Z-f0d4c37e9dcdd33e.json`,
-SHA256 `f0d4c37e9dcdd33ef71dbe5db877a30940ddff4069e71cfcc1eac64e8d0a95bc`.
-The subsequent independent September1 retention is complete as recorded above;
-the probe itself remains rows-discarded. Missing responses do not block other lanes.
-
-18:25:32Z bounded explicit older-key measurement completed with one token and
-two accepted full120-row QQQ/NAS pages. No recognized M/F header; both body
-more fields zero, yet page2 yielded120 new older keys/zero overlaps and
-contiguous same-exchange-date coverage. Under5 seconds/no categorical errors;
-single token reused, measured existing gate unchanged. Raw rows discarded.
-Receipt `D:\thericher-v2\model-artifacts\data\kis-paper-minute-capability-probe\20261002T182532841936Z-d8a92571fc17d02c.json`,
-SHA256 `d8a92571fc17d02c19ac2ecd6384150ea52179086a8ac0f3e1544d7861b04e45`.
-45 focused tests pass. Header-only termination can truncate useful coverage;
-this does not establish unlimited history, a full session or provider finality.
-The opt-in retention package is integrated in `843968d`: QQQ head/session-capture
-only,1-4 pages, defaults/SPY/historical cursor unchanged. Main123 focused tests
-pass; independent review confirms crash recovery preserves the historical cursor.
-Latest direct bounded capture21:25:20Z succeeded in7.225s: QQQ480/SPY120
-rows, QQQ October2 regular session390/390, no missing minute. This follows
-`e2c1c84`: persist exact predecessor quarantine, recheck fingerprints, retain
-the same already-fetched replacement; mature identical retained overlaps can
-complete a previously forming bar without rewriting either snapshot. No extra
-API retry, historical cursor reset, reader rights or pacing change.
-290 changed-path serial tests/13.98s, independent review and full authority
-7,660 passes/22 skips/316.29s/eight workers/clean helper exit pass; Ruff/default
-and research Compose pass. Ten consumers share image
-`sha256:67f5b6590390bc14f1f22f064baad5fb6038d9ea216e351360d5f63315940969`;
-all583 source Python/PowerShell files match. Source-snapshot custody is exact;
-whole-chunk quarantine can reduce uncovered support and never fills a gap.
-Exact current direct capture:
-`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T212520432377Z-784fce24230bb20a.json`,
-SHA256 `784fce24230bb20a8dd74255ed337f73baa26a88412b18dfcb7890cd8ab6e826`.
-Head index generation244/SHA256
-`f391aa094511e2e7817c5f171f4de288aea1d353f064bd2ee722d6eebef0fba9`.
-Independent existing-loader input preparation verifies390 complete QQQ bars;
-input SHA256 `a22ba010207705ac8133d5c4a41bfa6553a29790b74cf03e868682d3f2bc8fda`.
-M1/M5/M10/H1/H3 counts390/78/39/6/2; H1/H3 each skip one terminal30-minute
-bucket. No labels/fits/raw-value output. Complete retention is not provider
-finality, decision-time availability, a matched SPY session or Paper qualification.
-This is direct-worker evidence, not claimed Scheduler-origin evidence.
-
-The prior06:20 KST owned task used the previous image: exact offline reader
-validates collection_exit_nonzero/mixed QQQ-collected and SPY-retained-conflict
-quarantine. QQQ current coverage39/390 at index generation241; no causal
-attestation, availability not_applicable/legacy_unbound, input_unavailable.
-Exact terminal `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule\intraday-head-20261002T2120011697109Z.json`,
-SHA256 `d090d2c63de07a19d608691efd92412caece4649a961596f42b0392cd1af6a93`;
-bound capture SHA256 `506dbebb4d69d16e96a29f732abce9e2eb426e2bd277720687a6d15f53100535`.
-Marker-present provenance assumes an honest host; it is not cryptographic OS
-Scheduler proof. Operational logging remains disabled. Do not reinterpret
-the later direct capture as this scheduled run. Existing owner is Ready;
-next_due October6 00:29 KST. No task was manually invoked or newly installed.
-Existing owner now forwards explicit QQQ continuation within its existing
-regular4/post-close8-page budgets; default Compose remains4. Main190 serial
-tests/18.20s and independent source review pass. One actual eight-page-ceiling
-capture at21:48:32Z retains six accepted QQQ pages/720 unique rows, then a
-seventh-page minute_response_invalid; SPY retains120. This is partial, not
-eight accepted pages, successful termination, a rate limit or source exhaustion.
-The failed page subtype was not retained; mixed-date boundary versus malformed
-payload remains unknown. Preserve the valid prefix; no blind retry or source
-relaxation is justified. Current QQQ regular coverage remains390/390.
-Exact safe capture:
-`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T214832648062Z-790d6304656b4f30.json`,
-SHA256 `790d6304656b4f306bed6ebf0fd5507e4259f81638012b35dcf84bbdf3a498b0`.
-Bound QQQ manifest:
-`D:\market_data\us_equities\kis_paper_private\intraday-head\v1\snapshots\snapshot=20261002T214832Z-000244-qqq-nas-m1-v1\manifest.json`,
-SHA256 `f28c868e49140346c42e11fbf4f7cbac2e78c15a20f61000e0a51cef12ba99a2`.
-Index generation247/SHA256
-`d6315ef8c8e56a00a492b6340e82cffae37c7547d142a8ee763a014918fd8893`.
-One client/token and measured pacing remain unchanged. This extends an existing
-automatic collection path, not a new task, historical cursor or permission gate.
-Integration authority passes:190 Data serial plus112 research serial tests;
-full7,743 passes/22 skips/317.32s/eight workers/clean helper exit, Ruff/default
-and research Compose. Ten existing Data consumers now share verified image
-`sha256:5f975bc91058df3742583fe355834c534101e30089ace4a16d959c7995f0babc`;
-all584 source Python/PowerShell files match revision5f0e85e. New standalone
-diagnostic/mixture files are not deployed or used by those scheduled consumers.
-No task was manually invoked or schedule changed during this publication.
-The separate fixed-key probe above now supplies its narrowly measured result.
-
-Independent historical inventory at19:15:58Z: QQQ20,138/SPY19,507 retained M1
-rows,21 shared complete regular sessions June22-July21 2026;8,190 regular
-minutes per symbol. Exact historical index:
-`D:\market_data\us_equities\kis_paper_private\intraday\v1\index.json`,
-SHA256 `f816b940c3419caec4bdd1595b79615e6895782dad012edc12785aef6f05a53f`.
-Existing verified catalog/input/resampling APIs can consume this scope as
-revised development data. It is separate from current heads; completeness
-does not establish provider finality or historical decision-time availability.
-
-New standard-EOD context acquisition at17:45:37Z October2: exactly three
-approved Tiingo requests succeeded in3.643s. SPY/QQQ/IWM each315 sessions,
-945 total rows, requested July1 2025-September30 2026;268,744 retained bytes.
-Same retrieval vintage for past context and August/September targets; do not
-splice old adjusted prices into new ratios. Existing August9 snapshot unchanged.
-Exact new snapshot:
-`D:\market_data\us_equities\tiingo_etf_daily\canonical\snapshot=20261002T174537Z-tiingo-etf-d1-r1`.
-Dataset ID `us_equities.tiingo_etf_daily.snapshot=20261002T174537Z-tiingo-etf-d1-r1`;
-dataset `sha256:b86a26d1c26b9bf687cb09bb1ed8cd6299381ad96bd222222e842f768b22a05b`;
-manifest `sha256:3632b4074e21648ef281ab2eecd41491186b2a7071d4f16a5bf0d10cca9c772e`.
-Raw SPY/QQQ/IWM hashes respectively:
-`sha256:c1715d3b18d98a578cf655925c814a674b5b9e49a5124183e40c6117131e9c59`,
-`sha256:65fd027b9f76d9dcbdbc2c62eef48a319c8dcd783c297212c584d5f2e08d0604`,
-`sha256:72d66a0aa760ef2548ccf47d39f941de9cd208527e976fe01a82248c6b3e2f1b`.
-The one-shot script defaults to plan-only;14 synthetic endpoint/scope/collision/
-output-redaction tests pass. Actual acquisition uses only the existing approved
-Tiingo-token loader; no KIS/live, extra source rights, payment or new schedule.
-Canonical rows remain unadjusted. The separate `tiingo_adjusted_vintage.py`
-reader now verifies exact caller-bound dataset/manifest/three raw hashes,
-raw/canonical date alignment, adjusted geometry and unlinked paths, returning
-immutable in-memory marks without changing the August9 reader. Main actual
-readback passes315 rows each and every August/September model window:252 signed
-returns from253 prior closes,21 payoff sessions per month, six ETF/month windows,
-all feature dates before the decision and no October source row required.
-155 combined reader/input tests pass,3 native-symlink skips; portable reparse
-and real hard-link checks pass. No value-bearing repr, network or credentials
-are needed for readback. Two later months remain revised/non-PIT development,
-not an independent holdout or Paper qualification. No operator help is needed.
-
-Data's read-only inventory at October3 02:12-02:16 KST reattached the named
-current pointers (Scheduler facts at02:14:45); unchanged daily scopes retain
-their original collection timestamps:
-- SPY strategy head:99 rows through October1, collected October2 22:15:02;
-  next owned refresh October5 22:15 KST. Exact manifest:
-  `D:\market_data\us_equities\kis_paper_private\daily-head\v1\snapshot=20261002T131502303890Z-be45f6ea8bdd-spy-ams-v1\manifest.json`,
-  SHA256 `65b83327698ba063656498d01290329424852ad42d26dee20f2e0de7c9ec2574`.
-- NAS forward: six targets at48 sessions through October1; since September25,
-  36 accepted pages and36 overlap-conflict observations across six runs.
-  48 whole-page revision snapshots retained. Latest consumer is deferred,
-  not a claim of zero collection. Next owner October3 06:40 KST.
-  Receipt `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20261001T214005252534Z-7a059e975ecf\receipt.json`,
-  SHA256 `99acd5f8cffd5c208ecbac888992913281ed0a7ae5382af9c28af097a13548e8`.
-- QQQ/SPY v2 forward:48 common sessions through October1;12 accepted pages
-  and12 overlap conflicts across six runs. Latest partial receipt does not
-  qualify the legacy input. Next owner October3 06:55 KST.
-  `D:\thericher-v2\model-artifacts\data\kis-paper-daily-pair-forward-v2\run=20261001T215509110716Z-8af295a3aaf84ba5\receipt.json`,
-  SHA256 `e002e50c4da219298352117d93b0b03652ee705ff03695963798415cb39def2f`.
-- Intraday head:97 QQQ/98 SPY chunks, one new chunk each after the00:29 owner;
-  its bound capture has120 rows per target. October2 QQQ covers119/390 regular
-  minutes (271 missing), zero complete head sessions. October1's159/390 is a
-  different session, not a reduction of the same session's coverage.
-  This is separate from the historical cursor's21 complete shared sessions.
-  Dispatcher completion is not complete coverage. Next owner October3 02:28 KST.
-  Capture `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20261002T152902086053Z-73f43884218f3030.json`,
-  SHA256 `73f43884218f3030cef6032865542a3aff16f6cd264149b9401354b15406a149`.
-  Main independently recomputed the pointer, schedule, invocation, capture and
-  index hashes and read the existing offline schedule fact. Exact schedule
-  `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-schedule\intraday-head-20261002T1529010864419Z.json`,
-  SHA256 `83a34ca70bdaeb96ef97ff1e59502ebca6ec2e5d5376130fa4fc34ca32d09691`;
-  exact invocation terminal under `execution\kis-paper-intraday-head-invocation-v1`
-  for that same run, SHA256
-  `3cac5549cc739049ba0ee219a85cf43a4a5d0b99a53d8a42a94701ca309d6411`.
-  Current pointer SHA256 `56a09ef6213dff3a48c25a7106b22da9720d4387aac6e2642a75749ab7986a0a`;
-  index generation233, SHA256
-  `ea318f8baefe691000cc33135f96df18d4730456e660bcc3ab85cecd9ba92170`.
-  Capture/availability bindings verify; causal attestation is not recorded and
-  input is input_unavailable/session_coverage_incomplete. Decision-time
-  availability/provider finality remain not_observed. This is marker-present
-  provenance under the assumed-honest host, not independent proof of OS Scheduler
-  origin. The recovery-only reader returns evidence_unavailable because this
-  terminal is not collection_exit_nonzero, not because the capture is missing.
-
-No collector, broker call, scheduler or data acquisition was started by this
-inventory. Existing immutable Tiingo input supplied the matched Chronos-2
-development comparison; all435 target observations and72 parent controls were
-reproduced, without source mutation, new rights or Paper qualification. Exact
-Research result belongs to Engine Research. No operator data request arose.
-
-October3 00:22 KST adjusted-field capability check: all21,922 retained Tiingo
-raw rows preserve adjOpen/High/Low/Close, divCash and splitFactor, with no missing,
-null, invalid numeric, duplicate dates or adjusted-OHLC geometry failure.
-SPY8,438/QQQ6,896/IWM6,588 rows through August7 2026. Frozen canonical rows retain
-events but drop adjusted OHLC; do not change that frozen normalizer/snapshot.
-Raw files under that exact snapshot's `raw` directory verified SHA256:
-SPY `20663908257f2bbd1c3f58d4882d0f2ddb5417f0232c5e4eba798bebc9b948d1`,
-QQQ `e656fdadb140c06dd6228f8a87ccd092f3217a5f763f68a984e74c197e6c5554`,
-IWM `e01df2cb4a4efd3a9006d6d0327022fdb081ddfd6e08ef6da0b72364248eb2b4`.
-[Official Tiingo EOD documentation](https://www.tiingo.com/documentation/end-of-day)
-defines dividend/split-adjusted OHLC; historical adjustment can be revised.
-The linked exact CRSP method was unavailable, so a separate reader may describe
-adjClose ratios only as provider-adjusted return marks, not independently proved
-reinvestment, historical PIT or broker share/cash accounting. Never add divCash
-or splitFactor again to those adjusted ratios. No new data is needed through
-August7 for this distinct low-turnover proxy.
-
-The isolated `tiingo_adjusted_etf_daily.py` reader now verifies the fixed
-canonical/manifest/raw hashes, exact raw/canonical dates and stream, finite
-adjusted OHLC geometry, and unlinked paths before exposing immutable Decimal
-marks in memory. No frozen normalizer/snapshot was changed and no event cash or
-split factor is added.55 synthetic tests pass,2 native-symlink tests skip on
-this host; portable reparse/symlink and real hard-link rejection pass.
-Research's separately frozen monthly holding consumer completed72 cells using
-these marks with no missing TRAIN/EVAL support. This does not qualify broker
-shares, historical availability, a dataset promotion or another source vintage.
-
-## Recorded Source Contracts
-
-The recorded source grades below describe their named consumers and completed
-contracts. Under the 2026-09-21 reset they do not prohibit a new development-only
-contract on already-seen lawful data. They still confer no fresh holdout,
-independent replication, or silent KIS/Paper equivalence.
-
-| Source | Status | Permitted interpretation |
-| --- | --- | --- |
-| KIS Paper QQQ/NAS + SPY/AMS intraday head | The latest task-owned terminal (`intraday-head-20260819T2120006022679Z`) is source-safely `complete` at the dispatcher level, with verified current-session coverage still `incomplete/current_session_short`; it retains no model qualification. Metadata-only inspection has 37 retained chunks and zero complete regular sessions. The existing four-trigger Task remains unchanged. Its runner now keeps the first three triggers at four pages per target and gives only a regular-weekday 16:20--20:00 Eastern post-close invocation an eight-page cap. Claude CLI produced no verdict (`review_unavailable`). | This is one bounded existing-task capability probe, not a new schedule, rate change, or retry loop. The next post-close receipt must still prove the exact coverage result; a short result closes this cap test without automatic escalation. It does not prove Scheduler origin, provider finality, decision-time availability, a model input, or Paper eligibility. |
-| KIS Paper QQQ/SPY M1 cursor cache | 21 shared complete regular sessions; exact cursor scope is exhausted. | Source-local mechanics, fixed local-paper baselines, and target-free window preflight only. |
-| KIS Paper private D1 | Unadjusted/partial with finality and as-of facts unavailable. The NAS daily-history panel and historical-forward projection now reject a nonempty common-session sequence with an interior normal session missing under pinned local `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar); this package did not reread the current cache. | `input_unavailable` for daily predictive work. A forward cache retains later rows across a gap, but its prospective input stays unavailable until the full boundary-to-forward session chain is present. The continuity rule proves neither source finality nor current-cache qualification. |
-| KIS Paper QQQ/SPY D1 forward caches | The v1 lineage remains quarantined after retained revision conflicts. The separate v2 lineage at `daily-qqq-spy-forward/v2` now reattaches at 41 common sessions through September22, under cache identity `sha256:3ef5f433d1f1a0f36d1326ccff584a4172949e9b0530266b1478acbcc5caa5ea`. The finite observer closed with a reader-validated later `disqualified/identity_mismatch` result for September21; triggers expired without extension. Exact evidence is in Active Objective below. | v2 is forward collection/provenance only. The observer disqualifies that exact session; neither observation establishes point-in-time availability, provider finality, or corporate-action qualification. No new ranking, model, GPU, Research, Execution, or Paper consumer is qualified by these results. |
-| KIS Paper broad D1 panel | The latest source-safe postrun snapshot (2026-08-01) recorded 2,119/2,119 current-listing targets covered, zero quarantined targets, and zero mismatches over its 604-target baseline overlap. The 2026-08-19 short continuation reattached the same all-terminal registry at unchanged generation 26,368 (1,089 `complete`, 1,030 `source_limited`) and made zero KIS requests. | Coverage/provenance inventory only: current-listing, non-PIT, unadjusted, corporate-action-unqualified, and session-finality-unattested. Its exhausted historical cursor cannot supply a target, ranking, training, or Paper input; later daily sessions need a separate forward cache. |
-| KIS Paper IWM/AMS M1 | Isolated current-head v2 observations replay locally; no H1/H3 history. Its separate one-page cache reattached offline as exactly one `head` chunk with verified index/manifest/raw integrity, `51` complete bars, `17` adjacent 1m pairs, `33` non-adjacent pairs, and a `660`-second maximum interval. Its source-safe mechanics receipt is `sha256:7dbdae99adaf1e19fe1c3d6bd2760edb71cae2cb7c737c519a5b5f3259e50818`; no raw rows were emitted. The bounded caller-derived probe accepted its head but observed no recognized continuation header, writing only `sha256:99068ebe69ee7d5300eeb2671eed433df87830db980947ac26d4b97a3b267cea`. | The exact IWM current-head request contract has no observed continuation under this one-run probe. Default IWM remains one page; no retry, collector, schedule, raw probe cache, history/finality/availability claim, model input, or Paper input follows. |
-| Tiingo raw D1 ETF trio | The 2026-08-09 immutable SPY/QQQ/IWM snapshot reattested offline through 2026-08-07 with 8,438/6,896/6,588 sessions. The completed frozen D1 rotation and its independent aggregate audit found 1,892 event-mask exclusions, zero discontinuity-only exclusions, four unmasked validation contexts, and three active decisions against the fixed 100 minimum. | A continuation of already-seen, source-separated non-PIT history: retrospective controls and diagnostics only, never a fresh selection look, threshold calibration, ranking, sealed evaluation, GPU, or Paper input. The completed audit found no semantic contradiction, so this Tiingo rotation lineage is closed without altering its source or masking policy. |
-| Tiingo prospective EOD ETF trio | The 2026-08-19 UTC external SPY/QQQ/IWM snapshot reattests dataset `sha256:537211067196a91d24dfaab229666decc96108e17c4de89e8059d02ed27c787c`, manifest `sha256:d02c5c1f7bcd47148b491273fad613637ddee8972ad8bb1bdf79dd3ab7d5426d`, exactly three fixed-symbol responses, 72 normalized rows, and source-as-of 2026-08-12. | Prospective lineage only. Its closed contract leaves point-in-time, model, training, campaign, ranking, order, Paper, and GPU eligibility false; it cannot clear KIS quarantine or prove decision-time availability/finality. |
-| Tiingo IEX M5 r1 ETF trio | Pinned 2026-07-19 IEX-only snapshot reattested offline by raw hashes, stored gzip hash, and exact canonical payload. | One completed source-isolated reconstruction runtime integration only; no source scope, training eligibility, KIS equivalence, model-selection, or Paper-input change. |
-| FINRA daily short-sale volume | Existing 2018-08-01--2026-06-17 local snapshot spans four facilities and 58,620,306 canonical rows. The 2026-08-20 official-source receipt is `source_retrieved_with_limits`: FINRA states daily files arrive no later than 18:00 ET and may be revised. | A future source-local, next-session availability/revision contract may evaluate it as an offline-only auxiliary context. It is neither short interest nor exchange-consolidated total volume, has no observed finality/decision-time availability, is not KIS-reconstructible, and cannot yet create a feature, campaign, GPU, Execution, Paper, or live input. |
-| Norgate trial tail | The completed reconciliation reattached the bridge and observed `input_unavailable/local_api_not_ready_updater_not_observed`; its summary is `sha256:5c79a0430b789709df50136f6a1ea999836072c7483f6f1598fc80d43bb924ac`. The isolated client imported, but no fixed updater installation or process marker was observed. No raw Norgate data was read. | The local prerequisite is to install and run Norgate Data Updater, then start one new bounded readiness package. This is not a trial-rights, source-capability, or data-quality conclusion; do not poll or start the date-indexed probe. |
-| FirstRate free M1 SPY/QQQ | The two hash-bound original ZIPs normalized to canonical local CSVs with expected entry names and exact decoded/emitted timestamp-set equality. SPY has 207,824 and QQQ 210,482 provider-readable complete M1 Bars; UTC-anchored 1m/5m/10m/1h/3h geometry and the frozen 32-cell target-free window matrix reattached offline. The fixed 5m L2, 20/60 trend, and Wilder-RSI mean-reversion after-cost controls each reattached only complete contiguous windows and were rejected with zero wins over flat across six SPY/QQQ nonzero-cost cells. Official FirstRate evidence labels data US Eastern/New York and declares zero-volume bars omitted. | The existing DST-aware New York-to-UTC conversion is a source-local assumption: offset convention and bar start/end stamping remain `not_disclosed`. Omission is vendor-declared only, never session coverage or cross-feed alignment. Project policy remains private/internal with no redistribution. The source proves neither KIS parity, decision-time availability, finality, a predictive model input, or a Paper input. |
-| Fixed market-data contract inventory | The external immutable inventory records all six predeclared footprints with only shallow presence and receipt hashes: KIS M1/D1 and Norgate trial are `input_unavailable`; FirstRate M1 is `source_local_mechanics_only`; Tiingo ETF D1 is `retrospective_control_only`; Tiingo IEX M5 is `non_promoting_runtime_only`. | The receipt confers no predictive, Paper, or GPU consumer. It is an evidence map only; each status is scoped and a later qualified input needs its own contract. |
-| NYSE Daily TAQ source discovery | The official catalog distinguishes a public sample from a full paid product. No data was acquired and no provider was adopted. | Sample schema/aggregation reference only; it is not a no-cost ongoing or KIS-aligned prospective input. |
-
-Raw market bytes remain under `D:\market_data`. Source-safe receipts and
-research artifacts remain under `D:\thericher-v2\model-artifacts`.
-
-## Active Objective
-
-September25 Research input reattestation: the existing August9 raw Tiingo ETF
-snapshot supports435 January-July2026 target histories, each with128 prior
-scheduled sessions (145 per SPY/QQQ/IWM). Date/hash-only preparation found no
-missing required history; the completed actual study also observed all targets.
-No acquisition or source mutation. Raw same-day open/close scaling does not
-resolve independent price revisions or next-open availability. This distinct
-TimesFM development scope does not reopen the closed Tiingo rotation or qualify
-a Paper input. Exact source/contract/result pins and outcomes belong to Engine
-Research; no Data collector or GPU appointment remains from this preparation.
-
-September25 offline reattachment verifies the actual22:15 owner head:
-`kis.paper.private.daily.head-v1.snapshot=20260924T131502508023Z-86ed43c76f90-spy-ams-v1`,
-dataset `sha256:e0b7856b3c3fa0c2add2f346c326d88959b94a12776d1457e3ca2f5781a5ecd3`.
-99 completed rows through September23, collected13:15:02Z under the existing
-daily-head/v1 root. This supersedes the manual13:06 recovery snapshot for the
-current consumer only. Existing first-availability receipt under
-`D:\thericher-v2\model-artifacts\_control\kis-paper-daily-spy-input-availability-v1\3c6b971f3fc81ae6e1d706167f35f1999c48cd1ba9f9c6e4b7847500a3400f52.json`
-is14:50:02.795428Z. Current baseline is ready/exit with validity through20:00Z,
-not an entry, profitable model or retrospective explanation of the failed
-budget run. No new data collection was needed for this read. Existing head
-owner next_due September25 22:15 KST. No broader cache/finality claim.
-
-September24 evening: the daily SPY strategy-head cache had remained at
-September21 despite a scheduled exit0. One existing-client page now retains
-99 completed rows through September23, collected13:06:22Z. Exact safe receipt:
-`D:\thericher-v2\model-artifacts\execution\kis-paper-spy-budget\head-recovery-20260924T130623723850Z.json`,
-SHA256 `7d3c3911c7a47cdcd47c4e9227172cfe14e952dfceb3005b207738c36d877ab7`.
-Dataset hash `sha256:bb5e1bdaf1726e4b97fe9a47491a8977f208a447766e15e0471e0d8d41f6cee3`;
-raw rows remain in `D:\market_data\us_equities\kis_paper_private\daily-head\v1`.
-The existing baseline observes ready/exit from this snapshot. This is not a
-Paper fill, predictive skill, provider finality or explanation of the earlier
-failed run. The CLI now returns exit20 and closed stage/category diagnostics
-for unavailable collection; successful output is unchanged.35 focused tests
-and the combined5,226-pass authority suite pass; the head image is rebuilt and
-hash-matched. Its existing22:15 KST owner ran again with exit0, next due
-September25 22:15 KST. That task exit alone is not fresh collection evidence;
-the13:06Z receipt above proves the actual recovery. No schedule/cadence change.
-
-2026-09-23 evening offline reattachment: the QQQ/SPY v2 cache now has 41 rows
-per target and 41 common sessions, July27 through September22, generation2.
-That is 23 more sessions per target than its bound bootstrap, not M1 coverage.
-Its verified loader hashes match the owned successful receipt:
-`D:\thericher-v2\model-artifacts\data\kis-paper-daily-pair-forward-v2\run=20260922T215508766676Z-47b0620688674bb8\receipt.json`
-(file SHA256 `576ac7f8e1499f3c01b5bd0d791b73502faf18976935723ebf36d1d1ae44b903`).
-No finality, adjustment or Paper-model equivalence follows. Next existing run:
-2026-09-24 06:55 KST; no schedule change or new collection was needed to prove it.
-
-NAS revision retention is implemented and deployed in its existing collector,
-preflight and observation images (nine changed-file hashes match). At13:21:08Z
-the bounded six-page collection accepted all six pages and appended39 sessions
-per target: six times41 rows, 41 common sessions, 234 additional daily rows.
-All six incoming revisions remain as whole-page immutable snapshots alongside
-the unchanged original values. Exact receipt:
-`D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20260923T132108726059Z-a011745b56d8\receipt.json`
-(`sha256:fd3bcf49e4c318b3c752be66f8507511bfffb40bc940efc7fb629686b1d10e3f`).
-Independent offline reattachment confirms generation4, both receipt-bound
-index/cache hashes, all six prior snapshots and all12 original canonical rows.
-All six exact whole-page reads succeed at current as_of and reject a time before
-recording. Every target has one changed overlap: close/volume only, not open/
-high/low. This does not establish which version is correct or source finality.
-
-The current first-retained view is not PIT or final: six revision conflicts
-remain visible and its legacy predictive projection is input_unavailable.
-Exit20/deferred here means unresolved values, NOT zero acquisition. The exact
-whole-page reader requires symbol, snapshot hash and as_of >= local recorded_at;
-it can support a separately scoped observed/developmental source without
-silently blending vintages or clearing the legacy consumer. No arbitrary
-price-difference tolerance or repeated-agreement finality rule was invented.
-The index atomically binds old/new snapshots; readers recheck hashes, schema,
-counts and exchange. Retries deduplicate identical incoming pages. New days
-continue to append even when a prior revision remains unresolved.
-
-Independent synthetic review:45 new tests; existing82 NAS/consumer tests pass.
-Source snapshots are under the existing D: cache, receipts under the existing
-D: artifact root. No account/order call or Paper image/schedule change.
-Collector image: `sha256:a39f3e3ac2b6dd81a5a6c895a45f8a3b8fa91465058af9b14c68adfdeac3e784`.
-Observation source-only overlay preserves the old Torch2.7.0+cu128 runtime,
-avoiding a CUDA dependency reinstall; its image is
-`sha256:684d9cbb3ada7286e59aa5693fae94d61cf4bb24fd49aebaca808926c882e4da`.
-Next existing NAS schedule remains2026-09-24 06:40 KST; no new scheduler.
-
-The expired finite D1 study now has a reader-validated later result for
-September21: `disqualified/identity_mismatch`, observed September22 14:20:03Z.
-Receipt: `D:\thericher-v2\model-artifacts\data\kis-paper-d1-prospective-observation-pairing\v1\receipts\later-20260921-14e3e061d664.json`.
-Canonical receipt identity is
-`sha256:a6b42eec06fb1c82c07254f7fc01bb836c54d12bbf5abfd8f52c01a52bdf0d85`;
-file-byte SHA256 is `3fd95fac3d88114d0ed5dc3cea152711be8f6f20f417141889eed9b53633df4e`.
-The current-pointer/first-later binding validates. No next task run is installed;
-the reader's historical next_due is not a live schedule. Close this measurement
-without extension or any Research/Execution qualification. These current facts
-supersede the earlier pending-opportunity entries below.
-
-2026-09-23 Execution input diagnosis: the23:50 budget abstention was a clock
-reuse bug, not missing coverage or a qualification gate. Exact first-availability
-metadata is `_control/kis-paper-daily-spy-input-availability-v1/2c02149b2ed1969dd528803c2fdef40518706390945809316244f6b83c03c7f0.json`
-beneath the external artifact root: September21 coverage,99 head rows,
-collection13:15:01.660835Z, first attestation14:50:02.431828Z on September22.
-Budget evaluation reused that attestation time, triggering strict equality
-rejection. Execution now samples its actual decision clock after loading.
-Existing metadata and strict future/stale checks remain unchanged. No new
-market download or source qualification was needed; final Paper evidence is
-Execution-owned. The independent Data sidecar identified and tested this fix.
-
-2026-09-22 research support: the new regular-session development CPU phase
-reattested the existing FirstRate SPY/QQQ canonical CSVs through their hash-
-and timestamp-bound loader. No new data, provider blend or source qualification.
-Removing the old pre-mask 24-hour sample cap yields 2,232-6,732 supported TRAIN
-rows per fold/horizon; the H30 folds have 4,464-6,732 rows. EVAL has 62-378
-eligible and scored rows per symbol/fold/horizon, with zero future-censored
-rows in this source-local run. Those are overlapping observations, not that
-many independent sessions. The new NYSE-calendar schedule still assumes the
-existing New-York conversion/start-bar convention; it does not verify it.
-The independent Data sidecar was interrupted by service capacity before a
-final inventory, so these facts are the main-integrated loader/CPU result,
-not a claimed independent audit. Exact source pins/folds are in
-`D:\thericher-v2\model-artifacts\research\firstrate-m5-h30-lstm-development-20260921-v1\regular-session-cost-matrix-v2\cpu-summary.json`.
-
-Schedule cleanup (2026-09-22) verified terminal metadata for the existing
-three-target historical cache (generation 65: two complete, one source-limited)
-and broad cache (generation 26,368: 1,089 complete, 1,030 source-limited).
-Both historical backfill tasks are disabled; their exact cursor contracts,
-data and indices remain intact. The finite SPY stability and both prefix-study
-tasks are also disabled. Stability exhausted its ten GETs on 2026-08-24;
-all ten matched, without proving finality. Prefix retained 31 validated pairs,
-all `page_seam_invalid`; latest session 2026-09-21 still has 119/360 minutes
-and no continuation. Repeating that unchanged study is retired, not all SPY
-history acquisition. Current intraday and SPY head collection continue.
-The installed pair-forward task's host runner now selects v2 services and
-guard-receipt lineage; its next natural run is 2026-09-23 06:55 KST. This is
-routing repair, not proof of new rows. NAS forward remains active at 06:40:
-its latest safe receipt is `unavailable/nas_forward_cache_unavailable/reconcile`
-at `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-forward-v1\run=20260921T214003621428Z-524597323641\receipt.json`.
-The 2026-09-22 bounded offline diagnosis reattested this exact NAS cache through
-its existing loader with writes/network blocked: generation 2, six ready targets,
-two common sessions through 2026-07-28, and all snapshot/content hashes valid.
-Index `sha256:985ea6348e315a7c0a075f873dffe718a3e5addcf393ffb1b9752ca03da5c144`
-still matches the last successful 2026-07-28 21:40 UTC receipt; the first failed
-receipt is 2026-07-29 21:40 UTC. No stored-cache/loader inconsistency or quarantine
-was established. A new-page overlap conflict is possible, not proved: the failed
-receipt loses the exact cache exception stage and rejected incoming rows were
-not retained. The follow-on source-only diagnostic change adds allowlisted
-`failure_stage`/`failure_category` and an optional fixed-universe symbol to new
-failure receipts, plus scoped `target_failures` on partial/deferred outcomes.
-Base load, target fetch, and overlap reconciliation are distinct; status, reason,
-recovery, exit codes, cache schema, and validation remain unchanged. The 45-test
-focused synthetic/static group passes with external surfaces blocked. No real
-cache, task or credential was changed by the agent; prior receipts remain
-intact. Main subsequently rebuilt the existing collector/preflight images with
-`.env.example`; six networkless/no-mount source checks match the three changed
-modules. Collector image `sha256:05e3ee382dc506825bccc1741f82b64787066b37d408f299b055786e1996ce42`;
-preflight `sha256:4474445534345e0e0a4253e80502e100b74f6b45b37345a02e0d36234e355c41`.
-No collection was invoked. Use the next naturally owned 2026-09-23 06:40 KST
-outcome to choose any reconciliation. Do not reset,
-overwrite, or quarantine this verified cache from exit 20 or the generic receipt
-alone. The prior retained C: synthetic scratch was containment/link-checked and
-removed with native PowerShell; its earlier cleanup failed at tool-policy
-dispatch, not at a demonstrated filesystem lock.
-
-The current D1 reader now validates `first_recorded` for session 2026-09-21,
-at `D:\thericher-v2\model-artifacts\data\kis-paper-d1-prospective-observation-pairing\v1\receipts\first-20260921-b7752aa22cc3.json`.
-There is no later pair result. Its final later opportunity is 2026-09-22
-23:20 KST; both installed triggers expire at 2026-09-23 00:00 KST. Read and
-close that finite study after the opportunity, without automatic extension or
-company-wide waiting. Older first-failure/due entries below are historical.
-Host change/rollback fields are in
-`D:\thericher-v2\model-artifacts\ops\schedule-cleanup-20260922`.
-
-Data independently supports the SPY lifecycle company goal. On 2026-09-21 the
-installed D1 image was found to lack the shared-client budget/error repair.
-The D1-only image was rebuilt with `.env.example`, without a task or collector
-invocation. Old image `sha256:08e61294172974b2c8005b3c0cca59cd1fcfc9b8326c6af5b1b91760d903b769`
-was replaced by `sha256:c2fd5021d8b2db734c896d90291bc828202153b7b9898d0340a70ebce62e4cec`.
-Network-disabled, read-only, no-mount inspection matched all seven relevant
-host/image source hashes (observer, cache, client, pair-forward, pairing,
-collector, reader). The observer SHA256 is
-`cea04cfda6f4680981a27bae697df9eb9d0d55f9cea4b154ba7cbd4b6a87b009`;
-pair-cache is `77cd40b4696baec459de57fb948d1f2a1ae2f2a75d3267ce7dc21fab0a33b71c`.
-No quote/daily-SPY image, schedule, credential, cache, or receipt was changed.
-This proves source equality only, not an observation/pair. Preserve owned
-`next_due` (2026-09-22 08:15 KST) and continue independent lanes.
-
-`kis-paper-d1-prospective-observation-pairing-v1` now owns an installed
-two-trigger KST worker: first observation at 08:15 and later re-observation at
-23:20, Tuesday through Saturday. It uses the existing QQQ/NAS + SPY/AMS
-virtual-Paper daily route only, keeps the v2 cache read-only, and persists
-only an external source-contract hash, session key, timestamps, row hashes, and
-a hash-bound source-safe current-outcome pointer to immutable receipts. The
-offline reader revalidates the pointer plus exact first/later receipt binding;
-an absent pointer is only `current_pointer_unavailable`. The approved offline
-reader revalidated on 2026-09-21 a first-stage receipt for completed session
-2026-09-18: `input_unavailable/first_observation_target_failure`, source contract
-`sha256:b7752aa22cc3b358b52c6fe2e6da72e1dc811b5a7078563de0c4201a68f9033d`,
-and receipt `sha256:63b5297a670925dc7813bdda93c3e491e3bad48450dfb9e1f5364bf5059d54c0`.
-Its first-receipt binding and later observation are both absent, so it is not a
-pair result. Task exit is not stage or outcome evidence. The reader-owned
-`next_due` is `2026-09-21T23:15:00Z`; no task state was changed. The earlier
-observer image's failure taxonomy gives target
-failures only sorted allowlisted aggregate codes and direct exceptions fixed
-family reasons; it retains no error text. No raw rows, model, GPU, or consumer
-path is enabled.
-A later match is measurement-only; a missing or changed target hash
-disqualifies only the bound session.
-
-`kis-daily-pair-forward-v2-fresh-cache-bootstrap-v1` is complete. It created
-the isolated fixed-pair v2 lineage without mutating or copying the v1
-quarantined cache. The initial network-disabled preflight was
-`collection_required`; one eligible serial KIS Paper collection completed as
-`ready`, and a second network-disabled preflight reattached it as
-`cache_current`. This remains collection/provenance evidence only; it provides
-no ranking, model, GPU, Execution, Paper-consumer, or live claim.
-
-The completed FirstRate 20/60 technical-trend and Wilder-RSI mean-reversion
-controls each reattached the same source-local 5m geometry and rejected their
-fixed rule after zero wins over flat in all six nonzero-cost cells. The trend
-matrix has 18 cells and the RSI matrix has 12; every aggregate local-paper cell
-was replayable and terminal-flat. These are closed source-local rule results,
-not KIS-parity, point-in-time, finality, ranking, GPU, Execution, or Paper
-facts.
-
-The completed frozen Tiingo D1 trend-pullback rotation and its independent
-aggregate event-mask audit are consistent. The audit found that all 1,892
-validation exclusions were event-mask exclusions, no discontinuity-only
-exclusions occurred, four contexts were unmasked, and three were active. This
-closes the source-separated rotation lineage as structurally sparse; it does
-not refresh the snapshot, alter masks, retune the rule, or create a Research,
-GPU, Execution, Paper, or live consumer.
-
-The fresh 2026-08-17 06:20 KST terminal is closed as an exact, source-safe
-`input_unavailable/session_coverage_incomplete/current_session_short`
-classification, matching the 2026-08-15 baseline. Its offline projection
-verified the bound cumulative-coverage and availability evidence;
-the causal attestation remains `not_recorded` and the pair binding
-`legacy_unbound`. The result does not establish provider finality, availability
-at a decision time, a model input, or a Paper action.
-
-The completed diagnosis found one cumulative-coverage defect: later identical
-fingerprints could not promote a forming row to complete. The repair preserves
-conflicting-fingerprint and candidate-batch handling, uses no raw M1 rows, and
-does not rewrite any immutable receipt. It is now built in the existing service
-from a clean `HEAD` context: 56 focused tests, the 2,933-pass authority suite
-with 17 skips, Ruff, and both Compose parses passed. A metadata-only
-re-evaluation remains short for the current session, so the next task-owned
-terminal alone can test the repaired writer at runtime.
-
-The short-session topology category is complete for both immutable terminals.
-Any later task-owned terminal may supply only a new, separately scoped category;
-its due time remains task-owned and is never a foreground wait.
-
-The offline reader now accepts a separately hash-bound causal-condition
-attestation at a fixed external artifact location, but no current task writes
-or binds one. An absent binding stays `input_unavailable`; malformed or
-mismatched bound evidence fails closed through the existing unavailable reader.
-This contract has no collector, credential, network, or schedule behavior.
-
-The static audit and writer integration are complete. The writer reads only the
-current source-safe terminal projection and a separate assumed-honest external
-observer input. It rejects missing, task-derived, stale, time-invalid, or
-mismatched input, writes only outside Git, and does not alter a task or an
-immutable terminal. The real current-terminal smoke returned
-`not_written/session_coverage_incomplete`; no attestation was attached.
-
-Claude's scope-matched review was `uncertain`: hashes and categories cannot
-cryptographically prove that an external-observer input was independent. The
-writer therefore states the assumed-honest limitation, requires exact
-run/timestamp binding, and rejects an explicit task-derived input or a replayed
-run. This limitation does not block the separate collection-recovery package.
-
-The full-session topology audit is now complete. Its `run_or_persistence_unresolved`
-result remains intentionally narrower than a Scheduler-failure claim. The first
-fresh marker reattached the exact task-path run
-`intraday-head-20260818T1728005721271Z`: the marker began at
-`2026-08-18T17:28:00.572127Z`, the schedule receipt was observed at
-`2026-08-18T17:28:04.254121Z`, and the dispatcher completed at
-`2026-08-18T17:28:05.278714Z`. Its hash-bound schedule terminal is `recovery`
-with scheduler exit code `1` and the closed stage category
-`collection_exit_nonzero`. This establishes a task-path nonzero only; it cannot
-identify a Docker wrapper, collector-process, provider, or persistence cause.
-The existing task definition, timing, pages, consumers, KIS route, and Paper
-behavior remain unchanged.
-
-The new terminal field accepts only `reason_unavailable`, `dispatcher_config`,
-or `collector_provider` from exactly one existing structured collector error
-payload. It stores neither the payload nor free text and preserves the existing
-stage exit code. The offline reader accepts old immutable markers as
-`reason_unavailable`; the legacy marker was reattached that way without byte
-changes. The first post-writer marker,
-`intraday-head-20260818T1924006306454Z`, binds the same closed category through
-the current pointer, immutable terminal, and exact schedule receipt. It is one
-diagnostic binding, not a cause or recovery premise. A 2026-08-19 Claude scope
-review ended `review_unavailable` because of an API overload, so no
-category-based recovery claim exists.
-
-The same offline reader now accepts paired opaque baseline run and completion
-facts. Against the first post-writer marker, the unchanged current pointer is
-`marker_not_later`, not a second category binding. This reader guard leaves the
-existing Task, timing, pages, KIS route, Docker path, consumers, and Paper
-behavior unchanged.
-
-The first strictly later pointer is
-`intraday-head-20260818T2120005941479Z`, completed at
-`2026-08-18T21:20:32.579443Z`. Its terminal and exact schedule receipt hashes
-are `sha256:cf3b6983308630167f97962317aa3f89e7d96eb0f66beb2d6a9dd186c4a558ad`
-and `sha256:c18b5024a7a058541e6d81757bb30405381451bfdee7b5aad576be5380d349a2`.
-The offline projection classifies it as
-`retained_partial/current_session_not_complete` with a successful collection
-outcome. `failure_category_is_comparable` is therefore false despite the
-compatibility-default `reason_unavailable`; no second failure-category binding,
-recovery proposal, or behavior change exists. Its source-safe pointers remain
-external-root-relative, marker provenance is assumed-honest-host rather than
-cryptographic Scheduler origin, and Task Scheduler Operational logging is
-disabled.
-
-The source-safe static audit separately reattached the installed
-`thericher-kis-paper-intraday-head` Task as `matches`: enabled, exactly one
-expected action, four non-repeating Tuesday-through-Saturday KST triggers,
-expected recovery/settings shape, and the checked-in first `session-capture`
-runner/Compose route all match. Its receipt is
-`execution/kis-paper-intraday-head-static-contract-v1/static-contract-20260819T1234034490997Z-931b776ddcdc.json`
-with `sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`.
-It read no current marker pointer and invoked no Task, Docker, KIS, broker, or
-collector. It supplies static-contract evidence only, so the known terminal
-remains `reason_unavailable` without a runtime or provider diagnosis.
-
-The bounded collection-dispatch review then verified from the existing runner
-and terminal contract that an already bound `collection_exit_nonzero` terminal
-is written only after `Invoke-HeadProfileService` has returned the host
-`docker.exe compose run` exit code. Claude's falsification-first result was
-`supported-with-limits`: a further per-call marker would duplicate that exact
-returned-boundary evidence for the known terminal while adding another
-diagnostic write to the pre-collection path. This proves neither Docker/container
-entry nor collector/KIS/provider behavior. No duplicate marker was added.
-
-The bounded direct host probe is now complete: `QQQ/NAS` and `SPY/AMS`
-completed one `session-capture` invocation at the existing four-page cap, with
-only `paper_only`/market-data aggregate evidence retained at
-`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T130238145868Z-50e04e46fdb2e4e0.json`
-(`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`).
-It proves direct-host collector completion only. The next narrow Data package
-is one existing Compose-service invocation without a Windows Task, so the
-container path can be classified separately without changing pace, scheduling,
-or consumers.
-
-That first direct Compose-service invocation is now complete as a scoped
-nonzero. The exact source-safe receipt
-`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T131812782029Z-0caa1e559078804d.json`
-(`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`)
-records both fixed targets as `rejected/token_request_not_due`. A source-safe
-read of the shared gate observed a separate start at `2026-08-19T13:15:01.522769Z`
-and the installed 300-second due interval. Thus this attempt yielded before a
-token POST; it identifies no worker and does not diagnose Docker, KIS, or the
-provider. A new goal-owned post-gate attempt may make one fresh atomic claim;
-the completed attempt will not be retried inside this objective.
-
-The due-gate container attempt then reached the existing retained-cache
-protection for both targets. Its exact safe receipt
-`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T133017088958Z-ed596cfe5f8dc959.json`
-(`sha256:ed596cfe5f8dc95977c961d48927e9266ba6353e82578f2a2f76b26acc1b80e4`)
-is `rejected/minute_duplicate_conflict` with `retained_cache/quarantined` for
-both `QQQ/NAS` and `SPY/AMS`. The existing index-only quarantine leaves raw
-bytes immutable and excludes only conflicting active head entries. It is an
-isolated recovery fact, not a provider-finality, coverage, or consumer claim.
-Claude supports one later independently fetched clean-capture attempt; another
-retained-cache conflict closes this exact recovery path.
-
-That later clean-capture attempt completed through the exact existing Compose
-service. Its unbound source-safe receipt
-`us_equities/kis_paper_private/intraday-head/v1/session-capture/20260819T134229353199Z-c87d4ebfde0e7545.json`
-(`sha256:c87d4ebfde0e7545e7907936c8eb506c1e3aa7514ef6d9ea86e9a36d7b4a522e`)
-is `complete` with both fixed targets `collected` and no failure or conflict
-category. The filename timestamp, immutable hash, external storage scope, and
-unbound direct-Compose identity were reattached offline. It closes only the
-cache-recovery branch, not session coverage, finality, or consumer eligibility.
-
-## Ready / Owned / Due
-
-| Work | Owner | Completion evidence |
-| --- | --- | --- |
-| FirstRate 5m L2 after-cost control | Data / Engine Research / temporary Validation | Complete: source/local-resampling reattestation, 60-bar/61-bar-embargo split, and all 18 local-paper replay cells completed. The L2 candidate had zero wins over flat in six nonzero-cost SPY/QQQ cells, so the lineage is `rejected`; no GPU or consumer follows. |
-| Tiingo D1 event-mask coverage audit | Data | Complete: the exact rotation receipt and pinned snapshot reattached independently. Event masks accounted for all 1,892 validation exclusions, discontinuity-only exclusions were zero, and the aggregate binding was consistent. The rotation lineage is closed without a policy change. |
-| Norgate trial host readiness reconciliation | Data / Infra Capability | Complete: the immutable diagnosis is `local_api_not_ready_updater_not_observed`, independently validated without a second host invocation. It records a local updater prerequisite only; no source rows, updater action, network, or repeated poll followed. |
-| KIS D1 prospective observation pairing | Data / expired finite observer | Closed: the deployed owner produced a reader-validated later `disqualified/identity_mismatch` result for September21. Exact receipt and source binding are recorded in Active Objective. No extension, dataset qualification, or dependency on independent Research/Execution follows. |
-| Cboe VIX/VXN D1 availability observations | Data / completed one-shot `thericher-cboe-vix-d1-availability-20260820` and `thericher-cboe-vxn-d1-availability-20260820` tasks | Complete: Task Scheduler records the 2026-08-21 05:30/05:31 KST invocations with result `0`, but the prepared offline reader returned `unavailable` for both VIX and VXN under the exact 2026-08-20 session, 20:00Z close, and 2026-08-21 13:30Z next-open bounds. The missing receipts are scoped to these observations; task exit is not outcome evidence. Do not retry or create a recurring task. Neither outcome establishes decision-time availability, provider finality, a feature, campaign, GPU, Execution, Paper, or live input. |
-| FirstRate 5m trend-rule input reattestation | Data | Closed as duplicate: the completed fixed 20/60 control already bound this exact source-local 5m geometry and chronology. Do not dispatch another reattestation under a new label. |
-| Tiingo prospective EOD refresh | Data | Complete: one current dated external SPY/QQQ/IWM snapshot was acquired through the fixed three-request path and reattached offline by dataset/manifest identity. Its source-as-of boundary and all lineage-only eligibility flags remain fixed; focused and full authority verification passed. |
-| Intraday coverage-repair rollout | Data / existing task image | Complete: clean-context image build and source-safe static reattestation passed without a task, KIS, Docker service, or collector invocation. |
-| Invocation-marker reattachment | Data / Codex | Complete: the first fresh marker and exact schedule terminal reattached as `collection_exit_nonzero`; its source-safe pointers remain external-root-relative. |
-| Task-path failure localization | Data / Codex | Complete: an allowlisted free-text-free category writer and legacy-compatible reader preserve the exact stage exit. No task, pages, timing, or consumer change followed. |
-| Failure-category reattachment | Data / Codex | Complete: post-writer `intraday-head-20260818T1924006306454Z` reattached as `collection_exit_nonzero / reason_unavailable` through exact hash-bound terminal and schedule receipts. No timing, pages, task, or consumer behavior changed. |
-| Failure-category confirmation | Data / existing `thericher-kis-paper-intraday-head` task | Complete: later `intraday-head-20260818T2120005941479Z` is hash-bound but successful and `retained_partial`, so the preserved default category is noncomparable. No recovery proposal or behavior change followed. |
-| Static intraday Task-contract reattestation | Data / Codex | Complete: installed Task enabled/action/triggers/settings and checked-in first `session-capture` runner/Compose route are all `matches`; the source-safe receipt is hash-bound and the audit invoked no Task, Docker, KIS, collector, or broker. It does not diagnose the existing terminal. |
-| Collection-dispatch boundary review | Data / Codex / Claude | Complete as no-change: the bound terminal already carries the returned host Docker-command exit for its exact collection call. A new marker would not diagnose Docker/container or provider behavior and would add diagnostic work before collection. |
-| Direct host collection capability probe | Data / Codex | Complete: one `QQQ/NAS` + `SPY/AMS` `session-capture` invocation at four pages per target completed with an exact unbound source-safe receipt. It established direct-host collector completion only; no Task, Docker, account, order, Paper consumer, or model behavior changed. |
-| First container collection capability probe | Data / Codex | Complete: one exact Compose invocation yielded `rejected/token_request_not_due` for both targets before a token POST. Its safe receipt does not diagnose Docker, KIS, or the provider; no Task, account, order, or consumer ran. |
-| Post-gate container collection capability probe | Data / Codex | Complete: the due-gate service reached the built-in retained-cache conflict branch and quarantined both conflicting active head entries while preserving raw bytes. It established no session/finality/model consumer. |
-| Quarantined-head recovery capture | Data / Codex | Complete: one later exact Compose capture is hash-bound as unbound `complete` with both fixed targets `collected`; no conflict repeated and no Task, account, order, consumer, or model change followed. |
-| IWM isolated current-head capture | Data | Complete: one fixed IWM/AMS page accepted with the replay-isolated source-safe receipt above; no retry, pagination, replay promotion, or consumer change followed. |
-| IWM isolated cache mechanics | Data | Complete: strict index identity binds the generic raw verifier, with replay-root, index-replacement, raw-tamper, and artifact-symlink rejection coverage. Only source-safe aggregate mechanics were emitted. |
-| IWM temporal-reach continuation probe | Data | Complete: one head was accepted, its continuation header was not recognized, and no second page was requested. The exact endpoint expansion path is closed without retry; the external receipt is the source-safe hash above. |
-| Tiingo IEX r1 reattestation | Data | Complete: the fixed snapshot remains hash-bound and source-isolated. No further acquisition, scope change, or consumer promotion follows. |
-| SPY D1 stability | Existing task | Its next eligible weekday observation is task-owned; `stable` is not provider finality. |
-| Norgate host readiness bridge | Data / isolated host runtime | Complete: the immutable bridge receipt is `input_unavailable/local_api_not_ready`; host runtime is available and all later categories are not checked. It never accessed a price, membership, listing, corporate-action, credential, KIS, broker, scheduler, or Docker path. |
-| FirstRate source-local M1 normalization | Data | Complete: reattached ZIP hashes, decoded only expected entries, and retained source-safe canonical/output/timestamp-set evidence. The local provider re-read 207,824 SPY and 210,482 QQQ complete M1 Bars; do not infer continuity or promotion. |
-| FirstRate source-local timeframe mechanics | Data / Codex | Complete: canonical hashes reattached, existing resampler emitted only complete unique contiguous observed-minute buckets, and source-safe 1m/5m/10m/1h/3h hashes/counts are retained. UTC-epoch alignment is not a regular-session claim. |
-| FirstRate source-local window preflight | Data / Engine Research | Complete: two canonical streams reattached through the mechanics receipt and each frozen matrix cell retained only eligible-window counts/end-timestamp-set hashes. No label, feature, prediction, model, selection, GPU, KIS, or Paper consumer followed. |
-| FirstRate source semantics retrieval | Data / Claude review | Complete: official free-data and license pages re-retrieved with matching page hashes, then a review-bound interpretation preserved offset convention and bar timestamp boundary as `not_disclosed`. No source promotion followed. |
-| Market-data contract inventory | Data / Engine Research | Complete: six fixed source classes reattached through shallow metadata and source-safe receipt hashes. Counts are `input_unavailable: 3`, `source_local_mechanics_only: 1`, `retrospective_control_only: 1`, and `non_promoting_runtime_only: 1`; no eligible predictive/Paper/GPU consumer exists. |
-| Daily-broad continuation capability | Data / Codex | Complete: the exact short continuation reattached an unchanged all-terminal 2,119-target index and exited `complete` with zero chunks/pages/failures. It constructed no KIS client; a long worker is not ready for this cursor. |
-| QQQ/SPY D1 forward refresh | Data / Codex | Complete: the hash-bound preflight required collection, then the one permitted direct collector deferred at `token_request_not_due` with zero new accepted pages and zero changed targets. The existing scheduled task is ready and owns its next due attempt. |
-| KIS D1 forward causal qualification | Data | Complete: one offline fail-closed predicate rejected the current cache as `input_unavailable` only for the three unobserved runtime conditions: named clock/session, decision-time availability, and provider finality. Its synthetic fixture passed only with all six explicit conditions; every single-condition ablation failed closed. No collection, credential, KIS client, Docker, scheduler, GPU, research, or execution consumer ran. |
-| KIS QQQ/SPY D1 one-shot current collection | Data | Complete: static Research/Execution search found no `latest_session` consumer; one preflight required collection and one collector then closed `unavailable/collector_unavailable` without a cache payload. No retry or consumer change followed. |
-| KIS QQQ/SPY D1 stage-aware one-shot collection | Data | Complete: one matching preflight and exactly one shared-tag collector invocation closed `unavailable/collector_unavailable/failure_stage=commit`; the receipt contract hash matches, cache remains valid, and zero cache writes were observed in the invocation window. No retry or consumer change followed. |
-| KIS QQQ/SPY D1 commit failure classification | Data / Infra Capability | Complete: v2 static source-safe optional kinds are fixed-order and fixture-tested with no credential, KIS, Docker, cache-write, or retry. It does not classify the completed v1 failure. |
-| KIS QQQ/SPY D1 v2 preflight and one-shot collection | Data | Complete: matching preflight receipt `sha256:cf95c93741330d60d95dc040e12446d3a34e899d8a3565b82cb0f8b2743e6ec2` preceded exactly one collector receipt `sha256:0c28203f24a098685f8068433e2250f14c1774bde99e5e87e64de1862ae53d42`, which narrowed the failure only to `commit/cache_contract`; no retry or consumer change followed. |
-| KIS QQQ/SPY D1 commit-phase diagnostic | Data / Infra Capability | Complete: static v3 hash `sha256:219a3a13d1419f9b65dc34f1d6fa3a3ffcb534b045b1d1729308cb8d944e5893` permits only four fixed future `cache_contract` phases; fixture tests preserve exceptions and reject private/dynamic receipt content. |
-| KIS QQQ/SPY D1 v3 preflight and one-shot collection | Data | Complete: matching preflight receipt `sha256:6fa27ec40b8009b76c0c31fe6210a4ad8814676566bc5f6cc442fa71a011fd5a` preceded one collector receipt `sha256:cd1b1222c61da98aa12091b8a61bd153cd91e2943d0c79c98dafe4340eb33dc3`, narrowed to `commit/cache_contract/cache_prepare`; no retry or consumer change followed. |
-| KIS QQQ/SPY D1 prepare-subphase diagnostic | Data / Infra Capability | Complete: static v4 hash `sha256:95e0ec0fd7408e237cbb79e4010e152291dd4322f58133bd4c46207c258dc893` permits only `cache_access`, `cache_state_load`, or `incoming_merge` on a future exact `commit/cache_contract/cache_prepare` receipt. It names a source region, preserves exception behavior, omits unclassified cases, and made no external call. |
-| KIS QQQ/SPY D1 v4 preflight and one-shot collection | Data | Complete: matching preflight `sha256:e24e124b7e2ab6ec50496b5fc9a70ce21198f1483606527b442e9c749cf9029f` permitted one collector `sha256:8100bf8cccc02afa88124c05a731ae53113f99075761c5fbe8bb657a3416e832`, which closed `deferred` with QQQ `auth_rejected` and SPY `token_request_not_due`; receipt/cache binding holds and no retry or consumer change followed. |
-| KIS Paper authentication capability probe | Data / Infra Capability | Complete: one source-safe virtual-host token-only receipt `sha256:d07e12f8ca521ca32cc00a4a0f81625ad5b503fa0505bad026969aca95db8261` reattached as `authenticated`; it retains no token, credential, raw body, market-data, account, order, or live fact. |
-| KIS QQQ/SPY D1 v5 readiness and one-shot collection | Data | Complete: readiness `sha256:f1d833bdf8aa775919f1793d2025ab2b530d251c13e3da22eb81a70a2c6ba7ab` confirmed open recorded gates without a network/cache write; one collector `sha256:a10e42f5a44753c67bf483414005d98b5171341998926b10a2a5f9dc85100910` closed `commit/cache_contract/cache_prepare/incoming_merge`, with cache/index aggregates unchanged and no retry. |
-| KIS QQQ/SPY D1 post-reconciliation observation | Data / Infra Capability | Complete: preflight `sha256:91206b61150364513ecaedaa2591253be4721abbc37a0cac9c6e2eca69e54757` was `collection_required`; one collector `sha256:85516c0e8ce93a9fb4396afd9f53f33ed37005dade4e998bdc4dd1f307a692c0` retained two conflicts and quarantined both targets. Causal receipt `sha256:40cf5a8487fd7144304f8e056aebf6d93811a3ff7051364c207f4025c4e0105a` is `input_unavailable`; the 48-test group and `3218 passed, 19 skipped` authority suite passed. No retry, clearance, promotion, or consumer action followed. |
-| Historical KIS D1 CPU baseline | Data / Engine Research | Complete: QQQ and SPY independently reattached the same 4,756 complete D1 Bars and completed their fixed two-baseline by two-phase local-paper matrices under external contracts. This source remains descriptive-only and does not become a current predictive input. |
-| KIS D1 L2 logistic control | Engine Research / Data | Complete: the one hash-pinned QQQ/SPY development-only fit wrote external evidence only; validation labels were excluded and all two model plus six comparator replays used `local_paper`. Both model after-cost cells were negative, so the source remains descriptive-only. |
-| KIS D1 regime-tree breadth | Engine Research / Data | Complete: the one hash-pinned development-only shallow-tree reproduction retained no serialized estimator and all two model plus six comparator replays used `local_paper`. QQQ/SPY model after-cost results were below their fixed previous-bar-direction comparators, so this descriptive lineage is closed. |
-
-## Quality Contracts
-
-- A completed bar is not proof of availability at a prior decision time.
-- A self-consistent task-owned receipt is marker-present local provenance under
-  an assumed-honest host, not independent proof of provider origin. A future
-  `qualified` classification needs a named clock authority, timezone/DST
-  session rule, and non-overlapping chronological boundary; otherwise that
-  exact input remains unavailable.
-- A bound causal-condition attestation must independently name the clock,
-  `America/New_York` DST/session rule, M1 completed-bar geometry, and a
-  non-overlapping chronological boundary before its availability/finality
-  categories can qualify a consumer. Its fixture-tested branch is not current
-  provider evidence.
-- An exact source/cursor limit closes only that route; it does not prove a
-  provider-wide history limit.
-- A `collection_exit_nonzero` terminal is a closed task-stage category, not a
-  collector-process, provider, or Scheduler-origin diagnosis. A later category
-  may be only `dispatcher_config`, `collector_provider`, or
-  `reason_unavailable`, never free text, and preserves the original exit code.
-- A category is comparable only for a later hash-bound `collector_nonzero`
-  terminal with `collection_outcome: nonzero`. A successful `retained_partial`
-  or `complete_session` may preserve a compatibility-default category, but it
-  is noncomparable. One comparable post-writer binding is diagnostic only; a
-  category-based recovery proposal needs two independently hash-validated
-  matching comparable bindings and a fresh Claude falsification-first verdict.
-  Divergence remains diagnostic only.
-- A later binding must differ from its paired opaque baseline run and complete
-  strictly after its paired completion timestamp. `marker_not_later` is a valid
-  stale-pointer diagnosis, never a second binding, a cause, or a behavior
-  change.
-- Generic resampling skips a target bucket containing a duplicate timestamp or
-  incomplete source record. `Bar` has no source-revision or observation-order
-  provenance, so upstream Data reconciliation must resolve a later revision
-  before a complete duplicate can be used.
-- A direct `LocalCsvBarProvider` query rejects duplicate returned timestamps
-  rather than silently returning an ambiguous M1 stream. This is source-local
-  query integrity only; it does not infer revisions, session continuity, or
-  promotion eligibility.
-- A direct `LocalCsvBarProvider` query requires the exact canonical
-  `CSV_FIELDS` header before parsing. A missing `complete` field cannot be
-  defaulted to a completed bar through this path; this remains source-local
-  integrity only, not an assertion about source completeness or finality.
-- Training catalog inspection treats a `date` column used as the parsed
-  timestamp as a UTC-derived session key, rather than treating each ISO
-  timestamp as an invalid session label. This restores per-session gap
-  accounting for that schema without relaxing a distinct `session_date` field.
-- A cumulative intraday session with a non-`none`
-  `conflicting_overlap_category` is metadata-conflicted even when its
-  expected-minute count is complete. The current capture-category projection
-  does not yet encode that conflict; this is a deferred Data writer hardening,
-  not a reinterpretation of any immutable receipt or a hold on another lane.
-- NAS D1 history reattestation and prospective forward projection compare their
-  nonempty common session sequences with the pinned local
-  `pandas-market-calendars==5.4.0` `NASDAQ` alias (`NYSE` calendar) schedule.
-  An interior scheduled-session omission fails closed; weekends, holidays, and
-  early closes remain valid sessions. The forward cache may retain later rows
-  while its projection remains unavailable. This detects continuity only and
-  neither fills data nor proves KIS finality, as-of availability, adjustments,
-  or model/Paper eligibility.
-- Preserve a durable serial cursor only after a useful capability probe
-  establishes continuation semantics. Do not replace measurement with a
-  parallel request flood.
-- One collector keeps its in-memory KIS client/token while valid. The
-  five-minute cross-process token-start guard spaces fresh token POSTs only;
-  it is never a foreground sleep or token lifetime.
-- Data limitations are visible to their exact consumer. They never become a
-  global approval gate or suppress an independent lane.
-- FirstRate source-local normalization must preserve the decoded timestamp set
-  exactly. A zero-volume omission is `not_present_in_source`, never a missing
-  minute, a session gap, or a candidate for a synthesized row.
-- FirstRate canonical output uses the local `CSV_FIELDS` contract and has a
-  source-safe M1 provider round-trip check. `complete: true` records the
-  normalized historical bar representation only; it is not session coverage,
-  provider finality, or decision-time availability evidence.
-- FirstRate generic resampling is UTC-epoch anchored. An emitted 5m/10m/1h/3h
-  bar requires a complete unique contiguous observed-minute source bucket and
-  passes OHLCV aggregation checks; a non-emitted bucket is only
-  `not_emitted_from_observed_source_set`, not a market/session gap.
-- FirstRate's official source labels data US Eastern/New York and vendor-declares
-  zero-volume omissions. It does not establish DST-observing versus fixed-offset
-  conversion or bar start/end stamping, so canonical timestamps cannot be
-  cross-feed minute aligned or treated as session-completeness evidence.
-- Tiingo's fixed ETF trio is a repeated historical sample, not independent
-  evidence. Its non-PIT scope cannot calibrate a later model-side threshold or
-  filter, and it cannot be joined into the KIS causal/Paper path.
-- A Norgate readiness receipt may state only host/runtime/API/catalog/update/root
-  categories. `local_api_not_ready` leaves later categories `not_checked`; it
-  proves neither source capability nor an updater, subscription, or rights cause.
-
-## Current Evidence
-
-- Intraday source-safe projection:
-  `scripts\project_kis_paper_intraday_head_schedule_receipt.py`.
-- Capture-topology audit and invocation-marker readers:
-  `scripts\inspect_kis_paper_intraday_capture_topology.ps1`,
-  `scripts\project_kis_paper_intraday_head_invocation_receipt.py`, and
-  `scripts\project_kis_paper_intraday_invocation_reattachment.ps1`.
-- Static Task-contract audit and source-safe evidence:
-  `scripts\inspect_kis_paper_intraday_head_static_contract.ps1` and
-  `execution/kis-paper-intraday-head-static-contract-v1/static-contract-20260819T1234034490997Z-931b776ddcdc.json`
-  (`sha256:12d79514199a50ae7ec6bbd27abfbe90e3fb3826fe505ba762f6122fadc88e95`).
-- Direct host session-capture evidence:
-  `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T130238145868Z-50e04e46fdb2e4e0.json`
-  (`sha256:50e04e46fdb2e4e0ceb65673066751fdb37bfaa5b53b8007f4ddb8f20316354a`).
-- First container session-capture evidence:
-  `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T131812782029Z-0caa1e559078804d.json`
-  (`sha256:0caa1e559078804dc2d269a9aa2abf708e9f169783f775378fdf0d17250e2bcc`).
-- Post-gate container conflict evidence:
-  `D:\market_data\us_equities\kis_paper_private\intraday-head\v1\session-capture\20260819T133017088958Z-ed596cfe5f8dc959.json`
-  (`sha256:ed596cfe5f8dc95977c961d48927e9266ba6353e82578f2a2f76b26acc1b80e4`).
-- Later category-confirmation terminal and schedule evidence:
-  `execution/kis-paper-intraday-head-invocation-v1/intraday-head-20260818T2120005941479Z/terminal.json`,
-  `execution/kis-paper-intraday-head-schedule/intraday-head-20260818T2120005941479Z.json`
-  under `D:\thericher-v2\model-artifacts`.
-- FirstRate canonical M1 normalization receipt:
-  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-normalization-v1.json`
-  (`sha256:374fc885b831b6a2aea59526e25f918ebe568414b018b621452c02d608f988be`).
-- FirstRate source-local timeframe mechanics manifest:
-  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-source-local-timeframe-mechanics-v1.json`
-  (`sha256:aa83961f57f7fe373f9383874c3d294384dca895115ad7f447fb2371ec2528c3`).
-- Norgate host readiness bridge receipt:
-  `D:\thericher-v2\model-artifacts\data-receipts\norgate-host-readiness-bridge\bridge-norgate-host-readiness-20260818T230439Z.json`
-  (`sha256:20cf9e2954bb567fa31a54d58cde6d61b50be0d86b4b345261e14136c1aa521c`).
-- Fixed market-data contract inventory receipt:
-  `D:\thericher-v2\model-artifacts\data-receipts\market-data-contract-inventory\market-data-contract-inventory-20260819-r1.json`
-  (`sha256:17f2b0f7cf7e16a61b2c2006e806d6e9c8e6135d41e63bf073fe4cdd2fb55632`).
-- FirstRate official source retrieval receipt:
-  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-source-semantics-retrieval-v1.json`
-  (`sha256:81954bfd6fde980dd63af92fafb6471830742cbb6871b9bdaf21c9ea6c81063f`).
-- FirstRate review-bound interpretation receipt:
-  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-source-semantics-interpretation-v1.json`
-  (`sha256:055b4faa5b83dc85255eeacd84eb59db762992250fcb18eb5285bcf0de4d37e2`).
-- Official KIS overseas-minute documentation confirms the reviewed request and
-  cursor semantics but supplies no reviewed finality/as-of predicate. It keeps
-  `provider_finality` and decision-time availability `not_observed`; it makes
-  no KIS call or consumer change. Evidence:
-  `D:\thericher-v2\model-artifacts\data\provider-documentation-retrieval\kis-overseas-minute-finality-surface-20260809-r1\source-retrieval.json`.
-- A 2026-08-19 official-source recheck independently confirms the existing
-  `NEXT`/`KEYB` minute-pagination semantics and separately documents that the
-  related U.S. free current-price surface can receive next-day corrections. The
-  latter is not a minute-route finality fact, so it reinforces rather than
-  relaxes `not_observed`; it does not widen the measured QQQ/SPY cursor scope.
-  Evidence:
-  `D:\thericher-v2\model-artifacts\data\provider-documentation-retrieval\kis-overseas-price-revision-surface-20260819-r1\source-retrieval.json`.
-- Public U.S. minute-source discovery receipt:
-  `D:\thericher-v2\model-artifacts\data\provider-discovery\public-us-equity-intraday-20260819-r1\source-retrieval.json`.
-- FirstRate free M1 acquisition receipt:
-  `D:\thericher-v2\model-artifacts\data-receipts\firstrate-free-intraday\firstrate-free-intraday-20260819-spy-qqq-r1.json`.
-- QQQ multi-timeframe completed-bar mechanics:
-  `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-resampling-mechanics-v1\20260807-qqq-mtf-r1\summary.json`.
-- QQQ MTF canonical window matrix:
-  `D:\thericher-v2\model-artifacts\data\source-local-qqq-mtf-window-matrix-v1\20260807-qqq-mtf-matrix-r2\summary.json`.
-- Tiingo raw-D1 collection receipt:
-  `D:\thericher-v2\model-artifacts\data-receipts\tiingo-etf-d1\4a2344b7ab8ec2eaf0b1a5e4afcd41e07cf0b4c14e13db64d07b41fd054883d2.json`.
-- Broad D1 source-safe postrun receipt:
-  `D:\thericher-v2\model-artifacts\data\kis-paper-daily-nas-broad-panel-postrun-v1\postrun-5b24100dc992a4fed2848593.json`.
-- Tiingo IEX r1 runtime evidence:
-  `D:\thericher-v2\model-artifacts\research\tiingo-iex-r1-representation-integration-v1\r1-cuda-20260810-r1\summary.json`.
-
-## Handoff
-
-For independent developmental research, hand off the existing source identity,
-split geometry, already-seen status, event/gap assumptions, and limitations.
-That preparation does not wait for the D1 observation pair.
-
-When a later task-owned input qualifies, hand Engine Research only its exact
-source-safe receipt pointer, source identity, target eligibility, split-ready
-time geometry, availability/finality facts, and limitations. Do not choose a
-model or construct a Paper order. The current terminal does not meet that
-handoff condition.
+# Data Agent Stateboard (2026-10-08 KST)
+
+Current projection only. Policy: AGENTS.md; company objective: NEXT_CODEX_GOAL.md.
+Historical detail remains in Git f4dae42 and immutable external receipts.
+M = D:/market_data; A = D:/thericher-v2/model-artifacts. Paths below are exact
+root-relative pointers, not instructions to select a latest file.
+
+## Ownership And Ready Work
+
+Data owns acquisition, provenance, calendars, canonical storage, resampling,
+manifests, temporal joins and scoped quality facts; Research owns models and
+outcomes, Execution owns accounts/orders, parent owns integration/publication.
+No KIS_LIVE_* access or provider/task/container invocation in this handoff.
+Ready: existing-client bounded token/one-page cause probe; no extra retries,
+account/order endpoints or scheduler change. Current goal:
+kis-paper-head-authentication-cause-recovery-v1.
+Cross-day-clock helper is independently integrated/54-cell study closed/rejected;
+no data qualification or Paper promotion follows from that research result.
+Helper: src/thericher_v2/research/cross_day_clock_context.py, dedicated test.
+API: ClockSession(session_date, open_ts, close_ts);
+build_cross_day_clock_context(bars, *, symbol, scheduled_sessions, decision_at).
+Exact 20 ordered caller-attested prior NYSE sessions; clocks 10/12/14 ET,
+E=C+1min, X=E+30min; consume endpoint OPENs only, all complete/end<=decision.
+Common three-clock past eligibility: no older-available substitution, imputation
+or current/future support mask; unsupported prior early close is unavailable.
+Immutable private Decimal clock/pooled means; safe geometry/counts only.
+62 focused synthetic passes; parent integrated200 pure tests and exact ALL-RO
+54-cell consumer replay. Company authority308 serial/full10,500/22 skips,
+330.35s/eight workers/10,522 collected/clean exit; Ruff/three sample Compose pass.
+Source SHA256 2ad4e8671c63cd529ce0d6a944360441a518e95dee0b41bc6570447cb8e85d0f.
+Test SHA256 85d36f223eb72a011a17e7e9eb13b155ffa7d9d9b24dee0b30222f8d88e09620.
+Separate joint_d1_policy_context.py API: exact 32 prior
+scheduled Bars -> immutable 9x31 SPY/QQQ/IWM relative-price channels, shared
+vintage/cutoff, no whole-period future mask; 75 focused passes. No source upgrade.
+
+## Exact Head Reattachment
+
+Owner: thericher-kis-paper-intraday-head; latest inspected current pointer is
+run intraday-head-20261007T1924008869513Z (Oct 8 04:24 KST).
+UTC start 2026-10-07T19:24:00.886951Z; capture 19:24:01.817422Z;
+schedule 19:24:45.326515Z; completed 19:24:47.983317Z.
+Existing offline invocation/schedule/recovery readers validate the exact chain;
+pointer bytes unchanged, no latest scan: collector_nonzero/collector_provider,
+collection_exit_nonzero.
+QQQ/NAS/1m: rejected/auth_rejected, 0 attempt rows, token_http_status_class=4xx,
+token_upstream_code absent. SPY/AMS/1m: rejected/token_request_not_due,
+0 attempt rows, both HTTP fields absent. Actual provider cause remains unknown.
+Coverage verified/incomplete/current_session_short; causal input unavailable/
+terminal_recovery, causal attestation not_recorded. Availability/observation
+legacy_unbound; decision-time availability/provider finality not_observed.
+Pointer: A/execution/kis-paper-intraday-head-invocation-v1/current.json
+SHA256 0bd5167f0d55c637d8e94fce99020d370c65ab4c98ad74ea7f01c26c1edef88a.
+Terminal: A/execution/kis-paper-intraday-head-invocation-v1/
+intraday-head-20261007T1924008869513Z/terminal.json
+SHA256 264b3eb865b2695ba08e63e49a94bea87a3944150d93a081152ae132f62de03a.
+Schedule: A/execution/kis-paper-intraday-head-schedule/
+intraday-head-20261007T1924008869513Z.json
+SHA256 e6f64e0b1262eb6f52f67eb2a54c0e60b28d4a91c461814ee3bb0993b0877812.
+Capture: M/us_equities/kis_paper_private/intraday-head/v1/session-capture/
+20261007T192401817422Z-fb4f4dc65c70f9cf.json
+SHA256 fb4f4dc65c70f9cfc3daf14b308b9da1a21e0867f0cfdcf0a062bc951b282d4e.
+Coverage digest 97263fcdc2cc487395393db989eca1b70eb95b23d14642490515c25c47c12049.
+Next comparison baseline is that exact run/completion, not the superseded 02:28.
+Parent source-safe Scheduler inspection at this boundary: Ready,last04:24,installed
+next_due October8 06:20 KST. Task result1 is not provider evidence; no manual
+invocation, trigger change or foreground wait.
+
+## Coverage, Cursor And Recovery
+
+Head root: M/us_equities/kis_paper_private/intraday-head/v1; head cursor is
+separate from M/us_equities/kis_paper_private/intraday/v1 historical cursor.
+Last metadata coverage reconciliation: Oct 5-7 each ETF 119/390 regular minutes;
+0 additional shared complete dates beyond 25 Aug 28-Oct 2 dated sessions.
+119 is fixed 11:29 ET forming-bar cutoff, not runtime. Last index generation 253:
+fa4f30632dc28d8b5cf50bd84f425d11cbaddd13f4d16afd31acab312467cf27;
+Retained baseline pin, not a new index read. Attempt: 0 rows/target;
+accepted-page count not separately projected. One QQQ HTTP failure and one SPY local deferral; no inferred quota.
+Existing budgets: 4 pages/target; regular-weekday 16:20-20:00 ET post-close 8.
+One shared in-memory client/token per pair; existing request/collector pace 1s;
+fresh token-start gate 300s under kis_paper_private/collection-control-v1.
+Token gate is not token lifetime/client delay/foreground wait. Calibration: 20 GETs/12 accepted/8 exact empty,
+one client/token, 22.918540s; no global reach/limit or permanent pace inference.
+Remaining useful pages and ETA unknown; recovery is exact owned next invocation.
+Dated 25 shared sessions: per ETF M1/M5/M10/H1/H3=9750/1950/975/150/50,
+not 50 independent days. June 22-Jul 21 historical 21 shared sessions remain
+separate (8190 regular minutes/ETF); exact historical cursor is exhausted.
+Historical index SHA256 f816b940c3419caec4bdd1595b79615e6895782dad012edc12785aef6f05a53f.
+Dated custody: A/data/kis-paper-qqq-dated-panel/eleven-scopes-final-20261003T034126454266Z-11b62069ab6d.json
+SHA256 11b62069ab6d58f5bc26ec050609b228d64faf8105d93eff7b01a0ad35f6432b.
+Do not rerun answered exact dated queries or reset immutable caches.
+
+## Diagnostics And Source-Only Audit
+
+Head-only normalization repair published c449d19e...: injected app-key/secret
+edges stripped, blank/partial failure and exact dotenv fallback unchanged.
+Changed script SHA25678b06552617f29cef8fe0490aaaae41e3428ef0e0b3874c4f6b6671f00294df0
+matches baked image; Paper/web unchanged. Exact receipt:
+A/data/kis-head-normalized-input-publication-20261008-v1.json.
+Synthetic loader boundary coverage is included in parent308 serial/full10,500
+authority. Actual04:24 auth cause is still unknown; no successful page inferred.
+Next bounded cause probe is standing-authorized under the single current goal;
+only existing Paper market-data client/whitelist, one POST/at most one GET,
+no account/order/live access, raw error body or credential output.
+
+Page diagnostics preserve outer minute_response_invalid, accepted prefixes and
+companion progress; cached dedupe preserves CURRENT failure/observation.
+New capture metadata pins requested 4/8 budget; offline reader rejects an
+out-of-budget ordinal. Strong kill: 3 accepted pages/fourth mixed-date failure
+retains 360 rows/ordinal 4/no retry, including identical cached-prefix replay.
+Legacy 0/1/2 exception arity retained; arbitrary raw message discarded.
+HTTP diagnostics: optional closed 1xx..5xx class, exact EGW00201 only with
+rate_limited; precedence/legacy absence unchanged. Local-not-due/transport has
+no HTTP fields; QQQ diagnostics must never copy to locally blocked SPY.
+Head-only publication A/data/kis-head-token-diagnostic-publication-20261008-v1.json
+SHA256 a22f81508b34e13acf6afc6902dfb810c5402a1dfc39d4c35230ec6b2d3658e7.
+Image sha256:e6f74905ffc9821ae97ffb2094c6c081d32082e8dcb41f5187e7598d8dd947fb;
+five baked hashes match. Parent authority: 1033 serial, 10282 full/22 skips,
+8 workers/330.99s/clean helper; Paper/web aliases unchanged.
+Source audit: head scripts/backfill_kis_paper_private_intraday.py:245 passes
+injected pair unchanged; shared loader kis_market_data.py:1111 trims it.
+Observer kis_readonly.py:1353 trims all four approved Paper fields.
+Compose :442/:1246 injects the same pair names; both runners use fresh
+run --rm --no-deps --pull never. No explicit env-file/credential CLI override;
+ambient Compose interpolation is not an observed equality attestation.
+Both clients pin virtual host https://openapivts.koreainvestment.com:29443 and
+POST /oauth2/tokenP with grant_type/appkey/appsecret; no live/base-url override.
+Concrete hypothesis: surrounding injected whitespace makes the two effective
+token pairs differ. Not observed; no stale-credential/contention conclusion.
+Future startup measurement: Boolean normalization-changed/config-origin,
+invocation/source binding only; no values/lengths/credential hashes/extra POST.
+Both unchanged falsifies whitespace cause.
+Observer completion stamps are after snapshot reads, not token-start chronology.
+
+## Existing Research Sources And Pins
+
+FirstRate M1 canonical root: M/us_equities/firstrate_free_intraday/canonical.
+SPY_1m.csv SHA256 db797f4355dc3cd82113730e1689ee0750226b16568687d86b6ca3e407053777;
+QQQ_1m.csv SHA256 27a6f601d41b7a96d38db663cc63c821471d511bbb196a88021acf81b8d92c3c.
+207824/210482 Bars; exact original ZIP/timestamp-set pins remain in normalization:
+A/data-receipts/firstrate-free-intraday/firstrate-free-intraday-source-local-normalization-v1.json
+SHA256 374fc885b831b6a2aea59526e25f918ebe568414b018b621452c02d608f988be.
+251 scheduled NYSE dates 2022-09-30..2023-09-29; 250 shared complete regular
+sessions (248x390, 2x210); SPY Jun 5 lacks 4 expected minutes. Required-window
+eligibility is distinct from whole-session completeness; never mask future loss.
+Readiness A/research/source-discovery/firstrate-broader-input-readiness-20261005.json
+SHA256 84fff32e0ee07f17f53cd9941f3321507e7b8d379e4e9b531ef2a6693b3bc57d.
+Source labels Eastern/New York/zero-volume omissions; DST/offset and start/end
+stamping not_disclosed. Existing conversion is a source-local assumption.
+Private/internal only, no redistribution; revised/seen development, no new
+holdout, KIS parity, provider finality, historical availability or Paper claim.
+Tiingo Aug 9 snapshot=20260809T163557Z-tiingo-etf-d1-r1: SPY/QQQ/IWM
+8438/6896/6588 rows through 2026-08-07; canonical unadjusted, raw adjusted OHLC
+retained. Dataset SHA256 becc3e4b0ed4610da9325de3e6b88d1f24f869199d3d81a285b60b1b340df0aa;
+manifest SHA256 4a2344b7ab8ec2eaf0b1a5e4afcd41e07cf0b4c14e13db64d07b41fd054883d2.
+Exact three raw pins: src/thericher_v2/data/tiingo_adjusted_etf_daily.py:34.
+Oct 2 snapshot=20261002T174537Z-tiingo-etf-d1-r1: 315 sessions each,
+2025-07-01..2026-09-30; dataset b86a26d1c26b9bf687cb09bb1ed8cd6299381ad96bd222222e842f768b22a05b,
+manifest 3632b4074e21648ef281ab2eecd41491186b2a7071d4f16a5bf0d10cca9c772e.
+Both below M/us_equities/tiingo_etf_daily/canonical; readers bind complete
+same-vintage raw/canonical dates/geometry. Provider-adjusted ratios are not
+independently proved reinvestment/PIT/broker accounting; never add events twice.
+TLT/GLD retained coverage was not established; no download/source adoption claim.
+
+## Other Contracts, Rights And Invalidation
+
+KIS broad D1: 2119 current-listing targets, generation 26368; 1089 complete,
+1030 source_limited, 0 mismatches over 604-target overlap. Historical task
+disabled/exhausted; A/data/kis-paper-daily-nas-broad-panel-postrun-v1/postrun-5b24100dc992a4fed2848593.json.
+Current-listing/unadjusted/non-PIT/corporate-action/finality unqualified; no
+exhausted-cursor predictive/ranking/Paper consumer. Later dates need own scope.
+Last retained D1 inventory Oct 3: SPY head 99 rows through Oct 1, NAS six targets
+48 sessions, pair-forward v2 48 common sessions. Not freshly reattached here.
+NAS immutable revisions/old values retained; v1 pair quarantine stays separate
+from v2. Gaps/conflicts remain scoped unavailable; do not clear them by exit code.
+Finite D1 pairing closed disqualified/identity_mismatch for Sep 21; no next run/
+automatic extension. Cleanup pins: A/ops/schedule-cleanup-20260922.
+IWM one-page sparse M1 mechanics, Tiingo IEX r1 runtime and EOD 72 rows through
+Aug 12 lineage-only remain separate, with no KIS/Paper equivalence.
+FINRA STOP: rights_unresolved under https://www.finra.org/terms-of-use Restrictions(m).
+No parse/join/model use; general noncommercial/free wording is not an override.
+Manifest-only 2018-08-01..2026-06-17/58620306 rows/facilities CNMS,FNSQ,FNYX,FORF;
+not ETF coverage/duplicate/finality/publication proof. Retained bytes preserved.
+Manifest M/us_equities/finra_short_volume/manifests/finra_short_volume_snapshot=2026-06-18.json.
+FINRA is off-exchange short-sale volume, not short interest or net direction.
+Norgate local_api_not_ready/updater_not_observed; later categories not_checked,
+not a rights/provider finding; no active probe or inferred data availability.
+Invalidation: changed source/manifest/cursor/vintage hash, conflict/quarantine,
+required endpoint gap/duplicate/incomplete, or clock/session mismatch affects
+only that consumer. Never synthesize omissions or infer a fill from absence.
+Cumulative conflict invalidates its metadata even at complete minute count;
+completed Bar alone proves neither finality nor prior decision availability.
+Keep raw data on M/artifacts on A; storage warning 20%, large-job floor 15%.
+Operator help: none for this ready package. Separate permission would be needed
+to revive FINRA intended use; no company wait or implied private-use permission.
+Next handoff: parent integrates helper/audit; exact future head run must differ
+from baseline and complete later, with existing reader/hash/target binding.
+No quality/diagnostic/availability result is a general UI, Research or Paper gate.

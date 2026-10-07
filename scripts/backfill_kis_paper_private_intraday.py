@@ -251,7 +251,7 @@ def _load_paper_config(dotenv_path: Path) -> KisPaperMarketDataConfig:
         return load_kis_paper_market_data_config(dotenv_path)
     if not app_key or not app_secret:
         raise KisPaperMarketDataError("config_missing")
-    return KisPaperMarketDataConfig(app_key=app_key, app_secret=app_secret)
+    return KisPaperMarketDataConfig(app_key=app_key.strip(), app_secret=app_secret.strip())
 
 
 def _preparation_artifact_root_from_environment() -> Path:

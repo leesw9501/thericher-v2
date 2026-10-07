@@ -8,6 +8,30 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
+Signed cross-day same-clock family COMPLETE/REJECTED54 cells: six policies,
+three fixed costs, continuous90/first45/last45 views of one shared cash account.
+Exact20 prior scheduled dates/three clocks; common past-only OPEN endpoints,
+no future support mask/older-date replacement. Primary5bps first45 has zero
+entries/net growth; last45 has two entries/net growth-.00109647 and utility
+-.00618436, losing cash/pooled. TRAIN matched controls do not rescue the kill.
+Scheduled1502/eligible1142/comparison538 keys; past-boundary120 and known
+early-close-history240 shortfalls, zero missing forward endpoints. No fitting,
+GPU, holdout, broker call or Paper input. Fractional post-fee NAV accounting
+has exact notional fees/ROUND_DOWN1e-40 units, not broker-fill parity.
+Root: D:\thericher-v2\model-artifacts\research\firstrate-cross-day-clock-continuation-development-v1
+Contract: sha256:7186a6c90aa36a54682f7de6837abb997f77de7d054fb475e012ba3f93101044
+Result: sha256:cbbaad8194c2479cbf70e239f858bf9c9c957e5a571190acd0e1cd7839305db0
+Source copy is the root with -frozen-source suffix:620 hash-matching files,
+17 critical pins. Actual pinned Docker CPU evaluation7.69s; independent ALL-RO
+54-cell readback7.47s, zero refits/search/writes. Validation independently
+reconstructs the kill/aggregate cashflow; parent reproduces daily utility/actions.
+200 pure integrated passes; company boundary feedback308 passes/5.24s.
+Full eight-worker authority:10,500 passes/22 skips/35 warnings/330.35s,
+10,522 collected/clean helper. Ruff/default+research+accounting sample Compose pass.
+Do not rescue this family by changing window/clock/threshold/ETF or seed.
+
+## Closed Joint D1 Evidence
+
 Joint D1 ordered-path direct-utility family COMPLETE/REJECTED,36 fixed cells.
 Original CUDA contractdf42451e... consumed600s/hard_timeout; partial fits and
 phase UNKNOWN, no retained models/comparative outcomes. Original source/attempt
@@ -54,7 +78,7 @@ eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
 
 | Queue | Current bounded fact |
 | --- | --- |
-| Breadth | Next distinct mechanism: signed cross-day same-clock continuation on existing FirstRate QQQ/SPY M1, not absolute noise-band/current-day breakout. Engine freezes one20-day/three-clock/cost-aware rule contract; no grid or predictive fit. |
+| Breadth | Signed-clock54-cell family is closed/rejected. Next source/input hypothesis must add economic information or universe coverage, not reroll a failed price-only architecture/window. Data authentication recovery is a ready independent product priority. |
 | Depth / GPU | No ready frozen predictive successor. Float64 TCN consumer-GPU timing is not a general CUDA fault or GPU prohibition; new eligible float32 sequence work remains possible under a frozen economic hypothesis. No utilization-only job. |
 | Ensemble | No current survivor/output set; do not combine rejected families as a rescue. New exploratory composition needs its own chronological out-of-fold contract. |
 | Replication | No selected candidate; revised/seen studies cannot become fresh independent evaluation by renaming them. |
@@ -101,5 +125,6 @@ CPU-r2 and original CUDA attempts are closed and registry-linked; no active
 worker/CPU or canonical GPU lock remains. Do not refit/redispatch. Use each
 exact frozen source/contract/result for zero-fit readback. Terminal/registry
 finalization can recover only a matching original outcome, never a new trial.
+Signed-clock attempt is also terminal/registry-linked; no actual worker remains.
 Execution owns all private Paper state/order paths; research never loads those
 states or changes deterministic sizing/risk.

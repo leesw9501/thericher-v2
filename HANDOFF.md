@@ -20,9 +20,26 @@ Never log secrets, account/order identifiers, raw broker values or market rows.
 
 ## Active Company Objective
 
-Next company objective is firstrate-cross-day-clock-continuation-development-v1:
-signed same-clock recurrence on existing QQQ/SPY M1, one20-session/three-clock
-cost-aware CPU study, not a TCN/threshold reroll. FINRA proposal is not ready:
+Next company objective is kis-paper-head-authentication-cause-recovery-v1:
+one existing-client token/at-most-one-page capability probe and measured
+reversible repair, not an approval wait or more price-only architecture rerolls.
+The signed-clock family completed/rejected54 cells; primary5bps first45 has
+zero entries/growth, last45 two entries and net growth-.00109647/utility-.00618436.
+Contract7186a6c9.../resultcbbaad81...; exact root and620-file frozen source:
+`D:\thericher-v2\model-artifacts\research\firstrate-cross-day-clock-continuation-development-v1`.
+Actual Docker CPU7.69s/ALL-RO7.47s exact54 cells, zero fits/search/GPU/broker calls;
+independent aggregate kill/attribution review supported-with-limits. Required
+past boundary/early-close shortfalls remain visible, no future mark shortfalls.
+308 boundary serial passes/5.24s; full10,500/22 skips/35 warnings330.35s,
+eight workers/10,522 collected/clean helper. Ruff/three sample Compose pass.
+Head-only input normalization repair published:c449d19e...; one changed baked
+loader hash matches host, Paper/web unchanged, no provider/task/pace/schedule
+change or proven4xx cause. Exact publication receipt:
+`D:\thericher-v2\model-artifacts\data\kis-head-normalized-input-publication-20261008-v1.json`.
+Source-only next recovery review supported-with-limits; enforce one POST by
+reusing ensure_authenticated rather than the token-clearing helper. Exact
+token error envelope/rate meaning is unobserved, not a quotation-envelope fact.
+FINRA proposal is not ready:
 official Terms Restrictions(m) limits software/ML/trade prediction; no overriding
 permission retained. Original bytes preserved; other ready research continues.
 Engine stateboard compacted1683->105 lines; closed history/source catalog remains
@@ -87,9 +104,16 @@ Data token-response HTTP-class/exactEGW00201 diagnostics pass462 parent tests;
 independent review supported-with-limits. Head aliase6f74905... published,
 five baked source hashes match; no task/KIS invocation/pace/schedule change.
 Publication receipt `D:\thericher-v2\model-artifacts\data\kis-head-token-diagnostic-publication-20261008-v1.json`.
-Existing head task Ready/last02:28/next_due04:24 KST October8; last task result1
-is not an outcome. Observer/head finalization overlap is observed, token POST
-ordering/contention is NOT observed. No shared token-cache remedy inferred.
+Latest independently reattached head chain is
+`intraday-head-20261007T1924008869513Z`, completed04:24:47.983317 KST October8.
+Collector provider failure: QQQauth_rejected/HTTP4xx/upstream code absent,
+SPYlocaltoken_request_not_due/noHTTP, zero new attempt rows, not an empty cache.
+Exact terminal SHA256264b3eb865b2695ba08e63e49a94bea87a3944150d93a081152ae132f62de03a;
+`D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-invocation-v1\intraday-head-20261007T1924008869513Z\terminal.json`.
+Reader verifies the schedule/capture chain. Actual authentication cause remains
+unknown; source-only credential-path audit is separate from causal research.
+Task exit alone is not evidence. Observer/head finalization overlap is observed,
+token POST ordering/contention is NOT observed. No shared token-cache remedy inferred.
 
 `new-account-paper-fill-accounting-v1` COMPLETED October8. Actual QQQ full
 BUY/SELL cumulative fills yield NEGATIVE gross realized USD sign, one owned-flat

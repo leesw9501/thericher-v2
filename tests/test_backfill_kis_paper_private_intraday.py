@@ -155,6 +155,156 @@ def test_intraday_backfill_script_uses_only_injected_paper_values(
     }
 
 
+@pytest.mark.parametrize(
+    ("app_key", "app_secret", "expected_key", "expected_secret"),
+    [
+        ("paper-key", "paper-secret", "paper-key", "paper-secret"),
+        (" \t\r\npaper-key\r\n ", " \t paper-secret \r\n", "paper-key", "paper-secret"),
+        ("  PaPeR-Key X \t", " \n SeCrEt +/= X \r\n", "PaPeR-Key X", "SeCrEt +/= X"),
+    ],
+)
+def test_intraday_injected_paper_pair_strips_only_edges_and_overrides_dotenv(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    app_key: str,
+    app_secret: str,
+    expected_key: str,
+    expected_secret: str,
+) -> None:
+    script = _load_script()
+    reads = _set_paper_app_environment(
+        script,
+        monkeypatch,
+        {"KIS_PAPER_APP_KEY": app_key, "KIS_PAPER_APP_SECRET": app_secret},
+    )
+    monkeypatch.setattr(script, "load_kis_paper_market_data_config", _deny_cli_call)
+
+    config = script._load_paper_config(Path("synthetic-unread.env"))
+
+    assert config.app_key == expected_key
+    assert config.app_secret == expected_secret
+    assert config.base_url == "https://openapivts.koreainvestment.com:29443"
+    assert expected_key not in repr(config) and expected_secret not in repr(config)
+    assert reads == ["THERICHER_MODE", "KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET"]
+    output = capsys.readouterr()
+    assert output.out == output.err == ""
+
+
+@pytest.mark.parametrize(
+    ("app_key", "app_secret"),
+    [
+        (None, "paper-secret"),
+        ("paper-key", None),
+        (None, ""),
+        ("", None),
+        ("", "paper-secret"),
+        ("paper-key", ""),
+        ("", ""),
+        (" \t", " paper-secret "),
+        (" paper-key ", "\r\n "),
+        (" \t", "\r\n "),
+    ],
+)
+def test_intraday_partial_or_blank_injected_pair_never_falls_back_to_dotenv(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    app_key: str | None,
+    app_secret: str | None,
+) -> None:
+    script = _load_script()
+    values = {
+        name: value
+        for name, value in (
+            ("KIS_PAPER_APP_KEY", app_key),
+            ("KIS_PAPER_APP_SECRET", app_secret),
+        )
+        if value is not None
+    }
+    _set_paper_app_environment(script, monkeypatch, values)
+    monkeypatch.setattr(script, "load_kis_paper_market_data_config", _deny_cli_call)
+
+    with pytest.raises(script.KisPaperMarketDataError) as caught:
+        script._load_paper_config(Path("synthetic-unread.env"))
+
+    assert str(caught.value) == "config_missing"
+    output = capsys.readouterr()
+    assert output.out == output.err == ""
+
+
+def test_intraday_both_injected_values_absent_preserves_exact_dotenv_fallback(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    script = _load_script()
+    _set_paper_app_environment(script, monkeypatch, {})
+    paths: list[Path] = []
+    expected = script.KisPaperMarketDataConfig(app_key="fallback-key", app_secret="fallback-secret")
+
+    def fallback(path: Path) -> object:
+        paths.append(path)
+        return expected
+
+    monkeypatch.setattr(script, "load_kis_paper_market_data_config", fallback)
+    path = Path("synthetic-unread.env")
+
+    assert script._load_paper_config(path) is expected
+    assert paths == [path]
+
+
+@pytest.mark.parametrize("mode", ["live", " kis_live "])
+def test_intraday_live_mode_reads_neither_injected_pair_nor_dotenv(
+    monkeypatch: pytest.MonkeyPatch, mode: str
+) -> None:
+    script = _load_script()
+    reads = _set_paper_app_environment(script, monkeypatch, {"THERICHER_MODE": mode})
+    monkeypatch.setattr(script, "load_kis_paper_market_data_config", _deny_cli_call)
+
+    with pytest.raises(script.KisPaperMarketDataError, match="^config_missing$"):
+        script._load_paper_config(Path("synthetic-unread.env"))
+
+    assert reads == ["THERICHER_MODE"]
+
+
+@pytest.mark.parametrize("complete_pair", [True, False])
+def test_intraday_normalized_config_and_partial_failure_never_print_secrets(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    complete_pair: bool,
+) -> None:
+    script = _load_script()
+    load_config = script._load_paper_config
+    _deny_cli_setup(script, monkeypatch)
+    calls = _fake_cli_collection(script, monkeypatch)
+    values = {"KIS_PAPER_APP_KEY": " \t synthetic-private-key \r\n"}
+    if complete_pair:
+        values["KIS_PAPER_APP_SECRET"] = " \n synthetic-private-secret \t"
+    _set_paper_app_environment(script, monkeypatch, values)
+    monkeypatch.setattr(script, "_load_paper_config", load_config)
+
+    exit_code = script.main(
+        ["--execute", "--mode", "head", "--skip-legacy-preparation"],
+        dotenv_path=Path("synthetic-unread.env"),
+        code_revision=lambda _: "synthetic-revision",
+    )
+
+    assert exit_code == (0 if complete_pair else 1)
+    if complete_pair:
+        assert len(calls["clients"]) == len(calls["cycles"]) == 1
+        config = calls["clients"][0]["kwargs"]["config"]
+        assert config.app_key == "synthetic-private-key"
+        assert config.app_secret == "synthetic-private-secret"
+    else:
+        assert calls["clients"] == calls["cycles"] == []
+    output = capsys.readouterr()
+    assert output.err == ""
+    assert "synthetic-private-key" not in output.out
+    assert "synthetic-private-secret" not in output.out
+    payload = json.loads(output.out)
+    if complete_pair:
+        assert payload["status"] == "complete"
+    else:
+        assert payload == {"status": "not_executed", "reason": "config_missing"}
+
+
 def test_intraday_head_script_uses_a_separate_cache_without_resuming_cursor(
     monkeypatch,
     capsys,
@@ -1093,6 +1243,21 @@ def _fake_cli_collection(script: ModuleType, monkeypatch: pytest.MonkeyPatch) ->
     ):
         monkeypatch.setattr(script, name, lambda **_kwargs: object())
     return calls
+
+
+def _set_paper_app_environment(
+    script: ModuleType, monkeypatch: pytest.MonkeyPatch, values: dict[str, str]
+) -> list[str]:
+    reads: list[str] = []
+
+    class Environment:
+        def get(self, key: str, default: str | None = None) -> str | None:
+            assert key in {"THERICHER_MODE", "KIS_PAPER_APP_KEY", "KIS_PAPER_APP_SECRET"}
+            reads.append(key)
+            return values.get(key, default)
+
+    monkeypatch.setattr(script, "os", SimpleNamespace(environ=Environment()))
+    return reads
 
 
 def _load_script() -> ModuleType:

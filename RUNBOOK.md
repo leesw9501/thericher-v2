@@ -1,5 +1,31 @@
 # Runbook
 
+## Signed Cross-Day Clock Study (Closed)
+
+`firstrate-cross-day-clock-continuation-development-v1` completed/rejected54 cells.
+Root `D:\thericher-v2\model-artifacts\research\firstrate-cross-day-clock-continuation-development-v1`;
+exact620-file source copy uses the `-frozen-source` suffix.
+Contract `sha256:7186a6c90aa36a54682f7de6837abb997f77de7d054fb475e012ba3f93101044`;
+result `sha256:cbbaad8194c2479cbf70e239f858bf9c9c957e5a571190acd0e1cd7839305db0`.
+Use frozen module `thericher_v2.research.firstrate_cross_day_clock_continuation`
+`verify` mode only, with exact pins, `/study` mapped to the root, `/app` to
+frozen source, `/market` to D:\market_data and `/artifacts` to the artifact root,
+ALL read-only/network none/2CPU/2GiB. Pass lineage
+`/artifacts/research/firstrate-paired-context-input-smoke-20261005/precommit.json`
+and normalization `/artifacts/data-receipts/firstrate-free-intraday/firstrate-free-intraday-source-local-normalization-v1.json`.
+Pinned image `sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039`;
+120s hard timeout. Actual evaluation7.69s and ALL-RO readback7.47s match54 cells,
+zero refits/search/writes. No `run` redispatch, threshold/window/clock/ETF rescue,
+GPU/model weights, broker fills or Paper qualification. Finalized registry is
+external; `recover-registry` is only for a matching missing registration.
+
+Head loader normalization-only image is c449d19e...; exact publication receipt
+`D:\thericher-v2\model-artifacts\data\kis-head-normalized-input-publication-20261008-v1.json`.
+Only injected Paper app-key/secret edges are stripped; blank/partial values,
+dotenv fallback and virtual-only routing retain their prior semantics. No
+actual4xx root cause, manual provider call or schedule/pace change is inferred.
+Paper/web aliases are unchanged. Existing head owns its next due invocation.
+
 ## Current Joint D1 Research
 
 `scripts/run_tiingo_joint_d1_policy.py` is the bounded three-model direct-utility

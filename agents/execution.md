@@ -14,6 +14,30 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October8 source-only accounting knowledge, retrieved05:07 KST from official KIS
+samples pinned to `885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc`, supports PnL
+attribution/recovery, not a profit gate. `inquire-period-trans` documents
+`dmst_frcr_fee1`, `frcr_fee1`, KRW fee fields, `frcr_excc_amt_1` and `sttl_dt`,
+but its published row mapping lacks an order ID. Ticker/date alone cannot bind
+charges to an owned fill. [Official transaction mapping](https://github.com/koreainvestment/open-trading-api/blob/885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc/examples_llm/overseas_stock/inquire_period_trans/chk_inquire_period_trans.py).
+`inquire-period-profit` is next-day, broker-basis reporting: generally sell
+costs only, with buy costs included for same-day same-symbol activity; KRW
+conversion uses sell-day FX and differs from settlement/tax basis. Neither
+product/day realized PnL nor account totals prove full-cost strategy profit.
+[Official caveats](https://github.com/koreainvestment/open-trading-api/blob/885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc/legacy/Sample01/kis_ovrseastk.py#L716-L722).
+`inquire-paymt-stdr-balance` maps currency-level `frcr_dncl_amt_2`, not owned
+profit; orderable funds remain distinct. [Official settlement mapping](https://github.com/koreainvestment/open-trading-api/blob/885dd4e2f5c37e4f7e23dd63c15555a9967bc7bc/examples_llm/overseas_stock/inquire_paymt_stdr_balance/chk_inquire_paymt_stdr_balance.py).
+Minimum net attribution retains independently anchored current-account/V2
+basis/owner and terminal-fill links, plus complete uniquely owned charge rows,
+currency/date/component semantics, gross/quantity reconciliation, strict
+duplicate-key Decimal parsing and restart deduplication. Exclude foreign
+activity; do not double-count USD/KRW representations or substitute zero for
+missing charges. Paper availability of these additional endpoints is unverified;
+fees/settled cash/net remain not_observed, with no repeat query or general pause.
+Dated QQQ owned-flat gross closure, retained SPY one-order/one-fill inventory,
+shared10-percent basis and untouched/unadopted old105-file isolation remain
+unchanged below; none is a fresh broker-flat or net-profit claim.
+
 October8 accounting console is published at http://127.0.0.1:8787. One exact
 historical receipt/hash yields negative gross sign/two fills/one closed round
 trip; fees/settled/net remain unknown. No broker call/private order mount/new
