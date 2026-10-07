@@ -13,6 +13,25 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-08 KST)
 
+Token diagnostics implemented/independently reviewed and published to head alias
+e6f74905...: optional exact1xx..5xx class, exactEGW00201 only with rate_limited;
+legacy absence/local-not-due/transport absence unchanged, no cross-target copy.
+462 parent passes; integrated1033 serial/full10,282/22 skips/330.99s/eight workers/
+clean helper. Five baked hashes match; no manual task/API/pace/schedule change.
+Publication `D:\thericher-v2\model-artifacts\data\kis-head-token-diagnostic-publication-20261008-v1.json`.
+Head source-safe Scheduler next_due04:24 KST October8 (observed04:08); current
+validated terminal remains02:28 until a later exact chain is inspected. Result1
+is not evidence. Observer02:28:07 finalized inside head02:28:01..09 window,
+but actual token POST start ordering/contention is unobserved; no inferred
+shared-token-cache or throttle remedy. Independent research continues.
+
+Next assigned Data package is pure FirstRate20-prior-session same-clock input;
+never use current/future target support to select its history. FINRA inventory
+stopped before row parsing/join/model use: source-specific AI/software rights
+unresolved under official Terms Restrictions(m). Manifest-only2018-Aug1..2026-
+June17/58,620,306 rows/CNMS+FNSQ+FNYX+FORF is not ETF coverage or no-double-count
+proof. Original bytes preserved; no permission inferred from noncommercial use.
+
 Latest owned head result is independently reattached: run
 `intraday-head-20261007T1728010023310Z`, completed02:28:09.811131 KST.
 `collector_nonzero`/`collector_provider`: QQQ `auth_rejected`, SPY

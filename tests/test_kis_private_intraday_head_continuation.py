@@ -32,6 +32,7 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMinuteQuery,
     KisPaperMinuteRawBar,
 )
+from thericher_v2.execution.kis_market_data_rate_gate import KisPaperMarketDataTokenStartGate
 
 
 @pytest.fixture(autouse=True)
@@ -418,6 +419,136 @@ def test_pair_mixed_fourth_page_keeps_360_and_bound_diagnostic_without_retry(
     assert target["requested_pages_per_target"] == 4
     assert capture.outcome.observed_at == observed_at
     assert capsys.readouterr() == ("", "")
+
+
+@pytest.mark.parametrize(
+    ("http_status", "upstream", "reason", "status_class", "code"),
+    [
+        (403, "synthetic-secret-must-not-leak", "auth_rejected", "4xx", None),
+        (500, "EGW00201", "rate_limited", "5xx", "EGW00201"),
+    ],
+)
+def test_pair_token_http_diagnostic_never_leaks_to_locally_blocked_companion(
+    tmp_path: Path,
+    http_status: int,
+    upstream: str,
+    reason: str,
+    status_class: str,
+    code: str | None,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    observed_at = datetime(2026, 7, 24, 0, 0, tzinfo=UTC)
+    token_gate = KisPaperMarketDataTokenStartGate(
+        control_root=tmp_path / "control", clock=lambda: observed_at
+    )
+
+    class Transport:
+        def __init__(self) -> None:
+            self.http_count = 0
+
+        def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+            market_data._validate_request(request)
+            assert request.method == "POST"
+            if not token_gate.claim_token_request_start():
+                raise KisPaperMarketDataError("token_request_not_due")
+            self.http_count += 1
+            return KisMarketDataResponse.from_payload(
+                {"msg_cd": upstream, "msg1": "synthetic-secret-must-not-leak"},
+                status_code=http_status,
+            )
+
+    transport = Transport()
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="synthetic-key", app_secret="synthetic-secret"),
+        transport=transport,
+        max_minute_page_attempts=8,
+    )
+    runs = _run_pair(tmp_path, client)
+    qqq, spy = runs
+    assert qqq.status == spy.status == "rejected"
+    assert qqq.reason == reason
+    assert (qqq.token_http_status_class, qqq.token_upstream_code) == (status_class, code)
+    assert spy.reason == "token_request_not_due"
+    assert spy.token_http_status_class is spy.token_upstream_code is None
+    assert transport.http_count == client.call_counts.token_attempts == 1
+    assert client.call_counts.minute_page_attempts == 0
+    capture = build_and_write_kis_paper_intraday_session_capture(
+        runs=runs,
+        cache_root=tmp_path / "market-data",
+        repository_root=tmp_path / "repo",
+        observed_at=observed_at,
+        schedule_run_id="intraday-head-20260724T0000000000000Z",
+    )
+    payload = capture.safe_output_payload()
+    qqq_payload, spy_payload = payload["targets"]
+    assert qqq_payload["token_http_status_class"] == status_class
+    assert qqq_payload.get("token_upstream_code") == code
+    if code is None:
+        assert "token_upstream_code" not in qqq_payload
+    assert "token_http_status_class" not in spy_payload
+    assert "token_upstream_code" not in spy_payload
+    assert "synthetic-secret" not in json.dumps(payload) + capture.evidence_path.read_text()
+    assert capsys.readouterr() == ("", "")
+
+
+def test_duplicate_cached_prefix_preserves_current_token_diagnostic_and_other_progress(
+    tmp_path: Path,
+) -> None:
+    retained_chunks = retained_manifest = None
+    for attempt in range(2):
+        error = KisPaperMarketDataError(
+            "rate_limited", token_http_status_class="5xx", token_upstream_code="EGW00201"
+        )
+        client = _Client(
+            [_page(_rows(120, offset=120)), error, _page(_rows(120))],
+            [_page(_rows(1, offset=attempt), symbol="SPY")],
+        )
+        failed, companion = _run_pair(
+            tmp_path, client, observed_at=datetime(2026, 7, 24, 0, attempt, tzinfo=UTC)
+        )
+        assert (failed.status, failed.row_count, failed.reason) == ("partial", 120, "rate_limited")
+        assert (failed.token_http_status_class, failed.token_upstream_code) == ("5xx", "EGW00201")
+        assert failed.failure_phase is failed.requested_pages_per_target is None
+        assert companion.status == "collected"
+        assert companion.token_http_status_class is companion.token_upstream_code is None
+        assert len(client.queries) == 3 and len(client.responses["QQQ"]) == 1
+        state = next(t for t in _index(tmp_path)["targets"] if t["symbol"] == "QQQ")
+        manifest_path = tmp_path / "market-data" / "v1" / state["chunks"][0]["manifest_path"]
+        if attempt == 0:
+            retained_chunks = state["chunks"]
+            retained_manifest = manifest_path.read_bytes()
+        else:
+            assert state["chunks"] == retained_chunks
+            assert manifest_path.read_bytes() == retained_manifest
+            assert state["last_reason"] == "rate_limited"
+            assert state["last_observed_at_utc"] == "2026-07-24T00:01:00Z"
+
+
+@pytest.mark.parametrize(
+    "diagnostic",
+    [
+        {"token_http_status_class": "4XX"},
+        {"token_http_status_class": []},
+        {"token_http_status_class": "4xx", "token_upstream_code": "synthetic-secret"},
+        {"token_http_status_class": "4xx", "token_upstream_code": "EGW00201"},
+        {"token_upstream_code": "EGW00201"},
+    ],
+)
+def test_mutated_token_diagnostic_is_omitted_without_changing_partial_prefix(
+    tmp_path: Path, diagnostic: dict[str, object]
+) -> None:
+    error = KisPaperMarketDataError("auth_rejected")
+    for key, value in diagnostic.items():
+        setattr(error, key, value)
+    client = _Client(
+        [_page(_rows(120, offset=120)), error, _page(_rows(120))],
+        [_page(_rows(1), symbol="SPY")],
+    )
+    failed, companion = _run_pair(tmp_path, client)
+    assert (failed.status, failed.row_count, failed.reason) == ("partial", 120, "auth_rejected")
+    assert failed.token_http_status_class is failed.token_upstream_code is None
+    assert companion.status == "collected"
+    assert len(client.responses["QQQ"]) == 1
 
 
 def test_invalid_error_diagnostic_does_not_change_the_retained_prefix(tmp_path: Path) -> None:

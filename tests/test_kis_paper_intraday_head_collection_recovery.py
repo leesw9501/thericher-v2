@@ -100,6 +100,118 @@ def test_collection_recovery_projects_bound_duplicate_conflict_without_sensitive
         assert forbidden.lower() not in rendered
 
 
+@pytest.mark.parametrize("upstream_code", [None, "EGW00201"])
+def test_collection_recovery_projects_hash_bound_token_fields_only_on_http_target(
+    tmp_path: Path, upstream_code: str | None
+) -> None:
+    repository_root, artifact_root, cache_root = _roots(tmp_path)
+    diagnostic = {
+        "reason": "rate_limited" if upstream_code else "auth_rejected",
+        "token_http_status_class": "5xx" if upstream_code else "4xx",
+    }
+    if upstream_code is not None:
+        diagnostic["token_upstream_code"] = upstream_code
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        run_id=_DIAGNOSTIC_RUN_ID,
+        target_provenance_by_key={
+            "QQQ/NAS/1m": diagnostic,
+            "SPY/AMS/1m": {"reason": "token_request_not_due"},
+        },
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+        run_id=_DIAGNOSTIC_RUN_ID,
+    )
+    assert "sha256:" + sha256(capture.path.read_bytes()).hexdigest() == capture.receipt_sha256
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root, repository_root=repository_root, capture_cache_root=cache_root
+    )
+    payload = result.safe_payload()
+    assert payload["capture_binding_status"] == "verified"
+    qqq, spy = payload["targets"]
+    assert qqq["token_http_status_class"] == diagnostic["token_http_status_class"]
+    assert qqq.get("token_upstream_code") == upstream_code
+    if upstream_code is None:
+        assert "token_upstream_code" not in qqq
+    assert spy["reason"] == "token_request_not_due"
+    assert "token_http_status_class" not in spy
+    assert "token_upstream_code" not in spy
+    assert _SECRET_SENTINEL not in json.dumps(payload)
+    assert _RAW_SENTINEL not in json.dumps(payload)
+
+
+@pytest.mark.parametrize(
+    "diagnostic",
+    [
+        {"token_upstream_code": "EGW00201"},
+        {"token_http_status_class": None},
+        {"token_http_status_class": "4xx", "token_upstream_code": None},
+        {"token_http_status_class": "4XX"},
+        {"token_http_status_class": "6xx"},
+        {"token_http_status_class": True},
+        {"token_http_status_class": []},
+        {"token_http_status_class": "4xx", "token_upstream_code": _SECRET_SENTINEL},
+        {"token_http_status_class": "4xx", "token_upstream_code": "EGW00201"},
+        {"token_http_status_class": "4xx", "reason": "token_request_not_due"},
+        {"token_http_status_class": "4xx", "status": "collected"},
+        {"token_http_status_class": "5xx", "reason": "response_invalid"},
+        {"token_http_status_class": "2xx", "reason": "minute_response_invalid"},
+    ],
+)
+def test_collection_recovery_rejects_hash_consistent_invalid_token_fields(
+    tmp_path: Path, diagnostic: dict[str, object]
+) -> None:
+    repository_root, artifact_root, cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        run_id=_DIAGNOSTIC_RUN_ID,
+        target_reason="auth_rejected",
+        target_provenance_by_key={"QQQ/NAS/1m": diagnostic},
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+        run_id=_DIAGNOSTIC_RUN_ID,
+    )
+    assert "sha256:" + sha256(capture.path.read_bytes()).hexdigest() == capture.receipt_sha256
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root, repository_root=repository_root, capture_cache_root=cache_root
+    )
+    assert result.safe_payload()["capture_binding_status"] == "evidence_unavailable"
+    assert result.safe_payload()["targets"] == []
+    assert _SECRET_SENTINEL not in json.dumps(result.safe_payload())
+
+
+def test_collection_recovery_never_projects_mutated_token_diagnostic_bytes(tmp_path: Path) -> None:
+    repository_root, artifact_root, cache_root = _roots(tmp_path)
+    capture = _write_capture_receipt(
+        cache_root=cache_root,
+        run_id=_DIAGNOSTIC_RUN_ID,
+        target_reason="auth_rejected",
+        target_provenance_by_key={"QQQ/NAS/1m": {"token_http_status_class": "4xx"}},
+    )
+    _write_bound_recovery_terminal(
+        artifact_root=artifact_root,
+        repository_root=repository_root,
+        capture=capture,
+        run_id=_DIAGNOSTIC_RUN_ID,
+    )
+    capture.path.write_bytes(
+        capture.encoded.replace(
+            b'"token_http_status_class":"4xx"', b'"token_http_status_class":"5xx"'
+        )
+    )
+    result = read_kis_paper_intraday_head_collection_recovery_from_artifact_root(
+        artifact_root, repository_root=repository_root, capture_cache_root=cache_root
+    )
+    assert result.safe_payload()["targets"] == []
+    assert result.safe_payload()["capture_binding_status"] == "evidence_unavailable"
+
+
 @pytest.mark.parametrize(
     "diagnostic",
     [

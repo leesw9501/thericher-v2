@@ -24,7 +24,10 @@ from thericher_v2.research.differentiable_three_asset_nav import (
     replay_torch,
 )
 
-NAME = "joint-d1-direct-utility-development-v1"
+ORIGINAL_NAME = "joint-d1-direct-utility-development-v1"
+ORIGINAL_CONTRACT = "sha256:df42451eb7366d9d80231ae262c9bfcf6cdaddb61ebe3ab7dab28ed81d6564e0"
+ORIGINAL_RESULT = "sha256:1d38b7b13ab308fe8bb9322c4e3e17d3c5a9704e0a011fe00dfb6b91bdab6079"
+NAME = "joint-d1-direct-utility-development-v1-cpu-r2"
 REPO, TRAIN, PERIODS, COSTS = prior.REPO, prior.TRAIN, prior.PERIODS, prior.COSTS
 SYMBOLS = ("SPY", "QQQ", "IWM")
 METHODS = ("constant", "linear", "tcn")
@@ -182,15 +185,20 @@ def configuration() -> dict:
         budget=dict(
             family_seconds=SECONDS,
             actual_fits=3,
+            device="cpu",
+            original_seconds_consumed=600,
+            maximum_total_attempt_seconds=1200,
+            maximum_total_fit_starts=6,
+            additional_attempts=1,
+            original_partial_fit_count="unknown",
             cpu_threads=2,
             memory_bytes=6 * 1024**3,
             container_cpus=2,
             network="none",
             swap_bytes=0,
             retries=False,
-            gpu_lock="engine-research-agent/locks/gpu.lock",
-            desktop_headroom_bytes=1024**3,
-            gpu_allocator_fraction_ceiling=0.9,
+            worker_lock=f"research/{NAME}/cpu-attempt.lock",
+            gpu_allocation=False,
         ),
         runtime=dict(
             image=GPU_IMAGE, torch="2.7.0+cu128", numpy="2.5.1", python="3.12.14", calendar="5.4.0"
@@ -199,7 +207,19 @@ def configuration() -> dict:
             "tiingo-adjusted-monthly-holding-development-v1",
             "firstrate-paired-allocation-development-20261005-v1",
             prior.NAME,
+            ORIGINAL_NAME,
         ],
+        technical_continuation=dict(
+            original_contract_sha256=ORIGINAL_CONTRACT,
+            original_result_sha256=ORIGINAL_RESULT,
+            original_completion="hard_timeout; phase/partial fits unknown",
+            reason="synthetic float64 CUDA TCN512 steps alone forecast648s vs56s CPU",
+            changed="CPU execution and bounded pure logarithm memoization only",
+            economic_changes=False,
+            budget_refund=False,
+            further_retry=False,
+            numerical_trajectory="CPU may differ from CUDA; not identical fitted weights",
+        ),
         scope=dict(
             holdout_access="none",
             seen_revised_non_pit=True,
@@ -405,7 +425,15 @@ def mark_tensors(inputs: PreparedPeriod, *, device="cpu"):
 
 
 def fit_final(
-    method, inputs, scaler, *, updates: int, device: str, deadline: float, vram_bytes=None
+    method,
+    inputs,
+    scaler,
+    *,
+    updates: int,
+    device: str,
+    deadline: float,
+    vram_bytes=None,
+    progress=None,
 ):
     """One continuous TRAIN path and global population variance on each update."""
     torch = torch_cpu()
@@ -419,7 +447,7 @@ def fit_final(
         lr=config["learning_rate"][method],
         weight_decay=config["weight_decay"][method],
     )
-    for _ in range(updates):
+    for update in range(updates):
         require(time.monotonic() < deadline, "hard_timeout")
         optimizer.zero_grad(set_to_none=True)
         loss = -torch_utility(replay_torch(opened, closed, net(x), 10.0))
@@ -432,6 +460,8 @@ def fit_final(
             "gradient_nonfinite",
         )
         optimizer.step()
+        if progress is not None and ((update + 1) % 128 == 0 or update + 1 == updates):
+            progress("fit", method, update + 1)
         if device == "cuda":
             torch.cuda.synchronize()
             require(torch.cuda.max_memory_allocated() <= vram_bytes, "vram_stop")
@@ -454,29 +484,24 @@ def bundle_identity(bundle, pin):
         restore_model(method, bundle["states"][method])
 
 
-def fit_bundle(train, pin, *, deadline):
+def fit_bundle(train, pin, *, deadline, progress=None):
     require(train.x is not None and train.marks is not None, "train_unavailable")
     torch = torch_cpu()
     require(torch.__version__ == configuration()["runtime"]["torch"], "torch_version")
-    require(torch.cuda.is_available(), "gpu_unavailable")
-    free, total = torch.cuda.mem_get_info()
-    cap = int(min(0.9 * total, free - 1024**3))
-    require(cap > 0, "desktop_headroom")
-    torch.cuda.set_per_process_memory_fraction(cap / total)
-    torch.cuda.reset_peak_memory_stats()
-    torch.backends.cudnn.benchmark = False
     torch.use_deterministic_algorithms(True)
     scaler, states, measured = train_scaler(train.x), {}, []
     for method in METHODS:
         start = time.monotonic()
+        if progress is not None:
+            progress("fit", method, 0)
         states[method] = fit_final(
             method,
             train,
             scaler,
             updates=UPDATES[method],
-            device="cuda",
+            device="cpu",
             deadline=deadline,
-            vram_bytes=cap,
+            progress=progress,
         )
         measured.append(
             dict(method=method, updates=UPDATES[method], elapsed_seconds=time.monotonic() - start)
@@ -490,10 +515,10 @@ def fit_bundle(train, pin, *, deadline):
     )
     bundle_identity(bundle, pin)
     return bundle, dict(
-        device="cuda",
+        device="cpu",
         fits=3,
-        peak_allocated_bytes=int(torch.cuda.max_memory_allocated()),
-        allocator_cap_bytes=cap,
+        peak_allocated_bytes=0,
+        allocator_cap_bytes=0,
         fit_durations=measured,
     )
 
@@ -725,66 +750,68 @@ def prepare_inputs(
                 bars[symbol][row.session_date] = None
     vintages = dict.fromkeys(SYMBOLS, digest(encode(prior.source_identity())))
     result = []
-    for spec in plan["periods"]:
-        a, b = spec["bounds"]
-        dates = tuple(date.fromisoformat(d) for d in plan["days"][a:b])
-        features, input_facts = [], []
-        for decision in spec["decisions"]:
-            require(time.monotonic() < deadline, "hard_timeout")
-            needed = tuple(date.fromisoformat(d) for d in decision["scheduled_dates"])
-            try:
-                past = {
-                    s: tuple(bars[s][d] for d in needed if bars[s].get(d) is not None)
-                    for s in SYMBOLS
-                }
-                window = context.build_joint_d1_policy_context(
-                    past,
-                    vintage_ref_by_symbol=vintages,
-                    scheduled_dates=needed,
-                    decision_at=datetime.fromisoformat(decision["decision_at"]),
-                )
-                features.append(window.features)
-                facts = dict(session_date=decision["session_date"], status="ready")
-            except context.JointD1PolicyInputUnavailable as exc:
-                facts = dict(session_date=decision["session_date"], **exc.safe_facts())
-            input_facts.append(facts)
-        marks, missing, invalid = [], 0, 0
-        # Mark availability is separate from causal feature eligibility.
-        for day in dates:
-            if any(day not in rows[s] for s in SYMBOLS):
-                missing += 1
-                continue
-            try:
-                marks.append(
-                    ledger.ThreeAssetDay(
-                        day,
-                        tuple(rows[s][day].adj_open for s in SYMBOLS),
-                        tuple(rows[s][day].adj_close for s in SYMBOLS),
+    with context.JointD1PolicyLogMemo() as log_memo:
+        for spec in plan["periods"]:
+            a, b = spec["bounds"]
+            dates = tuple(date.fromisoformat(d) for d in plan["days"][a:b])
+            features, input_facts = [], []
+            for decision in spec["decisions"]:
+                require(time.monotonic() < deadline, "hard_timeout")
+                needed = tuple(date.fromisoformat(d) for d in decision["scheduled_dates"])
+                try:
+                    past = {
+                        s: tuple(bars[s][d] for d in needed if bars[s].get(d) is not None)
+                        for s in SYMBOLS
+                    }
+                    window = context.build_joint_d1_policy_context(
+                        past,
+                        vintage_ref_by_symbol=vintages,
+                        scheduled_dates=needed,
+                        decision_at=datetime.fromisoformat(decision["decision_at"]),
+                        log_memo=log_memo,
                     )
+                    features.append(window.features)
+                    facts = dict(session_date=decision["session_date"], status="ready")
+                except context.JointD1PolicyInputUnavailable as exc:
+                    facts = dict(session_date=decision["session_date"], **exc.safe_facts())
+                input_facts.append(facts)
+            marks, missing, invalid = [], 0, 0
+            # Mark availability is separate from causal feature eligibility.
+            for day in dates:
+                if any(day not in rows[s] for s in SYMBOLS):
+                    missing += 1
+                    continue
+                try:
+                    marks.append(
+                        ledger.ThreeAssetDay(
+                            day,
+                            tuple(rows[s][day].adj_open for s in SYMBOLS),
+                            tuple(rows[s][day].adj_close for s in SYMBOLS),
+                        )
+                    )
+                except (ValueError, TypeError, ArithmeticError):
+                    invalid += 1
+            ready = len(features) == len(dates)
+            result.append(
+                PreparedPeriod(
+                    spec["period"],
+                    dates,
+                    tuple(i - a for i in spec["quarters"]),
+                    array(features, (len(dates), CHANNELS, WINDOW), "prepared_geometry")
+                    if ready
+                    else None,
+                    tuple(marks) if not (missing or invalid) else None,
+                    dict(
+                        period=spec["period"],
+                        sessions=len(dates),
+                        quarters=len(spec["quarters"]),
+                        missing_marks=missing,
+                        invalid_marks=invalid,
+                        missing_inputs=sum(f["status"] != "ready" for f in input_facts),
+                        inputs=input_facts,
+                    ),
                 )
-            except (ValueError, TypeError, ArithmeticError):
-                invalid += 1
-        ready = len(features) == len(dates)
-        result.append(
-            PreparedPeriod(
-                spec["period"],
-                dates,
-                tuple(i - a for i in spec["quarters"]),
-                array(features, (len(dates), CHANNELS, WINDOW), "prepared_geometry")
-                if ready
-                else None,
-                tuple(marks) if not (missing or invalid) else None,
-                dict(
-                    period=spec["period"],
-                    sessions=len(dates),
-                    quarters=len(spec["quarters"]),
-                    missing_marks=missing,
-                    invalid_marks=invalid,
-                    missing_inputs=sum(f["status"] != "ready" for f in input_facts),
-                    inputs=input_facts,
-                ),
             )
-        )
     return tuple(result)
 
 
@@ -1117,7 +1144,7 @@ def register_contract(root: Path, contract: dict, pin: str):
         dataset_hash=digest(encode(contract["source"])),
         split_hash=digest(encode(contract["plan"])),
         cost_model_hash=digest(encode({"costs": COSTS, "ledger": configuration()["ledger"]})),
-        trial_family=NAME,
+        trial_family=ORIGINAL_NAME,
         holdout_access="none",
         artifact_root=root,
         repo_root=REPO,
@@ -1125,6 +1152,7 @@ def register_contract(root: Path, contract: dict, pin: str):
 
 
 def freeze(artifact_root: Path, market_data_root: Path) -> str:
+    verify_original_attempt(artifact_root)
     prior.base.verify_metadata(artifact_root, market_data_root)
     contract = proposed_contract()
     parent = prior.base.ensure_external_artifact_directory(artifact_root, REPO, "research")
@@ -1137,6 +1165,7 @@ def freeze(artifact_root: Path, market_data_root: Path) -> str:
 
 
 def verify(artifact_root, market_data_root, pin):
+    verify_original_attempt(artifact_root)
     output = _output(artifact_root)
     raw = prior._read(output / "precommit.json")
     require(digest(raw) == pin, "precommit_changed")
@@ -1145,6 +1174,55 @@ def verify(artifact_root, market_data_root, pin):
     require(raw == encode(contract), "precommit_encoding")
     prior.base.verify_metadata(artifact_root, market_data_root)
     return output, contract
+
+
+def verify_original_attempt(root):
+    """Technical continuation cannot refund, replace or silently lose its failed parent."""
+    path = Path(root) / "research" / ORIGINAL_NAME
+    reject_repo_artifact_path(path, REPO)
+    require(all(not p.is_symlink() for p in (path, *path.parents)), "original_attempt_link")
+    raw_contract = prior._read(path / "precommit.json")
+    raw_result = prior._read(path / "summary.json")
+    require(digest(raw_contract) == ORIGINAL_CONTRACT, "original_contract_changed")
+    require(digest(raw_result) == ORIGINAL_RESULT, "original_result_changed")
+    failed = json.loads(raw_result)
+    require(
+        failed.get("name") == ORIGINAL_NAME
+        and failed.get("contract_sha256") == ORIGINAL_CONTRACT
+        and failed.get("status") == "failed"
+        and failed.get("reason") == "hard_timeout"
+        and failed.get("model_sha256") is None,
+        "original_failure_binding",
+    )
+
+
+def progress_recorder(output, pin, deadline):
+    """Bounded diagnostic counters, never partial weights or comparative outcomes."""
+
+    def record(phase, method=None, updates=None):
+        require(phase in PHASES, "progress_phase")
+        if phase == "fit":
+            require(method in METHODS, "progress_method")
+            require(type(updates) is int and 0 <= updates <= UPDATES[method], "progress_updates")
+            require(updates % 128 == 0 or updates == UPDATES[method], "progress_interval")
+            name = f"progress-fit-{method}-{updates:04d}.json"
+        else:
+            require(method is None and updates is None, "progress_fields")
+            name = f"progress-{phase}.json"
+        elapsed = time.monotonic() - (deadline - SECONDS)
+        require(0 <= elapsed <= SECONDS, "hard_timeout")
+        atomic_new(
+            output / name,
+            dict(
+                contract_sha256=pin,
+                phase=phase,
+                method=method,
+                completed_updates=updates,
+                elapsed_seconds=elapsed,
+            ),
+        )
+
+    return record
 
 
 def safe_result(result: dict) -> dict:
@@ -1443,14 +1521,14 @@ def validate_result(result, contract, pin):
         require(
             set(resources)
             == {"device", "fits", "peak_allocated_bytes", "allocator_cap_bytes", "fit_durations"}
-            and resources["device"] == "cuda"
+            and resources["device"] == "cpu"
             and resources["fits"] == 3,
             "resource_fields",
         )
         require(
             type(resources["peak_allocated_bytes"]) is int
             and type(resources["allocator_cap_bytes"]) is int
-            and 0 < resources["peak_allocated_bytes"] <= resources["allocator_cap_bytes"],
+            and resources["peak_allocated_bytes"] == resources["allocator_cap_bytes"] == 0,
             "resource_memory",
         )
         require([r["method"] for r in resources["fit_durations"]] == list(METHODS), "fit_order")
@@ -1481,9 +1559,12 @@ def run_worker(artifact_root, market_data_root, pin, path, deadline):
         "attempt_binding",
     )
     phase = "synthetic_smoke"
+    progress = progress_recorder(output, pin, deadline)
     try:
+        progress(phase)
         smoke(contract=contract, pin=pin)
         phase = "source_input"
+        progress(phase)
         prepared = prepare_inputs(
             prior.load_adjusted(market_data_root), contract["plan"], deadline=deadline
         )
@@ -1499,12 +1580,14 @@ def run_worker(artifact_root, market_data_root, pin, path, deadline):
         )
         if prepared[0].x is not None and prepared[0].marks is not None:
             phase = "fit"
-            bundle, resources = fit_bundle(prepared[0], pin, deadline=deadline)
+            bundle, resources = fit_bundle(prepared[0], pin, deadline=deadline, progress=progress)
             atomic_new(output / "numeric-models.json", bundle)
         phase = "evaluate"
+        progress(phase)
         result = evaluate(prepared, bundle, contract, pin, deadline=deadline)
         result["resources"] = resources
         phase = "validate"
+        progress(phase)
         validate_result(result, contract, pin)
         verify(artifact_root, market_data_root, pin)
     except Exception as exc:
@@ -1584,8 +1667,8 @@ def readback(artifact_root, market_data_root, pin, *, result_sha256, deadline):
 
 def recover_terminal(artifact_root, market_data_root, pin, *, result_sha256, deadline):
     """Finalize an exact retained worker result; never redispatch a fit."""
-    lock = Path(artifact_root) / configuration()["budget"]["gpu_lock"]
-    require(not lock.exists(), "gpu_owner_active")
+    lock = Path(artifact_root) / configuration()["budget"]["worker_lock"]
+    require(not lock.exists(), "cpu_owner_active")
     replayed = _replay_result(
         artifact_root,
         market_data_root,

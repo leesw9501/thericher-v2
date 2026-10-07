@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import time
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from fractions import Fraction
@@ -321,6 +322,7 @@ def mini_schedule():
 
 @pytest.fixture
 def campaign(tmp_path, monkeypatch, torch):
+    monkeypatch.setattr(study, "verify_original_attempt", lambda *args: None)
     monkeypatch.setattr(study.prior, "calendar_schedule", mini_schedule)
     expected_runtime = {
         k: study.configuration()["runtime"][k] for k in ("python", "torch", "numpy", "calendar")
@@ -353,10 +355,10 @@ def campaign(tmp_path, monkeypatch, torch):
         updates=dict(study.UPDATES),
     )
     resources = dict(
-        device="cuda",
+        device="cpu",
         fits=3,
-        peak_allocated_bytes=100,
-        allocator_cap_bytes=200,
+        peak_allocated_bytes=0,
+        allocator_cap_bytes=0,
         fit_durations=[
             dict(method=m, updates=study.UPDATES[m], elapsed_seconds=0.01) for m in study.METHODS
         ],
@@ -401,7 +403,7 @@ def complete_mock_attempt(campaign):
         campaign.market,
         campaign.pin,
         campaign.output / "worker-result.json",
-        float("inf"),
+        time.monotonic() + study.SECONDS,
     )
     result = json.loads((campaign.output / "worker-result.json").read_bytes())
     assert result["status"] != "failed"
@@ -516,8 +518,8 @@ def test_terminal_finalizer_rejects_unowned_or_conflicting_evidence(campaign, mo
     terminal.unlink()
     pin = study.digest(study.encode(result))
     if fault == "owner":
-        lock = campaign.root / study.configuration()["budget"]["gpu_lock"]
-        lock.parent.mkdir(parents=True)
+        lock = campaign.root / study.configuration()["budget"]["worker_lock"]
+        lock.parent.mkdir(parents=True, exist_ok=True)
         lock.write_text("synthetic active owner")
     elif fault == "worker_hash":
         pin = "sha256:" + "0" * 64
@@ -619,7 +621,7 @@ def test_phase_pinned_allowlisted_failure_only(campaign, monkeypatch, phase, fun
         campaign.market,
         campaign.pin,
         campaign.output / "worker-result.json",
-        float("inf"),
+        time.monotonic() + study.SECONDS,
     )
     saved = json.loads((campaign.output / "worker-result.json").read_bytes())
     assert saved["status"] == "failed"
@@ -641,7 +643,7 @@ def test_unknown_error_body_not_retained(campaign, monkeypatch):
         campaign.market,
         campaign.pin,
         campaign.output / "worker-result.json",
-        float("inf"),
+        time.monotonic() + study.SECONDS,
     )
     raw = (campaign.output / "worker-result.json").read_bytes()
     saved = json.loads(raw)
@@ -668,7 +670,7 @@ def test_missing_train_never_fit_or_evaluate_learned_comparison(campaign, monkey
         campaign.market,
         campaign.pin,
         campaign.output / "worker-result.json",
-        float("inf"),
+        time.monotonic() + study.SECONDS,
     )
     saved = json.loads((campaign.output / "worker-result.json").read_bytes())
     assert saved["status"] == "input_unavailable"
@@ -681,6 +683,94 @@ def test_missing_train_never_fit_or_evaluate_learned_comparison(campaign, monkey
     assert all(
         c["status"] == "evaluated" for c in saved["cells"] if c["policy"] in {"cash", "quarter_ew"}
     )
+
+
+def test_cpu_continuation_truthful_budget_and_same_economic_recipe():
+    config = study.configuration()
+    assert study.NAME != study.ORIGINAL_NAME
+    assert config["budget"]["device"] == "cpu"
+    assert not config["budget"]["gpu_allocation"]
+    assert config["budget"]["original_seconds_consumed"] == 600
+    assert config["budget"]["maximum_total_attempt_seconds"] == 1200
+    assert config["budget"]["maximum_total_fit_starts"] == 6
+    assert config["budget"]["original_partial_fit_count"] == "unknown"
+    assert config["budget"]["additional_attempts"] == 1
+    assert config["technical_continuation"]["original_contract_sha256"] == study.ORIGINAL_CONTRACT
+    assert not config["technical_continuation"]["economic_changes"]
+    assert not config["technical_continuation"]["budget_refund"]
+    assert not config["technical_continuation"]["further_retry"]
+    assert config["fit"]["final_updates"] == {"constant": 1024, "linear": 512, "tcn": 512}
+
+
+def test_cpu_bundle_never_probes_or_leases_gpu(cpu_only, monkeypatch, torch):
+    inputs = study.synthetic_inputs()
+    monkeypatch.setattr(torch, "__version__", study.configuration()["runtime"]["torch"])
+    calls, progress = [], []
+
+    def fit(method, inputs, scaler, **kwargs):
+        calls.append((method, kwargs["device"], kwargs["updates"]))
+        assert "vram_bytes" not in kwargs
+        return study.numeric_state(study.model(method))
+
+    monkeypatch.setattr(study, "fit_final", fit)
+    bundle, resources = study.fit_bundle(
+        inputs,
+        "sha256:" + "a" * 64,
+        deadline=time.monotonic() + 600,
+        progress=lambda *event: progress.append(event),
+    )
+    assert calls == [(m, "cpu", study.UPDATES[m]) for m in study.METHODS]
+    assert progress == [("fit", m, 0) for m in study.METHODS]
+    assert resources["device"] == "cpu" and resources["fits"] == 3
+    assert resources["peak_allocated_bytes"] == resources["allocator_cap_bytes"] == 0
+    study.bundle_identity(bundle, "sha256:" + "a" * 64)
+
+
+def test_progress_is_bounded_immutable_and_contains_no_numeric_model(tmp_path):
+    pin = "sha256:" + "a" * 64
+    record = study.progress_recorder(tmp_path, pin, time.monotonic() + 600)
+    record("source_input")
+    record("fit", "constant", 128)
+    before = {p.name: p.read_bytes() for p in tmp_path.iterdir()}
+    saved = json.loads(before["progress-fit-constant-0128.json"])
+    assert saved["contract_sha256"] == pin and saved["completed_updates"] == 128
+    assert set(saved) == {
+        "contract_sha256",
+        "phase",
+        "method",
+        "completed_updates",
+        "elapsed_seconds",
+    }
+    with pytest.raises(FileExistsError):
+        record("fit", "constant", 128)
+    for event in (("fit", "tcn", 513), ("fit", "linear", 127), ("fit", "unknown", 0)):
+        with pytest.raises(ValueError):
+            record(*event)
+    assert {p.name: p.read_bytes() for p in tmp_path.iterdir()} == before
+
+
+def test_original_failure_exact_binding_and_mutation_rejected(tmp_path, monkeypatch):
+    original = tmp_path / "research" / study.ORIGINAL_NAME
+    original.mkdir(parents=True)
+    contract = study.encode({"synthetic": "original"})
+    pin = study.digest(contract)
+    failed = study.encode(
+        dict(
+            name=study.ORIGINAL_NAME,
+            contract_sha256=pin,
+            status="failed",
+            reason="hard_timeout",
+            model_sha256=None,
+        )
+    )
+    monkeypatch.setattr(study, "ORIGINAL_CONTRACT", pin)
+    monkeypatch.setattr(study, "ORIGINAL_RESULT", study.digest(failed))
+    (original / "precommit.json").write_bytes(contract)
+    (original / "summary.json").write_bytes(failed)
+    study.verify_original_attempt(tmp_path)
+    (original / "summary.json").write_bytes(failed + b" ")
+    with pytest.raises(ValueError, match="original_result_changed"):
+        study.verify_original_attempt(tmp_path)
 
 
 @pytest.mark.parametrize("payload", ([True] * 9, ["0.1"] * 9, [None] * 9))

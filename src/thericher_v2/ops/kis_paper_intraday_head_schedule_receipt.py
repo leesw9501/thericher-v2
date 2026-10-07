@@ -33,7 +33,10 @@ from thericher_v2.data.kis_qqq_spy_mtf_prospective_observation import (
     read_kis_qqq_spy_mtf_prospective_attempt,
     read_kis_qqq_spy_mtf_prospective_contract,
 )
-from thericher_v2.execution.kis_market_data import validate_kis_paper_minute_failure_diagnostic
+from thericher_v2.execution.kis_market_data import (
+    validate_kis_paper_minute_failure_diagnostic,
+    validate_kis_paper_token_failure_diagnostic,
+)
 
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_KIND = "kis_paper_intraday_head_schedule_receipt"
 KIS_PAPER_INTRADAY_HEAD_SCHEDULE_RECEIPT_ARTIFACT_DIRECTORY = (
@@ -728,6 +731,8 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
     failure_code: str | None = None
     failure_page_ordinal: int | None = None
     requested_pages_per_target: int | None = None
+    token_http_status_class: str | None = None
+    token_upstream_code: str | None = None
 
     def __post_init__(self) -> None:
         validate_kis_paper_minute_failure_diagnostic(
@@ -738,6 +743,13 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
             requested_pages_per_target=self.requested_pages_per_target,
         )
         if self.failure_phase is not None and self.status not in {"partial", "rejected"}:
+            raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
+        validate_kis_paper_token_failure_diagnostic(
+            reason=self.reason,
+            http_status_class=self.token_http_status_class,
+            upstream_code=self.token_upstream_code,
+        )
+        if self.token_http_status_class is not None and self.status not in {"partial", "rejected"}:
             raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
         if self.target_key not in _CAPTURE_TARGET_KEYS:
             raise KisPaperIntradayHeadScheduleReceiptError("collection_recovery_target_invalid")
@@ -785,6 +797,10 @@ class KisPaperIntradayHeadCollectionRecoveryTarget:
                 failure_page_ordinal=self.failure_page_ordinal,
                 requested_pages_per_target=self.requested_pages_per_target,
             )
+        if self.token_http_status_class is not None:
+            payload["token_http_status_class"] = self.token_http_status_class
+        if self.token_upstream_code is not None:
+            payload["token_upstream_code"] = self.token_upstream_code
         return payload
 
 
@@ -2235,6 +2251,13 @@ def _collection_recovery_targets_from_capture_payload(
             or any(value[field] is None for field in diagnostic_fields)
         ):
             raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
+        token_fields = {"token_http_status_class", "token_upstream_code"}
+        present_token_fields = token_fields.intersection(value)
+        if present_token_fields and (
+            "token_http_status_class" not in present_token_fields
+            or any(value[field] is None for field in present_token_fields)
+        ):
+            raise KisPaperIntradayHeadScheduleReceiptError("schedule_capture_receipt_invalid")
         try:
             if present_diagnostics and value["requested_pages_per_target"] != (
                 kis_paper_intraday_head_requested_page_budget(payload.get("schedule_run_id"))
@@ -2250,6 +2273,8 @@ def _collection_recovery_targets_from_capture_payload(
                 failure_code=value.get("failure_code"),
                 failure_page_ordinal=value.get("failure_page_ordinal"),
                 requested_pages_per_target=value.get("requested_pages_per_target"),
+                token_http_status_class=value.get("token_http_status_class"),
+                token_upstream_code=value.get("token_upstream_code"),
                 conflict_origin=(
                     conflict_origin if conflict_origin != "not_recorded_legacy" else None
                 ),
@@ -2278,6 +2303,8 @@ def _collection_recovery_targets_from_capture_payload(
                 failure_code=capture_target.failure_code,
                 failure_page_ordinal=capture_target.failure_page_ordinal,
                 requested_pages_per_target=capture_target.requested_pages_per_target,
+                token_http_status_class=capture_target.token_http_status_class,
+                token_upstream_code=capture_target.token_upstream_code,
                 conflict_origin=(
                     "not_recorded_legacy"
                     if receipt_is_legacy

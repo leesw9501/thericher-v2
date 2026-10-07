@@ -29,6 +29,7 @@ from thericher_v2.execution.kis_market_data import (
     KisPaperMinuteQuery,
     KisPaperMinuteRawBar,
     validate_kis_paper_minute_failure_diagnostic,
+    validate_kis_paper_token_failure_diagnostic,
 )
 from thericher_v2.execution.kis_market_data_rate_gate import (
     KIS_PAPER_MARKET_DATA_MIN_REQUEST_INTERVAL_SECONDS,
@@ -185,6 +186,8 @@ class KisPaperPrivateIntradayBackfillRun:
     failure_code: str | None = None
     failure_page_ordinal: int | None = None
     requested_pages_per_target: int | None = None
+    token_http_status_class: str | None = None
+    token_upstream_code: str | None = None
 
     def __post_init__(self) -> None:
         if self.status not in {
@@ -211,6 +214,13 @@ class KisPaperPrivateIntradayBackfillRun:
         )
         if self.failure_phase is not None and self.status not in {"partial", "rejected"}:
             raise ValueError("private intraday failure diagnostic is invalid")
+        validate_kis_paper_token_failure_diagnostic(
+            reason=self.reason,
+            http_status_class=self.token_http_status_class,
+            upstream_code=self.token_upstream_code,
+        )
+        if self.token_http_status_class is not None and self.status not in {"partial", "rejected"}:
+            raise ValueError("private intraday token diagnostic is invalid")
         if self.conflict_origin not in KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS | {None}:
             raise ValueError("private intraday conflict origin is invalid")
         if (
@@ -249,6 +259,8 @@ class _CollectedTarget:
     failure_code: str | None = None
     failure_page_ordinal: int | None = None
     requested_pages_per_target: int | None = None
+    token_http_status_class: str | None = None
+    token_upstream_code: str | None = None
 
 
 @dataclass
@@ -740,6 +752,8 @@ def _run_kis_paper_private_intraday_cycle(
                     failure_code=collected.failure_code,
                     failure_page_ordinal=collected.failure_page_ordinal,
                     requested_pages_per_target=collected.requested_pages_per_target,
+                    token_http_status_class=collected.token_http_status_class,
+                    token_upstream_code=collected.token_upstream_code,
                 )
             if collected.status == "rejected":
                 _record_target_last_observation(
@@ -761,6 +775,8 @@ def _run_kis_paper_private_intraday_cycle(
                         failure_code=collected.failure_code,
                         failure_page_ordinal=collected.failure_page_ordinal,
                         requested_pages_per_target=collected.requested_pages_per_target,
+                        token_http_status_class=collected.token_http_status_class,
+                        token_upstream_code=collected.token_upstream_code,
                     )
                 )
                 continue
@@ -863,6 +879,8 @@ def _run_kis_paper_private_intraday_cycle(
                         failure_code=collected.failure_code,
                         failure_page_ordinal=collected.failure_page_ordinal,
                         requested_pages_per_target=collected.requested_pages_per_target,
+                        token_http_status_class=collected.token_http_status_class,
+                        token_upstream_code=collected.token_upstream_code,
                     )
                 )
                 continue
@@ -915,6 +933,8 @@ def _run_kis_paper_private_intraday_cycle(
                     failure_code=collected.failure_code,
                     failure_page_ordinal=collected.failure_page_ordinal,
                     requested_pages_per_target=collected.requested_pages_per_target,
+                    token_http_status_class=collected.token_http_status_class,
+                    token_upstream_code=collected.token_upstream_code,
                 )
             )
         return tuple(results)
@@ -1073,6 +1093,16 @@ def _collect_target(
         except ValueError:
             failure_phase = failure_code = failure_page_ordinal = None
             requested_pages_per_target = None
+        token_http_status_class = error.token_http_status_class
+        token_upstream_code = error.token_upstream_code
+        try:
+            validate_kis_paper_token_failure_diagnostic(
+                reason=reason,
+                http_status_class=token_http_status_class,
+                upstream_code=token_upstream_code,
+            )
+        except ValueError:
+            token_http_status_class = token_upstream_code = None
         conflict_origin: _ConflictOrigin | None = (
             "candidate_batch" if isinstance(error, _CandidateBatchDuplicateConflict) else None
         )
@@ -1093,6 +1123,8 @@ def _collect_target(
                 failure_code=failure_code,
                 failure_page_ordinal=failure_page_ordinal,
                 requested_pages_per_target=requested_pages_per_target,
+                token_http_status_class=token_http_status_class,
+                token_upstream_code=token_upstream_code,
             )
         return _CollectedTarget(
             target=target,
@@ -1108,6 +1140,8 @@ def _collect_target(
             failure_code=failure_code,
             failure_page_ordinal=failure_page_ordinal,
             requested_pages_per_target=requested_pages_per_target,
+            token_http_status_class=token_http_status_class,
+            token_upstream_code=token_upstream_code,
         )
     return _CollectedTarget(
         target=target,

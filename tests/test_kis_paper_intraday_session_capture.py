@@ -86,6 +86,63 @@ def test_session_capture_legacy_targets_have_no_diagnostic_fields() -> None:
     )
     assert not any(key.startswith("failure_") for key in target.to_payload())
     assert "requested_pages_per_target" not in target.to_payload()
+    assert "token_http_status_class" not in target.to_payload()
+    assert "token_upstream_code" not in target.to_payload()
+
+
+@pytest.mark.parametrize("status_class", ["1xx", "2xx", "3xx", "4xx", "5xx"])
+@pytest.mark.parametrize("status", ["partial", "rejected"])
+def test_session_capture_serializes_optional_closed_token_http_class(
+    status_class: str, status: str
+) -> None:
+    target = KisPaperIntradaySessionCaptureTarget(
+        target_key="QQQ/NAS/1m",
+        status=status,
+        row_count=0,
+        exact_overlap_rows=0,
+        reason="auth_rejected",
+        token_http_status_class=status_class,
+    )
+    assert target.to_payload()["token_http_status_class"] == status_class
+    assert "token_upstream_code" not in target.to_payload()
+    assert "requested_pages_per_target" not in target.to_payload()
+
+
+@pytest.mark.parametrize(
+    ("status", "reason", "diagnostic"),
+    [
+        ("collected", "auth_rejected", {"token_http_status_class": "4xx"}),
+        ("rejected", "token_request_not_due", {"token_http_status_class": "4xx"}),
+        ("partial", "minute_response_invalid", {"token_http_status_class": "2xx"}),
+        ("rejected", "rate_limited", {"token_upstream_code": "EGW00201"}),
+        (
+            "rejected",
+            "auth_rejected",
+            {"token_http_status_class": "4xx", "token_upstream_code": "EGW00201"},
+        ),
+        ("rejected", "response_invalid", {"token_http_status_class": "5xx"}),
+        ("rejected", "auth_rejected", {"token_http_status_class": "4XX"}),
+        ("rejected", "auth_rejected", {"token_http_status_class": True}),
+        ("rejected", "auth_rejected", {"token_http_status_class": []}),
+        (
+            "rejected",
+            "rate_limited",
+            {"token_http_status_class": "4xx", "token_upstream_code": "synthetic-secret"},
+        ),
+    ],
+)
+def test_session_capture_rejects_invalid_token_diagnostic_combinations(
+    status: str, reason: str, diagnostic: dict[str, object]
+) -> None:
+    with pytest.raises(ValueError, match="token .*diagnostic is invalid"):
+        KisPaperIntradaySessionCaptureTarget(
+            target_key="QQQ/NAS/1m",
+            status=status,
+            row_count=0,
+            exact_overlap_rows=0,
+            reason=reason,
+            **diagnostic,
+        )
 
 
 @pytest.mark.parametrize("budget", [None, True, 4.0, 0, 2, 9, 999999])

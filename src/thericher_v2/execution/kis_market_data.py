@@ -106,6 +106,8 @@ KIS_PAPER_MINUTE_FAILURE_CODES = {
         }
     ),
 }
+KIS_PAPER_TOKEN_HTTP_STATUS_CLASSES = frozenset({"1xx", "2xx", "3xx", "4xx", "5xx"})
+KIS_PAPER_TOKEN_UPSTREAM_CODES = frozenset({"EGW00201"})
 
 
 def validate_kis_paper_minute_failure_diagnostic(
@@ -137,6 +139,41 @@ def validate_kis_paper_minute_failure_diagnostic(
         raise ValueError("minute failure diagnostic is invalid")
 
 
+def validate_kis_paper_token_failure_diagnostic(
+    *,
+    reason: object,
+    http_status_class: str | None,
+    upstream_code: str | None,
+) -> None:
+    if http_status_class is None and upstream_code is None:
+        return
+    if (
+        type(http_status_class) is not str
+        or http_status_class not in KIS_PAPER_TOKEN_HTTP_STATUS_CLASSES
+        or (
+            upstream_code is not None
+            and (
+                type(upstream_code) is not str
+                or upstream_code not in KIS_PAPER_TOKEN_UPSTREAM_CODES
+            )
+        )
+        or type(reason) is not str
+    ):
+        raise ValueError("token failure diagnostic is invalid")
+    if reason == "rate_limited":
+        # The existing limiter also accepts normalized codes; do not publish those codes.
+        valid = True
+    elif reason == "auth_rejected":
+        # Non-200 includes other 2xx statuses; an exact limit code takes precedence.
+        valid = upstream_code is None
+    elif reason in {"auth_response_invalid", "response_invalid"}:
+        valid = http_status_class == "2xx" and upstream_code is None
+    else:
+        valid = False
+    if not valid:
+        raise ValueError("token failure diagnostic is invalid")
+
+
 _ERROR_ARGUMENT_ABSENT = object()
 
 
@@ -150,6 +187,8 @@ class KisPaperMarketDataError(RuntimeError):
         *,
         failure_phase: str | None = None,
         failure_code: str | None = None,
+        token_http_status_class: str | None = None,
+        token_upstream_code: str | None = None,
     ) -> None:
         if failure_phase is not None or failure_code is not None:
             validate_kis_paper_minute_failure_diagnostic(
@@ -159,6 +198,11 @@ class KisPaperMarketDataError(RuntimeError):
                 page_ordinal=1,
                 requested_pages_per_target=1,
             )
+        validate_kis_paper_token_failure_diagnostic(
+            reason=code,
+            http_status_class=token_http_status_class,
+            upstream_code=token_upstream_code,
+        )
         # Strict legacy adapters use argument arity; never retain the optional body.
         safe_args = () if code is _ERROR_ARGUMENT_ABSENT else (code,)
         if message is not _ERROR_ARGUMENT_ABSENT:
@@ -166,6 +210,8 @@ class KisPaperMarketDataError(RuntimeError):
         super().__init__(*safe_args)
         self.failure_phase = failure_phase
         self.failure_code = failure_code
+        self.token_http_status_class = token_http_status_class
+        self.token_upstream_code = token_upstream_code
 
     def __str__(self) -> str:
         return str(self.args[0]) if self.args else ""
@@ -988,14 +1034,18 @@ class KisPaperMarketDataClient:
             if str(error) == KIS_PAPER_MARKET_DATA_TOKEN_REQUEST_NOT_DUE_REASON:
                 self._token_attempts -= 1
             raise
+        diagnostic = _token_failure_diagnostic(response)
         if _response_is_rate_limited(response):
-            raise KisPaperMarketDataError("rate_limited")
+            raise KisPaperMarketDataError("rate_limited", **diagnostic)
         if response.status_code != 200:
-            raise KisPaperMarketDataError("auth_rejected")
-        payload = response.payload()
+            raise KisPaperMarketDataError("auth_rejected", **diagnostic)
+        try:
+            payload = response.payload()
+        except KisPaperMarketDataError as error:
+            raise KisPaperMarketDataError(str(error), **diagnostic) from None
         token = payload.get("access_token")
         if not isinstance(token, str) or not token:
-            raise KisPaperMarketDataError("auth_response_invalid")
+            raise KisPaperMarketDataError("auth_response_invalid", **diagnostic)
         self._access_token = token
         return self._access_token
 
@@ -1303,6 +1353,19 @@ def _successful_payload(
     if str(payload.get("rt_cd", "")) != "0":
         raise KisPaperMarketDataError(code)
     return payload
+
+
+def _token_failure_diagnostic(response: KisMarketDataResponse) -> dict[str, str]:
+    if type(response.status_code) is not int or not 100 <= response.status_code <= 599:
+        return {}
+    result = {"token_http_status_class": f"{response.status_code // 100}xx"}
+    try:
+        payload = response.payload()
+    except KisPaperMarketDataError:
+        return result
+    if payload.get("msg_cd") == "EGW00201":
+        result["token_upstream_code"] = "EGW00201"
+    return result
 
 
 def _response_is_rate_limited(response: KisMarketDataResponse) -> bool:

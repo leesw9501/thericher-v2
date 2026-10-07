@@ -24,6 +24,20 @@ freeze its additional budget/lineage before values. Original fixed updates
 cannot become per-model selection passes.
 Prior closed appointments below remain history, not current ready queues.
 
+Explicit CPU-r2 same-family continuation CLOSED/non_promoting_completed:
+contract `sha256:babcef472d59db702b8b64d90aa2dbc4f0f98d7b8f8c0e55444fff811f495165`.
+One additional600s/combined maximum1200s, conservative six total fit starts,
+original partial unknown. Source/splits/model/seed/updates/optimizer/cost/kill
+unchanged; CPU training trajectory may differ. No GPU allocation/canonical
+lease/sealed spend or further retry. Original failed pins are verified at
+freeze/readback; registry trial family retains original lineage. New attempt
+owns only cpu-attempt.lock and bounded phase/update diagnostics. Pinned CPU
+smoke passes; actual36 cells complete/rejected, three CPU fits61.736s, validate
+entered93.83s. Resultdc50bf6a.../modelef26806e..., exact ALL-RO zero-fit/search/
+write replay, independent kill classification. No CPU/canonical GPU lock remains.
+1033 serial/full10,282 passes/22 skips/330.99s/clean helper. GPU has no frozen predictive successor
+yet; do not invent a utilization job or hold independent Data on this run.
+
 October8 quarterly joint family closed/non_promoting_completed, CPU only,
 30 fixed cells/zero GPU or sealed allocation. Revised/seen adjusted Tiingo
 source; one technical same-family r2 repair preserves the original failed

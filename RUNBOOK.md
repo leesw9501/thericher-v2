@@ -3,7 +3,7 @@
 ## Current Joint D1 Research
 
 `scripts/run_tiingo_joint_d1_policy.py` is the bounded three-model direct-utility
-CLI, not a broker path. Actual frozen source:
+CLI, not a broker path. Original frozen source:
 `D:\thericher-v2\model-artifacts\research\joint-d1-direct-utility-development-v1-frozen-source`.
 Use that source and pinned image
 `sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039`
@@ -14,7 +14,38 @@ synthetic CPU only; v3 receipt is outside the attempt in source-discovery.
 GPU lock and one600-second appointment,3 final fits,2CPU/6GiB/networknone.
 Do not redispatch an attempt with started.json. Models are numeric-only JSON,
 external to Git; comparison periods are revised/seen/non-PIT development.
-Actual worker is active; completion and zero-fit readback remain pending.
+Original appointment FAILED/hard_timeout600s; result1d38b7b... has exact
+immutable all-RO failure readback, zero refits/search/writes. Partial fits and
+phase unknown; no retained weights/comparative outcomes. Never redispatch it.
+
+Current code is the explicit CPU-r2 continuation, separate external directory
+`D:\thericher-v2\model-artifacts\research\joint-d1-direct-utility-development-v1-cpu-r2`
+and source copy with `-frozen-source` suffix. One additional600s CPU attempt,
+same economic recipe/precision/final updates; combined maximum1200s/conservative
+six starts, original partial count unknown. Freeze original exact contract and
+failure binding in the amendment; no refund/further retry. Existing pinned
+image is used WITHOUT --gpus, network none/2CPU/6GiB. CPU lease is only the
+attempt's cpu-attempt.lock, never the canonical GPU lease. Source/data/original
+artifacts RO; only exact new attempt and registry RW. Successful arithmetic
+memoization is in-process/preparation-local, cleared on exit; no retained data
+cache. Immutable phase/128-update files are diagnostics, not partial models or
+performance. Zero-fit readback mounts everything RO. Current continuation is
+COMPLETE/REJECTED, exact contract
+`sha256:babcef472d59db702b8b64d90aa2dbc4f0f98d7b8f8c0e55444fff811f495165`.
+Result `sha256:dc50bf6a3317715e22379c8bf7594ab8b0da7674043d04284c035b2066297ac0`;
+models `sha256:ef26806e29eeb6d515473764248187b868e4a0e8327d5efeac0da715be944922`.
+Actual three CPU fits61.736s/validation entered93.83s,36 evaluated cells/rejected;
+exact ALL-RO readback confirms zero refits/search/writes. Do not redispatch.
+1033 serial/full10,282 passes/22 skips/330.99s/eight workers/clean helper;
+Ruff/default+research+accounting sample Compose pass.
+
+Data head aliase6f74905... now publishes optional token HTTP-class and exact
+EGW00201 diagnostics; missing legacy fields stay absent/unknown. Local
+token_request_not_due/transport errors carry no HTTP diagnostics, and QQQ facts
+cannot migrate onto SPY. Five baked source hashes match; only head alias changes,
+not Paper/web; no extra request/task/schedule/pacing change. Existing owned
+next_due04:24 KST October8, not a foreground wait. Publication evidence:
+`D:\thericher-v2\model-artifacts\data\kis-head-token-diagnostic-publication-20261008-v1.json`.
 
 `--verify --contract-sha256 <exact-pin> --result-sha256 <exact-summary-pin>`
 uses all-RO source/data/artifacts and CPU only, restoring weights/scaler and

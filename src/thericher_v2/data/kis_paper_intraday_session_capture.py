@@ -22,7 +22,10 @@ from typing import Literal
 from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
-from thericher_v2.execution.kis_market_data import validate_kis_paper_minute_failure_diagnostic
+from thericher_v2.execution.kis_market_data import (
+    validate_kis_paper_minute_failure_diagnostic,
+    validate_kis_paper_token_failure_diagnostic,
+)
 from thericher_v2.execution.kis_private_intraday_backfill import (
     KIS_PAPER_PRIVATE_INTRADAY_BACKFILL_VERSION,
     KIS_PAPER_PRIVATE_INTRADAY_CONFLICT_ORIGINS,
@@ -72,6 +75,8 @@ class KisPaperIntradaySessionCaptureTarget:
     failure_code: str | None = None
     failure_page_ordinal: int | None = None
     requested_pages_per_target: int | None = None
+    token_http_status_class: str | None = None
+    token_upstream_code: str | None = None
 
     def __post_init__(self) -> None:
         if self.target_key not in _EXPECTED_TARGET_KEYS:
@@ -89,6 +94,13 @@ class KisPaperIntradaySessionCaptureTarget:
         )
         if self.failure_phase is not None and self.status not in {"partial", "rejected"}:
             raise ValueError("session capture failure diagnostic is invalid")
+        validate_kis_paper_token_failure_diagnostic(
+            reason=self.reason,
+            http_status_class=self.token_http_status_class,
+            upstream_code=self.token_upstream_code,
+        )
+        if self.token_http_status_class is not None and self.status not in {"partial", "rejected"}:
+            raise ValueError("session capture token diagnostic is invalid")
         if self.reason is not None:
             object.__setattr__(
                 self,
@@ -132,6 +144,10 @@ class KisPaperIntradaySessionCaptureTarget:
                 failure_page_ordinal=self.failure_page_ordinal,
                 requested_pages_per_target=self.requested_pages_per_target,
             )
+        if self.token_http_status_class is not None:
+            payload["token_http_status_class"] = self.token_http_status_class
+        if self.token_upstream_code is not None:
+            payload["token_upstream_code"] = self.token_upstream_code
         return payload
 
 
@@ -441,6 +457,8 @@ def _capture_targets(
             failure_code=run.failure_code,
             failure_page_ordinal=run.failure_page_ordinal,
             requested_pages_per_target=run.requested_pages_per_target,
+            token_http_status_class=run.token_http_status_class,
+            token_upstream_code=run.token_upstream_code,
         )
         for run in values
     )

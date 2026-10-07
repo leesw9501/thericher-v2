@@ -292,6 +292,20 @@ def test_head_schedule_classifies_only_one_exact_safe_collection_failure_payload
         "unknown_reason",
         "zero_exit",
         "no_failed_target",
+        "token_valid",
+        "token_http_only",
+        "token_other_2xx",
+        "token_normalized_limit",
+        "token_unknown_code",
+        "token_missing_class",
+        "token_null_class",
+        "token_null_code",
+        "token_bad_class",
+        "token_bool_class",
+        "token_local_fields",
+        "token_bad_combo",
+        "token_with_minute_fields",
+        "token_success_fields",
     ],
 )
 def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: str) -> None:
@@ -333,7 +347,54 @@ def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: s
         ],
     }
     target = payload["targets"][0]
-    if case == "spy_only":
+    if case.startswith("token_"):
+        for item in payload["targets"]:
+            for key in (
+                "failure_phase",
+                "failure_code",
+                "failure_page_ordinal",
+                "requested_pages_per_target",
+            ):
+                item.pop(key)
+            item.update(status="rejected", row_count=0, reason="token_request_not_due")
+        target.update(
+            reason="rate_limited", token_http_status_class="5xx", token_upstream_code="EGW00201"
+        )
+        if case in {"token_http_only", "token_other_2xx"}:
+            target.update(
+                reason="auth_rejected",
+                token_http_status_class="2xx" if case == "token_other_2xx" else "4xx",
+            )
+            target.pop("token_upstream_code")
+        elif case == "token_normalized_limit":
+            target["token_http_status_class"] = "2xx"
+            target.pop("token_upstream_code")
+        elif case == "token_unknown_code":
+            target["token_upstream_code"] = "synthetic-secret-must-not-leak"
+        elif case == "token_missing_class":
+            target.pop("token_http_status_class")
+        elif case == "token_null_class":
+            target["token_http_status_class"] = None
+        elif case == "token_null_code":
+            target["token_upstream_code"] = None
+        elif case == "token_bad_class":
+            target["token_http_status_class"] = "5XX"
+        elif case == "token_bool_class":
+            target["token_http_status_class"] = True
+        elif case == "token_local_fields":
+            payload["targets"][1]["token_http_status_class"] = "5xx"
+        elif case == "token_bad_combo":
+            target["reason"] = "auth_rejected"
+        elif case == "token_with_minute_fields":
+            target.update(
+                failure_phase="head_contract",
+                failure_code="mixed_exchange_dates",
+                failure_page_ordinal=4,
+                requested_pages_per_target=4,
+            )
+        elif case == "token_success_fields":
+            target["status"] = "collected"
+    elif case == "spy_only":
         payload["status"] = "complete"
         target.update(status="collected", reason=None, row_count=480)
         for key in (
@@ -449,7 +510,18 @@ def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: s
     )
     assert result.returncode == 0, result.stderr
     expected = (
-        "collector_provider" if case in {"valid", "spy_only", "legacy"} else "reason_unavailable"
+        "collector_provider"
+        if case
+        in {
+            "valid",
+            "spy_only",
+            "legacy",
+            "token_valid",
+            "token_http_only",
+            "token_other_2xx",
+            "token_normalized_limit",
+        }
+        else "reason_unavailable"
     )
     assert result.stdout.strip() == expected
     assert "synthetic-secret" not in result.stdout + result.stderr

@@ -8,6 +8,7 @@ adjustment provenance. No source, calendar, target, scaler or model lives here.
 from __future__ import annotations
 
 import math
+from collections import OrderedDict
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, replace
 from datetime import UTC, date, datetime, time, timedelta
@@ -20,6 +21,7 @@ CONTEXT_CLOSES = 32
 CONTEXT_OBSERVATIONS = CONTEXT_CLOSES - 1
 FEATURE_NAMES = ("close_log_return", "intraday_log_return", "range_log")
 CHANNELS = tuple(f"{symbol}.{feature}" for symbol in SYMBOLS for feature in FEATURE_NAMES)
+LOG_MEMO_MAX_ENTRIES = 1024
 
 
 class JointD1PolicyInputUnavailable(ValueError):
@@ -124,12 +126,65 @@ def _log_ratio(numerator: Decimal, denominator: Decimal) -> float:
     return result
 
 
+class JointD1PolicyLogMemo:
+    """One preparation-local bounded cache, cleared even when its caller fails.
+
+    Only successful results of the unchanged fixed-precision ratio function are
+    memoized. Exact Decimal representations are keys, not dates or availability.
+    No window, source validation or failure is cached. Do not share across jobs.
+    """
+
+    __slots__ = ("_cache", "_active", "_closed", "_hits", "_misses")
+
+    def __init__(self) -> None:
+        self._cache: OrderedDict[tuple, float] = OrderedDict()
+        self._active = self._closed = False
+        self._hits = self._misses = 0
+
+    def __enter__(self) -> JointD1PolicyLogMemo:
+        _contract(not self._active and not self._closed, "log_memo_scope")
+        self._active = True
+        return self
+
+    def __exit__(self, *_exc) -> None:
+        self._cache.clear()
+        self._active, self._closed = False, True
+
+    def ratio(self, numerator: Decimal, denominator: Decimal) -> float:
+        _contract(self._active, "log_memo_scope")
+        _contract(
+            all(type(v) is Decimal and v.is_finite() and v > 0 for v in (numerator, denominator)),
+            "log_memo_prices",
+        )
+        key = (numerator.as_tuple(), denominator.as_tuple())
+        if key in self._cache:
+            self._hits += 1
+            self._cache.move_to_end(key)
+            return self._cache[key]
+        self._misses += 1
+        result = _log_ratio(numerator, denominator)
+        if len(self._cache) == LOG_MEMO_MAX_ENTRIES:
+            self._cache.popitem(last=False)
+        self._cache[key] = result
+        return result
+
+    def safe_facts(self) -> dict[str, str | int]:
+        return dict(
+            status="active" if self._active else "closed" if self._closed else "unused",
+            capacity=LOG_MEMO_MAX_ENTRIES,
+            entries=len(self._cache),
+            hits=self._hits,
+            misses=self._misses,
+        )
+
+
 def build_joint_d1_policy_context(
     bars_by_symbol: Mapping[str, Sequence[Bar]],
     *,
     vintage_ref_by_symbol: Mapping[str, str],
     scheduled_dates: tuple[date, ...],
     decision_at: datetime,
+    log_memo: JointD1PolicyLogMemo | None = None,
 ) -> JointD1PolicyContext:
     """Build immutable, finite 9x31 features from exactly 32 scheduled past Bars.
 
@@ -141,6 +196,8 @@ def build_joint_d1_policy_context(
     US D1 records ending at or before the cutoff. Current/future support and
     current OPEN values are irrelevant. No whole-period availability mask,
     imputation, normalization or source replacement is performed.
+    An optional active preparation-local log_memo reuses only ratio arithmetic;
+    every window's required Bars are still independently selected and validated.
     """
     _contract(isinstance(bars_by_symbol, Mapping), "source_columns")
     sources = dict(bars_by_symbol)
@@ -172,16 +229,17 @@ def build_joint_d1_policy_context(
         )
         for symbol in SYMBOLS
     )
+    _contract(log_memo is None or isinstance(log_memo, JointD1PolicyLogMemo), "log_memo_type")
+    ratio = _log_ratio if log_memo is None else log_memo.ratio
     features = tuple(
         channel
         for bars in selected
         for channel in (
             tuple(
-                _log_ratio(right.close, left.close)
-                for left, right in zip(bars, bars[1:], strict=False)
+                ratio(right.close, left.close) for left, right in zip(bars, bars[1:], strict=False)
             ),
-            tuple(_log_ratio(bar.close, bar.open) for bar in bars[1:]),
-            tuple(_log_ratio(bar.high, bar.low) for bar in bars[1:]),
+            tuple(ratio(bar.close, bar.open) for bar in bars[1:]),
+            tuple(ratio(bar.high, bar.low) for bar in bars[1:]),
         )
     )
     return JointD1PolicyContext(

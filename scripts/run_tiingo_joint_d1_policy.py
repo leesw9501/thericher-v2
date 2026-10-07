@@ -1,4 +1,4 @@
-"""Static plan, pytest-free CPU smoke, frozen GPU dispatch, or zero-fit readback."""
+"""Static plan, CPU smoke, explicit CPU repair dispatch, or zero-fit readback."""
 
 from __future__ import annotations
 
@@ -20,13 +20,14 @@ def supervise(target, arguments, *, seconds):
 
 
 def dispatch(artifact_root, market_data_root, pin):
-    from thericher_v2.research.engine_research_agent import GpuFileLock, resolve_agent_root
+    from thericher_v2.research.engine_research_agent import GpuFileLock
 
     output, contract = study.verify(artifact_root, market_data_root, pin)
     study.require(
         {p.name for p in output.iterdir()} == {"precommit.json"}, "attempt_already_exists"
     )
-    with GpuFileLock(resolve_agent_root(artifact_root) / "locks" / "gpu.lock"):
+    # Reuse the file-lease primitive on this CPU attempt, never the shared GPU path.
+    with GpuFileLock(output / "cpu-attempt.lock"):
         deadline = time.monotonic() + study.SECONDS
         study.register_contract(artifact_root, contract, pin)
         study.atomic_new(output / "started.json", {"contract_sha256": pin})

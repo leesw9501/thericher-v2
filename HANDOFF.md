@@ -20,7 +20,16 @@ Never log secrets, account/order identifiers, raw broker values or market rows.
 
 ## Active Company Objective
 
-`joint-d1-direct-utility-development-v1` ACTIVE, original CUDA attempt FAILED
+Next company objective is firstrate-cross-day-clock-continuation-development-v1:
+signed same-clock recurrence on existing QQQ/SPY M1, one20-session/three-clock
+cost-aware CPU study, not a TCN/threshold reroll. FINRA proposal is not ready:
+official Terms Restrictions(m) limits software/ML/trade prediction; no overriding
+permission retained. Original bytes preserved; other ready research continues.
+Engine stateboard compacted1683->105 lines; closed history/source catalog remains
+recoverable in Git9b4c5dc/external immutable registry, not deleted evidence.
+
+`joint-d1-direct-utility-development-v1` COMPLETE/REJECTED after explicit CPU-r2.
+Original CUDA attempt FAILED
 with hard_timeout after its exact600-second allowance. No numeric bundle,
 worker result, final fit count, phase or comparative cells were retained;
 partial fit count is UNKNOWN, not zero. Constant1024/linear512/TCN512 final
@@ -44,9 +53,9 @@ updates alone forecast648s, before preparation/optimizer/evaluation. This
 explains an infeasible bound, not a market-performance rejection. Existing
 image/runtime works. Exact evidence:
 `D:\thericher-v2\model-artifacts\research\source-discovery\joint-d1-kernel-throughput-probe-20261008-v1.json`.
-Next bounded work profiles an equivalent CUDA backend and source preparation;
-no blind refit, hidden budget refund or economic tuning. Data independently
-implements source-safe token HTTP diagnostics without requests/schedule changes.
+The equivalent native CUDA backend also measures slower; no backend/model
+selection or budget refund follows. Data token diagnostics are implemented,
+verified and published only to the head alias; Paper/web unchanged.
 No broker operation, new schedule, sealed evaluation or Paper input.
 Exact02:28:09 KST head result is collector_provider: QQQauth_rejected then local
 SPYtoken_request_not_due/zero attempt rows. Underlying auth cause is unknown.
@@ -54,6 +63,33 @@ Source review confirms head already shares one client/token; observer does NOT
 use Data's five-minute token-start guard. Do not invent a second-client fix or
 four-versus-five-minute provider explanation. Existing schedules remain owners.
 Closed objectives below retain their original evidence and times.
+
+Explicit one-shot CPU-r2 technical continuation is COMPLETE/REJECTED under
+`sha256:babcef472d59db702b8b64d90aa2dbc4f0f98d7b8f8c0e55444fff811f495165`.
+Root `D:\thericher-v2\model-artifacts\research\joint-d1-direct-utility-development-v1-cpu-r2`;
+source copy has `-frozen-source` suffix. Additional600s/combined maximum1200s,
+conservative maximum six fit starts; original partial count unknown, no refund
+or further retry. CPU numeric trajectory may differ, but every economic/model
+choice and float64 precision remains fixed. No --gpus or canonical GPU lease;
+same pinned image/2CPU/6GiB/networknone, only new attempt and registry RW.
+Bounded diagnostic phase/128-update receipts retain progress without weights
+or performance. Preparation-local1024-entry pure logarithm memo has exact
+synthetic parity:2,790 computations ->330/2,460 hits and zero entries after
+exit.44 memo/149 context+campaign parent passes; pinned CPU smoke1.62s, zero
+actual fits/rows/GPU probes. Independent Execution review supported-with-limits.
+Actual three CPU fits take61.736s; validation entered93.83s. TCN10bps NAV
+.758775/.744846 and utility-.061187/-.154353 lose all controls in both periods.
+Resultdc50bf6a.../modelef26806e... exact ALL-RO36-cell replay, zero refits/search/
+writes; independent Execution review confirms kill, no survivor/Paper input.
+1033 integrated serial passes52.67s; full10,282/22 skips/35 warnings330.99s,
+eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
+Data token-response HTTP-class/exactEGW00201 diagnostics pass462 parent tests;
+independent review supported-with-limits. Head aliase6f74905... published,
+five baked source hashes match; no task/KIS invocation/pace/schedule change.
+Publication receipt `D:\thericher-v2\model-artifacts\data\kis-head-token-diagnostic-publication-20261008-v1.json`.
+Existing head task Ready/last02:28/next_due04:24 KST October8; last task result1
+is not an outcome. Observer/head finalization overlap is observed, token POST
+ordering/contention is NOT observed. No shared token-cache remedy inferred.
 
 `new-account-paper-fill-accounting-v1` COMPLETED October8. Actual QQQ full
 BUY/SELL cumulative fills yield NEGATIVE gross realized USD sign, one owned-flat

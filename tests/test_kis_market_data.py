@@ -735,6 +735,118 @@ def test_market_data_error_preserves_legacy_arity_without_retaining_message(
     assert "synthetic-sensitive-body" not in repr(vars(error))
 
 
+def test_token_error_preserves_legacy_arity_and_redacts_optional_body() -> None:
+    error = KisPaperMarketDataError(
+        "rate_limited",
+        "synthetic-sensitive-body",
+        token_http_status_class="5xx",
+        token_upstream_code="EGW00201",
+    )
+    assert error.args == ("rate_limited", None)
+    assert str(error) == "rate_limited"
+    assert error.token_http_status_class == "5xx"
+    assert error.token_upstream_code == "EGW00201"
+    assert "synthetic-sensitive-body" not in repr(error) + repr(vars(error))
+
+
+@pytest.mark.parametrize(
+    ("reason", "diagnostic"),
+    [
+        ("auth_rejected", {"token_upstream_code": "EGW00201"}),
+        ("auth_rejected", {"token_http_status_class": "4XX"}),
+        ("auth_rejected", {"token_http_status_class": "0xx"}),
+        ("auth_rejected", {"token_http_status_class": 403}),
+        ("auth_rejected", {"token_http_status_class": True}),
+        ("auth_rejected", {"token_http_status_class": []}),
+        (
+            "rate_limited",
+            {"token_http_status_class": "5xx", "token_upstream_code": "synthetic-secret"},
+        ),
+        ("rate_limited", {"token_http_status_class": "5xx", "token_upstream_code": []}),
+        ("rate_limited", {"token_http_status_class": "5xx", "token_upstream_code": "egw00201"}),
+        ("auth_rejected", {"token_http_status_class": "4xx", "token_upstream_code": "EGW00201"}),
+        ("auth_response_invalid", {"token_http_status_class": "4xx"}),
+        ("response_invalid", {"token_http_status_class": "5xx"}),
+        (
+            "auth_response_invalid",
+            {"token_http_status_class": "2xx", "token_upstream_code": "EGW00201"},
+        ),
+        ("token_request_not_due", {"token_http_status_class": "4xx"}),
+        ("transport_failed", {"token_http_status_class": "5xx"}),
+        ("minute_response_invalid", {"token_http_status_class": "2xx"}),
+    ],
+)
+def test_token_error_rejects_nonallowlisted_or_impossible_diagnostics(
+    reason: str, diagnostic: dict[str, object]
+) -> None:
+    with pytest.raises(ValueError, match="^token failure diagnostic is invalid$"):
+        KisPaperMarketDataError(reason, **diagnostic)
+
+
+@pytest.mark.parametrize(
+    ("status", "upstream", "reason", "status_class", "code"),
+    [
+        (100, "unknown", "auth_rejected", "1xx", None),
+        (201, "unknown", "auth_rejected", "2xx", None),
+        (302, "unknown", "auth_rejected", "3xx", None),
+        (403, "synthetic-sensitive-body", "auth_rejected", "4xx", None),
+        (500, "unknown", "auth_rejected", "5xx", None),
+        (429, "unknown", "rate_limited", "4xx", None),
+        (200, "EGW00201", "rate_limited", "2xx", "EGW00201"),
+        (403, "EGW00201", "rate_limited", "4xx", "EGW00201"),
+        (500, "EGW00201", "rate_limited", "5xx", "EGW00201"),
+        (200, " egw00201 ", "rate_limited", "2xx", None),
+        (500, "egw00201", "rate_limited", "5xx", None),
+        (403, ["EGW00201"], "auth_rejected", "4xx", None),
+        (403, 201, "auth_rejected", "4xx", None),
+        (200, "unknown", "auth_response_invalid", "2xx", None),
+        (99, "unknown", "auth_rejected", None, None),
+        (600, "unknown", "auth_rejected", None, None),
+    ],
+)
+def test_token_response_projects_only_http_class_and_exact_known_code(
+    status: int, upstream: object, reason: str, status_class: str | None, code: str | None
+) -> None:
+    transport = _RecordingTransport(
+        [
+            KisMarketDataResponse.from_payload(
+                {"msg_cd": upstream, "msg1": "synthetic-sensitive-body"}, status_code=status
+            )
+        ]
+    )
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+    with pytest.raises(KisPaperMarketDataError, match=f"^{reason}$") as raised:
+        client.fetch_minute_page(KisPaperMinuteQuery(exchange="NAS", symbol="QQQ"))
+    error = raised.value
+    assert error.args == (reason,)
+    assert error.token_http_status_class == status_class
+    assert error.token_upstream_code == code
+    assert error.failure_phase is error.failure_code is None
+    assert "synthetic-sensitive-body" not in repr(error) + repr(vars(error))
+    assert [request.method for request in transport.requests] == ["POST"]
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.minute_page_attempts == 0
+
+
+@pytest.mark.parametrize("body", [b"synthetic-sensitive-body", b"[]", b"null"])
+def test_invalid_token_response_has_http_class_without_body_or_upstream_code(body: bytes) -> None:
+    transport = _RecordingTransport([KisMarketDataResponse(status_code=200, headers={}, body=body)])
+    client = KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="paper-key", app_secret="paper-secret"),
+        transport=transport,
+    )
+    with pytest.raises(KisPaperMarketDataError, match="^response_invalid$") as raised:
+        client.authenticate_token_only()
+    assert raised.value.token_http_status_class == "2xx"
+    assert raised.value.token_upstream_code is None
+    assert "synthetic-sensitive-body" not in repr(raised.value) + repr(vars(raised.value))
+    assert raised.value.__cause__ is None
+    assert raised.value.__suppress_context__ is True
+
+
 def test_market_data_error_legacy_message_cannot_leak_through_valid_diagnostics() -> None:
     error = KisPaperMarketDataError(
         "minute_response_invalid",

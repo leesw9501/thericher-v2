@@ -243,6 +243,36 @@ function Get-UniqueSafeCollectionFailureCategory {
                 } elseif ($diagnosticCount -ne 0) {
                     return "reason_unavailable"
                 }
+                $tokenProperties = @("token_http_status_class", "token_upstream_code")
+                $presentTokenProperties = @($targetProperties | Where-Object { $_ -cin $tokenProperties })
+                if ($presentTokenProperties.Count -gt 0) {
+                    if (
+                        $presentTokenProperties -cnotcontains "token_http_status_class" `
+                            -or $target.token_http_status_class -isnot [string] `
+                            -or $target.token_http_status_class -cnotin @("1xx", "2xx", "3xx", "4xx", "5xx") `
+                            -or $target.status -cnotin @("partial", "rejected")
+                    ) {
+                        return "reason_unavailable"
+                    }
+                    $expectedTargetProperties += "token_http_status_class"
+                    $hasUpstreamCode = $presentTokenProperties -ccontains "token_upstream_code"
+                    if ($hasUpstreamCode) {
+                        if ($target.token_upstream_code -isnot [string] -or $target.token_upstream_code -cne "EGW00201") {
+                            return "reason_unavailable"
+                        }
+                        $expectedTargetProperties += "token_upstream_code"
+                    }
+                    $tokenCombinationValid = switch -CaseSensitive ($target.reason) {
+                        "rate_limited" { $true }
+                        "auth_rejected" { -not $hasUpstreamCode }
+                        "auth_response_invalid" { -not $hasUpstreamCode -and $target.token_http_status_class -ceq "2xx" }
+                        "response_invalid" { -not $hasUpstreamCode -and $target.token_http_status_class -ceq "2xx" }
+                        default { $false }
+                    }
+                    if (-not $tokenCombinationValid) {
+                        return "reason_unavailable"
+                    }
+                }
                 if ((@($targetProperties | Sort-Object) -join "|") -cne (@($expectedTargetProperties | Sort-Object) -join "|")) {
                     return "reason_unavailable"
                 }
