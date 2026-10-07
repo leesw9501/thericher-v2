@@ -14,15 +14,18 @@ No KIS_LIVE_* access or provider/task/container invocation in this handoff.
 Current: parent-owned normalized standalone token/one-page probe completed:
 token HTTP2xx/code absent; same-client one QQQ/NAS GET parsed 120 nonempty rows.
 This proves that bounded path works, not the original04:24 cause or owned-head
-runtime recovery. Next: existing owned October8 06:20 KST head opportunity;
-exact offline reattachment only, no extra retry/account/order/scheduler change.
+runtime recovery. The owned06:20 terminal is now independently reattached:
+both targets retained_cache/minute_duplicate_conflict/preserved. No original
+token4xx cause, whole-session coverage or token-POST status is inferred.
+Existing owner next_due October9 00:29 KST; no foreground wait.
 Source-only input-origin audit: current inspecting Process/User/Machine scopes
 have neither Paper key supplied and no named Compose override; no mismatch
 measured. Launcher may inherit shell values, but scheduled child is unattested.
 Do not repair a hypothetical stale key or label it the actual4xx cause.
-Current goal: board-yield-curve-monthly-policy-development-v1; Data prepares
-the exact licensed Board pair reader/asof selection while owned head recovery
-remains an independent due-time fact, not a company wait.
+Current goal: kis-paper-head-retained-conflict-recovery-v1. Data owns narrow
+partial-head revision eligibility, immutable manifest attestation, explicit
+active coverage loss and bounded runtime closure. Existing due-time ownership
+does not hold Engine's independent foundation metadata preparation.
 Board reader is now frozen/focused-attested: src/thericher_v2/data/federal_reserve_h15.py;
 read_federal_reserve_h15_snapshot(root), select_h15_asof_pair(snapshot,decision_at=UTC).
 Five exact source hashes, known no-observation codes, latest same-date pair
@@ -31,8 +34,10 @@ Finite zero/negative yields supported; future values cannot mask past signals.
 Private Decimal values hidden from repr; source-safe dates/counts only.
 54 parent isolated serial passes/.18s, independent pure-join review supported-
 with-limits/no P1/P2. Source SHA2566a79c457cf1d0d3cf9311d9516b5ccf3a71debe75ec816efd4bcf1e7ceef1f84.
-Engine consumer/replay and company-boundary authority remain pending; this
-isolated input package is not completion of the company objective.
+Engine fixed24-cell consumer completed/rejected with exact ALL-RO readback;
+company-boundary authority10721passes/22skips333.82s,clean eight-worker helper.
+Source/data qualification
+and broker/Paper profit do not follow from that developmental comparison.
 Cross-day-clock helper is independently integrated/54-cell study closed/rejected;
 no data qualification or Paper promotion follows from that research result.
 Helper: src/thericher_v2/research/cross_day_clock_context.py, dedicated test.
@@ -54,37 +59,47 @@ vintage/cutoff, no whole-period future mask; 75 focused passes. No source upgrad
 
 ## Exact Head Reattachment
 
-Owner: thericher-kis-paper-intraday-head; latest inspected current pointer is
-run intraday-head-20261007T1924008869513Z (Oct 8 04:24 KST).
-UTC start 2026-10-07T19:24:00.886951Z; capture 19:24:01.817422Z;
-schedule 19:24:45.326515Z; completed 19:24:47.983317Z.
-Existing offline invocation/schedule/recovery readers validate the exact chain;
-pointer bytes unchanged, no latest scan: collector_nonzero/collector_provider,
-collection_exit_nonzero.
-QQQ/NAS/1m: rejected/auth_rejected, 0 attempt rows, token_http_status_class=4xx,
-token_upstream_code absent. SPY/AMS/1m: rejected/token_request_not_due,
-0 attempt rows, both HTTP fields absent. Original04:24 cause remains unknown;
-this exact chain remains the current owned-head comparison baseline, not the
-later successful standalone probe.
-Coverage verified/incomplete/current_session_short; causal input unavailable/
-terminal_recovery, causal attestation not_recorded. Availability/observation
-legacy_unbound; decision-time availability/provider finality not_observed.
+Owner: thericher-kis-paper-intraday-head; exact current run
+intraday-head-20261007T2120008746464Z, October8 06:20 KST.
+UTC start21:20:00.874646, capture21:20:01.823012,
+completed21:20:23.104650. Parent existing offline terminal/recovery readers
+independently match the current/terminal/schedule/capture chain.
+Both QQQ/NAS and SPY/AMS: rejected/minute_duplicate_conflict,
+origin retained_cache, conflicting retained bytes preserved. Terminal nonzero,
+schedule recovery, collection_exit_nonzero. Reported0 retained rows is not
+zero fetched pages. Source shows this comparison follows acceptance of a
+nonempty parsed page; token POST class/HTTP counts are not independently proved.
+Coverage verified/incomplete/current_session_short; causal input remains
+unavailable, decision-time availability/provider finality not_observed.
+Standalone05:50 parsed-page success is separate; original04:24 token4xx cause
+remains unknown rather than attributed to this later revision conflict.
+
 Pointer: A/execution/kis-paper-intraday-head-invocation-v1/current.json
-SHA256 0bd5167f0d55c637d8e94fce99020d370c65ab4c98ad74ea7f01c26c1edef88a.
+SHA256 b2742cfc6a7a07c744fc49d3ef7c8e22af0b02d92b345d9da98f0c897b373b25.
 Terminal: A/execution/kis-paper-intraday-head-invocation-v1/
-intraday-head-20261007T1924008869513Z/terminal.json
-SHA256 264b3eb865b2695ba08e63e49a94bea87a3944150d93a081152ae132f62de03a.
+intraday-head-20261007T2120008746464Z/terminal.json
+SHA256 3ec98d5ae71759fc86fbef4e4bef2c3b6c335e98892506ca53f3f0b3db7de515.
 Schedule: A/execution/kis-paper-intraday-head-schedule/
-intraday-head-20261007T1924008869513Z.json
-SHA256 e6f64e0b1262eb6f52f67eb2a54c0e60b28d4a91c461814ee3bb0993b0877812.
+intraday-head-20261007T2120008746464Z.json
+SHA256 42b6d1f081cbc3514fce296f6f454410fda791a87f198dfd76ced7b6975634f7.
 Capture: M/us_equities/kis_paper_private/intraday-head/v1/session-capture/
-20261007T192401817422Z-fb4f4dc65c70f9cf.json
-SHA256 fb4f4dc65c70f9cfc3daf14b308b9da1a21e0867f0cfdcf0a062bc951b282d4e.
-Coverage digest 97263fcdc2cc487395393db989eca1b70eb95b23d14642490515c25c47c12049.
-Next comparison baseline is that exact run/completion, not the superseded 02:28.
-Parent source-safe Scheduler inspection at this boundary: Ready,last04:24,installed
-next_due October8 06:20 KST. Task result1 is not provider evidence; no manual
-invocation, trigger change or foreground wait.
+20261007T212001823012Z-2b9065f8749d34b8.json
+SHA256 2b9065f8749d34b8288998b649039549e1456c383e74f1265c95f81268ab93c1.
+Coverage digest 2af1f538310ad9b823389cd05f0a4f4409247bb81bc2a47553f92388d01a3e65.
+Source-safe task snapshot06:22:20 KST: Ready,last06:20,
+owned next_due October9 00:29 KST. Exit1 is not provider/fill evidence.
+
+Data diagnosis:203 indexed snapshot pairs attest; QQQ480 exact duplicated
+minute keys/0 conflicting keys, SPY0 duplicates/conflicts. No intrinsic
+retained-byte corruption observed. Oct7 predecessor snapshots000251 QQQ and
+000252 SPY each retain360 accepted rows/3 pages, partial/minute_response_invalid,
+cursor-free head. Only predecessor quarantine predicate outcome==committed
+fails. Exact fresh conflict-set membership/candidate status was not retained,
+so those predecessors are a measured limitation, not a proved complete cause.
+Recommended recovery: preserve immutable bytes/markers/historical cursor;
+narrowly support attested partial head predecessors while retaining fresh
+collected and candidate-batch/historical exclusions. Measure a remaining
+fresh-side contradiction before broadening it. No delete/reset or extra call.
 
 ## Coverage, Cursor And Recovery
 

@@ -12,9 +12,10 @@ Compacting this projection does not delete evidence or reopen an allocation.
   Accepted terminal handoffs report canonical GPU and CPU-attempt locks absent;
   this is custody evidence, not a fresh hardware/process probe.
 - No actual frozen next GPU campaign is ready or reserved.
-- Goal6 `kis-paper-head-authentication-cause-recovery-v1` Data authentication
-  probe and Engine input-metadata preparation are CPU-only. Neither reserves
-  GPU/sealed resources or reopens a killed family.
+- Goal7 `board-yield-curve-monthly-policy-development-v1` completed/rejected24
+  cells, exact ALL-RO readback. Zero fits/GPU/sealed spend and no successor
+  allocation. Existing foundation checkpoint metadata preparation is not a
+  frozen predictive campaign or a reserved GPU appointment.
 - Execution reliability/inference retains preemption at a safe checkpoint.
   Independent Data/Execution work does not wait on closed research.
 - Existing research image remains

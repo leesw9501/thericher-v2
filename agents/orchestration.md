@@ -5,9 +5,9 @@ Current cross-lane projection only; history remains in Git/external evidence.
 
 ## Active Company Objective
 
-board-yield-curve-monthly-policy-development-v1: one fixed, costed monthly
-macro exposure policy. New Board-direct input is acquired and independently
-raw->canonical reattested; no fit/result/model/GPU allocation yet.
+kis-paper-head-retained-conflict-recovery-v1: recover useful head observations
+with narrow immutable-attested revision handling and explicit coverage loss.
+Prior macro24-cell result/ALL-RO replay/independent kill/full authority complete.
 Prior normalized Paper token/page capability completed; original04:24 root
 and owned-head runtime remain unknown, not a company wait or permission hold.
 
@@ -15,27 +15,29 @@ and owned-head runtime remain unknown, not a company wait or permission hold.
 
 | Resource | Owner | Current dispatch fact |
 | --- | --- | --- |
-| Macro input reader | Data | Ready hash-bound Board pair loader/asof selector, shared-date/known-missing/staleness/causal tests. No new download needed. Source-only owned-head credential-origin audit is independent; no extra provider call. |
-| Fixed policy / CPU | Engine Research | Ready one monthly slope-sign basket/cash rule, zero fits/GPU/tuning,24 comparative cells and fixed10bps two-period NAV/utility kill. Exact temporal-join contract before values. |
+| Head recovery | Data | Narrow partial-head predecessor/immutable eligibility/coverage-loss implementation ready for dispatch after boundary. Actual fresh-side predicate unknown, not speculatively widened; preserve all bytes/history and owned next_due. |
+| Fixed policy / CPU | Engine Research | Frozen9702c83e.../resultd543bdaa... complete/rejected24 cells, CPU7.13s/ALL-RO7.09s exact.87 focused cases/448 integrated serial passes2 skips; no fit/GPU/tuning. Foundation source/metadata-only readiness audit is owned, no allocation. |
+| Token materialization | Invoked Execution | Selective Tiingo mmap reader complete,41 parent tests/Ruff and independent noP1/P2. Copies/decodes only the exact token value; OS page mapping/search is not a zero-physical-read guarantee. No real env/provider access in this repair. |
 | GPU / sealed custody | Research Steward | No eligible frozen GPU successor or active worker. Keep originalCUDA600s/unknown partial and CPU-r2 accounted; no utilization-only job. |
-| Owned head | Existing scheduler | Ready,last04:24,next06:20 KST October8 at latest safe check. Standalone05:50 token2xx/oneGET120rows is not a head terminal or complete-session proof. Do not manually invoke or foreground-wait. |
+| Owned head | Existing scheduler / Data | Exact06:20 terminal completed06:20:23.104650 KST: both retained_cache duplicate conflicts/preserved, capture/coverage verified but incomplete. Existing next_dueOct9 00:29 KST. Data diagnosis203 snapshots attest/no intrinsic conflict; partial-head predecessor outcome predicate blocks revision quarantine. Exact fresh conflict set/status not retained; no arbitrary cache deletion or auth inference. |
 | Existing Paper | Execution scheduler | SPY nextOctober8 23:50; corrected-account shared10-percent basis/known SPY custody/QQQ-flat retained. No substitute order/old-account adoption; fees/settled/net remain unknown. |
-| Execution parity | Invoked Execution | Ready existing shared-NAV/cost/schedule attestation only; no strategy choice/new broker call. |
-| Independent evaluation | Temporary Validation | Source proposal supported-with-limits. Invoke actual frozen-result review after bundle; no tuning or pre-result promotion. |
+| Execution parity | Invoked Execution | Shared-NAV/cost/schedule source attestation supported-with-limits; caller schedule/availability/thirds tests remain required. No strategy choice/new broker call. |
+| Independent evaluation | Temporary Validation | Macro exact pins/registry/24cells/original-precision kill independently supported-with-limits. Head recovery source/result review invoked when implementation/runtime handback is ready. No tuning or promotion. |
 | Console | Existing web/observer | http://127.0.0.1:8787 loopback; Paper/web aliases unchanged. Historical accounting and current account facts stay separate. |
-| Git / tests | Orchestrator | Sole owner.68 serial/.57s;full10,560passes/22skips/35warnings333.61s,eightworkers/10,582collected/clean helper. Ruff/default+research+accounting sample Compose pass; no required session remains. |
+| Git / tests | Orchestrator | Sole owner.448 serial passes/2 expected skips11.02s;full10,721passes/22skips/35warnings333.82s,8workers/10,743 collected/clean helper. Ruff/three sample Compose pass; no required session active. |
 
 ## Bottleneck And Reversible Improvement
 
-Research lacked economically distinct input, not GPU permission. Board direct
-H15 is now ready without using FRED's development-restricted service files.
-Use one cheap falsifiable macro policy before speculative model/parameter
-search. Missing PIT evidence narrows this developmental claim, not lane authority.
+The macro policy did not beat its predeclared controls; close this family,
+not rescue it. The material current Data bottleneck is cross-observation
+head revision handling, not proven credential failure or GPU permission.
+Keep original bytes and historical cursor while recovering the narrow head
+path. Foundation readiness preparation proceeds independently.
 
-Current improvement: same-client capability probe preserves normal at-most1s
-worker pacing instead of discarding its live token before the only GET.
-External cooldown/other-owner races yield; no foreground orchestration sleep,
-new recurring worker, platform, gate or schedule change.
+Current improvement: reviewed selective token materialization preserves the
+existing token-only contract without copying unrelated secret values. The
+macro input package is independently accepted while Engine and owned-head
+reattachment proceed in parallel; no new workflow, gate or schedule change.
 
 Evidence: RUNBOOK/agents/data.md exact Board and capability pointers.
 Current Claude recovery and macro-join attempts are review_unavailable/

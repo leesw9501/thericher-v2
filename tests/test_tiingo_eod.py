@@ -484,6 +484,163 @@ def test_snapshot_rejects_early_retrieval_overwrite_and_r2_overlap(tmp_path: Pat
     assert result.snapshot_dir == destination
 
 
+@pytest.fixture
+def guarded_token_reader(tmp_path, monkeypatch):
+    def install(payload):
+        path = tmp_path / "token.env"
+        path.write_bytes(payload)
+        keys, values, offset = set(), set(), 0
+        for line in payload.splitlines(keepends=True):
+            body = line.rstrip(b"\r\n")
+            separator = body.find(b"=")
+            if separator >= 0:
+                keys.add((offset, offset + separator))
+                if body[:separator] == b"TIINGO_API_TOKEN":
+                    values.add((offset + separator + 1, offset + len(body)))
+            offset += len(line)
+        slices, decodes, closed = [], [], []
+
+        class KeyOnlyFile:
+            def __init__(self, handle):
+                self.handle = handle
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                self.handle.close()
+
+            def fileno(self):
+                return self.handle.fileno()
+
+            def __iter__(self):
+                raise AssertionError("line iteration must not materialize other values")
+
+            def read(self, *_args):
+                raise AssertionError("file reads must not materialize other values")
+
+        original_open = Path.open
+
+        def guarded_open(actual_path, *args, **kwargs):
+            assert actual_path == path and args == ("rb",) and kwargs == {"buffering": 0}
+            return KeyOnlyFile(original_open(actual_path, *args, **kwargs))
+
+        class GuardedMap:
+            def __init__(self, _fileno, length, *, access):
+                assert length == 0 and access == tiingo_eod.mmap.ACCESS_READ
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                closed.append(True)
+
+            def __len__(self):
+                return len(payload)
+
+            def find(self, needle, start=0, end=None):
+                assert needle in {b"\r", b"\n", b"="}
+                return payload.find(needle, start, len(payload) if end is None else end)
+
+            def __getitem__(self, span):
+                assert isinstance(span, slice) and span.step is None
+                bounds = span.start, span.stop
+                assert bounds in keys | values, "slice crossed into an unselected value"
+                slices.append(bounds)
+
+                class CheckedBytes(bytes):
+                    def decode(self, encoding="utf-8", errors="strict"):
+                        assert bounds in values and encoding == "utf-8" and errors == "strict"
+                        decodes.append(bounds)
+                        return super().decode(encoding, errors)
+
+                return CheckedBytes(payload[span])
+
+        monkeypatch.setattr(Path, "open", guarded_open)
+        monkeypatch.setattr(tiingo_eod.mmap, "mmap", GuardedMap)
+        return path, values, slices, decodes, closed
+
+    return install
+
+
+@pytest.mark.parametrize("newline", (b"\n", b"\r\n", b"\r"))
+@pytest.mark.parametrize("final_newline", (False, True))
+def test_token_reader_copies_and_decodes_only_selected_value(
+    guarded_token_reader, newline, final_newline
+):
+    payload = newline.join(
+        (
+            b"KIS_LIVE_APP_KEY=forbidden-live-before\xff",
+            b"TIINGO_API_TOKE=forbidden-short-prefix",
+            b"OTHER=TIINGO_API_TOKEN=decoy",
+            b"# TIINGO_API_TOKEN=comment",
+            b"TIINGO_API_TOKEN=\t token-for-test \t",
+            b"KIS_PAPER_APP_SECRET=forbidden-paper-after\xfe",
+            b"KIS_LIVE_APP_SECRET=forbidden-live-after\xff",
+        )
+    ) + (newline if final_newline else b"")
+    path, values, slices, decodes, closed = guarded_token_reader(payload)
+    assert tiingo_eod.read_tiingo_api_token(path) == "token-for-test"
+    assert set(decodes) == values and len(decodes) == 1
+    assert all(bounds in slices for bounds in decodes) and closed == [True]
+
+
+@pytest.mark.parametrize(
+    ("payload", "expected"),
+    (
+        (b"\r\n\n\rTIINGO_API_TOKEN=x=y==z\r\n", "x=y==z"),
+        (b"TIINGO_API_TOKEN='literal'", "'literal'"),
+        (b"TIINGO_API_TOKEN=\xce\xb1", "\u03b1"),
+        (
+            b"export TIINGO_API_TOKEN=wrong\n TIINGO_API_TOKEN=wrong\r"
+            b"TIINGO_API_TOKEN_EXTRA=wrong\nTIINGO_API_TOKEN =wrong\r\n"
+            b"TIINGO_API_TOKEN=correct",
+            "correct",
+        ),
+    ),
+)
+def test_token_reader_preserves_exact_key_and_literal_value_grammar(
+    guarded_token_reader, payload, expected
+):
+    path, values, _, decodes, closed = guarded_token_reader(payload)
+    assert tiingo_eod.read_tiingo_api_token(path) == expected
+    assert set(decodes) == values and closed == [True]
+
+
+@pytest.mark.parametrize(
+    ("payload", "decoded_count"),
+    (
+        (b"", 0),
+        (b"TIINGO_API_TOKEN\r# TIINGO_API_TOKEN=comment\n", 0),
+        (b"KIS_LIVE_APP_KEY=\xff\nTIINGO_API_TOKE=secret\rOTHER=decoy", 0),
+        (b"TIINGO_API_TOKEN=\r\n", 1),
+        (b"TIINGO_API_TOKEN= \t\r", 1),
+        (b"TIINGO_API_TOKEN=first\nTIINGO_API_TOKEN=second", 1),
+        (b"TIINGO_API_TOKEN=first\rKIS_LIVE_APP_KEY=\xff\rTIINGO_API_TOKEN=", 1),
+        (b"TIINGO_API_TOKEN=\xff", 1),
+    ),
+)
+def test_token_reader_masks_missing_empty_duplicate_and_invalid_selected_value(
+    guarded_token_reader, payload, decoded_count
+):
+    path, _, _, decodes, closed = guarded_token_reader(payload)
+    with pytest.raises(TiingoEodAcquisitionError, match="^Tiingo token is unavailable$") as error:
+        tiingo_eod.read_tiingo_api_token(path)
+    assert len(decodes) == decoded_count
+    if error.value.__context__ is not None:
+        assert error.value.__suppress_context__
+    assert closed == ([True] if payload else [])
+
+
+@pytest.mark.parametrize("empty_file", (False, True))
+def test_token_reader_missing_or_empty_real_synthetic_file(tmp_path, empty_file):
+    path = tmp_path / "token.env"
+    if empty_file:
+        path.write_bytes(b"")
+    with pytest.raises(TiingoEodAcquisitionError, match="^Tiingo token is unavailable$"):
+        tiingo_eod.read_tiingo_api_token(path)
+
+
 def test_fetch_reads_only_the_approved_token_and_persists_no_secret(tmp_path: Path) -> None:
     env_path = tmp_path / ".env"
     env_path.write_text("KIS_PAPER_APP_SECRET=never-read\nTIINGO_API_TOKEN=token-for-test\n")

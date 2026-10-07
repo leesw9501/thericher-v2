@@ -1,8 +1,12 @@
 # Runbook
 
-## Current Board Macro Policy Preparation
+## Current Head Recovery And Closed Macro Policy
 
-NEXT_CODEX_GOAL.md owns board-yield-curve-monthly-policy-development-v1.
+NEXT_CODEX_GOAL.md owns kis-paper-head-retained-conflict-recovery-v1.
+Do not delete/reset the head cache or manually invoke a Windows task. Existing
+head owner nextOct9 00:29 KST; narrow source/runtime recovery is owned by Data.
+Exact06:20 chain and measured partial-head predicate facts are in agents/data.md.
+Original source bytes and historical cursors remain unchanged at this boundary.
 Exact source: D:\market_data\us_equities\federal_reserve_h15\snapshot=20261007T204212Z.
 Manifest SHA2566b2c62423470f12c17d22a634d4d5018ed7f6682d5a5875bc08c6ffd9e49e393;
 source-attestation SHA256d7f6ea428eb2d9a834cd39d2969dd435a678d3e45c4838f21268d1eb68697fd3;
@@ -14,8 +18,22 @@ has its own immutable source-attestation. No permission latch or new download.
 Rights: https://www.federalreserve.gov/disclaimer.htm, cite Board direct source.
 Do not substitute/relabel existing FRED/ALFRED files; current FRED legal terms
 restrict development use. This snapshot is revised/non-PIT, not publication proof.
-Freeze next one-rule contract/runtime before ETF outcomes. No actual macro study
-has run yet; use the current goal's synthetic/asof/ledger tests before dispatch.
+Fixed monthly macro study COMPLETE/REJECTED24 cells. Exact root:
+D:\thericher-v2\model-artifacts\research\board-yield-curve-monthly-policy-development-v1.
+Contract sha256:9702c83e896d9d837514448c25536a32ca16df897b19cd28245a507aa36aaa91;
+result sha256:d543bdaa05c27efe12e578f1ddba2a7c80ff0efb3b432e0667d076dd8aae97a7.
+622 hash-matching source files in the sibling -frozen-source directory.
+CPU evaluation7.13s/ALL-RO readback7.09s exact24 cells,0fits/searches/writes/GPU.
+Pinned image d6b43213.../Python3.12.14,2CPU/2GiB/networknone.
+No run redispatch, result-informed threshold/lag rescue, model/Paper promotion.
+Only --verify with BOTH exact pins, frozen source/scripts, exact Board/Tiingo
+snapshot mounts and attempt/receipt/registry ALL-RO may reproduce this result.
+Study/script: board_yield_curve_monthly_policy.py under research/scripts;
+--artifact-root /artifacts --market-data-root /market.
+87 focused cases/448 changed-path serial passes2 expected skips11.02s;
+full10,721passes/22skips/35warnings333.82s,eightworkers/10,743 collected,
+clean helper/exit0. Ruff/three sample Compose pass. Independent exact-arithmetic
+kill and signed-registry review supported-with-limits/no discrepancy.
 
 ## Bounded Paper Authentication Capability
 
@@ -32,7 +50,10 @@ sample env file if Compose is used. Never print credentials/command env/bodies.
 No raw row/token retention, account/order request, cache/cursor or schedule action.
 Do not rerun this already-answered capability merely to reproduce success.
 Dispatch counts are not wire-capture evidence. Original04:24 root cause and
-owned head runtime recovery remain unknown until exact scheduler receipts exist.
+owned head runtime recovery are not proved by that standalone probe. The later
+owned06:20 exact chain now records retained_cache duplicate conflicts/preserved,
+not another inferred auth4xx. Data partial-head revision recovery is the next
+material package; see agents/data.md exact pointers. Next ownerOct9 00:29 KST.
 Official sample README's once-per-minute token guidance is not the local300s
 guard, token lifetime, or proof of observer/head POST ordering or EGW00133 meaning:
 https://github.com/koreainvestment/open-trading-api.

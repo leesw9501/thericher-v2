@@ -2,120 +2,110 @@
 
 ## Objective
 
-Complete board-yield-curve-monthly-policy-development-v1: run one costed,
-non-promoting monthly portfolio experiment using newly acquired Federal
-Reserve Board direct 2Y/10Y information, rather than another architecture
-reroll on the closed price-only families.
+Complete kis-paper-head-retained-conflict-recovery-v1: recover useful owned
+QQQ/NAS and SPY/AMS current-head collection without deleting immutable inputs,
+silently selecting prices, resetting historical cursors, or treating a partial
+observation as a complete session.
 
 ## Starting Evidence
 
-KIS normalized standalone path succeeded at 2026-10-08 05:50 KST: one token
-dispatch/HTTP2xx, same-client one QQQ/NAS M1 GET, 120 parsed rows.
-Exact receipt SHA256 c9b1102cb8244a859739f08925460a5af48cec4e7780f008ba1fcee223f0c403:
-D:\thericher-v2\model-artifacts\data\kis-paper-head-authentication-cause-recovery-v1\kis-paper-auth-capability-probe-v1\auth-page-20261007T205028931854Z\receipt.json.
-Original04:24 cause and owned-head recovery remain unknown, not inferred.
-Dispatch counts are not wire-capture proof. Existing head next_due06:20 KST
-October8 stays owned; no foreground wait, substitute run or schedule change.
+Owned run intraday-head-20261007T2120008746464Z completed October8
+06:20:23.104650 KST. Existing offline readers independently validate its exact
+terminal/schedule/capture binding: both targets rejected/minute_duplicate_conflict,
+retained_cache/preserved; coverage incomplete/current_session_short.
+Exact pointers/hashes are in agents/data.md. Next installed owner opportunity:
+October9 00:29 KST, not a foreground wait.
 
-Fresh Board direct snapshot:
-D:\market_data\us_equities\federal_reserve_h15\snapshot=20261007T204212Z.
-Manifest6b2c6242..., source-attestationd7f6ea42..., raw response23331130....
-2Y12584/10Y16176 valid dates through2026-10-06;12584 common dates.
-Raw->canonical reconstruction and exact independently re-retrieved response
-hash match. The original no-raw-retention manifest remains unchanged; the
-separate source-attestation records later retention, not a permission latch.
-Board public-domain/citation terms apply; do not relabel FRED/ALFRED bytes.
-FRED development-use restriction leaves that source off this research path.
+203 indexed snapshot pairs attest; retained QQQ480 exact duplicate minute
+keys/zero conflicting keys, SPYzero duplicates/conflicts. No intrinsic
+retained corruption observed. Known Oct7 cursor-free head predecessors retain
+360 rows/three pages, partial/minute_response_invalid, and fail the existing
+outcome==committed quarantine predicate. Their exact membership in the fresh
+conflict set and the fresh candidate status were not retained; do not claim
+a complete root cause or recover missing evidence retroactively.
 
-## Frozen Research Package
+Prior company macro policy complete/rejected24 cells:
+D:\thericher-v2\model-artifacts\research\board-yield-curve-monthly-policy-development-v1.
+Contract9702c83e.../resultd543bdaa..., exact ALL-RO readback, no fit/GPU/promotion.
+Positive hypothetical growth did not beat predeclared passive/utility controls;
+no threshold/lag/model rescue.
 
-Before reading ETF outcomes, freeze source/manifest/code/calendar/runtime
-pins, the fixed portfolio contract, family linkage and bounded one-pass
-compute allowance in the existing campaign registry. Use current adjusted
-Tiingo SPY/QQQ/IWM snapshot already retained and exact Board source above.
-No credentials, network, broker/private Execution state or sealed holdout
-inside the research worker.
+## Bounded Data Recovery
 
-Decision: previous scheduled NYSE CLOSE before each month's first scheduled
-NYSE OPEN. Rate anchor=decision date minus30 calendar days. Select the latest
-same-observation-date 2Y/10Y pair on or before the anchor, no more than7 days
-older. Known source no-observation codes are not observations. Select the
-latest shared observation date before validating its two finite values; do
-not fall back to an older pair after a selected invalid value. No individual
-maturity carry, forward fill, future coverage mask or
-replacement of an unavailable scheduled opportunity. This lag is an explicit
-development assumption, not proof of first publication or revision finality.
+Use the existing collector/index/marker path, not a new worker or report family.
+First add focused synthetic reproductions. Allow only immutable-attested,
+retained, cursor-free partial head predecessors with the exact measured
+minute_response_invalid reason, preserving historical/cursor-backed and
+candidate-batch-conflict exclusions. Keep the fresh collected requirement
+initially and require every conflicting predecessor to qualify.
 
-Policy: exposure1 to the fixed equal-weight SPY/QQQ/IWM basket iff
-10Y-2Y > 0; otherwise exposure0/cash. Exactly one rule, zero predictive fits,
-no parameter/seed/lag/threshold/model selection and no GPU allocation.
-Monthly rebalance, carry between decisions, one shared cash/NAV portfolio.
-Use the existing three_asset_nav actual-notional post-fee ledger and exact
-weight/cash conservation. Fractional revised adjusted marks are an analytical
-proxy, not broker-fill or dividend/settlement parity.
+Attestation must bind eligibility fields to the immutable manifest's
+backfill.index_chunk: collection_scope, both cursors, outcome, reason and
+conflict origin. Index-only edits cannot confer revision eligibility.
+Preserve all original bytes and marker-before-replacement publication,
+including restart/orphan exclusion. Never graft old-only rows into a new
+observation. Count distinct old keys absent from both the replacement and
+surviving active chunks; byte retention is not unchanged active coverage.
 
-TRAIN2002-2012 only freezes the scheduled-session-weighted target activity
-fraction for a constant basket/cash comparator. This matches target activity,
-not beta, realized inventory, volatility or risk. Comparative periods:
-2013-2019 and2020 throughJuly2026, NAV1 per period with initial/final costs.
-Controls: cash, monthly equal-weight passive basket, and fixed TRAIN-activity
-matched basket/cash. Same frozen actions across2.5/5/10bps per-side sensitivity.
-Fixed utility=252*(mean daily log NAV return -5*population variance).
-Exactly24 cells=4policies x3costs x2periods. Judge at original Decimal50
-precision with fixed1e-10 improvement tolerance, not rounded display values.
-Strongest kill: at10bps both NAV growth and utility must strictly beat every
-control in BOTH comparative periods. Missing TRAIN input is not a reduced
-activity denominator; zero TRAIN activity is valid and distinct from missing
-support. Missing required input/marks remains
-scoped unavailable, never favorable outcome censoring. No rescue or second
-policy after results; retain a rejected/unsupported result and move on.
+On a remaining rejection, retain only source-safe candidate status/reason,
+accepted row/page counts, conflict chunk/distinct-key counts, failed predicate
+categories and prospective coverage-loss count through the smallest existing
+owner diagnostic. Missing legacy facts remain unknown. Do not widen the fresh
+predicate speculatively; measure the actual contradiction first. Cross-vintage
+disagreement is compatible with revision, not proof that it is legitimate.
+No new approval gate, rate/token change, cursor reset or session-quality claim.
 
-Use a finite CPU120-second worker budget,2CPU/2GiB/networknone; preparation,
-replay and independent ALL-RO readback must fit their separately stated
-budgets. Smoke with synthetic data first. Freeze exact runtime before values,
-preserve immutable failure/recovery, register the original result and perform
-zero-fit/search/write readback. If120s is demonstrably infeasible before values,
-fix the engineering bound before freeze rather than conceal an extra attempt.
-The prior Engstrom-Sharpe near-term-forward-spread paper is inspiration only:
-these2Y/10Y inputs do not replicate it or establish tradable stock alpha.
-Revised/seen/non-PIT input, surviving correlated ETF universe and zero cash
-interest remain explicit. No independent performance, Paper/model promotion.
+After focused review and affected-path verification, publish only the head
+runtime with exact baked/host source pins. Preserve Paper/web aliases,
+private account volume and shared10-percent virtual basis. Confirm no head
+owner is active, then use at most one bounded serial owned collector attempt
+through the existing approved loader/client/cache path: same reusable client,
+normal documented request/token gates, at most eight pages per target,
+no internal retry campaign. A cooldown/other-owner race yields owned due state.
+Never print keys, raw market rows/bodies, prices or private broker state.
+
+Validate the exact resulting immutable receipt/capture/recovery/coverage
+chain. A successful partial observation may advance retained data but cannot
+be labeled a complete session, causal availability, provider finality, model
+qualification or Paper PnL. If a measured fresh-side technical contradiction
+remains, repair that exact reversible fault and test it rather than wait for
+operator permission or infer success from task exit. No manual invocation of
+a Windows task or replacement schedule is needed.
 
 ## Parallel Ownership
 
-Data: implement/reuse the smallest hash-bound Board pair reader and pure asof
-selection with future-mutation, stale/missing, duplicate and finite-value tests.
-Retained data stays on D:; no new acquisition needed.
-Engine Research: fixed campaign, costed portfolio evaluation, exact result and
-source-safe rejection/continuation handoff.
-Execution: reattest shared-NAV/cost/target semantics without selecting a policy;
-preserve corrected-account QQQ-flat/SPY custody and original10-percent basis.
-Validation: independent frozen-result/kill review only after the bundle exists.
-Orchestrator: sole Git/publication/integration owner.
+Data owns the collector repair, immutable attestation and scoped actual result.
+Execution/Infra independently challenges revision eligibility, removed active
+coverage, crash ordering and affected-owner image publication; no broker call.
+Engine Research continues the already-assigned source/metadata-only audit of
+retained public foundation checkpoints. Identify exact official dated hash,
+license, corpus disclosed/not_disclosed, runtime, prior synthetic/market
+study history and one bounded developmental benchmark if genuinely ready.
+No numeric evaluation, fit, model loading or GPU reservation before its own
+frozen campaign. This is preparation, not another durable queue or goal.
+Validation independently reattests the recovered exact result; no strategy
+selection. Orchestrator owns integration, Git and publication.
 
-Data may inspect the existing owned head's exact offline chain when available;
-token/path success cannot become whole-session coverage or head runtime proof.
-A source-only credential-origin audit may identify a measured stale-injection
-fault; use only the approved two-key whitelist and categorical comparisons.
-Any actual head repair needs its reproducing test and verified affected-owner
-publication; no speculative credential reset, extra token call, order or timer.
-Every independent ready research package continues during an owned due time.
+Claude recovery challenge failed cli_nonzero/review_unavailable, not agreement:
+D:\thericher-v2\model-artifacts\research\source-discovery\claude-kis-head-partial-revision-recovery-20261008-v1.json.
+Independent review supplied two concrete corrections: immutable eligibility
+binding and explicit active coverage loss. No CLI or external due-time wait
+holds ready work.
 
 ## Completion And Continuation
 
-Completion evidence: exact Board source reader, frozen one-rule contract,
-synthetic tests, actual bounded costed result (or precise technical/input
-failure), immutable registry linkage, zero-fit readback and independent kill
-review. Ask Claude for the material temporal-join challenge; categorical CLI
-failure is not agreement and never holds independent work.
+Complete with tested/reviewed narrow recovery, original-byte preservation and
+restart checks, verified affected-owner publication, exact bounded runtime
+outcome and truthful coverage/remaining-fault classification. A source-only
+change or task exit is not runtime closure. Keep another ready lane moving.
 
 Run AGENTS.md changed-path serial/eight-worker clean-root authority, Ruff,
-sample default+research Compose and any affected overlay. Commit/push, refresh
-current stateboards/HANDOFF/RUNBOOK, replace this file with exactly one material
-next company objective and continue without routine scheduling approval.
+sample default/research/accounting Compose. Commit/push, refresh stateboards,
+HANDOFF/RUNBOOK, replace this file with exactly one material next company
+objective and continue.
 
 Run C:\Users\Public\Documents\thericher-v2\scripts\start_next_codex_task.ps1.
-Follow AGENTS.md and active stateboards. No KIS_LIVE_*, real money, paid source,
-unclear rights, public exposure or major runtime replacement without the
-reserved operator decision. Data D:\market_data; generated artifacts
-D:\thericher-v2\model-artifacts.
+Keep market data D:\market_data and generated artifacts
+D:\thericher-v2\model-artifacts. Never read KIS_LIVE_* or enable real money,
+paid commitments, unclear rights, public exposure or major runtime replacement
+without the reserved operator decision.

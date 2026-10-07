@@ -8,17 +8,34 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
-Active company objective: board-yield-curve-monthly-policy-development-v1.
+Active company objective: kis-paper-head-retained-conflict-recovery-v1.
+Engine independent package: existing foundation checkpoint eligibility audit.
 Ready distinct input: Board direct H15 snapshot20261007T204212Z under
 D:\market_data\us_equities\federal_reserve_h15;2Y12584/10Y16176 valid dates,
 12584 common through2026-10-06. Exact re-retrieved raw/hash-to-canonical parent
 readback passes. Manifest6b2c6242.../attestationd7f6ea42...; full pins in RUNBOOK.
 FRED/ALFRED-derived support files are excluded under development-use terms;
 Board-direct public-domain/citation source is separate, never relabeled bytes.
-Prepare one fixed monthly10Y-2Y>0 basket/cash rule with30-calendar-day lag and
-7-day stale bound, both explicit non-PIT assumptions. Zero predictive fits/
-GPU/selection; shared costed portfolio versus cash/passive/TRAIN target-activity
-control. Fixed10bps two-period NAV/utility kill; no results observed yet.
+The fixed monthly10Y-2Y>0 basket/cash rule is COMPLETE/REJECTED,24 cells.
+Lag30/maxage7 remain explicit revised/non-PIT assumptions, not release proof.
+TRAIN2769/2769 sessions supported; both comparison periods have no missing
+macro/marks or invalid marks. At10bps candidate net growth/utility is
+1.570251/.035040 (2013-2019), .737044/-.118379 (2020-July2026).
+Passive monthly basket is1.658464/.038724 and1.557862/-.111453; TRAIN-activity
+control is1.449062/.044574 and1.376767/-.077505. Rounded display only;
+original Decimal50 fixed1e-10 two-period kill rejects. Positive hypothetical
+growth is not incremental edge, independent performance or Paper profit.
+Root: D:\thericher-v2\model-artifacts\research\board-yield-curve-monthly-policy-development-v1.
+Contract sha256:9702c83e896d9d837514448c25536a32ca16df897b19cd28245a507aa36aaa91.
+Result sha256:d543bdaa05c27efe12e578f1ddba2a7c80ff0efb3b432e0667d076dd8aae97a7.
+622-file hash-matching frozen-source sibling; pinned d6 CPU evaluation7.13s,
+ALL-RO readback7.09s exact24 cells, zero fits/searches/writes/GPU/sealed spend.
+No threshold/lag/ETF/model rescue or promotion.87 focused synthetic cases;
+parent changed-path authority448passes/2 expected skips11.02s;
+full10,721passes/22skips333.82s,eightworkers/10,743 collected/clean helper.
+Ruff/three sample Compose pass; independent exact kill/registry review agrees.
+Next independent ready preparation: source/metadata-only existing foundation
+checkpoint eligibility audit, not another architecture reroll or allocation.
 Economic source is inspiration, not near-term-forward-spread replication or
 evidence that recession prediction yields tradable stock profits.
 Claude join challenge: review_unavailable/cli_nonzero, not substantive verdict:

@@ -7,6 +7,7 @@ import gzip
 import hashlib
 import io
 import json
+import mmap
 import os
 import re
 import shutil
@@ -65,7 +66,6 @@ TIINGO_EOD_ENDPOINT = "https://api.tiingo.com/tiingo/daily/{symbol}/prices"
 TIINGO_SOURCE_ID_PREFIX = "tiingo-standard-eod"
 MINIMUM_RETRIEVAL_LAG_DAYS = 7
 FIXED_R2_CAMPAIGN_SESSION_COUNT = 896
-_ENV_TOKEN_RE = re.compile(r"TIINGO_API_TOKEN=(.*)\Z")
 _TIINGO_RAW_D1_COLUMNS = (
     "symbol",
     "date",
@@ -168,23 +168,41 @@ def default_tiingo_raw_d1_snapshot_dir(derivation_date: date) -> Path:
 
 
 def read_tiingo_api_token(env_path: Path) -> str:
-    """Return only the approved key from an env file without parsing other keys."""
+    """Copy/decode only the exact approved assignment's value.
+
+    Read-only mmap can map/search OS pages containing other values; this is
+    Python materialization isolation, not a guarantee of zero physical access.
+    """
 
     found: str | None = None
+    token_key = b"TIINGO_API_TOKEN"
     try:
-        with Path(env_path).open("r", encoding="utf-8", newline="") as handle:
-            for line in handle:
-                match = _ENV_TOKEN_RE.fullmatch(line.rstrip("\r\n"))
-                if match is None:
-                    continue
-                if found is not None:
-                    raise TiingoEodAcquisitionError("Tiingo token is unavailable")
-                candidate = match.group(1).strip()
-                if not candidate:
-                    raise TiingoEodAcquisitionError("Tiingo token is unavailable")
-                found = candidate
-    except OSError as exc:
-        raise TiingoEodAcquisitionError("Tiingo token is unavailable") from exc
+        with Path(env_path).open("rb", buffering=0) as handle:
+            if os.fstat(handle.fileno()).st_size:
+                with mmap.mmap(handle.fileno(), 0, access=mmap.ACCESS_READ) as mapped:
+                    size, start = len(mapped), 0
+                    cr, lf = mapped.find(b"\r"), mapped.find(b"\n")
+                    while start < size:
+                        end = min(cr if cr >= 0 else size, lf if lf >= 0 else size)
+                        separator = mapped.find(b"=", start, end)
+                        # Compare only the key span, never a prefix extending into a value.
+                        if (
+                            separator - start == len(token_key)
+                            and mapped[start:separator] == token_key
+                        ):
+                            if found is not None:
+                                raise TiingoEodAcquisitionError("Tiingo token is unavailable")
+                            candidate = mapped[separator + 1 : end].decode("utf-8").strip()
+                            if not candidate:
+                                raise TiingoEodAcquisitionError("Tiingo token is unavailable")
+                            found = candidate
+                        start = end + 1
+                        if cr == end:
+                            cr = mapped.find(b"\r", start)
+                        if lf == end:
+                            lf = mapped.find(b"\n", start)
+    except (OSError, ValueError):
+        raise TiingoEodAcquisitionError("Tiingo token is unavailable") from None
     if found is None:
         raise TiingoEodAcquisitionError("Tiingo token is unavailable")
     return found
