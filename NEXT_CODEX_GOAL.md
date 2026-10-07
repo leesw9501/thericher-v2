@@ -3,11 +3,26 @@
 ## Objective
 
 Complete `qqq-restart-safe-unit-paper-v1` (OPEN): obtain one bounded,
-restart-safe QQQ/NASD unit Paper BUY -> SELL cycle using the existing shared
-initial10-percent budget, with exact intents, submissions, fills and owned-flat
+restart-safe QQQ/NASD unit Paper BUY -> SELL cycle under the initial10-percent
+aggregate allocation instruction, with exact intents, submissions, fills and owned-flat
 position reconciliation. This is execution readiness, not profitability or live.
+The old numerical basis remains old-account-bound; never inherit it on replacement.
 
-## Owned Runtime Opportunity
+## Current Account Correction
+
+October7 operator corrected previous mock-account values still in .env.
+Fresh discovery22:00:13 KST succeeds/zero positions/zero opens. Offline RO
+canonical binding check confirms a DIFFERENT account, unchanged old bytes.
+October6's read/rejections were old-config evidence, not new-account entitlement.
+Next Execution package isolates new-account custody and provisional10-percent
+basis under standing authority. Preserve old QQQ requests/unknown SPY/allocation;
+do not transfer them or route their recovery to the new account. Any new cycle
+and opportunity must be explicitly account-scoped; old fixed cycle is INCOMPLETE.
+This check creates no root/budget/order/schedule or migration. Exact current
+receipt/hash is in agents/execution.md. Reads do not prove orders or complete
+the company objective; independent Data/Research continue.
+
+## Historical Old-Account Runtime Opportunity
 
 - New operator-directed foreground opportunity: fixed cycle
   `qqq-unit-20261003-v1`, fresh explicit tag `reapplied-account-20261006-v1`.
@@ -52,13 +67,13 @@ position reconciliation. This is execution readiness, not profitability or live.
 
 ## Ready Parallel Packages
 
-October6 refreshed Paper configuration is valid/mode off.22:26:57 KST direct
+October6 historical Paper configuration is valid/mode off.22:26:57 KST direct
 read-only discovery succeeds: complete account snapshot/two positions/zero
 opens, one auth/five GETs. Canonical RO binding matches retained account custody;
-no migration/reset/new basis. This does not prove order entitlement or a fill.
-Both foreground opportunities are consumed. Next Execution work is account-
-entitlement clarification with KIS VOC, not replay of either closed tag or
-another request to confirm the already-reported account period. Independent research
+no migration/reset/new basis then. October7 proves the previous account was
+still in .env. Both tags are consumed. Next Execution work is new-account
+isolation, not VOC-first entitlement clarification or replay of closed tags.
+Independent research
 and existing Data refresh continue without a global pause or new approval gate.
 
 1. Execution owns the exact runtime result and reconciliation. Record rejection,
@@ -68,13 +83,13 @@ and existing Data refresh continue without a global pause or new approval gate.
    blindly retry. This owned opportunity is consumed, no new QQQ next_due.
    Operator confirms2027-06-22 is API application validity, not an observed
    mock-account expiry. Its screenshot says mock investment is at most three
-   months and cannot renew. Refreshed config now passes direct account reads and
-   matches retained custody; do not demand another reissue from the old label.
+   months and cannot renew. October6 config read matched OLD custody; October7
+   corrected config reads a different account. Do not demand reissue from the label.
    Operator confirms the actual mock period is active and the registered
-   account matches. Local dispatch/config projection and official BUY routing/
-   body audit found no concrete mismatch. Ask KIS VOC to clarify overseas mock
-   order entitlement/API linkage; neither a propagation delay nor automatic
-   reissue is an established fix. Preserve budget/unknown SPY custody and
+   account matches. That portal report was not local-config identity proof:
+   October7 found and fixed the old account in .env. Compose equality/BUY audit
+   did not catch portal mismatch. Isolate the new account before future orders;
+   VOC is conditional on a corrected scoped failure. Preserve OLD budget/SPY and
    closed requests. Declare any new entry tag/opportunity explicitly, using
    fresh exact-limit funds and existing intent-before-submit/recovery contracts.
    No new request or opportunity was installed by this read-only check.

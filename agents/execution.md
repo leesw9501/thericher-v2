@@ -14,6 +14,28 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+October7 operator found the previous mock account in .env and corrected it.
+Fresh named direct discovery at22:00:13 KST succeeds: one auth/five GETs,
+complete USD account, zero positive-quantity positions and zero open orders,
+no reconciliation reasons. Fresh client uses only four approved Paper fields;
+token stays in memory, no order is called. Parser excludes zero-quantity rows.
+This agrees with the new-account mobile view. Exact immutable safe receipt:
+`D:\thericher-v2\model-artifacts\execution\kis-paper-readonly\20261007T130013831902Z-collected.json`,
+SHA256242a9488b11ab741a3ea584d75ca378b99ff7eb3e5114aff9b626ad1533bd032.
+Network-none RO strict canonical budget parsing independently confirms current
+account differs from old retained binding; binding bytes remain unchanged.
+No adoption/migration, new root/budget, order, schedule or live credential use.
+Next ready Execution package isolates new-account custody/provisional10-percent
+basis under standing authority. Preserve old QQQ requests and unknown SPY as
+incomplete; never route their recovery to the new account or inherit their basis.
+Read success is not order entitlement, a fill, old-inventory closure, settled
+cash or net PnL. VOC-first diagnosis is superseded by this concrete stale-config
+finding; reconsider server-side entitlement only if a corrected scoped call fails.
+Documentation-only refresh:370 focused read-only/config/portfolio-budget tests
+pass in one clean helper worker/1.17s; Ruff and both sample-env Compose profiles
+pass. No runtime source change, full-suite rerun or company-goal completion.
+
+The following October6 attempts describe the PREVIOUS local account config.
 October6 foreground opportunities are consumed; company goal remains OPEN.
 Tag reapplied-account-20261006-v1 expired before any submission/ack/fill.
 Intent created13:46:06Z, expiry transition13:46:50Z; strict RO readback validates
@@ -89,7 +111,7 @@ the existing named read-only discovery collected a complete virtual snapshot:
 one auth POST/five account GETs, two positions, zero open orders, empty typed
 reconciliation reasons. The four-field whitelist is valid; mode remains off.
 Network-none RO private read at /app/private/canary confirms the refreshed
-account identity matches the retained budget. No migration/reset is needed;
+account identity matches the retained OLD budget, not the new portal account;
 original10-percent basis, unknown SPY custody and closed QQQ requests remain.
 An initial parent-directory check found no binding only at the wrong level;
 the corrected canonical-root read above is the account-custody evidence.
@@ -103,7 +125,8 @@ Token-start ownership was respected; no foreground cooldown/retry. Next owned
 QQQ opportunity must keep the cycle/budget and use an explicit distinct entry
 tag only after all prior entries are positively closed. No new opportunity yet.
 Temporary source reviewer exited; changed-account isolation was not enacted
-because the canonical identity comparison matches.
+then because the old-config canonical identity matched. October7 supersedes
+that current-account assumption; the old bytes and evidence stay unchanged.
 
 October6 00:20 KST owned opportunity returned a fresh positive QQQ BUY
 rejection, NOT a never-attempted no-intent. Exact fixed public request tag

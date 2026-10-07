@@ -27,10 +27,22 @@ Absent original-date history does not identify its outcome. Never repost,
 reset, substitute or adopt that leg. A distinct QQQ job and independent lanes
 continue without a global hold.
 
-October6 refreshed Paper .env passes the authorized whitelist; mode is off.
+October7 operator found the PREVIOUS mock account in .env and corrected it.
+Fresh direct discovery at22:00:13 KST succeeds: one auth/five GETs, complete
+USD account, zero positive-quantity positions and zero open orders. This agrees
+with the new-account mobile view. Offline network-none RO canonical budget
+parsing confirms current account differs from the old binding; private bytes
+are unchanged. October6's two-position read and rejected orders were old-config
+evidence, not a new-account expiry/entitlement test. Next Execution work is
+new-account custody and provisional10-percent basis isolation under standing
+authority, never repointing/adopting/resetting old QQQ/unknown SPY/budget state.
+No order, migration, budget or schedule change occurred in this read-only check.
+Current receipt/hash is in Execution; independent Data/Research continue.
+
+Historical October6 Paper .env passes the authorized whitelist; mode is off.
 22:26:57 KST direct read-only discovery succeeds: one auth/five GETs, complete
 account snapshot/two positions/zero opens. Canonical RO private binding matches
-the retained account, so no custody/budget migration is necessary. Exact safe
+the retained OLD account, not the newly reapplied account. Exact safe
 receipt/hash is in Execution. This proves reads, not order entitlement, old SPY
 resolution, owned-flat state or a new fill. No orders, reset or schedule change.
 Both new foreground tags are now consumed under the existing cycle/budget.
@@ -44,10 +56,10 @@ The error label does not establish actual expiry. October6 local in-process
 Compose projection matches all four refreshed Paper fields, virtual host/mode,
 stock-mock prefix and product01; no unexpected KIS names or broker calls.
 No concrete BUY route/body mismatch was found against the official example.
-KIS's notice sends cases outside its listed explanations to VOC: next action
-is overseas mock-order entitlement/API linkage clarification, not another blind
-reissue or token renewal. Safe diagnostic pointer and inquiry are in Execution
-and RUNBOOK. There is no new approval or global hold.
+The local parity check did not prove portal-to-config identity. Its earlier
+VOC-first recommendation is superseded by October7's concrete stale-config
+correction. Use VOC only if a corrected new-account scoped call still fails;
+there is no established separate overseas signup or new approval/global hold.
 Original budget/unknown SPY/closed records remain; exact evidence belongs to
 Execution. Next independent research package is forward-risk CPU baselines.
 

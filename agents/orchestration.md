@@ -14,13 +14,13 @@ No initial10-percent budget reset, live route or new permission gate.
 
 | Shared work/resource | Owner | Current dispatch fact |
 | --- | --- | --- |
-| QQQ execution | Execution / existing private volume | Both October6 foreground tags consumed: v1 never submitted/expired; v2 actual BUY positively rejected/closed as paper_account_expired. Exact typed readback/deployment evidence belongs to Execution. No worker or fresh QQQ next_due. |
-| Shared private writers | Execution / compatible eight images | New0ff015de image/607 source-lock hashes match after362 one-worker and9,072/22 full verification. Unknown SPY and original allocation preserved. Strategy Ready/next October6 23:50 KST; exit code is not an order result. |
-| Current Data refresh | Data / existing scheduler | Intraday head Ready/next October7 00:29 KST; last October6 06:20/result1 does not prove its cause or data outcome. Scope/rate/schedules unchanged. |
-| Read-only observer / console | Execution / separate existing owners | Observer Ready/next October6 23:20 KST. Existing credential-free web restored and healthy at127.0.0.1:8787 only; broker_calls false, no public/control change. |
+| QQQ execution | Execution / old volume preserved; new-account isolation ready | October7 corrected stale .env; fresh read complete/zero positions/zero opens. Offline RO identity differs from old budget. Next package isolates new custody/basis. No order/adoption/reset/new opportunity; old tags remain consumed/incomplete. |
+| Shared private writers | Execution / compatible eight images | Existing0ff015de image/607 source-lock hashes verified. Unknown old SPY/basis preserved. October7 Scheduler fact: strategy Ready/last October6 23:50/result0/next October7 23:50 KST; exit is not an order result. No old-state adoption or schedule change. |
+| Current Data refresh | Data / existing scheduler | October7 Scheduler fact: intraday head Ready/next October8 00:29 KST; last October7 06:20/result1 does not prove cause/coverage. Scope/rate/schedules unchanged. |
+| Read-only observer / console | Execution / separate existing owners | October7 Scheduler fact: observer Ready/last22:04/result0/next22:08 KST; not snapshot-outcome proof. Existing web was last observed healthy at127.0.0.1:8787/broker_calls false, no public/control change. |
 | Independent research | Engine Research / CPU | Source/hash-bound input/target smoke complete;251 paired inputs/249 targets per ETF, two early-close shortfalls, exact ALL-RO replay. No fit/selection/Paper claim. Next ready package is a distinct chronological forward-risk CPU baseline contract. |
 | GPU/evaluation | Research Steward | No active appointment or frozen undispatched GPU campaign. Environment/authority is not a block; prior killed families stay closed. CPU risk-baseline preparation is independent of account clarification. |
-| Git / tests / invoked roles | Orchestrator | Infra, Engine and independent Review assignments delivered and exited. Full9,072/22 authority matches9,094 collected/eight workers/clean helper; Ruff/both sample Compose profiles pass. No competing Git or pytest owner. |
+| Git / tests / invoked roles | Orchestrator | October7 doc-only correction:370 focused tests/one clean worker/1.17s, Ruff/both sample Compose profiles pass. Previous full9,072/22 authority is separate; no runtime source change or competing owner. |
 
 ## Bottleneck And Reversible Improvement
 
@@ -29,24 +29,23 @@ revalidate its account clocks/ownership and retain exact-price funds and wire
 deadline. Permit only an exact closed expired never-sent prefix for a NEW
 explicit tag, without rewriting original intent/TTL or weakening unknown recovery.
 v2 actually reached submission6.365s after intent creation, then the provider
-positively rejected it. The current Paper bottleneck is an unexplained provider
-order rejection on an operator-confirmed active matching account, not a
-software approval or GPU dependency. Server-side entitlement/API linkage
-is the next question, not an established root cause.
-Operator confirms active mock period and matching registration. Local fresh-
-config/Compose/virtual-route projection finds no concrete mismatch; it does
-not reconstruct the prior wire. The next discriminating action is KIS VOC
-clarification, not repeating the reported status, key reissue or token renewal.
+positively rejected it. October7 operator found the PREVIOUS account in .env.
+Corrected direct read is complete/zero positions/zero opens; offline RO custody
+confirms a different account. Current bottleneck is new-account custody/basis
+isolation, not an unexplained entitlement or permission/GPU hold. Reversible
+improvement: distinguish config-to-runtime parity from actual account custody;
+preserve old state and scope new-account work separately. Execution owns proof.
 
 ## Blocked-Goal Alternatives
 
-Exact blocking fact: no accepted QQQ order after the refreshed configuration.
+Exact blocking fact: no accepted QQQ order; corrected account differs from old
+custody. Old-account rejection does not test this newly corrected configuration.
 Original graph: exact funds -> persisted BUY -> exact fill -> SELL -> owned flat.
 Full cycle is not complete; do not replace the goal by calling preparation success.
 
 | Ready package | Owner / resource / approach | Bounded evidence / strongest kill / recovery |
 | --- | --- | --- |
-| Account entitlement clarification | Execution / official sources and KIS VOC | Operator confirms active matching mock account; local four-field Compose/stock-product/virtual-route parity holds and no concrete BUY request mismatch was found. Use RUNBOOK's inquiry for overseas order eligibility/API linkage. An unchanged rejection without a concrete fix kills that retry, not another lane; no blanket account-expired assertion, automatic reissue or live route. |
+| New-account isolation | Execution / existing account-scoped contracts | Isolate new custody/provisional10-percent basis without repointing/adopting old QQQ/budget/unknown SPY. Cross-account binding or recovery is the strongest kill; repair that scope, not an operator gate. New read succeeds; order entitlement is untested. |
 | Forward-risk CPU baseline | Engine Research / retained seen FirstRate source | Freeze chronological TRAIN-only transforms, past-variance and TRAIN-mean controls before fitting. Exact pinned replay/loss/missingness evidence; future-dependence or failure against controls kills this candidate only. Continue while Paper setup is unresolved. |
 | Current collection maintenance | Data / existing named refresh worker | Preserve owned cursor/scope/pace/next_due and independently read exact next receipt. A missing or failed receipt is not coverage or finality; recover that owner without opening a new collector/schedule. |
 

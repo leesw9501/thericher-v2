@@ -2,6 +2,21 @@
 
 ## Independent QQQ Unit Cycle
 
+October7 account correction supersedes the October6 VOC-first setup diagnosis
+below. Operator found the previous mock account in .env and corrected it.
+Fresh named direct discovery22:00:13 KST succeeds: complete USD account, zero
+positive-quantity positions/zero opens, one auth/five GETs/no orders. Network-none
+RO canonical budget parsing confirms the new config differs from old custody;
+old bytes remain unchanged. October6's read/rejections describe the old config.
+Future new-account work needs separately scoped custody/provisional10-percent
+basis, never repointing/adopting/resetting old budget, unknown SPY or QQQ intents.
+Standing Paper authority permits isolation; no new approval is needed. This
+check creates no migration/root/budget/order/schedule. Current receipt/hash is
+in agents/execution.md. Separate overseas signup is not established; use the
+historical support inquiry below only if a corrected scoped call still fails.
+Reads alone are not order rights. The old-cycle command below remains bound
+to its old account; do not run it with replacement credentials.
+
 `scripts/run_kis_paper_qqq_unit_cycle.py --cycle-id qqq-unit-20261003-v1`
 defaults to no-credential/no-write preview. After shared-runtime authority and
 compatible Paper-image deployment, explicit `--execute` uses the existing
@@ -60,7 +75,8 @@ October6 local diagnostic confirms current .env-to-Compose four-field equality,
 the virtual host/mode, stock-mock prefix and product01. No concrete official US
 BUY path/TR-ID/body mismatch was identified. This is not a replay of prior wire
 bytes or independent server-side entitlement; no new broker calls were made.
-Use the following minimal inquiry via KIS Developers/customer support. Do not
+If a corrected scoped call still fails, adapt this historical inquiry to its
+actual current timestamp/result via KIS Developers/customer support. Do not
 include API keys, secrets, access tokens, private state, or raw broker bodies.
 If support needs an account number, provide it only through its authenticated
 private support form, never this chat or project evidence.
@@ -96,10 +112,10 @@ KIS_PAPER_ACCOUNT_PRODUCT_CODE. Keep THERICHER_MODE=off and KIS_LIVE_* untouched
 Never paste values into chat. After the update, Execution checks the named
 virtual-only account/config path; a changed account needs separately scoped
 custody, not deletion or rewriting of the old private store. October6 operator
-update is now read-verified: complete direct discovery at22:26:57 KST, two
+update appeared read-verified then: complete direct discovery at22:26:57 KST, two
 positions/zero opens, one auth/five GETs. Native discovery used the existing
 token-start owner without sleeping and retained only its safe outcome on D:.
-Canonical /app/private/canary RO binding matches the retained account; do not
+Canonical /app/private/canary RO binding matched the retained OLD account; do not
 look for the budget at its parent /app/private or infer absence from that level.
 No new account root/budget, order or schedule was created. Read success does
 not prove current order entitlement or resolve the old SPY outcome. Exact safe
