@@ -17,6 +17,22 @@ naive baseline, compute stop rule, artifact root, and strongest kill test.
 
 ## Current Research State (2026-10-08 KST)
 
+Joint D1 direct-utility original appointment FAILED/hard_timeout600s; company
+objective remains active, not a rejected predictive hypothesis. No final model,
+worker result or comparison cells retained; partial fits/phase unknown. Frozen
+contractdf42451e... and result1d38b7b... have exact ALL-RO immutable failure
+readback, zero fits/search/writes. Original600s consumed/source untouched,
+canonical lock released; no free reroll. Synthetic2769-row runtime probe,
+zero optimizer steps/data/retained weights, measures TCN float64 forward/back:
+CUDA1.266s vs CPU.109s;512CUDA updates alone forecast648s. GPU is available,
+but this kernel is unsuitable for the original bound. Receipt
+`D:\thericher-v2\model-artifacts\research\source-discovery\joint-d1-kernel-throughput-probe-20261008-v1.json`.
+Ready bounded package: equivalent CUDA backend and preparation profiling,
+same economic recipe, no performance selection; independently review any
+explicit additional technical-continuation budget before values. Data token
+diagnostics remain a disjoint package.523 serial/10,140 full passes/22 skips,
+363.83s/eight workers/clean helper; no final market-performance claim.
+
 Quarterly joint three-ETF family is COMPLETE/REJECTED. The same-family r2
 numerical repair rounds intermediate beta probes onto the already-declared45dp
 lattice; economic recipe/splits/64 bisections stay fixed. Original v1 failed

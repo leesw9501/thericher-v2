@@ -41,7 +41,7 @@ no capital reset, independent minibatch variance or detached prior allocation.
 No early stopping or best-epoch retention. One shared600-second GPU family
 for three fits, at most one appointment; frozen contract/model registry custody.
 CPU synthetic smoke and model/input/cost parity precede actual GPU dispatch.
-Use existing Torch2.7cu128 Docker/runtime,2CPU/6GiB RAM, networknone, exclusive
+Use existing Torch2.7cu128/Python3.12.14 Docker/runtime,2CPU/6GiB RAM, networknone, exclusive
 GPU lock and desktop headroom. Measure actual fit duration and peak VRAM.
 
 Learn252*(mean daily log NAV growth -5*population variance) at10bps per side.
@@ -52,8 +52,12 @@ Any required-past input or mark gap makes its affected period unavailable for
 the same learned controls; do not repeat target weights or delete losing days.
 Freeze exact sample/block counts before values. Fee-face tie order is
 lexicographic(-1,-1,-1)..(+1,+1,+1); gradients at kinks use that deterministic
-one-sided convention. Weight/sign tolerances1e-12 and relative Decimal-parity
-tolerance1e-10 need synthetic/gradient proof before relying on them.
+one-sided convention. Float64 weight sums admit64eps; fee faces prefer strict
+signs, falling back only when none exists to32eps scaled sign roundoff.
+Root residual and valid-face agreement admit256eps. No input normalization,
+clipping or nearest-face substitution inside the primitive. Relative Decimal
+parity tolerance1e-10 needs synthetic/gradient proof before relying on it.
+These source-reviewed numerical rules are frozen before any actual source value.
 Beta comparator is quarterly equal-weight basket/cash, aligned zero-cost TRAIN
 SIMPLE returns vs zero-cost SPY buy-and-hold ledger including entry/end marks.
 Fraction[0,1],64 bisections,45dp lattice and1e-10 residual; unbracketed/residual
@@ -97,6 +101,17 @@ not agreement; external categorical receipt is in source-discovery. Continue
 independent review/preparation without an auth/approval wait.
 
 ## Verification And Continuation
+
+Original appointment ended hard_timeout at600s; no numeric bundle/comparison
+result was retained. Immutable failure readback is exact with zero refits,
+searches or writes. Treat partial fits as unknown and the original budget as
+consumed. This is a technical failure, not rejected/input-unavailable research
+or completion of the company outcome. Synthetic no-fit throughput measurement
+finds float64 TCN CUDA512 forward/backward alone forecasts648s versus56s CPU.
+Continue a bounded equivalent-kernel/input-preparation diagnosis; preserve the
+original recipe, source and attempt. Any subsequent technical continuation must
+explicitly freeze its additional allowance/lineage before dispatch, never reuse
+or refund the original allocation or tune against comparison outcomes.
 
 Completion is a frozen supported-with-limits, rejected or exact input-unavailable
 result plus independent no-fit readback, analytical Execution parity and retained

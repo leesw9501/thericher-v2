@@ -5,6 +5,25 @@ This stateboard retains only cross-track GPU and sealed-evaluation custody.
 
 ## Current Resource State
 
+October8 joint-d1-direct-utility-development-v1 original appointment CLOSED
+non_promoting_failed/hard_timeout at600s. Three planned fits, but actual partial
+fit count UNKNOWN; no numeric bundle/comparison results retained. GPU math was
+observed, final peak/statistics absent. Constant1024/linear512/TCN512 final
+updates, seed101,2CPU/6GiB RAM, existing Torch2.7cu128 image/networknone.
+Contract `sha256:df42451eb7366d9d80231ae262c9bfcf6cdaddb61ebe3ab7dab28ed81d6564e0`.
+Frozen code, metadata and subsequent numeric models stay under the external
+research root. Synthetic pinned-runtime CPU smoke v3 passes with zero actual
+source rows/GPU probes; source/Execution review and70 model-campaign tests pass.
+Exact immutable failure ALL-RO readback has zero refits/search/writes; result
+`sha256:1d38b7b13ab308fe8bb9322c4e3e17d3c5a9704e0a011fe00dfb6b91bdab6079`.
+Original600s consumed, zero sealed spend, no Paper input/promotion. Canonical
+lock released. Synthetic no-fit runtime probes are separate capability work,
+not additional actual training or allocation refund. No current actual campaign
+is GPU-ready; any economic-identical technical continuation must explicitly
+freeze its additional budget/lineage before values. Original fixed updates
+cannot become per-model selection passes.
+Prior closed appointments below remain history, not current ready queues.
+
 October8 quarterly joint family closed/non_promoting_completed, CPU only,
 30 fixed cells/zero GPU or sealed allocation. Revised/seen adjusted Tiingo
 source; one technical same-family r2 repair preserves the original failed

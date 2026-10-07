@@ -13,6 +13,21 @@ collection uses only its named owner path; never read or route `KIS_LIVE_*`.
 
 ## Current Coverage (2026-10-08 KST)
 
+Latest owned head result is independently reattached: run
+`intraday-head-20261007T1728010023310Z`, completed02:28:09.811131 KST.
+`collector_nonzero`/`collector_provider`: QQQ `auth_rejected`, SPY
+`token_request_not_due`, zero new attempt rows for both. Authentication subcause
+is unknown; optional minute-page diagnostics are absent because no page was
+accepted. This does not erase retained cache coverage or diagnose its older
+fourth-page failure. No manual invocation or cadence/authority change.
+Exact terminal `D:\thericher-v2\model-artifacts\execution\kis-paper-intraday-head-invocation-v1\intraday-head-20261007T1728010023310Z\terminal.json`,
+SHA256c74590cff0a2b7137d1ed77557b923e844fc84dd75e05c9399bae292c6bafc8b.
+Pure joint D1 helper is ready: exact32 scheduled past Bars, immutable9x31
+relative-price channels, future-support mutation invariance,75 focused passes.
+Research owns scaling, targets and model outcomes; source quality is unchanged.
+Data's next source-only review checks in-memory client/token ownership, not a
+provider retry or permission gate. Older attempts below retain their own times.
+
 Causal-volume consumer reattests both original CSV/normalization/lineage hashes
 and251 shared dates, without acquiring or changing sources. Its fixed four-slot
 geometry has2,008 scheduled keys:1,274 TRAIN fit rows and356 comparison keys

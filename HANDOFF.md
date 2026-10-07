@@ -20,6 +20,41 @@ Never log secrets, account/order identifiers, raw broker values or market rows.
 
 ## Active Company Objective
 
+`joint-d1-direct-utility-development-v1` ACTIVE, original CUDA attempt FAILED
+with hard_timeout after its exact600-second allowance. No numeric bundle,
+worker result, final fit count, phase or comparative cells were retained;
+partial fit count is UNKNOWN, not zero. Constant1024/linear512/TCN512 final
+updates and seed101 remain the economic contract, not a completed experiment.
+Contract
+`sha256:df42451eb7366d9d80231ae262c9bfcf6cdaddb61ebe3ab7dab28ed81d6564e0`;
+external root `D:\thericher-v2\model-artifacts\research\joint-d1-direct-utility-development-v1`.
+Original code copy has617 matching source/configuration hashes before values.
+Pinned Torch2.7cu128/Python3.12.14 CPU smoke v3 passes; source/Execution review
+closes runtime/tolerance, weight-domain and interrupted-parent terminal-recovery
+defects before freeze.523 changed-path serial passes40.33s; full authority:
+10,140 passes/22 skips/35 warnings/363.83s, eight workers/clean helper and10,162
+collected. Ruff/default+research+accounting sample Compose pass. Actual GPU math
+was observed; no final peak/fit-count claim. Failure result
+`sha256:1d38b7b13ab308fe8bb9322c4e3e17d3c5a9704e0a011fe00dfb6b91bdab6079`
+has independently validated immutable ALL-RO readback, zero refits/search/writes.
+Original attempt/source and consumed600s stay immutable; GPU lock is released.
+Synthetic-only throughput probe with no data/optimizer/retained model measures
+float64 TCN forward/backward about1.266s CUDA vs.109s CPU on2,769 rows. CUDA512
+updates alone forecast648s, before preparation/optimizer/evaluation. This
+explains an infeasible bound, not a market-performance rejection. Existing
+image/runtime works. Exact evidence:
+`D:\thericher-v2\model-artifacts\research\source-discovery\joint-d1-kernel-throughput-probe-20261008-v1.json`.
+Next bounded work profiles an equivalent CUDA backend and source preparation;
+no blind refit, hidden budget refund or economic tuning. Data independently
+implements source-safe token HTTP diagnostics without requests/schedule changes.
+No broker operation, new schedule, sealed evaluation or Paper input.
+Exact02:28:09 KST head result is collector_provider: QQQauth_rejected then local
+SPYtoken_request_not_due/zero attempt rows. Underlying auth cause is unknown.
+Source review confirms head already shares one client/token; observer does NOT
+use Data's five-minute token-start guard. Do not invent a second-client fix or
+four-versus-five-minute provider explanation. Existing schedules remain owners.
+Closed objectives below retain their original evidence and times.
+
 `new-account-paper-fill-accounting-v1` COMPLETED October8. Actual QQQ full
 BUY/SELL cumulative fills yield NEGATIVE gross realized USD sign, one owned-flat
 round trip/two fills, exact independent cashflow arithmetic and three identical

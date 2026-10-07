@@ -1,5 +1,31 @@
 # Runbook
 
+## Current Joint D1 Research
+
+`scripts/run_tiingo_joint_d1_policy.py` is the bounded three-model direct-utility
+CLI, not a broker path. Actual frozen source:
+`D:\thericher-v2\model-artifacts\research\joint-d1-direct-utility-development-v1-frozen-source`.
+Use that source and pinned image
+`sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039`
+(Python3.12.14/Torch2.7.0+cu128), not current host Torch2.13CPU for actual replay.
+The default static plan performs no Torch/source/registry access. `--smoke` is
+synthetic CPU only; v3 receipt is outside the attempt in source-discovery.
+`--freeze` binds metadata/calendar/code before values. `--run` owns one canonical
+GPU lock and one600-second appointment,3 final fits,2CPU/6GiB/networknone.
+Do not redispatch an attempt with started.json. Models are numeric-only JSON,
+external to Git; comparison periods are revised/seen/non-PIT development.
+Actual worker is active; completion and zero-fit readback remain pending.
+
+`--verify --contract-sha256 <exact-pin> --result-sha256 <exact-summary-pin>`
+uses all-RO source/data/artifacts and CPU only, restoring weights/scaler and
+TRAIN beta fraction with zero fits/search/writes. `--recover-registry` appends
+only the original outcome after that replay. If a completed worker survives but
+summary.json is missing, `--recover-terminal` takes the exact worker-result pin,
+requires owner absence and the same zero-fit replay, exclusively creates only
+the original summary, then appends its outcome. A conflicting terminal is never
+overwritten; an active owner is never competed with. Recovery is not training
+or a fresh allocation. Original contract pin is df42451eb7366d9d80231ae262c9bfcf6cdaddb61ebe3ab7dab28ed81d6564e0.
+
 ## Independent QQQ Unit Cycle
 
 October8 offline gross accounting is complete/NEGATIVE sign/two exact fills,
