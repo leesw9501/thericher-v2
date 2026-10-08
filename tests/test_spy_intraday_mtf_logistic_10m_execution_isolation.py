@@ -405,24 +405,79 @@ import thericher_v2.data.kis_paper_intraday as kis_paper_intraday
 kis_paper_intraday.load_verified_kis_paper_private_intraday_catalog = fail_external
 
 forbidden_calls = []
+route_cache = {{}}
 
 
-def profile(frame, event, _argument):
-    if event != "call":
-        return profile
-    module_name = str(frame.f_globals.get("__name__", "")).casefold()
-    receiver = frame.f_locals.get("self")
-    receiver_name = type(receiver).__name__.casefold() if receiver is not None else ""
-    if (
+def original_route(module_name, receiver_name):
+    module_name, receiver_name = module_name.casefold(), receiver_name.casefold()
+    forbidden = (
         module_name.startswith("thericher_v2.execution")
         or any(token in module_name for token in ("broker", "local_paper", "order", "account"))
         or any(
             token in receiver_name
             for token in ("account", "broker", "fill", "intent", "localpaper", "order")
         )
-    ):
+    )
+    return forbidden, module_name, receiver_name
+
+
+def profile(frame, event, _argument):
+    if event != "call":
+        return profile
+    module_name = str(frame.f_globals.get("__name__", ""))
+    receiver = frame.f_locals.get("self")
+    receiver_name = type(receiver).__name__ if receiver is not None else ""
+    key = (module_name, receiver_name)
+    route = route_cache.get(key)
+    if route is None:
+        route = original_route(*key)
+        route_cache[key] = route
+    forbidden, module_name, receiver_name = route
+    if forbidden:
         forbidden_calls.append(f"{{module_name}}:{{frame.f_code.co_name}}:{{receiver_name}}")
     return profile
+
+
+from types import SimpleNamespace
+
+# Mutate the same frame and receiver type; cache hits must not deduplicate calls.
+receiver_type = type("Worker", (), {{}})
+receiver = receiver_type()
+frame = SimpleNamespace(f_globals={{}}, f_locals={{}},
+                        f_code=SimpleNamespace(co_name="synthetic_route"))
+expected_calls = []
+for raw_module, raw_receiver, expected in (
+    ("research.safe", "Worker", False),
+    ("thericher_v2.execution.adapter", "Worker", True),
+    ("THERICHER_V2.EXECUTION.adapter", "Worker", True),
+    ("research.BROKER", "Worker", True),
+    ("research.local_paper", "Worker", True),
+    ("research.ORDER", "Worker", True),
+    ("research.Account", "Worker", True),
+    ("research.safe", "aCcOuNt", True),
+    ("research.safe", "Broker", True),
+    ("research.safe", "FILL", True),
+    ("research.safe", "Intent", True),
+    ("research.safe", "LocalPaper", True),
+    ("research.safe", "Order", True),
+    ("research.safe", "Worker", False),
+    ("research.safe", None, False),
+):
+    frame.f_globals["__name__"] = raw_module
+    if raw_receiver is not None:
+        receiver_type.__name__ = raw_receiver
+    frame.f_locals["self"] = receiver if raw_receiver is not None else None
+    reference = original_route(raw_module, raw_receiver or "")
+    assert reference[0] is expected
+    for _ in range(2):
+        assert profile(frame, "call", None) is profile
+        if expected:
+            expected_calls.append(f"{{reference[1]}}:synthetic_route:{{reference[2]}}")
+    for event in ("return", "c_call", "c_return", "c_exception"):
+        assert profile(frame, event, None) is profile
+assert forbidden_calls == expected_calls
+forbidden_calls.clear()
+route_cache.clear()
 
 
 sys.setprofile(profile)
