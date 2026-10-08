@@ -1,5 +1,53 @@
 # Runbook
 
+## Fixed 2016 Cohort And Relative Allocation
+
+NEW input D:/thericher-v2/model-artifacts/research/kis-cross-asset-oc-cohort-v1/input/cross-asset-oc-cohort-20261008-v1/input-commitment.json,
+SHA4a25284d8ae8538105c798cbc0337ef3ca9615977829eb2d3d951797cbc5dc64.
+SPY/TLT/GLD each2686 dates2016Feb2..2026Oct7/zero gaps, raw price-only,
+not adjusted/TR/PIT/finality/availability qualified. Frozen reader b0f46070...
+at D:/thericher-v2/model-artifacts/data/kis-cross-asset-oc-cohort-v1/validate_input.py
+validates577 unchanged files/563 bindings/Decimal and exact-string OC equality.
+Exact parent readback input-readback-20261008-v1.json in that same Data root,
+SHA6d4079d5... . Initial independent failure was a reader counter-schema error;
+strict categorical_failure_count/seed count stay separate. No original rewrite.
+
+Study root D:/thericher-v2/model-artifacts/research/kis-cross-asset-21-session-relative-allocation-development-v1.
+Contractf37b0506788b3c72af8a5f768816399e31cb6c3cc911a2342b4d8d59e78accb4;
+result5dfa4bd994a6545052ec4517fd46eb713f9f4be70ea730fa37962d46354ae018;
+tree125987f9ba9353d999db0955b244979f65236d4987c956b3dd304f57f4047fc9.
+Use exact source-freeze/precommit/custody-binding and parent smoke/capability/
+run/verify receipts, never a latest-result scan. Original recipe:1154TRAIN,
+68 fixed21-session groups/1442 marks753+689/14tailcash, no cross-view capital
+reset; three absolute net-factor targets, TRAIN-only scale, Ridge1/SVD and
+GRU64/seed101/1024 full-batch updates; fixed2.5/5/10bps and matched controls.
+CPU smoke1.472s passes42 synthetic cells/zero fits. Synthetic CUDA throughput
+5.307s parent/32 updates/peak590264320bytes measures3.970s projected1024
+updates plus120s reserve, not actual completion or market-performance evidence.
+Actual two-fit run34.869s parent/32.768s worker COMPLETE/42 cells/rejected both.
+At10bps Ridge growth -19.54%/-2.36%, GRU -35.63%/-.071% across the two
+development views: no profitability or promotion claim. Cached ALL-RO27.796s
+reproduces exact cells/original kill with zero refit/inference/search/write.
+All invocation containers absent and exclusive GPU lease released; source and
+input unchanged. Independent readback4.668499s verifies exact42 cells,
+scaler/actions/two models/eight completion/update receipts; no refit/inference/
+search/write. Host3.14.3/NumPy2.5.1 supplements Docker3.12.14, not runtime
+equivalence or reinference. Exact validation-readback.json SHA9bb8ec8d...;
+custody-outcome.json links record253185a973045e8fadc73387e010a0785ab1c3ba4dd24f159088a7f64a8c54f3,
+non_promoting_completed/zero sealed spend. Reviewer source recheck READY.
+
+Goal18 changed-path198 serial cases44.19s, post-final-freezer25 cases43.04s,
+external worker27 cases3.93s/host31+64 subtests.68s; overlapping groups are not
+unique totals. Full12226passed22skipped35warnings364.21s/eight clean workers,
+12248collected4.39s/helper exit0. Ruff and default/research/accounting sample-
+env Compose pass. No extra -q or production Scheduler tests were used.
+Independent reader40 source-free tests.36s/host supplement pass; no active
+session remains. Parallel next Paper image5216e00d... is prepared, NOT
+published; exact D:/thericher-v2/model-artifacts/execution/kis-paper-baked-runtime-v1/build-preparation.json,
+SHAe3c09901... . Pinned cached Python3.12.13 base/runtime.lock retained;
+403 baked source files match public826b9d9f... tree. Offline import probe had
+no private mount, credentials or network. No V3 migration or broker call.
+
 ## Self-Financing Paper Ownership Preparation
 
 Goal17 kis-self-financing-paper-ownership-v1 prepares shared V3 ownership,
@@ -42,12 +90,12 @@ SHA52b8f05ccf07adc400cb38e4ac85e525253912bbcf6389f415657ec2a2b721ce
 passes12 synthetic checks and27 unchanged bindings/5 pages/eight producer pins/
 one overlap/zero OC conflicts/live-index equality. No raw rows are printed.
 
-Next source-free preparation is released: a NEW fixed2016+ price-only cohort
+At goal17 closure, next source-free preparation was released: a NEW fixed2016+ price-only cohort
 freezer and21-session absolute-net-factor Ridge/GRU selection primitive.
 Parent222-case serial group35.67s covers these and the selective config loader.
 Independent source review then found two next-freezer schema/overhang P2s;
 repair belongs to next objective before actual publication, not a global hold.
-No actual cohort publication, labels, model fit or CUDA allocation yet. Closed
+No actual cohort publication, labels, model fit or CUDA allocation had occurred then. Closed
 input02dcc000... and failed2008-start hypothesis remain unchanged; a new input
 identity cannot silently shorten the original hypothesis or imply TR/PIT.
 

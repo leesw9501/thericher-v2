@@ -295,8 +295,8 @@ eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
 
 | Queue | Current bounded fact |
 | --- | --- |
-| Breadth | Fixed-control declared input packet released34 tests; no ownership/funding proof. Hooke next prepares one distinct21-session absolute-net-factor Ridge/GRU asset-selection worker using synthetic inputs only. NEW2016+cohort/contract not frozen; no actual labels/fits yet. |
-| Depth / GPU | RTX4090 available, canonical lease released after exact R3 containment. No ready frozen predictive campaign now; preparation continues rather than inventing a fit. |
+| Breadth | NEW2686-date input4a25284d... independently verified577 unchanged files. Actual21-session Ridge/GRU comparison COMPLETE/REJECTED42 cells; contractf37b0506.../result5dfa4bd9.../tree125987f9... . Fixed1154TRAIN/68groups/1442marks/14tailcash, not fresh or qualified input. |
+| Depth / GPU | Actual CPU Ridge + CUDA GRU1024 updates completed2 fits in parent34.869s/worker32.768s. Exact containment confirmed before lease release; ALL-RO27.796s/zero refit/inference/search/write passes. Independent4.668499s verifies exact42 cells/scaler/actions/two models/eight progress; validation9bb8ec8d.../custody253185a9... CLOSED non_promoting_completed. No depth, holdout or Paper promotion follows. |
 | Ensemble | Closed blends remain rejected. Current Paper ownership preparation is deterministic engineering, not an ensemble or model promotion. |
 | Replication | No selected candidate; revised/seen studies cannot become fresh independent evaluation by renaming them. |
 
@@ -332,7 +332,16 @@ other ready research and Paper continue. https://www.finra.org/terms-of-use
 - Direct learned-position references are not proof of this ETF edge:
   https://arxiv.org/abs/1904.04912 (futures),
   https://arxiv.org/abs/2005.13665 (different diversified ETF portfolio).
-- Current Claude call .988s is review_unavailable/cli_nonzero_other, not agreement:
+- New source-only mechanisms were independently re-retrieved by parent:
+  ANTICOR lead-lag/reversal, latent-regime allocation, and wealth/drawdown
+  feedback. They are literature proposals, not adopted code, frozen campaigns
+  or profitability evidence. Exact external receipt
+  D:/thericher-v2/model-artifacts/research/source-discovery/price-only-allocation-mechanisms-20261008-v1.json,
+  SHAc237fd38... . Raw OC does not reconstruct TR/FX/rates or hard future
+  return-support bounds; no paper theorem or source result is a KIS guarantee.
+- Latest distinct selection-recipe Claude call1.09s is review_unavailable/cli_nonzero_other, not agreement:
+  D:/thericher-v2/model-artifacts/research/source-discovery/claude-kis-relative-allocation-20261008-v1.json.
+  Earlier variance-method challenge .988s was likewise unavailable:
   D:/thericher-v2/model-artifacts/research/source-discovery/claude-kis-qlike-variance-20261008-v1.json.
   Patton2011/official Gamma primary limits independently retrieved by parent;
   source receipt kis-qlike-variance-primary-sources-20261008-v1.json in that root.

@@ -13,9 +13,26 @@ SHA714950bc...; NAS159 dates2021Jan4..Aug19, NYS three exact seeds empty.
 Reader52b8f05c.../12 synthetic checks/27 unchanged bindings/zero OC conflicts.
 Physical40 pre2021 bridge overhang dates remain excluded. No active collector,
 next_due none, remaining/ETA unknown; not provider-global exhaustion.
-NEW fixed2686-session trio cohort freezer3f770990.../21 synthetic cases has
-two independent P2 schema/overhang repairs before actual use; no publication
-or old input splice. Metadata-only21-session geometry42b633b6... is released:
+NEW fixed2686-session trio input is PUBLISHED under
+A/research/kis-cross-asset-oc-cohort-v1/input/cross-asset-oc-cohort-20261008-v1/input-commitment.json,
+SHA4a25284d8ae8538105c798cbc0337ef3ca9615977829eb2d3d951797cbc5dc64,
+commitment_id02b27fdd...; all3 dates2016Feb2..2026Oct7/zero gaps/563 source
+bindings/originals unchanged. Freezerab447e3d.../25 cases43.04s/Ruff/final
+independent READY. Exact source archive A/data/kis-cross-asset-oc-cohort-v1/
+source-before-run-r2 retains11 files; earlier failed r1 archive is unchanged.
+Two source-review P2s plus actual dry-run OC intent-without-stage mismatch
+were fixed before publication; derive stage only from original ordinal and
+fixed query/cursor binding, never rewrite original manifests. New identity,
+not an old input splice, qualification not_claimed/CA/TR/PIT/finality unknown.
+Independent readback is VERIFIED:577 unchanged files/563 source bindings,
+exact-string plus Decimal OC comparison/all3x2686 dates/zero gaps. Reader
+b0f46070.../20 synthetic cases9.41s; actual parent readback .698s. Initial
+reader wrongly expected strict failure_page_count; corrected producer-specific
+categorical_failure_count/seed counts, without changing any input. Exact
+A/data/kis-cross-asset-oc-cohort-v1/input-readback-20261008-v1.json,
+SHA6d4079d53e819e7cdff6d7ff560055a907cf449504f570ecbeac7a15240c78c8.
+Partial producer statuses remain partial, not new global qualifications.
+Metadata geometry42b633b6...:
 1154TRAIN/68groups/1442marks753+689/14tailcash. Crop fixed calendar to cohort
 before build_plan, not by price presence; uncropped calendar adds20 unsupported
 precohort windows. Disjoint55-label geometry bound is not ESS. Parent owns

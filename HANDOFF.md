@@ -47,14 +47,36 @@ NAS159 selected dates2021Jan4..Aug19; NYS three exact seeds empty, not global
 KIS exhaustion. Physical40 pre2021 overhang excluded. Reader52b8f05c.../
 12 checks/27 unchanged bindings validates closure; next_due none/ETA unknown.
 
-NEXT owns kis-cross-asset-21-session-relative-allocation-development-v1:
-publish a NEW fixed2016+trio input, then test one Ridge/one CUDA GRU against
-matched controls under frozen21-session holdings. Metadata gives1154TRAIN,
-68groups/1442marks/14tailcash; crop calendar to declared cohort before plan,
-never by observed price support. Original2008 hypothesis remains unavailable.
-Next freezer has two source-review P2 repairs before actual use; next worker
-primitive is source-free preparation, no actual labels/fits yet. Parallel narrow
-quote-parser correction preserves timezone/age rules and current session owners.
+kis-cross-asset-21-session-relative-allocation-development-v1 is COMPLETE.
+NEW input4a25284d... has all3x2686 dates2016Feb2..2026Oct7/zero gaps;
+independent reader verifies577 unchanged files/563 original bindings. Exact
+A/data/kis-cross-asset-oc-cohort-v1/input-readback-20261008-v1.json,
+SHA6d4079d5... . Producer schema/overhang/OC-stage faults and reader strict
+failure-counter mismatch were repaired without changing originals. Partial
+producer statuses/TR/PIT/CA/finality limits and unavailable2008 target remain.
+
+Actual one Ridge/one CUDA GRU comparison completed2 fits/42 cells, both
+REJECTED under original BOTH-view10bps kill. Root
+A/research/kis-cross-asset-21-session-relative-allocation-development-v1;
+contractf37b0506.../result5dfa4bd9.../423 selected files tree125987f9... .
+Fixed1154TRAIN/68groups/1442marks753+689/14tailcash; calendar cohort is
+declared, not cropped by price presence. Parent34.869s/worker32.768s, exact
+GPU lease released after containment. ALL-RO27.796s/zero refit/inference/
+search/write passes. Independent numeric readback4.668s verifies exact42
+cells/scaler/actions/two models/eight progress receipts/source and input
+unchanged; host3.14.3 is a supplement, not Docker3.12.14 equivalence or
+reinference. Exact validation-readback.json SHA9bb8ec8d... and custody-outcome
+record253185a9... in the study root; closed non_promoting_completed.
+No promoted model or Paper input follows. Parallel quote string/
+ASCII/calendar patch is source-reviewed,133 cases pass; no actual cause or
+timezone/age change is inferred. Baked Paper image/preview preparation runs
+independently, existing session owners and original10-percent basis unchanged.
+Goal18 full12226pass22skip364.21s/12248 collected/eight clean workers,
+changed-path198 then25 post-fix cases/Ruff/three Compose pass; no active tests.
+Public baked Paper image5216e00d... is prepared/not published,403 baked source
+files match826b9d9f...; base Python3.12.13/runtime.lock unchanged, no new
+framework. Exact A/execution/kis-paper-baked-runtime-v1/build-preparation.json
+SHAe3c09901... proves public code/import only, zero account/order calls.
 No source-local wait or rejected old method globally stops research/Paper.
 
 ## Closed Goal16 Context

@@ -8,6 +8,20 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-08 KST)
 
+- Current21-session relative-allocation trial1 completed2 fits/42 cells;
+  Ridge and CUDA GRU original BOTH-view10bps kills reject. Contractf37b0506.../
+  result5dfa4bd9.../tree125987f9...; NEW raw-price input4a25284d... .
+  CPU smoke1.472s/zero fits; synthetic32-update capability5.307s parent,
+  projected1024 updates3.970s plus120-second non-update reserve, not a promise.
+  Actual parent34.869s/worker32.768s; ALL-RO27.796s no refit/inference/search/
+  writes. Exclusive lease released only after exact invocation absence.
+  Independent readback4.668499s verifies exact42 cells/scaler/actions/two
+  models/eight progress receipts and unchanged files; host3.14.3 is a
+  supplement, not runtime equivalence/reinference. Validation9bb8ec8d...;
+  custody record253185a9... is CLOSED/non_promoting_completed/zero sealed
+  spend. Exact root kis-cross-asset-21-session-relative-allocation-development-v1
+  under A/research; no selected candidate, ensemble or Paper input follows.
+
 - Statistical risk allocation is closed/non_promoting_completed:33 monthly
   decisions/30 cells/shared120-second CPU allowance, zero fits/GPU/sealed spend.
   Contractb8534c14.../resultfc2c7a1d.../tree20e0c4a4..., familytrial1.
