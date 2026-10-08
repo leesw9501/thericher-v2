@@ -34,7 +34,14 @@ passes65 cases6.84s and independent four fault regressions: post-dispatch source
 or receipt-write failure cannot erase actual dispatch/containment facts.
 Installer seven fully mocked cases1.55s pass; exact source-safe
 A/execution/kis-paper-owned-rebalance-v1/scheduled-buy-opportunity-20261008T2310KST-v1.json.
-23:50 exact SELL/BUY routing prepares separately; installed is not a fill.
+23:50 exact SELL/BUY router98112184... is installed; new SELL recovery host
+01106782... requires the probe's original request hash, never a null fresh-entry
+handoff. Lost post-probe request/pin rejects before fresh reads/transport.
+97 synthetic cases/independent review pass; R2 installer43 cases18.70s.
+Original actions backed up/other dates/settings/triggers unchanged. Exact
+A/execution/kis-paper-owned-rebalance-v1/scheduled-recovery-opportunity-20261008T2350KST-v1.json.
+Installed is not a fill. LF/CRLF known-template mismatch fixed, failed attempts
+preceded all backup/task effects; used sources retained.
 
 Parallel ANTICOR actual30-cell CPU development study is COMPLETE/REJECTED;
 11.498s actual/15.273s ALL-RO. Independent r2 validates30 cells/988 unchanged
@@ -60,7 +67,12 @@ SHA070e98d7bcd5fae338344a4d3a7c2bb25bcbc74ba6a7f6d5101757358e6b0449.
 Canonical independent readback passes.727s/15056b1f...; old trio unchanged.
 Official XLK/XLE2:1 Dec5,2025 split manifests as raw half-price discontinuity;
 composite manifestab70d192... published/metadata-only, separate producer pins;
-new sector CPU consumer preparing known-event signals/share accounting, not
+sector CPU recovery actually completes26.805s/30 cells/zero fits/rejected;
+ALL-RO19.330s passes exact cached economics/actions without new inference.
+Exact A/research/kis-sector-relative-strength-development-v1-runtime-recovery-r2/worker-result.json,
+SHA3299ba9f3d8c79ec88ff95f3a3d27074ca4fa449c6405d472cba6f92502ed99d.
+Original pre-dispatch sibling-prefix path fault is retained/no fit; only path
+boundary changed, same worker54a99a73.../data/kill/60s. Known-event signals/share accounting, not
 blind raw-price PnL or silent global adjustment. Exact split-calibration file in
 the Data root; no dividend/TR/PIT qualification.
 Raw price-only/non-PIT/no CA/TR/finality/causal-availability qualification.
@@ -68,12 +80,19 @@ Chronos2 official dated checkpoint95a971... exact477930472-byte weightddcda3c7..
 acquired under A/research/chronos2-runtime-preparation-20261008-v1-r3.
 Existing Chronos2.2.2 Docker CPU loader works with tmpfs; no package/build change.
 Actual synthetic CPU inference passes7.902s/Chronos2Model/three1x21x21 outputs.
-CUDA fails7.475s before model class; exact container reaped/absent, lease released.
+Original CUDA fails7.475s before model class; exact container reaped/absent, lease released.
 Exact A/research/chronos2-runtime-capability-20261008-v1/parent-cuda.json,
 SHA431ccd2154b951a6ba14700cb7b47747d409a92209032c946e3a2b030f988bdf;
 custody closed non_promoting_failed/f158c0fa... . Image CUDA mask is measured
-unset, not the cause. New public-only phase diagnostic prepares independently;
-no predictive comparison or blanket GPU-unavailable claim.
+unset, not the cause. R2 proves RuntimeError at cuda_peak_reset with CUDA/device1
+available; explicit cuda.init fixes it. R3 CPU9.616s/CUDA10.030s passes exact
+three1x21x21 outputs/488003584-byte peak, no training/market labels/weight changes.
+Exact A/research/chronos2-runtime-capability-20261008-v1-cuda-init-r3/parent-cuda.json,
+SHA237608288478c6d4a5589f8f0001b6b559b6a63b8a30118f68714cbf3e69c997;
+custody36ee1f6f... closed/lease released. Post-checkpoint geometry130ee3d0...
+published/189 entries567 series keys/two fixed complete21-target views,10
+nonoverlapping blocks not ESS. Fixed Chronos2/persistence forecast study prepares;
+no predictive result, trading PnL or Paper input yet.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 

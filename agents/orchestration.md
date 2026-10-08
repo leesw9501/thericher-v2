@@ -14,9 +14,9 @@ NEXT owns kis-owned-portfolio-first-rebalance-v1; actual lifecycle is required.
 | Resource | Owner | Current fact |
 | --- | --- | --- |
 | Paper runtime | Execution / parent | Final image ae2c68f8.../406 source files/tree7bac725b... verified offline; seven configs retain five RW/two RO roots and all operational fields. No running owner restarted. |
-| Owned rebalance | Execution / scheduler | Oct8 22:45 SELL and23:10 BUY installed; BUY host2f157ea1...65 cases/independent READY, final-source/receipt faults preserve actual calls. Exact SELL predecessor/original shared basis required.23:50 exact SELL/BUY router preparing. No actual order/fill claimed. |
+| Owned rebalance | Execution / scheduler | Oct8 22:45 SELL/23:10 BUY/23:50 exact recovery installed. Router98112184.../new recovery host01106782... carries exact retained request pin,97 cases/independent READY; R2 installer43 cases18.70s. Original shared basis/settings/other dates retained; no actual order/fill claimed. |
 | Research CPU | Engine / independent review | ANTICOR actual30 cells11.498s/rejected; ALL-RO15.273s passes. Independent r2 exact30-cell replay1.294s/988 unchanged files/zero fits or inference; canonical venue expectation fixed, failed r1 retained. Custody closed025a7145... . |
-| Research GPU | Parent / Steward | Conditional hedge42 cells rejected/custody closed. Chronos2 synthetic CPU passes7.902s, CUDA fails7.475s before model class; exact absence/lease released/custodyf158c0fa... closed. New categorical diagnostic prepares; existing image mask is unset. No blanket hardware block. |
+| Research GPU | Parent / Steward | Chronos2 R3 CPU9.616s/CUDA10.030s succeeds after explicit initialization; peak488003584 bytes, exact absence/lease released/custody36ee1f6f... closed. Fixed post-checkpoint forecast study567 keys preparing. GPU is available, not approval-blocked. |
 | Data | Data / parent | Sector3x2686 input070e98d7... independent readback15056b1f... passes. Four-asset compositeab70d192... actually published/known XLK/XLE splits retained; split-aware CPU consumer/dispatcher preparing without raw rewriting. Cursor scope closed, not API exhaustion. |
 | Verification | Parent / independent reviewers | Goal20 full12398pass22skip35warnings362.04s,12420 collected/eight clean workers/helper exit0;395 serial12.61s/8 publication tests/.08s/Ruff/three sample-env Compose pass. Proven cancellation false-block fixed before authority; aborted prior run is not authority. Claude .951s unavailable/not agreement. |
 | Existing SPY | Execution scheduler | HeadOct8 22:15KST unchanged;22:45 owned trim newly installed and23:50 today same-request recovery. Original action backed up/settings/triggers unchanged; no manual invoke or new basis. |
@@ -39,7 +39,11 @@ ANTICOR completed11.498s with exact child reaping/source preservation. Next
 distinct conditional-hedge actual CUDA result is closed, not held for a pending
 Paper observation. Measured /tmp fault explains this package's failed first
 dispatch; fixed runtime reuse avoids unnecessary dependency/build replacement.
-New sector CPU research and Chronos2 runtime capability advance in parallel
-with Paper integration; no idle-resource permission hold or dummy training.
+Sector actual30-cell study completes26.805s/rejected; ALL-RO19.330s, no refit.
+Its sibling-prefix mount bug was measured pre-dispatch/no fit and fixed with
+path-component boundaries. Reversible improvement: actual mount command
+generation runs metadata-only before the new freeze, no subprocess or gate.
+Chronos2 CUDA capability succeeds; post-checkpoint forecast study prepares
+in parallel with Paper integration, no permission hold or dummy training.
 Closed results, older image5216e00d... and prior projections remain in Git4b0e79a
 and immutable lane evidence. Refresh this projection when shared facts change.

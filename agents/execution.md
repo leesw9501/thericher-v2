@@ -67,7 +67,13 @@ Container66fcfcc7.../host65 cases6.84s/installer seven1.55s/independent review
 READY. Post-dispatch source/receipt-write faults retain true counts/containment;
 missing persisted receipt remains unknown, never a zero-call claim.
 Exact scheduled-buy-opportunity-20261008T2310KST-v1.json under the same root.
-23:50 exact SELL/BUY router preparing, not yet installed. Installed/smoke/exit is never a fill or Scheduler
+23:50 exact SELL/BUY router98112184... is installed, not manually invoked.
+New SELL recovery host01106782... takes the exact probe request hash; lost
+request/pin cannot create a fresh control/quantity/intent.97 synthetic cases/
+independent P1 readback pass; R2 installer43 cases18.70s. LF/CRLF known-template
+fault fixed without changing original used sources. Exact recovery opportunity
+pointer and previous-action backup7a9ea3fd... under the same root.
+Installed/smoke/exit is never a fill or Scheduler
 origin proof. No task was manually invoked.
 
 ## Retained Account Evidence

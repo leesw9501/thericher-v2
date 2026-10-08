@@ -19,8 +19,13 @@ Compacting this projection does not delete evidence or reopen an allocation.
   Chronos2 exact public checkpointddcda3c7... acquired externally; synthetic
   CPU inference passed7.902s; CUDA failed7.475s before model class. Contract
   bb885f2a.../failed receipt431ccd21.../custodyf158c0fa... closed, lease released.
-  New bounded public-only diagnostic prepares; no market-performance allocation.
-  New sector CPU preparation uses no GPU/holdout; it cannot revive old kills.
+  R2 measured peak-reset RuntimeError; explicit cuda.init recovery R3 succeeds
+  CPU9.616s/CUDA10.030s, peak488003584 bytes. Contractf08c7e5f.../result23760828.../
+  custody36ee1f6f... closed/lease released. No market labels or training.
+  Fixed post-checkpoint forecast campaign prepares/geometry130ee3d0...,
+  567 keys/10 nonoverlap blocks not ESS; no holdout or profit claim.
+  Sector CPU actual30 cells rejected/26.805s/ALL-RO19.330s, zero GPU/holdout;
+  cannot revive old kills. Scopecd35838e.../result3299ba9f... .
 
 - Current21-session relative-allocation trial1 completed2 fits/42 cells;
   Ridge and CUDA GRU original BOTH-view10bps kills reject. Contractf37b0506.../

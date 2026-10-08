@@ -60,10 +60,12 @@ fixed126-return/21-cadence sector relative-strength CPU campaign with explicit
 known split signal/share accounting. Exact Chronos2 public weights acquired;
 synthetic CPU/CUDA runtime capability runs independently using existing Docker,
 no dependency replacement or market comparison without a new frozen contract.
-Synthetic CPU inference now passes; CUDA failed before model class, exact
-receipt431ccd21.../lease released/custody closed. Run the separately frozen
-categorical diagnostic; preserve original failed attempt, do not label the
-whole GPU environment unavailable or idle independent sector CPU work.
+Synthetic CPU/CUDA now pass after explicit initialization in separate R3;
+preserve original failed attempts. Sector CPU recovery completes30 cells/
+rejected, ALL-RO passes. Next distinct frozen forecast study compares fixed
+Chronos2 against persistence on post-checkpoint targets/567 keys in two
+complete21-target views. Forecast skill is not trading PnL or Paper promotion;
+unknown earlier-context/instrument pretraining overlap remains explicit.
 
 Data: integrate only exact XLK/XLF/XLE AMS capability scope, then one reusable
 client/six fixed OC queries at20261007/20160202 under existing gates/120s bound.

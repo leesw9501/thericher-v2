@@ -104,8 +104,14 @@ controls at10bps in BOTH views; GRU also beats Ridge. Return dominance is
 descriptive, not the defensive-utility objective. Failed older studies unchanged.
 Sector cohort070e98d7... independently validated15056b1f... . New pure sector
 relative-strength7bdd5ffd.../40 synthetic cases uses126 returns/21 cadence;
-fresh CPU worker7a5c8e47.../52 tests2.47s preparing dispatch; composite
-ab70d192... published/2686 sessions, not a performance claim.
+CPU worker54a99a73.../59 tests2.81s validates semantic raw split conditions,
+not hashes alone. Compositeab70d192... published/2686 sessions. Actual runtime
+recoverycd35838e... completes26.805s/30 cells/zero fits/rejected; exact ALL-RO
+19.330s passes, result3299ba9f... . Original sibling-prefix mount rejection
+occurred pre-dispatch/no fit; retained immutable, only boundary fix in fresh r2.
+At10bps candidate growth41.49%/29.34%, SPY26.52%/60.29%, equal4 56.64%/64.46%;
+candidate utility negative BOTH views. Positive seen-DEV growth is not a
+survivor, independent replication or broker profit. No rescue/retuning.
 Known XLK/XLE2:1 Dec5,2025 split produces measured raw half-price discontinuity;
 new consumer must account shares/signals explicitly, not double-adjust or rewrite
 original bytes. No dividend/TR/PIT qualification follows.
@@ -117,7 +123,14 @@ Synthetic CPU inference passes7.902s/three1x21x21 outputs; actual CUDA fails
 remain immutable under A/research/chronos2-runtime-capability-20261008-v1;
 GPU lease released/custody non_promoting_failed/f158c0fa... . Measured image
 CUDA mask unset disproves that hypothesis; new phase diagnostic prepares,
-not a predictive comparison or reason to stop independent CPU research.
+not a reason to stop independent CPU research. R2 measured cuda_peak_reset
+RuntimeError with CUDA available/device1; explicit initialization fixes it.
+R3 CPU9.616s/CUDA10.030s passes/peak488003584 bytes; exact parent-cuda.json
+23760828... under A/research/chronos2-runtime-capability-20261008-v1-cuda-init-r3,
+custody36ee1f6f... closed. Post-checkpoint geometry130ee3d0... published:
+189 entries567 keys,61/128 fixed-view decisions,3/7 nonoverlap blocks NOT ESS.
+One fixed128-context/21-target Chronos2-vs-persistence forecast study preparing,
+not a trading-performance result, new weights, holdout or Paper model.
 Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new
 contract, not reuse of the2021 development view.

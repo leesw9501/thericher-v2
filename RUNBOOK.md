@@ -13,7 +13,13 @@ API/host/container99 tests5.19s and installer32 tests12.60s pass; inert Docker
 smoke1.33s is not an API call/order/fill. Joint BUY23:10..23:14KST is installed,
 host2f157ea1.../65 cases/independent READY/installer seven mocked cases pass.
 Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-buy-opportunity-20261008T2310KST-v1.json.
-23:50 SELL/BUY router remains preparation. Post-dispatch final-source/receipt
+23:50 SELL/BUY router98112184... is installed; recovery host01106782... uses
+the exact retained request hash, never fresh-entry null. Lost post-probe
+request/pin rejects before fresh reads/transport;97 cases/independent review.
+R2 installer43 cases18.70s/LF+CRLF exact-known templates; old failures retained
+and had no mutation. Settings/triggers/other dates unchanged. Exact
+D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-recovery-opportunity-20261008T2350KST-v1.json.
+Post-dispatch final-source/receipt
 faults preserve actual counts; missing receipt is unknown. For every BUY,
 require exact SELL evidence/new custody and observed funds, never anticipated
 proceeds, a substitute request or reset of the original10-percent basis.
@@ -48,8 +54,17 @@ Existing Docker Chronos2.2.2 synthetic CPU inference passes7.902s; CUDA fails
 7.475s before model class. Exact parent-cpu.json0b7cf3fc.../parent-cuda.json431ccd21...
 under D:/thericher-v2/model-artifacts/research/chronos2-runtime-capability-20261008-v1.
 Lease released/custodyf158c0fa... closed; image CUDA mask measured unset.
-New public-only phase diagnostic prepares, not dependency replacement or a
-market-performance result. Original sources/receipts remain immutable.
+R2 diagnostic proves cuda_peak_reset RuntimeError/CUDA available/device1.
+R3 explicit cuda.init before reset passes CPU9.616s/CUDA10.030s/488003584-byte
+peak; exact parent-cuda.json23760828... under the sibling cuda-init-r3 root.
+Custody36ee1f6f... closed/lease released. No dependency change, market result
+or weight training. Sector recovery actual26.805s/30 cells/rejected, ALL-RO
+19.330s; exact worker-result.json3299ba9f... under
+D:/thericher-v2/model-artifacts/research/kis-sector-relative-strength-development-v1-runtime-recovery-r2.
+Original pre-dispatch sibling path-prefix fault preserved; future metadata
+command generation catches actual mount shapes without subprocesses.
+Post-checkpoint geometry130ee3d0... published/567 forecast keys; one fixed
+forecast-vs-persistence benchmark prepares, not Paper input or trading PnL.
 
 ## Owned Rebalance Code And Runtime Delivery
 
