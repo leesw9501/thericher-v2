@@ -21,7 +21,23 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
-Current goal23 is kis-stateful-rebalance-development-v1. Goal22's actual repeat
+Current goal24 is kis-learned-stateful-rebalance-development-v1. Goal23 is
+COMPLETE/REJECTED30 cells: new420-file two-dependency recovery bundle keeps
+original hypothesis/input/worker/kill and preserves failed418/v1 bytes. Exact
+A/research/kis-stateful-rebalance-development-v1-runtime-recovery-v2:
+contract4d3b8ed7.../resultdfcad2b6.../parent11077e36...10.762s worker/12.378s
+parent. Bound ALL-ROe8371bb5...12.016s links same successful immutable parent/
+result, all566 inputs/source unchanged/zero fit-inference-search-write/reaped/
+absent. Public independent aggregate review confirms original rejection:
+10bps growth+4.09%/+22.83% and lower turnover, not required utility improvement.
+These are seen raw-price hypothetical results, not broker profit. Next finite
+four-fit inventory-conditioned partial-rebalance question prepares; no frozen
+GPU appointment yet. MD token666ec8c3... now authenticates in native Paper
+runtime/HTTP2xx/token1/zero GET or account-order work/reaped. Historical
+host/head failure remains unclassified. Do not backdate intraday collection;
+post-close historical253-close control-refresh preparation is separate.
+
+Goal22's actual repeat
 cycle is COMPLETE: cd14cad0.../37.436s parent/35.440s worker/one token/28GETs/
 zero orders/no_target_delta. Original basis and current owned book matched;
 client recreation and private checkpoint reload return the same cycle.
@@ -33,9 +49,8 @@ Independent bounded review found no P1/P2, completed after dispatch; revised
 in-memory body not independently hash-attested. Native27+3 probes and separate
 critical transport/artifact-scope review preceded reliance. Initial body failed
 compilation; retained1e7a271a... is not broker evidence. Fees/netPnL unobserved.
-Goal23 obtains the continuous-holdings CPU comparison after a versioned
-dependency-consistent source repair; frozen v1 import failure is not a model
-result. All566 inputs/418 sources unchanged, failed children reaped/absent.
+The original pre-import failure remains a technical source failure, not a model
+result. V2 completion and readback above do not erase it.
 
 Goal21's first
 owned SELL -> observed-funds joint BUY is COMPLETE as actual Paper execution.

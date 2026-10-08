@@ -1,46 +1,41 @@
 # Codex Orchestration Stateboard (제품개발 총괄)
 
 AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns one company objective.
-This is current cross-lane readiness/resource projection, not a second queue.
+Current shared readiness/resource projection only, not a second queue/history.
 
 ## Current Ready / Owned / Due (2026-10-09 KST)
 
-Parent alone owns Git, actual credentials, provider/Docker/scheduler effects.
-Role authors own disjoint public or external preparation. Full clean-root
-integration is complete; no active authority-test owner.
-Goal20 self-financing rebalance code/replay and image delivery are COMPLETE.
-Actual owned SELL and two joint BUYs are independently filled/book-reconciled;
-goal21 is COMPLETE. NEXT goal22 owns a restartable/repeatable three-symbol
-control cycle with fresh reconciliation and existing private console.
+Parent alone owns actual credentials/provider/Docker/scheduler/Git work.
+Disjoint role authors own public or external source preparation.
+Goal22 is COMPLETE/committed/pushed9dc0406. Goal23's continuous-holdings CPU
+result and successful-parent-bound readback are complete; original kill is
+rejected, not a profit or Paper claim. NEXT goal24 prepares and evaluates one
+new inventory-conditioned partial-rebalance learning family.
 
-| Resource | Owner | Current fact |
+| Resource | Owner | Shared fact |
 | --- | --- | --- |
-| Paper runtime | Execution / parent | Final image ae2c68f8.../406 source files/tree7bac725b... verified offline; seven configs retain five RW/two RO roots and all operational fields. No running owner restarted. |
-| Owned rebalance | Execution / parent | Goal21 complete. Goal22 fresh account22fa0c50.../19:06:43UTC/token1/GET5/orders0/3positions/0open orders/current owned book-original basis matched/private38 unchanged/reaped/absent. Consolec48c5fc9... matches snapshot. Repeatable cycle source prepares; nativeSELL/funds independent160 cases12.63s READY. No duplicate writer/budget reset. |
-| Research CPU | Engine / independent review | Regime numerical3686cfdd... passes2.847s/1046 unchanged bindings/36 cells/8 models/zero fit-inference-search-write. Original kills rejected. Stateful minvar63/drift-band continuous-holdings adapter prepares source-only; no new frozen training campaign. |
-| Research GPU | Parent / Steward | Regime db0bdaae... actual8 fits/36 cells/23.104s worker/26.018s parent; four CUDA MLP fits. Result53e359ff... rejected; ALL-RO13.217s/source/all566 inputs unchanged/reaped/absent. Custody7c2ae4dc... closed/lease released, no active allocation. |
-| Data | Data / parent | Current-trio pure selector44 parent/independent READY. Acquisition38 parent1.51s; independent late-terminal deadline P2 being fixed before actual use.64-close context is not253-close control; no graft. Actual new collection not yet run/old4a cohort unchanged. |
-| Verification | Parent / independent reviewers | Current full12681pass22skip35warnings330.66s/12703 collected/eight clean workers/helper exit0/reaped/temp cleaned. Changed pure73 cases1.98s/fixture13 cases182.68s/review; Ruff/three sample-env Compose pass. External regime30/15.05s and v3 reader13/14.95s pass; Claude unavailable/not agreement. |
-| Existing SPY | Execution scheduler | Oct8 23:50 recovery completed; actual child token1/GET0/BUY0. Next Oct9 23:50; original action backed up/settings/triggers unchanged. No manual invoke/new basis. |
-| Existing preview | Execution scheduler | thericher-kis-risk-preview-20261009-0015 Ready/lastOct9 00:15/exit2/no next trigger. Exact outcome not inspected; task exit is not outcome. No manual invocation. |
-| Existing head | Data scheduler | New02:28 invocation8736eef8.../exact schedule0e47323f.../capture007b331e... binds QQQauth_rejected/HTTP4xx and SPYtoken_not_due. No new coverage/boundary claim; token next_due02:33:06.641520/head04:24KST. Collector6aec synthetic15 cases remains valid; oldb7fc rollback/Paperae2 unchanged. |
-| Console | Existing web | http://127.0.0.1:8787: categorical agreementc48c5fc9... matches19:06:43UTC fresh account, mode off/holdings-open orders available/prices unknown/buying power reference-only/unpaused controls. Historical accounting remains separate; no netPnL claim. |
-| Tiingo rights | Source-local operator question | Starter/Trial retention applicability unknown/already asked; no new Tiingo numeric work. Other lanes continue. |
+| Paper runtime | Execution / parent |65ab6e66.../414 sources/e7543a9b... verified91ed6408..., same Python/locked dependencies/seven consumer roots; no running owner restarted. |
+| Paper custody | Execution / parent |Repeatcd14cad0... actual37.436s/token1/GET28/order0/no_target_delta; recreated client/private checkpoint reload identical/current book/original basis/source/input matched/reaped/absent. No duplicate writer or basis reset. |
+| Research CPU | Engine / parent |Stateful v2 complete/rejected30 cells/10.762s worker12.378s parent11077e36...; bound ALL-ROe8371bb5.../12.016s/420 sources566 inputs unchanged/zero fit-search-write. Original failed418 bundle preserved; two transitive dependencies repaired in a new archive. |
+| Research GPU | Parent / Steward |No active allocation. Last regime CUDA fits/custody closed; new learned partial-rebalance kernel/finite four-model proposal prepares, no actual training until that contract/source/smoke is ready. |
+| Data | Data / parent |fd19f82b... deadline-fixed44 tests READY, host actualb0443f96... auth rejected. Same-runtime MD token666ec8c3... nowHTTP2xx/zero GET/accounts/orders/source unchanged/reaped. Cause of prior failure unclassified. Intraday selector actual next eligible Oct9 13:30UTC; no backdating. Post-close unchanged253-close control-refresh preparation is independent. |
+| Verification | Parent |Changed serial826pass33.74s; full12914pass22skip35warnings334.71s/12936 collected/eight clean workers/helper0. Ruff/three sample-env Compose pass. No active authority-test owner. |
+| Existing head | Data scheduler |04:24KST terminal23212330.../schedule8da92f8b.../capture745fccac... bind QQQauth_rejected/HTTP4xx and SPYtoken_not_due. Next06:20KST/21:20UTC owned; no manual task invoke or boundary/finality inference. |
+| Console | Existing web |http://127.0.0.1:8787:0c919dfa... agrees with20:00:10UTC runtime observation/mode off/holdings-open orders available/unpaused/prices unknown/reference-only funds. No fee/netPnL claim. |
+| Tiingo rights | Operator source-local question |Existing question unresolved; no Tiingo numeric work. No independent lane waits for it. |
 
 ## Bottleneck And Reversible Improvement
 
-No company block or foreground wait. Material remaining Paper gap is runtime
-repeatability/current observation after the now-closed first SELL/BUY lifecycle,
-not credential approval or profitability qualification. New objective binds one
-session-keyed control/restart/current-account/console cycle to existing owners.
-External waits retain their named next_due. Head04:24KST is19:24UTC, not18:24;
-source-safe query at03:24KST still showed the prior02:28 run. No manual invoke,
-missed-trigger inference or foreground wait.
-Execution owns one new cycle module/tests; Data fixes its finite acquisition
-deadline while Engine prepares continuous-holdings turnover research. Fresh
-account succeeded after its owned retry, previous auth failure remains narrow.
-Measured reversible improvement: target-instrument SELL conflict checks replace
-the blanket pending-plan block. Independent probes confirm disjoint TLT progress
-and every-owner same-instrument rejection without weakening full-book custody.
-Old operating improvements and closed evidence remain recoverable from Git
-0b87b48 and immutable artifacts; this projection is not a review history.
+No company block or foreground wait. Prepared research, Data source-contract
+work and existing Paper custody are independent. Material research gap:
+turnover reduction has not improved both-view post-cost utility over controls.
+Freeze one inventory-conditioned learned partial-rebalance question; do not
+reopen rejected studies or broaden compute to consume GPU.
+
+Measured reversible improvement: restore exactly two missing transitive
+dependencies in a new420-file bundle, preserve original418/v1 evidence, run
+no-input smoke before actual work. Bind cached success to a successful bounded
+immutable parent receipt; preserve known dispatch/reaping facts on later
+hash/receipt errors. This advances reproducible engine research, not a gate.
+External due facts stay with their owner. Claude bcf9618b... is unavailable/
+non-verdict, not agreement. Old projections remain recoverable in Git.

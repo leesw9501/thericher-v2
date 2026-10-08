@@ -26,8 +26,17 @@ matches20:00:10UTC runtime observation; temporal publication binding only.
 Native cycle27 independent cases plus3 fault/restart probes pass. Seven consumer
 pins now65ab6e66.../414 source files/treee7543a9b.../unchanged Python3.12.13
 and runtime lock; offline source publication91ed6408.../3.572s build. No owner
-restart. Goal23 repairs the frozen stateful CPU source bundle's pre-CLI import
-failure without changing hypothesis/input/kill or any frozen v1 bytes.
+restart. Goal23 stateful CPU comparison is COMPLETE/REJECTED30 cells after
+exact two-dependency v2 recovery; original418/v1 bytes/failures retained. Exact
+D:/thericher-v2/model-artifacts/research/kis-stateful-rebalance-development-v1-runtime-recovery-v2,
+parent11077e36...12.378s/worker10.762s and bound ALL-ROe8371bb5...12.016s/
+420 sources566 inputs unchanged/zero fit-inference-search-write/reaped/absent.
+Original10bps two-view kill independently confirmed; positive hypothetical
+growth is not required utility improvement or broker profit. NEXT goal24
+prepares learned partial rebalance; no actual new GPU allocation yet.
+MD token666ec8c3... authenticates in native Paper runtime/HTTP2xx/zeroGET or
+account-order work. Prior host/head cause unclassified. Intraday runner cannot
+be backdated after close; separate historical control refresh prepares.
 Current full12914pass22skip35warnings334.71s/12936 collected/eight clean workers/
 helper exit0/reaped/temp cleaned; Ruff/three sample-env Compose pass.
 
