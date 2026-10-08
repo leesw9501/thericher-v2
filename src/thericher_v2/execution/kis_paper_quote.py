@@ -13,6 +13,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 from decimal import ROUND_DOWN, ROUND_UP, Decimal, DecimalException, InvalidOperation
+from types import MappingProxyType
 from typing import Any, Final, Literal
 from zoneinfo import ZoneInfo
 
@@ -49,6 +50,9 @@ KIS_PAPER_US_QQQ_PRICE_DETAIL_EXCHANGE: Final = "NAS"
 KIS_PAPER_US_QQQ_ASKING_PRICE_EXCHANGE: Final = "NAS"
 KIS_PAPER_US_QQQ_QUOTE_SYMBOL: Final = "QQQ"
 KIS_PAPER_US_QQQ_ORDER_EXCHANGE: Final = "NASD"
+KIS_PAPER_PREVIEW_VENUES: Final = MappingProxyType(
+    {"SPY": ("AMS", "AMEX"), "TLT": ("NAS", "NASD"), "GLD": ("AMS", "AMEX")}
+)
 DEFAULT_KIS_PAPER_CANARY_DISCOUNT_BPS: Final = Decimal("25")
 KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE: Final = timedelta(seconds=120)
 KIS_PAPER_QQQ_ASKING_PRICE_MAX_AGE: Final = KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE
@@ -301,6 +305,42 @@ def _build_kis_paper_price_request(
         },
         query={"AUTH": "", "EXCD": exchange, "SYMB": symbol},
     )
+
+
+def build_kis_paper_preview_quote_request(
+    *,
+    config: KisPaperConfig,
+    access_token: str,
+    symbol: str,
+    kind: Literal["price_detail", "asking_price"],
+) -> KisHttpRequest:
+    """Fixed three-instrument preview GETs, not a generic execution route."""
+    if type(symbol) is not str or symbol not in KIS_PAPER_PREVIEW_VENUES:
+        raise KisPaperQuoteError("preview_symbol_invalid")
+    routes = {
+        "price_detail": (KIS_PAPER_US_SPY_PRICE_DETAIL_PATH, KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID),
+        "asking_price": (KIS_PAPER_US_SPY_ASKING_PRICE_PATH, KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID),
+    }
+    if type(kind) is not str or kind not in routes:
+        raise KisPaperQuoteError("preview_quote_kind_invalid")
+    path, tr_id = routes[kind]
+    return _build_kis_paper_price_request(
+        config=config, access_token=access_token, path=path, tr_id=tr_id,
+        exchange=KIS_PAPER_PREVIEW_VENUES[symbol][0], symbol=symbol,
+    )
+
+
+def validate_kis_paper_preview_quote_request(request: KisHttpRequest) -> None:
+    for symbol, (exchange, _) in KIS_PAPER_PREVIEW_VENUES.items():
+        for path, tr_id in (
+            (KIS_PAPER_US_SPY_PRICE_DETAIL_PATH, KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID),
+            (KIS_PAPER_US_SPY_ASKING_PRICE_PATH, KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID),
+        ):
+            if _is_exact_kis_paper_price_request(
+                request, path=path, tr_id=tr_id, exchange=exchange, symbol=symbol,
+            ):
+                return
+    raise KisPaperQuoteError("preview_quote_request_invalid")
 
 
 def validate_kis_paper_spy_quote_request(request: KisHttpRequest) -> None:

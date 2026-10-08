@@ -33,10 +33,16 @@ CLOSEs/252 returns. First context2022-12-28..2023-12-29; last2025-08-28..
 December2024/2025 decisions follow18:00UTC early CLOSEs; use actual clocks.
 No provider call or silent extending/splicing of the frozen trio input.
 NEXT now owns risk-engine Paper preview with parallel21-session variance
-forecast. Data independently checks calendar/source-support geometry for
-TRAIN2021Dec1..2023Nov30 and33 DEV month-first entries; no actual targets or
-provider call. A source gap is scoped input_unavailable, never selective date
-deletion or a hold on the existing Paper strategy.
+forecast. Independent calendar/source-support geometry is complete:503 TRAIN
+entries/24 disjoint21-label windows (not ESS),33 DEV entries/views12/21,
+1276 required dates present for all3, zero gaps. Earliest past2021Aug31,
+last TRAIN targetDec29 2023 equals first DEV decision CLOSE; final DEV target
+Sep30 2026. Twelve adjacent DEV labels overlap; no99-observation claim.
+Exact A/data/kis-d1-variance-forecast-development-v1/geometry-20261008-v1.json,
+SHA3536ee531...; metadata-only, no actual price/target/provider read.
+Source gaps remain scoped input_unavailable, not selective date deletion or
+a hold on the existing Paper strategy. One-off read-only preview driver is
+an explicitly assigned invoked support package, not Data account authority.
 Old2008 monthly proposal
 remains unavailable. The closed source facts below are historical context,
 not current waits, queues or permission holds.

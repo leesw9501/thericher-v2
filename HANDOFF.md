@@ -73,11 +73,29 @@ Do not claim host/Docker numerical equivalence; this does not rescue the kill.
 Custody closes non_promoting_completed/familytrial1/holdoutnone/record8152bddd... .
 Separate validation-context-diagnosis.json SHA ffdb38b2... shows both Decimal28
 and50 keep the mismatch; cause unknown, not a proved precision explanation.
-NEXT owns kis-risk-engine-paper-preview-v1: actual zero-submit private preview
-with incumbent/shared-basis preservation and independent CPUOLS/CUDAGRU
-daily-variance diagnostic. Research cannot become a profitability gate on Paper.
-377 changed-path serial16.04s/full11673passes22skips/
-35existingwarnings346.16s/eight workers/11695collected/Ruff/three Compose pass.
+kis-risk-engine-paper-preview-v1 is COMPLETE with actual zero-submit private
+preview. Account snapshot available;1 token/11 validated GET calls, SPY/TLT/GLD
+each stale quote, no orderability call or submit, private/source unchanged.
+Exact receipt A/execution/kis-risk-engine-paper-preview-v1/4ac651cb78284a319d75a9a3d74a3f10/receipt.json,
+SHA2b45b532...; exact invocation container absent. Scope is off-hours unavailable,
+not account failure, fresh quote proof, feasibility or an authorization hold.
+Parallel variance diagnostic COMPLETE/REJECTED6 cells, two actual fits:
+CPU OLS .028s and CUDA GRU512 updates1.261s/peak188405248bytes.
+Root A/research/kis-d1-variance-forecast-development-v1;
+contractb198df9d.../resultb400bd37.../tree5bb2cc8e... . Parent9.358s/
+ALL-RO7.051s contained, independent r2 readback8815df09... exact six cells/
+scalers/original kill/1155 unchanged source-input artifacts,2.328s.
+First review48b77102... failed only reviewer metadata parsing and is preserved.
+Custody closed/non_promoting_completed/familytrial1/holdoutnone/f34fad78... .
+No GPU job remains; research rejection never becomes a Paper profitability gate.
+NEXT will own adaptive risk-engine development: finite causal monthly refits
+and a separately owned fresh-session zero-submit preview opportunity. The
+research is related seen development, not independent replication or promotion.
+937 changed-path serial12.19s/full11783passes22skips/
+35existingwarnings348.40s/eight workers/11805collected/clean helper/
+Ruff/three sample-env Compose pass. A paired old recovery test passes with a
+short scratch root and fails with a long root; preserve that measured path
+geometry limit, not an unproved runtime regression or MAX_PATH diagnosis.
 Data/Engine work is disjoint; parent owns actual calls/integration/Git. No
 account/order/scheduler/web/private-Paper change belongs to these packages;
 separate existing Paper authority and owned jobs remain unchanged.

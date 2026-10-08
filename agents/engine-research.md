@@ -17,8 +17,20 @@ Pinned ALL-RO5.322s reproduces30 cells exactly. Host independent30-cell/
 414-fee-capital/1297-file readback2.364s supports rejection with unlocalized
 action/cap byte mismatches, not runtime equivalence. Custody closed/familytrial1.
 377serial16.04s/full11673+22skip346.16s/eightworkers/Ruff/three Compose pass.
-New variance-forecast CPU HAR-like/GRU proposal is source/contract preparation
-only, not a frozen campaign, actual training or a Paper profitability gate.
+Variance-forecast CPU OLS/CUDA GRU is COMPLETE/REJECTED6 cells. Exact root
+D:/thericher-v2/model-artifacts/research/kis-d1-variance-forecast-development-v1;
+contractb198df9d.../resultb400bd37.../frozen1155 files tree5bb2cc8e... .
+Two actual fits: OLS .028s/rank10; CUDA GRU512 updates1.261s,
+peak188405248bytes. Parent9.358s and exact ALL-RO7.051s contained; zero
+readback fits/inference/search. Baseline QLIKE .221730/.439486 versus OLS
+.165811/.807128 and GRU .295669/2.565638: original BOTH-block kill rejects.
+Independent r2 readback8815df09... reconstructs six cells/scalers/12 kill
+comparisons,1155 source/input artifacts unchanged,2.328s. The first failed
+review48b77102... is preserved; it was reviewer metadata parsing, not a model
+failure. Host3.14.3 is a numerical supplement, not runtime equivalence.
+Custody closed non_promoting_completed/familytrial1/holdoutnone/f34fad78... .
+No actual GPU job remains; monthly mature-label refits are preparation only,
+not frozen, dispatched, independent replication or a Paper profitability gate.
 Closed context below does not describe current resource waits.
 
 Current daily-risk worker actually completed two fits and42 cells: CPU HGB100

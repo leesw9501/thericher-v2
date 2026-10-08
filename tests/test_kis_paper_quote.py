@@ -62,6 +62,43 @@ from thericher_v2.execution.paper_canary_lifecycle import (
 )
 from thericher_v2.execution.paper_canary_runtime import read_paper_canary_runtime
 
+
+@pytest.mark.parametrize("symbol,venue", [("SPY", "AMS"), ("TLT", "NAS"), ("GLD", "AMS")])
+@pytest.mark.parametrize("kind", ["price_detail", "asking_price"])
+def test_preview_quote_fixed_readonly_routes(symbol, venue, kind):
+    from thericher_v2.execution.kis_paper_quote import (
+        build_kis_paper_preview_quote_request,
+        validate_kis_paper_preview_quote_request,
+    )
+    from thericher_v2.execution.kis_readonly import validate_kis_paper_readonly_request
+
+    request = build_kis_paper_preview_quote_request(
+        config=_config(), access_token="synthetic-token", symbol=symbol, kind=kind,
+    )
+    assert request.method == "GET" and request.json_body is None
+    assert request.query == {"AUTH": "", "EXCD": venue, "SYMB": symbol}
+    validate_kis_paper_preview_quote_request(request)
+    validate_kis_paper_readonly_request(request)
+    for change in (
+        {"method": "POST"},
+        {"url": request.url.replace("openapivts", "openapi")},
+        {"query": {**request.query, "SYMB": "QQQ"}},
+        {"query": {**request.query, "EXCD": "NYSE"}},
+        {"query": {**request.query, "extra": "unknown"}},
+        {"headers": {**request.headers, "tr_id": "VTTT1002U"}},
+    ):
+        with pytest.raises(KisPaperQuoteError):
+            validate_kis_paper_preview_quote_request(replace(request, **change))
+
+
+@pytest.mark.parametrize("symbol", ["QQQ", "tlt", " TLT", "IWM", None, True])
+def test_preview_quote_cannot_become_a_generic_symbol_route(symbol):
+    from thericher_v2.execution.kis_paper_quote import build_kis_paper_preview_quote_request
+
+    with pytest.raises(KisPaperQuoteError, match="preview_symbol_invalid"):
+        build_kis_paper_preview_quote_request(
+            config=_config(), access_token="synthetic-token", symbol=symbol, kind="asking_price",
+        )
 NOW = datetime(2026, 7, 22, 14, 30, tzinfo=UTC)
 
 

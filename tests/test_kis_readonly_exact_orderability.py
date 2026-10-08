@@ -3,11 +3,128 @@ from __future__ import annotations
 import socket
 import urllib.request
 from dataclasses import dataclass, field
+from datetime import UTC, datetime, timedelta
 from decimal import Decimal
+from zoneinfo import ZoneInfo
 
 import pytest
 
 from thericher_v2.execution import kis_readonly as readonly
+from thericher_v2.execution.kis_paper_quote import (
+    KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID,
+    KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID,
+)
+from thericher_v2.execution.kis_paper_spy_fill_cycle import _digest
+
+
+@dataclass
+class _PreviewTransport:
+    now: datetime = field(default_factory=lambda: datetime.now(UTC))
+    requests: list = field(default_factory=list)
+    late_gld: bool = False
+    bad_tick: bool = False
+
+    def request(self, request):
+        readonly.validate_kis_paper_readonly_request(request)
+        self.requests.append(request)
+        if request.method == "POST":
+            assert request.url.endswith("/oauth2/tokenP")
+            return readonly.KisHttpResponse.from_payload({"access_token": "synthetic-token"})
+        tr_id = request.headers["tr_id"]
+        if tr_id == readonly.KIS_PAPER_OPEN_ORDERS_ENDPOINT.tr_id:
+            return readonly.KisHttpResponse.from_payload({"rt_cd": "0", "output": []})
+        if tr_id == readonly.KIS_PAPER_BALANCE_ENDPOINT.tr_id:
+            return readonly.KisHttpResponse.from_payload({"rt_cd": "0", "output1": []})
+        if tr_id == readonly.KIS_PAPER_ORDERABLE_FUNDS_ENDPOINT.tr_id:
+            return _response()
+        if tr_id == KIS_PAPER_US_SPY_PRICE_DETAIL_TR_ID:
+            return readonly.KisHttpResponse.from_payload({
+                "rt_cd": "0", "output": {"zdiv": "2", "e_hogau": "0" if self.bad_tick else "0.01"},
+            })
+        assert tr_id == KIS_PAPER_US_SPY_ASKING_PRICE_TR_ID
+        if self.late_gld and request.query["SYMB"] == "GLD":
+            self.now += timedelta(seconds=121)
+        korea = self.now.astimezone(ZoneInfo("Asia/Seoul"))
+        return readonly.KisHttpResponse.from_payload({
+            "rt_cd": "0", "output1": {
+                "last": "100", "zdiv": "2", "dymd": korea.strftime("%Y%m%d"),
+                "dhms": korea.strftime("%H%M%S"),
+            }, "output2": {"pbid1": "99.99", "pask1": "100.01"},
+        })
+
+
+def _preview_client(transport):
+    client = _client(transport, token=None)
+    config = client._config
+    account = _digest([config.base_url, config.account_number, config.account_product_code])
+    return client, account
+
+
+def test_preview_complete_same_client_single_token_and_exact_named_buying_power():
+    transport = _PreviewTransport()
+    client, account = _preview_client(transport)
+    result = client.portfolio_preview_snapshot(
+        expected_account_ref=account, clock=lambda: transport.now,
+    )
+    assert result.account_ref == account
+    assert tuple(row.symbol for row in result.instruments) == ("SPY", "TLT", "GLD")
+    assert len(transport.requests) == 15  # token + 5 snapshot GETs + 9 named GETs
+    assert sum(r.method == "POST" for r in transport.requests) == 1
+    assert all(r.headers["authorization"] == "Bearer synthetic-token"
+               for r in transport.requests if r.method == "GET")
+    assert [(row.orderable.reference_symbol, row.orderable.reference_exchange,
+             row.orderable.reference_price) for row in result.instruments] == [
+        ("SPY", "AMEX", Decimal("100.01")), ("TLT", "NASD", Decimal("100.01")),
+        ("GLD", "AMEX", Decimal("100.01")),
+    ]
+    assert result.elapsed_seconds >= 0
+    assert account not in repr(result) and "100.01" not in repr(result)
+    client.portfolio_preview_snapshot(expected_account_ref=account, clock=lambda: transport.now)
+    assert sum(r.method == "POST" for r in transport.requests) == 1
+
+
+def test_preview_wrong_account_rejected_before_any_token_or_get():
+    transport = _PreviewTransport()
+    client, _ = _preview_client(transport)
+    with pytest.raises(readonly.KisPaperReadOnlyError, match="preview_account_binding_mismatch"):
+        client.portfolio_preview_snapshot(expected_account_ref="a" * 64)
+    assert transport.requests == []
+
+
+@pytest.mark.parametrize("symbol,exchange", [("SPY", "AMEX"), ("TLT", "NASD"), ("GLD", "AMEX")])
+def test_preview_public_exact_limit_wrapper_is_named_and_reuses_token(symbol, exchange):
+    transport = _Transport([_response()])
+    cash, funds = _client(transport).preview_orderable_funds_at_limit(
+        symbol=symbol, limit_price=Decimal("100.0100"),
+    )
+    assert len(transport.requests) == 1 and transport.requests[0].method == "GET"
+    assert transport.requests[0].query["ITEM_CD"] == symbol
+    assert transport.requests[0].query["OVRS_EXCG_CD"] == exchange
+    assert transport.requests[0].query["OVRS_ORD_UNPR"] == "100.0100"
+    assert funds.reference_symbol == symbol and funds.reference_price == Decimal("100.0100")
+    assert cash.currency == funds.currency == "USD"
+
+
+@pytest.mark.parametrize("symbol,price", [
+    ("QQQ", Decimal(100)), ("tlt", Decimal(100)), ("GLD", Decimal("NaN")),
+    ("SPY", Decimal(-1)), ("TLT", Decimal("0.000000001")),
+])
+def test_preview_exact_limit_invalid_inputs_do_not_dispatch(symbol, price):
+    transport = _Transport()
+    with pytest.raises(readonly.KisPaperReadOnlyError):
+        _client(transport).preview_orderable_funds_at_limit(symbol=symbol, limit_price=price)
+    assert transport.requests == []
+
+
+@pytest.mark.parametrize("late,bad,reason", [
+    (True, False, "preview_snapshot_stale"), (False, True, "quote_tick_invalid"),
+])
+def test_preview_incomplete_or_late_batch_does_not_return_fresh_complete(late, bad, reason):
+    transport = _PreviewTransport(late_gld=late, bad_tick=bad)
+    client, account = _preview_client(transport)
+    with pytest.raises(readonly.KisPaperReadOnlyError, match=reason):
+        client.portfolio_preview_snapshot(expected_account_ref=account, clock=lambda: transport.now)
+    assert all(r.method == "GET" or r.url.endswith("/oauth2/tokenP") for r in transport.requests)
 
 
 @pytest.fixture(autouse=True)

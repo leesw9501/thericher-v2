@@ -21,8 +21,19 @@ utility. Pinned all-RO replay passes; independent host sealed-action/cashflow
 readback supports rejection with action/cap byte mismatch limits, receipt
 a161a6a1... under D:/thericher-v2/model-artifacts/research/kis-causal-risk-allocation-development-v1.
 No Paper owner, order, budget, quote whitelist, schedule or dashboard changed.
-Next preview may use a fixed engineering control, never a promoted failed
-candidate; incumbent SPY custody/shared10-percent basis must remain exact.
+Actual zero-submit risk preview completed 2026-10-08 04:46:22..04:47:31UTC.
+Account snapshot available; one token POST/11 validated GET calls, all three
+SPY/TLT/GLD quote pairs return quote_timestamp_stale, zero orderability calls
+and zero submits. Result unavailable/reads_unavailable is scoped to this
+off-hours attempt, not a general Paper hold. Existing private/source bytes
+unchanged, exact invocation container absent after dispatch. Exact receipt
+D:/thericher-v2/model-artifacts/execution/kis-risk-engine-paper-preview-v1/4ac651cb78284a319d75a9a3d74a3f10/receipt.json,
+SHA2b45b53203d20c46b86a61398e13e624550a52b9bae4a20ebb6db969ef7f85a1.
+Driver1a273516.../tests a66d8e70...,48 mocked tests; final independent
+source review no blocking P1/P2. Named fresh-quote/exact-limit orderability
+capability is still unestablished. Fixed capped thirds is an engineering
+control, not a promoted failed candidate; incumbent/shared basis retained.
+No standing task, submit whitelist, budget, owner or dashboard was changed.
 
 Current daily-risk implementation has pre-label payoff alignment attested:
 five-session TRAIN OPEN->fifth CLOSE now matches candidate/balanced/null

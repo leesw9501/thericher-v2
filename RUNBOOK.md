@@ -1,5 +1,60 @@
 # Runbook
 
+## KIS Risk Paper Preview Actual Result
+
+Exact attempt D:/thericher-v2/model-artifacts/execution/kis-risk-engine-paper-preview-v1/4ac651cb78284a319d75a9a3d74a3f10/receipt.json,
+SHA2b45b53203d20c46b86a61398e13e624550a52b9bae4a20ebb6db969ef7f85a1.
+Actual2026-10-08 04:46:22..04:47:31UTC, account snapshot available,
+1 token POST/11 validated GET attempts, not independently measured wire starts.
+SPY/AMS, TLT/NAS, GLD/AMS each two quote GETs/stale timestamp; zero exact-limit
+orderability reads and zero submits. Result unavailable/reads_unavailable,
+private/source unchanged, exact UUID container absent after dispatch.
+No claims of current freshness, feasibility, observed fees/settled cash/net PnL.
+Existing SPY custody/shared10-percent basis, QQQ history and schedules unchanged.
+Current source target2026-10-07 20:00UTC; a later completed session requires a
+new bound input, not silent reuse. Off-hours failure does not pause Paper.
+One-off driver run_preview.py SHA1a27351623a311c8f6e263ca235a28f49c7386c42a49db3033d16d875049e576;
+test_run_preview.py SHAa66d8e7090fcfbdcc8019f4ff5b0875e06b56957ecea4b052609cec8570dc109,
+48 mocked tests .30s, independent final source review no blocking P1/P2.
+Only approved Paper values reach the child in-memory stdin; no live values,
+raw broker bodies, prices, amounts, account/order identifiers are retained.
+Its150-second child timeout excludes bounded preparation/containment overhead.
+Private state is read-only, no model promotion or new permission marker.
+
+## KIS Variance Forecast Actual Result
+
+Exact root D:/thericher-v2/model-artifacts/research/kis-d1-variance-forecast-development-v1.
+Contract b198df9d26bc1e588ab29303c41cf0367b23ce0b5c0467334746cd1c1489ec4e;
+result b400bd371bb9eb4475cf992bd6abe173a8342655bbd28db2d3698ac601936fbc;
+1155 frozen files/tree5bb2cc8ee7e7157b7c9d29a375b9f060851796cb04c5459c8dc580b4add2b0bc.
+Same pinned raw KIS trio input02dcc000.../calendar d2dab6f2...,
+503 TRAIN entries/33 dependent DEV decisions split12/21; no independent ESS.
+One CPU OLS/rank10/.028s and one actual CUDA GRU512 updates/1.261s,
+peak188405248bytes; worker7.777s/parent9.358s, invocation contained and lease
+released. CPU synthetic smoke2.857s; exact ALL-RO7.051s binds cached original
+predictions and own NPZ/safetensors, zero fits/inference/search/writes.
+Parent verify containment allowance300s exceeds worker-declared120s; actual
+7.051s is within both. Retain this frozen-parent limit, not an altered receipt.
+
+Original BOTH-block QLIKE/log-MSE kill rejects OLS and GRU. Baseline QLIKE
+.221730333/.439485553; OLS .165811494/.807128019; GRU .295669374/2.565638332.
+No financial NAV, total return, holdout, independent replication or Paper input.
+Independent validation-readback-r2.json SHA8815df095c7e8562fe1d562a8752738f3b798c07e814aaf3762efc3e18efc752
+reconstructs six cells/scalers/12 kill comparisons,1155 source-input artifacts
+unchanged,2.328s. First validation-readback.json SHA48b77102... remains an
+immutable reviewer metadata parsing failure, not a substantive model verdict.
+Host3.14.3 supplements frozen Docker3.12.14, not runtime equivalence.
+Custody non_promoting_completed/familytrial1/holdoutnone/recordf34fad78... .
+Use exact precommit/parent-{smoke,run,verify}/worker-result/validation-readback-r2/
+custody-outcome links; never latest-file selection or failed-review agreement.
+
+Verification937 changed-path serial12.19s/full11783pass22skip35warnings348.40s,
+eight workers/11805 collected/clean helper, Ruff/three sample-env Compose pass.
+An old exact-recovery test passes isolated short C:/trpy/p14a but fails at the
+longer scratch root; whole937-case short-root serial passes. This establishes
+path-geometry sensitivity, not its unproved Windows API/root-cause diagnosis.
+Use short manual scratch names; inactive retained sibling roots are not a hold.
+
 ## Causal Risk Allocation Actual Result
 
 Exact external root D:/thericher-v2/model-artifacts/research/kis-causal-risk-allocation-development-v1.

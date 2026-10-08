@@ -16,8 +16,16 @@ Compacting this projection does not delete evidence or reopen an allocation.
   receipt a161a6a1..., recomputed action/cap bytes not equivalent. Do not turn
   this into a promotion or numerical-equivalence claim. Exact custody:
   D:/thericher-v2/model-artifacts/research/kis-causal-risk-allocation-development-v1/custody-outcome.json.
-  No active GPU allocation follows. A distinct diagnostic variance-forecast
-  proposal is not yet frozen or fitted; no idle-utilization job is implied.
+  No active GPU allocation follows from this closed allocation family.
+- Variance-forecast familytrial1 is closed/non_promoting_completed, with
+  two actual fits/six cells/zero sealed spend. Contractb198df9d.../resultb400bd37...;
+  CUDA GRU512 updates1.261s/peak188405248bytes, parent9.358s contained before
+  lease release. Exact ALL-RO7.051s uses no inference or new fit. Independent
+  r2 validation8815df09... supports original rejection; the first metadata
+  readback failure is retained, not a substantive verdict. Exact custody
+  D:/thericher-v2/model-artifacts/research/kis-d1-variance-forecast-development-v1/custody-outcome.json,
+  recordf34fad78... . No active GPU allocation remains. Rolling504-entry
+  monthly refits are an unfrozen related development proposal only.
 
 - Current monthly-momentum CPU family is closed/non_promoting_completed:
   contract5245f9f1.../resultabcd8b27..., familytrial1/holdoutnone.24 cells;

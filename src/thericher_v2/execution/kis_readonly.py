@@ -19,10 +19,10 @@ import urllib.parse
 import urllib.request
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from typing import Any, Literal, Protocol
+from typing import TYPE_CHECKING, Any, Literal, Protocol
 from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
@@ -32,6 +32,9 @@ from .kis_paper_fill_accounting import (
     KisPaperExecutionObservation,
     fill_identity_ref,
 )
+
+if TYPE_CHECKING:
+    from .kis_paper_quote import KisPaperSpyLimitInput
 
 KIS_PAPER_BASE_URL = "https://openapivts.koreainvestment.com:29443"
 KIS_PAPER_TOKEN_PATH = "/oauth2/tokenP"
@@ -692,6 +695,26 @@ class KisPaperDiscoveryOutcome:
         return payload
 
 
+@dataclass(frozen=True, repr=False)
+class KisPaperPortfolioPreviewInstrument:
+    symbol: str
+    exchange: str
+    quote: KisPaperSpyLimitInput
+    buy_limit: Decimal
+    cash: KisPaperCashSnapshot
+    orderable: KisPaperOrderableFundsSnapshot
+
+
+@dataclass(frozen=True, repr=False)
+class KisPaperPortfolioPreviewReads:
+    account_ref: str
+    snapshot: KisPaperReadOnlySnapshot
+    instruments: tuple[KisPaperPortfolioPreviewInstrument, ...]
+    started_at: datetime
+    completed_at: datetime
+    elapsed_seconds: float
+
+
 class KisPaperReadOnlyClient:
     """Fetch one fixed virtual-paper discovery snapshot through an injected transport."""
 
@@ -776,6 +799,97 @@ class KisPaperReadOnlyClient:
             exchange=exchange,
             limit_price=limit_price,
             exact=True,
+        )
+
+    def portfolio_preview_snapshot(
+        self,
+        *,
+        expected_account_ref: str,
+        clock: Callable[[], datetime] = lambda: datetime.now(UTC),
+    ) -> KisPaperPortfolioPreviewReads:
+        """One serial, transient SPY/TLT/GLD account/quote/buying-power read.
+
+        Uses the existing token and transport pace. Sequential observations are
+        not atomic, settled cash, executable fills, or submission permission.
+        """
+        from .kis_paper_quote import (
+            KIS_PAPER_PREVIEW_VENUES,
+            KisPaperQuoteError,
+            build_kis_paper_preview_quote_request,
+            derive_kis_paper_marketable_limit,
+            parse_kis_paper_spy_limit_input,
+        )
+        from .kis_paper_spy_fill_cycle import _digest
+
+        account_ref = _digest(
+            [self._config.base_url, self._config.account_number, self._config.account_product_code]
+        )
+        if type(expected_account_ref) is not str or expected_account_ref != account_ref:
+            raise KisPaperReadOnlyError("preview_account_binding_mismatch")
+        started_at = require_utc(clock())
+        started = time.monotonic()
+        snapshot = self.snapshot()
+        instruments = []
+        for symbol, (_, exchange) in KIS_PAPER_PREVIEW_VENUES.items():
+            responses = {}
+            for kind in ("asking_price", "price_detail"):
+                response = self._dispatch(build_kis_paper_preview_quote_request(
+                    config=self._config, access_token=self._access_token, symbol=symbol, kind=kind,
+                ))
+                _require_http_success(response, "preview_quote_rejected")
+                if response.header("tr_cont").strip().upper() not in {"", "D", "E"}:
+                    raise KisPaperReadOnlyError("preview_quote_incomplete")
+                responses[kind] = response.payload(reject_duplicate_keys=True)
+            try:
+                quote = parse_kis_paper_spy_limit_input(
+                    asking_price_payload=responses["asking_price"],
+                    price_detail_payload=responses["price_detail"],
+                    observed_at=require_utc(clock()),
+                )
+                limit = derive_kis_paper_marketable_limit(quote, side="buy", observed_at=clock())
+            except KisPaperQuoteError as error:
+                raise KisPaperReadOnlyError(error.code) from None
+            cash, funds = self.preview_orderable_funds_at_limit(
+                symbol=symbol, limit_price=limit, clock=clock,
+            )
+            instruments.append(KisPaperPortfolioPreviewInstrument(
+                symbol, exchange, quote, limit, cash, funds,
+            ))
+        completed_at = require_utc(clock())
+        times = [snapshot.captured_at, snapshot.identity.captured_at,
+                 snapshot.open_orders.captured_at, snapshot.cash.captured_at,
+                 snapshot.orderable_funds.captured_at]
+        times.extend(row.captured_at for row in (*snapshot.positions, *snapshot.open_orders.orders))
+        for row in instruments:
+            times.extend((row.quote.quoted_at, row.cash.captured_at, row.orderable.captured_at))
+        if completed_at < started_at or any(
+            not timedelta(seconds=-5) <= completed_at - at <= timedelta(seconds=120) for at in times
+        ):
+            raise KisPaperReadOnlyError("preview_snapshot_stale")
+        return KisPaperPortfolioPreviewReads(
+            account_ref, snapshot, tuple(instruments), started_at, completed_at,
+            time.monotonic() - started,
+        )
+
+    def preview_orderable_funds_at_limit(
+        self,
+        *,
+        symbol: str,
+        limit_price: Decimal,
+        clock: Callable[[], datetime] = lambda: datetime.now(UTC),
+    ) -> tuple[KisPaperCashSnapshot, KisPaperOrderableFundsSnapshot]:
+        """Fixed preview-only exact limit GET; existing QQQ API is unchanged."""
+        from .kis_paper_quote import KIS_PAPER_PREVIEW_VENUES
+
+        if type(symbol) is not str or symbol not in KIS_PAPER_PREVIEW_VENUES:
+            raise KisPaperReadOnlyError("preview_symbol_invalid")
+        if (type(limit_price) is not Decimal or not limit_price.is_finite() or limit_price <= 0
+                or limit_price.as_tuple().exponent < -8 or limit_price.adjusted() >= 23):
+            raise KisPaperReadOnlyError("orderability_price_invalid")
+        return self._cash_and_orderable_funds(
+            self._access_token or self._issue_access_token(), require_utc(clock()),
+            symbol=symbol, exchange=KIS_PAPER_PREVIEW_VENUES[symbol][1],
+            limit_price=limit_price, exact=True,
         )
 
     def observe_same_day_order_id(
@@ -1562,6 +1676,17 @@ def validate_kis_paper_readonly_request(request: KisHttpRequest) -> None:
         return
     if request.method != "GET":
         raise KisPaperReadOnlyError("request_not_allowlisted")
+    if parsed.path in {
+        "/uapi/overseas-price/v1/quotations/price-detail",
+        "/uapi/overseas-price/v1/quotations/inquire-asking-price",
+    }:
+        from .kis_paper_quote import KisPaperQuoteError, validate_kis_paper_preview_quote_request
+
+        try:
+            validate_kis_paper_preview_quote_request(request)
+        except KisPaperQuoteError:
+            raise KisPaperReadOnlyError("request_not_allowlisted") from None
+        return
     endpoint = next(
         (candidate for candidate in KIS_PAPER_READ_ONLY_ENDPOINTS if candidate.path == parsed.path),
         None,
