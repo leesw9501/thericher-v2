@@ -42,6 +42,9 @@ SCOPE = MappingProxyType(
         "SPY": frozenset({"AMS"}),
         "TLT": frozenset({"NAS", "AMS", "NYS"}),
         "GLD": frozenset({"AMS"}),
+        "XLK": frozenset({"AMS"}),
+        "XLF": frozenset({"AMS"}),
+        "XLE": frozenset({"AMS"}),
     }
 )
 

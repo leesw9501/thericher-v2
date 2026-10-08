@@ -265,3 +265,120 @@ def test_client_preserves_strict_parent_and_rejects_unsupported_scope_before_aut
     with pytest.raises(KisPaperMarketDataError, match="daily_response_invalid"):
         client.fetch_daily_raw_page(query())
     assert transport.requests[0].url.endswith(KIS_PAPER_TOKEN_PATH)
+
+
+def test_sector_scope_additions_are_exact_and_general_daily_defaults_unchanged():
+    assert dict(e.SCOPE) == {
+        "SPY": frozenset({"AMS"}),
+        "TLT": frozenset({"NAS", "AMS", "NYS"}),
+        "GLD": frozenset({"AMS"}),
+        "XLK": frozenset({"AMS"}),
+        "XLF": frozenset({"AMS"}),
+        "XLE": frozenset({"AMS"}),
+    }
+    with pytest.raises(TypeError):
+        e.SCOPE["XLK"] = frozenset({"NAS"})
+    for symbol in ("XLK", "XLF", "XLE"):
+        with pytest.raises(ValueError, match="symbol/exchange pair is not approved"):
+            KisPaperDailyQuery(symbol=symbol, exchange="AMS", by_date="20261007")
+
+
+def test_six_sector_queries_parse_with_one_cached_token_and_exact_paper_requests():
+    class SectorTransport(Transport):
+        def request(self, request):
+            if request.method == "GET":
+                self.requests.append(request)
+                return response([row(xymd=request.query["BYMD"])])
+            return super().request(request)
+
+    transport = SectorTransport()
+    client = e.KisPaperDailyEndpointClient(
+        config=KisPaperMarketDataConfig(app_key=KEY, app_secret=SECRET),
+        transport=transport,
+        max_daily_page_attempts=6,
+    )
+    for anchor in ("20261007", "20160202"):
+        for symbol in ("XLK", "XLF", "XLE"):
+            page = client.fetch_daily_endpoint_page(query(symbol, "AMS", anchor, None))
+            facts = page.safe_facts()
+            assert facts["symbol"] == symbol and facts["exchange"] == "AMS"
+            assert facts["BYMD"] == anchor and facts["unique_date_count"] == 1
+            assert facts["qualification"] == "not_claimed"
+            assert facts["unused_ohlcv_fault_counts"] == {"low_above_open_close": 1}
+            assert "10.01" not in repr(page) + repr(facts)
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.daily_page_attempts == 6
+    assert client.call_counts.minute_page_attempts == 0
+    assert len(transport.requests) == 7
+    for request in transport.requests[1:]:
+        assert request.method == "GET"
+        assert request.url == e.KIS_PAPER_MARKET_DATA_BASE_URL + KIS_PAPER_DAILY_PATH
+        assert request.query == {
+            "AUTH": "", "EXCD": "AMS", "SYMB": request.query["SYMB"],
+            "GUBN": "0", "BYMD": request.query["BYMD"], "MODP": "0",
+        }
+        assert request.headers["authorization"] == "Bearer " + TOKEN
+        assert request.headers["tr_cont"] == ""
+
+
+@pytest.mark.parametrize("symbol", ["XLK", "XLF", "XLE"])
+@pytest.mark.parametrize("exchange", ["NAS", "NYS"])
+def test_sector_wrong_venue_rejected_before_token_even_with_caller_query_scope(symbol, exchange):
+    transport = Transport()
+    client = e.KisPaperDailyEndpointClient(
+        config=KisPaperMarketDataConfig(app_key=KEY, app_secret=SECRET), transport=transport
+    )
+    other_venue = KisPaperDailyQuery(
+        symbol=symbol, exchange=exchange, by_date="20261007",
+        approved_symbol_exchanges={symbol: frozenset({exchange})},
+    )
+    with pytest.raises(KisPaperMarketDataError, match="endpoint_query_invalid"):
+        client.fetch_daily_endpoint_page(other_venue)
+    with pytest.raises(KisPaperMarketDataError, match="endpoint_query_invalid"):
+        e.parse_kis_daily_price_endpoints(response(), query=other_venue)
+    assert not transport.requests
+    assert client.call_counts.token_attempts == client.call_counts.daily_page_attempts == 0
+
+
+@pytest.mark.parametrize("symbol", ["XLK", "XLF", "XLE"])
+def test_sector_real_transport_allowlist_with_mock_opener_no_live_or_other_venue(symbol):
+    opened = []
+
+    class WireResponse:
+        status = 200
+        headers = {}
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_):
+            return False
+
+        def read(self):
+            return response().body
+
+    class Opener:
+        def open(self, request, *, timeout):
+            assert timeout == 15
+            opened.append(request)
+            return WireResponse()
+
+    transport = e.KisPaperDailyEndpointTransport()
+    transport._opener = Opener()
+    request = KisMarketDataRequest(
+        "GET", e.KIS_PAPER_MARKET_DATA_BASE_URL + KIS_PAPER_DAILY_PATH,
+        headers={"authorization": "Bearer " + TOKEN, "appkey": KEY, "appsecret": SECRET,
+                 "tr_id": e.KIS_PAPER_DAILY_TR_ID, "tr_cont": "", "accept": "application/json"},
+        query={"AUTH": "", "EXCD": "AMS", "SYMB": symbol, "GUBN": "0",
+               "BYMD": "20261007", "MODP": "0"},
+        daily_symbol_exchanges=e.SCOPE,
+    )
+    assert transport.request(request).status_code == 200 and len(opened) == 1
+    for rejected in (
+        replace(request, url="https://openapi.koreainvestment.com:9443" + KIS_PAPER_DAILY_PATH),
+        replace(request, query={**request.query, "EXCD": "NAS"}),
+        replace(request, query={**request.query, "MODP": "1"}),
+    ):
+        with pytest.raises(KisPaperMarketDataError, match="request_not_allowlisted"):
+            transport.request(rejected)
+    assert len(opened) == 1

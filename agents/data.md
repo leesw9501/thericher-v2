@@ -25,12 +25,24 @@ reader5894e59e.../53 cases/parent.86s/independent READY.
 child reaped/source unchanged. Dependency-lock/import/wire-start proof is not
 claimed. This is scoped capability, not dataset qualification.
 
-Next ready source-only package: six-query sector ETF capability preparation at
+Sector ETF capability is now parent-observed at
 A/data/kis-sector-etf-capability-preparation-v1/sector_probe.py.
-XLK/XLF/XLE AMS at20261007/20160202; no actual call or new cache yet.
-Parent must first own the minimal exact endpoint allowlist integration and
-source freeze. No monkeypatch of closed scope/constants, global universe
-expansion, full collector, numeric issuer data or input splice.
+Exact three AMS scope additions8cc14d00... leave general defaults/parser
+unchanged;48 author/.22s and194 parent/.48s tests/Ruff pass. No global universe
+or closed-source monkeypatch. Actual6.411s/one token/six GETs/all6 accepted/
+zero failures: each current anchor20261007 yields100 unique datesMay15..Oct7;
+each historical anchor20160202 yields100 dates2015Sep10..2016Feb2, continuation
+reported for all. No raw values retained. Exact sector-etf-probe-20261008-v1/receipt.json,
+SHAc56e98af0eba8fc00c6179ae387ff345ef19aa5bde0f5dd08819f67cf506aeed;
+bound-outcome-20261008-v1.json SHA5669a9f304004edd33b949eb5df5e000b7b42eb2b10047f5cbde59f6b77b21eb.
+407 before/after source files unchanged/child reaped;10 reused containment
+cases/.11s pass. Independent typed readback is in preparation, so do not infer
+full history, measured continuation progress, new dataset, CA/TR/PIT or finality.
+Next ready package is one serial resumable three-sector OC backfill for
+2016Feb2..2026Oct7, raw OC under M only, existing gates and one cached token.
+Thin collector preparation is external; no cache/raw acquisition has run yet.
+Once useful continuation advances, maintain one cursor and progress/next_due;
+minimum81 full100-row pages is a coverage estimate, not a measured ETA or promise.
 
 ## Useful Retained Daily Input
 
