@@ -2,13 +2,35 @@
 
 ## Current Owned Opportunities And Research
 
+Current goal25 prepares the retained latest253-CLOSE control for the unchanged
+native Paper cycle; freeze exact input/custody per session, resume same pending
+contract, no shared-basis reset or baseline-SPY inventory borrowing. Future
+opportunity installation/preview is not a fill or terminal runtime closure.
+Latest Data control: D:/thericher-v2/model-artifacts/data/kis-current-control-refresh-v1/
+b54c15c1db6e44a0baf8a7cf13f225eb/control.json06901201.../receipt493cd1dc...;
+parent3cc8856e... one directory above.253closes/252returns endingOct8 20:00UTC,
+one token/9GET/9accepted/28 unchanged files/12.113s.47 Data mocked cases/Ruff;
+raw/provenance/closes79aecac0... matched, exact host arithmetic mismatch retained.
+Same-native65ab ALL-ROfbefdab4...1.129s recomputes exact control; shared helper,
+not cross-runtime equality or PIT/TR/finality qualification.
+Goal24 four512-update fits actually complete/REJECTED54 cells:199.952s worker/
+202.095s parent7b2ca714.../result06e5d613.../420 sources/all566 unchanged/
+lease released/reaped/absent. Exact D:/thericher-v2/model-artifacts/research/
+kis-learned-stateful-rebalance-development-v1/parent-verify-1ad180372a4f412fb2308085e070b3d7.json,
+SHA95e924a8.../11.629s/no new fits/inference/search/write. Custody5cdfa1c7...
+closed/zero sealed spend; no learned Paper input. Use immutable results, do not
+redispatch. Kernel49/worker29 independent tests and CPU54 smoke passed.
+Latest account d13f0d7d...20:39:11UTC publishes3positions/0open orders/book/
+basis matched; field presence only, fees/settlement/owned netPnL unobserved.
+Claude goal25b1df449c... unavailable/non-verdict, not agreement or a global hold.
+
 Goal21 actual first SELL -> observed-funds BUY is COMPLETE. Independent ALL-RO
 v3 readback2.101s/980ccc6b... verifies2 full fills/current owned book/original
 basis/zero remaining recovery, source/private bytes unchanged/no API/credentials/
 writes/reaped/absent. Exact
 D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/fresh-buy-readback-20261009-v3.json.
 Historical unresolved-reason counters are not current recovery; fees/settled
-cash/net PnL and later fresh broker state remain unobserved. NEXT goal22 owns
+cash/net PnL and later fresh broker state remain unobserved. Historical goal22 owned
 one restartable/repeatable three-symbol control cycle with fresh reconciliation
 and existing private-console agreement, not another budget or promotion gate.
 Its fresh account component is now observed19:06:43UTC/token1/GET5/orders0:
@@ -32,11 +54,11 @@ D:/thericher-v2/model-artifacts/research/kis-stateful-rebalance-development-v1-r
 parent11077e36...12.378s/worker10.762s and bound ALL-ROe8371bb5...12.016s/
 420 sources566 inputs unchanged/zero fit-inference-search-write/reaped/absent.
 Original10bps two-view kill independently confirmed; positive hypothetical
-growth is not required utility improvement or broker profit. NEXT goal24
-prepares learned partial rebalance; no actual new GPU allocation yet.
+growth is not required utility improvement or broker profit. Goal24's actual
+learned partial rebalance and released GPU custody are recorded above.
 MD token666ec8c3... authenticates in native Paper runtime/HTTP2xx/zeroGET or
 account-order work. Prior host/head cause unclassified. Intraday runner cannot
-be backdated after close; separate historical control refresh prepares.
+be backdated after close; separate historical control refresh completed above.
 Current full12914pass22skip35warnings334.71s/12936 collected/eight clean workers/
 helper exit0/reaped/temp cleaned; Ruff/three sample-env Compose pass.
 

@@ -8,6 +8,20 @@ does not close, adopt, delete or retry an old intent.
 
 ## Current Scope And Recovery
 
+Latest fresh account/field-presence read:20:39:04..12UTC/token1 HTTP2xx/GET5/
+order0/3positions/0open orders; owned book/original basis matched,40 private
+files/source unchanged/reaped/absent. Snapshot published20:39:11.417018UTC,
+SHA c2f904cb... . Exact A/execution/kis-paper-repeatable-cycle-v1/
+fresh-account-field-presence-1cae8fd5283b4567b135bf2faa50adf2.json,
+SHA d13f0d7d624003402338b5fdb1b27cf34e4202902faf18c7218aaa7bd4a349c7.
+Existing three balance summaries contain finite-numeric ovrs_rlzt_pfls_amt/
+ovrs_rlzt_pfls_amt2 and funds contains sll_ruse_psbl_amt. Presence/type only:
+no amounts retained in this receipt, no sum, fee, settled-cash or owned-netPnL
+claim. Earlier source-map preflight failure22a4a922... was before token/GETs;
+package-root414 hashing fixed it, not an account/auth diagnosis. Earlier console
+agreements bind their own dated observations; later snapshot agreement is not
+inferred. No new endpoint, orders or basis reset.
+
 Goal22 fresh account read is actually observed19:06:43UTC: token1/GET5/order0,
 3positions/0open orders, full existing owned book/original shared basis matched.
 Snapshot published/private38 files and source unchanged/reaped/absent. Exact

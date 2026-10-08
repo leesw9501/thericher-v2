@@ -34,8 +34,16 @@ Compacting this projection does not delete evidence or reopen an allocation.
   equivalence false. Stateful CPU contract4d3b8ed7... completed30 cells/rejected,
   source-only two-dependency recovery from retained v1 pre-import failure; no
   fit/GPU/holdout/selection. Parent11077e36... and bound ALL-ROe8371bb5...
-  preserve420 sources/all566 inputs/reaping/absence. Next learned continuous
-  policy proposal prepares; no new frozen training campaign or active allocation. Other
+  preserve420 sources/all566 inputs/reaping/absence. Learned continuous policy
+ 85af8689.../420 sources is now COMPLETE/REJECTED54 cells: constantCPU and
+ three CUDA policies, four512-update fits/199.952s worker/202.095s parent
+ 7b2ca714.../result06e5d613... . Bound ALL-RO95e924a8...11.629s verifies
+ cached economics/model/action binding, zero refit/inference/search/write;
+ all566 inputs/source unchanged/reaped/absent. Custody5cdfa1c7... closed,
+ record6153c7f5.../zero sealed spend; canonical lease released only after exact
+ absence. Initial8-update geometry timing failed feasibility; one32-update
+ calibration181.41s+100reserve passed. Original512/300/360 contract unchanged,
+ probes retained no weights. No survivor, new allocation or ready depth. Other
   Data/Execution work continues without waiting for a research promotion.
 
 - Conditional-hedge recovery COMPLETE/REJECTED42 cells; contract56787514.../

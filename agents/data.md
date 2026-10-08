@@ -6,6 +6,43 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Latest historical engineering-control refresh is actually READY: fixedSPY/AMS,
+TLT/NAS,GLD/AMS,253 dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC.
+Token1/9GET/9accepted/28 retained files,12.113s parent3cc8856e.../receipt493cd1dc...
+and control06901201... . Exact A/data/kis-current-control-refresh-v1/
+b54c15c1db6e44a0baf8a7cf13f225eb; parent JSON one directory above.
+Worker29590de3.../47 parent/author/independent tests fixes recursive duplicate
+JSON credential-echo fault before raw persistence. Frozen worker/helper1a2735...
+under A/data/kis-current-control-refresh-v1-frozen-source-v2. One client/three
+pages per instrument/real clocks/native gates; cache complete for this253-date
+scope, remaining pages0/ETAcomplete/recoverycomplete/next_due none. Raw/typed/
+query/cursor provenance stays in M/us_equities/kis_paper_private/current-control-history.
+Pace is existing shared1.0s/no change; counters are dispatch attempts, not wire
+attestation. This does not exhaust provider history or replace64-close context.
+Independent79aecac0... reattaches raw/typed/closes/provenance/all28 unchanged;
+host exact weights/cov differs within16ULP/causeunproved, not tolerance-waived.
+Same-native65ab/Python3.12.13 ALL-ROfbefdab4...1.129s exactly recomputes the
+unchanged engineering helper's253-close/10-percent-shrink control. Shared
+formula/no cross-runtime equality. Raw/revised/non-PIT/non-TR/finality and
+publication not_observed; no frozen4a graft or learned-model promotion.
+Two earlier current-control parent failures8f30a0df.../82584fce... were calendar
+preflight DateOutOfBounds before authentication, not provider/account faults.
+
+Independent next Data scope is the official Board H15 Treasury-constant-maturity
+CSV capability, no auth/cost/third-party copyrighted series. M/us_rates only;
+source/release/vintage limits remain; no numeric join/model/cash-yield assumption.
+
+Latest owned21:20UTC head now has a validated terminal/schedule chain:
+intraday-head-20261008T2120009002710Z/terminalce6c81c7.../scheduledbac4e0d.../
+exact capture3d2f8f8b... . Collection succeeded and bound cumulative current
+session coverage is complete/digest9939d503... . Availability source chain is
+verified, but observation remains legacy_unbound/causal input_unavailable/
+prospective_observation_unbound; decision availability/finality not_observed.
+No independent prospective pairing or provider-origin proof. Old recovery
+reader returns evidence_unavailable for this success; do not infer recovery
+failure. Task Ready/result0 is separately observed, not itself collection proof.
+Next owned Oct9 15:29UTC; no manual invocation or clock backdating.
+
 Current-trio pure selector a1273093... is READY:44 parent tests0.78s/Ruff,
 independent44 tests0.73s/no P1/P2. Exactly64 prior completed scheduled CLOSEs for
 SPY/TLT/GLD, actual intraday decision and separate local receipt clocks;
@@ -23,7 +60,7 @@ native65ab image/token1/HTTP2xx/zero GET or account-order work/source unchanged/
 reaped/absent. Exact runtime-token-probe-d7b24ece5ed44cf686bc968e56d4c45b.json
 in that same root. Historical failure cause remains unclassified, not corrected
 coverage. Next bound current-context acquisition prepares in this proven runtime;
-fresh token guard due approximately20:18:55UTC belongs to that worker only.
+its old token-start guard timestamp is historical, not the current worker due.
 64-close/63-return context is
 not the existing253-close engineering control; do not silently change its input.
 
@@ -35,8 +72,8 @@ terminal23212330.../schedule8da92f8b.../exact capture745fccac... . Existing
 readers independently bind the current pointer/terminal/capture: QQQ rejected
 auth_rejected/HTTP4xx, SPY rejected token_request_not_due, input_unavailable/
 terminal_recovery/current_session_short. No new coverage or tested live boundary
-claim; availability/finality remain not_observed. Next head06:20KST remains
-owned. Later token-only diagnostics authenticated and v3
+claim; availability/finality remain not_observed. That historical06:20KST
+opportunity is now superseded by the bound result above. Later token-only diagnostics authenticated and v3
 Paper retry completed; prior auth failure remains unclassified. Exact
 A/execution/kis-paper-intraday-head-invocation-v1/
 intraday-head-20261008T1924009170364Z/terminal.json. Released collector37c7a765... and PS77096246...

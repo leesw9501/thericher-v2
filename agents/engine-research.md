@@ -7,37 +7,39 @@ A = D:/thericher-v2/model-artifacts; market bytes stay under D:/market_data.
 
 ## Current Research State (2026-10-09 KST)
 
-Pure fixed ANTICOR preparation is COMPLETE: anticor_allocation.py8c16fc5b...,
-kis_cross_asset_anticor.pye81237a5...;77 synthetic cases/parent1.45s,
-independent source review READY. No actual outcomes, fits, GPU, holdout,
-ensemble allocation or Paper input follows from preparation.
-Primary mechanism: https://arxiv.org/pdf/1107.0036v1, DOI10.1613/jair.1336,
-Equations2/3 and inclusive-tie/all-pairs Figure1. Original implementation;
-source performance and code are not adopted.
+Goal24 is COMPLETE/REJECTED54 cells at
+A/research/kis-learned-stateful-rebalance-development-v1.
+Contract85af8689.../420 sources/input4a25284d.../result06e5d613... .
+Four512-update fits: constantCPU and linear/MLP/GRU CUDA, seed101.14 prior-CLOSE
+market/inventory/gap features commit nextOPEN participation; full cash/holdings/
+hidden gradient carry. TRAIN1174 marks56 decisions/tail19; DEV1442 marks69
+decisions/two seen views. Actual199.952s worker/202.095s parent7b2ca714...;
+all566 inputs/source unchanged/reaped/absent/lease released. Successful-parent-
+bound ALL-RO95e924a8.../11.629s validates cached economics/model/action binding
+with zero new fits/inference/search/write; not independent GRU reinference.
+Custody5cdfa1c7... closed/non_promoting_completed/zero sealed spend.
 
-The thin external CPU worker at
-A/research/kis-cross-asset-anticor-development-v1/worker.py.
-is now actually COMPLETE/REJECTED30 cells, contract98351328.../result791c3f04...,
-412-file frozen tree608e5878... . Parent11.498s/worker10.178s; exact invocation
-absent/child reaped/source unchanged. Smoke1.411s; ALL-RO15.273s passes with
-zero refit/inference/search/write. Independent r2 numerical reader validates
-all30 cells in1.294s/988 unchanged files/zero fits/inference/search/input writes.
-Its predecessor failed because it expected long exchange aliases rather than
-canonical AMS/NAS codes; failed receipt remains immutable. Exact r2 receipt:
-A/research/kis-cross-asset-anticor-development-v1/validation-readback-r2.json,
-SHA0a29774970d8b4eadab3ab7b6022fb16e1dc1e2f25901788f8453b6295755d11.
-Custody closed/non_promoting_completed/zero sealed spend, record025a7145... .
-At10bps candidate growth is
--1.584%/2.317%; it fails the original both-view/all-control kill. No promotion.
-Reuse exact goal18 INPUT helpers only; never read its result/models/predictions.
-One w20/cadence5 recipe,64 past CLOSE shared context, previous CLOSE decision,
-next OPEN, prior executed OPEN/decision CLOSE signal drift. Seal actions before
-forward marks; continuous NAV across753+689 development views/1442 marks.
-Candidate/balanced/momentum63/SPY/cash at2.5/5/10bps ->30 cells.
-Original kill: BOTH-view10bps positive growth AND growth/utility improvement
-over all four controls by1e-10. No window/cost/seed/period rescue.
-Shared60-second CPU/120-second outer bound; zero fits/GPU/sealed spend.
-ALL-RO can verify retained-action economics, not fresh strategy inference.
+At10bps two-view normalized growth: constant+0.24%/+28.92%, linear-0.05%/+43.22%,
+MLP-1.30%/+35.84%, GRU+2.76%/+28.83%. Original positive-growth/all-control utility/
+turnover kills reject all learned candidates. First-view GRU utility is negative/
+below cash and minvar. No winner, profitability, ensemble or Paper model claim.
+Partial participation bounds desired targets, not actual held risk; fractional/
+revised/raw/non-PIT/non-TR/seen-development limits remain. Do not redispatch or
+rescue this family using changed fees/windows/seeds.
+
+Kernel f51c2950.../proposal804af795... pass49 parent/49 independent tests;
+workerb701c4e7.../prepare2051d9a8... pass29 independent cases/Ruff. CPU54 smoke
+d85ff8c8...4.623s. Initial8-update target-free timingf6fd3214... projected204s+
+100reserve (insufficient); one32-update calibrationebb5485d... projected181.41s+
+100reserve (feasible). Original512 updates/300-family/360-parent unchanged;
+no probe weights retained. Parent lease-acquisition and exhaustive566-file
+failure audit findings were fixed before actual fits.
+
+Goal23 rule baseline is closed/rejected30 cells; exact recovery-v2 root below
+preserves original418/v1 pre-import failure and two-dependency420 repair.
+Earlier ANTICOR/ML/DL/foundation studies remain in Git86ec350, external roots
+and custody, not absent work or current survivors. Independent Paper goal25
+uses its separate253-close/252-return10-percent shrink, not this research input.
 
 ## Useful Input And Limitations
 
@@ -238,8 +240,12 @@ not a learned model, Paper parity, fresh replication or profit claim.
 Public mechanisms1706.10059v1/1802.03042v1 and pinned GPLv3 licenses independently
 re-retrieved; source receipt2b41f764... in A/research/source-discovery. Crypto
 zero-slippage/derivative hedging results are not ETF alpha; no public code or
-weights adopted. Next distinct learned continuous policy proposal prepares;
-no frozen training campaign or GPU allocation yet.
+weights adopted. Learned continuous policy is now closed/rejected as recorded
+above; no active GPU allocation or promotion follows. Rates source proposal
+3ba3fd37... in A/research/source-discovery/official-rates-prior-close-context-20261009-v1.json
+was independently re-retrieved by parent. Data owns a bounded official H15
+Treasury-constant-maturity-only capability; no same-date prior-CLOSE availability,
+cash-yield assumption or current4a graft. No new macro campaign/fits yet.
 Public Claude challenge.960s unavailable,
 not agreement: A/research/source-discovery/claude-regime-expert-composition-20261009-v1.json.
 Official v2.2.2 returns median despite its mean name; equality check is valid.

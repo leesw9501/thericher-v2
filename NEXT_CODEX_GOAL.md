@@ -2,108 +2,95 @@
 
 ## Objective
 
-Complete kis-learned-stateful-rebalance-development-v1: freeze, implement and
-run one finite inventory-conditioned partial-rebalance learning campaign,
-with CPU accounting/gradient smoke and bounded CUDA work when ready.
-Question: can learned participation improve post-cost continuous portfolio
-utility rather than only reduce turnover? Existing KIS Paper stays separate.
+Complete kis-current-control-paper-rebalance-preparation-v1: connect the latest
+253-CLOSE engineering control to the unchanged native owned portfolio cycle,
+freeze input/custody per session, and prepare one observable next-session Paper
+opportunity. This advances repeatable Paper, not model promotion. Installation
+is not evidence of future orders, fills or terminal runtime closure.
 
 ## Closed Evidence
 
-Goal22 repeatable Paper cycle is complete/commit-pushed9dc0406: cd14cad0...
-actual no_target_delta, one token/28GETs/zero orders, original shared basis/
-owned book/client-recreation checkpoint equality, source/input unchanged/
-reaped/absent. Not host reboot, fees or net broker PnL. Console0c919dfa... agrees
-with20:00:10UTC observation, temporal publication binding only.
-
-Goal23 continuous-holdings rule comparison is COMPLETE/REJECTED30 cells.
-Exact root:
-D:/thericher-v2/model-artifacts/research/kis-stateful-rebalance-development-v1-runtime-recovery-v2.
-Contract4d3b8ed7.../resultdfcad2b6.../parent11077e36...:
-10.762s worker/12.378s parent. Bound ALL-RO parent-verify-263d53946ba7471ab1b723617b8cfb69.json,
-SHAe8371bb5.../12.016s, same successful parent/contract/result;420 sources/all566
-inputs unchanged, zero fit/inference/search/write/reaped/absent.
-Independent public aggregate review confirms original10bps kills: growth
-+4.09%/+22.83% and lower turnover, but utility does not beat the required
-controls. Seen raw-price hypothetical economics, not broker profit.
-Original418/v1 bundle/failed receipts preserved; v2 adds only two missing ERC
-dependencies. No hypothesis/input/cost/kill reset or outcome-informed rescue.
-
-## Frozen-Before-Compute Research Package
-
-Engine Research owns external kernel, proposal and synthetic tests under
+Goal24 is COMPLETE/REJECTED54 cells under
 D:/thericher-v2/model-artifacts/research/kis-learned-stateful-rebalance-development-v1.
-Parent alone freezes/dispatches actual resources. Use existing pinned
-PyTorch/CUDA runtime, not a framework replacement or public model code.
+Contract85af8689.../source420/input4a25284d.../result06e5d613...; four512-update
+fits (constantCPU, linear/MLP/GRU CUDA),199.952s worker/202.095s parent7b2ca714... .
+All566 inputs/source unchanged/reaped/absent/lease released. Bound ALL-RO95e924a8...
+11.629s performs zero fit/inference/search/write; cached economics/model-action
+binding, not independent GRU reinference. Custody5cdfa1c7... closed/zero sealed
+spend. All original candidate kills reject; GRU10bps growth+2.76%/+28.83% still
+fails first-view utility. No rescue, selected ensemble or Paper model follows.
 
-Predeclare four fits: CPU scalar participation, linear14-to1, small MLP14-to8-to1,
-and GRUCell14-to8-to1 at21-session decision opportunities. Fourteen inputs:
-six prior-CLOSE market features, four current asset/cash weights, four target
-gaps. Output alpha in[0,1] committed before nextOPEN. Mix original holdings/
-cash with the existing fully rebalanced post-fee state; actual notional costs
-scale consistently. alpha0 is exact hold, alpha1 exact full rebalance.
-No intervening capital reset or detached holdings gradient. Recurrent state
-starts at each TRAIN/DEV phase boundary, then persists across DEV view split.
+Goal22 repeatcd14cad0... preserves original shared basis/current owned book/
+client-recreation checkpoint equality; not host reboot or fee/netPnL proof.
+Latest account d13f0d7d...: token1/GET5/order0,3positions/0open orders, book/basis
+matched/source/private40 files unchanged/reaped/absent. Numeric-field presence
+is not fee, settled cash or owned profit.
 
-Freeze source/input/availability/geometry/training/endpoints/costs before CPU
-work. Use only exact4a25284d... OC cohort and pinned INPUT helpers, never prior
-results/models/predictions. TRAIN: causal2016 warmup through2020-12-30 CLOSE;
-excludeDec31 from loss. Freeze exact calendar-only dates/counts first.
-DEV:69 decisions/1442 continuous marks/two existing seen views. Four learned
-policies plus five fixed controls, three costs2.5/5/10bps,54 cells/no selection.
-One seed101,512 AdamW updates/lr.001/wd.01 each; one shared300-second family
-worker budget/360-second parent including containment, not per-model budgets.
-No shortened updates, budget reset or diagnostic rescue. No sealed holdout.
+## Exact Current Control
 
-Strongest kill: BOTH10bps views growth positive/utility greater than fixed
-controls and learned constant/turnover lower than unbanded minvar; MLP also
-beats linear, GRU beats MLP and linear by the frozen tolerance. Report all
-predeclared results; do not pick an ensemble or promote a winner.
-Keep fractional/revised/raw/non-PIT/non-TR/seen-DEV limits and lack of actual
-risk bound/whole-lot SELL-before-BUY parity explicit.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+A/data/kis-current-control-refresh-v1/b54c15c1db6e44a0baf8a7cf13f225eb:
+receipt493cd1dc.../control06901201... binds parent-b54c15c1db6e44a0baf8a7cf13f225eb.json
+one directory above, SHA3cc8856e... . Actual token1/9GET/9accepted/28 retained,
+253dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC;12.113s parent.
+SPY/AMS,TLT/NAS,GLD/AMS; helper1a273516... computes population covariance,
+one10-percent diagonal shrink and capped thirds, not research minvar63/25%.
 
-CPU synthetic first: Decimal50 versus float64 accounting, alpha0/1/partial,
-cash and fees, finite-difference early-action gradient through carried state,
-futureOPEN prefix invariance, restart state and model/calendar pins. Vectorize
-no-action daily marks only when accounting-equivalent. Measure runtime before
-actual allocation. Steward gives one exclusive GPU appointment only after the
-complete frozen contract; no utilization target. Keep all artifacts on D:.
-Cached verification binds the successful immutable bounded parent/result;
-late/unknown runs cannot become success through standalone readback.
+Worker29590de3... rejects recursive duplicate JSON keys before raw retention;
+47 parent/author/independent tests/Ruff pass. Frozen source/helper:
+A/data/kis-current-control-refresh-v1-frozen-source-v2.
+Independent raw/typed/query/provenance/closes79aecac0... matched/all28 unchanged;
+host exact weights/covariance mismatch within16ULP remains unproven, not waived.
+Same-native65ab/Python3.12.13 ALL-ROfbefdab4.../1.129s exactly recomputes them.
+Shared formula, not cross-platform equality. Revised/price-only/non-PIT/non-TR/
+publication/finality limits remain. No graft into frozen4a.
 
-## Independent Parallel Work
+## Work And Completion Evidence
 
-Data: same-runtime MD token666ec8c3... authenticated HTTP2xx/onePOST/zeroGET/
-accounts/orders/reaped/absent; earlier host/head4xx cause unclassified.
-Do not backdate the intraday selector: next eligible Oct9 13:30UTC. Prepare
-an independent post-close historical refresh for the unchanged253-CLOSE/
-252-return10%-shrink engineering control using fixedSPY/AMS,TLT/NAS,GLD/AMS.
-Keep actual clocks/query/cursor/raw and typed custody/source limits; no silent
-64-close substitution or graft into frozen4a research. Reuse existing provider/
-serial collection, bounded page scope and one token/client; no platform.
-Existing06:20KST head remains owned, never manually invoke it.
+Execution: one small control-input adapter/focused tests; update the existing
+owned caller, not portfolio_cycle/budget/executor/risk. Verify exact parent/
+receipt/input/helper pins, geometry, observation clock and retained provenance.
+Exclusively freeze source and original custody anchors before native intents.
+Restart/pending reloads same input/control/terms, never latest-refresh replacement,
+basis reset, borrowed baseline-SPY inventory or a substitute identity.
+New planning uses actual open regular session/latest completed source day;
+closed-market zero orders. Exact pending reconciliation is separately eligible.
+Source issues defer this input only, not standing Paper or another lane.
 
-Execution: preserve existing portfolio, original10-percent pool, exact checkpoint,
-QQQ custody and loopback console. Routine owned Paper work is authorized;
-no duplicate writer, substitute unknown intent or budget reset. No live route.
+Parent: source-matched runtime/readonly planning preview, one goal-owned
+next-session opportunity through existing scheduler helpers/locks. Do not compete
+with baseline-SPY/head/other owners. Keep owned next_due/exact recovery; no
+foreground sleep, global approval gate or second cash envelope. Recurring Data
+refresh may use the same bounded one-client path. Preparation completes from
+tested code, source/input binding, actual preview and installation facts; future
+runtime closure remains explicit and owned, never inferred from task exit.
 
-Primary sources1706.10059v1 and1802.03042v1/pinned official GPLv3 licenses
-were independently re-retrieved. Mechanism inspiration only: crypto and
-derivative-hedging outcomes are not ETF alpha. No public weights/code adopted.
-Claude direction check bcf9618b... review_unavailable/non-verdict, not agreement;
-independent critique/source tests continue without a global approval wait.
+Strongest tests: A-toB refresh while pending retainsA/quantity/TTL/identity;
+crash after checkpoint resumesA/no duplicate submit; altered/missing bindings
+reject before wire;63-close/second shrink/permuted symbols reject; closed
+session zero orders. Existing native exact-request recovery stays authoritative.
+
+Independent Data: bounded official Federal Reserve Treasury-constant-maturity
+CSV capability underM/us_rates. Board public-domain policy re-retrieved; exclude
+copyrighted/non-Board series. No auth/cost/values in logs; retain source/history/
+revision/release clocks. No same-date prior-CLOSE or cash-yield assumption.
+Engine prepares a new macro-context hypothesis only after exact source handoff;
+no dummy GPU job, rejected-family reopening or sealed holdout.
+
+Claude b1df449c... review_unavailable/non_verdict_output, not agreement.
+Independent source review supports the adapter with limits. Investigate CLI
+invocation separately if useful; it does not hold independent ready work.
 
 ## Verification And Continuation
 
-Current repo authority: changed-path serial826pass33.74s, clean-root eight-worker
-full12914pass22skip35warnings334.71s/12936 collected/helper0; Ruff/default,
-research and accounting sample-env Compose pass. Focused verification for this
-isolated package; full authority only for shared runtime integration or an
-explicit requirement, not unchanged documentation.
+Isolated studies: kernel49, worker29 independent cases, Data47; CPU54 smoke,
+CUDA timing, actual four fits and bound replay complete. Repo authority remains
+changed serial826/full12914pass22skip35warnings/12936 collected/eight clean
+workers. Unchanged code did not repeat full tests; Ruff/default/research/
+accounting sample-env Compose pass. New shared Execution integration requires
+changed serial plus clean-root full helper/Ruff/both Compose perAGENTS.md.
 
-Keep stateboards concise, integrate actual results/limitations, verify owned
-changes, commit/push, replace this with one material next objective and continue.
-A lane-local external due time is not foreground sleep or a company block.
-M=D:/market_data; A=D:/thericher-v2/model-artifacts, /app/model_artifacts;
-D:15-percent floor. Never read/route KIS_LIVE_*. Live, paid commitments,
-unclear rights, public exposure and major runtime replacement remain reserved.
+Verify/commit/push owned integration, refresh stateboards, replace with one
+material next objective and continue. M/data andA/artifacts/D:15-percent floor.
+Never read/routeKIS_LIVE_*. Live money, paid commitments, unclear rights, public
+exposure and major runtime replacement remain reserved. Private Paper approved.

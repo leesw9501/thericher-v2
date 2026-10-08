@@ -21,7 +21,34 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
-Current goal24 is kis-learned-stateful-rebalance-development-v1. Goal23 is
+Current goal25 is kis-current-control-paper-rebalance-preparation-v1. Goal24
+is COMPLETE/REJECTED54 cells: four512-update fits, constantCPU plus linear/MLP/
+GRU CUDA,199.952s worker/202.095s parent7b2ca714... . Exact
+A/research/kis-learned-stateful-rebalance-development-v1: contract85af8689.../
+420 sources/input4a25284d.../result06e5d613... . Bound ALL-RO95e924a8...11.629s
+links successful parent/result, all566 inputs/source unchanged/zero new fit/
+inference/search/write/reaped/absent. Custody5cdfa1c7... closed, lease released;
+no winner, ensemble or Paper model follows. GRU10bps growth+2.76%/+28.83% still
+fails first-view utility versus cash/controls. Cached binding is not independent
+GRU reinference, fractional/seen/raw-price development is not broker profit.
+
+Current253-close engineering input now exists: A/data/kis-current-control-refresh-v1/
+b54c15c1db6e44a0baf8a7cf13f225eb/control.json06901201.../receipt493cd1dc.../
+parent3cc8856e... one directory above. Token1/9GET/9accepted/28 unchanged files,
+253dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC. Worker29590de3.../
+47 mocked cases fixes duplicate-JSON echo rejection before raw persistence.
+Independent raw/provenance/closes79aecac0... match; exact host numeric mismatch
+within16ULP remains unproven/not waived. Same-native65ab ALL-ROfbefdab4...1.129s
+exactly recomputes helper1a2735... weights/covariance; shared formula, not host
+equivalence. Raw/revised/non-PIT/non-TR/finality/publication limits remain.
+Goal25 freezes this source and existing custody before unchanged native Paper
+intents; restart never replaces a pending input or resets the shared basis.
+Preparation is not a future fill. Independent official H15 Data probe proceeds.
+Latest fresh account d13f0d7d... publishes20:39:11UTC snapshot,3positions/0open
+orders/book/basis matched/token1/GET5/order0/private40 files/source unchanged/
+reaped/absent. Numeric-field presence is not fees/settlement/owned netPnL.
+
+Goal23 is
 COMPLETE/REJECTED30 cells: new420-file two-dependency recovery bundle keeps
 original hypothesis/input/worker/kill and preserves failed418/v1 bytes. Exact
 A/research/kis-stateful-rebalance-development-v1-runtime-recovery-v2:
@@ -31,11 +58,11 @@ result, all566 inputs/source unchanged/zero fit-inference-search-write/reaped/
 absent. Public independent aggregate review confirms original rejection:
 10bps growth+4.09%/+22.83% and lower turnover, not required utility improvement.
 These are seen raw-price hypothetical results, not broker profit. Next finite
-four-fit inventory-conditioned partial-rebalance question prepares; no frozen
-GPU appointment yet. MD token666ec8c3... now authenticates in native Paper
+four-fit inventory-conditioned partial-rebalance question is now closed above.
+MD token666ec8c3... authenticates in native Paper
 runtime/HTTP2xx/token1/zero GET or account-order work/reaped. Historical
 host/head failure remains unclassified. Do not backdate intraday collection;
-post-close historical253-close control-refresh preparation is separate.
+post-close historical253-close control refresh above is separate.
 
 Goal22's actual repeat
 cycle is COMPLETE: cd14cad0.../37.436s parent/35.440s worker/one token/28GETs/
