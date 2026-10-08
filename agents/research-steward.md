@@ -15,8 +15,11 @@ Compacting this projection does not delete evidence or reopen an allocation.
   Exact A/research/kis-cross-asset-direct-risk-capped-utility-development-v1/
   parent-verify-8dd7bd8c386a435d881d85301012e6aa.json; result5045cf03.../
   custodyee7a4132... closed/non_promoting_completed/zero sealed spend. Lease
-  released only after exact reaping/absence. Independent numerical reader
-  preparation continues without reopening training. No ready depth survivor;
+  released only after exact reaping/absence. Independent numerical readback
+  c271607c... passes3.056s/1008 unchanged bindings/42 cells/zero fits/inference/
+  search/writes. Exact same root/validation-readback.json; shared input/NAV,
+  cached GRU scores/model binding not reinference, host runtime equivalence
+  false. No reopening training or ready depth survivor;
   next source-only rule/ML regime composition is not allocated until frozen.
 
 - Conditional-hedge recovery COMPLETE/REJECTED42 cells; contract56787514.../

@@ -186,8 +186,14 @@ broker profit or a promoted model. Exact ALL-RO14.703s/zero new fits/inference/
 search/writes passes cached model/action/economic binding. Exact
 A/research/kis-cross-asset-direct-risk-capped-utility-development-v1/parent-verify-8dd7bd8c386a435d881d85301012e6aa.json;
 custodyee7a4132... closed/non_promoting_completed/zero sealed spend, GPU lease
-released after exact reaping/absence. Independent numerical reader prepares;
-small TRAIN group count/seen DEV/raw-price limits remain. Next source-only
+released after exact reaping/absence. Independent numerical readback now passes
+3.056s/1008 unchanged bindings/55 TRAIN and68 DEV groups/42 cells/zero fits,
+inference/search/writes. Exact same root/validation-readback.json,
+SHAc271607cd938bdcd4420f2677502e3340d6d09afdfa259e581bbb28c30689587.
+Independent scaler/context/covariance/control/metric/kill reconstruction shares
+input loader/low-level NAV; cached GRU scores/model-byte binding is not model
+reinference. Host3.14.3 runtime equivalence false. Small TRAIN group count/seen
+DEV/raw-price limits remain. Next source-only
 hypothesis is bounded fixed-rule/ML regime-expert composition, not a refit or
 outcome-driven rescue of this study; proposal must freeze before label access.
 Official v2.2.2 returns median despite its mean name; equality check is valid.

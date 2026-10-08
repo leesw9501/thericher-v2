@@ -90,8 +90,17 @@ parent-048b03f98ed44b1181bf98dd03460ccb.json/c2b3649f... in successor-v2.
 Network none/no production mounts/credentials/provider/GPU;406 baked sources
 and public test-tool bytes unchanged/reaped/absent. Initial test harness missed
 the installed public py.py compatibility shim; immutable failed probes remain.
-Distinct v3 TTL300/worker240 preparation uses measured v2 latency, never modifies
-old frozen terms; exact v2 closed binding is required before token/preparation.
+Distinct v3 TTL300/worker240 uses measured v2 latency, never modifies old terms;
+exact v2 closed binding is required before token/preparation. Actual direct
+dispatch17:00:12..17:00:20UTC is unavailable/fresh_reads/auth_rejected, token1/
+GET0/BUY0/8.126s, parent retained/no plan. Exact successor-v3/
+acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json,
+SHAf5cf67c41b79230fcadb8dfc3e5744e0f672eefa8590d6f77c98de8745fb3498.
+Source/runtime unchanged/both children reaped/absent. These transport facts are
+not independent broker census. Native auth_rejected covers every non-2xx token
+response: expired account, bad keys or quota are not yet established. Preserve
+v3 identity/basis; one token-only categorical diagnostic prepares through the
+existing selective loader/guard, no new loader or blind order retry.
 23:50 exact SELL/BUY router98112184... is installed; new SELL recovery host
 01106782... requires the probe's original request hash, never a null fresh-entry
 handoff. Lost post-probe request/pin rejects before fresh reads/transport.
@@ -188,8 +197,14 @@ kill despite positive analytical growth; not broker profit. ALL-RO14.703s
 passes cached model/action/economic binding with zero new fits/inference/search/
 writes. Exact A/research/kis-cross-asset-direct-risk-capped-utility-development-v1/
 parent-verify-8dd7bd8c386a435d881d85301012e6aa.json; custodyee7a4132... closed,
-GPU lease released after exact reaping/absence. Independent numeric supplement
-prepares; next source-only regime-expert composition cannot reuse old results.
+GPU lease released after exact reaping/absence. Independent numerical readback
+now passes3.056s/1008 unchanged bindings/55 TRAIN and68 DEV groups/42 cells,
+zero fits/inference/search/writes. Exact same research root/validation-readback.json,
+SHAc271607cd938bdcd4420f2677502e3340d6d09afdfa259e581bbb28c30689587.
+Independent scaler/context/covariance/control/metric/kill reconstruction shares
+the pinned input loader and low-level NAV. Cached GRU scores/model-byte binding
+are not independent reinference; host3.14.3 is not Docker runtime equivalence.
+Next source-only regime-expert composition cannot reuse old numeric results.
 Oct9 00:29 owned M1 head terminalf434.../exact capture both targets partial at
 page4/mixed_exchange_dates. Full-page/older-boundary correction prepares with
 active-key-loss protection; actual page chronology remains unknown/next02:28.

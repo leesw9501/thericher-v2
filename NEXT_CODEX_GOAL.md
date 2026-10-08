@@ -55,8 +55,13 @@ Never retry v2. Distinct v3 prepares with new current-book capture/TTL300/worker
 preserving exact v2 closure, SELL linkage and shared basis. Native canary delegates
 to a QQQ-only funds method. Repair the fixed SPY/TLT/GLD binding using the already
 baked exact preview reader; pinned-image39 happy-funds tests now pass2.146s.
-Keep
-used sources and this request immutable; do not blindly retry or extend its TTL.
+Actual v3 f5cf67c4... now fails fresh_reads/auth_rejected at token1/GET0/BUY0,
+parent retained/no plan/8.126s/source unchanged/reaped/absent. Exact successor-v3/
+acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json. Native token rejection collapses
+all non-2xx responses; do not infer expired account or invalid credentials.
+Prepare one token-only categorical diagnostic using existing selective loader/
+token-start guard, no account/order calls or raw response retention. Preserve
+v3 identity/basis and used sources; never blindly retry or extend plan TTL.
 
 Use the next owned regular-session opportunity, keeping owner conflicts and
 token due in the named worker. Resolve the old baseline new-entry direction
@@ -111,7 +116,9 @@ GPU study direct-risk-capped-utility GRU16/constant allocation under fixed63-
 context/21-group economics now completes39905a3e.../2 fits512 updates/42 cells,
 parent16.768s/worker14.430s/rejected. Cached ALL-RO14.703s passes zero new fits/
 inference/search/write, custodyee7a4132... closed. Independent numerical
-supplement and next source-only fixed-rule/ML regime composition prepare;
+supplementc271607c... now passes3.056s/1008 unchanged bindings/42 cells with
+zero fits/inference/search/writes, shared input/NAV and no GRU reinference.
+Next source-only fixed-rule/ML regime composition prepares;
 no old outcome reuse, independent holdout or Paper model claim. Head page4
 mixed-date boundary correction is deployed only to the collector image and
 passes15 baked synthetic cases; real-session evidence still belongs to its owner.

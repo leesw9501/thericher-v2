@@ -71,7 +71,15 @@ the pinned406-file Paper image in2.146s; exact successor-v2/
 parent-048b03f98ed44b1181bf98dd03460ccb.json/c2b3649f... . Network none/no
 credentials/provider/GPU/private mounts; initial missing public py.py shim
 failures retained. New v3 source4eec676e... uses distinct identity/fresh capture,
-TTL300/worker240 and exact closed-v2 pins before token; prepare/review only.
+TTL300/worker240 and exact closed-v2 pins before token. Actual v3 direct dispatch
+17:00:12..17:00:20UTC fails fresh_reads/auth_rejected/token1/GET0/BUY0/8.126s,
+parent retained/no plan/source unchanged/both children reaped/absent. Exact
+D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json/f5cf67c4... .
+Native token auth_rejected covers any non-2xx; no account-expiry/key/quota proof.
+One token-only categorical diagnostic prepares through existing selective
+loader/guard, no GET/account/order/new loader/raw response. Preserve v3 parent,
+identity and original basis; no blind retry. Used host461e/worker4eec/selectore6fb
+remain immutable; transport counts are not independent broker census.
 
 ANTICOR actual30 cells rejected/11.498s; ALL-RO15.273s and independent r2
 1.294s pass. Exact numerical receipt:
@@ -147,7 +155,12 @@ worker14.430s/parent16.768s, CUDA GRU512 updates4.673s/peak82007552 bytes.
 ALL-RO14.703s/zero fits/inference/search/writes passes cached model/action/
 economic binding; exact D:/thericher-v2/model-artifacts/research/kis-cross-asset-direct-risk-capped-utility-development-v1/parent-verify-8dd7bd8c386a435d881d85301012e6aa.json.
 Result5045cf03.../custodyee7a4132... closed; source unchanged/exact reaping/absence/
-lease released. No selected model/Paper input; independent supplement prepares.
+lease released. Independent numerical supplement now passes3.056s/1008 unchanged
+bindings/42 cells/zero fits/inference/search/writes. Exact
+D:/thericher-v2/model-artifacts/research/kis-cross-asset-direct-risk-capped-utility-development-v1/validation-readback.json/c271607c... .
+Shared input loader/NAV, independently reconstructed scaler/context/covariance/
+controls/metrics/kill; cached GRU scores/model-byte binding not reinference.
+Host3.14.3 runtime equivalence false; no selected model/Paper input.
 Collector-only image6aec64a0... now passes15 baked real-client boundary tests
 3.032s/82e1ca25..., no credential/provider/production volume work. Exact
 D:/thericher-v2/model-artifacts/data/kis-paper-head-boundary-deployment-v1/publication-20261009-v1.json/c5f53d04... .
