@@ -38,7 +38,11 @@ Next distinct daily-risk family will freeze before actual labels: entry-date
 TRAIN2021-12-01..2023-12-20; embargoDec21..29; DEV2024 and2025-Jan..
 2026-Sep. Six channels x63 exact past sessions, five-session costed-loss TRAIN
 proxy; CPU HGB/one small CUDA attention/fixed half blend, no learned fuser.
-42 cells include cash/daily balanced/buyhold/TRAIN-only fractional null.
+42 cells include cash/five-session balanced/buyhold/TRAIN-only fractional null.
+Pre-label Execution review found the original daily-overwrite/5D-target
+mismatch; candidate/balanced/null now hold unchanged quantities for complete
+disjoint5-session groups and exit fifth CLOSE, partitioned once across DEV.
+Incomplete calendar tail cash; net capital/daily denominators never reset.
 One300-second shared compute allowance/two fits/no searches or sealed spend;
 no actual new contract, labels, fits or appointment is yet claimed.
 
@@ -221,9 +225,9 @@ eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
 
 | Queue | Current bounded fact |
 | --- | --- |
-| Breadth | Signed-clock54-cell family is closed/rejected. Next source/input hypothesis must add economic information or universe coverage, not reroll a failed price-only architecture/window. Data authentication recovery is a ready independent product priority. |
-| Depth / GPU | Source-only next proposal: fixed KIS-native TimesFM2.5 M5/24-OPEN context, QQQ/SPY three clocks, one20bps threshold,30 policy/cost/block cells. Needs exact25-session input attestation and its own frozen development contract; no reservation/actual inference yet. Float64 TCN timing is not a general CUDA fault. |
-| Ensemble | No current survivor/output set; do not combine rejected families as a rescue. New exploratory composition needs its own chronological out-of-fold contract. |
+| Breadth | Actual49-month KIS trio rule24-cell comparison closed/rejected. Current joint5-session loss hypothesis uses existing5-year input; old TLT history/Tiingo rights do not block it. |
+| Depth / GPU | Daily-risk HGB/attention implementation underway, no actual labels/fits or frozen appointment yet. Exact finite2-fit/shared300s/42-cell recipe; eligible CUDA allocation follows final source/input/contract freeze, not a utilization KPI. |
+| Ensemble | Fixed half-probability blend is part of this same developmental recipe, not synthesis or rescue of a rejected family; no learned fuser or extra fit. |
 | Replication | No selected candidate; revised/seen studies cannot become fresh independent evaluation by renaming them. |
 
 FINRA auxiliary-signal proposal is source-rights unresolved, NOT a ready model

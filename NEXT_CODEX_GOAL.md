@@ -4,7 +4,7 @@
 
 Complete kis-cross-asset-daily-risk-development-v1: fit a CPU HGB and a small
 CUDA attention classifier on KIS-native SPY/TLT/GLD past daily moves, then
-compare their daily basket/cash policies and a fixed probability blend against
+compare their five-session basket/cash policies and fixed probability blend against
 four fixed controls. Produce actual model and continuous-capital evidence,
 not another preparation-only objective. No live or research-to-Paper promotion.
 
@@ -29,8 +29,14 @@ not silent split shortening. Extended SPY/GLD OC history cannot be spliced in.
 No Tiingo, Norgate, FRED, FINRA, new weights or uncertain-rights substitution.
 
 Hypothesis: joint past moves contain information about a next-five-session
-costed balanced-basket loss proxy useful for DAILY basket/cash decisions.
-The TRAIN proxy is not hedge-causality, direct utility or mandatory5-day holding.
+costed balanced-basket loss useful for fixed five-session basket/cash decisions.
+The TRAIN proxy is not hedge-causality or direct utility. Its OPEN->fifth CLOSE
+holding/exit path matches candidate evaluation; no daily-overwrite shortcut.
+Primary-source motivation: https://www.bis.org/publications/correlation-equity-and-bond-returns
+describes changing stock/bond relationships, not proof of this classifier's edge.
+Implementation APIs re-retrieved2026-10-08:
+https://scikit-learn.org/1.9/modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html
+and https://docs.pytorch.org/docs/2.7/generated/torch.nn.TransformerEncoderLayer.html.
 Freeze the entire contract/source/input/runtime/custody before actual labels,
 outcomes or fits. Source-only review is not a predictive result.
 
@@ -45,6 +51,9 @@ outcome-selected sample or in-sample TRAIN economic performance claim.
 Pure daily adapter: exact64 CLOSEs/63 OPENs, six asset-major channels x63
 (SPY/TLT/GLD each close-to-close then open-to-close log returns), ending at
 decision CLOSE. Preserve existing MONTH-boundary helpers/guards unchanged.
+Freeze implemented Decimal50 log-price differences (ln CLOSE_b - ln CLOSE_a;
+ln CLOSE - ln OPEN), not bit-identical Decimal ln(ratio). Bounded in-process
+log cache changes no arithmetic, source eligibility or retained artifact.
 TRAIN target first entry OPEN -> fifth scheduled CLOSE, finite equal thirds,
 canonical actual-notional ledger5bps per side; factor below1 is loss. TRAIN-only
 channel standardization/zero-variance divisor1; require30 observations/class
@@ -59,15 +68,27 @@ heads/FF32/GELU/dropout0/mean pool/one loss logit; float32, unweighted BCE,
 full-batch AdamW lr.001/weight decay.01/512 final updates/seed101. No final
 checkpoint selection or rescue. Fixed50/50 probability blend, no learned fuser.
 
-Each candidate invests finite equal thirds iff P(loss)<.5, otherwise cash.
+Partition DEV valuation sessions from2024-01-02 into successive disjoint
+five-session groups, without resetting at the DEV-view boundary. Predict only
+group entries at previous CLOSE. Each candidate invests finite equal thirds iff
+P(loss)<.5, otherwise cash; hold quantities unchanged, liquidate fifth CLOSE.
+Final incomplete group (at most4 sessions) is cash, determined ONLY by frozen
+calendar, not observed price support; no truncated holding or target.
+Exact geometry:517 TRAIN entries/104 earliest-thinned non-overlapping5D labels
+(not independent ESS);689 DEV marks split252/437;137 complete groups,
+51/86 group entries; crossing groupDec30/31 2024-Jan2/3/6 2025. Last group
+Sep18..24 2026; four cash-tail marksSep25/28/29/30. First required CLOSE
+Aug31 2021/OPEN Sep1, last TRAIN labelDec20/21/22/26/27 2023.
 Seal ALL DEV actions before DEV payoff evaluation; same actions at every cost.
-Controls: cash, DAILY balanced thirds, uninterrupted buyhold, constant basket
+Controls: cash, five-session balanced thirds, uninterrupted buyhold, constant basket
 fraction equal to TRAIN non-loss fraction. Last is not exposure-matched to DEV;
 classification class-prior control is separate, not an economic winner.
 Seven policies x three side costs2.5/5/10bps x two DEV views =42 cells.
 
-Continuous positions/OPEN rebalance, final CLOSE exit only, NAV1 initialized
-ONCE per policy/cost; inventory/cash/denominators cross DEV boundary. Existing
+Candidate/balanced/null five-session roundtrips, no intermediate rebalance;
+buyhold initial OPEN/final CLOSE only. NAV1 initialized ONCE per policy/cost;
+inventory/cash/denominators cross DEV boundary even inside a five-session group.
+Use complete daily marks/carry, not fresh-capital segment replays. Existing
 Decimal50 ROUND_HALF_EVEN actual-notional ledger, no fresh monthly accounts.
 Daily utility252*(mean log return -5*population variance). Original kill at
 10bps in BOTH views: HGB positive growth and growth/utility greater than all
@@ -96,6 +117,9 @@ completion or bounded failure; planned fits are not completed-fit evidence.
 Claude concise falsification-first split/target/control/cost challenge is
 review_unavailable at A/research/source-discovery/claude-kis-cross-asset-daily-risk-20261008-v1.json:
 one .993s cli_nonzero_other, not agreement; don't repeat unchanged diagnosis.
+This review preceded the pre-label five-session holding correction. Independent
+Execution review found the original5D-target/daily-overwrite mismatch; parent
+aligned holding/exit without changing a policy or adding an approval gate.
 Independent exact review and other ready work continue. No provider/account/
 order/task/schedule/dashboard change required. Existing private Paper10-percent
 basis/identities/owned schedules remain independent; never read KIS_LIVE_*.

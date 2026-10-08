@@ -16,9 +16,9 @@ fixed blend42-cell developmental comparison on unchanged five-year trio input.
 | Resource | Owner | Ready / owned / due fact |
 | --- | --- | --- |
 | Input / daily geometry | Data | Exact input02dcc000.../calendar d2dab6f2... already available; pure daily adapter ready. Original monthly guards and extended OC cache remain separate. No provider call needed. |
-| Model / CPU | Engine Research | New daily5-session proxy contract declared in NEXT, not yet fitted. One HGB/attention/half blend; no outcome-based selection or shorter2008 proposal. |
+| Model / CPU | Engine Research | Implementation underway;5D target matched to fixed five-session holdings before labels. One HGB/attention/half blend; no outcome-based selection or shorter2008 proposal. |
 | GPU / custody | Research Steward / parent | Runtime available; no active lease/job. Freeze source/input/runtime/contract before actual labels and one300-second family appointment. Utilization itself is not a KPI. |
-| Cost / carry | Invoked Execution | Daily OPEN rebalance/continuous inventory/final CLOSE/actual-notional fees can be reviewed alongside model implementation. Existing Paper ownership unchanged. |
+| Cost / carry | Invoked Execution | Pre-label review aligned five-session holding/exit and target. Partition DEV once, preserve crossing-group inventory/view denominator, tail cash; exact fees/carry source review follows implementation. Existing Paper ownership unchanged. |
 | Independent review | Invoked Infra / Validation | Final OC recovery and CPU supervisor noP1/P2. Claude daily-risk one .993s failure/review_unavailable, not agreement; no retry or global wait. Validate actual models only after frozen outputs. |
 | Tiingo rights | Operator source-specific decision | Starter/Trial durable-data terms applicability/notice/plan unknown; already asked. No new Tiingo acquisition/fit/numeric readback or old-byte deletion. KIS research continues. |
 | Existing head | Data scheduler | October7 partial QQQ389/SPY390 M1 remains excluded from closed25-session study; nextOct9 00:29KST, no manual invoke or finality inference. |

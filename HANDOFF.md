@@ -45,6 +45,9 @@ NEXT owns distinct kis-cross-asset-daily-risk-development-v1: two actual
 TRAIN-only fits, CPU HGB and small CUDA attention, plus fixed probability blend
 on the unchanged five-year trio input. Contract freezes before actual labels;
 42 developmental cells/continuous capital, no holdout or Paper promotion.
+Pre-label review corrected5D-target/daily-overwrite mismatch: complete disjoint
+five-session holdings from first DEV OPEN, exit fifth CLOSE/carry net cash;
+partition once across both views, incomplete calendar tail cash. No fits yet.
 Data/Engine work is disjoint; parent owns actual calls/integration/Git. No
 account/order/scheduler/web/private-Paper change belongs to these packages;
 separate existing Paper authority and owned jobs remain unchanged.
@@ -89,7 +92,8 @@ denominators with NAV1 initialized once. Decimal50 ROUND_HALF_EVEN, not
 quantity ROUND_DOWN or broker parity. Endpoint-only target marks never
 supply daily utility. That preparation had no actual labels/fits/new weights/GPU;
 prepared2008-start monthly classifier remains unfrozen, not silently shortened.
-The new daily5-session risk target is a distinct hypothesis and family.
+The new daily5-session risk target is a distinct hypothesis and family, with
+payoff-aligned fixed five-session candidate/control roundtrips, not daily churn.
 
 ## Paper And Runtime Ownership
 

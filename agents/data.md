@@ -32,6 +32,14 @@ silently extending/splicing the frozen trio input. Old2008 monthly proposal
 remains unavailable. The closed source facts below are historical context,
 not current waits, queues or permission holds.
 
+Daily-risk pure adapter783c464c.../tests24cf4f96... is focused-verified:
+39 dedicated/.18s, parent122/.46s/Ruff, independent noP1/P2. Decimal50 cached
+log-price differences are frozen explicitly, not bit-identical ln(ratio).
+Exact unchanged calendar independently gives517 TRAIN entries/104 disjoint
+5D label geometry (not ESS),689 DEV marks252/437,137 complete5-session
+groups51/86 entries and four cash-tail days. One group crosses2024/2025;
+no calendar partition reset. No actual labels/fits/GPU/provider calls yet.
+
 Data owns acquisition, provenance, calendars, canonical storage, resampling,
 manifests, temporal joins and scoped quality facts; Research owns models and
 outcomes, Execution owns accounts/orders, parent owns integration/publication.
