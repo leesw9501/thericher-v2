@@ -21,7 +21,20 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
-Current goal21 is kis-owned-portfolio-first-rebalance-v1, still ACTIVE.
+Current goal22 is kis-owned-portfolio-repeatable-cycle-v1. Goal21's first
+owned SELL -> observed-funds joint BUY is COMPLETE as actual Paper execution.
+Independent v3 readback confirms2 full fills/2 terminals/current owned book/
+original shared basis/zero remaining recovery. Exact
+A/execution/kis-paper-owned-rebalance-v1/successor-v3/fresh-buy-readback-20261009-v3.json,
+SHA980ccc6bbac74e0f53c2d7fff99f21d67ec04e86e0bb4afa75e25f51ebc4e198.
+Actual2.101s/ALL-RO/network none/zero API/credentials/private writes/source and
+private bytes unchanged/reaped/absent. Historical reconciliation_unresolved
+reason counters are not current recovery: exact full-fill/current-book facts
+independently prove zero remaining recovery. Not fresh broker state after that
+dated execution, fees/settled cash/net PnL or cryptographic Scheduler origin.
+Goal22 makes the existing three-symbol control restartable/repeatable with
+one fresh reconciliation/repeat cycle and the existing private console. No
+profitability gate, new budget, foreign-inventory adoption or live authority.
 The22:45 owned SPY reduction has an independently read exact full SELL fill/
 closed terminal, residual baseline SPY and QQQ owned-flat. Exact evidence:
 A/execution/kis-paper-owned-rebalance-v1/sell-readback-20261008-v1.json,
@@ -106,7 +119,15 @@ auth-probe-a1f18ccc274c4b6ea42eda10e95cb187.json,
 SHA6c327aebffff743709516cd47070ae4d1f3a5f828429930afd9c8d7807996d1e.
 Earlier4xx cause remains unclassified, not expired account or bad keys. Same
 v3 retry is ready after owned token due17:38:26.120369UTC; no identity/basis/
-TTL reset, new credential loader or operator action. Independent work continues.
+TTL reset, new credential loader or operator action. Actual same-v3 recovery
+completes17:38:44..17:41:26UTC/162.165s, token1/GET38/BUY2/SELL0/cancel0,
+parent/plan retained/source/runtime unchanged/both children reaped/absent.
+Exact successor-v3/f2554a24ffdb42bcb5fafce623103bda/outcome.json,
+SHA3634c53af44bf1e974f7f5b73264c160198780706b60c861cdd1c7e43bc5194a.
+Matched exact returned host/worker/times/invocations, not latest discovery.
+Independent private fill/inventory readback prepares; no independent BUY
+closure was pending at that handoff;980ccc6b... now supplies exact independent
+closure. Fees/settled-cash/net-PnL remain not_observed; goal21 is complete.
 23:50 exact SELL/BUY router98112184... is installed; new SELL recovery host
 01106782... requires the probe's original request hash, never a null fresh-entry
 handoff. Lost post-probe request/pin rejects before fresh reads/transport.
@@ -233,6 +254,12 @@ intraday-head-20261008T1728010238609Z/terminal.json; token due02:33:06.641520KST
 head04:24KST. Availability/finality not_observed, Research continues.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
+
+Current full authority now12681 pass/22 skip/35 warnings330.66s/12703 collected,
+eight clean workers/helper exit0; parent session reaped/current temp cleaned.
+Pure changed-path73 cases1.98s and isolated fixture13 cases182.68s/source review
+pass; Ruff/default/research/accounting sample-env Compose pass. This replaces
+the earlier full result for the current source, not the frozen Paper runtime.
 
 Focused test-only throughput improvement reuses the exact20-session baseline
 already computed by each Donchian/EMA parent fixture, retaining the second real

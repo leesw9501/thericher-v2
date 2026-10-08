@@ -9,17 +9,18 @@ Parent alone owns Git, actual credentials, provider/Docker/scheduler effects.
 Role authors own disjoint public or external preparation. Full clean-root
 integration is complete; no active authority-test owner.
 Goal20 self-financing rebalance code/replay and image delivery are COMPLETE.
-Actual owned SELL is filled; joint BUY lifecycle remains unobserved.
-NEXT owns kis-owned-portfolio-first-rebalance-v1; actual lifecycle is required.
+Actual owned SELL and two joint BUYs are independently filled/book-reconciled;
+goal21 is COMPLETE. NEXT goal22 owns a restartable/repeatable three-symbol
+control cycle with fresh reconciliation and existing private console.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
 | Paper runtime | Execution / parent | Final image ae2c68f8.../406 source files/tree7bac725b... verified offline; seven configs retain five RW/two RO roots and all operational fields. No running owner restarted. |
-| Owned rebalance | Execution / parent | SELL filled/v2 no-wire closed. v3 f5cf... token-only failed, parent/no plan retained. Corrected probe34 cases/READY actually authenticates17:33:25UTC/.506s/6c327aeb.../GET0/orders0/token discarded. Earlier4xx cause unknown. Same v3 retry ready after token due02:38:26.120369KST; exact original identity/basis/private binding retained. |
-| Research CPU | Engine / independent review | Rule/ML regime-expert pure kernel d74abaee.../proposal255666d1... READY38 cases/independent review; parent73 combined1.98s. External worker/full freeze prepares8 fits/300s/36 cells, no actual values yet. |
+| Owned rebalance | Execution / parent | Goal21 complete: SELL filled, v3 actual3634.../2BUY; independent980ccc6b.../2.101s confirms2 full fills/current owned book/original basis/zero recovery. ALL-RO/no API/writes/reaped/absent. Next repeatable-cycle source preparation; no duplicate writer or budget reset. |
+| Research CPU | Engine / independent review | Regime pure kernel/proposal READY; external30 cases15.05s/research-semantic review/420-file metadata preflight pass. Two scoped dispatcher custody/input-drift P2 repairs prepare before freeze8 fits/300s/36 cells, no actual values. |
 | Research GPU | Parent / Steward | Direct-utility39905a3e... actual2 fits/42 cells/rejected16.768s; GRU CUDA4.673s/peak82007552 bytes. ALL-RO14.703s and independentc271607c.../1008 bindings/3.056s pass zero new fit/inference/search/write. Custodyee7a... closed/lease released; next regime-composition source-only. |
 | Data | Data / parent | Sector3x2686 input070e98d7.../compositeab70d192... retained. Split-aware CPU30 cells rejected/ALL-RO passes/custody23a20972... closed. Cursor scope closed, not API exhaustion. |
-| Verification | Parent / independent reviewers | Data598 serial cases59.45s/independent Python+PS READY; full12641pass22skip35warnings374.33s/12663 collected/eight clean workers/helper exit0. Ruff/three sample-env Compose pass; external74 cases16.52s. Head-boundary Claude.949s unavailable/not agreement. |
+| Verification | Parent / independent reviewers | Current full12681pass22skip35warnings330.66s/12703 collected/eight clean workers/helper exit0/reaped/temp cleaned. Changed pure73 cases1.98s/fixture13 cases182.68s/review; Ruff/three sample-env Compose pass. External regime30/15.05s and v3 reader13/14.95s pass; Claude unavailable/not agreement. |
 | Existing SPY | Execution scheduler | Oct8 23:50 recovery completed; actual child token1/GET0/BUY0. Next Oct9 23:50; original action backed up/settings/triggers unchanged. No manual invoke/new basis. |
 | Existing preview | Execution scheduler | thericher-kis-risk-preview-20261009-0015 Ready/lastOct9 00:15/exit2/no next trigger. Exact outcome not inspected; task exit is not outcome. No manual invocation. |
 | Existing head | Data scheduler | New02:28 invocation8736eef8.../exact schedule0e47323f.../capture007b331e... binds QQQauth_rejected/HTTP4xx and SPYtoken_not_due. No new coverage/boundary claim; token next_due02:33:06.641520/head04:24KST. Collector6aec synthetic15 cases remains valid; oldb7fc rollback/Paperae2 unchanged. |
@@ -29,9 +30,9 @@ NEXT owns kis-owned-portfolio-first-rebalance-v1; actual lifecycle is required.
 ## Bottleneck And Reversible Improvement
 
 No company block or foreground wait. Material remaining Paper gap is runtime
-observed-funds joint BUYs after the now-closed SELL/expired-plan lifecycles, not
-credential approval, more RO diagnostics or profitability qualification.
-Keep the next objective material: exact shared-budget rebalance lifecycle.
+repeatability/current observation after the now-closed first SELL/BUY lifecycle,
+not credential approval or profitability qualification. New objective binds one
+session-keyed control/restart/current-account/console cycle to existing owners.
 External waits retain their named next_due; ready research/data prep continues.
 Full362.04s authority ran beside future Paper/ANTICOR/sector preparation.
 Reuse the reviewed pinned goal18 input helpers and57-line exact-ID containment

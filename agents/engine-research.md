@@ -200,8 +200,13 @@ is READY:38 cases1.36s/independent1.31s/Ruff, parent73 combined cases1.98s.
 Fixed momentum63/minvar63/cash experts, uniform blend, depth2 tree and6-8-3
 MLP compare36 cells. Chronological diagnostic OOF qualified prefixes14/27/40;
 six OOF and two final fits share300s, no OOF selection or old numeric outputs.
-Thin external worker/metadata-only preparation is next; full source/input/runtime
-freeze precedes actual values/fits/GPU. Public Claude challenge.960s unavailable,
+Thin external worker947af711.../prepare92383941.../dispatchf5f6fd27... passes30
+parent cases15.05s and independent research-semantic review. Actual metadata
+preflight verifies420 selected sources/OOF14/27/40/no values/writes/commands.
+Independent Infra found two scoped pre-freeze P2s: canonical custody identity
+attestation and all source/price binding before/after drift checks. Narrow
+unused dispatcher correction prepares, not an operator gate or Paper hold.
+Full source/input/runtime freeze precedes actual values/fits/GPU. Public Claude challenge.960s unavailable,
 not agreement: A/research/source-discovery/claude-regime-expert-composition-20261009-v1.json.
 Official v2.2.2 returns median despite its mean name; equality check is valid.
 Unknown corpus

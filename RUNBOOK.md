@@ -2,7 +2,19 @@
 
 ## Current Owned Opportunities And Research
 
-Goal21 actual lifecycle remains active. Installed thericher-kis-owned-spy-trim-
+Goal21 actual first SELL -> observed-funds BUY is COMPLETE. Independent ALL-RO
+v3 readback2.101s/980ccc6b... verifies2 full fills/current owned book/original
+basis/zero remaining recovery, source/private bytes unchanged/no API/credentials/
+writes/reaped/absent. Exact
+D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/fresh-buy-readback-20261009-v3.json.
+Historical unresolved-reason counters are not current recovery; fees/settled
+cash/net PnL and later fresh broker state remain unobserved. NEXT goal22 owns
+one restartable/repeatable three-symbol control cycle with fresh reconciliation
+and existing private-console agreement, not another budget or promotion gate.
+Current full12681pass22skip35warnings330.66s/12703 collected/eight clean workers/
+helper exit0/reaped/temp cleaned; Ruff/three sample-env Compose pass.
+
+Retained goal21 install/recovery history: thericher-kis-owned-spy-trim-
 20261008-2245 runs Oct8 22:45..22:49KST/4-minute bound/IgnoreNew/restart0/no
 missed-run catchup. Existing daily-SPY task23:50 action recovers the same exact
 owned-spy-trim-20261008-v1 request only today23:50..23:54; other dates/settings/

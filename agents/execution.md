@@ -46,7 +46,8 @@ Exact A/execution/kis-paper-rebalance-runtime-v1/image-publication-20261008-v1.j
 SHAf5f62fd3... . Goal20 full12398pass22skip362.04s/eight clean workers,
 Ruff/default/research/accounting sample-env Compose pass; aborted run not authority.
 Owned runtime A/execution/kis-paper-owned-rebalance-v1 is now source-reviewed
-and installed; SELL is now actually filled, BUY remains incomplete.
+and installed; SELL and successor-v3 BUY now have exact independent fill/custody
+closure. Goal21 is COMPLETE; NEXT goal22 owns restartable/repeatable operation.
 APIa7758f85.../containercaae3d40.../
 host10c6d626.../runtime-contracta347a9c3...;99 final runtime cases5.19s plus32
 fully mocked installer cases12.60s pass. Independent findings fixed: full nine
@@ -113,7 +114,8 @@ actually confirms2 terminal/zero remaining recovery/starts/acks/fills in1.351s.
 Never retry that expired plan. Prepare distinct owned-portfolio-buy-20261009-v2
 from a new post-closure current-book capture and fresh exact observations;
 retain original SELL linkage/shared10-percent basis and frozen restart terms.
-Actual BUY lifecycle remains unobserved; goal21 stays active. Public synthetic
+That earlier BUY lifecycle was incomplete; the successor-v3 closure below now
+completes goal21. Public synthetic
 real-adapter image smoke now passes1.289s on pinned ae2 image: exact406 code
 files, one fake GET/zero POST/provider calls, unsubmitted state/unchanged basis/
 runtime projection written. Exact synthetic-adapter-smoke-v1/parent-b0998c4cd13041c99b5807c8bc37d85a.json,
@@ -170,7 +172,26 @@ process reaped. Exact successor-v3/auth-probe-a1f18ccc274c4b6ea42eda10e95cb187.j
 SHA6c327aebffff743709516cd47070ae4d1f3a5f828429930afd9c8d7807996d1e.
 Earlier4xx cause remains unclassified; no expired-account/key claim or operator
 credential action. Same v3 retry is ready after owned token next_due17:38:26.120369UTC;
-no plan TTL/quantity or original basis reset. Research preparation continues.
+no plan TTL/quantity or original basis reset. Same v3 actual recovery now
+completes17:38:44..17:41:26UTC/162.165s: token1/GET38/BUY2/SELL0/cancel0,
+parent/plan retained/source/runtime unchanged/both children reaped/absent.
+Exact successor-v3/f2554a24ffdb42bcb5fafce623103bda/outcome.json,
+SHA3634c53af44bf1e974f7f5b73264c160198780706b60c861cdd1c7e43bc5194a.
+Pointer is matched to returned host/worker/timestamps/exact invocations, not
+latest scan. Independent reader8e068ef3.../13 parent cases14.95s/independent
+READY now actually confirms2 full fills/2 terminals/current owned book/original
+basis/zero remaining recovery in2.101s. Exact successor-v3/
+fresh-buy-readback-20261009-v3.json,
+SHA980ccc6bbac74e0f53c2d7fff99f21d67ec04e86e0bb4afa75e25f51ebc4e198.
+ALL-RO/network none/no API/credentials/private writes/source/private bytes
+unchanged/reaped/absent. Historical unresolved-reason counters are not current
+recovery; full-fill/current-book proofs are independently checked. No fresh
+broker census after that dated run or fees/settled-cash/net-PnL claim.
+Goal21 COMPLETE; goal22 is one restartable/repeatable three-symbol control cycle,
+fresh account/owned-position reconciliation and existing private-console parity.
+No new budget, foreign inventory, model promotion or live authority. Parent
+owns actual; next role package source-inspects current cycle/console/schedule
+ownership, reusing repo functions and old immutable evidence.
 Used9496/718/6c36 sources are immutable. Claude changed fresh recovery challenge
 .948s review_unavailable/cli_nonzero/not agreement.
 
