@@ -2,92 +2,99 @@
 
 ## Objective
 
-Complete kis-owned-portfolio-repeatable-cycle-v1: make the now-filled shared
-SPY/TLT/GLD Paper portfolio restartable and repeatable through one owned,
-session-keyed target/reconciliation cycle. Deliver an actual fresh account/
-owned-position reconciliation and one bounded repeat cycle (including a
-truthful no-delta result), using the existing private loopback console.
+Complete kis-stateful-rebalance-development-v1: obtain one bounded,
+cost-aware continuous-holdings development result and a parent-bound cached
+readback for the existing SPY/TLT/GLD hypothesis. This advances the engine's
+actual inventory/turnover model, not another prediction-only fit.
 
-Goal21's first SELL -> observed-funds BUY is COMPLETE: independent v3 readback
-980ccc6b... binds two full fills/current owned book/original basis, zero
-remaining recovery. Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/fresh-buy-readback-20261009-v3.json.
-Fees/settled cash/net broker PnL remain not_observed; no profitable model or
-live authority follows.
+## Current Evidence And First Action
 
-## Execution Package
+Goal22 kis-owned-portfolio-repeatable-cycle-v1 is COMPLETE. Exact
+D:/thericher-v2/model-artifacts/execution/kis-paper-repeatable-cycle-v1/repeat-cycle-9bd7d0f64b4b43d8889a0fedd150a4bd.json,
+SHA cd14cad07046387a78ccb5d6cf00bcacc3c00a6a0dcde6ccbe5af5bc3f9be83c:
+37.436s parent/35.440s worker, one token/28 GETs/zero orders, actual owned book
+and original 10-percent basis matched, no_target_delta. Recreated client and
+reloaded private checkpoint return the same cycle without changed terms.
+This is client/checkpoint restart evidence, not a host reboot. Source/input
+unchanged, child reaped/absent. Exact console agreement in the same directory:
+repeat-console-agreement-cbcc0039221145d4ad911aa1be89bc0f.json,
+SHA 0c919dfa...; runtime observation20:00:10UTC matches loopback state.
+Temporal publication binding is not snapshot-byte binding in the original
+cycle receipt. Fees/settled cash/net broker PnL remain not_observed.
 
-Use existing repo planning/ownership/reconciliation clients and immutable
-Paper image ae2c68f8...; preserve original shared10-percent basis, residual
-baseline SPY, acquired TLT/GLD and corrected QQQ custody. Never adopt foreign
-inventory, reset the budget, or reuse/rename a terminal intent.
+Engine Research first repairs the source-only runtime bundle: frozen a8c81efe...
+has an import failure before worker CLI at kis_cross_asset_direct_utility.py:15.
+Preserve v1 source/archive/contract and failed immutable parent receipts. Make
+only a versioned dependency-consistent source/contract revision; do not rescue
+it by changing the hypothesis, input, geometry, cost band, or kill test.
+Use a no-input import/synthetic smoke before the actual bounded run.
 
-First source-inspect the current owner graph and expose the minimum reusable
-cycle around existing functions. Keep one durable session/input/control
-identity, persist intent before a broker side effect, and resume the same
-quantity/terms across restart. Reduce only proven-owned inventory; fund buys
-only from observed fills and fresh broker buying power. Do not make pending
-sales spendable or manufacture orders when the quantized target is unchanged.
+## Research Contract
 
-Start with the existing fixed capped-thirds engineering control and explicitly
-provisional input semantics, not a promoted failed research model. Keep model
-selection, fees/PnL claims and the independent Engine campaign separate.
-Reuse the existing snapshot/console paths so current owned portfolio status
-and recovery agree; no new report framework or public dashboard.
+Existing external root:
+D:/thericher-v2/model-artifacts/research/kis-stateful-rebalance-development-v1.
+Kernel23474f89.../proposal e9478307.../worker946d2da1...:
+69 prior-CLOSE decisions/1442 continuous valuation marks; banded minvar63,
+unbanded minvar63, momentum63, cash, capped-thirds; three fixed costs/two
+views/30 cells. Keep original strongest kill: BOTH10bps views positive growth,
+utility greater than every control, turnover lower than unbanded minvar.
+Fractional quantities/raw-price/seen-data/non-PIT/non-TR/provisional-finality
+limits remain explicit. This is not Paper parity or a profitable-model claim.
 
-Inspect existing SPY/portfolio schedule ownership before a conflicting launch.
-Reuse or narrowly replace an owned action rather than adding duplicate writers.
-A finite direct owned cycle may establish behavior before routine scheduling;
-label direct dispatch truthfully. Never infer fill from a task exit, preview,
-marker or missing evidence. Unknown submission pauses only its exact intent
-until reconciled. Required evidence is exact intent/fill/inventory/basis
-binding, restart equality and fresh categorical account/recovery facts.
+Reuse only the exact4a25284d... OC input and its pinned INPUT helpers; never
+reuse prior regime results/models/predictions. Hash all563 bindings plus3
+price bodies before/after, including failure. No fit, inference search,
+selection, sealed holdout or GPU is required for this finite rule comparison.
+Do not launch training solely to consume GPU. A subsequent learned continuous
+policy requires a distinct frozen campaign, useful baseline and compute stop.
 
-Ask Claude for a concise ownership/recovery/availability challenge before the
-new cycle is relied on; unavailable is not agreement or a global wait.
-Independent source/restart/unknown-outcome tests precede actual reliance.
-Bound this objective to the existing three symbols/control/shared pool and one
-repeat cycle; no live route, new universe, arbitrary model serving or scheduler
-platform. Parent alone owns actual private/provider/Docker/scheduler/Git work.
+Parent alone owns actual effects. Use the existing d6b43213... image, frozen
+public source RO, exact input scopes RO, only this study output RW, network
+none/2CPU/2GiB. Source under /app; input/output mounts outside its RO tree.
+Bound the child to120s and the parent including containment to150s.
+A late/unknown/failed parent cannot become success through standalone cached
+verification. Bind readback to the same successful immutable parent receipt,
+contract and result hash; preserve actual dispatch/reaping facts on hash or
+receipt failure. Verify exact CID/name/image/labels before destructive cleanup.
 
 ## Parallel Packages
 
-Engine: regime expert-composition db0bdaae... is COMPLETE/REJECTED36 DEV cells,
-eight fits/worker23.104s/parent26.018s, including four CUDA MLP fits. ALL-RO
-13.217s preserves cached economics/model/action binding with zero fit/inference/
-search/write; all566 input bodies/source unchanged, exact reaping/absence,
-lease released and custody7c2ae4dc... closed. Exact external study root
-D:/thericher-v2/model-artifacts/research/kis-cross-asset-regime-expert-composition-development-v1;
-result53e359ff... and parent-verify-32b84d338b284979b777fb951bf84b2b.json.
-Independent numerical readback prepares without retuning, old numeric outputs,
-sealed holdout or Paper qualification. No next training campaign is frozen yet;
-choose a distinct useful hypothesis rather than increasing utilization alone.
+Data owns the auth fault: current-trio runner fd19f82b.../44 tests is READY,
+but actual parent b0443f96... was auth_rejected/token1/GET0, not acquired data.
+Owned04:24KST head23212330.../schedule8da92f8b.../capture745fccac... independently
+binds QQQauth_rejected/HTTP4xx and SPYtoken_not_due; next06:20KST remains owned.
+No account-expiry diagnosis follows. Both token builders/transports are
+source-equivalent/direct/no redirects; compare effective selected Paper pair
+in memory, then one bounded zero-GET MD token probe in the successful native
+Paper image if useful. No secrets, manual head invocation or new throttle.
+64-close context is not the original253-close/252-return10%-shrink control;
+current-data refresh must not silently alter that control or frozen research.
 
-Data: preserve the collector-only6aec64a0... correction, old image rollback and
-exact head ownership.02:28KST bound result was QQQauth_rejected/HTTP4xx and
-SPYtoken_not_due, not a boundary-code failure or fresh coverage. Token-only
-probe6c327aeb... later authenticated; previous cause unclassified. Existing
-head next04:24KST remains owned; inspect exact bound result, not latest scans
-or task exit. No manual task invocation or global wait. Availability/finality
-remain not_observed absent retained evidence. Prepare only useful current
-trio-data refresh for the repeat cycle without rewriting the frozen research
-input. Pure current-trio selector a1273093.../44 parent cases0.78s is READY,
-independent44 cases0.73s:64 prior completed CLOSEs/actual intraday decision,
-separate local receipt times and no claimed provider finality. No actual current
-collection yet; no new Tiingo numeric work while rights are unresolved.
+Execution keeps existing owned positions, private checkpoint, original shared
+basis, corrected QQQ custody and current console. No duplicate writer,
+substitute intent, budget reset, foreign-inventory adoption or live route.
+Ready source-only operational work may proceed independently of this study.
+
+Public mechanism sources1706.10059v1 and1802.03042v1 were independently
+re-retrieved with official pinned GPLv3 licenses. Prior holdings and transaction
+cost mechanisms are relevant; crypto zero-slippage and derivative-hedging
+results are not ETF alpha. No public code/weights are adopted.
 
 ## Verification And Continuation
 
-Focused feedback for isolated packages. At shared execution/control integration
-or this company boundary, changed-path serial coverage plus clean-root
-eight-worker scripts/run_parallel_tests.ps1, Ruff and default/research/accounting
-sample-env Compose are required. Do not rerun full authority for unchanged docs
-or a small isolated package. Maintain exact expected count/skip/worker checks.
+Goal22 authority: changed-path serial826 passed33.74s; clean-root eight-worker
+full12914 passed/22 skipped/35 warnings334.71s (12936 collected), helper exit0;
+Ruff and default/research/accounting sample-env Compose pass. Native cycle
+27 independent tests plus3 restart/fault probes pass. Do not repeat full
+authority for unchanged docs or an isolated external study.
 
-Integrate actual completion evidence, verify, commit/push, replace this with one
-material next company objective and continue. A lane-local due time does not
-stop other ready work. Keep boards concise and retain immutable old evidence.
+Focused-verify the source repair and no-input smoke; retain actual finite run,
+parent-bound ALL-RO readback, limitations and original kill result. Verify
+owned changes, commit/push, replace this with exactly one material next company
+objective and continue. A source-local failure or worker next_due never
+globally pauses another ready lane.
 
-Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts and
-/app/model_artifacts; D:15-percent free-space floor. KIS Paper standing authority
-applies; never read/route KIS_LIVE_*. Live/cost/unclear rights/public exposure/
-major runtime replacement remain reserved operator decisions.
+Market data D:/market_data; artifacts D:/thericher-v2/model-artifacts or
+/app/model_artifacts; D:15-percent free-space floor. Paper work has standing
+authority. Never read/route KIS_LIVE_*; live, paid commitments, unclear rights,
+public exposure and major runtime replacement require the operator.

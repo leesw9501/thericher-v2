@@ -21,7 +21,23 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
-Current goal22 is kis-owned-portfolio-repeatable-cycle-v1. Goal21's first
+Current goal23 is kis-stateful-rebalance-development-v1. Goal22's actual repeat
+cycle is COMPLETE: cd14cad0.../37.436s parent/35.440s worker/one token/28GETs/
+zero orders/no_target_delta. Original basis and current owned book matched;
+client recreation and private checkpoint reload return the same cycle.
+This is not a host reboot. Source/input unchanged/reaped/absent. Exact
+A/execution/kis-paper-repeatable-cycle-v1/repeat-cycle-9bd7d0f64b4b43d8889a0fedd150a4bd.json.
+Console0c919dfa... matches20:00:10UTC runtime observation, mode off; temporal
+publication binding is not snapshot-byte binding in the original receipt.
+Independent bounded review found no P1/P2, completed after dispatch; revised
+in-memory body not independently hash-attested. Native27+3 probes and separate
+critical transport/artifact-scope review preceded reliance. Initial body failed
+compilation; retained1e7a271a... is not broker evidence. Fees/netPnL unobserved.
+Goal23 obtains the continuous-holdings CPU comparison after a versioned
+dependency-consistent source repair; frozen v1 import failure is not a model
+result. All566 inputs/418 sources unchanged, failed children reaped/absent.
+
+Goal21's first
 owned SELL -> observed-funds joint BUY is COMPLETE as actual Paper execution.
 Independent v3 readback confirms2 full fills/2 terminals/current owned book/
 original shared basis/zero remaining recovery. Exact
@@ -35,6 +51,29 @@ dated execution, fees/settled cash/net PnL or cryptographic Scheduler origin.
 Goal22 makes the existing three-symbol control restartable/repeatable with
 one fresh reconciliation/repeat cycle and the existing private console. No
 profitability gate, new budget, foreign-inventory adoption or live authority.
+Fresh account component is now actually observed19:06:43UTC: one token/5GETs,
+3 positions/0 open orders, existing full owned book/original basis matched,
+private38 files/source unchanged and child reaped/absent. Snapshot published;
+exact A/execution/kis-paper-repeatable-cycle-v1/fresh-account-88a7a199b90e49beb97952162cefb627.json,
+SHA22fa0c50374c53f62c151b4be428ac1f3c423256eadb1c9ff4d1d6c16663c41c.
+Existing loopback console agreement c48c5fc9... at19:07:45UTC matches that
+observation: mode off, holdings/open-orders available, prices unknown, buying
+power reference-only, buy/sell unpaused. Exact same root/
+console-agreement-65120e511eee48bcaddb8d5e4690a81a.json. No orders/basis change;
+fees/settled cash/net PnL still unobserved. Previous18:52 auth failure117ca4e4...
+remains immutable/cause unclassified; later HTTP2xx is not a historical diagnosis.
+The earlier implementation stage is retained below; the repeat cycle is now
+complete as above. Source-only native portfolio SELL
+and fixed-trio funds repair passed independent160 cases12.63s/no P1/P2;
+same-instrument conflict checks no longer globally block disjoint reductions.
+Native cyclecb105647.../27 independent tests plus3 fault/restart probes passed.
+Changed serial826 cases33.74s and full12914pass22skip35warnings334.71s/eight
+clean workers passed; Ruff/three sample-env Compose passed. Seven consumers now
+select65ab6e66.../414 sources/treee7543a9b.../Python3.12.13, unchanged lock/base
+dependencies. Source-only offline publication91ed6408.../3.572s build; no owner
+restart or private migration. Exact A/execution/kis-paper-repeatable-cycle-v1/
+baked-source-publication-20261009-r2.json. Current-trio deadline P2 is fixed;
+64 CLOSE/63-return context must not silently replace existing253-close control.
 The22:45 owned SPY reduction has an independently read exact full SELL fill/
 closed terminal, residual baseline SPY and QQQ owned-flat. Exact evidence:
 A/execution/kis-paper-owned-rebalance-v1/sell-readback-20261008-v1.json,

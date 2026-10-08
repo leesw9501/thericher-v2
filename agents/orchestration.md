@@ -16,15 +16,15 @@ control cycle with fresh reconciliation and existing private console.
 | Resource | Owner | Current fact |
 | --- | --- | --- |
 | Paper runtime | Execution / parent | Final image ae2c68f8.../406 source files/tree7bac725b... verified offline; seven configs retain five RW/two RO roots and all operational fields. No running owner restarted. |
-| Owned rebalance | Execution / parent | Goal21 complete: SELL filled, v3 actual3634.../2BUY; independent980ccc6b.../2.101s confirms2 full fills/current owned book/original basis/zero recovery. ALL-RO/no API/writes/reaped/absent. Next repeatable-cycle source preparation; no duplicate writer or budget reset. |
-| Research CPU | Engine / independent review | Regime numerical reader prepares on source/synthetic inputs, no new fits. Original tree/MLP kills remain rejected; no new frozen training campaign. |
+| Owned rebalance | Execution / parent | Goal21 complete. Goal22 fresh account22fa0c50.../19:06:43UTC/token1/GET5/orders0/3positions/0open orders/current owned book-original basis matched/private38 unchanged/reaped/absent. Consolec48c5fc9... matches snapshot. Repeatable cycle source prepares; nativeSELL/funds independent160 cases12.63s READY. No duplicate writer/budget reset. |
+| Research CPU | Engine / independent review | Regime numerical3686cfdd... passes2.847s/1046 unchanged bindings/36 cells/8 models/zero fit-inference-search-write. Original kills rejected. Stateful minvar63/drift-band continuous-holdings adapter prepares source-only; no new frozen training campaign. |
 | Research GPU | Parent / Steward | Regime db0bdaae... actual8 fits/36 cells/23.104s worker/26.018s parent; four CUDA MLP fits. Result53e359ff... rejected; ALL-RO13.217s/source/all566 inputs unchanged/reaped/absent. Custody7c2ae4dc... closed/lease released, no active allocation. |
-| Data | Data / parent | Current-trio selector a1273093.../44 parent cases0.78s/independent44 cases0.73s/Ruff READY.64 prior CLOSEs/actual intraday decision/separate local receipt clocks. Actual new collection not yet run; old4a cohort unchanged. |
+| Data | Data / parent | Current-trio pure selector44 parent/independent READY. Acquisition38 parent1.51s; independent late-terminal deadline P2 being fixed before actual use.64-close context is not253-close control; no graft. Actual new collection not yet run/old4a cohort unchanged. |
 | Verification | Parent / independent reviewers | Current full12681pass22skip35warnings330.66s/12703 collected/eight clean workers/helper exit0/reaped/temp cleaned. Changed pure73 cases1.98s/fixture13 cases182.68s/review; Ruff/three sample-env Compose pass. External regime30/15.05s and v3 reader13/14.95s pass; Claude unavailable/not agreement. |
 | Existing SPY | Execution scheduler | Oct8 23:50 recovery completed; actual child token1/GET0/BUY0. Next Oct9 23:50; original action backed up/settings/triggers unchanged. No manual invoke/new basis. |
 | Existing preview | Execution scheduler | thericher-kis-risk-preview-20261009-0015 Ready/lastOct9 00:15/exit2/no next trigger. Exact outcome not inspected; task exit is not outcome. No manual invocation. |
 | Existing head | Data scheduler | New02:28 invocation8736eef8.../exact schedule0e47323f.../capture007b331e... binds QQQauth_rejected/HTTP4xx and SPYtoken_not_due. No new coverage/boundary claim; token next_due02:33:06.641520/head04:24KST. Collector6aec synthetic15 cases remains valid; oldb7fc rollback/Paperae2 unchanged. |
-| Console | Existing web | http://127.0.0.1:8787 private loopback; /health status ok on this resume, not a fresh account/fill. Historical accounting/current account separate. |
+| Console | Existing web | http://127.0.0.1:8787: categorical agreementc48c5fc9... matches19:06:43UTC fresh account, mode off/holdings-open orders available/prices unknown/buying power reference-only/unpaused controls. Historical accounting remains separate; no netPnL claim. |
 | Tiingo rights | Source-local operator question | Starter/Trial retention applicability unknown/already asked; no new Tiingo numeric work. Other lanes continue. |
 
 ## Bottleneck And Reversible Improvement
@@ -36,10 +36,11 @@ session-keyed control/restart/current-account/console cycle to existing owners.
 External waits retain their named next_due. Head04:24KST is19:24UTC, not18:24;
 source-safe query at03:24KST still showed the prior02:28 run. No manual invoke,
 missed-trigger inference or foreground wait.
-Execution owns the narrow portfolio SELL extension; Data's pure current-input
-selector is independently ready; numerical research review prepares separately.
-Measured reversible improvement: reuse one reviewed dispatcher/source snapshot
-and hash all563 input bindings plus three price files around its actual run.
-This closes the two containment faults without a new framework or approval gate.
+Execution owns one new cycle module/tests; Data fixes its finite acquisition
+deadline while Engine prepares continuous-holdings turnover research. Fresh
+account succeeded after its owned retry, previous auth failure remains narrow.
+Measured reversible improvement: target-instrument SELL conflict checks replace
+the blanket pending-plan block. Independent probes confirm disjoint TLT progress
+and every-owner same-instrument rejection without weakening full-book custody.
 Old operating improvements and closed evidence remain recoverable from Git
 0b87b48 and immutable artifacts; this projection is not a review history.

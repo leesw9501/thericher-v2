@@ -47,6 +47,7 @@ from .kis_paper_order_fields import (
     map_kis_paper_us_sell_limit_order_fields,
 )
 from .kis_paper_quote import (
+    KIS_PAPER_PREVIEW_VENUES,
     KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE,
     KIS_PAPER_US_QQQ_QUOTE_SYMBOL,
     KIS_PAPER_US_SPY_ASKING_PRICE_PATH,
@@ -1011,6 +1012,12 @@ class KisPaperCanaryClient:
             access_token=self._access_token,
         )
         try:
+            if type(symbol) is str and symbol in KIS_PAPER_PREVIEW_VENUES:
+                if type(exchange) is not str or exchange != KIS_PAPER_PREVIEW_VENUES[symbol][1]:
+                    raise KisPaperReadOnlyError("orderability_exchange_invalid")
+                return reader.preview_orderable_funds_at_limit(
+                    symbol=symbol, limit_price=limit_price
+                )
             return reader.orderable_funds_at_limit(
                 symbol=symbol,
                 exchange=exchange,

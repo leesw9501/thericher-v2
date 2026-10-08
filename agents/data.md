@@ -10,22 +10,36 @@ Current-trio pure selector a1273093... is READY:44 parent tests0.78s/Ruff,
 independent44 tests0.73s/no P1/P2. Exactly64 prior completed scheduled CLOSEs for
 SPY/TLT/GLD, actual intraday decision and separate local receipt clocks;
 whole-page source/query/hash bindings, no frozen-cohort grafting or provider
-publication/finality claim. No actual current collection yet. Exact source
+publication/finality claim. No successful current collection yet. Exact source
 src/thericher_v2/data/kis_current_trio_context.py; raw custody remains caller-owned.
+Acquisition runnerfd19f82b... is READY:44 parent/independent tests, late-response/
+terminal/publication/final-readback deadline P2 fixed. Actual host attempt
+parent-2c6d6934cf7f4ea881cd886f65516df2.json/b0443f96... under
+A/data/kis-current-trio-context-v1 was auth_rejected/token1/GET0, source663
+unchanged/reaped/absent. Same module builders/transports are direct/no redirects;
+selected file pairs match in memory, host Paper env pair absent. No expiry
+diagnosis follows. Successful same-runtime token-only probe now666ec8c3...:
+native65ab image/token1/HTTP2xx/zero GET or account-order work/source unchanged/
+reaped/absent. Exact runtime-token-probe-d7b24ece5ed44cf686bc968e56d4c45b.json
+in that same root. Historical failure cause remains unclassified, not corrected
+coverage. Next bound current-context acquisition prepares in this proven runtime;
+fresh token guard due approximately20:18:55UTC belongs to that worker only.
+64-close/63-return context is
+not the existing253-close engineering control; do not silently change its input.
 
 Oct9 00:29 head invocation terminalf4348515... binds both SPY/QQQ page4
 mixed_exchange_dates partial captures. Actual raw page chronology is unobserved;
-that previous result remains retained. New owned02:28KST invocation
-intraday-head-20261008T1728010238609Z terminates17:28:10UTC/nonzero,
-invocation8736eef8.../schedule0e47323f.../exact capture007b331e... . Existing
+that previous result remains retained. New owned04:24KST invocation
+intraday-head-20261008T1924009170364Z terminates19:24:10UTC/nonzero,
+terminal23212330.../schedule8da92f8b.../exact capture745fccac... . Existing
 readers independently bind the current pointer/terminal/capture: QQQ rejected
 auth_rejected/HTTP4xx, SPY rejected token_request_not_due, input_unavailable/
 terminal_recovery/current_session_short. No new coverage or tested live boundary
-claim; availability/finality remain not_observed. Token next_due17:33:06.641520UTC,
-next head04:24KST. Later token-only diagnostic6c327aeb... authenticated and v3
+claim; availability/finality remain not_observed. Next head06:20KST remains
+owned. Later token-only diagnostics authenticated and v3
 Paper retry completed; prior auth failure remains unclassified. Exact
 A/execution/kis-paper-intraday-head-invocation-v1/
-intraday-head-20261008T1728010238609Z/terminal.json. Released collector37c7a765... and PS77096246...
+intraday-head-20261008T1924009170364Z/terminal.json. Released collector37c7a765... and PS77096246...
 accept only a proven current-ET-day/previous-day continuation boundary after
 full-page ordering, clocks, identity and cursor validation. Full physical page
 counts stay visible; selected current-day rows stop this head scope, not provider

@@ -8,6 +8,35 @@ does not close, adopt, delete or retry an old intent.
 
 ## Current Scope And Recovery
 
+Goal22 fresh account read is actually observed19:06:43UTC: token1/GET5/order0,
+3positions/0open orders, full existing owned book/original shared basis matched.
+Snapshot published/private38 files and source unchanged/reaped/absent. Exact
+A/execution/kis-paper-repeatable-cycle-v1/fresh-account-88a7a199b90e49beb97952162cefb627.json,
+SHA22fa0c50374c53f62c151b4be428ac1f3c423256eadb1c9ff4d1d6c16663c41c.
+Same-root console-agreement-65120e511eee48bcaddb8d5e4690a81a.json/c48c5fc9...
+matches snapshot time in existing loopback console; mode off/unpaused controls,
+prices unknown/reference-only buying power. Fees/settled cash/net PnL unobserved.
+Historical18:52 token failure117ca4e4... is retained/unclassified, not expired
+account evidence. No order/basis/private-state changes in this refresh.
+Goal22 repeat cycle is COMPLETE. Exact same-root
+repeat-cycle-9bd7d0f64b4b43d8889a0fedd150a4bd.json/cd14cad0...:
+37.436s parent/35.440s worker/token1/GET28/order0/no_target_delta, original basis
+and current owned book matched. Recreated client/reloaded private checkpoint
+returns same cycle; not host reboot. Source/input unchanged/reaped/absent.
+Console repeat-console-agreement-cbcc0039221145d4ad911aa1be89bc0f.json/
+0c919dfa... matches20:00:10UTC runtime observation. Temporal publication
+binding is not original receipt snapshot-byte binding; fees/netPnL unobserved.
+Native cyclecb105647... independent27 cases plus3 fault/restart probes pass.
+Full12914pass22skip334.71s/8workers; changed serial826pass33.74s. Initial direct
+body failed compilation1e7a271a...; retain it, no broker-outcome inference.
+Bounded fuller source review found no P1/P2 after actual dispatch, not an
+independent revised-body hash attestation or fresh private account read.
+Native SELL99cef73c... and funds18a854e5...
+are source-ready/independent160 tests12.63s/no P1/P2. SELL checks every owner
+on the target instrument, not unrelated pending instruments; fresh full-book
+reconciliation still applies. Goal23's research repair is independent of owned
+Paper custody; no duplicate writer or budget reset.
+
 Execution owns deterministic sizing/risk, persisted intents, broker routes,
 fills, positions, reconciliation and accounting. Keep local_paper/kis_paper/
 kis_live separate; local replay fills retain source: local_paper. KIS Paper
@@ -28,9 +57,13 @@ Old unknown outcomes stay incomplete/unadopted; they are not new-account
 recovery dependencies. October6 expiry categories concerned prior .env config.
 
 Seven Paper consumer configurations select pinned image
-sha256:ae2c68f8ae0ea37290b18b17b9b814e130f2b1b9b1aed506be39942b82f64505,
+sha256:65ab6e66ab4f788144b280ce1a4b042daf79dc017f638b3f9130e17e5cc4c217,
 pull_policy: never; five RW/two RO roots and existing commands unchanged.
-Publication did not restart a running owner or migrate private state. Old
+Publication91ed6408... independently compares414 baked/current sources,
+treee7543a9b.../Python3.12.13/calendars5.4.0/unchanged b2a6e0c6... lock.
+Offline same-base source overlay build3.572s; prior offline uncached install
+attempt failed, not a runtime replacement. Publication did not restart a running
+owner or migrate private state. Old ae2c68f8... remains available. Old
 images5216e00d... and0ff015de... remain available for rollback. No research checkpoint or
 arbitrary public model code is loaded into deterministic Execution.
 

@@ -213,7 +213,33 @@ all566 input bodies/source unchanged, exact reaping/absence/lease released.
 Custody7c2ae4dc... closed/non_promoting_completed/zero sealed spend. Exact
 A/research/kis-cross-asset-regime-expert-composition-development-v1/
 parent-verify-32b84d338b284979b777fb951bf84b2b.json. Independent numerical reader
-prepares; no repeated fits, holdout, ensemble selection or Paper input follows.
+now passes2.847s/1046 unchanged bindings/36 cells/8 retained models/original
+rejected kills. Exact same-root/validation-readback.json,
+SHA3686cfdd94688415b75b8a199d63cd08cd38adc73aad21024d5462e39415266e.
+Independent state/covariance/scaler/actions/economics; shared input/NAV, cached
+scores not model reinference/host runtime equivalence false. Zero fit/inference/
+search/write; no repeated fits, holdout, ensemble selection or Paper input follows.
+Stateful rebalance proposal e9478307.../kernel23474f89... keeps cash and
+holdings continuous across69 opportunities/1442 DEV marks/30 cells. Fixed
+minvar63 and5-percentage-point drift band decide at prior CLOSE/next OPEN;
+terminal liquidation only at final CLOSE. Original v1 source418/precommit
+a8c81efe... failed pre-CLI import, not a market result. Preserve it. V2 repair
+adds exactly two missing ERC dependencies; source420/58fdc298.../new contract
+4d3b8ed7..., unchanged kernel/proposal/worker/input/kill/same family. Exact
+A/research/kis-stateful-rebalance-development-v1-runtime-recovery-v2.
+No-input smoke1.943s passes. Actual30 cells10.762s worker/12.378s parent is
+COMPLETE/REJECTED, resultdfcad2b6.../parent11077e36... . Parent-bound ALL-RO
+e8371bb5.../12.016s binds that successful immutable parent and result; source420/
+all566 inputs unchanged/reaped/absent/zero fit-inference-search-write. Late or
+unknown parent cannot become success via cached readback. 60 source/synthetic
+tests7s/Ruff; independent host deadline/hash/cleanup findings corrected.
+Seen-development/fractional/raw/non-PIT/non-TR/provisional-finality limits remain;
+not a learned model, Paper parity, fresh replication or profit claim.
+Public mechanisms1706.10059v1/1802.03042v1 and pinned GPLv3 licenses independently
+re-retrieved; source receipt2b41f764... in A/research/source-discovery. Crypto
+zero-slippage/derivative hedging results are not ETF alpha; no public code or
+weights adopted. Next distinct learned continuous policy proposal prepares;
+no frozen training campaign or GPU allocation yet.
 Public Claude challenge.960s unavailable,
 not agreement: A/research/source-discovery/claude-regime-expert-composition-20261009-v1.json.
 Official v2.2.2 returns median despite its mean name; equality check is valid.

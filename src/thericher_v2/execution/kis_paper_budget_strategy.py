@@ -428,12 +428,22 @@ def _portfolio_seed_states(binding):
         ):
             raise _RecoveryRequired("portfolio_plan_invalid")
         requests.add(plan["request_id"])
-        symbols, clocks = set(), set()
+        symbols, clocks, sides = set(), set(), set()
         for run_id, payload in plan["states"].items():
             state = KisPaperCanaryState.from_dict(payload)
             intent = state.intent
             identity = _digest([binding["account_ref"], binding["basis_ref"],
                                 plan["request_id"], intent.symbol])
+            price_parts = [plan["input_ref"], intent.symbol, str(intent.limit_price)]
+            if intent.side == "sell":
+                owner = "portfolio-" + intent.symbol.lower()
+                identity = _digest([binding["account_ref"], binding["basis_ref"],
+                                    plan["request_id"], intent.symbol, "sell", owner])
+                price_parts.extend(("sell", owner))
+            if intent.side not in {"buy", "sell"} or (
+                intent.side == "sell" and not plan["request_id"].startswith("portfolio-sell-")
+            ):
+                raise _RecoveryRequired("portfolio_plan_invalid")
             if (
                 run_id != "bp-" + identity
                 or intent.run_id != run_id
@@ -441,9 +451,7 @@ def _portfolio_seed_states(binding):
                 or intent.decision_id != "portfolio-" + identity
                 or (intent.symbol, intent.exchange) not in _PORTFOLIO_INSTRUMENTS
                 or intent.symbol in symbols
-                or intent.side != "buy"
-                or intent.price_contract_ref != "sha256:" + _digest(
-                    [plan["input_ref"], intent.symbol, str(intent.limit_price)])
+                or intent.price_contract_ref != "sha256:" + _digest(price_parts)
                 or state != KisPaperCanaryState(
                     intent, "intent_recorded", intent.created_at, "preview"
                 )
@@ -454,8 +462,9 @@ def _portfolio_seed_states(binding):
             _validated_portfolio_state(state, state.updated_at)
             symbols.add(intent.symbol)
             clocks.add((intent.created_at, intent.valid_until))
+            sides.add(intent.side)
             seeds[run_id] = state
-        if len(clocks) != 1:
+        if len(clocks) != 1 or len(sides) != 1:
             raise _RecoveryRequired("portfolio_plan_invalid")
     return seeds
 

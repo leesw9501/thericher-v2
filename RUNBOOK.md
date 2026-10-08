@@ -11,7 +11,24 @@ Historical unresolved-reason counters are not current recovery; fees/settled
 cash/net PnL and later fresh broker state remain unobserved. NEXT goal22 owns
 one restartable/repeatable three-symbol control cycle with fresh reconciliation
 and existing private-console agreement, not another budget or promotion gate.
-Current full12681pass22skip35warnings330.66s/12703 collected/eight clean workers/
+Its fresh account component is now observed19:06:43UTC/token1/GET5/orders0:
+3positions/0open orders and existing full owned book/original basis match.
+Exact D:/thericher-v2/model-artifacts/execution/kis-paper-repeatable-cycle-v1/fresh-account-88a7a199b90e49beb97952162cefb627.json/22fa0c50...;
+snapshot published/source/private38 files unchanged/reaped/absent. Same-root
+console-agreement-65120e511eee48bcaddb8d5e4690a81a.json/c48c5fc9... matches
+the exact snapshot time at8787/state, mode off/unpaused controls. Prices unknown,
+buying power reference-only; no order/basis changes or fee/netPnL claim.
+Goal22 repeat cycle is now COMPLETE: exact repeat-cycle-9bd7d0f64b4b43d8889a0fedd150a4bd.json
+in the same root/cd14cad0.../37.436s/one token/28GETs/zero orders/no_target_delta.
+Client recreated/private checkpoint reloaded, same cycle/book/original basis;
+not a host reboot. Source/input unchanged/reaped/absent. Console0c919dfa...
+matches20:00:10UTC runtime observation; temporal publication binding only.
+Native cycle27 independent cases plus3 fault/restart probes pass. Seven consumer
+pins now65ab6e66.../414 source files/treee7543a9b.../unchanged Python3.12.13
+and runtime lock; offline source publication91ed6408.../3.572s build. No owner
+restart. Goal23 repairs the frozen stateful CPU source bundle's pre-CLI import
+failure without changing hypothesis/input/kill or any frozen v1 bytes.
+Current full12914pass22skip35warnings334.71s/12936 collected/eight clean workers/
 helper exit0/reaped/temp cleaned; Ruff/three sample-env Compose pass.
 
 Retained goal21 install/recovery history: thericher-kis-owned-spy-trim-
@@ -186,7 +203,11 @@ search/write. Source/all566 input bodies unchanged, exact reaping/absence,
 lease released/custody7c2ae4dc... closed/zero sealed spend. Exact
 D:/thericher-v2/model-artifacts/research/kis-cross-asset-regime-expert-composition-development-v1/parent-verify-32b84d338b284979b777fb951bf84b2b.json.
 Used frozen study is immutable; do not rerun its eight fits or redefine the
-kill. Independent numerical supplement prepares. Not broker profit, holdout
+kill. Independent numerical supplement now passes2.847s/1046 unchanged
+bindings/36 cells/8 retained models/original kills. Exact same-root/
+validation-readback.json/3686cfdd94688415b75b8a199d63cd08cd38adc73aad21024d5462e39415266e;
+zero fits/inference/search/write, shared input/NAV/cached scores, host runtime
+equivalence false. Not broker profit, holdout
 or Paper qualification. Existing CUDA runtime is available, not blocked.
 Collector-only image6aec64a0... now passes15 baked real-client boundary tests
 3.032s/82e1ca25..., no credential/provider/production volume work. Exact

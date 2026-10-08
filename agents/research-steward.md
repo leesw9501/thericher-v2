@@ -29,7 +29,13 @@ Compacting this projection does not delete evidence or reopen an allocation.
   closed/non_promoting_completed/zero sealed spend. Exact
   A/research/kis-cross-asset-regime-expert-composition-development-v1/
   parent-verify-32b84d338b284979b777fb951bf84b2b.json. Independent numerical
-  reader prepares; no new frozen campaign or active allocation yet. Other
+  reader3686cfdd... passes2.847s/1046 unchanged bindings/36 cells/8 models,
+  zero fits/inference/search/write; shared input/NAV/cached scores, host runtime
+  equivalence false. Stateful CPU contract4d3b8ed7... completed30 cells/rejected,
+  source-only two-dependency recovery from retained v1 pre-import failure; no
+  fit/GPU/holdout/selection. Parent11077e36... and bound ALL-ROe8371bb5...
+  preserve420 sources/all566 inputs/reaping/absence. Next learned continuous
+  policy proposal prepares; no new frozen training campaign or active allocation. Other
   Data/Execution work continues without waiting for a research promotion.
 
 - Conditional-hedge recovery COMPLETE/REJECTED42 cells; contract56787514.../
