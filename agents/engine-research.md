@@ -5,7 +5,7 @@ This is current working memory, not an experiment diary. Closed detailed
 history remains in Git4b0e79a, immutable study roots and campaign custody.
 A = D:/thericher-v2/model-artifacts; market bytes stay under D:/market_data.
 
-## Current Research State (2026-10-08 KST)
+## Current Research State (2026-10-09 KST)
 
 Pure fixed ANTICOR preparation is COMPLETE: anticor_allocation.py8c16fc5b...,
 kis_cross_asset_anticor.pye81237a5...;77 synthetic cases/parent1.45s,
@@ -156,7 +156,22 @@ NAV; fixed25-percent diagonal shrinkage/matched10-percent annual risk ceiling.
 Six policies/three costs/two seen views give36 cells. Original BOTH-view kill
 requires positive growth versus cash and utility superiority versus inverse-vol,
 minimum variance and equal thirds; SPY descriptive. External CPU worker/freeze
-prepares, no market result/holdout/Paper input yet. Prior results never inputs.
+is now actually COMPLETE/REJECTED. Exact root
+A/research/kis-cross-asset-erc-development-v1; contract49ea507a.../416 sources,
+worker512291eb.../48 external cases5.34s/independent source READY. Smoke2.578s,
+parent6.969s/worker5.170s complete36 cells/zero fits/GPU. Cached ALL-RO10.372s
+passes retained-action binding/exact economics, not independent ERC inference.
+Result26effc665b97c3d4b2275a00b99f07f7fcd4496a2e3153164dbb03d52b856f2f;
+parent-verify-46b1344ef79e4a819041d07e2272f6f2.json/e142818c... .
+Source/input/output unchanged, child reaped/absent; custody1e0102ae... closed
+non_promoting_completed/zero sealed spend. Prior results never inputs.
+Next distinct GPU preparation is direct-risk-capped-utility allocation,
+related to earlier direct-policy family, not new independent alpha. Native
+GRU16/constant policy output allocations, not return/action-value forecasts;
+fixed63-context/21-group path/25-percent shrink/risk10-percent/512 updates,
+two fits/shared300s. Closed-group Torch/Decimal entry/exit fee and cash-drift
+parity must precede actual fitting. Source-only preparation, no GPU allocation
+or model result yet; small TRAIN group count/seen DEV/raw-price limits remain.
 Official v2.2.2 returns median despite its mean name; equality check is valid.
 Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new

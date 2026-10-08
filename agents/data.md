@@ -1,4 +1,4 @@
-# Data Agent Stateboard (2026-10-08 KST)
+# Data Agent Stateboard (2026-10-09 KST)
 
 Current projection only. Policy AGENTS.md; company objective NEXT_CODEX_GOAL.md.
 Detailed history remains in Git4b0e79a and immutable external receipts.
@@ -121,8 +121,17 @@ Inherited counts are dispatch attempts, not measured wire-start pacing.
 
 SPY/QQQ M1 retained25 paired complete sessionsAug28..Oct2/9750 bars each,
 seen development, not fresh replication. Oct7 QQQ389/SPY390 is incomplete
-and excluded from qualified pairs. Existing intraday head nextOct9 00:29KST;
-daily SPY head nextOct8 22:15KST. No manual task invocation. Current pointer,
+and excluded from qualified pairs. Oct9 00:29KST owned head now has a validated
+terminal f4348515.../intraday-head-20261008T1529009163069Z: collection nonzero,
+collector_provider and schedule recovery. Exact bound capture reader confirms
+BOTH targets partial/page4/head_contract/mixed_exchange_dates/requested4 pages.
+No new complete-session claim; actual page chronology remains unobserved.
+Data source correction prepares: validate the full page before selecting the
+bound session, preserve excluded counts/page bounds and active-key-loss checks,
+stop only at a proven older boundary. Real-client synthetic continuation test
+required; no blind row filtering or global provider-failure inference.
+Existing intraday head nextOct9 02:28KST; daily SPY head nextOct9 22:15KST.
+No manual task invocation. Current pointer,
 exact terminal/capture/availability binding is required for any new claim;
 missing receipt is unknown, not no data or task success.
 Broader daily cache has2119 current listings/1089 complete/1030 source_limited;

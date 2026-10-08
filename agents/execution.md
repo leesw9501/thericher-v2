@@ -114,8 +114,31 @@ Never retry that expired plan. Prepare distinct owned-portfolio-buy-20261009-v2
 from a new post-closure current-book capture and fresh exact observations;
 retain original SELL linkage/shared10-percent basis and frozen restart terms.
 Actual BUY lifecycle remains unobserved; goal21 stays active. Public synthetic
-real-adapter image smoke prepares separately with no production mounts/network.
-Claude changed recovery challenge.955s unavailable/not agreement.
+real-adapter image smoke now passes1.289s on pinned ae2 image: exact406 code
+files, one fake GET/zero POST/provider calls, unsubmitted state/unchanged basis/
+runtime projection written. Exact synthetic-adapter-smoke-v1/parent-b0998c4cd13041c99b5807c8bc37d85a.json,
+SHAd422a487e7da88796ea42a5e9967b3730c6d06666e6cf77d0918695e6ee7f275.
+Fresh tmpfs/no production mounts/network/credentials; child reaped/absent.
+This does not establish successful submit or historical exception cause.
+Fresh worker9496fbd2.../109 cases25.88s/independent READY; host718e6fea.../
+17 fault cases.10s/READY. Emergency RW is needed for named runtime outputs;
+source review does not prove it caused the old19-GET failure. Selector6c36d3db...
+initial/normal-pinned paths reviewed, but pre-reservation crash-pin recovery has
+a recorded P2; separate recovery-r2 prepares, used sources remain immutable.
+Parent first fresh actual dispatch completes68.143s; exact
+A/execution/kis-paper-owned-rebalance-v1/successor-v2/0997f16b1a2d4de9931ad96b7abcca7a/outcome.json,
+SHA6729340df87191974f76111e511f397407cbb5d91cfeaf7b1b21c7c71fef312c.
+Parent observed/outcome unavailable at exact_limit_funds/unclassified; token1/
+GET19/BUY0, parent+plan retained/source/runtime/unchanged true, both children
+reaped/absent. Exact private zero-submission/expiry still needs new RO readback;
+never infer fills or reset this identity from public counts.
+Concrete source fault: native canary exact-funds method delegates to the
+QQQ-only readonly method, rejecting portfolio symbols before funds GET. Existing
+fixed SPY/TLT/GLD preview exact-funds method can be reused with explicit venue
+binding/cached-token custody. Narrow real-client happy-funds repair prepares,
+not another blind actual retry. Emergency RO is not the demonstrated cause.
+Used9496/718/6c36 sources are immutable. Claude changed fresh recovery challenge
+.948s review_unavailable/cli_nonzero/not agreement.
 
 ## Retained Account Evidence
 

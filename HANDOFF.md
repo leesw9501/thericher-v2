@@ -63,6 +63,18 @@ actually confirms2 terminal/zero remaining recovery/submission starts/acks/fills
 in1.351s. This is no-wire closure, not a BUY fill or company-goal completion.
 Fresh owned-portfolio-buy-20261009-v2 preparation uses a new current-book capture
 after closure, original SELL linkage and10-percent basis; no old-plan retry.
+First v2 actual is now unavailable at exact_limit_funds/unclassified, token1/
+GET19/BUY0/68.143s. Exact successor-v2/0997f16b1a2d4de9931ad96b7abcca7a/outcome.json,
+SHA6729340df87191974f76111e511f397407cbb5d91cfeaf7b1b21c7c71fef312c.
+New parent/plan retained/source/runtime/unchanged true/children reaped/absent;
+private zero-submission/expiry still requires exact new RO readback. Source
+reproduction confirms native canary funds delegate only accepts QQQ, rejecting
+all3 portfolio symbols before transport. Narrow existing fixed-preview reader
+binding repair prepares; no arbitrary universe or blind retry/TTL extension.
+Used child9496/host718/selector6c36 remain immutable; a separate pre-reservation
+crash-pin recovery-r2 prepares. Initial/pinned retry reviewed; P2 not hidden.
+Offline real-adapter unavailable-first-GET smoke d422... passed1.289s but missed
+this successful-funds path. Add real-client transport-only happy-funds coverage.
 23:50 exact SELL/BUY router98112184... is installed; new SELL recovery host
 01106782... requires the probe's original request hash, never a null fresh-entry
 handoff. Lost post-probe request/pin rejects before fresh reads/transport.
@@ -141,7 +153,17 @@ independent READY. Fixed25-percent shrinkage, six policies/three costs/two seen
 views give36 cells under matched10-percent annual risk caps; original kill is
 risk utility versus inverse-vol/min-var/equal thirds plus positive cash-relative
 growth in BOTH views. SPY is descriptive, not a retroactively changed kill.
-External CPU preparation continues; no actual ERC result or Paper model yet.
+Actual ERC49ea507a.../416-source study completes6.969s/36 cells/zero fits and
+rejects the original BOTH-view kill; ALL-RO10.372s/e142818c... passes retained
+actions/exact economics, not independent ERC inference. Exact
+A/research/kis-cross-asset-erc-development-v1/worker-result.json,
+SHA26effc665b97c3d4b2275a00b99f07f7fcd4496a2e3153164dbb03d52b856f2f.
+Custody1e0102ae... closed/non_promoting_completed. Next source-only GPU package
+is direct-risk-capped-utility GRU16/constant allocation, with closed-group Torch/
+Decimal economic parity before fitting; no selected model or Paper input.
+Oct9 00:29 owned M1 head terminalf434.../exact capture both targets partial at
+page4/mixed_exchange_dates. Full-page/older-boundary correction prepares with
+active-key-loss protection; actual page chronology remains unknown/next02:28.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 

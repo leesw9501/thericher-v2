@@ -45,6 +45,11 @@ Prepare owned-portfolio-buy-20261009-v2 from a fresh current-book capture and
 fresh account/quote/orderability observations, preserving the original SELL
 linkage and10-percent basis. Persist its distinct proposal before reservations;
 restart only its exact frozen identity/quantity/TTL, never the old expired BUY.
+First v2 actual6729340d... now fails pre-submit at exact_limit_funds/GET19/BUY0;
+new parent/plan retained, private exact readback pending. Native canary delegates
+to a QQQ-only funds method. Repair the fixed SPY/TLT/GLD binding using the already
+baked exact preview reader and a real-client happy-funds synthetic test. Keep
+used sources and this request immutable; do not blindly retry or extend its TTL.
 
 Use the next owned regular-session opportunity, keeping owner conflicts and
 token due in the named worker. Resolve the old baseline new-entry direction
@@ -93,7 +98,14 @@ not a repeat of minimum variance or a GPU-utilization exercise. Solver/adapter
 84 focused cases3.23s/independent READY; fixed25-percent diagonal shrinkage,
 matched10-percent annual risk ceiling, six policies/three costs/two seen views
 give36 cells. Freeze source/input/runtime/cost/kill before parent CPU dispatch;
-no actual ERC outcome, GPU work, holdout or Paper model follows preparation.
+actual49ea507a.../416-source CPU study now completes6.969s/36 cells/rejected,
+ALL-RO10.372s/e142818c... passes, custody1e0102ae... closed. Next source-only
+GPU preparation is direct-risk-capped-utility GRU16/constant allocation under
+fixed63-context/21-group economics; two fits/512 updates/shared300s. Validate
+closed-group differentiable fee/cash-drift parity against existing Decimal NAV
+before parent freeze/fit. No old outcome reuse, independent holdout or Paper
+model claim. Head page4 mixed-date boundary correction proceeds separately;
+do not filter malformed pages or infer new session coverage from task exit.
 
 Data: integrate only exact XLK/XLF/XLE AMS capability scope, then one reusable
 client/six fixed OC queries at20261007/20160202 under existing gates/120s bound.

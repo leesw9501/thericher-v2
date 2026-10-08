@@ -48,6 +48,15 @@ selector030cbaff... are immutable. Do not retry the old plan or extend its TTL.
 Distinct owned-portfolio-buy-20261009-v2 prepares with new current-book capture,
 fresh observations and original SELL linkage/shared basis. The original23:10
 exception remains unclassified; later expiry is not proof of its cause.
+First v2 actual is now unavailable at exact_limit_funds/unclassified/token1/
+GET19/BUY0/68.143s; exact successor-v2/0997f16b1a2d4de9931ad96b7abcca7a/outcome.json/6729340d... .
+New parent/plan retained, source/runtime unchanged, children reaped/absent.
+Read exact private state through new RO parser before closure/retry; public
+counts are not independent zero-submission evidence. Native canary funds API
+still delegates to a QQQ-only method; use the existing fixed preview exact
+reader with explicit venue/token binding after real-client happy-funds tests.
+Used9496/718/6c36 sources remain immutable; separate recovery-r2 handles the
+recorded pre-reservation crash-pin gap. Never extend the old or current plan TTL.
 
 ANTICOR actual30 cells rejected/11.498s; ALL-RO15.273s and independent r2
 1.294s pass. Exact numerical receipt:
@@ -108,7 +117,12 @@ independent READY is next CPU preparation. Adapter3b209333.../84 combined cases
 3.23s/READY freezes36 cells,25-percent shrinkage and matched10-percent annual
 risk caps. BOTH-view positive cash-relative growth and utility superiority to
 inverse-vol/min-var/equal thirds are the original kill; SPY descriptive. No
-actual market result, GPU allocation or Paper input follows source preparation.
+actual ERC49ea507a... completes36 cells/rejected6.969s, ALL-RO10.372s/e142818c...
+passes exact retained-action economics; result26effc66.../custody1e0102ae...
+closed. No independent ERC inference, GPU allocation or Paper promotion follows.
+Next source-only GPU work uses direct allocation utility rather than return
+forecast argmax; closed-group differentiable entry/exit fee/cash-drift parity
+precedes frozen actual fitting. Existing Tensor/CUDA runtime remains available.
 
 ## Owned Rebalance Code And Runtime Delivery
 
