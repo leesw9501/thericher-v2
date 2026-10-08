@@ -7,6 +7,16 @@ root-relative pointers, not instructions to select a latest file.
 
 ## Ownership And Ready Work
 
+Six-question KIS ETF rights capability is prepared/source-only, not run:
+A/data/kis-etf-rights-capability-v1/probe.py66b16688.../testcbcd6009...,
+30 mocked cases/.30s. Fixed SPY/TLT/GLD Sep1..Oct8 and two official market
+routes, one cached token/six GET maximum/no continuation/account/orders.
+Independent source review is active; parent owns future freeze/120s hard
+containment/actual dispatch. Empty results cannot prove no events, usable
+symbol query, historical reach, joins, total return or Paper support. Official
+issuer histories were source-reviewed only; unclear retention/ML rights are
+not accepted or used. No new numeric issuer/Tiingo data acquired.
+
 Goal17 TLT bridge is closed scope_terminal/5 accepted GETs/one token/no failures/
 11.732s. Exact A/data/kis-tlt-venue-bridge-v1/tlt-venue-bridge-20261008-v1/receipt.json
 SHA714950bc...; NAS159 dates2021Jan4..Aug19, NYS three exact seeds empty.

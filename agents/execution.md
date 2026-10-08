@@ -27,9 +27,12 @@ Old thericher-v2_thericher-v2-paper-canary-private is untouched/unreferenced:
 Old unknown outcomes stay incomplete/unadopted; they are not new-account
 recovery dependencies. October6 expiry categories concerned prior .env config.
 
-Paper image0ff015deadbfaea80525f69f4d8d94ad5847018a6229cd376864c41f5017b53b
-and existing consumers are unchanged. No research checkpoint/public code is
-loaded into deterministic Execution.
+Seven Paper consumer configurations select pinned image
+sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe,
+pull_policy: never; five RW/two RO roots and existing commands unchanged.
+Publication did not restart a running owner or migrate private state. Old
+image0ff015de... remains available for rollback. No research checkpoint or
+arbitrary public model code is loaded into deterministic Execution.
 
 ## Retained Account Evidence
 
@@ -65,8 +68,21 @@ SPY/AMS TLT/NAS GLD/AMS each two quote GETs/stale timestamps,
 zero exact-limit orderability reads/zero submits/private-source unchanged.
 Exact receipt4ac651cb78284a319d75a9a3d74a3f10/receipt.json,
 SHA2b45b53203d20c46b86a61398e13e624550a52b9bae4a20ebb6db969ef7f85a1.
-Invocation absent after dispatch. Fresh quote/orderability/feasibility is still
-unestablished; this attempt's stale category is not a general Paper hold.
+Invocation absent after dispatch. This attempt's stale category is not a
+general Paper hold; the separate newer bounded preview below is available.
+
+Goal19 baked preview09:13:39..09:14:01UTC used403 baked /app/src files,
+no /source overlay, exact runtime contract61e2deb4... and driver7cab7b1e... .
+Account, SPY/AMS TLT/NAS GLD/AMS quotes and exact-limit orderability are
+available: one token POST/14 validated GET attempts, zero submits/migrations,
+private/source unchanged, exact invocation container absent. Observed dymd/
+dhms shapes valid; validity alone is not freshness proof. Plan is unreachable/
+incumbent_target_mismatch, not provider or credential failure. Next bounded
+execution work must handle owned SPY reduction before funded additional BUYs,
+preserving original shared basis/reservations and reconciling exact outcomes.
+Exact A/execution/kis-paper-baked-runtime-v1/3dcb2d44a0724483896351fe3705f555/receipt.json,
+SHAeb6ba8e57e6d9c0e1aedd87afb1e86b09e4bf960fe6ebfe6f8d4daf16d5d2b68.
+Direct parent dispatch, not a scheduler/fill/V3 success or net-PnL claim.
 
 | Job | Owned next opportunity / action |
 | --- | --- |
@@ -118,8 +134,9 @@ SHA3f53757d... has account available/1 token/11 validated GETs/all3 quotes
 quote_timestamp_invalid/zero orderability/submits/private-source unchanged.
 Not scheduler provenance or V3 runtime success. Current selective mmap loader
 has161 source-free cases; only four Paper value spans are materialized, with
-OS-page mapping/search limitation explicit. Kuhn next investigates quote parser
-contracts source-only; no guessed timezone or new actual call. Parent owns
+OS-page mapping/search limitation explicit. Quote-parser correction and final
+baked driver are reviewed/93 driver cases pass; later preview above is separate
+from this old receipt. Kuhn inspects minimal SELL-before-BUY source. Parent owns
 actual dispatch, integration and Git. Existing session owners remain intact.
 One public-only
 Claude challenge .988s is review_unavailable/cli_nonzero_other, not agreement:

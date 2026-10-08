@@ -21,12 +21,31 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
-NEXT owns kis-paper-baked-runtime-v1: publish the prepared pinned Paper image
-consistently, then strict actual read-only preview without a source overlay.
-Original shared basis/custody and due times remain unchanged; no V3 migration
-or new order in this publication objective. Data free-source corporate-action
-review and distinct allocation preparation run independently. Parent owns
-actual publication/credentials/preview/Git.
+kis-paper-baked-runtime-v1 is COMPLETE. Seven private Paper consumers now
+select immutable image5216e00d... with pull_policy: never, preserving five RW/
+two RO roots, commands, profiles, environment and original shared basis. No
+running service/task was manually restarted.403 baked files/tree826b9d9f...
+and Python3.12.13 runtime verified without a source overlay; no V3 migration.
+
+Actual direct read-only preview09:13:39..09:14:01UTC: account and all3 SPY/TLT/
+GLD quotes/orderability available, one token POST/14 validated GET attempts,
+zero submits/private and source bytes unchanged; exact container absent.
+All observed date/time shapes valid, not an independent freshness proof.
+Result unreachable/incumbent_target_mismatch: incremental BUY-only preparation
+does not reduce incumbent SPY to the new target. This is a scoped plan deficit,
+not a credential, provider or approval hold. Exact receipt:
+A/execution/kis-paper-baked-runtime-v1/3dcb2d44a0724483896351fe3705f555/receipt.json,
+SHAeb6ba8e57e6d9c0e1aedd87afb1e86b09e4bf960fe6ebfe6f8d4daf16d5d2b68.
+Read-only direct dispatch is not a fill, V3 migration or Scheduler provenance.
+Fees/settled cash/net PnL remain unobserved. Existing due owners unchanged.
+
+Goal19 changed-path297 cases6.10s/external driver93 cases1.03s; full12234pass/
+22skip/35warnings361.27s,12256 collected/eight clean workers/helper exit0.
+Ruff/default/research/accounting sample-env Compose pass; all sessions reaped.
+Independent review READY; Claude .936s review_unavailable/cli_nonzero is not
+agreement. Future ANTICOR pure primitive and six-query KIS rights capability
+prep are external/source-only, not actual research/provider results. Parent
+continues a material next objective; original10-percent basis stays exact.
 
 kis-self-financing-paper-ownership-v1 is COMPLETE as preparation, not runtime
 migration/deployment or broker execution. Joint whole-share BUY/reservation/
@@ -80,7 +99,7 @@ timezone/age change is inferred. Baked Paper image/preview preparation runs
 independently, existing session owners and original10-percent basis unchanged.
 Goal18 full12226pass22skip364.21s/12248 collected/eight clean workers,
 changed-path198 then25 post-fix cases/Ruff/three Compose pass; no active tests.
-Public baked Paper image5216e00d... is prepared/not published,403 baked source
+Public baked Paper image5216e00d... was prepared at goal18 closure,403 baked source
 files match826b9d9f...; base Python3.12.13/runtime.lock unchanged, no new
 framework. Exact A/execution/kis-paper-baked-runtime-v1/build-preparation.json
 SHAe3c09901... proves public code/import only, zero account/order calls.

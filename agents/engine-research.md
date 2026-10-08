@@ -300,6 +300,16 @@ eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
 | Ensemble | Closed blends remain rejected. Current Paper ownership preparation is deterministic engineering, not an ensemble or model promotion. |
 | Replication | No selected candidate; revised/seen studies cannot become fresh independent evaluation by renaming them. |
 
+Distinct mechanism prep is released externally: ANTICOR pure simultaneous
+lead-lag/reversal allocation at
+D:/thericher-v2/model-artifacts/research/anticor-transfer-preparation-v1/anticor_allocation.py,
+SHA8c16fc5b.../testaf0ab5e1.../42 synthetic cases/.07s; independent READY.
+Inclusive ties/self-claims, zero-variance correlation0, original-weight
+simultaneous flows and permutation/conservation match the re-retrieved source.
+No actual input, frozen economic recipe, market statistic, training, GPU,
+ensemble or Paper result follows. Causal windows/cadence/cost/fill assumptions
+must be frozen by the next Engine package, not chosen from seen outcomes.
+
 FINRA auxiliary-signal proposal is source-rights unresolved, NOT a ready model
 input. Catalog free non-commercial use does not resolve linked website Terms
 Restrictions(m), expressly restricting software/ML/predictive portfolio uses.

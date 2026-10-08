@@ -448,9 +448,8 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
   kis-paper-canary:
-    build:
-      context: .
-      target: base
+    image: sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe
+    pull_policy: never
     profiles: ["kis-paper-canary"]
     command:
       - python
@@ -486,9 +485,8 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
   kis-paper-session:
-    build:
-      context: .
-      target: base
+    image: sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe
+    pull_policy: never
     profiles: ["kis-paper-session"]
     command:
       - python
@@ -904,9 +902,8 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
   kis-paper-daily-spy-session:
-    build:
-      context: .
-      target: base
+    image: sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe
+    pull_policy: never
     profiles: ["kis-paper-daily-spy-session"]
     command:
       - python
@@ -948,9 +945,8 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
   kis-paper-prospective-spy-cycle:
-    build:
-      context: .
-      target: base
+    image: sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe
+    pull_policy: never
     profiles: ["kis-paper-intraday-head"]
     command:
       - python
@@ -1022,9 +1018,8 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}/data/kis-qqq-intraday-head-readiness-v1:/app/model_artifacts
 
   kis-paper-prospective-qqq-session:
-    build:
-      context: .
-      target: base
+    image: sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe
+    pull_policy: never
     profiles: ["kis-paper-intraday-head"]
     command:
       - python
@@ -1113,9 +1108,8 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
   kis-paper-receipt-observer:
-    build:
-      context: .
-      target: base
+    image: sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe
+    pull_policy: never
     profiles: ["kis-paper-receipt-observer"]
     command:
       - /bin/sh
@@ -1137,9 +1131,8 @@ services:
       - ${THERICHER_HOST_MODEL_ARTIFACT_ROOT:-D:/thericher-v2/model-artifacts}:/app/model_artifacts
 
   kis-paper-terminal-field-probe:
-    build:
-      context: .
-      target: base
+    image: sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe
+    pull_policy: never
     profiles: ["kis-paper-terminal-field-probe"]
     command:
       - /bin/sh

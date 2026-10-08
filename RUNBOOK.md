@@ -1,5 +1,35 @@
 # Runbook
 
+## Baked Paper Runtime Publication
+
+Goal19 is COMPLETE: seven private Paper consumer configs use
+sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe,
+pull_policy: never. Five RW/two RO mounts/commands/environment unchanged;
+no manual running-service restart, task invocation or private V3 migration.
+Old0ff015de... image remains for rollback. Public build-preparation.json in
+D:/thericher-v2/model-artifacts/execution/kis-paper-baked-runtime-v1 records
+creation before publication; it is immutable, not overwritten as deployment.
+Runtime contract61e2deb4... pins403 files/tree826b9d9f... and Python3.12.13.
+Final run_preview.py7cab7b1e... reuses legacy1a273516... with no source overlay.
+
+Actual direct RO09:13:39..09:14:01UTC account/SPY/TLT/GLD quotes/orderability
+available;1 token POST/14 validated GET attempts, zero submits, source/private
+unchanged, exact container absent. Asking date/time shapes valid only; no raw
+timestamps/prices/amounts retained in public receipt. Exact immutable receipt:
+D:/thericher-v2/model-artifacts/execution/kis-paper-baked-runtime-v1/3dcb2d44a0724483896351fe3705f555/receipt.json,
+SHAeb6ba8e57e6d9c0e1aedd87afb1e86b09e4bf960fe6ebfe6f8d4daf16d5d2b68.
+Unreachable/incumbent_target_mismatch identifies BUY-only planning deficit:
+owned SPY reduction is needed for the target, not another authorization gate.
+No fill, scheduler origin, V3 runtime success, fees/settlement/net PnL inferred.
+
+Verification: changed-path297/6.10s, final external driver93/1.03s,
+full12234pass22skip35warnings361.27s/12256collected/eight clean workers/
+helper exit0. Ruff and three sample-env Compose pass; all sessions reaped.
+Independent review READY; Claude .936s review_unavailable/cli_nonzero/not
+agreement, exact source-discovery/claude-paper-baked-runtime-20261008-v1.json
+under external research root. Preserve existing SPY23:50/preview00:15/head00:29
+owners; source-local preview deficit does not stop independent work.
+
 ## Fixed 2016 Cohort And Relative Allocation
 
 NEW input D:/thericher-v2/model-artifacts/research/kis-cross-asset-oc-cohort-v1/input/cross-asset-oc-cohort-20261008-v1/input-commitment.json,
@@ -42,7 +72,7 @@ unique totals. Full12226passed22skipped35warnings364.21s/eight clean workers,
 12248collected4.39s/helper exit0. Ruff and default/research/accounting sample-
 env Compose pass. No extra -q or production Scheduler tests were used.
 Independent reader40 source-free tests.36s/host supplement pass; no active
-session remains. Parallel next Paper image5216e00d... is prepared, NOT
+session remains. At goal18 closure Paper image5216e00d... was prepared, not
 published; exact D:/thericher-v2/model-artifacts/execution/kis-paper-baked-runtime-v1/build-preparation.json,
 SHAe3c09901... . Pinned cached Python3.12.13 base/runtime.lock retained;
 403 baked source files match public826b9d9f... tree. Offline import probe had
