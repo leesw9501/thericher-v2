@@ -179,6 +179,15 @@ D:/thericher-v2/model-artifacts/research/kis-cross-asset-direct-risk-capped-util
 Shared input loader/NAV, independently reconstructed scaler/context/covariance/
 controls/metrics/kill; cached GRU scores/model-byte binding not reinference.
 Host3.14.3 runtime equivalence false; no selected model/Paper input.
+Regime expert-composition contractdb0bdaae... now completes eight fits/36 cells,
+worker23.104s/parent26.018s. Original tree/MLP kills reject. Result53e359ff...;
+ALL-RO13.217s verifies cached model/action/economics with no refit/inference/
+search/write. Source/all566 input bodies unchanged, exact reaping/absence,
+lease released/custody7c2ae4dc... closed/zero sealed spend. Exact
+D:/thericher-v2/model-artifacts/research/kis-cross-asset-regime-expert-composition-development-v1/parent-verify-32b84d338b284979b777fb951bf84b2b.json.
+Used frozen study is immutable; do not rerun its eight fits or redefine the
+kill. Independent numerical supplement prepares. Not broker profit, holdout
+or Paper qualification. Existing CUDA runtime is available, not blocked.
 Collector-only image6aec64a0... now passes15 baked real-client boundary tests
 3.032s/82e1ca25..., no credential/provider/production volume work. Exact
 D:/thericher-v2/model-artifacts/data/kis-paper-head-boundary-deployment-v1/publication-20261009-v1.json/c5f53d04... .

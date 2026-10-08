@@ -193,20 +193,28 @@ SHAc271607cd938bdcd4420f2677502e3340d6d09afdfa259e581bbb28c30689587.
 Independent scaler/context/covariance/control/metric/kill reconstruction shares
 input loader/low-level NAV; cached GRU scores/model-byte binding is not model
 reinference. Host3.14.3 runtime equivalence false. Small TRAIN group count/seen
-DEV/raw-price limits remain. Next source-only
-hypothesis is bounded fixed-rule/ML regime-expert composition, not a refit or
-outcome-driven rescue of this study. Pure moduled74abaee.../proposal255666d1...
-is READY:38 cases1.36s/independent1.31s/Ruff, parent73 combined cases1.98s.
+DEV/raw-price limits remain. Distinct fixed-rule/ML regime-expert composition
+is now COMPLETE/REJECTED, not a refit or rescue of this study. Pure module
+d74abaee.../proposal255666d1... pass38 cases/independent review/Ruff.
 Fixed momentum63/minvar63/cash experts, uniform blend, depth2 tree and6-8-3
 MLP compare36 cells. Chronological diagnostic OOF qualified prefixes14/27/40;
 six OOF and two final fits share300s, no OOF selection or old numeric outputs.
-Thin external worker947af711.../prepare92383941.../dispatchf5f6fd27... passes30
-parent cases15.05s and independent research-semantic review. Actual metadata
-preflight verifies420 selected sources/OOF14/27/40/no values/writes/commands.
-Independent Infra found two scoped pre-freeze P2s: canonical custody identity
-attestation and all source/price binding before/after drift checks. Narrow
-unused dispatcher correction prepares, not an operator gate or Paper hold.
-Full source/input/runtime freeze precedes actual values/fits/GPU. Public Claude challenge.960s unavailable,
+Worker947af711... unchanged; dispatcher6040e2b9.../preparece2280c8... resolve
+canonical custody identity and all563 source+three price-file drift checks.
+Parent49 cases39.48s/Ruff and independent32 cases24.31s pass. Contractdb0bdaae...
+freezes420 mixed selected sources/input/runtime before actual labels/fits.
+CPU smoke5.160s passes36 cells/zero fits. Actual CUDA parent26.018s/worker23.104s
+completes eight fits/result53e359ff..., both tree/MLP original kills reject.
+At10bps MLP normalized growth is1.7064%/1.0061%, utility-.004854/.003350;
+tree growth-5.4430%/0%. Neither beats the original both-view risk/control test.
+These are seen/raw-price analytical results, not broker profit. ALL-RO13.217s
+passes cached model/action/economics, zero refit/inference/search/write;
+all566 input bodies/source unchanged, exact reaping/absence/lease released.
+Custody7c2ae4dc... closed/non_promoting_completed/zero sealed spend. Exact
+A/research/kis-cross-asset-regime-expert-composition-development-v1/
+parent-verify-32b84d338b284979b777fb951bf84b2b.json. Independent numerical reader
+prepares; no repeated fits, holdout, ensemble selection or Paper input follows.
+Public Claude challenge.960s unavailable,
 not agreement: A/research/source-discovery/claude-regime-expert-composition-20261009-v1.json.
 Official v2.2.2 returns median despite its mean name; equality check is valid.
 Unknown corpus

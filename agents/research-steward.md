@@ -19,15 +19,18 @@ Compacting this projection does not delete evidence or reopen an allocation.
   c271607c... passes3.056s/1008 unchanged bindings/42 cells/zero fits/inference/
   search/writes. Exact same root/validation-readback.json; shared input/NAV,
   cached GRU scores/model binding not reinference, host runtime equivalence
-  false. No reopening training or ready depth survivor;
-  next rule/ML regime composition pure kernel/proposal255666d1... is READY,
-  38 cases/independent source review; external worker/full freeze still prepare.
-  Six diagnostic OOF+two final fits share300s/36 DEV cells, no old numeric
-  results/holdout or Paper input. External30 parent cases15.05s/research-semantic
-  review pass; metadata420files verifies no values/commands. Two scoped
-  dispatcher corrections (canonical custody identity and all input binding
-  drift checks) prepare before freeze. No GPU allocation until full contract
-  freeze; unrelated lanes continue.
+  false. No reopening training or ready depth survivor. New rule/ML regime
+  composition db0bdaae.../420 mixed selected sources is COMPLETE/REJECTED36
+  cells/eight fits (six diagnostic OOF+two final). Actual parent26.018s/
+  worker23.104s; four CUDA MLP fits, no holdout or old numeric outputs. Result
+  53e359ff...; ALL-RO13.217s verifies cached economics/model/action binding
+  with zero fit/inference/search/write. All566 input bodies/source unchanged,
+  exact reaping/absence, canonical GPU lease released. Custody7c2ae4dc... is
+  closed/non_promoting_completed/zero sealed spend. Exact
+  A/research/kis-cross-asset-regime-expert-composition-development-v1/
+  parent-verify-32b84d338b284979b777fb951bf84b2b.json. Independent numerical
+  reader prepares; no new frozen campaign or active allocation yet. Other
+  Data/Execution work continues without waiting for a research promotion.
 
 - Conditional-hedge recovery COMPLETE/REJECTED42 cells; contract56787514.../
   result6f08e1c0.../custody16fd33b6... closed/zero sealed spend. One CUDA GRU

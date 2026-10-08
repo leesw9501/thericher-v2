@@ -6,6 +6,13 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Current-trio pure selector a1273093... is READY:44 parent tests0.78s/Ruff,
+independent44 tests0.73s/no P1/P2. Exactly64 prior completed scheduled CLOSEs for
+SPY/TLT/GLD, actual intraday decision and separate local receipt clocks;
+whole-page source/query/hash bindings, no frozen-cohort grafting or provider
+publication/finality claim. No actual current collection yet. Exact source
+src/thericher_v2/data/kis_current_trio_context.py; raw custody remains caller-owned.
+
 Oct9 00:29 head invocation terminalf4348515... binds both SPY/QQQ page4
 mixed_exchange_dates partial captures. Actual raw page chronology is unobserved;
 that previous result remains retained. New owned02:28KST invocation
@@ -15,8 +22,9 @@ readers independently bind the current pointer/terminal/capture: QQQ rejected
 auth_rejected/HTTP4xx, SPY rejected token_request_not_due, input_unavailable/
 terminal_recovery/current_session_short. No new coverage or tested live boundary
 claim; availability/finality remain not_observed. Token next_due17:33:06.641520UTC,
-next head04:24KST; parent prepares one token-only diagnostic while Research
-continues. Exact A/execution/kis-paper-intraday-head-invocation-v1/
+next head04:24KST. Later token-only diagnostic6c327aeb... authenticated and v3
+Paper retry completed; prior auth failure remains unclassified. Exact
+A/execution/kis-paper-intraday-head-invocation-v1/
 intraday-head-20261008T1728010238609Z/terminal.json. Released collector37c7a765... and PS77096246...
 accept only a proven current-ET-day/previous-day continuation boundary after
 full-page ordering, clocks, identity and cursor validation. Full physical page

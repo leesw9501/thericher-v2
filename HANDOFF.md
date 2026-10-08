@@ -231,7 +231,16 @@ SHAc271607cd938bdcd4420f2677502e3340d6d09afdfa259e581bbb28c30689587.
 Independent scaler/context/covariance/control/metric/kill reconstruction shares
 the pinned input loader and low-level NAV. Cached GRU scores/model-byte binding
 are not independent reinference; host3.14.3 is not Docker runtime equivalence.
-Next source-only regime-expert composition cannot reuse old numeric results.
+Regime expert-composition db0bdaae.../420 mixed selected sources now completes
+eight fits/36 DEV cells/worker23.104s/parent26.018s; tree and MLP reject the
+original risk/control kill. Result53e359ff...; ALL-RO13.217s reproduces cached
+economics/model/action binding with zero fit/inference/search/write. All566
+input bodies/source unchanged, exact reaping/absence and GPU lease released;
+custody7c2ae4dc... closed/non_promoting_completed/zero sealed spend. Exact
+A/research/kis-cross-asset-regime-expert-composition-development-v1/
+parent-verify-32b84d338b284979b777fb951bf84b2b.json. Independent numerical
+readback prepares. Seen/raw-price analytical results are not broker profit or
+Paper qualification; no repeated training or next frozen campaign follows.
 Oct9 00:29 owned M1 head terminalf434.../exact capture both targets partial at
 page4/mixed_exchange_dates. Full-page/older-boundary correction prepares with
 active-key-loss protection; actual page chronology remains unknown/next02:28.

@@ -51,17 +51,16 @@ platform. Parent alone owns actual private/provider/Docker/scheduler/Git work.
 
 ## Parallel Packages
 
-Engine: released fixed momentum63/minvar63/cash experts, uniform blend,
-depth2 tree and6-8-3 MLP compare36 DEV cells. Proposal255666d1... and pure
-moduled74abaee... pass independent review; external worker947af711.../
-prepare92383941.../dispatchf5f6fd27... pass30 parent cases15.05s.
-Metadata preflight verifies420 selected sources/OOF prefixes14/27/40, no values
-or commands. After independent containment/source review, freeze full source/
-input/runtime/custody before actual labels/fits. Six diagnostic OOF plus two
-final fits share300s/360s outer including cleanup, one canonical GPU lease.
-Use existing Torch CUDA image d6b43213... and4a25284d... raw-price input; artifacts
-stay external. Preserve original36-cell kill, lineage and seen-data limitations;
-no old numeric results, retuning, sealed holdout or Paper model qualification.
+Engine: regime expert-composition db0bdaae... is COMPLETE/REJECTED36 DEV cells,
+eight fits/worker23.104s/parent26.018s, including four CUDA MLP fits. ALL-RO
+13.217s preserves cached economics/model/action binding with zero fit/inference/
+search/write; all566 input bodies/source unchanged, exact reaping/absence,
+lease released and custody7c2ae4dc... closed. Exact external study root
+D:/thericher-v2/model-artifacts/research/kis-cross-asset-regime-expert-composition-development-v1;
+result53e359ff... and parent-verify-32b84d338b284979b777fb951bf84b2b.json.
+Independent numerical readback prepares without retuning, old numeric outputs,
+sealed holdout or Paper qualification. No next training campaign is frozen yet;
+choose a distinct useful hypothesis rather than increasing utilization alone.
 
 Data: preserve the collector-only6aec64a0... correction, old image rollback and
 exact head ownership.02:28KST bound result was QQQauth_rejected/HTTP4xx and
@@ -71,7 +70,10 @@ head next04:24KST remains owned; inspect exact bound result, not latest scans
 or task exit. No manual task invocation or global wait. Availability/finality
 remain not_observed absent retained evidence. Prepare only useful current
 trio-data refresh for the repeat cycle without rewriting the frozen research
-input; no new Tiingo numeric work while source-local rights are unresolved.
+input. Pure current-trio selector a1273093.../44 parent cases0.78s is READY,
+independent44 cases0.73s:64 prior completed CLOSEs/actual intraday decision,
+separate local receipt times and no claimed provider finality. No actual current
+collection yet; no new Tiingo numeric work while rights are unresolved.
 
 ## Verification And Continuation
 
