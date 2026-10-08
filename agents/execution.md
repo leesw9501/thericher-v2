@@ -14,6 +14,20 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+Current daily-risk implementation has pre-label payoff alignment attested:
+five-session TRAIN OPEN->fifth CLOSE now matches candidate/balanced/null
+holding/exit, not the original daily-overwrite proposal. Partition all689 DEV
+marks once into137 complete groups and four cash-tail sessions; one group
+crosses2024/2025. Daily marks/capital/denominators never reset at either group
+or view. Uninterrupted buyhold is a different stated cost/gap path. Exact
+implementation/source review noP1/P2; two actual fits/42 cells have completed
+and all original kills reject. Exact ALL-RO replay10.517s confirms continuous
+capital/5D fees/view carry; independent actual6.316s/1312 unchanged files/
+closed-form1e-45 parity passed, receipt6662caff... . Root
+D:/thericher-v2/model-artifacts/research/kis-cross-asset-daily-risk-development-v1,
+contract0246c39d.../resultbd5e7ab0... . This is fractional raw-price analytical
+evidence, not broker parity. No Paper side effect or standing owner changes.
+
 Current trio monthly-momentum study actually completed/rejected24 cells;
 no account/order/schedule/budget/web change. Independent evaluation confirms
 SPY/TLT/GLD positional order, finite thirds/residual cash, actual-notional

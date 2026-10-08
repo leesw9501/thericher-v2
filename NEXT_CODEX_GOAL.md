@@ -2,130 +2,109 @@
 
 ## Objective
 
-Complete kis-cross-asset-daily-risk-development-v1: fit a CPU HGB and a small
-CUDA attention classifier on KIS-native SPY/TLT/GLD past daily moves, then
-compare their five-session basket/cash policies and fixed probability blend against
-four fixed controls. Produce actual model and continuous-capital evidence,
-not another preparation-only objective. No live or research-to-Paper promotion.
+Complete kis-causal-risk-allocation-development-v1: actually compare one causal
+monthly SPY/TLT/GLD minimum-variance allocation with common capped ex-ante risk
+budgets against inverse-volatility and equal-third controls. Produce continuous
+capital, cost, risk and utility evidence, not another preparation-only goal.
+This is a distinct economic hypothesis, not a rescue or rescore of closed models.
 
 Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1;
 read HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards. Parent owns
-contracts/runtime/custody/Git; Data owns pure daily adapter, Engine owns models,
-Execution owns analytical cost/carry review; Infra and Validation are bounded
-invocations. Disjoint packages may run in parallel.
+contract/runtime/custody/Git; Engine owns the small worker/tests; Data owns
+past-source geometry; Execution reviews sizing/carry/cost semantics; invoke
+Validation only after frozen actual outputs. Disjoint work may run in parallel.
 
-## Exact Input And Hypothesis
+## Input And Source
 
 A = D:/thericher-v2/model-artifacts; M = D:/market_data.
 Use unchanged A/research/kis-cross-asset-d1-input-foundation-v1/input/cross-asset-d1-input-20261008-v1/input-commitment.json,
 SHA02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516:
-1288 shared dates2021-08-20..2026-10-07/39 chunks/136 bindings/140 files.
-NYSE calendar A/data/kis-cross-asset-d1-input-foundation-v1/calendar-nyse-20070821-20261007-v1.json,
+three ETF1288 shared dates2021-08-20..2026-10-07,136 bindings/140 files.
+Calendar A/data/kis-cross-asset-d1-input-foundation-v1/calendar-nyse-20070821-20261007-v1.json,
 SHAd2dab6f2ab27a7439ed4be91bacefc68b04908d0b3b7d509e4a2b19925a42721,
-pmcal5.4.0. Exact source-grade raw MODP0 price endpoints; corporate actions/TR,
-PIT/finality/decision-time availability and ideal fractional fills unverified.
-Old monthly2008-start proposal stays unavailable; this is a distinct family,
-not silent split shortening. Extended SPY/GLD OC history cannot be spliced in.
-No Tiingo, Norgate, FRED, FINRA, new weights or uncertain-rights substitution.
+NYSE/pmcal5.4.0. Raw MODP0 price-only; splits/dividends/TR/PIT/finality/
+decision-time availability unverified. No Tiingo, Norgate, new dataset or
+extended SPY/GLD OC splice. Existing Paper owners and shared10-percent basis
+are independent and unchanged. Never read KIS_LIVE_*.
 
-Hypothesis: joint past moves contain information about a next-five-session
-costed balanced-basket loss useful for fixed five-session basket/cash decisions.
-The TRAIN proxy is not hedge-causality or direct utility. Its OPEN->fifth CLOSE
-holding/exit path matches candidate evaluation; no daily-overwrite shortcut.
-Primary-source motivation: https://www.bis.org/publications/correlation-equity-and-bond-returns
-describes changing stock/bond relationships, not proof of this classifier's edge.
-Implementation APIs re-retrieved2026-10-08:
-https://scikit-learn.org/1.9/modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html
-and https://docs.pytorch.org/docs/2.7/generated/torch.nn.TransformerEncoderLayer.html.
-Freeze the entire contract/source/input/runtime/custody before actual labels,
-outcomes or fits. Source-only review is not a predictive result.
+Mechanism inspiration, not a replication or KIS ETF edge claim:
+https://www.anderson.ucla.edu/documents/areas/adm/Volatility%20Managed%20Portfolios.pdf
+(Moreira/Muir2015-11-23 draft, independent Engine retrieval2026-10-08 03:10:23UTC)
+and https://onlinelibrary.wiley.com/doi/10.1111/0022-1082.00327
+(Fleming/Kirby/Ostdiek2001 covariance-allocation abstract). No public code,
+weights or data rights adopted. Do not copy unconditional/full-sample volatility
+normalization. Our10-percent cap/thresholds are fixed engineering choices.
+Claude challenge one1.026s cli_nonzero_other/review_unavailable, not agreement:
+A/research/source-discovery/claude-kis-causal-risk-allocation-20261008-v1.json.
+Independent Engine/Execution source checks continue without an approval wait.
 
-## Frozen Finite Recipe
+## Frozen Recipe
 
-Dates refer to ENTRY sessions, decision at the immediately preceding scheduled
-CLOSE. TRAIN2021-12-01..2023-12-20; exclude entry datesDec21..29 as embargo.
-Last TRAIN label marksDec20/21/22/26/27, before DEV. DEV0 entry2024-01-02..
-2024-12-31; DEV1 entry2025-01-02..2026-09-30. No gap deletion, older fallback,
-outcome-selected sample or in-sample TRAIN economic performance claim.
+Freeze source/input/runtime/contract/custody before actual numeric preparation.
+DEV valuation dates2024-01-02..2026-09-30,689 daily marks:252 in2024 and437
+in2025-Jan..2026-Sep. All are seen development, not a fresh holdout. Exactly33
+monthly first-session OPEN decisions, previous scheduled CLOSE, full schedule.
+No window/asset/period/cadence/seed search or missing-date deletion.
 
-Pure daily adapter: exact64 CLOSEs/63 OPENs, six asset-major channels x63
-(SPY/TLT/GLD each close-to-close then open-to-close log returns), ending at
-decision CLOSE. Preserve existing MONTH-boundary helpers/guards unchanged.
-Freeze implemented Decimal50 log-price differences (ln CLOSE_b - ln CLOSE_a;
-ln CLOSE - ln OPEN), not bit-identical Decimal ln(ratio). Bounded in-process
-log cache changes no arithmetic, source eligibility or retained artifact.
-TRAIN target first entry OPEN -> fifth scheduled CLOSE, finite equal thirds,
-canonical actual-notional ledger5bps per side; factor below1 is loss. TRAIN-only
-channel standardization/zero-variance divisor1; require30 observations/class
-only for this fit. Contexts/5D labels overlap: report raw counts and disjoint
-five-session block counts, never claim independent effective sample size.
+At each decision select exactly253 prior scheduled CLOSEs and252 simple daily
+returns in SPY/TLT/GLD order. Decimal50 ratios then finite float64; population
+covariance, mean subtraction/ddof0. Reuse the existing pure
+joint_portfolio_covariance._population_covariance and
+tiingo_quarterly_joint_allocation.minimum_variance_weights; no Tiingo I/O or
+adjusted Bar wrapper. Pass UNSHRUNK covariance to the existing solver because
+it internally applies0.9*C+0.1*diag(C). Reuse its fixed simplex-face solution,
+1e-45 weight quantum/residual rule. No new framework or duplicated optimizer.
 
-Exactly one sklearn1.9.1 HistGradientBoostingClassifier fit: flattened378,
-log_loss/100 iterations/.05 learning rate/max leaves3/depth2/min leaf20/L2=1,
-seed101, no early stopping/class weighting/search. Exactly one Torch2.7 CUDA
-attention fit:6->16 projection/fixed sinusoidal positions/one encoder/two
-heads/FF32/GELU/dropout0/mean pool/one loss logit; float32, unweighted BCE,
-full-batch AdamW lr.001/weight decay.01/512 final updates/seed101. No final
-checkpoint selection or rescue. Fixed50/50 probability blend, no learned fuser.
+Policies: candidate minimum variance; inverse volatility; equal thirds; cash;
+uninterrupted equal-third buyhold. For inverse volatility use the same shrunk
+diagonal; a zero diagonal allocates equally among zero-variance assets; all
+zero gives equal thirds. Normalize with the existing finite weight quantum.
+For the three monthly allocations use the SAME shrunk covariance and cash cap:
+vol=sqrt(252*w'C_shrunk*w), exposure=min(1,.10/vol), zero vol=>exposure1.
+Multiply each sleeve under Decimal50; exact residual cash calculated at enough
+precision for Fraction(weights)+cash==1. No leverage, short, outcome-derived
+volatility normalization or exposure-matching to observed results. The same
+cap is not identical attained risk when exposure cannot exceed1: retain attained
+forecast risk/cap-binding diagnostics; never call this risk-matched alpha.
 
-Partition DEV valuation sessions from2024-01-02 into successive disjoint
-five-session groups, without resetting at the DEV-view boundary. Predict only
-group entries at previous CLOSE. Each candidate invests finite equal thirds iff
-P(loss)<.5, otherwise cash; hold quantities unchanged, liquidate fifth CLOSE.
-Final incomplete group (at most4 sessions) is cash, determined ONLY by frozen
-calendar, not observed price support; no truncated holding or target.
-Exact geometry:517 TRAIN entries/104 earliest-thinned non-overlapping5D labels
-(not independent ESS);689 DEV marks split252/437;137 complete groups,
-51/86 group entries; crossing groupDec30/31 2024-Jan2/3/6 2025. Last group
-Sep18..24 2026; four cash-tail marksSep25/28/29/30. First required CLOSE
-Aug31 2021/OPEN Sep1, last TRAIN labelDec20/21/22/26/27 2023.
-Seal ALL DEV actions before DEV payoff evaluation; same actions at every cost.
-Controls: cash, five-session balanced thirds, uninterrupted buyhold, constant basket
-fraction equal to TRAIN non-loss fraction. Last is not exposure-matched to DEV;
-classification class-prior control is separate, not an economic winner.
-Seven policies x three side costs2.5/5/10bps x two DEV views =42 cells.
+Seal all33 actions/policy before forward payoff calculation. Canonical existing
+three_asset_nav.replay: NAV1 once/policy/cost, rebalance at monthly first OPEN,
+carry quantities/overnight gaps through month and view boundaries, final CLOSE
+exit only. No monthly liquidation, fresh-capital views or five-day cash tail.
+Every scheduled daily mark, Decimal50 HALF_EVEN, fees on actual traded notional.
+Side costs2.5/5/10bps; five policies x3 costs x2 views =30 cells. Buyhold only
+initial entry/final exit is an opportunity-cost reference, not mandatory wealth
+dominance. Cash earns0; no fabricated interest/dividend/fee settlement.
 
-Candidate/balanced/null five-session roundtrips, no intermediate rebalance;
-buyhold initial OPEN/final CLOSE only. NAV1 initialized ONCE per policy/cost;
-inventory/cash/denominators cross DEV boundary even inside a five-session group.
-Use complete daily marks/carry, not fresh-capital segment replays. Existing
-Decimal50 ROUND_HALF_EVEN actual-notional ledger, no fresh monthly accounts.
-Daily utility252*(mean log return -5*population variance). Original kill at
-10bps in BOTH views: HGB positive growth and growth/utility greater than all
-four controls by1e-10; attention/blend also beat HGB by1e-10. This is noncyclic:
-HGB need not beat its alternatives. Failure closes this exact recipe; no new
-threshold/window/seed/period/budget, holdout, replication or deployment claim.
+Use utility252*(mean daily log return -5*population variance). Report daily-log
+realized annual volatility sqrt(252*variance), growth, actual-notional turnover,
+costs and drawdown. Drawdown uses the running NAV peak from the single initial
+NAV1 across both views; do not reset it at the view boundary.
+Original strongest kill at10bps in BOTH views: candidate positive net growth
+over cash; utility greater than BOTH common-cap controls by>.001; realized
+annual log volatility<=.15; running-peak maximum drawdown<=.25. These thresholds
+are engineering choices, not cited paper findings. Lower exposure alone is
+not skill. Failure closes this exact recipe; no threshold/window/period rescue,
+holdout/depth/ensemble/Paper/live qualification or rescoring prior failures.
 
-## Runtime And Completion
+## Execution And Completion
 
-One shared300-second family allowance covers actual preparation/two fits/
-evaluation, not300s per member. CPU synthetic smoke first. Exact existing image
-sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039,
-Python3.12.14/Torch2.7.0+cu128/CUDA12.8/sklearn1.9.1. No framework replacement.
-Steward freezes eligible custody and takes canonical exclusive GPU lease before
-actual CUDA; parent hard deadline with invocation-bound exact container stop/
-reap, lease released only after containment. Execution preempts at safe point.
-Network-none/input+source RO; own results/checkpoints under A only. Trained
-weights use safe tensor/known-source format, never untrusted pickle/custom code.
+Use existing image sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039,
+Python3.12.14/pmcal5.4.0/numpy2.5.1. CPU synthetic smoke first, then one shared
+120-second actual source/action/evaluation allowance, CPU2/memory2GiB.
+Network-none/source+input RO/own output A/research/kis-causal-risk-allocation-development-v1
+only; all-RO exact30-cell replay with zero refits/search/writes. No model fits,
+GPU allocation or public checkpoint is needed for this statistical mechanism;
+do not train a dummy job for utilization. Preserve categorical bounded faults.
 
-Exact all-RO replay uses frozen actions/results and reconstructs42 economic
-cells with zero refits/search/writes; separately attest saved-model predictions
-or their exact immutable binding without a new GPU campaign. Invoke independent
-Validation only after frozen actual candidate outputs. Close custody on actual
-completion or bounded failure; planned fits are not completed-fit evidence.
+Reuse source loader/calendar/binding, solver and shared ledger. Keep the worker
+small; don't create another platform/report/gate or independent goal file.
+Independent Validation checks frozen actual kill/cashflow/source binding, then
+close non-promoting custody. Completion requires actual outcome/replay/closure,
+not only code/smoke. No provider/account/order/task/schedule/dashboard change
+is required. Existing Paper authority and owned jobs never wait on this study.
 
-Claude concise falsification-first split/target/control/cost challenge is
-review_unavailable at A/research/source-discovery/claude-kis-cross-asset-daily-risk-20261008-v1.json:
-one .993s cli_nonzero_other, not agreement; don't repeat unchanged diagnosis.
-This review preceded the pre-label five-session holding correction. Independent
-Execution review found the original5D-target/daily-overwrite mismatch; parent
-aligned holding/exit without changing a policy or adding an approval gate.
-Independent exact review and other ready work continue. No provider/account/
-order/task/schedule/dashboard change required. Existing private Paper10-percent
-basis/identities/owned schedules remain independent; never read KIS_LIVE_*.
-
-After actual result/replay/independent review/custody evidence, run changed-path
-serial, clean-root eight-worker authority, Ruff and three sample-env Compose
-configs. Commit/push owned integration, refresh current projections, replace
-this file with exactly one material next objective and CONTINUE until genuinely
-reserved operator authority or no ready package advances the company outcome.
+Run changed-path serial, clean-root8-worker authority, Ruff and three sample-env
+Compose configurations. Commit/push owned integration, refresh current
+projections, replace this file with exactly one material next company objective
+and CONTINUE until reserved operator authority or a genuine company block.

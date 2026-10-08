@@ -8,6 +8,11 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-08 KST)
 
+- NEXT statistical risk allocation is not yet frozen/dispatched:33 monthly
+  decisions/30 cells/shared120-second CPU allowance, zero model fits/GPU/sealed
+  spend. Register its distinct frozen family before actual numeric preparation;
+  its capped risk comparison does not reopen or rescore any closed allocation.
+
 - Current monthly-momentum CPU family is closed/non_promoting_completed:
   contract5245f9f1.../resultabcd8b27..., familytrial1/holdoutnone.24 cells;
   CPU run7.024s and ALL-RO7.220s contained, source/input unchanged. Independent
@@ -24,15 +29,26 @@ Compacting this projection does not delete evidence or reopen an allocation.
   sealed allocation follows; this is owned terminal evidence, not a hardware
   utilization target or general CUDA restriction.
   Exact root: D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
-- Next daily-risk predictive GPU campaign is proposed, not yet frozen/reserved:
+- Daily-risk predictive GPU campaign closed/non_promoting_completed:
   distinct5-session proxy/entry-date split, one CPU HGB and one CUDA attention,
   fixed blend/42 cells/shared300-second allowance. Freeze all fields/source/
   input/runtime before actual labels/fits; no utilization-only work. This uses
   existing five-year input rather than relabeling the original2008 proposal.
+  Pre-label correction aligns candidate/control holding to5-session target:
+ 137 groups/689 daily marks, no view-boundary reset, final4 cash sessions.
+ 517 TRAIN entries/104 disjoint-label geometry is not independent ESS. API
+ checkpoint1e98266 is pushed. Frozen contract0246c39d.../resultbd5e7ab0...,
+ familytrial1/holdoutnone/two fits/42cells, all original kills rejected.
+ Parent16.549s confirms invocation-bound absence and canonical lease release;
+ actual CUDA512 updates2.602s/peak146361344bytes. ALL-RO10.517s exact42cells,
+ no refits/inference/search/writes. Independent Validation6.316s/1312 unchanged
+ files/receipt6662caff...; registry record95036f8d... closes familytrial1.
+ Exact root A/research/kis-cross-asset-daily-risk-development-v1;
+1149 frozen source files tree5bb5be69... unchanged. No active GPU job follows.
   Closed kis-cross-asset-d1-input-foundation-v1 has actual five-year trio
   partial coverage plus source-free feature/target/replay preparation; this
   is not the prepared2008-start campaign's required complete input. No
-  silent split shortening, actual label read, fit or new appointment follows.
+  silent split shortening or revival of that older campaign follows.
   The measured GLD low-field defect is Data-local, not a hardware/GPU ban.
 - Goal7 `board-yield-curve-monthly-policy-development-v1` completed/rejected24
   cells, exact ALL-RO readback. Zero fits/GPU/sealed spend and no successor

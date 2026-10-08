@@ -1,5 +1,41 @@
 # Runbook
 
+## KIS Trio Daily Risk Actual Result
+
+A = D:/thericher-v2/model-artifacts; M = D:/market_data.
+Exact root A/research/kis-cross-asset-daily-risk-development-v1:
+contract0246c39dec57b0d7e80301be6779dbbf8de8b010e3fbc0bbacea302f4c274098;
+resultbd5e7ab075db9ac108943d19935a87a9f09ad101a51a318064cb51bed1a10a61;
+1149 files/source tree5bb5be69442768fc1346d385bf881ce270bfb6109d6a2435124b4c83145bdd0b.
+Worker9ec21d3b8b9ae8b6e0c1b93b904e0527f55d428d381b15ff25b8863fec29d592,
+tests3e26aeb8363f615e1413b12ec5dc5c5f5553b3a8e73c8adb4e03810f6c4f1237.
+Frozen source_root=/app; source_archive_root is the exact external frozen-source
+sibling. Credentials/caches are not copied. Parent source tree reattested.
+
+Actual source-bound two TRAIN fits: HGB100 iterations/.328s, CUDA attention512
+updates/2.602s/peak146361344bytes; worker14.641s, parent16.549s. CPU synthetic
+smoke4.142s and exact all-RO10.517s contained; exclusive GPU lease released.
+42 cells/137 complete5D groups/689 daily marks; all original kills reject.
+10bps-side HGB growth-7.236956percent/-1.632337percent; attention and blend
+-6.173198percent/-0.678126percent. No threshold/window/seed/period rescue.
+Readback rebuilds TRAIN inputs/scalers, cached model/prediction bindings,
+actions and42 economic cells; zero refits/inference/search/writes. This is not
+fresh model reinference, adjusted total return, holdout or Paper profitability.
+
+Use exact source-freeze.json/precommit.json/custody-binding.json, parent-
+{smoke,run,verify}.json, started/progress receipts and worker-result.json.
+Own hgb.npz is numeric/non-object; attention.safetensors stays external.
+Independent validation-readback.json SHA6662caffc20aebc14362d53c7932b99c0689d4d19d962224df576f867fc5415c
+confirms exact42cells and independent closed-form cashflow parity1e-45;
+1312 files unchanged/6.316s/host3.14.3 supplements pinned Docker authority.
+Custody-outcome.json binds non_promoting_completed/familytrial1/holdoutnone,
+registry record95036f8db4d865acb236985db08bf2fa30a9abdd6f8903c96cc9f3f45b2c889b.
+Actions SHA7f0d70a3e6ac0bd7fbf1e3141aaee7411e45291cef11f6954bd6ef49323c663a.
+Do not infer closure merely from worker success. Company verification:
+320 changed-path serial25.18s;11621pass/22skip/35existingwarnings352.16s,
+eightworkers/11643collected/clean helper; Ruff/three sample-env Compose pass.
+No provider/account/order/schedule/dashboard side effect belongs to this study.
+
 ## Closed KIS Trio Monthly Comparison And OC History
 
 A = D:/thericher-v2/model-artifacts; M = D:/market_data.

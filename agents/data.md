@@ -38,7 +38,9 @@ log-price differences are frozen explicitly, not bit-identical ln(ratio).
 Exact unchanged calendar independently gives517 TRAIN entries/104 disjoint
 5D label geometry (not ESS),689 DEV marks252/437,137 complete5-session
 groups51/86 entries and four cash-tail days. One group crosses2024/2025;
-no calendar partition reset. No actual labels/fits/GPU/provider calls yet.
+no calendar partition reset. Subsequent frozen daily-risk family has two actual
+CPU/CUDA fits/42 rejected cells; unchanged input/source bound at readback.
+No new provider call or cache mutation; research outcome is not a data grade.
 
 Data owns acquisition, provenance, calendars, canonical storage, resampling,
 manifests, temporal joins and scoped quality facts; Research owns models and

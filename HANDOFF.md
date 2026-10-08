@@ -41,13 +41,27 @@ Unused GLD2021-05-05 low-field fault remains visible; strict Bar parser unchange
 Exact receipts A/data/kis-cross-asset-monthly-momentum-development-v1/oc-only/
 probe6/oc-capability-20261008-v1/receipt.json (e095934c...) and
 history/oc-history-20261008-v1/receipt.json (562aa2e0...). No raw-body retention.
-NEXT owns distinct kis-cross-asset-daily-risk-development-v1: two actual
-TRAIN-only fits, CPU HGB and small CUDA attention, plus fixed probability blend
-on the unchanged five-year trio input. Contract freezes before actual labels;
-42 developmental cells/continuous capital, no holdout or Paper promotion.
-Pre-label review corrected5D-target/daily-overwrite mismatch: complete disjoint
-five-session holdings from first DEV OPEN, exit fifth CLOSE/carry net cash;
-partition once across both views, incomplete calendar tail cash. No fits yet.
+Current kis-cross-asset-daily-risk-development-v1 actual run is COMPLETE:
+two TRAIN-only fits, CPU HGB100 iterations and CUDA attention512 updates,
+plus fixed blend42 cells, all rejected under the unchanged original kill.
+Root A/research/kis-cross-asset-daily-risk-development-v1;
+contract0246c39d.../resultbd5e7ab0..., frozen1149 source files/tree5bb5be69... .
+CPU smoke4.142s/parent run16.549s/ALL-RO10.517s all contained; lease released.
+Worker14.641s includes HGB .328s and CUDA2.602s/peak146361344bytes.
+At10bps-side HGB growth-7.236956percent/-1.632337percent;
+attention and blend-6.173198percent/-0.678126percent. This is analytical raw-price
+development, not net broker profit, independent replication or Paper input.
+Pre-label review aligned5D-target/holding;137 groups/689 continuous marks,
+cross-view inventory and four cash-tail days. Exact all-RO replay rebuilds42
+cells with zero refits/inference/search/writes; saved model/prediction binding
+is not independent model reinference. Independent Validation6.316s confirms
+exact42cells/closed-form cashflows1e-45/1312 unchanged files; receipt6662caff... .
+Custody closed familytrial1/non_promoting_completed/record95036f8d...,
+holdoutnone. NEXT now owns kis-causal-risk-allocation-development-v1: one
+monthly min-variance policy/common capped ex-ante risk controls,30 actual cells,
+no GPU/fits needed, no wealth-dominance rescoring of old failures.
+320 changed-path serial25.18s/full11621passes22skips/
+35existingwarnings352.16s/eight workers/11643collected/Ruff/three Compose pass.
 Data/Engine work is disjoint; parent owns actual calls/integration/Git. No
 account/order/scheduler/web/private-Paper change belongs to these packages;
 separate existing Paper authority and owned jobs remain unchanged.

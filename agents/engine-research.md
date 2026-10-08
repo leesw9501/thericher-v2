@@ -8,6 +8,28 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
+Current daily-risk worker actually completed two fits and42 cells: CPU HGB100
+iterations/.328s, CUDA attention512updates/2.602s/peak146361344bytes, fixed
+half probability blend. Original BOTH-view10bps kill rejects all three:
+HGB growth-7.236956percent/-1.632337percent; attention/blend-6.173198percent/
+-0.678126percent. No threshold/window/seed/period rescue, holdout or promotion.
+Root A/research/kis-cross-asset-daily-risk-development-v1, contract0246c39d.../
+resultbd5e7ab0.../1149 frozen files tree5bb5be69... . CPU smoke4.142s/
+parentrun16.549s/ALL-RO10.517s; actual worker14.641s, lease released only after
+containment. Exact42-cell replay uses zero refits/inference/search/writes and
+cached model-bound predictions, not independently repeated inference.
+Independent Validation6.316s/1312 unchanged files/exact cashflows1e-45,
+receipt6662caff...; custody closed non_promoting_completed/record95036f8d... .
+320 serial25.18s/full11621+22skip/
+352.16s/eightworkers/Ruff/three sample Compose pass. Source/test9ec21d3b.../
+3e26aeb8... reviewed noP1/P2. Remaining entries below describe closed context,
+not present labels/fits/GPU waits. Next sole objective is capped causal
+risk-budget allocation, a distinct economic hypothesis, not a rescored kill.
+Exactly one33-month/30-cell statistical recipe, no fits/GPU needed. Reuse
+existing population covariance/simplex solver/shared ledger; raw KIS rows
+never pass the adjusted-Bar wrapper. Same10-percent ex-ante ceiling is not
+identical attained risk. No outcome-derived scaling/extra search/depth follows.
+
 Current kis-cross-asset-monthly-momentum-development-v1 actual comparison is
 COMPLETE/REJECTED24 cells. Frozen49 months/1023 daily marks:16-month block
 September2022-December2023 and33-month block January2024-September2026.
@@ -44,7 +66,7 @@ mismatch; candidate/balanced/null now hold unchanged quantities for complete
 disjoint5-session groups and exit fifth CLOSE, partitioned once across DEV.
 Incomplete calendar tail cash; net capital/daily denominators never reset.
 One300-second shared compute allowance/two fits/no searches or sealed spend;
-no actual new contract, labels, fits or appointment is yet claimed.
+This pre-label preparation is superseded by the actual terminal above.
 
 Closed kis-cross-asset-d1-input-foundation-v1: pure12-calendar-month signal
 adapter integrated/pushedf07145e,44cases/parent277tests. Independent source

@@ -10,29 +10,35 @@ rule comparison rejected, CPU7.024s/ALL-RO7.220s/independent549 unchanged files.
 Useful OC history SPY/GLD each4813 dates is independently read back; overall
 producer remains partial for exact unestablished TLT scopes. No provider owner
 or next_due remains on that drained contract. No Paper or live change follows.
-NEXT: kis-cross-asset-daily-risk-development-v1, actual CPU HGB/CUDA attention/
-fixed blend42-cell developmental comparison on unchanged five-year trio input.
+Closed daily-risk two-fit42-cell family: all original kills rejected, exact
+ALL-RO and independent cashflow/1312-file unchanged readback, custody closed.
+NEXT: kis-causal-risk-allocation-development-v1, actual33-month/30-cell
+continuous-inventory comparison with common capped ex-ante risk budgets.
 
 | Resource | Owner | Ready / owned / due fact |
 | --- | --- | --- |
 | Input / daily geometry | Data | Exact input02dcc000.../calendar d2dab6f2... already available; pure daily adapter ready. Original monthly guards and extended OC cache remain separate. No provider call needed. |
-| Model / CPU | Engine Research | Implementation underway;5D target matched to fixed five-session holdings before labels. One HGB/attention/half blend; no outcome-based selection or shorter2008 proposal. |
-| GPU / custody | Research Steward / parent | Runtime available; no active lease/job. Freeze source/input/runtime/contract before actual labels and one300-second family appointment. Utilization itself is not a KPI. |
-| Cost / carry | Invoked Execution | Pre-label review aligned five-session holding/exit and target. Partition DEV once, preserve crossing-group inventory/view denominator, tail cash; exact fees/carry source review follows implementation. Existing Paper ownership unchanged. |
+| Model / CPU | Engine Research | Daily-risk complete/rejected/custody closed. Ready next worker reuses covariance/simplex solver/shared ledger;33 monthly actions/30cells, no outcome-selected risk scaling or old kill rescue. |
+| GPU / custody | Research Steward / parent | Actual parentrun16.549s/CUDA2.602s/peak146361344bytes; contained before lease release. Closed record95036f8d..., no active GPU job. Next statistical allocation needs no predictive fit/GPU; no dummy utilization work. |
+| Cost / carry | Invoked Execution / Validation | Daily-risk independent6.316s/1312 files/cashflow1e-45 passed. Next source-only monthly OPEN rebalancing/continuous inventory/common-cap semantics review ready; no broker owner change. |
 | Independent review | Invoked Infra / Validation | Final OC recovery and CPU supervisor noP1/P2. Claude daily-risk one .993s failure/review_unavailable, not agreement; no retry or global wait. Validate actual models only after frozen outputs. |
 | Tiingo rights | Operator source-specific decision | Starter/Trial durable-data terms applicability/notice/plan unknown; already asked. No new Tiingo acquisition/fit/numeric readback or old-byte deletion. KIS research continues. |
 | Existing head | Data scheduler | October7 partial QQQ389/SPY390 M1 remains excluded from closed25-session study; nextOct9 00:29KST, no manual invoke or finality inference. |
 | Existing Paper | Execution scheduler | Corrected-account shared10-percent basis/SPY owned inventory/QQQ-flat unchanged; SPY nextOct8 23:50KST. Fees/settled/net unknown; no substitute/reset/old-account adoption. |
 | Console | Existing web | http://127.0.0.1:8787 loopback; historical accounting and current account separate. |
-| Git / verification | Orchestrator | Sole Git owner main, Engine784e554 pushed; goal11 serial372/full11516+22skip/eightworkers/clean helper/Ruff/three Compose passed. Final Data+docs integration ready. Inactive cancelled-run residue is not another owner. |
+| Git / verification | Orchestrator | Sole Git owner main; checkpoint1e98266 pushed. Goal12 changed-path320serial25.18s/full11621+22skip352.16s/eightworkers/11643collected/clean helper/Ruff/three Compose/independent closure pass; integration ready to publish. Inactive cancelled-run residue is not another owner. |
 
 ## Bottleneck And Reversible Improvement
 
 No company block: old TLT reach and Tiingo rights are scope-local. Ready KIS
-five-year model research can use GPU now that its own finite contract freezes.
+five-year model research used GPU under its own frozen finite contract.
 Current improvement separates required price endpoints from unused invalid
 HL fields without weakening Bar eligibility: actual98 accepted pages335.930s,
 326 unchanged files, SPY/GLD full requested floor. Inherited attempt counts are
 not independently measured wire spacing. No new platform, gate or scheduler.
-Next throughput check is before actual GPU dispatch; review owned processes/
-lease/input hashes then dispatch, recover or close, never foreground-sleep.
+Current throughput improvement is payoff-aligned5D training with immediate
+completed-fit records before inference/save faults;2.60s CUDA proves no runtime
+hold. The next economic proposal reuses existing covariance/solver/ledger,
+keeps capped risk budgets honest, and does not rescore a closed failure.
+No company block or foreground sleep: next bounded statistical allocation is
+ready and owns no GPU, provider, broker, schedule or mutable shared control root.
