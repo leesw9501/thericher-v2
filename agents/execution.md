@@ -34,6 +34,19 @@ source review no blocking P1/P2. Named fresh-quote/exact-limit orderability
 capability is still unestablished. Fixed capped thirds is an engineering
 control, not a promoted failed candidate; incumbent/shared basis retained.
 No standing task, submit whitelist, budget, owner or dashboard was changed.
+Goal-owned one-time read-only preview is now installed as
+thericher-kis-risk-preview-20261009-0015, Ready/nextOct9 00:15KST,
+one trigger/00:19 expiry/240-second limit/IgnoreNew/zero restarts/no missed run.
+Exact installation receipt A/execution/kis-risk-engine-paper-preview-v1/scheduled-opportunity-20261009T0015KST-v1.json.
+Not executed yet; Interactive/Limited requires logged-in session, driver checks
+current private-volume writer and token due at call time. Existing SPY next
+23:50KST is unchanged; its25-minute maximum ends at the new trigger, not proof
+of owner absence. Time-window correspondence alone is not cryptographic
+Scheduler-origin or fill evidence. Do not select an arbitrary latest receipt.
+Official KIS source208279102... calls dymd/dhms quote date/time but does not
+state timezone in the retrieved function/field map. Stale categorization is
+under existing Asia/Seoul interpretation, not proof of a documented timezone;
+do not replace it with New York by inference or create a global Paper hold.
 
 Current daily-risk implementation has pre-label payoff alignment attested:
 five-session TRAIN OPEN->fifth CLOSE now matches candidate/balanced/null

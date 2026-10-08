@@ -1,5 +1,48 @@
 # Runbook
 
+## Rolling Variance Forecast Closure
+
+Exact root D:/thericher-v2/model-artifacts/research/kis-d1-rolling-variance-forecast-development-v1.
+Contract9087641db43afbc01c621b6d1ddf4fd9893e057b536c2f6725d87532a5ce46db;
+result86181a7a1ae9f18a843ba49c79acf5bcc682dd22301bbb69cc6efd24ed67826b.
+Selected408 source files/treeb2a9e79ae43d9e03568140ac07a4cbff353d60c790280e313513ab9e9b1fb086
+cover runtime/producer/config and named tests, not a whole-repository archive.
+33x504 strict-lag TRAIN windows, same input/calendar/33 dependent DEV dates.
+CPU smoke2.068s/parent58.123s/worker55.447s,66 completed fits/six cells:
+33 OLS and33 CUDA GRU512 updates, CUDA36.832s/peak188578304bytes.
+Exact ALL-RO10.629s/120-second bound, zero fit/inference/search/write, reproduces
+cached metrics rather than independently repeated model inference. Invocation
+absent before exclusive lease release. Both original BOTH-metric/BOTH-block
+kills reject; QLIKE baseline .221730/.439486, OLS .170765/.679826,
+GRU .238221/.829772. No financial NAV, fresh replication, holdout or Paper input.
+Independent validation-readback.json SHA
+c4dd88fa667066bc2d092304302ef9e9754da2f995242cc77546d64a74a827ed,
+2.712s/exact33 scalers/six cells/66 models/264 progress links, bound artifacts
+unchanged. Host3.14.3 supplements Docker3.12.14, not runtime equivalence.
+Custody-outcome record33c71fffcbc5ec55b97045f66ba93f9d3bf85fe0db266cb0ed11a63cd4db0084
+closed non_promoting_completed. Related trial2/local registry index1 differ
+because exact split-key identity changed; predecessor preserved, no history reset.
+Verification109 serial17.69s/full11840pass22skip35warnings350.84s/eight workers/
+11862 collected/clean helper, Ruff/three sample-env Compose pass.
+
+## Owned Fresh Preview Opportunity
+
+thericher-kis-risk-preview-20261009-0015 is installed/Ready, next_due
+2026-10-09 00:15KST; one trigger/end00:19/PT4M/IgnoreNew/RestartCount0,
+StartWhenAvailablefalse, Interactive/Limited/logged-in session required.
+Do not infer execution from1999 sentinel last-run time or a task exit.
+Exact installation pointer:
+D:/thericher-v2/model-artifacts/execution/kis-risk-engine-paper-preview-v1/scheduled-opportunity-20261009T0015KST-v1.json.
+Installer93c2c86a.../eight fully mocked tests; uv --no-env-file isolates ambient
+UV_ENV_FILE. Driver1a273516... is read-only/zero-submit; existing SPY/private
+writer, shared basis and pending identities are unchanged. Call-time contention
+yields without foreground waiting. Runtime not observed yet; task-time
+correspondence under assumed-honest host is not cryptographic scheduler proof.
+Official KIS quote field map at commit208279102f43fd0c0f15fcf66c9e5a5adda27050
+documents dymd/dhms as quote date/time but does not document timezone. Existing
+Asia/Seoul interpretation and scoped stale category remain; do not infer a new
+timezone or use this limitation as a global Paper hold.
+
 ## KIS Risk Paper Preview Actual Result
 
 Exact attempt D:/thericher-v2/model-artifacts/execution/kis-risk-engine-paper-preview-v1/4ac651cb78284a319d75a9a3d74a3f10/receipt.json,

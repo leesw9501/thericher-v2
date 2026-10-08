@@ -9,14 +9,17 @@ Closed risk-engine preview: account reads available/all3 off-hours quotes stale,
 zero orderability/submits, private/source unchanged; receipt2b45b532... .
 Parallel actual OLS/CUDA GRU diagnostic rejected6 cells, custodyf34fad78... .
 937 serial/full11783+22skip348.40s/eightclean/Ruff/three Compose pass.
-NEXT owns kis-adaptive-risk-engine-development-v1. Sole Git owner is parent.
+Rolling66-fit study is closed/rejected with independent c4dd88fa... readback,
+custody33c71fff...,109 serial/full11840+22skip350.84s/eight clean workers/Ruff/
+three Compose pass. NEXT owns kis-objective-aligned-risk-research-v1.
+Sole Git owner is parent.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Input / geometry | Data | Static geometry closed3536ee531...; prepare strict prior-session label-mature rolling504 geometry, no source splice/provider call. |
-| Research CPU / GPU | Engine / Steward | Static two fits complete, GRU5121.261s/peak188405248bytes; no active lease. Rolling33+33 fits proposed in NEXT, not frozen/dispatched yet. |
-| Paper preview | Execution | Actual named account/quote attempt unavailable only from stale quotes; exact container absent. Prepare one fresh-session zero-submit opportunity without incumbent/basis/private changes. |
-| Independent review | Invoked Infra / Validation | Static r2 numerical readback8815df09... exact kill; driver final source review ready/48mocked tests. One Claude review_unavailable is not agreement. |
+| Input / geometry | Data | Rolling geometry complete24a82d3d...; next bounded older-TLT NAS/AMS capability recovery is ready, separate cache and no active input splice. |
+| Research CPU / GPU | Engine / Steward | Rolling66 fits closed/rejected, lease absent. Relatedtrial3 Gamma-HAR/QLIKE-GRU preparation ready; same geometry/original kill,132 fits/shared300s only after freeze. |
+| Paper preview | Execution scheduler | One-time thericher-kis-risk-preview-20261009-0015 installed/Ready/Oct9 00:15KST next_due,4-minute limit/zero restart/no missed recovery.8mocked tests/final review passed; not executed yet. Existing task/private owner/basis unchanged. |
+| Independent review | Invoked Infra / Validation | Rolling numeric readback/custody/full authority complete; next source/supervisor and independent contract review ready. Claude failures remain unavailable, not agreement or root-cause diagnosis. |
 | Tiingo rights | Source-local operator question | Starter/Trial retention applicability unknown, already asked. No new Tiingo numeric work; KIS/Paper/research continue. |
 | Existing head | Data scheduler | Oct7 QQQ389/SPY390 M1 remains excluded from closed study; nextOct9 00:29KST, no manual invoke or finality inference. |
 | Existing Paper | Execution scheduler | Shared basis/custody exact; SPY nextOct8 23:50KST. Fees/settled/net unknown. No competing request or reset. |

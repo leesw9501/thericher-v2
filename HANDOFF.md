@@ -21,127 +21,43 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
-kis-cross-asset-d1-input-foundation-v1 is COMPLETE as a useful partial-input
-freeze with bounded source failure and pure consumers, not full2007 coverage.
-Closed kis-cross-asset-monthly-momentum-development-v1: actual fixed
-49-month/24-cell CPU strategy comparison plus independent OC-history recovery.
-Primary comparison is complete/rejected24 cells with exact ALL-RO and
-independent549-file unchanged/cashflow readback. At10bps-side candidate
-growth is2.877592percent/34.126525percent; positive analytical growth still
-loses the original buyhold/control-relative kill, not Paper profit or edge.
-Root A/research/kis-cross-asset-monthly-momentum-development-v1;
-contract5245f9f1.../resultabcd8b27.../actions4bff912e... . CPU7.024s/
-ALL-RO7.220s contained, zero fits/GPU/new weights; closed familytrial1.
-Data actual OC history98 accepted GET attempts/zero failures/335.930s:
-SPY/AMS and GLD/AMS each4813 dates2007-08-21..2026-10-07, exact calendar,
-zero gaps/OC conflicts; independent326 files unchanged. Requested floor is
-not API exhaustion. TLT/NAS and TLT/AMS remain unestablished after exact empty
-probe queries; overall terminal remains partial, no next_due/active worker.
-Unused GLD2021-05-05 low-field fault remains visible; strict Bar parser unchanged.
-Exact receipts A/data/kis-cross-asset-monthly-momentum-development-v1/oc-only/
-probe6/oc-capability-20261008-v1/receipt.json (e095934c...) and
-history/oc-history-20261008-v1/receipt.json (562aa2e0...). No raw-body retention.
-Current kis-cross-asset-daily-risk-development-v1 actual run is COMPLETE:
-two TRAIN-only fits, CPU HGB100 iterations and CUDA attention512 updates,
-plus fixed blend42 cells, all rejected under the unchanged original kill.
-Root A/research/kis-cross-asset-daily-risk-development-v1;
-contract0246c39d.../resultbd5e7ab0..., frozen1149 source files/tree5bb5be69... .
-CPU smoke4.142s/parent run16.549s/ALL-RO10.517s all contained; lease released.
-Worker14.641s includes HGB .328s and CUDA2.602s/peak146361344bytes.
-At10bps-side HGB growth-7.236956percent/-1.632337percent;
-attention and blend-6.173198percent/-0.678126percent. This is analytical raw-price
-development, not net broker profit, independent replication or Paper input.
-Pre-label review aligned5D-target/holding;137 groups/689 continuous marks,
-cross-view inventory and four cash-tail days. Exact all-RO replay rebuilds42
-cells with zero refits/inference/search/writes; saved model/prediction binding
-is not independent model reinference. Independent Validation6.316s confirms
-exact42cells/closed-form cashflows1e-45/1312 unchanged files; receipt6662caff... .
-Custody closed familytrial1/non_promoting_completed/record95036f8d...,
-holdoutnone. The distinct kis-causal-risk-allocation-development-v1 is now
-COMPLETE/REJECTED:33 monthly decisions,30 continuous-inventory cells, zero
-fits/GPU/holdout. Root A/research/kis-causal-risk-allocation-development-v1;
-contractb8534c14.../resultfc2c7a1d.../actionscdc405fa...,
-1151 frozen files/tree20e0c4a4... . CPU smoke2.111s/run5.869s/ALL-RO5.322s
-contained; pinned Docker exact replay passes. At10bps-side candidate growth
-18.438198percent/12.412995percent is positive, but later-view utility loses
-both common-cap controls under the original kill. No alpha/Paper promotion.
-Independent host readback2.364s confirms30 sealed-action cells/414 closed-form
-fee-capital checks/1297 unchanged files and original rejection. Receipt
-a161a6a1... is supported_with_limits: host recomputed action/cap bytes mismatch,
-cause not yet localized, attained-risk diagnostic not independently checked.
-Do not claim host/Docker numerical equivalence; this does not rescue the kill.
-Custody closes non_promoting_completed/familytrial1/holdoutnone/record8152bddd... .
-Separate validation-context-diagnosis.json SHA ffdb38b2... shows both Decimal28
-and50 keep the mismatch; cause unknown, not a proved precision explanation.
-kis-risk-engine-paper-preview-v1 is COMPLETE with actual zero-submit private
-preview. Account snapshot available;1 token/11 validated GET calls, SPY/TLT/GLD
-each stale quote, no orderability call or submit, private/source unchanged.
-Exact receipt A/execution/kis-risk-engine-paper-preview-v1/4ac651cb78284a319d75a9a3d74a3f10/receipt.json,
-SHA2b45b532...; exact invocation container absent. Scope is off-hours unavailable,
-not account failure, fresh quote proof, feasibility or an authorization hold.
-Parallel variance diagnostic COMPLETE/REJECTED6 cells, two actual fits:
-CPU OLS .028s and CUDA GRU512 updates1.261s/peak188405248bytes.
-Root A/research/kis-d1-variance-forecast-development-v1;
-contractb198df9d.../resultb400bd37.../tree5bb2cc8e... . Parent9.358s/
-ALL-RO7.051s contained, independent r2 readback8815df09... exact six cells/
-scalers/original kill/1155 unchanged source-input artifacts,2.328s.
-First review48b77102... failed only reviewer metadata parsing and is preserved.
-Custody closed/non_promoting_completed/familytrial1/holdoutnone/f34fad78... .
-No GPU job remains; research rejection never becomes a Paper profitability gate.
-NEXT will own adaptive risk-engine development: finite causal monthly refits
-and a separately owned fresh-session zero-submit preview opportunity. The
-research is related seen development, not independent replication or promotion.
-937 changed-path serial12.19s/full11783passes22skips/
-35existingwarnings348.40s/eight workers/11805collected/clean helper/
-Ruff/three sample-env Compose pass. A paired old recovery test passes with a
-short scratch root and fails with a long root; preserve that measured path
-geometry limit, not an unproved runtime regression or MAX_PATH diagnosis.
-Data/Engine work is disjoint; parent owns actual calls/integration/Git. No
-account/order/scheduler/web/private-Paper change belongs to these packages;
-separate existing Paper authority and owned jobs remain unchanged.
+kis-adaptive-risk-engine-development-v1 is COMPLETE. Actual monthly rolling
+OLS/GRU experiment finished66 fits/six cells; both original kills reject.
+Root A/research/kis-d1-rolling-variance-forecast-development-v1;
+contract9087641d.../result86181a7a.../408 selected source files treeb2a9e79a... .
+CPU smoke2.068s/parentrun58.123s/worker55.447s/ALL-RO10.629s contained.
+CUDA33x512 updates36.832s/peak188578304bytes; lease released after absence.
+Independent readbackc4dd88fa... exact33 scalers/baselines/6 cells/12 pooled/
+36 asset diagnostics/66 model+264 progress+33 monthly prediction bindings,
+2.712s; source/artifacts unchanged. Host3.14.3 is a supplement, not runtime
+equivalence or model reinference. Custody closed33c71fff... .
+Relateddevelopmenttrial2/localregistryindex1 differ because split key changed;
+predecessor b198df9d.../b400bd37... is retained, no history reset/holdout/Paper use.
 
-Probe10a6858/195 parent tests: all3 current MODP0/1 pages have100 dates;
-deepTLT/NAS20071231 empty/GLD deep unattempted. Not a global history floor.
-Exact partial probe e0d8e206... and original hash-preserved source are in
-A/data/kis-cross-asset-d1-input-foundation-v1/capability/cross-asset-d1-probe-20261008-v1.
+One fresh-session private zero-submit preview task installed:
+thericher-kis-risk-preview-20261009-0015, nextOct9 00:15KST/one trigger/
+00:19 expiry/240s/IgnoreNew/zero restart/no missed recovery. Not executed yet;
+Interactive/Limited needs logged-in session. Exact source-safe installation:
+A/execution/kis-risk-engine-paper-preview-v1/scheduled-opportunity-20261009T0015KST-v1.json.
+Existing SPY23:50 task/private custody/basis remain unchanged. Off-hours attempt
+4ac651cb.../receipt2b45b532... had account available/all3 stale quotes under
+Asia/Seoul interpretation/zero orderability/submits/private-source unchanged.
+Official quote date/time mapping does not state timezone; do not infer NY time
+or call scheduler time-window correspondence cryptographic origin evidence.
 
-Historyf6c3135/233 parent tests/independent recovery review: actualv1 reaped
-partial/daily_response_invalid,36 accepted+3 seeds/37 GETs/1 token.
-Each ETF1288 dates2021-08-20..2026-10-07,13 snapshots/cursor20210820.
-Exact terminal A/data/kis-cross-asset-d1-input-foundation-v1/history/cross-asset-d1-history-20261008-v1/receipt.json,
-SHA6447178aaa7cca269d28d0d8b62b3b3a6add305550a7c67434da2e02e98a44b6.
-Original index/source/failed attempt unchanged; no active provider/cache writer.
-Its original retry time is history, not a foreground sleep.
+NEXT owns objective-aligned variance trial3 plus bounded older-TLT OC recovery.
+Gamma log-link/QLIKE GRU are one related final variance-method question, not
+promotion or a rescue of either original rejection. Older TLT probe/collection
+does not splice the active frozen input. A source failure never idles another lane.
 
-Exact GLD/AMS20210820/F diagnostic: HTTP2xx100rows/99 typed-valid/one
-low_above_open_close,1 token/1 GET/no body retention or cursor advancement.
-Not a quota/exhaustion claim; discarded rows cannot be reconstructed from it.
-A/data/kis-cross-asset-d1-input-foundation-v1/diagnose-gld-cursor-20261008-v1.json,
-SHAf562e0cadc4aeb08f445df6a099c8299046ae6d273dbe875f9c6d41c7dfe3a97.
-
-Actual offline freeze succeeded after14 parent tests1.51s/independent source
-review. Exact reusable input commitment:
-A/research/kis-cross-asset-d1-input-foundation-v1/input/cross-asset-d1-input-20261008-v1/input-commitment.json,
-SHA02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516,
-ID1db4801c76341bc6bb82805f8e503bf0f020d60a041ceb960b5b9a4c9f2a936d.
-Three price-only files stay in M; per-chunk observation times remain distinct.
-Caller-frozen NYSE/pmcal5.4.0 calendar has4813 requested sessions/hashd2dab6f2...;
-full scope still lacks3525 dates per ETF. Independent actual readback passed:
-136 bindings/39 chunks/three output hashes, exact seed/raw OPEN/CLOSE strings,
-36 identical overlaps and140 files unchanged;0 gaps inside observed bounds.
-No adjusted/dividend/TR/PIT/finality/price-authenticity/Paper qualification.
-
-Closed pure month adapterf07145e uses12-calendar-month positive raw-price momentum,
-previous scheduled CLOSE -> next month's first OPEN, fixed finite thirds/cash.
-Feature/target993b64d:64 CLOSEs/63 OPENs ->6x63 returns, separately from
-month-first OPEN -> month-last CLOSE loss at5bps-side actual-notional costs.
-New closed-month consumer exits each month and carries net cash/daily-return
-denominators with NAV1 initialized once. Decimal50 ROUND_HALF_EVEN, not
-quantity ROUND_DOWN or broker parity. Endpoint-only target marks never
-supply daily utility. That preparation had no actual labels/fits/new weights/GPU;
-prepared2008-start monthly classifier remains unfrozen, not silently shortened.
-The new daily5-session risk target is a distinct hypothesis and family, with
-payoff-aligned fixed five-session candidate/control roundtrips, not daily churn.
+Useful unchanged input02dcc000.../calendar d2dab6f2... gives all3 ETFs1288
+dates2021Aug20..2026Oct7, raw MODP0/CA/TR/PIT/finality/availability limitations.
+Separate OC history gives SPY/GLD4813 dates2007Aug21..2026Oct7; older TLT
+unestablished, not an API-global floor. Original failed full-OHLC GLD row is
+preserved; no weakened Bar parser or repaired price. Exact historical source,
+allocation and monthly-model evidence is recoverable from Git32954e7/RUNBOOK
+and immutable A/research roots; past positive analytical growth is not net
+broker profit or evidence that a failed original criterion passed.
 
 ## Paper And Runtime Ownership
 
@@ -204,24 +120,21 @@ not a weakened Bar parser, repaired price or full-OHLC qualification.
 
 ## Verification And Resume
 
-Completed goal11 serial372 passed21.99s; full11516 passed/22 skipped/35 existing
-warnings346.57s,eightworkers/11538 collected4.51s/clean helper exit0. Current
-run temp/lease removed; inactive retained siblings are historical, not active
-verification. Ruff/three sample Compose pass; all required sessions reaped.
-Monthly replay/source/input and final OC recovery reviews found no P1/P2.
-Pre-repair full run was cancelled/reaped, not authority; inactive retained
-C:/trpy/runs/r-41c8d063 remains diagnostic residue. A rejected cleanup command
-was not executed or circumvented; the isolated final authority run passed.
-Engine checkpoint784e554 is pushed; final goal11 integration follows.
-Profiler-only47dd4ec reduced paired feedback79.22s->52.94s/33.2percent
-without detection relaxation; full-suite gain unmeasured. Isolated packages
-f07145e/47dd4ec/10a6858/993b64d/f6c3135 pushed.
+Goal15 authority:109 changed-path serial17.69s/full11840pass22skip/
+35 existing warnings350.84s/eightworkers/11862collected4.30s/clean helper
+exit0 and cleanup, Ruff/three sample-env Compose pass.145 supervisor tests/
+8 installer mocks passed separately. All required sessions reaped.
+Weekly serial diagnostic completedOct3, not due. Inactive retained
+C:/trpy/runs/r-41c8d063 is historical residue; rejected cleanup was not executed
+or circumvented and does not block a fresh isolated helper run.
+Manual serial scratch uses short names after paired long-root failure/short-root
+success; do not assert an unproved Windows API cause.
 
-Resume scripts/start_next_codex_task.ps1, NEXT/policy/current boards.
-Verify ownership and exact pointers. Company integration: changed-path
-serial, scripts/run_parallel_tests.ps1 -Workers 8 -RequireCleanTempRoot,
-Ruff, default/research/accounting Compose with --env-file .env.example,
-never operational .env. Weekly serial diagnostic completedOct3, not due.
-Commit/push owned integration, replace NEXT with one material next objective
-and continue until a real reserved decision, not a lane-local wait/failure.
-No per-agent next goals or reporting platform.
+Resume C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1,
+NEXT/policy/current boards. Integration: changed-path serial, clean-root8 helper,
+Ruff and default/research/accounting Compose with --env-file .env.example,
+never operational .env. Use uv --no-env-file to exclude ambient dotenv loading;
+approved broker/data drivers alone selectively load Paper keys.
+Commit/push owned integration, replace NEXT with one material next objective,
+continue until a true reserved decision or company block, not a lane-local wait.
+No per-agent next goals or new report/provenance platform.

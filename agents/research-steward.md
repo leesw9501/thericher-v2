@@ -24,8 +24,20 @@ Compacting this projection does not delete evidence or reopen an allocation.
   r2 validation8815df09... supports original rejection; the first metadata
   readback failure is retained, not a substantive verdict. Exact custody
   D:/thericher-v2/model-artifacts/research/kis-d1-variance-forecast-development-v1/custody-outcome.json,
-  recordf34fad78... . No active GPU allocation remains. Rolling504-entry
-  monthly refits are an unfrozen related development proposal only.
+  recordf34fad78... . Static family remains closed; its original kill is unchanged.
+- Rolling504 strict-lag refits actually completed66/six cells/rejected both,
+  contract9087641d.../result86181a7a.../408 selected files treeb2a9e79a... .
+  Actual parent58.123s/worker55.447s, CUDA33x51236.832s/peak188578304bytes,
+  exclusive lease released only after invocation-bound absence. ALL-RO10.629s
+  within120s reproduces cached metrics with zero fits/inference/search/writes.
+  Relateddevelopmenttrial2/localregistryindex1 under changed exact split;
+  predecessor linked, no history reset, holdout or Paper qualification.
+  Independent c4dd88fa... readback is exact for33 scalers/six cells/66 models/
+  264 progress links; custody33c71fff... closed non_promoting_completed.
+  No active GPU allocation remains; reject is not a global compute restriction.
+  Next related development trial3 may receive one300-second appointment after
+  its Gamma-HAR/QLIKE-GRU contract/source/runtime are frozen.132 fits total,
+  no holdout or Paper qualification; retain predecessor lineage and original kill.
 
 - Current monthly-momentum CPU family is closed/non_promoting_completed:
   contract5245f9f1.../resultabcd8b27..., familytrial1/holdoutnone.24 cells;

@@ -29,8 +29,22 @@ comparisons,1155 source/input artifacts unchanged,2.328s. The first failed
 review48b77102... is preserved; it was reviewer metadata parsing, not a model
 failure. Host3.14.3 is a numerical supplement, not runtime equivalence.
 Custody closed non_promoting_completed/familytrial1/holdoutnone/f34fad78... .
-No actual GPU job remains; monthly mature-label refits are preparation only,
-not frozen, dispatched, independent replication or a Paper profitability gate.
+Monthly strict-lag rolling refits now actually completed66 fits/six cells,
+both original kills rejected. Root A/research/kis-d1-rolling-variance-forecast-development-v1;
+contract9087641d.../result86181a7a.../408 selected files treeb2a9e79a... .
+Parent58.123s/worker55.447s, CUDA33x512 updates36.832s/peak188578304bytes.
+Exact ALL-RO10.629s has zero fits/inference/search/writes; lease released after
+exact invocation absence. Baseline QLIKE .221730/.439486 versus rolling OLS
+.170765/.679826 and GRU .238221/.829772; related DEV improvements against the
+old models still fail the baseline-relative criterion. Relatedtrial2 and
+registry-localindex1 differ because its exact split key changed; neither is
+fresh replication or a history reset. Independent c4dd88fa... readback verifies
+33 scalers/six cells/66 models/264 progress links; custody33c71fff... is closed
+non_promoting_completed.109 changed-path serial and full11840+22skip350.84s/
+eight clean workers/Ruff/three Compose pass. No active GPU job or Paper promotion.
+Next related trial3 tests one objective-aligned Gamma-HAR/QLIKE-GRU recipe, not
+a revised kill or proven explanation of rejection. If it rejects, retire this
+variance-method question until material new input or an operational hypothesis.
 Closed context below does not describe current resource waits.
 
 Current daily-risk worker actually completed two fits and42 cells: CPU HGB100
