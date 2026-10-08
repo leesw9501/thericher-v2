@@ -60,6 +60,10 @@ fixed126-return/21-cadence sector relative-strength CPU campaign with explicit
 known split signal/share accounting. Exact Chronos2 public weights acquired;
 synthetic CPU/CUDA runtime capability runs independently using existing Docker,
 no dependency replacement or market comparison without a new frozen contract.
+Synthetic CPU inference now passes; CUDA failed before model class, exact
+receipt431ccd21.../lease released/custody closed. Run the separately frozen
+categorical diagnostic; preserve original failed attempt, do not label the
+whole GPU environment unavailable or idle independent sector CPU work.
 
 Data: integrate only exact XLK/XLF/XLE AMS capability scope, then one reusable
 client/six fixed OC queries at20261007/20160202 under existing gates/120s bound.
@@ -70,7 +74,7 @@ No new Tiingo or unclear issuer numeric rights work.
 Capability and useful84-page history now actually complete: all3x2686 dates/
 zero gaps/85.307s parent and independent typed-chain validation. Separate
 sector OC input070e98d7... published3.246s; independent canonical readback
-15056b1f... passes. Prepare a separate composite SPY/sector metadata contract;
+15056b1f... passes. Composite SPY/sectorab70d192... is actually published;
 known XLK/XLE2025Dec5 split discontinuity is measured, not a generic quality hold.
 Do not repeat tiny probes, restart
 a closed cursor or splice the closed trio campaign. Original limitations persist.

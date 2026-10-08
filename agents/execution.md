@@ -61,8 +61,13 @@ action immutable backup retained and other dates/triggers/settings unchanged.
 Exact scheduled-opportunity-20261008T2245KST-v1.json under that root.
 Persist exact trim request before side effects; never recompute quantity/TTL.
 Only baseline-owned SPY can sell; original10-percent basis/QQQ custody stay exact.
-Unknown/partial fills cannot fund joint BUYs. Separate observed-funds joint BUY
-runtime preparation continues; installed/smoke/exit is never a fill or Scheduler
+Unknown/partial fills cannot fund joint BUYs. Observed-funds joint BUY host
+2f157ea1... is installed23:10..23:14KST/PT4M/IgnoreNew/no restart/no catchup.
+Container66fcfcc7.../host65 cases6.84s/installer seven1.55s/independent review
+READY. Post-dispatch source/receipt-write faults retain true counts/containment;
+missing persisted receipt remains unknown, never a zero-call claim.
+Exact scheduled-buy-opportunity-20261008T2310KST-v1.json under the same root.
+23:50 exact SELL/BUY router preparing, not yet installed. Installed/smoke/exit is never a fill or Scheduler
 origin proof. No task was manually invoked.
 
 ## Retained Account Evidence

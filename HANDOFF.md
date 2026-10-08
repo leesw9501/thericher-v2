@@ -28,8 +28,13 @@ actual submit/fill or new basis is claimed. Final host10c6d626.../container
 caae3d40.../APIa7758f85... pass99 cases5.19s; installer32 cases12.60s.
 Inert Docker smoke1.33s has zero credential/API/private-state work. Exact
 A/execution/kis-paper-owned-rebalance-v1/scheduled-opportunity-20261008T2245KST-v1.json.
-Joint observed-funds BUY runtime is preparing separately, after exact SELL/
-updated owner custody; original shared10-percent pool and reservations persist.
+Joint observed-funds BUY is installed for23:10..23:14KST, exact predecessor
+required; original shared10-percent pool/reservations persist. Host2f157ea1...
+passes65 cases6.84s and independent four fault regressions: post-dispatch source
+or receipt-write failure cannot erase actual dispatch/containment facts.
+Installer seven fully mocked cases1.55s pass; exact source-safe
+A/execution/kis-paper-owned-rebalance-v1/scheduled-buy-opportunity-20261008T2310KST-v1.json.
+23:50 exact SELL/BUY routing prepares separately; installed is not a fill.
 
 Parallel ANTICOR actual30-cell CPU development study is COMPLETE/REJECTED;
 11.498s actual/15.273s ALL-RO. Independent r2 validates30 cells/988 unchanged
@@ -54,6 +59,7 @@ A/data/kis-sector-etf-capability-preparation-v1/input/sector-oc-cohort-20261008-
 SHA070e98d7bcd5fae338344a4d3a7c2bb25bcbc74ba6a7f6d5101757358e6b0449.
 Canonical independent readback passes.727s/15056b1f...; old trio unchanged.
 Official XLK/XLE2:1 Dec5,2025 split manifests as raw half-price discontinuity;
+composite manifestab70d192... published/metadata-only, separate producer pins;
 new sector CPU consumer preparing known-event signals/share accounting, not
 blind raw-price PnL or silent global adjustment. Exact split-calibration file in
 the Data root; no dividend/TR/PIT qualification.
@@ -61,7 +67,13 @@ Raw price-only/non-PIT/no CA/TR/finality/causal-availability qualification.
 Chronos2 official dated checkpoint95a971... exact477930472-byte weightddcda3c7...
 acquired under A/research/chronos2-runtime-preparation-20261008-v1-r3.
 Existing Chronos2.2.2 Docker CPU loader works with tmpfs; no package/build change.
-Synthetic CPU/CUDA capability source preparing; no predictive comparison yet.
+Actual synthetic CPU inference passes7.902s/Chronos2Model/three1x21x21 outputs.
+CUDA fails7.475s before model class; exact container reaped/absent, lease released.
+Exact A/research/chronos2-runtime-capability-20261008-v1/parent-cuda.json,
+SHA431ccd2154b951a6ba14700cb7b47747d409a92209032c946e3a2b030f988bdf;
+custody closed non_promoting_failed/f158c0fa... . Image CUDA mask is measured
+unset, not the cause. New public-only phase diagnostic prepares independently;
+no predictive comparison or blanket GPU-unavailable claim.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 

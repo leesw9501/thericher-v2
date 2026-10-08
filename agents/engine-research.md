@@ -104,14 +104,20 @@ controls at10bps in BOTH views; GRU also beats Ridge. Return dominance is
 descriptive, not the defensive-utility objective. Failed older studies unchanged.
 Sector cohort070e98d7... independently validated15056b1f... . New pure sector
 relative-strength7bdd5ffd.../40 synthetic cases uses126 returns/21 cadence;
-fresh CPU worker and composite input contract preparing, not a performance claim.
+fresh CPU worker7a5c8e47.../52 tests2.47s preparing dispatch; composite
+ab70d192... published/2686 sessions, not a performance claim.
 Known XLK/XLE2:1 Dec5,2025 split produces measured raw half-price discontinuity;
 new consumer must account shares/signals explicitly, not double-adjust or rewrite
 original bytes. No dividend/TR/PIT qualification follows.
 Official Chronos2 dated checkpoint95a971... acquired as exact477930472-byte
 safetensorsddcda3c7... under A/research/chronos2-runtime-preparation-20261008-v1-r3.
 Existing Docker Chronos2.2.2 CPU loader works with tmpfs; no dependency replacement.
-Synthetic CPU/CUDA runtime capability preparing, no predictive comparison yet.
+Synthetic CPU inference passes7.902s/three1x21x21 outputs; actual CUDA fails
+7.475s before model class/431ccd21... . CPU0b7cf3fc... and failed CUDA receipts
+remain immutable under A/research/chronos2-runtime-capability-20261008-v1;
+GPU lease released/custody non_promoting_failed/f158c0fa... . Measured image
+CUDA mask unset disproves that hypothesis; new phase diagnostic prepares,
+not a predictive comparison or reason to stop independent CPU research.
 Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new
 contract, not reuse of the2021 development view.

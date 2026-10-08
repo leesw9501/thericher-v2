@@ -65,7 +65,10 @@ readback passes.727s/667 originals+four outputs unchanged/252 bindings/84 chunks
 exact OC strings/Decimals/first-indexed source links. Exact
 A/data/kis-sector-etf-capability-preparation-v1/input-readback-20261008-v1.json,
 SHA15056b1fb6829759025c5aaf8427a2a732650f4a35abb3b312a29ebe5625c128.
-New SPY/sector metadata contract preparing; separate producer pin sets and old
+SPY/sector metadata contract actually published, SHAab70d19265865c4c990e0c5cd5a552f8d1f764e54bf64a6b18e0b00bc4136e02,
+research-input/sector-research-manifest-20261008-v1.json under the same Data root.
+Four symbols/2686 sessions/two known splits/zero market bytes written;
+publisher31 synthetic cases.71s. Separate producer pin sets and old
 trio/sector bytes stay unchanged. Official StateStreet Nov20,2025 announcement
 confirms XLK/XLE2:1 before Dec5OPEN. Exact retained Dec4CLOSE/Dec5OPEN ratio
 probe categorizes both split_sized_drop; no raw price/ratio output, files unchanged.

@@ -10,7 +10,11 @@ triggers unchanged and original action backed up. Do not manually invoke or
 infer fills from task status. Exact source-safe installation pointer:
 D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-opportunity-20261008T2245KST-v1.json.
 API/host/container99 tests5.19s and installer32 tests12.60s pass; inert Docker
-smoke1.33s is not an API call/order/fill. Joint BUY is separate preparation;
+smoke1.33s is not an API call/order/fill. Joint BUY23:10..23:14KST is installed,
+host2f157ea1.../65 cases/independent READY/installer seven mocked cases pass.
+Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-buy-opportunity-20261008T2310KST-v1.json.
+23:50 SELL/BUY router remains preparation. Post-dispatch final-source/receipt
+faults preserve actual counts; missing receipt is unknown. For every BUY,
 require exact SELL evidence/new custody and observed funds, never anticipated
 proceeds, a substitute request or reset of the original10-percent basis.
 
@@ -40,8 +44,12 @@ accounts known-event signal basis and held share units. Preserve raw cohort,
 never double-adjust or claim dividends/TR/PIT/finality qualification.
 Chronos2 exact official477930472-byte safetensorsddcda3c7... acquired under
 D:/thericher-v2/model-artifacts/research/chronos2-runtime-preparation-20261008-v1-r3.
-Existing Docker Chronos2.2.2 loader works; use network-none/tmpfs/offline model
-load for the prepared synthetic CPU/CUDA capability, not a new dependency build.
+Existing Docker Chronos2.2.2 synthetic CPU inference passes7.902s; CUDA fails
+7.475s before model class. Exact parent-cpu.json0b7cf3fc.../parent-cuda.json431ccd21...
+under D:/thericher-v2/model-artifacts/research/chronos2-runtime-capability-20261008-v1.
+Lease released/custodyf158c0fa... closed; image CUDA mask measured unset.
+New public-only phase diagnostic prepares, not dependency replacement or a
+market-performance result. Original sources/receipts remain immutable.
 
 ## Owned Rebalance Code And Runtime Delivery
 
