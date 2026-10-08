@@ -17,6 +17,11 @@ Compacting this projection does not delete evidence or reopen an allocation.
   utilization target or general CUDA restriction.
   Exact root: D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
 - No next predictive GPU campaign is yet frozen or reserved.
+  Current kis-cross-asset-d1-input-foundation-v1 has actual five-year trio
+  partial coverage plus source-free feature/target/replay preparation; this
+  is not the prepared2008-start campaign's required complete input. No
+  silent split shortening, actual label read, fit or new appointment follows.
+  The measured GLD low-field defect is Data-local, not a hardware/GPU ban.
 - Goal7 `board-yield-curve-monthly-policy-development-v1` completed/rejected24
   cells, exact ALL-RO readback. Zero fits/GPU/sealed spend and no successor
   allocation. Existing foundation checkpoint metadata preparation is not a

@@ -1,5 +1,39 @@
 # Runbook
 
+## Current KIS Trio Input Foundation
+
+NEXT_CODEX_GOAL.md owns kis-cross-asset-d1-input-foundation-v1. Probe10a6858
+and historyf6c3135 are published; do not rerun their existing immutable labels.
+Actual probe e0d8e206... is partial at deepTLT2007 empty, not a global source
+limit. Actual history terminal6447178aaa7cca269d28d0d8b62b3b3a6add305550a7c67434da2e02e98a44b6:
+D:\thericher-v2\model-artifacts\data\kis-cross-asset-d1-input-foundation-v1\history\cross-asset-d1-history-20261008-v1\receipt.json.
+Each asset has1288 dates2021-08-20..2026-10-07,13 snapshots/cursor20210820;
+36 accepted+3 seeds/37 GETs/1 token. Original failedGLD query remains preserved.
+Exact subsequent1GET schema diagnosticf562e0cadc4aeb08f445df6a099c8299046ae6d273dbe875f9c6d41c7dfe3a97:
+D:\thericher-v2\model-artifacts\data\kis-cross-asset-d1-input-foundation-v1\diagnose-gld-cursor-20261008-v1.json.
+HTTP2xx100rows/99valid/one low_above_open_close; no body retention or cursor
+advancement, not source exhaustion. Default strict parser is unchanged.
+Canonical history remains under
+D:\market_data\us_equities\kis_paper_private\cross-asset-d1\kis-cross-asset-d1-input-foundation-v1\canonical-trio-v1.
+No account/order/schedule/web/Paper budget change. Parent collector is reaped.
+Prepared raw-price adapters f07145e/993b64d remain non-promoting source-free
+code; exact source freeze and closed-month continuous-cash replay are active
+parallel preparation. Input-foundation objective is now COMPLETE as scoped
+partial input, not full2007 coverage; NEXT owns the actual monthly comparison.
+Actual offline input commitment is now available:
+D:\thericher-v2\model-artifacts\research\kis-cross-asset-d1-input-foundation-v1\input\cross-asset-d1-input-20261008-v1\input-commitment.json,
+SHA02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516.
+Three price-only CSVs stay in M;1288 shared dates/3525 missing requested dates
+per ETF, distinct39 chunk observation times. Caller calendar4813 sessions is
+pinned before source parsing, hashd2dab6f2... . Independent readback passes136
+bindings/39chunks/three output hashes/36 overlaps/140files unchanged/0 gaps
+inside observed bounds;
+no adjusted/TR/PIT/finality/Paper qualification or historical price repair.
+Current serial444passes65.77s,11421 collected4.29s,Ruff/all3 Compose passed;
+full11399passes/22skips/35warnings344.60s/eightworkers/clean helper exit0.
+Current temp/lease removed/all required sessions reaped; inactive siblings do
+not imply an active worker. Existing labels are immutable; no new broker call.
+
 ## Closed KIS Native Foundation Study
 
 D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1
@@ -67,7 +101,7 @@ Independent actual-runtime reattachment supported-with-limits. Full company
 authority11098passes/22skips/35warnings338.41s,eightworkers/11120collected,
 clean helper/exit0; Ruff/three sample Compose pass. No required session remains.
 
-NEXT_CODEX_GOAL.md now owns kis-native-timesfm-m5-24-development-v1; head
+The historical next objective was kis-native-timesfm-m5-24-development-v1; head
 conflict recovery above is complete as scoped, not complete-session evidence.
 Do not delete/reset the head cache or manually invoke a Windows task. Existing
 head owner nextOct9 00:29 KST; narrow source/runtime recovery is owned by Data.

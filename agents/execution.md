@@ -14,6 +14,17 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+Current trio input-foundation work makes no account/order/schedule/budget/web
+change. Source-only independent attestation accepts the pure raw-price month
+adapters with limits: SPY/TLT/GLD positional order, finite equal thirds/exact
+residual cash, actual-notional5bps-side fees, Decimal50 ROUND_HALF_EVEN.
+This ledger does not use quantity ROUND_DOWN or prove broker-fill parity.
+The monthly target is firstOPEN->lastCLOSE and ends flat; its endpoint-only
+replay cannot supply daily utility. A later closed-month campaign must exit
+each month, carry net cash and prior daily NAV continuously, and use every
+scheduled valuation mark. Source-free implementation/testing is ongoing;
+no actual candidate, allocation or market-performance result follows.
+
 Current KIS-native TimesFM analytical study completed/rejected30 cells;
 Execution independently reviewed continuous shared NAV, exact notional fees,
 fractional ROUND_DOWN1e-40 units, cash/flat carry and two-block capital.

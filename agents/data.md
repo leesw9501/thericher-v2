@@ -22,7 +22,55 @@ Source-only input-origin audit: current inspecting Process/User/Machine scopes
 have neither Paper key supplied and no named Compose override; no mismatch
 measured. Launcher may inherit shell values, but scheduled child is unattested.
 Do not repair a hypothetical stale key or label it the actual4xx cause.
-Current goal: kis-native-timesfm-m5-24-development-v1. Exact25 dated shared
+Current goal kis-cross-asset-d1-input-foundation-v1: actual09:12:15.095164-
+09:12:27.635850 KST probe partial/empty_response,6accepted/7GETattempts/1token.
+All three currentMODP0/1 pages return100 unique dates2026-05-15 throughOct7.
+Mode-pair changed-row counts SPY86/TLT95/GLD0; not adjustment/TR proof.
+Seventh TLT/NAS20071231 request is empty; GLD deep query unattempted. This
+limits only that deep anchor, not useful current serial collection. Remaining
+scope/ETA unknown, owned next_due none, originalattempt preserved/reaped.
+Exact receipt A/data/kis-cross-asset-d1-input-foundation-v1/capability/cross-asset-d1-probe-20261008-v1/receipt.json,
+SHAe0d8e20669ad7f61ab1bc521eaf48d90840a4e690563d37bce4213c2d34d4fbb.
+Original6 source files+tests copied/hash-checked into its source-before-terminal-pin-repair
+sibling before independent final-source-read failure repair; actual receipts
+unchanged. Final probe10a6858/195 parent tests/Ruff; failed-body or credential
+echo bytes are not retained, final-source-read faults remain categorical.
+Frozen history3af19eea.../tests979fbf6e... passes233 parent tests9.69s and
+independent recovery review; committed/pushedf6c3135. Actual historyv1 is reaped
+partial/daily_response_invalid:36 accepted+3 seeds,37 GETs/1 token. Each ETF
+has1288 dates2021-08-20..2026-10-07,13 snapshots/cursor20210820, ready. Exact
+immutable terminal is at
+A/data/kis-cross-asset-d1-input-foundation-v1/history/cross-asset-d1-history-20261008-v1/receipt.json;
+SHA6447178aaa7cca269d28d0d8b62b3b3a6add305550a7c67434da2e02e98a44b6.
+Original worker next_due00:51:06.163909Z is historical, not foreground sleep.
+One subsequent exact GLD/AMS20210820/F schema-only diagnostic has HTTP2xx,
+100 rows/99 typed-valid/one low_above_open_close, source pins matched. This is
+not source exhaustion or a rate limit. Original attempt/index remain unchanged.
+Receipt A/data/kis-cross-asset-d1-input-foundation-v1/diagnose-gld-cursor-20261008-v1.json,
+SHAf562e0cadc4aeb08f445df6a099c8299046ae6d273dbe875f9c6d41c7dfe3a97.
+Diagnostic has1 token/1 GET/no body retention; it cannot reconstruct those99
+rows or advance history. Any recovery needs fresh exact bounded input. Offline
+exact-input freezer is a separate package with no provider/cache mutation.
+Actual offline freeze succeeded:1288 shared observed dates, three price-only
+files in M,39 original chunks and distinct observed times. CallerNYSE calendar
+has4813 full-scope dates/hashd2dab6f2...;3525 missing dates per asset remain
+explicit. Exact A/research/kis-cross-asset-d1-input-foundation-v1/input/cross-asset-d1-input-20261008-v1/input-commitment.json,
+SHA02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516,
+ID1db4801c76341bc6bb82805f8e503bf0f020d60a041ceb960b5b9a4c9f2a936d.
+Freezer14 parent tests1.51s/Ruff/independent noP1P2; actual independent
+source-to-output readback passed136bindings/39chunks/three output hashes,
+originalseed JSON/36 identical overlaps/140files unchanged/0 inside-bound gaps.
+Byte consistency is not source authenticity. Input-foundation is COMPLETE as
+scoped partial input; next company objective is the actual monthly comparison
+with disjoint OC-only history recovery, not a wait on whole2007 coverage.
+Open/close-only recovery is a separately reviewed developmental proposal:
+required OC/date/overlap checks remain, unused HL failure stays visible,
+strict v1 Bar eligibility unchanged. No price fabrication or deployment yet.
+Never gate current collection on wholeprobe success.
+SPY/AMS retained4756 dates2007-08-21 through2026-07-17; broad26368 excludes
+trio. TLT/NAS and GLD/AMS current paths work; older reach remains unknown. One reused
+client/shared gates/cursor; no account/order/schedule or old-cache mutation.
+Previous kis-native-timesfm-m5-24-development-v1 exact25 dated shared
 August28-October2 inputs reattested:50 named source partitions/51 pinned
 snapshots,9750 regular M1 each,150 complete120-M1 contexts and300 present
 forward endpoints. No numeric payoff/price suitability or availability claim.

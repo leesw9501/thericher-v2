@@ -8,7 +8,34 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
-Current kis-native-timesfm-m5-24-development-v1 is COMPLETE/REJECTED30 cells.
+Active kis-cross-asset-d1-input-foundation-v1: pure12-calendar-month signal
+adapter integrated/pushedf07145e,44cases/parent277tests. Independent source
+review noP1/P2: rawkis_modp0/previouscalendarcutoff/equalfiniteTHIRD/exactcash,
+forgedtarget/mixedvintage/monthlykeys and futuremutation coverage. No new actual
+market outcomes, fits, weights, GPU allocation or thresholds. Source-local
+price-only/corporate-action and next-OPEN timing assumptions remain visible;
+Data freezes actual useful source inputs before dependent research.
+Pure cross_asset_hedge_failure_input.py5226be9b.../tests6ba61be3... passes39
+dedicated and184 parent tests/.44s. It prepares63D1/six asset-major raw-return
+channels from64 exact CLOSEs/63 OPENs, separately from a fixed balanced-basket
+month-first-OPEN to month-last-CLOSE loss target with exact existing ledger
+5bps-side fees. The normalized target factor is not a policy capital reset;
+endpoint-only replay never supplies daily utility. Independent review active.
+Distinct prepared hypothesis: TRAIN-only hedge-failure classifier, fixed CPU
+HistGradientBoosting and small joint attention model. Actual input/split/compute
+contract is not yet frozen; no fit/GPU or comparative claim follows.
+Pure closed-month replay consumer84c8cbf2.../tests916b4dfd... is frozen,
+35 dedicated cases/.15s. Current integrated serial444passes65.77s covers
+month-end exits/continuous cash/previous net NAV/actual-notional costs, not
+concatenated fresh-capital monthly results. Exact five-year input freeze is
+available02dcc000...; old2008-start proposal remains unavailable/unfrozen.
+Full11399passes/22skips344.60s/eightworkers/11421collected/clean helper,
+Ruff/three Compose pass. Independent exact input/replay source reviews pass;
+no price authenticity or broker parity follows. Input-foundation COMPLETE;
+next kis-cross-asset-monthly-momentum-development-v1 freezes then runs actual
+49-month/24-cell CPU comparison on current input, not a new preparation report.
+
+Previous kis-native-timesfm-m5-24-development-v1 is COMPLETE/REJECTED30 cells.
 Exact25 shared KIS sessions August28-October2, M5 context24/120 past M1,
 fixed20log-bps score and three clocks; one continuous NAV per policy/cost.
 First12 at10bps side: TimesFM zero trades/growth, cannot beat cash. Last13:
