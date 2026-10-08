@@ -42,9 +42,18 @@ fresh replication or a history reset. Independent c4dd88fa... readback verifies
 33 scalers/six cells/66 models/264 progress links; custody33c71fff... is closed
 non_promoting_completed.109 changed-path serial and full11840+22skip350.84s/
 eight clean workers/Ruff/three Compose pass. No active GPU job or Paper promotion.
-Next related trial3 tests one objective-aligned Gamma-HAR/QLIKE-GRU recipe, not
-a revised kill or proven explanation of rejection. If it rejects, retire this
-variance-method question until material new input or an operational hypothesis.
+Final relatedtrial3 completed132 fits/6 cells; both original kills reject.
+Root A/research/kis-d1-qlike-variance-forecast-development-v1;
+contract295a202c.../result7b689cef.../410 source files/tree1b9fa124... .
+99 Gamma CPU/33 CUDA GRU512 updates; parent87.083s/worker81.745s/
+CUDA53.543s/peak188572672bytes. Exact ALL-RO17.345s has zero fits/inference.
+QLIKE baseline .221730/.439486, Gamma .160303/.894817, GRU .380159/.842409.
+Gamma improves only first block; GRU fails baseline. No rescoring or rescue.
+Independent a320d25d... readback2.382s verifies33 scalers/six cells/132 models/
+396 progress links/unchanged artifacts. Custody6dd1cabc... closed,
+relatedtrial3/localindex2/no holdout/Paper input. Variance-method question is
+retired until material new input or a distinct operational hypothesis.
+GPU is available with no active research job; no utilization-only training.
 Closed context below does not describe current resource waits.
 
 Current daily-risk worker actually completed two fits and42 cells: CPU HGB100
@@ -286,9 +295,9 @@ eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
 
 | Queue | Current bounded fact |
 | --- | --- |
-| Breadth | Monthly rule and daily-risk HGB/CUDA/fixed-blend families closed/rejected. Ready current33-month/30-cell causal capped-risk allocation uses unchanged five-year trio input and existing covariance/solver/ledger. |
-| Depth / GPU | Daily-risk actual CUDA512 updates2.602s/peak146361344bytes is closed, not a waiting appointment. No survivor or ready depth allocation follows. Current statistical mechanism needs no predictive fit/GPU; no utilization-only work. |
-| Ensemble | Daily-risk fixed blend rejected under original kill; no learned fuser, member rescue or independently aligned survivor pair is ready. |
+| Breadth | Variance trial3 closed/rejected. Next inventory/turnover-aware operational package prepares one fixed control without predictive-model reuse or comparative outcomes. |
+| Depth / GPU | RTX4090 available, canonical lease released after exact R3 containment. No ready frozen predictive campaign now; preparation continues rather than inventing a fit. |
+| Ensemble | Closed blends remain rejected. Current Paper ownership preparation is deterministic engineering, not an ensemble or model promotion. |
 | Replication | No selected candidate; revised/seen studies cannot become fresh independent evaluation by renaming them. |
 
 FINRA auxiliary-signal proposal is source-rights unresolved, NOT a ready model
@@ -323,8 +332,10 @@ other ready research and Paper continue. https://www.finra.org/terms-of-use
 - Direct learned-position references are not proof of this ETF edge:
   https://arxiv.org/abs/1904.04912 (futures),
   https://arxiv.org/abs/2005.13665 (different diversified ETF portfolio).
-- Current Claude call is review_unavailable/cli_nonzero, not agreement:
-  D:\thericher-v2\model-artifacts\research\source-discovery\claude-cpu-r2-next-direction-20261008-v1.json
+- Current Claude call .988s is review_unavailable/cli_nonzero_other, not agreement:
+  D:/thericher-v2/model-artifacts/research/source-discovery/claude-kis-qlike-variance-20261008-v1.json.
+  Patton2011/official Gamma primary limits independently retrieved by parent;
+  source receipt kis-qlike-variance-primary-sources-20261008-v1.json in that root.
   Independent reviewers supplied actual criticism; no CLI wait blocks ready work.
 
 ## Recovery

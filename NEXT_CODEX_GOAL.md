@@ -2,107 +2,86 @@
 
 ## Objective
 
-Complete kis-objective-aligned-risk-research-v1: answer one finite variance-loss
-question while recovering useful older KIS TLT coverage for later engine work.
-This advances model research and data collection, not profitability permissions.
-Closed static/rolling OLS and GRU results remain rejected under their original
-criteria. Existing Paper and zero-submit preview opportunities keep their owners.
+Complete kis-self-financing-paper-ownership-v1: make the existing private
+multiasset Paper control jointly fundable and restartable while preserving
+the incumbent SPY ownership and original shared10-percent virtual basis.
+This advances Paper trading and portfolio execution, not model promotion.
+No new orders, scheduler or comparative model outcomes in this preparation.
 
-Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1,
-then follow HANDOFF.md, AGENTS.md, RUNBOOK.md and current stateboards. Parent owns
-integration, actual dispatch, source/runtime freeze, custody and Git. Parallel
-packages: Engine worker/tests; Data older-TLT adapter/tests; Infra supervisor;
-independent Execution review. A session due or lane-local fault is not a company
-block. No new recurring worker, approval gate, framework or runtime replacement.
+Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1;
+follow HANDOFF.md, AGENTS.md, RUNBOOK.md and current stateboards. Parent owns
+integration, actual bounded calls, shared contracts and Git. Dispatch disjoint
+Execution implementation, Engine operational input preparation, Data capability
+and independent validation in parallel. No foreground session/quota waiting.
 
-## Final Related Variance Trial
+## Self-Financing Ownership
 
-Study kis-d1-qlike-variance-forecast-development-v1 is outcome-informed related
-development trial3, not fresh replication or a rescue of predecessor verdicts.
-Predecessor contract9087641d.../result86181a7a... remains immutable. Keep original
-input02dcc000.../calendar d2dab6f2.../geometry24a82d3d... exactly:
-D:/thericher-v2/model-artifacts/research/kis-cross-asset-d1-input-foundation-v1/input/cross-asset-d1-input-20261008-v1/input-commitment.json
-D:/thericher-v2/model-artifacts/data/kis-cross-asset-d1-input-foundation-v1/calendar-nyse-20070821-20261007-v1.json
-D:/thericher-v2/model-artifacts/data/kis-d1-rolling-variance-forecast-development-v1/geometry-20261008-v1.json.
-No acquisition splice, Tiingo, public weights, financial NAV or Paper input.
+Reuse the fixed capped-thirds engineering control and existing account/quote/
+orderability/preview paths. Explicitly extend current shared-budget ownership
+to TLT/GLD without adopting unrelated holdings or changing SPY/QQQ history.
+Current volume thericher-v2-paper-canary-private-acct-20261007-v1; preserve
+original basis, existing intent identities, inventory and reservations. Read
+private state only through existing strict parsers with in-process categorical
+projection; never print account/order identifiers, prices, amounts or bodies.
 
-Retain33 month-first DEV decisions2024Jan..2026Sep/views12+21, exactly latest504
-TRAIN entries with complete21-label EXIT j+20<=d-2,63 past returns, future21
-population-variance proxy, trailing21 baseline and target/baseline floor1e-12.
-TRAIN-only population scaling and log-target mean centering; provider availability
-and proxy conditional unbiasedness remain unestablished. Never omit dates or
-infer99 independent samples. Future-byte removal must leave past membership,
-scalers and predictions unchanged. Missing required past is input_unavailable.
+Whole-share incremental plans must include incumbent exposure and available
+cash after every retained reservation, be jointly funded across assets, and
+mark unreachable targets as constrained rather than feasible. Durable identity
+and reservation must precede any future broker side effect. Prove restart and
+exact reconciliation without replacement identities or duplicate funding.
+All existing budget writers must honor the same reservations before relying
+on new ownership. No new risk limit, forecast, global safety flag or approval gate.
+Independent review tests joint funding, foreign inventory, stale/missing quotes,
+pending unknown outcomes and replay; scoped technical failure never halts an
+independent correctly scoped action. A preparation no-intent is not broker success.
 
-At each month fit three single-output GammaRegressor models using the same nine
-standardized HAR inputs (three assets x1/5/22 squared-return averages): alpha0,
-log link/intercept, solver lbfgs, max_iter100, tol1e-4. Existing sklearn only.
-Record each completed fit before subsequent checks. Rank, convergence, nonfinite
-or nonpositive prediction failure is technical incompletion, no fallback,
-clipping, partial-month scoring or budget extension. Store numeric NPZ, no pickle.
+Engine prepares the fixed inventory/turnover-aware control input contract and
+source-free boundary tests, not execution-risk or submission code. Preserve
+R3 original rejections and retire the variance-method question. No GPU fit is
+invented solely for utilization; ready distinct research preparation continues.
+Ask Claude once before material recovery/ownership reliance; unavailable is
+categorical evidence, never agreement or a foreground hold. Use an independent
+source reviewer as well; no new report or provenance platform.
 
-Same seed101 GRU3->32->3/one layer/no dropout/3651 parameters/float32,512 final
-full-batch AdamW .001/.01 updates. Restore TRAIN log-target centering, replace
-only TRAIN loss with expm1(log_target-log_prediction)-(log_target-log_prediction).
-No warm start/search/epoch choice/prediction clipping.99 Gamma+33 CUDA GRU=
-132 fits total under one shared300-second allowance. Source-free CPU synthetic
-preparation first; no actual labels/fits until complete freeze and custody.
+## Parallel TLT Capability And Useful Coverage
 
-Original kill unchanged: Gamma beats baseline and GRU beats both on QLIKE AND
-log-MSE in BOTH blocks, strictly>1e-10. Report all three assets/six cells.
-If this final related trial rejects, retire this variance-method question until
-material new input or a distinct operational hypothesis. This scoped stop does
-not inhibit another ready hypothesis, GPU study or authorized Paper action.
+Prior recovery is partial/nonadvancing_cursor at NAS20160202, not global
+provider exhaustion. Official venue-history source records transfer effective
+2016Feb2; this does not prove KIS NYS capability or the cursor failure's cause:
+https://ir.nasdaq.com/static-files/d5db2165-0942-4419-b622-0e7b9c92670a.
 
-Independently retrieve primary Patton2011 volatility-proxy paper and official
-sklearn Gamma documentation before reliance:
-https://public.econ.duke.edu/~ap172/Patton_vol_proxies_JoE_2011.pdf
-https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.GammaRegressor.html
-QLIKE objective alignment is a plausible question, not a proven explanation
-of previous rejection or latent variance/alpha claim. Ask Claude once for a
-falsification-first challenge; categorical unavailability is not agreement and
-does not pause independent work. Do not repeat unchanged CLI diagnosis.
+One separately scoped typed OC capability/collection package: fixed TLT/NYS
+anchors20160201,20101231,20071231 and TLT/NAS20210819. Explicitly implement
+and test any needed query allowlist change; no monkeypatch of closed producers.
+One approved market-data client/token/shared measured pace, max64 GET attempts
+and accepted pages/shared360-second cooperative budget, including four probes.
+Useful serial continuation only within this scope; stop on nonadvancing cursor
+or categorical failure and preserve exact recovery facts. No account/order/live
+endpoint. Do not splice new coverage into closed input or weaken Bar parsing.
+Market root D:/market_data/us_equities/kis_paper_private/cross-asset-oc/kis-tlt-venue-bridge-v1;
+evidence D:/thericher-v2/model-artifacts/data/kis-tlt-venue-bridge-v1.
+Freeze source/scope before actual calls and independently read exact outcomes.
+Report source-safe coverage/accepted/failure counts/remaining and ETA unknown
+when unmeasured/owned next_due/recovery class, not raw rows or secrets.
 
-Artifacts D:/thericher-v2/model-artifacts/research/kis-d1-qlike-variance-forecast-development-v1.
-Pinned image d6b43213.../Python3.12.14/Torch2.7+cu128/CUDA12.8, network-none,
-CPU2/6GiB/input-source RO/own output only/exclusive canonical GPU lease.
-Preserve exact split/family keys and related ordinal truth. Freeze recipe,
-selected runtime/producer source, input, geometry and custody before fits.
-Bounded CPU smoke, actual CUDA run, ALL-RO cached no-fit replay, independent
-numeric original-kill readback, then non-promoting custody closure.
+## Completion And Continuation
 
-## Parallel Older TLT Recovery
+Completion evidence: synthetic joint-funding/reservation/restart proofs,
+independent source/recovery review, bounded parent-owned read-only preview
+or explicit source-local input_unavailable, plus exact Data capability outcome.
+Strongest kill: any budget writer ignores reservations, restart duplicates
+funding, foreign inventory becomes owned, or unreachable target is feasible.
+Fix the contradiction; do not lower the criterion or create a human hold.
 
-Existing deep2007 TLT seeds being empty does not prove2020/2015 history absent.
-One approved Paper market-data client/token, existing measured shared pace.
-Probe TLT NAS/AMS at20201231,20151231,20101231: exactly six fixed requests.
-Selected OC profile only; no relaxation of canonical Bar parsing. Freeze scope
-and source pins before actual calls. If useful coverage exists, serial durable
-continuation in a separate cache, max64 accepted pages/shared360-second budget.
-Stop on nonadvancing cursor or categorical failure; an owned retry fact does
-not sleep the orchestrator. Reuse typed client/pure helpers, not modified
-constants or monkeypatching of a closed acquisition script.
-
-Canonical data:
-D:/market_data/us_equities/kis_paper_private/cross-asset-oc/kis-tlt-oc-history-recovery-v1.
-Evidence: D:/thericher-v2/model-artifacts/data/kis-tlt-oc-history-recovery-v1.
-No old cache overwrite or active research input splice. Record only accepted/
-failure counts, coverage, pace, remaining/ETA unknown when unmeasured, owned
-next_due and recovery class. Never print rows, secrets or raw broker bodies.
-No account, order or live endpoint; KIS_LIVE_* never read or routed.
-
-## Integration And Continuing Work
-
-Preserve current Paper volume thericher-v2-paper-canary-private-acct-20261007-v1,
-SPY/shared10-percent basis, reservations and exact pending identities.
-SPY23:50KST, one-time zero-submit preview2026-10-09 00:15KST and head00:29KST
-remain separately owned; do not manually invoke or replace their jobs. Runtime
-results are not prerequisites for this independent research/data objective.
-Tiingo rights question is source-local; no new Tiingo numeric work.
+Preserve SPY2026Oct8 23:50KST, zero-submit previewOct9 00:15 and head00:29
+owners. Do not manually invoke/replace them; session runtime is not a completion
+dependency here. No new Tiingo numeric work while its rights question remains.
+Artifacts stay D:/thericher-v2/model-artifacts; data D:/market_data/D:15-percent
+free floor. Never read or route KIS_LIVE_*; live/paid/unclear-rights/public/major
+runtime decisions remain reserved. Private no-cost Paper work is authorized.
 
 Focused role feedback first; changed-path serial, clean-root eight-worker
-authority, Ruff and all three sample-env Compose configurations at integration.
-Commit/push verified owned changes, refresh concise current stateboards, replace
-this file with exactly one material next company objective and CONTINUE until
-a genuine company block or reserved operator decision. Data recovery completion
-is exact-scope evidence, not a global claim of exhausted provider history.
+authority (no extra -q), Ruff and default/research/accounting Compose using
+--env-file .env.example at integration. Verify, commit, push, refresh stateboards,
+replace this with one material next company objective and CONTINUE until a
+genuine company block or reserved operator decision, not a lane-local wait.

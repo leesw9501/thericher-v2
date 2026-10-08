@@ -1,5 +1,44 @@
 # Runbook
 
+## Objective-Aligned Variance And TLT Recovery Closure
+
+Exact research root D:/thericher-v2/model-artifacts/research/kis-d1-qlike-variance-forecast-development-v1.
+Contract295a202c7b25f1fb7bf4830166404160cdb750f72cce802da31edeca690a0fc0;
+result7b689cef0a2be40de6cb432d61817eaaf858075b1f34a0b28a9cd7bf6b6bca59.
+410 selected files/tree1b9fa1248b8a5141bda2d93d825ab0c27200ca7a4246a7b383dbc2a42f4ef6c7.
+132 fits/99 Gamma+33 CUDA GRU512/6 cells; parent87.083s/worker81.745s,
+CUDA53.543s/peak188572672bytes. ALL-RO17.345s cached no-fit/no-inference replay,
+invocation absent before lease release. Both original kills reject; Gamma QLIKE
+.160303/.894817 and GRU .380159/.842409 against baseline .221730/.439486.
+Independent validation-readback.json SHA
+a320d25de70884553aa2d245447d471542cc0dd8d1604c620dfa385cbb86f330,
+2.382s/exact33 scalers/6 cells/132 models/396 progress/unchanged artifacts.
+Host3.14.3 supplements Docker3.12.14, not runtime equivalence/reinference.
+Custody record6dd1cabcae474a26f104b796ce5c276f9eea357b187b09f5207fd022ca0daa5f,
+non_promoting_completed/relatedtrial3/localindex2/no holdout/Paper input.
+Retire this variance-method question until material new input or a distinct
+operational hypothesis, not a global GPU/research/Paper hold.
+
+Exact Data receipt:
+D:/thericher-v2/model-artifacts/data/kis-tlt-oc-history-recovery-v1/tlt-oc-recovery-20261008-v1/receipt.json,
+SHA3ba295136735419f71a71a6b3e69e205b5dc4c31865d4690a0eb74853834b61e.
+Partial81.443s/18 accepted/19 GET attempts/one token/one failure;
+NAS1239 dates2016Feb2..2020Dec31/12 history pages, AMS unestablished.
+Offline validator f5628717... independently verifies68 unchanged files,
+zero OC conflicts/12 overlaps/18 pages/eight source pins. Exact target failure
+e6c4143f... is nonadvancing_cursor at20160202; top-level reason remains null.
+No active job/next_due; remaining/ETA unknown. Counts are inherited dispatch
+attempts, not wire-start measurements. Neither global KIS exhaustion nor
+Nasdaq-transfer causality is proven. Existing TLT1288 dates2021Aug20..2026Oct7
+were not common-cropped from a hidden2016 history. Source-specific pre2016
+NYS and2021Jan..Aug19 questions remain independent of closed research input.
+
+Goal16 authority:272 changed-path serial43.89s/full11931pass22skip35warnings
+353.52s/eight workers/11953collected4.37s/clean helper/exit0, Ruff/three
+sample-env Compose pass.456 supervisor mocks/624 reader mocks/10 Data checks
+separate. Extra-q first full run exited0 but suppressed cardinality; corrected
+complete run is authoritative. Do not add -q to run_parallel_tests.ps1.
+
 ## Rolling Variance Forecast Closure
 
 Exact root D:/thericher-v2/model-artifacts/research/kis-d1-rolling-variance-forecast-development-v1.

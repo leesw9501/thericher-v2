@@ -21,6 +21,37 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
+kis-objective-aligned-risk-research-v1 is COMPLETE. Final related variance
+trial3 actually completed132 fits:99 Gamma/33 CUDA GRU, six cells, both
+original BOTH-metric/BOTH-block kills reject. Exact root
+A/research/kis-d1-qlike-variance-forecast-development-v1; contract295a202c.../
+result7b689cef.../410 selected files/tree1b9fa124... . Parent87.083s/
+worker81.745s/CUDA53.543s/peak188572672bytes; ALL-RO17.345s uses no new
+fit/inference/search/write. Independent a320d25d... readback2.382s verifies
+33 scalers/six cells/132 models/396 progress receipts, unchanged artifacts.
+Host3.14.3 supplements Docker3.12.14, not runtime equivalence or reinference.
+Custody6dd1cabc... closed non_promoting_completed/related3/localindex2.
+Variance-method question is retired until material new input or a distinct
+operational hypothesis; this is not a global GPU, research or Paper hold.
+
+Separate TLT recovery is partial:18 accepted pages/19 GET attempts/one token/
+one failure/81.443s;1239 NAS dates2016Feb2..2020Dec31. Exact receipt
+A/data/kis-tlt-oc-history-recovery-v1/tlt-oc-recovery-20261008-v1/receipt.json,
+SHA3ba295136735419f71a71a6b3e69e205b5dc4c31865d4690a0eb74853834b61e.
+Independent offline reader verifies68 unchanged files/zero OC conflicts:
+nonadvancing_cursor at20160202, not an API-global history/rate limit.
+AMS unestablished; next_due none; remaining/ETA unknown. Existing individual
+TLT input is1288 dates2021Aug20..2026Oct7, not a hidden2016 common-crop.
+2021Jan..Aug19 and pre2016 remain useful source-specific questions.
+
+NEXT owns kis-self-financing-paper-ownership-v1: preserve current shared
+10-percent basis/SPY custody while preparing jointly funded TLT/GLD plans,
+exact durable reservations and restart/reconciliation. Parallel bounded
+TLT/NYS and2021-bridge capability/collection stays outside closed inputs.
+No new scheduler, model promotion, substitute request or order in preparation.
+
+## Closed Predecessor Context
+
 kis-adaptive-risk-engine-development-v1 is COMPLETE. Actual monthly rolling
 OLS/GRU experiment finished66 fits/six cells; both original kills reject.
 Root A/research/kis-d1-rolling-variance-forecast-development-v1;
@@ -45,10 +76,8 @@ Asia/Seoul interpretation/zero orderability/submits/private-source unchanged.
 Official quote date/time mapping does not state timezone; do not infer NY time
 or call scheduler time-window correspondence cryptographic origin evidence.
 
-NEXT owns objective-aligned variance trial3 plus bounded older-TLT OC recovery.
-Gamma log-link/QLIKE GRU are one related final variance-method question, not
-promotion or a rescue of either original rejection. Older TLT probe/collection
-does not splice the active frozen input. A source failure never idles another lane.
+Objective-aligned trial3 and older-TLT recovery above are now closed scoped
+evidence, not outstanding preparation. A source failure never idles another lane.
 
 Useful unchanged input02dcc000.../calendar d2dab6f2... gives all3 ETFs1288
 dates2021Aug20..2026Oct7, raw MODP0/CA/TR/PIT/finality/availability limitations.
@@ -120,10 +149,12 @@ not a weakened Bar parser, repaired price or full-OHLC qualification.
 
 ## Verification And Resume
 
-Goal15 authority:109 changed-path serial17.69s/full11840pass22skip/
-35 existing warnings350.84s/eightworkers/11862collected4.30s/clean helper
-exit0 and cleanup, Ruff/three sample-env Compose pass.145 supervisor tests/
-8 installer mocks passed separately. All required sessions reaped.
+Goal16 authority:272 changed-path serial43.89s/full11931pass22skip/
+35 existing warnings353.52s/eightworkers/11953collected4.37s/clean helper
+exit0 and cleanup, Ruff/three sample-env Compose pass.456 supervisor mocks,
+624 independent-reader mocks and10 Data reader checks passed separately.
+Earlier extra-quiet full run exited0 but hid terminal cardinality; the corrected
+complete run above is authority. All required sessions are reaped.
 Weekly serial diagnostic completedOct3, not due. Inactive retained
 C:/trpy/runs/r-41c8d063 is historical residue; rejected cleanup was not executed
 or circumvented and does not block a fresh isolated helper run.

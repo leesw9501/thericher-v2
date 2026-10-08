@@ -32,7 +32,27 @@ CLOSEs/252 returns. First context2022-12-28..2023-12-29; last2025-08-28..
 2026-08-31. Calendar hash unchanged; required price values not re-read here.
 December2024/2025 decisions follow18:00UTC early CLOSEs; use actual clocks.
 No provider call or silent extending/splicing of the frozen trio input.
-NEXT owns adaptive risk-engine development. Rolling geometry complete:
+Older-TLT recovery actually ended partial81.443s:18 accepted pages/19 GET
+attempts/one token/one failure. NAS1239 dates2016Feb2..2020Dec31/12 history
+pages; AMS unestablished. Exact receipt
+A/data/kis-tlt-oc-history-recovery-v1/tlt-oc-recovery-20261008-v1/receipt.json,
+SHA3ba295136735419f71a71a6b3e69e205b5dc4c31865d4690a0eb74853834b61e.
+Offline reader f5628717... verifies68 unchanged bound files/18 pages/zero
+OC conflicts/12 overlaps/eight source pins. Target failure nonadvancing_cursor
+at NAS20160202 is bound to e6c4143f...; top-level reason remains null.
+No active collector/next_due; remaining/ETA unknown. Counts are inherited
+dispatch attempts, not measured wire starts. This stops only its exact cursor.
+Old input producer retains1288 individual TLT dates2021Aug20..2026Oct7;
+it did not crop a hidden2016 history. Global novelty against other caches
+unverified;2021Jan..Aug19 is uncovered by these two named scopes.
+NEXT permits a separate bounded pre2016 NYS/2021-bridge capability package,
+not an input splice, altered closed producer or global source exhaustion claim.
+Official Nasdaq2016
+announcement records TLT transfer effective2016Feb2; this is venue history,
+not measured KIS coverage or proof of an empty-page cause. Exact reference:
+A/research/source-discovery/tlt-venue-primary-source-20261008-v1.json.
+Do not silently expand the fixed probe or alter shared producer source pins.
+Rolling geometry complete:
 33 windows each latest504 entries with j+20<=d-2, strict prior-session label
 maturity. First TRAIN2021Nov29..2023Nov29, last2024Jul29..2026Jul31;
 1278 required dates2021Aug27..2026Sep30 present for all3/zero metadata gaps.

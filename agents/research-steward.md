@@ -35,9 +35,15 @@ Compacting this projection does not delete evidence or reopen an allocation.
   Independent c4dd88fa... readback is exact for33 scalers/six cells/66 models/
   264 progress links; custody33c71fff... closed non_promoting_completed.
   No active GPU allocation remains; reject is not a global compute restriction.
-  Next related development trial3 may receive one300-second appointment after
-  its Gamma-HAR/QLIKE-GRU contract/source/runtime are frozen.132 fits total,
-  no holdout or Paper qualification; retain predecessor lineage and original kill.
+  Final relatedtrial3 is closed/non_promoting_completed: contract295a202c.../
+  result7b689cef.../410 selected source files/tree1b9fa124...,
+  related3/localregistry2/132 completed fits/six rejected cells.99 CPU Gamma,
+  33 CUDA GRU512 updates/CUDA53.543s/peak188572672bytes/parent87.083s.
+  ALL-RO17.345s/zero fits/inference/search/write; independent a320d25d...
+  readback verifies33 scalers/132 models/396 progress links, artifacts unchanged.
+  Custody6dd1cabc... closed; canonical lease released after invocation absence.
+  No holdout/Paper qualification. Variance-method question retired until material
+  new input or a distinct operational hypothesis; other research is unaffected.
 
 - Current monthly-momentum CPU family is closed/non_promoting_completed:
   contract5245f9f1.../resultabcd8b27..., familytrial1/holdoutnone.24 cells;
