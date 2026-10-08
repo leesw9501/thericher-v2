@@ -21,6 +21,13 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
+NEXT owns kis-paper-baked-runtime-v1: publish the prepared pinned Paper image
+consistently, then strict actual read-only preview without a source overlay.
+Original shared basis/custody and due times remain unchanged; no V3 migration
+or new order in this publication objective. Data free-source corporate-action
+review and distinct allocation preparation run independently. Parent owns
+actual publication/credentials/preview/Git.
+
 kis-self-financing-paper-ownership-v1 is COMPLETE as preparation, not runtime
 migration/deployment or broker execution. Joint whole-share BUY/reservation/
 restart code preserves original shared10-percent basis and incumbent SPY/QQQ

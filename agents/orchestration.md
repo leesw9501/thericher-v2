@@ -5,9 +5,9 @@ the current cross-lane resource projection, not another queue/history or gate.
 
 ## Current Ready / Owned / Due Facts
 
-Closed history remains in lane evidence and Git3e451d8. NEXT owns the distinct
-21-session relative-allocation comparison, not a rescored variance trial.
-Actual study is complete/rejected with independent numerical and custody closure.
+Closed history remains in lane evidence and Gitac3c6eb. NEXT owns baked Paper
+runtime publication/strict read-only preview. The21-session study is closed/
+rejected with independent numerical and custody closure, not a new GPU hold.
 Sole Git/actual resource owner is parent; role authors prepare disjoint packages.
 
 | Resource | Owner | Current fact |
