@@ -504,6 +504,129 @@ def test_asking_price_probe_classifies_blank_fields_as_unusable() -> None:
     assert probe.quote_timestamp_state == "blank"
 
 
+@pytest.mark.parametrize(
+    "parser", [parse_kis_paper_spy_limit_input, parse_kis_paper_qqq_limit_input]
+)
+@pytest.mark.parametrize(
+    ("date_text", "time_text", "observed_at"),
+    [
+        ("20260722", "233000", NOW),
+        ("20260723", "000000", datetime(2026, 7, 22, 15, 0, tzinfo=UTC)),
+        ("20240229", "000000", datetime(2024, 2, 28, 15, 0, tzinfo=UTC)),
+        ("20261231", "235959", datetime(2026, 12, 31, 14, 59, 59, tzinfo=UTC)),
+    ],
+)
+def test_timestamp_trims_string_padding_without_changing_korea_interpretation(
+    parser, date_text, time_text, observed_at
+):
+    payload = _fresh_asking_price_payload()
+    payload["output1"].update(
+        dymd=f" \t{date_text}\r\n", dhms=f"\u00a0{time_text}\t "
+    )
+    quote = parser(
+        asking_price_payload=payload,
+        price_detail_payload=FakeKisPaperQuoteTransport().price_detail_payload,
+        observed_at=observed_at,
+    )
+    probe = inspect_kis_paper_spy_asking_price_response(
+        KisHttpResponse.from_payload(payload), observed_at=observed_at
+    )
+
+    assert quote.quoted_at == observed_at
+    assert probe.quote_timestamp_state == "valid_date_and_time"
+    assert probe.quote_timestamp_age_state == "age_within_120s_under_korea_interpretation"
+    safe = json.dumps(probe.safe_payload())
+    assert date_text not in safe and time_text not in safe
+
+
+@pytest.mark.parametrize(
+    "parser", [parse_kis_paper_spy_limit_input, parse_kis_paper_qqq_limit_input]
+)
+@pytest.mark.parametrize(
+    ("fields", "state"),
+    [
+        ({}, "missing"),
+        ({"dymd": "20260722"}, "missing"),
+        ({"dhms": "233000"}, "missing"),
+        ({"dymd": None, "dhms": "233000"}, "missing"),
+        ({"dymd": "20260722", "dhms": None}, "missing"),
+        ({"dymd": " \t", "dhms": "233000"}, "blank"),
+        ({"dymd": "20260722", "dhms": "\r\n"}, "blank"),
+        ({"dymd": True, "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": False}, "invalid"),
+        ({"dymd": 20260722, "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": 233000}, "invalid"),
+        ({"dymd": ["20260722"], "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": {"time": "233000"}}, "invalid"),
+        ({"dymd": "2026722", "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": "23000"}, "invalid"),
+        ({"dymd": "202607222", "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": "0233000"}, "invalid"),
+        ({"dymd": "\uff12\uff10\uff12\uff16\uff10\uff17\uff12\uff12", "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": "\uff12\uff13\uff13\uff10\uff10\uff10"}, "invalid"),
+        ({"dymd": "2026-07-22", "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": "23:30:00"}, "invalid"),
+        ({"dymd": "2026 722", "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": "23 000"}, "invalid"),
+        ({"dymd": "00000000", "dhms": "000000"}, "invalid"),
+        ({"dymd": "20230229", "dhms": "000000"}, "invalid"),
+        ({"dymd": "20260431", "dhms": "233000"}, "invalid"),
+        ({"dymd": "20261301", "dhms": "233000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": "240000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": "236000"}, "invalid"),
+        ({"dymd": "20260722", "dhms": "235960"}, "invalid"),
+    ],
+)
+def test_timestamp_fields_are_independently_strict_and_category_only(parser, fields, state):
+    payload = {"rt_cd": "0", "output1": {"last": "600.12", "zdiv": "2", **fields}}
+    probe = inspect_kis_paper_spy_asking_price_response(
+        KisHttpResponse.from_payload(payload), observed_at=NOW
+    )
+    assert probe.quote_timestamp_state == state
+    assert probe.quote_timestamp_age_state == "not_checked"
+    assert "dymd" not in probe.safe_payload() and "dhms" not in probe.safe_payload()
+    with pytest.raises(KisPaperQuoteError, match="^quote_timestamp_invalid$"):
+        parser(
+            asking_price_payload=payload,
+            price_detail_payload=FakeKisPaperQuoteTransport().price_detail_payload,
+            observed_at=NOW,
+        )
+
+
+@pytest.mark.parametrize(
+    "parser", [parse_kis_paper_spy_limit_input, parse_kis_paper_qqq_limit_input]
+)
+@pytest.mark.parametrize(
+    ("age", "age_state", "accepted"),
+    [
+        (timedelta(seconds=-5, microseconds=-1), "future_under_korea_interpretation", False),
+        (timedelta(seconds=-5), "age_within_120s_under_korea_interpretation", True),
+        (timedelta(), "age_within_120s_under_korea_interpretation", True),
+        (timedelta(seconds=120), "age_within_120s_under_korea_interpretation", True),
+        (timedelta(seconds=120, microseconds=1), "stale_under_korea_interpretation", False),
+        (timedelta(days=1), "stale_under_korea_interpretation", False),
+    ],
+)
+def test_timestamp_freshness_boundaries_remain_unchanged(parser, age, age_state, accepted):
+    payload = _fresh_asking_price_payload()
+    payload["output1"].update(dymd=" 20260722 ", dhms=" 233000 ")
+    arguments = {
+        "asking_price_payload": payload,
+        "price_detail_payload": FakeKisPaperQuoteTransport().price_detail_payload,
+        "observed_at": NOW + age,
+    }
+    probe = inspect_kis_paper_spy_asking_price_response(
+        KisHttpResponse.from_payload(payload), observed_at=NOW + age
+    )
+    assert probe.quote_timestamp_state == "valid_date_and_time"
+    assert probe.quote_timestamp_age_state == age_state
+    if accepted:
+        assert parser(**arguments).quoted_at == NOW
+    else:
+        with pytest.raises(KisPaperQuoteError, match="^quote_timestamp_stale$"):
+            parser(**arguments)
+
+
 def test_limit_input_requires_fresh_korea_timestamp_scale_and_valid_limit_tick() -> None:
     raw_price_text = "600.12"
     limit_input = parse_kis_paper_spy_limit_input(

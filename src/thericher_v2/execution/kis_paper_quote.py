@@ -61,6 +61,8 @@ _QUOTE_HEADERS: Final = frozenset(
     {"authorization", "appkey", "appsecret", "tr_id", "custtype", "tr_cont"}
 )
 _DECIMAL_PLACES = re.compile(r"[0-6]", re.ASCII)
+_QUOTE_DATE = re.compile(r"[0-9]{8}", re.ASCII)
+_QUOTE_TIME = re.compile(r"[0-9]{6}", re.ASCII)
 
 
 class KisPaperQuoteError(RuntimeError):
@@ -910,10 +912,13 @@ def _quote_timestamp_details(output: Mapping[str, object]) -> tuple[str, datetim
         return "missing", None
     if _blank_text(date_value) or _blank_text(time_value):
         return "blank", None
-    if isinstance(date_value, bool) or isinstance(time_value, bool):
+    if not isinstance(date_value, str) or not isinstance(time_value, str):
+        return "invalid", None
+    date_text, time_text = date_value.strip(), time_value.strip()
+    if _QUOTE_DATE.fullmatch(date_text) is None or _QUOTE_TIME.fullmatch(time_text) is None:
         return "invalid", None
     try:
-        local_time = datetime.strptime(f"{date_value}{time_value}", "%Y%m%d%H%M%S")
+        local_time = datetime.strptime(f"{date_text}{time_text}", "%Y%m%d%H%M%S")
     except (TypeError, ValueError):
         return "invalid", None
     return "valid_date_and_time", local_time.replace(tzinfo=_KOREA_TZ).astimezone(UTC)
