@@ -158,7 +158,7 @@ retained/no plan, source/runtime unchanged/both children reaped/absent. Exact
 A/execution/kis-paper-owned-rebalance-v1/successor-v3/acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json,
 SHAf5cf67c41b79230fcadb8dfc3e5744e0f672eefa8590d6f77c98de8745fb3498.
 Used host461ebf31.../worker4eec676e.../selectore6fb165a... remain immutable.
-Native auth_rejected means any non-2xx token response, not proven account/key
+Native auth_rejected means any non-200 token response, not proven account/key
 expiry. One token-only categorical probe prepares using the existing four-Paper
 selective loader/guard, no new loader, GET/account/order or raw response output.
 Preserve exact v3 parent/identity/shared basis; no blind retry. Transport zero

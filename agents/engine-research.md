@@ -195,7 +195,14 @@ input loader/low-level NAV; cached GRU scores/model-byte binding is not model
 reinference. Host3.14.3 runtime equivalence false. Small TRAIN group count/seen
 DEV/raw-price limits remain. Next source-only
 hypothesis is bounded fixed-rule/ML regime-expert composition, not a refit or
-outcome-driven rescue of this study; proposal must freeze before label access.
+outcome-driven rescue of this study. Pure moduled74abaee.../proposal255666d1...
+is READY:38 cases1.36s/independent1.31s/Ruff, parent73 combined cases1.98s.
+Fixed momentum63/minvar63/cash experts, uniform blend, depth2 tree and6-8-3
+MLP compare36 cells. Chronological diagnostic OOF qualified prefixes14/27/40;
+six OOF and two final fits share300s, no OOF selection or old numeric outputs.
+Thin external worker/metadata-only preparation is next; full source/input/runtime
+freeze precedes actual values/fits/GPU. Public Claude challenge.960s unavailable,
+not agreement: A/research/source-discovery/claude-regime-expert-composition-20261009-v1.json.
 Official v2.2.2 returns median despite its mean name; equality check is valid.
 Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new

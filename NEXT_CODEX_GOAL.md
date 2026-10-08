@@ -58,7 +58,7 @@ baked exact preview reader; pinned-image39 happy-funds tests now pass2.146s.
 Actual v3 f5cf67c4... now fails fresh_reads/auth_rejected at token1/GET0/BUY0,
 parent retained/no plan/8.126s/source unchanged/reaped/absent. Exact successor-v3/
 acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json. Native token rejection collapses
-all non-2xx responses; do not infer expired account or invalid credentials.
+all non-200 responses; do not infer expired account or invalid credentials.
 Prepare one token-only categorical diagnostic using existing selective loader/
 token-start guard, no account/order calls or raw response retention. Preserve
 v3 identity/basis and used sources; never blindly retry or extend plan TTL.
@@ -118,7 +118,9 @@ parent16.768s/worker14.430s/rejected. Cached ALL-RO14.703s passes zero new fits/
 inference/search/write, custodyee7a4132... closed. Independent numerical
 supplementc271607c... now passes3.056s/1008 unchanged bindings/42 cells with
 zero fits/inference/search/writes, shared input/NAV and no GRU reinference.
-Next source-only fixed-rule/ML regime composition prepares;
+Next fixed-rule/ML regime pure kernel/proposal255666d1... is READY38 cases/
+independent source review; external worker/full freeze prepares8 fits/300s/
+36 cells, diagnostic OOF qualified prefixes14/27/40, no actual values yet;
 no old outcome reuse, independent holdout or Paper model claim. Head page4
 mixed-date boundary correction is deployed only to the collector image and
 passes15 baked synthetic cases; real-session evidence still belongs to its owner.

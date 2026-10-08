@@ -8,7 +8,16 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 Oct9 00:29 head invocation terminalf4348515... binds both SPY/QQQ page4
 mixed_exchange_dates partial captures. Actual raw page chronology is unobserved;
-next owned02:28KST unchanged. Released collector37c7a765... and PS77096246...
+that previous result remains retained. New owned02:28KST invocation
+intraday-head-20261008T1728010238609Z terminates17:28:10UTC/nonzero,
+invocation8736eef8.../schedule0e47323f.../exact capture007b331e... . Existing
+readers independently bind the current pointer/terminal/capture: QQQ rejected
+auth_rejected/HTTP4xx, SPY rejected token_request_not_due, input_unavailable/
+terminal_recovery/current_session_short. No new coverage or tested live boundary
+claim; availability/finality remain not_observed. Token next_due17:33:06.641520UTC,
+next head04:24KST; parent prepares one token-only diagnostic while Research
+continues. Exact A/execution/kis-paper-intraday-head-invocation-v1/
+intraday-head-20261008T1728010238609Z/terminal.json. Released collector37c7a765... and PS77096246...
 accept only a proven current-ET-day/previous-day continuation boundary after
 full-page ordering, clocks, identity and cursor validation. Full physical page
 counts stay visible; selected current-day rows stop this head scope, not provider

@@ -20,7 +20,10 @@ Compacting this projection does not delete evidence or reopen an allocation.
   search/writes. Exact same root/validation-readback.json; shared input/NAV,
   cached GRU scores/model binding not reinference, host runtime equivalence
   false. No reopening training or ready depth survivor;
-  next source-only rule/ML regime composition is not allocated until frozen.
+  next rule/ML regime composition pure kernel/proposal255666d1... is READY,
+  38 cases/independent source review; external worker/full freeze still prepare.
+  Six diagnostic OOF+two final fits share300s/36 DEV cells, no old numeric
+  results/holdout or Paper input. No GPU allocation until full contract freeze.
 
 - Conditional-hedge recovery COMPLETE/REJECTED42 cells; contract56787514.../
   result6f08e1c0.../custody16fd33b6... closed/zero sealed spend. One CUDA GRU

@@ -97,7 +97,7 @@ GET0/BUY0/8.126s, parent retained/no plan. Exact successor-v3/
 acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json,
 SHAf5cf67c41b79230fcadb8dfc3e5744e0f672eefa8590d6f77c98de8745fb3498.
 Source/runtime unchanged/both children reaped/absent. These transport facts are
-not independent broker census. Native auth_rejected covers every non-2xx token
+not independent broker census. Native auth_rejected covers every non-200 token
 response: expired account, bad keys or quota are not yet established. Preserve
 v3 identity/basis; one token-only categorical diagnostic prepares through the
 existing selective loader/guard, no new loader or blind order retry.
@@ -219,6 +219,12 @@ Exact collector hash verified inside built image/no production mounts/credential
 network/provider/GPU; source unchanged/reaped/absent. Publicationc5f53d04...
 is collector-only; no new real-session evidence or schedule change. Claude head-boundary
 challenge.949s review_unavailable/cli_nonzero, not agreement or a global wait.
+New owned02:28KST head invocation8736eef8.../schedule0e47323f.../bound capture
+007b331e... fails before market reads: QQQauth_rejected/HTTP4xx, SPYtoken_not_due.
+Current pointer/terminal/capture bind independently; no new coverage or actual
+boundary qualification. Exact A/execution/kis-paper-intraday-head-invocation-v1/
+intraday-head-20261008T1728010238609Z/terminal.json; token due02:33:06.641520KST/
+head04:24KST. Availability/finality not_observed, Research continues.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 

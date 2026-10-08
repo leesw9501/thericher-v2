@@ -75,7 +75,7 @@ TTL300/worker240 and exact closed-v2 pins before token. Actual v3 direct dispatc
 17:00:12..17:00:20UTC fails fresh_reads/auth_rejected/token1/GET0/BUY0/8.126s,
 parent retained/no plan/source unchanged/both children reaped/absent. Exact
 D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json/f5cf67c4... .
-Native token auth_rejected covers any non-2xx; no account-expiry/key/quota proof.
+Native token auth_rejected covers any non-200; no account-expiry/key/quota proof.
 One token-only categorical diagnostic prepares through existing selective
 loader/guard, no GET/account/order/new loader/raw response. Preserve v3 parent,
 identity and original basis; no blind retry. Used host461e/worker4eec/selectore6fb
@@ -165,7 +165,13 @@ Collector-only image6aec64a0... now passes15 baked real-client boundary tests
 3.032s/82e1ca25..., no credential/provider/production volume work. Exact
 D:/thericher-v2/model-artifacts/data/kis-paper-head-boundary-deployment-v1/publication-20261009-v1.json/c5f53d04... .
 Oldb7fcf975... retained/Paperae2... unchanged, existing next_due unchanged;
-synthetic success is not actual new session evidence.
+synthetic success is not actual new session evidence. New02:28KST owned
+intraday-head-20261008T1728010238609Z independently binds invocation8736eef8.../
+schedule0e47323f.../capture007b331e...: QQQauth_rejected/HTTP4xx, SPYtoken_not_due,
+no new coverage/boundary claim, availability/finality not_observed. Exact
+D:/thericher-v2/model-artifacts/execution/kis-paper-intraday-head-invocation-v1/intraday-head-20261008T1728010238609Z/terminal.json.
+Token due02:33:06.641520KST/head04:24KST; one token-only diagnostic prepares
+without manually invoking the task or making Research wait.
 
 ## Owned Rebalance Code And Runtime Delivery
 
