@@ -171,13 +171,25 @@ A/research/kis-cross-asset-erc-development-v1/validation-readback.json,
 SHA09e7265e78d99cfe799c1e3b94f94b7ab8edaefcaae69074403e2000140e9064.
 Independent geometry/covariance/ERC contributions/KKT/metrics/kill, shared NAV;
 host Python3.14.3 is supplementary, not Docker3.12 runtime equivalence.
-Next distinct GPU preparation is direct-risk-capped-utility allocation,
+The distinct direct-risk-capped-utility allocation study is now COMPLETE/REJECTED,
 related to earlier direct-policy family, not new independent alpha. Native
 GRU16/constant policy output allocations, not return/action-value forecasts;
 fixed63-context/21-group path/25-percent shrink/risk10-percent/512 updates,
 two fits/shared300s. Closed-group Torch/Decimal entry/exit fee and cash-drift
-parity must precede actual fitting. Source-only preparation, no GPU allocation
-or model result yet; small TRAIN group count/seen DEV/raw-price limits remain.
+parity precedes actual fitting. Frozen39905a3e.../418-file mixed immutable
+snapshot, workerfa1d01b4...;34 external cases11.60s/independent READY. Actual
+parent16.768s/worker14.430s completes2 fits and42 cells. ConstantCPU512 updates
+1.848s; CUDA GRU16/512 updates4.673s/peak82007552 bytes. Result5045cf03...
+rejects original BOTH-view risk-utility kill; at10bps GRU analytical growth
+0.886%/6.164% is positive, but utility is below cash in both views. This is not
+broker profit or a promoted model. Exact ALL-RO14.703s/zero new fits/inference/
+search/writes passes cached model/action/economic binding. Exact
+A/research/kis-cross-asset-direct-risk-capped-utility-development-v1/parent-verify-8dd7bd8c386a435d881d85301012e6aa.json;
+custodyee7a4132... closed/non_promoting_completed/zero sealed spend, GPU lease
+released after exact reaping/absence. Independent numerical reader prepares;
+small TRAIN group count/seen DEV/raw-price limits remain. Next source-only
+hypothesis is bounded fixed-rule/ML regime-expert composition, not a refit or
+outcome-driven rescue of this study; proposal must freeze before label access.
 Official v2.2.2 returns median despite its mean name; equality check is valid.
 Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new
@@ -192,5 +204,6 @@ or a scheduled Paper observation cannot idle another ready research package.
 No new Tiingo numeric study until the already-raised rights question resolves.
 Pure kernel/adapter10777753... and proposal-contractdc4c007d... released;
 35 parent cases1.65s/independent1.60s/Ruff pass, including Decimal50 economic
-parity, gradients and future perturbations. External thin actual worker prepares;
-no market labels/fits/GPU runtime exercised yet. Native Torch, no new dependency.
+parity, gradients and future perturbations. Actual frozen study above supersedes
+source-only preparation; used sources/failed research history stay unchanged.
+Native Torch, no new dependency.

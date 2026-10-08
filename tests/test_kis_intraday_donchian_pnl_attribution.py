@@ -5,6 +5,8 @@ import os
 import shutil
 import socket
 import urllib.request
+from collections.abc import Iterator
+from copy import deepcopy
 from dataclasses import replace
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
@@ -172,19 +174,29 @@ def test_replay_is_deterministic_and_fifo_rejects_foreign_fills(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
     parent_context: tuple[CatalogedBars, Path],
+    baseline_replay: donchian_replay.DonchianLocalPaperReplay,
 ) -> None:
     _deny_external_access(monkeypatch)
     catalog, parent_directory = parent_context
     parent = _parent_receipt(parent_directory, tmp_path, "deterministic")
 
-    original = donchian_replay.replay_kis_intraday_session_reset_donchian_local_paper(
-        catalog,
-        expected_contract_hash=parent.contract_hash,
-    )
-    repeated = donchian_replay.replay_kis_intraday_session_reset_donchian_local_paper(
-        catalog,
-        expected_contract_hash=parent.contract_hash,
-    )
+    original = baseline_replay
+    session_calls = 0
+    real_session = donchian_replay._run_donchian_local_paper_evidence
+
+    def forward_session(*args, **kwargs):
+        nonlocal session_calls
+        session_calls += 1
+        return real_session(*args, **kwargs)
+
+    with pytest.MonkeyPatch.context() as tracking:
+        tracking.setattr(donchian_replay, "_run_donchian_local_paper_evidence", forward_session)
+        repeated = donchian_replay.replay_kis_intraday_session_reset_donchian_local_paper(
+            catalog,
+            expected_contract_hash=parent.contract_hash,
+        )
+    assert donchian_replay._run_donchian_local_paper_evidence is real_session
+    assert session_calls == 20
     assert repeated == original
 
     first_session = original.session_replays[0]
@@ -258,16 +270,82 @@ def test_attribution_rejects_git_resident_output_root(
 
 
 @pytest.fixture(scope="module")
-def parent_context(tmp_path_factory: pytest.TempPathFactory) -> tuple[CatalogedBars, Path]:
+def _parent_replay_context(
+    tmp_path_factory: pytest.TempPathFactory,
+) -> Iterator[tuple[CatalogedBars, Path, donchian_replay.DonchianLocalPaperReplay]]:
     catalog = _catalog()
     root = tmp_path_factory.mktemp("donchian-pnl-parent")
-    run = donchian_replay.run_kis_intraday_session_reset_donchian_replay(
-        catalog,
-        artifact_root=root / "artifacts",
-        run_label="parent",
-    )
+    sessions = []
+    session_dates = []
+    real_session = donchian_replay._run_donchian_local_paper_evidence
+
+    def capture_session(*args, **kwargs):
+        evidence = real_session(*args, **kwargs)
+        sessions.append(deepcopy(evidence))
+        session_dates.append(kwargs["session"].open_ts.date())
+        return evidence
+
+    with pytest.MonkeyPatch.context() as capturing:
+        _deny_external_access(capturing)
+        capturing.setattr(donchian_replay, "_run_donchian_local_paper_evidence", capture_session)
+        run = donchian_replay.run_kis_intraday_session_reset_donchian_replay(
+            catalog,
+            artifact_root=root / "artifacts",
+            run_label="parent",
+        )
+    assert donchian_replay._run_donchian_local_paper_evidence is real_session
+    assert len(sessions) == run.session_count == 20
+    assert tuple(session_dates) == _SESSION_DATES
     assert run.status == "complete"
-    return catalog, run.precommit_path.parent
+    parent = donchian_replay.load_kis_intraday_donchian_replay_receipt(
+        precommit_path=run.precommit_path, summary_path=run.summary_path
+    )
+    baseline = donchian_replay.DonchianLocalPaperReplay(
+        mechanics=donchian_replay._sum_donchian(item.mechanics for item in sessions),
+        session_replays=tuple(sessions),
+    )
+    assert baseline.mechanics == run.donchian == parent.mechanics
+    assert baseline.mechanics.replay_digest == parent.mechanics.replay_digest
+    assert all(
+        donchian_replay._event_digest(item.events) == item.mechanics.replay_digest
+        for item in sessions
+    )
+    protected_baseline = deepcopy(baseline)
+    parent_bytes = {path: path.read_bytes() for path in (run.precommit_path, run.summary_path)}
+    yield catalog, run.precommit_path.parent, baseline
+    assert baseline == protected_baseline
+    assert all(path.read_bytes() == content for path, content in parent_bytes.items())
+
+
+@pytest.fixture(scope="module")
+def parent_context(
+    _parent_replay_context: tuple[CatalogedBars, Path, donchian_replay.DonchianLocalPaperReplay],
+) -> tuple[CatalogedBars, Path]:
+    return _parent_replay_context[:2]
+
+
+@pytest.fixture
+def baseline_replay(
+    _parent_replay_context: tuple[CatalogedBars, Path, donchian_replay.DonchianLocalPaperReplay],
+) -> donchian_replay.DonchianLocalPaperReplay:
+    return deepcopy(_parent_replay_context[2])
+
+
+def test_captured_baseline_has_independent_nested_event_payloads(
+    baseline_replay: donchian_replay.DonchianLocalPaperReplay,
+    _parent_replay_context: tuple[CatalogedBars, Path, donchian_replay.DonchianLocalPaperReplay],
+) -> None:
+    shared = _parent_replay_context[2]
+    independent = deepcopy(shared)
+    assert baseline_replay == independent == shared
+    event = next(
+        event
+        for event in baseline_replay.session_replays[0].events
+        if event.event_type == "local_paper_portfolio_snapshot" and event.payload["positions"]
+    )
+    event.payload["positions"][0]["quantity"] = "synthetic_mutation"
+    assert baseline_replay != independent
+    assert independent == shared
 
 
 def _parent_receipt(parent_directory: Path, tmp_path: Path, label: str):

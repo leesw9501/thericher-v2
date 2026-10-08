@@ -6,7 +6,18 @@ Full closed history remains recoverable from Git `f4dae42`, immutable external
 receipts and the append-only `campaign_registry`/`research_campaign_custody`.
 Compacting this projection does not delete evidence or reopen an allocation.
 
-## Current Resources (2026-10-08 KST)
+## Current Resources (2026-10-09 KST)
+
+- Direct allocation utility39905a3e.../418-file mixed immutable snapshot is
+  COMPLETE/REJECTED42 cells,2 fits512 updates each/worker14.430s/parent16.768s.
+  ConstantCPU1.848s, CUDA GRU4.673s/peak82007552 bytes. ALL-RO14.703s preserves
+  cached model/action/economics with zero refit/inference/search/write.
+  Exact A/research/kis-cross-asset-direct-risk-capped-utility-development-v1/
+  parent-verify-8dd7bd8c386a435d881d85301012e6aa.json; result5045cf03.../
+  custodyee7a4132... closed/non_promoting_completed/zero sealed spend. Lease
+  released only after exact reaping/absence. Independent numerical reader
+  preparation continues without reopening training. No ready depth survivor;
+  next source-only rule/ML regime composition is not allocated until frozen.
 
 - Conditional-hedge recovery COMPLETE/REJECTED42 cells; contract56787514.../
   result6f08e1c0.../custody16fd33b6... closed/zero sealed spend. One CUDA GRU

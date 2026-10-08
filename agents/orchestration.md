@@ -17,12 +17,12 @@ NEXT owns kis-owned-portfolio-first-rebalance-v1; actual lifecycle is required.
 | Paper runtime | Execution / parent | Final image ae2c68f8.../406 source files/tree7bac725b... verified offline; seven configs retain five RW/two RO roots and all operational fields. No running owner restarted. |
 | Owned rebalance | Execution / parent | SELL full-fill retained. v2 no-wire expiry closure3.418s/93bd... and independent closed RO1.430s/9686... prove2 terminal/zero remaining recovery/starts/acks/fills. Funds adaptere99... passes39 pinned-image happy-funds cases2.146s/c2b3649f... . Distinct v3 source/host/selector prepares; original basis/used sources immutable. |
 | Research CPU | Engine / independent review | ERC36 cells/rejected6.969s and ALL-RO10.372s/e142... closed. Independent covariance/control/kill readback1.862s/09e7265e... passes, no promotion or refit. |
-| Research GPU | Parent / Steward | Chronos2 closed/rejected; lease released. Direct allocation-utility kernel10777753... passes35 tests1.65s/independent READY; thin two-fit CPU-constant/CUDA-GRU16 worker prepares against frozen proposaldc4c007d..., shared300s. No actual fit yet. |
+| Research GPU | Parent / Steward | Direct-utility39905a3e... actual2 fits/42 cells/rejected16.768s; GRU CUDA4.673s/peak82007552 bytes. ALL-RO14.703s/zero new fit/inference/search/write passes; custodyee7a... closed/lease released. Independent numeric supplement prepares; next regime-composition hypothesis source-only. |
 | Data | Data / parent | Sector3x2686 input070e98d7.../compositeab70d192... retained. Split-aware CPU30 cells rejected/ALL-RO passes/custody23a20972... closed. Cursor scope closed, not API exhaustion. |
 | Verification | Parent / independent reviewers | Data598 serial cases59.45s/independent Python+PS READY; full12641pass22skip35warnings374.33s/12663 collected/eight clean workers/helper exit0. Ruff/three sample-env Compose pass; external74 cases16.52s. Head-boundary Claude.949s unavailable/not agreement. |
 | Existing SPY | Execution scheduler | Oct8 23:50 recovery completed; actual child token1/GET0/BUY0. Next Oct9 23:50; original action backed up/settings/triggers unchanged. No manual invoke/new basis. |
 | Existing preview | Execution scheduler | thericher-kis-risk-preview-20261009-0015 Ready/lastOct9 00:15/exit2/no next trigger. Exact outcome not inspected; task exit is not outcome. No manual invocation. |
-| Existing head | Data scheduler | Oct9 00:29 terminalf434.../both page4 mixed-date partial. Corrected collector image6aec... built6.133s; oldb7fc... retained/Paperae2... unchanged. Baked synthetic verification pending; next02:28KST unchanged. No new complete-pair or provider-exhaustion inference. |
+| Existing head | Data scheduler | Oct9 00:29 terminalf434.../both page4 mixed-date partial. Collector image6aec... built6.133s/baked15 cases3.032s/82e1ca25... pass; publicationc5f53d04... . Oldb7fc... retained/Paperae2... unchanged; next02:28KST unchanged. No new actual complete-pair or provider-exhaustion inference. |
 | Console | Existing web | http://127.0.0.1:8787 private loopback; historical accounting/current account separate. |
 | Tiingo rights | Source-local operator question | Starter/Trial retention applicability unknown/already asked; no new Tiingo numeric work. Other lanes continue. |
 
@@ -56,5 +56,9 @@ Execution correction: the unavailable-first-GET synthetic path missed the
 QQQ-only exact-funds delegate. Add a real-client successful funds response for
 every fixed portfolio venue, retaining transport-only substitution; reuse
 existing exact preview reads instead of a large runtime rebuild or blind retry.
+Current validation improvement: reuse the real20-session fixture baseline in
+Donchian/EMA, retaining the second full replay/all53 original assertions and
+two mutation guards.13 cases182.68s/independent READY; eliminates one redundant
+20-session replay per named test, not a matched whole-suite speedup claim.
 Closed results, older image5216e00d... and prior projections remain in Git4b0e79a
 and immutable lane evidence. Refresh this projection when shared facts change.

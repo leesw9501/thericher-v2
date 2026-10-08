@@ -180,8 +180,16 @@ Independent numeric validation-readback.json/09e7265e... now passes1.862s:
 rejection. Independent covariance/ERC/KKT geometry with shared NAV; host3.14.3
 supplements, not equates to Docker3.12.14. No refit or outcome reinterpretation.
 Custody1e0102ae... closed/non_promoting_completed. Next source-only GPU package
-is direct-risk-capped-utility GRU16/constant allocation, with closed-group Torch/
-Decimal economic parity before fitting; no selected model or Paper input.
+direct-risk-capped-utility GRU16/constant allocation is now COMPLETE/REJECTED:
+contract39905a3e.../418-file mixed immutable snapshot, actual2 fits42 cells/
+worker14.430s/parent16.768s. CUDA GRU512 updates4.673s/peak82007552 bytes;
+CPU constant512 updates1.848s. Result5045cf03... rejects original risk-utility
+kill despite positive analytical growth; not broker profit. ALL-RO14.703s
+passes cached model/action/economic binding with zero new fits/inference/search/
+writes. Exact A/research/kis-cross-asset-direct-risk-capped-utility-development-v1/
+parent-verify-8dd7bd8c386a435d881d85301012e6aa.json; custodyee7a4132... closed,
+GPU lease released after exact reaping/absence. Independent numeric supplement
+prepares; next source-only regime-expert composition cannot reuse old results.
 Oct9 00:29 owned M1 head terminalf434.../exact capture both targets partial at
 page4/mixed_exchange_dates. Full-page/older-boundary correction prepares with
 active-key-loss protection; actual page chronology remains unknown/next02:28.
@@ -190,10 +198,21 @@ and independent Python/PS review. Full12641 pass/22 skip/35 warnings374.33s,
 12663 collected/eight clean workers/helper exit0; Ruff/three sample-env Compose
 pass. Collector-only image6aec64a0... is built6.133s; oldb7fcf975... is retained
 for rollback and immutable Paper imageae2... is unchanged. Baked synthetic
-boundary readback still pending; build is not new real-session evidence. Claude head-boundary
+boundary readback now passes15 tests3.032s/82e1ca25... in
+A/data/kis-paper-head-boundary-deployment-v1/parent-ee77fdcbc9464a6280d548a7aceeef24.json.
+Exact collector hash verified inside built image/no production mounts/credentials/
+network/provider/GPU; source unchanged/reaped/absent. Publicationc5f53d04...
+is collector-only; no new real-session evidence or schedule change. Claude head-boundary
 challenge.949s review_unavailable/cli_nonzero, not agreement or a global wait.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
+
+Focused test-only throughput improvement reuses the exact20-session baseline
+already computed by each Donchian/EMA parent fixture, retaining the second real
+replay and all53 original assertions.13 tests182.68s/independent source READY/
+Ruff; two new deep-mutation regressions. Named test calls34.32s/19.78s are not a
+matched comparison with prior parallel authority timings. No production cache
+or reduced session scope; full12641+22 run predates this isolated fixture change.
 
 Goal20 kis-self-financing-paper-rebalance-v1 is COMPLETE as code/replay/image
 delivery, not actual private migration/order/fill. Bounded owner-only SPY trim,

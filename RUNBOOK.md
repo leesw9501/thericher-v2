@@ -142,6 +142,17 @@ GPU allocation or Paper promotion follows.
 Next source-only GPU work uses direct allocation utility rather than return
 forecast argmax; closed-group differentiable entry/exit fee/cash-drift parity
 precedes frozen actual fitting. Existing Tensor/CUDA runtime remains available.
+The39905a3e... direct-utility study now actually completes2 fits/42 cells/rejected:
+worker14.430s/parent16.768s, CUDA GRU512 updates4.673s/peak82007552 bytes.
+ALL-RO14.703s/zero fits/inference/search/writes passes cached model/action/
+economic binding; exact D:/thericher-v2/model-artifacts/research/kis-cross-asset-direct-risk-capped-utility-development-v1/parent-verify-8dd7bd8c386a435d881d85301012e6aa.json.
+Result5045cf03.../custodyee7a4132... closed; source unchanged/exact reaping/absence/
+lease released. No selected model/Paper input; independent supplement prepares.
+Collector-only image6aec64a0... now passes15 baked real-client boundary tests
+3.032s/82e1ca25..., no credential/provider/production volume work. Exact
+D:/thericher-v2/model-artifacts/data/kis-paper-head-boundary-deployment-v1/publication-20261009-v1.json/c5f53d04... .
+Oldb7fcf975... retained/Paperae2... unchanged, existing next_due unchanged;
+synthetic success is not actual new session evidence.
 
 ## Owned Rebalance Code And Runtime Delivery
 

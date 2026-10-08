@@ -107,11 +107,15 @@ matched10-percent annual risk ceiling, six policies/three costs/two seen views
 give36 cells. Freeze source/input/runtime/cost/kill before parent CPU dispatch;
 actual49ea507a.../416-source CPU study now completes6.969s/36 cells/rejected,
 ALL-RO10.372s/e142818c... passes, custody1e0102ae... closed. Next source-only
-GPU preparation is direct-risk-capped-utility GRU16/constant allocation under
-fixed63-context/21-group economics; two fits/512 updates/shared300s. Validate
-closed-group differentiable fee/cash-drift parity against existing Decimal NAV
-before parent freeze/fit. No old outcome reuse, independent holdout or Paper
-model claim. Head page4 mixed-date boundary correction proceeds separately;
+GPU study direct-risk-capped-utility GRU16/constant allocation under fixed63-
+context/21-group economics now completes39905a3e.../2 fits512 updates/42 cells,
+parent16.768s/worker14.430s/rejected. Cached ALL-RO14.703s passes zero new fits/
+inference/search/write, custodyee7a4132... closed. Independent numerical
+supplement and next source-only fixed-rule/ML regime composition prepare;
+no old outcome reuse, independent holdout or Paper model claim. Head page4
+mixed-date boundary correction is deployed only to the collector image and
+passes15 baked synthetic cases; real-session evidence still belongs to its owner.
+No wholesale Paper runtime or frozen input-producer replacement;
 do not filter malformed pages or infer new session coverage from task exit.
 
 Data: integrate only exact XLK/XLF/XLE AMS capability scope, then one reusable
