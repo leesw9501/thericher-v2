@@ -24,7 +24,11 @@ Compacting this projection does not delete evidence or reopen an allocation.
   sealed allocation follows; this is owned terminal evidence, not a hardware
   utilization target or general CUDA restriction.
   Exact root: D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
-- No next predictive GPU campaign is yet frozen or reserved.
+- Next daily-risk predictive GPU campaign is proposed, not yet frozen/reserved:
+  distinct5-session proxy/entry-date split, one CPU HGB and one CUDA attention,
+  fixed blend/42 cells/shared300-second allowance. Freeze all fields/source/
+  input/runtime before actual labels/fits; no utilization-only work. This uses
+  existing five-year input rather than relabeling the original2008 proposal.
   Closed kis-cross-asset-d1-input-foundation-v1 has actual five-year trio
   partial coverage plus source-free feature/target/replay preparation; this
   is not the prepared2008-start campaign's required complete input. No

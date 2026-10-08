@@ -1,5 +1,49 @@
 # Runbook
 
+## Closed KIS Trio Monthly Comparison And OC History
+
+A = D:/thericher-v2/model-artifacts; M = D:/market_data.
+Exact closed research root A/research/kis-cross-asset-monthly-momentum-development-v1:
+contract5245f9f198e781e8409873b1d0654ea946ffa7d704e0cee3190926008192889c,
+resultabcd8b2706167240844bb957069cd85354dcb28f07b51a63a70ec7ae232f1c61,
+actions4bff912ea827669deac1454b88d6c780df043348598e79ffed392d105fe8af84,
+input02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516,
+source401files/tree85f72beba2dd5bd67ecac366885c8dce98d11d52478af0e416ced572e2fddeba.
+49 months/1023 daily marks,24 cells/rejected original10bps all-control kill.
+CPU smoke4.249s/run7.024s/ALL-RO7.220s, zero fits/search/GPU/new weights;
+independent exact24-cell and cashflow readback549 files unchanged. Positive
+normalized price-only growth2.877592percent/34.126525percent is not edge/TR/
+Paper profit. Parent invocation-bound exactCID containment verified all runs.
+Source-freeze.json/precommit.json/started.json/actions.json/worker-result.json,
+parent-{smoke,run,verify}.json/validation-readback.json/custody-outcome.json
+are exact external evidence; don't select a latest receipt. Familytrial1/
+non_promoting_completed/holdoutnone; registryrecordca21fff7... . Do not rerun.
+
+Separate actual OC data root A/data/kis-cross-asset-monthly-momentum-development-v1/oc-only:
+probe6/oc-capability-20261008-v1/receipt.json SHAe095934ca78a813edef914c8d3a76aca520847af4df1539ac18246d6c4c21bef;
+history/oc-history-20261008-v1/receipt.json SHA562aa2e0c490a6a486b12e4a55140246b6c65b2945df9b279c3ca27daeae5bab.
+Probe6queries6accepted/1token, history98accepted attempts/1token/zero failures/
+335.930s plus6 pinned seed manifests.104 total manifests/10006 original-row
+fingerprints/326 independently unchanged files. SPY/AMS and GLD/AMS each4813
+dates2007-08-21..2026-10-07; exact calendar/no gaps/OC conflicts. Requested
+floor is not API exhaustion. TLT NAS/AMS remain unestablished after exact
+empty2015/2007 probes; producer partial/reasonnull/nextduenull is preserved.
+Original strict Bar cache is untouched. Unused GLD2021-05-05 low-field defect
+remains visible; no repairedOHLC/TR/PIT/finality/source-accuracy claim.
+Typed price cache M/us_equities/kis_paper_private/cross-asset-oc/kis-cross-asset-oc-history-v1/history/oc-venues-v1/index.json;
+contractd105667bf530ca20746b36ecb53a35fc7711c43eb92f4a93e0708027c0265477,
+immutable/live index39a1c1d541cadd97bc0afa146380b716b5f42c4ac92bd12cf5ead312f525ab84.
+Actual source is frozen-source-r2; pre-repair source sibling retained/uninvoked.
+No full/token/error body retention, live/account/order/task/schedule invocation.
+Dispatch counts are inherited attempts, not measured wire-start intervals.
+
+Goal11 final changed-path serial372passed21.99s; clean8 authority11516passed/
+22skipped/35existingwarnings346.57s,11538collected4.51s. Current helper temp/
+lease removed; Ruff/three sample-env Compose/git diff --check passed. Cancelled
+pre-repair full run is not authority; inactive retained siblingr-41c8d063 is
+diagnostic residue, not an active owner or global hold. Cleanup policy rejection
+was not executed or circumvented. Engine isolated checkpoint784e554 pushed.
+
 ## Current KIS Trio Input Foundation
 
 NEXT_CODEX_GOAL.md owns kis-cross-asset-d1-input-foundation-v1. Probe10a6858

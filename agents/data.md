@@ -7,6 +7,31 @@ root-relative pointers, not instructions to select a latest file.
 
 ## Ownership And Ready Work
 
+Current goal11 OC-only acquisition is complete as useful SPY/GLD scope; its
+overall producer remains partial because exact TLT scopes are unestablished.
+Root A/data/kis-cross-asset-monthly-momentum-development-v1/oc-only.
+Probe6/oc-capability-20261008-v1/receipt.json SHAe095934ca78a813edef914c8d3a76aca520847af4df1539ac18246d6c4c21bef:
+six accepted queries/one token/zero failures, no raw-body retention.
+History/oc-history-20261008-v1/receipt.json SHA562aa2e0c490a6a486b12e4a55140246b6c65b2945df9b279c3ca27daeae5bab:
+98 accepted GET attempts/one token/zero failures/335.930s plus6 pinned seeds.
+SPY/AMS and GLD/AMS each4813 dates2007-08-21..2026-10-07; exact frozen
+calendar/no gaps, off-calendar dates or OC conflicts. Requested floor reached,
+not API exhaustion; TLT/NAS and TLT/AMS zero dates/unestablished after three
+exact empty seeds. No schedule, active collector, next_due or remaining useful
+page estimate for this drained SPY/GLD contract. Inherited attempt counts are
+not independently measured wire-start pacing. Immutable/live index39a1c1d5...;
+104 manifests/10006 original-row fingerprints/326 unchanged files independently
+verified. GLD2021-05-05 low_above_open_close remains an unused-field warning.
+No full-OHLC, corporate-action/TR/PIT/finality/availability/source-authenticity
+claim; strict Bar parser/original v1 history are unchanged. New typed OC cache:
+M/us_equities/kis_paper_private/cross-asset-oc/kis-cross-asset-oc-history-v1/history/oc-venues-v1/index.json.
+The actual source is frozen-source-r2, not the retained pre-repair sibling.
+NEXT now owns daily-risk development on unchanged input02dcc000...; Data may
+implement its pure exact-calendar daily adapter without provider calls or
+silently extending/splicing the frozen trio input. Old2008 monthly proposal
+remains unavailable. The closed source facts below are historical context,
+not current waits, queues or permission holds.
+
 Data owns acquisition, provenance, calendars, canonical storage, resampling,
 manifests, temporal joins and scoped quality facts; Research owns models and
 outcomes, Execution owns accounts/orders, parent owns integration/publication.

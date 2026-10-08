@@ -2,110 +2,106 @@
 
 ## Objective
 
-Complete kis-cross-asset-monthly-momentum-development-v1: run the first fixed
-KIS-native SPY/TLT/GLD monthly price-momentum comparison on the newly frozen
-five-year input, with continuous capital, realistic cost sensitivity and exact
-zero-fit replay. The outcome is actual engine evidence, not another readiness
-report. Independent historical-input recovery runs alongside it.
+Complete kis-cross-asset-daily-risk-development-v1: fit a CPU HGB and a small
+CUDA attention classifier on KIS-native SPY/TLT/GLD past daily moves, then
+compare their daily basket/cash policies and a fixed probability blend against
+four fixed controls. Produce actual model and continuous-capital evidence,
+not another preparation-only objective. No live or research-to-Paper promotion.
 
-Run C:\Users\Public\Documents\thericher-v2\scripts\start_next_codex_task.ps1,
-then read HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards.
+Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1;
+read HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards. Parent owns
+contracts/runtime/custody/Git; Data owns pure daily adapter, Engine owns models,
+Execution owns analytical cost/carry review; Infra and Validation are bounded
+invocations. Disjoint packages may run in parallel.
 
-## Frozen Starting Input
+## Exact Input And Hypothesis
 
 A = D:/thericher-v2/model-artifacts; M = D:/market_data.
-Exact input:
-A/research/kis-cross-asset-d1-input-foundation-v1/input/cross-asset-d1-input-20261008-v1/input-commitment.json
-SHA02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516.
-All3 have1288 dates2021-08-20..2026-10-07,39 chunks/136 source bindings;
-independent exact OPEN/CLOSE/seed/output readback passes140 unchanged files.
-No gaps inside observed bounds;3525 requested older dates per ETF are absent.
-Distinct observation times, raw MODP0 opaque, dividends/splits/PIT/finality/
-decision-time availability and ideal fractional fills remain limitations.
-No Tiingo/Norgate/FRED/FINRA substitution or new uncertain-rights input.
+Use unchanged A/research/kis-cross-asset-d1-input-foundation-v1/input/cross-asset-d1-input-20261008-v1/input-commitment.json,
+SHA02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516:
+1288 shared dates2021-08-20..2026-10-07/39 chunks/136 bindings/140 files.
+NYSE calendar A/data/kis-cross-asset-d1-input-foundation-v1/calendar-nyse-20070821-20261007-v1.json,
+SHAd2dab6f2ab27a7439ed4be91bacefc68b04908d0b3b7d509e4a2b19925a42721,
+pmcal5.4.0. Exact source-grade raw MODP0 price endpoints; corporate actions/TR,
+PIT/finality/decision-time availability and ideal fractional fills unverified.
+Old monthly2008-start proposal stays unavailable; this is a distinct family,
+not silent split shortening. Extended SPY/GLD OC history cannot be spliced in.
+No Tiingo, Norgate, FRED, FINRA, new weights or uncertain-rights substitution.
 
-The prepared2008-start hedge-failure classifier was not frozen or executed.
-Do not silently shorten it or claim a fit. This is a distinct rule-development
-family, linked to existing trio preparation and seen-source trial history.
+Hypothesis: joint past moves contain information about a next-five-session
+costed balanced-basket loss proxy useful for DAILY basket/cash decisions.
+The TRAIN proxy is not hedge-causality, direct utility or mandatory5-day holding.
+Freeze the entire contract/source/input/runtime/custody before actual labels,
+outcomes or fits. Source-only review is not a predictive result.
 
-## Engine Research Package
+## Frozen Finite Recipe
 
-Freeze the exact input/calendar/runtime/source hashes and contract before any
-actual outcome. Use existing cross_asset_monthly_momentum and monthly_roundtrip
-helpers unchanged: previous scheduled CLOSE, exact previous calendar-year
-anchor, positive sleeves at finite THIRD, inactive weights in cash, no
-renormalization. Enter first scheduled monthly OPEN, exit last CLOSE, initialize
-NAV1 only once and carry net cash/daily-return denominators across all49 months.
+Dates refer to ENTRY sessions, decision at the immediately preceding scheduled
+CLOSE. TRAIN2021-12-01..2023-12-20; exclude entry datesDec21..29 as embargo.
+Last TRAIN label marksDec20/21/22/26/27, before DEV. DEV0 entry2024-01-02..
+2024-12-31; DEV1 entry2025-01-02..2026-09-30. No gap deletion, older fallback,
+outcome-selected sample or in-sample TRAIN economic performance claim.
 
-Fixed comparison blocks:2022-09..2023-12 (16 months) and2024-01..2026-09
-(33 months). The first anchor and every scheduled valuation mark must exist;
-no older observation replacement, skipped dates or outcome-based masks.
-Build/seal all candidate/control actions before consuming future payoff values.
+Pure daily adapter: exact64 CLOSEs/63 OPENs, six asset-major channels x63
+(SPY/TLT/GLD each close-to-close then open-to-close log returns), ending at
+decision CLOSE. Preserve existing MONTH-boundary helpers/guards unchanged.
+TRAIN target first entry OPEN -> fifth scheduled CLOSE, finite equal thirds,
+canonical actual-notional ledger5bps per side; factor below1 is loss. TRAIN-only
+channel standardization/zero-variance divisor1; require30 observations/class
+only for this fit. Contexts/5D labels overlap: report raw counts and disjoint
+five-session block counts, never claim independent effective sample size.
 
-Four fixed policies: candidate12-month momentum, cash, monthly equal-third
-passive, continuous buy-and-hold. The latter charges only initial entry/final
-exit and carries holdings across both blocks; expose its different overnight/
-turnover path rather than forcing matched roundtrip costs.
+Exactly one sklearn1.9.1 HistGradientBoostingClassifier fit: flattened378,
+log_loss/100 iterations/.05 learning rate/max leaves3/depth2/min leaf20/L2=1,
+seed101, no early stopping/class weighting/search. Exactly one Torch2.7 CUDA
+attention fit:6->16 projection/fixed sinusoidal positions/one encoder/two
+heads/FF32/GELU/dropout0/mean pool/one loss logit; float32, unweighted BCE,
+full-batch AdamW lr.001/weight decay.01/512 final updates/seed101. No final
+checkpoint selection or rescue. Fixed50/50 probability blend, no learned fuser.
 
-Costs2.5/5/10bps per side, same actions at every cost:24 cells, one continuous
-daily NAV per policy/cost, block metrics are views rather than fresh accounts.
-Decimal50 ROUND_HALF_EVEN existing actual-notional ledger math. Daily utility
-252*(mean(log_returns)-5*population_variance). Strongest kill at10bps: both
-blocks need positive candidate growth and growth/utility improvements over
-every control by1e-10. Failure closes this recipe; no window/period/ETF/
-threshold rescue, sealed holdout, profitability/Paper or replication claim.
+Each candidate invests finite equal thirds iff P(loss)<.5, otherwise cash.
+Seal ALL DEV actions before DEV payoff evaluation; same actions at every cost.
+Controls: cash, DAILY balanced thirds, uninterrupted buyhold, constant basket
+fraction equal to TRAIN non-loss fraction. Last is not exposure-matched to DEV;
+classification class-prior control is separate, not an economic winner.
+Seven policies x three side costs2.5/5/10bps x two DEV views =42 cells.
 
-CPU synthetic smoke precedes actual pinned Docker CPU run, network-none,
-bounded120 seconds; zero predictive fits, GPU appointment or new model weights.
-Store only external inputs/actions/numeric evidence under A/M, never Git.
-Exact all-read-only replay must reproduce input/actions/24 cells with zero
-fits/search/writes. Temporary independent Validation checks the original kill
-and continuous cashflow only after actual frozen candidate results exist.
+Continuous positions/OPEN rebalance, final CLOSE exit only, NAV1 initialized
+ONCE per policy/cost; inventory/cash/denominators cross DEV boundary. Existing
+Decimal50 ROUND_HALF_EVEN actual-notional ledger, no fresh monthly accounts.
+Daily utility252*(mean log return -5*population variance). Original kill at
+10bps in BOTH views: HGB positive growth and growth/utility greater than all
+four controls by1e-10; attention/blend also beat HGB by1e-10. This is noncyclic:
+HGB need not beat its alternatives. Failure closes this exact recipe; no new
+threshold/window/seed/period/budget, holdout, replication or deployment claim.
 
-## Parallel Data Recovery Package
+## Runtime And Completion
 
-Default strict Bar/OHLC parser and original v1 history/diagnostic/index remain
-unchanged. Actual GLD next-page failure is one low_above_open_close, not an API
-history/throughput limit. A separate explicitly tagged OPEN/CLOSE-only private
-development input may use required date/positive finite OC fields without
-claiming a valid Bar, adjusted source or accurate prices. Record unused OHLC
-failures/dated fingerprints and source limitations, never fabricate fields.
+One shared300-second family allowance covers actual preparation/two fits/
+evaluation, not300s per member. CPU synthetic smoke first. Exact existing image
+sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039,
+Python3.12.14/Torch2.7.0+cu128/CUDA12.8/sklearn1.9.1. No framework replacement.
+Steward freezes eligible custody and takes canonical exclusive GPU lease before
+actual CUDA; parent hard deadline with invocation-bound exact container stop/
+reap, lease released only after containment. Execution preempts at safe point.
+Network-none/input+source RO; own results/checkpoints under A only. Trained
+weights use safe tensor/known-source format, never untrusted pickle/custom code.
 
-Implement a compact source-specific collector/reader, not a generic platform.
-One selective KIS_PAPER loader/client, virtual dailyprice/token endpoints only,
-existing shared1-second request and300-second token-start gates; never read
-KIS_LIVE_* or generic .env. No accounts/orders/existing tasks/schedule changes.
-All source dates/anchors/duplicates/overlaps must validate before cursor advance;
-secret echoes reject before typed-field retention, full/token/error bodies are
-discarded. Bind immutable query/source/OC-row artifacts and durable cursor;
-recover exact accepted orphan data without GET, never reset old history.
-Invalid required OC/date/schema/conflict yields only the affected scope.
+Exact all-RO replay uses frozen actions/results and reconstructs42 economic
+cells with zero refits/search/writes; separately attest saved-model predictions
+or their exact immutable binding without a new GPU campaign. Invoke independent
+Validation only after frozen actual candidate outputs. Close custody on actual
+completion or bounded failure; planned fits are not completed-fit evidence.
 
-First freeze six exact MODP0 questions: GLD/AMS20210820/F; TLT/NAS20151231;
-TLT/AMS20151231; TLT/AMS20071231; GLD/AMS20071231; SPY/AMS20071231.
-No blind venue fallback or source splice. BlackRock's2016 venue announcement
-is a probe hypothesis, not proof that KIS serves older TLT through another code.
-Retain venue-specific provenance and compare overlap before any later join.
-Useful established scope may continue serially in a new named OC cache with
-at most180 GETs/900 seconds per finite appointment and one reusable token.
-Empty/error observations are exact-source facts, never a company-wide wait.
-Preserve D:15-percent free floor; progress/cursor/counts/ETA-or-unknown/next_due
-belong to Data. Current immutable research input cannot be mutated by recovery.
+Claude concise falsification-first split/target/control/cost challenge is
+review_unavailable at A/research/source-discovery/claude-kis-cross-asset-daily-risk-20261008-v1.json:
+one .993s cli_nonzero_other, not agreement; don't repeat unchanged diagnosis.
+Independent exact review and other ready work continue. No provider/account/
+order/task/schedule/dashboard change required. Existing private Paper10-percent
+basis/identities/owned schedules remain independent; never read KIS_LIVE_*.
 
-## Completion And Continue
-
-Actual fixed24-cell result, zero-fit exact replay, independent kill/cashflow
-review and family custody closure; or exact bounded runtime/input failure with
-recoverable evidence. Do not repeat preparation-only objectives.
-Data's own source-local failure does not block this already-ready CPU study;
-a remaining useful recovery package retains its ownership at goal transition.
-
-Ask Claude for concise falsification-first join/cost/control challenge; an
-unavailable invocation is not agreement or a global wait. Preserve current
-unclassified CLI failure without repeated unchanged diagnosis.
-Run changed-path serial, eight-worker clean-root authority, Ruff and all three
-sample-env Compose configurations. Commit/push owned integration, refresh
-current boards/HANDOFF/RUNBOOK, replace this file with exactly one material next
-objective and continue ready work until genuine reserved operator authority.
-Existing private Paper10-percent basis/identities/schedules and live boundary
-stay unchanged; no new manual approval gate or per-agent next-goal file.
+After actual result/replay/independent review/custody evidence, run changed-path
+serial, clean-root eight-worker authority, Ruff and three sample-env Compose
+configs. Commit/push owned integration, refresh current projections, replace
+this file with exactly one material next objective and CONTINUE until genuinely
+reserved operator authority or no ready package advances the company outcome.

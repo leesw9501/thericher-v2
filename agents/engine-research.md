@@ -30,8 +30,17 @@ reconstructs24 cells and separate analytical cashflow,549 files unchanged,
 non_promoting_completed, no sealed spend or outcome-based recipe rescue.
 Data OC recovery is independent; original2008-start hedge-failure classifier
 remains a distinct unfrozen proposal until its exact input is available.
-Company integration remains active; a cancelled pre-repair full test is not
-verification. Final revised Data source still needs focused/full authority.
+Final integration verification passes372 serial21.99s/full11516passes22skips
+346.57s/eightworkers/11538collected/clean helper, Ruff/three Compose. Cancelled
+pre-repair full run is not authority. Data actual OC SPY/GLD each4813 dates
+and326 unchanged files; exact TLT older queries empty, not a company block.
+Next distinct daily-risk family will freeze before actual labels: entry-date
+TRAIN2021-12-01..2023-12-20; embargoDec21..29; DEV2024 and2025-Jan..
+2026-Sep. Six channels x63 exact past sessions, five-session costed-loss TRAIN
+proxy; CPU HGB/one small CUDA attention/fixed half blend, no learned fuser.
+42 cells include cash/daily balanced/buyhold/TRAIN-only fractional null.
+One300-second shared compute allowance/two fits/no searches or sealed spend;
+no actual new contract, labels, fits or appointment is yet claimed.
 
 Closed kis-cross-asset-d1-input-foundation-v1: pure12-calendar-month signal
 adapter integrated/pushedf07145e,44cases/parent277tests. Independent source
