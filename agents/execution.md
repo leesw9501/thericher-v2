@@ -8,8 +8,17 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
-Goal25 preparation COMPLETE; Goal26 authors pure owned gross-PnL attribution.
-No Goal26 order, route, sizing, capital, scheduler or private state writes.
+Goal25 preparation COMPLETE; Goal26 pure owned gross-PnL attribution COMPLETE.
+Helperd5c86e2f.../55parent/55independent+5adversarial probes/Ruff pass.
+Actual ALL-RO root A/execution/kis-owned-portfolio-gross-attribution-v1:
+parent-f0b1a556e9c24a629a43882b4b7ff4c4.json/6502ed82.../3.116s,
+network none/no credentials/client/private40/source418 unchanged/reaped/absent.
+5owners10intents6positive fills2SELLs0pending/incomplete/gross realized sign
+positive. Only historical owned-scope gross, not net/fees/settlement/MTM/model
+profitability. Caller86e1bb64.../32fault tests, immutable job1f421fb6... .
+Existing417 baked image plus exact RO helper overlay; no consumer republish.
+No order, route, sizing, capital, scheduler or private state writes occurred.
+Goal27 Data comparison is independent; existing session still owns its next_due.
 Cumulative facts are counted once and owner-local average entry cost is retained.
 Intent-order replay is not actual fill-time/tax/FIFO accounting. Pending/unknown/
 late ambiguous fills must not become zero or actual-profit claims.
@@ -124,10 +133,12 @@ Do not invent fees or relabel gross as net.
 
 ## Current Handoff
 
-Execution author owns kis_paper_portfolio_pnl.py/tests; Validation challenges
-chronology and conservation; parent owns ALL-RO exact-state projection and Git.
+Pure helper and independent chronology/conservation review complete; parent
+integrated actual ALL-RO projection. Ready recovery is exact future session
+result binding, not duplicate dispatch or accounting refresh polling.
 Focused artifacts/control roots independent; no public dashboard or new worker.
-Full tests only at company integration perAGENTS.md; Goal25 passed334.30s.
+Full tests only at company integration perAGENTS.md; latest Goal26 authority
+405serial/13092full22skip35warnings/13114collected/333.62s/eight clean/helper0.
 Private Paper orders/recovery remain delegated independently of accounting.
 Claude unavailable/non-verdict, latest10cb5c2f... internal_unclassified;
 not agreement, new approval or a reason to stop an independent ready lane.

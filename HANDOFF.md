@@ -20,12 +20,32 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-Goal25 kis-current-control-paper-rebalance-preparation-v1 is COMPLETE as
-preparation, not future runtime closure. Goal26 now builds pure owner-local
-gross realized-PnL attribution from retained KIS Paper cumulative fills.
-No order, sizing, budget, route or schedule changes belong to Goal26.
-Fee/settled-cash/net-PnL facts remain not_observed. Exact source and native
-intent recovery stay authoritative; missing chronology must not become profit.
+Goal26 kis-owned-portfolio-gross-attribution-v1 COMPLETE. Pure owner-local
+average-cost helperd5c86e2f.../55 cases/.24s parent/independent55+5 probes;
+opposite-side final observations must precede the next opposite intent, otherwise
+only a fully known flat owner's total cashflow is sequence-independent.
+Ambiguous/pending/conflicting owners have no numeric/profit output; no global
+Paper hold. Exact Fraction conservation, not rounded budget display or FIFO.
+
+Actual ALL-RO retained-state result:
+A/execution/kis-owned-portfolio-gross-attribution-v1/
+parent-f0b1a556e9c24a629a43882b4b7ff4c4.json,
+SHA6502ed82fef0d5f6b2ea2d528fd3f66f9bb7f58fd582b0e24b6f5c310b8ed0aa,
+3.116s/network none/no credentials or client/private40/source418 unchanged/
+same in-process replay/child reaped/invocation absent.5owners/10intents/
+6positive retained fills/2SELLs/0pending/0incomplete, gross realized sign positive.
+This is historical owned-scope gross, not fee/net/settlement/current MTM or
+winning model evidence. Caller86e1bb64.../32 mocked containment cases pass.
+Job1f421fb6... binds existing417 baked source plus one readonly helper overlay;
+not a new consumer image, writable ledger or broker path.
+
+Goal27 now investigates documented KIS MODP=1 around the retained XLK/XLE
+Dec5 split-sized event: fixed0/1/0 per symbol/six market GETs/one client,
+source-safe numerical signature only. Official0 unadjusted/1 adjusted request
+semantics do not establish dividend/TR/PIT methodology. Original cohorts,
+current engineering control and rejected research remain unchanged.
+
+Goal25 preparation COMPLETE, not future runtime closure.
 
 Goal25 released three small Execution modules: exact retained-control loader,
 exclusive per-session input/custody freeze, and unchanged native-cycle caller.
@@ -150,9 +170,11 @@ Independent source reviewers corrected concrete faults; ready work continues.
 
 ## Verification And Resume
 
-Goal25 changed-path serial387 passed, adapter82/session23/caller18 separately.
-Full clean-root authority13037pass22skip35warnings/13059collected/eight workers/
-334.30s/helper0/reaped/temp cleaned. Ruff/default/research/accounting Compose
+Latest Goal26 authority405changed serial/13092pass22skip35warnings/
+13114collected/eight clean workers/333.62s/helper0/reaped/temp cleaned;
+pure helper55/independent55+5, external caller32 separately pass.
+Goal25 authority387serial/13037full22skip/334.30s remains historical.
+Ruff/default/research/accounting Compose
 with --env-file .env.example pass. External caller/source pins/default-inert/
 actual preview/closed execute and task install separately attested.
 Weekly serial Oct3:6341pass19skip35warnings/1892.93s, not yet overdue.

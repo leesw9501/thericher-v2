@@ -41,9 +41,20 @@ release afterCLOSE/observation date not a publication vintage. Existing curve
 Goal25 input consumer is released: exact loader/session freeze/native caller;
 source-baked417 imageb0198cbb.../final previewb395cd6c...token1/GET14/order0,
 private/source unchanged/reaped. Owned Oct9 13:45UTC opportunity is not a fill.
-Goal26 pure gross attribution needs no collection, raw-data requalification or
-new dataset. Data parity inventory confirms fractional NAV1 research differs
+Goal26 pure gross attribution COMPLETE/no collection or dataset requalification.
+Data parity inventory confirms fractional NAV1 research differs
 from native whole-share/fixed-bank funding; no parameter rescue follows.
+
+Goal27 source capability is ready: official KIS208279102f43fd0c0f15fcf66c9e5a5adda27050
+examples_llm/overseas_stock/dailyprice/chk_dailyprice.py documents MODP0
+adjustment not applied/1 applied, with demo support. Independent parent fetched
+the primary source; this clarifies request semantics, not measured provider
+split/dividend/TR/PIT/vintage behavior or retroactive qualification.
+Data authors one pure comparator/tests; parent owns fixed XLK/XLE AMS each
+0/1/0 BYMD20251205/six GETs/oneclient/native gates/no continuation/retry.
+Before raw acquisition freeze exact sources/scope, empirical Dec5 half-split
+CLOSE comparison/.005 tolerance and repeated-zero/date binding. No values in
+safe output. Original cohorts/current Paper/rejected families unchanged.
 
 Latest owned21:20UTC head now has a validated terminal/schedule chain:
 intraday-head-20261008T2120009002710Z/terminalce6c81c7.../scheduledbac4e0d.../

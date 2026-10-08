@@ -2,10 +2,39 @@
 
 ## Current Owned Opportunities And Research
 
+Goal26 kis-owned-portfolio-gross-attribution-v1 COMPLETE. Pure helperd5c86e2f...
+reuses native custody validation, exact Fraction owner-local average cost and
+gross-cash conservation;55 parent/55independent+5adversarial probes pass.
+Opposite-side blocks require final amount observations before next intent;
+known fullyflat total SELL-BUY is sequence-independent/no per-sale claim.
+Incomplete/conflicting owners retain no numeric/profit claim; unrelated owners
+remain available. Not FIFO/tax/broker cost basis or an Execution permission.
+
+Actual offline root D:/thericher-v2/model-artifacts/execution/kis-owned-portfolio-gross-attribution-v1:
+parent-f0b1a556e9c24a629a43882b4b7ff4c4.json,
+6502ed82fef0d5f6b2ea2d528fd3f66f9bb7f58fd582b0e24b6f5c310b8ed0aa,
+3.116s/network none/credentials false/client false/40private and418sources
+unchanged/same in-process replay/reaped/absent.5owners10intents6positive retained
+fills2SELLs0pending/incomplete/gross realized sign positive. Not net, fees,
+settlement, current MTM or winning engine evidence.
+readback.py86e1bb64.../worker06eebd6a.../32mocked fault cases pass. Defaults
+inert; metadata-only --freeze produced job.json1f421fb6... . Exact explicit
+--read-back requires that immutable job hash, mounted private RO/network none,
+existing b019417 source plus one exact RO PnL helper. Native parser read-only
+adaptation avoids production lock creation; whole-private snapshot seals stay
+opaque, no names/values/identifiers printed. Exact-ID/image/label/full mounts
+checked before stop/remove; independent ID/name/label absence and reaping facts,
+35s cleanup reserve within150s aggregate. No new consumer image or ledger.
+Later source files not used by this frozen runtime cannot invalidate its source
+subset; altered/missing used bytes still reject. No broker/token/credentials.
+
+Goal27 fixed XLK/XLE MODP0/1/0 capability improves free input correctness;
+official KIS0 unadjusted/1 adjusted semantics, not dividend/TR/PIT. Original
+MODP0 cohorts/current control/rejected families unchanged. Exactly six market
+GETs/one client/no continuation/retry/account/orders, categorical findings only.
+
 Goal25 kis-current-control-paper-rebalance-preparation-v1 COMPLETE as tested
-preparation. Goal26 now builds pure owned gross average-cost attribution;
-no order/sizing/budget/recovery/schedule change, no fee/net/settlement inference.
-Exact cumulative state and original book remain authority, no new ledger.
+preparation, not future runtime closure. Existing book/intents remain authority.
 
 Goal25 external root:
 D:/thericher-v2/model-artifacts/execution/kis-current-control-paper-rebalance-preparation-v1.
@@ -91,8 +120,9 @@ unknown/funds reference-only. Preview did not publish a newer snapshot.
 Retained Goal21 actual SELL/twoBUY fill closure980ccc6b... and Goal22 repeat
 cd14cad0... stay valid; client recreation is not host reboot.
 
-Goal25 authority:387 changed-path serial;13037pass22skip35warnings,
-13059collected/eight clean workers/334.30s/helper0/reaped/temp cleanup.
+Latest Goal26 authority:405 changed serial;13092pass22skip35warnings/
+13114collected/eight clean workers/333.62s/helper0/reaped/temp cleanup.
+Goal25 historical387serial/13037full22skip334.30s remains valid for its snapshot.
 Adapter82/session23/caller18 independent focused tests; Ruff/default/research/
 accounting Compose using .env.example pass. No full rerun for docs.
 Weekly serialOct3 remains current, detailed command/history below.

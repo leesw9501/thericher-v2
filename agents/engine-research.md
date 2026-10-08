@@ -8,8 +8,9 @@ A = D:/thericher-v2/model-artifacts; market bytes stay under D:/market_data.
 ## Current Research State (2026-10-09 KST)
 
 Independent company Goal25 preparation is complete, not a future fill or model
-promotion. Goal26 now attributes owned cumulative Paper fills with exact gross
-average-cost accounting; it does not retrain, tune, allocate GPU or change costs.
+promotion. Goal26 owned cumulative gross attribution COMPLETE, not net/MTM/model
+profitability. Goal27 fixed sector mode0/1/0 Data comparison is independent;
+it does not retrain, tune, allocate GPU or change costs/original source cohorts.
 No frozen useful GPU campaign ready; resource idle is not permission/runtime
 failure. Whole-share/fixed-bank parity is a distinct prospective engineering
 question, not a reason to reopen the rejected drift/partial-rebalance families.

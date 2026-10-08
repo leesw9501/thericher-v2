@@ -2,68 +2,75 @@
 
 ## Objective
 
-Complete kis-owned-portfolio-gross-attribution-v1: reconstruct owner-local
-average-cost gross realized-PnL from retained KIS Paper cumulative fills, without
-changing orders, sizing, shared capital, recovery or schedules. This advances
-PnL attribution while the separate owned session opportunity waits.
+Complete kis-sector-adjusted-price-capability-v1: establish what KIS Paper
+MODP=1 actually does around the retained XLK/XLE Dec5 2025 split-sized event,
+using one finite paired/repeated daily-price acquisition. This improves free
+model-input correctness, not a profitability or Paper permission gate.
 
-## Work And Ownership
+## Frozen Scope And Owners
 
-Execution authors one pure kis_paper_portfolio_pnl.py and focused synthetic tests.
-Reuse native budget custody/state validation; exact rational average-cost
-accounting, owner isolation and cash+remaining-entry-cost conservation.
-Use one latest cumulative state per exact intent, never add repeated snapshots.
-Incomplete/unknown or conflicting chronology cannot become a zero/profit claim.
-Output private amounts only in process; safe payload contains categories/counts.
-Fees, settled cash and net PnL remain not_observed, never assumed zero.
-Do not claim tax/FIFO accounting, actual execution-time order or broker profit.
+Data owns a pure six-page comparator and focused synthetic tests.
+Parent owns one fresh Paper client and exact external probe manifest/driver.
+Official KIS commit208279102f43fd0c0f15fcf66c9e5a5adda27050 dailyprice samples
+document0 adjustment not applied/1 applied and demo routing. They do not explain
+dividend/reinvestment, split-only method, revision vintage or total return.
 
-Independent Validation challenges cumulative/intent-order chronology, partial
-fills, duplicates and owner mixing; hand-computed and hostile Decimal tests.
-Parent owns exact ALL-RO offline retained-state readback, if existing parsers
-can supply the exact current binding without outputting identifiers/values.
-Use the known private root/current account/original shared10% basis. No network,
-credentials, broker endpoint or state write is required for attribution.
+Exactly XLK/AMS0,1,0 then XLE/AMS0,1,0; BYMD20251205/GUBN0/AUTHempty/no
+continuation. Maximum one token and six market GETs; no retry/account/order/live.
+Use existing per-account request/token gates and valid client reuse.
+Categorical quota/token-not-due yields only this worker's next_due, not Codex.
+Keep source/API counters and local receipt clocks explicit.
 
-Data reviews only useful source/parity gaps; no new collection or research
-dataset graft belongs to this goal. Engine's rejected learned/rule families stay
-closed; no parameter rescue, holdout or dummy GPU appointment.
+Retain only successfully parsed credential-free market bodies/queries/typed
+pages under D:/market_data; artifacts D:/thericher-v2/model-artifacts.
+Reject duplicate JSON and credential echo before persistence. Source pins/
+native scope/strict no-redirect virtual transport must match before requests.
+Never print rows/prices/ratios/credential values or raw failure text.
+
+Independent Validation challenges comparisons before reliance. Fixed empirical
+CLOSE signature: required Dec4/Dec5, identical date keys, selected mode0 strings
+repeatable, all pre-Dec5 mode1 CLOSEs consistent with one half factor within
+half-cent .005, post-Dec5 unchanged. This is a sampled numerical signature,
+not established provider rounding or complete split/dividend/TR/PIT semantics.
+Unchanged/other-pattern/nonrepeatable/missing/rejected is a scoped result,
+not a reason to qualify or repair an unrelated dataset.
+Preserve original MODP0 cohorts/rejected families/current Paper inputs unchanged.
+No GPU/model fits/holdout/new recurring worker belong to this question.
 
 ## Completion And Strongest Kill
 
-Tests prove partial-sale cost conservation, same-instrument owner separation,
-restart/reobserved cumulative replay equality, no fee/net inference, and safe
-errors/payloads. A conflicting/missing amount, late ambiguous positive-fill
-ordering or unowned sell rejects only this projection.
-Gross cash + exact residual entry cost - original allocation must equal the
-sum of owner-local gross realized amounts exactly, before display rounding.
+Focused tests cover exact scope/mode/date bindings, duplicates/missing events,
+zero-repeat revisions, Decimal precision/boundaries, unrelated pattern and
+safe category-only output. Actual source-bound six-request result (or exact
+positive unavailable category) plus retained-file/hash/native readback closes
+this capability question. Do not infer adjustment from a request flag alone.
+A successful signature supports only this sampled event; broader useful
+adjusted acquisition needs its own useful scope, not a global approval gate.
 
-Code/test completion plus an exact source/private-bound ALL-RO actual readback
-(or recorded concrete input-unavailable reason) closes this bounded accounting
-question, not future Paper runtime or model profitability.
+## Independent Execution
 
-## Independent Owned Session
+Goal26 COMPLETE: pure owner-local gross-PnL helper55 tests/independent55+5
+adversarial probes; exact ALL-RO parent6502ed82.../3.116s/private40/source418
+unchanged/reaped/absent.5owners10intents6positive fills2SELLs/0pending/
+0incomplete/gross realized sign positive. Not fee/net/settlement/MTM/Paper alpha.
 
-Goal25 preparation COMPLETE: A=D:/thericher-v2/model-artifacts,
-A/execution/kis-current-control-paper-rebalance-preparation-v1.
-job2b20f908.../imageb0198cbb.../417sources/tree568a07f8... .
-Exact latest253-CLOSE control06901201... stays frozen per session.
-Actual closed execute12feb23b... token0/GET0/order0; final previewb395cd6c...
-token1/GET14/order0/pending0/private40 unchanged/reaped/absent.
-Task thericher-kis-paper-portfolio-control-20261009 owns Oct9 13:45UTC/22:45KST,
-one trigger/PT12M/IgnoreNew/restart0; installfb06ec9c... is not a future fill.
-Do not manually invoke or replace/reset this session. Baseline-SPY/head/QQQ and
-current original10% basis/book remain separate owners. Future outcome needs
-exact immutable dispatch and private cycle linkage, not latest scan/task exit.
-No foreground waiting; continue ready independent packages.
+Goal25 preparation complete. Exact A/execution/
+kis-current-control-paper-rebalance-preparation-v1/job2b20f908...,
+b0198cbb...417 baked sources; original253 CLOSE control06901201... .
+thericher-kis-paper-portfolio-control-20261009 owns Oct9 13:45UTC/22:45KST,
+one trigger/PT12M/IgnoreNew/restart0/installfb06ec9c... .
+Future submit/fill/closure not_observed. Do not manually invoke or substitute
+this session; original shared10%/baseline-SPY/portfolio/QQQ custody remains.
+Exact immutable dispatch/private linkage, never task exit or latest scan.
 
-## Verification And Continuation
+## Verification And Continue
 
-Changed-path serial plus clean-root full helper, Ruff and default/research/
-accounting Compose sample-env perAGENTS.md at integration. Last Goal25 authority:
-387serial/13037full22skip35warnings/13059collected/eight clean/334.30s.
-Weekly serial Oct3 remains current; no diagnostic repeat for docs.
-Verify/commit/push owned changes, refresh projections and replace this with
-exactly one material next objective; continue until a real reserved decision.
-M=D:/market_data, artifactsA, preserveD:15% floor. Private Paper delegated;
-never read/routeKIS_LIVE_*. Claude unavailable is not agreement or global hold.
+Goal26 authority405changed serial/13092pass22skip35warnings/13114collected/
+eight clean workers/333.62s/helper0; Ruff/three sample-env Compose passed.
+New shared Data code requires changed serial/clean-root authority at integration
+perAGENTS.md; avoid full reruns for docs-only changes. Verify/commit/push owned
+changes, refresh current projections, replace with exactly one next objective,
+continue independent work without foreground waiting.
+Private Paper/no-cost work delegated; D:15% floor. Never read/routeKIS_LIVE_*.
+Claude unavailable is not agreement/global hold; reserved rights/cost/public/
+major runtime/live decisions still belong to operator.
