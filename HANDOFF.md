@@ -39,11 +39,22 @@ winning model evidence. Caller86e1bb64.../32 mocked containment cases pass.
 Job1f421fb6... binds existing417 baked source plus one readonly helper overlay;
 not a new consumer image, writable ledger or broker path.
 
-Goal27 now investigates documented KIS MODP=1 around the retained XLK/XLE
-Dec5 split-sized event: fixed0/1/0 per symbol/six market GETs/one client,
-source-safe numerical signature only. Official0 unadjusted/1 adjusted request
-semantics do not establish dividend/TR/PIT methodology. Original cohorts,
-current engineering control and rejected research remain unchanged.
+Goal27 COMPLETE: fixed XLK/XLE AMS0/1/0 BYMD20251205, one token/six GETs/
+six accepted/18 market files/8.362s. Each100 dates/99pre1post/raw-repeat true;
+all100 CLOSEs changed/half-signature0/post-changed1, both changed_other_pattern.
+The frozen half-split hypothesis failed; do not infer split-only adjustment,
+rounding/dividends/TR/PIT/finality or waive its half-cent test.
+Exact A/data/kis-sector-adjusted-price-capability-v1/
+parent-d2a8265ea59947bf9065bee1b8eb13e6.json/6872c06a...,
+jobd03fa73c.../422source matched/child reaped/native offline readbackccce76f5... .
+Only successfully parsed credential-free raw/query/typed bytes stay in the
+new M/us_equities/kis_paper_private/sector-adjustment-probe-v1 scope.
+Original cohorts/current Paper/rejected models unchanged. Comparator51+5
+independent probes/caller38 fault tests; closed finite question/no retry worker.
+Independent actual readbackaed2e81a.../.681s reattests422sources/18market/
+four custody files/exact native DTO/query/clocks/category, zero network/credentials.
+Goal28 next establishes native whole-share/fixed-bank research parity using
+existing pure APIs and synthetic tests, not another model rescue or Paper gate.
 
 Goal25 preparation COMPLETE, not future runtime closure.
 
@@ -83,6 +94,8 @@ Future submit/fill/terminal closure stays not_observed until exact linked
 runtime/private-state evidence, never a task exit or latest-file scan.
 Scheduler Operational logging disabled: honest-host provenance, not
 cryptographic proof of OS scheduler origin. Continue independent work meanwhile.
+One-shot chat follow-up is owned for Oct9 23:05KST, exact same session/job;
+it checks actual immutable runtime/private linkage, never launches a substitute.
 
 New source-matched session image only:
 sha256:b0198cbb09e2cd54bf96549b75f6518f566dc6053567194539dd1768ca4c4864,

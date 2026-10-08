@@ -28,10 +28,35 @@ checked before stop/remove; independent ID/name/label absence and reaping facts,
 Later source files not used by this frozen runtime cannot invalidate its source
 subset; altered/missing used bytes still reject. No broker/token/credentials.
 
-Goal27 fixed XLK/XLE MODP0/1/0 capability improves free input correctness;
-official KIS0 unadjusted/1 adjusted semantics, not dividend/TR/PIT. Original
-MODP0 cohorts/current control/rejected families unchanged. Exactly six market
-GETs/one client/no continuation/retry/account/orders, categorical findings only.
+Goal27 COMPLETE/changed_other_pattern for both XLK/XLE. Official request flag
+0unadjusted/1adjusted is not proved split-only/dividend/TR/PIT methodology.
+Source-frozen fixed AMS0/1/0 BYMD20251205, token1/sixGET/sixaccepted/18 market
+files/8.362s/422sources unchanged/reaped. Each100dates/99pre1post/rawrepeat true,
+all100 CLOSEs changed/half-signature0/post-changed1. Frozen .005USD half-split
+test failed; no tolerance waiver, original cohort/control replacement or
+adjusted dataset qualification. This finite diagnostic scope is closed.
+Exact root D:/thericher-v2/model-artifacts/data/kis-sector-adjusted-price-capability-v1:
+parent-d2a8265ea59947bf9065bee1b8eb13e6.json/6872c06a45cc140d8d11485438340c30634c35834fbf1f238976d2c3cd9db6fd;
+job.json/d03fa73cc938493a8392929319cf3f16b645b0b7120415935035a5e139c99ad7;
+exactrun/receipt.json/1d3467c1ff13fcb49115a7509bf468cbdf749a90f1d2950748950e74f1742fb5;
+exactrun/readback.json/ccce76f5e74eb0d02ab443203eb215f8425f81be9375d495222afb7d06adae50.
+probe.pye7bda366.../parent.py2f72bbfa.../38 mocked fault cases pass. Defaults inert;
+explicit --freeze is metadata only; --execute requires exact job hash and one
+nonblocking process-scoped native worker lock. Direct isolated host Python,
+selective Paper pair only/native no-redirect virtual transport/gates. No account/
+order/live calls. Max one token/six market GETs/no retry; parent130s work plus
+containment reserve inside150s; timeout/poll errors cannot skip lock/source/
+receipt cleanup. Recursive duplicateJSON/nonfinite constants/credential echoes
+are rejected before raw persistence; only native parser-accepted bytes remain
+under D:/market_data/us_equities/kis_paper_private/sector-adjustment-probe-v1/
+d2a8265ea59947bf9065bee1b8eb13e6. Same native offline client reparses exact
+raw/query/typed bindings and clocks. Honest-host hash consistency, not provider
+immutability/publication or wire-start proof. No new recurring worker.
+Independent-readback.json/aed2e81a5b41479c29cf8d4f173bdcd2e63b70da9798eca200e6de2a614ddc48
+passes in.681s/422sources18market4custody unchanged/zero network or credentials;
+actual result remains changed_other_pattern, original kill failed.
+Goal28 next uses existing pure APIs for a synthetic whole-share/fixed-bank
+research parity bridge, not a production execution/refit/authority change.
 
 Goal25 kis-current-control-paper-rebalance-preparation-v1 COMPLETE as tested
 preparation, not future runtime closure. Existing book/intents remain authority.
@@ -74,6 +99,8 @@ be a valid cycle result, not a fill. Operational logging disabled; provenance
 assumes honest host, not cryptographic Scheduler origin.
 BaselineSPY23:50KST and head nextOct10 00:29KST remain distinct owners.
 Do not foreground-wait for these; independent accounting/research continue.
+Existing session has one-shot chat follow-up Oct9 23:05KST, exact same fixed
+job/session scope; no manual task invocation or replacement follow-up chain.
 
 Source-baked goal25 image only:
 sha256:b0198cbb09e2cd54bf96549b75f6518f566dc6053567194539dd1768ca4c4864,
@@ -120,8 +147,9 @@ unknown/funds reference-only. Preview did not publish a newer snapshot.
 Retained Goal21 actual SELL/twoBUY fill closure980ccc6b... and Goal22 repeat
 cd14cad0... stay valid; client recreation is not host reboot.
 
-Latest Goal26 authority:405 changed serial;13092pass22skip35warnings/
-13114collected/eight clean workers/333.62s/helper0/reaped/temp cleanup.
+Latest Goal27 authority:197 changed serial;13143pass22skip35warnings/
+13165collected/eight clean workers/336.78s/helper0/reaped/temp cleanup.
+Goal26 historical405serial/13092pass22skip333.62s remains valid for its snapshot.
 Goal25 historical387serial/13037full22skip334.30s remains valid for its snapshot.
 Adapter82/session23/caller18 independent focused tests; Ruff/default/research/
 accounting Compose using .env.example pass. No full rerun for docs.

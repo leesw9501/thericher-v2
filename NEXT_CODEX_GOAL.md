@@ -2,75 +2,77 @@
 
 ## Objective
 
-Complete kis-sector-adjusted-price-capability-v1: establish what KIS Paper
-MODP=1 actually does around the retained XLK/XLE Dec5 2025 split-sized event,
-using one finite paired/repeated daily-price acquisition. This improves free
-model-input correctness, not a profitability or Paper permission gate.
+Complete kis-whole-share-fixed-bank-replay-parity-v1: establish a small
+synthetic bridge from analytical fractional research to native whole-share,
+fixed-funding-bank Paper planning. This improves cost-aware backtest/replay
+fidelity, not broker authority or strategy selection.
 
 ## Frozen Scope And Owners
 
-Data owns a pure six-page comparator and focused synthetic tests.
-Parent owns one fresh Paper client and exact external probe manifest/driver.
-Official KIS commit208279102f43fd0c0f15fcf66c9e5a5adda27050 dailyprice samples
-document0 adjustment not applied/1 applied and demo routing. They do not explain
-dividend/reinvestment, split-only method, revision vintage or total return.
+Execution authors one test-only bridge:
+tests/test_kis_paper_whole_share_replay_parity.py.
+Use existing pure native portfolio preview, budget, fill and gross-PnL APIs,
+existing synthetic fixtures and an independent exact-Fraction oracle.
+Parent integrates; independent Validation checks the transition oracle.
 
-Exactly XLK/AMS0,1,0 then XLE/AMS0,1,0; BYMD20251205/GUBN0/AUTHempty/no
-continuation. Maximum one token and six market GETs; no retry/account/order/live.
-Use existing per-account request/token gates and valid client reuse.
-Categorical quota/token-not-due yields only this worker's next_due, not Codex.
-Keep source/API counters and local receipt clocks explicit.
+Freeze a nominal synthetic basis10000/allocated1000 once, three fixed public
+prices/targets/covariance, and explicit0/10bps analytical costs before assertions.
+No real account input or identity, API, credentials, data acquisition, Docker,
+broker effects, production state, model fits/GPU/holdout is required.
+Do not refactor native execution, reset a basis, adopt foreign inventory, change
+risk/sizing/route policy or build a continuous historical engine in this slice.
 
-Retain only successfully parsed credential-free market bodies/queries/typed
-pages under D:/market_data; artifacts D:/thericher-v2/model-artifacts.
-Reject duplicate JSON and credential echo before persistence. Source pins/
-native scope/strict no-redirect virtual transport must match before requests.
-Never print rows/prices/ratios/credential values or raw failure text.
-
-Independent Validation challenges comparisons before reliance. Fixed empirical
-CLOSE signature: required Dec4/Dec5, identical date keys, selected mode0 strings
-repeatable, all pre-Dec5 mode1 CLOSEs consistent with one half factor within
-half-cent .005, post-Dec5 unchanged. This is a sampled numerical signature,
-not established provider rounding or complete split/dividend/TR/PIT semantics.
-Unchanged/other-pattern/nonrepeatable/missing/rejected is a scoped result,
-not a reason to qualify or repair an unrelated dataset.
-Preserve original MODP0 cohorts/rejected families/current Paper inputs unchanged.
-No GPU/model fits/holdout/new recurring worker belong to this question.
+Prove whole-share flooring at an exact boundary, changing marked NAV without
+enlarging the original bank, cumulative/reserved fills counted once, partial/
+pending and contradictory custody remaining scoped, SELL-before-BUY funding,
+and deterministic restart/target identity where existing pure APIs apply.
+Fees are a separate declared analytical overlay; native gross cash is not
+settled or fee-adjusted cash. Never imply that a preview executes a SELL.
+Fractional NAV1 rescaling cannot be asserted equivalent to integer sizing.
 
 ## Completion And Strongest Kill
 
-Focused tests cover exact scope/mode/date bindings, duplicates/missing events,
-zero-repeat revisions, Decimal precision/boundaries, unrelated pattern and
-safe category-only output. Actual source-bound six-request result (or exact
-positive unavailable category) plus retained-file/hash/native readback closes
-this capability question. Do not infer adjustment from a request flag alone.
-A successful signature supports only this sampled event; broader useful
-adjusted acquisition needs its own useful scope, not a global approval gate.
+A focused, independent test bridge demonstrates two linked transitions and
+integer quantities, bank/cash/reservation conservation and the fee boundary.
+The strongest kill is a floor-boundary/gain/pending sequence that silently
+changes the bank, doubles a cumulative fill/reservation, borrows another owner,
+or funds a BUY before its SELL cash exists. Fail truthfully; fix only this
+bounded bridge, never weaken native invariants to make a test pass.
 
-## Independent Execution
+Record the exact remaining historical-replay assumptions, not performance,
+profitability, model promotion or a new dataset gate. This test-only package
+does not reopen the rejected fractional model families.
 
-Goal26 COMPLETE: pure owner-local gross-PnL helper55 tests/independent55+5
-adversarial probes; exact ALL-RO parent6502ed82.../3.116s/private40/source418
-unchanged/reaped/absent.5owners10intents6positive fills2SELLs/0pending/
-0incomplete/gross realized sign positive. Not fee/net/settlement/MTM/Paper alpha.
+## Current Independent Evidence
 
-Goal25 preparation complete. Exact A/execution/
-kis-current-control-paper-rebalance-preparation-v1/job2b20f908...,
-b0198cbb...417 baked sources; original253 CLOSE control06901201... .
+Goal27 COMPLETE: fixed XLK/XLE AMS0/1/0 BYMD20251205, one token/six GETs/six
+accepted/18 market files/8.362s. Both100dates(99pre/1post), raw strings repeat;
+all100 CLOSEs changed, zero pre half-signatures, post CLOSE also changed.
+Both changed_other_pattern: the frozen half-split hypothesis failed.
+No adjusted dataset, split-only method, rounding, dividends/TR/PIT/finality
+qualification. Original cohorts/current Paper/rejected models unchanged.
+Exact A/data/kis-sector-adjusted-price-capability-v1/
+parent-d2a8265ea59947bf9065bee1b8eb13e6.json/6872c06a...;
+jobd03fa73c.../422source matched/reaped/native offline readbackccce76f5... .
+Comparator51+5 independent probes; caller38 fault cases.
+
+Goal26 historical owned gross attribution remains complete, not net/model alpha.
+Goal25 preparation remains complete; actual future session closure unobserved.
 thericher-kis-paper-portfolio-control-20261009 owns Oct9 13:45UTC/22:45KST,
-one trigger/PT12M/IgnoreNew/restart0/installfb06ec9c... .
-Future submit/fill/closure not_observed. Do not manually invoke or substitute
-this session; original shared10%/baseline-SPY/portfolio/QQQ custody remains.
-Exact immutable dispatch/private linkage, never task exit or latest scan.
+job2b20f908.../b0198cbb...417 baked sources/original shared10%/SPY/TLT/GLD/QQQ.
+Do not manually invoke/substitute/reset this session.
+One-shot chat follow-up at23:05KST checks exact runtime evidence, not task exit.
+No foreground wait; ready Engine preparation remains independent.
 
 ## Verification And Continue
 
-Goal26 authority405changed serial/13092pass22skip35warnings/13114collected/
-eight clean workers/333.62s/helper0; Ruff/three sample-env Compose passed.
-New shared Data code requires changed serial/clean-root authority at integration
-perAGENTS.md; avoid full reruns for docs-only changes. Verify/commit/push owned
-changes, refresh current projections, replace with exactly one next objective,
-continue independent work without foreground waiting.
-Private Paper/no-cost work delegated; D:15% floor. Never read/routeKIS_LIVE_*.
-Claude unavailable is not agreement/global hold; reserved rights/cost/public/
-major runtime/live decisions still belong to operator.
+Goal27 authority197 changed serial/13143pass22skip35warnings/13165collected/
+eight clean/336.78s/helper0; Ruff and three sample-env Compose pass.
+Focused-verify the isolated test package. At company integration follow AGENTS.md
+authority contract; avoid redundant full runs for docs/external evidence alone.
+Verify/commit/push owned changes, refresh current projections, replace with
+exactly one next material objective and continue inside standing authority.
+
+Private no-cost/Paper work delegated; D:15%floor. Never read/routeKIS_LIVE_*.
+Claude unavailability is not agreement/global hold. Rights/cost/public/major
+runtime/live decisions remain reserved to operator.

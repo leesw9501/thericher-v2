@@ -50,11 +50,22 @@ examples_llm/overseas_stock/dailyprice/chk_dailyprice.py documents MODP0
 adjustment not applied/1 applied, with demo support. Independent parent fetched
 the primary source; this clarifies request semantics, not measured provider
 split/dividend/TR/PIT/vintage behavior or retroactive qualification.
-Data authors one pure comparator/tests; parent owns fixed XLK/XLE AMS each
-0/1/0 BYMD20251205/six GETs/oneclient/native gates/no continuation/retry.
-Before raw acquisition freeze exact sources/scope, empirical Dec5 half-split
-CLOSE comparison/.005 tolerance and repeated-zero/date binding. No values in
-safe output. Original cohorts/current Paper/rejected families unchanged.
+Goal27 COMPLETE: source-frozen jobd03fa73c.../422pins, parent6872c06a.../
+8.362s/one token/six GET/six accepted/18 market files/reaped. Exact A/data/
+kis-sector-adjusted-price-capability-v1/parent-d2a8265ea59947bf9065bee1b8eb13e6.json;
+receiptrun/1d3467c1.../offline readbackccce76f5... . Both symbols100dates/
+99pre1post/raw canonical repeat true/all100 CLOSE changed/half-signature0/
+post-changed1: changed_other_pattern. Frozen absolute .005USD half-split
+hypothesis failed, not a provider limit or tolerance waiver. No split-only/
+rounding/dividend/TR/PIT/finality claim or qualified adjusted dataset.
+Strict duplicate JSON/credential echo before raw persistence; native offline
+raw/query/typed readback and retained/source hashes matched. Raw scope is
+M/us_equities/kis_paper_private/sector-adjustment-probe-v1/d2a8265ea59947bf9065bee1b8eb13e6.
+Comparator51+5independent probes/caller38fault cases; no retry/next_due worker.
+Independent actual readbackaed2e81a.../.681s validates422sources/18market/four
+custody files unchanged/exact native DTO/query/clocks/category; no network/keys.
+Original cohorts/current Paper/rejected families unchanged. Goal28 needs only
+synthetic native whole-share/fixed-bank parity, no Data quality permission gate.
 
 Latest owned21:20UTC head now has a validated terminal/schedule chain:
 intraday-head-20261008T2120009002710Z/terminalce6c81c7.../scheduledbac4e0d.../

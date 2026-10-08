@@ -9,8 +9,12 @@ A = D:/thericher-v2/model-artifacts; market bytes stay under D:/market_data.
 
 Independent company Goal25 preparation is complete, not a future fill or model
 promotion. Goal26 owned cumulative gross attribution COMPLETE, not net/MTM/model
-profitability. Goal27 fixed sector mode0/1/0 Data comparison is independent;
-it does not retrain, tune, allocate GPU or change costs/original source cohorts.
+profitability. Goal27 Data comparison COMPLETE: both raw repeats match but
+mode1 is changed_other_pattern/half-signature0/post-changed1, parent6872c06a... .
+No split-only/TR/PIT qualification or original cohort/model reinterpretation.
+Goal28 readies a synthetic whole-share/fixed-bank parity bridge, not fitting,
+GPU allocation, changed costs or a rejected model rescue. Existing native pure
+preview/budget/gross-PnL APIs suffice; fractional NAV1 rescaling does not.
 No frozen useful GPU campaign ready; resource idle is not permission/runtime
 failure. Whole-share/fixed-bank parity is a distinct prospective engineering
 question, not a reason to reopen the rejected drift/partial-rebalance families.

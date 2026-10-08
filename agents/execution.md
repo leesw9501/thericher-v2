@@ -18,7 +18,9 @@ positive. Only historical owned-scope gross, not net/fees/settlement/MTM/model
 profitability. Caller86e1bb64.../32fault tests, immutable job1f421fb6... .
 Existing417 baked image plus exact RO helper overlay; no consumer republish.
 No order, route, sizing, capital, scheduler or private state writes occurred.
-Goal27 Data comparison is independent; existing session still owns its next_due.
+Goal27 Data comparison COMPLETE/changed_other_pattern, no Execution input
+promotion or current-control replacement. Goal28 synthetic whole-share/fixed-bank
+parity bridge is independent; existing session still owns its next_due.
 Cumulative facts are counted once and owner-local average entry cost is retained.
 Intent-order replay is not actual fill-time/tax/FIFO accounting. Pending/unknown/
 late ambiguous fills must not become zero or actual-profit claims.
@@ -55,6 +57,8 @@ Session portfolio-control-20261009-v1; job.json
 Future submit/fill/reconciliation/terminal closure not_observed. Need exact
 dispatch/private native-cycle linkage, not latest artifact or task exit.
 Scheduler Operational logging disabled; assumed-honest host, not crypto origin.
+One-shot chat follow-up Oct9 23:05KST checks exact same job/session evidence;
+no manual task invocation, substitute identity or schedule expansion.
 
 owned_session_worker.py249cdd15... and dispatch_owned_session.pyd43c9ca4...
 default inert, verify immutable job/source/helper before selective credentials.
