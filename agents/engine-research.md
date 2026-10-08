@@ -112,6 +112,9 @@ occurred pre-dispatch/no fit; retained immutable, only boundary fix in fresh r2.
 At10bps candidate growth41.49%/29.34%, SPY26.52%/60.29%, equal4 56.64%/64.46%;
 candidate utility negative BOTH views. Positive seen-DEV growth is not a
 survivor, independent replication or broker profit. No rescue/retuning.
+Custody23a20972... closed/non_promoting_completed/zero sealed spend; exact
+ALL-RO is not independent ledger implementation. Author supplement explicitly
+has independent_validation:false, not a deployment gate.
 Known XLK/XLE2:1 Dec5,2025 split produces measured raw half-price discontinuity;
 new consumer must account shares/signals explicitly, not double-adjust or rewrite
 original bytes. No dividend/TR/PIT qualification follows.
@@ -131,6 +134,16 @@ custody36ee1f6f... closed. Post-checkpoint geometry130ee3d0... published:
 189 entries567 keys,61/128 fixed-view decisions,3/7 nonoverlap blocks NOT ESS.
 One fixed128-context/21-target Chronos2-vs-persistence forecast study preparing,
 not a trading-performance result, new weights, holdout or Paper model.
+Now frozen12e454a1.../423 files, CPU smoke1.493s passes. GPU8.382s fails at
+model_load before0 inference/fit; result0579dfd0.../ALL-RO5.536s failure binding.
+Actual no-GPU probe.694s proves missing offline flags; four pass. Separate
+R2 config recovery preserves567 keys/worker36283/kill/cumulative600/720 bounds.
+R2a78b4199... completes24 GPU batches/567 predictions/18.053s/zero fits.
+Host22.679s cannot bind progress because it expects README in the worker's
+two-file inference checkpoint map. Cached-only recovery preserves all three
+acquired-file pins and the exact two-file payload; no reinference or retuning.
+Finalized metrics remain pending, not a Paper or profit claim.
+Official v2.2.2 returns median despite its mean name; equality check is valid.
 Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new
 contract, not reuse of the2021 development view.

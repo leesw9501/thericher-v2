@@ -46,7 +46,8 @@ Exact A/execution/kis-paper-rebalance-runtime-v1/image-publication-20261008-v1.j
 SHAf5f62fd3... . Goal20 full12398pass22skip362.04s/eight clean workers,
 Ruff/default/research/accounting sample-env Compose pass; aborted run not authority.
 Owned runtime A/execution/kis-paper-owned-rebalance-v1 is now source-reviewed
-and installed, not actually ordered/filled. APIa7758f85.../containercaae3d40.../
+and installed; SELL is now actually filled, BUY remains incomplete.
+APIa7758f85.../containercaae3d40.../
 host10c6d626.../runtime-contracta347a9c3...;99 final runtime cases5.19s plus32
 fully mocked installer cases12.60s pass. Independent findings fixed: full nine
 mounts/isolation must match before destructive cleanup; public product-code
@@ -75,6 +76,23 @@ fault fixed without changing original used sources. Exact recovery opportunity
 pointer and previous-action backup7a9ea3fd... under the same root.
 Installed/smoke/exit is never a fill or Scheduler
 origin proof. No task was manually invoked.
+Actual SELL receipt cac226725ad647b1a335a7e19e063fb6/outcome.json/ddbc6298...
+and independent RO reader7e7bf7ce... confirm one exact full fill/closed terminal,
+residual owned SPY/QQQ flat.42 tests4.69s/READY; actual1.376s/zero API/credentials/
+private writes/reaped/absent. Exact:
+A/execution/kis-paper-owned-rebalance-v1/sell-readback-20261008-v1.json,
+SHAce45b4f6ff0897b7a5ef577e9f8755fa254db775fb19700d6a8eb62e3f91ca71.
+The23:10 public BUY receipt f79642a4c86244f784e787f99a07805e/outcome.json/
+92036062... reports unavailable after plan retention/token1/GET19/BUY POST0.
+No embedded dispatch timestamp/image binding; Task/file discovery is not causal
+proof. Source_unchanged:false means verification incomplete, not proven mutation.
+BUY reader e333ee5e.../47 tests12.96s/independent READY actually confirms two
+unsubmitted BUY seeds, one materialized/one unmaterialized; zero retained starts,
+acks/unknowns/fills. Exact buy-readback-20261008-v1.json/SHA648f8f1153e0defd1ccd54d0f8b9674a637d42a20352c5cb49364c77c88d88d9,
+1.467s/zero API/credentials/private writes/reaped/absent. Current scope, plan and
+shared basis pass. Original expiry passed; diagnose the pre-submit branch and
+prepare explicit scoped no-wire closure, never infer provider rejection, extend
+TTL or replace an unknown submission.23:50 owner remains unchanged.
 
 ## Retained Account Evidence
 
@@ -128,7 +146,7 @@ Direct parent dispatch, not a scheduler/fill/V3 success or net-PnL claim.
 
 | Job | Owned next opportunity / action |
 | --- | --- |
-| Owned SPY trim | October8 22:45KST/end22:49; installed Ready, fixed original request, SELL-only. No manual invoke. |
+| Owned SPY trim | October8 22:45 completed: independent exact full SELL/closed terminal, residual owned SPY. Original request preserved; no manual invoke. |
 | Existing SPY budget strategy | October8 23:50KST action recovers same trim request through23:54, not a new-entry BUY. Other dates preserve original action/settings. |
 | thericher-kis-risk-preview-20261009-0015 | October9 00:15KST; one zero-submit trigger/end00:19/PT4M/IgnoreNew/zero restart/no missed-run recovery. Installed/Ready, runtime not observed. |
 | Existing intraday head | Data owns October9 00:29KST; embedded prospective child is preview-only, no bare canary --execute/shared-budget bypass. |

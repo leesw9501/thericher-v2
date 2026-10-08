@@ -26,6 +26,15 @@ Compacting this projection does not delete evidence or reopen an allocation.
   567 keys/10 nonoverlap blocks not ESS; no holdout or profit claim.
   Sector CPU actual30 cells rejected/26.805s/ALL-RO19.330s, zero GPU/holdout;
   cannot revive old kills. Scopecd35838e.../result3299ba9f... .
+  Custody23a20972... closed/non_promoting_completed. Forecast12e454a1... froze
+  567 tasks/423 files; CPU smoke1.493s passes. GPU8.382s/worker4.499s fails
+  before inference/fit at model_load/result0579dfd0.../ALL-RO5.536s failure
+  binding. Lease released after exact absence. Missing offline flags reproduced
+  without GPU/weights/market; R2 caps595s child/711s outer to retain600/720 family.
+  R2a78b4199... actually completes24 GPU batches/567 predictions/18.053s, zero
+  fits; parent22.679s fails progress checkpoint-map binding despite exit0.
+  Exact source unchanged/reaped/absent/lease released. Offline-only cached
+  closure is preparing; no new GPU allocation, reinference or outcome rewrite.
 
 - Current21-session relative-allocation trial1 completed2 fits/42 cells;
   Ridge and CUDA GRU original BOTH-view10bps kills reject. Contractf37b0506.../

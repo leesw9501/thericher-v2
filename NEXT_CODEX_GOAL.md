@@ -32,6 +32,13 @@ through the narrow adapter, preserving all owners' reservations. Exact
 predecessor -> named SELL request/fill -> owner pin -> joint plan/recovery must
 bind, not a permissive current-binding adoption or missing-state replacement.
 Fees/settled cash/net broker PnL remain not_observed unless exact evidence proves them.
+The22:45 SELL now has exact independent full-fill/custody readbackce45b4f6...
+in sell-readback-20261008-v1.json. The23:10 BUY public result92036062... is
+unavailable after retaining the plan. Independent offline BUY readback648f8f11...
+confirms two unsubmitted seeds (one materialized), zero retained submission
+starts/acks/fills and exact plan/shared-basis linkage. Preserve the original
+expired plan; diagnose its pre-submit fault and scoped no-wire recovery without
+extending TTL, fabricating broker rejection or resetting reservations/basis.
 
 Use the next owned regular-session opportunity, keeping owner conflicts and
 token due in the named worker. Resolve the old baseline new-entry direction
@@ -66,6 +73,13 @@ rejected, ALL-RO passes. Next distinct frozen forecast study compares fixed
 Chronos2 against persistence on post-checkpoint targets/567 keys in two
 complete21-target views. Forecast skill is not trading PnL or Paper promotion;
 unknown earlier-context/instrument pretraining overlap remains explicit.
+Actual frozen forecast12e454a1... fails before inference at model_load; a
+no-GPU probe reproduces missing offline flags. Separate R2 config recovery
+keeps567 keys/data/kill and deducts spent4.499s/8.382s from600/720 family.
+R2a78b4199... actually completes24 GPU batches/567 predictions/18.053s,
+zero fits. Parent22.679s fails result binding despite worker exit0; preserve
+both facts. Repair only the offline cached reader's exact checkpoint-map
+semantics; no reinference, retuning, failed-receipt rewrite or promotion claim.
 
 Data: integrate only exact XLK/XLF/XLE AMS capability scope, then one reusable
 client/six fixed OC queries at20261007/20160202 under existing gates/120s bound.

@@ -9,10 +9,26 @@ owned-spy-trim-20261008-v1 request only today23:50..23:54; other dates/settings/
 triggers unchanged and original action backed up. Do not manually invoke or
 infer fills from task status. Exact source-safe installation pointer:
 D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-opportunity-20261008T2245KST-v1.json.
+Actual22:45 SELL receipt cac226725ad647b1a335a7e19e063fb6/outcome.json/ddbc6298...
+and independent RO sell-readback-20261008-v1.json/ce45b4f6... confirm exact
+full SELL/closed terminal/residual owned SPY/QQQ flat. Reader42 tests4.69s;
+actual1.376s/network none/zero API/credentials/writes/reaped/absent. Retained
+custody is not fresh broker positions/fees/net PnL or Scheduler-origin proof.
 API/host/container99 tests5.19s and installer32 tests12.60s pass; inert Docker
 smoke1.33s is not an API call/order/fill. Joint BUY23:10..23:14KST is installed,
 host2f157ea1.../65 cases/independent READY/installer seven mocked cases pass.
 Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-buy-opportunity-20261008T2310KST-v1.json.
+The23:10 public BUY receipt f79642a4c86244f784e787f99a07805e/outcome.json/
+92036062... reports retained plan/unavailable/token1/GET19/BUY POST0, with
+no embedded dispatch timestamp/image binding. Use RO reader e333ee5e... and
+offline scope diagnosis; do not infer private no-submission from exit/counts,
+or rederive plan/TTL/basis. Source_unchanged:false is incomplete verification.
+Independent actual BUY readback648f8f11... now confirms2 unsubmitted seeds,
+one materialized/one unmaterialized and zero retained starts/acks/unknowns/fills.
+Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/buy-readback-20261008-v1.json.
+Source/private unchanged, zero API/credentials/writes. Expiry passed; recover
+only the no-wire local lifecycle, without extending identity/TTL or inventing
+broker rejection. Current scope and shared basis are valid.
 23:50 SELL/BUY router98112184... is installed; recovery host01106782... uses
 the exact retained request hash, never fresh-entry null. Lost post-probe
 request/pin rejects before fresh reads/transport;97 cases/independent review.
@@ -65,6 +81,16 @@ Original pre-dispatch sibling path-prefix fault preserved; future metadata
 command generation catches actual mount shapes without subprocesses.
 Post-checkpoint geometry130ee3d0... published/567 forecast keys; one fixed
 forecast-vs-persistence benchmark prepares, not Paper input or trading PnL.
+Forecast12e454a1.../423 files passes CPU smoke1.493s; GPU8.382s fails at
+model_load before inference/fit, result0579dfd0... . ALL-RO5.536s proves failure
+binding only; lease released/source unchanged. No-GPU probe.694s confirms
+two offline flags fail/four pass. Separate R2 config recovery preserves567
+keys/kill and deducts4.499s worker/8.382s parent from600/720 family bounds.
+R2 contracta78b4199... completes24 GPU batches/567 predictions/18.053s,
+zero fits. Parent22.679s fails cached checkpoint-map binding after worker exit0.
+Used source/receipts are immutable, lease released/child reaped/absent. Repair
+the offline reader only; no reinference or model change. Exact root:
+D:/thericher-v2/model-artifacts/research/chronos2-post-checkpoint-development-v1-runtime-recovery-r2.
 
 ## Owned Rebalance Code And Runtime Delivery
 

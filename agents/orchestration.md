@@ -14,10 +14,10 @@ NEXT owns kis-owned-portfolio-first-rebalance-v1; actual lifecycle is required.
 | Resource | Owner | Current fact |
 | --- | --- | --- |
 | Paper runtime | Execution / parent | Final image ae2c68f8.../406 source files/tree7bac725b... verified offline; seven configs retain five RW/two RO roots and all operational fields. No running owner restarted. |
-| Owned rebalance | Execution / scheduler | Oct8 22:45 SELL/23:10 BUY/23:50 exact recovery installed. Router98112184.../new recovery host01106782... carries exact retained request pin,97 cases/independent READY; R2 installer43 cases18.70s. Original shared basis/settings/other dates retained; no actual order/fill claimed. |
+| Owned rebalance | Execution / scheduler | SELL exact full-fill ce45b4f6..., residual SPY. BUY private readback648f8f11... confirms2 unsubmitted seeds/zero starts, original expiry passed. Pre-submit diagnosis/no-wire recovery preparation run in parallel;23:50 owner and original basis remain exact. |
 | Research CPU | Engine / independent review | ANTICOR actual30 cells11.498s/rejected; ALL-RO15.273s passes. Independent r2 exact30-cell replay1.294s/988 unchanged files/zero fits or inference; canonical venue expectation fixed, failed r1 retained. Custody closed025a7145... . |
-| Research GPU | Parent / Steward | Chronos2 R3 CPU9.616s/CUDA10.030s succeeds after explicit initialization; peak488003584 bytes, exact absence/lease released/custody36ee1f6f... closed. Fixed post-checkpoint forecast study567 keys preparing. GPU is available, not approval-blocked. |
-| Data | Data / parent | Sector3x2686 input070e98d7... independent readback15056b1f... passes. Four-asset compositeab70d192... actually published/known XLK/XLE splits retained; split-aware CPU consumer/dispatcher preparing without raw rewriting. Cursor scope closed, not API exhaustion. |
+| Research GPU | Parent / Steward | Chronos2 R2a78b4199... completes24 batches/567 predictions in18.053s/zero fits. Host22.679s fails cached checkpoint-map binding; offline-only recovery prepares without reinference. Lease released after exact reaping/absence, no permission block. |
+| Data | Data / parent | Sector3x2686 input070e98d7.../compositeab70d192... retained. Split-aware CPU30 cells rejected/ALL-RO passes/custody23a20972... closed. Cursor scope closed, not API exhaustion. |
 | Verification | Parent / independent reviewers | Goal20 full12398pass22skip35warnings362.04s,12420 collected/eight clean workers/helper exit0;395 serial12.61s/8 publication tests/.08s/Ruff/three sample-env Compose pass. Proven cancellation false-block fixed before authority; aborted prior run is not authority. Claude .951s unavailable/not agreement. |
 | Existing SPY | Execution scheduler | HeadOct8 22:15KST unchanged;22:45 owned trim newly installed and23:50 today same-request recovery. Original action backed up/settings/triggers unchanged; no manual invoke or new basis. |
 | Existing preview | Execution scheduler | thericher-kis-risk-preview-20261009-0015 Ready/Oct9 00:15KST/zero-submit/4-minute limit; runtime unobserved. No manual task invocation. |
@@ -45,5 +45,9 @@ path-component boundaries. Reversible improvement: actual mount command
 generation runs metadata-only before the new freeze, no subprocess or gate.
 Chronos2 CUDA capability succeeds; post-checkpoint forecast study prepares
 in parallel with Paper integration, no permission hold or dummy training.
+Measured new bottleneck: consumer-authored synthetic checkpoint fixtures
+masked a producer/reader schema mismatch. Reversible correction: cached-only
+recovery tests use the pinned producer's real checkpoint projection, keeping
+acquired-file integrity separate from inference payload semantics. No GPU rerun.
 Closed results, older image5216e00d... and prior projections remain in Git4b0e79a
 and immutable lane evidence. Refresh this projection when shared facts change.

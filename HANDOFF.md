@@ -22,9 +22,14 @@ this current projection replaces duplication, not evidence or frozen rules.
 ## Current Company Objective
 
 Current goal21 is kis-owned-portfolio-first-rebalance-v1, still ACTIVE.
-The owned SPY trim runtime is installed for2026Oct8 22:45KST;23:50 today
-recovers the same owned-spy-trim-20261008-v1 request. No manual task invoke,
-actual submit/fill or new basis is claimed. Final host10c6d626.../container
+The22:45 owned SPY reduction has an independently read exact full SELL fill/
+closed terminal, residual baseline SPY and QQQ owned-flat. Exact evidence:
+A/execution/kis-paper-owned-rebalance-v1/sell-readback-20261008-v1.json,
+SHAce45b4f6ff0897b7a5ef577e9f8755fa254db775fb19700d6a8eb62e3f91ca71.
+Reader7e7bf7ce.../42 tests4.69s/independent READY; actual1.376s/network none/
+zero API/credentials/private writes/reaped/absent. No fresh broker position,
+fees/net PnL or OS-origin proof.23:50 retains exact recovery; no manual task
+invoke/new basis. Final host10c6d626.../container
 caae3d40.../APIa7758f85... pass99 cases5.19s; installer32 cases12.60s.
 Inert Docker smoke1.33s has zero credential/API/private-state work. Exact
 A/execution/kis-paper-owned-rebalance-v1/scheduled-opportunity-20261008T2245KST-v1.json.
@@ -34,6 +39,18 @@ passes65 cases6.84s and independent four fault regressions: post-dispatch source
 or receipt-write failure cannot erase actual dispatch/containment facts.
 Installer seven fully mocked cases1.55s pass; exact source-safe
 A/execution/kis-paper-owned-rebalance-v1/scheduled-buy-opportunity-20261008T2310KST-v1.json.
+The23:10 public BUY receipt f79642a4c86244f784e787f99a07805e/outcome.json,
+SHA92036062b20ce08d0f55ededeb9389ec062d86db5d436cbc23555fcc0d7535f9,
+reports retained plan/unavailable/token1/GET19/BUY POST0. It lacks dispatch
+timestamp/image binding: Task facts/file discovery are not causal proof or
+private zero-submission evidence. Independent BUY reader e333ee5e... now
+confirms two never-submitted seeds: one materialized intent_recorded and one
+unmaterialized, zero retained submission starts/acks/unknowns/fills. Exact
+A/execution/kis-paper-owned-rebalance-v1/buy-readback-20261008-v1.json,
+SHA648f8f1153e0defd1ccd54d0f8b9674a637d42a20352c5cb49364c77c88d88d9.
+Actual1.467s/zero API/credentials/private writes/reaped/absent; plan/scope/shared
+basis verify. Expiry has passed; source-only pre-submit diagnosis and exact
+no-wire retirement preparation continue, without TTL/basis/identity reset.
 23:50 exact SELL/BUY router98112184... is installed; new SELL recovery host
 01106782... requires the probe's original request hash, never a null fresh-entry
 handoff. Lost post-probe request/pin rejects before fresh reads/transport.
@@ -91,8 +108,17 @@ Exact A/research/chronos2-runtime-capability-20261008-v1-cuda-init-r3/parent-cud
 SHA237608288478c6d4a5589f8f0001b6b559b6a63b8a30118f68714cbf3e69c997;
 custody36ee1f6f... closed/lease released. Post-checkpoint geometry130ee3d0...
 published/189 entries567 series keys/two fixed complete21-target views,10
-nonoverlapping blocks not ESS. Fixed Chronos2/persistence forecast study prepares;
-no predictive result, trading PnL or Paper input yet.
+nonoverlapping blocks not ESS. Forecast12e454a1.../423 files is frozen, CPU
+smoke1.493s passes; GPU8.382s fails at model_load before inference/fits.
+Result0579dfd0.../ALL-RO failure binding5.536s, source unchanged/lease released.
+Actual no-GPU probe.694s proves two offline flags fail/four pass. Separate R2
+config recovery preserves567 keys/data/kill and cumulative600/720 bounds.
+R2a78b4199... CPU smoke1.543s and actual GPU18.053s/24 batches/567 predictions/
+zero fits complete. Parent22.679s reports worker_unavailable because offline
+progress checkpoint-map binding fails; preserve the failed host receipt.
+Source unchanged, exact child reaped/absent, lease released. Cached-only reader
+recovery is next, not reinference or model tuning. No finalized predictive
+claim, trading PnL or Paper input yet.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 
