@@ -142,7 +142,16 @@ R2a78b4199... completes24 GPU batches/567 predictions/18.053s/zero fits.
 Host22.679s cannot bind progress because it expects README in the worker's
 two-file inference checkpoint map. Cached-only recovery preserves all three
 acquired-file pins and the exact two-file payload; no reinference or retuning.
-Finalized metrics remain pending, not a Paper or profit claim.
+Exact cached-only CPU replay13.815s passes/resultb9026c02.../readbackb4821adc...,
+zero inference/fits/search/write and unchanged source/input/sealed bytes.
+Original BOTH-view MAE/pinball kill rejects: median MAE improves about5.0% in A
+but worsens about6.9% in B; pinball improves in both, not a rescue of the kill.
+Peak497301504 bytes on CUDA; custody5540cae2... closed/non_promoting_completed,
+R1 failure0cc6656a... separately closed. Host failure remains immutable.
+No independent holdout, selected model, Paper input or broker PnL follows.
+Next bounded CPU mechanism: pure covariance ERC d1e700cf.../40 tests.22s and
+independent READY. Thin adapter preparing over the same causal252-return inputs,
+continuous NAV and matched cost/risk controls; no market result yet.
 Official v2.2.2 returns median despite its mean name; equality check is valid.
 Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new

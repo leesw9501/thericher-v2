@@ -117,8 +117,15 @@ R2a78b4199... CPU smoke1.543s and actual GPU18.053s/24 batches/567 predictions/
 zero fits complete. Parent22.679s reports worker_unavailable because offline
 progress checkpoint-map binding fails; preserve the failed host receipt.
 Source unchanged, exact child reaped/absent, lease released. Cached-only reader
-recovery is next, not reinference or model tuning. No finalized predictive
-claim, trading PnL or Paper input yet.
+recovery now passes13.815s/zero inference/fits/search/writes/current bytes unchanged.
+Exact A/research/chronos2-post-checkpoint-development-v1-runtime-recovery-r2-offline-finalization-v1/parent-cached-verify.json,
+SHAb4821adc6e307a2219bd8be5e5f9bef05f3dbec43845d5b5b5d0b1a1c02c5cff.
+Resultb9026c02... rejects original BOTH-view median-MAE/pinball kill: B's median
+error worsens despite pinball improvements. Peak497301504-byte CUDA; custody
+5540cae2... closed/non_promoting_completed, R1 failure0cc6656a... closed separately.
+No selected model, Paper input or profit claim. Next independent CPU preparation
+is pure covariance ERC d1e700cf.../40 tests.22s/independent READY, small adapter
+over existing inputs/NAV/risk/cost controls; no actual result yet.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 

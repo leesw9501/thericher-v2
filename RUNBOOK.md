@@ -91,6 +91,11 @@ zero fits. Parent22.679s fails cached checkpoint-map binding after worker exit0.
 Used source/receipts are immutable, lease released/child reaped/absent. Repair
 the offline reader only; no reinference or model change. Exact root:
 D:/thericher-v2/model-artifacts/research/chronos2-post-checkpoint-development-v1-runtime-recovery-r2.
+Separate offline-finalization-v1/parent-cached-verify.json/b4821adc... now
+passes13.815s/zero inference/fits/search/write, exact metrics and current input/
+source/artifact revalidation. Original criterion rejects; custody5540cae2...
+closed. Failed original host receipt remains intact. Pure ERC40 cases.22s/
+independent READY is next CPU preparation, no market outcome.
 
 ## Owned Rebalance Code And Runtime Delivery
 

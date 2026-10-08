@@ -93,6 +93,16 @@ acks/unknowns/fills. Exact buy-readback-20261008-v1.json/SHA648f8f1153e0defd1ccd
 shared basis pass. Original expiry passed; diagnose the pre-submit branch and
 prepare explicit scoped no-wire closure, never infer provider rejection, extend
 TTL or replace an unknown submission.23:50 owner remains unchanged.
+The owned23:50 router170777ef.../95604a74... completes exact_retained_buy;
+child50cafb56.../01f9bcea... is terminal_incomplete/token1/GET0/BUY0, source
+verified/reaped/absent. Independent reasons reader56bf5fa1.../nine tests.07s/
+READY actually reads1 expired materialized intent plus1 unmaterialized seed.
+Exact buy-reasons-readback-20261008-v1.json/caccbf244972525150736a7a62800b77d6bdd9a337ddfcf48aee0261a479955b,
+1.346s/zero API/credentials/writes/private bytes unchanged. Stored expiry does
+not prove the original exception. Remaining no-wire closure uses existing
+terminal semantics, not a new phase or provider rejection. Prototype5482e22f...
+passes44 cases2.85s; exact packet/independent review pending, no actual closure.
+Claude changed recovery challenge.955s unavailable/not agreement.
 
 ## Retained Account Evidence
 

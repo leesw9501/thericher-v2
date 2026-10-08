@@ -34,7 +34,10 @@ Compacting this projection does not delete evidence or reopen an allocation.
   R2a78b4199... actually completes24 GPU batches/567 predictions/18.053s, zero
   fits; parent22.679s fails progress checkpoint-map binding despite exit0.
   Exact source unchanged/reaped/absent/lease released. Offline-only cached
-  closure is preparing; no new GPU allocation, reinference or outcome rewrite.
+  closure now passes13.815s/b4821adc..., original kill rejected. Custody5540cae2...
+  closed/non_promoting_completed; R1 failure0cc6656a... separately retained.
+  No new GPU allocation, reinference, holdout or outcome rewrite. Actual CUDA
+  peak497301504 bytes; no training fits. Ready CPU ERC preparation is independent.
 
 - Current21-session relative-allocation trial1 completed2 fits/42 cells;
   Ridge and CUDA GRU original BOTH-view10bps kills reject. Contractf37b0506.../

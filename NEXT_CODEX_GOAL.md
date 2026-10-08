@@ -79,7 +79,11 @@ keeps567 keys/data/kill and deducts spent4.499s/8.382s from600/720 family.
 R2a78b4199... actually completes24 GPU batches/567 predictions/18.053s,
 zero fits. Parent22.679s fails result binding despite worker exit0; preserve
 both facts. Repair only the offline cached reader's exact checkpoint-map
-semantics; no reinference, retuning, failed-receipt rewrite or promotion claim.
+semantics; cached-only replay now passes13.815s/b4821adc..., original kill
+rejected/custody5540cae2... closed. No reinference, retuning, failed-receipt
+rewrite or promotion claim. Next parallel CPU package is fixed ERC risk-utility
+comparison over existing252-return/continuous-NAV helpers and matched controls,
+not a repeat of minimum variance or a GPU-utilization exercise.
 
 Data: integrate only exact XLK/XLF/XLE AMS capability scope, then one reusable
 client/six fixed OC queries at20261007/20160202 under existing gates/120s bound.
