@@ -37,6 +37,12 @@ migration, submit or schedule expansion in this code/replay package. Existing
 SPY23:50/previewOct9 00:15/head00:29 owners remain intact; a next owned runtime
 package can use standing Paper authority without another manual gate.
 
+Parent also bakes the final verified source in the same cached pinned Paper
+base and publishes one immutable successor across the seven existing consumer
+configs. Preserve roots/commands/profiles/environment and old rollback image;
+no running owner restart or private migration. This avoids an extra publication-
+only objective before the actual owned-session rebalance.
+
 ## Parallel Data And Research
 
 Data: freeze/review the external six-question KIS rights capability probe,
@@ -66,6 +72,8 @@ recovery and all five writers sharing reservations proven by focused tests.
 Actual six-question Data result OR contained scoped technical unavailability;
 source-free ANTICOR preparation/review is not alpha or a Paper input. Code,
 preview or tests cannot imply actual runtime migration, execution or fill.
+Require matching baked public source/imports and seven-consumer config parity;
+image publication is code delivery, not an order or runtime closure.
 
 Changed-path serial plus clean-root eight-worker authority at execution
 integration; Ruff/default/research/accounting sample-env Compose. Focused

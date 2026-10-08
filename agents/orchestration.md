@@ -1,46 +1,38 @@
 # Codex Orchestration Stateboard (제품개발 총괄)
 
-AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns one company objective. This is
-the current cross-lane resource projection, not another queue/history or gate.
+AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns one company objective.
+This is current cross-lane readiness/resource projection, not a second queue.
 
-## Current Ready / Owned / Due Facts
+## Current Ready / Owned / Due (2026-10-08 KST)
 
-Closed history remains in lane evidence and Gitac3c6eb. Baked Paper publication
-and strict read-only preview are complete; parent is selecting the material
-successor. The21-session study is closed/rejected with numerical and custody
-closure, not a new GPU hold.
-Sole Git/actual resource owner is parent; role authors prepare disjoint packages.
+Parent alone owns Git, actual credentials, provider/Docker/scheduler effects.
+Role authors own disjoint public or external preparation; no active test owner.
+Goal20 self-financing rebalance code/replay and image delivery are COMPLETE.
+Actual execution/migration/fill remains unobserved for this package.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Input / geometry | Data | NEW2686-date input4a25284d... independently verified577 unchanged files/563 bindings/zero gaps; notqualified. Geometry1154TRAIN/68groups/1442marks/14tailcash fixed before labels; no old input splice. |
-| Research CPU / GPU | Engine / Steward | Actual Ridge+CUDA GRU2fits/42cells completed34.869s and rejected; ALL-RO27.796s/no refit passes. Independent4.668s/42 cells/scaler/actions exact; custody253185a9... closed. Canonical lease released after exact containment; GPU is available, not authorization-blocked. |
-| Paper preview | Execution scheduler | One-time thericher-kis-risk-preview-20261009-0015 installed/Ready/Oct9 00:15KST next_due,4-minute limit/zero restart/no missed recovery.8mocked tests/final review passed; not executed yet. Existing task/private owner/basis unchanged. |
-| Paper runtime / rebalance | Execution / parent | Seven configs published5216e00d.../five RW/two RO unchanged; direct baked preview account/three quotes/orderability available,1POST14GET/zero submits/source-private unchanged/container absent. Scoped incumbent_target_mismatch requires owned SELL-before-BUY work, not approval. Kuhn inspects minimal source path; no V3 migration/order yet. |
-| Independent review / verification | Russell / parent | Full12234pass22skip361.27s/eight clean workers/Ruff/three Compose passed; no active test owner. Driver final93 cases and review READY. Claude .936s unavailable/not agreement. Russell source-reviews fixed six-query rights probe; no actual calls. |
-| Distinct mechanism preparation | Engine | External ANTICOR primitive8c16fc5b.../42 synthetic cases/independent READY. No actual data, fit, GPU allocation, costed result or Paper input. |
-| Rights capability preparation | Data | External probe66b16688.../30 mocked cases ready for review; six fixed read-only market questions, no actual calls/account routes. Parent dispatch requires exact source freeze/outer120s containment; query support and joins remain unproven. |
-| Tiingo rights | Source-local operator question | Starter/Trial retention applicability unknown, already asked. No new Tiingo numeric work; KIS/Paper/research continue. |
-| Existing head | Data scheduler | Oct7 QQQ389/SPY390 M1 remains excluded from closed study; nextOct9 00:29KST, no manual invoke or finality inference. |
-| Existing Paper | Execution scheduler | Shared basis/custody exact; SPY nextOct8 23:50KST. Fees/settled/net unknown. No competing request or reset. |
+| Paper runtime | Execution / parent | Final image ae2c68f8.../406 source files/tree7bac725b... verified offline; seven configs retain five RW/two RO roots and all operational fields. No running owner restarted. |
+| Owned rebalance | Execution | SPY owner-only trim and retained joint BUY recovery pass395 serial cases. Original10-percent basis/incumbent custody/reservations unchanged. Prepare thin owned runtime next, not more quote-only diagnostics. |
+| Research CPU | Engine | ANTICOR causal preparation77 cases/review READY. Thin external actual worker in preparation; fixed20-window/5-cadence/30-cell seen-price study, no fits/GPU/holdout/Paper input. |
+| Research GPU | Steward | Prior Ridge/CUDA GRU two-fit/42-cell study rejected and custody closed253185a9...; lease absent. GPU available, not authorization/environment blocked. No utilization-only training. |
+| Data | Data / parent | Actual six-query rights probe/readback complete: ICE empty success, period rejected for all3. No usable rights/TR join claim. Sector ETF capability preparation is independent and source-only. |
+| Verification | Parent / independent reviewers | Goal20 full12398pass22skip35warnings362.04s,12420 collected/eight clean workers/helper exit0;395 serial12.61s/8 publication tests/.08s/Ruff/three sample-env Compose pass. Proven cancellation false-block fixed before authority; aborted prior run is not authority. Claude .951s unavailable/not agreement. |
+| Existing SPY | Execution scheduler | Ready; headOct8 22:15KST/session23:50KST, original basis and exact recovery retained. New runtime must resolve baseline entry direction without globally pausing recovery. |
+| Existing preview | Execution scheduler | thericher-kis-risk-preview-20261009-0015 Ready/Oct9 00:15KST/zero-submit/4-minute limit; runtime unobserved. No manual task invocation. |
+| Existing head | Data scheduler | Oct9 00:29KST; Oct7 incomplete M1 QQQ389/SPY390 remains excluded. |
 | Console | Existing web | http://127.0.0.1:8787 private loopback; historical accounting/current account separate. |
+| Tiingo rights | Source-local operator question | Starter/Trial retention applicability unknown/already asked; no new Tiingo numeric work. Other lanes continue. |
 
 ## Bottleneck And Reversible Improvement
 
-No company block or foreground wait. Full authority361.27s ran alongside Data,
-distinct model preparation; actual baked preview followed within its bound.
-The material avoidable cost is repeated per-campaign host scaffolding. Invoked
-Infra identified the source-reviewed57-line full-ID/UUID/image/contract
-containment block in the current supervisor. Reuse it with explicit parameters
-for ONE future campaign rather than reconstructing it; retain foreign-owner/
-unknown-containment tests and leave all closed producers unchanged. This is
-a reversible research-throughput improvement, not a framework or new gate.
-Baked Paper image5216e00d.../403 source files matching826b9d9f... is published
-and directly read-only verified. Remaining incremental plan deficit is owned
-SPY reduction, not more quote diagnostics or an operator wait. Inspect existing
-deterministic SELL custody/recovery, then reuse it rather than invent a second
-budget or parallel writer. Independent ANTICOR and source-rights work continue.
-Ready packages are dispatched; a source-local wait does not idle another lane.
-Manual serial scratch uses short names: paired isolated old recovery tests show
-long-root failure/short-root success;937-case short-root run passes. Preserve
-that measured geometry fact without asserting an unproved Windows root cause.
+No company block or foreground wait. Material remaining Paper gap is runtime
+owned SELL/fill/reconciliation followed by observed-funds joint BUYs, not
+credential approval, more RO diagnostics or profitability qualification.
+Keep the next objective material: exact shared-budget rebalance lifecycle.
+External waits retain their named next_due; ready research/data prep continues.
+Full362.04s authority ran beside future Paper/ANTICOR/sector preparation.
+Reuse the reviewed pinned goal18 input helpers and57-line exact-ID containment
+block for one thin CPU study rather than recreating host scaffolding.
+Closed results, older image5216e00d... and prior projections remain in Git4b0e79a
+and immutable lane evidence. Refresh this projection when shared facts change.

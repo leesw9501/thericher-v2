@@ -825,6 +825,34 @@ def _owners(binding):
     return owners
 
 
+def _other_owned_intent_pending(root, binding, run_id):
+    if binding["version"] not in {2, 3}:
+        return False
+    for owner, _ in _owners(binding):
+        for ref in owner.state_refs:
+            if ref.run_id == run_id:
+                continue
+            state = _state(
+                root, {"run_id": ref.run_id, "intent_ref": ref.intent_ref},
+                symbol=owner.symbol, exchange=owner.exchange, binding=binding,
+            )
+            proof = None
+            evidence = binding["terminal_evidence"].get(ref.run_id)
+            if evidence is not None:
+                state, proof = _retained_terminal(state, evidence)
+            if _terminal(state, proof):
+                continue
+            # Known, never-attempted BUYs already carry their full reservation.
+            # SELLs have no quantity reservation; attempted orders need recovery.
+            if not (
+                state.intent.side == "buy"
+                and state.phase == "intent_recorded"
+                and state.submission_started_at is None
+            ):
+                return True
+    return False
+
+
 def _legacy_scope(root, account_ref, cycle_id=None):
     active = _read_json(root / ".spy_fill_active.json")
     if cycle_id is None:
@@ -1310,13 +1338,24 @@ def run_kis_paper_budget_strategy(
     execution_control_path: Path = DEFAULT_PAPER_EXECUTION_CONTROL_STATE,
     qqq_cycle_id: str | None = None,
     qqq_entry_request_id: str | None = None,
+    spy_reduction_quantity: Decimal | None = None,
 ) -> KisPaperBudgetOutcome:
-    """Run the unchanged SPY default or one explicitly bound QQQ/NASD unit cycle.
+    """Run the SPY baseline or one explicitly bound QQQ/NASD unit cycle.
 
     QQQ requires its own instrument-bound enter/exit receipt from the caller.
     Both routes share the same allocation and locks; neither adopts positions.
     An explicit entry request identifies a BUY independently of refreshed receipts.
+    SPY exits default to all baseline-owned shares; an explicit reduction is
+    positive whole shares, never resized after its intent has been retained.
     """
+    if spy_reduction_quantity is not None and (
+        qqq_cycle_id is not None
+        or not isinstance(spy_reduction_quantity, Decimal)
+        or not spy_reduction_quantity.is_finite()
+        or spy_reduction_quantity <= 0
+        or spy_reduction_quantity != spy_reduction_quantity.to_integral_value()
+    ):
+        raise ValueError("SPY reduction quantity invalid")
     if qqq_cycle_id is not None and (
         not isinstance(qqq_cycle_id, str)
         or re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,159}", qqq_cycle_id) is None
@@ -1419,6 +1458,14 @@ def run_kis_paper_budget_strategy(
         def read_state(record):
             return _state(root, record, symbol=symbol, exchange=exchange)
 
+        def check_reduction_quantity(state):
+            if (
+                spy_reduction_quantity is not None
+                and state.intent.side == "sell"
+                and state.intent.quantity != spy_reduction_quantity
+            ):
+                raise _RecoveryRequired("spy_reduction_quantity_mismatch")
+
         def retain_terminal(binding, state, observation=None):
             if binding["version"] in {2, 3} and _terminal(state, observation):
                 evidence = binding["terminal_evidence"]
@@ -1513,6 +1560,12 @@ def run_kis_paper_budget_strategy(
                     return False
                 failure_stage = "ownership"
                 owned = project(binding)
+                if (
+                    qqq_cycle_id is None
+                    and state.intent.side == "sell"
+                    and _other_owned_intent_pending(root, binding, state.intent.run_id)
+                ):
+                    raise _RecoveryRequired("other_owned_intent_pending")
                 if reconciliation.snapshot is None:
                     raise _RecoveryRequired("snapshot_unavailable")
                 # Reuse the canary's just-read account, revalidating its timestamps.
@@ -1817,6 +1870,15 @@ def run_kis_paper_budget_strategy(
                 if binding is not None and records and not records[-1]["closed"]:
                     record = records[-1]
                     state = read_state(record)
+                    check_reduction_quantity(state)
+                    if (
+                        qqq_cycle_id is None
+                        and state.intent.side == "sell"
+                        and state.phase == "intent_recorded"
+                        and at() < state.intent.valid_until
+                        and _other_owned_intent_pending(root, binding, state.intent.run_id)
+                    ):
+                        return result("no_intent", "other_owned_intent_pending")
                     outcome = run_intent(state, permitted=permitted(binding, state))
                     recovered = finish_order(binding, record, outcome.reconciliation)
                     if (
@@ -1880,6 +1942,28 @@ def run_kis_paper_budget_strategy(
                         },
                     )
                 side = "buy" if receipt.decision_class == "enter" else "sell"
+                if spy_reduction_quantity is not None and side != "sell":
+                    return result("no_intent", "spy_reduction_requires_exit")
+                run_id = (
+                    "bs-" + hashlib.sha256(receipt.decision_id.encode()).hexdigest()
+                    if qqq_cycle_id is None
+                    else "bq-" + _digest([qqq_cycle_id, "entry-request-v1", qqq_entry_request_id])
+                    if side == "buy" and qqq_entry_request_id is not None
+                    else "bq-" + _digest([qqq_cycle_id, receipt.decision_id])
+                )
+                if spy_reduction_quantity is not None:
+                    for record in records:
+                        if record["run_id"] == run_id:
+                            check_reduction_quantity(read_state(record))
+                            if record["closed"]:
+                                return result("no_intent", "decision_already_processed")
+                if (
+                    qqq_cycle_id is None
+                    and side == "sell"
+                    and binding is not None
+                    and _other_owned_intent_pending(root, binding, run_id)
+                ):
+                    return result("no_intent", "other_owned_intent_pending")
                 failure_stage = "controls"
                 controls = PaperExecutionControlStore(execution_control_path).read()
                 if controls.pause_buys if side == "buy" else controls.pause_sells:
@@ -1898,15 +1982,13 @@ def run_kis_paper_budget_strategy(
                 )
                 if quantity != book_quantity or opens:
                     return result("no_intent", "existing_inventory_or_order_conflict")
+                if (
+                    spy_reduction_quantity is not None
+                    and spy_reduction_quantity > projection.quantity
+                ):
+                    return result("no_intent", "spy_reduction_exceeds_owned_quantity")
                 if (side == "buy" and quantity > 0) or (side == "sell" and quantity == 0):
                     return result("no_intent", "target_already_satisfied")
-                run_id = (
-                    "bs-" + hashlib.sha256(receipt.decision_id.encode()).hexdigest()
-                    if qqq_cycle_id is None
-                    else "bq-" + _digest([qqq_cycle_id, "entry-request-v1", qqq_entry_request_id])
-                    if side == "buy" and qqq_entry_request_id is not None
-                    else "bq-" + _digest([qqq_cycle_id, receipt.decision_id])
-                )
                 if conflicts_with_active_spy_fill_cycle(root, run_id, symbol):
                     return result("no_intent", "owned_intent_conflict")
                 if binding is not None and any(row["run_id"] == run_id for row in records):
@@ -1975,6 +2057,8 @@ def run_kis_paper_budget_strategy(
                 shares = (
                     (min(room, available) / price).to_integral_value(rounding=ROUND_FLOOR)
                     if side == "buy"
+                    else spy_reduction_quantity
+                    if spy_reduction_quantity is not None
                     else projection.quantity
                 )
                 if qqq_cycle_id is not None:
@@ -2030,6 +2114,7 @@ def run_kis_paper_budget_strategy(
                         side,
                     ):
                         raise _RecoveryRequired("budget_intent_mismatch")
+                    check_reduction_quantity(state)
                     if (
                         side == "buy"
                         and (state.intent.quantity * state.intent.limit_price > min(room, funds))

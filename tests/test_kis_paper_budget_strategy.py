@@ -752,3 +752,589 @@ def test_baseline_input_failures_keep_only_the_available_closed_receipt_reason(
         "reason_class": "input_unavailable",
     }
     assert not client.calls and not (root / budget.BUDGET_FILE).exists()
+
+
+@pytest.mark.parametrize(
+    "quantity",
+    [D(0), D(-1), D("1.5"), D("NaN"), D("sNaN"), D("Infinity"), 1, 1.0, True, "1"],
+)
+def test_invalid_spy_reduction_is_rejected_before_io(harness, quantity):
+    root, client, args = harness
+    with pytest.raises(ValueError, match="SPY reduction quantity invalid"):
+        budget.run_kis_paper_budget_strategy(**args, spy_reduction_quantity=quantity)
+    assert not root.exists() and not client.calls
+
+
+def test_spy_reduction_cannot_change_qqq_route(harness):
+    root, client, args = harness
+    with pytest.raises(ValueError, match="SPY reduction quantity invalid"):
+        budget.run_kis_paper_budget_strategy(
+            **args, qqq_cycle_id="synthetic-unit", spy_reduction_quantity=D(1)
+        )
+    assert not root.exists() and not client.calls
+
+
+def test_spy_reduction_requires_exit_and_never_creates_buy(harness):
+    root, client, args = harness
+    outcome = budget.run_kis_paper_budget_strategy(**args, spy_reduction_quantity=D(1))
+    assert (outcome.status, outcome.reason_code) == ("no_intent", "spy_reduction_requires_exit")
+    assert not client.calls and not (root / budget.BUDGET_FILE).exists()
+
+
+def test_spy_trim_then_default_full_exit_preserves_original_basis(harness):
+    root, client, args = harness
+    assert budget.run_kis_paper_budget_strategy(**args).status == "order_complete"
+    original = budget._load_binding(root)
+    trim = receipt(client.now, "exit", "b")
+    trim_args = args | {"receipt_loader": lambda _: trim, "spy_reduction_quantity": D("4.0")}
+    assert budget.run_kis_paper_budget_strategy(**trim_args).status == "order_complete"
+    retained = budget._load_binding(root)
+    assert client.submits[-1].side == "sell" and client.submits[-1].quantity == 4
+    assert budget.project_budget(root, retained).quantity == 12
+    assert {key: retained[key] for key in ("account_ref", "basis_usd", "allocated_usd", "at")} == {
+        key: original[key] for key in ("account_ref", "basis_usd", "allocated_usd", "at")
+    }
+    assert (
+        budget.run_kis_paper_budget_strategy(**trim_args).reason_code
+        == "decision_already_processed"
+    )
+    assert len(client.submits) == 2
+    assert budget.run_kis_paper_budget_strategy(
+        **(args | {"receipt_loader": lambda at: receipt(at, "exit", "c")})
+    ).status == "order_complete"
+    assert client.submits[-1].quantity == 12
+    assert budget.project_budget(root, budget._load_binding(root)).quantity == 0
+
+
+@pytest.mark.parametrize("owned", [False, True])
+def test_spy_trim_never_clips_or_adopts_foreign_inventory(harness, owned):
+    root, client, args = harness
+    if owned:
+        budget.run_kis_paper_budget_strategy(**args)
+    else:
+        client.foreign = D(17)
+    before = (root / budget.BUDGET_FILE).read_bytes() if owned else None
+    client.calls.clear()
+    outcome = budget.run_kis_paper_budget_strategy(
+        **(args | {"receipt_loader": lambda at: receipt(at, "exit", "b")}),
+        spy_reduction_quantity=D(17),
+    )
+    assert outcome.reason_code == (
+        "spy_reduction_exceeds_owned_quantity" if owned else "existing_inventory_or_order_conflict"
+    )
+    assert "quote" not in client.calls and len(client.submits) == int(owned)
+    if owned:
+        assert (root / budget.BUDGET_FILE).read_bytes() == before
+    else:
+        assert not (root / budget.BUDGET_FILE).exists() and not list(root.glob("bs-*.json"))
+
+
+@pytest.mark.parametrize("closed,trim_quantity", [(False, D(4)), (True, D(4)), (True, D(16))])
+def test_retained_trim_rejects_changed_quantity_before_recovery_or_new_read(
+    harness, closed, trim_quantity,
+):
+    root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    client.fill_fraction = D(1) if closed else D("0.5")
+    trim = receipt(client.now, "exit", "b")
+    trim_args = args | {"receipt_loader": lambda _: trim, "spy_reduction_quantity": trim_quantity}
+    budget.run_kis_paper_budget_strategy(**trim_args)
+    intent = client.submits[-1]
+    before = (root / budget.BUDGET_FILE).read_bytes()
+    state_before = (root / (intent.run_id + ".json")).read_bytes()
+    client.calls.clear()
+    client.now += timedelta(minutes=6)
+    # An exact closed decision remains eligible only for this synthetic check.
+    client.now = NOW if closed else client.now
+    outcome = budget.run_kis_paper_budget_strategy(
+        **(trim_args | {"spy_reduction_quantity": trim_quantity + 1})
+    )
+    assert (outcome.status, outcome.reason_code) == (
+        "recovery_required", "spy_reduction_quantity_mismatch"
+    )
+    assert not client.calls and not client.cancels and len(client.submits) == 2
+    assert (root / budget.BUDGET_FILE).read_bytes() == before
+    assert (root / (intent.run_id + ".json")).read_bytes() == state_before
+
+
+def _v2_trim_binding(root, client):
+    binding = budget._load_binding(root)
+    return budget._migrate_binding(
+        root, binding, client._config, "synthetic-unit", as_of=client.now
+    )
+
+
+@pytest.mark.parametrize("omit_quantity", [False, True])
+def test_partial_trim_restart_credits_only_observed_cumulative_sale(harness, omit_quantity):
+    root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    binding = _v2_trim_binding(root, client)
+    before = budget.project_budget(root, binding, as_of=client.now)
+    trim = receipt(client.now, "exit", "b")
+    client.fill_fraction = D("0.5")
+    assert budget.run_kis_paper_budget_strategy(
+        **(args | {"receipt_loader": lambda _: trim}), spy_reduction_quantity=D(4)
+    ).status == "pending"
+    intent = client.submits[-1]
+    after = budget.project_budget(root, budget._load_binding(root), as_of=client.now)
+    assert after.quantity == 14
+    assert after.gross_cash == before.gross_cash + D(2) * intent.limit_price
+    assert after.entry_cost == before.entry_cost * D(14) / D(16)
+    after_binding = budget._load_binding(root)
+    assert after_binding["basis_ref"] == binding["basis_ref"]
+    assert after_binding["qqq"] == binding["qqq"]
+    restart = args | {"receipt_loader": lambda _: pytest.fail("pending recovery skipped")}
+    if not omit_quantity:
+        restart["spy_reduction_quantity"] = D(4)
+    client.now += timedelta(seconds=10)
+    assert budget.run_kis_paper_budget_strategy(**restart).status == "pending"
+    assert len(client.submits) == 2
+    assert (
+        budget.project_budget(root, budget._load_binding(root), as_of=client.now).gross_cash
+        == after.gross_cash
+    )
+    client.orders[intent.run_id]["filled"] = D(4)
+    client.orders[intent.run_id]["remaining"] = D(0)
+    client.now += timedelta(seconds=10)
+    outcome = budget.run_kis_paper_budget_strategy(
+        **(args | {"receipt_loader": lambda _: trim}),
+        **({} if omit_quantity else {"spy_reduction_quantity": D(4)}),
+    )
+    assert outcome.reason_code == "decision_already_processed"
+    final = budget.project_budget(root, budget._load_binding(root), as_of=client.now)
+    assert final.quantity == 12
+    assert final.gross_cash == before.gross_cash + D(4) * intent.limit_price
+    assert len(client.submits) == 2
+
+
+def test_unknown_trim_submission_never_reposts_or_credits_unobserved_sale(harness):
+    root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    binding = _v2_trim_binding(root, client)
+    before = budget.project_budget(root, binding, as_of=client.now)
+    trim = receipt(client.now, "exit", "b")
+    trim_args = args | {"receipt_loader": lambda _: trim, "spy_reduction_quantity": D(4)}
+    client.crash = True
+    with pytest.raises(RuntimeError, match="simulated process crash"):
+        budget.run_kis_paper_budget_strategy(**trim_args)
+    client.crash = False
+    client.now += timedelta(seconds=10)
+    assert budget.run_kis_paper_budget_strategy(**trim_args).status == "pending"
+    projected = budget.project_budget(root, budget._load_binding(root), as_of=client.now)
+    assert projected.quantity == before.quantity and projected.gross_cash == before.gross_cash
+    assert len(client.submits) == 2
+
+
+def test_orphan_trim_is_immutable_and_reuses_original_intent(harness, monkeypatch):
+    root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    trim = receipt(client.now, "exit", "b")
+    trim_args = args | {"receipt_loader": lambda _: trim, "spy_reduction_quantity": D(4)}
+    original = budget._atomic_json
+
+    def interrupted(path, payload):
+        if path.name == budget.BUDGET_FILE and len(payload["orders"]) == 2:
+            raise RuntimeError("trim binding crash")
+        return original(path, payload)
+
+    monkeypatch.setattr(budget, "_atomic_json", interrupted)
+    with pytest.raises(RuntimeError, match="trim binding crash"):
+        budget.run_kis_paper_budget_strategy(**trim_args)
+    monkeypatch.setattr(budget, "_atomic_json", original)
+    assert len(client.submits) == 1
+    before = (root / budget.BUDGET_FILE).read_bytes()
+    outcome = budget.run_kis_paper_budget_strategy(**(trim_args | {"spy_reduction_quantity": D(5)}))
+    assert outcome.reason_code == "spy_reduction_quantity_mismatch"
+    assert (root / budget.BUDGET_FILE).read_bytes() == before and len(client.submits) == 1
+    assert budget.run_kis_paper_budget_strategy(**trim_args).status == "order_complete"
+    assert client.submits[-1].quantity == 4 and len(client.submits) == 2
+
+
+@pytest.mark.parametrize("trim_quantity", [D(1), D(2), D(3)])
+@pytest.mark.parametrize("foreign_extra", [D(0), D(1)])
+def test_v3_trim_reconciles_aggregate_and_never_sells_other_owner(
+    harness, trim_quantity, foreign_extra,
+):
+    from test_kis_paper_portfolio_preview import NOW as PREVIEW_NOW
+    from test_kis_paper_portfolio_preview import (
+        _scope,
+        _state,
+    )
+    from thericher_v2.execution.kis_paper_canary import KisPaperCanaryState
+    from thericher_v2.execution.kis_paper_portfolio_plan import build_kis_paper_portfolio_plan
+
+    root, client, args = harness
+    client.now = PREVIEW_NOW
+    incumbent = _state(requested="2", filled="2")
+    inputs = _scope(incumbent)
+    binding = inputs["binding"]
+    account = budget._digest(
+        [
+            client._config.base_url,
+            client._config.account_number,
+            client._config.account_product_code,
+        ]
+    )
+    binding["account_ref"] = account
+    binding["basis_ref"] = budget._basis(binding).fingerprint
+    binding["spy_owner_ref"] = budget._owners(binding)[0][0].fingerprint
+    binding["qqq"]["owner_ref"] = budget._owners(binding)[1][0].fingerprint
+    inputs.update(
+        expected_account_ref=account,
+        expected_basis_ref=binding["basis_ref"],
+        expected_owner_refs={owner.owner_ref: pin for owner, pin in budget._owners(binding)},
+        reads=replace(inputs["reads"], account_ref=account),
+    )
+    plan = build_kis_paper_portfolio_plan(
+        **inputs,
+        expected_binding_ref="sha256:" + budget._digest(binding),
+        request_id="synthetic-trim-multi-owner",
+        input_ref="sha256:" + "f" * 64,
+        valid_until=PREVIEW_NOW + timedelta(minutes=5),
+    )
+    assert plan.status == "prepared"
+    intent = next(intent for intent in plan.intents if intent.symbol == "SPY")
+    assert intent.quantity == 1
+    fill = KisPaperCumulativeFill(
+        fill_identity_ref(
+            raw_order_id="SYNTHETIC-PORTFOLIO", order_at=PREVIEW_NOW,
+            symbol="SPY", exchange="AMEX", side="buy", quantity=D(1),
+        ),
+        D(1), D(1), D(100), PREVIEW_NOW, D(0),
+    )
+    portfolio_state = KisPaperCanaryState(
+        intent, "submitted", PREVIEW_NOW, "reconciliation_clean",
+        broker_order_id="SYNTHETIC-PORTFOLIO", submitted_at=PREVIEW_NOW,
+        submission_started_at=PREVIEW_NOW, cumulative_fill=fill,
+        fill_observation_status="available", fill_observed_at=PREVIEW_NOW,
+    )
+    for state in (incumbent, portfolio_state):
+        budget._atomic_json(root / (state.intent.run_id + ".json"), state.to_dict())
+        client.orders[state.intent.run_id] = dict(
+            intent=state.intent, filled=state.intent.quantity, remaining=D(0),
+            id=state.broker_order_id,
+            price=state.cumulative_fill.gross_amount / state.intent.quantity,
+        )
+    budget._atomic_json(root / budget.BUDGET_FILE, plan.binding)
+    before = budget.project_budget(root, plan.binding, as_of=client.now)
+    assert before.quantity == 2 and before.aggregate_quantity == 3
+    client.foreign = foreign_extra
+    outcome = budget.run_kis_paper_budget_strategy(
+        **(args | {"receipt_loader": lambda at: receipt(at, "exit", "e")}),
+        spy_reduction_quantity=trim_quantity,
+    )
+    if foreign_extra:
+        assert outcome.reason_code == "existing_inventory_or_order_conflict"
+        assert not client.submits
+    elif trim_quantity > 2:
+        assert outcome.reason_code == "spy_reduction_exceeds_owned_quantity"
+        assert not client.submits
+    else:
+        assert outcome.status == "order_complete"
+        assert len(client.submits) == 1 and client.submits[0].quantity == trim_quantity
+    retained = budget._load_binding(root)
+    after = budget.project_budget(root, retained, as_of=client.now)
+    sold = min(trim_quantity, D(2)) if client.submits else D(0)
+    assert after.quantity == D(2) - sold and after.aggregate_quantity == D(3) - sold
+    assert (
+        budget.project_budget(root, retained, as_of=client.now, portfolio_symbol="SPY").quantity
+        == 1
+    )
+    assert after.reserved_buys == before.reserved_buys
+    assert retained["portfolio"] == plan.binding["portfolio"]
+    assert retained["basis_ref"] == binding["basis_ref"] and retained["qqq"] == binding["qqq"]
+
+
+def test_unavailable_trim_history_retains_proven_sale_credit_and_pending_identity(harness):
+    root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    _v2_trim_binding(root, client)
+    client.fill_fraction = D("0.5")
+    trim = receipt(client.now, "exit", "b")
+    trim_args = args | {"receipt_loader": lambda _: trim, "spy_reduction_quantity": D(4)}
+    assert budget.run_kis_paper_budget_strategy(**trim_args).status == "pending"
+    before = budget.project_budget(root, budget._load_binding(root), as_of=client.now)
+    client.history_status = "unavailable"
+    client.now += timedelta(seconds=10)
+    assert budget.run_kis_paper_budget_strategy(**trim_args).status == "pending"
+    after = budget.project_budget(root, budget._load_binding(root), as_of=client.now)
+    assert after.quantity == before.quantity and after.gross_cash == before.gross_cash
+    assert not budget._load_binding(root)["orders"][-1]["closed"]
+    assert len(client.submits) == 2
+
+
+def test_cancelled_partial_trim_never_credits_unfilled_sale_or_replaces_request(harness):
+    root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    before = budget.project_budget(root, _v2_trim_binding(root, client), as_of=client.now)
+    client.fill_fraction = D("0.5")
+    trim = receipt(client.now, "exit", "b")
+    trim_args = args | {"receipt_loader": lambda _: trim, "spy_reduction_quantity": D(4)}
+    assert budget.run_kis_paper_budget_strategy(**trim_args).status == "pending"
+    client.now += timedelta(minutes=6)
+    assert (
+        budget.run_kis_paper_budget_strategy(**trim_args).reason_code
+        == "own_order_cancellation_observed"
+    )
+    client.now += timedelta(seconds=20)
+    assert (
+        budget.run_kis_paper_budget_strategy(**trim_args).reason_code
+        == "decision_already_processed"
+    )
+    after = budget.project_budget(root, budget._load_binding(root), as_of=client.now)
+    assert after.quantity == 14
+    assert after.gross_cash == before.gross_cash + D(2) * client.submits[-1].limit_price
+    assert len(client.submits) == 2 and len(client.cancels) == 1
+
+
+def test_concurrent_exact_trim_visits_serialize_one_sell(harness):
+    _root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    trim = receipt(client.now, "exit", "b")
+    trim_args = args | {"receipt_loader": lambda _: trim, "spy_reduction_quantity": D(4)}
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        outcomes = list(
+            pool.map(lambda _: budget.run_kis_paper_budget_strategy(**trim_args), range(2))
+        )
+    assert len(client.submits) == 2 and client.submits[-1].quantity == 4
+    assert {outcome.status for outcome in outcomes} == {"order_complete", "no_intent"}
+
+
+def test_trim_pre_submit_callback_still_rejects_changed_aggregate_inventory(harness, monkeypatch):
+    root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    snapshot = client.snapshot
+    client.calls.clear()
+
+    def changed_book():
+        if "snapshot" in client.calls:
+            client.foreign = D(1)
+        return snapshot()
+
+    monkeypatch.setattr(client, "snapshot", changed_book)
+    outcome = budget.run_kis_paper_budget_strategy(
+        **(args | {"receipt_loader": lambda at: receipt(at, "exit", "b")}),
+        spy_reduction_quantity=D(4),
+    )
+    assert outcome.reason_code == "pre_submit_ownership_changed"
+    assert len(client.submits) == 1
+    binding = budget._load_binding(root)
+    state = budget._state(root, binding["orders"][-1])
+    assert state.intent.quantity == 4 and state.submission_started_at is None
+
+
+@pytest.mark.parametrize("other_side", ["buy", "sell"])
+@pytest.mark.parametrize("explicit", [False, True])
+def test_unknown_other_owner_intent_blocks_new_spy_sale_without_provider_effects(
+    harness, other_side, explicit,
+):
+    from test_kis_paper_portfolio_preview import NOW as PREVIEW_NOW
+    from test_kis_paper_portfolio_preview import (
+        _scope,
+        _state,
+    )
+
+    root, client, args = harness
+    client.now = PREVIEW_NOW
+    incumbent = _state(requested="2", filled="2")
+    prior = _state(2, symbol="QQQ")
+    pending = _state(3, symbol="QQQ", pending=True)
+    pending = replace(
+        pending, intent=replace(pending.intent, side=other_side),
+        phase="outcome_unknown", updated_at=PREVIEW_NOW,
+        reason_code="submit_transport_unknown", submission_started_at=pending.intent.created_at,
+    )
+    # _scope's synthetic closed marker is deliberately replaced by actual proof.
+    binding = _scope(incumbent, prior, pending)["binding"]
+    binding["qqq"]["orders"][-1]["closed"] = False
+    binding["account_ref"] = budget._digest(
+        [
+            client._config.base_url,
+            client._config.account_number,
+            client._config.account_product_code,
+        ]
+    )
+    binding["basis_ref"] = budget._basis(binding).fingerprint
+    binding["spy_owner_ref"] = budget._owners(binding)[0][0].fingerprint
+    binding["qqq"]["owner_ref"] = budget._owners(binding)[1][0].fingerprint
+    for state in (incumbent, prior, pending):
+        budget._atomic_json(root / (state.intent.run_id + ".json"), state.to_dict())
+    budget._atomic_json(root / budget.BUDGET_FILE, binding)
+    before = (root / budget.BUDGET_FILE).read_bytes()
+    assert budget.project_budget(root, binding, as_of=client.now).quantity == 2
+    outcome = budget.run_kis_paper_budget_strategy(
+        **(args | {"receipt_loader": lambda at: receipt(at, "exit", "e")}),
+        **({"spy_reduction_quantity": D(1)} if explicit else {}),
+    )
+    assert (outcome.status, outcome.reason_code) == ("no_intent", "other_owned_intent_pending")
+    assert not client.calls and not client.submits
+    assert (root / budget.BUDGET_FILE).read_bytes() == before
+
+
+def test_other_owner_pending_blocks_retry_of_never_submitted_trim(harness, monkeypatch):
+    root, client, args = harness
+    budget.run_kis_paper_budget_strategy(**args)
+    _v2_trim_binding(root, client)
+    client.quote_age = 0
+    from thericher_v2.execution.emergency import PaperExecutionControlStore
+
+    control = PaperExecutionControlStore(args["execution_control_path"])
+    control.set_pause_sells(True)
+    trim = receipt(client.now, "exit", "b")
+    trim_args = args | {"receipt_loader": lambda _: trim, "spy_reduction_quantity": D(4)}
+    assert budget.run_kis_paper_budget_strategy(**trim_args).reason_code == "pause_sells_active"
+    control.set_pause_sells(False)
+
+    # Pause after the budget's first control read, leaving a retained SELL seed.
+    original = client.fetch_spy_limit_input
+
+    def pause_after_quote(**kwargs):
+        quote = original(**kwargs)
+        control.set_pause_sells(True)
+        return quote
+
+    monkeypatch.setattr(client, "fetch_spy_limit_input", pause_after_quote)
+    budget.run_kis_paper_budget_strategy(**trim_args)
+    binding = budget._load_binding(root)
+    state = budget._state(root, binding["orders"][-1])
+    assert state.intent.side == "sell" and state.submission_started_at is None
+    control.set_pause_sells(False)
+    client.calls.clear()
+    monkeypatch.setattr(budget, "_other_owned_intent_pending", lambda *args: True)
+    before = (root / (state.intent.run_id + ".json")).read_bytes()
+    outcome = budget.run_kis_paper_budget_strategy(**trim_args)
+    assert outcome.reason_code == "other_owned_intent_pending"
+    assert not client.calls and len(client.submits) == 1
+    assert (root / (state.intent.run_id + ".json")).read_bytes() == before
+
+
+def _portfolio_hook_case(harness):
+    from test_kis_paper_portfolio_preview import NOW as PREVIEW_NOW
+    from test_kis_paper_portfolio_preview import (
+        _reads,
+        _scope,
+    )
+    from thericher_v2.execution import kis_paper_canary as canary
+    from thericher_v2.execution.kis_paper_portfolio_execute import KisPaperPortfolioExecutionBinding
+    from thericher_v2.execution.kis_paper_portfolio_plan import build_kis_paper_portfolio_plan
+
+    root, client, args = harness
+    client.now = PREVIEW_NOW
+    inputs = _scope()
+    binding = inputs["binding"]
+    account = budget._digest(
+        [
+            client._config.base_url,
+            client._config.account_number,
+            client._config.account_product_code,
+        ]
+    )
+    binding["account_ref"] = account
+    binding["basis_ref"] = budget._basis(binding).fingerprint
+    binding["spy_owner_ref"] = budget._owners(binding)[0][0].fingerprint
+    binding["qqq"]["owner_ref"] = budget._owners(binding)[1][0].fingerprint
+    parent_ref, input_ref = "sha256:" + budget._digest(binding), "sha256:" + "f" * 64
+    request = "synthetic-internal-hook"
+    inputs.update(
+        expected_account_ref=account,
+        expected_basis_ref=binding["basis_ref"],
+        expected_owner_refs={owner.owner_ref: pin for owner, pin in budget._owners(binding)},
+        reads=replace(_reads(spy=D(0)), account_ref=account),
+    )
+    plan = build_kis_paper_portfolio_plan(
+        **inputs, expected_binding_ref=parent_ref, request_id=request,
+        input_ref=input_ref, valid_until=PREVIEW_NOW + timedelta(minutes=5),
+    )
+    assert plan.status == "prepared"
+    intent = next(intent for intent in plan.intents if intent.symbol == "SPY")
+    budget._atomic_json(root / budget.BUDGET_FILE, plan.binding)
+    KisPaperCanaryStateStore(root / (intent.run_id + ".json")).record_intent(
+        intent, cancel_after_submit=False, now=client.now,
+    )
+    proof = KisPaperPortfolioExecutionBinding(
+        state_root=root.resolve(), account_ref=account, basis_ref=binding["basis_ref"],
+        owner_refs=tuple((owner.owner_ref, pin) for owner, pin in budget._owners(plan.binding)),
+        binding_ref="sha256:" + budget._digest(plan.binding), request_id=request,
+        parent_binding_ref=parent_ref, input_ref=input_ref, plan_ref=plan.plan_ref,
+        run_id=intent.run_id, intent_ref=intent.fingerprint,
+    )
+    call = dict(
+        decision=canary.KisPaperCanaryBuyDecision(
+            decision_id=intent.decision_id, symbol=intent.symbol, exchange=intent.exchange,
+            quantity=intent.quantity, limit_price=intent.limit_price,
+            decision_as_of=intent.created_at, valid_until=intent.valid_until,
+        ),
+        run_id=intent.run_id, environment={}, state_path=root / (intent.run_id + ".json"),
+        runtime_projection_path=args["runtime_projection_path"],
+        paper_account_snapshot_path=args["paper_account_snapshot_path"],
+        emergency_state_path=args["emergency_state_path"],
+        artifact_root=args["artifact_root"], repository_root=args["repository_root"],
+        execution_control_path=args["execution_control_path"], execute=True,
+        cancel_after_submit=False, client=client, clock=lambda: client.now,
+        require_existing_state=True, price_contract_ref=intent.price_contract_ref,
+        submit_permitted=lambda _: True, submit_reconciliation_check=lambda *_: True,
+        portfolio_execution=proof,
+    )
+    return root, client, intent, proof, call
+
+
+def test_typed_internal_hook_preserves_portfolio_identity_and_public_guard(harness, monkeypatch):
+    import inspect
+
+    from thericher_v2.execution import kis_paper_canary as canary
+
+    root, client, intent, proof, call = _portfolio_hook_case(harness)
+    assert "portfolio_execution" not in inspect.signature(canary.run_kis_paper_canary).parameters
+    assert budget.conflicts_with_budget_strategy(root, intent.run_id, intent.symbol)
+    assert canary._conflicts_with_owned_spy_cycle(root, intent)
+    assert not canary._conflicts_with_owned_spy_cycle(root, intent, portfolio_execution=proof)
+    assert canary._conflicts_with_owned_spy_cycle(
+        root, replace(intent, quantity=intent.quantity + 1), portfolio_execution=proof,
+    )
+
+    def reject_exact(retained, **kwargs):
+        assert retained == intent
+        state = KisPaperCanaryStateStore(call["state_path"]).read()
+        assert state.phase == "submission_started" and state.intent == intent
+        client.submits.append(retained)
+        return False, None
+
+    monkeypatch.setattr(client, "submit_limit", reject_exact)
+    with canary.exclusive_kis_paper_canary_state_lock(root / ".canary_execution"):
+        canary._run_kis_paper_canary(**call)
+    assert client.submits == [intent]
+    state = KisPaperCanaryStateStore(call["state_path"]).read()
+    assert state.intent.client_order_id == intent.client_order_id
+    assert state.phase == "rejected" and state.submit_response_category == "provider_rejected"
+
+
+@pytest.mark.parametrize(
+    "change", ["untyped", "quantity", "price", "clock", "callbacks", "account", "path"],
+)
+def test_internal_portfolio_hook_rejects_nonexact_proof_before_mutation(harness, change):
+    from thericher_v2.execution import kis_paper_canary as canary
+    from thericher_v2.execution.kis_paper_spy_fill_cycle import _RecoveryRequired
+
+    root, client, intent, proof, call = _portfolio_hook_case(harness)
+    before = call["state_path"].read_bytes()
+    binding_before = (root / budget.BUDGET_FILE).read_bytes()
+    if change == "untyped":
+        call["portfolio_execution"] = True
+    elif change in {"quantity", "price", "clock"}:
+        field = {"quantity": "quantity", "price": "limit_price", "clock": "decision_as_of"}[change]
+        current = getattr(call["decision"], field)
+        call["decision"] = replace(
+            call["decision"],
+            **{field: current + (timedelta(seconds=1) if change == "clock" else 1)},
+        )
+    elif change == "callbacks":
+        call["submit_reconciliation_check"] = None
+    elif change == "account":
+        call["portfolio_execution"] = replace(proof, account_ref="0" * 64)
+    else:
+        call["state_path"] = root / "other.json"
+    with pytest.raises((KisPaperCanaryError, _RecoveryRequired)):
+        canary._run_kis_paper_canary(**call)
+    assert not client.calls and not client.submits
+    assert (root / (intent.run_id + ".json")).read_bytes() == before
+    assert (root / budget.BUDGET_FILE).read_bytes() == binding_before

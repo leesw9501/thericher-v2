@@ -18,7 +18,7 @@ from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from typing import Any, Literal
+from typing import TYPE_CHECKING, Any, Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.research.kis_paper_canary_intent import (
@@ -26,6 +26,9 @@ from thericher_v2.research.kis_paper_canary_intent import (
     KisPaperCanaryOrderDecision,
     KisPaperCanarySellDecision,
 )
+
+if TYPE_CHECKING:
+    from .kis_paper_portfolio_execute import KisPaperPortfolioExecutionBinding
 
 from .broker import BrokerOrderRequest
 from .emergency import (
@@ -1507,6 +1510,7 @@ def _run_kis_paper_canary(
     reuse_existing_intent_if_same_decision: bool = False,
     read_only_recovery: bool = False,
     recovery_only: bool = False,
+    portfolio_execution: KisPaperPortfolioExecutionBinding | None = None,
 ) -> KisPaperCanaryOutcome:
     """Run or recover one bounded virtual-paper canary without a retry submit path."""
 
@@ -1517,6 +1521,27 @@ def _run_kis_paper_canary(
         run_id=run_id,
         price_contract_ref=price_contract_ref,
     )
+    if portfolio_execution is not None:
+        from .kis_paper_portfolio_execute import (
+            KisPaperPortfolioExecutionBinding,
+            _client_account,
+            bind_kis_paper_portfolio_execution_intent,
+        )
+
+        if (
+            type(portfolio_execution) is not KisPaperPortfolioExecutionBinding
+            or not require_existing_state
+            or state_path.name != run_id + ".json"
+            or cancel_after_submit
+            or reuse_existing_intent_if_same_decision
+            or not callable(submit_permitted)
+            or not callable(submit_reconciliation_check)
+        ):
+            raise KisPaperCanaryError("portfolio_execution_invalid")
+        _client_account(client, portfolio_execution)
+        requested_intent = bind_kis_paper_portfolio_execution_intent(
+            state_path.parent, requested_intent, portfolio_execution
+        )
     existing_state = state_store.read()
     if existing_state is not None:
         if reuse_existing_intent_if_same_decision:
@@ -1596,7 +1621,11 @@ def _run_kis_paper_canary(
             reason_code=("pause_buys_active" if intent.side == "buy" else "pause_sells_active"),
             now=observed_at,
         )
-    elif _conflicts_with_owned_spy_cycle(state_path.parent, intent):
+    elif _conflicts_with_owned_spy_cycle(
+        state_path.parent,
+        intent,
+        **({"portfolio_execution": portfolio_execution} if portfolio_execution is not None else {}),
+    ):
         state = state_store.transition(
             intent,
             expected=frozenset({"intent_recorded"}),
@@ -1778,15 +1807,34 @@ def _run_kis_paper_canary(
     )
 
 
-def _conflicts_with_owned_spy_cycle(state_root: Path, intent: KisPaperCanaryIntent) -> bool:
+def _conflicts_with_owned_spy_cycle(
+    state_root: Path, intent: KisPaperCanaryIntent,
+    *, portfolio_execution: KisPaperPortfolioExecutionBinding | None = None,
+) -> bool:
     if intent.symbol not in {"SPY", "TLT", "GLD"}:
         return False
     from .kis_paper_budget_strategy import conflicts_with_budget_strategy
     from .kis_paper_spy_fill_cycle import conflicts_with_active_spy_fill_cycle
 
-    return conflicts_with_active_spy_fill_cycle(
-        state_root, intent.run_id, intent.symbol
-    ) or conflicts_with_budget_strategy(state_root, intent.run_id, intent.symbol)
+    if conflicts_with_active_spy_fill_cycle(state_root, intent.run_id, intent.symbol):
+        return True
+    conflict = conflicts_with_budget_strategy(state_root, intent.run_id, intent.symbol)
+    if conflict and portfolio_execution is not None:
+        from .kis_paper_portfolio_execute import (
+            KisPaperPortfolioExecutionBinding,
+            allows_kis_paper_portfolio_execution,
+        )
+
+        if (
+            type(portfolio_execution) is not KisPaperPortfolioExecutionBinding
+            or portfolio_execution.intent_ref != intent.fingerprint
+            or portfolio_execution.run_id != intent.run_id
+        ):
+            return True
+        return not allows_kis_paper_portfolio_execution(
+            state_root, intent.run_id, intent.symbol, portfolio_execution
+        )
+    return conflict
 
 
 def run_kis_paper_canary(

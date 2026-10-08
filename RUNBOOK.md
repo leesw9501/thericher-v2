@@ -1,8 +1,39 @@
 # Runbook
 
+## Owned Rebalance Code And Runtime Delivery
+
+Goal20 kis-self-financing-paper-rebalance-v1 is COMPLETE as preparation.
+Bounded spy-baseline trim preserves default full exit/bs identity/locks;
+retained bp BUY executor uses existing canary transport and exact joint binding.
+Only observed cumulative proceeds/fresh account buying power fund new BUYs.
+Proven cancellation false-block fixed; missing proof/unknown outcomes retain
+reconciliation.395 changed-path cases12.61s/independent READY.
+Final immutable image:
+sha256:ae2c68f8ae0ea37290b18b17b9b814e130f2b1b9b1aed506be39942b82f64505.
+406 public source files/tree7bac725b... match host/context; cached same pinned
+Python3.12.13/runtime.lock, offline imports/no private mounts/network/provider.
+Seven configs retain five RW/two RO/commands/roots/profiles/env/pull_policy never;
+8 parity tests/.08s. No running owner restart/private migration/order/fill.
+Exact D:/thericher-v2/model-artifacts/execution/kis-paper-rebalance-runtime-v1/image-publication-20261008-v1.json,
+SHAf5f62fd3e51dc0575c6c37cf31bc98793bc8b6db3258d56764d7c3e6ef19014f.
+Old5216e00d.../0ff015de... remain rollback. Full12398pass22skip35warnings
+362.04s/12420collected/eight clean workers/helper0; Ruff/three sample-env Compose
+pass. Earlier interrupted full is not authority. Claude .951s unavailable,
+not agreement. No extra full run for unchanged documentation.
+
+Actual ETF rights scope completed6.456s/one token/six GETs. ICE all3 success/
+zero rows; period all3 business rejection. No usable rights/TR/source-support
+or date/instrument join claim. Exact D:/thericher-v2/model-artifacts/data/kis-etf-rights-capability-v1/readback-20261008-v1.json,
+SHA2700b4dbd6ea8652cb420b911ab9e1bb4ba33716f21a3f760ad7672095ef0c50.
+Wrapper10/probe30/reader53 cases; reader binds404 unchanged source files,
+timestamps, query set and exact receipt. No lock/import/wire-start proof claimed.
+Pure ANTICOR preparation77 cases/1.45s/source READY; actual worker not yet run.
+Next material work is owned-session rebalance, parallel finite CPU ANTICOR
+study and sector capability preparation; no new profitability/approval gate.
+
 ## Baked Paper Runtime Publication
 
-Goal19 is COMPLETE: seven private Paper consumer configs use
+Goal19 is COMPLETE: its seven private Paper consumer configs selected
 sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe,
 pull_policy: never. Five RW/two RO mounts/commands/environment unchanged;
 no manual running-service restart, task invocation or private V3 migration.

@@ -21,8 +21,38 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
-kis-paper-baked-runtime-v1 is COMPLETE. Seven private Paper consumers now
-select immutable image5216e00d... with pull_policy: never, preserving five RW/
+Goal20 kis-self-financing-paper-rebalance-v1 is COMPLETE as code/replay/image
+delivery, not actual private migration/order/fill. Bounded owner-only SPY trim,
+default full exit, shared reservations/observed proceeds and retained bp BUY
+identity/recovery pass395 serial cases12.61s. Independent review found and fixed
+proven-zero-fill cancellation being falsely treated as unresolved; missing
+proof/unknown outcomes still require exact recovery. Source review READY.
+Seven configs now select imageae2c68f8.../406 baked source files matching
+tree7bac725b...; offline imports/source parity pass with no network/private
+mounts/credentials. Same cached pinned base/runtime.lock; no running owner
+restarted. Exact A/execution/kis-paper-rebalance-runtime-v1/image-publication-20261008-v1.json,
+SHAf5f62fd3e51dc0575c6c37cf31bc98793bc8b6db3258d56764d7c3e6ef19014f.
+Older5216e00d... is retained rollback, not the current consumer selection.
+
+Full12398pass22skip35warnings362.04s/12420collected/eight clean workers/helper
+exit0, Ruff/three sample-env Compose pass; all parent sessions reaped. Earlier
+aborted full run is not authority. Publication-only tests8/.08s pass. Claude
+.951s review_unavailable/cli_nonzero is not agreement. Pure ANTICOR causal
+preparation77 cases/1.45s/source READY is not an actual performance result.
+Actual rights probe6.456s/one token/six GETs: ICE all3 empty business success,
+period all3 rejected. No rights/TR join qualification. Bound reader verifies
+404 unchanged source files/receipt/times; no dependency-lock/import/wire proof.
+Exact A/data/kis-etf-rights-capability-v1/readback-20261008-v1.json,
+SHA2700b4dbd6ea8652cb420b911ab9e1bb4ba33716f21a3f760ad7672095ef0c50.
+
+Next material package is actual owned-SPY reduction/reconciliation followed by
+observed-funds joint BUYs under the original shared10-percent basis. Thin
+runtime, fixed ANTICOR CPU experiment and sector capability preparation proceed
+in parallel. Actual Paper remains separate from research profitability; no
+foreground wait or new approval gate. Existing due owners retain recovery.
+
+kis-paper-baked-runtime-v1 (goal19) is COMPLETE. Its publication selected
+immutable image5216e00d... with pull_policy: never, preserving five RW/
 two RO roots, commands, profiles, environment and original shared basis. No
 running service/task was manually restarted.403 baked files/tree826b9d9f...
 and Python3.12.13 runtime verified without a source overlay; no V3 migration.

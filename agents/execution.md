@@ -28,11 +28,28 @@ Old unknown outcomes stay incomplete/unadopted; they are not new-account
 recovery dependencies. October6 expiry categories concerned prior .env config.
 
 Seven Paper consumer configurations select pinned image
-sha256:5216e00df8ed35a6dd0e41e3222a47c2a36750589f1c905eedaa2ec963a542fe,
+sha256:ae2c68f8ae0ea37290b18b17b9b814e130f2b1b9b1aed506be39942b82f64505,
 pull_policy: never; five RW/two RO roots and existing commands unchanged.
 Publication did not restart a running owner or migrate private state. Old
-image0ff015de... remains available for rollback. No research checkpoint or
+images5216e00d... and0ff015de... remain available for rollback. No research checkpoint or
 arbitrary public model code is loaded into deterministic Execution.
+
+Goal20 owner-only SPY trim and retained bp BUY adapter are COMPLETE as tested
+code, not actual migration/order/fill.395 changed-path cases12.61s/independent
+READY; source11f9837a... budget/988ec1ce... canary/cd06ed72... adapter.
+All writers share original10-percent basis/reservations; only observed sale
+proceeds fund BUYs. Proven cancellation uses retained terminal evidence;
+unknown/missing proof stays exact-request recovery, not a global pause.
+New image406 source files/tree7bac725b... verified offline on Python3.12.13,
+no credential/private/network work. Consumer delta image-only;8 parity tests.
+Exact A/execution/kis-paper-rebalance-runtime-v1/image-publication-20261008-v1.json,
+SHAf5f62fd3... . Goal20 full12398pass22skip362.04s/eight clean workers,
+Ruff/default/research/accounting sample-env Compose pass; aborted run not authority.
+Next owned runtime at A/execution/kis-paper-owned-rebalance-v1 remains in
+preparation. Persist exact trim request before side effects; retries reconcile
+that identity, never recompute quantity/TTL. Sell only spy-baseline-owned shares;
+preserve QQQ custody and resolve old baseline entry direction without blocking
+recovery. Actual unknown/partial fill cannot be treated as spendable funds.
 
 ## Retained Account Evidence
 
