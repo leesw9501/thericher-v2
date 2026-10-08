@@ -26,9 +26,18 @@ No full-OHLC, corporate-action/TR/PIT/finality/availability/source-authenticity
 claim; strict Bar parser/original v1 history are unchanged. New typed OC cache:
 M/us_equities/kis_paper_private/cross-asset-oc/kis-cross-asset-oc-history-v1/history/oc-venues-v1/index.json.
 The actual source is frozen-source-r2, not the retained pre-repair sibling.
-NEXT now owns daily-risk development on unchanged input02dcc000...; Data may
-implement its pure exact-calendar daily adapter without provider calls or
-silently extending/splicing the frozen trio input. Old2008 monthly proposal
+Closed causal capped-risk allocation used unchanged input02dcc000...;
+Data independently verified33 monthly entries/689 daily marks, each253 past
+CLOSEs/252 returns. First context2022-12-28..2023-12-29; last2025-08-28..
+2026-08-31. Calendar hash unchanged; required price values not re-read here.
+December2024/2025 decisions follow18:00UTC early CLOSEs; use actual clocks.
+No provider call or silent extending/splicing of the frozen trio input.
+NEXT now owns risk-engine Paper preview with parallel21-session variance
+forecast. Data independently checks calendar/source-support geometry for
+TRAIN2021Dec1..2023Nov30 and33 DEV month-first entries; no actual targets or
+provider call. A source gap is scoped input_unavailable, never selective date
+deletion or a hold on the existing Paper strategy.
+Old2008 monthly proposal
 remains unavailable. The closed source facts below are historical context,
 not current waits, queues or permission holds.
 

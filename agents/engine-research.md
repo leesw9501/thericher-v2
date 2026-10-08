@@ -8,6 +8,19 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
+Latest causal allocation is COMPLETE/REJECTED30 cells,33 monthly entries,
+zero fits/GPU/search/holdout. Contractb8534c14.../resultfc2c7a1d...,
+root D:/thericher-v2/model-artifacts/research/kis-causal-risk-allocation-development-v1.
+At10bps-side minvar growth18.438198percent/12.412995percent is positive;
+later utility loses both common-cap controls under the original criterion.
+Pinned ALL-RO5.322s reproduces30 cells exactly. Host independent30-cell/
+414-fee-capital/1297-file readback2.364s supports rejection with unlocalized
+action/cap byte mismatches, not runtime equivalence. Custody closed/familytrial1.
+377serial16.04s/full11673+22skip346.16s/eightworkers/Ruff/three Compose pass.
+New variance-forecast CPU HAR-like/GRU proposal is source/contract preparation
+only, not a frozen campaign, actual training or a Paper profitability gate.
+Closed context below does not describe current resource waits.
+
 Current daily-risk worker actually completed two fits and42 cells: CPU HGB100
 iterations/.328s, CUDA attention512updates/2.602s/peak146361344bytes, fixed
 half probability blend. Original BOTH-view10bps kill rejects all three:
@@ -247,9 +260,9 @@ eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
 
 | Queue | Current bounded fact |
 | --- | --- |
-| Breadth | Actual49-month KIS trio rule24-cell comparison closed/rejected. Current joint5-session loss hypothesis uses existing5-year input; old TLT history/Tiingo rights do not block it. |
-| Depth / GPU | Daily-risk HGB/attention implementation underway, no actual labels/fits or frozen appointment yet. Exact finite2-fit/shared300s/42-cell recipe; eligible CUDA allocation follows final source/input/contract freeze, not a utilization KPI. |
-| Ensemble | Fixed half-probability blend is part of this same developmental recipe, not synthesis or rescue of a rejected family; no learned fuser or extra fit. |
+| Breadth | Monthly rule and daily-risk HGB/CUDA/fixed-blend families closed/rejected. Ready current33-month/30-cell causal capped-risk allocation uses unchanged five-year trio input and existing covariance/solver/ledger. |
+| Depth / GPU | Daily-risk actual CUDA512 updates2.602s/peak146361344bytes is closed, not a waiting appointment. No survivor or ready depth allocation follows. Current statistical mechanism needs no predictive fit/GPU; no utilization-only work. |
+| Ensemble | Daily-risk fixed blend rejected under original kill; no learned fuser, member rescue or independently aligned survivor pair is ready. |
 | Replication | No selected candidate; revised/seen studies cannot become fresh independent evaluation by renaming them. |
 
 FINRA auxiliary-signal proposal is source-rights unresolved, NOT a ready model

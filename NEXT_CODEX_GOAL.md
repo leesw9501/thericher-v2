@@ -2,109 +2,120 @@
 
 ## Objective
 
-Complete kis-causal-risk-allocation-development-v1: actually compare one causal
-monthly SPY/TLT/GLD minimum-variance allocation with common capped ex-ante risk
-budgets against inverse-volatility and equal-third controls. Produce continuous
-capital, cost, risk and utility evidence, not another preparation-only goal.
-This is a distinct economic hypothesis, not a rescue or rescore of closed models.
+Complete kis-risk-engine-paper-preview-v1: connect a causal KIS-native risk
+control to an actual private, zero-submit portfolio preview without disturbing
+existing Paper custody. In parallel, actually measure one distinct CPU/CUDA
+variance-forecast diagnostic. This company objective improves model research
+and Paper sizing readiness; it is not a profitability or authorization gate.
 
 Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1;
 read HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards. Parent owns
-contract/runtime/custody/Git; Engine owns the small worker/tests; Data owns
-past-source geometry; Execution reviews sizing/carry/cost semantics; invoke
-Validation only after frozen actual outputs. Disjoint work may run in parallel.
+integration, frozen research/runtime/custody, actual owned read-only calls and
+Git. Assign disjoint Execution, Engine Research, Data geometry and invoked
+Infra/review packages in parallel. A research rejection or unavailable quote
+never pauses another ready lane or the existing Paper strategy.
 
-## Input And Source
+## Execution Package
 
-A = D:/thericher-v2/model-artifacts; M = D:/market_data.
-Use unchanged A/research/kis-cross-asset-d1-input-foundation-v1/input/cross-asset-d1-input-20261008-v1/input-commitment.json,
-SHA02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516:
-three ETF1288 shared dates2021-08-20..2026-10-07,136 bindings/140 files.
-Calendar A/data/kis-cross-asset-d1-input-foundation-v1/calendar-nyse-20070821-20261007-v1.json,
-SHAd2dab6f2ab27a7439ed4be91bacefc68b04908d0b3b7d509e4a2b19925a42721,
-NYSE/pmcal5.4.0. Raw MODP0 price-only; splits/dividends/TR/PIT/finality/
-decision-time availability unverified. No Tiingo, Norgate, new dataset or
-extended SPY/GLD OC splice. Existing Paper owners and shared10-percent basis
-are independent and unchanged. Never read KIS_LIVE_*.
+Use fixed equal-thirds with a causal annualized10-percent ex-ante risk cap as
+an ENGINEERING CONTROL, not an outcome-selected winner or promotion of the
+closed min-variance candidate. The annual risk ceiling and the original
+shared10-percent virtual-capital basis are different quantities.
 
-Mechanism inspiration, not a replication or KIS ETF edge claim:
-https://www.anderson.ucla.edu/documents/areas/adm/Volatility%20Managed%20Portfolios.pdf
-(Moreira/Muir2015-11-23 draft, independent Engine retrieval2026-10-08 03:10:23UTC)
-and https://onlinelibrary.wiley.com/doi/10.1111/0022-1082.00327
-(Fleming/Kirby/Ostdiek2001 covariance-allocation abstract). No public code,
-weights or data rights adopted. Do not copy unconditional/full-sample volatility
-normalization. Our10-percent cap/thresholds are fixed engineering choices.
-Claude challenge one1.026s cli_nonzero_other/review_unavailable, not agreement:
-A/research/source-discovery/claude-kis-causal-risk-allocation-20261008-v1.json.
-Independent Engine/Execution source checks continue without an approval wait.
+Preserve thericher-v2-paper-canary-private-acct-20261007-v1 at
+/app/private/canary, its original basis, incumbent SPY ownership, outstanding
+reservations, exact pending identities, QQQ history and default owned schedules.
+Do not adopt broker holdings, transfer ownership, sell incumbent SPY to reach
+a target, reset a budget, submit a substitute order or change submit whitelists.
+Do not create a new worker, service, schedule, platform or permission marker.
 
-## Frozen Recipe
+Extend only named preview GET paths for SPY/AMS, TLT/NAS and GLD/AMS quote
+detail/asking-price and exact-limit buying power (AMEX/NASD order venue maps).
+Keep existing SPY/QQQ behavior unchanged. Reuse one Paper-only client/token,
+the evidence-backed request gate and strict fresh timestamp/tick/bid-ask checks.
+An off-hours stale quote is scoped input_unavailable, not fabricated freshness.
+Buying power is not settled cash; analytical costs are not observed charges.
 
-Freeze source/input/runtime/contract/custody before actual numeric preparation.
-DEV valuation dates2024-01-02..2026-09-30,689 daily marks:252 in2024 and437
-in2025-Jan..2026-Sep. All are seen development, not a fresh holdout. Exactly33
-monthly first-session OPEN decisions, previous scheduled CLOSE, full schedule.
-No window/asset/period/cadence/seed search or missing-date deletion.
+Pure owner-side preview consumes independently bound account/basis/owner
+facts, the existing shared-cost/reservation replay and named causal targets.
+Whole-share floor, exact residual cash and total risk including incumbent SPY
+must be checked. Rounding does not necessarily reduce variance. Reservations
+are hypothetical only: no intent/store write or broker side effect.
+Strongest kill: an unreachable target or aggregate risk ceiling must return
+unreachable_mismatch, not feasibility obtained by ignoring/selling the incumbent.
+Actual completion evidence is a named bounded read-only account/quote capability
+receipt and an exact categorical preview result, including an honest technical
+unavailable result when current quotes cannot support a feasible preview.
+Retain no secret/raw body/private price/amount/account/order identifier in
+public output, Git, Claude or source-safe artifacts. Never read KIS_LIVE_*.
 
-At each decision select exactly253 prior scheduled CLOSEs and252 simple daily
-returns in SPY/TLT/GLD order. Decimal50 ratios then finite float64; population
-covariance, mean subtraction/ddof0. Reuse the existing pure
-joint_portfolio_covariance._population_covariance and
-tiingo_quarterly_joint_allocation.minimum_variance_weights; no Tiingo I/O or
-adjusted Bar wrapper. Pass UNSHRUNK covariance to the existing solver because
-it internally applies0.9*C+0.1*diag(C). Reuse its fixed simplex-face solution,
-1e-45 weight quantum/residual rule. No new framework or duplicated optimizer.
+Claude scope challenge one .990s cli_nonzero_other/review_unavailable, not
+agreement: D:/thericher-v2/model-artifacts/research/source-discovery/claude-kis-paper-risk-preview-20261008-v1.json,
+SHA bf5e67cfcbecd5be040114e74f3302bc14a9fcf45c5feb95a19c95b72163e9e8.
+Independent technical review continues without a human approval wait.
 
-Policies: candidate minimum variance; inverse volatility; equal thirds; cash;
-uninterrupted equal-third buyhold. For inverse volatility use the same shrunk
-diagonal; a zero diagonal allocates equally among zero-variance assets; all
-zero gives equal thirds. Normalize with the existing finite weight quantum.
-For the three monthly allocations use the SAME shrunk covariance and cash cap:
-vol=sqrt(252*w'C_shrunk*w), exposure=min(1,.10/vol), zero vol=>exposure1.
-Multiply each sleeve under Decimal50; exact residual cash calculated at enough
-precision for Fraction(weights)+cash==1. No leverage, short, outcome-derived
-volatility normalization or exposure-matching to observed results. The same
-cap is not identical attained risk when exposure cannot exceed1: retain attained
-forecast risk/cap-binding diagnostics; never call this risk-matched alpha.
+## Parallel Research Package
 
-Seal all33 actions/policy before forward payoff calculation. Canonical existing
-three_asset_nav.replay: NAV1 once/policy/cost, rebalance at monthly first OPEN,
-carry quantities/overnight gaps through month and view boundaries, final CLOSE
-exit only. No monthly liquidation, fresh-capital views or five-day cash tail.
-Every scheduled daily mark, Decimal50 HALF_EVEN, fees on actual traded notional.
-Side costs2.5/5/10bps; five policies x3 costs x2 views =30 cells. Buyhold only
-initial entry/final exit is an opportunity-cost reference, not mandatory wealth
-dominance. Cash earns0; no fabricated interest/dividend/fee settlement.
+Study kis-d1-variance-forecast-development-v1 uses unchanged commitment
+D:/thericher-v2/model-artifacts/research/kis-cross-asset-d1-input-foundation-v1/input/cross-asset-d1-input-20261008-v1/input-commitment.json,
+SHA02dcc0007a5aa2804c4b0ce497dfb51e21387122869f1ef90f539d597158e516,
+and calendar D:/thericher-v2/model-artifacts/data/kis-cross-asset-d1-input-foundation-v1/calendar-nyse-20070821-20261007-v1.json,
+SHAd2dab6f2ab27a7439ed4be91bacefc68b04908d0b3b7d509e4a2b19925a42721.
+SPY/TLT/GLD raw MODP0 prices only; source limitations remain explicit. No
+Tiingo, new data, extended OC splice, adjusted-Bar wrapper or prior-model rescue.
 
-Use utility252*(mean daily log return -5*population variance). Report daily-log
-realized annual volatility sqrt(252*variance), growth, actual-notional turnover,
-costs and drawdown. Drawdown uses the running NAV peak from the single initial
-NAV1 across both views; do not reset it at the view boundary.
-Original strongest kill at10bps in BOTH views: candidate positive net growth
-over cash; utility greater than BOTH common-cap controls by>.001; realized
-annual log volatility<=.15; running-peak maximum drawdown<=.25. These thresholds
-are engineering choices, not cited paper findings. Lower exposure alone is
-not skill. Failure closes this exact recipe; no threshold/window/period rescue,
-holdout/depth/ensemble/Paper/live qualification or rescoring prior failures.
+Freeze all source/runtime/input/geometry/recipe/custody before actual labels.
+64 exact prior scheduled CLOSEs ->63 simple returns, asset-major3x63.
+Decision is previous scheduled CLOSE, honoring early sessions. TRAIN entries
+2021-12-01..2023-11-30, all labels before DEV; December2023 embargo.
+DEV33 month-first entries2024-Jan..2026-Sep, blocks12/21, all seen development.
+Data independently establishes exact support/label end dates before dispatch;
+never drop required dates or silently move a split for missing source support.
 
-## Execution And Completion
+Target: population variance of21 future scheduled CLOSE-to-CLOSE returns,
+starting decision CLOSE ->entry CLOSE, floored1e-12; natural log for training.
+This is a daily variance proxy, not intraday realized variance or a Corsi
+replication. Fixed baseline trailing21-return population variance, same floor.
+CPU HAR-like nine inputs: per-asset trailing1/5/22 mean squared returns;
+one multioutput OLS/intercept fit, no new arch dependency/code adoption.
+CUDA GRU: input3/hidden32/one layer/no dropout/last-state linear output3,
+seed101/float32/TRAIN-only population scaling/zero-std divisor1;
+512 final full-batch AdamW updates/lr.001/weight_decay.01/log-target MSE.
+No best epoch, adaptive clipping, seed/window/search/refit or blend selection.
+
+Equal-weight asset/date QLIKE y/v-log(y/v)-1 and log-MSE, same floored targets.
+Original strongest kill in BOTH blocks: OLS beats baseline on both metrics
+by strictly>1e-10; GRU beats baseline AND OLS likewise. Report every asset,
+no asset selection. Nonfinite prediction is technical failure, not clipping.
+33 dependent dates are not99 independent observations or a fresh holdout.
+This diagnostic cannot qualify a dataset, financial NAV, Paper input or model.
+
+Mechanism source independently re-retrieved by Engine2026-10-08 04:01..04:02UTC:
+https://arch.readthedocs.io/en/stable/univariate/generated/arch.univariate.HARX.html
+and official Corsi DOI10.1093/jjfinec/nbp001 publisher extraction; full-paper
+sample remains unverified. No public weights/data/code or framework adopted.
 
 Use existing image sha256:d6b43213ee3877653e3c1e79c7238fb5caa71241abf238838fa0c3332cf4f039,
-Python3.12.14/pmcal5.4.0/numpy2.5.1. CPU synthetic smoke first, then one shared
-120-second actual source/action/evaluation allowance, CPU2/memory2GiB.
-Network-none/source+input RO/own output A/research/kis-causal-risk-allocation-development-v1
-only; all-RO exact30-cell replay with zero refits/search/writes. No model fits,
-GPU allocation or public checkpoint is needed for this statistical mechanism;
-do not train a dummy job for utilization. Preserve categorical bounded faults.
+CPU synthetic smoke first, one shared300-second actual allowance, exclusive
+parent-owned GPU lease, network-none/source/input RO/own output only.
+Artifacts D:/thericher-v2/model-artifacts/research/kis-d1-variance-forecast-development-v1;
+safe numeric coefficients/scalers and own GRU safetensors only. Record each
+completed fit before inference/save; no claimed fit from intended work.
+Exact all-RO cached-prediction/model binding and metric replay has zero
+refits/inference/search/writes; it is not independent repeated inference.
+Independent Validation reconstructs the frozen actual kill after output,
+then close non-promoting custody. GPU idle is not an approval boundary.
 
-Reuse source loader/calendar/binding, solver and shared ledger. Keep the worker
-small; don't create another platform/report/gate or independent goal file.
-Independent Validation checks frozen actual kill/cashflow/source binding, then
-close non-promoting custody. Completion requires actual outcome/replay/closure,
-not only code/smoke. No provider/account/order/task/schedule/dashboard change
-is required. Existing Paper authority and owned jobs never wait on this study.
+## Integration
 
-Run changed-path serial, clean-root8-worker authority, Ruff and three sample-env
-Compose configurations. Commit/push owned integration, refresh current
-projections, replace this file with exactly one material next company objective
-and CONTINUE until reserved operator authority or a genuine company block.
+Keep market data D:/market_data and generated artifacts
+D:/thericher-v2/model-artifacts. The closed allocation's host action/cap byte
+mismatch remains a scoped numerical limit, not numerical equivalence; retain
+its immutable receipts and do not promote or rescore its failed criterion.
+Focused role checks/commits may occur while this company objective is active.
+After actual preview capability and actual forecast terminal/readback/closure,
+run changed-path serial, clean-root8-worker authority, Ruff and three sample-env
+Compose configurations. Verify no existing budget/private state/schedule/order
+changed, commit/push owned integration, refresh current stateboards, replace
+this file with one material next company objective and CONTINUE until a true
+reserved operator decision or genuine company block.

@@ -8,10 +8,16 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-08 KST)
 
-- NEXT statistical risk allocation is not yet frozen/dispatched:33 monthly
-  decisions/30 cells/shared120-second CPU allowance, zero model fits/GPU/sealed
-  spend. Register its distinct frozen family before actual numeric preparation;
-  its capped risk comparison does not reopen or rescore any closed allocation.
+- Statistical risk allocation is closed/non_promoting_completed:33 monthly
+  decisions/30 cells/shared120-second CPU allowance, zero fits/GPU/sealed spend.
+  Contractb8534c14.../resultfc2c7a1d.../tree20e0c4a4..., familytrial1.
+  Original kill rejected despite positive growth; pinned ALL-RO30 cells passes.
+  Independent host sealed-action/cashflow rejection supported_with_limits:
+  receipt a161a6a1..., recomputed action/cap bytes not equivalent. Do not turn
+  this into a promotion or numerical-equivalence claim. Exact custody:
+  D:/thericher-v2/model-artifacts/research/kis-causal-risk-allocation-development-v1/custody-outcome.json.
+  No active GPU allocation follows. A distinct diagnostic variance-forecast
+  proposal is not yet frozen or fitted; no idle-utilization job is implied.
 
 - Current monthly-momentum CPU family is closed/non_promoting_completed:
   contract5245f9f1.../resultabcd8b27..., familytrial1/holdoutnone.24 cells;

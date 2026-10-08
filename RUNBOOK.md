@@ -1,5 +1,39 @@
 # Runbook
 
+## Causal Risk Allocation Actual Result
+
+Exact external root D:/thericher-v2/model-artifacts/research/kis-causal-risk-allocation-development-v1.
+Contract b8534c1431dd7501f04aa44ffb5a8cb21d6546dd91177b86e16bf428dbc41217;
+result fc2c7a1d231b852af3c1985030d73ce034874f0e252aa8ae6c28723964e6f57b;
+actions cdc405fa3a43e31b5d3c82a883719d44dcbbc1befe62f4094a0cd56003f02c24.
+Frozen1151 files/tree20e0c4a4bb258b5ebfc8c74586ad604bb95a5b0a0d4d2ddb4fa6d932da5ce561;
+worker59078b6f.../tests3ea8d219... .33 month-first entries/689 daily marks,
+continuous inventory/NAV/running peak across252/437 views,30 cells.
+Common capped ex-ante10-percent annual risk is not identical attained risk.
+Unshrunk covariance enters the reused solver; shrink exactly once.
+
+CPU smoke2.111s/parentrun5.869s/worker4.628s/ALL-RO5.322s all contained.
+No fits, GPU, search or sealed spend. Original candidate kill REJECTED:
+10bps-side normalized growth18.438198percent/12.412995percent is positive,
+but later utility .0136742391 loses inverse-vol .0431215662 and equal-cap
+.0567996439. This is raw price-only seen development, not total return,
+independent replication, broker profit or a promoted Paper input.
+
+Independent validation-readback.json SHAa161a6a151d7bd0621c6c91315d9c7518693ecbc7bc4ee9192c594c11f592ba7
+supports original rejection and30 sealed-action cells/414 closed-form fee-capital
+checks/1297 unchanged files,2.364s. Host3.14.3 differs from Docker3.12.14;
+69 recomputed action rows/58 cap diagnostic bytes mismatch, unlocalized at
+this receipt. Attained-risk diagnostic not independently checked; no numerical
+runtime-equivalence claim. Keep the receipt immutable and any diagnosis separate.
+Use exact source-freeze/precommit/parent-{smoke,run,verify}/worker-result/
+validation-readback/custody-outcome receipts, never a latest-artifact scan.
+Custody non_promoting_completed/familytrial1/holdoutnone; no threshold rescue.
+Claude result challenge one .996s cli_nonzero_other/review_unavailable,
+not substantive agreement: A/research/source-discovery/claude-kis-causal-risk-allocation-result-20261008-v1.json.
+Company verification377serial16.04s/full11673pass22skip35existingwarnings/
+346.16s/eightworkers/11695collected/clean helper, Ruff and three sample-env
+Compose pass. Existing Paper budget, owners, schedules and dashboard unchanged.
+
 ## KIS Trio Daily Risk Actual Result
 
 A = D:/thericher-v2/model-artifacts; M = D:/market_data.

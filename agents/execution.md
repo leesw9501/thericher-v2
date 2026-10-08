@@ -14,6 +14,16 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
+The causal-risk allocation study is closed/rejected30 cells; common cap and
+continuous monthly carry do not prove broker sizing/fill parity. Positive
+price-only growth18.438198percent/12.412995percent fails later control-relative
+utility. Pinned all-RO replay passes; independent host sealed-action/cashflow
+readback supports rejection with action/cap byte mismatch limits, receipt
+a161a6a1... under D:/thericher-v2/model-artifacts/research/kis-causal-risk-allocation-development-v1.
+No Paper owner, order, budget, quote whitelist, schedule or dashboard changed.
+Next preview may use a fixed engineering control, never a promoted failed
+candidate; incumbent SPY custody/shared10-percent basis must remain exact.
+
 Current daily-risk implementation has pre-label payoff alignment attested:
 five-session TRAIN OPEN->fifth CLOSE now matches candidate/balanced/null
 holding/exit, not the original daily-overwrite proposal. Partition all689 DEV

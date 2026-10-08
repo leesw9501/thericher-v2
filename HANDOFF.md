@@ -57,11 +57,27 @@ cells with zero refits/inference/search/writes; saved model/prediction binding
 is not independent model reinference. Independent Validation6.316s confirms
 exact42cells/closed-form cashflows1e-45/1312 unchanged files; receipt6662caff... .
 Custody closed familytrial1/non_promoting_completed/record95036f8d...,
-holdoutnone. NEXT now owns kis-causal-risk-allocation-development-v1: one
-monthly min-variance policy/common capped ex-ante risk controls,30 actual cells,
-no GPU/fits needed, no wealth-dominance rescoring of old failures.
-320 changed-path serial25.18s/full11621passes22skips/
-35existingwarnings352.16s/eight workers/11643collected/Ruff/three Compose pass.
+holdoutnone. The distinct kis-causal-risk-allocation-development-v1 is now
+COMPLETE/REJECTED:33 monthly decisions,30 continuous-inventory cells, zero
+fits/GPU/holdout. Root A/research/kis-causal-risk-allocation-development-v1;
+contractb8534c14.../resultfc2c7a1d.../actionscdc405fa...,
+1151 frozen files/tree20e0c4a4... . CPU smoke2.111s/run5.869s/ALL-RO5.322s
+contained; pinned Docker exact replay passes. At10bps-side candidate growth
+18.438198percent/12.412995percent is positive, but later-view utility loses
+both common-cap controls under the original kill. No alpha/Paper promotion.
+Independent host readback2.364s confirms30 sealed-action cells/414 closed-form
+fee-capital checks/1297 unchanged files and original rejection. Receipt
+a161a6a1... is supported_with_limits: host recomputed action/cap bytes mismatch,
+cause not yet localized, attained-risk diagnostic not independently checked.
+Do not claim host/Docker numerical equivalence; this does not rescue the kill.
+Custody closes non_promoting_completed/familytrial1/holdoutnone/record8152bddd... .
+Separate validation-context-diagnosis.json SHA ffdb38b2... shows both Decimal28
+and50 keep the mismatch; cause unknown, not a proved precision explanation.
+NEXT owns kis-risk-engine-paper-preview-v1: actual zero-submit private preview
+with incumbent/shared-basis preservation and independent CPUOLS/CUDAGRU
+daily-variance diagnostic. Research cannot become a profitability gate on Paper.
+377 changed-path serial16.04s/full11673passes22skips/
+35existingwarnings346.16s/eight workers/11695collected/Ruff/three Compose pass.
 Data/Engine work is disjoint; parent owns actual calls/integration/Git. No
 account/order/scheduler/web/private-Paper change belongs to these packages;
 separate existing Paper authority and owned jobs remain unchanged.
@@ -112,7 +128,7 @@ payoff-aligned fixed five-session candidate/control roundtrips, not daily churn.
 ## Paper And Runtime Ownership
 
 Corrected private volume: thericher-v2-paper-canary-private-acct-20261007-v1,
-/private/canary. Preserve its frozen provisional shared10-percent basis,
+/app/private/canary. Preserve its frozen provisional shared10-percent basis,
 owned inventory/pending reservations and exact persisted intent identities.
 Old thericher-v2_thericher-v2-paper-canary-private is untouched/unadopted:
 105 files/sealace0afb792960064d6d255aead452d7daaaef6172e3a2eaa9f286485a9d629da.
