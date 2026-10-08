@@ -45,7 +45,7 @@ period all3 rejected. No rights/TR join qualification. Bound reader verifies
 Exact A/data/kis-etf-rights-capability-v1/readback-20261008-v1.json,
 SHA2700b4dbd6ea8652cb420b911ab9e1bb4ba33716f21a3f760ad7672095ef0c50.
 
-Next material package is actual owned-SPY reduction/reconciliation followed by
+NEXT now owns kis-owned-portfolio-first-rebalance-v1: actual owned-SPY reduction/reconciliation followed by
 observed-funds joint BUYs under the original shared10-percent basis. Thin
 runtime, fixed ANTICOR CPU experiment and sector capability preparation proceed
 in parallel. Actual Paper remains separate from research profitability; no

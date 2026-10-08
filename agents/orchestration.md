@@ -9,6 +9,7 @@ Parent alone owns Git, actual credentials, provider/Docker/scheduler effects.
 Role authors own disjoint public or external preparation; no active test owner.
 Goal20 self-financing rebalance code/replay and image delivery are COMPLETE.
 Actual execution/migration/fill remains unobserved for this package.
+NEXT owns kis-owned-portfolio-first-rebalance-v1; actual lifecycle is required.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
