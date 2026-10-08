@@ -165,6 +165,12 @@ Result26effc665b97c3d4b2275a00b99f07f7fcd4496a2e3153164dbb03d52b856f2f;
 parent-verify-46b1344ef79e4a819041d07e2272f6f2.json/e142818c... .
 Source/input/output unchanged, child reaped/absent; custody1e0102ae... closed
 non_promoting_completed/zero sealed spend. Prior results never inputs.
+Independent numeric supplement now passes1.862s/991 unchanged bindings,
+33 covariance windows/165 covariance-control checks/36 cells. Exact
+A/research/kis-cross-asset-erc-development-v1/validation-readback.json,
+SHA09e7265e78d99cfe799c1e3b94f94b7ab8edaefcaae69074403e2000140e9064.
+Independent geometry/covariance/ERC contributions/KKT/metrics/kill, shared NAV;
+host Python3.14.3 is supplementary, not Docker3.12 runtime equivalence.
 Next distinct GPU preparation is direct-risk-capped-utility allocation,
 related to earlier direct-policy family, not new independent alpha. Native
 GRU16/constant policy output allocations, not return/action-value forecasts;
@@ -184,3 +190,7 @@ GPU available/no active lease; useful frozen GPU campaigns may run autonomously.
 Do not create dummy training to consume VRAM. Source-local rights/failed data
 or a scheduled Paper observation cannot idle another ready research package.
 No new Tiingo numeric study until the already-raised rights question resolves.
+Pure kernel/adapter10777753... and proposal-contractdc4c007d... released;
+35 parent cases1.65s/independent1.60s/Ruff pass, including Decimal50 economic
+parity, gradients and future perturbations. External thin actual worker prepares;
+no market labels/fits/GPU runtime exercised yet. Native Torch, no new dependency.
