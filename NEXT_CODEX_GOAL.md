@@ -59,9 +59,12 @@ Actual v3 f5cf67c4... now fails fresh_reads/auth_rejected at token1/GET0/BUY0,
 parent retained/no plan/8.126s/source unchanged/reaped/absent. Exact successor-v3/
 acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json. Native token rejection collapses
 all non-200 responses; do not infer expired account or invalid credentials.
-Prepare one token-only categorical diagnostic using existing selective loader/
-token-start guard, no account/order calls or raw response retention. Preserve
-v3 identity/basis and used sources; never blindly retry or extend plan TTL.
+Token-only categorical diagnostic2b85... now succeeds17:33:25UTC/token1/
+HTTP2xx/GET0/orders0/.506s, source unchanged/token discarded. Exact successor-v3/
+auth-probe-a1f18ccc274c4b6ea42eda10e95cb187.json/6c327aeb... . Earlier4xx
+cause remains unclassified, not expired account or bad keys. Same v3 recovery
+is ready after owned token due17:38:26.120369UTC; retain identity/basis/used
+sources and call-time private binding. Never extend a persisted plan TTL.
 
 Use the next owned regular-session opportunity, keeping owner conflicts and
 token due in the named worker. Resolve the old baseline new-entry direction

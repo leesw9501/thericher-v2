@@ -79,7 +79,13 @@ Native token auth_rejected covers any non-200; no account-expiry/key/quota proof
 One token-only categorical diagnostic prepares through existing selective
 loader/guard, no GET/account/order/new loader/raw response. Preserve v3 parent,
 identity and original basis; no blind retry. Used host461e/worker4eec/selectore6fb
-remain immutable; transport counts are not independent broker census.
+remain immutable; transport counts are not independent broker census. Corrected
+token-only probe2b85c6c1.../34 cases/independent READY now succeeds. Exact
+D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/auth-probe-a1f18ccc274c4b6ea42eda10e95cb187.json/6c327aeb...:
+17:33:25..26UTC/.506s/token1/HTTP2xx/GET0/orders0/token discarded/source unchanged/
+process reaped. Earlier4xx cause unclassified; no account/key renewal evidence.
+Same v3 recovery is ready after owned token due17:38:26.120369UTC, preserving
+parent/identity/basis and call-time private binding, no persisted TTL reset.
 
 ANTICOR actual30 cells rejected/11.498s; ALL-RO15.273s and independent r2
 1.294s pass. Exact numerical receipt:

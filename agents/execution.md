@@ -162,7 +162,15 @@ Native auth_rejected means any non-200 token response, not proven account/key
 expiry. One token-only categorical probe prepares using the existing four-Paper
 selective loader/guard, no new loader, GET/account/order or raw response output.
 Preserve exact v3 parent/identity/shared basis; no blind retry. Transport zero
-counts are not independent private-state or broker census evidence.
+counts are not independent private-state or broker census evidence. Corrected
+probe2b85c6c1... passes34 cases/independent READY after malformed non-200 and
+BrokenPipe watchdog corrections. Parent actual17:33:25..26UTC succeeds with
+one token POST/HTTP2xx/GET0/orders0/.506s, token discarded/source unchanged/
+process reaped. Exact successor-v3/auth-probe-a1f18ccc274c4b6ea42eda10e95cb187.json,
+SHA6c327aebffff743709516cd47070ae4d1f3a5f828429930afd9c8d7807996d1e.
+Earlier4xx cause remains unclassified; no expired-account/key claim or operator
+credential action. Same v3 retry is ready after owned token next_due17:38:26.120369UTC;
+no plan TTL/quantity or original basis reset. Research preparation continues.
 Used9496/718/6c36 sources are immutable. Claude changed fresh recovery challenge
 .948s review_unavailable/cli_nonzero/not agreement.
 

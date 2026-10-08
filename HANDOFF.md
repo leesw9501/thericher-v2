@@ -99,8 +99,14 @@ SHAf5cf67c41b79230fcadb8dfc3e5744e0f672eefa8590d6f77c98de8745fb3498.
 Source/runtime unchanged/both children reaped/absent. These transport facts are
 not independent broker census. Native auth_rejected covers every non-200 token
 response: expired account, bad keys or quota are not yet established. Preserve
-v3 identity/basis; one token-only categorical diagnostic prepares through the
-existing selective loader/guard, no new loader or blind order retry.
+v3 identity/basis. Corrected token-only probe2b85c6c1.../34 cases/independent
+READY now succeeds17:33:25..26UTC/.506s/token1/GET0/orders0/HTTP2xx, token
+discarded/source unchanged/process reaped. Exact successor-v3/
+auth-probe-a1f18ccc274c4b6ea42eda10e95cb187.json,
+SHA6c327aebffff743709516cd47070ae4d1f3a5f828429930afd9c8d7807996d1e.
+Earlier4xx cause remains unclassified, not expired account or bad keys. Same
+v3 retry is ready after owned token due17:38:26.120369UTC; no identity/basis/
+TTL reset, new credential loader or operator action. Independent work continues.
 23:50 exact SELL/BUY router98112184... is installed; new SELL recovery host
 01106782... requires the probe's original request hash, never a null fresh-entry
 handoff. Lost post-probe request/pin rejects before fresh reads/transport.
