@@ -99,9 +99,22 @@ verified/reaped/absent. Independent reasons reader56bf5fa1.../nine tests.07s/
 READY actually reads1 expired materialized intent plus1 unmaterialized seed.
 Exact buy-reasons-readback-20261008-v1.json/caccbf244972525150736a7a62800b77d6bdd9a337ddfcf48aee0261a479955b,
 1.346s/zero API/credentials/writes/private bytes unchanged. Stored expiry does
-not prove the original exception. Remaining no-wire closure uses existing
-terminal semantics, not a new phase or provider rejection. Prototype5482e22f...
-passes44 cases2.85s; exact packet/independent review pending, no actual closure.
+not prove the original exception. Exact no-wire closure is now COMPLETE using
+existing terminal semantics, not a new phase or provider rejection. Used
+closure5482e22f.../pipe-only selector030cbaff... are immutable;51 focused
+cases3.57s/independent READY plus six parent containment fault regressions pass.
+Actual3.253s closes2 terminals/materializes1/transitions1 with original plan,
+basis and book unchanged; zero API/credentials and both children reaped/absent.
+Exact expired-plan-closure-20261009-v1.json,
+SHA21f6c60a1f47b605b3a73531a32b6a5e49909844d593e853e653f6d7d94de578.
+Independent buy-closed-readback-20261009-v1.json,
+SHAd7357593f14f5901eaabd7035e3b85292006012863be98defd0525dd77819596,
+actually confirms2 terminal/zero remaining recovery/starts/acks/fills in1.351s.
+Never retry that expired plan. Prepare distinct owned-portfolio-buy-20261009-v2
+from a new post-closure current-book capture and fresh exact observations;
+retain original SELL linkage/shared10-percent basis and frozen restart terms.
+Actual BUY lifecycle remains unobserved; goal21 stays active. Public synthetic
+real-adapter image smoke prepares separately with no production mounts/network.
 Claude changed recovery challenge.955s unavailable/not agreement.
 
 ## Retained Account Evidence

@@ -39,6 +39,15 @@ Post-dispatch final-source/receipt
 faults preserve actual counts; missing receipt is unknown. For every BUY,
 require exact SELL evidence/new custody and observed funds, never anticipated
 proceeds, a substitute request or reset of the original10-percent basis.
+Both old BUY intents are now expired/no-wire closed using existing terminal
+semantics. Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/expired-plan-closure-20261009-v1.json,
+SHA21f6c60a... actual3.253s/zero API/credentials/plan/basis/book unchanged.
+Independent buy-closed-readback-20261009-v1.json/d7357593... confirms2 terminal/
+zero remaining recovery/starts/acks/fills. Used closure5482e22f... and pipe-only
+selector030cbaff... are immutable. Do not retry the old plan or extend its TTL.
+Distinct owned-portfolio-buy-20261009-v2 prepares with new current-book capture,
+fresh observations and original SELL linkage/shared basis. The original23:10
+exception remains unclassified; later expiry is not proof of its cause.
 
 ANTICOR actual30 cells rejected/11.498s; ALL-RO15.273s and independent r2
 1.294s pass. Exact numerical receipt:
@@ -95,7 +104,11 @@ Separate offline-finalization-v1/parent-cached-verify.json/b4821adc... now
 passes13.815s/zero inference/fits/search/write, exact metrics and current input/
 source/artifact revalidation. Original criterion rejects; custody5540cae2...
 closed. Failed original host receipt remains intact. Pure ERC40 cases.22s/
-independent READY is next CPU preparation, no market outcome.
+independent READY is next CPU preparation. Adapter3b209333.../84 combined cases
+3.23s/READY freezes36 cells,25-percent shrinkage and matched10-percent annual
+risk caps. BOTH-view positive cash-relative growth and utility superiority to
+inverse-vol/min-var/equal thirds are the original kill; SPY descriptive. No
+actual market result, GPU allocation or Paper input follows source preparation.
 
 ## Owned Rebalance Code And Runtime Delivery
 

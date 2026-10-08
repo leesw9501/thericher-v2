@@ -150,8 +150,13 @@ Peak497301504 bytes on CUDA; custody5540cae2... closed/non_promoting_completed,
 R1 failure0cc6656a... separately closed. Host failure remains immutable.
 No independent holdout, selected model, Paper input or broker PnL follows.
 Next bounded CPU mechanism: pure covariance ERC d1e700cf.../40 tests.22s and
-independent READY. Thin adapter preparing over the same causal252-return inputs,
-continuous NAV and matched cost/risk controls; no market result yet.
+independent READY. Thin adapter3b209333... now passes84 combined cases3.23s/
+independent review. Same exact4a raw OC input,252-return covariance and continuous
+NAV; fixed25-percent diagonal shrinkage/matched10-percent annual risk ceiling.
+Six policies/three costs/two seen views give36 cells. Original BOTH-view kill
+requires positive growth versus cash and utility superiority versus inverse-vol,
+minimum variance and equal thirds; SPY descriptive. External CPU worker/freeze
+prepares, no market result/holdout/Paper input yet. Prior results never inputs.
 Official v2.2.2 returns median despite its mean name; equality check is valid.
 Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new

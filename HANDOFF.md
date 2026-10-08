@@ -49,8 +49,20 @@ unmaterialized, zero retained submission starts/acks/unknowns/fills. Exact
 A/execution/kis-paper-owned-rebalance-v1/buy-readback-20261008-v1.json,
 SHA648f8f1153e0defd1ccd54d0f8b9674a637d42a20352c5cb49364c77c88d88d9.
 Actual1.467s/zero API/credentials/private writes/reaped/absent; plan/scope/shared
-basis verify. Expiry has passed; source-only pre-submit diagnosis and exact
-no-wire retirement preparation continue, without TTL/basis/identity reset.
+basis verify. Original pre-submit cause remains unclassified; later stored
+expiry does not prove that cause. Both expired intents are now locally closed
+using existing terminal semantics, without broker calls or TTL/basis reset.
+Exact A/execution/kis-paper-owned-rebalance-v1/expired-plan-closure-20261009-v1.json,
+SHA21f6c60a1f47b605b3a73531a32b6a5e49909844d593e853e653f6d7d94de578:
+actual3.253s/2 terminal/1 materialized/1 transitioned, original plan/basis/book
+unchanged, zero API/credentials, both children reaped/absent. Closure5482e22f...
+and pipe-only selector030cbaff... are used/immutable;51 focused cases3.57s and
+independent review pass. Independent RO buy-closed-readback-20261009-v1.json,
+SHAd7357593f14f5901eaabd7035e3b85292006012863be98defd0525dd77819596,
+actually confirms2 terminal/zero remaining recovery/submission starts/acks/fills
+in1.351s. This is no-wire closure, not a BUY fill or company-goal completion.
+Fresh owned-portfolio-buy-20261009-v2 preparation uses a new current-book capture
+after closure, original SELL linkage and10-percent basis; no old-plan retry.
 23:50 exact SELL/BUY router98112184... is installed; new SELL recovery host
 01106782... requires the probe's original request hash, never a null fresh-entry
 handoff. Lost post-probe request/pin rejects before fresh reads/transport.
@@ -124,8 +136,12 @@ Resultb9026c02... rejects original BOTH-view median-MAE/pinball kill: B's median
 error worsens despite pinball improvements. Peak497301504-byte CUDA; custody
 5540cae2... closed/non_promoting_completed, R1 failure0cc6656a... closed separately.
 No selected model, Paper input or profit claim. Next independent CPU preparation
-is pure covariance ERC d1e700cf.../40 tests.22s/independent READY, small adapter
-over existing inputs/NAV/risk/cost controls; no actual result yet.
+is pure covariance ERC d1e700cf... and adapter3b209333.../84 tests3.23s/
+independent READY. Fixed25-percent shrinkage, six policies/three costs/two seen
+views give36 cells under matched10-percent annual risk caps; original kill is
+risk utility versus inverse-vol/min-var/equal thirds plus positive cash-relative
+growth in BOTH views. SPY is descriptive, not a retroactively changed kill.
+External CPU preparation continues; no actual ERC result or Paper model yet.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 

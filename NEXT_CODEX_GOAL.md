@@ -37,8 +37,14 @@ in sell-readback-20261008-v1.json. The23:10 BUY public result92036062... is
 unavailable after retaining the plan. Independent offline BUY readback648f8f11...
 confirms two unsubmitted seeds (one materialized), zero retained submission
 starts/acks/fills and exact plan/shared-basis linkage. Preserve the original
-expired plan; diagnose its pre-submit fault and scoped no-wire recovery without
-extending TTL, fabricating broker rejection or resetting reservations/basis.
+expired plan; original pre-submit cause remains unclassified. Exact no-wire
+closure21f6c60a... and independent closed readbackd7357593... now prove both
+expired intents terminal with zero submissions/fills and no remaining recovery.
+Used closure/selector sources are immutable; original plan/shared basis persist.
+Prepare owned-portfolio-buy-20261009-v2 from a fresh current-book capture and
+fresh account/quote/orderability observations, preserving the original SELL
+linkage and10-percent basis. Persist its distinct proposal before reservations;
+restart only its exact frozen identity/quantity/TTL, never the old expired BUY.
 
 Use the next owned regular-session opportunity, keeping owner conflicts and
 token due in the named worker. Resolve the old baseline new-entry direction
@@ -83,7 +89,11 @@ semantics; cached-only replay now passes13.815s/b4821adc..., original kill
 rejected/custody5540cae2... closed. No reinference, retuning, failed-receipt
 rewrite or promotion claim. Next parallel CPU package is fixed ERC risk-utility
 comparison over existing252-return/continuous-NAV helpers and matched controls,
-not a repeat of minimum variance or a GPU-utilization exercise.
+not a repeat of minimum variance or a GPU-utilization exercise. Solver/adapter
+84 focused cases3.23s/independent READY; fixed25-percent diagonal shrinkage,
+matched10-percent annual risk ceiling, six policies/three costs/two seen views
+give36 cells. Freeze source/input/runtime/cost/kill before parent CPU dispatch;
+no actual ERC outcome, GPU work, holdout or Paper model follows preparation.
 
 Data: integrate only exact XLK/XLF/XLE AMS capability scope, then one reusable
 client/six fixed OC queries at20261007/20160202 under existing gates/120s bound.
