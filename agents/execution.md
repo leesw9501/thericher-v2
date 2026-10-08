@@ -20,7 +20,13 @@ Existing417 baked image plus exact RO helper overlay; no consumer republish.
 No order, route, sizing, capital, scheduler or private state writes occurred.
 Goal27 Data comparison COMPLETE/changed_other_pattern, no Execution input
 promotion or current-control replacement. Goal28 synthetic whole-share/fixed-bank
-parity bridge is independent; existing session still owns its next_due.
+parity bridge COMPLETE:18tests/source65f35a65.../341relatedserial/
+independent18+three fractional-target mutations. Explicit10bps full-bank fee
+overlay can produce negative analytical cash; native gross preview is not
+fee-inclusive. Supplied SELL-before-BUY accounting is not actual chronology.
+Goal29 Execution prepares small pure integer/fee/bank analytical replay only;
+no production broker/risk/custody/adapter change or real-money behavior.
+Existing actual session remains independently owned at its unchanged next_due.
 Cumulative facts are counted once and owner-local average entry cost is retained.
 Intent-order replay is not actual fill-time/tax/FIFO accounting. Pending/unknown/
 late ambiguous fills must not become zero or actual-profit claims.

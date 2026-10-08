@@ -8,6 +8,15 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-09 KST)
 
+Goal29 rate-context/whole-share preparation is ready to implement, not allocated:
+Data strict lagged triple and Execution integer/fee replay precede one frozen
+four-fit price-only/augmented Ridge+GRU family. Fixed63/21 geometry, matched
+accounting/targets/controls, shared600s and54 planned policy/cost/view cells;
+exact geometry/lineage/stop/runtime must freeze before outcomes. No new lease,
+fits or sealed spend yet. d8376f65... public-source proposal is not custody.
+Goal28 synthetic parity18 tests cannot attest historical or broker fills/fees.
+Existing closed allocations below remain closed; GPU/authority works.
+
 - Direct allocation utility39905a3e.../418-file mixed immutable snapshot is
   COMPLETE/REJECTED42 cells,2 fits512 updates each/worker14.430s/parent16.768s.
   ConstantCPU1.848s, CUDA GRU4.673s/peak82007552 bytes. ALL-RO14.703s preserves

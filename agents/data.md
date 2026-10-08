@@ -64,8 +64,18 @@ M/us_equities/kis_paper_private/sector-adjustment-probe-v1/d2a8265ea59947bf9065b
 Comparator51+5independent probes/caller38fault cases; no retry/next_due worker.
 Independent actual readbackaed2e81a.../.681s validates422sources/18market/four
 custody files unchanged/exact native DTO/query/clocks/category; no network/keys.
-Original cohorts/current Paper/rejected families unchanged. Goal28 needs only
-synthetic native whole-share/fixed-bank parity, no Data quality permission gate.
+Original cohorts/current Paper/rejected families unchanged. Goal28 synthetic
+parity bridge complete, no Data quality permission gate. Goal29 Data owns one
+strict raw Board Treasury parser/3M2Y10Y same-date selector with30-calendar-day
+lag/7-day max age and focused source/missingness/future-perturbation tests.
+Fresh d7bd515c... snapshot verified before/after; exact3 series IDs
+RIFLGFCM03_N.B/RIFLGFCY02_N.B/RIFLGFCY10_N.B/percent-year.2016..2026 has2809
+date rows/2692complete triples/117sharedND, no duplicate/unordered/invalid
+selected values.2686 source-calendar dates have a lagged triple, age0..3.
+Geometry preparation only: no rate features/labels/model outcome computed.
+Old two-tenor five-pin reader unchanged; this does not graft new input onto
+closed campaigns or claim historical publication/vintage/PIT. Proposald8376f65...
+under A/research/source-discovery is parent-retrieved public source evidence.
 
 Latest owned21:20UTC head now has a validated terminal/schedule chain:
 intraday-head-20261008T2120009002710Z/terminalce6c81c7.../scheduledbac4e0d.../

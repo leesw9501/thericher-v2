@@ -53,8 +53,19 @@ Original cohorts/current Paper/rejected models unchanged. Comparator51+5
 independent probes/caller38 fault tests; closed finite question/no retry worker.
 Independent actual readbackaed2e81a.../.681s reattests422sources/18market/
 four custody files/exact native DTO/query/clocks/category, zero network/credentials.
-Goal28 next establishes native whole-share/fixed-bank research parity using
-existing pure APIs and synthetic tests, not another model rescue or Paper gate.
+Goal28 COMPLETE synthetic bridge65f35a65.../18cases/independent18+three
+fractional mutations/341changed serial. Native whole-share floors/fixed bank,
+cumulative fills/reservations/pending/foreign custody remain scoped; supplied
+SELL-before-BUY accounting is not actual fill chronology. Exact full-bank
+10bps overlay can have negative analytical cash while native gross preview
+is feasible: fee-inclusive affordability is not established by that preview.
+No production state/code/risk changes or continuous historical parity claim.
+Goal29 now prepares one matched price-only versus lagged H15 factor comparison
+with common analytical whole-share/fixed-bank/fees and two Ridge/two CUDA GRU
+fits under one frozen budget. Free Board Treasury source proposal d8376f65...
+is independently re-retrieved, not a campaign or performance result. Fixed
+30-calendar-day lag is an assumption/revised non-PIT, not publication proof.
+Claude direction challengedbb4afc6... is unavailable/cli_is_error, not agreement.
 
 Goal25 preparation COMPLETE, not future runtime closure.
 

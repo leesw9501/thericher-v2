@@ -12,12 +12,25 @@ promotion. Goal26 owned cumulative gross attribution COMPLETE, not net/MTM/model
 profitability. Goal27 Data comparison COMPLETE: both raw repeats match but
 mode1 is changed_other_pattern/half-signature0/post-changed1, parent6872c06a... .
 No split-only/TR/PIT qualification or original cohort/model reinterpretation.
-Goal28 readies a synthetic whole-share/fixed-bank parity bridge, not fitting,
-GPU allocation, changed costs or a rejected model rescue. Existing native pure
-preview/budget/gross-PnL APIs suffice; fractional NAV1 rescaling does not.
-No frozen useful GPU campaign ready; resource idle is not permission/runtime
-failure. Whole-share/fixed-bank parity is a distinct prospective engineering
-question, not a reason to reopen the rejected drift/partial-rebalance families.
+Goal28 synthetic whole-share/fixed-bank bridge COMPLETE:65f35a65.../18cases/
+341related serial/independent18+three fractional mutations. Exact full-bank
+10bps fee overlay exposes negative analytical cash; native gross preview is
+not fee-inclusive affordability. No continuous historical/broker parity proof.
+Goal29 one new-input comparison prepares paired price-only/rate-context Ridge
+and CUDA GRU under identical analytical integer replay, fixed63/21 geometry,
+253-close covariance/risk and one600-second family allowance. No fits/GPU
+allocation until exact Data/replay/target/scaler/runtime contract and CPU smoke.
+This defers only this preparation, not independent Paper work. Runtime/authority
+works; do not fabricate utilization-only training or rescue rejected families.
+Parent primary-source proposal A/research/source-discovery/
+h15-curve-context-proposal-20261009-v1.json/d8376f65... verifies Fed2012-32
+level/slope/curvature mechanism, not ETF-profit evidence. Existing complete
+3M/2Y/10Y Board CMT input covers2686 dates under assumed30-day lag/7-day age.
+Old binary-curve24cells and price-only hedge42cells remain rejected lineages.
+No inverse-maturity redundant feature, lag/seed/window search or fresh holdout.
+Fixed lag does not resolve revised historical publication/vintage/PIT limits.
+Claude public direction challengedbb4afc6... unavailable, not agreement;
+independent source review supports this narrow month-old-context question.
 Official H15 fresh snapshota2388f93... adds one date to existing capability;
 old curve family24cells already rejected, no relabeled discovery/model graft.
 

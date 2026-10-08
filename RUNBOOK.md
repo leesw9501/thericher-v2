@@ -55,8 +55,36 @@ immutability/publication or wire-start proof. No new recurring worker.
 Independent-readback.json/aed2e81a5b41479c29cf8d4f173bdcd2e63b70da9798eca200e6de2a614ddc48
 passes in.681s/422sources18market4custody unchanged/zero network or credentials;
 actual result remains changed_other_pattern, original kill failed.
-Goal28 next uses existing pure APIs for a synthetic whole-share/fixed-bank
-research parity bridge, not a production execution/refit/authority change.
+Goal28 COMPLETE: tests/test_kis_paper_whole_share_replay_parity.py/65f35a65...,
+18focused/341relatedserial/.65s/independent18+three adversarial fractional
+mutations. Direct equality avoids int casts hiding non-integral quantities.
+Independent Fraction oracle/native pure preview/budget/gross-PnL covers linked
+floors/gain without bank reset/cumulative progress/reservations/foreign/pending
+custody and supplied SELL-before-BUY funds. Pure synthetic evidence, not
+historical/broker fill chronology or fee/settlement proof.0/10bps overlay shows
+exact full-bank gross preview may leave negative analytical fee-adjusted cash;
+future replay must explicitly reject unaffordable actions, not silently borrow.
+No production code/state/risk/sizing/schedule change.
+
+Goal29 integrated study prepares disjoint Data three-tenor lagged features,
+Execution small pure analytical integer/fee replay and Engine matched2Ridge+
+2CUDA GRU fits under one frozen family budget. No implementation/fit result
+yet; exact source/target/split/scaler/geometry/cost/kill/runtime custody and CPU
+smoke precede fits. Synthetic parity is only an engineering reference.
+Primary-source proposal D:/thericher-v2/model-artifacts/research/source-discovery/
+h15-curve-context-proposal-20261009-v1.json/d8376f6522ca2f4342f13d567350ad1f03393840c6ecce0828c2f7c0346ec267
+re-retrieves Fed2012-32 level/slope/curvature definitions and Board rights/
+notices. No ETF-profit claim, new H15 discovery, numeric fitting or campaign
+freeze. Fixed30-calendar-day lag/7-day max age is revised non-PIT development,
+not historical publication/vintage proof or a new release-calendar service.
+Fresh Treasury snapshotd7bd515c... contains2692complete3M2Y10Y triples in2016..
+2026/117ND; all2686 source sessions have a lagged vector/age0..3. New parser
+leaves old fixed two-tenor five-pin reader and closed24-cell rule unchanged.
+Price-only hedge42-cell rejection remains a declared separate lineage.
+New bounded Claude public direction challenge1.078s/exit1/cli_is_error:
+h15-rates-input-ablation-claude-challenge-20261009-v1.json/
+dbb4afc60ebd068e9cebfb1cfdbf9fe4cb61a799b650e30f370862b471c2bcc0,
+review_unavailable, not agreement or authorization. No tools/private input.
 
 Goal25 kis-current-control-paper-rebalance-preparation-v1 COMPLETE as tested
 preparation, not future runtime closure. Existing book/intents remain authority.
@@ -147,8 +175,9 @@ unknown/funds reference-only. Preview did not publish a newer snapshot.
 Retained Goal21 actual SELL/twoBUY fill closure980ccc6b... and Goal22 repeat
 cd14cad0... stay valid; client recreation is not host reboot.
 
-Latest Goal27 authority:197 changed serial;13143pass22skip35warnings/
-13165collected/eight clean workers/336.78s/helper0/reaped/temp cleanup.
+Latest Goal28 authority:341 changed serial;13161pass22skip35warnings/
+13183collected/eight clean workers/333.89s/helper0/reaped/temp cleanup.
+Goal27 historical197serial/13143pass22skip336.78s remains valid for its snapshot.
 Goal26 historical405serial/13092pass22skip333.62s remains valid for its snapshot.
 Goal25 historical387serial/13037full22skip334.30s remains valid for its snapshot.
 Adapter82/session23/caller18 independent focused tests; Ruff/default/research/
