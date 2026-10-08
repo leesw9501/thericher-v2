@@ -940,7 +940,17 @@ class KisPaperCanaryStateStore:
 
     def _read_unlocked(self) -> KisPaperCanaryState | None:
         try:
-            return KisPaperCanaryState.from_dict(json.loads(self.path.read_text(encoding="utf-8")))
+            def unique_keys(pairs):
+                result = {}
+                for key, value in pairs:
+                    if key in result:
+                        raise ValueError("duplicate state key")
+                    result[key] = value
+                return result
+
+            return KisPaperCanaryState.from_dict(json.loads(
+                self.path.read_text(encoding="utf-8"), object_pairs_hook=unique_keys,
+            ))
         except FileNotFoundError:
             return None
         except (OSError, TypeError, ValueError, json.JSONDecodeError) as error:
@@ -1769,7 +1779,7 @@ def _run_kis_paper_canary(
 
 
 def _conflicts_with_owned_spy_cycle(state_root: Path, intent: KisPaperCanaryIntent) -> bool:
-    if intent.symbol != "SPY":
+    if intent.symbol not in {"SPY", "TLT", "GLD"}:
         return False
     from .kis_paper_budget_strategy import conflicts_with_budget_strategy
     from .kis_paper_spy_fill_cycle import conflicts_with_active_spy_fill_cycle

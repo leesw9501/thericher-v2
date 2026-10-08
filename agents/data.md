@@ -7,6 +7,20 @@ root-relative pointers, not instructions to select a latest file.
 
 ## Ownership And Ready Work
 
+Goal17 TLT bridge is closed scope_terminal/5 accepted GETs/one token/no failures/
+11.732s. Exact A/data/kis-tlt-venue-bridge-v1/tlt-venue-bridge-20261008-v1/receipt.json
+SHA714950bc...; NAS159 dates2021Jan4..Aug19, NYS three exact seeds empty.
+Reader52b8f05c.../12 synthetic checks/27 unchanged bindings/zero OC conflicts.
+Physical40 pre2021 bridge overhang dates remain excluded. No active collector,
+next_due none, remaining/ETA unknown; not provider-global exhaustion.
+NEW fixed2686-session trio cohort freezer3f770990.../21 synthetic cases has
+two independent P2 schema/overhang repairs before actual use; no publication
+or old input splice. Metadata-only21-session geometry42b633b6... is released:
+1154TRAIN/68groups/1442marks753+689/14tailcash. Crop fixed calendar to cohort
+before build_plan, not by price presence; uncropped calendar adds20 unsupported
+precohort windows. Disjoint55-label geometry bound is not ESS. Parent owns
+actual freeze/next integration; no price targets/network/GPU authority here.
+
 Current goal11 OC-only acquisition is complete as useful SPY/GLD scope; its
 overall producer remains partial because exact TLT scopes are unestablished.
 Root A/data/kis-cross-asset-monthly-momentum-development-v1/oc-only.
@@ -52,6 +66,11 @@ announcement records TLT transfer effective2016Feb2; this is venue history,
 not measured KIS coverage or proof of an empty-page cause. Exact reference:
 A/research/source-discovery/tlt-venue-primary-source-20261008-v1.json.
 Do not silently expand the fixed probe or alter shared producer source pins.
+New TLT/NYS query support changes the live endpoint source hash, not old evidence.
+Historical TLT readback must use source-before-run for its eight producer pins
+and R3 frozen-source/src for imports. Parent verified this path:70 unchanged
+bindings/same exact failure/coverage; a current-source mismatch is reader
+runtime selection, not a source-price failure. No archive or old bytes changed.
 Rolling geometry complete:
 33 windows each latest504 entries with j+20<=d-2, strict prior-session label
 maturity. First TRAIN2021Nov29..2023Nov29, last2024Jul29..2026Jul31;
@@ -388,7 +407,9 @@ KIS broad D1: 2119 current-listing targets, generation 26368; 1089 complete,
 1030 source_limited, 0 mismatches over 604-target overlap. Historical task
 disabled/exhausted; A/data/kis-paper-daily-nas-broad-panel-postrun-v1/postrun-5b24100dc992a4fed2848593.json.
 Current-listing/unadjusted/non-PIT/corporate-action/finality unqualified; no
-exhausted-cursor predictive/ranking/Paper consumer. Later dates need own scope.
+qualified predictive/ranking/Paper consumer is established by that drained
+collection. This is not a ban on separately frozen, lawfully retained seen-data
+development under AGENTS.md. Later dates need their own useful collection scope.
 Last retained D1 inventory Oct 3: SPY head 99 rows through Oct 1, NAS six targets
 48 sessions, pair-forward v2 48 common sessions. Not freshly reattached here.
 NAS immutable revisions/old values retained; v1 pair quarantine stays separate

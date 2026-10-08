@@ -1,5 +1,63 @@
 # Runbook
 
+## Self-Financing Paper Ownership Preparation
+
+Goal17 kis-self-financing-paper-ownership-v1 prepares shared V3 ownership,
+whole-share incremental BUY plans and durable common reservations. Existing
+V2/SPY/QQQ writers honor the same pool; original10-percent basis/history remain.
+Gross funding uses owned buys/sale proceeds, not a fee/settlement/net-PnL claim.
+Invalid proposals preserve the old binding; missing post-submit plan state
+requires exact reconciliation rather than a replacement identity. Independent
+source review READY/noP1/P2;499 author cases and779 broader parent cases pass.
+No actual V3 migration, new order, scheduler or runtime deployment occurred.
+Pure fixed-control input packet34 cases is not ownership/funding proof.
+
+Actual read-only V2 compatibility2026-10-08 07:23:47..07:24:10UTC:
+account snapshot available/one token/11 validated GETs; all3 quotes
+quote_timestamp_invalid, zero orderability/submits. Source/private bytes
+unchanged. Exact receipt:
+D:/thericher-v2/model-artifacts/execution/kis-risk-engine-paper-preview-v1/ba524c4472324072816ba3ad3596f1b5/receipt.json,
+SHA3f53757d6a4b1c23feba017e8680738103686ae5151f6194475fd35d6719f918.
+This is direct parent dispatch, not scheduler evidence or V3 runtime success.
+Reviewed invoker at
+D:/thericher-v2/model-artifacts/execution/kis-self-financing-paper-ownership-v1/read_only_compatibility.py
+SHAd6ab0c7450f4e64a6e2b4f0edc0b650de316fd852535d170c676c9de86f613a4;
+frozen402-source root readonly-source. Five guarded synthetic checks pass.
+Only approved Paper value spans are copied/decoded through read-only mmap;
+OS mapping/search may touch other pages, not physical-access isolation.
+The same bounded fix is now in kis_readonly.py;161 source-free cases pass.
+No actual credentials are shown or written. Scoped missing quote input is not
+a global Paper or research hold; existing session owners are unchanged.
+
+TLT bridge exact actual receipt:
+D:/thericher-v2/model-artifacts/data/kis-tlt-venue-bridge-v1/tlt-venue-bridge-20261008-v1/receipt.json,
+SHA714950bc5a088f57889c3e4471b40b5124eaedc5f6272d49d4e8269b96ca67bc.
+scope_terminal/5 accepted GETs/one token/zero failure/11.732s;
+NAS159 selected dates2021Jan4..Aug19. Physical40 older overhang dates are
+excluded by the fixed2021 floor. NYS20160201/20101231/20071231 seeds are
+accepted-empty/unestablished, not a global historical floor or causal proof.
+No active collector/next_due; remaining and ETA unknown. Independent reader
+D:/thericher-v2/model-artifacts/data/kis-tlt-venue-bridge-v1/validate_outcome.py
+SHA52b8f05ccf07adc400cb38e4ac85e525253912bbcf6389f415657ec2a2b721ce
+passes12 synthetic checks and27 unchanged bindings/5 pages/eight producer pins/
+one overlap/zero OC conflicts/live-index equality. No raw rows are printed.
+
+Next source-free preparation is released: a NEW fixed2016+ price-only cohort
+freezer and21-session absolute-net-factor Ridge/GRU selection primitive.
+Parent222-case serial group35.67s covers these and the selective config loader.
+Independent source review then found two next-freezer schema/overhang P2s;
+repair belongs to next objective before actual publication, not a global hold.
+No actual cohort publication, labels, model fit or CUDA allocation yet. Closed
+input02dcc000... and failed2008-start hypothesis remain unchanged; a new input
+identity cannot silently shorten the original hypothesis or imply TR/PIT.
+
+Goal17 broad serial779 at17.31s plus222-case follow-up35.67s; do not sum
+overlapping groups as unique coverage.61 next-package cases are not runtime evidence.
+Full12142pass22skip35warnings361.34s/12164collected4.33s/eight clean workers,
+helper exit0/cleanup, Ruff and three sample-env Compose pass. Initial attempts
+using nonexistent compose.yaml failed; corrected actual docker-compose.yml/
+research-profile/accounting override commands passed. No full-run extra -q.
+
 ## Objective-Aligned Variance And TLT Recovery Closure
 
 Exact research root D:/thericher-v2/model-artifacts/research/kis-d1-qlike-variance-forecast-development-v1.
@@ -32,6 +90,18 @@ attempts, not wire-start measurements. Neither global KIS exhaustion nor
 Nasdaq-transfer causality is proven. Existing TLT1288 dates2021Aug20..2026Oct7
 were not common-cropped from a hidden2016 history. Source-specific pre2016
 NYS and2021Jan..Aug19 questions remain independent of closed research input.
+
+After the next TLT/NYS allowlist changes current endpoint code, historical TLT
+reader imports must also remain pinned, not just its --source-root argument:
+
+```powershell
+$env:PYTHONPATH='D:/thericher-v2/model-artifacts/research/kis-d1-qlike-variance-forecast-development-v1-frozen-source/src'
+C:/Users/Public/Documents/thericher-v2/.venv/Scripts/python.exe -B D:/thericher-v2/model-artifacts/data/kis-tlt-oc-history-recovery-v1/validate_outcome.py --receipt D:/thericher-v2/model-artifacts/data/kis-tlt-oc-history-recovery-v1/tlt-oc-recovery-20261008-v1/receipt.json --receipt-sha256 3ba295136735419f71a71a6b3e69e205b5dc4c31865d4690a0eb74853834b61e --source-root D:/thericher-v2/model-artifacts/data/kis-tlt-oc-history-recovery-v1/source-before-run
+```
+
+Parent replay verifies70 unchanged bindings/same coverage and exact failure.
+Do not modify archives or use current-code hash failure as a historical price
+finding. Keep this PYTHONPATH local to that command process, not a global setting.
 
 Goal16 authority:272 changed-path serial43.89s/full11931pass22skip35warnings
 353.52s/eight workers/11953collected4.37s/clean helper/exit0, Ruff/three

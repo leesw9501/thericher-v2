@@ -21,6 +21,44 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
+kis-self-financing-paper-ownership-v1 is COMPLETE as preparation, not runtime
+migration/deployment or broker execution. Joint whole-share BUY/reservation/
+restart code preserves original shared10-percent basis and incumbent SPY/QQQ
+history; every budget writer honors the same pool. Gross owned buy/sale cash
+is separate from fees, settled cash and net PnL. Independent review READY;
+779-case broad serial run and222-case follow-up pass; follow-up includes61
+next-package preparation cases. Full12142pass22skip35warnings361.34s/eight clean workers/12164collected,
+Ruff/default/research/accounting sample-env Compose pass; all sessions reaped.
+
+Direct V2 read-only compatibility07:23:47..07:24:10UTC: account available,
+one token/11 validated GETs/all3 quotes quote_timestamp_invalid, zero
+orderability/submits/private-source unchanged. Exact pointer:
+A/execution/kis-risk-engine-paper-preview-v1/ba524c4472324072816ba3ad3596f1b5/receipt.json,
+SHA3f53757d6a4b1c23feba017e8680738103686ae5151f6194475fd35d6719f918.
+Not scheduler origin or V3 success. Selective mmap reads materialize only four
+Paper value spans; OS-page mapping/search limitation remains. Old text loader
+is replaced,161 source-free cases pass. Quote invalidity is before freshness;
+no inferred timezone rewrite. Existing deployed images/private state unchanged.
+
+TLT venue bridge completed scope_terminal/5acceptedGET/one token/no failures/
+11.732s. Exact A/data/kis-tlt-venue-bridge-v1/tlt-venue-bridge-20261008-v1/receipt.json,
+SHA714950bc5a088f57889c3e4471b40b5124eaedc5f6272d49d4e8269b96ca67bc.
+NAS159 selected dates2021Jan4..Aug19; NYS three exact seeds empty, not global
+KIS exhaustion. Physical40 pre2021 overhang excluded. Reader52b8f05c.../
+12 checks/27 unchanged bindings validates closure; next_due none/ETA unknown.
+
+NEXT owns kis-cross-asset-21-session-relative-allocation-development-v1:
+publish a NEW fixed2016+trio input, then test one Ridge/one CUDA GRU against
+matched controls under frozen21-session holdings. Metadata gives1154TRAIN,
+68groups/1442marks/14tailcash; crop calendar to declared cohort before plan,
+never by observed price support. Original2008 hypothesis remains unavailable.
+Next freezer has two source-review P2 repairs before actual use; next worker
+primitive is source-free preparation, no actual labels/fits yet. Parallel narrow
+quote-parser correction preserves timezone/age rules and current session owners.
+No source-local wait or rejected old method globally stops research/Paper.
+
+## Closed Goal16 Context
+
 kis-objective-aligned-risk-research-v1 is COMPLETE. Final related variance
 trial3 actually completed132 fits:99 Gamma/33 CUDA GRU, six cells, both
 original BOTH-metric/BOTH-block kills reject. Exact root
@@ -44,7 +82,7 @@ AMS unestablished; next_due none; remaining/ETA unknown. Existing individual
 TLT input is1288 dates2021Aug20..2026Oct7, not a hidden2016 common-crop.
 2021Jan..Aug19 and pre2016 remain useful source-specific questions.
 
-NEXT owns kis-self-financing-paper-ownership-v1: preserve current shared
+Closed goal17 preserved current shared
 10-percent basis/SPY custody while preparing jointly funded TLT/GLD plans,
 exact durable reservations and restart/reconciliation. Parallel bounded
 TLT/NYS and2021-bridge capability/collection stays outside closed inputs.

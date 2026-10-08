@@ -14,16 +14,17 @@ custody33c71fff...,109 serial/full11840+22skip350.84s/eight clean workers/Ruff/
 three Compose pass. Final132-fit trial3 and separate older-TLT recovery are
 closed with independent readbacks/custody.272 serial/full11931pass22skip/
 353.52s/eight clean workers/Ruff/three Compose pass.
-NEXT owns kis-self-financing-paper-ownership-v1.
+Goal17 ownership preparation is complete; NEXT owns the distinct21-session
+relative-allocation development comparison, not a rescored variance trial.
 Sole Git owner is parent.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Input / geometry | Data | TLT1239 dates2016Feb2..2020Dec31 verified/68 unchanged files, exact nonadvancing_cursor. Separate pre2016 NYS/2021-bridge package ready; no input splice. |
-| Research CPU / GPU | Engine / Steward | R3 both rejected, independent a320d25d.../custody6dd1cabc... closed. GPU available/no active lease. Inventory/turnover-aware preparation ready, no utilization-only fit. |
+| Input / geometry | Data | Bridge closed/independent27-binding reader passes. NEW2686-session freezer has two independent P2 fixes dispatched before publication. Geometry42b633b6.../1154TRAIN68groups14tailcash released; no old input splice. |
+| Research CPU / GPU | Engine / Steward | R3 closed/rejected; GPU available/no active lease. Fixed-control packet34 and new21-session selection primitive40 tests released. Hooke prepares source-free external run/replay entry; no actual labels/fits before new cohort/contract freeze. |
 | Paper preview | Execution scheduler | One-time thericher-kis-risk-preview-20261009-0015 installed/Ready/Oct9 00:15KST next_due,4-minute limit/zero restart/no missed recovery.8mocked tests/final review passed; not executed yet. Existing task/private owner/basis unchanged. |
-| Paper ownership preparation | Execution / Engine | Joint funding/reservations across SPY/TLT/GLD under unchanged original shared10-percent basis ready; no submissions/new schedule in preparation. Separate implementation/test/review ownership. |
-| Independent review | Infra / Execution | R3/Data readbacks complete. Parent assigns minimal multiasset restart/funding review; no shared-file conflict. Claude unavailable is not agreement. |
+| Paper ownership preparation | Execution | Funding/recovery code released499 tests/parent779; final independent READY. Direct compatibility account available/quotes invalid/zero submits/private unchanged, no migration/deployment. Selective loader161 cases released; Kuhn source-only quote diagnosis. |
+| Independent review / verification | Russell / parent | Goal17 full12142pass22skip361.34s/eight clean workers/779+222 overlapping serial groups/Ruff/three Compose passed. Russell next reviews selection primitive; parent sole Git/actual owner. New recipe Claude1.09s unavailable/not agreement; independent work continues. |
 | Tiingo rights | Source-local operator question | Starter/Trial retention applicability unknown, already asked. No new Tiingo numeric work; KIS/Paper/research continue. |
 | Existing head | Data scheduler | Oct7 QQQ389/SPY390 M1 remains excluded from closed study; nextOct9 00:29KST, no manual invoke or finality inference. |
 | Existing Paper | Execution scheduler | Shared basis/custody exact; SPY nextOct8 23:50KST. Fees/settled/net unknown. No competing request or reset. |
@@ -37,6 +38,10 @@ Avoid passing a second -q to the helper: it hides terminal count/skip evidence
 and caused one unnecessary corrected run. Current Execution projection was
 compacted so stale old-account recovery cannot masquerade as a current hold;
 history and immutable custody remain intact. No runtime/authority was changed.
+At the Data/Engine preparation handoffs, next disjoint cohort/model preparation
+was dispatched while Execution repairs continued. Retained NAS listing/quality
+limitations are not a general ban on lawfully retained seen-data development;
+its exact future/qualified consumers remain separate.
 Ready packages are dispatched; a source-local wait does not idle another lane.
 Manual serial scratch uses short names: paired isolated old recovery tests show
 long-root failure/short-root success;937-case short-root run passes. Preserve

@@ -2,86 +2,81 @@
 
 ## Objective
 
-Complete kis-self-financing-paper-ownership-v1: make the existing private
-multiasset Paper control jointly fundable and restartable while preserving
-the incumbent SPY ownership and original shared10-percent virtual basis.
-This advances Paper trading and portfolio execution, not model promotion.
-No new orders, scheduler or comparative model outcomes in this preparation.
+Complete kis-cross-asset-21-session-relative-allocation-development-v1:
+test whether a simple CPU Ridge or joint CUDA GRU can improve attainable
+21-session SPY/TLT/GLD asset selection versus matched costed controls on a
+NEW fixed2016+ raw-price input. This advances model research and replay,
+not a variance-method rescue, fresh holdout, deployment or profitability gate.
 
 Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1;
-follow HANDOFF.md, AGENTS.md, RUNBOOK.md and current stateboards. Parent owns
-integration, actual bounded calls, shared contracts and Git. Dispatch disjoint
-Execution implementation, Engine operational input preparation, Data capability
-and independent validation in parallel. No foreground session/quota waiting.
+follow HANDOFF.md, AGENTS.md, RUNBOOK.md and active stateboards. Parent owns
+integration, actual input/source/contract/runtime/custody freeze and dispatch,
+GPU containment and Git. Ready disjoint roles work in parallel; no foreground
+session/quota wait and no per-agent goals or new reporting platform.
 
-## Self-Financing Ownership
+## Data And Research
 
-Reuse the fixed capped-thirds engineering control and existing account/quote/
-orderability/preview paths. Explicitly extend current shared-budget ownership
-to TLT/GLD without adopting unrelated holdings or changing SPY/QQQ history.
-Current volume thericher-v2-paper-canary-private-acct-20261007-v1; preserve
-original basis, existing intent identities, inventory and reservations. Read
-private state only through existing strict parsers with in-process categorical
-projection; never print account/order identifiers, prices, amounts or bodies.
+Repair the two independently found cohort-freezer P2s: producer-specific intent/
+manifest ordinal schemas and excluded temporal overhang calendar handling.
+Prove required-date gaps still reject. Publish exactly one NEW2686-date cohort
+2016Feb2..2026Oct7 using exact bound old OC, TLT recovery, bridge and strict
+inputs and archived producer pins. Keep partial statuses and distinct observed
+vintages; no latest-wins, imputation, old02dcc input splice or weakened Bar.
+Use D:/market_data and D:/thericher-v2/model-artifacts, preserve15-percent D: free.
 
-Whole-share incremental plans must include incumbent exposure and available
-cash after every retained reservation, be jointly funded across assets, and
-mark unreachable targets as constrained rather than feasible. Durable identity
-and reservation must precede any future broker side effect. Prove restart and
-exact reconciliation without replacement identities or duplicate funding.
-All existing budget writers must honor the same reservations before relying
-on new ownership. No new risk limit, forecast, global safety flag or approval gate.
-Independent review tests joint funding, foreign inventory, stale/missing quotes,
-pending unknown outcomes and replay; scoped technical failure never halts an
-independent correctly scoped action. A preparation no-intent is not broker success.
+Freeze dataset hash, source, exact runtime, calendar/plan and finite recipe
+BEFORE actual labels/fits. Crop calendar to the declared cohort, not data
+presence:1154TRAIN/68groups/1442DEVmarks753+689/14tailcash from metadata.
+Six63-session channels/64 past CLOSEs/63 OPENs, TRAIN-only mean/std.
+Three absolute21-session unit log-net-factor targets,5bps-side entry/exit;
+TRAIN exits<=2020Dec30, first DEV decisionDec31/entry2021Jan4.
+One Ridge alpha1/SVD; one seed101 GRU64/one layer/1024 full-batch AdamW
+updates(.001/.01), shared300-second compute allowance/two fits/no search or
+early stopping. CPU synthetic smoke first; actual-geometry synthetic throughput
+tests budget/runtime before labels. Canonical exclusive GPU lease and exact
+invocation containment, no utilization-only fits. Artifacts outside Git.
 
-Engine prepares the fixed inventory/turnover-aware control input contract and
-source-free boundary tests, not execution-risk or submission code. Preserve
-R3 original rejections and retire the variance-method question. No GPU fit is
-invented solely for utilization; ready distinct research preparation continues.
-Ask Claude once before material recovery/ownership reliance; unavailable is
-categorical evidence, never agreement or a foreground hold. Use an independent
-source reviewer as well; no new report or provenance platform.
+Argmax absolute predicted net factor strictly>0 else cash, fixed SPY/TLT/GLD
+ties. DEV2021Jan4..2026Sep30 partitioned ONCE into21-session groups. Hold
+unchanged quantities until group-final CLOSE; tail cash; capital/inventory and
+all daily denominators retained across2023/24 views. Seal actions before forward
+marks. Fixed2.5/5/10bps band; cash/group-balanced/fixed63-session momentum/
+group-SPY matched controls; uninterrupted SPY reference only, not a hidden kill.
+Original kill at10bps BOTH views: positive growth and utility
+252*(mean daily log return-5*population variance) improves every matched
+control by>1e-10; GRU also beats Ridge. No outcome-based window/seed/cost/
+threshold rescue. Preserve all rejected prior families and unavailable2008 target.
+Overlapping targets/counts are not ESS. Raw MODP0/non-PIT/CA/dividend/finality/
+historical-availability/ideal-fractional-fill limits remain explicit; no Paper
+input, ensemble promotion or independent validation claim follows.
 
-## Parallel TLT Capability And Useful Coverage
+## Parallel Execution Package
 
-Prior recovery is partial/nonadvancing_cursor at NAS20160202, not global
-provider exhaustion. Official venue-history source records transfer effective
-2016Feb2; this does not prove KIS NYS capability or the cursor failure's cause:
-https://ir.nasdaq.com/static-files/d5db2165-0942-4419-b622-0e7b9c92670a.
+Bounded quote-parser string-whitespace/ASCII-width/calendar correction with
+synthetic tests; preserve existing timezone and age bounds. Current categorical
+invalid quote does not prove its actual cause. No zero-padding, substituted
+observation time, guessed timezone, new endpoint, order or schedule. Existing
+SPY23:50KST/zero-submit previewOct9 00:15/head00:29 owners and original shared
+10-percent basis/private identities remain unchanged. Goal17 ownership code is
+preparation, not deployed V3 migration; do not claim runtime success from tests.
 
-One separately scoped typed OC capability/collection package: fixed TLT/NYS
-anchors20160201,20101231,20071231 and TLT/NAS20210819. Explicitly implement
-and test any needed query allowlist change; no monkeypatch of closed producers.
-One approved market-data client/token/shared measured pace, max64 GET attempts
-and accepted pages/shared360-second cooperative budget, including four probes.
-Useful serial continuation only within this scope; stop on nonadvancing cursor
-or categorical failure and preserve exact recovery facts. No account/order/live
-endpoint. Do not splice new coverage into closed input or weaken Bar parsing.
-Market root D:/market_data/us_equities/kis_paper_private/cross-asset-oc/kis-tlt-venue-bridge-v1;
-evidence D:/thericher-v2/model-artifacts/data/kis-tlt-venue-bridge-v1.
-Freeze source/scope before actual calls and independently read exact outcomes.
-Report source-safe coverage/accepted/failure counts/remaining and ETA unknown
-when unmeasured/owned next_due/recovery class, not raw rows or secrets.
+## Evidence And Continuation
 
-## Completion And Continuation
+Claude recipe challenge once; review_unavailable is not agreement or a hold.
+Independent source review before reliance, cached all-read-only42-cell replay
+with zero refit/inference/search/write, and independent numerical reconstruction.
+Keep model/scaler/prediction/action binding and actual fit-start/completion counts,
+including partial failure. Close exact campaign custody and source-local failures.
+Strongest kill: temporal support/maturity mismatch, target-vs-policy payoff
+mismatch, cost/capital reset, or original BOTH-view control failure. Fix technical
+contradictions without lowering the declared statistical criterion.
 
-Completion evidence: synthetic joint-funding/reservation/restart proofs,
-independent source/recovery review, bounded parent-owned read-only preview
-or explicit source-local input_unavailable, plus exact Data capability outcome.
-Strongest kill: any budget writer ignores reservations, restart duplicates
-funding, foreign inventory becomes owned, or unreachable target is feasible.
-Fix the contradiction; do not lower the criterion or create a human hold.
-
-Preserve SPY2026Oct8 23:50KST, zero-submit previewOct9 00:15 and head00:29
-owners. Do not manually invoke/replace them; session runtime is not a completion
-dependency here. No new Tiingo numeric work while its rights question remains.
-Artifacts stay D:/thericher-v2/model-artifacts; data D:/market_data/D:15-percent
-free floor. Never read or route KIS_LIVE_*; live/paid/unclear-rights/public/major
-runtime decisions remain reserved. Private no-cost Paper work is authorized.
-
-Focused role feedback first; changed-path serial, clean-root eight-worker
-authority (no extra -q), Ruff and default/research/accounting Compose using
---env-file .env.example at integration. Verify, commit, push, refresh stateboards,
-replace this with one material next company objective and CONTINUE until a
-genuine company block or reserved operator decision, not a lane-local wait.
+Completion: exact input/contract/source/runtime, CPU smoke and actual bounded
+two-fit/42-cell comparison OR explicit scoped capability failure; exact cached
+replay/independent readback, containment/custody closure and quote package tests.
+Focused feedback, changed-path serial, clean-root8-worker authority(no extra-q),
+Ruff/default/research/accounting sample-env Compose at integration. Verify,
+commit/push, refresh stateboards, replace this with one material next company
+objective and CONTINUE until genuine company block or reserved operator choice.
+Never read/route KIS_LIVE_*. Live/paid/unclear-rights/public/major runtime remain
+reserved; Tiingo rights question remains local, no new Tiingo numeric work.

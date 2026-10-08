@@ -7,11 +7,12 @@ does not govern bare canary calls or deploy a QQQ caller/schedule.
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 import re
 from collections.abc import Callable, Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from decimal import ROUND_FLOOR, Decimal, DecimalException
 from fractions import Fraction
@@ -95,6 +96,9 @@ _QQQ_RUN_ID = re.compile(r"bq-[0-9a-f]{64}")
 _QQQ_ENTRY_REQUEST_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,79}", re.ASCII)
 _V1_KEYS = {"version", "account_ref", "basis_usd", "allocated_usd", "at", "orders"}
 _V2_KEYS = _V1_KEYS | {"basis_ref", "spy_owner_ref", "qqq", "legacy_spy", "terminal_evidence"}
+_V3_KEYS = _V2_KEYS | {"portfolio"}
+_PORTFOLIO_INSTRUMENTS = (("SPY", "AMEX"), ("TLT", "NASD"), ("GLD", "AMEX"))
+_PORTFOLIO_RUN_ID = re.compile(r"bp-[0-9a-f]{64}")
 _SHA = re.compile(r"sha256:[0-9a-f]{64}")
 _ORDER_LIFETIME = timedelta(minutes=5)
 _FAILURE_DIAGNOSTIC_CATEGORIES = {
@@ -287,6 +291,10 @@ class BudgetProjection:
     quantity: Decimal
     entry_cost: Decimal
     reserved_buys: Decimal
+    gross_cash: Decimal | None = field(default=None, kw_only=True)
+    remaining_gross_cash: Decimal | None = field(default=None, kw_only=True)
+    aggregate_quantity: Decimal | None = field(default=None, kw_only=True)
+    instrument_reserved_buys: Decimal | None = field(default=None, kw_only=True)
 
 
 class KisPaperSpyOwnedInventoryError(ValueError):
@@ -330,15 +338,20 @@ def _load_binding(root: Path, account_ref: str | None = None):
     path = root / BUDGET_FILE
     if path.is_symlink():
         raise _RecoveryRequired("budget_binding_invalid")
-    binding = _read_json(path)
+    try:
+        binding = json.loads(
+            path.read_text(encoding="utf-8"), object_pairs_hook=_unique_budget_keys
+        )
+    except FileNotFoundError:
+        binding = None
     if binding is None:
-        if any(root.glob("bs-*.json")) or any(root.glob("bq-*.json")):
+        if any(any(root.glob(pattern)) for pattern in ("bs-*.json", "bq-*.json", "bp-*.json")):
             raise _RecoveryRequired("budget_binding_missing")
         return None
     if (
         not isinstance(binding, dict)
         or type(binding.get("version")) is not int
-        or (binding["version"], set(binding)) not in ((1, _V1_KEYS), (2, _V2_KEYS))
+        or (binding["version"], set(binding)) not in ((1, _V1_KEYS), (2, _V2_KEYS), (3, _V3_KEYS))
         or not isinstance(binding["account_ref"], str)
         or re.fullmatch(r"[0-9a-f]{64}", binding["account_ref"]) is None
         or (account_ref is not None and binding["account_ref"] != account_ref)
@@ -353,7 +366,7 @@ def _load_binding(root: Path, account_ref: str | None = None):
     ):
         raise _RecoveryRequired("budget_binding_invalid")
     _validate_orders(binding["orders"], _RUN_ID)
-    if binding["version"] == 2:
+    if binding["version"] in {2, 3}:
         qqq = binding["qqq"]
         if (
             not isinstance(qqq, dict)
@@ -372,7 +385,79 @@ def _load_binding(root: Path, account_ref: str | None = None):
         referenced = {ref.run_id for owner, _ in _owners(binding) for ref in owner.state_refs}
         if not set(binding["terminal_evidence"]) <= referenced:
             raise _RecoveryRequired("budget_binding_invalid")
+    seeds = _portfolio_seed_states(binding)
+    if any(path.stem not in seeds or path.is_symlink() for path in root.glob("bp-*.json")):
+        raise _RecoveryRequired("portfolio_state_unbound")
     return binding
+
+
+def _unique_budget_keys(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise _RecoveryRequired("budget_duplicate_key")
+        result[key] = value
+    return result
+
+
+def _portfolio_seed_states(binding):
+    """Immutable initial canary facts, atomically reserved with the whole batch."""
+    if binding["version"] != 3:
+        return {}
+    portfolio = binding["portfolio"]
+    if (
+        type(portfolio) is not dict
+        or set(portfolio) != {"owner_refs", "plans"}
+        or type(portfolio["owner_refs"]) is not dict
+        or set(portfolio["owner_refs"]) != {s for s, _ in _PORTFOLIO_INSTRUMENTS}
+        or type(portfolio["plans"]) is not list
+    ):
+        raise _RecoveryRequired("portfolio_binding_invalid")
+    seeds, requests = {}, set()
+    for plan in portfolio["plans"]:
+        if (
+            type(plan) is not dict
+            or set(plan) != {"request_id", "input_ref", "parent_binding_ref", "states"}
+            or type(plan["request_id"]) is not str
+            or _QQQ_ENTRY_REQUEST_ID.fullmatch(plan["request_id"]) is None
+            or plan["request_id"] in requests
+            or any(type(plan[key]) is not str or _SHA.fullmatch(plan[key]) is None
+                   for key in ("input_ref", "parent_binding_ref"))
+            or type(plan["states"]) is not dict
+            or not 1 <= len(plan["states"]) <= 3
+        ):
+            raise _RecoveryRequired("portfolio_plan_invalid")
+        requests.add(plan["request_id"])
+        symbols, clocks = set(), set()
+        for run_id, payload in plan["states"].items():
+            state = KisPaperCanaryState.from_dict(payload)
+            intent = state.intent
+            identity = _digest([binding["account_ref"], binding["basis_ref"],
+                                plan["request_id"], intent.symbol])
+            if (
+                run_id != "bp-" + identity
+                or intent.run_id != run_id
+                or intent.client_order_id != "portfolio-" + identity
+                or intent.decision_id != "portfolio-" + identity
+                or (intent.symbol, intent.exchange) not in _PORTFOLIO_INSTRUMENTS
+                or intent.symbol in symbols
+                or intent.side != "buy"
+                or intent.price_contract_ref != "sha256:" + _digest(
+                    [plan["input_ref"], intent.symbol, str(intent.limit_price)])
+                or state != KisPaperCanaryState(
+                    intent, "intent_recorded", intent.created_at, "preview"
+                )
+                or payload != state.to_dict()
+                or run_id in seeds
+            ):
+                raise _RecoveryRequired("portfolio_plan_invalid")
+            _validated_portfolio_state(state, state.updated_at)
+            symbols.add(intent.symbol)
+            clocks.add((intent.created_at, intent.valid_until))
+            seeds[run_id] = state
+        if len(clocks) != 1:
+            raise _RecoveryRequired("portfolio_plan_invalid")
+    return seeds
 
 
 def _validate_orders(orders, pattern):
@@ -411,8 +496,19 @@ def _decision_evidence_path(evidence_root, decision_id):
     return evidence_root / "decisions" / (decision_id.removeprefix("decision:sha256:") + ".json")
 
 
-def _state(root, record, *, symbol="SPY", exchange="AMEX"):
-    state = KisPaperCanaryStateStore(root / (record["run_id"] + ".json")).read()
+def _state(root, record, *, symbol="SPY", exchange="AMEX", binding=None):
+    path = root / (record["run_id"] + ".json")
+    if path.is_symlink():
+        raise _RecoveryRequired("budget_state_invalid")
+    seed = None if binding is None else _portfolio_seed_states(binding).get(record["run_id"])
+    if seed is not None and not path.exists():
+        # A state-store lock survives materialization/attempts; a missing state
+        # with that witness must never revert to an unmaterialized seed.
+        if path.with_name("." + path.name + ".lock").exists():
+            raise _RecoveryRequired("portfolio_materialized_state_missing")
+        state = seed
+    else:
+        state = KisPaperCanaryStateStore(path).read()
     if (
         state is None
         or state.intent.fingerprint != record["intent_ref"]
@@ -429,9 +525,10 @@ def project_budget(
     *,
     qqq_cycle_id: str | None = None,
     as_of: datetime | None = None,
+    portfolio_symbol: str | None = None,
 ) -> BudgetProjection:
     """Recompute entry cost and reservations; no snapshot is added twice."""
-    if binding["version"] == 2:
+    if binding["version"] in {2, 3}:
         owners = _owners(binding)
         states, proofs = {}, {}
         legacy = binding["legacy_spy"]
@@ -446,6 +543,7 @@ def project_budget(
                     {"run_id": ref.run_id, "intent_ref": ref.intent_ref},
                     symbol=owner.symbol,
                     exchange=owner.exchange,
+                    binding=binding,
                 )
                 if as_of is not None and state.updated_at > require_utc(as_of):
                     raise _RecoveryRequired("budget_state_not_current")
@@ -469,7 +567,13 @@ def project_budget(
             ),
             cancellation_proofs=proofs,
         )
-        selected = _owner_id(binding, qqq_cycle_id)
+        if portfolio_symbol is not None and (
+            binding["version"] != 3 or portfolio_symbol not in {"SPY", "TLT", "GLD"}
+        ):
+            raise _RecoveryRequired("portfolio_instrument_invalid")
+        selected = _owner_id(binding, qqq_cycle_id) if portfolio_symbol is None else (
+            "portfolio-" + portfolio_symbol.lower()
+        )
         quantity = next(
             stock.quantity for stock in projection.stocks_by_owner if stock.owner_ref == selected
         )
@@ -478,7 +582,15 @@ def project_budget(
             row["closed"] and row["run_id"] not in binding["terminal_evidence"] for row in records
         ):
             raise _RecoveryRequired("closed_order_evidence_missing")
-        return BudgetProjection(quantity, projection.entry_cost, projection.reserved_buys)
+        instrument = portfolio_symbol or ("SPY" if qqq_cycle_id is None else "QQQ")
+        stock = next(
+            stock for stock in projection.stocks_by_instrument if stock.symbol == instrument
+        )
+        return BudgetProjection(
+            quantity, projection.entry_cost, projection.reserved_buys,
+            gross_cash=projection.gross_cash, remaining_gross_cash=projection.remaining_gross_cash,
+            aggregate_quantity=stock.quantity, instrument_reserved_buys=stock.reserved_buys,
+        )
     quantity = cost = reserved = Decimal(0)
     for record in binding["orders"]:
         state = _state(root, record)
@@ -643,7 +755,7 @@ def _basis(binding):
 def _owner_id(binding, qqq_cycle_id=None):
     if qqq_cycle_id is None:
         return "spy-baseline"
-    if binding["version"] != 2 or binding["qqq"]["cycle_id"] != qqq_cycle_id:
+    if binding["version"] not in {2, 3} or binding["qqq"]["cycle_id"] != qqq_cycle_id:
         raise _RecoveryRequired("qqq_owner_binding_mismatch")
     return "qqq-" + _digest(qqq_cycle_id)
 
@@ -698,6 +810,18 @@ def _owners(binding):
                 legacy["owner_ref"],
             )
         )
+    if binding["version"] == 3:
+        seeds = _portfolio_seed_states(binding)
+        for symbol, exchange in _PORTFOLIO_INSTRUMENTS:
+            records = [
+                {"run_id": run_id, "intent_ref": state.intent.fingerprint,
+                 "closed": run_id in binding["terminal_evidence"]}
+                for run_id, state in seeds.items() if state.intent.symbol == symbol
+            ]
+            owners.append((
+                _owner(binding, "portfolio-" + symbol.lower(), symbol, exchange, records),
+                binding["portfolio"]["owner_refs"][symbol],
+            ))
     return owners
 
 
@@ -1099,7 +1223,7 @@ def project_qqq_unit_gross_pnl(
 
 
 def _migrate_binding(root, binding, config, qqq_cycle_id, *, as_of):
-    if binding["version"] == 2:
+    if binding["version"] in {2, 3}:
         _owner_id(binding, qqq_cycle_id)
         return binding
     legacy_account = _cycle_binding("unused", config)["account_ref"]
@@ -1132,18 +1256,29 @@ def _migrate_binding(root, binding, config, qqq_cycle_id, *, as_of):
 
 def conflicts_with_budget_strategy(root: Path, run_id: str, symbol: str) -> bool:
     """Shared new-intent conflict only; recovery/cancellation bypass this check."""
-    if symbol != "SPY":
+    if symbol not in {"SPY", "TLT", "GLD"}:
         return False
     try:
         binding = _load_binding(root)
+        if _PORTFOLIO_RUN_ID.fullmatch(run_id):
+            # Prepared portfolio identities have no submission route in this package.
+            return True
+        if symbol in {"TLT", "GLD"}:
+            if binding is None or binding["version"] != 3:
+                return False
+            owned = project_budget(root, binding, portfolio_symbol=symbol)
+            return bool(owned.quantity or owned.instrument_reserved_buys)
         if binding is None:
             return _RUN_ID.fullmatch(run_id) is not None
         projection = project_budget(root, binding)
         pending = [row for row in binding["orders"] if not row["closed"]]
         if pending and pending[0]["run_id"] == run_id:
             return False
+        if binding["version"] == 3 and projection.reserved_buys:
+            return True
         # An orphan/closed budget intent cannot be dispatched outside its owner.
-        return bool(pending or projection.quantity or _RUN_ID.fullmatch(run_id))
+        quantity = projection.aggregate_quantity if binding["version"] == 3 else projection.quantity
+        return bool(pending or quantity or _RUN_ID.fullmatch(run_id))
     except (
         OSError,
         ValueError,
@@ -1278,14 +1413,14 @@ def run_kis_paper_budget_strategy(
                 root,
                 binding,
                 qqq_cycle_id=qqq_cycle_id,
-                as_of=at() if binding["version"] == 2 else None,
+                as_of=at() if binding["version"] in {2, 3} else None,
             )
 
         def read_state(record):
             return _state(root, record, symbol=symbol, exchange=exchange)
 
         def retain_terminal(binding, state, observation=None):
-            if binding["version"] == 2 and _terminal(state, observation):
+            if binding["version"] in {2, 3} and _terminal(state, observation):
                 evidence = binding["terminal_evidence"]
                 if state.intent.run_id not in evidence:
                     evidence[state.intent.run_id] = _terminal_payload(state, observation)
@@ -1382,7 +1517,10 @@ def run_kis_paper_budget_strategy(
                     raise _RecoveryRequired("snapshot_unavailable")
                 # Reuse the canary's just-read account, revalidating its timestamps.
                 quantity, opens, funds = fresh_book(reconciliation.snapshot)
-                if opens or quantity != owned.quantity:
+                book_quantity = (
+                    owned.aggregate_quantity if binding["version"] == 3 else owned.quantity
+                )
+                if opens or quantity != book_quantity:
                     raise _RecoveryRequired("pre_submit_ownership_changed")
                 if state.intent.side == "buy":
                     if qqq_cycle_id is not None:
@@ -1398,6 +1536,8 @@ def run_kis_paper_budget_strategy(
                         ):
                             raise _RecoveryRequired("qqq_entry_history_not_rejected")
                     if state.intent.quantity * state.intent.limit_price > funds:
+                        raise _RecoveryRequired("buying_power_changed")
+                    if binding["version"] in {2, 3} and owned.reserved_buys > funds:
                         raise _RecoveryRequired("buying_power_changed")
                 elif state.intent.quantity > owned.quantity:
                     raise _RecoveryRequired("unowned_sell")
@@ -1444,21 +1584,26 @@ def run_kis_paper_budget_strategy(
                 "intent_ref": state.intent.fingerprint,
                 "closed": False,
             }
-            _orders(binding, qqq_cycle_id).append(record)
-            if binding["version"] == 2:
+            proposed = copy.deepcopy(binding)
+            _orders(proposed, qqq_cycle_id).append(record)
+            if proposed["version"] in {2, 3}:
                 owner = _owner(
-                    binding,
-                    _owner_id(binding, qqq_cycle_id),
+                    proposed,
+                    _owner_id(proposed, qqq_cycle_id),
                     symbol,
                     exchange,
-                    _orders(binding, qqq_cycle_id),
+                    _orders(proposed, qqq_cycle_id),
                 )
                 if qqq_cycle_id is None:
-                    binding["spy_owner_ref"] = owner.fingerprint
+                    proposed["spy_owner_ref"] = owner.fingerprint
                 else:
-                    binding["qqq"]["owner_ref"] = owner.fingerprint
+                    proposed["qqq"]["owner_ref"] = owner.fingerprint
+            failure_stage = "ownership"
+            project(proposed)
             failure_stage = "persist"
-            _atomic_json(root / BUDGET_FILE, binding)
+            _atomic_json(root / BUDGET_FILE, proposed)
+            binding.clear()
+            binding.update(proposed)
             failure_stage = "ownership"
             project(binding)
             return record
@@ -1557,12 +1702,18 @@ def run_kis_paper_budget_strategy(
                 raise _RecoveryRequired("qqq_entry_history_not_rejected")
             projection = project(binding)
             quantity, opens, funds = fresh_book()
-            if quantity != projection.quantity or opens or quantity != 0:
+            book_quantity = (
+                projection.aggregate_quantity if binding["version"] == 3 else projection.quantity
+            )
+            if quantity != book_quantity or opens or projection.quantity != 0:
                 raise _RecoveryRequired("pre_submit_ownership_changed")
             room = (
                 _money(binding["allocated_usd"]) - projection.entry_cost - projection.reserved_buys
             )
-            if intent.quantity * intent.limit_price > min(room, funds):
+            if binding["version"] in {2, 3}:
+                room = min(room, projection.remaining_gross_cash)
+            available = funds - projection.reserved_buys if binding["version"] in {2, 3} else funds
+            if intent.quantity * intent.limit_price > min(room, available):
                 raise _RecoveryRequired("orphan_budget_conflict")
             record = bind_order(binding, state)
             outcome = run_intent(state, permitted=permitted(binding, state))
@@ -1612,7 +1763,7 @@ def run_kis_paper_budget_strategy(
                 )
                 failure_stage = "persist"
                 _record_reconciliation_fill(store, state, reconciliation, observed_at=at())
-                if binding["version"] == 2:
+                if binding["version"] in {2, 3}:
                     retain_terminal(binding, store.read(), reconciliation.execution)
                     _atomic_json(root / BUDGET_FILE, binding)
                 return result("pending", "own_order_cancellation_observed")
@@ -1626,13 +1777,19 @@ def run_kis_paper_budget_strategy(
                 return result("pending", "exact_fill_unavailable")
             if not timedelta(0) <= at() - fill.observed_at <= KIS_PAPER_SPY_ASKING_PRICE_MAX_AGE:
                 return result("pending", "exact_fill_not_current")
-            if quantity != projection.quantity:
+            book_quantity = (
+                projection.aggregate_quantity if binding["version"] == 3 else projection.quantity
+            )
+            if quantity != book_quantity:
                 return result("pending", "position_fill_not_aligned")
             if opens:
                 return result("pending", "order_still_open")
             if fill.quantity != state.intent.quantity and fill.remaining_quantity != 0:
                 return result("pending", "remaining_quantity_unresolved")
-            if binding["version"] == 2 and state.intent.run_id not in binding["terminal_evidence"]:
+            if (
+                binding["version"] in {2, 3}
+                and state.intent.run_id not in binding["terminal_evidence"]
+            ):
                 return result("pending", "remaining_quantity_unresolved")
             record["closed"] = True
             failure_stage = "persist"
@@ -1645,7 +1802,7 @@ def run_kis_paper_budget_strategy(
                 binding = _load_binding(root, account_ref)
                 if binding is not None and qqq_cycle_id is not None:
                     binding = _migrate_binding(root, binding, config, qqq_cycle_id, as_of=at())
-                if binding is not None and binding["version"] == 2:
+                if binding is not None and binding["version"] in {2, 3}:
                     legacy = binding["legacy_spy"]
                     if (
                         legacy is not None
@@ -1734,7 +1891,12 @@ def run_kis_paper_budget_strategy(
                     if binding is None
                     else project(binding)
                 )
-                if quantity != projection.quantity or opens:
+                book_quantity = (
+                    projection.aggregate_quantity
+                    if binding is not None and binding["version"] == 3
+                    else projection.quantity
+                )
+                if quantity != book_quantity or opens:
                     return result("no_intent", "existing_inventory_or_order_conflict")
                 if (side == "buy" and quantity > 0) or (side == "sell" and quantity == 0):
                     return result("no_intent", "target_already_satisfied")
@@ -1805,8 +1967,13 @@ def run_kis_paper_budget_strategy(
                     - projection.entry_cost
                     - projection.reserved_buys
                 )
+                if binding["version"] in {2, 3}:
+                    room = min(room, projection.remaining_gross_cash)
+                available = (
+                    funds - projection.reserved_buys if binding["version"] in {2, 3} else funds
+                )
                 shares = (
-                    (min(room, funds) / price).to_integral_value(rounding=ROUND_FLOOR)
+                    (min(room, available) / price).to_integral_value(rounding=ROUND_FLOOR)
                     if side == "buy"
                     else projection.quantity
                 )

@@ -40,7 +40,7 @@ FAULT_CODES = frozenset(
 SCOPE = MappingProxyType(
     {
         "SPY": frozenset({"AMS"}),
-        "TLT": frozenset({"NAS", "AMS"}),
+        "TLT": frozenset({"NAS", "AMS", "NYS"}),
         "GLD": frozenset({"AMS"}),
     }
 )

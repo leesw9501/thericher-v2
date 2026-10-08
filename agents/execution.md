@@ -105,12 +105,26 @@ with zero or claim net from gross.
 
 ## Current Handoff
 
-Goal16 model study is target-only/related development trial3, not an Execution
-input or Paper promotion. Existing rejected financial studies remain rejected;
-their price-only analytical cashflow is not broker-fill/rounding/fee parity.
-Kuhn independently reviews current recipe/data recovery and a next operational
-hypothesis; parent owns actual dispatch, integration and Git.
-No account/order/schedule/budget/whitelist/dashboard change follows from this
-research package. A frozen comparative/Paper candidate requires scoped replay
+Goal17 shared-budget/whole-share plan preparation is released:499 focused and
+779 broader parent cases; independent funding/recovery review READY/noP1/P2.
+V2 and V3 writers honor the same pool, original basis and ownership; gross
+cash accounting includes owned sale proceeds, not fees/settlement/net PnL.
+Invalid proposals preserve binding, missing post-submit state preserves exact
+reconciliation/reservation. No actual private migration, submit or deployment.
+Fixed-control packet is declared input only, not ownership or funding proof.
+
+Direct read-only compatibility ba524c4472324072816ba3ad3596f1b5/receipt.json
+SHA3f53757d... has account available/1 token/11 validated GETs/all3 quotes
+quote_timestamp_invalid/zero orderability/submits/private-source unchanged.
+Not scheduler provenance or V3 runtime success. Current selective mmap loader
+has161 source-free cases; only four Paper value spans are materialized, with
+OS-page mapping/search limitation explicit. Kuhn next investigates quote parser
+contracts source-only; no guessed timezone or new actual call. Parent owns
+actual dispatch, integration and Git. Existing session owners remain intact.
+One public-only
+Claude challenge .988s is review_unavailable/cli_nonzero_other, not agreement:
+A/research/source-discovery/claude-paper-ownership-20261008-v1.json.
+Existing rejected financial studies remain rejected; their analytical cashflow
+is not broker-fill/rounding/fee parity. A frozen comparative/Paper candidate requires scoped replay
 parity evidence, never a new manual Paper approval or broad research hold.
 Safe observer/head reader links remain in RUNBOOK and agents/data.md.

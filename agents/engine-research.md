@@ -295,7 +295,7 @@ eight workers/clean helper,10,304 collected; Ruff/three sample Compose pass.
 
 | Queue | Current bounded fact |
 | --- | --- |
-| Breadth | Variance trial3 closed/rejected. Next inventory/turnover-aware operational package prepares one fixed control without predictive-model reuse or comparative outcomes. |
+| Breadth | Fixed-control declared input packet released34 tests; no ownership/funding proof. Hooke next prepares one distinct21-session absolute-net-factor Ridge/GRU asset-selection worker using synthetic inputs only. NEW2016+cohort/contract not frozen; no actual labels/fits yet. |
 | Depth / GPU | RTX4090 available, canonical lease released after exact R3 containment. No ready frozen predictive campaign now; preparation continues rather than inventing a fit. |
 | Ensemble | Closed blends remain rejected. Current Paper ownership preparation is deterministic engineering, not an ensemble or model promotion. |
 | Replication | No selected candidate; revised/seen studies cannot become fresh independent evaluation by renaming them. |

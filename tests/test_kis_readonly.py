@@ -344,6 +344,202 @@ def test_real_transport_paces_after_a_failed_external_attempt(monkeypatch) -> No
     assert sleep_calls == [1.0]
 
 
+@pytest.fixture
+def guarded_paper_config_reader(tmp_path, monkeypatch):
+    def install(payload):
+        path = tmp_path / "paper.env"
+        path.write_bytes(payload)
+        keys, values, offset = set(), set(), 0
+        for line in payload.splitlines(keepends=True):
+            body = line.rstrip(b"\r\n")
+            separator = body.find(b"=")
+            keys.add((offset, offset + (separator if separator >= 0 else len(body))))
+            if separator >= 0:
+                try:
+                    key = body[:separator].decode("utf-8").strip()
+                except UnicodeDecodeError:
+                    key = ""
+                if key.startswith("export "):
+                    key = key[len("export ") :].lstrip()
+                if key in kis_readonly.KIS_PAPER_ENV_KEYS:
+                    values.add((offset + separator + 1, offset + len(body)))
+            offset += len(line)
+        slices, value_decodes, closed = [], [], []
+        original_open = Path.open
+
+        class KeyOnlyFile:
+            def __init__(self, handle):
+                self.handle = handle
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                self.handle.close()
+
+            def fileno(self):
+                return self.handle.fileno()
+
+            def __iter__(self):
+                raise AssertionError("whole-line iteration is forbidden")
+
+            def read(self, *_args):
+                raise AssertionError("whole-file reads are forbidden")
+
+            def readline(self, *_args):
+                raise AssertionError("whole-line reads are forbidden")
+
+        def guarded_open(actual_path, *args, **kwargs):
+            assert actual_path == path and args == ("rb",) and kwargs == {"buffering": 0}
+            return KeyOnlyFile(original_open(actual_path, *args, **kwargs))
+
+        class FakeMMap:
+            def __init__(self, _fileno, length, *, access):
+                assert length == 0 and access == kis_readonly.mmap.ACCESS_READ
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                closed.append(True)
+
+            def __len__(self):
+                return len(payload)
+
+            def find(self, needle, start=0, end=None):
+                assert needle in {b"\r", b"\n", b"="}
+                return payload.find(needle, start, len(payload) if end is None else end)
+
+            def __getitem__(self, span):
+                assert isinstance(span, slice) and span.step is None
+                bounds = span.start, span.stop
+                assert bounds in keys | values, "slice touched an unapproved value"
+                slices.append(bounds)
+
+                class CheckedBytes(bytes):
+                    def decode(self, encoding="utf-8", errors="strict"):
+                        assert encoding == "utf-8" and errors == "strict"
+                        if bounds in values:
+                            value_decodes.append(bounds)
+                        return super().decode(encoding, errors)
+
+                return CheckedBytes(payload[span])
+
+        monkeypatch.setattr(Path, "open", guarded_open)
+        monkeypatch.setattr(kis_readonly.mmap, "mmap", FakeMMap)
+        return path, values, slices, value_decodes, closed
+
+    return install
+
+
+@pytest.mark.parametrize("newline", (b"\n", b"\r\n", b"\r"))
+@pytest.mark.parametrize("final_newline", (False, True))
+def test_file_config_materializes_only_the_four_paper_values(
+    guarded_paper_config_reader, monkeypatch, newline, final_newline
+):
+    payload = newline.join(
+        (
+            b"KIS_LIVE_APP_KEY=forbidden-live-before\xff",
+            b"KIS_PAPER_APP_KE=forbidden-short-prefix\xfe",
+            b"KIS_PAPER_APP_KEY_EXTRA=forbidden-long-prefix\xff",
+            b"OTHER=KIS_PAPER_APP_KEY=forbidden-decoy\xfe",
+            b"# KIS_PAPER_APP_KEY=forbidden-comment\xff",
+            b"export\tKIS_PAPER_APP_KEY=forbidden-export-grammar\xfe",
+            b"\xff=forbidden-invalid-key-value\xff",
+            b" \texport  KIS_PAPER_APP_KEY \t= 'test-app-key' ",
+            b'KIS_PAPER_APP_SECRET="test-app-secret"',
+            b"KIS_PAPER_ACCOUNT_NO=12345678",
+            b"KIS_PAPER_ACCOUNT_PRODUCT_CODE=01",
+            b"KIS_LIVE_APP_SECRET=forbidden-live-after\xff",
+            b"KIS_PAPER_UNAPPROVED=forbidden-paper-after\xfe",
+            b"TIINGO_API_TOKEN=forbidden-token\xff",
+        )
+    ) + (newline if final_newline else b"")
+    path, values, slices, decodes, closed = guarded_paper_config_reader(payload)
+    monkeypatch.setattr(kis_readonly.os, "environ", {})
+
+    config = load_kis_paper_config(path)
+
+    assert config.app_key == "test-app-key" and config.app_secret == "test-app-secret"
+    assert config.masked_account_identity == "****5678-**"
+    assert len(decodes) == 4 and set(decodes) == values
+    assert all(span in slices for span in decodes) and closed == [True]
+
+
+@pytest.mark.parametrize(
+    ("assignment", "expected"),
+    (
+        (b"KIS_PAPER_APP_KEY=x=y==z", "x=y==z"),
+        (b"KIS_PAPER_APP_KEY=literal#not-comment", "literal#not-comment"),
+        (b"KIS_PAPER_APP_KEY=\t' spaced '\t", "spaced"),
+        (b'KIS_PAPER_APP_KEY="unmatched', '"unmatched'),
+        (b"KIS_PAPER_APP_KEY=\xce\xb1", "\u03b1"),
+        (b"\xc2\xa0export \tKIS_PAPER_APP_KEY\xc2\xa0=key\xc2\xa0", "key"),
+    ),
+)
+def test_file_config_preserves_value_export_and_whitespace_grammar(
+    guarded_paper_config_reader, assignment, expected
+):
+    payload = assignment + (
+        b"\r\nKIS_PAPER_APP_SECRET=secret\rKIS_PAPER_ACCOUNT_NO=12345678\n"
+        b"KIS_PAPER_ACCOUNT_PRODUCT_CODE=01"
+    )
+    path, values, _, decodes, closed = guarded_paper_config_reader(payload)
+    assert load_kis_paper_config(path).app_key == expected
+    assert set(decodes) == values and closed == [True]
+
+
+@pytest.mark.parametrize(
+    ("payload", "reason", "decoded_count"),
+    (
+        (b"", "config_missing", 0),
+        (b"KIS_LIVE_APP_KEY=\xff\rOTHER=\xfe", "config_missing", 0),
+        (b"KIS_PAPER_APP_KEY", "config_missing", 0),
+        (b"KIS_PAPER_APP_KEY= \t", "config_missing", 1),
+        (b"KIS_PAPER_APP_KEY=' '", "config_missing", 1),
+        (b"KIS_PAPER_APP_KEY=\xff", "config_missing", 1),
+        (
+            b"KIS_PAPER_APP_KEY\rKIS_LIVE_APP_KEY=\xff\nKIS_PAPER_APP_KEY=\xfe",
+            "config_duplicate",
+            0,
+        ),
+    ),
+)
+def test_file_config_missing_empty_invalid_and_no_equals_duplicate_are_categorical(
+    guarded_paper_config_reader, payload, reason, decoded_count
+):
+    path, _, _, decodes, closed = guarded_paper_config_reader(payload)
+    with pytest.raises(KisPaperReadOnlyError, match=f"^{reason}$") as error:
+        load_kis_paper_config(path)
+    assert len(decodes) == decoded_count
+    assert closed == ([True] if payload else [])
+    if error.value.__context__ is not None:
+        assert error.value.__suppress_context__
+
+
+@pytest.mark.parametrize("key", kis_readonly.KIS_PAPER_ENV_KEYS)
+def test_file_config_rejects_each_duplicate_before_copying_its_second_value(
+    guarded_paper_config_reader, key
+):
+    payload = f"{key}=first\r\n export {key} =".encode("ascii") + b"\xff"
+    path, _, _, decodes, closed = guarded_paper_config_reader(payload)
+    with pytest.raises(KisPaperReadOnlyError, match="^config_duplicate$"):
+        load_kis_paper_config(path)
+    assert len(decodes) == 1 and closed == [True]
+
+
+@pytest.mark.parametrize("empty_file", (False, True))
+def test_file_config_does_not_fall_back_to_environment(tmp_path, monkeypatch, empty_file):
+    path = tmp_path / "paper.env"
+    if empty_file:
+        path.write_bytes(b"")
+    monkeypatch.setattr(
+        kis_readonly.os, "environ", dict.fromkeys(kis_readonly.KIS_PAPER_ENV_KEYS, "present")
+    )
+    with pytest.raises(KisPaperReadOnlyError, match="^config_missing$"):
+        load_kis_paper_config(path)
+
+
 def test_config_reads_only_authorized_values_and_blank_config_fails_closed(tmp_path) -> None:
     repo_root = tmp_path / "repo"
     repo_root.mkdir()

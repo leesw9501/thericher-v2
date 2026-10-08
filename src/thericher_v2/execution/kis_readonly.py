@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import math
+import mmap
 import os
 import re
 import time
@@ -1439,21 +1440,50 @@ class KisPaperReadOnlyClient:
 
 
 def load_kis_paper_config(dotenv_path: Path) -> KisPaperConfig:
-    """Read only the four explicitly authorized values from a root ``.env`` file."""
+    """Copy/decode values only for the four approved Paper assignments.
+
+    Read-only mmap may map/search OS pages containing other values. This
+    isolates Python value materialization, not physical access to those bytes.
+    """
 
     values: dict[str, str] = {}
     try:
-        with dotenv_path.open("r", encoding="utf-8") as handle:
-            for raw_line in handle:
-                parsed = _authorized_dotenv_value(raw_line)
-                if parsed is None:
-                    continue
-                key, value = parsed
-                if key in values:
-                    raise KisPaperReadOnlyError("config_duplicate")
-                values[key] = value
-    except FileNotFoundError as error:
-        raise KisPaperReadOnlyError("config_missing") from error
+        with dotenv_path.open("rb", buffering=0) as handle:
+            if os.fstat(handle.fileno()).st_size:
+                with mmap.mmap(handle.fileno(), 0, access=mmap.ACCESS_READ) as mapped:
+                    size, start = len(mapped), 0
+                    cr, lf = mapped.find(b"\r"), mapped.find(b"\n")
+                    while start < size:
+                        end = min(cr if cr >= 0 else size, lf if lf >= 0 else size)
+                        separator = mapped.find(b"=", start, end)
+                        key_end = separator if separator >= 0 else end
+                        key = (
+                            _authorized_dotenv_key(mapped[start:key_end])
+                            if key_end > start
+                            else None
+                        )
+                        if key is not None:
+                            if key in values:
+                                raise KisPaperReadOnlyError("config_duplicate")
+                            value = (
+                                mapped[separator + 1 : end].decode("utf-8").strip()
+                                if separator >= 0
+                                else ""
+                            )
+                            if (
+                                len(value) >= 2
+                                and value[0] == value[-1]
+                                and value[0] in {"'", '"'}
+                            ):
+                                value = value[1:-1]
+                            values[key] = value
+                        start = end + 1
+                        if cr == end:
+                            cr = mapped.find(b"\r", start)
+                        if lf == end:
+                            lf = mapped.find(b"\n", start)
+    except (OSError, ValueError):
+        raise KisPaperReadOnlyError("config_missing") from None
     if any(not values.get(key, "").strip() for key in KIS_PAPER_ENV_KEYS):
         raise KisPaperReadOnlyError("config_missing")
     return KisPaperConfig(
@@ -1614,22 +1644,14 @@ def main(argv: list[str] | None = None) -> int:
     return 0 if outcome.status == "collected" else 2
 
 
-def _authorized_dotenv_value(raw_line: str) -> tuple[str, str] | None:
-    line = raw_line.strip()
-    if not line or line.startswith("#"):
+def _authorized_dotenv_key(raw_key: bytes) -> str | None:
+    try:
+        key = raw_key.decode("utf-8").strip()
+    except UnicodeDecodeError:
         return None
-    if line.startswith("export "):
-        line = line[len("export ") :].lstrip()
-    key, separator, value = line.partition("=")
-    key = key.strip()
-    if key not in KIS_PAPER_ENV_KEYS:
-        return None
-    if not separator:
-        return key, ""
-    value = value.strip()
-    if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
-        value = value[1:-1]
-    return key, value
+    if key.startswith("export "):
+        key = key[len("export ") :].lstrip()
+    return key if key in KIS_PAPER_ENV_KEYS else None
 
 
 def _require_exact_paper_base_url(base_url: str) -> None:

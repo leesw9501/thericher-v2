@@ -277,6 +277,214 @@ def spy_args(args, digit="b"):
     }
 
 
+@pytest.mark.parametrize("symbol", ["SPY", "QQQ"])
+@pytest.mark.parametrize("room_available", [False, True])
+def test_existing_budget_writers_honor_atomic_v3_portfolio_reservations(
+    harness, symbol, room_available,
+):
+    from dataclasses import replace
+
+    from test_kis_paper_portfolio_preview import NOW as PREVIEW_NOW
+    from test_kis_paper_portfolio_preview import _reads, _scope
+    from thericher_v2.execution.kis_paper_portfolio_plan import build_kis_paper_portfolio_plan
+
+    root, client, args = harness
+    client.now = PREVIEW_NOW
+    inputs = _scope()
+    binding = inputs["binding"]
+    account = budget._digest([client._config.base_url, client._config.account_number,
+                              client._config.account_product_code])
+    binding["account_ref"] = account
+    binding["qqq"]["cycle_id"] = "unit-cycle"
+    binding["basis_ref"] = budget._basis(binding).fingerprint
+    binding["spy_owner_ref"] = budget._owners(binding)[0][0].fingerprint
+    binding["qqq"]["owner_ref"] = budget._owners(binding)[1][0].fingerprint
+    inputs.update(
+        expected_account_ref=account, expected_basis_ref=binding["basis_ref"],
+        expected_owner_refs={owner.owner_ref: ref for owner, ref in budget._owners(binding)},
+        reads=replace(_reads(spy=D(0)), account_ref=account),
+    )
+    if room_available:
+        inputs["weights_by_symbol"] = dict(SPY=D(0), TLT=D("0.1"), GLD=D("0.1"))
+    plan = build_kis_paper_portfolio_plan(
+        **inputs, expected_binding_ref="sha256:" + budget._digest(binding),
+        request_id="synthetic-reserved-batch", input_ref="sha256:" + "f" * 64,
+        valid_until=PREVIEW_NOW + timedelta(minutes=5),
+    )
+    reserved = D(200) if room_available else D(900)
+    assert plan.status == "prepared" and plan.reservation == reserved
+    budget._atomic_json(root / budget.BUDGET_FILE, plan.binding)
+    projection = budget.project_budget(root, budget._load_binding(root), as_of=client.now)
+    assert projection.entry_cost == 0 and projection.reserved_buys == reserved
+    outcome = budget.run_kis_paper_budget_strategy(**(spy_args(args) if symbol == "SPY" else args))
+    assert (outcome.status, outcome.reason_code) == (
+        ("order_complete", "exact_order_and_position_reconciled")
+        if room_available else ("no_intent", "budget_below_one_share")
+    )
+    retained = budget._load_binding(root)
+    assert retained["portfolio"] == plan.binding["portfolio"]
+    assert retained["basis_ref"] == binding["basis_ref"]
+    if room_available:
+        assert len(client.submits) == 1 and client.submits[0].quantity == 1
+        assert budget.project_budget(root, retained, as_of=client.now).reserved_buys == reserved
+    else:
+        assert not client.submits
+        assert not list(root.glob("bs-*.json")) and not list(root.glob("bq-*.json"))
+
+
+def test_v3_default_spy_reconciles_aggregate_but_sells_only_incumbent_owner(harness):
+    from dataclasses import replace
+
+    from test_kis_paper_portfolio_preview import NOW as PREVIEW_NOW
+    from test_kis_paper_portfolio_preview import _scope, _state
+    from thericher_v2.execution.kis_paper_portfolio_plan import build_kis_paper_portfolio_plan
+
+    root, client, args = harness
+    client.now = PREVIEW_NOW
+    incumbent = _state()
+    inputs = _scope(incumbent)
+    binding = inputs["binding"]
+    account = budget._digest([client._config.base_url, client._config.account_number,
+                              client._config.account_product_code])
+    binding["account_ref"] = account
+    binding["qqq"]["cycle_id"] = "unit-cycle"
+    binding["basis_ref"] = budget._basis(binding).fingerprint
+    binding["spy_owner_ref"] = budget._owners(binding)[0][0].fingerprint
+    binding["qqq"]["owner_ref"] = budget._owners(binding)[1][0].fingerprint
+    inputs.update(
+        expected_account_ref=account, expected_basis_ref=binding["basis_ref"],
+        expected_owner_refs={owner.owner_ref: ref for owner, ref in budget._owners(binding)},
+        reads=replace(inputs["reads"], account_ref=account),
+    )
+    plan = build_kis_paper_portfolio_plan(
+        **inputs, expected_binding_ref="sha256:" + budget._digest(binding),
+        request_id="synthetic-multi-owner", input_ref="sha256:" + "f" * 64,
+        valid_until=PREVIEW_NOW + timedelta(minutes=5),
+    )
+    portfolio_intent = next(intent for intent in plan.intents if intent.symbol == "SPY")
+    fill = KisPaperCumulativeFill(
+        fill_identity_ref(raw_order_id="SYNTHETIC-PORTFOLIO", order_at=PREVIEW_NOW,
+                          symbol="SPY", exchange="AMEX", side="buy", quantity=D(2)),
+        D(2), D(2), D(200), PREVIEW_NOW, D(0),
+    )
+    portfolio_state = KisPaperCanaryState(
+        portfolio_intent, "submitted", PREVIEW_NOW, "reconciliation_clean",
+        broker_order_id="SYNTHETIC-PORTFOLIO", submitted_at=PREVIEW_NOW,
+        submission_started_at=PREVIEW_NOW, cumulative_fill=fill,
+        fill_observation_status="available", fill_observed_at=PREVIEW_NOW,
+    )
+    for state in (incumbent, portfolio_state):
+        budget._atomic_json(root / (state.intent.run_id + ".json"), state.to_dict())
+        client.orders[state.intent.run_id] = dict(
+            intent=state.intent, filled=state.intent.quantity, remaining=D(0),
+            id=state.broker_order_id, cancelled=False,
+        )
+    budget._atomic_json(root / budget.BUDGET_FILE, plan.binding)
+    before = budget.project_budget(root, plan.binding, as_of=client.now)
+    assert before.quantity == 1 and before.aggregate_quantity == 3
+    outcome = budget.run_kis_paper_budget_strategy(**{
+        **spy_args(args), "receipt_loader": lambda at: receipt(at, "SPY", "exit", "e"),
+    })
+    assert outcome.status == "order_complete"
+    assert len(client.submits) == 1
+    assert client.submits[0].side == "sell" and client.submits[0].quantity == 1
+    retained = budget._load_binding(root)
+    after = budget.project_budget(root, retained, as_of=client.now)
+    assert after.quantity == 0 and after.aggregate_quantity == 2
+    assert (
+        budget.project_budget(root, retained, as_of=client.now, portfolio_symbol="SPY").quantity
+        == 2
+    )
+    assert retained["portfolio"] == plan.binding["portfolio"]
+
+
+def _v2_losing_roundtrip(root, client):
+    from dataclasses import replace
+
+    from test_kis_paper_portfolio_preview import NOW as PREVIEW_NOW
+    from test_kis_paper_portfolio_preview import _scope, _state
+
+    client.now = PREVIEW_NOW
+    buy, sell = _state(1), _state(2)
+    sell_intent = replace(sell.intent, side="sell", limit_price=D(40))
+    sell_fill = replace(
+        sell.cumulative_fill, gross_amount=D(40), identity_ref=fill_identity_ref(
+            raw_order_id=sell.broker_order_id, order_at=sell.submission_started_at,
+            symbol="SPY", exchange="AMEX", side="sell", quantity=D(1),
+        ),
+    )
+    sell = replace(sell, intent=sell_intent, cumulative_fill=sell_fill)
+    binding = _scope(buy, sell)["binding"]
+    binding.update(
+        account_ref=budget._digest([client._config.base_url, client._config.account_number,
+                                   client._config.account_product_code]),
+        basis_usd="1000", allocated_usd="100",
+    )
+    binding["qqq"]["cycle_id"] = "unit-cycle"
+    binding["basis_ref"] = budget._basis(binding).fingerprint
+    binding["spy_owner_ref"] = budget._owners(binding)[0][0].fingerprint
+    binding["qqq"]["owner_ref"] = budget._owners(binding)[1][0].fingerprint
+    for state in (buy, sell):
+        budget._atomic_json(root / (state.intent.run_id + ".json"), state.to_dict())
+        client.orders[state.intent.run_id] = dict(
+            intent=state.intent, filled=D(1), remaining=D(0), id=state.broker_order_id,
+            cancelled=False,
+        )
+    budget._atomic_json(root / budget.BUDGET_FILE, binding)
+    return binding
+
+
+@pytest.mark.parametrize("symbol", ["SPY", "QQQ"])
+def test_v2_writers_bound_new_buys_by_gross_cash_after_losing_roundtrip(
+    harness, monkeypatch, symbol,
+):
+    root, client, args = harness
+    binding = _v2_losing_roundtrip(root, client)
+    client.spy_price = D(90)
+    monkeypatch.setattr(
+        client, "fetch_qqq_limit_input", lambda *, observed_at: KisPaperSpyLimitInput(
+            D(90), 2, D("0.01"), observed_at, best_bid=D(90), best_ask=D(90),
+        ),
+    )
+    before = (root / budget.BUDGET_FILE).read_bytes()
+    projection = budget.project_budget(root, binding, as_of=client.now)
+    assert projection.entry_cost == 0 and projection.reserved_buys == 0
+    assert projection.remaining_gross_cash == 80 and binding["allocated_usd"] == "100"
+    outcome = budget.run_kis_paper_budget_strategy(**(spy_args(args) if symbol == "SPY" else args))
+    assert (outcome.status, outcome.reason_code) == ("no_intent", "budget_below_one_share")
+    assert not client.submits
+    assert (root / budget.BUDGET_FILE).read_bytes() == before
+    assert budget.project_budget(root, budget._load_binding(root), as_of=client.now) == projection
+    assert not list(root.glob("bq-*.json"))
+    assert len(list(root.glob("bs-*.json"))) == 2
+
+
+def test_invalid_proposed_binding_is_replayed_before_save_and_does_not_poison_shared_basis(
+    harness, monkeypatch,
+):
+    root, client, args = harness
+    _v2_losing_roundtrip(root, client)
+    client.spy_price = D(40)
+    before = (root / budget.BUDGET_FILE).read_bytes()
+    original = budget.project_budget
+    checked = []
+
+    def reject_new_proposal(state_root, binding, **kwargs):
+        if len(binding["orders"]) > 2:
+            checked.append(True)
+            raise budget._RecoveryRequired("synthetic_invalid_proposed_binding")
+        return original(state_root, binding, **kwargs)
+
+    monkeypatch.setattr(budget, "project_budget", reject_new_proposal)
+    outcome = budget.run_kis_paper_budget_strategy(**spy_args(args))
+    assert outcome.status == "recovery_required" and checked
+    assert not client.submits
+    assert (root / budget.BUDGET_FILE).read_bytes() == before
+    retained = budget._load_binding(root)
+    assert retained["version"] == 2 and len(retained["orders"]) == 2
+    assert original(root, retained, as_of=client.now).remaining_gross_cash == 80
+
+
 def exit_args(args):
     return {**args, "receipt_loader": lambda at: receipt(at, action="exit", digit="c")}
 

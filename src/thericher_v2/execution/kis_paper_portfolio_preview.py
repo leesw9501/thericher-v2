@@ -2,7 +2,7 @@
 
 Caller owns strict JSON decoding, private namespace custody and causal target/
 covariance construction. Frozen funding is not refreshed from broker cash.
-Risk uses provisional sleeve NAV = allocation - gross entry cost + owned mark;
+Risk uses provisional sleeve NAV = replayed gross cash + all owned marks;
 fees, settlement and dividend cash are unknown, not fabricated account equity.
 """
 
@@ -21,8 +21,10 @@ from .kis_paper_budget_strategy import (
     _QQQ_RUN_ID,
     _RUN_ID,
     _V2_KEYS,
+    _V3_KEYS,
     _basis,
     _owners,
+    _portfolio_seed_states,
     _retained_terminal,
     _terminal,
     _validate_orders,
@@ -148,9 +150,8 @@ def project_kis_paper_portfolio_preview(
         at = require_utc(as_of)
         _check(
             isinstance(binding, Mapping)
-            and set(binding) == _V2_KEYS
             and type(binding["version"]) is int
-            and binding["version"] == 2,
+            and (binding["version"], set(binding)) in ((2, _V2_KEYS), (3, _V3_KEYS)),
             "ownership_binding_invalid",
         )
         _check(
@@ -177,6 +178,11 @@ def project_kis_paper_portfolio_preview(
             "ownership_pin_mismatch",
         )
         records = binding["orders"] + qqq["orders"]
+        records += [
+            {"run_id": run_id, "intent_ref": state.intent.fingerprint,
+             "closed": run_id in binding["terminal_evidence"]}
+            for run_id, state in _portfolio_seed_states(binding).items()
+        ]
         _check(
             isinstance(states, Mapping) and set(states) == {row["run_id"] for row in records},
             "state_scope_invalid",
@@ -344,17 +350,20 @@ def project_kis_paper_portfolio_preview(
         weights = tuple(Fraction(weights_by_symbol[s]) for s in SYMBOLS)
         _check(sum(weights) <= 1, "targets_invalid")
         covariance = _covariance(covariance_by_symbol)
-        spy = Fraction(owned["SPY"])
+        inventory = tuple(Fraction(owned.get(s, Decimal(0))) for s in SYMBOLS)
+        spy = inventory[0]
         cost, reserved = Fraction(projection.entry_cost), Fraction(projection.reserved_buys)
         bank = Fraction(projection.allocated_usd)
-        nav = bank - cost + spy * marks[0]
+        cash = Fraction(projection.gross_cash)
+        nav = cash + sum(q * p for q, p in zip(inventory, marks, strict=True))
         _check(nav > 0, "risk_nav_unavailable")
         quantities = tuple((w * nav) // limit for w, limit in zip(weights, limits, strict=True))
-        additional = (max(Fraction(0), quantities[0] - spy), *map(Fraction, quantities[1:]))
+        additional = tuple(max(Fraction(0), target - held)
+                           for target, held in zip(quantities, inventory, strict=True))
         notionals = tuple(q * p for q, p in zip(additional, limits, strict=True))
-        exposures = tuple(Fraction(q) * p / nav for q, p in zip(quantities, marks, strict=True))
-        # Incumbent is immutable even when the requested target is lower.
-        exposures = (max(Fraction(quantities[0]), spy) * marks[0] / nav, *exposures[1:])
+        # Every incumbent is immutable; no sell or foreign-inventory adoption.
+        exposures = tuple(max(Fraction(q), held) * p / nav
+                          for q, held, p in zip(quantities, inventory, marks, strict=True))
         annual_variance = 252 * sum(
             exposures[i] * covariance[i][j] * exposures[j] for i in range(3) for j in range(3)
         )
@@ -364,7 +373,7 @@ def project_kis_paper_portfolio_preview(
             risk = _decimal(annual_variance).sqrt()
         reason = (
             "incumbent_target_mismatch"
-            if quantities[0] < spy
+            if any(target < held for target, held in zip(quantities, inventory, strict=True))
             else "rounded_risk_exceeds_cap"
             if annual_variance > Fraction(ANNUAL_RISK_CAP) ** 2
             else "pending_identity"
@@ -373,8 +382,9 @@ def project_kis_paper_portfolio_preview(
             if any(o.symbol in {*SYMBOLS, "QQQ"} for o in snapshot.open_orders.orders)
             else "shared_budget_exceeded"
             if sum(notionals) > bank - cost - reserved
+            or sum(notionals) > cash - reserved
             else "buying_power_insufficient"
-            if sum(notionals) > min(map(Fraction, funds))
+            if sum(notionals) + reserved > min(map(Fraction, funds))
             else "preview_only"
         )
         return KisPaperPortfolioPreview(

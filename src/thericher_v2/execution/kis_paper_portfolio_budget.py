@@ -11,7 +11,7 @@ Observation timestamps are read times, not execution ordering. Replay prefixes
 use intent creation order; they do not reconstruct historical buying power or
 prove call-time ownership. Costs use exact rational arithmetic internally, with
 non-terminating displayed costs rounded up and remaining capital rounded down.
-Fees, settled cash, sale proceeds, and net PnL are not projected.
+Gross owned sale proceeds are replayed for funding, not settlement or net PnL.
 """
 
 from __future__ import annotations
@@ -32,7 +32,7 @@ from .kis_paper_canary import KisPaperCanaryIntent, KisPaperCanaryState
 from .kis_paper_fill_accounting import KisPaperCumulativeFill, KisPaperExecutionObservation
 
 PORTFOLIO_ALLOCATION_FRACTION = Decimal("0.10")
-_INSTRUMENTS = (("SPY", "AMEX"), ("QQQ", "NASD"))
+_INSTRUMENTS = (("SPY", "AMEX"), ("QQQ", "NASD"), ("TLT", "NASD"), ("GLD", "AMEX"))
 _HASH = re.compile(r"sha256:[0-9a-f]{64}")
 _ACCOUNT = re.compile(r"[0-9a-f]{64}")
 _IDENTIFIER = re.compile(r"[A-Za-z0-9._-]{1,80}")
@@ -175,6 +175,8 @@ class KisPaperPortfolioBudgetProjection:
     entry_cost: Decimal
     reserved_buys: Decimal
     remaining_cap: Decimal
+    gross_cash: Decimal
+    remaining_gross_cash: Decimal
 
 
 def _validated_fill(value: object) -> KisPaperCumulativeFill:
@@ -387,6 +389,7 @@ def project_kis_paper_portfolio_budget(
     # Owner-local average entry cost never includes another owner's sale proceeds.
     ledger = {owner.owner_ref: [Fraction(0), Fraction(0), Fraction(0)] for owner in owners}
     allocated = Fraction(basis.allocated_usd)
+    gross_cash = allocated
     for _, _, owner_ref, state in sorted(events):
         intent, fill = state.intent, state.cumulative_fill
         filled = Fraction(0) if fill is None else Fraction(fill.quantity)
@@ -397,6 +400,7 @@ def project_kis_paper_portfolio_budget(
             _check(amount <= filled * limit, "buy_fill_limit_conflict")
             quantity += filled
             cost += amount
+            gross_cash -= amount
             if not _released_buy(state, intent.run_id in proofs):
                 reserved += (requested - filled) * limit
         else:
@@ -404,11 +408,14 @@ def project_kis_paper_portfolio_budget(
             if filled:
                 cost = cost * (quantity - filled) / quantity
                 quantity -= filled
+            gross_cash += amount
         ledger[owner_ref] = [quantity, cost, reserved]
         _check(
             sum((row[1] + row[2] for row in ledger.values()), Fraction(0)) <= allocated,
             "aggregate_budget_exceeded",
         )
+        _check(sum((row[2] for row in ledger.values()), Fraction(0)) <= gross_cash,
+               "aggregate_gross_cash_exceeded")
 
     def stock(owner_ref, symbol, exchange, values):
         return KisPaperPortfolioStock(owner_ref, symbol, exchange, *map(_decimal, values))
@@ -435,6 +442,7 @@ def project_kis_paper_portfolio_budget(
             ],
         )
         for symbol, exchange in _INSTRUMENTS
+        if symbol in {"SPY", "QQQ"} or any(owner.symbol == symbol for owner in owners)
     )
     cost = sum((row[1] for row in ledger.values()), Fraction(0))
     reserved = sum((row[2] for row in ledger.values()), Fraction(0))
@@ -446,4 +454,6 @@ def project_kis_paper_portfolio_budget(
         _decimal(cost),
         _decimal(reserved),
         _decimal(allocated - cost - reserved, rounding=ROUND_FLOOR),
+        _decimal(gross_cash, rounding=ROUND_FLOOR),
+        _decimal(gross_cash - reserved, rounding=ROUND_FLOOR),
     )
