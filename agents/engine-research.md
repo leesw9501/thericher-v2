@@ -7,6 +7,15 @@ A = D:/thericher-v2/model-artifacts; market bytes stay under D:/market_data.
 
 ## Current Research State (2026-10-09 KST)
 
+Independent company Goal25 preparation is complete, not a future fill or model
+promotion. Goal26 now attributes owned cumulative Paper fills with exact gross
+average-cost accounting; it does not retrain, tune, allocate GPU or change costs.
+No frozen useful GPU campaign ready; resource idle is not permission/runtime
+failure. Whole-share/fixed-bank parity is a distinct prospective engineering
+question, not a reason to reopen the rejected drift/partial-rebalance families.
+Official H15 fresh snapshota2388f93... adds one date to existing capability;
+old curve family24cells already rejected, no relabeled discovery/model graft.
+
 Goal24 is COMPLETE/REJECTED54 cells at
 A/research/kis-learned-stateful-rebalance-development-v1.
 Contract85af8689.../420 sources/input4a25284d.../result06e5d613... .

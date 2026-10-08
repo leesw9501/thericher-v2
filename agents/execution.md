@@ -1,356 +1,133 @@
 # Execution Agent Stateboard (Execution)
 
 AGENTS.md owns authority; NEXT_CODEX_GOAL.md owns one company objective.
-This is current virtual-Paper working memory, not an order log or research
-history. Historical lifecycle, old-account faults, source maps and verification
-remain recoverable from Git274f795 and immutable external evidence. Compaction
-does not close, adopt, delete or retry an old intent.
+Current private working memory, not an order log or research history.
+Closed recovery/source timelines remain in Git94fb448 and RUNBOOK/artifacts.
+Compaction never adopts, deletes, replaces or retries an old intent.
+A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
-Latest fresh account/field-presence read:20:39:04..12UTC/token1 HTTP2xx/GET5/
-order0/3positions/0open orders; owned book/original basis matched,40 private
-files/source unchanged/reaped/absent. Snapshot published20:39:11.417018UTC,
-SHA c2f904cb... . Exact A/execution/kis-paper-repeatable-cycle-v1/
-fresh-account-field-presence-1cae8fd5283b4567b135bf2faa50adf2.json,
-SHA d13f0d7d624003402338b5fdb1b27cf34e4202902faf18c7218aaa7bd4a349c7.
-Existing three balance summaries contain finite-numeric ovrs_rlzt_pfls_amt/
-ovrs_rlzt_pfls_amt2 and funds contains sll_ruse_psbl_amt. Presence/type only:
-no amounts retained in this receipt, no sum, fee, settled-cash or owned-netPnL
-claim. Earlier source-map preflight failure22a4a922... was before token/GETs;
-package-root414 hashing fixed it, not an account/auth diagnosis. Earlier console
-agreements bind their own dated observations; later snapshot agreement is not
-inferred. No new endpoint, orders or basis reset.
+Goal25 preparation COMPLETE; Goal26 authors pure owned gross-PnL attribution.
+No Goal26 order, route, sizing, capital, scheduler or private state writes.
+Cumulative facts are counted once and owner-local average entry cost is retained.
+Intent-order replay is not actual fill-time/tax/FIFO accounting. Pending/unknown/
+late ambiguous fills must not become zero or actual-profit claims.
+Fees/settled cash/net PnL remain not_observed; no borrowed broker summary basis.
 
-Goal22 fresh account read is actually observed19:06:43UTC: token1/GET5/order0,
-3positions/0open orders, full existing owned book/original shared basis matched.
-Snapshot published/private38 files and source unchanged/reaped/absent. Exact
-A/execution/kis-paper-repeatable-cycle-v1/fresh-account-88a7a199b90e49beb97952162cefb627.json,
-SHA22fa0c50374c53f62c151b4be428ac1f3c423256eadb1c9ff4d1d6c16663c41c.
-Same-root console-agreement-65120e511eee48bcaddb8d5e4690a81a.json/c48c5fc9...
-matches snapshot time in existing loopback console; mode off/unpaused controls,
-prices unknown/reference-only buying power. Fees/settled cash/net PnL unobserved.
-Historical18:52 token failure117ca4e4... is retained/unclassified, not expired
-account evidence. No order/basis/private-state changes in this refresh.
-Goal22 repeat cycle is COMPLETE. Exact same-root
-repeat-cycle-9bd7d0f64b4b43d8889a0fedd150a4bd.json/cd14cad0...:
-37.436s parent/35.440s worker/token1/GET28/order0/no_target_delta, original basis
-and current owned book matched. Recreated client/reloaded private checkpoint
-returns same cycle; not host reboot. Source/input unchanged/reaped/absent.
-Console repeat-console-agreement-cbcc0039221145d4ad911aa1be89bc0f.json/
-0c919dfa... matches20:00:10UTC runtime observation. Temporal publication
-binding is not original receipt snapshot-byte binding; fees/netPnL unobserved.
-Native cyclecb105647... independent27 cases plus3 fault/restart probes pass.
-Full12914pass22skip334.71s/8workers; changed serial826pass33.74s. Initial direct
-body failed compilation1e7a271a...; retain it, no broker-outcome inference.
-Bounded fuller source review found no P1/P2 after actual dispatch, not an
-independent revised-body hash attestation or fresh private account read.
-Native SELL99cef73c... and funds18a854e5...
-are source-ready/independent160 tests12.63s/no P1/P2. SELL checks every owner
-on the target instrument, not unrelated pending instruments; fresh full-book
-reconciliation still applies. Goal23's research repair is independent of owned
-Paper custody; no duplicate writer or budget reset.
+Final preparation root:
+A/execution/kis-current-control-paper-rebalance-preparation-v1.
+Control loader/session freeze/native caller adapter82/session23/caller18 pass;
+387 changed serial,13037 full+22skip35warnings/13059collected/eight clean.
+Existing portfolio_cycle/budget/plan/execute semantics unchanged.
+A pending session retains original input/control/account/basis/owners and exact
+quantity/TTL/intent. NewB cannot replaceA; no reset or baseline inventory borrow.
 
-Execution owns deterministic sizing/risk, persisted intents, broker routes,
-fills, positions, reconciliation and accounting. Keep local_paper/kis_paper/
-kis_live separate; local replay fills retain source: local_paper. KIS Paper
-credentials, reads, virtual orders and owned schedules are delegated. Never
-read or route KIS_LIVE_* or output account/order IDs, private values or secrets.
-Persist intent before side effects; reconcile an unknown outcome for that exact
-identity. An unrelated old outcome never globally pauses current Paper/research.
+Actual closed execute dispatch-0d06fbc55c914319886d0a15978076d8.json/
+12feb23b48e4e78abd3067a2be4dcf5622a61e896d6265d7eb2fa9922470e5ba:
+not_due/outside_owned_regular_session/token0/GET0/submit0/cancel0,
+private/source unchanged/child reaped/invocation absent.
+Actual final read-only preview dispatch-cd91a4e2d78d478aab82d3bd2c406323.json/
+b395cd6c2a21b949c96ace3be341b9a2538e2835bf763036ba446e924f128290:
+preview_feasible/token1/GET14/submit0/cancel0/pending0/proposed BUY0,
+40 private files/source unchanged/reaped/absent/17.015s.
+Outside-hours preview is authorized read-only planning, not executable quote,
+future fill or account-profit evidence.
 
-Current physical volume:
-thericher-v2-paper-canary-private-acct-20261007-v1, /app/private/canary.
-Seven consumers retain roots/access (five RW/two RO). Preserve this account's
-frozen provisional shared10-percent basis, owned SPY inventory, reservations
-and exact pending identities. Do not reset basis, adopt broker inventory or
-allocate an independent second10-percent envelope.
-Old thericher-v2_thericher-v2-paper-canary-private is untouched/unreferenced:
-105 files/sealace0afb792960064d6d255aead452d7daaaef6172e3a2eaa9f286485a9d629da.
-Old unknown outcomes stay incomplete/unadopted; they are not new-account
-recovery dependencies. October6 expiry categories concerned prior .env config.
+## Owned Session And Runtime
 
-Seven Paper consumer configurations select pinned image
+thericher-kis-paper-portfolio-control-20261009 installed Ready/enabled:
+Oct9 13:45UTC/22:45KST/09:45ET, one trigger/end23:00KST,
+PT12M/IgnoreNew/restart0. No manual task invocation.
+Exact installation scheduled-opportunity-20261009T2245KST-v1.json/
+fb06ec9c141cd00ff48ecd0c1675d30a74bbfb53cdf3aa416ae5977ef650cc94.
+Session portfolio-control-20261009-v1; job.json
+2b20f9088cd9b42b4165b1469525b51bfa7233d4839288d5fed7fb7133e1738c.
+Future submit/fill/reconciliation/terminal closure not_observed. Need exact
+dispatch/private native-cycle linkage, not latest artifact or task exit.
+Scheduler Operational logging disabled; assumed-honest host, not crypto origin.
+
+owned_session_worker.py249cdd15... and dispatch_owned_session.pyd43c9ca4...
+default inert, verify immutable job/source/helper before selective credentials.
+Secrets stdin only/child env whitelisted. Virtual-only transport, finite200s
+visit/540s aggregate lifetime/exact image-name-label cleanup.
+Post-dispatch unknown output remains unknown counts, not safe-to-retry zero.
+Retry token-next_due only its known-zero dispatch; no foreground sleep.
+Preview private RO/source-data RO, emergency RW only for native read locks;
+execute private RW and exact canary-evidence RW overlay, no broad artifact RW.
+
+Goal25 image:
+sha256:b0198cbb09e2cd54bf96549b75f6518f566dc6053567194539dd1768ca4c4864,
+417 baked/current sources/tree568a07f8.../Python3.12.13, offline source overlay.
+Seven existing consumers remain
 sha256:65ab6e66ab4f788144b280ce1a4b042daf79dc017f638b3f9130e17e5cc4c217,
-pull_policy: never; five RW/two RO roots and existing commands unchanged.
-Publication91ed6408... independently compares414 baked/current sources,
-treee7543a9b.../Python3.12.13/calendars5.4.0/unchanged b2a6e0c6... lock.
-Offline same-base source overlay build3.572s; prior offline uncached install
-attempt failed, not a runtime replacement. Publication did not restart a running
-owner or migrate private state. Old ae2c68f8... remains available. Old
-images5216e00d... and0ff015de... remain available for rollback. No research checkpoint or
-arbitrary public model code is loaded into deterministic Execution.
+414/treee7543a9b.../unchanged lock and commands. No owner restart/migration.
 
-Goal20 owner-only SPY trim and retained bp BUY adapter are COMPLETE as tested
-code, not actual migration/order/fill.395 changed-path cases12.61s/independent
-READY; source11f9837a... budget/988ec1ce... canary/cd06ed72... adapter.
-All writers share original10-percent basis/reservations; only observed sale
-proceeds fund BUYs. Proven cancellation uses retained terminal evidence;
-unknown/missing proof stays exact-request recovery, not a global pause.
-New image406 source files/tree7bac725b... verified offline on Python3.12.13,
-no credential/private/network work. Consumer delta image-only;8 parity tests.
-Exact A/execution/kis-paper-rebalance-runtime-v1/image-publication-20261008-v1.json,
-SHAf5f62fd3... . Goal20 full12398pass22skip362.04s/eight clean workers,
-Ruff/default/research/accounting sample-env Compose pass; aborted run not authority.
-Owned runtime A/execution/kis-paper-owned-rebalance-v1 is now source-reviewed
-and installed; SELL and successor-v3 BUY now have exact independent fill/custody
-closure. Goal21 is COMPLETE; NEXT goal22 owns restartable/repeatable operation.
-APIa7758f85.../containercaae3d40.../
-host10c6d626.../runtime-contracta347a9c3...;99 final runtime cases5.19s plus32
-fully mocked installer cases12.60s pass. Independent findings fixed: full nine
-mounts/isolation must match before destructive cleanup; public product-code
-substring is not a secret-echo detector. Failed stop remains unknown.
-Actual inert Docker smoke1.33s passes/child reaped/exact invocation absent;
-zero credentials/private state/API/order work. Exact
-A/execution/kis-paper-owned-rebalance-v1/offline-24772ed610574b288cc0332eba75ae9f/outcome.json.
-One-shot thericher-kis-owned-spy-trim-20261008-2245 Ready22:45KST/end22:49/
-PT4M/IgnoreNew/no restart/no missed catchup; request owned-spy-trim-20261008-v1.
-Today's23:50 baseline action recovers SAME request only through23:54; original
-action immutable backup retained and other dates/triggers/settings unchanged.
-Exact scheduled-opportunity-20261008T2245KST-v1.json under that root.
-Persist exact trim request before side effects; never recompute quantity/TTL.
-Only baseline-owned SPY can sell; original10-percent basis/QQQ custody stay exact.
-Unknown/partial fills cannot fund joint BUYs. Observed-funds joint BUY host
-2f157ea1... is installed23:10..23:14KST/PT4M/IgnoreNew/no restart/no catchup.
-Container66fcfcc7.../host65 cases6.84s/installer seven1.55s/independent review
-READY. Post-dispatch source/receipt-write faults retain true counts/containment;
-missing persisted receipt remains unknown, never a zero-call claim.
-Exact scheduled-buy-opportunity-20261008T2310KST-v1.json under the same root.
-23:50 exact SELL/BUY router98112184... is installed, not manually invoked.
-New SELL recovery host01106782... takes the exact probe request hash; lost
-request/pin cannot create a fresh control/quantity/intent.97 synthetic cases/
-independent P1 readback pass; R2 installer43 cases18.70s. LF/CRLF known-template
-fault fixed without changing original used sources. Exact recovery opportunity
-pointer and previous-action backup7a9ea3fd... under the same root.
-Installed/smoke/exit is never a fill or Scheduler
-origin proof. No task was manually invoked.
-Actual SELL receipt cac226725ad647b1a335a7e19e063fb6/outcome.json/ddbc6298...
-and independent RO reader7e7bf7ce... confirm one exact full fill/closed terminal,
-residual owned SPY/QQQ flat.42 tests4.69s/READY; actual1.376s/zero API/credentials/
-private writes/reaped/absent. Exact:
-A/execution/kis-paper-owned-rebalance-v1/sell-readback-20261008-v1.json,
-SHAce45b4f6ff0897b7a5ef577e9f8755fa254db775fb19700d6a8eb62e3f91ca71.
-The23:10 public BUY receipt f79642a4c86244f784e787f99a07805e/outcome.json/
-92036062... reports unavailable after plan retention/token1/GET19/BUY POST0.
-No embedded dispatch timestamp/image binding; Task/file discovery is not causal
-proof. Source_unchanged:false means verification incomplete, not proven mutation.
-BUY reader e333ee5e.../47 tests12.96s/independent READY actually confirms two
-unsubmitted BUY seeds, one materialized/one unmaterialized; zero retained starts,
-acks/unknowns/fills. Exact buy-readback-20261008-v1.json/SHA648f8f1153e0defd1ccd54d0f8b9674a637d42a20352c5cb49364c77c88d88d9,
-1.467s/zero API/credentials/private writes/reaped/absent. Current scope, plan and
-shared basis pass. Original expiry passed; diagnose the pre-submit branch and
-prepare explicit scoped no-wire closure, never infer provider rejection, extend
-TTL or replace an unknown submission.23:50 owner remains unchanged.
-The owned23:50 router170777ef.../95604a74... completes exact_retained_buy;
-child50cafb56.../01f9bcea... is terminal_incomplete/token1/GET0/BUY0, source
-verified/reaped/absent. Independent reasons reader56bf5fa1.../nine tests.07s/
-READY actually reads1 expired materialized intent plus1 unmaterialized seed.
-Exact buy-reasons-readback-20261008-v1.json/caccbf244972525150736a7a62800b77d6bdd9a337ddfcf48aee0261a479955b,
-1.346s/zero API/credentials/writes/private bytes unchanged. Stored expiry does
-not prove the original exception. Exact no-wire closure is now COMPLETE using
-existing terminal semantics, not a new phase or provider rejection. Used
-closure5482e22f.../pipe-only selector030cbaff... are immutable;51 focused
-cases3.57s/independent READY plus six parent containment fault regressions pass.
-Actual3.253s closes2 terminals/materializes1/transitions1 with original plan,
-basis and book unchanged; zero API/credentials and both children reaped/absent.
-Exact expired-plan-closure-20261009-v1.json,
-SHA21f6c60a1f47b605b3a73531a32b6a5e49909844d593e853e653f6d7d94de578.
-Independent buy-closed-readback-20261009-v1.json,
-SHAd7357593f14f5901eaabd7035e3b85292006012863be98defd0525dd77819596,
-actually confirms2 terminal/zero remaining recovery/starts/acks/fills in1.351s.
-Never retry that expired plan. Prepare distinct owned-portfolio-buy-20261009-v2
-from a new post-closure current-book capture and fresh exact observations;
-retain original SELL linkage/shared10-percent basis and frozen restart terms.
-That earlier BUY lifecycle was incomplete; the successor-v3 closure below now
-completes goal21. Public synthetic
-real-adapter image smoke now passes1.289s on pinned ae2 image: exact406 code
-files, one fake GET/zero POST/provider calls, unsubmitted state/unchanged basis/
-runtime projection written. Exact synthetic-adapter-smoke-v1/parent-b0998c4cd13041c99b5807c8bc37d85a.json,
-SHAd422a487e7da88796ea42a5e9967b3730c6d06666e6cf77d0918695e6ee7f275.
-Fresh tmpfs/no production mounts/network/credentials; child reaped/absent.
-This does not establish successful submit or historical exception cause.
-Fresh worker9496fbd2.../109 cases25.88s/independent READY; host718e6fea.../
-17 fault cases.10s/READY. Emergency RW is needed for named runtime outputs;
-source review does not prove it caused the old19-GET failure. Selector6c36d3db...
-initial/normal-pinned paths reviewed, but pre-reservation crash-pin recovery has
-a recorded P2; separate recovery-r2 prepares, used sources remain immutable.
-Parent first fresh actual dispatch completes68.143s; exact
-A/execution/kis-paper-owned-rebalance-v1/successor-v2/0997f16b1a2d4de9931ad96b7abcca7a/outcome.json,
-SHA6729340df87191974f76111e511f397407cbb5d91cfeaf7b1b21c7c71fef312c.
-Parent observed/outcome unavailable at exact_limit_funds/unclassified; token1/
-GET19/BUY0, parent+plan retained/source/runtime/unchanged true, both children
-reaped/absent. Independent fresh readerc981eee1.../15 cases7.86s/READY now
-actually verifies2 expired intents (one materialized), no_start_verified:true,
-zero starts/acks/unknowns/fills, exact parent/plan/current/basis/book and unchanged
-private bytes. Exact successor-v2/fresh-buy-readback-20261009-v2.json; actual
-1.541s/network none/zero API/credentials/writes/reaped/absent. Two remaining
-recoveries require call-time-validated no-wire local expiry closure, not TTL
-extension or a substitute for an unknown submission. No broker census claim.
-Exact closure expired-fresh-plan-closure-20261009-v2.json/93bdff62... now
-closes2 terminals in3.418s/zero API/credentials/original plan,basis,book unchanged.
-Independent fresh-buy-closed-readback-20261009-v2.json/96861fe3... confirms2
-terminal/zero remaining recovery/starts/acks/fills in1.430s. Never retry v2.
-Concrete source fault: native canary exact-funds method delegates to the
-QQQ-only readonly method, rejecting portfolio symbols before funds GET. Existing
-fixed SPY/TLT/GLD preview exact-funds method can be reused with explicit venue
-binding/cached-token custody. Narrow real-client happy-funds repair prepares,
-not another blind actual retry. Adaptere99f99a6.../39 synthetic cases/independent
-READY now passes pinned-image happy-funds39 cases2.146s; exact
-successor-v2/parent-048b03f98ed44b1181bf98dd03460ccb.json/c2b3649f... .
-No credentials/provider/GPU/production mounts,406 baked files/test-tool bytes
-unchanged/reaped/absent. Initial py.py test-tool omission failed offline only,
-failed attempts retained. v3 source4eec676e.../24 new cases prepares with distinct
-identity/TTL300/worker240 based on actual68s v2 latency; old terms immutable.
-Emergency RO is not the demonstrated cause. Actual v3 direct dispatch17:00:12..
-17:00:20UTC now fails fresh_reads/auth_rejected/token1/GET0/BUY0/8.126s, parent
-retained/no plan, source/runtime unchanged/both children reaped/absent. Exact
-A/execution/kis-paper-owned-rebalance-v1/successor-v3/acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json,
-SHAf5cf67c41b79230fcadb8dfc3e5744e0f672eefa8590d6f77c98de8745fb3498.
-Used host461ebf31.../worker4eec676e.../selectore6fb165a... remain immutable.
-Native auth_rejected means any non-200 token response, not proven account/key
-expiry. One token-only categorical probe prepares using the existing four-Paper
-selective loader/guard, no new loader, GET/account/order or raw response output.
-Preserve exact v3 parent/identity/shared basis; no blind retry. Transport zero
-counts are not independent private-state or broker census evidence. Corrected
-probe2b85c6c1... passes34 cases/independent READY after malformed non-200 and
-BrokenPipe watchdog corrections. Parent actual17:33:25..26UTC succeeds with
-one token POST/HTTP2xx/GET0/orders0/.506s, token discarded/source unchanged/
-process reaped. Exact successor-v3/auth-probe-a1f18ccc274c4b6ea42eda10e95cb187.json,
-SHA6c327aebffff743709516cd47070ae4d1f3a5f828429930afd9c8d7807996d1e.
-Earlier4xx cause remains unclassified; no expired-account/key claim or operator
-credential action. Same v3 retry is ready after owned token next_due17:38:26.120369UTC;
-no plan TTL/quantity or original basis reset. Same v3 actual recovery now
-completes17:38:44..17:41:26UTC/162.165s: token1/GET38/BUY2/SELL0/cancel0,
-parent/plan retained/source/runtime unchanged/both children reaped/absent.
-Exact successor-v3/f2554a24ffdb42bcb5fafce623103bda/outcome.json,
-SHA3634c53af44bf1e974f7f5b73264c160198780706b60c861cdd1c7e43bc5194a.
-Pointer is matched to returned host/worker/timestamps/exact invocations, not
-latest scan. Independent reader8e068ef3.../13 parent cases14.95s/independent
-READY now actually confirms2 full fills/2 terminals/current owned book/original
-basis/zero remaining recovery in2.101s. Exact successor-v3/
-fresh-buy-readback-20261009-v3.json,
-SHA980ccc6bbac74e0f53c2d7fff99f21d67ec04e86e0bb4afa75e25f51ebc4e198.
-ALL-RO/network none/no API/credentials/private writes/source/private bytes
-unchanged/reaped/absent. Historical unresolved-reason counters are not current
-recovery; full-fill/current-book proofs are independently checked. No fresh
-broker census after that dated run or fees/settled-cash/net-PnL claim.
-Goal21 COMPLETE; goal22 is one restartable/repeatable three-symbol control cycle,
-fresh account/owned-position reconciliation and existing private-console parity.
-No new budget, foreign inventory, model promotion or live authority. Parent
-owns actual; next role package source-inspects current cycle/console/schedule
-ownership, reusing repo functions and old immutable evidence.
-Used9496/718/6c36 sources are immutable. Claude changed fresh recovery challenge
-.948s review_unavailable/cli_nonzero/not agreement.
+Current physical volume thericher-v2-paper-canary-private-acct-20261007-v1.
+Existing consumers /app/private/canary; goal25 native mount /private/canary.
+Original provisional shared10% basis, residual baseline-SPY owner, portfolio
+TLT/GLD owners, QQQ owned-flat custody/reservations persist. Broker inventory
+is not automatically owned. Old volume untouched/unadopted:105files/
+sealace0afb792960064d6d255aead452d7daaaef6172e3a2eaa9f286485a9d629da;
+its unknown outcomes are not new-account recovery dependencies.
+Never read/routeKIS_LIVE_* or expose identifiers/private values.
 
-## Retained Account Evidence
+## Exact Current Control
 
-A = D:/thericher-v2/model-artifacts. These are dated retained facts, not fresh
-broker state or net profitability.
-QQQ corrected-account cycle:
-qqq-unit-108e0e99872a0aac8d13d5bee4fcb6e28b83298fb29e0c41125ec808c34e3381.
-Two exact one-share fills/one owned-flat roundtrip/negative gross sign/
-three restart matches. No pending request in that retained replay.
-Exact outcome A/execution/kis-paper-qqq-unit-cycle/gross-roundtrip-new-account-20261008-v2/outcome.json,
-SHAc2fbf15660751ae50c23a6e81b5c2d62f7a55b581504d9157c0c613112adf45f.
-Human-readable qqq-unit-new-account-20261007-v1 was not persisted identity;
-never use it to substitute or retry a closed cycle.
+A/data/kis-current-control-refresh-v1/b54c15c1db6e44a0baf8a7cf13f225eb:
+control06901201.../receipt493cd1dc.../parent3cc8856e... one directory above.
+SPY/AMS,TLT/NAS,GLD/AMS,253 CLOSEs/252returns endingOct8 20:00UTC;
+observed21:11:42UTC/9accepted/28retained unchanged.
+Engineering helper1a273516... uses population covariance/10% diagonal shrink/
+capped thirds, not research63 CLOSE/25% shrink.
+Independent raw/query/closes79aecac0... match; nativefbefdab4... exact.
+Host numeric mismatch <=16ULP remains unproved/not waived.
+Loader full geometry15c998ab.../source+retained pins/exact callback checked.
+Raw/revised/non-PIT/non-TR/finality/publication limits, not a Paper approval gate.
 
-SPY retained owned inventory: one strategy order/one matched fill, independent
-Fraction arithmetic/three restart matches, no retained fallback. Exact:
-A/execution/kis-paper-spy-budget/owned-inventory-20261008-v1/outcome.json,
-SHA8ed682e6e340a85216828fb0b77e0a359bfc66629a72f355e0a441232e110333.
-Existing October7 public strategy outcome e0c289ca... is order_complete/
-exact_order_and_position_reconciled, not cryptographic Scheduler dispatch
-binding or realized PnL. Current source-safe runtime account facts are separate.
-Fees, settled cash and net broker PnL remain not_observed.
+## Retained Actual Execution And Account
 
-## Current Preview And Owners
+Goal21 COMPLETE actual owned SELL then two joint BUYs; independent exact
+successor-v3/fresh-buy-readback-20261009-v3.json/980ccc6b... confirms2 full BUY
+fills/terminals/current owned book/original basis/zero remaining recovery.
+Historical failed/expired plans and closed no-wire successors stay immutable;
+later success does not diagnose earlier auth/funds faults.
 
-Risk preview root A/execution/kis-risk-engine-paper-preview-v1.
-Reviewed driver run_preview.py SHA1a27351623a311c8f6e263ca235a28f49c7386c42a49db3033d16d875049e576;
-48 mocked tests/final independent source review. Fixed capped thirds is an
-engineering control, not a promoted failed minvar/variance model.
-Off-hours actual2026-10-08 04:46:22..04:47:31UTC:
-account snapshot available, one token POST/11 validated GET attempts,
-SPY/AMS TLT/NAS GLD/AMS each two quote GETs/stale timestamps,
-zero exact-limit orderability reads/zero submits/private-source unchanged.
-Exact receipt4ac651cb78284a319d75a9a3d74a3f10/receipt.json,
-SHA2b45b53203d20c46b86a61398e13e624550a52b9bae4a20ebb6db969ef7f85a1.
-Invocation absent after dispatch. This attempt's stale category is not a
-general Paper hold; the separate newer bounded preview below is available.
+Goal22 COMPLETE repeat:
+A/execution/kis-paper-repeatable-cycle-v1/
+repeat-cycle-9bd7d0f64b4b43d8889a0fedd150a4bd.json/cd14cad0...,
+37.436s/token1/GET28/orders0/no_target_delta/book/basis matched;
+client recreation and checkpoint equality, not host reboot.
 
-Goal19 baked preview09:13:39..09:14:01UTC used403 baked /app/src files,
-no /source overlay, exact runtime contract61e2deb4... and driver7cab7b1e... .
-Account, SPY/AMS TLT/NAS GLD/AMS quotes and exact-limit orderability are
-available: one token POST/14 validated GET attempts, zero submits/migrations,
-private/source unchanged, exact invocation container absent. Observed dymd/
-dhms shapes valid; validity alone is not freshness proof. Plan is unreachable/
-incumbent_target_mismatch, not provider or credential failure. Next bounded
-execution work must handle owned SPY reduction before funded additional BUYs,
-preserving original shared basis/reservations and reconciling exact outcomes.
-Exact A/execution/kis-paper-baked-runtime-v1/3dcb2d44a0724483896351fe3705f555/receipt.json,
-SHAeb6ba8e57e6d9c0e1aedd87afb1e86b09e4bf960fe6ebfe6f8d4daf16d5d2b68.
-Direct parent dispatch, not a scheduler/fill/V3 success or net-PnL claim.
-
-| Job | Owned next opportunity / action |
-| --- | --- |
-| Owned SPY trim | October8 22:45 completed: independent exact full SELL/closed terminal, residual owned SPY. Original request preserved; no manual invoke. |
-| Existing SPY budget strategy | October8 23:50KST action recovers same trim request through23:54, not a new-entry BUY. Other dates preserve original action/settings. |
-| thericher-kis-risk-preview-20261009-0015 | October9 00:15KST; one zero-submit trigger/end00:19/PT4M/IgnoreNew/zero restart/no missed-run recovery. Installed/Ready, runtime not observed. |
-| Existing intraday head | Data owns October9 00:29KST; embedded prospective child is preview-only, no bare canary --execute/shared-budget bypass. |
-| QQQ closed unit cycle | No new next_due or substitute request assigned; retain exact closed identity. |
-
-Installation pointer:
-A/execution/kis-risk-engine-paper-preview-v1/scheduled-opportunity-20261009T0015KST-v1.json.
-Installer93c2c86a.../eight fully mocked tests/uv --no-env-file. Interactive/
-Limited requires logged-in session. Existing SPY25-minute maximum ends00:15;
-that is not proof of owner absence. Driver checks private writer/token due at
-call time and yields without foreground waiting. No credentials in task args.
-A task exit/missing receipt/1999 sentinel is not execution or fill evidence;
-time-window correspondence assumes an honest host, not cryptographic OS origin.
-
-Official KIS208279102f43fd0c0f15fcf66c9e5a5adda27050 field map documents
-dymd/dhms as quote date/time, not timezone. Existing Asia/Seoul interpretation
-remains; no inferred New York rewrite or global Paper hold. Source target
-2026-10-07 20:00UTC requires new bound input after a later completed session,
-not fabricated freshness.
+Latest published account20:39:11.417018UTC:
+fresh-account-field-presence-1cae8fd5283b4567b135bf2faa50adf2.json/d13f0d7d...,
+token1/GET5/orders0/3positions/0open orders/private40/source unchanged/reaped.
+ovrs_rlzt_pfls_amt/amt2 and sll_ruse_psbl_amt finite-field presence only;
+no amount sum, settled cash, fee or owned-net-PnL evidence.
+Goal25 preview did not publish a newer account component.
 
 ## Console And Accounting
 
-Private loopback http://127.0.0.1:8787; existing web imageb98256a9... unchanged.
-Historical gross/accounting and current account are separate. Missing/stale
-is UNKNOWN, not zero. Dashboard local pause/resume controls do not submit
-broker orders; cancellation projection is not an implemented cancel command.
-Console pointer A/execution/paper-accounting-console-20261008-v1/outcome.json.
-Official KIS885dd4e2... period-trans fee/settlement maps lack an order ID;
-ticker/date alone cannot attribute owned charges. Currency cash is not profit;
-period-profit has broker-basis/next-day/FX/sell-cost caveats. Exact source links
-and limitations are retained in RUNBOOK/Git274f795. Do not replace missing fees
-with zero or claim net from gross.
+Loopback http://127.0.0.1:8787; existing web unchanged, modeoff/unpaused.
+Account available/prices unknown/funds reference-only. Missing/stale UNKNOWN,
+not zero. Prior console agreements bind their own dated snapshots only.
+Local pause/resume does not itself submit broker orders; cancellation projection
+is not a command. Historical accounting and current broker state are distinct.
+
+Existing cumulative fills/gross-cash budget replay already work; QQQ exact
+closed1-share roundtrip has a gross sign. Multiowner/partial-sale attribution
+is the new scoped gap, not absent execution.
+Official period-trans fee/settlement fields lack an order ID; ticker/date is
+not exact owned fee attribution. Broker period-profit has different basis/
+next-day/FX/cost caveats. Existing RUNBOOK source maps remain authoritative.
+Do not invent fees or relabel gross as net.
 
 ## Current Handoff
 
-Goal17 shared-budget/whole-share plan preparation is released:499 focused and
-779 broader parent cases; independent funding/recovery review READY/noP1/P2.
-V2 and V3 writers honor the same pool, original basis and ownership; gross
-cash accounting includes owned sale proceeds, not fees/settlement/net PnL.
-Invalid proposals preserve binding, missing post-submit state preserves exact
-reconciliation/reservation. No actual private migration, submit or deployment.
-Fixed-control packet is declared input only, not ownership or funding proof.
-
-Direct read-only compatibility ba524c4472324072816ba3ad3596f1b5/receipt.json
-SHA3f53757d... has account available/1 token/11 validated GETs/all3 quotes
-quote_timestamp_invalid/zero orderability/submits/private-source unchanged.
-Not scheduler provenance or V3 runtime success. Current selective mmap loader
-has161 source-free cases; only four Paper value spans are materialized, with
-OS-page mapping/search limitation explicit. Quote-parser correction and final
-baked driver are reviewed/93 driver cases pass; later preview above is separate
-from this old receipt. Kuhn inspects minimal SELL-before-BUY source. Parent owns
-actual dispatch, integration and Git. Existing session owners remain intact.
-One public-only
-Claude challenge .988s is review_unavailable/cli_nonzero_other, not agreement:
-A/research/source-discovery/claude-paper-ownership-20261008-v1.json.
-Existing rejected financial studies remain rejected; their analytical cashflow
-is not broker-fill/rounding/fee parity. A frozen comparative/Paper candidate requires scoped replay
-parity evidence, never a new manual Paper approval or broad research hold.
-Safe observer/head reader links remain in RUNBOOK and agents/data.md.
+Execution author owns kis_paper_portfolio_pnl.py/tests; Validation challenges
+chronology and conservation; parent owns ALL-RO exact-state projection and Git.
+Focused artifacts/control roots independent; no public dashboard or new worker.
+Full tests only at company integration perAGENTS.md; Goal25 passed334.30s.
+Private Paper orders/recovery remain delegated independently of accounting.
+Claude unavailable/non-verdict, latest10cb5c2f... internal_unclassified;
+not agreement, new approval or a reason to stop an independent ready lane.

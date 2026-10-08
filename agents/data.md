@@ -28,9 +28,22 @@ publication not_observed; no frozen4a graft or learned-model promotion.
 Two earlier current-control parent failures8f30a0df.../82584fce... were calendar
 preflight DateOutOfBounds before authentication, not provider/account faults.
 
-Independent next Data scope is the official Board H15 Treasury-constant-maturity
-CSV capability, no auth/cost/third-party copyrighted series. M/us_rates only;
-source/release/vintage limits remain; no numeric join/model/cash-yield assumption.
+Official Board H15 Treasury-only snapshot refresh is COMPLETE, not first
+capability: A/data/h15-treasury-capability-v1/
+h15-treasury-20261008T215603Z-a6c4328e599b4172b0eb4047d3a89fc0/receipt.json,
+SHAa2388f93... . Raw M/us_rates/federal_reserve_h15/same invocation/
+treasury-constant-maturities.csv/d7bd515c...; acquired21:56:03UTC,11series/
+16897dates1962Jan2..2026Oct7/one new date. Five old pins unchanged; historical
+numeric revisions not checked. Board-only/public-domain/no auth/cost;
+release afterCLOSE/observation date not a publication vintage. Existing curve
+24-cell family already rejected; no new numeric model/input/cash-yield graft.
+
+Goal25 input consumer is released: exact loader/session freeze/native caller;
+source-baked417 imageb0198cbb.../final previewb395cd6c...token1/GET14/order0,
+private/source unchanged/reaped. Owned Oct9 13:45UTC opportunity is not a fill.
+Goal26 pure gross attribution needs no collection, raw-data requalification or
+new dataset. Data parity inventory confirms fractional NAV1 research differs
+from native whole-share/fixed-bank funding; no parameter rescue follows.
 
 Latest owned21:20UTC head now has a validated terminal/schedule chain:
 intraday-head-20261008T2120009002710Z/terminalce6c81c7.../scheduledbac4e0d.../

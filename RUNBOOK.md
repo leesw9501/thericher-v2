@@ -2,255 +2,107 @@
 
 ## Current Owned Opportunities And Research
 
-Current goal25 prepares the retained latest253-CLOSE control for the unchanged
-native Paper cycle; freeze exact input/custody per session, resume same pending
-contract, no shared-basis reset or baseline-SPY inventory borrowing. Future
-opportunity installation/preview is not a fill or terminal runtime closure.
-Latest Data control: D:/thericher-v2/model-artifacts/data/kis-current-control-refresh-v1/
-b54c15c1db6e44a0baf8a7cf13f225eb/control.json06901201.../receipt493cd1dc...;
-parent3cc8856e... one directory above.253closes/252returns endingOct8 20:00UTC,
-one token/9GET/9accepted/28 unchanged files/12.113s.47 Data mocked cases/Ruff;
-raw/provenance/closes79aecac0... matched, exact host arithmetic mismatch retained.
-Same-native65ab ALL-ROfbefdab4...1.129s recomputes exact control; shared helper,
-not cross-runtime equality or PIT/TR/finality qualification.
-Goal24 four512-update fits actually complete/REJECTED54 cells:199.952s worker/
-202.095s parent7b2ca714.../result06e5d613.../420 sources/all566 unchanged/
-lease released/reaped/absent. Exact D:/thericher-v2/model-artifacts/research/
-kis-learned-stateful-rebalance-development-v1/parent-verify-1ad180372a4f412fb2308085e070b3d7.json,
-SHA95e924a8.../11.629s/no new fits/inference/search/write. Custody5cdfa1c7...
-closed/zero sealed spend; no learned Paper input. Use immutable results, do not
-redispatch. Kernel49/worker29 independent tests and CPU54 smoke passed.
-Latest account d13f0d7d...20:39:11UTC publishes3positions/0open orders/book/
-basis matched; field presence only, fees/settlement/owned netPnL unobserved.
-Claude goal25b1df449c... unavailable/non-verdict, not agreement or a global hold.
+Goal25 kis-current-control-paper-rebalance-preparation-v1 COMPLETE as tested
+preparation. Goal26 now builds pure owned gross average-cost attribution;
+no order/sizing/budget/recovery/schedule change, no fee/net/settlement inference.
+Exact cumulative state and original book remain authority, no new ledger.
 
-Goal21 actual first SELL -> observed-funds BUY is COMPLETE. Independent ALL-RO
-v3 readback2.101s/980ccc6b... verifies2 full fills/current owned book/original
-basis/zero remaining recovery, source/private bytes unchanged/no API/credentials/
-writes/reaped/absent. Exact
-D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/fresh-buy-readback-20261009-v3.json.
-Historical unresolved-reason counters are not current recovery; fees/settled
-cash/net PnL and later fresh broker state remain unobserved. Historical goal22 owned
-one restartable/repeatable three-symbol control cycle with fresh reconciliation
-and existing private-console agreement, not another budget or promotion gate.
-Its fresh account component is now observed19:06:43UTC/token1/GET5/orders0:
-3positions/0open orders and existing full owned book/original basis match.
-Exact D:/thericher-v2/model-artifacts/execution/kis-paper-repeatable-cycle-v1/fresh-account-88a7a199b90e49beb97952162cefb627.json/22fa0c50...;
-snapshot published/source/private38 files unchanged/reaped/absent. Same-root
-console-agreement-65120e511eee48bcaddb8d5e4690a81a.json/c48c5fc9... matches
-the exact snapshot time at8787/state, mode off/unpaused controls. Prices unknown,
-buying power reference-only; no order/basis changes or fee/netPnL claim.
-Goal22 repeat cycle is now COMPLETE: exact repeat-cycle-9bd7d0f64b4b43d8889a0fedd150a4bd.json
-in the same root/cd14cad0.../37.436s/one token/28GETs/zero orders/no_target_delta.
-Client recreated/private checkpoint reloaded, same cycle/book/original basis;
-not a host reboot. Source/input unchanged/reaped/absent. Console0c919dfa...
-matches20:00:10UTC runtime observation; temporal publication binding only.
-Native cycle27 independent cases plus3 fault/restart probes pass. Seven consumer
-pins now65ab6e66.../414 source files/treee7543a9b.../unchanged Python3.12.13
-and runtime lock; offline source publication91ed6408.../3.572s build. No owner
-restart. Goal23 stateful CPU comparison is COMPLETE/REJECTED30 cells after
-exact two-dependency v2 recovery; original418/v1 bytes/failures retained. Exact
-D:/thericher-v2/model-artifacts/research/kis-stateful-rebalance-development-v1-runtime-recovery-v2,
-parent11077e36...12.378s/worker10.762s and bound ALL-ROe8371bb5...12.016s/
-420 sources566 inputs unchanged/zero fit-inference-search-write/reaped/absent.
-Original10bps two-view kill independently confirmed; positive hypothetical
-growth is not required utility improvement or broker profit. Goal24's actual
-learned partial rebalance and released GPU custody are recorded above.
-MD token666ec8c3... authenticates in native Paper runtime/HTTP2xx/zeroGET or
-account-order work. Prior host/head cause unclassified. Intraday runner cannot
-be backdated after close; separate historical control refresh completed above.
-Current full12914pass22skip35warnings334.71s/12936 collected/eight clean workers/
-helper exit0/reaped/temp cleaned; Ruff/three sample-env Compose pass.
+Goal25 external root:
+D:/thericher-v2/model-artifacts/execution/kis-current-control-paper-rebalance-preparation-v1.
+job.json SHA2b20f9088cd9b42b4165b1469525b51bfa7233d4839288d5fed7fb7133e1738c,
+owned_session_worker.py SHA249cdd15d8b7e4447f47a4deab6ee80acd6860b6839bdfd8fabfb98b5e0523ea,
+dispatch_owned_session.py SHAd43c9ca47f49a0188364b06724b9c8cea324d8ef031faa201b394101d6ca5333.
+Defaults inert; exact flags/session/job source pinned, Paper configuration stdin
+only/child env whitelist/no LIVE reads. Worker200s/parent540s finite lifetime,
+virtual host/type-bound transport and exact invocation containment.
+Post-dispatch unknown results/counts do not become zero or fresh retry permission.
+Private/shared roots remain native; source/data RO; execute-only exact canary
+evidence RW overlay. Preview emergency locks use existing RW volume without
+changing emergency settings. No broad generated-data writes.
 
-Retained goal21 install/recovery history: thericher-kis-owned-spy-trim-
-20261008-2245 runs Oct8 22:45..22:49KST/4-minute bound/IgnoreNew/restart0/no
-missed-run catchup. Existing daily-SPY task23:50 action recovers the same exact
-owned-spy-trim-20261008-v1 request only today23:50..23:54; other dates/settings/
-triggers unchanged and original action backed up. Do not manually invoke or
-infer fills from task status. Exact source-safe installation pointer:
-D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-opportunity-20261008T2245KST-v1.json.
-Actual22:45 SELL receipt cac226725ad647b1a335a7e19e063fb6/outcome.json/ddbc6298...
-and independent RO sell-readback-20261008-v1.json/ce45b4f6... confirm exact
-full SELL/closed terminal/residual owned SPY/QQQ flat. Reader42 tests4.69s;
-actual1.376s/network none/zero API/credentials/writes/reaped/absent. Retained
-custody is not fresh broker positions/fees/net PnL or Scheduler-origin proof.
-API/host/container99 tests5.19s and installer32 tests12.60s pass; inert Docker
-smoke1.33s is not an API call/order/fill. Joint BUY23:10..23:14KST is installed,
-host2f157ea1.../65 cases/independent READY/installer seven mocked cases pass.
-Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-buy-opportunity-20261008T2310KST-v1.json.
-The23:10 public BUY receipt f79642a4c86244f784e787f99a07805e/outcome.json/
-92036062... reports retained plan/unavailable/token1/GET19/BUY POST0, with
-no embedded dispatch timestamp/image binding. Use RO reader e333ee5e... and
-offline scope diagnosis; do not infer private no-submission from exit/counts,
-or rederive plan/TTL/basis. Source_unchanged:false is incomplete verification.
-Independent actual BUY readback648f8f11... now confirms2 unsubmitted seeds,
-one materialized/one unmaterialized and zero retained starts/acks/unknowns/fills.
-Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/buy-readback-20261008-v1.json.
-Source/private unchanged, zero API/credentials/writes. Expiry passed; recover
-only the no-wire local lifecycle, without extending identity/TTL or inventing
-broker rejection. Current scope and shared basis are valid.
-23:50 SELL/BUY router98112184... is installed; recovery host01106782... uses
-the exact retained request hash, never fresh-entry null. Lost post-probe
-request/pin rejects before fresh reads/transport;97 cases/independent review.
-R2 installer43 cases18.70s/LF+CRLF exact-known templates; old failures retained
-and had no mutation. Settings/triggers/other dates unchanged. Exact
-D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-recovery-opportunity-20261008T2350KST-v1.json.
-Post-dispatch final-source/receipt
-faults preserve actual counts; missing receipt is unknown. For every BUY,
-require exact SELL evidence/new custody and observed funds, never anticipated
-proceeds, a substitute request or reset of the original10-percent basis.
-Both old BUY intents are now expired/no-wire closed using existing terminal
-semantics. Exact D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/expired-plan-closure-20261009-v1.json,
-SHA21f6c60a... actual3.253s/zero API/credentials/plan/basis/book unchanged.
-Independent buy-closed-readback-20261009-v1.json/d7357593... confirms2 terminal/
-zero remaining recovery/starts/acks/fills. Used closure5482e22f... and pipe-only
-selector030cbaff... are immutable. Do not retry the old plan or extend its TTL.
-Distinct owned-portfolio-buy-20261009-v2 prepares with new current-book capture,
-fresh observations and original SELL linkage/shared basis. The original23:10
-exception remains unclassified; later expiry is not proof of its cause.
-First v2 actual is now unavailable at exact_limit_funds/unclassified/token1/
-GET19/BUY0/68.143s; exact successor-v2/0997f16b1a2d4de9931ad96b7abcca7a/outcome.json/6729340d... .
-New parent/plan retained, source/runtime unchanged, children reaped/absent.
-Exact source-reviewed RO parserc981eee1... now actually verifies two expired
-no-start intents/zero starts/acks/unknowns/fills and exact parent/plan/current/
-basis/book binding. Exact successor-v2/fresh-buy-readback-20261009-v2.json;
-1.541s/network none/no API/credentials/writes/private bytes unchanged/reaped/
-absent. Revalidate call-time no-wire facts for local expiry closure; do not
-extend this used request's TTL or retry from public counts. Local closure
-successor-v2/expired-fresh-plan-closure-20261009-v2.json/93bdff62... completes
-3.418s; independent fresh-buy-closed-readback-20261009-v2.json/96861fe3...
-confirms2 terminal/zero remaining recovery/starts/acks/fills in1.430s. No API/
-credentials/basis reset; original plan/book unchanged. Never retry v2.
-Native canary funds API
-still delegates to a QQQ-only method; use the existing fixed preview exact
-reader with explicit venue/token binding after real-client happy-funds tests.
-Used9496/718/6c36 sources remain immutable; separate recovery-r2 handles the
-recorded pre-reservation crash-pin gap. Never extend the old or current plan TTL.
-Adaptere99f99a6.../independent READY passes39 real-client synthetic cases inside
-the pinned406-file Paper image in2.146s; exact successor-v2/
-parent-048b03f98ed44b1181bf98dd03460ccb.json/c2b3649f... . Network none/no
-credentials/provider/GPU/private mounts; initial missing public py.py shim
-failures retained. New v3 source4eec676e... uses distinct identity/fresh capture,
-TTL300/worker240 and exact closed-v2 pins before token. Actual v3 direct dispatch
-17:00:12..17:00:20UTC fails fresh_reads/auth_rejected/token1/GET0/BUY0/8.126s,
-parent retained/no plan/source unchanged/both children reaped/absent. Exact
-D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/acc9283f4bb04b69afbd6a33c2a1af8e/outcome.json/f5cf67c4... .
-Native token auth_rejected covers any non-200; no account-expiry/key/quota proof.
-One token-only categorical diagnostic prepares through existing selective
-loader/guard, no GET/account/order/new loader/raw response. Preserve v3 parent,
-identity and original basis; no blind retry. Used host461e/worker4eec/selectore6fb
-remain immutable; transport counts are not independent broker census. Corrected
-token-only probe2b85c6c1.../34 cases/independent READY now succeeds. Exact
-D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/successor-v3/auth-probe-a1f18ccc274c4b6ea42eda10e95cb187.json/6c327aeb...:
-17:33:25..26UTC/.506s/token1/HTTP2xx/GET0/orders0/token discarded/source unchanged/
-process reaped. Earlier4xx cause unclassified; no account/key renewal evidence.
-Same v3 recovery is ready after owned token due17:38:26.120369UTC, preserving
-parent/identity/basis and call-time private binding, no persisted TTL reset.
+Actual final closed execute:
+dispatch-0d06fbc55c914319886d0a15978076d8.json/
+12feb23b48e4e78abd3067a2be4dcf5622a61e896d6265d7eb2fa9922470e5ba,
+not_due/outside_owned_regular_session/token0/GET0/submit0/cancel0,
+private/source unchanged/reaped/absent.
+Actual final read-only preview:
+dispatch-cd91a4e2d78d478aab82d3bd2c406323.json/
+b395cd6c2a21b949c96ace3be341b9a2538e2835bf763036ba446e924f128290,
+preview_feasible/token1/GET14/order0/pending0/proposed BUY0/private40 unchanged/
+source unchanged/reaped/absent/17.015s. Not executable-session or future-fill proof.
 
-ANTICOR actual30 cells rejected/11.498s; ALL-RO15.273s and independent r2
-1.294s pass. Exact numerical receipt:
-D:/thericher-v2/model-artifacts/research/kis-cross-asset-anticor-development-v1/validation-readback-r2.json.
-Venue-alias reader defect fixed; failed r1 retained; custody closed025a7145... .
-Conditional-hedge actual recovery completed42 cells/one Ridge+one CUDA GRU,
-42.223s parent/39.215s worker/rejected; ALL-RO32.711s/independent7.056s pass.
-Exact D:/thericher-v2/model-artifacts/research/kis-cross-asset-conditional-hedge-utility-development-v1-runtime-recovery-r2/validation-readback.json,
-SHAdd113a51.../custody16fd33b6... closed/lease released. Original R1 partial
-Ridge/GRU optimizer failure is preserved; missing /tmp reproduced and fixed
-by bounded tmpfs. Cumulative3 fits, observed65.563s combined worker below300s.
-Used r2 driver retains its historical worst-case cleanup budget defect; future
-dispatch_bounded.pycbcf0283.../27 tests includes cleanup within270s. Never
-reuse the used driver for another actual run or overwrite its evidence.
-Only parent dispatches compute; old results are not inputs. No extra full
-authority for unchanged source/docs.
+Task thericher-kis-paper-portfolio-control-20261009:
+Ready/enabled/one trigger Oct9 22:45KST (13:45UTC/09:45ET)/end23:00KST/
+PT12M/IgnoreNew/restart0. Installed only, never manually invoked.
+Exact scheduled-opportunity-20261009T2245KST-v1.json/
+fb06ec9c141cd00ff48ecd0c1675d30a74bbfb53cdf3aa416ae5977ef650cc94.
+Session portfolio-control-20261009-v1 freezes source/current account/original
+shared10% basis/owner custody before unchanged native intent work.
+Pending restart reloadsA even if newB exists; no new quantity/TTL/identity.
+Future runtime must bind this exact session/job/dispatch/private native cycle,
+not latest-file scan, Task exit or installation. Scope-limited no-intent can
+be a valid cycle result, not a fill. Operational logging disabled; provenance
+assumes honest host, not cryptographic Scheduler origin.
+BaselineSPY23:50KST and head nextOct10 00:29KST remain distinct owners.
+Do not foreground-wait for these; independent accounting/research continue.
 
-Sector collection84 accepted pages/85.307s and independent typed-chain pass;
-separate3x2686-date OC input published3.246s. Exact commitment:
-D:/thericher-v2/model-artifacts/data/kis-sector-etf-capability-preparation-v1/input/sector-oc-cohort-20261008-v1/input-commitment.json,
-SHA070e98d7bcd5fae338344a4d3a7c2bb25bcbc74ba6a7f6d5101757358e6b0449.
-Independent canonical readback15056b1f... passes.727s. Known XLK/XLE2:1 split
-Dec5,2025 produces measured half-price raw discontinuity; new sector consumer
-accounts known-event signal basis and held share units. Preserve raw cohort,
-never double-adjust or claim dividends/TR/PIT/finality qualification.
-Chronos2 exact official477930472-byte safetensorsddcda3c7... acquired under
-D:/thericher-v2/model-artifacts/research/chronos2-runtime-preparation-20261008-v1-r3.
-Existing Docker Chronos2.2.2 synthetic CPU inference passes7.902s; CUDA fails
-7.475s before model class. Exact parent-cpu.json0b7cf3fc.../parent-cuda.json431ccd21...
-under D:/thericher-v2/model-artifacts/research/chronos2-runtime-capability-20261008-v1.
-Lease released/custodyf158c0fa... closed; image CUDA mask measured unset.
-R2 diagnostic proves cuda_peak_reset RuntimeError/CUDA available/device1.
-R3 explicit cuda.init before reset passes CPU9.616s/CUDA10.030s/488003584-byte
-peak; exact parent-cuda.json23760828... under the sibling cuda-init-r3 root.
-Custody36ee1f6f... closed/lease released. No dependency change, market result
-or weight training. Sector recovery actual26.805s/30 cells/rejected, ALL-RO
-19.330s; exact worker-result.json3299ba9f... under
-D:/thericher-v2/model-artifacts/research/kis-sector-relative-strength-development-v1-runtime-recovery-r2.
-Original pre-dispatch sibling path-prefix fault preserved; future metadata
-command generation catches actual mount shapes without subprocesses.
-Post-checkpoint geometry130ee3d0... published/567 forecast keys; one fixed
-forecast-vs-persistence benchmark prepares, not Paper input or trading PnL.
-Forecast12e454a1.../423 files passes CPU smoke1.493s; GPU8.382s fails at
-model_load before inference/fit, result0579dfd0... . ALL-RO5.536s proves failure
-binding only; lease released/source unchanged. No-GPU probe.694s confirms
-two offline flags fail/four pass. Separate R2 config recovery preserves567
-keys/kill and deducts4.499s worker/8.382s parent from600/720 family bounds.
-R2 contracta78b4199... completes24 GPU batches/567 predictions/18.053s,
-zero fits. Parent22.679s fails cached checkpoint-map binding after worker exit0.
-Used source/receipts are immutable, lease released/child reaped/absent. Repair
-the offline reader only; no reinference or model change. Exact root:
-D:/thericher-v2/model-artifacts/research/chronos2-post-checkpoint-development-v1-runtime-recovery-r2.
-Separate offline-finalization-v1/parent-cached-verify.json/b4821adc... now
-passes13.815s/zero inference/fits/search/write, exact metrics and current input/
-source/artifact revalidation. Original criterion rejects; custody5540cae2...
-closed. Failed original host receipt remains intact. Pure ERC40 cases.22s/
-independent READY is next CPU preparation. Adapter3b209333.../84 combined cases
-3.23s/READY freezes36 cells,25-percent shrinkage and matched10-percent annual
-risk caps. BOTH-view positive cash-relative growth and utility superiority to
-inverse-vol/min-var/equal thirds are the original kill; SPY descriptive.
-actual ERC49ea507a... completes36 cells/rejected6.969s, ALL-RO10.372s/e142818c...
-passes exact retained-action economics; result26effc66.../custody1e0102ae...
-closed. Independent validation-readback.json/09e7265e... now passes1.862s:
-991 unchanged files/33 windows/165 covariance-control checks/36 cells/original
-rejection. Independent geometry/ERC contributions/KKT/metrics with shared NAV;
-host3.14.3 supplements Docker3.12.14, runtime equivalence false. No refit,
-GPU allocation or Paper promotion follows.
-Next source-only GPU work uses direct allocation utility rather than return
-forecast argmax; closed-group differentiable entry/exit fee/cash-drift parity
-precedes frozen actual fitting. Existing Tensor/CUDA runtime remains available.
-The39905a3e... direct-utility study now actually completes2 fits/42 cells/rejected:
-worker14.430s/parent16.768s, CUDA GRU512 updates4.673s/peak82007552 bytes.
-ALL-RO14.703s/zero fits/inference/search/writes passes cached model/action/
-economic binding; exact D:/thericher-v2/model-artifacts/research/kis-cross-asset-direct-risk-capped-utility-development-v1/parent-verify-8dd7bd8c386a435d881d85301012e6aa.json.
-Result5045cf03.../custodyee7a4132... closed; source unchanged/exact reaping/absence/
-lease released. Independent numerical supplement now passes3.056s/1008 unchanged
-bindings/42 cells/zero fits/inference/search/writes. Exact
-D:/thericher-v2/model-artifacts/research/kis-cross-asset-direct-risk-capped-utility-development-v1/validation-readback.json/c271607c... .
-Shared input loader/NAV, independently reconstructed scaler/context/covariance/
-controls/metrics/kill; cached GRU scores/model-byte binding not reinference.
-Host3.14.3 runtime equivalence false; no selected model/Paper input.
-Regime expert-composition contractdb0bdaae... now completes eight fits/36 cells,
-worker23.104s/parent26.018s. Original tree/MLP kills reject. Result53e359ff...;
-ALL-RO13.217s verifies cached model/action/economics with no refit/inference/
-search/write. Source/all566 input bodies unchanged, exact reaping/absence,
-lease released/custody7c2ae4dc... closed/zero sealed spend. Exact
-D:/thericher-v2/model-artifacts/research/kis-cross-asset-regime-expert-composition-development-v1/parent-verify-32b84d338b284979b777fb951bf84b2b.json.
-Used frozen study is immutable; do not rerun its eight fits or redefine the
-kill. Independent numerical supplement now passes2.847s/1046 unchanged
-bindings/36 cells/8 retained models/original kills. Exact same-root/
-validation-readback.json/3686cfdd94688415b75b8a199d63cd08cd38adc73aad21024d5462e39415266e;
-zero fits/inference/search/write, shared input/NAV/cached scores, host runtime
-equivalence false. Not broker profit, holdout
-or Paper qualification. Existing CUDA runtime is available, not blocked.
-Collector-only image6aec64a0... now passes15 baked real-client boundary tests
-3.032s/82e1ca25..., no credential/provider/production volume work. Exact
-D:/thericher-v2/model-artifacts/data/kis-paper-head-boundary-deployment-v1/publication-20261009-v1.json/c5f53d04... .
-Oldb7fcf975... retained/Paperae2... unchanged, existing next_due unchanged;
-synthetic success is not actual new session evidence. New02:28KST owned
-intraday-head-20261008T1728010238609Z independently binds invocation8736eef8.../
-schedule0e47323f.../capture007b331e...: QQQauth_rejected/HTTP4xx, SPYtoken_not_due,
-no new coverage/boundary claim, availability/finality not_observed. Exact
-D:/thericher-v2/model-artifacts/execution/kis-paper-intraday-head-invocation-v1/intraday-head-20261008T1728010238609Z/terminal.json.
-Token due02:33:06.641520KST/head04:24KST; one token-only diagnostic prepares
-without manually invoking the task or making Research wait.
+Source-baked goal25 image only:
+sha256:b0198cbb09e2cd54bf96549b75f6518f566dc6053567194539dd1768ca4c4864,
+417 files/tree568a07f8d8b33106bbc7f9f4ca5fc4fbe83a8ed32b39f448c1cea84d3d1ae84d.
+Seven existing consumers stay65ab6e66.../414/treee7543a9b... .
+Unchanged Python3.12.13/lock/base, no runtime replacement or owner restart.
+
+Current control D:/thericher-v2/model-artifacts/data/kis-current-control-refresh-v1/
+b54c15c1db6e44a0baf8a7cf13f225eb/control.json06901201.../receipt493cd1dc...,
+parent3cc8856e... one directory above.253 CLOSEs/252returns endingOct8 20:00UTC;
+observed21:11:42UTC/token1/9GET/9accepted/28unchanged/12.113s.
+Helper1a273516... population covariance/10% diagonal shrink/capped thirds;
+not rejected research63-CLOSE/25% variant.
+Raw/query/provenance79aecac0... matched; host exact arithmetic mismatch <=16ULP
+retained/unproved, no tolerance waiver. Same-native ALL-ROfbefdab4... exact;
+loader independently checks fullcalendar15c998ab.../source/input/helper.
+Raw/revised/non-PIT/non-TR/publication/finality limitations stay explicit.
+
+Goal24 four512-update fits COMPLETE/REJECTED54cells:
+D:/thericher-v2/model-artifacts/research/kis-learned-stateful-rebalance-development-v1,
+contract85af8689.../result06e5d613.../parent7b2ca714...,
+199.952s worker/202.095s parent/420source/566input unchanged/reaped/absent.
+ALL-RO95e924a8...11.629s binds cached economics/actions, not independent GRU
+reinference. Custody5cdfa1c7... closed/lease released; no model/Paper promotion.
+No repeated fit/seed/threshold/cost rescue. GPU/runtime authorization works;
+no useful frozen next contract currently, not approval hold.
+
+H15 Treasury-only snapshot refreshed existing capability, not first discovery:
+D:/thericher-v2/model-artifacts/data/h15-treasury-capability-v1/
+h15-treasury-20261008T215603Z-a6c4328e599b4172b0eb4047d3a89fc0/receipt.json,
+a2388f9386871cce4f1c7873c7887458102496a5b25c2f3da798ca980a998662.
+Raw D:/market_data/us_rates/federal_reserve_h15/
+h15-treasury-20261008T215603Z-a6c4328e599b4172b0eb4047d3a89fc0/treasury-constant-maturities.csv,
+d7bd515cfa34d957cb9af62377052e51e24c899c637dc4a5e95c752416ba3d5c.
+11 series/16897 dates/one newOct7 row/old five pins unchanged; historical
+revisions not checked. Official Board-only/no auth/cost/public-domain;
+after-CLOSE release, no PIT vintage/cash-yield join. Existing curve24-cell
+family rejected; no new model/input graft.
+
+Latest published account20:39:11UTC d13f0d7d...3positions/0open orders/book/basis
+matched/40private unchanged; field presence not fee/settled-cash/owned netPnL.
+http://127.0.0.1:8787 remains loopback/off/unpaused, account available/prices
+unknown/funds reference-only. Preview did not publish a newer snapshot.
+Retained Goal21 actual SELL/twoBUY fill closure980ccc6b... and Goal22 repeat
+cd14cad0... stay valid; client recreation is not host reboot.
+
+Goal25 authority:387 changed-path serial;13037pass22skip35warnings,
+13059collected/eight clean workers/334.30s/helper0/reaped/temp cleanup.
+Adapter82/session23/caller18 independent focused tests; Ruff/default/research/
+accounting Compose using .env.example pass. No full rerun for docs.
+Weekly serialOct3 remains current, detailed command/history below.
+
+Claude public diagnostics unavailable/non-verdict, not agreement.
+D:/thericher-v2/model-artifacts/research/source-discovery/
+claude-cli-empty-argument-diagnostic-20261009-v1.json/10cb5c2f...:
+native2.1.273 empty argument preserved/.941s/is_error/internal_unclassified.
+Stop unchanged probes; scoped independent review and ready work continue.
+Historical detailed recovery below remains reference only, not current next_due.
 
 ## Owned Rebalance Code And Runtime Delivery
 
