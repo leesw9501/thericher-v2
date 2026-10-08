@@ -14,16 +14,18 @@ read or route `KIS_LIVE_*`.
 
 ## Current Execution Facts
 
-Current trio input-foundation work makes no account/order/schedule/budget/web
-change. Source-only independent attestation accepts the pure raw-price month
-adapters with limits: SPY/TLT/GLD positional order, finite equal thirds/exact
-residual cash, actual-notional5bps-side fees, Decimal50 ROUND_HALF_EVEN.
-This ledger does not use quantity ROUND_DOWN or prove broker-fill parity.
-The monthly target is firstOPEN->lastCLOSE and ends flat; its endpoint-only
-replay cannot supply daily utility. A later closed-month campaign must exit
-each month, carry net cash and prior daily NAV continuously, and use every
-scheduled valuation mark. Source-free implementation/testing is ongoing;
-no actual candidate, allocation or market-performance result follows.
+Current trio monthly-momentum study actually completed/rejected24 cells;
+no account/order/schedule/budget/web change. Independent evaluation confirms
+SPY/TLT/GLD positional order, finite thirds/residual cash, actual-notional
+2.5/5/10bps-side fees and Decimal50 ROUND_HALF_EVEN, not quantity ROUND_DOWN.
+Monthly policies exit each month and carry net cash/daily denominators;
+buyhold crosses the two-block boundary and pays only initial/final costs.
+49 months/1023 daily marks, one capital path per policy/cost, exact24-cell
+ALL-RO and independent cashflow reconstruction. Candidate positive normalized
+growth does not pass original control-relative kill and is not broker-fill
+parity, Paper profit or a deployable selection. Root:
+D:/thericher-v2/model-artifacts/research/kis-cross-asset-monthly-momentum-development-v1.
+Existing Paper identity/budget/owners below are unchanged, not held by research.
 
 Current KIS-native TimesFM analytical study completed/rejected30 cells;
 Execution independently reviewed continuous shared NAV, exact notional fees,

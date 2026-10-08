@@ -25,6 +25,16 @@ kis-cross-asset-d1-input-foundation-v1 is COMPLETE as a useful partial-input
 freeze with bounded source failure and pure consumers, not full2007 coverage.
 NEXT now owns kis-cross-asset-monthly-momentum-development-v1: actual fixed
 49-month/24-cell CPU strategy comparison plus independent OC-history recovery.
+Primary comparison is complete/rejected24 cells with exact ALL-RO and
+independent549-file unchanged/cashflow readback. At10bps-side candidate
+growth is2.877592percent/34.126525percent; positive analytical growth still
+loses the original buyhold/control-relative kill, not Paper profit or edge.
+Root A/research/kis-cross-asset-monthly-momentum-development-v1;
+contract5245f9f1.../resultabcd8b27.../actions4bff912e... . CPU7.024s/
+ALL-RO7.220s contained, zero fits/GPU/new weights; closed familytrial1.
+Data fixes exact seed/cursor replay and lock-through-terminal publication
+before actual new OC calls. Company integration/full revised verification
+remain active; cancelled pre-repair authority is not a passing baseline.
 Data/Engine work is disjoint; parent owns actual calls/integration/Git. No
 account/order/scheduler/web/private-Paper change belongs to these packages;
 separate existing Paper authority and owned jobs remain unchanged.

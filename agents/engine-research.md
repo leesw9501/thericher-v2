@@ -8,7 +8,32 @@ Do not restore historical waits or kills as current global permissions.
 
 ## Current Research State (2026-10-08 KST)
 
-Active kis-cross-asset-d1-input-foundation-v1: pure12-calendar-month signal
+Current kis-cross-asset-monthly-momentum-development-v1 actual comparison is
+COMPLETE/REJECTED24 cells. Frozen49 months/1023 daily marks:16-month block
+September2022-December2023 and33-month block January2024-September2026.
+At10bps per side, candidate normalized growth is2.877592percent/34.126525percent;
+utility .01185407548/.05747206632. Both make money analytically, but original
+kill fails: block0 growth loses monthly balanced/buyhold; block1 growth and
+utility lose buyhold. Buyhold grows10.502424percent/52.234694percent with its
+different overnight/turnover path. Do not conflate positive growth with edge,
+total return, broker profit, independently held-out evidence or promotion.
+One continuous capital path per policy/cost, monthly exits versus uninterrupted
+buyhold; all49 actions were sealed before forward numeric marks.
+Root A/research/kis-cross-asset-monthly-momentum-development-v1, where
+A = D:/thericher-v2/model-artifacts. Contract5245f9f1.../resultabcd8b27.../
+actions4bff912e...; exact full pins in RUNBOOK at integration.
+Pinned CPU Docker smoke4.249s/run7.024s/ALL-RO7.220s all contained;24 cells
+exact, zero fits/inference/GPU/new weights/search. Input02dcc000... and
+401-file frozen-source tree85f72beb... unchanged. Independent host readback
+reconstructs24 cells and separate analytical cashflow,549 files unchanged,
+4.88s; host3.14.3 supplements Docker3.12.14. Familytrial1 is closed with
+non_promoting_completed, no sealed spend or outcome-based recipe rescue.
+Data OC recovery is independent; original2008-start hedge-failure classifier
+remains a distinct unfrozen proposal until its exact input is available.
+Company integration remains active; a cancelled pre-repair full test is not
+verification. Final revised Data source still needs focused/full authority.
+
+Closed kis-cross-asset-d1-input-foundation-v1: pure12-calendar-month signal
 adapter integrated/pushedf07145e,44cases/parent277tests. Independent source
 review noP1/P2: rawkis_modp0/previouscalendarcutoff/equalfiniteTHIRD/exactcash,
 forgedtarget/mixedvintage/monthlykeys and futuremutation coverage. No new actual

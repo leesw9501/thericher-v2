@@ -8,6 +8,14 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-08 KST)
 
+- Current monthly-momentum CPU family is closed/non_promoting_completed:
+  contract5245f9f1.../resultabcd8b27..., familytrial1/holdoutnone.24 cells;
+  CPU run7.024s and ALL-RO7.220s contained, source/input unchanged. Independent
+  exact24-cell/cashflow readback549 files unchanged. Positive normalized
+  growth does not pass the original all-control kill; no depth/ensemble/Paper
+  allocation, GPU lease, fit or new weights follows. Exact custody:
+  D:/thericher-v2/model-artifacts/research/kis-cross-asset-monthly-momentum-development-v1/custody-outcome.json.
+
 - KIS-native TimesFM M5-24 familytrial1 is COMPLETE/REJECTED30 cells;
   contract08d5e48b.../result6d495339..., registry non_promoting_completed.
   One CUDA invocation17.644733515s/peak1058705920bytes/zero fits or new weights;
@@ -17,7 +25,7 @@ Compacting this projection does not delete evidence or reopen an allocation.
   utilization target or general CUDA restriction.
   Exact root: D:\thericher-v2\model-artifacts\research\kis-native-timesfm-m5-24-development-v1.
 - No next predictive GPU campaign is yet frozen or reserved.
-  Current kis-cross-asset-d1-input-foundation-v1 has actual five-year trio
+  Closed kis-cross-asset-d1-input-foundation-v1 has actual five-year trio
   partial coverage plus source-free feature/target/replay preparation; this
   is not the prepared2008-start campaign's required complete input. No
   silent split shortening, actual label read, fit or new appointment follows.
