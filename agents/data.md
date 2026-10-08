@@ -36,13 +36,33 @@ reported for all. No raw values retained. Exact sector-etf-probe-20261008-v1/rec
 SHAc56e98af0eba8fc00c6179ae387ff345ef19aa5bde0f5dd08819f67cf506aeed;
 bound-outcome-20261008-v1.json SHA5669a9f304004edd33b949eb5df5e000b7b42eb2b10047f5cbde59f6b77b21eb.
 407 before/after source files unchanged/child reaped;10 reused containment
-cases/.11s pass. Independent typed readback is in preparation, so do not infer
-full history, measured continuation progress, new dataset, CA/TR/PIT or finality.
-Next ready package is one serial resumable three-sector OC backfill for
-2016Feb2..2026Oct7, raw OC under M only, existing gates and one cached token.
-Thin collector preparation is external; no cache/raw acquisition has run yet.
-Once useful continuation advances, maintain one cursor and progress/next_due;
-minimum81 full100-row pages is a coverage estimate, not a measured ETA or promise.
+cases/.11s pass. The useful continuation scope then actually collected84
+accepted pages/one token/zero categorical failures in84.926s worker/85.307s
+parent. XLK/XLF/XLE each reports2686 selected dates2016Feb2..2026Oct7,
+zero missing dates/28 pages. Exact requested floor reached, not API exhaustion;
+physical pre2016 page overhang is excluded, not deleted. Existing shared
+request gate/one cached token/serial cursor; inherited dispatch counts are
+not independently measured wire starts. Collector scope_terminal/next_due none,
+remaining useful pages zero for this scope/ETA complete. Child reaped/408
+public hashes unchanged. Raw OC retained only under
+M/us_equities/kis_paper_private/cross-asset-oc/kis-sector-oc-history-v1.
+Exact A/data/kis-sector-etf-capability-preparation-v1/history/sector-oc-history-20261008-v1/receipt.json,
+SHAcbc47ef46d8a185dff53bcc8059f1c801051b0f88499af85a8a400a450f389fc.
+Parent bound-history-outcome-20261008-v1.json;42 synthetic collector/containment
+cases1.81s/Ruff pass. Complete typed-chain reader now passes:84 retained pages,
+8400 provider rows/81 consistent overlaps/zero OC conflicts, selected dates
+match the exact calendar. Physical87-date overhang per symbol is excluded.
+Unused high/low warnings remain visible, not full-Bar qualification.
+Separate immutable sector OC cohort actually published in3.246s:
+A/data/kis-sector-etf-capability-preparation-v1/input/sector-oc-cohort-20261008-v1/input-commitment.json,
+SHA070e98d7bcd5fae338344a4d3a7c2bb25bcbc74ba6a7f6d5101757358e6b0449,
+commitmentfd7b3a32... . Three gzip files stay under
+M/us_equities/kis_paper_private/cross-asset-oc/research-input/kis-sector-oc-cohort-v1/sector-oc-cohort-20261008-v1.
+Freezer18181281.../16 synthetic cases29.35s/Ruff and independent source review
+pass; repository-vs-snapshot path exclusion fixed before publication. Original
+667 checked bindings/408 public files unchanged. Independent canonical-input
+readback is the next bounded package; closed trio inputs stay unchanged.
+No CA/TR/PIT/finality promotion follows.
 
 ## Useful Retained Daily Input
 

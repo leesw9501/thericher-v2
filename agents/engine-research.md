@@ -15,9 +15,20 @@ Primary mechanism: https://arxiv.org/pdf/1107.0036v1, DOI10.1613/jair.1336,
 Equations2/3 and inclusive-tie/all-pairs Figure1. Original implementation;
 source performance and code are not adopted.
 
-Ready next package: thin external CPU worker at
+The thin external CPU worker at
 A/research/kis-cross-asset-anticor-development-v1/worker.py.
-Parent freezes source/runtime/custody and dispatches only after its release.
+is now actually COMPLETE/REJECTED30 cells, contract98351328.../result791c3f04...,
+412-file frozen tree608e5878... . Parent11.498s/worker10.178s; exact invocation
+absent/child reaped/source unchanged. Smoke1.411s; ALL-RO15.273s passes with
+zero refit/inference/search/write. Independent r2 numerical reader validates
+all30 cells in1.294s/988 unchanged files/zero fits/inference/search/input writes.
+Its predecessor failed because it expected long exchange aliases rather than
+canonical AMS/NAS codes; failed receipt remains immutable. Exact r2 receipt:
+A/research/kis-cross-asset-anticor-development-v1/validation-readback-r2.json,
+SHA0a29774970d8b4eadab3ab7b6022fb16e1dc1e2f25901788f8453b6295755d11.
+Custody closed/non_promoting_completed/zero sealed spend, record025a7145... .
+At10bps candidate growth is
+-1.584%/2.317%; it fails the original both-view/all-control kill. No promotion.
 Reuse exact goal18 INPUT helpers only; never read its result/models/predictions.
 One w20/cadence5 recipe,64 past CLOSE shared context, previous CLOSE decision,
 next OPEN, prior executed OPEN/decision CLOSE signal drift. Seal actions before
@@ -67,8 +78,24 @@ Positive backtest growth is not broker net profit or independent alpha.
 
 ## Breadth / Depth / Ensemble / Replication
 
-Breadth: fixed pairwise-reversal ANTICOR is the next distinct economic test.
-Sector ETFs are Data-owned capability preparation, not available inputs yet.
+Breadth: pairwise-reversal ANTICOR actually rejected; retain its fixed recipe.
+Next distinct source-only conditional-hedge utility adapter compares fixed SPY,
+half-SPY/TLT,half-SPY/GLD,balanced,cash actions rather than asset-return argmax.
+Pure core2a0c0822.../47 synthetic cases and worker55114806.../41 cases ready.
+Reuse6x63 inputs and
+21-session actual-cost holding/replay; target per-episode utility is not scored
+NAV reset or whole-view utility. Planned one Ridge/one CUDA shared-action-head
+model/300-second family is undergoing its own metadata freeze before labels/
+fits/GPU;42 cells/5 fixed controls/2 development views/one family allocation.
+Original criterion is positive growth and utility improvement over all5
+controls at10bps in BOTH views; GRU also beats Ridge. Return dominance is
+descriptive, not the defensive-utility objective. Failed older studies unchanged.
+Sector cohort published separately, input SHA070e98d7...; independent canonical
+input readback is in progress. Do not splice it into closed trio contracts.
+Official Chronos2 dated-checkpoint source re-retrieved; isolated runtime prep
+continues, no weights downloaded or predictive comparison yet. Unknown corpus
+remains explicit; a future comparison needs post-checkpoint targets and a new
+contract, not reuse of the2021 development view.
 Depth: no screened survivor currently has a ready fresh depth contract.
 Ensemble: existing policy-composition permission allows frozen rule/ML blend/
 OOF learned gates, not outcome-informed member rescue or old-result promotion.

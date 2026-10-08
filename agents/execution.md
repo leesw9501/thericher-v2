@@ -45,11 +45,25 @@ no credential/private/network work. Consumer delta image-only;8 parity tests.
 Exact A/execution/kis-paper-rebalance-runtime-v1/image-publication-20261008-v1.json,
 SHAf5f62fd3... . Goal20 full12398pass22skip362.04s/eight clean workers,
 Ruff/default/research/accounting sample-env Compose pass; aborted run not authority.
-Next owned runtime at A/execution/kis-paper-owned-rebalance-v1 remains in
-preparation. Persist exact trim request before side effects; retries reconcile
-that identity, never recompute quantity/TTL. Sell only spy-baseline-owned shares;
-preserve QQQ custody and resolve old baseline entry direction without blocking
-recovery. Actual unknown/partial fill cannot be treated as spendable funds.
+Owned runtime A/execution/kis-paper-owned-rebalance-v1 is now source-reviewed
+and installed, not actually ordered/filled. APIa7758f85.../containercaae3d40.../
+host10c6d626.../runtime-contracta347a9c3...;99 final runtime cases5.19s plus32
+fully mocked installer cases12.60s pass. Independent findings fixed: full nine
+mounts/isolation must match before destructive cleanup; public product-code
+substring is not a secret-echo detector. Failed stop remains unknown.
+Actual inert Docker smoke1.33s passes/child reaped/exact invocation absent;
+zero credentials/private state/API/order work. Exact
+A/execution/kis-paper-owned-rebalance-v1/offline-24772ed610574b288cc0332eba75ae9f/outcome.json.
+One-shot thericher-kis-owned-spy-trim-20261008-2245 Ready22:45KST/end22:49/
+PT4M/IgnoreNew/no restart/no missed catchup; request owned-spy-trim-20261008-v1.
+Today's23:50 baseline action recovers SAME request only through23:54; original
+action immutable backup retained and other dates/triggers/settings unchanged.
+Exact scheduled-opportunity-20261008T2245KST-v1.json under that root.
+Persist exact trim request before side effects; never recompute quantity/TTL.
+Only baseline-owned SPY can sell; original10-percent basis/QQQ custody stay exact.
+Unknown/partial fills cannot fund joint BUYs. Separate observed-funds joint BUY
+runtime preparation continues; installed/smoke/exit is never a fill or Scheduler
+origin proof. No task was manually invoked.
 
 ## Retained Account Evidence
 
@@ -103,7 +117,8 @@ Direct parent dispatch, not a scheduler/fill/V3 success or net-PnL claim.
 
 | Job | Owned next opportunity / action |
 | --- | --- |
-| Existing SPY budget strategy | October8 23:50KST; preserve exact recovery first and shared basis. No manual invoke/replacement request. |
+| Owned SPY trim | October8 22:45KST/end22:49; installed Ready, fixed original request, SELL-only. No manual invoke. |
+| Existing SPY budget strategy | October8 23:50KST action recovers same trim request through23:54, not a new-entry BUY. Other dates preserve original action/settings. |
 | thericher-kis-risk-preview-20261009-0015 | October9 00:15KST; one zero-submit trigger/end00:19/PT4M/IgnoreNew/zero restart/no missed-run recovery. Installed/Ready, runtime not observed. |
 | Existing intraday head | Data owns October9 00:29KST; embedded prospective child is preview-only, no bare canary --execute/shared-budget bypass. |
 | QQQ closed unit cycle | No new next_due or substitute request assigned; retain exact closed identity. |

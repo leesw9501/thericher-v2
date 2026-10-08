@@ -21,6 +21,35 @@ this current projection replaces duplication, not evidence or frozen rules.
 
 ## Current Company Objective
 
+Current goal21 is kis-owned-portfolio-first-rebalance-v1, still ACTIVE.
+The owned SPY trim runtime is installed for2026Oct8 22:45KST;23:50 today
+recovers the same owned-spy-trim-20261008-v1 request. No manual task invoke,
+actual submit/fill or new basis is claimed. Final host10c6d626.../container
+caae3d40.../APIa7758f85... pass99 cases5.19s; installer32 cases12.60s.
+Inert Docker smoke1.33s has zero credential/API/private-state work. Exact
+A/execution/kis-paper-owned-rebalance-v1/scheduled-opportunity-20261008T2245KST-v1.json.
+Joint observed-funds BUY runtime is preparing separately, after exact SELL/
+updated owner custody; original shared10-percent pool and reservations persist.
+
+Parallel ANTICOR actual30-cell CPU development study is COMPLETE/REJECTED;
+11.498s actual/15.273s ALL-RO. Independent r2 validates30 cells/988 unchanged
+files in1.294s. Its earlier venue-alias reader fault is fixed, failed r1 receipt
+retained. Exact A/research/kis-cross-asset-anticor-development-v1/validation-readback-r2.json,
+SHA0a29774970d8b4eadab3ab7b6022fb16e1dc1e2f25901788f8453b6295755d11;
+custody closed025a7145.../zero sealed spend. Conditional-hedge utility core/
+worker now ready for a fresh frozen two-fit/42-cell/300-second CUDA study.
+
+Sector history collected84 accepted pages/one token/zero failures85.307s,
+XLK/XLF/XLE each2686 dates2016Feb2..2026Oct7/zero selected gaps. Typed chain
+passes. New separate input published3.246s at
+A/data/kis-sector-etf-capability-preparation-v1/input/sector-oc-cohort-20261008-v1/input-commitment.json,
+SHA070e98d7bcd5fae338344a4d3a7c2bb25bcbc74ba6a7f6d5101757358e6b0449.
+Canonical-input independent readback pending; old trio contracts unchanged.
+Raw price-only/non-PIT/no CA/TR/finality/causal-availability qualification.
+Chronos2 official dated source re-retrieved; isolated runtime prep only so far.
+No company block or foreground market wait. The older completed-goal evidence
+below is retained history, not a current undispatched package.
+
 Goal20 kis-self-financing-paper-rebalance-v1 is COMPLETE as code/replay/image
 delivery, not actual private migration/order/fill. Bounded owner-only SPY trim,
 default full exit, shared reservations/observed proceeds and retained bp BUY
@@ -47,7 +76,7 @@ SHA2700b4dbd6ea8652cb420b911ab9e1bb4ba33716f21a3f760ad7672095ef0c50.
 
 NEXT now owns kis-owned-portfolio-first-rebalance-v1: actual owned-SPY reduction/reconciliation followed by
 observed-funds joint BUYs under the original shared10-percent basis. Thin
-runtime, fixed ANTICOR CPU experiment and sector capability preparation proceed
+runtime, conditional-hedge GPU preparation and independent sector input readback proceed
 in parallel. Actual Paper remains separate from research profitability; no
 foreground wait or new approval gate. Existing due owners retain recovery.
 

@@ -1,5 +1,35 @@
 # Runbook
 
+## Current Owned Opportunities And Research
+
+Goal21 actual lifecycle remains active. Installed thericher-kis-owned-spy-trim-
+20261008-2245 runs Oct8 22:45..22:49KST/4-minute bound/IgnoreNew/restart0/no
+missed-run catchup. Existing daily-SPY task23:50 action recovers the same exact
+owned-spy-trim-20261008-v1 request only today23:50..23:54; other dates/settings/
+triggers unchanged and original action backed up. Do not manually invoke or
+infer fills from task status. Exact source-safe installation pointer:
+D:/thericher-v2/model-artifacts/execution/kis-paper-owned-rebalance-v1/scheduled-opportunity-20261008T2245KST-v1.json.
+API/host/container99 tests5.19s and installer32 tests12.60s pass; inert Docker
+smoke1.33s is not an API call/order/fill. Joint BUY is separate preparation;
+require exact SELL evidence/new custody and observed funds, never anticipated
+proceeds, a substitute request or reset of the original10-percent basis.
+
+ANTICOR actual30 cells rejected/11.498s; ALL-RO15.273s and independent r2
+1.294s pass. Exact numerical receipt:
+D:/thericher-v2/model-artifacts/research/kis-cross-asset-anticor-development-v1/validation-readback-r2.json.
+Venue-alias reader defect fixed; failed r1 retained; custody closed025a7145... .
+Conditional-hedge worker55114806.../pure core2a0c0822... prepares a new frozen
+one-Ridge/one-CUDA-GRU study,42 cells/300-second family/zero holdout spend.
+Only parent dispatches actual compute with exclusive GPU custody; old results
+are not inputs. No extra full authority for unchanged source/docs.
+
+Sector collection84 accepted pages/85.307s and independent typed-chain pass;
+separate3x2686-date OC input published3.246s. Exact commitment:
+D:/thericher-v2/model-artifacts/data/kis-sector-etf-capability-preparation-v1/input/sector-oc-cohort-20261008-v1/input-commitment.json,
+SHA070e98d7bcd5fae338344a4d3a7c2bb25bcbc74ba6a7f6d5101757358e6b0449.
+Await only its scoped independent canonical readback, not global research or
+Paper permission. Source is raw OC/non-PIT/not CA/TR/finality-qualified.
+
 ## Owned Rebalance Code And Runtime Delivery
 
 Goal20 kis-self-financing-paper-rebalance-v1 is COMPLETE as preparation.
@@ -27,9 +57,10 @@ or date/instrument join claim. Exact D:/thericher-v2/model-artifacts/data/kis-et
 SHA2700b4dbd6ea8652cb420b911ab9e1bb4ba33716f21a3f760ad7672095ef0c50.
 Wrapper10/probe30/reader53 cases; reader binds404 unchanged source files,
 timestamps, query set and exact receipt. No lock/import/wire-start proof claimed.
-Pure ANTICOR preparation77 cases/1.45s/source READY; actual worker not yet run.
-Next material work is owned-session rebalance, parallel finite CPU ANTICOR
-study and sector capability preparation; no new profitability/approval gate.
+Pure ANTICOR preparation77 cases/1.45s/source READY; actual and independent
+results are recorded in the current section above. Next material work is
+owned-session rebalance and fresh conditional-hedge compute, not a repeated
+ANTICOR run or new profitability/approval gate.
 
 ## Baked Paper Runtime Publication
 

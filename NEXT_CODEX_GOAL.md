@@ -47,13 +47,16 @@ runtime/restart/unknown/cancellation tests precedes dispatch.
 
 ## Parallel Ready Packages
 
-Engine: freeze and run the single ANTICOR w20/cadence5/30-cell CPU development
-experiment on exact4a25284d... cohort after released worker/source/runtime/custody.
-Reuse pinned goal18 INPUT helpers only; do not open old results/models/predictions.
-Past64 CLOSE/prior executed OPEN -> immutable actions -> forward marks; one
-continuous NAV, fixed controls2.5/5/10bps and original BOTH-view10bps kill.
-60-second shared CPU/120-second outer stop; no fit/GPU/holdout/Paper input.
-Exact ALL-RO economics and independent numerical review; no outcome-driven rescue.
+Engine: ANTICOR w20/cadence5 actual30-cell study and independent r2 replay
+are complete/rejected; custody closed, failed r1 retained. Next ready package
+freezes and runs the distinct conditional-hedge action-value adapter (five
+fixed portfolios,21-session costed utility target): one Ridge/one CUDA GRU,
+42 cells/300-second shared family. CPU smoke precedes GPU; exact ALL-RO cached
+prediction economics and independent review follow. Reuse pinned goal18 INPUT
+helpers only; never open old results/models/predictions. No labels/fits/GPU until
+its own source/input/runtime/compute contract is frozen; no holdout/Paper input
+or outcome-driven rewrite of failed studies. Public Chronos2 source/runtime
+preparation is independent; no market comparison without a new lawful contract.
 
 Data: integrate only exact XLK/XLF/XLE AMS capability scope, then one reusable
 client/six fixed OC queries at20261007/20160202 under existing gates/120s bound.
@@ -61,6 +64,11 @@ Source-safe categories/counts only; no full backfill/input splice until useful
 coverage/continuation is measured. Any useful resulting collection has one
 durable cursor/owner and visible counts/next_due/remaining estimate or unknown.
 No new Tiingo or unclear issuer numeric rights work.
+Capability and useful84-page history now actually complete: all3x2686 dates/
+zero gaps/85.307s parent and independent typed-chain validation. Separate
+sector OC input070e98d7... published3.246s; independently read back its exact
+canonical binding before a fresh consumer. Do not repeat tiny probes, restart
+a closed cursor or splice the closed trio campaign. Original limitations persist.
 
 ## Completion And Continuation
 
