@@ -18,17 +18,30 @@ ANTICOR actual30 cells rejected/11.498s; ALL-RO15.273s and independent r2
 1.294s pass. Exact numerical receipt:
 D:/thericher-v2/model-artifacts/research/kis-cross-asset-anticor-development-v1/validation-readback-r2.json.
 Venue-alias reader defect fixed; failed r1 retained; custody closed025a7145... .
-Conditional-hedge worker55114806.../pure core2a0c0822... prepares a new frozen
-one-Ridge/one-CUDA-GRU study,42 cells/300-second family/zero holdout spend.
-Only parent dispatches actual compute with exclusive GPU custody; old results
-are not inputs. No extra full authority for unchanged source/docs.
+Conditional-hedge actual recovery completed42 cells/one Ridge+one CUDA GRU,
+42.223s parent/39.215s worker/rejected; ALL-RO32.711s/independent7.056s pass.
+Exact D:/thericher-v2/model-artifacts/research/kis-cross-asset-conditional-hedge-utility-development-v1-runtime-recovery-r2/validation-readback.json,
+SHAdd113a51.../custody16fd33b6... closed/lease released. Original R1 partial
+Ridge/GRU optimizer failure is preserved; missing /tmp reproduced and fixed
+by bounded tmpfs. Cumulative3 fits, observed65.563s combined worker below300s.
+Used r2 driver retains its historical worst-case cleanup budget defect; future
+dispatch_bounded.pycbcf0283.../27 tests includes cleanup within270s. Never
+reuse the used driver for another actual run or overwrite its evidence.
+Only parent dispatches compute; old results are not inputs. No extra full
+authority for unchanged source/docs.
 
 Sector collection84 accepted pages/85.307s and independent typed-chain pass;
 separate3x2686-date OC input published3.246s. Exact commitment:
 D:/thericher-v2/model-artifacts/data/kis-sector-etf-capability-preparation-v1/input/sector-oc-cohort-20261008-v1/input-commitment.json,
 SHA070e98d7bcd5fae338344a4d3a7c2bb25bcbc74ba6a7f6d5101757358e6b0449.
-Await only its scoped independent canonical readback, not global research or
-Paper permission. Source is raw OC/non-PIT/not CA/TR/finality-qualified.
+Independent canonical readback15056b1f... passes.727s. Known XLK/XLE2:1 split
+Dec5,2025 produces measured half-price raw discontinuity; new sector consumer
+accounts known-event signal basis and held share units. Preserve raw cohort,
+never double-adjust or claim dividends/TR/PIT/finality qualification.
+Chronos2 exact official477930472-byte safetensorsddcda3c7... acquired under
+D:/thericher-v2/model-artifacts/research/chronos2-runtime-preparation-20261008-v1-r3.
+Existing Docker Chronos2.2.2 loader works; use network-none/tmpfs/offline model
+load for the prepared synthetic CPU/CUDA capability, not a new dependency build.
 
 ## Owned Rebalance Code And Runtime Delivery
 

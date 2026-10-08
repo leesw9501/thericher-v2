@@ -8,6 +8,18 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-08 KST)
 
+- Conditional-hedge recovery COMPLETE/REJECTED42 cells; contract56787514.../
+  result6f08e1c0.../custody16fd33b6... closed/zero sealed spend. One CUDA GRU
+  and one Ridge in recovery42.223s; R1 retained failed after Ridge. Cumulative
+  three fits explicitly includes duplicate deterministic Ridge, not three
+  independent trials. Exact independentdd113a51.../1008 files unchanged.
+  Lease released after exact absence; no active allocation remains. Original
+  300s family observed65.563s combined worker time. Future bounded dispatcher
+  includes cleanup within270s; used historical driver remains unchanged.
+  Chronos2 exact public checkpointddcda3c7... acquired externally; synthetic
+  CPU/CUDA capability source preparing, not a market-performance allocation.
+  New sector CPU preparation uses no GPU/holdout; it cannot revive old kills.
+
 - Current21-session relative-allocation trial1 completed2 fits/42 cells;
   Ridge and CUDA GRU original BOTH-view10bps kills reject. Contractf37b0506.../
   result5dfa4bd9.../tree125987f9...; NEW raw-price input4a25284d... .

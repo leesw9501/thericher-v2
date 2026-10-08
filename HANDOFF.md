@@ -36,17 +36,32 @@ Parallel ANTICOR actual30-cell CPU development study is COMPLETE/REJECTED;
 files in1.294s. Its earlier venue-alias reader fault is fixed, failed r1 receipt
 retained. Exact A/research/kis-cross-asset-anticor-development-v1/validation-readback-r2.json,
 SHA0a29774970d8b4eadab3ab7b6022fb16e1dc1e2f25901788f8453b6295755d11;
-custody closed025a7145.../zero sealed spend. Conditional-hedge utility core/
-worker now ready for a fresh frozen two-fit/42-cell/300-second CUDA study.
+custody closed025a7145.../zero sealed spend. Conditional-hedge actual CUDA
+recovery COMPLETE/REJECTED42 cells/parent42.223s/worker39.215s; ALL-RO32.711s
+and independent7.056s pass. Exact
+A/research/kis-cross-asset-conditional-hedge-utility-development-v1-runtime-recovery-r2/validation-readback.json,
+SHAdd113a51a8706da2b75d1e903ce7c21fba6f0af60bee3dcc10137c226f1a89d7;
+custody16fd33b6... closed/lease released. R1 failed at GRU optimizer because
+RO Docker lacked /tmp; measured128MiB tmpfs fixes it. Original failure preserved,
+cumulative3 fits includes duplicated deterministic Ridge. Observed65.563s
+combined worker time below300s. Future timeout template includes cleanup within
+270s; used historical r2 driver unchanged. No selected model/Paper input.
 
 Sector history collected84 accepted pages/one token/zero failures85.307s,
 XLK/XLF/XLE each2686 dates2016Feb2..2026Oct7/zero selected gaps. Typed chain
 passes. New separate input published3.246s at
 A/data/kis-sector-etf-capability-preparation-v1/input/sector-oc-cohort-20261008-v1/input-commitment.json,
 SHA070e98d7bcd5fae338344a4d3a7c2bb25bcbc74ba6a7f6d5101757358e6b0449.
-Canonical-input independent readback pending; old trio contracts unchanged.
+Canonical independent readback passes.727s/15056b1f...; old trio unchanged.
+Official XLK/XLE2:1 Dec5,2025 split manifests as raw half-price discontinuity;
+new sector CPU consumer preparing known-event signals/share accounting, not
+blind raw-price PnL or silent global adjustment. Exact split-calibration file in
+the Data root; no dividend/TR/PIT qualification.
 Raw price-only/non-PIT/no CA/TR/finality/causal-availability qualification.
-Chronos2 official dated source re-retrieved; isolated runtime prep only so far.
+Chronos2 official dated checkpoint95a971... exact477930472-byte weightddcda3c7...
+acquired under A/research/chronos2-runtime-preparation-20261008-v1-r3.
+Existing Chronos2.2.2 Docker CPU loader works with tmpfs; no package/build change.
+Synthetic CPU/CUDA capability source preparing; no predictive comparison yet.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 
@@ -76,7 +91,7 @@ SHA2700b4dbd6ea8652cb420b911ab9e1bb4ba33716f21a3f760ad7672095ef0c50.
 
 NEXT now owns kis-owned-portfolio-first-rebalance-v1: actual owned-SPY reduction/reconciliation followed by
 observed-funds joint BUYs under the original shared10-percent basis. Thin
-runtime, conditional-hedge GPU preparation and independent sector input readback proceed
+runtime, split-aware sector CPU research and Chronos2 capability proceed
 in parallel. Actual Paper remains separate from research profitability; no
 foreground wait or new approval gate. Existing due owners retain recovery.
 

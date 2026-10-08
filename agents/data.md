@@ -60,8 +60,18 @@ commitmentfd7b3a32... . Three gzip files stay under
 M/us_equities/kis_paper_private/cross-asset-oc/research-input/kis-sector-oc-cohort-v1/sector-oc-cohort-20261008-v1.
 Freezer18181281.../16 synthetic cases29.35s/Ruff and independent source review
 pass; repository-vs-snapshot path exclusion fixed before publication. Original
-667 checked bindings/408 public files unchanged. Independent canonical-input
-readback is the next bounded package; closed trio inputs stay unchanged.
+667 checked bindings/408 public files unchanged. Independent canonical input
+readback passes.727s/667 originals+four outputs unchanged/252 bindings/84 chunks/
+exact OC strings/Decimals/first-indexed source links. Exact
+A/data/kis-sector-etf-capability-preparation-v1/input-readback-20261008-v1.json,
+SHA15056b1fb6829759025c5aaf8427a2a732650f4a35abb3b312a29ebe5625c128.
+New SPY/sector metadata contract preparing; separate producer pin sets and old
+trio/sector bytes stay unchanged. Official StateStreet Nov20,2025 announcement
+confirms XLK/XLE2:1 before Dec5OPEN. Exact retained Dec4CLOSE/Dec5OPEN ratio
+probe categorizes both split_sized_drop; no raw price/ratio output, files unchanged.
+Exact split-calibration-20261008-v1.json in the same root. Future consumer uses
+decision-time known-event signal normalization and share accounting, never
+automatic full adjustment or a global research hold.
 No CA/TR/PIT/finality promotion follows.
 
 ## Useful Retained Daily Input

@@ -81,19 +81,38 @@ Positive backtest growth is not broker net profit or independent alpha.
 Breadth: pairwise-reversal ANTICOR actually rejected; retain its fixed recipe.
 Next distinct source-only conditional-hedge utility adapter compares fixed SPY,
 half-SPY/TLT,half-SPY/GLD,balanced,cash actions rather than asset-return argmax.
-Pure core2a0c0822.../47 synthetic cases and worker55114806.../41 cases ready.
-Reuse6x63 inputs and
-21-session actual-cost holding/replay; target per-episode utility is not scored
-NAV reset or whole-view utility. Planned one Ridge/one CUDA shared-action-head
-model/300-second family is undergoing its own metadata freeze before labels/
-fits/GPU;42 cells/5 fixed controls/2 development views/one family allocation.
+Conditional-hedge study is now COMPLETE/REJECTED42 cells, exact root
+A/research/kis-cross-asset-conditional-hedge-utility-development-v1-runtime-recovery-r2.
+Contract56787514.../result6f08e1c0.../413-file tree88e8f6b3... . One Ridge and
+one actual CUDA GRU1024 updates; parent42.223s/worker39.215s/ALL-RO32.711s.
+Independent7.056s verifies1154x4 TRAIN targets/scaler/68groups/42cells/two
+models/eight progress links/1008 unchanged files; validationdd113a51... .
+Custody closed16fd33b6.../zero sealed spend/GPU lease released after containment.
+R1 failed before GRU optimizer because RO Docker lacked /tmp; CPU reproduction
+and128MiB tmpfs fix measured. Failed root/result28154b14... unchanged.
+Cumulative3 fits includes repeated deterministic Ridge; its saved model/scaler
+bytes match R1. Observed combined worker65.563s below300s. Used r2 dispatcher
+has a worst-case cleanup-budget defect; unchanged historical driver is not the
+future template. Fixed dispatch_bounded.pycbcf0283.../27 tests caps run PLUS
+cleanup270s; no new fit or reinterpretation of rejection.
+Reuse6x63 inputs/21-session actual-cost replay; episode utility is not scored
+NAV reset or whole-view utility. At10bps GRU growth4.32%/24.98%, Ridge
+-8.46%/34.21%; positive backtest growth is not benchmark superiority or broker
+net PnL. Original kill rejects both, with no rescue or Paper input.
 Original criterion is positive growth and utility improvement over all5
 controls at10bps in BOTH views; GRU also beats Ridge. Return dominance is
 descriptive, not the defensive-utility objective. Failed older studies unchanged.
-Sector cohort published separately, input SHA070e98d7...; independent canonical
-input readback is in progress. Do not splice it into closed trio contracts.
-Official Chronos2 dated-checkpoint source re-retrieved; isolated runtime prep
-continues, no weights downloaded or predictive comparison yet. Unknown corpus
+Sector cohort070e98d7... independently validated15056b1f... . New pure sector
+relative-strength7bdd5ffd.../40 synthetic cases uses126 returns/21 cadence;
+fresh CPU worker and composite input contract preparing, not a performance claim.
+Known XLK/XLE2:1 Dec5,2025 split produces measured raw half-price discontinuity;
+new consumer must account shares/signals explicitly, not double-adjust or rewrite
+original bytes. No dividend/TR/PIT qualification follows.
+Official Chronos2 dated checkpoint95a971... acquired as exact477930472-byte
+safetensorsddcda3c7... under A/research/chronos2-runtime-preparation-20261008-v1-r3.
+Existing Docker Chronos2.2.2 CPU loader works with tmpfs; no dependency replacement.
+Synthetic CPU/CUDA runtime capability preparing, no predictive comparison yet.
+Unknown corpus
 remains explicit; a future comparison needs post-checkpoint targets and a new
 contract, not reuse of the2021 development view.
 Depth: no screened survivor currently has a ready fresh depth contract.
