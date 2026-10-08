@@ -27,6 +27,10 @@ def isolate_powershell_scheduler(monkeypatch: pytest.MonkeyPatch) -> None:
         "$PSModuleAutoLoadingPreference = 'None'\n"
         "Import-Module Microsoft.PowerShell.Utility\n"
         "Import-Module Microsoft.PowerShell.Management\n"
+        "function global:docker.exe { throw 'Docker access forbidden in synthetic test' }\n"
+        "function global:docker { throw 'Docker access forbidden in synthetic test' }\n"
+        "function global:uv { $global:LASTEXITCODE = 0 }\n"
+        "function global:uv.exe { $global:LASTEXITCODE = 0 }\n"
     ) + "\n".join(
         f"function global:{name} {{ throw 'Scheduler access forbidden in synthetic test' }}"
         for name in (
@@ -318,6 +322,10 @@ def test_head_schedule_classifies_only_one_exact_safe_collection_failure_payload
         "retained_partial_success_mismatch", "retained_partial_success_loss",
         "retained_partial_success_failed", "retained_partial_success_recovered",
         "retained_partial_loss", "retained_partial_loss_zero", "retained_loss_collected",
+        "retained_boundary_loss", "retained_boundary_loss_zero", "retained_boundary_loss_partial",
+        "retained_boundary_loss_reason", "retained_boundary_loss_bool",
+        "retained_boundary_loss_case",
+        "retained_boundary_loss_negative", "retained_boundary_loss_float",
     ] + [
         f"retained_partial_success_{kind}_{field}"
         for kind in ("null", "bool", "missing")
@@ -398,7 +406,22 @@ def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: s
                     8 if case == "retained_eight" else 9
                 )
             )
-        if case in {
+        if case.startswith("retained_boundary_loss"):
+            retained["failed_predicates"] = ["boundary_active_key_loss"]
+            if case == "retained_boundary_loss_partial":
+                retained.update(fresh_status="partial", fresh_reason="minute_response_invalid")
+            elif case == "retained_boundary_loss_reason":
+                retained["fresh_reason"] = "synthetic-secret-must-not-leak"
+            elif case == "retained_boundary_loss_case":
+                retained["failed_predicates"] = ["Boundary_active_key_loss"]
+            elif case != "retained_boundary_loss":
+                retained["prospective_active_key_loss_count"] = {
+                    "retained_boundary_loss_zero": 0,
+                    "retained_boundary_loss_bool": True,
+                    "retained_boundary_loss_negative": -1,
+                    "retained_boundary_loss_float": 1.5,
+                }[case]
+        elif case in {
             "retained_partial", "retained_partial_predicate",
             "retained_partial_loss", "retained_partial_loss_zero",
         }:
@@ -669,10 +692,74 @@ def test_head_schedule_classifies_only_one_matching_bound_failed_capture(case: s
             "retained_valid", "retained_partial", "retained_eight", "retained_success",
             "retained_partial_predicate", "retained_partial_loss",
             "retained_partial_success", "retained_partial_eight_success",
+            "retained_boundary_loss",
         }
         else "reason_unavailable"
     )
     assert result.stdout.strip() == expected
+    assert "synthetic-secret" not in result.stdout + result.stderr
+
+
+@pytest.mark.skipif(os.name != "nt", reason="the dispatcher is a Windows PowerShell task")
+@pytest.mark.parametrize(
+    ("fresh_status", "loss", "expected"),
+    [("collected", 1, "collector_provider"), ("collected", 0, "reason_unavailable"),
+     ("partial", 1, "reason_unavailable")],
+)
+def test_boundary_loss_dispatch_is_fully_mocked_and_keeps_collection_failure(
+    tmp_path: Path, fresh_status: str, loss: int, expected: str,
+) -> None:
+    digest = "sha256:" + "b" * 64
+    payload = {
+        "kind": "kis_paper_intraday_session_capture", "mode": "session-capture",
+        "collection_mode": "session_capture", "route_class": "kis_paper_market_data",
+        "paper_only": True, "status": "incomplete", "schedule_run_id": "{schedule_run_id}",
+        "observed_at": "2026-07-28T15:30:00Z",
+        "current_session_cumulative_coverage_digest": digest,
+        "current_session_cumulative_coverage_category": "incomplete",
+        "terminal_receipt_binding": {
+            "schedule_run_id": "{schedule_run_id}", "observed_at": "2026-07-28T15:30:00Z",
+            "receipt_sha256": "sha256:" + "a" * 64,
+            "current_session_cumulative_coverage_digest": digest,
+            "current_session_cumulative_coverage_category": "incomplete",
+        },
+        "targets": [
+            {
+                "target_key": key, "status": "rejected", "row_count": 0,
+                "exact_overlap_rows": 0, "reason": "minute_duplicate_conflict",
+                "conflict_origin": "retained_cache",
+                "retained_head_conflict_disposition": "preserved",
+                "retained_head_conflict_diagnostic": {
+                    "fresh_status": fresh_status,
+                    "fresh_reason": (
+                        None if fresh_status == "collected" else "minute_response_invalid"
+                    ),
+                    "accepted_row_count": 390, "accepted_page_count": 4,
+                    "conflicting_chunk_count": 1, "conflicting_minute_count": 1,
+                    "failed_predicates": ["boundary_active_key_loss"],
+                    "prospective_active_key_loss_count": loss,
+                },
+            }
+            for key in ("QQQ/NAS/1m", "SPY/AMS/1m")
+        ],
+    }
+    log = tmp_path / "fake-services.log"
+    result = subprocess.run(
+        ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command",
+         _fake_dispatch_command(
+             script_path=SCRIPT, project_root=SCRIPT.parents[1], log_path=log,
+             collection_payload=payload, collection_exit_code=1,
+         )],
+        capture_output=True, text=True, check=False, timeout=30,
+    )
+    assert result.returncode == 1, result.stderr
+    assert log.read_text(encoding="ascii").splitlines() == [
+        "kis-paper-intraday-head", "kis-paper-intraday-head-receipt",
+    ]
+    assert Path(str(log) + ".invocations").read_text(encoding="ascii").splitlines() == [expected]
+    terminal = json.loads(result.stdout.strip())
+    assert terminal["collection_exit_code"] == terminal["terminal_exit_code"] == 1
+    assert terminal["schedule_receipt_status"] == "recovery"
     assert "synthetic-secret" not in result.stdout + result.stderr
 
 
@@ -1207,6 +1294,8 @@ def _fake_dispatch_command(
     ),
     capture_binding_payload: str | None = None,
     require_capture_binding: bool = False,
+    collection_payload: dict[str, object] | None = None,
+    collection_exit_code: int = 0,
 ) -> str:
     escaped_script = str(script_path).replace("'", "''")
     escaped_root = str(project_root).replace("'", "''")
@@ -1233,6 +1322,8 @@ def _fake_dispatch_command(
             + capture_binding_payload
             + "}"
         )
+    if collection_payload is not None:
+        capture_payload = json.dumps(collection_payload)
     escaped_capture_payload = capture_payload.replace("'", "''")
     binding_guard = "$false"
     if require_capture_binding:
@@ -1240,6 +1331,15 @@ def _fake_dispatch_command(
     return f"""
 $ErrorActionPreference = 'Stop'
 $env:THERICHER_FAKE_DOCKER_LOG = '{escaped_log}'
+function uv {{
+    $values = @($args)
+    $ordinal = [Array]::IndexOf($values, '--collection-failure-category')
+    if ($ordinal -ge 0) {{
+        Add-Content -LiteralPath ($env:THERICHER_FAKE_DOCKER_LOG + '.invocations') `
+            -Value ([string]$values[$ordinal + 1]) -Encoding ascii
+    }}
+    $global:LASTEXITCODE = 0
+}}
 function docker.exe {{
     $dockerArgs = @($args)
     $knownServices = @(
@@ -1387,7 +1487,11 @@ function docker.exe {{
             Write-Output '{{}}'
         }}
     }}
-    $global:LASTEXITCODE = 0
+    $global:LASTEXITCODE = if ($service -eq 'kis-paper-intraday-head') {{
+        {collection_exit_code}
+    }} else {{
+        0
+    }}
 }}
 & '{escaped_script}' -ProjectRoot '{escaped_root}' `
     -InvocationReceiptArtifactRoot '{escaped_log}.artifacts'

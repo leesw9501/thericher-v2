@@ -6,6 +6,21 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Oct9 00:29 head invocation terminalf4348515... binds both SPY/QQQ page4
+mixed_exchange_dates partial captures. Actual raw page chronology is unobserved;
+next owned02:28KST unchanged. Released collector37c7a765... and PS77096246...
+accept only a proven current-ET-day/previous-day continuation boundary after
+full-page ordering, clocks, identity and cursor validation. Full physical page
+counts stay visible; selected current-day rows stop this head scope, not provider
+exhaustion. Boundary revisions cannot lose prior active keys. Parent598
+changed-path tests59.45s and independent Python/PS reviews pass; full12641 pass/
+22 skip/35 warnings374.33s,12663 collected/eight clean workers/helper exit0.
+Ruff/three sample-env Compose pass. Only collector image6aec64a0... rebuilt
+6.133s; oldb7fcf975... retained for rollback, Paperae2... and frozen producer406
+untouched. Baked boundary synthetic verification pending; build is not new
+complete-pair/session evidence. Existing next_due and schedule unchanged.
+Claude public-only challenge.949s review_unavailable, not agreement or a hold.
+
 Six-question ETF rights probe actually completed09:37:12..09:37:18UTC/6.456s:
 one token POST/six market GETs, fixed SPY/TLT/GLD Sep1..Oct8/no continuation/
 retry/account/orders/raw rows retained. ICE all3 HTTP2xx/business success/

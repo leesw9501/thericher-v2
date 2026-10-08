@@ -71,6 +71,8 @@ class _Client:
         response = self.responses[query.symbol].pop(0)
         if isinstance(response, KisPaperMarketDataError):
             raise response
+        if (response.query.symbol, response.query.exchange) == (query.symbol, query.exchange):
+            response = replace(response, query=query)
         return response
 
 
@@ -346,7 +348,7 @@ def test_pair_mixed_fourth_page_keeps_360_and_bound_diagnostic_without_retry(
 ) -> None:
     failing = [
         *[_page(_rows(120, offset=offset), symbol=symbol) for offset in (0, -120, -240)],
-        _page(_rows(120, offset=-630), symbol=symbol),
+        _page(_rows(120, offset=810), symbol=symbol),
         _page(_rows(120, offset=-360), symbol=symbol),
     ]
     other_symbol = "SPY" if symbol == "QQQ" else "QQQ"
@@ -1236,3 +1238,265 @@ def test_real_client_fake_transport_reuses_token_and_sends_next_one_pinc_one(
             assert request.query["SYMB"] == "SPY" and request.query["EXCD"] == "AMS"
             assert request.query["PINC"] == request.query["NEXT"] == "1"
             assert request.headers["tr_cont"] == "N"
+
+
+def _boundary_pages(
+    *, missing: bool = False, descending: bool = False
+) -> list[list[dict[str, str]]]:
+    rows = _rows(390)
+    oldest = rows[:30]
+    if missing:
+        oldest = tuple(row for index, row in enumerate(oldest) if index != 15)
+    excluded = _rows(120 - len(oldest), offset=-1140 - int(missing))
+    pages = [rows[270:], rows[150:270], rows[30:150], (*excluded, *oldest)]
+    return [
+        [row.as_document() for row in (reversed(page) if descending else page)] for page in pages
+    ]
+
+
+class _BoundaryTransport:
+    def __init__(
+        self,
+        qqq: list[list[dict[str, str]]],
+        spy: list[list[dict[str, str]]] | None = None,
+        *,
+        boundary_header: str = "",
+    ):
+        self.pages = {"QQQ": qqq, "SPY": spy if spy is not None else _boundary_pages()}
+        self.requests: list[KisMarketDataRequest] = []
+        self.boundary_header = boundary_header
+
+    def request(self, request: KisMarketDataRequest) -> KisMarketDataResponse:
+        market_data._validate_request(request)
+        self.requests.append(request)
+        if request.method == "POST":
+            return KisMarketDataResponse.from_payload({"access_token": "synthetic-token"})
+        rows = self.pages[request.query["SYMB"]].pop(0)
+        return KisMarketDataResponse.from_payload(
+            {
+                "rt_cd": "0",
+                "output1": {"more": "0"},
+                "output2": rows,
+            },
+            headers={"tr_cont": self.boundary_header}
+            if len({row["xymd"] for row in rows}) > 1
+            else {},
+        )
+
+
+def _boundary_client(transport: _BoundaryTransport) -> KisPaperMarketDataClient:
+    return KisPaperMarketDataClient(
+        config=KisPaperMarketDataConfig(app_key="synthetic-key", app_secret="synthetic-secret"),
+        transport=transport,
+        max_minute_page_attempts=16,
+    )
+
+
+@pytest.mark.parametrize("descending", [False, True])
+@pytest.mark.parametrize("header", ["", "M"])
+def test_real_client_boundary_retains_bound_day_and_stops_without_fifth_get(
+    tmp_path: Path, descending: bool, header: str, capsys: pytest.CaptureFixture[str]
+) -> None:
+    transport = _BoundaryTransport(_boundary_pages(descending=descending), boundary_header=header)
+    client = _boundary_client(transport)
+    observed = datetime(2026, 7, 22, 20, 0, tzinfo=UTC)
+    results = _run_pair(tmp_path, client, pages_per_target=8, observed_at=observed)
+    assert [(run.status, run.row_count, run.reason) for run in results] == [
+        ("collected", 390, None)
+    ] * 2
+    assert client.call_counts.token_attempts == 1
+    assert client.call_counts.minute_page_attempts == 8
+    assert client.call_counts.daily_page_attempts == 0
+    gets = [request for request in transport.requests if request.method == "GET"]
+    for symbol in ("QQQ", "SPY"):
+        requests = [request for request in gets if request.query["SYMB"] == symbol]
+        assert len(requests) == 4
+        assert requests[0].query["PINC"] == "0"
+        assert requests[0].query["NEXT"] == requests[0].query["KEYB"] == ""
+        for request, offset in zip(requests[1:], (270, 150, 30), strict=True):
+            assert request.query["PINC"] == request.query["NEXT"] == "1"
+            assert request.query["KEYB"] == collector._one_exchange_minute_before(
+                _rows(390)[offset]
+            )
+            assert request.headers["tr_cont"] == "N"
+    for run in results:
+        manifest = json.loads(run.manifest_path.read_text())
+        page = manifest["pages"][-1]
+        assert len(manifest["pages"]) == 4
+        assert (
+            page["row_count"],
+            page["retained_row_count"],
+            page["excluded_older_row_count"],
+        ) == (120, 30, 90)
+        assert page["retained_exchange_date"] == "20260722"
+        assert page["continuation_available"] is (header == "M")
+        assert page["oldest_exchange_timestamp"] == "20260721T143000"
+        assert page["newest_exchange_timestamp"] == "20260722T095900"
+        assert page["oldest_korea_timestamp"] == "20260722T033000"
+        assert page["newest_korea_timestamp"] == "20260722T225900"
+        assert manifest["deduplication"]["input_row_count"] == 390
+        assert sum(p["row_count"] for p in manifest["pages"]) == 480
+        assert manifest["deduplication"]["unique_row_count"] == 390
+        chunk = manifest["backfill"]["index_chunk"]
+        assert chunk["input_cursor"] is chunk["output_cursor"] is None
+        assert chunk["collection_scope"] == "head"
+        symbol, exchange, _ = run.target_key.split("/")
+        catalog = load_verified_kis_paper_private_intraday_catalog(
+            cache_root=tmp_path / "market-data",
+            repo_root=tmp_path / "repo",
+            symbol=symbol,
+            exchange=exchange,
+        )
+        session = us_equity_2026_session(date(2026, 7, 22))
+        assert (
+            len(
+                require_complete_kis_paper_private_intraday_session(
+                    catalog, session=session.window
+                ).bars
+            )
+            == 390
+        )
+        assert all(bar.start_ts.astimezone(UTC).date() == date(2026, 7, 22) for bar in catalog.bars)
+    assert all(state["next_cursor"] is None for state in _index(tmp_path)["targets"])
+    assert capsys.readouterr() == ("", "")
+
+
+@pytest.mark.parametrize("limitation", ["missing", "forming"])
+def test_valid_boundary_does_not_impute_or_complete_a_short_session(
+    tmp_path: Path, limitation: str
+) -> None:
+    transport = _BoundaryTransport(_boundary_pages(missing=limitation == "missing"))
+    observed = (
+        datetime(2026, 7, 22, 19, 59, 30, tzinfo=UTC)
+        if limitation == "forming"
+        else datetime(2026, 7, 22, 20, 0, tzinfo=UTC)
+    )
+    runs = _run_pair(
+        tmp_path, _boundary_client(transport), pages_per_target=8, observed_at=observed
+    )
+    assert runs[0].status == "collected" and runs[0].reason is None
+    assert runs[0].row_count == (389 if limitation == "missing" else 390)
+    catalog = _catalog(tmp_path)
+    session = us_equity_2026_session(date(2026, 7, 22))
+    with pytest.raises(ValueError, match="session is incomplete"):
+        require_complete_kis_paper_private_intraday_session(catalog, session=session.window)
+    capture = build_and_write_kis_paper_intraday_session_capture(
+        runs=runs,
+        cache_root=tmp_path / "market-data",
+        repository_root=tmp_path / "repo",
+        observed_at=observed,
+    )
+    assert capture.outcome.current_session_cumulative_coverage_category == "incomplete"
+    coverage = capture.outcome.current_session_cumulative_coverage.session_coverage[0]
+    assert coverage.complete_minute_count == 389 and coverage.expected_minute_count == 390
+
+
+@pytest.mark.parametrize(
+    "failure",
+    [
+        "bad_older_ohlc",
+        "duplicate_older",
+        "unordered_older",
+        "clock_disagreement",
+        "future_date",
+        "third_date",
+        "stale_head",
+    ],
+)
+def test_entire_boundary_page_is_validated_before_any_older_row_is_excluded(
+    tmp_path: Path, failure: str
+) -> None:
+    pages = _boundary_pages()
+    boundary = pages[-1]
+    if failure == "bad_older_ohlc":
+        boundary[0]["high"] = "99"
+    elif failure == "duplicate_older":
+        boundary[1] = dict(boundary[0])
+    elif failure == "unordered_older":
+        boundary[0], boundary[1] = boundary[1], boundary[0]
+    elif failure == "clock_disagreement":
+        boundary[0]["khms"] = "043000"
+    elif failure == "future_date":
+        for record in boundary[:90]:
+            record["xymd"] = "20260723"
+            record["kymd"] = "20260724"
+    elif failure == "third_date":
+        boundary[0]["xymd"] = "20260720"
+        boundary[0]["kymd"] = "20260721"
+    observed = datetime(2026, 7, 23 if failure == "stale_head" else 22, 20, 0, tzinfo=UTC)
+    transport = _BoundaryTransport(pages)
+    client = _boundary_client(transport)
+    runs = _run_pair(tmp_path, client, pages_per_target=8, observed_at=observed)
+    assert (runs[0].status, runs[0].row_count) == ("partial", 360)
+    assert runs[0].reason == (
+        "minute_ohlc_invalid" if failure == "bad_older_ohlc" else "minute_response_invalid"
+    )
+    if failure != "bad_older_ohlc":
+        assert (
+            runs[0].failure_phase,
+            runs[0].failure_page_ordinal,
+            runs[0].requested_pages_per_target,
+        ) == ("head_contract", 4, 8)
+    assert client.call_counts.minute_page_attempts == 8
+    assert len(_catalog(tmp_path).bars) == 360
+    manifest = json.loads(runs[0].manifest_path.read_text())
+    assert len(manifest["pages"]) == 3
+    assert all("excluded_older_row_count" not in page for page in manifest["pages"])
+    assert runs[1].status == ("partial" if failure == "stale_head" else "collected")
+
+
+@pytest.mark.parametrize("old_only", [False, True])
+def test_collected_boundary_revision_requires_zero_active_key_loss(
+    tmp_path: Path, old_only: bool
+) -> None:
+    old = _rows(391, offset=-1) if old_only else _rows(390)
+    seed = _Client(
+        *[
+            [
+                _page(old[offset : offset + 120], symbol=symbol)
+                for offset in (len(old) - 120, len(old) - 240, len(old) - 360)
+            ]
+            + [_page(old[: len(old) - 360], symbol=symbol)]
+            for symbol in ("QQQ", "SPY")
+        ]
+    )
+    observed = datetime(2026, 7, 22, 20, 0, tzinfo=UTC)
+    _run_pair(tmp_path, seed, observed_at=observed)
+    prior = _index(tmp_path)["targets"][0]["chunks"]
+    originals = {
+        path: path.read_bytes()
+        for path in (tmp_path / "market-data/v1/snapshots").rglob("*")
+        if path.is_file()
+    }
+    pages = _boundary_pages()
+    pages[-1][-30]["last"] = "100.5"
+    client = _boundary_client(_BoundaryTransport(pages))
+    runs = _run_pair(
+        tmp_path,
+        client,
+        pages_per_target=8,
+        observed_at=observed + timedelta(minutes=1),
+        quarantine_retained_head_conflicts=True,
+    )
+    diagnostic = runs[0].retained_head_conflict_diagnostic
+    assert diagnostic.fresh_status == "collected" and diagnostic.fresh_reason is None
+    assert diagnostic.prospective_active_key_loss_count == int(old_only)
+    assert diagnostic.failed_predicates == (("boundary_active_key_loss",) if old_only else ())
+    assert runs[0].status == ("rejected" if old_only else "collected")
+    assert runs[0].retained_head_conflict_disposition == (
+        "preserved" if old_only else "not_applicable"
+    )
+    assert all(path.read_bytes() == payload for path, payload in originals.items())
+    if old_only:
+        assert _index(tmp_path)["targets"][0]["chunks"] == prior
+        assert len(_catalog(tmp_path).bars) == 391
+    else:
+        assert len(_catalog(tmp_path).bars) == 390
+        state = _index(tmp_path)
+        assert (
+            collector._recover_orphan_snapshots(root=tmp_path / "market-data/v1", index=state) == ()
+        )
+        assert any(
+            chunk.get("raw_market_data_retained") is False
+            for chunk in state["targets"][0]["chunks"]
+        )

@@ -67,14 +67,31 @@ First v2 actual is now unavailable at exact_limit_funds/unclassified, token1/
 GET19/BUY0/68.143s. Exact successor-v2/0997f16b1a2d4de9931ad96b7abcca7a/outcome.json,
 SHA6729340df87191974f76111e511f397407cbb5d91cfeaf7b1b21c7c71fef312c.
 New parent/plan retained/source/runtime/unchanged true/children reaped/absent;
-private zero-submission/expiry still requires exact new RO readback. Source
+Independent fresh RO readback now validates two expired intents, one materialized,
+zero starts/acks/unknowns/fills and exact parent/plan/current/shared-basis linkage.
+Exact successor-v2/fresh-buy-readback-20261009-v2.json; readerc981eee1...,
+actual1.541s/network none/zero API/credentials/writes/private bytes unchanged/
+reaped/absent. No-start is retained custody evidence, not a broker census.
+Local expiry closure is now complete3.418s/93bdff62... with no API/credentials,
+two terminals and original plan/basis/book preserved. Independent closed RO
+1.430s/96861fe3... confirms zero remaining recovery/starts/acks/fills. Exact
+successor-v2/expired-fresh-plan-closure-20261009-v2.json and
+successor-v2/fresh-buy-closed-readback-20261009-v2.json. Never retry or extend v2.
+Source
 reproduction confirms native canary funds delegate only accepts QQQ, rejecting
 all3 portfolio symbols before transport. Narrow existing fixed-preview reader
 binding repair prepares; no arbitrary universe or blind retry/TTL extension.
 Used child9496/host718/selector6c36 remain immutable; a separate pre-reservation
 crash-pin recovery-r2 prepares. Initial/pinned retry reviewed; P2 not hidden.
 Offline real-adapter unavailable-first-GET smoke d422... passed1.289s but missed
-this successful-funds path. Add real-client transport-only happy-funds coverage.
+this successful-funds path. Narrow adaptere99f99a6.../39 cases/independent READY
+now passes the pinned Paper image's real-client happy-funds tests in2.146s:
+parent-048b03f98ed44b1181bf98dd03460ccb.json/c2b3649f... in successor-v2.
+Network none/no production mounts/credentials/provider/GPU;406 baked sources
+and public test-tool bytes unchanged/reaped/absent. Initial test harness missed
+the installed public py.py compatibility shim; immutable failed probes remain.
+Distinct v3 TTL300/worker240 preparation uses measured v2 latency, never modifies
+old frozen terms; exact v2 closed binding is required before token/preparation.
 23:50 exact SELL/BUY router98112184... is installed; new SELL recovery host
 01106782... requires the probe's original request hash, never a null fresh-entry
 handoff. Lost post-probe request/pin rejects before fresh reads/transport.
@@ -158,12 +175,23 @@ rejects the original BOTH-view kill; ALL-RO10.372s/e142818c... passes retained
 actions/exact economics, not independent ERC inference. Exact
 A/research/kis-cross-asset-erc-development-v1/worker-result.json,
 SHA26effc665b97c3d4b2275a00b99f07f7fcd4496a2e3153164dbb03d52b856f2f.
+Independent numeric validation-readback.json/09e7265e... now passes1.862s:
+991 unchanged files,33 covariance windows,165 control checks,36 cells and original
+rejection. Independent covariance/ERC/KKT geometry with shared NAV; host3.14.3
+supplements, not equates to Docker3.12.14. No refit or outcome reinterpretation.
 Custody1e0102ae... closed/non_promoting_completed. Next source-only GPU package
 is direct-risk-capped-utility GRU16/constant allocation, with closed-group Torch/
 Decimal economic parity before fitting; no selected model or Paper input.
 Oct9 00:29 owned M1 head terminalf434.../exact capture both targets partial at
 page4/mixed_exchange_dates. Full-page/older-boundary correction prepares with
 active-key-loss protection; actual page chronology remains unknown/next02:28.
+Released collector37c7a765.../PS77096246... pass598 changed-path cases59.45s
+and independent Python/PS review. Full12641 pass/22 skip/35 warnings374.33s,
+12663 collected/eight clean workers/helper exit0; Ruff/three sample-env Compose
+pass. Collector-only image6aec64a0... is built6.133s; oldb7fcf975... is retained
+for rollback and immutable Paper imageae2... is unchanged. Baked synthetic
+boundary readback still pending; build is not new real-session evidence. Claude head-boundary
+challenge.949s review_unavailable/cli_nonzero, not agreement or a global wait.
 No company block or foreground market wait. The older completed-goal evidence
 below is retained history, not a current undispatched package.
 

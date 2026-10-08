@@ -51,12 +51,27 @@ exception remains unclassified; later expiry is not proof of its cause.
 First v2 actual is now unavailable at exact_limit_funds/unclassified/token1/
 GET19/BUY0/68.143s; exact successor-v2/0997f16b1a2d4de9931ad96b7abcca7a/outcome.json/6729340d... .
 New parent/plan retained, source/runtime unchanged, children reaped/absent.
-Read exact private state through new RO parser before closure/retry; public
-counts are not independent zero-submission evidence. Native canary funds API
+Exact source-reviewed RO parserc981eee1... now actually verifies two expired
+no-start intents/zero starts/acks/unknowns/fills and exact parent/plan/current/
+basis/book binding. Exact successor-v2/fresh-buy-readback-20261009-v2.json;
+1.541s/network none/no API/credentials/writes/private bytes unchanged/reaped/
+absent. Revalidate call-time no-wire facts for local expiry closure; do not
+extend this used request's TTL or retry from public counts. Local closure
+successor-v2/expired-fresh-plan-closure-20261009-v2.json/93bdff62... completes
+3.418s; independent fresh-buy-closed-readback-20261009-v2.json/96861fe3...
+confirms2 terminal/zero remaining recovery/starts/acks/fills in1.430s. No API/
+credentials/basis reset; original plan/book unchanged. Never retry v2.
+Native canary funds API
 still delegates to a QQQ-only method; use the existing fixed preview exact
 reader with explicit venue/token binding after real-client happy-funds tests.
 Used9496/718/6c36 sources remain immutable; separate recovery-r2 handles the
 recorded pre-reservation crash-pin gap. Never extend the old or current plan TTL.
+Adaptere99f99a6.../independent READY passes39 real-client synthetic cases inside
+the pinned406-file Paper image in2.146s; exact successor-v2/
+parent-048b03f98ed44b1181bf98dd03460ccb.json/c2b3649f... . Network none/no
+credentials/provider/GPU/private mounts; initial missing public py.py shim
+failures retained. New v3 source4eec676e... uses distinct identity/fresh capture,
+TTL300/worker240 and exact closed-v2 pins before token; prepare/review only.
 
 ANTICOR actual30 cells rejected/11.498s; ALL-RO15.273s and independent r2
 1.294s pass. Exact numerical receipt:
@@ -116,10 +131,14 @@ closed. Failed original host receipt remains intact. Pure ERC40 cases.22s/
 independent READY is next CPU preparation. Adapter3b209333.../84 combined cases
 3.23s/READY freezes36 cells,25-percent shrinkage and matched10-percent annual
 risk caps. BOTH-view positive cash-relative growth and utility superiority to
-inverse-vol/min-var/equal thirds are the original kill; SPY descriptive. No
+inverse-vol/min-var/equal thirds are the original kill; SPY descriptive.
 actual ERC49ea507a... completes36 cells/rejected6.969s, ALL-RO10.372s/e142818c...
 passes exact retained-action economics; result26effc66.../custody1e0102ae...
-closed. No independent ERC inference, GPU allocation or Paper promotion follows.
+closed. Independent validation-readback.json/09e7265e... now passes1.862s:
+991 unchanged files/33 windows/165 covariance-control checks/36 cells/original
+rejection. Independent geometry/ERC contributions/KKT/metrics with shared NAV;
+host3.14.3 supplements Docker3.12.14, runtime equivalence false. No refit,
+GPU allocation or Paper promotion follows.
 Next source-only GPU work uses direct allocation utility rather than return
 forecast argmax; closed-group differentiable entry/exit fee/cash-drift parity
 precedes frozen actual fitting. Existing Tensor/CUDA runtime remains available.

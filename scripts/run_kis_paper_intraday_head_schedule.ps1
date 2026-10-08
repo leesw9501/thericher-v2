@@ -305,7 +305,7 @@ function Get-UniqueSafeCollectionFailureCategory {
                         "quarantine_disabled", "fresh_not_collected", "predecessor_not_head",
                         "predecessor_input_cursor_present", "predecessor_output_cursor_present",
                         "predecessor_outcome_reason_ineligible", "predecessor_conflict_origin_present",
-                        "predecessor_identity_invalid", "partial_active_key_loss"
+                        "predecessor_identity_invalid", "partial_active_key_loss", "boundary_active_key_loss"
                     )
                     foreach ($predicate in $retained.failed_predicates) {
                         if ($predicate -isnot [string] -or $predicate -cnotin $allowedPredicates) {
@@ -318,6 +318,7 @@ function Get-UniqueSafeCollectionFailureCategory {
                             -or ($predicates -ccontains "fresh_not_collected" -and $retained.fresh_status -cne "partial") `
                             -or ($retained.fresh_status -ceq "partial" -and $predicates -cnotcontains "fresh_not_collected" -and ($retained.fresh_reason -cne "minute_response_invalid" -or ($retained.prospective_active_key_loss_count -gt 0 -and $predicates -cnotcontains "partial_active_key_loss"))) `
                             -or ($predicates -ccontains "partial_active_key_loss" -and ($retained.fresh_status -cne "partial" -or $retained.prospective_active_key_loss_count -eq 0)) `
+                            -or ($predicates -ccontains "boundary_active_key_loss" -and ($retained.fresh_status -cne "collected" -or $retained.prospective_active_key_loss_count -le 0)) `
                             -or ($retained.fresh_status -ceq "collected" -and $null -ne $retained.fresh_reason) `
                             -or ($retained.fresh_status -ceq "partial" -and ($retained.fresh_reason -isnot [string] -or $retained.fresh_reason -cnotin (@($collectorProviderReasons) + @("config_missing")))) `
                             -or $retained.accepted_page_count -gt $PagesPerTarget `

@@ -21,6 +21,7 @@ from dataclasses import dataclass
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Literal, Protocol
+from zoneinfo import ZoneInfo
 
 from thericher_v2.contracts import SCHEMA_VERSION, require_utc
 from thericher_v2.execution.kis_market_data import (
@@ -106,6 +107,7 @@ _HEAD_CONFLICT_FAILED_PREDICATES = frozenset(
         "quarantine_disabled",
         "fresh_not_collected",
         "partial_active_key_loss",
+        "boundary_active_key_loss",
         "predecessor_not_head",
         "predecessor_input_cursor_present",
         "predecessor_output_cursor_present",
@@ -217,9 +219,11 @@ class KisPaperRetainedHeadConflictDiagnostic:
             or tuple(sorted(set(self.failed_predicates))) != self.failed_predicates
             or (
                 self.fresh_status == "collected"
-                and bool({"fresh_not_collected", "partial_active_key_loss"}.intersection(
-                    self.failed_predicates
-                ))
+                and bool(
+                    {"fresh_not_collected", "partial_active_key_loss"}.intersection(
+                        self.failed_predicates
+                    )
+                )
             )
             or (
                 self.fresh_status == "partial"
@@ -238,6 +242,12 @@ class KisPaperRetainedHeadConflictDiagnostic:
                     self.fresh_status != "partial"
                     or self.fresh_reason != "minute_response_invalid"
                     or self.prospective_active_key_loss_count == 0
+                )
+            )
+            or (
+                "boundary_active_key_loss" in self.failed_predicates
+                and (
+                    self.fresh_status != "collected" or self.prospective_active_key_loss_count == 0
                 )
             )
         ):
@@ -1121,10 +1131,16 @@ def _collect_target(
             page = client.fetch_minute_page(query, before_request=before_request)
             if not page.bars:
                 raise KisPaperMarketDataError("minute_response_empty")
+            retained_page_rows = page.bars
             if explicit_pair_head_continuation:
-                _validate_explicit_head_page(
-                    page=page, target=target, cursor=cursor, retained_rows=rows_by_key
+                retained_page_rows = _validate_explicit_head_page(
+                    page=page,
+                    target=target,
+                    cursor=cursor,
+                    retained_rows=rows_by_key,
+                    observed_at=observed_at,
                 )
+            boundary_reached = len(retained_page_rows) != len(page.bars)
             if dated_qqq_session:
                 _validate_dated_qqq_page(
                     page=page,
@@ -1135,7 +1151,7 @@ def _collect_target(
                 )
             prospective_rows = dict(rows_by_key)
             prospective_duplicates = 0
-            for row in page.bars:
+            for row in retained_page_rows:
                 key = _row_key(row)
                 prior = prospective_rows.get(key)
                 if prior is None:
@@ -1148,7 +1164,7 @@ def _collect_target(
                 _validate_explicit_qqq_head_page(
                     page=page, cursor=cursor, retained_rows=rows_by_key
                 )
-            next_cursor = _cursor_from_page(page)
+            next_cursor = None if boundary_reached else _cursor_from_page(page)
             if dated_qqq_session:
                 # Retain a resumable frontier even on the last budgeted/short page.
                 next_cursor = KisPaperPrivateIntradayCursor(
@@ -1157,6 +1173,7 @@ def _collect_target(
                 )
             if (
                 explicit_head_continuation
+                and not boundary_reached
                 and next_cursor is None
                 and page.continuation_signal in {"blank_or_absent", "unrecognized_nonblank"}
                 and len(page.bars) == 120
@@ -1194,7 +1211,14 @@ def _collect_target(
             # same-page duplicates have been validated.
             rows_by_key = prospective_rows
             duplicate_rows += prospective_duplicates
-            pages.append(_page_document(page=page, page_number=page_number))
+            page_document = _page_document(page=page, page_number=page_number)
+            if boundary_reached:
+                page_document.update(
+                    retained_row_count=len(retained_page_rows),
+                    excluded_older_row_count=len(page.bars) - len(retained_page_rows),
+                    retained_exchange_date=retained_page_rows[0].exchange_date,
+                )
+            pages.append(page_document)
             if dated_qqq_session and (
                 len(page.bars) < 120
                 or next_cursor.keyb
@@ -1380,7 +1404,8 @@ def _validate_explicit_head_page(
     target: KisPaperPrivateIntradayTarget,
     cursor: KisPaperPrivateIntradayCursor | None,
     retained_rows: Mapping[str, KisPaperMinuteRawBar],
-) -> None:
+    observed_at: datetime | None = None,
+) -> tuple[KisPaperMinuteRawBar, ...]:
     if (target.symbol, target.exchange) not in KIS_PAPER_PRIVATE_INTRADAY_TARGETS or (
         page.query.symbol,
         page.query.exchange,
@@ -1392,12 +1417,29 @@ def _validate_explicit_head_page(
         )
     exchange_stamps = [_exchange_stamp(row) for row in page.bars]
     korea_stamps = [_korea_stamp(row) for row in page.bars]
+    dates = {row.exchange_date for row in page.bars}
+    boundary_rows = None
+    if len(dates) != 1 and cursor is not None and observed_at is not None:
+        bound_day = cursor.keyb[:8]
+        if (
+            len(dates) == 2
+            and bound_day in dates
+            and max(dates) == bound_day
+            and bound_day == observed_at.astimezone(ZoneInfo("America/New_York")).strftime("%Y%m%d")
+            and retained_rows
+            and {row.exchange_date for row in retained_rows.values()} == {bound_day}
+            and page.query.include_previous_day is True
+            and page.query.continuation_next == cursor.next_value
+            and page.query.continuation_key == cursor.keyb
+            and all(_head_clocks_agree(row) for row in (*page.bars, *retained_rows.values()))
+        ):
+            boundary_rows = tuple(row for row in page.bars if row.exchange_date == bound_day)
     failure_code = None
     if len(set(exchange_stamps)) != len(page.bars):
         failure_code = "duplicate_exchange_timestamp"
     elif len(set(korea_stamps)) != len(page.bars):
         failure_code = "duplicate_korea_timestamp"
-    elif len({row.exchange_date for row in page.bars}) != 1:
+    elif len(dates) != 1 and boundary_rows is None:
         failure_code = "mixed_exchange_dates"
     elif not any(
         exchange_stamps == sorted(exchange_stamps, reverse=reverse)
@@ -1413,13 +1455,24 @@ def _validate_explicit_head_page(
         requested_stamp = f"{cursor.keyb[:8]}T{cursor.keyb[8:]}"
         if (
             not retained_rows
-            or page.bars[0].exchange_date != cursor.keyb[:8]
+            or (boundary_rows is None and page.bars[0].exchange_date != cursor.keyb[:8])
             or any(row.exchange_date != cursor.keyb[:8] for row in retained_rows.values())
             or max(exchange_stamps) > requested_stamp
             or max(exchange_stamps) >= min(_exchange_stamp(row) for row in retained_rows.values())
             or max(korea_stamps) >= min(_korea_stamp(row) for row in retained_rows.values())
         ):
             raise KisPaperMarketDataError("minute_cursor_stalled")
+    return page.bars if boundary_rows is None else boundary_rows
+
+
+def _head_clocks_agree(row: KisPaperMinuteRawBar) -> bool:
+    exchange = datetime.strptime(_exchange_stamp(row), "%Y%m%dT%H%M%S").replace(
+        tzinfo=ZoneInfo("America/New_York")
+    )
+    korea = datetime.strptime(_korea_stamp(row), "%Y%m%dT%H%M%S").replace(
+        tzinfo=ZoneInfo("Asia/Seoul")
+    )
+    return exchange.astimezone(UTC) == korea.astimezone(UTC)
 
 
 def sanitize_kis_paper_private_intraday_failure_reason(value: BaseException | str) -> str:
@@ -1621,7 +1674,10 @@ def _snapshot_manifest(
         "pages": list(collected.page_documents),
         "deduplication": {
             "key": ["kymd", "khms"],
-            "input_row_count": sum(int(page["row_count"]) for page in collected.page_documents),
+            "input_row_count": sum(
+                int(page.get("retained_row_count", page["row_count"]))
+                for page in collected.page_documents
+            ),
             "unique_row_count": len(collected.rows),
             "exact_duplicate_rows_removed": collected.exact_duplicate_rows,
             "conflict_policy": "reject_cursor_advance",
@@ -2029,12 +2085,14 @@ def _can_quarantine_retained_head_conflicts(
         or not conflicting_chunk_keys
     ):
         return False
-    if collected.status == "partial" and _retained_head_conflict_diagnostic(
-        collected=collected,
-        target_state=target_state,
-        conflicting_chunk_keys=conflicting_chunk_keys,
-        quarantine_retained_head_conflicts=quarantine_retained_head_conflicts,
-    ).prospective_active_key_loss_count:
+    if (collected.status == "partial" or _head_boundary_reached(collected)) and (
+        _retained_head_conflict_diagnostic(
+            collected=collected,
+            target_state=target_state,
+            conflicting_chunk_keys=conflicting_chunk_keys,
+            quarantine_retained_head_conflicts=quarantine_retained_head_conflicts,
+        ).prospective_active_key_loss_count
+    ):
         return False
     return all(
         _is_quarantinable_head_snapshot(chunk)
@@ -2052,6 +2110,10 @@ def _is_partial_head_revision_candidate(collected: _CollectedTarget) -> bool:
         and bool(collected.rows)
         and bool(collected.page_documents)
     )
+
+
+def _head_boundary_reached(collected: _CollectedTarget) -> bool:
+    return any(page.get("excluded_older_row_count", 0) > 0 for page in collected.page_documents)
 
 
 def _conflicting_retained_chunks(
@@ -2141,6 +2203,8 @@ def _retained_head_conflict_diagnostic(
     active_key_loss_count = len(removed_keys - candidates.keys() - surviving_keys)
     if _is_partial_head_revision_candidate(collected) and active_key_loss_count:
         failed.add("partial_active_key_loss")
+    if _head_boundary_reached(collected) and active_key_loss_count:
+        failed.add("boundary_active_key_loss")
     return KisPaperRetainedHeadConflictDiagnostic(
         fresh_status=collected.status,
         fresh_reason=collected.reason,

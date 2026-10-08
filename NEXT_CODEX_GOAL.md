@@ -46,9 +46,16 @@ fresh account/quote/orderability observations, preserving the original SELL
 linkage and10-percent basis. Persist its distinct proposal before reservations;
 restart only its exact frozen identity/quantity/TTL, never the old expired BUY.
 First v2 actual6729340d... now fails pre-submit at exact_limit_funds/GET19/BUY0;
-new parent/plan retained, private exact readback pending. Native canary delegates
+new parent/plan retained. Exact independent fresh-buy-readback-20261009-v2.json
+now proves two expired/no-start intents, zero starts/acks/unknowns/fills, exact
+parent/plan/basis/current binding and unchanged private bytes. Narrow expiry
+closure93bdff62... and independent closed readback96861fe3... now prove two
+terminals/zero remaining recovery/starts/acks/fills, old pins unchanged.
+Never retry v2. Distinct v3 prepares with new current-book capture/TTL300/worker240,
+preserving exact v2 closure, SELL linkage and shared basis. Native canary delegates
 to a QQQ-only funds method. Repair the fixed SPY/TLT/GLD binding using the already
-baked exact preview reader and a real-client happy-funds synthetic test. Keep
+baked exact preview reader; pinned-image39 happy-funds tests now pass2.146s.
+Keep
 used sources and this request immutable; do not blindly retry or extend its TTL.
 
 Use the next owned regular-session opportunity, keeping owner conflicts and

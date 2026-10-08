@@ -130,13 +130,29 @@ A/execution/kis-paper-owned-rebalance-v1/successor-v2/0997f16b1a2d4de9931ad96b7a
 SHA6729340df87191974f76111e511f397407cbb5d91cfeaf7b1b21c7c71fef312c.
 Parent observed/outcome unavailable at exact_limit_funds/unclassified; token1/
 GET19/BUY0, parent+plan retained/source/runtime/unchanged true, both children
-reaped/absent. Exact private zero-submission/expiry still needs new RO readback;
-never infer fills or reset this identity from public counts.
+reaped/absent. Independent fresh readerc981eee1.../15 cases7.86s/READY now
+actually verifies2 expired intents (one materialized), no_start_verified:true,
+zero starts/acks/unknowns/fills, exact parent/plan/current/basis/book and unchanged
+private bytes. Exact successor-v2/fresh-buy-readback-20261009-v2.json; actual
+1.541s/network none/zero API/credentials/writes/reaped/absent. Two remaining
+recoveries require call-time-validated no-wire local expiry closure, not TTL
+extension or a substitute for an unknown submission. No broker census claim.
+Exact closure expired-fresh-plan-closure-20261009-v2.json/93bdff62... now
+closes2 terminals in3.418s/zero API/credentials/original plan,basis,book unchanged.
+Independent fresh-buy-closed-readback-20261009-v2.json/96861fe3... confirms2
+terminal/zero remaining recovery/starts/acks/fills in1.430s. Never retry v2.
 Concrete source fault: native canary exact-funds method delegates to the
 QQQ-only readonly method, rejecting portfolio symbols before funds GET. Existing
 fixed SPY/TLT/GLD preview exact-funds method can be reused with explicit venue
 binding/cached-token custody. Narrow real-client happy-funds repair prepares,
-not another blind actual retry. Emergency RO is not the demonstrated cause.
+not another blind actual retry. Adaptere99f99a6.../39 synthetic cases/independent
+READY now passes pinned-image happy-funds39 cases2.146s; exact
+successor-v2/parent-048b03f98ed44b1181bf98dd03460ccb.json/c2b3649f... .
+No credentials/provider/GPU/production mounts,406 baked files/test-tool bytes
+unchanged/reaped/absent. Initial py.py test-tool omission failed offline only,
+failed attempts retained. v3 source4eec676e.../24 new cases prepares with distinct
+identity/TTL300/worker240 based on actual68s v2 latency; old terms immutable.
+Emergency RO is not the demonstrated cause.
 Used9496/718/6c36 sources are immutable. Claude changed fresh recovery challenge
 .948s review_unavailable/cli_nonzero/not agreement.
 
