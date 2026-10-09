@@ -24,8 +24,14 @@ parity bridge COMPLETE:18tests/source65f35a65.../341relatedserial/
 independent18+three fractional-target mutations. Explicit10bps full-bank fee
 overlay can produce negative analytical cash; native gross preview is not
 fee-inclusive. Supplied SELL-before-BUY accounting is not actual chronology.
-Goal29 Execution prepares small pure integer/fee/bank analytical replay only;
-no production broker/risk/custody/adapter change or real-money behavior.
+Goal29 analytical integer/fee/bank replay90501166... released87 tests/.21s,
+focused commita936ddc pushed. Exact Fraction floors/average-cost/cash,
+atomic unchanged-state fee/bank rejection, fixed original bank and supplied
+SELL-before-BUY; no broker fee/settlement/fill-order equivalence.
+Goal29 R2 four-fit/54-cell comparison completed and rejected both augmented
+members. Source430/input575 unchanged/reaped/absent; analytical quote
+projection and replay never wrote private account state or broker inputs.
+No production broker/risk/custody/adapter change or real-money behavior.
 Existing actual session remains independently owned at its unchanged next_due.
 Cumulative facts are counted once and owner-local average entry cost is retained.
 Intent-order replay is not actual fill-time/tax/FIFO accounting. Pending/unknown/

@@ -24,6 +24,10 @@ from thericher_v2.research.cross_asset_etf_input import (
     CrossAssetSession,
 )
 from thericher_v2.research.cross_asset_hedge_failure_input import RawD1Price
+from thericher_v2.research.whole_share_quote_projection import (
+    WholeShareQuoteProjectionError,
+    project_quote,
+)
 
 D, VINTAGE = Decimal, "synthetic-raw-OC"
 PRICE = D(103)
@@ -61,7 +65,7 @@ def rows_for(sessions, price=PRICE):
     }
 
 
-def rates_for(plan):
+def rates_for(plan, values=(1, 2, 3)):
     dates = sorted(
         {
             plan.sessions[i - 1].close_at.astimezone(ZoneInfo("America/New_York")).date()
@@ -69,7 +73,7 @@ def rates_for(plan):
             for i in plan.train_indices + plan.group_indices
         }
     )
-    return H15CurveSnapshot(*(tuple(H15Observation(d, D(v)) for d in dates) for v in (1, 2, 3)))
+    return H15CurveSnapshot(*(tuple(H15Observation(d, D(v)) for d in dates) for v in values))
 
 
 def entry_for(plan, index, rows=None, rates=None):
@@ -106,7 +110,10 @@ def test_static_recipe_geometry_and_no_new_family_budget(plan):
     assert config["gru"]["input_size"] == 6 and config["gru"]["head_inputs"] == 67
     assert config["gru"]["updates"] == 512 and "clone identical" in config["gru"]["initialization"]
     assert "state-omitted" in config["target_limitation"] and config["holdout"] == "none"
-    assert not config["paper_input"] and "no rounding" in config["quote_grid"]
+    assert not config["paper_input"] and "nearest-cent ties-even" in config["quote_grid"]
+    assert "raw information preserved" in config["quote_grid"]
+    assert "synthetic projected" in config["accounting"]
+    assert "not exact raw or broker quotes" in config["accounting"]
     assert plan.train_indices[0] == 253
     assert all(plan.sessions[i + 20].session_date <= date(2020, 12, 30) for i in plan.train_indices)
     assert any(g[0] <= date(2023, 12, 29) < g[-1] for g in plan.groups)
@@ -135,7 +142,7 @@ def test_broad_calendar_warmup_counts_from_fixed_cohort_not_calendar_origin(plan
 
 def test_future_prices_rates_presence_and_invalid_support_do_not_affect_past(plan):
     index = plan.train_indices[0]
-    rows, rates = rows_for(plan.sessions), rates_for(plan)
+    rows, rates = rows_for(plan.sessions, D("103.005")), rates_for(plan)
     original = entry_for(plan, index, rows, rates)
     used = {s.session_date for s in plan.sessions[index - 253 : index]}
     changed = {
@@ -166,15 +173,15 @@ def test_future_prices_rates_presence_and_invalid_support_do_not_affect_past(pla
     )
 
 
-@pytest.mark.parametrize("fault", ["missing", "duplicate", "off_cent", "vintage"])
+@pytest.mark.parametrize("fault", ["missing", "duplicate", "missing_close", "vintage"])
 def test_required_covariance_past_fault_cannot_use_shorter_price_context(plan, fault):
     rows = {s: list(c) for s, c in rows_for(plan.sessions).items()}
     if fault == "missing":
         rows["TLT"].pop(0)
     elif fault == "duplicate":
         rows["TLT"].append(rows["TLT"][0])
-    elif fault == "off_cent":
-        rows["TLT"][0] = replace(rows["TLT"][0], close=D("103.001"))
+    elif fault == "missing_close":
+        rows["TLT"][0] = replace(rows["TLT"][0], close=None)
     else:
         rows["TLT"][0] = replace(rows["TLT"][0], vintage_ref="other")
     with pytest.raises(CrossAssetInputUnavailable):
@@ -187,9 +194,13 @@ def test_rates_unavailable_is_scoped_not_price_arm_row_deletion(plan):
         entry_for(plan, plan.train_indices[0], rates=empty)
 
 
-def test_covariance_is_once_shrunk_population_on_252_prior_returns(plan):
+def test_subcent_features_and_once_shrunk_covariance_preserve_raw_information(plan, monkeypatch):
+    def reject_projection(*args):
+        pytest.fail("raw feature/covariance preparation must not project quotes")
+
+    monkeypatch.setattr(study, "project_quote", reject_projection)
     rows = {
-        s: tuple(replace(r, close=D(100) + D(i % (j + 3)) / 100) for i, r in enumerate(column))
+        s: tuple(replace(r, close=D(100) + D(i % (j + 3)) / 1000) for i, r in enumerate(column))
         for j, (s, column) in enumerate(rows_for(plan.sessions).items())
     }
     entry = entry_for(plan, plan.train_indices[0], rows)
@@ -207,6 +218,29 @@ def test_covariance_is_once_shrunk_population_on_252_prior_returns(plan):
     raw = study._population_covariance(returns)
     expected = 0.9 * raw + 0.1 * np.diag(np.diag(raw))
     assert entry.covariance3 == tuple(tuple(Fraction(float(v)) for v in r) for r in expected)
+    assert expected.any()
+    assert all(project_quote(r.close) == D(100) for c in rows.values() for r in c[:253])
+    with localcontext(study.CONTEXT):
+        assert (
+            entry.price.features[0][0] == rows["SPY"][190].close.ln() - rows["SPY"][189].close.ln()
+        )
+        assert (
+            entry.price.features[1][0] == rows["SPY"][190].close.ln() - rows["SPY"][190].open.ln()
+        )
+    assert entry.price.features[0][0] != 0
+
+
+@pytest.mark.parametrize("fault", ["value_error", "arithmetic_error", "nonfinite"])
+def test_invalid_covariance_has_categorical_input_error_not_missing_alias(plan, monkeypatch, fault):
+    def invalid_covariance(*args):
+        if fault == "nonfinite":
+            return np.full((3, 3), np.nan)
+        error = ValueError if fault == "value_error" else FloatingPointError
+        raise error("synthetic-numeric-detail-not-for-output")
+
+    monkeypatch.setattr(study, "_population_covariance", invalid_covariance)
+    with pytest.raises(CrossAssetInputUnavailable, match="^covariance_numeric$"):
+        entry_for(plan, plan.train_indices[0])
 
 
 def test_common_risk_scaling_is_capped_not_renormalized(plan):
@@ -259,17 +293,58 @@ def test_paired_train_scaler_final_rates_zero_slots_and_dev_no_fit(plan):
     np.testing.assert_array_equal(scaled.train_price, changed.train_price)
 
 
+def test_real_rate_selector_scaler_overflow_is_categorical_not_missing_alias(plan):
+    rates = rates_for(plan, (D("1e308"),) * 3)
+    first, second = (entry_for(plan, i, rates=rates) for i in plan.train_indices[:2])
+    dev = entry_for(plan, plan.group_indices[0], rates=rates)
+    with pytest.raises(CrossAssetInputUnavailable, match="^rate_scaler_numeric$"):
+        study.standardize((first, second), (dev,))
+
+
+@pytest.mark.parametrize(
+    "opening,closing,expected_open,expected_close",
+    [
+        ("103.005", "103.015", "103.00", "103.02"),
+        ("103.004", "103.006", "103.00", "103.01"),
+        ("103.015", "103.005", "103.02", "103.00"),
+    ],
+)
+def test_only_replay_marks_project_to_bounded_quotes_without_mutating_raw(
+    plan, opening, closing, expected_open, expected_close
+):
+    rows = {
+        s: tuple(replace(r, open=D(opening), close=D(closing)) for r in c)
+        for s, c in rows_for(plan.sessions).items()
+    }
+    before = {s: tuple((r.open, r.close) for r in c) for s, c in rows.items()}
+    with localcontext() as context:
+        context.prec = 2
+        context.rounding = "ROUND_UP"
+        days = study.prepare_marks(rows, plan=plan, vintage_ref=VINTAGE)
+    assert all(d.open3 == (D(expected_open),) * 3 for d in days)
+    assert all(d.close3 == (D(expected_close),) * 3 for d in days)
+    for raw, projected in ((D(opening), days[0].open3[0]), (D(closing), days[0].close3[0])):
+        assert (Fraction(projected) * 100).denominator == 1
+        assert abs(Fraction(projected) - Fraction(raw)) <= Fraction(1, 200)
+    assert {s: tuple((r.open, r.close) for r in c) for s, c in rows.items()} == before
+
+
 def test_real_integer_episode_target_not_fractional_endpoint_label(plan):
     i = plan.train_indices[0]
-    entry = entry_for(plan, i)
-    rows = rows_for(plan.sessions)
+    rows = {
+        s: tuple(replace(r, open=D("103.005"), close=D("103.015")) for r in c)
+        for s, c in rows_for(plan.sessions).items()
+    }
+    entry = entry_for(plan, i, rows)
     target = study.prepare_train_targets(
         rows, plan=plan, entry_index=i, vintage_ref=VINTAGE, entry=entry
     )
     forward = plan.sessions[i : i + 21]
     days = tuple(
-        ledger.WholeShareDay(s.session_date, (D(103),) * 3, (D(103),) * 3) for s in forward
+        ledger.WholeShareDay(s.session_date, (D("103.00"),) * 3, (D("103.02"),) * 3)
+        for s in forward
     )
+    dev_days = study.prepare_marks(rows, plan=plan, vintage_ref=VINTAGE)[:21]
     for j, name in enumerate(study.HEADS):
         trace = ledger.replay(
             days,
@@ -283,8 +358,34 @@ def test_real_integer_episode_target_not_fractional_endpoint_label(plan):
         )
         assert trace.final_state.quantities3 == (0, 0, 0)
         assert trace.total_fees == Fraction(5, 10000) * trace.total_traded_notional
+        dev_trace = ledger.replay(
+            dev_days,
+            {dev_days[0].date: entry.actions[name]},
+            study.TARGET_COST,
+            initial_state=study._initial(ledger),
+            liquidate_last_close=True,
+        )
+        assert tuple(d.mark.net_nav for d in trace.daily) == tuple(
+            d.mark.net_nav for d in dev_trace.daily
+        )
+        assert trace.total_fees == dev_trace.total_fees > 0
     assert target.cash_utility == 0 and "utilities=" not in repr(target)
     assert target.safe_facts()["state_omitted"]
+
+
+@pytest.mark.parametrize("consumer", ["marks", "targets"])
+def test_raw_positive_that_projects_zero_is_unavailable_not_minimum_cent_clipped(plan, consumer):
+    rows = rows_for(plan.sessions, D(".004"))
+    if consumer == "marks":
+        with pytest.raises(WholeShareQuoteProjectionError, match="^projected_quote_nonpositive$"):
+            study.prepare_marks(rows, plan=plan, vintage_ref=VINTAGE)
+    else:
+        i = plan.train_indices[0]
+        entry = entry_for(plan, i, rows)
+        with pytest.raises(WholeShareQuoteProjectionError, match="^projected_quote_nonpositive$"):
+            study.prepare_train_targets(
+                rows, plan=plan, entry_index=i, vintage_ref=VINTAGE, entry=entry
+            )
 
 
 def test_full_bank_fee_rejection_remains_zero_trade_not_clipped(plan):

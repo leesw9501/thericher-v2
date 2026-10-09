@@ -18,8 +18,10 @@ from thericher_v2.data.h15_curve_state import H15CurveState, select_h15_curve_st
 from thericher_v2.research import kis_cross_asset_relative_allocation as base
 from thericher_v2.research import whole_share_portfolio_nav as whole
 from thericher_v2.research.cross_asset_daily_risk_input import DailyRiskFeatures
+from thericher_v2.research.cross_asset_etf_input import CrossAssetInputUnavailable
 from thericher_v2.research.cross_asset_hedge_failure_input import CONTEXT
 from thericher_v2.research.joint_portfolio_covariance import _population_covariance
+from thericher_v2.research.whole_share_quote_projection import project_quote
 
 NAME = "kis-lagged-rate-whole-share-policy-development-v1"
 SYMBOLS, HORIZON = base.SYMBOLS, 21
@@ -58,9 +60,11 @@ def configuration():
         groups="partition entire DEV once into21; group CLOSE liquidation; tail cash; "
         "retain capital across groups and view boundary",
         accounting="basis100000/bank10000 once; analytical fees separate from gross cash; "
-        "exact cent-lattice OPEN/CLOSE fills; immediate terminal fills; "
+        "synthetic projected OPEN/CLOSE fills and marks, not exact raw or broker quotes; "
+        "immediate terminal fills; "
         "SELL before BUY; fee-unaffordable exact action no-intent/no clipping",
-        quote_grid=".01 validation only, no rounding",
+        quote_grid=".01 nearest-cent ties-even synthetic fill/mark projection only; "
+        "raw information preserved in price features and covariance",
         scaler="shared TRAIN population price channel scaler; final3 rate scaler; "
         "zero std divisor1; no target scaling; price-only rate slots zero",
         ridge=dict(alpha=1, solver="svd", fit_intercept=True, inputs=381, heads=4),
@@ -188,18 +192,8 @@ def action_table():
     )
 
 
-def _cent(value):
-    base._positive(value)
-    _require((Fraction(value) * 100).denominator == 1, "raw_endpoint_off_cent_lattice")
-
-
 def _selected(rows, required, vintage):
-    selected = base._select(rows, required, vintage)
-    for column in selected:
-        for fields in column.values():
-            for value in fields.values():
-                _cent(value)
-    return selected
+    return base._select(rows, required, vintage)
 
 
 def _scaled_actions(covariance):
@@ -335,9 +329,9 @@ def prepare_entry(rows_by_symbol, *, plan, entry_index, vintage_ref, curve_snaps
         covariance = 0.9 * covariance + 0.1 * np.diag(np.diag(covariance))
         _require(np.isfinite(covariance).all(), "covariance_numeric")
     except (ArithmeticError, ValueError) as error:
-        if isinstance(error, base.CrossAssetInputUnavailable):
+        if isinstance(error, CrossAssetInputUnavailable):
             raise
-        raise base.CrossAssetInputUnavailable("covariance_numeric") from None
+        raise CrossAssetInputUnavailable("covariance_numeric") from None
     exact = tuple(tuple(Fraction(float(v)) for v in r) for r in covariance)
     curve = select_h15_curve_state(curve_snapshot, decision_at=price.decision_at)
     _require(curve.status == "available", "rate_state_unavailable")
@@ -387,7 +381,7 @@ def standardize(train_entries, dev_entries):
             divisor = np.where(std == 0, 1.0, std)
             a, b = (train - mean) / divisor, (dev - mean) / divisor
         except FloatingPointError:
-            raise base.CrossAssetInputUnavailable("rate_scaler_numeric") from None
+            raise CrossAssetInputUnavailable("rate_scaler_numeric") from None
     _require(all(np.isfinite(v).all() for v in (mean, divisor, a, b)), "rate_scaler_numeric")
     for v in (mean, divisor, a, b):
         v.flags.writeable = False
@@ -503,7 +497,9 @@ def prepare_marks(rows_by_symbol, *, plan, vintage_ref, ledger=whole):
     rows = _selected(rows_by_symbol, dict.fromkeys(plan.dates, ("open", "close")), vintage_ref)
     return tuple(
         ledger.WholeShareDay(
-            d, tuple(r[d]["open"] for r in rows), tuple(r[d]["close"] for r in rows)
+            d,
+            tuple(project_quote(r[d]["open"]) for r in rows),
+            tuple(project_quote(r[d]["close"]) for r in rows),
         )
         for d in plan.dates
     )
@@ -589,8 +585,8 @@ def prepare_train_targets(rows_by_symbol, *, plan, entry_index, vintage_ref, ent
     days = tuple(
         ledger.WholeShareDay(
             s.session_date,
-            tuple(r[s.session_date]["open" if i == 0 else "close"] for r in rows),
-            tuple(r[s.session_date]["close"] for r in rows),
+            tuple(project_quote(r[s.session_date]["open" if i == 0 else "close"]) for r in rows),
+            tuple(project_quote(r[s.session_date]["close"]) for r in rows),
         )
         for i, s in enumerate(forward)
     )

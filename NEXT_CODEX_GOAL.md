@@ -2,117 +2,95 @@
 
 ## Objective
 
-Complete kis-lagged-rate-whole-share-policy-development-v1: build and run one
-bounded development comparison of price-only versus lagged Treasury-curve
-context under the same whole-share, fixed-bank analytical replay.
-This advances executable research semantics and a genuinely new free input,
-not a model-profitability permission gate on existing KIS Paper.
+Complete kis-whole-share-hold-rebalance-payoff-alignment-v1: test whether
+conditioning HOLD versus rebalancing on the incumbent whole-share account
+state materially aligns learned decisions with continuous executable payoff.
+This is one bounded CPU development study, not a rescue of closed model/rates
+rejections or a profitability gate on independent KIS Paper.
 
-## Packages And Frozen Limits
+## Frozen Packages And Limits
 
-Data owns one small strict Board Treasury-package parser and same-date
-3M/2Y/10Y feature selector, focused tests and exact retained-source binding.
-Reuse H15Observation where useful; leave the old fixed two-tenor reader and
-five-pin snapshot unchanged. Parent re-retrieved Fed2012-32 factor definitions
-and Board rights/notices. Source proposal A/research/source-discovery/
-h15-curve-context-proposal-20261009-v1.json/d8376f65... is preparation only.
+Engine owns a small pure preparation/replay module and focused synthetic tests.
+Parent owns exact metadata freeze, private no-network Docker worker, fitting
+and integration. Invoked Infra owns finite CPU dispatcher/fault tests;
+Validation independently checks cached decisions/economics after outcomes.
+Data reuses the existing raw trio commitment4a25284d... with no new acquisition.
+Do not add a generalized RL framework, production ledger or recurring worker.
 
-Exactly level=mean3M,2Y,10Y; slope=10Y-3M; curvature=2*2Y-3M-10Y.
-Fixed30 calendar-day lag from prior-CLOSE decision ET date, complete same-date
-vector,7-day max age, no per-tenor carry/nonfinite fallback/lag search. Explicit
-revised non-PIT development assumption, never historical release/vintage proof.
-Pinned H15 snapshotd7bd515c... has2692 complete2016..2026 triples; 2686 KIS
-cohort dates have a vector with anchor-age0..3. No new rates acquisition needed.
+Use existing63-session raw price features and253 prior CLOSEs/252 returns,
+population covariance/10% diagonal shrink,0.10 annual target-risk scaling of
+balanced thirds. Raw information unchanged; fills/marks use the existing
+nearest-cent ties-even synthetic projection, never broker quote equivalence.
+Original synthetic basis100000/bank10000 fixed once; integer floors, average
+entry cost, SELL-before-BUY, actual-notional fees, atomic unchanged-state
+infeasibility/no clipping/borrowing/new basis. Interest/latency/slippage zero.
 
-Execution/Engine jointly prepare a small pure analytical integer replay:
-nominal synthetic basis100000/allocated10000 fixed once, no private account
-values. Native whole-share floors, original-bank cap, cash/reservation and
-SELL-before-BUY semantics are references, not a claim of actual broker parity.
-Reuse existing pure math rather than a production ledger/adapter/platform.
-Declare0.01 quote precision, exact supplied OPEN/CLOSE endpoint fills, immediate
-synthetic terminal fills, zero latency/slippage/interest, explicit2.5/5/10bps
-per-side analytical fees. Do not call native gross cash fee-inclusive; no
-negative cash, borrowing, new basis or fractional-to-integer rescaling.
-A fee-unaffordable exact action produces a scoped no-intent, not clipped or
-outcome-tuned quantities. No undocumented fill, dividend/TR or settlement claim.
+Freeze two causal TRAIN behaviors: rebalance to scaled balanced every21
+scheduled sessions from first eligible date, versus one first-opportunity BUY
+attempt then HOLD even if that attempt is infeasible. Snapshot each incumbent
+after prior CLOSE and before candidate OPEN. Neither behavior consumes label
+winners, DEV values or candidate predictions.965 dates/1930 paired rows;
+46 disjoint21-label geometry is not statistical ESS or independent states.
 
-Engine owns one family contract before labels/predictions/outcomes:
-same raw KIS trio commitment4a25284d..., no arbitrary new grid. Exactly one
-63-session price context and21-session decision/holding horizon; TRAIN exits
-<=2020-12-30, DEV views2021-01-04..2023-12-29 and2024-01-02..2026-09-30,
-all calendar geometry/source bindings frozen before labels.
-Use253-prior-CLOSE/252simple-return population covariance/10%diagonal shrink
-for common0.10 annual risk scaling; no covariance/weight/window search.
-Five fixed action recipes: SPY,halfSPY/TLT,halfSPY/GLD,balanced,cash.
-Targets may be deterministically risk-scaled before integer feasibility; freeze
-ties/cash/exit/tail rules and common analytical cost semantics first.
-New warmup/whole-share labels must be computed, not copied from fractional
-predecessors. Both arms use identical geometry/actions/labels/accounting.
-Cash is zero utility only in a genuinely flat zero-fee episode.
+From each identical incumbent and prior-CLOSE netNAV compare HOLD unchanged
+versus one nextOPEN balanced rebalance, then21 CLOSE marks without additional
+trades or horizon liquidation. TRAIN10bps. Infeasible rebalancing remains a
+HOLD-equivalent label; never delete that row. Structural kill: if no paired
+TRAIN incumbent changes preferred REBALANCE(delta utility>0) versus HOLD,
+close the question without fitting; magnitude differences alone do not pass.
 
-Freeze one2Ridge+2GRU matrix: each price-only and price+three-rate-factors.
-Ridgealpha1/SVD, fixedTRAIN-only scaling; GRU64/one layer/seed101/512 AdamW
-updates/lr.001/weight_decay.01/no dropout/final update only, no refit/search.
-Fixed final rate vector may join the GRU price representation; keep paired
-architecture/initialization comparable and explicit.5bps TRAIN target,
-2.5/5/10bps DEV sensitivity. Shared family600s, no per-cell multiplication.
-Freeze exact cell count, source/runtime/artifact/stop/Naive controls and
-overlap/effective-sample limitations before any numerical outcomes.
-If existing replay APIs cannot express a frozen assumption, fix or narrow that
-exact preparation before fits; do not silently inherit fractional labels.
+Two matched Ridgealpha1/SVD/intercept fits only: raw6x63 plus11 state slots
+(quantities3, entrycosts3/bank, grosscash/bank, cumulativefees/bank, projected
+priorCLOSE3/bank). Shared TRAIN-only price/state population scalers; price-only
+state slots zero, zero std divisor1, no target scaling or hyperparameter search.
+One300-second CPU family/2fits, no GPU appointment or holdout. CPU smoke first.
 
-CPU synthetic accounting/target/scaler baseline first. When sound, use the
-already-working Docker PyTorch CUDA environment for the two frozen GRU fits;
-Steward owns one exclusive finite appointment, no utilization-only jobs.
-Save all owned fitted arrays/checkpoints under A only, private/no network
-runtime, exact pins and finite containment. Scope implementation conservatively;
-no new production broker path, generalized research framework or recurring job.
+DEV same1442 marks/68 complete21-session groups/tail14 HOLD, uninterrupted
+capital/bank/fees across both views. No group liquidation; final study CLOSE
+liquidation only. Every prior-CLOSE feature/prediction/HOLD-or-REBALANCE seal
+precedes numeric currentOPEN selection; logical causality, not physical byte
+isolation. Buy-once attempt, ties HOLD, cadence/tail/terminal rules fixed.
+Controls always-rebalance, buy-once-HOLD and cash;5policies*3costs*2views=30cells.
+At10bps the state member needs positive growth and utility improvement>1e-10
+over matched price-only and all3 controls in BOTH views; otherwise reject.
+No fee/window/seed/threshold rescue or fresh-holdout/Paper/alpha claim.
 
-## Kill And Completion
+Myopic continuation targets, behavior-state coverage, state-dependent integer
+feasibility, tail/final-liquidation mismatch, drifting held risk, revised raw
+non-PIT/non-TR/seen inputs and unobserved provider finality remain explicit.
+The .10 scaling is a target, not a guarantee on held portfolio risk.
+NBERw15205/arXiv1203.5957 motivate incumbent/cost/HOLD only, not replication of
+quadratic-cost/long-short optimality. No third-party code/weights/data import.
+Actual public Claude challenge5ba22b56... is review_unavailable/cli_is_error,
+not agreement; independent contract review supports this scoped question.
 
-Data source/query/missingness and future-perturbation tests; analytical integer
-cash/fee/bank conservation; focused CPU smoke; one actual complete frozen matrix
-or exact bounded technical/input failure; independent cached numerical readback.
-At10bps, each rate-augmented member must have positive whole-view growth and
-utility improvement over its matched price-only member and all five fixed
-controls in both views. Fail the exact augmentation honestly, no clock/fee/
-seed/window rescue. Comparisons are seen-development evidence only, not fresh
-replication/holdout/winning model/Paper input/total return/net broker PnL.
-Declare old Board binary-curve, price-only conditional-hedge and fractional
-stateful-model lineages/rejections unchanged. New exogenous information and
-new integer accounting are material differences, not a history reset.
+## Existing Independent Execution And Closed Evidence
 
-## Independent Execution And Current Evidence
-
-Goal28 synthetic parity bridge complete:18 tests/final source65f35a65...,
-independent18+three fractional mutations;341 changed serial. It proves whole
-floors/fixed bank/retained cumulative/reservations and exposes the10bps exact
-full-bank fee gap. It does not prove continuous historical or broker parity.
-
-Goal27 fixed six-request capability complete: parent6872c06a.../8.362s,
-both100dates/99pre1post/rawrepeat; changed_other_pattern/half-match0/post-changed1.
-Independentaed2e81a... reattests422sources/18market/four custody files.
-No adjusted cohort or split-only/TR/PIT qualification; originals unchanged.
-Goal26 historical owned gross remains positive, not fee/net/model alpha.
+Goal29 R2fd4c2607... completed4fits/54cells/rejected both: resultc3a26130...,
+parent138a05e3.../58.579s/430sources575inputs unchanged/reaped/absent/lease
+released; native ALL-ROd13d396d.../54.079s. Independent cached-action Fraction
+ledger1a0a4bdf.../2.272s exactly reproduces54cells/rejections; custodyc120a889...
+closed/non_promoting_completed/zero sealed spend. Original no-fit failure and
+host308 exact risk-weight discrepancies remain retained/unresolved; no host
+runtime equivalence, independent risk/model reinference or tolerance waiver.
+Original600-second family/100debit+500remaining was not reset. Older rejected
+fractional/stateful/curve families remain closed, not relabeled survivors.
 
 Goal25 owns thericher-kis-paper-portfolio-control-20261009 Oct9 13:45UTC/
-22:45KST, fixedsession portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb...
-and original shared10%/SPY/TLT/GLD/QQQ custody. Future actual submit/fill/closure
-not_observed. One-shot chat follow-up23:05KST; do not manually invoke/substitute/
-reset or expand that opportunity. Existing head/baseline schedules distinct.
-Do not wait in foreground; this independent study advances meanwhile.
+22:45KST, session portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb...
+and original shared10%/SPY-TLT-GLD-QQQ custody. Future submit/fill/closure remains
+not_observed. One-shot chat follow-up23:05KST; no manual invoke/substitution/
+identity reset/schedule expansion or foreground wait.
 
-Claude's bounded new H15 direction challengedbb4afc6... returned
-review_unavailable/cli_is_error, not agreement. Independent source review
-supports only the scoped month-old context question, not promotion.
+## Completion And Continue
 
-## Verify And Continue
-
-Follow AGENTS.md changed-path serial/clean-root eight-worker authority,
-Ruff and three sample-env Compose at company integration. Focused-verify small
-isolated packages as they release; do not repeat full tests per package.
-Verify/commit/push owned changes, refresh projections, replace with exactly one
-next material objective and continue when no true operator decision blocks.
-Market M=D:/market_data; artifacts A=D:/thericher-v2/model-artifacts; D15%floor.
-Private no-cost/Paper work delegated. Never read/routeKIS_LIVE_*, real money,
-paid commitments, unclear rights, public services or major runtime replacement.
+Focused causal/future-perturbation/state/fee/bank tests; metadata freeze before
+values/labels/fits; CPU smoke; one bounded actual structural termination or
+complete30-cell comparison; independently bound cached economic readback.
+At company integration run changed-path serial, clean-root8-worker authority,
+Ruff and all3 sample-env Compose; do not repeat full tests per role package.
+Commit/push, refresh projections, replace this with exactly one material next
+objective and continue while no true operator-authority decision blocks.
+M=D:/market_data; A=D:/thericher-v2/model-artifacts; D15%floor. Private no-cost/
+Paper work delegated; never read/route KIS_LIVE_*, real money, paid commitments,
+unclear rights, public serving or major runtime replacement.

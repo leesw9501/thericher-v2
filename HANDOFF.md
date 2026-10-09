@@ -60,12 +60,45 @@ SELL-before-BUY accounting is not actual fill chronology. Exact full-bank
 10bps overlay can have negative analytical cash while native gross preview
 is feasible: fee-inclusive affordability is not established by that preview.
 No production state/code/risk changes or continuous historical parity claim.
-Goal29 now prepares one matched price-only versus lagged H15 factor comparison
-with common analytical whole-share/fixed-bank/fees and two Ridge/two CUDA GRU
-fits under one frozen budget. Free Board Treasury source proposal d8376f65...
-is independently re-retrieved, not a campaign or performance result. Fixed
-30-calendar-day lag is an assumption/revised non-PIT, not publication proof.
-Claude direction challengedbb4afc6... is unavailable/cli_is_error, not agreement.
+Goal29 actual R2 comparison COMPLETE/REJECTED54 cells at A/research/
+kis-lagged-rate-whole-share-policy-development-v1-quote-projection-r2.
+Contractfd4c2607.../430sources575inputs/965TRAIN68DEV groups. Two CPU Ridge and
+two CUDA GRU512-update fits completed; worker53.272s/parent58.579s,
+resultc3a26130.../parent-run.json6fc11d24... source/input unchanged/reaped/
+absent/lease released. CUDA fits2.180s+1.816s/peak508246016bytes. Native ALL-RO
+parent-verify.json321307ed...54.079s passes cached economic/model/action binding,
+no refit/GRU reinference/search/write. Independent cached-action Fraction
+ledger validation-cached-ledger-readback.json/1a0a4bdf.../2.272s exactly
+reproduces54economic cells/rejections; independent cash/fees/average-cost/bank,
+shared source/calendar only. Custodyc120a889... closed/zero sealed spend.
+First host validation-readback.json/b4ac3020... fails308 exact risk-action
+weights/cause unknown; retained/no tolerance waiver or host/runtime/model
+equivalence claim. This does not invalidate separately exact native readback.
+At10bps rates GRU+13.33%/+2.13% loses to fixed controls in view2; rates Ridge
+-3.28%/+14.13% fails positive view1. Both original all-control utility kills
+reject; no survivor, fresh holdout/replication/Paper input or broker netPnL.
+Original exact-cent-sourcef9252f7a... failed before fits/starts/cells;16.928s/
+429sources573inputs unchanged/reaped/absent/lease released. Native diagnosis
+quote-grid-diagnostic-v4.json proves386 subcent fields; closureaec96a90.../
+custodybac71726... preserved. R2 nearest-cent ties-even synthetic fills/marks
+leave raw features/covariance unchanged; not broker quotes or adjustment proof.
+Same600-second family/100prior debit+500worker, four cumulative fitted models.
+TRAIN nominal-flat labels omit continuously evolving DEV state. Fixed30-day
+rate lag is revised non-PIT development, not vintage/publication evidence.
+Public Claude directiondbb4afc6... and quote challengeb702c8c4... returned
+review_unavailable/cli_is_error, not agreement. Independent scoped source and
+R2 five-check review found no P1/P2; no new grid or result rescue.
+
+Current Goal30 prepares CPU-only incumbent-conditioned HOLD/rebalance payoff
+alignment:2causal TRAIN behavior states/1930pairedrows, same prior-CLOSE netNAV
+counterfactual21marks/no horizon liquidation,2matched Ridge fits/30cells/one
+300s family after structural action-order kill. Continuous DEV/tailHOLD/final
+study liquidation, no group bank reset. Engine owns new pure module/tests;
+parent worker/freeze and invoked Infra dispatcher/tests run in parallel.
+No GPU/holdout/Paper promotion, rate graft or rescue of closed results.
+Myopic targets/behavior support/held-risk/raw limits remain. Public challenge
+5ba22b56... unavailable/not agreement; independent contract check supports
+the scoped causal sequencing. NEXT_CODEX_GOAL.md carries exact current limits.
 
 Goal25 preparation COMPLETE, not future runtime closure.
 
@@ -194,10 +227,12 @@ Independent source reviewers corrected concrete faults; ready work continues.
 
 ## Verification And Resume
 
-Latest Goal26 authority405changed serial/13092pass22skip35warnings/
-13114collected/eight clean workers/333.62s/helper0/reaped/temp cleaned;
-pure helper55/independent55+5, external caller32 separately pass.
-Goal25 authority387serial/13037full22skip/334.30s remains historical.
+Latest Goal29 changed serial437pass3.53s; full eight-worker13422pass22skip/
+35warnings/13444collected335.87s. Current managed temp/lease removed and no
+matching worker remains. Final helper exit was not delivered after tool-session
+retirement; do not represent it as separately observed helper0. Earlier
+Goal28 authority341serial/13161full22skip333.89s remains historical.
+External R2 caller43/worker18 synthetic focused tests separately pass.
 Ruff/default/research/accounting Compose
 with --env-file .env.example pass. External caller/source pins/default-inert/
 actual preview/closed execute and task install separately attested.

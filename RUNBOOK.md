@@ -66,11 +66,53 @@ exact full-bank gross preview may leave negative analytical fee-adjusted cash;
 future replay must explicitly reject unaffordable actions, not silently borrow.
 No production code/state/risk/sizing/schedule change.
 
-Goal29 integrated study prepares disjoint Data three-tenor lagged features,
-Execution small pure analytical integer/fee replay and Engine matched2Ridge+
-2CUDA GRU fits under one frozen family budget. No implementation/fit result
-yet; exact source/target/split/scaler/geometry/cost/kill/runtime custody and CPU
-smoke precede fits. Synthetic parity is only an engineering reference.
+Goal29 R2 actual COMPLETE/REJECTED54cells at
+D:/thericher-v2/model-artifacts/research/kis-lagged-rate-whole-share-policy-development-v1-quote-projection-r2.
+precommit.json/fd4c2607c771e8ac02c3b23b6ec15e2603a6c1807c3306038db86976167baf5f;
+worker-result.json/c3a26130409bbf59955d124f4a44f785d85e5f68522b3a9c08292e051d1b39ce.
+Source430/input575/965TRAIN/68DEV groups, actual2CPU Ridge+2CUDA GRU512 fits;
+worker53.272s/parent58.579s; two CUDA fit times2.180s/1.816s and peak508246016.
+parent-run.json exact6fc11d243b814a81a28da66ebb528e66 proves complete/reaped/
+absent/unchanged sources-inputs/lease released/network none/no credentials.
+CPU smoke3.211s and native ALL-RO parent-verify.json321307edb88744cc9f4c792cd0bb09bd/
+54.079s complete; cached economic/model/action binding, zero refit/GRU
+reinference/search/write. Independent validation-cached-ledger-readback.json/
+1a0a4bdf.../2.272s exactly reproduces54cells/rejections with a separate Fraction
+cash/fees/average-cost/continuous-bank oracle and cent projection. Uses observed
+sealed actions/shared loader/calendar, not independently recomputed risk/model.
+First validation-readback.json/b4ac3020... preserves308 exact host action-weight
+discrepancies/cause unknown/no tolerance waiver. No host runtime equivalence.
+Custody-outcome.json/c120a889... closes/non_promoting_completed/zero sealed spend.
+At10bps rates GRU+13.33%/+2.13% improves price-only but loses fixed controls
+in view2; rates Ridge-3.28%/+14.13% fails positive view1. Original BOTH-view
+all-control utility kill rejects both; no promotion/Paper input/holdout/netPnL.
+
+Original exact-cent attempt at D:/thericher-v2/model-artifacts/research/
+kis-lagged-rate-whole-share-policy-development-v1 remains failed before fits/
+starts/cells/16.928s/reaped/absent/source429/input573 unchanged/lease released.
+Native read-only quote-grid-diagnostic-v4.json proves386 subcent OC fields;
+failure-closure.json/aec96a90... and custody-outcome.json/bac71726... unchanged.
+R2 declares nearest-cent ties-even synthetic fills/marks while preserving raw
+price features/covariance. Same600-second family/100conservative debit+
+500worker allowance/four cumulative fits, not an extra matrix or budget reset.
+TRAIN nominal-flat labels are state-omitted approximations, not exact continuous
+incumbent counterfactuals. Used R1/R2 drivers/archives/results remain immutable;
+never repeat their run/smoke phases or alter original kill. Final independent
+readback and registry closure only append their own exact evidence.
+
+Current Goal30 root D:/thericher-v2/model-artifacts/research/
+kis-whole-share-hold-rebalance-payoff-alignment-v1, preparation only.
+Engine owns pure incumbent/label/scaler/causal replay tests; parent metadata
+freeze/worker and invoked Infra CPU dispatcher/fault tests are disjoint.
+One300s CPU/2Ridge/30cell matrix,1930 paired TRAIN states/no ESS/zero sealed
+spend; no GPU appointment. Structural preferred-action-order kill before fits.
+Same prior-CLOSE netNAV counterfactual branches; continuous DEV/tailHOLD,
+final liquidation only; no future OPEN access before decision seal. No actual
+freeze/fit/result claimed yet. NEXT_CODEX_GOAL.md owns complete fixed contract.
+Claude source-discovery/claude-whole-share-hold-rebalance-20261009-v1.json/
+5ba22b56... is review_unavailable/cli_is_error, not agreement; one public-only
+challenge, no unchanged retry. Independent causal contract review supports
+payoff alignment, not model profitability or promotion.
 Primary-source proposal D:/thericher-v2/model-artifacts/research/source-discovery/
 h15-curve-context-proposal-20261009-v1.json/d8376f6522ca2f4342f13d567350ad1f03393840c6ecce0828c2f7c0346ec267
 re-retrieves Fed2012-32 level/slope/curvature definitions and Board rights/
@@ -175,8 +217,12 @@ unknown/funds reference-only. Preview did not publish a newer snapshot.
 Retained Goal21 actual SELL/twoBUY fill closure980ccc6b... and Goal22 repeat
 cd14cad0... stay valid; client recreation is not host reboot.
 
-Latest Goal28 authority:341 changed serial;13161pass22skip35warnings/
-13183collected/eight clean workers/333.89s/helper0/reaped/temp cleanup.
+Latest Goal29 authority:437changed serial3.53s;13422pass22skip35warnings/
+13444collected/eight workers335.87s. Current-run managed temp/lease removed,
+no matching active worker. Final helper exit not returned after tool session
+retirement; not separately observed helper0. Ruff and all three sample-env
+Compose configurations pass. External R2 caller43/worker18 synthetic pass.
+Goal28 historical341serial/13161pass22skip333.89s remains valid for its snapshot.
 Goal27 historical197serial/13143pass22skip336.78s remains valid for its snapshot.
 Goal26 historical405serial/13092pass22skip333.62s remains valid for its snapshot.
 Goal25 historical387serial/13037full22skip334.30s remains valid for its snapshot.

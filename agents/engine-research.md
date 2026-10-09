@@ -16,12 +16,33 @@ Goal28 synthetic whole-share/fixed-bank bridge COMPLETE:65f35a65.../18cases/
 341related serial/independent18+three fractional mutations. Exact full-bank
 10bps fee overlay exposes negative analytical cash; native gross preview is
 not fee-inclusive affordability. No continuous historical/broker parity proof.
-Goal29 one new-input comparison prepares paired price-only/rate-context Ridge
-and CUDA GRU under identical analytical integer replay, fixed63/21 geometry,
-253-close covariance/risk and one600-second family allowance. No fits/GPU
-allocation until exact Data/replay/target/scaler/runtime contract and CPU smoke.
-This defers only this preparation, not independent Paper work. Runtime/authority
-works; do not fabricate utilization-only training or rescue rejected families.
+Goal29 R2 actual is COMPLETE/REJECTED54cells at
+A/research/kis-lagged-rate-whole-share-policy-development-v1-quote-projection-r2.
+Contractfd4c2607.../430sources/575inputs/965TRAIN/68DEV groups; same four
+matched fits,63/21 geometry,253-close covariance/risk. Parent6fc11d24.../
+58.579s, worker53.272s/resultc3a26130...; two CPU Ridge fits and two CUDA
+GRU512-update fits (2.180s/1.816s, peak508246016bytes). Exact parent-run.json
+source/input unchanged/reaped/absent/lease released. CPU smoke3.211s and
+native ALL-RO parent-verify.json321307ed.../54.079s complete; zero refit,
+GRU reinference, search or input/source writes. Independent cached-action
+Fraction ledger1a0a4bdf.../2.272s exactly reproduces54cells/rejections, separate
+cash/fee/average-cost/bank oracle; custodyc120a889... closed/zero sealed spend.
+First host readbackb4ac3020... preserves308 exact risk-weight discrepancies;
+cause unknown/no tolerance waiver, no independent model/risk reinference or
+host runtime equivalence. Native exact readback remains separately valid.
+At10bps rates GRU growth+13.33%/+2.13% improves its price-only member but loses
+to fixed controls in view2. Rates Ridge-3.28%/+14.13% fails positive view1.
+Both original BOTH-view all-control utility kills reject; no survivor/Paper
+input/holdout/independent replication/net broker PnL claim.
+Originalf9252f7a... failed before fits/starts/cells,16.928s/reaped/absent/
+429sources573inputs unchanged/lease released; closureaec96a90.../
+custodybac71726... preserved. Native RO diagnosis proves386 subcent OC fields.
+R2 raw features/covariance stay unchanged; nearest-cent ties-even projection
+applies only to synthetic labels/fills/marks, not broker quote equivalence.
+Same600-second family:100 prior debit+500 worker allowance, no extra matrix
+or budget reset. TRAIN nominal-flat labels omit evolving DEV account state;
+not exact counterfactuals for continuous balances. Runtime/authority works;
+do not fabricate utilization-only training or rescue rejected families.
 Parent primary-source proposal A/research/source-discovery/
 h15-curve-context-proposal-20261009-v1.json/d8376f65... verifies Fed2012-32
 level/slope/curvature mechanism, not ETF-profit evidence. Existing complete
@@ -107,9 +128,15 @@ Positive backtest growth is not broker net profit or independent alpha.
 
 ## Breadth / Depth / Ensemble / Replication
 
-Breadth: pairwise-reversal ANTICOR actually rejected; retain its fixed recipe.
-Next distinct source-only conditional-hedge utility adapter compares fixed SPY,
-half-SPY/TLT,half-SPY/GLD,balanced,cash actions rather than asset-return argmax.
+Breadth ready: Goal30 CPU-only HOLD/rebalance payoff-alignment preparation.
+Two causal TRAIN behavior incumbents/1930pairedrows, same prior-CLOSE netNAV
+counterfactuals, no21-session forced liquidation;2matched Ridge fits/30cells/
+one300-second family after structural state-action-order kill. No new rates,
+GPU appointment, holdout or broker path. Parent/invoked Infra prepare driver;
+Engine owns one small pure module/tests. Myopic/coverage/drifting-risk/raw
+limitations and all old rejections remain. Claude5ba22b56... unavailable,
+not agreement; independent contract review found no temporal contradiction.
+Pairwise-reversal ANTICOR actually rejected; retain its fixed recipe.
 Conditional-hedge study is now COMPLETE/REJECTED42 cells, exact root
 A/research/kis-cross-asset-conditional-hedge-utility-development-v1-runtime-recovery-r2.
 Contract56787514.../result6f08e1c0.../413-file tree88e8f6b3... . One Ridge and

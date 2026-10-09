@@ -8,12 +8,28 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal29 rate-context/whole-share preparation is ready to implement, not allocated:
-Data strict lagged triple and Execution integer/fee replay precede one frozen
-four-fit price-only/augmented Ridge+GRU family. Fixed63/21 geometry, matched
-accounting/targets/controls, shared600s and54 planned policy/cost/view cells;
-exact geometry/lineage/stop/runtime must freeze before outcomes. No new lease,
-fits or sealed spend yet. d8376f65... public-source proposal is not custody.
+Goal29 R2 allocation completed: contractfd4c2607.../430sources/575inputs,
+965TRAIN/68DEV groups/4actualfits/54cells at A/research/
+kis-lagged-rate-whole-share-policy-development-v1-quote-projection-r2.
+Parent6fc11d24.../58.579s, worker53.272s/resultc3a26130...; two CPU Ridge and
+two CUDA GRU512-update fits/3.996s combined GPU fit time/peak508246016bytes.
+Original both-view kill rejects both rate-augmented members. Source/input
+unchanged/reaped/absent/exclusive lease released. Native ALL-RO321307ed.../
+54.079s complete; independent cached-action Fraction ledger1a0a4bdf.../2.272s
+matches54cells/rejections. Custodyc120a889... CLOSED/non_promoting_completed/
+zero sealed spend. First host risk-action308 exact discrepancies remain
+unresolved, no tolerance/host-runtime/model-reinference claim. No active
+allocation or ready depth survivor. Goal30 CPU-only2-fit/300s HOLD-rebalance
+payoff preparation is ready; no GPU appointment, idle-resource filler or
+implicit reopening of a closed family. Other preparation/Paper continues.
+Originalf9252f7a... failed before fits at source preparation;16.928s/reaped/
+absent/429sources573inputs unchanged/lease released. Closureaec96a90.../
+custodybac71726... preserves exact failed attempt and native subcent diagnosis.
+Same-family R2 fixed synthetic quotes leaves raw information unchanged;
+conservative100-second debit+500-second worker within original600s. Four
+cumulative completed fits, no budget refund or statistical rescue. TRAIN
+nominal-flat labels omit evolving DEV state; no ESS, holdout or sealed spend.
+Proposal d8376f65... remains source evidence, not custody.
 Goal28 synthetic parity18 tests cannot attest historical or broker fills/fees.
 Existing closed allocations below remain closed; GPU/authority works.
 

@@ -67,12 +67,15 @@ custody files unchanged/exact native DTO/query/clocks/category; no network/keys.
 Original cohorts/current Paper/rejected families unchanged. Goal28 synthetic
 parity bridge complete, no Data quality permission gate. Goal29 Data owns one
 strict raw Board Treasury parser/3M2Y10Y same-date selector with30-calendar-day
-lag/7-day max age and focused source/missingness/future-perturbation tests.
+lag/7-day max age. Released78e35b9f.../80tests/.16s/commit02f4c4f pushed;
+exact Fraction factors/strict source/missingness/future-perturbation checks.
 Fresh d7bd515c... snapshot verified before/after; exact3 series IDs
 RIFLGFCM03_N.B/RIFLGFCY02_N.B/RIFLGFCY10_N.B/percent-year.2016..2026 has2809
 date rows/2692complete triples/117sharedND, no duplicate/unordered/invalid
 selected values.2686 source-calendar dates have a lagged triple, age0..3.
-Geometry preparation only: no rate features/labels/model outcome computed.
+The exact snapshot subsequently feeds Goal29's frozen four-fit development
+comparison; both augmented models fail their original kill. This is not a
+rates-source/PIT qualification, missing-data excuse or Paper authority hold.
 Old two-tenor five-pin reader unchanged; this does not graft new input onto
 closed campaigns or claim historical publication/vintage/PIT. Proposald8376f65...
 under A/research/source-discovery is parent-retrieved public source evidence.
