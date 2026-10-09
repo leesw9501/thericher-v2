@@ -2,6 +2,25 @@
 
 ## Current Owned Opportunities And Research
 
+Goal50 native COMPLETE at
+D:/thericher-v2/model-artifacts/research/kis-stock-temporal-memory-development-v1:
+precommit7c3128a3.../bounded-closure83db6e20.../custodyece4ce31... .
+CPU22.958s/actual9 CUDA market fits199.555s call wall/run324.274s/cached54.049s,
+401.282s cumulative<600/48 cells; all reaped/absent/unchanged/lease released/
+books flat/zero missing/exact accounting. Never restart closed phases or refund.
+Memory/flat/blend reject; TCN only non-promoting seen follow-up. Original Paper
+TCN20 bytes unchanged. Verification.json:160 serial/398 source/23 independent/
+full clean8:15106pass22skip35warnings342.12s/Ruff/three sample-env Compose pass.
+Four archived independent harness lint findings and failed weekly serial remain
+explicit; neither is a passing claim. Current-only verification retains all OLD
+guards; no isolated speedup claim. NEXT native sessions need no new fit/GPU.
+Post-close Data handoff is under
+D:/thericher-v2/model-artifacts/data/kis-current-pooled-equity-refresh-next-session-v1/
+post-close-handoff-v1.json/67e230e1... . Parent may use owned native caller only
+after Oct9 20UTC with exact f78 contract; caller return after publication and
+strict bound offline reader own actual result evidence. No collection yet.
+Existing finite04:50KST EXIT is separate; never manually invoke or substitute.
+
 Goal49 source preparation COMPLETE/closure9296cf75...; no new native order/schedule.
 Session API reuses original TCN20/model-byte attestation and prior61 prices with
 113 official calendar labels; actual scorer completion is the new decision time.

@@ -71,6 +71,8 @@ def test_fixed_scores_distinct_from_momentum_and_immutable(arm):
         "pointwise60",
         "peer20",
         "peer60",
+        "memory20",
+        "flat20",
     ],
 )
 def test_additional_model_identity_uses_same_supplied_score_book(arm):

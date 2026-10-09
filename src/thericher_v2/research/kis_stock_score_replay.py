@@ -26,6 +26,8 @@ SUPPORTED_ARMS = (
     "pointwise60",
     "peer20",
     "peer60",
+    "memory20",
+    "flat20",
 )
 
 

@@ -2,78 +2,99 @@
 
 ## Objective
 
-Complete kis-stock-temporal-memory-development-v1: test whether one fixed
-temporal-memory representation improves five-session stock selection beyond
-matched flat20 and fresh TCN20 controls. Deliver a bounded actual CPU/CUDA
-development comparison, not a new profitability gate or Paper replacement.
+Complete kis-stock-repeatable-native-session-input-v1: connect a fresh observed
+stock input and the original final TCN20 to one repeatable native per-session
+decision that the existing KIS Paper lifecycle can consume without hand-editing
+dates, symbols, source clocks or retained identities. This advances Paper
+readiness; no new model training or profitability gate.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal49 source preparation closed9296cf75...: two synthetic sessions/different
-top1, durable restart, retained multi-symbol original bank and exact recovery.
-1954 changed serial/68 independent/178 Data checks/full clean8:15104pass22skip/
-35warnings339.91s;15126 serial-collected/Ruff/three sample-env Compose pass.
-This is source preparation only, not native repeatable stock trading.
+Goal50 closed83db6e20.../contract7c3128a3.../result90f12bca.../custodyece4ce31...:
+9 actual CUDA market fits199.555s/48cells/401.282s<600; all unchanged/reaped/
+absent/lease released/flat/zero missing/exact accounting. Memory/flat/blend
+reject; TCN only seen non-promoting follow-up. Original Paper TCN20 bytes
+9de27944... remain fixed, not replaced by the new study.160 serial/398 source/
+23 independent/full clean8:15106pass22skip35warnings342.12s/Ruff/three sample-env
+Compose pass. Source-only progress P2 repaired; used failures stay immutable.
 
-Proposal84b03c5f... and independent primary-source reread430e65c9... are under
-A/research/kis-stock-temporal-context-proposal-v1. HiPPO-inspired finite-window
-adaptation is original composition, not author code/weights or a claim that
-nonfinancial paper benchmarks prove stock performance. No new dependency.
+Goal49 source session4d848c18.../recoveryb6607c0e.../multi-owner bank1092dea1...
+is prepared but not native repeatable delivery. Native source proposal414fdfab.../
+clarification46213a.../review6840f746.../route note6e6b66e2... under
+A/execution/kis-stock-repeatable-native-paper-preparation-v1 identify the exact
+Data/calendar/venue, original scorer, retained identity and consumer edges.
 
-## Frozen Research Package
+## Bounded Work And Parallel Ownership
 
-Before actual model work freeze one new family with original128 identities,
-OLD800/CURRENT113 bindings, prior61 eligibility and last20 ON/ID sequence.
-Keep raw/current-listed/non-PIT/actions/finality/seen-development limitations.
-Reuse original ordinal labels, five-session purge, prefix-only equal-date
-population scaler, min120 complete dates and both classes. No old fitted weights,
-outcome-driven window/order/seed rescue, holdout access or closed-family refund.
+Engine owns the minimal session-route contract and original-model scorer:
+preserve all128 research identities, full original engineering cohort and
+every eligible score. Bind complete source-attested route categories before
+scoring; declared NAS or a successful price query alone is not primary venue.
+Only exact supported NASDAQ routes enter an explicitly labeled route-constrained
+rank-one Paper choice. Unknown/unsupported keys cannot fabricate NASD or stop
+supported peers. One supported key is enough if the unchanged original cohort
+has at least10. No supported route yields session-local no-intent. Do not
+silently call this original unrestricted rank one or change training/labels.
 
-Models: memory20 uses fixed order8 per channel, the proposal's float64 bilinear
-recurrence/reset and final16 coefficients -> Linear32/GELU/logit; flat20 uses
-the same raw40 values -> Linear32/GELU/logit; TCN20 uses fresh original four
-causal layers16/k3/dilations1/2/4/8. Keep recurrence/scaling float64 until the
-readout. Train all with seed101/Adam.001/four epochs/shuffled512 rows and
-mean weighted BCE, row weights N/(complete_dates*peers_on_date).
-The fixed blend is exactly one-half memory20 plus one-half TCN20, not all-three.
+Data owns independently retrieved official static venue metadata and the
+fresh100-completed/800-calendar adapter. Preserve exact original128 identities,
+all missingness and actual collection clocks. Take final113 official labels
+ending at the next session, using only required prior61 Bars. Never graft OLD
+prices, infer prior-close publication or treat finality as proven.
+Frozen f78c372f.../446pins and post-close handoff67e230e1... under
+A/data/kis-current-pooled-equity-refresh-next-session-v1 may collect only after
+Oct9 CLOSE20UTC through its existing owned caller. Keep one client/measured
+gate/separate cache and raw values on D. Bind exact caller/worker/index/cache
+chain with the offline reader; partial/unavailable stays scoped, not a new gate.
 
-Three prefix cutoffs427/610/799, nine maximum fits, eight policies including
-four unchanged momentum/cash controls,48 cells across whole/fractional and
-5/10/20bps. One600s smoke/run/cached-verify family, no per-cell multiplier.
-Freeze source/input pins, exact device-attempt facts, artifacts, stop rule and
-custody before fits. CPU synthetic smoke precedes one exclusive GPU appointment.
-Verify without refit/inference. Preserve every missing outcome and raw-gap
-attribution. Memory must beat flat/TCN/all controls in whole10bps utility with
-drawdown no greater than either learned control; fixed blend has a separate
-member/control kill. A survivor is only non-promoting seen follow-up.
+Execution owns fresh-copy native lifecycle adaptation: typed session receipt,
+original total-basis .01 target inside existing .10 bank, exact persisted BUY
+identity, original parent/TTL through restart, cash-free owned EXIT and the
+existing pure recovery directive. Reuse bounded Goal46/47 containment and
+Paper-only selective loader; do not replace an unknown intent or rerank another
+symbol after broker rejection. Parameterize official session clocks/early close
+rather than edit a prior receipt. No live path, new ledger or foreign adoption.
 
-## Parallel Ownership
+Parent integrates the existing CPU numeric reloader/runtime, reviewed source
+and immutable session handoff. Validate original NPZ/hash/schema/scaler/source,
+zero refits, exact original model/window and actual pre-OPEN completion/CLOSE
+expiry. Use one finite120s native CPU decision attempt with no account/credential/
+network mount; label a late/incomplete attempt narrowly, never tradable.
+Validation independently attacks frozen releases, especially two sessions/
+different supported top1, unknown first submission, second-symbol shared-bank
+capacity, restart, early close and route-map alias/binding changes.
 
-Engine owns models/worker/screen. Data owns exact loader/cohort reuse and a
-current-only cached verifier that omits unused OLD numeric decoding, never OLD
-hash guards. Full/current-only synthetic parity must match cohorts, action
-seals, missingness, cells and attribution exactly or reject the optimization.
-Parent owns minimal metadata/caller/custody integration; reuse bounded R48
-transport/book rather than a new study platform. Add only analysis arm names
-memory20/flat20 when required; no execution-risk or broker route changes.
-Validation independently attacks released source, not a model it tuned.
+## Existing Owners And Runtime Scope
 
-Existing finite Goal47 EXIT owns04:50..05:00KST Oct10/job2a5135f3...; do not
-manually invoke, replace its intent or infer fills from task exit. Fresh Data
-contractf78c372f.../446pins is metadata-frozen under
-A/data/kis-current-pooled-equity-refresh-next-session-v1/native-frozen-input.
-Its owned caller may collect after Oct9 CLOSE20UTC, never before, with one
-client/measured gate/separate cache. No installed due or fresh collection is
-claimed. These owners do not block prepared research or create a new schedule.
+Goal47 exact EXIT job2a5135f3.../image93b769b5... owns Oct10 04:50..05:00KST.
+Do not manually invoke, substitute, renew or change this pinned opportunity.
+Inspect only exact safe task/outcome facts after eligible execution and strict
+in-process private categorical projection. A terminal fill is not current flat.
+Its pinned parser rejects multiple stock symbols; leave it untouched while
+active. Before any later multi-symbol write, all canonical readers/writers
+must receive coherent compatible source together. Prepare code-only delivery
+without replacing the active job; any installation follows exact owner closure.
+No new order or schedule is claimed by source preparation alone.
 
-## Finish And Continue
+Public-architecture discovery may finish one source-only handoff in parallel;
+it is not GPU allocation or a second company goal. Future training needs its
+own independently retrieved source and frozen finite contract. Closed families
+stay closed; an external wait belongs to its worker, not foreground sleep.
 
-Ask Claude a concise target/scaler/ensemble/seen-sample challenge before relying
-on this comparison; unavailable is not agreement or a foreground hold. Verify
-focused and independent source, changed-path serial/full clean8 when shared
-analysis source changes, Ruff and three sample-env Compose configurations.
-Record actual fits/device/debit/missingness/accounting/result and close custody.
-Commit/push, refresh stateboards and ONE material next objective, then continue.
-Never read KIS_LIVE_*, refit closed families, or treat a research gain as broker
-net profit. Market data/artifacts stay on D with15% minimum free space.
+## Completion Evidence And Continue
+
+Ask Claude a concise route/universe/clocks/recovery challenge before relying
+on changes; unavailable is not agreement or a hold on delegated preparation.
+Source/synthetic full128 feature-score parity, explicit route selection,
+two-session durable recovery and native original-model readback must be linked.
+Run actual CPU per-session decision on exact eligible fresh data if available;
+otherwise record exact scoped missing input and finish every ready adaptation
+rather than claim native success. Company closure needs its actual required
+runtime evidence, not merely a commit or synthetic pass.
+
+Focused checks first; changed-path serial/full clean8 when shared session or
+control source changes, Ruff and three sample-env Compose configurations at
+integration. Refresh stateboards, commit/push, replace this with ONE material
+next company objective and continue. Keep credentials/private rows/order IDs
+out of all output, artifacts and Git; never read KIS_LIVE_*.

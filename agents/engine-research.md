@@ -7,6 +7,22 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
+Goal50 COMPLETE: A/research/kis-stock-temporal-memory-development-v1,
+contract7c3128a3.../result90f12bca.../closure83db6e20.../custodyece4ce31... .
+Actual9 CUDA market fits199.555s/48cells/401.282s cumulative<600; CPU smoke
+preceded CUDA and cached verification spent zero fits/inference. All unchanged/
+reaped/absent/lease released/flat/zero missing/accounting and attribution exact.
+Whole10bps/fixed10% seen growth: memory+.1653%, flat-1.3015%, TCN+.9564%,
+fixed half-memory/half-TCN+.9997%. Memory/flat/blend reject; TCN only seen
+follow-up. No new Paper model, holdout, replication or alpha claim.
+Source2b88eb88.../workeraa650e36...;398 released/23 independent checks.
+Counter-only failed progress P2 repaired; source-only original falsifiers remain.
+Breadth: bounded primary-source PatchTST/TSMixer alternatives delegated to
+Euclid; proposal is source_unverified until independently re-retrieved, not a
+training queue or allocation. Depth: fresh prospective original-TCN observation,
+not reusing seen evaluation as an independent sample. NEXT native per-session
+original-model adapter proceeds without GPU/refits; original9de27944... retained.
+
 Goal49 CLOSED9296cf75...; session4d848c18... released69 tests/23 independent
 falsifiers pass. Actual completion clock, prepared-envelope revalidation and
 existing KIS symbol grammar repairs preserve original final TCN20 SHA9de27944...
@@ -15,10 +31,8 @@ calendar, model bytes and trusted numeric loader remain caller attested. No fit,
 market input, target or native inference was used in this source preparation.
 Source-only HiPPO-inspired finite-memory proposal84b03c5f... was independently
 reread430e65c9... under A/research/kis-stock-temporal-context-proposal-v1.
-Distinct inductive bias, not new information or an allocated campaign; no weights
-or new dependency. NEXT assigns one fixed-memory/flat/freshTCN family with
-48cells/9fits/one600s budget. Freeze its own rules/custody before fitting; old
-families remain closed and seen-data reuse cannot create independent replication.
+Distinct inductive bias, not new information or a new dependency. Its completed
+Goal50 allocation above stays closed; no rescue tuning or budget refund.
 
 Goal48 native development CLOSED at A/research/kis-stock-peer-attention-development-v1:
 contract984651c7.../451sources7inputs/resulte336641a.../closure9e9cb00b.../

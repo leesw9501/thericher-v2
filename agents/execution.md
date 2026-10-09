@@ -8,6 +8,17 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal50 actual research completed83db6e20.../9CUDAfits48cells, no account/order/
+private bank operations or model replacement. NEXT native session preparation
+reuses original TCN20, exact original10% bank and .01 total-basis target.
+Source proposal414fdfab.../clarification46213a.../review6840f746.../route note
+6e6b66e2... under A/execution/kis-stock-repeatable-native-paper-preparation-v1.
+Route-constrained selection must be explicit and prebound, not venue inferred
+from a symbol or successful quote. Compatible multi-owner consumers must be
+delivered together before a second-symbol write. Tonight's pinned Goal47 parser
+still rejects multi-symbol banks; leave its exact job untouched while active.
+No new native session/order/delivery/schedule is claimed by this proposal.
+
 Goal49 source preparation COMPLETE/closure9296cf75...: retained-stock V4 compatibility
 1092dea1.../3bf5fa6e... and exact recovery router. Parent two-session synthetic
 integration preserves original bank, old unknown reserve and every legacy owner.

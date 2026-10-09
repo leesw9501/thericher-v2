@@ -20,6 +20,30 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
+Goal50 native temporal-memory development COMPLETE at
+A/research/kis-stock-temporal-memory-development-v1: frozen7c3128a3.../
+453sources7inputs/result90f12bca.../closure83db6e20.../outcomeece4ce31... .
+Nine actual CUDA market fits199.555s call wall/48cells; CPU22.958s/run324.274s/
+cached zero-fit zero-inference verify54.049s, cumulative401.282s<600.
+All unchanged/reaped/absent/lease released/books flat/zero missing cells/exact
+accounting and stock-day attribution. Whole10bps/fixed10% seen growth:
+memory20+.1653%, flat20-1.3015%, freshTCN20+.9564%, fixed two-member blend+.9997%.
+Memory fails control/TCN utility; blend fails member drawdown. Only freshTCN
+allows non-promoting seen follow-up, not alpha or a changed Paper model.
+Original TCN20 Paper bytes9de27944... remain unchanged.
+160 changed serial/398 released source/19 independent plus4 type falsifiers/
+clean8:15106pass22skip35warnings342.12s/repo Ruff/three sample-env Compose pass.
+Failed-progress binding P2 repaired only in this fresh package; original failure
+and four independent harness-style findings retained. Claude unavailable, not
+agreement. OLD numeric decoding is omitted in cached verify with all hash guards;
+no isolated native speedup claim. Verification.json owns detailed evidence.
+NEXT connects actual fresh inputs to repeatable original-model native sessions.
+Source proposal414fdfab.../clarification46213a.../review6840f746... are under
+A/execution/kis-stock-repeatable-native-paper-preparation-v1. Declared NAS is
+not primary-venue attestation; Data probes official static metadata. A frozen
+route-constrained rank one is explicit, not original unrestricted research rank.
+No old EXIT identity, bank, source or schedule is overwritten.
+
 Goal49 source preparation COMPLETE/closure9296cf75... at
 A/execution/kis-stock-repeatable-session-preparation-v1. Session4d848c18.../
 recoveryb6607c0e.../bank1092dea1.../plan3bf5fa6e.../cost86859b5a... .
@@ -32,8 +56,7 @@ No native model/provider/order/bank/delivery/schedule change in this slice.
 All canonical runtime readers/writers need compatible delivery before multi-owner
 writes. Data metadata frozenf78c372f.../446pins/128keys100completed800calendar;
 earliest collection Oct9 CLOSE20UTC, not an installed schedule or fresh result.
-NEXT advances one fixed temporal-memory/flat/TCN GPU development comparison,
-not an old-model refit, replacement Paper model or another approval gate.
+Goal50 subsequently completed the fixed-memory comparison described above.
 
 Goal48 integrated/pushed580cad5; its closed research remains below.
 R47=A/execution/kis-stock-owned-exit-lifecycle-v1/closure.json/3d32edf8... .

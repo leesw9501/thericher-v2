@@ -6,6 +6,19 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal50 current-only loader54bdc4c1... RELEASED104 synthetic checks; cohort/
+ordinal unchanged. Actual cached verify54.049s uses CURRENT numeric data only,
+retains every OLD/CURRENT hash/calendar/metadata guard and matches48 cells,
+seals/missingness/attribution exactly. OLD numeric callbacks unavailable, not
+fabricated empty data; no isolated speedup or source-quality promotion claim.
+Native Goal50 closed83db6e20... leaves retained datasets unchanged.
+Post-close handoff67e230e1... reattests f78/446pins; earliest Oct9 20UTC,
+no collection yet. Existing CURRENT113 endsOct8; fresh scope100completed through
+Oct9/800preview labels is distinct, never an OLD fallback or automatic union.
+Next source probe: official KIS static NASDAQ metadata and exact128 route map,
+without ticker inference or relabeling original targets. Declared NAS alone
+does not attest primary venue. Collection token/client ownership stays separate.
+
 Goal47 fresh next-session D1 prep RELEASED:82 synthetic tests/Ruff,
 A/data/kis-current-pooled-equity-refresh-next-session-v1, worker3a889da0.../
 reader6a9494f3.../contract helperd0d1cd27... . Same128 identities, previous61
