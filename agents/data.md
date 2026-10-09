@@ -6,6 +6,16 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal37 owns source-bound raw price-discontinuity diagnostics for exact stock
+PnL attribution/sizing; no acquisition or verified corporate-action claim.
+Reuse unchanged CURRENT113/manifest18a37635.../payloadbd6b0f40... and Goal36
+predictiond9f40af3...; keep original128 keys/121complete4sparse3empty/14073 rows.
+Goal36 actual four-compact-file transport passed/9fits48cells/source442/input7
+unchanged, result127ec525.../custody5185151d... closed. Worker Data review
+df621410... has13 synthetic checks/no scoped P1/P2, not native source equivalence.
+OLD734 valid target dates and CURRENT52 marks are dependent seen observations;
+raw/current-listing/non-PIT/CA/TR/finality/publication limitations remain.
+
 Goal30 reused pinned raw trio/431sources571inputs,2CPUfits30cells/rejected;
 no new collection/source qualification. Goal31 explicit-key reader is integrated
 at5f0fc65; parent60 related tests pass3.40s. Metadata-only exact named snapshot

@@ -8,6 +8,15 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal36 COMPLETE/rejected9fits48cells/062a437b.../127ec525.../5185151d... .
+All hypothetical books flat/fee-cash-inventory matched/no missing marks.
+Positive seen Ridge/GRU/blend growth is not owned broker PnL or new authority.
+Cached48 replay is same source/book, not independent Execution parity.
+Goal37 prepares exact stock/day/fee attribution and fixed10%/25% analytical
+cash-backed exposure. This never changes the private shared10% Paper basis,
+account holdings, intent identities, broker inputs or tonight's owned task.
+Worker direct-terminal overwrite P2 was not exercised; fix only a fresh worker.
+
 Goal32 current pooled equity preview is COMPLETE/measurement-only:125 usable
 keys/122eligible/6unavailable/top10/independent2d0d511f... . No model confidence,
 OrderIntent, broker input, liquidation instruction or current-control replacement.

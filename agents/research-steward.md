@@ -7,13 +7,21 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal36 stock-specific-five-session-selection is SOURCE preparation, not yet a
-GPU allocation or market fit. Fixed Ridge/HGB/GRU/equal mean; nine fits MAX/
-one600s family/48 cells/sealed0. SAME128/OLD800 training/CURRENT113 separate;
-prefix cutoffs427/600/799/target purge5/date-balanced scaler. Feature97c6869...
-and modelsccb53e53... have68+37 tests; fake CUDA is not an actual capability result.
-Wait only that campaign for frozen source/input/CPU proof; other lanes continue.
-First ready frozen useful GPU campaign is delegated, not utilization-only work.
+Goal37 risk-attribution uses zero fits/GPU/sealed spend and a finite600s CPU
+family:48 reference plus96 fixed10%/25% exposure cells on unchanged Goal36
+outputs. No ready depth/replication campaign or GPU authority/environment block.
+Do not allocate dummy training while attribution explains the observed risk.
+
+Goal36 stock-specific-five-session-selection CLOSED:
+contract062a437b.../custody5185151d.../9fits48cells/one600s family/sealed0.
+Actual3 CUDA512 GRU fits6.837s wall and CPU synthetic512 smoke passed;
+three-phase plus diagnostic185.627s, all reaped/absent/GPU lease released.
+OLD prefix dated groups362/535/734 and rows35723/54568/77990; current52 marks
+are seen/dependent, no sealed sample or independent alpha claim. All four
+model arms rejected the original cash-inclusive utility comparison despite
+positive Ridge/GRU/blend seen growth. No budget refund/refit/promotion.
+Source P2 direct-terminal overwrite5d6b5206... not exercised; parent repeat
+guard preserved the completed terminal. Correct only a fresh future worker.
 
 Goal35 root kis-equity-rank-buffer-carry-development-v1-runtime-r2 CLOSED:
 contract12b1b4c6.../custody156f4732.../24cells0fits/one300s CPU family/

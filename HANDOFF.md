@@ -20,16 +20,32 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal36 kis-stock-specific-five-session-selection-development-v1.
-One stock-specific relative five-OPEN return family: fixed Ridge/HGB/GRU and
-equal prediction blend, nine fits MAX/600s/48 cells. SAME128 identities,
-OLD800 TRAIN and separate CURRENT113/52 marked dates, no value graft.
-Prepare fixed prior61 features/date-balanced prefix scaling/purged target
-cutoffs427/600/799; current values never enter fitting or selection.
-FeatureR2 97c6869.../68 tests/22 independent checks permits latest inputs
-without future labels. Modelsccb53e53.../37 tests use fake Torch; native CPU
-and actual CUDA remain unverified. Fresh GPU caller/source review pending;
-fix independent poll/kill/reap BEFORE its dispatch. No allocation or market fit yet.
+NEXT owns Goal37 kis-stock-selection-risk-attribution-development-v1.
+ZERO-fit exact stock/day/fee attribution and fixed10%/25% cash-backed exposure
+using Goal36's unchanged predictions/current input. Reconcile48 reference and
+96 sizing cells, one600s CPU family; no tuned ranks/blend/cadence or winner.
+This is outcome-informed seen development, not fresh replication or Paper input.
+
+Goal36 COMPLETE/rejected at A/research/
+kis-stock-specific-five-session-selection-development-v1:
+contract062a437b.../442sources7inputs/result127ec525.../parent2b3d731b... .
+Nine fits/48 cells; actual3 CUDA GRU fits6.837s wall, CPU synthetic512 smoke
+passed. Native Python3.12.14/Torch2.7.0+cu128/NumPy2.5.1/sklearn1.9.1.
+Whole10bps seen Ridge+29.21%/GRU+18.35%/blend+32.48%/HGB-2.82%, but ALL
+original risk utilities fail cash. Drawdowns17.63/29.78/31.18/30.37% respectively.
+No robust winner or broker-PnL claim. OLD fit groups362/535/734, rows35723/
+54568/77990;52 CURRENT marks are not independent observations.
+Cached48 replay382253f8... matches withzero refits; same source/book, not
+independent model/economic qualification. Three phases plus descriptive
+blend dependence185.627s<600; all source/input unchanged/reaped/absent/GPU
+lease released. Custody5185151d... closed; no rescue or refund.
+Worker source review5d6b5206... found direct-invalid/repeated invocation could
+overwrite a terminal. Parent repeat guard prevented that path; no actual
+overwrite. Preserve used bytes and correct only the fresh future worker.
+Data source reviewdf621410.../13 synthetic checks has no scoped P1/P2.
+Models d1b368ba.../49 synthetic and score/caller e5fa1af9.../82 checks passed.
+Claude20777876... strong-result/attribution challenge is review_unavailable/
+cli_is_error, not agreement. No unchanged authentication retries or Paper hold.
 
 Goal35 CLOSED/REJECTED in A/research/
 kis-equity-rank-buffer-carry-development-v1-runtime-r2.
@@ -53,17 +69,18 @@ Raw/current-listing/non-PIT/CA/TR/finality/publication limits remain explicit.
 Original lexical-clock and transport-protocol defects were corrected in fresh
 bytes BEFORE payoffs; original contractdad59736.../zero actual debit retained.
 
-a477e89 pushed. Changedserial273; clean8 authority13876pass22skip35warnings
-337.63s; repo Ruff/default/research/accounting sample Compose pass.
-Current input85+44/independent22/runtime93/future features-models105 pass.
+9a0e2be pushed. Changedserial323; clean8 authority13994pass22skip35warnings
+337.29s; repo Ruff/default/research/accounting sample Compose pass.
+Goal36 external worker29/prepare-data-dispatch-model89/dependence4 pass.
 No full rerun per external handoff. Goal34 rejected6fits33cells/custody875233b5...
 and Goal31 exhausted/Goal33 incomplete-independent remain in Git/artifacts.
 No old fit/refund/rescue or claim of model/scaler/host-native equivalence.
 
-Parallel actors: Data/Infra compact input/caller, Engine fixed models, temporary
-independent source review, parent integration/Git. No company block or routine
-approval wait. Claude stock-selection prompt62fe0cab... is review_unavailable/
-cli_is_error, NOT substantive agreement. No unchanged authentication retry.
+Parallel actors: Data discontinuity evidence, Engine/Execution attribution and
+fixed sizing, temporary independent source review, parent integration/Git.
+No company block or routine approval wait. Source implementation handoff was
+bounded; parent reattested/tested after expiration rather than holding for an
+unknown owner. Data/caller/model evidence is distinct from actual runtime.
 Tonight's independently owned Execution opportunity remains unchanged below.
 
 ## Exact Preparation And Owned Opportunity

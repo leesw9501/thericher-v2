@@ -14,12 +14,28 @@ and rank seals, independent Fraction/scalar economics; not model equivalence.
 Custody875233b5... closed/sealed0. All367/549/739 potential TRAIN dates valid;
 reviewed no-context OOF diagnostic defect dormant, future correction only.
 
-NEXT owns stock-specific five-OPEN model selection: Ridge/HGB/GRU/equal fixed
-blend,9 fits MAX/600s/48 cells, separate OLD800 TRAIN/CURRENT113 seen dates.
-Features97c6869.../68 tests and modelsccb53e53.../37 tests are source preparation;
-actual autograd/CUDA unverified. Native CPU smoke, fresh caller repair and
-freeze precede market fitting; no allocation yet. No old/current value graft,
-parameter search, public weights, sealed holdout or automatic Paper promotion.
+NEXT owns kis-stock-selection-risk-attribution-development-v1: zero-fit exact
+stock/day/fee attribution and fixed10%/25% cash-backed exposure,48 reference
+plus96 comparison cells/one600s CPU family. Same seen forecasts and source;
+no tuned blend, rank, cadence or model rescue. This is analytical sizing,
+not a change to the original shared10% private Paper basis or tonight's task.
+
+Goal36 CLOSED/rejected under D:/thericher-v2/model-artifacts/research/
+kis-stock-specific-five-session-selection-development-v1:
+contract062a437b.../442sources7inputs/result127ec525.../parent2b3d731b... .
+CPU synthetic512 smoke476066bd... and actual nine fits/48 cells completed,
+including3 CUDA GRU fits6.837s wall. Cached48 verification382253f8... has zero
+refits and same source/book, not independent model qualification. All sources/
+inputs unchanged/reaped/absent/lease released;185.627s<600/custody5185151d... .
+Whole10bps Ridge+29.21%, GRU+18.35%, equal blend+32.48%, HGB-2.82%, but all
+original risk utilities fail cash. Seen/raw/current-listed/non-PIT/CA/TR and
+historical availability limits remain; no robust winner or broker profit.
+Never redispatch this closed family. Direct worker invalid/repeat preflight
+could overwrite its terminal (source5d6b5206...), but the parent repeat guard
+prevented that path. Fix only the fresh future worker and retain old bytes.
+Strong-result Claude20777876... review_unavailable/cli_is_error, not agreement.
+9a0e2be source authority13994pass22skip35warnings337.29s/focused323/Ruff/three
+sample-env Compose pass. No full CI rerun for external receipt/doc handoffs.
 
 Goal35 zero-fit stock carrying CLOSED/REJECTED under
 D:/thericher-v2/model-artifacts/research/kis-equity-rank-buffer-carry-development-v1-runtime-r2.

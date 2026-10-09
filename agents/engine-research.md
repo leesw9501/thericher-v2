@@ -7,14 +7,27 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-09 KST)
 
-Goal36 root A/research/kis-stock-specific-five-session-selection-development-v1.
-Stock-specific relative five-OPEN returns, fixed Ridge/HGB/GRU and equal blend;
-nine fits MAX/600s/48 cells, no sealed spend. OLD800 only for training; CURRENT113
-separate seen evaluation. Prefix target cutoffs427/600/799 and OOF428..600/
-601..794; fixed prior61/four features/20x2 sequence/date-balanced scale.
-Features97c6869.../68 tests +22 independent checks, modelsccb53e53.../37 tests
-are SOURCE preparation. No market fits or GPU appointment yet; fake Torch is
-not autograd/CUDA proof. Native CPU smoke and fresh exact caller precede fitting.
+Goal37 kis-stock-selection-risk-attribution-development-v1 is next:
+zero-fit stock/day/fee attribution and fixed10%/25% cash-backed sizing,48
+reference plus96 comparison cells, one600s CPU family. Same frozen forecasts,
+no rank/blend/cadence tuning or new winner. Outcome-informed seen development,
+not fresh replication or a continuation of Goal36's failed allocation.
+
+Goal36 root A/research/kis-stock-specific-five-session-selection-development-v1
+CLOSED/rejected9fits48cells/contract062a437b.../result127ec525.../parent2b3d731b... .
+Actual CPU synthetic512 smoke and three CUDA512 GRU fits passed; GRU fit wall
+6.837s. Native sklearn1.9.1/Torch2.7.0+cu128. OLD prefix groups362/535/734,
+rows35723/54568/77990; current52 marks/11reviews/partial two-mark tail.
+Whole10bps Ridge+29.21%/GRU+18.35%/blend+32.48%/HGB-2.82%, all original
+risk utilities below cash. Drawdowns17.63/29.78/31.18/30.37% respectively.
+Positive seen gains are not robust alpha, broker profit or a chosen winner.
+Cached48 replay382253f8... matches/zero refit/same book, not independent model
+qualification. Prediction correlations.43-.56 and top10 overlap.24-.46 are
+descriptive, not forecast-error independence. All sources/inputs unchanged/
+reaped/absent/lease released,185.627s<600; custody5185151d... closed/sealed0.
+Source reviews d1b368ba.../49, e5fa1af9.../82 and df621410.../13 pass; worker
+review5d6b5206... found direct-terminal overwrite P2, not exercised by the
+repeat-guarded parent. Fix a fresh caller only; old source stays immutable.
 
 Goal35 CLOSED/REJECTED root kis-equity-rank-buffer-carry-development-v1-runtime-r2:
 contract12b1b4c6.../436sources5inputs/result2a9bd908.../parentc6647248...,
@@ -31,13 +44,13 @@ in actual closed phases; fresh caller must correct it, never edit used source.
 - Data: exact CURRENT113/14073 rows/121complete4sparse3empty; manifest18a37635...
   payloadbd6b0f40.../precommit7d8b4d01... . Native exact two-file proof.295s;
   source/observation/missingness limits unchanged,52 dated marks not independent.
-- Infra: prepares fresh frozen-input reader/caller with independent kill/reap.
-  No provider call, OLD/current merge, new framework or budget refund.
-- Engine: fixed model adapters released; parent builds one finite comparison
-  using the reviewed accounting, causal score seals and actual finite guards.
-- Validation: temporary source review of chronology/scaling/device behavior;
+- Data: source-bound discontinuity/concentration diagnostics, no acquisition
+  or verified-action claim. Same compact bytes and actual observation limits.
+- Engine/Execution preparation: exact attribution and fixed cash exposure;
+  preserve failed model verdicts and whole-share feasibility/cash residuals.
+- Validation: temporary independent source accounting review when ready;
   no tuning, old output rescue or blanket quality gate.
-- Parent: integrate/freeze/allocate when ready; tonight's Paper remains separate.
+- Parent: integrate/freeze one zero-fit comparison; tonight's Paper stays separate.
 - Depth/replication: no independently qualified survivor or ready depth contract.
   Equal within-campaign blend is exploratory, not cross-track promotion.
 
