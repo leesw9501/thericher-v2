@@ -2,6 +2,34 @@
 
 ## Current Owned Opportunities And Research
 
+Latest Goal32 COMPLETE, Data-only/runtime/preview evidence, no profitability
+or Paper-input promotion. Exact root:
+D:/thericher-v2/model-artifacts/data/kis-current-pooled-equity-refresh-v1/native-mount-r2.
+Contract05f61216c3541e017dae204042c23b8fc3c4106be8b32fbc1d52ab65847dabda;
+caller-9ee10066ea5f4239a24d035277449aab.json/b8bf77bd...;
+outcomes/9ee10066ea5f4239a24d035277449aab/receipt.json/e64c5baa... .
+125/128 retained keys/24321 past rows/latest100official sessions endingOct8,
+1token/251GETattempts251accepted/0categorical failures/partial/next_due none,
+284.835s/reaped/absent/unchanged. Native-mount recovery preserves original
+failed caller/source; fresh readonly /app snapshot contains empty nested mount
+targets. Do not rerun write-once collection or infer a daily request allowance.
+Offline readerfd5491c4... preserves two ordered actual local postresponse
+clocks, chooses later manifest clock; never substitute nominal prior-close.
+Preview and independent result:
+D:/thericher-v2/model-artifacts/research/kis-current-pooled-equity-component-preview-v1/
+preview.json/2a8b0516... and validation-current-preview.json/2d0d511f... .
+122eligible/6unavailable/top10/all686 hashes matched; .766s parent/1.860s reader.
+No raw price/score output, labels/fits/confidence/OrderIntent/liquidation claim.
+Synthetic GPU result under D:/thericher-v2/model-artifacts/research/
+causal-tcn-finite-guard-throughput-probe-v1/parent-run.json/37afac0e...:
+19.416s/2x64 updates/original7.538s vs stacked6.881s/exact finite final weights;
+source unchanged/reaped/absent/lease released. Fixed-order cold-start bias,
+not512-step market parity, independent alpha or budget refund.
+Integrated13637pass22skip35warnings335.61s/helper0/changed100pass2.14s/Ruff/
+three sample-env Compose pass coversf6ba5e9. Next Goal33 has disjoint pure
+kernel, metadata and model preparation; freeze before actual fits. Existing
+Oct9 22:45KST owned Paper opportunity/23:05 check unchanged; no foreground wait.
+
 Goal26 kis-owned-portfolio-gross-attribution-v1 COMPLETE. Pure helperd5c86e2f...
 reuses native custody validation, exact Fraction owner-local average cost and
 gross-cash conservation;55 parent/55independent+5adversarial probes pass.

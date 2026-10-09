@@ -129,9 +129,24 @@ Compact transport6a90ebb/78 parent tests retains87974 exact strings/128keys/
 shared original decoder only. Original3044 and native compact2 are separate.
 Four completed CUDA TCN fits58..77s/512updates motivate a separate finite
 synthetic guard-throughput probe, not a budget refund or new market fits.
-Current Goal32 prepares latest100-session128key input, pure component-rule
-preview and measured synthetic native throughput in disjoint Data/Engine/Infra
-packages. NEXT owns exact scope. Old used sources/artifacts remain immutable.
+Goal32 is COMPLETE: current Data contract05f61216.../native-mount-r2/
+callerb8bf77bd.../receipte64c5baa... records125 retained of128 keys,24321 typed
+past rows/100official sessions2026May18..Oct8. One token/251accepted of251GET
+attempts/0 categorical failures/next_due none; parent284.835s/reaped/absent/
+unchanged. Original5.310s startup failure preserved; readonly native mountpoint
+fault source-reproduced and recovered only in a fresh source snapshot.
+Pure rule preview2a8b0516.../.766s:122eligible/6unavailable/top10, no labels,
+fits or orders. Independent2d0d511f...1.860s validates686 hashes/exact clocks,
+keys/selection/weights; shared parser/policy, not provider-publication proof.
+Two ordered local postresponse clocks stay distinct; later manifest sample is
+actual observation, not a backdated historical decision timestamp.
+Synthetic GPU contract1b8779fb.../parent37afac0e...19.416s completes2x64 updates,
+original7.538s/stacked6.881s loops/exact weights/source unchanged/lease released.
+Fixed-order cold-start bias; no512-step market parity or old-family refund.
+NEXT now owns Goal33 learned fixed-rule fusion/conditional gate development.
+Latest integrated authority13637passed22skipped35warnings335.61s/helper0,
+changedserial100pass2.14s/Ruff/three sample-env Compose pass; coversf6ba5e9.
+Old used sources/artifacts remain immutable; no full-suite repeat per handoff.
 One Ridge/TCN, four OOF+final each/10fits600s shared, CPU smoke before GPU;
 fixed<=128keys/800sessions/520TRAIN20purge260seenDEV, prior61 eligibility and
 20component contexts. Fold scalers are prefix-only; incomplete label sets

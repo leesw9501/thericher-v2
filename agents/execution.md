@@ -8,6 +8,15 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal32 current pooled equity preview is COMPLETE/measurement-only:125 usable
+keys/122eligible/6unavailable/top10/independent2d0d511f... . No model confidence,
+OrderIntent, broker input, liquidation instruction or current-control replacement.
+Goal33 analytical OC fusion assumes ideal fractional OPEN/CLOSE fills/dailyflat
+and5/10/20bps round trip, same prioreligibility/missing-selected-unavailable
+semantics for every policy. Existing core replay is shared, not continuous
+whole-share/broker latency/fees/settlement or Paper parity. Independent owned
+Oct9 22:45KST opportunity/shared10% basis/custody remain unchanged.
+
 Goal25 preparation COMPLETE; Goal26 pure owned gross-PnL attribution COMPLETE.
 Helperd5c86e2f.../55parent/55independent+5adversarial probes/Ruff pass.
 Actual ALL-RO root A/execution/kis-owned-portfolio-gross-attribution-v1:

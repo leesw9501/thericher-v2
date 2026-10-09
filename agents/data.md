@@ -18,11 +18,29 @@ Compact transport6a90ebb/78 parent tests is complete:87974 rows/128keys800dates/
 55a0de84...12.381s matches exact CSV strings and logical digests using shared
 original decoder. Parent3044/producer3042/native2 scopes stay distinct. No
 rounding/adjustment/filtering or source qualification. R2 ended incomplete;
-original family has0 remaining. Data now owns latest100-session SAME128key
-fresh collection worker/tests at A/data/kis-current-pooled-equity-refresh-v1;
-metadata/client/cache reuse only so far, no current provider execution yet.
-New M/current-pooled-equity-history scope never merges old cohort values;
-source-local sparse/failure remains visible and does not block another lane.
+original family has0 remaining. Goal32 fresh SAME128key collection is COMPLETE
+as a truthful PARTIAL snapshot:100 NYSE sessions2026May18..Oct8,125 retained
+keys/24321 typed past rows,1 token/251GET attempts251 accepted/0 categorical
+failures. No old-cohort merge or replacement keys. Parent284.835s/worker
+03:45:53.916243..03:50:33.163033UTC; sources unchanged/reaped/absent/next_due none.
+Exact A/data/kis-current-pooled-equity-refresh-v1/native-mount-r2:
+caller-9ee10066ea5f4239a24d035277449aab.json/b8bf77bd...;
+outcomes/9ee10066ea5f4239a24d035277449aab/receipt.json/e64c5baa...;
+contract05f61216.../indexc951310b... . Counts are dispatch/parser facts,
+not independently measured wire starts or global provider-history exhaustion.
+Original e092dba8...5.310s startup failure remains immutable. Offline native
+OCI reproduced missing nested mountpoints under readonly /app; a fresh source
+snapshot precreates empty targets. No old source edit, data redownload or
+raw-broker-body output. Fresh caller/worker/prepare101 mocked cases pass9.68s.
+Reader R2fd5491c4... accepts TWO ordered postresponse local clocks:
+index_observed<=manifest_collected<=terminal_completed, conservatively uses
+later manifest time;27 synthetic cases pass4.30s. Not timestamp equality,
+backdating, provider publication, historical prior-close availability or finality.
+Current preview2a8b0516... has122 eligible/6 unavailable/top10; independent
+2d0d511f...1.860s checks all686 hashes/128keys/800official dates/prior61/clock
+brackets/exact selection and weights. Native parser/core are shared. No labels,
+fits/Paper qualification. Next: separate old compact/current input commitments
+for Goal33; no provider calls, value merging or new quality-approval gate.
 
 Latest historical engineering-control refresh is actually READY: fixedSPY/AMS,
 TLT/NAS,GLD/AMS,253 dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC.

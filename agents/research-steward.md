@@ -8,6 +8,15 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-09 KST)
 
+Goal32 probe allocation closed; no active GPU appointment. Goal33 preparation
+is a NEW conditional rule-fusion mechanism, not another TCN fit or exhausted
+family refund. Pending frozen source/dataset/target/OOF and later-seen DEV/
+cost/baseline/kill/runtime/600s contract before one exclusive GPU allocation.
+CPU kernel/metadata/model tests continue now. Three models/two OOF+final each,
+nine fits/no search/zero sealed spend; elapsed bounded family work retained,
+terminal counts unknown if absent. Current100 already-seen values do not
+become untouched holdout/39 independent groups or a Paper candidate.
+
 Goal29 R2 allocation completed: contractfd4c2607.../430sources/575inputs,
 965TRAIN/68DEV groups/4actualfits/54cells at A/research/
 kis-lagged-rate-whole-share-policy-development-v1-quote-projection-r2.
@@ -36,12 +45,15 @@ a terminal result. Durable lower bounds9completed(5Ridge4TCN)/10starts,
 final completion unknown; terminal countsnull. Closure644bcb72.../custody
 7e017bf9... CLOSED/non_promoting_failed/remaining0; independenta9d222bb.../
 9c5b1f84... reattests that narrow scope. No full matrix/OOF/efficacy claim.
-Original600-second family exhausted, no refit/refund. Separate next Infra
-probe uses only two64-step synthetic passes/no market fits/retained weights/
-sealed spend, exclusive canonical GPU lease and180s work bound. Its future
-latency facts cannot reopen the old family or confer Paper/model promotion.
-It is a different stock-selection mechanism, not idle filler or a rescue of
-closed trio families. Existing CPU/Paper preparation continues independently.
+Original600-second family exhausted, no refit/refund. Separate Infra probe
+contract1b8779fb... is COMPLETE: parent37afac0e...19.416s/worker16.297s,
+two64-step synthetic passes,0market fits/retained weights/sealed spend.
+Canonical GPU lease released/reaped/absent/four sources unchanged. Original
+loop7.538s/stacked6.881s/peak71019520bytes/exact final64-step weight hashes.
+CPU failure cases agree; fixed-order cold-start bias and no512-step market
+parity remain explicit. No active allocation; useful current-input preparation
+continues. This capability appointment is not a predictive stock-selection
+mechanism, old-family refund or model/Paper promotion.
 Originalf9252f7a... failed before fits at source preparation;16.928s/reaped/
 absent/429sources573inputs unchanged/lease released. Closureaec96a90.../
 custodybac71726... preserves exact failed attempt and native subcent diagnosis.

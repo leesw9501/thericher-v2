@@ -7,6 +7,22 @@ A = D:/thericher-v2/model-artifacts; market bytes stay under D:/market_data.
 
 ## Current Research State (2026-10-09 KST)
 
+Goal32 current input/runtime/preview is COMPLETE, not a model comparison.
+Current SAME128key Data partial125/24321 rows supports exact current rule
+preview122 eligible/6 unavailable/top10,2a8b0516.../.766s/686 hashes unchanged.
+Pure adapterf6ba5e9/b09c6246... passes37 own/100 related cases; independent
+2d0d511f.../1.860s exactly reattaches selection/clocks/hashes. Actual local
+observation is distinct from assumed historical decision-time availability.
+Separate synthetic native GPU probe37afac0e...19.416s has2x64 updates with
+exact finite-path final weights: original7.538s vs stacked6.881s optimizer
+loops. Fixed-order cold-start bias/no512-step market parity/no budget refund.
+Goal33 preparation compares genuine learned rule fusion: fixed four expert
+ranks, Ridge fusion, flat-context Ridge and a small conditional softmax GPU
+gate. Old800 seen sessions and current100 remain separate/pinned. New mechanism,
+not an old TCN rescue, fresh holdout, deployment claim or utilization-only fit.
+Engine owns pure kernel; Data owns metadata binding; Infra owns GPU model;
+parent freezes runtime/science/custody before any actual fit.
+
 Independent company Goal25 preparation is complete, not a future fill or model
 promotion. Goal26 owned cumulative gross attribution COMPLETE, not net/MTM/model
 profitability. Goal27 Data comparison COMPLETE: both raw repeats match but
@@ -132,7 +148,7 @@ Breadth Goal30 closed/rejected:580712ea.../2fits30cells/resultce177b19...,
 402/965paired action changes, parent108.552s/ALL-RO54.445s/independent cached
 ledgerc8089526...1.974s matches30cells. Custodyfe5753c2... closed; no model/
 risk reinference, TRAIN-label independent proof or isolated account-state effect.
-Breadth active Goal31 pooled equity component selection: pure adapter9deb081
+Breadth CLOSED Goal31 pooled equity component selection: pure adapter9deb081
 integrated/74 related tests, independent63 pass/no P1-P2. Data explicit-key
 reader5f0fc65 and metadata preparer are released; Engine owns external worker.
 Parent model19 synthetic tests and combined model/dispatcher97 pass. Ridge
@@ -154,9 +170,9 @@ released, NO terminal result/countsnull/48-cell comparison. Closure644bcb72.../
 custody7e017bf9.../independent partiala9d222bb... and closure9c5b1f84...;
 exact OOF readback unavailable, no tolerance waiver/DEV-efficacy/Paper claim.
 Bounded attempt closed/failed-incomplete, original600 family exhausted/no refit.
-Next Goal32 current input/preview/runtime readiness: Data fresh100session128key
-snapshot, Engine pure component-rule preview, invoked Infra synthetic2x64-step
-finite-guard throughput. No market fits/retained probe weights/promotion/refund.
+Goal32 current input/preview/runtime readiness is complete as recorded above.
+Next Goal33 learns four-expert fusion under one frozen finite campaign. No
+old family refund, target-free weights reuse or model-name substitution.
 Completed TCN fits58..77s each are measured local latency, not a CUDA ban.
 Pairwise-reversal ANTICOR actually rejected; retain its fixed recipe.
 Conditional-hedge study is now COMPLETE/REJECTED42 cells, exact root
