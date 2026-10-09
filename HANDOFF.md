@@ -20,7 +20,37 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-Goal44 COMPLETE; NEXT owns Goal45 kis-stock-shared-budget-integration-v1.
+Goal45 COMPLETE; NEXT owns Goal46 kis-stock-persisted-paper-execution-v1.
+R45=A/execution/kis-stock-shared-budget-integration-v1:
+job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
+Actual14:15:47..14:16:00UTC/13.544s/1token8GET; original all-owner shared10%
+budget replayed and exact whole-share BUY sizing available. Account3positions/
+0open, exact target absent, fresh tick/exact-limit funds. Zero order/cancel/
+private writes/owner/reservation/new capital.438sources/3inputs/44privatefiles
+unchanged; child reaped/invocation absent, exact parent hash audit passed.
+Host V4 stock binding uses same original bank and legacy fingerprints; SPY,
+QQQ and trio consumers include stock reservations without invented covariance.
+Sizer subtracts existing reservations from provider funds as well as shared cap.
+Source reviewaced1e04.../16 tests and native-worker source recheck87626967.../
+57 tests have no remaining scoped findings; actual runtime excluded. Original
+failure receipts remain immutable. Parent734serial/38 external; clean8 authority
+14556pass22skip35warnings340.02s/reaped/clean/Ruff/three sample-env Compose.
+Claude categorical review_unavailable, not agreement. No GPU/refit/new schedule.
+Next is persisted stock intent/recovery and compatible writer delivery, then
+bounded native Paper execution, not another bank or profitability approval.
+
+Oct9 original portfolio-control opportunity completed13:45:01..36UTC/
+34.565s/no_target_delta/0legs/0submit0cancel/1token14GET; source unchanged,
+child reaped/invocation absent. Exact dispatch-b8c800abe9ce4c2ebd5b1a12c75456d0.json
+under A/execution/kis-current-control-paper-rebalance-preparation-v1,
+SHA6c9c016d... binds job2b20f908.../worker249cdd15.../dispatcher d43c9ca4... .
+No new fill; private40->44 includes checkpoints, not a trade inference. Honest
+host marker/time/source evidence, not cryptographic OS-scheduler origin proof;
+Operational logging disabled. Fees/settled cash/net PnL remain not_observed.
+Existing SPY strategy nextOct9 23:50KST; do not install V4 while its old writer
+could ignore or reject stock ownership. Preparation continues independently.
+
+Goal44 COMPLETE, superseded capacity observation only by Goal45 above.
 Exact R2 root A/execution/kis-stock-readonly-preparation-v1/r2:
 job8246f852.../outcome-c5716712b65a4d789bfdb69a61f0699e.json/37144191... .
 Actual13:21:41..52UTC/11.991s/1token8GET: account available/3 positions/0 open,

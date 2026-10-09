@@ -2,6 +2,30 @@
 
 ## Current Owned Opportunities And Research
 
+Goal45 stock shared-budget integration COMPLETE at
+D:/thericher-v2/model-artifacts/execution/kis-stock-shared-budget-integration-v1:
+job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
+Actual14:15:47..14:16:00UTC/13.544s/1token8GET/original all-owner10% bank
+replayed/whole-share BUY sized/3positions0open/target absent/fresh tick+funds.
+438sources/3inputs/44privatefiles unchanged/reaped/absent; zero orders/cancel/
+intents/writes/owner/reservations/capital. Shadow is not installed execution.
+Shared V4/stock scope preserves legacy fingerprints and reservations in every
+competing consumer; residual trio covariance remains trio-only. Independent
+sourceaced1e04.../16 and shadow87626967.../57 checks exclude actual runtime;
+original failed checks retained. Parent734serial/38 external; final clean8
+14556pass22skip35warnings340.02s/reaped/clean/Ruff/three sample-env Compose.
+No GPU/refit or schedule change. NEXT owns Goal46 persisted Paper stock execution.
+
+Owned Oct9 22:45KST portfolio-control completed34.565s/no_target_delta/
+0legs0submits0cancels,1token14GET; exact dispatch-b8c800abe9ce4c2ebd5b1a12c75456d0.json
+under D:/thericher-v2/model-artifacts/execution/kis-current-control-paper-rebalance-preparation-v1,
+SHA6c9c016d.../job2b20f908.../worker249cdd15... . Source unchanged/reaped/
+absent;40->44 private files are checkpoints, not fills. Assumed-honest-host
+marker/time/source provenance only, not proof of OS scheduler origin; logging
+disabled. Fees/settled cash/net PnL not_observed. SPY strategy next23:50KST;
+deliver V4-compatible source before installing stock ownership, without resetting
+its identity/basis or manually invoking the existing opportunity.
+
 Goal44 native read-only stock shadow COMPLETE at
 D:/thericher-v2/model-artifacts/execution/kis-stock-readonly-preparation-v1/r2:
 job8246f852.../outcome-c5716712b65a4d789bfdb69a61f0699e.json/37144191... .

@@ -379,7 +379,7 @@ def advance_kis_paper_portfolio_cycle(
                 binding = budget._load_binding(root, expected_account_ref)
                 _check(
                     binding is not None
-                    and binding["version"] == 3
+                    and binding["version"] in {3, 4}
                     and binding["legacy_spy"] is None
                     and binding["basis_ref"] == expected_basis_ref
                     and "sha256:" + budget._digest(binding) == expected_binding_ref

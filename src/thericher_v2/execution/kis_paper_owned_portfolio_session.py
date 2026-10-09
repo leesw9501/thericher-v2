@@ -65,7 +65,7 @@ def visit_kis_paper_owned_portfolio_session(
     config = client._config
     account = budget._digest([config.base_url, config.account_number, config.account_product_code])
     binding = budget._load_binding(state_root, account)
-    if binding is None or binding["version"] != 3 or binding["legacy_spy"] is not None:
+    if binding is None or binding["version"] not in {3, 4} or binding["legacy_spy"] is not None:
         raise ValueError("session_custody_unavailable")
     owners = {owner.owner_ref: ref for owner, ref in budget._owners(binding)}
     basis = binding["basis_ref"]

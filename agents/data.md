@@ -6,6 +6,14 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal45 pure stock-owner/bank scope RELEASED3c0a7a5e...; legacy fingerprints
+unchanged, explicit NASD/ref-bound stock owner inside original aggregate bank.
+Actual RO replay/sizing COMPLETE9ee849dd.../0ff09fed.../13.544s/1token8GET/
+438sources3inputs44privatefiles unchanged/0 orders/writes. This is execution
+capacity, not Data/PIT/action/finality or model qualification. No collection.
+Temporary Infra now inventories competing writer source delivery for Goal46;
+no credential/private-state access or task changes in that assignment.
+
 Goal39 Data adapter released3126ba5b.../34 synthetic tests, shared FeatureSeal:
 last completed CLOSE
 >=USD5, median prior20 CLOSE*volume>=USD5m, no adjacent CLOSE return>=50%

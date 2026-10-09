@@ -7,6 +7,13 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-09 KST)
 
+Goal45 closed native shared-bank sizing with zero GPU/refit/holdout spend.
+Original stock target/clock retained; actual13.544s/1token8GET/0orders/writes,
+job9ee849dd.../outcome0ff09fed... . Goal46 persisted execution likewise needs
+no training allocation. GPU remains idle by current product priority, not a
+permission, environment or profitability hold. Ready useful frozen research
+may still run independently; closed families and evaluation spend stay closed.
+
 Goal41 CLOSED/trial1bbadaba9.../436abcf9.../ab0c6eee.../effbf94a...;
 two models52dates6678 scores/tolerance1e-6/exact top10/0fits/GPU/holdout,
 102.271s/all unchanged/reaped/absent/pre-OPEN research seal retained.

@@ -1,4 +1,4 @@
-"""Pure, private aggregate replay for explicitly owned SPY/QQQ Paper intents.
+"""Pure, private aggregate replay for explicitly bound Paper owners.
 
 This is NOT deployed authoritative cap enforcement. The caller must verify the
 account and owner bindings, supply their independently frozen expected digests,
@@ -34,6 +34,8 @@ from .kis_paper_fill_accounting import KisPaperCumulativeFill, KisPaperExecution
 PORTFOLIO_ALLOCATION_FRACTION = Decimal("0.10")
 _INSTRUMENTS = (("SPY", "AMEX"), ("QQQ", "NASD"), ("TLT", "NASD"), ("GLD", "AMEX"))
 _HASH = re.compile(r"sha256:[0-9a-f]{64}")
+_STOCK_BINDING = re.compile(r"ref:[0-9a-f]{64}")
+_STOCK_SYMBOL = re.compile(r"[A-Z]{1,10}")
 _ACCOUNT = re.compile(r"[0-9a-f]{64}")
 _IDENTIFIER = re.compile(r"[A-Za-z0-9._-]{1,80}")
 _US_EASTERN = ZoneInfo("America/New_York")
@@ -127,16 +129,22 @@ class KisPaperPortfolioOwnerBinding:
     symbol: str
     exchange: str
     state_refs: tuple[KisPaperPortfolioStateRef, ...]
+    stock_binding_ref: str | None = None
 
     def __post_init__(self) -> None:
         _text(self.owner_ref, _IDENTIFIER, "owner_binding_invalid")
         _text(self.account_ref, _ACCOUNT, "account_binding_invalid")
-        _check(
-            type(self.symbol) is str
-            and type(self.exchange) is str
-            and (self.symbol, self.exchange) in _INSTRUMENTS,
-            "instrument_invalid",
-        )
+        if self.stock_binding_ref is None:
+            _check(
+                type(self.symbol) is str
+                and type(self.exchange) is str
+                and (self.symbol, self.exchange) in _INSTRUMENTS,
+                "instrument_invalid",
+            )
+        else:
+            _text(self.stock_binding_ref, _STOCK_BINDING, "stock_binding_invalid")
+            _text(self.symbol, _STOCK_SYMBOL, "instrument_invalid")
+            _check(type(self.exchange) is str and self.exchange == "NASD", "instrument_invalid")
         _check(type(self.state_refs) is tuple, "state_references_not_frozen")
         for reference in self.state_refs:
             _check(type(reference) is KisPaperPortfolioStateRef, "state_reference_invalid")
@@ -144,16 +152,18 @@ class KisPaperPortfolioOwnerBinding:
 
     @property
     def fingerprint(self) -> str:
-        return _digest(
-            [
-                "kis_paper_portfolio_owner_v1",
-                self.owner_ref,
-                self.account_ref,
-                self.symbol,
-                self.exchange,
-                [[reference.run_id, reference.intent_ref] for reference in self.state_refs],
-            ]
-        )
+        payload = [
+            "kis_paper_portfolio_owner_v1",
+            self.owner_ref,
+            self.account_ref,
+            self.symbol,
+            self.exchange,
+            [[reference.run_id, reference.intent_ref] for reference in self.state_refs],
+        ]
+        if self.stock_binding_ref is not None:
+            payload[0] = "kis_paper_portfolio_stock_owner_v1"
+            payload.append(self.stock_binding_ref)
+        return _digest(payload)
 
 
 @dataclass(frozen=True, repr=False)
@@ -414,8 +424,10 @@ def project_kis_paper_portfolio_budget(
             sum((row[1] + row[2] for row in ledger.values()), Fraction(0)) <= allocated,
             "aggregate_budget_exceeded",
         )
-        _check(sum((row[2] for row in ledger.values()), Fraction(0)) <= gross_cash,
-               "aggregate_gross_cash_exceeded")
+        _check(
+            sum((row[2] for row in ledger.values()), Fraction(0)) <= gross_cash,
+            "aggregate_gross_cash_exceeded",
+        )
 
     def stock(owner_ref, symbol, exchange, values):
         return KisPaperPortfolioStock(owner_ref, symbol, exchange, *map(_decimal, values))
@@ -423,6 +435,9 @@ def project_kis_paper_portfolio_budget(
     by_owner = tuple(
         stock(owner.owner_ref, owner.symbol, owner.exchange, ledger[owner.owner_ref])
         for owner in owners
+    )
+    instruments = _INSTRUMENTS + tuple(
+        sorted({(owner.symbol, owner.exchange) for owner in owners} - set(_INSTRUMENTS))
     )
     by_instrument = tuple(
         stock(
@@ -441,7 +456,7 @@ def project_kis_paper_portfolio_budget(
                 for index in range(3)
             ],
         )
-        for symbol, exchange in _INSTRUMENTS
+        for symbol, exchange in instruments
         if symbol in {"SPY", "QQQ"} or any(owner.symbol == symbol for owner in owners)
     )
     cost = sum((row[1] for row in ledger.values()), Fraction(0))

@@ -116,7 +116,7 @@ def _scope(root, proof, as_of=None):
     _check(root.resolve() == proof.state_root.resolve(), "portfolio_root_mismatch")
     binding = budget._load_binding(root, proof.account_ref)
     _check(
-        binding is not None and binding["version"] == 3 and binding["legacy_spy"] is None,
+        binding is not None and binding["version"] in {3, 4} and binding["legacy_spy"] is None,
         "portfolio_custody_mismatch",
     )
     _check("sha256:" + budget._digest(binding) == proof.binding_ref, "portfolio_binding_mismatch")
@@ -348,6 +348,8 @@ def execute_kis_paper_portfolio_buy(
         config = _client_account(client, proof)
         binding, states, state, projection = _scope(root, proof, submit_at)
         for other in states.values():
+            if other.intent.symbol not in {"SPY", "QQQ", "TLT", "GLD"}:
+                continue
             retained, cancellation = other, None
             evidence = binding["terminal_evidence"].get(other.intent.run_id)
             if evidence is not None:
@@ -519,8 +521,7 @@ def build_kis_paper_portfolio_sell_plan(
     _check(
         isinstance(binding, Mapping)
         and type(binding.get("version")) is int
-        and binding["version"] == 3
-        and set(binding) == budget._V3_KEYS
+        and (binding["version"], set(binding)) in ((3, budget._V3_KEYS), (4, budget._V4_KEYS))
         and binding["legacy_spy"] is None,
         "portfolio_custody_mismatch",
     )

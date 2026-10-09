@@ -30,6 +30,7 @@ START = datetime(2026, 9, 22, 14, 30, tzinfo=UTC)
 AS_OF = datetime(2026, 10, 3, tzinfo=UTC)
 ACCOUNT = "a" * 64
 BASIS = KisPaperPortfolioBudgetBasis(ACCOUNT, D("10000"), D("1000"), START)
+STOCK_BINDING = "ref:" + "c" * 64
 
 
 @pytest.fixture(autouse=True)
@@ -905,3 +906,202 @@ def test_cancel_nested_fill_field_types_and_values_are_revalidated(field, bad):
     proof = _tamper(_cancel(state), "fill", fill)
     with pytest.raises(KisPaperPortfolioBudgetError, match="cancel_proof_invalid"):
         _project(_owner("owner", state), cancellation_proofs={"cancel": proof})
+
+
+def _stock_owner(name, *states, symbol="AAPL", account=ACCOUNT, binding=STOCK_BINDING):
+    return KisPaperPortfolioOwnerBinding(
+        name,
+        account,
+        symbol,
+        "NASD",
+        tuple(KisPaperPortfolioStateRef(s.intent.run_id, s.intent.fingerprint) for s in states),
+        stock_binding_ref=binding,
+    ), states
+
+
+@pytest.mark.parametrize(
+    "symbol,exchange,expected",
+    [
+        ("SPY", "AMEX", "b5074b5e1a2c3ffa01cfdeb7870107200822d2e26289fec061772bb539c7a2f1"),
+        ("QQQ", "NASD", "88cf2e83ede1fac1c03fa7799f709bf7f2d669b7dc32809b4bcc59ee59fb29a2"),
+        ("TLT", "NASD", "348ab2f82120bf53452011c336f52dd896370abe6e13832f7e85d02479d2d435"),
+        ("GLD", "AMEX", "3d8c571cd880d45d1692ccd3a201d4d36d5b84efacb986c588465c6c050c552c"),
+    ],
+)
+def test_legacy_owner_fingerprint_vectors_are_unchanged(symbol, exchange, expected):
+    owner = KisPaperPortfolioOwnerBinding(
+        "legacy-" + symbol,
+        ACCOUNT,
+        symbol,
+        exchange,
+        (KisPaperPortfolioStateRef("synthetic-run", "sha256:" + "b" * 64),),
+    )
+    assert owner.stock_binding_ref is None
+    assert owner.fingerprint == "sha256:" + expected
+    assert replace(owner, stock_binding_ref=None).fingerprint == owner.fingerprint
+
+
+@pytest.mark.parametrize("symbol", ["A", "AAPL", "ABCDEFGHIJ"])
+def test_stock_owner_requires_explicit_binding_and_is_not_a_global_allowlist(symbol):
+    with pytest.raises(KisPaperPortfolioBudgetError, match="instrument_invalid"):
+        KisPaperPortfolioOwnerBinding("stock", ACCOUNT, symbol, "NASD", ())
+    owner, _ = _stock_owner("stock", symbol=symbol)
+    assert owner.stock_binding_ref == STOCK_BINDING
+    result = _project((owner, ()))
+    assert [(s.symbol, s.exchange) for s in result.stocks_by_instrument] == [
+        ("SPY", "AMEX"),
+        ("QQQ", "NASD"),
+        (symbol, "NASD"),
+    ]
+    assert result.remaining_cap == result.remaining_gross_cash == 1000
+
+
+@pytest.mark.parametrize(
+    "symbol,exchange,binding,category",
+    [
+        ("AAPL", "NASD", True, "stock_binding_invalid"),
+        ("AAPL", "NASD", "sha256:" + "c" * 64, "stock_binding_invalid"),
+        ("AAPL", "NASD", "ref:" + "C" * 64, "stock_binding_invalid"),
+        ("AAPL", "NASD", "ref:" + "c" * 63, "stock_binding_invalid"),
+        ("AAPL", "NASD", "ref:" + "c" * 64 + "\n", "stock_binding_invalid"),
+        ("AAPL", "NASD", "private-secret", "stock_binding_invalid"),
+        ("aapl", "NASD", STOCK_BINDING, "instrument_invalid"),
+        ("ABCDEFGHIJK", "NASD", STOCK_BINDING, "instrument_invalid"),
+        ("AAPL1", "NASD", STOCK_BINDING, "instrument_invalid"),
+        ("BRK.B", "NASD", STOCK_BINDING, "instrument_invalid"),
+        ("", "NASD", STOCK_BINDING, "instrument_invalid"),
+        (True, "NASD", STOCK_BINDING, "instrument_invalid"),
+        ("AAPL", "NAS", STOCK_BINDING, "instrument_invalid"),
+        ("AAPL", "AMEX", STOCK_BINDING, "instrument_invalid"),
+        ("AAPL", "NYSE", STOCK_BINDING, "instrument_invalid"),
+        ("AAPL", [], STOCK_BINDING, "instrument_invalid"),
+    ],
+)
+def test_stock_binding_scope_and_types_fail_categorically(symbol, exchange, binding, category):
+    with pytest.raises(KisPaperPortfolioBudgetError) as error:
+        KisPaperPortfolioOwnerBinding("stock", ACCOUNT, symbol, exchange, (), binding)
+    assert str(error.value) == category
+
+
+def test_explicit_binding_has_separate_fingerprint_domain_even_for_a_legacy_nasd_pair():
+    legacy, _ = _owner("owner", symbol="QQQ")
+    bound = replace(legacy, stock_binding_ref=STOCK_BINDING)
+    assert bound.fingerprint != legacy.fingerprint
+    assert replace(bound, stock_binding_ref="ref:" + "d" * 64).fingerprint != bound.fingerprint
+    result = _project((bound, ()))
+    assert [(s.symbol, s.exchange) for s in result.stocks_by_instrument] == [
+        ("SPY", "AMEX"),
+        ("QQQ", "NASD"),
+    ]
+
+
+def test_stock_pending_buy_competes_with_all_legacy_owners_in_one_original_bank():
+    legacy = []
+    for index, (symbol, exchange) in enumerate(
+        (("SPY", "AMEX"), ("QQQ", "NASD"), ("TLT", "NASD"), ("GLD", "AMEX"))
+    ):
+        state = _state(symbol, symbol=symbol, phase="outcome_unknown", index=index)
+        state = replace(state, intent=replace(state.intent, exchange=exchange))
+        owner = KisPaperPortfolioOwnerBinding(
+            "legacy-" + symbol,
+            ACCOUNT,
+            symbol,
+            exchange,
+            (KisPaperPortfolioStateRef(state.intent.run_id, state.intent.fingerprint),),
+        )
+        legacy.append((owner, (state,)))
+    state = _state("stock", symbol="AAPL", limit="600", phase="outcome_unknown", index=4)
+    stock = _stock_owner("stock", state)
+    result = _project(*legacy, stock)
+    assert (result.basis_usd, result.allocated_usd) == (10000, 1000)
+    assert (result.entry_cost, result.reserved_buys, result.remaining_cap) == (0, 1000, 0)
+    assert result.remaining_gross_cash == 0
+    assert [(s.symbol, s.reserved_buys) for s in result.stocks_by_instrument] == [
+        ("SPY", 100),
+        ("QQQ", 100),
+        ("TLT", 100),
+        ("GLD", 100),
+        ("AAPL", 600),
+    ]
+    assert _project(stock, *reversed(legacy)).stocks_by_instrument == result.stocks_by_instrument
+    excessive = replace(state, intent=replace(state.intent, limit_price=D("600.01")))
+    with pytest.raises(KisPaperPortfolioBudgetError, match="aggregate_budget_exceeded"):
+        _project(*legacy, _stock_owner("stock", excessive))
+
+
+@pytest.mark.parametrize("observation", ["available", "absent", "unavailable", "conflict"])
+def test_stock_partial_cumulative_survives_restart_once_with_residual_reserved(observation):
+    spy = _owner("spy", _state("spy", filled="1", gross="500", limit="500"))
+    state = _state(
+        "stock",
+        symbol="AAPL",
+        quantity="4",
+        limit="110",
+        filled="3",
+        gross="300",
+        remaining="1",
+        phase="outcome_unknown",
+        observation=observation,
+        index=1,
+    )
+    owner, _ = _stock_owner("stock", state)
+    expected = {spy[0].owner_ref: spy[0].fingerprint, owner.owner_ref: owner.fingerprint}
+    before = state.to_dict()
+    for _ in range(3):
+        state = KisPaperCanaryState.from_dict(state.to_dict())
+        result = _project(spy, (owner, (state,)), expected_owner_refs=expected)
+        assert (result.entry_cost, result.reserved_buys, result.remaining_cap) == (800, 110, 90)
+        assert (result.gross_cash, result.remaining_gross_cash) == (200, 90)
+        stock = result.stocks_by_instrument[-1]
+        assert (stock.quantity, stock.entry_cost, stock.reserved_buys) == (3, 300, 110)
+    assert state.to_dict() == before
+
+
+@pytest.mark.parametrize("phase", ["submission_started", "outcome_unknown", "submitted"])
+def test_stock_unknown_without_fill_reserves_full_requested_limit(phase):
+    state = _state("stock", symbol="AAPL", quantity="3", phase=phase, observation="unavailable")
+    result = _project(_stock_owner("stock", state))
+    assert (result.entry_cost, result.reserved_buys, result.remaining_cap) == (0, 300, 700)
+
+
+@pytest.mark.parametrize("changes", [{"symbol": "MSFT"}, {"stock_binding_ref": "ref:" + "d" * 64}])
+def test_stock_symbol_or_source_binding_cannot_replace_independent_owner_proof(changes):
+    state = _state("stock", symbol="AAPL")
+    owner, states = _stock_owner("stock", state)
+    with pytest.raises(KisPaperPortfolioBudgetError, match="owner_binding_mismatch"):
+        _project(
+            (replace(owner, **changes), states), expected_owner_refs={"stock": owner.fingerprint}
+        )
+
+
+def test_stock_account_and_intent_instrument_must_match_bound_scope():
+    state = _state("stock", symbol="AAPL")
+    with pytest.raises(KisPaperPortfolioBudgetError, match="account_binding_mismatch"):
+        _project(_stock_owner("stock", state, account="b" * 64))
+    for changed in (
+        replace(state, intent=replace(state.intent, symbol="MSFT")),
+        replace(state, intent=replace(state.intent, exchange="NYSE")),
+    ):
+        with pytest.raises(KisPaperPortfolioBudgetError, match="owner_instrument_mismatch"):
+            _project(_stock_owner("stock", changed))
+
+
+def test_tampered_stock_binding_is_revalidated_and_redacted():
+    state = _state("stock", symbol="AAPL")
+    owner, states = _stock_owner("stock", state)
+    with pytest.raises(KisPaperPortfolioBudgetError) as error:
+        _project((_tamper(owner, "stock_binding_ref", "private-secret"), states))
+    assert str(error.value) == "stock_binding_invalid"
+    for secret in (ACCOUNT, "AAPL", "stock", STOCK_BINDING):
+        assert secret not in repr(owner)
+    with pytest.raises(FrozenInstanceError):
+        owner.stock_binding_ref = "ref:" + "d" * 64
+
+
+def test_stock_reference_duplication_or_foreign_owner_sell_cannot_create_inventory():
+    buy = _state("buy", symbol="AAPL", filled="1", gross="100")
+    with pytest.raises(KisPaperPortfolioBudgetError, match="duplicate_state_reference"):
+        _project(_stock_owner("stock", buy, buy))
+    sell = _state("sell", symbol="AAPL", side="sell", filled="1", gross="100", index=1)
+    with pytest.raises(KisPaperPortfolioBudgetError, match="unowned_sell"):
+        _project(_stock_owner("first", buy), _stock_owner("other", sell))

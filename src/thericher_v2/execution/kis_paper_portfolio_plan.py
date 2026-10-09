@@ -112,7 +112,8 @@ def build_kis_paper_portfolio_plan(
     _check(
         isinstance(binding, Mapping)
         and type(binding.get("version")) is int
-        and (binding["version"], set(binding)) in ((2, budget._V2_KEYS), (3, budget._V3_KEYS)),
+        and (binding["version"], set(binding))
+        in ((2, budget._V2_KEYS), (3, budget._V3_KEYS), (4, budget._V4_KEYS)),
         "portfolio_binding_invalid",
     )
     _check(
@@ -126,7 +127,7 @@ def build_kis_paper_portfolio_plan(
     owners = budget._owners(binding)
     actual_refs = {owner.owner_ref: ref for owner, ref in owners}
     _check(all(owner.fingerprint == ref for owner, ref in owners), "portfolio_owner_mismatch")
-    if binding["version"] == 3:
+    if binding["version"] in {3, 4}:
         for plan in binding["portfolio"]["plans"]:
             if plan["request_id"] == request_id:
                 original_refs = {
@@ -134,10 +135,24 @@ def build_kis_paper_portfolio_plan(
                     for key, value in actual_refs.items()
                     if not key.startswith("portfolio-")
                 }
+                if binding["version"] == 4:
+                    parent = copy.deepcopy(dict(binding))
+                    parent["portfolio"]["plans"].remove(plan)
+                    for run in plan["states"]:
+                        parent["terminal_evidence"].pop(run, None)
+                    for owner, _ in budget._owners(parent):
+                        if owner.owner_ref.startswith("portfolio-"):
+                            parent["portfolio"]["owner_refs"][owner.symbol] = owner.fingerprint
+                    original_refs = {owner.owner_ref: ref for owner, ref in budget._owners(parent)}
+                    if "sha256:" + budget._digest(parent) != plan["parent_binding_ref"]:
+                        original_refs = None
                 _check(
                     plan["input_ref"] == input_ref
                     and plan["parent_binding_ref"] == expected_binding_ref
-                    and expected_owner_refs in (actual_refs, original_refs),
+                    and (
+                        expected_owner_refs == actual_refs
+                        or (original_refs is not None and expected_owner_refs == original_refs)
+                    ),
                     "portfolio_request_conflict",
                 )
                 replayed, proofs = _replay_scope(binding, states)
@@ -334,7 +349,7 @@ def reconcile_kis_paper_portfolio_plan(
             binding = budget._load_binding(root, expected_account_ref)
             _check(
                 binding is not None
-                and binding["version"] == 3
+                and binding["version"] in {3, 4}
                 and binding["basis_ref"] == expected_basis_ref,
                 "portfolio_custody_mismatch",
             )

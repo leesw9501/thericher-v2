@@ -8,6 +8,29 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal45 COMPLETE: R45=A/execution/kis-stock-shared-budget-integration-v1,
+job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
+Actual13.544s/1token8GET/all-owner original10% replay/whole-share BUY sized,
+3positions0open/target absent.438sources3inputs44privatefiles unchanged,
+child reaped/invocation absent;0orders/cancel/intents/writes/owners/reservations.
+V4 host readers include explicit stock reservations and exact partial/unknown
+fills in the original bank; fixed trio risk remains residual/trio-only. Sizer
+funds also subtract existing reservations. Source16+shadow57 independent checks
+close scoped findings, actual runtime excluded; original failed receipts kept.
+Parent734serial/38external/full8:14556pass22skip35warnings340.02s/clean/reaped/
+Ruff/three sample-env Compose. Native sizing is not installed execution.
+Goal46 next: persist exact bk identity/reservation before wire, target-scoped
+funds, exact restart recovery; deliver compatible source to ALL competing writers.
+
+Original Oct9 portfolio-control COMPLETE/no_target_delta/0legs/0submit0cancel,
+34.565s/1token14GET; exact dispatch-b8c800abe9ce4c2ebd5b1a12c75456d0.json
+in A/execution/kis-current-control-paper-rebalance-preparation-v1/SHA6c9c016d...,
+job2b20f908.../worker249cdd15... . Reaped/absent/source unchanged,40->44
+private checkpoints; no new fill or net-PnL claim. Marker/time/hash linkage
+under assumed honest host, not proof of OS scheduler origin (logging disabled).
+SPY strategy next23:50KST; incompatible baked writer prevents stock installation
+only, not source preparation, existing Paper job or another ready lane.
+
 Goal36 COMPLETE/rejected9fits48cells/062a437b.../127ec525.../5185151d... .
 All hypothetical books flat/fee-cash-inventory matched/no missing marks.
 Positive seen Ridge/GRU/blend growth is not owned broker PnL or new authority.
@@ -58,7 +81,7 @@ Next: stock owner in existing canonical shared budget, exact whole-share sizing
 and every reader's reservation visibility; install nothing until compatible.
 Existing execute=False canary writes intent and StateStore.read creates locks:
 use strict frozen-byte parsers/RO private mount, not either path for shadow.
-Arbitrary stock owner/reservations aren't represented by old shared consumers.
+Arbitrary stock owner/reservations aren't represented by old baked consumers.
 Do not install an invisible sidecar or second10% basis. Extend all consumers
 coherently in a later package. This is a technical gap, not profit/PIT approval.
 Private Paper authority stays delegated; model profit is not an Execution gate.

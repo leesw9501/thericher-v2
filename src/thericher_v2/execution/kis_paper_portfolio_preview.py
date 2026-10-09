@@ -2,7 +2,8 @@
 
 Caller owns strict JSON decoding, private namespace custody and causal target/
 covariance construction. Frozen funding is not refreshed from broker cash.
-Risk uses provisional sleeve NAV = replayed gross cash + all owned marks;
+Risk uses provisional trio sleeve NAV = residual gross cash + trio marks;
+V4 stock reservations are excluded from that cash; no stock covariance is inferred.
 fees, settlement and dividend cash are unknown, not fabricated account equity.
 """
 
@@ -22,10 +23,11 @@ from .kis_paper_budget_strategy import (
     _RUN_ID,
     _V2_KEYS,
     _V3_KEYS,
+    _V4_KEYS,
     _basis,
     _owners,
-    _portfolio_seed_states,
     _retained_terminal,
+    _seed_states,
     _terminal,
     _validate_orders,
 )
@@ -151,7 +153,7 @@ def project_kis_paper_portfolio_preview(
         _check(
             isinstance(binding, Mapping)
             and type(binding["version"]) is int
-            and (binding["version"], set(binding)) in ((2, _V2_KEYS), (3, _V3_KEYS)),
+            and (binding["version"], set(binding)) in ((2, _V2_KEYS), (3, _V3_KEYS), (4, _V4_KEYS)),
             "ownership_binding_invalid",
         )
         _check(
@@ -179,9 +181,12 @@ def project_kis_paper_portfolio_preview(
         )
         records = binding["orders"] + qqq["orders"]
         records += [
-            {"run_id": run_id, "intent_ref": state.intent.fingerprint,
-             "closed": run_id in binding["terminal_evidence"]}
-            for run_id, state in _portfolio_seed_states(binding).items()
+            {
+                "run_id": run_id,
+                "intent_ref": state.intent.fingerprint,
+                "closed": run_id in binding["terminal_evidence"],
+            }
+            for run_id, state in _seed_states(binding).items()
         ]
         _check(
             isinstance(states, Mapping) and set(states) == {row["run_id"] for row in records},
@@ -197,7 +202,7 @@ def project_kis_paper_portfolio_preview(
             run_id = record["run_id"]
             state = states[run_id]
             _check(type(state) is KisPaperCanaryState, "state_invalid")
-            terminal_failure |= state.phase in {
+            terminal_failure |= state.intent.symbol in {*SYMBOLS, "QQQ"} and state.phase in {
                 "submission_started",
                 "outcome_unknown",
                 "cancel_started",
@@ -236,6 +241,10 @@ def project_kis_paper_portfolio_preview(
         historical_count = len(records)
         _check(not terminal_failure, "terminal_or_outcome_unproven")
         pending = sum(not row["closed"] for row in records)
+        trio_pending = sum(
+            not row["closed"] and states[row["run_id"]].intent.symbol in {*SYMBOLS, "QQQ"}
+            for row in records
+        )
         _check(type(reads) is KisPaperPortfolioPreviewReads, "reads_unavailable")
         _check(reads.account_ref == expected_account_ref, "account_binding_mismatch")
         _check(
@@ -309,13 +318,14 @@ def project_kis_paper_portfolio_preview(
             "reads_stale",
         )
         book = {}
+        expected_venues = (
+            {symbol: KIS_PAPER_PREVIEW_VENUES[symbol][1] for symbol in SYMBOLS}
+            | {"QQQ": "NASD"}
+            | {stock.symbol: stock.exchange for stock in projection.stocks_by_instrument}
+        )
         for position in snapshot.positions:
-            if position.symbol in {*SYMBOLS, "QQQ"}:
-                exchange = (
-                    "NASD"
-                    if position.symbol == "QQQ"
-                    else KIS_PAPER_PREVIEW_VENUES[position.symbol][1]
-                )
+            if position.symbol in expected_venues:
+                exchange = expected_venues[position.symbol]
                 _check(
                     position.symbol not in book
                     and position.exchange == exchange
@@ -326,7 +336,7 @@ def project_kis_paper_portfolio_preview(
                 book[position.symbol] = position.quantity
         owned = {stock.symbol: stock.quantity for stock in projection.stocks_by_instrument}
         _check(
-            all(book.get(s, Decimal(0)) == owned.get(s, Decimal(0)) for s in (*SYMBOLS, "QQQ")),
+            all(book.get(s, Decimal(0)) == owned.get(s, Decimal(0)) for s in expected_venues),
             "inventory_mismatch",
         )
         if owned["QQQ"]:
@@ -355,15 +365,27 @@ def project_kis_paper_portfolio_preview(
         cost, reserved = Fraction(projection.entry_cost), Fraction(projection.reserved_buys)
         bank = Fraction(projection.allocated_usd)
         cash = Fraction(projection.gross_cash)
-        nav = cash + sum(q * p for q, p in zip(inventory, marks, strict=True))
+        stock_reserved = sum(
+            (
+                Fraction(stock.reserved_buys)
+                for stock in projection.stocks_by_instrument
+                if stock.symbol not in {*SYMBOLS, "QQQ"}
+            ),
+            Fraction(0),
+        )
+        nav = cash - stock_reserved + sum(q * p for q, p in zip(inventory, marks, strict=True))
         _check(nav > 0, "risk_nav_unavailable")
         quantities = tuple((w * nav) // limit for w, limit in zip(weights, limits, strict=True))
-        additional = tuple(max(Fraction(0), target - held)
-                           for target, held in zip(quantities, inventory, strict=True))
+        additional = tuple(
+            max(Fraction(0), target - held)
+            for target, held in zip(quantities, inventory, strict=True)
+        )
         notionals = tuple(q * p for q, p in zip(additional, limits, strict=True))
         # Every incumbent is immutable; no sell or foreign-inventory adoption.
-        exposures = tuple(max(Fraction(q), held) * p / nav
-                          for q, held, p in zip(quantities, inventory, marks, strict=True))
+        exposures = tuple(
+            max(Fraction(q), held) * p / nav
+            for q, held, p in zip(quantities, inventory, marks, strict=True)
+        )
         annual_variance = 252 * sum(
             exposures[i] * covariance[i][j] * exposures[j] for i in range(3) for j in range(3)
         )
@@ -377,12 +399,11 @@ def project_kis_paper_portfolio_preview(
             else "rounded_risk_exceeds_cap"
             if annual_variance > Fraction(ANNUAL_RISK_CAP) ** 2
             else "pending_identity"
-            if pending
+            if trio_pending
             else "open_order_conflict"
             if any(o.symbol in {*SYMBOLS, "QQQ"} for o in snapshot.open_orders.orders)
             else "shared_budget_exceeded"
-            if sum(notionals) > bank - cost - reserved
-            or sum(notionals) > cash - reserved
+            if sum(notionals) > bank - cost - reserved or sum(notionals) > cash - reserved
             else "buying_power_insufficient"
             if sum(notionals) + reserved > min(map(Fraction, funds))
             else "preview_only"

@@ -1818,12 +1818,12 @@ def _conflicts_with_owned_spy_cycle(
     state_root: Path, intent: KisPaperCanaryIntent,
     *, portfolio_execution: KisPaperPortfolioExecutionBinding | None = None,
 ) -> bool:
-    if intent.symbol not in {"SPY", "TLT", "GLD"}:
-        return False
     from .kis_paper_budget_strategy import conflicts_with_budget_strategy
     from .kis_paper_spy_fill_cycle import conflicts_with_active_spy_fill_cycle
 
-    if conflicts_with_active_spy_fill_cycle(state_root, intent.run_id, intent.symbol):
+    if intent.symbol in {"SPY", "TLT", "GLD"} and conflicts_with_active_spy_fill_cycle(
+        state_root, intent.run_id, intent.symbol
+    ):
         return True
     conflict = conflicts_with_budget_strategy(state_root, intent.run_id, intent.symbol)
     if conflict and portfolio_execution is not None:

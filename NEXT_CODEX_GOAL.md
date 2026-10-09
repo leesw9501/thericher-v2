@@ -2,68 +2,85 @@
 
 ## Objective
 
-Complete kis-stock-shared-budget-integration-v1: integrate the prepared single
-NASDAQ stock target into the EXISTING shared Paper budget and exact whole-share
-sizing. This removes a real model-to-Paper execution gap, not a profitability
-or operator-approval gate. Live remains unavailable.
+Complete kis-stock-persisted-paper-execution-v1: connect the prepared single
+NASDAQ model target to one recoverable KIS Paper execution cycle inside the
+EXISTING original10% bank. Reuse shared reservation and exact canary recovery;
+no separate stock bank, profitability approval or live behavior.
 
-## Inputs
+## Exact Inputs And Current Facts
 
-A=D:/thericher-v2/model-artifacts. Goal43 exact r3 typed proposal/receipt:
-ce026452.../308bb0f0..., target0.01 of original total basis inside aggregate0.10,
-confidence0, original clocks11:46:17.437602..499976UTC, Oct9 expiry20:00UTC.
-Do not renew the clock or call it calibrated/independent alpha.
-Goal44 actual A/execution/kis-stock-readonly-preparation-v1/r2:
-job8246f852.../outcome-c5716712b65a4d789bfdb69a61f0699e.json/37144191...,
-11.991s/1token8GET/account3positions0open/fresh target tick/exact funds,
-target absent/original shared binding unchanged. Capacity not yet replayed.
-437sources/3inputs/40private files unchanged/reaped/absent/0 orders/writes.
-Fixed scope2203fae4.../client8edb8364...; source reviewbd2bbfbb... excludes
-actual runtime. Shared14345pass22skip35warnings/340.47s; focused630pass.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Goal43 r3 proposalce026452.../receipt308bb0f0...: target0.01 of TOTAL original
+basis, confidence0, original11:46:17.437602..499976UTC clocks/Oct9 expiry20:00UTC.
+Preserve this expiry; do not silently regenerate a clock or call it an alpha winner.
+Goal45 native RO sizing actually COMPLETE at
+A/execution/kis-stock-shared-budget-integration-v1:
+job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed...,
+13.544s/1token8GET/original all-owner replay/whole-share BUY available,
+3positions0open/target absent/fresh tick/exact-limit funds.438sources/3inputs/
+44privatefiles unchanged/reaped/absent/0orders/writes/owners/reservations.
+Source reviewsaced1e04.../16 and87626967.../57 exclude actual runtime;
+734serial/38external/clean8:14556pass22skip35warnings340.02s/Ruff/three Compose.
+
+Oct9 original portfolio-control is complete/no_target_delta/0orders, not a fill.
+Existing SPY strategy has an owned23:50KST opportunity. Its old source-baked
+writer cannot consume V4. Deliver compatible source before stock installation;
+never reset a bank, replace an unknown intent or manually invoke that task.
+Host Paper loader kis_readonly.py must remainc07983f6... .
 
 ## Disjoint Packages
 
-Data owns pure explicit stock-owner instrument binding and shared aggregate
-budget DTO/replay tests. Preserve legacy owner fingerprints byte-for-byte;
-do not widen fixed ETF quote APIs or infer venue from US alone.
-Execution owns canonical budget schema/strict seed parsing/owner enumeration
-and every competing SPY/QQQ/trio shared-cap reader. Reuse original basis,
-ordered exact identities, cumulative-fill replay and existing two locks.
-Parent owns pure stock sizing/plan preparation and consumer integration.
-Validation independently attacks ready source/synthetic boundaries, no tuning.
+Execution owns pure exact stock plan construction, canonical V4 reservation
+and terminal-evidence recovery. Stock identity uses existing bk-/stock- domain,
+original account/basis/input/parent pins, quantity/price/created/expiry clocks.
+Persist reservation and immutable intent before any broker side effect under
+existing session-then-canary locks. Retry returns EXACT original request,
+not a fresh price/quantity/TTL. Unknown submission requires exact reconciliation.
 
-Use one canonical shared binding, not a separate stock ledger/reservation or
-second bank. A stock reservation must reduce capacity identically for all
-competing consumers, including after restart, partial fill or unknown submit.
-Account-held shares are not owned inventory; never adopt or sell them.
-Typed target0.01 is relative to total original basis, not 1% of the 10% bank.
-Use exact whole-share floors, current owned quantity, tick-valid limit and
-remaining shared cap/gross cash/exact-limit funds. Zero shares is scoped no-intent.
-Use the stock-scoped exact-limit funds path; legacy canary QQQ fallback is wrong.
-Keep fixed trio risk/covariance semantics fixed; no invented stock covariance.
+Parent owns typed stock execution proof and call-time canary integration.
+Use explicit stock-bound exact-limit funds, not legacy QQQ fallback. Reuse
+current virtual-host order/cancel transport, post-pacing expiry checks, strict
+submission parsing and cumulative fills. Reconcile partial/unknown outcomes
+without adopting foreign holdings or erasing prior fills. Source records are
+not fills; broker success is not settled cash, fees or net PnL.
 
-Run a bounded read-only capacity/sizing shadow only through named selective
-Paper loading, transient stdin, exact frozen source and RO private parsers.
-Report status/count/time/ref only, never private amounts/prices/IDs/raw bodies.
-No order/private intent/reservation installation or account-state migration
-in this objective. Those follow coherent consumer/runtime delivery, not new
-human approval. Original clock expiry is factual, not an implementation hold.
+Temporary Infra owns a source-safe inventory of EVERY competing canonical-bank
+writer and coherent reversible source delivery. Same runtime/dependencies only;
+no major replacement or unrelated scheduler platform. Keep existing opportunities,
+original job identity/budget/private custody and recovery semantics intact. An
+active owned writer is a scoped conflict; continue other ready source work.
 
-Keep tonight's Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../
-imageb0198cbb... and 23:05KST follow-up untouched. Host loader kis_readonly.py
-must stay c07983f6... . Old baked writers cannot understand the new schema;
-install no new owner while an incompatible writer can still run. Preserve its
-owned opportunity and existing private custody; no manual invoke/reset/substitute.
+Validation independently attacks a frozen source/contract and synthetic crash,
+reservation, exact-stock funds, route/account, expiry-after-pacing, concurrent
+writer, restart and unknown-submit boundaries. No private values or tuning.
+Engine preserves exact model receipt/clock and supplies constructor evidence;
+no refit, new holdout or GPU allocation needed for this connection.
 
-## Completion
+## Actual Bounded Paper Cycle
 
-Source-compatible old bindings plus synthetic stock/trio/SPY/QQQ capacity,
-identity, partial/unknown-fill, zero-share and restart falsifiers; exact bounded
-RO sizing outcome or scoped unavailable with no private writes. Independent
-source review, changed-path serial, clean8 helper, Ruff and three sample-env
-Compose; verify/commit/push, refresh stateboards and ONE next objective; continue.
-Strongest kill: invisible reservation, basis reset, foreign holding adoption,
-wrong target/account/live route, duplicate identity, rounded overspend or false
-fill/capacity claim. Ask Claude for concise material schema/recovery drift-check;
-known review_unavailable is not agreement or a company-wide wait.
-Data D:/market_data; artifacts A; preserve D15% free. No GPU/refit needed here.
+Inside standing Paper authority, after coherent source delivery and source
+falsifiers, use one named exact model-owned request through the owned path.
+Re-read current whole-share capacity and exact target funds at call time.
+When positive, persist then attempt the virtual BUY and reconcile exact linked
+submission/fill/open/owned inventory. A zero whole-share result is scoped no-intent,
+not an operator gate or budget reset. Preserve unknown identity and its next
+recovery action; never issue a substitute. No live credential read or route.
+Use selective Paper configuration/stdin and private state; never print/persist
+secrets or account/order IDs in Git/logs/artifacts. Safe counts/categories/refs
+only. Old account holdings are not owned sell inventory. No forced liquidation
+or source-family promotion is needed merely to exercise the Paper path.
+
+## Completion And Continue
+
+Completion evidence is source-compatible persisted plan/reservation/recovery,
+independent source falsifiers and coherent writer-delivery facts, plus one exact
+native cycle result or scoped technical unavailability with durable recovery.
+Distinguish no-intent, actual submit, positive rejection, exact linked fill,
+owned reconciliation and unresolved recovery; never infer fills from task exit.
+Strongest kill: invisible reservation, basis reset, duplicate/substitute intent,
+foreign holding adoption, QQQ funds fallback, live route or false fill claim.
+Ask Claude for concise material execution/recovery drift-check; review_unavailable
+is not agreement or a global wait. Run changed-path serial, clean8 helper, Ruff
+and three sample-env Compose at integration; commit/push, refresh stateboards and
+ONE material next objective, then continue. Preserve D15% free. No new report
+family, per-agent goal, manual-approval gate or utilization-only GPU training.
