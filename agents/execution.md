@@ -21,9 +21,15 @@ or broker input promotion. Goal34 adds analytical buy/cash and joint expert
 choice under the SAME declared OC cost/fill assumptions, not Paper parity,
 profitability approval or a new Execution permission. Goal34 now CLOSED/all four
 screens reject; native224a0a14... and independentbf0b0cb9... cached economics
-match33cells, not continuous whole-share/broker or model parity. Goal35 CPU-first
-rank-buffer carry needs narrow N-key conservation/fee/affordability attestation
-on synthetic books only. No broker/order/current-control input change.
+match33cells, not continuous whole-share/broker or model parity. Goal35 CLOSED:
+24 cells with no missing marks/funding rejection/nonflat books, actual N-key
+cash/inventory/fee conservation matched; independent5aea32af... is synthetic
+only. Contract12b1b4c6.../parentc6647248.../result2a9bd908.../custody156f4732... .
+Primary rank-buffer rejected(-26.67%); same-initial buyonce+0.24% is a control,
+not owned broker profit. Used-source poll-exception gap1954ff4c... did not
+trigger in actual reaped/absent phases; fix next fresh caller, not old bytes.
+Goal36 uses this analytical book for fixed stock-specific models, without
+model selection, capital/order/current-control or broker parity changes.
 Tonight's owner continues independently.
 
 Goal25 preparation COMPLETE; Goal26 pure owned gross-PnL attribution COMPLETE.

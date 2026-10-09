@@ -14,18 +14,47 @@ and rank seals, independent Fraction/scalar economics; not model equivalence.
 Custody875233b5... closed/sealed0. All367/549/739 potential TRAIN dates valid;
 reviewed no-context OOF diagnostic defect dormant, future correction only.
 
-NEXT owns zero-fit stock rank-buffer carrying plus exact113-session retained
-input/whole-share fee conservation. Data root D:/thericher-v2/model-artifacts/
+NEXT owns stock-specific five-OPEN model selection: Ridge/HGB/GRU/equal fixed
+blend,9 fits MAX/600s/48 cells, separate OLD800 TRAIN/CURRENT113 seen dates.
+Features97c6869.../68 tests and modelsccb53e53.../37 tests are source preparation;
+actual autograd/CUDA unverified. Native CPU smoke, fresh caller repair and
+freeze precede market fitting; no allocation yet. No old/current value graft,
+parameter search, public weights, sealed holdout or automatic Paper promotion.
+
+Goal35 zero-fit stock carrying CLOSED/REJECTED under
+D:/thericher-v2/model-artifacts/research/kis-equity-rank-buffer-carry-development-v1-runtime-r2.
+Contract12b1b4c6.../parentc6647248.../result2a9bd908.../custody156f4732...;
+24cells0fits/worker27.381s/parent29.830s/three-phase68.456s<300/unchanged/reaped/absent.
+Whole10bps rank-buffer-26.67%, replacement-18.51%, same-initial buyonce+0.24%,
+cash0. No missing/funding rejection/nonflat; actual conservation matched,
+independent accounting synthetic5aea32af... only. Residual poll-exception
+gap1954ff4c... untriggered in actual closed phases; fresh caller must fix it.
+No source editing, retry/rescue, budget refund or broker-net-PnL claim.
+
+Exact113 retained input/whole-share fee conservation. Data root D:/thericher-v2/model-artifacts/
 data/kis-current-pooled-equity-retained-history-v1. selector3c2fb886.../35tests
 and materialize5a2e17f1.../39tests released. Original metadata freeze failed
 calendar_invalid/no precommit/output. Exact113 date/open/close instants match;
-ISO strings differ. Fresh materialize_clock_r2.py/precommit-clock-r2.json
-pending; never edit originals or waive changed calendar instants. No KIS call,
-historical graft, source qualification or original100 scope rewrite.
-Latest clean8 authority helper0/35warnings/13830 collected covers2ebc361;
-changedserial271/runtime206/independent66/retained-input74 pass, Ruff/three
-sample-env Compose pass. Duplicate-q suppresses aggregate pass/time display;
-do not rerun only for display or claim an unobserved total/elapsed.
+ISO strings differ. Fresh materialize_clock_r2.pyc937f8ca... COMPLETE3.187s:
+precommit7d8b4d01.../manifest18a37635.../payloadbd6b0f40.../686 original bindings
+unchanged/113sessions14073rows121complete4sparse3empty. Exact compact root:
+D:/market_data/us_equities/kis_paper_private/current-pooled-equity-retained-history/v1/
+7d8b4d01ba339e0423425a61f51aacb3cf1de40e9833933793c48a7d6d043cb0.
+Reader6c9115da... host0.203s verifies TWO compact files, not686 originals;
+native exact field/count/digest/calendar transport COMPLETE.295s/parent3243b5f7...;
+actual study load.283s. Native only two compact bytes, not686 originals or
+runtime equivalence. No KIS call/graft/source qualification.
+Kernel648fd1c2... in a477e89 uses same initial momentum buyonce and fee-aware
+compounding; independent synthetic accounting5aea32af...22 cases/no P1-P2.
+No actual broker parity, raw signal rounding, outcome tuning or Paper change.
+Latest clean8 authority13876pass22skip35warnings337.63s coversa477e89;
+changedserial273/Data85+44/independent22/Ruff/three sample-env Compose pass.
+Do not repeat full authority per external handoff or edit used source bytes.
+
+## Retained Historical Evidence
+
+The following dated studies and commands retain their original evidence.
+Their old next-work statements do not override the current objective above.
 
 Latest Goal32 COMPLETE, Data-only/runtime/preview evidence, no profitability
 or Paper-input promotion. Exact root:

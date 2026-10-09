@@ -7,22 +7,26 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal34 A/research/kis-pooled-equity-participation-value-development-v1:
-contract80b88afb.../436sources1124inputs/custody875233b5.../trial1/sealed0.
-One600s allocation,6fits33cells. CPU synthetic smokeff71e69b...36.475s passes,
-no market fit/CUDA. Actual de91a5e0... completes6fits6starts33cells,
-worker254.531s/parent259.098s/resultf6510e4b.../parent21ba54a8... .
-Sources/inputs unchanged/child reaped/invocation absent/canonical lease released.
-Three CUDA512 fits total3.774527s/peak77956096bytes. All four learned screens
-reject; no depth survivor, sealed spend, output reuse or Paper promotion.
+Goal36 stock-specific-five-session-selection is SOURCE preparation, not yet a
+GPU allocation or market fit. Fixed Ridge/HGB/GRU/equal mean; nine fits MAX/
+one600s family/48 cells/sealed0. SAME128/OLD800 training/CURRENT113 separate;
+prefix cutoffs427/600/799/target purge5/date-balanced scaler. Feature97c6869...
+and modelsccb53e53... have68+37 tests; fake CUDA is not an actual capability result.
+Wait only that campaign for frozen source/input/CPU proof; other lanes continue.
+First ready frozen useful GPU campaign is delegated, not utilization-only work.
 
-Native cached verify224a0a14...136.678s COMPLETE/0fits/no GPU/shared replay,
-source/input/output unchanged/reaped/absent. Independent bf0b0cb9...134.849s
-matches33 cells/actions/kills with unchanged bindings/reaped/absent; no old
-numeric decode, refit/scaler/model inference or tolerance. Registry is CLOSED
-non_promoting_completed; cached economics is not model/runtime equivalence.
-Goal35 has CPU input/accounting work ready, zero fits/GPU/sealed spend.
-Recheck actual owned lease/process state before a new scarce-resource dispatch.
+Goal35 root kis-equity-rank-buffer-carry-development-v1-runtime-r2 CLOSED:
+contract12b1b4c6.../custody156f4732.../24cells0fits/one300s CPU family/
+68.456s observed three-phase debit/no sealed spend/no GPU allocation.
+Actual normal child/container closure and bindings all verified. Four books
+complete/flat; rank-buffer rejected despite lower turnover.
+Original metadata/protocol contractdad59736... had zero dispatched debit/fits;
+fresh correction did not refund or reopen a scientific allocation.
+Poll-exception cleanup gap1954ff4c... remains untriggered in that actual run,
+not a claim of universal recovery. Fix only a fresh future caller before GPU use.
+Goal34 custody875233b5... is CLOSED/rejected6fits33cells, GPU released; exact
+independent cached economics is not independent forecasts/model equivalence.
+Recheck actual canonical lease/process ownership before any new GPU dispatch.
 
 ## Closed Constraints
 

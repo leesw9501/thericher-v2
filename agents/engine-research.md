@@ -7,44 +7,39 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-09 KST)
 
-Goal34 is CLOSED/REJECTED; independent cached economics matches.
-Root A/research/kis-pooled-equity-participation-value-development-v1.
-Contract80b88afb.../436sources1124inputs/custody875233b5.../trial1/sealed0.
-Run de91a5e0.../parent21ba54a8.../resultf6510e4b... completes6fits33cells;
-worker254.531s/parent259.098s/source-input unchanged/reaped/absent/GPU released.
-Three CUDA512 GRU fits1.332/1.241/1.202s, peak77956096bytes.
-Data load212.158s/geometry12.803s are measured phases, not isolated IO causes.
+Goal36 root A/research/kis-stock-specific-five-session-selection-development-v1.
+Stock-specific relative five-OPEN returns, fixed Ridge/HGB/GRU and equal blend;
+nine fits MAX/600s/48 cells, no sealed spend. OLD800 only for training; CURRENT113
+separate seen evaluation. Prefix target cutoffs427/600/799 and OOF428..600/
+601..794; fixed prior61/four features/20x2 sequence/date-balanced scale.
+Features97c6869.../68 tests +22 independent checks, modelsccb53e53.../37 tests
+are SOURCE preparation. No market fits or GPU appointment yet; fake Torch is
+not autograd/CUDA proof. Native CPU smoke and fresh exact caller precede fitting.
 
-All four learned fixed screens REJECT on39 adaptive seen dates at10bps:
-Ridge joint growth-21.10%, participation-9.57%; GRU joint-20.21%,
-participation-17.02%. Neither joint utility exceeds its own participation arm.
-No missing DEV payoff or OLD joint label. All potential367/549/739 TRAIN dates
-are valid, proving the reviewed no-context OOF diagnostic defect is dormant
-in this actual run. Preserve frozen bytes; correct that diagnostic in a future
-consumer, not via new fits or changed selection.
-
-Native cached verify224a0a14...136.678s COMPLETE/0fits/no reinference/scaler
-recompute/source-input-output unchanged/reaped/absent. This is shared replay,
-not independent model validation or cross-runtime equivalence.
-Independent bf0b0cb9...134.849s matches all33 cells/actions/kills, with
-source/input/output unchanged/reaped/absent. It uses shared native parsing
-but independently computes actions and economics; no model/scaler or
-cross-runtime equivalence, old numeric decode, new fit or tolerance change.
+Goal35 CLOSED/REJECTED root kis-equity-rank-buffer-carry-development-v1-runtime-r2:
+contract12b1b4c6.../436sources5inputs/result2a9bd908.../parentc6647248...,
+24cells0fits/worker27.381s/parent29.830s/three-phase debit68.456s<300.
+All books complete/flat, no missing or funding rejection; actual accounting
+matched, independent synthetic accounting5aea32af... only. Whole10bps rank-buffer
+growth-26.67%, replacement-18.51%, same-initial buyonce+0.24%, cash0.
+Lower turnover did not create value. Custody156f4732... closed, no winner/search
+or Paper qualification. Known poll-exception source gap1954ff4c... untriggered
+in actual closed phases; fresh caller must correct it, never edit used source.
 
 ## Ready Work And Ownership
 
-- Data: released113-session retained-history selector3c2fb886.../35tests;
-  actual coverage pending. Same128 sparse keys could expose52 later dates
-  Jul28..Oct8 after61 warmup, not52 independent samples or fresh holdout.
-- Infra: fresh clock-r2 compact transport under M. Original metadata freeze
-  failed on lexical clock equality; exact typed113 instants match. Preserve
-  used bytes and original100 contract; no tolerance or provider call.
-- Engine: Goal35 zero-fit rank-buffer carry kernel and N-key whole-share /
-  fractional accounting; source-frozen comparison follows independent review.
-- Parent: integrate Goal35 input/accounting/contracts/Git; tonight's owned
-  Paper opportunity remains Execution-owned and independent.
-- Depth/ensemble/replication: no independently qualified survivor or fresh
-  ready contract. Do not select/reweight rejected outputs.
+- Data: exact CURRENT113/14073 rows/121complete4sparse3empty; manifest18a37635...
+  payloadbd6b0f40.../precommit7d8b4d01... . Native exact two-file proof.295s;
+  source/observation/missingness limits unchanged,52 dated marks not independent.
+- Infra: prepares fresh frozen-input reader/caller with independent kill/reap.
+  No provider call, OLD/current merge, new framework or budget refund.
+- Engine: fixed model adapters released; parent builds one finite comparison
+  using the reviewed accounting, causal score seals and actual finite guards.
+- Validation: temporary source review of chronology/scaling/device behavior;
+  no tuning, old output rescue or blanket quality gate.
+- Parent: integrate/freeze/allocate when ready; tonight's Paper remains separate.
+- Depth/replication: no independently qualified survivor or ready depth contract.
+  Equal within-campaign blend is exploratory, not cross-track promotion.
 
 ## Useful Inputs
 

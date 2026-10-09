@@ -9,33 +9,34 @@ No company block or foreground sleep.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Research integration | Parent | Goal34 CLOSED/REJECTED/custody875233b5...; native cached224a0a14... and independent bf0b0cb9... match33 cells/actions/kills. Goal35 input/accounting is the next single objective. |
-| GPU | Steward | Goal34 exact child/container closed/lease released. Three CUDA512 fits3.775s. No ready depth survivor; recheck custody before next dispatch, never create dummy utilization work. |
-| Retained coverage | Data / Infra | Pure113-session selector3c2fb886.../35tests released. Original materializer metadata freeze failed lexical clock equality; exact typed113 instants match. Fresh clock-r2 correction preserves used bytes and original100 contract. Potential52 later dates is geometry only. |
-| Next mechanism | Engine | Goal35 zero-fit rank-buffer carry and N-key whole-share / fractional kernel in progress; independent accounting review precedes the frozen24-cell CPU comparison. |
-| Verification | Parent | Clean8 helper exit0/35warnings,13830 collected; changedserial271/external206 pass/Ruff/three sample-env Compose pass. No full-suite rerun per external handoff. |
-| Paper session | Execution scheduler | Oct9 22:45KST/13:45UTC portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... owns original shared10% basis/SPY-TLT-GLD/QQQ custody. Future submit/fill/closure not_observed; no manual invoke/reset/substitute. |
-| Follow-up | Chat one-shot | Oct9 23:05KST exact owned Paper result check. No replacement follow-up chain, recurring report or schedule expansion. |
-| Head | Data scheduler | Next Oct9 15:29UTC owned. Existing coverage does not prove prospective availability or provider finality; no manual invoke. |
-| Console | Existing web | http://127.0.0.1:8787 is retained reference, not current owned net profit. |
+| Company integration | Parent | Goal35 CLOSED/rejected24cells0fits/custody156f4732...; Goal36 fixed stock-specific9-fit600s/48-cell source preparation is the next objective. |
+| GPU | Steward | Prior allocation released; no frozen Goal36 appointment yet. Feature/models source ready, native capability/caller pending. No authority restriction or dummy utilization work. |
+| Input | Data / Infra | CURRENT113/14073 rows/121complete4sparse3empty; native exact two-file read.295s/.283s study load. Original686 host proof is separate. OLD800 compact retained, no data acquisition or value graft. |
+| Models | Engine | Features97c6869.../modelsccb53e53... released68+37 tests; nine-fit ceiling/date-balanced/purge5. Actual autograd/CUDA unverified. |
+| Caller | Infra / temporary review | Fresh future GPU caller/source preparation; fix independent poll/kill/reap. Used Goal35 residual1954ff4c... did not trigger; all actual children were reaped/absent. |
+| Verification | Parent | a477e89 clean8:13876pass22skip35warnings337.63s; serial273/repo Ruff/three sample-env Compose pass. No full rerun per external handoff. |
+| Paper session | Execution scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... owns original shared10% basis/SPY-TLT-GLD/QQQ custody. Future submit/fill/closure not_observed; no manual invoke/reset/substitute. |
+| Follow-up | Chat one-shot | Oct9 23:05KST exact owned Paper result check; no replacement chain or schedule expansion. |
+| Head | Data scheduler | Next Oct9 15:29UTC owned; historical availability/finality not_observed, no manual invoke. |
+| Console | Existing web | http://127.0.0.1:8787 retained reference, not owned net profit. |
 
 ## Bottleneck And Reversible Improvement
 
-Goal34 measured load212.158s versus geometry12.803s and CUDA fits3.775s.
-The load phase includes preparation/decoding; this is not an isolated IO or
-CPU-concurrency diagnosis. Earlier current-only decode62.755s supports trying
-a smaller exact transport, not removing provenance checks.
+Goal35 source/input path is now usable: native compact load.283s, first audit
+5.302s, total parent29.830s; source hashing remains measured overhead, not a
+provider limit. Do not infer host/native equivalence or isolated IO causality.
 
-Current improvement: validate unchanged original100 snapshot once on the host,
-select declared113 retained dates separately, preserve exact Bar field strings
-in a small external compact cache and verify native readback before reuse.
-Keep original bindings/observations/missing keys; no source qualification,
-calendar graft, old-value merge, new provider calls or model/Paper promotion.
-Data transport recovery and Engine accounting proceed on disjoint roots in
-parallel. Goal34 independent economic closure is complete, not a waiting lane.
+Most material scientific bottleneck: rank-buffer reduced turnover8.760 versus
+replacement11.550 but whole growth worsened(-26.67% vs-18.51%). Same-initial
+buyonce+0.24% is a control, not a selected winner. Cost suppression alone did not
+create value. Dispatch the distinct stock-specific relative-return hypothesis,
+not another timing or parameter rescue.
 
-Goal31 exhausted and Goal33 incomplete-independent closures remain in lane
-custody/history; they are not current shared resource blocks or ready queues.
-Claude challengebbfea76c... is review_unavailable, not substantive agreement.
-Source-local Tiingo/FINRA rights questions defer only their numeric work;
-standing private Paper and other no-cost work remain delegated.
+Retain the exact small compact transport and reviewed fee-aware book; use
+one frozen9-fit600s/48-cell family instead of repeated source decoding or
+per-model allocations. Fresh caller repairs independent poll/kill/reap before
+GPU dispatch; actual prior closure remains valid, old bytes immutable.
+Data/caller/model/source review remain disjoint; no foreground Paper wait.
+Claude62fe0cab... is review_unavailable/cli_is_error, not substantive agreement.
+Source-local Tiingo/FINRA rights defer only those numeric jobs; other no-cost
+Data/Research/Paper authority is delegated.

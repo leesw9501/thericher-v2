@@ -57,8 +57,19 @@ identity replacement or original scope rewrite. Host compact transport then
 native exact field-string readback, not runtime equivalence or qualification.
 Original materialize5a2e17f1.../39tests metadata freeze failed/calendar_invalid,
 no precommit/output;113 dates/typed clock instants match, ISO strings differ.
-Fresh clockR2 pending; no tolerance/backdating/changed-calendar waiver. All
-original sources/receipts retained; this Data fault does not pause Engine/Paper.
+Fresh clockR2c937f8ca... COMPLETE3.187s: precommit7d8b4d01...,
+manifest18a37635.../payloadbd6b0f40... in
+M/us_equities/kis_paper_private/current-pooled-equity-retained-history/v1/
+7d8b4d01ba339e0423425a61f51aacb3cf1de40e9833933793c48a7d6d043cb0.
+Host original686 bindings/source unchanged;113sessions14073rows/121complete
+4sparse3empty,391 missing rows,all128 identities. Separate compact reader
+6c9115da.../44 tests actual host0.203s checks TWO current files/digests/calendar;
+it does not reread686 original bytes or prove native equivalence. Native exact
+two-file readback COMPLETE.295s/parent3243b5f7... in Goal35 runtime-r2,
+436source5inputs unchanged/reaped/absent; actual study compact load.283s.
+24-cell study complete with no missing held marks, not a source qualification.
+Clock/selector85+compact44 tests pass; no tolerance/backdating/calendar waiver.
+All original sources/receipts retained; no provider call or new quality gate.
 
 Latest historical engineering-control refresh is actually READY: fixedSPY/AMS,
 TLT/NAS,GLD/AMS,253 dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC.

@@ -20,54 +20,51 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal35 kis-equity-rank-buffer-carry-development-v1: CPU-first,
-zero-fit stock-carry/turnover comparison with whole-share conservation on an
-exact separately derived113-session retained current view. Same128 sparse
-keys/no provider call/OLD value graft/reselection. Data geometry may expand
-later dated marks39->52; not new independent samples, holdout/PIT/CA/TR proof.
+NEXT owns Goal36 kis-stock-specific-five-session-selection-development-v1.
+One stock-specific relative five-OPEN return family: fixed Ridge/HGB/GRU and
+equal prediction blend, nine fits MAX/600s/48 cells. SAME128 identities,
+OLD800 TRAIN and separate CURRENT113/52 marked dates, no value graft.
+Prepare fixed prior61 features/date-balanced prefix scaling/purged target
+cutoffs427/600/799; current values never enter fitting or selection.
+FeatureR2 97c6869.../68 tests/22 independent checks permits latest inputs
+without future labels. Modelsccb53e53.../37 tests use fake Torch; native CPU
+and actual CUDA remain unverified. Fresh GPU caller/source review pending;
+fix independent poll/kill/reap BEFORE its dispatch. No allocation or market fit yet.
 
-Data selector3c2fb886.../35tests and transport5a2e17f1.../39tests released.
-Original metadata freeze FAILED/calendar_invalid/no precommit/output. Probe
-confirms113 dates and exact typed open/close instants match; only ISO strings
-differ lexically. Preserve original bytes. Infra prepares fresh
-materialize_clock_r2.py/precommit-clock-r2.json; exact clocks, no tolerance.
-Parent then materializes once under M and verifies native compact strings.
-Engine prepares pure five-session rank-buffer carry; Execution must attest
-N-key cash/inventory/fees/affordability/missing-held-mark semantics. No model
-fit/GPU/submit scope in this zero-fit baseline; future ML uses its ready replay.
+Goal35 CLOSED/REJECTED in A/research/
+kis-equity-rank-buffer-carry-development-v1-runtime-r2.
+Contract12b1b4c6.../436sources5inputs/result2a9bd908.../parentc6647248... .
+24cells/0fits/worker27.381s/parent29.830s/all three phases68.456s<300.
+Actual source/input unchanged/reaped/absent; no missing marks, funding rejection
+or nonflat books. Whole primary rank-buffer-26.67%, replacement-18.51%,
+same-initial buyonce+0.24%, cash0. Lower turnover did not improve performance.
+Custody156f4732... closed; no rescue, parameter change or winning-model claim.
+Actual cash/inventory/fee conservation matches; independent accounting is
+synthetic5aea32af..., not independent actual economics/broker parity.
+Residual source-only poll-exception cleanup gap1954ff4c... was not triggered
+in actual closed phases. Used bytes stay immutable; correct the fresh caller.
 
-Goal34 CLOSED/REJECTED, not a profitable/Paper-qualified model:
-A/research/kis-pooled-equity-participation-value-development-v1.
-Contract80b88afb.../436sources1124inputs/custody875233b5.../sealed0.
-Actual de91a5e0.../parent21ba54a8.../resultf6510e4b... completes6fits33cells,
-worker254.531s/parent259.098s/reaped/absent/unchanged/GPU lease released.
-Three CUDA512 GRU fits3.775s/peak77956096bytes; data load212.158s and geometry
-12.803s are measured phases, not isolated IO/CPU diagnoses.
-All four learned OC screens reject; primary growth Ridge joint-21.10%,
-participation-9.57%, GRU joint-20.21%, participation-17.02%. Joint adds no
-utility over own participation. These are adaptive seen fractional costs,
-not broker net PnL or validated model/scaler equivalence.
+Retained input COMPLETE: clock-r2c937f8ca...3.187s/686 originals unchanged,
+precommit7d8b4d01.../manifest18a37635.../payloadbd6b0f40... .
+113sessions14073rows/121complete4sparse3empty/all128 keys. Native two-file
+reader6c9115da... EXACT fields/counts/digests/calendar/0.295s transport,
+0.283s study load; no original686 native reattestation or runtime equivalence.
+Raw/current-listing/non-PIT/CA/TR/finality/publication limits remain explicit.
+Original lexical-clock and transport-protocol defects were corrected in fresh
+bytes BEFORE payoffs; original contractdad59736.../zero actual debit retained.
 
-Native cached verify224a0a14...136.678s and independent cached economics
-bf0b0cb9...134.849s match all33cells/actions/kills, zero refit/reinference/
-scaler/OLD labels/tolerance. Shared Data/rank seals; independent Fraction/
-scalar payoffs, not independent forecasts or cross-runtime equivalence.
-All367/549/739 potential TRAIN dates valid; no-context OOF diagnostic defect
-is dormant in this run. Correct a future consumer only; used bytes unchanged.
-Goal31 exhausted/incomplete and Goal33 incomplete-independent closures stay
-in custody/Git; no old family rescue, fourth equivalence retry or budget refund.
+a477e89 pushed. Changedserial273; clean8 authority13876pass22skip35warnings
+337.63s; repo Ruff/default/research/accounting sample Compose pass.
+Current input85+44/independent22/runtime93/future features-models105 pass.
+No full rerun per external handoff. Goal34 rejected6fits33cells/custody875233b5...
+and Goal31 exhausted/Goal33 incomplete-independent remain in Git/artifacts.
+No old fit/refund/rescue or claim of model/scaler/host-native equivalence.
 
-Kernel2ebc361 pushed. Changedserial271/external206/independent66/
-retained-input74 tests pass; clean8 authority helper0/35warnings/13830 collected,
-Ruff/three sample-env Compose pass. Quiet aggregate pass-count display was
-suppressed by duplicate-q; do not invent an elapsed/pass/skip count or rerun
-the suite just for display. Inactive retained temp siblings are not a block.
-
-Parallel actors: Data/Infra exact input, Engine carry policy, temporary
-Validation only on frozen results, parent integration/Git. No company block,
-foreground sleep or routine approval wait. Current stateboards are compact
-projections; full removed history remains in Git2ebc361 and external custody.
-Tonight's exact Execution opportunity is independent and unchanged below.
+Parallel actors: Data/Infra compact input/caller, Engine fixed models, temporary
+independent source review, parent integration/Git. No company block or routine
+approval wait. Claude stock-selection prompt62fe0cab... is review_unavailable/
+cli_is_error, NOT substantive agreement. No unchanged authentication retry.
+Tonight's independently owned Execution opportunity remains unchanged below.
 
 ## Exact Preparation And Owned Opportunity
 
