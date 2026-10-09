@@ -6,13 +6,28 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
-Goal38 owns a source-local mode0/1/0 probe of exactly three keys with largest
-absolute flagged-day contribution in Goal37's full whole10bps Ridge cell.
-Outcome-informed diagnostic selection, deterministic key ties; max9GET/one
-page per key/mode/BYMD20261008/one owned Paper market client, NEW D: cache.
-No account/order/live, old cache edits, numerical correction or source promotion.
-Engine's safe Ridge reload proceeds independently; no general input/Paper gate.
-Existing shared1.0s and token-start controls unchanged; cooldown worker-owned.
+Goal39 Data owns a pure past-only tradability adapter: last completed CLOSE
+>=USD5, median prior20 CLOSE*volume>=USD5m, no adjacent CLOSE return>=50%
+inside prior20. Fixed assumptions, not profitable-universe facts. All128 identities
+remain; reject missing/invalid/prior-risk keys with reasons, recenter only the
+first three features on survivors. No future target exclusion, source correction
+or new collection. Engine TCN/Ridge preparation proceeds in parallel.
+
+Goal38 source-local probe COMPLETE: source runtime-r2/contractf897b5e5...,
+A/data/kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/
+receipt.json/b2929710... . Actual9GET9accepted1token/9.840s/no cooldown/child
+reaped/source and retained bindings matched. Existing shared1s/token-start
+controls unchanged; maximum9 is this finite diagnostic scope, not provider quota.
+Outcome-informed three-key selection (two have2 flagged dates, zero-contribution
+third tie kept); all100-date mode0 repeats exact, mode1 changes53/25/0 rows.
+One flagged pair loses both >=50% discontinuities; three retain their flags.
+Not corporate-action methodology/TR/PIT proof or a corrected backtest. Raw/
+typed/query remain only in M/us_equities/kis_paper_private/
+stock-dominant-gap-mode-probe/v1/dominant-gap-20261009-v1. No account/order/live.
+Original unused e34691d4... contract retained; fresh runtime-r2 fixes import
+formatting before provider use. Synthetic43 pass/Ruff; no replacement identity.
+Goal38 safe Ridge native52/6264 parity and actual pre-OPEN seal are Engine
+evidence, not Data qualification or a general Paper gate.
 
 Goal37 CLOSED: contractd4f339e5.../441sources6inputs/result1fd5c07d.../
 custodyfb850e0f.../144cells0fits/143.912s<600/reaped/absent/unchanged.

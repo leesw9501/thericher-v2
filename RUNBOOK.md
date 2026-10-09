@@ -14,13 +14,30 @@ and rank seals, independent Fraction/scalar economics; not model equivalence.
 Custody875233b5... closed/sealed0. All367/549/739 potential TRAIN dates valid;
 reviewed no-context OOF diagnostic defect dormant, future correction only.
 
-NEXT owns kis-stock-scorer-deployability-preparation-v1: safe numeric Ridge
-reload/all52 cached score parity/actual-time prospective seal under300s CPU,
-zero fits/GPU. Data separately probes exactly three dominant flagged-day keys,
-mode0/1/0 single pages/max9GET/NEW cache through owned Paper market path.
-No OLD numeric reads, labels/price correction, profit winner or auto-Paper input.
-Oct9 pre-OPEN output requires actual inference before13:30UTC; otherwise late/
-unavailable, never backdated. Original shared10% Paper basis/task unchanged.
+NEXT owns kis-liquid-stock-sequence-development-v1: fixed prior-only price/
+liquidity/discontinuity eligibility, three Ridge and six causal TCN10/20 fits,
+one600s family/one GPU appointment, fixed10% analytical book/cost controls.
+No future cohort exclusion, inferred action correction, old-budget refund or
+automatic Paper winner. Tonight's original shared10% broker basis stays unchanged.
+
+Goal38 CLOSED at D:/thericher-v2/model-artifacts/research/
+kis-stock-scorer-deployability-preparation-v1: contractddac5c84.../441sources/
+7inputs/result71de1c0d.../parent55cc5666.../verify1818949d.../
+closureeda62685.../custodyb5675a4e... . Exact52dates6264 native Ridge scores,
+0fits/GPU/sealed spend/150.568s<300/all unchanged/reaped/absent. Prospective
+seal1811e283... actual09:58:27.980074..09:58:28.017568UTC precedes Oct9
+13:30UTC; verification keeps original time. No future target/quote or Paper input.
+Data probe D:/thericher-v2/model-artifacts/data/
+kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/receipt.json/
+b2929710...; source runtime-r2/contractf897b5e5.../9GET9accepted1token9.840s.
+Mode0 repeats all100 dates for eachkey, mode1 changes53/25/0 rows. One of four
+flagged date pairs loses large discontinuities, three retain them; no adjustment/
+TR/PIT/quantity truth or corrected PnL. Raw/typed/query only on D:/market_data.
+Fresh close_r2 corrects projection-key mismatch without another native run;
+original unused source/contract remains. Independent source6c58e4a...25 new+72
+baseline cases pass, not independent actual alpha. Claude57434081... unavailable,
+not agreement. Changedserial190/full8:14155pass22skip35warnings343.79s/Ruff/
+three sample-env Compose/external109+43 pass. No full rerun for receipts/docs.
 
 Goal37 CLOSED under D:/thericher-v2/model-artifacts/research/
 kis-stock-selection-risk-attribution-development-v1:

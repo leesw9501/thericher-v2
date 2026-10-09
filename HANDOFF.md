@@ -20,13 +20,34 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal38 kis-stock-scorer-deployability-preparation-v1.
-Safe numeric final Ridge reload/all52 same-native cached score parity/one
-actual-time prospective score seal under300s CPU, no fits/GPU. Data probes
-exactly three dominant raw-gap keys via owned Paper market0/1/0 pages (max9GET)
-in a NEW cache, no source correction or general Paper gate. Ridge-first is for
-transparent numeric reuse, not choosing a winner. Oct9 prospective pre-OPEN
-output requires actual inference before13:30UTC; no backdating or future target.
+NEXT owns Goal39 kis-liquid-stock-sequence-development-v1: past-only price/
+liquidity/recent-discontinuity cohort, Ridge baseline and causal TCN10/TCN20,
+fixed blend/10% analytical exposure. One600s family/max9fits, one owned GPU
+appointment; raw seen-data limits/lineage remain. No Paper profitability gate.
+
+Goal38 CLOSED at A/research/kis-stock-scorer-deployability-preparation-v1:
+contractddac5c84.../441sources7inputs/result71de1c0d.../parent55cc5666.../
+verify1818949d.../closureeda62685.../custodyb5675a4e... . Exact all52 dates/
+6264 native Ridge scores,0fits/GPU/sealed spend/150.568s<300/all reaped/absent/
+unchanged. One prospective seal1811e283... at09:58:27.980074..09:58:28.017568UTC
+before Oct9 13:30UTC; actual cache-observation/as_of clocks, no backdating,
+future target/quote, OrderIntent or auto-Paper input. Ridge is transparent
+numeric reuse, not a profit winner. Synthetic smoke read no market bytes;
+parent seven-input proof is separate. Verification kept the original as_of.
+Data actual9GET9accepted1token/9.840s/reaped/source-retained hashes matched:
+A/data/kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/
+receipt.json/b2929710...; source runtime-r2/contractf897b5e5... . Three100-date
+mode0 repeats exact, mode1 changes53/25/0 rows; only one of four flagged date
+pairs loses its large discontinuities. No inferred action/adjustment/TR/PIT
+truth, old edits or general Paper gate. Zero-contribution third tie retained.
+Fresh runtime-r2 fixes import formatting before actual calls; original
+e34691d4... zero-dispatch contract retained. Fresh close_r2 fixes a parent
+projection field mismatch without another native run or evidence overwrite.
+Independent source6c58e4a.../25 new cases plus72 baseline97pass; actual native
+score parity remains parent-owned, not independent alpha/broker parity.
+Claude57434081... review_unavailable/cli_is_error, not substantive agreement.
+Changedserial190/clean8:14155pass22skip35warnings343.79s/Ruff/three sample-env
+Compose pass; external109+43. No full CI per receipt/docs-only handoff.
 
 Goal37 CLOSED at A/research/kis-stock-selection-risk-attribution-development-v1:
 contractd4f339e5.../441sources6inputs/result1fd5c07d.../parent226a4c52.../
@@ -96,8 +117,8 @@ No full rerun per external handoff. Goal34 rejected6fits33cells/custody875233b5.
 and Goal31 exhausted/Goal33 incomplete-independent remain in Git/artifacts.
 No old fit/refund/rescue or claim of model/scaler/host-native equivalence.
 
-Parallel actors: Data source-local mode probe, Engine safe state reload,
-temporary independent source review, parent native integration/Git.
+Parallel actors next: Data past-only tradability adapter, Engine causal TCN
+model code, temporary Infra fixed input/custody, parent native integration/Git.
 No company block or routine approval wait. Source implementation handoff was
 bounded; parent reattested/tested after expiration rather than holding for an
 unknown owner. Data/caller/model evidence is distinct from actual runtime.

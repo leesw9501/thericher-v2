@@ -2,84 +2,91 @@
 
 ## Objective
 
-Complete kis-stock-scorer-deployability-preparation-v1: make the existing stock
-scorer reloadable for a prospective research decision, with a source-local
-explanation of the raw discontinuities dominating its seen PnL. This advances
-feature/model reuse and Paper preparation, not another fit or qualification gate.
+Complete kis-liquid-stock-sequence-development-v1: test a past-only tradability
+screen and short causal convolution models in one fixed daily stock research
+campaign. This advances investable candidate development, not GPU utilization
+or another profitability permission gate on KIS Paper.
 
 ## Frozen Scope
 
-Goal37 CLOSED at D:/thericher-v2/model-artifacts/research/
-kis-stock-selection-risk-attribution-development-v1:
-contractd4f339e5.../441sources6inputs/result1fd5c07d.../custodyfb850e0f... .
-48 reference plus96 sizing cells match exact day/stock/fee accounting; zero
-fits/GPU/sealed spend,143.912s<600, all children reaped and invocations absent.
-All prior model verdicts stay unchanged. This was adaptive seen development.
+Goal38 CLOSED at D:/thericher-v2/model-artifacts/research/
+kis-stock-scorer-deployability-preparation-v1: contractddac5c84.../441sources/
+7inputs/result71de1c0d.../closureeda62685.../custodyb5675a4e... . All52 dates/
+6264 Ridge scores match exact native float64 bytes,0fits/GPU/sealed spend,
+150.568s<300/all unchanged/reaped/absent. Actual prospective inference
+2026-10-09T09:58:27.980074..09:58:28.017568UTC precedes13:30UTC; one seal,
+not backdated or automatically a Paper input. No future target/price read.
 
-Whole10bps/10%-exposure Ridge+3.336%/GRU+2.333%/blend+3.326% have positive
-seen utility;25% only Ridge passes the same-scaled control comparison.
-This is not winner selection, independent alpha or broker profit.
-Twelve >=50% OPEN gaps and20 CLOSE changes were flagged. Unique flagged
-stock/day contributions exceed the models' net gains: full Ridge55.066%
-versus net29.211%, GRU83.760% versus18.350%, blend86.360% versus32.479%.
-Do not infer corporate actions or subtract those days into a revised backtest.
+Data probe actual9GET/9accepted/1token/9.840s/no cooldown: three selected NAS
+keys, all100-date mode0 repeats exact. Mode1 changes53/25/0 rows; one flagged
+date pair loses its >=50% discontinuities, three retain them. Third key's
+zero flagged contribution tie remains unchanged, no replacement. This is not
+split, dividend/TR, PIT or provider-methodology proof. Exact root
+D:/thericher-v2/model-artifacts/data/kis-stock-dominant-gap-mode-probe-v1/
+dominant-gap-20261009-v1/receipt.json/b2929710...; fresh runtime-r2
+contractf897b5e5... . Never rewrite old raw data or subtract flagged payoffs.
 
-Data: select exactly the three opaque keys with largest absolute flagged-day
-contribution in the existing full-exposure whole10bps Ridge cell; deterministic
-key tie, disclose outcome-informed diagnostic selection. Through the owned KIS
-Paper market-data client only, query one D1 page per key/mode in0,1,0 order,
-BYMD20261008, NAS identity from the pinned manifest, one reusable client.
-Maximum9 GET attempts, no pagination/flood/account/order/live request.
-Keep existing measured shared pace/token-start controls; a cooldown belongs to
-this worker and never foreground-blocks Engine. Retain raw/typed/query bytes
-only in a NEW D:/market_data scope. Compare overlap, exact mode0 repeat and
-adjacent flagged-date relations categorically. MODP request semantics are
-documented by official KIS source; mode1 is not thereby verified split-only,
-dividend/TR/PIT/quantity-adjustment truth. Missing dates or changed repeat stay
-unavailable/ambiguous. Never edit prior data, adjust labels or requalify a model.
+Use exact existing OLD800/128 and CURRENT113/128 compact sources from Goal36,
+with the same calendar/prior61 causal access. No new market collection for
+this campaign. Raw/current-listed/non-PIT/action/finality limits remain visible.
+This is outcome-informed seen development with lineage to Goals36..38, not
+fresh replication, a refunded allocation or an independently selected winner.
 
-Engine: a pure safe numeric NPZ loader and Ridge inference adapter for Goal36's
-EXACT final cutoff799 state, scaler and feature kernel. Ridge-first is for its
-transparent numeric reload/runtime, not selecting a profitability winner.
-No pickle, arbitrary model code, refit, new GPU job, parameter search or OLD
-numeric reads. Reproduce all52 cached CURRENT scores under the same pinned
-native runtime before claiming reload parity; investigate mismatches rather
-than silently waive them. One finite300s CPU family incl synthetic smoke,
-cached replay and one latest prospective score seal. Source/input/output bound,
-current128 keys kept, no lookahead or cohort replacements.
+Data owns one pure past-only cohort adapter and synthetic tests. Require last
+completed CLOSE >=USD5, median prior20 completed daily CLOSE*volume >=USD5m,
+and no absolute adjacent CLOSE return >=50% inside that prior20 window.
+Prices, volumes, completeness and identity come only from prior61; missing or
+invalid inputs reject that key, never a future target or another job. Thresholds
+are fixed engineering assumptions, not an established profitable universe.
+Preserve all128 original identities and rejected-key reasons. Recenter the
+first three stock features on the surviving cohort; volatility is not centered.
+Keep >=10 peers before forming a target/selection; cash/no-intent otherwise.
+Never post-filter a realized loss or apply an inferred corporate-action factor.
 
-Use CURRENT113 Apr29..Oct8 bytes and official calendar to roll a113-session
-prospective feature plan Apr30..Oct9, with prior61 inputs only. Record actual
-as_of/inference time and observed-cache availability, never backdate to nominal
-prior CLOSE. Oct9 pre-OPEN prospective output requires actual inference before
-13:30UTC; a later run is late/unavailable, never a fabricated next-open signal.
-No future target/price read, ranking profit claim, OrderIntent, auto-Paper input,
-scheduler expansion or change to tonight's original shared10% Paper allocation.
+Engine owns a bounded PyTorch CUDA campaign: Ridge alpha1 baseline plus two
+causal TCNs using the last10 or20 ON/ID daily components. Three prefix cutoffs
+427/610/799, entry+5 OPEN purge, relative five-session OPEN targets and equal
+dated-group weighting. Missing future target invalidates that complete dated
+training group, not the already frozen past-only cohort. Minimum120 complete
+dated groups per prefix; counts are observations, not independent stock samples.
+
+TCN: kernel3/dilations1,2,4/channels16/three left-padded causal convolutions,
+last-time pooling/linear scalar head; seed101, Adam lr0.001, batch512,
+four fixed epochs, no dropout/tuning. Prefix-only scaler, no future fit values.
+Six GPU fits plus three CPU Ridge fits maximum, one600s family including CPU
+smoke/run/cached verification; no per-model budget multiplication. Existing
+pinned Docker/PyTorch runtime and one Steward GPU appointment, no replacement.
+Freeze source/input/target/cost/stop contract before fitting. Record real CUDA
+use and actual fit/debit/child closure, not inferred utilization or zero facts.
+
+Compare Ridge/TCN10/TCN20/fixed equal three-arm blend with the existing exact
+cash-backed book at fixed10% research exposure, same eligible top10/five-session
+review, final liquidation, whole/fractional modes and5/10/20bps costs. Include
+cash, same-initial buyonce and existing causal momentum controls. At most48
+cells; retain exact stock/day/fee attribution and raw-gap dependence. These
+are synthetic cost/fill assumptions, not broker parity or deployable net PnL.
+Kill weak post-cost utility, unavailable marks or accounting inconsistency;
+do not tune, rescue, open a holdout or automatically select a Paper winner.
 
 ## Ownership And Completion
 
-Data owns the bounded mode probe. Engine owns pure loader/adapter and synthetic
-cases. Parent integrates native CPU caller/actual evidence; temporary source
-review only where useful. Work in parallel and continue through a local block.
-No model profitability or mode-probe result gates separately authorized Paper.
-No per-agent goal, framework replacement, new report family or GPU filler.
+Data cohort adapter, Engine model code and temporary Infra input/custody
+preparation run in parallel; parent owns caller/actual integration/Git. Use
+bounded source/synthetic review where useful, not a new standing role/platform.
+Ask Claude for a fresh concise falsification-first challenge of the new
+cohort/TCN family. Authentication failure is review_unavailable, not agreement
+or a global training/Paper hold. Goal38 independent source6c58e4a.../25 new
+synthetic checks plus72 baseline passed; actual native parity is separate.
 
-Goal37 independent accounting12b4a334.../63 checks and worker-caller872293e3.../
-18 checks are source/synthetic only, not independent actual economics.
-Fresh immutable terminal/progress separation corrects Goal36's overwrite P2;
-never mutate or redispatch closed bytes. Claude20777876... unavailable, not
-agreement. Challenge new material source/inference decisions without an
-unchanged authentication retry becoming a foreground wait.
+After bounded evidence, refresh projections, perform changed-path verification
+and company authority only when shared code/runtime changes, commit/push,
+replace this with ONE material next objective and continue. Goal38 source
+authority14155pass22skip35warnings343.79s, changedserial190, external109+43,
+Ruff/three sample-env Compose pass; no full rerun for only external/docs.
 
-Freeze bounded source/input/scope before actual use, then record complete/
-input-unavailable/failed truth, exact native score parity and Data categories.
-Refresh current stateboards/HANDOFF/RUNBOOK, verify new shared code once,
-commit/push, replace this with ONE material next company objective and continue.
-Goal37 authority14083pass22skip35warnings341.19s, changedserial207, external141,
-repo Ruff/three sample-env Compose pass; do not repeat full CI for docs/receipts.
-
-Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908... and23:05KST one-shot
-remain owned, future submit/fill/closure not_observed. No manual invoke/reset/
-substitute. Never read KIS_LIVE_*. Data D:/market_data, artifacts
-D:/thericher-v2/model-artifacts; D15% floor. Private no-cost Paper market reads
-are already approved under AGENTS.md; no operator decision is pending.
+Tonight Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908... and23:05KST
+one-shot remain owned; future submit/fill/closure not_observed. No manual
+invoke/substitute/budget reset, scheduler expansion or automatic model input.
+KIS Paper authority is standing; no profitability/operator gate. Never read
+KIS_LIVE_*. Data D:/market_data, artifacts D:/thericher-v2/model-artifacts,
+D15% free floor. Continue non-conflicting work while a worker runs or yields.

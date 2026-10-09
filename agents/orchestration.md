@@ -9,12 +9,12 @@ No company block or foreground sleep.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Company integration | Parent | Goal37 CLOSED/144cells0fits/custodyfb850e0f... . Goal38 source-local raw-gap probe plus reloadable prospective scorer is next; no old verdict rescue. |
-| GPU | Steward | Goal36 actually used CUDA3fits6.837s wall. Lease released. Goal37 zero fits/GPU; Goal38 reuse/inference CPU, no authority/environment block or dummy training. |
-| Source probe | Data | Three largest flagged-day keys, deterministic diagnostic selection, NEW cache and0/1/0 single-page comparisons, max9GET through owned Paper market client. Scope-local uncertainty, no Paper gate. |
-| Model reuse | Engine | Safe numeric final Ridge reload and all52 cached score parity, actual-time prior61 prospective seal. Same128 keys and pinned bytes; no OLD numeric/refit/new GPU job. |
-| Caller | Parent / temporary Infra | Goal37 immutable terminal/progress corrected overwrite P2; all phases reaped/absent. Fresh Goal38 CPU containment and300s bound, no source edits to old runs. |
-| Verification | Parent | Goal37 changedserial207/clean8:14083pass22skip35warnings341.19s, Ruff/three sample-env Compose. External handoffs do not repeat full CI. |
+| Company integration | Parent | Goal38 CLOSED/52dates6264 exact scores/one pre-OPEN seal/custodyb5675a4e...; source probe9accepted. Goal39 ready for fixed liquid-cohort TCN development. |
+| GPU | Steward | No current lease. Goal38 zero fits/GPU was numeric reuse. Goal39 freeze one600s appointment/max6CUDA+3CPUfits, no environment/approval block or filler. |
+| Data | Copernicus | Goal38 source9GET9accepted/9.840s/source-retained match/reaped; no source qualification. Goal39 prior-only tradability adapter ready to dispatch. |
+| Models | Euclid | Goal38 safe reload source released/native52-score equality and actual-time seal complete. Goal39 TCN10/TCN20 code ready to dispatch; no winner or budget refund. |
+| Caller | Temporary Infra / James | Goal38 three phases reaped/absent/150.568s<300. Goal39 exact OLD/CURRENT preparation plus GPU custody ready; parent owns worker/actual. |
+| Verification | Parent | Goal38 changedserial190/clean8:14155pass22skip35warnings343.79s, Ruff/three sample-env Compose/external109+43/source97. External/docs alone do not repeat full CI. |
 | Paper session | Execution scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... owns original shared10% basis/SPY-TLT-GLD/QQQ custody. Future submit/fill/closure not_observed; no manual invoke/reset/substitute. |
 | Follow-up | Chat one-shot | Oct9 23:05KST exact owned Paper result check; no replacement chain or schedule expansion. |
 | Head | Data scheduler | Next Oct9 15:29UTC owned; historical availability/finality not_observed, no manual invoke. |
@@ -22,19 +22,18 @@ No company block or foreground sleep.
 
 ## Bottleneck And Reversible Improvement
 
-Goal37 cash-backed sizing reduces risk but flagged raw-gap days contribute more
-than total gains. No corporate-action cause is yet established. More fits or
-seen-score selection would not explain that source effect. Probe only the three
-dominant keys while another actor implements safe numeric model reload.
-This improves data interpretation and prospective reuse without requalifying a
-dataset, selecting a winner or blocking independent authorized Paper.
+Goal38 actual mode comparison removes only one flagged pair and retains three;
+adjustment methodology remains unproven. New research fixes past-only tradability
+assumptions rather than silently correcting labels or choosing a seen winner.
+Parallel Data cohort/Engine TCN/Infra input packages prepare one bounded GPU
+campaign; fixed10% book and raw-gap attribution test whether value survives.
+This advances candidate development without a general Data or Paper hold.
 
-Early API handoffs completed in parallel. Before actual use, align successful
-worker phases as well as rejected preflight; synthetic smoke performs no market
-byte read, while its parent independently audits inputs. Same-native144 replay
-is exact cached book/attribution evidence, not independent alpha or broker parity.
+Early API/source handoffs completed in parallel; all52 native cached scores
+match, prospective actual as_of is not backdated, verification keeps that time.
+Same-native prediction/book parity is not independent alpha or broker parity.
 No new helper platform, scheduler, approval process or recurring report.
 
-Claude20777876... attribution challenge was review_unavailable/cli_is_error, not
+Claude57434081... source/reuse challenge was review_unavailable/cli_is_error, not
 agreement. Source-local Tiingo/FINRA rights defer only their numeric jobs; other
 private no-cost Data/Research/Paper work remains delegated.

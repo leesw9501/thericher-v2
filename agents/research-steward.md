@@ -7,11 +7,17 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal38 prospective scorer reuse needs zero fits/GPU/sealed spend and one300s
-CPU family. Safe numeric final Ridge reload, same-native52-score parity and
-actual-time prospective output; no old-family refit, winner or Paper promotion.
-Data's three-key raw-gap probe is separate from compute custody and Paper.
-No ready depth/replication GPU campaign or authority/environment block.
+Goal39 prepares one600s liquid-cohort development family: three Ridge CPU and
+six CUDA TCN10/TCN20 fits, fixed prefixes/epochs/costs, no sealed access. Freeze
+new source/target/cohort/stop before one exclusive GPU appointment. Existing
+OLD/CURRENT and Goals36..38 lineage remain seen/dependent; no budget refund,
+survivor promotion or independently qualified depth/replication claim.
+
+Goal38 CLOSED: contractddac5c84.../closureeda62685.../custodyb5675a4e...,
+0fits/GPU/sealed spend/150.568s<300, all children reaped/invocations absent,
+sources/inputs unchanged. Exact native52/6264 scores plus one actual-time
+pre-OPEN seal do not change old scientific verdicts. No custody lease needed
+for zero-GPU reuse. Data's source probe is separate/no general Paper gate.
 
 Goal37 risk-attribution CLOSED: contractd4f339e5.../custodyfb850e0f...,
 48 exact reference plus96 fixed10%/25% sizing cells;0fits/GPU/sealed spend,

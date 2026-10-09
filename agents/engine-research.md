@@ -7,11 +7,23 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-09 KST)
 
-Goal38 kis-stock-scorer-deployability-preparation-v1 is next: safe numeric final
-Ridge reload, all52 same-native cached score parity and one actual-time prior61
-prospective seal under300s CPU/zero fits/GPU. Ridge-first is a transparent
-reload/runtime choice, not a profitability winner. Data probes three dominant
-raw-gap keys in parallel; no mode correction or source/Paper qualification.
+Goal39 kis-liquid-stock-sequence-development-v1 is next: one fixed past-only
+tradability cohort, Ridge/TCN10/TCN20/fixed blend at10% research exposure,
+three purged prefixes/max9fits/one600s family. Six bounded CUDA fits, not dummy
+utilization training; Data cohort and Infra input/custody prepare in parallel.
+New seen family/Goals36..38 lineage, no old-budget refund or Paper winner.
+
+Goal38 CLOSED/contractddac5c84.../result71de1c0d.../closureeda62685.../
+custodyb5675a4e... at A/research/kis-stock-scorer-deployability-preparation-v1.
+Exact52 dates6264 scores with safe final Ridge numeric reload;0fits/GPU,
+150.568s<300/reaped/absent/unchanged. One actual-time prospective seal at
+Oct9 09:58:27.980074..09:58:28.017568UTC, before13:30UTC. Cached verification
+preserved that time; no target/quote/broker path or auto-Paper input. No alpha
+winner or changed old verdict. Data0/1/0 probe retains three large flagged pairs
+under mode1 and removes one, not verified-action correction. Source-only
+independent6c58e4a.../25 new cases plus72 baseline; Claude57434081... unavailable,
+not agreement. Changedserial190/full8:14155pass22skip35warnings343.79s/Ruff/
+three sample-env Compose pass, external109+43.
 
 Goal37 CLOSED at A/research/kis-stock-selection-risk-attribution-development-v1:
 contractd4f339e5.../441sources6inputs/result1fd5c07d.../parent226a4c52.../
@@ -60,12 +72,11 @@ in actual closed phases; fresh caller must correct it, never edit used source.
 - Data: exact CURRENT113/14073 rows/121complete4sparse3empty; manifest18a37635...
   payloadbd6b0f40.../precommit7d8b4d01... . Native exact two-file proof.295s;
   source/observation/missingness limits unchanged,52 dated marks not independent.
-- Data: bounded three-key mode probe, NEW cache; no verified-action claim.
-- Engine: safe final Ridge state reload and same-native score parity; actual
-  as_of and Oct9 pre-OPEN deadline, no source/model selection or auto-Paper input.
+- Data: pure prior61 tradability adapter, fixed thresholds, no future exclusion.
+- Engine: causal TCN10/20 and Ridge, fixed prefix/scaler/target/epochs; one family.
 - Validation: temporary independent source accounting review when ready;
   no tuning, old output rescue or blanket quality gate.
-- Parent: integrate/freeze one zero-fit reuse objective; tonight's Paper stays separate.
+- Parent: integrate/freeze new bounded liquid-cohort campaign; tonight's Paper stays separate.
 - Depth/replication: no independently qualified survivor or ready depth contract.
   Equal within-campaign blend is exploratory, not cross-track promotion.
 

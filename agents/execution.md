@@ -19,10 +19,13 @@ not independent broker parity or actual net PnL. Raw-gap days dominate gains;
 cause unverified. Independent accounting12b4a334... is synthetic only.
 Fresh immutable terminal/progress correction fixes Goal36 overwrite P2;
 caller872293e3.../18 source-only cases pass, no used-source modification.
-Goal38 prepares safe Ridge research reload and source-local three-key mode
-probe. No OrderIntent, automatic Paper input, private shared10% basis change,
-holding adoption, intent replacement or tonight's task change. Private Paper
-authority remains delegated; model profitability is not an Execution gate.
+Goal38 CLOSED/52dated6264 native score parity/one actual pre-OPEN research
+seal/0fits/GPU/150.568s/contractddac5c84.../custodyb5675a4e... . No OrderIntent,
+automatic Paper input, private shared10% basis change, holding adoption, intent
+replacement or tonight's task change. Data mode comparison does not establish
+broker quantity adjustment or trustworthy raw-gap PnL. Goal39 liquid-cohort TCN
+campaign is analytical fixed10% exposure, not a broker budget or permission.
+Private Paper authority stays delegated; model profit is not an Execution gate.
 
 Goal32 current pooled equity preview is COMPLETE/measurement-only:125 usable
 keys/122eligible/6unavailable/top10/independent2d0d511f... . No model confidence,
