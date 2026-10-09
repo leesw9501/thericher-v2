@@ -20,12 +20,25 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal43 kis-stock-model-decision-preparation-v1: exact Goal41
-prospective tcn20/rank1 seal -> typed pure Execution proposal, no quantity/
-price/capacity/order/private intent. Explicit outcome-informed development
-pilot0.01 reference exposure inside original0.10 aggregate, not a new bank.
-Data reader, Execution adapter, independent source review and parent work
-disjointly. Arbitrary-stock owner/quote/funds support remains technical next work.
+NEXT owns Goal44 kis-stock-readonly-preparation-v1: target-bound NASDAQ stock
+account/quote/exact-limit funds shadow, no order/private intent/reservation.
+Data owns stock quote scope; Execution owns client integration; independent
+review and parent native readback are disjoint. Preserve tonight's image/job,
+original shared10% basis and existing owners; no invisible stock sidecar.
+
+Goal43 CLOSED at A/execution/kis-stock-model-decision-preparation-v1/r3:
+contract56e0f2ae.../outcomeef5a39ad.../proposalce026452.../receipt308bb0f0.../
+verification9f1928bb... . Actual pure-host conversion0.730s:128 original keys,
+62 eligible/66 unavailable, exact tcn20/rank1 typed target0.01 within original
+aggregate0.10, original11:46:17.437602..499976UTC clocks/Oct9 20:00UTC expiry.
+Sources/inputs unchanged;0 inference/GPU/credential/network/broker/private
+intent calls. Constructor replay exact, not native model/broker parity, capacity,
+holdings, PIT, scientific winner or automatic order. Fresh reader7c41036f.../
+adapter0824820a.../readback4a35a8ea... fix real verify-phase schema, metadata
+exchange field and all128 NASD scope. Failed v1/v2 bytes/diagnostics and original
+falsifiers retained. Independent53bb3c64... is source/synthetic only, no scoped
+P1/P2; parent167pass.66s/Ruff/three sample-env Compose pass. No full shared
+rerun for external/docs-only integration; last shared14167pass22skip unchanged.
 
 Goal42 CLOSED/rejected at A/research/kis-stock-chronos2-group-open-development-v1:
 contract6f6952c0.../445sources7inputs/result4eb818e6.../parent2f0f8891.../

@@ -2,6 +2,20 @@
 
 ## Current Owned Opportunities And Research
 
+Goal43 CLOSED at D:/thericher-v2/model-artifacts/execution/
+kis-stock-model-decision-preparation-v1/r3:56e0f2ae.../ef5a39ad.../
+proposalce026452.../receipt308bb0f0.../verification9f1928bb... . Pure-host
+actual0.730s,128 keys/62 eligible/66 unavailable/one rank1 tcn20 target0.01
+inside original0.10. Original11:46:17.437602..499976UTC decision clocks and
+Oct9 20:00UTC expiry retained. Zero inference/GPU/credentials/network/broker/
+private intent. Exact typed constructor replay, not broker/model parity or
+scientific promotion. Fresh reader7c41036f.../adapter0824820a... fix producer
+schema/all128 NASD; new readback4a35a8ea... maps exact NAS metadata, no market
+field inference. Failed attempts/used code/falsifiers immutable. Independent
+53bb3c64... source/synthetic only;167pass.66s/Ruff/three sample-env Compose.
+No shared source/runtime change or full CI rerun. NEXT owns Goal44 scoped
+stock read-only shadow; no owner/private intent/reservation/task substitution.
+
 Goal42 CLOSED/rejected at D:/thericher-v2/model-artifacts/research/
 kis-stock-chronos2-group-open-development-v1:6f6952c0.../445sources7inputs/
 4eb818e6.../parent2f0f8891.../43bbc090.../custodyf5abe9ef... . Actual RTX4090/
@@ -15,8 +29,7 @@ authored Data/actual runtime. Closure-only4 P2s repaired in fresh close_r2.py,
 no native rerun. External300 excludes original custody rejection failures.
 Shared151serial/full8:14167pass22skip35warnings332.73s/Ruff/default/research/
 accounting sample-env Compose pass. No full CI for subsequent docs receipts.
-NEXT owns Goal43 exact prospective model seal -> typed pure proposal, no
-account/order/GPU/private intent or tonight's input/custody replacement.
+Goal42 led into closed Goal43 above, not tonight's input/custody replacement.
 
 Goal41 CLOSED at D:/thericher-v2/model-artifacts/research/
 kis-stock-tcn-numeric-reload-preparation-v1:436abcf9.../579e0846.../
@@ -26,8 +39,7 @@ verify42.487s=102.271s<300/0fits/GPU/holdout/all unchanged/reaped/absent.
 One seal11:46:17.437602..11:46:17.499976UTC before Oct9 13:30UTC, preserved
 in verify, not automatic Paper input. Parent243/source9df30661...34 synthetic
 cases exclude authored reload/models and actual runtime. No full CI for docs.
-NEXT owns Goal42 Chronos stock OPEN-return isolated/group development,
-not a rerun of the closed Oct3 ETF study. Shared authority14161/22skip unchanged.
+Goal41 led into closed Goal42 above, not a rerun of the closed Oct3 ETF study.
 
 Goal40 CLOSED at D:/thericher-v2/model-artifacts/research/
 kis-stock-ordinal-selection-development-v1:

@@ -2,70 +2,61 @@
 
 ## Objective
 
-Complete kis-stock-model-decision-preparation-v1: connect one exact prospective
-TCN stock seal to a typed, deterministic Execution proposal without a broker
-side effect. This is the missing model-to-Paper interface, not a profit gate.
+Complete kis-stock-readonly-preparation-v1: connect the exact prepared single
+NASDAQ stock model target to a target-bound KIS Paper read-only account,
+quote/tick and exact-limit funds shadow. No order or private intent is created.
+This advances model-to-Paper readiness, not a profitability/approval gate.
 
-## Exact Research Evidence
+## Exact Input
 
-Goal41 at D:/thericher-v2/model-artifacts/research/
-kis-stock-tcn-numeric-reload-preparation-v1 is CLOSED:
-contract436abcf9.../result579e0846.../parenta8c59142.../closureab0c6eee.../
-custodyeffbf94a.../prospective042c86e4... . Both models52dates6678 scores,
-absolute1e-6/relative0/exact top10. One actual Oct9 pre-OPEN research seal
-11:46:17.437602..11:46:17.499976UTC, retained in verification;0fits/GPU/
-102.271s. Not a qualified scientific winner, Paper intent or price proof.
-
-Goal42 CLOSED/rejected at D:/thericher-v2/model-artifacts/research/
-kis-stock-chronos2-group-open-development-v1:6f6952c0.../445sources7inputs/
-result4eb818e6.../parent2f0f8891.../closure43bbc090.../custodyf5abe9ef... .
-Actual RTX4090/104 frame-arm calls/6678 sequences/6.375s inference wall,
-0fits/36cells; smoke15.198/run83.592/verify51.273=150.063s<600. All unchanged/
-reaped/absent/lease released. Whole10bps/10% isolated-.4771% and group-.1144%,
-both below cash/buyonce utility. No tuning rescue/refund/fine-tune or winner.
-Cached CPU verification did not forecast again. Independent source6e176771...
-8 new cases; authored Data/actual runtime excluded. Closure-only4 P2s repaired
-in fresh close_r2.py/21 tests+18 independent mutations/f4e9f88b...; original
-used custody and failing source falsifiers retained. Shared151serial/full8:
-14167pass22skip35warnings332.73s/Ruff/three sample-env Compose passed.
-External300 pass excluding original custody falsifiers; no full rerun for docs.
+D:/thericher-v2/model-artifacts/execution/kis-stock-model-decision-preparation-v1/r3:
+contract56e0f2ae.../outcomeef5a39ad.../proposalce026452.../receipt308bb0f0.../
+verification9f1928bb... . Actual0.730s/typed constructor replay/0 inference,
+credentials, network, broker or private intent. TCN20/rank1 target0.01 inside
+original aggregate0.10, clocks11:46:17.437602..499976UTC, Oct9 expiry20:00UTC
+unchanged. Seen outcome-informed development, not winner or capacity/holdings/
+quantity/price proof. Exact128 NAS targets:05f61216... contract ->45dedce0...
+target-document; US alone is not venue. Independent53bb3c64.../167 tests;
+actual readback parent-owned. Failed originals/falsifiers remain immutable.
 
 ## Bounded Work
 
-Freeze explicit outcome-informed development pilot: tcn20 only, first ranked
-eligible stock with lexical tie order, target exposure0.01 of virtual reference
-inside existing aggregate0.10 ceiling. This is neither another bank nor a
-capital allocation. Actual remaining capacity, reservations, whole shares,
-fresh tick-valid price, quote/funds and symbol-owner support stay Execution-owned
-and are not fabricated by this preparation.
+Data owns explicit NAS/NASD stock quote scope/builders/validators and tests.
+Execution owns existing client/transport integration and transient typed result.
+Keep fixed ETF APIs/default allowlists unchanged; add scoped opt-in for this
+consumer. Preserve virtual host, reject redirects, one reused in-memory token
+and evidence-backed shared pacing. No arbitrary endpoint, URL or live route.
 
-Strict hash/canonical readers bind exact run, terminal, closure, verification
-and original prospective artifact. Resolve opaque identity through exact
-CURRENT113/cohort/rolled113 FeatureSeal. Preserve source/model/input identity,
-actual observation/as_of/completion clocks and original Oct9 session.
-Use existing TargetExposureProposal/ResearchDecisionReceipt constructors;
-no scalar probability-as-calibrated-confidence, backdating or raw JSON bypass.
-Fix the proposal lifetime before actual conversion; a stale/mismatched seal
-yields categorical no-intent, not a request to approve another job.
+Parent freezes exact proposal/receipt/source/instrument and original lifetime
+before one bounded native read-only shadow. Use KIS_PAPER_* only through named
+selective credential loading and stdin-only private delivery. Never read
+KIS_LIVE_* or .env wholesale. No secrets, identifiers, prices, amounts or raw
+responses in logs, Claude, safe artifacts or Git; status/count/time/ref only.
 
-No OrderIntent, quantity, limit proof, account/quote/funds/order call, private
-intent write, GPU, retraining, collection or schedule. Existing canary
-execute=False still persists an intent: do NOT call it for shadow preparation.
-Default-inert finite offline caller, source/input hashes, actual readback and
-zero-side-effect evidence; immutable artifacts outside Git.
-Strongest kill: wrong binding/session/arm/peer/ranking/time accepted, changed
-input, accidental account/broker call or invented capacity/position adoption.
+Account/quote/funds stay transient. Preserve original shared10% basis and
+SPY/TLT/GLD/QQQ custody; no new bank or account-held share adoption. Strict RO
+private projection uses frozen-byte parsers, not StateStore.read (lock writes)
+or canary execute=False (intent writes). Capacity unavailable independently
+means not_observed, never guessed positive/zero. Install no stock owner or
+reservation: every competing shared-cap consumer must see it before a later
+submission path; an invisible sidecar fails. Parallel pure owner/shared-reader
+preparation is allowed without installing it.
 
-Data Copernicus owns seal reader/tests; Execution James owns proposal adapter/
-tests; temporary Euclid independently reviews ready code; parent integrates
-their contract and owns actual offline conversion/Git. If a real consumer gap
-remains, classify that exact gap and continue its ready preparation, not a
-profit/PIT/global approval hold. Arbitrary stocks currently lack the narrow
-SPY/QQQ/TLT/GLD quote/funds/owner contract; address separately after this output.
+Outside-session/stale quote yields scoped reference/unavailable, not submission
+or global wait. Classify missing target/funds/geometry/API narrowly. Verify
+actual source/private input hashes before/after, child reaped/invocation absent,
+zero submit/cancel/private writes. Preserve failures; fix fresh owned source.
 
-Verify scoped changes, commit/push, replace ONE next company objective, continue.
-No routine operator decision; never read KIS_LIVE_*. Data D:/market_data,
-artifacts D:/thericher-v2/model-artifacts, preserve D15%.
-Tonight Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../23:05KST
-follow-up preserve original shared10% basis/custody; no manual invoke/reset/
-substitute/schedule expansion or model replacement. Future fills not_observed.
+Strongest kill: live host/order POST, wrong target/venue/account/source/lifetime,
+stale executable quote, private output/intent/lock write, refreshed model clock,
+new capital, invisible reservation or unobserved capacity called ready.
+
+Independent review on ready code; no GPU/refit/collection/new schedule. Existing
+Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... and
+23:05KST follow-up remain untouched. No manual invoke/reset/substitute/schedule
+expansion. Future fills remain not_observed.
+
+Verify changed paths and shared authority if source/runtime changes; commit/
+push, refresh stateboards, replace exactly ONE material next objective and
+continue. No routine operator decision. Data D:/market_data, artifacts
+D:/thericher-v2/model-artifacts; preserve D15% free floor.

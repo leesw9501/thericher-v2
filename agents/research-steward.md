@@ -16,6 +16,9 @@ Goal42 CLOSED/trial14f928a78.../6f6952c0.../43bbc090.../f5abe9ef...,
 no refund/tuning rescue/independent alpha/holdout spend. Fresh closure repair
 does not spend another native run. Goal43 pure proposal preparation needs no
 GPU allocation; no ready frozen training job or permission/environment block.
+Goal43 CLOSED/56e0f2ae.../ef5a39ad.../0.730s/0 inference/GPU; no campaign
+allocation/holdout spend. Goal44 read-only Execution integration needs no GPU.
+Preserve closed families; useful frozen research may proceed independently.
 Goal40 CLOSED/trial1e898e3d3.../contract44176f74.../closure40961c1a.../
 custody792f64c9.../9fits6CUDA389.392s/48cells/561.447s<600/all unchanged/
 reaped/absent/lease released. Exact cohort/seen lineage retained; no refund.

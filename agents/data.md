@@ -27,9 +27,15 @@ source re-retrieval is separate; no new provider call/download.
 
 Goal42 CLOSED/rejected36cells/150.063s/closure43bbc090...; exact CURRENT,
 cohort and source bytes unchanged. Actual inference is not Data qualification.
-Goal43 reader preparation binds original Goal41 pre-OPEN seal/rolled calendar/
-actual clocks/opaque peer -> exact instrument, not a fabricated quote or PIT
-claim. No new collection, source correction, account or order call.
+Goal43 CLOSED: fresh reader7c41036f.../75 tests matches producer's separate
+run result and verify cached_run_bindings. Selected basket is lexical, ranking
+is score/lexical; don't conflate them. Actual r3/56e0f2ae.../ef5a39ad... reads
+128 original/62 eligible/66 unavailable keys with original observation clocks.
+Original targets contain exchange, not market: exact05f61216... contract binds
+45dedce0... target-document, all128 NAS -> US/NASD. No source correction/PIT
+claim/provider call. Failed used sources remain immutable; fresh repairs only.
+Goal44 ready: explicit stock quote request/venue scope without weakening old
+fixed ETF builders; account/funds belong to Execution. No order or reservation.
 
 Goal38 source-local probe COMPLETE: source runtime-r2/contractf897b5e5...,
 A/data/kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/

@@ -9,33 +9,27 @@ No company block or foreground sleep.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Integration | Parent | Goal42 CLOSED/rejected36cells/150.063s/custodyf5abe9ef...; Goal43 model seal -> pure Execution proposal preparing. |
-| GPU | Steward / idle | Actual RTX4090 Chronos104 frame-arm calls/6678 sequences/6.375s wall completed/lease released. No ready frozen training job or permission/environment block. |
-| Data | Copernicus / owned | Goal43 exact prospective reader/tests; Goal42 OPEN adapter507617... unchanged. |
-| Execution preparation | James / owned | Typed tcn20/rank1 proposal inside shared ceiling; no quantity/price/capacity/order/private intent. |
-| Independent review | Euclid / owned | Goal43 source/synthetic falsification when reader/adapter ready; Goal42 fresh closure4 P2 repair independently passes39 tests. |
-| Verification | Parent | Changed serial151/full8:14167pass22skip35warnings332.73s/Ruff/three sample-env Compose; external300 excluding retained old custody falsifiers. |
-| Paper | Scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... retains shared10% basis/SPY-TLT-GLD/QQQ custody; future fills not_observed. |
-| Follow-up | Chat one-shot | Oct9 23:05KST exact result check, no replacement chain/schedule expansion. |
-| Head | Data scheduler | Oct9 15:29UTC owned, historical availability/finality not_observed; no manual invoke. |
+| Integration | Parent | Goal43 CLOSED/r3 56e0f2ae.../ef5a39ad.../0.730s/exact typed replay; Goal44 target-bound stock read-only shadow ready. |
+| GPU | Steward / idle | Chronos104 calls/6678 sequences/6.375s wall completed; no frozen fit or environment/permission block. |
+| Data | Copernicus | Reader7c41036f.../75 tests released; explicit NAS stock quote scope next. |
+| Execution | James | Adapter0824820a.../71 tests released; client shadow next, no private reservation. |
+| Review | Euclid | Fresh53bb3c64.../15 cases corrected two P2s; source-only, not actual attestation. |
+| Verification | Parent | Goal43 focused167pass.66s/Ruff/three sample-env Compose; shared14167pass22skip unchanged. |
+| Paper | Scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb...; original basis/custody; future fills not_observed. |
+| Follow-up | Chat one-shot | Oct9 23:05KST exact same job, no chain/expansion. |
+| Head | Data scheduler | Oct9 15:29UTC owned; no manual invoke. |
 | Console | Existing web | http://127.0.0.1:8787 retained reference, not owned net profit. |
 
 ## Bottleneck And Reversible Improvement
 
-The two foundation arms failed their frozen economic kill; preserve results,
-do not rescue by tuning. Existing numeric TCN reuse is ready. The next material
-bottleneck is a missing model-to-Execution contract, not profitability approval.
-Parallel exact-seal reading, typed proposal and independent source falsifiers
-advance Paper readiness without touching tonight's owner or pending identity.
-A proposal is not an executable request; arbitrary-stock owner/quote/funds
-support and actual remaining shared capacity are explicit next technical work.
+Model-to-typed-target interface works. Next: stock quote/funds and durable
+shared-owner compatibility, not profit/PIT approval. Keep fixed ETF APIs;
+consumer-scoped opt-in first, no invisible stock reservation or second bank.
+Tonight's original writer cannot see a sidecar: integrate every shared-cap
+reader coherently before installing any stock reservation.
 
-GPU inference was short;83.592s parent run included CPU preparation, durable
-progress/artifacts and replay. Do not call6.375s a GPU-kernel time/utilization
-measure. Keep used bytes immutable; a fresh inference job can amortize durable
-progress writes if measured useful, never weaken intent-before-side-effect.
-
-Goal42 closure-only P2s corrected in fresh close_r2.py, no native rerun/refund.
-Source/accounting and actual runtime remain distinct. Claude unchanged failures
-are review_unavailable/non-verdict; safe independent work continues.
-No new scheduler, gate, runtime replacement or recurring report.
+Use producer-derived run/verify fixtures: manufactured top-level verify fields
+hid a real schema mismatch. Failed no-order attempts are preserved; fresh
+reader/adapter/R3 and independent falsifiers fix them. No new gate, report
+family, scheduler or full-suite run for external/docs-only steps. Claude
+unchanged failure remains review_unavailable/non-verdict, not agreement.

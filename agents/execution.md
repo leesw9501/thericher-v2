@@ -36,13 +36,20 @@ pre-OPEN two-arm research seal, no broker-budget/input change. Goal42 Chronos
 stock analytical10% book/36cells/0fits is separate from tonight's private basis,
 custody and input. Neither creates a permission/profitability hold.
 Goal42 CLOSED/rejected36cells/closure43bbc090.../0fits/actual CUDA inference;
-no research-input substitution. Goal43 exact tcn20/rank1 typed proposal is
-preparation only:0.01 virtual-reference target within original0.10 ceiling,
-no new bank/capacity/quantity/price/OrderIntent. James adapter/Copernicus reader/
-Euclid source review/parent integration are disjoint. Existing execute=False
-canary still writes an intent, so never use it for this pure shadow path.
-Arbitrary stocks lack the narrow existing quote/funds/owner contract; that is
-a technical integration gap, not profitability/PIT/operator approval.
+no research-input substitution. Goal43 CLOSED actual pure-host r3:
+contract56e0f2ae.../outcomeef5a39ad.../receipt308bb0f0.../verify9f1928bb...,
+0.730s/0 broker/credential/private intent writes. Exact tcn20/rank1 target0.01
+inside original0.10 ceiling, original clocks/Oct9 20:00UTC expiry; no capacity,
+price, quantity, new bank or OrderIntent. Constructor replay exact; fresh
+adapter0824820a... requires all128 NASD, reader7c41036f... matches verify schema.
+Independent53bb3c64... source/synthetic only;167 parent tests passed. Original
+failed reader/callers/falsifiers retained, not called passing or overwritten.
+Goal44 target-bound read-only account/quote/funds shadow; preserve tonight owner.
+Existing execute=False canary writes intent and StateStore.read creates locks:
+use strict frozen-byte parsers/RO private mount, not either path for shadow.
+Arbitrary stock owner/reservations aren't represented by old shared consumers.
+Do not install an invisible sidecar or second10% basis. Extend all consumers
+coherently in a later package. This is a technical gap, not profit/PIT approval.
 Private Paper authority stays delegated; model profit is not an Execution gate.
 
 Goal32 current pooled equity preview is COMPLETE/measurement-only:125 usable
