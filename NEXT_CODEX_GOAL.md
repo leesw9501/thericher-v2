@@ -41,6 +41,11 @@ policy, not an allocation among hindsight-available keys.
 Only two learned arms: pooled Ridgealpha1/SVD/intercept on flattened2x20,
 and one native Torch causalTCN2->16->16->16, kernel3/dilations1,2,4/ReLU,
 last-step linear score, rank-target MSE, Adam1e-3/batch256/512updates/seed101.
+The supplied context is20; this exact last-step TCN has receptive field15,
+not a claim of full20-step memory. Prefix-only channel population mean/std
+over rows/time, zero std=1, unscaled targets, Ridgefloat64/TCNfloat32.
+Own numeric NPZ only, allow_pickle=False. Closing momentum L uses L bars
+and L-1 return intervals, matching the existing fixed controls.
 Four expanding temporal OOF fits plus one final TRAIN fit per arm:10 actual
 fits total within one600-second CPU/GPU family, no per-fold/arm budget reset,
 architecture/window/seed/fee/threshold search or public code/weights import.
