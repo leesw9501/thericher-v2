@@ -32,6 +32,10 @@ Goal29 R2 four-fit/54-cell comparison completed and rejected both augmented
 members. Source430/input575 unchanged/reaped/absent; analytical quote
 projection and replay never wrote private account state or broker inputs.
 No production broker/risk/custody/adapter change or real-money behavior.
+Goal30 analytical HOLD/rebalance2fit30cell study completed/rejected with
+native and independent cached Fraction economics exact; no private broker
+state or Execution input promotion. Goal31 pooled stock selection is a
+separate fractional stress benchmark, not native cash/fill/fee parity.
 Existing actual session remains independently owned at its unchanged next_due.
 Cumulative facts are counted once and owner-local average entry cost is retained.
 Intent-order replay is not actual fill-time/tax/FIFO accounting. Pending/unknown/

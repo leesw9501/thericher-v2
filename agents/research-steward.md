@@ -19,9 +19,14 @@ unchanged/reaped/absent/exclusive lease released. Native ALL-RO321307ed.../
 matches54cells/rejections. Custodyc120a889... CLOSED/non_promoting_completed/
 zero sealed spend. First host risk-action308 exact discrepancies remain
 unresolved, no tolerance/host-runtime/model-reinference claim. No active
-allocation or ready depth survivor. Goal30 CPU-only2-fit/300s HOLD-rebalance
-payoff preparation is ready; no GPU appointment, idle-resource filler or
-implicit reopening of a closed family. Other preparation/Paper continues.
+allocation or ready depth survivor. Goal30 CPU-only contract580712ea...
+completed2fits30cells/rejected,402/965paired action changes. Parentf895e491...
+108.552s/native361ada8c...54.445s/independent cached ledgerc8089526...1.974s
+match exact economics; custodyfe5753c2... closed/zero sealed spend.
+Goal31 pooled equity-component Ridge/TCN preparation is ready CPU work;
+10fits/600s shared after exact metadata and contract, no GPU appointment yet.
+It is a different stock-selection mechanism, not idle filler or a rescue of
+closed trio families. Existing CPU/Paper preparation continues independently.
 Originalf9252f7a... failed before fits at source preparation;16.928s/reaped/
 absent/429sources573inputs unchanged/lease released. Closureaec96a90.../
 custodybac71726... preserves exact failed attempt and native subcent diagnosis.

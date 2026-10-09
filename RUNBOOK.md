@@ -101,14 +101,23 @@ never repeat their run/smoke phases or alter original kill. Final independent
 readback and registry closure only append their own exact evidence.
 
 Current Goal30 root D:/thericher-v2/model-artifacts/research/
-kis-whole-share-hold-rebalance-payoff-alignment-v1, preparation only.
-Engine owns pure incumbent/label/scaler/causal replay tests; parent metadata
-freeze/worker and invoked Infra CPU dispatcher/fault tests are disjoint.
-One300s CPU/2Ridge/30cell matrix,1930 paired TRAIN states/no ESS/zero sealed
-spend; no GPU appointment. Structural preferred-action-order kill before fits.
-Same prior-CLOSE netNAV counterfactual branches; continuous DEV/tailHOLD,
-final liquidation only; no future OPEN access before decision seal. No actual
-freeze/fit/result claimed yet. NEXT_CODEX_GOAL.md owns complete fixed contract.
+kis-whole-share-hold-rebalance-payoff-alignment-v1 is COMPLETE/REJECTED.
+Precommit580712ea.../431sources571inputs; structural402/965paired preferred
+actions differ. Actual parent-run.json9f62853d.../f895e491...108.552s,
+resultce177b19...105.638s/2fits30cells/noGPU; exact reaping/absence/unchanged.
+CPU smoke4.460s; native ALL-RO parent-verify.json7988f9b6.../361ada8c...
+54.445s exactly replays cached linear reinference/economics, no refit.
+Independent validation-cached-ledger-readback.json/c8089526...1.974s,
+30cells/1020seals/21630conservation checks; separate Fraction ledger, shared
+loader/calendar/cached risk/model outputs, not independent reinference or
+TRAIN labels.26synthetic reader cases pass. Custodyfe5753c2... closed.
+At10bps state growth-4.18%/+35.46% equals always-rebalance; original kill
+rejects. No survivor/Paper input/holdout/alpha claim; never rerun used drivers.
+Full8 authority13459pass22skip35warnings334.45s/helper0;322changedserial,
+externalworker15/dispatcher114/preparer28; Ruff/three sample-env Compose pass.
+Goal31 Data metadata/Engine pure component adapter/parent pooled Ridge-TCN
+preparation are now disjoint ready work; NEXT owns exact10fit600s/48cell
+scope and fold/eligibility/source limits. No actual new GPU campaign yet.
 Claude source-discovery/claude-whole-share-hold-rebalance-20261009-v1.json/
 5ba22b56... is review_unavailable/cli_is_error, not agreement; one public-only
 challenge, no unchanged retry. Independent causal contract review supports

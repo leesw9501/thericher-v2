@@ -128,14 +128,19 @@ Positive backtest growth is not broker net profit or independent alpha.
 
 ## Breadth / Depth / Ensemble / Replication
 
-Breadth ready: Goal30 CPU-only HOLD/rebalance payoff-alignment preparation.
-Two causal TRAIN behavior incumbents/1930pairedrows, same prior-CLOSE netNAV
-counterfactuals, no21-session forced liquidation;2matched Ridge fits/30cells/
-one300-second family after structural state-action-order kill. No new rates,
-GPU appointment, holdout or broker path. Parent/invoked Infra prepare driver;
-Engine owns one small pure module/tests. Myopic/coverage/drifting-risk/raw
-limitations and all old rejections remain. Claude5ba22b56... unavailable,
-not agreement; independent contract review found no temporal contradiction.
+Breadth Goal30 closed/rejected:580712ea.../2fits30cells/resultce177b19...,
+402/965paired action changes, parent108.552s/ALL-RO54.445s/independent cached
+ledgerc8089526...1.974s matches30cells. Custodyfe5753c2... closed; no model/
+risk reinference, TRAIN-label independent proof or isolated account-state effect.
+Breadth ready Goal31 pooled equity component selection: Data metadata,
+Engine pure adapter/tests and parent model worker are disjoint. One Ridge/TCN,
+four OOF+final each/10fits600s/48cells after exact metadata freeze/CPU smoke.
+Fixed<=128keys/800sessions; fold-prefix scalers, complete predeclared label
+cross-section and past-only selections; no future mask/winner substitution.
+Primary retrieval47afdd95.../proposal25863fce... supports economic mechanism,
+not raw KIS efficacy. Claude8e6d8d69... unavailable/not agreement; independent
+two P2 fold/label gaps fixed in NEXT before outcomes. No new GPU allocation,
+holdout/Paper input or rescue of closed trio families. Limits remain explicit.
 Pairwise-reversal ANTICOR actually rejected; retain its fixed recipe.
 Conditional-hedge study is now COMPLETE/REJECTED42 cells, exact root
 A/research/kis-cross-asset-conditional-hedge-utility-development-v1-runtime-recovery-r2.

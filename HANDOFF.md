@@ -89,16 +89,31 @@ Public Claude directiondbb4afc6... and quote challengeb702c8c4... returned
 review_unavailable/cli_is_error, not agreement. Independent scoped source and
 R2 five-check review found no P1/P2; no new grid or result rescue.
 
-Current Goal30 prepares CPU-only incumbent-conditioned HOLD/rebalance payoff
-alignment:2causal TRAIN behavior states/1930pairedrows, same prior-CLOSE netNAV
-counterfactual21marks/no horizon liquidation,2matched Ridge fits/30cells/one
-300s family after structural action-order kill. Continuous DEV/tailHOLD/final
-study liquidation, no group bank reset. Engine owns new pure module/tests;
-parent worker/freeze and invoked Infra dispatcher/tests run in parallel.
-No GPU/holdout/Paper promotion, rate graft or rescue of closed results.
-Myopic targets/behavior support/held-risk/raw limits remain. Public challenge
-5ba22b56... unavailable/not agreement; independent contract check supports
-the scoped causal sequencing. NEXT_CODEX_GOAL.md carries exact current limits.
+Goal30 COMPLETE/REJECTED at A/research/
+kis-whole-share-hold-rebalance-payoff-alignment-v1. Contract580712ea... binds
+431sources571inputs;402/965 paired preferred-action changes,2CPUfits30cells,
+resultce177b19.../105.638s worker/108.552s parentf895e491... . Source/input
+unchanged/reaped/absent/no GPU, credentials or broker. Native ALL-RO361ada8c...
+54.445s passes exact cached linear reinference/replay, no refit. Independent
+cached Fraction ledgerc8089526.../1.974s matches30cells/1020seals/21630
+conservation checks; no model/risk reinference or TRAIN-label revalidation.
+Custodyfe5753c2... closed/non_promoting_completed/zero sealed spend.
+State10bps growth-4.18%/+35.46%, identical to always-rebalance; buyonce
+-1.54%/+39.23%. Original BOTH-view growth/all-control utility kill rejects.
+State also contains prior quote levels, not isolated account-state causality.
+Full8 authority13459pass22skip35warnings/13481collected334.45s/helperexit0;
+changedserial322pass, externalworker15/dispatcher114/preparer28/ledger26 pass;
+Ruff/three sample-env Compose pass. Pure module focusedcommitf2a95ba pushed.
+
+Current Goal31 pooled equity component selection reuses named broad daily
+custody, not another trio/model/window rescue. Data prepares exact metadata;
+Engine pure causal adapter/tests and parent model runner are disjoint.
+One Ridge/TCN, four OOF+final each/10fits600s shared, CPU smoke before GPU;
+fixed<=128keys/800sessions/520TRAIN20purge260seenDEV, prior61 eligibility and
+20component contexts. Fold scalers are prefix-only; incomplete label sets
+cannot shrink rankings or replace winners. No holdout/Paper promotion.
+Source proposal25863fce.../parent primary retrieval47afdd95...; public Claude
+8e6d8d69... unavailable/not agreement. NEXT owns complete current limits.
 
 Goal25 preparation COMPLETE, not future runtime closure.
 

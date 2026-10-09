@@ -2,97 +2,112 @@
 
 ## Objective
 
-Complete kis-whole-share-hold-rebalance-payoff-alignment-v1: test whether
-conditioning HOLD versus rebalancing on the incumbent whole-share account
-state materially aligns learned decisions with continuous executable payoff.
-This is one bounded CPU development study, not a rescue of closed model/rates
-rejections or a profitability gate on independent KIS Paper.
+Complete kis-pooled-equity-component-selection-development-v1: test whether
+prior overnight/intraday component histories improve next-session stock
+selection beyond undifferentiated closing momentum. One bounded seen-data
+development campaign, not another trio HOLD/utility-family rescue.
 
-## Frozen Packages And Limits
+## Owned Packages
 
-Engine owns a small pure preparation/replay module and focused synthetic tests.
-Parent owns exact metadata freeze, private no-network Docker worker, fitting
-and integration. Invoked Infra owns finite CPU dispatcher/fault tests;
-Validation independently checks cached decisions/economics after outcomes.
-Data reuses the existing raw trio commitment4a25284d... with no new acquisition.
-Do not add a generalized RL framework, production ledger or recurring worker.
+Data identifies the exact named retained broad-panel manifest/source bindings
+and freezes at most128 opaque keys lexicographically from that named snapshot,
+not by future completeness, winners or label values. Reuse the named800-session
+calendar,520 TRAIN/20 purge/260 seen DEV. Missing source metadata is a scoped
+preparation/recovery fact; do not infer dates, latest-scan or buy/download data.
+Current-listing and source-selection survivorship limits remain explicit.
+Engine owns one pure causal component/rank adapter and synthetic tests.
+Parent owns contract freeze, model worker, integration and shared GPU custody.
+Invoked Infra owns finite GPU dispatcher/fault tests; Validation independently
+reattaches frozen decisions/economics, not tuning. Disjoint ready work proceeds.
 
-Use existing63-session raw price features and253 prior CLOSEs/252 returns,
-population covariance/10% diagonal shrink,0.10 annual target-risk scaling of
-balanced thirds. Raw information unchanged; fills/marks use the existing
-nearest-cent ties-even synthetic projection, never broker quote equivalence.
-Original synthetic basis100000/bank10000 fixed once; integer floors, average
-entry cost, SELL-before-BUY, actual-notional fees, atomic unchanged-state
-infeasibility/no clipping/borrowing/new basis. Interest/latency/slippage zero.
+## Frozen Scientific Scope
 
-Freeze two causal TRAIN behaviors: rebalance to scaled balanced every21
-scheduled sessions from first eligible date, versus one first-opportunity BUY
-attempt then HOLD even if that attempt is infeasible. Snapshot each incumbent
-after prior CLOSE and before candidate OPEN. Neither behavior consumes label
-winners, DEV values or candidate predictions.965 dates/1930 paired rows;
-46 disjoint21-label geometry is not statistical ESS or independent states.
+Prior-CLOSE inputs:20 completed observations of log OPEN/priorCLOSE and
+log CLOSE/OPEN. These algebraically decompose OC information, not new data.
+All policies share past-only eligibility:61 prior completed scheduled Bar
+observations, finite positive OC, and existing completed-bar high/low<=2 hygiene.
+Required missing past support yields unavailable at decision time, not a future
+outcome mask. No candidate-day OPEN, target CLOSE or future completeness in
+features, eligibility, rankings or scalers. Stable opaque-key ties.
 
-From each identical incumbent and prior-CLOSE netNAV compare HOLD unchanged
-versus one nextOPEN balanced rebalance, then21 CLOSE marks without additional
-trades or horizon liquidation. TRAIN10bps. Infeasible rebalancing remains a
-HOLD-equivalent label; never delete that row. Structural kill: if no paired
-TRAIN incumbent changes preferred REBALANCE(delta utility>0) versus HOLD,
-close the question without fitting; magnitude differences alone do not pass.
+Label cross-section is the entire prior-CLOSE eligible set, frozen before target
+lookup: next OPEN-to-same-CLOSE intraday returns, tied midranks/(N-1)-.5.
+Incomplete cross-section has no valid rank labels; record its exact coverage,
+never silently shrink it. Never replace a selected winner or delete a replay
+day after target lookup. A missing selected execution outcome prevents a
+complete economic claim. Fewer than10 eligible keys means the predeclared flat
+policy, not an allocation among hindsight-available keys.
 
-Two matched Ridgealpha1/SVD/intercept fits only: raw6x63 plus11 state slots
-(quantities3, entrycosts3/bank, grosscash/bank, cumulativefees/bank, projected
-priorCLOSE3/bank). Shared TRAIN-only price/state population scalers; price-only
-state slots zero, zero std divisor1, no target scaling or hyperparameter search.
-This augmentation bundles account state and prior quote price levels; it is
-not an isolated causal estimate of the account-state effect.
-One300-second CPU family/2fits, no GPU appointment or holdout. CPU smoke first.
+Only two learned arms: pooled Ridgealpha1/SVD/intercept on flattened2x20,
+and one native Torch causalTCN2->16->16->16, kernel3/dilations1,2,4/ReLU,
+last-step linear score, rank-target MSE, Adam1e-3/batch256/512updates/seed101.
+Four expanding temporal OOF fits plus one final TRAIN fit per arm:10 actual
+fits total within one600-second CPU/GPU family, no per-fold/arm budget reset,
+architecture/window/seed/fee/threshold search or public code/weights import.
+GPU eligible after frozen metadata/contract and CPU synthetic workload smoke,
+not positive profit. Existing CUDA runtime/exclusive lease/external artifacts,
+no major dependency/framework change. Inference chunk1024; retain desktop
+headroom and stop at the finite family wall clock.
 
-DEV same1442 marks/68 complete21-session groups/tail14 HOLD, uninterrupted
-capital/bank/fees across both views. No group liquidation; final study CLOSE
-liquidation only. Every prior-CLOSE feature/prediction/HOLD-or-REBALANCE seal
-precedes numeric currentOPEN selection; logical causality, not physical byte
-isolation. Buy-once attempt, ties HOLD, cadence/tail/terminal rules fixed.
-Controls always-rebalance, buy-once-HOLD and cash;5policies*3costs*2views=30cells.
-At10bps the state member needs positive growth and utility improvement>1e-10
-over matched price-only and all3 controls in BOTH views; otherwise reject.
-No fee/window/seed/threshold rescue or fresh-holdout/Paper/alpha claim.
+Zero-based entry-session indices: initial TRAIN eligible61..519. OOF
+fit-prefix target cutoffs154,245,336,427; scored entry blocks156..246,
+247..337,338..428,429..519. Every fold fits its own scaler and model on its
+prefix only, with all labels closed before its first prior-CLOSE decision.
+All keys of one session remain together. Final scaler/model uses TRAIN only;
+DEV entries540..799, two fixed130-session views, no reset or fresh holdout.
+Cross-sectional rows/overlapping windows do not multiply independent sessions.
 
-Myopic continuation targets, behavior-state coverage, state-dependent integer
-feasibility, tail/final-liquidation mismatch, drifting held risk, revised raw
-non-PIT/non-TR/seen inputs and unobserved provider finality remain explicit.
-The .10 scaling is a target, not a guarantee on held portfolio risk.
-NBERw15205/arXiv1203.5957 motivate incumbent/cost/HOLD only, not replication of
-quadratic-cost/long-short optimality. No third-party code/weights/data import.
-Actual public Claude challenge5ba22b56... is review_unavailable/cli_is_error,
-not agreement; independent contract review supports this scoped question.
+Seal per-date scores/eligible set/top10 selections before numeric execution
+outcomes. Long-only equal-weight top10, daily nextOPEN to sameCLOSE, cash
+between sessions. Existing fractional analytical convention, not native
+whole-share bank/broker parity. Fixed round-trip5/10/20bps stress, not a
+verified execution-cost envelope; use full entry+exit turnover consistently.
+At each entry/exit standard turnover includes cash and is half the absolute
+weight change; subtract round-trip bps/10000 times their average from the
+weighted intraday return. This fixed weight-turnover stress is not actual
+notional fees or broker cash affordability. Nonpositive net NAV is unavailable.
+Controls: fixed trailing20 intraday-minus-overnight component rank, each
+closing-momentum5/20/60 separately, equal-weight eligible and cash.
+Do not choose the best seen control or tune a blend.
+Strongest kill: TCN must improve session-equal-weight OOF Spearman over the
+matched Ridge/component/momentum controls and have positive growth plus
+utility improvement>1e-10 over all controls/Ridge in BOTH10bps DEV views.
+Otherwise reject; missing required comparative evidence is not a survivor.
 
-## Existing Independent Execution And Closed Evidence
+Lou-Polk-Skouras2019 author-hosted DOI10.1016/j.jfineco.2019.03.011 motivates
+component persistence/opposing return timing; original adjusted US1993..2013
+VWAP measurement is not replicated by KIS raw OC. TCN1803.01271v2 motivates
+architecture, not financial efficacy. Parent source receipt47afdd95... binds
+proposal25863fce... . Actual Claude challenge8e6d8d69... is unavailable/
+cli_is_error, not agreement. Independent review's fold-scaler and label-set
+P2 gaps are fixed above before outcomes.
 
-Goal29 R2fd4c2607... completed4fits/54cells/rejected both: resultc3a26130...,
-parent138a05e3.../58.579s/430sources575inputs unchanged/reaped/absent/lease
-released; native ALL-ROd13d396d.../54.079s. Independent cached-action Fraction
-ledger1a0a4bdf.../2.272s exactly reproduces54cells/rejections; custodyc120a889...
-closed/non_promoting_completed/zero sealed spend. Original no-fit failure and
-host308 exact risk-weight discrepancies remain retained/unresolved; no host
-runtime equivalence, independent risk/model reinference or tolerance waiver.
-Original600-second family/100debit+500remaining was not reset. Older rejected
-fractional/stateful/curve families remain closed, not relabeled survivors.
+## Preserved Independent Work
 
-Goal25 owns thericher-kis-paper-portfolio-control-20261009 Oct9 13:45UTC/
-22:45KST, session portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb...
-and original shared10%/SPY-TLT-GLD-QQQ custody. Future submit/fill/closure remains
-not_observed. One-shot chat follow-up23:05KST; no manual invoke/substitution/
-identity reset/schedule expansion or foreground wait.
+Goal30 COMPLETE/REJECTED: contract580712ea.../431sources571inputs,
+402/965 paired action changes,2CPUfits30cells/resultce177b19... .
+Parent9f62853d...108.552s/reaped/absent/unchanged; native ALL-RO7988f9b6...
+54.445s; independent cached Fraction ledgerc8089526...1.974s exactly matches
+30cells/1020seals/21630conservation checks. Custodyfe5753c2... closed,
+zero sealed spend; no independent model/risk reinference or Paper input.
+State arm bundles account state and price levels, not isolated state causality.
+All earlier closed results remain closed.
+
+Execution owns Oct9 22:45KST/13:45UTC portfolio-control-20261009-v1/
+job2b20f908... and one-shot23:05KST check. Preserve original shared10% basis,
+SPY/TLT/GLD/QQQ custody; no manual invocation/substitution/reset/expansion.
+Future submit/fill/closure not_observed; no foreground waiting.
 
 ## Completion And Continue
 
-Focused causal/future-perturbation/state/fee/bank tests; metadata freeze before
-values/labels/fits; CPU smoke; one bounded actual structural termination or
-complete30-cell comparison; independently bound cached economic readback.
-At company integration run changed-path serial, clean-root8-worker authority,
-Ruff and all3 sample-env Compose; do not repeat full tests per role package.
-Commit/push, refresh projections, replace this with exactly one material next
-objective and continue while no true operator-authority decision blocks.
-M=D:/market_data; A=D:/thericher-v2/model-artifacts; D15%floor. Private no-cost/
-Paper work delegated; never read/route KIS_LIVE_*, real money, paid commitments,
-unclear rights, public serving or major runtime replacement.
+Metadata freeze before values/labels/fits, focused causal/fold/coverage/turnover
+tests, CPU smoke, one bounded actual result or truthful scoped input-unavailable
+closure, native and independent bound cached economics. No holdout, independent
+alpha, adjusted/TR/PIT/finality or model/Paper promotion claim.
+At integration run changed-path serial, one clean-root8-worker full authority,
+Ruff and default/research/accounting sample-env Compose; not per role package.
+Commit/push, refresh changed projections, replace with exactly one material
+next company objective and continue until a genuine operator boundary blocks.
+M=D:/market_data; A=D:/thericher-v2/model-artifacts; D15%floor. Private/no-cost
+Paper standing authorized; never read/route KIS_LIVE_*, real money, paid
+commitments, unclear rights, public exposure or major runtime replacement.

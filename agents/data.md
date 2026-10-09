@@ -6,6 +6,12 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal30 reused pinned raw trio/431sources571inputs,2CPUfits30cells/rejected;
+no new collection/source qualification. Goal31 Data owns metadata-only exact
+broad-panel source/manifest/date inventory for pooled equity component ranking.
+Fixed<=128 opaque keys before values, no future-completeness/winner selection;
+current-listing/non-PIT/CA/raw limits remain. No new API/download or global hold.
+
 Latest historical engineering-control refresh is actually READY: fixedSPY/AMS,
 TLT/NAS,GLD/AMS,253 dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC.
 Token1/9GET/9accepted/28 retained files,12.113s parent3cc8856e.../receipt493cd1dc...
