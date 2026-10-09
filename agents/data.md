@@ -16,8 +16,17 @@ is complete: zero wholly later five-session targets,99 fresh dates overlap seen
 CURRENT and Oct9 adds only one endpoint. Pure throughput proposal48eaff67... at
 A/research/kis-stock-feature-preparation-throughput-proposal-v1 is complete but
 not implemented or benchmarked. Neither qualifies a dataset, changes a cache,
-allocates GPU or proves a speedup. Goal55 binds the exact original f78 snapshot
-for one prospective CPU shadow; no silently joined or substituted input.
+allocates GPU or proves a speedup. Goal55 actual forecast016e67dc... binds exact
+original f78:42 eligible/prior61, no joined or substituted input. Native cached
+reconstructionda6fbbad... passed; host context hash mismatch is not Data drift.
+Endpoint proposald72bfb88... at
+A/data/kis-stock-prospective-pair-endpoint-preparation-v1 names exact Oct12/Oct19
+OPEN targets and one raw daily page per frozen peer after each completed CLOSE.
+Existing NAS scheduled forward scope is six names, not128 or these42 peers.
+No new endpoint job/next_due installed yet; no future rows/outcome inferred.
+Source endpoint helper54da0538.../test402e8084... released36 synthetic checks;
+parent owns actual peer extraction, runtime and finite installation. Storage
+and scheduler preparation have disjoint owners/roots; no provider calls yet.
 Original f78 and remainder fresh snapshots remain separate and immutable below.
 
 Goal52 separate remainder metadata FROZEN51b30aa7.../448 source bindings at

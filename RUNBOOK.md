@@ -2,27 +2,38 @@
 
 ## Current Owned Opportunities And Research
 
-Goal54 runtime CLOSED at
-D:/thericher-v2/model-artifacts/research/kis-stock-absolute-cash-gate-development-v1.
-Precommita835debd.../result767c5efc.../closure58e867c5.../custodyf97a83aa...;
-actual-parent-return7bd07a5a... plus post-fsync observation302.407s<600.
-CPU23.295/run181.285/zero-fit cached66.489;6 actual CUDA fits10.969s/30cells,
-all source/input/accounting/attribution/cached replay matched, terminal flat,
-children reaped/absent/lease released. NEVER rerun used actual_run.py or reset
-this family. Used wrapper501a2fa5... has two external E501 style findings;
-its bytes are preserved, not retroactively rewritten as lint-clean.
-Gate20 rejected utility;60 seen follow-up only, weights36ed359b... . Keep original
-Paper model. Next prospective preparation must freeze before unseen outcomes;
-updated or joined snapshots cannot manufacture independent replication.
-351 shared serial/347 parent external/70 independent checks pass; full clean8
-PASSED15133pass22skip35warnings340.70s/15155collected/JUnit56587861... .
-Verificationb2bcb979... binds reaped/clean helper closure. Repo Ruff and
-default/research/combined-accounting sample
-Compose pass. Weekly full serial already passed15133/22skip at Goal53 below.
-Contract/result Claude attempts unavailable, not substantive verdicts. Goal55
-next: actual CPU-only prospective TCN-plus-Mixer60 shadow forecast before its
-official OPEN, not a refit, broker intent or future payoff claim. Data scout
-822387e7... proves no wholly later five-session target is already available.
+Goal55 prospective preparation runtime COMPLETE016e67dc... at
+D:/thericher-v2/model-artifacts/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1.
+Retained workerfc77e52a... binds contract76329d09.../TCN9de27944.../Mixer36ed359b... .
+Actual CPU completion Oct9 23:03:14.321194UTC before Oct12 OPEN13:30UTC;42 peers,
+seven original1/100 analytical slots retained, three cash/no executable intent.
+Read exact frozen native/4c433f8a5e8b4536818ebcfee38443c1/unattested-worker.bin
+only through bound native cached proof; never print its predictions/identities.
+Jobc26e119a.../native da6fbbad.../capture65543aa5... validates same-runtime exact
+context, cached21.880s<60/reaped/absent/unchanged/zero inference/fit/GPU/targets.
+Never manually rerun any used driver, cached caller or Paper task.
+Old first dispatchf54e8e83.../af0d2e79...30.233s and recovery76329d09.../
+74de44bf...25.944s stay FAILED; native cached completion does not refund their
+120s scopes. Host comparison93625d50... differs ONLY in context hash. Do not
+introduce a float tolerance, claim host/native parity or infer an exact libm cause.
+Post-clock P2 fixed in derivative; omitted-deadline digest P2 remains outside
+the explicit native caller24456215... . Future adapters must always pass their
+owned deadline or use a new separately tested derivative; don't edit used bytes.
+Frozen later pair Oct12 OPEN->Oct19 OPEN/whole5/10/20bps/.10 exposure/no tuning.
+No completed payoff, Paper qualification, model selection or live claim.
+Data proposald72bfb88... shows old NAS refresh is six names; the42-peer endpoint
+package needs its own exact entry/exit ownership, not a cache union or wait.
+Parent172 original/99 derivative/5 cached source checks and437 shared serial
+pass; full clean8 PASSED15133/22skip/35warnings335.15s/15155 collected,
+JUnitb62d9a83... at A/verification/full8-20261010-g55/pytest.xml; reaped/clean.
+Ruff/three sample-env Compose pass. Cached source reviews548d794e.../c7899a01...
+retain missing producer/source checks and late inner launch/completion P2s.
+Fixed closure binds exact job/producer/source/capture and outer clocks; do not
+reuse the generic caller unchanged. Do not edit used bytes or rerun inference.
+Claudea5deef5f... unavailable, not agreement.
+Closed Goal54 persists in Git4c40061 and external closure58e867c5.../sixCUDAfits/
+30cells/302.407s. Its weights, failures and actual wrapper501a2fa5... remain
+immutable, including two external E501 findings. Weekly serial passed atGoal53.
 Offline Paper reader66 checks/reader465db5d0.../receipt21049a67... under the
 Goal53 outcome-reader-preparation-v1 root accepts exact externally pinned bytes;
 no actual future evidence is inferred. Existing finite entry/close below stay

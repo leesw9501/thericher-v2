@@ -7,6 +7,15 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-10 KST)
 
+Goal55 prospective shadow016e67dc... uses immutableTCN/Mixer60 numeric weights,
+zero fits/GPU allocation/sealed spend. Exact CPU workerfc77e52a... reconstructed
+nativecached da6fbbad.../capture65543aa5...21.880s<60; original120s dispatches
+remain failed30.233/25.944s, no refunds. No new weights or independent payoffs.
+Custody-readback0d67d3f7... checks14 metadata/source pins, preserves both failed
+appointments and links cached closure without allocating a new GPU family.
+Future endpoint custody is Data-owned; no ready frozen new GPU family yet.
+Source payoff-aware proposal is preparation only, never a training allocation.
+
 Goal54 family CLOSED/trial1/contracta835debd.../allocation175dd3be.../
 closure58e867c5.../outcomef97a83aa... . Actual six CUDA fits10.969s/30 cells;
 CPU23.295/run181.285/cached66.489, zero verify fits/inference. Exact same-process

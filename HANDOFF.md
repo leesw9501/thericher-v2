@@ -20,36 +20,46 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-Goal54 research runtime COMPLETE at
-A/research/kis-stock-absolute-cash-gate-development-v1: contracta835debd.../
-result767c5efc.../closure58e867c5.../custodyf97a83aa... . Actual captured return
-7bd07a5a... plus post-fsync observation bounds the one family302.407s<600.
-CPU23.295s/run181.285s/cached66.489s; six CUDA fits10.969s/30 cells, zero new
-verify fits/inference. Every child reaped/absent/lease released; all books flat,
-source/input/accounting/stock-day attribution and cached replay matched.
-Gate20 rejected TCN utility. Gate60 whole10bps seen synthetic growth+1.03470745%,
-drawdown.58035049%, utility.04692655 versus unchangedTCN+.95641645%,1.36597204%,
-.03764071. It is ONLY a later/disjoint replication candidate, not independent
-alpha, a selected profitable model or replacement Paper input. All data remain
-seen/current-listed/raw/revised/non-PIT/action/finality limited. Threshold.5,
-original top10/no reranking/redistribution and fixed10% exposure were frozen.
-Parent347 external source checks/351 shared serial checks passed; independent
-composition31/data19/publication20 passed. Full clean8 PASSED15133pass22skip/
-35warnings340.70s,15155collected/JUnit56587861...; verificationb2bcb979... .
-Helper exited zero, child reaped and current scratch cleaned. Repo Ruff/three
-sample Compose passed. NEXT_CODEX_GOAL.md now owns Goal55 actual CPU prospective
-shadow preparation; no future paired payoff or Paper replacement is claimed.
-Claude contract and result reviews unavailable, not agreement. Actual wrapper
-501a2fa5... remains used/unchanged with two external-only E501 line-length
-findings; neither is a behavioral finding or a repo Ruff pass claim.
-Measured inclusive wall components: input24.124/features41.888/labels1.826/
-fit10.969/predict4.048/replay49.663/accounting2.671/save29.692s; nested spans
-are not additive or proof of CPU/I/O utilization. Next direction: preserve
-gate60 weights36ed359b... and prepare genuinely prospective CPU shadow pairing,
-not more same-sample tuning or waiting for Monday in the foreground. Metadata
-scout822387e7... confirms zero wholly later five-session targets in the existing
-two fresh100 snapshots; their99 dates overlap seen CURRENT. Do not join those
-snapshots or relabel the one Oct9 endpoint as independent replication.
+Goal55 prospective forecast runtime COMPLETE/closure016e67dc... at
+A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1. Exact retained
+CPU workerfc77e52a.../contract76329d09... was reconstructed from cached scores in
+the SAME native image: jobc26e119a.../receiptda6fbbad.../capture65543aa5... .
+Cached actual post-capture21.880s<60, zero new inference/fit/targets/GPU/broker,
+reaped/absent/unchanged. Forecast completed Oct9 23:03:14.321194UTC before
+Oct12 OPEN13:30UTC. Original128/prior61/f78 only:42 eligible,86 unavailable;
+originalTCN top10, seven fixed1/100 analytical slots retained and three cash.
+No rank11, reranking, renormalization, broker intent or Paper model replacement.
+Failed first120s dispatchf54e8e83.../captureaf0d2e79...30.233s and recovery
+76329d09.../capture74de44bf...25.944s remain FAILED/immutable, not refunded.
+Host reconstruction differed ONLY in context hash93625d50...; native exact
+equality passed without a tolerance. Specific libm/Python cause is unproved.
+Inner post-clock P2 is fixed in derivative74be0b57...; optional omitted-deadline
+digest P2 remains outside the explicit native call24456215... . Never rerun or
+edit used source to repair it. No completed five-session payoff, alpha, fees,
+Paper qualification or live claim. Honest host/clock remains an assumption.
+Future pair freezes Oct12 OPEN->Oct19 OPEN under unchangedTCN/cash/mask,
+whole5/10/20bps/.10 exposure/nearest-cent/delta fees; no tuning or new fit.
+Data endpoint source proposald72bfb88... confirms existing NAS refresh covers
+six names, not this42-peer cohort; no endpoint owner has yet been installed.
+Parent172 original/99 derivative/5 cached source tests and437 shared serial
+passed; clean8 PASSED15133pass22skip35warnings335.15s/15155 collected,
+JUnitb62d9a83... at A/verification/full8-20261010-g55/pytest.xml, helper reaped
+and clean. Repo Ruff/three sample-env Compose pass. Independent cached reviews
+548d794e.../c7899a01... retain generic P2s: missing producer-pin checks,
+empty source set and late inner launch/completion checks. The one fixed closure
+binds exact producer/job/source/capture hashes and observed outer completion;
+it is not a reusable approval for that caller. Preserve used bytes/falsifiers.
+Independent fixed-closure reviewd485c836... passed30 mocked tests with no scoped
+P1/P2; this is source/contract evidence, not independent actual-data attestation.
+Verificationf26933c9... closes Goal55 integration. Goal56 owns only the exact
+future endpoint preparation/finite installation; Data/storage, scheduler and
+payoff-aware source preparation run with disjoint owners. No future rows or
+new fit inferred. Claudea5deef5f... unavailable, not agreement; no Monday wait.
+Closed Goal54 evidence remains in Git4c40061 and its external root: six actual
+CUDA fits10.969s/30cells/302.407s closure58e867c5... . Gate20 rejected; gate60
+seen follow-up only, weights36ed359b.../TCN9de27944... immutable. All data remain
+current-listed/raw/revised/non-PIT/action/finality limited. Scout822387e7...
+found zero wholly later five-session targets; do not rename seen data as fresh.
 
 ### Closed Goal53
 

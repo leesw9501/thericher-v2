@@ -7,26 +7,30 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
-Goal54 runtime CLOSED at A/research/kis-stock-absolute-cash-gate-development-v1:
-contracta835debd.../result767c5efc.../closure58e867c5.../custodyf97a83aa.../
-actual-return7bd07a5a...; observed302.407s<600 through publication. Six CUDA
-fits10.969s/30 cells; CPU23.295/run181.285/cached66.489, zero verify fits/inference.
-All source/input/cached/accounting/attribution matched; reaped/absent/lease
-released/books flat. Gate20 rejected utility; gate60 ONLY non-promoting follow-up.
-Whole10bps seen growth20+.6887274%,60+1.03470745%,TCN+.95641645%;60 drawdown
-.58035049% versusTCN1.36597204%. No Paper replacement, holdout or alpha claim.
-Final60 weights36ed359b.../model source74378c0c...; no refit, threshold search,
-rescue or weight substitution. Fresh replication takes priority over more
-architecture or payoff-aware search. OLD training ends2026-07-27; already-seen
-CURRENT targets2026-07-28..10-08. An updated snapshot is not untouched evidence.
-Parent120 models/labels+119 worker/preparation+42 native checks passed;
-independent31 composition/19 data/20 publication passed. Full8 PASSED15133pass/
-22skip35warnings340.70s/15155collected/JUnit56587861...; verificationb2bcb979... .
-Claude unavailable is not agreement. Source-only prospective pair/native reload
-preparation and Data coverage scout are parallel; do not infer allocation or
-forecast from preparation. Data scout822387e7... found zero wholly later
-five-session targets. Goal55 owns one actual CPU-only prospective pair before
-official OPEN; current Paper continues its original TCN and budget.
+Goal55 forecast runtime COMPLETE016e67dc... at
+A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1. Retained
+CPU workerfc77e52a.../contract76329d09... paired originalTCN7999de27944... and
+Mixer60-79936ed359b... over exactf78/prior61:42 eligible, original top10,
+seven1/100 total-basis slots retained, three cash. Actual completion Oct9
+23:03:14.321194UTC before Oct12 OPEN13:30UTC. No rank11/renormalization/intent.
+Native cached readbackda6fbbad.../jobc26e119a.../capture65543aa5... passed21.880s
+including publication, reaped/absent/unchanged; zero extra inference/fit/GPU.
+Original dispatches30.233/25.944s remain failed, not budget-refunded. Host
+only-context-hash mismatch93625d50... is not numeric parity; native equality
+passed. Derivative fixes post-clock P2; default omitted-deadline digest P2 is
+out of the explicit native path24456215... . Do not edit/rerun used source.
+Future pair: Oct12 OPEN->Oct19 OPEN, unchangedTCN/cash/mask, whole5/10/20bps,
+fixed.10 exposure/exact slots/no selection. No completed replication or profit
+claim. Endpoint coverage next; existing six-symbol collector is insufficient.
+Parent172/99/5 source and437 shared serial passed; full8 PASSED15133/22skip/
+35warnings335.15s/JUnitb62d9a83... . Independent cached reviews548d794e.../
+c7899a01... find generic producer/source/inner-deadline P2s; fixed closure
+reattests exact links and outer completion, not future caller correctness.
+Preserve source/falsifiers; new adapters must fix those before another use.
+Claudea5deef5f... unavailable. Closed Goal54 remains in Git4c40061/external root:
+six CUDA fits10.969s/30cells/closure58e867c5..., gate20 rejected and gate60 only
+seen follow-up. Raw/revised/current-listed/non-PIT/action/finality limitations
+remain; no Paper model replacement, new weights, holdout or alpha claim.
 
 ### Closed Goal52
 
