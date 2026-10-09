@@ -7,11 +7,27 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-09 KST)
 
-Goal37 kis-stock-selection-risk-attribution-development-v1 is next:
-zero-fit stock/day/fee attribution and fixed10%/25% cash-backed sizing,48
-reference plus96 comparison cells, one600s CPU family. Same frozen forecasts,
-no rank/blend/cadence tuning or new winner. Outcome-informed seen development,
-not fresh replication or a continuation of Goal36's failed allocation.
+Goal38 kis-stock-scorer-deployability-preparation-v1 is next: safe numeric final
+Ridge reload, all52 same-native cached score parity and one actual-time prior61
+prospective seal under300s CPU/zero fits/GPU. Ridge-first is a transparent
+reload/runtime choice, not a profitability winner. Data probes three dominant
+raw-gap keys in parallel; no mode correction or source/Paper qualification.
+
+Goal37 CLOSED at A/research/kis-stock-selection-risk-attribution-development-v1:
+contractd4f339e5.../441sources6inputs/result1fd5c07d.../parent226a4c52.../
+custodyfb850e0f... . Exact48 full-reference plus96 sizing cells,0fits/GPU,
+143.912s<600/all reaped/absent/unchanged, cached verificationad9aebd5... .
+Whole10bps/10% exposure: Ridge+3.336%/utility.11768/DD1.870%, GRU+2.333%/
+.04066/3.423%, blend+3.326%/.08333/3.576%. At25%, only Ridge passes the same
+scaled-control utility comparison(+8.448%/.13852/DD4.624%). No chosen winner
+or changed prior negative verdict: this design is outcome-informed seen reuse.
+Twelve >=50% raw OPEN gaps/20 CLOSE changes; full Ridge flagged-day55.066%
+versus net29.211%, GRU83.760% versus18.350%, blend86.360% versus32.479%.
+These exact contribution sums are descriptive, not an inferred corporate action,
+corrected PnL or alpha. Model reuse and source interpretation now matter more
+than another seed or fit. No independent dataset/broker qualification.
+Source accounting12b4a334.../63 independent cases and caller872293e3.../18
+pass; fresh immutable terminal/progress corrected direct-overwrite P2.
 
 Goal36 root A/research/kis-stock-specific-five-session-selection-development-v1
 CLOSED/rejected9fits48cells/contract062a437b.../result127ec525.../parent2b3d731b... .
@@ -44,13 +60,12 @@ in actual closed phases; fresh caller must correct it, never edit used source.
 - Data: exact CURRENT113/14073 rows/121complete4sparse3empty; manifest18a37635...
   payloadbd6b0f40.../precommit7d8b4d01... . Native exact two-file proof.295s;
   source/observation/missingness limits unchanged,52 dated marks not independent.
-- Data: source-bound discontinuity/concentration diagnostics, no acquisition
-  or verified-action claim. Same compact bytes and actual observation limits.
-- Engine/Execution preparation: exact attribution and fixed cash exposure;
-  preserve failed model verdicts and whole-share feasibility/cash residuals.
+- Data: bounded three-key mode probe, NEW cache; no verified-action claim.
+- Engine: safe final Ridge state reload and same-native score parity; actual
+  as_of and Oct9 pre-OPEN deadline, no source/model selection or auto-Paper input.
 - Validation: temporary independent source accounting review when ready;
   no tuning, old output rescue or blanket quality gate.
-- Parent: integrate/freeze one zero-fit comparison; tonight's Paper stays separate.
+- Parent: integrate/freeze one zero-fit reuse objective; tonight's Paper stays separate.
 - Depth/replication: no independently qualified survivor or ready depth contract.
   Equal within-campaign blend is exploratory, not cross-track promotion.
 

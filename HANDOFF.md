@@ -20,11 +20,31 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal37 kis-stock-selection-risk-attribution-development-v1.
-ZERO-fit exact stock/day/fee attribution and fixed10%/25% cash-backed exposure
-using Goal36's unchanged predictions/current input. Reconcile48 reference and
-96 sizing cells, one600s CPU family; no tuned ranks/blend/cadence or winner.
-This is outcome-informed seen development, not fresh replication or Paper input.
+NEXT owns Goal38 kis-stock-scorer-deployability-preparation-v1.
+Safe numeric final Ridge reload/all52 same-native cached score parity/one
+actual-time prospective score seal under300s CPU, no fits/GPU. Data probes
+exactly three dominant raw-gap keys via owned Paper market0/1/0 pages (max9GET)
+in a NEW cache, no source correction or general Paper gate. Ridge-first is for
+transparent numeric reuse, not choosing a winner. Oct9 prospective pre-OPEN
+output requires actual inference before13:30UTC; no backdating or future target.
+
+Goal37 CLOSED at A/research/kis-stock-selection-risk-attribution-development-v1:
+contractd4f339e5.../441sources6inputs/result1fd5c07d.../parent226a4c52.../
+verifyad9aebd5.../closure442088de.../custodyfb850e0f... . Exact48 reference and
+96 sizing cells,0fits/GPU/sealed spend/143.912s<600/all reaped/absent/unchanged.
+Whole10bps/10% Ridge+3.336%/GRU+2.333%/blend+3.326%, positive seen utility;
+25% only Ridge passes fixed scaled controls. No winner, fresh replication,
+changed prior negative verdict or broker profit. Twelve >=50% OPEN gaps and20
+CLOSE changes: full Ridge flagged-day55.066% exceeds net29.211%, GRU83.760%
+versus18.350%, blend86.360% versus32.479%. Cause remains unverified; do not
+subtract days or silently adjust labels. Exact contribution != trustworthy alpha.
+Independent accounting12b4a334.../63 and caller872293e3.../18 source/synthetic
+checks pass; actual144 replay uses same kernel/source, not independent economics.
+Fresh worker separates immutable terminal from owned progress and corrects
+direct-overwrite P2; old bytes unchanged. CPU smoke read no market bytes;
+its parent independently reattested six input files before/after.
+Changedserial207/clean8:14083pass22skip35warnings341.19s, repo Ruff/three
+sample-env Compose pass; external preparation/worker/Data141 pass.
 
 Goal36 COMPLETE/rejected at A/research/
 kis-stock-specific-five-session-selection-development-v1:
@@ -76,8 +96,8 @@ No full rerun per external handoff. Goal34 rejected6fits33cells/custody875233b5.
 and Goal31 exhausted/Goal33 incomplete-independent remain in Git/artifacts.
 No old fit/refund/rescue or claim of model/scaler/host-native equivalence.
 
-Parallel actors: Data discontinuity evidence, Engine/Execution attribution and
-fixed sizing, temporary independent source review, parent integration/Git.
+Parallel actors: Data source-local mode probe, Engine safe state reload,
+temporary independent source review, parent native integration/Git.
 No company block or routine approval wait. Source implementation handoff was
 bounded; parent reattested/tested after expiration rather than holding for an
 unknown owner. Data/caller/model evidence is distinct from actual runtime.

@@ -12,10 +12,17 @@ Goal36 COMPLETE/rejected9fits48cells/062a437b.../127ec525.../5185151d... .
 All hypothetical books flat/fee-cash-inventory matched/no missing marks.
 Positive seen Ridge/GRU/blend growth is not owned broker PnL or new authority.
 Cached48 replay is same source/book, not independent Execution parity.
-Goal37 prepares exact stock/day/fee attribution and fixed10%/25% analytical
-cash-backed exposure. This never changes the private shared10% Paper basis,
-account holdings, intent identities, broker inputs or tonight's owned task.
-Worker direct-terminal overwrite P2 was not exercised; fix only a fresh worker.
+Goal37 CLOSED/144cells0fits/d4f339e5.../1fd5c07d.../fb850e0f... . Exact48
+reference and96 fixed10%/25% analytical sizing cells, all flat/daily-stock-fee
+matched/no missing marks/143.912s<600/reaped/absent. Same-native cached replay,
+not independent broker parity or actual net PnL. Raw-gap days dominate gains;
+cause unverified. Independent accounting12b4a334... is synthetic only.
+Fresh immutable terminal/progress correction fixes Goal36 overwrite P2;
+caller872293e3.../18 source-only cases pass, no used-source modification.
+Goal38 prepares safe Ridge research reload and source-local three-key mode
+probe. No OrderIntent, automatic Paper input, private shared10% basis change,
+holding adoption, intent replacement or tonight's task change. Private Paper
+authority remains delegated; model profitability is not an Execution gate.
 
 Goal32 current pooled equity preview is COMPLETE/measurement-only:125 usable
 keys/122eligible/6unavailable/top10/independent2d0d511f... . No model confidence,

@@ -7,10 +7,17 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal37 risk-attribution uses zero fits/GPU/sealed spend and a finite600s CPU
-family:48 reference plus96 fixed10%/25% exposure cells on unchanged Goal36
-outputs. No ready depth/replication campaign or GPU authority/environment block.
-Do not allocate dummy training while attribution explains the observed risk.
+Goal38 prospective scorer reuse needs zero fits/GPU/sealed spend and one300s
+CPU family. Safe numeric final Ridge reload, same-native52-score parity and
+actual-time prospective output; no old-family refit, winner or Paper promotion.
+Data's three-key raw-gap probe is separate from compute custody and Paper.
+No ready depth/replication GPU campaign or authority/environment block.
+
+Goal37 risk-attribution CLOSED: contractd4f339e5.../custodyfb850e0f...,
+48 exact reference plus96 fixed10%/25% sizing cells;0fits/GPU/sealed spend,
+143.912s<600, all sources/inputs unchanged/reaped/absent. Seen positive utility
+at10% and raw-gap contribution dependence do not reopen Goal36's rejected
+allocation or select a winner. No dummy training or budget refund.
 
 Goal36 stock-specific-five-session-selection CLOSED:
 contract062a437b.../custody5185151d.../9fits48cells/one600s family/sealed0.

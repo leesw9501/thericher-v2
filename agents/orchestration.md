@@ -9,12 +9,12 @@ No company block or foreground sleep.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Company integration | Parent | Goal36 CLOSED/rejected9fits48cells/custody5185151d...; Goal37 exact stock/day/fee attribution plus fixed10%/25% cash-backed sizing is next. |
-| GPU | Steward | Actual3 CUDA GRU fits6.837s wall;185.627s family closed/reaped/absent/lease released. Goal37 needs zero fits/GPU; no authority/environment block or dummy training. |
-| Input | Data | Same CURRENT113/14073 rows/121complete4sparse3empty/all128 slots and frozen predictions; source-bound discontinuity diagnostics ready, no new acquisition or corporate-action claim. |
-| Accounting/sizing | Engine / Execution preparation | Exact daily/stock/fee reconciliation,48 reference plus96 sizing cells under one600s CPU family. No ranks, blends or whole-share cash-residual tuning. |
-| Caller | Parent / temporary Infra | Fresh worker must guard rejected/repeated preflight against overwriting another terminal. Used Goal36 P2 not exercised; parent repeat guard preserved actual result. |
-| Verification | Parent | 9a0e2be clean8:13994pass22skip35warnings337.29s/focused323/Ruff/three sample-env Compose. External handoffs do not repeat full CI. |
+| Company integration | Parent | Goal37 CLOSED/144cells0fits/custodyfb850e0f... . Goal38 source-local raw-gap probe plus reloadable prospective scorer is next; no old verdict rescue. |
+| GPU | Steward | Goal36 actually used CUDA3fits6.837s wall. Lease released. Goal37 zero fits/GPU; Goal38 reuse/inference CPU, no authority/environment block or dummy training. |
+| Source probe | Data | Three largest flagged-day keys, deterministic diagnostic selection, NEW cache and0/1/0 single-page comparisons, max9GET through owned Paper market client. Scope-local uncertainty, no Paper gate. |
+| Model reuse | Engine | Safe numeric final Ridge reload and all52 cached score parity, actual-time prior61 prospective seal. Same128 keys and pinned bytes; no OLD numeric/refit/new GPU job. |
+| Caller | Parent / temporary Infra | Goal37 immutable terminal/progress corrected overwrite P2; all phases reaped/absent. Fresh Goal38 CPU containment and300s bound, no source edits to old runs. |
+| Verification | Parent | Goal37 changedserial207/clean8:14083pass22skip35warnings341.19s, Ruff/three sample-env Compose. External handoffs do not repeat full CI. |
 | Paper session | Execution scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... owns original shared10% basis/SPY-TLT-GLD/QQQ custody. Future submit/fill/closure not_observed; no manual invoke/reset/substitute. |
 | Follow-up | Chat one-shot | Oct9 23:05KST exact owned Paper result check; no replacement chain or schedule expansion. |
 | Head | Data scheduler | Next Oct9 15:29UTC owned; historical availability/finality not_observed, no manual invoke. |
@@ -22,19 +22,19 @@ No company block or foreground sleep.
 
 ## Bottleneck And Reversible Improvement
 
-Stock selection now produces positive seen cost-aware Ridge/GRU/blend gains,
-but all original utilities fail cash. More seeds/longer fits would not explain
-the observed risk, concentration or raw price discontinuities. Reuse the fixed
-scores to attribute PnL exactly and compare two predeclared cash-backed exposure
-levels against SAME-scaled controls. This remains adaptive seen development,
-not fresh replication, an altered prior verdict or a Paper profitability gate.
+Goal37 cash-backed sizing reduces risk but flagged raw-gap days contribute more
+than total gains. No corporate-action cause is yet established. More fits or
+seen-score selection would not explain that source effect. Probe only the three
+dominant keys while another actor implements safe numeric model reload.
+This improves data interpretation and prospective reuse without requalifying a
+dataset, selecting a winner or blocking independent authorized Paper.
 
-Source handoff exceeded its bounded window: parent reattested/tested existing
-files and closed the temporary actor; it did not wait for unknown ownership.
-Keep early API release and bounded handoffs; independent Source/Data reviews
-can overlap actual synthetic CPU capability. Used/frozen bytes remain immutable.
+Early API handoffs completed in parallel. Before actual use, align successful
+worker phases as well as rejected preflight; synthetic smoke performs no market
+byte read, while its parent independently audits inputs. Same-native144 replay
+is exact cached book/attribution evidence, not independent alpha or broker parity.
 No new helper platform, scheduler, approval process or recurring report.
 
-Claude20777876... strong-result/attribution challenge is review_unavailable/
-cli_is_error, not agreement. Source-local Tiingo/FINRA rights defer only their
-numeric jobs; other private no-cost Data/Research/Paper work remains delegated.
+Claude20777876... attribution challenge was review_unavailable/cli_is_error, not
+agreement. Source-local Tiingo/FINRA rights defer only their numeric jobs; other
+private no-cost Data/Research/Paper work remains delegated.

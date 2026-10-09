@@ -14,11 +14,28 @@ and rank seals, independent Fraction/scalar economics; not model equivalence.
 Custody875233b5... closed/sealed0. All367/549/739 potential TRAIN dates valid;
 reviewed no-context OOF diagnostic defect dormant, future correction only.
 
-NEXT owns kis-stock-selection-risk-attribution-development-v1: zero-fit exact
-stock/day/fee attribution and fixed10%/25% cash-backed exposure,48 reference
-plus96 comparison cells/one600s CPU family. Same seen forecasts and source;
-no tuned blend, rank, cadence or model rescue. This is analytical sizing,
-not a change to the original shared10% private Paper basis or tonight's task.
+NEXT owns kis-stock-scorer-deployability-preparation-v1: safe numeric Ridge
+reload/all52 cached score parity/actual-time prospective seal under300s CPU,
+zero fits/GPU. Data separately probes exactly three dominant flagged-day keys,
+mode0/1/0 single pages/max9GET/NEW cache through owned Paper market path.
+No OLD numeric reads, labels/price correction, profit winner or auto-Paper input.
+Oct9 pre-OPEN output requires actual inference before13:30UTC; otherwise late/
+unavailable, never backdated. Original shared10% Paper basis/task unchanged.
+
+Goal37 CLOSED under D:/thericher-v2/model-artifacts/research/
+kis-stock-selection-risk-attribution-development-v1:
+contractd4f339e5.../441sources6inputs/result1fd5c07d.../parent226a4c52.../
+verifyad9aebd5.../closure442088de.../custodyfb850e0f... . Exact48 reference plus
+96 sizing cells/0fits/GPU/143.912s<600/unchanged/reaped/absent/all books flat.
+Whole10bps/10% Ridge+3.336%/GRU+2.333%/blend+3.326% positive utility;25%
+only Ridge passes same-scaled controls. Adaptive seen comparison, no prior
+verdict change or winner. Twelve >=50% OPEN gaps/20 CLOSE changes dominate
+gains: full Ridge flagged-day55.066% versus net29.211%; no inferred action.
+Immutable terminal/progress fixes fresh-worker overwrite P2. Source accounting
+12b4a334.../63 independent cases and caller872293e3.../18 pass; actual cached
+replay is same kernel/source, not independent alpha/broker parity.
+Changedserial207/clean8:14083pass22skip35warnings341.19s/Ruff/three sample-env
+Compose/external141 pass. No full rerun per external receipt/doc handoff.
 
 Goal36 CLOSED/rejected under D:/thericher-v2/model-artifacts/research/
 kis-stock-specific-five-session-selection-development-v1:

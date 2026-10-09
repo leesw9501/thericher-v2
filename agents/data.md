@@ -6,10 +6,24 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
-Goal37 owns source-bound raw price-discontinuity diagnostics for exact stock
-PnL attribution/sizing; no acquisition or verified corporate-action claim.
-Reuse unchanged CURRENT113/manifest18a37635.../payloadbd6b0f40... and Goal36
-predictiond9f40af3...; keep original128 keys/121complete4sparse3empty/14073 rows.
+Goal38 owns a source-local mode0/1/0 probe of exactly three keys with largest
+absolute flagged-day contribution in Goal37's full whole10bps Ridge cell.
+Outcome-informed diagnostic selection, deterministic key ties; max9GET/one
+page per key/mode/BYMD20261008/one owned Paper market client, NEW D: cache.
+No account/order/live, old cache edits, numerical correction or source promotion.
+Engine's safe Ridge reload proceeds independently; no general input/Paper gate.
+Existing shared1.0s and token-start controls unchanged; cooldown worker-owned.
+
+Goal37 CLOSED: contractd4f339e5.../441sources6inputs/result1fd5c07d.../
+custodyfb850e0f.../144cells0fits/143.912s<600/reaped/absent/unchanged.
+Same CURRENT113/manifest18a37635.../payloadbd6b0f40... and frozen forecasts;
+original128 keys/121complete4sparse3empty/14073 rows/391 missing unchanged.
+Adjacent14336 pairs:13948 comparable/388 missing;12 >=50% OPEN gaps and20
+CLOSE changes. No inferred corporate-action cause or adjusted/TR/PIT truth.
+Full Ridge flagged-day contribution55.066% exceeds net29.211%; GRU83.760%
+versus18.350%, blend86.360% versus32.479%. Not corrected-return or alpha claims.
+Discontinuities9b959841.../39 synthetic checks; accounting12b4a334.../63
+independent synthetic checks, not independent actual dataset qualification.
 Goal36 actual four-compact-file transport passed/9fits48cells/source442/input7
 unchanged, result127ec525.../custody5185151d... closed. Worker Data review
 df621410... has13 synthetic checks/no scoped P1/P2, not native source equivalence.
