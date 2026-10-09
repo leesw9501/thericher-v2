@@ -2,100 +2,100 @@
 
 ## Objective
 
-Complete kis-stock-absolute-cash-gate-development-v1: test whether a learned
-absolute post-cost trade/no-trade gate improves the existing TCN stock basket
-by leaving rejected original slots in cash. One outcome-informed development
-family, not a new profitable-model claim, Paper replacement or gate platform.
+Complete kis-stock-absolute-gate-prospective-shadow-v1: freeze and produce one
+actual CPU-only, pre-OPEN TCN-plus-Mixer60 shadow decision for the next eligible
+US session using the existing exact fresh input. Preserve the original Paper
+writer. A shadow forecast is not a broker intent, dataset qualification or
+independent profitable-model claim. Do not wait for its future payoff to finish
+this bounded preparation objective.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal53 repeatable Paper delivery CLOSED73580933.../verification92f3f4b6... at
-A/execution/kis-stock-repeatable-session-delivery-v1. Coherent cutover24b85d81...,
-exact retained decision72914719.../job2d616950.../preparationeab5357a... and
-installed517b3815... preserve original9de27944... weights, .01 total-basis
-target inside original shared .10 and every owner. Entry Oct12 22:30 KST;
-close Oct13 04:50 KST, finite10min/1min/IgnoreNew/PT5M. Future fill/fees/cash/net
-PnL not observed. No manual invocation, substitute identity or TTL renewal.
-533 serial/clean8:15133pass22skip350.60s; full serial same counts2299.42s;
-Ruff/default+research+combined-accounting sample Compose passed.
+Goal54 CLOSED at A/research/kis-stock-absolute-cash-gate-development-v1:
+contracta835debd.../result767c5efc.../closure58e867c5.../custodyf97a83aa.../
+capture7bd07a5a.../verificationb2bcb979... . Six actual CUDA fits10.969s,
+30 cells and zero-fit cached replay; observed302.407s including publication.
+Gate20 rejected. Gate60 ONLY a later/disjoint follow-up: whole10bps seen
+growth+1.03470745% versus originalTCN+.95641645%, drawdown.58035049% versus
+1.36597204%. Final60 numeric weights36ed359b... and model source74378c0c...
+are immutable. No new fit, threshold search, allocation refund or holdout.
+351 shared serial/347 parent external/70 independent checks; clean8 full suite
+15133pass22skip35warnings340.70s/JUnit56587861.../Ruff/three sample Compose.
 
-Mixer source preparation at A/research/kis-stock-mixer-window-preparation-v1:
-models74378c0c.../receiptc4b80459.../66 synthetic checks, native PyTorch adaptation
-of independently reread Google Apache-2 source, not pretrained or paper-faithful.
-Cash-gate proposal1520597b... independently reads the Deep Momentum primary
-paper; probability of a positive trade is not expected payoff. Pure label/mask,
-analytical parity and fresh publication-aware dispatch preparation are separate
-source handoffs, not allocated experiments. Reattest final releases before use.
-Used Patch family/weights/failures remain immutable, both arms rejected; source
-publication P2 is not erased. Original cached CURRENT799 TCN is the control;
-final799 must never select early training peers or early evaluation targets.
+Data coverage scout822387e7... at
+A/data/kis-stock-absolute-gate-replication-coverage-v1 proves zero wholly later
+five-session targets in the existing two fresh100 snapshots. Their99 dates
+overlap seen CURRENT; only Oct9 adds an endpoint. Do not relabel that as
+independent replication. OLD endsJuly27; seen CURRENT targetsJuly28..Oct8.
+Prospective evidence must be frozen before its outcomes, not reconstructed
+afterwards. Current raw/revised/current-listed/non-PIT/action/finality limits
+remain visible and scoped; they are not a global permission hold.
 
-## Engine Research Package
+Original Paper decision72914719.../job2d616950.../model9de27944... remain owned
+by the existing finite entry Oct12 22:30 KST and close Oct13 04:50 KST;
+installed517b3815... . No manual invocation, budget/identity reset, substitute
+order, TTL renewal or schedule change for this shadow study. Future fill and
+fees/settled cash/net PnL remain not observed.
 
-Freeze one family before market outcomes. Same seven OLD/CURRENT inputs and
-common prior61 engineering cohort; no source union, refreshed-cache substitution,
-new universe, target-selected peers or baseline refit. Bind original R40 contract,
-result and numeric prediction cache and exact CURRENT799 row keys.
+## Ready Parallel Packages
 
-Two frozen Mixer arms20/60, same two ON/ID channels and source architecture.
-Absolute label is exact positive net OPEN(entry)->OPEN(entry+5), using existing
-nearest-cent ties-even analytical quotes and f=10/20000 on each side's notional:
-(X*(1-f)-E*(1+f))/(E*(1+f))>0; tie=>0. Missing any eligible peer endpoint rejects
-that whole training date. Prefixes427/610/799 purge targets beyond each cutoff;
-equal-date BCE, prefix-only scalers, min120 complete groups and both classes.
-floor(complete_dates/5)>=24 is only a spacing proxy, not estimated independent ESS.
-Seed101/four epochs/batch512/Adam.001; exactly at most6 market fits. No threshold,
-architecture, calibration, fee-target or rescue search. Early paired gate-only
-OOF diagnostics cannot become original TCN comparisons or sealed evaluation.
+Engine owns one frozen shadow contract and deterministic CPU pair. Reattest
+the source-only safe Mixer numeric reload and native API handoffs under
+A/research/kis-stock-absolute-gate-shadow-preparation-v1. Prefer the existing
+trusted TCN loader, feature/context and exact f78 readers; no arbitrary public
+code, pickle, retraining, new dependency or runtime replacement.
 
-For CURRENT, keep original TCN top10 identities/order/ties. Keep each original
-Fraction(1,10) research-bank slot only when gate probability>0.5; rejected slots
-remain cash. No rank11 replacement, reranking, redistribution, leverage or new
-bank. Missing/nonfinite input is unavailable, not predicted cash. Persist
-identities/probabilities/masks before quote callbacks.
+Data binds the exact original f78 fresh snapshot, current128 identity/calendar
+and current source route reference through existing strict readers. Do not union
+the remainder, substitute seen CURRENT/OLD values, silently refresh inputs or
+change the cohort. If this exact input is unavailable, record that narrowly and
+prepare a separately owned useful refresh; no company-wide wait or speculation
+for the three unknown routes.
 
-Replay gate20/gate60/unchangedTCN/cash/fixed positive20-close-momentum gate,
-whole/fractional_reference books and fixed5/10/20bps band:30 cells. Preserve
-all52 marks, original11 review dates, continuous bank and terminal CLOSE112
-liquidation. Entry111 has no five-session label; retain its two-session economics.
-Reuse exact delta-trade fees, sell-before-buy and accounting/stock-day attribution.
-Execution attests these analytical assumptions; actual KIS fees/fills/availability
-are not inferred from that parity.
+Execution preserves every existing Paper owner and checks the shadow path has
+no intent, account, broker, credential, schedule or bank writer. Its released
+offline result reader is separate. Independent Validation attacks label-free
+prediction, input/model binding, common cohort, fixed-slot cash masks and the
+actual completion timestamp before the declared official OPEN.
 
-Strongest kill per gate at whole10bps: positive net growth, utility strictly
-above unchangedTCN/cash/mechanical gate, drawdown no worse than TCN; otherwise
-reject. Missing/mismatched accounting, nonflat terminal, source drift or budget
-overrun cannot yield a comparative result. Binary win probability ignores gain/
-loss magnitude; passing this seen test is only a later/disjoint replication
-proposal, never independent alpha, Paper qualification or a profitable member.
+## Frozen Shadow Contract
 
-## Runtime And Parallel Ownership
+- Exact original TCN799 and Mixer60-799 numeric hashes, architecture/config and
+  source hashes; original128/prior61 common cohort and same immutable input.
+- One next eligible official session, decision timestamp and actual completion
+  clock before its OPEN. Calendar/source clocks remain explicit assumptions;
+  historical availability and provider finality are not inferred.
+- CPU-only zero fits and zero GPU allocation; one finite120s native prediction
+  appointment including cleanup/publication, separate from source preparation.
+  Use the existing pinned runtime and bounded owned container only if needed.
+- Original TCN top10 identities/order/ties; retain each original slot iff the
+  fixed Mixer60 probability>0.5. Rejected slots remain cash, no rank11,
+  redistribution, leverage or threshold tuning. Missing/nonfinite is unavailable.
+- Persist both full prediction bindings and the fixed mask before any target
+  or future outcome callback. No future target access in this appointment.
+- Freeze CPU inference semantics, strict numeric schema and source limitations;
+  neither a successful reload nor GPU/CPU closeness proves identical masks.
+- Proposed later evaluation uses paired unchangedTCN/cash/masked policy under
+  the same cost/fill/availability semantics. No result, sealed spend or selection
+  is claimed now; future target/calendar ownership must be explicit.
 
-Steward allocates one ready frozen family only. Shared600s includes actual
-preparation, synthetic CPU smoke, native run, cached zero-fit/zero-inference
-verify, inter-phase idle and publication. Anchor before preparation; debit
-observed completion rather than pre-fsync receipt times. Record scalar component
-timings with explicit nesting; do not label unattributed wall as CPU/I/O.
-CPU smoke first, then existing Torch2.7 CUDA image/one GPU lease if sound. Model
-artifacts on D, no new runtime/dependencies/public weights or sealed spend.
+Strongest kill: input/model/source drift, future-value access, peer mismatch,
+re-ranking/renormalization, nonfinite output, late completion, unbound publication
+or unclosed runtime returns scoped input_unavailable/failed, never a forecast or
+permission hold. No rescue fit or invocation reset.
 
-Data preserves original inputs and the two separate125-key fresh snapshots;
-three current routes remain unknown, no speculative price retry or merged input.
-Execution preserves existing finite Paper ownership and can prepare the exact
-offline result reader; do not invoke a scheduled task or broker for this research
-goal. Independent Validation attacks frozen label/mask/cost/budget contracts,
-not tuning. Parent owns integration/Git; packages have disjoint write sets.
+## Completion And Continuation
 
-Claude gives a concise falsification-first challenge before relying on the new
-target/composition/result. review_unavailable is not agreement or a lane hold.
-All data are seen/current-listed/raw/revised/non-PIT/action/finality-limited;
-limitations cannot become a global permission barrier. Never read KIS_LIVE_*.
+One frozen contract plus actual CPU shadow decision or exact narrow unavailable
+evidence; linked model/input/mask/source/clock/runtime closure, not preparation
+alone. A successful forecast is prospective shadow preparation, not completed
+replication or a replacement Paper model. Ask Claude for a concise falsification
+challenge before relying on the boundary; unavailable is not agreement or a hold.
+Never read KIS_LIVE_* or secrets wholesale; no broker calls required here.
 
-## Completion
-
-One frozen contract/custody, actual CPU/CUDA or narrow input_unavailable evidence,
-complete30-cell/accounting/source/lease closure and cached verification. No
-extra fits or holdout. Focused checks first; required company changed-path serial,
-clean8, Ruff and three sample-env Compose at integration. Refresh stateboards,
-commit/push, replace this with ONE material next company objective and continue.
+Focused checks, changed-path serial, clean8, Ruff and three sample-env Compose at
+company integration. Refresh current stateboards/HANDOFF, verify, commit/push,
+replace this with exactly ONE material next objective and continue a ready
+independent engine or Execution package. Do not foreground-wait for Monday or
+invent a recurring observation/report platform.

@@ -7,6 +7,29 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
+Goal54 runtime CLOSED at A/research/kis-stock-absolute-cash-gate-development-v1:
+contracta835debd.../result767c5efc.../closure58e867c5.../custodyf97a83aa.../
+actual-return7bd07a5a...; observed302.407s<600 through publication. Six CUDA
+fits10.969s/30 cells; CPU23.295/run181.285/cached66.489, zero verify fits/inference.
+All source/input/cached/accounting/attribution matched; reaped/absent/lease
+released/books flat. Gate20 rejected utility; gate60 ONLY non-promoting follow-up.
+Whole10bps seen growth20+.6887274%,60+1.03470745%,TCN+.95641645%;60 drawdown
+.58035049% versusTCN1.36597204%. No Paper replacement, holdout or alpha claim.
+Final60 weights36ed359b.../model source74378c0c...; no refit, threshold search,
+rescue or weight substitution. Fresh replication takes priority over more
+architecture or payoff-aware search. OLD training ends2026-07-27; already-seen
+CURRENT targets2026-07-28..10-08. An updated snapshot is not untouched evidence.
+Parent120 models/labels+119 worker/preparation+42 native checks passed;
+independent31 composition/19 data/20 publication passed. Full8 PASSED15133pass/
+22skip35warnings340.70s/15155collected/JUnit56587861...; verificationb2bcb979... .
+Claude unavailable is not agreement. Source-only prospective pair/native reload
+preparation and Data coverage scout are parallel; do not infer allocation or
+forecast from preparation. Data scout822387e7... found zero wholly later
+five-session targets. Goal55 owns one actual CPU-only prospective pair before
+official OPEN; current Paper continues its original TCN and budget.
+
+### Closed Goal52
+
 Goal52 runtime COMPLETE: A/research/kis-stock-patch-window-development-v1,
 contractbb906e5c.../result89a3d66c.../closure2fc893d0.../custody9604cd15... .
 Actual6 CUDA fits13.030s/42 cells; smoke36.431s/run244.049s/cached66.474s,

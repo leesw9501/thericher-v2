@@ -20,6 +20,39 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
+Goal54 research runtime COMPLETE at
+A/research/kis-stock-absolute-cash-gate-development-v1: contracta835debd.../
+result767c5efc.../closure58e867c5.../custodyf97a83aa... . Actual captured return
+7bd07a5a... plus post-fsync observation bounds the one family302.407s<600.
+CPU23.295s/run181.285s/cached66.489s; six CUDA fits10.969s/30 cells, zero new
+verify fits/inference. Every child reaped/absent/lease released; all books flat,
+source/input/accounting/stock-day attribution and cached replay matched.
+Gate20 rejected TCN utility. Gate60 whole10bps seen synthetic growth+1.03470745%,
+drawdown.58035049%, utility.04692655 versus unchangedTCN+.95641645%,1.36597204%,
+.03764071. It is ONLY a later/disjoint replication candidate, not independent
+alpha, a selected profitable model or replacement Paper input. All data remain
+seen/current-listed/raw/revised/non-PIT/action/finality limited. Threshold.5,
+original top10/no reranking/redistribution and fixed10% exposure were frozen.
+Parent347 external source checks/351 shared serial checks passed; independent
+composition31/data19/publication20 passed. Full clean8 PASSED15133pass22skip/
+35warnings340.70s,15155collected/JUnit56587861...; verificationb2bcb979... .
+Helper exited zero, child reaped and current scratch cleaned. Repo Ruff/three
+sample Compose passed. NEXT_CODEX_GOAL.md now owns Goal55 actual CPU prospective
+shadow preparation; no future paired payoff or Paper replacement is claimed.
+Claude contract and result reviews unavailable, not agreement. Actual wrapper
+501a2fa5... remains used/unchanged with two external-only E501 line-length
+findings; neither is a behavioral finding or a repo Ruff pass claim.
+Measured inclusive wall components: input24.124/features41.888/labels1.826/
+fit10.969/predict4.048/replay49.663/accounting2.671/save29.692s; nested spans
+are not additive or proof of CPU/I/O utilization. Next direction: preserve
+gate60 weights36ed359b... and prepare genuinely prospective CPU shadow pairing,
+not more same-sample tuning or waiting for Monday in the foreground. Metadata
+scout822387e7... confirms zero wholly later five-session targets in the existing
+two fresh100 snapshots; their99 dates overlap seen CURRENT. Do not join those
+snapshots or relabel the one Oct9 endpoint as independent replication.
+
+### Closed Goal53
+
 Goal53 kis-stock-repeatable-session-delivery-v1 COMPLETE, closure73580933.../
 verification92f3f4b6... at A/execution/kis-stock-repeatable-session-delivery-v1.
 Actual coherent cutover

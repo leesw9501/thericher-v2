@@ -7,6 +7,21 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-10 KST)
 
+Goal54 family CLOSED/trial1/contracta835debd.../allocation175dd3be.../
+closure58e867c5.../outcomef97a83aa... . Actual six CUDA fits10.969s/30 cells;
+CPU23.295/run181.285/cached66.489, zero verify fits/inference. Exact same-process
+anchor precedes preparation; post-return capture7bd07a5a... observed302.407s
+including durable publication, idle and cleanup. No phase refund or reopened
+allocation. All children reaped/absent, lease released, books flat/cached replay
+and accounting matched. Zero sealed spend/Paper input. Gate20 rejects; gate60
+seen follow-up only. GPU available after closure, not permission/environment
+blocked. Next useful preparation is prospective gate60 CPU pairing; no ready
+frozen new GPU family yet. Source preparation never means a training allocation.
+Measured nested wall input24.124/features41.888/fit10.969/predict4.048/replay49.663/
+save29.692; do not add overlapping spans or infer CPU/I/O/GPU utilization.
+
+### Closed Goal52
+
 Goal52 family CLOSED/trial1/contractbb906e5c.../allocationcf3498b8.../
 closure2fc893d0.../outcome9604cd15... . Six CUDA fits13.030s/42 cells;
 smoke36.431s/run244.049s/cached66.474s; all unchanged/reaped/absent/lease released.

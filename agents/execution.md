@@ -8,6 +8,20 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal54 analytical Research is CLOSED58e867c5.../zero broker or schedule calls.
+Gate60 seen follow-up is NOT a replacement model or an order intent. Original
+TCN9de27944.../job2d616950.../.01 total-basis target within shared.10 remains
+the finite Paper owner below. No new capital, request identity or TTL.
+Offline reader source preparation RELEASED at
+A/execution/kis-stock-repeatable-session-delivery-v1/outcome-reader-preparation-v1:
+reader465db5d0.../receipt21049a67.../66 source checks. It consumes exact supplied
+job/source/start/outcome bytes, not latest scans or task exit; reported historical
+fills do not imply fresh owned-flat. No actual future outcomes consumed. Marker
+provenance still assumes an honest host, not cryptographic Scheduler origin;
+logging disabled. Missing/started/unknown are not zero submits or success.
+Fees/settled cash/net PnL remain not observed. Prospective model shadow preparation
+must not invoke or replace this bank writer.
+
 Goal53 coherent delivery CUTOVER INSTALLED, native lifecycle preparation active:
 A/execution/kis-stock-repeatable-session-delivery-v1/coherent-cutover.json,
 24b85d81... . Five RW/two RO Compose consumers use audited SPYbd41e48c...;

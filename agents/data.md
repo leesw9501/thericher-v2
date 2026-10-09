@@ -6,6 +6,20 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal54 research consumed EXACT seven OLD/CURRENT bindings; no refreshed snapshot
+union, value graft, new acquisition or Data qualification. Contracta835debd.../
+runtime58e867c5... preserve128 keys/prior61 and whole-date missing targets.
+OLD calendar2023-05-17..2026-07-27; seen CURRENT targets2026-07-28..2026-10-08.
+Gate60 follow-up needs truly later/disjoint outcomes, not renamed seen data.
+Coverage scout822387e7... at A/data/kis-stock-absolute-gate-replication-coverage-v1
+is complete: zero wholly later five-session targets,99 fresh dates overlap seen
+CURRENT and Oct9 adds only one endpoint. Pure throughput proposal48eaff67... at
+A/research/kis-stock-feature-preparation-throughput-proposal-v1 is complete but
+not implemented or benchmarked. Neither qualifies a dataset, changes a cache,
+allocates GPU or proves a speedup. Goal55 binds the exact original f78 snapshot
+for one prospective CPU shadow; no silently joined or substituted input.
+Original f78 and remainder fresh snapshots remain separate and immutable below.
+
 Goal52 separate remainder metadata FROZEN51b30aa7.../448 source bindings at
 A/data/kis-current-pooled-equity-next-session-remainder-v1. Exactly33 selected
 keys/66 GET ceiling/one client-token/600s work/90s cleanup/new UUID and cache.
