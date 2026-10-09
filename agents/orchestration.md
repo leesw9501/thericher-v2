@@ -3,29 +3,29 @@
 Current projection only; NEXT_CODEX_GOAL.md owns one company objective.
 History remains in Git and immutable external evidence.
 
-## Current Ready / Owned / Due (2026-10-09 KST)
+## Current Ready / Owned / Due (2026-10-10 KST)
 
-No company block or foreground sleep. Goal45 COMPLETE; Goal46 ready.
+No company block or foreground sleep. Goal45 COMPLETE; Goal46 active.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Integration | Parent | Original all-owner bank replay and whole-share BUY sizing actually completed9ee849dd.../0ff09fed...; persisted execution next. |
+| Integration | Parent | Code-only three-image delivery41d08464... installed376f9bc0...; all competing writers compatible before private V4 installation. |
 | GPU | Steward / idle | No ready frozen fit/environment/permission block; current execution integration requires no GPU. |
-| Data / Infra | Copernicus | Pure stock owner released; temporary compatible-writer delivery inventory active, read-only. |
-| Execution | James | Canonical V4 released; existing same-bank reservation and canary reuse approach prepared. |
-| Review | Euclid | Sourceaced1e04.../16 and shadow87626967.../57 checks released; actual runtime excluded. |
-| Verification | Parent | 734serial/38external/full8:14556pass22skip35warnings340.02s/clean/reaped/Ruff/three sample-env Compose. |
+| Data / Infra | Copernicus | Delivery source35 checks released; parent verified440 sources/244 scripts and unchanged dependencies in all three derivatives. |
+| Execution | James | Reservation source released; inert bounded native worker/dispatch source in progress. |
+| Review | Euclid | Source965c9c1a.../312 released; bounded native-worker source review active, no private/runtime calls. |
+| Verification | Parent | Final b8aee8d5...:871+8serial/14820pass22skip35warnings342.27s/eight clean/Ruff/three Compose. |
 | Paper | Existing scheduler | Oct9 portfolio-control completed34.565s/no_target_delta/0legs0submit0cancel; exact dispatch6c9c016d... . |
-| Next writer | Existing SPY scheduler | Oct9 23:50KST owned strategy; incompatible baked source must be coherently delivered before stock installation. |
+| Next writer | Existing SPY scheduler | Oct9 23:50KST opportunity preserved; inactive Action-only compatible delivery now installed, original basis/identity unchanged. |
 | Snapshot | Existing scheduler | Recurring read-only observer remains separately owned; token-start guard may defer only a fresh client. |
 | Head | Data scheduler | Oct9 15:29UTC owned; no manual invoke. |
 | Console | Existing web | http://127.0.0.1:8787 reference only, not owned net profit. |
 
 ## Bottleneck And Reversible Improvement
 
-Actual stock target/funds/capacity work under the original bank. Remaining gap
-is persist-before-wire stock intent and exact restart recovery with compatible
-source for all competing writers. Reuse the current reservation, two locks,
+Actual stock target/funds/capacity work under the original bank. Persist-before-wire
+source now passes independent falsifiers and compatible writer delivery is
+installed. Remaining gap is the bounded exact native cycle. Reuse existing two locks,
 canary reconciliation and cumulative-fill book; no side ledger or new bank.
 Whole-share target is0.01 of total original basis, not1% of the10% allocation.
 

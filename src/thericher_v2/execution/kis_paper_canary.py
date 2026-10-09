@@ -29,6 +29,7 @@ from thericher_v2.research.kis_paper_canary_intent import (
 
 if TYPE_CHECKING:
     from .kis_paper_portfolio_execute import KisPaperPortfolioExecutionBinding
+    from .kis_paper_stock_execute import KisPaperStockExecutionBinding
 
 from .broker import BrokerOrderRequest
 from .emergency import (
@@ -944,6 +945,7 @@ class KisPaperCanaryStateStore:
 
     def _read_unlocked(self) -> KisPaperCanaryState | None:
         try:
+
             def unique_keys(pairs):
                 result = {}
                 for key, value in pairs:
@@ -952,9 +954,12 @@ class KisPaperCanaryStateStore:
                     result[key] = value
                 return result
 
-            return KisPaperCanaryState.from_dict(json.loads(
-                self.path.read_text(encoding="utf-8"), object_pairs_hook=unique_keys,
-            ))
+            return KisPaperCanaryState.from_dict(
+                json.loads(
+                    self.path.read_text(encoding="utf-8"),
+                    object_pairs_hook=unique_keys,
+                )
+            )
         except FileNotFoundError:
             return None
         except (OSError, TypeError, ValueError, json.JSONDecodeError) as error:
@@ -1518,6 +1523,7 @@ def _run_kis_paper_canary(
     read_only_recovery: bool = False,
     recovery_only: bool = False,
     portfolio_execution: KisPaperPortfolioExecutionBinding | None = None,
+    stock_execution: KisPaperStockExecutionBinding | None = None,
 ) -> KisPaperCanaryOutcome:
     """Run or recover one bounded virtual-paper canary without a retry submit path."""
 
@@ -1529,6 +1535,8 @@ def _run_kis_paper_canary(
         price_contract_ref=price_contract_ref,
     )
     if portfolio_execution is not None:
+        if stock_execution is not None:
+            raise KisPaperCanaryError("stock_execution_invalid")
         from .kis_paper_portfolio_execute import (
             KisPaperPortfolioExecutionBinding,
             _client_account,
@@ -1548,6 +1556,27 @@ def _run_kis_paper_canary(
         _client_account(client, portfolio_execution)
         requested_intent = bind_kis_paper_portfolio_execution_intent(
             state_path.parent, requested_intent, portfolio_execution
+        )
+    if stock_execution is not None:
+        from .kis_paper_stock_execute import (
+            KisPaperStockExecutionBinding,
+            _client_account,
+            bind_kis_paper_stock_execution_intent,
+        )
+
+        if (
+            type(stock_execution) is not KisPaperStockExecutionBinding
+            or not require_existing_state
+            or state_path.name != run_id + ".json"
+            or cancel_after_submit
+            or reuse_existing_intent_if_same_decision
+            or not callable(submit_permitted)
+            or not callable(submit_reconciliation_check)
+        ):
+            raise KisPaperCanaryError("stock_execution_invalid")
+        _client_account(client, stock_execution)
+        requested_intent = bind_kis_paper_stock_execution_intent(
+            state_path.parent, requested_intent, stock_execution
         )
     existing_state = state_store.read()
     if existing_state is not None:
@@ -1632,6 +1661,7 @@ def _run_kis_paper_canary(
         state_path.parent,
         intent,
         **({"portfolio_execution": portfolio_execution} if portfolio_execution is not None else {}),
+        **({"stock_execution": stock_execution} if stock_execution is not None else {}),
     ):
         state = state_store.transition(
             intent,
@@ -1815,8 +1845,11 @@ def _run_kis_paper_canary(
 
 
 def _conflicts_with_owned_spy_cycle(
-    state_root: Path, intent: KisPaperCanaryIntent,
-    *, portfolio_execution: KisPaperPortfolioExecutionBinding | None = None,
+    state_root: Path,
+    intent: KisPaperCanaryIntent,
+    *,
+    portfolio_execution: KisPaperPortfolioExecutionBinding | None = None,
+    stock_execution: KisPaperStockExecutionBinding | None = None,
 ) -> bool:
     from .kis_paper_budget_strategy import conflicts_with_budget_strategy
     from .kis_paper_spy_fill_cycle import conflicts_with_active_spy_fill_cycle
@@ -1826,6 +1859,22 @@ def _conflicts_with_owned_spy_cycle(
     ):
         return True
     conflict = conflicts_with_budget_strategy(state_root, intent.run_id, intent.symbol)
+    if stock_execution is not None:
+        from .kis_paper_stock_execute import (
+            KisPaperStockExecutionBinding,
+            allows_kis_paper_stock_execution,
+        )
+
+        if (
+            portfolio_execution is not None
+            or type(stock_execution) is not KisPaperStockExecutionBinding
+            or stock_execution.intent_ref != intent.fingerprint
+            or stock_execution.run_id != intent.run_id
+        ):
+            return True
+        return not allows_kis_paper_stock_execution(
+            state_root, intent.run_id, intent.symbol, stock_execution
+        )
     if conflict and portfolio_execution is not None:
         from .kis_paper_portfolio_execute import (
             KisPaperPortfolioExecutionBinding,

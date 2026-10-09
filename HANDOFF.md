@@ -21,6 +21,20 @@ and immutable evidence; this projection replaces duplication, not records.
 ## Current Company Objective
 
 Goal45 COMPLETE; NEXT owns Goal46 kis-stock-persisted-paper-execution-v1.
+Goal46 source active, not native completion yet:
+R46=A/execution/kis-stock-persisted-paper-execution-v1. Exact stock plan,
+reservation, target-bound client and canary proof released; source965c9c1a.../
+312 independent checks pass after mutable-request alias repair. Native/private
+behavior excluded. Code-only derivatives retain base layers/dependencies and
+440 source/244 script hashes: build41d08464... . Five RW and two RO Compose
+consumers select the compatible SPY derivative; published recovery router was
+installed Action-only while inactive, with triggers/settings/principal unchanged.
+Installed receipt376f9bc0...; no manual task invocation or private V4 installation.
+Final verificationb8aee8d5...:871 changed serial+8 Compose-contract serial,
+clean8 authority14820pass22skip35warnings342.27s/reaped/clean/Ruff/three Compose.
+Earlier parallel run failed because its collected image pin predated delivery;
+it is not authority. Native worker/dispatcher remain inert source under review.
+Keep exact Goal43 clocks/expiry and original shared bank; no new fit/GPU needed.
 R45=A/execution/kis-stock-shared-budget-integration-v1:
 job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
 Actual14:15:47..14:16:00UTC/13.544s/1token8GET; original all-owner shared10%
@@ -47,8 +61,9 @@ SHA6c9c016d... binds job2b20f908.../worker249cdd15.../dispatcher d43c9ca4... .
 No new fill; private40->44 includes checkpoints, not a trade inference. Honest
 host marker/time/source evidence, not cryptographic OS-scheduler origin proof;
 Operational logging disabled. Fees/settled cash/net PnL remain not_observed.
-Existing SPY strategy nextOct9 23:50KST; do not install V4 while its old writer
-could ignore or reject stock ownership. Preparation continues independently.
+Existing SPY strategy's Oct9 23:50KST old-source opportunity was left untouched.
+Compatible writer delivery is now installed; no result is inferred from task
+exit and no stock owner is installed until the exact native cycle persists it.
 
 Goal44 COMPLETE, superseded capacity observation only by Goal45 above.
 Exact R2 root A/execution/kis-stock-readonly-preparation-v1/r2:

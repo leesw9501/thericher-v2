@@ -8,6 +8,19 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal46 active source/native integration at
+A/execution/kis-stock-persisted-paper-execution-v1. Canonical same-bank stock
+reservation and canary execution source released; independent965c9c1a.../312
+checks pass, native/private behavior excluded. Target-bound transport snapshots
+mutable request mappings before pacing; exact retry keeps original quantity/TTL.
+Code-only three-image build41d08464... preserves runtime/dependencies and exact
+440 sources/244 scripts. All5 RW+2 RO Compose consumers compatible; source-safe
+installed376f9bc0... binds inactive Action-only recovery-router delivery and
+unchanged triggers/settings/principal. No manual task or private stock write yet.
+Native worker/dispatcher in bounded source review; no broker result claimed.
+Final verificationb8aee8d5...:871+8 serial/14820pass22skip35warnings342.27s,
+eight clean workers/Ruff/three Compose. Earlier image-pin mismatch run excluded.
+
 Goal45 COMPLETE: R45=A/execution/kis-stock-shared-budget-integration-v1,
 job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
 Actual13.544s/1token8GET/all-owner original10% replay/whole-share BUY sized,
@@ -28,8 +41,8 @@ in A/execution/kis-current-control-paper-rebalance-preparation-v1/SHA6c9c016d...
 job2b20f908.../worker249cdd15... . Reaped/absent/source unchanged,40->44
 private checkpoints; no new fill or net-PnL claim. Marker/time/hash linkage
 under assumed honest host, not proof of OS scheduler origin (logging disabled).
-SPY strategy next23:50KST; incompatible baked writer prevents stock installation
-only, not source preparation, existing Paper job or another ready lane.
+SPY strategy23:50KST opportunity preserved before inactive compatible delivery.
+No fill is inferred from its task state. The original bank/identity stays intact.
 
 Goal36 COMPLETE/rejected9fits48cells/062a437b.../127ec525.../5185151d... .
 All hypothetical books flat/fee-cash-inventory matched/no missing marks.

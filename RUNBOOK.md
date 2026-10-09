@@ -2,6 +2,21 @@
 
 ## Current Owned Opportunities And Research
 
+Goal46 active: D:/thericher-v2/model-artifacts/execution/
+kis-stock-persisted-paper-execution-v1. Source965c9c1a.../312 independent checks
+released; native/private excluded. Build delivery/actual-build-receipt.json/
+41d08464... verifies all three code-only derivatives' base layers, unchanged
+runtime/dependencies and440 source/244 script hashes. Published helper bundle
+delivery/published/goal46-v1 uses manifest209a531e...; original helpers untouched.
+Installed delivery/installed-delivery-receipt.json/376f9bc0... records all5 RW+
+2 RO Compose consumers and inactive Action-only router update, no trigger,
+settings/principal change, manual task run or private V4 installation.
+verification.json/b8aee8d5...:871+8 serial/full clean8:14820pass22skip35warnings
+342.27s/reaped/clean/Ruff/three sample-env Compose. Earlier collected-image-pin
+failure is not authority. Native source review precedes one exact persisted
+Paper cycle; preserve model clocks/Oct9 20:00UTC expiry and original10% bank.
+Never rewrite installed/preparation evidence flags after the fact.
+
 Goal45 stock shared-budget integration COMPLETE at
 D:/thericher-v2/model-artifacts/execution/kis-stock-shared-budget-integration-v1:
 job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .

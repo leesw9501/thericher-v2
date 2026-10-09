@@ -1,18 +1,21 @@
-"""Pure stock BUY sizing against the original shared Paper budget.
+"""Stock BUY sizing and exact reservation in the original shared Paper budget.
 
 The caller attests source/account custody and supplies the complete canonical
 owner scope. Typed sequential reads cannot prove the virtual host, atomic broker
-state, listing rights, fees, settlement, or execution permission. No identities,
-intents, reservations, or private state are created here.
+state, listing rights, fees, settlement, or execution permission. Builders are
+pure; reservation/reconciliation use the existing canonical binding and locks.
+No provider, submission, cancellation or credential path is present here.
 """
 
 from __future__ import annotations
 
+import copy
 from collections.abc import Mapping
 from dataclasses import dataclass, fields, replace
 from datetime import datetime, timedelta
 from decimal import MAX_EMAX, MIN_EMIN, Context, Decimal, DecimalException, localcontext
 from fractions import Fraction
+from pathlib import Path
 from typing import Literal
 
 from thericher_v2.contracts import SCHEMA_VERSION, TargetExposureProposal, require_utc
@@ -22,7 +25,12 @@ from thericher_v2.research.decision_receipt import (
     receipt_from_target_exposure_proposal,
 )
 
-from .kis_paper_canary import KisPaperCanaryState
+from . import kis_paper_budget_strategy as budget
+from .kis_paper_canary import (
+    KisPaperCanaryIntent,
+    KisPaperCanaryState,
+    exclusive_kis_paper_canary_state_lock,
+)
 from .kis_paper_fill_accounting import KisPaperExecutionObservation
 from .kis_paper_portfolio_budget import (
     KisPaperPortfolioBudgetBasis,
@@ -31,7 +39,9 @@ from .kis_paper_portfolio_budget import (
     KisPaperPortfolioOwnerBinding,
     project_kis_paper_portfolio_budget,
 )
+from .kis_paper_portfolio_plan import _replay_scope, _states
 from .kis_paper_quote import KisPaperQuoteError, KisPaperSpyLimitInput
+from .kis_paper_spy_fill_cycle import _RecoveryRequired
 from .kis_paper_stock_quote import KisPaperStockInstrument
 from .kis_paper_stock_readonly import KisPaperStockPreviewReads
 from .kis_readonly import (
@@ -60,6 +70,26 @@ class KisPaperStockSizing:
             "status": self.status,
             "reason": self.reason,
             "limitation": "gross_sizing_not_fees_settlement_or_execution_permission",
+        }
+
+
+@dataclass(frozen=True, repr=False)
+class KisPaperStockPlan:
+    status: str
+    reason: str
+    binding: dict | None = None
+    intents: tuple[KisPaperCanaryIntent, ...] = ()
+    plan_ref: str | None = None
+    reservation: Decimal | None = None
+
+    def safe_payload(self) -> dict[str, object]:
+        return {
+            "kind": "kis_paper_stock_plan_v1",
+            "status": self.status,
+            "reason": self.reason,
+            "buy_leg_count": len(self.intents),
+            "new_submits": 0,
+            "limitation": "gross_limit_reservation_not_fees_settlement_or_execution_permission",
         }
 
 
@@ -346,3 +376,387 @@ def size_kis_paper_stock_target(
         limit_price=limit_price,
         projection=projection,
     )
+
+
+def _plan_check(condition: bool, reason: str) -> None:
+    if not condition:
+        raise _RecoveryRequired(reason)
+
+
+def _plan_scope(
+    binding,
+    states,
+    *,
+    expected_account_ref,
+    expected_basis_ref,
+    expected_owner_refs,
+    instrument,
+    as_of,
+):
+    _plan_check(
+        isinstance(binding, Mapping)
+        and type(binding.get("version")) is int
+        and (binding["version"], set(binding)) in ((3, budget._V3_KEYS), (4, budget._V4_KEYS))
+        and binding["legacy_spy"] is None,
+        "stock_custody_mismatch",
+    )
+    try:
+        _typed(instrument, KisPaperStockInstrument, "instrument_invalid")
+    except (ValueError, TypeError, AttributeError):
+        raise _RecoveryRequired("stock_instrument_invalid") from None
+    _plan_check(
+        budget._STOCK_SYMBOL.fullmatch(instrument.symbol) is not None
+        and instrument.symbol not in {"SPY", "QQQ", "TLT", "GLD"}
+        and instrument.order_exchange == "NASD",
+        "stock_instrument_invalid",
+    )
+    budget.project_shared_budget(
+        binding=binding,
+        states=states,
+        expected_account_ref=expected_account_ref,
+        expected_basis_ref=expected_basis_ref,
+        expected_owner_refs=expected_owner_refs,
+        as_of=as_of,
+    )
+    registry = binding.get("stocks", {})
+    _plan_check(not registry or set(registry) == {instrument.symbol}, "stock_registry_conflict")
+    entry = registry.get(instrument.symbol)
+    if entry is not None:
+        _plan_check(
+            (entry["exchange"], entry["instrument_binding_ref"])
+            == ("NASD", instrument.binding_ref),
+            "stock_instrument_binding_mismatch",
+        )
+    return entry
+
+
+def _request_pins(request_id, input_ref, expected_binding_ref):
+    _plan_check(
+        type(request_id) is str and budget._QQQ_ENTRY_REQUEST_ID.fullmatch(request_id),
+        "stock_request_invalid",
+    )
+    _plan_check(
+        all(
+            type(ref) is str and budget._SHA.fullmatch(ref)
+            for ref in (input_ref, expected_binding_ref)
+        ),
+        "stock_reference_invalid",
+    )
+
+
+def _exact_plan(entry, request_id, input_ref, expected_binding_ref):
+    plan = next((p for p in entry["plans"] if p["request_id"] == request_id), None)
+    if plan is not None:
+        _plan_check(
+            plan["input_ref"] == input_ref and plan["parent_binding_ref"] == expected_binding_ref,
+            "stock_request_conflict",
+        )
+    return plan
+
+
+def _stock_plan_result(binding, plan, status, reason):
+    seeds = budget._stock_seed_states(binding)
+    intents = tuple(seeds[run].intent for run in plan["states"])
+    _plan_check(len(intents) == 1 and intents[0].side == "buy", "stock_plan_invalid")
+    reservation = budget._exact_decimal(
+        sum((Fraction(i.quantity) * Fraction(i.limit_price) for i in intents), Fraction(0))
+    )
+    return KisPaperStockPlan(
+        status, reason, binding, intents, "sha256:" + budget._digest(plan), reservation
+    )
+
+
+def _retry_owner_refs(binding, expected_refs, request_id, input_ref, parent_ref, instrument):
+    # Original owner pins are reusable only if the complete original parent can
+    # still be reconstructed. A changed book instead needs current owner pins.
+    if not isinstance(binding, Mapping) or binding.get("version") != 4:
+        return expected_refs
+    if type(instrument) is not KisPaperStockInstrument:
+        return expected_refs
+    _plan_check(set(binding) == budget._V4_KEYS, "stock_custody_mismatch")
+    current = {owner.owner_ref: ref for owner, ref in budget._owners(binding)}
+    entry = binding.get("stocks", {}).get(instrument.symbol)
+    if entry is None:
+        return expected_refs
+    plan = _exact_plan(entry, request_id, input_ref, parent_ref)
+    if plan is None:
+        return expected_refs
+    if expected_refs == current:
+        return expected_refs
+    _plan_check(
+        entry["instrument_binding_ref"] == instrument.binding_ref,
+        "stock_instrument_binding_mismatch",
+    )
+    parent = copy.deepcopy(dict(binding))
+    parent["stocks"][instrument.symbol]["plans"].remove(plan)
+    for run in plan["states"]:
+        parent["terminal_evidence"].pop(run, None)
+    owner_id = budget._stock_owner_id(instrument.binding_ref)
+    parent["stocks"][instrument.symbol]["owner_ref"] = next(
+        owner.fingerprint for owner, _ in budget._owners(parent) if owner.owner_ref == owner_id
+    )
+    candidates = [copy.deepcopy(parent)]
+    if not parent["stocks"][instrument.symbol]["plans"]:
+        parent["stocks"].pop(instrument.symbol)
+        candidates.append(copy.deepcopy(parent))
+        parent.pop("stocks")
+        parent["version"] = 3
+        candidates.append(parent)
+    for candidate in candidates:
+        if (
+            "sha256:" + budget._digest(candidate) == parent_ref
+            and {owner.owner_ref: ref for owner, ref in budget._owners(candidate)} == expected_refs
+        ):
+            return current
+    return expected_refs
+
+
+def build_kis_paper_stock_plan(
+    *,
+    binding: Mapping[str, object],
+    states: Mapping[str, KisPaperCanaryState],
+    expected_account_ref: str,
+    expected_basis_ref: str,
+    expected_owner_refs: Mapping[str, str],
+    expected_binding_ref: str,
+    request_id: str,
+    input_ref: str,
+    instrument: KisPaperStockInstrument,
+    proposal: TargetExposureProposal | None,
+    receipt: ResearchDecisionReceipt | None,
+    reads: KisPaperStockPreviewReads | None,
+    as_of: datetime,
+    valid_until: datetime,
+) -> KisPaperStockPlan:
+    """Pure BUY plan; a retry replays its seed, never its current market inputs.
+
+    Expected owner pins attest the complete current scope. The parent pin on an
+    existing request remains its original pin, even after unrelated book changes.
+    A fresh request alone requires the current binding hash and current sizing.
+    """
+    _request_pins(request_id, input_ref, expected_binding_ref)
+    at = require_utc(as_of)
+    scope_refs = _retry_owner_refs(
+        binding, expected_owner_refs, request_id, input_ref, expected_binding_ref, instrument
+    )
+    entry = _plan_scope(
+        binding,
+        states,
+        expected_account_ref=expected_account_ref,
+        expected_basis_ref=expected_basis_ref,
+        expected_owner_refs=scope_refs,
+        instrument=instrument,
+        as_of=at,
+    )
+    if entry is not None:
+        plan = _exact_plan(entry, request_id, input_ref, expected_binding_ref)
+        if plan is not None:
+            return _stock_plan_result(
+                copy.deepcopy(dict(binding)), plan, "replayed", "exact_identity_reused"
+            )
+    _plan_check(
+        not any(p["request_id"] == request_id for p in binding["portfolio"]["plans"]),
+        "stock_request_conflict",
+    )
+    _plan_check(
+        "sha256:" + budget._digest(binding) == expected_binding_ref,
+        "stock_parent_binding_mismatch",
+    )
+    updated = copy.deepcopy(dict(binding))
+    if updated["version"] == 3:
+        updated.update(version=4, stocks={})
+    if entry is None:
+        updated["stocks"][instrument.symbol] = {
+            "exchange": "NASD",
+            "instrument_binding_ref": instrument.binding_ref,
+            "owner_ref": "sha256:" + "0" * 64,
+            "plans": [],
+        }
+    entry = updated["stocks"][instrument.symbol]
+    owner_id = budget._stock_owner_id(instrument.binding_ref)
+    entry["owner_ref"] = next(
+        owner.fingerprint for owner, _ in budget._owners(updated) if owner.owner_ref == owner_id
+    )
+    owners = budget._owners(updated)
+    replayed, proofs = _replay_scope(updated, states)
+    sized = size_kis_paper_stock_target(
+        proposal=proposal,
+        receipt=receipt,
+        instrument=instrument,
+        basis=budget._basis(updated),
+        expected_basis_ref=expected_basis_ref,
+        owners=tuple(owner for owner, _ in owners),
+        expected_owner_refs={owner.owner_ref: ref for owner, ref in owners},
+        states=replayed,
+        stock_owner_ref=owner_id,
+        reads=reads,
+        as_of=at,
+        cancellation_proofs=proofs,
+    )
+    if sized.status != "sized":
+        return KisPaperStockPlan("no_intent", sized.reason)
+    until = require_utc(valid_until)
+    _plan_check(
+        at < until <= min(proposal.valid_until, at + budget._ORDER_LIFETIME),
+        "stock_validity_invalid",
+    )
+    identity = budget._stock_identity(updated, instrument.symbol, request_id, "buy")
+    intent = KisPaperCanaryIntent(
+        "bk-" + identity,
+        "stock-" + identity,
+        "stock-" + identity,
+        instrument.symbol,
+        "NASD",
+        sized.quantity,
+        sized.limit_price,
+        at,
+        until,
+        price_contract_ref=budget._stock_price_ref(
+            updated, instrument.symbol, input_ref, sized.limit_price, "buy"
+        ),
+    )
+    seed = KisPaperCanaryState(intent, "intent_recorded", at, "preview")
+    plan = {
+        "request_id": request_id,
+        "input_ref": input_ref,
+        "parent_binding_ref": expected_binding_ref,
+        "states": {intent.run_id: seed.to_dict()},
+    }
+    entry["plans"].append(plan)
+    entry["owner_ref"] = next(
+        owner.fingerprint for owner, _ in budget._owners(updated) if owner.owner_ref == owner_id
+    )
+    budget.project_shared_budget(
+        binding=updated,
+        states=dict(states) | {intent.run_id: seed},
+        expected_account_ref=expected_account_ref,
+        expected_basis_ref=expected_basis_ref,
+        expected_owner_refs={owner.owner_ref: ref for owner, ref in budget._owners(updated)},
+        as_of=at,
+    )
+    return _stock_plan_result(updated, plan, "prepared", "stock_reservation_prepared")
+
+
+def _private_root(state_root, repository_root, artifact_root):
+    root = Path(state_root)
+    _plan_check(
+        not any(p.is_symlink() or p.is_junction() for p in (root, *root.parents)),
+        "private_root_invalid",
+    )
+    budget._validate_paths(root.resolve(), Path(repository_root), Path(artifact_root))
+    return root
+
+
+def reserve_kis_paper_stock_plan(
+    *,
+    state_root: Path,
+    repository_root: Path,
+    artifact_root: Path,
+    **arguments,
+) -> KisPaperStockPlan:
+    """Persist only the canonical seed reservation, not an order-state file."""
+    root = _private_root(state_root, repository_root, artifact_root)
+    with exclusive_kis_paper_canary_state_lock(root / ".session_execution"):
+        with exclusive_kis_paper_canary_state_lock(root / ".canary_execution"):
+            binding = budget._load_binding(root, arguments["expected_account_ref"])
+            _plan_check(binding is not None, "stock_existing_basis_required")
+            result = build_kis_paper_stock_plan(
+                binding=binding, states=_states(root, binding), **arguments
+            )
+            if result.status != "prepared":
+                return result
+            budget._atomic_json(root / budget.BUDGET_FILE, result.binding)
+            retained = budget._load_binding(root, arguments["expected_account_ref"])
+            _plan_check(retained == result.binding, "stock_reservation_readback_mismatch")
+            budget.project_shared_budget(
+                binding=retained,
+                states=_states(root, retained),
+                expected_account_ref=arguments["expected_account_ref"],
+                expected_basis_ref=arguments["expected_basis_ref"],
+                expected_owner_refs={
+                    owner.owner_ref: ref for owner, ref in budget._owners(retained)
+                },
+                as_of=arguments["as_of"],
+            )
+            return replace(
+                result, status="reserved", reason="stock_reservation_persisted", binding=retained
+            )
+
+
+def reconcile_kis_paper_stock_plan(
+    *,
+    state_root: Path,
+    repository_root: Path,
+    artifact_root: Path,
+    expected_account_ref: str,
+    expected_basis_ref: str,
+    expected_owner_refs: Mapping[str, str],
+    expected_binding_ref: str,
+    input_ref: str,
+    instrument: KisPaperStockInstrument,
+    request_id: str,
+    expected_plan_ref: str,
+    as_of: datetime,
+    cancellation_proofs: Mapping[str, KisPaperExecutionObservation] | None = None,
+) -> KisPaperStockPlan:
+    """Retain exact terminal facts; no broker call or release of unknowns."""
+    _request_pins(request_id, input_ref, expected_binding_ref)
+    root = _private_root(state_root, repository_root, artifact_root)
+    at = require_utc(as_of)
+    with exclusive_kis_paper_canary_state_lock(root / ".session_execution"):
+        with exclusive_kis_paper_canary_state_lock(root / ".canary_execution"):
+            binding = budget._load_binding(root, expected_account_ref)
+            states = {} if binding is None else _states(root, binding)
+            entry = _plan_scope(
+                binding,
+                states,
+                expected_account_ref=expected_account_ref,
+                expected_basis_ref=expected_basis_ref,
+                expected_owner_refs=expected_owner_refs,
+                instrument=instrument,
+                as_of=at,
+            )
+            _plan_check(entry is not None, "stock_request_conflict")
+            plan = _exact_plan(entry, request_id, input_ref, expected_binding_ref)
+            _plan_check(
+                plan is not None and "sha256:" + budget._digest(plan) == expected_plan_ref,
+                "stock_request_conflict",
+            )
+            proofs = {} if cancellation_proofs is None else cancellation_proofs
+            _plan_check(
+                isinstance(proofs, Mapping) and set(proofs) <= set(plan["states"]),
+                "stock_proof_scope_invalid",
+            )
+            updated = copy.deepcopy(binding)
+            for run in plan["states"]:
+                state = budget._validated_portfolio_state(states[run], at)
+                observation = proofs.get(run)
+                if observation is not None:
+                    _plan_check(
+                        type(observation) is KisPaperExecutionObservation, "stock_terminal_unproven"
+                    )
+                    budget._terminal_payload(state, observation)
+                    _plan_check(budget._terminal(state, observation), "stock_terminal_unproven")
+                if run not in updated["terminal_evidence"] and budget._terminal(state, observation):
+                    updated["terminal_evidence"][run] = budget._terminal_payload(state, observation)
+            budget.project_shared_budget(
+                binding=updated,
+                states=states,
+                expected_account_ref=expected_account_ref,
+                expected_basis_ref=expected_basis_ref,
+                expected_owner_refs=expected_owner_refs,
+                as_of=at,
+            )
+            if updated != binding:
+                budget._atomic_json(root / budget.BUDGET_FILE, updated)
+                _plan_check(
+                    budget._load_binding(root, expected_account_ref) == updated,
+                    "stock_reservation_readback_mismatch",
+                )
+            closed = all(run in updated["terminal_evidence"] for run in plan["states"])
+            return _stock_plan_result(
+                updated,
+                plan,
+                "reconciled" if closed else "pending",
+                "exact_terminal_states_retained" if closed else "terminal_evidence_incomplete",
+            )
