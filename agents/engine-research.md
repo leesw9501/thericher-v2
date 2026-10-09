@@ -132,15 +132,32 @@ Breadth Goal30 closed/rejected:580712ea.../2fits30cells/resultce177b19...,
 402/965paired action changes, parent108.552s/ALL-RO54.445s/independent cached
 ledgerc8089526...1.974s matches30cells. Custodyfe5753c2... closed; no model/
 risk reinference, TRAIN-label independent proof or isolated account-state effect.
-Breadth ready Goal31 pooled equity component selection: Data metadata,
-Engine pure adapter/tests and parent model worker are disjoint. One Ridge/TCN,
+Breadth active Goal31 pooled equity component selection: pure adapter9deb081
+integrated/74 related tests, independent63 pass/no P1-P2. Data explicit-key
+reader5f0fc65 and metadata preparer are released; Engine owns external worker.
+Parent model19 synthetic tests and combined model/dispatcher97 pass. Ridge
+complex/nonfinite-weight and complex input/label faults fixed before outcomes.
+One Ridge/TCN,
 four OOF+final each/10fits600s/48cells after exact metadata freeze/CPU smoke.
-Fixed<=128keys/800sessions; fold-prefix scalers, complete predeclared label
+Fixed128keys/800sessions/context20/last-step receptive field15; fold-prefix
+scalers, complete predeclared label
 cross-section and past-only selections; no future mask/winner substitution.
 Primary retrieval47afdd95.../proposal25863fce... supports economic mechanism,
 not raw KIS efficacy. Claude8e6d8d69... unavailable/not agreement; independent
-two P2 fold/label gaps fixed in NEXT before outcomes. No new GPU allocation,
-holdout/Paper input or rescue of closed trio families. Limits remain explicit.
+two P2 fold/label gaps fixed in NEXT before outcomes. Original6ee8fa56... run
+failed before fits/starts/cells(all0), resultc844affb...; unchanged/reaped/absent,
+custodycc6a2e81... closed. Source-only portable ordering reproduction precedes
+numeric loading. R2contract3ce148f9.../431sources3051inputs then actually
+completed four CUDA TCN and five Ridge checkpoints; durable9completed/10starts,
+finalTCNunknown. Parentebfb6c5d...341.791s failed/reaped/absent/unchanged/lease
+released, NO terminal result/countsnull/48-cell comparison. Closure644bcb72.../
+custody7e017bf9.../independent partiala9d222bb... and closure9c5b1f84...;
+exact OOF readback unavailable, no tolerance waiver/DEV-efficacy/Paper claim.
+Bounded attempt closed/failed-incomplete, original600 family exhausted/no refit.
+Next Goal32 current input/preview/runtime readiness: Data fresh100session128key
+snapshot, Engine pure component-rule preview, invoked Infra synthetic2x64-step
+finite-guard throughput. No market fits/retained probe weights/promotion/refund.
+Completed TCN fits58..77s each are measured local latency, not a CUDA ban.
 Pairwise-reversal ANTICOR actually rejected; retain its fixed recipe.
 Conditional-hedge study is now COMPLETE/REJECTED42 cells, exact root
 A/research/kis-cross-asset-conditional-hedge-utility-development-v1-runtime-recovery-r2.

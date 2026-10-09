@@ -23,8 +23,23 @@ allocation or ready depth survivor. Goal30 CPU-only contract580712ea...
 completed2fits30cells/rejected,402/965paired action changes. Parentf895e491...
 108.552s/native361ada8c...54.445s/independent cached ledgerc8089526...1.974s
 match exact economics; custodyfe5753c2... closed/zero sealed spend.
-Goal31 pooled equity-component Ridge/TCN preparation is ready CPU work;
-10fits/600s shared after exact metadata and contract, no GPU appointment yet.
+Goal31 pooled equity-component contract6ee8fa56... is now frozen:
+430sources/3044inputs/128lexkeys800sessions,10fits/600s/48cells, custody
+3dafb73a... trial1/sealed spend0. CPU Docker smoke4b617312... passes74.965s,
+zero market numeric/fit/GPU; unchanged sources/inputs/reaped/absent. Parent
+actual appointmentd789e4e2... failed256.382s parent/251.892s worker before
+fits/starts/cells(all0), resultc844affb.../parent7c012b15... . Sources/inputs
+unchanged/reaped/absent and exclusive lease released. Custodycc6a2e81... is
+CLOSED/non_promoting_failed/zero sealed spend. R2contract3ce148f9... trial2
+08c63def... then failed341.791s/reaped/absent/unchanged/lease released without
+a terminal result. Durable lower bounds9completed(5Ridge4TCN)/10starts,
+final completion unknown; terminal countsnull. Closure644bcb72.../custody
+7e017bf9... CLOSED/non_promoting_failed/remaining0; independenta9d222bb.../
+9c5b1f84... reattests that narrow scope. No full matrix/OOF/efficacy claim.
+Original600-second family exhausted, no refit/refund. Separate next Infra
+probe uses only two64-step synthetic passes/no market fits/retained weights/
+sealed spend, exclusive canonical GPU lease and180s work bound. Its future
+latency facts cannot reopen the old family or confer Paper/model promotion.
 It is a different stock-selection mechanism, not idle filler or a rescue of
 closed trio families. Existing CPU/Paper preparation continues independently.
 Originalf9252f7a... failed before fits at source preparation;16.928s/reaped/

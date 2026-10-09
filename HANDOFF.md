@@ -105,9 +105,33 @@ Full8 authority13459pass22skip35warnings/13481collected334.45s/helperexit0;
 changedserial322pass, externalworker15/dispatcher114/preparer28/ledger26 pass;
 Ruff/three sample-env Compose pass. Pure module focusedcommitf2a95ba pushed.
 
-Current Goal31 pooled equity component selection reuses named broad daily
-custody, not another trio/model/window rescue. Data prepares exact metadata;
-Engine pure causal adapter/tests and parent model runner are disjoint.
+Closed Goal31 pooled equity component selection reused named broad daily
+custody, not another trio/model/window rescue. Pure core9deb081/74 related tests
+and explicit reader5f0fc65/60 related tests are integrated/pushed. Exact metadata
+binds128lexkeys/keyhash0db2c9c9.../1519chunks/59source-limited without numeric
+decoding/substitution. Original contract6ee8fa56.../430sources3044inputs was
+frozen, CPU smoke4b617312... passed74.965s. Actual appointmentd789e4e2...
+failed before fits/starts/cells(all0), resultc844affb.../parent7c012b15...,
+256.382s parent/251.892s worker. Sources/inputs unchanged/reaped/absent;
+GPU lease released and custodycc6a2e81... closed/non_promoting_failed.
+Source-only reproduction shows Windows/Linux portable binding order differs,
+reaching metadata_changed before values. No exception trace or CUDA-fault claim.
+Goal31 bounded attempt is now CLOSED/FAILED-INCOMPLETE, not a completed
+48-cell comparison or TCN-inefficacy/dataset-unavailable finding. R2contract
+3ce148f9.../431sources3051inputs/CPU smokef835e482...12.250s passed. Actual
+parentebfb6c5d...341.791s failed/reaped/absent/unchanged/lease released with
+NO terminal result; terminal countsnull. Durable9completed(5Ridge4TCN)/
+10started/finalTCNunknown. Closure644bcb72.../custody7e017bf9.../remaining0;
+independent partiala9d222bb...2.934s/closure9c5b1f84... . No exact OOF or
+DEV-economic/model/Paper claim; do not refit the exhausted600-second family.
+Compact transport6a90ebb/78 parent tests retains87974 exact strings/128keys/
+800dates; independent55a0de84...12.381s matches all CSV records/digests,
+shared original decoder only. Original3044 and native compact2 are separate.
+Four completed CUDA TCN fits58..77s/512updates motivate a separate finite
+synthetic guard-throughput probe, not a budget refund or new market fits.
+Current Goal32 prepares latest100-session128key input, pure component-rule
+preview and measured synthetic native throughput in disjoint Data/Engine/Infra
+packages. NEXT owns exact scope. Old used sources/artifacts remain immutable.
 One Ridge/TCN, four OOF+final each/10fits600s shared, CPU smoke before GPU;
 fixed<=128keys/800sessions/520TRAIN20purge260seenDEV, prior61 eligibility and
 20component contexts. Fold scalers are prefix-only; incomplete label sets
@@ -187,7 +211,9 @@ GRU10bps seen growth+2.76%/+28.83% fails original first-view utility kill.
 Goal23 rule30 cells also rejected; fixed minvar63/drift5%/cadence21 already
 answered. Do not reopen these families by seed/window/cost/threshold rescue.
 RTX4090/Torch2.7+cu128 works; no GPU permission/environment block.
-GPU idle currently because no useful frozen next campaign, not approval wait.
+Goal31 actually used CUDA for four completed TCN fits, with a fifth started
+but terminal completion unknown. Its lease is released. Next finite synthetic
+throughput probe is preparing; no GPU permission/environment ban.
 Earlier LSTM/attention/GRU/TimesFM/Chronos/rule/ML families remain in Engine/
 Steward/Git and exact roots, not absent experiments or current survivors.
 

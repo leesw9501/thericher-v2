@@ -115,9 +115,32 @@ At10bps state growth-4.18%/+35.46% equals always-rebalance; original kill
 rejects. No survivor/Paper input/holdout/alpha claim; never rerun used drivers.
 Full8 authority13459pass22skip35warnings334.45s/helper0;322changedserial,
 externalworker15/dispatcher114/preparer28; Ruff/three sample-env Compose pass.
-Goal31 Data metadata/Engine pure component adapter/parent pooled Ridge-TCN
-preparation are now disjoint ready work; NEXT owns exact10fit600s/48cell
-scope and fold/eligibility/source limits. No actual new GPU campaign yet.
+Goal31 original frozen6ee8fa56... failed before fits/starts/cells(all0),
+worker-resultc844affb.../parent-run7c012b15...; custodycc6a2e81... closed.
+Source-only portable binding order reproduction precedes numeric decoding;
+do not edit or rerun its used supervisors. Exact-string compact R2 at
+D:/thericher-v2/model-artifacts/research/
+kis-pooled-equity-component-selection-development-v1-compact-r2 is frozen
+3ce148f9.../431sources3051inputs; original3044 guards plus compact2 and
+five exact lineage records. Native compact attestation is not raw-transform proof.
+Same600-second family:260 conservative prior debit+340 remaining, cumulative
+10 fits/48cells/no changed model/keys/dates/folds/costs/kill. CPU smoke
+f835e482...12.250s passed/marketfits0/noGPU/unchanged/reaped/absent; exclusive
+actual R2 appointment FAILED341.791s, parentebfb6c5d... . No terminal result;
+durable9completed/10started/finalTCNunknown, terminal countsnull. Parent
+reaped/absent/unchanged/lease released. Closure644bcb72.../custody7e017bf9.../
+independent partiala9d222bb...2.934s/closure9c5b1f84... . Exact OOF unavailable,
+no full48-cell/DEV-efficacy/Paper claim; original600 family exhausted/no refit.
+Compact M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/
+goal31-original-6ee8fa56-r2 has87974 rows128keys800dates/0empty in12.763s,
+manifest1a0b9fa5.../packed00fdbf11...; producer3e570364... loads3042 bindings
+and parent separately guards3044. Independent55a0de84...12.381s matches exact
+CSV strings/digests with shared original decoder; no adjustment/qualification.
+Bounded Goal31 attempt closed/failed-incomplete. Goal32 prepares current100-
+session SAME128key source and pure component-rule preview alongside a finite
+synthetic native finite-guard throughput probe. No original budget refund.
+Latest full8 authority13600pass22skip35warnings365.14s/helper0/Ruff/three
+sample-env Compose pass; source commit6a90ebb. No active verification owner.
 Claude source-discovery/claude-whole-share-hold-rebalance-20261009-v1.json/
 5ba22b56... is review_unavailable/cli_is_error, not agreement; one public-only
 challenge, no unchanged retry. Independent causal contract review supports

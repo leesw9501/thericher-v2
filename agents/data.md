@@ -7,10 +7,22 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 ## Current Capability And Next Work
 
 Goal30 reused pinned raw trio/431sources571inputs,2CPUfits30cells/rejected;
-no new collection/source qualification. Goal31 Data owns metadata-only exact
-broad-panel source/manifest/date inventory for pooled equity component ranking.
-Fixed<=128 opaque keys before values, no future-completeness/winner selection;
-current-listing/non-PIT/CA/raw limits remain. No new API/download or global hold.
+no new collection/source qualification. Goal31 explicit-key reader is integrated
+at5f0fc65; parent60 related tests pass3.40s. Metadata-only exact named snapshot
+binding selects128 lexicographic keys/keyhash0db2c9c9.../1519chunks,59source-limited
+identities retained without substitutions. Original contract6ee8fa56... was
+frozen; first actual run failed before numeric loading/fits. Host/Linux binding
+ordering fault is source-reproduced; original3044 hashes remain unchanged.
+Compact transport6a90ebb/78 parent tests is complete:87974 rows/128keys800dates/
+0empty, manifest1a0b9fa5.../packed00fdbf11... in12.763s. Independent
+55a0de84...12.381s matches exact CSV strings and logical digests using shared
+original decoder. Parent3044/producer3042/native2 scopes stay distinct. No
+rounding/adjustment/filtering or source qualification. R2 ended incomplete;
+original family has0 remaining. Data now owns latest100-session SAME128key
+fresh collection worker/tests at A/data/kis-current-pooled-equity-refresh-v1;
+metadata/client/cache reuse only so far, no current provider execution yet.
+New M/current-pooled-equity-history scope never merges old cohort values;
+source-local sparse/failure remains visible and does not block another lane.
 
 Latest historical engineering-control refresh is actually READY: fixedSPY/AMS,
 TLT/NAS,GLD/AMS,253 dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC.
