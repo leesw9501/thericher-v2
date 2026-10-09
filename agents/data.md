@@ -6,16 +6,34 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal51 COMPLETE/closure4471ec24... . Actual f78 collection219.246s after
+publication/source/stdout/reaped/absent matched; receipt3dafa26e.../return55b1c90e... .
+1token192GET attempts/191parsed/rate_limited1,95 usable of128/18576 rows,
+100-completed anchorOct9/800 calendar ->113 labels/prior61. Counts are inherited
+dispatch attempts, not independently observed wire starts. Provider finality,
+PIT/actions/TR remain unverified; only actual local collection clocks retained.
+Next_due20:05:47UTC passed; separate remainder scope for33 keys is source-owned
+by Copernicus. Preserve original cache/receipt/native decision chain; no original
+UUID rerun, OLD graft, repeated global wait or provider-quota inference.
+Official NAS reference4c9dc717.../master9a7f3767... supports125/128,3 unknown;
+current reference only, not primary/PIT/call-time eligibility. Adapter070fb639.../
+56 checks binds full128 before original model scores all42 eligible. Actual CPU
+decision prepared, not an installed new order. Future Patch contextc95f5955.../
+45 synthetic checks and metadata input handoff45832b56... are released; SAME
+seven original OLD/CURRENT bindings, no value/calendar union or new training yet.
+
+### Closed Source And Loader Context
+
 Goal50 current-only loader54bdc4c1... RELEASED104 synthetic checks; cohort/
 ordinal unchanged. Actual cached verify54.049s uses CURRENT numeric data only,
 retains every OLD/CURRENT hash/calendar/metadata guard and matches48 cells,
 seals/missingness/attribution exactly. OLD numeric callbacks unavailable, not
 fabricated empty data; no isolated speedup or source-quality promotion claim.
 Native Goal50 closed83db6e20... leaves retained datasets unchanged.
-Post-close handoff67e230e1... reattests f78/446pins; earliest Oct9 20UTC,
-no collection yet. Existing CURRENT113 endsOct8; fresh scope100completed through
+Post-close handoff67e230e1... reattested f78/446pins; actual collection is above.
+Existing CURRENT113 endsOct8; fresh scope100completed through
 Oct9/800preview labels is distinct, never an OLD fallback or automatic union.
-Next source probe: official KIS static NASDAQ metadata and exact128 route map,
+Completed source probe: official KIS static NASDAQ metadata and exact128 route map,
 without ticker inference or relabeling original targets. Declared NAS alone
 does not attest primary venue. Collection token/client ownership stays separate.
 

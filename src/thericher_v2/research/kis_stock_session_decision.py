@@ -1,7 +1,9 @@
 """Pure pre-OPEN TCN20 session preparation, never an order or model loader.
 
 Callers attest official NYSE clocks, manifest bytes, the original model and
-trusted numeric scorer. Raw/current-listed/non-PIT/finality limits remain.
+trusted numeric scorer. Optional route evidence is only current KIS reference
+support, not primary listing, historical PIT or call-time broker eligibility.
+Raw/current-listed/non-PIT/finality limits remain.
 The 3126ba5b prior20 engineering screen is unchanged, not qualification.
 """
 
@@ -46,6 +48,13 @@ class Reason(StrEnum):
     FEWER = "fewer_than_10"
     SCORER = "scoring_unavailable"
     SCORES = "score_binding_invalid"
+    NO_ROUTE = "no_supported_route"
+
+
+class RouteCategory(StrEnum):
+    SUPPORTED = "kis_nasdaq_reference_supported"
+    UNSUPPORTED = "known_unsupported"
+    UNVERIFIED = "unverified"
 
 
 class _Fault(ValueError):
@@ -77,7 +86,7 @@ def _pin(value: str) -> bool:
 class SessionInstrument:
     key: str
     symbol: str
-    exchange: str = "NASD"
+    exchange: str | None = "NASD"
     market: str = "US"
 
     def __post_init__(self) -> None:
@@ -86,7 +95,7 @@ class SessionInstrument:
             and bool(self.key)
             and type(self.symbol) is str
             and re.fullmatch(r"[A-Z]{1,10}", self.symbol, re.ASCII) is not None
-            and self.exchange == "NASD"
+            and (self.exchange is None or (type(self.exchange) is str and self.exchange == "NASD"))
             and self.market == "US",
             Reason.IDENTITY,
         )
@@ -114,6 +123,48 @@ def calendar_sha256(plan: SessionPlan) -> str:
     )
 
 
+def route_map_sha256(
+    instruments: Mapping[str, SessionInstrument],
+    route_categories: Mapping[str, RouteCategory | str],
+    route_source_pins: Mapping[str, str],
+    route_observed_at: datetime,
+) -> str:
+    """Bind caller-attested current reference support, never primary/PIT venue."""
+    _require(isinstance(route_categories, Mapping) and isinstance(route_source_pins, Mapping))
+    _require(set(route_categories) == set(instruments), Reason.IDENTITY)
+    categories = {}
+    for key, category in route_categories.items():
+        _require(type(category) in (str, RouteCategory), Reason.IDENTITY)
+        try:
+            categories[key] = RouteCategory(category)
+        except ValueError:
+            raise _Fault(Reason.IDENTITY) from None
+        instrument = instruments[key]
+        _require(type(instrument) is SessionInstrument and instrument.key == key, Reason.IDENTITY)
+        _require(
+            (instrument.exchange == "NASD") == (categories[key] is RouteCategory.SUPPORTED),
+            Reason.IDENTITY,
+        )
+    _require(
+        bool(route_source_pins)
+        and all(
+            type(name) is str
+            and re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._/-]{0,159}", name) is not None
+            and _pin(pin)
+            for name, pin in route_source_pins.items()
+        )
+    )
+    return _digest(
+        dict(
+            instrument_map=instrument_map_sha256(instruments),
+            categories=[[key, category.value] for key, category in sorted(categories.items())],
+            source_pins=sorted(route_source_pins.items()),
+            observed_at=_utc(route_observed_at).isoformat(),
+            support_grade="current_kis_reference_not_primary_or_PIT",
+        )
+    )
+
+
 @dataclass(frozen=True, slots=True, repr=False)
 class SessionEnvelope:
     """113 official calendar labels, 100 raw input sessions, only 61 prices used."""
@@ -128,6 +179,10 @@ class SessionEnvelope:
     calendar_sha256: str
     references: DecisionReceiptReferences
     as_of: datetime
+    route_categories: Mapping[str, RouteCategory | str] | None = None
+    route_source_pins: Mapping[str, str] | None = None
+    route_observed_at: datetime | None = None
+    route_map_sha256: str | None = None
 
     def __post_init__(self) -> None:
         _require(type(self.plan) is SessionPlan and len(self.plan.sessions) == 113)
@@ -141,6 +196,29 @@ class SessionEnvelope:
             self, "observed_at_by_key", MappingProxyType(dict(self.observed_at_by_key))
         )
         object.__setattr__(self, "as_of", _utc(self.as_of))
+        route_fields = (
+            self.route_categories,
+            self.route_source_pins,
+            self.route_observed_at,
+            self.route_map_sha256,
+        )
+        _require(
+            all(value is None for value in route_fields)
+            or all(value is not None for value in route_fields)
+        )
+        if self.route_categories is not None:
+            _require(
+                isinstance(self.route_categories, Mapping)
+                and isinstance(self.route_source_pins, Mapping)
+                and _pin(self.route_map_sha256)
+            )
+            object.__setattr__(
+                self, "route_categories", MappingProxyType(dict(self.route_categories))
+            )
+            object.__setattr__(
+                self, "route_source_pins", MappingProxyType(dict(self.route_source_pins))
+            )
+            object.__setattr__(self, "route_observed_at", _utc(self.route_observed_at))
         _require(
             all(
                 _pin(pin)
@@ -155,22 +233,31 @@ class SessionEnvelope:
 
     @property
     def binding_sha256(self) -> str:
-        return _digest(
-            dict(
-                calendar=self.calendar_sha256,
-                instrument_map=self.instrument_map_sha256,
-                input_manifest=self.input_manifest_sha256,
-                model=self.model_sha256,
-                cohort=COHORT_SHA256,
-                arm=ARM,
-                anchor=self.input_anchor_date.isoformat(),
-                as_of=self.as_of.isoformat(),
-                observations=[
-                    [key, value.isoformat() if value is not None else None]
-                    for key, value in sorted(self.observed_at_by_key.items())
-                ],
-                references=vars(self.references),
-            )
+        payload = dict(
+            calendar=self.calendar_sha256,
+            instrument_map=self.instrument_map_sha256,
+            input_manifest=self.input_manifest_sha256,
+            model=self.model_sha256,
+            cohort=COHORT_SHA256,
+            arm=ARM,
+            anchor=self.input_anchor_date.isoformat(),
+            as_of=self.as_of.isoformat(),
+            observations=[
+                [key, value.isoformat() if value is not None else None]
+                for key, value in sorted(self.observed_at_by_key.items())
+            ],
+            references=vars(self.references),
+        )
+        if self.route_categories is not None:
+            payload["route_map"] = self.route_map_sha256
+        return _digest(payload)
+
+    @property
+    def selection_scope(self) -> str:
+        return (
+            "kis_nasd_reference_constrained_rank1"
+            if self.route_categories is not None
+            else "legacy_declared_only_unrestricted_rank1"
         )
 
 
@@ -193,6 +280,36 @@ def _validate_envelope(envelope: SessionEnvelope) -> None:
         if observed is not None:
             _require(_utc(observed) <= envelope.as_of, Reason.FUTURE)
             _require(observed >= plan.close_clocks[-2], Reason.STALE)
+    if envelope.route_categories is None:
+        _require(
+            envelope.route_source_pins
+            is envelope.route_observed_at
+            is envelope.route_map_sha256
+            is None
+            and all(value.exchange == "NASD" for value in envelope.instruments.values())
+        )
+    else:
+        _require(
+            envelope.route_map_sha256
+            == route_map_sha256(
+                envelope.instruments,
+                envelope.route_categories,
+                envelope.route_source_pins,
+                envelope.route_observed_at,
+            )
+        )
+        _require(envelope.route_observed_at <= envelope.as_of, Reason.FUTURE)
+
+
+def _selected_key(envelope: SessionEnvelope, scores: tuple[tuple[str, float], ...]) -> str | None:
+    eligible = (
+        scores
+        if envelope.route_categories is None
+        else tuple(
+            row for row in scores if envelope.route_categories[row[0]] == RouteCategory.SUPPORTED
+        )
+    )
+    return min(eligible, key=lambda row: (-row[1], row[0]))[0] if eligible else None
 
 
 @dataclass(frozen=True, slots=True, repr=False)
@@ -212,6 +329,7 @@ class SessionDecision:
     model_completed_at: datetime | None = None
     proposal: TargetExposureProposal | None = None
     receipt: ResearchDecisionReceipt | None = None
+    route_map_sha256: str | None = None
 
     def __post_init__(self) -> None:
         _require(isinstance(self.reason, Reason))
@@ -241,7 +359,9 @@ class SessionDecision:
                 type(value) in (int, float) and math.isfinite(value) and 0 <= value <= 1
                 for _, value in self.scores
             )
-            and self.selected_key == min(self.scores, key=lambda row: (-row[1], row[0]))[0]
+            and self.route_map_sha256 == self.envelope.route_map_sha256
+            and self.selected_key is not None
+            and self.selected_key == _selected_key(self.envelope, self.scores)
             and type(self.proposal) is TargetExposureProposal
             and type(self.receipt) is ResearchDecisionReceipt
         )
@@ -283,6 +403,21 @@ class SessionDecision:
             automatic_order=False,
             confidence_calibrated=False,
             historical_PIT_claim=False,
+            selection_scope=self.envelope.selection_scope,
+            route_support_grade=(
+                "current_kis_reference_not_primary_or_PIT"
+                if self.envelope.route_categories is not None
+                else "legacy_declared_only"
+            ),
+            route_map_sha256=self.route_map_sha256,
+            route_supported_eligible_count=sum(
+                self.envelope.route_categories is not None
+                and self.envelope.route_categories[key] == RouteCategory.SUPPORTED
+                for key, _ in self.scores
+                if key in (self.envelope.route_categories or {})
+            ),
+            primary_listing_attested=False,
+            broker_eligibility_attested=False,
         )
 
 
@@ -370,8 +505,11 @@ def decide_session(
     No calendar acquisition, model decoding, persistence or broker access occurs.
     """
     seal, scores, started, completed = None, (), None, None
+    route_pin = None
     try:
         _validate_envelope(envelope)
+        bound_envelope = envelope.binding_sha256
+        route_pin = envelope.route_map_sha256
         plan = envelope.plan
         _require(callable(past_source) and callable(scorer) and callable(clock))
         now = _utc(clock())
@@ -405,7 +543,10 @@ def decide_session(
             )
             bound.append((key, float(value)))
         scores = tuple(bound)
-        selected = min(scores, key=lambda row: (-row[1], row[0]))[0]
+        _require(envelope.binding_sha256 == bound_envelope)
+        _validate_envelope(envelope)
+        selected = _selected_key(envelope, scores)
+        _require(selected is not None, Reason.NO_ROUTE)
         instrument = envelope.instruments[selected]
         proposal = TargetExposureProposal(
             proposal_id=envelope.references.proposal_ref,
@@ -431,8 +572,27 @@ def decide_session(
             completed,
             proposal,
             receipt_from_target_exposure_proposal(proposal, references=envelope.references),
+            route_pin,
         )
     except _Fault as error:
-        return SessionDecision(envelope, error.reason, seal, scores, None, started, completed)
+        return SessionDecision(
+            envelope,
+            error.reason,
+            seal,
+            scores,
+            None,
+            started,
+            completed,
+            route_map_sha256=route_pin,
+        )
     except Exception:
-        return SessionDecision(envelope, Reason.CONTRACT, seal, scores, None, started, completed)
+        return SessionDecision(
+            envelope,
+            Reason.CONTRACT,
+            seal,
+            scores,
+            None,
+            started,
+            completed,
+            route_map_sha256=route_pin,
+        )

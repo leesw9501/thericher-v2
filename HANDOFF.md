@@ -20,6 +20,36 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
+Goal51 native session input COMPLETE at
+A/execution/kis-stock-repeatable-native-paper-preparation-v1:
+closure4471ec24.../verification0904fc67... . Actual f78 Data collection
+1token192GET attempts/191parsed/rate_limited1/95 usable of128/18576 rows,
+219.246s after publication/reaped/absent/source matched. Worker receipt
+3dafa26e.../returned55b1c90e...; scoped next_due20:05:47UTC passed. Do not
+rerun original UUID or mutate its cache; remaining33 keys need a separate
+owned remainder scope, not OLD fallback or a global permission hold.
+One original-TCN20 CPU native contractc5d22f72.../457bindings/decision72914719.../
+parentce0c9d17...:42 eligible scores, actual completion20:08:23UTC Oct9,
+next OPEN Oct12 13:30UTC/CLOSE20UTC,27.436s<120 including parent publication.
+All unchanged/reaped/absent/typed cached readback;0 fits/CUDA/account/broker.
+Official current NAS reference125/128/3 unknown is not primary/PIT/eligibility;
+selection explicitly route-constrained, every original research identity kept.
+Lifecycle handoff49098b43.../factory0b4d5eb5... derives session/request clocks
+without edits, .01 original total-basis target within .10 aggregate. No new
+bank write/order/schedule or coherent multi-symbol delivery installed.
+91 session/154 changed serial/145 released external/32 independent checks;
+full clean8:15128pass22skip35warnings339.05s/Ruff/three sample-env Compose.
+Used source/falsifier failures remain immutable; four native source P2s fixed,
+then actual package-root archive comparison fixed with two regression cases.
+Claude unavailable, not agreement; raw/current-listed/non-PIT/action/finality
+limits unchanged. Goal47 actual exact EXIT closure119c108b... is below.
+NEXT owns one finite Patch20/60 development comparison. Source/models5769a913.../
+independent primary reread23c6a63d.../Data contextc95f5955.../input45832b56...
+are ready preparation, not an allocated or trained family. Early original TCN
+controls must match their own427/610 cutoffs, never final799 or R50 refits.
+
+### Closed Goal50
+
 Goal50 native temporal-memory development COMPLETE at
 A/research/kis-stock-temporal-memory-development-v1: frozen7c3128a3.../
 453sources7inputs/result90f12bca.../closure83db6e20.../outcomeece4ce31... .
@@ -63,8 +93,16 @@ R47=A/execution/kis-stock-owned-exit-lifecycle-v1/closure.json/3d32edf8... .
 Sourcecffa21b pushed; cash-free owner-only SELL preserves original ENTRY
 instrument/owner and same10% bank. Exact job2a5135f3.../delivery5bd53682.../
 image93b769b5... installed finite task stock-owned-exit-20261010:
-Oct10 04:50..05:00KST/1min/IgnoreNew/PT4M. No manual invocation; actual EXIT
-submit/fill/current owned-flat, fees/settlement/net PnL not_observed.
+Oct10 04:50..05:00KST/1min/IgnoreNew/PT4M. No manual invocation. Actual
+runtime closure119c108b... at R47/actual-runtime-closure.json: exact job and
+started/outcome boundfc5fe442.../0662b7ae...,19:50:01..19:50:56UTC,
+1token27GET1SELL/full fill/current owned-flat. Later19:55:02..19:55:17UTC
+3fb1ef48.../039dd4cf...:1token10GET0orders/current owned-flat again.
+Other token-not-due outcomes are scoped recovery, not duplicate orders or
+fresh reconciliation. Finite task Ready/last04:59:01KST/no next run/no active
+marker after expiry. Marker/time/hash assumes an honest host, not cryptographic
+OS Scheduler-origin proof; Operational logging disabled. Fees/settled cash/
+net PnL remain not_observed. Original job, bank and used records unchanged.
 Four unchanged shared bank modules keep existing SPY/router consumers compatible;
 only one code derivative built, no dependency/runtime or existing schedule change.
 Independent planner/constructor/build P2s repaired before freezing; old failures

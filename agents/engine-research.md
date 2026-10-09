@@ -7,6 +7,24 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
+Goal51 COMPLETE/closure4471ec24... . Original numeric model9de27944... reloaded
+in one actual CPU decision27.436s<120/42 scored/0fits/CUDA/account/broker,
+actual completionOct9 20:08:23UTC/pre-OPEN Oct12. Full128 identity/prior61/
+window20 and engineering cohort remain unchanged. Current-reference NASD
+constraint is explicit, not original unrestricted rank1 or predictive promotion.
+Typed cached readback and automatic session/request lifecycle handoff49098b43...
+pass; no new model or new order installed. Goal47 exact full EXIT/current-flat
+closure119c108b... is execution evidence, not model profit.
+Next breadth: PatchTST-inspired20/60 models5769a913.../62 synthetic checks,
+primary source reread23c6a63d.../contextc95f5955.../45 checks/input45832b56... .
+Worker source prep and independent source falsification active. Original TCN
+controls require cutoff-matched cached outputs or a bounded trusted decoder;
+final799 cannot score early targets. Max6 future fits/shared600s/0sealed, not
+allocated yet; no R50 refit substitution or extra blend. Depth stays genuinely
+fresh prospective evidence, not repeated seen development or GPU utilization.
+
+### Closed Goal50
+
 Goal50 COMPLETE: A/research/kis-stock-temporal-memory-development-v1,
 contract7c3128a3.../result90f12bca.../closure83db6e20.../custodyece4ce31... .
 Actual9 CUDA market fits199.555s/48cells/401.282s cumulative<600; CPU smoke
@@ -17,8 +35,8 @@ fixed half-memory/half-TCN+.9997%. Memory/flat/blend reject; TCN only seen
 follow-up. No new Paper model, holdout, replication or alpha claim.
 Source2b88eb88.../workeraa650e36...;398 released/23 independent checks.
 Counter-only failed progress P2 repaired; source-only original falsifiers remain.
-Breadth: bounded primary-source PatchTST/TSMixer alternatives delegated to
-Euclid; proposal is source_unverified until independently re-retrieved, not a
+Breadth: bounded primary-source PatchTST/TSMixer alternatives were delegated to
+Euclid; original proposal was source_unverified until the reread above, not a
 training queue or allocation. Depth: fresh prospective original-TCN observation,
 not reusing seen evaluation as an independent sample. NEXT native per-session
 original-model adapter proceeds without GPU/refits; original9de27944... retained.
@@ -50,7 +68,8 @@ data/runtime qualification. Analysis-only four-name seal extension preserves
 the old book and broker rules.631 changed serial/448 external/full clean8:
 14950pass22skip35warnings361.18s/Ruff/three sample-env Compose passed.
 Explicit session-close EXIT source32adf795... is released55 checks and a separate
-decision class; Goal47 prepared finite04:50KST job, actual exit not observed.
+decision class; Goal47 actual full EXIT and current owned-flat now linked in
+runtime closure119c108b...; this does not establish model profit or net PnL.
 
 Goal46 actual stock Paper execution COMPLETE/closure28c5038b.../r3c496c9e0...:
 original tcn20 target0.01/confidence0/clocks/expiry20UTC unchanged; exact BUY

@@ -2,6 +2,30 @@
 
 ## Current Owned Opportunities And Research
 
+Goal51 COMPLETE at
+D:/thericher-v2/model-artifacts/execution/kis-stock-repeatable-native-paper-preparation-v1:
+closure4471ec24.../verification0904fc67... . Exact f78 Data attempt is CLOSED
+partial219.246s/95 of128/18576 rows/1token192GET attempts191parsed/rate_limited1,
+worker3dafa26e.../returned55b1c90e... . Keep original invocation/cache immutable;
+next_due20:05:47UTC passed and remainder33 source prep owns separate scope.
+Original-model CPU contractc5d22f72.../decision72914719.../parentce0c9d17...
+under native/9cdea08758534d0f9169fb7a232b1309 completed27.436s<120,
+42 eligible scores/0fits/CUDA/account/broker/reaped/absent/source matched.
+Actual model completion20:08:23UTC Oct9, next OPEN Oct12 13:30UTC/CLOSE20UTC.
+Existing frozen native caller is one-shot; NEVER rerun its started appointment.
+Typed readback never refits or re-infers. Lifecycle handoff49098b43... derives
+requests/policy/EXIT19:50 from retained decision; no new writer/order/schedule
+installed. Current NAS reference support is not primary/PIT/broker eligibility;
+raw/actions/total-return/finality limits remain. All canonical consumers need
+coherent compatible delivery before multi-symbol writes, not human approval.
+91 session/154 serial/145 released external/32 independent/full clean8:
+15128pass22skip35warnings339.05s/Ruff/three explicit sample-env Compose pass.
+Original failures, old job identities and failed weekly serial diagnostic remain.
+NEXT: finite Patch20/60 comparison after frozen input/control/source contract;
+source-only preparation is not an actual GPU appointment or closed market study.
+
+### Closed Goal50
+
 Goal50 native COMPLETE at
 D:/thericher-v2/model-artifacts/research/kis-stock-temporal-memory-development-v1:
 precommit7c3128a3.../bounded-closure83db6e20.../custodyece4ce31... .
@@ -18,7 +42,7 @@ Post-close Data handoff is under
 D:/thericher-v2/model-artifacts/data/kis-current-pooled-equity-refresh-next-session-v1/
 post-close-handoff-v1.json/67e230e1... . Parent may use owned native caller only
 after Oct9 20UTC with exact f78 contract; caller return after publication and
-strict bound offline reader own actual result evidence. No collection yet.
+strict bound offline reader own actual result evidence. Actual result is above.
 Existing finite04:50KST EXIT is separate; never manually invoke or substitute.
 
 Goal49 source preparation COMPLETE/closure9296cf75...; no new native order/schedule.
@@ -57,7 +81,16 @@ Installed finite thericher-kis-paper-stock-owned-exit-20261010 task owns
 preparation evidence only, not a submit/fill or scheduler-origin proof.
 Never manually start or substitute this identity. Fresh decision is explicit
 session-close, not model profit; retry retains its persisted SELL unchanged.
-Actual EXIT fill/current owned-flat and fees/settlement/net PnL not_observed.
+Actual runtime closure119c108b... at that root/actual-runtime-closure.json:
+exact job/started/outcomefc5fe442.../0662b7ae... validates19:50:01..19:50:56UTC,
+1token27GET1SELL/full linked fill/current owned-flat. Later3fb1ef48.../
+039dd4cf... validates19:55:02..19:55:17UTC/1token10GET0orders/current owned-flat.
+Finite task Ready/last04:59:01KST/no next run/no active marker after expiry.
+Never infer a fresh reconciliation from token-not-due or Task exit0. Read exact
+scoped receipts with the unchanged dispatch projection and job/source/time
+bindings. Marker-present assumed-honest-host provenance is not cryptographic
+Scheduler-origin proof; Operational logging disabled. Fees/settled cash/net PnL
+remain not_observed. Preparation closure and old source/job stay immutable.
 Sourcecffa21b pushed.986 serial/120 external/final clean8:14939pass22skip/
 35warnings355.54s/Ruff/three sample-env Compose. Independent scoped P2s fixed,
 original failing receipts retained. Weekly serial diagnostic at

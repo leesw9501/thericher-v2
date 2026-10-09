@@ -8,6 +8,16 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal51 COMPLETE/closure4471ec24.../native decision72914719... . Actual fresh
+input -> original model -> typed session -> lifecycle handoff49098b43... is
+prepared for Oct12 official13:30..20UTC/EXIT19:50, with derived retained request
+identity and original .01/.10. No hand-edited dates/symbol/source clocks or new
+bank/order/schedule. Source137c27c0.../factory0b4d5eb5.../trimce539ddd... released;
+145 combined external checks pass. Coherent multi-symbol delivery remains next
+ready Execution package, not an operator approval or model-profit gate.
+Goal47 exact BUY/EXIT cycle full-filled/current-owned-flat is recorded below;
+old singleton job/image/history remain immutable and finite opportunity expired.
+
 Goal50 actual research completed83db6e20.../9CUDAfits48cells, no account/order/
 private bank operations or model replacement. NEXT native session preparation
 reuses original TCN20, exact original10% bank and .01 total-basis target.
@@ -15,8 +25,8 @@ Source proposal414fdfab.../clarification46213a.../review6840f746.../route note
 6e6b66e2... under A/execution/kis-stock-repeatable-native-paper-preparation-v1.
 Route-constrained selection must be explicit and prebound, not venue inferred
 from a symbol or successful quote. Compatible multi-owner consumers must be
-delivered together before a second-symbol write. Tonight's pinned Goal47 parser
-still rejects multi-symbol banks; leave its exact job untouched while active.
+delivered together before a second-symbol write. Closed Goal47 parser still
+rejects multi-symbol banks; preserve it and deliver a fresh compatible derivative.
 No new native session/order/delivery/schedule is claimed by this proposal.
 
 Goal49 source preparation COMPLETE/closure9296cf75...: retained-stock V4 compatibility
@@ -35,8 +45,16 @@ owner/instrument. Cash-free SELL reads never require buying power; exact
 broker/owned quantity, bid, complete orders, expiry and two locks remain.
 Finite job2a5135f3.../image93b769b5... installed04:50..05:00KST Oct10,
 same request model-stock-exit-20261009-v1/1min/IgnoreNew/PT4M; no manual run.
-Actual EXIT submit/fill/current owned-flat not_observed. Preserve unknown
-identity if it occurs; no substitute request, reprice or adopted inventory.
+Actual runtime closure119c108b.../actual-runtime-closure.json: exact
+job/started/outcomefc5fe442... validates19:50:01..19:50:56UTC/1token27GET/
+1SELL/full linked fill/current owned-flat. Later3fb1ef48... validates19:55
+reconciliation/1token10GET0orders/current owned-flat again. No fees/settled
+cash/net PnL observation. Token-not-due recovery does not erase the retained
+fill or prove a new current state. Finite task has no next run or active marker
+after expiry; no schedule expansion/manual run/identity replacement. Honest-host
+marker/time/hash provenance is not cryptographic Scheduler-origin evidence;
+Operational logging remains disabled. Preserve unknown identity if it occurs;
+no substitute request, reprice or adopted inventory.
 Four unchanged shared modules retain SPY/router compatibility; one stock image
 only.986 serial/120 external/14939pass22skip35warnings355.54s/eight clean/
 Ruff/three Compose. Source-only independent checks exclude actual behavior.

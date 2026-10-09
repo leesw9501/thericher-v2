@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import ast
 import builtins
+import hashlib
+import json
 import os
 import socket
 import urllib.request
@@ -550,3 +552,268 @@ def test_prepared_constructor_revalidates_model_and_all_envelope_scope_bindings(
         envelope = replace(envelope, observed_at_by_key=clocks)
     with pytest.raises(ValueError):
         replace(result, envelope=envelope)
+
+
+def bound_route_envelope(case, *, supported=KEYS[:125], unsupported=()):
+    original, _ = case
+    categories = {
+        key: (
+            k.RouteCategory.SUPPORTED
+            if key in supported
+            else k.RouteCategory.UNSUPPORTED
+            if key in unsupported
+            else k.RouteCategory.UNVERIFIED
+        )
+        for key in KEYS
+    }
+    instruments = {
+        key: replace(instrument, exchange="NASD" if key in supported else None)
+        for key, instrument in original.instruments.items()
+    }
+    pins = {"official-reference": "sha256:" + "e" * 64, "matching-receipt": "sha256:" + "f" * 64}
+    observed = original.as_of - timedelta(seconds=1)
+    return replace(
+        original,
+        instruments=instruments,
+        instrument_map_sha256=k.instrument_map_sha256(instruments),
+        route_categories=categories,
+        route_source_pins=pins,
+        route_observed_at=observed,
+        route_map_sha256=k.route_map_sha256(instruments, categories, pins, observed),
+    )
+
+
+def test_legacy_binding_bytes_and_declared_only_scope_are_preserved(case):
+    envelope, _ = case
+    payload = dict(
+        calendar=envelope.calendar_sha256,
+        instrument_map=envelope.instrument_map_sha256,
+        input_manifest=envelope.input_manifest_sha256,
+        model=envelope.model_sha256,
+        cohort=k.COHORT_SHA256,
+        arm=k.ARM,
+        anchor=envelope.input_anchor_date.isoformat(),
+        as_of=envelope.as_of.isoformat(),
+        observations=[
+            [key, observed.isoformat() if observed is not None else None]
+            for key, observed in sorted(envelope.observed_at_by_key.items())
+        ],
+        references=vars(envelope.references),
+    )
+    raw = json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
+    assert envelope.binding_sha256 == "sha256:" + hashlib.sha256(raw).hexdigest()
+    result = decide(case)
+    assert result.route_map_sha256 is None
+    assert result.safe_facts()["selection_scope"] == "legacy_declared_only_unrestricted_rank1"
+    assert result.safe_facts()["route_support_grade"] == "legacy_declared_only"
+    assert result.safe_facts()["route_supported_eligible_count"] == 0
+
+
+def test_route125_unknown3_keeps_all_features_and_scores_unchanged(case):
+    baseline = decide(case, scorer=lambda batch: {key: i / 128 for i, key in enumerate(batch.keys)})
+    envelope = bound_route_envelope(case)
+    received = []
+
+    def scorer(batch):
+        received.append(batch)
+        return {key: i / 128 for i, key in enumerate(batch.keys)}
+
+    result = decide(case, envelope=envelope, scorer=scorer)
+    assert result.status == "prepared"
+    assert received[0].keys == KEYS and len(result.scores) == 128
+    assert result.feature_seal == baseline.feature_seal and result.scores == baseline.scores
+    assert baseline.selected_key == KEYS[-1] and result.selected_key == KEYS[124]
+    assert all(envelope.instruments[key].exchange is None for key in KEYS[125:])
+    facts = result.safe_facts()
+    assert facts["selection_scope"] == "kis_nasd_reference_constrained_rank1"
+    assert facts["route_support_grade"] == "current_kis_reference_not_primary_or_PIT"
+    assert facts["route_supported_eligible_count"] == 125
+    assert facts["primary_listing_attested"] is facts["broker_eligibility_attested"] is False
+    assert result.route_map_sha256 == envelope.route_map_sha256
+
+
+def test_unsupported_top_score_and_unknown_peers_do_not_stop_one_supported_route(case):
+    envelope = bound_route_envelope(case, supported=(KEYS[3],), unsupported=(KEYS[0],))
+    result = decide(
+        case,
+        envelope=envelope,
+        scorer=lambda batch: {key: 1.0 if key == KEYS[0] else 0.5 for key in batch.keys},
+    )
+    assert result.status == "prepared" and result.selected_key == KEYS[3]
+    assert len(result.feature_seal.rows) == len(result.scores) == 128
+    assert envelope.instruments[KEYS[0]].exchange is None
+    assert result.proposal.target_exposure == D(".01") and result.proposal.confidence == 0
+    assert result.safe_facts()["route_supported_eligible_count"] == 1
+
+
+def test_supported_lexical_tie_and_original_fewer10_rule(case):
+    envelope = bound_route_envelope(case, supported=(KEYS[8], KEYS[3]))
+    assert decide(case, envelope=envelope).selected_key == KEYS[3]
+    _, bars = case
+    result = decide(
+        case,
+        envelope=envelope,
+        source=lambda key, day: bars[key, day] if key in KEYS[:9] else None,
+        scorer=lambda batch: pytest.fail("too_few_original_cohort"),
+    )
+    assert result.reason == k.Reason.FEWER
+
+
+@pytest.mark.parametrize("unsupported", [(), KEYS])
+def test_no_supported_routes_is_local_no_intent_with_full_cached_scores(case, unsupported):
+    envelope = bound_route_envelope(case, supported=(), unsupported=unsupported)
+    result = decide(case, envelope=envelope)
+    assert result.reason == k.Reason.NO_ROUTE and result.status == "no_intent"
+    assert len(result.scores) == len(result.feature_seal.rows) == 128
+    assert result.proposal is result.receipt is result.selected_key is None
+    assert (
+        decide(case, envelope=bound_route_envelope(case, supported=(KEYS[7],))).status == "prepared"
+    )
+
+
+def test_supported_but_missing_context_does_not_fallback_to_unverified_peer(case):
+    envelope = bound_route_envelope(case, supported=(KEYS[0],))
+    _, bars = case
+    result = decide(
+        case,
+        envelope=envelope,
+        source=lambda key, day: None if key == KEYS[0] else bars[key, day],
+    )
+    assert result.reason == k.Reason.NO_ROUTE and len(result.scores) == 127
+
+
+def test_route_maps_and_pins_detach_from_caller_and_scorer_aliases(case):
+    envelope = bound_route_envelope(case)
+    categories, pins = dict(envelope.route_categories), dict(envelope.route_source_pins)
+    owned = replace(envelope, route_categories=categories, route_source_pins=pins)
+
+    def scorer(batch):
+        categories.clear()
+        pins.clear()
+        return dict.fromkeys(batch.keys, 0.5)
+
+    result = decide(case, envelope=owned, scorer=scorer)
+    assert result.status == "prepared" and result.selected_key == KEYS[0]
+    assert len(owned.route_categories) == 128 and len(owned.route_source_pins) == 2
+    with pytest.raises(TypeError):
+        owned.route_categories[KEYS[0]] = k.RouteCategory.UNVERIFIED
+
+
+@pytest.mark.parametrize("fault", ["hash", "source_pin", "future_clock", "category", "exchange"])
+def test_route_scope_faults_stop_before_source_or_scorer(case, fault):
+    envelope = bound_route_envelope(case)
+    if fault == "hash":
+        changed = replace(envelope, route_map_sha256="sha256:" + "a" * 64)
+    elif fault == "source_pin":
+        changed = replace(envelope, route_source_pins={"official-reference": "sha256:" + "a" * 64})
+    elif fault == "future_clock":
+        clock = envelope.as_of + timedelta(microseconds=1)
+        changed = replace(
+            envelope,
+            route_observed_at=clock,
+            route_map_sha256=k.route_map_sha256(
+                envelope.instruments, envelope.route_categories, envelope.route_source_pins, clock
+            ),
+        )
+    elif fault == "category":
+        categories = dict(envelope.route_categories)
+        categories[KEYS[0]] = k.RouteCategory.UNVERIFIED
+        changed = replace(envelope, route_categories=categories)
+    else:
+        instruments = dict(envelope.instruments)
+        instruments[KEYS[0]] = replace(instruments[KEYS[0]], exchange=None)
+        changed = replace(
+            envelope,
+            instruments=instruments,
+            instrument_map_sha256=k.instrument_map_sha256(instruments),
+        )
+    result = decide(
+        case,
+        envelope=changed,
+        source=lambda *args: pytest.fail("invalid_route_source"),
+        scorer=lambda batch: pytest.fail("invalid_route_scorer"),
+    )
+    assert result.status == "no_intent"
+
+
+@pytest.mark.parametrize(
+    "field", ["route_categories", "route_source_pins", "route_observed_at", "route_map_sha256"]
+)
+def test_partial_route_contract_cannot_downgrade_to_legacy(case, field):
+    envelope = bound_route_envelope(case)
+    with pytest.raises(ValueError):
+        replace(envelope, **{field: None})
+
+
+def test_null_exchange_without_bound_route_metadata_is_not_a_legacy_nasd_claim(case):
+    envelope, _ = case
+    instruments = {
+        key: replace(value, exchange=None) for key, value in envelope.instruments.items()
+    }
+    envelope = replace(
+        envelope,
+        instruments=instruments,
+        instrument_map_sha256=k.instrument_map_sha256(instruments),
+    )
+    assert decide(case, envelope=envelope).status == "no_intent"
+
+
+def test_prepared_result_rejects_internally_consistent_rebound_route_map(case):
+    envelope = bound_route_envelope(case)
+    result = decide(case, envelope=envelope)
+    altered = bound_route_envelope(case, supported=KEYS[:124])
+    assert altered.route_map_sha256 != result.route_map_sha256
+    with pytest.raises(ValueError):
+        replace(result, envelope=altered)
+    with pytest.raises(ValueError):
+        replace(result, route_map_sha256="sha256:" + "a" * 64)
+
+
+def test_scorer_cannot_swap_valid_route_map_and_hash_after_prebinding(case):
+    envelope = bound_route_envelope(case)
+    altered = bound_route_envelope(case, supported=(KEYS[7],))
+
+    def scorer(batch):
+        for field in (
+            "instruments",
+            "instrument_map_sha256",
+            "route_categories",
+            "route_map_sha256",
+        ):
+            object.__setattr__(envelope, field, getattr(altered, field))
+        return dict.fromkeys(batch.keys, 0.5)
+
+    result = decide(case, envelope=envelope, scorer=scorer)
+    assert result.status == "no_intent" and result.reason == k.Reason.CONTRACT
+
+
+def test_two_route_bound_sessions_have_distinct_supported_choices_and_original_clocks(case):
+    first = decide(case, envelope=bound_route_envelope(case, supported=(KEYS[2],)))
+    retained = (first.proposal, first.receipt, first.route_map_sha256)
+    later_case = make_case(date(2026, 11, 27))
+    second = decide(later_case, envelope=bound_route_envelope(later_case, supported=(KEYS[9],)))
+    assert first.status == second.status == "prepared"
+    assert first.selected_key == KEYS[2] and second.selected_key == KEYS[9]
+    assert second.proposal.valid_until == datetime(2026, 11, 27, 18, tzinfo=UTC)
+    assert first.proposal.decided_at == first.model_completed_at > first.envelope.as_of
+    assert second.proposal.decided_at == second.model_completed_at > second.envelope.as_of
+    assert first.route_map_sha256 != second.route_map_sha256
+    assert first.receipt.proposal_ref != second.receipt.proposal_ref
+    assert first.envelope.model_sha256 == second.envelope.model_sha256 == k.MODEL_SHA256
+    assert retained == (first.proposal, first.receipt, first.route_map_sha256)
+
+
+def test_route_hash_requires_complete_keys_and_exact_supported_category(case):
+    envelope = bound_route_envelope(case)
+    categories = dict(envelope.route_categories)
+    categories.pop(KEYS[0])
+    with pytest.raises(ValueError):
+        k.route_map_sha256(
+            envelope.instruments, categories, envelope.route_source_pins, envelope.route_observed_at
+        )
+    categories = dict(envelope.route_categories)
+    categories[KEYS[0]] = "primary_listing_verified"
+    with pytest.raises(ValueError):
+        k.route_map_sha256(
+            envelope.instruments, categories, envelope.route_source_pins, envelope.route_observed_at
+        )
