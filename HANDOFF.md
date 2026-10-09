@@ -20,11 +20,27 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal44 kis-stock-readonly-preparation-v1: target-bound NASDAQ stock
-account/quote/exact-limit funds shadow, no order/private intent/reservation.
-Data owns stock quote scope; Execution owns client integration; independent
-review and parent native readback are disjoint. Preserve tonight's image/job,
-original shared10% basis and existing owners; no invisible stock sidecar.
+Goal44 COMPLETE; NEXT owns Goal45 kis-stock-shared-budget-integration-v1.
+Exact R2 root A/execution/kis-stock-readonly-preparation-v1/r2:
+job8246f852.../outcome-c5716712b65a4d789bfdb69a61f0699e.json/37144191... .
+Actual13:21:41..52UTC/11.991s/1token8GET: account available/3 positions/0 open,
+exact target fresh tick input and exact-limit funds observed. Target position/
+open order absent; original shared10% binding present and unchanged. Capacity,
+fees/settled cash/net PnL remain not_observed. Zero order/cancel/intent/private
+writes/owner/reservation/new capital;437 source/3 input and40 private files
+unchanged; child reaped/invocation absent. Selective Paper config via stdin,
+virtual host only; no live read. Exact hash audit passed. Honest-host source/
+mount evidence, not independent broker/account attestation or order readiness.
+Stock scope2203fae4.../client8edb8364... leave fixed ETF APIs and tonight's
+host credential loaderc07983f6... unchanged. Fresh R2 caller66a5ef40... repairs
+reviewed cleanup/complete-status P2s; source bd2bbfbb.../35+1 tests has no
+remaining scoped P1/P2, not actual readback review. Original frozen unused job/
+failed source falsifiers preserved. Parent630pass1.76s/Ruff/three sample-env
+Compose; fresh clean8 authority14345pass22skip35warnings340.47s/reaped/clean,
+prior14344pass superseded by exception-chain repair. No GPU/refit/collection/
+schedule or tonight job change.
+Next material package: canonical stock owner/shared-cap compatibility and
+whole-share sizing under original bank, not a sidecar or profitability gate.
 
 Goal43 CLOSED at A/execution/kis-stock-model-decision-preparation-v1/r3:
 contract56e0f2ae.../outcomeef5a39ad.../proposalce026452.../receipt308bb0f0.../

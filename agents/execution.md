@@ -44,7 +44,18 @@ price, quantity, new bank or OrderIntent. Constructor replay exact; fresh
 adapter0824820a... requires all128 NASD, reader7c41036f... matches verify schema.
 Independent53bb3c64... source/synthetic only;167 parent tests passed. Original
 failed reader/callers/falsifiers retained, not called passing or overwritten.
-Goal44 target-bound read-only account/quote/funds shadow; preserve tonight owner.
+Goal44 native target-bound shadow COMPLETE/R2job8246f852.../
+outcome37144191.../11.991s/1token8GET/3positions0open/exact target absent,
+fresh tick and exact-limit funds observed. Original binding unchanged; capacity
+not_observed because no all-owner replay. Zero orders/cancel/private writes/
+intent/owner/reservation;437sources/3inputs/40privatefiles unchanged/reaped/absent.
+Client8edb8364... suppresses raw transport cause and binds both quote paths
+before wire; loaderc07983f6... unchanged. Independentbd2bbfbb...35+1 source
+checks closes reviewed P2s, not actual attestation. Parent630pass/Ruff/Compose;
+fresh clean8 authority14345pass22skip35warnings340.47s/reaped/clean.
+Original unused job/failing checks preserved; NEXT owns Goal45 canonical stock.
+Next: stock owner in existing canonical shared budget, exact whole-share sizing
+and every reader's reservation visibility; install nothing until compatible.
 Existing execute=False canary writes intent and StateStore.read creates locks:
 use strict frozen-byte parsers/RO private mount, not either path for shadow.
 Arbitrary stock owner/reservations aren't represented by old shared consumers.

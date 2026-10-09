@@ -34,8 +34,15 @@ is score/lexical; don't conflate them. Actual r3/56e0f2ae.../ef5a39ad... reads
 Original targets contain exchange, not market: exact05f61216... contract binds
 45dedce0... target-document, all128 NAS -> US/NASD. No source correction/PIT
 claim/provider call. Failed used sources remain immutable; fresh repairs only.
-Goal44 ready: explicit stock quote request/venue scope without weakening old
-fixed ETF builders; account/funds belong to Execution. No order or reservation.
+Goal44 actual stock read-only shadow COMPLETE: R2job8246f852.../
+outcome37144191.../11.991s/1token8GET/fresh target tick+exact-limit funds;
+437sources/3inputs/40 private files unchanged/reaped/absent/0 orders/writes.
+Quote scope2203fae4... explicitly binds symbol+ref and NAS/NASD; fixed ETF
+builders unchanged. Official lookup7c8e6554... pins seven source bytes at
+KISd8c7f793...: NAS quote/TRIDs and NASD/demo funds confirmed; quote timezone
+and paper availability not explicitly stated. Actual one-target response is
+capability evidence, not blanket endpoint/venue/history/finality qualification.
+Next source package is pure shared-owner instrument scope, not collection.
 
 Goal38 source-local probe COMPLETE: source runtime-r2/contractf897b5e5...,
 A/data/kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/

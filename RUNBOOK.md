@@ -2,6 +2,25 @@
 
 ## Current Owned Opportunities And Research
 
+Goal44 native read-only stock shadow COMPLETE at
+D:/thericher-v2/model-artifacts/execution/kis-stock-readonly-preparation-v1/r2:
+job8246f852.../outcome-c5716712b65a4d789bfdb69a61f0699e.json/37144191... .
+Actual13:21:41..52UTC/11.991s/1token8GET/account available/3positions0open/
+target absent/fresh tick/exact-limit funds. Original shared10% binding unchanged;
+capacity/fees/settled cash/net PnL not_observed. Zero orders/cancel/intents/
+private writes/new owners/reservations/capital. Exact437 source/3 inputs/40
+private files unchanged/child reaped/invocation absent. Selective Paper-only
+config on stdin; raw values never retained. Honest-host source/mount evidence,
+not independent runtime/broker attestation or automatic submission permission.
+Scope2203fae4.../client8edb8364.../R2caller66a5ef40.../worker5da0dbd4... .
+Loaderc07983f6... and tonight image/job unchanged; source reviewbd2bbfbb.../
+35+1 tests excludes actual readback. Original unused job/failing checks retained.
+Parent630pass1.76s/Ruff/three sample-env Compose; final clean8 authority
+14345pass22skip35warnings340.47s/reaped/clean. Do not rerun closed native
+readback for documentation. NEXT owns Goal45 canonical shared stock integration.
+Next technical work is canonical stock-owner/shared-cap and whole-share sizing;
+no invisible sidecar or second10% bank. No stock order/schedule installed here.
+
 Goal43 CLOSED at D:/thericher-v2/model-artifacts/execution/
 kis-stock-model-decision-preparation-v1/r3:56e0f2ae.../ef5a39ad.../
 proposalce026452.../receipt308bb0f0.../verification9f1928bb... . Pure-host
@@ -13,8 +32,7 @@ scientific promotion. Fresh reader7c41036f.../adapter0824820a... fix producer
 schema/all128 NASD; new readback4a35a8ea... maps exact NAS metadata, no market
 field inference. Failed attempts/used code/falsifiers immutable. Independent
 53bb3c64... source/synthetic only;167pass.66s/Ruff/three sample-env Compose.
-No shared source/runtime change or full CI rerun. NEXT owns Goal44 scoped
-stock read-only shadow; no owner/private intent/reservation/task substitution.
+No shared source/runtime change or full CI rerun for Goal43; Goal44 is above.
 
 Goal42 CLOSED/rejected at D:/thericher-v2/model-artifacts/research/
 kis-stock-chronos2-group-open-development-v1:6f6952c0.../445sources7inputs/

@@ -5,16 +5,16 @@ History remains in Git and immutable external evidence.
 
 ## Current Ready / Owned / Due (2026-10-09 KST)
 
-No company block or foreground sleep.
+No company block or foreground sleep. Goal44 COMPLETE; Goal45 ready.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Integration | Parent | Goal43 CLOSED/r3 56e0f2ae.../ef5a39ad.../0.730s/exact typed replay; Goal44 target-bound stock read-only shadow ready. |
-| GPU | Steward / idle | Chronos104 calls/6678 sequences/6.375s wall completed; no frozen fit or environment/permission block. |
-| Data | Copernicus | Reader7c41036f.../75 tests released; explicit NAS stock quote scope next. |
-| Execution | James | Adapter0824820a.../71 tests released; client shadow next, no private reservation. |
-| Review | Euclid | Fresh53bb3c64.../15 cases corrected two P2s; source-only, not actual attestation. |
-| Verification | Parent | Goal43 focused167pass.66s/Ruff/three sample-env Compose; shared14167pass22skip unchanged. |
+| Integration | Parent | Stock RO actual8246f852.../37144191.../11.991s/1token8GET/0 orders; canonical shared-stock budget and sizing next. |
+| GPU | Steward / idle | Prior Chronos CUDA inference done; no frozen fit/environment/permission block. Current execution integration needs no GPU. |
+| Data | Copernicus | Stock scope2203fae4... and official lookup7c8e6554... released; pure owner binding/replay next. |
+| Execution | James | Client8edb8364... released; canonical schema and all shared-cap readers next. |
+| Review | Euclid | R2bd2bbfbb.../35+1 checks, scoped P2 repairs verified; actual readback parent-owned. |
+| Verification | Parent | Final630 focused +14345pass22skip35warnings/340.47s/clean8/reaped/Ruff/three sample-env Compose. |
 | Paper | Scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb...; original basis/custody; future fills not_observed. |
 | Follow-up | Chat one-shot | Oct9 23:05KST exact same job, no chain/expansion. |
 | Head | Data scheduler | Oct9 15:29UTC owned; no manual invoke. |
@@ -22,14 +22,17 @@ No company block or foreground sleep.
 
 ## Bottleneck And Reversible Improvement
 
-Model-to-typed-target interface works. Next: stock quote/funds and durable
-shared-owner compatibility, not profit/PIT approval. Keep fixed ETF APIs;
-consumer-scoped opt-in first, no invisible stock reservation or second bank.
-Tonight's original writer cannot see a sidecar: integrate every shared-cap
-reader coherently before installing any stock reservation.
+Actual stock account/quote/exact-limit funds work; capacity stays not_observed
+until original all-owner budget replay. Canonical ownership still admits only
+four ETFs; add stock once to the existing ledger and every competing consumer,
+not an invisible sidecar/new bank. Whole-share sizing uses total-basis target,
+not a fraction of the 10% allocation. This is technical, not profit/PIT approval.
 
-Use producer-derived run/verify fixtures: manufactured top-level verify fields
-hid a real schema mismatch. Failed no-order attempts are preserved; fresh
-reader/adapter/R3 and independent falsifiers fix them. No new gate, report
-family, scheduler or full-suite run for external/docs-only steps. Claude
-unchanged failure remains review_unavailable/non-verdict, not agreement.
+Keep tonight's pinned host loader kis_readonly.py c07983f6... byte-identical.
+Do not install new owner/schema while old baked writer can run. Source/synthetic
+preparation proceeds in parallel without modifying its job/image/opportunity.
+
+Original unused frozen job and source-falsifier failures retained. Fresh R2
+cleanup independently reaps/checks absence; uncertain custody cannot be complete.
+Final shared authority followed source repair; no extra full run for these docs.
+Claude unchanged failure stays review_unavailable/non-verdict, not agreement.
