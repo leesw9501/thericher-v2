@@ -24,6 +24,9 @@ from .kis_paper_canary import (
     KisPaperCanaryReconciliation,
     KisPaperCanaryState,
     UrllibKisPaperCanaryTransport,
+    _redacted_open_order_reference,
+    _safe_reconciliation_reason_code,
+    _unavailable_reconciliation,
 )
 from .kis_paper_quote import (
     KIS_PAPER_US_SPY_ASKING_PRICE_PATH,
@@ -32,6 +35,7 @@ from .kis_paper_quote import (
 )
 from .kis_paper_stock_quote import KisPaperStockInstrument, validate_kis_paper_stock_quote_request
 from .kis_paper_stock_readonly import (
+    KisPaperStockExitReads,
     KisPaperStockPreviewReads,
     KisPaperStockReadOnlyClient,
     _instrument,
@@ -223,6 +227,24 @@ class KisPaperStockCanaryClient(KisPaperCanaryClient):
         finally:
             self._access_token = reader._access_token
 
+    def stock_exit_snapshot(
+        self,
+        *,
+        expected_account_ref: str,
+        clock: Callable[[], datetime] = lambda: datetime.now(UTC),
+    ) -> KisPaperStockExitReads:
+        reader = KisPaperStockReadOnlyClient(
+            config=self._config, transport=self._transport, access_token=self._access_token
+        )
+        try:
+            return reader.stock_exit_snapshot(
+                instrument=self.instrument, expected_account_ref=expected_account_ref, clock=clock
+            )
+        except KisPaperReadOnlyError as error:
+            raise KisPaperReadOnlyError(error.code) from None
+        finally:
+            self._access_token = reader._access_token
+
     def reconcile(
         self,
         state: KisPaperCanaryState,
@@ -232,7 +254,102 @@ class KisPaperStockCanaryClient(KisPaperCanaryClient):
         if type(state) is not KisPaperCanaryState:
             raise KisPaperCanaryError("stock_state_invalid")
         self._require_intent(state.intent)
-        return super().reconcile(state, now=now)
+        if state.intent.side == "buy":
+            return super().reconcile(state, now=now)
+        if KisPaperCanaryState.from_dict(state.to_dict()) != state:
+            raise KisPaperCanaryError("stock_state_invalid")
+        from .kis_paper_spy_fill_cycle import _digest
+
+        reader = KisPaperStockReadOnlyClient(
+            config=self._config, transport=self._transport, access_token=self._access_token
+        )
+        try:
+            snapshot = reader.stock_exit_account_snapshot(
+                instrument=self.instrument,
+                expected_account_ref=_digest(
+                    [
+                        self._config.base_url,
+                        self._config.account_number,
+                        self._config.account_product_code,
+                    ]
+                ),
+            )
+            order_at = state.submission_started_at or state.submitted_at
+            execution = (
+                None
+                if state.broker_order_id is None or order_at is None
+                else reader.observe_order_execution(
+                    state.broker_order_id,
+                    order_at=order_at,
+                    observed_at=now,
+                    symbol=state.intent.symbol,
+                    exchange=state.intent.exchange,
+                    side=state.intent.side,
+                    quantity=state.intent.quantity,
+                )
+            )
+            recovered_id = (
+                None
+                if state.phase != "outcome_unknown" or state.broker_order_id is not None
+                else reader._find_unique_exact_open_order_id(
+                    symbol=state.intent.symbol,
+                    exchange=state.intent.exchange,
+                    side=state.intent.side,
+                    quantity=state.intent.quantity,
+                    limit_price=state.intent.limit_price,
+                )
+            )
+            idless = (
+                reader.inspect_idless_order_history(
+                    order_at=order_at,
+                    symbol=state.intent.symbol,
+                    exchange=state.intent.exchange,
+                    side=state.intent.side,
+                    quantity=state.intent.quantity,
+                    limit_price=state.intent.limit_price,
+                )
+                if state.phase == "outcome_unknown"
+                and state.broker_order_id is None
+                and order_at is not None
+                and recovered_id is None
+                else None
+            )
+        except (KisPaperCanaryError, KisPaperReadOnlyError) as error:
+            return _unavailable_reconciliation(reason_code=_safe_reconciliation_reason_code(error))
+        finally:
+            self._access_token = reader._access_token
+        reference = (
+            None
+            if state.broker_order_id is None
+            else _redacted_open_order_reference(state.broker_order_id)
+        )
+        matching_open = bool(
+            reference
+            and any(order.order_reference == reference for order in snapshot.open_orders.orders)
+        )
+        matching_ccnl = bool(execution and execution.same_day_order_id_seen)
+        clean = (
+            state.phase in {"intent_recorded", "rejected"}
+            or (
+                state.phase == "cancelled"
+                and execution is not None
+                and not matching_open
+                and not matching_ccnl
+            )
+            or matching_open
+            or matching_ccnl
+        )
+        return KisPaperCanaryReconciliation(
+            snapshot=snapshot,
+            account_status="available",
+            ccnl_row_count=0 if execution is None else execution.row_count,
+            matching_open_order=matching_open,
+            matching_ccnl=matching_ccnl,
+            status="clean" if clean else "unresolved",
+            recovered_broker_order_id=recovered_id,
+            execution=execution,
+            idless_history=idless,
+        )
 
     def submit_limit(
         self,

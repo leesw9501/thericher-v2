@@ -1,4 +1,4 @@
-"""Exact, persisted stock BUY through the existing virtual Paper lifecycle.
+"""Exact, persisted stock orders through the existing virtual Paper lifecycle.
 
 No credentials, strategy selection, new budget, replacement identity or CLI.
 The caller supplies independently retained plan pins. Other owners keep their
@@ -45,8 +45,10 @@ class KisPaperStockExecutionBinding:
     plan_ref: str
     run_id: str
     intent_ref: str
+    side: str = "buy"
 
     def __post_init__(self):
+        _check(type(self.side) is str and self.side in {"buy", "sell"}, "stock_side_invalid")
         _check(
             isinstance(self.state_root, Path) and self.state_root.is_absolute(),
             "stock_root_pin_invalid",
@@ -139,7 +141,7 @@ def _scope(root, proof, as_of=None):
     _check(
         seed.intent.fingerprint == proof.intent_ref
         and (seed.intent.symbol, seed.intent.exchange, seed.intent.side)
-        == (proof.instrument.symbol, "NASD", "buy"),
+        == (proof.instrument.symbol, "NASD", proof.side),
         "stock_intent_mismatch",
     )
     _check(
@@ -219,8 +221,13 @@ def _client_account(client, proof):
     return config
 
 
-def _stock_book(snapshot, projection, instrument, config, at):
-    _check(type(snapshot) is KisPaperReadOnlySnapshot, "snapshot_unavailable")
+def _stock_book(snapshot, projection, instrument, config, at, *, exit_only=False):
+    from .kis_paper_stock_readonly import KisPaperStockExitAccountSnapshot
+
+    expected_type = KisPaperStockExitAccountSnapshot if exit_only else KisPaperReadOnlySnapshot
+    _check(type(snapshot) is expected_type, "snapshot_unavailable")
+    if exit_only:
+        _check(replace(snapshot) == snapshot, "snapshot_unavailable")
     _check(
         snapshot.identity.masked_account == config.masked_account_identity
         and snapshot.open_orders.complete is True,
@@ -259,10 +266,10 @@ def _stock_book(snapshot, projection, instrument, config, at):
         and (expected == 0 or positions),
         "stock_target_inventory_mismatch",
     )
-    return _funds(snapshot.cash, snapshot.orderable_funds, at)
+    return None if exit_only else _funds(snapshot.cash, snapshot.orderable_funds, at)
 
 
-def execute_kis_paper_stock_buy(
+def _execute_kis_paper_stock(
     *,
     proof: KisPaperStockExecutionBinding,
     runtime_projection_path: Path,
@@ -276,12 +283,14 @@ def execute_kis_paper_stock_buy(
     execute: bool = False,
     now: datetime | None = None,
     clock: Callable[[], datetime] | None = None,
+    side: str,
 ) -> canary.KisPaperCanaryOutcome | None:
-    """One exact retained BUY; default inert, unknown outcomes never resubmit."""
+    """One exact retained side; unknown outcomes never resubmit."""
     _check(type(execute) is bool, "stock_execute_invalid")
     if not execute:
         return None
     _check(type(proof) is KisPaperStockExecutionBinding, "stock_proof_invalid")
+    _check(proof.side == side, "stock_side_mismatch")
     root = Path(state_root)
     paths = tuple(
         map(
@@ -306,6 +315,66 @@ def execute_kis_paper_stock_buy(
     def permitted(reconciliation, submit_at):
         config = _client_account(client, proof)
         _, _, state, projection = _scope(root, proof, submit_at)
+        if side == "sell":
+            from .kis_paper_stock_plan import _pending
+            from .kis_paper_stock_readonly import KisPaperStockExitReads
+
+            _stock_book(
+                reconciliation.snapshot,
+                projection,
+                proof.instrument,
+                config,
+                submit_at,
+                exit_only=True,
+            )
+            reads = client.stock_exit_snapshot(expected_account_ref=proof.account_ref, clock=at)
+            _check(type(reads) is KisPaperStockExitReads, "snapshot_unavailable")
+            _check(replace(reads) == reads, "snapshot_unavailable")
+            _check(
+                reads.account_ref == proof.account_ref and reads.instrument == proof.instrument,
+                "stock_instrument_mismatch",
+            )
+            checked_at = at()
+            binding, states, retained, current = _scope(root, proof, checked_at)
+            _stock_book(
+                reads.snapshot,
+                current,
+                proof.instrument,
+                _client_account(client, proof),
+                checked_at,
+                exit_only=True,
+            )
+            _fresh((reads.started_at, reads.completed_at, reads.quote.quoted_at), checked_at)
+            from .kis_paper_quote import derive_kis_paper_marketable_limit
+
+            derive_kis_paper_marketable_limit(reads.quote, side="sell", observed_at=checked_at)
+            owner_id = budget._stock_owner_id(proof.instrument.binding_ref)
+            owner = next(o for o, _ in budget._owners(binding) if o.owner_ref == owner_id)
+            _, cancellation_proofs = _replay_scope(binding, states)
+            _check(
+                not any(
+                    ref.run_id != proof.run_id and _pending(states[ref.run_id], cancellation_proofs)
+                    for ref in owner.state_refs
+                ),
+                "stock_owner_pending",
+            )
+            owned = next(s for s in current.stocks_by_owner if s.owner_ref == owner_id)
+            _check(
+                retained.intent == state.intent
+                and retained.phase == "intent_recorded"
+                and retained.intent.quantity <= owned.quantity,
+                "stock_target_inventory_mismatch",
+            )
+            _check(is_us_equity_regular_session_window(checked_at), "outside_regular_session")
+            _check(
+                not canary.EmergencyStore(paths[2]).read().blocks_new_orders,
+                "emergency_stop_new_orders",
+            )
+            _check(
+                not canary.PaperExecutionControlStore(paths[3]).read().pause_sells,
+                "pause_sells_active",
+            )
+            return True
         available = _stock_book(
             reconciliation.snapshot, projection, proof.instrument, config, submit_at
         )
@@ -366,7 +435,11 @@ def execute_kis_paper_stock_buy(
                 now=at(),
             )
             return canary._run_kis_paper_canary(
-                decision=canary.KisPaperCanaryBuyDecision(
+                decision=(
+                    canary.KisPaperCanaryBuyDecision
+                    if side == "buy"
+                    else canary.KisPaperCanarySellDecision
+                )(
                     decision_id=intent.decision_id,
                     symbol=intent.symbol,
                     exchange=intent.exchange,
@@ -395,3 +468,13 @@ def execute_kis_paper_stock_buy(
                 price_contract_ref=intent.price_contract_ref,
                 stock_execution=proof,
             )
+
+
+def execute_kis_paper_stock_buy(**arguments) -> canary.KisPaperCanaryOutcome | None:
+    """Existing exact BUY API; default inert and never accepts a SELL proof."""
+    return _execute_kis_paper_stock(side="buy", **arguments)
+
+
+def execute_kis_paper_stock_sell(**arguments) -> canary.KisPaperCanaryOutcome | None:
+    """Explicit owned SELL API without a cash or buying-power dependency."""
+    return _execute_kis_paper_stock(side="sell", **arguments)

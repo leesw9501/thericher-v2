@@ -1806,7 +1806,9 @@ def _run_kis_paper_canary(
             reconciliation,
             observed_at=observed_at,
         )
-    if reconciliation.snapshot is not None:
+    if reconciliation.snapshot is not None and not (
+        stock_execution is not None and stock_execution.side == "sell"
+    ):
         write_paper_account_snapshot(
             paper_account_snapshot_from_kis_readonly(
                 reconciliation.snapshot,
@@ -2386,6 +2388,10 @@ def _recover_existing_canary(
 
 def _confirmed_zero_fill_cancel(state, reconciliation, *, environment, now) -> bool:
     observation, snapshot = reconciliation.execution, reconciliation.snapshot
+    # Cash-free stock recovery retains an unresolved cancellation rather than
+    # inventing cash fields or entering the legacy credential-loading path.
+    if snapshot is not None and type(snapshot) is not KisPaperReadOnlySnapshot:
+        return False
     if (
         observation is None
         or not observation.cancellation_confirmed
