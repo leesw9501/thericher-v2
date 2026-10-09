@@ -48,7 +48,17 @@ Goal34 Data consumer review has21synthetic tests/no P1-P2: one exact metadata
 preparation/native OLD compact+ordered CURRENT decode, whole input/source
 before/after hashes. No repeated resolve_inputs preparation, calendar graft,
 new quality gate or source qualification. Next: parent integrates/freeze;
-retain all sparse keys and actual observations, profile new load separately.
+retain all sparse keys and actual observations. Goal34 actual data_load212.158s,
+geometry12.803s vs CUDAfits3.775s; load phase is not an isolated IO diagnosis.
+Next input under A/data/kis-current-pooled-equity-retained-history-v1 uses
+same retained overhang, original100 loader unchanged, separate113 Apr29..Oct8
+selector3c2fb886.../35tests/52 later-target geometry. No recollection/graft/
+identity replacement or original scope rewrite. Host compact transport then
+native exact field-string readback, not runtime equivalence or qualification.
+Original materialize5a2e17f1.../39tests metadata freeze failed/calendar_invalid,
+no precommit/output;113 dates/typed clock instants match, ISO strings differ.
+Fresh clockR2 pending; no tolerance/backdating/changed-calendar waiver. All
+original sources/receipts retained; this Data fault does not pause Engine/Paper.
 
 Latest historical engineering-control refresh is actually READY: fixedSPY/AMS,
 TLT/NAS,GLD/AMS,253 dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC.

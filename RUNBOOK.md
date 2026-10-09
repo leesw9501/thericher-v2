@@ -2,6 +2,31 @@
 
 ## Current Owned Opportunities And Research
 
+Goal34 CLOSED/REJECTED at D:/thericher-v2/model-artifacts/research/
+kis-pooled-equity-participation-value-development-v1. Contract80b88afb...,
+parent21ba54a8.../resultf6510e4b.../6fits33cells/worker254.531s/parent259.098s,
+436sources1124inputs unchanged/reaped/absent/GPU lease released. Three CUDA512
+fits3.775s; all four learned screens reject, no profit/Paper/model promotion.
+Native parent-verify.json224a0a14...136.678s and independent-current-only-v1/
+receipt-c025773a94b44e4e86d1f5d231515955.json/bf0b0cb9...134.849s match33cells,
+actions/kills, zero refit/scaler/model inference/tolerance. Shared native Data
+and rank seals, independent Fraction/scalar economics; not model equivalence.
+Custody875233b5... closed/sealed0. All367/549/739 potential TRAIN dates valid;
+reviewed no-context OOF diagnostic defect dormant, future correction only.
+
+NEXT owns zero-fit stock rank-buffer carrying plus exact113-session retained
+input/whole-share fee conservation. Data root D:/thericher-v2/model-artifacts/
+data/kis-current-pooled-equity-retained-history-v1. selector3c2fb886.../35tests
+and materialize5a2e17f1.../39tests released. Original metadata freeze failed
+calendar_invalid/no precommit/output. Exact113 date/open/close instants match;
+ISO strings differ. Fresh materialize_clock_r2.py/precommit-clock-r2.json
+pending; never edit originals or waive changed calendar instants. No KIS call,
+historical graft, source qualification or original100 scope rewrite.
+Latest clean8 authority helper0/35warnings/13830 collected covers2ebc361;
+changedserial271/runtime206/independent66/retained-input74 pass, Ruff/three
+sample-env Compose pass. Duplicate-q suppresses aggregate pass/time display;
+do not rerun only for display or claim an unobserved total/elapsed.
+
 Latest Goal32 COMPLETE, Data-only/runtime/preview evidence, no profitability
 or Paper-input promotion. Exact root:
 D:/thericher-v2/model-artifacts/data/kis-current-pooled-equity-refresh-v1/native-mount-r2.
