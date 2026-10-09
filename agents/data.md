@@ -15,9 +15,12 @@ first three features on survivors. No future target exclusion, source correction
 or new collection. Frozen campaign45c9ca15... uses exact OLD/CURRENT only;
 actual prefix734 dated groups remain target-complete, current52 feature dates
 have62..68 eligible peers. Closed9fits48cells/closure5beadda3... . These are
-seen observations, not PIT or independent qualification. Goal40 Data owns
-pure exact-Fraction midrank labels on complete frozen target groups; same
-cohort/source scope, no collection, future peer filtering or loss deletion.
+seen observations, not PIT or independent qualification. Goal40 ordinal adapter
+00c70f7b.../44 synthetic checks CLOSED with9fits48cells/closure40961c1a...;
+exact Fraction labels/all-tied0/missing whole-date, no future peer filtering.
+Goal41 reuses CURRENT113/two final models for native no-target inference,
+same cohort and conservative actual observation clocks, no collection or PIT
+promotion. Public-source Chronos receipt d7ce7b81... is not a data qualification.
 
 Goal38 source-local probe COMPLETE: source runtime-r2/contractf897b5e5...,
 A/data/kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/

@@ -27,8 +27,12 @@ broker quantity adjustment or trustworthy raw-gap PnL. Goal39 liquid-cohort TCN
 campaign CLOSED/45c9ca15.../28a6c6e2.../5beadda3.../48cells9fits:
 all books flat, no missing marks, exact stock/day/fees; six actual CUDA fits.
 Same-native cached48 replay, not independent broker parity or owned net PnL.
-Goal40 ordinal development reuses exact analytical book and fixed10% exposure,
-not a broker budget, new permission or tonight's input substitution.
+Goal40 CLOSED/44176f74.../123950bd.../40961c1a.../48cells9fits6CUDA:
+all books flat/no missing marks/exact stock-day-fee conservation. Binary
+blend+1.488% is seen analytical growth, not owned broker PnL. Source-only P2
+failure counters remain scoped; actual normal9/6 agree and old bytes retained.
+Goal41 zero-fit TCN reload/prospective research remains separate from broker
+budget, new permission or tonight's input substitution.
 Private Paper authority stays delegated; model profit is not an Execution gate.
 
 Goal32 current pooled equity preview is COMPLETE/measurement-only:125 usable

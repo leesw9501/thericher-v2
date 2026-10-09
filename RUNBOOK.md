@@ -2,6 +2,22 @@
 
 ## Current Owned Opportunities And Research
 
+Goal40 CLOSED at D:/thericher-v2/model-artifacts/research/
+kis-stock-ordinal-selection-development-v1:
+contract44176f74.../444sources7inputs/result123950bd.../parentee617248.../
+verify5077f78d.../closure40961c1a.../custody792f64c9... . Nine fits/six actual
+CUDA389.392s/48cells,561.447s<600/all unchanged/reaped/absent/lease released.
+CPU smoke16.520/run503.460/cached verify41.467s; no verification refit.
+Whole10bps/10% analytical exposure: HGB+.796%/.02877, TCN10+.261%/.00660,
+TCN20+.956%/.03764, fixed blend+1.488%/.06375; TCN10 rejects, others only
+non-promoting seen follow-up. All books flat/no missing marks/accounting exact.
+External309/Ruff/sample-env Compose pass; no shared-code authority rerun.
+Independent source97e39cc8.../121 synthetic cases found failure-only P2:
+publish returned device facts before completed progress in a fresh future fit
+worker; unknown failed CUDA use is not false. Actual9/6 counters are consistent,
+no source/receipt rewriting or old-family redispatch. Goal41 next is numeric
+TCN10/20 reuse and actual-time prospective research, not Paper replacement.
+
 Goal34 CLOSED/REJECTED at D:/thericher-v2/model-artifacts/research/
 kis-pooled-equity-participation-value-development-v1. Contract80b88afb...,
 parent21ba54a8.../resultf6510e4b.../6fits33cells/worker254.531s/parent259.098s,

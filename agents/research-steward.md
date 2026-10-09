@@ -7,9 +7,13 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal40 ready for source preparation then one600s ordinal-target appointment,
-max3CPU+6CUDA fits/48cells; exact cohort reused, fresh target/source frozen
-before fits. No sealed/depth promotion, per-cell multiplier or old refund.
+Goal41 ready300s/0fits/GPU/holdout: two-arm numeric reuse/parity/prospective
+integration, not another fit or source-independent alpha allocation.
+Goal40 CLOSED/trial1e898e3d3.../contract44176f74.../closure40961c1a.../
+custody792f64c9.../9fits6CUDA389.392s/48cells/561.447s<600/all unchanged/
+reaped/absent/lease released. Exact cohort/seen lineage retained; no refund.
+HGB/TCN20/blend permit only non-promoting follow-up; TCN10 rejects. Source-only
+failure-fact P2 is not exercised by actual consistent normal9/6 counters.
 
 Goal39 CLOSED/45c9ca15.../closure5beadda3.../custody14918e6a.../trial1;
 9fits/6actualCUDA391.231s/48cells/558.828s<600/all unchanged/reaped/absent,

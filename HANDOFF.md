@@ -20,10 +20,27 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal40 kis-stock-ordinal-selection-development-v1: exact within-date
-top-quintile labels, HGB binary classifier/TCN10/TCN20/fixed probability blend,
-same past-only cohort/10% analytical book. One600s/max9fits/6CUDA, same seen
-data lineage, not a prior-budget refund or Paper profitability gate.
+NEXT owns Goal41 kis-stock-tcn-numeric-reload-preparation-v1: both final binary
+TCNs, numeric no-pickle reload/native CPU score-selection parity and one
+actual-time prospective research seal. One300s/0fits/GPU/holdout, no winner,
+Paper input substitution or retraining. Infra and parent work disjointly.
+
+Goal40 CLOSED at A/research/kis-stock-ordinal-selection-development-v1:
+contract44176f74.../444sources7inputs/result123950bd.../parentee617248.../
+verify5077f78d.../closure40961c1a.../custody792f64c9... . Nine actual fits,
+six CUDA fits389.392s/48cells/561.447s<600; smoke16.520/run503.460/verify41.467s,
+unchanged/reaped/absent/lease released. All books flat/no missing marks/exact
+stock-day-fee conservation. Whole10bps/fixed10% exposure HGB+.796%/.02877,
+TCN10+.261%/.00660, TCN20+.956%/.03764, blend+1.488%/.06375. TCN10 rejects;
+others non-promoting seen follow-up only, not alpha or owned broker profit.
+Independent source97e39cc8.../121 synthetic checks found a failure-only P2:
+completed device facts publish too late; failed CUDA attempts can look unused.
+Actual9/6 normal-path counters agree. Preserve used source; fix a fresh future
+training worker, not the old record. External309/Ruff/sample-env Compose pass;
+prior shared authority14161/22skip/35warnings unchanged. Goal41 reload source
+d651c3f9.../90 synthetic cases released; actual native parity still not_observed.
+Chronos-2 public-source receipt d7ce7b81... is source_unverified; Oct3 project
+benchmark already exists, so no repeated study/download was dispatched.
 
 Goal39 CLOSED at A/research/kis-liquid-stock-sequence-development-v1:
 contract45c9ca15.../443sources7inputs/result28a6c6e2.../parent494ec9a6.../

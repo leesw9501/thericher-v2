@@ -7,11 +7,20 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-09 KST)
 
-Goal40 ordinal selection is ready: exact within-date top-quintile labels,
-HGB classifier and binary TCN10/20/fixed probability blend, same prior-only
-cohort/book, one600s/max9fits/6CUDA. Source6d848f35... re-retrieved from
-primary ranking paper/official existing API; inferred adaptation, no imported
-code/data/weights. Different target, same seen lineage; no refund or Paper gate.
+Goal41 ready: both final binary TCNs numeric reload/native CPU parity and one
+actual-time prospective seal, no training/GPU/Paper input. Euclid reload
+d651c3f9.../90 synthetic tests released; James owns finite Infra preparation,
+parent owns worker/actual integration.
+
+Goal40 CLOSED/44176f74.../123950bd.../40961c1a.../custody792f64c9...,
+9fits/6CUDA389.392s/48cells/561.447s<600/all unchanged/reaped/absent/lease
+released. Whole10bps/fixed10% HGB+.796%/.02877, TCN10+.261%/.00660,
+TCN20+.956%/.03764, blend+1.488%/.06375. TCN10 rejects; other positive seen
+utilities permit only non-promoting follow-up. Exact ordinal labels, mean-one
+equal-date weights; not isolated raw-vs-binary causality or independent alpha.
+External309/Ruff/sample-env Compose pass. Independent97e39cc8.../121 cases
+finds CUDA failure-fact P2; actual9/6 counters agree, old bytes unchanged.
+Correct returned-device publication/unknown-attempt facts in next fresh fit job.
 
 Goal39 CLOSED/45c9ca15.../28a6c6e2.../5beadda3.../custody14918e6a...,
 9fits/6actualCUDA391.231s/48cells/558.828s<600/reaped/absent/unchanged/lease
@@ -81,11 +90,14 @@ in actual closed phases; fresh caller must correct it, never edit used source.
 - Data: exact CURRENT113/14073 rows/121complete4sparse3empty; manifest18a37635...
   payloadbd6b0f40.../precommit7d8b4d01... . Native exact two-file proof.295s;
   source/observation/missingness limits unchanged,52 dated marks not independent.
-- Data: exact ordinal labels from frozen Fraction target groups; cohort unchanged.
-- Engine: binary HGB/TCN10/20, fixed prefix/scaler/weighted loss; one family.
+- Data: CURRENT113 past-only cohort reuse; no fresh collection or label access.
+- Engine: TCN10/20 numeric reload preparation, exact trusted architecture.
 - Validation: temporary independent source accounting review when ready;
   no tuning, old output rescue or blanket quality gate.
-- Parent: integrate/freeze one ordinal campaign; tonight's Paper stays separate.
+- Parent: actual native score/selection parity/prospective seal; Paper stays separate.
+- Euclid: reload source released, not an active permanent process.
+- Chronos-2 source d7ce7b81... released source_unverified; prior Oct3 benchmark
+  already ran, no duplicate study/download or installed-runtime change.
 - Depth/replication: no independently qualified survivor or ready depth contract.
   Equal within-campaign blend is exploratory, not cross-track promotion.
 
