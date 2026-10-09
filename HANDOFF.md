@@ -20,7 +20,25 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-Goal46 COMPLETE; NEXT owns Goal47 kis-stock-owned-exit-lifecycle-v1.
+Goal47 preparation COMPLETE; NEXT owns Goal48 peer-attention development.
+R47=A/execution/kis-stock-owned-exit-lifecycle-v1/closure.json/3d32edf8... .
+Sourcecffa21b pushed; cash-free owner-only SELL preserves original ENTRY
+instrument/owner and same10% bank. Exact job2a5135f3.../delivery5bd53682.../
+image93b769b5... installed finite task stock-owned-exit-20261010:
+Oct10 04:50..05:00KST/1min/IgnoreNew/PT4M. No manual invocation; actual EXIT
+submit/fill/current owned-flat, fees/settlement/net PnL not_observed.
+Four unchanged shared bank modules keep existing SPY/router consumers compatible;
+only one code derivative built, no dependency/runtime or existing schedule change.
+Independent planner/constructor/build P2s repaired before freezing; old failures
+remain immutable. Source-only reviews35773024.../f2ac9a93.../5836441a.../
+e6542eb9... exclude actual broker runtime.986 changed serial/120 external,
+final clean8:14939pass22skip35warnings355.54s/Ruff/three sample-env Compose.
+Earlier14931 count predates eight planner regressions and is not final authority.
+Weekly serial diagnostic C:/trpy/weekly20261010g47 started separately;
+it does not block ready external research. Data next-anchor source preparation
+released82 synthetic tests; no collection before official Oct9 CLOSE20UTC.
+
+Goal46 COMPLETE; original BUY lifecycle evidence remains unchanged below.
 Exact closure28c5038b...; actual r3 job046480fc.../
 outcome-5aaf1aa6ebb94b21ab77d006c277398f.json/c496c9e0...:
 Oct9 15:34:36..15:35:34UTC/58.432s/1token28GET/1BUY0cancel,

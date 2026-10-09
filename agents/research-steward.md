@@ -5,7 +5,17 @@ owns the company goal. Closed allocation history remains in Git2ebc361,
 immutable external roots and A/_control/ledger/2026-10.jsonl.
 A=D:/thericher-v2/model-artifacts.
 
-## Current Resources (2026-10-09 KST)
+## Current Resources (2026-10-10 KST)
+
+Goal47 EXIT preparation closed3d32edf8... withzero fits/GPU/holdout spend.
+NEXT owns one new peer-attention family: four20/60 pointwise/peer arms,
+at most12 CUDA fits/54 analytical cells/ONE600s smoke-run-verify debit.
+Allocation is not dispatched yet; Engine must freeze source/data/target/
+splits/architecture/cost/kill before market fitting. No old family refund,
+sealed allocation or utilization-only training. RTX4090 is available; observed
+2%/1772MiB is display use, not an active fit. Paper EXIT next04:50KST has an
+independent CPU owner and does not reserve GPU. Weekly serial diagnostic uses
+CPU and a distinct C:/trpy root; keep native research bounded separately.
 
 Goal45 closed native shared-bank sizing with zero GPU/refit/holdout spend.
 Original stock target/clock retained; actual13.544s/1token8GET/0orders/writes,

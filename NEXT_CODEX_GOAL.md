@@ -2,89 +2,76 @@
 
 ## Objective
 
-Complete kis-stock-owned-exit-lifecycle-v1: add an explicit, recoverable exit
-for the model-owned NASDAQ stock inside the EXISTING original10% Paper bank.
-Sell only canonically owned inventory. Deliver compatible source and prepare
-one bounded session-close Paper exit; no foreign liquidation or new bank.
+Complete kis-stock-peer-attention-development-v1: test whether same-date,
+past-only peer attention adds useful post-cost stock selection beyond a
+pointwise neural control. Build and run one bounded PyTorch CUDA development
+campaign, not another parameter sweep or research-promotion gate.
 
-## Exact Current Facts
+## Current Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal46 COMPLETE/closure28c5038b... at
-A/execution/kis-stock-persisted-paper-execution-v1. Actual r3 job046480fc.../
-outcome-5aaf1aa6ebb94b21ab77d006c277398f.json/c496c9e0...:
-Oct9 15:34:36..15:35:34UTC/58.432s/1token28GET/1BUY0cancel,
-exact terminal fill and current owned inventory reconciled, original basis
-preserved/source and inputs unchanged/reaped/absent/no unknown outcome.
-Entry model clocks/target0.01/confidence0/expiry20:00UTC remain original;
-this is execution learning, not alpha or fees/settlement/net-PnL evidence.
-V1 failed after reads; compact-vs-canonical digest fault was independently
-reproduced and fixed only in fresh r2/r3. R2 stopped before GET, exact cause
-unobserved. Used sources/jobs/failures remain immutable. No substitute order.
-
-Delivery376f9bc0.../build41d08464... retains runtime/dependencies and440 source/
-244 script hashes across three derivatives;5 RW+2 RO Compose consumers are
-compatible. Published recovery router Action-only, schedule/settings/principal
-unchanged. Host selective loaderc07983f6... remains untouched.
-Source commitc1d3abf;871+8serial/14820pass22skip35warnings342.27s/eight clean,
-Ruff/three Compose. Native source66 focused+21 independent source checks;
-actual result is hash/clock/source-bound under assumed honest host, not an
-independent broker or OS-scheduler attestation. Never read KIS_LIVE_*.
+Goal47 preparation COMPLETE/closure3d32edf8... at
+A/execution/kis-stock-owned-exit-lifecycle-v1. Sourcecffa21b pushed;
+cash-free owner-only SELL, original ENTRY identity and existing10% bank retained.
+Job2a5135f3.../delivery5bd53682.../image93b769b5... installed as finite task
+thericher-kis-paper-stock-owned-exit-20261010,04:50..05:00KST/1min/IgnoreNew.
+No manual task invocation or actual EXIT submit/fill/owned-flat evidence yet.
+Goal46 original exact BUY fill remains unchanged. Fees/settlement/net PnL
+not_observed.986 serial/120 external/14939pass22skip35warnings355.54s/eight
+clean/Ruff/three sample-env Compose passed. Independent source P2s repaired;
+original failures retained. Claude unavailable is not agreement.
 
 ## Disjoint Packages
 
-Execution planner owns pure explicit zero-target EXIT construction and canonical
-V4 persistence/retry/reconciliation. Reuse TargetExposureProposal and
-ResearchDecisionReceipt; validate EXIT-class hashes separately while preserving
-the original ENTRY-bound instrument/owner. Do not relabel the entry receipt or
-renew its clocks. Quantity equals known owner inventory; zero yields no-intent.
-Reject another unresolved same-owner action locally, not another lane.
+Engine freezes one NEW family before any market fit or outcome access. Reuse
+the retained same128-key OLD/CURRENT inputs, chronological prefix cutoffs and
+five-session ordinal target from Goal40, unchanged cohort and analytical
+book/cost kernels. Retain raw/current-listed/non-PIT/action/finality and seen
+development limitations. Do not relabel this as independent validation.
 
-Execution client owns cash/funds-independent stock exit reads: typed account,
-complete open orders, positions and fresh bid/tick quote. Reuse one token and
-the existing exact stock-bound submit/cancel transport. Zero buying power is
-not a SELL gate. Do not fabricate a cash observation or use QQQ funds fallback.
+Freeze four arms: pointwise20, pointwise60, peer20, peer60; one fixed equal
+four-arm blend; existing momentum/rank-buffer/buy-once/cash controls. Use only
+previous61 completed Bars for20/60 windows, same-date eligible peers and
+train-prefix-only normalization. Never use a future complete-target peer mask
+for inference. Padding/permutation must not change a real peer's prediction.
+No ticker embedding, pretrained weights, library replacement or new data buy.
 
-Parent owns side-aware exact stock execution proof and call-time SELL checks,
-reusing existing canary persistence, two locks, strict submission parsing and
-cumulative fill recovery. Broker target quantity must match all same-instrument
-owned inventory; never adopt foreign shares or oversell this owner. Reattest
-stock source coherently before private installation; old bindings/fills stay exact.
+Use original PyTorch2.7 MHA composition inspired by the primary Set Transformer
+paper, not copied repository code or a claim of proven trading performance.
+Declare width/heads/loss/date weighting/epochs/seed/batching before outcomes.
+Three chronological cutoffs/four arms yield at most12 CUDA fits; all54 fixed
+book/mode/cost cells share ONE600s family budget, including smoke/run/verify.
+Fixed10% analytical exposure/whole and fractional reference/5,10,20bps;
+retain all unavailability and raw-gap attribution. No rescue fit or refund.
 
-Validation attacks frozen source with synthetic foreign/oversell, wrong EXIT
-receipt, pending/unknown identity, exact restart, stale bid/post-pacing expiry,
-partial/late/duplicate fill, zero-funds and failed-reconciliation falsifiers.
-No private values, model tuning or broker calls in source review.
+Data owns one-read61-bar peer context and frozen cohort/label identity.
+Separately prepare/collect the already-released same128 next-session D1 refresh
+only after Oct9 official20UTC CLOSE. Keep its own cache/cursor/token/next_due;
+no OLD fallback, old-source rewrite or foreground wait.
 
-Data prepares the existing same128-key D1 refresh for a caller-frozen next
-completed-session anchor and ordered observation clocks. No collection before
-Oct9 official CLOSE20:00UTC, no fallback to OLD rows or rewritten cohort.
-Reuse the bounded producer/reader, not a new collector platform. This package
-must not block the exit. Engine supplies an explicit session-close Paper EXIT
-receipt, not a trained exit model or research-profit promotion. No refit or
-new holdout needed for this lifecycle connection.
+Steward owns exclusive GPU custody, attempt/completion/device facts and exact
+family debit. CPU synthetic smoke precedes the market campaign. A failed fit
+records attempted CUDA before raising; partial failure is not zero use.
+Validation independently attacks future mutation, padding/permutation, split,
+label and numerical-accounting contracts; no candidate retuning.
 
-## Bounded Native Exit
-
-Freeze one explicit session-close virtual exit request while the target is
-owned. Prefer the owned regular-session pre-close window; do not foreground
-sleep until it. A goal-owned finite worker/schedule may own its next_due while
-source work continues. An immediate diagnostic roundtrip is not the strategy.
-Fresh execution checks quantity/bid/venue, current complete orders and the
-same canonical owner. Persist before wire; exact retry never resizes, changes
-price/TTL or substitutes an unknown request. Reconcile linked fill and current
-owned-flat separately. Retain a partial/unknown request with exact recovery.
-KIS Paper authority is standing; no additional profitability/capital approval.
+Execution retains the already-owned finite EXIT opportunity. Observe its exact
+job/outcome/current inventory only when due, preserve unknown identity and
+recover it without a substitute order. This does not block research or Data.
 
 ## Completion And Continue
 
-Completion is persisted side-aware source/recovery, independent falsifiers,
-compatible writer delivery, and an explicit finite pre-close exit installation
-with exact identity/next_due or its already observed native result. If scheduled,
-continue another ready package rather than waiting for the market clock.
-Strongest kill: foreign sell, oversell, invisible reservation, basis/owner reset,
-duplicate/substitute intent, fake flatness, live route or free-form sensitive output.
-Ask Claude for the material recovery/execution drift-check; failure is not agreement
-or a global wait. Verify changed serial, clean8, Ruff and three sample-env Compose
-for shared-source integration. Commit/push, refresh stateboards and ONE next
-material company objective, then continue. Artifacts stay on D; preserve15% free.
+Frozen source/input/contract, CPU smoke, actual bounded CUDA attempt/result,
+all-or-incomplete fit/cell accounting, cached zero-refit replay, explicit
+pass/reject/input-unavailable verdict and closed GPU custody are required.
+Strongest economic kill: at whole10bps peer arms fail cash/buy-once or their
+same-window pointwise control under the predeclared utility/risk rule.
+Even a positive seen result is not alpha, a sealed winner or an automatic
+Paper input. Keep the fixed blend distinct from learned fusion.
+
+Ask Claude a concise leakage/ensemble challenge; failure is not agreement or
+a hold on another lane. Focused synthetic tests/Ruff/three sample-env Compose
+for external-only integration; rerun shared authority only for changed shared
+code/runtime. Weekly serial diagnostic is independently owned, not a wait.
+Commit/push, refresh stateboards and ONE material next objective, then continue.
+Never read KIS_LIVE_*; data/model artifacts stay on D and preserve15% free.

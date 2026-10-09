@@ -2,6 +2,23 @@
 
 ## Current Owned Opportunities And Research
 
+Goal47 preparation COMPLETE/closure3d32edf8... at
+D:/thericher-v2/model-artifacts/execution/kis-stock-owned-exit-lifecycle-v1.
+Native job2a5135f3.../worker10ef7c41.../dispatcher01d8b849.../
+EXIT helper32adf795...; stock-only code image93b769b5.../delivery5bd53682...,
+unchanged runtime/dependencies/441 sources244 scripts/four shared bank pins.
+Installed finite thericher-kis-paper-stock-owned-exit-20261010 task owns
+04:50..05:00KST Oct10/1min/IgnoreNew/PT4M; installed-opportunity.json is
+preparation evidence only, not a submit/fill or scheduler-origin proof.
+Never manually start or substitute this identity. Fresh decision is explicit
+session-close, not model profit; retry retains its persisted SELL unchanged.
+Actual EXIT fill/current owned-flat and fees/settlement/net PnL not_observed.
+Sourcecffa21b pushed.986 serial/120 external/final clean8:14939pass22skip/
+35warnings355.54s/Ruff/three sample-env Compose. Independent scoped P2s fixed,
+original failing receipts retained. Weekly serial diagnostic at
+C:/trpy/weekly20261010g47 is separately owned; no research foreground wait.
+NEXT owns one peer-attention CUDA development campaign, not another exit gate.
+
 Goal46 COMPLETE: D:/thericher-v2/model-artifacts/execution/
 kis-stock-persisted-paper-execution-v1/closure.json/28c5038b... . Exact r3
 job046480fc.../outcome-5aaf1aa6ebb94b21ab77d006c277398f.json/c496c9e0...:
@@ -14,8 +31,8 @@ failure after8GET/order0 retained. R2 failed token1/GET0/order0, cause unknown.
 Fresh r3 canonical digest and safe token/status categories;66 focused+21
 independent source cases pass, not actual broker attestation. Exact parent
 hash/clock/job/source audit passed under assumed honest host. Sourcec1d3abf pushed.
-NEXT owns Goal47 explicit owner-only session-close EXIT; no installed exit job
-yet, no forced foreign liquidation, basis/identity reset or profit approval.
+Goal47 supersedes the former no-installed-exit state; the original BUY record
+above is unchanged. No foreign liquidation, basis reset or profit approval.
 
 Goal46 source delivery: D:/thericher-v2/model-artifacts/execution/
 kis-stock-persisted-paper-execution-v1. Source965c9c1a.../312 independent checks

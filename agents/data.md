@@ -6,6 +6,15 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal47 fresh next-session D1 prep RELEASED:82 synthetic tests/Ruff,
+A/data/kis-current-pooled-equity-refresh-next-session-v1, worker3a889da0.../
+reader6a9494f3.../contract helperd0d1cd27... . Same128 identities, previous61
+context and caller-frozen official completed-session anchor. No native collection
+before Oct9 CLOSE20UTC; no OLD fallback or revised old receipt. NEXT Goal48
+past-only peer contexts are ready from retained inputs while this cache owns
+its future due. Collection bounds256/600s remain one study, not provider quota.
+Goal47 EXIT preparation3d32edf8... changes no dataset/PIT/action/finality grade.
+
 Goal45 pure stock-owner/bank scope RELEASED3c0a7a5e...; legacy fingerprints
 unchanged, explicit NASD/ref-bound stock owner inside original aggregate bank.
 Actual RO replay/sizing COMPLETE9ee849dd.../0ff09fed.../13.544s/1token8GET/

@@ -7,6 +7,17 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
+NEXT owns Goal48 kis-stock-peer-attention-development-v1: new peer-interaction
+hypothesis versus same-window pointwise neural controls;20/60 windows, at most
+12 CUDA fits/54 fixed analytical cells/ONE600s smoke-run-verify family budget.
+Same128 retained OLD/CURRENT seen/current-listed/raw/non-PIT inputs and fixed
+5/10/20bps book remain. No sealed claim, public weights or automatic Paper input.
+Freeze exact architecture/data/target/splits/kill/lease before market fits;
+CPU synthetic smoke first. Broad underrepresented mechanism, not closed-family
+rescue. Same-date peers use past61 only; future targets cannot select peers.
+Explicit session-close EXIT source32adf795... is released55 checks and a separate
+decision class; Goal47 prepared finite04:50KST job, actual exit not observed.
+
 Goal46 actual stock Paper execution COMPLETE/closure28c5038b.../r3c496c9e0...:
 original tcn20 target0.01/confidence0/clocks/expiry20UTC unchanged; exact BUY
 full fill/current owned quantity reconciled under existing original10% bank.

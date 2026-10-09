@@ -8,6 +8,19 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal47 preparation COMPLETE/closure3d32edf8...; sourcecffa21b pushed.
+Separate EXIT-class receipt32adf795.../plannerf96c134b... keeps original ENTRY
+owner/instrument. Cash-free SELL reads never require buying power; exact
+broker/owned quantity, bid, complete orders, expiry and two locks remain.
+Finite job2a5135f3.../image93b769b5... installed04:50..05:00KST Oct10,
+same request model-stock-exit-20261009-v1/1min/IgnoreNew/PT4M; no manual run.
+Actual EXIT submit/fill/current owned-flat not_observed. Preserve unknown
+identity if it occurs; no substitute request, reprice or adopted inventory.
+Four unchanged shared modules retain SPY/router compatibility; one stock image
+only.986 serial/120 external/14939pass22skip35warnings355.54s/eight clean/
+Ruff/three Compose. Source-only independent checks exclude actual behavior.
+NEXT research proceeds independently; no model profit or GPU permission gate.
+
 Goal46 COMPLETE at A/execution/kis-stock-persisted-paper-execution-v1,
 closure28c5038b...; r3 job046480fc.../outcome-c496c9e0... . Actual Oct9
 15:34:36..15:35:34UTC/58.432s/1token28GET/1BUY0cancel; exact full fill and
@@ -22,8 +35,7 @@ Build41d08464.../installed376f9bc0...:unchanged runtime/440 sources244 scripts,
 all5 RW+2 RO compatible/inactive Action-only/unchanged schedule-settings-principal.
 Sourcec1d3abf pushed; b8aee8d5...:871+8serial/14820pass22skip35warnings342.27s,
 eight clean/Ruff/three Compose. Earlier image-pin mismatch run excluded.
-NEXT owns Goal47: explicit owner-only EXIT, separate EXIT receipt validation
-with original entry owner/identity; no buying-power gate or foreign liquidation.
+Goal47 preparation above supersedes the prior planned-only EXIT state.
 
 Goal45 COMPLETE: R45=A/execution/kis-stock-shared-budget-integration-v1,
 job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
