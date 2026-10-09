@@ -16,12 +16,19 @@ observation is distinct from assumed historical decision-time availability.
 Separate synthetic native GPU probe37afac0e...19.416s has2x64 updates with
 exact finite-path final weights: original7.538s vs stacked6.881s optimizer
 loops. Fixed-order cold-start bias/no512-step market parity/no budget refund.
-Goal33 preparation compares genuine learned rule fusion: fixed four expert
-ranks, Ridge fusion, flat-context Ridge and a small conditional softmax GPU
-gate. Old800 seen sessions and current100 remain separate/pinned. New mechanism,
-not an old TCN rescue, fresh holdout, deployment claim or utilization-only fit.
-Engine owns pure kernel; Data owns metadata binding; Infra owns GPU model;
-parent freezes runtime/science/custody before any actual fit.
+Goal33 bounded run CLOSED/independent validation INCOMPLETE:9fits30cells,
+contract96277fe8.../result0c5d0fe4.../parentadfc43a7.../227.687s worker.
+Three CUDA512 fits2.622s; all fixed screens reject, no gate incremental value
+over both Ridge arms. Native cached replay317fb3a... matches30cells94.00s,
+shared primitives only. Host scaler/economic mismatches preserved; final native
+independentf2497a17... runtime_budget181.357s/no verdict. No fourth attempt,
+model equivalence/independent-performance/Paper claim; custody3456fe65... closed.
+Goal34 READY preparation: pure prior20 cohort ON/ID context, five sealed absolute
+OC-net basket targets, buy/cash and joint-selection decision paths. Kernel
+60d81574.../74own234related synthetic tests; GRUd1430975.../96tests. Canonical
+two-channel prefix scaler agreed before freeze. Same old800/current100 seen
+inputs, no merges/replacements;6fits/33cells under one600s family, no actual
+allocation until exact integration/CPU smoke. Parent owns freeze/dispatch.
 
 Independent company Goal25 preparation is complete, not a future fill or model
 promotion. Goal26 owned cumulative gross attribution COMPLETE, not net/MTM/model
@@ -171,8 +178,8 @@ custody7e017bf9.../independent partiala9d222bb... and closure9c5b1f84...;
 exact OOF readback unavailable, no tolerance waiver/DEV-efficacy/Paper claim.
 Bounded attempt closed/failed-incomplete, original600 family exhausted/no refit.
 Goal32 current input/preview/runtime readiness is complete as recorded above.
-Next Goal33 learns four-expert fusion under one frozen finite campaign. No
-old family refund, target-free weights reuse or model-name substitution.
+Goal33 closed as scoped above. Next Goal34 tests absolute participation and
+joint selection, no old family refund, reused fitted outputs or name substitution.
 Completed TCN fits58..77s each are measured local latency, not a CUDA ban.
 Pairwise-reversal ANTICOR actually rejected; retain its fixed recipe.
 Conditional-hedge study is now COMPLETE/REJECTED42 cells, exact root

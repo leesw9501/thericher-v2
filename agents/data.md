@@ -39,8 +39,16 @@ backdating, provider publication, historical prior-close availability or finalit
 Current preview2a8b0516... has122 eligible/6 unavailable/top10; independent
 2d0d511f...1.860s checks all686 hashes/128keys/800official dates/prior61/clock
 brackets/exact selection and weights. Native parser/core are shared. No labels,
-fits/Paper qualification. Next: separate old compact/current input commitments
-for Goal33; no provider calls, value merging or new quality-approval gate.
+fits/Paper qualification. Goal33 separate metadata10d39140.../1124bindings is
+complete; no old/current value merge or provider calls. Native current-only
+cached reader317fb3a... reattests435sources1124inputs13outputs/30cells94.00s.
+Selected CURRENT bars12492 are not the physical24321 typed decode count.
+Measured current decode62.755s/audits13.974+14.496s/seals.685/replay.022s.
+Goal34 Data consumer review has21synthetic tests/no P1-P2: one exact metadata
+preparation/native OLD compact+ordered CURRENT decode, whole input/source
+before/after hashes. No repeated resolve_inputs preparation, calendar graft,
+new quality gate or source qualification. Next: parent integrates/freeze;
+retain all sparse keys and actual observations, profile new load separately.
 
 Latest historical engineering-control refresh is actually READY: fixedSPY/AMS,
 TLT/NAS,GLD/AMS,253 dates2025Oct7..2026Oct8/252returns/targetOct8 20:00UTC.

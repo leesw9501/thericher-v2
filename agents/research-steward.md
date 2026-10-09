@@ -8,14 +8,28 @@ Compacting this projection does not delete evidence or reopen an allocation.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal32 probe allocation closed; no active GPU appointment. Goal33 preparation
-is a NEW conditional rule-fusion mechanism, not another TCN fit or exhausted
-family refund. Pending frozen source/dataset/target/OOF and later-seen DEV/
-cost/baseline/kill/runtime/600s contract before one exclusive GPU allocation.
-CPU kernel/metadata/model tests continue now. Three models/two OOF+final each,
-nine fits/no search/zero sealed spend; elapsed bounded family work retained,
-terminal counts unknown if absent. Current100 already-seen values do not
-become untouched holdout/39 independent groups or a Paper candidate.
+Goal32 probe allocation closed. Goal33 new rule-fusion mechanism actual R2
+closed appointment96277fe8.../435sources1124inputs/600s/9fits30cells, registry
+2b1d0cec.../trial2/sealed0. Originala51f synthetic CPU smoke35.371s complete/
+0marketfits/no GPU allocation, pre-market superseded for two failure-accounting
+defects. Originalbytes preserved/custody abandoned; no scientific change,
+original market-family debit0. CPU R2 smoke19.350s complete/reaped/absent/
+unchanged. Real completed fits count before checkpoint; interrupted probe
+CUDA stays unknown. One fixed64-step synthetic timing is within600s, not a
+market fit or separate refund. Prior TCN family still exhausted/remaining0.
+Actual R2 run5b40996c... is complete9fits9starts30cells/227.687s worker,
+231.679s parentadfc43a7.../result0c5d0fe4... . All435sources1124inputs unchanged,
+child reaped/invocation absent/canonical GPU lease released. Three CUDA512 fits
+total2.622s/peak82701824bytes; all three candidates reject. No active allocation.
+Custody3456fe65... CLOSED/non_promoting_completed/sealed0; completed run has
+explicitly INCOMPLETE independent validation. Native shared cached replay
+317fb3a... matches30cells94.00s; native independentf2497a17... exhausts180s
+without verdict/reaped/absent/all bindings unchanged. No fourth retry. Native
+181.325s generic failure and host scaler/economic mismatches remain immutable;
+no equivalence, new fit or Paper/operator authority hold follows.
+Current100 seen values and39dated groups remain development, not sealed
+holdout/independent blocks/Paper. Goal34 participation design is CPU preparation
+until its new hypothesis/source/contract and finite6-fit/33-cell allocation freeze.
 
 Goal29 R2 allocation completed: contractfd4c2607.../430sources/575inputs,
 965TRAIN/68DEV groups/4actualfits/54cells at A/research/

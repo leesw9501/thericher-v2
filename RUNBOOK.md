@@ -25,10 +25,30 @@ causal-tcn-finite-guard-throughput-probe-v1/parent-run.json/37afac0e...:
 19.416s/2x64 updates/original7.538s vs stacked6.881s/exact finite final weights;
 source unchanged/reaped/absent/lease released. Fixed-order cold-start bias,
 not512-step market parity, independent alpha or budget refund.
-Integrated13637pass22skip35warnings335.61s/helper0/changed100pass2.14s/Ruff/
-three sample-env Compose pass coversf6ba5e9. Next Goal33 has disjoint pure
-kernel, metadata and model preparation; freeze before actual fits. Existing
-Oct9 22:45KST owned Paper opportunity/23:05 check unchanged; no foreground wait.
+Goal33 bounded run CLOSED/independent validation INCOMPLETE:
+D:/thericher-v2/model-artifacts/research/kis-pooled-rule-fusion-forward-development-v1-failure-accounting-r2.
+Contract96277fe8.../parent-run.jsonadfc43a7.../worker-result.json0c5d0fe4...:
+9fits9starts30cells/227.687s worker/231.679s parent;3CUDA512 fits2.622s,
+435sources1124inputs unchanged/reaped/absent/lease released. All three fixed
+screens reject. No profitable model, independent comparison or Paper input.
+current-only-native-readback/receipt-d0c9172a778d45eb95741e4e42c4c38a.json,
+317fb3a9b8ccfd3beeaa8cfb5fb683d144ae4f4d5f0f177fd2897a71feedbe8a,
+matches30cells/kill/13outputs94.00s, shared primitives/no model or scaler
+verification. Selected12492 CURRENT bars are not physical24321-row decode.
+Original generic native failure and host prefix-scaler/cached-economic mismatches
+remain unexplained; independent-native-r3/receipt-1325be07f8d24603970cebfc38339cd2.json,
+f2497a17db939a3f3389d353a443ad28ef5cab615610274b96c734ffdaf341f2,
+ends runtime_budget181.357s/reaped/absent/435sources1124inputs13outputs unchanged,
+no independent verdict. bounded-closure.json/custody-outcome.json3456fe65...
+close the allocation with this limitation. Never rerun its used phases or add
+a fourth verification/rescue fit/tolerance waiver.
+Next Goal34 absolute basket-value/buy-cash preparation is ready: pure kernel,
+Torch GRU and one-preparation separate-input consumer; parent integrates/freezes
+before6fits/33cells under one600s family. All final forecasts/actions precede
+current payoff callbacks. No extra private source, order or promotion path.
+Integrated13734pass22skip35warnings337.16s/helper0/changed221pass2.50s/Ruff/
+three sample-env Compose pass covers57e28af. Existing Oct9 22:45KST owned Paper
+opportunity/23:05 check unchanged; no foreground wait or authority re-request.
 
 Goal26 kis-owned-portfolio-gross-attribution-v1 COMPLETE. Pure helperd5c86e2f...
 reuses native custody validation, exact Fraction owner-local average cost and

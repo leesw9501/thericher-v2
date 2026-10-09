@@ -2,99 +2,118 @@
 
 ## Objective
 
-Complete pooled-rule-rank-fusion-forward-development-v1: test whether learned
-combination of fixed stock-selection experts adds net developmental value,
-instead of another model-name swap or a restart of the exhausted TCN family.
+Complete pooled-equity-participation-value-development-v1: test absolute
+basket-payoff prediction for buying versus cash, then joint expert selection.
+This is a NEW mechanism, not a rank-model name swap or a rejected-family rescue.
 
-## Frozen Scientific Scope
+## Scientific Scope
 
-Same original128 current-listed identities, no replacements. Old exact compact
-800-session panel2023May17..2026Jul27 is SEEN TRAIN, including former DEV.
-Current latest100-session snapshot2026May18..Oct8 remains separate, pinned to
-Data05f61216.../callerb8bf77bd.../receipte64c5baa.../preview2a8b0516.../
-independent2d0d511f... . No value-window merge, latest scan or source revision.
-Current inputs were already inspected as features; later scoring is seen/adaptive
-DEVELOPMENT, not a sealed holdout, independent replication or publication-PIT proof.
-Current official800-date plan endsOct8; final100 correspond to the retained
-snapshot. Entries761..799 supply39 later dated groups after61 warmup sessions,
-NOT39 independent samples/blocks. First scored target must be after oldJul27.
+Same128 original current-listed keys, no replacements. Old exact compact800
+sessions2023May17..2026Jul27 are SEEN TRAIN, including former DEV. Separate
+pinned current100 sessions2026May18..Oct8 provide39 later dated targets
+Aug14..Oct8, indices761..799 after61 warmup. No value-window merge, latest scan,
+holdout, independent replication or39 independent-sample claim. Goal33 results
+informed this hypothesis; current DEVELOPMENT is explicitly adaptive/seen.
+Keep RAW/CA/TR/non-PIT/finality/actual historical availability limitations.
 
-Prior61 consecutive complete bars determine eligibility BEFORE targets; fixed20
-overnight/intraday context. Four fixed experts: component, momentum5/20/60;
-ascending centered midrank over the full eligible cross-section, stable lex ties.
-Target is nextOPEN-to-sameCLOSE centered cross-sectional rank. One missing peer
-target invalidates that date's TRAIN labels; never shrink the eligible universe.
-All final scores/selections are frozen before DEV payoff reads. Missing selected
-payoff is unavailable, not cash or a replacement winner. Fewer10 eligible means
-analytical flat only, not a real liquidation instruction.
+Prior61 complete scheduled bars decide eligibility BEFORE targets. Context is
+exactly two channels: equal-weight eligible-cohort mean log overnight/intraday
+returns over the prior20 completed sessions; use the SAME decision-time cohort
+at every context step. Empty cohort has no model context; fewer10 stays
+analytically flat, not a broker liquidation instruction.
 
-Exactly three models: alpha1 Ridge on4 expert ranks; alpha1 Ridge on40 component
-features; contextual gate40->16 tanh->4 softmax, weighted sum of expert ranks.
-Prefix-only date-balanced scaling/loss, row weight1/date-row-count normalized
-sum=N. Ridge intercept unpenalized. Gate seed101/float32/batch256/AdamW1e-3/
-weight_decay.01/512updates/deterministic/TF32off; finite loss before backward
-and all present finite gradients before step, no AMP/compile/search.
-Two chronological OOF fits per model: fit61..427/score429..610,
-fit61..609/score611..799; final fit61..799. Nine fits total, no tuning or
-OOF-based candidate/model removal. OOF is diagnostic, not a free selection pass.
+Five fixed top10/equal fractional experts: component, momentum5/20/60 and
+uniform centered-rank blend. Seal all baskets before target callbacks. TRAIN
+labels are their five absolute nextOPEN-to-sameCLOSE NET returns at10bps round
+trip, not centered cross-sectional ranks. Any missing selected payoff invalidates
+the whole five-output training date; never shrink or replace a basket. One row
+per date, not five independent targets; overlapping contexts/correlated outputs
+and effective sample size unknown. Earliest367/final739 potential dates stress
+GRU capacity; actual valid counts must be recorded, not assumed.
 
-Comparators: each fixed expert, uniform-rank blend, equal weight and cash.
-Long-only top10/equal fractional weights/stable ties/flat between daily OC trades.
-Costs5/10(primary)/20bps round trip, same availability/fill assumptions for all.
-30 full-view cells (10 policies x3 costs); three fixed13-date subdivisions
-are descriptive only, no independent-block claim, pass waiver or budget multiplier.
-Strongest kill: unavailable matched replay, primary growth<=0, or primary utility
-not strictly above ALL fixed controls including blend/equal-weight/cash.
-Gate incremental value additionally requires primary utility above BOTH Ridge
-arms; beating fixed rules alone cannot establish conditionality. Report this
-separate test without changing the fixed-screen result or selecting new weights.
-No result-selected cost/window/seed/subperiod. A pass permits only a fresh
-non-promoting follow-up, never Paper qualification, alpha or deployment.
+Exactly two models: alpha1 multioutput Ridge (one augmented lstsq, intercepts
+unpenalized, flatten20x2) and fixed GRU(input2/hidden16/one biased layer/output5).
+Identical prefix-only two-channel scaling: reshape TRAIN toN*20x2, population
+mean, exact constant-channel correction, sqrt(mean squared deviations), zero
+scale->1. Seed101/float32/batch64/AdamW1e-3/.01/512updates/deterministic/TF32off;
+finite loss before backward and all present finite gradients before step.
+No AMP/compile, seed/window/threshold search or output-based model removal.
 
-## Parallel Ownership And Compute
+Two expanding OOF fits plus final per model: fit61..427/score429..610,
+fit61..609/score611..799, final fit61..799. Six actual fits total; five outputs
+are ONE Ridge solve, not five extra allocations. OOF folds report separately
+with unavailable dates visible, no tuning or selection.
 
-Engine owns pure rank/weighted Ridge fusion kernel/tests. Data owns separate
-old/current metadata/calendar/source bindings, preserving sparse keys. Invoked
-Infra owns contextual Torch model/tests. Parent integrates scientific/runtime
-contracts, freezes exact bytes, performs CPU smoke before one exclusive GPU
-appointment. Invoke independent Validation on completed frozen outputs; it
-does not tune/refit the candidates. Execution supplies the existing deterministic
-analytical OC cost/fill/availability semantics, not broker parity.
+Joint action selects greatest predicted10bps net return strictly>0, otherwise
+cash. Cash wins zero ties; fixed lexical expert ties. Participation-only uses
+the SAME fitted model's blend forecast>0 to choose blend, otherwise cash; no
+extra fits. Freeze ALL39 forecasts/actions before DEV payoffs, then replay the
+SAME actions at5/10(primary)/20bps. Missing selected DEV payoff is unavailable,
+never cash or a dropped date. Four learned policies + five fixed experts +
+equal-weight cohort + cash =33 full-view cost cells. Three13-date views remain
+descriptive, no budget/sample multiplier or subperiod pass waiver.
 
-One NEW mechanism family,600s useful work including load/audit, one fixed
-synthetic64-update CUDA timing with no retained probe weights, all9 fits/replay;
-bounded110s cleanup, exact progress receipts and unknown terminal counts if
-killed. CPU preparation/smoke has no real labels/fits or extra market allocation.
-Use existing pinned native research image/Python3.12.14/Torch2.7.0+cu128,
-network none/readonly inputs/no credentials, safe tensor NPZ outside Git.
-Budget feasibility is measured before market dispatch; preserve original Goal31
-zero remaining, no refund/refit/substitution of its partial TCN output.
-Use existing GPU lease; Execution inference/reliability preempts at safe checkpoint.
-GPU use is authorized, but no dummy fit/utilization or new framework replacement.
+Kill unmatched replay, primary growth<=0 or primary utility<=ANY fixed expert,
+equal weight or cash. Joint value separately requires beating its own
+participation-only arm; passing the fixed screen alone cannot prove selection
+value. Any survivor needs a fresh non-promoting follow-up, never automatic
+Paper qualification, alpha, model profitability or broker net-PnL claims.
 
-## Preserved Independent Execution
+## Parallel Ownership And Runtime
 
-Existing Oct9 22:45KST/13:45UTC portfolio-control-20261009-v1/job2b20f908...
-and23:05KST one-shot check retain original shared10% basis/SPY/TLT/GLD/QQQ
-custody. No manual invoke/substitute/reset/schedule expansion; future
-submit/fill/closure not_observed. Research continues without foreground sleep.
-Dashboard reference http://127.0.0.1:8787 is not current owned net profit.
+Engine owns the pure context/basket/label/action/multioutput-Ridge kernel. Infra
+owns the fixed Torch model. Data attests separate inputs and the simplified
+consumer: one exact metadata preparation, native compact OLD decode, ordered
+CURRENT decode, all original frozen bindings hash-checked before/after. Profile
+load/geometry separately; do not claim physical decode counts or raw-history
+qualification from selected bars. Parent integrates/releases/freezes exact
+science/source/custody; invoke independent Validation only on completed frozen
+outputs. Execution's OC replay is ideal fractional/dailyflat/cost stress, NOT
+actual latency, whole-share fills, fees, settlement or broker parity.
+
+One600s family including audit/load/one fixed64-update synthetic CUDA timing,
+all six fits and replay;110s bounded cleanup. Probe retains no weights and
+cannot refund old compute. CPU smoke first, no actual market-label fit in smoke.
+Use existing image d6b43213.../Python3.12.14/Torch2.7.0+cu128, networknone/
+readonly inputs/no credentials and safe own NPZ onD:. One canonical GPU lease;
+Execution inference/reliability preempts at a safe checkpoint. No dummy training
+or memory/utilization KPI. Preserve Goal31 exhausted family and all used bytes.
+
+## Predecessor And Independent Execution
+
+Goal33 bounded run is CLOSED:9fits30cells/three fixed-screen rejections,
+worker227.687s/parent231.679s; native cached30-cell replay exactly matches94.00s.
+Independent validation is INCOMPLETE: host prefix-scaler and cached-economic
+mismatches remain, final native attempt exhausted180s without a verdict.
+Closure/custody3456fe65... explicitly preserve that limitation; no fourth retry,
+model/scaler equivalence, independent validated comparison or Paper promotion.
+Root D:/thericher-v2/model-artifacts/research/
+kis-pooled-rule-fusion-forward-development-v1-failure-accounting-r2.
+
+Keep Oct9 22:45KST/13:45UTC portfolio-control-20261009-v1/job2b20f908... and
+23:05KST one-shot follow-up unchanged, original shared10% basis/SPY/TLT/GLD/QQQ
+custody. No manual invoke/substitute/reset/schedule expansion or foreground wait.
+Future submit/fill/closure remain not_observed. Dashboard127.0.0.1:8787 is a
+retained reference, not current owned net profit.
 
 ## Completion And Continue
 
 Truthful bounded comparison/rejected/input-unavailable/runtime-failed outcome,
-exact source/input/cached-output readback and independent matched economic/
-selection checks; no false model, holdout, broker-netPnL or Paper promotion.
-Claude falsification-first challenge before relying on the new fusion/leakage
-decision; unavailable CLI is not agreement and does not halt independent work.
-Changed-path serial then clean8-worker authority/Ruff/default-research-accounting
-sample-env Compose for new shared app code; no full rerun per external handoff.
-Latest prior13637pass22skip35warnings335.61s/helper0 coversf6ba5e9.
-Verify/commit/push, refresh only changed stateboards/HANDOFF/RUNBOOK, replace
-this with exactly one material next company objective and continue.
+exact source/input/output bindings and cached replay. Independent scope/failure
+must be explicit; do not prolong rejected families with repeated equivalence
+attempts or call failed validation successful. Fix a concrete defect in fresh
+bytes only; no rescue fits or tolerance waiver. Continue independent packages.
+Claude public-only falsification challengeb66abae8... returned review_unavailable,
+not agreement; retained external receipt, no authentication wait.
+
+Changed-path serial, one clean8-worker authority for integrated shared code,
+Ruff and default/research/accounting sample-env Compose. Latest13734pass/
+22skip/35warnings/337.16s/helper0 covers57e28af; do not repeat it per handoff.
+Verify/commit/push owned changes, refresh changed stateboards/HANDOFF/RUNBOOK,
+replace this file with exactly one material next company objective and continue.
 
 M=D:/market_data; A=D:/thericher-v2/model-artifacts (/app/model_artifacts).
-D15%floor; private/no-cost KIS Paper standing approved. Never read/route
+Preserve D15%floor. Private/no-cost KIS Paper standing approved; never read/route
 KIS_LIVE_*, enable real money/pay/accept unclear rights/expose publicly/replace
-major runtime without operator authority. Never output secrets/account/order
+major runtime without operator authority. Never output credentials/account/order
 IDs, raw prices/amounts/broker bodies/private state or market rows.

@@ -143,9 +143,26 @@ actual observation, not a backdated historical decision timestamp.
 Synthetic GPU contract1b8779fb.../parent37afac0e...19.416s completes2x64 updates,
 original7.538s/stacked6.881s loops/exact weights/source unchanged/lease released.
 Fixed-order cold-start bias; no512-step market parity or old-family refund.
-NEXT now owns Goal33 learned fixed-rule fusion/conditional gate development.
-Latest integrated authority13637passed22skipped35warnings335.61s/helper0,
-changedserial100pass2.14s/Ruff/three sample-env Compose pass; coversf6ba5e9.
+Goal33 bounded run is CLOSED, independent validation INCOMPLETE. Contract
+96277fe8.../435sources1124inputs/parentadfc43a7.../result0c5d0fe4... completed
+9fits9starts30cells; worker227.687s/parent231.679s/reaped/absent/unchanged/
+lease released. Three CUDA512 fits2.622s/peak82701824bytes; all three fixed
+screens reject, primary growth-10.07%/-11.10%/-20.52%; gate is not incremental
+over both Ridge arms. These are seen, ideal fractional cost-stressed results,
+not a profitable engine, independent comparison, Paper input or broker netPnL.
+Exact root A/research/kis-pooled-rule-fusion-forward-development-v1-failure-accounting-r2.
+Current-only native replay317fb3a... matches30cells/kill/13outputs in94.00s,
+shared frozen primitives/no refit/inference/scaler verification. Original
+181.325s generic native failure, host7a49e73c... prefix_scaler_mismatch and
+42b0fc06... cached_economic_mismatch remain immutable/unexplained. Final native
+independentf2497a17... ends runtime_budget181.357s/reaped/absent/435sources/
+1124inputs13outputs unchanged/no verdict. No fourth retry or tolerance waiver.
+bounded-closure.json explicitly retains incomplete independent validation;
+custody3456fe65... closed/non_promoting_completed/sealed0. No fresh allocation
+or reuse of Goal33 fitted outputs. NEXT owns Goal34 absolute basket-value and
+buy-versus-cash research, separate from tonight's existing Paper opportunity.
+Latest integrated authority13734passed22skipped35warnings337.16s/helper0,
+changedserial221pass2.50s/Ruff/three sample-env Compose pass; covers57e28af.
 Old used sources/artifacts remain immutable; no full-suite repeat per handoff.
 One Ridge/TCN, four OOF+final each/10fits600s shared, CPU smoke before GPU;
 fixed<=128keys/800sessions/520TRAIN20purge260seenDEV, prior61 eligibility and
