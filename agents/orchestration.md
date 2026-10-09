@@ -5,20 +5,21 @@ History remains in Git and immutable external evidence.
 
 ## Current Ready / Owned / Due (2026-10-10 KST)
 
-No company block or foreground sleep. Goal51 actual native session input closed
-4471ec24...; Goal52 fixed Patch20/60 research owns the next company objective.
-Data remainder and compatible Execution delivery remain disjoint ready work.
+No company block or foreground sleep. Goal52 Patch20/60 runtime closed2fc893d0...
+and authority is complete. Coherent repeatable Paper delivery is next; separate
+Data33 collection and public Mixer source preparation do not compete for Git,
+the execution bank or GPU. NEXT_CODEX_GOAL.md is the only company objective.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Integration | Parent | Goal51 native27.436s/42scores/0fits/GPU/account/broker; typed readback/lifecycle49098b43... prepared. Goal52 finite source/input/control contract next. |
-| Verification | Singer / independent | Goal5191 session/154 serial/145 external/32 independent/full clean8:15128pass22skip35warnings339.05s/Ruff/three Compose. Patch source review active; archive-path regressions and actual runtime passed. |
-| GPU | Steward / available |9 actual CUDA market fits199.555s/401.282s cumulative<600; all children reaped/absent/lease released. No ready frozen next family yet. |
-| Engine | James | Patch5769a913.../reread23c6a63d... released; two-window/six-fit worker preparation. Original cutoff-specific cache alignment, no substitute refits. |
-| Data | Copernicus | Contextc95f5955.../input45832b56... released; exact original seven bindings. Separate remainder33 source preparation assigned, preserving f78 bytes. |
-| Fresh Data runtime | Parent / closed partial | f78 actual219.246s/1token192GET attempts191parsed/rate_limited1/95usable128keys18576rows/3dafa26e.../55b1c90e...; next_due20:05:47UTC passed. No UUID replay/global wait. |
+| Integration | Parent | Goal52 runtime and authority complete; next coherent delivery/native session caller. Original model/bank unchanged. |
+| Verification | Parent / independent |312 source/68 changed serial/full clean8:15133pass22skip35warnings340.77s/15155collected/JUnit49ebb915.../Ruff/three Compose. Source review0347477d... P2 preserved; actual publication observationd0ed6fe0... provides conservative455.702s bound. |
+| GPU | Steward / available | Goal52 actual6 CUDA fits13.030s/42cells, all reaped/absent/lease released. Both rejected; no ready frozen next family yet, not permission/environment blocked. |
+| Engine | James / source handed off | Original CURRENT799 cached control preserved. Mixer primary-source rereadb7a09217... completed, no training/allocation. |
+| Data | Copernicus / source handed off | Remainder33 frozen51b30aa7.../448pins/66GET, parent174tests. Legacy absent-UUID metadata repair preserves exact f78 index linkage. |
+| Fresh Data runtime | Parent / closed partial | Remainder actual81.702s/1token62GET62parsed/0errors/30usable5752rows/readbackd87a6c53.../reaped/absent. Three empty, next_due null; separate snapshots cover125 keys, not merged model input. Original f78 immutable. |
 | Execution | Closed finite owner | Exact full EXIT/current-owned-flat fc5fe442...; later fresh10GET/0orders/current-owned-flat3fb1ef48... . Expiry/no next run/no active marker, runtime119c108b...; old job unchanged. |
-| Next native writer | Euclid / released | Lifecycle137c27c0.../factory0b4d5eb5.../trimce539ddd.../inventory274840b0... released. No installation yet; coherent delivery is ready independent work. |
+| Next native writer | Euclid / handed off | Code-only3 images built87d37009.../actual offline audit48500a7d.../443sources244scripts/runtime unchanged. Seven helpers published38d67f81...; no installation/orders/private mounts yet. |
 | Other existing workers | Existing scheduler owners | Snapshot/head/SPY owners stay separate; no fresh outcome or changed schedule inferred here. |
 | Console | Existing web reference | http://127.0.0.1:8787 reference only; no fresh health or owned net-PnL claim. |
 
@@ -34,13 +35,12 @@ new bank, history deletion or global pause. Native per-session inference and
 derived lifecycle input are prepared; multi-symbol delivery is not installed.
 No synthetic result becomes a fill, current-flat or profit claim.
 
-Research improvement implemented: current-only cached verification retains all
-OLD/CURRENT guards and matches every48 cell/seal/missingness/attribution value.
-Actual54.049s vs prior54-cell58.742s is not a matched speedup measurement.
-Paper improvement enacted: bind official route availability before
-scoring, retaining every original research key and score. Unknown peers do not
-stop a supported route; selection is explicitly constrained, not relabeled
-unrestricted rank one. Next research improvement: matched20/60 contexts and
-original cutoff-specific cached controls avoid extra fits and final799 leakage.
-Claude failed categorically, not agreement; original
-falsifiers and closed allocations remain immutable. No extra workflow or gate.
+Current reversible improvement: code-only coherent delivery reuses existing
+runtime layers and passes identical two-stock/unknown-reservation replay in all
+three actual images. Cutover remains ready before another bank writer; no new
+runtime/dependency/platform or business approval. The separate Data collector
+keeps accepted progress without mutating the already-consumed original cache.
+Research publication-debit P2 is scoped to its source; actual455.702s observed
+envelope closes this finite run without pretending future fsync was measured.
+Future dispatchers consume actual post-return publication. Claude unavailable is
+not agreement; used falsifiers, old models and closed allocations remain immutable.

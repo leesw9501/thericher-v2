@@ -6,21 +6,43 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal52 separate remainder metadata FROZEN51b30aa7.../448 source bindings at
+A/data/kis-current-pooled-equity-next-session-remainder-v1. Exactly33 selected
+keys/66 GET ceiling/one client-token/600s work/90s cleanup/new UUID and cache.
+Parent174 checks pass; source selector6c50996a... handles the exact legacy f78
+terminal without invocation_id via its pinned index UUID/path. A conflicting
+present UUID still rejects; new remainder receipts require explicit identity.
+The failed preflight made zero provider calls or credential reads; original
+f78/R51 bytes were not rewritten. Actual collector CLOSED partial: one token/
+62 GET attempts62parsed/0 categorical failures,30 usable33keys/5752rows,
+29 complete100-date streams/one incomplete/three empty;81.702s after publication,
+reaped/absent/source matched. Counts are dispatch attempts, not wire telemetry.
+Terminald460c398.../index4d4d0b13.../strict517-binding readbackd87a6c53...
+under the remainder root. Cursor exhausted for this finite scope; remaining0
+scheduled pages/ETA complete/next_due null/recovery complete_partial. No retry
+or source-limit inference from the three empty streams. Source review781ec568...
+passes54+5 independent checks after legacy repair; old failure receipt preserved.
+Original95 and fresh30 cover125 disjoint keys/24328 rows,123 complete100-date
+streams. This is coverage across TWO immutable snapshots, not a merged model
+input, historical graft or automatic qualification. Next useful Data package
+compares empty-key route metadata before deciding any changed collection scope.
+Patch context c95f5955.../input45832b56... was consumed by the closed6-fit research;
+no OLD/CURRENT union or new Data/PIT/action/finality qualification.
+
 Goal51 COMPLETE/closure4471ec24... . Actual f78 collection219.246s after
 publication/source/stdout/reaped/absent matched; receipt3dafa26e.../return55b1c90e... .
 1token192GET attempts/191parsed/rate_limited1,95 usable of128/18576 rows,
 100-completed anchorOct9/800 calendar ->113 labels/prior61. Counts are inherited
 dispatch attempts, not independently observed wire starts. Provider finality,
 PIT/actions/TR remain unverified; only actual local collection clocks retained.
-Next_due20:05:47UTC passed; separate remainder scope for33 keys is source-owned
-by Copernicus. Preserve original cache/receipt/native decision chain; no original
+Next_due20:05:47UTC passed; separate remainder33 scope is frozen above.
+Preserve original cache/receipt/native decision chain; no original
 UUID rerun, OLD graft, repeated global wait or provider-quota inference.
 Official NAS reference4c9dc717.../master9a7f3767... supports125/128,3 unknown;
 current reference only, not primary/PIT/call-time eligibility. Adapter070fb639.../
 56 checks binds full128 before original model scores all42 eligible. Actual CPU
-decision prepared, not an installed new order. Future Patch contextc95f5955.../
-45 synthetic checks and metadata input handoff45832b56... are released; SAME
-seven original OLD/CURRENT bindings, no value/calendar union or new training yet.
+decision prepared, not an installed new order. SAME seven original OLD/CURRENT
+bindings remain distinct; no value/calendar union.
 
 ### Closed Source And Loader Context
 

@@ -2,6 +2,36 @@
 
 ## Current Owned Opportunities And Research
 
+Goal52 runtime CLOSED at
+D:/thericher-v2/model-artifacts/research/kis-stock-patch-window-development-v1:
+precommitbb906e5c.../bounded-closure2fc893d0.../custody-outcome9604cd15... .
+Six CUDA fits13.030s/42 cells; smoke36.431s/run244.049s/cached66.474s, verify0fits.
+All reaped/absent/unchanged/lease released/flat/no missing/exact accounting.
+Both Patch arms rejected; original model retained. Do not reopen/refund/retry.
+Stored elapsed351.608s is pre-publication; independent0347477d... records that
+P2. Actual-publication-observation.jsond0ed6fe0... bounds the observed finite
+family455.702s<600; never call stored debit post-publication or repair used bytes.
+Full8 authority:15133pass22skip35warnings340.77s/15155 collected/JUnit49ebb915...,
+clean helper exit.312 external/68 changed serial/Ruff/three sample-env Compose
+pass. Helper supplies -q itself; do not add another -q. Accounting is an overlay,
+use -f docker-compose.yml -f docker-compose.accounting.yml for its parse.
+Goal51 delivery-preparation/build/g52-20261010-v1: actual code build87d37009.../
+native audit48500a7d... preserves runtimes/443sources244scripts, no private mounts.
+Published seven helpers at delivery-preparation/published/g52-20261010-v1,
+manifest38d67f81.../runtime-contractada3484c...; NOT installed. Old used R46/R47
+templates/images/jobs stay unchanged. Coherent cutover and fresh native session
+caller are ready independent work; no wait for Monday to prepare them.
+Data remainder33 frozen51b30aa7... under
+D:/thericher-v2/model-artifacts/data/kis-current-pooled-equity-next-session-remainder-v1.
+Actual separate collector CLOSED partial:81.702s post-publication/1token62GET/
+62parsed/0errors/30usable5752rows/29complete100dates/one incomplete/three empty,
+next_due null/reaped/absent/source matched. Terminald460c398.../index4d4d0b13.../
+strict517-binding readbackd87a6c53... .174 parent/54+5 independent checks pass;
+review781ec568... follows the preserved earlier source-changed receipt. Do not
+rerun its UUID or original f78. Source repair binds legacy parent UUID through
+exact index path/UUID without rewriting receipt.125 disjoint covered keys and
+24328rows across two snapshots are not a merged model input or qualification.
+
 Goal51 COMPLETE at
 D:/thericher-v2/model-artifacts/execution/kis-stock-repeatable-native-paper-preparation-v1:
 closure4471ec24.../verification0904fc67... . Exact f78 Data attempt is CLOSED
@@ -21,8 +51,8 @@ coherent compatible delivery before multi-symbol writes, not human approval.
 91 session/154 serial/145 released external/32 independent/full clean8:
 15128pass22skip35warnings339.05s/Ruff/three explicit sample-env Compose pass.
 Original failures, old job identities and failed weekly serial diagnostic remain.
-NEXT: finite Patch20/60 comparison after frozen input/control/source contract;
-source-only preparation is not an actual GPU appointment or closed market study.
+Patch comparison subsequently completed above; source-only preparation and actual
+runtime evidence remain separately scoped.
 
 ### Closed Goal50
 

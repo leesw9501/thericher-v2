@@ -7,14 +7,19 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-10 KST)
 
-Goal51 COMPLETE4471ec24.../original model CPU reuse27.436s/0fits/CUDA/holdout;
-no research allocation spent by Data collection or linked lifecycle preparation.
-Next Patch20/60 family source5769a913.../reread23c6a63d.../input45832b56...
-is independently prepared. Worker/finite contract/source review remain before
-actual6fit/shared600s allocation; GPU available after Goal50 closure, not an
-environment/permission hold. One matrix shares one family budget and zero sealed
-spend. Source prep and separate Data/Execution readiness proceed in parallel;
-closed R40/R48/R50 allocations and original model weights stay unchanged.
+Goal52 family CLOSED/trial1/contractbb906e5c.../allocationcf3498b8.../
+closure2fc893d0.../outcome9604cd15... . Six CUDA fits13.030s/42 cells;
+smoke36.431s/run244.049s/cached66.474s; all unchanged/reaped/absent/lease released.
+Stored debit351.608s excludes final publication: review0347477d... is a real
+P2, not erased. Actual observed conservative family bound455.702s<600 is linked
+at A/research/kis-stock-patch-window-development-v1/actual-publication-observation.json
+(d0ed6fe0...). Future dispatchers must debit observed publication completion;
+do not mutate, retry, refund or reopen this closed allocation to repair it.
+Two window cells share one six-fit family; zero sealed evaluations, both rejected,
+no Paper or independent-replication claim. GPU available; no environment or
+operator hold. Next source-only Mixer rereadb7a09217... is not an allocation.
+Goal51 CPU/native preparation spent zero fits/GPU/holdout. Closed original
+R40/R48/R50 families and original Paper model bytes remain unchanged.
 
 Goal50 family CLOSED/trial1/contract7c3128a3.../allocation3ed4ef65.../
 closure83db6e20.../outcomeece4ce31... . Actual9 CUDA market fits199.555s call

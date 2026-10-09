@@ -7,6 +7,26 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
+Goal52 runtime COMPLETE: A/research/kis-stock-patch-window-development-v1,
+contractbb906e5c.../result89a3d66c.../closure2fc893d0.../custody9604cd15... .
+Actual6 CUDA fits13.030s/42 cells; smoke36.431s/run244.049s/cached66.474s,
+zero new fits/inference in verify. Sources/inputs unchanged, children reaped,
+containers absent/lease released/books flat/missing0/accounting and attribution
+exact. Stored phase debit351.608s is PRE-publication; independent review0347477d...
+found a P2 there. Actual post-return observationd0ed6fe0... conservatively bounds
+freeze/allocation and continuous smoke-through-verify time455.702s<600, including
+inter-phase idle/publication. It does not claim its own future publication bound.
+Whole10bps/original10% development growth: patch20+.7660%, patch60+1.0052%,
+ORIGINAL cachedTCN+.9564%. Both Patch arms reject:20 utility and drawdown,
+60 drawdown. Same seen/current-listed/non-PIT/raw/action/finality limitations;
+no independent alpha, replacement Paper model, sealed spend or rescue fits.
+Baseline CURRENT799 only; early OOF is paired Patch-only, not TCN comparison.
+312 parent synthetic checks/68 shared serial checks; full8:15133pass22skip.
+Next research preparation: independently reread TSMixer sourceb7a09217... under
+A/research/kis-stock-next-public-mixer-source-v1/engine-reread-v1. Official
+implementation is TensorFlow; a native PyTorch adaptation is not paper-faithful
+or pretrained. Mechanism only, not dataset/weight rights or market performance.
+
 Goal51 COMPLETE/closure4471ec24... . Original numeric model9de27944... reloaded
 in one actual CPU decision27.436s<120/42 scored/0fits/CUDA/account/broker,
 actual completionOct9 20:08:23UTC/pre-OPEN Oct12. Full128 identity/prior61/
@@ -15,13 +35,9 @@ constraint is explicit, not original unrestricted rank1 or predictive promotion.
 Typed cached readback and automatic session/request lifecycle handoff49098b43...
 pass; no new model or new order installed. Goal47 exact full EXIT/current-flat
 closure119c108b... is execution evidence, not model profit.
-Next breadth: PatchTST-inspired20/60 models5769a913.../62 synthetic checks,
-primary source reread23c6a63d.../contextc95f5955.../45 checks/input45832b56... .
-Worker source prep and independent source falsification active. Original TCN
-controls require cutoff-matched cached outputs or a bounded trusted decoder;
-final799 cannot score early targets. Max6 future fits/shared600s/0sealed, not
-allocated yet; no R50 refit substitution or extra blend. Depth stays genuinely
-fresh prospective evidence, not repeated seen development or GPU utilization.
+Patch source5769a913.../reread23c6a63d.../contextc95f5955.../input45832b56...
+was consumed by the closed Goal52 above. Depth needs genuinely fresh prospective
+evidence, not repeated seen development or GPU utilization.
 
 ### Closed Goal50
 

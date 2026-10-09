@@ -2,84 +2,89 @@
 
 ## Objective
 
-Complete kis-stock-patch-window-development-v1: determine whether a small
-PatchTST-inspired20/60 daily-context family adds useful cost-aware development
-evidence beyond the ORIGINAL frozen TCN20 and naive controls. One finite family,
-not independent alpha, Paper promotion, GPU-utilization or reopened allocation.
+Complete kis-stock-repeatable-session-delivery-v1: connect the already-retained
+original-TCN session decision to one coherent, recoverable KIS Paper runtime
+and its next official entry/owned-exit opportunity. Deliver an executable loop,
+not a new winning model, approval gate or provenance framework.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal51 closed4471ec24.../verification0904fc67... at
-A/execution/kis-stock-repeatable-native-paper-preparation-v1. Actual original
-TCN20 decision72914719.../contractc5d22f72.../lifecycle49098b43...:
-42 scored/27.436s<120/0fits/CUDA/account/broker, next official Oct12 session.
-Dataf78 partial95 of128/18576 rows/192GET attempts191parsed/rate_limited1,
-219.246s/reaped/absent; remaining33 have passed scoped next_due. Preserve that
-exact cache/receipt/decision chain. Goal47 original BUY/EXIT full-fill/current
-owned-flat runtime119c108b...; finite task expired/no next run. No fee/settled
-cash/net-PnL claim. Original9de27944... model/bank stay unchanged.
+Goal52 Patch20/60 closed at A/research/kis-stock-patch-window-development-v1:
+contractbb906e5c.../result89a3d66c.../closure2fc893d0.../custody9604cd15... .
+Actual6CUDAfits/42cells/0verifyfits/accounting matched/lease released; both
+rejected. Stored351.608s is pre-publication; review0347477d... retains that P2.
+Actual post-return observationd0ed6fe0... conservatively bounds455.702s<600.
+Original9de27944... Paper weights unchanged; no sealed spend or promotion.
+312 external/68 serial/full8:15133pass22skip35warnings340.77s/15155collected/
+JUnit49ebb915.../Ruff/three sample-env Compose passed.
 
-Patch root A/research/kis-stock-patch-window-development-v1:
-models5769a913.../source reread23c6a63d.../contextc95f5955.../input45832b56... .
-Official paper/repository/Apache2 independently reread; inspired adaptation,
-not paper-faithful forecasting or pretrained-model result. Source-only62 model/
-45 context checks exclude actual Torch/state mathematics. R40/R50 exact seven
-inputs match, but R50 refit TCN weights differ from original.
+Goal51 A/execution/kis-stock-repeatable-native-paper-preparation-v1:
+actual CPU contractc5d22f72.../decision72914719.../parentce0c9d17.../
+lifecycle49098b43...;42 scores/27.436s/0fits/GPU/account/broker. Official
+Oct12 OPEN13:30UTC/CLOSE20UTC/derived EXIT19:50, original .01 of total basis
+inside shared .10. Goal47 exact BUY/EXIT/current-flat119c108b...; finite old
+owner expired. Preserve its identity, evidence and original aggregate bank.
 
-## Research Package
+Goal51 delivery-preparation/build/g52-20261010-v1:
+code images SPYbd41e48c..., router6b2b76be..., stock113f9644...;
+build87d37009.../actual offline audit48500a7d...,443sources244scripts,
+runtime/dependencies/base layers unchanged, all audit containers reaped/absent,
+no credentials/private mounts/provider/orders. Seven helpers and native factory
+published at delivery-preparation/published/g52-20261010-v1,
+manifest38d67f81.../runtime-contractada3484c...; NOT installed.
 
-Exactly2 trained arms: patch20/patch60, patch5/stride5, two ON/ID channels,
-shared16dim2heads/one Transformer block/FF32/dropout0/flattened binary head.
-No additional blend, parameter sweep or framework change. Both windows use
-the SAME captured prior61/original3126... cohort/all128 identities/5-session
-exact ordinal target; no older40 eligibility exclusion or OLD/CURRENT union.
-Equal-date prefix scaler/BCE, seed101/4epochs/batch512/lr.001/minimum120 complete
-dates stay frozen. OLD-only cutoffs427/610/799 with exact purge/max6 fits total;
-same matched dated rows/keys for both arms and control.
+## Execution Package
 
-Baseline is ORIGINAL R40 TCN20:427->OLD428..610,610->OLD611..794,
-799->CURRENT61..112. Prefer its hash-bound immutable prediction cache if exact
-split/sample lineage validates; otherwise bounded trusted cutoff-specific
-numeric decoding. NEVER final799 on earlier targets, R50 replacement weights,
-extra control fits or unverified model loading.
+Reattest published source/helper/image maps. With no active affected execution
+owner, cut over all five RW/two RO Compose consumers and the existing recovery
+Action to the coherent fresh generation. Preserve exact existing triggers,
+expiry, fallback, settings, principals, original shared basis and all owners.
+Never change used R46/R47 templates/images/jobs or reinterpret an old outcome.
+Dashboard remains projection-only, with no new private-bank mount or public port.
 
-Before numeric inputs/outcomes, freeze exact sources/inputs/row keys/splits,
-window cells/effective-sample rule/control lineage/costs/metrics/strongest kill
-and shared600s cumulative CPU-prep/smoke/native/verification debit in existing
-custody. Zero sealed evaluations. Actual CPU smoke verifies Transformer shapes,
-numeric schema and control soundness before one CUDA run. CURRENT replay42cells:
-patch20/patch60/originalTCN20 plus four existing naive controls, whole/fractional
-and fixed5/10/20bps. Reuse continuous book/stock-day fee attribution; cached
-verification spends zero fits. Kill on input/target/accounting mismatch, cost
-utility below cash/momentum or frozen control-relative drawdown. Seen overlapping
-current-only evidence stays non-promoting even when positive.
+Reuse lifecycle137c27c0.../factory0b4d5eb5.../trimce539ddd... and existing named
+execution paths for a small native lifecycle caller. Consume the exact retained
+typed SessionDecision and derived request identities; no hand-edited dates,
+symbol, target, expiry, confidence, identity or substituted inference.
+Paper credentials are standing-approved and selective; never read KIS_LIVE_*.
+Persist intent before side effects. Exact unknowns reconcile, partial fills sell
+only owned quantity, cancellation needs typed proof, and restart never renews TTL.
+Do not turn one request's technical failure into a global pause.
 
-## Parallel Data And Execution
+Install only the finite next official-session opportunities required by that
+decision, with one concurrency-bounded owner and source-safe terminal readback.
+Do not manually run a closed-market order or wait in the foreground until Monday.
+Completion here is actual coherent delivery, bounded native preparation/readback,
+and installed exact future ownership; actual fill/reconciliation is a later
+runtime outcome and must not be fabricated from task exit or preparation.
 
-Data may prepare/run one named bounded remainder scope for33 keys after exact
-next_due and fresh contract. Reuse measured gate/one client-token/durable cursor;
-bounded retry/categorical outcomes/no quota inference. Separate clone/cache
-preserves every originalf78 byte/R51 readback. No OLD graft, UUID replay, request
-flood or foreground sleep. Missing keys do not block ready research.
+## Parallel Packages
 
-Execution prepares coherent multi-symbol code delivery using inventory274840b0...
-and trimce539ddd.../factory0b4d5eb5.../lifecycle137c27c0... . All canonical
-readers/writers/seven entrypoints agree before new bank writes. Preserve every
-old owner/history/pending identity/TTL/original .10 basis; official-session
-derived entry/owned EXIT only. Used R46/R47 images/jobs/templates stay immutable.
-Code-only install may proceed with no active owner; no dependency/runtime change,
-schedule expansion or new order is needed to close research. Do not wait Monday.
+Data owns the separate33 scope51b30aa7... under
+A/data/kis-current-pooled-equity-next-session-remainder-v1. Actual CLOSED partial:
+81.702s/1token62GET62parsed/0errors/30usable5752rows/three empty/next_due null,
+strict readbackd87a6c53...; original95 plus30 cover125 disjoint keys across TWO
+snapshots, not a merged model input. Compare the three empty keys to current
+official route metadata before any changed source scope; no speculative retry.
+Never rerun the consumed UUID, mutate original f78/R51 cache, graft OLD rows or
+infer global provider limits. Continue useful later scope only after measured
+evidence; a lane-local source limit or cooldown does not stop Execution.
+
+Engine may prepare one source-only native PyTorch TSMixer-inspired alternative
+from independently reread sourceb7a09217...; exact shapes/math/schema/synthetic
+checks only. No official TensorFlow install, public weights, market fit, new
+GPU allocation, extra Patch fit or holdout opening in this preparation package.
+Its source receipt is not a second company goal or deployment claim.
 
 ## Integrate And Continue
 
-Claude challenges architecture/windows/control/cost concisely; unavailable is
-not agreement or a global hold. Temporary Validation attacks frozen source, not
-tuning. Focused tests first; at integration follow AGENTS.md authority, Ruff and
-three sample-env Compose. Artifacts on D outside Git, secret-free output,
-modeoff/Paper-only, never KIS_LIVE_*.
-Completion needs actual bounded CPU/CUDA result or exact terminal technical
-failure with custody closed, accounting/cache verification, narrow verdict and
-closed resources. Record parallel outcomes narrowly, refresh stateboards,
-commit/push, replace this with ONE material next objective and continue. No new
-report/gate/role or per-agent goal files.
+Claude concisely challenges coherent recovery/cutover before reliance; unavailable
+is not agreement or a hold on independent standing-authorized work. Temporary
+Validation attacks exact frozen contracts, not tuning. Focused tests first,
+AGENTS.md changed-path serial/clean8/Ruff/default+research+combined-accounting
+sample Compose at the shared runtime boundary. Helper supplies -q; retain JUnit
+counts outside Git. Future compute dispatch debits observed publication completion.
+Artifacts on D, secret-free output, Paper-only, no live/cost/public exposure.
+Refresh current stateboards, verify/commit/push, replace this with ONE material
+next company objective and continue. No new gate/report/role/per-agent goal.

@@ -28,6 +28,8 @@ SUPPORTED_ARMS = (
     "peer60",
     "memory20",
     "flat20",
+    "patch20",
+    "patch60",
 )
 
 

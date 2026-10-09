@@ -20,6 +20,38 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
+Goal52 research runtime COMPLETE at
+A/research/kis-stock-patch-window-development-v1: contractbb906e5c.../
+result89a3d66c.../closure2fc893d0.../custody9604cd15... . Six actual CUDA fits
+13.030s/42 cells; CPU36.431s/run244.049s/cached66.474s/0verify fits/inference.
+All unchanged/reaped/absent/lease released/flat/missing0/accounting exact.
+Whole10bps/original10% seen growth: patch20+.7660%, patch60+1.0052%, original
+TCN+.9564%; both Patch arms reject predeclared utility/drawdown controls.
+No Paper model replacement, independent alpha, sealed spend or rescue fit.
+Independent scaffold review0347477d... found publication omitted from stored
+phase debit351.608s. Retain that P2 and immutable used sources. Actual returned
+publication observationd0ed6fe0... establishes a conservative455.702s<600 bound
+including inter-phase idle; no claim about the observation record's own future
+fsync. Future dispatchers must consume observed publication debit.
+312 parent source checks/68 shared serial; full8:15133pass22skip35warnings340.77s,
+15155 collected/JUnit49ebb915.../clean helper exit; Ruff/three Compose pass.
+An initial double-quiet run passed without count summary; explicit JUnit run is
+authority. Accounting overlay alone is not standalone Compose; combined parse
+passes. Neither mistaken diagnostic is reported as independent authority.
+Execution parallel delivery: three code-only images built87d37009... and actual
+offline audit48500a7d...;443 source/244 scripts/runtime unchanged/no private
+mounts/orders/credentials. Seven helpers published38d67f81.../contractada3484c...
+under Goal51 delivery-preparation/published/g52-20261010-v1; NOT installed.
+Data separate33 scope51b30aa7... CLOSED partial:81.702s/1token62GET62parsed/
+0categorical errors/30usable5752rows/29complete100dates/one incomplete/three
+empty, next_due null/reaped/absent/source matched. Receipt d460c398.../index
+4d4d0b13.../strict517-binding readbackd87a6c53.../independent781ec568... .
+Original95 and fresh30 cover125 disjoint keys/24328rows/123complete100dates
+across TWO snapshots, not a merged model input. Original f78 stays frozen.
+Next material direction: coherent repeatable KIS Paper session delivery, original
+model/bank/owners preserved. Public Mixer source independently rereadb7a09217...
+is only preparation, not training, a public checkpoint or proven profitability.
+
 Goal51 native session input COMPLETE at
 A/execution/kis-stock-repeatable-native-paper-preparation-v1:
 closure4471ec24.../verification0904fc67... . Actual f78 Data collection
@@ -43,10 +75,9 @@ Used source/falsifier failures remain immutable; four native source P2s fixed,
 then actual package-root archive comparison fixed with two regression cases.
 Claude unavailable, not agreement; raw/current-listed/non-PIT/action/finality
 limits unchanged. Goal47 actual exact EXIT closure119c108b... is below.
-NEXT owns one finite Patch20/60 development comparison. Source/models5769a913.../
-independent primary reread23c6a63d.../Data contextc95f5955.../input45832b56...
-are ready preparation, not an allocated or trained family. Early original TCN
-controls must match their own427/610 cutoffs, never final799 or R50 refits.
+Patch source5769a913.../reread23c6a63d.../contextc95f5955.../input45832b56...
+was consumed by Goal52 above. CURRENT799 baseline only; Patch OOF is paired
+diagnostic, never final799 on early targets or R50 replacement control weights.
 
 ### Closed Goal50
 
