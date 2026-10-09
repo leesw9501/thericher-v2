@@ -20,7 +20,22 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-Goal47 preparation COMPLETE; NEXT owns Goal48 peer-attention development.
+Goal49 source preparation COMPLETE/closure9296cf75... at
+A/execution/kis-stock-repeatable-session-preparation-v1. Session4d848c18.../
+recoveryb6607c0e.../bank1092dea1.../plan3bf5fa6e.../cost86859b5a... .
+Two synthetic sessions/different top1/durable restart preserve original basis,
+every owner and prior unknown; no duplicate submit/TTL renewal/false flat.
+1954 changed serial/68 independent/178 Data/full clean8:15104pass22skip/
+35warnings339.91s;15126 serial-collected/Ruff/three sample-env Compose pass.
+Independent clock/model/symbol/cancel/Decimal P2s repaired; old failures retained.
+No native model/provider/order/bank/delivery/schedule change in this slice.
+All canonical runtime readers/writers need compatible delivery before multi-owner
+writes. Data metadata frozenf78c372f.../446pins/128keys100completed800calendar;
+earliest collection Oct9 CLOSE20UTC, not an installed schedule or fresh result.
+NEXT advances one fixed temporal-memory/flat/TCN GPU development comparison,
+not an old-model refit, replacement Paper model or another approval gate.
+
+Goal48 integrated/pushed580cad5; its closed research remains below.
 R47=A/execution/kis-stock-owned-exit-lifecycle-v1/closure.json/3d32edf8... .
 Sourcecffa21b pushed; cash-free owner-only SELL preserves original ENTRY
 instrument/owner and same10% bank. Exact job2a5135f3.../delivery5bd53682.../

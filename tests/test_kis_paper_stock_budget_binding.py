@@ -246,7 +246,7 @@ def test_registry_symbol_scope_exact(symbol):
 @pytest.mark.parametrize(
     "change",
     [
-        "two_owners",
+        "copied_foreign_owner",
         "two_states",
         "duplicate_request",
         "input",
@@ -262,7 +262,7 @@ def test_registry_symbol_scope_exact(symbol):
 def test_exact_seed_and_plan_identity_rejects_mutations(change):
     binding, seed = _binding()
     plan = binding["stocks"]["AAPL"]["plans"][0]
-    if change == "two_owners":
+    if change == "copied_foreign_owner":
         binding["stocks"]["MSFT"] = copy.deepcopy(binding["stocks"]["AAPL"])
     elif change == "two_states":
         plan["states"]["bk-" + "f" * 64] = seed.to_dict()
@@ -462,3 +462,162 @@ def test_pure_replay_requires_full_exact_custody(change):
         states[seed.intent.run_id] = replace(seed, updated_at=NOW + timedelta(seconds=1))
     with pytest.raises((_RecoveryRequired, ValueError)):
         _pure(binding, states)
+
+
+def _two_stocks(*etfs):
+    from test_kis_paper_stock_plan_reservation import _arguments, _fresh_target
+    from thericher_v2.execution.kis_paper_stock_plan import build_kis_paper_stock_plan
+
+    args = _arguments(*etfs)
+    first = build_kis_paper_stock_plan(**args)
+    second = build_kis_paper_stock_plan(**_fresh_target(args, first))
+    return args, second.binding, first.intents[0], second.intents[0]
+
+
+def test_multiple_stock_owners_remain_visible_to_every_existing_reader(tmp_path):
+    from test_kis_paper_stock_plan_reservation import _observed
+
+    args, binding, first, second = _two_stocks(_state())
+    state = _observed(first, filled="3", unavailable=True)
+    _persist(tmp_path, binding, *args["states"].values(), state)
+    before = copy.deepcopy(binding)
+    for _ in range(2):
+        loaded = budget._load_binding(tmp_path)
+        for select in (
+            {},
+            {"qqq_cycle_id": binding["qqq"]["cycle_id"]},
+            {"portfolio_symbol": "TLT"},
+            {"stock_symbol": first.symbol},
+            {"stock_symbol": second.symbol},
+        ):
+            projected = budget.project_budget(tmp_path, loaded, as_of=state.updated_at, **select)
+            assert projected.entry_cost == 90 and projected.reserved_buys == 170
+            assert projected.remaining_gross_cash == 740
+            if "stock_symbol" in select:
+                assert projected.quantity == (3 if select["stock_symbol"] == first.symbol else 0)
+    assert budget._owners(binding)[:5] == budget._owners(args["binding"])
+    assert binding == before
+
+
+def test_multi_stock_registry_order_does_not_change_digest_or_canonical_capacity():
+    from test_kis_paper_stock_plan import AT
+
+    _, binding, _, _ = _two_stocks()
+    reversed_binding = copy.deepcopy(binding)
+    reversed_binding["stocks"] = dict(reversed(tuple(binding["stocks"].items())))
+    states = budget._stock_seed_states(binding)
+    forward = _pure(binding, states, as_of=AT)
+    backward = _pure(reversed_binding, states, as_of=AT)
+    assert budget._digest(binding) == budget._digest(reversed_binding)
+    assert forward.stocks_by_instrument == backward.stocks_by_instrument
+    assert forward.entry_cost == backward.entry_cost == 0
+    assert forward.reserved_buys == backward.reserved_buys == 200
+    assert forward.remaining_cap == backward.remaining_cap == 800
+
+
+@pytest.mark.parametrize(
+    "change",
+    ["duplicate_binding", "missing_state", "wrong_owner", "duplicate_state", "foreign_account"],
+)
+def test_multi_stock_scope_cannot_alias_or_omit_a_retained_owner(change):
+    from test_kis_paper_stock_plan import AT
+
+    _, binding, first, second = _two_stocks()
+    states = budget._stock_seed_states(binding)
+    if change == "duplicate_binding":
+        binding["stocks"][second.symbol]["instrument_binding_ref"] = binding["stocks"][
+            first.symbol
+        ]["instrument_binding_ref"]
+    elif change == "missing_state":
+        states.pop(first.run_id)
+    elif change == "wrong_owner":
+        binding["stocks"][second.symbol]["owner_ref"] = binding["stocks"][first.symbol]["owner_ref"]
+    elif change == "duplicate_state":
+        binding["stocks"][second.symbol]["plans"][0]["states"] = {
+            first.run_id: states[first.run_id].to_dict()
+        }
+    else:
+        binding["account_ref"] = "b" * 64
+    with pytest.raises((_RecoveryRequired, ValueError)):
+        _pure(binding, states, as_of=AT)
+
+
+def test_disjoint_unknown_owner_does_not_pause_new_owner_recovery(tmp_path):
+    from test_kis_paper_stock_plan import AT
+
+    _, binding, first, second = _two_stocks()
+    seeds = budget._stock_seed_states(binding)
+    unknown = replace(
+        seeds[first.run_id],
+        phase="outcome_unknown",
+        updated_at=AT + timedelta(seconds=1),
+        reason_code="submit_transport_unknown",
+        submission_started_at=AT + timedelta(seconds=1),
+    )
+    _persist(tmp_path, binding, unknown)
+    assert not budget._other_owned_intent_pending(tmp_path, binding, second.run_id)
+
+
+@pytest.mark.parametrize("kind", ["spy_inventory", "qqq_roundtrip"])
+def test_legacy_single_owner_indexed_projections_strictly_exclude_v4(kind):
+    from test_kis_paper_stock_plan import AT
+
+    _, binding, _, _ = _two_stocks()
+    arguments = dict(
+        binding=binding,
+        states={},
+        expected_account_ref=ACCOUNT,
+        expected_basis_ref=binding["basis_ref"],
+        as_of=AT,
+    )
+    if kind == "spy_inventory":
+        with pytest.raises(
+            budget.KisPaperSpyOwnedInventoryError, match="spy_inventory_binding_invalid"
+        ):
+            budget.project_spy_owned_inventory(
+                **arguments, expected_owner_ref=binding["spy_owner_ref"]
+            )
+    else:
+        with pytest.raises(ValueError, match="gross_roundtrip_binding_invalid"):
+            budget.project_qqq_unit_gross_pnl(
+                **arguments,
+                cycle_id=binding["qqq"]["cycle_id"],
+                expected_owner_ref=binding["qqq"]["owner_ref"],
+            )
+
+
+def test_multi_stock_pnl_keeps_complete_owner_available_beside_unknown_owner():
+    from test_kis_paper_stock_plan import AT
+    from test_kis_paper_stock_plan_reservation import _observed
+    from thericher_v2.execution.kis_paper_portfolio_pnl import project_kis_paper_portfolio_pnl
+
+    _, binding, first, second = _two_stocks()
+    states = budget._stock_seed_states(binding)
+    states[first.run_id] = replace(
+        states[first.run_id],
+        phase="outcome_unknown",
+        updated_at=AT + timedelta(seconds=1),
+        reason_code="submit_transport_unknown",
+        submission_started_at=AT + timedelta(seconds=1),
+    )
+    states[second.run_id] = _observed(second, filled="10", remaining="0")
+    owners = budget._owners(binding)
+    result = project_kis_paper_portfolio_pnl(
+        basis=budget._basis(binding),
+        expected_basis_ref=binding["basis_ref"],
+        owners=tuple(owner for owner, _ in owners),
+        expected_owner_refs={owner.owner_ref: ref for owner, ref in owners},
+        states=states,
+        as_of=AT + timedelta(seconds=10),
+    )
+    by_owner = {row.owner_ref: row for row in result.owners}
+    old = by_owner[
+        budget._stock_owner_id(binding["stocks"][first.symbol]["instrument_binding_ref"])
+    ]
+    new = by_owner[
+        budget._stock_owner_id(binding["stocks"][second.symbol]["instrument_binding_ref"])
+    ]
+    assert old.status == "incomplete" and old.quantity is None
+    assert new.status == "no_realized_fills" and new.quantity == 10
+    assert new.remaining_entry_cost_usd == 100 and not new.reasons
+    assert result.status == "incomplete" and result.gross_realized_usd is None

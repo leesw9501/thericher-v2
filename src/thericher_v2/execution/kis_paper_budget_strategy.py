@@ -531,11 +531,11 @@ def _stock_price_ref(binding, symbol, input_ref, limit_price, side):
 
 
 def _stock_seed_states(binding):
-    """Parse one explicitly bound NASD owner; no IO, adoption or migration."""
+    """Parse retained explicitly bound NASD owners; no IO, adoption or migration."""
     if binding["version"] != 4:
         return {}
     registry = binding["stocks"]
-    if type(registry) is not dict or len(registry) > 1:
+    if type(registry) is not dict:
         raise _RecoveryRequired("stock_binding_invalid")
     seeds = {}
     requests = {p["request_id"] for p in binding["portfolio"]["plans"]}

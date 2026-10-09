@@ -162,7 +162,9 @@ def test_exact_current_account_owned_inventory_and_closed_safe_payload():
         "retained_fill_count": 0,
         "limitation": "owned_state_attribution_not_current_broker_state_or_pnl",
     }
-    text = json.dumps(result.safe_payload()) + repr(result)
+    assert type(result).__repr__ is object.__repr__
+    assert repr(result) == object.__repr__(result)
+    text = json.dumps(result.safe_payload())
     for private in (
         ACCOUNT,
         state.intent.run_id,
@@ -179,6 +181,15 @@ def test_exact_current_account_owned_inventory_and_closed_safe_payload():
         assert private not in text
     with pytest.raises(FrozenInstanceError):
         result.quantity = D(0)
+
+
+@pytest.mark.parametrize("leak", ["120", "quantity=2", "SYNTHETIC-ORDER"])
+def test_default_repr_assertion_rejects_leaked_amount_field_or_identifier(monkeypatch, leak):
+    result = budget.project_spy_owned_inventory(**_scope(_state()))
+    monkeypatch.setattr(type(result), "__repr__", lambda value: object.__repr__(value) + leak)
+    assert leak not in json.dumps(result.safe_payload())
+    with pytest.raises(AssertionError):
+        assert repr(result) == object.__repr__(result)
 
 
 def test_every_spy_state_is_counted_once_and_sell_does_not_report_profit():
@@ -444,9 +455,7 @@ def test_conflicting_or_unknown_observation_is_a_scoped_replay_failure(observati
         budget.project_spy_owned_inventory(**args)
 
 
-@pytest.mark.parametrize(
-    "phase", ("submission_started", "outcome_unknown", "cancel_started")
-)
+@pytest.mark.parametrize("phase", ("submission_started", "outcome_unknown", "cancel_started"))
 def test_unknown_self_outcome_cannot_use_a_closed_marker_as_proof(phase):
     state = _state()
     args = _scope(state)

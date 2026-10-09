@@ -22,7 +22,7 @@ import re
 from collections.abc import Mapping
 from dataclasses import dataclass, replace
 from datetime import datetime
-from decimal import ROUND_CEILING, ROUND_FLOOR, Decimal, DecimalException, localcontext
+from decimal import ROUND_CEILING, ROUND_FLOOR, Context, Decimal, DecimalException, localcontext
 from fractions import Fraction
 from zoneinfo import ZoneInfo
 
@@ -302,11 +302,8 @@ def _released_buy(state: KisPaperCanaryState, cancellation_confirmed: bool) -> b
 
 def _decimal(value: Fraction, *, rounding: str = ROUND_CEILING) -> Decimal:
     numerator, denominator = Decimal(value.numerator), Decimal(value.denominator)
-    with localcontext() as context:
-        context.prec = max(
-            64, len(numerator.as_tuple().digits) + len(denominator.as_tuple().digits) + 4
-        )
-        context.rounding = rounding
+    precision = max(64, len(numerator.as_tuple().digits) + len(denominator.as_tuple().digits) + 4)
+    with localcontext(Context(prec=precision, rounding=rounding)):
         return numerator / denominator
 
 

@@ -7,6 +7,19 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
+Goal49 CLOSED9296cf75...; session4d848c18... released69 tests/23 independent
+falsifiers pass. Actual completion clock, prepared-envelope revalidation and
+existing KIS symbol grammar repairs preserve original final TCN20 SHA9de27944...
+and confidence0/target0.01 of total original basis. Pure scorer injection only;
+calendar, model bytes and trusted numeric loader remain caller attested. No fit,
+market input, target or native inference was used in this source preparation.
+Source-only HiPPO-inspired finite-memory proposal84b03c5f... was independently
+reread430e65c9... under A/research/kis-stock-temporal-context-proposal-v1.
+Distinct inductive bias, not new information or an allocated campaign; no weights
+or new dependency. NEXT assigns one fixed-memory/flat/freshTCN family with
+48cells/9fits/one600s budget. Freeze its own rules/custody before fitting; old
+families remain closed and seen-data reuse cannot create independent replication.
+
 Goal48 native development CLOSED at A/research/kis-stock-peer-attention-development-v1:
 contract984651c7.../451sources7inputs/resulte336641a.../closure9e9cb00b.../
 custodyb08ff252... . Actual12 CUDA fits17.899s/54cells/218.788s<600;

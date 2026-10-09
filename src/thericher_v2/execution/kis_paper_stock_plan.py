@@ -419,7 +419,6 @@ def _plan_scope(
         as_of=as_of,
     )
     registry = binding.get("stocks", {})
-    _plan_check(not registry or set(registry) == {instrument.symbol}, "stock_registry_conflict")
     entry = registry.get(instrument.symbol)
     if entry is not None:
         _plan_check(
@@ -499,9 +498,10 @@ def _retry_owner_refs(binding, expected_refs, request_id, input_ref, parent_ref,
     if not parent["stocks"][instrument.symbol]["plans"]:
         parent["stocks"].pop(instrument.symbol)
         candidates.append(copy.deepcopy(parent))
-        parent.pop("stocks")
-        parent["version"] = 3
-        candidates.append(parent)
+        if not parent["stocks"]:
+            parent.pop("stocks")
+            parent["version"] = 3
+            candidates.append(parent)
     for candidate in candidates:
         if (
             "sha256:" + budget._digest(candidate) == parent_ref

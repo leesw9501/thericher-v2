@@ -8,6 +8,16 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal49 source preparation COMPLETE/closure9296cf75...: retained-stock V4 compatibility
+1092dea1.../3bf5fa6e... and exact recovery router. Parent two-session synthetic
+integration preserves original bank, old unknown reserve and every legacy owner.
+Exact routerb6607c0e... reuses terminal cancellation proof; cost86859b5a...
+isolates Decimal traps/flags with unchanged precision/directed rounding. Original
+falsifiers retained;1954 serial/68 independent/15104pass22skip35warnings339.91s.
+No native bank write, code delivery, new request, task or schedule in this slice.
+All consumers must receive compatible source before later multi-owner writes;
+installed Goal47 job/image and original BUY record below stay immutable.
+
 Goal47 preparation COMPLETE/closure3d32edf8...; sourcecffa21b pushed.
 Separate EXIT-class receipt32adf795.../plannerf96c134b... keeps original ENTRY
 owner/instrument. Cash-free SELL reads never require buying power; exact

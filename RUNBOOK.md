@@ -2,6 +2,17 @@
 
 ## Current Owned Opportunities And Research
 
+Goal49 source preparation COMPLETE/closure9296cf75...; no new native order/schedule.
+Session API reuses original TCN20/model-byte attestation and prior61 prices with
+113 official calendar labels; actual scorer completion is the new decision time.
+Multi-symbol V4 keeps every original owner and reservation. Exact recovery does
+not renew TTL or equate missing/zero residual with a proven cancellation.
+Independent P2s repaired;1954 serial/68 independent/full clean8:15104pass22skip/
+35warnings339.91s/15126 serial-collected/Ruff/three sample-env Compose pass.
+Data future-anchor caller publication repair6ab8ff6c... passes178 synthetic
+checks; metadata frozenf78c372f.../446pins. No collection before Oct9 CLOSE20UTC,
+installed Data schedule or fresh result. NEXT owns one fixed-memory study.
+
 Goal48 native CLOSED at
 D:/thericher-v2/model-artifacts/research/kis-stock-peer-attention-development-v1:
 precommit984651c7.../bounded-closure9e9cb00b.../custodyb08ff252...;
@@ -32,7 +43,7 @@ Sourcecffa21b pushed.986 serial/120 external/final clean8:14939pass22skip/
 35warnings355.54s/Ruff/three sample-env Compose. Independent scoped P2s fixed,
 original failing receipts retained. Weekly serial diagnostic at
 C:/trpy/weekly20261010g47 ended as the failed diagnostic described above.
-NEXT owns one peer-attention CUDA development campaign, not another exit gate.
+Goals48/49 subsequently closed; NEXT owns the fixed-memory development study.
 
 Goal46 COMPLETE: D:/thericher-v2/model-artifacts/execution/
 kis-stock-persisted-paper-execution-v1/closure.json/28c5038b... . Exact r3

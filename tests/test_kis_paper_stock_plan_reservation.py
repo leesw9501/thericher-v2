@@ -88,6 +88,66 @@ def _retained(args, result, *, original_refs=False):
     )
 
 
+def _fresh_target(
+    args,
+    result,
+    *,
+    symbol="OTHERSTOCK",
+    states=None,
+    at=AT,
+    cash="1000",
+    funds="1000",
+    broker_quantity=None,
+    target=".01",
+):
+    typed = _sizing_arguments(
+        cash=cash, funds=funds, broker_quantity=broker_quantity, target=target
+    )
+    proposal = replace(
+        typed["proposal"],
+        proposal_id="fresh-" + symbol,
+        symbol=symbol,
+        decided_at=at,
+        valid_until=at + timedelta(hours=1),
+    )
+    receipt = receipt_from_target_exposure_proposal(proposal, references=REFS)
+    instrument = KisPaperStockInstrument(symbol, receipt.instrument_binding_ref)
+    reads = typed["reads"]
+    snapshot = reads.snapshot
+    reads = replace(
+        reads,
+        instrument=instrument,
+        started_at=at,
+        completed_at=at,
+        quote=replace(reads.quote, quoted_at=at),
+        cash=replace(reads.cash, captured_at=at),
+        orderable=replace(reads.orderable, reference_symbol=symbol, captured_at=at),
+        snapshot=replace(
+            snapshot,
+            captured_at=at,
+            identity=replace(snapshot.identity, captured_at=at),
+            cash=replace(snapshot.cash, captured_at=at),
+            orderable_funds=replace(snapshot.orderable_funds, captured_at=at),
+            positions=tuple(replace(p, symbol=symbol, captured_at=at) for p in snapshot.positions),
+            open_orders=replace(snapshot.open_orders, captured_at=at),
+        ),
+    )
+    return args | dict(
+        binding=result.binding,
+        states=budget._stock_seed_states(result.binding) | args["states"] | (states or {}),
+        expected_owner_refs=_refs(result.binding),
+        expected_binding_ref="sha256:" + budget._digest(result.binding),
+        request_id="synthetic-" + symbol,
+        input_ref="sha256:" + "e" * 64,
+        instrument=instrument,
+        proposal=proposal,
+        receipt=receipt,
+        reads=reads,
+        as_of=at,
+        valid_until=at + timedelta(minutes=5),
+    )
+
+
 def _persist(tmp_path, args):
     root = tmp_path / "p"
     root.mkdir()
@@ -584,13 +644,191 @@ def test_retry_remains_original_after_second_closed_stock_plan(tmp_path):
     )
 
 
-def test_foreign_stock_registry_is_not_replaced_or_adopted():
+def test_registered_instrument_binding_is_not_replaced_or_adopted():
     args = _arguments()
     first = stock.build_kis_paper_stock_plan(**args)
     retry = _retained(args, first)
-    retry["instrument"] = KisPaperStockInstrument("DIFFERENT", args["instrument"].binding_ref)
-    with pytest.raises(_RecoveryRequired, match="stock_registry_conflict"):
+    retry["instrument"] = KisPaperStockInstrument(args["instrument"].symbol, "ref:" + "f" * 64)
+    with pytest.raises(_RecoveryRequired, match="stock_instrument_binding_mismatch"):
         stock.build_kis_paper_stock_plan(**retry)
+
+
+def test_successive_sessions_keep_flat_entry_exit_history_and_original_bank(tmp_path):
+    from test_kis_paper_stock_exit_plan import _arguments as exit_arguments
+    from test_kis_paper_stock_exit_plan import _observed as exit_observed
+    from thericher_v2.execution.kis_paper_stock_exit_plan import build_kis_paper_stock_exit_plan
+
+    exited_args = exit_arguments()
+    exited = build_kis_paper_stock_exit_plan(**exited_args)
+    sold = exit_observed(exited.intents[0], filled="10", remaining="0")
+    exited.binding["terminal_evidence"][sold.intent.run_id] = budget._terminal_payload(sold)
+    original = copy.deepcopy(exited.binding)
+    args = _arguments()
+    later = _fresh_target(
+        args,
+        exited,
+        at=AT + timedelta(days=1),
+        states=exited_args["states"] | {sold.intent.run_id: sold},
+    )
+    io = _persist(tmp_path, later)
+    second = stock.reserve_kis_paper_stock_plan(**io)
+    assert second.status == "reserved" and second.intents[0].quantity == 10
+    assert second.reservation == 100  # One percent of TOTAL 10000, not of the 1000 bank.
+    assert (
+        second.binding["stocks"][args["instrument"].symbol]
+        == original["stocks"][args["instrument"].symbol]
+    )
+    assert all(second.binding[key] == value for key, value in original.items() if key != "stocks")
+    assert _refs(second.binding).items() >= _refs(original).items()
+    assert later["binding"] == original
+    loaded = budget._load_binding(io["state_root"])
+    old = budget.project_budget(
+        io["state_root"], loaded, as_of=later["as_of"], stock_symbol=args["instrument"].symbol
+    )
+    new = budget.project_budget(
+        io["state_root"], loaded, as_of=later["as_of"], stock_symbol=later["instrument"].symbol
+    )
+    assert old.quantity == new.quantity == 0 and old.entry_cost == new.entry_cost == 0
+    assert old.reserved_buys == new.reserved_buys == 100
+    assert len(budget._stock_seed_states(loaded)) == 3
+    replay = stock.reserve_kis_paper_stock_plan(
+        **(io | dict(as_of=AT + timedelta(days=2), proposal=None, receipt=None, reads=None))
+    )
+    assert replay.status == "replayed" and replay.intents == second.intents
+    assert replay.plan_ref == second.plan_ref and replay.binding == loaded
+
+
+@pytest.mark.parametrize(
+    "mode,cost,reserved",
+    [
+        ("nonflat", "100", "0"),
+        ("partial", "30", "70"),
+        ("unknown", "0", "100"),
+        ("unavailable", "30", "70"),
+    ],
+)
+def test_disjoint_target_preserves_old_worst_case_capacity_after_expiry(mode, cost, reserved):
+    args = _arguments()
+    first = stock.build_kis_paper_stock_plan(**args)
+    intent = first.intents[0]
+    state = _observed(
+        intent, filled="10" if mode == "nonflat" else "3", unavailable=mode == "unavailable"
+    )
+    if mode == "unknown":
+        state = KisPaperCanaryState(
+            intent,
+            "outcome_unknown",
+            AT + timedelta(seconds=1),
+            "submit_transport_unknown",
+            submission_started_at=AT + timedelta(seconds=1),
+        )
+    if budget._terminal(state):
+        first.binding["terminal_evidence"][intent.run_id] = budget._terminal_payload(state)
+    before = copy.deepcopy(first.binding)
+    fresh = _fresh_target(args, first, states={intent.run_id: state}, at=AT + timedelta(days=1))
+    second = stock.build_kis_paper_stock_plan(**fresh)
+    assert second.status == "prepared" and second.intents[0].quantity == 10
+    projection = budget.project_shared_budget(
+        binding=second.binding,
+        states=fresh["states"] | budget._stock_seed_states(second.binding) | {intent.run_id: state},
+        expected_account_ref=args["expected_account_ref"],
+        expected_basis_ref=args["expected_basis_ref"],
+        expected_owner_refs=_refs(second.binding),
+        as_of=fresh["as_of"],
+    )
+    assert projection.entry_cost == D(cost) and projection.reserved_buys == D(reserved) + 100
+    assert projection.remaining_cap == 800 and projection.remaining_gross_cash == 800
+    assert second.binding["stocks"][intent.symbol] == before["stocks"][intent.symbol]
+    assert all(second.binding[key] == value for key, value in before.items() if key != "stocks")
+
+
+@pytest.mark.parametrize(
+    "cash,funds,quantity",
+    [
+        ("1000", "150", 5),
+        ("150", "1000", 5),
+        ("1000", "99.99", 0),
+        ("99.99", "1000", 0),
+        ("1000", "1000", 10),
+    ],
+)
+def test_disjoint_pending_reservation_is_subtracted_from_provider_funds_and_cash(
+    cash, funds, quantity
+):
+    args = _arguments()
+    first = stock.build_kis_paper_stock_plan(**args)
+    before = copy.deepcopy(first.binding)
+    fresh = _fresh_target(args, first, cash=cash, funds=funds)
+    second = stock.build_kis_paper_stock_plan(**fresh)
+    if quantity:
+        assert second.status == "prepared" and second.intents[0].quantity == quantity
+        assert (
+            second.binding["stocks"][args["instrument"].symbol]
+            == before["stocks"][args["instrument"].symbol]
+        )
+    else:
+        assert second.status == "no_intent" and second.binding is None
+    assert first.binding == before
+
+
+def test_disjoint_owner_reserve_leaves_only_exact_remaining_original_bank_capacity():
+    args = _arguments(target=".095")
+    first = stock.build_kis_paper_stock_plan(**args)
+    assert first.reservation == 950
+    second = stock.build_kis_paper_stock_plan(**_fresh_target(args, first))
+    assert second.status == "prepared" and second.intents[0].quantity == 5
+    assert second.reservation == 50
+
+
+def test_old_retry_after_new_symbol_requires_current_complete_owner_pins():
+    args = _arguments()
+    first = stock.build_kis_paper_stock_plan(**args)
+    fresh = _fresh_target(args, first)
+    second = stock.build_kis_paper_stock_plan(**fresh)
+    retry = args | dict(
+        binding=second.binding,
+        states=budget._stock_seed_states(second.binding),
+        as_of=AT + timedelta(days=1),
+        proposal=None,
+        receipt=None,
+        reads=None,
+    )
+    with pytest.raises(_RecoveryRequired, match="budget_owner_scope_invalid"):
+        stock.build_kis_paper_stock_plan(**retry)
+    reused = stock.build_kis_paper_stock_plan(
+        **(retry | {"expected_owner_refs": _refs(second.binding)})
+    )
+    assert reused.status == "replayed" and reused.intents == first.intents
+    assert reused.plan_ref == first.plan_ref and reused.binding == second.binding
+    assert reused.intents[0].valid_until == args["valid_until"]
+    # The newer request can reconstruct its actual V4 parent, retaining the old owner.
+    newer = fresh | dict(
+        binding=second.binding,
+        states=budget._stock_seed_states(second.binding),
+        as_of=AT + timedelta(days=1),
+        proposal=None,
+        receipt=None,
+        reads=None,
+    )
+    assert stock.build_kis_paper_stock_plan(**newer).intents == second.intents
+
+
+def test_disjoint_symbol_cannot_reuse_another_stock_request_identity():
+    args = _arguments()
+    first = stock.build_kis_paper_stock_plan(**args)
+    fresh = _fresh_target(args, first) | {"request_id": args["request_id"]}
+    before = copy.deepcopy(first.binding)
+    with pytest.raises(_RecoveryRequired, match="stock_plan_invalid"):
+        stock.build_kis_paper_stock_plan(**fresh)
+    assert first.binding == before
+
+
+def test_disjoint_broker_inventory_is_not_adopted():
+    args = _arguments()
+    first = stock.build_kis_paper_stock_plan(**args)
+    second = stock.build_kis_paper_stock_plan(**_fresh_target(args, first, broker_quantity="1"))
+    assert second.status == "no_intent" and second.reason == "target_inventory_mismatch"
+    assert second.binding is None and len(first.binding["stocks"]) == 1
 
 
 def test_trio_request_identity_collision_rejected():

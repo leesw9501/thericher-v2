@@ -5,7 +5,7 @@ import socket
 import urllib.request
 from dataclasses import FrozenInstanceError, replace
 from datetime import UTC, datetime, timedelta
-from decimal import Decimal, localcontext
+from decimal import ROUND_UP, Decimal, Inexact, Rounded, localcontext
 from fractions import Fraction
 from pathlib import Path
 
@@ -1105,3 +1105,22 @@ def test_stock_reference_duplication_or_foreign_owner_sell_cannot_create_invento
     sell = _state("sell", symbol="AAPL", side="sell", filled="1", gross="100", index=1)
     with pytest.raises(KisPaperPortfolioBudgetError, match="unowned_sell"):
         _project(_stock_owner("first", buy), _stock_owner("other", sell))
+
+
+@pytest.mark.parametrize("dirty_flags", [False, True])
+def test_repeating_owned_cost_is_independent_of_ambient_decimal_traps(dirty_flags):
+    buy = _state(
+        "buy", symbol="AAPL", quantity="3", limit="10", filled="3", gross="29", remaining="0"
+    )
+    sell = _state("sell", symbol="AAPL", side="sell", limit="10", filled="1", gross="10", index=1)
+    owner = _stock_owner("stock", buy, sell)
+    expected = _project(owner)
+    assert expected.stocks_by_owner[0].quantity == 2
+    with localcontext() as context:
+        context.prec, context.rounding = 2, ROUND_UP
+        context.traps[Inexact] = context.traps[Rounded] = True
+        context.flags[Inexact] = context.flags[Rounded] = dirty_flags
+        before = context.copy()
+        assert _project(owner) == expected
+        assert context.prec == before.prec and context.rounding == before.rounding
+        assert context.traps == before.traps and context.flags == before.flags

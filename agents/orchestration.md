@@ -5,39 +5,32 @@ History remains in Git and immutable external evidence.
 
 ## Current Ready / Owned / Due (2026-10-10 KST)
 
-No company block or foreground sleep. Goal48 integrated; next repeatable Paper preparation ready.
+No company block or foreground sleep. Goal49 source preparation closed;
+next fixed temporal-memory development package is ready for disjoint dispatch.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Integration | Parent | Goal48 closure9e9cb00b.../12CUDA54cells/cached replay complete; integrate source-only enum extension and tests-only Decimal repair. |
-| GPU | Steward / available | Actual12 CUDA fits17.899s/218.788s family debit; lease released/no retry or refund. No new ready frozen family yet. |
-| Data | Copernicus | Peer61 context released31+15 cases; future-anchor native caller preparation active, no provider calls before20UTC CLOSE. |
-| Execution | Existing finite owner | Exact EXIT job2a5135f3... installed04:50..05KST/1min/IgnoreNew; no manual run or actual exit evidence yet. |
-| Engine | Euclid | Temporal-mechanism source proposal only; closed peer singles reject/fixed blend seen follow-up. No new fit or sealed spend. |
-| Verification | Parent |631 changed serial/448 external/14950pass22skip35warnings361.18s/eight clean/Ruff/three Compose pass. Weekly partial failure repaired202pair+10 independent cases; no full serial pass claim. |
-| Execution preparation | Singer | Source-only map of fresh model seal -> existing bank/intent -> owned EXIT for repeatable sessions; no new task/order. |
-| Paper | Existing scheduler | Oct9 portfolio-control completed34.565s/no_target_delta/0legs0submit0cancel; exact dispatch6c9c016d... . |
-| Next writer | Existing SPY scheduler | Oct9 23:50KST opportunity preserved; inactive Action-only compatible delivery now installed, original basis/identity unchanged. |
-| Snapshot | Existing scheduler | Recurring read-only observer remains separately owned; token-start guard may defer only a fresh client. |
-| Head | Data scheduler | LastOct9 15:29UTC, next17:28UTC;Ready metadata only, no inferred result/manual invoke. |
-| Console | Existing web | http://127.0.0.1:8787 reference only, not owned net profit. |
+| Integration | Parent | Goal49 closure9296cf75...; release shared source and commit/push before dependent next work. |
+| Verification | Parent / complete |1954 serial/68 independent/178 Data/full clean8:15104pass22skip35warnings339.91s;15126 serial-collected/Ruff/three sample-env Compose pass. |
+| GPU | Steward / available | No active lease; next useful memory/flat/freshTCN family needs its own source/contract/allocation, not operator approval. |
+| Engine | Ready | Proposal84b03c5f.../reread430e65c9...; fixed48cells/9fits/600s, no old-weight rescue or new holdout. |
+| Data | Copernicus / prepared | Native metadataf78c372f.../446pins/128keys100completed800calendar; earliest Oct9 CLOSE20UTC, no installed due or actual refresh. |
+| Execution | Existing finite owner | EXIT job2a5135f3... owns04:50..05:00KST Oct10/1min/IgnoreNew; no manual invocation or actual exit evidence yet. |
+| Next native writer | Preparation only | New multi-owner source must reach all canonical readers/writers together before new runtime multi-owner writes; existing job/image unchanged. |
+| Other existing workers | Existing scheduler owners | Snapshot/head/SPY owners stay separate; no fresh outcome or changed schedule inferred here. |
+| Console | Existing web reference | http://127.0.0.1:8787 reference only; no fresh health or owned net-PnL claim. |
 
 ## Bottleneck And Reversible Improvement
 
-Actual stock BUY is now filled and owned-reconciled under the original bank.
-Owner-only EXIT/recovery source is installed; terminal owned-flat is still
-future evidence owned by its finite task. Continue peer-aware engine research
-instead of foreground waiting. No side ledger, new bank or inventory adoption.
-Whole-share target is0.01 of total original basis, not1% of the10% allocation.
+Actual stock BUY is filled/owned-reconciled; its finite EXIT remains separately
+owned. Source now supports distinct sessions and retained symbols without a
+new bank, history deletion or global pause. Native repeatability is not yet
+delivered; no synthetic result becomes a fill, current-flat or profit claim.
 
-Scope native delivery to the same private runtime and original job/capital
-identities. Keep host loaderc07983f6... unchanged. Preserve the upcoming SPY
-opportunity and use measured source-delivery facts, not a global Paper hold.
-Native r3 persisted original-scope stock ownership; fees/settled cash/net PnL not_observed.
-Reversible correction: use the canonical budget digest, never a second JSON
-encoding for private binding pins. Failed used attempts are retained unchanged.
-Claude failed categorically, not agreement. Original falsifier receipts kept.
-Goal47 throughput simplification enacted: one stock code derivative retains
-four unchanged bank/replay pins; unaffected SPY/router/schedules unchanged.
-Next improvement: reuse bounded analytical book and caller transport while
-researching a new peer mechanism; do not build another study platform.
+Next research throughput improvement: cached verification uses only CURRENT
+numeric data, so omit unused OLD decoding while retaining every OLD/CURRENT
+binding guard. R48 run133.604s minus17.899s fit wall leaves115.705s outside fits;
+that remainder is not an isolated CPU or IO measurement. Benefit is unmeasured
+until exact full/current-only parity and timings in the fresh campaign agree.
+No extra wrapper, workflow, quota or report. Claude failed categorically, not
+agreement; original falsifiers and closed allocations remain immutable.

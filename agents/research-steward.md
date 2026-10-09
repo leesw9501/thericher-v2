@@ -7,6 +7,13 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-10 KST)
 
+Goal49 source preparation CLOSED9296cf75.../zero GPU/fits/holdout, source-only
+two-session/durable replay. NEXT names fixed-memory20/flat20/freshTCN20 plus
+one fixed two-member blend:48cells/9fits/one600s family, source proposal84b03c5f...
+independently reread430e65c9... . New contract/allocation not yet frozen; do not
+reopen old weights/debits or label seen development as an independent holdout.
+GPU is available for that useful family once its released sources/contract exist.
+
 Goal47 EXIT preparation closed3d32edf8... withzero fits/GPU/holdout spend.
 Goal48 family CLOSED/trial1/contract984651c7.../closure9e9cb00b.../
 allocation63b236f0.../outcomeb08ff252... . Actual12 CUDA fits17.899s/54cells,

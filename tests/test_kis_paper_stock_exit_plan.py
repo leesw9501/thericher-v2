@@ -21,11 +21,12 @@ from test_kis_paper_stock_plan_reservation import (
     _arguments as _entry_arguments,
 )
 from test_kis_paper_stock_plan_reservation import (
-    _observed as _entry_observed,
-)
-from test_kis_paper_stock_plan_reservation import (
+    _fresh_target,
     _persist,
     _refs,
+)
+from test_kis_paper_stock_plan_reservation import (
+    _observed as _entry_observed,
 )
 from thericher_v2.execution import kis_paper_budget_strategy as budget
 from thericher_v2.execution import kis_paper_stock_exit_plan as exit_plan
@@ -224,6 +225,64 @@ def test_builder_pure_whole_owner_exit_preserves_entry_binding_bank_and_other_ow
     assert {k: v for k, v in _refs(result.binding).items() if not k.startswith("stock-")} == {
         k: v for k, v in args["expected_owner_refs"].items() if not k.startswith("stock-")
     }
+
+
+@pytest.mark.parametrize("foreign_quantity", [False, True])
+def test_owned_exit_of_second_symbol_keeps_disjoint_unknown_reservation(foreign_quantity):
+    entry_args = _entry_arguments()
+    first = entry_plan.build_kis_paper_stock_plan(**entry_args)
+    unknown = KisPaperCanaryState(
+        first.intents[0],
+        "outcome_unknown",
+        AT + timedelta(seconds=1),
+        "submit_transport_unknown",
+        submission_started_at=AT + timedelta(seconds=1),
+    )
+    fresh = _fresh_target(
+        entry_args, first, states={unknown.intent.run_id: unknown}, at=AT + timedelta(seconds=2)
+    )
+    second = entry_plan.build_kis_paper_stock_plan(**fresh)
+    owned = _entry_observed(second.intents[0], filled="10", remaining="0")
+    second.binding["terminal_evidence"][owned.intent.run_id] = budget._terminal_payload(owned)
+    args = _arguments()
+    proposal = replace(args["proposal"], symbol=fresh["instrument"].symbol)
+    reads = replace(
+        args["reads"],
+        instrument=fresh["instrument"],
+        snapshot=replace(
+            args["reads"].snapshot,
+            positions=(_position(fresh["instrument"].symbol, "11" if foreign_quantity else "10"),),
+        ),
+    )
+    args.update(
+        binding=second.binding,
+        states=fresh["states"] | {owned.intent.run_id: owned},
+        expected_owner_refs=_refs(second.binding),
+        expected_binding_ref="sha256:" + budget._digest(second.binding),
+        instrument=fresh["instrument"],
+        proposal=proposal,
+        receipt=receipt_from_target_exposure_proposal(proposal, references=REFS),
+        reads=reads,
+    )
+    before = copy.deepcopy(second.binding)
+    result = exit_plan.build_kis_paper_stock_exit_plan(**args)
+    if foreign_quantity:
+        assert result.status == "no_intent" and result.reason == "target_inventory_mismatch"
+        assert result.binding is None
+    else:
+        assert result.status == "prepared" and result.intents[0].quantity == 10
+        assert result.intents[0].side == "sell" and result.reservation == 0
+        assert result.projection.reserved_buys == 100
+        assert (
+            result.binding["stocks"][unknown.intent.symbol]
+            == before["stocks"][unknown.intent.symbol]
+        )
+        retry = _retained(args, result, original_refs=True)
+        retry.update(as_of=AT + timedelta(days=1), proposal=None, receipt=None, reads=None)
+        replayed = exit_plan.build_kis_paper_stock_exit_plan(**retry)
+        assert replayed.status == "replayed" and replayed.intents == result.intents
+        assert replayed.plan_ref == result.plan_ref and replayed.binding == result.binding
+    assert second.binding == before
 
 
 @pytest.mark.parametrize(

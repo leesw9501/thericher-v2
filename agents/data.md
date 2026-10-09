@@ -14,8 +14,13 @@ before Oct9 CLOSE20UTC; no OLD fallback or revised old receipt. NEXT Goal48
 peer context source6dc01be6... released31+15 synthetic checks; Goal48 actual
 12-fit/54cell run and zero-refit verify closed9e9cb00b... with unchanged retained
 inputs. This changes no availability/PIT/action/finality grade or dataset rows.
-Future-anchor native caller preparation is active separately; no native refresh
-or installed due is claimed yet. Collection bounds256/600s are study scope,
+Future-anchor native caller source is released separately: publication P2 found
+by review9b5ed413... repaired6ab8ff6c...; stored receipt does not attest its own
+future fsync, returned completion is measured afterward.178 external checks pass
+17.59s/Ruff; original publication falsifier independently passes repaired source. Final import-only
+format pins: workerb2502773.../readerc260dc45.../preparer5807f899... .
+Native metadata frozenf78c372f.../446pins/128keys100completed800calendar;
+earliest20UTC CLOSE. No refresh or installed due is claimed yet. Collection bounds256/600s are study scope,
 not provider quota. No source fallback or new authenticated client was used.
 Goal47 EXIT preparation3d32edf8... changes no dataset/PIT/action/finality grade.
 
