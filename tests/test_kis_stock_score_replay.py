@@ -60,6 +60,18 @@ def test_fixed_scores_distinct_from_momentum_and_immutable(arm):
         seal.arm = "cash"
 
 
+@pytest.mark.parametrize("arm", ["tcn10", "tcn20"])
+def test_causal_tcn_identity_uses_same_supplied_score_book(arm):
+    assert score.ARMS == ("ridge", "hgb", "gru", "equal_fixed_mean_blend")
+    seal = score.seal_scores(snapshot(), (), predictions(), arm=arm)
+    assert seal.arm == arm
+    assert seal.ranked_keys == tuple(reversed(KEYS))
+    assert seal.weights == tuple((key, Fraction(1, 10)) for key in KEYS[-10:])
+    reference, actual = run(), run(arm=arm)
+    assert actual.final_state == reference.final_state
+    assert actual.public == reference.public
+
+
 def test_ties_lexical_and_no_score_rounding():
     raw = dict.fromkeys(KEYS, 1.0)
     raw[KEYS[1]] = 1.0000000000000002
@@ -97,8 +109,9 @@ def test_exact_peer_binding_and_constructor_rechecks(change):
 def test_insufficient_peers_keep_inventory_no_cash_conversion(count):
     state = run().days[0].state
     eligible = KEYS[:count]
-    seal = score.seal_scores(snapshot(eligible=eligible), state.owned_keys,
-                             predictions(eligible), arm="gru")
+    seal = score.seal_scores(
+        snapshot(eligible=eligible), state.owned_keys, predictions(eligible), arm="gru"
+    )
     assert seal.weights is None
     trade = score.rebalance_scores(state, seal, {}, round_trip_bps=10)
     assert trade.state is state
@@ -158,9 +171,15 @@ def test_calendar_mismatch_before_any_price_callback():
         pytest.fail("price callback before valid decision")
 
     with pytest.raises(ValueError, match="calendar"):
-        score.replay_scores(PLAN, lambda entry: snapshot(entry + 1),
-                            lambda entry: predictions(), forbidden, arm="ridge",
-                            round_trip_bps=10, liquidate_last_close=True)
+        score.replay_scores(
+            PLAN,
+            lambda entry: snapshot(entry + 1),
+            lambda entry: predictions(),
+            forbidden,
+            arm="ridge",
+            round_trip_bps=10,
+            liquidate_last_close=True,
+        )
 
 
 def test_model_score_replay_matches_same_weight_accounting_exactly():

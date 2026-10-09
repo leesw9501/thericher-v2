@@ -44,6 +44,38 @@ def constant_price(*args):
     return Decimal("103.005")
 
 
+@pytest.mark.parametrize("arm", ["tcn10", "tcn20"])
+@pytest.mark.parametrize("mode", ["whole", "fractional_reference"])
+def test_causal_tcn_supplied_scores_share_exact_risk_accounting(arm, mode):
+    actual = risk.replay_risk(
+        PLAN,
+        snapshot,
+        constant_price,
+        exposure=Fraction(1, 10),
+        round_trip_bps=10,
+        liquidate_last_close=True,
+        mode=mode,
+        arm=arm,
+        score_source=predictions,
+    )
+    reference = risk.replay_risk(
+        PLAN,
+        snapshot,
+        constant_price,
+        exposure=Fraction(1, 10),
+        round_trip_bps=10,
+        liquidate_last_close=True,
+        mode=mode,
+        arm="ridge",
+        score_source=predictions,
+    )
+    assert actual.attribution_complete
+    assert actual.assets == reference.assets
+    assert actual.net_gain == reference.net_gain
+    assert actual.fees == reference.fees
+    assert actual.replay.final_state == reference.replay.final_state
+
+
 def run(
     arm="ridge",
     exposure=Fraction(1, 4),

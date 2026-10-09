@@ -9,12 +9,12 @@ No company block or foreground sleep.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Company integration | Parent | Goal38 CLOSED/52dates6264 exact scores/one pre-OPEN seal/custodyb5675a4e...; source probe9accepted. Goal39 ready for fixed liquid-cohort TCN development. |
-| GPU | Steward | No current lease. Goal38 zero fits/GPU was numeric reuse. Goal39 freeze one600s appointment/max6CUDA+3CPUfits, no environment/approval block or filler. |
-| Data | Copernicus | Goal38 source9GET9accepted/9.840s/source-retained match/reaped; no source qualification. Goal39 prior-only tradability adapter ready to dispatch. |
-| Models | Euclid | Goal38 safe reload source released/native52-score equality and actual-time seal complete. Goal39 TCN10/TCN20 code ready to dispatch; no winner or budget refund. |
-| Caller | Temporary Infra / James | Goal38 three phases reaped/absent/150.568s<300. Goal39 exact OLD/CURRENT preparation plus GPU custody ready; parent owns worker/actual. |
-| Verification | Parent | Goal38 changedserial190/clean8:14155pass22skip35warnings343.79s, Ruff/three sample-env Compose/external109+43/source97. External/docs alone do not repeat full CI. |
+| Company integration | Parent | Goal39 CLOSED9fits48cells/558.828s/custody14918e6a...; Goal40 exact ordinal-target development ready. No company block. |
+| GPU | Steward | Goal39 actual6CUDA391.231s/lease released, all children reaped/absent. Goal40 max6CUDA+3CPU, source/target preparation first; no environment or approval block. |
+| Data | Ready / unowned | Reuse cohort3126ba5b...; Goal40 pure exact-Fraction ordinal target adapter, no future peer filtering. |
+| Models | Ready / unowned | Goal40 HGB classification and binary TCN10/20/fixed probability blend, different target and explicit seen lineage. |
+| Caller | Ready / temporary Infra | Reuse finite native transport/ownership patterns for new binary-target contract; parent owns actual run/closure. |
+| Verification | Parent | External226+7/independent17, changedserial213/full8:14161pass22skip35warnings340.78s/Ruff/three sample-env Compose pass. No full CI for external/docs-only Goal40. |
 | Paper session | Execution scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... owns original shared10% basis/SPY-TLT-GLD/QQQ custody. Future submit/fill/closure not_observed; no manual invoke/reset/substitute. |
 | Follow-up | Chat one-shot | Oct9 23:05KST exact owned Paper result check; no replacement chain or schedule expansion. |
 | Head | Data scheduler | Next Oct9 15:29UTC owned; historical availability/finality not_observed, no manual invoke. |
@@ -22,18 +22,19 @@ No company block or foreground sleep.
 
 ## Bottleneck And Reversible Improvement
 
-Goal38 actual mode comparison removes only one flagged pair and retains three;
-adjustment methodology remains unproven. New research fixes past-only tradability
-assumptions rather than silently correcting labels or choosing a seen winner.
-Parallel Data cohort/Engine TCN/Infra input packages prepare one bounded GPU
-campaign; fixed10% book and raw-gap attribution test whether value survives.
-This advances candidate development without a general Data or Paper hold.
+Goal39 TCN10/fixed blend show modest positive seen cost-aware utility under
+past-only tradability, while Ridge/TCN20 reject. Source-risk dependence remains;
+no winner is promoted. A different ordinal-target hypothesis tests ranking
+without weighting loss by extreme return magnitude. It does not repair corrupt
+rankings or subtract payoffs. Ready Data/Engine/Infra packages are disjoint.
 
-Early API/source handoffs completed in parallel; all52 native cached scores
-match, prospective actual as_of is not backdated, verification keeps that time.
-Same-native prediction/book parity is not independent alpha or broker parity.
+Released roles are closed; no permanent LLM process or foreground waiting.
+Pre-fit integration repaired shared FeatureSeal import, four-layer receptive
+field, five-group CPU smoke and exact immutable cached-run binding. Numeric
+state uses no-pickle NPZ. Fit starts, returned fits and CUDA facts are separately
+durable, including an unexpected-device fault. No budget refund or winner.
 No new helper platform, scheduler, approval process or recurring report.
 
-Claude57434081... source/reuse challenge was review_unavailable/cli_is_error, not
-agreement. Source-local Tiingo/FINRA rights defer only their numeric jobs; other
+Claude Goal40 prompt1a75d09c... challenge was review_unavailable/cli_is_error,
+not agreement. Source-local Tiingo/FINRA rights defer only their numeric jobs; other
 private no-cost Data/Research/Paper work remains delegated.

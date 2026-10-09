@@ -6,12 +6,18 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
-Goal39 Data owns a pure past-only tradability adapter: last completed CLOSE
+Goal39 Data adapter released3126ba5b.../34 synthetic tests, shared FeatureSeal:
+last completed CLOSE
 >=USD5, median prior20 CLOSE*volume>=USD5m, no adjacent CLOSE return>=50%
 inside prior20. Fixed assumptions, not profitable-universe facts. All128 identities
 remain; reject missing/invalid/prior-risk keys with reasons, recenter only the
 first three features on survivors. No future target exclusion, source correction
-or new collection. Engine TCN/Ridge preparation proceeds in parallel.
+or new collection. Frozen campaign45c9ca15... uses exact OLD/CURRENT only;
+actual prefix734 dated groups remain target-complete, current52 feature dates
+have62..68 eligible peers. Closed9fits48cells/closure5beadda3... . These are
+seen observations, not PIT or independent qualification. Goal40 Data owns
+pure exact-Fraction midrank labels on complete frozen target groups; same
+cohort/source scope, no collection, future peer filtering or loss deletion.
 
 Goal38 source-local probe COMPLETE: source runtime-r2/contractf897b5e5...,
 A/data/kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/

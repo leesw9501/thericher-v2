@@ -7,11 +7,20 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-09 KST)
 
-Goal39 kis-liquid-stock-sequence-development-v1 is next: one fixed past-only
-tradability cohort, Ridge/TCN10/TCN20/fixed blend at10% research exposure,
-three purged prefixes/max9fits/one600s family. Six bounded CUDA fits, not dummy
-utilization training; Data cohort and Infra input/custody prepare in parallel.
-New seen family/Goals36..38 lineage, no old-budget refund or Paper winner.
+Goal40 ordinal selection is ready: exact within-date top-quintile labels,
+HGB classifier and binary TCN10/20/fixed probability blend, same prior-only
+cohort/book, one600s/max9fits/6CUDA. Source6d848f35... re-retrieved from
+primary ranking paper/official existing API; inferred adaptation, no imported
+code/data/weights. Different target, same seen lineage; no refund or Paper gate.
+
+Goal39 CLOSED/45c9ca15.../28a6c6e2.../5beadda3.../custody14918e6a...,
+9fits/6actualCUDA391.231s/48cells/558.828s<600/reaped/absent/unchanged/lease
+released. Fixed10%/whole10bps TCN10+1.596%/utility.07159/DD.971%; blend
++1.135%/.04983/.963%; Ridge/TCN20 reject. Both passers are non-promoting seen
+follow-up only. Raw flagged-day .3386% standalone/.4951% blend retained.
+Independent source7264be08.../17 cases excludes cohort/runtime/alpha;
+combined external226+7/changedserial213/full8:14161pass22skip35warnings340.78s,
+Ruff/three sample-env Compose pass. No failed or unobserved facts called zero.
 
 Goal38 CLOSED/contractddac5c84.../result71de1c0d.../closureeda62685.../
 custodyb5675a4e... at A/research/kis-stock-scorer-deployability-preparation-v1.
@@ -72,11 +81,11 @@ in actual closed phases; fresh caller must correct it, never edit used source.
 - Data: exact CURRENT113/14073 rows/121complete4sparse3empty; manifest18a37635...
   payloadbd6b0f40.../precommit7d8b4d01... . Native exact two-file proof.295s;
   source/observation/missingness limits unchanged,52 dated marks not independent.
-- Data: pure prior61 tradability adapter, fixed thresholds, no future exclusion.
-- Engine: causal TCN10/20 and Ridge, fixed prefix/scaler/target/epochs; one family.
+- Data: exact ordinal labels from frozen Fraction target groups; cohort unchanged.
+- Engine: binary HGB/TCN10/20, fixed prefix/scaler/weighted loss; one family.
 - Validation: temporary independent source accounting review when ready;
   no tuning, old output rescue or blanket quality gate.
-- Parent: integrate/freeze new bounded liquid-cohort campaign; tonight's Paper stays separate.
+- Parent: integrate/freeze one ordinal campaign; tonight's Paper stays separate.
 - Depth/replication: no independently qualified survivor or ready depth contract.
   Equal within-campaign blend is exploratory, not cross-track promotion.
 

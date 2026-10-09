@@ -14,11 +14,25 @@ and rank seals, independent Fraction/scalar economics; not model equivalence.
 Custody875233b5... closed/sealed0. All367/549/739 potential TRAIN dates valid;
 reviewed no-context OOF diagnostic defect dormant, future correction only.
 
-NEXT owns kis-liquid-stock-sequence-development-v1: fixed prior-only price/
-liquidity/discontinuity eligibility, three Ridge and six causal TCN10/20 fits,
-one600s family/one GPU appointment, fixed10% analytical book/cost controls.
-No future cohort exclusion, inferred action correction, old-budget refund or
-automatic Paper winner. Tonight's original shared10% broker basis stays unchanged.
+NEXT owns kis-stock-ordinal-selection-development-v1: exact within-date
+top-quintile target, binary HGB/TCN10/20/fixed probability blend, same cohort/
+fixed10% book, one600s/max9fits/6CUDA. No future cohort exclusion, inferred
+action correction, old-budget refund or automatic Paper winner. Tonight's
+original shared10% broker basis stays unchanged.
+
+Goal39 CLOSED at D:/thericher-v2/model-artifacts/research/
+kis-liquid-stock-sequence-development-v1: contract45c9ca15.../443sources7inputs/
+result28a6c6e2.../parent494ec9a6.../verify65198db0.../closure5beadda3.../
+custody14918e6a... . Nine fits/six CUDA391.231s/48cells, all unchanged/reaped/
+absent/lease released; smoke16.817/run501.548/verify40.463,558.828s<600.
+All books flat/no missing marks/exact stock-day-fee and cached book parity;
+not independently qualified alpha/economics or broker profit. Whole10bps/10%
+TCN10+1.596%/.07159 utility, blend+1.135%/.04983; Ridge/TCN20 reject.
+Raw flagged-day .3386% standalone/.4951% blend retained, never subtracted.
+Independent source7264be08.../17 cases excludes cohort and actual runtime;
+external226+7/changedserial213/full8:14161pass22skip35warnings340.78s/Ruff/
+three sample-env Compose passed. No full authority rerun for external/docs.
+Goal39 and every used source/phase stay immutable; do not redispatch.
 
 Goal38 CLOSED at D:/thericher-v2/model-artifacts/research/
 kis-stock-scorer-deployability-preparation-v1: contractddac5c84.../441sources/

@@ -252,7 +252,7 @@ def replay_risk(
     _require(isinstance(plan, book.CarryPlan), "plan_required")
     _require(type(exposure) is Fraction and exposure in EXPOSURES, "fixed_exposure_required")
     _require(type(liquidate_last_close) is bool, "explicit_terminal_choice_required")
-    model_arm = arm in score.ARMS and policy is None and callable(score_source)
+    model_arm = arm in score.SUPPORTED_ARMS and policy is None and callable(score_source)
     control_arm = policy in book.POLICIES and arm is None and score_source is None
     _require(model_arm or control_arm, "exactly_one_model_or_control_required")
     book._fee(round_trip_bps)

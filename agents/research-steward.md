@@ -7,11 +7,15 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal39 prepares one600s liquid-cohort development family: three Ridge CPU and
-six CUDA TCN10/TCN20 fits, fixed prefixes/epochs/costs, no sealed access. Freeze
-new source/target/cohort/stop before one exclusive GPU appointment. Existing
-OLD/CURRENT and Goals36..38 lineage remain seen/dependent; no budget refund,
-survivor promotion or independently qualified depth/replication claim.
+Goal40 ready for source preparation then one600s ordinal-target appointment,
+max3CPU+6CUDA fits/48cells; exact cohort reused, fresh target/source frozen
+before fits. No sealed/depth promotion, per-cell multiplier or old refund.
+
+Goal39 CLOSED/45c9ca15.../closure5beadda3.../custody14918e6a.../trial1;
+9fits/6actualCUDA391.231s/48cells/558.828s<600/all unchanged/reaped/absent,
+lease released. TCN10/blend positive seen utility permits only non-promoting
+follow-up. OLD/CURRENT and Goals36..39 remain dependent; no independent
+replication, new sealed spend or model/Paper winner claim.
 
 Goal38 CLOSED: contractddac5c84.../closureeda62685.../custodyb5675a4e...,
 0fits/GPU/sealed spend/150.568s<300, all children reaped/invocations absent,

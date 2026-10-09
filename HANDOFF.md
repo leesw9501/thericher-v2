@@ -20,10 +20,29 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal39 kis-liquid-stock-sequence-development-v1: past-only price/
-liquidity/recent-discontinuity cohort, Ridge baseline and causal TCN10/TCN20,
-fixed blend/10% analytical exposure. One600s family/max9fits, one owned GPU
-appointment; raw seen-data limits/lineage remain. No Paper profitability gate.
+NEXT owns Goal40 kis-stock-ordinal-selection-development-v1: exact within-date
+top-quintile labels, HGB binary classifier/TCN10/TCN20/fixed probability blend,
+same past-only cohort/10% analytical book. One600s/max9fits/6CUDA, same seen
+data lineage, not a prior-budget refund or Paper profitability gate.
+
+Goal39 CLOSED at A/research/kis-liquid-stock-sequence-development-v1:
+contract45c9ca15.../443sources7inputs/result28a6c6e2.../parent494ec9a6.../
+verify65198db0.../closure5beadda3.../custody14918e6a... . Nine actual fits,
+six CUDA fits391.231s,48 cells;558.828s<600/all sources/inputs unchanged,
+children reaped/invocations absent/GPU lease released. CPU smoke16.817s,
+run501.548s, cached verification40.463s withzero refit. All books flat,
+no missing marks and exact stock/day/fee conservation. Whole10bps/fixed10%
+TCN10+1.596%/utility.07159/DD.971%, blend+1.135%/.04983/.963%; Ridge and
+TCN20 reject. Non-promoting seen follow-up only, no selected winner or broker
+profit. Flagged-day contributions .3386% standalone/.4951% blend remain raw;
+do not subtract them. OLD734 complete target groups/current52 features with
+62..68 past-eligible peers, not independent stock samples.
+Independent model/caller source7264be08.../17 synthetic cases excludes
+reviewer's authored cohort and actual runtime/alpha/economics. External226+7,
+changedserial213/clean8:14161pass22skip35warnings340.78s/Ruff/three sample-env
+Compose passed; no full CI per external/docs-only handoff. Claudef20ea8b0...
+unavailable, not agreement. New ordinal proposal6d848f35... was independently
+re-retrieved from primary paper/API; its pointwise adaptation remains unproven.
 
 Goal38 CLOSED at A/research/kis-stock-scorer-deployability-preparation-v1:
 contractddac5c84.../441sources7inputs/result71de1c0d.../parent55cc5666.../

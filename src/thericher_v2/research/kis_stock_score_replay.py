@@ -16,6 +16,7 @@ from thericher_v2.research import kis_equity_rank_buffer_carry as book
 from thericher_v2.research import kis_pooled_equity_components as core
 
 ARMS = ("ridge", "hgb", "gru", "equal_fixed_mean_blend")
+SUPPORTED_ARMS = (*ARMS, "tcn10", "tcn20")
 
 
 def _require(ok: bool, reason: str) -> None:
@@ -34,7 +35,7 @@ class ScoreSeal:
 
     def __post_init__(self) -> None:
         _require(isinstance(self.snapshot, core.EligibilitySnapshot), "snapshot_required")
-        _require(self.arm in ARMS, "arm_invalid")
+        _require(self.arm in SUPPORTED_ARMS, "arm_invalid")
         universe = set(self.snapshot.eligible_keys) | set(self.snapshot.unavailable_keys)
         _require(
             type(self.owned_keys) is tuple
@@ -123,7 +124,7 @@ def replay_scores(
     initial_state: book.Ledger | None = None,
     on_seal: Callable[[ScoreSeal], None] | None = None,
 ) -> book.CarryReplay:
-    _require(isinstance(plan, book.CarryPlan) and arm in ARMS, "replay_contract_invalid")
+    _require(isinstance(plan, book.CarryPlan) and arm in SUPPORTED_ARMS, "replay_contract_invalid")
     _require(type(liquidate_last_close) is bool, "explicit_terminal_choice_required")
     _require(type(round_trip_bps) is int and round_trip_bps in book.ROUND_TRIP_BPS, "cost_invalid")
     state = initial_state if initial_state is not None else book.Ledger.initial(plan.keys)
