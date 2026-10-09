@@ -2,89 +2,100 @@
 
 ## Objective
 
-Complete kis-stock-repeatable-session-delivery-v1: connect the already-retained
-original-TCN session decision to one coherent, recoverable KIS Paper runtime
-and its next official entry/owned-exit opportunity. Deliver an executable loop,
-not a new winning model, approval gate or provenance framework.
+Complete kis-stock-absolute-cash-gate-development-v1: test whether a learned
+absolute post-cost trade/no-trade gate improves the existing TCN stock basket
+by leaving rejected original slots in cash. One outcome-informed development
+family, not a new profitable-model claim, Paper replacement or gate platform.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal52 Patch20/60 closed at A/research/kis-stock-patch-window-development-v1:
-contractbb906e5c.../result89a3d66c.../closure2fc893d0.../custody9604cd15... .
-Actual6CUDAfits/42cells/0verifyfits/accounting matched/lease released; both
-rejected. Stored351.608s is pre-publication; review0347477d... retains that P2.
-Actual post-return observationd0ed6fe0... conservatively bounds455.702s<600.
-Original9de27944... Paper weights unchanged; no sealed spend or promotion.
-312 external/68 serial/full8:15133pass22skip35warnings340.77s/15155collected/
-JUnit49ebb915.../Ruff/three sample-env Compose passed.
+Goal53 repeatable Paper delivery CLOSED73580933.../verification92f3f4b6... at
+A/execution/kis-stock-repeatable-session-delivery-v1. Coherent cutover24b85d81...,
+exact retained decision72914719.../job2d616950.../preparationeab5357a... and
+installed517b3815... preserve original9de27944... weights, .01 total-basis
+target inside original shared .10 and every owner. Entry Oct12 22:30 KST;
+close Oct13 04:50 KST, finite10min/1min/IgnoreNew/PT5M. Future fill/fees/cash/net
+PnL not observed. No manual invocation, substitute identity or TTL renewal.
+533 serial/clean8:15133pass22skip350.60s; full serial same counts2299.42s;
+Ruff/default+research+combined-accounting sample Compose passed.
 
-Goal51 A/execution/kis-stock-repeatable-native-paper-preparation-v1:
-actual CPU contractc5d22f72.../decision72914719.../parentce0c9d17.../
-lifecycle49098b43...;42 scores/27.436s/0fits/GPU/account/broker. Official
-Oct12 OPEN13:30UTC/CLOSE20UTC/derived EXIT19:50, original .01 of total basis
-inside shared .10. Goal47 exact BUY/EXIT/current-flat119c108b...; finite old
-owner expired. Preserve its identity, evidence and original aggregate bank.
+Mixer source preparation at A/research/kis-stock-mixer-window-preparation-v1:
+models74378c0c.../receiptc4b80459.../66 synthetic checks, native PyTorch adaptation
+of independently reread Google Apache-2 source, not pretrained or paper-faithful.
+Cash-gate proposal1520597b... independently reads the Deep Momentum primary
+paper; probability of a positive trade is not expected payoff. Pure label/mask,
+analytical parity and fresh publication-aware dispatch preparation are separate
+source handoffs, not allocated experiments. Reattest final releases before use.
+Used Patch family/weights/failures remain immutable, both arms rejected; source
+publication P2 is not erased. Original cached CURRENT799 TCN is the control;
+final799 must never select early training peers or early evaluation targets.
 
-Goal51 delivery-preparation/build/g52-20261010-v1:
-code images SPYbd41e48c..., router6b2b76be..., stock113f9644...;
-build87d37009.../actual offline audit48500a7d...,443sources244scripts,
-runtime/dependencies/base layers unchanged, all audit containers reaped/absent,
-no credentials/private mounts/provider/orders. Seven helpers and native factory
-published at delivery-preparation/published/g52-20261010-v1,
-manifest38d67f81.../runtime-contractada3484c...; NOT installed.
+## Engine Research Package
 
-## Execution Package
+Freeze one family before market outcomes. Same seven OLD/CURRENT inputs and
+common prior61 engineering cohort; no source union, refreshed-cache substitution,
+new universe, target-selected peers or baseline refit. Bind original R40 contract,
+result and numeric prediction cache and exact CURRENT799 row keys.
 
-Reattest published source/helper/image maps. With no active affected execution
-owner, cut over all five RW/two RO Compose consumers and the existing recovery
-Action to the coherent fresh generation. Preserve exact existing triggers,
-expiry, fallback, settings, principals, original shared basis and all owners.
-Never change used R46/R47 templates/images/jobs or reinterpret an old outcome.
-Dashboard remains projection-only, with no new private-bank mount or public port.
+Two frozen Mixer arms20/60, same two ON/ID channels and source architecture.
+Absolute label is exact positive net OPEN(entry)->OPEN(entry+5), using existing
+nearest-cent ties-even analytical quotes and f=10/20000 on each side's notional:
+(X*(1-f)-E*(1+f))/(E*(1+f))>0; tie=>0. Missing any eligible peer endpoint rejects
+that whole training date. Prefixes427/610/799 purge targets beyond each cutoff;
+equal-date BCE, prefix-only scalers, min120 complete groups and both classes.
+floor(complete_dates/5)>=24 is only a spacing proxy, not estimated independent ESS.
+Seed101/four epochs/batch512/Adam.001; exactly at most6 market fits. No threshold,
+architecture, calibration, fee-target or rescue search. Early paired gate-only
+OOF diagnostics cannot become original TCN comparisons or sealed evaluation.
 
-Reuse lifecycle137c27c0.../factory0b4d5eb5.../trimce539ddd... and existing named
-execution paths for a small native lifecycle caller. Consume the exact retained
-typed SessionDecision and derived request identities; no hand-edited dates,
-symbol, target, expiry, confidence, identity or substituted inference.
-Paper credentials are standing-approved and selective; never read KIS_LIVE_*.
-Persist intent before side effects. Exact unknowns reconcile, partial fills sell
-only owned quantity, cancellation needs typed proof, and restart never renews TTL.
-Do not turn one request's technical failure into a global pause.
+For CURRENT, keep original TCN top10 identities/order/ties. Keep each original
+Fraction(1,10) research-bank slot only when gate probability>0.5; rejected slots
+remain cash. No rank11 replacement, reranking, redistribution, leverage or new
+bank. Missing/nonfinite input is unavailable, not predicted cash. Persist
+identities/probabilities/masks before quote callbacks.
 
-Install only the finite next official-session opportunities required by that
-decision, with one concurrency-bounded owner and source-safe terminal readback.
-Do not manually run a closed-market order or wait in the foreground until Monday.
-Completion here is actual coherent delivery, bounded native preparation/readback,
-and installed exact future ownership; actual fill/reconciliation is a later
-runtime outcome and must not be fabricated from task exit or preparation.
+Replay gate20/gate60/unchangedTCN/cash/fixed positive20-close-momentum gate,
+whole/fractional_reference books and fixed5/10/20bps band:30 cells. Preserve
+all52 marks, original11 review dates, continuous bank and terminal CLOSE112
+liquidation. Entry111 has no five-session label; retain its two-session economics.
+Reuse exact delta-trade fees, sell-before-buy and accounting/stock-day attribution.
+Execution attests these analytical assumptions; actual KIS fees/fills/availability
+are not inferred from that parity.
 
-## Parallel Packages
+Strongest kill per gate at whole10bps: positive net growth, utility strictly
+above unchangedTCN/cash/mechanical gate, drawdown no worse than TCN; otherwise
+reject. Missing/mismatched accounting, nonflat terminal, source drift or budget
+overrun cannot yield a comparative result. Binary win probability ignores gain/
+loss magnitude; passing this seen test is only a later/disjoint replication
+proposal, never independent alpha, Paper qualification or a profitable member.
 
-Data owns the separate33 scope51b30aa7... under
-A/data/kis-current-pooled-equity-next-session-remainder-v1. Actual CLOSED partial:
-81.702s/1token62GET62parsed/0errors/30usable5752rows/three empty/next_due null,
-strict readbackd87a6c53...; original95 plus30 cover125 disjoint keys across TWO
-snapshots, not a merged model input. Compare the three empty keys to current
-official route metadata before any changed source scope; no speculative retry.
-Never rerun the consumed UUID, mutate original f78/R51 cache, graft OLD rows or
-infer global provider limits. Continue useful later scope only after measured
-evidence; a lane-local source limit or cooldown does not stop Execution.
+## Runtime And Parallel Ownership
 
-Engine may prepare one source-only native PyTorch TSMixer-inspired alternative
-from independently reread sourceb7a09217...; exact shapes/math/schema/synthetic
-checks only. No official TensorFlow install, public weights, market fit, new
-GPU allocation, extra Patch fit or holdout opening in this preparation package.
-Its source receipt is not a second company goal or deployment claim.
+Steward allocates one ready frozen family only. Shared600s includes actual
+preparation, synthetic CPU smoke, native run, cached zero-fit/zero-inference
+verify, inter-phase idle and publication. Anchor before preparation; debit
+observed completion rather than pre-fsync receipt times. Record scalar component
+timings with explicit nesting; do not label unattributed wall as CPU/I/O.
+CPU smoke first, then existing Torch2.7 CUDA image/one GPU lease if sound. Model
+artifacts on D, no new runtime/dependencies/public weights or sealed spend.
 
-## Integrate And Continue
+Data preserves original inputs and the two separate125-key fresh snapshots;
+three current routes remain unknown, no speculative price retry or merged input.
+Execution preserves existing finite Paper ownership and can prepare the exact
+offline result reader; do not invoke a scheduled task or broker for this research
+goal. Independent Validation attacks frozen label/mask/cost/budget contracts,
+not tuning. Parent owns integration/Git; packages have disjoint write sets.
 
-Claude concisely challenges coherent recovery/cutover before reliance; unavailable
-is not agreement or a hold on independent standing-authorized work. Temporary
-Validation attacks exact frozen contracts, not tuning. Focused tests first,
-AGENTS.md changed-path serial/clean8/Ruff/default+research+combined-accounting
-sample Compose at the shared runtime boundary. Helper supplies -q; retain JUnit
-counts outside Git. Future compute dispatch debits observed publication completion.
-Artifacts on D, secret-free output, Paper-only, no live/cost/public exposure.
-Refresh current stateboards, verify/commit/push, replace this with ONE material
-next company objective and continue. No new gate/report/role/per-agent goal.
+Claude gives a concise falsification-first challenge before relying on the new
+target/composition/result. review_unavailable is not agreement or a lane hold.
+All data are seen/current-listed/raw/revised/non-PIT/action/finality-limited;
+limitations cannot become a global permission barrier. Never read KIS_LIVE_*.
+
+## Completion
+
+One frozen contract/custody, actual CPU/CUDA or narrow input_unavailable evidence,
+complete30-cell/accounting/source/lease closure and cached verification. No
+extra fits or holdout. Focused checks first; required company changed-path serial,
+clean8, Ruff and three sample-env Compose at integration. Refresh stateboards,
+commit/push, replace this with ONE material next company objective and continue.

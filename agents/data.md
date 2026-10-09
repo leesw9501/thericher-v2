@@ -24,8 +24,14 @@ or source-limit inference from the three empty streams. Source review781ec568...
 passes54+5 independent checks after legacy repair; old failure receipt preserved.
 Original95 and fresh30 cover125 disjoint keys/24328 rows,123 complete100-date
 streams. This is coverage across TWO immutable snapshots, not a merged model
-input, historical graft or automatic qualification. Next useful Data package
-compares empty-key route metadata before deciding any changed collection scope.
+input, historical graft or automatic qualification. Goal53 route study COMPLETE
+at A/data/kis-empty-current-route-source-v1/receipt.json, cd199773... . The same
+three empty keys are absent from observed NAS/NYS/AMS official masters; current
+route support remains unknown, not an inferred alternate venue or no-history
+claim. Three public static GETs/zero retries/eleven original bindings unchanged;
+no credentials, authenticated KIS, price/account/order calls or cache changes.
+No useful changed collection scope was established; do not repeat speculative
+price calls or block the 125 covered identities. Recovery complete_source_study.
 Patch context c95f5955.../input45832b56... was consumed by the closed6-fit research;
 no OLD/CURRENT union or new Data/PIT/action/finality qualification.
 

@@ -8,7 +8,30 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
-Goal52 parallel delivery is BUILT AND NATIVE-AUDITED, NOT INSTALLED:
+Goal53 coherent delivery CUTOVER INSTALLED, native lifecycle preparation active:
+A/execution/kis-stock-repeatable-session-delivery-v1/coherent-cutover.json,
+24b85d81... . Five RW/two RO Compose consumers use audited SPYbd41e48c...;
+inactive daily-SPY recovery Action routes to published g52-20261010-v1.
+Only image/Action source bindings changed; triggers/settings/principal/expiry/
+fallback, original volume/basis and every old owner/job/image are preserved.
+No credentials, manual task run, Docker service start or orders in cutover.
+533 changed serial/8 pinned body-preservation checks pass. Euclid owns external
+native caller/worker preparation is released781c7bcf.../006422c4.../56 tests;
+Singer independent26-case reviewddd5566b... passed. Parent exact preparation
+eab5357a... freezes job2d616950.../same decision, no fit/inference/credentials/
+broker/bank writes. Offline image readbacka80ab712... passed20.167s after fixing
+only MARKET mount namespace; original failure159c24f1... remains. Original
+installer registered entry then failed textual principal normalization;
+canonical SID matches. First Ready task is retained, not replaced. Fresh
+completiona18f1dc9.../9 mock tests reattests identity and adds only missing exit;
+review0d00e0eb... passed6 independent cases; actual installed517b3815... retains
+entry and creates only missing close. Both Ready: Oct12 22:30..22:40 KST and
+Oct13 04:50..05:00 KST,1min/IgnoreNew/PT5M/shared marker. Goal53 bounded closure
+73580933.../verification92f3f4b6... COMPLETE. No manual task run, future fill,
+current-flat or net-PnL claim. Runtime recovery remains exact original identity;
+next independent Research may proceed without waiting for Monday.
+Full serial diagnostic15133pass22skip35warnings2299.42s/JUnit8245ab8f... matches
+the completed clean8 suite. Goal52 delivery evidence:
 A/execution/kis-stock-repeatable-native-paper-preparation-v1/delivery-preparation.
 build/g52-20261010-v1/build-receipt.json87d37009... and native-audit-receipt.json
 48500a7d...: three code-only derivatives,443 identical source/244 script files,
@@ -16,9 +39,8 @@ unchanged base layers/dependencies/runtime, six actual offline audit containers
 reaped/absent. Synthetic two-stock/unknown reservation replay passes every image;
 no private mounts/credentials/provider/orders. Published seven helpers and native
 lifecycle/factory at published/g52-20261010-v1, manifest38d67f81... and
-runtime-contractada3484c... . All five RW/two RO consumers and the existing
-recovery Action must be cut over coherently before a second-symbol write.
-No current Compose image, task Action, schedule, bank or old owner was changed.
+runtime-contractada3484c... . Goal53 cutover above supersedes the former
+not-installed projection without changing the immutable Goal52 evidence.
 42 parent delivery checks/575 owner combined checks pass. Goal52 research rejects
 both Patch arms; original TCN remains the separate Paper execution candidate.
 

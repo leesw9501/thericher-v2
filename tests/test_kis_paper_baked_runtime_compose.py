@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 COMPOSE = Path(__file__).resolve().parents[1] / "docker-compose.yml"
-IMAGE = "sha256:b50d5a2bd3fa18cb9ebb33c2d3d9442f75489d23b1ad217ee3cc0b2496184089"
+IMAGE = "sha256:bd41e48c0cf0d88b6b5d385dec2522b9ab31bb83182670de54c899c5e3e99bed"
 PRIVATE_MOUNT = "thericher-v2-paper-canary-private:/app/private"
 
 # Goal 19 pre-edit settings, excluding only the three-line base build stanza.

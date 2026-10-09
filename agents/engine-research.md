@@ -26,6 +26,15 @@ Next research preparation: independently reread TSMixer sourceb7a09217... under
 A/research/kis-stock-next-public-mixer-source-v1/engine-reread-v1. Official
 implementation is TensorFlow; a native PyTorch adaptation is not paper-faithful
 or pretrained. Mechanism only, not dataset/weight rights or market performance.
+Goal53 native Mixer source preparation RELEASED at
+A/research/kis-stock-mixer-window-preparation-v1: models74378c0c.../
+receiptc4b80459.../66 parent synthetic checks/Ruff pass. Fixed20/60 two-channel
+two-block joint-LayerNorm classifier,3189/9109 parameters, safe numeric schema;
+no market fit, CUDA, allocation or holdout. A source-only absolute post-cost
+cash-gate proposal is owned by James; it may inform the next company direction,
+not change this delivery goal or the original Paper model. Existing ordinal
+ranking can force exposure when every candidate loses; test trade/no-trade
+separately rather than assuming another architecture solves that mechanism.
 
 Goal51 COMPLETE/closure4471ec24... . Original numeric model9de27944... reloaded
 in one actual CPU decision27.436s<120/42 scored/0fits/CUDA/account/broker,

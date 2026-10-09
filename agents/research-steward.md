@@ -17,7 +17,13 @@ at A/research/kis-stock-patch-window-development-v1/actual-publication-observati
 do not mutate, retry, refund or reopen this closed allocation to repair it.
 Two window cells share one six-fit family; zero sealed evaluations, both rejected,
 no Paper or independent-replication claim. GPU available; no environment or
-operator hold. Next source-only Mixer rereadb7a09217... is not an allocation.
+operator hold. Next source-only Mixer rereadb7a09217... and released preparation
+c4b80459.../66 synthetic checks are not an allocation. Goal53 owns delivery;
+no new market fits, GPU appointment or sealed evaluation are dispatched here.
+Next fresh campaign should record nested scalar preparation/fit/prediction/
+replay/write timings and actual post-publication family debit. Of244.049s run
+wall,13.030s was measured CUDA fit call wall; the remaining231.019s is
+unattributed pipeline time, not proven CPU/I/O overhead or a GPU-capacity fault.
 Goal51 CPU/native preparation spent zero fits/GPU/holdout. Closed original
 R40/R48/R50 families and original Paper model bytes remain unchanged.
 
