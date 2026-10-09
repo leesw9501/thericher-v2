@@ -7,8 +7,12 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-09 KST)
 
-Goal41 ready300s/0fits/GPU/holdout: two-arm numeric reuse/parity/prospective
-integration, not another fit or source-independent alpha allocation.
+Goal41 CLOSED/trial1bbadaba9.../436abcf9.../ab0c6eee.../effbf94a...;
+two models52dates6678 scores/tolerance1e-6/exact top10/0fits/GPU/holdout,
+102.271s/all unchanged/reaped/absent/pre-OPEN research seal retained.
+Goal42 preparing600s/0fits/oneCUDA inference appointment/36cells; official
+Chronos isolated/group stocks/context60/h6. Allocate only its frozen source/
+data/target/cost/control/kill/stop contract; no permission/environment block.
 Goal40 CLOSED/trial1e898e3d3.../contract44176f74.../closure40961c1a.../
 custody792f64c9.../9fits6CUDA389.392s/48cells/561.447s<600/all unchanged/
 reaped/absent/lease released. Exact cohort/seen lineage retained; no refund.

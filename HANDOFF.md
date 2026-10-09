@@ -20,10 +20,21 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal41 kis-stock-tcn-numeric-reload-preparation-v1: both final binary
-TCNs, numeric no-pickle reload/native CPU score-selection parity and one
-actual-time prospective research seal. One300s/0fits/GPU/holdout, no winner,
-Paper input substitution or retraining. Infra and parent work disjointly.
+NEXT owns Goal42 kis-stock-chronos2-group-open-development-v1: official
+Chronos-2 isolated versus same-origin stock attention, prior60 OPEN logreturns/
+horizon6/steps2..6/same cohort/fixed10% book/36 cells/one600s/zero fits.
+Data/source, Engine wrapper, Infra and parent integration work disjointly.
+
+Goal41 CLOSED at A/research/kis-stock-tcn-numeric-reload-preparation-v1:
+contract436abcf9.../result579e0846.../parenta8c59142.../closureab0c6eee.../
+custodyeffbf94a... . Both models/52dates/6678 scores within absolute1e-6,
+relative0 and exact ordered top10 versus CUDA. One two-arm seal at
+11:46:17.437602..11:46:17.499976UTC before Oct9 13:30UTC, preserved in verify.
+Zero fits/GPU/holdout/102.271s<300/all unchanged/reaped/absent. Parent243 and
+source9df30661.../34 independent synthetic checks; authored reload/models and
+actual runtime excluded. Numeric reuse, not bit equality or independent alpha.
+Shared14161/22skip authority unchanged; no full CI for docs/external closure.
+Unallocated source archive retained; pin forwarding repaired/tested before use.
 
 Goal40 CLOSED at A/research/kis-stock-ordinal-selection-development-v1:
 contract44176f74.../444sources7inputs/result123950bd.../parentee617248.../
@@ -38,7 +49,7 @@ completed device facts publish too late; failed CUDA attempts can look unused.
 Actual9/6 normal-path counters agree. Preserve used source; fix a fresh future
 training worker, not the old record. External309/Ruff/sample-env Compose pass;
 prior shared authority14161/22skip/35warnings unchanged. Goal41 reload source
-d651c3f9.../90 synthetic cases released; actual native parity still not_observed.
+d651c3f9.../90 synthetic cases released; actual parity is Goal41 above.
 Chronos-2 public-source receipt d7ce7b81... is source_unverified; Oct3 project
 benchmark already exists, so no repeated study/download was dispatched.
 

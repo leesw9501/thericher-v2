@@ -2,75 +2,68 @@
 
 ## Objective
 
-Complete kis-stock-tcn-numeric-reload-preparation-v1: make both final Goal40
-binary TCNs reproducibly usable without retraining. One company objective:
-safe numeric reload, native CPU cached-selection parity, and one actual-time
-prospective research seal. No model winner or automatic Paper promotion.
+Complete kis-stock-chronos2-group-open-development-v1: compare pinned Chronos-2
+isolated stock inference with same-origin cross-stock attention in one bounded,
+cost-aware KIS development replay. No winner or automatic Paper promotion.
 
-## Exact Prior Evidence
+## Prior Closure
 
-Goal40 CLOSED at D:/thericher-v2/model-artifacts/research/
-kis-stock-ordinal-selection-development-v1:
-contract44176f74.../444sources7inputs/result123950bd.../parentee617248.../
-verify5077f78d.../closure40961c1a.../custody792f64c9... . Nine fits/six actual
-CUDA fits389.392s/48 cells;561.447s<600, all unchanged/reaped/absent/lease
-released. Whole10bps/fixed10% analytical exposure: HGB+.796%/utility.02877,
-TCN10+.261%/.00660, TCN20+.956%/.03764, fixed blend+1.488%/.06375.
-TCN10 fails the cash-inclusive four-control utility comparison. The others
-are non-promoting seen follow-up only; no robust alpha or broker-profit claim.
-Independent source97e39cc8.../121 synthetic cases found failure-only P2:
-returned device facts are published too late, and a failed CUDA attempt can
-look unused. Actual completed9/6 counters are consistent; preserve used bytes,
-correct the next fresh training worker, never refund or rerun this family.
-Parent external309/Ruff/sample-env Compose pass; shared authority remains
-14161pass22skip35warnings340.78s. No full CI for external/docs-only changes.
+Goal41 CLOSED at D:/thericher-v2/model-artifacts/research/
+kis-stock-tcn-numeric-reload-preparation-v1: contract436abcf9.../
+result579e0846.../parenta8c59142.../closureab0c6eee.../custodyeffbf94a... .
+Both final models/52dates/6678 scores: CPU probabilities within absolute1e-6,
+relative0 and exact ordered top10 versus prior CUDA cache. One two-arm research
+seal at Oct9 11:46:17.437602..11:46:17.499976UTC before13:30UTC, retained in verify.
+Zero fits/GPU/holdout,102.271s<300/all unchanged/reaped/absent. Parent243/source
+review9df30661...34 synthetic cases; authored reload/models and actual runtime
+excluded. Numeric reuse, not bit equality/independent alpha/Paper qualification.
+Shared14161/22skip authority unchanged; no full CI for external/docs-only closure.
 
-## Bounded Scope
+## Scope Frozen Before Actual Inference
 
-Reuse exact final model-tcn10-799.npz/3628d6d3... and
-model-tcn20-799.npz/9de27944..., cache43d70384..., model source5da109bb...,
-cohort3126ba5b..., CURRENT113 compact manifest18a37635.../payloadbd6b0f40...
-and its conservative actual observation clocks. No old numeric targets,
-training, tuning, future labels/quotes, inferred corporate actions or collection.
+Exact CURRENT113 manifest18a37635.../payloadbd6b0f40.../clock7d8b4d01.../
+receipt9be74dda..., no OLD numeric data or collection. All128 original identities,
+same cohort3126ba5b.../reasons. Data open_context5076170e.../43 tests captures
+prior61 bars once per key:60 OPEN logreturns/no future peer filter/normalization.
 
-Euclid's bytes-only reload.py d651c3f9.../90 synthetic cases validates the
-trusted digest before bounded ZIP/NPY decoding, exact finite numeric schema,
-final cutoff799/seed101/epochs4/batch512/steps/architecture/scaler metadata.
-Use allow_pickle=False and the exact trusted Goal40 TCNModel, never torch.load,
-archive code or a substitute architecture. Schema validity is not proof of
-training, scaler estimation or independent model qualification.
+Reuse official installed Chronos-2 checkpoint95a9710e... dated2025-10-30,
+configef1143bf.../safetensorsddcda3c7.../codefd533389.../Apache-2.0,
+pinned imaged6b43213... and unchanged runtime. Independently re-retrieve source.
+Corpus dates/instruments not_disclosed; post-checkpoint2026 development only.
+Raw/revised/non-PIT/non-TR/current-listing/action/finality and earlier-context
+overlap limits remain. Distinct from closed Oct3 ETF-trio context128/horizon1
+ID study; no repeat, new weights/download or framework replacement.
 
-Use existing pinned Docker/Python3.12.14/Torch2.7.0+cu128/NumPy2.5.1/PMC5.4.0.
-One300s CPU-only family includes synthetic smoke, actual native reload and
-bound cached verification; max0 fits/GPU/holdout spend. Reuse owned finite
-caller/immutable marker/terminal/source-input binding and child-reaping patterns.
-Verify must bind exact immutable run parent/result/artifacts before consuming
-cache. No redispatch of a used phase or new scheduler/framework/runtime.
+Two arms chronos2_stock_isolated/chronos2_stock_group, context60/horizon6,
+score=sum median steps2..6; exclude step1 entry OPEN gap. Isolated chunks<=32/
+cross_learning=false. Group all eligible distinct stocks<=128/one origin/
+identical prior timestamps/cross_learning=true. No cross-date pooling,
+covariates, padding, tuning, ensemble or additional modes.
 
-Reconstruct all52 past-only cohort FeatureSeals, scores for both arms and
-their top10 ordered selections. Freeze absolute probability tolerance1e-6,
-relative tolerance0 and exact top10 order before actual model bytes are decoded.
-CPU-vs-CUDA numeric tolerance is not bit equality. A mismatch is a bounded
-negative integration result, not a refit, threshold adjustment or Paper hold.
+52dates61..112/fixed top10/five-session carry/fixed10% analytical exposure,
+four existing controls, whole/fractional-reference shares,5/10/20bps costs.
+Exactly36 cells. Strongest kill: missing selected marks, unmatched exact
+stock/day/fee conservation, nonflat terminal, primary whole10bps growth<=0
+or utility not above cash/all controls. Positive seen results remain non-promoting.
 
-Build one two-arm prospective seal from the official rolled113-session
-Apr30..Oct9 calendar, last completed Oct8 bars and actual inference/as_of
-clocks. Finish before Oct9 13:30UTC or record late; never backdate. Cache
-observations must precede actual as_of. Preserve that same seal in verification,
-do not generate another future timestamp. No OrderIntent, broker quote,
-account/budget/holding adoption or tonight's input substitution.
+One600s family: synthetic CPU smoke, actual offline CUDA inference, bound
+cached CPU book verification. Zero fits/holdout; one GPU appointment only run.
+Hash-first RO model/source/data mounts, network none/offline flags/direct
+trusted safetensors loader. No refit/reforecast in verify or used-phase
+redispatch. Failed CUDA attempt use is unknown, not false/zero; publish returned
+device facts before completed progress in this fresh worker.
 
 ## Ownership And Completion
 
-Temporary Infra James owns prepare/data/caller and synthetic tests; Parent
-owns worker/actual integration/Git. Released Euclid owns no active process.
-Invoke independent source review only for ready frozen code, not a new gate.
-Complete with bounded actual native parity/prospective category/child closure
-or a truthful negative integration result. Source/tests alone are not parity.
+Copernicus Data/source review; Euclid forecast wrapper; James Infra; parent
+shared IDs/worker/custody/native/Git. Integrate shared contracts before use.
+Source/synthetic review is not native/economic qualification.
+Changed shared source: changed-path serial plus clean8 helper, Ruff/required
+Compose configurations once. External/docs-only: focused verification.
+Commit/push completed evidence, replace ONE next objective, continue.
 
-Verify owned changes, commit/push, replace with ONE material next objective and
-continue. No routine operator decision required; never read KIS_LIVE_*.
-Model/artifacts D:/thericher-v2/model-artifacts, data D:/market_data, D15% floor.
-Tonight Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908... and23:05KST
-one-shot retain exact shared10% basis/custody. Future fill not_observed;
-no manual invoke/reset/substitute, schedule expansion or model replacement.
+No routine operator decision; never read KIS_LIVE_*. Data D:/market_data,
+artifacts D:/thericher-v2/model-artifacts; preserve D15%. Tonight Oct9 22:45KST
+portfolio-control-20261009-v1/job2b20f908.../23:05KST follow-up retain original
+shared10% basis/custody. No manual invoke/reset/substitute/schedule expansion
+or model-input replacement. Future fills not_observed.

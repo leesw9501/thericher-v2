@@ -7,10 +7,18 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-09 KST)
 
-Goal41 ready: both final binary TCNs numeric reload/native CPU parity and one
-actual-time prospective seal, no training/GPU/Paper input. Euclid reload
-d651c3f9.../90 synthetic tests released; James owns finite Infra preparation,
-parent owns worker/actual integration.
+Goal42 preparing: official Chronos-2 isolated/same-origin stock group,
+prior60 OPEN logreturns/horizon6/steps2..6, same cohort/fixed10% book,
+36 cells/one600s/zero fits. Distinct from closed Oct3 ETF study. Euclid forecast,
+James Infra, Copernicus official-source review; parent shared IDs/worker/native.
+No actual inference before freeze/allocation or winner/Paper promotion.
+
+Goal41 CLOSED/436abcf9.../579e0846.../ab0c6eee.../effbf94a...;
+two models/52dates/6678 scores within1e-6 absolute/relative0/exact top10.
+One research seal11:46:17.437602..11:46:17.499976UTC before13:30UTC retained
+in verify.0fits/GPU/holdout/102.271s/all unchanged/reaped/absent. Parent243/
+source9df30661...34 synthetic checks exclude authored reload/models and actual
+runtime. Numeric reuse, not independent alpha; shared14161/22skip unchanged.
 
 Goal40 CLOSED/44176f74.../123950bd.../40961c1a.../custody792f64c9...,
 9fits/6CUDA389.392s/48cells/561.447s<600/all unchanged/reaped/absent/lease

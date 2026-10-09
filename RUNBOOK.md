@@ -2,6 +2,17 @@
 
 ## Current Owned Opportunities And Research
 
+Goal41 CLOSED at D:/thericher-v2/model-artifacts/research/
+kis-stock-tcn-numeric-reload-preparation-v1:436abcf9.../579e0846.../
+parenta8c59142.../closureab0c6eee.../custodyeffbf94a... . Two models/52dates/
+6678 scores within absolute1e-6/relative0/exact top10. Smoke16.859/run42.925/
+verify42.487s=102.271s<300/0fits/GPU/holdout/all unchanged/reaped/absent.
+One seal11:46:17.437602..11:46:17.499976UTC before Oct9 13:30UTC, preserved
+in verify, not automatic Paper input. Parent243/source9df30661...34 synthetic
+cases exclude authored reload/models and actual runtime. No full CI for docs.
+NEXT owns Goal42 Chronos stock OPEN-return isolated/group development,
+not a rerun of the closed Oct3 ETF study. Shared authority14161/22skip unchanged.
+
 Goal40 CLOSED at D:/thericher-v2/model-artifacts/research/
 kis-stock-ordinal-selection-development-v1:
 contract44176f74.../444sources7inputs/result123950bd.../parentee617248.../
@@ -30,11 +41,9 @@ and rank seals, independent Fraction/scalar economics; not model equivalence.
 Custody875233b5... closed/sealed0. All367/549/739 potential TRAIN dates valid;
 reviewed no-context OOF diagnostic defect dormant, future correction only.
 
-NEXT owns kis-stock-ordinal-selection-development-v1: exact within-date
-top-quintile target, binary HGB/TCN10/20/fixed probability blend, same cohort/
-fixed10% book, one600s/max9fits/6CUDA. No future cohort exclusion, inferred
-action correction, old-budget refund or automatic Paper winner. Tonight's
-original shared10% broker basis stays unchanged.
+Closed ordinal family retains its exact target/used source/evidence, no budget
+refund, source rewriting or automatic Paper winner. Tonight's original shared
+10% broker basis stays unchanged.
 
 Goal39 CLOSED at D:/thericher-v2/model-artifacts/research/
 kis-liquid-stock-sequence-development-v1: contract45c9ca15.../443sources7inputs/

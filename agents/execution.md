@@ -31,8 +31,10 @@ Goal40 CLOSED/44176f74.../123950bd.../40961c1a.../48cells9fits6CUDA:
 all books flat/no missing marks/exact stock-day-fee conservation. Binary
 blend+1.488% is seen analytical growth, not owned broker PnL. Source-only P2
 failure counters remain scoped; actual normal9/6 agree and old bytes retained.
-Goal41 zero-fit TCN reload/prospective research remains separate from broker
-budget, new permission or tonight's input substitution.
+Goal41 CLOSED0fits/native52dates6678-score parity/closureab0c6eee.../one actual
+pre-OPEN two-arm research seal, no broker-budget/input change. Goal42 Chronos
+stock analytical10% book/36cells/0fits is separate from tonight's private basis,
+custody and input. Neither creates a permission/profitability hold.
 Private Paper authority stays delegated; model profit is not an Execution gate.
 
 Goal32 current pooled equity preview is COMPLETE/measurement-only:125 usable

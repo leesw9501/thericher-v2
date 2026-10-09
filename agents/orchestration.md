@@ -1,7 +1,7 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current cross-lane projection only. NEXT_CODEX_GOAL.md is the single company
-objective; lane details/history remain in stateboards, Git and external evidence.
+Current cross-lane projection only. NEXT_CODEX_GOAL.md owns one company
+objective; history remains in Git and immutable external evidence.
 
 ## Current Ready / Owned / Due (2026-10-09 KST)
 
@@ -9,35 +9,29 @@ No company block or foreground sleep.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Company integration | Parent | Goal40 CLOSED9fits48cells/561.447s/custody792f64c9...; Goal41 native numeric TCN reuse/parity/prospective seal ready. No company block. |
-| GPU | Steward / idle | Goal40 six actual CUDA fits389.392s/lease released, all children reaped/absent. Goal41 inference uses CPU; no ready frozen training job or permission/environment block. |
-| Data | Copernicus / released | Goal40 exact-Fraction ordinal adapter00c70f7b.../44 synthetic checks; reused cohort3126ba5b... untouched, no future peer filtering. |
-| Models | Euclid / released | Goal41 reload d651c3f9.../90 synthetic CPU checks; parent owns new worker and actual native parity. |
-| Caller | James / owned | Goal41 finite CPU-only source/data/caller preparation; immutable cached run binding, one300s/0fits/GPU. |
-| Independent review | James / released | Goal40 source97e39cc8.../121 cases: failure-only CUDA-fact P2, no normal-run counter mismatch. Authored Infra/actual economics excluded; correct next fresh fit job. |
-| Public-source preparation | Copernicus / released | Chronos-2 proposal d7ce7b81... source_unverified; prior Oct3 benchmark already exists, no duplicate GPU study or download. |
-| Verification | Parent | Goal40 external309/independent121/Ruff/sample-env Compose; shared authority14161pass22skip35warnings340.78s unchanged. No full CI for external/docs-only changes. |
-| Paper session | Execution scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... owns original shared10% basis/SPY-TLT-GLD/QQQ custody. Future submit/fill/closure not_observed; no manual invoke/reset/substitute. |
-| Follow-up | Chat one-shot | Oct9 23:05KST exact owned Paper result check; no replacement chain or schedule expansion. |
-| Head | Data scheduler | Next Oct9 15:29UTC owned; historical availability/finality not_observed, no manual invoke. |
+| Integration | Parent | Goal41 CLOSED102.271s/0fits/GPU/custodyeffbf94a...; Goal42 Chronos stock OPEN-return isolated/group preparing. |
+| GPU | Steward / idle | Goal40 six CUDA fits389.392s/lease released. Goal42 appointment follows frozen600s/0fit contract, not approval wait. |
+| Data | Copernicus / released | OPEN adapter5076170e.../43 synthetic tests; prior61 once/cohort3126.../all identities retained. |
+| Engine | Euclid / owned | Offline stock forecast wrapper/tests, group<=128 versus isolated chunks32, horizon6/steps2..6. |
+| Infra | James / owned | GPU-run/CPU-smoke-and-verify caller/data/source bindings, no actual input/weight/runtime access. |
+| Review | Copernicus / owned | Official checkpoint/code/license re-retrieval and independent forecast source review, authored Data excluded. |
+| Verification | Parent | Goal41 external243/independent34; shared14161/22skip unchanged. Shared Goal42 IDs receive one authority integration. |
+| Paper | Execution scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... retains shared10% basis/SPY-TLT-GLD/QQQ custody; future fills not_observed. |
+| Follow-up | Chat one-shot | Oct9 23:05KST exact Paper check; no duplicate chain/schedule expansion. |
+| Head | Data scheduler | Oct9 15:29UTC owned; historical availability/finality not_observed, no manual invoke. |
 | Console | Existing web | http://127.0.0.1:8787 retained reference, not owned net profit. |
 
 ## Bottleneck And Reversible Improvement
 
-Goal40 binary HGB/TCN20/fixed blend show modest positive seen utility; TCN10
-rejects. No winner or broker input is promoted. The ready engine-loop improvement
-is numeric model reuse instead of another fit: safe CPU inference/ordered
-top10 parity and one actual-time prospective seal. Infra and parent ownership
-are disjoint; tonight's Paper owner remains independent.
+Numeric TCN reuse now works without another fit. Next, test a different
+foundation-model mechanism: same-origin cross-stock attention versus isolated
+inference, target aligned to the five-OPEN payoff. Reuse existing official
+weights/runtime and prepare Data/Engine/Infra in parallel. No winner/Paper
+promotion, framework, scheduler, gate or recurring report.
 
-Released role packages yield ownership; no permanent LLM process or foreground waiting.
-Pre-fit integration repaired shared FeatureSeal import, four-layer receptive
-field, five-group CPU smoke and exact immutable cached-run binding. Numeric
-state uses no-pickle NPZ. Normal9/6 fit facts match; failed-attempt device
-projection still has scoped P2 in used source and must not be claimed solved.
-No budget refund or winner.
-No new helper platform, scheduler, approval process or recurring report.
-
-Claude Goal40 prompt1a75d09c... challenge was review_unavailable/cli_is_error,
-not agreement. Source-local Tiingo/FINRA rights defer only their numeric jobs; other
-private no-cost Data/Research/Paper work remains delegated.
+Goal40 failure-only CUDA-fact P2 stays scoped to immutable used source; actual
+normal9/6 counters agree. Fresh Goal42 attempts preserve unknown failure facts
+and publish returned device facts before completed progress. No refund.
+Claude unchanged CLI failures remain review_unavailable, not agreement;
+independent source review/ready work continue. Source-local rights limitations
+do not hold separately lawful KIS/private/no-cost research or Paper.
