@@ -43,6 +43,8 @@ Two matched Ridgealpha1/SVD/intercept fits only: raw6x63 plus11 state slots
 (quantities3, entrycosts3/bank, grosscash/bank, cumulativefees/bank, projected
 priorCLOSE3/bank). Shared TRAIN-only price/state population scalers; price-only
 state slots zero, zero std divisor1, no target scaling or hyperparameter search.
+This augmentation bundles account state and prior quote price levels; it is
+not an isolated causal estimate of the account-state effect.
 One300-second CPU family/2fits, no GPU appointment or holdout. CPU smoke first.
 
 DEV same1442 marks/68 complete21-session groups/tail14 HOLD, uninterrupted
