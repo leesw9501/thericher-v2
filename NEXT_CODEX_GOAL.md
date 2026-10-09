@@ -45,6 +45,9 @@ Costs5/10(primary)/20bps round trip, same availability/fill assumptions for all.
 are descriptive only, no independent-block claim, pass waiver or budget multiplier.
 Strongest kill: unavailable matched replay, primary growth<=0, or primary utility
 not strictly above ALL fixed controls including blend/equal-weight/cash.
+Gate incremental value additionally requires primary utility above BOTH Ridge
+arms; beating fixed rules alone cannot establish conditionality. Report this
+separate test without changing the fixed-screen result or selecting new weights.
 No result-selected cost/window/seed/subperiod. A pass permits only a fresh
 non-promoting follow-up, never Paper qualification, alpha or deployment.
 
@@ -58,7 +61,8 @@ appointment. Invoke independent Validation on completed frozen outputs; it
 does not tune/refit the candidates. Execution supplies the existing deterministic
 analytical OC cost/fill/availability semantics, not broker parity.
 
-One NEW mechanism family,600s useful work including load/audit/all9 fits/replay;
+One NEW mechanism family,600s useful work including load/audit, one fixed
+synthetic64-update CUDA timing with no retained probe weights, all9 fits/replay;
 bounded110s cleanup, exact progress receipts and unknown terminal counts if
 killed. CPU preparation/smoke has no real labels/fits or extra market allocation.
 Use existing pinned native research image/Python3.12.14/Torch2.7.0+cu128,
