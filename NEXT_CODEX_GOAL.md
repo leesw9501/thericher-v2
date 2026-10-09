@@ -2,85 +2,89 @@
 
 ## Objective
 
-Complete kis-stock-persisted-paper-execution-v1: connect the prepared single
-NASDAQ model target to one recoverable KIS Paper execution cycle inside the
-EXISTING original10% bank. Reuse shared reservation and exact canary recovery;
-no separate stock bank, profitability approval or live behavior.
+Complete kis-stock-owned-exit-lifecycle-v1: add an explicit, recoverable exit
+for the model-owned NASDAQ stock inside the EXISTING original10% Paper bank.
+Sell only canonically owned inventory. Deliver compatible source and prepare
+one bounded session-close Paper exit; no foreign liquidation or new bank.
 
-## Exact Inputs And Current Facts
+## Exact Current Facts
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal43 r3 proposalce026452.../receipt308bb0f0...: target0.01 of TOTAL original
-basis, confidence0, original11:46:17.437602..499976UTC clocks/Oct9 expiry20:00UTC.
-Preserve this expiry; do not silently regenerate a clock or call it an alpha winner.
-Goal45 native RO sizing actually COMPLETE at
-A/execution/kis-stock-shared-budget-integration-v1:
-job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed...,
-13.544s/1token8GET/original all-owner replay/whole-share BUY available,
-3positions0open/target absent/fresh tick/exact-limit funds.438sources/3inputs/
-44privatefiles unchanged/reaped/absent/0orders/writes/owners/reservations.
-Source reviewsaced1e04.../16 and87626967.../57 exclude actual runtime;
-734serial/38external/clean8:14556pass22skip35warnings340.02s/Ruff/three Compose.
+Goal46 COMPLETE/closure28c5038b... at
+A/execution/kis-stock-persisted-paper-execution-v1. Actual r3 job046480fc.../
+outcome-5aaf1aa6ebb94b21ab77d006c277398f.json/c496c9e0...:
+Oct9 15:34:36..15:35:34UTC/58.432s/1token28GET/1BUY0cancel,
+exact terminal fill and current owned inventory reconciled, original basis
+preserved/source and inputs unchanged/reaped/absent/no unknown outcome.
+Entry model clocks/target0.01/confidence0/expiry20:00UTC remain original;
+this is execution learning, not alpha or fees/settlement/net-PnL evidence.
+V1 failed after reads; compact-vs-canonical digest fault was independently
+reproduced and fixed only in fresh r2/r3. R2 stopped before GET, exact cause
+unobserved. Used sources/jobs/failures remain immutable. No substitute order.
 
-Oct9 original portfolio-control is complete/no_target_delta/0orders, not a fill.
-Existing SPY strategy has an owned23:50KST opportunity. Its old source-baked
-writer cannot consume V4. Deliver compatible source before stock installation;
-never reset a bank, replace an unknown intent or manually invoke that task.
-Host Paper loader kis_readonly.py must remainc07983f6... .
+Delivery376f9bc0.../build41d08464... retains runtime/dependencies and440 source/
+244 script hashes across three derivatives;5 RW+2 RO Compose consumers are
+compatible. Published recovery router Action-only, schedule/settings/principal
+unchanged. Host selective loaderc07983f6... remains untouched.
+Source commitc1d3abf;871+8serial/14820pass22skip35warnings342.27s/eight clean,
+Ruff/three Compose. Native source66 focused+21 independent source checks;
+actual result is hash/clock/source-bound under assumed honest host, not an
+independent broker or OS-scheduler attestation. Never read KIS_LIVE_*.
 
 ## Disjoint Packages
 
-Execution owns pure exact stock plan construction, canonical V4 reservation
-and terminal-evidence recovery. Stock identity uses existing bk-/stock- domain,
-original account/basis/input/parent pins, quantity/price/created/expiry clocks.
-Persist reservation and immutable intent before any broker side effect under
-existing session-then-canary locks. Retry returns EXACT original request,
-not a fresh price/quantity/TTL. Unknown submission requires exact reconciliation.
+Execution planner owns pure explicit zero-target EXIT construction and canonical
+V4 persistence/retry/reconciliation. Reuse TargetExposureProposal and
+ResearchDecisionReceipt; validate EXIT-class hashes separately while preserving
+the original ENTRY-bound instrument/owner. Do not relabel the entry receipt or
+renew its clocks. Quantity equals known owner inventory; zero yields no-intent.
+Reject another unresolved same-owner action locally, not another lane.
 
-Parent owns typed stock execution proof and call-time canary integration.
-Use explicit stock-bound exact-limit funds, not legacy QQQ fallback. Reuse
-current virtual-host order/cancel transport, post-pacing expiry checks, strict
-submission parsing and cumulative fills. Reconcile partial/unknown outcomes
-without adopting foreign holdings or erasing prior fills. Source records are
-not fills; broker success is not settled cash, fees or net PnL.
+Execution client owns cash/funds-independent stock exit reads: typed account,
+complete open orders, positions and fresh bid/tick quote. Reuse one token and
+the existing exact stock-bound submit/cancel transport. Zero buying power is
+not a SELL gate. Do not fabricate a cash observation or use QQQ funds fallback.
 
-Temporary Infra owns a source-safe inventory of EVERY competing canonical-bank
-writer and coherent reversible source delivery. Same runtime/dependencies only;
-no major replacement or unrelated scheduler platform. Keep existing opportunities,
-original job identity/budget/private custody and recovery semantics intact. An
-active owned writer is a scoped conflict; continue other ready source work.
+Parent owns side-aware exact stock execution proof and call-time SELL checks,
+reusing existing canary persistence, two locks, strict submission parsing and
+cumulative fill recovery. Broker target quantity must match all same-instrument
+owned inventory; never adopt foreign shares or oversell this owner. Reattest
+stock source coherently before private installation; old bindings/fills stay exact.
 
-Validation independently attacks a frozen source/contract and synthetic crash,
-reservation, exact-stock funds, route/account, expiry-after-pacing, concurrent
-writer, restart and unknown-submit boundaries. No private values or tuning.
-Engine preserves exact model receipt/clock and supplies constructor evidence;
-no refit, new holdout or GPU allocation needed for this connection.
+Validation attacks frozen source with synthetic foreign/oversell, wrong EXIT
+receipt, pending/unknown identity, exact restart, stale bid/post-pacing expiry,
+partial/late/duplicate fill, zero-funds and failed-reconciliation falsifiers.
+No private values, model tuning or broker calls in source review.
 
-## Actual Bounded Paper Cycle
+Data prepares the existing same128-key D1 refresh for a caller-frozen next
+completed-session anchor and ordered observation clocks. No collection before
+Oct9 official CLOSE20:00UTC, no fallback to OLD rows or rewritten cohort.
+Reuse the bounded producer/reader, not a new collector platform. This package
+must not block the exit. Engine supplies an explicit session-close Paper EXIT
+receipt, not a trained exit model or research-profit promotion. No refit or
+new holdout needed for this lifecycle connection.
 
-Inside standing Paper authority, after coherent source delivery and source
-falsifiers, use one named exact model-owned request through the owned path.
-Re-read current whole-share capacity and exact target funds at call time.
-When positive, persist then attempt the virtual BUY and reconcile exact linked
-submission/fill/open/owned inventory. A zero whole-share result is scoped no-intent,
-not an operator gate or budget reset. Preserve unknown identity and its next
-recovery action; never issue a substitute. No live credential read or route.
-Use selective Paper configuration/stdin and private state; never print/persist
-secrets or account/order IDs in Git/logs/artifacts. Safe counts/categories/refs
-only. Old account holdings are not owned sell inventory. No forced liquidation
-or source-family promotion is needed merely to exercise the Paper path.
+## Bounded Native Exit
+
+Freeze one explicit session-close virtual exit request while the target is
+owned. Prefer the owned regular-session pre-close window; do not foreground
+sleep until it. A goal-owned finite worker/schedule may own its next_due while
+source work continues. An immediate diagnostic roundtrip is not the strategy.
+Fresh execution checks quantity/bid/venue, current complete orders and the
+same canonical owner. Persist before wire; exact retry never resizes, changes
+price/TTL or substitutes an unknown request. Reconcile linked fill and current
+owned-flat separately. Retain a partial/unknown request with exact recovery.
+KIS Paper authority is standing; no additional profitability/capital approval.
 
 ## Completion And Continue
 
-Completion evidence is source-compatible persisted plan/reservation/recovery,
-independent source falsifiers and coherent writer-delivery facts, plus one exact
-native cycle result or scoped technical unavailability with durable recovery.
-Distinguish no-intent, actual submit, positive rejection, exact linked fill,
-owned reconciliation and unresolved recovery; never infer fills from task exit.
-Strongest kill: invisible reservation, basis reset, duplicate/substitute intent,
-foreign holding adoption, QQQ funds fallback, live route or false fill claim.
-Ask Claude for concise material execution/recovery drift-check; review_unavailable
-is not agreement or a global wait. Run changed-path serial, clean8 helper, Ruff
-and three sample-env Compose at integration; commit/push, refresh stateboards and
-ONE material next objective, then continue. Preserve D15% free. No new report
-family, per-agent goal, manual-approval gate or utilization-only GPU training.
+Completion is persisted side-aware source/recovery, independent falsifiers,
+compatible writer delivery, and an explicit finite pre-close exit installation
+with exact identity/next_due or its already observed native result. If scheduled,
+continue another ready package rather than waiting for the market clock.
+Strongest kill: foreign sell, oversell, invisible reservation, basis/owner reset,
+duplicate/substitute intent, fake flatness, live route or free-form sensitive output.
+Ask Claude for the material recovery/execution drift-check; failure is not agreement
+or a global wait. Verify changed serial, clean8, Ruff and three sample-env Compose
+for shared-source integration. Commit/push, refresh stateboards and ONE next
+material company objective, then continue. Artifacts stay on D; preserve15% free.

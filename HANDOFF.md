@@ -20,8 +20,22 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-Goal45 COMPLETE; NEXT owns Goal46 kis-stock-persisted-paper-execution-v1.
-Goal46 source active, not native completion yet:
+Goal46 COMPLETE; NEXT owns Goal47 kis-stock-owned-exit-lifecycle-v1.
+Exact closure28c5038b...; actual r3 job046480fc.../
+outcome-5aaf1aa6ebb94b21ab77d006c277398f.json/c496c9e0...:
+Oct9 15:34:36..15:35:34UTC/58.432s/1token28GET/1BUY0cancel,
+terminal full fill and current owned inventory reconciled. Original bank,
+entry model clocks/target0.01/confidence0 preserved; source/inputs unchanged,
+child reaped/invocation absent/no unknown. Fees/settled cash/net PnL not_observed.
+V1 stopped after8GET/order0; compact binding digest fault reproduced in synthetic
+source and repaired with canonical helper only in fresh r2/r3. R2 token1/GET0/
+order0 failure's exact cause unobserved; preserve both originals, do not relabel.
+R3 HTTP200/66 focused tests; independenta13dcdb8.../21 source checks excludes
+actual/private. Parent actual hash/clock/job/source audit passed under honest
+host, not independent broker or cryptographic OS-scheduler-origin attestation.
+Source packagec1d3abf pushed before native closure. Next is explicit owned exit,
+not foreign liquidation, a new bank, another fit or a profitability approval.
+
 R46=A/execution/kis-stock-persisted-paper-execution-v1. Exact stock plan,
 reservation, target-bound client and canary proof released; source965c9c1a.../
 312 independent checks pass after mutable-request alias repair. Native/private
@@ -29,11 +43,12 @@ behavior excluded. Code-only derivatives retain base layers/dependencies and
 440 source/244 script hashes: build41d08464... . Five RW and two RO Compose
 consumers select the compatible SPY derivative; published recovery router was
 installed Action-only while inactive, with triggers/settings/principal unchanged.
-Installed receipt376f9bc0...; no manual task invocation or private V4 installation.
+Installed receipt376f9bc0...; no manual task invocation. Native r3 then installed
+the exact V4 stock owner/intent and recovered its linked fill in the existing bank.
 Final verificationb8aee8d5...:871 changed serial+8 Compose-contract serial,
 clean8 authority14820pass22skip35warnings342.27s/reaped/clean/Ruff/three Compose.
 Earlier parallel run failed because its collected image pin predated delivery;
-it is not authority. Native worker/dispatcher remain inert source under review.
+it is not authority. Used native sources and exact outcome remain immutable.
 Keep exact Goal43 clocks/expiry and original shared bank; no new fit/GPU needed.
 R45=A/execution/kis-stock-shared-budget-integration-v1:
 job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
@@ -63,7 +78,7 @@ host marker/time/source evidence, not cryptographic OS-scheduler origin proof;
 Operational logging disabled. Fees/settled cash/net PnL remain not_observed.
 Existing SPY strategy's Oct9 23:50KST old-source opportunity was left untouched.
 Compatible writer delivery is now installed; no result is inferred from task
-exit and no stock owner is installed until the exact native cycle persists it.
+exit. Exact r3 stock ownership is now persisted and its full fill reconciled.
 
 Goal44 COMPLETE, superseded capacity observation only by Goal45 above.
 Exact R2 root A/execution/kis-stock-readonly-preparation-v1/r2:

@@ -8,18 +8,22 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
-Goal46 active source/native integration at
-A/execution/kis-stock-persisted-paper-execution-v1. Canonical same-bank stock
-reservation and canary execution source released; independent965c9c1a.../312
-checks pass, native/private behavior excluded. Target-bound transport snapshots
-mutable request mappings before pacing; exact retry keeps original quantity/TTL.
-Code-only three-image build41d08464... preserves runtime/dependencies and exact
-440 sources/244 scripts. All5 RW+2 RO Compose consumers compatible; source-safe
-installed376f9bc0... binds inactive Action-only recovery-router delivery and
-unchanged triggers/settings/principal. No manual task or private stock write yet.
-Native worker/dispatcher in bounded source review; no broker result claimed.
-Final verificationb8aee8d5...:871+8 serial/14820pass22skip35warnings342.27s,
-eight clean workers/Ruff/three Compose. Earlier image-pin mismatch run excluded.
+Goal46 COMPLETE at A/execution/kis-stock-persisted-paper-execution-v1,
+closure28c5038b...; r3 job046480fc.../outcome-c496c9e0... . Actual Oct9
+15:34:36..15:35:34UTC/58.432s/1token28GET/1BUY0cancel; exact full fill and
+current owned quantity reconciled. Original bank preserved/no unknown/source
+and inputs unchanged/reaped/absent. Fees/settled cash/net PnL not_observed.
+V1 after8GET/order0 matched a source-reproduced compact-binding-hash fault;
+actual exception wasn't retained. Fresh r2/r3 use canonical budget digest.
+R2 token1/GET0/order0 exact cause unknown. Used sources/failures immutable.
+Native66 focused+21 independent source cases; actual readback is separately
+hash/clock/source-bound under honest host, not independent broker attestation.
+Build41d08464.../installed376f9bc0...:unchanged runtime/440 sources244 scripts,
+all5 RW+2 RO compatible/inactive Action-only/unchanged schedule-settings-principal.
+Sourcec1d3abf pushed; b8aee8d5...:871+8serial/14820pass22skip35warnings342.27s,
+eight clean/Ruff/three Compose. Earlier image-pin mismatch run excluded.
+NEXT owns Goal47: explicit owner-only EXIT, separate EXIT receipt validation
+with original entry owner/identity; no buying-power gate or foreign liquidation.
 
 Goal45 COMPLETE: R45=A/execution/kis-stock-shared-budget-integration-v1,
 job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
@@ -32,8 +36,8 @@ funds also subtract existing reservations. Source16+shadow57 independent checks
 close scoped findings, actual runtime excluded; original failed receipts kept.
 Parent734serial/38external/full8:14556pass22skip35warnings340.02s/clean/reaped/
 Ruff/three sample-env Compose. Native sizing is not installed execution.
-Goal46 next: persist exact bk identity/reservation before wire, target-scoped
-funds, exact restart recovery; deliver compatible source to ALL competing writers.
+Goal46 completion supersedes the prior shadow-only status below. Exact bk
+identity/reservation now persisted before wire with target-scoped funds.
 
 Original Oct9 portfolio-control COMPLETE/no_target_delta/0legs/0submit0cancel,
 34.565s/1token14GET; exact dispatch-b8c800abe9ce4c2ebd5b1a12c75456d0.json

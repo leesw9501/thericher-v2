@@ -5,13 +5,15 @@ one company goal. Detailed history is preserved in Git2ebc361 and immutable
 campaign roots/custody, not duplicated here.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
-## Current Research (2026-10-09 KST)
+## Current Research (2026-10-10 KST)
 
-Goal45 native shared-bank stock sizing COMPLETE9ee849dd.../0ff09fed...:
-exact original all-owner10% replay/whole-share BUY available/13.544s/1token8GET/
-0 orders/private writes. Original TCN target0.01/confidence0/clock/Oct9 expiry
-unchanged; not new inference, scientific promotion, owned holding or net profit.
-Next material gap is persisted stock execution and compatible writer delivery.
+Goal46 actual stock Paper execution COMPLETE/closure28c5038b.../r3c496c9e0...:
+original tcn20 target0.01/confidence0/clocks/expiry20UTC unchanged; exact BUY
+full fill/current owned quantity reconciled under existing original10% bank.
+This is execution learning, not alpha, independent research promotion or net
+profit. Fees/settled cash/net PnL not_observed; no new inference/GPU/refit.
+Goal47 uses a separate explicit session-close Paper EXIT receipt; its decision
+class hash must not replace the original entry-bound instrument/owner.
 No frozen training job is deferred by permission/environment; no duplicate fit
 or sealed evaluation was spent for this execution integration.
 

@@ -1,4 +1,4 @@
-# Data Agent Stateboard (2026-10-09 KST)
+# Data Agent Stateboard (2026-10-10 KST)
 
 Current projection only. Policy AGENTS.md; company objective NEXT_CODEX_GOAL.md.
 Detailed history remains in Git4b0e79a and immutable external receipts.
@@ -11,8 +11,15 @@ unchanged, explicit NASD/ref-bound stock owner inside original aggregate bank.
 Actual RO replay/sizing COMPLETE9ee849dd.../0ff09fed.../13.544s/1token8GET/
 438sources3inputs44privatefiles unchanged/0 orders/writes. This is execution
 capacity, not Data/PIT/action/finality or model qualification. No collection.
-Temporary Infra now inventories competing writer source delivery for Goal46;
-no credential/private-state access or task changes in that assignment.
+Goal46 closed stock execution28c5038b.../c496c9e0... does not qualify historical
+availability/PIT/actions/finality or a predictive dataset. Same128 CURRENT
+manifest18a37635... retains113 sessions Apr29-Oct8/14073 rows/121complete,
+4sparse3empty/391missing; observation clocks03:46:02..03:50:28UTC Oct9 are
+collection times only. Existing ETF/head owners do not refresh that128-key input.
+Goal47 Data prep: fresh caller-frozen completed-session anchor and ordered
+reader/parent bindings, retaining all128 identities; no collection before Oct9
+CLOSE20UTC or fallback to OLD rows. Existing producer bounds256 attempts/600s
+are that study's scope, not a provider quota. Completed study has no next_due.
 
 Goal39 Data adapter released3126ba5b.../34 synthetic tests, shared FeatureSeal:
 last completed CLOSE

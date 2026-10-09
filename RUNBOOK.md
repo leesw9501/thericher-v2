@@ -2,7 +2,22 @@
 
 ## Current Owned Opportunities And Research
 
-Goal46 active: D:/thericher-v2/model-artifacts/execution/
+Goal46 COMPLETE: D:/thericher-v2/model-artifacts/execution/
+kis-stock-persisted-paper-execution-v1/closure.json/28c5038b... . Exact r3
+job046480fc.../outcome-5aaf1aa6ebb94b21ab77d006c277398f.json/c496c9e0...:
+Oct9 15:34:36..15:35:34UTC/58.432s/1token28GET/1BUY0cancel,
+terminal full fill/current owned quantity reconciled/original bank preserved/
+source-input unchanged/reaped/absent/no unknown. Fees/settled cash/net PnL
+not_observed; not scientific model promotion. Original entry clocks stay fixed.
+V1 compact binding digest fault reproduced only in source; v1 actual generic
+failure after8GET/order0 retained. R2 failed token1/GET0/order0, cause unknown.
+Fresh r3 canonical digest and safe token/status categories;66 focused+21
+independent source cases pass, not actual broker attestation. Exact parent
+hash/clock/job/source audit passed under assumed honest host. Sourcec1d3abf pushed.
+NEXT owns Goal47 explicit owner-only session-close EXIT; no installed exit job
+yet, no forced foreign liquidation, basis/identity reset or profit approval.
+
+Goal46 source delivery: D:/thericher-v2/model-artifacts/execution/
 kis-stock-persisted-paper-execution-v1. Source965c9c1a.../312 independent checks
 released; native/private excluded. Build delivery/actual-build-receipt.json/
 41d08464... verifies all three code-only derivatives' base layers, unchanged
@@ -10,11 +25,11 @@ runtime/dependencies and440 source/244 script hashes. Published helper bundle
 delivery/published/goal46-v1 uses manifest209a531e...; original helpers untouched.
 Installed delivery/installed-delivery-receipt.json/376f9bc0... records all5 RW+
 2 RO Compose consumers and inactive Action-only router update, no trigger,
-settings/principal change, manual task run or private V4 installation.
+settings/principal change or manual task run. R3 later persisted exact V4 ownership.
 verification.json/b8aee8d5...:871+8 serial/full clean8:14820pass22skip35warnings
 342.27s/reaped/clean/Ruff/three sample-env Compose. Earlier collected-image-pin
-failure is not authority. Native source review precedes one exact persisted
-Paper cycle; preserve model clocks/Oct9 20:00UTC expiry and original10% bank.
+failure is not authority. Native cycle is now complete above; preserve model
+clocks/Oct9 20:00UTC expiry and original10% bank.
 Never rewrite installed/preparation evidence flags after the fact.
 
 Goal45 stock shared-budget integration COMPLETE at
