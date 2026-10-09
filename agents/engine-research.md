@@ -7,14 +7,21 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
-NEXT owns Goal48 kis-stock-peer-attention-development-v1: new peer-interaction
-hypothesis versus same-window pointwise neural controls;20/60 windows, at most
-12 CUDA fits/54 fixed analytical cells/ONE600s smoke-run-verify family budget.
-Same128 retained OLD/CURRENT seen/current-listed/raw/non-PIT inputs and fixed
-5/10/20bps book remain. No sealed claim, public weights or automatic Paper input.
-Freeze exact architecture/data/target/splits/kill/lease before market fits;
-CPU synthetic smoke first. Broad underrepresented mechanism, not closed-family
-rescue. Same-date peers use past61 only; future targets cannot select peers.
+Goal48 native development CLOSED at A/research/kis-stock-peer-attention-development-v1:
+contract984651c7.../451sources7inputs/resulte336641a.../closure9e9cb00b.../
+custodyb08ff252... . Actual12 CUDA fits17.899s/54cells/218.788s<600;
+CPU smoke22.481s, run137.565s, zero-refit cached verify58.742s all complete.
+Sources/inputs unchanged, children reaped/absent/GPU lease released; all books
+flat/no missing marks/accounting and stock-day attribution matched.
+Whole10bps/fixed10% growth: pointwise20-.0635%, pointwise60-.0752%,
+peer20-.5195%, peer60+.3866%, fixed blend+1.0559%; all four singles reject
+predeclared utility/risk controls. Blend permits non-promoting follow-up only,
+not alpha, independent replication, learned fusion or automatic Paper input.
+Same128 seen/current-listed/raw/non-PIT/action/finality limits remain. Native
+2.7 CPU/CUDA passed; source reviews126 model/68 worker/46 context exclude actual
+data/runtime qualification. Analysis-only four-name seal extension preserves
+the old book and broker rules.631 changed serial/448 external/full clean8:
+14950pass22skip35warnings361.18s/Ruff/three sample-env Compose passed.
 Explicit session-close EXIT source32adf795... is released55 checks and a separate
 decision class; Goal47 prepared finite04:50KST job, actual exit not observed.
 

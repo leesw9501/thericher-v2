@@ -543,12 +543,26 @@ def test_hostile_decimal_context_does_not_change_replay_floors_or_context():
     group = (buy, sell)
     args = _arguments(price="33.3333", others=((_owner("spy", group), group),))
     with localcontext() as context:
+        context.clear_flags()
         context.prec = 2
         context.rounding = ROUND_UP
         context.traps[Inexact] = context.traps[Rounded] = True
         result = size_kis_paper_stock_target(**args)
         assert context.prec == 2 and context.traps[Inexact] and not context.flags[Inexact]
+        assert context.rounding == ROUND_UP and context.traps[Rounded]
+        assert not any(context.flags.values())
     assert result.status == "sized" and result.quantity == 3
+
+
+@pytest.mark.parametrize("signals", [(), (Inexact,), (Rounded,), (Inexact, Rounded)])
+def test_hostile_decimal_fixture_preserves_preexisting_ambient_context(signals):
+    with localcontext() as ambient:
+        ambient.clear_flags()
+        for signal in signals:
+            ambient.flags[signal] = True
+        before = (ambient.prec, ambient.rounding, dict(ambient.traps), dict(ambient.flags))
+        test_hostile_decimal_context_does_not_change_replay_floors_or_context()
+        assert (ambient.prec, ambient.rounding, dict(ambient.traps), dict(ambient.flags)) == before
 
 
 def test_multiple_owned_target_owners_reconcile_but_are_not_adopted_by_selected_owner():

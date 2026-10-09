@@ -22,6 +22,10 @@ SUPPORTED_ARMS = (
     "tcn20",
     "chronos2_stock_isolated",
     "chronos2_stock_group",
+    "pointwise20",
+    "pointwise60",
+    "peer20",
+    "peer60",
 )
 
 

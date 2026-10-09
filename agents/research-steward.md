@@ -8,14 +8,17 @@ A=D:/thericher-v2/model-artifacts.
 ## Current Resources (2026-10-10 KST)
 
 Goal47 EXIT preparation closed3d32edf8... withzero fits/GPU/holdout spend.
-NEXT owns one new peer-attention family: four20/60 pointwise/peer arms,
-at most12 CUDA fits/54 analytical cells/ONE600s smoke-run-verify debit.
-Allocation is not dispatched yet; Engine must freeze source/data/target/
-splits/architecture/cost/kill before market fitting. No old family refund,
-sealed allocation or utilization-only training. RTX4090 is available; observed
-2%/1772MiB is display use, not an active fit. Paper EXIT next04:50KST has an
-independent CPU owner and does not reserve GPU. Weekly serial diagnostic uses
-CPU and a distinct C:/trpy root; keep native research bounded separately.
+Goal48 family CLOSED/trial1/contract984651c7.../closure9e9cb00b.../
+allocation63b236f0.../outcomeb08ff252... . Actual12 CUDA fits17.899s/54cells,
+218.788s cumulative smoke/run/cached-verify debit<600; no refund, retry or sealed
+spend. All exact children reaped/absent/source-input unchanged/lease released.
+CPU smoke22.481s preceded CUDA; cached verify58.742s spent zero fits/inference.
+Four single arms reject; fixed blend non-promoting follow-up only. No selection,
+Paper qualification or independent replication. Resource available after closure;
+next ready frozen useful family may run, not utilization-only training.
+Paper EXIT next04:50KST owns separate CPU resources. Weekly serial diagnostic
+ended with one order-dependent test-fixture failure; targeted repair is tests-only
+and preserves production/used artifacts. Company authority run is independent.
 
 Goal45 closed native shared-bank sizing with zero GPU/refit/holdout spend.
 Original stock target/clock retained; actual13.544s/1token8GET/0orders/writes,

@@ -11,8 +11,12 @@ A/data/kis-current-pooled-equity-refresh-next-session-v1, worker3a889da0.../
 reader6a9494f3.../contract helperd0d1cd27... . Same128 identities, previous61
 context and caller-frozen official completed-session anchor. No native collection
 before Oct9 CLOSE20UTC; no OLD fallback or revised old receipt. NEXT Goal48
-past-only peer contexts are ready from retained inputs while this cache owns
-its future due. Collection bounds256/600s remain one study, not provider quota.
+peer context source6dc01be6... released31+15 synthetic checks; Goal48 actual
+12-fit/54cell run and zero-refit verify closed9e9cb00b... with unchanged retained
+inputs. This changes no availability/PIT/action/finality grade or dataset rows.
+Future-anchor native caller preparation is active separately; no native refresh
+or installed due is claimed yet. Collection bounds256/600s are study scope,
+not provider quota. No source fallback or new authenticated client was used.
 Goal47 EXIT preparation3d32edf8... changes no dataset/PIT/action/finality grade.
 
 Goal45 pure stock-owner/bank scope RELEASED3c0a7a5e...; legacy fingerprints

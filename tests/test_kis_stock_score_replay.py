@@ -61,7 +61,17 @@ def test_fixed_scores_distinct_from_momentum_and_immutable(arm):
 
 
 @pytest.mark.parametrize(
-    "arm", ["tcn10", "tcn20", "chronos2_stock_isolated", "chronos2_stock_group"]
+    "arm",
+    [
+        "tcn10",
+        "tcn20",
+        "chronos2_stock_isolated",
+        "chronos2_stock_group",
+        "pointwise20",
+        "pointwise60",
+        "peer20",
+        "peer60",
+    ],
 )
 def test_additional_model_identity_uses_same_supplied_score_book(arm):
     assert score.ARMS == ("ridge", "hgb", "gru", "equal_fixed_mean_blend")
@@ -72,6 +82,14 @@ def test_additional_model_identity_uses_same_supplied_score_book(arm):
     reference, actual = run(), run(arm=arm)
     assert actual.final_state == reference.final_state
     assert actual.public == reference.public
+
+
+@pytest.mark.parametrize("arm", ["pointwise10", "peer120", "arbitrary_model"])
+def test_unknown_model_identity_rejected_before_prices(arm):
+    with pytest.raises(ValueError, match="arm_invalid"):
+        score.seal_scores(snapshot(), (), predictions(), arm=arm)
+    with pytest.raises(ValueError, match="replay_contract_invalid"):
+        run(arm=arm, prices=lambda *args: pytest.fail("unrecognized arm reached prices"))
 
 
 def test_ties_lexical_and_no_score_rounding():

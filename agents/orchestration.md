@@ -5,16 +5,17 @@ History remains in Git and immutable external evidence.
 
 ## Current Ready / Owned / Due (2026-10-10 KST)
 
-No company block or foreground sleep. Goal47 preparation COMPLETE; Goal48 ready.
+No company block or foreground sleep. Goal48 integrated; next repeatable Paper preparation ready.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Integration | Parent | Goal48 campaign/caller contracts next; Goal47 closure3d32edf8.../sourcecffa21b pushed. |
-| GPU | Steward / ready prep | Peer-interaction family ready for freeze; no fit dispatched or permission/environment block. |
-| Data | Copernicus | Fresh128-key D1 anchor/reader released82 tests; due only after20UTC CLOSE. Peer61 context next. |
+| Integration | Parent | Goal48 closure9e9cb00b.../12CUDA54cells/cached replay complete; integrate source-only enum extension and tests-only Decimal repair. |
+| GPU | Steward / available | Actual12 CUDA fits17.899s/218.788s family debit; lease released/no retry or refund. No new ready frozen family yet. |
+| Data | Copernicus | Peer61 context released31+15 cases; future-anchor native caller preparation active, no provider calls before20UTC CLOSE. |
 | Execution | Existing finite owner | Exact EXIT job2a5135f3... installed04:50..05KST/1min/IgnoreNew; no manual run or actual exit evidence yet. |
-| Engine | Euclid / James | Primary-source proposal and next bounded peer/model package; no old fit repeated. |
-| Verification | Parent |986 serial/120 external/final14939pass22skip35warnings355.54s/eight clean/Ruff/three Compose; weekly serial diagnostic active separately. |
+| Engine | Euclid | Temporal-mechanism source proposal only; closed peer singles reject/fixed blend seen follow-up. No new fit or sealed spend. |
+| Verification | Parent |631 changed serial/448 external/14950pass22skip35warnings361.18s/eight clean/Ruff/three Compose pass. Weekly partial failure repaired202pair+10 independent cases; no full serial pass claim. |
+| Execution preparation | Singer | Source-only map of fresh model seal -> existing bank/intent -> owned EXIT for repeatable sessions; no new task/order. |
 | Paper | Existing scheduler | Oct9 portfolio-control completed34.565s/no_target_delta/0legs0submit0cancel; exact dispatch6c9c016d... . |
 | Next writer | Existing SPY scheduler | Oct9 23:50KST opportunity preserved; inactive Action-only compatible delivery now installed, original basis/identity unchanged. |
 | Snapshot | Existing scheduler | Recurring read-only observer remains separately owned; token-start guard may defer only a fresh client. |

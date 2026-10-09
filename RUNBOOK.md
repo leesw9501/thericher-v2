@@ -2,6 +2,21 @@
 
 ## Current Owned Opportunities And Research
 
+Goal48 native CLOSED at
+D:/thericher-v2/model-artifacts/research/kis-stock-peer-attention-development-v1:
+precommit984651c7.../bounded-closure9e9cb00b.../custodyb08ff252...;
+12 actual CUDA fits17.899s/54cells/218.788s<600. CPU smoke/run/cached verify
+complete, unchanged sources/inputs/reaped/absent/GPU lease released. Do not
+restart closed phases or refund debit. All singles reject; fixed blend+1.0559%
+whole10bps/10% exposure is seen non-promoting follow-up, not broker PnL/alpha.
+Current source integration:631 changed serial/448 external/full clean8:
+14950pass22skip35warnings361.18s/Ruff/three sample-env Compose pass.
+Weekly serial1fail10034pass16skip/1679.70s;
+sticky Decimal flags from earlier test reproduced, tests-only local initialization
+repair plus ambient-preservation regression202pair pass. No passing full serial
+claim or production recovery change. Future Data caller and multi-session Paper
+source preparation proceed independently of existing04:50KST EXIT owner.
+
 Goal47 preparation COMPLETE/closure3d32edf8... at
 D:/thericher-v2/model-artifacts/execution/kis-stock-owned-exit-lifecycle-v1.
 Native job2a5135f3.../worker10ef7c41.../dispatcher01d8b849.../
@@ -16,7 +31,7 @@ Actual EXIT fill/current owned-flat and fees/settlement/net PnL not_observed.
 Sourcecffa21b pushed.986 serial/120 external/final clean8:14939pass22skip/
 35warnings355.54s/Ruff/three sample-env Compose. Independent scoped P2s fixed,
 original failing receipts retained. Weekly serial diagnostic at
-C:/trpy/weekly20261010g47 is separately owned; no research foreground wait.
+C:/trpy/weekly20261010g47 ended as the failed diagnostic described above.
 NEXT owns one peer-attention CUDA development campaign, not another exit gate.
 
 Goal46 COMPLETE: D:/thericher-v2/model-artifacts/execution/

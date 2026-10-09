@@ -34,9 +34,29 @@ remain immutable. Source-only reviews35773024.../f2ac9a93.../5836441a.../
 e6542eb9... exclude actual broker runtime.986 changed serial/120 external,
 final clean8:14939pass22skip35warnings355.54s/Ruff/three sample-env Compose.
 Earlier14931 count predates eight planner regressions and is not final authority.
-Weekly serial diagnostic C:/trpy/weekly20261010g47 started separately;
-it does not block ready external research. Data next-anchor source preparation
+Weekly serial diagnostic C:/trpy/weekly20261010g47 ended1fail10034pass16skip/
+35warnings1679.70s. Earlier SPY test leaves sticky Decimal flags; reproduced
+and repaired only hostile-test local initialization, with ambient preservation
+regressions.202 file-pair checks pass; this is not a passing full serial run.
+It did not block ready external research. Data next-anchor source preparation
 released82 synthetic tests; no collection before official Oct9 CLOSE20UTC.
+
+Goal48 native research CLOSED at A/research/kis-stock-peer-attention-development-v1:
+contract984651c7.../451sources7inputs/resulte336641a.../closure9e9cb00b.../
+custodyb08ff252... . Actual12 CUDA fits17.899s/54cells/218.788s<600;
+smoke22.481s/run137.565s/cached zero-refit verify58.742s all complete,
+source/input unchanged/reaped/absent/lease released/books flat/no missing marks.
+Whole10bps/fixed10% blend+1.0559%; all singles reject utility/risk controls.
+Blend is seen non-promoting follow-up only, not alpha or automatic Paper input.
+Independent model/worker/context reviews are synthetic; actual provenance/PIT/
+actions/finality limits unchanged. Analysis-only names extension and tests-only
+serial-fixture correction verified:631 changed serial/448 external/full clean8:
+14950pass22skip35warnings361.18s/Ruff/three sample-env Compose passed.
+NEXT advances to two-session model/Paper preparation using original final TCN20,
+not replacing it with the seen positive peer blend. Source-only five-edge
+proposal1bfb554a... identifies session clocks, multi-symbol canonical ownership
+and exact expiry/recovery gaps. Prepare no new native order or schedule in that
+implementation slice; existing finite EXIT and Data opportunities stay separate.
 
 Goal46 COMPLETE; original BUY lifecycle evidence remains unchanged below.
 Exact closure28c5038b...; actual r3 job046480fc.../
