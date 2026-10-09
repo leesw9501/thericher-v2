@@ -60,8 +60,10 @@ def test_fixed_scores_distinct_from_momentum_and_immutable(arm):
         seal.arm = "cash"
 
 
-@pytest.mark.parametrize("arm", ["tcn10", "tcn20"])
-def test_causal_tcn_identity_uses_same_supplied_score_book(arm):
+@pytest.mark.parametrize(
+    "arm", ["tcn10", "tcn20", "chronos2_stock_isolated", "chronos2_stock_group"]
+)
+def test_additional_model_identity_uses_same_supplied_score_book(arm):
     assert score.ARMS == ("ridge", "hgb", "gru", "equal_fixed_mean_blend")
     seal = score.seal_scores(snapshot(), (), predictions(), arm=arm)
     assert seal.arm == arm

@@ -1,7 +1,7 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current cross-lane projection only. NEXT_CODEX_GOAL.md owns one company
-objective; history remains in Git and immutable external evidence.
+Current projection only; NEXT_CODEX_GOAL.md owns one company objective.
+History remains in Git and immutable external evidence.
 
 ## Current Ready / Owned / Due (2026-10-09 KST)
 
@@ -9,29 +9,33 @@ No company block or foreground sleep.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Integration | Parent | Goal41 CLOSED102.271s/0fits/GPU/custodyeffbf94a...; Goal42 Chronos stock OPEN-return isolated/group preparing. |
-| GPU | Steward / idle | Goal40 six CUDA fits389.392s/lease released. Goal42 appointment follows frozen600s/0fit contract, not approval wait. |
-| Data | Copernicus / released | OPEN adapter5076170e.../43 synthetic tests; prior61 once/cohort3126.../all identities retained. |
-| Engine | Euclid / owned | Offline stock forecast wrapper/tests, group<=128 versus isolated chunks32, horizon6/steps2..6. |
-| Infra | James / owned | GPU-run/CPU-smoke-and-verify caller/data/source bindings, no actual input/weight/runtime access. |
-| Review | Copernicus / owned | Official checkpoint/code/license re-retrieval and independent forecast source review, authored Data excluded. |
-| Verification | Parent | Goal41 external243/independent34; shared14161/22skip unchanged. Shared Goal42 IDs receive one authority integration. |
-| Paper | Execution scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... retains shared10% basis/SPY-TLT-GLD/QQQ custody; future fills not_observed. |
-| Follow-up | Chat one-shot | Oct9 23:05KST exact Paper check; no duplicate chain/schedule expansion. |
-| Head | Data scheduler | Oct9 15:29UTC owned; historical availability/finality not_observed, no manual invoke. |
+| Integration | Parent | Goal42 CLOSED/rejected36cells/150.063s/custodyf5abe9ef...; Goal43 model seal -> pure Execution proposal preparing. |
+| GPU | Steward / idle | Actual RTX4090 Chronos104 frame-arm calls/6678 sequences/6.375s wall completed/lease released. No ready frozen training job or permission/environment block. |
+| Data | Copernicus / owned | Goal43 exact prospective reader/tests; Goal42 OPEN adapter507617... unchanged. |
+| Execution preparation | James / owned | Typed tcn20/rank1 proposal inside shared ceiling; no quantity/price/capacity/order/private intent. |
+| Independent review | Euclid / owned | Goal43 source/synthetic falsification when reader/adapter ready; Goal42 fresh closure4 P2 repair independently passes39 tests. |
+| Verification | Parent | Changed serial151/full8:14167pass22skip35warnings332.73s/Ruff/three sample-env Compose; external300 excluding retained old custody falsifiers. |
+| Paper | Scheduler | Oct9 22:45KST portfolio-control-20261009-v1/job2b20f908.../imageb0198cbb... retains shared10% basis/SPY-TLT-GLD/QQQ custody; future fills not_observed. |
+| Follow-up | Chat one-shot | Oct9 23:05KST exact result check, no replacement chain/schedule expansion. |
+| Head | Data scheduler | Oct9 15:29UTC owned, historical availability/finality not_observed; no manual invoke. |
 | Console | Existing web | http://127.0.0.1:8787 retained reference, not owned net profit. |
 
 ## Bottleneck And Reversible Improvement
 
-Numeric TCN reuse now works without another fit. Next, test a different
-foundation-model mechanism: same-origin cross-stock attention versus isolated
-inference, target aligned to the five-OPEN payoff. Reuse existing official
-weights/runtime and prepare Data/Engine/Infra in parallel. No winner/Paper
-promotion, framework, scheduler, gate or recurring report.
+The two foundation arms failed their frozen economic kill; preserve results,
+do not rescue by tuning. Existing numeric TCN reuse is ready. The next material
+bottleneck is a missing model-to-Execution contract, not profitability approval.
+Parallel exact-seal reading, typed proposal and independent source falsifiers
+advance Paper readiness without touching tonight's owner or pending identity.
+A proposal is not an executable request; arbitrary-stock owner/quote/funds
+support and actual remaining shared capacity are explicit next technical work.
 
-Goal40 failure-only CUDA-fact P2 stays scoped to immutable used source; actual
-normal9/6 counters agree. Fresh Goal42 attempts preserve unknown failure facts
-and publish returned device facts before completed progress. No refund.
-Claude unchanged CLI failures remain review_unavailable, not agreement;
-independent source review/ready work continue. Source-local rights limitations
-do not hold separately lawful KIS/private/no-cost research or Paper.
+GPU inference was short;83.592s parent run included CPU preparation, durable
+progress/artifacts and replay. Do not call6.375s a GPU-kernel time/utilization
+measure. Keep used bytes immutable; a fresh inference job can amortize durable
+progress writes if measured useful, never weaken intent-before-side-effect.
+
+Goal42 closure-only P2s corrected in fresh close_r2.py, no native rerun/refund.
+Source/accounting and actual runtime remain distinct. Claude unchanged failures
+are review_unavailable/non-verdict; safe independent work continues.
+No new scheduler, gate, runtime replacement or recurring report.

@@ -2,6 +2,22 @@
 
 ## Current Owned Opportunities And Research
 
+Goal42 CLOSED/rejected at D:/thericher-v2/model-artifacts/research/
+kis-stock-chronos2-group-open-development-v1:6f6952c0.../445sources7inputs/
+4eb818e6.../parent2f0f8891.../43bbc090.../custodyf5abe9ef... . Actual RTX4090/
+104 frame-arm calls6678 sequences/6.375s inference wall,0fits/36cells;
+smoke15.198/run83.592/cached CPU verify51.273=150.063s<600. All sources/inputs
+unchanged/reaped/absent/lease released; no verify forecast. Whole10bps/10%
+isolated-.4771%/-.02570 utility, group-.1144%/-.00905: both reject cash/buyonce.
+No rescue/fine-tune/refund/winner. Independent6e176771.../8 source cases excludes
+authored Data/actual runtime. Closure-only4 P2s repaired in fresh close_r2.py,
+21 tests+18 independent mutations/f4e9f88b...; old source/falsifiers retained,
+no native rerun. External300 excludes original custody rejection failures.
+Shared151serial/full8:14167pass22skip35warnings332.73s/Ruff/default/research/
+accounting sample-env Compose pass. No full CI for subsequent docs receipts.
+NEXT owns Goal43 exact prospective model seal -> typed pure proposal, no
+account/order/GPU/private intent or tonight's input/custody replacement.
+
 Goal41 CLOSED at D:/thericher-v2/model-artifacts/research/
 kis-stock-tcn-numeric-reload-preparation-v1:436abcf9.../579e0846.../
 parenta8c59142.../closureab0c6eee.../custodyeffbf94a... . Two models/52dates/

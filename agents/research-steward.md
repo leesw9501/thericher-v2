@@ -10,9 +10,12 @@ A=D:/thericher-v2/model-artifacts.
 Goal41 CLOSED/trial1bbadaba9.../436abcf9.../ab0c6eee.../effbf94a...;
 two models52dates6678 scores/tolerance1e-6/exact top10/0fits/GPU/holdout,
 102.271s/all unchanged/reaped/absent/pre-OPEN research seal retained.
-Goal42 preparing600s/0fits/oneCUDA inference appointment/36cells; official
-Chronos isolated/group stocks/context60/h6. Allocate only its frozen source/
-data/target/cost/control/kill/stop contract; no permission/environment block.
+Goal42 CLOSED/trial14f928a78.../6f6952c0.../43bbc090.../f5abe9ef...,
+36cells/0fits/104 actual frame-arm CUDA calls6678 sequences/6.375s wall;
+150.063s<600/all unchanged/reaped/absent/GPU lease released. Both arms rejected,
+no refund/tuning rescue/independent alpha/holdout spend. Fresh closure repair
+does not spend another native run. Goal43 pure proposal preparation needs no
+GPU allocation; no ready frozen training job or permission/environment block.
 Goal40 CLOSED/trial1e898e3d3.../contract44176f74.../closure40961c1a.../
 custody792f64c9.../9fits6CUDA389.392s/48cells/561.447s<600/all unchanged/
 reaped/absent/lease released. Exact cohort/seen lineage retained; no refund.

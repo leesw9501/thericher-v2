@@ -16,7 +16,13 @@ from thericher_v2.research import kis_equity_rank_buffer_carry as book
 from thericher_v2.research import kis_pooled_equity_components as core
 
 ARMS = ("ridge", "hgb", "gru", "equal_fixed_mean_blend")
-SUPPORTED_ARMS = (*ARMS, "tcn10", "tcn20")
+SUPPORTED_ARMS = (
+    *ARMS,
+    "tcn10",
+    "tcn20",
+    "chronos2_stock_isolated",
+    "chronos2_stock_group",
+)
 
 
 def _require(ok: bool, reason: str) -> None:

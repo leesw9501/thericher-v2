@@ -44,9 +44,11 @@ def constant_price(*args):
     return Decimal("103.005")
 
 
-@pytest.mark.parametrize("arm", ["tcn10", "tcn20"])
+@pytest.mark.parametrize(
+    "arm", ["tcn10", "tcn20", "chronos2_stock_isolated", "chronos2_stock_group"]
+)
 @pytest.mark.parametrize("mode", ["whole", "fractional_reference"])
-def test_causal_tcn_supplied_scores_share_exact_risk_accounting(arm, mode):
+def test_additional_model_scores_share_exact_risk_accounting(arm, mode):
     actual = risk.replay_risk(
         PLAN,
         snapshot,

@@ -25,6 +25,12 @@ open_context5076170e.../43 synthetic tests captures61 past Bars once per key,
 This is not historical availability/finality qualification. Official Chronos
 source re-retrieval is separate; no new provider call/download.
 
+Goal42 CLOSED/rejected36cells/150.063s/closure43bbc090...; exact CURRENT,
+cohort and source bytes unchanged. Actual inference is not Data qualification.
+Goal43 reader preparation binds original Goal41 pre-OPEN seal/rolled calendar/
+actual clocks/opaque peer -> exact instrument, not a fabricated quote or PIT
+claim. No new collection, source correction, account or order call.
+
 Goal38 source-local probe COMPLETE: source runtime-r2/contractf897b5e5...,
 A/data/kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/
 receipt.json/b2929710... . Actual9GET9accepted1token/9.840s/no cooldown/child

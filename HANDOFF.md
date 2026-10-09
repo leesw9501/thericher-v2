@@ -20,10 +20,27 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
-NEXT owns Goal42 kis-stock-chronos2-group-open-development-v1: official
-Chronos-2 isolated versus same-origin stock attention, prior60 OPEN logreturns/
-horizon6/steps2..6/same cohort/fixed10% book/36 cells/one600s/zero fits.
-Data/source, Engine wrapper, Infra and parent integration work disjointly.
+NEXT owns Goal43 kis-stock-model-decision-preparation-v1: exact Goal41
+prospective tcn20/rank1 seal -> typed pure Execution proposal, no quantity/
+price/capacity/order/private intent. Explicit outcome-informed development
+pilot0.01 reference exposure inside original0.10 aggregate, not a new bank.
+Data reader, Execution adapter, independent source review and parent work
+disjointly. Arbitrary-stock owner/quote/funds support remains technical next work.
+
+Goal42 CLOSED/rejected at A/research/kis-stock-chronos2-group-open-development-v1:
+contract6f6952c0.../445sources7inputs/result4eb818e6.../parent2f0f8891.../
+closure43bbc090.../custodyf5abe9ef... . Actual RTX4090/104 frame-arm calls/
+6678 sequences/6.375s inference wall/0fits/36cells;150.063s<600/all unchanged/
+reaped/absent/lease released. Whole10bps/fixed10% isolated-.4771%/utility-.02570,
+group-.1144%/-.00905; both fail cash/buyonce. No fine-tune/rescue/refund or
+Paper winner. Same cached CPU verification, not independent economics.
+Source6e176771.../8 new checks excludes authored Data and actual runtime.
+Closure-only4 P2s repaired in fresh close_r2.py/21 tests+18 independent mutations/
+f4e9f88b...; original custody/failed source falsifiers retained, no native rerun.
+Changed151serial/full8:14167pass22skip35warnings332.73s/Ruff/three sample-env
+Compose passed; external300 excluding original custody falsifiers. No full
+rerun for receipt/docs-only steps. Official source/date/license re-retrieved;
+unknown earlier corpus/PIT/action/raw-payoff limits remain, no alpha claim.
 
 Goal41 CLOSED at A/research/kis-stock-tcn-numeric-reload-preparation-v1:
 contract436abcf9.../result579e0846.../parenta8c59142.../closureab0c6eee.../

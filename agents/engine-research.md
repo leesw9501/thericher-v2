@@ -7,11 +7,19 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-09 KST)
 
-Goal42 preparing: official Chronos-2 isolated/same-origin stock group,
-prior60 OPEN logreturns/horizon6/steps2..6, same cohort/fixed10% book,
-36 cells/one600s/zero fits. Distinct from closed Oct3 ETF study. Euclid forecast,
-James Infra, Copernicus official-source review; parent shared IDs/worker/native.
-No actual inference before freeze/allocation or winner/Paper promotion.
+Goal43 preparing: exact prospective tcn20/rank1 -> pure Execution proposal.
+Outcome-informed development0.01 virtual-reference exposure inside existing
+0.10 aggregate, not new capital or a scientific promotion. No quantity/limit/
+broker input/private intent; arbitrary-stock owner/quote/funds remain separate.
+
+Goal42 CLOSED/rejected6f6952c0.../4eb818e6.../43bbc090.../f5abe9ef...;
+RTX4090/104 frame-arm calls/6678 sequences/6.375s inference wall/0fits/36cells,
+150.063s<600/all unchanged/reaped/absent/lease released. Whole10bps/10%
+isolated-.4771%/utility-.02570, group-.1144%/-.00905; fail cash/buyonce.
+No fine-tune/tuning rescue or winner. Source6e176771.../8 new cases, actual
+runtime/authored Data excluded. Fresh closure4-P2 repair21+18 tests/f4e9f88b...,
+original bytes/falsifiers retained/no native rerun. External300 excluding old
+custody tests; shared151/14167pass22skip35warnings332.73s/Ruff/three Compose pass.
 
 Goal41 CLOSED/436abcf9.../579e0846.../ab0c6eee.../effbf94a...;
 two models/52dates/6678 scores within1e-6 absolute/relative0/exact top10.
