@@ -11,9 +11,21 @@ intent adopted. Pure cohort core1523c3d stays synthetic local_paper parity.
 Goal80 fixed-tree later confirmationa94fc234... passes fixed research kills;
 it is not broker PnL or automatic adoption. One own teacher267793bytes retained,
 no actual broker/account/order call or schedule change. Goal81 inference/
-local-paper parity is independent of the owned opportunity below; local fills
+local-paper parity is completee8042245... and independent of the owned opportunity below; local fills
 remain source:local_paper, research entry caps are not broker RiskLimits.
 Missing research input is not a Paper approval hold or global execution pause.
+
+Goal81 independent source217efbd5.../28tests and result6da8c703... at
+A/execution/kis-stock-five-session-tree-inference-parity-v1. Actual CPU source-
+linked result:10 score/allocation matches,94 SYN-only accepted/fills/50 computed
+valuations/10 replay+restart checks. Not KIS fills, persisted marks or market PnL;
+all normalized-capital fees rounded0, analytical nonzero-fee tests separate.
+Known P2: grouped repeating-fraction Decimal sums may fail strict decision-total
+fee equality (local_paper.py); no whole-share/broker incident inferred.
+Next owns this focused numeric repair and exclusive five-session cohort entry/
+partial/unknown/fifth-exit/restart preparation. Reuse existing canonical budget,
+BUY and owned EXIT contracts; request ID alone cannot isolate mixed holdings.
+No actual private bank/account/order or existing schedule change in this prep.
 
 ## Owned Paper Opportunity
 

@@ -31,7 +31,7 @@ A/data/kis-stock-broad512-five-session-input-binding-v1,
 input-binding-clock-r2-receipt.json8342b0d7.... Numeric input unchanged;
 TRAIN daily entries375/525/675 complete; score130/130/80 daily clocks.
 
-Current Goal80: finish the same fixed512 later input in a fresh explicitly
+Closed Goal80: same fixed512 later input completed by fresh explicitly
 bounded recovery. Goal79 closuree0281290... records later input_unavailable,
 not dataset rejection. R1 sourcefea632ee.../CLIe260b9e1... failed before keys:
 two-part view identity was unpacked as three-part native identity. R2
@@ -65,8 +65,16 @@ Same21context+50score/71clocks/128-first; exact151 R2 vintages retained,
 actions/revisions/current-listing/nonPIT/nonTR/availability limits remain.
 Requested-floor completion preserves genuine continuation, not history exhaustion.
 Selective approved Paper market-only keys; no accounts/orders/live/old task.
-Goal80 closurea94fc234...; next Data package is canonical inference input/clock
-attestation, not recollection of this completed cache or a qualification gate.
+Goal80 closurea94fc234...; completed cache is not a qualification gate.
+Goal81 canonical input builder92212813.../release96d13844... at
+A/data/kis-stock-five-session-tree-inference-input-v1;8 synthetic causal/order/
+gap/source tests passed. No model/provider imports; actual CPU consumer built
+all10 canonical frames from exact retained bytes, scores/weights matched.
+Goal81 closuree8042245... does not establish historical PIT or broker parity.
+Next Data package: exact512 current21-prior-session input and forthcoming five
+NYSE clocks for one cohort. Existing800/later71 snapshots and finite42-peer
+opportunities remain unchanged. Selective Paper market-only client if needed;
+no account/order/live path. Current_listing/actions/revision limitations persist.
 
 ## Owned Collection
 

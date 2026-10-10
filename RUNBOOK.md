@@ -2,7 +2,28 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-tree-inference-local-paper-v1.
+ONE objective: kis-stock-five-session-paper-cohort-preparation-v1.
+Goal81 COMPLETEe8042245...:
+D:/thericher-v2/model-artifacts/research/kis-stock-five-session-tree-inference-local-paper-v1/integration-evidence.json
+New lazy adapter2f64a238.../36tests, causal builder92212813.../8tests and
+independent parity217efbd5.../28tests. Actualbb651ae0.../result4e87d4c0...,
+5.191s/pinned network-none CPUd6/reaped;10 score+weight matches/94 synthetic
+LocalPaperBroker fills/50 computed valuations/10 replay+restart, no new fit.
+Engineering parity, not KIS fills/market performance. All capital1 fees rounded
+zero; nonzero analytical costs remain separate tests. Grouped Decimal P2 plus
+used parent's exception/name-reprobe P2s retained; not this attempt's failure.
+New changed serial72/1.08s/fullclean8 15449pass22skip35warnings367.69s/helper0,
+Ruff/three sample Compose; JUnit D:/thericher-v2/model-artifacts/verification/
+full8-20261011-g81/pytest.xml8c833d37.... No repeated doc-only full suite.
+Independent6da8c703.../fdd92a12... verifies source-linked metadata, not OS/
+raw-price replay. Claude nexta537fcc5... supported-with-limits.
+
+Prepare exact current512/21prior and forthcoming five NYSE clocks, finite typed
+model->Execution exposure/identity exchange, exclusive cohort quantity/partial/
+unknown/fifth-exit/restart. Fix grouped Decimal P2 in an isolated package.
+Original shared10% basis and other owners/pending unchanged. No broker calls or
+existing schedule changes in this preparation; later scoped Paper is already
+authorized, never a model-profitability approval gate. No new fit/GPU filler.
 Goal80 COMPLETE/non_promoting_later_confirmation_only:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-tree-later-confirmation-v1/integration-evidence.json
 a94fc234.... One CPU tree/675complete train dates/all10cohorts/50marks/18tables;
@@ -28,13 +49,11 @@ D:/market_data/us_equities/kis_paper_private/daily-nas-broad512-later/v1/fixed51
 Exact151 R2 vintages retained, no splice/filter; request scope completed, not
 provider-history exhaustion. Min closest-delegate1.250025s, not wire threshold.
 
-Goal81 prepares lazy exact-own-artifact inference on canonicalFiveSessionFrame
-and source:local_paper replay/restart/accounting parity, no fit/performance search,
-credentials/privatebank/KIS account/order/schedule change. Source/cutoff/identity/
-runtime/hash guards scope technical input, not human approval. New tracked code
-needs changed-path/full authority. Existing Paper continues independently.
-Sequence discovery977061ec... source_unverified until parent re-retrieval:
-TCN represented, Google TSMixer TensorFlow not adopted; no new framework or queue.
+Goal81 above completes inference/replay, not market adoption. Source/cutoff/
+identity/runtime/hash guards scope technical input, not human approval.
+Existing Paper continues independently. Sequence discovery977061ec...:
+parent re-retrieved six exact TSMixer files/license, matching hashes; TCN already
+represented, TensorFlow not adopted; no new framework/campaign/queue.
 
 Goal79 bounded COMPLETE: fixed blend rejected, later input unavailable;
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-confirmation-and-expert-development-v1/integration-evidence.json

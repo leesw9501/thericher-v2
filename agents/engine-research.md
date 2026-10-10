@@ -5,6 +5,21 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact ro
 
 ## Current Result And Work (2026-10-11 KST)
 
+Goal81 COMPLETEe8042245... at
+A/research/kis-stock-five-session-tree-inference-local-paper-v1.
+Reusable lazy SDK2f64a238.../36tests, own artifact/metadata/cutoff/runtime before
+loading, no exposed fit/public-pickle path. Actualbb651ae0.../result4e87d4c0...,
+5.191s/CPUd6/networknone/reaped; all10 retained scores/weights bit-equal,
+94 SYN-only simulator fills/50 computed marks/10 replays+restart, zero new fit.
+Engineering parity only, not another performance trial/KIS fill/adoption.
+All normalized-capital fees rounded0; nonzero analytical cases separate.
+Grouped fractional Decimal P2 retained. Serial72/full15449pass22skip/helper0,
+Ruff/three Compose passed; independent6da8c703... metadata, not raw-price proof.
+Next SINGLE objective: kis-stock-five-session-paper-cohort-preparation-v1.
+Bridge same tree allocation to a finite typed five-session Paper proposal,
+preserving identity/input/teacher/as-of and original shared10% basis. No refit,
+new winner, duplicate GPU family or model loader in broker.
+
 Goal78 COMPLETE/non_promoting_followup_only, integrationa5c31f09... at
 A/research/kis-stock-broad512-five-session-risk-cohort-development-v1.
 Contractb0b98f60.../precommit2e1ac731.../resultb351fbfd.../final3497c94b...;
@@ -47,9 +62,8 @@ later128 seen/postdiagnostic selection/tiny50/raw actions/nonTR/nonPIT/revision/
 nominal availability prevent alpha/holdout/automatic Paper claims.
 Own267793byte teacherca6b36d1.../metadata2ce286ee... in actual-r2-v1/results/out;
 256old-only bit-equal prediction roundtrip verified, not arbitrary public weights.
-ONE next objective: kis-stock-five-session-tree-inference-local-paper-v1.
-Prepare reusable lazy inference/typed research allocation and local-paper replay,
-no refit/tuning, credential/broker/schedule change or new performance selection.
+Goal81 inference/local-paper bridge is now completed as above; it does not
+rewrite this earlier limited confirmation into an adoption or alpha claim.
 
 Closed old-seen dual-expert package at
 A/research/kis-stock-five-session-dual-expert-development-v1: tree/from-scratch
@@ -78,8 +92,9 @@ No Paper adoption or alpha; five-session policy is not the installed day-Paper.
 ## Breadth / Depth / Replication
 
 Invoked discovery977061ec... at A/research/kis-stock-five-session-sequence-discovery-v1
-retrieved official TCN(MIT) and Google TSMixer(Apache2), source_unverified until
-parent re-retrieval. TCN already represented; TensorFlow TSMixer is not imported
+retrieved official TCN(MIT) and Google TSMixer(Apache2). Parent re-retrieved six
+exact TSMixer files/license on2026-10-10T18:34UTC; all matching hashes.
+TCN remains discovery-only/already represented; TensorFlow TSMixer is not imported
 or a runtime switch. No stock efficacy/pretrained corpus or sparse semantics
 inferred. No campaign/queue/GPU allocation from discovery alone.
 

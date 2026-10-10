@@ -2,54 +2,71 @@
 
 ## Objective
 
-Complete kis-stock-five-session-tree-inference-local-paper-v1: connect the
-retained five-session tree to reusable broker-free inference and replayable
-local-paper execution without refitting it.
+Complete kis-stock-five-session-paper-cohort-preparation-v1: prepare one exact
+five-session tree Paper cohort from current512 input and an owned inventory
+lifecycle, without replacing the existing day-flat Paper opportunities.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal80 closure A/research/kis-stock-five-session-tree-later-confirmation-v1/
-integration-evidence.json a94fc234...; later50 tree10bps +.3725%/DD.6063%,
-all seven fixed kills pass. Limited later confirmation, not alpha, untouched
-holdout, broker PnL or automatic model adoption.
+Goal81 closure A/research/kis-stock-five-session-tree-inference-local-paper-v1/
+integration-evidence.json e8042245...: exact retained teacher inference,
+10 score/allocation matches and94 synthetic local simulator fills/restarts.
+Engineering parity only; all normalized-capital fees rounded0, not KIS fills,
+new profitability evidence or model adoption. Goal80 tiny later confirmation
+and all raw-action/nonTR/currentlisting/nonPIT/revision limitations remain.
 
-## Packages
+## Parallel Packages
 
-Engine owns a small lazy research adapter and focused tests. Consume the
-existing canonical FiveSessionFrame, exact512 original128-first identities,
-21 prior bars/20x5 features and frozen train-local scaler. Verify the exact
-owned teacher/scaler bytes, metadata, cutoff and runtime before loading;
-never offer an arbitrary public-pickle path. Retained Goal80 actual-r2-v1/
-results/out/teacher.pkl ca6b36d1... and teacher-metadata.json 2ce286ee...:
-one unchanged HGBR recipe, train20..695/last label699, sklearn1.9.1/NumPy2.5.1.
-No fit, new threshold, feature, ranking winner or training budget.
-Preserve scores/ties/top10/prior-only inverse-vol caps/slot veto to cash;
-research caps are not broker RiskLimits. Unavailable/stale/missing input
-stays scoped to its own decision. No Torch or broker imports at module import.
+Data owns exact512 original128-first identities,21 completed prior sessions
+ending2026-10-09 and five forthcoming official NYSE clocks for the Oct12 cohort.
+Extend the old Oct7 calendar boundary using the existing pinned calendar library.
+Prefer retained data; if current rows are absent, use one selective standing-
+authorized KIS Paper MARKET-only client/durable cursor in a bounded fresh scope.
+Keep1s shared market gate/300s fresh-token starts and measured closest1.25
+spacing until new evidence recalibrates them. Record actual capture/inference
+availability, sparse/empty slots and counts, never invent future rows/finality.
+No account/order/live/old-task invocation or rewriting completed caches.
 
-Data attests canonical identity/clock/feature boundary. Temporary Execution /
-Validation proves adapter parity, constant-quantity five-session cash/fees/
-gaps and local-paper event replay/restart with synthetic inputs and retained
-later frames as engineering parity only, not another performance selection.
-Fills retain source: local_paper. No credentials, private broker bank, KIS
-account/order, broker submit or schedule changes in this objective.
+Engine owns a small finite model-to-Execution decision exchange, not training.
+Same ca6b36d1... teacher/2ce286ee... metadata and canonical21/20x5 features.
+No pickle/sklearn/model code in broker. Preserve source/input/teacher/frame/
+actual inference as-of and five clocks. The pilot uses only the FIRST surviving
+nonzero ORIGINAL slot, frozen before current outcomes; no substitute if missing,
+conflicted or capacity-zero. Explicitly map cohort-relative weight through
+C=.10*ORIGINAL shared basis and N=C/(1+.0005*sum(all frozen weights)); target
+exposure=(N/B)*slot_weight, whole-share floor leaves cash. This is a one-slot
+experimental pilot, not full analytical top10 replication or a performance claim.
+No refit, new threshold/window/seed, learned sizing or GPU utilization filler.
 
-Parent integrates contracts, isolated pinned CPU d6 runtime and exact owned
-artifact/source mounts, independent checks, required tests and Git. Claude
-next-direction supported-with-limits; not authority or a profit grant.
-Official sequence-source discovery is a bounded handoff only: TCN already
-represented; Google TSMixer is TensorFlow-based. Re-retrieve before future use,
-no framework switch/import/install or GPU filler in this inference package.
+Execution owns exact cohort/entry-fill/remaining-quantity custody and fifth-
+session exit preparation using existing shared budget, BUY and owned EXIT paths.
+Start with ONE explicitly exclusive instrument cohort; no mixed-strategy lot
+platform. If existing instrument ownership cannot prove exact cohort isolation,
+return a scoped technical no-intent, never sell a whole foreign/mixed owner.
+Preserve all original shared10% basis/other owners/unknown SPY/pending identity.
+Input unavailable must not erase an owned EXIT or recovery. Persist identity
+before effects; order TTL is not holding duration. Synthetic tests cover partial
+fill/unknown submit/restart, days1-4 no exit, fifth official session/holiday/DST
+exit, no duplicate reservations and no other-owner quantity sold.
+Independently fix the known grouped fractional Decimal P2 in local-paper totals
+without changing fill/risk/broker semantics; focused nonzero-fee regression first.
 
-Existing b860 Paper Oct12/13 and ab65 Data Oct13/20 opportunities continue
-independently. Original shared10% basis/rank1/.01/pending/custody stay intact.
-Do not treat day-flat Paper as five-session model validation or pause it for
-research. Live, paid/unclear rights/public exposure/major runtime replacement
-remain reserved operator decisions.
+Parent integrates shared contracts, narrow bounded CPU runtime and evidence.
+Fix the prior launcher exception-publication and CID-reprobe P2s only in fresh
+source if a new actual launcher is needed; used Goal81 source stays immutable.
+Temporary Validation reviews frozen entry/exit/sizing independently. Claude
+next-direction a537fcc5... supported-with-limits; no authority/profit grant.
 
-## Completion
+## Scope And Completion
 
-Reusable inference adapter, exact own-artifact and causal input checks,
-independent score/allocation/accounting/replay evidence or exact scoped
-input_unavailable. Fresh changed-path and full authority for new tracked code,
-Ruff/three sample Compose; commit/push, refresh stateboards and exactly one
-material next objective, then continue. No foreground external wait.
+No actual broker account/order call, private bank read or schedule expansion in
+this preparation. Existing b860 Oct12/13 Paper and ab65 Oct13/20 Data opportunities
+continue unchanged. Market-only current Data calls are approved as above;
+never read KIS_LIVE_*, generic dotenv or expose credentials/raw rows/amounts.
+Live/paid/unclear rights/public exposure/major runtime replacement remain reserved.
+
+Complete current input or exact bounded unavailable evidence, finite typed exchange,
+exclusive-cohort synthetic lifecycle and Decimal regression. Strongest kill:
+partial/unknown plus another owner of the same symbol must not duplicate BUY,
+sell foreign inventory or exit days1-4. No global permission or profit gate.
+New tracked code requires changed-path/full authority, Ruff/three sample Compose.
+Commit/push, refresh stateboards and exactly one next material objective, continue.

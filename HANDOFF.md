@@ -14,6 +14,28 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Research Closure (2026-10-11 KST)
 
+Goal81 COMPLETE/engineering_inference_local_simulator_only:
+A/research/kis-stock-five-session-tree-inference-local-paper-v1/integration-evidence.json
+e8042245.... Lazy SDK five_session_tree.py2f64a238.../tests36; only own
+ca6b36d1... teacher/2ce286ee... metadata loaded after byte/runtime/cutoff checks.
+Canonical builder92212813.../8tests; independent parity217efbd5.../28tests.
+Network-none CPUd6 actualbb651ae0.../result4e87d4c0.../5.191s, exact container
+absent; no fit/provider/broker call. All10 retained-frame scores and allocations
+bit-equal to frozen reference;94 SYN-only LocalPaperBroker accepted/fills,
+50 computed valuations/10 account/FIFO replays and idempotent restarts.
+Not94 KIS fills, persisted mark events or new market-performance evidence.
+Normalized capital1 rounded all94 fees to zero; nonzero analytical fee tests
+are separate. Grouped fractional Decimal P2 remains, not seen in exact smoke.
+Used parent's exception-publication/name-reprobe P2s did not affect this result;
+future repairs require fresh source, never rewrite the used evidence.
+Independent readback6da8c703... and parent reviewfdd92a12... source-linked
+metadata only, not independent OS/raw-price replay. Changed serial72/1.08s,
+fullclean8 15449pass22skip35warnings367.69s/helper0/Ruff/three sample Compose;
+JUnit A/verification/full8-20261011-g81/pytest.xml8c833d37....
+Claude next-directiona537fcc5... supported-with-limits for scoped five-session
+Paper preparation. TSMixer six official pinned bytes/license re-retrieved;
+no TensorFlow import/runtime switch, novelty or market efficacy inferred.
+
 Goal80 COMPLETE/non_promoting_later_confirmation_only:
 A/research/kis-stock-five-session-tree-later-confirmation-v1/integration-evidence.json
 a94fc234.... One CPU HGBR train20..695/675complete/last label699, all10cohorts/
@@ -93,19 +115,21 @@ non-PIT/availability limits continue, no broker net-PnL claim.
 
 ## Current Work
 
-ONE objective: kis-stock-five-session-tree-inference-local-paper-v1.
-Release the retained own teacher as a lazy typed inference adapter on canonical
-FiveSessionFrame, then prove score/allocation/local-paper replay parity without
-refitting. Exact artifact/cutoff/runtime/identity checks; no arbitrary pickle,
-broker/credential/privatebank/order/schedule change. Engineering parity is not
-another performance selection. Existing Paper opportunity remains independent.
+ONE objective: kis-stock-five-session-paper-cohort-preparation-v1.
+Prepare one exact five-session Paper cohort from current512 causal input and
+owned lifecycle contracts, not a day-flat alias. Data refreshes exact21 prior
+sessions and five forthcoming official clocks; Engine emits finite typed
+exposure/identity exchange; Execution proves exclusive cohort quantity custody,
+partial/unknown/restart/fifth-session exit and fixes grouped Decimal P2 separately.
+No refit/tuning or arbitrary pickle/model code in broker. Existing opportunities
+stay unchanged; no broker/account/order call or schedule expansion in this prep.
 Reusable pure typed cohort/accounting code and36 tests pushed in Git1523c3d;
 weights/data remain D:. Parent owns runtime/custody/Claude/Git, no foreground
 wait. Useful frozen CUDA campaign may run while the one-client Data job runs;
 no GPU approval/environment hold or mandatory profitability gate on Paper.
-Discovery977061ec... retrieved official TCN and Google TSMixer only, not yet
-parent re-retrieved or a campaign. TCN represented; TSMixer TensorFlow runtime
-is not adopted. Keep source and benchmark limitations, no new durable queue.
+Discovery977061ec... remains limited: TCN represented; six TSMixer files/license
+parent-retrieved with matching hashes. No campaign or TensorFlow runtime adopted.
+Keep source and benchmark limitations, no new durable queue.
 
 ## Owned Opportunities Unchanged
 
