@@ -2,92 +2,76 @@
 
 ## Objective
 
-Complete kis-stock-exact-book-gate-development-v1: train ONE fixed-slot TCN
-gate on exact carried whole-share analytical ledger reward, then compare its
-deterministic mask with original CURRENT controls. Test decision-aligned
-training, not another classifier architecture.
+Complete kis-stock-exact-book-gate-forward-shadow-v1: freeze the exact trained
+799 gate's analytical mask on original f78 before Oct12OPEN->Oct19OPEN targets.
+This tests a seen development survivor prospectively; it is not a Paper-model
+replacement or another training/architecture campaign.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal67 joint rank/sign COMPLETE/REJECTED7fca2ae9...: three CUDA fits/30 cells;
-whole10 growth+.8953% versus signed+1.7643%, TCN/prefix+1.3198%; utility fails.
-Goal68 COMPLETEe9077cbd...: synthetic CPU/CUDA exact parity, AB1.001126/
-BA1.008748, aggregate+.4918% ONE sample,42.759522s<180; reaped/absent/released.
-Keep original guard default, no market acceleration or benchmark priority.
-Independent eab506ce...;108 serial/full8 15319pass22skip342.82s/JUnit6d6e735d...,
-Ruff/three sample Compose pass.
+Goal69 COMPLETE/non_promoting_followup_only77d3728c... at
+A/research/kis-stock-exact-book-gate-development-v1/integration-evidence.json.
+Actual A/bg/1241ae8d162c411fb9443739e011ed25/actual-invocation.json40923141...,
+contractb5582084.../capture389cd981.../independent994e7402... .
+CPU toy/two CUDA fits/two OLD inference calls/30 cells/199.987352s<600,
+reaped/absent/released/unchanged; cached zero extra. Whole10/OPEN111 growth
+gate+2.1789461% versus signed+1.764319%/TCN-prefix+1.31975445%, DD.3931%.
+Frozen kill passes only on seen/revised/current-listed/non-PIT development.
+Four updates are not convergence; independent20 checks are not trajectory,
+private causal-row or clock reobservation. No alpha, holdout or Paper claim.
 
-Original OLD427aaf411fe... and61042ce9939... under
-A/research/kis-stock-ordinal-selection-development-v1 are retrievable:
-custodybbfef1ca... checks byte/source bindings, not actual numeric inference.
-Decoder8a3b8dfe.../20 tests/independent15e3f69c49... source-ready.
-Reward0fa41bb6.../25 tests has one independently reproduced P2abde36eb...:
-partial-mask entry-cost basis audit missing. Preserve original/falsifier,
-repair narrowly. Measured correction8dd61b9c...: original R57 APP and its
-precommit both pin Score735, identical to the host file. Prior Score35
-projection was wrong for this APP; no translation or source replacement.
-Literature62a8368c... supports mechanism only; Claudee6dc130d... auth_unavailable/
-reaped/verdictnull is not agreement or a lane-wide hold.
+Use only exact799 model at that actual output root:
+model-exact_book_gate60-799.npz
+SHA2568c3410d9bdee1e1acd30039933f4afada8f0723100a75d6412e53b2b70bdc23c.
+Actor1e13ca1f.../original3aec.../numeric reloader entryd7cadb4b... .
+Do not refit, substitute610, select a seed or tune a threshold.
 
 ## Bounded Work
 
-Parallel Engine actor/reward, Data original OLD checkpoint/ranking adapter,
-and runtime reuse. Independent review consumes frozen sources without tuning.
-Reuse tested Goal67 producer/parent protocol; focused repairs stay here,
-not separate wrapper objectives or a generic runtime platform.
+Parallel Data context/feature binding, Engine pure forecast, runtime reuse
+and independent Execution/Validation contract checks; fresh external source
+preparation roots only. Parent owns actual dispatch/Git. No new platform,
+per-agent goals, broad wrapper objectives or repeated full CI per source fix.
 
-Before actual dispatch freeze original seven inputs, OLD/CURRENT manifests,
-source/checkpoint/scaler custody, finite path rules, sampling, baseline,
-costs, kill, compute stop and registry family. No f78/source union, new dataset,
-CURRENT training/normalization, holdout, rescue seed or refit.
-Original OLD427 scores428..610; OLD610 scores611..794. Never use final799 for
-earlier OLD or reinterpret nominal historical clocks as observed availability.
+Reuse original f78 frozen input/receipt3dafa26e... and native contextd484b954...,
+original128/42 eligible peers/prior61. Build original60x2/four-static feature
+definition58602f70... with canonical Score735/Core imported once. Reconstruct
+typed seals; never translate Goal66 Score35 objects or splice new sources.
+Same original TCN7999de27944... ranks unchanged eligible peers/top10 and fixed
+.01 slots. Exact gate scores all eligible peers; strict sigmoid>.5 keeps each
+original slot or cash. No rerank, redistribution, refloor or learned sizing.
 
-One60x2/four-static TCN, width16/kernel3/dilations1,2,4,8,16, one logit head;
-original guard, seed101/four epochs/Adam.001/clip1/float32/determinism/TF32off.
-OLD purged equal-date scaler only; no invented supervised labels.
-Exactly two GPU fits610/799. TRAIN610 reviews428..603 every5/final OPEN608;
-TRAIN799428..793/final OPEN798. Each epoch is ONE chronological Bernoulli
-sampled path with its own carried cash/shares and original TCN ranking plus
-feasible unmasked whole quantities. Keep or zero original slots; no rerank,
-backfill, funding recomputation or cash redistribution after masking.
-Actual delta fees5bps each leg at TRAIN10roundtrip. Reward-to-go is exact
-next-review pre-trade OPEN net-NAV change over original BANK, including final
-OPEN liquidation. Score-function gradient, fixed cash/zero baseline; no critic,
-inventory encoder, fractional TRAIN surrogate or new RL runtime.
-Missing required OPEN/held CLOSE invalidates the full path, not a shortened
-sample. Freeze minimum causal/block count before outcomes; nominal36/74
-reviews are not independent observations multiplied by epochs.
+Freeze original model/context/source/runtime/input/prediction/mask bindings,
+nominal clocks, costs and readback contract before actual invocation. Original
+d6b43213... Linux Python3.12.14/Torch2.7.0+cu128; CPU only/network none/RO input.
+ONE240s family/work210/cleanup30 anchored before helper import includes checks,
+context, two CPU model inference calls, publication, cached zero-inference
+readback, source audit and reaping. No fit/GPU/target access or stage reset.
+Finish publication before2026-10-12T13:30:00UTC; an incomplete or late forecast
+is input_unavailable, never a fabricated pre-target observation.
 
-Manufactured CPU smoke and native canonical APP/decoder/scaler checks first. ONE
-600s family/work570/cleanup30 includes import, checked inputs, smoke, two fits,
-inference, numeric NPZ publication/reload, replay/readback and cleanup.
-Parent UTC/monotonic anchor precedes helper import; no stage resets or refunds.
-Original d6b43213.../Linux Python3.12.14/Torch2.7.0+cu128, network none,
-read-only sources/data, one named container/GPU lock. Preserve failed bytes.
+Persist probabilities and exact original ranking/slot mask before any target
+consumption. Read back without inference and verify identical mask/geometry.
+Keep actual publication and observed context clocks distinct from nominal
+availability/finality. Oct19 targets are future geometry, not mandatory input.
 
-CURRENT deterministic sigmoid>.5 is a proxy, not sampled TRAIN policy.
-Compare gate/signed60/original TCN/prefix-mean/cash across whole and
-fractional-reference sizing and5/10/20roundtripbps: exactly30 cells; reviews
-61..106 every5/terminal OPEN111. Persist predictions/actions before dependent
-quotes; cached replay zero extra fits/inferences and exact accounting.
-Fixed whole10 kill: positive growth/accepted slots, utility strictly above
-every control, drawdown no worse than signed60. Missing comparison is
-input_unavailable, never invented zero or selected sensitivity cell.
+Existing Dataab65b62b... owns Oct13/20 06:40..07:40KST endpoint opportunities;
+original Paper2d616950... keeps model/basis/identities/entry-close schedules.
+No observer/scheduler expansion or substitute broker request here. Missing
+targets become that owner's next_due, not foreground sleep or a global block.
 
-## Authority And Completion
+## Completion And Authority
 
-Private no-cost CPU/GPU research is authorized. No .env/KIS_LIVE_*, provider,
-manual Data/Paper/task call, order, schedule expansion, paid dependency, public
-service or runtime replacement here. Finite Dataab65b62b.../Paper2d616950...
-owners/identities/shared basis continue independently. A artifacts/M data/
-C:/trpy test scratch; D:15% floor.
+Private no-cost CPU research is authorized; no .env/KIS_LIVE_*, broker/provider/
+account/order/task call, paid dependency, public service or runtime change here.
+No remainder/calendar union, training, sealed holdout, alpha or Paper adoption.
+M data/A generated artifacts/C:/trpy test scratch; preserve D:15% free.
 
-Complete with independently checked source/cutoff/path/NPZ/replay bindings,
-fixed supported/rejected result or narrowly evidenced bounded failure, and
-reaped/absent/released facts. This development study never replaces Paper,
-claims independent alpha or opens sealed evaluation. Changed-path serial plus
-clean8 authority, Ruff/three sample Compose at material integration; commit/
-push, refresh stateboards, ONE material next objective and continue.
-Do not full-test every source or wrapper repair.
+Complete with one independently checked pre-target forecast/cached readback
+and exact returned evidence pointer, or a narrowly evidenced bounded failure;
+source/input unchanged, reaped/absent facts. Changed-path serial plus clean8
+authority/Ruff/three sample-env Compose at material integration, commit/push.
+Refresh stateboards and ONE material next objective, then continue an
+independent ready lane rather than waiting for the future pair. A distinct
+allocation/ML hypothesis can be prepared next; do not reopen the completed gate.

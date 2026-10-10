@@ -20,215 +20,56 @@ RUNBOOK historical entries are source-local operations, not ready assignments.
 
 ## Current Objective And Research
 
-Goal64 COMPLETE/REJECTED30b0b842... at
-A/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:
-invocationf98f4fe52ffb4bdf872757bf7e2f478e/capture7feef64c.../
-contractb545d4c9.../worker3458d551... . Actual CPU toy plus three CUDA fits,
-30 complete cells, zero extra cached fits/inferences; action/execution/economics
-match. Actual parent-returned post-capture242.266783s<600 at
-2026-10-10T04:36:58.548063UTC excludes own future stdout/later integration;
-stored placeholders are not self-observation. Reaped/absent/released/unchanged.
-Whole10/OPEN111 growth median+.3152%, signed60+1.7643%, TCN+1.3198%, cash0;
-median utility fails the fixed screen. Lower diagnostic-.0790% is not selected.
-These are seen development returns, not broker PnL, calibrated risk or alpha.
-Goal57 CLOSE112 metrics are not directly comparable. Independent checked
-buffers reproduce the kill and all44 output pins, not the original clock event.
-351 serial20.13s/full8 15274pass22skip35warnings352.25s/JUnit48bb6f58... reaped.
-Final quantile NPZ20f720f4... stays external; no Paper replacement/sealed spend.
-Goal65 comparison COMPLETE/REJECTED1c61babf... at
-A/research/kis-stock-binary-signed-conjunction-development-v1/integration-evidence.json.
-Native30cells/zero fits-inferences-GPU/cached accounting match/reaped/absent,
-seven inputs/458 sources unchanged. Whole10/OPEN111 conjunction+1.1554%,
-binary+1.1749%, signed+1.7643%, TCN+1.3198%; utility fails signed/TCN.
-No tuning, independent alpha or Paper replacement. Original parent outer
-publication failedb01b540a.../94.698478s at05:16:02.263955UTC on filename ABI;
-offline exact four-output/source hashes recover comparison custody, not a
-rewritten successful publication clock. Initial4ce28ae... JSON parse failure,
-used sources/debits and external E501 are retained. No replay was repeated.
-396 focused22.64s/full8 15319pass22skip347.176s/JUnit3be96478... reaped;
-repo Ruff/three sample Compose pass. Component00b4526 is pushed.
-Goal66 COMPLETEec5bfc3e... at
-A/research/kis-stock-forward-expert-conjunction-v1/integration-evidence.json.
-Actualc4a4ffbe.../capture7da0d9ae.../record5f0dcb75.../terminal2a85777c...
-joins ONE f78 current-only context, original128/42peers/TCNtop10, three .01
-analytic slots retained/seven cash. Binary23:03:05.275494UTC and signed
-01:20:08.297807UTC remain distinct; join06:12:26.777407..879186UTC on Oct10.
-Parent post-capture45.568182s<240 at06:12:49.653662UTC, reaped/absent/472
-source hashes unchanged; zero fit/inference/target/GPU/broker. Future Oct12
-OPEN->Oct19 OPEN outcome unobserved, no alpha or deployment. Initial3.790s
-failure07fdea... remains unchanged/unknown native category/unrefunded.
-Fresh source fixes create stdin, original APP score35f expectation (not later
-735f replacement), bounded diagnostics, outer clock and post-save audit.
-Typed Paper sourceb5237628.../43 tests/six independent checks is undeployed;
-original rank1/.01/basis/identities/finite owners unchanged. 108 serial1.63s,
-full8 15319pass22skip342.14s/JUnitbc5c9439..., Ruff/three sample Compose pass.
-Independent24 checks/4e858d96... under the same Goal66 root rehash exact472
-original paths/11 staged sources/output links and clock/count geometry; no
-scoped P1/P2. Clock event/cleanup remain parent-observed, not reobserved events.
-Goal67 COMPLETE/REJECTED7fca2ae9... at
-A/research/kis-stock-joint-rank-sign-development-v1/integration-evidence.json:
-contracta9559f4d.../actual15a65219.../capture d24bf035...; CPU toy plus three
-actual CUDA fits/30 complete cells, cached zero extra fits/inferences and exact
-action/execution/economics match. Original458 sources/seven inputs unchanged;
-reaped/absent/lease released. Parent500.261009s<600 at06:33:48.164393UTC Oct10
-after capture/audit, excluding future stdout/later integration. Independent
-45e174de... checks13 outputs and fixed kill, not the original clock event.
-Whole10/OPEN111 growth joint+.8953%, signed+1.7643%, TCN/prefix-mean+1.3198%;
-joint DD.5439% improves, but strict utility fails signed/TCN/prefix controls.
-Cost/20000 each leg=5bps each/10roundtrip; no fee change or outcome rescue.
-Seen revised/current-listed/non-PIT development, no alpha/Paper replacement.
-108 serial1.64s/full8 15319pass22skip359.98s/JUnit3aafac79...; repo Ruff and
-three sample Compose pass. External parent-review test E501 remains disclosed.
-Goal68 COMPLETEe9077cbd... at
-A/research/kis-stock-joint-finite-guard-throughput-v1/integration-evidence.json.
-Actuala459cf50.../capture56093beb.../benchmark46619e8d...; two synthetic CPU
-and six CUDA fits, exact same loss/gradient/parameter/optimizer/state/prediction/
-slot pairs.42.759522s<18007:16:40.580127UTC, reaped/absent/lease released/
-sources unchanged; no market fits/data/weights retention/sealed spend/broker.
-AB1.001126/BA1.008748, aggregate speed+.4918% in ONE synthetic sample only.
-Keep original guard default; no meaningful/statistical/market acceleration or
-new benchmark priority. Independent eab506ce... checks445 mounted src/475
-host pins/links/timing arithmetic, not trajectory or clock reexecution.
-Parentb84821f1.../nativeef4ef642.../final review7a5f65fc...; provisional P2
-b5086c5a... and532 source preserved, repaired before actual dispatch.
-108 serial1.73s/full8 15319pass22skip342.82s/JUnit6d6e735d.../Ruff/three Compose.
-Next ONE Goal69 prepares and evaluates an exact-book return-trained fixed-slot
-gate: one60x2/four-static TCN sigmoid head; original ranking and feasible
-quantity-or-zero masking, carried cash/shares, actual delta fees, no fractional
-TRAIN surrogate. Seed101/four chronological sampled paths per fit; two planned
-CUDA prefixes610/799 under ONE600s family. Source reward0fa41bb6.../25 tests
-and decoder8a3b8dfe.../20 tests ready, not native execution or OLD score proof.
-Original427aaf411fe.../61042ce9939... model custodybbfef1ca... is retrievable;
-embedded scalers/causal OLD inference still need actual binding. No final799
-substitution, CURRENT training, source union, holdout or Paper replacement.
-Measured correction8dd61b9c...: original R57 APP Score source and precommit
-both pin735f5a6c..., identical to host; the prior APP35 projection was wrong
-for this APP. Canonical imports pass15 host CPU checks, native Torch2.7 still
-needs the smoke. No translation/source replacement. Reuse Goal67 protocol.
-Literature retrieval62a8368c... supports mechanism only. New source challenge
-e6dc130d... auth_unavailable/.938s/reaped, verdictnull/agreementfalse. No hold.
-Data/Paper identities/basis/four finite owners continue independently unchanged.
+Goal69 COMPLETE/non_promoting_followup_only77d3728c... at
+A/research/kis-stock-exact-book-gate-development-v1/integration-evidence.json.
+Exact actual is A/bg/1241ae8d162c411fb9443739e011ed25/actual-invocation.json
+40923141...; contractb5582084.../capture389cd981.../independent994e7402... .
+Native CPU toy plus two CUDA actor fits610/799, two original OLD checkpoint
+CUDA calls and30 complete cells. Cached replay zero extra fits/inferences;
+actions/execution/economics match, original sources/inputs unchanged.
+Parent returned post-publication audit199.987352s<600 at
+2026-10-10T08:44:56.716382UTC; excludes future stdout/later integration.
+Reaped/absent/lease released. Independent20 checks rehash actual/precommit/
+13 outputs and recompute the aggregate kill; not private causal-row,
+trajectory, final-clock or independent cleanup reexecution. Parent also
+rehashed exact plan/anchor/capture paths, without rewriting used receipts.
 
-Goal62 CLOSED/bounded preparation failure bdd26cf0... at
-A/research/kis-stock-payoff-quantile-development-v1/integration-evidence.json:
-invocation1f0c198a49f9449593b30cd49fd9e97b/capturedaaa229e.../
-contracted065ccd.../actual216afd41... .0.90167s after failure publication at
-2026-10-10T03:56:49.261126UTC; future stdout/later integration excluded.
-Prepare never reached native launch/CPU smoke/GPU lease/registry; no actual
-market fits/inference/cells. Original outer_runtime_unavailable preserved.
-LongPathsEnabled0/manufactured242chars passes290/390 fail/cleaned scratch;
-supports staging-path diagnosis, not the original exception's exact OS code.
-Goal63 CLOSED/runtime failure recovered9cabcb37... at
-A/research/kis-stock-payoff-quantile-runtime-recovery-v1/integration-evidence.json.
-Invocation15fde0361e4b4e2db246af7b339c5d96/capture6f674fe7.../7.577810s at
-04:08:53.502087UTC failed container_environment before native start. Original
-counts remain unknown/absencefalse/leasereleasenull; registry3abf7ee9...
-non_promoting_failed is preserved. Separate exact owned cleanupa6a1930c...
-2.021080s proves never-started/reaped/absent/lease released, not a rewrite.
-Image Dockerfile PYTHONUNBUFFERED=1 explains the measured validator mismatch.
-Goal64 restores that exact ENV and proven Goal57 CUBLAS_WORKSPACE_CONFIG=:4096:8;
-same short A staging and first quantile model, no retuning/refund. Final
-model0d2269aa.../input1a9214d1.../
-worker880c361e.../entryf5aa1c34.../factorycccb2d93... source-ready.
-Goal63 351 serial21.07s/full8 15274pass22skip35warnings344.81s/JUnitfcab9c88...;
-Ruff/three sample Compose passed. Source-only independent driver15/15
-1e8ac968.../caller3 delta9a33ac9e... preserve original falsifiers. No runtime
-equivalence or profitable quantile result. Claude auth-unavailable9a0121d4...
-is not agreement; no blind retry or independent-lane hold.
+Fixed whole10/OPEN111: gate growth+2.1789461%, signed+1.764319%,
+TCN/prefix+1.31975445%; gate DD.3931% versus signed.7951%, accepted52.
+Gate utility.10254598 exceeds signed.08270527/TCN-prefix.05645631/cash0.
+Cost10roundtrip=5bps each actual leg. Development kill passes, follow-up only.
+Four optimizer steps are not convergence. TRAIN Bernoulli sampling differs
+from deterministic CURRENT>.5; no inventory encoder. Seen/revised/current-
+listed/non-PIT, action/TR/finality/availability limits remain. No alpha,
+fresh replication, sealed access, broker PnL or Paper replacement.
 
-Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
-contract03117125.../native closure6e473f61.../result e59d6a92.../
-integration b2ef8c11... . CPU smoke, three CUDA fits/36 cells, observed
-313.355138s<600 after actual capture publication; own future stdout/later
-integration receipt publication excluded. Seven inputs/458 sources unchanged,
-children reaped/containers absent/GPU lease released. Same-native cached
-verification zero fits/inference; exact accounting/replay matched.
-Seen whole10bps/original.10-exposure growth signed60+1.467%, TCN+.956%,
-binary60+1.035%; strongest development kill passes, follow-up only. Payoff DD
-beats TCN but not binary60. Standalone conditional payoff is not incumbent
-hold/exit utility, probability or calibrated uncertainty. No fresh alpha,
-independent replication, sealed spend, Paper replacement or live claim.
-Final NPZ8d7b831b.../adapter9392e395.../base74378c0c... immutable outside Git.
-Actual CUDA fit-call wall7.127s/features41.355s are inclusive component spans,
-not peak GPU utilization or additive resource attribution. GPU works.
-160 changed serial;86 adapter/32 worker-caller/52 custody/23 independent mocks.
-Full8 15274pass22skip35warnings340.98s/15296collected/JUnit9d24c7a6... at
-A/verification/full8-20261010-g57/pytest.xml; reaped/clean, Ruff/three sample
-Compose pass. Commit9ae7eec pushed. Claude520f8cb7.../e524607a... unavailable,
-not agreement. Stop unchanged diagnostic retries; independent work continues.
+Source actor1e13ca1f.../rewardd9557b61.../worker006490d1.../causalR2ceed66f9...
+and factory17a081f1... are actual-used. Basis-audit and final-deadline
+falsifiers/original bytes remain immutable. Original R57 APP/precommit
+Score735 matches host; earlier APP35 projection was wrong for this APP.
+No translation or source swap. Native Torch2.7 smoke and numeric reload pass.
+Original3aec guard stays default: Goal68 synthetic comparison+.4918% in ONE
+sample did not justify adoption or more benchmark work. Goal67 was rejected.
 
-Goal58 COMPLETE at A/research/kis-stock-payoff60-shadow-runtime-recovery-v1:
-job715be7f4.../forecastc007442f.../capture5ed216ef.../outer5db2d7a3.../
-integration44236cd7... . Exact native CPU forecast and cached readback,
-two inference calls then zero,60.235192s post-capture/audit<240 at
-2026-10-10T01:20:58.130089UTC; own future stdout/later integration excluded.
-Original128/f78/prior61/42eligible/86unavailable/TCNtop10/.01 slots unchanged:
-three retained/seven cash, pred>0/no clipping/rerank/redistribution/gain sizing.
-Published01:20:28.855311UTC before Oct12 OPEN->Oct19 OPEN pair. Sources unchanged,
-children reaped/containers absent, no fit/GPU/targets/broker/Paper replacement.
-Full8 15274/22skip/35warnings342.15s/JUnit0f94ae39...,154 serial/Ruff/three
-sample Compose; final external122 supplied checks and independent repair
-receiptsacc1edce.../be5cae62... . First5.653s attempt remains FAILEDa04602a8.../
-0c159969... (Docker-list/dict ABI), exact created-owner cleanupf9acb196...;
-original d6cfba86.../e6966f8b.../a733979b... remain USED, not rewritten/refunded.
-Fresh diagnostics9c9ba59c.../wrapper920691b5... repair parser, full outer
-custody/final clock and failed-worker categories. No future payoff or alpha.
+Final799 model8c3410d9... lives only at the exact actual output root above;
+610e3bdcf2b... is retained, not substituted for final799. Original OLD
+427aaf411fe.../61042ce9939... and their embedded scalers remain unchanged.
 
-Goal59 COMPLETE at A/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
-integration607e0500.../actualb03a37d5.../parented5f61bc.../capture67c81dbe.../
-worker4e8c994f... . Native CPU141.854058s<240 after publication/audit at
-2026-10-10T02:10:29.258602UTC; future stdout/later integration excluded.
-OLD734frames/36307rows and CURRENT52/3339: exact bitwise/missingness/clock/
-calendar/source parity; one input load, seven bindings/458 sources unchanged,
-reaped/absent/zero fits/inference/targets/GPU/broker. OLD first42.327/repeat
-42.184/write2.637/read3.724s; CURRENT first3.450/read.407s. Paired/warm/order
-effects, not cold-start or downstream training speedup. Cache remains feature
-data only. Original a9b0... prepare FAILED.093609s/ee4c4f16... is not refunded;
-fresh d591fc90... changes only pinned embedded-calendar whitespace parsing.
-56 supplied/21 independent161a18dd...; caller145b5cae.../outerc9013351... .
-154 serial/full8 15274pass22skip35warnings347.49s/JUnitd8bea194... reaped.
-Claude9cabf9cd... unavailable, not agreement. Goal58 offline reader59b041e1.../
-nine casesd9381e36... checks retained44236cd7... without new inference.
+ONE next Goal70: freeze exact799 CPU prospective mask on original f78/prior61
+before Oct12OPEN->Oct19OPEN targets. Original128/42peers/TCNtop10/.01
+slots; strictly>.5 keeps or zeros slots, no rerank/redistribution/refloor.
+No training, GPU allocation, target read, source union or Paper replacement.
+Reuse established runtime and original feature definitions; rebuild canonical
+typed seals rather than translate Goal66 Score35 objects. Source-only
+preparation is parallel; no actual forecast has yet been published.
 
-Goal60 CLOSED with bounded runtime failure1a02b501... at
-A/research/kis-stock-incumbent-payoff-development-v1: exact invocation
-1772ac26012b45aea82fd86587dcde08/failurec49971b1.../parentfeee4839.../
-capture72f0767f... .52.921544s after failure publication at02:41:36.075723UTC;
-future stdout/later integration excluded. Reaped/absent/inputs and sources
-unchanged/no GPU. Cells/fits/inferences/replay remain unknown, not zero or a
-strategy rejection. Two action/one execution events precede failure in the
-first cell. Native generic six-field failure lost its category at the parent's
-three-field parser. Used sources d69a460b.../ca833e50.../84d2eae4... and partial
-streams are immutable/unrefunded.346 serial20.07s/full8 15274pass22skip/
-35warnings343.15s/JUniteb4f7f91... reaped; independent entry08215254.../
-parent71cecf08.../outera07e0d53... source-only, not actual runtime success.
-Goal61 COMPLETE/categorical input failure6dd8f524... at
-A/research/kis-stock-incumbent-payoff-runtime-recovery-v1:
-invocationd9b2affcee2742088a7c5b9edbb026eb/failurefeadbe34.../parent368de9d8.../
-capture92663ada... .54.401971s after failure publication02:59:10.481451UTC;
-future stdout/later integration excluded. Reaped/absent/unchanged/no GPU;
-counts/replay unknown. Exact implied_price_ratio_nonpositive means a selected
-signed payoff<=-1 cannot define a positive terminal price. This exact mapping
-is unavailable, not a full strategy comparison or global model/data rejection.
-No clipping/refit/parameter rescue.18/49 supplied;28/57 independentde73e60f...,
-9 outer17713d35.../12 rotation7003bc4b...;346 serial/full8 15274pass22skip/
-35warnings343.65s/JUnite85216df... . All failed sources/debits remain retained.
-Goal65 ACTIVE: fixed binary/signed expert conjunction and common cached
-development replay. Goal64 quantile model is rejected, not retuned. Goal62/63
-failed attempts and separate cleanup remain immutable and unrefunded.
-No Paper replacement, sealed spend, calibration or new broker schedule.
-Uncertainty sources16ef6902... independently reread8308a59a...: mechanism only,
-pinball/spread is not calibrated financial risk; no new GPU family dispatched.
-
-Goal55 binary future shadow already COMPLETE016e67dc... at
-A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1:
-forecast Oct9 23:03:14.321194UTC,42eligible/86unavailable/seven original slots
-kept/three cash; jobc26e119a.../native cachedda6fbbad.../capture65543aa5... .
-Cached21.880s<60/zero extra fit/inference/GPU. Failed30.233/25.944s appointments
-stay FAILED. Windows context93625d50... was not native numeric parity; exact
-same-native equality passed without tolerance or an inferred libm cause.
-Generic cached-caller producer/source/inner-clock faults remain historical;
-fresh callers must reattest their exact scope, not reuse that fixed closure.
+108 serial1.63s/full8 15319pass22skip35warnings344.49s/15341collected,
+helper0/reaped; JUnit135afa0c... under A/verification/full8-20261010-g69.
+Repo Ruff/default/research/accounting sample Compose pass. No doc-only full
+rerun. Claudee6dc130d... auth_unavailable is not agreement; unchanged login
+retry is not useful. Independent challenge narrows this result to development.
+Earlier experiments, technical failures, debits and exact evidence remain in
+Git9060b0f and the shared registry/external roots; they are not current jobs.
 
 ## Owned Data And Paper Opportunities
 

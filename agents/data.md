@@ -27,48 +27,28 @@ Ruff/three sample Compose pass. Old r1/r2/r3/caller failures stay preserved.
 
 ## Research Inputs
 
-Goal57 three CUDA fits/36 cells/313.355s COMPLETE6e473f61... consumes original
-seven bindings/128identities/prior61 only, no refresh union or Data promotion.
-Goal58 target-free CPU forecast COMPLETE44236cd7.../60.235s: originalf78/
-42eligible/128keys, three original fixed slots retained/seven cash. No Data
-promotion/provider/target call. Oct12->Oct19 endpoint pair still unobserved.
-Goal59 COMPLETE607e0500... at A/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
-OLD734/36307rows/CURRENT52/3339 exact bitwise/missingness/calendar/clock parity,
-seven bindings/458 sources unchanged; one load/zero target or provider calls.
-OLD repeated42.184/read3.724s, paired warm feature-only measurement; no cold
-or training speedup claim. Original prepare FAILED.093609s/ee4c4f16... retained.
-Goal60 runtime failed1a02b501.../c49971b1... after52.921544s; sources/input
-unchanged, no provider or completed comparison. Goal61 closes6dd8f524.../
-feadbe34.../54.402s: invalid implied-price forecast input, not a Data rejection.
-Goal62 preparation failedbdd26cf0.../0.90167s before native/data/model work;
-measured Windows long-path fault is technical, not a dataset rejection.
-Goal63 container_environment failure9cabcb37... occurred before native start;
-separate cleanupa6a1930c... proves reaped/absent/released. No Data rejection.
-Goal64 COMPLETE30b0b842.../242.266783s actual three CUDA fits/30cells; input/source
-unchanged/reaped/absent/released. Same OLD734/CURRENT52 separate calendars/seven
-bindings/128 identities. Input1a9214d1... verifiedf7f56ebe... propagates expiry;
-original60x2 needs no padding. Raw M direct RO, never staged under A.
-No new data/cache/target acquisition, union or qualification. Goal65 common
-OPEN111 comparison COMPLETE/REJECTED1c61babf.../30cells, unchanged sources.
-Original Goal57 CLOSE112 metrics are not compared as-is. Next ready input is
-exact f78 native-frozen-input/contract.json plus native-outcomes/
-cfa7a564e2b248eb9fd6bb640daa1c27/receipt.json3dafa26e... under
-A/data/kis-current-pooled-equity-refresh-next-session-v1.128 identities/95
-manifests/94 full100; original forecast42 peers, no remainder union/new fetch.
-Both retained expert forecasts share peers/scores but have distinct as_of.
-Goal66 COMPLETEec5bfc3e.../actualc4a4ffbe.../capture7da0d9ae... reconstructs
-ONE actual f78 frame; exact128/42peers/472 source hashes unchanged, zero
-provider/target calls, three original analytic slots retained/seven cash.
-Distinct original forecast clocks preserved; parent45.568182s<240/reaped/absent.
-Future Oct12->Oct19 endpoints remain unobserved. No Data qualification or union.
-Goal67 joint GPU COMPLETE/REJECTED7fca2ae9... consumed only those original
-OLD/CURRENT caches/seven bindings;458 sources/inputs unchanged, no provider
-or Data qualification. Goal68 COMPLETEe9077cbd... uses no market rows/targets/
-cache; synthetic twoCPU/sixCUDA,42.760s/reaped/absent/released. Goal69 uses
-original seven bindings and causal OLD427/610 score preparation only; no union,
-provider refresh or new data qualification. Custodybbfef1ca... establishes
-retained model bytes/source descriptors, not actual embedded scaler or OLD
-inference parity. Owned next_due continues independently. Limits visible.
+Goal69 complete77d3728c... uses original seven OLD/CURRENT bindings only.
+Actual1241ae8d.../capture389cd981... has two CUDA actor fits and two original
+OLD checkpoint calls, no provider, new raw cache, union or data qualification.
+Source/input hashes unchanged; original OLD427/610 embedded scalers read
+under decoder8a3b8dfe.../causalR2ceed66f9..., not final799 teacher substitution.
+Independent994e7402... rehashes outputs/aggregate links, not private rows or
+a new historical PIT proof. Clock/adjustment/finality limits remain.
+
+Native feature caches607e0500... retain OLD734/36307 rows andCURRENT52/3339,
+exact original bitwise/missingness/calendar parity. One retained panel load;
+fresh factory17a081f1... supplies OLD428..798 quotes and74 prior-only snapshots,
+not a new data acquisition. Paired cache timing is not a cold training speedup.
+
+ONE Goal70 source preparation consumes only the original f78
+A/data/kis-current-pooled-equity-refresh-next-session-v1/native-frozen-input/contract.json
+and native-outcomes/cfa7a564e2b248eb9fd6bb640daa1c27/receipt.json3dafa26e... .
+Original128 identities/95 manifests/94 full streams, forecast42 peers/prior61.
+No remainder union, fetch, historical teacher refit, source promotion or target
+read. Native canonical typed feature reconstruction is required; no translation
+of Goal66 Score35 objects. Future Oct12OPEN->Oct19OPEN pair remains unobserved.
+The two Data finite owners and their owned next_due are unchanged.
+Closed research history remains in Git9060b0f and immutable evidence roots.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

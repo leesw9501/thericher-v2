@@ -52,15 +52,34 @@ lease released/source unchanged. AB1.001126/BA1.008748/speed+.4918% single
 sample only; retain original guard default. No market rows/targets/refit/Paper
 or retained weights. Used b848 parent/ef4 native/provisional P2 and532 snapshot
 immutable. 108 serial/full8 15319pass22skip342.82s/JUnit6d6e735d.../Ruff/Compose.
-Next ONE Goal69 exact-book gate uses original OLD/CURRENT seven bindings plus
-retained original TCN427/610 references. Decoder8a3b8dfe.../20 CPU tests and
-reward0fa41bb6.../25 CPU tests are external source preparation, not actual OLD
-scores/native execution. Correction8dd61b9c...: original R57 APP and precommit
-pin Score735, same host file; prior APP35 projection was wrong for this APP.
-15 canonical host CPU checks pass; native smoke remains. Reuse Goal67 protocol;
-two planned610/799 CUDA fits under one600s contract, no CURRENT fitting/holdout/
-Paper replacement. Fresh source challengee6dc130d... auth unavailable, not agreement.
-Wrapper repairs stay focused role packages, not new company/full-test cycles.
+Goal69 exact-book gate COMPLETE/non_promoting_followup_only at
+D:/thericher-v2/model-artifacts/research/kis-stock-exact-book-gate-development-v1/integration-evidence.json
+(77d3728c...). Exact actual pointer:
+D:/thericher-v2/model-artifacts/bg/1241ae8d162c411fb9443739e011ed25/actual-invocation.json
+40923141.../contractb5582084.../capture389cd981.../independent994e7402... .
+CPU toy/two CUDA actor fits610799/two OLD checkpoint calls/30 complete cells;
+numeric reload/cached zero extra fits-inferences/exact accounting/unchanged,
+reaped/absent/lease released. Parent post-publication199.987352s<600 at
+08:44:56.716382UTC Oct10 excludes own future stdout/later integration.
+Independent20 checks rehash actual/precommit/13 outputs and aggregate kill,
+not private causal rows, trajectory, original quantity or clock reexecution.
+Whole10/OPEN111 growth gate+2.1789461%, signed+1.764319%, TCN/prefix+1.31975445%;
+gate DD.3931%/accepted52/utility.10254598, frozen screen passes only on seen data.
+Four updates are not convergence; stochastic TRAIN and deterministic CURRENT
+proxy differ. No alpha, fresh replication, holdout or Paper replacement.
+Final799 model8c3410d9.../610e3bdcf2b... are only in that exact root's
+out/1241ae8d162c411fb9443739e011ed25. Never rerun used drivers or refit the family.
+Native Torch2.7 smoke/canonical Score735 pass; no35 translation. Source fixes
+actor1e13/rewardd955/worker0064/causalR2ceed/factory17a preserve falsifiers.
+108 serial1.63s/full8 15319pass22skip35warnings344.49s/15341collected/helper0;
+JUnit135afa0c... at D:/thericher-v2/model-artifacts/verification/full8-20261010-g69/pytest.xml,
+Ruff/three sample Compose pass. No documentation-only full-suite repeat.
+ONE next Goal70 freezes exact799 same-f78 CPU forecast before Oct12OPEN->Oct19OPEN
+targets, zero fits/GPU/new fetch/holdout/Paper replacement. Reuse original
+prior61/128/42peers/top10/.01 masks and canonical reconstructed typed seals.
+Actual forecast not yet published; existing finite Data/Paper owners unchanged.
+Claudee6dc130d... auth unavailable is not agreement; no unchanged-auth retry.
+Wrapper repairs stay focused packages, not generic platform/company-goal sprawl.
 Goal64 COMPLETE/REJECTED30b0b842... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:
 invocationf98f4fe52ffb4bdf872757bf7e2f478e/capture7feef64c.../worker3458d551... .

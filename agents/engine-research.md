@@ -6,186 +6,56 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Work (2026-10-10 KST)
 
-Goal64 COMPLETE/REJECTED30b0b842... at
-A/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:
-invocationf98f4fe5.../capture7feef64c.../worker3458d551... . Actual CPU toy,
-three CUDA fits/30 complete cells/242.266783s post-capture<60004:36:58.548063UTC;
-reaped/absent/released/unchanged. Exact cached economics/action/execution match,
-zero extra fits/inferences. Whole10/OPEN111 growth median+.3152%, signed+1.7643%,
-TCN+1.3198%, cash0; median utility below signed/TCN, fixed kill rejected.
-Lower-.0790%/one accepted slot diagnostic only. No calibration/fresh alpha/
-Paper replacement. Independent buffers/all44 pins reproduce the screen,
-not the original clock.351 serial20.13s/full8 15274/22skip/35warnings352.25s/
-JUnit48bb6f58... . Preserve final NPZ20f720f4... and all prior failed debits.
-Goal65 comparison COMPLETE/REJECTED1c61babf... at
-A/research/kis-stock-binary-signed-conjunction-development-v1/integration-evidence.json.
-Actual native30cells/zero fit-inference-GPU; exact cached accounting/readback,
-seven inputs/458 sources unchanged/reaped/absent. Whole10/OPEN111 conjunction
-+1.1554% versus binary+1.1749%, signed+1.7643%, TCN+1.3198%, cash0. Utility
-fails signed/TCN; no tuning, new fitting or promotion. Native phases29.962s
-preparation/44.381s common replay/8.016s cached readback, not additive fit time.
-Parent outer ABI failureb01b540a.../94.698478s05:16:02.263955UTC is preserved;
-offline four-output/source hash reattestation recovers custody, not a rewritten
-successful publication clock. Initial canonical-JSON failure4ce28ae... stays.
-Pure component b4f1563e.../test287ef911... committed/pushed00b4526;
-45 synthetic/108 component-score serial1.64s/Ruff/six independent checks pass.
-None keeps inventory, empty tuple means cash; original weights unchanged.
-Model/cache lineage, timing and exact quantity accounting remain caller-owned.
-396 focused22.64s/full8 15319pass22skip347.176s/JUnit3be96478... reaped;
-repo Ruff/three sample Compose pass. Used external recovery driver E501 is
-retained unchanged; it is not a repo Ruff failure or a reason to rerun models.
-Goal66 COMPLETEec5bfc3e... at A/research/kis-stock-forward-expert-conjunction-v1:
-actualc4a4ffbe.../capture7da0d9ae.../record5f0dcb75...; ONE actual f78 frame,
-128keys/42peers/originalTCNtop10, three analytic slots/seven cash. Distinct
-binary23:03:05.275494UTC Oct9/signed01:20:08.297807UTC Oct10 preserved;
-join06:12:26.777407..879186UTC, parent45.568182s06:12:49.653662UTC<240.
-Zero fit/inference/target/GPU/broker, reaped/absent/472 source hashes unchanged.
-No future outcome/alpha/deployment. Initial07fdea.../3.790s failure persists;
-no inferred category/refund. Prepared source faults repaired inside same goal.
-108 serial/full8 15319pass22skip342.14s/JUnitbc5c9439.../Ruff/three Compose;
-34 reader-native/13 diagnostic/17 outer/20 independent/one handshake pass.
-Goal67 COMPLETE/REJECTED7fca2ae9... at
-A/research/kis-stock-joint-rank-sign-development-v1/integration-evidence.json.
-CPU toy/three actual CUDA fits/30 cells; actual15a65219.../capture d24bf035.../
-13 outputs/independent45e174de...;500.261009s<60006:33:48.164393UTC,
-reaped/absent/released/458 sources and seven inputs unchanged. Cached0extra
-fits/inferences with exact action/execution/economics match. Whole10/OPEN111
-growth joint+.8953% versus signed+1.7643%, TCN/prefix+1.3198%; DD.5439% passes
-but strict utility fails all non-cash controls. Cost/20000 each leg unchanged.
-No retuning, independent alpha, sealed access or Paper replacement.
-108 serial/full8 15319pass22skip359.98s/JUnit3aafac79.../repo Ruff/three Compose.
-Goal68 COMPLETEe9077cbd... at
-A/research/kis-stock-joint-finite-guard-throughput-v1/integration-evidence.json:
-two synthetic CPU/six CUDA fits/exact per-step and final pair fingerprints,
-42.759522s<18007:16:40.580127UTC/reaped/absent/released/unchanged. AB1.001126/
-BA1.008748/speed+.4918% single sample, not statistical/market acceleration.
-Keep original guard default; no more guard study prioritized. Independent
-eab506ce... validates445/475 pins/links/timings, not numeric trajectory or clock.
-No market data/scientific fit/weights retention/sealed spend/Paper change.
-108 serial/full8 15319pass22skip342.82s/JUnit6d6e735d.../Ruff/three Compose.
-Next ONE Goal69 exact-book gate: shared60x2/four statics plus one sigmoid head,
-Bernoulli TRAIN accept/cash and exact whole-share carried ledger reward-to-go.
-Original TCN ranking/feasible .01 quantities computed before mask, no resizing/
-redistribution/label double fee. Deterministic>.5 replay remains a proxy gap.
-One seed/four epochs, two prefixes610/799/shared600s with CPU toy/readback/
-30 common cells/cleanup; no outcome rescue, CURRENT training or Paper promotion.
-Reward0fa41bb6.../25 CPU cases/decoder8a3b8dfe.../20 cases source-ready;
-original427/610 custodybbfef1ca... retrievable, actual OLD scores not yet proved.
-Correction8dd61b9c...: original R57 APP/precommit pin Score735, same host file;
-prior APP35 projection was wrong for this APP.15 host canonical checks pass,
-native Torch2.7 smoke remains. Reuse Goal67 protocol/original guard, no swap.
-Literature62a8368c... mechanism only; source challengee6dc130d... auth unavailable.
+Goal69 COMPLETE/non_promoting_followup_only77d3728c... at
+A/research/kis-stock-exact-book-gate-development-v1/integration-evidence.json.
+Actual1241ae8d.../40923141... at A/bg/1241ae8d162c411fb9443739e011ed25;
+contractb5582084.../capture389cd981.../independent994e7402... .
+CPU toy/two actual CUDA fits610799/two OLD checkpoint CUDA calls/30 cells,
+199.987352s<60008:44:56.716382UTC, reaped/absent/released/unchanged.
+Numeric NPZ reload/cached zero extra fits-inferences/exact streams-economics.
+Final7998c3410d9.../610e3bdcf2b... remain external and immutable.
 
-Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
-contract03117125.../result e59d6a92.../closure6e473f61.../integration b2ef8c11... .
-Three actual purged-prefix CUDA fits/36 replay cells/observed313.355s<600,
-seven inputs/458 sources unchanged/reaped/absent/released; native cached verify
-zero fits/inference. Seen whole10bps/.10 exposure growth signed60+1.467%,
-TCN+.956%, binary60+1.035%; strongest development kill passes, follow-up only.
-Payoff DD better than TCN but worse than binary60. Signed standalone payoff
-is not incumbent utility/probability/calibrated uncertainty. Final8d7b831b.../
-adapter9392e395.../base74378c0c... immutable. No fresh alpha, sealed spend,
-independent replication, Paper replacement or live claim.160 serial/full8
-15274pass22skip35warnings340.98s/JUnit9d24c7a6...; Ruff/three sample Compose.
-Claude520f8cb7.../e524607a... unavailable, not agreement.
+Whole10/OPEN111 gate growth+2.1789461%, signed+1.764319%, TCN/prefix+1.31975445%;
+gate DD.3931% vs signed.7951%, accepted52, utility.10254598 vs .08270527.
+Frozen development kill passes; no fresh alpha, convergence, Paper replacement
+or sealed access. Four sampled paths/optimizer steps do not multiply independent
+samples. TRAIN stochastic policy and CURRENT>.5 proxy differ; no inventory input.
+Seen/revised/current-listed/non-PIT/action/TR/finality/availability limits remain.
+Independent20 checks rehash13 outputs and aggregate kill/stream geometry;
+not causal-row verification, trajectory or actual-clock reobservation.
+108 serial/full8 15319pass22skip344.49s/JUnit135afa0c.../Ruff/three Compose.
 
-Goal58 COMPLETE at A/research/kis-stock-payoff60-shadow-runtime-recovery-v1:
-job715be7f4.../forecastc007442f.../capture5ed216ef.../outer5db2d7a3.../
-integration44236cd7... . Same-native CPU forecast plus zero-inference readback,
-two original inference calls,60.235192s<240 after actual capture/audit,
-2026-10-10T01:20:58.130089UTC; excludes own future stdout/later integration.
-42eligible/86unavailable/original128/TCNtop10 unchanged; three fixed.01 slots
-retained/seven cash, no clipping/rerank/replacement/redistribution/gain sizing.
-Exact Oct12->Oct19 five-OPEN pair still future, no payoff/alpha claim. Source
-unchanged/reaped/absent/zero fit/GPU/target/broker. Final122 supplied checks,
-independentacc1edce.../be5cae62...;154 serial/full8 15274/22skip342.15s/
-JUnit0f94ae39... . First5.653s faileda04602a8.../cleanupf9acb196... and USED
-sources remain immutable/unrefunded. Fresh caller9c9.../wrapper920691... repair
-Docker-list ABI, diagnostic projection, outer custody and exact returned clock.
-
-Goal59 COMPLETE607e0500... at A/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
-actualb03a37d5.../worker4e8c994f.../141.854058s<24002:10:29.258602UTC,
-after publication/audit; future stdout/later integration excluded. OLD734/
-36307rows/CURRENT52/3339 exact parity; seven inputs/458 sources unchanged,
-one input load/zero fit/inference/targets/GPU/broker, reaped/absent.
-OLD first42.327/repeat42.184/write2.637/read3.724s; CURRENT first3.450/read.407.
-Paired warm/order effects, not downstream training speedup. Prepare failure
-ee4c4f16.../.093609s retained; fresh embedded-calendar d591fc90.../56 supplied/
-21 independent161a18dd... fixes only read ABI.154 serial/full8 15274/22skip/
-35warnings347.49s/JUnitd8bea194... . Goal58 reader59b041e1.../nine d9381e36...
-reattests retained integration44236cd7... without rebuilding context/inference.
-
-Goal60 CLOSED/runtime failure1a02b501.../c49971b1.../52.921544s at02:41:36.075723UTC,
-reaped/absent/unchanged/no GPU. Cells/fits/inferences/replay unknown; partial
-two-action/one-execution stream is not a comparison or strategy rejection.
-Generic native failure schema discarded its category. Used sources/failed
-appointment remain immutable/unrefunded.346 serial/full8 15274pass22skip/
-35warnings343.15s/JUniteb4f7f91...; entry08215254.../parent71cecf08.../
-outera07e0d53... independently source-tested, not runtime proof.
-Goal61 COMPLETE6dd8f524.../feadbe34.../54.401971s at02:59:10.481451UTC,
-reaped/absent/unchanged/no GPU. Exact implied_price_ratio_nonpositive rejects
-only the selected forecast-to-positive-price mapping; counts/replay unknown,
-no clip/refit or full strategy comparison.18/49 supplied;28/57 independent
-de73e60f.../9 outer17713d35.../12 rotation7003bc4b...;346 serial/full8
-15274pass22skip35warnings343.65s/JUnite85216df... . Used attempts unrefunded.
-Goal62 CLOSED/bounded prepare failurebdd26cf0.../capturedaaa229e.../
-invocation1f0c198a49f9449593b30cd49fd9e97b at03:56:49.261126UTC/0.90167s.
-Native smoke/GPU/registry not reached; no model/inference/cell result.
-LongPathsEnabled0/manufactured242pass290/390fail supports short A staging;
-original generic reason/failed copies/debit preserved.346 serial/full8
-15274pass22skip35warnings344.98s/JUnit622db5f1...; no source-repair full repeat.
-Goal63 CLOSED/runtime failure recovered9cabcb37... at
-A/research/kis-stock-payoff-quantile-runtime-recovery-v1/integration-evidence.json:
-invocation15fde036.../capture6f674fe7.../7.577810s/container_environment.
-Original unknown counters/failed registry3abf7ee9... preserved. Separate exact
-cleanupa6a1930c.../2.021080s proves native never started/reaped/absent/released.
-351 serial21.07s/full8 15274pass22skip35warnings344.81s/JUnitfcab9c88... .
-Goal64 SAME original60x2 quantile family completed above after exact ENV repair.
-No retuning, Paper replacement, sealed spend, calibration or fresh validation.
+Actor1e13ca1f.../rewardd9557b61.../worker006490d1.../causalR2ceed66f9.../
+factory17a081f1... actual-used; original falsifiers preserved. Original R57
+Score735 matches host, no35 translation. Original3aec guard remains default;
+Goal68+.4918% ONE synthetic sample does not support another guard study.
+Closed model families/history in Git9060b0f and shared registry, not this queue.
 
 ## Ready Independent Preparation
 
-Throughput: feature-cacheb5dd9869.../adapter47c0ee70.../verified workerb0206aee...
-have actual native parity607e0500... . Reuse exact matching bindings only;
-the paired read/recompute result is not a downstream training benchmark.
-Actual prior feature span41.355s vs CUDA fit-call7.127s, not additive timing.
+Immediate ONE Goal70: fixed799 same-f78 CPU prospective forecast, no fit/GPU/
+target/union/Paper replacement. Input James, pure forecast Copernicus,
+runtime Euclid; each owns only its fresh external preparation root.
+Original128/42peers/prior61/TCNtop10/.01 slots and Oct12OPEN->Oct19OPEN pair.
+Publish exact model/source/prediction/mask bindings before targets, then cached
+zero extra inference. Do not translate old Score objects or change training.
 
-Breadth: incumbent terminal-cash proxy896d808c.../28 synthetic/proposal
-ff169517... at A/research/kis-stock-incumbent-aware-payoff-preparation-v1.
-Sourcef2d5b47.../39 supplied+22 independent checks/c53e8267... prepares24
-cached replay cells (fourarms/twobooks/threecosts), complete
-five-session reviews61..106/terminal111/51marks, no fit/inference/GPU/actual
-cache read. Action is contingent on current execution OPEN/inventory/unchanged
-slot sizing, not pre-OPEN sealed or Bellman-optimal. Doublecount, quote timing,
-own-arm inventory, uncertainty and horizon limits explicit. Loader7fe15d99.../
-eight independent ee19c493... rejects repinned persisted-stream corruption;
-Goal60 runtime failed; Goal61 identifies invalid implied-price input. No rescue.
-Primary-source reread1a0b1d5e... supports mechanism only, not empirical transfer
-or open-source code rights. No new optimizer dependency.
+Depth/replication: Dataab65b62b... owns future42-peer endpoint observations.
+Their next_due is not a foreground wait or a model/alpha qualification.
+No ready new frozen GPU campaign currently; select one when its contract is
+ready, not to manufacture utilization or reopen the completed family.
 
-Uncertainty discovery16ef6902... independently reread8308a59a... (exact arXiv
-1612.01474v1/2106.00170v1/2011.09588v1) rejects spread/low pinball loss as
-calibrated risk. Mechanism-only reference, no code/weights imported, new
-family/quantile thresholds/GPU allocation or performance transfer selected.
-Source0d2269aa.../57+22 checks corrects exact original60x2; input1a9214d1.../
-24 independentf7f56ebe... fixes callback expiry without padding. Worker
-880c361e.../29 tests and entryf5aa1c34... preserve original clock/canonical
-date keys; factorycccb2d93.../47+20+5 confirms OPEN111 scope. Hostfdfd2bd3...
-fixes result/terminal outcomes/unknown counts (18 supplied/3 independent).
-Parent216afd41.../15 independent1e8ac968... staging failure and fresh255a586e...
-container ENV failure are preserved. Short A staging stays; exact caller
-309682c0... restores image PYTHONUNBUFFERED=1 and proven Goal57 deterministic
-CUBLAS_WORKSPACE_CONFIG=:4096:8. No numerical change. q(.1,.5,.9)/three
-prefixes/30 cells/shared600s, median primary/lower diagnostic. Actual parent
-844d2f3c... completed; original failed allocation is not refunded. No rescue fit.
+Breadth standby: an empirical CVaR95 SPY/TLT/GLD allocation is a distinct
+unimplemented mechanism, not another TCN label. Primary formula:
+https://sites.math.washington.edu/~rtr/papers/rtr179-CVaR1.pdf .
+Existing trio/caps/accounting may support one finite no-cost CPU study.
+No contract, solver/runtime appointment, source rights for copied code,
+statistical evidence or success is implied by this proposal. Approximately
+13 tail scenarios in252 observations is weak; no performance transfer.
 
-Depth: Goal55 binary shadow016e67dc.../native cachedda6fbbad... already frozen
-Oct9 23:03:14.321194UTC:42eligible/seven kept/three cash. Same-native21.880s,
-zero extra inference/fit. Original30.233/25.944s failures stay FAILED; Windows
-context93625d50... is not native parity. Exact Oct12->Oct19 endpoint Data owner
-ab65b62b... due Oct13/20 06:40KST; no foreground wait or completed payoff yet.
-Ensemble/replication: no independently qualified survivor; existing fixed
-development compositions do not open a holdout or create Paper qualification.
+Earlier LSTM/GRU/attention/Patch/Mixer/ML/rule/TimesFM/Chronos studies and
+incumbent-cost/quantile/conjunction failures stay in exact roots/registry.
+No closed attempt or allocation is refunded, relabeled or silently retried.
 
 ## Useful Inputs And Recovery
 

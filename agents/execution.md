@@ -37,53 +37,31 @@ host marker/time provenance, not cryptographic OS Scheduler origin.
 
 ## Research Separation
 
-Goal57 signed60 COMPLETE6e473f61.../three CUDA fits/36cells/313.355s, zero
-credential/provider/account/order calls or bank change in that scope. Seen
-improvement is not independent alpha or a replacement Paper model.
-Goal58 CPU-only future shadow COMPLETE44236cd7.../60.235s: originalTCNtop10/
-.01 analytical slots, three retained/seven cash. No broker/intent/sizing/
-rerank/schedule path or future payoff. Original Paper stays originalTCNrank1.
-First CPU attempt failed before inference; exact created research-container
-cleanup f9acb196... proves absence and source match, not a broker recovery.
-Fresh parser/publication repair920691.../9c9... succeeded with source match,
-reaped/absent and zero cached inference; no Paper bank/order/schedule effect.
-Goal59 native feature-cache COMPLETE607e0500.../141.854s/bitwise parity has
-zero target/model/credential/broker calls. Goal60 runtime failed1a02b501.../
-c49971b1.../52.921544s, reaped/absent; no complete comparison or broker change.
-Goal61 completes with categorical invalid-price-mapping input6dd8f524.../
-feadbe34.../54.402s, reaped/absent/no broker. No complete cell economics.
-Goal62 preparation failurebdd26cf0.../0.90167s reached no native/GPU/broker
-path. Goal63 ENV failure9cabcb37.../7.577810s and exact cleanupa6a1930c.../
-2.021080s prove native never started/reaped/absent/released; no broker change.
-Goal64 actual quantile COMPLETE/REJECTED30b0b842.../242.266783s/three CUDA fits/
-30cells/cached0extra/reaped/absent/released; no broker change. Model median
-utility trails identical OPEN111 controls. Goal65 fixed conjunction comparison
-COMPLETE/REJECTED1c61babf.../30cells/zero fit-inference-GPU/reaped/absent;
-same costs/original quantity-or-zero accounting. Parent output-scope failure is
-preserved; offline custody does not rewrite its clock. Risk/order/bank/schedule
-unchanged. Goal66 COMPLETEec5bfc3e.../capture7da0d9ae.../45.568182s joins
-retained forecasts without broker/target calls. Typed maskb5237628.../43 tests/
-six independent checks preserves original Paper rank1/.01; invalid contracts
-return scoped rejection with no invalid dataclass construction. Signed return
-is never probability. Source preparation only: no deployment/intent/schedule/
-model/basis change. Analytic three-of-ten slots are not the Paper rank1 target.
-Goal67 joint research COMPLETE/REJECTED7fca2ae9.../500.261009s/three actual
-CUDA fits/30 cells/cached0extra/reaped/absent/released. Its cell10 retains
-cost/20000 each leg (5bps each); utility fails original signed/TCN/prefix controls.
-No broker fee/model/basis/intent/schedule change. Goal68 synthetic guard
-COMPLETEe9077cbd.../42.760s/twoCPU/sixCUDA/exact pair/reaped/absent/released;
-no market data/weights retention/Paper path, speed+.4918% single sample only.
-Next Goal69 exact-book reward source0fa41bb6... uses same-own-book quantity-or-
-zero, actual delta fees5bps each and terminalOPEN. Source25 CPU cases only,
-not native fee/fill/fixed-bank sizing parity or a Paper intent. Independent
-Independent reviewabde36eb... reproduced one basis-audit P2, repair owned.
-Correction8dd61b9c...: original R57 APP/precommit Score735 matches host, not35;
-15 host canonical checks pass, native smoke remains. Owners/basis unchanged.
-Goal55 binary shadow016e67dc.../native cachedda6fbbad.../seven kept remains
-immutable and non-executable. Data jobab65b62b... owns42-peer endpoints
-Oct13/20 06:40..07:40 KST, market-only/no manual invocation.
-Source-only incumbent-cost helper896d808c.../28 synthetic tests is a research
-terminal-value proxy, not deterministic broker risk or execution code.
+Goal69 complete/non_promoting_followup_only77d3728c... at
+A/research/kis-stock-exact-book-gate-development-v1/integration-evidence.json.
+Two actual CUDA fits/30 cells/199.987352s<600/reaped/absent/released;
+cached exact actions/executions/economics, zero extra fits/inferences.
+Analytical quantity-or-zero mask uses its own carried ledger and actual delta
+fees5bps each at TRAIN10; no rerank/refloor/redistribution. Independent20
+checks994e7402... rehash outputs and aggregate fee/carry/quantity structure,
+not original quote-derived quantities or broker fee/fill/latency/basis parity.
+Development kill passes; no broker account/order/credential call, Paper
+replacement, basis change, schedule expansion or alpha/net-PnL claim.
+
+ONE Goal70 is a prospective CPU analytical forecast only: fixed7998c3410d9...,
+same f78/prior61/original128/42 peers/TCNtop10/.01 mask, zero fitting/GPU/
+future quote reads. Original Paper stays TCNrank1/.01, not analytical top10.
+Retained binary/signed/conjunction forecasts preserve distinct as_of values.
+Source-only typed maskb5237628.../43 tests/six independent checks remains
+undeployed; no future result or Data qualification follows from its existence.
+Original R57 Score735 matches host; canonical typed objects are reconstructed,
+never translated from an older Score35 namespace.
+
+Dataab65b62b... still owns42-peer Oct13/20 endpoint observations. No manual
+launch or broker call is part of this research work. Closed research/debits and
+technical recovery history remain in Git9060b0f and immutable external roots.
+108 serial/full8 15319pass22skip344.49s/JUnit135afa0c.../Ruff/three Compose.
+Existing Paper owners, model, shared basis and exact pending identities remain.
 
 ## Private State And Exact Recovery
 

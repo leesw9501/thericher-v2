@@ -6,84 +6,34 @@ A/_control/ledger/2026-10.jsonl. A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-10 KST)
 
-Goal57 CLOSED/trial1/contract03117125.../binding5c04a50e.../native closure
-6e473f61.../custody e25bbffb... at A/research/kis-stock-payoff-aware-development-v1.
-Three actual CUDA fits/36 cells, no baseline refit or sealed spend. Actual
-post-capture313.355138s<600; own future stdout/later integration publication
-excluded. Reaped/absent/source-input unchanged/lease released. Same-native
-verify zero fits/inference. Strongest development kill passes/follow-up only;
-final8d7b831b... immutable, no independent alpha/Paper replacement.
-Inclusive fit-call7.127s/features41.355s are not peak utilization or additive
-resource attribution. GPU available; no environment/permission fault.
+GPU free; Goal69 family CLOSED/non_promoting_followup_only77d3728c... .
+Contractb5582084.../native registrycc97fa63.../outcomef3dc5fdb... ;
+exact actual A/bg/1241ae8d162c411fb9443739e011ed25/actual-invocation.json
+40923141... . One600s appointment, two scientific CUDA fits610799,
+two reused OLD checkpoint CUDA inference calls/CPU toy1/30 complete cells.
+Actual parent returned199.987352s<60008:44:56.716382UTC after capture/audits;
+excludes future stdout/integration. Reaped/absent/lease released/unchanged.
+Cached zero extra fits/inferences, sealed spend0; no training outcome refund.
+Original fitted610e3bdcf2b.../7998c3410d9... remain immutable external NPZ.
 
-Goal58 CPU-only prospective signed shadow COMPLETE/integration44236cd7... at
-A/research/kis-stock-payoff60-shadow-runtime-recovery-v1: one new240s technical
-appointment observed60.235192s after capture/audit at2026-10-10T01:20:58.130089UTC,
-own future stdout/later integration excluded. Two inference calls then zero
-cached, no fit/GPU appointment/sealed spend/targets, reaped/absent/unchanged.
-Three original.01 slots retained/seven cash; forecast is not future evaluation.
-First5.653s FAILEDa04602a8.../cleanupf9acb196... stays immutable/unrefunded;
-fresh runtime repair does not reopen the model family or selection budget.
-Goal59 CPU feature-cache COMPLETE607e0500.../141.854058s<240 after capture/
-audit; OLD734/CURRENT52 exact parity/seven inputs/458 sources unchanged,
-reaped/absent/zero model/prediction/target/GPU/sealed spend. Original prepare
-FAILED.093609s/ee4c4f16... remains unrefunded; fresh parser changes no family.
-Goal60 CPU appointment CLOSED/runtime failure1a02b501.../c49971b1.../52.921544s,
-reaped/absent/unchanged/no GPU. Completed cells/fits/inferences unknown,
-not zero, a model rejection or a refunded attempt. Partial streams retained.
-Goal61 technical CPU appointment CLOSED6dd8f524.../feadbe34.../54.401971s,
-reaped/absent/unchanged/no GPU; exact implied_price_ratio_nonpositive,
-counts/replay unknown. No model/debit refund or rescued price mapping.
-Goal62 CLOSED/preparation failurebdd26cf0.../daaa229e.../0.90167s at
-03:56:49.261126UTC before native smoke/GPU lease/registry/allocation/fits.
-Preserve contracted065ccd.../actual216afd41.../partial copies/debit, no refund.
-Measured Windows path limit supports a fresh short A staging root, not OS or
-model changes. Goal63 registered first quantile trial but failed ENV inspection
-before native start:9cabcb37.../7.577810s/registry3abf7ee9... non_promoting_failed.
-Original counters/absencefalse/leasereleasenull remain; separate exact cleanup
-a6a1930c.../2.021080s proves never-started/reaped/absent/released. No refund.
-Goal64 SAME quantile family completed30b0b842.../contractb545d4c9.../
-registry457a0bcb.../outcomea86c4d3c...; CPU toy plus three actual CUDA fits,
-30cells/shared600s/observed242.266783s at04:36:58.548063UTC after capture/audit.
-Sealed0/reaped/absent/released/input-source unchanged/cached0extra. Median
-whole10 screen rejected; no rescue fit/refund/Paper qualification.
-Goal65 fixed conjunction COMPLETE/REJECTED1c61babf.../native30cells/zero
-fitting-inference-GPU-sealed spend. Native outputs734f4866.../5ab1feb7...;
-parent failed outer scopeb01b540a.../94.698478s after caller completion is
-preserved, offline custody recovered without rerunning or refunding. Initial
-canonical failure4ce28ae... and external used E501 remain. Next forward
-same-f78 join Goal66 COMPLETEec5bfc3e.../capture7da0d9ae.../45.568182s<240,
-zero fit/inference/GPU/sealed spend, reaped/absent/472 source hashes unchanged.
-Distinct original clocks retained; first3.790s07fdea... failure unrefunded.
-Goal67 joint family CLOSED/REJECTED7fca2ae9.../contracta9559f4d.../
-actual15a65219.../capture d24bf035.../independent45e174de...; CPU toy plus
-three actual CUDA fits/30 cells/500.261009s<600 at06:33:48.164393UTC,
-reaped/absent/released/unchanged, cached0extra fits/inference/sealed0.
-Registry259fc744.../outcome d9a9f525... covers native terminal, not final parent
-publication. Strict utility fails controls; no rescue/refund or Paper promotion.
-Goal68 runtime appointment CLOSEDe9077cbd.../actual34fa62e8.../capture56093beb...:
-two synthetic CPU/six CUDA fits,42.759522s<18007:16:40.580127UTC/reaped/absent/
-released/unchanged. Scientificfits0/sealed0/marketdata0/weightsretentionfalse.
-Exact producer CPU/CUDA pair assertions; independent eab506ce... checks custody
-and timing, not trajectories/clock. Single speed+.4918% does not justify a new
-study or default adoption. Preserve used originals/debits, no market refit.
-Next ONE Goal69 new exact-book return gate family: two planned scientific CUDA
-fits610/799/seed101/four epochs, ONE600s including CPU/inputs/fit/inference/
-publication/replay/cache/cleanup30. Freeze exact source/input/cost/split/kill
-contract before allocation; no new allocation for each source or wrapper repair.
-Original427/610 models reused only for causal OLD baseline inference, not fit.
-Reward0fa41bb6... and decoder8a3b8dfe... are source-only; no actual OLD score
-binding/field fitting or native compatibility yet. Missing facts defer that
-campaign only; Data/Paper owners remain independent. No holdout or promotion.
-Claude auth-unavailable
-9a0121d4... is not agreement or a research gate. GPU is available, no
-permission fault; do not invent utilization-only training.
-Data endpoint/Paper owners remain unchanged and independent.
+Development screen passes, not promotion. Four updates/path overlaps are
+not convergence or independent samples; TRAIN/CURRENT policy proxy differs.
+Independent994e7402... checks aggregate kill/13 output hashes and stream
+structure, not private causal inputs, trajectory or clock reobservation.
+Native registry outcome covers terminal, not final parent publication.
+108 serial/full8 15319pass22skip344.49s/JUnit135afa0c...; Ruff/three Compose.
 
-Goal55 exact native cached future binary shadow016e67dc.../da6fbbad.../21.880s
-used zero extra fit/GPU/sealed spend. Original30.233/25.944s appointments remain
-failed/unrefunded. Custody0d67d3f7... checks14 pins, does not reopen a family.
-Future Oct12->Oct19 payoffs are not observed; forecast is not evaluation spend.
+ONE next Goal70 is CPU-only fixed799 same-f78 forecast, not a new GPU fit/
+family selection pass. Freeze model/source/context/clock/cost/mask contract
+before actual publication. Zero fit/sealed spend, existing Data/Paper owners
+continue independently. No fresh frozen GPU campaign yet.
+Original3aec guard retained after Goal68 synthetic+.4918% ONE sample;
+no additional benchmark allocation or utilization-only training.
+
+All preceding families, technical failures, source falsifiers and unrefunded
+debits remain in Git9060b0f, immutable A roots and the shared ledger/registry.
+Do not reopen old attempts by a source wrapper, new seed or changed name.
+Claude unavailable is not agreement or an operator hold.
 
 ## Closed Constraints
 
