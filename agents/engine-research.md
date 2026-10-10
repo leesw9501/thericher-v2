@@ -7,6 +7,20 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
+Goal56 preparation CLOSED47a190f8.../installed1fcab95d... . Oct12/19 endpoints
+remain not_observed; their Data owner does not pause research. Next fixed60
+payoff-aware family at A/research/kis-stock-payoff-aware-development-v1:
+proposal663f1406.../adapter9392e395...58 mock+28 independent/no scoped P1/P2;
+actual Torch/autograd/CPU/CUDA still untested. Draft913fd500... binds original
+128/OLD800/CURRENT113, signed five-OPEN net10bps target, purged427/610/799,
+three fits/36 fixed cells/one600s/no rescue. Payoff60 estimates a conditional
+mean; prefix_mean is the naive comparator, not an additional fitted model.
+OriginalTCN slots/no rerank/renorm/gain sizing; cash/TCN/binary60/prefix_mean/
+mechanical20-momentum controls and exact accounting. No allocation/fit yet.
+Breadth: signed-magnitude hypothesis, not another classifier architecture.
+Depth: owned prospective pair after Oct19; no foreground wait. Seen CURRENT
+development is not fresh alpha, Paper replacement or free holdout reuse.
+
 Goal55 forecast runtime COMPLETE016e67dc... at
 A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1. Retained
 CPU workerfc77e52a.../contract76329d09... paired originalTCN7999de27944... and

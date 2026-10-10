@@ -6,6 +6,22 @@ M = D:/market_data; A = D:/thericher-v2/model-artifacts.
 
 ## Current Capability And Next Work
 
+Goal56 endpoint preparation CLOSED47a190f8... at
+A/data/kis-stock-prospective-pair-owned-endpoints-v1. Jobab65b62b.../runner
+e6a3f4cc.../source445 freezes42 original peers d9d36341... before OPEN;
+actual freeze77044ebc...1.698s. Installed1fcab95d... owns Oct12/19 OPEN pages
+after CLOSE: Oct13/20 06:40..07:40 KST/PT5M repetition/IgnoreNew/5min limit.
+Cache M/us_equities/kis_paper_private/stock-shadow-endpoints/v1; entry/exit
+current pointers under job root. Each next_index0/status not_observed,
+accepted/failure pages0; remaining42 each, inherited measured1s gate,
+ETA unknown/next_due2026-10-12/19T21:40UTC/recovery waiting_owned_opportunity.
+No provider/credential call, future row, finality or complete pair yet.
+Full-peer raw->page->checkpoint->terminal->parent linkage and same-cursor
+recovery tested; no latest scan, survivor replacement or union.312 serial/
+35 installer/21 independent; full8 15274/22skip/345.63s, Ruff/three Compose.
+Claudeaa027035... unavailable, not agreement/hold. Original Paper untouched.
+Next signed60 research consumes original seven bindings, not this future cache.
+
 Goal54 research consumed EXACT seven OLD/CURRENT bindings; no refreshed snapshot
 union, value graft, new acquisition or Data qualification. Contracta835debd.../
 runtime58e867c5... preserve128 keys/prior61 and whole-date missing targets.
@@ -23,7 +39,7 @@ Endpoint proposald72bfb88... at
 A/data/kis-stock-prospective-pair-endpoint-preparation-v1 names exact Oct12/Oct19
 OPEN targets and one raw daily page per frozen peer after each completed CLOSE.
 Existing NAS scheduled forward scope is six names, not128 or these42 peers.
-No new endpoint job/next_due installed yet; no future rows/outcome inferred.
+Goal56 installed exact endpoint next_due above; no future rows/outcome inferred.
 Source endpoint helper54da0538.../test402e8084... released36 synthetic checks;
 parent owns actual peer extraction, runtime and finite installation. Storage
 and scheduler preparation have disjoint owners/roots; no provider calls yet.

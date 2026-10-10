@@ -2,89 +2,69 @@
 
 ## Objective
 
-Complete kis-stock-prospective-pair-owned-endpoints-v1: install one exact,
-resumable Data-owned collection path for the already-frozen 42-peer prospective
-shadow's Oct12 entry and Oct19 exit OPEN endpoints. Complete preparation and
-finite ownership now; future market rows/payoffs are not a completion condition.
-Preserve the original TCN Paper writer, snapshots and model bytes.
+Complete kis-stock-payoff-aware-development-v1: test one fixed60 signed-net-payoff
+regressor as an absolute participation mask on original TCN top10 slots. CPU
+smoke, three purged-prefix CUDA fits and36-cell replay share one inclusive600s
+family. Do not wait for prospective endpoints or replace the Paper model.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal55 forecast preparation CLOSED at
-A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1:
-closure016e67dc.../workerfc77e52a.../contract76329d09.../native da6fbbad.../
-jobc26e119a.../capture65543aa5... . Actual CPU prediction Oct9 23:03:14UTC,
-cached native validation21.880s<60 before Oct12 OPEN13:30UTC. Original128/f78/
-prior61 only:42 eligible/86 unavailable; TCN top10 original slots, seven kept
-and three cash. No inference rerun, fit, label, broker intent or Paper change.
-Both120s producer failures stay failed/unrefunded. Generic cached-caller P2s
-548d794e.../c7899a01... remain scoped; fixed closure reattests the exact chain
-and outer clock. Do not reuse that caller unchanged for new jobs.
-Goal55 verification437 shared serial/99 final derivative/5 cached; clean8
-15133pass22skip35warnings335.15s/JUnitb62d9a83...; Ruff/three sample Compose.
-Claudea5deef5f... unavailable, not agreement.
+Goal56 CLOSED47a190f8.../jobab65b62b.../installed1fcab95d... at
+A/data/kis-stock-prospective-pair-owned-endpoints-v1:42 peers/source445/two
+finite Data owners Oct13/20 06:40 KST, no future endpoint/credential/API used.
+Original Paper job2d616950... entry Oct12 22:30/close Oct13 04:50 KST unchanged.
+Full8 15274pass22skip35warnings345.63s/JUnit54e991f3...; serial312pass1skip/
+installer35/independent21, Ruff/three sample Compose pass.
+Goal54 six CUDA fits/30cells/302.407s CLOSED58e867c5...; binary60 seen follow-up
+only. OriginalTCN9de27944.../binary60-79936ed359b... immutable. Goal55 prospective
+mask42/seven kept/three cash is frozen before Oct12 OPEN; no future payoff.
+Source proposal663f1406.../adapter9392e395... at
+A/research/kis-stock-payoff-aware-development-preparation-v1:58 mock+28
+independent/no scoped P1/P2, actual Torch/autograd/CUDA untested. Draft913fd500...
+under the new family/contract-preparation is not an allocation.
 
-Frozen future pair is Oct12 OPEN->Oct19 OPEN, five official trading sessions,
-unchangedTCN/cash/mask, whole5/10/20bps costs, nearest-cent/delta fees, fixed
-1/100 slots under1/10 aggregate. No future outcome or independent alpha exists
-yet. Existing NAS refresh covers six names, not these42 peers.
-Source-only endpoint plan/helper under
-A/data/kis-stock-prospective-pair-endpoint-preparation-v1:
-plan d72bfb88.../helper54da0538.../tests402e8084.../36 synthetic checks.
-Original Paper job2d616950... owns entry Oct12 22:30 KST and close Oct13
-04:50 KST; installed517b3815... remains unchanged. No manual task launch,
-substitute order, new account query, budget/identity reset or TTL renewal.
+## Work
 
-## Ready Parallel Work
+Engine/parent: freeze original128/OLD800/CURRENT113/seven original bindings,
+prior61/60x2 ON-ID and causal cohort. No union/fresh endpoints/peer replacement.
+Signed nearest-cent OPEN(entry)->OPEN(entry+5) standalone net target10bps,
+f=10/20000 per side; not binary probability or marginal ledger utility.
+Purge entry+5<=427/610/799 before retained training values; prefix-only
+equal-date scaler/mean,120 complete dates. Fixed two-block native Mixer60,
+signed linear head/MSE, seed101/4epochs/batch512/Adam.001/clip1. CPU synthetic
+Torch smoke first, then exactly three CUDA market fits/no rescue.
 
-Data: extract the exact42 eligible peers and their original pinned NAS routes
-from the validated retained shadow/source bindings, without exposing identities
-or scores. Freeze exact session/query/source/parent/cache bindings. Fetch one
-raw daily page per peer after each session CLOSE, with BYMD20261012/20261019;
-no continuation, historical union or survivor-only subset. Preserve every
-missing peer and scoped failure. Store raw market pages only under a NEW M
-cache and source-safe receipts/control under the corresponding owned roots.
-One client/token per invocation, durable cursor, same-peer retry on shared
-yield, existing measured1s request gate/300s fresh-token-start guard. These
-guards never make the foreground orchestrator wait.
+Six policies: signed60>0, originalTCN, frozen binary60>0.5, naive prefix_mean>0,
+exact20-interval momentum>0, cash. Whole/fractional books and whole5/10/20bps
+bands=36 cells. Regressor estimates conditional mean; prefix_mean is the naive
+comparator, not a missing fourth model. OriginalTCN top10 fixed slots each1/100
+original total basis inside1/10 sleeve; no rerank/replacement/renorm/gain sizing.
+Freeze sources/predictions/masks before execution quotes. Exact delta SELL-before-
+BUY, nearest-cent/Fraction fees/marks/liquidation/stock-day accounting.
+CURRENT799 controls only; early OOF diagnostics never borrow final controls.
 
-Execution-assisted preparation: build and synthetic-test exactly two finite
-owned opportunities after the respective CLOSE, with bounded retries/expiry,
-IgnoreNew and a shared exclusive cache owner. Verify task definitions and
-canonical principal identity; never overwrite a conflicting task or silently
-expand a retired study. No account/order/live endpoint, Paper writer or
-existing schedule changes. Current authority already permits this private
-Paper market-data use and goal-owned scheduling.
+Steward: one family/trial lineage/exclusive GPU appointment after concrete
+sources freeze. One600s anchor includes preparation, CPU smoke, fits, replay,
+zero-fit cached verification, cleanup and observed post-return publication.
+No renewed phase floor, refund, sealed holdout or rescue. Ask Claude for concise
+falsification before reliance; unavailable is not agreement or a lane hold.
+Temporary independent source review tests failures without touching data,
+sources or Paper bank. Data/Execution owners continue unchanged: no manual task
+launch, broker/credential path, job/budget/identity reset or Paper replacement.
 
-Parent: integrate source/storage/reader/scheduler, freeze actual sources and
-runtime, verify immutable raw->page->cursor->outcome links, and install/read
-back only those owned opportunities. A source-only mock is not installation
-evidence. Enforce exact predeclared dates and full peer set in the reader,
-reject stale/hash/query/source mismatch, and distinguish callback entries from
-measured wire starts. Preserve next_due, known cooldowns and recovery cursor.
-Do not launch the future collection before its eligible session.
+## Completion / Kill
 
-Engine: disjoint source-only preparation for one fixed60 payoff-aware
-regression family on the existing seen development data. No actual fit, GPU
-appointment, holdout, new selection or broker input until its own later frozen
-company objective. Preparation must not wait for Oct19 market outcomes.
+Actual CPU/CUDA evidence or exact scoped runtime failure; three fits/36 cells
+accounted, source/input/model pins unchanged, children reaped/containers absent/
+GPU lease released. Same-runtime cached replay uses zero fits/inference.
+Strongest kill: primary whole10bps signed policy fails positive growth or strict
+utility dominance over five controls, exceeds originalTCN drawdown, changes
+availability/dates, violates causality/source/runtime/accounting or600s.
+Reject that development claim; preserve failures, no tuning/rescue. Seen CURRENT/
+non-PIT/raw/revised/action/finality-limited evidence is not independent alpha,
+replication, calibrated uncertainty, Paper qualification or live profit.
 
-## Completion And Continuation
-
-Exact frozen peer/source/session contract plus installed finite task definitions
-and source-safe independent readback, one replayable durable cursor per leg,
-strict offline result reader, and focused error/recovery tests. Missing future
-rows are expected now, not failed preparation or permission holds.
-
-Strongest kill: wrong peer or date, mutated input/source, raw-link mismatch,
-unowned concurrent writer, credential leakage, live/account/order route or
-actual scheduler conflict. Reject only that scoped path and continue ready
-work. Do not infer data finality/PIT, a fill, profit or a complete future pair.
-
-Ask Claude for a concise falsification challenge before relying on material
-recovery/scheduler changes; unavailable is not agreement or a global hold.
-Verify the changed-path serial group, clean8 authority, Ruff and all three
-sample-env Compose configurations at company integration. Refresh current
-stateboards/HANDOFF, commit/push, replace this with exactly ONE material next
-objective and continue. No foreground wait for the market or report platform.
+Verify changed-path serial, clean8 authority, Ruff and three sample-env Compose
+at integration. Refresh stateboards/HANDOFF, commit/push, replace this with ONE
+material next objective and continue. No Oct19 wait or utilization-only training.

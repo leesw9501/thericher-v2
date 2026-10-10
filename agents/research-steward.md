@@ -7,6 +7,13 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-10 KST)
 
+Goal56 Data preparation47a190f8.../jobab65b62b... installed two endpoints,
+zero fits/GPU/holdout. Goal57 draft913fd500... is source-only: signed60 three
+prefixes/36 cells/600s; no allocation/lease/registry edit. Concrete runtime pins
+await released code. Payoff60 estimates a conditional mean; its frozen prefix
+mean is the naive comparator, not a missing fourth fit. Keep original lineage
+and source limits; no Paper replacement or seen-data replication claim.
+
 Goal55 prospective shadow016e67dc... uses immutableTCN/Mixer60 numeric weights,
 zero fits/GPU allocation/sealed spend. Exact CPU workerfc77e52a... reconstructed
 nativecached da6fbbad.../capture65543aa5...21.880s<60; original120s dispatches
