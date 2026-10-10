@@ -14,6 +14,31 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Research Closure (2026-10-11 KST)
 
+Goal82 COMPLETE/current_input_and_finite_paper_preparation_only:
+A/research/kis-stock-five-session-paper-cohort-preparation-v1/integration-evidence.json
+8cd13af9.... Exact512 current input,21 prior Sep11..Oct9/five official Oct12..16
+clocks. Actual market-only707.150s/reaped/0active;512attempts/511accepted/
+one rate_limited/504full21/8empty/10584rows/246eligible. Manifest a0bb1864...,
+packed921380f5... under M/us_equities/kis_paper_private/stock-five-session-
+current512/v1/goal82-20261009/view. Old caches/empty identities unchanged.
+CPU d6 actuala945f504.../resultdc1b7cad.../4.200s worker, one inference/0fit/
+0broker, exact container absent. Finite metadata44925ed2.../36tests -> cohort
+387ee5f6.../first surviving original slot, original all-weight fee normalization,
+five clocks/fifth close-10m exit. No account/order/private bank/schedule change.
+Canonical exclusive-cohort projectionb22da30f.../47tests; Decimal P2 repaired
+d4f30a04.../24new tests, accumulated gross-fees convention, fills/cash unchanged.
+Independent lifecycle r3/112focused and actual195c3166... source/clock/DTO chain
+pass; no independent OS/broker proof. Claude current integration supports with
+limits; native d0d5a80e... vs Docker40ab5088... features differ on same bytes/
+eligibility, cause not localized. Host diagnosis31edbe57...; not bit-parity claim
+or Paper gate. Changed serial148/2.42s/fullclean8 15556pass22skip35warnings/
+368.13s/helper0/currenttempclean;1295 sourcepins9008bd10... match, JUnit
+A/verification/full8-20261011-g82/pytest.xml1cc8d2a9.../Ruff/three sample Compose.
+ONE next objective: kis-stock-five-session-canonical-paper-delivery-v1.
+Wire the exact finite cohort into canonical durable BUY/EXIT/recovery, preserve
+original shared10% basis and other owners. Prepared contract is not deployment,
+KIS submit/fill, model adoption, full-top10 replication or profitability evidence.
+
 Goal81 COMPLETE/engineering_inference_local_simulator_only:
 A/research/kis-stock-five-session-tree-inference-local-paper-v1/integration-evidence.json
 e8042245.... Lazy SDK five_session_tree.py2f64a238.../tests36; only own

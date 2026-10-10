@@ -194,7 +194,11 @@ class LocalPaperDecisionPnlSegment:
 
 @dataclass(frozen=True)
 class LocalPaperDecisionPnlTotal:
-    """FIFO realized PnL grouped by a decision in one explicit role."""
+    """FIFO realized PnL grouped by a decision in one explicit role.
+
+    Net is accumulated gross minus accumulated fees, not the sum of rounded
+    segment nets. Decimal rounding can make those two projections differ.
+    """
 
     decision_id: str
     closed_segment_count: int
@@ -226,7 +230,10 @@ class LocalPaperDecisionPnlTotal:
 
 @dataclass(frozen=True)
 class LocalPaperDecisionPairPnlTotal:
-    """FIFO realized PnL grouped by the entry and exit decision pair."""
+    """FIFO realized PnL grouped by the entry and exit decision pair.
+
+    Uses the same accumulated gross-minus-fees convention as role totals.
+    """
 
     entry_decision_id: str
     exit_decision_id: str
@@ -1056,21 +1063,18 @@ def _decision_pnl_totals(
     *,
     role: Literal["entry", "exit"],
 ) -> tuple[LocalPaperDecisionPnlTotal, ...]:
-    totals: dict[str, tuple[int, Decimal, Decimal, Decimal, Decimal]] = {}
+    totals: dict[str, tuple[int, Decimal, Decimal, Decimal]] = {}
     for segment in segments:
-        decision_id = (
-            segment.entry_decision_id if role == "entry" else segment.exit_decision_id
-        )
-        count, quantity, gross_pnl, fee_total, realized_after_cost_pnl = totals.get(
+        decision_id = segment.entry_decision_id if role == "entry" else segment.exit_decision_id
+        count, quantity, gross_pnl, fee_total = totals.get(
             decision_id,
-            (0, Decimal("0"), Decimal("0"), Decimal("0"), Decimal("0")),
+            (0, Decimal("0"), Decimal("0"), Decimal("0")),
         )
         totals[decision_id] = (
             count + 1,
             quantity + segment.quantity,
             gross_pnl + segment.gross_pnl,
             fee_total + segment.entry_fee + segment.exit_fee,
-            realized_after_cost_pnl + segment.realized_after_cost_pnl,
         )
     return tuple(
         LocalPaperDecisionPnlTotal(
@@ -1079,30 +1083,27 @@ def _decision_pnl_totals(
             closed_quantity=quantity,
             gross_pnl=gross_pnl,
             fee_total=fee_total,
-            realized_after_cost_pnl=realized_after_cost_pnl,
+            realized_after_cost_pnl=gross_pnl - fee_total,
         )
-        for decision_id, (count, quantity, gross_pnl, fee_total, realized_after_cost_pnl) in sorted(
-            totals.items()
-        )
+        for decision_id, (count, quantity, gross_pnl, fee_total) in sorted(totals.items())
     )
 
 
 def _decision_pair_pnl_totals(
     segments: tuple[LocalPaperDecisionPnlSegment, ...],
 ) -> tuple[LocalPaperDecisionPairPnlTotal, ...]:
-    totals: dict[tuple[str, str], tuple[int, Decimal, Decimal, Decimal, Decimal]] = {}
+    totals: dict[tuple[str, str], tuple[int, Decimal, Decimal, Decimal]] = {}
     for segment in segments:
         key = (segment.entry_decision_id, segment.exit_decision_id)
-        count, quantity, gross_pnl, fee_total, realized_after_cost_pnl = totals.get(
+        count, quantity, gross_pnl, fee_total = totals.get(
             key,
-            (0, Decimal("0"), Decimal("0"), Decimal("0"), Decimal("0")),
+            (0, Decimal("0"), Decimal("0"), Decimal("0")),
         )
         totals[key] = (
             count + 1,
             quantity + segment.quantity,
             gross_pnl + segment.gross_pnl,
             fee_total + segment.entry_fee + segment.exit_fee,
-            realized_after_cost_pnl + segment.realized_after_cost_pnl,
         )
     return tuple(
         LocalPaperDecisionPairPnlTotal(
@@ -1112,14 +1113,12 @@ def _decision_pair_pnl_totals(
             closed_quantity=quantity,
             gross_pnl=gross_pnl,
             fee_total=fee_total,
-            realized_after_cost_pnl=realized_after_cost_pnl,
+            realized_after_cost_pnl=gross_pnl - fee_total,
         )
         for (
             entry_decision_id,
             exit_decision_id,
-        ), (count, quantity, gross_pnl, fee_total, realized_after_cost_pnl) in sorted(
-            totals.items()
-        )
+        ), (count, quantity, gross_pnl, fee_total) in sorted(totals.items())
     )
 
 

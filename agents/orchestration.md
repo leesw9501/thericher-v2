@@ -2,47 +2,40 @@
 
 Current projection only; NEXT_CODEX_GOAL.md owns ONE company objective.
 History in Git/exact immutable evidence, not a second backlog.
+A=D:/thericher-v2/model-artifacts.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-No company block or foreground sleep. Goal79 bounded closuree0281290...:
-expert rejected, later input unavailable, not a dataset rejection.
-A=D:/thericher-v2/model-artifacts.
-Goal80 COMPLETEa94fc234...: fixed tree later confirmation passes7kills,
-not alpha/adoption. Data512 closed; exact CPU job and native trees reaped.
-Goal81 COMPLETEe8042245...: retained inference and synthetic simulator replay,
-actualbb651ae0.../5.191s/reaped,10 score+weight matches/94 local-only fills.
-ONE objective: kis-stock-five-session-paper-cohort-preparation-v1.
+No company block or foreground sleep. Goal82 preparation COMPLETE8cd13af9...:
+current512/10584rows/246eligible, finite CPU inference/typed cohort and repaired
+exclusive lifecycle/Decimal arithmetic. Not broker fills or profitability proof.
+ONE objective: kis-stock-five-session-canonical-paper-delivery-v1.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Goal81 closed; sole Git/runtime owner, next cohort preparation ready. No broker schedule changes. |
-| Verification | Parent / reaped | Changed72 PASS; full8 15449pass22skip367.69s/helper0/tempclean, Ruff/three sample Compose PASS. New next code needs fresh authority at integration, not every role handoff. |
-| Data | Bohr / ready | Builder92212813.../8tests released. Next current51221-prior/five-clock input; R3 cache unchanged, no active collector. |
-| Research | Chandrasekhar / ready | SDK2f64a238... released; next finite typed Paper exchange, no fit/new winner or model code in broker. |
-| Later confirmation | Complete / non-promoting | Result9901e7ce... all7kills pass; small postselected/raw-action seen sample, not untouched holdout or Paper adoption. |
-| Execution / Validation | Herschel / ready | Source217efbd5.../28tests, result6da8c703... complete. Next grouped Decimal P2 and exclusive cohort/fifth-exit contract, no actual broker calls. |
-| CPU integration | Parent / reaped | Goal81 exact d6 absent;10 bit-equal inference/94 synthetic fills/50 computed marks/10 restarts. Fees rounded0, not market/KIS fee/PnL proof. |
-| Discovery | Released / limited re-retrieval | Parent independently re-retrieved six exact TSMixer files/license; matching hashes, source only. TCN represented/TSMixer TensorFlow, no runtime switch/new queue. |
-| Direction | Claude / received | Goal81 nexta537fcc5... supports scoped five-session Paper preparation with limits; no authority/profit grant. |
-| GPU | Steward / free | Three TabM fits/804updates completed37.258s; lease released. Next useful current package is CPU tree, not GPU utilization filler. |
-| Data due | Existing finite owners | ab65b62b... Oct13/20 endpoints, next_due Oct12/19 21:40UTC unchanged. |
-| Paper due | Existing finite owners | Same2d616950 names/dates with b860Action; original rank1/basis/pending, gate keep/veto only. |
+| Git/integration | Parent | Goal82 closure/sole Git owner; next canonical worker and finite delivery, no policy approval hold. |
+| Verification | Parent / reaped | Changed148 PASS;1295pins9008bd10... unchanged, full8 15556pass22skip368.13s/helper0/tempclean; JUnit1cc8d2a9.../Ruff/three sample Compose. |
+| Data | Complete / standby | Exact current512 scope closed512attempts/511accepted/one rate_limited;504full21/8empty/10584rows; manifest a0bb1864.../packed921380f5...; no remaining pages or next_due. |
+| Engine | Released / ready metadata handoff | CPUactuala945f504.../resultdc1b7cad.../4.200s/fit0/broker0, container absent; DTO44925ed2... and cohort387ee5f6... exact actual clocks. |
+| Execution | Ready canonical integration | Pure lifecycleb22da30f.../47tests and Decimald4f30a04.../24newtests; exact pending/other owners preserved, fifth-session EXIT not day-flat. |
+| Validation | Released | Lifecycle r3/112focused plus actual195c3166... source/clock/DTO links pass; no actual private-bank/OS/broker proof. |
+| Direction | Claude / received | Current Goal82 integration supported-with-limits; next recovery/delivery challenge before reliance. No authority/profit grant. |
+| GPU | Steward / free | Three TabM fits/804updates completed37.258s earlier; lease released. Delivery is CPU/metadata work, no utilization filler or GPU authority hold. |
+| Data due | Existing finite owners | ab65 Oct13/20 endpoints, next_due Oct12/19 21:40UTC unchanged. |
+| Paper due | Existing finite owners | b860 original day-flat Oct12 22:30/Oct13 04:50KST, original rank1/basis/pending unchanged; not future submit/fill. |
 
 ## Bottleneck And Reversible Improvement
 
-R3 early-floor stop and closest1.25 spacing produced361accepted/0errors in
-486.783s, no redundant second page/cooldown. No provider threshold inference.
-Inference bridge completed. Next bottleneck is horizon/quantity custody: prepare
-one exclusive five-session Paper cohort instead of reusing day-flat exits or
-rerunning seen-model studies. Current512 refresh and typed/synthetic contracts
-are disjoint ready packages; no foreground session wait or GPU filler.
-Copy frozen file controls inside an existing readonly bind root before launch;
-do not nest a missing file target under a readonly parent. Used failed125 and
-original600s budget remain charged. Reuse exact passing repo authority only for
-unchanged code; new adapter tests/source receive a fresh full authority run.
-Used parent has exception-publication/name-reprobe P2s, not this actual failure.
-Repair only a fresh needed launcher with CID absence and categorical failure
-publication. Grouped fractional Decimal P2 is a separate ready Execution fix.
-No profitability approval gate or foreground wait.
-Existing owned Paper opportunity is not a submit/fill; next_due is unchanged.
+Current bottleneck is durable five-session Paper custody/delivery, not input,
+policy, market time or GPU authority. Reuse the validated finite actual exchange
+and canonical BUY/EXIT paths instead of model code in broker or a mixed-lot
+platform. Parent source delivery and disjoint Engine metadata/Execution worker
+packages can proceed now; independent review consumes frozen output only.
+Data/CPU/full authority are complete and reaped; no ready work waits on a timer.
+Native vs Docker feature hashes differ with identical bytes/eligibility;
+31edbe57... diagnosis localizes feature-stamp mismatch, not exact operation.
+Retain actual Docker exchange/limits, no bit-parity claim or new Paper gate.
+Fresh launchers catch durable failure publication and recheck exact CID absence;
+5 native-parent/6 CPU-owner mocks pass. Used prior sources stay immutable.
+Reuse passing authority only on identical source; a new shared runtime/control
+root receives fresh company verification. No per-handoff full-suite repetition.

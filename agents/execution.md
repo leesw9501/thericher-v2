@@ -20,12 +20,23 @@ A/execution/kis-stock-five-session-tree-inference-parity-v1. Actual CPU source-
 linked result:10 score/allocation matches,94 SYN-only accepted/fills/50 computed
 valuations/10 replay+restart checks. Not KIS fills, persisted marks or market PnL;
 all normalized-capital fees rounded0, analytical nonzero-fee tests separate.
-Known P2: grouped repeating-fraction Decimal sums may fail strict decision-total
-fee equality (local_paper.py); no whole-share/broker incident inferred.
-Next owns this focused numeric repair and exclusive five-session cohort entry/
-partial/unknown/fifth-exit/restart preparation. Reuse existing canonical budget,
-BUY and owned EXIT contracts; request ID alone cannot isolate mixed holdings.
-No actual private bank/account/order or existing schedule change in this prep.
+Goal82 grouped Decimal P2 fixed in sourced4f30a04.../24 new tests; grouped net
+is accumulated gross minus fees, not sum of rounded segment nets. Tiny Decimal
+association differences remain explicit; fill/cash/fee/risk semantics unchanged.
+Exclusive five-session projection and finite metadata adapter use canonical
+BUY/EXIT, exact original basis and native request identity;47 focused tests pass.
+Independent review found same-date five-window P2; strict distinct increasing
+New York dates now required, old failures retained. Reviewlifecycle-review-r3.json
+at A/execution/kis-stock-five-session-paper-cohort-preparation-v1/review supports
+with limits:112 focused passes including65 accounting/47 lifecycle, no broker
+or private-bank proof. Goal82 closure8cd13af9... and actual independent195c3166...
+verify current input/CPU/DTO/cohort387ee5f6... links. Current actual prepared
+contract preserves five official Oct12..16 clocks/fifth exit19:50UTC; no account,
+private bank/order/schedule change. Changed148/full15556pass22skip368.13s/
+helper0/currenttempclean/Ruff/three Compose passed. Native vs Docker feature
+hash difference stays measured limitation, not broker input reconstruction.
+Next objective kis-stock-five-session-canonical-paper-delivery-v1 owns durable
+canonical worker/finite delivery, never substitutes old b860 day-flat EXIT.
 
 ## Owned Paper Opportunity
 

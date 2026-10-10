@@ -2,7 +2,29 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-paper-cohort-preparation-v1.
+ONE objective: kis-stock-five-session-canonical-paper-delivery-v1.
+Goal82 COMPLETE8cd13af9...:
+D:/thericher-v2/model-artifacts/research/kis-stock-five-session-paper-cohort-preparation-v1/integration-evidence.json.
+Current512 market-only scope closed512attempts/511accepted/one rate_limited,
+504full21/8empty/10584rows/246eligible; native tree reaped707.150s/0active.
+Manifest a0bb1864.../packed921380f5... in D:/market_data/us_equities/
+kis_paper_private/stock-five-session-current512/v1/goal82-20261009/view.
+Frozen CPUactuala945f504.../resultdc1b7cad... completes one inference/0fit/
+0broker in4.200s; exact container absent. DTO44925ed2... canonical prepared
+cohort387ee5f6... binds first original nonzero slot, all-weight normalization,
+actual as-of and official Oct12..16 clocks; exitOct16 19:50UTC/Oct17 04:50KST.
+Pure lifecycleb22da30f.../47tests, Decimalrepaird4f30a04.../24newtests;
+independent112focused and actual195c3166... metadata chain pass. No actual
+account/order/private bank/schedule change or KIS fill in Goal82. Native and
+Docker features differ, same input/source/eligibility; cause not localized,
+not cross-runtime bit parity or a new Paper gate. Claude supports with limits.
+Changed serial148/2.42s/fullclean8 15556pass22skip35warnings368.13s/helper0/
+currenttempclean;1295 sourcepins9008bd10... match, JUnit D:/thericher-v2/
+model-artifacts/verification/full8-20261011-g82/pytest.xml1cc8d2a9....
+Ruff/three sample Compose pass; docs/external-only changes reuse exact authority.
+Next: durable canonical worker and finite Paper delivery, not a model refit.
+Original shared basis/other owners/unknown SPY/exact pending/b860/ab65 unchanged.
+
 Goal81 COMPLETEe8042245...:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-tree-inference-local-paper-v1/integration-evidence.json
 New lazy adapter2f64a238.../36tests, causal builder92212813.../8tests and
@@ -18,12 +40,9 @@ full8-20261011-g81/pytest.xml8c833d37.... No repeated doc-only full suite.
 Independent6da8c703.../fdd92a12... verifies source-linked metadata, not OS/
 raw-price replay. Claude nexta537fcc5... supported-with-limits.
 
-Prepare exact current512/21prior and forthcoming five NYSE clocks, finite typed
-model->Execution exposure/identity exchange, exclusive cohort quantity/partial/
-unknown/fifth-exit/restart. Fix grouped Decimal P2 in an isolated package.
-Original shared10% basis and other owners/pending unchanged. No broker calls or
-existing schedule changes in this preparation; later scoped Paper is already
-authorized, never a model-profitability approval gate. No new fit/GPU filler.
+Current512/finite exchange/exclusive-cohort synthetic preparation and Decimal
+repair are complete as Goal82 above. Goal81 P2 descriptions below are historical,
+not the current repaired source. No new fit/GPU filler for delivery work.
 Goal80 COMPLETE/non_promoting_later_confirmation_only:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-tree-later-confirmation-v1/integration-evidence.json
 a94fc234.... One CPU tree/675complete train dates/all10cohorts/50marks/18tables;

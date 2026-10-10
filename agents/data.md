@@ -4,6 +4,34 @@ Current projection 2026-10-11 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
 owns ONE goal. History in Git9ae7eec and immutable receipts, not current jobs.
 M=D:/market_data; A=D:/thericher-v2/model-artifacts.
 
+## Current Goal82 Input
+
+Parent-owned current512 market-only acquisition completed; source release
+A/data/kis-stock-five-session-current512-input-preparation-v1/source-release.json
+c1cdbcb7.../plan32745c89.... Exact original128-first512; prior21 Sep11..Oct9,
+future official Oct12..16 clocks, no future prices or labels. Output/cursor:
+M/us_equities/kis_paper_private/stock-five-session-current512/v1/goal82-20261009/
+cursor.json. Exact512 cursor closed:512attempts/511accepted/one rate_limited,
+504 floor-complete/seven genuine source-exhausted. View10584rows/504full21/
+0sparse/8empty,246 eligible/supported; empty identities stay, no replacement.
+Manifest a0bb1864.../packed921380f5..., parent707.150s/direct6f71777e...,
+all six native processes reaped/0active, peak1754296320bytes<4GiB observed.
+Closest delegate gap1.250026s; shared1s/300s token-start guards unchanged.
+Remaining0, remaining pages0, next_due null, recovery closed_requested_scope.
+Completed input serialization is not PIT/provider-finality or model profit proof.
+Native outer4GiB job before resume,900s worker/1200s whole bound; no account,
+order/live/old task, raw rows or credentials output. Old caches unchanged.
+Final source16 focused + two slow durable tests on mechanically equivalent
+pre-receipt-path bytes; not a final-byte full test claim. Parent runtime owns
+exact direct/worker/runtime readback. Standby Data role released its frozen source.
+Goal82 closure8cd13af9... links exact current input through actual CPU/DTO.
+Independent actual195c3166... validates exact source/plan/capture/clock/count
+links, not raw-value replay or OS proof. Host feature diagnosis31edbe57...
+reproduces native digest; Docker feature/frame digest differs with same source,
+input bytes and eligibility, cause unlocalized. No provider finality or research
+gate inferred. Data current package closed; next canonical Paper delivery does
+not need another current512 refetch, cache rewrite or future price invention.
+
 ## Current Numeric Package
 
 A/data/kis-stock-broad512-metadata-streaming-v1 actual512 metadata binding

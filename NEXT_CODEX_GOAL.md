@@ -2,71 +2,63 @@
 
 ## Objective
 
-Complete kis-stock-five-session-paper-cohort-preparation-v1: prepare one exact
-five-session tree Paper cohort from current512 input and an owned inventory
-lifecycle, without replacing the existing day-flat Paper opportunities.
+Complete kis-stock-five-session-canonical-paper-delivery-v1: connect the exact
+prepared current tree cohort to durable canonical KIS Paper BUY, five-session
+ownership and owned EXIT/recovery, and deliver its finite owned opportunities.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal81 closure A/research/kis-stock-five-session-tree-inference-local-paper-v1/
-integration-evidence.json e8042245...: exact retained teacher inference,
-10 score/allocation matches and94 synthetic local simulator fills/restarts.
-Engineering parity only; all normalized-capital fees rounded0, not KIS fills,
-new profitability evidence or model adoption. Goal80 tiny later confirmation
-and all raw-action/nonTR/currentlisting/nonPIT/revision limitations remain.
+Goal82 closure A/research/kis-stock-five-session-paper-cohort-preparation-v1/
+integration-evidence.json8cd13af9.... Exact resultdc1b7cad.../cohort387ee5f6...
+bind current512 manifest a0bb1864..., own teacher, first surviving original slot,
+actual inference and official Oct12..16 clocks. One-slot experimental pilot,
+not full-top10 replication, adopted profitability or future fills. Native and
+Docker feature stamps differ on same source/input/eligibility; retain the actual
+Docker exchange, not a host recomputation or a new permission gate.
 
 ## Parallel Packages
 
-Data owns exact512 original128-first identities,21 completed prior sessions
-ending2026-10-09 and five forthcoming official NYSE clocks for the Oct12 cohort.
-Extend the old Oct7 calendar boundary using the existing pinned calendar library.
-Prefer retained data; if current rows are absent, use one selective standing-
-authorized KIS Paper MARKET-only client/durable cursor in a bounded fresh scope.
-Keep1s shared market gate/300s fresh-token starts and measured closest1.25
-spacing until new evidence recalibrates them. Record actual capture/inference
-availability, sparse/empty slots and counts, never invent future rows/finality.
-No account/order/live/old-task invocation or rewriting completed caches.
+Execution owns the smallest canonical worker and durable cohort custody.
+Consume byte-pinned finite DTO only; no pickle/numerical/model code in broker.
+Reuse existing stock BUY/EXIT/reserve/execute/cancel/reconcile and private bank
+locking, original shared10% basis and other-owner reservations. No new broker
+platform, substitute slot, duplicate reservation, budget/TTL/identity reset,
+foreign holding adoption or mixed-lot ledger. Persist cohort/state references
+before side effects. Reattach exact entry/exit before new work on every restart.
+Days1-4 hold; fifth official close-10m owns EXIT. Stale/no-intent research input
+cannot erase owned recovery. Unknown outcomes reconcile, never resubmit blindly.
 
-Engine owns a small finite model-to-Execution decision exchange, not training.
-Same ca6b36d1... teacher/2ce286ee... metadata and canonical21/20x5 features.
-No pickle/sklearn/model code in broker. Preserve source/input/teacher/frame/
-actual inference as-of and five clocks. The pilot uses only the FIRST surviving
-nonzero ORIGINAL slot, frozen before current outcomes; no substitute if missing,
-conflicted or capacity-zero. Explicitly map cohort-relative weight through
-C=.10*ORIGINAL shared basis and N=C/(1+.0005*sum(all frozen weights)); target
-exposure=(N/B)*slot_weight, whole-share floor leaves cash. This is a one-slot
-experimental pilot, not full analytical top10 replication or a performance claim.
-No refit, new threshold/window/seed, learned sizing or GPU utilization filler.
+Engine owns strict finite exchange/serializer/import-isolation and source links,
+not a refit or broker sizing change. Preserve frozen .10*w/(1+.0005*sum(weights))
+target; canonical whole-share flooring/current funds may yield scoped no-intent.
+Do not multiply10% again or rerank after a capacity/conflict failure.
 
-Execution owns exact cohort/entry-fill/remaining-quantity custody and fifth-
-session exit preparation using existing shared budget, BUY and owned EXIT paths.
-Start with ONE explicitly exclusive instrument cohort; no mixed-strategy lot
-platform. If existing instrument ownership cannot prove exact cohort isolation,
-return a scoped technical no-intent, never sell a whole foreign/mixed owner.
-Preserve all original shared10% basis/other owners/unknown SPY/pending identity.
-Input unavailable must not erase an owned EXIT or recovery. Persist identity
-before effects; order TTL is not holding duration. Synthetic tests cover partial
-fill/unknown submit/restart, days1-4 no exit, fifth official session/holiday/DST
-exit, no duplicate reservations and no other-owner quantity sold.
-Independently fix the known grouped fractional Decimal P2 in local-paper totals
-without changing fill/risk/broker semantics; focused nonzero-fee regression first.
+Parent owns coherent runtime/source delivery and finite goal-owned opportunities.
+Preserve existing b860 day-flat cohort and ab65 Data jobs. New five-session job
+must use the same canonical private bank/account route and concurrency owner,
+not reuse b860's day-one exit or mutate used historical source. Use fresh source
+for changed paths, exact CID cleanup/observed absence, bounded failure publication.
+Review every canonical consumer before a shared-root schema change; avoid one.
+Installed clocks/Actions are delivery evidence, not submission/fill/owned-flat.
+Temporary Validation independently tests fixed DTO/partial/unknown/restart/
+same-instrument conflict/fifth-session EXIT and reviews frozen delivery.
+Data is standby: current input complete, no redundant fetch or future row.
+Claude concise falsification-first challenge before material recovery/delivery.
 
-Parent integrates shared contracts, narrow bounded CPU runtime and evidence.
-Fix the prior launcher exception-publication and CID-reprobe P2s only in fresh
-source if a new actual launcher is needed; used Goal81 source stays immutable.
-Temporary Validation reviews frozen entry/exit/sizing independently. Claude
-next-direction a537fcc5... supported-with-limits; no authority/profit grant.
+## Authority, Completion And Kill Test
 
-## Scope And Completion
+KIS_PAPER_* selective credential use, account/market reads, virtual orders and
+finite goal-owned scheduling are standing-approved. Use only named owned paths;
+never generic dotenv/KIS_LIVE_* or output private state, prices, amounts, account/
+order identifiers, raw broker bodies or secrets. Live/paid/unclear rights/public
+exposure/major runtime replacement remain reserved. D:15% floor; no GPU filler.
 
-No actual broker account/order call, private bank read or schedule expansion in
-this preparation. Existing b860 Oct12/13 Paper and ab65 Oct13/20 Data opportunities
-continue unchanged. Market-only current Data calls are approved as above;
-never read KIS_LIVE_*, generic dotenv or expose credentials/raw rows/amounts.
-Live/paid/unclear rights/public exposure/major runtime replacement remain reserved.
-
-Complete current input or exact bounded unavailable evidence, finite typed exchange,
-exclusive-cohort synthetic lifecycle and Decimal regression. Strongest kill:
-partial/unknown plus another owner of the same symbol must not duplicate BUY,
-sell foreign inventory or exit days1-4. No global permission or profit gate.
-New tracked code requires changed-path/full authority, Ruff/three sample Compose.
-Commit/push, refresh stateboards and exactly one next material objective, continue.
+Complete fixed worker, exact durable identity/quantity custody, synthetic canonical
+recovery tests, coherent pinned runtime and finite opportunity delivery/readback
+or concrete scoped technical unavailable result. Do not call a future runtime
+fill/closure complete merely because delivery succeeds. Strongest kill: partial
+or unknown entry plus another owner must never duplicate BUY, sell foreign qty,
+exit days1-4 or lose the owned fifth-session recovery after missing model input.
+Run changed-path/company verification when required; reuse exact passing Goal82
+source authority only if tracked runtime/control roots are unchanged. Verify,
+commit/push, refresh stateboards and exactly one material next objective; continue
+ready independent work rather than foreground-waiting for the market.
