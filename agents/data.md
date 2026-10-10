@@ -54,6 +54,13 @@ read. Native canonical typed feature reconstruction is required; no translation
 of Goal66 Score35 objects. Future Oct12OPEN->Oct19OPEN pair remains unobserved.
 The two Data finite owners and their owned next_due are unchanged. Independent
 CVaR uses only the already frozen trio; no acquisition or dataset union here.
+Goal71 actual context probe restored scoped /market + separate /reference and
+loaded128 identities/113 sessions in34.1036s. Original reader and f78 bytes
+unchanged. Chronos5c66ca61... completed42-peer CUDA forecast196cf462...;
+CVaR30cells completed/rejected on trio4a25284d... . Neither result observes a
+future target, provider finality, PIT vintage, action adjustment or new data.
+Exact evidence A/research/kis-engine-selection-allocation-batch-v1; gate root
+failure94b3d45c... is technical, not a dataset rejection or acquisition hold.
 Closed research history remains in Git9060b0f and immutable evidence roots.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;

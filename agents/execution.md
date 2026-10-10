@@ -52,10 +52,15 @@ Goal70 CLOSED/no_forecast/febcfd1d...; exact precontract failureef04cbb1...
 at A/bf/196931c7f0ce400db37c303f6a4f2f75. Decoder, not broker/model failure.
 No forecast or contract; null terminal counters are preserved. Original
 appointment closed/unrefunded, no private execution or Paper state changed.
-Goal71 research batch has fixed799 CPU/Chronos GPU future forecasts and an
-independent CVaR screen, no fitting/future quote/credential/broker calls.
-Same f78/prior61/128/42/TCNtop10/.01 gate masks; original Paper remains
-TCNrank1/.01, not analytical top10, Chronos or CVaR.
+Goal71 gate94b3d45c... failed root binding before inference; original appointment
+closed. Chronos5c66ca61... completed two CUDA calls/42-peer forecast196cf462...
+in166.177072s,0fits/target/credential/broker calls. CVaR30cells completed/rejected
+in23.520869s; its analytical risk cap is NOT the Paper10%-of-original-basis.
+Scoped /market + separate /reference repairs research context only; original
+reader/native_session preserved. Neither result changes broker routing,
+custody, sizing, schedule, model or live authority. Original Paper remains
+TCNrank1/.01, not analytical top10, Chronos or CVaR; future quote/fill/net-PnL
+remain unobserved. Fixed799 scoped-source preparation is undeployed.
 Retained binary/signed/conjunction forecasts preserve distinct as_of values.
 Source-only typed maskb5237628.../43 tests/six independent checks remains
 undeployed; no future result or Data qualification follows from its existence.
@@ -65,7 +70,7 @@ never translated from an older Score35 namespace.
 Dataab65b62b... still owns42-peer Oct13/20 endpoint observations. No manual
 launch or broker call is part of this research work. Closed research/debits and
 technical recovery history remain in Git9060b0f and immutable external roots.
-Goal70 108 serial/full8 15319pass22skip338.72s/JUnit5b38b828.../Ruff/three Compose.
+Goal71 24 serial/full8 15343pass22skip347.86s/JUnite54947fb.../Ruff/three Compose.
 Existing Paper owners, model, shared basis and exact pending identities remain.
 
 ## Private State And Exact Recovery

@@ -5,37 +5,44 @@ History remains in Git and immutable external evidence.
 
 ## Ready / Owned / Due (2026-10-10 KST)
 
-No company block or foreground sleep. Goal69 is integrated; Goal70 closed with
-a precontract decoder failure, not a forecast or model verdict. ONE Goal71 is
-a bounded parallel selection/allocation batch after real metadata checks.
-Independent finite Data/Paper opportunities remain owned and unchanged.
+No company block or foreground sleep. Goal71 integrated72357078...; ONE Goal72
+restores fixed799's first valid forecast with proven scoped roots. Fixed gate
+failed before inference; Chronos2 completed on CUDA, CVaR completed/rejected.
+Independent finite
+Data/Paper opportunities remain owned and unchanged.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Goal70 closurefebcfd1d.../no_forecast; parent owns integration. Used sources/failures/debits immutable. |
-| Verification | Parent / reaped | Goal70 108 serial1.65s/full8 15319pass22skip338.72s/15341collected/helper0/JUnit5b38b828...; Ruff/three sample Compose pass. |
-| GPU/custody | Parent / free | Goal69 actual1241ae8d.../contractb5582084...: CPU toy plus two CUDA fits/two OLD inference calls/30 cells,199.987352s<60008:44:56.716382UTC; reaped/absent/released. Goal70 CPU-only, no new GPU allocation. |
+| Git/integration | Parent | Goal71 closure72357078...; parent owns integration and Goal72 first actual. Used sources/failures/debits immutable. |
+| Verification | Parent / reaped | Goal71 24 serial3.63s/full8 15343pass22skip347.86s/15365collected/helper0/JUnite54947fb...; Ruff/three sample Compose pass. |
+| GPU/custody | Parent / free | Chronos actual5c66ca61.../ae933e4c...: one load/two CUDA calls/42 peers,0fits/targets/broker,166.177072s<240 at10:46:40.360392UTC; reaped/absent/released/unchanged. No fresh GPU campaign allocated. |
 | Actor/reward | Released / independently checked | Actor1e13ca1f.../rewardd9557b61...;27 supplied+12 independent CPU checks, basis repair15 pass. Review scope is CPU; actual GPU evidence above. |
 | OLD causal inputs | Released / independently checked | Fresh adapterR2ceed66f9... fixes final deadline check;37 supplied/independent pass, original e0ff failure preserved. Exact427/610 only. |
 | Native runtime | Released / independently checked | Sourcecdee3520.../25 tests; James8 handshake8b3e319e.../Singer12 protocol70484f94... . Exact actual pointer is A/bg/1241ae8d162c411fb9443739e011ed25/actual-invocation.json, not the metadata root. |
 | Replay | Released / independently checked | Worker006490d1.../24 supplied+12 independent checks, no second replay implementation. Prior source failures preserved. |
 | Actual result | Released / independently checked | Review994e7402.../20 checks passes aggregate development kill, not private causal rows/trajectory/clock reobservation. No alpha or Paper replacement. |
 | Forward interfaces | Released / independently checked | Helperd954ad4d.../input7068bdfa...;12+6 and10+6 supplied/independent manufactured checks. Exact799/f78/prior61/canonical735; no actual forecast yet. |
-| Forward runtime | Lagrange / fresh decoder; Euclid / review | Used626482f3... failed hash-valid noncanonical metadata before contract; immutable ef04cbb1.../0.133018s. Fresh source only; real metadata shape checks allowed with mocked writes, no rows/models. Original appointment closed, no clock reset/refund. |
-| GPU-ready preparation | Singer / next assignment | Chronos proposalcfac1567... fixes existing isolated checkpoint/context; first frozen GPU contract not yet allocated. No CPU-screen dependency. |
-| Allocation preparation | Copernicus / source; James / independent review | CVaR148-line solverf505c92c.../8+5 host HiGHS checks/review8c04aee2...; no native/PnL/actual result yet. Existing trio/replay/cap reusable; no new ledger. |
+| Forward runtime | Parent / Goal72; source released | Goal71 exact94b3d45c.../1c375a63... failed75.418793s before inference at reader488/path_invalid. Closed/unrefunded; reviewd434fc79... . Fresh scoped callerbdf6c9b2.../entryf6f664e5.../8 checks ready only; no new allocation yet. |
+| Chronos result | Parent / complete; Validation / released | Contract3e80925b.../forecast196cf462... binds existing checkpoint, actual origin and isolated32+10/h6. Cached0extra. Source20+independent6; actual6 review7af808c0... . No future return or Paper claim. |
+| Allocation result | Parent / complete; James / review released | Contractc34547bf.../parentac7680e6.../30cells/23.520869s. CVaR rejected; pure24+independent6, native8 and actual5 checks. Review4e37d930...; no price replay/OS cleanup proof. |
 | Data endpoints | Existing finite owners | Jobab65b62b.../42 peers, Oct13/20 06:40..07:40KST; last03:56:02UTC Ready/enabled. Collection not_observed; no manual launch. |
 | Original Paper | Existing finite owners | Job2d616950... entryOct12 22:30/closeOct13 04:50KST; no new fill. Budget/identities/model unchanged. |
 | Claude | Parent / unavailable | Direction challengee6dc130d... one source prompt/auth_unavailable/reaped, verdictnull/agreementfalse. No unchanged auth retry/lane hold. |
 
 ## Bottleneck And Reversible Improvement
 
-Real retained metadata serialization was the measured Goal70 bottleneck:
-manufactured34+6 checks passed but the actual precontract decoder failed.
-Use a hash-first structural metadata probe with mocked writes before freezing
-the next scientific contract; source-safe metadata is not a forbidden raw row.
-Do not turn this failure into a data/model verdict, approval hold, retry timer
-or implicit appointment refund. New objective owns distinct bounded contracts.
+Actual root binding, not data/model quality, was the Goal71 bottleneck:
+reader488 requires the exact cache mounted at /market. Corrected scoped cache
+and separate /reference loaded128 identities/113 sessions in34.1036s without
+models/inference/GPU. Exact capability evidence is at
+A/research/kis-engine-selection-allocation-batch-v1/context-capability-evidence.json.
+Keep original reader/native_session; reuse their proven root mapping. Test real
+metadata plus full source-map composition before a scientific dispatch, not
+manufactured DTOs alone. CVaR needed one hash-checked historical producer overlay
+and three producer scripts in its separate archive; shared repo stayed unchanged.
+Run CPU studies, GPU inference and isolated regression checks concurrently when
+their roots/resources do not conflict. Closed failures are not model verdicts,
+approval holds, silent retries or refunded appointments.
 Goal69 source preparation/review materially exceeded its199.99s actual
 appointment. Original guard remains default; no additional benchmark priority.
 Next useful action is a fixed pre-target forecast, not outcome-informed refitting.

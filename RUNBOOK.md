@@ -2,31 +2,47 @@
 
 ## Current Research Dispatch
 
-Goal70 CLOSED/no_forecast/febcfd1d...:
-D:/thericher-v2/model-artifacts/research/kis-stock-exact-book-gate-forward-shadow-v1/integration-evidence.json.
-Exact failure D:/thericher-v2/model-artifacts/bf/196931c7f0ce400db37c303f6a4f2f75/actual-invocation-failed.json
-ef04cbb1.../0.133018s/2026-10-10T09:51:13.463083UTC/exit1.
-Before contract/prepare, hash-valid retained f78 metadata was rejected by a
-canonical writer decoder. No forecast, model rejection or data-quality verdict.
-Counts are retained null, not converted to observed zeros. Exact-label container
-inventory empty09:56:27UTC; root only anchor/failure. No whole-host/full-input
-custody claim. Used626482f3.../41161c3d.../5768ca82... stay immutable.
-Original appointment closed/unrefunded; never replay it or reset its clock.
-Source34+independent6/c8416350... missed actual metadata serialization.
-108 serial1.65s/full clean8 15319pass22skip35warnings338.72s/15341collected,
-helper0/reaped/JUnit5b38b828... at
-D:/thericher-v2/model-artifacts/verification/full8-20261010-g70/pytest.xml;
-Ruff/three sample-env Compose pass. No documentation-only full rerun.
+Goal71 COMPLETE_WITH_SCOPED_GATE_FAILURE/72357078...:
+D:/thericher-v2/model-artifacts/research/kis-engine-selection-allocation-batch-v1/integration-evidence.json.
+Gate94b3d45c.../1c375a63... failed75.418793s before inference at reader488;
+original appointment closed/unrefunded, not a model verdict. Goal70 precontract
+failureef04cbb1... remains immutable. Never replay either used driver.
+Original context capabilityd808605f... loaded128 identities/113 sessions in
+34.1036s with exact current cache at /market and separate /reference; original
+reader/native_session/raw/reference untouched. Future descriptors are cache-
+relative MARKET/master-relative REFERENCE, both context paths empty.
 
-ONE Goal71 selection/allocation batch uses fresh metadata decoder source and
-separately declared first frozen gateCPU240/ChronosGPU240 forecasts plus
-CVaRCPU300 development screen. Source-safe exact retained metadata shapes may
-be tested before scientific dispatch with writes mocked; never print rows,
-predictions, model bodies or credentials. New appointments do not refund or
-retroactively qualify Goal70. Existing Data/Paper owners remain unchanged.
-Chronos proposalcfac1567.../CVaR solverf505c92c... and13 supplied/independent
-solver tests are preparation, not actual outcomes. Follow current next goal,
-not superseded historical "ONE next" paragraphs below.
+Chronos exact D:/thericher-v2/model-artifacts/bf/5c66ca61864b48fcb2ace2ed54520c64/actual-invocation.json
+ae933e4c.../contract3e80925b.../forecast196cf462...: one CUDA load/two isolated
+calls/42 peers,0fits/targets/broker/cached-extra. Native164.598352s precedes
+outer save/readback166.177072s10:46:40.360392UTC<240; excludes future stdout/
+integration. Reaped/absent/lease released/unchanged. Actual6-link review7af808c0...
+binds five outputs/peer/clocks/median/slots, not private causal data/OS-clock/
+independent cleanup proof. Existing checkpoint/corpus limitations unchanged;
+forecast is not future return, alpha or Paper replacement.
+
+CVaR exact D:/thericher-v2/model-artifacts/research/kis-cross-asset-cvar-development-v1:
+contractc34547bf.../parentac7680e6.../worker5798bd12.../30cells completed/rejected
+in23.520869s10:40:28.994553UTC; cached exact economics,0fits/inference/GPU/provider.
+Pure24+6/native8/actual5 review4e37d930...;454 frozen source hashes/grid/
+continuous252+437 marks/12+21 monthly entries, not independent price replay.
+Main10bps EACH SIDE utility fails minvar in2024 and all three controls later.
+Approximately13 tail scenarios/seen raw non-PIT/non-TR/ideal fractional fills.
+Metadata freeze faults/used sources retained; separate archive overlays exact
+historical producer71b5c203... and includes three producer scripts. Shared repo
+was not reverted; input commitment and original archive unchanged.
+
+Goal71 24 serial3.63s/full clean8 15343pass22skip35warnings347.86s/
+15365collected/helper0/reaped/JUnite54947fb... at
+D:/thericher-v2/model-artifacts/verification/full8-20261010-g71/pytest.xml.
+Ruff/default/research/accounting sample Compose pass. CPU/GPU/isolated regression
+ran concurrently; no documentation-only full-suite rerun.
+ONE Goal72 restores fixed799's first valid same-f78 forecast via proven scoped
+roots. Source callerbdf6c9b2.../entryf6f664e5.../8 checks is preparation only.
+Declare one distinct CPU240 appointment; no old refund/reset, fit, target,
+broker call, source union or Paper change. Existing Data/Paper next_due stays
+owned; do not foreground-wait. Follow current NEXT_CODEX_GOAL.md rather than
+superseded historical dispatch paragraphs below.
 
 ## Current Owned Opportunities And Research
 

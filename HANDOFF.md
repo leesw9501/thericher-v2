@@ -67,15 +67,51 @@ not whole-host custody, full input audit or successful inference/reaping proof.
 Original appointment closed, no reset/refund. Source34+independent6 passed
 but manufactured metadata missed real serialization; retain their limitations.
 
-ONE next Goal71 is a bounded selection/allocation research batch. Repair only
-retained-metadata decoding in fresh source before separately declared first
-frozen gate/Chronos forecasts, plus one independent CVaR allocation screen.
-Read exact source-safe metadata shapes during preparation with mocked writes,
-never rows/model bodies/credentials. Future forecasts are fixed weights, not
-training, target reads, source unions or Paper replacement. Two resources may
-work independently; do not hold GPU for the CPU allocation comparison.
-CVaR sourcef505c92c.../8 supplied+5 independent checks8c04aee2... and Chronos
-proposalcfac1567... are preparation only, not actual results or allocations.
+Goal71 COMPLETE_WITH_SCOPED_GATE_FAILURE/72357078... at
+A/research/kis-engine-selection-allocation-batch-v1/integration-evidence.json.
+Gate attempt94b3d45c.../1c375a63... failed75.418793s before inference at
+reader488/path_invalid; stored null terminal counts remain null, prior native
+record0inference. Closed/unrefunded, not a model verdict or repeat opportunity.
+Reviewd434fc79... has4 source checks/38 exact failure predicates.
+Scoped /market + separate /reference restores original128 identities/113
+sessions in34.1036s without model/GPU calls; reader/native_session unchanged.
+Evidence A/research/kis-engine-selection-allocation-batch-v1/context-capability-evidence.json
+d808605f... . Original f78/raw/reference bytes and failed source are preserved.
+
+Chronos actual A/bf/5c66ca61864b48fcb2ace2ed54520c64/actual-invocation.json
+ae933e4c.../contract3e80925b.../forecast196cf462...: one CUDA model load,
+two isolated32+10 calls/42 peers,0fits/targets/broker/cached-extra. Original
+61 OPENs->60 log returns, h6/sum marginal median[1:6]; actual availability
+precedes actual prediction origin, not a backdated nominal CLOSE. Native
+return164.598352s; outer save/readback166.177072s<240 at10:46:40.360392UTC,
+excluding future stdout/integration. Reaped/absent/lease released/unchanged.
+Checkpoint95a9710.../ddcda3c... installed unchanged; corpus period/instruments
+not_disclosed and possible earlier overlap remain. Source20+independent6
+checks; actual-link review7af808c0.../6 predicates independently binds five
+outputs/peer/clocks/median/slots in process, not causal-data/OS-clock/cleanup
+proof. Forecast is not future return,
+alpha, independent holdout, ensemble promotion or Paper replacement.
+
+CVaR exact A/research/kis-cross-asset-cvar-development-v1:
+contractc34547bf.../parentac7680e6.../worker5798bd12...,30cells complete,
+23.520869s10:40:28.994553UTC; cached exact economics/0fit-inference-GPU-provider,
+reaped/absent/source-input unchanged. Main10bps EACH SIDE growth17.4024%/10.5714%
+was positive, but utility lost to minvar in2024 and all three risky controls in
+2025-Sep2026; frozen criterion REJECTED. Pure24+independent6/native8/actual5
+checks/review4e37d930...; actual review rehashes454 source files and aggregate
+grid/carry links, not independent price replay or OS cleanup. About13 tail
+scenarios/seen/raw/non-PIT/non-TR/revised/ideal fractional fills remain limits.
+Metadata freeze first omitted three producer scripts and encountered one
+changed producer; original failures/used preparation sources preserved.
+Separate archive uses exact71b5c203... producer, never shared-repo rollback.
+
+Goal71 changed-path24 pass3.63s; full clean8 15343pass22skip35warnings347.86s/
+15365collected/helper0/reaped; JUnite54947fb... at
+A/verification/full8-20261010-g71/pytest.xml. Ruff/three sample Compose pass.
+CPU/GPU/isolated regression ran concurrently; no documentation-only rerun.
+ONE Goal72 restores fixed799 forecast with proven scoped mounts. Source-only
+callerbdf6c9b2.../entryf6f664e5.../8 checks is ready, not actual execution.
+No training, new targets, source union, old appointment refund or Paper change.
 
 Goal70 108 serial1.65s/full8 15319pass22skip35warnings338.72s/15341collected,
 helper0/reaped; JUnit5b38b828... under A/verification/full8-20261010-g70.

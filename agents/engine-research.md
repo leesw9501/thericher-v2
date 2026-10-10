@@ -41,31 +41,49 @@ contract/plan/inference absent, stored counters null. Used626482f3... and
 Source34+independent6 checks missed actual serialization. Original weights/data
 remain useful; this is a technical decoder failure, not a rejected model.
 
-ONE Goal71 selection/allocation batch: fresh strict metadata decoder first;
-then fixed799 same-f78 CPU forecast and existing Chronos2 isolated GPU
-forecast, each separately frozen/bounded. No fit, target, union or Paper change.
-Original128/42peers/prior61/Oct12OPEN->Oct19OPEN, canonical735 once.
-Pure input7068bdfa.../helperd954ad4d... retain independent6+6 checks.
-Chronos proposalcfac1567... fixes revision95a9710.../hashddcda3c.../
-h6 isolated32+10/median sum[1:6]; corpus period/instruments not_disclosed.
-No new download, outcome-selected variant or independent-alpha claim.
+Goal71 COMPLETE/72357078...; ONE Goal72 scoped fixed799 forecast. Gate attempt
+94b3d45c.../1c375a63... failed75.418793s before inference: reader488 rejects an
+unscoped market mount. Stored null terminal counts remain null; prior native
+result recorded0inference. Closed/no retry/refund, not a model verdict.
+Real original context probe loaded128 identities/113 sessions in34.1036s after
+scoped /market + separate /reference; reader/native_session unchanged.
+
+Chronos2 actual5c66ca61.../ae933e4c... completed one CUDA load/two calls/42 peers
+in166.177072s<240 at10:46:40.360392UTC, including outer save/readback. Native
+result164.598352s precedes that publication; neither proves its future stdout.
+Contract3e80925b.../forecast196cf462.../cached982d7196...; reaped/absent/lease
+released/bindings unchanged,0fits/target/broker/cached-extra. Exact outputs:
+A/bf/5c66ca61864b48fcb2ace2ed54520c64/out/5c66ca61864b48fcb2ace2ed54520c64.
+Prior61 OPENs->60 log returns, h6 isolated32+10, sum marginal median[1:6].
+Actual preparation availability precedes actual forecast origin before Oct12
+OPEN; nominal CLOSE is not that origin. Checkpoint95a9710.../ddcda3c... is
+unchanged; corpus period/instruments not_disclosed. Source20+independent6
+checks only; actual-link review7af808c0.../6 structural predicates independently
+binds five outputs/peer/clocks/median/slots, not causal-data/OS-clock/cleanup
+proof. No future return, alpha or
+Paper replacement follows from successful inference.
 
 Depth/replication: Dataab65b62b... owns future42-peer endpoint observations.
 Their next_due is not a foreground wait or a model/alpha qualification.
-GPU available; one prospective Chronos appointment can be frozen when its real
-metadata/source/loader handshake is ready. Do not wait for the independent CPU
-CVaR outcome, manufacture utilization, refit or reopen a completed training.
+GPU free after that exact appointment; no further frozen GPU campaign is ready
+in this batch. Do not manufacture utilization, refit or reopen completed work.
 
-Breadth standby: an empirical CVaR95 SPY/TLT/GLD allocation is a distinct
-unimplemented mechanism, not another TCN label. Primary formula:
+CVaR95 SPY/TLT/GLD allocation COMPLETE/REJECTED, not another TCN label.
+Primary formula:
 https://sites.math.washington.edu/~rtr/papers/rtr179-CVaR1.pdf .
 Existing trio/caps/accounting may support one finite no-cost CPU study.
 Pure solverf505c92c... at A/research/kis-cross-asset-cvar-preparation-v1/cvar.py:
 8 supplied+5 independent real host HiGHS checks/review8c04aee2... pass.
-No contract, native appointment, actual portfolio evidence or success yet.
-Goal71 prepares one finite five-policy/three-cost/two-view allocation comparison
-on the existing trio, fixed253 prior CLOSEs/252 scenarios and common risk cap.
-Approximately13 tail scenarios is weak; no performance transfer or holdout.
+Repo solverf505c92c.../adapter733c6841...:24+6 manufactured checks. Native
+contractc34547bf.../worker4e5c24ca.../parentac7680e6... completed30cells in
+23.520869s at10:40:28.994553UTC; cached exact economics,0fit/inference/GPU/
+provider/sealed access, reaped/absent/unchanged. Actual review4e37d930.../5 checks
+binds454 sources/grid/continuous252+437 marks/12+21 monthly entries, not an
+independent price replay or OS cleanup proof. Main10bps EACH SIDE growth
+17.4024%/10.5714% was positive, but utility lost to minvar in2024 and all three
+risky controls in2025-Sep2026; frozen criterion rejects. About13 tail scenarios,
+seen/raw/non-PIT/non-TR/revised data and ideal fractional fills remain limits.
+Exact A/research/kis-cross-asset-cvar-development-v1; no tuning/rescue promotion.
 
 Earlier LSTM/GRU/attention/Patch/Mixer/ML/rule/TimesFM/Chronos studies and
 incumbent-cost/quantile/conjunction failures stay in exact roots/registry.
