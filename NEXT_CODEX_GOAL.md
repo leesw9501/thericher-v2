@@ -2,116 +2,100 @@
 
 ## Objective
 
-Complete kis-stock-incumbent-payoff-runtime-recovery-v1: recover the exact
-technical failure of the unchanged incumbent-aware cached replay, or record
-its concrete categorical limitation. ONE company objective, not a new model,
-parameter rescue, learned continuation value or Paper replacement.
+Complete kis-stock-payoff-quantile-development-v1: train one fixed conditional
+quantile model on original cached sequences and evaluate fixed median/sign
+decisions in cost-aware replay. ONE company objective, not an incumbent-price
+rescue, calibrated tail-risk system or Paper replacement.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal60 CLOSED/bounded runtime failure1a02b501... at
-A/research/kis-stock-incumbent-payoff-development-v1: exact invocation
-1772ac26012b45aea82fd86587dcde08/failurec49971b1.../parentfeee4839.../
-capture72f0767f... .52.921544s post-failure-publication at02:41:36.075723UTC;
-future stdout/later integration excluded. Reaped/absent/unchanged/no GPU.
-Cells/fits/inferences/replay unknown; partial two action/one execution events
-are not a strategy result. Six-field generic native failure discarded its
-category at parent's exact three-field parser. Used d69a460b.../ca833e50.../
-84d2eae4... and partial streams stay immutable/unrefunded.346 serial/full8
-15274pass22skip35warnings343.15s/JUniteb4f7f91...; independent entry08215254.../
-parent71cecf08.../outera07e0d53... are source-only, not runtime success.
+Goal61 COMPLETE/categorical input failure6dd8f524... at
+A/research/kis-stock-incumbent-payoff-runtime-recovery-v1:
+invocationd9b2affcee2742088a7c5b9edbb026eb/failurefeadbe34.../parent368de9d8.../
+capture92663ada... .54.401971s after failure publication02:59:10.481451UTC;
+future stdout/later integration excluded. Reaped/absent/unchanged/no GPU;
+cells/fits/inferences/replay unknown. Exact implied_price_ratio_nonpositive:
+a selected signed payoff<=-1 cannot define a positive terminal price. No clip,
+refit or rescue; this does not invalidate every sign policy or another lane.
+Goal60 unknown failure1a02b501.../52.921544s remains immutable/unrefunded.
+18/49 supplied and28/57 independentde73e60f... plus9 outer17713d35.../
+12 rotation7003bc4b... source tests.346 serial/full8 15274pass22skip/
+35warnings343.65s/JUnite85216df...; no complete cell economics or fresh alpha.
 
-Goal59 COMPLETE at A/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
-integration607e0500.../actualb03a37d5.../parented5f61bc.../capture67c81dbe.../
-worker4e8c994f... . Exact native OLD734/36307rows/CURRENT52/3339 parity,
-one load/seven bindings/458 sources unchanged/zero fits/inference/targets/GPU/
-broker/reaped/absent.141.854058s post-publication/audit<240 at
-2026-10-10T02:10:29.258602UTC; excludes future stdout/later integration.
-OLD repeat42.184/read3.724/write2.637s, CURRENT repeat3.430/read.407s:
-paired warm ordered feature measurement, not downstream training speedup.
-First prepare FAILED.093609s/ee4c4f16... remains immutable/unrefunded;
-fresh d591fc90... fixes only pinned embedded-calendar whitespace.
-56 supplied/21 independent161a18dd..., caller145b5cae.../outerc9013351... .
-154 serial/full8 15274pass22skip35warnings347.49s/JUnitd8bea194... .
-Claude9cabf9cd... unavailable, not agreement or an independent-lane hold.
+Goal59 feature parity607e0500...: OLD734/36307rows/CURRENT52/3339,
+one load/seven inputs/458 sources unchanged/reaped/absent/141.854058s.
+Exact cache outcome073e9e7a63de4f86ab560b394f59eec9 under
+A/research/kis-stock-sealed-feature-cache-benchmark-preparation-v1/outcomes;
+OLDmanifest2ba5a2bd.../CURRENT11b37af8... . Feature-only, not labels, a joined
+panel or measured downstream training speedup. Goal57 original signed60
+contract03117125.../cachedf2cc9b8.../resulte59d6a92... and TCN stay closed.
+Goal58 shadow44236cd7... three slots/seven cash; future pair still unobserved.
 
-Goal57 closed contract03117125.../result e59d6a92.../parent30ddb457.../
-prediction-cache df2cc9b8.../final model7998d7b831b...: three CUDA fits,
-seen signed60 follow-up only; no reopened family or fresh alpha.
-Goal58 future shadow44236cd7.../three retained original slots/seven cash;
-exact Oct12->Oct19 endpoints still future. Reader59b041e1.../d9381e36...
-reattests retained evidence without rebuilding context or inference.
+## Fixed Contract
 
-## Work
+Freeze final source pins, cache/producer/original inputs, native runtime,
+artifact root and family appointment before actual numerical work.
+Model0d2269aa... uses exact original ON/ID sequence N,60,2; features4 ignored.
+Preserve old60x4 f3fd0f7b..., never pad or silently reuse. Inputd4bce897...
+callback-deadline fault56a96476... needs a fresh verified derivative.
+No channel invention, panel union, recomputation fallback or new data.
 
-Engine/parent: freeze a fresh minimal diagnostic entrypoint and inclusive
-parent caller; never edit or rerun used Goal60 sources. Preserve the exact
-three-field {name,status,reason} failure ABI. Expose only closed source-literal
-categories or fixed exception-type categories, never messages, keys or paths.
-Independently test the second-review/rotation path with synthetic data. A
-confirmed technical fault may receive a fresh narrowly repaired derivative;
-do not alter forecasts, universe, strategy, costs, size, targets or geometry.
-Sources: incumbent governor896d808c...,
-workerf2d5b47.../independent c53e8267..., persisted-stream loader7fe15d99.../
-eight independent ee19c493... . Preserve released sources/results; a repair
-uses a fresh derivative. Explicit source imports execute their checked bytes.
-Claude2427d2d0... exit1/reaped/unavailable is not agreement. Do not retry an
-unchanged failed CLI diagnostic; independent falsification continues. Ask for
-a new material recovery challenge only through the existing safe caller.
+One daily60-session original two-block Mixer MLP; noncrossing q(.1,.5,.9)
+via median +/- softplus gaps, one pair scaler/head120->3. Seed101/four epochs/
+batch512/Adam.001/clip1/float32/deterministic/TF32off. Equal-date weighted
+pinball loss; original nearest-cent five-session OPEN signed net target at
+10bps round trip/f=.0005. Prefixes427/610/799 only; exit<=cutoff purge BEFORE
+labels, min120 complete date groups, train-only scaler. OLD OOF428..610 and
+611..794; final799 predicts CURRENT. Record dependence/availability limits;
+seen reuse is not fresh replication, independent ESS or sealed evaluation.
 
-One240s CPU appointment starts BEFORE plan/source preparation. At most180s
-work and60s cleanup/publication; image d6b43213..., CPU2/8GiB/network-none/
-read-only/no-GPU. Exact APP=frozen Goal57 source, ARTIFACT=A, MARKET=M,
-SUPPORT=frozen reviewed sources RO, one fresh OUT RW. No secret/account mount.
-Canonical eight-FilePin stdin binds original contract/result/parent/cache/
-model799 (hash only, no arrays) and exact loader/worker/governor. No fit,
-inference, GPU, labels from a new source or OLD numeric decode.
+Manufactured CPU smoke in pinned image d6b43213.../Python3.12.14/Torch2.7.0+cu128/
+NumPy2.5.1 precedes THREE actual CUDA fits. ONE shared600s inclusive appointment
+covers preparation, smoke, fitting, predictions, publication/readback/reaping;
+reserve cleanup time. No per-quantile/cell/seed/retry budget multiplication.
+Freeze fit starts/device/completion progress and numeric-only NPZ outside Git.
+Retain failed/unknown counts and elapsed debit; reap before GPU lease release.
 
-Use original CURRENT113/seven bindings/128 identities; snapshots61..112,
-complete five-session reviews61,66,...106, terminal OPEN111 and51 marks.
-Freeze four arms: incumbent terminal-cash proxy, fixed signed60 sign mask,
-originalTCN20, cash; two books whole/fractional-reference;5/10/20bps:24 cells.
-No partial-tail scaling, rerank, slot replacement, enlarged size or parameter
-search. Original TCN slot target-or-zero only, own-arm incumbent state.
+Five fixed arms: quantile_median_positive, quantile_lower_positive (diagnostic
+only), fixed_signed60_sign_mask, original_tcn20, cash. OriginalTCNtop10 defines
+unchanged .01 total-basis slots; forecast>0 keeps original target, otherwise
+cash. No rerank/replacement/redistribution/size increase/price transform/
+clipping or selected threshold. Whole/fractional and5/10/20bps:30CURRENTcells,
+reviews61,66,...106/terminalOPEN111/51marks, no partial-tail scaling.
+Persist action/execution and match same-native cached events/accounting/metrics
+with zero extra fit/inference. No broker path. Freeze a training-prefix-only
+naive quantile/loss reference before outcomes if comparing OOF loss.
 
-Forecast/rule/own inventory are fixed before the execution OPEN. The proxy
-uses that current projected cent quote and fee: execution-contingent, not a
-pre-OPEN sealed action or Bellman-optimal continuation value. Missing/invalid
-forecast stays unavailable. Real replay charges actual trades/final exit once;
-hypothetical terminal fees must not be double-counted in the ledger.
+Primary median whole10bps kill: positive net growth, strict utility above
+signed-mask/TCN/cash, drawdown<=TCN, nonzero accepted decisions. Lower arm
+cannot select a winner or become calibrated risk. Missing primary comparison
+means no verdict. A failed cell cannot erase completed fits, invent30 cells,
+delete failed dates, replace peers or stop independent work. Pinball,
+noncrossing, spread and coverage diagnostics do not prove calibrated risk.
 
-Persist action/execution canonical JSONL and immutable replay/final receipts.
-Same-native cached replay must reproduce exact events/accounting/metrics with
-zero fit/inference; read back fixed stream pins after BOTH publications.
-Parent validates exact terminal/receipt links, source/input hashes, child
-reaping/container absence and post-capture clock. Exit/status alone is not
-closure. Keep failed/unknown outcomes and never reset identity or refund time.
-No raw quotes, predictions, prices, account/private amounts or IDs in stdout.
+## Ownership And Bounds
 
-Parallel: independently review source-only quantile model f3fd0f7b.../52
-synthetic cases and cache input d4bce897.../51 cases. Mechanisms16ef6902.../
-reread8308a59a... may inform a later frozen hypothesis. No new GPU family,
-calibration claim, outcome-based threshold choice or second goal.
-Data42-peer endpoints jobab65b62b... due Oct13/20 06:40..07:40KST and original
-Paper job2d616950... entryOct12 22:30/closeOct13 04:50KST stay unchanged.
-No manual task/provider/order invocation, bank/model/budget/TTL reset or live.
+Engine owns worker, Infra native/input glue, temporary reviewers frozen-source
+falsification, Steward one GPU appointment/sealed spend0. Ask Claude for a short
+tools-disabled source-safe challenge of this new contract. Diagnose a concrete
+CLI capability fault once; unavailable is not agreement or a research gate.
+Source16ef6902.../reread8308a59a... is mechanism only, no imported paper code/
+weights, new dependency, framework/runtime replacement, payment or download.
 
-## Completion / Kill
+Datajobab65b62b... Oct13/20 06:40..07:40KST and originalPaperjob2d616950...
+entryOct12 22:30/closeOct13 04:50KST unchanged. No manual task/provider/order,
+model replacement, bank/TTL/budget/identity reset or live. Never read KIS_LIVE_*,
+.env or secrets; never print raw market/model/private/account/order values.
+ArtifactsA/dataM/D:15%/test scratchC:/trpy. Raw/revised/current-listed/non-PIT/
+action/TR/finality/availability/honest-host limits narrow claims, not authority.
 
-Actual24-cell native replay and exact durable cached readback, or an exact
-bounded source/runtime/accounting/budget failure with a safely retained
-category. Any data unavailable result closes only this exact replay, not
-research or another ready lane. Primary whole10bps candidate
-requires positive growth, strict utility above ALL three controls, drawdown
-no worse than originalTCN, and nonzero incumbent/different-target reviews.
-No distinct decisions means no_distinct_incumbent_mechanism, not rescue tuning.
-Any causal/source/input/hash/stream/accounting mismatch, late clock or unreaped
-owner kills this attempt. Development outcomes remain non-promoting and
-seen/raw/revised/current-listed/non-PIT/action/TR/finality limited; no fresh
-replication, calibrated uncertainty, holdout, Paper replacement or live claim.
+## Completion
 
-At integration use changed-path serial, clean8 authority, Ruff and three
-sample-env Compose configurations. Update only changed current stateboards/
-HANDOFF/RUNBOOK, commit/push, replace this with ONE material next objective,
-and continue. A future endpoint wait never holds the foreground.
+Native CPU smoke, three CUDA fits and bounded comparative/cached evidence,
+or exact budget/source/input/runtime failure. Development-only/non-promoting,
+no alpha/holdout/Paper replacement/live/calibration claim. Reattest exact
+publication/source/input links, final clock, reaping/absence/allocation release.
+Run changed-path serial/clean8 authority/Ruff/three sample-env Compose;
+refresh changed stateboards/HANDOFF/RUNBOOK, commit/push, replace this with ONE
+next material objective and continue. No per-agent goal or calendar sleep.

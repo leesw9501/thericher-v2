@@ -2,8 +2,24 @@
 
 ## Current Owned Opportunities And Research
 
-Goal61 current assignment: recover incumbent cached replay's exact technical
-failure, not its strategy. Goal60 failure integration1a02b501... is at
+Goal62 current assignment: fixed original60x2 conditional-quantile research,
+CPU native smoke before three CUDA fits/shared600s and30 analytical cells;
+no calibrated risk or Paper replacement. Goal61 closure6dd8f524... is at
+D:/thericher-v2/model-artifacts/research/kis-stock-incumbent-payoff-runtime-recovery-v1/integration-evidence.json,
+bound to native/d9b2affcee2742088a7c5b9edbb026eb/actual-invocation-failed.json
+feadbe34.../parent368de9d8.../capture92663ada... .54.401971s after failure
+publication02:59:10.481451UTC; own stdout/later integration excluded.
+Reaped/absent/unchanged/no GPU; counts/replay unknown. Exact category
+implied_price_ratio_nonpositive means a selected signed forecast<=-1 cannot
+define a positive terminal price. No clipping/refit/parameter rescue, complete
+cell comparison or global sign-policy rejection.18/49 supplied,28/57 independent
+de73e60f.../9 outer17713d35.../12 rotation7003bc4b...;346 serial20.07s/full8
+15274pass22skip35warnings343.65s/JUnite85216df... . Preserve used generations.
+Model0d2269aa.../57 synthetic cases corrects original sequence to60x2;
+old60x4 f3fd0f7b... remains. Source-only inputd4bce897... callback-deadline
+fault56a96476... requires a fresh verified derivative, not synthetic padding.
+
+Goal60 failure integration1a02b501... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-incumbent-payoff-development-v1/failure-integration.json,
 bound to native/1772ac26012b45aea82fd86587dcde08/actual-invocation-failed.json
 c49971b1.../parentfeee4839.../capture72f0767f... .52.921544s after failure
@@ -12,9 +28,8 @@ Reaped/absent/unchanged/no GPU; cells/fits/inferences/replay unknown. Two
 action/one execution events are partial, not complete cells or economics.
 Generic native six-field failure did not match parent's three-field category
 parser. Preserve original sources/partial outputs/anchor, no refund or rerun.
-Fresh categorical diagnostics and synthetic rotation cases precede ONE new
-240s CPU appointment. Four arms/two books/three costs/51marks stay unchanged;
-no source substitution, training, parameter rescue, broker or schedule change.
+Fresh diagnostics in Goal61 identified the category without altering the
+four arms/two books/three costs/51marks; no training or broker/schedule change.
 346 serial20.07s/full8 15274pass22skip35warnings343.15s/JUniteb4f7f91...,
 independent entry08215254.../parent71cecf08.../outera07e0d53... are source
 checks, not actual replay success.

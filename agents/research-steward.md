@@ -31,12 +31,18 @@ FAILED.093609s/ee4c4f16... remains unrefunded; fresh parser changes no family.
 Goal60 CPU appointment CLOSED/runtime failure1a02b501.../c49971b1.../52.921544s,
 reaped/absent/unchanged/no GPU. Completed cells/fits/inferences unknown,
 not zero, a model rejection or a refunded attempt. Partial streams retained.
-Goal61 is one fresh technical CPU appointment with unchanged cached strategy;
-no GPU allocation or sealed evaluation. Source-only quantile/cache adapters
-f3fd0f7b.../d4bce897... do not spend GPU. Uncertainty16ef6902.../reread8308a59a... is mechanism only,
+Goal61 technical CPU appointment CLOSED6dd8f524.../feadbe34.../54.401971s,
+reaped/absent/unchanged/no GPU; exact implied_price_ratio_nonpositive,
+counts/replay unknown. No model/debit refund or rescued price mapping.
+Goal62 prepares one original60x2 quantile family, three prefixes/shared600s,
+CPU smoke before CUDA, sealed spend0. Model0d2269aa.../57 synthetic checks;
+old60x4 f3fd0f7b... preserved, inputd4bce897... deadline repair assigned.
+No actual new GPU allocation until final source/input/stop contract is frozen;
+this is preparation, not an operator hold. Uncertainty16ef6902.../reread8308a59a... is mechanism only,
 not a frozen campaign. Claude9cabf9cd...
 unavailable, not agreement. Parent dispatches the single company objective.
-No ready frozen new GPU family; do not invent training to fill utilization.
+No ready allocated GPU job yet; Goal62 native/source preparations are active,
+not a permission/environment fault. Do not invent utilization-only training.
 Data endpoint/Paper owners remain unchanged and independent.
 
 Goal55 exact native cached future binary shadow016e67dc.../da6fbbad.../21.880s

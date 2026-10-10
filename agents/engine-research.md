@@ -52,9 +52,15 @@ Generic native failure schema discarded its category. Used sources/failed
 appointment remain immutable/unrefunded.346 serial/full8 15274pass22skip/
 35warnings343.15s/JUniteb4f7f91...; entry08215254.../parent71cecf08.../
 outera07e0d53... independently source-tested, not runtime proof.
-Goal61 ACTIVE: narrow categorical diagnostics and synthetic rotation checks,
-one fresh240s CPU appointment; same original128/seven bindings/799/51marks.
-No model/strategy retuning, Paper replacement or fresh validation.
+Goal61 COMPLETE6dd8f524.../feadbe34.../54.401971s at02:59:10.481451UTC,
+reaped/absent/unchanged/no GPU. Exact implied_price_ratio_nonpositive rejects
+only the selected forecast-to-positive-price mapping; counts/replay unknown,
+no clip/refit or full strategy comparison.18/49 supplied;28/57 independent
+de73e60f.../9 outer17713d35.../12 rotation7003bc4b...;346 serial/full8
+15274pass22skip35warnings343.65s/JUnite85216df... . Used attempts unrefunded.
+Goal62 ACTIVE: fixed original60x2 quantile model, three prefixes/shared600s,
+native CPU smoke before CUDA,30 fixed cost/book cells; no Paper replacement,
+sealed spend, calibration or fresh validation. Inputs remain original/separate.
 
 ## Ready Independent Preparation
 
@@ -72,7 +78,7 @@ cache read. Action is contingent on current execution OPEN/inventory/unchanged
 slot sizing, not pre-OPEN sealed or Bellman-optimal. Doublecount, quote timing,
 own-arm inventory, uncertainty and horizon limits explicit. Loader7fe15d99.../
 eight independent ee19c493... rejects repinned persisted-stream corruption;
-Goal60 runtime failed; Goal61 diagnoses the unchanged technical path.
+Goal60 runtime failed; Goal61 identifies invalid implied-price input. No rescue.
 Primary-source reread1a0b1d5e... supports mechanism only, not empirical transfer
 or open-source code rights. No new optimizer dependency.
 
@@ -80,10 +86,13 @@ Uncertainty discovery16ef6902... independently reread8308a59a... (exact arXiv
 1612.01474v1/2106.00170v1/2011.09588v1) rejects spread/low pinball loss as
 calibrated risk. Mechanism-only reference, no code/weights imported, new
 family/quantile thresholds/GPU allocation or performance transfer selected.
-Source-only quantile model f3fd0f7b.../52 synthetic checks and cache input
-d4bce897.../51 checks are prepared; independent reviews remain assigned.
-Fixed60x4/three quantiles require a later frozen family, not silent reuse of
-the signed60 two-channel geometry or a calibration claim.
+Goal62 source0d2269aa.../57 synthetic checks corrects producer/consumer to
+exact original60x2, not old60x4 f3fd0f7b.../static padding. Inputd4bce897.../
+51 checks has confirmed callback-deadline P256a96476...; fresh derivative
+assigned. Fixed q(.1,.5,.9)/three prefixes/30 cost cells/shared600s, median>0
+primary, lower>0 diagnostic only. Freeze final source/input/naive-loss control
+before actual allocation. Native input/worker/smoke preparations are disjoint;
+no actual quantile market fit/CUDA yet or calibrated-risk claim.
 
 Depth: Goal55 binary shadow016e67dc.../native cachedda6fbbad... already frozen
 Oct9 23:03:14.321194UTC:42eligible/seven kept/three cash. Same-native21.880s,

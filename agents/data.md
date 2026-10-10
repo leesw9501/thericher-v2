@@ -36,10 +36,13 @@ seven bindings/458 sources unchanged; one load/zero target or provider calls.
 OLD repeated42.184/read3.724s, paired warm feature-only measurement; no cold
 or training speedup claim. Original prepare FAILED.093609s/ee4c4f16... retained.
 Goal60 runtime failed1a02b501.../c49971b1... after52.921544s; sources/input
-unchanged, no provider or completed comparison. Goal61 recovers only the same
-CURRENT113 cached path. No union, qualification, future targets or collection
-change. Owned next_due continues independently. Source-only quantile cache
-adapter d4bce897.../51 synthetic tests is not an actual new dataset or campaign.
+unchanged, no provider or completed comparison. Goal61 closes6dd8f524.../
+feadbe34.../54.402s: invalid implied-price forecast input, not a Data rejection.
+Goal62 original OLD734/CURRENT52 cached quantile research retains separate
+calendars/seven bindings/128 identities. Source-inputd4bce897... deadline fault
+56a96476... has a fresh repair assigned; original60x2 sequences need no padding.
+No actual new data/cache/target acquisition, union or qualification. Owned
+next_due continues independently; original limits remain visible.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

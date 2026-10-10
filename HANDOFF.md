@@ -86,9 +86,20 @@ three-field parser. Used sources d69a460b.../ca833e50.../84d2eae4... and partial
 streams are immutable/unrefunded.346 serial20.07s/full8 15274pass22skip/
 35warnings343.15s/JUniteb4f7f91... reaped; independent entry08215254.../
 parent71cecf08.../outera07e0d53... source-only, not actual runtime success.
-Goal61 ACTIVE: fresh categorical diagnostics/synthetic rotation falsification
-and one separately bounded CPU replay, same frozen strategy/data/costs.
-No training, target refresh, Paper/model replacement or new broker schedule.
+Goal61 COMPLETE/categorical input failure6dd8f524... at
+A/research/kis-stock-incumbent-payoff-runtime-recovery-v1:
+invocationd9b2affcee2742088a7c5b9edbb026eb/failurefeadbe34.../parent368de9d8.../
+capture92663ada... .54.401971s after failure publication02:59:10.481451UTC;
+future stdout/later integration excluded. Reaped/absent/unchanged/no GPU;
+counts/replay unknown. Exact implied_price_ratio_nonpositive means a selected
+signed payoff<=-1 cannot define a positive terminal price. This exact mapping
+is unavailable, not a full strategy comparison or global model/data rejection.
+No clipping/refit/parameter rescue.18/49 supplied;28/57 independentde73e60f...,
+9 outer17713d35.../12 rotation7003bc4b...;346 serial/full8 15274pass22skip/
+35warnings343.65s/JUnite85216df... . All failed sources/debits remain retained.
+Goal62 ACTIVE: original60x2 conditional quantiles, one fixed model/three
+purged-prefix fits/shared600s CPU-smoke-to-CUDA and bounded cost-aware replay.
+No Paper/model replacement, sealed spend, calibration or new broker schedule.
 Uncertainty sources16ef6902... independently reread8308a59a...: mechanism only,
 pinball/spread is not calibrated financial risk; no new GPU family dispatched.
 
@@ -169,8 +180,14 @@ synthetic checks/proposal ff169517... is a contingent-execution terminal-cash
 proxy, not a learned continuation value or pre-OPEN sealed action. Cached
 24-cell sourcef2d5b47.../39 supplied+22 independent checks/reviewc53e8267...
 has no complete actual comparison, dependency or broker path. Goal60 failed;
-Goal61 narrows the technical cause. Complete reviews61..106/terminal111/51marks
+Goal61 identifies invalid forecast-to-price input. Reviews61..106/terminal111/51marks
 exclude the partial tail.
+Quantile source0d2269aa.../57 synthetic CPU checks uses original60x2, head120->3;
+old60x4 f3fd0f7b... remains preserved. Cache input review56a96476... exposed
+callback deadline swallowing; a fresh derivative is assigned before actual use.
+Source-prep tests are not pinned native CUDA proof. No outcome-selected model,
+static padding or invented feature channel. New-source/native glue reviews are
+disjoint while original future Data/Paper owners continue.
 Earlier LSTM/GRU/attention/Patch/Mixer/rule/ML/TimesFM/Chronos results stay in
 Git/registry/exact roots; not absent experiments, current survivors or retries.
 Goal31 exhausted/failed-incomplete and Goal33 independent validation incomplete
