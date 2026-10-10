@@ -42,7 +42,9 @@ unchanged, no provider or completed comparison. Goal61 closes6dd8f524.../
 feadbe34.../54.402s: invalid implied-price forecast input, not a Data rejection.
 Goal62 preparation failedbdd26cf0.../0.90167s before native/data/model work;
 measured Windows long-path fault is technical, not a dataset rejection.
-Goal63 same OLD734/CURRENT52 quantile recovery retains separate calendars/seven
+Goal63 container_environment failure9cabcb37... occurred before native start;
+separate cleanupa6a1930c... proves reaped/absent/released. No Data rejection.
+Goal64 same OLD734/CURRENT52 quantile ENV recovery retains separate calendars/seven
 bindings/128 identities. Input1a9214d1... verifiedf7f56ebe... propagates expiry;
 original60x2 needs no padding. Raw M direct RO, never staged under A.
 No actual new data/cache/target acquisition, union or qualification. Owned

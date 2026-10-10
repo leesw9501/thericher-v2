@@ -2,7 +2,7 @@
 
 ## Current Owned Opportunities And Research
 
-Goal63 current assignment: short-staging runtime recovery for the SAME fixed
+Goal64 current assignment: exact environment recovery for the SAME fixed
 original60x2 quantile family; native CPU smoke before three CUDA fits/shared600s
 and30 cells. Goal62 bounded prepare failure bdd26cf0... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-development-v1/integration-evidence.json,
@@ -12,8 +12,16 @@ Keep original sources/partial copies/failed debit. LongPathsEnabled0 plus
 manufactured242-pass/290-and390-fail supports a short A staging root, not an
 OS policy change or retrospectively claimed original error code. Final
 worker880c361e.../entryf5aa1c34.../input1a9214d1.../model0d2269aa... ready;
-fresh caller/parent pins must be frozen before the first actual GPU allocation.
-346 serial/full8 15274pass22skip35warnings344.98s/JUnit622db5f1... reaped;
+caller309682c0... restores image PYTHONUNBUFFERED=1 and proven Goal57
+CUBLAS_WORKSPACE_CONFIG=:4096:8; fresh parent pin before actual dispatch.
+Goal63 closure9cabcb37... is at
+D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-runtime-recovery-v1/integration-evidence.json:
+invocation15fde0361e4b4e2db246af7b339c5d96/capture6f674fe7.../7.577810s at
+04:08:53.502087UTC/container_environment. Failed registry3abf7ee9... and original
+unknown counters/absencefalse/leasereleasenull stay immutable. Separate exact
+owned cleanup is created-owner-cleanup.json/a6a1930c.../2.021080s, proving
+native never started/reaped/absent/lease released. No model work/refund.
+351 serial21.07s/full8 15274pass22skip35warnings344.81s/JUnitfcab9c88... reaped;
 Ruff/three sample Compose passed. No calibrated risk or Paper replacement.
 Goal61 closure6dd8f524... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-incumbent-payoff-runtime-recovery-v1/integration-evidence.json,

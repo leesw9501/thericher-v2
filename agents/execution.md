@@ -53,7 +53,9 @@ c49971b1.../52.921544s, reaped/absent; no complete comparison or broker change.
 Goal61 completes with categorical invalid-price-mapping input6dd8f524.../
 feadbe34.../54.402s, reaped/absent/no broker. No complete cell economics.
 Goal62 preparation failurebdd26cf0.../0.90167s reached no native/GPU/broker
-path. Goal63 short-staging quantile recovery stays non-promoting with no
+path. Goal63 ENV failure9cabcb37.../7.577810s and exact cleanupa6a1930c.../
+2.021080s prove native never started/reaped/absent/released; no broker change.
+Goal64 exact-environment quantile recovery stays non-promoting with no
 risk/order/bank/schedule change, calibrated tail-risk or Paper replacement.
 Goal55 binary shadow016e67dc.../native cachedda6fbbad.../seven kept remains
 immutable and non-executable. Data jobab65b62b... owns42-peer endpoints

@@ -38,8 +38,13 @@ Goal62 CLOSED/preparation failurebdd26cf0.../daaa229e.../0.90167s at
 03:56:49.261126UTC before native smoke/GPU lease/registry/allocation/fits.
 Preserve contracted065ccd.../actual216afd41.../partial copies/debit, no refund.
 Measured Windows path limit supports a fresh short A staging root, not OS or
-model changes. Goal63 is the SAME quantile family and first actual GPU
-allocation, three prefixes/shared600s/CPU smoke first/sealed0. Sources
+model changes. Goal63 registered first quantile trial but failed ENV inspection
+before native start:9cabcb37.../7.577810s/registry3abf7ee9... non_promoting_failed.
+Original counters/absencefalse/leasereleasenull remain; separate exact cleanup
+a6a1930c.../2.021080s proves never-started/reaped/absent/released. No refund.
+Goal64 is the SAME quantile family, three prefixes/shared600s/CPU smoke first/
+sealed0. Exact ENV restoration only; first actual numerical training pending.
+Sources
 model0d2269aa.../input1a9214d1.../worker880c361e.../entryf5aa1c34... ready;
 freeze fresh host/parent pins before actual dispatch. Claude auth-unavailable
 9a0121d4... is not agreement or a research gate. GPU is available, no

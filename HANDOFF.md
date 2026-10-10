@@ -29,10 +29,19 @@ Prepare never reached native launch/CPU smoke/GPU lease/registry; no actual
 market fits/inference/cells. Original outer_runtime_unavailable preserved.
 LongPathsEnabled0/manufactured242chars passes290/390 fail/cleaned scratch;
 supports staging-path diagnosis, not the original exception's exact OS code.
-Goal63 repairs short staging under A, SAME quantile contract/model and first
-actual GPU family; no retuning/refund. Final model0d2269aa.../input1a9214d1.../
+Goal63 CLOSED/runtime failure recovered9cabcb37... at
+A/research/kis-stock-payoff-quantile-runtime-recovery-v1/integration-evidence.json.
+Invocation15fde0361e4b4e2db246af7b339c5d96/capture6f674fe7.../7.577810s at
+04:08:53.502087UTC failed container_environment before native start. Original
+counts remain unknown/absencefalse/leasereleasenull; registry3abf7ee9...
+non_promoting_failed is preserved. Separate exact owned cleanupa6a1930c...
+2.021080s proves never-started/reaped/absent/lease released, not a rewrite.
+Image Dockerfile PYTHONUNBUFFERED=1 explains the measured validator mismatch.
+Goal64 restores that exact ENV and proven Goal57 CUBLAS_WORKSPACE_CONFIG=:4096:8;
+same short A staging and first quantile model, no retuning/refund. Final
+model0d2269aa.../input1a9214d1.../
 worker880c361e.../entryf5aa1c34.../factorycccb2d93... source-ready.
-346 serial20.12s/full8 15274pass22skip35warnings344.98s/JUnit622db5f1...;
+Goal63 351 serial21.07s/full8 15274pass22skip35warnings344.81s/JUnitfcab9c88...;
 Ruff/three sample Compose passed. Source-only independent driver15/15
 1e8ac968.../caller3 delta9a33ac9e... preserve original falsifiers. No runtime
 equivalence or profitable quantile result. Claude auth-unavailable9a0121d4...
@@ -115,9 +124,10 @@ is unavailable, not a full strategy comparison or global model/data rejection.
 No clipping/refit/parameter rescue.18/49 supplied;28/57 independentde73e60f...,
 9 outer17713d35.../12 rotation7003bc4b...;346 serial/full8 15274pass22skip/
 35warnings343.65s/JUnite85216df... . All failed sources/debits remain retained.
-Goal63 ACTIVE: short-staging recovery for the same original60x2 quantile
+Goal64 ACTIVE: exact environment recovery for the same original60x2 quantile
 family, before its first actual native smoke/three CUDA fits/30-cell replay.
-Goal62's failed preparation is closed above, not a model result or refund.
+Goal62/63 failed attempts and separate cleanup are closed above, not model
+results or allocation refunds. No actual quantile numerical work yet.
 No Paper replacement, sealed spend, calibration or new broker schedule.
 Uncertainty sources16ef6902... independently reread8308a59a...: mechanism only,
 pinball/spread is not calibrated financial risk; no new GPU family dispatched.

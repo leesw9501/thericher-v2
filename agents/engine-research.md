@@ -64,8 +64,14 @@ Native smoke/GPU/registry not reached; no model/inference/cell result.
 LongPathsEnabled0/manufactured242pass290/390fail supports short A staging;
 original generic reason/failed copies/debit preserved.346 serial/full8
 15274pass22skip35warnings344.98s/JUnit622db5f1...; no source-repair full repeat.
-Goal63 ACTIVE: SAME fixed original60x2 quantile family, first actual
-three-prefix/shared600s CPU-smoke-to-CUDA/30-cell replay after path recovery.
+Goal63 CLOSED/runtime failure recovered9cabcb37... at
+A/research/kis-stock-payoff-quantile-runtime-recovery-v1/integration-evidence.json:
+invocation15fde036.../capture6f674fe7.../7.577810s/container_environment.
+Original unknown counters/failed registry3abf7ee9... preserved. Separate exact
+cleanupa6a1930c.../2.021080s proves native never started/reaped/absent/released.
+351 serial21.07s/full8 15274pass22skip35warnings344.81s/JUnitfcab9c88... .
+Goal64 ACTIVE: SAME fixed original60x2 quantile family, first actual
+three-prefix/shared600s CPU-smoke-to-CUDA/30-cell replay after exact ENV repair.
 No retuning, Paper replacement, sealed spend, calibration or fresh validation.
 
 ## Ready Independent Preparation
@@ -97,10 +103,12 @@ Source0d2269aa.../57+22 checks corrects exact original60x2; input1a9214d1.../
 880c361e.../29 tests and entryf5aa1c34... preserve original clock/canonical
 date keys; factorycccb2d93.../47+20+5 confirms OPEN111 scope. Hostfdfd2bd3...
 fixes result/terminal outcomes/unknown counts (18 supplied/3 independent).
-Parent216afd41.../15 independent1e8ac968... was source-ready but actual
-staging-path failure prevents a numerical result. Fresh short-path derivative
-only; q(.1,.5,.9)/three prefixes/30 cells/shared600s, median primary/lower
-diagnostic. Freeze final recovery pins before first actual allocation.
+Parent216afd41.../15 independent1e8ac968... staging failure and fresh255a586e...
+container ENV failure are preserved. Short A staging stays; exact caller
+309682c0... restores image PYTHONUNBUFFERED=1 and proven Goal57 deterministic
+CUBLAS_WORKSPACE_CONFIG=:4096:8. No numerical change. q(.1,.5,.9)/three
+prefixes/30 cells/shared600s, median primary/lower diagnostic. Freeze final
+parent pin before dispatch; original failed allocation is not refunded.
 
 Depth: Goal55 binary shadow016e67dc.../native cachedda6fbbad... already frozen
 Oct9 23:03:14.321194UTC:42eligible/seven kept/three cash. Same-native21.880s,
