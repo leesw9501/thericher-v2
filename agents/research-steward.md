@@ -24,9 +24,14 @@ cached, no fit/GPU appointment/sealed spend/targets, reaped/absent/unchanged.
 Three original.01 slots retained/seven cash; forecast is not future evaluation.
 First5.653s FAILEDa04602a8.../cleanupf9acb196... stays immutable/unrefunded;
 fresh runtime repair does not reopen the model family or selection budget.
-Goal59 feature-cache paired benchmark is CPU-only240s/180work+60cleanup,
-no model/prediction/target/GPU/sealed spend. Incumbent cached24-cell source
-preparation is not an allocation or actual market run. Claude9cabf9cd...
+Goal59 CPU feature-cache COMPLETE607e0500.../141.854058s<240 after capture/
+audit; OLD734/CURRENT52 exact parity/seven inputs/458 sources unchanged,
+reaped/absent/zero model/prediction/target/GPU/sealed spend. Original prepare
+FAILED.093609s/ee4c4f16... remains unrefunded; fresh parser changes no family.
+Goal60 incumbent cached24-cell replay is CPU-only one240s appointment before
+preparation, not a new model fit/allocation or sealed evaluation. Source prep
+does not spend GPU. Uncertainty16ef6902.../reread8308a59a... is mechanism only,
+not a frozen campaign. Claude9cabf9cd...
 unavailable, not agreement. Parent dispatches the single company objective.
 No ready frozen new GPU family; do not invent training to fill utilization.
 Data endpoint/Paper owners remain unchanged and independent.

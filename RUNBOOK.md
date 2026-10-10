@@ -2,22 +2,42 @@
 
 ## Current Owned Opportunities And Research
 
-Goal59 current assignment: exact native sealed-feature cache parity and paired
-timings, one240s CPU appointment before preparation. No model/target/prediction,
-GPU/provider/broker/schedule. Original seven bindings/128identities/OLD61..794/
-CURRENT61..112 fixed; bitwise values/keys/missingness/calendar/clock must match.
-Source-only benchmark47c0ee70.../32db7a85.../cacheb5dd9869... awaits actual
-parent source freeze/review. Warm paired timings are not cold/training speedup.
-See NEXT_CODEX_GOAL.md for the one objective; incumbent cached loader is only
-parallel source preparation. Claude9cabf9cd... unavailable, not agreement.
+Goal60 current assignment: incumbent terminal-cash24-cell native cached replay,
+CURRENT-only/zero fit/inference/GPU. Finish exact verified entrypoint/parent,
+one240s before setup/180work+60cleanup/publication; no broker/schedule change.
+Four arms/two books/three costs/reviews61..106/terminal111/51marks fixed.
+Persist action/execution streams; verify exact events after BOTH publications,
+then parent custody/clock/reaping/absence. No outcome from exit/status alone.
+See NEXT_CODEX_GOAL.md; no second goal or future endpoint foreground wait.
+
+Goal59 COMPLETE at
+D:/thericher-v2/model-artifacts/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
+integration607e0500.../actualb03a37d5.../parented5f61bc.../capture67c81dbe... .
+Exact worker pointer is
+D:/thericher-v2/model-artifacts/research/kis-stock-sealed-feature-cache-benchmark-preparation-v1/outcomes/073e9e7a63de4f86ab560b394f59eec9/worker-receipt.json
+(4e8c994f...). Offline project_integration.pyf5619bda... rehashes linked
+artifacts/sources without numeric cache decoding or new runtime. OLD734/
+36307rows/CURRENT52/3339 bitwise/missingness/calendar/clock parity, seven
+bindings/458 sources unchanged, one load/reaped/absent/zero fits/inference/
+targets/GPU/broker.141.854058s post-publication/audit at02:10:29.258602UTC;
+future stdout/later integration publication excluded. OLD repeat42.184/
+write2.637/read3.724s; CURRENT repeat3.430/read.407s. Paired warm/order effects,
+not downstream training speedup. Original prepare FAILED.093609s/ee4c4f16...
+remains immutable; fresh d591fc90... fixes only embedded-calendar whitespace.
+56 supplied/21 independent161a18dd.../caller145b5cae.../outerc9013351...;
+154 serial/full8 15274pass22skip35warnings347.49s/15296/JUnitd8bea194... at
+D:/thericher-v2/model-artifacts/verification/full8-20261010-g59/pytest.xml.
+No doc-only full-suite rerun. Claude9cabf9cd... unavailable, not agreement.
 
 Goal58 COMPLETE at
 D:/thericher-v2/model-artifacts/research/kis-stock-payoff60-shadow-runtime-recovery-v1:
 job715be7f4.../forecastc007442f.../capture5ed216ef.../outer5db2d7a3.../
 integration-evidence.json44236cd7... . Two CPU inference calls then zero cached;
 60.235192s post-capture/audit<240 at2026-10-10T01:20:58.130089UTC, excludes own
-future stdout/later integration. Offline project_integration.py verifies exact
-links without rebuilding context/doing inference or exposing private payload.
+future stdout/later integration. Use offline project_integration_verified.py
+59b041e1.../nine independent casesd9381e36... for exact links, slot partitions
+and retained clock ordering without rebuilding context/inference. Original
+weaker reader remains immutable; retained44236cd7... actual facts unchanged.
 42eligible/86unavailable/three retained slots/seven cash; no future payoff.
 Source unchanged/reaped/absent. Fresh9c9.../920691... sources repair Docker-list
 ABI, diagnostics and outer-capture custody/final clock. Independentacc1edce.../

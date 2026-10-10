@@ -58,14 +58,30 @@ original d6cfba86.../e6966f8b.../a733979b... remain USED, not rewritten/refunded
 Fresh diagnostics9c9ba59c.../wrapper920691b5... repair parser, full outer
 custody/final clock and failed-worker categories. No future payoff or alpha.
 
-Goal59 ACTIVE: measured sealed feature-cache benchmark. Exact original seven
-bindings/128 identities/OLD61..794/CURRENT61..112, same native CPU, one240s
-parent appointment before preparation. One input load, original compute/cache
-write/read/repeated original compute; require bitwise values/identity/missingness/
-source/calendar/clock parity. No labels/predictions/models/fits/GPU/provider or
-Paper change. Timings are paired/warm, not a cold-start or training-speed claim.
-Source-only incumbent terminal-cash replay prepares independently, no second goal.
-Claude9cabf9cd... unavailable, not agreement or a hold on private measured work.
+Goal59 COMPLETE at A/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
+integration607e0500.../actualb03a37d5.../parented5f61bc.../capture67c81dbe.../
+worker4e8c994f... . Native CPU141.854058s<240 after publication/audit at
+2026-10-10T02:10:29.258602UTC; future stdout/later integration excluded.
+OLD734frames/36307rows and CURRENT52/3339: exact bitwise/missingness/clock/
+calendar/source parity; one input load, seven bindings/458 sources unchanged,
+reaped/absent/zero fits/inference/targets/GPU/broker. OLD first42.327/repeat
+42.184/write2.637/read3.724s; CURRENT first3.450/read.407s. Paired/warm/order
+effects, not cold-start or downstream training speedup. Cache remains feature
+data only. Original a9b0... prepare FAILED.093609s/ee4c4f16... is not refunded;
+fresh d591fc90... changes only pinned embedded-calendar whitespace parsing.
+56 supplied/21 independent161a18dd...; caller145b5cae.../outerc9013351... .
+154 serial/full8 15274pass22skip35warnings347.49s/JUnitd8bea194... reaped.
+Claude9cabf9cd... unavailable, not agreement. Goal58 offline reader59b041e1.../
+nine casesd9381e36... checks retained44236cd7... without new inference.
+
+Goal60 ACTIVE: incumbent-aware terminal-cash24-cell cached replay, one240s
+native CPU appointment before preparation. Compare original signed60 cache
+with incumbent-aware target-or-flat decisions against sign-mask/TCN/cash;
+complete reviews61..106/terminal111/51marks. No training, target refresh,
+GPU, Paper/model replacement or new broker/schedule path. Finish minimal
+verified native entrypoint/parent before one actual run; failures stay scoped.
+Uncertainty sources16ef6902... independently reread8308a59a...: mechanism only,
+pinball/spread is not calibrated financial risk; no new GPU family dispatched.
 
 Goal55 binary future shadow already COMPLETE016e67dc... at
 A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1:
@@ -135,9 +151,9 @@ M1 SPY/QQQ25 paired complete sessions; Oct7 QQQ389/SPY390 incomplete.
 Current-listed/non-PIT/raw/revised/action/TR/finality/availability limits stay
 visible; they narrow claims, not delegated KIS Paper or exploratory research.
 
-Feature-cache helperb5dd9869.../37 supplied+26 independent synthetic checks/
-reviewc59cb12b... and benchmark47c0ee70.../32db7a85.../28 supplied checks
-remain source-only until Goal59's actual native parity/timing result.
+Feature-cache helperb5dd9869.../reviewc59cb12b... and adapter47c0ee70... now
+have exact native parity607e0500...; verified workerb0206aee... uses checked
+source buffers. This does not prove an unmeasured downstream training speedup.
 Incumbent-cost source reread1a0b1d5e... (arXiv1203.5957v1/1705.00109v1) supports
 mechanisms only; paper performance transfer rejected. Helper896d808c.../28
 synthetic checks/proposal ff169517... is a contingent-execution terminal-cash

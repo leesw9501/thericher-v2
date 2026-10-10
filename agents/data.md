@@ -30,11 +30,14 @@ seven bindings/128identities/prior61 only, no refresh union or Data promotion.
 Goal58 target-free CPU forecast COMPLETE44236cd7.../60.235s: originalf78/
 42eligible/128keys, three original fixed slots retained/seven cash. No Data
 promotion/provider/target call. Oct12->Oct19 endpoint pair still unobserved.
-Goal59 cache helperb5dd9869.../37+26 synthetic tests/c59cb12b... plus native
-benchmark47c0ee70.../32db7a85... compares original seven inputs and exact
-OLD61..794/CURRENT61..112 features; real parity/speedup still unmeasured.
-No refresh union, prediction/target body or collection change; owned next_due
-above continues independently. Cache mismatch invalidates only that cache.
+Goal59 COMPLETE607e0500... at A/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
+OLD734/36307rows/CURRENT52/3339 exact bitwise/missingness/calendar/clock parity,
+seven bindings/458 sources unchanged; one load/zero target or provider calls.
+OLD repeated42.184/read3.724s, paired warm feature-only measurement; no cold
+or training speedup claim. Original prepare FAILED.093609s/ee4c4f16... retained.
+Goal60 consumes original CURRENT113 and signed60 cached decisions only; no
+union, new Data qualification, future targets or collection change. Owned
+next_due above continues independently. Cache limits remain source-local.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

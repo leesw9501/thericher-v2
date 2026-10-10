@@ -33,19 +33,29 @@ JUnit0f94ae39... . First5.653s faileda04602a8.../cleanupf9acb196... and USED
 sources remain immutable/unrefunded. Fresh caller9c9.../wrapper920691... repair
 Docker-list ABI, diagnostic projection, outer custody and exact returned clock.
 
-Goal59 ACTIVE: native sealed-feature cache parity/paired-time measurement,
-one240s before preparation, no models/labels/predictions/fits/GPU or Paper.
-Parent owns actual dispatch/source/clock; Euclid owns minimal caller preparation,
-James independent benchmark source review. OLD61..794/CURRENT61..112/original
-seven bindings/128 identities frozen. Fail on any bitwise/identity/missingness/
-calendar/clock/source difference; unchanged Paper/Data owners continue.
+Goal59 COMPLETE607e0500... at A/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
+actualb03a37d5.../worker4e8c994f.../141.854058s<24002:10:29.258602UTC,
+after publication/audit; future stdout/later integration excluded. OLD734/
+36307rows/CURRENT52/3339 exact parity; seven inputs/458 sources unchanged,
+one input load/zero fit/inference/targets/GPU/broker, reaped/absent.
+OLD first42.327/repeat42.184/write2.637/read3.724s; CURRENT first3.450/read.407.
+Paired warm/order effects, not downstream training speedup. Prepare failure
+ee4c4f16.../.093609s retained; fresh embedded-calendar d591fc90.../56 supplied/
+21 independent161a18dd... fixes only read ABI.154 serial/full8 15274/22skip/
+35warnings347.49s/JUnitd8bea194... . Goal58 reader59b041e1.../nine d9381e36...
+reattests retained integration44236cd7... without rebuilding context/inference.
+
+Goal60 ACTIVE: exact cached incumbent terminal-cash24-cell replay. Native
+parent/entrypoint source preparation runs disjointly; one240s before setup,
+180work+60cleanup/publication, CURRENT-only numeric decode/zero fits/inference.
+Original128/seven bindings/799 lineage/51marks fixed; no second model goal,
+Paper replacement or fresh validation. Original Paper/Data owners continue.
 
 ## Ready Independent Preparation
 
-Throughput: feature-cacheb5dd9869.../37+26 synthetic/reviewc59cb12b... at
-A/research/kis-stock-sealed-feature-cache-preparation-v1, no real cache/parity
-or speedup. Native adapter47c0ee70.../worker32db7a85.../28 supplied checks;
-real paired benchmark is current Goal59, not a prediction campaign.
+Throughput: feature-cacheb5dd9869.../adapter47c0ee70.../verified workerb0206aee...
+have actual native parity607e0500... . Reuse exact matching bindings only;
+the paired read/recompute result is not a downstream training benchmark.
 Actual prior feature span41.355s vs CUDA fit-call7.127s, not additive timing.
 
 Breadth: incumbent terminal-cash proxy896d808c.../28 synthetic/proposal
@@ -55,10 +65,16 @@ cached replay cells (fourarms/twobooks/threecosts), complete
 five-session reviews61..106/terminal111/51marks, no fit/inference/GPU/actual
 cache read. Action is contingent on current execution OPEN/inventory/unchanged
 slot sizing, not pre-OPEN sealed or Bellman-optimal. Doublecount, quote timing,
-own-arm inventory, uncertainty and horizon limits explicit. Copernicus prepares
-the cached parent loader independently; no second goal or actual outcome.
+own-arm inventory, uncertainty and horizon limits explicit. Loader7fe15d99.../
+eight independent ee19c493... rejects repinned persisted-stream corruption;
+new native entrypoint/parent remain source preparation until Goal60 dispatch.
 Primary-source reread1a0b1d5e... supports mechanism only, not empirical transfer
 or open-source code rights. No new optimizer dependency.
+
+Uncertainty discovery16ef6902... independently reread8308a59a... (exact arXiv
+1612.01474v1/2106.00170v1/2011.09588v1) rejects spread/low pinball loss as
+calibrated risk. Mechanism-only reference, no code/weights imported, new
+family/quantile thresholds/GPU allocation or performance transfer selected.
 
 Depth: Goal55 binary shadow016e67dc.../native cachedda6fbbad... already frozen
 Oct9 23:03:14.321194UTC:42eligible/seven kept/three cash. Same-native21.880s,
