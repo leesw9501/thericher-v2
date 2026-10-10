@@ -2,76 +2,89 @@
 
 ## Objective
 
-Complete kis-stock-exact-book-gate-forward-shadow-v1: freeze the exact trained
-799 gate's analytical mask on original f78 before Oct12OPEN->Oct19OPEN targets.
-This tests a seen development survivor prospectively; it is not a Paper-model
-replacement or another training/architecture campaign.
+Complete kis-engine-selection-allocation-batch-v1: advance fixed stock selection
+forecasts and a distinct tail-risk allocation hypothesis in one bounded,
+parallel research pass. No training, Paper model replacement or waiting for
+future endpoints. A failed package does not stop another ready package.
 
-## Starting Evidence
+## Starting Facts
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal69 COMPLETE/non_promoting_followup_only77d3728c... at
-A/research/kis-stock-exact-book-gate-development-v1/integration-evidence.json.
-Actual A/bg/1241ae8d162c411fb9443739e011ed25/actual-invocation.json40923141...,
-contractb5582084.../capture389cd981.../independent994e7402... .
-CPU toy/two CUDA fits/two OLD inference calls/30 cells/199.987352s<600,
-reaped/absent/released/unchanged; cached zero extra. Whole10/OPEN111 growth
-gate+2.1789461% versus signed+1.764319%/TCN-prefix+1.31975445%, DD.3931%.
-Frozen kill passes only on seen/revised/current-listed/non-PIT development.
-Four updates are not convergence; independent20 checks are not trajectory,
-private causal-row or clock reobservation. No alpha, holdout or Paper claim.
+Goal69 fixed799 gate8c3410d9... passed only a seen development screen77d3728c... .
+Goal70 CLOSED/no_forecast/febcfd1d...: exact failed preflight
+A/bf/196931c7f0ce400db37c303f6a4f2f75/actual-invocation-failed.json ef04cbb1...,
+0.133018s before contract/prepare. Hash-valid retained f78 JSON was incorrectly
+required to be canonical. Its null counters, used bytes and closed appointment
+are immutable; a new appointment is not an old clock reset or refunded success.
 
-Use only exact799 model at that actual output root:
-model-exact_book_gate60-799.npz
-SHA2568c3410d9bdee1e1acd30039933f4afada8f0723100a75d6412e53b2b70bdc23c.
-Actor1e13ca1f.../original3aec.../numeric reloader entryd7cadb4b... .
-Do not refit, substitute610, select a seed or tune a threshold.
+CVaR solverf505c92c.../8+5 checks/review8c04aee2... is source-ready only.
+Chronos proposalcfac1567... binds installed checkpoint95a9710.../ddcda3c... .
+No fresh allocation or actual result follows from either source receipt.
 
-## Bounded Work
+## Disjoint Packages
 
-Parallel Data context/feature binding, Engine pure forecast, runtime reuse
-and independent Execution/Validation contract checks; fresh external source
-preparation roots only. Parent owns actual dispatch/Git. No new platform,
-per-agent goals, broad wrapper objectives or repeated full CI per source fix.
+1. Data/runtime: hash-first strict parsing of exact retained metadata, accepting
+   legitimate JSON layout without rewriting bytes. Dry-run real metadata shapes
+   with writes mocked before scientific dispatch; no raw rows, model bodies,
+   credential output or guessed fixture schema. Use fresh source/metadata roots.
+2. Engine selection: separately freeze first complete prospective contracts for
+   unchanged799 gate CPU240s and installed Chronos2 GPU240s. Original f78/
+   receipt3dafa26e.../128 identities/42 peers/prior61, Oct12OPEN->Oct19OPEN.
+   Gate reuses input7068bdfa.../helperd954ad4d.../canonical735 once and unchanged
+   TCN799 ranking/top10/.01 slots; strict>.5 keep/cash, never rerank/refloor.
+   Chronos uses prior61 OPENs->60 log returns, isolated32+10, h6 and sum marginal
+   medians[1:6], not a cumulative median. Bind exact local source/checkpoint,
+   clocks, full peer output and optional supported canonical top10 slots.
+   No fitting, future values, source union, variant search or new download.
+3. Engine allocation: one CPU300s CVaR95 development comparison on existing
+   trio4a25284d.../SPY-TLT-GLD. Fixed253 prior CLOSEs/252 return scenarios;
+   33 monthly OPENs/689 marks, continuous2024(252) and2025-Sep2026(437) views.
+   Five policies CVaR/ERC/minvar/equal-thirds/cash x5/10/20bps EACH SIDE x2
+   views=30 cells. Common fixed25% diagonal covariance shrinkage for controls/
+   risk cap; min(1,.10/annualized-vol) and residual cash, no leverage. This is
+   NOT the Paper10%-of-original-cash budget. Reuse fractional NAV1/actual-notional
+   fee ledger, one continuous inventory and final CLOSE exit; no view reset or
+   raw-price rounding before scenarios. No new ledger or parameter sweep.
+   Main10bps kill: both views positive post-cost growth over cash and utility
+   above ERC/minvar/equal-thirds; retain realized tail risk, DD and turnover.
+   About13 empirical tail scenarios is weak; no independent alpha claim.
+4. Execution/Validation: independently check frozen inputs, context/score/
+   slot/economic semantics, source/output links and cached readback. Do not tune
+   a member, open a holdout or convert preparation tests into actual proof.
 
-Reuse original f78 frozen input/receipt3dafa26e... and native contextd484b954...,
-original128/42 eligible peers/prior61. Build original60x2/four-static feature
-definition58602f70... with canonical Score735/Core imported once. Reconstruct
-typed seals; never translate Goal66 Score35 objects or splice new sources.
-Same original TCN7999de27944... ranks unchanged eligible peers/top10 and fixed
-.01 slots. Exact gate scores all eligible peers; strict sigmoid>.5 keeps each
-original slot or cash. No rerank, redistribution, refloor or learned sizing.
+CPU and GPU packages may proceed independently with disjoint outputs and owned
+resources. Parent owns actual dispatch/Git; temporary authors own disjoint
+source files. One GPU lease only. Reuse existing pinned runtime/loaders/replay,
+real API handshakes first; no generic platform or wrapper/report objective.
 
-Freeze original model/context/source/runtime/input/prediction/mask bindings,
-nominal clocks, costs and readback contract before actual invocation. Original
-d6b43213... Linux Python3.12.14/Torch2.7.0+cu128; CPU only/network none/RO input.
-ONE240s family/work210/cleanup30 anchored before helper import includes checks,
-context, two CPU model inference calls, publication, cached zero-inference
-readback, source audit and reaping. No fit/GPU/target access or stage reset.
-Finish publication before2026-10-12T13:30:00UTC; an incomplete or late forecast
-is input_unavailable, never a fabricated pre-target observation.
+## Budgets And Truth
 
-Persist probabilities and exact original ranking/slot mask before any target
-consumption. Read back without inference and verify identical mask/geometry.
-Keep actual publication and observed context clocks distinct from nominal
-availability/finality. Oct19 targets are future geometry, not mandatory input.
+Each new contract freezes its exact lineage, source/data/model/runtime, costs,
+kill and artifact root before allocation. Its ONE inclusive appointment is
+anchored before helper imports: forecasts240(work210/cleanup30), allocation300
+(work270/cleanup30). No stage reset, rescue fit, silent retry or refund.
+Record the prior technical failure without converting it to a scientific result.
+Forecasts finish immutable publication/readback before2026-10-12T13:30UTC;
+late/incomplete is scoped unavailable. Cached readback adds zero inference.
+Use original d6b43213... Linux runtime; probe actual SciPy/loader metadata before
+freeze, not a major runtime change. GPU allowed only for the frozen Chronos job.
 
-Existing Dataab65b62b... owns Oct13/20 06:40..07:40KST endpoint opportunities;
-original Paper2d616950... keeps model/basis/identities/entry-close schedules.
-No observer/scheduler expansion or substitute broker request here. Missing
-targets become that owner's next_due, not foreground sleep or a global block.
+Current-listed/revised/non-PIT/raw/non-TR/finality limits remain. Chronos dated
+checkpoint precedes future targets but corpus period/instruments are undisclosed;
+no independent earlier-context/alpha/Paper qualification. Ask Claude for a
+bias-prone decision when useful/available; failure is not agreement or a hold.
 
-## Completion And Authority
+Existing Dataab65b62b... Oct13/20 endpoints and Paper2d616950... Oct12/13 owners
+keep exact models/basis/identities/next_due. No manual task/provider/broker call,
+credential access, schedule expansion, new order or live path in this batch.
+Future targets remain owned next_due, not foreground sleep.
 
-Private no-cost CPU research is authorized; no .env/KIS_LIVE_*, broker/provider/
-account/order/task call, paid dependency, public service or runtime change here.
-No remainder/calendar union, training, sealed holdout, alpha or Paper adoption.
-M data/A generated artifacts/C:/trpy test scratch; preserve D:15% free.
+## Closure
 
-Complete with one independently checked pre-target forecast/cached readback
-and exact returned evidence pointer, or a narrowly evidenced bounded failure;
-source/input unchanged, reaped/absent facts. Changed-path serial plus clean8
-authority/Ruff/three sample-env Compose at material integration, commit/push.
-Refresh stateboards and ONE material next objective, then continue an
-independent ready lane rather than waiting for the future pair. A distinct
-allocation/ML hypothesis can be prepared next; do not reopen the completed gate.
+One scoped result/failure per package with exact returned pointers, counts,
+publication/readback and actual cleanup limits; no inferred fills or PnL.
+Changed-path serial + clean full8/Ruff/three sample Compose at integration,
+commit/push, refresh stateboards and ONE material next objective, then continue.
+Data on M/artifacts on A/test scratch C:/trpy; preserve D:15% free.
+No .env/KIS_LIVE_*, paid commitment, unclear rights, public exposure or major
+framework/runtime replacement. No actual operator decision currently required.

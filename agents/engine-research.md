@@ -33,25 +33,39 @@ Closed model families/history in Git9060b0f and shared registry, not this queue.
 
 ## Ready Independent Preparation
 
-Immediate ONE Goal70: fixed799 same-f78 CPU prospective forecast, no fit/GPU/
-target/union/Paper replacement. Input James, pure forecast Copernicus,
-runtime Euclid; each owns only its fresh external preparation root.
-Original128/42peers/prior61/TCNtop10/.01 slots and Oct12OPEN->Oct19OPEN pair.
-Publish exact model/source/prediction/mask bindings before targets, then cached
-zero extra inference. Do not translate old Score objects or change training.
+Goal70 CLOSED/no_forecast/febcfd1d...: exact failureef04cbb1... at
+A/bf/196931c7f0ce400db37c303f6a4f2f75/actual-invocation-failed.json.
+Precontract freeze0.133018s incorrectly required canonical retained JSON;
+contract/plan/inference absent, stored counters null. Used626482f3... and
+41161c3d... immutable; original appointment closed/unrefunded, not success.
+Source34+independent6 checks missed actual serialization. Original weights/data
+remain useful; this is a technical decoder failure, not a rejected model.
+
+ONE Goal71 selection/allocation batch: fresh strict metadata decoder first;
+then fixed799 same-f78 CPU forecast and existing Chronos2 isolated GPU
+forecast, each separately frozen/bounded. No fit, target, union or Paper change.
+Original128/42peers/prior61/Oct12OPEN->Oct19OPEN, canonical735 once.
+Pure input7068bdfa.../helperd954ad4d... retain independent6+6 checks.
+Chronos proposalcfac1567... fixes revision95a9710.../hashddcda3c.../
+h6 isolated32+10/median sum[1:6]; corpus period/instruments not_disclosed.
+No new download, outcome-selected variant or independent-alpha claim.
 
 Depth/replication: Dataab65b62b... owns future42-peer endpoint observations.
 Their next_due is not a foreground wait or a model/alpha qualification.
-No ready new frozen GPU campaign currently; select one when its contract is
-ready, not to manufacture utilization or reopen the completed family.
+GPU available; one prospective Chronos appointment can be frozen when its real
+metadata/source/loader handshake is ready. Do not wait for the independent CPU
+CVaR outcome, manufacture utilization, refit or reopen a completed training.
 
 Breadth standby: an empirical CVaR95 SPY/TLT/GLD allocation is a distinct
 unimplemented mechanism, not another TCN label. Primary formula:
 https://sites.math.washington.edu/~rtr/papers/rtr179-CVaR1.pdf .
 Existing trio/caps/accounting may support one finite no-cost CPU study.
-No contract, solver/runtime appointment, source rights for copied code,
-statistical evidence or success is implied by this proposal. Approximately
-13 tail scenarios in252 observations is weak; no performance transfer.
+Pure solverf505c92c... at A/research/kis-cross-asset-cvar-preparation-v1/cvar.py:
+8 supplied+5 independent real host HiGHS checks/review8c04aee2... pass.
+No contract, native appointment, actual portfolio evidence or success yet.
+Goal71 prepares one finite five-policy/three-cost/two-view allocation comparison
+on the existing trio, fixed253 prior CLOSEs/252 scenarios and common risk cap.
+Approximately13 tail scenarios is weak; no performance transfer or holdout.
 
 Earlier LSTM/GRU/attention/Patch/Mixer/ML/rule/TimesFM/Chronos studies and
 incumbent-cost/quantile/conjunction failures stay in exact roots/registry.

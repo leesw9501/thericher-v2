@@ -1,5 +1,33 @@
 # Runbook
 
+## Current Research Dispatch
+
+Goal70 CLOSED/no_forecast/febcfd1d...:
+D:/thericher-v2/model-artifacts/research/kis-stock-exact-book-gate-forward-shadow-v1/integration-evidence.json.
+Exact failure D:/thericher-v2/model-artifacts/bf/196931c7f0ce400db37c303f6a4f2f75/actual-invocation-failed.json
+ef04cbb1.../0.133018s/2026-10-10T09:51:13.463083UTC/exit1.
+Before contract/prepare, hash-valid retained f78 metadata was rejected by a
+canonical writer decoder. No forecast, model rejection or data-quality verdict.
+Counts are retained null, not converted to observed zeros. Exact-label container
+inventory empty09:56:27UTC; root only anchor/failure. No whole-host/full-input
+custody claim. Used626482f3.../41161c3d.../5768ca82... stay immutable.
+Original appointment closed/unrefunded; never replay it or reset its clock.
+Source34+independent6/c8416350... missed actual metadata serialization.
+108 serial1.65s/full clean8 15319pass22skip35warnings338.72s/15341collected,
+helper0/reaped/JUnit5b38b828... at
+D:/thericher-v2/model-artifacts/verification/full8-20261010-g70/pytest.xml;
+Ruff/three sample-env Compose pass. No documentation-only full rerun.
+
+ONE Goal71 selection/allocation batch uses fresh metadata decoder source and
+separately declared first frozen gateCPU240/ChronosGPU240 forecasts plus
+CVaRCPU300 development screen. Source-safe exact retained metadata shapes may
+be tested before scientific dispatch with writes mocked; never print rows,
+predictions, model bodies or credentials. New appointments do not refund or
+retroactively qualify Goal70. Existing Data/Paper owners remain unchanged.
+Chronos proposalcfac1567.../CVaR solverf505c92c... and13 supplied/independent
+solver tests are preparation, not actual outcomes. Follow current next goal,
+not superseded historical "ONE next" paragraphs below.
+
 ## Current Owned Opportunities And Research
 
 Goal65 fixed binary/signed conjunction comparison COMPLETE/REJECTED at

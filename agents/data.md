@@ -40,14 +40,20 @@ exact original bitwise/missingness/calendar parity. One retained panel load;
 fresh factory17a081f1... supplies OLD428..798 quotes and74 prior-only snapshots,
 not a new data acquisition. Paired cache timing is not a cold training speedup.
 
-ONE Goal70 source preparation consumes only the original f78
+Goal70 decoder failure/no_forecast/febcfd1d... did not reject the original f78.
+Hash-valid retained metadata failed a canonical-serialization check before a
+new contract or row load; no dataset qualification or target observation.
+Goal71 preparation checks real retained metadata field shapes with writes
+mocked and raw bytes preserved. Never print rows, model bodies or credentials.
+The prospective stock package still consumes only the original f78
 A/data/kis-current-pooled-equity-refresh-next-session-v1/native-frozen-input/contract.json
 and native-outcomes/cfa7a564e2b248eb9fd6bb640daa1c27/receipt.json3dafa26e... .
 Original128 identities/95 manifests/94 full streams, forecast42 peers/prior61.
 No remainder union, fetch, historical teacher refit, source promotion or target
 read. Native canonical typed feature reconstruction is required; no translation
 of Goal66 Score35 objects. Future Oct12OPEN->Oct19OPEN pair remains unobserved.
-The two Data finite owners and their owned next_due are unchanged.
+The two Data finite owners and their owned next_due are unchanged. Independent
+CVaR uses only the already frozen trio; no acquisition or dataset union here.
 Closed research history remains in Git9060b0f and immutable evidence roots.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;

@@ -23,10 +23,20 @@ structure, not private causal inputs, trajectory or clock reobservation.
 Native registry outcome covers terminal, not final parent publication.
 108 serial/full8 15319pass22skip344.49s/JUnit135afa0c...; Ruff/three Compose.
 
-ONE next Goal70 is CPU-only fixed799 same-f78 forecast, not a new GPU fit/
-family selection pass. Freeze model/source/context/clock/cost/mask contract
-before actual publication. Zero fit/sealed spend, existing Data/Paper owners
-continue independently. No fresh frozen GPU campaign yet.
+Goal70 CLOSED/no_forecast/febcfd1d...; failureef04cbb1... at
+A/bf/196931c7f0ce400db37c303f6a4f2f75/actual-invocation-failed.json.
+0.133018s precontract metadata-decode failure; no frozen contract/registry or
+forecast. Stored counts remain null; original appointment closed/no refund.
+Do not recast a new appointment as the old clock or edit used626482f3... .
+
+ONE Goal71 selection/allocation batch declares separate bounded first frozen
+forecast contracts after real metadata qualification: fixed799 CPU240 and
+Chronos2 isolated GPU240; CVaR CPU300 is an independent allocation screen.
+No fits/sealed access/target reads for forecasts, no retuning/retry budget or
+Paper promotion. Freeze exact lineage/prior failure, model/source/context/
+cost/kill/readback/stop contracts before allocation; acquire only one GPU lease.
+Current source/proposal readiness is not allocation or actual CUDA evidence.
+CPU work does not hold GPU readiness, and existing Data/Paper owners continue.
 Original3aec guard retained after Goal68 synthetic+.4918% ONE sample;
 no additional benchmark allocation or utilization-only training.
 

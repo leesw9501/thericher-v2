@@ -48,9 +48,14 @@ not original quote-derived quantities or broker fee/fill/latency/basis parity.
 Development kill passes; no broker account/order/credential call, Paper
 replacement, basis change, schedule expansion or alpha/net-PnL claim.
 
-ONE Goal70 is a prospective CPU analytical forecast only: fixed7998c3410d9...,
-same f78/prior61/original128/42 peers/TCNtop10/.01 mask, zero fitting/GPU/
-future quote reads. Original Paper stays TCNrank1/.01, not analytical top10.
+Goal70 CLOSED/no_forecast/febcfd1d...; exact precontract failureef04cbb1...
+at A/bf/196931c7f0ce400db37c303f6a4f2f75. Decoder, not broker/model failure.
+No forecast or contract; null terminal counters are preserved. Original
+appointment closed/unrefunded, no private execution or Paper state changed.
+Goal71 research batch has fixed799 CPU/Chronos GPU future forecasts and an
+independent CVaR screen, no fitting/future quote/credential/broker calls.
+Same f78/prior61/128/42/TCNtop10/.01 gate masks; original Paper remains
+TCNrank1/.01, not analytical top10, Chronos or CVaR.
 Retained binary/signed/conjunction forecasts preserve distinct as_of values.
 Source-only typed maskb5237628.../43 tests/six independent checks remains
 undeployed; no future result or Data qualification follows from its existence.
@@ -60,7 +65,7 @@ never translated from an older Score35 namespace.
 Dataab65b62b... still owns42-peer Oct13/20 endpoint observations. No manual
 launch or broker call is part of this research work. Closed research/debits and
 technical recovery history remain in Git9060b0f and immutable external roots.
-108 serial/full8 15319pass22skip344.49s/JUnit135afa0c.../Ruff/three Compose.
+Goal70 108 serial/full8 15319pass22skip338.72s/JUnit5b38b828.../Ruff/three Compose.
 Existing Paper owners, model, shared basis and exact pending identities remain.
 
 ## Private State And Exact Recovery

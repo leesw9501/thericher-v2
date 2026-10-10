@@ -55,16 +55,30 @@ Final799 model8c3410d9... lives only at the exact actual output root above;
 610e3bdcf2b... is retained, not substituted for final799. Original OLD
 427aaf411fe.../61042ce9939... and their embedded scalers remain unchanged.
 
-ONE next Goal70: freeze exact799 CPU prospective mask on original f78/prior61
-before Oct12OPEN->Oct19OPEN targets. Original128/42peers/TCNtop10/.01
-slots; strictly>.5 keeps or zeros slots, no rerank/redistribution/refloor.
-No training, GPU allocation, target read, source union or Paper replacement.
-Reuse established runtime and original feature definitions; rebuild canonical
-typed seals rather than translate Goal66 Score35 objects. Source-only
-preparation is parallel; no actual forecast has yet been published.
+Goal70 CLOSED/no_forecast/febcfd1d... at
+A/research/kis-stock-exact-book-gate-forward-shadow-v1/integration-evidence.json.
+Exact failure A/bf/196931c7f0ce400db37c303f6a4f2f75/actual-invocation-failed.json
+ef04cbb1...: freeze failed0.133018s09:51:13.463083UTC before contract/prepare.
+Hash-valid retained f78 JSON was incorrectly required to use canonical writer
+serialization. Source626482f3.../callerR241161c3d... remain immutable; no
+forecast or model rejection. Terminal counts remain null, not observed zeros.
+Scoped inventory empty09:56:27UTC/root only anchor+failure/process exit1;
+not whole-host custody, full input audit or successful inference/reaping proof.
+Original appointment closed, no reset/refund. Source34+independent6 passed
+but manufactured metadata missed real serialization; retain their limitations.
 
-108 serial1.63s/full8 15319pass22skip35warnings344.49s/15341collected,
-helper0/reaped; JUnit135afa0c... under A/verification/full8-20261010-g69.
+ONE next Goal71 is a bounded selection/allocation research batch. Repair only
+retained-metadata decoding in fresh source before separately declared first
+frozen gate/Chronos forecasts, plus one independent CVaR allocation screen.
+Read exact source-safe metadata shapes during preparation with mocked writes,
+never rows/model bodies/credentials. Future forecasts are fixed weights, not
+training, target reads, source unions or Paper replacement. Two resources may
+work independently; do not hold GPU for the CPU allocation comparison.
+CVaR sourcef505c92c.../8 supplied+5 independent checks8c04aee2... and Chronos
+proposalcfac1567... are preparation only, not actual results or allocations.
+
+Goal70 108 serial1.65s/full8 15319pass22skip35warnings338.72s/15341collected,
+helper0/reaped; JUnit5b38b828... under A/verification/full8-20261010-g70.
 Repo Ruff/default/research/accounting sample Compose pass. No doc-only full
 rerun. Claudee6dc130d... auth_unavailable is not agreement; unchanged login
 retry is not useful. Independent challenge narrows this result to development.
