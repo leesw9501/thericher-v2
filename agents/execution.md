@@ -8,6 +8,14 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Scope And Recovery
 
+Goal57 signed60 development CLOSED6e473f61.../three CUDA fits/36 cells/
+313.355s, no credential/account/provider/order call or bank change. Analytical
+seen improvement is not a replacement Paper model or executable position.
+Goal58 CPU-only future signed shadow retains originalTCN top10/.01 slots and
+can only suppress them to cash; no sizing/rerank/intent/broker/schedule path.
+Existing job2d616950... and exact entry/close/basis/recovery owners remain.
+Future fills, fees, settled cash and net PnL are still not observed here.
+
 Goal56 Data preparation CLOSED47a190f8.../installed1fcab95d...:42-peer
 Oct13/20 06:40..07:40 KST market-only owners; zero account/order/live/credentials
 during preparation. Original entry/close definitions unchanged, no manually

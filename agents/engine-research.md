@@ -7,19 +7,28 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Research (2026-10-10 KST)
 
-Goal56 preparation CLOSED47a190f8.../installed1fcab95d... . Oct12/19 endpoints
-remain not_observed; their Data owner does not pause research. Next fixed60
-payoff-aware family at A/research/kis-stock-payoff-aware-development-v1:
-proposal663f1406.../adapter9392e395...58 mock+28 independent/no scoped P1/P2;
-actual Torch/autograd/CPU/CUDA still untested. Draft913fd500... binds original
-128/OLD800/CURRENT113, signed five-OPEN net10bps target, purged427/610/799,
-three fits/36 fixed cells/one600s/no rescue. Payoff60 estimates a conditional
-mean; prefix_mean is the naive comparator, not an additional fitted model.
-OriginalTCN slots/no rerank/renorm/gain sizing; cash/TCN/binary60/prefix_mean/
-mechanical20-momentum controls and exact accounting. No allocation/fit yet.
-Breadth: signed-magnitude hypothesis, not another classifier architecture.
-Depth: owned prospective pair after Oct19; no foreground wait. Seen CURRENT
-development is not fresh alpha, Paper replacement or free holdout reuse.
+Goal57 CLOSED6e473f61.../contract03117125.../result e59d6a92... at
+A/research/kis-stock-payoff-aware-development-v1. Actual three purged-prefix
+CUDA fits/36 fixed replay cells, one observed313.355s family<600, seven inputs/
+458 sources unchanged/reaped/absent/lease released. Verify zero fits/inference.
+Whole10bps/original.10 exposure: signed60+1.467%, TCN+.956%, binary60+1.035%;
+strongest development kill passes, non-promoting follow-up only. Payoff DD
+better than TCN but worse than binary60. Signed standalone conditional payoff
+is not incumbent marginal utility, probability or calibrated uncertainty.
+Weights8d7b831b.../base74378c0c.../adapter9392e395... immutable. No fresh alpha,
+sealed spend, independent replication, Paper replacement or live claim.
+160 serial/full8 15274pass22skip35warnings340.98s/JUnit9d24c7a6...;
+source-only86/32/52/23 checks, Ruff/three sample Compose pass.
+Claude520f8cb7.../e524607a... unavailable, not agreement.
+Depth ready: Goal58 CPU-only pre-OPEN signed60 shadow on original f78/prior61,
+42eligible/TCNtop10/fixed.01 total slots; pred>0/no clipping/rerank/renorm.
+Freeze Oct12 OPEN->Oct19 OPEN, no targets/new training/GPU/holdout/order.
+Source helper571ca454.../36 synthetic checks released; parent owns native
+dispatch/durable clocks/zero-inference cached verification. Data endpoints
+remain owned/not_observed, not a research hold.
+Throughput preparation: immutable feature-only cache under external root,
+source-only synthetic work; measured41.355s feature span, speedup unproven.
+Breadth next: incumbent-aware cost/hold-exit mechanism, not more seen tuning.
 
 Goal55 forecast runtime COMPLETE016e67dc... at
 A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1. Retained

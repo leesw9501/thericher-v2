@@ -7,12 +7,18 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Resources (2026-10-10 KST)
 
-Goal56 Data preparation47a190f8.../jobab65b62b... installed two endpoints,
-zero fits/GPU/holdout. Goal57 draft913fd500... is source-only: signed60 three
-prefixes/36 cells/600s; no allocation/lease/registry edit. Concrete runtime pins
-await released code. Payoff60 estimates a conditional mean; its frozen prefix
-mean is the naive comparator, not a missing fourth fit. Keep original lineage
-and source limits; no Paper replacement or seen-data replication claim.
+Goal57 family CLOSED/contract03117125.../binding5c04a50e.../closure6e473f61.../
+custody e25bbffb... at A/research/kis-stock-payoff-aware-development-v1.
+Three actual CUDA fits/36 cells, no baseline fit or sealed spend; inclusive
+post-capture observation313.355138s<600, not its future stdout publication.
+All reaped/absent/source-input unchanged/lease released; same-native verify
+zero fits/inference. Final signed weights8d7b831b... immutable, development
+kill passed/non-promoting follow-up only, not Paper or independent alpha.
+Measured inclusive fit-call wall7.127s/features41.355s: not peak GPU utilization
+or permission/environment failure. One source-only feature-cache preparation
+is ready; no speedup until actual paired measurement. CPU Goal58 pre-OPEN
+shadow needs no GPU appointment, fit, sealed spend or new target. Existing
+Data endpoint and Paper ownership unchanged; no ready frozen new GPU family.
 
 Goal55 prospective shadow016e67dc... uses immutableTCN/Mixer60 numeric weights,
 zero fits/GPU allocation/sealed spend. Exact CPU workerfc77e52a... reconstructed

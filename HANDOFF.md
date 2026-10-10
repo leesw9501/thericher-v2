@@ -20,6 +20,34 @@ and immutable evidence; this projection replaces duplication, not records.
 
 ## Current Company Objective
 
+Goal57 COMPLETE: A/research/kis-stock-payoff-aware-development-v1,
+contract03117125.../native closure6e473f61.../result e59d6a92... . Actual CPU
+smoke, three CUDA fits and36 cells completed in313.355138s after capture
+publication, within one600s family; this excludes its own future stdout and
+this later integration receipt. Seven inputs/458 sources unchanged, children
+reaped/containers absent/GPU lease released. Same-native cached verification
+used zero extra fits/inference; exact accounting/replay matched.
+Whole10bps/original.10-exposure seen growth: payoff60+1.467%, TCN+.956%,
+binary60+1.035%. Strongest development kill passed, follow-up only; payoff
+drawdown beats TCN but not binary60. Standalone signed payoff is not incumbent
+marginal utility or calibrated uncertainty. Non-PIT/current-listed/raw/revised/
+action/finality limitations and seen selection remain; no independent alpha,
+Paper replacement or live claim. Weights8d7b831b... stay outside Git.
+Verification:160 changed serial,86 adapter,32 worker/caller,52 custody/prepare,
+23 independent mocks; full8 15274pass22skip35warnings340.98s/15296collected,
+JUnit9d24c7a6... at A/verification/full8-20261010-g57/pytest.xml, reaped/clean.
+Ruff/three sample Compose pass. Contract/result Claude520f8cb7.../e524607a...
+unavailable, not agreement. Actual CUDA fit-call wall7.127s, not a GPU
+environment/permission block; features41.355s are a measured preparation span.
+Next Goal58 freezes one CPU-only signed60 future shadow BEFORE Oct12 OPEN,
+same original128/42eligible/prior61/f78 and originalTCN top10/.01 slots,
+signed>0/no clipping/rerank/redistribution, Oct12 OPEN->Oct19 OPEN. No new fit,
+GPU allocation, target read, order or schedule. Existing Data/Paper owners
+below remain unchanged. Feature-cache source preparation runs independently;
+no actual speedup is claimed before a paired measurement.
+
+### Closed Goal56
+
 Goal56 endpoint preparation COMPLETE/closure47a190f8... at
 A/data/kis-stock-prospective-pair-owned-endpoints-v1. Jobab65b62b... freezes
 42 original peers, source445, runner e6a3f4cc..., peer-source d9d36341... and
@@ -37,10 +65,9 @@ preserved; r4 has no scoped P1/P2. Preparation callers failed before install;
 v3 localized UV executable exceeding a record-reader cap, v4 uses stream hash
 7c029973... . Used sources/failures remain immutable. Claudeaa027035...
 unavailable, not agreement. Honest-host marker/time, not cryptographic OS
-Scheduler origin; Operational logging disabled. Next Goal57: signed60 payoff
-development, three prefix CUDA fits/36 cells/one600s family. Adapter9392e395...
-passed58 mock+28 independent checks; actual Torch/CPU/CUDA untested. No new
-fit/allocation/Paper replacement yet; proceed without waiting for Oct19.
+Scheduler origin; Operational logging disabled. Adapter9392e395... passed58
+mock+28 independent checks before the actual Goal57 result above. No Paper
+replacement; prospective endpoints never became a foreground wait.
 
 Goal55 prospective forecast runtime COMPLETE/closure016e67dc... at
 A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1. Exact retained
