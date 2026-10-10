@@ -27,10 +27,14 @@ Ruff/three sample Compose pass. Old r1/r2/r3/caller failures stay preserved.
 
 Goal57 three CUDA fits/36 cells/313.355s COMPLETE6e473f61... consumes original
 seven bindings/128identities/prior61 only, no refresh union or Data promotion.
-Goal58 target-free CPU forecast reuses originalf78/42eligible before Oct12
-OPEN; later Oct12->Oct19 endpoint pair unobserved, not a lane/company hold.
-Cache helperb5dd9869.../37+26 synthetic tests/c59cb12b... is source-only; real
-producer parity/cache/speedup unmeasured. Source benchmark prepares separately.
+Goal58 target-free CPU forecast COMPLETE44236cd7.../60.235s: originalf78/
+42eligible/128keys, three original fixed slots retained/seven cash. No Data
+promotion/provider/target call. Oct12->Oct19 endpoint pair still unobserved.
+Goal59 cache helperb5dd9869.../37+26 synthetic tests/c59cb12b... plus native
+benchmark47c0ee70.../32db7a85... compares original seven inputs and exact
+OLD61..794/CURRENT61..112 features; real parity/speedup still unmeasured.
+No refresh union, prediction/target body or collection change; owned next_due
+above continues independently. Cache mismatch invalidates only that cache.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

@@ -19,36 +19,44 @@ independent replication, Paper replacement or live claim.160 serial/full8
 15274pass22skip35warnings340.98s/JUnit9d24c7a6...; Ruff/three sample Compose.
 Claude520f8cb7.../e524607a... unavailable, not agreement.
 
-Goal58 ACTIVE: CPU-only pre-OPEN signed shadow on originalf78/prior61,
-128identities/42eligible/originalTCNtop10/.01 slots. pred>0/no clipping,
-rerank, replacement, redistribution or gain sizing. Oct12 OPEN->Oct19 OPEN,
-whole5/10/20bps/.10 exposure, one240s before preparation;180work+60cleanup.
-No targets/new fit/GPU/sealed spend/order. Helper571ca454.../36 supplied+20
-independent checks/review339d7516... released. Euclid owns fresh worker/caller
-source prep; parent owns actual native freeze/dispatch/fsync/clocks/cached
-zero-inference verify. First invocation FAILED5.653s/capturea04602a8... before
-inference (Docker JSON-list/artifact-dict decoder mismatch). Created/never-
-started owner cleaned f9acb196.../2.893s/absent/source matched. Wrapper8246c021...
-adds outer-capture source/final-clock P2s. Fresh runtime repair root
-A/research/kis-stock-payoff60-shadow-runtime-recovery-v1, no model/data/slot
-change or old-source edit. One new240s CPU appointment, old failure unrefunded;
-current company Goal58 still active, no future target or completed forecast.
+Goal58 COMPLETE at A/research/kis-stock-payoff60-shadow-runtime-recovery-v1:
+job715be7f4.../forecastc007442f.../capture5ed216ef.../outer5db2d7a3.../
+integration44236cd7... . Same-native CPU forecast plus zero-inference readback,
+two original inference calls,60.235192s<240 after actual capture/audit,
+2026-10-10T01:20:58.130089UTC; excludes own future stdout/later integration.
+42eligible/86unavailable/original128/TCNtop10 unchanged; three fixed.01 slots
+retained/seven cash, no clipping/rerank/replacement/redistribution/gain sizing.
+Exact Oct12->Oct19 five-OPEN pair still future, no payoff/alpha claim. Source
+unchanged/reaped/absent/zero fit/GPU/target/broker. Final122 supplied checks,
+independentacc1edce.../be5cae62...;154 serial/full8 15274/22skip342.15s/
+JUnit0f94ae39... . First5.653s faileda04602a8.../cleanupf9acb196... and USED
+sources remain immutable/unrefunded. Fresh caller9c9.../wrapper920691... repair
+Docker-list ABI, diagnostic projection, outer custody and exact returned clock.
+
+Goal59 ACTIVE: native sealed-feature cache parity/paired-time measurement,
+one240s before preparation, no models/labels/predictions/fits/GPU or Paper.
+Parent owns actual dispatch/source/clock; Euclid owns minimal caller preparation,
+James independent benchmark source review. OLD61..794/CURRENT61..112/original
+seven bindings/128 identities frozen. Fail on any bitwise/identity/missingness/
+calendar/clock/source difference; unchanged Paper/Data owners continue.
 
 ## Ready Independent Preparation
 
 Throughput: feature-cacheb5dd9869.../37+26 synthetic/reviewc59cb12b... at
 A/research/kis-stock-sealed-feature-cache-preparation-v1, no real cache/parity
-or speedup. Copernicus owns fresh paired native benchmark source only.
+or speedup. Native adapter47c0ee70.../worker32db7a85.../28 supplied checks;
+real paired benchmark is current Goal59, not a prediction campaign.
 Actual prior feature span41.355s vs CUDA fit-call7.127s, not additive timing.
 
 Breadth: incumbent terminal-cash proxy896d808c.../28 synthetic/proposal
 ff169517... at A/research/kis-stock-incumbent-aware-payoff-preparation-v1.
-James prepares24 cached replay cells (fourarms/twobooks/threecosts), complete
+Sourcef2d5b47.../39 supplied+22 independent checks/c53e8267... prepares24
+cached replay cells (fourarms/twobooks/threecosts), complete
 five-session reviews61..106/terminal111/51marks, no fit/inference/GPU/actual
 cache read. Action is contingent on current execution OPEN/inventory/unchanged
 slot sizing, not pre-OPEN sealed or Bellman-optimal. Doublecount, quote timing,
-own-arm inventory, uncertainty and horizon limits explicit. Parent chooses
-next objective after Goal58; this preparation is not a second company goal.
+own-arm inventory, uncertainty and horizon limits explicit. Copernicus prepares
+the cached parent loader independently; no second goal or actual outcome.
 Primary-source reread1a0b1d5e... supports mechanism only, not empirical transfer
 or open-source code rights. No new optimizer dependency.
 

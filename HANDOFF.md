@@ -41,23 +41,31 @@ A/verification/full8-20261010-g57/pytest.xml; reaped/clean, Ruff/three sample
 Compose pass. Commit9ae7eec pushed. Claude520f8cb7.../e524607a... unavailable,
 not agreement. Stop unchanged diagnostic retries; independent work continues.
 
-Goal58 ACTIVE: kis-stock-payoff60-prospective-shadow-v1. CPU-only pre-OPEN
-signed forecast on original128/f78/prior61/42eligible/TCNtop10/fixed.01 slots,
-pred>0/no clipping/rerank/redistribution/gain sizing. Exact Oct12 OPEN->Oct19
-OPEN pair, whole5/10/20bps/.10 analytical exposure. One inclusive240s family
-before actual preparation,180work+60cleanup/publication, same-native cached
-verification without extra inference. First attempt FAILED5.653353s before
-inference/capturea04602a8.../outer0c159969...: Docker inspect list was passed to
-the canonical-dict artifact decoder, also preventing cleanup attestation.
-Exact created/never-started owner removed in2.893s/f9acb196.../source matched/
-absent, zero inference/fit/broker. Used d6cfba86.../e6966f8b.../a733979b... stay
-immutable. Independent wrapper8246c021... found two further P2s: outer-capture
-source custody and final returned-clock sampling. Fresh technical repair under
-A/research/kis-stock-payoff60-shadow-runtime-recovery-v1 preserves models,
-data/slots and old failure. New bounded240s CPU appointment is not a refund,
-GPU family or model rescue. Same company Goal58 remains active until forecast
-closure. Helper571ca454.../36 parent+20 independent checks/review339d7516...;
-parent owns actual source freeze/runtime/publication. No future target read.
+Goal58 COMPLETE at A/research/kis-stock-payoff60-shadow-runtime-recovery-v1:
+job715be7f4.../forecastc007442f.../capture5ed216ef.../outer5db2d7a3.../
+integration44236cd7... . Exact native CPU forecast and cached readback,
+two inference calls then zero,60.235192s post-capture/audit<240 at
+2026-10-10T01:20:58.130089UTC; own future stdout/later integration excluded.
+Original128/f78/prior61/42eligible/86unavailable/TCNtop10/.01 slots unchanged:
+three retained/seven cash, pred>0/no clipping/rerank/redistribution/gain sizing.
+Published01:20:28.855311UTC before Oct12 OPEN->Oct19 OPEN pair. Sources unchanged,
+children reaped/containers absent, no fit/GPU/targets/broker/Paper replacement.
+Full8 15274/22skip/35warnings342.15s/JUnit0f94ae39...,154 serial/Ruff/three
+sample Compose; final external122 supplied checks and independent repair
+receiptsacc1edce.../be5cae62... . First5.653s attempt remains FAILEDa04602a8.../
+0c159969... (Docker-list/dict ABI), exact created-owner cleanupf9acb196...;
+original d6cfba86.../e6966f8b.../a733979b... remain USED, not rewritten/refunded.
+Fresh diagnostics9c9ba59c.../wrapper920691b5... repair parser, full outer
+custody/final clock and failed-worker categories. No future payoff or alpha.
+
+Goal59 ACTIVE: measured sealed feature-cache benchmark. Exact original seven
+bindings/128 identities/OLD61..794/CURRENT61..112, same native CPU, one240s
+parent appointment before preparation. One input load, original compute/cache
+write/read/repeated original compute; require bitwise values/identity/missingness/
+source/calendar/clock parity. No labels/predictions/models/fits/GPU/provider or
+Paper change. Timings are paired/warm, not a cold-start or training-speed claim.
+Source-only incumbent terminal-cash replay prepares independently, no second goal.
+Claude9cabf9cd... unavailable, not agreement or a hold on private measured work.
 
 Goal55 binary future shadow already COMPLETE016e67dc... at
 A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1:
@@ -128,13 +136,15 @@ Current-listed/non-PIT/raw/revised/action/TR/finality/availability limits stay
 visible; they narrow claims, not delegated KIS Paper or exploratory research.
 
 Feature-cache helperb5dd9869.../37 supplied+26 independent synthetic checks/
-reviewc59cb12b... is source-only, actual parity/speedup unmeasured. Fresh
-native feature-only paired benchmark source prepares independently of Goal58.
+reviewc59cb12b... and benchmark47c0ee70.../32db7a85.../28 supplied checks
+remain source-only until Goal59's actual native parity/timing result.
 Incumbent-cost source reread1a0b1d5e... (arXiv1203.5957v1/1705.00109v1) supports
 mechanisms only; paper performance transfer rejected. Helper896d808c.../28
 synthetic checks/proposal ff169517... is a contingent-execution terminal-cash
 proxy, not a learned continuation value or pre-OPEN sealed action. Cached
-24-cell source preparation has no actual market run, dependency or broker path.
+24-cell sourcef2d5b47.../39 supplied+22 independent checks/reviewc53e8267...
+has no actual market run, dependency or broker path. Parent caller prepares
+separately; complete reviews61..106/terminal111/51marks exclude the partial tail.
 Earlier LSTM/GRU/attention/Patch/Mixer/rule/ML/TimesFM/Chronos results stay in
 Git/registry/exact roots; not absent experiments, current survivors or retries.
 Goal31 exhausted/failed-incomplete and Goal33 independent validation incomplete

@@ -2,27 +2,31 @@
 
 ## Current Owned Opportunities And Research
 
-Goal58 forecast objective remains ACTIVE. First CPU invocation at
-D:/thericher-v2/model-artifacts/research/kis-stock-payoff60-prospective-shadow-v1
-FAILED5.653353s/actual-parent-return.json a04602a8.../outer0c159969... .
-Released caller d6cfba86... incorrectly used native_session.decode (canonical
-DICT only) for Docker inspect (pretty LIST); created container never started.
-Fresh exact cleanup f9acb196.../2.893s validates job/source/command/mount/state,
-removes only that created owner and confirms label/name/ID absence. Zero
-inference/fit/broker; original failed fields/sources not rewritten. Initial
-CLI parser-test command had a quoting SyntaxError/no operation; five fresh
-synthetic decoder tests pass. Never rerun the USED cleanup or failed caller.
-Wrapper review8246c021... also retains outer-capture custody/final-clock P2s.
-Fresh narrow source repair under
-D:/thericher-v2/model-artifacts/research/kis-stock-payoff60-shadow-runtime-recovery-v1
-uses a separate Docker-list parser, post-outer-capture full source audit and
-exact returned-clock validation. One fresh240s technical CPU appointment,
-same models/data/slots, old5.653s unrefunded, no model tuning/GPU/Paper action.
-Company Goal58 closes only after actual forecast/cached result; no per-bug goal.
-Full8 already15274pass22skip35warnings342.15s/15296collected/JUnit0f94ae39...
-under D:/thericher-v2/model-artifacts/verification/full8-20261010-g58,
-154 serial/36 helper/34 caller-worker/4 parent checks. Three original wrapper
-falsifiers reproduced; that review is not all-guards-pass. No doc-only full rerun.
+Goal59 current assignment: exact native sealed-feature cache parity and paired
+timings, one240s CPU appointment before preparation. No model/target/prediction,
+GPU/provider/broker/schedule. Original seven bindings/128identities/OLD61..794/
+CURRENT61..112 fixed; bitwise values/keys/missingness/calendar/clock must match.
+Source-only benchmark47c0ee70.../32db7a85.../cacheb5dd9869... awaits actual
+parent source freeze/review. Warm paired timings are not cold/training speedup.
+See NEXT_CODEX_GOAL.md for the one objective; incumbent cached loader is only
+parallel source preparation. Claude9cabf9cd... unavailable, not agreement.
+
+Goal58 COMPLETE at
+D:/thericher-v2/model-artifacts/research/kis-stock-payoff60-shadow-runtime-recovery-v1:
+job715be7f4.../forecastc007442f.../capture5ed216ef.../outer5db2d7a3.../
+integration-evidence.json44236cd7... . Two CPU inference calls then zero cached;
+60.235192s post-capture/audit<240 at2026-10-10T01:20:58.130089UTC, excludes own
+future stdout/later integration. Offline project_integration.py verifies exact
+links without rebuilding context/doing inference or exposing private payload.
+42eligible/86unavailable/three retained slots/seven cash; no future payoff.
+Source unchanged/reaped/absent. Fresh9c9.../920691... sources repair Docker-list
+ABI, diagnostics and outer-capture custody/final clock. Independentacc1edce.../
+be5cae62.../122 fresh supplied checks. Original5.653s FAILEDa04602a8.../
+0c159969.../created-owner cleanupf9acb196... stays immutable/unrefunded.
+Never rerun USED callers/cleanup. Full8 15274pass22skip35warnings342.15s/
+15296collected/JUnit0f94ae39... under
+D:/thericher-v2/model-artifacts/verification/full8-20261010-g58;154 serial,
+Ruff/three sample Compose. No documentation-only full-suite rerun.
 Historical operating entries below describe their exact dated source scopes;
 current assignment/authority comes only from NEXT_CODEX_GOAL.md and AGENTS.md.
 

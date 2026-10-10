@@ -2,87 +2,78 @@
 
 ## Objective
 
-Complete kis-stock-payoff60-prospective-shadow-v1: freeze the signed60 model's
-CPU-only participation forecast before Oct12 OPEN for the already-owned
-Oct12 OPEN->Oct19 OPEN pair. Do not wait for endpoints or replace Paper.
+Complete kis-stock-sealed-feature-cache-benchmark-v1: measure an exact native
+feature cache against repeated original computation, so later model campaigns
+spend less time rebuilding unchanged causal features. One company objective,
+not a new model, dataset promotion or utilization target.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal57 actual CLOSED6e473f61.../contract03117125.../result e59d6a92... at
-A/research/kis-stock-payoff-aware-development-v1: three CUDA fits/36 cells,
-one313.355s post-capture observation<600, zero-fit/inference native verification.
-Seen whole10bps signed60+1.467% versusTCN+.956%, follow-up only. Signed weights
-8d7b831b.../adapter9392e395.../base74378c0c...; originalTCN9de27944... unchanged.
-Full8 15274pass22skip35warnings340.98s/15296collected/JUnit9d24c7a6...,
-160 changed serial/Ruff/three sample Compose passed. Claude520f8cb7.../
-e524607a... unavailable, not agreement. No independent alpha or Paper claim.
-Goal55 original binary shadow016e67dc... remains immutable seven kept/three
-cash, exact native cached proofda6fbbad..., no completed future payoff.
-Goal56 jobab65b62b.../installed1fcab95d... owns42-peer endpoint collection
-Oct13/20 06:40..07:40 KST; future results not_observed. Original Paper job
-2d616950... entry Oct12 22:30/close Oct13 04:50 KST stays unchanged.
+Goal58 COMPLETE at A/research/kis-stock-payoff60-shadow-runtime-recovery-v1:
+job715be7f4.../forecastc007442f.../capture5ed216ef.../outer5db2d7a3.../
+integration44236cd7... . Two CPU predictions/zero cached inference,
+60.235192s post-capture/audit<240 at2026-10-10T01:20:58.130089UTC;
+own future stdout/later integration excluded.42eligible/86unavailable,
+original128/f78/prior61/TCNtop10 unchanged, three fixed.01 slots/seven cash.
+First5.653s faileda04602a8.../cleanupf9acb196... remains FAILED/unrefunded.
+Original USED sources unchanged; fresh9c9.../920691... fixes runtime only.
+Full8 15274/22skip/35warnings342.15s/15296/JUnit0f94ae39...;154 serial,
+122 fresh supplied checks, independentacc1edce.../be5cae62... . No future alpha.
+
+Goal57 actual CUDA family313.355s/three fits/36 cells closed6e473f61.../
+result e59d6a92.../contract03117125.../seven inputs/458 sources unchanged.
+Seen signed60 growth+1.467% versusTCN+.956%, follow-up only. Fit-call7.127s
+and feature41.355s are inclusive spans, not additive utilization attribution.
+Prepared cacheb5dd9869.../37+26 synthetic/c59cb12b...; benchmark adapter
+47c0ee70.../worker32db7a85.../28 supplied checks remain source-only.
+Claude direction challenge9cabf9cd... unavailable, not agreement or a hold.
 
 ## Work
 
-The first source-pinned CPU invocation FAILED in5.653353s before inference:
-caller used the canonical-dict artifact decoder on Docker inspect's pretty
-JSON list. Its cleanup also rejected that protocol. Exact created/never-started
-owner was then removed with source/job/command/mount attestation; cleanup
-f9acb196.../2.893s/absent, no inference/fit/broker. Original d6cfba86.../
-e6966f8b.../a733979b.../capturea04602a8... stay USED/FAILED, not rewritten.
-Independent wrapper8246c021... also found outer-capture source custody and
-final-clock P2s. Repair only these runtime faults in fresh sources under
-A/research/kis-stock-payoff60-shadow-runtime-recovery-v1, preserving identical
-models/data/slots. One new bounded240s technical CPU appointment, not a refund
-of the original5.653s, GPU family or outcome-informed model rescue. Use a
-separate bounded Docker-list decoder; artifact canonical-dict decoder stays
-strict. Reattest all frozen custody after outer capture and validate the exact
-returned UTC/elapsed samples. Test the REAL parser ABI with manufactured JSON,
-not a mock that changes its protocol. Complete the current forecast objective,
-do not create another company goal merely for this bug.
+Engine/parent: finish the minimal pinned native parent caller and independently
+review actual source protocol/failure paths before dispatch. One240s appointment
+starts BEFORE plan/source preparation; at most180s work plus60s cleanup and
+durable publication. CPU2/8GiB, fixed native image d6b43213..., network-none,
+read-only/no-GPU, exact six benchmark mounts. Do not reuse the canonical-dict
+artifact decoder for Docker JSON lists. Default inert; one explicit actual run.
 
-Engine/parent: freeze exact original128 identities, f78/prior61/42eligible,
-TCN20 rank top10 and signed60 forecast on the same causal pre-OPEN context.
-Only finite signed pred>0 may retain each original1/100 total-basis slot;
-reject to cash, no clipping, rerank, replacement, redistribution or gain sizing.
-Freeze exact Oct12 OPEN->Oct19 OPEN, five official sessions, whole5/10/20bps,
-original.10 analytical exposure and exact delta/cent/fee accounting assumptions.
-This is a standalone-payoff shadow, not incumbent utility or calibrated risk.
+Freeze exact original Goal57 contract03117125..., original128 identities and
+seven data bindings; native Python3.12.14/NumPy2.5.1/calendar5.4.0. Load each
+original panel once, without prediction cache, labels, targets or model imports.
+Compute OLD entries61..794 and CURRENT61..112 using original context/cohort
+sources, four causal features and60-bar sequences/20-bar exact tail. Preserve
+identity, unavailable reason, timestamps, calendar, numeric dtype and geometry.
+Write an immutable external NPZ/manifest, safe allow_pickle=False readback,
+repeat original computation and require bitwise equality for every eligible
+value. Audit exact sources/input bindings before and after durable result.
 
-Use safe numeric NPZ loading and exact model/source hashes, existing native
-Python3.12.14/Torch2.7.0+cu128 image d6b43213... CPU/network-none, unchanged
-eight original input roots. One inclusive240s invocation anchor BEFORE source
-freeze/context preparation: at most180s work plus60s cleanup/publication.
-Persist private predictions only outside Git, project counts/scope/time/hash
-only. Read back cached payload in SAME native runtime with zero extra fit or
-inference. Validate producer/model/source/contract/context links, nonempty
-source set, explicit inner deadlines and actual durable-publication pre-OPEN
-clock; never substitute a Windows context digest, tolerance or latest scan.
-Preserve old failed Goal55 invocations and all USED sources without refund.
+Record input-load/first compute/cache write/cache load/repeated compute/parity
+and parent post-publication timing separately. Include write/load overhead;
+state warm-cache/order effects, not a cold-start, additive-time or downstream
+training-speed claim. Retain cache only as feature data; no raw market bytes in
+Git or model artifacts in repo. No numeric market values/predictions in stdout.
+Keep final exact returned UTC/elapsed samples within the240s appointment;
+retain categorical failure/unknown and reap/attest any exact owned container.
+Never edit USED source/results or rerun a failed attempt to change its evidence.
 
-Temporary independent role tests synthetic failure paths before actual use.
-Claude result/shadow challengee524607a... already returned unavailable; record
-it honestly, continue within standing private authority. Steward records
-zero GPU appointment/sealed spend. Separate feature-cache source preparation
-may proceed in parallel but must not modify this forecast's input or caller.
-Data/Execution installed owners continue unchanged; no manual task invocation,
-new broker/credential path, schedule, order, bank/budget/identity reset.
+Parallel: Copernicus may prepare a source-only native cached parent loader for
+incumbent terminal-cash24-cell replay, reviewed f2d5b47.../c53e8267... . No actual
+cached replay, fit/inference/GPU, outcome-based contract choice or second goal.
+Data endpoints jobab65b62b... due Oct13/20 06:40..07:40KST and original Paper
+job2d616950... entryOct12 22:30/closeOct13 04:50KST stay unchanged. No manual
+task/collector/provider/account/order invocation, secret read or bank reset.
 
 ## Completion / Kill
 
-Actual exact pre-OPEN forecast and same-native cached verification, or precise
-scoped runtime failure. Source/model/input unchanged, all42 eligible predictions
-finite, original top10 conserved as kept slots plus cash, publication before
-2026-10-12T13:30UTC,240s observed bound, child reaped/container absent.
-Strongest kill: late publication, changed links/geometry/missingness, nonfinite
-prediction, hidden inference in cached verify, slot redistribution, target
-access, source/runtime mismatch or budget overrun. Preserve failed bytes;
-do not rescue by retraining or replacing the original Paper writer.
-No endpoint/payoff, PIT/finality, independent alpha, Paper qualification or
-live claim follows from a forecast. Future Data availability belongs to its
-owned next_due, not foreground waiting.
+Actual native exact parity with useful paired timing evidence, or an exact
+bounded source/runtime/geometry/budget failure. Strongest kill: one changed
+binding/value/key/missing reason/clock/calendar/dtype, model/target access,
+unbound durable receipt, budget overrun or unreaped owner. A failed cache does
+not invalidate original features or block another lane. No models, dataset
+qualification, Paper replacement, fresh alpha or live claim follows.
 
-At integration run changed-path serial, clean8 authority, Ruff and three
-sample-env Compose configurations. Refresh current stateboards/HANDOFF,
-commit/push, replace this with ONE material next objective and continue.
+At integration use changed-path serial, clean8 authority, Ruff and three
+sample-env Compose configurations. Refresh only changed current stateboards/
+HANDOFF/RUNBOOK, commit/push, replace this with ONE material next objective
+and continue. Do not wait in the foreground for future market endpoints.

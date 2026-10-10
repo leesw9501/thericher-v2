@@ -37,11 +37,15 @@ host marker/time provenance, not cryptographic OS Scheduler origin.
 Goal57 signed60 COMPLETE6e473f61.../three CUDA fits/36cells/313.355s, zero
 credential/provider/account/order calls or bank change in that scope. Seen
 improvement is not independent alpha or a replacement Paper model.
-Goal58 CPU-only future shadow retains originalTCNtop10/.01 analytical slots,
-may suppress to cash only; no broker/intent/sizing/rerank/schedule path.
+Goal58 CPU-only future shadow COMPLETE44236cd7.../60.235s: originalTCNtop10/
+.01 analytical slots, three retained/seven cash. No broker/intent/sizing/
+rerank/schedule path or future payoff. Original Paper stays originalTCNrank1.
 First CPU attempt failed before inference; exact created research-container
 cleanup f9acb196... proves absence and source match, not a broker recovery.
-Fresh parser/publication repair has no Paper bank, order or schedule effect.
+Fresh parser/publication repair920691.../9c9... succeeded with source match,
+reaped/absent and zero cached inference; no Paper bank/order/schedule effect.
+Goal59 cache parity/paired CPU timing has no target/model/credential/broker
+path. Incumbent terminal-cash source study remains research-only/non-promoting.
 Goal55 binary shadow016e67dc.../native cachedda6fbbad.../seven kept remains
 immutable and non-executable. Data jobab65b62b... owns42-peer endpoints
 Oct13/20 06:40..07:40 KST, market-only/no manual invocation.
