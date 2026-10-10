@@ -2,9 +2,25 @@
 
 ## Current Owned Opportunities And Research
 
-Goal64 current assignment: exact environment recovery for the SAME fixed
-original60x2 quantile family; native CPU smoke before three CUDA fits/shared600s
-and30 cells. Goal62 bounded prepare failure bdd26cf0... is at
+Goal65 current assignment: fixed binary60>0.5 AND signed60>0 conjunction on
+original TCN slots. Pure research component and identical cached controls;
+no fitting/threshold search/GPU allocation/Paper replacement. Wrapper repairs
+are focused role packages within this goal, not new company boundaries.
+Goal64 COMPLETE/REJECTED30b0b842... is at
+D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:
+invocationf98f4fe52ffb4bdf872757bf7e2f478e/capture7feef64c.../worker3458d551... .
+CPU toy plus three actual CUDA fits/30 complete cells, cached zero extra
+fits/inferences/action-execution-economics match. Actual parent-returned
+242.266783s after capture/audit04:36:58.548063UTC excludes own future stdout/
+later integration; stored placeholders are not self-observation. Exact independent
+buffers reproduce all44 output pins and rejection, not the clock event.
+Reaped/absent/released/unchanged. Whole10/OPEN111 return median+.3152%,
+signed+1.7643%, TCN+1.3198%, cash0; median utility trails both models.
+Lower diagnostic-.0790% is not selected. Final model20f720f4... external.
+351 serial20.13s/full8 15274pass22skip35warnings352.25s/JUnit48bb6f58... reaped.
+No broker PnL/calibrated risk/fresh alpha/sealed spend or model replacement.
+Goal57 CLOSE112 economics must be replayed on this common endpoint before
+comparison. Goal62 bounded prepare failure bdd26cf0... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-development-v1/integration-evidence.json,
 capturedaaa229e.../invocation1f0c198a49f9449593b30cd49fd9e97b/0.90167s at
 03:56:49.261126UTC. Native/CPU/GPU/registry not reached; no model result.

@@ -55,8 +55,10 @@ feadbe34.../54.402s, reaped/absent/no broker. No complete cell economics.
 Goal62 preparation failurebdd26cf0.../0.90167s reached no native/GPU/broker
 path. Goal63 ENV failure9cabcb37.../7.577810s and exact cleanupa6a1930c.../
 2.021080s prove native never started/reaped/absent/released; no broker change.
-Goal64 exact-environment quantile recovery stays non-promoting with no
-risk/order/bank/schedule change, calibrated tail-risk or Paper replacement.
+Goal64 actual quantile COMPLETE/REJECTED30b0b842.../242.266783s/three CUDA fits/
+30cells/cached0extra/reaped/absent/released; no broker change. Model median
+utility trails identical OPEN111 controls. Goal65 fixed binary/signed conjunction
+keeps risk/order/bank/schedule unchanged; no calibrated tail-risk/Paper replacement.
 Goal55 binary shadow016e67dc.../native cachedda6fbbad.../seven kept remains
 immutable and non-executable. Data jobab65b62b... owns42-peer endpoints
 Oct13/20 06:40..07:40 KST, market-only/no manual invocation.

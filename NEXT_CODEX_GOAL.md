@@ -2,66 +2,69 @@
 
 ## Objective
 
-Complete kis-stock-payoff-quantile-environment-recovery-v1: run the first
-actual fixed quantile campaign after restoring the proven native environment.
-ONE company objective; no model retuning, price-mapping rescue or Paper change.
+Complete kis-stock-binary-signed-conjunction-development-v1: implement and
+evaluate one fixed decision DAG using existing binary60 and signed60 experts.
+ONE company objective: original TCN ranking -> binary60>0.5 AND signed60>0 ->
+original slot or cash. No ranking change, new training, threshold selection,
+resizing, price transform, sealed evaluation or Paper model replacement.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal63 CLOSED/runtime failure recovered9cabcb37... at
-A/research/kis-stock-payoff-quantile-runtime-recovery-v1/integration-evidence.json:
-invocation15fde0361e4b4e2db246af7b339c5d96/capture6f674fe7.../7.577810s at
-2026-10-10T04:08:53.502087UTC/container_environment. Original unknown counts,
-absencefalse/leasereleasenull/failed registry3abf7ee9... remain unchanged.
-Separate owned cleanupa6a1930c.../2.021080s proves native never started,
-child reaped/container absent/GPU lease released. No numerical model result.
-Goal62 prepare0.90167s/path failurebdd26cf0... also retained, no refund.
+Goal64 quantile campaign COMPLETE/REJECTED30b0b842... at
+A/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:
+f98f4fe52ffb4bdf872757bf7e2f478e/capture7feef64c.../worker3458d551... .
+One CPU toy/three actual CUDA fits/30 complete cells/242.266783s at
+2026-10-10T04:36:58.548063UTC after capture/audit, future stdout excluded.
+Reaped/absent/lease released/unchanged; cached zero extra fits/inferences.
+Median whole10+.3152% fails utility against signed+1.7643%/TCN+1.3198%/cash.
+Lower diagnostic is not selected. Seen revised/current-listed/non-PIT only,
+not calibration, independent alpha, broker PnL or Paper qualification.
+Preserve all prior failed attempts/debits and model artifacts.
 
-Restore ONLY exact image PYTHONUNBUFFERED=1 and proven Goal57 deterministic
-CUBLAS_WORKSPACE_CONFIG=:4096:8. Fresh caller309682c0...; freeze fresh parent
-source under this objective's A/research root before execution. Preserve
-short A/qn/invocation staging, maximum prepared path<260, original direct M RO.
-No OS, image, framework, failed-file, source-archive or numerical change.
+Original Goal57 expert prediction cache df2cc9b8... has binary/signed/TCN
+same CURRENT grid, eligible peers and final799 lineage. Do not compare stored
+Goal57 CLOSE112 economics: replay every arm on common terminal OPEN111.
+Goal64 exact cached feature manifests remain OLD2ba5a2bd.../CURRENT11b37af8...,
+original seven source bindings/128 identities, direct M RO, no calendar union.
 
 ## Fixed Work
 
-SAME kis-stock-payoff-quantile-development-v1 family. Keep failed first trial;
-one fresh600s inclusive technical appointment with540s work/60s cleanup.
-Use existing registry/GpuFileLock. Model0d2269aa.../input1a9214d1.../
-factorycccb2d93.../worker880c361e.../entryf5aa1c34... remain fixed.
+Engine owns a small pure repo component consuming bound original TCN ScoreSeal
+and exactly aligned expert values, returning original slots or cash.
+Binary threshold strictly>0.5, signed strictly>0; zero/ties do not pass.
+Reject nonfinite/misaligned/duplicate/missing expert inputs without reranking,
+silent intersection, padding, clipping or arbitrary model code.
 
-Pinned native image d6b43213.../Python3.12.14/Torch2.7.0+cu128/NumPy2.5.1.
-One manufactured CPU toy first, then three actual CUDA prefix fits427/610/799:
-original daily N,60,2, four epochs/batch512/Adam.001/clip1/seed101,
-deterministic float32/TF32off, q(.1,.5,.9) noncrossing softplus gaps.
-Equal-date mean pinball; nearest-cent five-OPEN signed net10bps target.
-Purge exit<=cutoff before OLD labels; min120 complete dates/train-only scaler.
-OLD OOF428..610/611..794; final799 predicts CURRENT, no CURRENT training labels.
+Freeze one new seen-development family before conjunction outcomes are read.
+Five arms: conjunction, binary-only, signed-only, original TCN, cash.
+Whole/fractional x5/10/20bps:30 cells/shared240s CPU runtime appointment,
+reviews61..106 by5,51 marks, terminalOPEN111, original top10/.01 targets.
+Persist actions before quotes; match exact original-quantity-or-zero accounting.
+Reuse checked frozen predictions/features, no fit/inference/labels/targets
+for expert selection. Complete cached replay/readback, no outcome-driven tuning.
 
-Five original arms: median>0 primary, lower>0 diagnostic, signed60>0,
-originalTCN and cash. OriginalTCNtop10/.01 slots: no rerank, redistribution,
-sizing increase, price transform or clipping. Whole/fractional x5/10/20bps:
-30 cells/reviews61..106 by5/terminalOPEN111/51marks. Persist/readback models,
-predictions and action/execution streams; cached replay zero extra fit/inference.
-Primary whole10 kill: positive net growth, strict utility above signed/TCN/cash,
-drawdown<=TCN and accepted>0. Missing comparison means no verdict.
-No calendar union/padding/recomputation fallback/naive loss comparison,
-calibrated risk, fresh alpha, sealed spend or Paper replacement.
+Kill conjunction unless whole10 has positive net growth, accepted>0 and strict
+utility above both constituent masks/TCN/cash, with drawdown<=TCN. Missing
+comparison is input_unavailable, not dropped peers or rejection. Use the same
+fractions/costs/endpoints for all arms. A pass is follow-up-only, not deployment.
 
-## Ownership And Completion
+Copernicus owns pure component/tests; execution/accounting review is independent
+and cannot choose strategy. Infra reuses the smallest existing bounded CPU
+path, no new platform/worker/schedule. Parent integrates; Validation receives
+frozen outputs only. Focused wrapper repairs stay inside this company objective;
+full authority runs once at material integration or shared runtime/control change.
 
-Engine/Infra run; independent roles review frozen deltas, not duplicate full
-source harnesses. Steward owns exclusive GPU lease. Claude auth-unavailable
-9a0121d4... is not agreement; no blind retry or independent-lane hold.
-Data/Paper four finite owners remain unchanged: Paper entryOct12 22:30/
-closeOct13 04:50KST, Data entryOct13/exitOct20 06:40KST. Ready task facts
-are not fills or collection. No manual provider/task/order, schedule expansion,
-budget/identity reset, credentials/.env/KIS_LIVE_*, payment or runtime replacement.
+## Authority And Completion
 
-Complete with native smoke/three CUDA fits/30-cell cached comparison or an exact
-bounded runtime failure. Reattest source/input hashes, actual post-publication
-clock, reaping/absence/lease release and truthful partial/unknown counts.
-Keep A artifacts/M data/D:15% floor/C:/trpy scratch. Verify changed-path serial/
-clean8 authority/Ruff/three sample-env Compose; commit/push required current
-facts, replace this with ONE material next objective and continue ready work.
+Claude9a0121d4... auth unavailable is not agreement; no blind retry or lane hold.
+Four finite Data/Paper owners unchanged: Paper Oct12 22:30/Oct13 04:50 KST;
+Data Oct13/20 06:40KST. No manual provider/task/order, scheduler expansion,
+credential/.env/KIS_LIVE_* access, budget/identity reset, payment/public exposure
+or major runtime replacement. Keep A artifacts/M data/D:15% floor/C:/trpy scratch.
+
+Complete with pure-component focused tests and exact common cached comparison,
+or a narrowly evidenced unavailable/rejected result after bounded recovery.
+Reattest sources/inputs/parent-returned post-publication clock/reaping/absence.
+Verify changed-path serial/clean8 authority/Ruff/three sample-env Compose;
+commit/push, replace this with ONE material next objective, continue ready work.

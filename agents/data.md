@@ -44,10 +44,13 @@ Goal62 preparation failedbdd26cf0.../0.90167s before native/data/model work;
 measured Windows long-path fault is technical, not a dataset rejection.
 Goal63 container_environment failure9cabcb37... occurred before native start;
 separate cleanupa6a1930c... proves reaped/absent/released. No Data rejection.
-Goal64 same OLD734/CURRENT52 quantile ENV recovery retains separate calendars/seven
+Goal64 COMPLETE30b0b842.../242.266783s actual three CUDA fits/30cells; input/source
+unchanged/reaped/absent/released. Same OLD734/CURRENT52 separate calendars/seven
 bindings/128 identities. Input1a9214d1... verifiedf7f56ebe... propagates expiry;
 original60x2 needs no padding. Raw M direct RO, never staged under A.
-No actual new data/cache/target acquisition, union or qualification. Owned
+No new data/cache/target acquisition, union or qualification. Goal65 cached
+binary/signed conjunction retains the same CURRENT grid/OPEN111; original
+Goal57 CLOSE112 metrics must be replayed, never compared as-is. Owned
 next_due continues independently; original limits remain visible.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;

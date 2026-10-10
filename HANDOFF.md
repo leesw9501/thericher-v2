@@ -20,6 +20,24 @@ RUNBOOK historical entries are source-local operations, not ready assignments.
 
 ## Current Objective And Research
 
+Goal64 COMPLETE/REJECTED30b0b842... at
+A/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:
+invocationf98f4fe52ffb4bdf872757bf7e2f478e/capture7feef64c.../
+contractb545d4c9.../worker3458d551... . Actual CPU toy plus three CUDA fits,
+30 complete cells, zero extra cached fits/inferences; action/execution/economics
+match. Actual parent-returned post-capture242.266783s<600 at
+2026-10-10T04:36:58.548063UTC excludes own future stdout/later integration;
+stored placeholders are not self-observation. Reaped/absent/released/unchanged.
+Whole10/OPEN111 growth median+.3152%, signed60+1.7643%, TCN+1.3198%, cash0;
+median utility fails the fixed screen. Lower diagnostic-.0790% is not selected.
+These are seen development returns, not broker PnL, calibrated risk or alpha.
+Goal57 CLOSE112 metrics are not directly comparable. Independent checked
+buffers reproduce the kill and all44 output pins, not the original clock event.
+351 serial20.13s/full8 15274pass22skip35warnings352.25s/JUnit48bb6f58... reaped.
+Final quantile NPZ20f720f4... stays external; no Paper replacement/sealed spend.
+Goal65 next: pure fixed binary60>0.5 AND signed60>0 mask on original TCN slots,
+plus identical cached replay controls. No new fitting or threshold search.
+
 Goal62 CLOSED/bounded preparation failure bdd26cf0... at
 A/research/kis-stock-payoff-quantile-development-v1/integration-evidence.json:
 invocation1f0c198a49f9449593b30cd49fd9e97b/capturedaaa229e.../
@@ -124,10 +142,9 @@ is unavailable, not a full strategy comparison or global model/data rejection.
 No clipping/refit/parameter rescue.18/49 supplied;28/57 independentde73e60f...,
 9 outer17713d35.../12 rotation7003bc4b...;346 serial/full8 15274pass22skip/
 35warnings343.65s/JUnite85216df... . All failed sources/debits remain retained.
-Goal64 ACTIVE: exact environment recovery for the same original60x2 quantile
-family, before its first actual native smoke/three CUDA fits/30-cell replay.
-Goal62/63 failed attempts and separate cleanup are closed above, not model
-results or allocation refunds. No actual quantile numerical work yet.
+Goal65 ACTIVE: fixed binary/signed expert conjunction and common cached
+development replay. Goal64 quantile model is rejected, not retuned. Goal62/63
+failed attempts and separate cleanup remain immutable and unrefunded.
 No Paper replacement, sealed spend, calibration or new broker schedule.
 Uncertainty sources16ef6902... independently reread8308a59a...: mechanism only,
 pinball/spread is not calibrated financial risk; no new GPU family dispatched.

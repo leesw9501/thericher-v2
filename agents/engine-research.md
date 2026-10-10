@@ -6,6 +6,20 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Work (2026-10-10 KST)
 
+Goal64 COMPLETE/REJECTED30b0b842... at
+A/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:
+invocationf98f4fe5.../capture7feef64c.../worker3458d551... . Actual CPU toy,
+three CUDA fits/30 complete cells/242.266783s post-capture<60004:36:58.548063UTC;
+reaped/absent/released/unchanged. Exact cached economics/action/execution match,
+zero extra fits/inferences. Whole10/OPEN111 growth median+.3152%, signed+1.7643%,
+TCN+1.3198%, cash0; median utility below signed/TCN, fixed kill rejected.
+Lower-.0790%/one accepted slot diagnostic only. No calibration/fresh alpha/
+Paper replacement. Independent buffers/all44 pins reproduce the screen,
+not the original clock.351 serial20.13s/full8 15274/22skip/35warnings352.25s/
+JUnit48bb6f58... . Preserve final NPZ20f720f4... and all prior failed debits.
+Goal65 ACTIVE: original TCN slots gated by binary60>0.5 AND signed60>0,
+same CURRENT grid and OPEN111 replay; no training, thresholds or resizing.
+
 Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
 contract03117125.../result e59d6a92.../closure6e473f61.../integration b2ef8c11... .
 Three actual purged-prefix CUDA fits/36 replay cells/observed313.355s<600,
@@ -70,8 +84,7 @@ invocation15fde036.../capture6f674fe7.../7.577810s/container_environment.
 Original unknown counters/failed registry3abf7ee9... preserved. Separate exact
 cleanupa6a1930c.../2.021080s proves native never started/reaped/absent/released.
 351 serial21.07s/full8 15274pass22skip35warnings344.81s/JUnitfcab9c88... .
-Goal64 ACTIVE: SAME fixed original60x2 quantile family, first actual
-three-prefix/shared600s CPU-smoke-to-CUDA/30-cell replay after exact ENV repair.
+Goal64 SAME original60x2 quantile family completed above after exact ENV repair.
 No retuning, Paper replacement, sealed spend, calibration or fresh validation.
 
 ## Ready Independent Preparation
@@ -107,8 +120,8 @@ Parent216afd41.../15 independent1e8ac968... staging failure and fresh255a586e...
 container ENV failure are preserved. Short A staging stays; exact caller
 309682c0... restores image PYTHONUNBUFFERED=1 and proven Goal57 deterministic
 CUBLAS_WORKSPACE_CONFIG=:4096:8. No numerical change. q(.1,.5,.9)/three
-prefixes/30 cells/shared600s, median primary/lower diagnostic. Freeze final
-parent pin before dispatch; original failed allocation is not refunded.
+prefixes/30 cells/shared600s, median primary/lower diagnostic. Actual parent
+844d2f3c... completed; original failed allocation is not refunded. No rescue fit.
 
 Depth: Goal55 binary shadow016e67dc.../native cachedda6fbbad... already frozen
 Oct9 23:03:14.321194UTC:42eligible/seven kept/three cash. Same-native21.880s,

@@ -42,8 +42,12 @@ model changes. Goal63 registered first quantile trial but failed ENV inspection
 before native start:9cabcb37.../7.577810s/registry3abf7ee9... non_promoting_failed.
 Original counters/absencefalse/leasereleasenull remain; separate exact cleanup
 a6a1930c.../2.021080s proves never-started/reaped/absent/released. No refund.
-Goal64 is the SAME quantile family, three prefixes/shared600s/CPU smoke first/
-sealed0. Exact ENV restoration only; first actual numerical training pending.
+Goal64 SAME quantile family completed30b0b842.../contractb545d4c9.../
+registry457a0bcb.../outcomea86c4d3c...; CPU toy plus three actual CUDA fits,
+30cells/shared600s/observed242.266783s at04:36:58.548063UTC after capture/audit.
+Sealed0/reaped/absent/released/input-source unchanged/cached0extra. Median
+whole10 screen rejected; no rescue fit/refund/Paper qualification.
+Goal65 fixed binary/signed cached conjunction uses zero fitting/GPU/sealed spend.
 Sources
 model0d2269aa.../input1a9214d1.../worker880c361e.../entryf5aa1c34... ready;
 freeze fresh host/parent pins before actual dispatch. Claude auth-unavailable
