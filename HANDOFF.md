@@ -5,685 +5,152 @@
 Private U.S.-equity engine: useful data -> model research -> cost-aware replay
 -> repeatable KIS Paper -> owned PnL attribution. No robust winning model is
 selected. Paper is early execution learning, not a profitability prize.
-AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns exactly one company objective.
+AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns ONE company objective.
 
-Private no-cost Data/Research/KIS Paper credentials, calls, orders, sizing and
-owned schedules are delegated. Never read/route KIS_LIVE_*, enable real money,
-pay, accept unclear rights, expose a public service or replace a major runtime
-without operator authority. Never output secrets, account/order identifiers,
-raw broker values, private amounts or market rows. Do not invent global gates.
-
+Private no-cost Data/Research/KIS Paper calls, orders, sizing and owned schedules
+are delegated. Never read/route KIS_LIVE_*, enable real money, pay, accept unclear
+rights, expose public service or replace a major runtime without the operator.
+Never output secrets, account/order identifiers, raw broker/market values or
+private amounts. Do not invent global gates or wait for routine decisions.
 M=D:/market_data; A=D:/thericher-v2/model-artifacts (/app/model_artifacts).
-Last measured free space C:25.50%, D:40.13%; preserve D:15% floor.
-Test scratch uses measured-fast C:/trpy. Closed history remains in Git2ebc361
-and immutable evidence; this projection replaces duplication, not records.
+Last measured free C:25.58%, D:40.10%; preserve D:15%. Test scratch C:/trpy.
+Closed history is in Git9ae7eec and immutable external roots/custody. This
+current projection supersedes old dispatch instructions, not their evidence.
+RUNBOOK historical entries are source-local operations, not ready assignments.
 
-## Current Company Objective
+## Current Objective And Research
 
-Goal57 COMPLETE: A/research/kis-stock-payoff-aware-development-v1,
-contract03117125.../native closure6e473f61.../result e59d6a92... . Actual CPU
-smoke, three CUDA fits and36 cells completed in313.355138s after capture
-publication, within one600s family; this excludes its own future stdout and
-this later integration receipt. Seven inputs/458 sources unchanged, children
-reaped/containers absent/GPU lease released. Same-native cached verification
-used zero extra fits/inference; exact accounting/replay matched.
-Whole10bps/original.10-exposure seen growth: payoff60+1.467%, TCN+.956%,
-binary60+1.035%. Strongest development kill passed, follow-up only; payoff
-drawdown beats TCN but not binary60. Standalone signed payoff is not incumbent
-marginal utility or calibrated uncertainty. Non-PIT/current-listed/raw/revised/
-action/finality limitations and seen selection remain; no independent alpha,
-Paper replacement or live claim. Weights8d7b831b... stay outside Git.
-Verification:160 changed serial,86 adapter,32 worker/caller,52 custody/prepare,
-23 independent mocks; full8 15274pass22skip35warnings340.98s/15296collected,
-JUnit9d24c7a6... at A/verification/full8-20261010-g57/pytest.xml, reaped/clean.
-Ruff/three sample Compose pass. Contract/result Claude520f8cb7.../e524607a...
-unavailable, not agreement. Actual CUDA fit-call wall7.127s, not a GPU
-environment/permission block; features41.355s are a measured preparation span.
-Next Goal58 freezes one CPU-only signed60 future shadow BEFORE Oct12 OPEN,
-same original128/42eligible/prior61/f78 and originalTCN top10/.01 slots,
-signed>0/no clipping/rerank/redistribution, Oct12 OPEN->Oct19 OPEN. No new fit,
-GPU allocation, target read, order or schedule. Existing Data/Paper owners
-below remain unchanged. Feature-cache source preparation runs independently;
-no actual speedup is claimed before a paired measurement.
+Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
+contract03117125.../native closure6e473f61.../result e59d6a92.../
+integration b2ef8c11... . CPU smoke, three CUDA fits/36 cells, observed
+313.355138s<600 after actual capture publication; own future stdout/later
+integration receipt publication excluded. Seven inputs/458 sources unchanged,
+children reaped/containers absent/GPU lease released. Same-native cached
+verification zero fits/inference; exact accounting/replay matched.
+Seen whole10bps/original.10-exposure growth signed60+1.467%, TCN+.956%,
+binary60+1.035%; strongest development kill passes, follow-up only. Payoff DD
+beats TCN but not binary60. Standalone conditional payoff is not incumbent
+hold/exit utility, probability or calibrated uncertainty. No fresh alpha,
+independent replication, sealed spend, Paper replacement or live claim.
+Final NPZ8d7b831b.../adapter9392e395.../base74378c0c... immutable outside Git.
+Actual CUDA fit-call wall7.127s/features41.355s are inclusive component spans,
+not peak GPU utilization or additive resource attribution. GPU works.
+160 changed serial;86 adapter/32 worker-caller/52 custody/23 independent mocks.
+Full8 15274pass22skip35warnings340.98s/15296collected/JUnit9d24c7a6... at
+A/verification/full8-20261010-g57/pytest.xml; reaped/clean, Ruff/three sample
+Compose pass. Commit9ae7eec pushed. Claude520f8cb7.../e524607a... unavailable,
+not agreement. Stop unchanged diagnostic retries; independent work continues.
 
-### Closed Goal56
+Goal58 ACTIVE: kis-stock-payoff60-prospective-shadow-v1. CPU-only pre-OPEN
+signed forecast on original128/f78/prior61/42eligible/TCNtop10/fixed.01 slots,
+pred>0/no clipping/rerank/redistribution/gain sizing. Exact Oct12 OPEN->Oct19
+OPEN pair, whole5/10/20bps/.10 analytical exposure. One inclusive240s family
+before actual preparation,180work+60cleanup/publication, same-native cached
+verification without extra inference. First attempt FAILED5.653353s before
+inference/capturea04602a8.../outer0c159969...: Docker inspect list was passed to
+the canonical-dict artifact decoder, also preventing cleanup attestation.
+Exact created/never-started owner removed in2.893s/f9acb196.../source matched/
+absent, zero inference/fit/broker. Used d6cfba86.../e6966f8b.../a733979b... stay
+immutable. Independent wrapper8246c021... found two further P2s: outer-capture
+source custody and final returned-clock sampling. Fresh technical repair under
+A/research/kis-stock-payoff60-shadow-runtime-recovery-v1 preserves models,
+data/slots and old failure. New bounded240s CPU appointment is not a refund,
+GPU family or model rescue. Same company Goal58 remains active until forecast
+closure. Helper571ca454.../36 parent+20 independent checks/review339d7516...;
+parent owns actual source freeze/runtime/publication. No future target read.
 
-Goal56 endpoint preparation COMPLETE/closure47a190f8... at
-A/data/kis-stock-prospective-pair-owned-endpoints-v1. Jobab65b62b... freezes
-42 original peers, source445, runner e6a3f4cc..., peer-source d9d36341... and
-actual pre-OPEN freeze77044ebc... . Installed/readback1fcab95d...:
-two finite Data owners Ready Oct13/20 06:40..07:40 KST,5min/IgnoreNew/PT5M.
-One new M cache, durable cursor per leg, full-peer missingness, shared
-1s market/300s fresh-token guard. Preview/offline reader used zero credentials
-or provider calls; both future outcomes not_observed/next_index0, not success.
-Original Paper definitions unchanged; no manual invocation or order.
-Changed serial312pass1skip; portable endpoint/storage89 and worker52 included.
-Installer35 synthetic/r4 independent21 pass; full8 15274pass22skip35warnings
-345.63s/15296 collected/JUnit54e991f3... at A/verification/full8-20261010-g56.
-Ruff/three sample Compose pass, helper reaped/clean. R1/r2/r3 falsifiers stay
-preserved; r4 has no scoped P1/P2. Preparation callers failed before install;
-v3 localized UV executable exceeding a record-reader cap, v4 uses stream hash
-7c029973... . Used sources/failures remain immutable. Claudeaa027035...
-unavailable, not agreement. Honest-host marker/time, not cryptographic OS
-Scheduler origin; Operational logging disabled. Adapter9392e395... passed58
-mock+28 independent checks before the actual Goal57 result above. No Paper
-replacement; prospective endpoints never became a foreground wait.
+Goal55 binary future shadow already COMPLETE016e67dc... at
+A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1:
+forecast Oct9 23:03:14.321194UTC,42eligible/86unavailable/seven original slots
+kept/three cash; jobc26e119a.../native cachedda6fbbad.../capture65543aa5... .
+Cached21.880s<60/zero extra fit/inference/GPU. Failed30.233/25.944s appointments
+stay FAILED. Windows context93625d50... was not native numeric parity; exact
+same-native equality passed without tolerance or an inferred libm cause.
+Generic cached-caller producer/source/inner-clock faults remain historical;
+fresh callers must reattest their exact scope, not reuse that fixed closure.
 
-Goal55 prospective forecast runtime COMPLETE/closure016e67dc... at
-A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1. Exact retained
-CPU workerfc77e52a.../contract76329d09... was reconstructed from cached scores in
-the SAME native image: jobc26e119a.../receiptda6fbbad.../capture65543aa5... .
-Cached actual post-capture21.880s<60, zero new inference/fit/targets/GPU/broker,
-reaped/absent/unchanged. Forecast completed Oct9 23:03:14.321194UTC before
-Oct12 OPEN13:30UTC. Original128/prior61/f78 only:42 eligible,86 unavailable;
-originalTCN top10, seven fixed1/100 analytical slots retained and three cash.
-No rank11, reranking, renormalization, broker intent or Paper model replacement.
-Failed first120s dispatchf54e8e83.../captureaf0d2e79...30.233s and recovery
-76329d09.../capture74de44bf...25.944s remain FAILED/immutable, not refunded.
-Host reconstruction differed ONLY in context hash93625d50...; native exact
-equality passed without a tolerance. Specific libm/Python cause is unproved.
-Inner post-clock P2 is fixed in derivative74be0b57...; optional omitted-deadline
-digest P2 remains outside the explicit native call24456215... . Never rerun or
-edit used source to repair it. No completed five-session payoff, alpha, fees,
-Paper qualification or live claim. Honest host/clock remains an assumption.
-Future pair freezes Oct12 OPEN->Oct19 OPEN under unchangedTCN/cash/mask,
-whole5/10/20bps/.10 exposure/nearest-cent/delta fees; no tuning or new fit.
-Data endpoint source proposald72bfb88... confirms existing NAS refresh covers
-six names, not this42-peer cohort; Goal56 installed its separate finite owner.
-Parent172 original/99 derivative/5 cached source tests and437 shared serial
-passed; clean8 PASSED15133pass22skip35warnings335.15s/15155 collected,
-JUnitb62d9a83... at A/verification/full8-20261010-g55/pytest.xml, helper reaped
-and clean. Repo Ruff/three sample-env Compose pass. Independent cached reviews
-548d794e.../c7899a01... retain generic P2s: missing producer-pin checks,
-empty source set and late inner launch/completion checks. The one fixed closure
-binds exact producer/job/source/capture hashes and observed outer completion;
-it is not a reusable approval for that caller. Preserve used bytes/falsifiers.
-Independent fixed-closure reviewd485c836... passed30 mocked tests with no scoped
-P1/P2; this is source/contract evidence, not independent actual-data attestation.
-Verificationf26933c9... closes Goal55 integration. Goal56 owns only the exact
-future endpoint preparation/finite installation; Data/storage, scheduler and
-payoff-aware source preparation run with disjoint owners. No future rows or
-new fit inferred. Claudea5deef5f... unavailable, not agreement; no Monday wait.
-Closed Goal54 evidence remains in Git4c40061 and its external root: six actual
-CUDA fits10.969s/30cells/302.407s closure58e867c5... . Gate20 rejected; gate60
-seen follow-up only, weights36ed359b.../TCN9de27944... immutable. All data remain
-current-listed/raw/revised/non-PIT/action/finality limited. Scout822387e7...
-found zero wholly later five-session targets; do not rename seen data as fresh.
+## Owned Data And Paper Opportunities
 
-### Closed Goal53
+Goal56 finite endpoint preparation COMPLETE47a190f8... at
+A/data/kis-stock-prospective-pair-owned-endpoints-v1; jobab65b62b.../
+installed1fcab95d.../runner e6a3f4cc.../source445/private peer pin d9d36341... .
+42 original peers frozen pre-OPEN77044ebc..., one new raw cache under
+M/us_equities/kis_paper_private/stock-shadow-endpoints/v1.
+Owners thericher-kis-data-prospective-pair-ab65b62bdda00246-entry and -exit:
+Oct13/20 06:40..07:40 KST,5min repetition/IgnoreNew/PT5M execution limit.
+Each cursor0/accepted0/failure0/remaining42/ETAunknown/outcome not_observed;
+next_due Oct12/19 21:40UTC, recovery waiting_owned_opportunity. One client/
+token per leg; inherited1s market-start and300s fresh-token-start guards.
+Offline --preview/--read-only made zero credential/provider calls. Do not
+manually launch. Later exact raw/page/checkpoint/terminal/capture/parent links
+are required; missing/task exit/cache time is not a collected endpoint.
 
-Goal53 kis-stock-repeatable-session-delivery-v1 COMPLETE, closure73580933.../
-verification92f3f4b6... at A/execution/kis-stock-repeatable-session-delivery-v1.
-Actual coherent cutover
-24b85d81... at A/execution/kis-stock-repeatable-session-delivery-v1:
-five RW/two RO Compose consumers -> audited SPYbd41e48c..., inactive daily-SPY
-recovery Action -> published g52 helpers. All non-Action Scheduler definition,
-fallback, volume, original basis and old jobs/images/owners preserved; no
-credentials, manual task run, new order or Docker service invoked by cutover.
-533 changed serial/8 image/body checks; full clean8:15133pass22skip35warnings
-350.60s/15155collected, JUnit under A/verification/full8-20261010-g53;
-Ruff and three correct sample-env Compose configurations pass. Isolated full
-serial diagnostic PASSED15133/22skip/35warnings2299.42s/JUnit8245ab8f...;
-its prior failed diagnostic remains historical, not the current result.
-Native caller781c7bcf.../worker006422c4.../56 checks and independent26-case
-release ddd5566b... passed. Exact typed preparationeab5357a... freezes job2d616950...
-without fit/inference/credentials/broker/bank writes. Actual offline stock-image
-readbacka80ab712... passed20.167s after namespace-only repair; failed159c24f1...
-is retained. Original eight roots/decision bytes unchanged, MARKET=/market.
-Original installer d8b7fe25... registered the entry task, then failed textual
-principal identity comparison. Actual canonical SID matches; first task is Ready
-and unchanged. Fresh completiona18f1dc9.../9 mocked checks/6 independent checks
-(review0d00e0eb...) preserved that exact task and created only the missing exit.
-Installed517b3815... owns entry Oct12 22:30..22:40 KST and close Oct13
-04:50..05:00 KST,1min/IgnoreNew/PT5M/shared exact native owner. Both Ready;
-no manual task run, future fill, current-flat or net-PnL claim. Next company
-direction is bounded absolute participation-gate development, not another
-Paper model replacement or a foreground wait for Monday.
-Claude categorical review_unavailable, not agreement or an approval wait.
-Data route studycd199773... found the same three empty keys absent from current
-NAS/NYS/AMS masters, no useful alternate scope.125 covered keys stay usable with
-their separate snapshot limits. Mixer source preparationc4b80459.../66 synthetic
-checks is complete; no fit/GPU/holdout. Absolute net-positive cash-gate direction
-is source-only preparation for the next objective, not a changed Paper model.
+Original Paper job2d616950... remains originalTCN rank1/.01 total-basis target
+within the original shared.10 budget, NOT analytical top10 or a new model.
+A/execution/kis-stock-repeatable-session-delivery-v1:
+closure73580933.../coherent-cutover24b85d81.../installed517b3815... .
+Owners thericher-kis-paper-stock-session-2d616950c835-enter and -close:
+Oct12 22:30..22:40 KST / Oct13 04:50..05:00 KST,1min/IgnoreNew/PT5M.
+Five RW/two RO consumers use audited SPYbd41e48c...; published g52 helpers,
+original volume/basis/fallback/recovery identities and non-Action settings
+preserved. No manual launch, substitute request, TTL/budget reset or inferred
+future fill. Reader465db5d0.../receipt21049a67... has66 source checks; exact
+supplied job/source/start/outcome and strict private parser, not latest scans.
+Scheduler Operational logging disabled: honest-host marker/time provenance,
+not cryptographic proof of OS scheduler origin.
 
-### Closed Goal52
+Goal47 exact stock BUY/SELL/full exit/current-owned-flat evidence119c108b.../
+fc5fe442... and later10GET/0order reconciliation3fb1... remain historical
+scope-bound facts, not whole-account flat or a future session result.
+Physical Paper volume thericher-v2-paper-canary-private-acct-20261007-v1:
+preserve original provisional10% basis, baseline-SPY unknown custody,
+TLT/GLD portfolio ownership, QQQ owned-flat custody and exact reservations.
+Old account volume untouched/unadopted; never adopt broker inventory by ticker.
+Unknown exact submission reconciles only its own identity, not another lane.
+Fees, settled cash and owned net PnL remain unobserved. Gross is not net.
+Loopback reference http://127.0.0.1:8787 is not freshly health-checked here.
 
-Goal52 research runtime COMPLETE at
-A/research/kis-stock-patch-window-development-v1: contractbb906e5c.../
-result89a3d66c.../closure2fc893d0.../custody9604cd15... . Six actual CUDA fits
-13.030s/42 cells; CPU36.431s/run244.049s/cached66.474s/0verify fits/inference.
-All unchanged/reaped/absent/lease released/flat/missing0/accounting exact.
-Whole10bps/original10% seen growth: patch20+.7660%, patch60+1.0052%, original
-TCN+.9564%; both Patch arms reject predeclared utility/drawdown controls.
-No Paper model replacement, independent alpha, sealed spend or rescue fit.
-Independent scaffold review0347477d... found publication omitted from stored
-phase debit351.608s. Retain that P2 and immutable used sources. Actual returned
-publication observationd0ed6fe0... establishes a conservative455.702s<600 bound
-including inter-phase idle; no claim about the observation record's own future
-fsync. Future dispatchers must consume observed publication debit.
-312 parent source checks/68 shared serial; full8:15133pass22skip35warnings340.77s,
-15155 collected/JUnit49ebb915.../clean helper exit; Ruff/three Compose pass.
-An initial double-quiet run passed without count summary; explicit JUnit run is
-authority. Accounting overlay alone is not standalone Compose; combined parse
-passes. Neither mistaken diagnostic is reported as independent authority.
-Execution parallel delivery: three code-only images built87d37009... and actual
-offline audit48500a7d...;443 source/244 scripts/runtime unchanged/no private
-mounts/orders/credentials. Seven helpers published38d67f81.../contractada3484c...
-under Goal51 delivery-preparation/published/g52-20261010-v1; NOT installed.
-Data separate33 scope51b30aa7... CLOSED partial:81.702s/1token62GET62parsed/
-0categorical errors/30usable5752rows/29complete100dates/one incomplete/three
-empty, next_due null/reaped/absent/source matched. Receipt d460c398.../index
-4d4d0b13.../strict517-binding readbackd87a6c53.../independent781ec568... .
-Original95 and fresh30 cover125 disjoint keys/24328rows/123complete100dates
-across TWO snapshots, not a merged model input. Original f78 stays frozen.
-Next material direction: coherent repeatable KIS Paper session delivery, original
-model/bank/owners preserved. Public Mixer source independently rereadb7a09217...
-is only preparation, not training, a public checkpoint or proven profitability.
+## Inputs, Limits And Parallel Work
 
-Goal51 native session input COMPLETE at
-A/execution/kis-stock-repeatable-native-paper-preparation-v1:
-closure4471ec24.../verification0904fc67... . Actual f78 Data collection
-1token192GET attempts/191parsed/rate_limited1/95 usable of128/18576 rows,
-219.246s after publication/reaped/absent/source matched. Worker receipt
-3dafa26e.../returned55b1c90e...; scoped next_due20:05:47UTC passed. Do not
-rerun original UUID or mutate its cache; remaining33 keys need a separate
-owned remainder scope, not OLD fallback or a global permission hold.
-One original-TCN20 CPU native contractc5d22f72.../457bindings/decision72914719.../
-parentce0c9d17...:42 eligible scores, actual completion20:08:23UTC Oct9,
-next OPEN Oct12 13:30UTC/CLOSE20UTC,27.436s<120 including parent publication.
-All unchanged/reaped/absent/typed cached readback;0 fits/CUDA/account/broker.
-Official current NAS reference125/128/3 unknown is not primary/PIT/eligibility;
-selection explicitly route-constrained, every original research identity kept.
-Lifecycle handoff49098b43.../factory0b4d5eb5... derives session/request clocks
-without edits, .01 original total-basis target within .10 aggregate. No new
-bank write/order/schedule or coherent multi-symbol delivery installed.
-91 session/154 changed serial/145 released external/32 independent checks;
-full clean8:15128pass22skip35warnings339.05s/Ruff/three sample-env Compose.
-Used source/falsifier failures remain immutable; four native source P2s fixed,
-then actual package-root archive comparison fixed with two regression cases.
-Claude unavailable, not agreement; raw/current-listed/non-PIT/action/finality
-limits unchanged. Goal47 actual exact EXIT closure119c108b... is below.
-Patch source5769a913.../reread23c6a63d.../contextc95f5955.../input45832b56...
-was consumed by Goal52 above. CURRENT799 baseline only; Patch OOF is paired
-diagnostic, never final799 on early targets or R50 replacement control weights.
+Original stock research OLD128/800 sessions/87974 records and separate
+CURRENT113/14073 rows/121complete4sparse3empty retain exact seven bindings.
+Original native CPU/image d6b43213... Python3.12.14/Torch2.7.0+cu128 has eight
+RO roots under A/execution/kis-stock-repeatable-native-paper-preparation-v1/
+native/9cdea08758534d0f9169fb7a232b1309, contractc5d22f72..., MARKET=/market.
+Original f78 and remainder snapshots stay separate:125keys/24328rows/123full
+across two snapshots is NOT a joined model panel. NAS125supported3unknown
+is current metadata, not PIT/primary listing. Scout822387e7... found zero
+wholly later five-session targets; do not relabel seen data as fresh.
+Trio SPY/TLT/GLD:2686 dates2016Feb2..2026Oct7/563bindings/4a25284d... at
+A/research/kis-cross-asset-oc-cohort-v1/input/cross-asset-oc-cohort-20261008-v1.
+M1 SPY/QQQ25 paired complete sessions; Oct7 QQQ389/SPY390 incomplete.
+Current-listed/non-PIT/raw/revised/action/TR/finality/availability limits stay
+visible; they narrow claims, not delegated KIS Paper or exploratory research.
 
-### Closed Goal50
+Feature-cache helperb5dd9869.../37 supplied+26 independent synthetic checks/
+reviewc59cb12b... is source-only, actual parity/speedup unmeasured. Fresh
+native feature-only paired benchmark source prepares independently of Goal58.
+Incumbent-cost source reread1a0b1d5e... (arXiv1203.5957v1/1705.00109v1) supports
+mechanisms only; paper performance transfer rejected. Helper896d808c.../28
+synthetic checks/proposal ff169517... is a contingent-execution terminal-cash
+proxy, not a learned continuation value or pre-OPEN sealed action. Cached
+24-cell source preparation has no actual market run, dependency or broker path.
+Earlier LSTM/GRU/attention/Patch/Mixer/rule/ML/TimesFM/Chronos results stay in
+Git/registry/exact roots; not absent experiments, current survivors or retries.
+Goal31 exhausted/failed-incomplete and Goal33 independent validation incomplete
+remain in Steward; do not refund budgets or reopen by a new seed/family name.
 
-Goal50 native temporal-memory development COMPLETE at
-A/research/kis-stock-temporal-memory-development-v1: frozen7c3128a3.../
-453sources7inputs/result90f12bca.../closure83db6e20.../outcomeece4ce31... .
-Nine actual CUDA market fits199.555s call wall/48cells; CPU22.958s/run324.274s/
-cached zero-fit zero-inference verify54.049s, cumulative401.282s<600.
-All unchanged/reaped/absent/lease released/books flat/zero missing cells/exact
-accounting and stock-day attribution. Whole10bps/fixed10% seen growth:
-memory20+.1653%, flat20-1.3015%, freshTCN20+.9564%, fixed two-member blend+.9997%.
-Memory fails control/TCN utility; blend fails member drawdown. Only freshTCN
-allows non-promoting seen follow-up, not alpha or a changed Paper model.
-Original TCN20 Paper bytes9de27944... remain unchanged.
-160 changed serial/398 released source/19 independent plus4 type falsifiers/
-clean8:15106pass22skip35warnings342.12s/repo Ruff/three sample-env Compose pass.
-Failed-progress binding P2 repaired only in this fresh package; original failure
-and four independent harness-style findings retained. Claude unavailable, not
-agreement. OLD numeric decoding is omitted in cached verify with all hash guards;
-no isolated native speedup claim. Verification.json owns detailed evidence.
-NEXT connects actual fresh inputs to repeatable original-model native sessions.
-Source proposal414fdfab.../clarification46213a.../review6840f746... are under
-A/execution/kis-stock-repeatable-native-paper-preparation-v1. Declared NAS is
-not primary-venue attestation; Data probes official static metadata. A frozen
-route-constrained rank one is explicit, not original unrestricted research rank.
-No old EXIT identity, bank, source or schedule is overwritten.
+Tiingo Starter/Trial applicability remains a SOURCE-LOCAL operator rights
+question (https://app.tiingo.com/tos/ Oct6 section1.6(a)); no new acquisition or
+numeric study/deletion. Norgate trial ended; FINRA/FRED uncertainties are not
+fallback authorization. Existing KIS work continues without a global hold.
 
-Goal49 source preparation COMPLETE/closure9296cf75... at
-A/execution/kis-stock-repeatable-session-preparation-v1. Session4d848c18.../
-recoveryb6607c0e.../bank1092dea1.../plan3bf5fa6e.../cost86859b5a... .
-Two synthetic sessions/different top1/durable restart preserve original basis,
-every owner and prior unknown; no duplicate submit/TTL renewal/false flat.
-1954 changed serial/68 independent/178 Data/full clean8:15104pass22skip/
-35warnings339.91s;15126 serial-collected/Ruff/three sample-env Compose pass.
-Independent clock/model/symbol/cancel/Decimal P2s repaired; old failures retained.
-No native model/provider/order/bank/delivery/schedule change in this slice.
-All canonical runtime readers/writers need compatible delivery before multi-owner
-writes. Data metadata frozenf78c372f.../446pins/128keys100completed800calendar;
-earliest collection Oct9 CLOSE20UTC, not an installed schedule or fresh result.
-Goal50 subsequently completed the fixed-memory comparison described above.
+## Resume
 
-Goal48 integrated/pushed580cad5; its closed research remains below.
-R47=A/execution/kis-stock-owned-exit-lifecycle-v1/closure.json/3d32edf8... .
-Sourcecffa21b pushed; cash-free owner-only SELL preserves original ENTRY
-instrument/owner and same10% bank. Exact job2a5135f3.../delivery5bd53682.../
-image93b769b5... installed finite task stock-owned-exit-20261010:
-Oct10 04:50..05:00KST/1min/IgnoreNew/PT4M. No manual invocation. Actual
-runtime closure119c108b... at R47/actual-runtime-closure.json: exact job and
-started/outcome boundfc5fe442.../0662b7ae...,19:50:01..19:50:56UTC,
-1token27GET1SELL/full fill/current owned-flat. Later19:55:02..19:55:17UTC
-3fb1ef48.../039dd4cf...:1token10GET0orders/current owned-flat again.
-Other token-not-due outcomes are scoped recovery, not duplicate orders or
-fresh reconciliation. Finite task Ready/last04:59:01KST/no next run/no active
-marker after expiry. Marker/time/hash assumes an honest host, not cryptographic
-OS Scheduler-origin proof; Operational logging disabled. Fees/settled cash/
-net PnL remain not_observed. Original job, bank and used records unchanged.
-Four unchanged shared bank modules keep existing SPY/router consumers compatible;
-only one code derivative built, no dependency/runtime or existing schedule change.
-Independent planner/constructor/build P2s repaired before freezing; old failures
-remain immutable. Source-only reviews35773024.../f2ac9a93.../5836441a.../
-e6542eb9... exclude actual broker runtime.986 changed serial/120 external,
-final clean8:14939pass22skip35warnings355.54s/Ruff/three sample-env Compose.
-Earlier14931 count predates eight planner regressions and is not final authority.
-Weekly serial diagnostic C:/trpy/weekly20261010g47 ended1fail10034pass16skip/
-35warnings1679.70s. Earlier SPY test leaves sticky Decimal flags; reproduced
-and repaired only hostile-test local initialization, with ambient preservation
-regressions.202 file-pair checks pass; this is not a passing full serial run.
-It did not block ready external research. Data next-anchor source preparation
-released82 synthetic tests; no collection before official Oct9 CLOSE20UTC.
-
-Goal48 native research CLOSED at A/research/kis-stock-peer-attention-development-v1:
-contract984651c7.../451sources7inputs/resulte336641a.../closure9e9cb00b.../
-custodyb08ff252... . Actual12 CUDA fits17.899s/54cells/218.788s<600;
-smoke22.481s/run137.565s/cached zero-refit verify58.742s all complete,
-source/input unchanged/reaped/absent/lease released/books flat/no missing marks.
-Whole10bps/fixed10% blend+1.0559%; all singles reject utility/risk controls.
-Blend is seen non-promoting follow-up only, not alpha or automatic Paper input.
-Independent model/worker/context reviews are synthetic; actual provenance/PIT/
-actions/finality limits unchanged. Analysis-only names extension and tests-only
-serial-fixture correction verified:631 changed serial/448 external/full clean8:
-14950pass22skip35warnings361.18s/Ruff/three sample-env Compose passed.
-NEXT advances to two-session model/Paper preparation using original final TCN20,
-not replacing it with the seen positive peer blend. Source-only five-edge
-proposal1bfb554a... identifies session clocks, multi-symbol canonical ownership
-and exact expiry/recovery gaps. Prepare no new native order or schedule in that
-implementation slice; existing finite EXIT and Data opportunities stay separate.
-
-Goal46 COMPLETE; original BUY lifecycle evidence remains unchanged below.
-Exact closure28c5038b...; actual r3 job046480fc.../
-outcome-5aaf1aa6ebb94b21ab77d006c277398f.json/c496c9e0...:
-Oct9 15:34:36..15:35:34UTC/58.432s/1token28GET/1BUY0cancel,
-terminal full fill and current owned inventory reconciled. Original bank,
-entry model clocks/target0.01/confidence0 preserved; source/inputs unchanged,
-child reaped/invocation absent/no unknown. Fees/settled cash/net PnL not_observed.
-V1 stopped after8GET/order0; compact binding digest fault reproduced in synthetic
-source and repaired with canonical helper only in fresh r2/r3. R2 token1/GET0/
-order0 failure's exact cause unobserved; preserve both originals, do not relabel.
-R3 HTTP200/66 focused tests; independenta13dcdb8.../21 source checks excludes
-actual/private. Parent actual hash/clock/job/source audit passed under honest
-host, not independent broker or cryptographic OS-scheduler-origin attestation.
-Source packagec1d3abf pushed before native closure. Next is explicit owned exit,
-not foreign liquidation, a new bank, another fit or a profitability approval.
-
-R46=A/execution/kis-stock-persisted-paper-execution-v1. Exact stock plan,
-reservation, target-bound client and canary proof released; source965c9c1a.../
-312 independent checks pass after mutable-request alias repair. Native/private
-behavior excluded. Code-only derivatives retain base layers/dependencies and
-440 source/244 script hashes: build41d08464... . Five RW and two RO Compose
-consumers select the compatible SPY derivative; published recovery router was
-installed Action-only while inactive, with triggers/settings/principal unchanged.
-Installed receipt376f9bc0...; no manual task invocation. Native r3 then installed
-the exact V4 stock owner/intent and recovered its linked fill in the existing bank.
-Final verificationb8aee8d5...:871 changed serial+8 Compose-contract serial,
-clean8 authority14820pass22skip35warnings342.27s/reaped/clean/Ruff/three Compose.
-Earlier parallel run failed because its collected image pin predated delivery;
-it is not authority. Used native sources and exact outcome remain immutable.
-Keep exact Goal43 clocks/expiry and original shared bank; no new fit/GPU needed.
-R45=A/execution/kis-stock-shared-budget-integration-v1:
-job9ee849dd.../outcome-77b2f9c4057e4592ab41417cd877786d.json/0ff09fed... .
-Actual14:15:47..14:16:00UTC/13.544s/1token8GET; original all-owner shared10%
-budget replayed and exact whole-share BUY sizing available. Account3positions/
-0open, exact target absent, fresh tick/exact-limit funds. Zero order/cancel/
-private writes/owner/reservation/new capital.438sources/3inputs/44privatefiles
-unchanged; child reaped/invocation absent, exact parent hash audit passed.
-Host V4 stock binding uses same original bank and legacy fingerprints; SPY,
-QQQ and trio consumers include stock reservations without invented covariance.
-Sizer subtracts existing reservations from provider funds as well as shared cap.
-Source reviewaced1e04.../16 tests and native-worker source recheck87626967.../
-57 tests have no remaining scoped findings; actual runtime excluded. Original
-failure receipts remain immutable. Parent734serial/38 external; clean8 authority
-14556pass22skip35warnings340.02s/reaped/clean/Ruff/three sample-env Compose.
-Claude categorical review_unavailable, not agreement. No GPU/refit/new schedule.
-Next is persisted stock intent/recovery and compatible writer delivery, then
-bounded native Paper execution, not another bank or profitability approval.
-
-Oct9 original portfolio-control opportunity completed13:45:01..36UTC/
-34.565s/no_target_delta/0legs/0submit0cancel/1token14GET; source unchanged,
-child reaped/invocation absent. Exact dispatch-b8c800abe9ce4c2ebd5b1a12c75456d0.json
-under A/execution/kis-current-control-paper-rebalance-preparation-v1,
-SHA6c9c016d... binds job2b20f908.../worker249cdd15.../dispatcher d43c9ca4... .
-No new fill; private40->44 includes checkpoints, not a trade inference. Honest
-host marker/time/source evidence, not cryptographic OS-scheduler origin proof;
-Operational logging disabled. Fees/settled cash/net PnL remain not_observed.
-Existing SPY strategy's Oct9 23:50KST old-source opportunity was left untouched.
-Compatible writer delivery is now installed; no result is inferred from task
-exit. Exact r3 stock ownership is now persisted and its full fill reconciled.
-
-Goal44 COMPLETE, superseded capacity observation only by Goal45 above.
-Exact R2 root A/execution/kis-stock-readonly-preparation-v1/r2:
-job8246f852.../outcome-c5716712b65a4d789bfdb69a61f0699e.json/37144191... .
-Actual13:21:41..52UTC/11.991s/1token8GET: account available/3 positions/0 open,
-exact target fresh tick input and exact-limit funds observed. Target position/
-open order absent; original shared10% binding present and unchanged. Capacity,
-fees/settled cash/net PnL remain not_observed. Zero order/cancel/intent/private
-writes/owner/reservation/new capital;437 source/3 input and40 private files
-unchanged; child reaped/invocation absent. Selective Paper config via stdin,
-virtual host only; no live read. Exact hash audit passed. Honest-host source/
-mount evidence, not independent broker/account attestation or order readiness.
-Stock scope2203fae4.../client8edb8364... leave fixed ETF APIs and tonight's
-host credential loaderc07983f6... unchanged. Fresh R2 caller66a5ef40... repairs
-reviewed cleanup/complete-status P2s; source bd2bbfbb.../35+1 tests has no
-remaining scoped P1/P2, not actual readback review. Original frozen unused job/
-failed source falsifiers preserved. Parent630pass1.76s/Ruff/three sample-env
-Compose; fresh clean8 authority14345pass22skip35warnings340.47s/reaped/clean,
-prior14344pass superseded by exception-chain repair. No GPU/refit/collection/
-schedule or tonight job change.
-Next material package: canonical stock owner/shared-cap compatibility and
-whole-share sizing under original bank, not a sidecar or profitability gate.
-
-Goal43 CLOSED at A/execution/kis-stock-model-decision-preparation-v1/r3:
-contract56e0f2ae.../outcomeef5a39ad.../proposalce026452.../receipt308bb0f0.../
-verification9f1928bb... . Actual pure-host conversion0.730s:128 original keys,
-62 eligible/66 unavailable, exact tcn20/rank1 typed target0.01 within original
-aggregate0.10, original11:46:17.437602..499976UTC clocks/Oct9 20:00UTC expiry.
-Sources/inputs unchanged;0 inference/GPU/credential/network/broker/private
-intent calls. Constructor replay exact, not native model/broker parity, capacity,
-holdings, PIT, scientific winner or automatic order. Fresh reader7c41036f.../
-adapter0824820a.../readback4a35a8ea... fix real verify-phase schema, metadata
-exchange field and all128 NASD scope. Failed v1/v2 bytes/diagnostics and original
-falsifiers retained. Independent53bb3c64... is source/synthetic only, no scoped
-P1/P2; parent167pass.66s/Ruff/three sample-env Compose pass. No full shared
-rerun for external/docs-only integration; last shared14167pass22skip unchanged.
-
-Goal42 CLOSED/rejected at A/research/kis-stock-chronos2-group-open-development-v1:
-contract6f6952c0.../445sources7inputs/result4eb818e6.../parent2f0f8891.../
-closure43bbc090.../custodyf5abe9ef... . Actual RTX4090/104 frame-arm calls/
-6678 sequences/6.375s inference wall/0fits/36cells;150.063s<600/all unchanged/
-reaped/absent/lease released. Whole10bps/fixed10% isolated-.4771%/utility-.02570,
-group-.1144%/-.00905; both fail cash/buyonce. No fine-tune/rescue/refund or
-Paper winner. Same cached CPU verification, not independent economics.
-Source6e176771.../8 new checks excludes authored Data and actual runtime.
-Closure-only4 P2s repaired in fresh close_r2.py/21 tests+18 independent mutations/
-f4e9f88b...; original custody/failed source falsifiers retained, no native rerun.
-Changed151serial/full8:14167pass22skip35warnings332.73s/Ruff/three sample-env
-Compose passed; external300 excluding original custody falsifiers. No full
-rerun for receipt/docs-only steps. Official source/date/license re-retrieved;
-unknown earlier corpus/PIT/action/raw-payoff limits remain, no alpha claim.
-
-Goal41 CLOSED at A/research/kis-stock-tcn-numeric-reload-preparation-v1:
-contract436abcf9.../result579e0846.../parenta8c59142.../closureab0c6eee.../
-custodyeffbf94a... . Both models/52dates/6678 scores within absolute1e-6,
-relative0 and exact ordered top10 versus CUDA. One two-arm seal at
-11:46:17.437602..11:46:17.499976UTC before Oct9 13:30UTC, preserved in verify.
-Zero fits/GPU/holdout/102.271s<300/all unchanged/reaped/absent. Parent243 and
-source9df30661.../34 independent synthetic checks; authored reload/models and
-actual runtime excluded. Numeric reuse, not bit equality or independent alpha.
-Shared14161/22skip authority unchanged; no full CI for docs/external closure.
-Unallocated source archive retained; pin forwarding repaired/tested before use.
-
-Goal40 CLOSED at A/research/kis-stock-ordinal-selection-development-v1:
-contract44176f74.../444sources7inputs/result123950bd.../parentee617248.../
-verify5077f78d.../closure40961c1a.../custody792f64c9... . Nine actual fits,
-six CUDA fits389.392s/48cells/561.447s<600; smoke16.520/run503.460/verify41.467s,
-unchanged/reaped/absent/lease released. All books flat/no missing marks/exact
-stock-day-fee conservation. Whole10bps/fixed10% exposure HGB+.796%/.02877,
-TCN10+.261%/.00660, TCN20+.956%/.03764, blend+1.488%/.06375. TCN10 rejects;
-others non-promoting seen follow-up only, not alpha or owned broker profit.
-Independent source97e39cc8.../121 synthetic checks found a failure-only P2:
-completed device facts publish too late; failed CUDA attempts can look unused.
-Actual9/6 normal-path counters agree. Preserve used source; fix a fresh future
-training worker, not the old record. External309/Ruff/sample-env Compose pass;
-prior shared authority14161/22skip/35warnings unchanged. Goal41 reload source
-d651c3f9.../90 synthetic cases released; actual parity is Goal41 above.
-Chronos-2 public-source receipt d7ce7b81... is source_unverified; Oct3 project
-benchmark already exists, so no repeated study/download was dispatched.
-
-Goal39 CLOSED at A/research/kis-liquid-stock-sequence-development-v1:
-contract45c9ca15.../443sources7inputs/result28a6c6e2.../parent494ec9a6.../
-verify65198db0.../closure5beadda3.../custody14918e6a... . Nine actual fits,
-six CUDA fits391.231s,48 cells;558.828s<600/all sources/inputs unchanged,
-children reaped/invocations absent/GPU lease released. CPU smoke16.817s,
-run501.548s, cached verification40.463s withzero refit. All books flat,
-no missing marks and exact stock/day/fee conservation. Whole10bps/fixed10%
-TCN10+1.596%/utility.07159/DD.971%, blend+1.135%/.04983/.963%; Ridge and
-TCN20 reject. Non-promoting seen follow-up only, no selected winner or broker
-profit. Flagged-day contributions .3386% standalone/.4951% blend remain raw;
-do not subtract them. OLD734 complete target groups/current52 features with
-62..68 past-eligible peers, not independent stock samples.
-Independent model/caller source7264be08.../17 synthetic cases excludes
-reviewer's authored cohort and actual runtime/alpha/economics. External226+7,
-changedserial213/clean8:14161pass22skip35warnings340.78s/Ruff/three sample-env
-Compose passed; no full CI per external/docs-only handoff. Claudef20ea8b0...
-unavailable, not agreement. New ordinal proposal6d848f35... was independently
-re-retrieved from primary paper/API; its pointwise adaptation remains unproven.
-
-Goal38 CLOSED at A/research/kis-stock-scorer-deployability-preparation-v1:
-contractddac5c84.../441sources7inputs/result71de1c0d.../parent55cc5666.../
-verify1818949d.../closureeda62685.../custodyb5675a4e... . Exact all52 dates/
-6264 native Ridge scores,0fits/GPU/sealed spend/150.568s<300/all reaped/absent/
-unchanged. One prospective seal1811e283... at09:58:27.980074..09:58:28.017568UTC
-before Oct9 13:30UTC; actual cache-observation/as_of clocks, no backdating,
-future target/quote, OrderIntent or auto-Paper input. Ridge is transparent
-numeric reuse, not a profit winner. Synthetic smoke read no market bytes;
-parent seven-input proof is separate. Verification kept the original as_of.
-Data actual9GET9accepted1token/9.840s/reaped/source-retained hashes matched:
-A/data/kis-stock-dominant-gap-mode-probe-v1/dominant-gap-20261009-v1/
-receipt.json/b2929710...; source runtime-r2/contractf897b5e5... . Three100-date
-mode0 repeats exact, mode1 changes53/25/0 rows; only one of four flagged date
-pairs loses its large discontinuities. No inferred action/adjustment/TR/PIT
-truth, old edits or general Paper gate. Zero-contribution third tie retained.
-Fresh runtime-r2 fixes import formatting before actual calls; original
-e34691d4... zero-dispatch contract retained. Fresh close_r2 fixes a parent
-projection field mismatch without another native run or evidence overwrite.
-Independent source6c58e4a.../25 new cases plus72 baseline97pass; actual native
-score parity remains parent-owned, not independent alpha/broker parity.
-Claude57434081... review_unavailable/cli_is_error, not substantive agreement.
-Changedserial190/clean8:14155pass22skip35warnings343.79s/Ruff/three sample-env
-Compose pass; external109+43. No full CI per receipt/docs-only handoff.
-
-Goal37 CLOSED at A/research/kis-stock-selection-risk-attribution-development-v1:
-contractd4f339e5.../441sources6inputs/result1fd5c07d.../parent226a4c52.../
-verifyad9aebd5.../closure442088de.../custodyfb850e0f... . Exact48 reference and
-96 sizing cells,0fits/GPU/sealed spend/143.912s<600/all reaped/absent/unchanged.
-Whole10bps/10% Ridge+3.336%/GRU+2.333%/blend+3.326%, positive seen utility;
-25% only Ridge passes fixed scaled controls. No winner, fresh replication,
-changed prior negative verdict or broker profit. Twelve >=50% OPEN gaps and20
-CLOSE changes: full Ridge flagged-day55.066% exceeds net29.211%, GRU83.760%
-versus18.350%, blend86.360% versus32.479%. Cause remains unverified; do not
-subtract days or silently adjust labels. Exact contribution != trustworthy alpha.
-Independent accounting12b4a334.../63 and caller872293e3.../18 source/synthetic
-checks pass; actual144 replay uses same kernel/source, not independent economics.
-Fresh worker separates immutable terminal from owned progress and corrects
-direct-overwrite P2; old bytes unchanged. CPU smoke read no market bytes;
-its parent independently reattested six input files before/after.
-Changedserial207/clean8:14083pass22skip35warnings341.19s, repo Ruff/three
-sample-env Compose pass; external preparation/worker/Data141 pass.
-
-Goal36 COMPLETE/rejected at A/research/
-kis-stock-specific-five-session-selection-development-v1:
-contract062a437b.../442sources7inputs/result127ec525.../parent2b3d731b... .
-Nine fits/48 cells; actual3 CUDA GRU fits6.837s wall, CPU synthetic512 smoke
-passed. Native Python3.12.14/Torch2.7.0+cu128/NumPy2.5.1/sklearn1.9.1.
-Whole10bps seen Ridge+29.21%/GRU+18.35%/blend+32.48%/HGB-2.82%, but ALL
-original risk utilities fail cash. Drawdowns17.63/29.78/31.18/30.37% respectively.
-No robust winner or broker-PnL claim. OLD fit groups362/535/734, rows35723/
-54568/77990;52 CURRENT marks are not independent observations.
-Cached48 replay382253f8... matches withzero refits; same source/book, not
-independent model/economic qualification. Three phases plus descriptive
-blend dependence185.627s<600; all source/input unchanged/reaped/absent/GPU
-lease released. Custody5185151d... closed; no rescue or refund.
-Worker source review5d6b5206... found direct-invalid/repeated invocation could
-overwrite a terminal. Parent repeat guard prevented that path; no actual
-overwrite. Preserve used bytes and correct only the fresh future worker.
-Data source reviewdf621410.../13 synthetic checks has no scoped P1/P2.
-Models d1b368ba.../49 synthetic and score/caller e5fa1af9.../82 checks passed.
-Claude20777876... strong-result/attribution challenge is review_unavailable/
-cli_is_error, not agreement. No unchanged authentication retries or Paper hold.
-
-Goal35 CLOSED/REJECTED in A/research/
-kis-equity-rank-buffer-carry-development-v1-runtime-r2.
-Contract12b1b4c6.../436sources5inputs/result2a9bd908.../parentc6647248... .
-24cells/0fits/worker27.381s/parent29.830s/all three phases68.456s<300.
-Actual source/input unchanged/reaped/absent; no missing marks, funding rejection
-or nonflat books. Whole primary rank-buffer-26.67%, replacement-18.51%,
-same-initial buyonce+0.24%, cash0. Lower turnover did not improve performance.
-Custody156f4732... closed; no rescue, parameter change or winning-model claim.
-Actual cash/inventory/fee conservation matches; independent accounting is
-synthetic5aea32af..., not independent actual economics/broker parity.
-Residual source-only poll-exception cleanup gap1954ff4c... was not triggered
-in actual closed phases. Used bytes stay immutable; correct the fresh caller.
-
-Retained input COMPLETE: clock-r2c937f8ca...3.187s/686 originals unchanged,
-precommit7d8b4d01.../manifest18a37635.../payloadbd6b0f40... .
-113sessions14073rows/121complete4sparse3empty/all128 keys. Native two-file
-reader6c9115da... EXACT fields/counts/digests/calendar/0.295s transport,
-0.283s study load; no original686 native reattestation or runtime equivalence.
-Raw/current-listing/non-PIT/CA/TR/finality/publication limits remain explicit.
-Original lexical-clock and transport-protocol defects were corrected in fresh
-bytes BEFORE payoffs; original contractdad59736.../zero actual debit retained.
-
-9a0e2be pushed. Changedserial323; clean8 authority13994pass22skip35warnings
-337.29s; repo Ruff/default/research/accounting sample Compose pass.
-Goal36 external worker29/prepare-data-dispatch-model89/dependence4 pass.
-No full rerun per external handoff. Goal34 rejected6fits33cells/custody875233b5...
-and Goal31 exhausted/Goal33 incomplete-independent remain in Git/artifacts.
-No old fit/refund/rescue or claim of model/scaler/host-native equivalence.
-
-Parallel actors next: Data past-only tradability adapter, Engine causal TCN
-model code, temporary Infra fixed input/custody, parent native integration/Git.
-No company block or routine approval wait. Source implementation handoff was
-bounded; parent reattested/tested after expiration rather than holding for an
-unknown owner. Data/caller/model evidence is distinct from actual runtime.
-Tonight's independently owned Execution opportunity remains unchanged below.
-
-## Exact Preparation And Owned Opportunity
-
-Root A/execution/kis-current-control-paper-rebalance-preparation-v1.
-Final job.json SHA2b20f9088cd9b42b4165b1469525b51bfa7233d4839288d5fed7fb7133e1738c;
-owned_session_worker.py249cdd15.../dispatch_owned_session.pyd43c9ca4... .
-Both default inert; selective Paper config passes through stdin only.
-Private mounts, source pins, finite lifetime, exact cleanup and unknown dispatch
-facts were reviewed. Failed output never becomes zero submissions.
-
-Actual closed execute:
-dispatch-0d06fbc55c914319886d0a15978076d8.json/12feb23b...:
-not_due/outside_owned_regular_session, token0/GET0/submit0/cancel0,
-source/private unchanged, child reaped and invocation absent.
-Final actual read-only preview:
-dispatch-cd91a4e2d78d478aab82d3bd2c406323.json/b395cd6c...:
-preview_feasible, token1/GET14/submit0/cancel0, pending0/proposed BUY0,
-40 private files/source unchanged/reaped/absent,17.015s.
-These are dispatch/readback counts, not fills or settled/accounting profit.
-
-Task thericher-kis-paper-portfolio-control-20261009 is installed, Ready/enabled:
-next_due 2026-10-09 13:45UTC (22:45KST/09:45ET), one trigger/end23:00KST,
-PT12M/IgnoreNew/restart0. No manual invocation. Exact installation:
-scheduled-opportunity-20261009T2245KST-v1.json/fb06ec9c... .
-Use job/session portfolio-control-20261009-v1; preserve original shared10%
-basis, baseline-SPY owner, TLT/GLD portfolio owners and QQQ custody.
-Future submit/fill/terminal closure stays not_observed until exact linked
-runtime/private-state evidence, never a task exit or latest-file scan.
-Scheduler Operational logging disabled: honest-host provenance, not
-cryptographic proof of OS scheduler origin. Continue independent work meanwhile.
-One-shot chat follow-up is owned for Oct9 23:05KST, exact same session/job;
-it checks actual immutable runtime/private linkage, never launches a substitute.
-
-New source-matched session image only:
-sha256:b0198cbb09e2cd54bf96549b75f6518f566dc6053567194539dd1768ca4c4864,
-417 source files/tree568a07f8...; Python3.12.13/unchanged dependencies.
-Seven existing consumers stay65ab6e66.../414/treee7543a9b... .
-No owner restart, state migration or broad framework change.
-
-## Input And Research Evidence
-
-Current engineering control:
-A/data/kis-current-control-refresh-v1/b54c15c1db6e44a0baf8a7cf13f225eb,
-control06901201.../receipt493cd1dc.../parent3cc8856e... one directory above.
-SPY/AMS,TLT/NAS,GLD/AMS,253 CLOSEs2025Oct7..2026Oct8/252returns,
-targetOct8 20:00UTC/observed21:11:42UTC; token1/9GET/9accepted/28 retained,
-12.113s. Helper1a273516... population covariance/10% diagonal shrink/capped
-thirds is an engineering control, not research minvar63/25%.
-Raw/typed/query/provenance79aecac0... pass; host exact numeric mismatch <=16ULP
-remains unproved, not waived. Same-native65ab ALL-ROfbefdab4... exactly
-recomputes control. Adapter uses native arithmetic and exact bindings.
-Raw/revised/price-only/non-PIT/non-TR/publication/finality limits remain.
-
-Goal24 COMPLETE/REJECTED54 cells:
-A/research/kis-learned-stateful-rebalance-development-v1,
-contract85af8689.../result06e5d613.../parent7b2ca714... .
-Four512-update fits: constantCPU, linear/MLP/GRU CUDA;199.952s worker/
-202.095s parent, source420/input566 unchanged/reaped/absent.
-ALL-RO95e924a8...11.629s binds cached economics/actions, not GRU reinference.
-Custody5cdfa1c7... closed/lease released/zero sealed spend.
-GRU10bps seen growth+2.76%/+28.83% fails original first-view utility kill.
-Goal23 rule30 cells also rejected; fixed minvar63/drift5%/cadence21 already
-answered. Do not reopen these families by seed/window/cost/threshold rescue.
-RTX4090/Torch2.7+cu128 works; no GPU permission/environment block.
-Goal31 actually used CUDA for four completed TCN fits, with a fifth started
-but terminal completion unknown. Its lease is released. Next finite synthetic
-throughput probe is preparing; no GPU permission/environment ban.
-Earlier LSTM/attention/GRU/TimesFM/Chronos/rule/ML families remain in Engine/
-Steward/Git and exact roots, not absent experiments or current survivors.
-
-Useful retained trio: A/research/kis-cross-asset-oc-cohort-v1/input/
-cross-asset-oc-cohort-20261008-v1/input-commitment.json/4a25284d... .
-3x2686 dates2016Feb2..2026Oct7/563bindings; raw OC/non-PIT/non-TR/seen.
-M1 SPY/QQQ25 paired complete sessions/9750 each; Oct7 QQQ389/SPY390 incomplete
-excluded. Latest head intraday-head-20261008T2120009002710Z collection complete,
-but prospective observation legacy_unbound/causal input_unavailable;
-availability/finality not_observed. Next owned Oct9 15:29UTC; no manual invoke.
-
-H15 Treasury-only snapshot refresh, not a new source capability:
-A/data/h15-treasury-capability-v1/
-h15-treasury-20261008T215603Z-a6c4328e599b4172b0eb4047d3a89fc0/receipt.json,
-SHAa2388f93...; public official Board source, no auth/cost, rawd7bd515c... .
-11 series/16897 dates1962Jan2..2026Oct7/one new date versus Oct7 snapshot.
-Old five pins unchanged; historical revisions not checked. H15 is published
-after market CLOSE; date is not publication vintage. Existing curve-sign
-monthly family was already rejected24 cells; no repeat or model/input graft.
-
-## Account And Console
-
-Corrected private volume thericher-v2-paper-canary-private-acct-20261007-v1;
-native root /private/canary. Preserve original provisional shared10% basis,
-owned positions/reservations/exact pending identities. Old account volume
-untouched/unadopted; its unknown outcomes are not new-account dependencies.
-
-Goal21 exact owned SELL and two joint BUY fills/closed book independently
-observed: successor-v3/fresh-buy-readback-20261009-v3.json/980ccc6b... .
-Goal22 repeatcd14cad0... complete/no_target_delta/client recreation/checkpoint
-equality, not host reboot. Latest published account20:39:11UTC:
-fresh-account-field-presence-1cae8fd5283b4567b135bf2faa50adf2.json/d13f0d7d...,
-3positions/0open orders/book/basis matched/token1/GET5/orders0,
-40 private files unchanged/reaped/absent. Field presence is not fee,
-settled-cash or owned-net-PnL evidence. Goal25 preview did not publish a snapshot.
-Loopback http://127.0.0.1:8787: off/unpaused, account available, prices unknown,
-buying power reference-only. Earlier agreement binds its own observation only.
-
-## Reserved Source Question And Review
-
-Tiingo-only unclear Starter/Trial durable-data rights remain operator-source
-local: https://app.tiingo.com/tos/ updatedOct6 section1.6(a).
-Plan/grant/applicability unknown. No new Tiingo acquisition or numeric research;
-bytes retained untouched, no retroactive-breach claim or global lane hold.
-No Norgate/FRED/FINRA substitution without compatible rights.
-
-Claude public checks remain review_unavailable/non_verdict, not agreement.
-NativeCLI2.1.273 empty tools argument preserved; latest safe diagnostic:
-A/research/source-discovery/claude-cli-empty-argument-diagnostic-20261009-v1.json,
-10cb5c2f.../.941s/is_error/internal_unclassified. Stop unchanged probes.
-Independent source reviewers corrected concrete faults; ready work continues.
-
-## Verification And Resume
-
-Latest Goal29 changed serial437pass3.53s; full eight-worker13422pass22skip/
-35warnings/13444collected335.87s. Current managed temp/lease removed and no
-matching worker remains. Final helper exit was not delivered after tool-session
-retirement; do not represent it as separately observed helper0. Earlier
-Goal28 authority341serial/13161full22skip333.89s remains historical.
-External R2 caller43/worker18 synthetic focused tests separately pass.
-Ruff/default/research/accounting Compose
-with --env-file .env.example pass. External caller/source pins/default-inert/
-actual preview/closed execute and task install separately attested.
-Weekly serial Oct3:6341pass19skip35warnings/1892.93s, not yet overdue.
-Do not repeat full tests for documentation-only changes.
-
-Resume C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1
+Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1,
 then current goal/policy/stateboards. uv --no-env-file excludes ambient dotenv;
-approved callers alone selectively load Paper keys. Parent owns actual Docker/
-provider/scheduler/Git; disjoint authors own assigned files. Verify, commit/push,
-replace one next objective and continue; no foreground wait or per-agent goal.
+only approved owned callers selectively load Paper keys. Parent owns actual
+runtime/Git, disjoint authors own assigned sources. Verify changed paths/full
+clean8 at integration/Ruff/three sample-env Compose; weekly serial already
+passed at Goal53 (15133pass22skip/2299.42s), not overdue. No documentation-only
+full-suite rerun. Commit/push, refresh ONE next objective and continue.

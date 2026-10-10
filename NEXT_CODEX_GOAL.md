@@ -25,6 +25,23 @@ Oct13/20 06:40..07:40 KST; future results not_observed. Original Paper job
 
 ## Work
 
+The first source-pinned CPU invocation FAILED in5.653353s before inference:
+caller used the canonical-dict artifact decoder on Docker inspect's pretty
+JSON list. Its cleanup also rejected that protocol. Exact created/never-started
+owner was then removed with source/job/command/mount attestation; cleanup
+f9acb196.../2.893s/absent, no inference/fit/broker. Original d6cfba86.../
+e6966f8b.../a733979b.../capturea04602a8... stay USED/FAILED, not rewritten.
+Independent wrapper8246c021... also found outer-capture source custody and
+final-clock P2s. Repair only these runtime faults in fresh sources under
+A/research/kis-stock-payoff60-shadow-runtime-recovery-v1, preserving identical
+models/data/slots. One new bounded240s technical CPU appointment, not a refund
+of the original5.653s, GPU family or outcome-informed model rescue. Use a
+separate bounded Docker-list decoder; artifact canonical-dict decoder stays
+strict. Reattest all frozen custody after outer capture and validate the exact
+returned UTC/elapsed samples. Test the REAL parser ABI with manufactured JSON,
+not a mock that changes its protocol. Complete the current forecast objective,
+do not create another company goal merely for this bug.
+
 Engine/parent: freeze exact original128 identities, f78/prior61/42eligible,
 TCN20 rank top10 and signed60 forecast on the same causal pre-OPEN context.
 Only finite signed pred>0 may retain each original1/100 total-basis slot;
