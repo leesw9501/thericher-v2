@@ -19,13 +19,23 @@ Parent command reaped, exact owned container removed, lease absent observed.
 GPU free after completion. Snapshot during OOF2: RTX4090/24564MiB,
 42% device utilization/2092MiB used; not an allocation or training-average measure.
 
-Goal78 five-session risk-cohort preparation uses one CPU family600s/4GiB/
-2threads and <=3 ridge fits, publication reserve60s inside600.
-No neural/GPU appointment in this particular policy/accounting study.
-Fresh typed five-session labels and cash/NAV accounting must be frozen before
-fits. Seen/raw-action/current-listing/non-PIT/non-TR/availability limits remain.
-A new useful frozen GPU hypothesis may be dispatched without operator approval;
-do not allocate a dummy job or treat the CPU package as a project-wide GPU ban.
+Goal78 CPU appointment COMPLETE/non_promoting_followup_only:
+A/research/kis-stock-broad512-five-session-risk-cohort-development-v1/
+integration-evidence.jsona5c31f09.... Signed custodydee56c28.../row5850532f...,
+contractb0b98f60.../actual33bb466b.../final3497c94b...,3ridge/0neural/0GPU.
+16.5456s within600 incl publication60; no failure/retry/used-source changes.
+OOF52/DEV16 five-day cohorts; positive seen joint risk tradeoff, not alpha.
+Mean DEV exposure6.5304% vs50% controls; no sealed access/Paper qualification.
+
+Goal79 dual-expert old512 tree/TabM/fixed half-rank blend source preparation:
+<=3CUDA/3tree/3ridge fits under one1800s family incl120 publication reserve.
+No appointment or fit yet; source/runtime/contract still being prepared.
+Freeze one finite architecture/parameter/source/data/target/chronology/cost/
+kill contract and CPU smoke before actual scarce-resource dispatch. Later rule
+confirmation dataset is independent acquisition; its labels cannot tune experts.
+GPU remains free and available, no approval/environment hold. Do not repeat
+failed OC attention or inflate utilization with a dummy campaign. Later Data
+and pure-code integration proceed concurrently with a useful frozen GPU job.
 
 ## Lineage And Allocation Discipline
 

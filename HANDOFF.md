@@ -14,46 +14,55 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Research Closure (2026-10-11 KST)
 
-Goal77 broad512 matched OC comparison COMPLETE/REJECTED:
+Goal78 five-session risk cohort COMPLETE/non_promoting_followup_only:
+A/research/kis-stock-broad512-five-session-risk-cohort-development-v1/integration-evidence.json
+a5c31f09.... Contractb0b98f60.../precommit2e1ac731.../actual33bb466b.../
+finalization3497c94b.../resultb351fbfd...; elapsed16.5456s<600,3 ridge fits,
+GPU/neural0, parent reaped/exact CPU container absent observed. Finalization
+clock precedes its own JSON write/stdout; not independent OS cleanup proof.
+Train375/525/675 complete, OOF26+26/DEV16 cohorts,130/130/80 actual daily marks,
+36 cells. Prior21 bars/OPEN entry/fifth CLOSE exit/constant quantities,
+post-entry-fee reference sizing, veto cash, actual fees/cash/held-price gaps.
+DEV10 growth+2.0921%/U.058709/DD1.6545%/turnover2.68951/mean risky exposure
+6.5304%;20bps+1.9582%. Fixed kills pass, but50% controls are not exposure
+matched. Small seen sample/raw actions: no alpha, significance or adoption.
+Independent6 checks386870cd... verify exact links/clock/count/aggregate kills,
+not private price replay/PIT/OS proof. Final-source local_paper synthetic
+parity90/d1b70e8d..., source24, Data8/8342b0d7..., parent9/e6b635f0....
+Serial164/3.10s/fullclean8 15343pass22skip35warnings/356.70s/helper0/reaped,
+JUnit A/verification/full8-20261011-g78/pytest.xmla509b78f....
+Repo Ruff and default/research/accounting sample Compose passed.
+Claude prefitfb1801fe... and post-positive24614463... supported-with-limits;
+prior response_unclassified is preserved, not agreement. No doc-only full repeat.
+
+Goal77 broad512 OC comparison rejected; closure in Git4999344 and
 A/research/kis-stock-broad512-oc-ranking-development-v1/integration-evidence.json.
-Actual recovery-r3/e95dfab8.../contract20bd8f65.../precommitfa74eebc.../
-result79b4f571...:3 CUDA neural +3 CPU ridge fits/9522updates/final6/cold101,
-train379/529/679, OOF260/DEV80 complete,36 fixed economic cells.
+Three CUDA neural/three ridge fits/9522updates; failed costs/drawdown, no rescue.
 Data R2 actual6e873e02.../102.823s/family103.185s:512identities/360686rows,
 391full800/121sparse/0empty, exact57cc rebind/source/Decimal readback before
 publish. Manifestfd559b22.../packed409fd7ad... in
 M/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-recovery-r2.
 Original800 May17,2023..Jul27,2026, original128-first mapping; unsupported j20
 retained rather than invented prior anchor.
-DEV10 attention-14.2676%/U-2.02821/DD31.9094% rejects; ridge+5.5337% still
-fails cash utility and20bps cost sensitivity. No seed/epoch rescue/ridge winner.
-R2 launcher control_paths failure6.581s/0fits and Data PPID failure0.362s stay
-charged; fresh outputs, no reset/refund. R3 finalization351.453s<original1200.
-Three numeric NPZ models external; parent reaped/exact owned container removed/
-lease absent observed, not independent OS cleanup proof.
-Independent6 review at A/research/kis-stock-broad512-oc-result-review-r2/
-receipt.json35648e50... matches links/signature/clock/count/header/aggregate kill,
-not weight values, private price replay, PIT/finality or causal-data proof.
-Known parent flat progress-fits null remains: independent actual flat ledger
-proves3/3/9522; used source stays unchanged, scoped P2 review2989cd57....
-Serial291/17.94s/fullclean8 15343pass22skip35warnings/372.83s/helper0/reaped,
-JUnit A/verification/full8-20261010-g77/pytest.xml439abdad....
-Repo/used R3 Ruff and default/research/accounting sample Compose passed.
-No documentation-only full repeat. Claude49afe4eb... supported-with-limits,
-categorical only. Seen/raw-action/non-TR/current-listing/non-PIT/availability
-limits: no alpha/fresh replication/sealed access/Paper adoption/net-PnL claim.
+Prior launcher control_paths6.581s/0fits and Data PPID0.362s stay charged;
+used sources/failures remain immutable. Seen/raw-action/non-TR/current-listing/
+non-PIT/availability limits continue, no broker net-PnL claim.
 
 ## Current Work
 
-ONE objective: kis-stock-broad512-five-session-risk-cohort-development-v1.
-Source proposal A/research/kis-stock-broad512-next-hypothesis-v1/proposal.json
-9e26a793.... Data binds existing sparse512 input; Engine implements one typed
-selector/buy/size/five-session-exit CPU study; Execution independently verifies
-synthetic local_paper cash/fee/quantity/daily-NAV/FIFO parity. Parent freezes
-source/data/clocks/cost/kill/lineage and Claude challenge before actual fits.
-CPU600s/4GiB/2threads/<=3ridgefits, true daily held marks, no OC timestamp
-shortcut or old128 monkeypatch. No GPU in this particular study; GPU available
-without approval for the next useful frozen campaign. No foreground wait.
+ONE objective: kis-stock-five-session-confirmation-and-expert-development-v1.
+Data prepares a named fixed512 later market-only refresh:21 context+50 score
+sessions throughOct6,10 cohorts; same identity/permutation, separate fresh
+cache, no f78 union. Named prior panel has only one later session; more dates
+have not yet been acquired. Source readiness5b3134b2... is not collection.
+Engine freezes later rule versus cash/10% and50% momentum before outcomes,
+and a separate old-seen tree/from-scratch TabM half-rank blend campaign.
+Official sources independently re-retrievedcfd4d75c...; no dependency runtime,
+new fit or GPU appointment observed yet. TabM remains an MLP-family method.
+Execution ports reusable pure typed cohort/accounting code and tests into Git;
+weights/data remain D:. Parent owns runtime/custody/Claude/Git, no foreground
+wait. Useful frozen CUDA campaign may run while the one-client Data job runs;
+no GPU approval/environment hold or mandatory profitability gate on Paper.
 
 ## Owned Opportunities Unchanged
 

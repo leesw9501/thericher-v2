@@ -26,10 +26,26 @@ rebind and Decimal/logical-hash readback/source audits passed before publication
 Original800 grid May17,2023..Jul27,2026, all sparse/empty retained;15%floor.
 No provider fetch, credential read, GPU, failed-output reuse or budget refund.
 
-Goal77 complete; current Goal78 binds this exact existing numeric input and
-five-session fold clocks at A/data/kis-stock-broad512-five-session-input-binding-v1.
-No acquisition/full index scan or hidden action repair. Source-safe binding
-package only; Engine owns the actual typed numeric loader/target/replay.
+Goal78 complete: final five-session input/clock binding8 tests at
+A/data/kis-stock-broad512-five-session-input-binding-v1,
+input-binding-clock-r2-receipt.json8342b0d7.... Numeric input unchanged;
+TRAIN daily entries375/525/675 complete; score130/130/80 daily clocks.
+
+Current Goal79 Data prepares collect_kis_broad512_later_daily_v1 using exact
+original512 identity/permutation and one fresh market-only source snapshot.
+Named panel's common declared later coverage endsJul28: one session, not a
+complete later target. Readiness5b3134b2.../4 tests is metadata, not collection.
+NEXT freezes21 context Jun26..Jul27 +50 score Jul28..Oct6,10 cohorts; Oct7 unused.
+BYMD20261006; no f78/remainder union, dropped sparse names or old-row splice.
+New cache M/us_equities/kis_paper_private/daily-nas-broad512-later/v1/
+fixed512-20260728-50sessions. Source implementation/preflight only; actual
+accepted/failed/cursor/remaining/ETA/next_due not yet observed for this new job.
+One client/cache lock/durable serial cursor,1024 attempts including failures,
+2 pages/chunk,1800s whole/1680work/120pub inside;D:15% floor. Existing1s shared
+market-start/300s fresh-token POST guards, valid in-memory token reused, no
+extra per-target sleep. Selective approved Paper keys only, no account/order/live.
+Recover/yield only this worker on exact failure/due fact; old finite owners below
+remain unchanged. Parent dispatches actual after source tests/frozen scope.
 
 ## Owned Collection
 

@@ -5,38 +5,33 @@ History in Git/exact immutable evidence, not a second backlog.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-No company block or foreground sleep. Goal77 broad512 OC comparison COMPLETE/
-REJECTED; integration at A/research/kis-stock-broad512-oc-ranking-development-v1/
-integration-evidence.json. A=D:/thericher-v2/model-artifacts.
-ONE objective: kis-stock-broad512-five-session-risk-cohort-development-v1.
+No company block or foreground sleep. Goal78 complete/non_promoting_followup_only,
+integrationa5c31f09... at A/research/kis-stock-broad512-five-session-risk-cohort-development-v1.
+A=D:/thericher-v2/model-artifacts.
+ONE objective: kis-stock-five-session-confirmation-and-expert-development-v1.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Goal77 closure, then Goal78 contract/actual CPU comparison; sole Git/runtime owner. |
-| Verification | Parent / reaped | Serial291/17.94s + fullclean8 15343/22/372.83s/helper0; Ruff/three Compose. |
-| Data | Bohr / preparing | Goal78 existing numeric512 input/clock binding; no fetch/full scan. |
-| Research | Chandrasekhar / preparing | Typed five-session selector/buy/size/exit CPU study; no old OC target reuse. |
-| Execution | Herschel / preparing | Independent synthetic local_paper cash/fee/quantity/NAV/FIFO parity. |
-| Independent Validation | Herschel / released | Goal77 six checks35648e50..., exact links/headers/aggregate kill, not price replay. |
-| Direction | Claude / received | Goal77 supported-with-limits49afe4eb...; Goal78 fresh challenge before reliance. |
-| GPU | Steward / free | Three actual CUDA fits/9522 updates completed; Goal78 CPU-only, no permission/environment hold. |
+| Git/integration | Parent | Goal78 closure; sole Git/runtime owner; Goal79 packages disjoint. |
+| Verification | Parent / reaped | Serial164/3.10s + fullclean8 15343/22/356.70s/helper0; Ruff/three Compose. |
+| Data | Bohr / preparing | Fixed512 later refresh,21 context+50 score dates; source/tests before one-client acquisition. |
+| Research | Chandrasekhar / preparing | Old-seen tree/TabM fixed blend source/frozen contract; separate later rule confirmation. |
+| Execution | Herschel / preparing | Reusable pure cohort/accounting code in Git, generated artifacts stay D:. |
+| Independent Validation | Released | Goal78 six checks386870cd... exact bindings/aggregate kills, not private-price/PIT proof. |
+| Direction | Claude / received | Prefitfb1801fe.../post-positive24614463... supported-with-limits; unclassified prior preserved. |
+| GPU | Steward / free | Goal78 CPU-only complete; useful Goal79 frozen CUDA campaign pending source/smoke, not approval. |
 | Data due | Existing finite owners | ab65b62b... Oct13/20 endpoints, next_due Oct12/19 21:40UTC unchanged. |
 | Paper due | Existing finite owners | Same2d616950 names/dates with b860Action; original rank1/basis/pending, gate keep/veto only. |
 
 ## Bottleneck And Reversible Improvement
 
-Daily liquidation costs and drawdown rejected the broadened attention policy.
-Test one fixed lower-turnover risk cohort using true daily cash and held marks,
-not more epochs/seeds on the failed endpoint. Separate engine policy, existing
-input binding and independent accounting ownership to run ready work in parallel.
-Freeze a real five-session clock/type before replay; do not hide target leakage
-behind the old single-session Frame. Original128-first mapping and sparse512
-support remain explicit. No new collector, GPU utilization job or Paper gate.
-
-Goal77 path-interface failure0fits/6.581s and Data PPID failure0.362s remain
-charged; repaired runs completed under their original clocks. Current result
-does not rely on null parent progress-fits: independent flat ledger verifies
-3 neural/3 ridge/9522 updates. Used sources stay unchanged. Parent mock review
-2989cd57... records scoped P2 residuals; no global hold or unknown-owner wait.
-Goal76 installed opportunity is not a submit/fill; owned next_due remains
-independent. Reuse completed Goal77 authority for documentation-only closure.
+Goal78 risk cohort passed its fixed development kills, but unequal exposure
+and only16 seen DEV cohorts limit interpretation. Freeze a later period and
+10%-gross momentum control before collection; independently test a different
+tree mechanism and TabM half-rank blend on old data while Data refreshes.
+Later labels cannot tune either policy. Port reusable pure code into Git,
+keeping generated weights/data on D:, so future studies stop depending on
+unversioned study scripts for generic accounting. Preserve used external bytes.
+One Data client and one useful GPU appointment can run concurrently with the
+code/parity package. No profitability approval gate or session foreground wait.
+Existing owned Paper opportunity is not a submit/fill; next_due is unchanged.

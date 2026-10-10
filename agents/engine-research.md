@@ -5,39 +5,43 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact ro
 
 ## Current Result And Work (2026-10-11 KST)
 
-Goal77 broad512 OC comparison COMPLETE/REJECTED at
-A/research/kis-stock-broad512-oc-ranking-development-v1/integration-evidence.json.
-Actual recovery-r3/e95dfab8.../contract20bd8f65.../precommitfa74eebc.../
-result79b4f571...:3 CUDA neural +3 ridge fits/9522updates/final6/cold101,
-train379/529/679/OOF260/DEV80/all36 economic cells; no missing selected payoff.
-Numeric Data512/360686rows/391full800/121sparse/manifestfd559b22.../
-packed409fd7ad...; original800 May17,2023..Jul27,2026 and128-first order.
-R2 path failure6.581s/0fits preserved; R3 finalization351.453s under same1200s.
-DEV10 attention-14.2676%/U-2.02821/DD31.9094%; momentum-9.3354%.
-Ridge+5.5337% still U-.685786 and20bps-2.5802%, cash0; NOT a selected winner.
-All fixed candidate kills reject. Three model files external, no tuning rescue.
-Independent6 review35648e50... matches links/signature/clock/count/header/kill,
-not model values/private price replay/PIT/finality/OS proof. Diagnostics narrowed
-before fitting; no missing MSE/RankIC/turnover claim. Seen availability assumed.
-Serial291/17.94s/fullclean8 15343/22/372.83s/JUnit439abdad...; Ruff/three Compose.
+Goal78 COMPLETE/non_promoting_followup_only, integrationa5c31f09... at
+A/research/kis-stock-broad512-five-session-risk-cohort-development-v1.
+Contractb0b98f60.../precommit2e1ac731.../resultb351fbfd.../final3497c94b...;
+3 CPU ridge fits,16.5456s<600, no neural/GPU fit. True daily constant inventory
+OPEN(j)..CLOSE(j+4), actual cash/fees/gaps, prior21-bar risk cohort, veto cash.
+Train375/525/675, OOF26+26/DEV16 cohorts,130/130/80 daily marks,36 cells.
+DEV10 growth+2.0921%/U.058709/DD1.6545%/turnover2.68951;20bps+1.9582%.
+Mean risky exposure6.5304% versus50% controls: joint risk/cost/entry/exit
+tradeoff, not exposure-matched alpha. OOF1+0.4236%/OOF2+1.7674% at10bps.
+Independent6 checks386870cd...; final-source synthetic local_paper parity90,
+source24/Data8/parent9. Serial164/full15343pass22skip356.70s/Ruff/three Compose.
+Claude prefitfb1801fe.../post-positive24614463... supported-with-limits; prior
+unclassified attempt retained, not agreement. No broker performance/adoption.
 
-Current ONE objective: kis-stock-broad512-five-session-risk-cohort-development-v1.
-Frozen source proposal9e26a793... at A/research/kis-stock-broad512-next-hypothesis-v1.
-Engine source preparation at
-A/research/kis-stock-broad512-five-session-cohort-implementation-v1.
-One prior21-bar policy: momentum20 top10 -> fixed continuation hurdle.003 ->
-bounded inverse-vol size/gross<=.50/name<=.10/triangle-risk.08 -> OPEN(j) entry,
-constant quantities, CLOSE(j+4) exit. Veto cash, no redistribution.
-Typed five-session clocks/true daily NAV; never backdate final close into OC.
-Compare cash/momentum50%/ridge50%, same sparse input/causal features.
-CPU family600s includes <=3 ridge fits/replay/audits/publication60s reserve,
-4GiB/2threads. No neural/GPU here, no utilization job or operator hold.
-Independent Execution synthetic local_paper fee/cash/quantity/NAV/FIFO parity;
-Data binds existing input, not a new fetch/full index scan. Parent freezes
-contract/Claude challenge and owns actual invocation/integration/Git.
-This joint policy tradeoff is not exposure-matched alpha/component attribution.
-Multi-day raw-action/non-TR/current-listing/non-PIT/availability limits remain;
-at most non_promoting_followup_only, not Paper adoption.
+ONE objective: kis-stock-five-session-confirmation-and-expert-development-v1.
+Later rule confirmation freezes same policy before numeric later outcomes:
+same512/21 context+50 scores Jul28..Oct6,10 five-day cohorts, cash/momentum10%
+and50%, costs5/10/20. Readiness5b3134b2... is not actual collection. Missing
+selected held mark is input_unavailable, no substitutions or cohort deletion.
+Require>=8 causal cohorts; primary growth/U/drawdown/turnover/cost kill in NEXT.
+Some later128 dates were seen elsewhere: later confirmation, not untouched holdout.
+
+Parallel old-seen dual-expert package at
+A/research/kis-stock-five-session-dual-expert-development-v1: tree/from-scratch
+TabM/fixed half-rank blend. Official LightGBM MIT/TabM Apache2 source pins
+independently re-retrievedcfd4d75c..., no runtime/model yet. TabM is MLP family,
+not foundation/sequence novelty. Freeze one architecture/hyperparameter/split/
+cost/support/kill/lineage before <=3CUDA +3tree/3ridge fits,1800s family with
+120s reserve inside. CPU synthetic smoke first, one exclusive GPU appointment.
+No later-label tuning, learned gate, rescue seeds or standalone-profit gate.
+Parent owns runtime/custody/Git; Execution ports reusable pure core into Git.
+
+Goal77 broad512 OC comparison rejected in Git4999344/exact integration:
+3CUDA/3ridge/9522updates, no epoch/seed/ridge-winner rescue. Numeric512
+manifestfd559b22.../packed409fd7ad... remains same800/128-first/sparse121.
+Seen/raw-action/non-TR/current-listing/non-PIT/availability limits remain.
+No Paper adoption or alpha; five-session policy is not the installed day-Paper.
 
 ## Breadth / Depth / Replication
 

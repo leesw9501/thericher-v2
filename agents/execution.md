@@ -115,10 +115,25 @@ never translated from an older Score35 namespace.
 
 Goal77 actual broad512 attention comparison rejected; independent6 result
 review35648e50... verifies links/counts/headers/aggregate kill, not broker parity.
-Current Goal78 Execution package at
-A/execution/kis-stock-five-session-cohort-accounting-parity-v1 independently
-tests synthetic five-day cash/quantity/fees/daily-NAV/FIFO with local_paper.
-No production RiskLimits, broker route, basis, private state or schedule change.
+Goal78 COMPLETE/non_promoting_followup_only, integrationa5c31f09... at
+A/research/kis-stock-broad512-five-session-risk-cohort-development-v1.
+Final c9fb cohort/release217f parity R2 at
+A/execution/kis-stock-five-session-cohort-accounting-parity-v1/parity-r2-receipt.json
+d1b70e8d...:90 tests/.56s with independent50-digit Decimal reference and real
+local_paper fill/events/fresh JSONL replay/FIFO accounting. All final-source
+hash checks pass. Earlier90-test receipt binds the older source, not final proof.
+Actual cohort3ridge/0GPU/16.5456s,36 tables; independent6 result386870cd...
+checks aggregate links, not raw-price/broker/PIT proof. Positive joint policy
+result at6.5304% mean exposure is not50%-control alpha or Paper adoption.
+
+Current Goal79 Execution package ports reusable pure typed cohort/accounting
+core and focused synthetic tests into Git-owned research code. Preserve used
+external bytes, isolate NumPy/Torch/default imports from broker routes, keep
+generated models/data D:. Existing local_paper accounting remains authoritative
+for synthetic fills. No production RiskLimits, broker, basis, private state,
+installed model or schedule change. Data later refresh and useful expert GPU
+campaign can proceed independently. Full15343/22/356.70s/Ruff/three Compose
+passed for Goal78; no documentation-only full repeat.
 
 Dataab65b62b... still owns42-peer Oct13/20 endpoint observations. No manual
 launch or broker call is part of this research work. Closed research/debits and
