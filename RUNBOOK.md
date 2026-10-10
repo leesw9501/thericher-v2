@@ -2,10 +2,23 @@
 
 ## Current Owned Opportunities And Research
 
-Goal65 current assignment: fixed binary60>0.5 AND signed60>0 conjunction on
-original TCN slots. Pure research component and identical cached controls;
-no fitting/threshold search/GPU allocation/Paper replacement. Wrapper repairs
-are focused role packages within this goal, not new company boundaries.
+Goal65 fixed binary/signed conjunction comparison COMPLETE/REJECTED at
+D:/thericher-v2/model-artifacts/research/kis-stock-binary-signed-conjunction-development-v1/integration-evidence.json
+(1c61babf...). Native invocation3f7d337d... produced30complete cells, zero
+fits/inferences/GPU, cached economics/streams matched/reaped/absent/unchanged.
+Exact outputs live beneath D:/thericher-v2/model-artifacts/bc/
+3f7d337d0dc74211aa2716a5b936f3a1/out/3f7d337d0dc74211aa2716a5b936f3a1.
+Whole10/OPEN111 conjunction+1.1554%, binary+1.1749%, signed+1.7643%,
+TCN+1.3198%; utility screen rejected. Initial canonical parse failure4ce28ae...
+and outer filename-scope failureb01b540a.../94.698478s05:16:02.263955UTC remain
+immutable. Offline exact source/input/output reattestation recovers native
+comparison, not a successful outer publication clock. Never rerun used drivers.
+396 focused22.64s/full8 15319pass22skip347.176s/JUnit3be96478...; repo Ruff and
+three sample Compose pass. Used external recovery source E501 is preserved.
+Next ready source package is a same-f78 retained forecast join, zero inference,
+with distinct original as_of and actual join publication before Oct12 OPEN.
+Typed Paper preparation is rank1/.01, not the analytical top10 or deployment.
+Wrapper repairs stay focused role packages, not new company/full-test cycles.
 Goal64 COMPLETE/REJECTED30b0b842... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:
 invocationf98f4fe52ffb4bdf872757bf7e2f478e/capture7feef64c.../worker3458d551... .

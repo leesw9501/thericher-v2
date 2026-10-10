@@ -5,17 +5,20 @@ History remains in Git and immutable external evidence.
 
 ## Ready / Owned / Due (2026-10-10 KST)
 
-No company block or foreground sleep. Goal64 native quantile completed and
-failed the fixed economic screen; ONE Goal65 implements a fixed expert
-conjunction and common cached comparison. Future Data/Paper owners continue.
+No company block or foreground sleep. Goal65 native comparison completed and
+failed the fixed economic screen, with independent offline custody recovery.
+ONE Goal66 seals a retained same-f78 prospective conjunction and prepares its
+typed Paper interface. Future Data/Paper owners continue unchanged.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Goal64 integration30b0b842.../capture7feef64c...; Goal65 fixed conjunction next. |
-| Verification | Parent / reaped | 351 serial20.13s/full8 15274pass22skip35warnings352.25s/JUnit48bb6f58...; C:/trpy clean. |
+| Git/integration | Parent | Goal65 integration1c61babf.../native734f4866...; failed outerb01b540a... preserved, no rerun. Goal66 ready. |
+| Verification | Parent / reaped | 396 serial22.64s/full8 15319pass22skip347.176s/JUnit3be96478...; repo Ruff/three Compose pass. Used external recovery E501 retained. |
 | GPU/custody | Steward / available | Goal64 one CPU toy/three actual CUDA fits/30cells/242.266783s<600, reaped/absent/released; cached0extra/sealed0. Quantile median rejected; no rescue fit or refund. Goal65 CPU-only. |
-| Engine | Copernicus / ready | Pure fixed binary60>0.5 AND signed60>0 on original TCN slots; alignment verified by source, no training/rerank. |
-| Accounting/Validation | Independent roles | Recompute all five arms on common OPEN111, not old CLOSE112 metrics; exact fractions and costs. |
+| Engine | Parent / ready | Fixed conjunction rejected versus signed/TCN; next same-f78 forward seal uses retained42-peer forecasts, distinct clocks, zero inference. |
+| Accounting/runtime | James / Singer | Typed original-rank1/.01 mask and current-only forward join source preparation active; no deployment/intent/new schedule. |
+| Validation | Euclid / released | Exact four outputs/458 frozen+7 support hashes and whole10 kill independently confirmed; P2 outer filename ABI fault retained, clock not independently observed. |
+| Next GPU preparation | Engine / ready | Underrepresented joint rank+absolute-sign 60x2 TCN proposal, OLD-only targets/three prefix fits/shared600s. Loss weights/normalization and source-clock contract not yet frozen; no dispatch. |
 | Data endpoints | Existing finite owners | Jobab65b62b.../42 peers, Oct13/20 06:40..07:40KST; last03:56:02UTC Ready/enabled. Collection not_observed; no manual launch. |
 | Original Paper | Existing finite owners | Job2d616950... entryOct12 22:30/closeOct13 04:50KST; Ready/enabled, no new fill. Budget/identities/model unchanged. |
 | Claude | Parent / unavailable | 9a0121d4... auth_unavailable, verdictnull/agreementfalse; login help requested, no blind retry/lane hold. |
@@ -28,10 +31,13 @@ once at material integration, shared-runtime/control-root change or explicit
 requirement; never substitute focused evidence for full authority. This removes
 repeated six-minute technical-repair goal cycles without weakening custody.
 
-The measured source/ENV faults are repaired; actual CUDA succeeded. Small
-models finish fitting quickly; replay/preparation, not GPU permission, dominates.
-Conjunction uses existing predictions so no utilization-only retraining.
-Reuse parity-bound caches and original direct-M inputs. CPU implementation,
-independent accounting review and runtime preparation have disjoint ownership.
+Actual CUDA succeeded. Goal65 CPU preparation29.962s/replay44.381s/cache
+readback8.016s are named observed spans, not additive GPU time. No new training
+was needed. Reuse retained expert forecasts for Goal66; reconstruct only one
+current-only frame because full ScoreSeal rows are absent from forecast files.
+Original prediction clocks remain distinct. Parent output-name ABI failure is
+recovered offline without repeating models/comparison. Future parent callers
+must exercise their exact released output schema in focused synthetic feedback.
+Typed Execution source and next legitimate GPU contract have disjoint owners.
 Current-listed/non-PIT/revised/actions/finality/honest-host limits remain.
 No future calendar wait, new approval gate, platform or standing worker.

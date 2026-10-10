@@ -35,8 +35,22 @@ Goal57 CLOSE112 metrics are not directly comparable. Independent checked
 buffers reproduce the kill and all44 output pins, not the original clock event.
 351 serial20.13s/full8 15274pass22skip35warnings352.25s/JUnit48bb6f58... reaped.
 Final quantile NPZ20f720f4... stays external; no Paper replacement/sealed spend.
-Goal65 next: pure fixed binary60>0.5 AND signed60>0 mask on original TCN slots,
-plus identical cached replay controls. No new fitting or threshold search.
+Goal65 comparison COMPLETE/REJECTED1c61babf... at
+A/research/kis-stock-binary-signed-conjunction-development-v1/integration-evidence.json.
+Native30cells/zero fits-inferences-GPU/cached accounting match/reaped/absent,
+seven inputs/458 sources unchanged. Whole10/OPEN111 conjunction+1.1554%,
+binary+1.1749%, signed+1.7643%, TCN+1.3198%; utility fails signed/TCN.
+No tuning, independent alpha or Paper replacement. Original parent outer
+publication failedb01b540a.../94.698478s at05:16:02.263955UTC on filename ABI;
+offline exact four-output/source hashes recover comparison custody, not a
+rewritten successful publication clock. Initial4ce28ae... JSON parse failure,
+used sources/debits and external E501 are retained. No replay was repeated.
+396 focused22.64s/full8 15319pass22skip347.176s/JUnit3be96478... reaped;
+repo Ruff/three sample Compose pass. Component00b4526 is pushed.
+Next ready: combine retained binary/signed forecasts from one f78 current-only
+context without inference. Preserve their distinct original clocks and actual
+join time before Oct12 OPEN; no future target or Data/Paper-owner replacement.
+Prepare a typed rank1/.01 Paper mask, not a signed-return probability.
 
 Goal62 CLOSED/bounded preparation failure bdd26cf0... at
 A/research/kis-stock-payoff-quantile-development-v1/integration-evidence.json:

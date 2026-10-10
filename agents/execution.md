@@ -57,8 +57,13 @@ path. Goal63 ENV failure9cabcb37.../7.577810s and exact cleanupa6a1930c.../
 2.021080s prove native never started/reaped/absent/released; no broker change.
 Goal64 actual quantile COMPLETE/REJECTED30b0b842.../242.266783s/three CUDA fits/
 30cells/cached0extra/reaped/absent/released; no broker change. Model median
-utility trails identical OPEN111 controls. Goal65 fixed binary/signed conjunction
-keeps risk/order/bank/schedule unchanged; no calibrated tail-risk/Paper replacement.
+utility trails identical OPEN111 controls. Goal65 fixed conjunction comparison
+COMPLETE/REJECTED1c61babf.../30cells/zero fit-inference-GPU/reaped/absent;
+same costs/original quantity-or-zero accounting. Parent output-scope failure is
+preserved; offline custody does not rewrite its clock. Risk/order/bank/schedule
+unchanged. Next typed mask preparation preserves original Paper rank1/.01;
+signed returns are never substituted for probability. No deployment, broker
+intent, new schedule or model replacement in this preparation.
 Goal55 binary shadow016e67dc.../native cachedda6fbbad.../seven kept remains
 immutable and non-executable. Data jobab65b62b... owns42-peer endpoints
 Oct13/20 06:40..07:40 KST, market-only/no manual invocation.

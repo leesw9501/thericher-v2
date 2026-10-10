@@ -17,8 +17,28 @@ Lower-.0790%/one accepted slot diagnostic only. No calibration/fresh alpha/
 Paper replacement. Independent buffers/all44 pins reproduce the screen,
 not the original clock.351 serial20.13s/full8 15274/22skip/35warnings352.25s/
 JUnit48bb6f58... . Preserve final NPZ20f720f4... and all prior failed debits.
-Goal65 ACTIVE: original TCN slots gated by binary60>0.5 AND signed60>0,
-same CURRENT grid and OPEN111 replay; no training, thresholds or resizing.
+Goal65 comparison COMPLETE/REJECTED1c61babf... at
+A/research/kis-stock-binary-signed-conjunction-development-v1/integration-evidence.json.
+Actual native30cells/zero fit-inference-GPU; exact cached accounting/readback,
+seven inputs/458 sources unchanged/reaped/absent. Whole10/OPEN111 conjunction
++1.1554% versus binary+1.1749%, signed+1.7643%, TCN+1.3198%, cash0. Utility
+fails signed/TCN; no tuning, new fitting or promotion. Native phases29.962s
+preparation/44.381s common replay/8.016s cached readback, not additive fit time.
+Parent outer ABI failureb01b540a.../94.698478s05:16:02.263955UTC is preserved;
+offline four-output/source hash reattestation recovers custody, not a rewritten
+successful publication clock. Initial canonical-JSON failure4ce28ae... stays.
+Pure component b4f1563e.../test287ef911... committed/pushed00b4526;
+45 synthetic/108 component-score serial1.64s/Ruff/six independent checks pass.
+None keeps inventory, empty tuple means cash; original weights unchanged.
+Model/cache lineage, timing and exact quantity accounting remain caller-owned.
+396 focused22.64s/full8 15319pass22skip347.176s/JUnit3be96478... reaped;
+repo Ruff/three sample Compose pass. Used external recovery driver E501 is
+retained unchanged; it is not a repo Ruff failure or a reason to rerun models.
+Next ready preparation: one same-f78 forward conjunction using original binary
+fc77e52a.../signedc007442f... and current-only context. Both42 peers/TCN scores
+match, but distinct original as_of clocks must stay distinct. Zero fit/inference;
+join publication is its own clock, not a simultaneous original forecast.
+Execution prepares a typed original-rank1/.01 mask without deploying it.
 
 Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
 contract03117125.../result e59d6a92.../closure6e473f61.../integration b2ef8c11... .

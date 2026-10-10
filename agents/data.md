@@ -48,10 +48,16 @@ Goal64 COMPLETE30b0b842.../242.266783s actual three CUDA fits/30cells; input/sou
 unchanged/reaped/absent/released. Same OLD734/CURRENT52 separate calendars/seven
 bindings/128 identities. Input1a9214d1... verifiedf7f56ebe... propagates expiry;
 original60x2 needs no padding. Raw M direct RO, never staged under A.
-No new data/cache/target acquisition, union or qualification. Goal65 cached
-binary/signed conjunction retains the same CURRENT grid/OPEN111; original
-Goal57 CLOSE112 metrics must be replayed, never compared as-is. Owned
-next_due continues independently; original limits remain visible.
+No new data/cache/target acquisition, union or qualification. Goal65 common
+OPEN111 comparison COMPLETE/REJECTED1c61babf.../30cells, unchanged sources.
+Original Goal57 CLOSE112 metrics are not compared as-is. Next ready input is
+exact f78 native-frozen-input/contract.json plus native-outcomes/
+cfa7a564e2b248eb9fd6bb640daa1c27/receipt.json3dafa26e... under
+A/data/kis-current-pooled-equity-refresh-next-session-v1.128 identities/95
+manifests/94 full100; original forecast42 peers, no remainder union/new fetch.
+Both retained expert forecasts share peers/scores but have distinct as_of.
+Reconstruct one current-only frame for forward sealing; no fabricated rows.
+Owned next_due continues independently; original limits remain visible.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

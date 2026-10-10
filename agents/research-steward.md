@@ -47,10 +47,15 @@ registry457a0bcb.../outcomea86c4d3c...; CPU toy plus three actual CUDA fits,
 30cells/shared600s/observed242.266783s at04:36:58.548063UTC after capture/audit.
 Sealed0/reaped/absent/released/input-source unchanged/cached0extra. Median
 whole10 screen rejected; no rescue fit/refund/Paper qualification.
-Goal65 fixed binary/signed cached conjunction uses zero fitting/GPU/sealed spend.
-Sources
-model0d2269aa.../input1a9214d1.../worker880c361e.../entryf5aa1c34... ready;
-freeze fresh host/parent pins before actual dispatch. Claude auth-unavailable
+Goal65 fixed conjunction COMPLETE/REJECTED1c61babf.../native30cells/zero
+fitting-inference-GPU-sealed spend. Native outputs734f4866.../5ab1feb7...;
+parent failed outer scopeb01b540a.../94.698478s after caller completion is
+preserved, offline custody recovered without rerunning or refunding. Initial
+canonical failure4ce28ae... and external used E501 remain. Next forward
+same-f78 join needs no GPU or inference; retain distinct original forecast
+clocks. Underrepresented research preparation proceeds independently; allocate
+GPU only after its finite new hypothesis/data/split/cost/kill contract freezes.
+Claude auth-unavailable
 9a0121d4... is not agreement or a research gate. GPU is available, no
 permission fault; do not invent utilization-only training.
 Data endpoint/Paper owners remain unchanged and independent.
