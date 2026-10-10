@@ -26,6 +26,14 @@ from thericher_v2.execution.kis_private_daily_collector import (
 )
 
 
+@pytest.fixture(autouse=True)
+def remove_owned_publication_aliases(tmp_path):
+    yield
+    # Keep atomic-publication assertions, then unlink this test's hardlink aliases.
+    for name in ("manifest.json", "manifest.candidate.json"):
+        (tmp_path / "cache" / "view" / name).unlink(missing_ok=True)
+
+
 def plan_fixture():
     keys = [f"S{i:04}/NAS" for i in range(512)]
     days = [(datetime(2026, 6, 26) + timedelta(days=i)).date().isoformat() for i in range(71)]

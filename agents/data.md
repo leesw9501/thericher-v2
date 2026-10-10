@@ -31,21 +31,35 @@ A/data/kis-stock-broad512-five-session-input-binding-v1,
 input-binding-clock-r2-receipt.json8342b0d7.... Numeric input unchanged;
 TRAIN daily entries375/525/675 complete; score130/130/80 daily clocks.
 
-Current Goal79 Data prepares collect_kis_broad512_later_daily_v1 using exact
-original512 identity/permutation and one fresh market-only source snapshot.
-Named panel's common declared later coverage endsJul28: one session, not a
-complete later target. Readiness5b3134b2.../4 tests is metadata, not collection.
-NEXT freezes21 context Jun26..Jul27 +50 score Jul28..Oct6,10 cohorts; Oct7 unused.
-BYMD20261006; no f78/remainder union, dropped sparse names or old-row splice.
-New cache M/us_equities/kis_paper_private/daily-nas-broad512-later/v1/
-fixed512-20260728-50sessions. Source implementation/preflight only; actual
-accepted/failed/cursor/remaining/ETA/next_due not yet observed for this new job.
-One client/cache lock/durable serial cursor,1024 attempts including failures,
-2 pages/chunk,1800s whole/1680work/120pub inside;D:15% floor. Existing1s shared
-market-start/300s fresh-token POST guards, valid in-memory token reused, no
-extra per-target sleep. Selective approved Paper keys only, no account/order/live.
-Recover/yield only this worker on exact failure/due fact; old finite owners below
-remain unchanged. Parent dispatches actual after source tests/frozen scope.
+Current Goal80: finish the same fixed512 later input in a fresh explicitly
+bounded recovery. Goal79 closuree0281290... records later input_unavailable,
+not dataset rejection. R1 sourcefea632ee.../CLIe260b9e1... failed before keys:
+two-part view identity was unpacked as three-part native identity. R2
+module77a31fe2.../CLI520fc3b5.../plana9d46ef9... repaired it; real512 DTO
+metadata smoke and18 parent tests passed. Original bytes and receipts intact.
+
+R2 original wall expired with cursor154/298attempts/295accepted,151 usable
+captures/3 canonical rate_limited rejections/358 unseen. All three actual
+trees reaped/0 active; no final view and no later model outcome. Exact cursor:
+M/us_equities/kis_paper_private/daily-nas-broad512-later/v1/
+fixed512-20260728-50sessions-r2/cursor.json, binding in Goal79 integration.
+Rejected manifests have no raw payload. No provider history exhaustion inferred.
+Measured opener-entry gapmin.90323s is not wire telemetry/provider threshold.
+First page reached requested floor147 times/10437 needed rows; second pages
+added0 needed rows. Current prior worker is closed, not waiting on old next_due.
+
+Data prepares A/data/kis-stock-five-session-later-scope-recovery-v1:
+fresh fixed512-20260728-50sessions-r3, same21context+50score dates/71 clocks/
+original128-first mapping, no old800/f78/remainder splice or outcome filtering.
+Reuse only exact accepted R2 capture hashes/vintages; retry rejects/unseen,
+preserving failed R1/R2 cursor/epoch/spend. New900whole/850work/50pub,
+<=726 additional pages under original aggregate1024. Requested-floor early
+stop retains genuine continuation; not false source exhaustion.
+One client/token/cache owner across worker-owned cooldowns. Calibrate closest
+dispatch spacing or1.25 claim pace without removing existing shared1s/300s
+fresh-token guards. Record actual counts/pace/retry facts before any retention.
+Source tests and canonical metadata shape before provider; parent actual owner.
+D:15% floor; selective approved Paper market-only keys, no account/order/live.
 
 ## Owned Collection
 

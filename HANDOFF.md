@@ -14,6 +14,25 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Research Closure (2026-10-11 KST)
 
+Goal79 bounded COMPLETE/rejected expert/input_unavailable later input:
+A/research/kis-stock-five-session-confirmation-and-expert-development-v1/integration-evidence.json
+e0281290.... Dual actualbc36690c.../resultdd2f684a.../final37.258s,
+3CUDA TabM+3tree+3ridge/804updates/63 cells, exact container absent/lease
+released observed. Fixed blend DEV10+1.6144%/U.045771 fails rule.058709 and
+tree.064177 kills. Diagnostic tree+2.1541%/DD.7344% is not a selected winner.
+Independent6/eight mutations6fa18b1d...; Claude3cfa9bd0... supported-with-limits.
+No later model outcome: Data R2 closed154targets/298attempts/295accepted/
+3 rate limits,151usable/358unseen, original budget/source/cursor preserved.
+First-page floor147/second incremental needed0; opener gapmin.90323s, not
+wire telemetry. No dataset rejection, provider exhaustion or Paper adoption.
+Serial70/19.88s/full8 15413pass22skip35warnings365.34s/helper0/Ruff/three
+sample Compose; JUnit A/verification/full8-20261011-g79-r2/pytest.xml
+d3e030ec.... Prior full passed tests but hardlink cleanup failed: not authority.
+Passing tracked source digest992fefdd... permits exact-source verification reuse
+only per AGENTS; fresh external-source tests/independent checks still required.
+Source3f18291 and pure core1523c3d pushed; atomic-publication test aliases now
+unlinked by test teardown. Production publication behavior unchanged.
+
 Goal78 five-session risk cohort COMPLETE/non_promoting_followup_only:
 A/research/kis-stock-broad512-five-session-risk-cohort-development-v1/integration-evidence.json
 a5c31f09.... Contractb0b98f60.../precommit2e1ac731.../actual33bb466b.../
@@ -50,16 +69,16 @@ non-PIT/availability limits continue, no broker net-PnL claim.
 
 ## Current Work
 
-ONE objective: kis-stock-five-session-confirmation-and-expert-development-v1.
-Data prepares a named fixed512 later market-only refresh:21 context+50 score
-sessions throughOct6,10 cohorts; same identity/permutation, separate fresh
-cache, no f78 union. Named prior panel has only one later session; more dates
-have not yet been acquired. Source readiness5b3134b2... is not collection.
-Engine freezes later rule versus cash/10% and50% momentum before outcomes,
-and a separate old-seen tree/from-scratch TabM half-rank blend campaign.
-Official sources independently re-retrievedcfd4d75c...; no dependency runtime,
-new fit or GPU appointment observed yet. TabM remains an MLP-family method.
-Execution ports reusable pure typed cohort/accounting code and tests into Git;
+ONE objective: kis-stock-five-session-tree-later-confirmation-v1.
+Data prepares fresh bounded R3 recovery, preserving exact151 accepted R2
+captures and requeuing3 rejects/358unseen without resetting the prior scope.
+Same512/21context+50score dates/71clocks; <=726additional pages,900s new
+scope, floor-aware stops and measured transport-spacing calibration, oneclient.
+Engine freezes one unchanged DEV HGBR recipe20..695 fit and later comparison
+before labels, with prior-entry-gross-matched momentum and rule controls.
+600s/oneCPU fit, no diagnostic winner substitution or expanded799 training.
+Existing Paper opportunity remains independent; no automatic model adoption.
+Reusable pure typed cohort/accounting code and36 tests pushed in Git1523c3d;
 weights/data remain D:. Parent owns runtime/custody/Claude/Git, no foreground
 wait. Useful frozen CUDA campaign may run while the one-client Data job runs;
 no GPU approval/environment hold or mandatory profitability gate on Paper.

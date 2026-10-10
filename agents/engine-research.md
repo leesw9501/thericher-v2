@@ -19,7 +19,21 @@ source24/Data8/parent9. Serial164/full15343pass22skip356.70s/Ruff/three Compose.
 Claude prefitfb1801fe.../post-positive24614463... supported-with-limits; prior
 unclassified attempt retained, not agreement. No broker performance/adoption.
 
-ONE objective: kis-stock-five-session-confirmation-and-expert-development-v1.
+Goal79 bounded COMPLETEe0281290... at
+A/research/kis-stock-five-session-confirmation-and-expert-development-v1.
+Dual actualbc36690c.../contracta98fbb91.../precommit6ea7dc05.../
+resultdd2f684a.../final37.258s:3 CUDA TabM/3tree/3ridge,804updates,63 cells.
+Exact container absent/lease released observed; no retry. Fixed blend rejected:
+DEV10 growth+1.6144%/U.045771/DD1.7769% <ruleU.058709/treeU.064177.
+Tree diagnostic growth+2.1541%/DD.7344%; not a replacement family winner.
+TabM growth+.5782%. All seen/unequal exposure; no alpha or Paper adoption.
+Independent6 checks/eight mutations6fa18b1d...; Claude3cfa9bd0... received.
+Later Data R2 incomplete154targets/298attempts/295accepted/3rate limits,
+original wall closed; frozen confirmation unrun/input_unavailable.
+Serial70/19.88s/full8 15413pass22skip365.34s/helper0/Ruff/three Compose.
+First full tests passed but temp hardlinks blocked cleanup; not authority.
+
+ONE objective: kis-stock-five-session-tree-later-confirmation-v1.
 Later rule confirmation freezes same policy before numeric later outcomes:
 same512/21 context+50 scores Jul28..Oct6,10 five-day cohorts, cash/momentum10%
 and50%, costs5/10/20. Readiness5b3134b2... is not actual collection. Missing
@@ -27,15 +41,26 @@ selected held mark is input_unavailable, no substitutions or cohort deletion.
 Require>=8 causal cohorts; primary growth/U/drawdown/turnover/cost kill in NEXT.
 Some later128 dates were seen elsewhere: later confirmation, not untouched holdout.
 
-Parallel old-seen dual-expert package at
+Closed old-seen dual-expert package at
 A/research/kis-stock-five-session-dual-expert-development-v1: tree/from-scratch
-TabM/fixed half-rank blend. Official LightGBM MIT/TabM Apache2 source pins
-independently re-retrievedcfd4d75c..., no runtime/model yet. TabM is MLP family,
-not foundation/sequence novelty. Freeze one architecture/hyperparameter/split/
-cost/support/kill/lineage before <=3CUDA +3tree/3ridge fits,1800s family with
-120s reserve inside. CPU synthetic smoke first, one exclusive GPU appointment.
+TabM/fixed half-rank blend, frozen releasec351a379.../proposal81e45d48....
+Actual tree is existing sklearn HistGradientBoostingRegressor, not LightGBM.
+Official TabM0.0.3/RTDL0.0.12 Apache2 source-only mounts: acquisition and CPU
+compatibility complete,17 synthetic source checks. TabM is MLP family,
+not foundation/sequence novelty. Frozen16-member/width128/two-block model,
+6 epochs, fixed tree/ridge parameters, <=3CUDA +3tree/3ridge fits,1800s family
+including publication. Parent launcher9916f46f... passed12 mock R2 checks;
+actual network-none CUDA completed as above. Unknown cleanup must still retain
+exclusive lease; this attempt's lease released after observed exact absence.
 No later-label tuning, learned gate, rescue seeds or standalone-profit gate.
-Parent owns runtime/custody/Git; Execution ports reusable pure core into Git.
+Current Engine prepares a separately frozen one-fit tree later family. Proposal
+68adc8d9... chooses unchanged DEV recipe20..695/scaler/seed/parameters, not
+literal teacher reuse (none retained) or expanded799 fit. Same512/71 later
+grid; rule/cash/momentum10/50 and prior-entry-gross-matched momentum controls.
+600s including60 publication, oneCPU fit, all10 cohorts/all50 marks/8support,
+predeclared utility/drawdown/cost kills. No later-label tuning or blend rescue.
+Own hash-bound export/inference roundtrip stays D: and isolated; no broker import.
+Parent owns runtime/custody/Git; pure core already pushed1523c3d.
 
 Goal77 broad512 OC comparison rejected in Git4999344/exact integration:
 3CUDA/3ridge/9522updates, no epoch/seed/ridge-winner rescue. Numeric512
@@ -63,7 +88,8 @@ OLD734/36307/CURRENT52/3339 unchanged. Separate f78/remainder remain separate.
 Trio2686 dates and M1SPYQQQ25 complete sessions support explicitly seen studies;
 Oct7QQQ389/SPY390 incomplete. Broad2119 metadata is not common-calendar/PIT/
 current proof; actual sparse512 is now numerically materialized, not pending.
-RTX4090/Torch2.7+cu128 works; free after three actual CUDA fits. No GPU approval/
-environment hold. Next useful frozen appointment, not repeating failed families.
+RTX4090/Torch2.7+cu128 works; Goal79 dual-expert appointment released after3fits.
+No GPU approval/environment hold. Read exact actual/finalization receipts before
+claiming fit completion; do not confuse synthetic CPU smoke with market training.
 Fresh42-peer Oct12OPEN->Oct19OPEN owned Data pair remains independent next_due,
 not a foreground wait or research permission gate. Artifacts stay on D:.

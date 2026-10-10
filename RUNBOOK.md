@@ -2,55 +2,57 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-Goal78 five-session risk cohort COMPLETE/non_promoting_followup_only:
-D:/thericher-v2/model-artifacts/research/kis-stock-broad512-five-session-risk-cohort-development-v1/integration-evidence.json
-a5c31f09.... Contractb0b98f60.../precommit2e1ac731.../actual33bb466b.../
-resultb351fbfd.../final3497c94b...,3 CPU ridge/0neural/0GPU,16.5456s<600.
-Actual daily cash/NAV/held marks and fifth-close fees, no endpoint smearing.
-OOF26+26/DEV16 cohorts; DEV10+2.0921%/DD1.6545%/turnover2.68951/
-mean risky exposure6.5304%,20bps+1.9582%. Fixed kills pass. Unequal50% controls,
-small seen sample/raw actions: not alpha, significance or Paper adoption.
-Independent frozen-result6/386870cd..., final-source synthetic local_paper90/
-d1b70e8d..., source24/Data8/parent9; no private price/PIT/OS origin proof.
-Serial164/3.10s/fullclean8 15343pass22skip35warnings/15365collected/356.70s/
-helper0/reaped, JUnit:
-D:/thericher-v2/model-artifacts/verification/full8-20261011-g78/pytest.xmla509b78f....
-Repo Ruff/default/research/accounting sample Compose pass, no doc-only repeat.
-Claude prefitfb1801fe.../post-positive24614463... supported-with-limits;
-preserved first unclassified result is not agreement.
+ONE objective: kis-stock-five-session-tree-later-confirmation-v1.
+Goal79 bounded COMPLETE: fixed blend rejected, later input unavailable;
+D:/thericher-v2/model-artifacts/research/kis-stock-five-session-confirmation-and-expert-development-v1/integration-evidence.json
+e0281290.... Actual dual bc36690c.../resultdd2f684a.../37.258s:3CUDA
+TabM/3tree/3ridge/804updates/63cells; observed exact absence and lease release.
+DEV10 blend+1.6144%/U.045771 versusrule.058709/tree.064177: failed fixed kill.
+Diagnostic tree+2.1541%/DD.7344% is not a replacement winner or Paper input.
+Independent6/eight mutations6fa18b1d...; Claude3cfa9bd0... received.
 
-Current ONE objective kis-stock-five-session-confirmation-and-expert-development-v1:
-Data named collect_kis_broad512_later_daily_v1 source/test then one-client
-market-only refresh. Exact original512/128-first keys,21 context Jun26..Jul27
-plus50 score Jul28..Oct6/10 cohorts, BYMD20261006; Oct7 unused. Fresh cache:
-D:/market_data/us_equities/kis_paper_private/daily-nas-broad512-later/v1/fixed512-20260728-50sessions.
-One durable cursor/cache lock,1024attempts incl failures/2pages per chunk/
-1800whole1680work120publication,15% floor, existing1s market/300s fresh-token
-start guards, one valid in-memory token. No extra target sleep, generic dotenv,
-live/account/order call, old task launch or f78/remainder union. Source readiness
-5b3134b2... is not collection; actual progress remains not_observed.
-Engine freezes unchanged rule versus cash/momentum10%/50%, exact missing/support/
-cost/kill before later outcomes; later confirmation not untouched holdout.
-Parallel old-seen tree/from-scratch TabM/fixed half-rank blend: independently
-re-retrieved official sourcescfd4d75c..., not installed runtime or new model.
-Freeze one finite model/fold/cost/kill/compute contract and CPU smoke before
-<=3CUDA/3tree/3ridge fits under1800s incl120pub and one GPU lease.
-No later-label tuning, epoch/seed rescue or profitable-member requirement.
-Execution ports reusable pure cohort core/tests into Git; model/data stay D:.
-Parent owns runtime/Claude/custody/Git. No GPU permission/environment hold.
+Later R2 original scope closed:154targets/298attempts/295accepted/3rate_limited,
+151usable/358unseen, all owned trees reaped. No final512 view or later outcomes.
+R1 key-shape bug repaired by R2; preserve used bytes/cursor/epoch/debits.
+First-page requested floor147/needed10437; second incremental needed0.
+Opener-entry gapmin.90323s is not wire telemetry/provider threshold.
+R3 source preparation at
+D:/thericher-v2/model-artifacts/data/kis-stock-five-session-later-scope-recovery-v1:
+fresh suffix-r3, same512/71clocks/21context+50score/10cohorts; exact R2 capture
+reuse, rejected/unseen recovery, no old800/remainder/label filtering.
+New900whole/850work/50pub/<=726extra pages under original aggregate1024;
+floor-aware completion retains genuine continuation, one client/token across
+worker-owned cooldowns, bounded dispatch-spacing calibration. Existing1s/300s
+guards retained, D:15%. Selective Paper market-only route, no generic dotenv,
+accounts/orders/live or old task launch. Parent actual owner; tests first.
 
-Prior Goal77 rejected OC3CUDA/3ridge/9522updates and numeric512 recovery remain
-in Git4999344 and exact immutable roots. Original800 May17,2023..Jul27,2026:
-D:/market_data/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-recovery-r2,
-manifestfd559b22.../packed409fd7ad...;391full121sparse, j20 not invented.
-Used failure debits and source bytes remain unchanged.
+Engine source preparation at
+D:/thericher-v2/model-artifacts/research/kis-stock-five-session-tree-later-confirmation-v1:
+one unchanged oldDEV20..695 HGBR recipe/scaler/seed fit,600s incl60pub,
+one pinned CPUd6/4GiB/2threads. Freeze before later outcomes; no retained exact
+teacher, expanded799 refit, tuning or blend rescue. Original rule/cash/momentum
+10/50 and prior-entry-gross-matched momentum controls; all10 cohorts/50marks,
+>=8support, missing selected mark ->input_unavailable. NEXT owns exact kills.
+Own model/scaler export only after isolated hash-bound roundtrip checks on D:.
+Independent frozen-result review, no Paper adoption or broker net-PnL claim.
 
-Goal76 delivered both original b860 Paper Actions with same names/dates/private
-bank/shared10% basis/rank1/.01, retained BUY first and EXIT/recovery bypass.
-Future runtime/submit/fill/fees/settled cash/net PnL unobserved. Released exact
-offline readerd8ea50a8.../113 synthetic tests is not an actual private bank read.
-ab65 Data endpoints and b860 Paper owned opportunities remain independent.
-No manual existing task/provider/broker invocation to inspect these owners.
+Verification: serial70/19.88s; fullclean8 15413pass22skip35warnings/365.34s,
+15435collected/helper0, Ruff and default/research/accounting sample Compose.
+JUnit D:/thericher-v2/model-artifacts/verification/full8-20261011-g79-r2/pytest.xml
+d3e030ec.... First full had matching tests but retained4hardlink temp aliases:
+failed authority. Test teardown now unlinks its aliases; production unchanged.
+Tracked production/test/script/dependency/Compose digest992fefdd... in Goal79
+integration supports exact-byte reattachment only under AGENTS. Changed code/
+tests/shared control/runtime wiring needs new full authority. External studies
+always need fresh focused source/result checks, not unrelated repeated CI.
+Claude next-direction1ebad2fd... supports this limited direction.
+
+Goal78 low-exposure rule followup and Goal77 rejected OC remain in their exact
+roots/Git4cf84f4/4999344, pure core1523c3d/collection3f18291 pushed.
+Original old512 manifestfd559b22.../packed409fd7ad..., raw-action/nonTR/nonPIT/
+availability limits unchanged. Goal76 b860 Paper and ab65 Data definitions,
+dates, private bank/shared10%basis/rank1/.01 and pending/custody unchanged.
+Future submit/fill/fees/settledcash/netPnL unobserved; no manual existing tasks.
 Current projections supersede historical commands and pending status below.
 
 ## Superseded Research Dispatch
@@ -6342,6 +6344,12 @@ goal boundary by itself. Run its focused changed-path tests, relevant Ruff,
 Compose parsing when Compose/runtime wiring changes, and `git diff --check`;
 reserve the full authority command for company-objective integration, a changed
 shared runtime/control root, or an explicit current-goal requirement.
+For a later external-artifact/doc-only objective, reuse only a passing authority
+whose tracked production/tests/scripts/dependency/Compose digest is unchanged,
+with its exact original evidence pointer. Fresh focused external-source tests
+and independent result checks still apply. Any tracked code/test/runtime or
+shared-control change needs a fresh full run; failed/unclean runs never qualify.
+This is verification scope, not a new report, permission gate or live exception.
 
 The focused serial group covers the changed production and contract paths. The
 parallel command is the full-suite authority: it must exit zero, use a fresh

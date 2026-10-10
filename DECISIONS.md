@@ -10075,3 +10075,35 @@ Exact external review:
 `D:\thericher-v2\model-artifacts\research\timesfm-2p5-tiingo-intraday-return-development-v1-review.json`.
 This comparison advances Engine research without changing the unresolved KIS
 successor, its owned schedule, model weights or the execution runtime.
+
+## 2026-10-11 - Scope-aware collection recovery and exact verification reuse
+
+Goal79 fixed tree/TabM blend completed three CUDA, three tree and three ridge
+fits but failed its predeclared utility kill. Diagnostic tree findings support
+only a separately frozen later hypothesis, not replacement of the failed blend.
+Use unchanged DEV20..695 teacher recipe with entry-gross-matched controls;
+do not describe an absent retained teacher as literal artifact reuse.
+
+Later acquisition remained incomplete at the original wall deadline after the
+key-shape repair and three categorical rate limits. Preserve that failed scope,
+cursor and spend. New bounded recovery may reuse exact accepted snapshots and
+retry rejected/unseen names under the original aggregate attempt allowance.
+Measured second-page incremental needed rows0/first-page floor147 and opener
+gapmin.90323s motivate requested-floor stops and true dispatch calibration.
+They do not establish a provider rate threshold or global history exhaustion.
+Keep a valid client/token during worker-owned cooldowns; no orchestrator sleep.
+
+For a later external-artifact/doc-only objective, reuse passing repository
+authority only with identical tracked production/test/script/dependency/Compose
+bytes and its original evidence pointer. Fresh focused checks must exercise
+the actual changed external worker/candidate. Any tracked or shared runtime/
+control change requires new full authority; failed/unclean runs never qualify.
+Weekly serial and material execution/live checks stay intact. This removes
+redundant unrelated CI, not model or execution validation.
+
+Claude's no-tool next-direction review was supported-with-limits:
+D:/thericher-v2/model-artifacts/research/kis-stock-five-session-confirmation-and-expert-development-v1/next-direction/claude-dual-result-outcome.json
+1ebad2fd.... Goal79 exact integratione0281290..., passing clean8 JUnitd3e030ec...
+and source digest992fefdd... are the initial custody references. The earlier
+matching full test run with failed hardlink cleanup is not reusable authority.
+No Paper basis/identity/schedule/model adoption or live authority changed.

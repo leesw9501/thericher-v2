@@ -180,6 +180,17 @@ Codex is the product-development lead and integrator.
   company objective remains active; that commit alone is not a goal boundary.
   Reserve the full authority sequence for company-objective integration, a
   changed shared runtime/control root, or an explicit current-goal requirement.
+  A later objective changing only external generated research/Data artifacts or
+  documentation may reattach the last passing repository authority when its
+  exact tracked production, tests, scripts, dependency and Compose bytes are
+  unchanged. Retain the source-digest and original verification pointer in the
+  existing integration evidence, not a new report or gate. Run fresh focused
+  tests and the required independent checks of the changed external worker,
+  candidate and outputs; a repeated repository suite cannot exercise code that
+  is not in that suite. Any tracked code/test/dependency/runtime wiring change,
+  changed shared control root, material execution recovery or live-route change
+  still requires fresh full authority. Never reuse failed, partial, mismatched,
+  unclean or indeterminate verification. Weekly serial diagnostics remain.
   Synthetic installer tests must disable PowerShell module auto-loading and
   mock every Scheduler entry point; never exercise a partial-mock installer
   against production task names. Auto-loaded module functions can replace mocks.
@@ -864,8 +875,8 @@ goal rather than waiting for routine operator direction.
 
 Use isolated parallel tests only when their fixtures, artifact roots, and
 external workers do not conflict; `pytest -n auto` remains available for
-focused feedback. At a goal boundary, use the clean-root full parallel contract
-and changed-path serial coverage defined above. The weekly/material-routing
+focused feedback. At a goal boundary, use the fresh or exact-source reattached
+repository authority and changed-path coverage defined above. The weekly/material-routing
 serial diagnostic checks compatibility without becoming a foreground hold on
 independent work.
 
