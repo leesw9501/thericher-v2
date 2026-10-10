@@ -5,14 +5,19 @@ goal. A=D:/thericher-v2/model-artifacts; history Git2094757/external custody.
 
 ## Current Resources (2026-10-11 KST)
 
-Goal83 finite delivery completed f157abdc... without training/GPU allocation;
-future Paper opportunities remain owned, not a research permission hold.
-Next source-only proposal4ee381e4... is native PyTorch temporal mixer/fixed
-tree blend on existing seen panels. GPU free; no allocation until exact frozen
-contract and real-Torch synthetic preparation. Proposed family1800s includes
-120 publication,3CUDA+3tree+3ridge/2370updates,8GiB VRAM/4GiB host/threads2.
-No sealed spend, no refit on later50, no failed-fit refund or member/seed rescue.
-Allocate a useful ready frozen study, never dummy utilization or a new human gate.
+Goal84 exclusive appointment COMPLETE/rejected_fixed_blend4bc0340d...:
+A/research/kis-stock-five-session-mixer-expert-development-v1/runtime/
+attempt-a097e80e3dbd4740921caa1cc18fd849. Science3c61eb97.../canonicaltrial1
+31ea6670.../outer786d3244.../actualbd9fdbde.../result352667ab...;
+3CUDA Mixer+3tree+3ridge/804updates,54.048s terminal parent/136.057s original
+family<1800 including preappointment path correction, no clock reset/retry.
+Actual source reports container absent/child reaped/GPU lease released/registry
+finalized; independent e18203d8... checks exact aggregate/control links, not
+independent OS or optimizer observation. GPU now free, no permission/environment
+hold. No weights/sealed access/later refit/member rescue/Paper replacement.
+Next functional runtime parity objective is CPU/zero-fit, not new scientific
+selection or a reason to manufacture GPU usage. Useful future frozen predictive
+campaigns remain eligible under standing authority; no utilization quota/gate.
 
 Goal77 GPU appointment COMPLETE/REJECTED at
 A/research/kis-stock-broad512-oc-ranking-development-v1/recovery-r3.

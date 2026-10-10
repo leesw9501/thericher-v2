@@ -18,8 +18,11 @@ Original install UTC-JSON representation fault failed before task creation;
 fresh recovery-r2 restores UTC string only, job/plan/Actions/clocks unchanged.
 Installed receipt is not submit/fill/current-flat/PnL. Original basis/other
 owners/unknown SPY/exact pending retained; no substitute/request/TTL reset.
-Next Engine mixer study cannot change this delivery. Execution owns synthetic
-cost/inventory/availability attestation only until actual opportunity evidence.
+Goal84 mixer study now closed/rejected4bc0340d..., no delivery change.
+Execution synthetic accounting23/independent implementation24/terminal22 pass;
+exact result352667ab.../independent e18203d8... confirm fixed blend rejection,
+not KIS fills/PnL. Next zero-fit feature-runtime comparison cannot replace
+cohort, thresholds, schedules, original basis or exact pending identity.
 
 Goal79 research closuree0281290... does not change Paper execution: fixed
 blend rejected, later confirmation input_unavailable; no new model or broker

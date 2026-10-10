@@ -5,21 +5,26 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact ro
 
 ## Current Result And Work (2026-10-11 KST)
 
-Goal83 finite delivery COMPLETEf157abdc.../job80012e77.../plan507ffbb6...:
-fixed cohort387ee5f6... has three owned Ready tasks/eight triggers, not future
-fills or model profitability/adoption. No model/numerical loader in broker.
-ONE next objective kis-stock-five-session-mixer-expert-development-v1.
-Source-only proposal4ee381e4... under A/research/same objective reviewed:
-existing native PyTorch TSMixer-inspired20x5/two blocks/2381 expected parameters,
-seed101/six final epochs, fixed half tree/mixer rank blend and same five-close
-inventory/risk policy. Official source/license re-retrieved, not official
-TensorFlow parity, new architecture or pretrained stock model. Two OOF+DEV
-three fits then seen later50 without refit; no fresh holdout or rescue seeds.
-Freeze all pins/splits/costs/kills/custody before numerical work; proposal alone
-is not GPU allocation. <=1800s/three CUDA+three tree+three ridge/2370 updates;
-CPU real-Torch prerequisites first, independent Execution accounting and final
-Validation. Reject blend on missing incremental utility/DEV/later kills; no
-diagnostic-member substitution or Paper replacement. Data current/later exists.
+Goal84 COMPLETE/rejected_fixed_blend4bc0340d... at
+A/research/kis-stock-five-session-mixer-expert-development-v1.
+Native TSMixer-inspired20x5/two blocks/2381params/seed101/six finalepochs;
+not official TensorFlow parity, pretrained model or novelty. Science3c61eb97...,
+outer786d3244.../actualbd9fdbde.../result352667ab.../independente18203d8....
+Actual3CUDA+3tree+3ridge/804updates,54.048s terminal/136.057s original family;
+no refit later50, weights, retry, sealed access or changed Paper. Fixed blend
+rejected: pooledOOF10U-.009514<tree-.001790/matched-.003332; DEV10+.3035%
+vs tree+2.1541%, higher DD; later+.2295% vs tree+.3725%. No member rescue.
+108tables/390marks; native39/CPUd6 image39/independent24/Execution23/runtime41/
+terminal22 pass. CPU image test tools mounted RO after retained missing-pytest
+and py-shim failures. Claude preflight/result-direction support with limits.
+Seen/rawaction/nonTR/nonPIT/currentlisting/revisions/availability limits persist.
+ONE next objective kis-stock-current-feature-runtime-parity-v1: source-owned
+by Chandrasekhar, <=300s zero-fit CPU functional comparison, no model/threshold
+or used-source changes. Source triage finds only unproven NumPy log/log1p
+lowbits or datetime repr; exact source/previous evidence in review/
+native-docker-diagnosis.json. Do not turn bit parity into a Paper gate.
+Goal83 fixed cohort387ee5f6.../job80012e77.../plan507ffbb6... still owns three
+Ready finite tasks/eight triggers, not fills or model profitability/adoption.
 
 Goal81 COMPLETEe8042245... at
 A/research/kis-stock-five-session-tree-inference-local-paper-v1.

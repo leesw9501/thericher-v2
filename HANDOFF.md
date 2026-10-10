@@ -14,6 +14,29 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Research Closure (2026-10-11 KST)
 
+Goal84 COMPLETE/rejected_fixed_blend:
+A/research/kis-stock-five-session-mixer-expert-development-v1/integration-evidence.json
+4bc0340d.... Native PyTorch temporal/feature mixer2381params/sixepochs/seed101,
+unchanged tree/ridge and ONLY half-rank blend; no member rescue. Science3c61eb97...,
+outer786d3244.../actualbd9fdbde.../result352667ab.../independente18203d8....
+One actual a097e80e...:3CUDA+3tree+3ridge/804updates,54.048s persisted terminal
+parent elapsed/136.057s original family<1800. Exact container absent/child reaped/
+GPU lease released/registry finalized reported; no independent OS proof.
+108tables/390scheduled marks retained. PooledOOF10 Ublend-.009514 vs
+tree-.001790/matched-.003332; DEVblend growth+.3035% vs tree+2.1541%,
+DD1.7493% vs .7344%; laterblend+.2295% vs tree+.3725%. Fixed OOF/DEV/later
+incremental kills fail; positive growth does not rescue the rejected blend.
+Native39/pinned CPUimage39/independent implementation24/Execution23/runtime41/
+terminal22 tests pass. Claude preflight/result-direction supported-with-limits.
+No weights, sealed holdout, alpha, future data or Paper replacement. Seen/
+postselected/current-listed/nonPIT/raw-action/nonTR/revision/nominal availability
+limits remain. Prep failures retained: missing pytest/py shim, later view path,
+unused aliases and scratch prefix. Actual original saved family clock unchanged.
+Goal82 1295 runtime source pins/JUnit15556pass22skip rechecked; Ruff/three sample
+Compose pass. ONE next objective: kis-stock-current-feature-runtime-parity-v1,
+<=300s zero-fit CPU diagnosis of existing native/Docker feature discrepancy,
+not another seen-data winner search or a gate on owned Paper opportunities.
+
 Goal83 COMPLETE/finite_delivery_only:
 A/execution/kis-stock-five-session-canonical-paper-delivery-v1/integration-evidence.json
 f157abdc.... Exact job80012e77.../plan507ffbb6.../cohort387ee5f6... delivered

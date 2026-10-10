@@ -2,7 +2,23 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-mixer-expert-development-v1.
+ONE objective: kis-stock-current-feature-runtime-parity-v1.
+Goal84 COMPLETE/rejected_fixed_blend4bc0340d...:
+D:/thericher-v2/model-artifacts/research/kis-stock-five-session-mixer-expert-development-v1/integration-evidence.json.
+Exact runtime/attempt-a097e80e3dbd4740921caa1cc18fd849,
+outer786d3244.../actualbd9fdbde.../result352667ab.../independente18203d8....
+3CUDA+3tree+3ridge/804updates,54.048s persisted terminal/136.057s original
+family1800, no reset/retry.108tables/390marks; fixed blend incremental kills
+fail OOF/DEV/later, no member rescue or Paper replacement. Container absent/
+child reaped/GPU lease released/registry finalized reported, not OS proof.
+Native39/CPUd6 image39/independent24/Execution23/runtime41/terminal22 pass.
+Claude preflight/result-direction supported-with-limits; current repo1295pins/
+JUnit15556pass22skip unchanged, Ruff/three sample Compose pass. Data/research
+artifacts remain on D:. Prep failures retained, used actual sources unchanged.
+Next <=300s zero-fit CPU feature/decision equivalence diagnosis must preserve
+current21 bytes/own teacher/source and fixed Paper exchange. No rounding/threshold
+or cohort/schedule replacement to force parity; no broker, GPU or credentials.
+
 Goal83 COMPLETE/finite_delivery_only f157abdc...:
 D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/integration-evidence.json.
 Frozen job80012e77.../plan507ffbb6.../cohort387ee5f6...; three Ready/enabled
