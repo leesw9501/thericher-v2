@@ -14,20 +14,27 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Closure (2026-10-11 KST)
 
-Goal88 COMPLETE/engineering_preparation_only8077e525...:
-A/execution/kis-stock-five-session-paper-attribution-passive-bridge-v1/integration-evidence.json.
-Reusable external recovery-r2/passive_bridge.py8890ce48.../tests399bf08b...,
-26 synthetic tests/.43s; independent19/.37s/e0a7bcbf.../source unchanged.
-Original2e58a227... review confirmed syntax-only plan reference; original bytes
-retained. R2 hashes/duplicate keys/kind/job/cohort links and before/after bytes
-validated. Caller-pinned consistency is not installed-delivery authentication,
-OS atomicity, writer absence or independent broker/account verification.
-Claude131e4bf5... supports with limits. Exact Goal87 runtime1297pins79ef7f18.../
-JUnit12d316fc.../15593pass22skip reattached; Ruff/three sample Compose pass.
-No actual bank/credentials/client/network/order/lock/schedule/model invocation.
-Missing close captures, marks and fees remain unknown; no historical backcast.
-Next ONE objective: bounded actual passive runtime baseline, not a new service,
-recovery-capable observe() call or permission gate.
+Goal89 COMPLETE/accounting_read_readiness_only8200c6e1...:
+A/execution/kis-stock-five-session-paper-passive-runtime-baseline-v1/integration-evidence.json.
+Fresh R3 callerb80f3ab3.../testsff48bba8.../controlb4991546...;65 tests/.61s,
+independent24 preflight/17 actual checks48777139.../bf796e21.... Original/R2
+category/UTC/container/environment gaps fixed before actual use; bytes retained.
+ONE actual receipt recovery-r3/receipt-81b5ac7ba8a04806a9608d9097f422ee.json
+a43cdb28...:3.876s, network-none/RO,455 source pins unchanged; child reaped/
+exact invocation absent reported. Registry has no exact cohort-owned request:
+no_owned_intent,0 owned intents, fills/accounting/fees/net unknown, NOT flatness.
+Application registry custody and reported transport/cleanup are not independent
+broker/account/OS proof. No observed-state backcast, marks or fee defaults.
+No credential/client/KIS/order/lock/bank-write/task/schedule/model invocation.
+Exact Goal87 runtime1297pins/JUnit15593pass22skip reattached; Ruff/three sample
+Compose pass. Data b4862c7c... maps five exact closes/same-source dailyprice;
+collector start timestamp is not response availability. Preserve actual clocks.
+Engine6d36c8b3... independently re-retrieved official MIT MASTER source;
+original158-factor/63-market inputs absent, no replication/campaign/fit claim.
+StockMixer excluded for unclear license; Discovery ce98917d... consumed/expired.
+Claude6c07a414... supports with limits ONE next objective:
+kis-stock-five-session-paper-close-capture-v1, truthful prospective accounting
+producer plus finite delivery; existing entry/EXIT/recovery owners unchanged.
 
 ## Retained Research And Delivery Evidence
 
@@ -254,16 +261,17 @@ non-PIT/availability limits continue, no broker net-PnL claim.
 
 ## Current Work
 
-ONE objective: kis-stock-five-session-paper-passive-runtime-baseline-v1.
-Execution reuses the released adapter in one actual network-none/RO read of
-canonical registry and separate observed states; no client or recovery worker.
-Registry is application intent custody under assumed-honest host, not broker
-account confirmation. Parent owns exact invocation/clock/cleanup/Git; Engine
-independently reads categorical evidence; Infra maps exact source aliases.
-No owned request before Monday is no-owned-intent, not current flat/fill.
-Daily-close capture needs separate physical/economic clocks; never backdate.
-Source-matched Goal87 authority can be reused for external-only caller changes.
-GPU available/free; no manufactured fit or foreground market wait.
+ONE objective: kis-stock-five-session-paper-close-capture-v1.
+Execution owns truthful prospective accounting capture/pure cutoff projection
+and finite delivery. Data owns exact-date same-source daily marks and actual
+response availability; Engine checks no-backcast/omitted-request/foreign-lot
+and post-cutoff facts. Parent owns source/finite delivery/integration/Git.
+Keep physical capture and economic cutoff separate; current final state cannot
+prove past inventory. Preserve unknown fees/marks and every missing slot.
+Existing entry/EXIT/recovery/basis/owners unchanged. No foreground market wait;
+delivery completion is not actual future captures, fills or net-profit proof.
+Shared source changes require fresh changed-path and full authority; external-
+only unchanged runtime can reattach exact Goal87 source/JUnit. CUDA usable.
 
 ## Owned Opportunities Unchanged
 

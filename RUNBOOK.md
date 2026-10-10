@@ -2,21 +2,29 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-paper-passive-runtime-baseline-v1.
-Goal88 COMPLETE/engineering_preparation_only8077e525...:
-A/execution/kis-stock-five-session-paper-attribution-passive-bridge-v1/integration-evidence.json.
-Reusable external recovery-r2/passive_bridge.py8890ce48.../tests399bf08b...,
-26 synthetic tests/.43s; independent19/.37s/e0a7bcbf.../source unchanged.
-Original2e58a227... review confirmed syntax-only plan reference; original bytes
-retained. R2 hashes/duplicate keys/kind/job/cohort links and before/after bytes
-validated. Caller-pinned consistency is not installed-delivery authentication,
-OS atomicity, writer absence or independent broker/account verification.
-Claude131e4bf5... supports with limits. Exact Goal87 runtime1297pins79ef7f18.../
-JUnit12d316fc.../15593pass22skip reattached; Ruff/three sample Compose pass.
-No actual bank/credentials/client/network/order/lock/schedule/model invocation.
-Missing close captures, marks and fees remain unknown; no historical backcast.
-Next ONE objective: bounded actual passive runtime baseline, not a new service,
-recovery-capable observe() call or permission gate.
+ONE objective: kis-stock-five-session-paper-close-capture-v1.
+Goal89 COMPLETE/accounting_read_readiness_only8200c6e1...:
+A/execution/kis-stock-five-session-paper-passive-runtime-baseline-v1/integration-evidence.json.
+R3 callerb80f3ab3.../testsff48bba8.../controlb4991546... frozen after original/
+R2 category/clock/container/environment repairs; original unused bytes retained.
+65 synthetic/mock tests/.61s, independent24 preflight/17 actual checks pass.
+ONE actual recovery-r3/receipt-81b5ac7ba8a04806a9608d9097f422ee.json a43cdb28...:
+3.876s/parent120/child55, network-none/RO,455 source pins unchanged; reaped/
+exact invocation absent reported. Exact registry-owned request missing:
+no_owned_intent/0 owned intents/fills null/accounting-fees-net unavailable.
+Not current flatness, fill, broker/account attestation or independent OS proof.
+No private raw values retained/printed, credential/client/KIS/order/bank-write/
+lock/task/schedule/model invocation. Do not rerun merely to poll unchanged state.
+Exact1297pins/JUnit15593pass22skip reattached; Ruff/three sample Compose pass.
+Next direction Claude6c07a414... supports with limits. Data b4862c7c... maps
+five official closes Oct12..16 20:00UTC and selected-symbol dailyprice reuse;
+legacy collected_at is request START, not response availability. KIS clos is
+reported daily close, not auction-final/available-at-close proof. Capture actual
+UTC clocks and economic cutoff separately, never backdate late bytes.
+MASTER source6d36c8b3... official MIT verified; original158/63 input mismatch,
+not replication/campaign/fit. StockMixer excluded for unclear license.
+Existing entry/fifthEXIT/recovery/ab65 owners and original aggregate basis stay
+unchanged. Future capture delivery is not actual five-close or net-profit proof.
 
 Goal86 COMPLETE/rejected_fixed_candidate8ecd02b9...:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-catboost-development-v1/integration-evidence.json.

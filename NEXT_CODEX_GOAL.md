@@ -2,70 +2,73 @@
 
 ## Objective
 
-Complete kis-stock-five-session-paper-passive-runtime-baseline-v1: connect
-the released passive adapter to one bounded read of the canonical Paper bank
-through an existing network-disabled, read-only transport. Demonstrate actual
-accounting-read readiness for the owned five-session cohort, not a broker call,
-new report, observer service, execution worker or approval process.
+Complete kis-stock-five-session-paper-close-capture-v1: deliver one truthful
+prospective accounting producer for the already-owned five-session Paper cohort
+and five finite post-close opportunities. Improve owned PnL attribution, not
+another observer service, report family, profitability or permission gate.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal88 closed8077e525... at A/execution/
-kis-stock-five-session-paper-attribution-passive-bridge-v1/integration-evidence.json.
-Adapter recovery-r2/passive_bridge.py8890ce48.../tests399bf08b...;26 synthetic/
-19 independent checks. Claude131e4bf5... supports this bounded next direction.
-No actual private input, fill/current-flat or broker net-profit proof yet.
+Goal89 closed8200c6e1... at A/execution/
+kis-stock-five-session-paper-passive-runtime-baseline-v1/integration-evidence.json.
+Actual a43cdb28... network-none/RO read3.876s: no_owned_intent, NOT flatness;
+accounting/fills/fees/net unknown.65 source/24 preflight/17 actual checks pass.
+Data plan b4862c7c... at this goal's data-preparation/data-mark-plan.json;
+Claude6c07a414... supports with limits this next direction. CUDA available.
 
 ## Role Packages And Bounds
 
-Execution owns ONE read attempt and its finite caller. Reuse released source,
-strict canonical registry/state DTOs and projection. Use the canonical private
-volume read-only and exact source/job/plan/cohort pins; no alternate account.
-Linux/native path aliases must be explicit and byte-attested, not new source
-logic or a runtime replacement. No NativeAdapters, observe(), SDK constructor,
-credential/environment file, network, account/order endpoint, collector or
-strategy worker. No bank mutation, lock acquisition, schedule change or model fit.
+Execution owns minimal pure capture/cutoff semantics and passive private input
+producer. Preserve the existing exact logical-snapshot path. Add explicit
+economic close, actual capture start/end and source observation clocks for the
+prospective path; never rewrite late physical timestamps to close. Keep caller-
+frozen registry/custody/known requests before separate observed state reads.
+Post-cutoff relevant intent/update/submission/fill/cancel/fee facts or omitted
+known pre-cutoff requests make that close slot unavailable. Keep all five slots.
+Capture-time-only accounting may remain useful but is not close-time PnL.
 
-Freeze the canonical registry as application intent-custody authority before
-reading the separate observed-state files. Preserve account/basis/owner/request
-links and the original shared10% basis. This is assumed-honest application
-custody, NOT an independent broker/account attestation; never manufacture such
-a proof from observed state. Missing owned request before entry stays
-no-owned-intent/unavailable, not current flatness or a fill claim.
-Unknown SPY and every other owner's quantity remain unadopted.
+Data owns exact selected-symbol/date KIS dailyprice through the existing named
+Paper market-only client/collector/cache writer, at most two pages per date.
+KIS_PAPER credential use for this path is already authorized; no account/order
+endpoint. Freeze actual request/response/write clocks. Legacy collected_at is
+START, not response availability. Select only a unique exact-session MODP0 clos;
+no latest quote, previous date, interpolation or revised backcast. KIS reported
+daily close is not auction finality or evidence of availability at the close.
+Market bytes stay M, accounting/model artifacts A; no secrets/raw private output.
 
-Keep before/after exact byte checkpoint and actual read timestamps. One finite
-parent/child deadline with cleanup reserve; retain unknown absence if the exact
-container identity is lost. An active exclusive owner is not competed with.
-Missing/changed/locked/invalid input ends that read as scoped unavailable,
-not a retry/sleep/approval gate. Private retained bytes remain under A, never
-Git/stdout/logs/Claude. Publish only categories/counts and external pointers.
+Engine independently tests timing/known-request/foreign same-symbol/cumulative
+fill semantics; no tuning, sealed evaluation or model fit in capture. Verified
+MIT MASTER6d36c8b3... remains a future source-adapted hypothesis, not original
+input replication or an already-ready campaign. StockMixer rights unclear:
+excluded, not introduced. Steward custody/family history unchanged.
 
-Engine independently checks source/identity/categorical result linkage, not raw
-prices, tuning or broker state. Infra reuses exact existing offline transport
-and source-path mapping. Parent owns invocation, cleanup, integration and Git.
-No ready new GPU allocation is implied; CUDA is available.
+Parent owns finite delivery and actual validation. Reuse existing offline caller
+and installer patterns; no new daemon/runtime/framework. Accounting reader stays
+network-none/canonical bank RO with no SDK/NativeAdapters/observe()/lock/write.
+Data's market-only transport is separate. Predeclare physical capture windows
+from the five Oct12..16 20:00UTC closes and already-owned writer windows, not
+outcomes or an invented provider delay. Existing writers remain exclusive;
+scoped unavailable/owned next_due never pauses Paper or another ready lane.
 
 ## Completion And Strongest Kill
 
-Completion: source-linked actual offline outcome with exact read-only/network-
-none scope, source/job/plan/cohort identity, categorical observed-state result,
-actual clock/cleanup facts and independent readback. Missing owned intent is a
-valid readiness finding, not Paper execution closure. A failing transport is
-scoped technical evidence; repair reversibly without substituting an order,
-budget, owner or account. Source preparation alone is not actual completion.
+Completion: tested source-linked producer, independent strongest-kill checks,
+bounded offline capture smoke with truthful clocks, and exact finite delivery
+of five owned accounting opportunities. This is producer delivery, NOT five
+future captures, submissions, fills or net-profit proof. Attach later outcomes
+only from exact owned artifacts; continue ready research without market sleeps.
 
-Strongest kill: foreign same-symbol inventory plus missing cohort intent,
-changed bank bytes or lost exact container identity must not become an owned
-fill, current flatness, net profit, OS transaction proof or clean absence.
-No final-state backcast or default fee/close mark. Daily-close capture is a
-separate producer: preserve physical capture/economic cutoff clocks rather
-than making a late physical observation look contemporaneous.
+Strongest kill: pre-close fill time with post-close state update plus omitted
+known EXIT/foreign same-symbol quantity must NOT reconstruct close inventory.
+Changed bytes, missing exact-date mark/fees, active writer or lost container
+identity stay scoped unknown, never flatness/zero loss/profit/clean absence.
+Fees/settled cash/tax/account net remain unknown unless exact evidence exists.
 
-Keep exact job80012e77.../plan507ffbb6.../cohort387ee5f6..., b860/ab65 and all
-finite Paper opportunities unchanged. No manual Task Scheduler/KIS/order run.
-Never read KIS_LIVE_* or real-money configuration.
+Keep job80012e77.../plan507ffbb6.../cohort387ee5f6..., original shared10%basis,
+other owners/unknown SPY/b860/ab65 and existing Paper opportunities unchanged.
+No manual existing task/order invocation, alternate account/budget/intent,
+new strategy or live behavior. Never read KIS_LIVE_* or real-money configuration.
 
-Focused-verify the caller and independent result; reattach Goal87 exact1297
-runtime pins/JUnit12d316fc... only if unchanged, then Ruff/three sample Compose.
-Refresh current projections, verify/commit/push, replace this file with exactly
-ONE material next objective and continue ready work without market sleeps.
+Focused changed-path serial + full parallel authority if shared runtime/control
+changes; otherwise reattach exact Goal87 source/JUnit only when unchanged.
+Run Ruff/three sample Compose. Refresh current projections, commit/push and
+replace this file with exactly ONE next material objective, then continue.

@@ -5,27 +5,26 @@ NEXT_CODEX_GOAL.md. Closed history in Git9ae7eec/RUNBOOK/immutable artifacts.
 Compaction never adopts, deletes, replaces or retries an intent.
 A=D:/thericher-v2/model-artifacts.
 
-Goal88 COMPLETE/engineering_preparation_only8077e525...:
-A/execution/kis-stock-five-session-paper-attribution-passive-bridge-v1/integration-evidence.json.
-Reusable external recovery-r2/passive_bridge.py8890ce48.../tests399bf08b...,
-26 synthetic tests/.43s; independent19/.37s/e0a7bcbf.../source unchanged.
-Original2e58a227... review confirmed syntax-only plan reference; original bytes
-retained. R2 hashes/duplicate keys/kind/job/cohort links and before/after bytes
-validated. Caller-pinned consistency is not installed-delivery authentication,
-OS atomicity, writer absence or independent broker/account verification.
-Claude131e4bf5... supports with limits. Exact Goal87 runtime1297pins79ef7f18.../
-JUnit12d316fc.../15593pass22skip reattached; Ruff/three sample Compose pass.
-No actual bank/credentials/client/network/order/lock/schedule/model invocation.
-Missing close captures, marks and fees remain unknown; no historical backcast.
-Next ONE objective: bounded actual passive runtime baseline, not a new service,
-recovery-capable observe() call or permission gate.
+Goal89 COMPLETE/accounting_read_readiness_only8200c6e1... at A/execution/
+kis-stock-five-session-paper-passive-runtime-baseline-v1/integration-evidence.json.
+Fresh R3b80f3ab3.../testsff48bba8.../controlb4991546...,65 source tests/.61s;
+independent24 preflight/17 actual checks48777139.../bf796e21... passed.
+Actual recovery-r3/receipt-81b5ac7ba8a04806a9608d9097f422ee.json a43cdb28...:
+3.876s, network-none/RO,455 unchanged source pins; reaped/absent reported.
+No exact cohort-owned registry request:0 owned intents/no_owned_intent,
+fills/accounting/fees/net unknown, NOT current flatness or broker proof.
+Application registry custody/byte checks/cleanup are assumed-honest reports,
+not independent OS/account attestation. Original/R2 preflight gaps/bytes retained.
+No credentials/client/KIS/order/bank-write/lock/task/schedule/model invocation.
+Exact1297pins/JUnit15593pass22skip reattached; Ruff/three sample Compose pass.
 
-Current ONE objective: kis-stock-five-session-paper-passive-runtime-baseline-v1.
-Herschel owns finite offline caller, canonical bank RO/exact sources/network-none.
-Freeze registry intent custody before separate state read; no current broker
-account proof. Parent invokes exact caller; no actual reader run claimed yet.
-Missing owned request before entry is unknown/no-owned-intent, not flatness.
-Existing original basis/owners/unknown SPY/all opportunities remain unchanged.
+ONE next objective kis-stock-five-session-paper-close-capture-v1. Execution
+owns prospective physical capture/cutoff semantics, pure projection and passive
+finite delivery; Data owns actual same-source mark acquisition. No backdating
+late bytes, final-state history, omitted known request, foreign-lot adoption or
+default fee/mark. Five missing slots remain explicit. Claude6c07a414... supports
+with limits. Existing shared10%basis/owners/unknown SPY and all entry/EXIT/
+recovery opportunities unchanged; accounting is not a submission gate.
 
 Retained Goal86 closed8ecd02b9.../independent8187b24d... at
 A/execution/kis-stock-five-session-catboost-replay-parity-v1/actual-review/
