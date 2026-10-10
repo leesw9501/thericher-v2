@@ -2,7 +2,22 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-current-feature-runtime-parity-v1.
+ONE objective: kis-stock-five-session-catboost-development-v1.
+Goal85 COMPLETE/feature_only_categorical_decision_unknown697b7e83...:
+D:/thericher-v2/model-artifacts/research/kis-stock-current-feature-runtime-parity-v1/integration-evidence.json.
+Actual-v1/receipt.json ab8fa30b.../comparison2c1f276b.../review2dafefbe...:
+7.822s<300, zero fits/GPU/broker, input/header/mask/counts identical. Lowbit
+triangle <=6.6731e-15; no measured pairwise-max/exact-real claim. Native SDK
+unsupported/inference0, Linux1: decision parity remains unknown. Synthetic20/
+independent15/Ruff/source-matched authority pass; no used-source rewriting.
+Future caller must clamp remaining deadlines, reserve cleanup/publication,
+retain absence unknown on lost CID, and bind child clocks to comparison plan.
+Exact current known-CID/clock run unaffected. Claude supported-with-limits in
+claude-result-direction/claude-dual-result-outcome.json. Next different
+classicalML candidate uses existing panels/unchanged replay, not mixer rescue;
+independently re-retrieve official source/license and freeze contract first.
+No manual broker/task invocation or wait on Monday's owned opportunities.
+
 Goal84 COMPLETE/rejected_fixed_blend4bc0340d...:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-mixer-expert-development-v1/integration-evidence.json.
 Exact runtime/attempt-a097e80e3dbd4740921caa1cc18fd849,

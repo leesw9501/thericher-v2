@@ -5,6 +5,20 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact ro
 
 ## Current Result And Work (2026-10-11 KST)
 
+Goal85 COMPLETE697b7e83... at A/research/kis-stock-current-feature-runtime-parity-v1.
+Actualab8fa30b.../comparison2c1f276b.../independent2dafefbe...;7.822s<300,
+zero fits/GPU/broker. Identical headers/input/masks/246eligible; lowbit channel
+changes bounded by Decimal80 error triangle6.6731e-15, not pairwise measurement.
+Native SDK unsupported/inference0 versus Linux1; categorical parity unknown.
+20source/15independent checks; future deadline/CID/clock-binding P2s retained,
+not exercised by this exact pair. No Paper gate, model/source/threshold changes.
+ONE current goal kis-stock-five-session-catboost-development-v1. Chandrasekhar
+owns independent official source retrieval, one fixed campaign and compact
+adapter/tests; parent owns runtime/actual dispatch. No data training until the
+contract is frozen. Plain numeric GPU regression, no identifier categoricals,
+blend rescue, parameter sweep or ordered-boosting claim. Seen panels remain
+development only; existing Paper cohort and due opportunities unchanged.
+
 Goal84 COMPLETE/rejected_fixed_blend4bc0340d... at
 A/research/kis-stock-five-session-mixer-expert-development-v1.
 Native TSMixer-inspired20x5/two blocks/2381params/seed101/six finalepochs;

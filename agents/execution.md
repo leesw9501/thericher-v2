@@ -5,6 +5,14 @@ NEXT_CODEX_GOAL.md. Closed history in Git9ae7eec/RUNBOOK/immutable artifacts.
 Compaction never adopts, deletes, replaces or retries an intent.
 A=D:/thericher-v2/model-artifacts.
 
+Goal85 closed697b7e83.../independent2dafefbe...:15 checks, exact child clocks/
+source/result binding; lowbit-only feature limitation, categorical parity
+unknown because native SDK unsupported. Future comparator clock P2 retained;
+this exact pair unaffected. No cohort/order/basis/schedule change. Next
+CatBoost package needs unchanged five-session constant-quantity fee/mark replay
+attestation only; no candidate adoption, broker model loader or Paper hold.
+Existing finite Paper owners below remain exclusive and due.
+
 Goal83 finite delivery COMPLETEf157abdc... at
 A/execution/kis-stock-five-session-canonical-paper-delivery-v1. Frozen
 job80012e77.../plan507ffbb6.../cohort387ee5f6...; same canonical private bank,

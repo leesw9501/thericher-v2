@@ -4,6 +4,13 @@ Current projection 2026-10-11 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
 owns ONE goal. History in Git9ae7eec and immutable receipts, not current jobs.
 M=D:/market_data; A=D:/thericher-v2/model-artifacts.
 
+Goal85 closed697b7e83... reused current21 exact bytes: same input/header/mask/
+10584rows/246eligible in both runtimes, no provider refresh or future outcome.
+Only transform lowbits bounded; no PIT/finality/decision-parity claim. Data
+standby for CatBoost: existing old512 fd559b22.../409fd7ad... and seen later512
+1eaebbc3.../d436ab4e... suffice for scoped development. No new collection or
+quality gate; retain current-listing/nonPIT/raw-action/nonTR/revision limits.
+
 Goal83 delivery COMPLETEf157abdc... preserves Goal82 actual finite exchange,
 old/later/current data and existing ab65 refresh opportunities. No provider,
 account or raw-row read in delivery. Standby for the next mixer study: exact

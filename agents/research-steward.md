@@ -5,6 +5,15 @@ goal. A=D:/thericher-v2/model-artifacts; history Git2094757/external custody.
 
 ## Current Resources (2026-10-11 KST)
 
+Goal85 closed697b7e83... with zero fits/GPU/sealed allocation; no scientific
+trial or performance selection. Actual7.822s/known CID absent/native tree reaped
+reported. GPU remains free, not awaiting permission. ONE next CatBoost campaign
+is source/contract preparation only: no appointment, market fit or selection
+spend yet. Preserve prior G84 rejected spend/lineage. After exact source/runtime/
+dataset/target/split/costs/control/kill/family clock freeze, allocate one bounded
+new family; optional runtime synthetic probe is not a predictive market trial.
+No runtime replacement, forced utilization or Monday Paper dependency.
+
 Goal84 exclusive appointment COMPLETE/rejected_fixed_blend4bc0340d...:
 A/research/kis-stock-five-session-mixer-expert-development-v1/runtime/
 attempt-a097e80e3dbd4740921caa1cc18fd849. Science3c61eb97.../canonicaltrial1

@@ -14,6 +14,28 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Research Closure (2026-10-11 KST)
 
+Goal85 COMPLETE/feature_only_categorical_decision_unknown:
+A/research/kis-stock-current-feature-runtime-parity-v1/integration-evidence.json
+697b7e83... links actualab8fa30b.../comparison2c1f276b.../independent2dafefbe....
+One native/one pinned Linux CPU comparison completed7.822s<300; no fit/GPU/
+broker/data refresh. Same input/header/mask/10584rows/246eligible; original
+native/Linux feature/frame digests reproduced. Changed overnight/intraday/
+log1p_volume digests, Decimal80 reference-error triangle maximum6.6731e-15.
+This bounds lowbits; it is not measured pairwise error or exact-real proof.
+Windows sklearn1.9.0 SDK unsupported/inference0, pinned Linux1.9.1 inference1;
+categorical decision parity stays unknown. No forced rounding/Paper gate.
+Source20/independent15 checks pass; current exact clocks and known CID match.
+Native tree reaped/0active/container absent reported, no independent OS proof.
+Future-path P2s: clamp remaining deadlines/reserve cleanup, lost CID leaves
+absence unknown, bind comparator child clocks to plan. Used evidence unchanged;
+none affects this exact8-second result or the owned Paper opportunities.
+Claude result/direction supported-with-limits at its claude-result-direction/
+claude-dual-result-outcome.json. ONE next objective:
+kis-stock-five-session-catboost-development-v1, a different single classicalML
+candidate, not rejected mixer rescue. Official source proposal alone is still
+source_unverified until Engine independently retrieves it; optional pinned
+addon must preserve the existing runtime. No Monday foreground wait.
+
 Goal84 COMPLETE/rejected_fixed_blend:
 A/research/kis-stock-five-session-mixer-expert-development-v1/integration-evidence.json
 4bc0340d.... Native PyTorch temporal/feature mixer2381params/sixepochs/seed101,
