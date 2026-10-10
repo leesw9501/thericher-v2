@@ -4,14 +4,14 @@ Current projection 2026-10-11 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
 owns ONE goal. History in Git9ae7eec and immutable receipts, not current jobs.
 M=D:/market_data; A=D:/thericher-v2/model-artifacts.
 
-Current Goal87 engineering preparation complete b0800724... at
-A/execution/kis-stock-five-session-paper-attribution-preparation-v1.
-Calendar/mark facts stay caller-attested; exact logical close plus known custody
-required. No new raw data or provider finality. Missing held capture stays
-unknown and cannot be reconstructed from final state.
-ONE next objective: kis-stock-five-session-paper-attribution-passive-bridge-v1.
-Data standby/source-only support; no collector/schedule/private bank invocation.
-Existing ab65 due and current-listing/nonPIT/raw-action/nonTR limits unchanged.
+Current Goal88 source preparation complete8077e525... at A/execution/
+kis-stock-five-session-paper-attribution-passive-bridge-v1. No new data/private
+input/API/schedule;26 synthetic and19 independent checks only.
+ONE next objective kis-stock-five-session-paper-passive-runtime-baseline-v1.
+Data standby; no collector. Existing ab65/current21/old/later bytes unchanged.
+Historical closes require their own source/capture clock, not final-state
+reconstruction. Actual physical capture cannot be silently backdated to close.
+Missing held mark/fees stay unknown, never a Paper hold or provider-finality claim.
 
 Retained Goal86 closed8ecd02b9.../result0583aa2b...: one CatBoost study consumed
 existing old/later exact panels, no provider refresh, future row, key replacement

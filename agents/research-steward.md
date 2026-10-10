@@ -5,12 +5,12 @@ goal. A=D:/thericher-v2/model-artifacts; history Git2094757/external custody.
 
 ## Current Resources (2026-10-11 KST)
 
-Goal87 pure accounting completedb0800724...; no scientific fit, holdout spend
-or GPU appointment. ONE next objective is the external passive canonical-state
-adapter, CPU/source/synthetic only. GPU free and usable; no authority/environment
-hold. Rejected Goal86 does not authorize rescue fits or a utilization campaign.
-Existing frozen useful independent hypotheses may be prepared in parallel,
-but no new queue or sealed/Paper promotion is implied by accounting preparation.
+Goal88 passive source preparation complete8077e525...; no fit, holdout spend
+or GPU appointment. ONE next objective actual passive runtime baseline is
+CPU/accounting-read only. CUDA available/free; no environment/authority hold.
+Rejected Goal86 does not authorize rescue fits or a utilization campaign.
+All existing research-family lineage remains unchanged; future useful frozen
+hypotheses may be prepared, no new queue/promotion/appointment implied here.
 
 ## Retained Appointment Evidence
 
