@@ -42,10 +42,23 @@ joint+.8953%, signed+1.7643%, TCN/prefix+1.3198%; strict utility screen rejected
 Use original roundtrip cost: cell10=cost/20000 each leg=5bps per leg.
 No alpha/Paper replacement; used bytes/debits immutable. 108 serial/full8
 15319pass22skip359.98s/JUnit3aafac79.../repo Ruff/three sample Compose pass.
-Next ONE Goal68 is a synthetic finite-guard runtime benchmark under external
-research/kis-stock-joint-finite-guard-*-v1. No market rows/targets/refit/Paper.
-One180s appointment/six synthetic CUDA fits/exact parity then ABBA timing;
-no weights retention. Source preparation is not an actual GPU result or speedup.
+Goal68 synthetic finite-guard COMPLETE at
+D:/thericher-v2/model-artifacts/research/kis-stock-joint-finite-guard-throughput-v1/integration-evidence.json
+(e9077cbd...). Exact root
+D:/thericher-v2/model-artifacts/gd/a459cf50deb2490390b46eca8e3d0226:
+capture56093beb.../out/benchmark.json46619e8d.../independent eab506ce...;
+twoCPU/sixCUDA/exact pairs/42.759522s<18007:16:40.580127UTC/reaped/absent/
+lease released/source unchanged. AB1.001126/BA1.008748/speed+.4918% single
+sample only; retain original guard default. No market rows/targets/refit/Paper
+or retained weights. Used b848 parent/ef4 native/provisional P2 and532 snapshot
+immutable. 108 serial/full8 15319pass22skip342.82s/JUnit6d6e735d.../Ruff/Compose.
+Next ONE Goal69 exact-book gate uses original OLD/CURRENT seven bindings plus
+retained original TCN427/610 references. Decoder8a3b8dfe.../20 CPU tests and
+reward0fa41bb6.../25 CPU tests are external source preparation, not actual OLD
+scores/native execution. Original APP35 versus host Score735 needs compatibility
+proof, not silent replacement. Reuse tested Goal67 producer/parent protocol;
+two planned610/799 CUDA fits under one600s contract, no CURRENT fitting/holdout/
+Paper replacement. Fresh source challengee6dc130d... auth unavailable, not agreement.
 Wrapper repairs stay focused role packages, not new company/full-test cycles.
 Goal64 COMPLETE/REJECTED30b0b842... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:

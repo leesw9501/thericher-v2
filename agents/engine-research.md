@@ -54,13 +54,26 @@ growth joint+.8953% versus signed+1.7643%, TCN/prefix+1.3198%; DD.5439% passes
 but strict utility fails all non-cash controls. Cost/20000 each leg unchanged.
 No retuning, independent alpha, sealed access or Paper replacement.
 108 serial/full8 15319pass22skip359.98s/JUnit3aafac79.../repo Ruff/three Compose.
-Next ONE Goal68 synthetic finite-guard parity/throughput: original3aec5641...
-versus guard-only derivative0c0aaee9.../42 CPU tests. Six synthetic CUDA fits
-(two exact per-step parity, four ABBA timing), shared180s/work150/cleanup30.
-Actual inclusive fit calls260.416s/612 steps and17136 source-derived scalar
-truth checks are a proposal basis, not measured kernel time or proved speedup.
-No market data/target/weights retention/scientific refit/holdout. Strongest kill
-is any changed failure category or gradient/parameter/prediction/decision bit.
+Goal68 COMPLETEe9077cbd... at
+A/research/kis-stock-joint-finite-guard-throughput-v1/integration-evidence.json:
+two synthetic CPU/six CUDA fits/exact per-step and final pair fingerprints,
+42.759522s<18007:16:40.580127UTC/reaped/absent/released/unchanged. AB1.001126/
+BA1.008748/speed+.4918% single sample, not statistical/market acceleration.
+Keep original guard default; no more guard study prioritized. Independent
+eab506ce... validates445/475 pins/links/timings, not numeric trajectory or clock.
+No market data/scientific fit/weights retention/sealed spend/Paper change.
+108 serial/full8 15319pass22skip342.82s/JUnit6d6e735d.../Ruff/three Compose.
+Next ONE Goal69 exact-book gate: shared60x2/four statics plus one sigmoid head,
+Bernoulli TRAIN accept/cash and exact whole-share carried ledger reward-to-go.
+Original TCN ranking/feasible .01 quantities computed before mask, no resizing/
+redistribution/label double fee. Deterministic>.5 replay remains a proxy gap.
+One seed/four epochs, two prefixes610/799/shared600s with CPU toy/readback/
+30 common cells/cleanup; no outcome rescue, CURRENT training or Paper promotion.
+Reward0fa41bb6.../25 CPU cases/decoder8a3b8dfe.../20 cases source-ready;
+original427/610 custodybbfef1ca... retrievable, actual OLD scores not yet proved.
+Native original APP35 versus host Score735 compatibility needs narrow proof,
+not silent source replacement. Reuse Goal67 protocol and original guard.
+Literature62a8368c... mechanism only; source challengee6dc130d... auth unavailable.
 
 Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
 contract03117125.../result e59d6a92.../closure6e473f61.../integration b2ef8c11... .

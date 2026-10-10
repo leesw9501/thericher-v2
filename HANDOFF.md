@@ -79,13 +79,33 @@ Cost/20000 each leg=5bps each/10roundtrip; no fee change or outcome rescue.
 Seen revised/current-listed/non-PIT development, no alpha/Paper replacement.
 108 serial1.64s/full8 15319pass22skip359.98s/JUnit3aafac79...; repo Ruff and
 three sample Compose pass. External parent-review test E501 remains disclosed.
-Next ONE Goal68 is a synthetic finite-guard CPU/CUDA parity and throughput
-benchmark, not another market refit. Actual inclusive fit calls260.416s and
-source-derived17136 scalar truth checks suggest a candidate, not proved speedup.
-Fresh guard-only source0c0aaee9.../42 CPU tests; original3aec5641... immutable.
-Fixed six synthetic CUDA fits (two parity/four ABBA timing), shared180s/work150/
-cleanup30, no market data/targets/weights retention/scientific fits/holdout.
-Require exact per-step/state/prediction/decision parity before any speed claim.
+Goal68 COMPLETEe9077cbd... at
+A/research/kis-stock-joint-finite-guard-throughput-v1/integration-evidence.json.
+Actuala459cf50.../capture56093beb.../benchmark46619e8d...; two synthetic CPU
+and six CUDA fits, exact same loss/gradient/parameter/optimizer/state/prediction/
+slot pairs.42.759522s<18007:16:40.580127UTC, reaped/absent/lease released/
+sources unchanged; no market fits/data/weights retention/sealed spend/broker.
+AB1.001126/BA1.008748, aggregate speed+.4918% in ONE synthetic sample only.
+Keep original guard default; no meaningful/statistical/market acceleration or
+new benchmark priority. Independent eab506ce... checks445 mounted src/475
+host pins/links/timing arithmetic, not trajectory or clock reexecution.
+Parentb84821f1.../nativeef4ef642.../final review7a5f65fc...; provisional P2
+b5086c5a... and532 source preserved, repaired before actual dispatch.
+108 serial1.73s/full8 15319pass22skip342.82s/JUnit6d6e735d.../Ruff/three Compose.
+Next ONE Goal69 prepares and evaluates an exact-book return-trained fixed-slot
+gate: one60x2/four-static TCN sigmoid head; original ranking and feasible
+quantity-or-zero masking, carried cash/shares, actual delta fees, no fractional
+TRAIN surrogate. Seed101/four chronological sampled paths per fit; two planned
+CUDA prefixes610/799 under ONE600s family. Source reward0fa41bb6.../25 tests
+and decoder8a3b8dfe.../20 tests ready, not native execution or OLD score proof.
+Original427aaf411fe.../61042ce9939... model custodybbfef1ca... is retrievable;
+embedded scalers/causal OLD inference still need actual binding. No final799
+substitution, CURRENT training, source union, holdout or Paper replacement.
+Source-prototype host735 ScoreSeal versus original APP35 needs a narrow native
+compatibility check; do not silently replace original source. Reuse the tested
+Goal67 producer/parent protocol, not a new bespoke wrapper for every model.
+Literature retrieval62a8368c... supports mechanism only. New source challenge
+e6dc130d... auth_unavailable/.938s/reaped, verdictnull/agreementfalse. No hold.
 Data/Paper identities/basis/four finite owners continue independently unchanged.
 
 Goal62 CLOSED/bounded preparation failure bdd26cf0... at

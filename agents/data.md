@@ -63,8 +63,12 @@ Distinct original forecast clocks preserved; parent45.568182s<240/reaped/absent.
 Future Oct12->Oct19 endpoints remain unobserved. No Data qualification or union.
 Goal67 joint GPU COMPLETE/REJECTED7fca2ae9... consumed only those original
 OLD/CURRENT caches/seven bindings;458 sources/inputs unchanged, no provider
-or Data qualification. Next Goal68 synthetic runtime parity uses no market
-rows/targets/cache; owned next_due continues independently. Limits visible.
+or Data qualification. Goal68 COMPLETEe9077cbd... uses no market rows/targets/
+cache; synthetic twoCPU/sixCUDA,42.760s/reaped/absent/released. Goal69 uses
+original seven bindings and causal OLD427/610 score preparation only; no union,
+provider refresh or new data qualification. Custodybbfef1ca... establishes
+retained model bytes/source descriptors, not actual embedded scaler or OLD
+inference parity. Owned next_due continues independently. Limits visible.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

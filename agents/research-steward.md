@@ -61,12 +61,20 @@ three actual CUDA fits/30 cells/500.261009s<600 at06:33:48.164393UTC,
 reaped/absent/released/unchanged, cached0extra fits/inference/sealed0.
 Registry259fc744.../outcome d9a9f525... covers native terminal, not final parent
 publication. Strict utility fails controls; no rescue/refund or Paper promotion.
-Next ONE Goal68 receives one synthetic runtime GPU appointment only: guard-only
-derivative0c0aaee9... versus original3aec5641..., six manufactured CUDA fits
-(two parity/four ABBA timing), shared180s/work150/cleanup30. No scientific
-campaign, market labels/data/model weights retention or sealed spend. Use the
-existing exclusive GPU lock, not a fake predictive family allocation. Require
-frozen source/job/stop rules and exact parity; speedup currently not_observed.
+Goal68 runtime appointment CLOSEDe9077cbd.../actual34fa62e8.../capture56093beb...:
+two synthetic CPU/six CUDA fits,42.759522s<18007:16:40.580127UTC/reaped/absent/
+released/unchanged. Scientificfits0/sealed0/marketdata0/weightsretentionfalse.
+Exact producer CPU/CUDA pair assertions; independent eab506ce... checks custody
+and timing, not trajectories/clock. Single speed+.4918% does not justify a new
+study or default adoption. Preserve used originals/debits, no market refit.
+Next ONE Goal69 new exact-book return gate family: two planned scientific CUDA
+fits610/799/seed101/four epochs, ONE600s including CPU/inputs/fit/inference/
+publication/replay/cache/cleanup30. Freeze exact source/input/cost/split/kill
+contract before allocation; no new allocation for each source or wrapper repair.
+Original427/610 models reused only for causal OLD baseline inference, not fit.
+Reward0fa41bb6... and decoder8a3b8dfe... are source-only; no actual OLD score
+binding/field fitting or native compatibility yet. Missing facts defer that
+campaign only; Data/Paper owners remain independent. No holdout or promotion.
 Claude auth-unavailable
 9a0121d4... is not agreement or a research gate. GPU is available, no
 permission fault; do not invent utilization-only training.
