@@ -20,6 +20,8 @@ market-start/300s fresh-token guard, one client/token per leg. No manual launch.
 Offline preview/read-only used no credentials/provider; no future row or
 finality. Missing/task exit/cache time/latest scan is not collection evidence.
 No account/order/live path; original Paper definitions unchanged.
+Source-safe Scheduler capture2026-10-10T03:56:02.389947UTC: both exact Data
+owners Ready/enabled, nextOct13/20 06:40KST. Not collection/fill evidence.
 312 serial/35 installer/21 independent tests, full8 15274pass22skip345.63s;
 Ruff/three sample Compose pass. Old r1/r2/r3/caller failures stay preserved.
 
@@ -38,9 +40,11 @@ or training speedup claim. Original prepare FAILED.093609s/ee4c4f16... retained.
 Goal60 runtime failed1a02b501.../c49971b1... after52.921544s; sources/input
 unchanged, no provider or completed comparison. Goal61 closes6dd8f524.../
 feadbe34.../54.402s: invalid implied-price forecast input, not a Data rejection.
-Goal62 original OLD734/CURRENT52 cached quantile research retains separate
-calendars/seven bindings/128 identities. Source-inputd4bce897... deadline fault
-56a96476... has a fresh repair assigned; original60x2 sequences need no padding.
+Goal62 preparation failedbdd26cf0.../0.90167s before native/data/model work;
+measured Windows long-path fault is technical, not a dataset rejection.
+Goal63 same OLD734/CURRENT52 quantile recovery retains separate calendars/seven
+bindings/128 identities. Input1a9214d1... verifiedf7f56ebe... propagates expiry;
+original60x2 needs no padding. Raw M direct RO, never staged under A.
 No actual new data/cache/target acquisition, union or qualification. Owned
 next_due continues independently; original limits remain visible.
 

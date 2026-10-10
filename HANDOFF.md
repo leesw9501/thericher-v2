@@ -20,6 +20,24 @@ RUNBOOK historical entries are source-local operations, not ready assignments.
 
 ## Current Objective And Research
 
+Goal62 CLOSED/bounded preparation failure bdd26cf0... at
+A/research/kis-stock-payoff-quantile-development-v1/integration-evidence.json:
+invocation1f0c198a49f9449593b30cd49fd9e97b/capturedaaa229e.../
+contracted065ccd.../actual216afd41... .0.90167s after failure publication at
+2026-10-10T03:56:49.261126UTC; future stdout/later integration excluded.
+Prepare never reached native launch/CPU smoke/GPU lease/registry; no actual
+market fits/inference/cells. Original outer_runtime_unavailable preserved.
+LongPathsEnabled0/manufactured242chars passes290/390 fail/cleaned scratch;
+supports staging-path diagnosis, not the original exception's exact OS code.
+Goal63 repairs short staging under A, SAME quantile contract/model and first
+actual GPU family; no retuning/refund. Final model0d2269aa.../input1a9214d1.../
+worker880c361e.../entryf5aa1c34.../factorycccb2d93... source-ready.
+346 serial20.12s/full8 15274pass22skip35warnings344.98s/JUnit622db5f1...;
+Ruff/three sample Compose passed. Source-only independent driver15/15
+1e8ac968.../caller3 delta9a33ac9e... preserve original falsifiers. No runtime
+equivalence or profitable quantile result. Claude auth-unavailable9a0121d4...
+is not agreement; no blind retry or independent-lane hold.
+
 Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
 contract03117125.../native closure6e473f61.../result e59d6a92.../
 integration b2ef8c11... . CPU smoke, three CUDA fits/36 cells, observed
@@ -97,9 +115,10 @@ is unavailable, not a full strategy comparison or global model/data rejection.
 No clipping/refit/parameter rescue.18/49 supplied;28/57 independentde73e60f...,
 9 outer17713d35.../12 rotation7003bc4b...;346 serial/full8 15274pass22skip/
 35warnings343.65s/JUnite85216df... . All failed sources/debits remain retained.
-Goal62 ACTIVE: original60x2 conditional quantiles, one fixed model/three
-purged-prefix fits/shared600s CPU-smoke-to-CUDA and bounded cost-aware replay.
-No Paper/model replacement, sealed spend, calibration or new broker schedule.
+Goal63 ACTIVE: short-staging recovery for the same original60x2 quantile
+family, before its first actual native smoke/three CUDA fits/30-cell replay.
+Goal62's failed preparation is closed above, not a model result or refund.
+No Paper replacement, sealed spend, calibration or new broker schedule.
 Uncertainty sources16ef6902... independently reread8308a59a...: mechanism only,
 pinball/spread is not calibrated financial risk; no new GPU family dispatched.
 

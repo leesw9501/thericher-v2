@@ -34,15 +34,16 @@ not zero, a model rejection or a refunded attempt. Partial streams retained.
 Goal61 technical CPU appointment CLOSED6dd8f524.../feadbe34.../54.401971s,
 reaped/absent/unchanged/no GPU; exact implied_price_ratio_nonpositive,
 counts/replay unknown. No model/debit refund or rescued price mapping.
-Goal62 prepares one original60x2 quantile family, three prefixes/shared600s,
-CPU smoke before CUDA, sealed spend0. Model0d2269aa.../57 synthetic checks;
-old60x4 f3fd0f7b... preserved, inputd4bce897... deadline repair assigned.
-No actual new GPU allocation until final source/input/stop contract is frozen;
-this is preparation, not an operator hold. Uncertainty16ef6902.../reread8308a59a... is mechanism only,
-not a frozen campaign. Claude9cabf9cd...
-unavailable, not agreement. Parent dispatches the single company objective.
-No ready allocated GPU job yet; Goal62 native/source preparations are active,
-not a permission/environment fault. Do not invent utilization-only training.
+Goal62 CLOSED/preparation failurebdd26cf0.../daaa229e.../0.90167s at
+03:56:49.261126UTC before native smoke/GPU lease/registry/allocation/fits.
+Preserve contracted065ccd.../actual216afd41.../partial copies/debit, no refund.
+Measured Windows path limit supports a fresh short A staging root, not OS or
+model changes. Goal63 is the SAME quantile family and first actual GPU
+allocation, three prefixes/shared600s/CPU smoke first/sealed0. Sources
+model0d2269aa.../input1a9214d1.../worker880c361e.../entryf5aa1c34... ready;
+freeze fresh host/parent pins before actual dispatch. Claude auth-unavailable
+9a0121d4... is not agreement or a research gate. GPU is available, no
+permission fault; do not invent utilization-only training.
 Data endpoint/Paper owners remain unchanged and independent.
 
 Goal55 exact native cached future binary shadow016e67dc.../da6fbbad.../21.880s

@@ -2,9 +2,20 @@
 
 ## Current Owned Opportunities And Research
 
-Goal62 current assignment: fixed original60x2 conditional-quantile research,
-CPU native smoke before three CUDA fits/shared600s and30 analytical cells;
-no calibrated risk or Paper replacement. Goal61 closure6dd8f524... is at
+Goal63 current assignment: short-staging runtime recovery for the SAME fixed
+original60x2 quantile family; native CPU smoke before three CUDA fits/shared600s
+and30 cells. Goal62 bounded prepare failure bdd26cf0... is at
+D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-development-v1/integration-evidence.json,
+capturedaaa229e.../invocation1f0c198a49f9449593b30cd49fd9e97b/0.90167s at
+03:56:49.261126UTC. Native/CPU/GPU/registry not reached; no model result.
+Keep original sources/partial copies/failed debit. LongPathsEnabled0 plus
+manufactured242-pass/290-and390-fail supports a short A staging root, not an
+OS policy change or retrospectively claimed original error code. Final
+worker880c361e.../entryf5aa1c34.../input1a9214d1.../model0d2269aa... ready;
+fresh caller/parent pins must be frozen before the first actual GPU allocation.
+346 serial/full8 15274pass22skip35warnings344.98s/JUnit622db5f1... reaped;
+Ruff/three sample Compose passed. No calibrated risk or Paper replacement.
+Goal61 closure6dd8f524... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-incumbent-payoff-runtime-recovery-v1/integration-evidence.json,
 bound to native/d9b2affcee2742088a7c5b9edbb026eb/actual-invocation-failed.json
 feadbe34.../parent368de9d8.../capture92663ada... .54.401971s after failure

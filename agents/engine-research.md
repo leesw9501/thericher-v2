@@ -58,9 +58,15 @@ only the selected forecast-to-positive-price mapping; counts/replay unknown,
 no clip/refit or full strategy comparison.18/49 supplied;28/57 independent
 de73e60f.../9 outer17713d35.../12 rotation7003bc4b...;346 serial/full8
 15274pass22skip35warnings343.65s/JUnite85216df... . Used attempts unrefunded.
-Goal62 ACTIVE: fixed original60x2 quantile model, three prefixes/shared600s,
-native CPU smoke before CUDA,30 fixed cost/book cells; no Paper replacement,
-sealed spend, calibration or fresh validation. Inputs remain original/separate.
+Goal62 CLOSED/bounded prepare failurebdd26cf0.../capturedaaa229e.../
+invocation1f0c198a49f9449593b30cd49fd9e97b at03:56:49.261126UTC/0.90167s.
+Native smoke/GPU/registry not reached; no model/inference/cell result.
+LongPathsEnabled0/manufactured242pass290/390fail supports short A staging;
+original generic reason/failed copies/debit preserved.346 serial/full8
+15274pass22skip35warnings344.98s/JUnit622db5f1...; no source-repair full repeat.
+Goal63 ACTIVE: SAME fixed original60x2 quantile family, first actual
+three-prefix/shared600s CPU-smoke-to-CUDA/30-cell replay after path recovery.
+No retuning, Paper replacement, sealed spend, calibration or fresh validation.
 
 ## Ready Independent Preparation
 
@@ -86,13 +92,15 @@ Uncertainty discovery16ef6902... independently reread8308a59a... (exact arXiv
 1612.01474v1/2106.00170v1/2011.09588v1) rejects spread/low pinball loss as
 calibrated risk. Mechanism-only reference, no code/weights imported, new
 family/quantile thresholds/GPU allocation or performance transfer selected.
-Goal62 source0d2269aa.../57 synthetic checks corrects producer/consumer to
-exact original60x2, not old60x4 f3fd0f7b.../static padding. Inputd4bce897.../
-51 checks has confirmed callback-deadline P256a96476...; fresh derivative
-assigned. Fixed q(.1,.5,.9)/three prefixes/30 cost cells/shared600s, median>0
-primary, lower>0 diagnostic only. Freeze final source/input/naive-loss control
-before actual allocation. Native input/worker/smoke preparations are disjoint;
-no actual quantile market fit/CUDA yet or calibrated-risk claim.
+Source0d2269aa.../57+22 checks corrects exact original60x2; input1a9214d1.../
+24 independentf7f56ebe... fixes callback expiry without padding. Worker
+880c361e.../29 tests and entryf5aa1c34... preserve original clock/canonical
+date keys; factorycccb2d93.../47+20+5 confirms OPEN111 scope. Hostfdfd2bd3...
+fixes result/terminal outcomes/unknown counts (18 supplied/3 independent).
+Parent216afd41.../15 independent1e8ac968... was source-ready but actual
+staging-path failure prevents a numerical result. Fresh short-path derivative
+only; q(.1,.5,.9)/three prefixes/30 cells/shared600s, median primary/lower
+diagnostic. Freeze final recovery pins before first actual allocation.
 
 Depth: Goal55 binary shadow016e67dc.../native cachedda6fbbad... already frozen
 Oct9 23:03:14.321194UTC:42eligible/seven kept/three cash. Same-native21.880s,
