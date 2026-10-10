@@ -101,9 +101,10 @@ and decoder8a3b8dfe.../20 tests ready, not native execution or OLD score proof.
 Original427aaf411fe.../61042ce9939... model custodybbfef1ca... is retrievable;
 embedded scalers/causal OLD inference still need actual binding. No final799
 substitution, CURRENT training, source union, holdout or Paper replacement.
-Source-prototype host735 ScoreSeal versus original APP35 needs a narrow native
-compatibility check; do not silently replace original source. Reuse the tested
-Goal67 producer/parent protocol, not a new bespoke wrapper for every model.
+Measured correction8dd61b9c...: original R57 APP Score source and precommit
+both pin735f5a6c..., identical to host; the prior APP35 projection was wrong
+for this APP. Canonical imports pass15 host CPU checks, native Torch2.7 still
+needs the smoke. No translation/source replacement. Reuse Goal67 protocol.
 Literature retrieval62a8368c... supports mechanism only. New source challenge
 e6dc130d... auth_unavailable/.938s/reaped, verdictnull/agreementfalse. No hold.
 Data/Paper identities/basis/four finite owners continue independently unchanged.

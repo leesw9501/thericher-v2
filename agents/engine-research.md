@@ -71,8 +71,9 @@ One seed/four epochs, two prefixes610/799/shared600s with CPU toy/readback/
 30 common cells/cleanup; no outcome rescue, CURRENT training or Paper promotion.
 Reward0fa41bb6.../25 CPU cases/decoder8a3b8dfe.../20 cases source-ready;
 original427/610 custodybbfef1ca... retrievable, actual OLD scores not yet proved.
-Native original APP35 versus host Score735 compatibility needs narrow proof,
-not silent source replacement. Reuse Goal67 protocol and original guard.
+Correction8dd61b9c...: original R57 APP/precommit pin Score735, same host file;
+prior APP35 projection was wrong for this APP.15 host canonical checks pass,
+native Torch2.7 smoke remains. Reuse Goal67 protocol/original guard, no swap.
 Literature62a8368c... mechanism only; source challengee6dc130d... auth unavailable.
 
 Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:

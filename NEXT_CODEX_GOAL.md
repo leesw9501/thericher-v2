@@ -24,8 +24,9 @@ custodybbfef1ca... checks byte/source bindings, not actual numeric inference.
 Decoder8a3b8dfe.../20 tests/independent15e3f69c49... source-ready.
 Reward0fa41bb6.../25 tests has one independently reproduced P2abde36eb...:
 partial-mask entry-cost basis audit missing. Preserve original/falsifier,
-repair narrowly. Host Score735 versus original APP Score35 needs explicit
-native compatibility checks, not silent source replacement.
+repair narrowly. Measured correction8dd61b9c...: original R57 APP and its
+precommit both pin Score735, identical to the host file. Prior Score35
+projection was wrong for this APP; no translation or source replacement.
 Literature62a8368c... supports mechanism only; Claudee6dc130d... auth_unavailable/
 reaped/verdictnull is not agreement or a lane-wide hold.
 
@@ -59,7 +60,7 @@ Missing required OPEN/held CLOSE invalidates the full path, not a shortened
 sample. Freeze minimum causal/block count before outcomes; nominal36/74
 reviews are not independent observations multiplied by epochs.
 
-Manufactured CPU smoke and native Score35/decoder/scaler checks first. ONE
+Manufactured CPU smoke and native canonical APP/decoder/scaler checks first. ONE
 600s family/work570/cleanup30 includes import, checked inputs, smoke, two fits,
 inference, numeric NPZ publication/reload, replay/readback and cleanup.
 Parent UTC/monotonic anchor precedes helper import; no stage resets or refunds.

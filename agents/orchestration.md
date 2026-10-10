@@ -16,7 +16,7 @@ Independent finite Data/Paper opportunities remain owned and unchanged.
 | GPU/custody | Parent / free | Goal68 two synthetic CPU/six CUDA fits, exact parity,42.759522s<180; reaped/absent/released. ONE sample+.4918%, no adoption/market acceleration. Goal69 two fits not allocated. |
 | Actor/reward | Copernicus / owned | Exact-book actor and entry-cost basis-audit P2 repair; original reward/falsifier retained. Source/manufactured CPU only. |
 | OLD causal inputs | James / owned | Decoder8a3/independent15e3f69c49... released; original427/610 adapter, no final799 substitution/new baseline fit. |
-| Native runtime | Euclid / owned | Reuse tested Goal67 protocol in a fresh derivative. Original APP Score35 compatibility must be tested, not replaced with host735. |
+| Native runtime | Euclid / owned | Reuse Goal67 protocol. Measured correction8dd61b9c...: original R57 APP/precommit Score735 matches host; no35 translation. Native smoke remains. |
 | Validation | Singer / ready; Lagrange / ready | Decoder15 pass; reward19 pass/one P2abde36eb... basis audit. Reattach only frozen next sources; no tuning. |
 | Data endpoints | Existing finite owners | Jobab65b62b.../42 peers, Oct13/20 06:40..07:40KST; last03:56:02UTC Ready/enabled. Collection not_observed; no manual launch. |
 | Original Paper | Existing finite owners | Job2d616950... entryOct12 22:30/closeOct13 04:50KST; no new fill. Budget/identities/model unchanged. |
@@ -32,7 +32,7 @@ work is exact-book reward alignment, not more guard tuning.
 Reuse tested native/parent custody, lock, clock and publication protocol.
 Focus tests on actor, causal inputs and changed interfaces; full authority only
 at material company integration. No generic platform or wrapper objective.
-Basis-audit/native Score35 failures stay local to preparation; other ready work
+Basis-audit/native compatibility failures stay local; other ready work
 continues. CUDA works; no permission/environment fault. Last C:25.18%/D:40.09%
 free; D:15% floor. GPU use follows useful research, not utilization alone.
 Current-listed/non-PIT/revised/actions/finality/honest-host limits remain.

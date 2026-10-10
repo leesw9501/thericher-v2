@@ -55,8 +55,9 @@ immutable. 108 serial/full8 15319pass22skip342.82s/JUnit6d6e735d.../Ruff/Compose
 Next ONE Goal69 exact-book gate uses original OLD/CURRENT seven bindings plus
 retained original TCN427/610 references. Decoder8a3b8dfe.../20 CPU tests and
 reward0fa41bb6.../25 CPU tests are external source preparation, not actual OLD
-scores/native execution. Original APP35 versus host Score735 needs compatibility
-proof, not silent replacement. Reuse tested Goal67 producer/parent protocol;
+scores/native execution. Correction8dd61b9c...: original R57 APP and precommit
+pin Score735, same host file; prior APP35 projection was wrong for this APP.
+15 canonical host CPU checks pass; native smoke remains. Reuse Goal67 protocol;
 two planned610/799 CUDA fits under one600s contract, no CURRENT fitting/holdout/
 Paper replacement. Fresh source challengee6dc130d... auth unavailable, not agreement.
 Wrapper repairs stay focused role packages, not new company/full-test cycles.
