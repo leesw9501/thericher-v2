@@ -34,11 +34,24 @@ Model/cache lineage, timing and exact quantity accounting remain caller-owned.
 396 focused22.64s/full8 15319pass22skip347.176s/JUnit3be96478... reaped;
 repo Ruff/three sample Compose pass. Used external recovery driver E501 is
 retained unchanged; it is not a repo Ruff failure or a reason to rerun models.
-Next ready preparation: one same-f78 forward conjunction using original binary
-fc77e52a.../signedc007442f... and current-only context. Both42 peers/TCN scores
-match, but distinct original as_of clocks must stay distinct. Zero fit/inference;
-join publication is its own clock, not a simultaneous original forecast.
-Execution prepares a typed original-rank1/.01 mask without deploying it.
+Goal66 COMPLETEec5bfc3e... at A/research/kis-stock-forward-expert-conjunction-v1:
+actualc4a4ffbe.../capture7da0d9ae.../record5f0dcb75...; ONE actual f78 frame,
+128keys/42peers/originalTCNtop10, three analytic slots/seven cash. Distinct
+binary23:03:05.275494UTC Oct9/signed01:20:08.297807UTC Oct10 preserved;
+join06:12:26.777407..879186UTC, parent45.568182s06:12:49.653662UTC<240.
+Zero fit/inference/target/GPU/broker, reaped/absent/472 source hashes unchanged.
+No future outcome/alpha/deployment. Initial07fdea.../3.790s failure persists;
+no inferred category/refund. Prepared source faults repaired inside same goal.
+108 serial/full8 15319pass22skip342.14s/JUnitbc5c9439.../Ruff/three Compose;
+34 reader-native/13 diagnostic/17 outer/20 independent/one handshake pass.
+Next ready ONE joint rank+net-sign shared60x2 TCN plus four statics:
+model3aec5641.../44 tests/13 independent, worker9f7234f0.../43 tests,
+proposal a9da94b5... . CPU toy then three CUDA427/610/799 fits under one600s
+family; fixed new-rank top10 then sign>.5 original .01 slots/cash. Original
+signed/TCN/prefix-mean/cash common30cell OPEN111 controls. Correct fresh cost
+units to original cost/20000 per leg (cell10=5bps each/10roundtrip); preserve
+source configuration's descriptive discrepancy, no numerical fee change.
+Seen revised/current-listed/non-PIT evidence only, no sealed/Paper promotion.
 
 Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
 contract03117125.../result e59d6a92.../closure6e473f61.../integration b2ef8c11... .

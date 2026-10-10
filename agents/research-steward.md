@@ -52,9 +52,16 @@ fitting-inference-GPU-sealed spend. Native outputs734f4866.../5ab1feb7...;
 parent failed outer scopeb01b540a.../94.698478s after caller completion is
 preserved, offline custody recovered without rerunning or refunding. Initial
 canonical failure4ce28ae... and external used E501 remain. Next forward
-same-f78 join needs no GPU or inference; retain distinct original forecast
-clocks. Underrepresented research preparation proceeds independently; allocate
-GPU only after its finite new hypothesis/data/split/cost/kill contract freezes.
+same-f78 join Goal66 COMPLETEec5bfc3e.../capture7da0d9ae.../45.568182s<240,
+zero fit/inference/GPU/sealed spend, reaped/absent/472 source hashes unchanged.
+Distinct original clocks retained; first3.790s07fdea... failure unrefunded.
+Next ONE joint-rank-sign family model3aec5641.../worker9f7234f0.../
+proposal a9da94b5... is source-ready: shared600s includes CPU toy plus three
+CUDA prefixes427/610/799, prediction/NPZ readback,30 cells/cache/cleanup.
+Freeze released native/parent/source contract before dispatch, one lease;
+no per-cell budget/refit/refund/sealed spend. Original cell10 costs5bps each
+leg/10roundtrip; descriptive per-side mismatch corrected in fresh contract,
+not in used source/model configuration or historical metrics.
 Claude auth-unavailable
 9a0121d4... is not agreement or a research gate. GPU is available, no
 permission fault; do not invent utilization-only training.

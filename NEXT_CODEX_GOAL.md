@@ -2,85 +2,87 @@
 
 ## Objective
 
-Complete kis-stock-forward-expert-conjunction-v1: seal ONE prospective fixed
-binary60/signed60 conjunction from the already-retained f78 forecasts before
-2026-10-12 OPEN13:30UTC, and prepare its typed Paper interface without deployment.
-ONE company outcome is a replayable forward decision, not another model sweep.
-No new fitting, inference, thresholds, targets, calendar union or Paper replacement.
+Complete kis-stock-joint-rank-sign-development-v1: evaluate ONE shared-trunk
+rank/sign60 TCN against original signed60, TCN20, prefix-mean and cash controls
+on the existing OLD/CURRENT development inputs. CPU smoke first, then actual
+PyTorch CUDA. One model hypothesis, not a sweep or Paper-model installation.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal65 COMPLETE/REJECTED1c61babf... at
-A/research/kis-stock-binary-signed-conjunction-development-v1/integration-evidence.json.
-Actual native30cells/zero fits-inferences-GPU/unchanged/reaped/absent/cached match.
-Whole10/OPEN111 conjunction+1.1554%, binary+1.1749%, signed+1.7643%, TCN+1.3198%.
-Fixed conjunction utility fails signed/TCN. No outcome-driven rescue.
-Preserve initial4ce28ae... JSON failure and failed outer publicationb01b540a.../
-94.698478s05:16:02.263955UTC. Offline filename-only exact output/source hashes
-recover comparison custody; they do not rewrite its failed clock or attempt.
-396focused/full8 15319pass22skip347.176s/JUnit3be96478.../repo Ruff/three Compose.
+Goal66 COMPLETEec5bfc3e... at
+A/research/kis-stock-forward-expert-conjunction-v1/integration-evidence.json:
+actualc4a4ffbe.../capture7da0d9ae.../record5f0dcb75.../45.568182s<240,
+ONE f78 frame/42peers/three analytic slots/472 source hashes unchanged,
+zero fits/inference/GPU/targets/broker, reaped/absent. Distinct original binary
+and signed clocks preserved. Future Oct12->Oct19 outcome unobserved.
+Typed original-rank1/.01 Paper sourceb5237628.../43 tests/six independent
+remains undeployed. Four finite Data/Paper owners and exact identities unchanged.
+Initial07fdea.../3.790s failure and all used bytes remain immutable/unrefunded.
+108 serial/full8 15319pass22skip342.14s/JUnitbc5c9439.../Ruff/three Compose pass.
 
-Original f78 source contract:
-A/data/kis-current-pooled-equity-refresh-next-session-v1/native-frozen-input/contract.json
-(f78c372f9a2f57a5125a5bc848f5b8d292c5db3b29c6a88a1b9553f0ee75249e).
-Receipt native-outcomes/cfa7a564e2b248eb9fd6bb640daa1c27/receipt.json
-(3dafa26ee8978a1b7cc903f617c8d310dd842e33225dd1d674d9a3a35ed9c027)
-under that same root.128 identities/95 retained manifests/94 full100; no remainder union.
-Required prior61 July16..Oct9; cutoff Oct9 20:00UTC, next OPEN Oct12 13:30UTC.
-
-Binary forecast fc77e52a628c89408a089575cf01986f34f6cf3612bef9e04b8f567af5fce1b2:
-A/research/kis-stock-absolute-gate-prospective-shadow-recovery-v1/native/
-4c433f8a5e8b4536818ebcfee38443c1/unattested-worker.bin;
-exact native readback da6fbbad... and closure016e67dc... bind the misleading filename.
-Signed forecast c007442fa181367582c03e7aecb1c91f30185dad027c377eaf2e9bf31629f688:
-A/research/kis-stock-payoff60-shadow-runtime-recovery-v1/native/
-3349d1be37bf4d0580169bb638a4720c/output/forecast.json;
-integration44236cd7... binds it. Same128/42 eligible/order/TCN scores/ranking/top10.
-Binary as_of Oct9 23:03:05UTC, signed Oct10 01:20:08UTC: preserve both distinct clocks.
-No future endpoint observed. Forecast files lack complete EligibilitySnapshot rows.
+Prepared joint model3aec5641.../44 synthetic/13 independent, worker9f7234f0.../
+43 synthetic, proposal a9da94b5... live under the corresponding external
+kis-stock-joint-rank-sign-*-v1 roots. Source-only preparation is not a GPU run.
+Retain its descriptive cost discrepancy; freeze the corrected actual units
+below before consuming outcomes. No numerical accounting or target change.
 
 ## Bounded Work
 
-Engine/Infra reconstruct ONE current-only f78 snapshot using the frozen reader/
-context ABI; do not rerun inference or fabricate feature rows. Reattest exact
-original forecasts/context/source/model lineage, eligible peers/order, baseline
-scores and originally available bars. Bind scores to this actual joined context
-with both original prediction clocks retained and a new honest join-publication
-clock. No claim of simultaneous predictions or independent profitability.
+Engine freezes released model/worker/native/parent sources and original input
+pins into one actual campaign contract. Reuse the tested native input factory
+cccb2d93..., cache input1a9214d1..., feature cacheb5dd9869.../adapter47c0ee70...,
+original R57 seven inputs/458 source files and exact control df2cc9b8... cache.
+No refresh/calendar/universe union, replacement peers or outcome selection.
+Do not substitute a host runtime for Linux/Python3.12.14/Torch2.7.0+cu128.
 
-Use released pure conjunction b4f1563e...: original TCN top10 -> binary>.5 AND
-signed>0 -> original .01 analytical slot or cash. No redistribution/rerank.
-Retain future Oct12 OPEN->Oct19 OPEN pairing and existing42-peer endpoint owner;
-no target read, new schedule or endpoint collection. Exact serialized readback
-and immutable source/input rehash, zero fits/inferences/GPU, bounded CPU240s.
+Joint model: original60x2 sequence plus four statics, causal width16/kernel3/
+dilations1,2,4,8,16 (receptive63), two heads, equal .5 row-mean soft-rank BCE
+plus .5 net-sign BCE. Exact per-date midrank on raw uncentered five-OPEN returns;
+sign is original nearest-cent net payoff>0. OLD-only equal-date scaler.
+Seed101/four epochs/batch512/Adam.001/clip1/float32/TF32 off/deterministic.
+Three purged prefixes427/610/799, last allowed entries422/605/794;
+minimum120 complete training dates. No CURRENT targets or scaler fitting.
 
-Execution prepares only a typed original-rank1/.01 Paper mask with supplied
-sealed experts. Signed return is not a probability. Preserve current Paper
-basis/identities/recovery owners; no intent submission or model installation.
-Small synthetic tests cover missing/misaligned/nonfinite/stale inputs and strict
-zero/tie behavior. No generic agent platform, report family or new approval gate.
+CPU manufactured toy and safe numeric NPZ reload first, then Steward allocates
+ONE GPU appointment. Shared600s includes source/input preparation, all three
+fits/predictions, immutable publication/readback, common replay/cache and
+cleanup30s; work570s. Anchor before helper import. No budget reset, rescue fit,
+extra seed, architecture/threshold search, per-cell allowance or debit refund.
 
-Engine may prepare ONE underrepresented bounded research hypothesis/contract
-for the next GPU campaign using existing data/framework. Do not dispatch fits
-until its data/split/cost/baseline/kill/source/compute contract is frozen; lack of
-that contract defers only that campaign, not this ready forward join.
+New rank-head top10 -> sign strictly>.5 -> original .01 slot or cash.
+Lexicographic ties, no rerank/backfill/redistribution; deterministic original
+quantity or zero. Never masquerade this new arm as original TCN20 ScoreSeal.
+Replay30 cells: five arms x whole/fractional-reference x cost5/10/20.
+Cost means roundtrip bps: original cost/20000 each leg; cell10=5bps each leg.
+Sign-label rate is also10bps roundtrip; rounding/timing are separate assumptions.
+Original reviews61..106 by5 and common terminal OPEN111. Cached verification
+must reproduce predictions, action/execution streams and economics with zero
+additional fits/inference. Persist model/prediction bytes before their consumers.
 
-Strongest falsifiers: wrong source/peers/scores, missing prior61, unavailable
-feature rows, future values, relabeled prediction clock, join completed after
-OPEN, or repinned changed bytes. Return scoped input_unavailable on those facts;
-no tolerance/padding/intersection/source replacement, no general Paper hold.
+Strongest fixed screen, whole10: positive growth/accepted>0, strict utility
+above signed60/TCN/prefix-mean/cash and DD<=signed60. Failure is a useful rejected
+development result, not threshold rescue or a global Paper hold. CURRENT is
+seen/revised/current-listed/non-PIT, not independent replication/alpha/sealed
+evaluation. No Paper promotion is implied even if this development screen passes.
+
+Temporary Validation independently checks exact frozen outputs and kill,
+without tuning/retraining. Data and Execution retain source-safe input/cost
+facts and existing endpoint/Paper ownership. Independent ready work continues
+during the exclusive GPU worker; no foreground calendar wait.
 
 ## Authority And Completion
 
-No credential/.env/KIS_LIVE_* access, provider/task/broker manual call, scheduler
-change, payment, public exposure or major runtime replacement. CPU research
-Docker is allowed, without broker mounts/network. Four finite Data/Paper owners
-and budget/identity stay unchanged. D:15% floor; A artifacts/M data/C:/trpy tests.
+CPU and GPU research Docker allowed: exact image d6b43213..., network none,
+read-only inputs/root, owned output/lease and bounded cleanup; no broker mounts.
+No credentials/.env/KIS_LIVE_*, manual provider/task/broker call, order or schedule
+change, payment/public exposure/runtime replacement in this objective.
+A artifacts/M data/C:/trpy tests; preserve D:15% floor.
 Claude9a0121d4... unavailable is not agreement; no blind retry or lane hold.
 
-Complete with exact bound prospective seal and zero-inference readback, typed
-Paper source preparation, or narrowly evidenced scoped unavailable after bounded
-recovery. Keep used failures immutable. Focused wrapper repairs stay in this
-objective. Integrate focused serial/clean8 authority/Ruff/three sample-env Compose,
-commit/push, replace this with ONE material next objective and continue ready work.
+Complete with CPU/GPU/replay/readback and independent supported/rejected evidence,
+or a narrowly evidenced bounded runtime/input failure with exact recovery state.
+Keep all used failures/bytes/debits immutable. Wrapper repairs remain focused
+inside this objective. At material integration run changed-path serial plus
+clean8 authority, Ruff/three sample-env Compose; commit/push, refresh current
+stateboards, replace this with ONE material next company objective and continue.

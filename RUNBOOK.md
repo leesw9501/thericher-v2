@@ -15,9 +15,24 @@ immutable. Offline exact source/input/output reattestation recovers native
 comparison, not a successful outer publication clock. Never rerun used drivers.
 396 focused22.64s/full8 15319pass22skip347.176s/JUnit3be96478...; repo Ruff and
 three sample Compose pass. Used external recovery source E501 is preserved.
-Next ready source package is a same-f78 retained forecast join, zero inference,
-with distinct original as_of and actual join publication before Oct12 OPEN.
-Typed Paper preparation is rank1/.01, not the analytical top10 or deployment.
+Goal66 COMPLETE at
+D:/thericher-v2/model-artifacts/research/kis-stock-forward-expert-conjunction-v1/integration-evidence.json
+(ec5bfc3e...). Exact runtime root
+D:/thericher-v2/model-artifacts/bc/c4a4ffbebc504572a24bcf2ba098fd18:
+capture7da0d9ae.../out/join-record.json5f0dcb75.../terminal2a85777c... .
+One current-only f78 frame/original42 peers/top10; three .01 analytic slots,
+seven cash. Distinct original clocks, parent post-capture45.568182s<240 at
+06:12:49.653662UTC Oct10; zero fit/inference/GPU/target/broker, reaped/absent/
+472 source hashes unchanged. No future outcome/alpha/deployment. Preserve
+initial07fdea.../3.790s native_unknown failure and used sources unchanged.
+Fresh b4f51dd3... driver/18d1e861... entry/53dd13d9... protocol correct stdin,
+original APP35f expected pin, outer deadline/final UTC and post-save audit.
+Never rerun used drivers or rewrite their placeholders as self-observation.
+Typed Paper b5237628.../43 tests/six independent is rank1/.01 preparation only.
+108 serial1.63s/full8 15319pass22skip342.14s/JUnitbc5c9439.../Ruff/three Compose.
+Next ONE joint rank/sign60 CUDA campaign source prep is external under
+D:/thericher-v2/model-artifacts/research/kis-stock-joint-rank-sign-*-v1.
+Use original roundtrip cost units: cell10=cost/20000 each leg=5bps per leg.
 Wrapper repairs stay focused role packages, not new company/full-test cycles.
 Goal64 COMPLETE/REJECTED30b0b842... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:

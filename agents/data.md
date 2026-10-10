@@ -56,8 +56,13 @@ cfa7a564e2b248eb9fd6bb640daa1c27/receipt.json3dafa26e... under
 A/data/kis-current-pooled-equity-refresh-next-session-v1.128 identities/95
 manifests/94 full100; original forecast42 peers, no remainder union/new fetch.
 Both retained expert forecasts share peers/scores but have distinct as_of.
-Reconstruct one current-only frame for forward sealing; no fabricated rows.
-Owned next_due continues independently; original limits remain visible.
+Goal66 COMPLETEec5bfc3e.../actualc4a4ffbe.../capture7da0d9ae... reconstructs
+ONE actual f78 frame; exact128/42peers/472 source hashes unchanged, zero
+provider/target calls, three original analytic slots retained/seven cash.
+Distinct original forecast clocks preserved; parent45.568182s<240/reaped/absent.
+Future Oct12->Oct19 endpoints remain unobserved. No Data qualification or union.
+Next joint GPU campaign consumes the same original OLD/CURRENT feature caches
+and seven bindings; owned next_due continues independently. Limits visible.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.
