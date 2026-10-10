@@ -4,6 +4,13 @@ Current projection 2026-10-11 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
 owns ONE goal. History in Git9ae7eec and immutable receipts, not current jobs.
 M=D:/market_data; A=D:/thericher-v2/model-artifacts.
 
+Goal83 delivery COMPLETEf157abdc... preserves Goal82 actual finite exchange,
+old/later/current data and existing ab65 refresh opportunities. No provider,
+account or raw-row read in delivery. Standby for the next mixer study: exact
+old512 fd559b22.../409fd7ad... and seen later5121eaebbc3.../d436ab4e... already
+exist; source/identity/clock binding only, no refresh, substitute or future row.
+Current21 input is inference context, not supervised five-session outcome data.
+
 ## Current Goal82 Input
 
 Parent-owned current512 market-only acquisition completed; source release

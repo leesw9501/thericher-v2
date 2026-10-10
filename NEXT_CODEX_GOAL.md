@@ -2,63 +2,73 @@
 
 ## Objective
 
-Complete kis-stock-five-session-canonical-paper-delivery-v1: connect the exact
-prepared current tree cohort to durable canonical KIS Paper BUY, five-session
-ownership and owned EXIT/recovery, and deliver its finite owned opportunities.
+Complete kis-stock-five-session-mixer-expert-development-v1: run one bounded
+native PyTorch temporal/feature mixer plus unchanged tree and fixed half-rank
+blend, testing incremental five-session carried-inventory value on retained
+old and already-seen later512 panels. Not model deployment or a fresh holdout.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal82 closure A/research/kis-stock-five-session-paper-cohort-preparation-v1/
-integration-evidence.json8cd13af9.... Exact resultdc1b7cad.../cohort387ee5f6...
-bind current512 manifest a0bb1864..., own teacher, first surviving original slot,
-actual inference and official Oct12..16 clocks. One-slot experimental pilot,
-not full-top10 replication, adopted profitability or future fills. Native and
-Docker feature stamps differ on same source/input/eligibility; retain the actual
-Docker exchange, not a host recomputation or a new permission gate.
+Exact source-only proposal A/research/kis-stock-five-session-mixer-expert-development-v1/
+proposal.json4ee381e4... names thirteen source pins, architecture, splits,
+data bytes, accounting, controls and fixed kills. Independently freeze the
+campaign contract and custody before numerical work; the proposal is not an
+allocation. Official Apache2 TSMixer source was re-retrieved; use the existing
+PyTorch runtime for an explicitly inspired local adaptation, not TensorFlow,
+official numerical parity or a pretrained/novelty claim.
 
 ## Parallel Packages
 
-Execution owns the smallest canonical worker and durable cohort custody.
-Consume byte-pinned finite DTO only; no pickle/numerical/model code in broker.
-Reuse existing stock BUY/EXIT/reserve/execute/cancel/reconcile and private bank
-locking, original shared10% basis and other-owner reservations. No new broker
-platform, substitute slot, duplicate reservation, budget/TTL/identity reset,
-foreign holding adoption or mixed-lot ledger. Persist cohort/state references
-before side effects. Reattach exact entry/exit before new work on every restart.
-Days1-4 hold; fifth official close-10m owns EXIT. Stale/no-intent research input
-cannot erase owned recovery. Unknown outcomes reconcile, never resubmit blindly.
+Engine owns one fixed20x5 two-block residual temporal/feature mixer/scalar
+five-session payoff head, seed101/six final-only epochs, unchanged HGBR/ridge
+recipes and .5 tree/.5 mixer tied-rank blend. Reuse canonical causal features,
+train-only scaler, date weights and typed constant-inventory ledger. No
+architecture/window/seed rescue, member substitution, refit on later labels,
+early stopping, full-score-matrix allocation or broker-side model code.
+Two OOF blocks plus DEV use three chronological fits, not three fresh OOF
+samples. Final experts/scaler replay the seen later50 without extra fitting.
+Every scheduled daily mark and selected missing payoff remains visible.
 
-Engine owns strict finite exchange/serializer/import-isolation and source links,
-not a refit or broker sizing change. Preserve frozen .10*w/(1+.0005*sum(weights))
-target; canonical whole-share flooring/current funds may yield scoped no-intent.
-Do not multiply10% again or rerank after a capacity/conflict failure.
-
-Parent owns coherent runtime/source delivery and finite goal-owned opportunities.
-Preserve existing b860 day-flat cohort and ab65 Data jobs. New five-session job
-must use the same canonical private bank/account route and concurrency owner,
-not reuse b860's day-one exit or mutate used historical source. Use fresh source
-for changed paths, exact CID cleanup/observed absence, bounded failure publication.
-Review every canonical consumer before a shared-root schema change; avoid one.
-Installed clocks/Actions are delivery evidence, not submission/fill/owned-flat.
-Temporary Validation independently tests fixed DTO/partial/unknown/restart/
-same-instrument conflict/fifth-session EXIT and reviews frozen delivery.
-Data is standby: current input complete, no redundant fetch or future row.
-Claude concise falsification-first challenge before material recovery/delivery.
+Execution independently attests synthetic five-close inventory/fee/cash/
+missing behavior and stated availability/latency assumptions. Fractional
+research and single-slot integer Paper differ; no actual broker parity claim.
+Temporary Validation receives frozen results only and checks exact source,
+attempted/completed fit counts, resource spend, controls and fixed kills; it
+does not retune the candidate. Data is standby: exact old/later manifests and
+fixed512 identity already exist; no refresh or future data is needed.
+Parent owns source/runtime delivery, one exclusive GPU appointment, exact-CID
+cleanup, failure/spend publication, Claude challenge and Git integration.
 
 ## Authority, Completion And Kill Test
 
-KIS_PAPER_* selective credential use, account/market reads, virtual orders and
-finite goal-owned scheduling are standing-approved. Use only named owned paths;
-never generic dotenv/KIS_LIVE_* or output private state, prices, amounts, account/
-order identifiers, raw broker bodies or secrets. Live/paid/unclear rights/public
-exposure/major runtime replacement remain reserved. D:15% floor; no GPU filler.
+Standing private/no-cost GPU and KIS Paper authority remain in AGENTS.md.
+Goal83 finite delivery f157abdc... owns three five-session Paper tasks/eight
+triggers: Oct12 22:30KST entry, Oct17 04:50KST fifth EXIT and bounded recovery.
+Preserve exact job80012e77..., plan507ffbb6..., cohort387ee5f6..., original
+shared basis/other owners/unknown SPY/exact pending and b860/ab65 schedules.
+Never manually invoke these future opportunities to manufacture runtime proof,
+substitute an intent, adopt foreign inventory or reset budget/identity/TTL.
+Their runtime submit/fill/owned-flat/fees/settled cash/net-PnL stay unobserved
+until exact evidence exists; a scheduler-owned wait does not block this study.
 
-Complete fixed worker, exact durable identity/quantity custody, synthetic canonical
-recovery tests, coherent pinned runtime and finite opportunity delivery/readback
-or concrete scoped technical unavailable result. Do not call a future runtime
-fill/closure complete merely because delivery succeeds. Strongest kill: partial
-or unknown entry plus another owner must never duplicate BUY, sell foreign qty,
-exit days1-4 or lose the owned fifth-session recovery after missing model input.
-Run changed-path/company verification when required; reuse exact passing Goal82
-source authority only if tracked runtime/control roots are unchanged. Verify,
-commit/push, refresh stateboards and exactly one material next objective; continue
-ready independent work rather than foreground-waiting for the market.
+Frozen family <=1800s including120s publication, at most3 CUDA mixer+3 tree+
+3 ridge fits,2370 optimizer updates,8GiB VRAM/4GiB host/two CPU threads.
+One appointment/debit ledger; failed or unknown fits are not refunded or
+relabelled zero. Network-none research, narrow RO inputs, output on D:,15%floor.
+CPU real-Torch synthetic prerequisites precede the GPU campaign. Do not
+train filler or require a new utilization/profitability approval.
+
+Strongest kill: reject the fixed blend unless incremental pooled-OOF10 utility
+exceeds tree and gross-matched momentum, and separate DEV/later fixed kills
+pass (tree/rule/cash/ridge/matched utility, positive20bps growth, drawdown and
+turnover limits). Diagnostic members cannot replace it. Source/target/time/
+finite-gradient/selected-payoff/resource failures yield a scoped unavailable
+result with attempted spend preserved. Seen data/raw actions/nonTR/nonPIT/
+current listing/revisions/assumed availability constrain all claims.
+
+Complete source/contract/custody, real-Torch synthetic checks, one bounded
+actual campaign or concrete technical unavailable result, independent evidence
+and fixed accepted/rejected classification. No alpha, Paper replacement or
+independent-holdout claim. Verify changed paths as required; exact Goal82
+source authority may be reused only while tracked runtime/control roots match.
+Commit/push, refresh stateboards and exactly one material next objective;
+continue independent ready work, never foreground-wait on the market.

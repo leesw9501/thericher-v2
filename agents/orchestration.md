@@ -1,41 +1,37 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current projection only; NEXT_CODEX_GOAL.md owns ONE company objective.
+Current cross-lane projection; NEXT_CODEX_GOAL.md owns ONE objective.
 History in Git/exact immutable evidence, not a second backlog.
 A=D:/thericher-v2/model-artifacts.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-No company block or foreground sleep. Goal82 preparation COMPLETE8cd13af9...:
-current512/10584rows/246eligible, finite CPU inference/typed cohort and repaired
-exclusive lifecycle/Decimal arithmetic. Not broker fills or profitability proof.
-ONE objective: kis-stock-five-session-canonical-paper-delivery-v1.
+Goal83 finite delivery COMPLETEf157abdc..., not runtime fills. No company
+block, foreground market wait or approval hold. ONE next objective:
+kis-stock-five-session-mixer-expert-development-v1.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Goal82 closure/sole Git owner; next canonical worker and finite delivery, no policy approval hold. |
-| Verification | Parent / reaped | Changed148 PASS;1295pins9008bd10... unchanged, full8 15556pass22skip368.13s/helper0/tempclean; JUnit1cc8d2a9.../Ruff/three sample Compose. |
-| Data | Complete / standby | Exact current512 scope closed512attempts/511accepted/one rate_limited;504full21/8empty/10584rows; manifest a0bb1864.../packed921380f5...; no remaining pages or next_due. |
-| Engine | Released / ready metadata handoff | CPUactuala945f504.../resultdc1b7cad.../4.200s/fit0/broker0, container absent; DTO44925ed2... and cohort387ee5f6... exact actual clocks. |
-| Execution | Ready canonical integration | Pure lifecycleb22da30f.../47tests and Decimald4f30a04.../24newtests; exact pending/other owners preserved, fifth-session EXIT not day-flat. |
-| Validation | Released | Lifecycle r3/112focused plus actual195c3166... source/clock/DTO links pass; no actual private-bank/OS/broker proof. |
-| Direction | Claude / received | Current Goal82 integration supported-with-limits; next recovery/delivery challenge before reliance. No authority/profit grant. |
-| GPU | Steward / free | Three TabM fits/804updates completed37.258s earlier; lease released. Delivery is CPU/metadata work, no utilization filler or GPU authority hold. |
+| Git/integration | Parent | Sole Git owner; closing Goal83 finite delivery/job80012e77.../plan507ffbb6... and dispatching bounded mixer research. |
+| Verification | Parent / reaped | Focused192 PASS; independent9+19+8+36; network-none metadata smoke/454app/exact container absent. Goal82 1295pins/JUnit/full15556pass22skip match; Ruff/three sample Compose. |
+| Data | Standby / complete inputs | Old512 and seen later512 exact source/identity bindings exist. No refetch/current21 outcome substitution. ab65 unchanged. |
+| Engine | Ready / Chandrasekhar | Proposal4ee381e4... native Torch temporal mixer+fixed tree-half blend; source preparation/CPU synthetic first, no fit or new winner yet. |
+| Execution | Ready / Herschel | Independent synthetic five-close inventory/fee/availability attestation; exact Paper ownership remains unchanged. |
+| Infra | Temporary / Plato | Goal83 UTC JSON codec recovery source-only checks; original failure preserved, R2 actual three tasks installed. No shared schema/runtime replacement. |
+| Validation | Released | Frozen lifecycle9/visit19/native8 checks complete; independent result evaluation only after the next frozen campaign. |
+| GPU | Steward / free | No GPU delivery job. Next useful frozen campaign proposed <=1800s/three CUDA fits, not allocated or artificial utilization work. |
+| Paper due | Existing + new finite owners | b860 Oct12 22:30/Oct13 04:50KST unchanged. New387ee5f6... entryOct12 22:30/recover22:40/fifthEXITOct17 04:50KST; Ready/enabled, no submit/fill inferred. |
 | Data due | Existing finite owners | ab65 Oct13/20 endpoints, next_due Oct12/19 21:40UTC unchanged. |
-| Paper due | Existing finite owners | b860 original day-flat Oct12 22:30/Oct13 04:50KST, original rank1/basis/pending unchanged; not future submit/fill. |
 
 ## Bottleneck And Reversible Improvement
 
-Current bottleneck is durable five-session Paper custody/delivery, not input,
-policy, market time or GPU authority. Reuse the validated finite actual exchange
-and canonical BUY/EXIT paths instead of model code in broker or a mixed-lot
-platform. Parent source delivery and disjoint Engine metadata/Execution worker
-packages can proceed now; independent review consumes frozen output only.
-Data/CPU/full authority are complete and reaped; no ready work waits on a timer.
-Native vs Docker feature hashes differ with identical bytes/eligibility;
-31edbe57... diagnosis localizes feature-stamp mismatch, not exact operation.
-Retain actual Docker exchange/limits, no bit-parity claim or new Paper gate.
-Fresh launchers catch durable failure publication and recheck exact CID absence;
-5 native-parent/6 CPU-owner mocks pass. Used prior sources stay immutable.
-Reuse passing authority only on identical source; a new shared runtime/control
-root receives fresh company verification. No per-handoff full-suite repetition.
+Delivery no longer blocks the five-session experiment; future runtime is
+scheduler-owned. Move foreground to the ready sequence/tree complementarity
+study on already retained data, while Execution keeps exact recovery ownership.
+No refetch, full-suite repetition on identical repo source or GPU approval wait.
+Actual installation exposed PowerShell JSON auto-datetime conversion, not a
+provider/authority problem. Fresh wrapper normalizes UTC representation only,
+preserving job/plan/Action/clock identities and original failed receipt. The
+three installed tasks are delivery, not fills/flat/PnL. Review scopes stay
+bounded; source/interface/codec evidence must not become a second goal or
+holding gate. No ready independent package waits for Monday's market.

@@ -2,7 +2,30 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-canonical-paper-delivery-v1.
+ONE objective: kis-stock-five-session-mixer-expert-development-v1.
+Goal83 COMPLETE/finite_delivery_only f157abdc...:
+D:/thericher-v2/model-artifacts/execution/kis-stock-five-session-canonical-paper-delivery-v1/integration-evidence.json.
+Frozen job80012e77.../plan507ffbb6.../cohort387ee5f6...; three Ready/enabled
+tasks thericher-kis-paper-five-387ee5f6c7c6-enter/-close/-recover, eight finite
+triggers. First Oct12 22:30KST, recovery22:40; fifth EXIT Oct17 04:50KST,
+terminal recovery05:00. One-minute repetition/IgnoreNew/PT5M; no manual task run.
+Install failure before creation preserved in installed-opportunities.json;
+PowerShell JSON timezone normalization fixed only in recovery-r2/
+install_timezone_recovery.ps1, successful recovery-r2/installed-opportunities.json.
+Exact job/plan/Actions/five clocks unchanged. Do not rerun installer over
+existing tasks or infer fills from presence/exit codes. Existing b860/ab65
+due/Actions unchanged; shared private bank/original basis/other owners retained.
+Focused192/independent9+19+8+36; actual network-none metadata smoke in image
+113f9644.../454 app files, strict actual finite exchange restored/no native
+constructor/private mount/credentials/broker. Exact container absent. Full
+15556pass22skip authority reused after1295pins/JUnit recheck; Ruff/three Compose.
+Future submit/fill/current-owned-flat/accounting remains unobserved. Honest-host
+time markers are not cryptographic Scheduler origin; Operational log disabled.
+Next bounded Engine proposal4ee381e4... at D:/thericher-v2/model-artifacts/
+research/kis-stock-five-session-mixer-expert-development-v1/proposal.json.
+Freeze contract before numerical work; three CUDA fits/fixed tree-half blend,
+20x5 causal context/five-close ledger, seen data only, no Paper replacement.
+
 Goal82 COMPLETE8cd13af9...:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-paper-cohort-preparation-v1/integration-evidence.json.
 Current512 market-only scope closed512attempts/511accepted/one rate_limited,
@@ -22,7 +45,7 @@ Changed serial148/2.42s/fullclean8 15556pass22skip35warnings368.13s/helper0/
 currenttempclean;1295 sourcepins9008bd10... match, JUnit D:/thericher-v2/
 model-artifacts/verification/full8-20261011-g82/pytest.xml1cc8d2a9....
 Ruff/three sample Compose pass; docs/external-only changes reuse exact authority.
-Next: durable canonical worker and finite Paper delivery, not a model refit.
+Goal83 above now closes durable canonical worker and finite Paper delivery.
 Original shared basis/other owners/unknown SPY/exact pending/b860/ab65 unchanged.
 
 Goal81 COMPLETEe8042245...:
