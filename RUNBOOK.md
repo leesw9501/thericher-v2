@@ -15,15 +15,23 @@ a901984d...; Ruff/three sample Compose pass. Reuse for documentation closure.
 Whole10 growth1.5549% vs retained4 2.1789%, lower utility/higher DD: rejected.
 No rescue checkpoint/seed or Paper adoption; used bytes/debits immutable.
 
-NEXT_CODEX_GOAL.md owns ONE source-only retained4 Paper-entry preparation at
+Goal75 source preparation COMPLETE1e7083c7... at
 D:/thericher-v2/model-artifacts/execution/kis-stock-feature-gate-paper-entry-preparation-v1.
-Slot62519dd7.../13 and worker090878a7.../21 tests released; parent integrates
-caller/job/actual metadata. Recovery-before-gate/EXIT bypass, exact original
-rank1/.01/shared10% input/clock/identity preserved. Five-session model/day-Paper
-horizon mismatch explicit; no deployment/fill/alpha. Existing owner tasks not
-manually invoked or modified. Claude after operator login supported-with-limits
-in claude-challenge-after-login.json; prior auth failure unchanged.
-Parallel sparse-preserving512 source0bbd40bd.../14 tests is not actual512 view.
+Exact r2/job b860f41a.../recordc476bf1a..., slot62519dd7.../13, worker090878a7.../21,
+independent worker8/caller12/core42 pass. R2 corrects formation chronology only;
+no frozen-record backdating. Native canonical735/R57 framebe351c18... exact
+network-none37.874962s/0fit0inference0broker. Separate as-of bindings preserved.
+Fullclean8 15343pass22skip/15365collected/360.650s XML/helper0/reaped;
+JUnit D:/thericher-v2/model-artifacts/verification/full8-20261010-g75/pytest.xml
+1ce7d136...; Ruff/three sample Compose pass. No doc-only repeat.
+Current ONE objective is kis-stock-retained-gate-paper-delivery-v1:
+Action-only switch of existing enter/close; no second writer, lifecycle/basis/
+clock/identity/settings/triggers/principal unchanged. Preparation is not deployed
+fill/alpha; five-session/day-Paper mismatch stays explicit. Claude after login
+supported-with-limits bb88057f..., original failure preserved.
+Data fresh82bd0d08.../8 tests fixes manifest publication order. Actual438MB index
+versus32MiB loader cap requires bounded streaming metadata repair, no numeric512
+view or dataset rejection; independent Paper work continues.
 Chronos41cd63c0... same-CURRENT ranking already answered/rejected; no duplicate
 training for utilization. Current projections supersede commands below.
 

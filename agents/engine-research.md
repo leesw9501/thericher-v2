@@ -31,7 +31,12 @@ Never rerank/resize/redistribute/renew model clocks. Caller integrates pre-open
 decision facts separately from actual execution time; no fake timestamp.
 Five-session research target versus day-Paper exit is provisional mismatch,
 not alpha qualification. Recovery/EXIT never depend on this gate.
-Independent source review and parent metadata integration underway; no deployment.
+Goal75 source preparation COMPLETE1e7083c7...; r2/job b860f41a.../recordc476bf1a...,
+canonical735/R57 framebe351c18... reconstructed network-none/37.874962s,
+0fit0inference0broker. Independent caller12/worker8 and core42 pass; chronology
+fixed in fresh R2, original record not backdated. No deployment/performance claim.
+Current company objective delivers this prepared adapter by existing-owner
+Action-only cutover; no new model training or change to original Paper sizing.
 
 ## Breadth / Depth / Replication
 
@@ -45,8 +50,10 @@ same-CURRENT ranking36cells/104CUDA calls/0fits/rejected, not an unrun family.
 LSTM/GRU/attention/Patch/Mixer/ML/rule/public-model closed history stays exact.
 Do not train simply to occupy GPU or relabel seen data as replication.
 
-Ready Data source expansion0bbd40bd... preserves original128 plus384 additional
-identities before numeric filtering; source/synthetic only, not512 loaded rows.
+Data source expansion fresh82bd0d08.../8 tests repairs exclusive publication;
+original128 plus384 identities still frozen before numeric filtering. Actual
+index438MB exceeds old32MiB cap: fresh streaming metadata repair is dispatched,
+not a model/rights hold or actual512 numeric view.
 Fresh replication remains owned Oct12OPEN->Oct19OPEN42-peer data, not foreground
 wait. Aligned OOF/cost/availability required for comparative ensemble claims,
 not for separately authorized provisional Paper execution.

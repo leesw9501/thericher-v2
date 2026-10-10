@@ -75,7 +75,13 @@ Goal74 fixed-depth32 COMPLETE/REJECTED20f76713... uses the same seven bindings,
 factory17a081f1.../causal427610 caches and OLD scaler; oneCUDAfit/36cells,
 no acquisition/source union or new temporal qualification. Sources unchanged.
 Current parallel Data package at A/data/kis-stock-broad512-preparation-v1:
-source0bbd40bd.../14 synthetic tests, independent review underway. Original128
+Original source0bbd40bd.../14 tests preserved; fresh source82bd0d08.../8 tests
+fixes independently reproduced final-reattest-after-publication defect.
+Actual metadata preparation encountered measured437,965,045-byte index versus
+old32MiB metadata cap, before selection/binding. No raw rows, numeric output,
+provider call or dataset rejection. Fresh bounded streaming-metadata repair at
+A/data/kis-stock-broad512-metadata-streaming-v1 is Data-owned; Paper continues.
+Original128
 plus first384 sorted additional keys from pinned2119 index BEFORE numeric or
 coverage filtering; sparse/empty retained, four unchanged128 metadata binds.
 Readiness6c8b48f9... records26368 chunks/4,861,551 declared bars,

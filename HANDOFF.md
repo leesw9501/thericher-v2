@@ -49,14 +49,21 @@ answered/rejected; not an unrun family to fill GPU. RTX4090/CUDA works.
 
 ## Current Work
 
-ONE objective: kis-stock-feature-gate-paper-entry-preparation-v1 at
+Goal75 source preparation COMPLETE1e7083c7... at
 A/execution/kis-stock-feature-gate-paper-entry-preparation-v1.
-Readiness54c00f48... proposes retained4 gate799/Goal72 forecast, keep/veto ONLY
-original unstarted rank1/.01 entry. No sizing/rerank/budget/clock/request change.
-Resolve retained/unknown BUY first; EXIT/recover_buy/recover_sell bypass gate.
-Source releases: slot62519dd7.../13 tests, worker090878a7.../21 tests.
-Parent owns caller/metadata integration; independent review checks exact
-bindings and recovery. Source preparation is not installed execution.
+Exact r2/job b860f41a.../frozen recordc476bf1a...; retained4 gate799/Goal72
+forecast keeps ONLY the original unstarted rank1/.01 proposal. No sizing,
+rerank/budget/clock/request change. Resolve retained BUY first; EXIT/recovery
+bypass. Slot62519dd7.../13, worker090878a7.../21, independent worker8/caller12
+pass. R1 malformed formation failed; R2 fixes one chronology assertion without
+backdating the frozen record. Parent network-none canonical735/R57 reconstruction
+reattested actual framebe351c18... in37.874962s/0fit0inference0broker.
+Separate original/forecast as-of bindings remain; no false equality or exact
+inference-origin proof. Core42/3.55s and fullclean8 15343pass22skip/
+15365collected/360.650s XML/helper0/reaped/JUnit1ce7d136...;
+Ruff/three sample Compose pass. Source preparation, NOT installed execution.
+ONE current objective: kis-stock-retained-gate-paper-delivery-v1. Parent owns
+coherent existing enter/close Action-only cutover, no second entry writer.
 Five-session research versus same-session Paper is provisional horizon mismatch,
 not a performance validation. No Torch or public model code in broker image.
 Claude original auth_unavailable remains immutable; after operator login
@@ -66,10 +73,12 @@ supported-with-limits; categorical verdict only, not authority grant.
 Data readiness6c8b48f9...: exact cached NAS index2119identities/26368chunks/
 4,861,551 declared bars,1089complete1030source_limited/nozero or quarantine.
 Historical through Jul28, NOT current October/PIT/common-calendar proof.
-Broad512 source0bbd40bd.../14 synthetic tests composes four unchanged128
-bindings: originalOLD128 + first384 sorted additional identities BEFORE
-numerical/coverage filtering, sparse/empty preserved. Independent review only;
-no actual512 view yet. No source union or outcome-selected universe.
+Broad512 original0bbd40bd.../14 tests preserved. Independent publication fault
+repaired in fresh82bd0d08.../8 tests: final reattestation before exclusive manifest
+publication. Metadata preparation found measured index437,965,045bytes exceeds
+32MiB loader cap before selection/binding. This scoped loader contradiction is
+not dataset rejection. Parallel fresh streaming-metadata repair preserves
+original128 + first384 identities before coverage filtering. No numeric512 view.
 
 ## Owned Opportunities Unchanged
 
