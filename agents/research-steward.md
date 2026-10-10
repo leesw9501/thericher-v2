@@ -5,14 +5,21 @@ goal. A=D:/thericher-v2/model-artifacts; history Git2094757/external custody.
 
 ## Current Resources (2026-10-11 KST)
 
-Goal85 closed697b7e83... with zero fits/GPU/sealed allocation; no scientific
-trial or performance selection. Actual7.822s/known CID absent/native tree reaped
-reported. GPU remains free, not awaiting permission. ONE next CatBoost campaign
-is source/contract preparation only: no appointment, market fit or selection
-spend yet. Preserve prior G84 rejected spend/lineage. After exact source/runtime/
-dataset/target/split/costs/control/kill/family clock freeze, allocate one bounded
-new family; optional runtime synthetic probe is not a predictive market trial.
-No runtime replacement, forced utilization or Monday Paper dependency.
+Goal86 exclusive appointment COMPLETE/rejected8ecd02b9...:
+A/research/kis-stock-five-session-catboost-development-v1/runtime/
+attempt-32cd44eb14d7464192c1d1a81b63af57. Sciencecd0d82af.../trial1row3d2d4781...,
+outer98e13791.../actual0d6f1687.../terminal8d1edf0c.../result0583aa2b....
+3GPU CatBoost+3tree+3ridge/384iterations; original1800 clock, no fourth fit,
+retry, weights or sealed allocation. Persisted terminal46.454s/worker family
+48.976s are distinct snapshots. Exact absence/reap/lease release/registry
+finalization source-reported; independent8187b24d... verifies hashes/aggregate
+counts and rejection, not OS/optimizer observation. GPU free and usable.
+Runtime parser/build failures retained; separateR3 synthetic capability closed
+a1df0a84.../31.429s, not a market trial or scientific budget reset. Protected
+versions unchanged in derived4bb201b5.... Current next company objective is
+CPU/source-only Paper attribution preparation, no ready new GPU appointment
+from a rejected seen-panel result. Keep breadth/depth/replication lineage, do
+not manufacture utilization or turn Monday's market into a research hold.
 
 Goal84 exclusive appointment COMPLETE/rejected_fixed_blend4bc0340d...:
 A/research/kis-stock-five-session-mixer-expert-development-v1/runtime/

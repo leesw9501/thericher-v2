@@ -14,6 +14,35 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Research Closure (2026-10-11 KST)
 
+Goal86 COMPLETE/rejected_fixed_candidate:
+A/research/kis-stock-five-session-catboost-development-v1/integration-evidence.json
+8ecd02b9... links source7ba73147.../sciencecd0d82af.../trial1row3d2d4781...,
+outer98e13791.../actual0d6f1687.../terminal8d1edf0c.../result0583aa2b....
+Direct Plain CatBoost1.2.10/128trees/depth4/seed101,3CUDA+3tree+3ridge/
+384iterations;96tables/390marks. Persisted parent terminal46.454s and worker
+family48.976s are different snapshots, both within original1800s; no reset.
+PooledOOF10 Ucat.0127115 beats tree-.0017901, but DEV10 growth+1.8042%
+vs tree+2.1541%/lower utility; later+0.4520% vs tree+0.3725% has worse DD
+.6367% vs+.6063%. Fixed cost-band/DEV/later kills reject; no baseline rescue.
+Derived image4bb201b5... preserves base versions. Initial license spelling
+parser fault and R2 build failure retained; source-only CLI probe measured
+isolated config hiding packaged Buildx. Fresh R3 names only that directory,
+reuses11 verified wheels/zero downloads, real CPU/CUDA2-iteration toys pass
+in31.429s. No framework replacement, auth config read or operator gate.
+Source22/derived CPUimage22/launcher45/R3mocks20; independent8187b24d...
+checks8+4mutations/479source-control hashes/aggregate predicates. No independent
+raw-input replay, OS cleanup or optimizer proof. Actual source reports exact
+container absent/child reaped/lease released/registry finalized.
+Claude preflight/result-directionb5d17be2... supported-with-limits. Exact
+1295pins/JUnit15556pass22skip reattached, Ruff/three sample Compose pass.
+No weights/holdout/Paper replacement/provider refresh/credential/broker call.
+Seen/nonPIT/current-listing/raw-action/nonTR/revision/availability limits persist.
+ONE next objective kis-stock-five-session-paper-attribution-preparation-v1:
+reuse existing cohort/fill/gross-PnL readers for owner-local five-close marks
+and explicit fee availability, not another gate/worker. Native observe() may
+recover orders and is NOT a passive reader. Owned Monday/fifth-close schedules
+remain unchanged; installation still is not submission, fill or net profit.
+
 Goal85 COMPLETE/feature_only_categorical_decision_unknown:
 A/research/kis-stock-current-feature-runtime-parity-v1/integration-evidence.json
 697b7e83... links actualab8fa30b.../comparison2c1f276b.../independent2dafefbe....

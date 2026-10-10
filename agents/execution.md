@@ -5,6 +5,20 @@ NEXT_CODEX_GOAL.md. Closed history in Git9ae7eec/RUNBOOK/immutable artifacts.
 Compaction never adopts, deletes, replaces or retries an intent.
 A=D:/thericher-v2/model-artifacts.
 
+Goal86 closed8ecd02b9.../independent8187b24d... at
+A/execution/kis-stock-five-session-catboost-replay-parity-v1/actual-review/
+final-outcome-receipt.json.8 checks/4mutation kills verify exact source/control/
+terminal/result links,96cells/390marks/384iterations and fixed rejection. No
+raw-input replay, OS/optimizer or broker-PnL proof; no Paper candidate adopted.
+ONE next objective kis-stock-five-session-paper-attribution-preparation-v1.
+Compose existing cumulative-fill, portfolio gross-PnL and cohort custody types;
+add only explicit per-close snapshot/mark and fee availability. Final state is
+not historical close inventory; native observe() may recover orders and must
+not be used as passive accounting I/O. Foreign same-symbol quantity/repeated
+snapshots/unknown exit/missing held marks/unobserved fees cannot create flatness,
+duplicated fills, adopted lots, censored marks or net profit. Unknown accounting
+does not become a submission gate. Monday/fifth-close owners below unchanged.
+
 Goal85 closed697b7e83.../independent2dafefbe...:15 checks, exact child clocks/
 source/result binding; lowbit-only feature limitation, categorical parity
 unknown because native SDK unsupported. Future comparator clock P2 retained;

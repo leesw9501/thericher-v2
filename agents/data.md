@@ -4,6 +4,16 @@ Current projection 2026-10-11 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
 owns ONE goal. History in Git9ae7eec and immutable receipts, not current jobs.
 M=D:/market_data; A=D:/thericher-v2/model-artifacts.
 
+Current Goal86 closed8ecd02b9.../result0583aa2b...: one CatBoost study consumed
+existing old/later exact panels, no provider refresh, future row, key replacement
+or raw-row output. Current21 remains inference context, not future labels.
+Next ONE objective kis-stock-five-session-paper-attribution-preparation-v1.
+Data supplies source/calendar/mark-contract facts only; a final state cannot
+reconstruct historical close quantity. Missing held-close capture/fee evidence
+stays scoped unknown, never zero NAV, censored observation or a Paper hold.
+No new collection or schedule in this preparation; existing ab65 owner/due
+and current-listing/nonPIT/raw-action/nonTR/revision limits stay unchanged.
+
 Goal85 closed697b7e83... reused current21 exact bytes: same input/header/mask/
 10584rows/246eligible in both runtimes, no provider refresh or future outcome.
 Only transform lowbits bounded; no PIT/finality/decision-parity claim. Data

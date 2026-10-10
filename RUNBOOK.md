@@ -2,7 +2,28 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-catboost-development-v1.
+ONE objective: kis-stock-five-session-paper-attribution-preparation-v1.
+Goal86 COMPLETE/rejected_fixed_candidate8ecd02b9...:
+D:/thericher-v2/model-artifacts/research/kis-stock-five-session-catboost-development-v1/integration-evidence.json.
+Actual exact runtime/attempt-32cd44eb14d7464192c1d1a81b63af57;
+outer98e13791.../actual0d6f1687.../terminal8d1edf0c.../result0583aa2b....
+Direct CatBoost3CUDA+3tree+3ridge/384iterations,96tables/390marks. Persisted
+terminal46.454s/worker family48.976s are distinct snapshots under original1800.
+Fixed DEV utility/later cost-band-DD failures reject; positive growth/OOF
+improvement does not rescue a member or change Paper. Independent8187b24d...
+8checks/4mutations/479source-control hashes, no raw-input/OS/optimizer proof.
+Source22/derived CPUimage22/launcher45/R3mocks20; Claude supported-with-limits.
+Runtime optional image4bb201b5... is ready: R3a1df0a84.../31.429s, CPU/CUDA
+two-iteration toys/protected versions pass/zero downloads. Original parser
+and R2 Buildx discovery faults preserved; do not rerun a closed appointment
+or reset its clock. Source-matched15556pass22skip/Ruff/three sample Compose.
+Next preparation uses existing pure cumulative-fill/cohort/gross-PnL APIs,
+per-close frozen states and mark/fee availability; no new service/scheduler.
+Never call native observe() as a passive reader: recovery side effects exist.
+Missing held valuation/fees remain unknown, not censored/zero profit or a Paper
+gate. No credential, broker or raw private I/O in this preparation. Existing
+job80012e77.../plan507ffbb6.../cohort387ee5f6... Monday/fifth-close due unchanged.
+
 Goal85 COMPLETE/feature_only_categorical_decision_unknown697b7e83...:
 D:/thericher-v2/model-artifacts/research/kis-stock-current-feature-runtime-parity-v1/integration-evidence.json.
 Actual-v1/receipt.json ab8fa30b.../comparison2c1f276b.../review2dafefbe...:

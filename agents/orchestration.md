@@ -6,31 +6,34 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-Goal85 COMPLETE697b7e83...; feature-only lowbit limitation, categorical decision
-unknown. ONE next objective kis-stock-five-session-catboost-development-v1.
+Goal86 COMPLETE/rejected8ecd02b9...; actual3GPU+3tree+3ridge/384iterations.
+ONE next objective kis-stock-five-session-paper-attribution-preparation-v1.
 No company block, market wait or approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Sole Git owner closing G85; no shared runtime edits, exact authority reattachment. |
-| Verification | Reaped / Parent | Source20/independent15, exact known-CID/clock result.1295pins/JUnit15556pass22skip recheck plus Ruff/three sample Compose. |
-| Data | Standby | Old/later/current21 bytes exist, no refetch or future outcome needed for scoped CatBoost development. |
-| Engine | Owned / Chandrasekhar | Independent official source retrieval, one fixed CatBoost contract/compact adapter; no market training yet. |
-| Execution | Existing Paper owners / Herschel | Original basis/other owners/unknown SPY preserved; G85 independent readback done, next same constant-quantity replay review ready. |
-| Infra | Temporary / Plato | Optional pinned addon proposal to d6 Python3.12, not dependency/framework replacement; no actual build yet. |
-| GPU | Steward / free | G84 appointment released; G85 zero GPU. Next frozen different-classicalML campaign may allocate; no utilization quota. |
-| Paper due | Existing finite owners | b860 Oct12 22:30/Oct13 04:50KST unchanged.387ee5f6... entryOct12 22:30/recover22:40/fifthEXITOct17 04:50KST, no submit/fill inferred. |
+| Git/integration | Parent | Sole Git owner closing G86 and assigning one small Paper accounting preparation; no shared runtime change yet. |
+| Verification | Reaped / Parent | Source22/derived CPU22/launcher45/R3mocks20/independent8+4mutation checks;1295pins/JUnit15556pass22skip reattached, Ruff/three sample Compose. |
+| Data | Standby / scoped support | Existing panels unchanged. Next source/calendar/close-mark synthetic contract only; no collector invocation. |
+| Engine | Chandrasekhar / independent review | G86 source/result frozen, candidate rejected. Next accounting/close-state challenge, no fit or seen-panel rescue. |
+| Execution | Herschel / ready | Reuse existing cohort, cumulative-fill and gross-PnL APIs; one pure close/fee attribution projection and focused tests. Existing Paper owners remain exclusive. |
+| Infra | Complete / Plato | Optional image4bb201b5... ready; R3a1df0a84.../31.429s/CPU+CUDA toys/protected versions pass/zero downloads, exact containers absent/lease released. |
+| GPU | Steward / free | G86 appointment closed; no permission/environment hold. Next accounting is CPU-only, not a utilization campaign. |
+| Paper due | Existing finite owners | b860 Oct12 22:30/Oct13 04:50KST unchanged.387ee5f6... entryOct12 22:30/recover22:40/fifthEXITOct17 04:50KST, not submit/fill. |
 | Data due | Existing finite owners | ab65 Oct13/20 endpoints, next_due Oct12/19 21:40UTC unchanged. |
 
 ## Bottleneck And Reversible Improvement
 
-Repeated fixed neural blends have not improved the tree. Move to one different
-predeclared numerical-tree candidate, with existing replay/control contracts,
-not a blind weight or seed search. Runtime source/license/compatibility prep and
-scientific source prep run independently; no lane waits on Monday's market.
+Models have useful development diagnostics but no new fixed winner; the next
+material product gap is cohort-owned daily valuation and actual fee availability,
+not another same-panel parameter/blend search. Compose current pure readers;
+never call recovery-capable native observe() as passive accounting I/O.
+Historical final state cannot reconstruct five close quantities. Unknown held
+marks/fees stay scoped unknown without becoming a Paper submission gate.
 
-G85 exact pair confirms tiny feature-transform differences but not categorical
-parity. Future callers fix remaining-deadline/CID/clock-binding P2s without
-rewriting the used8-second result. Existing source-matched repository authority
-avoids another full suite for external-source/docs-only integration. No new
-policy, recurring report or scheduler capability.
+Measured runtime improvement retained: fresh credential-free config explicitly
+names packaged Buildx, verified wheels reused, source-only failures keep a
+categorical cause/hash. Earlier parser/build failures remain immutable.
+Current source-matched repository authority avoids a redundant full suite;
+tracked runtime changes in the next package require clean full authority.
+No new report, scheduler or permission framework.

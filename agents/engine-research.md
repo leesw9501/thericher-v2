@@ -5,6 +5,27 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact ro
 
 ## Current Result And Work (2026-10-11 KST)
 
+Goal86 COMPLETE/rejected_fixed_candidate8ecd02b9... at
+A/research/kis-stock-five-session-catboost-development-v1. Source7ba73147.../
+sciencecd0d82af.../outer98e13791.../actual0d6f1687.../terminal8d1edf0c.../
+result0583aa2b...; one direct CatBoost Plain128/depth4/seed101, not a blend.
+3GPU+3tree+3ridge/384iterations,96tables/390marks. Persisted terminal46.454s,
+worker family48.976s under original1800; distinct clocks, no refit later50.
+PooledOOF10 U.0127115 vs tree-.0017901, but DEV utility fails (growth+1.8042%
+vs tree+2.1541%); later growth+.4520% vs+.3725% has worse DD .6367% vs.6063%.
+Fixed same-cost/DEV/later intersection rejects; no standalone/member rescue.
+Optional image4bb201b5... real CPU/CUDA toys and22 source tests pass; protected
+base versions unchanged. Source22/launcher45/R3mocks20/independent8+4mutation
+checks; independent8187b24d... recomputes aggregate predicates, not raw inputs
+or optimizer/OS observation. Claude preflight/result-direction support limits.
+No weights/sealed sample/new market data/broker/Paper change. Seen/current
+listing/nonPIT/raw-action/nonTR/revision/nominal availability remain explicit.
+ONE next objective kis-stock-five-session-paper-attribution-preparation-v1,
+Execution-owned; Engine independently challenges historical-close/fee semantics,
+not a new seen-data parameter or blend search. GPU free and usable, no approval
+hold; do not manufacture a fit for utilization. Prospective unchanged-teacher
+capture or a genuinely new frozen hypothesis remains a later product option.
+
 Goal85 COMPLETE697b7e83... at A/research/kis-stock-current-feature-runtime-parity-v1.
 Actualab8fa30b.../comparison2c1f276b.../independent2dafefbe...;7.822s<300,
 zero fits/GPU/broker. Identical headers/input/masks/246eligible; lowbit channel
@@ -12,12 +33,9 @@ changes bounded by Decimal80 error triangle6.6731e-15, not pairwise measurement.
 Native SDK unsupported/inference0 versus Linux1; categorical parity unknown.
 20source/15independent checks; future deadline/CID/clock-binding P2s retained,
 not exercised by this exact pair. No Paper gate, model/source/threshold changes.
-ONE current goal kis-stock-five-session-catboost-development-v1. Chandrasekhar
-owns independent official source retrieval, one fixed campaign and compact
-adapter/tests; parent owns runtime/actual dispatch. No data training until the
-contract is frozen. Plain numeric GPU regression, no identifier categoricals,
-blend rescue, parameter sweep or ordered-boosting claim. Seen panels remain
-development only; existing Paper cohort and due opportunities unchanged.
+At the G85 boundary the next goal was the now-completed CatBoost study above;
+its source/contract preceded numerical work. Seen panels remain development
+only; existing Paper cohort and due opportunities are unchanged.
 
 Goal84 COMPLETE/rejected_fixed_blend4bc0340d... at
 A/research/kis-stock-five-session-mixer-expert-development-v1.
