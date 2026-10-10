@@ -16,9 +16,9 @@ ONE objective: kis-stock-five-session-confirmation-and-expert-development-v1.
 | Verification | Parent / reaped | Serial164/3.10s + fullclean8 15343/22/356.70s/helper0; Ruff/three Compose. |
 | Data | Bohr / preparing | Fixed512 later refresh,21 context+50 score dates; source/tests before one-client acquisition. |
 | Research | Chandrasekhar / preparing | Old-seen tree/TabM fixed blend source/frozen contract; separate later rule confirmation. |
-| Execution | Herschel / preparing | Reusable pure cohort/accounting code in Git, generated artifacts stay D:. |
+| Execution | Herschel / released | Pure cohort/accounting port dd0104b3...; parent36 tests/.60s passed, no broker/default-import changes. |
 | Independent Validation | Released | Goal78 six checks386870cd... exact bindings/aggregate kills, not private-price/PIT proof. |
-| Direction | Claude / received | Prefitfb1801fe.../post-positive24614463... supported-with-limits; unclassified prior preserved. |
+| Direction | Claude / received | Goal79 preflightf4061dd8... supported-with-limits; Goal78 unclassified prior preserved. |
 | GPU | Steward / free | Goal78 CPU-only complete; useful Goal79 frozen CUDA campaign pending source/smoke, not approval. |
 | Data due | Existing finite owners | ab65b62b... Oct13/20 endpoints, next_due Oct12/19 21:40UTC unchanged. |
 | Paper due | Existing finite owners | Same2d616950 names/dates with b860Action; original rank1/basis/pending, gate keep/veto only. |

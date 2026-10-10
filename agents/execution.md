@@ -126,14 +126,17 @@ Actual cohort3ridge/0GPU/16.5456s,36 tables; independent6 result386870cd...
 checks aggregate links, not raw-price/broker/PIT proof. Positive joint policy
 result at6.5304% mean exposure is not50%-control alpha or Paper adoption.
 
-Current Goal79 Execution package ports reusable pure typed cohort/accounting
-core and focused synthetic tests into Git-owned research code. Preserve used
-external bytes, isolate NumPy/Torch/default imports from broker routes, keep
-generated models/data D:. Existing local_paper accounting remains authoritative
-for synthetic fills. No production RiskLimits, broker, basis, private state,
-installed model or schedule change. Data later refresh and useful expert GPU
-campaign can proceed independently. Full15343/22/356.70s/Ruff/three Compose
-passed for Goal78; no documentation-only full repeat.
+Goal79 isolated Execution core port COMPLETE/focused-verified:
+src/thericher_v2/research/five_session_cohort.py dd0104b3... and
+tests/test_five_session_cohort.py1950b25f...; parent36 tests/.60s and Ruff pass,
+agent48 exact replay/4 policy comparisons against frozen c9fb source pass.
+Typed frame/plan/labels and constant-quantity daily replay are a lazy NumPy leaf;
+no Torch/public-model/broker/default import. Original512 support remains;
+study-specific upper date bound belongs to caller, not a frozen800 constant.
+Used external bytes unchanged, generated models/data D:. No production risk,
+basis/private state/model/schedule change; existing local_paper accounting is
+used by synthetic tests. This small package is not company-goal closure:
+Data/Engine continue. Goal78 full15343/22/356.70s remains its own authority.
 
 Dataab65b62b... still owns42-peer Oct13/20 endpoint observations. No manual
 launch or broker call is part of this research work. Closed research/debits and
