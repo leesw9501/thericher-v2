@@ -45,11 +45,16 @@ ee4c4f16.../.093609s retained; fresh embedded-calendar d591fc90.../56 supplied/
 35warnings347.49s/JUnitd8bea194... . Goal58 reader59b041e1.../nine d9381e36...
 reattests retained integration44236cd7... without rebuilding context/inference.
 
-Goal60 ACTIVE: exact cached incumbent terminal-cash24-cell replay. Native
-parent/entrypoint source preparation runs disjointly; one240s before setup,
-180work+60cleanup/publication, CURRENT-only numeric decode/zero fits/inference.
-Original128/seven bindings/799 lineage/51marks fixed; no second model goal,
-Paper replacement or fresh validation. Original Paper/Data owners continue.
+Goal60 CLOSED/runtime failure1a02b501.../c49971b1.../52.921544s at02:41:36.075723UTC,
+reaped/absent/unchanged/no GPU. Cells/fits/inferences/replay unknown; partial
+two-action/one-execution stream is not a comparison or strategy rejection.
+Generic native failure schema discarded its category. Used sources/failed
+appointment remain immutable/unrefunded.346 serial/full8 15274pass22skip/
+35warnings343.15s/JUniteb4f7f91...; entry08215254.../parent71cecf08.../
+outera07e0d53... independently source-tested, not runtime proof.
+Goal61 ACTIVE: narrow categorical diagnostics and synthetic rotation checks,
+one fresh240s CPU appointment; same original128/seven bindings/799/51marks.
+No model/strategy retuning, Paper replacement or fresh validation.
 
 ## Ready Independent Preparation
 
@@ -67,7 +72,7 @@ cache read. Action is contingent on current execution OPEN/inventory/unchanged
 slot sizing, not pre-OPEN sealed or Bellman-optimal. Doublecount, quote timing,
 own-arm inventory, uncertainty and horizon limits explicit. Loader7fe15d99.../
 eight independent ee19c493... rejects repinned persisted-stream corruption;
-new native entrypoint/parent remain source preparation until Goal60 dispatch.
+Goal60 runtime failed; Goal61 diagnoses the unchanged technical path.
 Primary-source reread1a0b1d5e... supports mechanism only, not empirical transfer
 or open-source code rights. No new optimizer dependency.
 
@@ -75,6 +80,10 @@ Uncertainty discovery16ef6902... independently reread8308a59a... (exact arXiv
 1612.01474v1/2106.00170v1/2011.09588v1) rejects spread/low pinball loss as
 calibrated risk. Mechanism-only reference, no code/weights imported, new
 family/quantile thresholds/GPU allocation or performance transfer selected.
+Source-only quantile model f3fd0f7b.../52 synthetic checks and cache input
+d4bce897.../51 checks are prepared; independent reviews remain assigned.
+Fixed60x4/three quantiles require a later frozen family, not silent reuse of
+the signed60 two-channel geometry or a calibration claim.
 
 Depth: Goal55 binary shadow016e67dc.../native cachedda6fbbad... already frozen
 Oct9 23:03:14.321194UTC:42eligible/seven kept/three cash. Same-native21.880s,

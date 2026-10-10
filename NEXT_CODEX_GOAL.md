@@ -2,14 +2,26 @@
 
 ## Objective
 
-Complete kis-stock-incumbent-payoff-development-v1: test whether a frozen
-inventory- and transaction-cost-aware terminal-cash decision improves the
-existing signed60/TCN/cash controls in exact native cached replay. ONE company
-objective, not a new model, learned continuation value or Paper replacement.
+Complete kis-stock-incumbent-payoff-runtime-recovery-v1: recover the exact
+technical failure of the unchanged incumbent-aware cached replay, or record
+its concrete categorical limitation. ONE company objective, not a new model,
+parameter rescue, learned continuation value or Paper replacement.
 
 ## Starting Evidence
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Goal60 CLOSED/bounded runtime failure1a02b501... at
+A/research/kis-stock-incumbent-payoff-development-v1: exact invocation
+1772ac26012b45aea82fd86587dcde08/failurec49971b1.../parentfeee4839.../
+capture72f0767f... .52.921544s post-failure-publication at02:41:36.075723UTC;
+future stdout/later integration excluded. Reaped/absent/unchanged/no GPU.
+Cells/fits/inferences/replay unknown; partial two action/one execution events
+are not a strategy result. Six-field generic native failure discarded its
+category at parent's exact three-field parser. Used d69a460b.../ca833e50.../
+84d2eae4... and partial streams stay immutable/unrefunded.346 serial/full8
+15274pass22skip35warnings343.15s/JUniteb4f7f91...; independent entry08215254.../
+parent71cecf08.../outera07e0d53... are source-only, not runtime success.
+
 Goal59 COMPLETE at A/research/kis-stock-sealed-feature-cache-runtime-recovery-v1:
 integration607e0500.../actualb03a37d5.../parented5f61bc.../capture67c81dbe.../
 worker4e8c994f... . Exact native OLD734/36307rows/CURRENT52/3339 parity,
@@ -33,13 +45,20 @@ reattests retained evidence without rebuilding context or inference.
 
 ## Work
 
-Engine/parent: finish and freeze the minimal native cached entrypoint and
-inclusive parent caller. Sources: incumbent governor896d808c...,
+Engine/parent: freeze a fresh minimal diagnostic entrypoint and inclusive
+parent caller; never edit or rerun used Goal60 sources. Preserve the exact
+three-field {name,status,reason} failure ABI. Expose only closed source-literal
+categories or fixed exception-type categories, never messages, keys or paths.
+Independently test the second-review/rotation path with synthetic data. A
+confirmed technical fault may receive a fresh narrowly repaired derivative;
+do not alter forecasts, universe, strategy, costs, size, targets or geometry.
+Sources: incumbent governor896d808c...,
 workerf2d5b47.../independent c53e8267..., persisted-stream loader7fe15d99.../
 eight independent ee19c493... . Preserve released sources/results; a repair
 uses a fresh derivative. Explicit source imports execute their checked bytes.
-Ask Claude for a concise falsification-first challenge of this actual contract;
-review failure is not agreement or a new operator gate.
+Claude2427d2d0... exit1/reaped/unavailable is not agreement. Do not retry an
+unchanged failed CLI diagnostic; independent falsification continues. Ask for
+a new material recovery challenge only through the existing safe caller.
 
 One240s CPU appointment starts BEFORE plan/source preparation. At most180s
 work and60s cleanup/publication; image d6b43213..., CPU2/8GiB/network-none/
@@ -70,7 +89,8 @@ reaping/container absence and post-capture clock. Exit/status alone is not
 closure. Keep failed/unknown outcomes and never reset identity or refund time.
 No raw quotes, predictions, prices, account/private amounts or IDs in stdout.
 
-Parallel: source-only uncertainty/quantile mechanisms16ef6902... independently
+Parallel: independently review source-only quantile model f3fd0f7b.../52
+synthetic cases and cache input d4bce897.../51 cases. Mechanisms16ef6902.../
 reread8308a59a... may inform a later frozen hypothesis. No new GPU family,
 calibration claim, outcome-based threshold choice or second goal.
 Data42-peer endpoints jobab65b62b... due Oct13/20 06:40..07:40KST and original
@@ -80,7 +100,9 @@ No manual task/provider/order invocation, bank/model/budget/TTL reset or live.
 ## Completion / Kill
 
 Actual24-cell native replay and exact durable cached readback, or an exact
-bounded source/runtime/accounting/budget failure. Primary whole10bps candidate
+bounded source/runtime/accounting/budget failure with a safely retained
+category. Any data unavailable result closes only this exact replay, not
+research or another ready lane. Primary whole10bps candidate
 requires positive growth, strict utility above ALL three controls, drawdown
 no worse than originalTCN, and nonzero incumbent/different-target reviews.
 No distinct decisions means no_distinct_incumbent_mechanism, not rescue tuning.

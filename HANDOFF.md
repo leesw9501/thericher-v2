@@ -74,12 +74,21 @@ fresh d591fc90... changes only pinned embedded-calendar whitespace parsing.
 Claude9cabf9cd... unavailable, not agreement. Goal58 offline reader59b041e1.../
 nine casesd9381e36... checks retained44236cd7... without new inference.
 
-Goal60 ACTIVE: incumbent-aware terminal-cash24-cell cached replay, one240s
-native CPU appointment before preparation. Compare original signed60 cache
-with incumbent-aware target-or-flat decisions against sign-mask/TCN/cash;
-complete reviews61..106/terminal111/51marks. No training, target refresh,
-GPU, Paper/model replacement or new broker/schedule path. Finish minimal
-verified native entrypoint/parent before one actual run; failures stay scoped.
+Goal60 CLOSED with bounded runtime failure1a02b501... at
+A/research/kis-stock-incumbent-payoff-development-v1: exact invocation
+1772ac26012b45aea82fd86587dcde08/failurec49971b1.../parentfeee4839.../
+capture72f0767f... .52.921544s after failure publication at02:41:36.075723UTC;
+future stdout/later integration excluded. Reaped/absent/inputs and sources
+unchanged/no GPU. Cells/fits/inferences/replay remain unknown, not zero or a
+strategy rejection. Two action/one execution events precede failure in the
+first cell. Native generic six-field failure lost its category at the parent's
+three-field parser. Used sources d69a460b.../ca833e50.../84d2eae4... and partial
+streams are immutable/unrefunded.346 serial20.07s/full8 15274pass22skip/
+35warnings343.15s/JUniteb4f7f91... reaped; independent entry08215254.../
+parent71cecf08.../outera07e0d53... source-only, not actual runtime success.
+Goal61 ACTIVE: fresh categorical diagnostics/synthetic rotation falsification
+and one separately bounded CPU replay, same frozen strategy/data/costs.
+No training, target refresh, Paper/model replacement or new broker schedule.
 Uncertainty sources16ef6902... independently reread8308a59a...: mechanism only,
 pinball/spread is not calibrated financial risk; no new GPU family dispatched.
 
@@ -159,8 +168,9 @@ mechanisms only; paper performance transfer rejected. Helper896d808c.../28
 synthetic checks/proposal ff169517... is a contingent-execution terminal-cash
 proxy, not a learned continuation value or pre-OPEN sealed action. Cached
 24-cell sourcef2d5b47.../39 supplied+22 independent checks/reviewc53e8267...
-has no actual market run, dependency or broker path. Parent caller prepares
-separately; complete reviews61..106/terminal111/51marks exclude the partial tail.
+has no complete actual comparison, dependency or broker path. Goal60 failed;
+Goal61 narrows the technical cause. Complete reviews61..106/terminal111/51marks
+exclude the partial tail.
 Earlier LSTM/GRU/attention/Patch/Mixer/rule/ML/TimesFM/Chronos results stay in
 Git/registry/exact roots; not absent experiments, current survivors or retries.
 Goal31 exhausted/failed-incomplete and Goal33 independent validation incomplete

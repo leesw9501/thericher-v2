@@ -35,9 +35,11 @@ OLD734/36307rows/CURRENT52/3339 exact bitwise/missingness/calendar/clock parity,
 seven bindings/458 sources unchanged; one load/zero target or provider calls.
 OLD repeated42.184/read3.724s, paired warm feature-only measurement; no cold
 or training speedup claim. Original prepare FAILED.093609s/ee4c4f16... retained.
-Goal60 consumes original CURRENT113 and signed60 cached decisions only; no
-union, new Data qualification, future targets or collection change. Owned
-next_due above continues independently. Cache limits remain source-local.
+Goal60 runtime failed1a02b501.../c49971b1... after52.921544s; sources/input
+unchanged, no provider or completed comparison. Goal61 recovers only the same
+CURRENT113 cached path. No union, qualification, future targets or collection
+change. Owned next_due continues independently. Source-only quantile cache
+adapter d4bce897.../51 synthetic tests is not an actual new dataset or campaign.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

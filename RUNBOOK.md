@@ -2,12 +2,22 @@
 
 ## Current Owned Opportunities And Research
 
-Goal60 current assignment: incumbent terminal-cash24-cell native cached replay,
-CURRENT-only/zero fit/inference/GPU. Finish exact verified entrypoint/parent,
-one240s before setup/180work+60cleanup/publication; no broker/schedule change.
-Four arms/two books/three costs/reviews61..106/terminal111/51marks fixed.
-Persist action/execution streams; verify exact events after BOTH publications,
-then parent custody/clock/reaping/absence. No outcome from exit/status alone.
+Goal61 current assignment: recover incumbent cached replay's exact technical
+failure, not its strategy. Goal60 failure integration1a02b501... is at
+D:/thericher-v2/model-artifacts/research/kis-stock-incumbent-payoff-development-v1/failure-integration.json,
+bound to native/1772ac26012b45aea82fd86587dcde08/actual-invocation-failed.json
+c49971b1.../parentfeee4839.../capture72f0767f... .52.921544s after failure
+publication02:41:36.075723UTC; own stdout/later integration excluded.
+Reaped/absent/unchanged/no GPU; cells/fits/inferences/replay unknown. Two
+action/one execution events are partial, not complete cells or economics.
+Generic native six-field failure did not match parent's three-field category
+parser. Preserve original sources/partial outputs/anchor, no refund or rerun.
+Fresh categorical diagnostics and synthetic rotation cases precede ONE new
+240s CPU appointment. Four arms/two books/three costs/51marks stay unchanged;
+no source substitution, training, parameter rescue, broker or schedule change.
+346 serial20.07s/full8 15274pass22skip35warnings343.15s/JUniteb4f7f91...,
+independent entry08215254.../parent71cecf08.../outera07e0d53... are source
+checks, not actual replay success.
 See NEXT_CODEX_GOAL.md; no second goal or future endpoint foreground wait.
 
 Goal59 COMPLETE at
@@ -15,7 +25,10 @@ D:/thericher-v2/model-artifacts/research/kis-stock-sealed-feature-cache-runtime-
 integration607e0500.../actualb03a37d5.../parented5f61bc.../capture67c81dbe... .
 Exact worker pointer is
 D:/thericher-v2/model-artifacts/research/kis-stock-sealed-feature-cache-benchmark-preparation-v1/outcomes/073e9e7a63de4f86ab560b394f59eec9/worker-receipt.json
-(4e8c994f...). Offline project_integration.pyf5619bda... rehashes linked
+(4e8c994f...). Use offline project_integration_attested.py0f9e92d9.../
+nine independent cases0efdc115...: decode the exact checked capture buffer.
+Original f5619bda.../failure0c77e2c2... remains immutable; actual607e0500...
+facts unchanged and no native rerun. The reader rehashes linked
 artifacts/sources without numeric cache decoding or new runtime. OLD734/
 36307rows/CURRENT52/3339 bitwise/missingness/calendar/clock parity, seven
 bindings/458 sources unchanged, one load/reaped/absent/zero fits/inference/
