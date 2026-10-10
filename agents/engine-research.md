@@ -33,13 +33,23 @@ original wall closed; frozen confirmation unrun/input_unavailable.
 Serial70/19.88s/full8 15413pass22skip365.34s/helper0/Ruff/three Compose.
 First full tests passed but temp hardlinks blocked cleanup; not authority.
 
-ONE objective: kis-stock-five-session-tree-later-confirmation-v1.
-Later rule confirmation freezes same policy before numeric later outcomes:
-same512/21 context+50 scores Jul28..Oct6,10 five-day cohorts, cash/momentum10%
-and50%, costs5/10/20. Readiness5b3134b2... is not actual collection. Missing
-selected held mark is input_unavailable, no substitutions or cohort deletion.
-Require>=8 causal cohorts; primary growth/U/drawdown/turnover/cost kill in NEXT.
-Some later128 dates were seen elsewhere: later confirmation, not untouched holdout.
+Goal80 COMPLETE/non_promoting_later_confirmation_only, integrationa94fc234...
+at A/research/kis-stock-five-session-tree-later-confirmation-v1.
+One unchanged HGBR recipe CPU fit/675 complete train dates, all10supported/
+18tables/50daily marks. Result9901e7ce.../contract4e23e0b9.../final379b0122...,
+226.548s ORIGINAL600s; failed Docker125/debit1.593s and source45db preserved.
+R2884fcfb0... copies exact NEXT inside readonly control; exact container absent.
+10bps tree growth+.3725%/U.017340/DD.6063%/exposure3.3339%;20bps+.3309%.
+Rule-.6782%/U-.038899, prior-entry-gross-matched momentum-1.4407%/U-.074853.
+All7 fixed kills pass, independent6/17mutations39742e2e.../Claude262a66ac...
+supported-with-limits. Gross matching is not realized exposure/risk matching;
+later128 seen/postdiagnostic selection/tiny50/raw actions/nonTR/nonPIT/revision/
+nominal availability prevent alpha/holdout/automatic Paper claims.
+Own267793byte teacherca6b36d1.../metadata2ce286ee... in actual-r2-v1/results/out;
+256old-only bit-equal prediction roundtrip verified, not arbitrary public weights.
+ONE next objective: kis-stock-five-session-tree-inference-local-paper-v1.
+Prepare reusable lazy inference/typed research allocation and local-paper replay,
+no refit/tuning, credential/broker/schedule change or new performance selection.
 
 Closed old-seen dual-expert package at
 A/research/kis-stock-five-session-dual-expert-development-v1: tree/from-scratch
@@ -53,13 +63,10 @@ including publication. Parent launcher9916f46f... passed12 mock R2 checks;
 actual network-none CUDA completed as above. Unknown cleanup must still retain
 exclusive lease; this attempt's lease released after observed exact absence.
 No later-label tuning, learned gate, rescue seeds or standalone-profit gate.
-Current Engine prepares a separately frozen one-fit tree later family. Proposal
-68adc8d9... chooses unchanged DEV recipe20..695/scaler/seed/parameters, not
-literal teacher reuse (none retained) or expanded799 fit. Same512/71 later
-grid; rule/cash/momentum10/50 and prior-entry-gross-matched momentum controls.
-600s including60 publication, oneCPU fit, all10 cohorts/all50 marks/8support,
-predeclared utility/drawdown/cost kills. No later-label tuning or blend rescue.
-Own hash-bound export/inference roundtrip stays D: and isolated; no broker import.
+Goal80 reconstructs unchanged DEV20..695/scaler/seed/parameters, not literal
+original teacher reuse or expanded799 fit. No later-label tuning/blend rescue.
+Source402d8a8d.../17CPU synthetic checks froze before later values. New own
+hash-bound export stays D: and isolated; it does not rewrite the failed blend.
 Parent owns runtime/custody/Git; pure core already pushed1523c3d.
 
 Goal77 broad512 OC comparison rejected in Git4999344/exact integration:
@@ -69,6 +76,12 @@ Seen/raw-action/non-TR/current-listing/non-PIT/availability limits remain.
 No Paper adoption or alpha; five-session policy is not the installed day-Paper.
 
 ## Breadth / Depth / Replication
+
+Invoked discovery977061ec... at A/research/kis-stock-five-session-sequence-discovery-v1
+retrieved official TCN(MIT) and Google TSMixer(Apache2), source_unverified until
+parent re-retrieval. TCN already represented; TensorFlow TSMixer is not imported
+or a runtime switch. No stock efficacy/pretrained corpus or sparse semantics
+inferred. No campaign/queue/GPU allocation from discovery alone.
 
 Preserve rejected Goal74 depth32 20f76713... and Goal73 inventorybd36e88e...
 including unknownfit1/debit64.183348s/R2d502b67c..., quantile30b0b842...,

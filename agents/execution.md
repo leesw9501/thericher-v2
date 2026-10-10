@@ -8,7 +8,11 @@ A=D:/thericher-v2/model-artifacts.
 Goal79 research closuree0281290... does not change Paper execution: fixed
 blend rejected, later confirmation input_unavailable; no new model or broker
 intent adopted. Pure cohort core1523c3d stays synthetic local_paper parity.
-Goal80 fixed-tree later research is independent of the owned opportunity below.
+Goal80 fixed-tree later confirmationa94fc234... passes fixed research kills;
+it is not broker PnL or automatic adoption. One own teacher267793bytes retained,
+no actual broker/account/order call or schedule change. Goal81 inference/
+local-paper parity is independent of the owned opportunity below; local fills
+remain source:local_paper, research entry caps are not broker RiskLimits.
 Missing research input is not a Paper approval hold or global execution pause.
 
 ## Owned Paper Opportunity

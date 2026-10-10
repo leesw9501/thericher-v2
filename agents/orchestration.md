@@ -8,30 +8,34 @@ History in Git/exact immutable evidence, not a second backlog.
 No company block or foreground sleep. Goal79 bounded closuree0281290...:
 expert rejected, later input unavailable, not a dataset rejection.
 A=D:/thericher-v2/model-artifacts.
-ONE objective: kis-stock-five-session-tree-later-confirmation-v1.
+Goal80 COMPLETEa94fc234...: fixed tree later confirmation passes7kills,
+not alpha/adoption. Data512 closed; exact CPU job and native trees reaped.
+ONE objective: kis-stock-five-session-tree-inference-local-paper-v1.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Source3f18291 pushed; sole Git/runtime owner, current goal integration. |
-| Verification | Parent / reaped | Serial70/19.88s + fullclean8 15413/22/365.34s/helper0; Ruff/three Compose. First unclean run not authority. |
-| Data | Bohr / preparing recovery | R2 closed154targets/298attempts/295accepted/3rate limits; preserve old scope, prepare R3 floor-aware recovery. |
-| Research | Chandrasekhar / preparing | New frozen one-fit oldDEV tree recipe, later10 cohorts and prior-entry-gross matched control. |
-| Later confirmation | Released | Goal79 frozen41/43 synthetic tests but no final Data view; actual unrun/input_unavailable. |
+| Git/integration | Parent | Goal80 closure/next inference direction; sole Git/runtime owner. |
+| Verification | Parent / reaped | Exact1286 files/digest992 unchanged; reuse PASSING15413/22 authority, fresh36core/15Data/17tree/58reader/12parent/17result/Ruff/three Compose. New tracked adapter requires fresh full. |
+| Data | Reaped / input attestation ready | R3 all512/35837rows/361newaccepted/0errors/486.783s; exact151 prior vintages,7empty/3sparse retained. No active collector. |
+| Research | Released / inference ready | One CPU teacher/675train/all10cohorts+50marks/226.548s incl original failed125 debit, exportedca6b36d1...; no refit planned. |
+| Later confirmation | Complete / non-promoting | Result9901e7ce... all7kills pass; small postselected/raw-action seen sample, not untouched holdout or Paper adoption. |
 | Execution | Released | Pure coredd0104b3... in Git; parent36 tests passed, no broker/default-import changes. |
-| Independent Validation | Herschel / released | Dual6fa18b1d... six checks/eight mutations; rejected fixed blend, not raw replay/OS proof. |
-| Direction | Claude / received | Preflightf4061dd8.../result3cfa9bd0.../next1ebad2fd... supported-with-limits. |
+| Independent Validation | Herschel / Bohr released | Actual6checks+17mutations39742e2e..., strict Data3b71de2d...; native mount fault independently reproduced, original bytes retained. |
+| Discovery | Released | Source977061ec... TCN represented/TSMixer TensorFlow; not parent-verified campaign, no runtime switch/new queue. |
+| Direction | Claude / received | Goal80 result262a66ac... and next inference direction supported-with-limits; no authority/profit grant. |
 | GPU | Steward / free | Three TabM fits/804updates completed37.258s; lease released. Next useful current package is CPU tree, not GPU utilization filler. |
 | Data due | Existing finite owners | ab65b62b... Oct13/20 endpoints, next_due Oct12/19 21:40UTC unchanged. |
 | Paper due | Existing finite owners | Same2d616950 names/dates with b860Action; original rank1/basis/pending, gate keep/veto only. |
 
 ## Bottleneck And Reversible Improvement
 
-Measured collection loss: second pages added0 needed rows;147 first pages
-reached scope floor,3/298 rate limits and opener gapmin.90323s. R3 retains
-accepted captures and tests scoped early-floor completion plus true dispatch
-spacing; original failed scope/budget remains failed. One reusable client
-keeps its token across worker-owned cooldowns. Tree preparation continues
-independently before labels. Reuse passing repository authority only for exact
-unchanged code/test/runtime bytes; fresh tests cover changed external sources,
-not repeated unrelated CI. No profitability approval gate or foreground wait.
+R3 early-floor stop and closest1.25 spacing produced361accepted/0errors in
+486.783s, no redundant second page/cooldown. No provider threshold inference.
+Next bottleneck is the research-only exported model: make a reusable typed
+inference/local-paper bridge instead of retraining or repeating same50 results.
+Copy frozen file controls inside an existing readonly bind root before launch;
+do not nest a missing file target under a readonly parent. Used failed125 and
+original600s budget remain charged. Reuse exact passing repo authority only for
+unchanged code; new adapter tests/source receive a fresh full authority run.
+No profitability approval gate or foreground wait.
 Existing owned Paper opportunity is not a submit/fill; next_due is unchanged.

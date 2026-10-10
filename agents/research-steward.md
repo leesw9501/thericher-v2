@@ -27,15 +27,22 @@ contractb0b98f60.../actual33bb466b.../final3497c94b...,3ridge/0neural/0GPU.
 OOF52/DEV16 five-day cohorts; positive seen joint risk tradeoff, not alpha.
 Mean DEV exposure6.5304% vs50% controls; no sealed access/Paper qualification.
 
-Goal79 dual-expert old512 tree/TabM/fixed half-rank blend source preparation:
-<=3CUDA/3tree/3ridge fits under one1800s family incl120 publication reserve.
-No appointment or fit yet; source/runtime/contract still being prepared.
-Freeze one finite architecture/parameter/source/data/target/chronology/cost/
-kill contract and CPU smoke before actual scarce-resource dispatch. Later rule
-confirmation dataset is independent acquisition; its labels cannot tune experts.
-GPU remains free and available, no approval/environment hold. Do not repeat
-failed OC attention or inflate utilization with a dummy campaign. Later Data
-and pure-code integration proceed concurrently with a useful frozen GPU job.
+Goal79 dual-expert COMPLETE/rejected: actualbc36690c.../resultdd2f684a...,
+3CUDA TabM/3tree/3ridge/804updates,37.258s, exact container absent and GPU lease
+released observed. Fixed blend fails frozen controls; diagnostic tree is not
+an adopted substitute. Custodyf91a63c7... and integratione0281290... retain spend.
+
+Goal80 unchanged DEV tree later confirmation COMPLETEa94fc234...:
+one CPU HGBR reconstruction train20..695/675complete, original600s incl60pub/
+4GiB/2threads. Custodydf682474.../actuald11847ef.../final379b0122... records
+226.548s including failed Docker125/debit1.593s, no clock reset/refund.
+Own model/scaler export and256old-only bit-roundtrip passed. All7 fixed kills
+pass; result ceiling non-promoting later confirmation, no sealed spend/adoption.
+Goal81 reuses own model for inference/local-paper engineering parity,0newfits.
+No GPU allocation or blanket profitability gate; CPU is the appropriate runtime
+for this fit. GPU free and available, no approval/environment hold. Invoked
+sequence-source discovery can prepare a different temporal hypothesis in
+parallel; it is not a new campaign, sealed allocation or permanent queue.
 
 ## Lineage And Allocation Discipline
 

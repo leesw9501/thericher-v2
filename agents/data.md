@@ -48,18 +48,25 @@ Measured opener-entry gapmin.90323s is not wire telemetry/provider threshold.
 First page reached requested floor147 times/10437 needed rows; second pages
 added0 needed rows. Current prior worker is closed, not waiting on old next_due.
 
-Data prepares A/data/kis-stock-five-session-later-scope-recovery-v1:
-fresh fixed512-20260728-50sessions-r3, same21context+50score dates/71 clocks/
-original128-first mapping, no old800/f78/remainder splice or outcome filtering.
-Reuse only exact accepted R2 capture hashes/vintages; retry rejects/unseen,
-preserving failed R1/R2 cursor/epoch/spend. New900whole/850work/50pub,
-<=726 additional pages under original aggregate1024. Requested-floor early
-stop retains genuine continuation; not false source exhaustion.
-One client/token/cache owner across worker-owned cooldowns. Calibrate closest
-dispatch spacing or1.25 claim pace without removing existing shared1s/300s
-fresh-token guards. Record actual counts/pace/retry facts before any retention.
-Source tests and canonical metadata shape before provider; parent actual owner.
-D:15% floor; selective approved Paper market-only keys, no account/order/live.
+R3 COMPLETE at A/data/kis-stock-five-session-later-scope-recovery-v1:
+directa8f2482f.../parentdf40797f.../final7beb309e...,486.783s<900, all512.
+361newattempts/361accepted/noerrors/659aggregate incl prior298; cursor512,
+remaining0/next_due none/recovery closed_requested_scope. One valid client/token,
+measured closest-delegate gapmin1.250025s, cooldown0; not wire/provider limit.
+15source tests/58strict offline-reader tests, actual reader3b71de2d... passes
+exact runtime/source/worker/cursor/manifest/packed/count links after reaping.
+Used parent50d1... lacks final runtime reattest; reader compensates before
+reliance, without rewriting used source or prior failure. No independent OS proof.
+M/us_equities/kis_paper_private/daily-nas-broad512-later/v1/
+fixed512-20260728-50sessions-r3/view/manifest.json1eaebbc3.../
+bars.csv.gzd436ab4e...:35837rows/502full71/3sparse/7empty, all512 retained.
+Same21context+50score/71clocks/128-first; exact151 R2 vintages retained,
+361 fresh captures, no old800/remainder splice or target filtering. Source
+actions/revisions/current-listing/nonPIT/nonTR/availability limits remain.
+Requested-floor completion preserves genuine continuation, not history exhaustion.
+Selective approved Paper market-only keys; no accounts/orders/live/old task.
+Goal80 closurea94fc234...; next Data package is canonical inference input/clock
+attestation, not recollection of this completed cache or a qualification gate.
 
 ## Owned Collection
 

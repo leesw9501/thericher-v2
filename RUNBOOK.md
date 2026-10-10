@@ -2,7 +2,40 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-tree-later-confirmation-v1.
+ONE objective: kis-stock-five-session-tree-inference-local-paper-v1.
+Goal80 COMPLETE/non_promoting_later_confirmation_only:
+D:/thericher-v2/model-artifacts/research/kis-stock-five-session-tree-later-confirmation-v1/integration-evidence.json
+a94fc234.... One CPU tree/675complete train dates/all10cohorts/50marks/18tables;
+result9901e7ce.../actuald11847ef.../final379b0122.../226.548s original600s.
+10bps tree+.3725%/U.017340/DD.6063%/mean exposure3.3339%;20bps+.3309%.
+Rule-.6782%, entry-gross-matched momentum-1.4407%; all7kills pass. Independent
+6checks/17mutations39742e2e.../Claude262a66ac... supported-with-limits, not
+alpha/holdout/Paper adoption/broker PnL. Raw-action/nonTR/nonPIT/current-listing/
+revision/nominalavailability/postselection/tinyperiod limits persist.
+Own teacherca6b36d1.../metadata2ce286ee... retained in actual-r2-v1/results/out,
+267793bytes/256old-only bit-equal roundtrip; do not load arbitrary public pickle.
+First125 before output phase remains unknown fit/body observation, not rewritten0.
+Original failed45db... source and1.593s debit preserved. R2884fcfb0... copies
+the pinned NEXT into control before readonly bind; original600s not reset.
+Native inert probe independently reproduced missing nested target on readonly
+parent. Both actual trees and exact CPU container reaped; no active job.
+Goal80 strict Data reader3b71de2d.../58tests compensates used parent's missing
+final runtime hash reattest. Exact currentruntime/source/worker/cursor/count/
+manifest/packed rechecked before consumer; not raw replay or independent OS proof.
+R3 all512/35837rows/502full71/3sparse/7empty;361newaccepted/0errors/659aggregate,
+486.783s; manifest1eaebbc3.../packedd436ab4e... in
+D:/market_data/us_equities/kis_paper_private/daily-nas-broad512-later/v1/fixed512-20260728-50sessions-r3/view.
+Exact151 R2 vintages retained, no splice/filter; request scope completed, not
+provider-history exhaustion. Min closest-delegate1.250025s, not wire threshold.
+
+Goal81 prepares lazy exact-own-artifact inference on canonicalFiveSessionFrame
+and source:local_paper replay/restart/accounting parity, no fit/performance search,
+credentials/privatebank/KIS account/order/schedule change. Source/cutoff/identity/
+runtime/hash guards scope technical input, not human approval. New tracked code
+needs changed-path/full authority. Existing Paper continues independently.
+Sequence discovery977061ec... source_unverified until parent re-retrieval:
+TCN represented, Google TSMixer TensorFlow not adopted; no new framework or queue.
+
 Goal79 bounded COMPLETE: fixed blend rejected, later input unavailable;
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-confirmation-and-expert-development-v1/integration-evidence.json
 e0281290.... Actual dual bc36690c.../resultdd2f684a.../37.258s:3CUDA
@@ -16,7 +49,7 @@ Later R2 original scope closed:154targets/298attempts/295accepted/3rate_limited,
 R1 key-shape bug repaired by R2; preserve used bytes/cursor/epoch/debits.
 First-page requested floor147/needed10437; second incremental needed0.
 Opener-entry gapmin.90323s is not wire telemetry/provider threshold.
-R3 source preparation at
+Closed R3 source at
 D:/thericher-v2/model-artifacts/data/kis-stock-five-session-later-scope-recovery-v1:
 fresh suffix-r3, same512/71clocks/21context+50score/10cohorts; exact R2 capture
 reuse, rejected/unseen recovery, no old800/remainder/label filtering.
@@ -26,7 +59,7 @@ worker-owned cooldowns, bounded dispatch-spacing calibration. Existing1s/300s
 guards retained, D:15%. Selective Paper market-only route, no generic dotenv,
 accounts/orders/live or old task launch. Parent actual owner; tests first.
 
-Engine source preparation at
+Closed Goal80 Engine source at
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-tree-later-confirmation-v1:
 one unchanged oldDEV20..695 HGBR recipe/scaler/seed fit,600s incl60pub,
 one pinned CPUd6/4GiB/2threads. Freeze before later outcomes; no retained exact

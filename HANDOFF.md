@@ -14,6 +14,30 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Research Closure (2026-10-11 KST)
 
+Goal80 COMPLETE/non_promoting_later_confirmation_only:
+A/research/kis-stock-five-session-tree-later-confirmation-v1/integration-evidence.json
+a94fc234.... One CPU HGBR train20..695/675complete/last label699, all10cohorts/
+50marks/18tables. Result9901e7ce.../contract4e23e0b9.../precommit5322d833...,
+R2 final379b0122.../226.548s within ORIGINAL600s including failed125/debit1.593s.
+10bps tree +.3725%/U.017340/DD.6063%/mean exposure3.3339%;20bps+.3309%.
+Rule-.6782%/U-.038899; entry-gross-matched momentum-1.4407%/U-.074853.
+All7 fixed kills pass. Independent6/17mutations39742e2e...; Claude262a66ac...
+supported-with-limits. Tiny/postselected/seen/raw-action/nonTR/nonPIT/revision/
+availability limits, no alpha/Paper adoption or broker net-PnL claim.
+Own teacher267793bytes ca6b36d1.../metadata2ce286ee... in actual-r2-v1/results/out;
+256old-only prediction bit-roundtrip passed. No public pickle or broker import.
+Data R3 completed512/35837rows/502full71/3sparse/7empty,361newaccepted/noerrors/
+659aggregate attempts,486.783s; original151 capture vintages and failed scope
+preserved. Manifest1eaebbc3.../packedd436ab4e... under M/us_equities/
+kis_paper_private/daily-nas-broad512-later/v1/fixed512-20260728-50sessions-r3.
+15source/58strict reader checks; actual exact runtime/source/count links pass.
+Used Data parent lacks final runtime reattest; strict offline reader3b71de2d...
+compensates before reliance, used bytes intact. Model first Docker125 nestedRO
+file target fault; original45db... retained, R2884fcfb0... copies pinned NEXT
+inside control. Both actual trees/CPU container reaped, no active job.
+Fresh core36/1.04s/tree17/4.202s/parent12/result17/Ruff/three Compose;
+1286 exact tracked files unchanged, passing Goal79 authority992fefdd... reused.
+
 Goal79 bounded COMPLETE/rejected expert/input_unavailable later input:
 A/research/kis-stock-five-session-confirmation-and-expert-development-v1/integration-evidence.json
 e0281290.... Dual actualbc36690c.../resultdd2f684a.../final37.258s,
@@ -69,19 +93,19 @@ non-PIT/availability limits continue, no broker net-PnL claim.
 
 ## Current Work
 
-ONE objective: kis-stock-five-session-tree-later-confirmation-v1.
-Data prepares fresh bounded R3 recovery, preserving exact151 accepted R2
-captures and requeuing3 rejects/358unseen without resetting the prior scope.
-Same512/21context+50score dates/71clocks; <=726additional pages,900s new
-scope, floor-aware stops and measured transport-spacing calibration, oneclient.
-Engine freezes one unchanged DEV HGBR recipe20..695 fit and later comparison
-before labels, with prior-entry-gross-matched momentum and rule controls.
-600s/oneCPU fit, no diagnostic winner substitution or expanded799 training.
-Existing Paper opportunity remains independent; no automatic model adoption.
+ONE objective: kis-stock-five-session-tree-inference-local-paper-v1.
+Release the retained own teacher as a lazy typed inference adapter on canonical
+FiveSessionFrame, then prove score/allocation/local-paper replay parity without
+refitting. Exact artifact/cutoff/runtime/identity checks; no arbitrary pickle,
+broker/credential/privatebank/order/schedule change. Engineering parity is not
+another performance selection. Existing Paper opportunity remains independent.
 Reusable pure typed cohort/accounting code and36 tests pushed in Git1523c3d;
 weights/data remain D:. Parent owns runtime/custody/Claude/Git, no foreground
 wait. Useful frozen CUDA campaign may run while the one-client Data job runs;
 no GPU approval/environment hold or mandatory profitability gate on Paper.
+Discovery977061ec... retrieved official TCN and Google TSMixer only, not yet
+parent re-retrieved or a campaign. TCN represented; TSMixer TensorFlow runtime
+is not adopted. Keep source and benchmark limitations, no new durable queue.
 
 ## Owned Opportunities Unchanged
 
