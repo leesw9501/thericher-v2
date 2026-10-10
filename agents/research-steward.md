@@ -1,61 +1,47 @@
 # Research Steward Stateboard (연구 자원 및 평가 관리자)
 
-Current resource projection only. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
-owns ONE company goal. History remains in Git2ffeaad/external exact roots and
-A/_control/ledger/2026-10.jsonl. A=D:/thericher-v2/model-artifacts.
+Current resource projection only; AGENTS.md owns policy/NEXT_CODEX_GOAL.md ONE
+goal. A=D:/thericher-v2/model-artifacts; history Git68b19ea/external custody.
 
 ## Current Resources (2026-10-10 KST)
 
-GPU free after Goal73 COMPLETE/REJECTED/bd36e88e... .
-Exact actual A/bg/7ca90fb3e692461ab673a8392caab03d/actual-invocation.json
-d502b67c.../contract74352eb4...: one completed CUDA799 fit/oneCPUtoy/
-60CURRENTpredictions/24cells,0OLDteacher/cached extra/sealed/Paper.
-Post-save final audit148.199365s11:55:06.013295UTC<535; futurestdout excluded.
-Reaped/absent/released/unchanged producer facts, not independent cleanup proof.
-Finalmodelb9f1dee2... external; no promotion or rescue of rejected inventory.
+GPU free after Goal74 COMPLETE/REJECTED20f76713... at
+A/research/kis-stock-feature-gate-depth-development-v1/integration-evidence.json.
+Actual A/bg/d7a15afd27ea4d31b9416ac02971ca62/actual-invocation.json
+d613db91.../contract2e3c6df8...: oneCUDA799 fit/coldseed101/exact32 updates/
+finalonly/52CURRENTpredictions/36cells/0OLDteacher/cached-extra/sealed/Paper.
+Finalmodel e03b6191... stays external; no allocation to rescue seed/depth128.
+Publication365.881243s12:26:38.871851UTC<600 includes final save/readback/audits;
+excludes future stdout/integration. Reaped/absent/released/unchanged producer
+facts, not independent OS cleanup proof. Independent6 review134428c5...
+supports exact header/actions/aggregate kill, not private quote replay.
+Depth utility.07157<retained4.10255 and DD.8074%>.3931%: fixed kill rejected.
 
-Prior exact R13459347a... at A/bg/50206320fde74dec86a84c767203f26a failed
-64.183348s, fit-start1/completed0/unknown1 preserved/unrefunded. Fresh R2
-canonicalAPI fix/newdriver clock uses535s (505work/30cleanup), cumulative
-maximum599.183348<original600; observed212.382713s. Same company goal continued
-through the technical recovery, not a premature micro-objective closure.
-Independent6ca5be954.../Execution4 0f96c9cc.../R2publication2b4b41371...
-support narrow source/hash/aggregate semantics; no private price replay.
-Source55+R2API3/fullclean8 15343/22/341.87s/JUnit67d9fd1b.../helper0/reaped;
-Ruff/three sample Compose pass. No documentation-only full rerun.
+26serial5.85s/adapter2/.24s/fullclean8 15343/22/343.01s/JUnita901984d.../
+helper0; Ruff/three sample Compose passed. No doc-only full rerun.
+Prior inventorybd36e88e.../R1unknownfit1/debit64.183348s/R2d502b67c... retained.
+Quantile30b0b842... already3fits/30cells/rejected. Chronos readiness41cd63c0...
+same-CURRENT hypothesis already36cells/104CUDAcalls/rejected; not ready duplicate.
+No refund/reset/relabeling of historical resource or evaluation spend.
 
-ONE next family fixed-depth32 of screenedGoal69 feature-only architecture.
-Recommendation19e65339.../source preparation only, NOT frozen/allocated.
-Cold seed101/onefit799/exact32full-path updates/finalonly/unchanged head20
-and OLDscaler/reward/accounting; one600s family570work30cleanup.
-36 fixedcells/depth32-retained4-signed-prefix-TCN-cash/2modes/3costs.
-Mainwhole10 utility>retained4 ANDallcontrols by1e-10/growth>0/accepted>0/
-DD<=retained4.74 overlapping blocks, not32 independent datasets/convergence.
-No CURRENT selection/sealed use, warm-start, newteacherfit or Paper adoption.
-Freeze releases/real source/API tests/Claude direction challenge before runtime.
+Current company objective is source-only retained4 Paper-entry preparation,
+NO training/GPU/model promotion. Data512 source review is CPU/metadata-only.
+Next research appointment requires a new useful frozen contract, e.g. explicit
+broader sparse panel after actual loading; no artificial utilization campaign.
+Retained69 model8c3410d9.../Goal72 forecast54a52e8d... stays immutable.
+Five-session model versus day-Paper integration is not new performance evidence.
 
-Retained69 feature gate7998c3410d9.../screen77d3728c... remains control,
-not a converged deployed winner. Goal72 forecast4bcf81db... and Goal71Chronos/
-CVaR72357078... closed; predictions not refit from later endpoints.
-Quantile environment recovery30b0b842... already3CUDAfits/30cells/rejected.
-Its earlier prepare failures are not an uncompleted scientific queue item.
-Other historical families/debits remain exact, not reopened for utilization.
+## Allocation Discipline
 
-## Allocation Discipline And Closed Constraints
+Freeze dataset/target/split/availability/window-horizon matrix/cost/control/
+strongest kill/source/runtime/artifact root and finite compute budget BEFORE
+actual fit. Seen reuse never independent replication. One GPU lease, first
+useful ready contract; replication/underrepresented mechanisms win a real tie.
+Execution preempts safely; release only after reaping. CPU/preparation lanes
+continue independently. No source edits after use, unknown counter reset or refund.
 
-Engine freezes dataset/availability, target/split, finitewindow/horizon matrix,
-costs/control/kill/source/runtime/artifact root before the first real fit.
-Effective sample explicit/unknown; seen reuse never independent replication.
-One GPU lease; ready useful frozen campaign first, replication/underrepresented
-mechanism wins a real tie. Execution safely preempts; release only after reaping.
-Non-GPU/CPU/preparation lanes continue independently of deferred appointments.
-Do not refund old technical or scientific debits or edit used source bytes.
-
-Goal31 original600s exhausted/failed-incomplete9completed/10starts with terminal
-fit count unknown; closure644bcb72.../custody7e017bf9... preserved.
-Goal33 ninefits30cells rejected/independentvalidationINCOMPLETEf2497a17.../
-runtime_budget, custody3456fe65... remains closed. No fourth retry/rescue.
-Goal52 stored prepublication351.608s excluded final publication; conservative
-postreturn455.702s/d0ed6fe0.../review0347477d... retained.
-Claude unavailable is no agreement or global hold. No labels, predictions,
-prices, weights, credentials or broker private values on this stateboard.
+Closed Goal31/33 failures/incomplete validation, Goal52 clock limitations,
+Goal73 technical recovery remain in exact immutable roots/Git/shared custody.
+Claude unavailable is not agreement or a global hold; refreshed P75 categorical
+supported-with-limits after operator login is not an authority grant.
+No labels/predictions/prices/weights/credentials/private broker values here.

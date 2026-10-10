@@ -2,58 +2,54 @@
 
 ## Objective
 
-Complete kis-stock-feature-gate-depth-development-v1: determine whether one
-predeclared deeper training endpoint improves the screened Goal69 feature-only
-exact-book gate after costs. Not a rescue of rejected inventory/quantile work.
+Complete kis-stock-feature-gate-paper-entry-preparation-v1: connect the retained
+Goal69 feature-only gate to the original rank1/.01 Paper entry as a source-only
+keep/veto adapter, with exact input binding and recovery-first behavior.
 
-## Frozen Scientific Scope Before Allocation
+## Scope And Parallel Packages
 
-A=D:/thericher-v2/model-artifacts; M=D:/market_data. Reuse original Score735/
-Core, seven OLD/CURRENT bindings, feature caches, causal teacher427/610 seals,
-3aec scaler/guard/reward and carried accounting. No acquisition/source union,
-broker inventory, new framework, sealed holdout or extra teacher inference.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+Preparation root: A/execution/kis-stock-feature-gate-paper-entry-preparation-v1.
+Retained gate7998c3410d9... and Goal72 forecast54a52e8d... only.
+Do not adopt rejected depth32/inventory/quantile or manufacture conjunction
+experts. Original SessionDecision, proposal, receipt, input, route, lifecycle,
+clock, expiry, .01 target and shared10% basis stay unchanged. No reranking,
+resizing, redistribution or replacement request.
 
-One cold seed101 fit799, unchanged TCN60x2/static4/head20/no inventory input,
-Adam.001/clip1/deterministic/TF32off. EXACT32 chronological sampled full-path
-updates; final32 only is a candidate. No warm-start from retained799, stopping
-on CURRENT, best-checkpoint selection or substitution of an earlier endpoint.
-TRAIN diagnostics may describe optimization only.74 overlapping review blocks
-remain74 nominal blocks, not2368 independent observations or convergence.
-Same fixed zero-baseline exact reward-to-go; parameters fixed within each path.
+Engine owns pure typed slot binding; Execution owns new-entry-only worker;
+parent integrates pinned forecast readback, caller/job preparation and Git.
+Resolve exact existing seed/reservation/known or unknown BUY BEFORE gate.
+Retained BUY, close, recover_buy and recover_sell bypass unavailable/false gate.
+An unavailable/mismatched gate suppresses ONLY a genuinely unstarted entry.
+Freeze pre-open forecast facts separately from actual call-time clocks; no
+backdated timestamp or stale forecast treated as fresh. Do not load Torch or
+arbitrary public model code into broker execution.
 
-36 CURRENT cells: depth32, retained feature-gate4, signed60, prefix_mean,
-original TCN20, cash x whole/fractional_reference x roundtrip5/10/20bps.
-10 means5bps each actual leg. Original top10/.01 quantities FIRST, strict>.5
-accept or zero only; no rerank/refloor/resizing/redistribution. FinalOPEN111.
-Mainwhole10 kill: growth>0/accepted>0; utility greater than retained4 AND all
-other controls by1e-10; drawdown<=retained4. Other cells are fixed diagnostics,
-never outcome-selected winners. Missing/incomplete comparisons prove no depth
-value. Cache exact final predictions before quote and replay with zero extra
-fit/inference. All retained models/forecasts/failures/debits remain immutable.
+Independent review falsifies source/full-peer/frame/model/input/session/route/
+selected-key binding, recovery precedence and original identity/size retention.
+Use actual canonical interfaces and retained metadata plus synthetic tests.
+Data independently reviews sparse-preserving512 source preparation; no actual
+materialization or numerical outcome-based universe selection in this objective.
 
-## Parallel Packages And Closure
+## Completion Evidence And Limits
 
-Engine prepares fresh actor_depth and fixed36 replay; Data/Infra reuses exact
-cached/native input and numeric head20 reload; Execution independently checks
-quantity/fee/carry parity. Parent freezes exact released hashes/API contract,
-CPU smoke then ONE inclusive600s GPU appointment (570work/30cleanup).
-No new OLD teacher calls. Verify REAL nested canonical API/DTO handshakes before
-allocation; reuse existing lease/deadline/reaping/source-audit mechanisms.
-Independent review checks final32-only, exact frozen controls/kill and cache.
-Ask Claude for current concise breadth-to-depth falsification challenge; a
-failed CLI yields no verdict/agreement and does not block independent research.
+Released sources, exact original/forecast metadata linkage, focused independent
+tests and current-goal verification. Closure is preparation, NOT deployment,
+submission, fill, account reconciliation or model qualification. A coherent
+Action-only cutover is a separate material objective; no second entry writer.
+Five-session research payoff versus same-session Paper exit is an explicit
+provisional integration mismatch, not profitability validation or alpha.
 
-Goal73 COMPLETE/REJECTED/bd36e88e... at A/research/kis-stock-inventory-gate-development-v1/integration-evidence.json.
-One CUDA fit/24cells: growth+.6923% but utility below retained4 and TCN.
-R13459347a... unknownfit1/debit64.183348s retained; R2d502b67c... complete
-148.199365s, no refund. Quantile30b0b842... already3fits/30cells/rejected.
-Recommendation19e65339... is not an allocation or promotion.
-Seen/revised/current-listed/non-PIT/non-TR/finality/availability unknown:
-no alpha, fresh replication, sealed access, broker PnL or Paper replacement.
+Goal74 COMPLETE/REJECTED20f76713... at
+A/research/kis-stock-feature-gate-depth-development-v1/integration-evidence.json.
+ONE CUDA799fit/32updates/52predictions/36cells/365.881243s<600.
+Whole10 growth1.5549% versus retained4 2.1789%; utility lower/DD higher.
+No rescue training or Paper replacement. Original forecasts/used bytes/debits
+remain immutable. Chronos same-CURRENT ranking already answered/rejected.
 
-Existing Dataab65b62b.../Paper2d616950... owners/model/shared10% basis/pending
-identity and next_due unchanged; never foreground-wait or manually launch them.
-Focused package checks, company verification per AGENTS.md, commit/push,
-replace with exactly ONE material next objective and continue. Artifacts on A/
-data on M/D:15% floor. No .env/KIS_LIVE_*, paid/unclear rights/public exposure/
-major runtime replacement.
+Existing Dataab65b62b.../Paper2d616950... tasks, owners, dates, budget and pending
+identity unchanged; no manual task/KIS/Docker broker invocation here. Claude
+after renewed login: supported-with-limits, categorical external receipt only.
+Artifacts on A/data on M/D:15% floor. No .env/KIS_LIVE_*, paid/unclear rights/
+public exposure/major runtime replacement. Verify, commit/push, replace with
+exactly ONE material next objective and continue another ready lane.

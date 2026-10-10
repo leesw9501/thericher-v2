@@ -1,6 +1,33 @@
 # Runbook
 
-## Current Research Dispatch
+## Current Dispatch
+
+Goal74 fixed-depth32 COMPLETE/REJECTED at
+D:/thericher-v2/model-artifacts/research/kis-stock-feature-gate-depth-development-v1/integration-evidence.json
+20f76713...; actual D:/thericher-v2/model-artifacts/bg/d7a15afd27ea4d31b9416ac02971ca62/actual-invocation.json
+d613db91.../contract2e3c6df8.../model e03b6191... . ONE CUDA799fit/exact32
+updates/finalonly/52predictions/36cells; OLDteacher/cachedextra/sealed/Paper0.
+Publication365.881243s12:26:38.871851UTC<600 includes save/readback/audits,
+not future stdout. Independent6 review134428c5...; source26serial5.85s,
+adapter2/.24s/fullclean8 15343pass22skip35warnings/343.01s/helper0/reaped,
+JUnit D:/thericher-v2/model-artifacts/verification/full8-20261010-g74/pytest.xml
+a901984d...; Ruff/three sample Compose pass. Reuse for documentation closure.
+Whole10 growth1.5549% vs retained4 2.1789%, lower utility/higher DD: rejected.
+No rescue checkpoint/seed or Paper adoption; used bytes/debits immutable.
+
+NEXT_CODEX_GOAL.md owns ONE source-only retained4 Paper-entry preparation at
+D:/thericher-v2/model-artifacts/execution/kis-stock-feature-gate-paper-entry-preparation-v1.
+Slot62519dd7.../13 and worker090878a7.../21 tests released; parent integrates
+caller/job/actual metadata. Recovery-before-gate/EXIT bypass, exact original
+rank1/.01/shared10% input/clock/identity preserved. Five-session model/day-Paper
+horizon mismatch explicit; no deployment/fill/alpha. Existing owner tasks not
+manually invoked or modified. Claude after operator login supported-with-limits
+in claude-challenge-after-login.json; prior auth failure unchanged.
+Parallel sparse-preserving512 source0bbd40bd.../14 tests is not actual512 view.
+Chronos41cd63c0... same-CURRENT ranking already answered/rejected; no duplicate
+training for utilization. Current projections supersede commands below.
+
+## Superseded Research Dispatch
 
 Goal73 COMPLETE/REJECTED bd36e88e... at
 D:/thericher-v2/model-artifacts/research/kis-stock-inventory-gate-development-v1/integration-evidence.json.

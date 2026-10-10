@@ -70,8 +70,21 @@ checks analytical prior-state/quantity/actual-leg fee/final liquidation sources,
 not private price replay or broker parity. Accepted24 differs from fills46;
 mainwhole10 growth+.6923% but utility fails retained4 andTCN. Its modelb9f1dee2...
 is not a Paper input. No private Paper/account state, quantity expansion,
-redistribution, new schedule, budget or model change. Next fixed-depth32 source
-study retains the same analytical accounting; final-only36cells are undeployed.
+redistribution, new schedule, budget or model change. Goal74 fixed-depth32
+COMPLETE/REJECTED20f76713.../d613db91... oneCUDAfit/36cells/365.881243s,
+growth1.5549% but utility lower/DD higher than retained4; model undeployed.
+Current source-only Paper-entry preparation at
+A/execution/kis-stock-feature-gate-paper-entry-preparation-v1:
+worker090878a7.../21 tests and slot62519dd7.../13 tests, parent caller integration
+and independent recovery review underway. Exact existing BUY/seed/unknown
+submission lookup before keep/veto; EXIT/recover_buy/recover_sell bypass gate.
+Only original unstarted rank1/.01 entry may be vetoed; no rerank/resize/basis/
+clock/expiry/identity change. Pre-open forecast time is not broker call time.
+Retained4 Goal69/Goal72 forecast only, no rejected depth32/inventory substitution.
+Five-session research versus same-session Paper is experimental mismatch,
+not profit/model qualification. Current owners/actions unchanged; preparation
+is not installation/submission/fill. Claude after login supported-with-limits
+in exact P75 categorical receipt, not an authority grant.
 Retained binary/signed/conjunction forecasts preserve distinct as_of values.
 Source-only typed maskb5237628.../43 tests/six independent checks remains
 undeployed; no future result or Data qualification follows from its existence.

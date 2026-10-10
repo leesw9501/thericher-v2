@@ -71,10 +71,19 @@ OLD/CURRENT only; actual7ca90fb3.../d502b67c... completed oneCUDAfit/24cells,
 zero provider/new rows/OLDteacher/cached extra. Input/source hashes unchanged.
 Own prior-CLOSE marks are analytical, never broker inventory/futureOPEN.
 Independent6 ca5be954... verifies links, not private causal rows or PIT vintage.
-Next fixed-depth32 source preparation reuses the same original seven bindings,
-factory17a081f1.../causal427610 caches and OLD scaler; no acquisition/source union
-or new temporal qualification. Quantile30b0b842... already3fits/30cells/rejected.
-Future endpoint owners/next_due and raw limitations remain unchanged.
+Goal74 fixed-depth32 COMPLETE/REJECTED20f76713... uses the same seven bindings,
+factory17a081f1.../causal427610 caches and OLD scaler; oneCUDAfit/36cells,
+no acquisition/source union or new temporal qualification. Sources unchanged.
+Current parallel Data package at A/data/kis-stock-broad512-preparation-v1:
+source0bbd40bd.../14 synthetic tests, independent review underway. Original128
+plus first384 sorted additional keys from pinned2119 index BEFORE numeric or
+coverage filtering; sparse/empty retained, four unchanged128 metadata binds.
+Readiness6c8b48f9... records26368 chunks/4,861,551 declared bars,
+1089complete1030source_limited/0zero or quarantine through2026Jul28. Not October
+refresh/common-calendar/PIT/action/TR proof; raw bytes not attested by inventory.
+No actual512 materialization/row load/provider call yet. Exact old inputs and
+future endpoint owners/next_due unchanged; sparse source prep cannot qualify
+Paper or become a global gate. Quantile30b0b842... already3fits/30cells/rejected.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.
