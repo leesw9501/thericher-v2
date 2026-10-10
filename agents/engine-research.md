@@ -1,82 +1,65 @@
 # Engine Research Stateboard (매매 엔진 연구 담당)
 
 Current projection only; AGENTS.md owns policy/NEXT_CODEX_GOAL.md ONE goal.
-A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git68b19ea/exact roots.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact roots.
 
-## Current Result And Work (2026-10-10 KST)
+## Current Result And Work (2026-10-11 KST)
 
-Goal74 COMPLETE/REJECTED20f76713... at
-A/research/kis-stock-feature-gate-depth-development-v1/integration-evidence.json.
-Actuald7a15afd.../d613db91.../contract2e3c6df8...; CPUtoy1/CUDAfit7991/
-coldseed101/exact32 updates/finalonly/52CURRENT predictions/36cells.
-OLDteacher/cached-extra/sealed0. Finalmodele03b6191... external, undeployed.
-Publication365.881243s12:26:38.871851UTC<600 includes save/readback/audits,
-not future stdout/integration. Reaped/absent/released unchanged producer facts.
-Independent6 structural review134428c5... excludes independent private price
-replay/causal row/OS cleanup proof.
+Goal77 broad512 OC comparison COMPLETE/REJECTED at
+A/research/kis-stock-broad512-oc-ranking-development-v1/integration-evidence.json.
+Actual recovery-r3/e95dfab8.../contract20bd8f65.../precommitfa74eebc.../
+result79b4f571...:3 CUDA neural +3 ridge fits/9522updates/final6/cold101,
+train379/529/679/OOF260/DEV80/all36 economic cells; no missing selected payoff.
+Numeric Data512/360686rows/391full800/121sparse/manifestfd559b22.../
+packed409fd7ad...; original800 May17,2023..Jul27,2026 and128-first order.
+R2 path failure6.581s/0fits preserved; R3 finalization351.453s under same1200s.
+DEV10 attention-14.2676%/U-2.02821/DD31.9094%; momentum-9.3354%.
+Ridge+5.5337% still U-.685786 and20bps-2.5802%, cash0; NOT a selected winner.
+All fixed candidate kills reject. Three model files external, no tuning rescue.
+Independent6 review35648e50... matches links/signature/clock/count/header/kill,
+not model values/private price replay/PIT/finality/OS proof. Diagnostics narrowed
+before fitting; no missing MSE/RankIC/turnover claim. Seen availability assumed.
+Serial291/17.94s/fullclean8 15343/22/372.83s/JUnit439abdad...; Ruff/three Compose.
 
-Whole10 depth32 growth1.55490985%/utility.0715674531/DD.80738557%/
-accepted60/fills90. Retained4 growth2.1789461%/.1025459816/DD.39310183%;
-signed utility.08270527. Fixed utility and DD kill rejects. No rescue endpoint
-or seed;74 overlapping paths are not2368 independent samples/convergence.
-Seen/revised/non-PIT/current-listing/non-TR/action/finality/availability limits.
-26serial5.85s/fullclean8 15343/22/343.01s/helper0/JUnita901984d...;
-Ruff/three sample Compose pass; no documentation-only full rerun.
-
-Current Engine package: released pure typed original-slot adapter62519dd7.../
-13 synthetic tests at A/execution/kis-stock-feature-gate-paper-entry-preparation-v1.
-Retained4 gate799/Goal72 frozen forecast ONLY; source/input/fullpeer/frame/model/
-session/route/selected-key binding, strict>.5 keep ORIGINAL proposal or veto.
-Never rerank/resize/redistribute/renew model clocks. Caller integrates pre-open
-decision facts separately from actual execution time; no fake timestamp.
-Five-session research target versus day-Paper exit is provisional mismatch,
-not alpha qualification. Recovery/EXIT never depend on this gate.
-Goal75 source preparation COMPLETE1e7083c7...; r2/job b860f41a.../recordc476bf1a...,
-canonical735/R57 framebe351c18... reconstructed network-none/37.874962s,
-0fit0inference0broker. Independent caller12/worker8 and core42 pass; chronology
-fixed in fresh R2, original record not backdated. No deployment/performance claim.
-Goal76 static delivery COMPLETEb5c9c5a2.../cutover5e271bed... delivered existing
-enter/close Actions to b860f41a... with original sizing/basis/dates intact.
-Future Paper runtime still unobserved; no profitability/fill qualification.
-Current company objective: kis-stock-broad512-oc-ranking-development-v1.
-Source precontract at A/research/kis-stock-broad-ranking-preparation-v1:
-MASTER officialde8f585.../MIT, token-preserving temporal/per-time cross-stock
-attention, matched next-session OPEN->CLOSE/20bars, momentum/ridge/cash controls.
-Prior flattened peer/TCN/rule selection history remains; no family reset.
-Exact Data numeric manifest pending; proposed contract is NOT GPU-eligible yet.
-Bind actual Data512, freeze target/split/availability/cost/kill/family1200s before
-CPU smoke/three final6-epoch neural fits max. No upstream data/pickle/Qlib,
-framework replacement, sealed holdout or Paper adoption. Steward owns GPU.
+Current ONE objective: kis-stock-broad512-five-session-risk-cohort-development-v1.
+Frozen source proposal9e26a793... at A/research/kis-stock-broad512-next-hypothesis-v1.
+Engine source preparation at
+A/research/kis-stock-broad512-five-session-cohort-implementation-v1.
+One prior21-bar policy: momentum20 top10 -> fixed continuation hurdle.003 ->
+bounded inverse-vol size/gross<=.50/name<=.10/triangle-risk.08 -> OPEN(j) entry,
+constant quantities, CLOSE(j+4) exit. Veto cash, no redistribution.
+Typed five-session clocks/true daily NAV; never backdate final close into OC.
+Compare cash/momentum50%/ridge50%, same sparse input/causal features.
+CPU family600s includes <=3 ridge fits/replay/audits/publication60s reserve,
+4GiB/2threads. No neural/GPU here, no utilization job or operator hold.
+Independent Execution synthetic local_paper fee/cash/quantity/NAV/FIFO parity;
+Data binds existing input, not a new fetch/full index scan. Parent freezes
+contract/Claude challenge and owns actual invocation/integration/Git.
+This joint policy tradeoff is not exposure-matched alpha/component attribution.
+Multi-day raw-action/non-TR/current-listing/non-PIT/availability limits remain;
+at most non_promoting_followup_only, not Paper adoption.
 
 ## Breadth / Depth / Replication
 
-Goal69 screen77d3728c.../retained7998c3410d9... passed four-update development
-kill, not convergence. Goal72 forecast4bcf81db.../54a52e8d...42peers/twoCPUcalls/
-ninekept onecashmask is undeployed, not a rank1 Paper result.
-Goal73 inventorybd36e88e... rejected; R1unknownfit1/debit64.183348s and
-R2d502b67c... remain immutable/unrefunded. Quantile30b0b842... already3CUDAfits/
-30cells/rejected. Chronos readiness41cd63c0... identifies already-answered
-same-CURRENT ranking36cells/104CUDA calls/0fits/rejected, not an unrun family.
-LSTM/GRU/attention/Patch/Mixer/ML/rule/public-model closed history stays exact.
-Do not train simply to occupy GPU or relabel seen data as replication.
+Preserve rejected Goal74 depth32 20f76713... and Goal73 inventorybd36e88e...
+including unknownfit1/debit64.183348s/R2d502b67c..., quantile30b0b842...,
+and LSTM/GRU/attention/Patch/Mixer/ML/rule/public-model history in exact roots/Git.
+Chronos41cd63c0... same-CURRENT ranking already36cells/104CUDA calls/rejected;
+not an unrun family to occupy GPU. Seen reuse is not independent replication.
+Retained Goal69 four-update799 model/gate7998c3410d9.../77d3728c... and Goal72
+forecast4bcf81db.../54a52e8d... remain unchanged. Goal76 installed b860 keep/veto
+controls only original rank1/.01 Paper proposal; future runtime unobserved.
+Five-session model versus same-session Paper is provisional horizon mismatch.
+No Torch/public-model code in broker image or profitability gate on Paper.
 
-Data source expansion fresh82bd0d08.../8 tests repairs exclusive publication;
-original128 plus384 identities still frozen before numeric filtering. Actual
-index438MB exceeds old32MiB cap: fresh streaming metadata repair is dispatched,
-not a model/rights hold or actual512 numeric view.
-Fresh replication remains owned Oct12OPEN->Oct19OPEN42-peer data, not foreground
-wait. Aligned OOF/cost/availability required for comparative ensemble claims,
-not for separately authorized provisional Paper execution.
+## Inputs And Resources
 
-## Inputs And Resource Limits
-
-Original stockOLD128/800/87974, CURRENT113/14073/sevenbindings;
-cachesOLD734/36307/CURRENT52/3339, originalScore735/Core/factory17a081f1... .
-Separate f78/remainder remain separate. Trio2686dates and M1SPYQQQ25complete
-sessions support explicitly seen development; Oct7QQQ389/SPY390 incomplete.
-Broad metadata2119 historical identities/4,861,551 declared bars is not a
-common-calendar/PIT/current snapshot. Data owns sparse preservation/actual loader.
-RTX4090/Torch2.7+cu128 works; GPU free after depth rejection. No approval or
-environment hold; next useful frozen research appointment, not dummy training.
-Claude after renewed login supported-with-limits in exact P75 receipt; prior
-auth failure stays recorded, no reserved authority granted. Generated artifacts D:.
+Original OLD128/800/87974; CURRENT113/14073/sevenbindings and feature caches
+OLD734/36307/CURRENT52/3339 unchanged. Separate f78/remainder remain separate.
+Trio2686 dates and M1SPYQQQ25 complete sessions support explicitly seen studies;
+Oct7QQQ389/SPY390 incomplete. Broad2119 metadata is not common-calendar/PIT/
+current proof; actual sparse512 is now numerically materialized, not pending.
+RTX4090/Torch2.7+cu128 works; free after three actual CUDA fits. No GPU approval/
+environment hold. Next useful frozen appointment, not repeating failed families.
+Fresh42-peer Oct12OPEN->Oct19OPEN owned Data pair remains independent next_due,
+not a foreground wait or research permission gate. Artifacts stay on D:.

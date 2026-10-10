@@ -1,6 +1,6 @@
 # Execution Stateboard (페이퍼 실행 담당)
 
-Current projection 2026-10-10 KST. AGENTS.md owns authority; company goal in
+Current projection 2026-10-11 KST. AGENTS.md owns authority; company goal in
 NEXT_CODEX_GOAL.md. Closed history in Git9ae7eec/RUNBOOK/immutable artifacts.
 Compaction never adopts, deletes, replaces or retries an intent.
 A=D:/thericher-v2/model-artifacts.
@@ -22,8 +22,12 @@ created, no manual task/KIS/credential/order call. Retained BUY first; EXIT and
 recovery bypass. Future submit/fill unknown, horizon mismatch provisional.
 Independent R433pass/Ruff; full8 15343/22/377.49s/JUnitfc4768ca.../helper0,
 repo Ruff/three sample Compose pass. R1 three faults/R3 preflight fail preserved.
-Next parallel Execution package: source-only exact b860/new-root offline outcome
-reader adaptation; old original-job reader is historical, not current-job proof.
+Current exact b860/new-root offline outcome reader source released at
+A/execution/kis-stock-retained-gate-paper-outcome-reader-v1:
+readerd8ea50a8.../113 synthetic tests/.40s/Ruff passed. Gate veto/unavailable
+categories cannot conceal retained/unknown recovery or EXIT; strict source and
+full-root binding. Private bank verification stays false. No actual outcome or
+private state read; old original-job reader is historical, not current-job proof.
 
 Goal53 coherent delivery COMPLETE73580933.../cutover24b85d81... at
 A/execution/kis-stock-repeatable-session-delivery-v1. Original job2d616950...
@@ -91,23 +95,30 @@ is not a Paper input. No private Paper/account state, quantity expansion,
 redistribution, new schedule, budget or model change. Goal74 fixed-depth32
 COMPLETE/REJECTED20f76713.../d613db91... oneCUDAfit/36cells/365.881243s,
 growth1.5549% but utility lower/DD higher than retained4; model undeployed.
-Current source-only Paper-entry preparation at
+Completed Goal75/76 Paper-entry preparation and delivery at
 A/execution/kis-stock-feature-gate-paper-entry-preparation-v1:
-worker090878a7.../21 tests and slot62519dd7.../13 tests, parent caller integration
-and independent recovery review underway. Exact existing BUY/seed/unknown
+worker090878a7.../21 and slot62519dd7.../13, caller12/independent worker8 passed.
+Exact existing BUY/seed/unknown
 submission lookup before keep/veto; EXIT/recover_buy/recover_sell bypass gate.
 Only original unstarted rank1/.01 entry may be vetoed; no rerank/resize/basis/
 clock/expiry/identity change. Pre-open forecast time is not broker call time.
 Retained4 Goal69/Goal72 forecast only, no rejected depth32/inventory substitution.
 Five-session research versus same-session Paper is experimental mismatch,
-not profit/model qualification. Current owners/actions unchanged; preparation
-is not installation/submission/fill. Claude after login supported-with-limits
+not profit/model qualification. Existing owners now have b860 Actions; source
+and installation are not submission/fill. Claude after login supported-with-limits
 in exact P75 categorical receipt, not an authority grant.
 Retained binary/signed/conjunction forecasts preserve distinct as_of values.
 Source-only typed maskb5237628.../43 tests/six independent checks remains
 undeployed; no future result or Data qualification follows from its existence.
 Original R57 Score735 matches host; canonical typed objects are reconstructed,
 never translated from an older Score35 namespace.
+
+Goal77 actual broad512 attention comparison rejected; independent6 result
+review35648e50... verifies links/counts/headers/aggregate kill, not broker parity.
+Current Goal78 Execution package at
+A/execution/kis-stock-five-session-cohort-accounting-parity-v1 independently
+tests synthetic five-day cash/quantity/fees/daily-NAV/FIFO with local_paper.
+No production RiskLimits, broker route, basis, private state or schedule change.
 
 Dataab65b62b... still owns42-peer Oct13/20 endpoint observations. No manual
 launch or broker call is part of this research work. Closed research/debits and

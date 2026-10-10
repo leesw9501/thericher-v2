@@ -1,54 +1,46 @@
 # Research Steward Stateboard (연구 자원 및 평가 관리자)
 
 Current resource projection only; AGENTS.md owns policy/NEXT_CODEX_GOAL.md ONE
-goal. A=D:/thericher-v2/model-artifacts; history Git68b19ea/external custody.
+goal. A=D:/thericher-v2/model-artifacts; history Git2094757/external custody.
 
-## Current Resources (2026-10-10 KST)
+## Current Resources (2026-10-11 KST)
 
-GPU free after Goal74 COMPLETE/REJECTED20f76713... at
-A/research/kis-stock-feature-gate-depth-development-v1/integration-evidence.json.
-Actual A/bg/d7a15afd27ea4d31b9416ac02971ca62/actual-invocation.json
-d613db91.../contract2e3c6df8...: oneCUDA799 fit/coldseed101/exact32 updates/
-finalonly/52CURRENTpredictions/36cells/0OLDteacher/cached-extra/sealed/Paper.
-Finalmodel e03b6191... stays external; no allocation to rescue seed/depth128.
-Publication365.881243s12:26:38.871851UTC<600 includes final save/readback/audits;
-excludes future stdout/integration. Reaped/absent/released/unchanged producer
-facts, not independent OS cleanup proof. Independent6 review134428c5...
-supports exact header/actions/aggregate kill, not private quote replay.
-Depth utility.07157<retained4.10255 and DD.8074%>.3931%: fixed kill rejected.
+Goal77 GPU appointment COMPLETE/REJECTED at
+A/research/kis-stock-broad512-oc-ranking-development-v1/recovery-r3.
+Actuale95dfab8.../contract20bd8f65.../precommitfa74eebc.../result79b4f571...;
+signed custodyeabf49fa... binds numeric512 manifestfd559b22....
+3 CUDA neural/3 CPU ridge/9522updates/final6/cold101; no sealed holdout.
+Original1200s family clock includes R2 path failure6.581s/0fits and repair;
+finalization351.453s, no reset/refund or duplicate scientific fit.
+Three final numeric NPZ models stay external; rejected, no Paper adoption.
+Independent6 review35648e50... verifies exact links/clock/header/count/kill,
+not weight values, private price replay or independent OS cleanup.
+Parent command reaped, exact owned container removed, lease absent observed.
+GPU free after completion. Snapshot during OOF2: RTX4090/24564MiB,
+42% device utilization/2092MiB used; not an allocation or training-average measure.
 
-26serial5.85s/adapter2/.24s/fullclean8 15343/22/343.01s/JUnita901984d.../
-helper0; Ruff/three sample Compose passed. No doc-only full rerun.
-Prior inventorybd36e88e.../R1unknownfit1/debit64.183348s/R2d502b67c... retained.
-Quantile30b0b842... already3fits/30cells/rejected. Chronos readiness41cd63c0...
-same-CURRENT hypothesis already36cells/104CUDAcalls/rejected; not ready duplicate.
-No refund/reset/relabeling of historical resource or evaluation spend.
+Goal78 five-session risk-cohort preparation uses one CPU family600s/4GiB/
+2threads and <=3 ridge fits, publication reserve60s inside600.
+No neural/GPU appointment in this particular policy/accounting study.
+Fresh typed five-session labels and cash/NAV accounting must be frozen before
+fits. Seen/raw-action/current-listing/non-PIT/non-TR/availability limits remain.
+A new useful frozen GPU hypothesis may be dispatched without operator approval;
+do not allocate a dummy job or treat the CPU package as a project-wide GPU ban.
 
-Goal75 source preparation COMPLETE1e7083c7.../job b860f41a.../recordc476bf1a...,
-0fit0inference/GPU. Goal76 static delivery COMPLETEb5c9c5a2... . Current objective
-is broad512 matched next-session OC ranking development; new source precontract
-MASTERde8f585.../MIT at A/research/kis-stock-broad-ranking-preparation-v1.
-Actual numeric Data manifest pending: no GPU appointment yet. Freeze one
-family1200s/three neural and ridge fits/final6epochs/seed101, exact OOF/DEV and
-cost/kill/sample rules before CPU/GPU. Same historical dates remain seen.
-Latest GPU snapshot RTX4090/24564MiB/1449used/6% total utilization, no research
-allocation proved by that device snapshot alone. No environment/approval hold.
-Next research appointment requires a new useful frozen contract, e.g. explicit
-broader sparse panel after actual loading; no artificial utilization campaign.
-Retained69 model8c3410d9.../Goal72 forecast54a52e8d... stays immutable.
-Five-session model versus day-Paper integration is not new performance evidence.
+## Lineage And Allocation Discipline
 
-## Allocation Discipline
+Retain Goal74 depth32 rejected20f76713..., Goal73 inventorybd36e88e... including
+unknownfit1/debit64.183348s/R2d502b67c..., quantile30b0b842...3fits/rejected,
+Chronos same-CURRENT41cd63c0... already104CUDA calls/rejected, and prior
+LSTM/GRU/attention/Patch/Mixer/ML/rule/public-model evidence in exact roots/Git.
+No rescue seed/epoch, refund/reset or relabeling as fresh replication.
+Goal69 model/Goal72 forecast and installed Goal76 b860 Paper owners unchanged;
+five-session research versus day-Paper horizon is not performance validation.
 
-Freeze dataset/target/split/availability/window-horizon matrix/cost/control/
-strongest kill/source/runtime/artifact root and finite compute budget BEFORE
-actual fit. Seen reuse never independent replication. One GPU lease, first
-useful ready contract; replication/underrepresented mechanisms win a real tie.
-Execution preempts safely; release only after reaping. CPU/preparation lanes
-continue independently. No source edits after use, unknown counter reset or refund.
-
-Closed Goal31/33 failures/incomplete validation, Goal52 clock limitations,
-Goal73 technical recovery remain in exact immutable roots/Git/shared custody.
-Claude unavailable is not agreement or a global hold; refreshed P75 categorical
-supported-with-limits after operator login is not an authority grant.
+Freeze data/target/split/availability/window-horizon/cost/control/kill/source/
+runtime/artifact root and finite compute BEFORE actual fit. One GPU lease,
+first ready useful contract; replication/underrepresented mechanisms win a tie.
+Execution preempts safely; release after reaping. CPU/preparation lanes continue.
+Claude unavailable is not agreement or a global hold; Goal77 categorical
+supported-with-limits49afe4eb... grants no reserved authority.
 No labels/predictions/prices/weights/credentials/private broker values here.

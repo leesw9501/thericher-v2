@@ -2,63 +2,67 @@
 
 ## Objective
 
-Complete kis-stock-broad512-oc-ranking-development-v1: turn the lawfully retained
-broader sparse stock panel into one bounded matched-payoff ranking experiment,
-with actual numeric input, CPU smoke, and eligible GPU work if input tests pass.
-
-## Scope And Ownership
+Complete kis-stock-broad512-five-session-risk-cohort-development-v1: compare
+one prior-only selector/buy/size/exit policy with actual daily inventory and cash
+accounting, reducing turnover from the rejected daily liquidation experiment.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal76 static delivery COMPLETEb5c9c5a2... at
-A/execution/kis-stock-retained-gate-paper-delivery-v1/integration-evidence.json.
-Existing Paper enter/close Actions now use job b860f41a.../runner16001388...;
-names, dates, non-Action definitions, rank1/.01, lifecycle/private volume/shared10%
-basis unchanged. Cutover5e271bed... is NOT runtime/submit/fill evidence.
-Dataab65b62b... endpoints/owned next_due unchanged; no manual task or broker run.
+Goal77 complete/rejected; closure at
+A/research/kis-stock-broad512-oc-ranking-development-v1/integration-evidence.json.
+Source proposal9e26a793... at A/research/kis-stock-broad512-next-hypothesis-v1/proposal.json.
+No seed/epoch rescue, ridge-winner substitution, sealed access or Paper adoption.
 
-Data owns ONE actual numeric invocation of released driver6e8af7f1... under
-A/data/kis-stock-broad512-numeric-preparation-v1, precommit96a5a95e... .
-Exact final57cc... streaming rebind BEFORE any numeric parse; original128 plus
-first384 sorted identities, original800 calendar, all sparse/empty preserved.
-Output M/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-prepared-stream512-v1.
-900s inclusive parent budget/850s child; supervise whole command, kill/reap exact
-owned tree if due. Readback/count/source audit before exclusive manifest publish.
-One-target numeric memory, D:15% floor, no failed-output reuse or overwrite.
-Do not relax global caps, select identities by outcomes, or claim PIT/TR/finality.
+## Parallel Packages
 
-Engine owns ONE new token-preserving temporal/per-time cross-stock attention
-mechanism, not another flattened peer/TCN gate rerun. Source precontract at
-A/research/kis-stock-broad-ranking-preparation-v1/precontract-source-receipt.json:
-official MASTER/de8f585.../MIT; no upstream pickle weights/data/Qlib install.
-After Data publishes, bind exact manifest/calendar/identity/numeric/source hashes,
-freeze features ending d_j-1, target d_j OPEN->CLOSE, fixed20 window, fixed
-chronological OOF1/OOF2/DEV and purges, costs5/10/20bps, cash/momentum/ridge
-controls, family lineage, sample/strongest kill and finite compute before fitting.
-Ask Claude for actual frozen sampling/target challenge, categorical verdict only.
-One family1200s including loading/CPU/GPU/readback/publication, three neural/
-three ridge fits max, final6 epochs only, seed101, no winner/seed/depth rescue.
-No sealed holdout or comparative alpha/Paper adoption. Input support failure
-closes this exact research request, not independent Paper or Data authority.
-CPU toy/smoke first; Steward allocates exclusive GPU when actual input and
-frozen contract are ready. Existing PyTorch CUDA runtime only, artifacts on A.
+Data binds existing sparse512 input, not another acquisition/full index scan:
+M/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-recovery-r2,
+manifestfd559b22.../packed409fd7ad..., original800 May17,2023..Jul27,2026.
+Same original128-first permutation; retain all missing/sparse identities.
+No replacements, shifted folds, invented j20 anchor or action corrections.
 
-Execution owns parallel offline outcome-reader source adaptation for installed
-b860... job/new caller evidence root and new-entry veto/unavailable categories.
-Preserve exact source/start/outcome/session/intent/fill/private-parser linkage,
-retained unknown custody, count-only projection. No real private read, broker
-call, task launch, schedule expansion or replacement follow-up chain here.
-Parent integrates shared contracts/Git; agents own disjoint external roots.
+Engine owns a typed five-session cohort adapter and CPU comparison.
+Prior21 completed bars -> momentum20 original top10, fixed continuation hurdle
+.003, bounded inverse-volatility sizing, gross<=.50/name<=.10, annualized
+triangle-risk bound .08. Vetoed slots become cash without redistribution.
+Enter actual regular OPEN(j), hold constant quantities, exit CLOSE(j+4).
+Use explicit five-session clocks; never backdate the fifth close into the
+single-session ranking04df Frame/Outcomes or smear returns across daily marks.
 
-## Completion Evidence And Limits
+Execution verifies fee/cash/quantity/daily-NAV/FIFO parity using existing
+local_paper accounting and synthetic events. Preserve source: local_paper.
+No production RiskLimits, broker, basis, intent, private state or schedule edits.
+Old baseline helpers cap128; do not monkeypatch apparent512 support.
 
-Immutable numeric manifest or exact retained failure; frozen research contract,
-CPU result and eligible actual bounded comparison or scoped input_unavailable;
-independent frozen-result checks, resource/time/source facts and current-goal
-verification. No numerical input or successful fit inferred from metadata/toy.
-Seen/current-listing/non-PIT/revised/raw-action/non-TR and timing limitations stay.
-No future observations, broker PnL, fees or settled cash inferred from replay.
+Compare candidate, cash, momentum20 equal-weight50% cohort and alpha1 SVD
+ridge50% cohort. Same causal features/eligibility/cost convention.
+TRAIN entries20..395/545/695, final exits399/549/699; old20-session purges.
+OOF cohort starts420..545 and570..695 by5; DEV720..795 by5.
+Retain all130/130/80 score dates. Mark actual inventory/cash every close; charge
+half5/10/20bps roundtrip on actual entry/exit notionals. Missing held marks or
+selected payoff are scoped input_unavailable, never free liquidation/substitution.
 
-No .env/KIS_LIVE_*, paid/unclear rights/public exposure/major runtime replacement.
-Continue ready independent packages rather than external-session waiting.
-Verify, commit/push, refresh stateboards and replace with exactly ONE material
-next company objective. Never rewrite old failures, used bytes or unknown spend.
+Freeze exact data/source/clocks/target/split/cost/control/support/kill/lineage
+before fits. Ask Claude for concise falsification-first review.
+One CPU family600s covers load, preflight, <=3 ridge fits, replay, audits and
+publication;60s reserve inside600,4GiB/2threads. No neural or GPU fit in this
+specific policy/accounting study; no artificial utilization job.
+Minimum240 complete training dates each,40 supported OOF and12 DEV cohorts;
+>=8 of10 fixed25-session OOF blocks and>=3 of4 fixed20-session DEV blocks.
+
+Primary10bps kill: positive growth, utility strictly above all controls,
+DD<=both noncash controls AND .08, turnover<=momentum;20bps positive growth.
+Metrics use true daily NAV and actual turnover/fees/exposure. Joint policy
+tradeoff, not causal component attribution or exposure-matched alpha.
+No outcome-informed tuning. At most non_promoting_followup_only.
+Seen/current-listing/raw-action/non-TR/availability limits remain explicit,
+especially across multi-day holding; unknown action treatment is not repaired.
+
+## Completion
+
+Focused synthetic chronology/accounting tests, frozen CPU comparison or exact
+input_unavailable, independent frozen-result review. Verify under AGENTS.md,
+commit/push, refresh stateboards and replace with exactly one material next goal.
+Existing b860 Paper enter/close and ab65 Data opportunities remain independent.
+No foreground session wait, manual task/provider/broker invocation in this goal.
+No .env/KIS_LIVE_*, paid/unclear rights/public exposure/runtime replacement.
+Preserve used Goal77 sources/receipts and all known/unknown spend.

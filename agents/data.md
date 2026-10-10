@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-Current projection 2026-10-10 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
+Current projection 2026-10-11 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
 owns ONE goal. History in Git9ae7eec and immutable receipts, not current jobs.
 M=D:/market_data; A=D:/thericher-v2/model-artifacts.
 
@@ -10,11 +10,26 @@ A/data/kis-stock-broad512-metadata-streaming-v1 actual512 metadata binding
 completed176.891s/four128 groups/original800calendar/8tests, receipt866bce28... .
 Actual invoked683ac... bytes differ from final57cc... after formatting, exact
 pre-format archive unavailable; source AST compatibility is not byte equality.
-Next ONE actual numeric package: driver6e8af7f1.../precommit96a5a95e... at
-A/data/kis-stock-broad512-numeric-preparation-v1. Fresh final57cc rebind first,
-900s inclusive/850child/15%floor; preserve all sparse/empty and failed output.
-Output M/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-prepared-stream512-v1.
-8 synthetic tests/dry audit pass; no actual numeric view yet. No provider fetch.
+First numeric6e8af7f1.../precommit96a5a95e... failed0.362s before rows/output:
+Windows venv redirector invalidated immediate-PPID equality. Used source and
+failure stay at A/data/kis-stock-broad512-numeric-execution-v1.
+Fresh R2 at A/data/kis-stock-broad512-numeric-recovery-r2:
+driverd36db4a8.../precommit301b1c96.../watchdog26633ae4..., actual one-shot
+started2026-10-10T14:39:31UTC after4 IPC tests/5 real Windows child launches.
+Fresh output M/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-recovery-r2;
+exact57cc rebind, residual899.638s/worker849.638/post50, original900s family
+including prior0.362 debit. Actual receipt6e873e02... completed102.823s/tree5
+reaped/0active/peak158593024bytes; family spend103.185s, no retry.
+Manifestfd559b22.../packed409fd7ad...:512identities/360686rows,391full800/
+121sparse/0empty, four128 groups and original128 retained. Exact57cc metadata
+rebind and Decimal/logical-hash readback/source audits passed before publication.
+Original800 grid May17,2023..Jul27,2026, all sparse/empty retained;15%floor.
+No provider fetch, credential read, GPU, failed-output reuse or budget refund.
+
+Goal77 complete; current Goal78 binds this exact existing numeric input and
+five-session fold clocks at A/data/kis-stock-broad512-five-session-input-binding-v1.
+No acquisition/full index scan or hidden action repair. Source-safe binding
+package only; Engine owns the actual typed numeric loader/target/replay.
 
 ## Owned Collection
 
@@ -86,22 +101,17 @@ Independent6 ca5be954... verifies links, not private causal rows or PIT vintage.
 Goal74 fixed-depth32 COMPLETE/REJECTED20f76713... uses the same seven bindings,
 factory17a081f1.../causal427610 caches and OLD scaler; oneCUDAfit/36cells,
 no acquisition/source union or new temporal qualification. Sources unchanged.
-Current parallel Data package at A/data/kis-stock-broad512-preparation-v1:
-Original source0bbd40bd.../14 tests preserved; fresh source82bd0d08.../8 tests
-fixes independently reproduced final-reattest-after-publication defect.
-Actual metadata preparation encountered measured437,965,045-byte index versus
-old32MiB metadata cap, before selection/binding. No raw rows, numeric output,
-provider call or dataset rejection. Fresh bounded streaming-metadata repair at
-A/data/kis-stock-broad512-metadata-streaming-v1 is Data-owned; Paper continues.
-Original128
-plus first384 sorted additional keys from pinned2119 index BEFORE numeric or
-coverage filtering; sparse/empty retained, four unchanged128 metadata binds.
+Completed sparse512 lineage retains original0bbd40bd.../14 tests and repaired
+82bd0d08.../8 tests, old438MB/32MiB contradiction and streaming metadata source
+mismatch. Actual final57cc numeric rebinding above supersedes pending status,
+not those historical records. Original128+first384 extra keys precede numeric
+coverage filtering; sparse/empty identities and original800 dates retained.
 Readiness6c8b48f9... records26368 chunks/4,861,551 declared bars,
 1089complete1030source_limited/0zero or quarantine through2026Jul28. Not October
 refresh/common-calendar/PIT/action/TR proof; raw bytes not attested by inventory.
-No actual512 materialization/row load/provider call yet. Exact old inputs and
-future endpoint owners/next_due unchanged; sparse source prep cannot qualify
-Paper or become a global gate. Quantile30b0b842... already3fits/30cells/rejected.
+Actual numeric512 materialization is complete above; no provider fetch.
+Exact old inputs/future endpoint owners unchanged. No PIT/TR/finality or Paper
+qualification follows; quantile30b0b842... already3fits/30cells/rejected.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

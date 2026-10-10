@@ -3,39 +3,40 @@
 Current projection only; NEXT_CODEX_GOAL.md owns ONE company objective.
 History in Git/exact immutable evidence, not a second backlog.
 
-## Ready / Owned / Due (2026-10-10 KST)
+## Ready / Owned / Due (2026-10-11 KST)
 
-No company block or foreground sleep. Goal74 depth comparison COMPLETE/
-REJECTED20f76713...: oneCUDAfit32updates/36cells/365.881243s.
-Goal75 preparation COMPLETE1e7083c7.../r2job b860f41a.../recordc476bf1a... .
-Goal76 static delivery COMPLETEb5c9c5a2.../cutover5e271bed...; both existing
-Actions switched, no non-Action/basis/identity/date change or manual order.
-ONE next objective: broad512 matched OC ranking development.
+No company block or foreground sleep. Goal77 broad512 OC comparison COMPLETE/
+REJECTED; integration at A/research/kis-stock-broad512-oc-ranking-development-v1/
+integration-evidence.json. A=D:/thericher-v2/model-artifacts.
+ONE objective: kis-stock-broad512-five-session-risk-cohort-development-v1.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Goal76 closure and actual Data/research contracts; sole Git/runtime owner. |
-| Verification | Parent / reaped | R433focused/fullclean8 15343/22/377.49s/helper0; Ruff/three Compose. |
-| Slot adapter | Engine / released | 62519dd7.../13tests, original-slot keep/veto only; no model inference. |
-| Worker | Execution / released | 090878a7.../21tests, retained BUY before gate and EXIT/recovery bypass. |
-| Execution reader | Herschel / ready | New b860 exact outcome-reader source adaptation; no broker/private read. |
-| Data | Bohr / ready | Actual512 metadata done176.891s; numeric driver/precommit released8tests, next owned900s run. |
-| Research | Chandrasekhar / ready | Distinct matched-OC token-preserving attention precontract; bind exact numeric Data first. |
-| Direction | Claude / received | After operator login supported-with-limits, exact P75 categorical receipt; no authority grant. |
-| GPU | Steward / free | CUDA works; new useful precontract awaits actual numeric binding and CPU smoke, not approval. |
+| Git/integration | Parent | Goal77 closure, then Goal78 contract/actual CPU comparison; sole Git/runtime owner. |
+| Verification | Parent / reaped | Serial291/17.94s + fullclean8 15343/22/372.83s/helper0; Ruff/three Compose. |
+| Data | Bohr / preparing | Goal78 existing numeric512 input/clock binding; no fetch/full scan. |
+| Research | Chandrasekhar / preparing | Typed five-session selector/buy/size/exit CPU study; no old OC target reuse. |
+| Execution | Herschel / preparing | Independent synthetic local_paper cash/fee/quantity/NAV/FIFO parity. |
+| Independent Validation | Herschel / released | Goal77 six checks35648e50..., exact links/headers/aggregate kill, not price replay. |
+| Direction | Claude / received | Goal77 supported-with-limits49afe4eb...; Goal78 fresh challenge before reliance. |
+| GPU | Steward / free | Three actual CUDA fits/9522 updates completed; Goal78 CPU-only, no permission/environment hold. |
 | Data due | Existing finite owners | ab65b62b... Oct13/20 endpoints, next_due Oct12/19 21:40UTC unchanged. |
-| Paper due | Existing finite owners | Same2d616950 task names/dates now b860Action; original rank1/basis/pending, gate keep/veto only. |
+| Paper due | Existing finite owners | Same2d616950 names/dates with b860Action; original rank1/basis/pending, gate keep/veto only. |
 
 ## Bottleneck And Reversible Improvement
 
-Move a retained model decision toward executable Paper integration rather than
-repeating answered training families. Separate pre-open forecast provenance
-from actual call-time execution clocks; exact retained recovery cannot be held
-by a stale/unavailable gate. Keep source-only prep distinct from deployed fills.
-Sparse-preserving512 source expansion is a parallel CPU package; current2119
-metadata does not imply complete/common-calendar/current data.
+Daily liquidation costs and drawdown rejected the broadened attention policy.
+Test one fixed lower-turnover risk cohort using true daily cash and held marks,
+not more epochs/seeds on the failed endpoint. Separate engine policy, existing
+input binding and independent accounting ownership to run ready work in parallel.
+Freeze a real five-session clock/type before replay; do not hide target leakage
+behind the old single-session Frame. Original128-first mapping and sparse512
+support remain explicit. No new collector, GPU utilization job or Paper gate.
 
-Reuse Goal76 completed authority for doc closure, no doc-only full rerun.
-Bounded source handoffs/real canonical API checks reduce callback mismatch
-recovery; independent reviewers do not duplicate parent caller integration.
-No GPU permission/environment hold, utilization KPI or future-opportunity sleep.
+Goal77 path-interface failure0fits/6.581s and Data PPID failure0.362s remain
+charged; repaired runs completed under their original clocks. Current result
+does not rely on null parent progress-fits: independent flat ledger verifies
+3 neural/3 ridge/9522 updates. Used sources stay unchanged. Parent mock review
+2989cd57... records scoped P2 residuals; no global hold or unknown-owner wait.
+Goal76 installed opportunity is not a submit/fill; owned next_due remains
+independent. Reuse completed Goal77 authority for documentation-only closure.

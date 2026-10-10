@@ -1,52 +1,55 @@
 # Runbook
 
-## Current Dispatch
+## Current Dispatch (2026-10-11 KST)
 
-Goal74 fixed-depth32 COMPLETE/REJECTED at
-D:/thericher-v2/model-artifacts/research/kis-stock-feature-gate-depth-development-v1/integration-evidence.json
-20f76713...; actual D:/thericher-v2/model-artifacts/bg/d7a15afd27ea4d31b9416ac02971ca62/actual-invocation.json
-d613db91.../contract2e3c6df8.../model e03b6191... . ONE CUDA799fit/exact32
-updates/finalonly/52predictions/36cells; OLDteacher/cachedextra/sealed/Paper0.
-Publication365.881243s12:26:38.871851UTC<600 includes save/readback/audits,
-not future stdout. Independent6 review134428c5...; source26serial5.85s,
-adapter2/.24s/fullclean8 15343pass22skip35warnings/343.01s/helper0/reaped,
-JUnit D:/thericher-v2/model-artifacts/verification/full8-20261010-g74/pytest.xml
-a901984d...; Ruff/three sample Compose pass. Reuse for documentation closure.
-Whole10 growth1.5549% vs retained4 2.1789%, lower utility/higher DD: rejected.
-No rescue checkpoint/seed or Paper adoption; used bytes/debits immutable.
+Goal77 broad512 OC comparison COMPLETE/REJECTED:
+D:/thericher-v2/model-artifacts/research/kis-stock-broad512-oc-ranking-development-v1/integration-evidence.json.
+Actual recovery-r3/e95dfab8.../contract20bd8f65.../result79b4f571...;
+3 CUDA neural/3 ridge fits/9522updates/final6/cold101, train379/529/679,
+OOF260/DEV80 complete,36 cells. DEV10 attention-14.2676%/U-2.02821/
+DD31.9094%; ridge positive growth still fails utility/cost kill, not winner.
+No seed/epoch rescue, alpha or Paper adoption. Original1200s clock includes
+R2 control_paths failure6.581s/0fits; R3 finalization351.453s.
+Independent6 review35648e50... at
+D:/thericher-v2/model-artifacts/research/kis-stock-broad512-oc-result-review-r2/receipt.json:
+links/signature/clock/count/header/kill, not model values/private price replay/
+causal-data/OS cleanup. Parent progress-fits null stays a scoped bookkeeping
+limit; independently read actual flat ledger verifies3/3/9522. Used bytes retained.
 
-Goal75 source preparation COMPLETE1e7083c7... at
-D:/thericher-v2/model-artifacts/execution/kis-stock-feature-gate-paper-entry-preparation-v1.
-Exact r2/job b860f41a.../recordc476bf1a..., slot62519dd7.../13, worker090878a7.../21,
-independent worker8/caller12/core42 pass. R2 corrects formation chronology only;
-no frozen-record backdating. Native canonical735/R57 framebe351c18... exact
-network-none37.874962s/0fit0inference0broker. Separate as-of bindings preserved.
-Fullclean8 15343pass22skip/15365collected/360.650s XML/helper0/reaped;
-JUnit D:/thericher-v2/model-artifacts/verification/full8-20261010-g75/pytest.xml
-1ce7d136...; Ruff/three sample Compose pass. No doc-only repeat.
-Goal76 static delivery COMPLETEb5c9c5a2... at
-D:/thericher-v2/model-artifacts/execution/kis-stock-retained-gate-paper-delivery-v1/integration-evidence.json.
-Actual cutover5e271bed... at2026-10-10T14:06:53UTC/R4da403b84.../runner16001388...:
-BOTH existing enter/close Actions now job b860f41a..., non-Action definitions,
-names/dates/lifecycle/private volume/shared10% basis/rank1/.01 unchanged.
-No manual task invocation, credential read or order. Independent33 R4 tests,
-fullclean8 15343pass22skip35warnings/377.49s/helper0/reaped;
-JUnit D:/thericher-v2/model-artifacts/verification/full8-20261010-g76/pytest.xml
-fc4768ca...; Ruff/three sample Compose pass. R1 faults/R3 argv failure retained.
-Installed finite opportunity is NOT runtime/submit/fill/flat/alpha evidence;
-five-session/day-Paper mismatch stays explicit. Claude after login
-supported-with-limits bb88057f..., original failure preserved.
-Data fresh82bd0d08.../8 tests fixes manifest publication order. Actual438MB index
-versus32MiB loader cap requires bounded streaming metadata repair, no numeric512
-view or dataset rejection; independent Paper work continues. Actual512 metadata
-now bound176.891s/four128groups/8tests; actual683ac source vs released57cc differs
-after formatting, old archive unavailable. Numeric driver6e8af7f1.../precommit
-96a5a95e.../8 tests/dry audit ready, exact final57cc rebind required before rows.
-Current ONE objective kis-stock-broad512-oc-ranking-development-v1 owns actual
-sparse512 numeric view, matched next-session OC ranking/CPU smoke/eligible GPU,
-and parallel source-only exact b860 offline outcome-reader adaptation.
-Chronos41cd63c0... same-CURRENT ranking already answered/rejected; no duplicate
-training for utilization. Current projections supersede commands below.
+Actual Data R26e873e02.../102.823s/family103.185s binds exact final57cc before
+canonical readback/publication. Numeric512/360686rows/391full800/121sparse,
+manifestfd559b22.../packed409fd7ad... at
+D:/market_data/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-recovery-r2.
+Original128-first order/800dates May17,2023..Jul27,2026; no j20 anchor invention.
+Old PPID failure0.362s/metadata source mismatch preserved, not pending input.
+Goal77 serial291/17.94s/fullclean8 15343pass22skip35warnings/15365collected/
+372.83s/helper0/reaped; JUnit at
+D:/thericher-v2/model-artifacts/verification/full8-20261010-g77/pytest.xml439abdad....
+Repo/used R3 Ruff and sample default/research/accounting Compose passed.
+No doc-only full repeat. Claude49afe4eb... supported-with-limits categorical only.
+
+Current ONE objective kis-stock-broad512-five-session-risk-cohort-development-v1:
+Data existing input binding, Engine typed selector/buy/size/exit CPU comparison,
+Execution independent synthetic local_paper daily cash/fee/quantity/NAV/FIFO.
+Fresh five-session targets and clocks, constant holdings OPEN(j)..CLOSE(j+4),
+cost on actual legs; no backdated OC Outcomes or old128-cap monkeypatch.
+One600s CPU family/4GiB/2threads/<=3ridgefits/publication60s inside600.
+Fixed thresholds/controls/splits/sample blocks/kill and Claude frozen before fits.
+Seen/raw-action/non-TR/current-listing/non-PIT/availability limits remain;
+joint policy tradeoff, not exposure-matched alpha or Paper qualification.
+No GPU in this specific study, not an environment/authority ban.
+
+Goal76 installed b860 Actions remain independent future opportunities:
+D:/thericher-v2/model-artifacts/execution/kis-stock-retained-gate-paper-delivery-v1/integration-evidence.json
+b5c9c5a2.../cutover5e271bed.../runner16001388..., BOTH original task names/dates/
+non-Action definitions/private bank/shared10% basis/rank1/.01 retained.
+Resolve retained BUY first; EXIT/recovery bypass gate. Future submit/fill
+unobserved. Exact new-root offline readerd8ea50a8.../113 synthetic tests/
+receiptcd89d3a3... at
+D:/thericher-v2/model-artifacts/execution/kis-stock-retained-gate-paper-outcome-reader-v1;
+not an actual private bank or fill read. No manual task/provider/broker invocation.
+Dataab65/Paperb860 next_due below remains owned; no foreground session wait.
+Current projections supersede historical commands and pending status below.
 
 ## Superseded Research Dispatch
 
