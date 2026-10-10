@@ -25,8 +25,14 @@ same-CURRENT hypothesis already36cells/104CUDAcalls/rejected; not ready duplicat
 No refund/reset/relabeling of historical resource or evaluation spend.
 
 Goal75 source preparation COMPLETE1e7083c7.../job b860f41a.../recordc476bf1a...,
-0fit0inference/GPU. Current objective is coherent existing-owner Paper delivery;
-NO new training/model promotion. Data512 fresh streaming repair is CPU/metadata.
+0fit0inference/GPU. Goal76 static delivery COMPLETEb5c9c5a2... . Current objective
+is broad512 matched next-session OC ranking development; new source precontract
+MASTERde8f585.../MIT at A/research/kis-stock-broad-ranking-preparation-v1.
+Actual numeric Data manifest pending: no GPU appointment yet. Freeze one
+family1200s/three neural and ridge fits/final6epochs/seed101, exact OOF/DEV and
+cost/kill/sample rules before CPU/GPU. Same historical dates remain seen.
+Latest GPU snapshot RTX4090/24564MiB/1449used/6% total utilization, no research
+allocation proved by that device snapshot alone. No environment/approval hold.
 Next research appointment requires a new useful frozen contract, e.g. explicit
 broader sparse panel after actual loading; no artificial utilization campaign.
 Retained69 model8c3410d9.../Goal72 forecast54a52e8d... stays immutable.

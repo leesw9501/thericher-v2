@@ -62,8 +62,18 @@ Separate original/forecast as-of bindings remain; no false equality or exact
 inference-origin proof. Core42/3.55s and fullclean8 15343pass22skip/
 15365collected/360.650s XML/helper0/reaped/JUnit1ce7d136...;
 Ruff/three sample Compose pass. Source preparation, NOT installed execution.
-ONE current objective: kis-stock-retained-gate-paper-delivery-v1. Parent owns
-coherent existing enter/close Action-only cutover, no second entry writer.
+Goal76 static delivery COMPLETEb5c9c5a2... at
+A/execution/kis-stock-retained-gate-paper-delivery-v1/integration-evidence.json.
+Actual cutover5e271bed.../R4da403b84.../runner16001388... changes BOTH existing
+Actions to b860f41a... at2026-10-10T14:06:53UTC. All non-Action definitions and
+original dates/lifecycle/private volume/rank1/.01/shared10% basis preserved.
+No manual task run, credential read or order; future runtime NOT observed.
+33 independent R4 fault tests pass; R1 three faults/R3 native-argv preflight
+failure preserved. Fullclean8 15343pass22skip35warnings/377.49s/helper0/reaped,
+JUnitfc4768ca...; Ruff/three sample Compose pass, no doc-only repeat.
+ONE next objective: kis-stock-broad512-oc-ranking-development-v1. Data numeric
+view, Engine matched next-session OC attention experiment and Execution offline
+new-job outcome-reader source proceed independently; parent owns integration.
 Five-session research versus same-session Paper is provisional horizon mismatch,
 not a performance validation. No Torch or public model code in broker image.
 Claude original auth_unavailable remains immutable; after operator login
@@ -78,7 +88,15 @@ repaired in fresh82bd0d08.../8 tests: final reattestation before exclusive manif
 publication. Metadata preparation found measured index437,965,045bytes exceeds
 32MiB loader cap before selection/binding. This scoped loader contradiction is
 not dataset rejection. Parallel fresh streaming-metadata repair preserves
-original128 + first384 identities before coverage filtering. No numeric512 view.
+original128 + first384 identities before coverage filtering. Streaming actual
+metadata512/four128 binds/800calendar completed176.891s; receipt866bce28... .
+Actual source683ac... differs from released57cc... after formatting; reported
+AST equivalence is not byte equality, exact invoked archive unavailable. Future
+numeric driver6e8af7f1... rebinds final57cc... under precommit96a5a95e.../900s.
+Eight synthetic tests/dry audit pass; no numeric512 view yet. Output scope in
+NEXT_CODEX_GOAL.md. New MASTER-derived token-preserving ranking precontract
+uses matched next-session OC/20 bars, MIT official source, no upstream weights,
+data or Qlib. GPU appointment only after actual numeric input/contract/CPU smoke.
 
 ## Owned Opportunities Unchanged
 
@@ -89,10 +107,12 @@ failure0/remaining42/ETAunknown/not_observed; next_due Oct12/19 21:40UTC.
 One client/token;1s market-start/300s fresh-token-start. Exact page/cursor/
 terminal/capture binding, not task exit/cache time. No manual launch.
 
-Paper2d616950... at A/execution/kis-stock-repeatable-session-delivery-v1:
+Paper task names retain2d616950...; current Action job is b860f41a... at
+A/execution/kis-stock-feature-gate-paper-entry-preparation-v1/r2.
 thericher-kis-paper-stock-session-2d616950c835-enter/-close,
 Oct12 22:30..22:40KST /Oct13 04:50..05:00KST,1min/IgnoreNew/PT5M.
-Original TCNrank1/.01/shared10%; NOT analyticaltop10 or new gate yet.
+Original TCNrank1/.01/shared10% with retained4 original-slot keep/veto now
+delivered; NOT analyticaltop10 or a new sized portfolio. Future fill unknown.
 Physical volume thericher-v2-paper-canary-private-acct-20261007-v1.
 Preserve SPYunknown custody/TLTGLD owners/QQQownedflat/exact pending reservations.
 Historical Goal47 BUY/SELL/ownedflat is not whole-accountflat or next-session

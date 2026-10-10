@@ -35,8 +35,18 @@ Goal75 source preparation COMPLETE1e7083c7...; r2/job b860f41a.../recordc476bf1a
 canonical735/R57 framebe351c18... reconstructed network-none/37.874962s,
 0fit0inference0broker. Independent caller12/worker8 and core42 pass; chronology
 fixed in fresh R2, original record not backdated. No deployment/performance claim.
-Current company objective delivers this prepared adapter by existing-owner
-Action-only cutover; no new model training or change to original Paper sizing.
+Goal76 static delivery COMPLETEb5c9c5a2.../cutover5e271bed... delivered existing
+enter/close Actions to b860f41a... with original sizing/basis/dates intact.
+Future Paper runtime still unobserved; no profitability/fill qualification.
+Current company objective: kis-stock-broad512-oc-ranking-development-v1.
+Source precontract at A/research/kis-stock-broad-ranking-preparation-v1:
+MASTER officialde8f585.../MIT, token-preserving temporal/per-time cross-stock
+attention, matched next-session OPEN->CLOSE/20bars, momentum/ridge/cash controls.
+Prior flattened peer/TCN/rule selection history remains; no family reset.
+Exact Data numeric manifest pending; proposed contract is NOT GPU-eligible yet.
+Bind actual Data512, freeze target/split/availability/cost/kill/family1200s before
+CPU smoke/three final6-epoch neural fits max. No upstream data/pickle/Qlib,
+framework replacement, sealed holdout or Paper adoption. Steward owns GPU.
 
 ## Breadth / Depth / Replication
 

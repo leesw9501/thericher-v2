@@ -133,3 +133,13 @@ Preserve D:15% (last40.10%); no raw market data in Git, model artifacts only A.
 Counts are dispatch attempts, not wire telemetry. No manual collector launched
 or global API exhaustion inferred. Exact source archives/cursors and observed
 receipts, not latest scans/current producer hashes, govern recovery.
+A/data/kis-stock-broad512-metadata-streaming-v1 actual512 metadata binding
+completed176.891s/four128 groups/original800calendar/8tests, receipt866bce28... .
+Actual invoked683ac... bytes differ from final57cc... after formatting, exact
+pre-format archive unavailable; source AST compatibility is not byte equality.
+Next ONE actual numeric package: driver6e8af7f1.../precommit96a5a95e... at
+A/data/kis-stock-broad512-numeric-preparation-v1. Fresh final57cc rebind first,
+900s inclusive/850child/15%floor; preserve all sparse/empty and failed output.
+Output M/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-prepared-stream512-v1.
+8 synthetic tests/dry audit pass; no actual numeric view yet. No provider fetch.
+
