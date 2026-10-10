@@ -66,10 +66,15 @@ Closed research history remains in Git9060b0f and immutable evidence roots.
 Goal72 valid fixed799 forecast e9b24896.../54a52e8d... uses unchanged f78,
 42 peers and scoped roots; no new rows, targets, source union or acquisition.
 Independent6 reviewe0b7d949... checks structural links, not private causal data.
-New inventory-state source preparation reuses original OLD/CURRENT only; owned
-prior-CLOSE marks are analytical callback inputs, never broker inventory or a
-future OPEN. Missing owned prior CLOSE invalidates its exact path, not another
-lane. Future endpoint owners/next_due and raw limitations remain unchanged.
+Goal73 inventory-state comparison COMPLETE/REJECTED bd36e88e... uses original
+OLD/CURRENT only; actual7ca90fb3.../d502b67c... completed oneCUDAfit/24cells,
+zero provider/new rows/OLDteacher/cached extra. Input/source hashes unchanged.
+Own prior-CLOSE marks are analytical, never broker inventory/futureOPEN.
+Independent6 ca5be954... verifies links, not private causal rows or PIT vintage.
+Next fixed-depth32 source preparation reuses the same original seven bindings,
+factory17a081f1.../causal427610 caches and OLD scaler; no acquisition/source union
+or new temporal qualification. Quantile30b0b842... already3fits/30cells/rejected.
+Future endpoint owners/next_due and raw limitations remain unchanged.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.

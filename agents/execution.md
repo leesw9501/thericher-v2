@@ -64,9 +64,14 @@ remain unobserved. Fixed799 Goal72 now has valid research forecast
 e9b24896.../54a52e8d...: two CPU calls, nine of original ten slots retained,
 one cash-masked; no quantity planning or broker call. Reviewe0b7d949.../6
 structural checks is not native/broker replay-parity or adoption. The forecast
-remains undeployed. New inventory-state research uses its own analytical net
-cash/held quantities/prior-CLOSE marks; private Paper/account state is excluded.
-No quantity expansion, redistribution, new schedule, budget or model change.
+remains undeployed. Goal73 inventory-state comparison COMPLETE/REJECTED
+bd36e88e.../actuald502b67c... oneCUDAfit/24cells; Execution4 parity0f96c9cc...
+checks analytical prior-state/quantity/actual-leg fee/final liquidation sources,
+not private price replay or broker parity. Accepted24 differs from fills46;
+mainwhole10 growth+.6923% but utility fails retained4 andTCN. Its modelb9f1dee2...
+is not a Paper input. No private Paper/account state, quantity expansion,
+redistribution, new schedule, budget or model change. Next fixed-depth32 source
+study retains the same analytical accounting; final-only36cells are undeployed.
 Retained binary/signed/conjunction forecasts preserve distinct as_of values.
 Source-only typed maskb5237628.../43 tests/six independent checks remains
 undeployed; no future result or Data qualification follows from its existence.

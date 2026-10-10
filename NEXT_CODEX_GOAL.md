@@ -2,60 +2,58 @@
 
 ## Objective
 
-Complete kis-stock-inventory-gate-development-v1: test whether causal own-book
-state improves the fixed TCN quantity-or-cash policy after costs. One new
-seen-development family, not a retry or retune of Goal69/72.
+Complete kis-stock-feature-gate-depth-development-v1: determine whether one
+predeclared deeper training endpoint improves the screened Goal69 feature-only
+exact-book gate after costs. Not a rescue of rejected inventory/quantile work.
 
-## Fixed Research Contract
+## Frozen Scientific Scope Before Allocation
 
-A=D:/thericher-v2/model-artifacts; M=D:/market_data. Reuse original R57
-Score735/Core, seven OLD/CURRENT bindings, original feature caches and exact
-carried accounting. No acquisition, source union or new framework.
-Goal72 fixed799 forecast completed at A/bf/0d30d0032aa64584b3a0655b687cbdd8/
-actual-invocation.json e9b24896...; independent6 reviewe0b7d949... . It and
-Chronos forecast are immutable; do not refit them from later observations.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data. Reuse original Score735/
+Core, seven OLD/CURRENT bindings, feature caches, causal teacher427/610 seals,
+3aec scaler/guard/reward and carried accounting. No acquisition/source union,
+broker inventory, new framework, sealed holdout or extra teacher inference.
 
-Hypothesis: pre-action own-inventory flag plus fee-net cash fraction lets a
-policy distinguish a fresh purchase from an existing position. State uses only
-its own analytical carried ledger and the prior scheduled CLOSE valuation of
-EVERY held key. No entry OPEN, future quote, account state, missing-key deletion
-or fitted endogenous-state scaler. Missing required marks reject its exact path.
+One cold seed101 fit799, unchanged TCN60x2/static4/head20/no inventory input,
+Adam.001/clip1/deterministic/TF32off. EXACT32 chronological sampled full-path
+updates; final32 only is a candidate. No warm-start from retained799, stopping
+on CURRENT, best-checkpoint selection or substitution of an earlier endpoint.
+TRAIN diagnostics may describe optimization only.74 overlapping review blocks
+remain74 nominal blocks, not2368 independent observations or convergence.
+Same fixed zero-baseline exact reward-to-go; parameters fixed within each path.
 
-One OLD799 fit, fixed seed101/four chronological sampled paths, TCN60x2 with
-16 channels/dilations1,2,4,8,16, static4 plus state2/head22. Reuse original
-OLD-only scaler/guard, Adam.001/clip1, exact reward-to-go/zero baseline.
-Parameters fixed throughout each path; forward state chronologically, never
-prebatch all path logits. Four paths are optimization, not independent samples.
-
-Fixed controls: unchanged Goal69 feature-only799 gate, original TCN, cash.
-24 CURRENT cells: four policies x whole/fractional_reference x roundtrip
-5/10/20bps (10 means5bps each actual leg). Each cell carries its own state and
-freezes predictions before OPEN; cached replay must rebind that exact state and
-use zero extra inference. Original top10/.01 unmasked quantities are planned
-first; accept or zero only, no rerank/refloor/resizing/redistribution.
-Main whole10 kill: positive growth/nonzero accepted, strict utility above all
-three controls and drawdown no worse than old gate. No post-outcome rescue.
+36 CURRENT cells: depth32, retained feature-gate4, signed60, prefix_mean,
+original TCN20, cash x whole/fractional_reference x roundtrip5/10/20bps.
+10 means5bps each actual leg. Original top10/.01 quantities FIRST, strict>.5
+accept or zero only; no rerank/refloor/resizing/redistribution. FinalOPEN111.
+Mainwhole10 kill: growth>0/accepted>0; utility greater than retained4 AND all
+other controls by1e-10; drawdown<=retained4. Other cells are fixed diagnostics,
+never outcome-selected winners. Missing/incomplete comparisons prove no depth
+value. Cache exact final predictions before quote and replay with zero extra
+fit/inference. All retained models/forecasts/failures/debits remain immutable.
 
 ## Parallel Packages And Closure
 
-Execution owns pure prior-state features; Engine owns actor and state-conditioned
-replay; Data/Infra prepares exact cached input/runtime reuse; parent integrates
-and freezes exact source hashes/contract before CPU smoke and ONE GPU600s
-inclusive appointment (570 work/30 cleanup). Keep existing native Torch2.7,
-exclusive GPU lease, numeric safe reload, source audits and child reaping.
-No new OLD teacher inference: bind Goal69 causal score receipt, do not relabel
-reused predictions as fresh calls. Freeze all source/API facts before allocation.
-Independent review checks causal mutation, cell-specific state, quantity/cost
-parity and cached readback. Incomplete results close with exact known/unknown
-counts and no refund. No holdout, convergence, alpha or Paper adoption claim.
+Engine prepares fresh actor_depth and fixed36 replay; Data/Infra reuses exact
+cached/native input and numeric head20 reload; Execution independently checks
+quantity/fee/carry parity. Parent freezes exact released hashes/API contract,
+CPU smoke then ONE inclusive600s GPU appointment (570work/30cleanup).
+No new OLD teacher calls. Verify REAL nested canonical API/DTO handshakes before
+allocation; reuse existing lease/deadline/reaping/source-audit mechanisms.
+Independent review checks final32-only, exact frozen controls/kill and cache.
+Ask Claude for current concise breadth-to-depth falsification challenge; a
+failed CLI yields no verdict/agreement and does not block independent research.
 
-Primary Jiang2017/FinRL state mechanism was independently retrieved; no source
-performance/code/weights/framework adopted. Claude auth_unavailable is not
-agreement; independent challenge narrows this to exploratory development.
-Dataab65b62b... and Paper2d616950... future owners/model/shared10% basis and
-pending identities remain unchanged. Their next_due never foreground-blocks.
+Goal73 COMPLETE/REJECTED/bd36e88e... at A/research/kis-stock-inventory-gate-development-v1/integration-evidence.json.
+One CUDA fit/24cells: growth+.6923% but utility below retained4 and TCN.
+R13459347a... unknownfit1/debit64.183348s retained; R2d502b67c... complete
+148.199365s, no refund. Quantile30b0b842... already3fits/30cells/rejected.
+Recommendation19e65339... is not an allocation or promotion.
+Seen/revised/current-listed/non-PIT/non-TR/finality/availability unknown:
+no alpha, fresh replication, sealed access, broker PnL or Paper replacement.
 
-Focused package checks, company verification per AGENTS.md, commit/push, refresh
-current stateboards, choose exactly ONE material next objective and continue.
-Data on M/artifacts on A, D:15% floor. No .env/KIS_LIVE_*, paid/unclear rights,
-public exposure, major runtime replacement or manual scheduled/broker calls.
+Existing Dataab65b62b.../Paper2d616950... owners/model/shared10% basis/pending
+identity and next_due unchanged; never foreground-wait or manually launch them.
+Focused package checks, company verification per AGENTS.md, commit/push,
+replace with exactly ONE material next objective and continue. Artifacts on A/
+data on M/D:15% floor. No .env/KIS_LIVE_*, paid/unclear rights/public exposure/
+major runtime replacement.

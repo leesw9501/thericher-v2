@@ -2,66 +2,39 @@
 
 ## Current Research Dispatch
 
-Goal71 COMPLETE_WITH_SCOPED_GATE_FAILURE/72357078...:
-D:/thericher-v2/model-artifacts/research/kis-engine-selection-allocation-batch-v1/integration-evidence.json.
-Gate94b3d45c.../1c375a63... failed75.418793s before inference at reader488;
-original appointment closed/unrefunded, not a model verdict. Goal70 precontract
-failureef04cbb1... remains immutable. Never replay either used driver.
-Original context capabilityd808605f... loaded128 identities/113 sessions in
-34.1036s with exact current cache at /market and separate /reference; original
-reader/native_session/raw/reference untouched. Future descriptors are cache-
-relative MARKET/master-relative REFERENCE, both context paths empty.
+Goal73 COMPLETE/REJECTED bd36e88e... at
+D:/thericher-v2/model-artifacts/research/kis-stock-inventory-gate-development-v1/integration-evidence.json.
+Exact actual D:/thericher-v2/model-artifacts/bg/7ca90fb3e692461ab673a8392caab03d/actual-invocation.json
+d502b67c.../contract74352eb4.../finalmodelb9f1dee2... . OneCPUtoy/oneCUDA799fit/
+60CURRENTpredictions/24cells,0OLDteacher/cached-extra; streams/economics match.
+Parent final save/readback/audits148.199365s11:55:06.013295UTC<535; excludes
+futurestdout/integration. Reaped/absent/released/unchanged are producer facts.
+Independent6 ca5be954.../Execution4 0f96c9cc... are structural/source/aggregate
+evidence, not independent private price replay/causal-data/CUDA/cleanup proof.
+Mainwhole10 growth+.6923%, utility.03286 versus retained4.10255/TCN.05646:
+predeclared utility kill rejects.10roundtrip=5bps each actual leg.
 
-Chronos exact D:/thericher-v2/model-artifacts/bf/5c66ca61864b48fcb2ace2ed54520c64/actual-invocation.json
-ae933e4c.../contract3e80925b.../forecast196cf462...: one CUDA load/two isolated
-calls/42 peers,0fits/targets/broker/cached-extra. Native164.598352s precedes
-outer save/readback166.177072s10:46:40.360392UTC<240; excludes future stdout/
-integration. Reaped/absent/lease released/unchanged. Actual6-link review7af808c0...
-binds five outputs/peer/clocks/median/slots, not private causal data/OS-clock/
-independent cleanup proof. Existing checkpoint/corpus limitations unchanged;
-forecast is not future return, alpha or Paper replacement.
+R13459347a... failed64.183348s at nonexistent canonical callback; exact unknown
+fit1 and old used bytes/debit retained. FreshR29c160193... uses seal_scores,
+three realAPI tests and two independent final-corruption checks pass. R2budget535
+retains cumulative maximum599.183348<600; no company closure before the model
+comparison, reset or refund. Never rerun USED driver/source or reinterpret nulls.
 
-CVaR exact D:/thericher-v2/model-artifacts/research/kis-cross-asset-cvar-development-v1:
-contractc34547bf.../parentac7680e6.../worker5798bd12.../30cells completed/rejected
-in23.520869s10:40:28.994553UTC; cached exact economics,0fits/inference/GPU/provider.
-Pure24+6/native8/actual5 review4e37d930...;454 frozen source hashes/grid/
-continuous252+437 marks/12+21 monthly entries, not independent price replay.
-Main10bps EACH SIDE utility fails minvar in2024 and all three controls later.
-Approximately13 tail scenarios/seen raw non-PIT/non-TR/ideal fractional fills.
-Metadata freeze faults/used sources retained; separate archive overlays exact
-historical producer71b5c203... and includes three producer scripts. Shared repo
-was not reverted; input commitment and original archive unchanged.
+55 serial8.74s+R2API3/.12s; fullclean8 15343pass22skip35warnings/
+15365collected341.87s/helper0/reaped/JUnit67d9fd1b... at
+D:/thericher-v2/model-artifacts/verification/full8-20261010-g73/pytest.xml.
+Ruff/default/research/accounting sample Compose pass; no doc-only full rerun.
 
-Goal71 24 serial3.63s/full clean8 15343pass22skip35warnings347.86s/
-15365collected/helper0/reaped/JUnite54947fb... at
-D:/thericher-v2/model-artifacts/verification/full8-20261010-g71/pytest.xml.
-Ruff/default/research/accounting sample Compose pass. CPU/GPU/isolated regression
-ran concurrently; no documentation-only full-suite rerun.
-Goal72 COMPLETE: D:/thericher-v2/model-artifacts/research/
-kis-stock-exact-book-gate-scoped-forward-v1/integration-evidence.json.
-Actual0d30d003.../e9b24896.../contract90379e24.../forecast54a52e8d... . Two CPU
-calls/42 peers/original ten slots: nine retained, one cash-masked; no quantity
-planning, fits/GPU/target/broker/cached extra. Post-save/readback90.878541s at
-11:05:06.100152UTC<240; native stored89.420931s precedes outer save. Independent
-6 reviewe0b7d949... binds five outputs/clocks/strict masks, not causal-data,
-prediction-origin/OS-clock/independent cleanup or future stdout proof.
-Used bdf6c9b2.../R2ae488bf2... immutable. R1 source-only config comparison bug
-was caught preallocation, preserved; two actual bootstrap namespace checks pass.
-132 serial5.21s/full clean8 15343pass22skip35warnings347.11s/helper0/reaped/
-JUnit22ba6478... at D:/thericher-v2/model-artifacts/verification/full8-20261010-g72-r2.
-Earlier clean JUnit1a3501e9... retained, but unavailable console exit after
-context transition was not asserted as authority. Ruff/three sample Compose pass.
-Never rerun USED driver or change old failure/appointment facts.
-
-Next single objective is inventory-aware gate development; source preparation
-at D:/thericher-v2/model-artifacts/research/kis-stock-inventory-gate-preparation-v1.
-Own analytical inventory/net cash at prior CLOSE only; TCN/head22 serial path,
-one OLD799 fit/fourpaths/24 CURRENT cells. Mainwhole10 positivegrowth/utility
-above oldgate-TCN-cash/DD<=oldgate kill. Freeze exact sources before CPU smoke/
-ONE600s native GPU appointment. No broker state/futureOPEN/global shared panel,
-rank or quantity change, sealed holdout, alpha or Paper replacement.
-Existing Data/Paper next_due stays owned; do not foreground-wait. Follow current
-NEXT_CODEX_GOAL.md rather than superseded historical dispatch paragraphs below.
+NEXT_CODEX_GOAL.md now owns ONE fixed-depth32 feature-gate objective.
+Fresh source preparation at
+D:/thericher-v2/model-artifacts/research/kis-stock-feature-gate-depth-preparation-v1.
+Reuse original head20/OLDscaler/reward/coldseed101; one799fit/final32 only/
+36fixedcells/600inclusive570work30cleanup. No CURRENT checkpoint selection or
+rescue of rejected inventory/quantile. Quantile recovery30b0b842... already
+3CUDAfits/30cells/rejected. Original forecasts/models/Paper remain unchanged.
+Ask current concise Claude depth challenge; unavailable is not agreement.
+Follow current goal/stateboards, not superseded historical commands below.
+Data/Paper next_due remains owned; never foreground-wait or manually launch.
 
 ## Current Owned Opportunities And Research
 
