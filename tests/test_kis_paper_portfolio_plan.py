@@ -3,6 +3,7 @@ from __future__ import annotations
 import builtins
 import copy
 import json
+import re
 import socket
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -91,8 +92,15 @@ def test_pure_joint_whole_share_plan_preserves_original_basis_and_incumbent(monk
     )
     assert result.binding["spy_owner_ref"] == original["binding"]["spy_owner_ref"]
     assert result.binding["qqq"] == original["binding"]["qqq"]
-    payload = json.dumps(result.safe_payload()) + repr(result)
+    payload = json.dumps(result.safe_payload())
     assert "800" not in payload and ACCOUNT not in payload and result.plan_ref not in payload
+    # A default object's hexadecimal address can coincidentally contain "800".
+    name = re.escape(f"{type(result).__module__}.{type(result).__qualname__}")
+    pattern = rf"<{name} object at 0x[0-9A-Fa-f]+>"
+    assert re.fullmatch(pattern, repr(result))
+    type_name = f"{type(result).__module__}.{type(result).__qualname__}"
+    assert re.fullmatch(pattern, f"<{type_name} object at 0x000002180043E270>")
+    assert not re.fullmatch(pattern, f"<{type_name} object at 0x000002180043E270 amount=800>")
     assert result.safe_payload()["new_submits"] == 0
 
 

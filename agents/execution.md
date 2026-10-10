@@ -5,7 +5,32 @@ NEXT_CODEX_GOAL.md. Closed history in Git9ae7eec/RUNBOOK/immutable artifacts.
 Compaction never adopts, deletes, replaces or retries an intent.
 A=D:/thericher-v2/model-artifacts.
 
-Goal86 closed8ecd02b9.../independent8187b24d... at
+Goal87 COMPLETE/engineering_preparation_only b0800724...:
+A/execution/kis-stock-five-session-paper-attribution-preparation-v1/integration-evidence.json.
+Pure kis_paper_five_session_pnl.py5830cb61.../tests b025fa89...: exact cohort/
+request/owner-local gross cashflows and five explicit close slots; known custody
+and exact logical close required. Final state cannot reconstruct prior holdings.
+Missing held marks/stale snapshots/fees stay scoped unknown. Complete supplied
+USD fill fees can adjust gross; not settled cash, taxes or all-charge broker net.
+No file/network/credential/broker/model I/O or new ledger/service/schedule.
+Independent8eefc72f.../8 synthetic checks; Claude92d5eae8... supports with limits.
+Changed serial557/1.93s, full clean8 15593pass22skip35warnings/364.91s/helper0/
+clean current temp. Exact1297pins79ef7f18.../JUnit12d316fc... retained.
+Initial full failed107.88s: old privacy test matched a benign hex pointer's800;
+failureeb3e710f... preserved/non-authority. Narrow test-only anchored repr check
+e172dc4e... keeps JSON sensitive-field exclusions; production behavior unchanged.
+No actual private-bank read, submit/fill, current broker reconciliation or net
+profit observed. ONE next objective is the passive canonical-state adapter,
+not a recovery-capable native observe() call or new approval gate.
+
+Current ONE objective: kis-stock-five-session-paper-attribution-passive-bridge-v1.
+Herschel owns one external source adapter/tests, no actual private-bank read.
+Reuse strict bank/state DTOs; avoid StateStore lock writes, NativeAdapters and
+recovery-capable observe(). Best-effort byte checkpoint is not OS atomicity.
+Expected references come from independent custody; no five-close/fee invention.
+Existing native Paper owners and all due opportunities below stay unchanged.
+
+Retained Goal86 closed8ecd02b9.../independent8187b24d... at
 A/execution/kis-stock-five-session-catboost-replay-parity-v1/actual-review/
 final-outcome-receipt.json.8 checks/4mutation kills verify exact source/control/
 terminal/result links,96cells/390marks/384iterations and fixed rejection. No

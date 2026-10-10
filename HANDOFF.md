@@ -12,7 +12,27 @@ prices/private amounts. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Last C:25.14%, D:40.07% free; preserve D:15%; scratch C:/trpy.
 Closed history remains in Git2094757 and immutable exact external roots.
 
-## Latest Research Closure (2026-10-11 KST)
+## Latest Closure (2026-10-11 KST)
+
+Goal87 COMPLETE/engineering_preparation_only b0800724...:
+A/execution/kis-stock-five-session-paper-attribution-preparation-v1/integration-evidence.json.
+Pure kis_paper_five_session_pnl.py5830cb61.../tests b025fa89...: exact cohort/
+request/owner-local gross cashflows and five explicit close slots; known custody
+and exact logical close required. Final state cannot reconstruct prior holdings.
+Missing held marks/stale snapshots/fees stay scoped unknown. Complete supplied
+USD fill fees can adjust gross; not settled cash, taxes or all-charge broker net.
+No file/network/credential/broker/model I/O or new ledger/service/schedule.
+Independent8eefc72f.../8 synthetic checks; Claude92d5eae8... supports with limits.
+Changed serial557/1.93s, full clean8 15593pass22skip35warnings/364.91s/helper0/
+clean current temp. Exact1297pins79ef7f18.../JUnit12d316fc... retained.
+Initial full failed107.88s: old privacy test matched a benign hex pointer's800;
+failureeb3e710f... preserved/non-authority. Narrow test-only anchored repr check
+e172dc4e... keeps JSON sensitive-field exclusions; production behavior unchanged.
+No actual private-bank read, submit/fill, current broker reconciliation or net
+profit observed. ONE next objective is the passive canonical-state adapter,
+not a recovery-capable native observe() call or new approval gate.
+
+## Retained Research And Delivery Evidence
 
 Goal86 COMPLETE/rejected_fixed_candidate:
 A/research/kis-stock-five-session-catboost-development-v1/integration-evidence.json
@@ -237,21 +257,15 @@ non-PIT/availability limits continue, no broker net-PnL claim.
 
 ## Current Work
 
-ONE objective: kis-stock-five-session-paper-cohort-preparation-v1.
-Prepare one exact five-session Paper cohort from current512 causal input and
-owned lifecycle contracts, not a day-flat alias. Data refreshes exact21 prior
-sessions and five forthcoming official clocks; Engine emits finite typed
-exposure/identity exchange; Execution proves exclusive cohort quantity custody,
-partial/unknown/restart/fifth-session exit and fixes grouped Decimal P2 separately.
-No refit/tuning or arbitrary pickle/model code in broker. Existing opportunities
-stay unchanged; no broker/account/order call or schedule expansion in this prep.
-Reusable pure typed cohort/accounting code and36 tests pushed in Git1523c3d;
-weights/data remain D:. Parent owns runtime/custody/Claude/Git, no foreground
-wait. Useful frozen CUDA campaign may run while the one-client Data job runs;
-no GPU approval/environment hold or mandatory profitability gate on Paper.
-Discovery977061ec... remains limited: TCN represented; six TSMixer files/license
-parent-retrieved with matching hashes. No campaign or TensorFlow runtime adopted.
-Keep source and benchmark limitations, no new durable queue.
+ONE objective: kis-stock-five-session-paper-attribution-passive-bridge-v1.
+Execution prepares one read-only canonical-state adapter under the exact
+external goal root; synthetic/source metadata only, no actual bank invocation.
+Engine attacks custody/chronology independently; Infra maps side-effect-free
+parsers. Parent owns integration/Git. Missing close captures cannot be backcast;
+unknown accounting never stops the already-owned Paper recovery path.
+Current repository authority is Goal87's exact1297 source pins/full15593pass.
+GPU is usable/free after Goal86, but this accounting package requires CPU only.
+No company block, new scheduler or foreground wait on Monday's opportunities.
 
 ## Owned Opportunities Unchanged
 
