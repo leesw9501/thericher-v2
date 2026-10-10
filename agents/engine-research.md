@@ -44,14 +44,23 @@ No future outcome/alpha/deployment. Initial07fdea.../3.790s failure persists;
 no inferred category/refund. Prepared source faults repaired inside same goal.
 108 serial/full8 15319pass22skip342.14s/JUnitbc5c9439.../Ruff/three Compose;
 34 reader-native/13 diagnostic/17 outer/20 independent/one handshake pass.
-Next ready ONE joint rank+net-sign shared60x2 TCN plus four statics:
-model3aec5641.../44 tests/13 independent, worker9f7234f0.../43 tests,
-proposal a9da94b5... . CPU toy then three CUDA427/610/799 fits under one600s
-family; fixed new-rank top10 then sign>.5 original .01 slots/cash. Original
-signed/TCN/prefix-mean/cash common30cell OPEN111 controls. Correct fresh cost
-units to original cost/20000 per leg (cell10=5bps each/10roundtrip); preserve
-source configuration's descriptive discrepancy, no numerical fee change.
-Seen revised/current-listed/non-PIT evidence only, no sealed/Paper promotion.
+Goal67 COMPLETE/REJECTED7fca2ae9... at
+A/research/kis-stock-joint-rank-sign-development-v1/integration-evidence.json.
+CPU toy/three actual CUDA fits/30 cells; actual15a65219.../capture d24bf035.../
+13 outputs/independent45e174de...;500.261009s<60006:33:48.164393UTC,
+reaped/absent/released/458 sources and seven inputs unchanged. Cached0extra
+fits/inferences with exact action/execution/economics match. Whole10/OPEN111
+growth joint+.8953% versus signed+1.7643%, TCN/prefix+1.3198%; DD.5439% passes
+but strict utility fails all non-cash controls. Cost/20000 each leg unchanged.
+No retuning, independent alpha, sealed access or Paper replacement.
+108 serial/full8 15319pass22skip359.98s/JUnit3aafac79.../repo Ruff/three Compose.
+Next ONE Goal68 synthetic finite-guard parity/throughput: original3aec5641...
+versus guard-only derivative0c0aaee9.../42 CPU tests. Six synthetic CUDA fits
+(two exact per-step parity, four ABBA timing), shared180s/work150/cleanup30.
+Actual inclusive fit calls260.416s/612 steps and17136 source-derived scalar
+truth checks are a proposal basis, not measured kernel time or proved speedup.
+No market data/target/weights retention/scientific refit/holdout. Strongest kill
+is any changed failure category or gradient/parameter/prediction/decision bit.
 
 Goal57 COMPLETE at A/research/kis-stock-payoff-aware-development-v1:
 contract03117125.../result e59d6a92.../closure6e473f61.../integration b2ef8c11... .

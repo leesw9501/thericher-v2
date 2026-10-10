@@ -55,13 +55,18 @@ canonical failure4ce28ae... and external used E501 remain. Next forward
 same-f78 join Goal66 COMPLETEec5bfc3e.../capture7da0d9ae.../45.568182s<240,
 zero fit/inference/GPU/sealed spend, reaped/absent/472 source hashes unchanged.
 Distinct original clocks retained; first3.790s07fdea... failure unrefunded.
-Next ONE joint-rank-sign family model3aec5641.../worker9f7234f0.../
-proposal a9da94b5... is source-ready: shared600s includes CPU toy plus three
-CUDA prefixes427/610/799, prediction/NPZ readback,30 cells/cache/cleanup.
-Freeze released native/parent/source contract before dispatch, one lease;
-no per-cell budget/refit/refund/sealed spend. Original cell10 costs5bps each
-leg/10roundtrip; descriptive per-side mismatch corrected in fresh contract,
-not in used source/model configuration or historical metrics.
+Goal67 joint family CLOSED/REJECTED7fca2ae9.../contracta9559f4d.../
+actual15a65219.../capture d24bf035.../independent45e174de...; CPU toy plus
+three actual CUDA fits/30 cells/500.261009s<600 at06:33:48.164393UTC,
+reaped/absent/released/unchanged, cached0extra fits/inference/sealed0.
+Registry259fc744.../outcome d9a9f525... covers native terminal, not final parent
+publication. Strict utility fails controls; no rescue/refund or Paper promotion.
+Next ONE Goal68 receives one synthetic runtime GPU appointment only: guard-only
+derivative0c0aaee9... versus original3aec5641..., six manufactured CUDA fits
+(two parity/four ABBA timing), shared180s/work150/cleanup30. No scientific
+campaign, market labels/data/model weights retention or sealed spend. Use the
+existing exclusive GPU lock, not a fake predictive family allocation. Require
+frozen source/job/stop rules and exact parity; speedup currently not_observed.
 Claude auth-unavailable
 9a0121d4... is not agreement or a research gate. GPU is available, no
 permission fault; do not invent utilization-only training.

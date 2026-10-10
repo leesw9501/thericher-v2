@@ -65,12 +65,28 @@ full8 15319pass22skip342.14s/JUnitbc5c9439..., Ruff/three sample Compose pass.
 Independent24 checks/4e858d96... under the same Goal66 root rehash exact472
 original paths/11 staged sources/output links and clock/count geometry; no
 scoped P1/P2. Clock event/cleanup remain parent-observed, not reobserved events.
-Next ONE joint rank/sign60 TCN development campaign uses original OLD/CURRENT
-cache, CPU toy then three purged-prefix CUDA fits and common30cell replay.
-Model3aec5641.../worker9f7234f0.../proposal a9da94b5... are source-ready.
-Correct fresh contract cost description: original cost/20000 each leg;
-cell10 is5bps per leg/10bps roundtrip, not a changed fee schedule. No retuning,
-new dataset, outcome-driven rescue, sealed evaluation or Paper replacement.
+Goal67 COMPLETE/REJECTED7fca2ae9... at
+A/research/kis-stock-joint-rank-sign-development-v1/integration-evidence.json:
+contracta9559f4d.../actual15a65219.../capture d24bf035...; CPU toy plus three
+actual CUDA fits/30 complete cells, cached zero extra fits/inferences and exact
+action/execution/economics match. Original458 sources/seven inputs unchanged;
+reaped/absent/lease released. Parent500.261009s<600 at06:33:48.164393UTC Oct10
+after capture/audit, excluding future stdout/later integration. Independent
+45e174de... checks13 outputs and fixed kill, not the original clock event.
+Whole10/OPEN111 growth joint+.8953%, signed+1.7643%, TCN/prefix-mean+1.3198%;
+joint DD.5439% improves, but strict utility fails signed/TCN/prefix controls.
+Cost/20000 each leg=5bps each/10roundtrip; no fee change or outcome rescue.
+Seen revised/current-listed/non-PIT development, no alpha/Paper replacement.
+108 serial1.64s/full8 15319pass22skip359.98s/JUnit3aafac79...; repo Ruff and
+three sample Compose pass. External parent-review test E501 remains disclosed.
+Next ONE Goal68 is a synthetic finite-guard CPU/CUDA parity and throughput
+benchmark, not another market refit. Actual inclusive fit calls260.416s and
+source-derived17136 scalar truth checks suggest a candidate, not proved speedup.
+Fresh guard-only source0c0aaee9.../42 CPU tests; original3aec5641... immutable.
+Fixed six synthetic CUDA fits (two parity/four ABBA timing), shared180s/work150/
+cleanup30, no market data/targets/weights retention/scientific fits/holdout.
+Require exact per-step/state/prediction/decision parity before any speed claim.
+Data/Paper identities/basis/four finite owners continue independently unchanged.
 
 Goal62 CLOSED/bounded preparation failure bdd26cf0... at
 A/research/kis-stock-payoff-quantile-development-v1/integration-evidence.json:

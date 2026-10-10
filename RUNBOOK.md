@@ -30,9 +30,22 @@ original APP35f expected pin, outer deadline/final UTC and post-save audit.
 Never rerun used drivers or rewrite their placeholders as self-observation.
 Typed Paper b5237628.../43 tests/six independent is rank1/.01 preparation only.
 108 serial1.63s/full8 15319pass22skip342.14s/JUnitbc5c9439.../Ruff/three Compose.
-Next ONE joint rank/sign60 CUDA campaign source prep is external under
-D:/thericher-v2/model-artifacts/research/kis-stock-joint-rank-sign-*-v1.
-Use original roundtrip cost units: cell10=cost/20000 each leg=5bps per leg.
+Goal67 joint rank/sign60 COMPLETE/REJECTED at
+D:/thericher-v2/model-artifacts/research/kis-stock-joint-rank-sign-development-v1/integration-evidence.json
+(7fca2ae9...). Exact runtime root
+D:/thericher-v2/model-artifacts/jn/f410a5231e53462f98fb525a284b456c:
+actual15a65219.../capture d24bf035.../13 outputs/independent45e174de...;
+CPU toy/three actual CUDA fits/30 cells/cached0extra and exact accounting.
+500.261009s<60006:33:48.164393UTC Oct10 after capture/audit; reaped/absent/
+lease released/458 original sources and seven inputs unchanged. Whole10/OPEN111
+joint+.8953%, signed+1.7643%, TCN/prefix+1.3198%; strict utility screen rejected.
+Use original roundtrip cost: cell10=cost/20000 each leg=5bps per leg.
+No alpha/Paper replacement; used bytes/debits immutable. 108 serial/full8
+15319pass22skip359.98s/JUnit3aafac79.../repo Ruff/three sample Compose pass.
+Next ONE Goal68 is a synthetic finite-guard runtime benchmark under external
+research/kis-stock-joint-finite-guard-*-v1. No market rows/targets/refit/Paper.
+One180s appointment/six synthetic CUDA fits/exact parity then ABBA timing;
+no weights retention. Source preparation is not an actual GPU result or speedup.
 Wrapper repairs stay focused role packages, not new company/full-test cycles.
 Goal64 COMPLETE/REJECTED30b0b842... is at
 D:/thericher-v2/model-artifacts/research/kis-stock-payoff-quantile-environment-recovery-v1/integration-evidence.json:

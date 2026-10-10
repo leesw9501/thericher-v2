@@ -61,8 +61,10 @@ ONE actual f78 frame; exact128/42peers/472 source hashes unchanged, zero
 provider/target calls, three original analytic slots retained/seven cash.
 Distinct original forecast clocks preserved; parent45.568182s<240/reaped/absent.
 Future Oct12->Oct19 endpoints remain unobserved. No Data qualification or union.
-Next joint GPU campaign consumes the same original OLD/CURRENT feature caches
-and seven bindings; owned next_due continues independently. Limits visible.
+Goal67 joint GPU COMPLETE/REJECTED7fca2ae9... consumed only those original
+OLD/CURRENT caches/seven bindings;458 sources/inputs unchanged, no provider
+or Data qualification. Next Goal68 synthetic runtime parity uses no market
+rows/targets/cache; owned next_due continues independently. Limits visible.
 
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.
