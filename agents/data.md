@@ -63,6 +63,14 @@ Exact evidence A/research/kis-engine-selection-allocation-batch-v1; gate root
 failure94b3d45c... is technical, not a dataset rejection or acquisition hold.
 Closed research history remains in Git9060b0f and immutable evidence roots.
 
+Goal72 valid fixed799 forecast e9b24896.../54a52e8d... uses unchanged f78,
+42 peers and scoped roots; no new rows, targets, source union or acquisition.
+Independent6 reviewe0b7d949... checks structural links, not private causal data.
+New inventory-state source preparation reuses original OLD/CURRENT only; owned
+prior-CLOSE marks are analytical callback inputs, never broker inventory or a
+future OPEN. Missing owned prior CLOSE invalidates its exact path, not another
+lane. Future endpoint owners/next_due and raw limitations remain unchanged.
+
 - OLD compact:128current-listed keys/800sessions2023May17..2026Jul27/87974records;
   M/us_equities/kis_paper_private/daily-nas-broad-compact/v1/goal31-original-6ee8fa56-r2.
 - Original CURRENT113:14073rows/121complete4sparse3empty/manifest18a37635...,

@@ -47,8 +47,13 @@ actual5 checks, exact454 source hashes. Seen raw prices, weak tail sample and
 ideal fractional fills are development-only, not alpha or Paper promotion.
 Current batch verification24 serial/full8 15343pass22skip347.86s/
 JUnite54947fb.../Ruff/three sample Compose. Existing Data/Paper owners continue.
-Future fixed-gate scoped source preparation is not a new allocation or a refund;
-freeze a distinct declared recovery contract before its first inference.
+Goal72 distinct CPU240 contract90379e24... completed two calls/no fit or GPU,
+actual0d30d003.../e9b24896... at90.878541s11:05:06.100152UTC post-save/readback.
+Original old appointments remain closed/unrefunded. Independent6 structural
+checks e0b7d949...; no future return or OS cleanup proof. New inventory-aware
+family is source preparation only, with GPU free; freeze one799 fit, causal
+state definition, 24 cells, controls, kill and inclusive600s budget before its
+first real data fit. Four sampled paths are not four independent datasets.
 Original3aec guard retained after Goal68 synthetic+.4918% ONE sample;
 no additional benchmark allocation or utilization-only training.
 

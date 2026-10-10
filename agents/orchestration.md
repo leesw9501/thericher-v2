@@ -1,62 +1,41 @@
 # Orchestration Stateboard (총괄 조정)
 
-Current projection only; NEXT_CODEX_GOAL.md owns one company objective.
-History remains in Git and immutable external evidence.
+Current projection only; NEXT_CODEX_GOAL.md owns ONE company objective.
+History is in Git and immutable external evidence, not this queue.
 
 ## Ready / Owned / Due (2026-10-10 KST)
 
-No company block or foreground sleep. Goal71 integrated72357078...; ONE Goal72
-restores fixed799's first valid forecast with proven scoped roots. Fixed gate
-failed before inference; Chronos2 completed on CUDA, CVaR completed/rejected.
-Independent finite
-Data/Paper opportunities remain owned and unchanged.
+No company block or foreground sleep. Goal72 fixed799 forecast completed:
+e9b24896.../90.878541s, two CPU calls/42 peers/nine retained one cash-masked.
+Independent6 e0b7d949... verifies links, not causal-row/OS clock/cleanup proof.
+Goal71 Chronos CUDA forecast complete/CVaR rejected/old gate failure preserved.
+ONE next objective: causal inventory-aware gate seen development.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent | Goal71 closure72357078...; parent owns integration and Goal72 first actual. Used sources/failures/debits immutable. |
-| Verification | Parent / reaped | Goal71 24 serial3.63s/full8 15343pass22skip347.86s/15365collected/helper0/JUnite54947fb...; Ruff/three sample Compose pass. |
-| GPU/custody | Parent / free | Chronos actual5c66ca61.../ae933e4c...: one load/two CUDA calls/42 peers,0fits/targets/broker,166.177072s<240 at10:46:40.360392UTC; reaped/absent/released/unchanged. No fresh GPU campaign allocated. |
-| Actor/reward | Released / independently checked | Actor1e13ca1f.../rewardd9557b61...;27 supplied+12 independent CPU checks, basis repair15 pass. Review scope is CPU; actual GPU evidence above. |
-| OLD causal inputs | Released / independently checked | Fresh adapterR2ceed66f9... fixes final deadline check;37 supplied/independent pass, original e0ff failure preserved. Exact427/610 only. |
-| Native runtime | Released / independently checked | Sourcecdee3520.../25 tests; James8 handshake8b3e319e.../Singer12 protocol70484f94... . Exact actual pointer is A/bg/1241ae8d162c411fb9443739e011ed25/actual-invocation.json, not the metadata root. |
-| Replay | Released / independently checked | Worker006490d1.../24 supplied+12 independent checks, no second replay implementation. Prior source failures preserved. |
-| Actual result | Released / independently checked | Review994e7402.../20 checks passes aggregate development kill, not private causal rows/trajectory/clock reobservation. No alpha or Paper replacement. |
-| Forward interfaces | Released / independently checked | Helperd954ad4d.../input7068bdfa...;12+6 and10+6 supplied/independent manufactured checks. Exact799/f78/prior61/canonical735; no actual forecast yet. |
-| Forward runtime | Parent / Goal72; source released | Goal71 exact94b3d45c.../1c375a63... failed75.418793s before inference at reader488/path_invalid. Closed/unrefunded; reviewd434fc79... . Fresh scoped callerbdf6c9b2.../entryf6f664e5.../8 checks ready only; no new allocation yet. |
-| Chronos result | Parent / complete; Validation / released | Contract3e80925b.../forecast196cf462... binds existing checkpoint, actual origin and isolated32+10/h6. Cached0extra. Source20+independent6; actual6 review7af808c0... . No future return or Paper claim. |
-| Allocation result | Parent / complete; James / review released | Contractc34547bf.../parentac7680e6.../30cells/23.520869s. CVaR rejected; pure24+independent6, native8 and actual5 checks. Review4e37d930...; no price replay/OS cleanup proof. |
-| Data endpoints | Existing finite owners | Jobab65b62b.../42 peers, Oct13/20 06:40..07:40KST; last03:56:02UTC Ready/enabled. Collection not_observed; no manual launch. |
-| Original Paper | Existing finite owners | Job2d616950... entryOct12 22:30/closeOct13 04:50KST; no new fill. Budget/identities/model unchanged. |
-| Claude | Parent / unavailable | Direction challengee6dc130d... one source prompt/auth_unavailable/reaped, verdictnull/agreementfalse. No unchanged auth retry/lane hold. |
+| Git/integration | Parent | Goal72 closure4bcf81db...; sole Git owner, Goal73 preparation. Old sources/failures/debits immutable. |
+| Verification | Parent / reaped | 132 serial5.21s/full clean8 15343pass22skip347.11s/helper0/JUnit22ba6478...; Ruff/three sample Compose pass. |
+| State inputs | James / Execution | Source-only owned flag/net cash at prior CLOSE; no broker inventory or entry OPEN. |
+| Actor | Copernicus / Engine | Source-only TCN/head22 serial path; one799/four paths planned, not allocated. |
+| Replay | Singer / Engine | Source-only per-cell causal state/cache/quantity-or-zero;24cells planned. |
+| Native input | Euclid / Data-Infra | Exact cached factory/Goal69 old-score reuse handshake, no new rows or teacher calls. |
+| Runtime/review | Lagrange / Infra; Ramanujan / invoked review | Reuse native custody; independent three causal falsifiers accepted. |
+| GPU | Parent / free | Chronos lease released; new family must finish/freeze useful source preparation before allocation. |
+| Data | Existing finite owners | ab65b62b... Oct13/20 endpoints; accepted0/failure0/outcome not_observed, next_due Oct12/19 21:40UTC. |
+| Paper | Existing finite owners | 2d616950... entryOct12 22:30/closeOct13 04:50KST; no fresh fill, original model/basis/identity unchanged. |
+| Claude | Unavailable | e6dc130d... auth_unavailable/verdictnull/agreementfalse, not a lane hold. |
 
 ## Bottleneck And Reversible Improvement
 
-Actual root binding, not data/model quality, was the Goal71 bottleneck:
-reader488 requires the exact cache mounted at /market. Corrected scoped cache
-and separate /reference loaded128 identities/113 sessions in34.1036s without
-models/inference/GPU. Exact capability evidence is at
-A/research/kis-engine-selection-allocation-batch-v1/context-capability-evidence.json.
-Keep original reader/native_session; reuse their proven root mapping. Test real
-metadata plus full source-map composition before a scientific dispatch, not
-manufactured DTOs alone. CVaR needed one hash-checked historical producer overlay
-and three producer scripts in its separate archive; shared repo stayed unchanged.
-Run CPU studies, GPU inference and isolated regression checks concurrently when
-their roots/resources do not conflict. Closed failures are not model verdicts,
-approval holds, silent retries or refunded appointments.
-Goal69 source preparation/review materially exceeded its199.99s actual
-appointment. Original guard remains default; no additional benchmark priority.
-Next useful action is a fixed pre-target forecast, not outcome-informed refitting.
-
-Reuse tested native/parent custody, lock, clock and publication protocol.
-Check real DTO/API handshakes before broad mocked tests: source inspection
-caught actor-prefix/scaler class mismatch and missing OLD carried-quote scope.
-Fresh factory exposes the already-loaded OLD rows, no duplicate panel load.
-Focus tests on actor, causal inputs and changed interfaces; full authority only
-at material company integration. No generic platform or wrapper objective.
-Basis-audit/native compatibility failures stay local; other ready work
-continues. CUDA works; no permission/environment fault. Last C:25.18%/D:40.09%
-free; D:15% floor. Latest C:25.14%/D:40.09%, RTX4090 visible. GPU use follows
-useful research, not utilization alone; ready Chronos work is independent of CPU.
-Compact current projections; closed history stays in Git/immutable roots rather
-than accumulating in lane queues. Current-listed/non-PIT/revised/actions/
-finality/honest-host limits remain.
+Ready source preparation, not permission or CUDA availability, currently limits
+the next GPU fit. Reuse unchanged factory/accounting/custody; build only state,
+actor and replay deltas, test real DTO handshakes before allocation. Endogenous
+state needs chronological forwards and separate trajectories for each cost and
+quantity mode. Freeze/cache their exact state identity before OPEN and verify
+zero extra inference on replay; never reuse one global stateless panel.
+CPU source/tests and isolated authority checks run concurrently. Reuse completed
+source/API facts; do not expand generic wrappers, benchmark or report families.
+Closed historical failures remain scoped facts, not approval holds or refunds.
+Last C:25.14%/D:40.09% free; preserve D:15%. CUDA RTX4090 works. No utilization
+KPI, future-target wait or Paper model promotion. Compact projections replace
+superseded current facts; durable history remains external/Git.

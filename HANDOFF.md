@@ -109,9 +109,34 @@ Goal71 changed-path24 pass3.63s; full clean8 15343pass22skip35warnings347.86s/
 15365collected/helper0/reaped; JUnite54947fb... at
 A/verification/full8-20261010-g71/pytest.xml. Ruff/three sample Compose pass.
 CPU/GPU/isolated regression ran concurrently; no documentation-only rerun.
-ONE Goal72 restores fixed799 forecast with proven scoped mounts. Source-only
-callerbdf6c9b2.../entryf6f664e5.../8 checks is ready, not actual execution.
-No training, new targets, source union, old appointment refund or Paper change.
+Goal72 fixed799 forecast COMPLETE/4bcf81db... at
+A/research/kis-stock-exact-book-gate-scoped-forward-v1/integration-evidence.json.
+Exact actual at
+A/bf/0d30d0032aa64584b3a0655b687cbdd8/actual-invocation.json e9b24896...,
+contract90379e24.../forecast54a52e8d.../cached e2cb1547... . Two CPU calls,
+42 peers, original top10/.01: nine retained, one cash-masked; no quantity
+planning, fits, GPU, targets, broker or cached extra inference. Parent observed
+post-save/readback90.878541s11:05:06.100152UTC<240; native stored89.420931s
+precedes outer save. Reaped/absent/unchanged are producer facts, not independent
+OS proof. Reviewe0b7d949.../6 checks binds five outputs and exact clocks/masks;
+not causal-data, actual prediction-origin clock or future stdout proof.
+Used callerbdf6c9b2.../entryR2ae488bf2...: source-only R1 full-path comparison
+bug caught before allocation, preserved; minimal R2 fix and two real bootstrap
+checks passed. Old failures, clocks and debits remain closed/unrefunded.
+No future return, model promotion, Paper change or profitability claim.
+132 serial5.21s/full clean8 15343pass22skip35warnings347.11s/helper0/reaped;
+JUnit22ba6478... under A/verification/full8-20261010-g72-r2. Ruff/three sample
+Compose pass. Earlier JUnit1a3501e9... retained, console exit after context
+transition unavailable; not silently asserted as authority. No doc-only rerun.
+
+Next material research is a new inventory-aware gate family, not rescue tuning
+of Goal69 or refitting these prospective forecasts. Re-retrieved primary Jiang
+2017/FinRL paper and pinned MIT environment support the state mechanism only:
+A/research/kis-stock-inventory-policy-source-proposals-v1/independent-source-retrieval.json.
+Keep existing Torch/accounting, no FinRL framework or weights adopted. Causal
+pre-action owned flag and fee-net cash fraction use ONLY prior scheduled CLOSE.
+Chronological carried decisions must be recomputed per cost/mode; future OPEN
+cannot enter state. Source preparation is not an allocated/trained campaign.
 
 Goal70 108 serial1.65s/full8 15319pass22skip35warnings338.72s/15341collected,
 helper0/reaped; JUnit5b38b828... under A/verification/full8-20261010-g70.

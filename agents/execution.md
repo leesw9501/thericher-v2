@@ -60,7 +60,13 @@ Scoped /market + separate /reference repairs research context only; original
 reader/native_session preserved. Neither result changes broker routing,
 custody, sizing, schedule, model or live authority. Original Paper remains
 TCNrank1/.01, not analytical top10, Chronos or CVaR; future quote/fill/net-PnL
-remain unobserved. Fixed799 scoped-source preparation is undeployed.
+remain unobserved. Fixed799 Goal72 now has valid research forecast
+e9b24896.../54a52e8d...: two CPU calls, nine of original ten slots retained,
+one cash-masked; no quantity planning or broker call. Reviewe0b7d949.../6
+structural checks is not native/broker replay-parity or adoption. The forecast
+remains undeployed. New inventory-state research uses its own analytical net
+cash/held quantities/prior-CLOSE marks; private Paper/account state is excluded.
+No quantity expansion, redistribution, new schedule, budget or model change.
 Retained binary/signed/conjunction forecasts preserve distinct as_of values.
 Source-only typed maskb5237628.../43 tests/six independent checks remains
 undeployed; no future result or Data qualification follows from its existence.

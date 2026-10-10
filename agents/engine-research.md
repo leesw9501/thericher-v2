@@ -41,7 +41,7 @@ contract/plan/inference absent, stored counters null. Used626482f3... and
 Source34+independent6 checks missed actual serialization. Original weights/data
 remain useful; this is a technical decoder failure, not a rejected model.
 
-Goal71 COMPLETE/72357078...; ONE Goal72 scoped fixed799 forecast. Gate attempt
+Goal71 COMPLETE/72357078...; Goal72 valid fixed799 forecast. Gate attempt
 94b3d45c.../1c375a63... failed75.418793s before inference: reader488 rejects an
 unscoped market mount. Stored null terminal counts remain null; prior native
 result recorded0inference. Closed/no retry/refund, not a model verdict.
@@ -65,8 +65,24 @@ Paper replacement follows from successful inference.
 
 Depth/replication: Dataab65b62b... owns future42-peer endpoint observations.
 Their next_due is not a foreground wait or a model/alpha qualification.
-GPU free after that exact appointment; no further frozen GPU campaign is ready
-in this batch. Do not manufacture utilization, refit or reopen completed work.
+Goal72 actual0d30d003.../e9b24896... completed two CPU calls/42 peers,
+forecast54a52e8d.../nine retained one cash-masked. Parent post-save/readback
+90.878541s11:05:06.100152UTC<240; reaped/absent/unchanged recorded. Independent
+6 reviewe0b7d949... binds sources/five outputs/strict mask, not causal-row,
+actual prediction-origin or independent cleanup proof. No quantity planning,
+target, fit, GPU or broker. R2ae488bf2... fixes only namespaced config lookup;
+source-only R1 bug caught preallocation, original bytes preserved.
+
+GPU free. Next hypothesis adds causal pre-action owned flag plus net cash
+fraction to the same TCN. Source mechanism independently re-retrieved from
+Jiang2017/FinRL paper/pinned MIT environment; no framework/code/weights copied.
+State uses prior scheduled CLOSE only; carried own actions imply serial
+chronological forwarding, no global prediction panel shared across costs or
+modes. One OLD799/four-path fit and24 seen CURRENT cells are planned, not yet
+frozen/allocated/trained. Existing gate799/TCN/cash are fixed controls; main
+whole10 utility/growth/drawdown kill is frozen before results. No sealed spend,
+future-forecast refit, alpha or Paper replacement. Mechanism sources/evidence:
+A/research/kis-stock-inventory-policy-source-proposals-v1/independent-source-retrieval.json.
 
 CVaR95 SPY/TLT/GLD allocation COMPLETE/REJECTED, not another TCN label.
 Primary formula:

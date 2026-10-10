@@ -37,12 +37,31 @@ Goal71 24 serial3.63s/full clean8 15343pass22skip35warnings347.86s/
 D:/thericher-v2/model-artifacts/verification/full8-20261010-g71/pytest.xml.
 Ruff/default/research/accounting sample Compose pass. CPU/GPU/isolated regression
 ran concurrently; no documentation-only full-suite rerun.
-ONE Goal72 restores fixed799's first valid same-f78 forecast via proven scoped
-roots. Source callerbdf6c9b2.../entryf6f664e5.../8 checks is preparation only.
-Declare one distinct CPU240 appointment; no old refund/reset, fit, target,
-broker call, source union or Paper change. Existing Data/Paper next_due stays
-owned; do not foreground-wait. Follow current NEXT_CODEX_GOAL.md rather than
-superseded historical dispatch paragraphs below.
+Goal72 COMPLETE: D:/thericher-v2/model-artifacts/research/
+kis-stock-exact-book-gate-scoped-forward-v1/integration-evidence.json.
+Actual0d30d003.../e9b24896.../contract90379e24.../forecast54a52e8d... . Two CPU
+calls/42 peers/original ten slots: nine retained, one cash-masked; no quantity
+planning, fits/GPU/target/broker/cached extra. Post-save/readback90.878541s at
+11:05:06.100152UTC<240; native stored89.420931s precedes outer save. Independent
+6 reviewe0b7d949... binds five outputs/clocks/strict masks, not causal-data,
+prediction-origin/OS-clock/independent cleanup or future stdout proof.
+Used bdf6c9b2.../R2ae488bf2... immutable. R1 source-only config comparison bug
+was caught preallocation, preserved; two actual bootstrap namespace checks pass.
+132 serial5.21s/full clean8 15343pass22skip35warnings347.11s/helper0/reaped/
+JUnit22ba6478... at D:/thericher-v2/model-artifacts/verification/full8-20261010-g72-r2.
+Earlier clean JUnit1a3501e9... retained, but unavailable console exit after
+context transition was not asserted as authority. Ruff/three sample Compose pass.
+Never rerun USED driver or change old failure/appointment facts.
+
+Next single objective is inventory-aware gate development; source preparation
+at D:/thericher-v2/model-artifacts/research/kis-stock-inventory-gate-preparation-v1.
+Own analytical inventory/net cash at prior CLOSE only; TCN/head22 serial path,
+one OLD799 fit/fourpaths/24 CURRENT cells. Mainwhole10 positivegrowth/utility
+above oldgate-TCN-cash/DD<=oldgate kill. Freeze exact sources before CPU smoke/
+ONE600s native GPU appointment. No broker state/futureOPEN/global shared panel,
+rank or quantity change, sealed holdout, alpha or Paper replacement.
+Existing Data/Paper next_due stays owned; do not foreground-wait. Follow current
+NEXT_CODEX_GOAL.md rather than superseded historical dispatch paragraphs below.
 
 ## Current Owned Opportunities And Research
 

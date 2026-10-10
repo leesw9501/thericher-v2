@@ -2,68 +2,60 @@
 
 ## Objective
 
-Complete kis-stock-exact-book-gate-scoped-forward-v1: produce the unchanged799
-gate's first valid fixed-weight prospective forecast using proven scoped
-market/reference mounts. Restore an engine output, not a new training family.
+Complete kis-stock-inventory-gate-development-v1: test whether causal own-book
+state improves the fixed TCN quantity-or-cash policy after costs. One new
+seen-development family, not a retry or retune of Goal69/72.
 
-## Evidence And Scope
+## Fixed Research Contract
 
-A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal71 CLOSED/72357078... at
-A/research/kis-engine-selection-allocation-batch-v1/integration-evidence.json.
-Chronos actual5c66ca61.../ae933e4c... completed two CUDA calls/42 peers;
-CVaR actualbdab1d17... completed30cells/rejected. No future return or Paper
-replacement. Gate94b3d45c.../1c375a63... failed75.418793s before inference at
-reader488/path_invalid. Goal70 ef04cbb1... also remains closed. Original null
-counts, failed sources and spent appointments stay immutable/unrefunded.
+A=D:/thericher-v2/model-artifacts; M=D:/market_data. Reuse original R57
+Score735/Core, seven OLD/CURRENT bindings, original feature caches and exact
+carried accounting. No acquisition, source union or new framework.
+Goal72 fixed799 forecast completed at A/bf/0d30d0032aa64584b3a0655b687cbdd8/
+actual-invocation.json e9b24896...; independent6 reviewe0b7d949... . It and
+Chronos forecast are immutable; do not refit them from later observations.
 
-Real scoped context probe d808605f... loaded128 identities/113 sessions in
-34.1036s. Chronos used the same correct root binding successfully. Keep original
-reader c260dc45... and native_session d484b954...; do not loosen them.
-Fresh source-only preparation at
-A/research/kis-stock-exact-book-gate-forward-scoped-preparation-v1:
-callerbdf6c9b2.../entryf6f664e5.../8 manufactured checks. Parent reattests exact
-real metadata/source-map shape before allocation. This is not an actual run.
+Hypothesis: pre-action own-inventory flag plus fee-net cash fraction lets a
+policy distinguish a fresh purchase from an existing position. State uses only
+its own analytical carried ledger and the prior scheduled CLOSE valuation of
+EVERY held key. No entry OPEN, future quote, account state, missing-key deletion
+or fitted endogenous-state scaler. Missing required marks reject its exact path.
 
-## Work Packages
+One OLD799 fit, fixed seed101/four chronological sampled paths, TCN60x2 with
+16 channels/dilations1,2,4,8,16, static4 plus state2/head22. Reuse original
+OLD-only scaler/guard, Adam.001/clip1, exact reward-to-go/zero baseline.
+Parameters fixed throughout each path; forward state chronologically, never
+prebatch all path logits. Four paths are optimization, not independent samples.
 
-1. Parent/Data: exact current cache -> /market; exact NAS master -> /reference.
-   MARKET/REFERENCE context paths empty; cache-relative MARKET descriptors and
-   master-relative REFERENCE descriptor. Freeze a distinct recovery contract
-   and source root. Never overwrite old forward-native.json, failed drivers,
-   contracts, inputs, models or outcomes.
-2. Engine: unchanged final7998c3410d9... and original TCN7999de27944...;
-   f78/receipt3dafa26e.../128 identities/42 peers/prior61. Reuse input7068bdfa.../
-   gatehelperd954ad4d... and original R57 canonical Core/Score735. ONE CPU240
-   inclusive appointment, work210/cleanup30, anchored before helper imports.
-   Exactly two predictions,0fit/GPU/future-target/provider/broker. Publish
-   full-peer probabilities and original top10/.01 masks before Oct12 13:30UTC.
-   Strict>.5 keep/cash; no rerank/refloor/reweight/cash redistribution. Quantity
-   planning and future quote reads remain outside this run.
-3. Execution/Validation: independent exact link/source/clock/peer/slot readback,
-   cached0extra inference and actual cleanup limits. A technical failure is not
-   a model/data verdict. Prepare ready non-conflicting source work in parallel;
-   do not wait in the foreground for future observations.
+Fixed controls: unchanged Goal69 feature-only799 gate, original TCN, cash.
+24 CURRENT cells: four policies x whole/fractional_reference x roundtrip
+5/10/20bps (10 means5bps each actual leg). Each cell carries its own state and
+freezes predictions before OPEN; cached replay must rebind that exact state and
+use zero extra inference. Original top10/.01 unmasked quantities are planned
+first; accept or zero only, no rerank/refloor/resizing/redistribution.
+Main whole10 kill: positive growth/nonzero accepted, strict utility above all
+three controls and drawdown no worse than old gate. No post-outcome rescue.
 
-No training, architecture search, download, source union, closed-family tuning,
-sealed holdout, new Paper model/order/schedule or live path. GPU is free after
-Chronos; no ready frozen GPU job is a contract fact, not a permission/environment
-fault or reason to invent utilization work.
+## Parallel Packages And Closure
 
-## Truth And Closure
+Execution owns pure prior-state features; Engine owns actor and state-conditioned
+replay; Data/Infra prepares exact cached input/runtime reuse; parent integrates
+and freezes exact source hashes/contract before CPU smoke and ONE GPU600s
+inclusive appointment (570 work/30 cleanup). Keep existing native Torch2.7,
+exclusive GPU lease, numeric safe reload, source audits and child reaping.
+No new OLD teacher inference: bind Goal69 causal score receipt, do not relabel
+reused predictions as fresh calls. Freeze all source/API facts before allocation.
+Independent review checks causal mutation, cell-specific state, quantity/cost
+parity and cached readback. Incomplete results close with exact known/unknown
+counts and no refund. No holdout, convergence, alpha or Paper adoption claim.
 
-New recovery appointment is explicitly new, not refunded or retroactively
-bound to an old clock. Freeze exact lineage/source/data/model/cost/stop/readback
-before ONE actual attempt. Late/incomplete or contradictory publication closes
-this package with exact counts/unknowns; no silent retry. Keep actual as_of,
-availability and publication separate from nominal CLOSE. Seen/current-listed/
-revised/raw/non-PIT/non-TR/finality limits remain; no profitability/Paper claim.
+Primary Jiang2017/FinRL state mechanism was independently retrieved; no source
+performance/code/weights/framework adopted. Claude auth_unavailable is not
+agreement; independent challenge narrows this to exploratory development.
+Dataab65b62b... and Paper2d616950... future owners/model/shared10% basis and
+pending identities remain unchanged. Their next_due never foreground-blocks.
 
-Dataab65b62b... Oct13/20 and Paper2d616950... Oct12/13 owners, model, original
-shared10% basis and exact pending identities stay unchanged. Future targets
-belong to their next_due, not foreground sleep or company stop.
-Run focused changed-interface/source checks and company verification per
-AGENTS.md; no full suite solely for documentation edits. Verify/commit/push,
-refresh stateboards, replace this with ONE material next objective and continue.
-Data on M/artifacts on A, D:15% floor. No .env/KIS_LIVE_*, paid commitments,
-unclear rights, public exposure or major runtime replacement.
+Focused package checks, company verification per AGENTS.md, commit/push, refresh
+current stateboards, choose exactly ONE material next objective and continue.
+Data on M/artifacts on A, D:15% floor. No .env/KIS_LIVE_*, paid/unclear rights,
+public exposure, major runtime replacement or manual scheduled/broker calls.
