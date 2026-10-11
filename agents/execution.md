@@ -11,14 +11,17 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 aggregate/link groups pass at111/execution-actual-review-r1/receipt.json;
 retained full-ledger-versus-projection review fault, no runtime/fit rerun.
 Not independent review of own validator code, raw NAV/DD or OS proof.
-112 owned Execution: version existing G98 accounting adapter/outcome to consume
-the already tested G100 exact cumulative-fill overlay/bridge. Source gap at
-A/research/kis-five-session-path-downside-admission-development-v1/next-runtime-gap-r1/receipt.json.
-Original G98 inner job/identity/archive claims unchanged; missing fee stays
-PnL-only unknown, never zero, settled net, flatness or Paper permission hold.
-No new producer/endpoint/ledger/scheduler. Source/SYN plus bounded offline
-Docker integration and pinned delivery preparation; existing19owners/image/
-schedule/shared10%basis untouched. Actual fee/settled net not observed.
+112 COMPLETE/prepared-not-deployed52f20612... at A/execution/
+kis-five-session-optional-fee-accounting-consumer-integration-v1.
+Consumerfc46643a.../projection32d3bc77.../release4a477238...; selection3eceffd6....
+9 focused/independent4 pass; d6 Docker SYN28.90s/host818624e7.../result672cb6b7...
+with source/child/container closure. Reviewer R1/R2 faults retained and scoped
+bindings corrected only. Original inner job/snapshot/archive claims preserved.
+Missing fee stays PnL-only unknown, not zero/settled net/flatness/permission.
+Actual fee producer/fees/net unobserved; no private/provider/19-owner changes.
+113 Execution owns thin pinned selector/runner into frozen112 consumer;
+Infra owns same-task Action-only delivery. No new endpoint/worker/task/image,
+manual due invocation, changed schedule/shared basis or replacement identity.
 
 ## Retained Evidence
 

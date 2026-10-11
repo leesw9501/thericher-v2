@@ -31,15 +31,27 @@ weights/holdout/winner or Paper changes. Seen/current-listing/nonPIT/raw-action/
 nominal availability, modeled fractional fees, not settled account return.
 GPU free/usable after two actual CUDA fits; no environment or permission hold.
 
-ONE112: kis-five-session-optional-fee-accounting-consumer-integration-v1.
-Source gap receipt111/next-runtime-gap-r1/receipt.json confirms G98 capture ->
-adapter -> outcome still selects pre-G100 bridge/reader and six-field output;
-G100 optional exact-fill fee overlay is implemented but not consumed there.
-Integrate versioned consumer and eight-field projection with original G98 inner
-job unchanged, no new endpoint/worker/ledger or missing-fee-as-zero inference.
-Use source/SYN and a network-none bounded Docker check; prepare pinned delivery,
-never manually invoke a producer or change19owners/shared10%basis/schedules.
-Actual fees/net remain UNKNOWN until exact evidence. Future107 remains pending.
+112 COMPLETE/prepared-not-deployed52f20612... at A/execution/
+kis-five-session-optional-fee-accounting-consumer-integration-v1/integration-evidence.json.
+Consumerfc46643a.../projection32d3bc77.../release4a477238... reuses exact G98
+innerjobb9f898f6... and G100 typed cumulative-fee bridge. Selection3eceffd6...
+is frozen under infra-r1/delivery-selection.json, not yet an installed Action.
+Parent9 focused pass; independent R3 four native groups pass. R1 full-book
+point binding and R2 negative-test exception-helper faults retained, no actual
+rerun or canonical accounting mock. One d6 network-none Docker SYN292d1ba0...
+completed28.9023s under180s; host818624e7.../result672cb6b7.../planec8a96ce....
+496source aliases/35mounts, source unchanged/child reaped/container absent;
+honest-host evidence, not independent OS/provider proof. Claude plan/result
+supported-with-limits. Original462snapshot/17roles/15host/6Data pins preserved.
+Missing/invalid fees stay unknown, cumulative observations replace, not sum;
+terminal and return fee projection agree. No producer/API/private inspection,
+fees/settled net, research/GPU allocation or19-owner schedule/budget changes.
+
+ONE113: kis-five-session-optional-fee-accounting-selector-delivery-v1.
+Use the frozen112 selection in the same successor accounting task's Action
+only; preserve original triggers/principal/settings/claims/inner job and scope.
+No manual Task/KIS/account/order/producer run or new task/image/basis. Exact
+readback is delivery evidence only; actual fees/net and future107 stay pending.
 
 ## Retained Preparations And Closures
 

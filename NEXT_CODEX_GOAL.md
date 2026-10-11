@@ -2,64 +2,61 @@
 
 ## Objective
 
-Complete kis-five-session-optional-fee-accounting-consumer-integration-v1:
-connect the tested exact-fill fee overlay to the existing five-session Paper
-accounting consumer, preserving unknowns and original archive ownership.
+Complete kis-five-session-optional-fee-accounting-selector-delivery-v1:
+deliver the frozen optional-fee accounting consumer to the same existing
+successor accounting task, preserving original claims, scope and schedule.
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
-111 CLOSED/rejected3b542a4d.../result734d35d4.../outcome1025fd49... at A/research/
-kis-five-session-path-downside-admission-development-v1. Actual1CPU2CUDA,
-64epochs1344updates0failed,48tables90checks33fail, all three rejected.35
-focused/direct Docker SYN3/source3/actual2, Claude supported-with-limits.
-GPU lease released/free; no refit/winner/weights/holdout or Paper changes.
+112 COMPLETE/prepared-not-deployed52f20612... at A/execution/
+kis-five-session-optional-fee-accounting-consumer-integration-v1/integration-evidence.json.
+Consumerfc46643a.../projection32d3bc77.../release4a477238...; selection3eceffd6...
+at infra-r1/delivery-selection.json. Native9 focused/independent4 groups pass;
+one network-none Docker SYN28.90s under180s,496aliases/35mounts, source/child/
+container closure. Reviewer R1/R2 faults retained, R3 binds exact scoped point
+and plan. Claude plan/result supported-with-limits. No actual producer/fees/net.
 
-## Exact Gap And Scope
+## Scope And Ownership
 
-Source-only111/next-runtime-gap-r1/receipt.json confirms G98 consumer
-capture.run -> adapter.attribute -> outcome.attribution_projection selects
-pre-G100 bridge/reader and six-field projection. G100 optional fee overlay
-7a1b8271... is implemented/tested but not consumed there. Receipt hashes
-G98 jobb9f898f6.../adaptere33da03a.../outcome6308c507.../transportb0054622....
-The inspected old bake artifact is not proof of image113f contents; selectors
-explicitly mount capture_worker and /repo/src, not baked CMD. Do not infer
-deployment from build metadata, source completion or a task exit.
+Change only the Action of thericher-kis-paper-successor-20261019-accounting
+to a thin pinned entry into the frozen112 consumer. Preserve G98 inner
+jobb9f898f6..., original claims/output root, native/control/source/image,
+five Oct19..23 20:25-20:35UTC windows, minute repetition, IgnoreNew/PT3M,
+principal, working directory and no-StartWhenAvailable. Existing19 finite
+owners remain19; no new task, schedule, trigger, image, endpoint or ledger.
 
-Version only the existing accounting consumer with independently pinned G100
-bridge/overlay, optional evidence and explicit eight-field safe projection.
-Keep original G98 inner job, cohort, source, archive, cumulative identity and
-claims unchanged. Missing fee is PnL-only unknown, not zero, settled return,
-flatness or Paper permission. Repeated cumulative observations are not summed;
-new increments cannot borrow another cohort's fill/fee history. No fee backcast.
+Execution owns the inert/default/outside-window runner and source-pinned
+selector. Infra owns Action-only delivery/preview and fully mocked Scheduler
+tests. Parent alone reads/applies exact task metadata, integrates and handles
+Git. Validation independently checks the frozen delivery diff. Data/Engine
+standby; no model/GPU allocation, collection or prospective107 outcome claim.
 
-Execution owns adapter/projection and SYN semantics; Infra owns finite offline
-transport/source bindings and delivery preparation. Parent integrates/reviews/
-verifies/commits/pushes. Data/Engine standby unless a precise dependency is
-assigned; no new model/GPU allocation or prospective107 outcome claim.
+Before apply, challenge the concrete selector/Action change with Claude.
+Check the target is inactive and read back exact Action plus unchanged
+non-Action task definition. Preserve before evidence for reversible recovery;
+do not compete with an active owner or reinstall the whole task definition.
 
-Maximum: small consumer version, focused tests, one network-none bounded Docker
-SYN check using existing runtime/source APIs and pinned delivery-preparation
-packet. No new worker, endpoint, ledger, scheduler, broad platform, image rebuild
-or private broker inspection. Never manually invoke a producer/task/KIS/account/
-order, change existing19 owners/images/schedules/shared10%basis or adopt inventory.
+Maximum: one thin runner and Action-only installer, focused native/mocked
+tests, one exact delivery/readback. No manual due runner, Task, KIS, Docker
+service, account/order endpoint or producer invocation. Preserve original
+shared10%basis, identity, unknown old custody and claims; no substitute order.
 
 ## Completion Evidence
 
-Prove actual typed restore/context and original inner-job preservation; missing,
-valid zero, repeated/increased cumulative fee, duplicate/prior-custody and
-corrupt archive cases. Existing six accounting facts retain their meaning;
-two optional fee facts are categorical/source-safe. Strong kill: missing->zero/
-settled net, cumulative double-count, foreign-cohort leakage or backcast.
+Bind installed Action to selection3eceffd6... and consumer release4a477238....
+Prove source validation precedes effects, wrong pins/inconsistent inner job
+reject, no-argument inert and outside-window not_due do not call providers.
+Synthetic installer tests disable module auto-loading and mock every
+Scheduler entry point. Strong kill: changed claims/basis/scope/trigger,
+unvalidated consumer, actual manual effects or replacement intent.
 
-Source-pinned offline Docker SYN/host closure and independent thin review must
-link exact code/job/result, not raw provider prices/amounts/order identifiers.
-Actual fees remain UNKNOWN until exact evidence; neither this integration nor
-its tests is production delivery or a Paper fill. Freeze reusable delivery
-selection for a separately scoped deployment, without modifying owned tasks.
+Actual fee producer and fees remain UNKNOWN; this delivery is neither a fill
+nor settled net/flatness evidence. Missing optional fees cannot pause Paper.
+No historical fee backcast or raw prices/amounts/account/order IDs in output.
+Readback/hash evidence assumes an honest host, not independent OS proof.
 
-Ask Claude for the concise accounting/recovery drift challenge before relying
-on changed semantics. Market data M/artifacts A/15%D:free floor; no live/secret/
-cost/public/major runtime change. External-only work uses focused tests plus
-exact reattached1311-code authority/Ruff/three sample Compose/diff check;
-shared runtime changes follow AGENTS.md. After closure select exactlyONE next
-material objective and continue, never foreground-wait for market owners.
+Market data M/artifacts A/15%D:free floor; no live/secret/cost/public/major
+runtime change. External-only work uses focused tests plus exact reattached
+1311-code authority/Ruff/three sample Compose/diff check; shared runtime/control
+changes follow AGENTS.md. After closure select exactlyONE material next
+objective and continue; market timing belongs to existing owners, not sleep.

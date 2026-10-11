@@ -16,12 +16,20 @@ Claude supported-with-limits.490source aliases/0copies and host GPU/child/
 container/source closure checked, not raw NAV/DD or independent OS proof.
 Never rerun111 freeze/bind/prepare/dispatch/read/close exclusive creators or
 change its original clock/recipes/debits. Source/reviewer fixture faults retained.
-ONE112 optional fee accounting consumer integration: exact source gap at111/
-next-runtime-gap-r1/receipt.json. G98 selects old bridge/reader and six fields;
-G100 adds optional exact-fill fee semantics/two fields. Version existing consumer
-without changing inner job, adding a worker/endpoint/ledger, backcasting fees
-or interpreting missing as zero. Source/SYN+offline Docker, pinned delivery
-preparation only;19owners/images/schedules/shared10%basis unchanged. Fees/net UNKNOWN.
+112 COMPLETE/prepared-not-deployed52f20612...:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-optional-fee-accounting-consumer-integration-v1/integration-evidence.json.
+Execution release4a477238.../consumerfc46643a.../projection32d3bc77...;
+selection3eceffd6... under infra-r1/delivery-selection.json.9 focused and
+R3 four independent groups pass; R1/R2 reviewer faults retained. One d6
+network-none Docker SYN292d1ba0...28.9023s/host818624e7.../result672cb6b7...
+with source/child/container closure, no actual fees or producer/deployment.
+Never rerun112 exclusive select/run/close creators; original G98 job/snapshot
+and claims remain exact. Missing optional fees are unknown, not zero/net/hold.
+ONE113 delivers frozen selection to the same successor accounting Task's
+Action only. Preserve five triggers/limits/principal/claims/basis/image and
+existing19owners; no manual due runner/Task/KIS/account/order/producer.
+Parent owns actual Action change/readback; role tests mock every Scheduler
+entry point with auto-loading disabled. Delivery is not fee/fill/net proof.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

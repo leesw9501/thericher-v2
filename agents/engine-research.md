@@ -14,8 +14,8 @@ release304149d7..., same prior20x5/fixed2% interim loss/p>.5 veto/OPENe+5 exit.
 GRU20212 all rejected, no best seed, threshold/refit/weights/holdout rescue.
 10bps logistic DEV+.98245%/later+.46815% is not a passed screen or adoption;
 GRUs negative DEV.35 focused/direct Docker SYN3/source3/actual2; Claude limits.
-112 source-backed operational accounting gap takes priority: G100 fee overlay
-not wired into G98 consumer. Engine standby; no new fit/GPU appointment from
+112 accounting consumer integration COMPLETE52f20612...;113 delivers its
+frozen selector to the same accounting task. Engine standby/no new allocation from
 this rejected family. Source-only pre-outcome proposal at111/next-direction-r1/
 proposal.json has pairwise ranking as an unallocated alternative, not a goal.
 Future107 pending, Paper authority independent of research outcomes.
