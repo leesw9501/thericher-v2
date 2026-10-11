@@ -65,6 +65,19 @@ Source audit found older4-ETF sector strength/21-rebalance and covariance
 allocation already exist; next stock-level beta selection is a bounded new
 comparison, not a globally novel signal. Daily volume is only a capacity proxy;
 inactive retail caps would not justify raising capital to force an experiment.
+Intraday source-metadata audit: SPY/QQQ each25 dated regular390-minute timestamp
+sets,2026Aug28..Oct2; historical collection does not prove decision availability.
+Exact indexes M/us_equities/kis_paper_private/intraday-dated/
+qqq-20260910/v1/index.json52fef8d3... and spy-20260930/v1/index.jsonba175be3....
+FirstRate receipts A/data-receipts/firstrate-free-intraday/
+firstrate-free-intraday-source-local-normalization-v1.json374fc885... and
+firstrate-free-intraday-source-local-window-preflight-v1.jsoneb88b4a4... report
+SPY207824/QQQ210482 bars and105872/108854 contiguous120-minute windows.
+Raw bytes/values, paired session intersection, forward labels and complete
+sessions were NOT revalidated. At most25 KIS session blocks, not independent
+minute examples; effective sample unknown. Next-boundary preparation may check
+chronological session splits and context/target overlap, not claim PIT/finality,
+fresh holdout or training readiness. This metadata work does not hold106.
 Goal99 COMPLETE/rejected879bb037... at A/research/
 kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
 Actual1CPU2CUDA/35of64 fixed checks failed; no new data or quality promotion.

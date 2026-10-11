@@ -32,7 +32,10 @@ Claude corrected lineage/result/next supported-with-limits. CPU appointment
 826ac3bc... closed, original600s preserved;13 owners/shared10%basis unchanged.
 Next ONE objective kis-peer-relative-momentum-entry-development-v1: change
 relative stock-selection signal, not105 loss-veto rescue. Same existing data;
-no106 freeze/appointment/numeric work yet. GPU usable/free, no permission hold.
+106 Ready68949095.../bodybc1c4dbe... frozen as scienceea00de07.../trial1
+023d797e.... Signed documentf286a900... differs from wrapperf94a55dd...;
+no106 appointment/clock/numeric work yet. Engine/Execution/Infra/Validation
+source-owned in parallel. GPU usable/free, no permission hold.
 
 ## Prior Closures
 
@@ -319,6 +322,13 @@ numerics;0 predictive fits/GPU/weights/holdout, one CPU runtime600s. Analytical
 prior-only beta estimates are explicit statistics, not unreported fitted models.
 No sector-ETF replication, mean-reversion/market-neutrality claim or105 rescue.
 Old/later512 already-seen inputs,13 owners/shared10%basis stay unchanged.
+106 scienceea00de07.../row023d797e... frozen, no runtime/appointment yet.
+Source peer kernel/common-gross parity/fit0 CPU transport are disjoint packages.
+Data-only readiness check found SPY/QQQ25 retained390-timestamp session sets
+2026Aug28..Oct2, plus FirstRate M1 metadata207824/210482bars. Raw values,
+session intersection/continuity, forward labels and effective blocks still
+need a bounded input preparation before any future GPU campaign; not a new
+training/PIT/finality claim or a wait on current106.
 
 Goal94 kis-five-session-successor-custody-preparation-v1 COMPLETE d6e4bec7...:
 A/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.

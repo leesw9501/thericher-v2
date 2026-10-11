@@ -18,8 +18,11 @@ source-chain evidence, not raw NAV/OS proof. Failed reviewer wrappers and Parent
 draft-pin preclose error remain retained, no runtime rerun or fit refund.
 Never rerun105 source/SYN/numerical/freeze/close exclusive creators.
 ONE active106: kis-peer-relative-momentum-entry-development-v1. Freeze a
-prior-only peer-beta selection recipe before numerical work; no106 freeze,
+prior-only peer-beta selection recipe before numerical work. Ready68949095.../
+bodybc1c4dbe... frozen as scienceea00de07.../trial1 row023d797e...;
+signed documentf286a900... and wrapperf94a55dd... are separate hashes. No106
 clock/appointment/numerics yet, no predictive fits/GPU/weights/holdout rescue.
+Never rerun the106 scientific freeze/signed-row exclusive creators.
 Existing13 owners/shared10%basis/identities unchanged. Claude105 result and
 next direction supported-with-limits; next source inspiration is factor
 decomposition, not published stat-arb/market-neutral/mean-reversion replication.

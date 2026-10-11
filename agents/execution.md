@@ -76,7 +76,11 @@ scientific verdict. Native quantity/raw NAV/OS proof remains outside this reader
 Parent draft-reader pin error/reviewer raising-API error retained; no runtime
 rerun or lost-fit refund. Next106 plain/residual paired weights only downscale
 to prior-common gross BEFORE new quantity freeze; no post-price sizing or
-market-neutral claim. Execution source delta waits for finite106 recipe.
+market-neutral claim. Frozen106 replay sourcea155c73e.../release1e9db5ef...
+passes8 Parent SYN groups: original selected-union support survives zero-scale,
+raw control stays unchanged, common-G precedes prices/new quantities, all costs
+and130marks retained. Research SYN only, no actual market/runtime or Paper call.
+Result reader is the next bounded Execution source package, not an approval.
 Full book/shared10%basis/losses/reservations/pending identities unchanged.
 Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
 independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.

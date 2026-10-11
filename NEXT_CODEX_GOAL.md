@@ -10,6 +10,10 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 Prior105 CLOSED/rejectedaa330c36.../result43e5ad42.../outcomea66484b4....
 One CPU fit spent;27of30 pass,3 DEV DD-versus-matched failures. Positive return
 improvement does not erase that frozen rejection. No105 cutoff/model rescue.
+106 ready68949095.../bodybc1c4dbe... is frozen as scienceea00de07... and
+trial1 row023d797e.... Signed documentf286a900... differs from wrapperf94a55dd...
+and row hash; immutable ready proposal remains pre-freeze, not an authority hold.
+No106 numerical appointment/clock/runtime yet. Source packages proceed in parallel.
 
 ## One Fixed Intervention
 

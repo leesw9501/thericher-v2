@@ -14,13 +14,13 @@ block, market wait, GPU permission or operator approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned106 | Close105 evidence, dispatch one relative-selection recipe; no106 freeze/appointment/numerics. |
+| Git/integration | Parent / owned106 | Scienceea00de07.../row023d797e... frozen; signed documentf286a900..., no106 appointment/numerics. |
 | Verification | Parent / ready | Exact1311 authority15829pass22skip reattestable, not a fresh full-suite; external focused61 pass. |
 | Data | Plato / standby106 | Same800/71 causal support available; nearest sector4ETF/monthly/allocation already known; no acquisition. |
 | Engine | Chandrasekhar / owned106 | Finite leave-one-out peer-beta ranking recipe; not105 veto/model/cutoff rescue. |
-| Execution | Herschel / ready106 | Actual1052d565ad2...3groups complete; prior-common-gross paired quantity delta next. |
-| Infra | Socrates / standby106 | CPU105R2cbdfcc3f... complete; invoke only for concrete106 ABI. |
-| Validation | Leibniz / standby106 | Actual105911f77b4...2groups complete, source2groups pass; fresh106 freeze before invocation. |
+| Execution | Herschel / owned106 | Final paired replay1e9db5ef.../8 Parent SYN pass; small aggregate reader next. |
+| Infra | Socrates / complete source106 | Release0f9f5a87.../8 Parent mocks pass; final Engine refs required before actual CPU0-fit runtime. |
+| Validation | Leibniz / owned106 | Prospectivee247987d.../2 source-read groups pass; bounded kernel/replay review next, no wrapper platform. |
 | GPU | Steward / free | No active job/lease; deterministic peer-statistic intervention needs no CUDA. |
 | Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
 | Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |

@@ -60,7 +60,10 @@ c78eeac7.../result43e5ad42...1CPU fit complete/40iterations/0CUDA/weights/
 failed fits. Closureaa330c36.../outcomea66484b4... records27of30pass/3riskfail.
 Informed controlled reexamination of the128 target, not independent novelty.
 Next106 is one CPU-only peer-statistic selection study/0predictivefits/0CUDA;
-not yet frozen or allocated. GPU remains free because this intervention does not need CUDA; no
+Ready68949095.../bodybc1c4dbe... frozen as scienceea00de07.../trial1
+023d797e..., signed documentf286a900.../wrapperf94a55dd...; not numerically
+allocated. Analytical estimator cap12288, not hidden predictive fit spend.
+GPU remains free because this intervention does not need CUDA; no
 utilization-only training or refund of earlier failed/rejected families.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 

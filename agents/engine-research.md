@@ -89,7 +89,9 @@ prospective/source plus5 actual independent groups pass. No model/cutoff rescue.
 ONE next106: peer-relative momentum changes selection, not105 admission/exit.
 Prior20 close-return covariance beta with self excluded; score removes beta
 movement, NOT fitted intercept. Paired prior-common-gross/control-only scaling
-is fixed before prices. No106 scientific freeze/appointment/numerics yet;
+is fixed before prices. Ready68949095.../bodybc1c4dbe... frozen as science
+ea00de07.../trial1 row023d797e...; signed documentf286a900... distinct from
+wrapperf94a55dd.... No106 clock/appointment/numerics yet;
 0 predictive training/GPU/weights/holdout, one CPU600s deterministic study.
 
 ## Prior Packages
