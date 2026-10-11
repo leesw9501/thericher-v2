@@ -6,21 +6,22 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-Goal96 strict input implementation COMPLETE f4d87953... under A/execution/
-kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
-Input525eff41.../tests42e0f10... committed338d4ce; independent20 cases pass.
-Exact R3job90131.../old R2 claim/15 links/schema1/worker9846... -> native cohort.
-Friday inference and original Monday13:40UTC expiry remain.2072 SYN reads fit
-2100/128MiB input bounds, not provider quotas or global gates.
-192 focused/6 integration;1309source22c5a6b5.../JUnitd8516021...,
-15785pass22skip clean8/380.55s. No actual future capture/raw packed rehash/PIT
-or provider finality. Original failed/harness receipts retained.
+Goal97 finite delivery COMPLETE e4d64c29... under A/execution/
+kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
+Independent exchange26 cases bdf27531...; final actual-control SYN release
+e2478323... derives exchange33756032... from transporta9/job374, not whole
+transport hash. Exact production host serializer/2072 SYN metadata reads/
+1035documents/512identities/15links, original Friday DTO/Monday13:40TTL stay.
+Actual113f Linux/native visit SYN passed18.6699s without duplicate; preseeded
+retained metadata/journal, no first-fresh bootstrap, actual future/private data
+or provider finality/PIT claim. R1 wrong-hash/direct-runtime scope preserved.
+236 focused;1311source4205ef0f.../JUnitdb40ae5a...,15829pass22skip clean8.
+Three finite Paper tasks installed; existing Data/shadow owners unchanged.
 
-ONE objective kis-five-session-history-aware-paper-delivery-v1.
-Data supports exact source/clock/claim custody for the finite host->native
-exchange. Existing collection owners/cursors remain, no new acquisition scope.
-Windows default reader is not a Linux alias reader; no latest-file substitution.
-Missing fresh input stays scoped; Execution retained recovery goes first.
+ONE objective kis-five-session-successor-owned-accounting-v1.
+Data supports exact close-source/date/observation/finality semantics for the
+successor-owned capture. No new universe/backfill/model source. Missing captures
+are scoped unavailable; no latest/cache-time inference or fee-zero substitution.
 
 ## Existing Input And Owners
 

@@ -6,19 +6,15 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Allocation
 
-Goal93 prospective512 shadow delivery COMPLETE d90a07e0...: unchanged teacher,
-fit0/GPU0/holdout0, not a new predictive-selection family.
-Engine R2 fixed boundary P2s,35 native/35 pinned CPU source-SYN pass;
-final123 integration/independent5 checks and future delivery installation complete.
-Future actual inference/input unobserved, not a market training allocation.
-Goal94 source preparation COMPLETE d6e4bec7...:
-Execution/Engine/Data prepare pure repeatable-Paper contracts in parallel. Source/SYN smoke does not spend market training.
-No new GPU appointment, sealed evaluation, fitted weights or selection budget.
-Goal94 final source/SYN95serial and independent17fresh/8carry pass; schema
-failure retained, narrow repaired source frozen; clean8 15688pass22skip complete.
-ONE objective kis-five-session-future-delivery-compatibility-recovery-v1:
-finite runtime recovery concerns actual shadow control/list and accounting
-source-copy compatibility, not a research family or resource approval.
+Goal97 finite successor delivery COMPLETE e4d64c29...:
+A/execution/kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
+Exchange/native/host/source contracts and finite3 schedules are installed;
+actual113f network-none preseeded SYN recovery passed18.6699s, existing9 unchanged.
+Future actual input/inference/fill/net unobserved. Source/SYN does not spend
+market training. No new GPU appointment, fitted weights or sealed evaluation.
+ONE objective kis-five-session-successor-owned-accounting-v1:
+exact successor fill-to-five-close attribution, no predictive-selection family.
+All prior research debit/family results below remain unchanged.
 GPU is available and usable; no authorization or environment hold.
 Future owned data/decision opportunity is next_due, never foreground sleep.
 Execution/inference retains resource priority without inventing GPU work.

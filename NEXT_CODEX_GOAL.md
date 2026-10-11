@@ -2,76 +2,82 @@
 
 ## Objective
 
-Complete kis-five-session-history-aware-paper-delivery-v1: deliver the frozen
-history-aware successor to finite Oct19..23 KIS Paper opportunities, consuming
-the existing Oct16 prospective512 shadow. This advances repeatable Paper trading,
-not a new model screen, capital gate, report family or scheduler platform.
+Complete kis-five-session-successor-owned-accounting-v1: connect the installed
+history-aware successor's exact request/fill custody to five close observations
+and explicit fee availability. This advances Paper PnL attribution, not another
+model screen, report/gate family, capital approval or scheduler platform.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal96 implementation COMPLETE f4d87953... at A/execution/
-kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
-RuntimeR2 43488a5c.../history1716dd92.../input525eff41...; native delivery(scope).
-192 focused/6 integration/20 independent input/8 runtime groups/9 native seam;
-1309source22c5a6b5.../JUnitd8516021...,clean8 15785pass22skip/380.55s.
-Claude delivery direction9ba5238d... supported-with-limits, not execution proof.
+Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
+kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
+Job374ce6ae.../controla9e05e22.../exchange-document33756032...;
+native731b289c.../reader c8b84d89...,462-source catalog17949fe9....
+Current strict input525eff41.../runtime43488a5c.../history1716dd92... unchanged.
+Actual113f network-none preseeded SYN recovery passed18.6699s; finite3 installed,
+existing9 unchanged. Source1311/4205ef0f.../JUnitdb40ae5a...,
+15829pass22skip clean8/392.91s;236 focused/Ruff/three sample Compose pass.
+Installation is readiness; actual future input/submit/fill/fees/net unobserved.
 
 ## Parallel Packages
 
-Engine/Data: Windows host strict loader binds caller-frozen R3job90131...,
-templatee85.../Data37b.../worker9846... to ORIGINAL R2 claim namespace and exact
-fifteen links/schema1. Publish one immutable independently hash-bound finite
-DTO/cohort exchange. Native executor does not run a model/data provider.
-Keep Friday inference, first-original-slot identity, original target fraction,
-Monday13:40UTC entry expiry and Research/native reference distinction.
-Do not copy old Goal82 outer exchange counts/115s contract into this new scope.
+Execution: one passive strict reader for exact delivery20261019 retained pointer,
+independently bound exchange/job/cohort and instrument journal/canonical rows.
+Read exact original entry/exit request, linked fills and owned segment quantity;
+reject stale/unbound/foreign same-symbol rows. Never call NativeAdapters.observe,
+construct a broker client, reset a pending identity or modify private state merely
+to inspect it. Immutable input may be absent: no_owned_input or unknown is not
+flatness, zero holdings or a fill. Preserve full original book/basis/owners.
 
-Execution: wire current runtime namespace to the pinned original NativeAdapters
-seven callbacks, including delivery(scope). Load retained metadata/request
-BEFORE fresh input; unavailable shadow never suppresses exact owned recovery.
-Persist identity before effects. Bootstrap historical G83 rows only with its
-original independently retained DTO/exchange and exact complete canonical rows,
-never ticker adoption, fabricated closure, row deletion or fresh budget.
-Use full original shared10%basis/losses/reservations/owner proof. A segment is
-cadence/quantity only. Days1-4 HOLD, fifth Oct23 19:50UTC owned-only EXIT;
-unknown/partial submission reconciles same identity/TTL, no duplicate BUY/SELL.
+Data: specify exact five Oct19..23 close-source/date/observation semantics.
+Reuse existing close-capture/daily-source APIs, not a new dataset/universe.
+Keep broker read/response/archive times separate from economic session close;
+provider finality/PIT remain not_observed unless exact retained evidence proves
+them. A missing/failed/partial close is scoped unavailable, never latest fallback.
 
-Infra: fresh exact code-only source snapshot RO at /app/src including all new
-leaves/package init/dependencies, same pinned Paper image/private volume/native
-paths. Do not relax/rebind old455 catalog, mutate old sources or replace runtime.
-Reuse selective Paper credential packet, canonical services and existing finite
-Scheduler patterns. Prepare source-bound host caller/job/runner and exact
-categorical outcome reader. Freeze shared contracts before dependent work.
+Engine: small typed attribution from frozen exact owned fills/quantities and
+five individually close-bound marks. Separate observed gross, estimated mark,
+fees unavailable, settled cash unavailable and net PnL not_observed. Do not
+invent fee zero, multiply the10% envelope again, tune an exit, select a model or
+claim alpha. Match the original five-session payoff/quantity semantics; missing
+actual outcomes never block independent preparation or owned recovery.
 
-Parent integrates; invoke finite independent review only after candidate freeze.
-No per-agent next-goal files, durable review role or extra platform.
+Infra: reuse pinned Paper image113f/private-volume/canonical paths and existing
+Goal90 passive capture patterns. New source, if needed, gets its own frozen RO
+snapshot; never rewrite installed Goal97/old455 catalogs or old claims/schedules.
+Prepare one finite successor-owned five-slot capture using exact retained cohort,
+not a ticker chosen from account inventory. Network-none RO-bank/isolated SYN
+prerequisite first, then finite Oct19..23 20:25..35UTC install/readback only.
+No manual strategy/task/order/collector launch. No new recurring report chain.
+
+Parent integrates shared contracts before dependencies. Invoke bounded independent
+review only after freeze; ask Claude for a concise accounting/recovery drift-check.
+No per-agent next-goal files or durable review queue.
 
 ## Completion And Scope
 
-Strongest kill: retained unknown submission plus absent fresh shadow recovers
-same request/source/TTL/full book without another BUY or foreign residual SELL.
-SYN tests also cover old/new cohort restart, late fifth EXIT, legacy-row rejection,
-source/byte/namespace mismatch, effect counters after failure and scoped no-intent.
-Exercise actual pinned image with network-disabled isolated SYN storage; no
-actual bank/credentials/model/broker mounts merely for a smoke test.
+Strongest kill: stale or foreign same-symbol quantity and absent fee evidence
+cannot become successor-owned PnL, net profit, flatness or a replacement order.
+SYN tests cover exact linkage, partial/unknown outcomes, duplicate fills, journal
+restart/multiple cohorts, source/hash/date mismatch and missing close/fee inputs.
+Actual private values remain in-process and outside Git; publish only categorical
+status/count/source-safe links. No credentials/account/order identifiers, raw
+bodies/prices/amounts/private intents in output, logs, Claude or Git.
 
-Only after source/SYN/image checks, install/read back finite entry Oct19
-13:30..40UTC, owned recovery and fifth EXIT/recovery opportunities. Preserve
-G83/b860/accounting/shadow/ab65 owners, definitions, due and pending identities.
-No manual strategy/task launch or replacement order. Installation is readiness,
-not actual future input, submission, fill, current-flat, fees or net-PnL proof.
-If a real compatibility fault appears, fix only that exact reversible path;
-continue a ready package instead of foreground-waiting for Friday.
+Done is frozen passive reader/attribution/capture contract, focused independent
+SYN plus actual-image prerequisite and finite installation/readback. It is NOT
+the future economic result. Preserve G83/b860/Goal90/shadow/ab65/Goal97 owners,
+definitions, due, original shared10%basis, reservations/losses and pending identity.
+Future observations belong to their owned next_due, never foreground waiting.
 
-Bound <=one development day; no new teacher/fit/GPU/holdout/model selection,
-collection scope, paid data, public exposure, standing report or schedule expansion
-beyond this finite Paper cohort. Data/models remain M/A; preserve D:15% floor.
-Paper credential/account/order/finite schedule work is already delegated;
-never read/route KIS_LIVE_* or print secrets/account/order IDs/raw/private values.
-Required approvals remain only actual reserved operator authority.
+Bound <=one development day; no new model fit/GPU/holdout, teacher replacement,
+collection scope, paid data, public exposure, major runtime or live behavior.
+Paper reads/schedules are delegated; never read/route KIS_LIVE_*.
+Data M/artifacts A, D:15% floor. After accounting readiness, reconsider one truly
+distinct joint entry/continuation policy; this is not a second current objective.
 
-Focused/independent corrections before authority. Follow AGENTS.md verification,
-Ruff and three sample Compose; exact unchanged repository authority may be
-reattached for external-only work, never for changed shared source. Update current
-projections, verify/commit/push, choose exactly ONE next material objective and
-continue without a market-time foreground wait.
+Follow AGENTS.md verification. Changed shared source requires changed-path serial
+plus clean parallel authority/Ruff/three sample Compose. External-only packages
+may reattach exactly unchanged repository authority with focused verification,
+not repeat a full suite for prose. Refresh stateboards/HANDOFF, verify/commit/push,
+replace with exactly ONE material next company objective and continue.

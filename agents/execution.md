@@ -6,29 +6,34 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 
 ## Current Package
 
-Goal96 implementation COMPLETE f4d87953... at A/execution/
-kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
-RuntimeR2 43488a5c.../history1716dd92... retain exact seed/DTO before reserve,
-verify matching canonical row/commit before execute or observe. Full original
-basis/gross losses/other-owner reservations remain; cadence only is segmented.
-Unknown/partial request recovers original identity/TTL without fresh Research.
-Days1-4 HOLD; fifth close-minus-ten owned EXIT, no foreign lot adoption.
-Expired unreserved staging can retire only exact application absence; registered/
-unknown attempts never abort/reset. Not OS/broker no-wire or atomicity proof.
-Original44 arity defect fixed by delivery(scope),45 author/8 independent groups/
-9 native seam/6 Parent integration pass; pass new runtime class namespace.
-192 focused;1309source22c5a6b5.../JUnitd8516021...,
-15785pass22skip clean8/380.55s; Ruff/three sample Compose pass.
-No actual bank/order, installed source, task or model change/fill/net proof.
+Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
+kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
+Native731b289c.../reader c8b84d89.../release53f66678...,45 author/6 independent
+groups; host33/independent16 pass. Current runtime43488a5c.../history1716dd92...
+retains exact seed/DTO before reserve; full original basis/losses/reservations,
+same identity/TTL recovery and mandatory delivery(scope) remain.
+Source462/catalog17949fe9...,job374ce6ae.../controla9e05e22...; no old rebind.
+Actual113f isolated network-none SYN passed18.6699s; preseeded journal/metadata,
+not first-fresh or actual constructor/broker proof. No actual bank/order/fill/net.
+236 focused;1311source4205ef0f.../JUnitdb40ae5a...;15829pass22skip clean8.
 
-ONE objective kis-five-session-history-aware-paper-delivery-v1.
-Execution owns finite native successor and exact retained recovery before fresh
-host input. Fresh source snapshot includes current leaves; original shared10%
-basis/private volume/canonical APIs and G83/b860/accounting owners unchanged.
-Finite Oct19..23 install follows source/SYN/image verification, not manual order.
-Claude recovery5ab930b7.../next9ba5238d... supported-with-limits.
+ONE objective kis-five-session-successor-owned-accounting-v1.
+Own passive exact retained cohort/journal/fill projection and five-close capture;
+never native observe() for inspection, reset a pending request, adopt same-symbol
+foreign inventory, substitute stale quantity or label missing fees as zero.
+Keep installed strategy/model/shared10%basis and old owners unchanged.
+Claude final6c7cf6bd... supported-with-limits, not authority or broker outcome.
 
 ## Owned Paper Opportunities
+
+Goal97 A/execution/kis-five-session-history-aware-paper-delivery-v1/delivery-r1:
+three successor-20261019-{enter,close,recover} finite tasks Ready. EntryOct19
+22:30KST/recovery22:40; first four HOLD; fifthEXITOct24 04:50/recovery05:00.
+Recovery allfive dates plus fifth20:00UTC. Retained pointer is
+/private/canary/.five-session-runtime/delivery20261019/retained-exchange.json,
+embedded exact job374ce6ae...; instrument journals use binding hash, not ticker.
+Exact source-safe facts parent/installed-tasks-after.json show existing9 unchanged.
+No manual task invocation; future input/submit/fill/current-flat/fees/net unknown.
 
 Goal83 A/execution/kis-stock-five-session-canonical-paper-delivery-v1:
 job80012e77.../plan507ffbb6.../cohort387ee5f6..., AAOI/NAS.

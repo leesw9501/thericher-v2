@@ -2,25 +2,35 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-five-session-history-aware-paper-delivery-v1.
+ONE objective: kis-five-session-successor-owned-accounting-v1.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
-Goal96 implementation COMPLETE f4d87953...:
-D:/thericher-v2/model-artifacts/execution/kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
-RuntimeR2 43488a5c.../history1716dd92.../input525eff41..., native delivery(scope)
-arity corrected; pass the new runtime namespace to NativeAdapters.
-192 focused/6 integration/20 independent input/8 runtime groups/9 native seam pass.
-Final1309source22c5a6b5.../JUnitd8516021..., clean8 15785pass22skip/380.55s,
-helper0/temp cleaned; Ruff/three sample Compose pass. No deployment/fill proof.
+Goal97 finite delivery COMPLETE e4d64c29...:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
+Exchange801960ca... committed/pushed13eac3a; native731b289c.../reader c8b84d89...,
+host20459a47...,job374ce6ae.../controla9e05e22.../exchange-contract33756032....
+Code-only snapshot D:/thericher-v2/model-artifacts/g97-app-v1/src:
+462sources/catalog17949fe9..., nine canonical pins unchanged, old455 untouched.
+236 changed-path/26 independent exchange/6 native groups/16 host tests pass.
+Final1311source4205ef0f.../JUnitdb40ae5a..., clean8 15829pass22skip/392.91s,
+helper0; Ruff/three sample Compose pass. Actual113f network-none SYN18.6699s
+restores same request/TTL without duplicate execution; exact container absent.
+Preseeded SYN retained metadata/journal, not first-fresh or broker wire proof.
+Three finite new tasks installed/read back; nine original definitions/due/last
+facts unchanged, no manual task/broker call. Source-safe readback:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-history-aware-paper-delivery-v1/parent/installed-tasks-after.json.
+New entryOct19 13:30UTC; fifthEXITOct23 19:50; recoveryOct19 13:40, allfive
+dates plus fifth20:00. Installation is readiness, future runtime not_observed.
 Weekly serial2026-10-10 already passed; no doc-only full-suite rerun.
-Claude recovery5ab930b7.../next-direction9ba5238d... supported-with-limits.
+Claude final6c7cf6bd... supported-with-limits, not authority or broker proof.
 
-Next deliver finite host verification -> immutable hash-bound DTO -> Linux native
-successor. Default loader reads canonical Windows paths; do not invent Linux
-default parity or blindly reuse old Goal82 outer exchange counts/115s contract.
-Retained request/DTO and original horizon before fresh input. New RO /app/src
-snapshot must contain all current leaves; never relax/rebind old455 catalog.
-Original full10%basis/book/volume and all existing schedules remain unchanged.
+Next build passive successor-owned fill-to-five-close accounting. Read exact
+job374/controla9/retained exchange/journal and canonical request/fill linkage;
+never latest-file/ticker adoption or native observe() as a reader. Reuse close
+capture APIs and preserve actual read/archive/economic-close clocks separately.
+Missing fees/finality/settlement stays unknown, never fabricated net PnL.
+Future input absence does not prevent owned recovery or independent preparation.
+Original full10%basis/book/volume, model and all existing schedules stay unchanged.
 Paper credential paths are delegated; never read/route KIS_LIVE_* or print values.
 No manual strategy/task/order launch merely to inspect evidence. Use isolated
 network-none SYN smoke before finite install/readback; no fee/net/current-flat claim.
@@ -67,6 +77,8 @@ Use the strict Data reader/typed binding for the new consumer. Never call
 native observe() as a passive reader: it may recover broker orders.
 
 Owned opportunities remain:
+- Goal97 successor20261019: entryOct19 22:30KST/recovery22:40; fifthEXITOct24
+  04:50/recovery05:00KST. Three finite tasks, first four HOLD; no actual fill yet.
 - Goal83 cohort387ee5f6... job80012e77...: Oct12 22:30KST entry/recovery22:40;
   fifthEXIT Oct17 04:50/recovery05:00, days1-4 HOLD.
 - Original b860 day-Paper Oct12 22:30..22:40/Oct13 04:50..05:00KST unchanged.

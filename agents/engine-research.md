@@ -6,20 +6,24 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-Goal96 input/runtime implementation COMPLETE f4d87953... at A/execution/
-kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
-Input525eff41.../tests42e0f10... committed338d4ce;31 author/20 independent pass.
-R3 exact15-link/schema1 typed DTO/cohort restores Friday inference unchanged.
-192 focused/6 integration;1309source22c5a6b5.../JUnitd8516021...,
-15785pass22skip clean8/380.55s; Ruff/three sample Compose pass.
+Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
+kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
+Exchange801960ca.../tests d4bf358d... committed/pushed13eac3a;44 author/26
+independent pass. Actual host serializer and exact native337-contract restore
+original Friday decision/first slot/target/TTL; no model code in Executor.
+236 focused;1311source4205ef0f.../JUnitdb40ae5a...,15829pass22skip clean8.
+Actual113f network-none preseeded SYN same-request recovery passed18.6699s;
+finite3 tasks installed, existing9 unchanged, future input/fill/PnL unknown.
 No numerical campaign/model load/fit/GPU/weights/holdout or actual inference.
 
-ONE objective kis-five-session-history-aware-paper-delivery-v1.
-Engine owns a minimal strict finite DTO exchange from already verified input;
-no model code in Executor, replacement winner or second10% multiplication.
-Do not blindly reuse old Goal82 outer exchange fields/counts/115s ceiling.
-Current Research conclusions below remain scoped; delivery is not alpha proof.
-Claude recovery5ab930b7.../next9ba5238d... supported-with-limits, not authority.
+ONE objective kis-five-session-successor-owned-accounting-v1.
+Engine owns attribution semantics for exact fills/five close marks with explicit
+fee/cost availability. Do not choose another model, tune exit duration or call
+SYN/seen-data marks alpha. Missing actual fees cannot become net-profit claims.
+After this accounting package, a genuinely distinct joint entry/continuation
+policy can be frozen; past-close decisions execute next OPEN, not same-close
+hindsight. This is a direction, not a second active goal or rescued family.
+Claude final6c7cf6bd... supported-with-limits, not authority or profitability.
 
 ## Recent Research Conclusions
 
