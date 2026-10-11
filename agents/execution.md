@@ -40,8 +40,16 @@ tolerance/clipping/normalization/quantity resize/cash repair/Paper risk change.
 Original rational R1 literal-edge limit remains immutable. Independent joint
 Validation6 52be7d77... passes both repairs and accounting/missing-funding kills.
 Actual separate diagnostic wrapper failed, not runtime parity. Goal103 explicit
-stable transport/replay pin rebind precedes CPU/GPU numerical work; no broker,
-bank/deployment/schedule changes, original101 remains immutable and spent.
+stable transport/replay pin rebind COMPLETE/rejected7a1cb985.... Actual host
+bd251f9a... binds result5c94f579.../1CPU2CUDA/36tables130marks13failed criteria.
+Reader two-constant clone7291d516.../5 focused pass keeps old geometry50 versus
+actual71, so full reader read fails geometry_count. Actual review0d98c855...5
+groups uses unchanged scalar predicates and separate source geometry; no false
+full-reader pass or independent raw NAV/quantity/OS proof. Result clocks are
+UTC, not +09; Parent closure corrects that explanatory receipt wording.
+Independent Validation runtimebeb35251...6 groups agrees. No broker/bank/
+deployment/schedule changes; original101 immutable and spent. Next goal's
+paired CPU comparison keeps exact entries/q/costs/all marks; no runtime adoption.
 Full book/shared10%basis/losses/reservations/pending identities unchanged.
 Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
 independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.

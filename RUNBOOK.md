@@ -5,6 +5,24 @@
 ONE objective is the current NEXT_CODEX_GOAL.md, not a historical command below.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
+Goal103 CLOSED/rejected7a1cb985...:
+D:/thericher-v2/model-artifacts/research/kis-held-exit-causal-development-technical-reexecution-v1/integration-evidence.json.
+Science64c0ee45.../trial2dc6cc8d8.../outcomeb1f850d0.... Actual CPUc203b822...
+passes; CUDA hostbd251f9a.../receipt69174f13... binds result5c94f579....
+1CPU2CUDA/8epochs224updates complete,36tables130marks;13of48 checks fail.
+Parent50 focused,13 independent source/meta and11 actual aggregate groups pass;
+source/child/container/owned-GPU closure attested, not independent OS/raw PnL.
+Old two-constant reader clone full read fails geometry_count: expects50 context
+sessions, actual71 with50 marks. Unchanged scalar predicates plus separately
+pinned geometry confirm rejection. Actual clocks UTC, not receipt wording+09.
+Original101 UNKNOWN3 spent/failed102 wrapper/source-only parent status-name
+failure preserved; cumulative6fits/16epochs448updates/1200allocated seconds.
+Never rerun completed CPU/CUDA helpers or allocate a third technical attempt.
+Claude result/next direction supported-with-limits; existing13 owners unchanged.
+Current next objective tests raw105 versus fixed price-volume augmented120
+ridge,2CPU fits/600s/noGPU,30tables36checks. Source proposal d63f2658.../Data
+e4fe1834... supports5/10/20 within21 bars, no fullQlib/VWAP30/60 claim.
+No numeric appointment yet; freeze source/scientific/custody before market work.
 Goal101 CLOSED/technical failed44522a70...:
 D:/thericher-v2/model-artifacts/research/kis-stock-held-only-causal-exit-development-v1/integration-evidence.json.
 Actual CPU1/CUDA2/8epochs/224updates completed, all3 spent; no comparative result

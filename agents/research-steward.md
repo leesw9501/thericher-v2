@@ -28,12 +28,23 @@ Hosta33a26d6... attests child/container/source/lease closure, not OS proof;
 original result_sha null, exact failure bytes bound offline. GPU now free.
 Goal102 CLOSED/source-SYN3c98f73f... spends no market fitting/GPU/sealed budget;
 its separate CPU diagnostic-wrapper failure is not a model fit refund or hold.
-Goal103 planned SAME-family trial2 is explicit technical reexecution, not new
+Goal103 frozen SAME-family trial2 is explicit technical reexecution, not new
 hypothesis/independent replication. Metadata127673d5... freezes prior3 spent
 and ONE additional3-fit/600s attempt, cumulativemax6fits/16epochs/448updates/
 1200allocated seconds. No third attempt, changed seeds or outcome selection.
-Claude prospective budget supported-with-limits; canonical scientific freeze,
-new source binding and stable CPU prerequisite precede any GPU appointment.
+Claude prospective budget supported-with-limits; science64c0ee45.../rowdc6cc8d8...
+and signed document94de5017... are bound before runtime. New sourcebinding
+4fd4671e.../CPUc203b822... passes with zero fits/no GPU; exact resultb26cf02b...
+and receiptc2650b40... preserve host cleanup. Actual103 CUDA appointment
+bd7d4ec7995e4fec9508f0c8b26ac781 CLOSED, hostbd251f9a.../result5c94f579...,
+1CPU2CUDA/8epochs224updates complete;13of48 fixed checks fail. Integration
+7a1cb985.../outcomeb1f850d0... closes same-family trial2. Cumulative6fits/
+16epochs448updates/1200allocated seconds; original101 UNKNOWN3 spent intact.
+No duplicate dispatch/new clock/third attempt. Owned GPU lease released, free.
+Current ONE goal proposes paired raw/augmented ridge CPU2/600s with fixed
+price-volume basis;0GPU/holdout/weights, new feature family with informed prior
+lineage, not fresh replication or rejected-family depth. Scientific freeze
+precedes its market work; no appointment yet. No utilization-only training.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 
 ## Prior Allocation

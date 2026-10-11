@@ -13,6 +13,32 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal103 SAME-family technical reexecution COMPLETE/rejected7a1cb985... at
+A/research/kis-held-exit-causal-development-technical-reexecution-v1/integration-evidence.json.
+Science64c0ee45.../trial2dc6cc8d8... closed by outcomeb1f850d0.... Actual CPU
+prerequisitec203b822... passes; CUDA hostbd251f9a.../receipt69174f13... binds
+result5c94f579.... CPU ridge1/CUDA GRU2 completed8epochs/224updates,
+36tables/all130marks;13of48 frozen criteria fail.10bps-per-side growth:
+GRU101 DEV+.4971%/later-.0190%;GRU202+.1207%/+.1077%;fixed5+1.9948%/-.7110%.
+Early exit reduces some later losses but sacrifices profitable DEV holds.
+No best-seed rescue, third attempt, retained weights, holdout or Paper change.
+Original101 UNKNOWN/spent3 stays immutable; cumulative6fits/16epochs448updates/
+1200allocated seconds, not measured worker duration. Source/child/container/
+lease cleanup attested, not independent OS proof. Parent50 focused pass;
+13 independent source/meta groups and11 actual aggregate/chain groups pass.
+Old full reader still expects50 context sessions versus actual71: its strict
+read fails geometry_count. Unchanged scalar predicates plus separately pinned
+source geometry verify rejection; do not claim a passing full-schema reader.
+Actual result clocks are UTC; the Execution receipt's +09 wording is corrected
+by Parent closure. Source-only parent status-name failure before CPU preserved;
+no duplicate metadata/dispatch or clock reset. Claude result/next direction
+supported-with-limits; exact1311 repo authority15829pass22skip reattached.
+Next ONE objective tests a source-derived5/10/20 price-volume basis against
+matched raw ridge,2CPU fits/600s, no GPU architecture/feature sweep. Official
+Qlib/MIT proposal d63f2658... and Data context audit e4fe1834... are consumed;
+this is an OHLCV-derived subset, NOT fullAlpha158/360 or independent replication.
+All13 existing Paper/Data owners and original shared10%basis remain unchanged.
+
 Goal102 replay recovery COMPLETE/source-SYN3c98f73f... at A/research/
 kis-held-exit-postfit-replay-recovery-v1/integration-evidence.json.
 Engine6a7c0512.../driver58c50515... fixes real later Panel71 identity and safe
@@ -27,7 +53,7 @@ do not claim a passing Docker prerequisite or actual101 first-cause proof.
 Retire that finite diagnostic wrapper, reuse stable101 model transport next.
 Inherited Engine102 CLI still binds old replay; explicit source rebind required.
 Claude cap parity and prospective budget supported-with-limits. Next ONE goal
-is deliberate same-hypothesis technical reexecution, not a new mechanism or
+was deliberate same-hypothesis technical reexecution, not a new mechanism or
 independent replication: one additional3-fit/600s attempt, prior3 fits remain
 spent, cumulative max6/1200 allocated seconds. Same recipe/seeds/splits/kill
 tests, no best-seed rescue or third attempt. Its own CPU prerequisite precedes

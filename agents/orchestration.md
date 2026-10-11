@@ -14,19 +14,22 @@ all3 fits spent, no comparative tables/weights. Candidate UNKNOWN, not rejected.
 Goal102 CLOSED/source-SYN3c98f73f...;79 source tests/10 mocks,12 independent
 groups pass. Separate actual Docker diagnostic wrapper failed and is retired,
 not promoted or used as a company-wide hold.
-ONE objective kis-held-exit-causal-development-technical-reexecution-v1.
+Goal103 CLOSED/rejected7a1cb985.../result5c94f579.../outcomeb1f850d0...;
+13of48 criteria fail, all3 current fits complete, cumulative6 spent/none refunded.
+Parent50 focused/13 source-meta/11 actual aggregate independent groups pass.
+ONE objective kis-price-volume-basis-held-exit-development-v1, paired CPU2.
 No company block, market wait, GPU permission or operator approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned103 | Sole Git/actual Docker owner; explicit new freeze/trial2, preserve prior spend. |
+| Git/integration | Parent / owned104 | Sole Git/actual Docker owner; close103, freeze one new feature intervention. |
 | Verification | Parent / ready | Exact1311 authority15829pass22skip reattestable, not a fresh full-suite; focused source/SYN next. |
-| Data | Plato / complete source102 | Typed reviewea713efb...6 groups, no data acquisition; future input unchanged. |
-| Engine | Chandrasekhar / owned103 | Technical metadata127673d5.../6 tests; explicit new science/replay driver pins pending. |
-| Execution | Herschel / ready independent | Research replayR2/59 tests complete; no broker/deployment/risk change. |
-| Infra | Socrates / owned103 source | Retire failed separate test wrapper; reuse stable101 CPU/model transport, no actual role calls. |
-| Validation | Leibniz / complete source102 | Joint52be7d77...6 groups; exact new contract/counters review ready. |
-| GPU | Steward / free | Prior3 spent; ONE prospective additional3/600s, no appointment yet or refund. |
+| Data | Plato / ready104 | Context e4fe1834... supports5/10/20, raw-row provenance next; no acquisition or future-input claim. |
+| Engine | Chandrasekhar / ready104 | Source proposal d63f2658... consumed, fixed9continuous/6flags; paired kernel next. |
+| Execution | Herschel / ready104 | Actual103review0d98c855...5 groups; old full-reader geometry fails, scalar route valid. |
+| Infra | Socrates / ready104 | CPU-only transport adaptation next; no duplicate103 runtime or role-owned actual calls. |
+| Validation | Leibniz / standby104 | Actual103runtimebeb35251...6 groups complete; invoke after frozen next source/candidate. |
+| GPU | Steward / free | Actual103 exact owned lease closed; current paired CPU intervention needs no CUDA. |
 | Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
 | Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |
 | Accounting due | Goal95 recovery Action | Five finite dates, firstOct13 05:25KST; original job/claims, captures unknown. |
@@ -36,15 +39,16 @@ No company block, market wait, GPU permission or operator approval hold.
 
 ## Bottleneck And Reversible Improvement
 
-Reproduced post-fit interfaces are corrected/source-SYN attested; actual101
-FIRST cause remains unknown. Separate Docker test-wrapper f1fb92ab... fails
-because its source alias/publication ABI is wrong; native joint proof remains
-valid. Retire the transient wrapper and reuse the already working101 model
-transport with exact new pins/CPU prerequisite. This removes an engineering
-detour without claiming runtime success. Explicit technical trial2 keeps
-original3 fits spent and cumulativebudgetmax6/1200s; no altered hypothesis,
-unobserved fit refund, best-seed rescue or third attempt. Claude budget/cap
-supported-with-limits, not authority or numerical proof.
+Repaired source completed actual103 comparison; original101 first cause remains
+unknown. Old full reader's50-context assumption still mismatches71: retain that
+scoped finding and use unchanged scalar checks plus source-linked geometry,
+not a false reader pass, refit or global hold. New reader tests must use real
+context-versus-evaluation DTOs rather than the author's50-session fixture.
+This reversible correction improves backtest interpretation. Proposal d63f2658...
+and context e4fe1834... were prepared in parallel with GPU runtime; consume them
+for a fixed basis intervention instead of a same-family architecture rescue.
+No company block or foreground market wait. Claude result/next supported-with-
+limits, not authority or proof; original3/current3 spent preserved.
 
 Goal99 learned entry and clairvoyant continuation failed35of64 fixed kills;
 another model name cannot isolate why. Fix entry selection and quantities,

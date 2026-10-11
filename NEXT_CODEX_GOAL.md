@@ -2,64 +2,65 @@
 
 ## Objective
 
-Complete kis-held-exit-causal-development-technical-reexecution-v1: obtain the
-originally unobserved held-only causal-exit comparison after the proven source
-repairs. This is ONE deliberate technical reexecution of the SAME hypothesis,
-not a new mechanism, seed search, independent replication or Paper promotion.
+Complete kis-price-volume-basis-held-exit-development-v1: test whether a fixed
+causal price-volume basis adds net value to a matched raw-feature ridge exit
+model. This is ONE feature intervention, not another architecture, seed/window
+search, fresh replication or Paper promotion.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Original101 failed44522a70.../scienceb261c993.../trial02520940.../outcome7c2307bf...
-remains immutable:3 fits/8epochs/224updates spent, no result tables/weights,
-candidate UNKNOWN. Source102 complete3c98f73f...;79 source/10 mocked tests,
-independent Data6/Validation6 pass. Separate actual diagnostic wrapper failed
-f1fb92ab... and is retired, NOT a passing runtime prerequisite.
+Prior103 CLOSED/rejected7a1cb985.../result5c94f579.../outcomeb1f850d0...:
+13of48 checks fail,1CPU2CUDA complete; prior101 UNKNOWN3 spent stays immutable.
+Same-family cumulative6fits/16epochs448updates/1200allocated seconds, no retry.
+New feature-family lineage must disclose these informed, already-seen studies.
 
-## Frozen Scope And Parallel Work
+## Fixed Hypothesis And Bounds
 
-Engine: use technical-ready-contract127673d5.../releaseb48c2ad9... at A/research/
-kis-held-exit-causal-development-technical-reexecution-v1/engine-r1.
-Preserve the original specification, family, rule-selected entry weights,
-initial-capital quantities, one-step liquidation target, TRAIN/DEV/later-seen
-splits, CPU ridge recipe, GRU101/202 seeds,4epochs/batch192/224update limit,
-21bar/20step horizon, fixed5/immediate/cash controls and all48 cost-band checks.
-No outcome-driven alteration. Corrected driver58c50515... and replaya5a9a0e1...
-require explicit science/replay-pin binding before actual reliance.
+Consume official-Qlib/MIT source proposal d63f2658... at A/research/
+kis-held-exit-causal-development-technical-reexecution-v1/next-direction-r1/source-proposal.json
+and Data source-readiness e4fe1834... at A/data/
+kis-held-exit-causal-development-technical-reexecution-v1/next-input-r1/source-readiness.json.
+No Qlib import/install or fullAlpha158/360/VWAP parity claim.
+Freeze scales5/10/20 within21 real completed bars:9 continuous price-volume
+correlation/shock-dispersion terms and6 declared degeneracy flags from the
+proposal. TRAIN-only scaling; no imputation/clipping/splice/30/60 extension.
+Use raw CLOSE/VOLUME provenance, not mislabeled normalized-token substitutes.
 
-Parent/Steward: freeze a new contract in the SAME family as trial2, explicitly
-technical_reexecution_of101. Prior3 fits/8epochs/224updates/600allocated seconds
-are not refunded or hidden. Permit exactly ONE additional attempt:CPU1/CUDA2,
-max3fits/8epochs/224updates/600s. Cumulative lineage max6fits/16epochs/448updates/
-1200allocated seconds. Preserve the original clock; the new attempt's own
-clock is explicitly new, not a reset of101. No further retry if technicalfailed.
-Claude prospective budget is supported-with-limits, not an authority grant.
+Raw ridge105 versus augmented ridge120, both alpha1/intercept/same raw-state
+scaler. At most2CPU fits/600s total,2threads/4GiB,0GPU/sweep/retry/weights/holdout.
+Freeze exact scientific/source/custody contract BEFORE market numerical work.
+Same original101512 identities, old800/later71, TRAIN134/DEV15/later9 geometry,
+one-interval liquidation target, causal completed-CLOSE context and NEXT-OPEN
+actions. Entries/initial-capital q=w/(entryOPEN*1.001)/forced fifthOPEN unchanged;
+terminal sells before buys, no reinvestment/reentry/rescale/leverage/cash repair.
+Selected missing facts fail that comparison, never delete adverse outcomes.
 
-Infra: reuse stable101 model CPU/CUDA transport and d6b43213... image; do not
-extend the failed separate102 diagnostic wrapper. Exact release/source/control
-pins and a passing new CPU synthetic prerequisite precede the sole GPU visit.
-Parent alone executes actual Docker/Git. Keep network-none/no private mounts
-for CPU, exact read-only four market inputs for CUDA, exclusive GPU ownership,
-bounded resources, external outputs and exact child/container cleanup.
+Both models, fixed5/immediate/cash:30 tables,all130 marks,5/10/20bps per-side
+actual legs. Augmented must beat raw/fixed5/immediate/cash U in BOTH blocks at
+ALL costs, DD no higher than raw/fixed5:36 fixed checks. Failure ends this basis
+without changing features/regularization/criteria. Seen data remain seen.
+Equivalent prior recipe found before fits closes as duplicate, not renamed.
 
-Data and temporary Validation: independently reattest unchanged input/target/
-split/source/cost/quantity and cumulative spend binding. Validate actual final
-host/result/counter chain and frozen aggregate arithmetic without tuning or
-opening a holdout. Missing/failed results remain technical unknown, not loss,
-cash, scientific rejection or fit refund. No raw rows/labels/weights retained.
+## Parallel Owners And Completion
 
-## Completion And Limits
+Engine: feature kernel/paired driver/frozen hypothesis and prior-lineage audit.
+Data: causal raw-row/context alignment and support, no acquisition/quality gate.
+Execution: exact quantity/cost replay parity and30-table result schema; preserve
+failed old full-reader geometry50-vs71 evidence, do not claim it passes.
+Infra: reuse pinned d6b43213... CPU image/known host transport, no new platform.
+Parent alone executes actual network-none Docker/Git, exact four data files RO,
+external outputs/clock/source post-audit/known child-container cleanup.
+Temporary Validation receives frozen sources and actual result, never tunes.
 
-Done: exactly one bounded comparison with36 tables/all130 marks/all48 frozen
-checks, or exact input-unavailable/technical-failed closure. Both seeds and
-cost bands must satisfy original criteria; no best-seed/extra-fit rescue.
-Development result only, not fresh evidence or changed Paper strategy.
+Done: one exact paired development comparison or linked duplicate/input-
+unavailable/technical-failed closure. Independent source/aggregate review is
+not raw-price replay, provider finality, independent OS proof or alpha proof.
+Claude prospective direction supported-with-limits; challenge result before
+interpretation. All13 Paper/Data owners/due/shared10%basis/identities unchanged.
+No credential/KIS/provider/account/order/scheduler changes, downloads, paid
+commitments or live behavior. Data M/artifacts A,15% D: floor. No global wait.
 
-All13 Paper/Data owners, next_due, original shared10%basis and pending identities
-stay unchanged. No credentials/KIS/provider/account/order/scheduler changes,
-downloads, paid commitments, weights, holdout or live behavior. Data M,
-artifacts A, D:15%floor. One development day; no foreground external waits.
-
-Use focused tests and exact-source reattached repository authority for external
-work; changed shared source uses AGENTS.md authority. Ruff/three sample Compose,
-stateboard/HANDOFF refresh, verify/commit/push, then exactly ONE material next
-objective. Preserve failures honestly; do not add a new approval or global hold.
+Focused verification and exact-source repository-authority reattachment for
+external-only work; changed shared source follows AGENTS.md authority. Ruff,
+three sample Compose checks, stateboard/HANDOFF refresh, verify/commit/push,
+then replace this with exactly ONE material next company objective and continue.

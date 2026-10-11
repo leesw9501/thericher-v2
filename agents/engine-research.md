@@ -42,12 +42,25 @@ Goal102 CLOSED/source-SYN3c98f73f...; driver58c50515.../replaya5a9a0e1...,
 Native joint fixed-predictor integration proves both fixes; inherited CLI needs
 explicit new replay pin. Separate actual Docker test-wrapper failedf1fb92ab...,
 retired without runtime-pass claim. Stable101 model transport is reused next.
-Goal103 deliberately reexecutes SAME frozen hypothesis once after repair,
+Goal103 COMPLETE/rejected7a1cb985... deliberately reexecutes SAME hypothesis,
 not novelty/independence/performance rescue. Metadata127673d5.../releaseb48c2ad9...,
-6 Parent tests; same family plannedtrial2, prior3 spent, additionalmax3/600s,
+6 Parent tests; same family trial2dc6cc8d8.../outcomeb1f850d0..., prior3 spent,
 cumulativemax6fits/16epochs/448updates/1200allocated seconds. New scientific
-freeze/source rebind/CPU prerequisite precede GPU; no third retry/seed tuning.
-Claude cap/budget supported-with-limits; no GPU appointment yet.
+freeze/source rebind/CPU prerequisite pass before actual GPU. Hostbd251f9a.../
+result5c94f579...:1CPU2CUDA complete8epochs224updates/36tables130marks,
+13of48 fixed checks fail. GRU101 DEV+.4971%/later-.0190%,GRU202+.1207%/+.1077%
+at10bps-per-side; fixed5+1.9948%/-.7110%. No robust all-block/cost improvement,
+no best seed/depth/third retry or retained weights. Parent50 focused pass,
+13 independent source/meta and11 actual chain/aggregate groups pass. Old full
+reader geometry50 versus actual71 fails; scalar predicates and pinned geometry
+separately verify rejection, not a passing full reader/raw-price replay.
+Claude cap/budget/result/next direction supported-with-limits. GPU lease closed.
+Current ONE objective: fixed price-volume basis paired CPU development. Source
+proposal d63f2658... at the103 next-direction root was made before103 outcome
+reads; official Qlib loader/MIT re-retrieved.9 continuous+6 flags,5/10/20 scales
+within21 bars, raw105 versus augmented120 ridge(alpha1),2fits600s/no CUDA.
+Data e4fe1834... shows30/60 lack first-later/current context and VWAP absent;
+no fullAlpha158/360 claim, window search, implicit splice or Paper change.
 
 ## Prior Packages
 
