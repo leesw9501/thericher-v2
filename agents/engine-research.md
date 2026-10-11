@@ -31,10 +31,23 @@ Original source/failure evidence unchanged; not a real teacher inference.
 Task thericher-shadow512-20261019-delivery installed Ready Oct16 21:15UTC,
 job e8550670.../DeliveryR2edee6d64...; no manual run or order consumer.
 Delivery readiness does not establish future input/inference/profit.
-Current ONE objective kis-five-session-successor-custody-preparation-v1.
+Goal94 successor/strict-binding source preparation COMPLETE d6e4bec7....
 Engine owns strict finite shadow-envelope-to-typed-decision source/SYN binding,
 no model loading/fit/GPU/score dump. New lazy leaf source/tests in Git;
 no change to installed entrypoints/core bytes or global Decimal contract.
+Goal94 original schema2 acceptance failed independent1of25, retained1a118914....
+Narrow R2 source2cadd19e.../tests5f1d369c... enforces schema1,29 focused pass;
+release576962af... under A/research/kis-five-session-successor-custody-preparation-v1/
+engine-r2. Fresh independent Engine12/Data-native bridge5 pass, Execution8carry.
+Final95 changed-path pass; clean8 15688pass22skip/378.83s on1303sources105799af...;
+JUnit6d23a341..., Ruff/three sample Compose pass.
+Actual installed Goal93R2 template expiry is OPEN/non-UTC, not UTCOPEN+10m;
+its worker source_chunks dict guard contradicts Data ordered512 list.
+Next source-bound recovery must test actual pinned controls/Data-shaped SYN
+before versioned deployment. No model result/adoption inferred from installation.
+ONE objective kis-five-session-future-delivery-compatibility-recovery-v1:
+Engine owns minimal immutable engine-r3 expiry/list correction and exact source
+consumer identity if needed; no model load/fit/GPU/weights or teacher change.
 
 ## Recent Research Conclusions
 

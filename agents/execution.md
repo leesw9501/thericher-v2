@@ -27,11 +27,25 @@ Next source-only feasibilitycd9d2ed3... under parityroot/next-proposal:
 second same-instrument cohort needs versioned custody history, not deletion
 of prior plans or a blanket approval/profitability gate. No implementation/
 fresh bank observation or future input inferred from this proposal.
-Current ONE objective kis-five-session-successor-custody-preparation-v1.
+Goal94 source preparation COMPLETE d6e4bec7....
 Execution owns narrow pure second-cohort history planning/typed closure tests.
 New lazy leaf source/tests in Git; old installed app/entrypoint/core bytes and
 private bank schema stay unchanged. Unknown prior exact custody defers only
 its own successor, not independent Paper. No API/scheduler in preparation.
+Goal94 source-releasefab08013.../sourced18a6bb0.../testsbf1d657e...,35 SYN pass;
+two closed same-instrument cohorts and exact restart preserve all old plans,
+original basis/gross cash losses/reservations. Full-book replay is never sliced
+to current cadence. Closure uses existing current read contract, no new timer.
+Parent95serial pass; independent Execution8 unchanged-source carry after fresh
+Engine12/Data-native5 sourceR2 checks. Final15688pass22skip/378.83s,
+1303source105799af.../JUnit6d23a341..., Ruff/three sample Compose pass.
+Infra source-only compatibility e4509ae3... found Goal90 bridge rejects added
+liveRepo files despite unchanged original455. Exact old455 snapshot matches;
+feasibilityf2cb0e35... is not recovery deployment or actual accounting failure.
+Next direction: narrow same-catalog native/child binding, original job/claims/
+five windows/basis/private volume retained; no broader schedule or order scope.
+ONE objective kis-five-session-future-delivery-compatibility-recovery-v1;
+Execution owns this immutable accounting containment, not a new order session.
 
 ## Owned Paper Opportunities
 

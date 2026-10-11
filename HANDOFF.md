@@ -60,17 +60,32 @@ passing authority. No finding becomes a global approval or Paper permission hold
 
 ## Current Work
 
-ONE next objective kis-five-session-successor-custody-preparation-v1.
-Source-only feasibilitycd9d2ed3... at A/execution/
-kis-stock-five-session-prospective512-shadow-parity-v1/next-proposal/feasibility.json
-shows the retained first historical entry request conflicts with a second
-same-instrument cohort even after exact closure. Prepare a narrow pure versioned
-successor-history contract and strict finite shadow-DTO binding. Preserve all
-old histories, shared10%basis and installed source versions; no reset/adoption.
-Missing Friday input or unresolved prior exact custody affects only that
-request, not another lane. No new profit/capital/manual-approval gate.
-New reusable source/tests belong in Git; artifacts/data remain outside Git.
-No broker/provider/private bank read or scheduler expansion in preparation.
+Goal94 kis-five-session-successor-custody-preparation-v1 COMPLETE d6e4bec7...:
+A/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.
+Three new pure lazy leaf modules and focused tests are frozen: Data exact
+15-field immutable chainbcece390..., Engine schema1-only binding2cadd19e...,
+Execution full-book successor historyd18a6bb0.... No existing source/init edit.
+95 changed-path SYN pass2.31s; independent17 fresh plus8 exact-source Execution
+carry pass. Original24pass1fail1a118914... schema defect remains retained;
+new EngineR2 source576962af... contains it, not a global core repair.
+Final1303 source105799af.../JUnit6d23a341..., clean8 15688pass22skip/378.83s;
+helper exit0/active temp cleaned, Ruff and three sample Compose pass.
+Full old book/basis/gross losses/reservations remain; segment is cadence only.
+No actual bank/future input/model/order, history reset, foreign lot adoption or
+profit/capital/manual approval gate. Artifacts A/data M; no schedule expansion.
+
+ONE next objective kis-five-session-future-delivery-compatibility-recovery-v1.
+Next finite recovery, not yet deployed: actual Goal93R2 template
+expiry22:30+09 equals OPEN13:30UTC, not OPEN+10m13:40; all26 Data calendar
+clocks themselves are UTC. R2 worker requires source_chunks dict while Data
+supplies ordered512 list. Goal90 live455 catalog also rejects added source
+files although original455 hashes match. Exact findings ba4a14ef.../e4509ae3...
+under A/{data,execution}/kis-five-session-successor-custody-preparation-v1;
+accounting frozen-source feasibilityf2cb0e35.... Claude source/recovery reviews
+supported-with-limits3b40193f.../ceb299d8..., not runtime evidence or authority.
+Original installed bytes/results stay unchanged until separately versioned
+recovery; these are source-proven incompatibilities, not observed future failure.
+Independent ready work continues; source defects are not operator holds.
 
 ## Owned Opportunities Unchanged
 

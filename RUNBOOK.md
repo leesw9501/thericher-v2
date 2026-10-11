@@ -2,8 +2,20 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-five-session-successor-custody-preparation-v1.
+ONE objective: kis-five-session-future-delivery-compatibility-recovery-v1.
 Read NEXT_CODEX_GOAL.md and HANDOFF.md for current ownership/limits.
+Goal94 source preparation COMPLETE d6e4bec7...:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.
+New pure Data15field/Engine schema1/Execution full-book successor contracts,
+95 changed-path2.31s; independent17fresh+8exact-source carries.
+Final1303source105799af.../JUnit6d23a341..., clean8 15688pass22skip/378.83s,
+Ruff/three sample Compose pass. Original24pass1fail schema evidence retained.
+No actual new cohort/order/input/fee/net or successor deployment.
+Known next repairs: Goal90 live455-source enumeration rejects new leaves;
+Goal93R2 actual non-UTC expiry equals OPEN, not OPEN+10m, and dict guard rejects
+Data ordered512 list. Original bytes are still installed, not observed failures.
+Goal95 owns separate versioned native/child and actual-control containment;
+no manual task, broker/provider call, additional trigger or model study.
 Goal93 shadow DELIVERY COMPLETE d90a07e0...:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-prospective512-shadow-delivery-v1/integration-evidence.json.
 Data5ede6b1f.../plan37b8ba01...; EngineR205e94736.../workera8dcd255...;
@@ -31,8 +43,8 @@ uv run --no-env-file --extra dev python -B -c "import sys,json; sys.path.insert(
 This follows only delivery-r2/runtime/opportunity.claim.json and its exact
 terminal identity/time/hash. It is not full future Data/Engine chain validation
 or a Paper adoption path. Missing/failed/partial is unknown; preserve identity.
-Goal94 prepares strict full-chain finite decision binding and successor-history
-replay, not another model search, broker call or scheduler.
+Goal94 pure binding/replay is complete, not a deployed successor. Goal95 repairs
+the already-owned delivery sources without inferring missing future evidence.
 
 Original Data41pass1fail retained; guard30ff0047... contains missing physical
 request records in its input only, not a global writer repair.
