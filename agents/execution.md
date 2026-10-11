@@ -6,6 +6,22 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 
 ## Current Package
 
+110 CLOSED/rejectedf9f55eb5...: triple prior-gross replay853b74b0.../8SYN and
+aggregate validatord00f7365.../6SYN authenticate30tables/all130marks/42checks
+6fail,1CPU0CUDA. Parent reader689efcd3... and independent actual3 groups agree,
+not raw NAV/DD replay or OS proof. Fees modeled; no broker/account/order reads,
+new teacher, actual fee/net claim, shared10%basis or19-owner schedule changes.
+111 owned Herschel source/SYN: A/execution/
+kis-five-session-path-downside-admission-development-v1/replay-r1.
+Prefer exact G105 veto/matched-gross APIs over another replay platform. Retain
+original raw-selected union, fixed quantities/OPENe+5, SELL-before-BUY, allmarks
+and5/10/20bps; veto reduces candidate holdings only, never future-selected names.
+Independent aggregate reader checks all three candidate comparisons without
+strategy selection. Generic whole-share parity already covered by G28/29.
+Recovery: source preparation only; existing Paper owners keep exact identity.
+
+## Retained Evidence
+
 106 CLOSED b00e112b.../resultf08beb14... development_screen_passed30of30,
 24tables130marks0fits/5807analytical estimates. Frozen paired sourcea155c73e...
 release1e9db5ef...8Parent SYN pass; reader3fae5ea6.../release2d58fa92...6Parent

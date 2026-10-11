@@ -6,6 +6,22 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
+110 CLOSED/rejectedf9f55eb5... at A/research/
+kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
+Data OPEN packet42da7705.../8SYN retains full frozen peer support and TRAIN
+phase guard. Parent actual1CPU runtime reports134complete dates23966rows;
+Data did not independently reproduce raw labels. No new acquisition, universe,
+PIT/finality/corporate-action qualification. Existing19 owners unchanged.
+111 owned Plato source/SYN only: A/data/
+kis-five-session-path-downside-admission-development-v1/path-geometry-r1.
+Thin packet binds the original prior-rule selected slots before entryOPEN and
+all five CLOSE label reads. Missing any selected point invalidates that entire
+TRAIN date, never removes a loss. LastTRAIN path before DEV context; unchanged
+old800/later71 inputs and original512 order. Recovery: source preparation,
+no actual data/labels read by role; Parent owns finite runtime.
+
+## Retained Evidence
+
 Goal100 COMPLETE ff5b936b... at A/execution/
 kis-five-session-successor-observed-fee-reconciliation-v1/integration-evidence.json.
 Source contractba204bcd.../canonical baseline25 pass; independent R2d9cc3e0c...

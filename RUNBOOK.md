@@ -5,6 +5,22 @@
 ONE objective is the current NEXT_CODEX_GOAL.md, not a historical command below.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
+110 COMPLETE/rejectedf9f55eb5...:
+D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
+Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run
+e86a4757... completed42.7256s; host4f2a5b75.../resulta39e33c8.../reader689efcd3....
+134complete TRAIN dates23966rows,1CPU0CUDA,30tables130marks42checks6fail.
+40 focused/direct Docker CPU typed SYN3/source3/actual3 groups pass; Claude
+contract/result supported-with-limits. Source489pins and host cleanup checked,
+not independent raw NAV/DD/OS proof. SYN preflight path-key fault retained;
+no actual runtime reset, weights/holdout/refit, Paper or19-owner changes.
+Never rerun110 freeze/bind/prepare/dispatch/read/close exclusive creators.
+ONE111 source preparation: kis-five-session-path-downside-admission-development-v1.
+Parallel role roots under external Data/Research/Execution artifacts; fixed
+worst five-CLOSE loss veto and existing CPU/GRU recipes, no111 allocation yet.
+Use current NEXT_CODEX_GOAL.md, not old commands. Source-only111 distinction
+receipt at110/next-direction-r1/path-downside-source-check.json; whole-share
+parity G28/29 already covered. Future107 and existing19 owners unchanged.
 Goal105 CLOSED/rejectedaa330c36... at
 D:/thericher-v2/model-artifacts/research/kis-fixed-five-entry-loss-veto-development-v1/integration-evidence.json.
 Scienceeb4485b6.../rowb5aaaecd.../outcomea66484b4.... CPU prerequisiteb17b6394...

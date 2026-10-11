@@ -6,6 +6,24 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
+110 CLOSED/rejectedf9f55eb5.../resulta39e33c8.../outcome9f9dfb41... at A/research/
+kis-peer-residual-return-ranking-development-v1.134dates23966TRAIN rows,
+one Ridge/0CUDA,30tables42checks6fail; later utility loses to analytical-common
+and cash at every cost. No refit, DEV winner, threshold/cost rescue or weights.
+40 focused/direct Docker typed SYN/source3/actual3 groups; Claude supported
+with limits. Seen current-listing/nonPIT/raw-action/nominal availability only.
+111 owned Chandrasekhar: A/research/
+kis-five-session-path-downside-admission-development-v1/engine-r1.
+Source-only hypothesis changes to worst five-CLOSE liquidation-loss admission,
+not endpoint-return ranking or a110 architecture rescue. Source distinction
+receipt at110/next-direction-r1/path-downside-source-check.json checks four
+targets; not global novelty. Freeze CPU logistic+two GRU16 recipes and90
+predicates before actual labels; fixed2% loss bit/p>.5 veto, no replacement/
+resize, unchanged OPENe+5 exit.600s family allocation incl cleanup, no holdout/
+weights/search/retry. GPU available; runtime/allocation not yet dispatched.
+
+## Retained Evidence
+
 106 COMPLETE/development_screen_passedb00e112b.../resultf08beb14.../outcomef7faa74a...
 at A/research/kis-peer-relative-momentum-entry-development-v1. Same512 seen
 development,24tables130marks/30pass,0trainedfits/5807analytical betas. Final

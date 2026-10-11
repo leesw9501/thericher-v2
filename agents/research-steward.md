@@ -6,6 +6,19 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Allocation
 
+110 COMPLETE/rejectedf9f55eb5...; sciencea6ed5fbe.../family trial1b4116e81...
+closed by outcome9f9dfb41... in A/_control/ledger/2026-10.jsonl. Original600s
+CPU run42.7256s/1fit0CUDA,0failed/weights/holdout.134dates23966rows,
+30tables42checks6fail. No rescue/refit/refund; host source/child/container
+closure attested, not independent OS proof. GPU unused by this CPU target.
+111 separately frozen path-downside hypothesis in preparation: one CPU logistic
+plus two existing GRU16 CUDA models, not110 depth or an architecture-only retry.
+No111 GPU appointment, actual data/labels/fits or sealed spend yet. GPU free/
+usable. Parent freezes exact source/target/cost/split/90 predicates and total
+600s stop rule before dispatch; existing Paper inference/recovery has priority.
+
+## Retained Evidence
+
 Goal99 complete/rejected879bb037...; canonical family trial1b93f2526... and
 sciencee5d1dbd3... closed by outcomee19f0c2c... in A/_control/ledger/2026-10.jsonl,
 exact numeric result9c4470d3.../host49eddb4c.... One original600s appointment

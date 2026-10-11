@@ -2,79 +2,67 @@
 
 ## Objective
 
-Complete kis-peer-residual-return-ranking-development-v1: test whether a
-single supervised daily stock ranker adds net value beyond the unchanged
-prior-only peer-momentum statistic on the existing512-stock development data.
-Workdir C:/Users/Public/Documents/thericher-v2.
+Complete kis-five-session-path-downside-admission-development-v1: test whether
+a fixed model of interim liquidation loss improves admission to the unchanged
+five-session daily stock rule. Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
-109 CLOSED/rejectedfe3d5e23.../resulte85d9b90.../outcomeeb866597... at A/research/
-firstrate-inventory-reference-policy-value-development-v1. Actual1CPU2CUDA,
-16epochs624updates0failed,56cells32checks22fail, all6noncash3bpsnetnegative
-bothblocks.36 focused, direct Docker CPU SYN, independent source2/actual3
-groups and Claude supported-with-limits. GPU lease closed, no refit/rescue.
+110 CLOSED/rejectedf9f55eb5.../resulta39e33c8.../outcome9f9dfb41... at A/research/
+kis-peer-residual-return-ranking-development-v1. One CPU fit/0CUDA,
+134TRAIN dates23966rows,30tables42checks6fail. Reject later utility losses to
+analytical-common/cash; no refit, cost/threshold/DEV winner rescue.40 focused,
+direct Docker typed SYN3/independent source3+actual3 and Claude pass with limits.
 
 ## Bounded Direction
 
-Engine source proposalb88e2638... at A/research/
-firstrate-inventory-reference-policy-value-development-v1/next-direction-r1/ready-proposal.json.
-Data metadata readinesscfeec570... at A/data/
-firstrate-inventory-reference-policy-value-development-v1/next-readiness-r1/readiness.json.
-Distinct within six checked targets, not global novelty/fresh alpha. Informed
-seen/current-listing/nonPIT/raw-action/nominal-availability development only.
-No actual peer-label coverage or predictive campaign frozen yet.
+Source-only110/next-direction-r1/path-downside-source-check.json distinguishes
+four prior targets, not global novelty. G105 and earlier128 endpoint-loss veto,
+payoff quantile and G29 ancestry remain explicit; this is an informed seen-data
+comparison, not fresh alpha. Generic whole-share parity already covered by
+G28/29; do not repeat it without an exact new fault. Future107 stays pending.
 
-Resolve the source-only terminal difference explicitly: use entryOPEN e and
-terminalOPEN e+5, matching G106, NOT proposed fifthCLOSE e+4. Original Data
-CLOSE-readiness evidence remains conditional/immutable, not silently rewritten.
-This does not change the separately owned Paper fifth-CLOSE schedules.
+Reuse original512 order, old800/later71 panels, causal21-bar/20x5 input and
+prior-rule original top10 slots/quantities. TRAIN e21..686 step5/134nominal,
+DEV720..790/15episodes/all80marks, later21..61/9/all50marks. Freeze selected
+TRAIN slots before future reads; every selected slot needs entryOPEN and all
+five CLOSEs e..e+4. Missing any makes the whole date incomplete; require100
+complete dates, never drop a losing row or shrink the original slot pool.
 
-Reuse original512 identity order, old800/later71 panels, Data loaderd83db2a1...,
-G106 peer statistic a5f60333... and existing finite model/replay/runtime APIs.
-TRAIN e21..686 step5/134nominal, DEV720..790/15, later21..61/9; lastTRAIN
-labelOPEN691 precedes DEVcontext/decision. No future-qualified pool shrinkage.
+TRAIN L=max(0,max over k=e..e+4 of (B10(OPENe)-S10(CLOSEk))/B10(OPENe)),
+with exact canonical replay prices and10bps per-side BUY/SELL costs. One
+hypothetical liquidation per mark, not repeatedly deducted fees. Fixed label
+L>2%; this is not portfolio drawdown or an optimal/learned exit. No EVAL labels.
 
-At priorCLOSE e-1 freeze full eligible peers E and G106 beta from21 CLOSEs/
-20 logs. TRAIN R_i=log(O[e+5,i]/O[e,i]); y_i=10000*(R_i-beta_i*leave-one-out
-mean R). Future peers are TRAIN LABEL ONLY; no EVAL labels, future beta,
-epsilon, clipping, intercept subtraction or membership reconstruction.
-Missing frozen-peer TRAIN endpoint makes its whole training date incomplete;
-require100of134complete dates or scoped input_unavailable. EVAL selected-union
-missing payoff invalidates comparison, never removed loss/cash substitution.
+Freeze ONE CPU Logistic baseline and TWO existing GRU16 models seeds101/202,
+32epochs/batch64/Adam lr.001 before actual labels. TRAIN-only scaling and
+date-balanced sample weights. Fixed loss probability>.5 veto (.5 retained),
+no replacement, candidate resize, threshold/search/seed/epoch rescue. Family
+budget3fits/one600s appointment including90s publication/cleanup,2CPU/4GiB,
+no holdout or retained weights. GPU usable/authorized; source prerequisites
+then CPU smoke precede actual two CUDA fits. No new architecture/runtime.
 
-ONE CPU Ridge alpha1/SVD/intercept on same prior20x5/100features, TRAIN-only
-scaler/date-balanced mean-one weights/no target scaler.600s total incl90
-publication/cleanup,2threads/4GiB,1fit,0CUDA/weights/holdout/search/retry.
-GPU is usable and authorized; this small analytical/ridge target needs CPU.
-Do not invent GPU work or wait for future107 opportunities.
-
-Predeclare plans and costs before any outcome: same original entry rule,
-top10 ordinal ties, prior proxy veto/no replacement. Supervised/unchanged
-analytical/plain momentum baskets only downscale to their prior common minimum
-gross. Include raw rule and cash; equal gross is not matched risk/neutrality.
-Same fixed fractional quantities/SELL-before-BUY/OPEN e+5/no renewal; costs
-5/10/20bps per side, all130marks. Freeze exact metric formulas/42 screen
-predicates before fitting: candidate utility>all4controls and DD<=all3noncash
-controls in each block/cost. New triple matching needs independent SYN, not
-an assertion that literal G106 replay already implements it.
+Replay unchanged fixed raw quantities/SELL-before-BUY/OPENe+5 forced exit;
+candidate veto only. Prior kept-gross/raw-gross scales matched raw control,
+never candidate upscaling. Keep every originally selected payoff/mark even
+zero gross; unavailable selected payoff invalidates comparison, not cash.
+Raw rule/cash/matched controls; same sealed paths at5/10/20bps per side.
+Freeze exact mean-log-NAV utility/DD formulas before fitting: each candidate
+utility>raw/matched/cash and DD<=raw/matched at each block/cost (90 predicates
+total). Report all three candidates; no result-dependent winner or fusion.
 
 ## Owners And Completion
 
-Data: small existing-input/peer-label geometry bridge and support checks.
-Engine: target, CPU ranker and complete fixed decisions; no broker logic.
-Execution: triple common-gross/fixed-quantity replay and independent aggregate
-validation, no strategy selection. Parent freezes contract/canonical family,
-asks Claude target/lineage challenge, binds existing source-pinned CPU Docker,
-integrates a thin independent review and verifies/commits/pushes.
+Data owns thin TRAIN selected-slot path packet/SYN; Engine owns fixed target,
+three recipes/scaler/frozen decisions; Execution reuses proven veto/matched
+replay and independently validates aggregates. Infra adapts proven finite
+CPU-first/two-CUDA transport, no image rebuild/platform. Parent owns source
+binding, canonical family/GPU appointment, Claude challenge, actual runtime,
+thin independent review, verification, commit/push and exactlyONE next goal.
 
-Done: focused source/SYN and one linked actual comparison with complete fit
-debit, exact unavailable or technical-failure closure. No model/threshold
-rescue or unacknowledged same-family retry. Then refresh stateboards/HANDOFF,
-select exactlyONE material next objective and continue.
-
-Keep107future pilot pending, existing19finite owners/shared10%Paper basis/
-identities unchanged. No manual task/KIS/account/order, new Paper teacher,
-live/secret access, cost/public/major runtime change. Data M/artifacts A/
-15%D:floor. No new platform/scheduler/report family/per-agent goal. External
-only source work uses focused tests plus exact reattached1311-code authority,
-repository Ruff/three sample Compose/diff check; shared changes follow AGENTS.md.
+Done: focused/SYN evidence and one exact actual comparison or scoped unavailable/
+technical-failure closure with all spent fits and original clock preserved.
+No new broker teacher/orders, manual task/KIS/account call or19-owner schedule/
+shared10%basis change. No live/secret access, cost, public exposure, major runtime
+change or new report family. M data/A artifacts, preserve15%D:free floor.
+External-only work uses focused tests plus exact-source reattached1311-code
+authority, repo Ruff/three sample Compose/diff check. Shared changes use AGENTS.md.

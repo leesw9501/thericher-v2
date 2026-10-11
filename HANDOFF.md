@@ -13,6 +13,35 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Current Work (2026-10-12 KST)
 
+110 COMPLETE/rejectedf9f55eb5... at A/research/
+kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
+Sciencea6ed5fbe.../trial1rowb4116e81... closed by outcome9f9dfb41....
+One original600s CPU appointment e86a4757... completed42.7256s; result
+a39e33c8.../host4f2a5b75.../actual-read689efcd3...:1CPU fit,0CUDA,
+134complete TRAIN dates23966rows,158analytical windows29773betas.
+30tables/all130marks/42strict checks6fail; all six failures are later utility
+versus analytical-common and cash at5/10/20bps. At10bps per side, supervised
+growth DEV+3.49519%/later-.249257%, analytical-common+1.56864%/-.134292%.
+Reject this fixed model; no DEV-only winner, threshold/refit/cost rescue.
+40 focused cases, direct Docker CPU typed SYN3 groups, independent source3
+and actual3 aggregate groups pass. Claude contract/result supported-with-limits.
+Source489aliases/host child/container closure attested, not OS/raw-price proof.
+Retained SYN preflight failure is Windows catalog serialization, corrected
+before Docker/actual fitting; no runtime reset or fit refund. No weights/holdout,
+new data, physical availability/PIT, Paper qualification or19-owner changes.
+
+ONE111: kis-five-session-path-downside-admission-development-v1. Source-only
+check distinguishes worst five-CLOSE liquidation loss from four checked prior
+targets, not global novelty. G105/G128 endpoint-loss ancestry and seen-data
+reuse remain explicit. Generic whole-share parity is already covered by G28/29;
+do not repeat it without an exact new gap. Data/Engine/Execution/Infra source
+packages are dispatched in parallel. One CPU logistic and two GRU16 CUDA fits
+will use a separately frozen finite contract; no111 labels/fits/allocation yet.
+GPU usable/free, not an environment or permission hold. Future107 and existing
+19 finite owners retain their original identities, shared10%basis and next_due.
+
+## Retained Preparations And Closures
+
 107 preparation COMPLETE5e164d61... at A/research/
 kis-peer-relative-momentum-prospective-preparation-v1/integration-evidence.json.
 Future pilot remains PENDING under original scientific row264c3b3d...; no
