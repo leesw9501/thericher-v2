@@ -44,7 +44,13 @@ No duplicate dispatch/new clock/third attempt. Owned GPU lease released, free.
 Current ONE goal proposes paired raw/augmented ridge CPU2/600s with fixed
 price-volume basis;0GPU/holdout/weights, new feature family with informed prior
 lineage, not fresh replication or rejected-family depth. Scientific freeze
-precedes its market work; no appointment yet. No utilization-only training.
+precedes its market work: Ready80052ac6.../body6bd716cc... frozen as science
+50ff9797..., new feature-family trial1c6705533..., signed row document89da7378...
+at A/research/kis-price-volume-basis-held-exit-development-v1/parent/canonical-custody-row.json.
+Wrapper3bb8ab68... uses contract_sha256/registry_sha256, unlike103 renamed keys.
+At most2CPU fits/600s,0CUDA/sealed/weights; informed prior lineage disclosed.
+No numerical clock/appointment or market work yet; source integration ongoing.
+No utilization-only training.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 
 ## Prior Allocation

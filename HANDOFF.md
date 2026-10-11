@@ -39,6 +39,14 @@ Qlib/MIT proposal d63f2658... and Data context audit e4fe1834... are consumed;
 this is an OHLCV-derived subset, NOT fullAlpha158/360 or independent replication.
 All13 existing Paper/Data owners and original shared10%basis remain unchanged.
 
+Active104 preparation: Ready80052ac6.../body6bd716cc... frozen as science
+50ff9797.../new feature-family trial1c6705533..., signed row89da7378....
+Data context releasea88cc7b3.../rawe175fa79... passes19 Parent SYN tests:
+explicit real Panel/Panel71 metadata identities, raw CLOSE3/VOLUME4 and
+d=e+age-1 match original context clocks. No market numerical work or appointment
+yet. Engine/Execution/Infra own disjoint source integration; independent design
+5f9dd535...4 groups supported-with-limits, not implementation/runtime proof.
+
 Goal102 replay recovery COMPLETE/source-SYN3c98f73f... at A/research/
 kis-held-exit-postfit-replay-recovery-v1/integration-evidence.json.
 Engine6a7c0512.../driver58c50515... fixes real later Panel71 identity and safe

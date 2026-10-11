@@ -22,13 +22,13 @@ No company block, market wait, GPU permission or operator approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned104 | Sole Git/actual Docker owner; close103, freeze one new feature intervention. |
+| Git/integration | Parent / owned104 | Science50ff9797.../trial1c6705533... frozen; exact signed row89da7378..., no numeric clock yet. |
 | Verification | Parent / ready | Exact1311 authority15829pass22skip reattestable, not a fresh full-suite; focused source/SYN next. |
-| Data | Plato / ready104 | Context e4fe1834... supports5/10/20, raw-row provenance next; no acquisition or future-input claim. |
-| Engine | Chandrasekhar / ready104 | Source proposal d63f2658... consumed, fixed9continuous/6flags; paired kernel next. |
-| Execution | Herschel / ready104 | Actual103review0d98c855...5 groups; old full-reader geometry fails, scalar route valid. |
-| Infra | Socrates / ready104 | CPU-only transport adaptation next; no duplicate103 runtime or role-owned actual calls. |
-| Validation | Leibniz / standby104 | Actual103runtimebeb35251...6 groups complete; invoke after frozen next source/candidate. |
+| Data | Plato / source104 complete | Releasea88cc7b3.../raw e175fa79...;19 Parent SYN pass, no actual market reads. |
+| Engine | Chandrasekhar / owned104 | Ready80052ac6.../body6bd716cc... frozen; basis/paired driver source integration. |
+| Execution | Herschel / owned104 | Pure30-table/36-check predicates; current result schema source pending, no broker change. |
+| Infra | Socrates / owned104 | CPU-only source transport adaptation; no duplicate103 runtime or role-owned actual calls. |
+| Validation | Leibniz / standby104 | Prospective design5f9dd535...4 groups; actual frozen implementation review remains pending. |
 | GPU | Steward / free | Actual103 exact owned lease closed; current paired CPU intervention needs no CUDA. |
 | Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
 | Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |

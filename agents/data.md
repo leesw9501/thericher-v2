@@ -43,6 +43,14 @@ First later decision20/current21 provide5/10/20 history;30/60 may need31/61bars.
 No early-mark dropping, splice, interpolation, acquisition or window selection.
 Source geometry71 context versus50 evaluation marks stays distinct. Next ONE
 goal uses a fixed5/10/20 feature basis; this does not expand provider ownership.
+Goal104 raw-context source COMPLETE a88cc7b3... at A/data/
+kis-price-volume-basis-held-exit-development-v1/context-r1/release.json;
+sourcee175fa79.../19 author and Parent19 SYN pass, no packed market reads.
+raw_close_volume_context accepts explicit actual Panel/Panel71 registry and
+the same caller's bound metadata/Data module class identities. d=e+age-1
+returns raw CLOSE3/VOLUME4 rows d-20..d, never normalized-token substitutes.
+Missing values remain missing; Data extraction does not choose eligibility or
+features. Engine owns domain/paired support and exact source binding before fit.
 Existing owners/due,
 coverage and limitations unchanged; no acquisition or quality promotion.
 Goal99 COMPLETE/rejected879bb037... at A/research/
