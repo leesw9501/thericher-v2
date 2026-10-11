@@ -22,11 +22,18 @@ Six finite Data dates installed; future comparison pending under frozen row
 264c3b3d..., not a completed campaign, replication or new Paper teacher.
 40 focused/source2/actualmetadata2 and one direct Docker SYN group pass.
 R1/R2 SYN faults retained; no pytest exists in the image, no14Docker-test claim.
-ONE108: firstrate-inventory-reference-policy-target-preparation-v1. Fixed
-M5/context36/H30, inventory/age-aware CONTINUE-one-interval-then-reference-policy
-target versus immediate liquidation. Freeze semantics before source/SYN and
-bounded input preparation; no fit/GPU/holdout/deployment yet. GPU free/usable.
-Concept sources are independently retrieved; no public code/weights imported.
+108 target preparation COMPLETE61ee85b1...; semantic2896ac7d.../Engine59165911...
+releasebef5cc30...10 SYN. Data and canonical Execution fee bindings complete;
+35 combined source/math cases pass. Actual geometry251days,1488TRAIN episodes
+with all5held inputs/all7 OPEN support;0labels/fit/GPU/metrics. Independent
+review47348a75...1 native group,1 source-read with retained fixture failure.
+Realized CONTINUE-one-interval-then-pi0 advantage, not optimalQ/learned-policy
+value or rollout theorem; seen-data/zero-latency/physical availability limits.
+ONE109: firstrate-inventory-reference-policy-value-development-v1. CPU-first
+Ridge and fixed GRU16 seeds101/202;8epochs each/16total/max624updates and one
+shared600s appointment proposed. Freeze predictive contract before labels/fits;
+both seeds reported, no winner/rescue/holdout/deployment. GPU free/usable.
+Concept sources independently retrieved; no public code/weights imported.
 
 Goal99 COMPLETE/rejected879bb037... at A/research/
 kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.

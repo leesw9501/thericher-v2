@@ -41,9 +41,17 @@ tasks. Future inputs/payoff unknown, separate from Paper owners and budget.
 40 current focused/native, one actual Docker direct typed SYN and independent
 source2/actualmetadata2 pass. R1/R2 failures retained, no14Docker-pytest claim:
 existing image lacks pytest; R3 direct check uses exact actual typed APIs.
-ONE active108: firstrate-inventory-reference-policy-target-preparation-v1.
-Source/SYN and bounded FirstRate geometry prep only; no fit/GPU/holdout/teacher
-change yet. No foreground wait for107; continue the independent intraday loop.
+108 preparation COMPLETE61ee85b1...:
+D:/thericher-v2/model-artifacts/research/firstrate-inventory-reference-policy-target-preparation-v1/integration-evidence.json.
+Semantic2896ac7d.../sourcebinding2c7286ba.../actualpreflight4af21579...;
+35 focused pass. Independent47348a75...1 native SYN/1 partial source-read,
+wrong-gap fixture failure retained, not2 native passes. Actual251sessions,
+TRAIN125+1488/DEV63+755/later63+744, all admitted future support complete.
+No labels/fits/GPU/metrics; do not rerun108 freeze/bind/preflight/closure.
+ONE active109: firstrate-inventory-reference-policy-value-development-v1.
+Freeze bounded CPU-first Ridge/GRU comparison before labels/fits. Existing
+same one-share fee/replay and modeled-clock limits persist; no Paper changes
+or foreground wait for107. Numerical work runs in the existing pinned Docker.
 Existing13 owners/shared10%basis/identities unchanged. Claude105 result and
 next direction supported-with-limits; next source inspiration is factor
 decomposition, not published stat-arb/market-neutral/mean-reversion replication.

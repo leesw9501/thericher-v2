@@ -2,68 +2,72 @@
 
 ## Objective
 
-Complete firstrate-inventory-reference-policy-target-preparation-v1: prepare
-an inventory-conditioned finite reference-policy target, causal intraday input
-geometry and same-entry cost replay, ready for a bounded CPU-first model study.
+Complete firstrate-inventory-reference-policy-value-development-v1: compare
+a CPU Ridge and two fixed GRU seeds using the new inventory-conditioned
+reference-policy advantage target, with causal same-entry cost-aware replay.
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
-107 preparation COMPLETE5e164d61...; original prospective study row264c3b3d...
-stays frozen, future payoff pending. Its six Data-only capture opportunities
-Oct12..16/19 21:50UTC are worker-owned, not a foreground or research hold.
-No107 retune, registry outcome, Paper adoption or manual task invocation.
+108 preparation COMPLETE61ee85b1... at A/research/
+firstrate-inventory-reference-policy-target-preparation-v1/integration-evidence.json.
+Semantic2896ac7d.../binding2c7286ba.../preflight4af21579.... Same FirstRate free
+SPY/QQQ M1 inputs;251official sessions/TRAIN125/DEV63/later_seen63. Causal
+entry admission1488/755/744; all admitted held contexts and OPENs present.
+35 focused cases pass; independent1 native SYN plus1 source-read/partial-SYN
+with retained reviewer fixture error, not2 dynamic passes. No labels/fits yet.
 
-## Fixed Hypothesis And Bounds
+## Frozen Numerical Direction
 
-Use existing FirstRate free SPY/QQQ intraday canonical data, already seen in
-earlier development. Fixed M5/context36/H30; no timeframe/window/parameter
-search, fresh-holdout claim, new acquisition or public code/weight import.
-Paper costs/fills/availability remain different from this modeled study.
+Freeze one predictive family contract before actual labels or fitting. Reuse
+108 Data geometry5b5a79d8..., Engine target59165911... and Execution replay
+3638c991... with their exact releases/fee-source binding; do not rewrite them.
+Fixed M5/context36/H30, six scheduled entries/day, one share O0. Held ages1..5
+after C[k-1] at nextOPEN O_k, forceO6/no renewal/reentry. Target CONTINUE once
+then fixed SMA3>SMA12 pi0 versus immediate SELL, canonical3bps one-share fees;
+BUY sunk in target but charged once in replay. This is not optimalQ or exact
+learned-policy value. Future paths only TRAIN labels, never EVAL target inputs.
 
-Freeze a compact semantic contract before implementation or actual target
-preparation. Entry O0 one share, held decision ages k1..5 after completed bars
-at next OPEN O_k, mandatory terminal SELL O6 exactly30minutes after entry.
-No horizon renewal, overnight splice or reentry. Reference pi0 continues while
-past-only SMA3>SMA12, otherwise exits; terminal6 always liquidates.
-TRAIN target compares immediate SELL with CONTINUE one interval then pi0:
-y_k=(L3(O_tau)-L3(O_k))/entry_OPEN, k+1<=tau<=6, L3(P)=P-modeled one-share
-SELL fee at3bps/side. Entry BUY is sunk in that held comparison but charged
-once in actual replay. Holding reassessment never incurs another BUY fee.
-This target is a realized reference-policy advantage, not optimal Q or an
-exact learned-policy value; the rollout improvement theorem does not transfer.
+Same paired official axis/split as108, including early-close dates. TRAIN only
+1488episodes/max7440held rows; no DEV/later refit or future-support admission.
+Past36x5 OHLCV +age/remaining/observed return, TRAIN-only channel/state scaler,
+zero std->1. Label in bps; fixed predict>0 CONTINUE, ties/nonpositive SELL.
+Missing/nonfinite actual input or selected payoff invalidates its comparison,
+never censored loss/substitution/cash. Freeze actions before cost recosting.
 
-Use causal past36 OHLCV/context, age/remaining horizon and observed entry
-return only. Future paths belong only to TRAIN labels. A future/EVAL mutation
-must not alter earlier features/actions. Actual input preparation checks
-same-session contiguous support, timestamp alignment and chronological
-session partitions; TRAIN terminal must precede the first EVAL context.
-Missing selected payoff invalidates that comparison, never censors its loss.
-Primary actions later use fixed3bps; recost the same chosen path at1/3/5/10bps
-without retuning. Controls: fixedH30/immediate exit/reference pi0/cash, same
-entry support and original quantity. No metrics or fitting in this preparation.
+CPU: Ridge alpha1/SVD/intercept,183 features, max1fit. CUDA: GRU input5/hidden16/
+one layer/dropout0, final hidden+state3->Linear19->1, seeds101/202. AdamW lr.001,
+decay.0001/MSE/batch192/8epochs each16total/max624updates; deterministic FP32,
+no AMP/TF32/best epoch or seed selection. Both seeds reported, no winner rescue.
+Shared600s appointment incl90publication/cleanup,2CPUthreads/4GiB/exclusiveGPU.
+CPU technical/numerical baseline first; no profitability gate before GPU or Paper.
+No retained learned weights, holdout, parameter/window/model search or refit.
 
-## Disjoint Packages
+Replay exact108 quantity/clocks/fees, primary3bps actions then same chosen
+paths at1/3/5/10bps. Controls fixedO6/immediateO1/pi0/cash on the same entry
+support. Report net/gross/fees/turnover/all open-mark drawdown and exposure by
+DEV and later_seen; fixed-share modeled PnL is not portfolio NAV/broker fees.
+Predeclare per-seed post-cost/risk screen versus controls and Ridge before
+outcomes. Failure is rejection/unknown within that contract, not a Paper gate.
+Strong kills: future/EVAL mutation alters earlier features/scaler/actions;
+EVAL labels leak; double BUY/SELL or horizon renewal; missing selected payoff
+censored; retained/unbound weights; source/clock/runtime closure missing.
 
-Data: pure M1-to-M5/context/episode/split geometry, then bounded existing-input
-preflight with source hashes and count/category-only output. No raw-row output,
-interpolation, source promotion, broker call or strategy selection.
-Engine: small pure held-feature/reference-target API and focused synthetic
-causality/math checks. Re-retrieved Bertsekas and Moody/Saffell sources are
-concept references only, no imported licensed code or claimed replication.
-Execution: pure exact-fee one-BUY/one-SELL finite replay and controls; same-entry
-cost parity and missing-support tests. No account/order/private inventory read.
-Parent: integrate APIs and independent thin frozen-contract/source review.
-Ask Claude for concise falsification-first target/leakage/cost drift-check.
+## Owners And Completion
 
-Done: immutable semantics, focused SYN proof, bounded real-input geometry
-receipt and integrated target/replay compatibility, or exact input_unavailable
-closure. No platform, new scheduler, report family or per-agent goal file.
-Then choose ONE material CPU-first numerical objective; sequence/GPU work
-follows a ready frozen predictive contract, not permission or utilization waits.
+Data: tiny same-source episode iterator, no duplicated parser/split/acquisition.
+Engine: pure training/decision worker plus small SYN, exact fit/update debit.
+Execution: reuse finite replay and independently inspect exact aggregate result
+linkage/cost semantics; no strategy selection or broker account calls.
+Parent/Steward: scientific freeze, Claude target/lineage challenge, one CPU-first
+then owned CUDA dispatch through existing pinned Docker, exact source/resource
+closure, independent thin frozen-candidate review and integration.
 
-Keep existing19 finite owners/10%Paper basis/identities unchanged. Never read
-KIS_LIVE_* or secrets, print raw/private values, enable live, spend, expose
-publicly or replace runtime. Data M/artifacts A/15% D: floor. No new approval
-gate. Focused tests plus exact-source authority for external-only edits;
-repository Ruff/three sample Compose/diff check, stateboards, commit/push and
-continue. Shared Python/control changes follow AGENTS.md authority rules.
+Done: source/SYN plus linked actual CPU/CUDA result, all declared comparisons
+or exact unavailable/technical-failure closure with spent fits preserved. No
+new platform/scheduler/report family, model rescue or per-agent goal. Refresh
+stateboards/HANDOFF, verify/commit/push, select ONE next objective and continue.
+Keep107 future study pending and19 finite owners/10%Paper basis unchanged.
+No manual task/KIS/account/order call, new Paper teacher or live/secret read.
+Data M/artifacts A/15% D: floor; no cost/public/major runtime change. Focused
+tests and exact-source reattached authority for external-only work; repository
+Ruff/three sample Compose/diff check, shared changes follow AGENTS.md.

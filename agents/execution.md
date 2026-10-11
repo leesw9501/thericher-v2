@@ -19,11 +19,15 @@ Paper permission is independent of research results; existing13 owners continue.
 seal, original unscaled union including zero scale, all5held marks and Oct19
 terminal OPEN6 required; no future schema inference, actual capture or fill claim.
 
-ONE108 owns pure finite intraday held-position replay: same one-share entry,
-one BUY/one SELL, no repeated BUY while holding, no horizon renewal/reentry.
-Fixed entry O0, held decisions k1..5, terminal O6; reference policy and cost
-parity prepared before any model fit. Data and Engine own their separate APIs.
-No actual broker/account/order inspection, inventory adoption or Paper change.
+108 preparation COMPLETE61ee85b1...; replay3638c991.../releaseab0833f3...
+10 SYN plus5 integrated clock/target/cost checks pass. Actual geometry verified
+only, no performance/fits. Independent review47348a75... is1 native/1 partial
+source-read with retained fixture error, not2 dynamic passes.
+ONE109 reuses exact same one-share entry O0/held k1..5/terminal O6, one BUY
+and one actual-exit SELL, no horizon renewal/reentry. Actions use3bps then
+same chosen path recost1/3/5/10; fixedO6/O1/pi0/cash controls. Source/SYN and
+aggregate actual-result reattachment only; never choose strategy/model weights.
+No actual broker/account inspection, foreign inventory or Paper owner changes.
 
 Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
 kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.

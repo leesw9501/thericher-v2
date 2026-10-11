@@ -86,10 +86,16 @@ The instant was unchanged in the prior projection. Actual forecast formedOct11
 16:02:06.573427UTC before next OPEN, not Friday decision availability,
 response-level finality or physical OS proof. Independent metadata receipt
 b57b9cea... supports clock/source links only, no independent private-body parse.
-ONE108 Data package: existing FirstRate SPY/QQQ M1-to-M5 same-session geometry,
-context36/entry-to-O6 H30, chronological session split and missing-support counts.
-Freeze fixed semantics first; source/SYN then bounded actual preflight, no fit,
-new acquisition, raw output, PIT/finality or fresh-holdout claim.
+108 preparation COMPLETE61ee85b1...; source5b5a79d8.../release2a7f44af...
+10 SYN plus5 composition pass. Actual preflight4af21579... consumed exact
+SPY207824/QQQ210482 M1 bars once,8.15s;251official sessions including early
+closes. TRAIN125/1488admit,DEV63/755,later63/744; selected OPEN/held-context
+shortfall0. Chronological axis2aaeae79..., no future-complete intersection.
+Source/input unchanged/child reaped;0labels/fits/metrics/acquisition, no PIT/
+finality/physical availability or fresh-holdout/KIS parity claim.
+ONE109 Data package reuses those exact inputs/geometry through a small episode
+iterator; no duplicated parser, different admission, source or split. Engine
+owns TRAIN labels and predictive fitting; future107 collection unchanged.
 Source audit found older4-ETF sector strength/21-rebalance and covariance
 allocation already exist; next stock-level beta selection is a bounded new
 comparison, not a globally novel signal. Daily volume is only a capacity proxy;

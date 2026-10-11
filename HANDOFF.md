@@ -32,11 +32,24 @@ Claude preparation supported-with-limits; honest-host/readback, not OS/PIT proof
 R1/R2 SYN failures retained: pytest absent from existing image; R3 direct typed
 check fixes the test route, not candidate/image/model settings or a clock refund.
 
-ONE next objective: firstrate-inventory-reference-policy-target-preparation-v1.
-Prepare a causal held-position target, finite H30 cost replay and existing
-FirstRate intraday input geometry. Source/SYN then bounded actual input preflight;
-no performance claim, fit/GPU, holdout, new Paper teacher or broker change yet.
-Data/Engine/Execution packages are disjoint. Future107 waits stay worker-owned.
+108 preparation COMPLETE61ee85b1... at A/research/
+firstrate-inventory-reference-policy-target-preparation-v1/integration-evidence.json.
+Semantic2896ac7d... frozen before source; source binding2c7286ba.... Pure Data
+5b5a79d8.../Engine59165911.../Execution3638c991... align completed-context/OPEN,
+reference-policy target and canonical one-share fees.35 focused cases pass.
+Independent review47348a75...:1 native SYN pass and1 source-read/partial-SYN
+group, retained wrong-gap reviewer fixture failure; not2 native group passes.
+Actual input preflight4af21579...:251official sessions/TRAIN125/DEV63/later63,
+admitted1488/755/744; selected OPEN/held-context shortfall0.8.15s, source/input
+unchanged/child reaped.0labels/fits/GPU/metrics. Same seen FirstRate SPY/QQQ,
+vendor START declaration not physical availability/PIT/finality or KIS parity.
+Claude target supported-with-limits; reference advantage not optimalQ/theorem.
+
+ONE next objective: firstrate-inventory-reference-policy-value-development-v1.
+CPU-first Ridge versus two fixed GRU seeds on the new held-reference target,
+same entries/quantity/four controls/recost paths; no model winner or deployment
+yet. Freeze finite predictive contract before labels/fits and keep future107
+waits worker-owned. Data/Engine/Execution packages remain disjoint.
 
 ## Latest Closure (2026-10-11 KST)
 
