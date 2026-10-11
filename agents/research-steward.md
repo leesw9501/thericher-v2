@@ -18,9 +18,16 @@ Goal100 fee consumer COMPLETE ff5b936b..., no fitting/GPU/evaluation allocation.
 Next research allocation requires its own frozen hypothesis/target/split/cost/
 compute contract, not a renamed99 rescue. Novelty review/CPU preparation are
 ready; GPU available. Existing Paper owners retain resource priority.
-Goal101 held-only target proposal has no registered numerical trial/appointment
-yet. Freeze nearest-family lineage and one CPU1/CUDA2/600s contract before fits;
-same old/later-seen samples do not become fresh replication or sealed evidence.
+Goal101 CLOSED/technical failed44522a70...; scienceb261c993.../ready72711b7a...,
+trial02520940... closed by failed outcome7c2307bf... in the same canonical ledger.
+One original600s appointment/dee03b054e8b4e9992762f6a92e3477f: CPU1/CUDA2
+completed,8epochs/224updates, zero failed fits; post-fit comparison failed.
+All3 fits remain spent, no refund/refit/clock reset/retained weights. Actual
+result tables unavailable/candidate UNKNOWN, not scientific rejection.
+Hosta33a26d6... attests child/container/source/lease closure, not OS proof;
+original result_sha null, exact failure bytes bound offline. GPU now free.
+Goal102 source-only replay recovery spends no fitting/GPU/sealed evaluation.
+Same old/later-seen samples do not become fresh replication or sealed evidence.
 
 ## Prior Allocation
 

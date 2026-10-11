@@ -16,12 +16,21 @@ remain exact; explicit zero needs complete evidence. No acquisition/private
 reads or actual fee/finality/settlement claim. Actual113f code/SYN result and
 host cleanup are linked in closure; honest-host evidence, not provider proof.
 Current assignment comes only from NEXT_CODEX_GOAL.md, not this closed study.
-Goal101 planning ready: reuse d83db2a1... input ABI, old800/later71 exact manifests
+Goal101 source COMPLETE14fcc377.../held geometryc45e507d...,41 author/Parent
+focused pass;13 reused pins unchanged, no packed read/numerical fit. Reuse
+d83db2a1... input ABI, old800/later71 exact manifests
 fd559b22.../1eaebbc3.... TRAIN134/DEV15/later9 episodes yield nominal536/60/36
 held decision slots, not observed complete samples. Labels OPEN(t+1)->OPEN(t+2),
 force terminalOPEN e+5; TRAIN terminal691 precedes DEV decisionCLOSE719.
 Future mutation cannot alter prior selection/context; no future-qualified
 missing-payoff deletion. Packed bars not rehashed by this planning audit.
+Independent Engine input reviewcbbb707a...6 groups pass/28 source-metadata pins
+unchanged. Interface wording excludes marks but code correctly includes
+*_marks_indices in the frozen split; no scientific-row rewrite.
+Goal101 CLOSED/technical failed44522a70... after actual3 fits, no result tables.
+Typed later Panel71 ABI mismatch reproduced, actual first failure unknown.
+Goal102 source-only typed identity/geometry attestation; no acquisition/finality
+promotion or packed-row review. Existing Data owners/due unchanged.
 Goal99 COMPLETE/rejected879bb037... at A/research/
 kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
 Actual1CPU2CUDA/35of64 fixed checks failed; no new data or quality promotion.

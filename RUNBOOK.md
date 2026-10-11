@@ -5,11 +5,21 @@
 ONE objective is the current NEXT_CODEX_GOAL.md, not a historical command below.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
-Goal101 held-only causal exit preparation reuses Goal99 data/replay/CUDA transport.
-One CPU baseline/two frozen CUDA seeds/max3 fits/one600s family, only after
-exact source/scientific freeze and CPU smoke. Same fixed-notional entries,
-no reinvestment/reentry/holdout/Paper changes. Current contract is the next goal;
-historical commands below are not permission to rerun a closed experiment.
+Goal101 CLOSED/technical failed44522a70...:
+D:/thericher-v2/model-artifacts/research/kis-stock-held-only-causal-exit-development-v1/integration-evidence.json.
+Actual CPU1/CUDA2/8epochs/224updates completed, all3 spent; no comparative result
+tables/weights/candidate rejection. CPU smoke passed3671ebff...; CUDA host
+a33a26d6.../a56eceac... retained_failure exit2, source/child/container/lease closure
+attested. Worker failure binds exact precommit5b1fbd9a..., host plan is df8b2276...;
+original result_sha null, offline failure binding not an OS/original resultchain
+proof. Scienceb261c993.../trial02520940... closed by failed outcome7c2307bf....
+189 focused/20 independent source-SYN groups pass;9 diagnostic tests find real
+later Panel71 identity ABI and float/Fraction cap mismatch. Actual FIRST cause
+unknown. Never rerun run_cuda.py/run_cpu.py or reset the original600s/max3.
+Goal102 source-only recovery owns real typed DEV80/later50 integration and
+original1e-12 cap parity without changed weights/quantities/Paper risk.
+Claude recovery supported-with-limits; no training/GPU/holdout/market result.
+Current contract is the next goal; historical commands are not rerun authority.
 Goal98 accounting readiness COMPLETE c6e08a27...:
 D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-owned-accounting-v1/integration-evidence.json.
 235 focused/26 independent pass; actual113f network-none SYN3.951s, default

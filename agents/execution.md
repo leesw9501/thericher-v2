@@ -30,10 +30,14 @@ Whole-share sizing/full-book custody unchanged; no new ledger or fee producer.
 Exact current cumulative fill only, no prior-symbol transfer/cumulative summing.
 Missing fees stay PnL-only unknown. Not deployed; actual fees/net UNKNOWN.
 No private/broker/schedule/strategy changes; current package solely next goal.
-Goal101 ready: G99 replayR2 and rule entries reused; held-only causal labels,
-fixed-initial-capital quantities across arms/bands, actual-leg costs/all marks.
-Avoid arm-dependent compounding, reentry, redistribution and invented leverage.
-Source/SYN preparation only; no real bank or Paper deployment change.
+Goal101 CLOSED/technical failed44522a70... after actual CPU1/CUDA2 fits;
+comparison unknown, no tables or scientific rejection. Replay36/reader38 and
+independent source8 pass; diagnostic1fd458e5...5 tests reproduces original
+float planner/exact-Fraction cap mismatch, actual first cause not established.
+Goal102 research-local cap parity uses only original1e-12 reference allowance;
+no clipping/normalization/quantity resize/cash repair/Paper risk change.
+Driver identity repair and typed DEV80/later50 controls run without fitting.
+No broker/bank/deployment/schedule changes; original101 remains immutable.
 Full book/shared10%basis/losses/reservations/pending identities unchanged.
 Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
 independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.

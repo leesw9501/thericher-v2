@@ -2,79 +2,60 @@
 
 ## Objective
 
-Evaluate kis-stock-held-only-causal-exit-development-v1: determine whether a
-causal learned exit adds value with identical rule-selected entries and fixed
-initial quantities. Improve feature/model research and cost-aware replay, not
-GPU utilization or another model-name sweep. This is seen-data development,
-not a Paper strategy change, fresh holdout or deployment qualification.
+Complete kis-held-exit-postfit-replay-recovery-v1: repair the two reproduced
+research-only post-fit interface defects so a future frozen experiment can
+reach cost-aware replay. No training or numerical market-performance rescue.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal100 fee-consumer readiness COMPLETE ff5b936b... at A/execution/
-kis-five-session-successor-observed-fee-reconciliation-v1/integration-evidence.json:
-143 focused/15 independent groups, actual offline source/SYN smoke complete.
-No actual fee/settlement or deployed Action claim. Goal99 rejected879bb037...;
-its CPU1/CUDA2 results and failed/recovered evidence remain immutable.
+Goal101 technical failure44522a70... at A/research/
+kis-stock-held-only-causal-exit-development-v1/integration-evidence.json;
+canonical failed outcome7c2307bf... closes all3 spent fits/8epochs/224updates.
+No comparative tables or retained weights; candidate UNKNOWN, not rejected.
+Actual first failure remains unestablished. Original receipts/sources/600s
+clock remain immutable. Claude recovery supported-with-limits.
 
 ## Parallel Packages
 
-Engine: first compare with prior one-step/exit studies and record the nearest
-lineage; a duplicate hypothesis is a rejection, not another training allocation.
-Freeze one finite contract before numerical market work. Reuse Goal99's causal
-rule_fixed5 entry selection, not a final teacher trained on later evaluation
-dates. No learned entry, new stock selection, reentry or redistribution.
+Engine: publish a separately pinned minimal driver revision. Use explicit old
+Panel.keys versus later Panel71.universe.keys and exact ordered512 identity
+validation, not an arbitrary attribute fallback. Add integrated DEV80/later50
+fixed-predictor positive controls using the real typed loader objects. Safe
+failure categories/phases are whitelisted; never log exception text, raw
+values, locals or a traceback containing private input.
 
-At completed CLOSE t for an already held position, EXIT executes OPEN(t+1);
-HOLD waits one interval before hypothetical liquidation OPEN(t+2). Train the
-incremental liquidation label (1-c)*(O[t+2]-O[t+1])/C[t], not a clairvoyant
-max-over-future or claimed optimal stopping value. Features end at CLOSE t.
-Use21 completed bars/20 steps, held age and observed entry return. Allow learned
-decisions CLOSE e..e+3 after entry OPEN e; force EXIT OPEN e+5.
+Execution: align this research-local Fraction entry check with the EXISTING
+source planner's nonnegative weights, per-name0.10+1e-12 and total0.50+1e-12.
+Use the exact rational1/10^12 allowance, not an enlarged generic tolerance.
+Never clip, normalize, resize weights/quantities, repair cash or change Paper
+risk. Keep q=original_capital*w/(entryOPEN*1.001) and actual-leg5/10/20bps costs.
+Test real typed planner roundoff, exact boundary and just-outside kills.
 
-Use one CPU ridge baseline and two fixed CUDA seeds101/202, maximum3 fits under
-one original600s family clock. Freeze epochs/architecture/split/kill criteria
-before any outcome. Reuse existing runtime and old512/later-seen512 exact inputs;
-no data acquisition, model download, holdout or retained fitted weights.
+Data: independently attest old/later object identity and official-session
+geometry in the integrated source/SYN test. No acquisition or packed-row read.
+Temporary Validation independently attacks the frozen repair, quantities,
+funding, complete marks and safe error projection. It must distinguish source
+reproduction from actual101 first-cause proof and from model-performance proof.
+Infra is invoked only for a source-only exact-runtime prerequisite if needed;
+Parent alone owns actual Docker/Git. No GPU appointment or new family fit.
 
-Data: independently audit source/official-session geometry, complete targets
-and TRAIN support before DEV decisions. Missing selected payoff stays unavailable,
-never a loss dropped after outcomes. Current-listing/nonPIT/revised/raw-action/
-nominal-availability limits stay visible; later-seen input is not replication.
+## Completion And Limits
 
-Execution: freeze/replay identical entry quantities from original initial
-capital and rule weights at reference10bps. Roll cash/PnL but do not reinvest
-gains or change quantities from arm outcomes. No leverage/cash repair: an
-unfundable required entry invalidates that comparison. Charge5/10/20bps per
-side on actual legs; HOLD has no fill fee. Compare fixed5 and immediate-next-
-OPEN exits with learned exits and report exposure/duration alongside NAV/DD.
-Every original block date remains, including cash after early liquidation.
+Done: frozen repair releases, positive typed DEV80/later50/all36-table controls,
+boundary/identity/quantity/unknown-output kills and independent source/SYN
+attestation. Strongest failure: a reference-valid plan is rejected, an invalid
+identity/cap is accepted, quantities change, or prior fitted results are
+fabricated. Replayed fake-predictor tables are engineering tests, not returns.
 
-Infra: reuse the existing PyTorch CUDA Docker image/finite owned worker and
-Goal99's publication recovery. CPU/SYN smoke first, then one exclusive GPU
-appointment after source integration. Parent alone runs actual Docker/Git.
-Research Steward records frozen family/lineage/max3 fits/600s/no sealed spend.
-Temporary Validation independently attacks frozen causality/cost/accounting
-and exact result arithmetic; it does not tune models or inspect private state.
+Preserve all13 Paper/Data owners, next_due, original shared10%basis, strategies
+and pending identities. No credential/KIS/provider/account/order/scheduler
+calls or changes; no actual fits, model download, weights, holdout or capital
+change. D:15%free floor applies. Bound the repair to one development day.
+No report family, gate or per-agent goal. Another ready lane continues.
 
-## Completion And Scope
-
-Done: frozen causal target, verified source/replay and one bounded actual CPU+
-CUDA outcome, or an exact duplicate/input-unavailable/technical rejection.
-Strongest kill: future-price mutation changes labels/payoffs but cannot alter
-earlier actions/entry quantities. A survivor must improve fixed net utility
-against both same-entry controls on DEV and later-seen blocks without worse
-fixed5 drawdown; both seeds must pass the predeclared cost-band criterion.
-No best-seed rescue, extra refits, outcome-driven windows or naive zero costs.
-
-Keep all13 installed Paper/Data owners and next_due, original shared10%basis,
-strategy and pending identities unchanged. No credentials/KIS/provider/account/
-order/scheduler calls or changes in this objective. Live/paid/public/major
-runtime replacement remains outside authority. Artifacts A/data M/D:15%floor.
-Bound source+experiment to one development day; yields stay worker-owned, not
-foreground sleep. Another ready lane continues on a scoped failure.
-
-Follow AGENTS.md verification: focused disjoint tests; exact unchanged repository
-authority may be reattached for external-only work. Changed shared source uses
-changed-path serial and clean parallel authority. Ruff/three sample Compose,
-refresh stateboards/HANDOFF, verify/commit/push, replace with exactly ONE next
-material company objective and continue. No per-agent next-goal files.
+Use focused disjoint tests; reattach exact unchanged repository authority for
+external-only work. Changed shared source requires AGENTS.md authority. Run
+Ruff and all three sample Compose configurations, refresh stateboards/HANDOFF,
+verify/commit/push and replace this file with exactly ONE material next goal.
+Do not automatically refit101 on the same seen sample to evade its spent cap;
+next research needs a materially different mechanism or fresh evidence.

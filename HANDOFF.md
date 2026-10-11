@@ -13,6 +13,23 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal101 held-only causal exit CLOSED/technical failed44522a70... at A/research/
+kis-stock-held-only-causal-exit-development-v1/integration-evidence.json.
+Scienceb261c993.../trial02520940...; failed outcome7c2307bf... preserves all
+3 spent fits: actual CPU1/CUDA2,8epochs/224updates. CPU source smoke passed;
+CUDA hosta33a26d6.../receipt a56eceac... retained_failure/exit2, no result tables.
+Exact worker failure bytes bind worker precommit5b1fbd9a..., distinct from host
+plandf8b2276...; original host result_sha is null. Candidate UNKNOWN, not a
+scientific rejection. No refit, refunded fit, clock reset or retained weights.
+Child/container/GPU lease closure and source unchanged are host attestations,
+not independent OS proof.189 focused source tests pass; independent source/SYN
+replay8/Engine6/Data6 groups pass. Nine diagnostic tests reproduce later Panel71
+identity ABI and float-planner/exact-Fraction cap mismatches; actual FIRST cause
+not established. Failed original sources and outputs stay immutable. Claude
+recovery supported-with-limits. Next objective source-only replay recovery,
+typed DEV80/later50 controls, original1e-12 cap parity without quantity changes;
+no new fits/GPU/market-performance claim or Paper/scheduler/runtime change.
+
 Goal100 observed-fee consumer COMPLETE ff5b936b... at A/execution/
 kis-five-session-successor-observed-fee-reconciliation-v1/integration-evidence.json.
 ExecutionR2 release8c21bfe7.../overlay7a1b8271... connects exact cumulative
