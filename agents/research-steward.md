@@ -26,7 +26,14 @@ All3 fits remain spent, no refund/refit/clock reset/retained weights. Actual
 result tables unavailable/candidate UNKNOWN, not scientific rejection.
 Hosta33a26d6... attests child/container/source/lease closure, not OS proof;
 original result_sha null, exact failure bytes bound offline. GPU now free.
-Goal102 source-only replay recovery spends no fitting/GPU/sealed evaluation.
+Goal102 CLOSED/source-SYN3c98f73f... spends no market fitting/GPU/sealed budget;
+its separate CPU diagnostic-wrapper failure is not a model fit refund or hold.
+Goal103 planned SAME-family trial2 is explicit technical reexecution, not new
+hypothesis/independent replication. Metadata127673d5... freezes prior3 spent
+and ONE additional3-fit/600s attempt, cumulativemax6fits/16epochs/448updates/
+1200allocated seconds. No third attempt, changed seeds or outcome selection.
+Claude prospective budget supported-with-limits; canonical scientific freeze,
+new source binding and stable CPU prerequisite precede any GPU appointment.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 
 ## Prior Allocation

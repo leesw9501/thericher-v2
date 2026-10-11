@@ -2,60 +2,64 @@
 
 ## Objective
 
-Complete kis-held-exit-postfit-replay-recovery-v1: repair the two reproduced
-research-only post-fit interface defects so a future frozen experiment can
-reach cost-aware replay. No training or numerical market-performance rescue.
+Complete kis-held-exit-causal-development-technical-reexecution-v1: obtain the
+originally unobserved held-only causal-exit comparison after the proven source
+repairs. This is ONE deliberate technical reexecution of the SAME hypothesis,
+not a new mechanism, seed search, independent replication or Paper promotion.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal101 technical failure44522a70... at A/research/
-kis-stock-held-only-causal-exit-development-v1/integration-evidence.json;
-canonical failed outcome7c2307bf... closes all3 spent fits/8epochs/224updates.
-No comparative tables or retained weights; candidate UNKNOWN, not rejected.
-Actual first failure remains unestablished. Original receipts/sources/600s
-clock remain immutable. Claude recovery supported-with-limits.
+Original101 failed44522a70.../scienceb261c993.../trial02520940.../outcome7c2307bf...
+remains immutable:3 fits/8epochs/224updates spent, no result tables/weights,
+candidate UNKNOWN. Source102 complete3c98f73f...;79 source/10 mocked tests,
+independent Data6/Validation6 pass. Separate actual diagnostic wrapper failed
+f1fb92ab... and is retired, NOT a passing runtime prerequisite.
 
-## Parallel Packages
+## Frozen Scope And Parallel Work
 
-Engine: publish a separately pinned minimal driver revision. Use explicit old
-Panel.keys versus later Panel71.universe.keys and exact ordered512 identity
-validation, not an arbitrary attribute fallback. Add integrated DEV80/later50
-fixed-predictor positive controls using the real typed loader objects. Safe
-failure categories/phases are whitelisted; never log exception text, raw
-values, locals or a traceback containing private input.
+Engine: use technical-ready-contract127673d5.../releaseb48c2ad9... at A/research/
+kis-held-exit-causal-development-technical-reexecution-v1/engine-r1.
+Preserve the original specification, family, rule-selected entry weights,
+initial-capital quantities, one-step liquidation target, TRAIN/DEV/later-seen
+splits, CPU ridge recipe, GRU101/202 seeds,4epochs/batch192/224update limit,
+21bar/20step horizon, fixed5/immediate/cash controls and all48 cost-band checks.
+No outcome-driven alteration. Corrected driver58c50515... and replaya5a9a0e1...
+require explicit science/replay-pin binding before actual reliance.
 
-Execution: align this research-local Fraction entry check with the EXISTING
-source planner's nonnegative weights, per-name0.10+1e-12 and total0.50+1e-12.
-Use the exact rational1/10^12 allowance, not an enlarged generic tolerance.
-Never clip, normalize, resize weights/quantities, repair cash or change Paper
-risk. Keep q=original_capital*w/(entryOPEN*1.001) and actual-leg5/10/20bps costs.
-Test real typed planner roundoff, exact boundary and just-outside kills.
+Parent/Steward: freeze a new contract in the SAME family as trial2, explicitly
+technical_reexecution_of101. Prior3 fits/8epochs/224updates/600allocated seconds
+are not refunded or hidden. Permit exactly ONE additional attempt:CPU1/CUDA2,
+max3fits/8epochs/224updates/600s. Cumulative lineage max6fits/16epochs/448updates/
+1200allocated seconds. Preserve the original clock; the new attempt's own
+clock is explicitly new, not a reset of101. No further retry if technicalfailed.
+Claude prospective budget is supported-with-limits, not an authority grant.
 
-Data: independently attest old/later object identity and official-session
-geometry in the integrated source/SYN test. No acquisition or packed-row read.
-Temporary Validation independently attacks the frozen repair, quantities,
-funding, complete marks and safe error projection. It must distinguish source
-reproduction from actual101 first-cause proof and from model-performance proof.
-Infra is invoked only for a source-only exact-runtime prerequisite if needed;
-Parent alone owns actual Docker/Git. No GPU appointment or new family fit.
+Infra: reuse stable101 model CPU/CUDA transport and d6b43213... image; do not
+extend the failed separate102 diagnostic wrapper. Exact release/source/control
+pins and a passing new CPU synthetic prerequisite precede the sole GPU visit.
+Parent alone executes actual Docker/Git. Keep network-none/no private mounts
+for CPU, exact read-only four market inputs for CUDA, exclusive GPU ownership,
+bounded resources, external outputs and exact child/container cleanup.
+
+Data and temporary Validation: independently reattest unchanged input/target/
+split/source/cost/quantity and cumulative spend binding. Validate actual final
+host/result/counter chain and frozen aggregate arithmetic without tuning or
+opening a holdout. Missing/failed results remain technical unknown, not loss,
+cash, scientific rejection or fit refund. No raw rows/labels/weights retained.
 
 ## Completion And Limits
 
-Done: frozen repair releases, positive typed DEV80/later50/all36-table controls,
-boundary/identity/quantity/unknown-output kills and independent source/SYN
-attestation. Strongest failure: a reference-valid plan is rejected, an invalid
-identity/cap is accepted, quantities change, or prior fitted results are
-fabricated. Replayed fake-predictor tables are engineering tests, not returns.
+Done: exactly one bounded comparison with36 tables/all130 marks/all48 frozen
+checks, or exact input-unavailable/technical-failed closure. Both seeds and
+cost bands must satisfy original criteria; no best-seed/extra-fit rescue.
+Development result only, not fresh evidence or changed Paper strategy.
 
-Preserve all13 Paper/Data owners, next_due, original shared10%basis, strategies
-and pending identities. No credential/KIS/provider/account/order/scheduler
-calls or changes; no actual fits, model download, weights, holdout or capital
-change. D:15%free floor applies. Bound the repair to one development day.
-No report family, gate or per-agent goal. Another ready lane continues.
+All13 Paper/Data owners, next_due, original shared10%basis and pending identities
+stay unchanged. No credentials/KIS/provider/account/order/scheduler changes,
+downloads, paid commitments, weights, holdout or live behavior. Data M,
+artifacts A, D:15%floor. One development day; no foreground external waits.
 
-Use focused disjoint tests; reattach exact unchanged repository authority for
-external-only work. Changed shared source requires AGENTS.md authority. Run
-Ruff and all three sample Compose configurations, refresh stateboards/HANDOFF,
-verify/commit/push and replace this file with exactly ONE material next goal.
-Do not automatically refit101 on the same seen sample to evade its spent cap;
-next research needs a materially different mechanism or fresh evidence.
+Use focused tests and exact-source reattached repository authority for external
+work; changed shared source uses AGENTS.md authority. Ruff/three sample Compose,
+stateboard/HANDOFF refresh, verify/commit/push, then exactly ONE material next
+objective. Preserve failures honestly; do not add a new approval or global hold.

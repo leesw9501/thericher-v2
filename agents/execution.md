@@ -34,10 +34,14 @@ Goal101 CLOSED/technical failed44522a70... after actual CPU1/CUDA2 fits;
 comparison unknown, no tables or scientific rejection. Replay36/reader38 and
 independent source8 pass; diagnostic1fd458e5...5 tests reproduces original
 float planner/exact-Fraction cap mismatch, actual first cause not established.
-Goal102 research-local cap parity uses only original1e-12 reference allowance;
-no clipping/normalization/quantity resize/cash repair/Paper risk change.
-Driver identity repair and typed DEV80/later50 controls run without fitting.
-No broker/bank/deployment/schedule changes; original101 remains immutable.
+Goal102 CLOSED/source-SYN3c98f73f...; replayR24c1f3aaa.../a5a9a0e1...,59
+Parent tests; exact original NumPy float64 predicate/512-wide sum, no additional
+tolerance/clipping/normalization/quantity resize/cash repair/Paper risk change.
+Original rational R1 literal-edge limit remains immutable. Independent joint
+Validation6 52be7d77... passes both repairs and accounting/missing-funding kills.
+Actual separate diagnostic wrapper failed, not runtime parity. Goal103 explicit
+stable transport/replay pin rebind precedes CPU/GPU numerical work; no broker,
+bank/deployment/schedule changes, original101 remains immutable and spent.
 Full book/shared10%basis/losses/reservations/pending identities unchanged.
 Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
 independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.

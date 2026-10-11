@@ -13,6 +13,26 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal102 replay recovery COMPLETE/source-SYN3c98f73f... at A/research/
+kis-held-exit-postfit-replay-recovery-v1/integration-evidence.json.
+Engine6a7c0512.../driver58c50515... fixes real later Panel71 identity and safe
+failure projection. ExecutionR24c1f3aaa.../a5a9a0e1... uses the exact existing
+NumPy float64 cap predicate/sum; original supplied weights/quantities unchanged.
+Parent79 source tests and10 Infra mocks pass; independent Data6ea713efb... and
+joint Validation6 52be7d77... pass. Original rational R1 partial parity remains
+preserved, not full float ABI equivalence. Actual separate Docker test-wrapper
+FAILED f1fb92ab.../exit1, known child/container closure, no qualified result.
+Its test alias/publication helper ABI faults stay scoped to that wrapper;
+do not claim a passing Docker prerequisite or actual101 first-cause proof.
+Retire that finite diagnostic wrapper, reuse stable101 model transport next.
+Inherited Engine102 CLI still binds old replay; explicit source rebind required.
+Claude cap parity and prospective budget supported-with-limits. Next ONE goal
+is deliberate same-hypothesis technical reexecution, not a new mechanism or
+independent replication: one additional3-fit/600s attempt, prior3 fits remain
+spent, cumulative max6/1200 allocated seconds. Same recipe/seeds/splits/kill
+tests, no best-seed rescue or third attempt. Its own CPU prerequisite precedes
+GPU. All13 Paper/Data owners and original shared10%basis remain unchanged.
+
 Goal101 held-only causal exit CLOSED/technical failed44522a70... at A/research/
 kis-stock-held-only-causal-exit-development-v1/integration-evidence.json.
 Scienceb261c993.../trial02520940...; failed outcome7c2307bf... preserves all

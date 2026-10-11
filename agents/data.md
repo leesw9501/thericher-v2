@@ -29,8 +29,11 @@ unchanged. Interface wording excludes marks but code correctly includes
 *_marks_indices in the frozen split; no scientific-row rewrite.
 Goal101 CLOSED/technical failed44522a70... after actual3 fits, no result tables.
 Typed later Panel71 ABI mismatch reproduced, actual first failure unknown.
-Goal102 source-only typed identity/geometry attestation; no acquisition/finality
-promotion or packed-row review. Existing Data owners/due unchanged.
+Goal102 CLOSED/source-SYN3c98f73f...; independent typed reviewea713efb...6
+groups passes/28 source-metadata pins unchanged, complete80/50 SYN marks.
+No packed-row/actual model/runtime/finality claim. Goal103 same-input technical
+reexecution does not become fresh data or replication. Existing owners/due,
+coverage and limitations unchanged; no acquisition or quality promotion.
 Goal99 COMPLETE/rejected879bb037... at A/research/
 kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
 Actual1CPU2CUDA/35of64 fixed checks failed; no new data or quality promotion.

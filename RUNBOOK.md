@@ -16,9 +16,20 @@ proof. Scienceb261c993.../trial02520940... closed by failed outcome7c2307bf....
 189 focused/20 independent source-SYN groups pass;9 diagnostic tests find real
 later Panel71 identity ABI and float/Fraction cap mismatch. Actual FIRST cause
 unknown. Never rerun run_cuda.py/run_cpu.py or reset the original600s/max3.
-Goal102 source-only recovery owns real typed DEV80/later50 integration and
-original1e-12 cap parity without changed weights/quantities/Paper risk.
-Claude recovery supported-with-limits; no training/GPU/holdout/market result.
+Goal102 CLOSED/source-SYN3c98f73f...:
+D:/thericher-v2/model-artifacts/research/kis-held-exit-postfit-replay-recovery-v1/integration-evidence.json.
+Engine6a7c0512.../replayR24c1f3aaa...,79 Parent source/10 mocked transport
+tests pass; independent Data6ea713efb.../joint Validation6 52be7d77... pass.
+NumPy float64 caps/sum exactly match original planner; no changed quantities.
+Actual separate diagnostic Docker wrapper FAILED f1fb92ab.../exit1, receipt
+2b8cb3bf...; no qualified result/runtime-pass claim. Original failed bytes
+retained; wrapper retired, no standing schedule or new worker introduced.
+Reuse stable101 model transport for103, not that diagnostic adapter. Same
+family technical trial2 needs new science/replay source pins and its own CPU
+prerequisite before CUDA. One additional3-fit/600s attempt only; cumulative
+max6fits/16epochs/448updates/1200allocated seconds, original3 never refunded.
+Same hypothesis/settings; no independent replication/best seed/third retry.
+Claude recovery/cap/prospective budget supported-with-limits, not authority.
 Current contract is the next goal; historical commands are not rerun authority.
 Goal98 accounting readiness COMPLETE c6e08a27...:
 D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-owned-accounting-v1/integration-evidence.json.
