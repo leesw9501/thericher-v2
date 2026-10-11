@@ -14,16 +14,19 @@ Execution8/Infra8/consumer6=46 focused. Independent actual3+2 aggregate groups,
 not raw NAV/physical publication/OS or beta reconstruction. At10bps/side growth
 residual DEV+2.58272%/later+.25028%, both controls lower; common planned gross
 does not prove matched risk, neutrality, independent alpha or Paper promotion.
-Claude actual supported-with-limits prioritizes unchanged prospective input/
-forecast custody over another seen-model variation. ONE107 prepares a finite
-Oct12 entry/Oct19 fifth-OPEN forward contrast; no current forecast yet.
-107 sciencebc32566d.../calendar e0efd4b6.../canonical row264c3b3d... frozen;
-pure forecast37a3b2aa.../8 Parent SYN and current bridge6 SYN pass. Validation
-4d65d847...2source groups supported-with-limits; no actual forecast/future result.
-Do not retune106 or adopt it as a Paper teacher. Existing Paper is independent.
-Ready later direction: inventory-conditioned intraday reference-policy-value
-supervision, same M5/context36/H30 versus standalone target and merged controls.
-Source proposal only, no second campaign/fit/goal; GPU remains free/usable.
+107 preparation COMPLETE5e164d61... at A/research/
+kis-peer-relative-momentum-prospective-preparation-v1/integration-evidence.json.
+Actual forecast3a15ac2c.../private fd47fe89... sealedOct11 16:02:06.573427UTC;
+246eligible/185added/246analytical estimates/union13,0predictivefits/0GPU.
+Six finite Data dates installed; future comparison pending under frozen row
+264c3b3d..., not a completed campaign, replication or new Paper teacher.
+40 focused/source2/actualmetadata2 and one direct Docker SYN group pass.
+R1/R2 SYN faults retained; no pytest exists in the image, no14Docker-test claim.
+ONE108: firstrate-inventory-reference-policy-target-preparation-v1. Fixed
+M5/context36/H30, inventory/age-aware CONTINUE-one-interval-then-reference-policy
+target versus immediate liquidation. Freeze semantics before source/SYN and
+bounded input preparation; no fit/GPU/holdout/deployment yet. GPU free/usable.
+Concept sources are independently retrieved; no public code/weights imported.
 
 Goal99 COMPLETE/rejected879bb037... at A/research/
 kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.

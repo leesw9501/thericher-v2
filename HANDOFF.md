@@ -11,17 +11,32 @@ without operator authority. Never output secrets/account/order IDs/raw rows/
 prices/private amounts. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History through Gita81a1ae and immutable external receipts replaces role diaries.
 
-## Current Preparation (2026-10-12 KST)
+## Current Work (2026-10-12 KST)
 
-107 remains ACTIVE. At A/research/kis-peer-relative-momentum-prospective-preparation-v1,
-sciencebc32566d.../calendar e0efd4b6.../custody4979f87f... and canonical row264c3b3d...
-are frozen; do not freeze/register again. Current manifest a0bb1864... and packed
-921380f5... independently hashed, source captureOct10 19:28:42.228861+00:00.
-Parent bridge6/Engine8/Execution8 SYN pass; Validation4d65d847...2source groups
-supported-with-limits, not actual raw/forecast/runtime evidence. Claude preparation
-review_received/supported-with-limits. SYN-only runtime plan dd440a2e.../c940f69c...
-has14source/control files/462repo pins/0market, not yet dispatched. Actual forecast,
-finite6date Data owner installation and future comparison remain pending.
+107 preparation COMPLETE5e164d61... at A/research/
+kis-peer-relative-momentum-prospective-preparation-v1/integration-evidence.json.
+Future pilot remains PENDING under original scientific row264c3b3d...; no
+campaign outcome registered, fresh replication or Paper adoption claimed.
+Actual CPU forecast c5b3551e.../hostf80905a5.../result3a15ac2c... is sealed at
+Oct11 16:02:06.573427UTC before Oct12 OPEN13:30UTC. Same512 identities,
+246eligible/185added/246analytical estimates, original union13;0fits/0GPU.
+Source capturedOct10 19:28:42.228861UTC, not Friday decision-time availability.
+Private forecast fd47fe89... and Data job a7c621dc... remain external/unprinted.
+Six Data-only tasks thericher-g107-peer-union-capture-YYYYMMDD installed/read
+back08668ca4...: Oct12..16 and19 at21:50..55UTC, firstOct13 06:50KST.
+Five CLOSEs plus terminal Oct19 OPEN6, not the Paper fifth-CLOSE exit.
+Existing13 owners/shared10%basis untouched; no manual KIS/account/order run.
+40 current focused cases pass; Docker direct typed SYN1group, not14pytest tests.
+Independent source2 and actual metadata2 groups pass (4d65d847.../b57b9cea...).
+Claude preparation supported-with-limits; honest-host/readback, not OS/PIT proof.
+R1/R2 SYN failures retained: pytest absent from existing image; R3 direct typed
+check fixes the test route, not candidate/image/model settings or a clock refund.
+
+ONE next objective: firstrate-inventory-reference-policy-target-preparation-v1.
+Prepare a causal held-position target, finite H30 cost replay and existing
+FirstRate intraday input geometry. Source/SYN then bounded actual input preflight;
+no performance claim, fit/GPU, holdout, new Paper teacher or broker change yet.
+Data/Engine/Execution packages are disjoint. Future107 waits stay worker-owned.
 
 ## Latest Closure (2026-10-11 KST)
 
@@ -346,24 +361,12 @@ Original installed sources/requests/reservations/basis are unchanged.
 Harness failures and superseded source versions are retained, never current
 passing authority. No finding becomes a global approval or Paper permission hold.
 
-## Current Work
+## Earlier Input Preparation
 
-ONE objective kis-peer-relative-momentum-entry-development-v1. Goal105's
-single CPU comparison is complete/rejectedaa330c36..., not awaiting fitting.
-Next106 removes prior-only peer beta movement from the stock-selection score;
-retain plain rule and paired prior-common-gross controls, fixed fifthOPEN exits,
-all130 marks and5/10/20bps per-side. Freeze one deterministic recipe before
-numerics;0 predictive fits/GPU/weights/holdout, one CPU runtime600s. Analytical
-prior-only beta estimates are explicit statistics, not unreported fitted models.
-No sector-ETF replication, mean-reversion/market-neutrality claim or105 rescue.
-Old/later512 already-seen inputs,13 owners/shared10%basis stay unchanged.
-106 scienceea00de07.../row023d797e... frozen, no runtime/appointment yet.
-Source peer kernel/common-gross parity/fit0 CPU transport are disjoint packages.
-Data-only readiness check found SPY/QQQ25 retained390-timestamp session sets
-2026Aug28..Oct2, plus FirstRate M1 metadata207824/210482bars. Raw values,
-session intersection/continuity, forward labels and effective blocks still
-need a bounded input preparation before any future GPU campaign; not a new
-training/PIT/finality claim or a wait on current106.
+106 numerical and107 forecast preparation closures above supersede their old
+source-only readiness. FirstRate input geometry still needs its bounded actual
+check before the next intraday campaign. Historical data is not a fresh holdout;
+KIS retained390-minute sessions do not establish decision-time availability.
 
 Goal94 kis-five-session-successor-custody-preparation-v1 COMPLETE d6e4bec7...:
 A/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.

@@ -11,13 +11,19 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 release1e9db5ef...8Parent SYN pass; reader3fae5ea6.../release2d58fa92...6Parent
 SYN pass and actualccb42ad5...3independent groups. Validation05676ca7...2actual
 groups agrees on scalar/source chain; not raw NAV/OS proof or a broker teacher.
-ONE107 owns unchanged same-quantity/five-CLOSE/fifth-OPEN forward replay on a
-pre-entry sealed original selected union. No future payoff, new Paper order,
-forecast, worker installation or budget/identity change has happened yet.
+107 preparation COMPLETE5e164d61...; pre-entry actual forecast sealed3a15ac2c...
+and six Data-only tasks installed/readback08668ca4.... Future payoff still
+pending, not a fill, actual fee or new Paper teacher. No budget/identity change.
 Paper permission is independent of research results; existing13 owners continue.
 107 replay36d5fb8b.../release758170d9...8 Parent SYN passes. Typed forecast/input
 seal, original unscaled union including zero scale, all5held marks and Oct19
 terminal OPEN6 required; no future schema inference, actual capture or fill claim.
+
+ONE108 owns pure finite intraday held-position replay: same one-share entry,
+one BUY/one SELL, no repeated BUY while holding, no horizon renewal/reentry.
+Fixed entry O0, held decisions k1..5, terminal O6; reference policy and cost
+parity prepared before any model fit. Data and Engine own their separate APIs.
+No actual broker/account/order inspection, inventory adoption or Paper change.
 
 Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
 kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.

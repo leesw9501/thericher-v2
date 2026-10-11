@@ -27,15 +27,23 @@ kernel reviewer NameError remains one failed SYN, not a second dynamic pass.
 R1 single-source release shape failed before actual; frozen R2 Infra10a7e72f...
 binds485aliases/462repo0copies. Exact600s clock/container/source closure verified.
 Never rerun106 freeze/extract/source/SYN/numerical/close exclusive creators.
-ONE active107: kis-peer-relative-momentum-prospective-preparation-v1. Bind
-unchanged candidate/current21/current calendar/actual pre-entry physical time;
-future Oct12..16 CLOSEs/Oct19 fifth OPEN still unknown. Finite research Data
-owner is separate from existing Paper identity/budget/recovery; no forecast or
-new task installed yet. Preparation completion is not future result evidence.
-107 freeze completebc32566d.../e0efd4b6.../row264c3b3d..., never rerun freeze.
-Parent bridge6/Engine8/Execution8 SYN passes; actual CPU forecast not dispatched.
-SYN-only plan dd440a2e.../c940f69c... is already created; do not replace it just
-to reissue a source preparation. Data/Infra final source handoffs remain owned.
+107 preparation COMPLETE5e164d61...:
+D:/thericher-v2/model-artifacts/research/kis-peer-relative-momentum-prospective-preparation-v1/integration-evidence.json.
+Actual forecastc5b3551e.../hostf80905a5.../result3a15ac2c... sealed before entry,
+union13/246eligible/185added/0fits. Sciencebc32566d.../calendar e0efd4b6.../
+row264c3b3d... remains frozen until future payoff, not registered complete.
+Six Data tasks thericher-g107-peer-union-capture-YYYYMMDD installed08668ca4...
+for Oct12..16/19 at21:50..55UTC; firstOct13 06:50KST, lastOct20 06:50KST.
+Job a7c621dc... in A/data/kis-peer-relative-momentum-prospective-preparation-v1/
+capture-r1/job.private.json is private, preserve exact identity/date cursor.
+Never rerun107 freeze/forecast/job/install/closure creators or manually start
+tasks. Future inputs/payoff unknown, separate from Paper owners and budget.
+40 current focused/native, one actual Docker direct typed SYN and independent
+source2/actualmetadata2 pass. R1/R2 failures retained, no14Docker-pytest claim:
+existing image lacks pytest; R3 direct check uses exact actual typed APIs.
+ONE active108: firstrate-inventory-reference-policy-target-preparation-v1.
+Source/SYN and bounded FirstRate geometry prep only; no fit/GPU/holdout/teacher
+change yet. No foreground wait for107; continue the independent intraday loop.
 Existing13 owners/shared10%basis/identities unchanged. Claude105 result and
 next direction supported-with-limits; next source inspiration is factor
 decomposition, not published stat-arb/market-neutral/mean-reversion replication.

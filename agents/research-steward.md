@@ -1,6 +1,6 @@
 # Research Steward Stateboard (연구 자원 및 평가 관리자)
 
-Current resource projection 2026-10-11 KST; history Gita81a1ae/exact custody.
+Current resource projection 2026-10-12 KST; history Gita81a1ae/exact custody.
 AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns ONE objective.
 A=D:/thericher-v2/model-artifacts.
 
@@ -68,8 +68,14 @@ holdout,30development predicates pass. Analytical cap12288, not hidden fit spend
 No GPU allocation/lease. New107 is prospective preparation, not scarce depth,
 ensemble use or sealed evaluation. Freeze unchanged source/input/time/forward
 contract before outcomes; same seen screen is not an independent replication.
-GPU remains free because this intervention does not need CUDA; no
-utilization-only training or refund of earlier failed/rejected families.
+107 preparation COMPLETE5e164d61...; original row264c3b3d... stays frozen,
+future outcome PENDING. One600s CPU forecast completed/0fits/246analytical,
+0GPU/holdout/weights; sealed study allocations are not broker instructions.
+Six Data-only capture tasks installed, no new strategy/budget or GPU lease.
+108 prepares inventory/reference-policy target and real intraday geometry;
+no predictive campaign/fit allocation yet. Freeze a finite CPU/GPU comparison
+only after target and causal input support are established, not utilization-only
+training or refund of earlier failed/rejected families. GPU available/usable.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 
 ## Prior Allocation

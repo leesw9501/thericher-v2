@@ -67,18 +67,29 @@ existing current21 manifest/packed bytes and actual captured/archive clocks,
 official six-session calendar, unchanged prior-only forecast before Oct12 OPEN.
 Reuse current_input.py36bfbdac... build_frame explicit current clock/512 axis;
 cursor792a1d07... startOct10 19:16:58UTC is not completion/availability evidence.
-Finite daily primitive collect.py4b134886... scope_result may be adapted for
-original selected union<=20/five CLOSEs/Oct19 fifth OPEN, not its fixed512 loop.
-No forecast/actual future result or new schedule installed yet; original owners
-unchanged. Do not read future payoffs until forecast/source/time is immutable.
+107 preparation COMPLETE5e164d61...; capture174141f7.../reader7707234d... and
+job a7c621dc... bind actual forecast fd47fe89.../union13. Six Data-only tasks
+installed/readback08668ca4... for Oct12..16/19 at21:50..55UTC. One client,
+max2daily pages/name/1.25s measured pace, durable date cursor/whole300s.
+Accepted/failure pages0/0 as no opportunity has run; next_dueOct12 21:50UTC,
+remaining accepted pages/ETA unknown, recovery resume exact date. Required
+raw support survives zero scale; missing date stays incomplete, not cash.
+All468code pins stable/26loaded module origins pinned; no manual client/API run.
+Original13 owners unchanged. Future economic result not observed.
 Parent retrieved exact view/manifest.jsona0bb1864.../10584rows; declared packed
 view/bars.csv.gz921380f5... now rehashed by107 freeze. Sciencebc32566d.../
 calendar e0efd4b6... binds27 official dates/21prior+6forward; Parent parser
 bridge6 SYN pass, not actual packed decoding or future capture. Actual source string
 Oct10 19:28:42.228861+00:00; default PowerShell JSON converted display to+09,
 not a source offset. DateKind String reattests exact source without conversion.
-The instant was unchanged in the prior projection. Before next OPEN,
-not Friday decision availability, response-level finality or physical OS proof.
+The instant was unchanged in the prior projection. Actual forecast formedOct11
+16:02:06.573427UTC before next OPEN, not Friday decision availability,
+response-level finality or physical OS proof. Independent metadata receipt
+b57b9cea... supports clock/source links only, no independent private-body parse.
+ONE108 Data package: existing FirstRate SPY/QQQ M1-to-M5 same-session geometry,
+context36/entry-to-O6 H30, chronological session split and missing-support counts.
+Freeze fixed semantics first; source/SYN then bounded actual preflight, no fit,
+new acquisition, raw output, PIT/finality or fresh-holdout claim.
 Source audit found older4-ETF sector strength/21-rebalance and covariance
 allocation already exist; next stock-level beta selection is a bounded new
 comparison, not a globally novel signal. Daily volume is only a capacity proxy;
