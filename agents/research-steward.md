@@ -41,7 +41,7 @@ bd7d4ec7995e4fec9508f0c8b26ac781 CLOSED, hostbd251f9a.../result5c94f579...,
 7a1cb985.../outcomeb1f850d0... closes same-family trial2. Cumulative6fits/
 16epochs448updates/1200allocated seconds; original101 UNKNOWN3 spent intact.
 No duplicate dispatch/new clock/third attempt. Owned GPU lease released, free.
-Current ONE goal proposes paired raw/augmented ridge CPU2/600s with fixed
+Prior104 proposed paired raw/augmented ridge CPU2/600s with fixed
 price-volume basis;0GPU/holdout/weights, new feature family with informed prior
 lineage, not fresh replication or rejected-family depth. Scientific freeze
 precedes its market work: Ready80052ac6.../body6bd716cc... frozen as science
@@ -53,11 +53,14 @@ At most2CPU fits/600s,0CUDA/sealed/weights; informed prior lineage disclosed.
 2CPU fits complete,0CUDA/epochs/updates/failed fits, original600s allocation.
 Closure04f16af6.../outcomefdc3bfdf... records15of36 rejection; no retry or
 feature rescue. Source/child/container closure is host evidence, not OS proof.
-Current105 scienceeb4485b6.../family broad512-fixed-five-entry-loss-veto-development-v1
+Closed105 scienceeb4485b6.../family broad512-fixed-five-entry-loss-veto-development-v1
 trial1b5aaaecd... is frozen. Signed-row document2eccba39... and wrapper246e2055...
-are different bindings; no runtime/clock/numerical appointment/fit yet. One CPU
-entry-loss classifier600s/0CUDA, informed controlled reexamination of the128
-target, not independent novelty. GPU remains free because this intervention does not need CUDA; no
+are different bindings. Original600s appointment826ac3bc... CLOSED with host
+c78eeac7.../result43e5ad42...1CPU fit complete/40iterations/0CUDA/weights/
+failed fits. Closureaa330c36.../outcomea66484b4... records27of30pass/3riskfail.
+Informed controlled reexamination of the128 target, not independent novelty.
+Next106 is one CPU-only peer-statistic selection study/0predictivefits/0CUDA;
+not yet frozen or allocated. GPU remains free because this intervention does not need CUDA; no
 utilization-only training or refund of earlier failed/rejected families.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 

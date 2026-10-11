@@ -2,79 +2,74 @@
 
 ## Objective
 
-Complete kis-fixed-five-entry-loss-veto-development-v1: test whether one fixed
-classifier can reject loss-prone entries from the existing rule-selected
-basket without changing retained quantities or learning exits.
-
+Complete kis-peer-relative-momentum-entry-development-v1: test whether removing
+prior peer-market movement from stock ranking improves fixed-five selection.
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Prior104 CLOSED/rejected04f16af6.../result575d521d.../outcomefdc3bfdf....
-Two CPU fits spent,15of36 checks fail; no feature/alpha/seed rescue or retry.
-Prior101 UNKNOWN and103/104 rejected lineages remain immutable and disclosed.
 
-## Fixed Intervention And Bounds
+Prior105 CLOSED/rejectedaa330c36.../result43e5ad42.../outcomea66484b4....
+One CPU fit spent;27of30 pass,3 DEV DD-versus-matched failures. Positive return
+improvement does not erase that frozen rejection. No105 cutoff/model rescue.
 
-Nearest-source audit found the earlier128 study already used a fixed-five
-profit/loss target and veto-only admission. This is an informed controlled
-reexamination, NOT a novel loss-veto mechanism:512 original deterministic-rule
-selected rows, fixed-initial-capital quantities and a prior-only matched-gross
-control were not identical in the inspected nearest contracts. Do not claim
-global novelty, independent replication or rescue of the rejected exit studies.
-Scienceeb4485b6.../trial1b5aaaecd... is frozen before numerical work; exact
-signed-row document2eccba39.../custody wrapper246e2055... retain their distinct
-hashes. Original ready proposal652752ac... remains immutable and pre-freeze.
+## One Fixed Intervention
 
-One CPU logistic classifier: C1/L2/lbfgs/intercepttrue/maxiter200/tol1e-4,
-class_weightNone/sample_weightNone. Same21 completed prior-CLOSE bars yield20 normalized OHLCV
-steps/100 inputs; TRAIN-only standard scaling. Freeze exact source/target/
-split/cost/runtime/custody before numerical work. At most1CPU fit/600s total,
-2threads/4GiB,0CUDA/weights/holdout/retry/threshold or calibration sweep.
-Both binary classes required in TRAIN; otherwise scoped input_unavailable.
+Use the SAME512 identities, old800/later71, prior21 completed bars, DEV15/later9
+cohorts and all130 marks. No new universe, acquisitions, dates, windows or models.
+Nearest sector-relative study used4ETFs/126-return lookback/21-session rebalance;
+G92 changed covariance allocation. This study changes stock-level ranking,
+not those policies or105 loss veto. Bounded nearest audit, not global novelty.
 
-Freeze original rule candidates/weights before prediction. For a selected name,
-loss label is ((fifthOPEN/entryOPEN)*(1-.001)-(1+.001))<0: actual-leg10bps
-per-side, not clairvoyant continuation or a label chosen from three cost bands.
-Keep iff P(loss)<.5; tie vetoes. Retained q=w/(entryOPEN*1.001) unchanged.
-No replacement, redistribution, reentry, learned exit, leverage or cash repair.
-Selected unavailable context/payoff fails its comparison, never drops losses.
-Preserve the original rule's scoped cash/missing-input behavior.
+Freeze eligible peer pool at each prior CLOSE, including existing>=128 and
+>=64 added support. Compute20 float64 CLOSE-to-CLOSE log returns; for stock i,
+peer return is the equal mean of OTHER eligible names on the same20 dates.
+Beta=covariance(de-meaned stock,peer)/variance(de-meaned peer), with the common
+normalization cancelling. Exact zero denominator gives beta0; no epsilon,
+clipping, search, future returns, self inclusion or coverage-selected cohorts.
+Score=sum(stock returns)-beta*sum(peer returns). DO NOT subtract the fitted
+intercept or sum fully demeaned residuals: that would trivially sum to zero.
 
-Same512 identities/old800/later71, TRAIN134/DEV15/later9 cohorts, all130 marks.
-Candidate, original rule, prior-only matched-gross rule and cash:24tables.
-Matched control k=sum(kept original weights)/sum(all selected original weights)
-is fixed at prior CLOSE using only prediction/weights; apply k to the entire
-original basket in the CONTROL ONLY. Candidate kept lots are never rescaled.
-This matches initial planned gross, not realized risk. Reuse identical admission
-decisions at5/10/20bps per-side, terminal sells before buys/fixed fifthOPEN.
-Candidate U>rule/matched/cash and DD<=rule/matched in BOTH blocks at ALL costs:
-30 fixed checks. Failure ends this mechanism without feature/model/cutoff rescue.
-Seen data remain seen, not independent replication or Paper qualification.
+Reuse original top10/ordinal ties, inverse-vol/gross<=.50/name<=.10/triangle<=.08
+and fixed proxy>.003 semantics, changing only ranking score. Freeze both raw
+plain and residual entry weights before prices. Common G=min(their gross);
+downscale BOTH paired baskets to G before next OPEN and new quantity freeze,
+never increase caps or resize after seeing OPEN. Keep raw rule as another arm.
+Common gross is not equal realized risk or market neutrality; no hedge/short.
+Record prior beta/concentration and analytical estimator counts separately from
+predictive training. Nonfinite selected statistics/support fail that comparison.
+
+Arms residual_common, momentum_common, rule_unscaled, cash:24tables at5/10/20bps
+per-side actual legs. q=predeclared prior weight/(entryOPEN*1.001), fixed initial
+capital, forced OPEN(e+5), sell-before-buy, all cash-tail daily CLOSE marks.
+Selected missing context/payoff for either original basket cannot be censored
+by matching, cash or a later substitution. No reinvestment/cash repair/reentry.
+Uresidual>all3controls and DDresidual<=momentum_common/rule_unscaled in BOTH
+blocks at ALL costs:30 fixed conjunctions. Failure ends this bounded mechanism;
+no window/beta/model/threshold/cost rescue. Seen samples remain seen.
 
 ## Owners And Completion
 
-Engine: nearest-lineage audit, frozen contract and minimal entry-veto delta;
-reuse existing causal loaders/replay/transport rather than another platform.
-Data: exact causal support/selected missing facts, no acquisition/universe gate.
-Execution: fixed-q actual-leg replay and prior-only matched-gross control.
-Infra invoked only for a concrete source/runtime ABI; Parent alone actual Docker,
-Git and source/control post-audit. Temporary Validation independently receives
-frozen source and actual aggregates, never tunes. Source/CPU prerequisite is
-fit0 and has no market mounts; numerical exactly four existing market files RO.
-Outputs/clock/cleanup outside Git; image remains pinned d6b43213....
+Engine owns nearest-source/finite recipe, causal peer kernel and small worker
+delta. Execution independently owns prior-common-gross/quantity replay parity.
+Data standby for concrete support/clock defects; no new data or quality gate.
+Parent integrates, owns actual Docker/Git and original clock. Infra invoked for
+concrete ABI only, reusing frozen105 transport/catalog rather than a new platform.
+Temporary Validation receives frozen source and actual aggregates, never tunes.
+One CPU numerical runtime<=600s,2threads/4GiB,0 predictive fits/CUDA/weights/
+holdout/retry. Analytical beta estimation is explicit, not concealed training.
+Freeze science/source/custody before numerics. Source/SYN fit0/market mounts0;
+numerical exactly four existing market files RO; fresh outputs only under A.
 
-Done: one exact24-table development comparison or linked duplicate/input-
-unavailable/technical-failed closure, original fit spend preserved. Claude
-prospective and corrected lineage supported-with-limits; latest exact outcome
-at A/research/kis-fixed-five-entry-loss-veto-development-v1/parent/claude-lineage/
-claude-dual-result-outcome.json, completed2026-10-11T13:35:48Z;
-challenge actual result before interpretation. Source inspiration only:
-https://hudsonthames.org/does-meta-labeling-add-to-signal-efficacy-triple-barrier-method/
-https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
-No copied framework, triple-barrier or published-performance replication claim.
+Done: one exact24-table comparison or linked duplicate/input-unavailable/
+technical-failed closure, exact runtime/cleanup and unchanged-source evidence.
+Claude next direction supported-with-limits at105 parent/claude-next/
+claude-dual-result-outcome.json, completed2026-10-11T14:00:00Z; challenge actual
+interpretation before reliance. Factor-decomposition source inspiration:
+https://math.nyu.edu/~avellane/AvellanedaLeeStatArb071108.pdf
+NOT its PCA/ETF mean-reversion, market-neutral or published-performance replica.
 
 No credentials/KIS/provider/account/order/scheduler changes, downloads, paid
-commitments or live behavior. All13 existing owners/due/shared10%basis and
-pending identities unchanged. Data M/artifacts A/15% D: floor. No global wait.
-Focused tests and exact-source authority reattachment for external-only work;
-changed shared source follows AGENTS.md authority. Ruff/three sample Compose,
-stateboard/HANDOFF refresh, verify/commit/push, ONE next goal and continue.
+commitments or live behavior. Existing13 owners/shared10%basis/pending identities
+unchanged. Data M/artifacts A/15% D: floor; no market or global approval wait.
+Focused tests plus exact-source authority reattachment for external-only work;
+changed shared source follows AGENTS.md. Ruff/three sample Compose, stateboards/
+HANDOFF, verify/commit/push, ONE next goal and continue.

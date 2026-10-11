@@ -71,16 +71,26 @@ Actual CPU2 complete/hostbb70f9dc.../result575d521d...,30tables130marks;
 At10bps per-side raw/aug growth DEV+.51025%/+.37986%, later+.04354%/-.15819%.
 79 Parent focused,8 independent prospective/kernel and8 actual groups pass.
 No feature/alpha/seed rescue, weights, holdout, GPU or Paper change.
-Next ONE goal: fixed-five entry-loss veto, one CPU logistic fit600s. Keep
+Closed105: fixed-five entry-loss veto, one CPU logistic fit600s. Keep
 original candidates/kept quantities; no replacement or learned exit. Prior-only
 matched-gross rule and cash distinguish filtering from simple exposure reduction.
 Nearest128 already used fixed-five profit/loss labels and veto-only admission;
 105 is informed controlled reexamination of512 rule-selected rows, fixed-initial
 quantities and a prior-only matched-gross control, not new-method/independent
 evidence. Scienceeb4485b6.../trial1b5aaaecd... frozen before market work;
-ready652752ac... remains original proposal. No105 numerical appointment/fit.
+ready652752ac... remains original proposal. Actual105 hostc78eeac7.../
+result43e5ad42... complete1CPU fit/40iterations/1340 TRAIN rows,0CUDA/weights.
+Closureaa330c36.../outcomea66484b4... records27of30 pass,3fail DEV DDmatched.
+10bps veto growth DEV+2.46336%/later+.19843%, both improve rule and matched;
+frozen risk failure stays rejected, not all-model futility or independent alpha.
 Claude corrected-lineage supported-with-limits at the105 parent/claude-lineage/.
-Engine owns minimal100-input logistic worker; Execution12 Parent SYN pass.
+Engine50b55249.../worker36b94d40... source complete;61 Parent tests and4
+prospective/source plus5 actual independent groups pass. No model/cutoff rescue.
+ONE next106: peer-relative momentum changes selection, not105 admission/exit.
+Prior20 close-return covariance beta with self excluded; score removes beta
+movement, NOT fitted intercept. Paired prior-common-gross/control-only scaling
+is fixed before prices. No106 scientific freeze/appointment/numerics yet;
+0 predictive training/GPU/weights/holdout, one CPU600s deterministic study.
 
 ## Prior Packages
 

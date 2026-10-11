@@ -55,8 +55,16 @@ Parent actual104 network-none runtime consumed the same old/later files;
 result575d521d.../closure04f16af6... rejects15of36 model checks. This is not new
 data, physical availability, PIT/finality or a Data quality promotion. Data-role
 source review did not independently reproduce raw numeric rows. Existing
-owners/due/coverage and limitations unchanged. Next105 reuses the same causal
+owners/due/coverage and limitations unchanged. Closed105 reused the same causal
 entry context and source support; no acquisition, universe or window extension.
+Actual result43e5ad42.../closureaa330c36...:1340 selected TRAIN rows/134complete
+cohorts,24tables130marks, no new data/PIT/finality/corporate-action promotion.
+Next106 uses same512 prior21 bars for a leave-one-out eligible peer statistic;
+Data standby unless exact support/clock issue, no acquisition or universe gate.
+Source audit found older4-ETF sector strength/21-rebalance and covariance
+allocation already exist; next stock-level beta selection is a bounded new
+comparison, not a globally novel signal. Daily volume is only a capacity proxy;
+inactive retail caps would not justify raising capital to force an experiment.
 Goal99 COMPLETE/rejected879bb037... at A/research/
 kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
 Actual1CPU2CUDA/35of64 fixed checks failed; no new data or quality promotion.

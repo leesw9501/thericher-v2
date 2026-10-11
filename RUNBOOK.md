@@ -5,6 +5,24 @@
 ONE objective is the current NEXT_CODEX_GOAL.md, not a historical command below.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
+Goal105 CLOSED/rejectedaa330c36... at
+D:/thericher-v2/model-artifacts/research/kis-fixed-five-entry-loss-veto-development-v1/integration-evidence.json.
+Scienceeb4485b6.../rowb5aaaecd.../outcomea66484b4.... CPU prerequisiteb17b6394...
+and numeric hostc78eeac7.../receipt5723944c... bind result43e5ad42....
+1CPU complete/40 solver iterations/1340 TRAIN rows,0CUDA/failed fits;
+24tables130marks,3of30 fixed checks fail, all DEV DD versus matched-gross.
+61 Parent focused,4 prospective/source and5 actual independent groups pass.
+Consumer release5c2e5dfa.../sourcea82b62e4... verifies exact CPU versions and
+independent plan-derived controls. Actual2d565ad2.../911f77b4... is aggregate
+source-chain evidence, not raw NAV/OS proof. Failed reviewer wrappers and Parent
+draft-pin preclose error remain retained, no runtime rerun or fit refund.
+Never rerun105 source/SYN/numerical/freeze/close exclusive creators.
+ONE active106: kis-peer-relative-momentum-entry-development-v1. Freeze a
+prior-only peer-beta selection recipe before numerical work; no106 freeze,
+clock/appointment/numerics yet, no predictive fits/GPU/weights/holdout rescue.
+Existing13 owners/shared10%basis/identities unchanged. Claude105 result and
+next direction supported-with-limits; next source inspiration is factor
+decomposition, not published stat-arb/market-neutral/mean-reversion replication.
 Goal104 CLOSED/rejected04f16af6...:
 D:/thericher-v2/model-artifacts/research/kis-price-volume-basis-held-exit-development-v1/integration-evidence.json.
 Science50ff9797.../rowc6705533.../outcomefdc3bfdf.... CPU prerequisitee8bc0ba4...
@@ -15,12 +33,13 @@ not independent raw-price NAV/OS proof. Consumer R1 Torch schema error retained;
 R2 source32cc20e3.../release8513bf32... uses frozen CPU versions/independent
 controls. Parent preclose caller failures did not rerun runtime or write a
 partial closure. Never rerun104 source/SYN/numerical/close exclusive creators.
-ONE active goal: kis-fixed-five-entry-loss-veto-development-v1, science
+Closed105: kis-fixed-five-entry-loss-veto-development-v1, science
 eb4485b6.../trial1b5aaaecd... frozen before numerical work; signed-row document
 2eccba39.../custody wrapper246e2055... are different pins. This is informed
 controlled reexamination of an earlier128 loss-veto target, not a novel method.
 Claude corrected-lineage supported-with-limits at its parent/claude-lineage/.
-No105 actual runtime/clock/appointment/fit yet. One CPU fit600s, no GPU/holdout/weights/threshold
+Its original no-runtime preparation is superseded by the exact closure above.
+One CPU fit600s spent, no GPU/holdout/weights/threshold
 rescue. Existing13 owners/shared10%basis/identities unchanged. Reattach exact
 1311-source/15829pass22skip authority for external-only work, not a fresh suite.
 Goal103 CLOSED/rejected7a1cb985...:

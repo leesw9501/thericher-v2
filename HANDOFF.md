@@ -13,6 +13,29 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal105 entry-loss veto COMPLETE/rejectedaa330c36... at A/research/
+kis-fixed-five-entry-loss-veto-development-v1/integration-evidence.json.
+Scienceeb4485b6.../trial1b5aaaecd... closed by outcomea66484b4....
+Actual CPU prerequisiteb17b6394... passes; numeric hostc78eeac7.../receipt5723944c...
+binds result43e5ad42...:1CPU fit complete,40 solver iterations,1340 TRAIN rows
+(672 loss/668 nonloss),0CUDA/failed fits/weights/holdout.24tables130marks;
+27of30 fixed checks pass,3 fail: DEV DD versus matched-gross at every cost.
+At10bps per-side, veto/rule/matched growth DEV+2.46336%/+1.99485%/+1.91306%,
+later-seen+.19843%/-.71099%/-.03046%. Incremental returns do not erase the
+frozen risk failure; not all-model futility, independent alpha or Paper promotion.
+Parent61 focused pass;4 independent prospective/source and5 actual groups pass.
+Execution readera82b62e4.../release5c2e5dfa... separates complete aggregate from
+rejected verdict. Actual2d565ad2.../Validation911f77b4... verify exact controls,
+counts/scalars, not raw NAV or independent OS proof. Reviewer harness faults
+and Parent draft-reader preclose pin failure retained, no runtime rerun/refund.
+Claude corrected lineage/result/next supported-with-limits. CPU appointment
+826ac3bc... closed, original600s preserved;13 owners/shared10%basis unchanged.
+Next ONE objective kis-peer-relative-momentum-entry-development-v1: change
+relative stock-selection signal, not105 loss-veto rescue. Same existing data;
+no106 freeze/appointment/numeric work yet. GPU usable/free, no permission hold.
+
+## Prior Closures
+
 Goal104 fixed price-volume basis COMPLETE/rejected04f16af6... at A/research/
 kis-price-volume-basis-held-exit-development-v1/integration-evidence.json.
 Science50ff9797.../feature-family trial1c6705533... closed by outcomefdc3bfdf....
@@ -31,7 +54,7 @@ and Validationb0728218... agree; not independent raw NAV or OS proof.
 Parent preclose argument/status-name assertions failed before closure writes,
 corrected without runtime rerun. Claude result/next direction supported-with-limits.
 No retry, feature rescue, weights, holdout, Paper or13-owner schedule changes.
-Next ONE goal isolates a fixed-five entry-loss veto, not another exit learner:
+Closed105 isolated a fixed-five entry-loss veto, not another exit learner:
 one CPU classifier, unchanged kept quantities, prior-only matched-gross control.
 105 is an informed controlled reexamination:128 already used loss/profit labels
 and veto-only admission. New bounded comparison is original512 rule selection,
@@ -39,9 +62,11 @@ fixed-initial quantities and prior-only matched-gross control, not global novelt
 Scienceeb4485b6.../trial1b5aaaecd... frozen; signed-row document2eccba39... and
 custody wrapper246e2055... are separate pins. Claude corrected-lineage outcome
 at A/research/kis-fixed-five-entry-loss-veto-development-v1/parent/claude-lineage/
-claude-dual-result-outcome.json is supported-with-limits. No105 fit/appointment.
+claude-dual-result-outcome.json is supported-with-limits. Actual105 closure above
+supersedes its original preparing/no-fit status; do not rerun exclusive creators.
 Execution sourcebb991ae4.../release47fa55ee... passes12 Parent SYN tests;
-Engine worker and minimal CPU transport are parallel source-owned packages.
+Engine50b55249... and InfraR2cbdfcc3f... are frozen source handoffs; actual work
+is complete. Informed controlled reexamination remains the scientific grade.
 
 Goal103 SAME-family technical reexecution COMPLETE/rejected7a1cb985... at
 A/research/kis-held-exit-causal-development-technical-reexecution-v1/integration-evidence.json.
@@ -285,15 +310,15 @@ passing authority. No finding becomes a global approval or Paper permission hold
 
 ## Current Work
 
-ONE objective kis-fixed-five-entry-loss-veto-development-v1. Goal104's paired
-2CPU comparison is complete/rejected04f16af6..., not awaiting source or fitting.
-Next105 freezes original rule candidates and learns only entry rejection from
-realized fixed-five loss labels. One CPU fit600s/noCUDA, no threshold sweep,
-replacement, kept-lot resizing or learned exit. Original/gross-matched/cash
-controls, all130 marks and5/10/20bps per-side costs remain fixed. Science and
-canonical trial are frozen; source/SYN prerequisite precedes105 numerical work.
-This is informed controlled reexamination, not an unseen-data result. Old/later512 already-seen
-inputs,13 installed owners and original shared10%basis remain unchanged.
+ONE objective kis-peer-relative-momentum-entry-development-v1. Goal105's
+single CPU comparison is complete/rejectedaa330c36..., not awaiting fitting.
+Next106 removes prior-only peer beta movement from the stock-selection score;
+retain plain rule and paired prior-common-gross controls, fixed fifthOPEN exits,
+all130 marks and5/10/20bps per-side. Freeze one deterministic recipe before
+numerics;0 predictive fits/GPU/weights/holdout, one CPU runtime600s. Analytical
+prior-only beta estimates are explicit statistics, not unreported fitted models.
+No sector-ETF replication, mean-reversion/market-neutrality claim or105 rescue.
+Old/later512 already-seen inputs,13 owners/shared10%basis stay unchanged.
 
 Goal94 kis-five-session-successor-custody-preparation-v1 COMPLETE d6e4bec7...:
 A/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.
