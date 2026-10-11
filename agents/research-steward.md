@@ -5,15 +5,21 @@ goal. A=D:/thericher-v2/model-artifacts; history Git2094757/external custody.
 
 ## Current Resources (2026-10-11 KST)
 
-Goal90 producer delivery COMPLETEe048c301...; no fit/sealed/GPU spend.
-ONE objective cross-stock attention development: corrected512 source contract
-before numerical work/appointment. Proposed9f98ab7b... preserves mistaken42
-scope and Goal77 attention lineage; no invented subset/fresh holdout.
-Planned fixed native peer-context gate, three fits/family1800s/one GPU, existing
-image4bb201b5..., unchanged samples/splits/cost replay; no official weights or
-MASTER158/63 replication. CUDA free/usable, no authority/environment hold.
-No appointment yet; CPU source preparation ready. Allocate after exact contract
-freeze; old seen-family history persists, not a utilization-only campaign.
+Goal91 COMPLETE/rejected eff354f7... at A/research/
+kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
+Science d5f3ab48.../canonical trial1rowfa9780dc..., R2plan c1ca775a...;
+terminalc37c072d.../result64ca83a1.... Actual3CUDA+3tree+3ridge/9450updates,
+96tables/390marks;17of20 fixed predicates fail. Original652.734s<1800 includes
+R1 pre-load zero-fit guard failure/ordinal-only repair/CPU feedback. R2runtime
+121.082s is a distinct clock. Failed and completed non-promoting registry rows
+retained; no new family/trial/refund/fourth fit/weights or sealed spend.
+Independent2556ffab... verifies pins/counts/clock/decision, not optimizer/OS
+proof. Exact child reap/container absence/lease release reported; GPU free.
+ONE next objective covariance allocation development: source proposal0ba99403...
+predates outcomes; not yet a scientific allocation. Freeze SAME data/target/
+split/costs, fixed joint-risk sizing/control/kill and CPU600s family before
+numerics.3HGBR+3ridge/max156solves/max15600iterations/2threads/4GiB;
+zero GPU or holdout allocation. No utilization-only work or market wait.
 
 ## Retained Appointment Evidence
 

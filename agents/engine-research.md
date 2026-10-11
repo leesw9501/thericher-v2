@@ -5,20 +5,32 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact ro
 
 ## Current Result And Work (2026-10-11 KST)
 
-Goal90 producer delivery COMPLETEe048c301...: independent cutoff/known-request/
-physical-clock checks passed, integrated431. Actual smoke no_owned_intent not
-flatness/fill/net or five future results; no capture-study model fit.
-ONE objective kis-stock-five-session-cross-stock-attention-development-v1.
-Proposed9f98ab7b... at A/research/kis-stock-five-session-cross-stock-attention-development-v1/
-proposed-contract.json identified Parent42 scope error: G84/G86 panel512/
-support>=128, NOT separate Data collector42. Corrected512 contract before any
-numerical work; unchanged samples/features/target/splits/replay.
-One peer-context-gated temporal/stock attention model, three fits/1800s; explicit
-Goal77 attention lineage, no window/seed/epoch search or failed-member rescue.
-MASTER MIT6d36c8b3... conceptual inspiration, no original158/63 inputs/checkpoints/
-replication. StockMixer unclear rights excluded. Old800/later50 seen/nonPIT/raw-
-action/nonTR/assumed availability limits; no sealed spend/replication/Paper
-adoption. CUDA available/free, no authority/environment hold.
+Goal91 COMPLETE/rejected eff354f7... at A/research/
+kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
+Native4847-param MASTER-concept peer-context/temporal/stock attention,
+not official factors/weights/replication. Science d5f3ab48.../trial1, R2plan
+c1ca775a.../terminalc37c072d.../result64ca83a1.... Actual3CUDA+3tree+3ridge/
+9450updates,96complete tables/390marks,17of20 fixed predicates fail.
+DEV10 growth-.55165% vs tree+2.15408%; later-.32722% vs+.37249%. Lower
+later DD alone cannot rescue negative utility/growth or all-cost failures.
+121.082s R2 runtime/original652.734s<1800 includes retained zero-fit binding
+failure and ordinal-only correction; same model/data/clock/trial, no fourth fit.
+151 focused/CPUimage27/source-matched15593pass22skip; independent2556ffab...
+and pure aggregate reader support exact rejection, not optimizer/OS/raw-price
+proof. Claude preflight/recovery/result-direction supported-with-limits.
+No weights/holdout/alpha/Paper adoption/provider or credential use. GPU free.
+Original42-scope conflation/proposal9f98ab7b... and self-consistent bad ordinal
+fixture preserved; corrected scientific512 recipe, pinned-history regression.
+
+ONE objective kis-stock-five-session-covariance-allocation-development-v1.
+Proposal0ba99403... predates actual attention outcomes; fixed tree scores/slots/
+gross/five-exits, prior-only20 RAW-return covariance versus inverse-vol/diagonal
+allocation. CPU600/3tree+3ridge/max156solves/100iterations, no GPU/new dependency.
+Executioneb75df7d... qualifies normalized entry cash/fees, all held marks retained.
+Freeze one contract/source before numerics; reject fixed all-cost U/DD failure,
+solver/cap/clock faults, no fallback or ranking/seed/window rescue. Old800/later50
+seen/current-listing/nonPIT/raw-action/nonTR/revision/nominal-availability limits.
+Goal90 finite Paper/accounting opportunities unchanged; never a research wait.
 
 ## Retained Research Evidence
 

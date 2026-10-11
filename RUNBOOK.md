@@ -2,7 +2,24 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-cross-stock-attention-development-v1.
+ONE objective: kis-stock-five-session-covariance-allocation-development-v1.
+Goal91 fixed attention study COMPLETE/rejected eff354f7... at
+A/research/kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
+Exact R2 runtime/recovery-r2/attempt-1063983acc174ba08f9dcae64fbdd10c:
+terminalc37c072d.../result64ca83a1.../plan c1ca775a..., canonical trial1d5f3ab48....
+3CUDA+3tree+3ridge/9450updates,96tables/390marks,17of20 frozen predicates fail.
+121.082s runtime/original652.734s<1800 incl retained pre-load zero-fit guard
+failure, ordinal-only repair and CPU packaging feedback. Never reset/retry a
+closed fit appointment. Source/actual review2556ffab... and pure aggregate
+recomputation verify rejection, not raw-price/optimizer/OS proof. GPU free.
+151 focused/CPUimage27/source-matched15593pass22skip; Claude login works,
+three categorical supported-with-limits reviews. No weights/Paper adoption.
+Next proposal0ba99403... predates outcomes, Executioneb75df7d...: covariance
+allocation only, unchanged scores/slots/gross/five exits. Freeze science/source
+before numeric work, existing CPU image/600s family/3tree+3ridge/156solves,
+no GPU, new dependencies or launcher platform. Retain all108tables/390marks,
+raw prior channels and held gaps; equal gross matches normalized entry cash
+and fees only at equal initial capital. Fixed all-cost tree+diagonal kill.
 Goal90 producer delivery COMPLETEe048c301...:
 A/execution/kis-stock-five-session-paper-close-capture-v1/integration-evidence.json.
 Job50748886.../planef2e7bb6... at delivery-preparation/recovery-r2;471 code pins.
@@ -22,11 +39,10 @@ not historical inventory. Fees/settlement/tax/net/future captures unobserved.
 Focused431/12.82s, independent parent44/actual6070fa4b...; exact1297pins/JUnit
 15593pass22skip reattached, Ruff/three sample Compose pass. Old finding receipts
 remain check-time evidence; all three fixed before source freeze/actual run.
-CUDA study uses EXACT existing512 research panel, not separate42-peer collector.
-Preserve original proposed9f98ab7b... mistaken-scope record; freeze corrected512
-contract before numeric work. MASTER MIT6d36c8b3... conceptual adaptation only,
-no158/63 replication/official checkpoint. Old800/later50 seen; no holdout/Paper
-adoption. No market sleep, provider refresh or runtime replacement needed.
+Research uses SAME512 panel, not separate42-peer collector. Ordinal533d and
+original128 prefixaf324 have different contracts. No provider refresh, runtime
+replacement or market wait; old800/later50 remain seen/nonPIT/current-listing/
+raw-action/nonTR/revised/nominal availability, not independent holdout/Paper.
 
 Goal86 COMPLETE/rejected_fixed_candidate8ecd02b9...:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-catboost-development-v1/integration-evidence.json.

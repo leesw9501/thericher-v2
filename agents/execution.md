@@ -17,10 +17,18 @@ firstOct13 05:25KST; one attempt per slot/two Data pages. No manual task,
 credential/provider/account/order call. Existing basis/owners/unknown SPY/
 entry/EXIT/recovery/b860/ab65 unchanged. Fees/finality/net unknown; application
 custody/reported cleanup not OS/account proof or submission gate.
-ONE next objective cross-stock attention development. Execution source parity
-e010872e... at A/research/kis-stock-five-session-cross-stock-attention-development-v1/
-execution-source-parity.json constrains unchanged row/cost/availability/replay;
-no strategy choice, Paper replacement or new broker action.
+Goal91 attention COMPLETE/rejected eff354f7... at A/research/
+kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
+Original paritye010872e... unchanged; pure33-test aggregate adapter recomputes
+96tables/390marks/17of20 failures. Independent actual2556ffab... verifies
+custody, not raw-price/broker/OS proof; no Paper candidate adopted.
+ONE next objective covariance allocation development. Challengeeb75df7d.../
+next-allocation-parity.json supplies15 synthetic core cases: fixed slots/gross/
+veto/constant quantities/five closes/missing-held/cost semantics unchanged.
+Equal gross matches normalized entry cash/fees at equal initial capital, NOT
+absolute cash across independently compounded streams. Portfolio composition
+can change realized exposure/exit fees. Extend only pure allocation/policy/
+screen hooks to108tables; no selector, risk authority, Paper or schedule change.
 
 Retained Goal86 closed8ecd02b9.../independent8187b24d... at
 A/execution/kis-stock-five-session-catboost-replay-parity-v1/actual-review/

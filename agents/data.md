@@ -13,9 +13,17 @@ credentials/provider calls yet. Actual response/read/write clocks distinct from
 economic close; legacy collected_at is START. KIS clos not auction finality/
 close availability. No quote/date/provider substitution or revised backcast.
 Existing ab65/current21/old/later untouched; empty new market destination M only.
-ONE next objective cross-stock attention development: exact G84/G86 panel512,
-NOT separate42-peer collector. Bind unchanged hashes/order/calendar and same-
-date prior eligible peers; no fresh provider collection or outcome-row output.
+Goal91 attention COMPLETE/rejected eff354f7...; exact old/later512 bytes unchanged,
+no collection or row output. Data17/source-independent checks and actual
+review2556ffab... support custody, not independent raw-price/OS proof.
+Original guard wrongly used128-prefixaf324 for512 data ordinal533d; fixed before
+actual3CUDA fits, pinned historical-plan regression. Calendar/identity/masks
+unchanged; zero-fit failed receipt retained, no scope/clock/refund substitution.
+ONE next objective covariance allocation development. Bind raw prior ON+ID
+return channels, same-date support and20 completed clocks; never scaled tokens,
+labels or future bars as covariance. SAME512/old800/later50, no new collection.
+Keep missing held marks/current-listing/nonPIT/raw-action/nonTR/revision and
+nominal availability explicit. Separate42-peer collector due remains unchanged.
 
 Retained Goal86 closed8ecd02b9.../result0583aa2b...: one CatBoost study consumed
 existing old/later exact panels, no provider refresh, future row, key replacement

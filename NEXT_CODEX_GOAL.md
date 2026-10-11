@@ -2,72 +2,72 @@
 
 ## Objective
 
-Complete kis-stock-five-session-cross-stock-attention-development-v1: test ONE
-fixed prior-only peer-context-gated attention selector against the unchanged
-five-session research controls with three bounded CUDA fits. Advance engine
-research while already-owned Paper/accounting opportunities run later.
-Their future results are not a research wait or a new approval gate.
+Complete kis-stock-five-session-covariance-allocation-development-v1: test ONE
+fixed prior-only covariance-aware allocator while keeping the existing tree
+scores, selected slots, entry gross and five-session exits unchanged. Compare
+post-cost utility/drawdown against both inverse-vol tree and diagonal-risk
+allocation. This tests sizing, not another score architecture or GPU quota.
+Already-owned Paper/accounting opportunities continue independently.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal90 producer delivery COMPLETEe048c301... at A/execution/
-kis-stock-five-session-paper-close-capture-v1/integration-evidence.json.
-431 focused tests, source-matched15593pass22skip authority, Ruff/three sample
-Compose pass. Actual smoke3408e291... retained exact no_owned_intent inputs;
-not current flatness/fill/PnL. ONE accounting task/five future triggers
-installed; first2026-10-12 20:25UTC. Existing Paper/Data owners unchanged.
+Goal91 COMPLETE/rejected eff354f7... at A/research/
+kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
+3CUDA+3tree+3ridge/9450updates,96tables/390marks,17of20 fixed predicates fail.
+R2terminalc37c072d.../result64ca83a1...; original652.734s<1800 incl preserved
+zero-fit guard failure. Same scientific trial1/no clock reset/model rescue.
+151 focused/CPUimage27 pass; source-matched15593pass22skip authority.
+No Paper adoption, weights, new collection, broker or credential use.
 
 ## Scope And Parallel Packages
 
-Engine owns one narrow model/date-group fit adapter. Use EXACT G84/G86 panel512,
-original identity order, support>=128,21 prior bars->20x5, five-session targets,
-temporal splits, baselines/scaler/cost/replay. The requested42 scope was Parent's
-mistaken conflation with a separate collector. Preserve proposed9f98ab7b...;
-freeze corrected512 ready contract BEFORE numerical work. Do not silently
-subset/repair samples. A/research/kis-stock-five-session-cross-stock-attention-development-v1
-owns artifacts. Execution paritye010872e... constrains unchanged row/cost semantics.
+Source proposal0ba99403... at A/research/
+kis-stock-five-session-cross-stock-attention-development-v1/next-hypothesis.json
+was frozen before Goal91 outcomes; ONE covariance sizing hypothesis, not an
+allocated family. Execution challengeeb75df7d.../next-allocation-parity.json
+qualifies entry cash/fees: equal gross matches normalized amounts at equal
+initial capital, not absolute cash across independently compounded streams.
 
-One native small PyTorch conceptual adaptation of verified MIT MASTER6d36c8b3...,
-NOT official weights,158-factor/63-market-input replication or foundation-model
-result. Preserve Goal77 attention and subsequent negative-study lineage.
-Old800/later50 data are SEEN development; no fresh replication/sealed evaluation/
-alpha/ensemble member/Paper qualification. No architecture/seed/epoch/window
-search, fourth fit or rejected-member rescue.
+Engine freezes exact proposal, estimator, solver, splits/costs/control metrics
+before numerical work. Own A/research/kis-stock-five-session-covariance-allocation-development-v1.
+Use SAME512 identity/old800/later71-context+50 targets,21prior->20x5, TRAIN-only
+scaler and fixed HGBR/ridge controls. Covariance uses RAW20 prior ON+ID log
+returns, never scaled tokens/outcomes. Fixed50% off-diagonal shrinkage/annual
+10% volatility floor; fixed-gross SLSQP within unchanged surviving slots,
+name<=.10/triangle<=.08. Same diagonal-only solver is an identification control,
+not a second selected candidate. No fallback/clipping/renormalization/retry.
 
-Data binds exact source/identity/calendar/date-peer alignment and missing mask.
-Only SAME forecast-date eligible peers affect gate/attention; all inputs precede
-its nominal decision. Ineligible/future peer values cannot change eligible
-scores. Preserve unsupported/missing selected-payoff dates. No new collection,
-row output, credential or broker access needed.
-
-Infra reuses existing finite network-none/RO market/source GPU runner and
-image4bb201b5...; no runtime replacement/build/download/new worker platform.
-Steward binds ONE exclusive appointment, three fits total/original1800-second
-family clock including publication/cleanup, fixed resource stop/lineage.
-CPU preparation continues before allocation; no utilization-only fits.
-
-Temporary Validation receives frozen implementation/contract then exact
-outcomes independently, never tunes. Execution reattests unchanged costs,
-availability/fills/replay without choosing strategy. Parent integrates source,
-CPU synthetic smoke, actual bounded CUDA run, fixed kills and cleanup evidence.
+Data independently binds causal raw channels, ordinal533d vs128-prefixaf324,
+same-date masks/calendar. No new collection/universe/coverage repair.
+Execution preserves original selected slots/veto/gross before payoff access,
+constant quantities/five actual close marks/leg fees/missing-held handling;
+same capital normalization only. Extend policy/screen hooks to108tables,
+retain390 marks per policy. Fractional research is not integer Paper sizing.
+Infra is invoked only for necessary reuse of existing CPU image/finite runner,
+network-none/source and market RO/fresh own output RW; no new launcher platform,
+build/download/runtime replacement. Steward records ONE new frozen family,
+CPU600s incl publication60/cleanup30,2threads/4GiB,3HGBR+3ridge/max156solves,
+100iterations per solve/max15600. No GPU allocation, later refit or holdout.
+Validation independently recomputes frozen outcome, never tunes. Parent owns
+integration and single next goal; independent Paper/accounting waits stay owned.
 
 ## Completion And Strongest Kill
 
-Complete only with source-linked CPU permutation/mask/clock/gradient/replay
-checks and one actual three-fit result or truthful bounded technical failure.
-Recompute fixed pooled-OOF/DEV/later cost-band utility, drawdown, turnover and
-matched-momentum intersection; retain all costs/folds/daily marks. Rejection is
-useful negative evidence, not a rescue fit. Ask Claude to challenge the frozen
-comparative decision before relying on it; no raw/private/holdout/secret input.
-
-Strongest kill: future/masked peer or mixed-date row changes eligible prediction,
-or fixed post-cost baseline intersection fails. Misalignment/nonfinite/deadline/
-OOM stays scoped; never change membership/clocks/budget/costs/labels after
-outcomes. No later refit. Current-listing/nonPIT/raw actions/nonTR/revisions/
-assumed availability and fractional-research-vs-integer-Paper limits persist.
+Complete with synthetic raw-vs-scaled/future/identity/permutation/cap/solver-
+failure/replay checks and one actual bounded result or truthful technical failure.
+At EVERY5/10/20bps pooledOOF/DEV/LATER U>tree AND diagonal, DD<=both;
+DEV/LATER10 growth>0,U>cash/rule/ridge/matched momentum, DD<=min(.08,tree,
+diagonal,rule),turnover<=momentum50;20growth>0. Any failure rejects, no bestfold
+rescue. Preserve sample rules and prior-only informative>=2-slot counts
+24OOF/8DEV/6LATER; insufficient contrast is scoped input_unavailable, never
+censor other scheduled dates. Ex-ante variance reduction is not performance.
+Ask Claude for falsification-first covariance/leakage/fixed-comparison review
+before relying on the scientific contract and actual comparative decision.
+Seen/current-listing/nonPIT/raw-action/nonTR/revision/assumed availability,
+20-observation covariance noise and informed selection remain limitations.
 
 No provider/account/order/credential/live invocation, existing schedule change,
 capital/basis reset, Paper substitution or public/paid operation in this research.
-Goal90 finite future capture stays separately owned, never manually invoked here.
+Goal90 finite captures remain owned, first2026-10-12 20:25UTC; do not invoke here.
 Focused verification; reattach Goal87 authority ONLY if shared runtime/control
 pins unchanged, otherwise fresh full authority. Ruff/three sample Compose.
 Refresh current projections, commit/push, replace this file with exactly ONE

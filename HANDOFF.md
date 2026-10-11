@@ -14,29 +14,37 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Closure (2026-10-11 KST)
 
-Goal90 COMPLETE/producer_delivery_onlye048c301...:
-A/execution/kis-stock-five-session-paper-close-capture-v1/integration-evidence.json.
-Capture95bbed73.../archiveaa7cc316.../mark66b051ca.../nativebded33d9.../
-bridgea8bf874b...;471 frozen code pins, job50748886.../planef2e7bb6....
-Parent three findings fixed BEFORE freeze/actual use; independent44 checks
-1710cc5a.../actual6070fa4b... pass. Integrated431/12.82s; exact Goal87 runtime
-1297pins/JUnit15593pass22skip reattached; Ruff/three sample Compose pass.
-ONE actual runtime/dispatch-2a7bb74cafe747cdb7535dd065149a47.json3408e291...:
-network-none/canonical bank RO/own archive RW, no Data/provider/credential/order.
-Exact registry request absent/no_owned_intent, not current flatness/fill/PnL.
-Reported cleanup/application byte checkpoint not broker/account/OS proof.
-ONE accounting task/five finite Oct12..16 post-close20:25..35UTC windows
-installed Ready; firstOct13 05:25KST. Existing entry/EXIT/recovery/b860/ab65,
-shared10%basis/owners/unknown SPY untouched; no manual task runs.
-One attempt per slot/two daily pages; interrupted/missing/changed inputs scoped
-unknown. Actual read/capture/archive/response clocks never backdated to close;
-all five missing slots persist, fees/finality/net not observed.
-Claude6c07a414... supports limited producer direction, not profit/approval gate.
-Goal89 retained8200c6e1.../pushed3627ee5. ONE next objective cross-stock attention
-development: existing512 research panel, NOT separate42-peer collector.
-MASTER MIT6d36c8b3... conceptual inspiration, not original158/63 replication or
-weights. Preserve proposed9f98ab7b... scope conflict; corrected512 contract
-before numerical work. StockMixer unclear rights excluded; CUDA available.
+Goal91 COMPLETE/rejected eff354f7...:
+A/research/kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
+Fixed4847-param prior-only peer-context temporal/stock attention, conceptual
+MASTER MIT adaptation, not official factors/checkpoints/replication. Exact512
+old800/later50 seen data; no new provider rows, broker or credentials.
+Actual R2 plan c1ca775a.../terminalc37c072d.../result64ca83a1...:
+3CUDA+3tree+3ridge/9450updates,96complete tables/390 scheduled marks.
+17of20 fixed all-cost/OOF/DEV/later predicates fail: reject, no model rescue.
+DEV10 growth-.55165% vs tree+2.15408%; later-.32722% vs+.37249%.
+R2 runtime121.082s; original652.734s<1800 includes zero-fit initial failure
+and source repair, not a new clock/trial/fourth fit. Data ordinal533d was
+incorrectly compared to128-prefixaf324; one literal fixed, historical-plan
+regression added. Original proposed42-scope error and exact failure preserved.
+Source/actual independent2556ffab... and aggregate reader verify links and
+rejection; reported optimizer/cleanup are not independent OS/raw-price proof.
+151 focused tests plus CPUimage27/5.13s; unchanged1297pins/JUnit15593pass22skip
+reattached, Ruff/three sample Compose pass. Claude login works: preflight,
+zero-fit recovery and actual-direction reviews supported-with-limits.
+GPU lease released/container absent/child reaped reported; CUDA usable/free.
+No weights/holdout/alpha/Paper adoption, new collection or schedule changes.
+
+ONE next objective covariance allocation development: source proposal0ba99403...
+preceded Goal91 outcomes, Execution challengeeb75df7d... qualifies normalized
+cash/fees. Fixed tree scores/slots/gross/exits; prior20 raw-return covariance
+versus inverse-vol and diagonal allocation, CPU600s/no GPU/new dependency.
+Freeze source/science before numerics; seen/nonPIT/raw-action/availability limits
+and informed lineage persist, not independent replication or Paper sizing.
+Goal90 deliverye048c301.../pushed91894cb remains separately owned: one accounting
+task/five future dates, firstOct13 05:25KST. Exact no_owned_intent smoke3408e291...
+is not current-flat/fill/net. Entry/EXIT/recovery/b860/ab65/shared10%basis and
+unknown SPY untouched. No manual starts; missing fees/finality/captures unknown.
 
 ## Retained Research And Delivery Evidence
 
