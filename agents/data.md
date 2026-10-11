@@ -24,9 +24,11 @@ admitted unchanged;7440/3775/3720admitted held slots, paired7440/3770/3720.
 nominal slots7440/3775/3720 and available7440/3770/3720.5DEVpeer gaps,
 each learned arm visited1fallback.2CUDA fits do not qualify the dataset.
 Source/input/child/container/GPUlease closure attested, not PIT/finality proof.
-ONE117 reuses original G109 all-entry/O0..O6 intake without paired filtering,
-new loader/window/target, loss censoring, collection or Paper change. Missing
-required support invalidates that block, never removes individual losses.
+117 COMPLETE/descriptive11c9bf8e...; original2987admitted/all7OPEN support,
+no unavailable block/paired filter. Native11.1125s/541888512-byte peak/0fits/
+GPU/48cells. Source/input/child honest-host closure, no PIT qualification.
+ONE118 shared Decimal binding repair; affected DTO checks only if assigned,
+no intake/cache/provider/collection scope change.
 Existing19owners/107 future coverage/durable cursors and next_due unchanged.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.

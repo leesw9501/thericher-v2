@@ -101,11 +101,21 @@ All2987original admitted retained,5nominal DEVpeer gaps, each arm1fallback.
 Claude contract/result supported-with-limits. Source/child/container/GPUlease
 closure honest-host only, not raw-price/PIT/OS proof. Stale Parent reader pin
 corrected before math, same result/no refit/weights/holdout/Paper change.
-ONE117: firstrate-fixed-entry-exit-ceiling-attribution-v1. Source proposal
-3bd66cf5... at116/next-direction-r1/proposal.json; diagnose mandatory-entry
-cost/opportunity before more exit-only models. Native measured115 intake,
-one300s0fit/0GPU diagnostic,48descriptive cells; future bestSELL is explicit
-clairvoyant upper bound, NEVER strategy/feature/label/Paper qualification.
+117 COMPLETE/descriptive11c9bf8e... at A/research/
+firstrate-fixed-entry-exit-ceiling-attribution-v1/integration-evidence.json.
+Science32764472.../plan40bbecdc.../actual3a8e287e.../read3f294dcf...;
+native11.1125s/541888512-byte peak/0fits/GPU,48cells/12gaps/334544marks.
+All2987admitted supported. Best futureSELL ceiling positive3bps/nonpositive
+10bps everyblock, only exact mandatory-entry/one-share/H30 modeled scope.
+Positive ceiling not learnability/DD.12fresh focused/source2/actual2/Execution
+actual2, Claude supported-with-limits. Source/input/child honest-host closure;
+no raw replay/PIT/OS proof, registry/GPU/weights/Paper/19-owner change.
+ONE118: context-independent-decision-target-binding-repair-v1. Proposal
+bec40776... at117/next-direction-r1/proposal.json re-retrieves retained
+precision2 false receipt mismatch in contracts._decimal_marker; source74d1e9b9...
+unchanged. Repair exact marker/identity/sizing, fresh shared-source authority.
+Preserve compatible legacy hashes/installed sources/requests; never silently
+rebind >28-significant-digit old identities or submit a substitute request.
 Future107 stays pending; contained Decimal/cache-writer repairs remain ready
 alternatives, not current Paper failures or a research permission hold.
 

@@ -42,8 +42,12 @@ actual read8c435e06... verifies40cells14checks11fail/2CUDA16epochs624updates.
 Original population/one-share all7OPEN marks/costs/fallback retained;24fresh
 focused/source4/actual3 independent groups. Host source/child/container/GPUlease
 closure is not raw-price/OS proof. Stale Parent reader pin fixed without refit.
-ONE117 checks sunk BUY once/SELL once and per-cost future bestSELL net ceiling,
-not causal strategy/drawdown bound. Cash remains zero-trade comparison.
+117 COMPLETE/descriptive11c9bf8e...; parity410a30ce.../release7ed92f13...,
+actuala4a6cadc...2groups verifies48cells/12gaps/all7marks/fees/BUYSELLonce,
+unchanged causal recost; oracle cost-specific exits diagnostic, not DD bound.
+12fresh focused/source2/Validation actual2. ONE118 fixes core precision2 false
+receipt mismatch, preserving compatible hashes/persisted identities. No
+installed worker rebind/substitute intent. Cash remains zero-trade comparison.
 No actual Paper/19owners/shared basis/custody change; actual broker fees/
 settled cash/net remain unobserved by these research jobs.
 

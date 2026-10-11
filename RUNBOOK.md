@@ -66,11 +66,17 @@ completed34.9535s, hostc53a059b.../result104a8db8.../read8c435e06....
 R2 hostaffd219a... selected; source/child/container/GPUlease closed, not OS proof.
 Never rerun116 freeze/prepare/dispatch/read/close exclusive creators or reset
 the600s clock/debit. Stale-reader-pin/author fixture faults retained; no refit.
-ONE117 fixed-entry cost/opportunity attribution uses measured native115 intake,
-one300s0fit/0GPU attempt,48descriptive cells. Future bestSELL is an explicit
-diagnostic ceiling, not predictor/target/drawdown bound/Paper qualification.
-No image build/acquisition/KIS/Task/weights/holdout or19-owner change. Exact
-source reattachment applies only while tracked/shared runtime bytes unchanged.
+117 COMPLETE/descriptive11c9bf8e...:
+D:/thericher-v2/model-artifacts/research/firstrate-fixed-entry-exit-ceiling-attribution-v1/integration-evidence.json.
+Science32764472.../plan40bbecdc.../actual3a8e287e.../read3f294dcf...;
+native11.1125s/541888512-byte peak/0fits/GPU,48cells/12gaps/334544marks.
+12fresh focused/source2/actual2/Execution actual2, Claude supported-with-limits.
+Ceiling positive3bps/nonpositive10bps all3blocks only exact mandatory-entry
+scope, never learnability/DD/Paper claim. Never rerun117 freeze/execute/read/
+close exclusive creators or reset300s clock. No19-owner change.
+ONE118 core context-independent target binding; changed shared source needs
+changed-path serial/fresh clean parallel authority/Ruff/three sample Compose.
+No reuse of117 authority after code edits or automatic installed-source rebind.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

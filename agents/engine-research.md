@@ -31,10 +31,14 @@ rescue. Same original population/pi0 fallback,5nominal DEVgaps retained.
 24fresh focused/direct Docker SYN4/source4/actual3 independent groups;
 Claude supported-with-limits, source/child/container/GPUlease closure attested.
 No weights/holdout/Paper promotion. GPU free after actual training.
-ONE117 fixed-entry exit-ceiling attribution, source proposal3bd66cf5... at
-116/next-direction-r1/proposal.json.48descriptive cells/one300s native attempt,
-0fits/GPU; original controls plus explicitly clairvoyant bestSELL diagnostic.
-Not new prediction method, training target, learnability or drawdown bound.
+117 COMPLETE/descriptive11c9bf8e...;48cells/12gaps/all2987admitted,
+11.1125s/541888512-byte peak/0fits/GPU. Future ceiling positive3bps/nonpositive
+10bps all3blocks only exact mandatory-entry/one-share/H30 exit-only scope,
+not all trading/DL/Paper. Positive ceiling not learnability/DD.12fresh focused/
+source2/actual2/Execution actual2, Claude supported-with-limits. No model/
+registry/Paper promotion. ONE118 fixes retained precision2 core receipt
+mismatch, proposalbec40776... at117/next-direction-r1/proposal.json. No more
+exit-only architecture/seed rescue under unchanged economic premise.
 Future107 pending, Paper authority independent of research outcomes.
 
 ## Retained Evidence

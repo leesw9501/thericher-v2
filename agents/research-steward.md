@@ -25,9 +25,11 @@ by outcome5ac35628.... One600s exclusive8GiB appointmente4bb0c0c... used
 34.9535s,2CUDA/0CPU/16epochs624updates/7440states/0failed,40cells14checks11fail.
 Fits remain spent; no refit/clock reset/weights/holdout. Host source/child/
 container/GPUlease closure attested, GPU free/usable after actual training.
-ONE117 is one300s native CPU no-fit economic diagnostic,0GPU/sealed spend.
-Freeze its own descriptive contract before future payoff arithmetic; oracle
-ceiling is not a predictive candidate, target or allocation. No utilization job.
+117 COMPLETE/descriptive11c9bf8e...;300s native attempt used11.1125s,
+48cells/12gaps/2987episodes/0fits/GPU/models/weights/holdout/registry spend.
+Oracle not candidate/label/alpha/DD bound. GPU free/usable. ONE118 core
+Decimal repair spends no research allocation; future research needs its own
+frozen hypothesis, not another same-scope exit-only architecture.
 
 ## Retained Evidence
 
