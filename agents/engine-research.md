@@ -6,23 +6,20 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-Goal95 recovery COMPLETE659a71d4...; two existing Actions recovered/read back.
-ROOT=A/research/kis-stock-five-session-prospective512-shadow-delivery-v1.
-EngineR3 release05e376cb.../worker9846b862.../templatee85e2a81... fixes
-UTC13:40 OPEN+10m and producer ordered512 list. Teacher ca6b36d1...,
-metadata2ce286ee...,SDK2f64a238..., kernel/selection/exposure/schema1 unchanged.
-Leaf8691f404.../tests7f3db8e1... explicitly caller-freezes R3 worker; defaultR2,
-arbitrary incoming source rejected. Independent10 mutation groups pass.
-Pinned d6 source/SYN60pass14.112s; receipt65daa2ed... in Goal95 parent/
-cpu-prerequisite, no model/market/private mount or actual inference.
-Final1303source d77a3b28.../JUnitde8aacf5...,15709pass22skip clean8/390.41s.
-Original failed sources/receipts retained, not relabelled runtime success.
+Goal96 input/runtime implementation COMPLETE f4d87953... at A/execution/
+kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
+Input525eff41.../tests42e0f10... committed338d4ce;31 author/20 independent pass.
+R3 exact15-link/schema1 typed DTO/cohort restores Friday inference unchanged.
+192 focused/6 integration;1309source22c5a6b5.../JUnitd8516021...,
+15785pass22skip clean8/380.55s; Ruff/three sample Compose pass.
+No numerical campaign/model load/fit/GPU/weights/holdout or actual inference.
 
-ONE objective kis-five-session-history-aware-paper-runtime-v1.
-Engine/Data own strict offline loader: exact R3 chain -> unchanged schema1
-decision -> native cohort. No new numeric campaign, model load, fit, GPU,
-weights or holdout. Future actual inference remains unknown; Execution owns
-history and effects. Existing research conclusions/queues below remain scoped.
+ONE objective kis-five-session-history-aware-paper-delivery-v1.
+Engine owns a minimal strict finite DTO exchange from already verified input;
+no model code in Executor, replacement winner or second10% multiplication.
+Do not blindly reuse old Goal82 outer exchange fields/counts/115s ceiling.
+Current Research conclusions below remain scoped; delivery is not alpha proof.
+Claude recovery5ab930b7.../next9ba5238d... supported-with-limits, not authority.
 
 ## Recent Research Conclusions
 

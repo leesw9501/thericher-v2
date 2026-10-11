@@ -2,11 +2,29 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-five-session-history-aware-paper-runtime-v1.
-Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Reusable source/tests in Git;
-data D:/market_data, generated artifacts D:/thericher-v2/model-artifacts.
-No new credentials/private bank/API/model/task/schedule access in this bounded
-implementation. Runtime integration is not future submission/fill/net evidence.
+ONE objective: kis-five-session-history-aware-paper-delivery-v1.
+Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
+data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
+Goal96 implementation COMPLETE f4d87953...:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
+RuntimeR2 43488a5c.../history1716dd92.../input525eff41..., native delivery(scope)
+arity corrected; pass the new runtime namespace to NativeAdapters.
+192 focused/6 integration/20 independent input/8 runtime groups/9 native seam pass.
+Final1309source22c5a6b5.../JUnitd8516021..., clean8 15785pass22skip/380.55s,
+helper0/temp cleaned; Ruff/three sample Compose pass. No deployment/fill proof.
+Weekly serial2026-10-10 already passed; no doc-only full-suite rerun.
+Claude recovery5ab930b7.../next-direction9ba5238d... supported-with-limits.
+
+Next deliver finite host verification -> immutable hash-bound DTO -> Linux native
+successor. Default loader reads canonical Windows paths; do not invent Linux
+default parity or blindly reuse old Goal82 outer exchange counts/115s contract.
+Retained request/DTO and original horizon before fresh input. New RO /app/src
+snapshot must contain all current leaves; never relax/rebind old455 catalog.
+Original full10%basis/book/volume and all existing schedules remain unchanged.
+Paper credential paths are delegated; never read/route KIS_LIVE_* or print values.
+No manual strategy/task/order launch merely to inspect evidence. Use isolated
+network-none SYN smoke before finite install/readback; no fee/net/current-flat claim.
+D: measured40.05% free/1492.4GiB, C:24.96%/232.2GiB; keep D:15% floor.
 
 Goal95 compatibility recovery COMPLETE659a71d4...:
 D:/thericher-v2/model-artifacts/execution/kis-five-session-future-delivery-compatibility-recovery-v1/integration-evidence.json.

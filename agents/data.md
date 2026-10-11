@@ -6,25 +6,21 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-Goal95 recovery COMPLETE659a71d4... under A/execution/
-kis-five-session-future-delivery-compatibility-recovery-v1/integration-evidence.json.
-Two existing Actions recovered/read back; no task/provider/private bank call.
-Data leaf2f77b48b.../testscbc4f72a..., compatibility5f2f3c53... under
-A/data/kis-five-session-future-delivery-compatibility-recovery-v1.
-50 source/SYN pass0skip; actual R3job90131beb.../504-source controls and full
-synthetic fifteen-field chain. Independent Data/Infra8 fresh and Engine10
-exact-source review pass. Source root delivery-r3, attempt delivery-r2/runtime;
-original jobe8550670.../installationd321f621... bind claim AND terminal.
-No latest-file lookup, new claim namespace, raw packed rehash, future input,
-provider finality/PIT, private bank or cryptographic OS-origin proof.
-Final1303source d77a3b28.../JUnitde8aacf5...,15709pass22skip clean8/390.41s.
-Original R2 source/expiry/list and writer failed receipts remain unchanged.
+Goal96 strict input implementation COMPLETE f4d87953... under A/execution/
+kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
+Input525eff41.../tests42e0f10... committed338d4ce; independent20 cases pass.
+Exact R3job90131.../old R2 claim/15 links/schema1/worker9846... -> native cohort.
+Friday inference and original Monday13:40UTC expiry remain.2072 SYN reads fit
+2100/128MiB input bounds, not provider quotas or global gates.
+192 focused/6 integration;1309source22c5a6b5.../JUnitd8516021...,
+15785pass22skip clean8/380.55s. No actual future capture/raw packed rehash/PIT
+or provider finality. Original failed/harness receipts retained.
 
-ONE objective kis-five-session-history-aware-paper-runtime-v1.
-Engine/Data own strict offline input loader: exact chain -> schema1 decision
--> native cohort. Missing input is opportunity-local no-intent; retained
-execution history recovers independently. No new collection/model access.
-Existing owned destinations/cursors below remain separate.
+ONE objective kis-five-session-history-aware-paper-delivery-v1.
+Data supports exact source/clock/claim custody for the finite host->native
+exchange. Existing collection owners/cursors remain, no new acquisition scope.
+Windows default reader is not a Linux alias reader; no latest-file substitution.
+Missing fresh input stays scoped; Execution retained recovery goes first.
 
 ## Existing Input And Owners
 

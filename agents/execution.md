@@ -6,28 +6,27 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 
 ## Current Package
 
-Goal95 recovery COMPLETE659a71d4... at A/execution/
-kis-five-session-future-delivery-compatibility-recovery-v1/integration-evidence.json.
-Goal90/source-catalog-recovery-r3/release810db495... binds native/fresh child
-to SAME original455/catalog2802b79c...; original job50748886.../471pins,
-claims/private volume/basis/windows retained.32 source tests/independent6 pass.
-Source-only Linux probe455 passes; worker main/private bank never invoked.
-Parent rollback tracks attempted Set before invocation; independent8 mocked
-tests cover apply-then-throw, both attempted actions and foreign/running owners.
-Two existing Actions recovered/read back04:29:06UTC; non-Action hashes/due
-unchanged, no manual task/provider/account/order/private-state call.
-116 focused; final1303source d77a3b28.../JUnitde8aacf5...,
-15709pass22skip clean8/390.41s; Ruff/three sample Compose pass.
-Original failed evidence and installed source versions remain immutable.
-Future captures/inference/fills/owned-flat/fee/settlement/net unknown.
+Goal96 implementation COMPLETE f4d87953... at A/execution/
+kis-five-session-history-aware-paper-runtime-v1/integration-evidence.json.
+RuntimeR2 43488a5c.../history1716dd92... retain exact seed/DTO before reserve,
+verify matching canonical row/commit before execute or observe. Full original
+basis/gross losses/other-owner reservations remain; cadence only is segmented.
+Unknown/partial request recovers original identity/TTL without fresh Research.
+Days1-4 HOLD; fifth close-minus-ten owned EXIT, no foreign lot adoption.
+Expired unreserved staging can retire only exact application absence; registered/
+unknown attempts never abort/reset. Not OS/broker no-wire or atomicity proof.
+Original44 arity defect fixed by delivery(scope),45 author/8 independent groups/
+9 native seam/6 Parent integration pass; pass new runtime class namespace.
+192 focused;1309source22c5a6b5.../JUnitd8516021...,
+15785pass22skip clean8/380.55s; Ruff/three sample Compose pass.
+No actual bank/order, installed source, task or model change/fill/net proof.
 
-ONE objective kis-five-session-history-aware-paper-runtime-v1.
-Execution owns runnable successor and private durable history: planned seed/
-history before reservation, matching custody before effects, exact restart,
-whole-book basis/losses/reservations and owned-only fifth-session EXIT.
-Use real canonical reserve/reconcile APIs with injected SYN native services,
-no actual private bank/API/task access in this implementation.
-Original G83/b860 owners and accounting five windows remain unchanged.
+ONE objective kis-five-session-history-aware-paper-delivery-v1.
+Execution owns finite native successor and exact retained recovery before fresh
+host input. Fresh source snapshot includes current leaves; original shared10%
+basis/private volume/canonical APIs and G83/b860/accounting owners unchanged.
+Finite Oct19..23 install follows source/SYN/image verification, not manual order.
+Claude recovery5ab930b7.../next9ba5238d... supported-with-limits.
 
 ## Owned Paper Opportunities
 
