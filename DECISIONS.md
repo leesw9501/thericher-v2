@@ -10107,3 +10107,25 @@ D:/thericher-v2/model-artifacts/research/kis-stock-five-session-confirmation-and
 and source digest992fefdd... are the initial custody references. The earlier
 matching full test run with failed hardlink cleanup is not reusable authority.
 No Paper basis/identity/schedule/model adoption or live authority changed.
+
+## 2026-10-12 - Exact new-target identity without legacy request migration
+
+The shared target-exposure marker uses exact fixed-point Decimal formatting,
+not normalize(), which rounds under the caller's context. Trim fractional
+trailing zeros only, preserve significant digits, and canonicalize signed zero.
+Do not change global context, quantize targets or introduce precision caps.
+
+Compatible default28 values retain their binding bytes. Previously rounded
+>28-significant-digit references may differ from a new exact reference; an
+ambiguous old digest cannot recover the original exact value. Do not silently
+rebind a persisted receipt/request, substitute an order, reset identity/budget,
+or rewrite an installed immutable source snapshot. A mismatched exact request
+stays scoped to its existing technical recovery; it is not a global Paper hold.
+
+118 reproduced two unwrapped synthetic sizing failures before repair. New
+cross-context sizing and explicit old-rounded-receipt rejection regressions
+preserve deterministic whole-share sizing, capital, fees, range and custody.
+Claude contract supported-with-limits and independent finite tuple/context
+checks support this source-only disposition, not a broker incident, universal
+legacy compatibility or runtime migration. Fresh shared-source verification
+is required; existing19 finite owners remain unchanged.

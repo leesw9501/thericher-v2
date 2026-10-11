@@ -147,7 +147,9 @@ def _binding_decision_class(value: str) -> str:
 def _decimal_marker(value: Decimal) -> str:
     if value == 0:
         return "0"
-    return format(value.normalize(), "f")
+    # normalize() rounds under the caller's context; identity must stay exact.
+    marker = format(value, "f")
+    return marker.rstrip("0").rstrip(".") if "." in marker else marker
 
 
 @dataclass(frozen=True)

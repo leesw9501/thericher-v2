@@ -74,9 +74,21 @@ native11.1125s/541888512-byte peak/0fits/GPU,48cells/12gaps/334544marks.
 Ceiling positive3bps/nonpositive10bps all3blocks only exact mandatory-entry
 scope, never learnability/DD/Paper claim. Never rerun117 freeze/execute/read/
 close exclusive creators or reset300s clock. No19-owner change.
-ONE118 core context-independent target binding; changed shared source needs
-changed-path serial/fresh clean parallel authority/Ruff/three sample Compose.
-No reuse of117 authority after code edits or automatic installed-source rebind.
+118 COMPLETE/source-SYN31746925...:
+D:/thericher-v2/model-artifacts/execution/context-independent-decision-target-binding-repair-v1/integration-evidence.json.
+Shared sourcecfee0f6a.../95new regressions;483serial17.47s/clean8 15924pass22skip
+370.89s/35warnings,1311-source6257cf79.../JUnit69a0ec1f.... Ruff/three sample
+Compose pass. Independent3groups8576checks128contexts, Claude supported-with-limits.
+Compatible default28 refs stable; rounded long legacy receipts remain rejected,
+no migration/substitute/installed-source or19-owner change. Never rerun close.py.
+Authority reattachment for unchanged future external-only work:
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/context-independent-decision-target-binding-repair-v1/parent/verification.py --check
+Fresh JUnit: D:/thericher-v2/model-artifacts/verification/full8-20261012-g118-v1/pytest.xml.
+Temporary native-File launcher failures are not authority; successful command
+was existing scripts/run_parallel_tests.ps1 -Workers8 -RequireCleanTempRoot,
+UV_NO_ENV_FILE=1/maxfail1/durations15. Zero-test failed XML retained externally.
+ONE119 fixed-H30 entry-profit veto: role source/SYN preparations, no actual
+labels/fit/allocation yet. Current NEXT alone defines its recipe/budget.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

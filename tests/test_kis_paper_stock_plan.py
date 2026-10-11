@@ -4,17 +4,31 @@ from __future__ import annotations
 
 import builtins
 import copy
+import hashlib
+import json
 import os
 import socket
 import urllib.request
 from dataclasses import FrozenInstanceError, replace
 from datetime import UTC, datetime, timedelta
-from decimal import ROUND_UP, Decimal, Inexact, Rounded, localcontext
+from decimal import (
+    ROUND_CEILING,
+    ROUND_FLOOR,
+    ROUND_HALF_EVEN,
+    ROUND_UP,
+    Context,
+    Decimal,
+    Inexact,
+    Rounded,
+    getcontext,
+    localcontext,
+)
 from fractions import Fraction
 from pathlib import Path
 
 import pytest
 
+from thericher_v2 import contracts
 from thericher_v2.contracts import TargetExposureProposal
 from thericher_v2.execution import kis_readonly
 from thericher_v2.execution.kis_paper_canary import KisPaperCanaryIntent, KisPaperCanaryState
@@ -625,3 +639,153 @@ def test_incomplete_account_and_future_proposal_are_scoped_unavailable():
     args = _arguments()
     args["as_of"] = args["proposal"].decided_at - timedelta(seconds=1)
     assert size_kis_paper_stock_target(**args).reason == "proposal_not_current"
+
+
+def _decimal_context_state(context):
+    return context.prec, context.rounding, dict(context.traps), dict(context.flags)
+
+
+@pytest.mark.parametrize("price,expected", [("50", 1), ("10", 9)])
+@pytest.mark.parametrize(
+    "receipt_precision,replay_precision,rounding",
+    [
+        (2, 28, ROUND_FLOOR),
+        (28, 2, ROUND_CEILING),
+        (80, 2, ROUND_HALF_EVEN),
+        (2, 80, ROUND_CEILING),
+        (28, 80, ROUND_HALF_EVEN),
+        (80, 28, ROUND_FLOOR),
+    ],
+)
+def test_exact_target_binding_context_receipt_and_unwrapped_stock_sizing(
+    price, expected, receipt_precision, replay_precision, rounding
+):
+    target = "0.009997500624843789052736"
+    ambient_before = _decimal_context_state(getcontext())
+    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):
+        args = _arguments(target=target, price=price)
+        legacy_marker = format(D(target).normalize(), "f")
+    legacy_payload = {
+        "kind": "decision_target_binding_v1",
+        "symbol": SYMBOL,
+        "market": "US",
+        "decision_class": "enter",
+        "target_exposure": legacy_marker,
+    }
+    legacy_ref = (
+        "ref:"
+        + hashlib.sha256(
+            json.dumps(
+                legacy_payload, ensure_ascii=True, separators=(",", ":"), sort_keys=True
+            ).encode("ascii")
+        ).hexdigest()
+    )
+    assert args["receipt"].target_binding_ref == legacy_ref
+    persisted_bytes = args["receipt"].canonical_json()
+    persisted_id = args["receipt"].decision_id
+    with localcontext(Context(prec=receipt_precision, rounding=rounding)) as context:
+        context.traps[Inexact] = context.traps[Rounded] = True
+        context.flags[Inexact] = True
+        before = _decimal_context_state(context)
+        restored = replace(args["proposal"])
+        receipt = receipt_from_target_exposure_proposal(restored, references=REFS)
+        assert _decimal_context_state(context) == before
+    assert restored == args["proposal"] and receipt == args["receipt"]
+    args["receipt"] = receipt
+    frozen = copy.deepcopy(args)
+    with localcontext(Context(prec=replay_precision, rounding=rounding)) as context:
+        context.traps[Inexact] = context.traps[Rounded] = True
+        context.flags[Rounded] = True
+        before = _decimal_context_state(context)
+        # No caller precision wrapper around sizing or its receipt replay.
+        result = size_kis_paper_stock_target(**args)
+        assert _decimal_context_state(context) == before
+    assert result.status == "sized"
+    assert result.quantity == result.target_quantity == expected
+    assert Fraction(result.quantity) * Fraction(result.limit_price) <= (
+        Fraction(args["basis"].basis_usd) * Fraction(args["proposal"].target_exposure)
+    )
+    assert args == frozen
+    assert args["receipt"].canonical_json() == persisted_bytes
+    assert args["receipt"].decision_id == persisted_id
+    assert _decimal_context_state(getcontext()) == ambient_before
+
+
+@pytest.mark.parametrize("precision", [2, 28, 80])
+@pytest.mark.parametrize("rounding", [ROUND_FLOOR, ROUND_CEILING])
+def test_distinct_exact_target_binding_context_cannot_substitute_receipt(precision, rounding):
+    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):
+        below = _arguments(target="0.009999999999999999999999")
+        at = _arguments(target="0.010000000000000000000000")
+    frozen_below, frozen_at = copy.deepcopy(below), copy.deepcopy(at)
+    with localcontext(Context(prec=precision, rounding=rounding)) as context:
+        context.traps[Inexact] = context.traps[Rounded] = True
+        before = _decimal_context_state(context)
+        below_receipt = receipt_from_target_exposure_proposal(below["proposal"], references=REFS)
+        at_receipt = receipt_from_target_exposure_proposal(at["proposal"], references=REFS)
+        assert below_receipt.target_binding_ref != at_receipt.target_binding_ref
+        assert below_receipt.decision_id != at_receipt.decision_id
+        assert size_kis_paper_stock_target(**below).quantity == 9
+        assert size_kis_paper_stock_target(**at).quantity == 10
+        rejected = size_kis_paper_stock_target(**(at | {"receipt": below_receipt}))
+        assert _decimal_context_state(context) == before
+    assert (rejected.status, rejected.reason) == ("no_intent", "receipt_proposal_mismatch")
+    assert below == frozen_below and at == frozen_at
+
+
+@pytest.mark.parametrize(
+    "target,reason,quantity",
+    [
+        ("0", "non_entry_proposal", 0),
+        (".10", "whole_share_buy_sized", 100),
+        ("1", "target_exceeds_shared_allocation", 0),
+    ],
+)
+def test_legal_target_binding_context_preserves_existing_stock_allocation(target, reason, quantity):
+    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):
+        args = _arguments(target=target, action="abstain" if target == "0" else "enter")
+    frozen = copy.deepcopy(args)
+    for precision, rounding in ((2, ROUND_FLOOR), (28, ROUND_HALF_EVEN), (80, ROUND_CEILING)):
+        with localcontext(Context(prec=precision, rounding=rounding)) as context:
+            before = _decimal_context_state(context)
+            receipt = receipt_from_target_exposure_proposal(args["proposal"], references=REFS)
+            result = size_kis_paper_stock_target(**args)
+            assert _decimal_context_state(context) == before
+        assert receipt == args["receipt"] and result.quantity == quantity
+        assert result.reason == reason
+        assert result.status == ("sized" if reason == "whole_share_buy_sized" else "no_intent")
+    assert args == frozen
+
+
+@pytest.mark.parametrize("precision", [2, 28, 80])
+def test_legacy_rounded_long_target_receipt_is_not_rebound_or_substituted(monkeypatch, precision):
+    with localcontext(Context(prec=80, rounding=ROUND_HALF_EVEN)):
+        args = _arguments(target="0.009997500624843789052736815796051")
+    exact_receipt = args["receipt"]
+    original_marker = contracts._decimal_marker
+
+    def old_marker(value):
+        return "0" if value == 0 else format(value.normalize(), "f")
+
+    with monkeypatch.context() as patch:
+        patch.setattr(contracts, "_decimal_marker", old_marker)
+        with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):
+            legacy_receipt = receipt_from_target_exposure_proposal(
+                args["proposal"], references=REFS
+            )
+    assert contracts._decimal_marker is original_marker
+    assert legacy_receipt.target_binding_ref != exact_receipt.target_binding_ref
+    assert legacy_receipt.decision_id != exact_receipt.decision_id
+    args["receipt"] = legacy_receipt
+    frozen = copy.deepcopy(args)
+    legacy_bytes, legacy_id = legacy_receipt.canonical_json(), legacy_receipt.decision_id
+    with localcontext(Context(prec=precision, rounding=ROUND_CEILING)) as context:
+        context.traps[Inexact] = context.traps[Rounded] = True
+        before = _decimal_context_state(context)
+        result = size_kis_paper_stock_target(**args)
+        assert _decimal_context_state(context) == before
+    assert (result.status, result.reason) == ("no_intent", "receipt_proposal_mismatch")
+    assert result.quantity == 0 and args == frozen
+    assert args["receipt"].canonical_json() == legacy_bytes
+    assert args["receipt"].decision_id == legacy_id
+    assert contracts._decimal_marker is original_marker

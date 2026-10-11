@@ -45,9 +45,13 @@ closure is not raw-price/OS proof. Stale Parent reader pin fixed without refit.
 117 COMPLETE/descriptive11c9bf8e...; parity410a30ce.../release7ed92f13...,
 actuala4a6cadc...2groups verifies48cells/12gaps/all7marks/fees/BUYSELLonce,
 unchanged causal recost; oracle cost-specific exits diagnostic, not DD bound.
-12fresh focused/source2/Validation actual2. ONE118 fixes core precision2 false
-receipt mismatch, preserving compatible hashes/persisted identities. No
-installed worker rebind/substitute intent. Cash remains zero-trade comparison.
+12fresh focused/source2/Validation actual2.118 COMPLETE/source-SYN31746925...;
+prefault2 reproduced;135stock tests/24new plus483serial/fresh full15924pass22skip.
+Exact target refs context-independent, compatible default28 stable;
+rounded long legacy SYN refs unchanged/rejected, no silent rebind.
+Independent3groups8576checks/Claude supported-with-limits. No installed
+worker rebind/substitute intent. ONE119 canonical fixedO6 entry/cash parity
+source/SYN preparation only; no actual label/replay/model/order run yet.
 No actual Paper/19owners/shared basis/custody change; actual broker fees/
 settled cash/net remain unobserved by these research jobs.
 

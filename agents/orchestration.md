@@ -12,18 +12,19 @@ Host child/container/source/GPU lease closure attested; all three rejected.
 115 COMPLETE/prepared066268db...:10focused/one18.3614s geometry/0fits/GPU.
 116 COMPLETE/rejected47695df6...:2CUDA/16epochs624updates/40cells14checks11fail.
 117 COMPLETE/descriptive11c9bf8e...:48cells/11.1125s/0fits/GPU.
-ONE118: context-independent-decision-target-binding-repair-v1.
+118 COMPLETE/source-SYN31746925...:95new regressions/483serial/full15924pass22skip.
+ONE119: firstrate-fixed-h30-entry-profit-veto-development-v1.
 No company block/foreground market wait; existing19finite owners unchanged.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned |116 pushed47c79e4;117 closed11c9bf8e..., verify/push then118 core repair. |
-| Verification | Parent / complete117 |12fresh focused/1311-source reattached/Ruff/three sample Compose;118 code needs fresh authority. |
-| Data | Complete117 |Original2987admitted/all7support, no intake/acquisition change. |
-| Engine | Complete117 / proposal ready |48cell ceiling; bec40776... proposes retained core Decimal mismatch repair. |
-| Execution | Complete117 |a4a6cadc...2aggregate groups, modeled economics only, no Paper change. |
-| Validation | Complete117 |0dff3359...source2/adf0a65c...actual2 groups pass, no raw/OS proof. |
-| Infra | Complete117 |ff2c9adc...source2 supports native reuse; actual child/source/input closed. |
+| Git/integration | Parent / owned |118 closed31746925..., verify/push then freeze119 sources/custody. |
+| Verification | Parent / complete118 |483serial/full15924pass22skip370.89s/6257cf79...source/Ruff/three sample Compose. |
+| Data | Owned119 source/SYN |35ad4c31... feasible retrospective fixed-exit reuse; original keys/support preserved. |
+| Engine | Owned119 source/SYN |7299d300... controlled entry-profit veto reexamination, no numerical run/allocation yet. |
+| Execution | Owned119 source/SYN |Canonical fixed-exit fee/marks/mask recost parity; no broker effects. |
+| Validation | Owned119 source/SYN |118 independently3groups8576checks; challenge new target/control/seen-data limits. |
+| Infra | Owned119 source/SYN |Reuse measured native runtime/600s one-child bound; no actual child or new container yet. |
 | GPU | Steward / free |116 appointment e4bb0c0c... closed after2CUDAfits, no failed fit/refit/weights. |
 | Paper due | Existing owners | Oct12 22:30KST entry, original exits/recovery/shared basis unchanged. |
 | Accounting due | Existing owner | FirstOct13 05:25KST; actual captures unknown. |
@@ -60,3 +61,15 @@ models cannot produce positive modeled net there.3bps positive ceiling is
 not learnability. Next concrete precision2 marker fault was already measured
 and remains in unchanged shared contracts source; bounded source repair
 advances model-decision receipt/Paper sizing, no installed snapshot rebind.
+118 replaces only ambient normalize with exact fixed-point formatting and
+fractional-zero trim. Before-fix SYN fails Rounded trap; after-fix76contracts
+and140dependent cases pass. Claude contract supported-with-limits. Legacy
+>28-significant-digit rounded refs are not silently repaired or rebound.
+Fresh shared-code authority is necessary here; source-only research preparation
+runs concurrently instead of foreground market waiting or redundant fitting.
+118 complete483serial/full15924pass22skip; new6257cf79... source binding is
+reusable authority for unchanged external-only119 work. Failed temporary
+launcher attempts never count; existing direct clean8 helper passes. Next
+entry intervention changes the mandatory-entry premise, not model capacity.
+Role preparations parallel/source-SYN only; freeze119 before labels/fit.
+No CUDA job invented for utilization; existing19external waits stay owned.

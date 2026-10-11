@@ -27,8 +27,12 @@ Source/input/child/container/GPUlease closure attested, not PIT/finality proof.
 117 COMPLETE/descriptive11c9bf8e...; original2987admitted/all7OPEN support,
 no unavailable block/paired filter. Native11.1125s/541888512-byte peak/0fits/
 GPU/48cells. Source/input/child honest-host closure, no PIT qualification.
-ONE118 shared Decimal binding repair; affected DTO checks only if assigned,
-no intake/cache/provider/collection scope change.
+118 COMPLETE/source-SYN31746925...; shared Decimal repair changes no intake,
+cache/provider/collection scope.483serial/full15924pass22skip/fresh authority.
+ONE119 fixed-H30 entry-profit veto; source assessment35ad4c31... confirms
+retrospective prior-only admission/fixed endpoint feasibility, not PIT.
+Own source/SYN intake reuse package only; original2987 keys/all7marks,
+125/63/63session clusters/effective sample unknown. No labels/intake run yet.
 Existing19owners/107 future coverage/durable cursors and next_due unchanged.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.

@@ -27,9 +27,12 @@ Fits remain spent; no refit/clock reset/weights/holdout. Host source/child/
 container/GPUlease closure attested, GPU free/usable after actual training.
 117 COMPLETE/descriptive11c9bf8e...;300s native attempt used11.1125s,
 48cells/12gaps/2987episodes/0fits/GPU/models/weights/holdout/registry spend.
-Oracle not candidate/label/alpha/DD bound. GPU free/usable. ONE118 core
-Decimal repair spends no research allocation; future research needs its own
-frozen hypothesis, not another same-scope exit-only architecture.
+Oracle not candidate/label/alpha/DD bound. GPU free/usable.118 COMPLETE/
+source-SYN31746925... spends no predictive/GPU/holdout allocation.
+ONE119 fixed-H30 entry-profit veto source/SYN preparation, no allocation
+or actual labels/fits yet. OneCPU/600s/0CUDA proposed; no scientific CUDA need.
+Parent freezes explicit prior-family lineage/custody before one actual fit;
+probability target not expected-net utility or fresh replication.
 
 ## Retained Evidence
 

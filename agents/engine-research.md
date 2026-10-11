@@ -36,9 +36,14 @@ No weights/holdout/Paper promotion. GPU free after actual training.
 10bps all3blocks only exact mandatory-entry/one-share/H30 exit-only scope,
 not all trading/DL/Paper. Positive ceiling not learnability/DD.12fresh focused/
 source2/actual2/Execution actual2, Claude supported-with-limits. No model/
-registry/Paper promotion. ONE118 fixes retained precision2 core receipt
-mismatch, proposalbec40776... at117/next-direction-r1/proposal.json. No more
-exit-only architecture/seed rescue under unchanged economic premise.
+registry/Paper promotion.118 COMPLETE/source-SYN31746925..., sourcecfee0f6a...
+repairs precision2 target identity;95new regressions/full15924pass22skip.
+ONE119 fixed-H30 entry-profit veto proposal7299d300...; source/SYN kernel/
+worker preparation only, oneCPU fit proposed/no numerical work or allocation.
+Prior entry-gate ancestry explicit; controlled reexamination, not novelty/
+replication/optimal expected-net threshold. Exit fixedO6; no117oracle label
+or same-scope exit-only architecture/seed rescue. Claude contract supported-
+with-limits; Parent freezes exact science/custody before actual.
 Future107 pending, Paper authority independent of research outcomes.
 
 ## Retained Evidence

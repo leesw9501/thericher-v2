@@ -110,12 +110,21 @@ All2987admitted supported. Best futureSELL ceiling positive3bps/nonpositive
 Positive ceiling not learnability/DD.12fresh focused/source2/actual2/Execution
 actual2, Claude supported-with-limits. Source/input/child honest-host closure;
 no raw replay/PIT/OS proof, registry/GPU/weights/Paper/19-owner change.
-ONE118: context-independent-decision-target-binding-repair-v1. Proposal
-bec40776... at117/next-direction-r1/proposal.json re-retrieves retained
-precision2 false receipt mismatch in contracts._decimal_marker; source74d1e9b9...
-unchanged. Repair exact marker/identity/sizing, fresh shared-source authority.
-Preserve compatible legacy hashes/installed sources/requests; never silently
-rebind >28-significant-digit old identities or submit a substitute request.
+118 COMPLETE/source-SYN31746925... at A/execution/
+context-independent-decision-target-binding-repair-v1/integration-evidence.json.
+Shared contracts sourcecfee0f6a... replaces context-rounding normalize with
+exact formatting/fractional-zero trim. Two unwrapped SYN failures reproduced
+before fix;95new regressions/483serial17.47s/full8 15924pass22skip370.89s,
+JUnit69a0ec1f.../1311-source6257cf79.... Ruff/three sample Compose pass.
+Independent16451e80...3groups8576checks128contexts; Claude supported-with-limits.
+Compatible default28 hashes preserved; old >28-digit rounded SYN receipts
+remain unchanged/rejected, no migration/substitute or installed-source rebind.
+Temporary launcher failures are not authority; direct existing helper passes.
+ONE119: firstrate-fixed-h30-entry-profit-veto-development-v1. Source proposal
+7299d300... and Data35ad4c31... support a CPU-only fixed-exit entry test,
+not new-method novelty/replication/expected-net utility. Preparatory role source
+packages active, no actual labels/fit/registry allocation yet. Existing19owners
+unchanged. GPU free; no scientific CUDA need for this single intervention.
 Future107 stays pending; contained Decimal/cache-writer repairs remain ready
 alternatives, not current Paper failures or a research permission hold.
 
