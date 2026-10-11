@@ -2,29 +2,31 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-paper-close-capture-v1.
-Goal89 COMPLETE/accounting_read_readiness_only8200c6e1...:
-A/execution/kis-stock-five-session-paper-passive-runtime-baseline-v1/integration-evidence.json.
-R3 callerb80f3ab3.../testsff48bba8.../controlb4991546... frozen after original/
-R2 category/clock/container/environment repairs; original unused bytes retained.
-65 synthetic/mock tests/.61s, independent24 preflight/17 actual checks pass.
-ONE actual recovery-r3/receipt-81b5ac7ba8a04806a9608d9097f422ee.json a43cdb28...:
-3.876s/parent120/child55, network-none/RO,455 source pins unchanged; reaped/
-exact invocation absent reported. Exact registry-owned request missing:
-no_owned_intent/0 owned intents/fills null/accounting-fees-net unavailable.
-Not current flatness, fill, broker/account attestation or independent OS proof.
-No private raw values retained/printed, credential/client/KIS/order/bank-write/
-lock/task/schedule/model invocation. Do not rerun merely to poll unchanged state.
-Exact1297pins/JUnit15593pass22skip reattached; Ruff/three sample Compose pass.
-Next direction Claude6c07a414... supports with limits. Data b4862c7c... maps
-five official closes Oct12..16 20:00UTC and selected-symbol dailyprice reuse;
-legacy collected_at is request START, not response availability. KIS clos is
-reported daily close, not auction-final/available-at-close proof. Capture actual
-UTC clocks and economic cutoff separately, never backdate late bytes.
-MASTER source6d36c8b3... official MIT verified; original158/63 input mismatch,
-not replication/campaign/fit. StockMixer excluded for unclear license.
-Existing entry/fifthEXIT/recovery/ab65 owners and original aggregate basis stay
-unchanged. Future capture delivery is not actual five-close or net-profit proof.
+ONE objective: kis-stock-five-session-cross-stock-attention-development-v1.
+Goal90 producer delivery COMPLETEe048c301...:
+A/execution/kis-stock-five-session-paper-close-capture-v1/integration-evidence.json.
+Job50748886.../planef2e7bb6... at delivery-preparation/recovery-r2;471 code pins.
+Actual smoke runtime/dispatch-2a7bb74cafe747cdb7535dd065149a47.json3408e291...:
+network-none/canonical bank RO/own archive RW, no_owned_intent, no Data/client/
+credential/order. Immutable normalized inputs/catalog rechecked privately;
+not current flatness/fill/close PnL. Actual read completion never economic close.
+One accounting task thericher-kis-paper-five-387ee5f6c7c6-accounting installed
+Ready/five finite Oct12..16 20:25..35UTC windows; firstOct13 05:25KST.
+One claimed attempt per slot/two daily pages, no manual starts. Existing Paper
+entry/EXIT/recovery/b860/ab65 and shared10%basis/unknown SPY unchanged.
+Keep exact slot/control/dispatch/archive/mark links; missing/changed/interrupted
+stays scoped unknown, not retry identity replacement or a submission gate.
+Legacy collected_at is START; typed-page receipt is not wire or auction finality.
+Pure capture guards post-cutoff facts/known requests; retained late states are
+not historical inventory. Fees/settlement/tax/net/future captures unobserved.
+Focused431/12.82s, independent parent44/actual6070fa4b...; exact1297pins/JUnit
+15593pass22skip reattached, Ruff/three sample Compose pass. Old finding receipts
+remain check-time evidence; all three fixed before source freeze/actual run.
+CUDA study uses EXACT existing512 research panel, not separate42-peer collector.
+Preserve original proposed9f98ab7b... mistaken-scope record; freeze corrected512
+contract before numeric work. MASTER MIT6d36c8b3... conceptual adaptation only,
+no158/63 replication/official checkpoint. Old800/later50 seen; no holdout/Paper
+adoption. No market sleep, provider refresh or runtime replacement needed.
 
 Goal86 COMPLETE/rejected_fixed_candidate8ecd02b9...:
 D:/thericher-v2/model-artifacts/research/kis-stock-five-session-catboost-development-v1/integration-evidence.json.

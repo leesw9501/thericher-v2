@@ -5,14 +5,15 @@ goal. A=D:/thericher-v2/model-artifacts; history Git2094757/external custody.
 
 ## Current Resources (2026-10-11 KST)
 
-Goal89 passive runtime baseline complete8200c6e1...; no fit, holdout spend
-or GPU appointment. ONE next objective prospective five-close capture is
-CPU/accounting only. CUDA available/free; no environment/authority hold.
-MASTER source independently re-retrieved6d36c8b3.../MIT, not a frozen campaign
-or faithful original-input replication. StockMixer noteligible/unclear license.
-All existing family lineage unchanged; a new source-adapted hypothesis still
-needs its own bounded dataset/target/split/cost/kill/compute contract, not rescue
-fits or a utilization campaign. No undispatched eligible frozen appointment.
+Goal90 producer delivery COMPLETEe048c301...; no fit/sealed/GPU spend.
+ONE objective cross-stock attention development: corrected512 source contract
+before numerical work/appointment. Proposed9f98ab7b... preserves mistaken42
+scope and Goal77 attention lineage; no invented subset/fresh holdout.
+Planned fixed native peer-context gate, three fits/family1800s/one GPU, existing
+image4bb201b5..., unchanged samples/splits/cost replay; no official weights or
+MASTER158/63 replication. CUDA free/usable, no authority/environment hold.
+No appointment yet; CPU source preparation ready. Allocate after exact contract
+freeze; old seen-family history persists, not a utilization-only campaign.
 
 ## Retained Appointment Evidence
 

@@ -14,27 +14,29 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Closure (2026-10-11 KST)
 
-Goal89 COMPLETE/accounting_read_readiness_only8200c6e1...:
-A/execution/kis-stock-five-session-paper-passive-runtime-baseline-v1/integration-evidence.json.
-Fresh R3 callerb80f3ab3.../testsff48bba8.../controlb4991546...;65 tests/.61s,
-independent24 preflight/17 actual checks48777139.../bf796e21.... Original/R2
-category/UTC/container/environment gaps fixed before actual use; bytes retained.
-ONE actual receipt recovery-r3/receipt-81b5ac7ba8a04806a9608d9097f422ee.json
-a43cdb28...:3.876s, network-none/RO,455 source pins unchanged; child reaped/
-exact invocation absent reported. Registry has no exact cohort-owned request:
-no_owned_intent,0 owned intents, fills/accounting/fees/net unknown, NOT flatness.
-Application registry custody and reported transport/cleanup are not independent
-broker/account/OS proof. No observed-state backcast, marks or fee defaults.
-No credential/client/KIS/order/lock/bank-write/task/schedule/model invocation.
-Exact Goal87 runtime1297pins/JUnit15593pass22skip reattached; Ruff/three sample
-Compose pass. Data b4862c7c... maps five exact closes/same-source dailyprice;
-collector start timestamp is not response availability. Preserve actual clocks.
-Engine6d36c8b3... independently re-retrieved official MIT MASTER source;
-original158-factor/63-market inputs absent, no replication/campaign/fit claim.
-StockMixer excluded for unclear license; Discovery ce98917d... consumed/expired.
-Claude6c07a414... supports with limits ONE next objective:
-kis-stock-five-session-paper-close-capture-v1, truthful prospective accounting
-producer plus finite delivery; existing entry/EXIT/recovery owners unchanged.
+Goal90 COMPLETE/producer_delivery_onlye048c301...:
+A/execution/kis-stock-five-session-paper-close-capture-v1/integration-evidence.json.
+Capture95bbed73.../archiveaa7cc316.../mark66b051ca.../nativebded33d9.../
+bridgea8bf874b...;471 frozen code pins, job50748886.../planef2e7bb6....
+Parent three findings fixed BEFORE freeze/actual use; independent44 checks
+1710cc5a.../actual6070fa4b... pass. Integrated431/12.82s; exact Goal87 runtime
+1297pins/JUnit15593pass22skip reattached; Ruff/three sample Compose pass.
+ONE actual runtime/dispatch-2a7bb74cafe747cdb7535dd065149a47.json3408e291...:
+network-none/canonical bank RO/own archive RW, no Data/provider/credential/order.
+Exact registry request absent/no_owned_intent, not current flatness/fill/PnL.
+Reported cleanup/application byte checkpoint not broker/account/OS proof.
+ONE accounting task/five finite Oct12..16 post-close20:25..35UTC windows
+installed Ready; firstOct13 05:25KST. Existing entry/EXIT/recovery/b860/ab65,
+shared10%basis/owners/unknown SPY untouched; no manual task runs.
+One attempt per slot/two daily pages; interrupted/missing/changed inputs scoped
+unknown. Actual read/capture/archive/response clocks never backdated to close;
+all five missing slots persist, fees/finality/net not observed.
+Claude6c07a414... supports limited producer direction, not profit/approval gate.
+Goal89 retained8200c6e1.../pushed3627ee5. ONE next objective cross-stock attention
+development: existing512 research panel, NOT separate42-peer collector.
+MASTER MIT6d36c8b3... conceptual inspiration, not original158/63 replication or
+weights. Preserve proposed9f98ab7b... scope conflict; corrected512 contract
+before numerical work. StockMixer unclear rights excluded; CUDA available.
 
 ## Retained Research And Delivery Evidence
 
@@ -261,17 +263,15 @@ non-PIT/availability limits continue, no broker net-PnL claim.
 
 ## Current Work
 
-ONE objective: kis-stock-five-session-paper-close-capture-v1.
-Execution owns truthful prospective accounting capture/pure cutoff projection
-and finite delivery. Data owns exact-date same-source daily marks and actual
-response availability; Engine checks no-backcast/omitted-request/foreign-lot
-and post-cutoff facts. Parent owns source/finite delivery/integration/Git.
-Keep physical capture and economic cutoff separate; current final state cannot
-prove past inventory. Preserve unknown fees/marks and every missing slot.
-Existing entry/EXIT/recovery/basis/owners unchanged. No foreground market wait;
-delivery completion is not actual future captures, fills or net-profit proof.
-Shared source changes require fresh changed-path and full authority; external-
-only unchanged runtime can reattach exact Goal87 source/JUnit. CUDA usable.
+ONE objective: kis-stock-five-session-cross-stock-attention-development-v1.
+Engine freezes corrected512 scope, builds one peer-context-gated attention
+model/three-fit adapter. Data binds same-date peers; Execution reattests replay;
+Infra reuses finite GPU runner; Validation checks frozen source/exact result.
+Parent owns integration/Git/resource custody. Old800/later50 seen development;
+no official MASTER weights, holdout/Paper adoption, rescue fit or data refresh.
+Same splits/costs/support/baselines. Paper/accounting schedules own next_due,
+not foreground/Research waits. Shared changes need fresh authority; unchanged
+external-only package may reattach Goal87 runtime/JUnit. CUDA available.
 
 ## Owned Opportunities Unchanged
 

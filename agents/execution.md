@@ -5,26 +5,22 @@ NEXT_CODEX_GOAL.md. Closed history in Git9ae7eec/RUNBOOK/immutable artifacts.
 Compaction never adopts, deletes, replaces or retries an intent.
 A=D:/thericher-v2/model-artifacts.
 
-Goal89 COMPLETE/accounting_read_readiness_only8200c6e1... at A/execution/
-kis-stock-five-session-paper-passive-runtime-baseline-v1/integration-evidence.json.
-Fresh R3b80f3ab3.../testsff48bba8.../controlb4991546...,65 source tests/.61s;
-independent24 preflight/17 actual checks48777139.../bf796e21... passed.
-Actual recovery-r3/receipt-81b5ac7ba8a04806a9608d9097f422ee.json a43cdb28...:
-3.876s, network-none/RO,455 unchanged source pins; reaped/absent reported.
-No exact cohort-owned registry request:0 owned intents/no_owned_intent,
-fills/accounting/fees/net unknown, NOT current flatness or broker proof.
-Application registry custody/byte checks/cleanup are assumed-honest reports,
-not independent OS/account attestation. Original/R2 preflight gaps/bytes retained.
-No credentials/client/KIS/order/bank-write/lock/task/schedule/model invocation.
-Exact1297pins/JUnit15593pass22skip reattached; Ruff/three sample Compose pass.
-
-ONE next objective kis-stock-five-session-paper-close-capture-v1. Execution
-owns prospective physical capture/cutoff semantics, pure projection and passive
-finite delivery; Data owns actual same-source mark acquisition. No backdating
-late bytes, final-state history, omitted known request, foreign-lot adoption or
-default fee/mark. Five missing slots remain explicit. Claude6c07a414... supports
-with limits. Existing shared10%basis/owners/unknown SPY and all entry/EXIT/
-recovery opportunities unchanged; accounting is not a submission gate.
+Goal90 COMPLETE/producer_delivery_onlye048c301... at A/execution/
+kis-stock-five-session-paper-close-capture-v1/integration-evidence.json.
+Capture95bbed73.../archiveaa7cc316.../bridgea8bf874b...; integrated431 pass,
+independent replay8 d966c68e.../parent44 1710cc5a.../actual6070fa4b... pass.
+Actual smoke3408e291... network-none/canonical bank RO/own archive RW:
+no_owned_intent, not broker current-flatness/fill/net. Snapshot uses actual read
+completion; archive publication separate, no final-state backcast.
+Accounting job50748886.../planef2e7bb6... installed Ready/five finite triggers,
+firstOct13 05:25KST; one attempt per slot/two Data pages. No manual task,
+credential/provider/account/order call. Existing basis/owners/unknown SPY/
+entry/EXIT/recovery/b860/ab65 unchanged. Fees/finality/net unknown; application
+custody/reported cleanup not OS/account proof or submission gate.
+ONE next objective cross-stock attention development. Execution source parity
+e010872e... at A/research/kis-stock-five-session-cross-stock-attention-development-v1/
+execution-source-parity.json constrains unchanged row/cost/availability/replay;
+no strategy choice, Paper replacement or new broker action.
 
 Retained Goal86 closed8ecd02b9.../independent8187b24d... at
 A/execution/kis-stock-five-session-catboost-replay-parity-v1/actual-review/

@@ -4,18 +4,18 @@ Current projection 2026-10-11 KST. AGENTS.md owns policy; NEXT_CODEX_GOAL.md
 owns ONE goal. History in Git9ae7eec and immutable receipts, not current jobs.
 M=D:/market_data; A=D:/thericher-v2/model-artifacts.
 
-Goal89 actual passive read complete8200c6e1...; no collector/provider refresh,
-market rows or credentials read. Existing ab65/current21/old/later unchanged.
-ONE next objective kis-stock-five-session-paper-close-capture-v1. Data owns
-same-source exact-date daily-close acquisition and actual response clocks.
-Prepared b4862c7c... at A/execution/kis-stock-five-session-paper-close-capture-v1/
-data-preparation/data-mark-plan.json:13 source pins/five closes Oct12..16 20:00UTC.
-Reuse selected-symbol dailyprice client/collector/cache writer; at most two pages
-per finite date. Existing collector collected_at is START, not response receipt.
-KIS dated clos is not auction finality/availability-at-close. No latest quote,
-prior-date substitution, revised backcast, future row or default fee/mark.
-Market bytes remain M; physical capture/end and economic cutoff stay distinct.
-This is source preparation only; no new collection or delivery yet.
+Goal90 producer delivery COMPLETEe048c301... at A/execution/
+kis-stock-five-session-paper-close-capture-v1/integration-evidence.json.
+Mark66b051ca.../nativebded33d9...;73 supplied/14 independent native checks,
+integrated431 pass. ONE accounting task/five finite dates installed, first
+Oct12 20:25UTC. Two daily pages/one attempt per slot; no actual market rows/
+credentials/provider calls yet. Actual response/read/write clocks distinct from
+economic close; legacy collected_at is START. KIS clos not auction finality/
+close availability. No quote/date/provider substitution or revised backcast.
+Existing ab65/current21/old/later untouched; empty new market destination M only.
+ONE next objective cross-stock attention development: exact G84/G86 panel512,
+NOT separate42-peer collector. Bind unchanged hashes/order/calendar and same-
+date prior eligible peers; no fresh provider collection or outcome-row output.
 
 Retained Goal86 closed8ecd02b9.../result0583aa2b...: one CatBoost study consumed
 existing old/later exact panels, no provider refresh, future row, key replacement

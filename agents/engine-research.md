@@ -5,21 +5,20 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact ro
 
 ## Current Result And Work (2026-10-11 KST)
 
-Goal89 independent final readback COMPLETEbf796e21... at A/execution/
-kis-stock-five-session-paper-passive-runtime-baseline-v1/actual-review/
-validation-receipt.json:17 checks, no findings;24 R3 preflight48777139... passed.
-Exact actuala43cdb28... is no_owned_intent, not current flatness or fill proof.
-No private input/OS observation by reviewer, fit, sealed spend or Paper adoption.
-Engine source verification6d36c8b3... at A/research/
-kis-stock-cross-stock-sequence-discovery-v1/engine-source-verification.json
-independently consumes Discoveryce98917d.... MASTER official MIT/cross-stock/
-market-guided; original158-factor/63-market inputs absent. Verified source only,
-not original replication, performance or ready campaign. StockMixer excluded:
-unclear license. Discovery assignment closed; no shadow queue or durable role.
-ONE next objective kis-stock-five-session-paper-close-capture-v1: independent
-capture/cutoff/omitted-request/foreign-inventory checks, no model fit in capture.
-GPU free/usable; later distinct frozen source-adapted hypothesis may be prepared,
-not a rescue fit or utilization appointment.
+Goal90 producer delivery COMPLETEe048c301...: independent cutoff/known-request/
+physical-clock checks passed, integrated431. Actual smoke no_owned_intent not
+flatness/fill/net or five future results; no capture-study model fit.
+ONE objective kis-stock-five-session-cross-stock-attention-development-v1.
+Proposed9f98ab7b... at A/research/kis-stock-five-session-cross-stock-attention-development-v1/
+proposed-contract.json identified Parent42 scope error: G84/G86 panel512/
+support>=128, NOT separate Data collector42. Corrected512 contract before any
+numerical work; unchanged samples/features/target/splits/replay.
+One peer-context-gated temporal/stock attention model, three fits/1800s; explicit
+Goal77 attention lineage, no window/seed/epoch search or failed-member rescue.
+MASTER MIT6d36c8b3... conceptual inspiration, no original158/63 inputs/checkpoints/
+replication. StockMixer unclear rights excluded. Old800/later50 seen/nonPIT/raw-
+action/nonTR/assumed availability limits; no sealed spend/replication/Paper
+adoption. CUDA available/free, no authority/environment hold.
 
 ## Retained Research Evidence
 
