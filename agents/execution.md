@@ -50,6 +50,15 @@ UTC, not +09; Parent closure corrects that explanatory receipt wording.
 Independent Validation runtimebeb35251...6 groups agrees. No broker/bank/
 deployment/schedule changes; original101 immutable and spent. Next goal's
 paired CPU comparison keeps exact entries/q/costs/all marks; no runtime adoption.
+Goal104 source core COMPLETE62f6c06b... at A/execution/
+kis-price-volume-basis-held-exit-development-v1/review-r1/release.json;
+source6b9ea4dd.../12 author and Parent12 SYN pass, no actual model/market calls.
+validate_core(result, expected_links=exact_controls) requires science50ff.../
+ready8005.../rowc670..., caller worker-precommit/runtime pins; never self-infer.
+Real old800/later71 DTOs and50 evaluation marks,30 tables36 fixed criteria,
+CPU2/CUDA0/zero epochs/updates and same fixed-q actual-leg costs are checked.
+Final Engine schema binding and actual result still pending; no full old-reader
+pass, source-kernel training proof, native broker/Paper or OS claim.
 Full book/shared10%basis/losses/reservations/pending identities unchanged.
 Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
 independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.

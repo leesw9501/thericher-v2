@@ -61,6 +61,12 @@ reads; official Qlib loader/MIT re-retrieved.9 continuous+6 flags,5/10/20 scales
 within21 bars, raw105 versus augmented120 ridge(alpha1),2fits600s/no CUDA.
 Data e4fe1834... shows30/60 lack first-later/current context and VWAP absent;
 no fullAlpha158/360 claim, window search, implicit splice or Paper change.
+Active104 Ready80052ac6.../body6bd716cc... is frozen as science50ff9797.../
+feature-family trial1c6705533.... Kernel release015f2821.../source1fcb6a76...
+passes10 Parent generated math tests. Same-context raw21 inputs/15features,
+TRAIN-only continuous scaling and explicit(slot,d) paired route are frozen;
+typed integration/worker release and independent source review pending.
+This kernel-only proof is not numerical fitting or actual callback qualification.
 
 ## Prior Packages
 

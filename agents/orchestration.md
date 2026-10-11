@@ -26,7 +26,7 @@ No company block, market wait, GPU permission or operator approval hold.
 | Verification | Parent / ready | Exact1311 authority15829pass22skip reattestable, not a fresh full-suite; focused source/SYN next. |
 | Data | Plato / source104 complete | Releasea88cc7b3.../raw e175fa79...;19 Parent SYN pass, no actual market reads. |
 | Engine | Chandrasekhar / owned104 | Ready80052ac6.../body6bd716cc... frozen; basis/paired driver source integration. |
-| Execution | Herschel / owned104 | Pure30-table/36-check predicates; current result schema source pending, no broker change. |
+| Execution | Herschel / source104 complete | Core62f6c06b.../12 Parent SYN pass;30 tables/36 predicates, final schema binding pending. |
 | Infra | Socrates / owned104 | CPU-only source transport adaptation; no duplicate103 runtime or role-owned actual calls. |
 | Validation | Leibniz / standby104 | Prospective design5f9dd535...4 groups; actual frozen implementation review remains pending. |
 | GPU | Steward / free | Actual103 exact owned lease closed; current paired CPU intervention needs no CUDA. |
@@ -39,16 +39,16 @@ No company block, market wait, GPU permission or operator approval hold.
 
 ## Bottleneck And Reversible Improvement
 
-Repaired source completed actual103 comparison; original101 first cause remains
-unknown. Old full reader's50-context assumption still mismatches71: retain that
-scoped finding and use unchanged scalar checks plus source-linked geometry,
-not a false reader pass, refit or global hold. New reader tests must use real
-context-versus-evaluation DTOs rather than the author's50-session fixture.
-This reversible correction improves backtest interpretation. Proposal d63f2658...
-and context e4fe1834... were prepared in parallel with GPU runtime; consume them
-for a fixed basis intervention instead of a same-family architecture rescue.
-No company block or foreground market wait. Claude result/next supported-with-
-limits, not authority or proof; original3/current3 spent preserved.
+Current shared dependency is the paired driver carrying explicit(slot,decision)
+keys, not Data coverage, GPU permission or a market wait. Data raw bridge19,
+Execution predicates12 and frozen kernel10 Parent SYN pass. Kernel release
+015f2821.../source1fcb6a76... is handed off before full worker completion so
+independent math/raw-alignment review can run in parallel. This reversible
+handoff split improves feature/model feedback without new workers or gates.
+Old full-reader50-vs71 failure remains scoped and immutable; source104 uses
+real context/evaluation geometry and no false prior pass. Current raw+augmented
+ridge campaign has no GPU task or numeric appointment yet. No company block;
+original3/current3 spent preserved and all13 future owners unchanged.
 
 Goal99 learned entry and clairvoyant continuation failed35of64 fixed kills;
 another model name cannot isolate why. Fix entry selection and quantities,
