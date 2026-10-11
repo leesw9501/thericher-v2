@@ -76,8 +76,10 @@ Six Data-only capture tasks installed, no new strategy/budget or GPU lease.
 input geometry verified,0TRAIN labels/fits/GPU/holdout/metrics. No scientific
 campaign result or resource refund. ONE109 is the proposed predictive value
 target study:1CPU Ridge/2CUDA GRU seeds,8epochs each/16total/max624updates,
-one shared600s clock incl90publication/cleanup. Freeze source/data/target/split/
-costs/strongest kills before any fitting, then CPU prerequisite and GPU lease.
+one shared600s clock incl90publication/cleanup. Scientific56a33554.../custody
+7fc5b492.../trial1row410a4d63... are frozen before labels/fits.0actual fits/
+GPU allocation/holdout/outcome; source bindings/SYN precede CPU then CUDA under
+one clock. No new registry row or allocation until this exact family dispatch.
 GPU available/usable; no utilization KPI or profitability gate on Paper work.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 

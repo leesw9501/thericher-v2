@@ -13,13 +13,13 @@ No company block or foreground market wait. New Paper strategy not adopted.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned109 |108 closure/source/preflight complete; predictive contract/source integration next. |
+| Git/integration | Parent / owned109 |109science56a33554.../trial1row410a4d63... frozen; Claude supported-with-limits, source integration next. |
 | Verification | Parent / owned |108 current35 focused pass; independent1 native/1 partial source-read with retained fixture error.1311 authority unchanged. |
-| Data | Plato / ready109 | Small same-source/axis/geometry episode iterator, no repeated acquisition/parser or future censor. |
-| Engine | Chandrasekhar / ready109 | CPU-first reference-value Ridge/2GRU seeds, finite source/data/compute freeze before labels/fits. |
-| Execution | Herschel / ready109 | Reuse one-BUY/SELL target parity and aggregate result reattachment, no broker work. |
+| Data | Plato / owned109 | Small same-source/axis/geometry episode iterator, no repeated acquisition/parser or future censor. |
+| Engine | Chandrasekhar / owned109 | CPU-first reference-value Ridge/2GRU source/SYN,0 actual labels/fits. |
+| Execution | Herschel / owned109 | Agree exact aggregate DTO before result reader; no broker work. |
 | Validation | Standby until frozen candidate |108 review47348a75... supports bounded preparation, not performance/PIT/OS proof. |
-| Infra | Invoked if needed | Reuse pinned CPU/CUDA transport, no image/framework replacement. |
+| Infra | Socrates / owned109 | Small proven G99 transport reuse; source schema pending final Engine CLI, no actual Docker or framework replacement. |
 | GPU | Steward / free | RTX4090 usable; new finite predictive allocation follows contract, not permission wait. |
 | Paper due | Existing finite owners | Oct12 22:30KST entry, original exits/recovery and shared basis unchanged. |
 | Accounting due | Existing owner | FirstOct13 05:25KST; actual captures unknown. |

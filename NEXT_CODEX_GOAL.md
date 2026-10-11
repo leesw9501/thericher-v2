@@ -18,7 +18,11 @@ with retained reviewer fixture error, not2 dynamic passes. No labels/fits yet.
 
 ## Frozen Numerical Direction
 
-Freeze one predictive family contract before actual labels or fitting. Reuse
+Scientific56a33554.../custody7fc5b492.../canonical trial1row410a4d63... are
+already frozen at A/research/firstrate-inventory-reference-policy-value-development-v1.
+Claude contract review_received/supported-with-limits. Do not freeze/register
+again. No actual labels/fits/GPU appointment yet; source/SYN packages owned.
+Reuse
 108 Data geometry5b5a79d8..., Engine target59165911... and Execution replay
 3638c991... with their exact releases/fee-source binding; do not rewrite them.
 Fixed M5/context36/H30, six scheduled entries/day, one share O0. Held ages1..5
