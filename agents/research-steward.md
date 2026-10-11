@@ -74,13 +74,15 @@ future outcome PENDING. One600s CPU forecast completed/0fits/246analytical,
 Six Data-only capture tasks installed, no new strategy/budget or GPU lease.
 108 preparation COMPLETE61ee85b1...; target/fee/clock APIs and actual251session
 input geometry verified,0TRAIN labels/fits/GPU/holdout/metrics. No scientific
-campaign result or resource refund. ONE109 is the proposed predictive value
-target study:1CPU Ridge/2CUDA GRU seeds,8epochs each/16total/max624updates,
-one shared600s clock incl90publication/cleanup. Scientific56a33554.../custody
-7fc5b492.../trial1row410a4d63... are frozen before labels/fits.0actual fits/
-GPU allocation/holdout/outcome; source bindings/SYN precede CPU then CUDA under
-one clock. No new registry row or allocation until this exact family dispatch.
-GPU available/usable; no utilization KPI or profitability gate on Paper work.
+campaign result or resource refund.109 COMPLETE/rejectedfe3d5e23...:
+science56a33554.../trial1row410a4d63... closed by outcomeeb866597.... Original
+600s appointment855b8f36... consumed1CPU2CUDA/16epochs624updates0failed;
+host564c823f.../resulte85d9b90.../read ef8f5288... and independent actual3 groups
+confirm56cells32checks22fail. Source/child/container/owned GPU lease closure
+is host-attested, not OS proof.0sealed spend/weights/refit/seed rescue.
+GPU now free. Next distinct daily target may use CPU only; no utilization KPI
+or profitability gate on independent Paper work. Freeze its own finite family
+before actual labels/fitting; no reallocation or debit reset for109.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 
 ## Prior Allocation

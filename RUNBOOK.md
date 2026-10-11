@@ -48,10 +48,17 @@ Semantic2896ac7d.../sourcebinding2c7286ba.../actualpreflight4af21579...;
 wrong-gap fixture failure retained, not2 native passes. Actual251sessions,
 TRAIN125+1488/DEV63+755/later63+744, all admitted future support complete.
 No labels/fits/GPU/metrics; do not rerun108 freeze/bind/preflight/closure.
-ONE active109: firstrate-inventory-reference-policy-value-development-v1.
-Freeze bounded CPU-first Ridge/GRU comparison before labels/fits. Existing
-same one-share fee/replay and modeled-clock limits persist; no Paper changes
-or foreground wait for107. Numerical work runs in the existing pinned Docker.
+109 CLOSED/rejectedfe3d5e23...:
+D:/thericher-v2/model-artifacts/research/firstrate-inventory-reference-policy-value-development-v1/integration-evidence.json.
+Science56a33554.../trial1row410a4d63.../outcomeeb866597.... One600s appointment
+855b8f36... complete; actualhost564c823f.../resulte85d9b90.../read ef8f5288....
+1CPU2CUDA/16epochs624updates0failed/7440TRAIN rows,56cells32checks22fail.
+36 focused/direct Docker CPU SYN/independent source2 and actual3 groups pass.
+Source/child/container/GPUlease closure attested; not OS/raw-price proof.
+Never rerun109 freeze/stable-bind/SYN/appointment/dispatch/read/close creators,
+reset its clock, tune a winner or refund fits. No retained weights/holdout/
+Paper changes. Reuse finite transport/source APIs only under the next goal's
+separate frozen contract; no image rebuild or new runtime platform needed.
 Existing13 owners/shared10%basis/identities unchanged. Claude105 result and
 next direction supported-with-limits; next source inspiration is factor
 decomposition, not published stat-arb/market-neutral/mean-reversion replication.

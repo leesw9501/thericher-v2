@@ -29,10 +29,16 @@ with all5held inputs/all7 OPEN support;0labels/fit/GPU/metrics. Independent
 review47348a75...1 native group,1 source-read with retained fixture failure.
 Realized CONTINUE-one-interval-then-pi0 advantage, not optimalQ/learned-policy
 value or rollout theorem; seen-data/zero-latency/physical availability limits.
-ONE109: firstrate-inventory-reference-policy-value-development-v1. CPU-first
-Ridge and fixed GRU16 seeds101/202;8epochs each/16total/max624updates and one
-shared600s appointment proposed. Freeze predictive contract before labels/fits;
-both seeds reported, no winner/rescue/holdout/deployment. GPU free/usable.
+109 COMPLETE/rejectedfe3d5e23.../resulte85d9b90.../outcomeeb866597....
+Science56a33554.../trial1row410a4d63...; one600s appointment855b8f36... CLOSED.
+Actual1CPU Ridge2CUDA GRU16 seeds101/202,8epochs each/16total624updates0failed;
+7440TRAIN held rows, single parse/child.56cells32checks22fail, all6noncash3bps
+net negative inbothblocks. No winner/refit/epoch or threshold rescue/weights.
+36 focused/direct Docker CPU SYN and independent source2/actual3 groups pass;
+Claude result/next direction supported-with-limits. GPU lease released/free.
+Seen fixed-share modeling not NAV/physical availability/PIT/KIS parity/fresh
+replication. Next-direction source review examines daily peer-residual targets
+against prior families before another frozen campaign, not an intraday rescue.
 Concept sources independently retrieved; no public code/weights imported.
 
 Goal99 COMPLETE/rejected879bb037... at A/research/

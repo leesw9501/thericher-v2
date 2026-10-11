@@ -93,9 +93,12 @@ closes. TRAIN125/1488admit,DEV63/755,later63/744; selected OPEN/held-context
 shortfall0. Chronological axis2aaeae79..., no future-complete intersection.
 Source/input unchanged/child reaped;0labels/fits/metrics/acquisition, no PIT/
 finality/physical availability or fresh-holdout/KIS parity claim.
-ONE109 Data package reuses those exact inputs/geometry through a small episode
-iterator; no duplicated parser, different admission, source or split. Engine
-owns TRAIN labels and predictive fitting; future107 collection unchanged.
+109 COMPLETE/rejectedfe3d5e23.... Iterator2cdf29f3.../release30955295... reuses
+same parser/axis/geometry;8 Parent focused pass. Actual single study consumed
+the exact inputs with7440TRAIN held rows/755DEV/744later episodes, no new data,
+source/split/admission change or quality promotion. Future107 unchanged.
+Data next-direction source/metadata geometry review is daily512/5day support,
+not new acquisition or an independent input-quality approval gate.
 Source audit found older4-ETF sector strength/21-rebalance and covariance
 allocation already exist; next stock-level beta selection is a bounded new
 comparison, not a globally novel signal. Daily volume is only a capacity proxy;

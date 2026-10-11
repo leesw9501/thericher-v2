@@ -45,13 +45,23 @@ unchanged/child reaped.0labels/fits/GPU/metrics. Same seen FirstRate SPY/QQQ,
 vendor START declaration not physical availability/PIT/finality or KIS parity.
 Claude target supported-with-limits; reference advantage not optimalQ/theorem.
 
-ONE next objective: firstrate-inventory-reference-policy-value-development-v1.
-CPU-first Ridge versus two fixed GRU seeds on the new held-reference target,
-same entries/quantity/four controls/recost paths; no model winner or deployment
-yet. Scientific56a33554.../custody7fc5b492.../canonical row410a4d63... trial1
-frozen before labels/fits; Claude contract supported-with-limits. No numerical
-dispatch or GPU allocation yet. Data/Engine/Execution/Infra source/SYN owned;
-future107 waits worker-owned. Reuse small same-data APIs, no new platform.
+109 COMPLETE/rejectedfe3d5e23... at A/research/
+firstrate-inventory-reference-policy-value-development-v1/integration-evidence.json.
+Science56a33554.../trial1row410a4d63... closed by outcomeeb866597....
+One original600s appointment855b8f36..., CPU-first single study child/one parse:
+1CPU Ridge2CUDA GRU complete,16epochs624updates0failed,7440TRAIN held rows.
+Actual result e85d9b90.../host564c823f.../aggregate ef8f5288...:56cells32checks,
+22fail (GRU10112/GRU20210); all6noncash policies negative modeled3bps net in
+both seen blocks. No winner, threshold/epoch/seed rescue or retained weights.
+36 Parent focused pass; direct Docker CPU SYN274b524b.../0market fits, independent
+source2 NumPy and actual3 aggregate groups6d6d2fcb... pass. Claude contract and
+result/next direction supported-with-limits. Source/child/container/owned GPU
+closure attested, not OS proof or independent raw-price replay. Fixed-share
+PnL not portfolio NAV/broker fees, no physical PIT/finality/KIS qualification.
+GPU now free; no manual KIS/account/order or existing19owner/budget changes.
+Next direction uses a separately frozen daily target after prior-lineage and
+geometry review, not architecture-only tuning of this rejected intraday target.
+Future107 waits remain worker-owned; NEXT_CODEX_GOAL.md owns the next objective.
 
 ## Latest Closure (2026-10-11 KST)
 

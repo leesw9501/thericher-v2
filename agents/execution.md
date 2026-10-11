@@ -23,11 +23,13 @@ terminal OPEN6 required; no future schema inference, actual capture or fill clai
 10 SYN plus5 integrated clock/target/cost checks pass. Actual geometry verified
 only, no performance/fits. Independent review47348a75... is1 native/1 partial
 source-read with retained fixture error, not2 dynamic passes.
-ONE109 reuses exact same one-share entry O0/held k1..5/terminal O6, one BUY
-and one actual-exit SELL, no horizon renewal/reentry. Actions use3bps then
-same chosen path recost1/3/5/10; fixedO6/O1/pi0/cash controls. Source/SYN and
-aggregate actual-result reattachment only; never choose strategy/model weights.
-No actual broker/account inspection, foreign inventory or Paper owner changes.
+109 COMPLETE/rejectedfe3d5e23.... Exact one-share O0/held k1..5/O6 and one BUY/
+SELL,3bps actions/frozen path recost1/3/5/10. Reader6a19d072.../release2bfeea2b...
+10 Parent focused pass; actualaggregate ef8f5288... verifies56cells/32checks/
+22fail/complete1CPU2CUDA16epochs624updates. Independent actual6d6d2fcb...3
+groups agree, not raw-price PnL or OS proof. Fees are modeled, not broker fees.
+No strategy selection, account inspection, foreign inventory or existing19
+Paper owner/10%basis changes. Research rejection never pauses Paper authority.
 
 Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
 kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
