@@ -26,8 +26,16 @@ release14d76c11... and R2 installer563ea1d8.../release300016f4... frozen.
 Same-task Action changed1/other41 definitions unchanged; settings/triggers/
 claims/basis/image unchanged, first due Oct20 05:25KST. No manual Task/due/
 provider/order call or actual fees/net; honest-host readback only.
-114 owns fixed-five quantity/cost replay and closed pairwise aggregate reader;
-do not select model/pairs or modify actual Paper paths. Reuse canonical replay.
+114 COMPLETE/rejectedc52bc213...; reader36ffb7a0.../release8bf5979a... checks
+30tables130marks30predicates21fail/1CPU0CUDA0failed/134dates34304pairs,
+n_iter26. Actual1a8275b0...3 independent aggregate/chain/provenance groups;
+source4 groups, final source-chain SYN unverified reviewer namespace. Parent
+actual source/input/child/container checks pass, not raw NAV/DD/OS proof.
+Original Claude result unsupported and narrow rejection-interpretation review
+remain distinct; never infer model agreement. Fixed quantities/fees/OPENe+5
+exit reused unchanged. No refit, actual Paper/19-owner/basis/custody change.
+115 reattests existing intraday episode keys/holding/target/cost semantics for
+paired past inputs; no feature/model choice, broker or private-state access.
 
 ## Retained Evidence
 

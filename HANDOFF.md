@@ -35,7 +35,7 @@ GPU free/usable after two actual CUDA fits; no environment or permission hold.
 kis-five-session-optional-fee-accounting-consumer-integration-v1/integration-evidence.json.
 Consumerfc46643a.../projection32d3bc77.../release4a477238... reuses exact G98
 innerjobb9f898f6... and G100 typed cumulative-fee bridge. Selection3eceffd6...
-is frozen under infra-r1/delivery-selection.json, not yet an installed Action.
+was frozen under infra-r1/delivery-selection.json;113 delivered the Action.
 Parent9 focused pass; independent R3 four native groups pass. R1 full-book
 point binding and R2 negative-test exception-helper faults retained, no actual
 rerun or canonical accounting mock. One d6 network-none Docker SYN292d1ba0...
@@ -64,13 +64,30 @@ Honest-host sampled readback, not OS proof. R1 outer-release gap preserved;
 R2 delivered. Parent ordered-map preparation fault fixed by structured
 roundtrip before task effects. Claude supported-with-limits; fees/net unknown.
 
-ONE114: kis-five-session-pairwise-preference-development-v1. Source-only
-proposal000377cc... at A/research/
-kis-five-session-optional-fee-accounting-selector-delivery-v1/next-direction-r1/proposal.json
-rejects rank-target novelty (prior ordinal/soft-midrank BCE), recommends one
-informed CPU shared-score difference-loss study. Freeze pairs/target/geometry/
-cost/kill/custody before numeric work. No GPU allocation,111 refit, weights,
-holdout or Paper adoption from proposal. Future107 outcome remains pending.
+114 COMPLETE/rejectedc52bc213... at A/research/
+kis-five-session-pairwise-preference-development-v1/integration-evidence.json.
+Sciencea9bd3041.../trial1row740be89f.../outcome34a43fb0...; worker78f30e8f.../
+kernel866810af.../bindingbc04cd4f.... Actual runa20bef4a...49.7217s/600,
+host1b0fb14a.../result3aa686a9.../read4df4b519....1CPU0CUDA0failed,
+134completeTRAINdates34304pairs/rows0ties/n_iter26;30tables130marks30checks
+21fail.10bps/side modeled growth DEV+.68207%/later-.25162%; reject, no rescue.
+46focused/4direct typed Docker SYN/source4/actual3 groups. Source final-chain
+SYN unavailable due reviewer hashlib namespace faults; Parent actual chain
+passes, not independent OS/raw NAV/DD proof. Actual reviewer later/view path
+fixture fault retained. Original Claude result unsupported is NOT agreement;
+separate narrow rejection-interpretation supported-with-limits is not model
+support.493aliases/0copies/source/child/container closure. No weights/refit/
+holdout, Paper/19-owner or107 future changes; GPU remains free/usable.
+
+ONE115: firstrate-paired-spy-qqq-causal-context-preparation-v1. Source-only
+proposald93a16d3... at114/next-direction-r1/proposal.json identifies a useful
+joint past-information scope, plus contained core Decimal/cache-writer defects.
+Choose paired input first; existing containment is not a current Paper fault.
+Reuse G108/G109 official calendar/parser/geometry, freeze one window/consumer
+before numeric coverage, preserve original admission/keys/targets. Data,
+Engine and Execution source/SYN work is parallel; Parent alone checks actual
+offline coverage. No acquisition/fits/GPU/metrics/new schedule in preparation.
+Future107 and all19 owned opportunities remain separate and pending.
 
 ## Retained Preparations And Closures
 

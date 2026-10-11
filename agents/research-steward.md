@@ -12,9 +12,15 @@ appointment883063da... completed48.1724s,1CPU2CUDA/64epochs1344updates0failed.
 1340TRAIN rows/48tables90checks33fail; no refit/refund/winner/weights/holdout.
 Host source/child/container/canonical GPUlease closure attested, not OS proof.
 GPU free/usable.112 integration COMPLETE52f20612...;113 delivery COMPLETE642a1ee0...
-with no-fit/0sealed/no research allocation.114 pairwise study proposes one
-CPU600s/0GPU appointment; no frozen campaign or debit yet. Record source,
-target/sampler/compute seal before allocation, no rescue/holdout/utilization job.
+with no-fit/0sealed/no research allocation.114 COMPLETE/rejectedc52bc213...
+at A/research/kis-five-session-pairwise-preference-development-v1.
+Sciencea9bd3041.../trial1row740be89f... closed by outcome34a43fb0.... One600s
+appointmenta20bef4a... completed49.7217s,1CPU0CUDA0failed,134dates34304pairs/
+rows0ties/n_iter26.30tables130marks30checks21fail; fit remains spent, no
+retry/refund/depth/weights/holdout. Host source/child/container closed.
+115 paired SPY/QQQ input preparation spends0fits/GPU/sealed evaluation;
+consumer/window frozen before one bounded offline geometry check. GPU remains
+free/usable, not blocked by environment/authority or a utilization target.
 
 ## Retained Evidence
 

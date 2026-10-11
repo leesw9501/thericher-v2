@@ -2,78 +2,84 @@
 
 ## Objective
 
-Complete kis-five-session-pairwise-preference-development-v1: build one
-shared linear pairwise score and test whether direct comparison supervision
-improves fixed-five-session stock selection under unchanged costs and replay.
+Complete firstrate-paired-spy-qqq-causal-context-preparation-v1: make one
+same-cutoff paired SPY/QQQ past-context input usable for the existing intraday
+inventory-policy research, without changing its entry population or targets.
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
-113 COMPLETE/action-delivered642a1ee0... at A/execution/
-kis-five-session-optional-fee-accounting-selector-delivery-v1/integration-evidence.json.
-Execution release14d76c11.../runner0ac3910d... and R2 Infra300016f4... bind
-112 selection3eceffd6.../original jobb9f898f6....21 focused pass; independent
-one native SYN + one source/metadata group and one postdelivery metadata group.
-Exactly one Action changed, other41 of42 installed definitions unchanged;
-42 includes retired tasks, not42 finite owners. Original19 finite scope and
-non-Action settings/claims/basis/image preserved. First due Oct19 20:25UTC.
-No manual Task/due/provider/order call; actual fees/net and future107 pending.
+114 COMPLETE/rejectedc52bc213... at A/research/
+kis-five-session-pairwise-preference-development-v1/integration-evidence.json.
+Sciencea9bd3041.../trial1row740be89f.../outcome34a43fb0...; one600s CPU
+appointment completed49.7217s,1CPU0CUDA0failed,134dates34304pairs/rows,
+no ties/n_iter26.30tables130marks30checks21fail.46 focused/source4/actual3
+groups; final source-chain SYN unverified due reviewer namespace faults,
+Parent actual chain passes. Claude original result unsupported preserved;
+separate narrow rejection interpretation supported-with-limits, not model
+agreement/adoption. No refit, weights, holdout, Paper or19-owner change.
 
 ## Direction And Parallel Roles
 
-Source readiness proposal000377cc... at A/research/
-kis-five-session-optional-fee-accounting-selector-delivery-v1/next-direction-r1/proposal.json
-re-retrieves111 proposal and prior G77/G79/ordinal decoder/joint TCN sources.
-Relative-rank targets already exist. The intervention is shared-score
-difference loss f(x_i)-f(x_j), not a new market mechanism or architecture
-rescue of rejected111. No separately frozen campaign/allocation exists yet.
+Re-retrieve source-only proposald93a16d3... at A/research/
+kis-five-session-pairwise-preference-development-v1/next-direction-r1/proposal.json.
+It also identifies contained Decimal-marker and direct cache-writer defects;
+neither is evidence of current Paper failure or a reason to block research.
+Do not repeat a fee wrapper, rank-target rescue or future-observation wait.
 
-Use existing approved fixed512 old800/later71 data, prior21-derived20x5
-context and existing LogisticRegression/runtime; no downloads/dependency
-replacement. One fixed linear score without intercept, one CPU fit only.
-Freeze finite prior-only pair sampler/hash, neutral ties, equal-date weights,
-TRAIN-only scaler, C/solver/iterations, complete-date minimum and whole-date
-missing rule before actual labels/outcomes. Uniform per-side fees do not
-alter relative order: labels are not cost-optimal.
+Existing G109 input iterator2cdf29f3... at A/data/
+firstrate-inventory-reference-policy-value-development-v1/input-r1/episode_input.py
+already has a common official session axis but emits separate symbol episodes.
+Reuse its exact retained FirstRate inputs, normalization, calendar, G108
+geometry, order, split and entry/target support. This adds jointly observed
+past information, not a new calendar, target, market mechanism or acquisition.
 
-Data owns typed sampler/coverage; Engine owns score/loss/frozen campaign;
-Execution owns fixed holding/quantity/fee replay and aggregate reader. Infra
-reuses finite CPU transport. Parent alone reads actual market inputs,
-allocates/dispatches, integrates and handles Git. Temporary Validation
-evaluates frozen source/actual aggregate, not tuning. Source/SYN role packages
-run in parallel with disjoint ownership; no actual fitting before source seal.
+Engine Research declares one fixed consumer feature/window/cutoff contract
+from existing sources BEFORE actual geometry is read. Data owns a small typed
+paired view and missing-peer semantics. Execution independently reattests
+unchanged episode identity, holding, cost and target-support semantics.
+Parent integrates and alone runs one bounded offline geometry check;
+Validation checks frozen source and count-only output independently.
+Ready source/SYN packages may run in parallel with disjoint ownership.
 
 ## Bound And Strongest Kill
 
-Reuse source-pinned G106/G110 causal intake and fixed-five replay. Verify
-geometry: TRAIN entries21..686/134 dates; DEV720..790/15 cohorts across
-calendar720..799; later21..61/9 across calendar21..70. All130 evaluation
-marks, including flat tails, retained; TRAIN OPENe+5 labels precede DEV.
-No evaluation-label fitting API. Missing targets cannot censor losing pairs,
-choose replacement pairs or revise eligibility.
+Use only existing approved SPY/QQQ FirstRate data; recheck exact source rights
+and receipt bindings. No download, KIS, account/order/Task invocation, schedule
+change, private state, GPU/model fitting, predictions or PnL in this goal.
+No public-model dependency or runtime replacement. Generated artifacts A,
+market inputs M; preserve15%D:free. No raw rows/features/labels in reports.
 
-One family budget: one CPU fit,2threads4GiB,600s whole including90s
-cleanup/publication reserve, no retry/refund/search/weights. Compare cash,
-unchanged momentum/analytical-peer and prior-only common-gross controls with
-fixed original quantities; costs5/10/20bps PER SIDE. Freeze exact tables and
-strict U/DD predicate count before fit. Reject absent strict utility gain over
-matched momentum/peer/cash and DD no worse than matched momentum/peer in both
-blocks/all costs. Future mutation of pairs/context/eligibility, missing-loss
-censoring, cost/quantity/clock mutation or aggregate mismatch kills the run.
+Freeze a SINGLE prior window and feature geometry, not an outcome-informed
+matrix or selection search. Own and peer bars must end at or before the same
+original decision cutoff. Original single-symbol entry keys/admission and
+target endpoints stay intact. Missing peer history is explicit unavailable;
+never silently fill, splice future bars, drop a losing selected episode or
+rewrite the original population to improve joint coverage.
 
-No GPU justified for this small convex fit. No holdout/fusion/Paper intent or
-independent-alpha claim from repeatedly seen/current-listing/nonPIT/raw-action/
-revised samples. Existing19 owners and107 future inputs remain independent.
+Strongest kill: future/target-side mutation changes prior paired features or
+admission; duplicate/reversed/foreign timestamps; wrong symbol/session/split
+alignment; missing peer represented as available; altered original entry or
+target support. Failed input is scoped, not a Paper permission hold.
+
+At most one small adapter/consumer contract, <=10 focused SYN groups and one
+Parent-owned offline geometry invocation <=600s/2threads/4GiB. Reuse existing
+parser/intake/runtime; no new worker platform, scheduler or report family.
+Native offline execution is sufficient if the exact existing runtime works;
+otherwise reuse the finite source-pinned container, no image rebuild.
+No predictive family/GPU appointment or sealed evaluation spend in preparation.
 
 ## Completion
 
-Exact pre-numeric source/campaign seal and canonical family custody;
-CPU/SYN checks, one bounded runtime, every fixed table/mark/kill result,
-source/input/child/container closure and independent categorical review.
-Close as rejected, development-screen result or scoped technical
-input_unavailable, not inferred from exit/preview/missing input. Claude
-challenges leakage/selection/cost before reliance and material interpretation.
-No live/secret/cost/public/major runtime change. Data M/artifacts A/15%D:floor.
-External-only work: fresh focused checks plus exact reattached1311-code
-authority/Ruff/three sample Compose/diff check; tracked/shared control changes
-follow AGENTS.md. Verify, commit/push, refresh exactlyONE material next
-objective and continue without market sleep.
+Frozen consumer/source/rights/intake binding; focused future-mutation and
+identity/cost tests; exact original/paired context coverage counts by split
+and reason, original population/targets unchanged, source/input/child closure
+and independent categorical review. Report scoped input_unavailable if the
+retained data cannot meet the frozen view, never invent training readiness.
+Seen/revised/nonPIT/nominal-availability/block dependence remains explicit.
+No fresh holdout, independent alpha or Paper qualification.
+
+Claude challenges the material temporal join and population interpretation.
+External leaf-only work uses fresh focused checks plus exact reattached1311
+source authority/Ruff/three sample Compose/diff check; tracked/shared runtime
+changes follow AGENTS.md. Verify, commit/push, replace this file with exactly
+ONE material next objective and continue without foreground market waiting.

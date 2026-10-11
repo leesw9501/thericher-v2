@@ -6,24 +6,29 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-111 COMPLETE/rejected3b542a4d.../result734d35d4.../outcome1025fd49... at A/research/
-kis-five-session-path-downside-admission-development-v1. Kernel74fef0ea.../
-release304149d7..., same prior20x5/fixed2% interim loss/p>.5 veto/OPENe+5 exit.
-134complete nonempty dates1340rows821loss519nonloss,1CPU2CUDA GRU16,
-64epochs1344updates0failed/48tables130marks90checks33fail. Logistic6/GRU10115/
-GRU20212 all rejected, no best seed, threshold/refit/weights/holdout rescue.
-10bps logistic DEV+.98245%/later+.46815% is not a passed screen or adoption;
-GRUs negative DEV.35 focused/direct Docker SYN3/source3/actual2; Claude limits.
-112 integration COMPLETE52f20612...;113 selector delivery COMPLETE642a1ee0....
-114 owns one shared linear pairwise preference objective using existing data/
-runtime, no intercept/one CPU fit. Re-retrieved source proposal000377cc... at
-A/research/kis-five-session-optional-fee-accounting-selector-delivery-v1/next-direction-r1/proposal.json
-rejects rank-target novelty; difference-loss intervention is informed by prior
-ordinal/rank studies. Freeze pairs/ties/scaler/splits/costs/kill and custody
-before labels; no fit/GPU appointment allocated yet or111 rescue.
+114 COMPLETE/rejectedc52bc213... at A/research/
+kis-five-session-pairwise-preference-development-v1/integration-evidence.json.
+Kernel866810af.../releaseee867ac7.../sciencea9bd3041.../trial1row740be89f...,
+outcome34a43fb0...; shared linear difference loss C1/no intercept/one CPU fit.
+Original600s run49.7217s,134complete dates34304pairs/rows0ties/n_iter26,
+1CPU0CUDA0failed;30tables130marks30checks21fail.10bps/side modeled growth
+DEV+.68207%/later-.25162%; weaker than analytical control, no model adoption.
+46focused/source4/actual3/typed Docker SYN4; source final-chain SYN remains
+unverified reviewer namespace, Parent actual chain passes. Claude original
+result unsupported preserved; narrow rejection interpretation supported-with-
+limits is NOT model agreement. Seen/nonPIT/revised/raw-action/nominal limits,
+no new rank-target novelty/refit/depth/weights/holdout/Paper change.
+115 prepares paired SPY/QQQ past information, not an architecture-only rescue.
+Own one fixed feature/window/cutoff consumer contract before Data geometry;
+retain G108/G109 admission/targets/costs. No predictive fit/GPU allocation in
+input preparation. Dataset support is evidence, not a permission/profit gate.
 Future107 pending, Paper authority independent of research outcomes.
 
 ## Retained Evidence
+
+111 rejected3b542a4d.../outcome1025fd49... at A/research/
+kis-five-session-path-downside-admission-development-v1;1CPU2CUDA/1340rows,
+64epochs1344updates/90checks33fail, all3 rejected. GPU lease closed/free.
 
 106 COMPLETE/development_screen_passedb00e112b.../resultf08beb14.../outcomef7faa74a...
 at A/research/kis-peer-relative-momentum-entry-development-v1. Same512 seen

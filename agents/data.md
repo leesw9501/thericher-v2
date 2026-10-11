@@ -6,19 +6,21 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-111 CLOSED/rejected3b542a4d.../result734d35d4... at A/research/
-kis-five-session-path-downside-admission-development-v1. Data packet6893b04f.../
-release df48251c...8SYN preserves full prior-ranked10 path support, active-only
-consumer rows and exact rational costs. Parent actual reports134complete
-nonempty dates1340rows/821loss519nonloss, no missing paths; Data did not
-independently reproduce raw labels. No acquisition/PIT/finality/action promotion.
-112 accounting integration COMPLETE52f20612...; no new Data input or claims.
-113 same-task selector delivery COMPLETE642a1ee0...; Data inputs unchanged.
-114 Data owns typed prior-only finite pair sampler, whole-date coverage and
-future-mutation SYN contract using existing512 intake. No acquisition or
-numeric/label inspection before Parent freezes the campaign/source contract.
+114 COMPLETE/rejectedc52bc213... at A/research/
+kis-five-session-pairwise-preference-development-v1/integration-evidence.json.
+Data release9c520e45.../sampler95ca79f7..., worker78f30e8f.../releaseaeec4405....
+Full prior pool/256 hash-selected pairs/whole-date endpoints/exact rational
+ties/date weight1, scaler before coverage; no EVAL labels or replacement.
+Parent source-freeze a9bd3041.../row740be89f... preceded numeric work;
+134complete dates34304pairs/rows0ties/no missing dates. Data did not reproduce
+raw labels independently.46focused/source4/actual3 groups; no acquisition,
+PIT/finality/corporate-action or Paper input promotion.
+115 owns a typed same-cutoff SPY/QQQ past-context view. Reuse G108/G109
+FirstRate intake; Engine freezes one window/consumer before actual coverage.
+Preserve original admission/keys/targets; missing peer is explicit unavailable,
+not future fill or sample deletion. No labels/fits/GPU/acquisition in preparation.
 Existing19owners/107 future coverage/durable cursors and next_due unchanged.
-Recovery: completed source111, preserve exact receipts; current goal alone
+Recovery:114 fit spent/closed; never rerun its creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
 
 ## Retained Evidence

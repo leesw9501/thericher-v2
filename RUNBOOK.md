@@ -38,11 +38,22 @@ PS smoke not_due, not capture/fees/net proof; honest-host readback only.
 Never rerun113 prepare/apply/verify/close exclusive creators or installR1.
 R1 bytes preserved; selected R2 requires both SelectionSha256/ReleaseSha256,
 self/Python hash checks. Future captures retain original G98 claims/reader.
-ONE114 CPU pairwise-preference development; source proposal000377cc... at
-A/research/kis-five-session-optional-fee-accounting-selector-delivery-v1/next-direction-r1/proposal.json.
-Freeze source/sampler/ties/geometry/cost/kill/custody before actual labels;
-one CPU fit600s/0GPU, reuse numerical intake/replay/transport. Not new rank
-target novelty,111 rescue, holdout/fusion/Paper adoption or market wait.
+114 COMPLETE/rejectedc52bc213...:
+D:/thericher-v2/model-artifacts/research/kis-five-session-pairwise-preference-development-v1/integration-evidence.json.
+Sciencea9bd3041.../row740be89f.../outcome34a43fb0...; actuala20bef4a...
+completed49.7217s, host1b0fb14a.../result3aa686a9.../read4df4b519....
+1CPU0CUDA0failed,134dates34304pairs/rows0ties/n_iter26.30tables130marks/
+30checks21fail;46 focused/source4/actual3 plus Docker typed SYN4 groups.
+Final source-chain SYN unverified reviewer namespace; Parent actual chain
+passes. Retain reviewer path/namespace failures, not actual fit failures.
+Claude original result unsupported, separate narrow rejection interpretation
+supported-with-limits, never model agreement. No weights/refit/Paper changes.
+Never rerun114 freeze/prepare/dispatch/read/close exclusive creators or reset
+its original600s clock/debit. Source/child/container closure is honest-host only.
+ONE115 paired SPY/QQQ causal-context preparation; read current goal, not old
+commands. Reuse exact G108/G109 inputs/intake; freeze one prior window and
+consumer before one offline coverage check. Preserve admission/keys/targets.
+No acquisition/KIS/orders/Task/fits/GPU/metrics/new schedule in preparation.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run
@@ -53,7 +64,7 @@ contract/result supported-with-limits. Source489pins and host cleanup checked,
 not independent raw NAV/DD/OS proof. SYN preflight path-key fault retained;
 no actual runtime reset, weights/holdout/refit, Paper or19-owner changes.
 Never rerun110 freeze/bind/prepare/dispatch/read/close exclusive creators.
-ONE111 source preparation: kis-five-session-path-downside-admission-development-v1.
+Historical111 preparation, superseded by the completed closure above:
 Parallel role roots under external Data/Research/Execution artifacts; fixed
 worst five-CLOSE loss veto and existing CPU/GRU recipes, no111 allocation yet.
 Use current NEXT_CODEX_GOAL.md, not old commands. Source-only111 distinction
