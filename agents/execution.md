@@ -50,8 +50,15 @@ prefault2 reproduced;135stock tests/24new plus483serial/fresh full15924pass22ski
 Exact target refs context-independent, compatible default28 stable;
 rounded long legacy SYN refs unchanged/rejected, no silent rebind.
 Independent3groups8576checks/Claude supported-with-limits. No installed
-worker rebind/substitute intent. ONE119 canonical fixedO6 entry/cash parity
-source/SYN preparation only; no actual label/replay/model/order run yet.
+worker rebind/substitute intent.119 COMPLETE/rejectedcc25a3a8...;
+canonical fixedO6 paritya4e63526.../releasef4bf6433... consumes
+original all7 support even cash, frozen masks recost1/3/5/10 unchanged.
+Exact host667cb854.../resulta3383542.../Parentread5f96475f...:32cells12checks,
+4cash-net failures,1CPU/0CUDA/no refit. Independent2 aggregate groups pass;
+own actualb2886e27...2groups/reader35b29e92...3SYN groups pass. Modeled one-share fees/
+net/DD are not broker fees, actual holdings, settled cash or account NAV.
+ONE120 matched input comparison reuses this fee/mark support with40cells/
+12fixed checks; source/SYN package next, no broker authority/sizing change.
 No actual Paper/19owners/shared basis/custody change; actual broker fees/
 settled cash/net remain unobserved by these research jobs.
 

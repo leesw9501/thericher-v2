@@ -29,10 +29,16 @@ container/GPUlease closure attested, GPU free/usable after actual training.
 48cells/12gaps/2987episodes/0fits/GPU/models/weights/holdout/registry spend.
 Oracle not candidate/label/alpha/DD bound. GPU free/usable.118 COMPLETE/
 source-SYN31746925... spends no predictive/GPU/holdout allocation.
-ONE119 fixed-H30 entry-profit veto source/SYN preparation, no allocation
-or actual labels/fits yet. OneCPU/600s/0CUDA proposed; no scientific CUDA need.
-Parent freezes explicit prior-family lineage/custody before one actual fit;
-probability target not expected-net utility or fresh replication.
+119 COMPLETE/rejectedcc25a3a8...; scienceee1869a1.../
+trial1row79cf44be... frozen before labels/fit; original600s native77dfc4eb...
+used17.7943s,1CPU started/completed0failed/0CUDA/epochs/neural updates.
+32cells12checks4fail; source/input/child closed,681967616-byte measured peak.
+No retry/refund/weights/holdout/depth or Paper adoption. Canonical outcome
+6ee2d604... closes the allocation; GPU free/usable, no invented CUDA job.
+Next proposal review is source-only, no scientific or compute allocation yet.
+ONE120 source proposal2be8b5ff... matched raw/relative classifier, CPU2/600s
+proposed,0CUDA/weights/holdout. Raw reconstruction spends a new explicit fit,
+never refunds119; no third fit or result-informed geometry/threshold rescue.
 
 ## Retained Evidence
 

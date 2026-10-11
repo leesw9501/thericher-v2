@@ -87,8 +87,24 @@ Fresh JUnit: D:/thericher-v2/model-artifacts/verification/full8-20261012-g118-v1
 Temporary native-File launcher failures are not authority; successful command
 was existing scripts/run_parallel_tests.ps1 -Workers8 -RequireCleanTempRoot,
 UV_NO_ENV_FILE=1/maxfail1/durations15. Zero-test failed XML retained externally.
-ONE119 fixed-H30 entry-profit veto: role source/SYN preparations, no actual
-labels/fit/allocation yet. Current NEXT alone defines its recipe/budget.
+119 COMPLETE/rejectedcc25a3a8.../outcome6ee2d604.... Family
+firstrate-fixed-h30-entry-profit-veto-development-v1 at external research root.
+Scienceee1869a1.../trial1row79cf44be..., native77dfc4eb...17.7943s/600,
+host667cb854.../resulta3383542.../Parentread5f96475f...;1CPU0CUDA0failed,
+32cells12checks4fail, negative net versus cash3/10 both blocks.24focused pass,
+independent source4/final-host2/actual2; Claude supported-with-limits.
+Never rerun119 freeze.py/actual_run.py --prepare/--execute/actual_read.py
+exclusive creators or reset fit/clock/mask, including completed close.py.
+Own Execution actualb2886e27...2groups/terminal-reader35b29e92...3SYN pass.
+Post-run SYN bytecode20 preserved via exact single-file moves under
+parent/post-run-test-bytecode; no original462 source edited or deleted.
+Use python -B for tests against immutable snapshots. These tests do not fit
+models; legacy failure fixtures/caches remain preserved, not runtime retries.
+ONE120 firstrate-price-scale-invariant-entry-comparison-v1: matched prior-
+relative36x5 features versus119 raw control. Source-only proposal2be8b5ff.../
+Claude contract supported-with-limits. No new scientific allocation or actual
+fit yet; current NEXT alone defines its twoCPU/600s contract. Existing19
+owners/due/107 prospective input unchanged, no manual provider/order run.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

@@ -29,10 +29,17 @@ no unavailable block/paired filter. Native11.1125s/541888512-byte peak/0fits/
 GPU/48cells. Source/input/child honest-host closure, no PIT qualification.
 118 COMPLETE/source-SYN31746925...; shared Decimal repair changes no intake,
 cache/provider/collection scope.483serial/full15924pass22skip/fresh authority.
-ONE119 fixed-H30 entry-profit veto; source assessment35ad4c31... confirms
-retrospective prior-only admission/fixed endpoint feasibility, not PIT.
-Own source/SYN intake reuse package only; original2987 keys/all7marks,
-125/63/63session clusters/effective sample unknown. No labels/intake run yet.
+119 COMPLETE/rejectedcc25a3a8...; source reuse871a051e...
+and original251sessions/3012records/2987admitted retained; TRAIN1488/DEV755/
+later744/all7OPEN support, no missing block or future-qualified deletion.
+TRAIN has124nonempty admitted sessions, distinct from125calendar sessions.
+OneCPU fit does not qualify input/PIT/finality; no independent raw-row replay.
+Host667cb854.../Parentread5f96475f... bind unchanged exact2CSV bytes/source.
+No acquisition, provider, cursor or dataset-promotion change. Source/input/
+child closure honest-host only, not physical decision-time availability.
+ONE120 source-only geometry assessment:36bar completed prior CLOSE anchor
+and within-window volume mean need no extra history. Domain/scale/future
+invariance assessment assigned; no new intake/PIT/label/fit allocation yet.
 Existing19owners/107 future coverage/durable cursors and next_due unchanged.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.

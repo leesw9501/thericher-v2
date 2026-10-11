@@ -38,12 +38,20 @@ not all trading/DL/Paper. Positive ceiling not learnability/DD.12fresh focused/
 source2/actual2/Execution actual2, Claude supported-with-limits. No model/
 registry/Paper promotion.118 COMPLETE/source-SYN31746925..., sourcecfee0f6a...
 repairs precision2 target identity;95new regressions/full15924pass22skip.
-ONE119 fixed-H30 entry-profit veto proposal7299d300...; source/SYN kernel/
-worker preparation only, oneCPU fit proposed/no numerical work or allocation.
-Prior entry-gate ancestry explicit; controlled reexamination, not novelty/
-replication/optimal expected-net threshold. Exit fixedO6; no117oracle label
-or same-scope exit-only architecture/seed rescue. Claude contract supported-
-with-limits; Parent freezes exact science/custody before actual.
+119 COMPLETE/rejectedcc25a3a8.../outcome6ee2d604.... Scienceee1869a1.../
+row79cf44be... preceded oneCPU fit/0CUDA;17.7943s/600/0failed, no weights.
+Kernel6a66744d.../worker53f1c2b.../release5e90ae0a..., Parentread5f96475f....
+TRAIN1488/616positive872negative/124nonempty sessions/165iterations,
+TRAINparticipation223/1488; original755DEV/744later keys and all7marks retained.
+32cells/12checks4fail: fixed/hash loss and DD comparisons pass, cash-net3/10
+fails both blocks. Primary3 net DEV-21.7248/later-18.8004 modeled one-share,
+not positive profit/NAV/Paper. No threshold/seed/architecture rescue or117oracle.
+24focused/source4/final-host2/actual2 groups, Claude contract/result supported-
+with-limits. Controlled reexamination, not novelty or fresh replication.
+Next proposal2be8b5ff... audits existing relative H30 geometry/expected-net
+gates, avoiding a relabeled target switch or architecture retry. ONE120 matched
+raw/relative36x5 Logistic intervention, same target/population/costs. TwoCPU
+proposed, no actual allocation/fit yet; no stationarity/novelty/replication claim.
 Future107 pending, Paper authority independent of research outcomes.
 
 ## Retained Evidence

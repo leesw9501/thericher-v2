@@ -13,18 +13,19 @@ Host child/container/source/GPU lease closure attested; all three rejected.
 116 COMPLETE/rejected47695df6...:2CUDA/16epochs624updates/40cells14checks11fail.
 117 COMPLETE/descriptive11c9bf8e...:48cells/11.1125s/0fits/GPU.
 118 COMPLETE/source-SYN31746925...:95new regressions/483serial/full15924pass22skip.
-ONE119: firstrate-fixed-h30-entry-profit-veto-development-v1.
+119 COMPLETE/rejectedcc25a3a8.../outcome6ee2d604....
+ONE120: firstrate-price-scale-invariant-entry-comparison-v1.
 No company block/foreground market wait; existing19finite owners unchanged.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned |118 closed31746925..., verify/push then freeze119 sources/custody. |
+| Git/integration | Parent / owned |119 closedcc25a3a8...; verify/push docs with exactly one next objective. |
 | Verification | Parent / complete118 |483serial/full15924pass22skip370.89s/6257cf79...source/Ruff/three sample Compose. |
-| Data | Owned119 source/SYN |35ad4c31... feasible retrospective fixed-exit reuse; original keys/support preserved. |
-| Engine | Owned119 source/SYN |7299d300... controlled entry-profit veto reexamination, no numerical run/allocation yet. |
-| Execution | Owned119 source/SYN |Canonical fixed-exit fee/marks/mask recost parity; no broker effects. |
-| Validation | Owned119 source/SYN |118 independently3groups8576checks; challenge new target/control/seen-data limits. |
-| Infra | Owned119 source/SYN |Reuse measured native runtime/600s one-child bound; no actual child or new container yet. |
+| Data |119 actual complete |Original2987admitted/all7support/2CSV pins retained, no PIT promotion. |
+| Engine |120 source package ready |Matched raw/relative36x5 Logistic proposal2be8b5ff...; CPU2 proposed, no allocation yet. |
+| Execution |119 closed |Actualb2886e27...2groups/reader3SYN pass; canonical fixed-exit parity, no broker effects. |
+| Validation |119 review complete |Source4/final-host2/actual2, no raw/PIT/OS proof or tuning. |
+| Infra |119 child closed |Source/input unchanged, child reaped, measured681967616-byte peak; no new runtime/image. |
 | GPU | Steward / free |116 appointment e4bb0c0c... closed after2CUDAfits, no failed fit/refit/weights. |
 | Paper due | Existing owners | Oct12 22:30KST entry, original exits/recovery/shared basis unchanged. |
 | Accounting due | Existing owner | FirstOct13 05:25KST; actual captures unknown. |
@@ -71,5 +72,14 @@ runs concurrently instead of foreground market waiting or redundant fitting.
 reusable authority for unchanged external-only119 work. Failed temporary
 launcher attempts never count; existing direct clean8 helper passes. Next
 entry intervention changes the mandatory-entry premise, not model capacity.
-Role preparations parallel/source-SYN only; freeze119 before labels/fit.
+119 froze sources/custody before one actual native CPU fit;17.7943s/600,
+4cash-net checks fail despite8loss/DDD comparisons passing. No threshold/
+architecture rescue. Twenty Parent SYN-generated post-run bytecode files
+were preserved externally; original462 source bytes/inventory restored.
+Use python -B for source/SYN feedback against immutable research snapshots.
+Reuse118 exact authority for external-only work, not another unrelated CI run.
+120 isolates representation with identical target/model/population instead
+of repeating expected-net gating already present in prior H30 sources.
+Claude contract supported-with-limits, not profitability. Reuse measured119
+native protocol with explicitCPU2 custody; source/SYN first, no new image.
 No CUDA job invented for utilization; existing19external waits stay owned.

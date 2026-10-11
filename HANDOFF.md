@@ -120,13 +120,32 @@ Independent16451e80...3groups8576checks128contexts; Claude supported-with-limits
 Compatible default28 hashes preserved; old >28-digit rounded SYN receipts
 remain unchanged/rejected, no migration/substitute or installed-source rebind.
 Temporary launcher failures are not authority; direct existing helper passes.
-ONE119: firstrate-fixed-h30-entry-profit-veto-development-v1. Source proposal
-7299d300... and Data35ad4c31... support a CPU-only fixed-exit entry test,
-not new-method novelty/replication/expected-net utility. Preparatory role source
-packages active, no actual labels/fit/registry allocation yet. Existing19owners
-unchanged. GPU free; no scientific CUDA need for this single intervention.
+119 COMPLETE/rejectedcc25a3a8... at A/research/
+firstrate-fixed-h30-entry-profit-veto-development-v1/integration-evidence.json.
+Canonical outcome6ee2d604... closes the single spent attempt. Family
+firstrate-fixed-h30-entry-profit-veto-development-v1, scienceee1869a1.../
+trial1row79cf44be.... Exact native77dfc4eb... completed17.7943s/600,
+host667cb854.../resulta3383542.../Parentread5f96475f....1CPU complete0failed,
+0CUDA/weights/holdout; TRAIN1488/616positive872negative/124nonempty sessions,
+165iterations/TRAINkeep223. Original755DEV/744later/all7support retained.
+32cells12checks4fail: loss/DD reduction versus mandatory/hash passes, cash
+net3/10 fails both blocks. No positive net, threshold/model rescue or Paper
+qualification. Independent source4/final-host2/actual2 groups pass; Claude
+contract/result supported-with-limits. Parent24focused pass; negative-test
+exception fixture failure retained, no refit.20post-run SYN-generated pyc
+files preserved externally; all462original bytes unchanged, exact inventory
+restored. Source/input/child closure honest-host only, not raw/PIT/OS proof.
+Execution actualb2886e27... independently verifies2 aggregate groups;
+strict terminal-reader35b29e92... adds3SYN groups. Existing19owners unchanged;
+GPU usable/free, no CUDA need for this experiment.
 Future107 stays pending; contained Decimal/cache-writer repairs remain ready
 alternatives, not current Paper failures or a research permission hold.
+ONE120: firstrate-price-scale-invariant-entry-comparison-v1, source proposal
+2be8b5ff... under119/next-direction-r1; Claude contract supported-with-limits.
+Matched raw/relative36x5 prior geometry, same classifier/target/cost/cutoff,
+two CPU fits proposed. Relative geometry already exists in prior H30 families;
+not new-method novelty/expected-net switch. Scale invariance not stationarity.
+Source-only planning, no120 labels/fits/registry or GPU allocation yet.
 
 ## Retained Preparations And Closures
 
