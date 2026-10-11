@@ -532,68 +532,111 @@ def test_pinned_copy_alias_preserves_original_c_source_identity(chain):
         s.validate_shadow_controls(bad)
 
 
-def test_r3_chain_requires_explicit_caller_frozen_root(chain):
-    _, original, controls, seal, _, _ = chain
-    seal()
-    oldroot = PureWindowsPath(s._ROOT)
-    newroot = oldroot.parent / "delivery-r3"
-
-    def relocate(value):
-        if type(value) is dict:
-            return {relocate(key): relocate(item) for key, item in value.items()}
-        if type(value) is list:
-            return [relocate(item) for item in value]
-        if type(value) is str:
-            p = PureWindowsPath(value)
-            if p.is_absolute() and p.is_relative_to(oldroot):
-                return str(newroot / p.relative_to(oldroot))
-        return value
-
-    job = relocate(json.loads(controls.job_bytes))
+def recovery_chain(chain):
+    """New controls, same exact original opportunity/attempt namespace."""
+    docs, records, controls, seal, read, calls = chain
+    job = deepcopy(docs["job"])
+    oldtemplate = job["engine"]["template_path"]
+    newtemplate = path(s._R3_ROOT, "engine-template.json")
+    job["root"] = s._R3_ROOT
+    job["engine"]["template_path"] = newtemplate
+    job["source_pins"][newtemplate] = job["source_pins"].pop(oldtemplate)
+    job["lineage"] = {
+        "original_root": s._ROOT,
+        "original_job_sha256": s._ORIGINAL_JOB_SHA,
+        "original_installation_plan_sha256": s._ORIGINAL_INSTALLATION_SHA,
+        "attempt_root": path(s._ROOT, "runtime"),
+    }
     jobraw = encode(job)
     newcontrols = replace(
-        controls, job_bytes=jobraw, job_sha=sha(jobraw), expected_delivery_root=str(newroot)
+        controls, job_bytes=jobraw, job_sha=sha(jobraw), expected_delivery_root=s._R3_ROOT
     )
-    records = {relocate(p): encode(relocate(json.loads(raw))) for p, raw in original.items()}
-    claimpath = path(str(newroot), "runtime", "opportunity.claim.json")
-    claim = json.loads(records[claimpath])
-    claim["job_sha256"] = newcontrols.job_sha
-    claimraw = records[claimpath] = encode(claim)
-    out = path(str(newroot), "runtime", "1" * 32)
-    handoffpath = path(out, "data-process", "handoff.json")
-    handoff = json.loads(records[handoffpath])
-    handoff.update(
-        job_sha256=newcontrols.job_sha, source_pins_sha256=sha(encode(job["source_pins"]))
-    )
-    records[handoffpath] = encode(handoff)
-    terminalpath = path(out, "receipt.json")
-    terminal = json.loads(records[terminalpath])
-    terminal.update(job_sha256=newcontrols.job_sha, claim_sha256=sha(claimraw))
-    records[terminalpath] = encode(terminal)
-    calls = []
+    docs["job"] = job
+    for name in ("claim", "terminal", "handoff"):
+        docs[name]["job_sha256"] = newcontrols.job_sha
+    for name in ("claim", "terminal"):
+        docs[name]["original_job_sha256"] = s._ORIGINAL_JOB_SHA
+    docs["handoff"]["source_pins_sha256"] = sha(encode(job["source_pins"]))
+    return docs, records, newcontrols, seal, read, calls
 
-    def read(p, cap):
-        calls.append(p)
-        assert not PureWindowsPath(p).is_relative_to(oldroot)
-        raw = records[p]
-        assert p.endswith(".json") and len(raw) <= cap
-        return raw
 
-    observed = datetime(2026, 10, 16, 21, 21, tzinfo=UTC)
+@pytest.fixture
+def r3_chain(chain):
+    return recovery_chain(chain)
+
+
+def test_r3_chain_requires_explicit_caller_frozen_root(r3_chain):
+    _, _, controls, seal, read, calls = r3_chain
+    claimraw = seal()
     with pytest.raises(s.ShadowLinkError, match="job_scope"):
         s.verify_shadow_link(
             claimraw,
-            controls=replace(newcontrols, expected_delivery_root=s._ROOT),
+            controls=replace(controls, expected_delivery_root=s._ROOT),
             read_metadata=read,
-            observed_at=observed,
+            observed_at=datetime(2026, 10, 16, 21, 21, tzinfo=UTC),
         )
     assert calls == []
-    fact = s.verify_shadow_link(
-        claimraw, controls=newcontrols, read_metadata=read, observed_at=observed
-    )
-    assert fact.job_sha == newcontrols.job_sha
-    assert fact.expected_engine_links()["result_sha256"] == fact.engine_result_sha
+    fact = bind(r3_chain)
+    assert fact.job_sha == controls.job_sha
     assert len(fact.expected_engine_links()) == 15
+    assert fact.expected_engine_links()["result_sha256"] == fact.engine_result_sha
+    runtime = PureWindowsPath(path(s._ROOT, "runtime"))
+    assert any(PureWindowsPath(p).is_relative_to(runtime) for p in calls)
+    assert not any(PureWindowsPath(p).is_relative_to(PureWindowsPath(s._R3_ROOT)) for p in calls)
+    assert dict(s.validate_shadow_controls(controls))["expected_attempt_root"] == str(runtime)
+
+
+@pytest.mark.parametrize(
+    "change",
+    ["missing", "extra", "oldroot", "oldjob", "oldplan", "attempt", "traversal", "source"],
+)
+def test_r3_control_lineage_kills_before_metadata_callback(r3_chain, change):
+    docs, _, controls, _, _, calls = r3_chain
+    job = deepcopy(docs["job"])
+    lineage = job["lineage"]
+    if change == "missing":
+        job.pop("lineage")
+    elif change == "extra":
+        lineage["latest"] = True
+    elif change == "oldroot":
+        lineage["original_root"] = s._R3_ROOT
+    elif change == "oldjob":
+        lineage["original_job_sha256"] = P
+    elif change == "oldplan":
+        lineage["original_installation_plan_sha256"] = P
+    elif change == "attempt":
+        lineage["attempt_root"] = path(s._R3_ROOT, "runtime")
+    elif change == "traversal":
+        lineage["attempt_root"] = s._ROOT + "/../delivery-r2/runtime"
+    else:
+        host = next(iter(json.loads(controls.data_plan_bytes)["source_pins"]))
+        job["source_pins"][host] = "sha256:" + "b" * 64
+    raw = encode(job)
+    with pytest.raises(s.ShadowLinkError):
+        s.validate_shadow_controls(replace(controls, job_bytes=raw, job_sha=sha(raw)))
+    assert calls == []
+
+
+@pytest.mark.parametrize("record", ["claim", "terminal"])
+@pytest.mark.parametrize("change", ["missing", "wrong", "extra"])
+def test_r3_claim_terminal_original_job_binding(r3_chain, record, change):
+    value = r3_chain[0][record]
+    if change == "missing":
+        value.pop("original_job_sha256")
+    elif change == "wrong":
+        value["original_job_sha256"] = P
+    else:
+        value["original_root"] = s._ROOT
+    with pytest.raises(s.ShadowLinkError):
+        bind(r3_chain)
+
+
+def test_r3_source_root_cannot_replace_original_attempt_root(r3_chain):
+    claim = r3_chain[0]["claim"]
+    claim["output_root"] = path(s._R3_ROOT, "runtime", claim["invocation_id"])
+    claim["terminal_receipt_path"] = path(claim["output_root"], "receipt.json")
+    with pytest.raises(s.ShadowLinkError, match="claim_binding"):
+        bind(r3_chain)
 
 
 @pytest.mark.parametrize(

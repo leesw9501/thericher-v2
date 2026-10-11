@@ -6,46 +6,28 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 
 ## Current Package
 
-Goal93 prospective512 shadow DELIVERY COMPLETE d90a07e0...; no order/account/bank
-call during preparation. One future shadow task Ready Oct16 21:15UTC,
-job e8550670.../DeliveryR2edee6d64..., no order consumer or manual start. Execution parity root:
-A/execution/kis-stock-five-session-prospective512-shadow-parity-v1.
-Original replay-parity-receipt56820b9a... retains26pass2fail: ambient Decimalprec2
-changes proposal receipt replay to safe no_intent; default28/80 pass, no overbuy.
-Caller-context supplement81f659cc.../12pass fixes only local64/FLOOR usage;
-global contracts74d1e9b9... and installed task sources stay unchanged.
-Original failing evidence is not relabelled repaired or passing authority.
+Goal95 recovery COMPLETE659a71d4... at A/execution/
+kis-five-session-future-delivery-compatibility-recovery-v1/integration-evidence.json.
+Goal90/source-catalog-recovery-r3/release810db495... binds native/fresh child
+to SAME original455/catalog2802b79c...; original job50748886.../471pins,
+claims/private volume/basis/windows retained.32 source tests/independent6 pass.
+Source-only Linux probe455 passes; worker main/private bank never invoked.
+Parent rollback tracks attempted Set before invocation; independent8 mocked
+tests cover apply-then-throw, both attempted actions and foreign/running owners.
+Two existing Actions recovered/read back04:29:06UTC; non-Action hashes/due
+unchanged, no manual task/provider/account/order/private-state call.
+116 focused; final1303source d77a3b28.../JUnitde8aacf5...,
+15709pass22skip clean8/390.41s; Ruff/three sample Compose pass.
+Original failed evidence and installed source versions remain immutable.
+Future captures/inference/fills/owned-flat/fee/settlement/net unknown.
 
-Independent Engine v1 reviewa22b1b49... retained6pass2fail: post-audit expiry/
-fsync publication defects. Immutable engine-r2 fixes only final checks/staged
-exclusive publication. Independent5passb9a1ed7d... at A/research/
-kis-stock-five-session-prospective512-shadow-delivery-v1/
-independent-engine-review-r2/review-receipt.json. Inference1 retained/DTO withheld
-on failure; no model/private runtime/OS/finality/Paper readiness claim.
-Parent pinned d6 R2 source/SYN35pass; integrated final source/SYN123pass.
-Next source-only feasibilitycd9d2ed3... under parityroot/next-proposal:
-second same-instrument cohort needs versioned custody history, not deletion
-of prior plans or a blanket approval/profitability gate. No implementation/
-fresh bank observation or future input inferred from this proposal.
-Goal94 source preparation COMPLETE d6e4bec7....
-Execution owns narrow pure second-cohort history planning/typed closure tests.
-New lazy leaf source/tests in Git; old installed app/entrypoint/core bytes and
-private bank schema stay unchanged. Unknown prior exact custody defers only
-its own successor, not independent Paper. No API/scheduler in preparation.
-Goal94 source-releasefab08013.../sourced18a6bb0.../testsbf1d657e...,35 SYN pass;
-two closed same-instrument cohorts and exact restart preserve all old plans,
-original basis/gross cash losses/reservations. Full-book replay is never sliced
-to current cadence. Closure uses existing current read contract, no new timer.
-Parent95serial pass; independent Execution8 unchanged-source carry after fresh
-Engine12/Data-native5 sourceR2 checks. Final15688pass22skip/378.83s,
-1303source105799af.../JUnit6d23a341..., Ruff/three sample Compose pass.
-Infra source-only compatibility e4509ae3... found Goal90 bridge rejects added
-liveRepo files despite unchanged original455. Exact old455 snapshot matches;
-feasibilityf2cb0e35... is not recovery deployment or actual accounting failure.
-Next direction: narrow same-catalog native/child binding, original job/claims/
-five windows/basis/private volume retained; no broader schedule or order scope.
-ONE objective kis-five-session-future-delivery-compatibility-recovery-v1;
-Execution owns this immutable accounting containment, not a new order session.
+ONE objective kis-five-session-history-aware-paper-runtime-v1.
+Execution owns runnable successor and private durable history: planned seed/
+history before reservation, matching custody before effects, exact restart,
+whole-book basis/losses/reservations and owned-only fifth-session EXIT.
+Use real canonical reserve/reconcile APIs with injected SYN native services,
+no actual private bank/API/task access in this implementation.
+Original G83/b860 owners and accounting five windows remain unchanged.
 
 ## Owned Paper Opportunities
 

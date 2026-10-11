@@ -2,72 +2,67 @@
 
 ## Objective
 
-Complete kis-five-session-future-delivery-compatibility-recovery-v1: restore the
-already-owned finite shadow and accounting delivery contracts before their
-first useful opportunities. This advances repeatable Paper/PnL observation,
-not a new strategy, permission gate, scheduler platform or runtime replacement.
+Complete kis-five-session-history-aware-paper-runtime-v1: implement a runnable
+successor dispatcher that consumes the frozen shadow decision and reuses
+canonical Paper reservation, reconciliation and fifth-session EXIT. Retain
+previous cohorts and the entire original shared budget book across restarts.
+This advances repeatable Paper trading, not another model screen, custody
+report, approval gate or scheduler platform.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal94 pure successor/strict-chain preparation COMPLETE d6e4bec7... at
-A/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.
-95 serial/17 fresh independent+8 exact-source carries; final1303 source105799af...,
-clean8 15688pass22skip/378.83s, Ruff and three sample Compose pass.
-Source contracts are not deployed successor/runtime or observed profit.
+Goal95 recovery COMPLETE659a71d4... at A/execution/
+kis-five-session-future-delivery-compatibility-recovery-v1/integration-evidence.json.
+Two existing Actions recovered/read back; schedules/settings unchanged.
+1303source d77a3b28..., fresh clean8 15709pass22skip/390.41s,
+116 focused pass, Ruff/three sample Compose pass. Future runtime is unknown.
+Claude next-direction supported-with-limits c3f733db... under Goal95
+parent/claude-next-direction; not execution proof or authority.
 
-## Exact Faults And Parallel Owners
+## Parallel Packages
 
-Execution first contains Goal90's liveRepo-source enumeration to the SAME455
-frozen catalog2802b79c..., using the retained G93 exact snapshot. See Goal94
-infra-compatibility/validation-receipt.json e4509ae3... and
-recovery-feasibility.json f2cb0e35.... Prepare a separately versioned native
-AND newly imported child binding; preserve original job50748886...,471pins,
-slot claims/output root/cohort387ee5f6/private volume/shared10%basis, five
-Oct12..16 20:25..35UTC windows,60s/two-page Data scope, image/network/RO mounts,
-timeouts and exact reaping. No global REPO/venv rewrite or relaxed catalog.
+Execution owns the history-aware dispatcher and private durable history store.
+Reuse Goal94 successor leaf d18a6bb0... and pinned native adapter APIs.
+Persist exact proposed seed/history before reservation, verify matching durable
+custody before execution, and recover the same identity after a crash. Use the
+whole original binding for cash, losses, reservations and owner proof. A cohort
+segment controls quantity/pending/cadence only; never slice the budget book.
+Retained requests reconcile without needing fresh Research input again.
+Days1-4 HOLD; fifth close-minus-ten-minutes EXIT, original TTL and owned-only
+SELL remain. No same-symbol foreign lot adoption or historical plan deletion.
 
-Engine Research fixes Goal93's actual frozen template expiry22:30+09 (OPEN)
-to UTC13:40 (OPEN+10m), and worker source_chunks dict guard to ordered512 list.
-Separate immutable engine-r3 source/tests/release; preserve R2 failures.
-Use actual pinned Data metadata in source/SYN compatibility tests, not only
-handmade UTC/dict fixtures. All26 Data calendar clocks are already UTC; do not
-regenerate calendar or change Data plan37b8ba01.../identities/teacher/selection.
-If strict consumer needs R3 source identity, add only an explicit independently
-caller-frozen worker binding with focused tests, never arbitrary-source bypass.
-No model load/fit/GPU/holdout/public asset or inference during preparation.
+Engine Research/Data own a small offline loader: caller-frozen R3
+controls90131beb.../templatee85e2a81... -> exact original R2 claim namespace ->
+Data fifteen-field chain -> schema1 decision with explicit worker9846b862...
+-> native cohort. Missing input yields only that opportunity's no-intent;
+never substitute another winner, model, snapshot or latest-file result.
+Recovery loads retained cohort/history before considering this input.
 
-Invoked Infra owns shadow delivery-r3/source/transport/control integration.
-Reuse same exact455 snapshot, fixed d6 image,22RO+1ownRW transport and original
-finite Friday Oct16 21:15..45UTC window/Data cutoff21:35; no additional trigger,
-scope, substitute opportunity or model/data rerun. Preserve source/job/attempt
-lineage and claimed identities; an existing active/claimed run cannot be reset.
-
-Data independently preflights supplied exact R3 controls and producer-shaped
-metadata, including hashes/UTC clocks/list membership, C:/source identities
-versus copied D:/aliases, and the exact15-field chain to typed decision/native
-cohort. Metadata links are not raw packed rehash, finality/PIT or OS proof.
-Temporary Validation falsifies frozen native/child and cross-lane contracts.
-Parent alone owns shared contracts, integration/Git and deployment.
+Invoked Infra checks source/adapter/runtime compatibility; temporary Validation
+attacks frozen full-book, restart and exact-input behavior.
+Parent owns shared contracts, integration, Git and later deployment direction.
+Keep reusable code/tests in Git and generated evidence outside Git.
 
 ## Completion And Scope
 
-Before deployment, source/mock tests must kill bad expiry, dict/list/key order,
-wrong pin, added/changed/link source, missing fresh-child rebind, wrong mount/
-RW/command and duplicate original slot claim. Scheduler tests fully mock every
-entry point with module auto-loading disabled. Preserve original failed receipts.
-Only after exact source/CPU prerequisite evidence, update the TWO already-owned
-task actions to versioned recovery and read back exact existing trigger/settings;
-no manual task, collector, broker/order/account/provider invocation or new worker.
-An isolated network-disabled source/SYN CPU prerequisite is permitted, no
-private bank/credentials/model/raw market mounts. Installation is delivery
-readiness only, not future input, inference, fill, flatness, fee/net or profit.
+Deliver executable code wired to existing native service interfaces, not just
+proposed signatures. Test two closed same-symbol cohorts then a third restart;
+unknown prior BUY, partial EXIT, omitted/reordered history, crash before/after
+reservation and submission, prior losses/other reservations, foreign quantity,
+missing fresh input during exact recovery and owned residual EXIT.
+Strongest kill: no duplicate BUY from unknown custody; after closure/restart,
+the exact retained seed, original basis and all prior obligations remain.
+Use real canonical reserve/reconcile code with injected SYN services and
+isolated private-shaped test storage. No credentials/raw market/private bank
+read, model load/fit/GPU, actual broker/account/order/provider call or schedule
+change during this implementation. Existing G83/b860/ab65/G95 owners unchanged.
+Runtime implementation is not actual submission/fill/flatness/fee/net proof.
 
-Ask Claude before relying on material runtime/recovery changes; current scoped
-direction supported-with-limits ceb299d8... in Goal94 parent/claude-runtime-recovery.
-Paper authority remains standing; no operator hold for this private no-cost
-recovery. Never read/route KIS_LIVE_*, pay, expose publicly or replace runtime.
-Keep artifacts A/market M/D:15% floor; unrelated G83/b860/ab65 owners unchanged.
+Standing Paper authority remains; never read/route KIS_LIVE_*, pay, expose
+publicly, accept unclear rights or replace runtime. Artifacts A/data M,
+D:15% floor. Challenge material recovery changes with Claude; review failure
+does not stop independent ready work or create an operator approval gate.
 
-Focused changed-path serial and fresh/exact-source repository authority per
-AGENTS.md, Ruff and three sample Compose. Finish independent corrections before
-full authority dispatch to avoid unnecessary repeats. Refresh concise projections,
-commit/push, replace this file with exactly ONE material objective and continue.
+Focused changed-path tests first, independent corrections before authority;
+use AGENTS.md company-boundary verification, Ruff and three sample Compose.
+Refresh projections, commit/push, choose exactly ONE material deployment or
+engine objective next and continue without foreground market waiting.

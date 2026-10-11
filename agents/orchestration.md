@@ -6,46 +6,39 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-Goal93 shadow DELIVERY COMPLETE d90a07e0.../installed Ready. Future runtime
-unknown. Goal94 source preparation COMPLETE d6e4bec7....
-ONE objective kis-five-session-future-delivery-compatibility-recovery-v1.
-No company block, market wait or approval hold.
+Goal95 recovery COMPLETE659a71d4...; two existing Actions recovered/read back,
+all non-Action hashes/due unchanged. Future runtime remains unknown.
+ONE objective kis-five-session-history-aware-paper-runtime-v1.
+No company block, market wait or operator approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned | G94 close/next95; sole Git owner. Existing installed bytes unchanged. |
-| Verification | Parent / complete94 | Final95serial/15688pass22skip clean8,1303source105799af.../JUnit6d23a341...; Ruff/three Compose pass. Original failed source evidence retained. |
-| Data | Plato / ready95 | Strict15field31 SYN source frozen; preflight R3 producer/control after handoff; originalba4a14ef... P2s retained. |
-| Engine | Chandrasekhar / ready95 | Exact schema1 repair complete; next immutable R3 UTCexpiry/list and source-binding correction, no model/GPU. |
-| Execution | Herschel / ready95 | Full-book successor35 SYN done; next accounting SAME455 snapshot native/child binding, original claims/basis retained. |
-| Validation | Leibniz / complete94 | R2aggregatea35b9cfb...17fresh+8carry; original24pass1fail unchanged. Invoke for frozen95 cases. |
-| Infra | Socrates / ready95 | Shadow R3 transport/control; no new runtime/platform or schedule scope. |
-| GPU | Steward / free | Ready/usable, no permission/environment hold. No new predictive campaign allocated by utilization. |
-| Shadow due | Goal93 finite task | Oct16 21:15..45UTC, Data cutoff21:35; one trigger, no manual run/order consumer. |
-| Paper due | Existing finite owners | b860 and387ee5f6 entryOct12 22:30KST/fifthEXITOct17 04:50 unchanged; not submit/fill. |
-| Accounting due | Goal90 finite task | Five finite dates, firstOct13 05:25KST; future captures unknown. |
+| Git/integration | Parent / owned | Sole Git owner; close95 then dispatch96 disjoint runtime/loader. |
+| Verification | Parent / complete95 | 116 focused; final1303source d77a3b28.../JUnitde8aacf5...; clean8 15709pass22skip/390.41s, helper0/temp cleaned; Ruff/three Compose pass. |
+| Data/Engine input | Chandrasekhar / ready96 | Exact frozen R3 chain to typed native cohort; no fresh model/data acquisition. |
+| Execution | Herschel / ready96 | Runnable full-book successor and private restart history; canonical adapters, no actual bank/order invocation. |
+| Validation | Invoked after freeze | Independent bounded runtime/loader attacks; no durable review queue. |
+| Infra | Invoked as needed | Native source/runtime compatibility only; no platform or schedule expansion. |
+| GPU | Steward / free | Usable, no environment/permission hold; no eligible new campaign allocated for utilization. |
+| Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, no order consumer/manual run. |
+| Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |
+| Accounting due | Goal95 recovery Action | Five finite dates, firstOct13 05:25KST; original job/claims, future captures unknown. |
 | Data due | Existing ab65 owner | 42-peer endpoints Oct12/19 21:40UTC unchanged; not broad512 or foreground wait. |
+
+Exact action receipt: A/execution/
+kis-five-session-future-delivery-compatibility-recovery-v1/parent/action-change-receipt.json.
+Both Ready, no provider/account/order/private-state call or task invocation.
+Original source failures retained, not relabelled passing authority.
 
 ## Bottleneck And Reversible Improvement
 
-Prospective512 delivery is installed, not yet observed. Source-only feasibility
-cd9d2ed3... found current first-historical-request custody prevents a second
-same-instrument five-session cohort even after exact closure.
-Dispatch one narrow successor-history and strict receipt/DTO binding instead
-of another seen-panel parameter rescue or waiting for Friday.
-Current improvement: keep reusable new leaf source/tests in Git without
-mutating installed source versions. Finish independent corrections before
-dispatching full repository authority; frozen-source review overlapped the
-first full run and found an uncovered schema case, requiring a new final run.
-This is test scheduling, not a new Paper/model/operator gate.
-Goal90's whole live-source catalog additionally rejects new source files even
-when all original455 bytes match. This is a measured source-compatibility P2,
-not observed broker failure or a company block. G83/ab65/G93 frozen copies
-remain compatible. Prepare narrow immutable-source containment; do not relax
-the catalog, invoke the task or infer future accounting success.
-Actual Goal93R2 template expires at OPEN instead of OPEN+10m and uses non-UTC;
-R2 worker also demands dict where the Data producer supplies ordered512 list.
-These are source-proven future incompatibilities, not observed runtime failure.
-Next direction: one finite future-delivery recovery with disjoint shadow
-control/consumer and accounting frozen-source fixes. Original sources/results
-remain immutable; no new schedule scope or model selection.
+Single-cohort G83 custody selects the first stock request and cannot repeat a
+same-instrument cohort despite closed history. Goal94 pure successor contracts
+exist; next connect them to runnable reservation/recovery rather than another
+seen-panel architecture rescue or foreground wait for Friday.
+Current improvement: finish independent source corrections before full authority
+and split an oversized cross-lane review into bounded disjoint peer packages.
+Goal95 fresh independent Data/Infra8, Engine10, accounting6, actions8 passed;
+no extra review role, report family or approval gate was introduced.
+Whole-book obligations remain; segment selection is cadence only. Runtime
+readiness is not actual inference/fill/net and does not override existing owners.

@@ -22,6 +22,7 @@ if TYPE_CHECKING:
 
 _PIN = re.compile(r"sha256:[0-9a-f]{64}", re.ASCII)
 _IDENTITY = "sha256:533d35e49da24aa81255e7e540d7ddae216e5b7177a45cf3f7cd01252f4bfe09"
+_WORKER_R3 = "sha256:9846b862c878fbe68f5c5a38205db2aef0a774bec50b2b69680d6a9706c6bd97"
 _FIXED_LINKS = {
     "worker_sha256": "sha256:a8dcd255b1d469c2de8e49b08105e30f2540ca2786a380d751fcabbd33615a5b",
     "input_plan_sha256": "sha256:37b8ba01b35b6f165d680b0c629adaceef604e4f68a5529c8b676bbf57fc4085",
@@ -183,6 +184,7 @@ def restore_prospective_shadow_decision(
     session_closes: tuple[datetime, ...],
     entry_valid_until: datetime,
     as_of: datetime,
+    expected_worker_sha256: str = _FIXED_LINKS["worker_sha256"],
 ) -> ProspectiveShadowDecisionBinding:
     """Restore exact caller-bound evidence without I/O, inference or scaling.
 
@@ -190,6 +192,8 @@ def restore_prospective_shadow_decision(
     strings. The caller independently binds the full chain and source-map digest.
     This checks its finite projection, not physical capture/provider finality.
     Research ``decision.cohort_ref`` is ref:, never the native sha256 fingerprint.
+    R3 requires an explicit independently frozen caller pin; omitted means R2.
+    Only these two released worker byte identities are accepted.
     """
     _utc(as_of)
     if raw is None:
@@ -205,7 +209,13 @@ def restore_prospective_shadow_decision(
                 _require(type(value) is str and bool(_PIN.fullmatch(value)), "shadow_expected_pin")
         _require(_sha(raw) == expected_links["result_sha256"], "shadow_result_hash")
         _require(
-            all(expected_links[k] == v for k, v in _FIXED_LINKS.items()), "shadow_fixed_source"
+            type(expected_worker_sha256) is str
+            and expected_worker_sha256 in (_FIXED_LINKS["worker_sha256"], _WORKER_R3)
+            and expected_links["worker_sha256"] == expected_worker_sha256
+            and all(
+                expected_links[k] == v for k, v in _FIXED_LINKS.items() if k != "worker_sha256"
+            ),
+            "shadow_fixed_source",
         )
         r = json.loads(
             raw,

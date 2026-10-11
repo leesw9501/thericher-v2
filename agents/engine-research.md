@@ -6,48 +6,23 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-Goal93 kis-stock-five-session-prospective512-shadow-delivery-v1 DELIVERY COMPLETE
-d90a07e0... in ROOT/integration-evidence.json.
-Unchanged own teacher ca6b36d1.../metadata2ce286ee.../SDK2f64a238....
-One CPU inference,fit0/GPU0/holdout0; same20x5 kernel/first positive original
-ranked-ten slot, including added identities, never coverage-driven replacement.
-Finite DTO exposure .10*w_first/(1+.0005*sum_all_weights), not double10%.
-Friday actual inference/capture and Monday08:30NY nominal decision are distinct.
-No score/price/weight dump, order consumer, model selection or Paper adoption.
-
+Goal95 recovery COMPLETE659a71d4...; two existing Actions recovered/read back.
 ROOT=A/research/kis-stock-five-session-prospective512-shadow-delivery-v1.
-Original Engine release be5680ff.../worker7c830aaf.../interfacebd30d589....
-25 native and25 pinned d6 CPU source/SYN tests pass; real teacher was not loaded.
-Parent exact CPU receipt ROOT/parent/cpu-prerequisite/
-cpu-486ba758840e48cca243fa71ac1f39e1/receipt.json 10ee001c....
-Independent review ROOT/independent-engine-review/review-receipt.json
-a22b1b49... retained6pass2fail: expiry crossed during final audit still prepared;
-failed fsync left success-shaped canonical bytes. No actual future failure inferred.
-Immutable engine-r2 release05e94736.../workera8dcd255... fixes those two P2s.
-35 native and35 pinned d6 source/SYN tests pass; independent5passb9a1ed7d....
-Parent R2 CPU receipt8f02779b... in parent/cpu-prerequisite-r2/
-cpu-e9afa22fae66455ea57b2f39ac316399. Final integrated123 pass22.22s.
-Original source/failure evidence unchanged; not a real teacher inference.
-Task thericher-shadow512-20261019-delivery installed Ready Oct16 21:15UTC,
-job e8550670.../DeliveryR2edee6d64...; no manual run or order consumer.
-Delivery readiness does not establish future input/inference/profit.
-Goal94 successor/strict-binding source preparation COMPLETE d6e4bec7....
-Engine owns strict finite shadow-envelope-to-typed-decision source/SYN binding,
-no model loading/fit/GPU/score dump. New lazy leaf source/tests in Git;
-no change to installed entrypoints/core bytes or global Decimal contract.
-Goal94 original schema2 acceptance failed independent1of25, retained1a118914....
-Narrow R2 source2cadd19e.../tests5f1d369c... enforces schema1,29 focused pass;
-release576962af... under A/research/kis-five-session-successor-custody-preparation-v1/
-engine-r2. Fresh independent Engine12/Data-native bridge5 pass, Execution8carry.
-Final95 changed-path pass; clean8 15688pass22skip/378.83s on1303sources105799af...;
-JUnit6d23a341..., Ruff/three sample Compose pass.
-Actual installed Goal93R2 template expiry is OPEN/non-UTC, not UTCOPEN+10m;
-its worker source_chunks dict guard contradicts Data ordered512 list.
-Next source-bound recovery must test actual pinned controls/Data-shaped SYN
-before versioned deployment. No model result/adoption inferred from installation.
-ONE objective kis-five-session-future-delivery-compatibility-recovery-v1:
-Engine owns minimal immutable engine-r3 expiry/list correction and exact source
-consumer identity if needed; no model load/fit/GPU/weights or teacher change.
+EngineR3 release05e376cb.../worker9846b862.../templatee85e2a81... fixes
+UTC13:40 OPEN+10m and producer ordered512 list. Teacher ca6b36d1...,
+metadata2ce286ee...,SDK2f64a238..., kernel/selection/exposure/schema1 unchanged.
+Leaf8691f404.../tests7f3db8e1... explicitly caller-freezes R3 worker; defaultR2,
+arbitrary incoming source rejected. Independent10 mutation groups pass.
+Pinned d6 source/SYN60pass14.112s; receipt65daa2ed... in Goal95 parent/
+cpu-prerequisite, no model/market/private mount or actual inference.
+Final1303source d77a3b28.../JUnitde8aacf5...,15709pass22skip clean8/390.41s.
+Original failed sources/receipts retained, not relabelled runtime success.
+
+ONE objective kis-five-session-history-aware-paper-runtime-v1.
+Engine/Data own strict offline loader: exact R3 chain -> unchanged schema1
+decision -> native cohort. No new numeric campaign, model load, fit, GPU,
+weights or holdout. Future actual inference remains unknown; Execution owns
+history and effects. Existing research conclusions/queues below remain scoped.
 
 ## Recent Research Conclusions
 

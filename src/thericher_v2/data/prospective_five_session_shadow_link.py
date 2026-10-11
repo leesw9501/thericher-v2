@@ -1,4 +1,4 @@
-"""Pure Goal93R2 metadata custody, not acquisition, inference or Paper authority.
+"""Pure Goal93R2/R3 metadata custody, not acquisition, inference or Paper authority.
 
 ``verify_shadow_link(claim_bytes, *, controls, read_metadata, observed_at)``
 returns immutable hashes/clocks. ``expected_engine_links()`` supplies Engine's
@@ -26,6 +26,11 @@ _GOAL = "kis-stock-five-session-prospective512-shadow-delivery-v1"
 _A = "D:/thericher-v2/model-artifacts"
 _DATA = f"{_A}/data/{_GOAL}"
 _ROOT = f"{_A}/research/{_GOAL}/delivery-r2"
+_R3_ROOT = f"{_A}/research/{_GOAL}/delivery-r3"
+_ORIGINAL_JOB_SHA = "sha256:e8550670d5b18a9bbf81600cb9d399e591e73300e95d9bbf996de5f73837be0a"
+_ORIGINAL_INSTALLATION_SHA = (
+    "sha256:d321f6211d68afb73d4e6555fc2f33c7b660e35dbca2cad01eb76714873e16df"
+)
 _CACHE = (
     "D:/market_data/us_equities/kis_paper_private/stock-five-session-shadow512/v1/shadow-20261019"
 )
@@ -220,6 +225,19 @@ def _validate_controls(controls):
         and job["existing_opportunities_changed"] is False,
         "job_scope",
     )
+    attempt_root = _join(_ROOT, "runtime")
+    if _same(root, _R3_ROOT):
+        lineage = _fields(
+            job.get("lineage"),
+            "original_root original_job_sha256 original_installation_plan_sha256 attempt_root",
+        )
+        _require(
+            _same(lineage["original_root"], _ROOT)
+            and lineage["original_job_sha256"] == _ORIGINAL_JOB_SHA
+            and lineage["original_installation_plan_sha256"] == _ORIGINAL_INSTALLATION_SHA
+            and _same(lineage["attempt_root"], attempt_root),
+            "delivery_lineage_binding",
+        )
     source = _pins(job["source_pins"])
     _require(
         source.get(_join(_DATA, "plan.json").casefold()) == controls.data_plan_sha
@@ -278,19 +296,20 @@ def _validate_controls(controls):
         _clock(template["entry_valid_until"]) == _clock("2026-10-19T13:40:00+00:00"),
         "engine_entry_clock",
     )
-    return job, data, template, source, metadata, keys
+    return job, data, template, source, metadata, keys, attempt_root
 
 
 def validate_shadow_controls(controls: ShadowControls) -> tuple[tuple[str, object], ...]:
     """Pure pinned-control preflight; no callback, claim or source-file reads."""
     try:
-        job, data, template, source, _, _ = _validate_controls(controls)
+        job, data, template, source, _, _, attempt_root = _validate_controls(controls)
         return (
             ("job_sha", controls.job_sha),
             ("data_plan_sha", controls.data_plan_sha),
             ("engine_template_sha", controls.engine_template_sha),
             ("source_count", len(source)),
             ("expected_delivery_root", _path(controls.expected_delivery_root)),
+            ("expected_attempt_root", attempt_root),
         )
     except ShadowLinkError:
         raise
@@ -303,8 +322,9 @@ def _verify(claim_bytes, controls, read_metadata, observed_at):
     _require(
         type(observed_at) is datetime and observed_at.utcoffset() == timedelta(0), "clock_invalid"
     )
-    job, data, template, source, metadata, keys = _validate_controls(controls)
+    job, data, template, source, metadata, keys, attempt_root = _validate_controls(controls)
     root = _path(controls.expected_delivery_root)
+    lineage_fields = " original_job_sha256" if _same(root, _R3_ROOT) else ""
     records = {}
 
     def read(path, wanted=None, cap=4 * 1024**2):
@@ -321,32 +341,35 @@ def _verify(claim_bytes, controls, read_metadata, observed_at):
 
     claim = _fields(
         _document(claim_bytes),
-        "job_sha256 started_at_utc invocation_id output_root terminal_receipt_path",
+        "job_sha256 started_at_utc invocation_id output_root terminal_receipt_path"
+        + lineage_fields,
     )
     invocation = claim["invocation_id"]
     _require(type(invocation) is str and bool(_ID.fullmatch(invocation)), "invocation_invalid")
-    output = _join(root, "runtime", invocation)
+    output = _join(attempt_root, invocation)
     _require(
         claim["job_sha256"] == controls.job_sha
         and _same(claim["output_root"], output)
-        and _same(claim["terminal_receipt_path"], _join(output, "receipt.json")),
+        and _same(claim["terminal_receipt_path"], _join(output, "receipt.json"))
+        and (not lineage_fields or claim["original_job_sha256"] == _ORIGINAL_JOB_SHA),
         "claim_binding",
     )
     _require(
-        read_metadata(_join(root, "runtime", "opportunity.claim.json"), 65536) == claim_bytes,
+        read_metadata(_join(attempt_root, "opportunity.claim.json"), 65536) == claim_bytes,
         "claim_readback",
     )
-    records[_join(root, "runtime", "opportunity.claim.json")] = (claim_bytes, 65536)
+    records[_join(attempt_root, "opportunity.claim.json")] = (claim_bytes, 65536)
     terminal = _fields(
         read(claim["terminal_receipt_path"]),
         "status job_sha256 invocation_id claim_sha256 actual_started_at_utc data_status "
         "broker_calls fits inference_calls future_monday_runtime data clock_guard_sha256 "
         "inference_attempt_status "
-        "engine actual_completed_at_utc",
+        "engine actual_completed_at_utc" + lineage_fields,
     )
     _require(
         terminal["status"] == "shadow_precommit_delivered"
         and terminal["job_sha256"] == controls.job_sha
+        and (not lineage_fields or terminal["original_job_sha256"] == _ORIGINAL_JOB_SHA)
         and terminal["invocation_id"] == invocation
         and terminal["claim_sha256"] == _sha(claim_bytes)
         and terminal["actual_started_at_utc"] == claim["started_at_utc"]

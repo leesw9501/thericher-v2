@@ -274,6 +274,33 @@ def test_caller_cannot_replace_known_fixed_worker(packet):
         restore(packet, expected_links=links)
 
 
+def test_r3_requires_explicit_independent_worker_pin(packet):
+    result, kwargs, dto = copy.deepcopy(packet)
+    result["worker_sha256"] = kwargs["expected_links"]["worker_sha256"] = s._WORKER_R3
+    raw = encode(result)
+    kwargs["expected_links"]["result_sha256"] = s._sha(raw)
+    with pytest.raises(ShadowDecisionError, match="shadow_fixed_source"):
+        restore_prospective_shadow_decision(raw, **kwargs)
+    out = restore_prospective_shadow_decision(raw, **kwargs, expected_worker_sha256=s._WORKER_R3)
+    assert out.decision == dto and not out.order_consumer
+
+
+@pytest.mark.parametrize("worker", [pin("9"), "sha256:wrong", None, True])
+def test_explicit_keyword_never_allows_arbitrary_incoming_worker(packet, worker):
+    result, kwargs, _ = copy.deepcopy(packet)
+    if type(worker) is str and s._PIN.fullmatch(worker):
+        result["worker_sha256"] = kwargs["expected_links"]["worker_sha256"] = worker
+    raw = encode(result)
+    kwargs["expected_links"]["result_sha256"] = s._sha(raw)
+    with pytest.raises(ShadowDecisionError, match="shadow_fixed_source"):
+        restore_prospective_shadow_decision(raw, **kwargs, expected_worker_sha256=worker)
+
+
+def test_explicit_r3_pin_does_not_relabel_old_result(packet):
+    with pytest.raises(ShadowDecisionError, match="shadow_fixed_source"):
+        restore(packet, expected_worker_sha256=s._WORKER_R3)
+
+
 def test_actual_clocks_not_nominal_future_or_expired_audit(packet):
     for field, clock in (
         ("inference_completed_at", OPEN[0]),

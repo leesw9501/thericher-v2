@@ -13,6 +13,29 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal95 future-delivery compatibility recovery COMPLETE659a71d4...:
+A/execution/kis-five-session-future-delivery-compatibility-recovery-v1/
+integration-evidence.json. Accounting native/fresh-child share frozen455;
+original job50748886.../claims/basis/windows stay unchanged. Shadow EngineR3
+worker9846b862.../templatee85e2a81... fixes UTCOPEN+10m and ordered512 list.
+DeliveryR3job90131beb.../504pins uses original delivery-r2/runtime namespace,
+original jobe8550670... bound in claim and terminal. Data2f77b48b... and
+Engine8691f404... strict leaves retain exact lineage/schema1/source custody.
+116 focused pass; independent Data/Infra8, Engine10, accounting6, actions8 pass.
+Pinned d6 source/SYN60pass14.112s; source-only accounting Linux455 probe passes,
+neither loads a model, reads private bank or invokes worker/broker/provider.
+Final1303source d77a3b28.../JUnitde8aacf5..., clean8 15709pass22skip/390.41s,
+helper0/temp cleaned, Ruff/three sample Compose pass.
+TWO existing task Actions replaced/read back at04:29:06UTC; non-Action hashes
+and next_due identical. No manual task execution or new trigger. Action receipt
+is under parent/action-change-receipt.json; future captures/inference/fills/
+owned-flat/fee/settlement/net remain unknown. Original failures retained.
+Claude recovery93b296b3... and next-directionc3f733db... supported-with-limits;
+agreement is not execution proof or authority.
+
+The Goal93 closure below is historical R2 delivery evidence; Goal95 now owns
+the two source-bound Action recoveries, not a claim that R2 was defect-free.
+
 Goal93 prospective512 shadow DELIVERY COMPLETE d90a07e0...:
 A/research/kis-stock-five-session-prospective512-shadow-delivery-v1/
 integration-evidence.json. Fresh fixed512 prior21 Sep18..Oct16 and official
@@ -32,7 +55,7 @@ Repository1297pins/JUnit15593pass22skip reattached, not a fresh full-suite run;
 repository/final external Ruff and three sample Compose configurations pass.
 Claude final direction supported-with-limits3c7632f6..., not execution proof.
 
-ONE new future task thericher-shadow512-20261019-delivery installed/read back
+ONE future task thericher-shadow512-20261019-delivery installed/read back
 Ready, Oct16 21:15..21:45UTC (Oct17 06:15..06:45KST), Data cutoff21:35UTC.
 One trigger/IgnoreNew/PT30M/no StartWhenAvailable/no manual run/order consumer.
 Data work900/whole1200, CPUwork120/whole180, combined1800 includes publication.
@@ -74,18 +97,17 @@ Full old book/basis/gross losses/reservations remain; segment is cadence only.
 No actual bank/future input/model/order, history reset, foreign lot adoption or
 profit/capital/manual approval gate. Artifacts A/data M; no schedule expansion.
 
-ONE next objective kis-five-session-future-delivery-compatibility-recovery-v1.
-Next finite recovery, not yet deployed: actual Goal93R2 template
-expiry22:30+09 equals OPEN13:30UTC, not OPEN+10m13:40; all26 Data calendar
-clocks themselves are UTC. R2 worker requires source_chunks dict while Data
-supplies ordered512 list. Goal90 live455 catalog also rejects added source
-files although original455 hashes match. Exact findings ba4a14ef.../e4509ae3...
-under A/{data,execution}/kis-five-session-successor-custody-preparation-v1;
-accounting frozen-source feasibilityf2cb0e35.... Claude source/recovery reviews
-supported-with-limits3b40193f.../ceb299d8..., not runtime evidence or authority.
-Original installed bytes/results stay unchanged until separately versioned
-recovery; these are source-proven incompatibilities, not observed future failure.
-Independent ready work continues; source defects are not operator holds.
+ONE objective kis-five-session-history-aware-paper-runtime-v1.
+Goal95 contained the measured R2 expiry/list and live-source enumeration faults
+using versioned sources; original bytes/results remain immutable. Next implement
+the runnable history-aware consumer, private restart history and canonical
+reserve/reconcile/owned EXIT connection. G83 single-cohort custody cannot be
+reused unchanged for accumulated same-symbol history. Whole-book obligations
+remain while cadence selects a segment. Missing fresh input never prevents
+exact retained recovery; unknown submission cannot create a replacement BUY.
+Independent Data/Engine loader and Execution runtime work proceed in parallel.
+No new model/training, schedule changes or actual provider/order calls in this
+implementation package; delivery readiness and source/SYN tests are not fills.
 
 ## Owned Opportunities Unchanged
 

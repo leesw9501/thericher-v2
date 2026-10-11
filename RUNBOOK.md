@@ -2,83 +2,74 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-five-session-future-delivery-compatibility-recovery-v1.
-Read NEXT_CODEX_GOAL.md and HANDOFF.md for current ownership/limits.
-Goal94 source preparation COMPLETE d6e4bec7...:
-D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.
-New pure Data15field/Engine schema1/Execution full-book successor contracts,
-95 changed-path2.31s; independent17fresh+8exact-source carries.
-Final1303source105799af.../JUnit6d23a341..., clean8 15688pass22skip/378.83s,
-Ruff/three sample Compose pass. Original24pass1fail schema evidence retained.
-No actual new cohort/order/input/fee/net or successor deployment.
-Known next repairs: Goal90 live455-source enumeration rejects new leaves;
-Goal93R2 actual non-UTC expiry equals OPEN, not OPEN+10m, and dict guard rejects
-Data ordered512 list. Original bytes are still installed, not observed failures.
-Goal95 owns separate versioned native/child and actual-control containment;
-no manual task, broker/provider call, additional trigger or model study.
-Goal93 shadow DELIVERY COMPLETE d90a07e0...:
-D:/thericher-v2/model-artifacts/research/kis-stock-five-session-prospective512-shadow-delivery-v1/integration-evidence.json.
-Data5ede6b1f.../plan37b8ba01...; EngineR205e94736.../workera8dcd255...;
-DeliveryR2edee6d64.../jobe8550670.../installpland321f621....
-Final123 source/SYN pass22.22s; actual pinned d6 source/SYN35pass13.542s.
-Independent guard8/Engine5/final aliases5 pass. No actual future model/input.
-Exact repository1297pins/JUnit15593pass22skip reattached; Ruff/three sample
-Compose pass, not a fresh full-suite claim. Failed original/SYN harness receipts
-remain scoped failure evidence, not passing authority.
+ONE objective: kis-five-session-history-aware-paper-runtime-v1.
+Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Reusable source/tests in Git;
+data D:/market_data, generated artifacts D:/thericher-v2/model-artifacts.
+No new credentials/private bank/API/model/task/schedule access in this bounded
+implementation. Runtime integration is not future submission/fill/net evidence.
 
-Installed thericher-shadow512-20261019-delivery Ready:
-Oct16 21:15..21:45UTC (Oct17 06:15..06:45KST), one trigger/IgnoreNew/PT30M,
-StartWhenAvailable false. No manual run. Data cutoff21:35UTC;900work/1200whole,
-CPU120work/180whole,2threads4GiB/networknone/GPU0, combined1800 including
-cleanup/publication. Exact455 source pins retained with22RO+1ownedRW mount;
-Windows command140546->5962 chars, no new runtime/image/platform.
-Source/model bytes stay A; raw cache/cursor M/us_equities/kis_paper_private/
-stock-five-session-shadow512/v1/shadow-20261019. Not acquired yet.
-Future result remains unknown, never task-exit/latest-file inference.
+Goal95 compatibility recovery COMPLETE659a71d4...:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-future-delivery-compatibility-recovery-v1/integration-evidence.json.
+Accounting recovery-r3 release810db495...: native/fresh child SAME455/catalog,
+original job50748886.../471pins/claims/basis/private volume/windows unchanged.
+Shadow engine-r3 release05e376cb.../worker9846b862.../templatee85e2a81...:
+UTCOPEN+10m13:40 and ordered512 metadata, unchanged teacher/kernel/selection.
+Delivery-r3 releasebbc35e41.../job90131beb.../504source pins; source rootR3
+but attempt namespace ORIGINAL delivery-r2/runtime. Original e855/d321 lineage
+is checked independently, including original job in both claim and terminal.
+Data leaf2f77b48b.../Engine8691f404... keep strict15-field/schema1 bindings.
+116 focused; independent Data/Infra8, Engine10, accounting6, actions8 pass.
+Pinned d6 source/SYN60pass14.112s, accounting source-only Linux455 probe pass;
+no model/raw/private bank mounts or worker main/provider/broker calls.
+Final1303source d77a3b28.../JUnitde8aacf5... at
+D:/thericher-v2/model-artifacts/verification/full8-20261011-g95-v1/pytest.xml:
+15709pass22skip/390.41s with8workers, helper0/active temp cleaned.
+Ruff/default/research/accounting sample Compose pass; weekly serial already
+passed2026-10-10, not rerun for this boundary. Original failed receipts retained.
 
-Safe offline exact claim reader (no KIS/task/Docker/model invocation):
+TWO existing Actions replaced/read back04:29:06UTC; exact non-Action hashes
+and due unchanged. Immutable result:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-future-delivery-compatibility-recovery-v1/parent/action-change-receipt.json.
+No manual task invocation, new trigger or substitute order.
+Shadow one finite Oct16 21:15..45UTC, cutoff21:35, IgnoreNew/PT30M,
+StartWhenAvailable false. Data900/1200whole,CPU120/180whole,total1800.
+Same455snapshot,d6image,22RO+1ownRW,CPU networknone/no credentials/private bank.
+Future raw cache:
+D:/market_data/us_equities/kis_paper_private/stock-five-session-shadow512/v1/shadow-20261019.
+Missing future result is unknown, not task-exit/latest-artifact inference.
+
+Safe offline basic claim reader (no task/KIS/Docker/model invocation):
 ```powershell
-uv run --no-env-file --extra dev python -B -c "import sys,json; sys.path.insert(0,r'D:/thericher-v2/model-artifacts/research/kis-stock-five-session-prospective512-shadow-delivery-v1/delivery-r2'); import coordinator as c; print(json.dumps(c.read_terminal('sha256:e8550670d5b18a9bbf81600cb9d399e591e73300e95d9bbf996de5f73837be0a')))"
+uv run --no-env-file --extra dev python -B -c "import sys,json; sys.path.insert(0,r'D:/thericher-v2/model-artifacts/research/kis-stock-five-session-prospective512-shadow-delivery-v1/delivery-r3'); import coordinator as c; print(json.dumps(c.read_terminal('sha256:90131beb0785da155beb6d435e2a9a07180408264b95ebe650e3d43cd5728e47')))"
 ```
-This follows only delivery-r2/runtime/opportunity.claim.json and its exact
-terminal identity/time/hash. It is not full future Data/Engine chain validation
-or a Paper adoption path. Missing/failed/partial is unknown; preserve identity.
-Goal94 pure binding/replay is complete, not a deployed successor. Goal95 repairs
-the already-owned delivery sources without inferring missing future evidence.
+It follows only the ORIGINAL delivery-r2/runtime/opportunity.claim.json and
+exact terminal identity/time/hash/original lineage. Basic status is not complete
+Data/Engine chain validation, raw packed rehash, finality/PIT or Paper adoption.
+Use the strict Data reader/typed binding for the new consumer. Never call
+native observe() as a passive reader: it may recover broker orders.
 
-Original Data41pass1fail retained; guard30ff0047... contains missing physical
-request records in its input only, not a global writer repair.
-Original Engine6pass2fail retained; R2 fixes expiry/final source checks and
-staged exclusive result publication. Persistent I/O may leave no canonical.
-Original Execution26pass2fail retained; local64 caller supplement12pass contains
-ambientprec2 replay problem, not contracts74d1e9b9... repair.
-Original installed source bytes and all owners remain unchanged.
-
-Owned opportunities, not current fills:
+Owned opportunities remain:
 - Goal83 cohort387ee5f6... job80012e77...: Oct12 22:30KST entry/recovery22:40;
-  fifthEXIT Oct17 04:50/recovery05:00. Days1-4 HOLD, exact pending request/basis.
+  fifthEXIT Oct17 04:50/recovery05:00, days1-4 HOLD.
 - Original b860 day-Paper Oct12 22:30..22:40/Oct13 04:50..05:00KST unchanged.
-- Goal90 accountinge048c301... job50748886...: five finite Oct12..16
-  20:25..35UTC windows, firstOct13 05:25KST; oneattempt/slot/two daily pages.
-  Exact smoke3408e291... was no_owned_intent, not flat/fill/netPnL.
-- Dataab65 42-peer endpoints next_due Oct12/19 21:40UTC unchanged.
-  Retained cursor0/accepted0/fail0/remaining42/ETAunknown/not_observed.
+- Accounting original job50748886...: five Oct12..16 20:25..35UTC windows,
+  firstOct13 05:25KST; oneattempt/slot/two daily pages.
+- Dataab65 42-peer endpoints Oct12/19 21:40UTC unchanged; retained cursor0/
+  accepted0/fail0/remaining42/ETAunknown, not current fresh acquisition proof.
 
-Preserve original shared10%basis, unknownSPY/TLTGLD/QQQownedflat/stock custody
+Preserve original shared10%basis, all losses/reservations, unknown other custody
 and privatevolume thericher-v2-paper-canary-private-acct-20261007-v1.
-Never read KIS_LIVE_* or call native observe() as a passive reader.
-Actual response/read/write clocks differ from economic close. Fees/settlement/
-finality/tax/net and future runtime unobserved; do not infer zeros.
+New successor segments cadence only; full-book budget replay cannot be sliced.
+Persist seed/history before effects; missing new input never prevents exact
+retained recovery. Never read/route KIS_LIVE_* or reset an unknown submission.
+Actual read/response/archive clocks differ from economic close. Future input/
+inference/fill/owned-flat/fees/finality/settlement/tax/net unknown, never zero.
 Scheduler Operational logging disabled: assumed-honest host marker/time
-provenance, not cryptographic scheduler-origin proof.
-Reference http://127.0.0.1:8787 is not freshly checked here.
-
-Goal92 covariance rejectionc21602f2... and earlier ML/DL/public-model trials
-remain exact historical evidence. GPU usable/free; no authorization/environment
-hold. No GPU appointment just to manufacture utilization or another seen-panel
-winner. Claude final supported-with-limits3c7632f6... includes successor-custody
-direction, not independent runtime/installation or authority proof.
-Reusable new source/tests go in Git; artifact/data outputs A/M, D:15% floor.
+provenance, not cryptographic OS-origin proof.
+Reference http://127.0.0.1:8787 not freshly checked.
+GPU usable/free; no environment/permission hold or utilization-only appointment.
+Claude recovery93b296b3.../next-directionc3f733db... supported-with-limits;
+agreement grants neither execution proof nor authority.
 
 All sections below are retained version-bound historical commands/evidence,
 NOT current assignments. Current goal/HANDOFF/stateboards and exact owned job

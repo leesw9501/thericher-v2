@@ -6,50 +6,25 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-Goal93 kis-stock-five-session-prospective512-shadow-delivery-v1 DELIVERY COMPLETE
-at A/research/kis-stock-five-session-prospective512-shadow-delivery-v1/
-integration-evidence.json d90a07e0....
-Data source packet is frozen, not acquired:
-A/data/kis-stock-five-session-prospective512-shadow-delivery-v1/source-release.json
-5ede6b1f...; plan37b8ba01.../common6523d021.../unchanged current_input36bfbdac....
-Fixed original128-first512, prior21 Sep18..Oct16 and fiveOct19..23 official
-sessions. Calendar096c904a...;32 source/SYN tests pass, no provider call.
-Actual request/response/chunk/materialization clocks are distinct from legacy
-collected_at START. Calendar completion is not provider finality or PIT proof.
+Goal95 recovery COMPLETE659a71d4... under A/execution/
+kis-five-session-future-delivery-compatibility-recovery-v1/integration-evidence.json.
+Two existing Actions recovered/read back; no task/provider/private bank call.
+Data leaf2f77b48b.../testscbc4f72a..., compatibility5f2f3c53... under
+A/data/kis-five-session-future-delivery-compatibility-recovery-v1.
+50 source/SYN pass0skip; actual R3job90131beb.../504-source controls and full
+synthetic fifteen-field chain. Independent Data/Infra8 fresh and Engine10
+exact-source review pass. Source root delivery-r3, attempt delivery-r2/runtime;
+original jobe8550670.../installationd321f621... bind claim AND terminal.
+No latest-file lookup, new claim namespace, raw packed rehash, future input,
+provider finality/PIT, private bank or cryptographic OS-origin proof.
+Final1303source d77a3b28.../JUnitde8aacf5...,15709pass22skip clean8/390.41s.
+Original R2 source/expiry/list and writer failed receipts remain unchanged.
 
-Independent source review retained41pass1fail at A/research/
-kis-stock-five-session-prospective512-shadow-delivery-v1/independent-data-review/
-review-receipt.json a2ea9365...: pure writer accepts accepted pages with absent
-physical request records. Normal collector supplies records; original writer
-is NOT called repaired. Standalone consumer guard30ff0047... rejects that exact
-bad input;12 author/8 independent mutations pass. Guard release3a2fa34d...;
-independent supplement is under the same review root/guard-supplement.
-This is scoped containment, not provider/wire/OS/finality evidence or a Paper gate.
-
-Future destination:
-M/us_equities/kis_paper_private/stock-five-session-shadow512/v1/shadow-20261019.
-Installed one owned window Oct16 21:15..21:45UTC; Data cutoff21:35UTC.
-Task thericher-shadow512-20261019-delivery Ready; jobe8550670.../plan d321f621....
-No current cursor/page count exists before first invocation: all unknown,
-not zero acquisition. Max1024 attempted pages/all512 identities retained;
-one client/token, measured1.25s delegate gap,300s ONLY fresh token POST.
-Data work900/whole1200s, D:15% floor; remaining pages/ETA unknown.
-Parent source audit502pins/455files and delivery install/readback complete.
-Goal94 successor/strict-chain preparation COMPLETE d6e4bec7...:
-Data modulebcece390.../tests6d6364e1... frozen,31 SYN pass. Exact immutable
-claim/terminal/handoff/input/Engine chain supplies15 fields; independently
-frozen root R2/R3, no latest-file or raw packed-byte rehash claim.
-Final supplementba4a14ef... at A/data/kis-five-session-successor-custody-preparation-v1/
-data-source-final-supplement.json preserves earlier28case receipt unchanged.
-Actual502-pin R2 controls reject clock_invalid: expiry22:30+09 is OPEN, not
-UTCOPEN+10m. Producer source_chunks list also contradicts EngineR2 dict guard.
-All26 actual calendar records/78fields are UTC; no calendar replacement needed.
-Parent95serial/17fresh independent plus8carry pass; final15688pass22skip,
-1303source105799af.../JUnit6d23a341..., Ruff/three sample Compose pass.
-No provider/raw rows/private bank/credential read, future input or finality proof.
-ONE objective kis-five-session-future-delivery-compatibility-recovery-v1:
-Data preflights actual R3 control/producer-shaped metadata after Engine/Infra
-freeze. No source/data download, blanket gate or assumed future input.
+ONE objective kis-five-session-history-aware-paper-runtime-v1.
+Engine/Data own strict offline input loader: exact chain -> schema1 decision
+-> native cohort. Missing input is opportunity-local no-intent; retained
+execution history recovers independently. No new collection/model access.
+Existing owned destinations/cursors below remain separate.
 
 ## Existing Input And Owners
 
