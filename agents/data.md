@@ -1,6 +1,6 @@
 # Data Stateboard (시장데이터 담당)
 
-Current projection 2026-10-11 KST; history in Gita81a1ae and exact immutable
+Current projection 2026-10-12 KST; history in Gita81a1ae and exact immutable
 external receipts. AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns ONE objective.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
@@ -72,8 +72,12 @@ original selected union<=20/five CLOSEs/Oct19 fifth OPEN, not its fixed512 loop.
 No forecast/actual future result or new schedule installed yet; original owners
 unchanged. Do not read future payoffs until forecast/source/time is immutable.
 Parent retrieved exact view/manifest.jsona0bb1864.../10584rows; declared packed
-view/bars.csv.gz921380f5... not yet rehashed. Captured field explicit+09 time
-Oct11 04:28:42.228861+09 equals Oct10 19:28:42.228861UTC. Before next OPEN,
+view/bars.csv.gz921380f5... now rehashed by107 freeze. Sciencebc32566d.../
+calendar e0efd4b6... binds27 official dates/21prior+6forward; Parent parser
+bridge6 SYN pass, not actual packed decoding or future capture. Actual source string
+Oct10 19:28:42.228861+00:00; default PowerShell JSON converted display to+09,
+not a source offset. DateKind String reattests exact source without conversion.
+The instant was unchanged in the prior projection. Before next OPEN,
 not Friday decision availability, response-level finality or physical OS proof.
 Source audit found older4-ETF sector strength/21-rebalance and covariance
 allocation already exist; next stock-level beta selection is a bounded new

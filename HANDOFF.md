@@ -11,6 +11,18 @@ without operator authority. Never output secrets/account/order IDs/raw rows/
 prices/private amounts. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 History through Gita81a1ae and immutable external receipts replaces role diaries.
 
+## Current Preparation (2026-10-12 KST)
+
+107 remains ACTIVE. At A/research/kis-peer-relative-momentum-prospective-preparation-v1,
+sciencebc32566d.../calendar e0efd4b6.../custody4979f87f... and canonical row264c3b3d...
+are frozen; do not freeze/register again. Current manifest a0bb1864... and packed
+921380f5... independently hashed, source captureOct10 19:28:42.228861+00:00.
+Parent bridge6/Engine8/Execution8 SYN pass; Validation4d65d847...2source groups
+supported-with-limits, not actual raw/forecast/runtime evidence. Claude preparation
+review_received/supported-with-limits. SYN-only runtime plan dd440a2e.../c940f69c...
+has14source/control files/462repo pins/0market, not yet dispatched. Actual forecast,
+finite6date Data owner installation and future comparison remain pending.
+
 ## Latest Closure (2026-10-11 KST)
 
 Goal106 peer-relative stock ranking COMPLETE/development_screen_passedb00e112b...

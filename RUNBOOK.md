@@ -1,6 +1,6 @@
 # Runbook
 
-## Current Dispatch (2026-10-11 KST)
+## Current Dispatch (2026-10-12 KST)
 
 ONE objective is the current NEXT_CODEX_GOAL.md, not a historical command below.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
@@ -32,6 +32,10 @@ unchanged candidate/current21/current calendar/actual pre-entry physical time;
 future Oct12..16 CLOSEs/Oct19 fifth OPEN still unknown. Finite research Data
 owner is separate from existing Paper identity/budget/recovery; no forecast or
 new task installed yet. Preparation completion is not future result evidence.
+107 freeze completebc32566d.../e0efd4b6.../row264c3b3d..., never rerun freeze.
+Parent bridge6/Engine8/Execution8 SYN passes; actual CPU forecast not dispatched.
+SYN-only plan dd440a2e.../c940f69c... is already created; do not replace it just
+to reissue a source preparation. Data/Infra final source handoffs remain owned.
 Existing13 owners/shared10%basis/identities unchanged. Claude105 result and
 next direction supported-with-limits; next source inspiration is factor
 decomposition, not published stat-arb/market-neutral/mean-reversion replication.

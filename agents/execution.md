@@ -1,6 +1,6 @@
 # Execution Stateboard (모의투자 실행 담당)
 
-Current projection 2026-10-11 KST; history Gita81a1ae/exact immutable receipts.
+Current projection 2026-10-12 KST; history Gita81a1ae/exact immutable receipts.
 AGENTS.md owns authority; NEXT_CODEX_GOAL.md owns ONE company objective.
 A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 
@@ -15,6 +15,9 @@ ONE107 owns unchanged same-quantity/five-CLOSE/fifth-OPEN forward replay on a
 pre-entry sealed original selected union. No future payoff, new Paper order,
 forecast, worker installation or budget/identity change has happened yet.
 Paper permission is independent of research results; existing13 owners continue.
+107 replay36d5fb8b.../release758170d9...8 Parent SYN passes. Typed forecast/input
+seal, original unscaled union including zero scale, all5held marks and Oct19
+terminal OPEN6 required; no future schema inference, actual capture or fill claim.
 
 Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
 kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.

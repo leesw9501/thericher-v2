@@ -27,13 +27,16 @@ substitution, reinvestment, horizon/model/threshold/cost search or rescue.
 
 Use existing current21 snapshot under
 M/us_equities/kis_paper_private/stock-five-session-current512/v1/goal82-20261009.
-View manifest.json a0bb1864... is byte-retrieved; view/bars.csv.gz921380f5...
-remains to be independently bound by Data before numerical preparation.
+View manifest.json a0bb1864... and view/bars.csv.gz921380f5... are independently
+byte-hashed by the107 freeze; canonical parser/actual numerical decoding still
+await the owned preparation run. Sciencebc32566d.../calendar e0efd4b6... and
+canonical trial1row264c3b3d... are immutable; do not freeze/register again.
 Current-input API36bfbdac... builds explicit current clocks, not old800 dates.
 Cursor startOct10 19:16:58UTC is NOT materialization completion or availability.
-Manifest captured_at_utc has explicit+09 offset:2026Oct11 04:28:42.228861+09,
-equivalent Oct10 19:28:42.228861UTC, before the future entry. Normalize aware
-offsets; the field name is not proof of UTC or provider publication/finality.
+Manifest captured_at_utc is2026Oct10 19:28:42.228861+00:00, before future entry.
+PowerShell's default JSON date conversion displayed+09 locally; that is not the
+source string. Use DateKind String/source JSON strings and normalize aware times;
+the field name is not proof of provider publication/finality.
 Bind exact captured/archive and forecast times before any future payoff access.
 
 Target ONE prospective cohort: entry2026Oct12 OPEN13:30UTC, five official
@@ -67,6 +70,12 @@ Execution: independent same-quantity/all-mark replay and cost semantics only.
 Parent: integration/Git/actual runtime and any exact finite task installation.
 Temporary Validation: independent frozen source/forecast/clock custody review.
 No new platform, gate, report family, per-agent goal or duplicated full harness.
+Engine pure forecast37a3b2aa.../8 Parent SYN and current bridge6 Parent SYN pass.
+Execution36d5fb8b.../8 Parent SYN passes, no future capture or actual forecast.
+Infra owns one small source-pinned d6 CPU launcher; Parent owns its dispatch.
+Claude preparation review_received/supported-with-limits at A/research/
+kis-peer-relative-momentum-prospective-preparation-v1/parent/claude-preparation/
+claude-dual-result-outcome.json; not a numerical result or new authority.
 
 Numerical preparation is bounded CPU-only/0predictivefits/0CUDA, existing runtime,
 same data RO and outputs only under A. Source/SYN first; freeze before any

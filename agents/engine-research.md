@@ -1,6 +1,6 @@
 # Engine Research Stateboard (매매 엔진 연구 담당)
 
-Current projection 2026-10-11 KST; history Gita81a1ae/exact external roots.
+Current projection 2026-10-12 KST; history Gita81a1ae/exact external roots.
 AGENTS.md owns policy; NEXT_CODEX_GOAL.md owns ONE objective.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
@@ -17,6 +17,9 @@ does not prove matched risk, neutrality, independent alpha or Paper promotion.
 Claude actual supported-with-limits prioritizes unchanged prospective input/
 forecast custody over another seen-model variation. ONE107 prepares a finite
 Oct12 entry/Oct19 fifth-OPEN forward contrast; no current forecast yet.
+107 sciencebc32566d.../calendar e0efd4b6.../canonical row264c3b3d... frozen;
+pure forecast37a3b2aa.../8 Parent SYN and current bridge6 SYN pass. Validation
+4d65d847...2source groups supported-with-limits; no actual forecast/future result.
 Do not retune106 or adopt it as a Paper teacher. Existing Paper is independent.
 Ready later direction: inventory-conditioned intraday reference-policy-value
 supervision, same M5/context36/H30 versus standalone target and merged controls.
