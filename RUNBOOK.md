@@ -100,11 +100,20 @@ Post-run SYN bytecode20 preserved via exact single-file moves under
 parent/post-run-test-bytecode; no original462 source edited or deleted.
 Use python -B for tests against immutable snapshots. These tests do not fit
 models; legacy failure fixtures/caches remain preserved, not runtime retries.
-ONE120 firstrate-price-scale-invariant-entry-comparison-v1: matched prior-
-relative36x5 features versus119 raw control. Source-only proposal2be8b5ff.../
-Claude contract supported-with-limits. No new scientific allocation or actual
-fit yet; current NEXT alone defines its twoCPU/600s contract. Existing19
-owners/due/107 prospective input unchanged, no manual provider/order run.
+120 COMPLETE/rejectede22a63af.../outcome94bb089e... at
+D:/thericher-v2/model-artifacts/research/firstrate-price-scale-invariant-entry-comparison-v1/integration-evidence.json.
+Scienceeaf439c8.../trial1row9997ea45..., native2c1bb70b...13.0101s/600,
+hoste88a2315.../result25493a5a.../Parentread36c2900b.... CPU2 complete,
+40cells12checks10fail, raw119 exact and relative net/DD worse both blocks.
+23fresh focused/source4/actual2, Execution69bd7866...2actual/reader3SYN;
+Claude supported-with-limits. Reattached118 authority, not fresh full CI.
+Never rerun120 freeze/run/read/close exclusive creators or reset its fits.
+ONE121 prospective512-request-backed-publication-repair-v1: fresh producer
+successor, prepublication/recovery request custody checks, same future shadow
+scope only. Current collect9a8ef268.../common6523d021... and immutable chunks
+stay unchanged. Consumer already contains the source fault; no global Paper
+hold. No manual Task/provider/collector/order run; source binding only when
+the existing owner is inactive. NEXT alone defines implementation authority.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

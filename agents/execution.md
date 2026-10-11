@@ -57,10 +57,13 @@ Exact host667cb854.../resulta3383542.../Parentread5f96475f...:32cells12checks,
 4cash-net failures,1CPU/0CUDA/no refit. Independent2 aggregate groups pass;
 own actualb2886e27...2groups/reader35b29e92...3SYN groups pass. Modeled one-share fees/
 net/DD are not broker fees, actual holdings, settled cash or account NAV.
-ONE120 matched input comparison reuses this fee/mark support with40cells/
-12fixed checks; source/SYN package next, no broker authority/sizing change.
-No actual Paper/19owners/shared basis/custody change; actual broker fees/
-settled cash/net remain unobserved by these research jobs.
+120 COMPLETE/rejectede22a63af...; parityeaa7c13a.../release9fc4e53e...,
+strict reader10b1e838...3SYN and actual69bd7866...2aggregate groups pass.
+40cells12checks10fail/CPU2 completed, raw119 reconstruction exact; relative
+net/DD worse both blocks. No independent raw-PnL/PIT/OS proof. ONE121 repairs
+Data producer request custody, not order/account/recovery logic. Execution
+owners/shared basis/custody unchanged; actual broker fees/settled cash/net
+remain unobserved by these research jobs.
 
 ## Retained Evidence
 

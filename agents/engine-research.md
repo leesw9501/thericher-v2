@@ -48,11 +48,16 @@ fails both blocks. Primary3 net DEV-21.7248/later-18.8004 modeled one-share,
 not positive profit/NAV/Paper. No threshold/seed/architecture rescue or117oracle.
 24focused/source4/final-host2/actual2 groups, Claude contract/result supported-
 with-limits. Controlled reexamination, not novelty or fresh replication.
-Next proposal2be8b5ff... audits existing relative H30 geometry/expected-net
-gates, avoiding a relabeled target switch or architecture retry. ONE120 matched
-raw/relative36x5 Logistic intervention, same target/population/costs. TwoCPU
-proposed, no actual allocation/fit yet; no stationarity/novelty/replication claim.
-Future107 pending, Paper authority independent of research outcomes.
+120 COMPLETE/rejectede22a63af.../outcome94bb089e...; scienceeaf439c8.../
+row9997ea45.... Matched raw/relative36x5 Logistic fits CPU2/0CUDA0failed,
+13.0101s/600,40cells12checks10fail. Raw119 reconstruction exact; relative
+net/DD worse both3bps blocks. No geometry/threshold/model rescue, novelty,
+stationarity, profitable-model or Paper claim. Parent23fresh focused,
+independent source4/actual2, Claude contract/result supported-with-limits.
+Next proposal6d73001f... selects the measured prospective512 producer fault,
+not a third H30 fit. ONE121 Engine owns unchanged512/context/model semantics
+and source-only compatibility check; no labels/fits/GPU allocation. Future107
+remains pending; Paper authority is independent of research outcomes.
 
 ## Retained Evidence
 

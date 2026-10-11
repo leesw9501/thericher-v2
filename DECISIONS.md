@@ -10146,3 +10146,20 @@ externally after provenance/hash checks, not delete or modify original sources.
 All462original source hashes/inventory were restored without rerunning the
 scientific attempt. This recovery is test hygiene, not a broker/data incident,
 new promotion rule or Paper permission gate. Existing19owners are unchanged.
+
+## 2026-10-12 - Close the matched encoding result and repair its next source fault
+
+120 rejects10of12 fixed checks after two matched CPU fits. Raw119 hashes
+reproduce; relative geometry worsens net/DD in both seen3bps blocks. Scale
+invariance is not stationarity or expected-net utility; do not rescue the
+result by a third encoding, cutoff or architecture. Closuree22a63af... and
+outcome94bb089e... preserve both spent fits and non-promoting limitations.
+
+121 addresses the independently measured prospective512 writer/recovery
+request-custody omission. Preserve used source/chunks and failed-attempt
+records; validate before publication/raw reads using existing clock semantics.
+The strict consumer already contains invalid coverage. This is not a new
+consumer gate, actual provider incident or general Paper pause. Same inactive
+future task may receive an exact successor source binding without widening
+its scope, schedule, image, claims, capital or order authority. Claude's
+supplied-facts direction is supported-with-limits, not an authority grant.

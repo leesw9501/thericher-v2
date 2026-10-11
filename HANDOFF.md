@@ -138,14 +138,24 @@ restored. Source/input/child closure honest-host only, not raw/PIT/OS proof.
 Execution actualb2886e27... independently verifies2 aggregate groups;
 strict terminal-reader35b29e92... adds3SYN groups. Existing19owners unchanged;
 GPU usable/free, no CUDA need for this experiment.
-Future107 stays pending; contained Decimal/cache-writer repairs remain ready
-alternatives, not current Paper failures or a research permission hold.
-ONE120: firstrate-price-scale-invariant-entry-comparison-v1, source proposal
-2be8b5ff... under119/next-direction-r1; Claude contract supported-with-limits.
-Matched raw/relative36x5 prior geometry, same classifier/target/cost/cutoff,
-two CPU fits proposed. Relative geometry already exists in prior H30 families;
-not new-method novelty/expected-net switch. Scale invariance not stationarity.
-Source-only planning, no120 labels/fits/registry or GPU allocation yet.
+120 COMPLETE/rejectede22a63af... at A/research/
+firstrate-price-scale-invariant-entry-comparison-v1/integration-evidence.json.
+Scienceeaf439c8.../trial1row9997ea45... closes as outcome94bb089e....
+Exact native2c1bb70b... used13.0101s/600; CPU2 complete0failed/0CUDA/weights/
+holdout,40cells12checks10fail. Raw119 reconstruction matches; relative input
+worsens modeled3bps net and DD in BOTH seen blocks. No encoding/threshold/
+architecture rescue or positive-profit/Paper qualification. Parent23fresh
+focused/source4/actual2 groups pass; Execution actual69bd7866...2groups and
+reader10b1e838...3SYN groups. Claude contract/result supported-with-limits.
+Honest-host source/input/child closure, not raw-PnL/PIT/OS proof. Reattached
+unchanged118 authority15924pass22skip, not a fresh full run.19owners unchanged.
+ONE121: prospective512-request-backed-publication-repair-v1. Exact producer
+collect9a8ef268.../common6523d021... can publish accepted pages without request
+records; independent41pass1faila2ea9365... identifies the contained source fault,
+not an actual broker incident. Consumer already rejects incomplete coverage.
+Repair before publication/recovery and deliver only the same inactive future
+shadow task's exact source binding; no new scope/order/trigger/capital. Claude
+direction supported-with-limits. Future107 stays pending, not a global hold.
 
 ## Retained Preparations And Closures
 

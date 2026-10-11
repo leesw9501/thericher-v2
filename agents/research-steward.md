@@ -35,10 +35,13 @@ used17.7943s,1CPU started/completed0failed/0CUDA/epochs/neural updates.
 32cells12checks4fail; source/input/child closed,681967616-byte measured peak.
 No retry/refund/weights/holdout/depth or Paper adoption. Canonical outcome
 6ee2d604... closes the allocation; GPU free/usable, no invented CUDA job.
-Next proposal review is source-only, no scientific or compute allocation yet.
-ONE120 source proposal2be8b5ff... matched raw/relative classifier, CPU2/600s
-proposed,0CUDA/weights/holdout. Raw reconstruction spends a new explicit fit,
-never refunds119; no third fit or result-informed geometry/threshold rescue.
+120 COMPLETE/rejectede22a63af...; scienceeaf439c8.../trial1row9997ea45...
+closed by outcome94bb089e.... One600s native2c1bb70b... used13.0101s,
+CPU2 started/completed0failed/0CUDA/weights/holdout. Both fits remain spent;
+raw119 reproduction is no refund.40cells12checks10fail, no rescue/depth.
+Source/input/child closure honest-host,688799744-byte measured peak.
+ONE121 source/SYN prospective producer repair allocates no predictive fit,
+GPU or sealed evaluation. GPU usable/free; future107 original row pending.
 
 ## Retained Evidence
 

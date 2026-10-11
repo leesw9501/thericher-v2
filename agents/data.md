@@ -37,10 +37,18 @@ OneCPU fit does not qualify input/PIT/finality; no independent raw-row replay.
 Host667cb854.../Parentread5f96475f... bind unchanged exact2CSV bytes/source.
 No acquisition, provider, cursor or dataset-promotion change. Source/input/
 child closure honest-host only, not physical decision-time availability.
-ONE120 source-only geometry assessment:36bar completed prior CLOSE anchor
-and within-window volume mean need no extra history. Domain/scale/future
-invariance assessment assigned; no new intake/PIT/label/fit allocation yet.
-Existing19owners/107 future coverage/durable cursors and next_due unchanged.
+120 COMPLETE/rejectede22a63af... retains original2987admitted/all7 support,
+124nonempty TRAIN dates; allzero volume windows0 in all3 blocks. Relative
+geometry required no extra history; CPU2 result cannot qualify PIT/finality.
+ONE121 owns a fresh prospective512 producer successor from exact collect
+9a8ef268.../common6523d021.... Independent source/SYN41pass1faila2ea9365...
+shows accepted pages can lack physical request custody. Enforce attempt count
+and completed-response coverage before publication and recovery, preserving
+failed-attempt records and existing clock semantics; no new consumer gate,
+raw read/intake/provider call or physical finality claim. Same512/model/task
+scope only; immutable old source/chunks preserved. Existing19owners/107 future
+coverage/durable cursors and next_due unchanged except the scoped source
+binding if the named future shadow owner is inactive.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
 
