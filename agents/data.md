@@ -15,12 +15,16 @@ Parent source-freeze a9bd3041.../row740be89f... preceded numeric work;
 134complete dates34304pairs/rows0ties/no missing dates. Data did not reproduce
 raw labels independently.46focused/source4/actual3 groups; no acquisition,
 PIT/finality/corporate-action or Paper input promotion.
-115 owns a typed same-cutoff SPY/QQQ past-context view. Reuse G108/G109
-FirstRate intake; Engine freezes one window/consumer before actual coverage.
-Preserve original admission/keys/targets; missing peer is explicit unavailable,
-not future fill or sample deletion. No labels/fits/GPU/acquisition in preparation.
+115 COMPLETE/prepared066268db...; view99e39ca6.../release240f7232...,
+consumera7086504.../actual95d4bd20.... Original251sessions/3012records/2987
+admitted unchanged;7440/3775/3720admitted held slots, paired7440/3770/3720.
+5DEVpeer-history gaps retained.10focused/independent2source6metadata,
+0labels/fits/GPU/acquisition, source/input/child closure honest-host only.
+116 reuses exact115 intake for same-population masked/realpeer comparison;
+own prior/peer availability counted, same causal pi0 fallback for both arms.
+No new loader/window/target, loss censoring, collection or Paper change.
 Existing19owners/107 future coverage/durable cursors and next_due unchanged.
-Recovery:114 fit spent/closed; never rerun its creators. Current goal alone
+Recovery:114 fit spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
 
 ## Retained Evidence

@@ -79,15 +79,25 @@ separate narrow rejection-interpretation supported-with-limits is not model
 support.493aliases/0copies/source/child/container closure. No weights/refit/
 holdout, Paper/19-owner or107 future changes; GPU remains free/usable.
 
-ONE115: firstrate-paired-spy-qqq-causal-context-preparation-v1. Source-only
-proposald93a16d3... at114/next-direction-r1/proposal.json identifies a useful
-joint past-information scope, plus contained core Decimal/cache-writer defects.
-Choose paired input first; existing containment is not a current Paper fault.
-Reuse G108/G109 official calendar/parser/geometry, freeze one window/consumer
-before numeric coverage, preserve original admission/keys/targets. Data,
-Engine and Execution source/SYN work is parallel; Parent alone checks actual
-offline coverage. No acquisition/fits/GPU/metrics/new schedule in preparation.
-Future107 and all19 owned opportunities remain separate and pending.
+115 COMPLETE/prepared-with-limits066268db... at A/research/
+firstrate-paired-spy-qqq-causal-context-preparation-v1/integration-evidence.json.
+Consumera7086504.../planfec65477.../actual95d4bd20...; native18.3614s,
+565485568-byte peak/0labels/fits/GPU.251sessions/3012original episodes/
+2987admitted; held slots7440/3775/3720, paired7440/3770/3720;5DEVpeer gaps
+retained, original keys/admission/target support unchanged.10focused pass;
+independent7c4c1feb...2source/6metadata checks, not raw-input/OS/PIT proof.
+Claude temporal join supported-with-limits. Pytest collection/import harness fault
+retained, corrected before freeze/actual; no runtime retry or new acquisition.
+
+ONE116: firstrate-paired-information-inventory-value-development-v1. Proposal
+114a4db5... at115/next-direction-r1/proposal.json. Matched real/masked-peer
+10channel GRU1364params/same init/seed101/8epochs each, exactly2CUDA fits;
+same prior availability/pi0 fallback retains all original EVAL episodes.
+Parent chooses14 primary/stress checks before outcomes, not proposed40check
+screen;40aggregate cells, original target/replay, one600s appointment.
+No allocation/fitting yet, no weights/holdout/Paper or19-owner change.
+Future107 stays pending; contained Decimal/cache-writer repairs remain ready
+alternatives, not current Paper failures or a research permission hold.
 
 ## Retained Preparations And Closures
 

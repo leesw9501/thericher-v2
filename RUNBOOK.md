@@ -50,10 +50,19 @@ Claude original result unsupported, separate narrow rejection interpretation
 supported-with-limits, never model agreement. No weights/refit/Paper changes.
 Never rerun114 freeze/prepare/dispatch/read/close exclusive creators or reset
 its original600s clock/debit. Source/child/container closure is honest-host only.
-ONE115 paired SPY/QQQ causal-context preparation; read current goal, not old
-commands. Reuse exact G108/G109 inputs/intake; freeze one prior window and
-consumer before one offline coverage check. Preserve admission/keys/targets.
-No acquisition/KIS/orders/Task/fits/GPU/metrics/new schedule in preparation.
+115 COMPLETE/prepared066268db...:
+D:/thericher-v2/model-artifacts/research/firstrate-paired-spy-qqq-causal-context-preparation-v1/integration-evidence.json.
+Planfec65477.../actual95d4bd20.../consumera7086504...; native18.3614s/peak565485568,
+0labels/fits/GPU,10focused pass/independent2source6metadata. Original251sessions/
+2987admitted retained;7440/3775/3720held slots, paired7440/3770/3720,5DEVgaps.
+Never rerun115 --freeze/--execute/finish.py exclusive creators; missingpeer
+remains unavailable, coverage is not a model/Paper qualification.
+ONE116 matched paired-information GRU development; read current goal, not old
+commands. Freeze original target/intake, masked/realpeer sample/init parity,
+same pi0 fallback,40cells/14checks and one600s custody BEFORE2CUDA fits.
+Use existing d6 network-none runtime; no image build/acquisition/KIS/Task,
+weights/holdout or19-owner change. Full source authority is exact reattachment
+unless tracked/shared runtime/control bytes change; fresh external tests required.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

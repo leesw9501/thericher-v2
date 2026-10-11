@@ -18,10 +18,15 @@ unverified reviewer namespace, Parent actual chain passes. Claude original
 result unsupported preserved; narrow rejection interpretation supported-with-
 limits is NOT model agreement. Seen/nonPIT/revised/raw-action/nominal limits,
 no new rank-target novelty/refit/depth/weights/holdout/Paper change.
-115 prepares paired SPY/QQQ past information, not an architecture-only rescue.
-Own one fixed feature/window/cutoff consumer contract before Data geometry;
-retain G108/G109 admission/targets/costs. No predictive fit/GPU allocation in
-input preparation. Dataset support is evidence, not a permission/profit gate.
+115 COMPLETE/prepared066268db...; contracta7086504.../releasee9779cc4...,
+same36M5rows180min/36x10ownpeer/3state. Original251sessions/2987admitted,
+5DEVpeer gaps retained;10focused/independent2source6metadata,0fits/GPU.
+116 owns one matched-information campaign, same1364param GRU/init/seed101/
+8epochs each; masked transformedpeer vs realpeer, original target/costs.
+Proposed114a4db5...40checks not selected: Parent freezes14 primary/stress
+checks/40cells before outcomes; missingpeer sends BOTHarms to existingpi0.
+Exactly2CUDAfits/one600s family proposed, no allocation yet. No architecture,
+seed/window/threshold rescue, weights/holdout/Paper or fresh-replication claim.
 Future107 pending, Paper authority independent of research outcomes.
 
 ## Retained Evidence

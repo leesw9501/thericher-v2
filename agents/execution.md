@@ -34,8 +34,13 @@ actual source/input/child/container checks pass, not raw NAV/DD/OS proof.
 Original Claude result unsupported and narrow rejection-interpretation review
 remain distinct; never infer model agreement. Fixed quantities/fees/OPENe+5
 exit reused unchanged. No refit, actual Paper/19-owner/basis/custody change.
-115 reattests existing intraday episode keys/holding/target/cost semantics for
-paired past inputs; no feature/model choice, broker or private-state access.
+115 COMPLETE/prepared066268db...; invariants69bc755f.../releasea7fbe696...,
+original3012records/2987admitted and7OPEN support retained,5DEVpeer gaps.
+10focused/independent7c4c1feb...2source6metadata checks, no PnL or broker claim.
+116 reuses original one-share chronological concurrent marks/sell-before-buy,
+fixed O0..O6/cost1/3/5/10, shared pi0 unavailable fallback and closed aggregate
+reader.40cells/14checks frozen before outcomes; do not select model or change
+actual Paper/19owners/shared basis/custody. Actual fees/net stay unobserved.
 
 ## Retained Evidence
 

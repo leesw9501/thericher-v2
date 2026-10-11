@@ -18,9 +18,12 @@ Sciencea9bd3041.../trial1row740be89f... closed by outcome34a43fb0.... One600s
 appointmenta20bef4a... completed49.7217s,1CPU0CUDA0failed,134dates34304pairs/
 rows0ties/n_iter26.30tables130marks30checks21fail; fit remains spent, no
 retry/refund/depth/weights/holdout. Host source/child/container closed.
-115 paired SPY/QQQ input preparation spends0fits/GPU/sealed evaluation;
-consumer/window frozen before one bounded offline geometry check. GPU remains
-free/usable, not blocked by environment/authority or a utilization target.
+115 COMPLETE/prepared066268db...; contracta7086504.../planfec65477... precedes
+one18.3614s geometry/0labels/fits/GPU/sealed evaluation.5DEVpeer gaps retained.
+116 proposes one600s exclusive8GiB appointment for2matched GRU CUDAfits,
+same init/seed/sample/fallback/target/cost,40cells/14checks. Freeze source,
+science/custody BEFORE allocation, no debit yet. GPU free/usable, no environment
+or permission hold; do not add a utilization job, refit or sealed spend.
 
 ## Retained Evidence
 
