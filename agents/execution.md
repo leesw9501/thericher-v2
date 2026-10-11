@@ -31,8 +31,10 @@ OPEN. Missing required price stays unavailable; no broker-fill/alpha claim.
 Independent R1 review39ddd722... found P2: missing mandatory OPEN(entry+5)
 sets unavailable then increments age and raises held_interval_limit globally.
 Original36-pass author/Parent evidence and5pass1fail independent evidence remain
-immutable. Narrow new replay-r2 recovery assigned; no current passing final
-replay or Engine target/campaign attestation claimed yet.
+immutable. Narrow replay-r2 source efc46f9e.../release3c41d349... fixes failure
+checks before aging/decision;39 author/Parent39 pass0.34s. Fresh independent
+44478589... reruns unchanged attacks:6pass0fail,5pins unchanged. Engine target/
+campaign and actual numerical replay remain separately unattested.
 New finite successor accounting task: Oct19..23 20:25..35UTC, firstOct20
 05:25KST, thericher-kis-paper-successor-20261019-accounting. Jobb9f898f6.../
 planc3cf449a...; prior12 definitions/last/next unchanged. Installer exit1 on

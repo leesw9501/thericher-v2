@@ -16,9 +16,9 @@ No company block, market wait, GPU permission or operator approval hold.
 | Verification | Parent / complete98 | 235 focused/26 independent;1311source4205ef0f.../JUnit15829pass22skip reattached, not fresh rerun. Ruff/three Compose pass. |
 | Data | Plato / complete source99 | Inputd83db2a1...,23 author/Parent23 pass; priorCLOSE vs old08:30 corrected, no acquisition/numeric loader. |
 | Engine | Chandrasekhar / owned99 | Finite first-OPEN entry/no-reentry proposal accepted, source/SYN implementation; exact scientific freeze before numeric dispatch. |
-| Execution | Herschel / owned recovery99 | Originalbc4058/36 author/Parent pass; independent39ddd5pass1fail found missing forcedOPEN global error, narrow immutableR2 assigned. |
+| Execution | Herschel / complete source99 | R2efc46f9e...,39 author/Parent39; independent44478589 six pass. Original39ddd5pass1fail retained. |
 | Infra | Socrates / owned99 | Pinned d6 transport preparation8c769818...,9 pure helper checks; narrow inert host adapter. |
-| Validation | Leibniz / ready recovery99 | Original independent5pass1fail retained; new frozenR2 reattack next, no tuning. |
+| Validation | Leibniz / ready99 | ReplayR2 independent6 complete; next frozen target/candidate attacks, no tuning. |
 | GPU | Steward / free | Usable, no environment/permission hold; no utilization-only campaign allocated. |
 | Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
 | Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |
