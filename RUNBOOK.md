@@ -5,6 +5,20 @@
 ONE objective is the current NEXT_CODEX_GOAL.md, not a historical command below.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
+Goal104 CLOSED/rejected04f16af6...:
+D:/thericher-v2/model-artifacts/research/kis-price-volume-basis-held-exit-development-v1/integration-evidence.json.
+Science50ff9797.../rowc6705533.../outcomefdc3bfdf.... CPU prerequisitee8bc0ba4...
+and numeric hostbb70f9dc.../receipte53c6828... bind result575d521d....
+2CPU complete/0CUDA/epochs/updates,30tables130marks,15of36 fixed checks fail.
+79 Parent focused plus8 prospective/kernel and8 actual independent groups pass;
+not independent raw-price NAV/OS proof. Consumer R1 Torch schema error retained;
+R2 source32cc20e3.../release8513bf32... uses frozen CPU versions/independent
+controls. Parent preclose caller failures did not rerun runtime or write a
+partial closure. Never rerun104 source/SYN/numerical/close exclusive creators.
+ONE next goal: kis-fixed-five-entry-loss-veto-development-v1, source/novelty and
+contract preparation first; one CPU fit600s, no GPU/holdout/weights/threshold
+rescue. Existing13 owners/shared10%basis/identities unchanged. Reattach exact
+1311-source/15829pass22skip authority for external-only work, not a fresh suite.
 Goal103 CLOSED/rejected7a1cb985...:
 D:/thericher-v2/model-artifacts/research/kis-held-exit-causal-development-technical-reexecution-v1/integration-evidence.json.
 Science64c0ee45.../trial2dc6cc8d8.../outcomeb1f850d0.... Actual CPUc203b822...
@@ -19,10 +33,11 @@ Original101 UNKNOWN3 spent/failed102 wrapper/source-only parent status-name
 failure preserved; cumulative6fits/16epochs448updates/1200allocated seconds.
 Never rerun completed CPU/CUDA helpers or allocate a third technical attempt.
 Claude result/next direction supported-with-limits; existing13 owners unchanged.
-Current next objective tests raw105 versus fixed price-volume augmented120
+The completed104 objective tested raw105 versus fixed price-volume augmented120
 ridge,2CPU fits/600s/noGPU,30tables36checks. Source proposal d63f2658.../Data
 e4fe1834... supports5/10/20 within21 bars, no fullQlib/VWAP30/60 claim.
-No numeric appointment yet; freeze source/scientific/custody before market work.
+Its completed appointment is recorded above; do not interpret this old
+preparation text as an active wait or new runtime authorization.
 Goal101 CLOSED/technical failed44522a70...:
 D:/thericher-v2/model-artifacts/research/kis-stock-held-only-causal-exit-development-v1/integration-evidence.json.
 Actual CPU1/CUDA2/8epochs/224updates completed, all3 spent; no comparative result

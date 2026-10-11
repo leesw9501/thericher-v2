@@ -57,8 +57,15 @@ validate_core(result, expected_links=exact_controls) requires science50ff.../
 ready8005.../rowc670..., caller worker-precommit/runtime pins; never self-infer.
 Real old800/later71 DTOs and50 evaluation marks,30 tables36 fixed criteria,
 CPU2/CUDA0/zero epochs/updates and same fixed-q actual-leg costs are checked.
-Final Engine schema binding and actual result still pending; no full old-reader
-pass, source-kernel training proof, native broker/Paper or OS claim.
+Final Engine104 binding COMPLETE2b604564.../a58c49f3.... Actual result575d521d...
+through R2 consumer32cc20e3.../release8513bf32... verifies30tables130marks,
+36 fixed predicates15fail/CPU2CUDA0. Original consumer's wrong Torch-version
+schema remains preserved; R2 derives CPU python/numpy/sklearn from frozen science.
+Parent7 R2 tests pass; independent actual187016fa...4 groups passes. Closure
+04f16af6... records rejection, not a native Paper or independent raw NAV/OS claim.
+Next105 keeps original admitted lot quantities and fixed fifthOPEN exits;
+matched-gross control may scale the original basket before entry only, not the
+candidate. Freeze source cost/selection semantics before its single CPU fit.
 Full book/shared10%basis/losses/reservations/pending identities unchanged.
 Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
 independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.

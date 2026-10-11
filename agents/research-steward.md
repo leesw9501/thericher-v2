@@ -49,8 +49,13 @@ precedes its market work: Ready80052ac6.../body6bd716cc... frozen as science
 at A/research/kis-price-volume-basis-held-exit-development-v1/parent/canonical-custody-row.json.
 Wrapper3bb8ab68... uses contract_sha256/registry_sha256, unlike103 renamed keys.
 At most2CPU fits/600s,0CUDA/sealed/weights; informed prior lineage disclosed.
-No numerical clock/appointment or market work yet; source integration ongoing.
-No utilization-only training.
+104 numerical appointmentd47b3b3b... CLOSED: hostbb70f9dc.../result575d521d...,
+2CPU fits complete,0CUDA/epochs/updates/failed fits, original600s allocation.
+Closure04f16af6.../outcomefdc3bfdf... records15of36 rejection; no retry or
+feature rescue. Source/child/container closure is host evidence, not OS proof.
+Next105 proposes one CPU entry-loss classifier600s, not allocated or frozen
+yet. GPU remains free because this intervention does not need CUDA; no
+utilization-only training or refund of earlier failed/rejected families.
 Same old/later-seen samples do not become fresh replication or sealed evidence.
 
 ## Prior Allocation

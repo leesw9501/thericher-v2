@@ -61,12 +61,20 @@ reads; official Qlib loader/MIT re-retrieved.9 continuous+6 flags,5/10/20 scales
 within21 bars, raw105 versus augmented120 ridge(alpha1),2fits600s/no CUDA.
 Data e4fe1834... shows30/60 lack first-later/current context and VWAP absent;
 no fullAlpha158/360 claim, window search, implicit splice or Paper change.
-Active104 Ready80052ac6.../body6bd716cc... is frozen as science50ff9797.../
+Closed104 Ready80052ac6.../body6bd716cc... is frozen as science50ff9797.../
 feature-family trial1c6705533.... Kernel release015f2821.../source1fcb6a76...
 passes10 Parent generated math tests. Same-context raw21 inputs/15features,
 TRAIN-only continuous scaling and explicit(slot,d) paired route are frozen;
-typed integration/worker release and independent source review pending.
-This kernel-only proof is not numerical fitting or actual callback qualification.
+typed drivera58c49f3.../release2b604564... passes21 additional Parent tests.
+Actual CPU2 complete/hostbb70f9dc.../result575d521d...,30tables130marks;
+15of36 fixed checks fail, COMPLETE/rejected04f16af6.../outcomefdc3bfdf....
+At10bps per-side raw/aug growth DEV+.51025%/+.37986%, later+.04354%/-.15819%.
+79 Parent focused,8 independent prospective/kernel and8 actual groups pass.
+No feature/alpha/seed rescue, weights, holdout, GPU or Paper change.
+Next ONE goal: fixed-five entry-loss veto, one CPU logistic fit600s. Keep
+original candidates/kept quantities; no replacement or learned exit. Prior-only
+matched-gross rule and cash distinguish filtering from simple exposure reduction.
+Source/nearest-study novelty and frozen contract first, not allocated105 yet.
 
 ## Prior Packages
 

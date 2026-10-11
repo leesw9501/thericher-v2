@@ -13,6 +13,28 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal104 fixed price-volume basis COMPLETE/rejected04f16af6... at A/research/
+kis-price-volume-basis-held-exit-development-v1/integration-evidence.json.
+Science50ff9797.../feature-family trial1c6705533... closed by outcomefdc3bfdf....
+Actual CPU prerequisitee8bc0ba4... passes; numeric hostbb70f9dc.../receipte53c6828...
+binds result575d521d...:2CPU fits complete,0CUDA/epochs/updates,30tables130marks.
+15of36 frozen checks fail. At10bps per-side, raw/augmented growth is
+DEV+.51025%/+.37986%, later-seen+.04354%/-.15819%. This fixed augmentation does
+not add robust net value; not a claim that every volume feature is useless.
+Raw baseline reproduces103, not independent replication. Source481 aliases,
+host child/container/source closure verified with honest-host limitations.
+Parent79 focused pass;8 independent prospective/kernel and8 actual aggregate
+groups pass. Consumer R1 wrongly expected Torch in CPU result; preserved.
+R2 source32cc20e3.../release8513bf32... verifies exact CPU versions from science,
+geometry71/50 and independently supplied controls. Actual Execution187016fa...
+and Validationb0728218... agree; not independent raw NAV or OS proof.
+Parent preclose argument/status-name assertions failed before closure writes,
+corrected without runtime rerun. Claude result/next direction supported-with-limits.
+No retry, feature rescue, weights, holdout, Paper or13-owner schedule changes.
+Next ONE goal isolates a fixed-five entry-loss veto, not another exit learner:
+one CPU classifier, unchanged kept quantities, prior-only matched-gross control.
+Nearest-study novelty/source contract first; no105 fit or scientific freeze yet.
+
 Goal103 SAME-family technical reexecution COMPLETE/rejected7a1cb985... at
 A/research/kis-held-exit-causal-development-technical-reexecution-v1/integration-evidence.json.
 Science64c0ee45.../trial2dc6cc8d8... closed by outcomeb1f850d0.... Actual CPU
@@ -39,12 +61,12 @@ Qlib/MIT proposal d63f2658... and Data context audit e4fe1834... are consumed;
 this is an OHLCV-derived subset, NOT fullAlpha158/360 or independent replication.
 All13 existing Paper/Data owners and original shared10%basis remain unchanged.
 
-Active104 preparation: Ready80052ac6.../body6bd716cc... frozen as science
+Closed104 preparation: Ready80052ac6.../body6bd716cc... frozen as science
 50ff9797.../new feature-family trial1c6705533..., signed row89da7378....
 Data context releasea88cc7b3.../rawe175fa79... passes19 Parent SYN tests:
 explicit real Panel/Panel71 metadata identities, raw CLOSE3/VOLUME4 and
 d=e+age-1 match original context clocks. No market numerical work or appointment
-yet. Engine/Execution/Infra own disjoint source integration; independent design
+at that preparation checkpoint. Its completed runtime is recorded above. Design
 5f9dd535...4 groups supported-with-limits, not implementation/runtime proof.
 
 Goal102 replay recovery COMPLETE/source-SYN3c98f73f... at A/research/
@@ -255,12 +277,14 @@ passing authority. No finding becomes a global approval or Paper permission hold
 
 ## Current Work
 
-ONE objective kis-stock-held-only-causal-exit-development-v1. Same rule-selected
-entries/fixed-initial-capital quantities; learn only CLOSE-time incremental
-next-OPEN liquidation advantage. CPU1/CUDA2/one600s frozen contract; prior-study
-novelty/causal-source preparation first, no fits yet. Old/later512 already-seen
-inputs, no new acquisition/holdout/Paper change. Data geometry, Execution replay
-and existing CUDA Infra preparation run independently; Parent owns Git/runtime.
+ONE objective kis-fixed-five-entry-loss-veto-development-v1. Goal104's paired
+2CPU comparison is complete/rejected04f16af6..., not awaiting source or fitting.
+Next105 freezes original rule candidates and learns only entry rejection from
+realized fixed-five loss labels. One CPU fit600s/noCUDA, no threshold sweep,
+replacement, kept-lot resizing or learned exit. Original/gross-matched/cash
+controls, all130 marks and5/10/20bps per-side costs remain fixed. Novelty/source
+contract preparation comes before105 numerical work. Old/later512 already-seen
+inputs,13 installed owners and original shared10%basis remain unchanged.
 
 Goal94 kis-five-session-successor-custody-preparation-v1 COMPLETE d6e4bec7...:
 A/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.
