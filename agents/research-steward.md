@@ -5,21 +5,19 @@ goal. A=D:/thericher-v2/model-artifacts; history Git2094757/external custody.
 
 ## Current Resources (2026-10-11 KST)
 
-Goal91 COMPLETE/rejected eff354f7... at A/research/
-kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
-Science d5f3ab48.../canonical trial1rowfa9780dc..., R2plan c1ca775a...;
-terminalc37c072d.../result64ca83a1.... Actual3CUDA+3tree+3ridge/9450updates,
-96tables/390marks;17of20 fixed predicates fail. Original652.734s<1800 includes
-R1 pre-load zero-fit guard failure/ordinal-only repair/CPU feedback. R2runtime
-121.082s is a distinct clock. Failed and completed non-promoting registry rows
-retained; no new family/trial/refund/fourth fit/weights or sealed spend.
-Independent2556ffab... verifies pins/counts/clock/decision, not optimizer/OS
-proof. Exact child reap/container absence/lease release reported; GPU free.
-ONE next objective covariance allocation development: source proposal0ba99403...
-predates outcomes; not yet a scientific allocation. Freeze SAME data/target/
-split/costs, fixed joint-risk sizing/control/kill and CPU600s family before
-numerics.3HGBR+3ridge/max156solves/max15600iterations/2threads/4GiB;
-zero GPU or holdout allocation. No utilization-only work or market wait.
+Goal92 COMPLETE/rejected c21602f2... at A/research/
+kis-stock-five-session-covariance-allocation-development-v1/integration-evidence.json.
+Sciencebc876585.../trial1rowd19da4ad..., completed outcomeda4170d4...;
+outerc378e5c8.../terminalb0d6bddb.../result1ac1d56c....3tree+3ridge/
+142solves/1080iterations,108tables/390marks,15of20 fixed predicates fail.
+Worker63.661s/original600 clock; publication/counter fixes before clock, no
+retry/refit/scientific reset. No GPU lease, weights or sealed allocation.
+Independent11cfac82.../aggregate arithmetic not optimizer/OS/raw-price proof.
+GPU remains available; Goal91 actual3CUDA/9450updates remains retained evidence.
+ONE objective kis-stock-five-session-prospective512-shadow-delivery-v1:
+unchanged own teacher/new prospective input, fit0/GPU0/holdout0. Not a predictive
+selection family or a reason to allocate GPU. Source/future delivery can proceed
+now; actual future observations stay owned next_due without foreground waiting.
 
 ## Retained Appointment Evidence
 

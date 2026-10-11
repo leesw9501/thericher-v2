@@ -14,33 +14,33 @@ Closed history remains in Git2094757 and immutable exact external roots.
 
 ## Latest Closure (2026-10-11 KST)
 
-Goal91 COMPLETE/rejected eff354f7...:
-A/research/kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
-Fixed4847-param prior-only peer-context temporal/stock attention, conceptual
-MASTER MIT adaptation, not official factors/checkpoints/replication. Exact512
-old800/later50 seen data; no new provider rows, broker or credentials.
-Actual R2 plan c1ca775a.../terminalc37c072d.../result64ca83a1...:
-3CUDA+3tree+3ridge/9450updates,96complete tables/390 scheduled marks.
-17of20 fixed all-cost/OOF/DEV/later predicates fail: reject, no model rescue.
-DEV10 growth-.55165% vs tree+2.15408%; later-.32722% vs+.37249%.
-R2 runtime121.082s; original652.734s<1800 includes zero-fit initial failure
-and source repair, not a new clock/trial/fourth fit. Data ordinal533d was
-incorrectly compared to128-prefixaf324; one literal fixed, historical-plan
-regression added. Original proposed42-scope error and exact failure preserved.
-Source/actual independent2556ffab... and aggregate reader verify links and
-rejection; reported optimizer/cleanup are not independent OS/raw-price proof.
-151 focused tests plus CPUimage27/5.13s; unchanged1297pins/JUnit15593pass22skip
-reattached, Ruff/three sample Compose pass. Claude login works: preflight,
-zero-fit recovery and actual-direction reviews supported-with-limits.
-GPU lease released/container absent/child reaped reported; CUDA usable/free.
-No weights/holdout/alpha/Paper adoption, new collection or schedule changes.
+Goal92 COMPLETE/rejected c21602f2...:
+A/research/kis-stock-five-session-covariance-allocation-development-v1/integration-evidence.json.
+Fixed prior20 RAW-return covariance versus inverse-vol tree/diagonal allocation,
+same scores/slots/gross/veto/five exits. Sciencebc876585.../trial1rowd19da4ad...;
+outerc378e5c8.../terminalb0d6bddb.../result1ac1d56c... at runtime/
+attempt-00965edd74f24c2aaac156fdb7907863.3tree+3ridge/142solves/1080iterations,
+108complete tables/390marks,15of20 fixed economic predicates fail. Worker
+63.661s<600; one clock/attempt, no GPU, refit, weights, holdout or Paper change.
+DEV10 covariance+1.3734% vs tree+2.1541%; later-.21422% vs+.37249%.
+176 final focused checks/fixed-image CPU prerequisite pass. Three publication/
+counter P2s fixed before market clock; original faults/CPU pass/relocated aliases
+and obsolete-injector failed partial XML retained, not current authority.
+Independent11cfac82... checks971source/control pins, not four market raw files;
+Parent975pins/aggregate recomputation and completed registry rowda4170d4....
+No independent optimizer/OS/raw-price replay or alpha claim. Stricter external
+repo-config style findings retained; repository Ruff/three sample Compose pass.
+Exact1297pins/JUnit15593pass22skip reattached, not a fresh full-suite run.
+Claude login/preflight/result-direction supported-with-limits. GPU usable/free.
 
-ONE next objective covariance allocation development: source proposal0ba99403...
-preceded Goal91 outcomes, Execution challengeeb75df7d... qualifies normalized
-cash/fees. Fixed tree scores/slots/gross/exits; prior20 raw-return covariance
-versus inverse-vol and diagonal allocation, CPU600s/no GPU/new dependency.
-Freeze source/science before numerics; seen/nonPIT/raw-action/availability limits
-and informed lineage persist, not independent replication or Paper sizing.
+ONE next objective kis-stock-five-session-prospective512-shadow-delivery-v1.
+Proposal6fd18448... predates Goal92 outcomes: prepare one Oct19..23 shadow
+opportunity, fresh fixed512 prior21 endingOct16, unchanged own teacher/CPU
+first-original-slot finite DTO, no broker intent. Old date-scoped common packet
+endsOct20 and must not be reused. Execution parallel SYN-only integer/leg-cost
+parity, never account/bank read or actual-fee proof. Delivery completion is not
+future input/inference/profit evidence; future runtime stays owned next_due.
+Seen/nonPIT/raw-action/nominal-availability limits persist, no new model contest.
 Goal90 deliverye048c301.../pushed91894cb remains separately owned: one accounting
 task/five future dates, firstOct13 05:25KST. Exact no_owned_intent smoke3408e291...
 is not current-flat/fill/net. Entry/EXIT/recovery/b860/ab65/shared10%basis and

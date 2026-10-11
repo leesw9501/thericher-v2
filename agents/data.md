@@ -13,17 +13,21 @@ credentials/provider calls yet. Actual response/read/write clocks distinct from
 economic close; legacy collected_at is START. KIS clos not auction finality/
 close availability. No quote/date/provider substitution or revised backcast.
 Existing ab65/current21/old/later untouched; empty new market destination M only.
-Goal91 attention COMPLETE/rejected eff354f7...; exact old/later512 bytes unchanged,
-no collection or row output. Data17/source-independent checks and actual
-review2556ffab... support custody, not independent raw-price/OS proof.
-Original guard wrongly used128-prefixaf324 for512 data ordinal533d; fixed before
-actual3CUDA fits, pinned historical-plan regression. Calendar/identity/masks
-unchanged; zero-fit failed receipt retained, no scope/clock/refund substitution.
-ONE next objective covariance allocation development. Bind raw prior ON+ID
-return channels, same-date support and20 completed clocks; never scaled tokens,
-labels or future bars as covariance. SAME512/old800/later50, no new collection.
-Keep missing held marks/current-listing/nonPIT/raw-action/nonTR/revision and
-nominal availability explicit. Separate42-peer collector due remains unchanged.
+Goal92 covariance COMPLETE/rejected c21602f2... at A/research/
+kis-stock-five-session-covariance-allocation-development-v1/integration-evidence.json.
+RAW ON+ID binder19 tests; final-source independent26 checks and actual11cfac82...
+verify971source/control pins,108tables/390marks/15of20 failure arithmetic; four
+market files deliberately not rehashed by independent role. Parent rehashes975.
+Existing old/later512 bytes/calendar/masks unchanged; no acquisition or row output.
+One600 clock/3tree+3ridge/142solves, no dataset/Paper qualification or raw replay.
+ONE objective kis-stock-five-session-prospective512-shadow-delivery-v1.
+Data owns fresh fixed512 prior21 endingOct16/fiveOct19..23 official clocks;
+old common packet hard-codes Oct9/12/16 and endsOct20, so freeze fresh scope.
+Reuse36bfbdac... current_input and serial collector/durable cursor/measured1.25s
+pace,15% D floor; actual request-start/response-completion separate. Retain all
+empty identities, no replacement/future rows/backdating/finality/PIT claim.
+Delivery is source/control/future ownership, not future input or inference proof.
+Existing42-peer ab65/Paper/accounting owners untouched; no manual invocation.
 
 Retained Goal86 closed8ecd02b9.../result0583aa2b...: one CatBoost study consumed
 existing old/later exact panels, no provider refresh, future row, key replacement

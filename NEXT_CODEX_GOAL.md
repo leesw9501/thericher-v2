@@ -2,73 +2,76 @@
 
 ## Objective
 
-Complete kis-stock-five-session-covariance-allocation-development-v1: test ONE
-fixed prior-only covariance-aware allocator while keeping the existing tree
-scores, selected slots, entry gross and five-session exits unchanged. Compare
-post-cost utility/drawdown against both inverse-vol tree and diagonal-risk
-allocation. This tests sizing, not another score architecture or GPU quota.
-Already-owned Paper/accounting opportunities continue independently.
+Complete kis-stock-five-session-prospective512-shadow-delivery-v1: prepare and
+deliver ONE owned Oct19..23 shadow input/decision opportunity with fixed512
+membership and the unchanged own teacher. Improve prospective data-to-decision
+evidence instead of another architecture or parameter rescue on seen panels.
+Delivery is source/control/testing/future ownership, NOT a claim that future
+input, inference, profit or a broker order already exists. Existing Paper and
+accounting opportunities continue independently.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal91 COMPLETE/rejected eff354f7... at A/research/
-kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
-3CUDA+3tree+3ridge/9450updates,96tables/390marks,17of20 fixed predicates fail.
-R2terminalc37c072d.../result64ca83a1...; original652.734s<1800 incl preserved
-zero-fit guard failure. Same scientific trial1/no clock reset/model rescue.
-151 focused/CPUimage27 pass; source-matched15593pass22skip authority.
-No Paper adoption, weights, new collection, broker or credential use.
+Goal92 COMPLETE/rejected c21602f2... at A/research/
+kis-stock-five-session-covariance-allocation-development-v1/integration-evidence.json.
+Sciencebc876585.../trial1; outerc378e5c8.../terminalb0d6bddb.../result1ac1d56c....
+3tree+3ridge/142solves/1080iterations,108complete tables/390marks;15of20
+fixed predicates fail. Worker63.661s<600; no GPU/refit/holdout/weights/Paper change.
+176 focused/fixed-image CPU prerequisite pass; source-matched15593pass22skip.
+Independent11cfac82... and Claude supported-with-limits, not raw-price/OS proof.
 
 ## Scope And Parallel Packages
 
-Source proposal0ba99403... at A/research/
-kis-stock-five-session-cross-stock-attention-development-v1/next-hypothesis.json
-was frozen before Goal91 outcomes; ONE covariance sizing hypothesis, not an
-allocated family. Execution challengeeb75df7d.../next-allocation-parity.json
-qualifies entry cash/fees: equal gross matches normalized amounts at equal
-initial capital, not absolute cash across independently compounded streams.
+Proposal6fd18448... at A/research/kis-stock-five-session-covariance-allocation-development-v1/
+next-product-proposal.json predates Goal92 outcomes; no allocated family or
+model selection. Claude actual-result/direction review supports limited closure
+and prospective delivery, never a new profitability or Paper permission gate.
 
-Engine freezes exact proposal, estimator, solver, splits/costs/control metrics
-before numerical work. Own A/research/kis-stock-five-session-covariance-allocation-development-v1.
-Use SAME512 identity/old800/later71-context+50 targets,21prior->20x5, TRAIN-only
-scaler and fixed HGBR/ridge controls. Covariance uses RAW20 prior ON+ID log
-returns, never scaled tokens/outcomes. Fixed50% off-diagonal shrinkage/annual
-10% volatility floor; fixed-gross SLSQP within unchanged surviving slots,
-name<=.10/triangle<=.08. Same diagonal-only solver is an identification control,
-not a second selected candidate. No fallback/clipping/renormalization/retry.
+Data owns fresh original128-first512 prior21 vintage, official prior sessions
+endingOct16 and fiveOct19..23 clocks. Reuse current_input36bfbdac... and existing
+serial market-only collector. Old common packet hard-codes Oct9/12/16 and its
+calendar endsOct20: freeze a fresh date-scoped packet, not runtime substitution.
+Preserve every missing identity, actual request-start/response-completion clocks,
+durable cursor/accepted-error counts/measured1.25s pace/owned due and15% D floor.
+No raw values or secrets in outputs; market bytes M only.
 
-Data independently binds causal raw channels, ordinal533d vs128-prefixaf324,
-same-date masks/calendar. No new collection/universe/coverage repair.
-Execution preserves original selected slots/veto/gross before payoff access,
-constant quantities/five actual close marks/leg fees/missing-held handling;
-same capital normalization only. Extend policy/screen hooks to108tables,
-retain390 marks per policy. Fractional research is not integer Paper sizing.
-Infra is invoked only for necessary reuse of existing CPU image/finite runner,
-network-none/source and market RO/fresh own output RW; no new launcher platform,
-build/download/runtime replacement. Steward records ONE new frozen family,
-CPU600s incl publication60/cleanup30,2threads/4GiB,3HGBR+3ridge/max156solves,
-100iterations per solve/max15600. No GPU allocation, later refit or holdout.
-Validation independently recomputes frozen outcome, never tunes. Parent owns
-integration and single next goal; independent Paper/accounting waits stay owned.
+Engine owns unchanged teacherca6b36d1.../metadata2ce286ee.../SDK2f64a238... and
+one CPU inference/finite first-original-surviving-slot DTO. Same20x5 kernel,
+fit0/GPU0, authoritative existing image. Pin input/feature/model/proposal links
+and actual inference completion; no score dumps, refit or slot replacement.
+Keep target_exposure=.10*w_first/(1+.0005*sum_all_weights), modeled fees only.
+
+Execution parallel package: fixed SYN-only pure integer/leg-cost parity using
+existing preview/plan/decision APIs. Test zero/one/multiple shares, original
+shared capacity, first-slot no substitution, no double10% scaling, roundtrip
+half-cost per leg/rounding and foreign same-symbol custody. No private bank,
+reserve/reconcile persistence, account/order or actual-fee/net-PnL claim.
+
+Parent/Invoked Infra own only necessary finite orchestration/reuse and exact
+future delivery ownership. Proposed Data900s/whole1200s and CPU120s/whole180s,
+2threads/4GiB, one useful future opportunity before its frozen entry window.
+Freeze actual combined deadline/cleanup/publication and source pins before
+installation. No new platform, runtime build or GPU appointment. Independent
+Validation checks frozen source/clock/DTO contracts, not another model contest.
 
 ## Completion And Strongest Kill
 
-Complete with synthetic raw-vs-scaled/future/identity/permutation/cap/solver-
-failure/replay checks and one actual bounded result or truthful technical failure.
-At EVERY5/10/20bps pooledOOF/DEV/LATER U>tree AND diagonal, DD<=both;
-DEV/LATER10 growth>0,U>cash/rule/ridge/matched momentum, DD<=min(.08,tree,
-diagonal,rule),turnover<=momentum50;20growth>0. Any failure rejects, no bestfold
-rescue. Preserve sample rules and prior-only informative>=2-slot counts
-24OOF/8DEV/6LATER; insufficient contrast is scoped input_unavailable, never
-censor other scheduled dates. Ex-ante variance reduction is not performance.
-Ask Claude for falsification-first covariance/leakage/fixed-comparison review
-before relying on the scientific contract and actual comparative decision.
-Seen/current-listing/nonPIT/raw-action/nonTR/revision/assumed availability,
-20-observation covariance noise and informed selection remain limitations.
+Complete with frozen official dates/member/source/teacher/expiry contract,
+source synthetic date/identity/causal/unsupported/cost/capacity/cleanup tests,
+independent review and exactly scoped future delivery evidence. Metadata smoke
+has no credentials or market calls. Installation is not future runtime closure.
+Strongest kill: old-calendar reuse, future input, coverage-derived membership,
+changed pins, late inference, first-slot replacement or double budget scaling.
+An unavailable shadow attempt remains scoped unavailable; do not shift the
+opportunity or make it a gate on independent KIS Paper. Future result is a
+worker-owned next_due, never a foreground sleep or zero/profit inference.
 
-No provider/account/order/credential/live invocation, existing schedule change,
-capital/basis reset, Paper substitution or public/paid operation in this research.
-Goal90 finite captures remain owned, first2026-10-12 20:25UTC; do not invoke here.
-Focused verification; reattach Goal87 authority ONLY if shared runtime/control
-pins unchanged, otherwise fresh full authority. Ruff/three sample Compose.
-Refresh current projections, commit/push, replace this file with exactly ONE
-material next objective, and continue ready work.
+Ask Claude before relying on material timestamp/source/recovery choices.
+Private KIS_PAPER market-only use for the new Data-owned future job is standing
+authorized; selective named credential path only, never read/route KIS_LIVE_*.
+No manual old task, account/order call, existing schedule change, capital/basis
+reset, Paper substitute, public or paid operation in this shadow objective.
+Goal83 cohort387ee5f6/b860/ab65 and Goal90 five accounting captures stay owned.
+Fresh shadow evidence is not PIT/finality/total-return/alpha or adoption proof.
+Run focused tests, required fresh or exact-source repository authority, Ruff
+and three sample Compose configurations; refresh projections, commit/push,
+replace this file with exactly ONE material next objective and continue.

@@ -2,24 +2,27 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-five-session-covariance-allocation-development-v1.
-Goal91 fixed attention study COMPLETE/rejected eff354f7... at
-A/research/kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
-Exact R2 runtime/recovery-r2/attempt-1063983acc174ba08f9dcae64fbdd10c:
-terminalc37c072d.../result64ca83a1.../plan c1ca775a..., canonical trial1d5f3ab48....
-3CUDA+3tree+3ridge/9450updates,96tables/390marks,17of20 frozen predicates fail.
-121.082s runtime/original652.734s<1800 incl retained pre-load zero-fit guard
-failure, ordinal-only repair and CPU packaging feedback. Never reset/retry a
-closed fit appointment. Source/actual review2556ffab... and pure aggregate
-recomputation verify rejection, not raw-price/optimizer/OS proof. GPU free.
-151 focused/CPUimage27/source-matched15593pass22skip; Claude login works,
-three categorical supported-with-limits reviews. No weights/Paper adoption.
-Next proposal0ba99403... predates outcomes, Executioneb75df7d...: covariance
-allocation only, unchanged scores/slots/gross/five exits. Freeze science/source
-before numeric work, existing CPU image/600s family/3tree+3ridge/156solves,
-no GPU, new dependencies or launcher platform. Retain all108tables/390marks,
-raw prior channels and held gaps; equal gross matches normalized entry cash
-and fees only at equal initial capital. Fixed all-cost tree+diagonal kill.
+ONE objective: kis-stock-five-session-prospective512-shadow-delivery-v1.
+Goal92 covariance COMPLETE/rejected c21602f2... at
+A/research/kis-stock-five-session-covariance-allocation-development-v1/integration-evidence.json.
+Exact runtime/attempt-00965edd74f24c2aaac156fdb7907863:
+outerc378e5c8.../terminalb0d6bddb.../result1ac1d56c..., sciencebc876585.../trial1.
+3tree+3ridge/142solves/1080iterations/108tables/390marks,15of20 checks fail.
+Worker63.661s<600; no GPU/retry/weights/holdout/Paper adoption. Independent
+11cfac82.../aggregate recomputation verify custody and rejection, not raw-price/
+optimizer/OS proof. Parent975pins includes four market files excluded by review.
+Source publisher/counter P2s fixed BEFORE clock; original CPU pass/relocated
+aliases retained.176final tests/fixed-image CPU prerequisite/source-matched
+15593pass22skip, Ruff/three sample Compose. Obsolete-injector partial XML is
+failed feedback, not authority; external stricter style findings also retained.
+Claude preflight/result-direction supported-with-limits, no authority grant.
+Next proposal6fd18448... predates covariance outcomes: fresh fixed512 prior21
+endingOct16/fiveOct19..23 clocks, unchanged own teacher/one CPU finite DTO,
+no broker consumer, model search or shadow profitability claim. Replace old
+date-scoped common packet/calendar endingOct20 with a frozen new packet.
+Parallel Execution fixed SYN-only integer/leg-cost parity; no actual bank/API.
+Future delivery can complete before observation; future result stays unknown,
+owned next_due. Do not invoke old tasks or foreground-wait for Oct19.
 Goal90 producer delivery COMPLETEe048c301...:
 A/execution/kis-stock-five-session-paper-close-capture-v1/integration-evidence.json.
 Job50748886.../planef2e7bb6... at delivery-preparation/recovery-r2;471 code pins.
@@ -39,7 +42,7 @@ not historical inventory. Fees/settlement/tax/net/future captures unobserved.
 Focused431/12.82s, independent parent44/actual6070fa4b...; exact1297pins/JUnit
 15593pass22skip reattached, Ruff/three sample Compose pass. Old finding receipts
 remain check-time evidence; all three fixed before source freeze/actual run.
-Research uses SAME512 panel, not separate42-peer collector. Ordinal533d and
+Closed research used SAME512 panel, not separate42-peer collector. Ordinal533d and
 original128 prefixaf324 have different contracts. No provider refresh, runtime
 replacement or market wait; old800/later50 remain seen/nonPIT/current-listing/
 raw-action/nonTR/revised/nominal availability, not independent holdout/Paper.

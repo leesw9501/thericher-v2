@@ -5,32 +5,31 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data. History Git2094757/exact ro
 
 ## Current Result And Work (2026-10-11 KST)
 
-Goal91 COMPLETE/rejected eff354f7... at A/research/
-kis-stock-five-session-cross-stock-attention-development-v1/integration-evidence.json.
-Native4847-param MASTER-concept peer-context/temporal/stock attention,
-not official factors/weights/replication. Science d5f3ab48.../trial1, R2plan
-c1ca775a.../terminalc37c072d.../result64ca83a1.... Actual3CUDA+3tree+3ridge/
-9450updates,96complete tables/390marks,17of20 fixed predicates fail.
-DEV10 growth-.55165% vs tree+2.15408%; later-.32722% vs+.37249%. Lower
-later DD alone cannot rescue negative utility/growth or all-cost failures.
-121.082s R2 runtime/original652.734s<1800 includes retained zero-fit binding
-failure and ordinal-only correction; same model/data/clock/trial, no fourth fit.
-151 focused/CPUimage27/source-matched15593pass22skip; independent2556ffab...
-and pure aggregate reader support exact rejection, not optimizer/OS/raw-price
-proof. Claude preflight/recovery/result-direction supported-with-limits.
-No weights/holdout/alpha/Paper adoption/provider or credential use. GPU free.
-Original42-scope conflation/proposal9f98ab7b... and self-consistent bad ordinal
-fixture preserved; corrected scientific512 recipe, pinned-history regression.
+Goal92 COMPLETE/rejected c21602f2... at A/research/
+kis-stock-five-session-covariance-allocation-development-v1/integration-evidence.json.
+Sciencebc876585.../trial1; fixed tree slots/gross/veto/exits, prior20 RAW-return
+joint-covariance versus tree/diagonal, not another score architecture.
+Actualc378e5c8.../terminalb0d6bddb.../result1ac1d56c...:3HGBR+3ridge/
+142solves/1080iterations,108tables/390marks,15of20 fixed checks fail.
+DEV10 growth+1.3734% vs tree+2.1541%; later-.21422% vs+.37249%; reject,
+no estimator/window/seed/control-winner rescue. Worker63.661s<600/no retry.
+176 final focused/fixed-image CPU prerequisite pass; independent11cfac82...
+and pure aggregate reader verify reported custody/arithmetic, not raw-price/
+optimizer/OS proof. Source publication/counter fixes before execution clock;
+original evidence and external stricter style findings retained. Claude supports
+limits; same seen/current-listing/nonPIT/raw-action/nonTR/revision/availability.
+Goal91 attention remains rejected eff354f7... in its exact external root/Git.
+No GPU/weights/holdout/alpha/Paper/provider/credential change; GPU free/usable.
 
-ONE objective kis-stock-five-session-covariance-allocation-development-v1.
-Proposal0ba99403... predates actual attention outcomes; fixed tree scores/slots/
-gross/five-exits, prior-only20 RAW-return covariance versus inverse-vol/diagonal
-allocation. CPU600/3tree+3ridge/max156solves/100iterations, no GPU/new dependency.
-Executioneb75df7d... qualifies normalized entry cash/fees, all held marks retained.
-Freeze one contract/source before numerics; reject fixed all-cost U/DD failure,
-solver/cap/clock faults, no fallback or ranking/seed/window rescue. Old800/later50
-seen/current-listing/nonPIT/raw-action/nonTR/revision/nominal-availability limits.
-Goal90 finite Paper/accounting opportunities unchanged; never a research wait.
+ONE objective kis-stock-five-session-prospective512-shadow-delivery-v1.
+Proposal6fd18448... predates covariance outcomes: one Oct19..23 shadow delivery,
+fresh prior21 fixed512 input endingOct16, unchanged trusted teacherca6b36d1.../
+metadata2ce286ee.../SDK2f64a238..., one authoritative CPU inference/finite DTO.
+Keep20x5 kernel/first original surviving slot/exposure normalization, no fit,
+score dump, model selection or order. Old common dates/calendar must be frozen
+fresh, not shifted by coverage. Delivery is preparation, future result not observed.
+Execution SYN-only integer/leg-cost parity can run in parallel; no Paper gate.
+Goal83/90 finite Paper/accounting opportunities unchanged, never research waits.
 
 ## Retained Research Evidence
 
