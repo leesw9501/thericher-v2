@@ -6,16 +6,14 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Allocation
 
-110 COMPLETE/rejectedf9f55eb5...; sciencea6ed5fbe.../family trial1b4116e81...
-closed by outcome9f9dfb41... in A/_control/ledger/2026-10.jsonl. Original600s
-CPU run42.7256s/1fit0CUDA,0failed/weights/holdout.134dates23966rows,
-30tables42checks6fail. No rescue/refit/refund; host source/child/container
-closure attested, not independent OS proof. GPU unused by this CPU target.
-111 separately frozen path-downside hypothesis in preparation: one CPU logistic
-plus two existing GRU16 CUDA models, not110 depth or an architecture-only retry.
-No111 GPU appointment, actual data/labels/fits or sealed spend yet. GPU free/
-usable. Parent freezes exact source/target/cost/split/90 predicates and total
-600s stop rule before dispatch; existing Paper inference/recovery has priority.
+111 COMPLETE/rejected3b542a4d...; science85d8f043.../trial1a2a2c3b0... closed
+by outcome1025fd49... in A/_control/ledger/2026-10.jsonl. Original600s
+appointment883063da... completed48.1724s,1CPU2CUDA/64epochs1344updates0failed.
+1340TRAIN rows/48tables90checks33fail; no refit/refund/winner/weights/holdout.
+Host source/child/container/canonical GPUlease closure attested, not OS proof.
+GPU free/usable.112 optional fee accounting consumer is no-fit/0sealed,
+no research/GPU allocation. Unallocated source pairwise-ranking proposal is
+not a frozen campaign or a utilization target; current goal owns direction.
 
 ## Retained Evidence
 

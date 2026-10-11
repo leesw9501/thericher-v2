@@ -6,19 +6,19 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 
 ## Current Package
 
-110 CLOSED/rejectedf9f55eb5...: triple prior-gross replay853b74b0.../8SYN and
-aggregate validatord00f7365.../6SYN authenticate30tables/all130marks/42checks
-6fail,1CPU0CUDA. Parent reader689efcd3... and independent actual3 groups agree,
-not raw NAV/DD replay or OS proof. Fees modeled; no broker/account/order reads,
-new teacher, actual fee/net claim, shared10%basis or19-owner schedule changes.
-111 owned Herschel source/SYN: A/execution/
-kis-five-session-path-downside-admission-development-v1/replay-r1.
-Prefer exact G105 veto/matched-gross APIs over another replay platform. Retain
-original raw-selected union, fixed quantities/OPENe+5, SELL-before-BUY, allmarks
-and5/10/20bps; veto reduces candidate holdings only, never future-selected names.
-Independent aggregate reader checks all three candidate comparisons without
-strategy selection. Generic whole-share parity already covered by G28/29.
-Recovery: source preparation only; existing Paper owners keep exact identity.
+111 CLOSED/rejected3b542a4d...: validator4b8b9ae2.../8SYN authenticates48tables/
+130marks90checks33fail,1CPU2CUDA64epochs1344updates. Actual2 independent
+aggregate/link groups pass at111/execution-actual-review-r1/receipt.json;
+retained full-ledger-versus-projection review fault, no runtime/fit rerun.
+Not independent review of own validator code, raw NAV/DD or OS proof.
+112 owned Execution: version existing G98 accounting adapter/outcome to consume
+the already tested G100 exact cumulative-fill overlay/bridge. Source gap at
+A/research/kis-five-session-path-downside-admission-development-v1/next-runtime-gap-r1/receipt.json.
+Original G98 inner job/identity/archive claims unchanged; missing fee stays
+PnL-only unknown, never zero, settled net, flatness or Paper permission hold.
+No new producer/endpoint/ledger/scheduler. Source/SYN plus bounded offline
+Docker integration and pinned delivery preparation; existing19owners/image/
+schedule/shared10%basis untouched. Actual fee/settled net not observed.
 
 ## Retained Evidence
 

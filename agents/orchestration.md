@@ -5,21 +5,21 @@ exact immutable evidence, not a second backlog. A=D:/thericher-v2/model-artifact
 
 ## Ready / Owned / Due (2026-10-12 KST)
 
-110 CLOSED/rejectedf9f55eb5...:1CPU0CUDA/134dates23966rows/42checks6fail.
-Host child/container/source closure attested; no winner or Paper change.
-ONE111: kis-five-session-path-downside-admission-development-v1.
+111 CLOSED/rejected3b542a4d...:1CPU2CUDA/134dates1340rows/90checks33fail.
+Host child/container/source/GPU lease closure attested; all three rejected.
+ONE112: kis-five-session-optional-fee-accounting-consumer-integration-v1.
 No company block/foreground market wait; existing19finite owners unchanged.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned | Close110 docs and verify/commit/push;111 source packages disjoint. |
-| Verification | Parent / complete110 |40 focused/source3/actual3/direct typed Docker SYN3;1311 authority reattached. |
-| Data | Plato / owned111 | Thin original selected-slot five-CLOSE TRAIN packet, no actual reads. |
-| Engine | Chandrasekhar / owned111 | Freeze path-risk target/CPU logistic/two GRU16/90 predicates before labels. |
-| Execution | Herschel / owned111 | Reuse G105 veto/matched replay; source/SYN aggregate reader, no broker work. |
-| Validation | Leibniz / standby |110 actual3 metadata groups complete;111 frozen source review later. |
-| Infra | Socrates / owned111 | Reuse finite CPU-first/two-CUDA host; no actual runtime or image rebuild. |
-| GPU | Steward / free |4090 usable;111 appointment not yet allocated, no permission/environment hold. |
+| Git/integration | Parent / owned | Close111 docs and verify/commit/push;112 source packages disjoint. |
+| Verification | Parent / complete111 |35 focused/source3/actual2/direct typed Docker SYN3;1311 authority reattached. |
+| Data | Durable lane / standby112 |111 packet frozen; no new acquisition or actual input reads. |
+| Engine | Durable lane / standby112 |111 all3 rejected; next operational gap selected, no fit/refit. |
+| Execution | Herschel / owned112 | Version G98 consumer with pinned G100 optional fee bridge and 8-field projection. |
+| Validation | Invoked / standby |111 independent source3/actual2 complete;112 thin review after source freeze. |
+| Infra | Socrates / owned112 | Finite offline SYN transport and delivery preparation; no actual private runtime. |
+| GPU | Steward / free |4090 used111/64epochs1344updates; lease released,112 requires no GPU. |
 | Paper due | Existing owners | Oct12 22:30KST entry, original exits/recovery/shared basis unchanged. |
 | Accounting due | Existing owner | FirstOct13 05:25KST; actual captures unknown. |
 | Shadow/successor due | Existing owners | Oct16 shadow/Oct19 entry and finite accounting unchanged. |
@@ -28,10 +28,11 @@ No company block/foreground market wait; existing19finite owners unchanged.
 
 ## Bottleneck And Reversible Improvement
 
-110 numerical work took42.73s; source assembly/test integration took longer.
-Reuse proven loader, replay, process, publication and GPU lease APIs for111;
-freeze small interfaces once SYN passes. Normalize catalog host keys to
-Path.as_posix upfront:110 preflight fault was local serialization, not Docker
-or model failure. Generic whole-share parity already covered by G28/29;
-skip repetition absent an exact current gap. Change only the path-risk target
-and fixed admission recipe. Named market waits never become a global pause.
+111 numerical work took48.17s; all frozen predicates reject the three models.
+G100 fee overlay is implemented/tested but G98 consumer still selects the old
+bridge and six-field projection (111/next-runtime-gap-r1/receipt.json).
+Version that exact consumer, reusing typed archive/fee and finite transport
+APIs rather than repeating research or adding another worker. Missing fee
+remains PnL-only unknown, never a Paper permission hold. Prepare selection
+without mutating existing19 owners; actual delivery is separately scoped.
+Named market waits never become a global pause.

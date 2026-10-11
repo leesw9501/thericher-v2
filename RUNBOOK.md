@@ -5,6 +5,23 @@
 ONE objective is the current NEXT_CODEX_GOAL.md, not a historical command below.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
+111 COMPLETE/rejected3b542a4d...:
+D:/thericher-v2/model-artifacts/research/kis-five-session-path-downside-admission-development-v1/integration-evidence.json.
+Science85d8f043.../trial1rowa2a2c3b0.../outcome1025fd49.... One600s run
+883063da... completed48.1724s, hosta61ab959.../result734d35d4.../readf4f974e9....
+1CPU2CUDA/64epochs1344updates0failed/134complete nonempty dates1340rows.
+48tables/all130marks/90checks33fail; all three rejected despite positive
+logistic DEV/later growth.35focused/direct typed Docker SYN3/source3/actual2,
+Claude supported-with-limits.490source aliases/0copies and host GPU/child/
+container/source closure checked, not raw NAV/DD or independent OS proof.
+Never rerun111 freeze/bind/prepare/dispatch/read/close exclusive creators or
+change its original clock/recipes/debits. Source/reviewer fixture faults retained.
+ONE112 optional fee accounting consumer integration: exact source gap at111/
+next-runtime-gap-r1/receipt.json. G98 selects old bridge/reader and six fields;
+G100 adds optional exact-fill fee semantics/two fields. Version existing consumer
+without changing inner job, adding a worker/endpoint/ledger, backcasting fees
+or interpreting missing as zero. Source/SYN+offline Docker, pinned delivery
+preparation only;19owners/images/schedules/shared10%basis unchanged. Fees/net UNKNOWN.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

@@ -13,32 +13,33 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Current Work (2026-10-12 KST)
 
-110 COMPLETE/rejectedf9f55eb5... at A/research/
-kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
-Sciencea6ed5fbe.../trial1rowb4116e81... closed by outcome9f9dfb41....
-One original600s CPU appointment e86a4757... completed42.7256s; result
-a39e33c8.../host4f2a5b75.../actual-read689efcd3...:1CPU fit,0CUDA,
-134complete TRAIN dates23966rows,158analytical windows29773betas.
-30tables/all130marks/42strict checks6fail; all six failures are later utility
-versus analytical-common and cash at5/10/20bps. At10bps per side, supervised
-growth DEV+3.49519%/later-.249257%, analytical-common+1.56864%/-.134292%.
-Reject this fixed model; no DEV-only winner, threshold/refit/cost rescue.
-40 focused cases, direct Docker CPU typed SYN3 groups, independent source3
-and actual3 aggregate groups pass. Claude contract/result supported-with-limits.
-Source489aliases/host child/container closure attested, not OS/raw-price proof.
-Retained SYN preflight failure is Windows catalog serialization, corrected
-before Docker/actual fitting; no runtime reset or fit refund. No weights/holdout,
-new data, physical availability/PIT, Paper qualification or19-owner changes.
+111 COMPLETE/rejected3b542a4d... at A/research/
+kis-five-session-path-downside-admission-development-v1/integration-evidence.json.
+Science85d8f043.../trial1rowa2a2c3b0... closed by outcome1025fd49....
+Original600s appointment883063da... completed48.1724s; hosta61ab959.../
+result734d35d4.../actual-readf4f974e9....134complete nonempty TRAIN dates,
+1340rows/821loss519nonloss,1CPU logistic2CUDA GRU16 seeds101/202,
+64epochs1344updates0failed.48tables/all130marks/90strict predicates33fail:
+logistic6/GRU10115/GRU20212, all rejected.10bps/side modeled growth DEV/later:
+logistic+.98245%/+.46815%;GRU101-.20409%/-.02095%;GRU202-.11788%/+.10228%.
+Positive logistic blocks do not change its frozen risk/utility rejection.
+35 focused, direct typed Docker CPU SYN3, independent source3/actual2 groups
+pass; Claude contract/result supported-with-limits.490aliases/0sourcecopies,
+host child/container/source/GPUlease closure attested, not OS/raw NAV/DD proof.
+SYN fixture and review projection faults retained; no runtime/refit/refund,
+weights/holdout/winner or Paper changes. Seen/current-listing/nonPIT/raw-action/
+nominal availability, modeled fractional fees, not settled account return.
+GPU free/usable after two actual CUDA fits; no environment or permission hold.
 
-ONE111: kis-five-session-path-downside-admission-development-v1. Source-only
-check distinguishes worst five-CLOSE liquidation loss from four checked prior
-targets, not global novelty. G105/G128 endpoint-loss ancestry and seen-data
-reuse remain explicit. Generic whole-share parity is already covered by G28/29;
-do not repeat it without an exact new gap. Data/Engine/Execution/Infra source
-packages are dispatched in parallel. One CPU logistic and two GRU16 CUDA fits
-will use a separately frozen finite contract; no111 labels/fits/allocation yet.
-GPU usable/free, not an environment or permission hold. Future107 and existing
-19 finite owners retain their original identities, shared10%basis and next_due.
+ONE112: kis-five-session-optional-fee-accounting-consumer-integration-v1.
+Source gap receipt111/next-runtime-gap-r1/receipt.json confirms G98 capture ->
+adapter -> outcome still selects pre-G100 bridge/reader and six-field output;
+G100 optional exact-fill fee overlay is implemented but not consumed there.
+Integrate versioned consumer and eight-field projection with original G98 inner
+job unchanged, no new endpoint/worker/ledger or missing-fee-as-zero inference.
+Use source/SYN and a network-none bounded Docker check; prepare pinned delivery,
+never manually invoke a producer or change19owners/shared10%basis/schedules.
+Actual fees/net remain UNKNOWN until exact evidence. Future107 remains pending.
 
 ## Retained Preparations And Closures
 

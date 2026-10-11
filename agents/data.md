@@ -6,19 +6,17 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-110 CLOSED/rejectedf9f55eb5... at A/research/
-kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
-Data OPEN packet42da7705.../8SYN retains full frozen peer support and TRAIN
-phase guard. Parent actual1CPU runtime reports134complete dates23966rows;
-Data did not independently reproduce raw labels. No new acquisition, universe,
-PIT/finality/corporate-action qualification. Existing19 owners unchanged.
-111 owned Plato source/SYN only: A/data/
-kis-five-session-path-downside-admission-development-v1/path-geometry-r1.
-Thin packet binds the original prior-rule selected slots before entryOPEN and
-all five CLOSE label reads. Missing any selected point invalidates that entire
-TRAIN date, never removes a loss. LastTRAIN path before DEV context; unchanged
-old800/later71 inputs and original512 order. Recovery: source preparation,
-no actual data/labels read by role; Parent owns finite runtime.
+111 CLOSED/rejected3b542a4d.../result734d35d4... at A/research/
+kis-five-session-path-downside-admission-development-v1. Data packet6893b04f.../
+release df48251c...8SYN preserves full prior-ranked10 path support, active-only
+consumer rows and exact rational costs. Parent actual reports134complete
+nonempty dates1340rows/821loss519nonloss, no missing paths; Data did not
+independently reproduce raw labels. No acquisition/PIT/finality/action promotion.
+112 optional fee accounting consumer integration is Execution/Infra-owned;
+Data standby, no new universe, provider, dataset or collection assignment.
+Existing19owners/107 future coverage/durable cursors and next_due unchanged.
+Recovery: completed source111, preserve exact receipts; current goal alone
+assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
 
 ## Retained Evidence
 

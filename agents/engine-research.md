@@ -6,21 +6,19 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-110 CLOSED/rejectedf9f55eb5.../resulta39e33c8.../outcome9f9dfb41... at A/research/
-kis-peer-residual-return-ranking-development-v1.134dates23966TRAIN rows,
-one Ridge/0CUDA,30tables42checks6fail; later utility loses to analytical-common
-and cash at every cost. No refit, DEV winner, threshold/cost rescue or weights.
-40 focused/direct Docker typed SYN/source3/actual3 groups; Claude supported
-with limits. Seen current-listing/nonPIT/raw-action/nominal availability only.
-111 owned Chandrasekhar: A/research/
-kis-five-session-path-downside-admission-development-v1/engine-r1.
-Source-only hypothesis changes to worst five-CLOSE liquidation-loss admission,
-not endpoint-return ranking or a110 architecture rescue. Source distinction
-receipt at110/next-direction-r1/path-downside-source-check.json checks four
-targets; not global novelty. Freeze CPU logistic+two GRU16 recipes and90
-predicates before actual labels; fixed2% loss bit/p>.5 veto, no replacement/
-resize, unchanged OPENe+5 exit.600s family allocation incl cleanup, no holdout/
-weights/search/retry. GPU available; runtime/allocation not yet dispatched.
+111 COMPLETE/rejected3b542a4d.../result734d35d4.../outcome1025fd49... at A/research/
+kis-five-session-path-downside-admission-development-v1. Kernel74fef0ea.../
+release304149d7..., same prior20x5/fixed2% interim loss/p>.5 veto/OPENe+5 exit.
+134complete nonempty dates1340rows821loss519nonloss,1CPU2CUDA GRU16,
+64epochs1344updates0failed/48tables130marks90checks33fail. Logistic6/GRU10115/
+GRU20212 all rejected, no best seed, threshold/refit/weights/holdout rescue.
+10bps logistic DEV+.98245%/later+.46815% is not a passed screen or adoption;
+GRUs negative DEV.35 focused/direct Docker SYN3/source3/actual2; Claude limits.
+112 source-backed operational accounting gap takes priority: G100 fee overlay
+not wired into G98 consumer. Engine standby; no new fit/GPU appointment from
+this rejected family. Source-only pre-outcome proposal at111/next-direction-r1/
+proposal.json has pairwise ranking as an unallocated alternative, not a goal.
+Future107 pending, Paper authority independent of research outcomes.
 
 ## Retained Evidence
 
