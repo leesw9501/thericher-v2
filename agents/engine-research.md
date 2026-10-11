@@ -6,6 +6,22 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
+106 COMPLETE/development_screen_passedb00e112b.../resultf08beb14.../outcomef7faa74a...
+at A/research/kis-peer-relative-momentum-entry-development-v1. Same512 seen
+development,24tables130marks/30pass,0trainedfits/5807analytical betas. Final
+kernel a5f60333.../worker e56eec2a.../releasef7ea64b6...; Parent24 Engine plus
+Execution8/Infra8/consumer6=46 focused. Independent actual3+2 aggregate groups,
+not raw NAV/physical publication/OS or beta reconstruction. At10bps/side growth
+residual DEV+2.58272%/later+.25028%, both controls lower; common planned gross
+does not prove matched risk, neutrality, independent alpha or Paper promotion.
+Claude actual supported-with-limits prioritizes unchanged prospective input/
+forecast custody over another seen-model variation. ONE107 prepares a finite
+Oct12 entry/Oct19 fifth-OPEN forward contrast; no current forecast yet.
+Do not retune106 or adopt it as a Paper teacher. Existing Paper is independent.
+Ready later direction: inventory-conditioned intraday reference-policy-value
+supervision, same M5/context36/H30 versus standalone target and merged controls.
+Source proposal only, no second campaign/fit/goal; GPU remains free/usable.
+
 Goal99 COMPLETE/rejected879bb037... at A/research/
 kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
 Sciencee5d1dbd3.../trial1b93f2526.../outcomee19f0c2c... unchanged/closed.

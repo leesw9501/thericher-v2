@@ -2,78 +2,90 @@
 
 ## Objective
 
-Complete kis-peer-relative-momentum-entry-development-v1: test whether removing
-prior peer-market movement from stock ranking improves fixed-five selection.
+Complete kis-peer-relative-momentum-prospective-preparation-v1: freeze the
+unchanged106 survivor and paired controls on an outcome-free current snapshot,
+then prepare its finite owned forward-input capture and exact offline replay.
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
-Prior105 CLOSED/rejectedaa330c36.../result43e5ad42.../outcomea66484b4....
-One CPU fit spent;27of30 pass,3 DEV DD-versus-matched failures. Positive return
-improvement does not erase that frozen rejection. No105 cutoff/model rescue.
-106 ready68949095.../bodybc1c4dbe... is frozen as scienceea00de07... and
-trial1 row023d797e.... Signed documentf286a900... differs from wrapperf94a55dd...
-and row hash; immutable ready proposal remains pre-freeze, not an authority hold.
-No106 numerical appointment/clock/runtime yet. Source packages proceed in parallel.
+106 CLOSED b00e112b.../resultf08beb14.../outcomef7faa74a.... All30 development
+conditions pass,24tables130marks;0predictivefits/5807analytical estimates. Same
+seen/nonPIT/current-listing/raw-action inputs do NOT establish fresh replication,
+alpha or a broker strategy. Claude actual-result review supported-with-limits at
+A/research/kis-peer-relative-momentum-entry-development-v1/parent/claude-result/
+claude-dual-result-outcome.json. Do not rerun or tune106.
 
-## One Fixed Intervention
+## Fixed Forward Comparison
 
-Use the SAME512 identities, old800/later71, prior21 completed bars, DEV15/later9
-cohorts and all130 marks. No new universe, acquisitions, dates, windows or models.
-Nearest sector-relative study used4ETFs/126-return lookback/21-session rebalance;
-G92 changed covariance allocation. This study changes stock-level ranking,
-not those policies or105 loss veto. Bounded nearest audit, not global novelty.
+Reuse exact106 peer_momentum.pya5f60333..., paired replaya155c73e..., original
+context/rule254f5bec... and float-cap/quantity replaya5a9a0e1.... Same512 identity
+axis, prior21 completed bars/20returns, eligible leave-one-out peer, beta exact
+zero fallback, top10/inversevol/caps/proxy and both-downscale common gross.
+Four arms residual_common/momentum_common/rule_unscaled/cash. Fixed quantities,
+initial research capital, actual-leg costs5/10/20bps, sell-before-buy, no hedge,
+substitution, reinvestment, horizon/model/threshold/cost search or rescue.
 
-Freeze eligible peer pool at each prior CLOSE, including existing>=128 and
->=64 added support. Compute20 float64 CLOSE-to-CLOSE log returns; for stock i,
-peer return is the equal mean of OTHER eligible names on the same20 dates.
-Beta=covariance(de-meaned stock,peer)/variance(de-meaned peer), with the common
-normalization cancelling. Exact zero denominator gives beta0; no epsilon,
-clipping, search, future returns, self inclusion or coverage-selected cohorts.
-Score=sum(stock returns)-beta*sum(peer returns). DO NOT subtract the fitted
-intercept or sum fully demeaned residuals: that would trivially sum to zero.
+Use existing current21 snapshot under
+M/us_equities/kis_paper_private/stock-five-session-current512/v1/goal82-20261009.
+View manifest.json a0bb1864... is byte-retrieved; view/bars.csv.gz921380f5...
+remains to be independently bound by Data before numerical preparation.
+Current-input API36bfbdac... builds explicit current clocks, not old800 dates.
+Cursor startOct10 19:16:58UTC is NOT materialization completion or availability.
+Manifest captured_at_utc has explicit+09 offset:2026Oct11 04:28:42.228861+09,
+equivalent Oct10 19:28:42.228861UTC, before the future entry. Normalize aware
+offsets; the field name is not proof of UTC or provider publication/finality.
+Bind exact captured/archive and forecast times before any future payoff access.
 
-Reuse original top10/ordinal ties, inverse-vol/gross<=.50/name<=.10/triangle<=.08
-and fixed proxy>.003 semantics, changing only ranking score. Freeze both raw
-plain and residual entry weights before prices. Common G=min(their gross);
-downscale BOTH paired baskets to G before next OPEN and new quantity freeze,
-never increase caps or resize after seeing OPEN. Keep raw rule as another arm.
-Common gross is not equal realized risk or market neutrality; no hedge/short.
-Record prior beta/concentration and analytical estimator counts separately from
-predictive training. Nonfinite selected statistics/support fail that comparison.
+Target ONE prospective cohort: entry2026Oct12 OPEN13:30UTC, five official
+Oct12..16 CLOSEs and fifth-interval exit2026Oct19 OPEN13:30UTC. Bind the exact
+official six-session calendar, current21 prior clock and physical forecast time.
+If preparation misses the pre-entry deadline or input support fails, close only
+this cohort as input_unavailable/technical_failed; do not relabel a later entry.
+First future outcome must stay unopened until candidate/control forecast and
+ordered original unscaled selected union<=20 are immutable. Required context,
+entry/exit OPEN and held CLOSE support survives zero-scale and cash. Missing
+future input is incomplete, never successful flat, a censored loss or reselection.
 
-Arms residual_common, momentum_common, rule_unscaled, cash:24tables at5/10/20bps
-per-side actual legs. q=predeclared prior weight/(entryOPEN*1.001), fixed initial
-capital, forced OPEN(e+5), sell-before-buy, all cash-tail daily CLOSE marks.
-Selected missing context/payoff for either original basket cannot be censored
-by matching, cash or a later substitution. No reinvestment/cash repair/reentry.
-Uresidual>all3controls and DDresidual<=momentum_common/rule_unscaled in BOTH
-blocks at ALL costs:30 fixed conjunctions. Failure ends this bounded mechanism;
-no window/beta/model/threshold/cost rescue. Seen samples remain seen.
+This is ONE prospective pilot, not enough independent blocks for a profitability
+or statistical replication claim. Study fractional modeled execution is not
+integer broker fill, observed fees, settled cash, live risk or Paper adoption.
+Freeze before outcomes; keep provider finality/historical PIT limits explicit.
 
-## Owners And Completion
+## Owners And Bounds
 
-Engine owns nearest-source/finite recipe, causal peer kernel and small worker
-delta. Execution independently owns prior-common-gross/quantity replay parity.
-Data standby for concrete support/clock defects; no new data or quality gate.
-Parent integrates, owns actual Docker/Git and original clock. Infra invoked for
-concrete ABI only, reusing frozen105 transport/catalog rather than a new platform.
-Temporary Validation receives frozen source and actual aggregates, never tunes.
-One CPU numerical runtime<=600s,2threads/4GiB,0 predictive fits/CUDA/weights/
-holdout/retry. Analytical beta estimation is explicit, not concealed training.
-Freeze science/source/custody before numerics. Source/SYN fit0/market mounts0;
-numerical exactly four existing market files RO; fresh outputs only under A.
+Data: bind current snapshot/current calendar and prepare a minimal selected-union
+exact-date capture using the owned single-client KIS Paper daily primitive.
+Existing collect.py4b134886... cannot be reused as a hardcoded512/21/Oct9 loop.
+Keep immutable original input/forecast and actual capture clocks. KIS_PAPER_*
+market reads/retention and finite goal-owned schedules are standing authorized;
+use named Data path only, never credentials/raw rows in output or KIS_LIVE_*.
 
-Done: one exact24-table comparison or linked duplicate/input-unavailable/
-technical-failed closure, exact runtime/cleanup and unchanged-source evidence.
-Claude next direction supported-with-limits at105 parent/claude-next/
-claude-dual-result-outcome.json, completed2026-10-11T14:00:00Z; challenge actual
-interpretation before reliance. Factor-decomposition source inspiration:
-https://math.nyu.edu/~avellane/AvellanedaLeeStatArb071108.pdf
-NOT its PCA/ETF mean-reversion, market-neutral or published-performance replica.
+Engine: reuse unchanged signal/ranking; seal source/input/clock-linked forecast
+and required union, plus one finite forward comparison contract. No new fit,
+scarce depth, ensemble, holdout or outcome-informed current-snapshot selection.
+Execution: independent same-quantity/all-mark replay and cost semantics only.
+Parent: integration/Git/actual runtime and any exact finite task installation.
+Temporary Validation: independent frozen source/forecast/clock custody review.
+No new platform, gate, report family, per-agent goal or duplicated full harness.
 
-No credentials/KIS/provider/account/order/scheduler changes, downloads, paid
-commitments or live behavior. Existing13 owners/shared10%basis/pending identities
-unchanged. Data M/artifacts A/15% D: floor; no market or global approval wait.
-Focused tests plus exact-source authority reattachment for external-only work;
-changed shared source follows AGENTS.md. Ruff/three sample Compose, stateboards/
-HANDOFF, verify/commit/push, ONE next goal and continue.
+Numerical preparation is bounded CPU-only/0predictivefits/0CUDA, existing runtime,
+same data RO and outputs only under A. Source/SYN first; freeze before any
+future-data worker. Finite capture advances only its exact union/date cursor;
+existing measured pace/one collector/token/owned next_due, no uncontrolled retry.
+Future waits stay in the named worker, not foreground sleep. Actual capture and
+replay remain pending until evidence exists, never inferred from task exit.
+
+Done: immutable pre-entry forecast/control/source/input/time binding plus an
+exact finite capture/read/replay owner and verified install/readback, or a linked
+pre-entry unavailable/failure closure. This is preparation completion, NOT future
+validation completion. Then choose ONE next material objective; the source-audited
+intraday inventory-conditioned reference-policy target is an independent ready
+direction while the future cohort matures, not an architecture-only rerun.
+
+No account/order call, new Paper adoption, budget/identity reset or live behavior.
+Existing13 owners/shared10%basis stay unchanged; do not compete for their claims.
+Any new finite research Data owner is named separately, not a recovery substitute.
+Market data M/artifacts A/15% D: floor; no paid data/model or new approval gate.
+Focused verification plus exact-source authority reattachment for external-only
+work; changed shared source follows AGENTS.md. Ruff/three sample Compose,
+stateboards/HANDOFF, verify/commit/push, ONE next goal and continue.

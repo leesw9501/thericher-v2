@@ -17,12 +17,21 @@ independent plan-derived controls. Actual2d565ad2.../911f77b4... is aggregate
 source-chain evidence, not raw NAV/OS proof. Failed reviewer wrappers and Parent
 draft-pin preclose error remain retained, no runtime rerun or fit refund.
 Never rerun105 source/SYN/numerical/freeze/close exclusive creators.
-ONE active106: kis-peer-relative-momentum-entry-development-v1. Freeze a
-prior-only peer-beta selection recipe before numerical work. Ready68949095.../
-bodybc1c4dbe... frozen as scienceea00de07.../trial1 row023d797e...;
-signed documentf286a900... and wrapperf94a55dd... are separate hashes. No106
-clock/appointment/numerics yet, no predictive fits/GPU/weights/holdout rescue.
-Never rerun the106 scientific freeze/signed-row exclusive creators.
+106 CLOSED/development_screen_passedb00e112b... at
+D:/thericher-v2/model-artifacts/research/kis-peer-relative-momentum-entry-development-v1/integration-evidence.json.
+Scienceea00de07.../row023d797e.../outcomef7faa74a.... CPU8d729ca6... passes;
+host376b3ca1.../receiptf2a2a65d... binds resultf08beb14....24tables130marks,
+30of30pass,0trainedfits/5807analytical betas/0CUDA/weights/holdout.
+Parent46focused, prospective2source/kernel2bounded and actual3+2 groups;
+kernel reviewer NameError remains one failed SYN, not a second dynamic pass.
+R1 single-source release shape failed before actual; frozen R2 Infra10a7e72f...
+binds485aliases/462repo0copies. Exact600s clock/container/source closure verified.
+Never rerun106 freeze/extract/source/SYN/numerical/close exclusive creators.
+ONE active107: kis-peer-relative-momentum-prospective-preparation-v1. Bind
+unchanged candidate/current21/current calendar/actual pre-entry physical time;
+future Oct12..16 CLOSEs/Oct19 fifth OPEN still unknown. Finite research Data
+owner is separate from existing Paper identity/budget/recovery; no forecast or
+new task installed yet. Preparation completion is not future result evidence.
 Existing13 owners/shared10%basis/identities unchanged. Claude105 result and
 next direction supported-with-limits; next source inspiration is factor
 decomposition, not published stat-arb/market-neutral/mean-reversion replication.

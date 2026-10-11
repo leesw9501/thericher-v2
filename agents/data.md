@@ -61,6 +61,20 @@ Actual result43e5ad42.../closureaa330c36...:1340 selected TRAIN rows/134complete
 cohorts,24tables130marks, no new data/PIT/finality/corporate-action promotion.
 Next106 uses same512 prior21 bars for a leave-one-out eligible peer statistic;
 Data standby unless exact support/clock issue, no acquisition or universe gate.
+106 CLOSED b00e112b.../resultf08beb14...:30development conditions pass on the same
+seen inputs; not Data quality/PIT/finality or fresh replication. Next107 binds
+existing current21 manifest/packed bytes and actual captured/archive clocks,
+official six-session calendar, unchanged prior-only forecast before Oct12 OPEN.
+Reuse current_input.py36bfbdac... build_frame explicit current clock/512 axis;
+cursor792a1d07... startOct10 19:16:58UTC is not completion/availability evidence.
+Finite daily primitive collect.py4b134886... scope_result may be adapted for
+original selected union<=20/five CLOSEs/Oct19 fifth OPEN, not its fixed512 loop.
+No forecast/actual future result or new schedule installed yet; original owners
+unchanged. Do not read future payoffs until forecast/source/time is immutable.
+Parent retrieved exact view/manifest.jsona0bb1864.../10584rows; declared packed
+view/bars.csv.gz921380f5... not yet rehashed. Captured field explicit+09 time
+Oct11 04:28:42.228861+09 equals Oct10 19:28:42.228861UTC. Before next OPEN,
+not Friday decision availability, response-level finality or physical OS proof.
 Source audit found older4-ETF sector strength/21-rebalance and covariance
 allocation already exist; next stock-level beta selection is a bounded new
 comparison, not a globally novel signal. Daily volume is only a capacity proxy;

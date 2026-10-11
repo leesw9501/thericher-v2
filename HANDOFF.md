@@ -13,6 +13,29 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal106 peer-relative stock ranking COMPLETE/development_screen_passedb00e112b...
+at A/research/kis-peer-relative-momentum-entry-development-v1/integration-evidence.json.
+Scienceea00de07.../trial1 row023d797e... closes as outcomef7faa74a....
+CPU prerequisite8d729ca6... passes; numeric host376b3ca1.../receiptf2a2a65d...
+binds resultf08beb14...:24tables/all130marks,30of30 fixed predicates pass,
+0predictivefits/CUDA/weights/holdout;5807 analytical betas across24 windows.
+At10bps/side, residual/matched/raw growth DEV+2.58272%/+1.78433%/+1.99485%,
+seen-later+.25028%/-.75676%/-.71099%. DDresidual1.19578%/1.05701% is below both
+controls in each block. Equal planned gross is not equal realized risk or beta.
+Parent46 focused pass; prospective2 source-read groups, kernel2 bounded groups
+(1 native SYN plus source-read; retained reviewer NameError), actual independent
+Execution3/Validation2 groups. Reader3fae5ea.../release2d58fa92... verifies
+aggregate/source custody, not raw NAV/beta/independent OS proof. Original600s
+appointmenta92127ad... CLOSED; source/child/container cleanup verified on host.
+R1 release-shape metadata failure before runtime preserved; R2 Infra10a7e72f...
+binds485aliases/462repo files/0copies without changing candidate science.
+Claude actual result supported-with-limits: multiple families used these seen,
+nonPIT/current-listing/raw-action samples; not fresh replication or Paper adoption.
+ONE next objective kis-peer-relative-momentum-prospective-preparation-v1 seals
+unchanged candidate/controls before Oct12 OPEN and owns a finite future cohort.
+Actual prospective comparison remains pending, not completed by preparation.
+Existing13 owners/shared10%basis untouched; GPU free/usable, no permission hold.
+
 Goal105 entry-loss veto COMPLETE/rejectedaa330c36... at A/research/
 kis-fixed-five-entry-loss-veto-development-v1/integration-evidence.json.
 Scienceeb4485b6.../trial1b5aaaecd... closed by outcomea66484b4....
@@ -34,8 +57,8 @@ Next ONE objective kis-peer-relative-momentum-entry-development-v1: change
 relative stock-selection signal, not105 loss-veto rescue. Same existing data;
 106 Ready68949095.../bodybc1c4dbe... frozen as scienceea00de07.../trial1
 023d797e.... Signed documentf286a900... differs from wrapperf94a55dd...;
-no106 appointment/clock/numeric work yet. Engine/Execution/Infra/Validation
-source-owned in parallel. GPU usable/free, no permission hold.
+Its original no106 appointment/clock/numeric preparation is superseded by the
+completed106 closure above; never rerun its exclusive creators or retune it.
 
 ## Prior Closures
 

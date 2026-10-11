@@ -6,47 +6,45 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-Goal105 COMPLETE/rejectedaa330c36.../result43e5ad42.../outcomea66484b4....
-CPU1 complete40iterations/1340TRAINrows/0CUDA,27of30pass/3 DEV DDmatchedfail.
-Parent61 focused;4 independent prospective/source and5 actual groups pass.
-ONE objective kis-peer-relative-momentum-entry-development-v1. No company
-block, market wait, GPU permission or operator approval hold.
+ONE107: kis-peer-relative-momentum-prospective-preparation-v1.
+106 CLOSED b00e112b.../outcomef7faa74a..., development_screen_passed30of30.
+Source/current-time preparation ready, not a company block or market wait.
+The source-only intraday target proposal is next-direction evidence, not a
+second campaign/goal. No prospective forecast, capture or task installed yet.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned106 | Scienceea00de07.../row023d797e... frozen; signed documentf286a900..., no106 appointment/numerics. |
-| Verification | Parent / ready | Exact1311 authority15829pass22skip reattestable, not a fresh full-suite; external focused61 pass. |
-| Data | Plato / standby106 | Same800/71 causal support available; nearest sector4ETF/monthly/allocation already known; no acquisition. |
-| Engine | Chandrasekhar / owned106 | Finite leave-one-out peer-beta ranking recipe; not105 veto/model/cutoff rescue. |
-| Execution | Herschel / owned106 | Final paired replay1e9db5ef.../8 Parent SYN pass; small aggregate reader next. |
-| Infra | Socrates / complete source106 | Release0f9f5a87.../8 Parent mocks pass; final Engine refs required before actual CPU0-fit runtime. |
-| Validation | Leibniz / owned106 | Prospectivee247987d.../2 source-read groups pass; bounded kernel/replay review next, no wrapper platform. |
-| GPU | Steward / free | No active job/lease; deterministic peer-statistic intervention needs no CUDA. |
-| Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
-| Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |
-| Accounting due | Goal95 recovery Action | Five finite dates, firstOct13 05:25KST; original job/claims, captures unknown. |
-| Successor due | Goal97 finite3 tasks | EntryOct19 22:30KST/recovery22:40; fifthEXITOct24 04:50/recovery05:00; outcome unobserved. |
-| Successor accounting due | Goal98 finite1 | Oct19..23 20:25..35UTC, firstOct20 05:25KST; prior12 unchanged. |
-| Data due | Existing ab65 owner | 42-peer endpoints Oct12/19 21:40UTC unchanged; not foreground wait. |
+| Git/integration | Parent / owned107 | Integrating106 closure and pre-entry unchanged prospective preparation. |
+| Verification | Parent / ready | 46unique106 focused pass; unchanged1311 authority15829pass22skip reattestable, not a new full suite. |
+| Data | Plato / ready107 | Existing current21 input/API and finite daily primitive; actual current manifest/archive/calendar must be bound. |
+| Engine | Chandrasekhar / ready107 | Unchanged106 signal/current forecast; no fit, retune or new teacher. |
+| Execution | Herschel / ready107 | Original selected-union/fixed-quantity/five-CLOSE/fifth-OPEN future replay. |
+| Validation | Leibniz / ready | Independent frozen forecast/source/clock review; actual1062groups passed, not independent NAV/OS proof. |
+| Infra | Socrates / standby |106R2 single-source ABI fixed before actual; no environment block. |
+| GPU | Steward / free | Available, no active lease; current prospective statistic needs no GPU. |
+| Shadow due | Existing Goal95 R3 | Oct16 21:15..45UTC, cutoff21:35; unchanged. |
+| Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST; original fifth-CLOSE exit/recovery, not new peer strategy. |
+| Accounting due | Existing Goal95 owner | FirstOct13 05:25KST; actual captures unknown. |
+| Successor due | Existing Goal97/98 owners | Oct19 entry/fifth-CLOSE exit and finite accounting unchanged. |
+| Data due | Existing ab65 owner |42-peer endpoints Oct12/19 21:40UTC unchanged; not the new selected union. |
+| Prospective due |107 not installed | Intended Oct12 entry through Oct19 fifth OPEN; future inputs remain unknown. |
 
 ## Bottleneck And Reversible Improvement
 
-Next dependency is the finite106 peer score/common-gross recipe, not coverage,
-permissions, a market wait or a new architecture. Data and Engine proposals
-were independently compared: small-retail volume caps could be inactive;
-relative selection directly tests stock-choice value without another model.
-Prior sector4ETF strength differs from stock-level leave-one-out beta ranking;
-no global novelty or market-neutral/mean-reversion replication claim.
+106 passes the seen development screen. Most material next evidence is an
+outcome-free fixed prospective contrast, not another seen variation. Current21
+input, actual materialization/forecast time and a sixth-session exit calendar
+must be linked without pretending old800 geometry or cursor-start is availability.
+Keep this separate from existing Paper ownership/budget and risk controls.
 
-105 revealed review-harness overhead, not an engine or runtime defect. Bind
-only FINAL releases before Parent tests/close, inspect typed fields instead of
-guessing aliases, and use the existing exact aggregate reader rather than a
-second full-worker wrapper. Stop expanding a failed reviewer harness; retain
-failures and complete narrowly scoped source/scalar checks. This reduces
-duplicate critical-path verification without omitting independent actual
-evidence. No new gate, report family or permanent role.
+106 source assembly exposed a real release-shape ABI mismatch before runtime.
+Reversible improvement: exercise actual final lane metadata shapes in the
+minimal assembler SYN case before dispatch, not only a uniform dummy mapping.
+R2 accepts exact single-source path/basename pins and rejects conflicting hashes;
+existing source/catalog/runtime controls remain. No new wrapper/report/platform.
+Source-handoff review stays thin: exact APIs/final pins, bounded SYN groups and
+existing aggregate readers; retained reviewer fixture errors are not passes.
 
-105 positive return improvement remains alongside its frozen risk rejection.
-Do not convert it to all-model futility, fresh replication or permission to
-retune105. Original101 UNKNOWN3 spent and103/104/105 outcomes remain immutable.
-All13 future owners/shared10%basis/strategy/pending identities stay unchanged.
+After107 preparation, a finite worker owns future waits while another ready
+engine package proceeds. Preparation is not future validation or teacher adoption.
+Existing13 owners/shared10%basis/identities are unchanged.
