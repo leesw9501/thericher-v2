@@ -23,6 +23,16 @@ ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
 Owned: pure independent next-OPEN action/cost/holding-age replay SYN only;
 no broker/bank/order/strategy change. Full book/shared10%basis/losses/reservations/
 pending identities unchanged; never native observe() as a passive reader.
+Replay source bc4058e3... frozen at A/execution/
+kis-stock-joint-entry-continuation-policy-development-v1/replay-r1/release.json;
+36 author tests and Parent36 pass0.22s, Ruff clean. Fraction fixed-share/cash
+reference, entry/exit per-side5/10/20bps, mandatory open(entry+5), explicit terminal
+OPEN. Missing required price stays unavailable; no broker-fill/alpha claim.
+Independent R1 review39ddd722... found P2: missing mandatory OPEN(entry+5)
+sets unavailable then increments age and raises held_interval_limit globally.
+Original36-pass author/Parent evidence and5pass1fail independent evidence remain
+immutable. Narrow new replay-r2 recovery assigned; no current passing final
+replay or Engine target/campaign attestation claimed yet.
 New finite successor accounting task: Oct19..23 20:25..35UTC, firstOct20
 05:25KST, thericher-kis-paper-successor-20261019-accounting. Jobb9f898f6.../
 planc3cf449a...; prior12 definitions/last/next unchanged. Installer exit1 on

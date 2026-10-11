@@ -20,12 +20,21 @@ Goal98 COMPLETE c6e08a27...: attributionf54280aa...39 tests, archive bridgeR3
 27726cdf...58/independent6, default image SYN3.951s. Full book intact; PnL only
 from journal-bound segment, unknown fills/fees never become net profit.
 ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
-Owned: freeze held-age cash/ENTER/HOLD/EXIT before outcomes, daily20/max5 sessions,
+Owned: freeze held-age cash/ENTER/HOLD/EXIT before outcomes,20steps/21bars/max5,
 next-OPEN execution, explicit costs. Existing Tiingo direct-utility TCN/linear
 and one-step transition models already ran; new state/target/source lineage
 must differ, not rescue a closed family. CPU smoke then bounded eligible GPU;
 seen later50 diagnostic, sealed spend0. Claude98 e29a80f8... supported-with-limits
 is not research99 challenge or authority.
+Proposed finite episode accepted for source implementation, not numeric dispatch:
+entry only at first scheduled OPEN, cash after exit parked. TRAIN21,26..686
+terminal through691; DEV720,725..790 terminal795/all80marks; seen-later21,26..61
+terminal66/all50marks. TRAIN-only pathwise stopping labels are upper-bound
+supervision, never causal oracle performance. CPU ridge plus GRU101/202,
+<=3 fits/shared600s, train10bps PER SIDE and frozen-action5/20 sensitivities.
+Exact source/scientific freeze and CPU smoke precede allocation/market work.
+Claude direction supported-with-limits under this goal's parent/claude-design;
+independent target/replay validation remains separate from that opinion.
 
 ## Recent Research Conclusions
 

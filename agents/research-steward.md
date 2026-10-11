@@ -16,6 +16,10 @@ Goal98 accounting readiness COMPLETE c6e08a27..., no fit/GPU/holdout spend.
 ONE objective kis-stock-joint-entry-continuation-policy-development-v1:
 held-position/age-aware policy; preparing frozen lineage/target/purged splits/
 cost/kill/<=3fits/<=600s appointment, no numerical dispatch yet.
+Finite first-OPEN entry/no re-entry source proposal accepted; TRAIN pathwise
+oracle labels explicitly upper-bound, seen DEV/later not sealed. CPU ridge and
+GRU seeds101/202 share three-fit ceiling. No canonical family debit or GPU lease
+yet; Parent registers exact scientific/source contract before actual dispatch.
 All prior research debit/family results below remain unchanged.
 GPU is available and usable; no authorization or environment hold.
 Future owned data/decision opportunity is next_due, never foreground sleep.

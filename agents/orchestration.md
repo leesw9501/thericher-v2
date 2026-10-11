@@ -12,13 +12,13 @@ No company block, market wait, GPU permission or operator approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned99 | Closing98 docs; sole Git/actual Docker owner. |
+| Git/integration | Parent / owned99 | Goal98 pushedd990840; sole Git/actual Docker owner, new causal ABI integration. |
 | Verification | Parent / complete98 | 235 focused/26 independent;1311source4205ef0f.../JUnit15829pass22skip reattached, not fresh rerun. Ruff/three Compose pass. |
-| Data | Plato / owned99 | Existing old512/seen-later512 session/context/purge preparation, no acquisition. |
-| Engine | Chandrasekhar / owned99 | Held-age cash/ENTER/HOLD/EXIT freeze before outcomes; no numerical dispatch yet. |
-| Execution | Herschel / owned99 | Pure independent next-OPEN action/cost/age replay SYN, no broker/bank. |
-| Infra | Socrates / ready99 | Invoked runtime preparation only when needed; no standing queue. |
-| Validation | Leibniz / ready99 | Independent attacks after frozen contract, no tuning. |
+| Data | Plato / complete source99 | Inputd83db2a1...,23 author/Parent23 pass; priorCLOSE vs old08:30 corrected, no acquisition/numeric loader. |
+| Engine | Chandrasekhar / owned99 | Finite first-OPEN entry/no-reentry proposal accepted, source/SYN implementation; exact scientific freeze before numeric dispatch. |
+| Execution | Herschel / owned recovery99 | Originalbc4058/36 author/Parent pass; independent39ddd5pass1fail found missing forcedOPEN global error, narrow immutableR2 assigned. |
+| Infra | Socrates / owned99 | Pinned d6 transport preparation8c769818...,9 pure helper checks; narrow inert host adapter. |
+| Validation | Leibniz / ready recovery99 | Original independent5pass1fail retained; new frozenR2 reattack next, no tuning. |
 | GPU | Steward / free | Usable, no environment/permission hold; no utilization-only campaign allocated. |
 | Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
 | Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |
@@ -35,6 +35,9 @@ campaign integration. Ready Data/Engine/Execution preparation is dispatched
 in parallel. Improvement: test entry/continuation state and execution timing
 instead of repeating rejected model-name screens. Installed teacher/basis/book
 stays unchanged. Full-book custody and target-only PnL remain separate.
+At Data/Execution handoff, corrected measured new-clock/old-loader mismatch;
+21-bar anchor gives20steps. Narrowed broad design preparation to one finite
+episode/source handoff, preventing unbounded oracle re-entry and fit multipliers.
 Failed installer exit1 retained; independent exact Action/settings/principal/
 UTC readback resolves Windows normalization, no rerun/new schedule. All13
 finite tasks owned; source-safe facts under A/execution/

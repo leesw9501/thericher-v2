@@ -10,6 +10,14 @@ ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
 Owned: exact old512/seen-later512 session/context/purge preparation; no new
 acquisition, private bank or numerical outcome read. Goal98 COMPLETE c6e08a27...;
 Data evidence below retained.
+Goal99 input preparation COMPLETE5d85f8b2... at A/data/
+kis-stock-joint-entry-continuation-policy-development-v1/data-r1/input-preparation.json.
+Sourced83db2a1.../23 author and Parent23 pass0.43s, Ruff clean. New decision
+equals prior official CLOSE;21 completed bars provide20 feature steps, next
+OPEN executes. Old08:30 loader clock remains historical metadata, not newtime.
+Full finite TRAIN label support must end before DEV decision; strict raw-context
+nonoverlap is optional descriptive geometry, never an added research gate.
+Packed hashes linked from metadata, not rehashed; no numeric loader/fit yet.
 Data source/SYN complete4f2e1d64... at A/data/
 kis-five-session-successor-owned-accounting-v1/data-r1/source-release.json.
 Producer30e0ec11.../plan e24db6c8...;45 tests pass0.69s, Ruff/format pass.

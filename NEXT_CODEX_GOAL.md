@@ -25,15 +25,18 @@ and purged target boundaries; no new acquisition or universe. Current-listing/
 nonPIT/raw-action/nonTR/revised/nominal-availability limits narrow claims only.
 
 Engine: freeze ONE new campaign family before outcomes: cash/ENTER/HOLD/EXIT,
-held-position age, daily20-close context, max5 held sessions. CLOSE decisions
+held-position age,20 feature steps from21 completed bars, max5 held sessions. CLOSE decisions
 execute NEXT OPEN, never same-close hindsight. Declare exact target, purged
-train/development splits, cost5/10/20bps, cash/rule/fixed-five/exposure-matched
+train/development splits, cost5/10/20bps PER SIDE, cash/rule/fixed-five/exposure-matched
 controls, metrics and strongest kill. Prefer small continuation-value learning,
 not a new RL framework. Ceiling: one CPU baseline and one sequence architecture/
 two fixed seeds, <=3 fits and <=600s shared numerical wall budget. No outcome-
 informed retries/refits/window rescue. Tiingo direct-utility TCN/linear and
 one-step transition policies already ran; do not call them untested. Seen later50
-is diagnostic, never fresh replication or sealed holdout.
+is diagnostic, never fresh replication or sealed holdout. Entry only at each
+five-session episode's scheduled first OPEN; early-exit cash stays parked,
+no intra-episode re-entry. Entire TRAIN target terminal precedes DEV decisions;
+shared past context alone is not leakage or a requirement for another purge.
 
 Execution: independent pure next-OPEN action/cost/position replay and SYN tests:
 entry/exit costs, gaps, holding age, missing bars, terminal exit and split reset.
