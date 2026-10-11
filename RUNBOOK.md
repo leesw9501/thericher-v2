@@ -15,8 +15,12 @@ not independent raw-price NAV/OS proof. Consumer R1 Torch schema error retained;
 R2 source32cc20e3.../release8513bf32... uses frozen CPU versions/independent
 controls. Parent preclose caller failures did not rerun runtime or write a
 partial closure. Never rerun104 source/SYN/numerical/close exclusive creators.
-ONE next goal: kis-fixed-five-entry-loss-veto-development-v1, source/novelty and
-contract preparation first; one CPU fit600s, no GPU/holdout/weights/threshold
+ONE active goal: kis-fixed-five-entry-loss-veto-development-v1, science
+eb4485b6.../trial1b5aaaecd... frozen before numerical work; signed-row document
+2eccba39.../custody wrapper246e2055... are different pins. This is informed
+controlled reexamination of an earlier128 loss-veto target, not a novel method.
+Claude corrected-lineage supported-with-limits at its parent/claude-lineage/.
+No105 actual runtime/clock/appointment/fit yet. One CPU fit600s, no GPU/holdout/weights/threshold
 rescue. Existing13 owners/shared10%basis/identities unchanged. Reattach exact
 1311-source/15829pass22skip authority for external-only work, not a fresh suite.
 Goal103 CLOSED/rejected7a1cb985...:

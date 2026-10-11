@@ -55,7 +55,7 @@ no best seed/depth/third retry or retained weights. Parent50 focused pass,
 reader geometry50 versus actual71 fails; scalar predicates and pinned geometry
 separately verify rejection, not a passing full reader/raw-price replay.
 Claude cap/budget/result/next direction supported-with-limits. GPU lease closed.
-Current ONE objective: fixed price-volume basis paired CPU development. Source
+Prior104 objective: fixed price-volume basis paired CPU development. Source
 proposal d63f2658... at the103 next-direction root was made before103 outcome
 reads; official Qlib loader/MIT re-retrieved.9 continuous+6 flags,5/10/20 scales
 within21 bars, raw105 versus augmented120 ridge(alpha1),2fits600s/no CUDA.
@@ -74,7 +74,13 @@ No feature/alpha/seed rescue, weights, holdout, GPU or Paper change.
 Next ONE goal: fixed-five entry-loss veto, one CPU logistic fit600s. Keep
 original candidates/kept quantities; no replacement or learned exit. Prior-only
 matched-gross rule and cash distinguish filtering from simple exposure reduction.
-Source/nearest-study novelty and frozen contract first, not allocated105 yet.
+Nearest128 already used fixed-five profit/loss labels and veto-only admission;
+105 is informed controlled reexamination of512 rule-selected rows, fixed-initial
+quantities and a prior-only matched-gross control, not new-method/independent
+evidence. Scienceeb4485b6.../trial1b5aaaecd... frozen before market work;
+ready652752ac... remains original proposal. No105 numerical appointment/fit.
+Claude corrected-lineage supported-with-limits at the105 parent/claude-lineage/.
+Engine owns minimal100-input logistic worker; Execution12 Parent SYN pass.
 
 ## Prior Packages
 

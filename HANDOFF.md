@@ -33,7 +33,15 @@ corrected without runtime rerun. Claude result/next direction supported-with-lim
 No retry, feature rescue, weights, holdout, Paper or13-owner schedule changes.
 Next ONE goal isolates a fixed-five entry-loss veto, not another exit learner:
 one CPU classifier, unchanged kept quantities, prior-only matched-gross control.
-Nearest-study novelty/source contract first; no105 fit or scientific freeze yet.
+105 is an informed controlled reexamination:128 already used loss/profit labels
+and veto-only admission. New bounded comparison is original512 rule selection,
+fixed-initial quantities and prior-only matched-gross control, not global novelty.
+Scienceeb4485b6.../trial1b5aaaecd... frozen; signed-row document2eccba39... and
+custody wrapper246e2055... are separate pins. Claude corrected-lineage outcome
+at A/research/kis-fixed-five-entry-loss-veto-development-v1/parent/claude-lineage/
+claude-dual-result-outcome.json is supported-with-limits. No105 fit/appointment.
+Execution sourcebb991ae4.../release47fa55ee... passes12 Parent SYN tests;
+Engine worker and minimal CPU transport are parallel source-owned packages.
 
 Goal103 SAME-family technical reexecution COMPLETE/rejected7a1cb985... at
 A/research/kis-held-exit-causal-development-technical-reexecution-v1/integration-evidence.json.
@@ -282,8 +290,9 @@ ONE objective kis-fixed-five-entry-loss-veto-development-v1. Goal104's paired
 Next105 freezes original rule candidates and learns only entry rejection from
 realized fixed-five loss labels. One CPU fit600s/noCUDA, no threshold sweep,
 replacement, kept-lot resizing or learned exit. Original/gross-matched/cash
-controls, all130 marks and5/10/20bps per-side costs remain fixed. Novelty/source
-contract preparation comes before105 numerical work. Old/later512 already-seen
+controls, all130 marks and5/10/20bps per-side costs remain fixed. Science and
+canonical trial are frozen; source/SYN prerequisite precedes105 numerical work.
+This is informed controlled reexamination, not an unseen-data result. Old/later512 already-seen
 inputs,13 installed owners and original shared10%basis remain unchanged.
 
 Goal94 kis-five-session-successor-custody-preparation-v1 COMPLETE d6e4bec7...:

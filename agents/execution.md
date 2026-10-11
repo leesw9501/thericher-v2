@@ -65,7 +65,12 @@ Parent7 R2 tests pass; independent actual187016fa...4 groups passes. Closure
 04f16af6... records rejection, not a native Paper or independent raw NAV/OS claim.
 Next105 keeps original admitted lot quantities and fixed fifthOPEN exits;
 matched-gross control may scale the original basket before entry only, not the
-candidate. Freeze source cost/selection semantics before its single CPU fit.
+candidate. Sourcebb991ae4.../release47fa55ee... has12 Parent SYN tests passing
+(same author cases counted once): immutable mask/axis, exact original retained
+quantities, prior-only k, all costs, fifthOPEN, sell-before-buy, missing/funding.
+Scienceeb4485b6... frozen; Engine owns result schema/model, no105 numerical
+appointment or actual replay result yet. Source cost/selection semantics remain
+fixed before its single CPU fit; no selected missing loss may be censored.
 Full book/shared10%basis/losses/reservations/pending identities unchanged.
 Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
 independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.

@@ -14,13 +14,18 @@ Prior101 UNKNOWN and103/104 rejected lineages remain immutable and disclosed.
 
 ## Fixed Intervention And Bounds
 
-First inspect nearest prior entry-classifier and joint-policy contracts. An
-equivalent target/intervention on these inputs closes as duplicate with0fits;
-do not rename an already-run study. Distinction is realized fixed-five loss
-labels plus veto-only admission, not a novel classifier name.
+Nearest-source audit found the earlier128 study already used a fixed-five
+profit/loss target and veto-only admission. This is an informed controlled
+reexamination, NOT a novel loss-veto mechanism:512 original deterministic-rule
+selected rows, fixed-initial-capital quantities and a prior-only matched-gross
+control were not identical in the inspected nearest contracts. Do not claim
+global novelty, independent replication or rescue of the rejected exit studies.
+Scienceeb4485b6.../trial1b5aaaecd... is frozen before numerical work; exact
+signed-row document2eccba39.../custody wrapper246e2055... retain their distinct
+hashes. Original ready proposal652752ac... remains immutable and pre-freeze.
 
 One CPU logistic classifier: C1/L2/lbfgs/intercepttrue/maxiter200/tol1e-4,
-class_weightNone. Same21 completed prior-CLOSE bars yield20 normalized OHLCV
+class_weightNone/sample_weightNone. Same21 completed prior-CLOSE bars yield20 normalized OHLCV
 steps/100 inputs; TRAIN-only standard scaling. Freeze exact source/target/
 split/cost/runtime/custody before numerical work. At most1CPU fit/600s total,
 2threads/4GiB,0CUDA/weights/holdout/retry/threshold or calibration sweep.
@@ -59,8 +64,9 @@ Outputs/clock/cleanup outside Git; image remains pinned d6b43213....
 
 Done: one exact24-table development comparison or linked duplicate/input-
 unavailable/technical-failed closure, original fit spend preserved. Claude
-prospective supported-with-limits at A/research/
-kis-price-volume-basis-held-exit-development-v1/parent/claude-next/;
+prospective and corrected lineage supported-with-limits; latest exact outcome
+at A/research/kis-fixed-five-entry-loss-veto-development-v1/parent/claude-lineage/
+claude-dual-result-outcome.json, completed2026-10-11T13:35:48Z;
 challenge actual result before interpretation. Source inspiration only:
 https://hudsonthames.org/does-meta-labeling-add-to-signal-efficacy-triple-barrier-method/
 https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html
