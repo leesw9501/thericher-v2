@@ -2,7 +2,7 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-stock-joint-entry-continuation-policy-development-v1.
+ONE objective: kis-five-session-successor-observed-fee-reconciliation-v1.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
 Goal98 accounting readiness COMPLETE c6e08a27...:
@@ -18,9 +18,20 @@ Windows-normalized offsets retained; exact independent full Action/UTC/settings/
 principal readback43699193... resolves it. Do not reinstall or manually invoke.
 D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-owned-accounting-v1/parent/installed-tasks-verified.json.
 Claude e29a80f8... supported-with-limits, future fills/fees/net unknown.
-Current Data/Engine/Execution prepare old512/seen-later512 inputs, held-age joint
-policy and next-OPEN replay. Freeze before outcomes; bounded eligible GPU does
-not wait for future Paper receipts. No bank/broker or installed strategy change.
+Goal99 COMPLETE/rejected879bb037...:
+D:/thericher-v2/model-artifacts/research/kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
+Actual1CPU2CUDA/8epochs/472updates,35of64 fixed checks fail;185 focused,
+23 independent source/SYN groups and8 JSON groups pass. GPU lease released;
+no weights/holdout/Paper change. Publication R1 failure and measured errno22
+remain immutable; publication-only R2 requires exact completed host hash/cleanup
+binding because guest exclusive-create visibility is NON-atomic.
+Current Execution/Data/Engine packages connect exact archived observed fees to
+scoped successor PnL. Reuse canonical fee validator and full-book custody;
+do not rebuild integer sizing/ledger or sum cumulative fees across snapshots.
+Parent owns one default113f network-none SYN probe, no production private mounts,
+KIS/provider/account/order/credentials or installed task Action changes.
+Known gross-less-fees is not settled account net return. Missing fees remain
+unknown only for that field, not a Paper gate or foreground wait.
 
 Prior delivery facts retained below:
 Goal97 finite delivery COMPLETE e4d64c29...:

@@ -19,22 +19,18 @@ not first-fresh or actual constructor/broker proof. No actual bank/order/fill/ne
 
 Goal98 COMPLETE c6e08a27...: passive43d1e76e...30/independent8; five-close
 producer/typed attribution complete,235 focused/26 independent/image SYN3.951s.
-ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
-Owned: pure independent next-OPEN action/cost/holding-age replay SYN only;
-no broker/bank/order/strategy change. Full book/shared10%basis/losses/reservations/
-pending identities unchanged; never native observe() as a passive reader.
-Replay source bc4058e3... frozen at A/execution/
-kis-stock-joint-entry-continuation-policy-development-v1/replay-r1/release.json;
-36 author tests and Parent36 pass0.22s, Ruff clean. Fraction fixed-share/cash
-reference, entry/exit per-side5/10/20bps, mandatory open(entry+5), explicit terminal
-OPEN. Missing required price stays unavailable; no broker-fill/alpha claim.
-Independent R1 review39ddd722... found P2: missing mandatory OPEN(entry+5)
-sets unavailable then increments age and raises held_interval_limit globally.
-Original36-pass author/Parent evidence and5pass1fail independent evidence remain
-immutable. Narrow replay-r2 source efc46f9e.../release3c41d349... fixes failure
-checks before aging/decision;39 author/Parent39 pass0.34s. Fresh independent
-44478589... reruns unchanged attacks:6pass0fail,5pins unchanged. Engine target/
-campaign and actual numerical replay remain separately unattested.
+ONE objective kis-five-session-successor-observed-fee-reconciliation-v1.
+Herschel owns pure exact observed-fee overlay consumed by the existing archive
+reader/bridge. Whole-share sizing/full-book custody already exist; no new ledger.
+Canonical fee bindings, complete owned custody and current cumulative fill
+required; never transfer prior same-symbol fees or sum cumulative snapshots.
+Missing fees stay PnL-only unknown. No private/broker/schedule/strategy changes.
+Full book/shared10%basis/losses/reservations/pending identities unchanged.
+Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
+independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.
+Result-readerR23092911c...40 focused; actual result9c4470d3... rejected35of64.
+Source/counter/aggregate binding is not independent raw-price PnL replay or
+broker-fill proof. No native observe() as a passive reader.
 New finite successor accounting task: Oct19..23 20:25..35UTC, firstOct20
 05:25KST, thericher-kis-paper-successor-20261019-accounting. Jobb9f898f6.../
 planc3cf449a...; prior12 definitions/last/next unchanged. Installer exit1 on

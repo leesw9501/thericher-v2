@@ -6,6 +6,19 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Allocation
 
+Goal99 complete/rejected879bb037...; canonical family trial1b93f2526... and
+sciencee5d1dbd3... closed by outcomee19f0c2c... in A/_control/ledger/2026-10.jsonl,
+exact numeric result9c4470d3.../host49eddb4c.... One original600s appointment
+4adf9de5... at A/research/kis-stock-joint-entry-continuation-policy-development-v1/
+infra-r1/gpu-appointment.json; parent write-scope fault did not reset its clock.
+Actual1CPU2CUDA/8epochs/472updates, zero failed fits, no rescue or retained weights.
+Owned lease released/container absent/child reaped/source unchanged are host
+attestations, not independent OS proof. Sealed spend0; no active GPU job.
+ONE objective kis-five-session-successor-observed-fee-reconciliation-v1 has
+no fitting/GPU allocation. Existing Paper owners retain resource priority.
+
+## Prior Allocation
+
 Goal97 finite successor delivery COMPLETE e4d64c29...:
 A/execution/kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
 Exchange/native/host/source contracts and finite3 schedules are installed;
@@ -13,13 +26,8 @@ actual113f network-none preseeded SYN recovery passed18.6699s, existing9 unchang
 Future actual input/inference/fill/net unobserved. Source/SYN does not spend
 market training. No new GPU appointment, fitted weights or sealed evaluation.
 Goal98 accounting readiness COMPLETE c6e08a27..., no fit/GPU/holdout spend.
-ONE objective kis-stock-joint-entry-continuation-policy-development-v1:
-held-position/age-aware policy; preparing frozen lineage/target/purged splits/
-cost/kill/<=3fits/<=600s appointment, no numerical dispatch yet.
-Finite first-OPEN entry/no re-entry source proposal accepted; TRAIN pathwise
-oracle labels explicitly upper-bound, seen DEV/later not sealed. CPU ridge and
-GRU seeds101/202 share three-fit ceiling. No canonical family debit or GPU lease
-yet; Parent registers exact scientific/source contract before actual dispatch.
+Goal99's later numerical outcome and original allocation closure are above;
+earlier preparing/not-dispatched state is superseded, not a resource hold.
 All prior research debit/family results below remain unchanged.
 GPU is available and usable; no authorization or environment hold.
 Future owned data/decision opportunity is next_due, never foreground sleep.

@@ -6,20 +6,20 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-Goal98 readiness COMPLETE c6e08a27..., future economic outcomes not_observed.
-ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
+Goal99 COMPLETE/rejected879bb037..., actual1CPU2CUDA/35of64 fixed kills failed.
+ONE objective kis-five-session-successor-observed-fee-reconciliation-v1.
 No company block, market wait, GPU permission or operator approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned99 | Goal98 pushedd990840; sole Git/actual Docker owner, new causal ABI integration. |
-| Verification | Parent / complete98 | 235 focused/26 independent;1311source4205ef0f.../JUnit15829pass22skip reattached, not fresh rerun. Ruff/three Compose pass. |
-| Data | Plato / complete source99 | Inputd83db2a1...,23 author/Parent23 pass; priorCLOSE vs old08:30 corrected, no acquisition/numeric loader. |
-| Engine | Chandrasekhar / owned99 | Finite first-OPEN entry/no-reentry proposal accepted, source/SYN implementation; exact scientific freeze before numeric dispatch. |
-| Execution | Herschel / complete source99 | R2efc46f9e...,39 author/Parent39; independent44478589 six pass. Original39ddd5pass1fail retained. |
-| Infra | Socrates / owned99 | Pinned d6 transport preparation8c769818...,9 pure helper checks; narrow inert host adapter. |
-| Validation | Leibniz / ready99 | ReplayR2 independent6 complete; next frozen target/candidate attacks, no tuning. |
-| GPU | Steward / free | Usable, no environment/permission hold; no utilization-only campaign allocated. |
+| Git/integration | Parent / owned100 | Sole Git/actual Docker owner; close99 then integrate exact fee consumer. |
+| Verification | Parent / complete99 | 185 focused/23 independent source-SYN/8 JSON groups; unchanged1311 authority15829pass22skip reattached, not a fresh full-suite. |
+| Data | Plato / owned100 | Exact immutable fee currency/cohort/state/request/fill/cumulative quantity/gross/time/hash audit, source/SYN only. |
+| Engine | Chandrasekhar / owned100 | Modeled-vs-observed fee semantics; no new model campaign or fit. |
+| Execution | Herschel / owned100 | Pure overlay consumed by existing archive reader/bridge; reuse custody and canonical fee validator. |
+| Infra | Socrates / owned100 | Prepare default113f code/SYN-only offline probe; no actual Docker or production mounts. |
+| Validation | Leibniz / ready100 | Independent frozen-source attacks after overlay handoff; no tuning. |
+| GPU | Steward / free | Goal99 appointment closed/released; usable, no environment/permission hold or utilization-only allocation. |
 | Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
 | Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |
 | Accounting due | Goal95 recovery Action | Five finite dates, firstOct13 05:25KST; original job/claims, captures unknown. |
@@ -29,18 +29,15 @@ No company block, market wait, GPU permission or operator approval hold.
 
 ## Bottleneck And Reversible Improvement
 
-Accounting readiness is closed, not a dependency on future market outcomes.
-Current bottleneck: causal held-position target/replay and frozen CPU/GPU
-campaign integration. Ready Data/Engine/Execution preparation is dispatched
-in parallel. Improvement: test entry/continuation state and execution timing
-instead of repeating rejected model-name screens. Installed teacher/basis/book
-stays unchanged. Full-book custody and target-only PnL remain separate.
-At Data/Execution handoff, corrected measured new-clock/old-loader mismatch;
-21-bar anchor gives20steps. Narrowed broad design preparation to one finite
-episode/source handoff, preventing unbounded oracle re-entry and fit multipliers.
-Failed installer exit1 retained; independent exact Action/settings/principal/
-UTC readback resolves Windows normalization, no rerun/new schedule. All13
-finite tasks owned; source-safe facts under A/execution/
-kis-five-session-successor-owned-accounting-v1/parent/installed-tasks-verified.json.
-Claude98 e29a80f8... supported-with-limits; research99 needs its own challenge.
-Honest-host custody, Operational logging off, not cryptographic OS-origin proof.
+Whole-share sizing and owned full-book history already exist. The measured gap
+is the archive consumer's always-unavailable fee field, not GPU readiness or
+Paper permission. Reuse exact current-segment attribution and canonical fee
+validator; test cumulative duplicates/prior same-symbol contamination alongside
+code integration. Avoid another ledger or sizing rebuild. Known gross-less-fees
+does not establish settled account net return. All13 finite tasks/Actions/
+budgets/identities remain unchanged; no manual invocation or foreground wait.
+Claude99 result/next direction review_received/supported-with-limits, not authority.
+Goal99 closure A/research/kis-stock-joint-entry-continuation-policy-development-v1/
+integration-evidence.json preserves original600s clock, failed CPU publication,
+measured errno22 and exact host-bound R2 recovery. Guest visibility NON-atomic;
+partial/unbound bytes never qualify. Honest-host facts, not independent OS proof.

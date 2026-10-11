@@ -13,6 +13,30 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal99 joint entry/continuation research COMPLETE/rejected879bb037... at
+A/research/kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
+Sciencee5d1dbd3.../trial1b93f2526...; canonical completed outcomee19f0c2c...
+links actual result9c4470d3.../host49eddb4c.... CPU ridge1/CUDA GRU2 fixed seeds,
+8epochs/472updates,72tables/all130marks;35of64 fixed checks fail. Later-seen
+10bps-per-side growth: GRU101-.5757%, GRU202-.7279%. No best-seed fallback.
+185 focused pass; independent Data6/replay6/Engine7/publication4 and JSON8 pass.
+Exact1311 repo authority15829pass22skip reattached, not a fresh full-suite run.
+R1 CPU publication failurefbad12a4... preserved; measured probe666e806c...
+found no-replace renameat2 errno22 on Windows bind. Publication-only R2f243a34e...
+uses exclusive-create/fsync/hash, NON-atomic visibility; exact completed host
+closure/byte binding required. CPU R2bc07bdcb... passes; original600s clock
+includes parent metadata write-scope fault, no reset. Source/child/container/
+owned GPU closure attested, not independent OS proof. No raw-price PnL replay,
+fresh holdout, weights retained, KIS/credential/order/schedule or Paper changes.
+TRAIN clairvoyant upper-bound labels, nonPIT/revised/current-listing/raw-action/
+nominal-CLOSE/fractional full-fill and exposure-proxy limits remain.
+Claude result/next direction supported-with-limits. ONE current objective:
+kis-five-session-successor-observed-fee-reconciliation-v1. Whole-share sizing
+already exists; connect missing observed-fee archive consumer only. Missing
+fees stay scoped unknown, never a Paper permission gate or foreground wait.
+
+## Prior Accounting Closure
+
 Goal98 successor-owned accounting readiness COMPLETE c6e08a27... at A/execution/
 kis-five-session-successor-owned-accounting-v1/integration-evidence.json.
 Passive43d1e76e..., attributionf54280aa..., Data30e0ec11.../archive bridgeR3
@@ -31,13 +55,9 @@ Exact parent/installed-tasks-verified.json; failures/source/drafts retained.
 Jobb9f898f6.../planc3cf449a...; original successor job374 unchanged.
 Claude final e29a80f8... supported-with-limits; honest-host custody only,
 Operational logging off, not cryptographic scheduler-origin proof.
-Future input/submit/fill/fees/settlement/net not_observed. ONE next objective:
-kis-stock-joint-entry-continuation-policy-development-v1. Data/Engine/Execution
-prepare disjoint input/held-age policy/replay; research does not wait for receipts.
-Goal99 Data source d83db2a1...23 author/Parent pass. ReplayR1 independent
-39ddd722...5pass1fail found missing forcedOPEN global age error; immutable
-R2efc46f9e... fixes three lines,39 author/Parent and independent6 pass44478589....
-New numerical campaign not dispatched; exact target/source freeze still owned.
+Future input/submit/fill/fees/settlement/net not_observed. Goal99's subsequent
+research closure and preserved failed/recovered evidence are above; the earlier
+preparation state is superseded, not an active dependency.
 
 ## Prior Delivery
 

@@ -6,6 +6,29 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
+Goal99 COMPLETE/rejected879bb037... at A/research/
+kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
+Sciencee5d1dbd3.../trial1b93f2526.../outcomee19f0c2c... unchanged/closed.
+Actual result9c4470d3...:1CPU ridge2CUDA GRU,8epochs/472updates,72tables,
+134 completeTRAIN/DEV15/later9 supported/all130marks;35of64 kills fail.
+10bps-per-side GRU101 DEV+.2173%/later-.5757%;GRU202-.4287%/-.7279%.
+Entry discrimination unstable; continuation does not robustly add net value.
+185 focused/23 independent source-SYN/8 JSON groups pass, not raw-price replay.
+SourceR1 and failed publication preserved; measured errno22 corrected by
+publication-only R2f243a34e..., CPU smoke/host hash+cleanup closure pass.
+NON-atomic guest visibility requires exact completed host evidence; no partial
+result promotion. No retry/refit/model rescue/weights/holdout or Paper changes.
+Current-listing/nonPIT/revised/raw-action/nominal availability, oracle-label
+upper-bound supervision and planned-exposure-proxy limitations remain.
+
+ONE current objective kis-five-session-successor-observed-fee-reconciliation-v1.
+Engine owns modeled-vs-observed cost semantics, not a new model campaign.
+GPU allocation closed/released, available; no permission/environment hold.
+Known fee evidence does not prove settled cash/FX/dividends/account net return.
+No new fit/depth/ensemble allocation from this rejected family.
+
+## Prior Packages
+
 Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
 kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
 Exchange801960ca.../tests d4bf358d... committed/pushed13eac3a;44 author/26
@@ -19,22 +42,9 @@ No numerical campaign/model load/fit/GPU/weights/holdout or actual inference.
 Goal98 COMPLETE c6e08a27...: attributionf54280aa...39 tests, archive bridgeR3
 27726cdf...58/independent6, default image SYN3.951s. Full book intact; PnL only
 from journal-bound segment, unknown fills/fees never become net profit.
-ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
-Owned: freeze held-age cash/ENTER/HOLD/EXIT before outcomes,20steps/21bars/max5,
-next-OPEN execution, explicit costs. Existing Tiingo direct-utility TCN/linear
-and one-step transition models already ran; new state/target/source lineage
-must differ, not rescue a closed family. CPU smoke then bounded eligible GPU;
-seen later50 diagnostic, sealed spend0. Claude98 e29a80f8... supported-with-limits
-is not research99 challenge or authority.
-Proposed finite episode accepted for source implementation, not numeric dispatch:
-entry only at first scheduled OPEN, cash after exit parked. TRAIN21,26..686
-terminal through691; DEV720,725..790 terminal795/all80marks; seen-later21,26..61
-terminal66/all50marks. TRAIN-only pathwise stopping labels are upper-bound
-supervision, never causal oracle performance. CPU ridge plus GRU101/202,
-<=3 fits/shared600s, train10bps PER SIDE and frozen-action5/20 sensitivities.
-Exact source/scientific freeze and CPU smoke precede allocation/market work.
-Claude direction supported-with-limits under this goal's parent/claude-design;
-independent target/replay validation remains separate from that opinion.
+Goal99 subsequent numerical closure is recorded above; no active preparation
+or allocation remains from that family. Prior failed/recovered source receipts
+remain immutable, not a second research queue.
 
 ## Recent Research Conclusions
 

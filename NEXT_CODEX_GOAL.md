@@ -2,68 +2,56 @@
 
 ## Objective
 
-Complete kis-stock-joint-entry-continuation-policy-development-v1: determine
-whether a bounded position/holding-age-aware daily entry/continuation policy
-adds post-cost development value over cash, a causal rule and fixed-five-session
-holding. Improve research and execution-aware replay, not a model-name screen.
+Complete kis-five-session-successor-observed-fee-reconciliation-v1: connect
+exact archived observed-fee evidence to the unchanged successor's scoped
+Paper PnL attribution. Improve accounting PnL, not another report or gate.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal98 readiness COMPLETE c6e08a27... at A/execution/
-kis-five-session-successor-owned-accounting-v1/integration-evidence.json.
-235 focused/26 independent; actual113f network-none SYN3.951s. Finite five-slot
-accounting installed, prior12 unchanged. Installer exit1 on Windows-normalized
-timestamp offsets retained; independent full readback verifies exact Action,
-UTC instants/settings/principal. Do not reinstall or infer a fill. First close
-Oct20 05:25KST. Actual future fills/fees/net remain not_observed.
+Goal99 COMPLETE/rejected879bb037... at A/research/
+kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
+Actual1CPU2CUDA/8epochs/472updates,72tables/35of64 fixed checks failed;
+185 focused/23 independent source-SYN groups/8 independent JSON groups.
+No model rescue, weights retained, holdout or Paper strategy changes.
 
 ## Parallel Packages
 
-Data: reattach exact old512 fd559b22.../409fd7ad... and already-seen later512
-1eaebbc3.../d436ab4e... with existing parsers. Audit session/context/missing-price
-and purged target boundaries; no new acquisition or universe. Current-listing/
-nonPIT/raw-action/nonTR/revised/nominal-availability limits narrow claims only.
+Execution: reuse Goal98 passive archive validation and current-segment gross
+attribution, plus existing kis_paper_five_session_pnl fee binding semantics.
+Deliver one pure fee overlay consumed by that reader/bridge. Integer whole-share
+sizing and full-book custody already exist; do not rebuild them or add a ledger.
 
-Engine: freeze ONE new campaign family before outcomes: cash/ENTER/HOLD/EXIT,
-held-position age,20 feature steps from21 completed bars, max5 held sessions. CLOSE decisions
-execute NEXT OPEN, never same-close hindsight. Declare exact target, purged
-train/development splits, cost5/10/20bps PER SIDE, cash/rule/fixed-five/exposure-matched
-controls, metrics and strongest kill. Prefer small continuation-value learning,
-not a new RL framework. Ceiling: one CPU baseline and one sequence architecture/
-two fixed seeds, <=3 fits and <=600s shared numerical wall budget. No outcome-
-informed retries/refits/window rescue. Tiingo direct-utility TCN/linear and
-one-step transition policies already ran; do not call them untested. Seen later50
-is diagnostic, never fresh replication or sealed holdout. Entry only at each
-five-session episode's scheduled first OPEN; early-exit cash stays parked,
-no intra-episode re-entry. Entire TRAIN target terminal precedes DEV decisions;
-shared past context alone is not leakage or a requirement for another purge.
+Data: independently specify/audit exact immutable fee evidence bindings:
+source/currency, cohort, state/request/fill identity, cumulative quantity/gross,
+observation clock and hash. Missing actual fee evidence stays not_observed;
+do not collect market data or invent an inferred zero/estimated fee.
 
-Execution: independent pure next-OPEN action/cost/position replay and SYN tests:
-entry/exit costs, gaps, holding age, missing bars, terminal exit and split reset.
-No broker/bank/order/strategy worker, schedule or installed Paper model change.
+Engine: reattest observed-fee versus modeled-per-side-cost semantics. Preserve
+gross attribution, mark/FX/dividend/settled-cash limitations, no new research
+campaign or fitted model. A gross-less-observed-fees value is not settled account
+net return. Do not change candidate, sizing, strategy or Executor permission.
 
-Steward: freeze lineage/compute appointment before numerical dispatch, sealed
-spend0. GPU usable/authorized; Parent owns Docker, RO inputs and isolated output.
-Eligible research does not wait for future Paper receipts; utilization is no KPI.
-Temporary Validation attacks frozen replay/candidates without tuning. Claude
-challenges leakage/cost/time semantics before results are relied on. Parent
-integrates contracts; no per-agent goals or durable review queue.
+Temporary Validation attacks the frozen overlay independently. Parent integrates
+source contracts and one actual default113f network-none synthetic runtime probe,
+with only code/synthetic inputs and isolated output, no production private mounts.
+Use existing finite transport, not a new image/framework/worker platform.
 
 ## Completion And Scope
 
-Done: frozen input/campaign/replay, CPU smoke, bounded eligible numerical run or
-exact input_unavailable, independent strongest-kill evidence, and a narrow
-rejected/development-only result. Strongest kill: changed future observations
-cannot alter earlier actions; continuation must beat cost/exposure-matched
-fixed holding without same-close execution or split leakage. Oracle/revised
-seen-data findings cannot become a Paper or alpha claim.
+Done: exact existing archive consumer uses the pure overlay; focused/independent
+SYN tests and actual source-integrated offline smoke pass. Strongest kill:
+profitable prior same-symbol cohort + partial successor + duplicate cumulative
+fees cannot transfer profit/fees, double-charge, or falsely complete unknown
+custody. Reject mismatched/stale/hash-invalid evidence locally. Explicit observed
+zero is valid only with exact complete binding; modeled bps is never observed.
 
-Preserve original shared10%basis/losses/reservations/pending identities and all13
-finite tasks. Due belongs to those workers, never foreground waiting. Bound
-<=one development day; no credentials/KIS/live, paid data, public exposure,
-major runtime, sealed evaluation, promotion or broker side effects. Raw data M,
-artifacts A; D:15% floor. Publish only source-safe metrics/links, never raw rows,
-prices/private amounts/secrets/account/order identifiers.
+Preserve full-book risk/budget/history, original10%basis/losses/reservations/
+pending identities, all13 finite tasks and their owned next_due. No model/GPU/
+holdout, KIS/provider/account/order/credential access, live, paid/public behavior,
+new schedule or task Action/budget changes in this objective. Missing fees affect
+only this attribution field; they never pause Paper or independent ready work.
+No claim actual fills, fees, settlement or net PnL were observed by SYN evidence.
+Bound <=one development day; raw data M/artifacts A, D:15%floor.
 
 Follow AGENTS.md verification. Changed shared source requires changed-path serial
 plus clean parallel authority/Ruff/three sample Compose. External-only packages

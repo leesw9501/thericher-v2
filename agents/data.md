@@ -6,10 +6,16 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
-Owned: exact old512/seen-later512 session/context/purge preparation; no new
-acquisition, private bank or numerical outcome read. Goal98 COMPLETE c6e08a27...;
-Data evidence below retained.
+ONE objective kis-five-session-successor-observed-fee-reconciliation-v1.
+Plato owns source/SYN audit of exact fee currency/cohort/state/request/fill,
+cumulative quantity/gross, immutable hash and observation-time bindings.
+No acquisition, account/private reads or inferred zero fees. Missing actual
+fee evidence remains scoped not_observed; it does not pause Paper work.
+Goal99 COMPLETE/rejected879bb037... at A/research/
+kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
+Actual1CPU2CUDA/35of64 fixed checks failed; no new data or quality promotion.
+Independent Data reviewa6a12a05...6 groups pass; source limitations unchanged.
+Goal98 COMPLETE c6e08a27...; Data evidence below retained.
 Goal99 input preparation COMPLETE5d85f8b2... at A/data/
 kis-stock-joint-entry-continuation-policy-development-v1/data-r1/input-preparation.json.
 Sourced83db2a1.../23 author and Parent23 pass0.43s, Ruff clean. New decision
@@ -17,7 +23,8 @@ equals prior official CLOSE;21 completed bars provide20 feature steps, next
 OPEN executes. Old08:30 loader clock remains historical metadata, not newtime.
 Full finite TRAIN label support must end before DEV decision; strict raw-context
 nonoverlap is optional descriptive geometry, never an added research gate.
-Packed hashes linked from metadata, not rehashed; no numeric loader/fit yet.
+Packed hashes linked from metadata, not independently rehashed by Data review;
+Parent's later exact-bound runtime consumed them. Neither proves PIT/finality.
 Data source/SYN complete4f2e1d64... at A/data/
 kis-five-session-successor-owned-accounting-v1/data-r1/source-release.json.
 Producer30e0ec11.../plan e24db6c8...;45 tests pass0.69s, Ruff/format pass.
