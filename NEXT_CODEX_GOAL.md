@@ -2,76 +2,70 @@
 
 ## Objective
 
-Complete kis-stock-five-session-prospective512-shadow-delivery-v1: prepare and
-deliver ONE owned Oct19..23 shadow input/decision opportunity with fixed512
-membership and the unchanged own teacher. Improve prospective data-to-decision
-evidence instead of another architecture or parameter rescue on seen panels.
-Delivery is source/control/testing/future ownership, NOT a claim that future
-input, inference, profit or a broker order already exists. Existing Paper and
-accounting opportunities continue independently.
+Complete kis-five-session-successor-custody-preparation-v1: make the canonical
+five-session KIS Paper path capable of preparing a second owned cohort in the
+same instrument without resetting historical requests, fills or shared basis.
+Implement reusable pure contracts/tests, not a new execution platform.
+This advances repeatable Paper trading; no profitability or manual approval gate.
 
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal92 COMPLETE/rejected c21602f2... at A/research/
-kis-stock-five-session-covariance-allocation-development-v1/integration-evidence.json.
-Sciencebc876585.../trial1; outerc378e5c8.../terminalb0d6bddb.../result1ac1d56c....
-3tree+3ridge/142solves/1080iterations,108complete tables/390marks;15of20
-fixed predicates fail. Worker63.661s<600; no GPU/refit/holdout/weights/Paper change.
-176 focused/fixed-image CPU prerequisite pass; source-matched15593pass22skip.
-Independent11cfac82... and Claude supported-with-limits, not raw-price/OS proof.
+Goal93 DELIVERY COMPLETE d90a07e0... at A/research/
+kis-stock-five-session-prospective512-shadow-delivery-v1/integration-evidence.json.
+Future shadow task Ready Oct16 21:15UTC/Oct17 06:15KST, jobe8550670...;
+fresh Oct19..23 input/inference still unknown. Existing Paper/accounting/Data
+owners are unchanged and must not be manually invoked or repinned.
 
-## Scope And Parallel Packages
+## Disjoint Packages
 
-Proposal6fd18448... at A/research/kis-stock-five-session-covariance-allocation-development-v1/
-next-product-proposal.json predates Goal92 outcomes; no allocated family or
-model selection. Claude actual-result/direction review supports limited closure
-and prospective delivery, never a new profitability or Paper permission gate.
+Execution owns a narrow pure successor-history API and focused tests.
+Use existing cohort/custody/stock-plan/canary types; preserve every prior
+request/input/fill/reservation. A current exact prior closure permits a new
+cohort without adopting the old book. Pending/unknown/foreign same-symbol
+custody needs its own recovery or scoped no-intent, never a substitute order.
+Do not infer closure from task exit, old flatness or ticker/account-level totals.
+Keep original shared10%basis, unknownSPY and all independent owner scopes.
+Do not change installed G83/b860/G90/core source bytes or private bank schema.
 
-Data owns fresh original128-first512 prior21 vintage, official prior sessions
-endingOct16 and fiveOct19..23 clocks. Reuse current_input36bfbdac... and existing
-serial market-only collector. Old common packet hard-codes Oct9/12/16 and its
-calendar endsOct20: freeze a fresh date-scoped packet, not runtime substitution.
-Preserve every missing identity, actual request-start/response-completion clocks,
-durable cursor/accepted-error counts/measured1.25s pace/owned due and15% D floor.
-No raw values or secrets in outputs; market bytes M only.
+Engine Research owns a strict finite shadow-result-to-typed-decision binding,
+source/SYN only: exact plan/result/teacher/feature/SDK/actual inference clock/
+calendar linkage, fixed local64 Decimal caller context, no fields silently
+discarded or shadow envelope relabelled execution. No model load/fit/selection,
+score/price dump, GPU or input refresh. Missing future result is unavailable,
+not zero/profit or a Paper permission hold. Proposed Oct19 first OPEN13:30UTC,
+expiry13:40; Oct23 fifth CLOSE20:00/EXIT19:50UTC.
 
-Engine owns unchanged teacherca6b36d1.../metadata2ce286ee.../SDK2f64a238... and
-one CPU inference/finite first-original-surviving-slot DTO. Same20x5 kernel,
-fit0/GPU0, authoritative existing image. Pin input/feature/model/proposal links
-and actual inference completion; no score dumps, refit or slot replacement.
-Keep target_exposure=.10*w_first/(1+.0005*sum_all_weights), modeled fees only.
+Data supplies exact claim -> terminal -> Data handoff/receipt -> input hash ->
+Engine plan/result link requirements and source clock facts. Reuse frozen
+Goal93 sources/reader facts; no current provider/raw row/private bank read.
+Do not use latest-file discovery, task exit or unbound raw receipt as input.
 
-Execution parallel package: fixed SYN-only pure integer/leg-cost parity using
-existing preview/plan/decision APIs. Test zero/one/multiple shares, original
-shared capacity, first-slot no substitution, no double10% scaling, roundtrip
-half-cost per leg/rounding and foreign same-symbol custody. No private bank,
-reserve/reconcile persistence, account/order or actual-fee/net-PnL claim.
-
-Parent/Invoked Infra own only necessary finite orchestration/reuse and exact
-future delivery ownership. Proposed Data900s/whole1200s and CPU120s/whole180s,
-2threads/4GiB, one useful future opportunity before its frozen entry window.
-Freeze actual combined deadline/cleanup/publication and source pins before
-installation. No new platform, runtime build or GPU appointment. Independent
-Validation checks frozen source/clock/DTO contracts, not another model contest.
+Parent integrates the shared typed contracts; temporary Validation independently
+falsifies the frozen successor and receipt-to-decision behavior. Reusable
+implementation/tests belong in Git as new lazy leaf modules, not artifact-only
+code. Add no imports/exports to existing pinned entrypoints unless a concrete
+contract requires a separately versioned deployment.
 
 ## Completion And Strongest Kill
 
-Complete with frozen official dates/member/source/teacher/expiry contract,
-source synthetic date/identity/causal/unsupported/cost/capacity/cleanup tests,
-independent review and exactly scoped future delivery evidence. Metadata smoke
-has no credentials or market calls. Installation is not future runtime closure.
-Strongest kill: old-calendar reuse, future input, coverage-derived membership,
-changed pins, late inference, first-slot replacement or double budget scaling.
-An unavailable shadow attempt remains scoped unavailable; do not shift the
-opportunity or make it a gate on independent KIS Paper. Future result is a
-worker-owned next_due, never a foreground sleep or zero/profit inference.
+Complete with focused two-cohort SYN replay showing old history unchanged,
+exact same-instrument closure/restart behavior, no duplicate BUY or foreign
+SELL, no basis reset/double10% scaling, and a strict future receipt binding.
+Mutation tests cover wrong prior request/input/cohort, omitted/reordered history,
+unknown prior submit, stale/missing closure, invalid hash/clock/expiry, extra
+envelope fields and ambient Decimal precision. Preserve original scoped P2
+evidence; local containment is not global core repair or observed runtime proof.
+Bound scope: one successor contract and one strict finite binding, no generic
+workflow/history database/scheduler or second strategy. Exact deployment and
+new future job freeze follow when the actual source-bound receipt exists;
+do not fabricate future selected instrument or replace the original opportunity.
 
-Ask Claude before relying on material timestamp/source/recovery choices.
-Private KIS_PAPER market-only use for the new Data-owned future job is standing
-authorized; selective named credential path only, never read/route KIS_LIVE_*.
-No manual old task, account/order call, existing schedule change, capital/basis
-reset, Paper substitute, public or paid operation in this shadow objective.
-Goal83 cohort387ee5f6/b860/ab65 and Goal90 five accounting captures stay owned.
-Fresh shadow evidence is not PIT/finality/total-return/alpha or adoption proof.
-Run focused tests, required fresh or exact-source repository authority, Ruff
-and three sample Compose configurations; refresh projections, commit/push,
-replace this file with exactly ONE material next objective and continue.
+Ask Claude before relying on material custody/recovery/availability changes.
+No broker/order/account/provider/credential read, task invocation, Docker worker,
+schedule expansion or capital envelope in preparation. Private Paper remains
+standing-authorized; never read/route KIS_LIVE_*, pay, expose publicly or replace
+the major runtime. Artifacts A/raw market M; D:15% floor.
+
+Verify changed-path serial coverage and fresh clean parallel repository
+authority, Ruff and three sample Compose configurations. Refresh concise
+stateboards/HANDOFF/RUNBOOK, commit/push, replace this file with exactly ONE
+material next objective and continue without foreground market waiting.

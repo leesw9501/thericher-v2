@@ -9,321 +9,117 @@ Private no-cost work is delegated; never read/route KIS_LIVE_*, enable real
 money, pay, accept unclear rights, expose publicly or replace a major runtime
 without operator authority. Never output secrets/account/order IDs/raw rows/
 prices/private amounts. A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Last C:25.14%, D:40.07% free; preserve D:15%; scratch C:/trpy.
-Closed history remains in Git2094757 and immutable exact external roots.
+History through Gita81a1ae and immutable external receipts replaces role diaries.
 
 ## Latest Closure (2026-10-11 KST)
 
-Goal92 COMPLETE/rejected c21602f2...:
-A/research/kis-stock-five-session-covariance-allocation-development-v1/integration-evidence.json.
-Fixed prior20 RAW-return covariance versus inverse-vol tree/diagonal allocation,
-same scores/slots/gross/veto/five exits. Sciencebc876585.../trial1rowd19da4ad...;
-outerc378e5c8.../terminalb0d6bddb.../result1ac1d56c... at runtime/
-attempt-00965edd74f24c2aaac156fdb7907863.3tree+3ridge/142solves/1080iterations,
-108complete tables/390marks,15of20 fixed economic predicates fail. Worker
-63.661s<600; one clock/attempt, no GPU, refit, weights, holdout or Paper change.
-DEV10 covariance+1.3734% vs tree+2.1541%; later-.21422% vs+.37249%.
-176 final focused checks/fixed-image CPU prerequisite pass. Three publication/
-counter P2s fixed before market clock; original faults/CPU pass/relocated aliases
-and obsolete-injector failed partial XML retained, not current authority.
-Independent11cfac82... checks971source/control pins, not four market raw files;
-Parent975pins/aggregate recomputation and completed registry rowda4170d4....
-No independent optimizer/OS/raw-price replay or alpha claim. Stricter external
-repo-config style findings retained; repository Ruff/three sample Compose pass.
-Exact1297pins/JUnit15593pass22skip reattached, not a fresh full-suite run.
-Claude login/preflight/result-direction supported-with-limits. GPU usable/free.
+Goal93 prospective512 shadow DELIVERY COMPLETE d90a07e0...:
+A/research/kis-stock-five-session-prospective512-shadow-delivery-v1/
+integration-evidence.json. Fresh fixed512 prior21 Sep18..Oct16 and official
+fiveOct19..23 dates, unchanged own teacherca6b36d1.../metadata2ce286ee.../
+SDK2f64a238..., one CPU finite first-original-surviving-slot DTO.
+No new fit/GPU/holdout/model selection, actual future input/inference or order.
+Data release5ede6b1f.../plan37b8ba01.../common6523d021.../reader36bfbdac....
+Engine R2 release05e94736.../workera8dcd255..., original model/kernel unchanged.
+Delivery R2 releaseedee6d64.../jobe8550670.../installpland321f621....
+Actual metadata audit502pins/455Python files; only22RO+1ownRW mounts.
+Windows argv140546->5962 characters; no new image/platform.
+Final integrated123pass22.22s; actual pinned d6 CPU source/SYN35pass13.542s,
+receipt8f02779b... in parent/cpu-prerequisite-r2/cpu-e9afa22fae66455ea57b2f39ac316399.
+Fake predictor/no model or market mount in that prerequisite.
+Independent guard8/EngineR2 5/final delivery5 pass; exact pointers in closure.
+Repository1297pins/JUnit15593pass22skip reattached, not a fresh full-suite run;
+repository/final external Ruff and three sample Compose configurations pass.
+Claude final direction supported-with-limits3c7632f6..., not execution proof.
 
-ONE next objective kis-stock-five-session-prospective512-shadow-delivery-v1.
-Proposal6fd18448... predates Goal92 outcomes: prepare one Oct19..23 shadow
-opportunity, fresh fixed512 prior21 endingOct16, unchanged own teacher/CPU
-first-original-slot finite DTO, no broker intent. Old date-scoped common packet
-endsOct20 and must not be reused. Execution parallel SYN-only integer/leg-cost
-parity, never account/bank read or actual-fee proof. Delivery completion is not
-future input/inference/profit evidence; future runtime stays owned next_due.
-Seen/nonPIT/raw-action/nominal-availability limits persist, no new model contest.
-Goal90 deliverye048c301.../pushed91894cb remains separately owned: one accounting
-task/five future dates, firstOct13 05:25KST. Exact no_owned_intent smoke3408e291...
-is not current-flat/fill/net. Entry/EXIT/recovery/b860/ab65/shared10%basis and
-unknown SPY untouched. No manual starts; missing fees/finality/captures unknown.
+ONE new future task thericher-shadow512-20261019-delivery installed/read back
+Ready, Oct16 21:15..21:45UTC (Oct17 06:15..06:45KST), Data cutoff21:35UTC.
+One trigger/IgnoreNew/PT30M/no StartWhenAvailable/no manual run/order consumer.
+Data work900/whole1200, CPUwork120/whole180, combined1800 includes publication.
+Source/model/data RO, network-disabled CPU, no credentials/bank in CPU.
+Future raw bytes/cursor M/us_equities/kis_paper_private/
+stock-five-session-shadow512/v1/shadow-20261019; no acquisition yet.
+Exact claim delivery-r2/runtime/opportunity.claim.json binds its invocation
+and terminal. Missing/failed future result stays scoped unknown, not a fill.
+Basic offline claim reader is not full future Paper adoption evidence.
 
-## Retained Research And Delivery Evidence
+## Scoped Findings And Recovery
 
-Goal86 COMPLETE/rejected_fixed_candidate:
-A/research/kis-stock-five-session-catboost-development-v1/integration-evidence.json
-8ecd02b9... links source7ba73147.../sciencecd0d82af.../trial1row3d2d4781...,
-outer98e13791.../actual0d6f1687.../terminal8d1edf0c.../result0583aa2b....
-Direct Plain CatBoost1.2.10/128trees/depth4/seed101,3CUDA+3tree+3ridge/
-384iterations;96tables/390marks. Persisted parent terminal46.454s and worker
-family48.976s are different snapshots, both within original1800s; no reset.
-PooledOOF10 Ucat.0127115 beats tree-.0017901, but DEV10 growth+1.8042%
-vs tree+2.1541%/lower utility; later+0.4520% vs tree+0.3725% has worse DD
-.6367% vs+.6063%. Fixed cost-band/DEV/later kills reject; no baseline rescue.
-Derived image4bb201b5... preserves base versions. Initial license spelling
-parser fault and R2 build failure retained; source-only CLI probe measured
-isolated config hiding packaged Buildx. Fresh R3 names only that directory,
-reuses11 verified wheels/zero downloads, real CPU/CUDA2-iteration toys pass
-in31.429s. No framework replacement, auth config read or operator gate.
-Source22/derived CPUimage22/launcher45/R3mocks20; independent8187b24d...
-checks8+4mutations/479source-control hashes/aggregate predicates. No independent
-raw-input replay, OS cleanup or optimizer proof. Actual source reports exact
-container absent/child reaped/lease released/registry finalized.
-Claude preflight/result-directionb5d17be2... supported-with-limits. Exact
-1295pins/JUnit15556pass22skip reattached, Ruff/three sample Compose pass.
-No weights/holdout/Paper replacement/provider refresh/credential/broker call.
-Seen/nonPIT/current-listing/raw-action/nonTR/revision/availability limits persist.
-ONE next objective kis-stock-five-session-paper-attribution-preparation-v1:
-reuse existing cohort/fill/gross-PnL readers for owner-local five-close marks
-and explicit fee availability, not another gate/worker. Native observe() may
-recover orders and is NOT a passive reader. Owned Monday/fifth-close schedules
-remain unchanged; installation still is not submission, fill or net profit.
-
-Goal85 COMPLETE/feature_only_categorical_decision_unknown:
-A/research/kis-stock-current-feature-runtime-parity-v1/integration-evidence.json
-697b7e83... links actualab8fa30b.../comparison2c1f276b.../independent2dafefbe....
-One native/one pinned Linux CPU comparison completed7.822s<300; no fit/GPU/
-broker/data refresh. Same input/header/mask/10584rows/246eligible; original
-native/Linux feature/frame digests reproduced. Changed overnight/intraday/
-log1p_volume digests, Decimal80 reference-error triangle maximum6.6731e-15.
-This bounds lowbits; it is not measured pairwise error or exact-real proof.
-Windows sklearn1.9.0 SDK unsupported/inference0, pinned Linux1.9.1 inference1;
-categorical decision parity stays unknown. No forced rounding/Paper gate.
-Source20/independent15 checks pass; current exact clocks and known CID match.
-Native tree reaped/0active/container absent reported, no independent OS proof.
-Future-path P2s: clamp remaining deadlines/reserve cleanup, lost CID leaves
-absence unknown, bind comparator child clocks to plan. Used evidence unchanged;
-none affects this exact8-second result or the owned Paper opportunities.
-Claude result/direction supported-with-limits at its claude-result-direction/
-claude-dual-result-outcome.json. ONE next objective:
-kis-stock-five-session-catboost-development-v1, a different single classicalML
-candidate, not rejected mixer rescue. Official source proposal alone is still
-source_unverified until Engine independently retrieves it; optional pinned
-addon must preserve the existing runtime. No Monday foreground wait.
-
-Goal84 COMPLETE/rejected_fixed_blend:
-A/research/kis-stock-five-session-mixer-expert-development-v1/integration-evidence.json
-4bc0340d.... Native PyTorch temporal/feature mixer2381params/sixepochs/seed101,
-unchanged tree/ridge and ONLY half-rank blend; no member rescue. Science3c61eb97...,
-outer786d3244.../actualbd9fdbde.../result352667ab.../independente18203d8....
-One actual a097e80e...:3CUDA+3tree+3ridge/804updates,54.048s persisted terminal
-parent elapsed/136.057s original family<1800. Exact container absent/child reaped/
-GPU lease released/registry finalized reported; no independent OS proof.
-108tables/390scheduled marks retained. PooledOOF10 Ublend-.009514 vs
-tree-.001790/matched-.003332; DEVblend growth+.3035% vs tree+2.1541%,
-DD1.7493% vs .7344%; laterblend+.2295% vs tree+.3725%. Fixed OOF/DEV/later
-incremental kills fail; positive growth does not rescue the rejected blend.
-Native39/pinned CPUimage39/independent implementation24/Execution23/runtime41/
-terminal22 tests pass. Claude preflight/result-direction supported-with-limits.
-No weights, sealed holdout, alpha, future data or Paper replacement. Seen/
-postselected/current-listed/nonPIT/raw-action/nonTR/revision/nominal availability
-limits remain. Prep failures retained: missing pytest/py shim, later view path,
-unused aliases and scratch prefix. Actual original saved family clock unchanged.
-Goal82 1295 runtime source pins/JUnit15556pass22skip rechecked; Ruff/three sample
-Compose pass. ONE next objective: kis-stock-current-feature-runtime-parity-v1,
-<=300s zero-fit CPU diagnosis of existing native/Docker feature discrepancy,
-not another seen-data winner search or a gate on owned Paper opportunities.
-
-Goal83 COMPLETE/finite_delivery_only:
-A/execution/kis-stock-five-session-canonical-paper-delivery-v1/integration-evidence.json
-f157abdc.... Exact job80012e77.../plan507ffbb6.../cohort387ee5f6... delivered
-three Ready/enabled finite tasks/eight triggers. Entry Oct12 22:30KST, first
-recovery22:40; fifth EXIT Oct17 04:50KST, terminal recovery05:00. Canonical
-code-only app454files/b1b3548f... preserves nine stock/budget/recovery consumers,
-private bank schema/original shared basis/other owners/unknown SPY. No model
-loader in broker, no substitute slot, budget/TTL reset or foreign quantity sale.
-Focused192 pass plus independent9 lifecycle/19 visit/8 native interface and36
-installer checks. Network-none metadata smoke restored actual exchange in
-frozen image113f9644...; no native constructor/private mount/credentials/broker,
-exact container absent. Claude supported-with-limits. Goal82 1295 sourcepins/
-JUnit authority rechecked, Ruff/three sample Compose pass; no redundant full run.
-Original installation failed before task creation: PowerShell JSON converted
-UTC strings into local DateTime. Fresh recovery-r2/install_timezone_recovery.ps1
-normalizes representations only, delegates frozen installer; job/plan/clocks/
-Actions unchanged. Original failed receipt retained, R2 installed receipt owns
-delivery. Existing b860/ab65 Ready/current Actions and due facts unchanged.
-Installation is NOT a submit, fill, current-owned-flat or net-PnL result.
-Assumed-honest host/time-marker evidence, not cryptographic OS Scheduler proof;
-Operational logging disabled. Future owned recovery stays scheduled, not a
-company-wide wait. ONE next objective: kis-stock-five-session-mixer-expert-development-v1.
-
-Goal82 COMPLETE/current_input_and_finite_paper_preparation_only:
-A/research/kis-stock-five-session-paper-cohort-preparation-v1/integration-evidence.json
-8cd13af9.... Exact512 current input,21 prior Sep11..Oct9/five official Oct12..16
-clocks. Actual market-only707.150s/reaped/0active;512attempts/511accepted/
-one rate_limited/504full21/8empty/10584rows/246eligible. Manifest a0bb1864...,
-packed921380f5... under M/us_equities/kis_paper_private/stock-five-session-
-current512/v1/goal82-20261009/view. Old caches/empty identities unchanged.
-CPU d6 actuala945f504.../resultdc1b7cad.../4.200s worker, one inference/0fit/
-0broker, exact container absent. Finite metadata44925ed2.../36tests -> cohort
-387ee5f6.../first surviving original slot, original all-weight fee normalization,
-five clocks/fifth close-10m exit. No account/order/private bank/schedule change.
-Canonical exclusive-cohort projectionb22da30f.../47tests; Decimal P2 repaired
-d4f30a04.../24new tests, accumulated gross-fees convention, fills/cash unchanged.
-Independent lifecycle r3/112focused and actual195c3166... source/clock/DTO chain
-pass; no independent OS/broker proof. Claude current integration supports with
-limits; native d0d5a80e... vs Docker40ab5088... features differ on same bytes/
-eligibility, cause not localized. Host diagnosis31edbe57...; not bit-parity claim
-or Paper gate. Changed serial148/2.42s/fullclean8 15556pass22skip35warnings/
-368.13s/helper0/currenttempclean;1295 sourcepins9008bd10... match, JUnit
-A/verification/full8-20261011-g82/pytest.xml1cc8d2a9.../Ruff/three sample Compose.
-ONE next objective: kis-stock-five-session-canonical-paper-delivery-v1.
-Wire the exact finite cohort into canonical durable BUY/EXIT/recovery, preserve
-original shared10% basis and other owners. Prepared contract is not deployment,
-KIS submit/fill, model adoption, full-top10 replication or profitability evidence.
-
-Goal81 COMPLETE/engineering_inference_local_simulator_only:
-A/research/kis-stock-five-session-tree-inference-local-paper-v1/integration-evidence.json
-e8042245.... Lazy SDK five_session_tree.py2f64a238.../tests36; only own
-ca6b36d1... teacher/2ce286ee... metadata loaded after byte/runtime/cutoff checks.
-Canonical builder92212813.../8tests; independent parity217efbd5.../28tests.
-Network-none CPUd6 actualbb651ae0.../result4e87d4c0.../5.191s, exact container
-absent; no fit/provider/broker call. All10 retained-frame scores and allocations
-bit-equal to frozen reference;94 SYN-only LocalPaperBroker accepted/fills,
-50 computed valuations/10 account/FIFO replays and idempotent restarts.
-Not94 KIS fills, persisted mark events or new market-performance evidence.
-Normalized capital1 rounded all94 fees to zero; nonzero analytical fee tests
-are separate. Grouped fractional Decimal P2 remains, not seen in exact smoke.
-Used parent's exception-publication/name-reprobe P2s did not affect this result;
-future repairs require fresh source, never rewrite the used evidence.
-Independent readback6da8c703... and parent reviewfdd92a12... source-linked
-metadata only, not independent OS/raw-price replay. Changed serial72/1.08s,
-fullclean8 15449pass22skip35warnings367.69s/helper0/Ruff/three sample Compose;
-JUnit A/verification/full8-20261011-g81/pytest.xml8c833d37....
-Claude next-directiona537fcc5... supported-with-limits for scoped five-session
-Paper preparation. TSMixer six official pinned bytes/license re-retrieved;
-no TensorFlow import/runtime switch, novelty or market efficacy inferred.
-
-Goal80 COMPLETE/non_promoting_later_confirmation_only:
-A/research/kis-stock-five-session-tree-later-confirmation-v1/integration-evidence.json
-a94fc234.... One CPU HGBR train20..695/675complete/last label699, all10cohorts/
-50marks/18tables. Result9901e7ce.../contract4e23e0b9.../precommit5322d833...,
-R2 final379b0122.../226.548s within ORIGINAL600s including failed125/debit1.593s.
-10bps tree +.3725%/U.017340/DD.6063%/mean exposure3.3339%;20bps+.3309%.
-Rule-.6782%/U-.038899; entry-gross-matched momentum-1.4407%/U-.074853.
-All7 fixed kills pass. Independent6/17mutations39742e2e...; Claude262a66ac...
-supported-with-limits. Tiny/postselected/seen/raw-action/nonTR/nonPIT/revision/
-availability limits, no alpha/Paper adoption or broker net-PnL claim.
-Own teacher267793bytes ca6b36d1.../metadata2ce286ee... in actual-r2-v1/results/out;
-256old-only prediction bit-roundtrip passed. No public pickle or broker import.
-Data R3 completed512/35837rows/502full71/3sparse/7empty,361newaccepted/noerrors/
-659aggregate attempts,486.783s; original151 capture vintages and failed scope
-preserved. Manifest1eaebbc3.../packedd436ab4e... under M/us_equities/
-kis_paper_private/daily-nas-broad512-later/v1/fixed512-20260728-50sessions-r3.
-15source/58strict reader checks; actual exact runtime/source/count links pass.
-Used Data parent lacks final runtime reattest; strict offline reader3b71de2d...
-compensates before reliance, used bytes intact. Model first Docker125 nestedRO
-file target fault; original45db... retained, R2884fcfb0... copies pinned NEXT
-inside control. Both actual trees/CPU container reaped, no active job.
-Fresh core36/1.04s/tree17/4.202s/parent12/result17/Ruff/three Compose;
-1286 exact tracked files unchanged, passing Goal79 authority992fefdd... reused.
-
-Goal79 bounded COMPLETE/rejected expert/input_unavailable later input:
-A/research/kis-stock-five-session-confirmation-and-expert-development-v1/integration-evidence.json
-e0281290.... Dual actualbc36690c.../resultdd2f684a.../final37.258s,
-3CUDA TabM+3tree+3ridge/804updates/63 cells, exact container absent/lease
-released observed. Fixed blend DEV10+1.6144%/U.045771 fails rule.058709 and
-tree.064177 kills. Diagnostic tree+2.1541%/DD.7344% is not a selected winner.
-Independent6/eight mutations6fa18b1d...; Claude3cfa9bd0... supported-with-limits.
-No later model outcome: Data R2 closed154targets/298attempts/295accepted/
-3 rate limits,151usable/358unseen, original budget/source/cursor preserved.
-First-page floor147/second incremental needed0; opener gapmin.90323s, not
-wire telemetry. No dataset rejection, provider exhaustion or Paper adoption.
-Serial70/19.88s/full8 15413pass22skip35warnings365.34s/helper0/Ruff/three
-sample Compose; JUnit A/verification/full8-20261011-g79-r2/pytest.xml
-d3e030ec.... Prior full passed tests but hardlink cleanup failed: not authority.
-Passing tracked source digest992fefdd... permits exact-source verification reuse
-only per AGENTS; fresh external-source tests/independent checks still required.
-Source3f18291 and pure core1523c3d pushed; atomic-publication test aliases now
-unlinked by test teardown. Production publication behavior unchanged.
-
-Goal78 five-session risk cohort COMPLETE/non_promoting_followup_only:
-A/research/kis-stock-broad512-five-session-risk-cohort-development-v1/integration-evidence.json
-a5c31f09.... Contractb0b98f60.../precommit2e1ac731.../actual33bb466b.../
-finalization3497c94b.../resultb351fbfd...; elapsed16.5456s<600,3 ridge fits,
-GPU/neural0, parent reaped/exact CPU container absent observed. Finalization
-clock precedes its own JSON write/stdout; not independent OS cleanup proof.
-Train375/525/675 complete, OOF26+26/DEV16 cohorts,130/130/80 actual daily marks,
-36 cells. Prior21 bars/OPEN entry/fifth CLOSE exit/constant quantities,
-post-entry-fee reference sizing, veto cash, actual fees/cash/held-price gaps.
-DEV10 growth+2.0921%/U.058709/DD1.6545%/turnover2.68951/mean risky exposure
-6.5304%;20bps+1.9582%. Fixed kills pass, but50% controls are not exposure
-matched. Small seen sample/raw actions: no alpha, significance or adoption.
-Independent6 checks386870cd... verify exact links/clock/count/aggregate kills,
-not private price replay/PIT/OS proof. Final-source local_paper synthetic
-parity90/d1b70e8d..., source24, Data8/8342b0d7..., parent9/e6b635f0....
-Serial164/3.10s/fullclean8 15343pass22skip35warnings/356.70s/helper0/reaped,
-JUnit A/verification/full8-20261011-g78/pytest.xmla509b78f....
-Repo Ruff and default/research/accounting sample Compose passed.
-Claude prefitfb1801fe... and post-positive24614463... supported-with-limits;
-prior response_unclassified is preserved, not agreement. No doc-only full repeat.
-
-Goal77 broad512 OC comparison rejected; closure in Git4999344 and
-A/research/kis-stock-broad512-oc-ranking-development-v1/integration-evidence.json.
-Three CUDA neural/three ridge fits/9522updates; failed costs/drawdown, no rescue.
-Data R2 actual6e873e02.../102.823s/family103.185s:512identities/360686rows,
-391full800/121sparse/0empty, exact57cc rebind/source/Decimal readback before
-publish. Manifestfd559b22.../packed409fd7ad... in
-M/us_equities/kis_paper_private/daily-nas-broad512/v1/goal77-numeric-recovery-r2.
-Original800 May17,2023..Jul27,2026, original128-first mapping; unsupported j20
-retained rather than invented prior anchor.
-Prior launcher control_paths6.581s/0fits and Data PPID0.362s stay charged;
-used sources/failures remain immutable. Seen/raw-action/non-TR/current-listing/
-non-PIT/availability limits continue, no broker net-PnL claim.
+Original Data41pass1faila2ea9365... remains: pure writer accepts accepted pages
+without physical request records. Normal collector supplies records; new
+consumer guard30ff0047... contains exact bad input, NOT a global writer repair.
+Original Engine6pass2faila22b1b49... remains immutable; R2 fixes final expiry/
+plan/deadline and staged no-replace publication. Failure keeps inference1/
+withholds DTO; persistent I/O may leave no canonical receipt, not fake success.
+Original Execution26pass2fail56820b9a... remains: ambient Decimalprec2 changes
+receipt replay to safe no_intent. Caller-context supplement81f659cc.../12pass
+contains local64/FLOOR path, not contracts74d1e9b9... repair.
+Original installed sources/requests/reservations/basis are unchanged.
+Harness failures and superseded source versions are retained, never current
+passing authority. No finding becomes a global approval or Paper permission hold.
 
 ## Current Work
 
-ONE objective: kis-stock-five-session-cross-stock-attention-development-v1.
-Engine freezes corrected512 scope, builds one peer-context-gated attention
-model/three-fit adapter. Data binds same-date peers; Execution reattests replay;
-Infra reuses finite GPU runner; Validation checks frozen source/exact result.
-Parent owns integration/Git/resource custody. Old800/later50 seen development;
-no official MASTER weights, holdout/Paper adoption, rescue fit or data refresh.
-Same splits/costs/support/baselines. Paper/accounting schedules own next_due,
-not foreground/Research waits. Shared changes need fresh authority; unchanged
-external-only package may reattach Goal87 runtime/JUnit. CUDA available.
+ONE next objective kis-five-session-successor-custody-preparation-v1.
+Source-only feasibilitycd9d2ed3... at A/execution/
+kis-stock-five-session-prospective512-shadow-parity-v1/next-proposal/feasibility.json
+shows the retained first historical entry request conflicts with a second
+same-instrument cohort even after exact closure. Prepare a narrow pure versioned
+successor-history contract and strict finite shadow-DTO binding. Preserve all
+old histories, shared10%basis and installed source versions; no reset/adoption.
+Missing Friday input or unresolved prior exact custody affects only that
+request, not another lane. No new profit/capital/manual-approval gate.
+New reusable source/tests belong in Git; artifacts/data remain outside Git.
+No broker/provider/private bank read or scheduler expansion in preparation.
 
 ## Owned Opportunities Unchanged
 
-Goal76 static delivery COMPLETEb5c9c5a2.../cutover5e271bed... at
-A/execution/kis-stock-retained-gate-paper-delivery-v1. BOTH original Paper
-Actions now b860f41a... at2026-10-10T14:06:53UTC, runner16001388....
-Original names/non-Action definitions/dates/lifecycle/private volume/rank1/.01/
-shared10% basis unchanged. Resolve retained BUY first; EXIT/recovery bypass gate.
-No manual task/KIS/order in this turn. Future runtime/submit/fill unobserved.
-New exact offline outcome readerd8ea50a8.../receiptcd89d3a3.../113 synthetic
-tests at A/execution/kis-stock-retained-gate-paper-outcome-reader-v1 is released,
-not actual private-bank/fill proof. Old465d reader is historical only.
-thericher-kis-paper-stock-session-2d616950c835-enter/-close:
-Oct12 22:30..22:40KST /Oct13 04:50..05:00KST,1min/IgnoreNew/PT5M.
-Job at A/execution/kis-stock-feature-gate-paper-entry-preparation-v1/r2.
-Volume thericher-v2-paper-canary-private-acct-20261007-v1. Preserve SPYunknown
-custody/TLTGLD owners/QQQownedflat/exact pending reservations. Historical
-Goal47 BUY/SELL/ownedflat is not whole-accountflat or next-session evidence.
-Fees/settled cash/owned netPnL unobserved; five-session/day-Paper mismatch
-provisional. Scheduler Operational disabled: honest-host marker/time provenance,
-not cryptographic OS-origin proof. Reference127.0.0.1:8787 not fresh health.
+Goal83 A/execution/kis-stock-five-session-canonical-paper-delivery-v1:
+job80012e77.../plan507ffbb6.../cohort387ee5f6..., AAOI/NAS.
+First OPEN Oct12 22:30KST/recovery22:40; days1-4 HOLD.
+Fifth EXIT Oct17 04:50KST/recovery05:00, no same-day liquidation.
+Image113f9644.../frozen app/native sources. Ready next_due Oct12 13:30UTC.
+Original b860 day-Paper thericher-kis-paper-stock-session-2d616950c835-enter/
+-close: Oct12 22:30..22:40KST/Oct13 04:50..05:00KST,1min/IgnoreNew/PT5M.
+Goal76 Actionsb860f41a.../runner16001388...; offline readerd8ea50a8.../113SYN
+at A/execution/kis-stock-retained-gate-paper-outcome-reader-v1. Not actual fills.
 
-Dataab65b62b... at A/data/kis-stock-prospective-pair-owned-endpoints-v1:
+Goal90 A/execution/kis-stock-five-session-paper-close-capture-v1:
+deliverye048c301.../job50748886.../planef2e7bb6.../471source pins.
+One accounting task/five finite Oct12..16 20:25..35UTC windows,
+firstOct13 05:25KST. Ready next_due Oct12 20:25UTC; no manual starts.
+Exact network-none/RO-bank smoke3408e291... was no_owned_intent, not flat/PnL.
+Actual response/read/archive clocks never economic close; missing fees/
+finality/settlement/tax/net/captures unknown, not zero NAV or a Paper hold.
+
+Dataab65 A/data/kis-stock-prospective-pair-owned-endpoints-v1:
 thericher-kis-data-prospective-pair-ab65b62bdda00246-entry/-exit,
-Oct13/20 06:40..07:40KST,5min/IgnoreNew/PT5M.42 peers/cursor0/accepted0/
-failure0/remaining42/ETAunknown/not_observed; next_due Oct12/19 21:40UTC.
-One client/token;1s market-start/300s fresh-token-start. Exact page/cursor/
-terminal/capture binding, not task exit/cache time. No manual launch.
+42 peers, Oct13/20 06:40..07:40KST. Next_due Oct12/19 21:40UTC.
+Retained cursor0/accepted0/fail0/remaining42/ETAunknown/not_observed.
+One client/token;1s market-start/300s ONLY fresh token POST.
+Existing current21 cursor is closed only for its exact512 scope, not KIS history.
 
-## Lineage And Resume
+Private volume thericher-v2-paper-canary-private-acct-20261007-v1.
+Preserve unknown SPY/TLTGLD/QQQownedflat/stock owners and exact pending identities.
+Historical Goal47 BUY/SELL/ownedflat is not whole-account/current flatness.
+Never call native observe() as a passive reader: it can recover broker orders.
+Operational logging disabled: assumed-honest host marker/time, not cryptographic
+OS-origin proof. Reference http://127.0.0.1:8787 not freshly checked here.
 
-Retain Goal74 depth3220f76713... rejected, Goal73 inventorybd36e88e... including
-unknownfit1/debit64.183348s/R2d502b67c..., quantile30b0b842... rejected and
-Chronos41cd63c0... same-CURRENT ranking already answered/rejected in exact roots/
-RUNBOOK/Git. OLD128/800/87974; CURRENT113/14073/sevenbindings; feature caches
-OLD734/36307/CURRENT52/3339 and separate f78/remainder unchanged.
-Goal69 gate7998c3410d9.../77d3728c... and Goal72 forecast4bcf81db.../54a52e8d...
-remain immutable; only original-slot keep/veto delivered, no rejected-model swap.
-Trio SPYTLTGLD2686 dates; M1SPYQQQ25pairedcomplete, Oct7 incomplete.
-Tiingo/FINRA rights and ended Norgate trial constrain only those sources.
+## Research And Resume
+
+Goal92 covariance rejected c21602f2.../15of20 kills;3tree+3ridge/142solves/
+1080iterations/63.661s, no GPU/retry. Goal91 attention3CUDA/9450updates,
+Goal86 CatBoost3GPU/384iterations, Goal84 Mixer and Goal79 TabM3CUDA/804updates
+each rejected. Chronos same-CURRENT104CUDA calls already tested/rejected.
+Goal80 unchanged HGBR later confirmation passed7 fixed kills and exported own
+teacher; engineering evidence, not independent/sealed alpha. Exact history in
+RUNBOOK/Gita81a1ae/external receipts. RTX4090/Torch2.7cu128 usable/free; no GPU
+permission/environment hold or utilization target. Source limits stay explicit.
 
 Run C:/Users/Public/Documents/thericher-v2/scripts/start_next_codex_task.ps1,
-then current goal/policy/stateboards. uv --no-env-file prevents ambient dotenv.
-Only named approved Paper callers selectively load Paper keys. Parent owns
-runtime/Git; disjoint agents own sources. Focused/clean8/Ruff/three sample
-Compose at integration; no doc-only full rerun. Weekly serial Goal53
-15133/22/2299.42s not overdue. Commit/push, refresh one next goal and continue.
+then current goal/policy/stateboards. uv --no-env-file avoids ambient dotenv.
+Only named approved Paper callers selectively load Paper keys.
+Parent alone owns Git; role ownership disjoint. Fresh authority needed for new
+shared source/control, exact-source reattachment only for unchanged sources.
+Keep future waits in owned next_due; verify/commit/push/one next goal/continue.
