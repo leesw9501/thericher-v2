@@ -2,61 +2,78 @@
 
 ## Objective
 
-Complete kis-five-session-optional-fee-accounting-selector-delivery-v1:
-deliver the frozen optional-fee accounting consumer to the same existing
-successor accounting task, preserving original claims, scope and schedule.
+Complete kis-five-session-pairwise-preference-development-v1: build one
+shared linear pairwise score and test whether direct comparison supervision
+improves fixed-five-session stock selection under unchanged costs and replay.
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
-112 COMPLETE/prepared-not-deployed52f20612... at A/execution/
-kis-five-session-optional-fee-accounting-consumer-integration-v1/integration-evidence.json.
-Consumerfc46643a.../projection32d3bc77.../release4a477238...; selection3eceffd6...
-at infra-r1/delivery-selection.json. Native9 focused/independent4 groups pass;
-one network-none Docker SYN28.90s under180s,496aliases/35mounts, source/child/
-container closure. Reviewer R1/R2 faults retained, R3 binds exact scoped point
-and plan. Claude plan/result supported-with-limits. No actual producer/fees/net.
+113 COMPLETE/action-delivered642a1ee0... at A/execution/
+kis-five-session-optional-fee-accounting-selector-delivery-v1/integration-evidence.json.
+Execution release14d76c11.../runner0ac3910d... and R2 Infra300016f4... bind
+112 selection3eceffd6.../original jobb9f898f6....21 focused pass; independent
+one native SYN + one source/metadata group and one postdelivery metadata group.
+Exactly one Action changed, other41 of42 installed definitions unchanged;
+42 includes retired tasks, not42 finite owners. Original19 finite scope and
+non-Action settings/claims/basis/image preserved. First due Oct19 20:25UTC.
+No manual Task/due/provider/order call; actual fees/net and future107 pending.
 
-## Scope And Ownership
+## Direction And Parallel Roles
 
-Change only the Action of thericher-kis-paper-successor-20261019-accounting
-to a thin pinned entry into the frozen112 consumer. Preserve G98 inner
-jobb9f898f6..., original claims/output root, native/control/source/image,
-five Oct19..23 20:25-20:35UTC windows, minute repetition, IgnoreNew/PT3M,
-principal, working directory and no-StartWhenAvailable. Existing19 finite
-owners remain19; no new task, schedule, trigger, image, endpoint or ledger.
+Source readiness proposal000377cc... at A/research/
+kis-five-session-optional-fee-accounting-selector-delivery-v1/next-direction-r1/proposal.json
+re-retrieves111 proposal and prior G77/G79/ordinal decoder/joint TCN sources.
+Relative-rank targets already exist. The intervention is shared-score
+difference loss f(x_i)-f(x_j), not a new market mechanism or architecture
+rescue of rejected111. No separately frozen campaign/allocation exists yet.
 
-Execution owns the inert/default/outside-window runner and source-pinned
-selector. Infra owns Action-only delivery/preview and fully mocked Scheduler
-tests. Parent alone reads/applies exact task metadata, integrates and handles
-Git. Validation independently checks the frozen delivery diff. Data/Engine
-standby; no model/GPU allocation, collection or prospective107 outcome claim.
+Use existing approved fixed512 old800/later71 data, prior21-derived20x5
+context and existing LogisticRegression/runtime; no downloads/dependency
+replacement. One fixed linear score without intercept, one CPU fit only.
+Freeze finite prior-only pair sampler/hash, neutral ties, equal-date weights,
+TRAIN-only scaler, C/solver/iterations, complete-date minimum and whole-date
+missing rule before actual labels/outcomes. Uniform per-side fees do not
+alter relative order: labels are not cost-optimal.
 
-Before apply, challenge the concrete selector/Action change with Claude.
-Check the target is inactive and read back exact Action plus unchanged
-non-Action task definition. Preserve before evidence for reversible recovery;
-do not compete with an active owner or reinstall the whole task definition.
+Data owns typed sampler/coverage; Engine owns score/loss/frozen campaign;
+Execution owns fixed holding/quantity/fee replay and aggregate reader. Infra
+reuses finite CPU transport. Parent alone reads actual market inputs,
+allocates/dispatches, integrates and handles Git. Temporary Validation
+evaluates frozen source/actual aggregate, not tuning. Source/SYN role packages
+run in parallel with disjoint ownership; no actual fitting before source seal.
 
-Maximum: one thin runner and Action-only installer, focused native/mocked
-tests, one exact delivery/readback. No manual due runner, Task, KIS, Docker
-service, account/order endpoint or producer invocation. Preserve original
-shared10%basis, identity, unknown old custody and claims; no substitute order.
+## Bound And Strongest Kill
 
-## Completion Evidence
+Reuse source-pinned G106/G110 causal intake and fixed-five replay. Verify
+geometry: TRAIN entries21..686/134 dates; DEV720..790/15 cohorts across
+calendar720..799; later21..61/9 across calendar21..70. All130 evaluation
+marks, including flat tails, retained; TRAIN OPENe+5 labels precede DEV.
+No evaluation-label fitting API. Missing targets cannot censor losing pairs,
+choose replacement pairs or revise eligibility.
 
-Bind installed Action to selection3eceffd6... and consumer release4a477238....
-Prove source validation precedes effects, wrong pins/inconsistent inner job
-reject, no-argument inert and outside-window not_due do not call providers.
-Synthetic installer tests disable module auto-loading and mock every
-Scheduler entry point. Strong kill: changed claims/basis/scope/trigger,
-unvalidated consumer, actual manual effects or replacement intent.
+One family budget: one CPU fit,2threads4GiB,600s whole including90s
+cleanup/publication reserve, no retry/refund/search/weights. Compare cash,
+unchanged momentum/analytical-peer and prior-only common-gross controls with
+fixed original quantities; costs5/10/20bps PER SIDE. Freeze exact tables and
+strict U/DD predicate count before fit. Reject absent strict utility gain over
+matched momentum/peer/cash and DD no worse than matched momentum/peer in both
+blocks/all costs. Future mutation of pairs/context/eligibility, missing-loss
+censoring, cost/quantity/clock mutation or aggregate mismatch kills the run.
 
-Actual fee producer and fees remain UNKNOWN; this delivery is neither a fill
-nor settled net/flatness evidence. Missing optional fees cannot pause Paper.
-No historical fee backcast or raw prices/amounts/account/order IDs in output.
-Readback/hash evidence assumes an honest host, not independent OS proof.
+No GPU justified for this small convex fit. No holdout/fusion/Paper intent or
+independent-alpha claim from repeatedly seen/current-listing/nonPIT/raw-action/
+revised samples. Existing19 owners and107 future inputs remain independent.
 
-Market data M/artifacts A/15%D:free floor; no live/secret/cost/public/major
-runtime change. External-only work uses focused tests plus exact reattached
-1311-code authority/Ruff/three sample Compose/diff check; shared runtime/control
-changes follow AGENTS.md. After closure select exactlyONE material next
-objective and continue; market timing belongs to existing owners, not sleep.
+## Completion
+
+Exact pre-numeric source/campaign seal and canonical family custody;
+CPU/SYN checks, one bounded runtime, every fixed table/mark/kill result,
+source/input/child/container closure and independent categorical review.
+Close as rejected, development-screen result or scoped technical
+input_unavailable, not inferred from exit/preview/missing input. Claude
+challenges leakage/selection/cost before reliance and material interpretation.
+No live/secret/cost/public/major runtime change. Data M/artifacts A/15%D:floor.
+External-only work: fresh focused checks plus exact reattached1311-code
+authority/Ruff/three sample Compose/diff check; tracked/shared control changes
+follow AGENTS.md. Verify, commit/push, refresh exactlyONE material next
+objective and continue without market sleep.

@@ -14,10 +14,13 @@ release304149d7..., same prior20x5/fixed2% interim loss/p>.5 veto/OPENe+5 exit.
 GRU20212 all rejected, no best seed, threshold/refit/weights/holdout rescue.
 10bps logistic DEV+.98245%/later+.46815% is not a passed screen or adoption;
 GRUs negative DEV.35 focused/direct Docker SYN3/source3/actual2; Claude limits.
-112 accounting consumer integration COMPLETE52f20612...;113 delivers its
-frozen selector to the same accounting task. Engine standby/no new allocation from
-this rejected family. Source-only pre-outcome proposal at111/next-direction-r1/
-proposal.json has pairwise ranking as an unallocated alternative, not a goal.
+112 integration COMPLETE52f20612...;113 selector delivery COMPLETE642a1ee0....
+114 owns one shared linear pairwise preference objective using existing data/
+runtime, no intercept/one CPU fit. Re-retrieved source proposal000377cc... at
+A/research/kis-five-session-optional-fee-accounting-selector-delivery-v1/next-direction-r1/proposal.json
+rejects rank-target novelty; difference-loss intervention is informed by prior
+ordinal/rank studies. Freeze pairs/ties/scaler/splits/costs/kill and custody
+before labels; no fit/GPU appointment allocated yet or111 rescue.
 Future107 pending, Paper authority independent of research outcomes.
 
 ## Retained Evidence

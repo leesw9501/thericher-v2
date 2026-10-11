@@ -13,8 +13,10 @@ consumer rows and exact rational costs. Parent actual reports134complete
 nonempty dates1340rows/821loss519nonloss, no missing paths; Data did not
 independently reproduce raw labels. No acquisition/PIT/finality/action promotion.
 112 accounting integration COMPLETE52f20612...; no new Data input or claims.
-113 same-task optional fee selector delivery is Execution/Infra-owned;
-Data standby, no new universe, provider, dataset or collection assignment.
+113 same-task selector delivery COMPLETE642a1ee0...; Data inputs unchanged.
+114 Data owns typed prior-only finite pair sampler, whole-date coverage and
+future-mutation SYN contract using existing512 intake. No acquisition or
+numeric/label inspection before Parent freezes the campaign/source contract.
 Existing19owners/107 future coverage/durable cursors and next_due unchanged.
 Recovery: completed source111, preserve exact receipts; current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.

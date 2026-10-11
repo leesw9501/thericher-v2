@@ -19,9 +19,15 @@ with source/child/container closure. Reviewer R1/R2 faults retained and scoped
 bindings corrected only. Original inner job/snapshot/archive claims preserved.
 Missing fee stays PnL-only unknown, not zero/settled net/flatness/permission.
 Actual fee producer/fees/net unobserved; no private/provider/19-owner changes.
-113 Execution owns thin pinned selector/runner into frozen112 consumer;
-Infra owns same-task Action-only delivery. No new endpoint/worker/task/image,
-manual due invocation, changed schedule/shared basis or replacement identity.
+113 COMPLETE/action-delivered642a1ee0... at A/execution/
+kis-five-session-optional-fee-accounting-selector-delivery-v1. Runner0ac3910d.../
+release14d76c11... and R2 installer563ea1d8.../release300016f4... frozen.
+21 focused/source2/postdelivery1 groups pass (1 native SYN/2 metadata groups).
+Same-task Action changed1/other41 definitions unchanged; settings/triggers/
+claims/basis/image unchanged, first due Oct20 05:25KST. No manual Task/due/
+provider/order call or actual fees/net; honest-host readback only.
+114 owns fixed-five quantity/cost replay and closed pairwise aggregate reader;
+do not select model/pairs or modify actual Paper paths. Reuse canonical replay.
 
 ## Retained Evidence
 

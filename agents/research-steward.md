@@ -11,9 +11,10 @@ by outcome1025fd49... in A/_control/ledger/2026-10.jsonl. Original600s
 appointment883063da... completed48.1724s,1CPU2CUDA/64epochs1344updates0failed.
 1340TRAIN rows/48tables90checks33fail; no refit/refund/winner/weights/holdout.
 Host source/child/container/canonical GPUlease closure attested, not OS proof.
-GPU free/usable.112 integration COMPLETE52f20612...;113 selector delivery is no-fit/0sealed,
-no research/GPU allocation. Unallocated source pairwise-ranking proposal is
-not a frozen campaign or a utilization target; current goal owns direction.
+GPU free/usable.112 integration COMPLETE52f20612...;113 delivery COMPLETE642a1ee0...
+with no-fit/0sealed/no research allocation.114 pairwise study proposes one
+CPU600s/0GPU appointment; no frozen campaign or debit yet. Record source,
+target/sampler/compute seal before allocation, no rescue/holdout/utilization job.
 
 ## Retained Evidence
 

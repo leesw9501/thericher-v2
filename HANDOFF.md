@@ -47,11 +47,30 @@ Missing/invalid fees stay unknown, cumulative observations replace, not sum;
 terminal and return fee projection agree. No producer/API/private inspection,
 fees/settled net, research/GPU allocation or19-owner schedule/budget changes.
 
-ONE113: kis-five-session-optional-fee-accounting-selector-delivery-v1.
-Use the frozen112 selection in the same successor accounting task's Action
-only; preserve original triggers/principal/settings/claims/inner job and scope.
-No manual Task/KIS/account/order/producer run or new task/image/basis. Exact
-readback is delivery evidence only; actual fees/net and future107 stay pending.
+113 COMPLETE/action-delivered642a1ee0... at A/execution/
+kis-five-session-optional-fee-accounting-selector-delivery-v1/integration-evidence.json.
+Execution release14d76c11.../runner0ac3910d.../PS14009eb6... and R2 Infra
+300016f4.../installer563ea1d8... bind the same-task Action to frozen112
+selection3eceffd6... plus runtime self/Python checks.21 focused pass;
+independent323cda3e...1 native SYN/1 source-metadata group and80448954...
+1 postdelivery metadata group. Plan88c14759.../before3ed7e8a9.../after884b6685...
+task-after22345bd7... link exact source/time/non-Action facts.1Action changed,
+other41unchanged among42installed definitions (includes retired tasks, not42
+finite owners). Original19 scope, five Oct19..23 20:25..35UTC triggers,
+settings/principal/claims/basis/source/image unchanged. FirstOct20 05:25KST.
+No manual Task/due/provider/order run. Real outside PS smoke not_due/0daily
+attempts; original source flag staysfalse, separate exact byte audit passes.
+Honest-host sampled readback, not OS proof. R1 outer-release gap preserved;
+R2 delivered. Parent ordered-map preparation fault fixed by structured
+roundtrip before task effects. Claude supported-with-limits; fees/net unknown.
+
+ONE114: kis-five-session-pairwise-preference-development-v1. Source-only
+proposal000377cc... at A/research/
+kis-five-session-optional-fee-accounting-selector-delivery-v1/next-direction-r1/proposal.json
+rejects rank-target novelty (prior ordinal/soft-midrank BCE), recommends one
+informed CPU shared-score difference-loss study. Freeze pairs/target/geometry/
+cost/kill/custody before numeric work. No GPU allocation,111 refit, weights,
+holdout or Paper adoption from proposal. Future107 outcome remains pending.
 
 ## Retained Preparations And Closures
 
