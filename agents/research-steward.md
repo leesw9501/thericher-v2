@@ -14,8 +14,13 @@ infra-r1/gpu-appointment.json; parent write-scope fault did not reset its clock.
 Actual1CPU2CUDA/8epochs/472updates, zero failed fits, no rescue or retained weights.
 Owned lease released/container absent/child reaped/source unchanged are host
 attestations, not independent OS proof. Sealed spend0; no active GPU job.
-ONE objective kis-five-session-successor-observed-fee-reconciliation-v1 has
-no fitting/GPU allocation. Existing Paper owners retain resource priority.
+Goal100 fee consumer COMPLETE ff5b936b..., no fitting/GPU/evaluation allocation.
+Next research allocation requires its own frozen hypothesis/target/split/cost/
+compute contract, not a renamed99 rescue. Novelty review/CPU preparation are
+ready; GPU available. Existing Paper owners retain resource priority.
+Goal101 held-only target proposal has no registered numerical trial/appointment
+yet. Freeze nearest-family lineage and one CPU1/CUDA2/600s contract before fits;
+same old/later-seen samples do not become fresh replication or sealed evidence.
 
 ## Prior Allocation
 

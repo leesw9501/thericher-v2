@@ -13,6 +13,28 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Latest Closure (2026-10-11 KST)
 
+Goal100 observed-fee consumer COMPLETE ff5b936b... at A/execution/
+kis-five-session-successor-observed-fee-reconciliation-v1/integration-evidence.json.
+ExecutionR2 release8c21bfe7.../overlay7a1b8271... connects exact cumulative
+current-fill fees to the passive archive reader/bridge; never sums snapshots,
+backdates close evidence or transfers prior same-symbol profit/fees. Missing
+fees remain scoped unknown and cannot complete unknown custody or pause Paper.
+143 focused pass; independent Data6/Validation9 groups pass. R1 author69pass
+hid a real two-versus-three argument _advance ABI fault; original Data5/6 and
+Validation8/9 failures preserved. R2 fixes one call with positive repeat/increase
+controls; no core/schema/strategy change. Actual113f network-none code/SYN smoke
+complete01c43e68.../resultb01d4683...,486 source pins, no production private mounts;
+child reaped/container absent/source unchanged. Parent caller exit1 compared
+host code_SYN_complete with worker supported_with_limits; actual completed
+evidence independently checked, no runtime rerun. Exact result bytes frozen in
+closure, not an original host result-hash chain or independent OS proof.
+Claude closure/recovery supported-with-limits. Exact1311 repository authority
+15829pass22skip reattached, not a fresh full suite. No fee producer or installed
+Action; actual exact order-linked Paper fees remain UNKNOWN. Known gross-less-
+observed-fill-fees is not settled account return/NAV. All13 finite owners,
+original shared10%basis, strategy and pending identities remain unchanged.
+No credentials/provider/KIS/order/model/GPU/holdout/schedule changes in100.
+
 Goal99 joint entry/continuation research COMPLETE/rejected879bb037... at
 A/research/kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
 Sciencee5d1dbd3.../trial1b93f2526...; canonical completed outcomee19f0c2c...
@@ -30,10 +52,9 @@ owned GPU closure attested, not independent OS proof. No raw-price PnL replay,
 fresh holdout, weights retained, KIS/credential/order/schedule or Paper changes.
 TRAIN clairvoyant upper-bound labels, nonPIT/revised/current-listing/raw-action/
 nominal-CLOSE/fractional full-fill and exposure-proxy limits remain.
-Claude result/next direction supported-with-limits. ONE current objective:
-kis-five-session-successor-observed-fee-reconciliation-v1. Whole-share sizing
-already exists; connect missing observed-fee archive consumer only. Missing
-fees stay scoped unknown, never a Paper permission gate or foreground wait.
+Claude result/next direction supported-with-limits. The later fee-consumer
+closure is above; neither rejected research nor unknown fees blocks a separate
+ready development experiment or an owned Paper opportunity.
 
 ## Prior Accounting Closure
 
@@ -163,6 +184,13 @@ passing authority. No finding becomes a global approval or Paper permission hold
 
 ## Current Work
 
+ONE objective kis-stock-held-only-causal-exit-development-v1. Same rule-selected
+entries/fixed-initial-capital quantities; learn only CLOSE-time incremental
+next-OPEN liquidation advantage. CPU1/CUDA2/one600s frozen contract; prior-study
+novelty/causal-source preparation first, no fits yet. Old/later512 already-seen
+inputs, no new acquisition/holdout/Paper change. Data geometry, Execution replay
+and existing CUDA Infra preparation run independently; Parent owns Git/runtime.
+
 Goal94 kis-five-session-successor-custody-preparation-v1 COMPLETE d6e4bec7...:
 A/execution/kis-five-session-successor-custody-preparation-v1/integration-evidence.json.
 Three new pure lazy leaf modules and focused tests are frozen: Data exact
@@ -177,13 +205,10 @@ Full old book/basis/gross losses/reservations remain; segment is cadence only.
 No actual bank/future input/model/order, history reset, foreign lot adoption or
 profit/capital/manual approval gate. Artifacts A/data M; no schedule expansion.
 
-ONE objective kis-five-session-successor-owned-accounting-v1.
-Bind exact successor retained exchange/journal/canonical fill custody to five
-close observations and explicit fee availability. Passive reader only; never
-invoke native observe() to inspect. No ticker adoption, stale quantities or
-missing fees converted into net profit. Source/SYN preparation plus finite
-capture readiness is bounded; actual future evidence remains due, not a company
-market wait. Existing strategy/model/shared basis and all installed owners stay.
+Current objective is solely NEXT_CODEX_GOAL.md. Goal98 archive/capture readiness
+and Goal100 exact fee consumer are complete as source/SYN work, not actual
+future capture/fee/net evidence. Passive inspection never invokes observe().
+Existing strategy/model/shared basis and all13 installed owners stay unchanged.
 
 ## Owned Opportunities Unchanged
 

@@ -6,11 +6,22 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-ONE objective kis-five-session-successor-observed-fee-reconciliation-v1.
-Plato owns source/SYN audit of exact fee currency/cohort/state/request/fill,
-cumulative quantity/gross, immutable hash and observation-time bindings.
-No acquisition, account/private reads or inferred zero fees. Missing actual
-fee evidence remains scoped not_observed; it does not pause Paper work.
+Goal100 COMPLETE ff5b936b... at A/execution/
+kis-five-session-successor-observed-fee-reconciliation-v1/integration-evidence.json.
+Source contractba204bcd.../canonical baseline25 pass; independent R2d9cc3e0c...
+six groups pass,25 original pins unchanged. Original5/6 failureea627198... found
+valid enriched replay rejected by wrong _advance ABI, now fixed in one call.
+Source/currency/job/control/archive/cohort/cumulative fill/clock/coverage bindings
+remain exact; explicit zero needs complete evidence. No acquisition/private
+reads or actual fee/finality/settlement claim. Actual113f code/SYN result and
+host cleanup are linked in closure; honest-host evidence, not provider proof.
+Current assignment comes only from NEXT_CODEX_GOAL.md, not this closed study.
+Goal101 planning ready: reuse d83db2a1... input ABI, old800/later71 exact manifests
+fd559b22.../1eaebbc3.... TRAIN134/DEV15/later9 episodes yield nominal536/60/36
+held decision slots, not observed complete samples. Labels OPEN(t+1)->OPEN(t+2),
+force terminalOPEN e+5; TRAIN terminal691 precedes DEV decisionCLOSE719.
+Future mutation cannot alter prior selection/context; no future-qualified
+missing-payoff deletion. Packed bars not rehashed by this planning audit.
 Goal99 COMPLETE/rejected879bb037... at A/research/
 kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
 Actual1CPU2CUDA/35of64 fixed checks failed; no new data or quality promotion.

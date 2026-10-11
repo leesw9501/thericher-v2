@@ -2,59 +2,79 @@
 
 ## Objective
 
-Complete kis-five-session-successor-observed-fee-reconciliation-v1: connect
-exact archived observed-fee evidence to the unchanged successor's scoped
-Paper PnL attribution. Improve accounting PnL, not another report or gate.
+Evaluate kis-stock-held-only-causal-exit-development-v1: determine whether a
+causal learned exit adds value with identical rule-selected entries and fixed
+initial quantities. Improve feature/model research and cost-aware replay, not
+GPU utilization or another model-name sweep. This is seen-data development,
+not a Paper strategy change, fresh holdout or deployment qualification.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal99 COMPLETE/rejected879bb037... at A/research/
-kis-stock-joint-entry-continuation-policy-development-v1/integration-evidence.json.
-Actual1CPU2CUDA/8epochs/472updates,72tables/35of64 fixed checks failed;
-185 focused/23 independent source-SYN groups/8 independent JSON groups.
-No model rescue, weights retained, holdout or Paper strategy changes.
+Goal100 fee-consumer readiness COMPLETE ff5b936b... at A/execution/
+kis-five-session-successor-observed-fee-reconciliation-v1/integration-evidence.json:
+143 focused/15 independent groups, actual offline source/SYN smoke complete.
+No actual fee/settlement or deployed Action claim. Goal99 rejected879bb037...;
+its CPU1/CUDA2 results and failed/recovered evidence remain immutable.
 
 ## Parallel Packages
 
-Execution: reuse Goal98 passive archive validation and current-segment gross
-attribution, plus existing kis_paper_five_session_pnl fee binding semantics.
-Deliver one pure fee overlay consumed by that reader/bridge. Integer whole-share
-sizing and full-book custody already exist; do not rebuild them or add a ledger.
+Engine: first compare with prior one-step/exit studies and record the nearest
+lineage; a duplicate hypothesis is a rejection, not another training allocation.
+Freeze one finite contract before numerical market work. Reuse Goal99's causal
+rule_fixed5 entry selection, not a final teacher trained on later evaluation
+dates. No learned entry, new stock selection, reentry or redistribution.
 
-Data: independently specify/audit exact immutable fee evidence bindings:
-source/currency, cohort, state/request/fill identity, cumulative quantity/gross,
-observation clock and hash. Missing actual fee evidence stays not_observed;
-do not collect market data or invent an inferred zero/estimated fee.
+At completed CLOSE t for an already held position, EXIT executes OPEN(t+1);
+HOLD waits one interval before hypothetical liquidation OPEN(t+2). Train the
+incremental liquidation label (1-c)*(O[t+2]-O[t+1])/C[t], not a clairvoyant
+max-over-future or claimed optimal stopping value. Features end at CLOSE t.
+Use21 completed bars/20 steps, held age and observed entry return. Allow learned
+decisions CLOSE e..e+3 after entry OPEN e; force EXIT OPEN e+5.
 
-Engine: reattest observed-fee versus modeled-per-side-cost semantics. Preserve
-gross attribution, mark/FX/dividend/settled-cash limitations, no new research
-campaign or fitted model. A gross-less-observed-fees value is not settled account
-net return. Do not change candidate, sizing, strategy or Executor permission.
+Use one CPU ridge baseline and two fixed CUDA seeds101/202, maximum3 fits under
+one original600s family clock. Freeze epochs/architecture/split/kill criteria
+before any outcome. Reuse existing runtime and old512/later-seen512 exact inputs;
+no data acquisition, model download, holdout or retained fitted weights.
 
-Temporary Validation attacks the frozen overlay independently. Parent integrates
-source contracts and one actual default113f network-none synthetic runtime probe,
-with only code/synthetic inputs and isolated output, no production private mounts.
-Use existing finite transport, not a new image/framework/worker platform.
+Data: independently audit source/official-session geometry, complete targets
+and TRAIN support before DEV decisions. Missing selected payoff stays unavailable,
+never a loss dropped after outcomes. Current-listing/nonPIT/revised/raw-action/
+nominal-availability limits stay visible; later-seen input is not replication.
+
+Execution: freeze/replay identical entry quantities from original initial
+capital and rule weights at reference10bps. Roll cash/PnL but do not reinvest
+gains or change quantities from arm outcomes. No leverage/cash repair: an
+unfundable required entry invalidates that comparison. Charge5/10/20bps per
+side on actual legs; HOLD has no fill fee. Compare fixed5 and immediate-next-
+OPEN exits with learned exits and report exposure/duration alongside NAV/DD.
+Every original block date remains, including cash after early liquidation.
+
+Infra: reuse the existing PyTorch CUDA Docker image/finite owned worker and
+Goal99's publication recovery. CPU/SYN smoke first, then one exclusive GPU
+appointment after source integration. Parent alone runs actual Docker/Git.
+Research Steward records frozen family/lineage/max3 fits/600s/no sealed spend.
+Temporary Validation independently attacks frozen causality/cost/accounting
+and exact result arithmetic; it does not tune models or inspect private state.
 
 ## Completion And Scope
 
-Done: exact existing archive consumer uses the pure overlay; focused/independent
-SYN tests and actual source-integrated offline smoke pass. Strongest kill:
-profitable prior same-symbol cohort + partial successor + duplicate cumulative
-fees cannot transfer profit/fees, double-charge, or falsely complete unknown
-custody. Reject mismatched/stale/hash-invalid evidence locally. Explicit observed
-zero is valid only with exact complete binding; modeled bps is never observed.
+Done: frozen causal target, verified source/replay and one bounded actual CPU+
+CUDA outcome, or an exact duplicate/input-unavailable/technical rejection.
+Strongest kill: future-price mutation changes labels/payoffs but cannot alter
+earlier actions/entry quantities. A survivor must improve fixed net utility
+against both same-entry controls on DEV and later-seen blocks without worse
+fixed5 drawdown; both seeds must pass the predeclared cost-band criterion.
+No best-seed rescue, extra refits, outcome-driven windows or naive zero costs.
 
-Preserve full-book risk/budget/history, original10%basis/losses/reservations/
-pending identities, all13 finite tasks and their owned next_due. No model/GPU/
-holdout, KIS/provider/account/order/credential access, live, paid/public behavior,
-new schedule or task Action/budget changes in this objective. Missing fees affect
-only this attribution field; they never pause Paper or independent ready work.
-No claim actual fills, fees, settlement or net PnL were observed by SYN evidence.
-Bound <=one development day; raw data M/artifacts A, D:15%floor.
+Keep all13 installed Paper/Data owners and next_due, original shared10%basis,
+strategy and pending identities unchanged. No credentials/KIS/provider/account/
+order/scheduler calls or changes in this objective. Live/paid/public/major
+runtime replacement remains outside authority. Artifacts A/data M/D:15%floor.
+Bound source+experiment to one development day; yields stay worker-owned, not
+foreground sleep. Another ready lane continues on a scoped failure.
 
-Follow AGENTS.md verification. Changed shared source requires changed-path serial
-plus clean parallel authority/Ruff/three sample Compose. External-only packages
-may reattach exactly unchanged repository authority with focused verification,
-not repeat a full suite for prose. Refresh stateboards/HANDOFF, verify/commit/push,
-replace with exactly ONE material next company objective and continue.
+Follow AGENTS.md verification: focused disjoint tests; exact unchanged repository
+authority may be reattached for external-only work. Changed shared source uses
+changed-path serial and clean parallel authority. Ruff/three sample Compose,
+refresh stateboards/HANDOFF, verify/commit/push, replace with exactly ONE next
+material company objective and continue. No per-agent next-goal files.

@@ -6,20 +6,22 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-Goal99 COMPLETE/rejected879bb037..., actual1CPU2CUDA/35of64 fixed kills failed.
-ONE objective kis-five-session-successor-observed-fee-reconciliation-v1.
+Goal100 COMPLETE ff5b936b...,143 focused/15 independent groups, actual113f
+code/SYN integration complete. R1 ABI failure and parent status-name exit1
+preserved; R2 validated, not a fee producer/deployment/actual fee observation.
+ONE objective kis-stock-held-only-causal-exit-development-v1.
 No company block, market wait, GPU permission or operator approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned100 | Sole Git/actual Docker owner; close99 then integrate exact fee consumer. |
-| Verification | Parent / complete99 | 185 focused/23 independent source-SYN/8 JSON groups; unchanged1311 authority15829pass22skip reattached, not a fresh full-suite. |
-| Data | Plato / owned100 | Exact immutable fee currency/cohort/state/request/fill/cumulative quantity/gross/time/hash audit, source/SYN only. |
-| Engine | Chandrasekhar / owned100 | Modeled-vs-observed fee semantics; no new model campaign or fit. |
-| Execution | Herschel / owned100 | Pure overlay consumed by existing archive reader/bridge; reuse custody and canonical fee validator. |
-| Infra | Socrates / owned100 | Prepare default113f code/SYN-only offline probe; no actual Docker or production mounts. |
-| Validation | Leibniz / ready100 | Independent frozen-source attacks after overlay handoff; no tuning. |
-| GPU | Steward / free | Goal99 appointment closed/released; usable, no environment/permission hold or utilization-only allocation. |
+| Git/integration | Parent / owned101 | Sole Git/actual Docker owner; close100, integrate one held-only causal target. |
+| Verification | Parent / ready | Exact1311 authority15829pass22skip reattestable, not a fresh full-suite; focused source/SYN next. |
+| Data | Plato / owned planning101 | Reuse old/later512 exact inputs; complete target/session geometry, no acquisition. |
+| Engine | Chandrasekhar / owned101 | Prior-study novelty and causal one-step label; frozen CPU1/CUDA2 recipe before fits. |
+| Execution | Herschel / ready101 | Same fixed-notional entries/quantities, exact action costs and all dates; no Paper changes. |
+| Infra | Socrates / owned planning101 | Reuse G99 CUDA finite transport/publicationR2; CPU smoke before actual Docker. |
+| Validation | Leibniz / ready on freeze | Independent causality/funding/cost attacks after source freeze; no tuning. |
+| GPU | Steward / free | Goal99 lease released; usable. Next own600s/max3-fit appointment after frozen source. |
 | Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
 | Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |
 | Accounting due | Goal95 recovery Action | Five finite dates, firstOct13 05:25KST; original job/claims, captures unknown. |
@@ -29,15 +31,13 @@ No company block, market wait, GPU permission or operator approval hold.
 
 ## Bottleneck And Reversible Improvement
 
-Whole-share sizing and owned full-book history already exist. The measured gap
-is the archive consumer's always-unavailable fee field, not GPU readiness or
-Paper permission. Reuse exact current-segment attribution and canonical fee
-validator; test cumulative duplicates/prior same-symbol contamination alongside
-code integration. Avoid another ledger or sizing rebuild. Known gross-less-fees
-does not establish settled account net return. All13 finite tasks/Actions/
-budgets/identities remain unchanged; no manual invocation or foreground wait.
-Claude99 result/next direction review_received/supported-with-limits, not authority.
-Goal99 closure A/research/kis-stock-joint-entry-continuation-policy-development-v1/
-integration-evidence.json preserves original600s clock, failed CPU publication,
-measured errno22 and exact host-bound R2 recovery. Guest visibility NON-atomic;
-partial/unbound bytes never qualify. Honest-host facts, not independent OS proof.
+Goal99 learned entry and clairvoyant continuation failed35of64 fixed kills;
+another model name cannot isolate why. Fix entry selection and quantities,
+learn only a causal one-interval liquidation advantage, compare fixed5 and
+immediate exits with exposure and complete date marks. Fixed-initial-capital
+quantities remove arm-dependent compounding confounds; unfundable cash is a
+technical rejection, never repaired leverage or a dropped adverse block.
+First check nearest prior-study lineage; duplicate work closes without a fit.
+Missing actual fee evidence stays scoped accounting unknown, not a research or
+Paper gate. All13 finite task Actions/budgets/identities remain unchanged.
+Claude100 closure/recovery supported-with-limits; not proof or authority.

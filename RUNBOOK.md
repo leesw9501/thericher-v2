@@ -2,9 +2,14 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-five-session-successor-observed-fee-reconciliation-v1.
+ONE objective is the current NEXT_CODEX_GOAL.md, not a historical command below.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
+Goal101 held-only causal exit preparation reuses Goal99 data/replay/CUDA transport.
+One CPU baseline/two frozen CUDA seeds/max3 fits/one600s family, only after
+exact source/scientific freeze and CPU smoke. Same fixed-notional entries,
+no reinvestment/reentry/holdout/Paper changes. Current contract is the next goal;
+historical commands below are not permission to rerun a closed experiment.
 Goal98 accounting readiness COMPLETE c6e08a27...:
 D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-owned-accounting-v1/integration-evidence.json.
 235 focused/26 independent pass; actual113f network-none SYN3.951s, default
@@ -25,13 +30,20 @@ Actual1CPU2CUDA/8epochs/472updates,35of64 fixed checks fail;185 focused,
 no weights/holdout/Paper change. Publication R1 failure and measured errno22
 remain immutable; publication-only R2 requires exact completed host hash/cleanup
 binding because guest exclusive-create visibility is NON-atomic.
-Current Execution/Data/Engine packages connect exact archived observed fees to
-scoped successor PnL. Reuse canonical fee validator and full-book custody;
-do not rebuild integer sizing/ledger or sum cumulative fees across snapshots.
-Parent owns one default113f network-none SYN probe, no production private mounts,
-KIS/provider/account/order/credentials or installed task Action changes.
-Known gross-less-fees is not settled account net return. Missing fees remain
-unknown only for that field, not a Paper gate or foreground wait.
+Goal100 fee consumer COMPLETE ff5b936b...:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-observed-fee-reconciliation-v1/integration-evidence.json.
+R2 release8c21bfe7... fixes one _advance ABI call;143 focused/15 independent
+groups pass. Original69-pass R1/5-of6 Data/8-of9 Validation failures retained.
+Actual default113f code/SYN probe complete: runtime/359e03bcfb644b56a79bd0960bab402f
+under the same goal's infra-r1, host01c43e68.../resultb01d4683...,486 source pins,
+network-none/isolated output/known cleanup/no production private mounts. Parent
+caller exit1 checked wrong status name AFTER actual success; do not rerun to
+hide it. Exact result separately frozen in closure; host provenance assumed,
+not cryptographic OS/provider proof. No fee producer/task Action/model/GPU/
+credential/provider/KIS/order/schedule change. Exact order-linked Paper fee
+availability UNKNOWN. Explicit observed zero requires full exact coverage;
+no snapshot summing/backdated fee evidence/prior-symbol transfer. Known gross-
+less-fill-fees is not settled account return. Missing fees never pause Paper.
 
 Prior delivery facts retained below:
 Goal97 finite delivery COMPLETE e4d64c29...:

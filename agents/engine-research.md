@@ -21,11 +21,17 @@ result promotion. No retry/refit/model rescue/weights/holdout or Paper changes.
 Current-listing/nonPIT/revised/raw-action/nominal availability, oracle-label
 upper-bound supervision and planned-exposure-proxy limitations remain.
 
-ONE current objective kis-five-session-successor-observed-fee-reconciliation-v1.
-Engine owns modeled-vs-observed cost semantics, not a new model campaign.
-GPU allocation closed/released, available; no permission/environment hold.
-Known fee evidence does not prove settled cash/FX/dividends/account net return.
-No new fit/depth/ensemble allocation from this rejected family.
+Goal100 COMPLETE ff5b936b...; semantics150119bb...24 focused pass, official
+three-source audit44a9ec5c... leaves exact order-linked Paper fees UNKNOWN.
+Modeled per-side bps is not observed USD fees; gross-less-observed-fill-fees is
+not settled account return, FX/dividends/tax/financing/cash remain separate.
+Actual113f source/SYN-only integration complete, no model/GPU fitting in100.
+GPU99 allocation closed/released, available; no environment/permission hold.
+No rescue/depth/ensemble allocation from rejected99. Current research package
+comes solely from NEXT_CODEX_GOAL.md after prior-study novelty/causality review.
+Goal101 owns held-only causal exit development: same rule entries/quantities,
+one-interval liquidation advantage, CPU1/CUDA2 under one600s clock. No fitting
+or allocation yet; independent replay/input/runtime preparation is ready.
 
 ## Prior Packages
 

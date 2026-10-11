@@ -19,12 +19,21 @@ not first-fresh or actual constructor/broker proof. No actual bank/order/fill/ne
 
 Goal98 COMPLETE c6e08a27...: passive43d1e76e...30/independent8; five-close
 producer/typed attribution complete,235 focused/26 independent/image SYN3.951s.
-ONE objective kis-five-session-successor-observed-fee-reconciliation-v1.
-Herschel owns pure exact observed-fee overlay consumed by the existing archive
-reader/bridge. Whole-share sizing/full-book custody already exist; no new ledger.
-Canonical fee bindings, complete owned custody and current cumulative fill
-required; never transfer prior same-symbol fees or sum cumulative snapshots.
-Missing fees stay PnL-only unknown. No private/broker/schedule/strategy changes.
+Goal100 COMPLETE ff5b936b...; R2 release8c21bfe7.../overlay7a1b8271... consumed
+by archive reader/bridge.73 focused/15 independent groups pass alongside Engine24,
+Infra21/Data25. R1 f1043531... and independent failures retained; one canonical
+_advance call repaired, positive enriched repeat/increase and regression tested.
+Actual113f network-none code/SYN runtime01c43e68.../resultb01d4683... complete,
+486pins/known cleanup, no production private mounts. Parent status-name exit1
+retained/resolved from exact completed artifacts, no rerun or fake passing exit.
+Whole-share sizing/full-book custody unchanged; no new ledger or fee producer.
+Exact current cumulative fill only, no prior-symbol transfer/cumulative summing.
+Missing fees stay PnL-only unknown. Not deployed; actual fees/net UNKNOWN.
+No private/broker/schedule/strategy changes; current package solely next goal.
+Goal101 ready: G99 replayR2 and rule entries reused; held-only causal labels,
+fixed-initial-capital quantities across arms/bands, actual-leg costs/all marks.
+Avoid arm-dependent compounding, reentry, redistribution and invented leverage.
+Source/SYN preparation only; no real bank or Paper deployment change.
 Full book/shared10%basis/losses/reservations/pending identities unchanged.
 Goal99 COMPLETE/rejected879bb037...; replayR2efc46f9e...39 focused and
 independent44478589...6 groups pass. Original39ddd722...5pass1fail retained.
