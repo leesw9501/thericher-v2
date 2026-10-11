@@ -21,12 +21,20 @@ no new rank-target novelty/refit/depth/weights/holdout/Paper change.
 115 COMPLETE/prepared066268db...; contracta7086504.../releasee9779cc4...,
 same36M5rows180min/36x10ownpeer/3state. Original251sessions/2987admitted,
 5DEVpeer gaps retained;10focused/independent2source6metadata,0fits/GPU.
-116 owns one matched-information campaign, same1364param GRU/init/seed101/
-8epochs each; masked transformedpeer vs realpeer, original target/costs.
-Proposed114a4db5...40checks not selected: Parent freezes14 primary/stress
-checks/40cells before outcomes; missingpeer sends BOTHarms to existingpi0.
-Exactly2CUDAfits/one600s family proposed, no allocation yet. No architecture,
-seed/window/threshold rescue, weights/holdout/Paper or fresh-replication claim.
+116 COMPLETE/rejected47695df6... at A/research/
+firstrate-paired-information-inventory-value-development-v1/integration-evidence.json.
+Science23646ee5.../trial1a46cb16f.../outcome5ac35628..., actual104a8db8.../
+read8c435e06....2matched GRU CUDA fits/16epochs624updates/7440states,
+34.9535s of600/0CPU/0failed,40cells14checks11fail.3bps net bothnegative,
+joint weaker than masked; no peer-information support or seed/architecture
+rescue. Same original population/pi0 fallback,5nominal DEVgaps retained.
+24fresh focused/direct Docker SYN4/source4/actual3 independent groups;
+Claude supported-with-limits, source/child/container/GPUlease closure attested.
+No weights/holdout/Paper promotion. GPU free after actual training.
+ONE117 fixed-entry exit-ceiling attribution, source proposal3bd66cf5... at
+116/next-direction-r1/proposal.json.48descriptive cells/one300s native attempt,
+0fits/GPU; original controls plus explicitly clairvoyant bestSELL diagnostic.
+Not new prediction method, training target, learnability or drawdown bound.
 Future107 pending, Paper authority independent of research outcomes.
 
 ## Retained Evidence

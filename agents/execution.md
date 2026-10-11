@@ -37,10 +37,15 @@ exit reused unchanged. No refit, actual Paper/19-owner/basis/custody change.
 115 COMPLETE/prepared066268db...; invariants69bc755f.../releasea7fbe696...,
 original3012records/2987admitted and7OPEN support retained,5DEVpeer gaps.
 10focused/independent7c4c1feb...2source6metadata checks, no PnL or broker claim.
-116 reuses original one-share chronological concurrent marks/sell-before-buy,
-fixed O0..O6/cost1/3/5/10, shared pi0 unavailable fallback and closed aggregate
-reader.40cells/14checks frozen before outcomes; do not select model or change
-actual Paper/19owners/shared basis/custody. Actual fees/net stay unobserved.
+116 COMPLETE/rejected47695df6...; reader73a7e7b8.../release58bbc976...,
+actual read8c435e06... verifies40cells14checks11fail/2CUDA16epochs624updates.
+Original population/one-share all7OPEN marks/costs/fallback retained;24fresh
+focused/source4/actual3 independent groups. Host source/child/container/GPUlease
+closure is not raw-price/OS proof. Stale Parent reader pin fixed without refit.
+ONE117 checks sunk BUY once/SELL once and per-cost future bestSELL net ceiling,
+not causal strategy/drawdown bound. Cash remains zero-trade comparison.
+No actual Paper/19owners/shared basis/custody change; actual broker fees/
+settled cash/net remain unobserved by these research jobs.
 
 ## Retained Evidence
 

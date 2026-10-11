@@ -89,13 +89,23 @@ independent7c4c1feb...2source/6metadata checks, not raw-input/OS/PIT proof.
 Claude temporal join supported-with-limits. Pytest collection/import harness fault
 retained, corrected before freeze/actual; no runtime retry or new acquisition.
 
-ONE116: firstrate-paired-information-inventory-value-development-v1. Proposal
-114a4db5... at115/next-direction-r1/proposal.json. Matched real/masked-peer
-10channel GRU1364params/same init/seed101/8epochs each, exactly2CUDA fits;
-same prior availability/pi0 fallback retains all original EVAL episodes.
-Parent chooses14 primary/stress checks before outcomes, not proposed40check
-screen;40aggregate cells, original target/replay, one600s appointment.
-No allocation/fitting yet, no weights/holdout/Paper or19-owner change.
+116 COMPLETE/rejected47695df6... at A/research/
+firstrate-paired-information-inventory-value-development-v1/integration-evidence.json.
+Science23646ee5.../trial1rowa46cb16f.../outcome5ac35628...; actuale4bb0c0c...
+completed34.9535s/600, hostc53a059b.../result104a8db8.../read8c435e06....
+Matched1364param GRUs,2CUDA/0CPU/16epochs624updates/7440TRAINstates/0failed;
+identical initialization/sample/batches/shared scaler, real vs masked peer.
+40cells/14checks11fail;3bps net negative both blocks, no peer-value support.
+All2987original admitted retained,5nominal DEVpeer gaps, each arm1fallback.
+24fresh focused/direct Docker SYN4/source4/actual3 independent groups pass.
+Claude contract/result supported-with-limits. Source/child/container/GPUlease
+closure honest-host only, not raw-price/PIT/OS proof. Stale Parent reader pin
+corrected before math, same result/no refit/weights/holdout/Paper change.
+ONE117: firstrate-fixed-entry-exit-ceiling-attribution-v1. Source proposal
+3bd66cf5... at116/next-direction-r1/proposal.json; diagnose mandatory-entry
+cost/opportunity before more exit-only models. Native measured115 intake,
+one300s0fit/0GPU diagnostic,48descriptive cells; future bestSELL is explicit
+clairvoyant upper bound, NEVER strategy/feature/label/Paper qualification.
 Future107 stays pending; contained Decimal/cache-writer repairs remain ready
 alternatives, not current Paper failures or a research permission hold.
 

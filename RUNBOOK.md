@@ -57,12 +57,20 @@ Planfec65477.../actual95d4bd20.../consumera7086504...; native18.3614s/peak565485
 2987admitted retained;7440/3775/3720held slots, paired7440/3770/3720,5DEVgaps.
 Never rerun115 --freeze/--execute/finish.py exclusive creators; missingpeer
 remains unavailable, coverage is not a model/Paper qualification.
-ONE116 matched paired-information GRU development; read current goal, not old
-commands. Freeze original target/intake, masked/realpeer sample/init parity,
-same pi0 fallback,40cells/14checks and one600s custody BEFORE2CUDA fits.
-Use existing d6 network-none runtime; no image build/acquisition/KIS/Task,
-weights/holdout or19-owner change. Full source authority is exact reattachment
-unless tracked/shared runtime/control bytes change; fresh external tests required.
+116 COMPLETE/rejected47695df6...:
+D:/thericher-v2/model-artifacts/research/firstrate-paired-information-inventory-value-development-v1/integration-evidence.json.
+Science23646ee5.../rowa46cb16f.../outcome5ac35628...; run e4bb0c0c...
+completed34.9535s, hostc53a059b.../result104a8db8.../read8c435e06....
+2CUDA/0CPU/16epochs624updates0failed/7440states,40cells14checks11fail,
+24fresh focused/direct Docker SYN4/source4/actual3 independent groups.
+R2 hostaffd219a... selected; source/child/container/GPUlease closed, not OS proof.
+Never rerun116 freeze/prepare/dispatch/read/close exclusive creators or reset
+the600s clock/debit. Stale-reader-pin/author fixture faults retained; no refit.
+ONE117 fixed-entry cost/opportunity attribution uses measured native115 intake,
+one300s0fit/0GPU attempt,48descriptive cells. Future bestSELL is an explicit
+diagnostic ceiling, not predictor/target/drawdown bound/Paper qualification.
+No image build/acquisition/KIS/Task/weights/holdout or19-owner change. Exact
+source reattachment applies only while tracked/shared runtime bytes unchanged.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

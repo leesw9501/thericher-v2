@@ -20,11 +20,15 @@ consumera7086504.../actual95d4bd20.... Original251sessions/3012records/2987
 admitted unchanged;7440/3775/3720admitted held slots, paired7440/3770/3720.
 5DEVpeer-history gaps retained.10focused/independent2source6metadata,
 0labels/fits/GPU/acquisition, source/input/child closure honest-host only.
-116 reuses exact115 intake for same-population masked/realpeer comparison;
-own prior/peer availability counted, same causal pi0 fallback for both arms.
-No new loader/window/target, loss censoring, collection or Paper change.
+116 COMPLETE/rejected47695df6...; exact115 intake retained2987admitted,
+nominal slots7440/3775/3720 and available7440/3770/3720.5DEVpeer gaps,
+each learned arm visited1fallback.2CUDA fits do not qualify the dataset.
+Source/input/child/container/GPUlease closure attested, not PIT/finality proof.
+ONE117 reuses original G109 all-entry/O0..O6 intake without paired filtering,
+new loader/window/target, loss censoring, collection or Paper change. Missing
+required support invalidates that block, never removes individual losses.
 Existing19owners/107 future coverage/durable cursors and next_due unchanged.
-Recovery:114 fit spent and115 geometry closed; never rerun their creators. Current goal alone
+Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
 
 ## Retained Evidence

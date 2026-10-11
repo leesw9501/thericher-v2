@@ -10,19 +10,20 @@ Host child/container/source/GPU lease closure attested; all three rejected.
 112 COMPLETE/prepared-not-deployed52f20612...;113 COMPLETE/delivered642a1ee0....
 114 COMPLETE/rejectedc52bc213...:1CPU0CUDA/134dates34304pairs/30checks21fail.
 115 COMPLETE/prepared066268db...:10focused/one18.3614s geometry/0fits/GPU.
-ONE116: firstrate-paired-information-inventory-value-development-v1.
+116 COMPLETE/rejected47695df6...:2CUDA/16epochs624updates/40cells14checks11fail.
+ONE117: firstrate-fixed-entry-exit-ceiling-attribution-v1.
 No company block/foreground market wait; existing19finite owners unchanged.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned | Close115/update116/verify/commit/push, then sole actual CPU/GPU owner. |
-| Verification | Parent / complete115 |10focused/independent2source6metadata;1311-code authority reattached. |
-| Data | Ready116 | Reuse115 typed paired inputs, same original population/availability/fallback. |
-| Engine | Ready116 | Freeze matched real/masked-peer GRU campaign, no compute debit yet. |
-| Execution | Ready116 | Original one-share replay/closed aggregate,40cells14checks; no Paper changes. |
-| Validation | Complete115 / ready116 |7c4c1feb... source/count review; frozen campaign independent review next. |
-| Infra | Ready116 | Reuse exact d6 finite CUDA transport, no image rebuild or schedule. |
-| GPU | Steward / free |4090 usable;116 proposed2CUDAfits/one600s exclusive appointment. |
+| Git/integration | Parent / owned |116 closed47695df6...; verify/commit/push then117 native attribution. |
+| Verification | Parent / complete116 focused |24fresh focused;1311-code authority reattached/Ruff/three sample Compose pass. |
+| Data | Complete116 source/SYN | Original2987admitted retained;5nominal DEVpeer gaps, no acquisition. |
+| Engine | Complete116 / source proposal ready |2CUDAfits/16epochs624updates complete,34.954s; exit-ceiling attribution proposed. |
+| Execution | Complete116 |Reader73a7e7b8.../actual8c435e06... verifies40cells14checks, no Paper change. |
+| Validation | Complete116 |Sourceaff9e178...4groups/actual5b3685f0...3groups pass; no raw/OS proof. |
+| Infra | Complete116 |Selected R2 affd219a... reuses d6; source/child/container/GPUlease closed. |
+| GPU | Steward / free |116 appointment e4bb0c0c... closed after2CUDAfits, no failed fit/refit/weights. |
 | Paper due | Existing owners | Oct12 22:30KST entry, original exits/recovery/shared basis unchanged. |
 | Accounting due | Existing owner | FirstOct13 05:25KST; actual captures unknown. |
 | Shadow/successor due | Existing owners | Oct16 shadow/Oct19 entry and finite accounting unchanged. |
@@ -44,4 +45,11 @@ target primary3bps control superiority and10bps stress before outcomes;
 other fee cells diagnostic, no costwinner. Existing finite CUDA transport
 reused, no research permission/Paper hold. Contained core Decimal/cache-writer
 repairs remain alternatives; future observations stay worker-owned.
+116 used34.954s of600 for both matched CUDA fits;11of14 fail and3bps net
+negative in both blocks. No architecture/seed rescue. Next source proposal
+3bd66cf5... diagnoses the mandatory-entry cost/opportunity premise before
+more exit-only predictors. Parent chose native measured115 intake reuse over
+another Docker transport binding for that proposed0fit diagnostic; no new
+runtime/dependency, source-only until next company goal. GPU is free because
+the bounded study finished, not an environment/approval hold.
 Named market waits never become a global pause.
