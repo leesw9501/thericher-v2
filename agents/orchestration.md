@@ -6,42 +6,38 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Ready / Owned / Due (2026-10-11 KST)
 
-Goal97 finite delivery COMPLETE e4d64c29...; installed readiness, NOT fill/net.
-ONE objective kis-five-session-successor-owned-accounting-v1.
+Goal98 readiness COMPLETE c6e08a27..., future economic outcomes not_observed.
+ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
 No company block, market wait, GPU permission or operator approval hold.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent / owned boundary | Exchange committed/pushed13eac3a; Goal97 docs/next boundary integration, sole Git owner. |
-| Verification | Parent / complete97 | 236 changed-path;1311source4205ef0f.../JUnitdb40ae5a...;clean8 15829pass22skip/392.91s, helper0; Ruff/three Compose pass. |
-| Data | Plato / ready98 | Exact close-source/date/observation/finality semantics; no new acquisition scope. |
-| Engine | Chandrasekhar / ready98 | Owned gross/mark/fee availability attribution; no model/exit-policy change. |
-| Execution | Herschel / ready98 | Passive exact cohort/journal/request/fill reader, never effectful native observe. |
-| Infra | Socrates / ready98 | Reuse finite close-capture/image/RO bank paths; existing owners unchanged. |
-| Validation | Invoked after freeze | Goal97 native6/host16 independent attacks complete; no standing queue. |
+| Git/integration | Parent / owned99 | Closing98 docs; sole Git/actual Docker owner. |
+| Verification | Parent / complete98 | 235 focused/26 independent;1311source4205ef0f.../JUnit15829pass22skip reattached, not fresh rerun. Ruff/three Compose pass. |
+| Data | Plato / owned99 | Existing old512/seen-later512 session/context/purge preparation, no acquisition. |
+| Engine | Chandrasekhar / owned99 | Held-age cash/ENTER/HOLD/EXIT freeze before outcomes; no numerical dispatch yet. |
+| Execution | Herschel / owned99 | Pure independent next-OPEN action/cost/age replay SYN, no broker/bank. |
+| Infra | Socrates / ready99 | Invoked runtime preparation only when needed; no standing queue. |
+| Validation | Leibniz / ready99 | Independent attacks after frozen contract, no tuning. |
 | GPU | Steward / free | Usable, no environment/permission hold; no utilization-only campaign allocated. |
 | Shadow due | Goal95 R3 Action | Oct16 21:15..45UTC, cutoff21:35; original R2 claim namespace, unchanged. |
 | Paper due | Existing finite owners | b860/387ee5f6 entryOct12 22:30KST, fifthEXITOct17 04:50; not submit/fill evidence. |
 | Accounting due | Goal95 recovery Action | Five finite dates, firstOct13 05:25KST; original job/claims, captures unknown. |
 | Successor due | Goal97 finite3 tasks | EntryOct19 22:30KST/recovery22:40; fifthEXITOct24 04:50/recovery05:00; no runtime outcome yet. |
+| Successor accounting due | Goal98 finite1 | Oct19..23 20:25..35UTC, firstOct20 05:25KST; exact full readback43699193..., prior12 unchanged. |
 | Data due | Existing ab65 owner | 42-peer endpoints Oct12/19 21:40UTC unchanged; not foreground wait. |
 
 ## Bottleneck And Reversible Improvement
 
-Finite delivery now connects Friday shadow to Monday native Paper. The next
-engineering bottleneck is successor-owned accounting, not Friday's future input
-or another model-name screen. Prepare exact passive attribution while owners
-remain due; never use native observe() as a reader.
-Original shared basis/losses/reservations and existing owners remain.
-R2 resolves measured mandatory delivery(scope) mismatch; original defect retained.
-Current improvement: actual-contract337/job374 retained-recovery image SYN and
-installation completed; incorrect R1 transport binding retained, R2 proof uses
-exact current host serializer/native visit. Next package consumes these existing
-contracts instead of adding a new report/gate or waiting for the market.
-Claude final review6c7cf6bd... supported-with-limits; exact external pointer is
-A/execution/kis-five-session-history-aware-paper-delivery-v1/parent/
-claude-final/claude-dual-result-outcome.json. No new authority is granted.
-Source/SYN readiness is not actual future input/fill/current-flat/fee/net proof.
-Nine existing named tasks unchanged and new finite3 Ready; exact facts under
-A/execution/kis-five-session-history-aware-paper-delivery-v1/parent/
-installed-tasks-after.json. No prior run recorded, not a broker outcome.
+Accounting readiness is closed, not a dependency on future market outcomes.
+Current bottleneck: causal held-position target/replay and frozen CPU/GPU
+campaign integration. Ready Data/Engine/Execution preparation is dispatched
+in parallel. Improvement: test entry/continuation state and execution timing
+instead of repeating rejected model-name screens. Installed teacher/basis/book
+stays unchanged. Full-book custody and target-only PnL remain separate.
+Failed installer exit1 retained; independent exact Action/settings/principal/
+UTC readback resolves Windows normalization, no rerun/new schedule. All13
+finite tasks owned; source-safe facts under A/execution/
+kis-five-session-successor-owned-accounting-v1/parent/installed-tasks-verified.json.
+Claude98 e29a80f8... supported-with-limits; research99 needs its own challenge.
+Honest-host custody, Operational logging off, not cryptographic OS-origin proof.

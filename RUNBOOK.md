@@ -2,9 +2,27 @@
 
 ## Current Dispatch (2026-10-11 KST)
 
-ONE objective: kis-five-session-successor-owned-accounting-v1.
+ONE objective: kis-stock-joint-entry-continuation-policy-development-v1.
 Read NEXT_CODEX_GOAL.md/HANDOFF.md/stateboards. Source/tests in Git;
 data D:/market_data, artifacts D:/thericher-v2/model-artifacts.
+Goal98 accounting readiness COMPLETE c6e08a27...:
+D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-owned-accounting-v1/integration-evidence.json.
+235 focused/26 independent pass; actual113f network-none SYN3.951s, default
+374/a9/337 and own462 snapshot, no production private mounts/provider calls.
+Unchanged1311 source/15829pass22skip authority reattached, not freshly rerun;
+Ruff/three Compose pass. Full-book custody vs journal-bound target PnL separated.
+Finite successor five-slot accounting task installed, prior12 unchanged:
+thericher-kis-paper-successor-20261019-accounting, firstOct20 05:25KST,
+Oct19..23 20:25..35UTC. Jobb9f898f6.../planc3cf449a.... Installer exit1 from
+Windows-normalized offsets retained; exact independent full Action/UTC/settings/
+principal readback43699193... resolves it. Do not reinstall or manually invoke.
+D:/thericher-v2/model-artifacts/execution/kis-five-session-successor-owned-accounting-v1/parent/installed-tasks-verified.json.
+Claude e29a80f8... supported-with-limits, future fills/fees/net unknown.
+Current Data/Engine/Execution prepare old512/seen-later512 inputs, held-age joint
+policy and next-OPEN replay. Freeze before outcomes; bounded eligible GPU does
+not wait for future Paper receipts. No bank/broker or installed strategy change.
+
+Prior delivery facts retained below:
 Goal97 finite delivery COMPLETE e4d64c29...:
 D:/thericher-v2/model-artifacts/execution/kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
 Exchange801960ca... committed/pushed13eac3a; native731b289c.../reader c8b84d89...,
@@ -24,7 +42,7 @@ dates plus fifth20:00. Installation is readiness, future runtime not_observed.
 Weekly serial2026-10-10 already passed; no doc-only full-suite rerun.
 Claude final6c7cf6bd... supported-with-limits, not authority or broker proof.
 
-Next build passive successor-owned fill-to-five-close accounting. Read exact
+Goal98 completed passive successor-owned fill-to-five-close accounting. Read exact
 job374/controla9/retained exchange/journal and canonical request/fill linkage;
 never latest-file/ticker adoption or native observe() as a reader. Reuse close
 capture APIs and preserve actual read/archive/economic-close clocks separately.

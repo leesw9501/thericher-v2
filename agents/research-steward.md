@@ -12,8 +12,10 @@ Exchange/native/host/source contracts and finite3 schedules are installed;
 actual113f network-none preseeded SYN recovery passed18.6699s, existing9 unchanged.
 Future actual input/inference/fill/net unobserved. Source/SYN does not spend
 market training. No new GPU appointment, fitted weights or sealed evaluation.
-ONE objective kis-five-session-successor-owned-accounting-v1:
-exact successor fill-to-five-close attribution, no predictive-selection family.
+Goal98 accounting readiness COMPLETE c6e08a27..., no fit/GPU/holdout spend.
+ONE objective kis-stock-joint-entry-continuation-policy-development-v1:
+held-position/age-aware policy; preparing frozen lineage/target/purged splits/
+cost/kill/<=3fits/<=600s appointment, no numerical dispatch yet.
 All prior research debit/family results below remain unchanged.
 GPU is available and usable; no authorization or environment hold.
 Future owned data/decision opportunity is next_due, never foreground sleep.

@@ -2,79 +2,65 @@
 
 ## Objective
 
-Complete kis-five-session-successor-owned-accounting-v1: connect the installed
-history-aware successor's exact request/fill custody to five close observations
-and explicit fee availability. This advances Paper PnL attribution, not another
-model screen, report/gate family, capital approval or scheduler platform.
+Complete kis-stock-joint-entry-continuation-policy-development-v1: determine
+whether a bounded position/holding-age-aware daily entry/continuation policy
+adds post-cost development value over cash, a causal rule and fixed-five-session
+holding. Improve research and execution-aware replay, not a model-name screen.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Goal97 finite delivery COMPLETE e4d64c29... at A/execution/
-kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
-Job374ce6ae.../controla9e05e22.../exchange-document33756032...;
-native731b289c.../reader c8b84d89...,462-source catalog17949fe9....
-Current strict input525eff41.../runtime43488a5c.../history1716dd92... unchanged.
-Actual113f network-none preseeded SYN recovery passed18.6699s; finite3 installed,
-existing9 unchanged. Source1311/4205ef0f.../JUnitdb40ae5a...,
-15829pass22skip clean8/392.91s;236 focused/Ruff/three sample Compose pass.
-Installation is readiness; actual future input/submit/fill/fees/net unobserved.
+Goal98 readiness COMPLETE c6e08a27... at A/execution/
+kis-five-session-successor-owned-accounting-v1/integration-evidence.json.
+235 focused/26 independent; actual113f network-none SYN3.951s. Finite five-slot
+accounting installed, prior12 unchanged. Installer exit1 on Windows-normalized
+timestamp offsets retained; independent full readback verifies exact Action,
+UTC instants/settings/principal. Do not reinstall or infer a fill. First close
+Oct20 05:25KST. Actual future fills/fees/net remain not_observed.
 
 ## Parallel Packages
 
-Execution: one passive strict reader for exact delivery20261019 retained pointer,
-independently bound exchange/job/cohort and instrument journal/canonical rows.
-Read exact original entry/exit request, linked fills and owned segment quantity;
-reject stale/unbound/foreign same-symbol rows. Never call NativeAdapters.observe,
-construct a broker client, reset a pending identity or modify private state merely
-to inspect it. Immutable input may be absent: no_owned_input or unknown is not
-flatness, zero holdings or a fill. Preserve full original book/basis/owners.
+Data: reattach exact old512 fd559b22.../409fd7ad... and already-seen later512
+1eaebbc3.../d436ab4e... with existing parsers. Audit session/context/missing-price
+and purged target boundaries; no new acquisition or universe. Current-listing/
+nonPIT/raw-action/nonTR/revised/nominal-availability limits narrow claims only.
 
-Data: specify exact five Oct19..23 close-source/date/observation semantics.
-Reuse existing close-capture/daily-source APIs, not a new dataset/universe.
-Keep broker read/response/archive times separate from economic session close;
-provider finality/PIT remain not_observed unless exact retained evidence proves
-them. A missing/failed/partial close is scoped unavailable, never latest fallback.
+Engine: freeze ONE new campaign family before outcomes: cash/ENTER/HOLD/EXIT,
+held-position age, daily20-close context, max5 held sessions. CLOSE decisions
+execute NEXT OPEN, never same-close hindsight. Declare exact target, purged
+train/development splits, cost5/10/20bps, cash/rule/fixed-five/exposure-matched
+controls, metrics and strongest kill. Prefer small continuation-value learning,
+not a new RL framework. Ceiling: one CPU baseline and one sequence architecture/
+two fixed seeds, <=3 fits and <=600s shared numerical wall budget. No outcome-
+informed retries/refits/window rescue. Tiingo direct-utility TCN/linear and
+one-step transition policies already ran; do not call them untested. Seen later50
+is diagnostic, never fresh replication or sealed holdout.
 
-Engine: small typed attribution from frozen exact owned fills/quantities and
-five individually close-bound marks. Separate observed gross, estimated mark,
-fees unavailable, settled cash unavailable and net PnL not_observed. Do not
-invent fee zero, multiply the10% envelope again, tune an exit, select a model or
-claim alpha. Match the original five-session payoff/quantity semantics; missing
-actual outcomes never block independent preparation or owned recovery.
+Execution: independent pure next-OPEN action/cost/position replay and SYN tests:
+entry/exit costs, gaps, holding age, missing bars, terminal exit and split reset.
+No broker/bank/order/strategy worker, schedule or installed Paper model change.
 
-Infra: reuse pinned Paper image113f/private-volume/canonical paths and existing
-Goal90 passive capture patterns. New source, if needed, gets its own frozen RO
-snapshot; never rewrite installed Goal97/old455 catalogs or old claims/schedules.
-Prepare one finite successor-owned five-slot capture using exact retained cohort,
-not a ticker chosen from account inventory. Network-none RO-bank/isolated SYN
-prerequisite first, then finite Oct19..23 20:25..35UTC install/readback only.
-No manual strategy/task/order/collector launch. No new recurring report chain.
-
-Parent integrates shared contracts before dependencies. Invoke bounded independent
-review only after freeze; ask Claude for a concise accounting/recovery drift-check.
-No per-agent next-goal files or durable review queue.
+Steward: freeze lineage/compute appointment before numerical dispatch, sealed
+spend0. GPU usable/authorized; Parent owns Docker, RO inputs and isolated output.
+Eligible research does not wait for future Paper receipts; utilization is no KPI.
+Temporary Validation attacks frozen replay/candidates without tuning. Claude
+challenges leakage/cost/time semantics before results are relied on. Parent
+integrates contracts; no per-agent goals or durable review queue.
 
 ## Completion And Scope
 
-Strongest kill: stale or foreign same-symbol quantity and absent fee evidence
-cannot become successor-owned PnL, net profit, flatness or a replacement order.
-SYN tests cover exact linkage, partial/unknown outcomes, duplicate fills, journal
-restart/multiple cohorts, source/hash/date mismatch and missing close/fee inputs.
-Actual private values remain in-process and outside Git; publish only categorical
-status/count/source-safe links. No credentials/account/order identifiers, raw
-bodies/prices/amounts/private intents in output, logs, Claude or Git.
+Done: frozen input/campaign/replay, CPU smoke, bounded eligible numerical run or
+exact input_unavailable, independent strongest-kill evidence, and a narrow
+rejected/development-only result. Strongest kill: changed future observations
+cannot alter earlier actions; continuation must beat cost/exposure-matched
+fixed holding without same-close execution or split leakage. Oracle/revised
+seen-data findings cannot become a Paper or alpha claim.
 
-Done is frozen passive reader/attribution/capture contract, focused independent
-SYN plus actual-image prerequisite and finite installation/readback. It is NOT
-the future economic result. Preserve G83/b860/Goal90/shadow/ab65/Goal97 owners,
-definitions, due, original shared10%basis, reservations/losses and pending identity.
-Future observations belong to their owned next_due, never foreground waiting.
-
-Bound <=one development day; no new model fit/GPU/holdout, teacher replacement,
-collection scope, paid data, public exposure, major runtime or live behavior.
-Paper reads/schedules are delegated; never read/route KIS_LIVE_*.
-Data M/artifacts A, D:15% floor. After accounting readiness, reconsider one truly
-distinct joint entry/continuation policy; this is not a second current objective.
+Preserve original shared10%basis/losses/reservations/pending identities and all13
+finite tasks. Due belongs to those workers, never foreground waiting. Bound
+<=one development day; no credentials/KIS/live, paid data, public exposure,
+major runtime, sealed evaluation, promotion or broker side effects. Raw data M,
+artifacts A; D:15% floor. Publish only source-safe metrics/links, never raw rows,
+prices/private amounts/secrets/account/order identifiers.
 
 Follow AGENTS.md verification. Changed shared source requires changed-path serial
 plus clean parallel authority/Ruff/three sample Compose. External-only packages

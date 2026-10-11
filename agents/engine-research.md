@@ -16,14 +16,16 @@ Actual113f network-none preseeded SYN same-request recovery passed18.6699s;
 finite3 tasks installed, existing9 unchanged, future input/fill/PnL unknown.
 No numerical campaign/model load/fit/GPU/weights/holdout or actual inference.
 
-ONE objective kis-five-session-successor-owned-accounting-v1.
-Engine owns attribution semantics for exact fills/five close marks with explicit
-fee/cost availability. Do not choose another model, tune exit duration or call
-SYN/seen-data marks alpha. Missing actual fees cannot become net-profit claims.
-After this accounting package, a genuinely distinct joint entry/continuation
-policy can be frozen; past-close decisions execute next OPEN, not same-close
-hindsight. This is a direction, not a second active goal or rescued family.
-Claude final6c7cf6bd... supported-with-limits, not authority or profitability.
+Goal98 COMPLETE c6e08a27...: attributionf54280aa...39 tests, archive bridgeR3
+27726cdf...58/independent6, default image SYN3.951s. Full book intact; PnL only
+from journal-bound segment, unknown fills/fees never become net profit.
+ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
+Owned: freeze held-age cash/ENTER/HOLD/EXIT before outcomes, daily20/max5 sessions,
+next-OPEN execution, explicit costs. Existing Tiingo direct-utility TCN/linear
+and one-step transition models already ran; new state/target/source lineage
+must differ, not rescue a closed family. CPU smoke then bounded eligible GPU;
+seen later50 diagnostic, sealed spend0. Claude98 e29a80f8... supported-with-limits
+is not research99 challenge or authority.
 
 ## Recent Research Conclusions
 

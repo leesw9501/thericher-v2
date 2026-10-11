@@ -6,22 +6,22 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-Goal97 finite delivery COMPLETE e4d64c29... under A/execution/
-kis-five-session-history-aware-paper-delivery-v1/integration-evidence.json.
-Independent exchange26 cases bdf27531...; final actual-control SYN release
-e2478323... derives exchange33756032... from transporta9/job374, not whole
-transport hash. Exact production host serializer/2072 SYN metadata reads/
-1035documents/512identities/15links, original Friday DTO/Monday13:40TTL stay.
-Actual113f Linux/native visit SYN passed18.6699s without duplicate; preseeded
-retained metadata/journal, no first-fresh bootstrap, actual future/private data
-or provider finality/PIT claim. R1 wrong-hash/direct-runtime scope preserved.
-236 focused;1311source4205ef0f.../JUnitdb40ae5a...,15829pass22skip clean8.
-Three finite Paper tasks installed; existing Data/shadow owners unchanged.
-
-ONE objective kis-five-session-successor-owned-accounting-v1.
-Data supports exact close-source/date/observation/finality semantics for the
-successor-owned capture. No new universe/backfill/model source. Missing captures
-are scoped unavailable; no latest/cache-time inference or fee-zero substitution.
+ONE objective kis-stock-joint-entry-continuation-policy-development-v1.
+Owned: exact old512/seen-later512 session/context/purge preparation; no new
+acquisition, private bank or numerical outcome read. Goal98 COMPLETE c6e08a27...;
+Data evidence below retained.
+Data source/SYN complete4f2e1d64... at A/data/
+kis-five-session-successor-owned-accounting-v1/data-r1/source-release.json.
+Producer30e0ec11.../plan e24db6c8...;45 tests pass0.69s, Ruff/format pass.
+Dynamic exact retained cohort/Oct19..23 close marks, source/hash/date checks;
+economic20:00UTC distinct from physical [20:25,20:35) reads/archive.
+Missing/failed/partial source stays slot_unknown, never latest/zero/finality.
+Actual-default G97 job374/controla9/exchange337 image SYN passed3.951s;
+independent bridge6 groups86c59e67... pass. Pending coded SYN stays incomplete,
+not qualified marked PnL, actual calls/PIT/finality or future input evidence.
+Independent review10f73760...:6 groups pass,13 pins unchanged; no actual calls.
+No universe/backfill/model change.
+Goal98 finite accounting firstOct20 05:25KST; existing Data/shadow owners unchanged.
 
 ## Existing Input And Owners
 
@@ -56,6 +56,6 @@ Current-listing/nonPIT/raw-action/nonTR/revised-value/nominal-availability
 limitations narrow claims, never block independent research or Paper.
 Tiingo Starter/Trial applicability unresolved: no new acquisition/numeric study.
 Ended Norgate trial off; FINRA/FRED uncertain rights are not fallback permission.
-Preserve D:15% (last measured40.10%, not freshly remeasured).
+Preserve D:15% (fresh task-start40.05%, C:24.99%).
 Recover exact plan/cursor/receipt identities, not latest-file/cache-time inference.
 Changed source or missing input yields scoped unavailable; parent integrates.
