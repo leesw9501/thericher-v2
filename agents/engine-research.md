@@ -69,8 +69,12 @@ science9526dde8.../row174d7ce2...,28.623165s/600/0fits. NativeDTO repair works;
 Cumulative1200 allocated seconds retains original122 failure.124 Data attempt
 closed technical preflight961731b0... without a point plan/recovery/fit/metric.
 125 calendar role correction reached Docker but intake failed12.445976s/600,
-host9e713b01.../closureb8d68ed7..., no point plan/recovery/metric.126 R3 callback
-ABI repair is NEW Data work, not third comparison or a global research hold.
+host9e713b01.../closureb8d68ed7..., no point plan/recovery/metric.126 R3 intake
+passed;59accepted pages recovered0/59, closure519d016c.../156.728278s, not
+model rejection or global hold.127 zero-fit attribution uses old q at mark/
+exit clocks: positive missing versus zero/unowned, no payoff screens. Full-
+union failures unchanged; held/exit missing unavailable. Resolvera29e212a.../
+3SYN/release8cc3a85a... source-only, no qualification/science/GPU allocation.
 Source-only consumption receipt935129da...: existing analytical marks/exits
 may use explicit CLOSE-only resolver with old priors/entry OPENs unchanged;
 conflicting duplicates/valid-original replacement unavailable. Not wired or

@@ -167,8 +167,15 @@ closed. Actual first cause/recovery unknown; safe adjacent summary is not
 host-hashed first-cause trace. Never replay125 parent execute/clock.
 126 uses NEW600s Data scope/fresh UUID with R3c45b4020.../offline44522938...,
 legacy publication flag accepted without extending work clock; fault tracing
-category/sourceSHA/line only. Preserve original sources/values/attempts, same
-separate goal124 cache and exact59 point scope, no refund/scientific retry.
+category/sourceSHA/line only.126 CLOSED/scoped_source_exhausted519d016c... at
+D:/thericher-v2/model-artifacts/research/daily-fixed-basket-selected-union-intake-abi-recovery-v1/integration-evidence.json.
+Run735f9126.../plan673175f9.../hostdc9ace83...156.728278s/600/audit0/native0/
+all cleanup/source closed. View14472424... at
+D:/market_data/us_equities/kis_paper_private/daily-selected-union-gap-recovery/v1/goal124/bb34b910b11e436e8806499c1a0d96e8/point-view.json.
+59accepted pages/anchors source_exhausted,0recovered/0conflicts/59unresolved,
+next_due null. No replay/global KIS limit inference; partial/CLOSE-only/PIT/
+finality unknown.127 counts BEFORE EXIT support, not end inventory, retaining
+held missing/all calendar samples; no imputation, old-outcome repair or Paper.
 DataR2 release5f2014d7.../collector8f272584...5SYN/independent3 closes sanitizer
 P2. Prior18 hashes/59 points, retained-first/120pages/2per anchor/90reserve/
 CLOSE-only/15%D:floor/virtual-market-only limits remain. NEXT alone is execute

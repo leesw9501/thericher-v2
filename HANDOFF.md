@@ -228,12 +228,19 @@ Proven source ABI mismatch: native loader check(publication=True) versus
 zero-argument proxy. DataR3 releasec45b4020.../offline44522938.../7SYN accepts
 legacy flag while retaining work deadline; source-safe failure category/SHA/
 line only, never args/locals/private paths. R1/R2 and both Data attempts kept.
-ONE126 daily-fixed-basket-selected-union-intake-abi-recovery-v1: new finite600s
-Data allocation using R3, same59/retained-first scope/fresh UUID, no refund,
-third scientific trial or19-owner change. Source interface935129da... confirms
-CLOSE-only analytical marks can be resolved explicitly without fabricated Bar,
-but no consumer wiring/data qualification was performed. Shared1312-source
-authority/Ruff/3Compose reattached, not another full-suite run.
+126 CLOSED/scoped_source_exhausted519d016c... at A/research/
+daily-fixed-basket-selected-union-intake-abi-recovery-v1/integration-evidence.json.
+Run735f9126.../hostdc9ace83.../plan673175f9...156.728278s/600/audit0/native0/
+all cleanup/source closed. Original18 hashes/59plan verified; retained0,
+59accepted pages/anchors source_exhausted,0recovered/0conflicts/59unresolved,
+next_due null. View14472424... is partial/CLOSE-only, not Bar/PIT/finality/
+global KIS reach proof. R3source2a4aa9fb4.../actual2f33c2883.../Parent6SYN/
+Claude limits pass. No retry/fit/GPU/science/19-owner changes. Resolver
+a29e212a.../3SYN/release8cc3a85a... is source-only, not actual integration.
+ONE127 daily-fixed-basket-held-position-support-attribution-v1: count whether
+59gaps are needed by old positive q at mark/exit versus zero/unowned dates.
+Preserve full-union failures; positive held/exit unknown stays unavailable.
+No payoff/48cells72screens, imputed price, science trial or Paper gate.
 Quarter-vintage helperbe19eefe.../4SYN/independent3 is source-only, not a campaign
 or numerical-ready/GPU allocation.107/all original19 Paper owners independent.
 

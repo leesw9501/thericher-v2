@@ -68,9 +68,13 @@ source/child/container closed. No collector or point plan; first cause/recovery
 unknown. Legacy publication keyword/proxy ABI mismatch independently source-
 reproducible, not captured first-cause trace. R3 releasec45b4020.../offline
 44522938.../7SYN accepts flag but stays work-bound; safe fault class/SHA/line
-only.126 owns NEW600s exact59 retained-first/unresolved-only work,120pages/2per
-anchor/fresh UUID in original goal124 repair cache. No124/125 reset or science
-retry. Parent6SYN/independent source2+actual2/Claude supported-with-limits.
+only.126 CLOSED/scoped_source_exhausted519d016c...: original18 hashes/59plan,
+retained0/59accepted pages/anchors source_exhausted/0recovered/0conflicts/
+59unresolved/next_due null. Run735f9126.../hostdc9ace83...156.728278s/600,
+audit0/native0/all cleanup/source closed. View14472424... partial/CLOSE-only,
+not Bar/PIT/finality/global KIS reach proof. No retry. R3source2/actual2
+f33c2883.../Claude limits pass.127 attributes59 gaps to positive held/exit
+versus zero/unowned dates; no acquisition/imputed price or old-outcome repair.
 CLOSE-only grade, conflict/identity/hash/date/MODP checks,15%D:floor and old
 values stay; no page-floor/nearest-date/Bar imputation or Paper qualification.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone

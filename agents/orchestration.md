@@ -10,17 +10,18 @@ NEXT_CODEX_GOAL.md owns ONE objective. A=D:/thericher-v2/model-artifacts.
 closed; original122 failed600 remains spent, cumulative1200/no third auto run.
 124 CLOSED/technical_failure961731b0..., no point plan/recovery result.
 125 CLOSED/technical_failureb8d68ed7..., Docker intake failure/no point plan.
-ONE126: daily-fixed-basket-selected-union-intake-abi-recovery-v1; no approval wait.
+126 CLOSED/scoped_source_exhausted519d016c..., native passed/0of59 recovered.
+ONE127: daily-fixed-basket-held-position-support-attribution-v1; no approval wait.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent |124 pushed93dde9d;125 close/126 source binding, sole Git owner. |
+| Git/integration | Parent |125 pushed57fb1af;126 close/127 support attribution, sole Git owner. |
 | Verification | Parent |Unchanged1312-source clean8 authority15935pass22skip; same supplementary serial2312s, retained scratch not helper authority. |
-| Data |126 R3 source handoff |R3c45b4020.../offline44522938...7SYN; legacy callback flag accepted with same work bound, safe failure class/hash/line. NEW600s,124/125 kept. |
-| Engine |124 source handoff complete |Prior-seal helper3SYN/independent3; vintage4SYN/independent3, source only/no new campaign. |
-| Infra |125 actual transport |Calendar control fix reached Docker; exact source/child/container closed, no collector; existing frozen transport reused126. |
-| Execution |126 source parity |R3 work-bound callback/safe tracing focused independent; no broker/replay or19-owner changes. |
-| Validation |125 handoff complete |Source2/actual2 a807fdf2...; audit1/12.445976s/no point plan, actual first cause/recovery unknown. |
+| Data |126 scope closed |Exact59/59accepted pages/source_exhausted59/0recovered/59unresolved/next_due null;127 gap custody only/no API retry. |
+| Engine |127 diagnostic ready |Original positive q at mark/exit vs zero/unowned missing counts; no payoffs/screens.126 resolver3SYN source-only. |
+| Infra |126 actual closed |156.728278s/audit0/native0/all cleanup/source closed, existing frozen transport reusable/no new framework. |
+| Execution |127 pricing-clock parity |Positive sold q needs exit CLOSE before exit even if end inventory0; no replay/19-owner changes. |
+| Validation |126 handoff complete |R3source2 a4aa9fb4.../actual2 f33c2883...;0of59 recovery, point grade only/not KIS-global reach proof. |
 | GPU |Steward / free |Usable; no CUDA role in zero-fit holding-duration question. |
 | Paper due |Existing owners |Oct12 22:30KST entry/original exits and recovery/shared basis unchanged. |
 | Accounting due |Existing owner |FirstOct13 05:25KST; actual captures unknown. |
@@ -40,12 +41,10 @@ not a global research/Paper gate or auto-third evaluation. Keep raw coordinates
 private and old bytes intact. Independent source preparation and due owners
 continue; worker retry next_due never becomes foreground sleep.
 
-Calendar role now corrected; observed125 failure is intake/audit1, no collector
-or point plan. Concrete source ABI contradiction: loader passes publication
-keyword to zero-argument check proxy. Reversible improvement: accept legacy
-flag but retain work-end reserve, plus fault class/pinned sourceSHA/line so a
-failure can be diagnosed without private values/locals. R3 authored7SYN pass;
-NEW126 Data appointment, never replay/refund old two attempts or scientific
-family. Shared transport/catalog/owner scopes unchanged. Independent source-
-only CLOSE mark interface is compatible but not wired/qualified. No GPU role
-in Data repair; readiness, not approval or market wait, determines dispatch.
+R3 native intake works;59 exact-date scopes exhausted with0 recovered. Current
+bottleneck: whether full-union support demands prices for stocks unowned at
+those dates. Reversible improvement: finite attribution using quantities
+frozen at entry BEFORE future missingness, including exit pricing clock.
+Zero exposure does not fabricate a price; positive missing stays unavailable.
+No new collection retry, sample deletion, old-outcome rewrite, automatic third
+family/GPU trial or company-wide data/Paper hold. Sources/spend/owners remain.

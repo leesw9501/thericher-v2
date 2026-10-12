@@ -83,8 +83,12 @@ str guard8f272584...; independent3groups3f72a46b... pass, old finding preserved.
 No account/order/live inspection/calls or19-owner/basis changes.125 calendar
 role fix reached Docker; audit1/12.445976s/no collector/point plan, exact host
 9e713b01.../closureb8d68ed7..., actual cause/recovery unknown.126 R3 Data ABI
-and safe class/hash/line failure tracing leave collector/broker/replay unchanged;
-work clock is not extended by legacy publication flag. CLOSE-only not Bar/Paper.
+and safe tracing passed126: hostdc9ace83.../closure519d016c...156.728278s/
+audit0/native0/all cleanup/source closed.59accepted pages,0recovered/59missing,
+CLOSE-only/PITfinality unknown/not Paper grade. No account/order/custody/PnL
+inspection or19-owner/basis change.127 counts BEFORE EXIT pricing: positive
+sold q requires exit CLOSE even if end inventory0. Unowned/zero is not price
+imputation; original replay/cash/full-union failures remain unchanged.
 Quarter-vintage sourcebe19eefe... independently3SYN3da94f0f... tests own-lot
 sell binding/shared cash/no reset/funding failure, not actual profitability.
 Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),

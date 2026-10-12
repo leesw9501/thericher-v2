@@ -58,7 +58,10 @@ receipt/fit, actual elapsed and recovery unknown. Original attempt stays spent;
 125 NEW Data600s used12.445976s, Docker intake failed/no collector or point plan;
 host9e713b01.../closureb8d68ed7..., first cause/recovery unknown.126 R3 accepts
 legacy callback ABI with work-bound clock; NEW600s Data allocation, not any
-reset/refund, holdout/GPU spend or third scientific trial.
+reset/refund, holdout/GPU spend or third scientific trial.126 closed519d016c...
+scoped_source_exhausted:156.728278s/600,59accepted pages/0recovered/59missing,
+intake/cleanup pass,0fits.127 support attribution is not third current-family
+profitability trial/48cells72screens/GPU job. Positive missing stays unknown.
 Quarter-vintage helperbe19eefe.../4SYN/independent3 source-only; no family,
 holdout/evaluation/GPU allocation. GPU usable/free;107/Paper owners independent.
 
