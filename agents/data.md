@@ -25,6 +25,14 @@ Next131 reuses this exact target/helper/intake/source and masks; only model
 loss differs. Reattest unchanged source scope, do not recollect or create a
 new loader. Future original107/ab65 owners below remain independent.
 
+131 reuse source-reattestation READY:
+D:/thericher-v2/model-artifacts/data/daily20-mean-versus-lower-quartile-exit-development-v1/data-r1/source-reattestation.json
+SHAee1fe9086a531d58c45d6a74566c25911234a03b317435c0faf2cebd5374d869.
+14 pins/six AST signatures stable; Parent reference checks agree.132/25080/674
+and6/130 are inherited130 counts, not fresh support or market recomputation.
+Prior-valid scaler and unique decision-date weights unchanged; optional packet
+weights are not pooled campaign weights. No collection, labels or allocation.
+
 ## Retained Evidence
 
 Goal100 COMPLETE ff5b936b... at A/execution/

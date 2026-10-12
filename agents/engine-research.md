@@ -30,6 +30,18 @@ fixed .25 pinball objective. Two CUDA fits/shared600, no CPUfit/grid/selection.
 Freeze fresh informed quantile-lineage contract before numerical work; no131
 allocation/fit/weights exist. No authority/environment wait or new platform.
 
+131 model source READY at A/research/
+daily20-mean-versus-lower-quartile-exit-development-v1/engine-r1/source-release.json
+102f2685.../paired_models.py7fd85816.../interfaceed8364f4.... Inject unchanged
+130 build/predictor; reset seed202 for each loss, compare initial/batch hashes,
+immutable shared scaler. Parent16 NumPy/mock SYN pass/.19s; no native Torch
+fit, CUDA allocation, actual labels or mean-reference parity. Parent took the
+small tests/release handoff; canonical science/composition remains next ready
+work, not an approval wait or a completed campaign.
+Independent validation-source-r1/receipt.json831c0f20...:3 groups/8 stable pins,
+loss oracle/AST mean loop/normalization boundary pass; two reviewer fixture
+faults retained. No native RNG/optimizer/actual mean reconstruction proof.
+
 One loss axis, fixed mean/q25 same seed202/GRU16/head19,1, state3/prior21.
 Quantile/forecast lineage already tested; do not claim novelty or change
 features/target/timeframe/seed. Date/scaler/action/control parity first, mean

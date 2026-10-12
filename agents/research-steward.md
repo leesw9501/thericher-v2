@@ -26,6 +26,12 @@ fixed .25 pinball objective. Two CUDA fits/shared600, no CPUfit/grid/selection.
 Freeze fresh informed quantile-lineage contract before numerical work; no131
 allocation/fit/weights exist. No authority/environment wait or new platform.
 
+131 source release102f2685... READY/16 NumPy+mock SYN, Data ee1fe908... reused.
+No scientific row, GPU appointment, labels or actual fit created by this package;
+GPU remains available, original130 spend unchanged. Next ready work freezes
+paired composition/canonical contract, then dispatches the existing two-CUDA
+600s plan. Source tests cannot establish actual mean parity or add a trial.
+
 New family must link130/G101-103/G108-109 and existing quantile lineage; same
 seen samples/science history not independent data. TwoCUDA mean/q25 fit
 appointments share600s/32epochs3200update bound; mean reconstruction spends

@@ -24,13 +24,13 @@ ONE131: daily20-mean-versus-lower-quartile-exit-development-v1; no approval wait
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent |129 pushedd1dae47;130 integration/131 source direction, sole Git owner. |
+| Git/integration | Parent |130 pushedbecbfea;131 source package integration, sole Git owner. |
 | Verification | Parent |Unchanged1312-source clean8 authority15935pass22skip; same supplementary serial2312s, retained scratch not helper authority. |
-| Data |130 complete/131 reuse |Data5/independent3;132completeTRAIN25,080rows674dates/0gap0EVALtargets; exact input/target replay reused, no acquisition. |
-| Engine |130 complete/131 source |Mean/q25 loss axis only; paired CUDA/fresh contract/one600, no allocation yet. Models/state/data/clocks/seed remain fixed. |
+| Data |131 reuse ready |ee1fe908.../14 source pins/six signatures stable; counts inherited130, no new market reads or acquisition. |
+| Engine |131 model source ready |102f2685.../model7fd85816.../16 Parent NumPy+mock SYN; no native training or allocation yet. Canonical contract/composition next. |
 | Infra |126 actual closed |156.728278s/audit0/native0/all cleanup/source closed, existing frozen transport reusable/no new framework. |
 | Execution |130 parity complete |b021c12f.../actual2/18matched128controls exact; no raw-NAV/broker/19-owner changes. |
-| Validation |130 complete |Input3/Engine3/actual3/654a787e...;23pins/9fails/fit-spend chain, not raw path/OS proof. |
+| Validation |131 source complete |831c0f20.../3 independent groups/8 stable pins; source/mocked boundaries only, actual mean parity unobserved. |
 | GPU |Steward / available |Actual130 oneCUDA16epochs1568updates complete, owned lease released;131 source unallocated. |
 | Paper due |Existing owners |Oct12 22:30KST entry/original exits and recovery/shared basis unchanged. |
 | Accounting due |Existing owner |FirstOct13 05:25KST; actual captures unknown. |
@@ -40,14 +40,13 @@ ONE131: daily20-mean-versus-lower-quartile-exit-development-v1; no approval wait
 
 ## Bottleneck And Reversible Improvement
 
-130 numerical model work complete78.4s; positive net/risk trade-off but9fixed
-utility failures. Source assembly/handoff latency remains the bottleneck, not
-data/API/GPU authority or compute.131 isolates one loss axis on unchanged
-target/state/rows/replay, not a broad new architecture or source platform.
-Reversible improvement: Parent took the bounded model kernel while Engine
-composed Data/Execution APIs; early provisional interfaces avoided serial source
-dependency waits. Reuse exact frozen target/replay/CPU smoke and unchanged
-shared-source authority; test changed loss/count/entry delta rather than recreate
-loader/parity/history. Epoch-boundary progress matches legacy lower-bound
-recovery semantics and avoids per-update fsync; interrupted spend stays unknown,
-never refunded. Keep all failures/debits/source bytes and19Paper owners intact.
+Source assembly/handoff, not API/GPU permission or numerical compute, remains
+the measured bottleneck.131 model/data reuse is ready; canonical science/paired
+composition and tiny existing-transport adaptation are the next dependencies.
+Reversible improvement: Engine froze model/interface while Parent owned the
+small loss/plumbing tests and release;16 SYN finished.19s without a new Torch
+runtime. Independent831c0f20.../3 source groups/8pins agrees. Reuse the frozen
+loader/target/replay and exact1312-source authority; actual mean reconstruction
+remains unobserved. Preserve every prior failure/spend and19Paper owners.
+The Oct9 heartbeat outcome was already recorded/no target delta; obsolete chat
+automation deleted without touching Windows tasks or stopping a ready lane.

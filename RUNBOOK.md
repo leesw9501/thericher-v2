@@ -2,6 +2,18 @@
 
 ## Current Dispatch (2026-10-12 KST)
 
+131 source-only continuation: engine-r1/source-release.json102f2685... under
+D:/thericher-v2/model-artifacts/research/daily20-mean-versus-lower-quartile-exit-development-v1,
+model7fd85816.../interfaceed8364f4.../testb66eefd0.../finalJUnit9d43f5a9....
+Parent16 SYN pass/.19s (NumPy losses/mock plumbing, no Torch training/CUDA);
+Data ee1fe908... at D:/thericher-v2/model-artifacts/data/
+daily20-mean-versus-lower-quartile-exit-development-v1/data-r1/source-reattestation.json
+is source-only with inherited130 geometry. No allocation/labels/fits/Paper/
+schedule changes. Next ready work is canonical contract/paired composition/
+scoped existing transport; do not imply actual mean reconstruction from SYN.
+Independent131 validation-source-r1/receipt.json831c0f20... verifies3 groups/
+8 stable pins; two reviewer fixture faults preserved, no native training claim.
+
 130 CLOSED/rejectedde64b98f...:
 D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
 SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
@@ -579,6 +591,12 @@ marker/time/source provenance only, not proof of OS scheduler origin; logging
 disabled. Fees/settled cash/net PnL not_observed. SPY strategy next23:50KST;
 deliver V4-compatible source before installing stock ownership, without resetting
 its identity/basis or manually invoking the existing opportunity.
+
+Oct12 offline corroboration found this same exact receipt/job/session/image and
+time/source pins, not a new outcome. Scheduler Ready/lastOct9 22:45KST/nextnull/
+result0; no scoped active host process. Native private custody was not freshly
+read. Obsolete one-shot chat automation `automation` deleted; no Windows task,
+identity, shared basis, schedule, broker or collector invocation changed.
 
 Goal44 native read-only stock shadow COMPLETE at
 D:/thericher-v2/model-artifacts/execution/kis-stock-readonly-preparation-v1/r2:
