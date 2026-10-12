@@ -42,12 +42,17 @@ raw119 reproduction is no refund.40cells12checks10fail, no rescue/depth.
 Source/input/child closure honest-host,688799744-byte measured peak.
 121 COMPLETE/source-bound-delivery581f9f5a... allocates no predictive fit/GPU/
 sealed evaluation. Fresh15935/22 authority, no model or Paper promotion.
-122 daily fixed-basket holding economics reserves one CPU600s attempt including
-90s publication/cleanup,2threads/4GiB; allocation only after exact contract and
-source/support preparation.0fits/GPU/weights/holdout.18 dependent baskets,
-390 marked closes/48cells/72 fixed checks, no per-cell budget multiplier or
-post-result horizon rescue. GPU usable/free, not an approval/environment hold;
-future107 original row stays pending and Paper resource priority unchanged.
+122 CLOSED/technical_failed63a08e1d...; scienceeb17900e.../trial1c6567ae4...
+closed by canonical outcome3566a195.... Original600s attempt spent20.599115s,
+seven fit/update counters0; scientific screen UNKNOWN, not rejected/refunded.
+Host/source/child/container closed, no GPU/weights/holdout allocation. Parent
+pointer serialization failed after append; canonical-outcome-r1 reattaches
+existing signed row without write. Never replay122 creator or appointment.
+123 SAMEfamily technical trial2 may allocate ONEadditional600s/2threads4GiB/
+90s reserve, cumulative max1200 allocated seconds/0fits. Freeze new contract
+and failed-trial lineage before numerical work; no third automatic retry,
+scientific rescue or independent-replication claim.18/390/48/72 unchanged.
+GPU free/usable, no CUDA role in this question;107/Paper priority independent.
 
 ## Retained Evidence
 

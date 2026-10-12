@@ -45,12 +45,15 @@ repairs missing physical request custody before publication/recovery. Shadow
 R4job1621... and G97job4fe2... source-bound to four original future Actions;
 other37Actions/all41nonActions/due unchanged. Preserve failed attempts and old
 chunks; no actual provider/raw-intake/finality/PIT result from this source work.
-122 owns original512 daily intake geometry/support, not strategy selection.
-Source-only geometry6ddb5106... has18 entries/390 CLOSE clocks; actual selected
-support UNKNOWN. Use old800/later71 sources, prior21 completed bars and frozen
-original ranked-slot union, including zero-weight slots/cash tails. Any missing
-mark is scoped input_unavailable, never replacement dates/symbols/interpolation.
-No acquisition/cache/cursor/Paper change. Existing owners/107 remain independent.
+122 CLOSED/technical_failed63a08e1d...; actual support UNKNOWN, no cells/checks.
+DataR2module80aa5626.../11SYN did not match native Panel date ABI: asserted
+ISO strings instead of original dates. Author string-valued SYN masked it.
+Enginefb6dcd04.../4groups and Execution13fc68ee.../5groups reproduce source
+fault, not actual first cause. Original sources, input pins and failure kept.
+123 owns minimal versioned native-date fix, exact metadata calendar equality
+and wrong-type/order/missing-day negatives. Same512/old800/later71/prior21/
+18baskets390marks and full per-block ranked union, including zero/cash slots.
+No acquisition/cache/cursor/quality promotion or Paper change;107 independent.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
 

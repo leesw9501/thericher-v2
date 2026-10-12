@@ -58,10 +58,19 @@ independent source4/actual2, Claude contract/result supported-with-limits.
 original512/context/teacher/scaler/model/first-slot and CPU455 at74d. Native
 cfee is separate RO metadata, not same-plane equivalence. Four future Actions
 updated, no inference/fits/GPU or actual Paper result. Fresh15935/22 authority.
-122 owns daily-fixed-basket-holding-duration-development-v1. Proposalb1d1e0e...
+122 CLOSED/technical_failed63a08e1d.../outcome3566a195..., one600s appointment
+used20.599115s with0fits; no scientific cells/checks or rejection. First cause
+UNKNOWN. Enginefb6dcd04.../4SYN reproduces native date support mismatch; old
+string-valued Panel fixture masked it. Original module242e92ce... unchanged.
+123 owns daily-fixed-basket-holding-duration-technical-reexecution-v1. Freeze
+SAMEfamily trial2, ONEadditional600s/cumulative1200/0fits, no third automatic
+retry. Correct native-DTO SYN and consume narrow Data repair; scientific rule,
+grid and screens stay identical. Proposalb1d1e0e...
 and geometry6ddb5106... are source-ready, actual18-basket/390-mark support
 unverified. Prior-seal unchanged rule top10 basket; fixed5 CLOSE(e+4), carry20
 CLOSE(e+19), quarter q/4 and cash, full NAV/cash tails, costs5/10/20bps per side.
+Weights/ranks/quarter scaling seal before OPEN; q binds AT OPEN, stays fixed
+afterward. Require positive exposure in all18 baskets, not just selected counts.
 48cells/72checks frozen before outcomes; any failure rejects, no horizon/seed/
 architecture rescue. Small typed20-session ledger, never FiveSessionFrame
 backdating. CPU600s including90s publication reserve/2threads/4GiB,0fits/GPU/

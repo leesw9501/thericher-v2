@@ -2,100 +2,82 @@
 
 ## Objective
 
-Complete daily-fixed-basket-holding-duration-development-v1: determine whether
-holding the SAME prior-sealed daily rule basket for20 sessions instead of5
-improves modeled cost-aware utility without worsening drawdown. This advances
-portfolio/holding research, not another H30 model rescue or Paper permission.
-Workdir C:/Users/Public/Documents/thericher-v2.
+Complete daily-fixed-basket-holding-duration-technical-reexecution-v1: obtain
+the unchanged five-versus-twenty-session holding comparison after repairing
+the native Panel date interface. This is one bounded technical reexecution,
+not a new hypothesis, independent replication, or model/Paper permission gate.
+
+Workdir: C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
+New root: A/research/daily-fixed-basket-holding-duration-technical-reexecution-v1.
 
-121 COMPLETE/source-bound-delivery581f9f5a... at A/research/
-prospective512-request-backed-publication-repair-v1/integration-evidence.json.
-Four original future Actions changed, other37/all41nonActions/due preserved;
-actual delivery/fill/fees/net UNKNOWN. Fresh15935pass22skip authority;167serial,
-Ruff/three sample Compose pass. Never replay121 exclusive creators or Apply.
+## Retained Failure
 
-## Frozen Direction And Inputs
+122 CLOSED/technical_failed63a08e1d... at A/research/
+daily-fixed-basket-holding-duration-development-v1/integration-evidence.json.
+Scienceeb17900e.../trial1c6567ae4... closed by outcome3566a195...;
+canonical-outcome-r1.json reattaches the existing row without registry write.
+Original600s attempt used20.599115s, seven fit/update counters0. Exact failure
+20ce1be6.../hosta1456ec7.../fixed-readce2bb1fe...; source/child/container closed.
+Scientific outcome, first cause and runtime versions remain UNKNOWN; no cells
+or predicates. Original failure, source bytes and partial pointer preserved.
+Never replay its freeze/prepare/dispatch/close or refund that appointment.
 
-Re-retrieve proposalb1d1e0e15f1610ac5645f6a51d010ced5e7664ef0aec0665f87bccd4d0767d7b
-at A/research/prospective512-request-backed-publication-repair-v1/
-engine-r1/next-direction-proposal.json and source-only Data geometry
-6ddb51063b89c3d6f03f2aa5490c0013886b2dc1d7f8d887f296122c4c5354a5 at
-A/data/prospective512-request-backed-publication-repair-v1/
-next-geometry-r1/source-receipt.json.18 entries/390 real CLOSE clocks are
-structurally source-ready; actual basket/mark support remains UNKNOWN.
-Retain nearest-family/seen-data lineage, no exhaustive novelty claim.
-
-Reuse original ordered512/old800/later71 retained private KIS daily sources
-with exact manifests/CSV pins declared in the proposal. No new acquisition,
-provider, public model/dependency, credential or Paper runtime needed.
-Use original G99 source-bound intake and continuation_policy.py254f5be...
-prior context/entry_plan. Prior21 completed bars, eligibility>=128 and>=64added,
-same rule momentum/top10/proxy/caps. Seal complete ranked slots and weights
-BEFORE reading each entry OPEN; no outcome-filtering/replacement/retuning.
-Claude concise falsification-first contract review before numerical outcomes.
+Native loader returns tuple[date]; DataR2 incorrectly compares ISO strings;
+author SYN Panel used strings and masked it. Enginefb6dcd04.../Execution13fc68ee...
+reproduce this SOURCE defect, not the actual first cause. A separate read-only
+failure-reader repairb1f35c72... accepts absent versions as unknown; independent
+actual reviewe2f279a4... verifies two metadata/interpretation groups. Claude
+result888a7585... supported-with-limits, not scientific agreement.
 
 ## Required Work
 
-Data owns exact source/calendar/pinned-intake and selected-union support audit;
-Engine owns small typed HoldingWindow/FrozenBasket/replay implementation and
-one frozen campaign contract; Execution independently checks q/cash/fees/real
-clocks and strict result reader. Infra reuses existing bounded CPU Docker/
-publication APIs, not a new runtime/platform. Temporary Validation independently
-attacks frozen source/SYN and then exact aggregate/source-linked result. Run
-non-conflicting preparation in parallel; dependent consumers use integrated
-interfaces, not handwritten duplicate transport dictionaries.
+Run disjoint Data, Engine, Infra and Execution source packages in parallel.
+Data makes the smallest versioned date-typed assertion fix and rejects wrong
+types/order/calendar; retain selected-zero-slot and per-block-union support.
+Engine keeps original holding_duration.py242e92ce... and the scientific grid;
+correct SYN to use the native date-valued original Panel class. Execution
+independently attests unchanged q/cash/fees/replay/availability semantics.
+Infra reuses the same pinned CPU Docker transport with a new isolated root,
+trial2 custody binding, and complete-only runtime-version qualification.
+Parent owns thin composition, shared contracts, actual dispatch and Git.
+Temporary Validation attacks the new native-interface coupling and exact result.
+Do not add generic runtime features, workers, reports, gates or schedules.
 
-Fix entries before outcomes:
-- seen_early1:420,440,460,480,500,520; mark420..549 (130 CLOSEs).
-- seen_early2:570,590,610,630,650,670; mark570..699 (130).
-- DEV:720,740,760,780; mark720..799 (80).
-- later_seen:21,41; mark21..70 (50).
+Before numerical work, freeze SAME family
+broad512-fixed-basket-holding-duration-development-v1 trial2 with explicit
+trial1/spent-failure lineage. ONE additional CPU600s attempt including90s
+publication/cleanup,2threads/4GiB,0fits/GPU/weights/holdout. Cumulative maximum
+1200 allocated seconds, not1200s on the second run. No third automatic retry.
+Ask Claude for a concise prospective technical-reexecution/budget challenge.
 
-Four arms:fixed5,carry20,carry20_quarter,cash. Same initial-capital quantities
-q_i=w_i/(entry_OPEN_i*1.001); quarter freezes w/4 and q/4 BEFORE OPEN.
-Fixed5 sells CLOSE(e+4), carry20 sells CLOSE(e+19), quarter same20 exit.
-No reinvestment/rebalance/renewal/borrow/reset or increased capital envelope.
-Roll actual cash across entries; after exit remain cash on every real daily
-CLOSE, including flat tails. Quarter matches planned share-session exposure
-only, not realized notional/beta/overnight risk. Use a small typed20-session
-ledger; do not monkeypatch FiveSessionFrame or backdate20CLOSE into fifth.
+Keep exactly the original512/old800/later71 pins, prior21 rule momentum/top10/
+proxy/caps and18 entries:420..520 step20;570..670 step20;720..780 step20;21,41.
+Block CLOSE grids420..549,570..699,720..799,21..70:390 marks.
+Slots/weights seal BEFORE OPEN, q=w/(entry_OPEN*1.001) binds AT OPEN and stays
+fixed. Fixed5 exits CLOSE(e+4); carry20/quarter CLOSE(e+19), quarter q/4, cash.
+Rolling cash without rescaling/reinvestment/borrow/reset; each actual leg fee
+once at5/10/20bps per side. Full per-block ranked union including zero slots
+and cash tails; missing support/funding makes the whole comparison unavailable.
+48cells/72fixed checks: BOTH carry arms EVERY block/cost U>fixed5 AND cash,
+DD<=fixed5. Any false rejects; no horizon/arm/cost/threshold/seed/model rescue.
+U is mean daily log NAV change, HHI concentration; quarter matches planned
+share-session quantity only. Seen/current-listed/nonPIT/revised/raw actions/
+nominal availability remain explicit, not total return/Paper qualification.
 
-Require all18 prior-supported nonempty original baskets and complete selected
-ranked-slot union marks, including zero-weight slots and cash tails. Any missing
-point or insufficient funding makes the relevant whole comparison unavailable;
-no date/symbol shift, selected deletion, fallback interpolation or scope rescue.
+## Completion And Continuation
 
-Costs5/10/20bps PER SIDE on actual changed notional, same frozen q/action paths.
-48cells=4arms*4blocks*3costs. For BOTH carry arms at EVERY block/cost require
-U=mean(diff(log([1,*NAV])))>fixed5 AND cash, and DD<=fixed5:72 fixed checks.
-Report modeled gross/fees/turnover/exposure/concentration/support and utility;
-no selected winning cost/arm or statistical significance on18 dependent baskets.
-Any fixed check failure rejects this campaign; no10/21/60-day/threshold/model
-or third-arm rescue. Raw split/dividend actions remain unverified; do not claim
-total return, PIT, physical availability, replication or Paper qualification.
+Native-DTO SYN reproduces old failure and passes only the narrow repair; future
+mutation cannot change prior weights or post-entry q. Freeze all source/science/
+family custody before ONE new run. Exact result/host/source/clock/child/container
+links and independent/Claude interpretation close the attempt, even if failed
+or input_unavailable. Missing evidence stays unknown, not success/rejection.
+Keep all original19 Paper/data/accounting owners, shared basis and pending107
+independent; no manual Task/KIS/account/order/collector/schedule change here.
+Never read credentials or KIS_LIVE_*; raw values stay in process/external roots.
 
-## Bounds And Completion
-
-Source/SYN then ONE CPU600s attempt including90s publication/cleanup reserve,
-2threads/4GiB,0fits/GPU/weights/holdout. Freeze exact source/contract/custody
-before numerical outcomes; no per-cell budget multiplier or retry refund.
-Generated output under A, no raw values in source-safe reports/Git/Claude.
-Never read KIS_LIVE_*. No manual Task/KIS/account/order/collector or scheduler
-change; original19 owners/shared10percent basis/unknown custody and pending107
-remain independent. Their next_due does not foreground-block this research.
-
-Strongest kill: future mutation cannot alter prior basket/q. Independent SYN
-checks real5/20 clocks, each fee leg once, quarter q/exposure identity and every
-daily cash/NAV conservation point. Missing support => input_unavailable; failed
-fixed predicates => rejected; technical failure preserves its spent attempt.
-SYN/aggregate review is not independent raw-price replay or OS proof.
-
-Completion evidence: frozen contract, exact input/support facts, focused SYN,
-one bounded result with source/child/container/allocation closure and truthful
-independent/Claude review limits. Focused verification and unchanged121 authority
-reattachment only when1312 shared source bytes remain identical; any tracked
-change requires changed-path serial plus fresh clean8. Ruff/three sample Compose
-per AGENTS.md. Integrate evidence, refresh current stateboards/HANDOFF/RUNBOOK,
-commit/push, replace this file with exactly ONE material next company objective
-and continue without market-session foreground waiting.
+Focused verification plus unchanged1312-source121 authority reattachment only:
+15935passed22skipped. New shared tracked source requires changed-path serial
+and fresh clean8. Ruff and default/research/accounting sample Compose checks.
+Refresh current stateboards/HANDOFF/RUNBOOK, verify, commit/push, replace this
+file with exactly ONE material next objective and continue without market wait.

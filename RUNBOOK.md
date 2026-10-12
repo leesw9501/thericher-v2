@@ -129,10 +129,22 @@ R3source758ff5c9... rejects all conflicting additional proof/alias pins. Separat
 parent/preparation-fix-supplement.json links independent postdeliveryd41b9aa5...
 ONE metadata group. Never invoke R3 creator on the already-delivered scope. Preserve
 executed recipe, failed review/test evidence and separate source-plane limits.
-ONE122 daily-fixed-basket-holding-duration-development-v1: prior-sealed same512
-baskets/real5vs20 CLOSE clocks/cash NAV tails; source geometry18entries390marks
-only, actual support unverified. No fit/GPU/holdout or19-owner change. Current
-NEXT alone owns scope; no numerical run before source contract/custody freeze.
+122 CLOSED/technical_failed63a08e1d... at
+D:/thericher-v2/model-artifacts/research/daily-fixed-basket-holding-duration-development-v1/integration-evidence.json.
+Scienceeb17900e.../trial1c6567ae4.../outcome3566a195...; spent600s attempt used
+20.599115s/0fits. Failure20ce1be6.../hosta1456ec7.../fixed-readce2bb1fe...;
+source/child/container closed, no cells/checks/runtime-version/first-cause proof.
+Native Panel date ABI fault separately reproduced, not actual first cause.
+Never replay its creators/read/close/dispatch. Original partial canonical
+pointer preserved; canonical-outcome-r1.json reads existing signed row only.
+Independent actual2groups/Claude result supported-with-limits, no science verdict.
+Weekly serial15935pass22skip/2312s supplementary; retained C:/trpy/g121-weekly-serial
+after tool-denied cleanup is not clean-helper authority. Primary clean8 unchanged.
+ONE123 daily-fixed-basket-holding-duration-technical-reexecution-v1: narrow
+native-date support/SYN repair, SAMEfamily trial2/ONEadditional600s, cumulative
+max1200 allocated seconds/0fits/GPU/holdout. Same18/390/48cells72checks, no rescue.
+NEXT alone owns scope; new source/science/custody/Claude freeze before numerical
+work. Original19 owners/pending107 unchanged, no manual Task/provider/orders.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

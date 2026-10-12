@@ -171,12 +171,29 @@ rejects additional proof/alias collisions. Supplement at this goal's parent/
 preparation-fix-supplement.json; independent postdeliveryd41b9aa5... is ONE
 metadata group, not runtime replay. No creator/Apply replay. Read review output
 before dispatching dependent effects, never bundle those steps unconditionally.
-ONE122: daily-fixed-basket-holding-duration-development-v1. Source proposal
-b1d1e0e... and geometry6ddb5106... support18 entries/390 CLOSE clocks only;
-actual basket/mark support remains unverified. Compare prior-sealed fixed5,
-carry20, carry20_quarter and cash with real clocks and full cash/NAV tails.
-No fit/GPU/weights/holdout; CPU600s/2threads/4GiB, no H30/model rescue. Pending107
-and all original Paper owners remain independent; no global market wait.
+122 CLOSED/technical_failed63a08e1d... at A/research/
+daily-fixed-basket-holding-duration-development-v1/integration-evidence.json.
+Scienceeb17900e.../trial1c6567ae4... closed by outcome3566a195.... One600s
+appointment used20.599115s, seven fit/update counters0; no result cells/checks.
+Hosta1456ec7.../failure20ce1be6.../fixed-readce2bb1fe... bind source/child/
+container closure. Scientific screen, first cause and runtime versions UNKNOWN,
+not rejection. Independent actuale2f279a4... verifies two groups; Claude result
+888a7585... supported-with-limits. Source/SYN55 author groups, direct Docker3,
+independent ledger7/source2, Engine diagnosis4/Execution diagnosis5; not raw/OS
+proof. Native Panel dates versus Data ISO strings reproduced; string-valued
+SYN masked the ABI. Frozen sources unchanged. Failure-reader7cd2c860.../2SYN
+repairs only offline interpretation. Parent canonical append succeeded before
+DTO datetime serialization failed; original partial pointer retained, existing
+signed row reattached in canonical-outcome-r1.json with no registry rewrite.
+Never replay122 creators/appointment or refund it. Supplementary weekly serial
+15935pass22skip/2312s matches primary clean8; its scratch retained after denied
+cleanup, not helper authority. Shared1312 sources unchanged/Ruff/3Compose pass.
+ONE123: daily-fixed-basket-holding-duration-technical-reexecution-v1. Minimal
+native-date repair plus exactly ONE new same-family trial2 CPU600s, cumulative
+max1200 allocated seconds/0fits/GPU/weights/holdout; original scientific grid
+unchanged. No third automatic retry/hypothesis rescue. Source prep ready in
+parallel; freeze custody and Claude challenge before new numerical outcomes.
+Pending107/all original Paper owners remain independent; no market wait.
 
 ## Retained Preparations And Closures
 

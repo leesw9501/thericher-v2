@@ -69,10 +69,16 @@ only. Four original future Actions updated, other37/all41nonActions unchanged;
 private slot/volume/shared basis/history unchanged. Private presence UNKNOWN;
 historical descriptor DECLARED_NOT_REHASHED, original runtime byte audit kept.
 No manual Task/KIS/model/order or actual reconciliation/fill/fees/net claim.
-122 owns independent constant-q/cash/fee/real20-clock arithmetic and strict
-result reader for the holding-duration comparison; no strategy/model/order
-change. Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),
+122 CLOSED/technical_failed63a08e1d...; strict readce2bb1fe.../independent2
+groups keep scientific screen/runtime/first cause unknown and zero ledger
+separate. New read-only inspector7cd2c860.../2SYN fixes failure versions only.
+Execution13fc68ee.../5SYN reproduces source date ABI fault, not actual cause.
+123 reattests unchanged constant-q/cash/fee/real20-clock arithmetic and typed
+reader against new native-date support. No strategy/model/order change.
+Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),
 quarter q/4, full marked NAV/cash tails and fees once per actual BUY/SELL leg.
+Weights/ranks seal before OPEN, q binds AT OPEN and is immutable afterward;
+entry-OPEN mutation may change q, later mutations may not. No pre-OPEN q claim.
 
 ## Retained Evidence
 
