@@ -6,75 +6,28 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Allocation
 
-111 COMPLETE/rejected3b542a4d...; science85d8f043.../trial1a2a2c3b0... closed
-by outcome1025fd49... in A/_control/ledger/2026-10.jsonl. Original600s
-appointment883063da... completed48.1724s,1CPU2CUDA/64epochs1344updates0failed.
-1340TRAIN rows/48tables90checks33fail; no refit/refund/winner/weights/holdout.
-Host source/child/container/canonical GPUlease closure attested, not OS proof.
-GPU free/usable.112 integration COMPLETE52f20612...;113 delivery COMPLETE642a1ee0...
-with no-fit/0sealed/no research allocation.114 COMPLETE/rejectedc52bc213...
-at A/research/kis-five-session-pairwise-preference-development-v1.
-Sciencea9bd3041.../trial1row740be89f... closed by outcome34a43fb0.... One600s
-appointmenta20bef4a... completed49.7217s,1CPU0CUDA0failed,134dates34304pairs/
-rows0ties/n_iter26.30tables130marks30checks21fail; fit remains spent, no
-retry/refund/depth/weights/holdout. Host source/child/container closed.
-115 COMPLETE/prepared066268db...; contracta7086504.../planfec65477... precedes
-one18.3614s geometry/0labels/fits/GPU/sealed evaluation.5DEVpeer gaps retained.
-116 COMPLETE/rejected47695df6...; science23646ee5.../trial1a46cb16f... closed
-by outcome5ac35628.... One600s exclusive8GiB appointmente4bb0c0c... used
-34.9535s,2CUDA/0CPU/16epochs624updates/7440states/0failed,40cells14checks11fail.
-Fits remain spent; no refit/clock reset/weights/holdout. Host source/child/
-container/GPUlease closure attested, GPU free/usable after actual training.
-117 COMPLETE/descriptive11c9bf8e...;300s native attempt used11.1125s,
-48cells/12gaps/2987episodes/0fits/GPU/models/weights/holdout/registry spend.
-Oracle not candidate/label/alpha/DD bound. GPU free/usable.118 COMPLETE/
-source-SYN31746925... spends no predictive/GPU/holdout allocation.
-119 COMPLETE/rejectedcc25a3a8...; scienceee1869a1.../
-trial1row79cf44be... frozen before labels/fit; original600s native77dfc4eb...
-used17.7943s,1CPU started/completed0failed/0CUDA/epochs/neural updates.
-32cells12checks4fail; source/input/child closed,681967616-byte measured peak.
-No retry/refund/weights/holdout/depth or Paper adoption. Canonical outcome
-6ee2d604... closes the allocation; GPU free/usable, no invented CUDA job.
-120 COMPLETE/rejectede22a63af...; scienceeaf439c8.../trial1row9997ea45...
-closed by outcome94bb089e.... One600s native2c1bb70b... used13.0101s,
-CPU2 started/completed0failed/0CUDA/weights/holdout. Both fits remain spent;
-raw119 reproduction is no refund.40cells12checks10fail, no rescue/depth.
-Source/input/child closure honest-host,688799744-byte measured peak.
-121 COMPLETE/source-bound-delivery581f9f5a... allocates no predictive fit/GPU/
-sealed evaluation. Fresh15935/22 authority, no model or Paper promotion.
-122 CLOSED/technical_failed63a08e1d...; scienceeb17900e.../trial1c6567ae4...
-closed by canonical outcome3566a195.... Original600s attempt spent20.599115s,
-seven fit/update counters0; scientific screen UNKNOWN, not rejected/refunded.
-Host/source/child/container closed, no GPU/weights/holdout allocation. Parent
-pointer serialization failed after append; canonical-outcome-r1 reattaches
-existing signed row without write. Never replay122 creator or appointment.
-123 CLOSED/input_unavailable4c5cde54.../outcomeccf9194a.... SAMEfamily trial2
-science9526dde8.../row174d7ce2... allocated600s used28.623165s/0fits, original
-122600 retained/cumulative1200.18sealed baskets but59missingCLOSEs;48cells/
-72checks unknown, no rejection/refund/third automatic retry/replication.
-Source/child/container closed, no weights/holdout/GPU.124 distinct Data600s
-attempt closed technical preflight961731b0...: no point plan/immutable host
-receipt/fit, actual elapsed and recovery unknown. Original attempt stays spent;
-125 NEW Data600s used12.445976s, Docker intake failed/no collector or point plan;
-host9e713b01.../closureb8d68ed7..., first cause/recovery unknown.126 R3 accepts
-legacy callback ABI with work-bound clock; NEW600s Data allocation, not any
-reset/refund, holdout/GPU spend or third scientific trial.126 closed519d016c...
-scoped_source_exhausted:156.728278s/600,59accepted pages/0recovered/59missing,
-intake/cleanup pass,0fits.127 closed5555cc40...: zero-fit/zero-screen support
-diagnostic18.627197s/600/all59beforeentry/held-exit required0. No registry/GPU
-allocation/refund; prior full-union screens remain unknown.128 must freeze a
-fresh changed held-only-pricing scientific contract and explicitly register
-SAMEfamily trial3 before numeric work; prior1200 remains/cumulative1800.
-128 COMPLETE/rejected36ac831c...; scienceaa9d0c7e.../row21e12677... SAMEfamily
-trial3, canonical completed non-promoting outcome5fd2dbdc....600allocation
-used21.927221s/48cells72checks33fail/0fits/GPU, prior1200 remains/cumulative1800.
-Same original custody tuple conservatively counts trials; changed held-only
-spec is not byte-equivalent/novel/fresh replication. No automatic fourth run.
-129 new diversification mechanism lineages G124 source/128 rejection, not
-family laundering. Source-only until fresh family/compute/kill contract freeze.
-GPU free/usable; no CUDA role in deterministic timing intervention.
-Quarter-vintage helperbe19eefe.../4SYN/independent3 source-only; no family,
-holdout/evaluation/GPU allocation. GPU usable/free;107/Paper owners independent.
+129 CLOSED/rejected6488f074...:
+D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
+SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
+One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
+48complete cells/48strict checks25true23false0unknown. All12 funded-phase
+parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+
+New family broad512-fixed20-entry-vintage-diversification-development-v1:
+science58bc92e2.../trial1row0d82e256... closed by outcomecdf7bfa4....
+Family600/priorrelated1800/relatedcumulative2400 are spent; no reset/refund
+or automatic second appointment. Conservative original dataset/split/cost
+lineage is not changed-spec byte equivalence or fresh independent evidence.
+Old holding family128trial3/cumulative1800 remains closed/rejected; old
+technical/unavailable outcomes stay exactly recorded.
+
+Next130 proposes TRAIN-only remaining-reference20 target with original
+fixed21 context, one Ridge CPU and one bounded GRU CUDA. No130 scientific row,
+fit/GPU/sealed allocation or new weights exist yet. Freeze own contract and
+native CPU smoke, then allocate one exclusive existing PyTorchCUDA appointment
+under the same finite family budget. Do not relabel G101-103/G108-109 as untested.
+Existing GPU environment works; zero-fit129 intentionally used CPU.
+History/Gitde0d351 and existing sealed custody below remain authoritative.
 
 ## Retained Evidence
 

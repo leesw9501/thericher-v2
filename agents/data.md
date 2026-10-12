@@ -6,88 +6,25 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-114 COMPLETE/rejectedc52bc213... at A/research/
-kis-five-session-pairwise-preference-development-v1/integration-evidence.json.
-Data release9c520e45.../sampler95ca79f7..., worker78f30e8f.../releaseaeec4405....
-Full prior pool/256 hash-selected pairs/whole-date endpoints/exact rational
-ties/date weight1, scaler before coverage; no EVAL labels or replacement.
-Parent source-freeze a9bd3041.../row740be89f... preceded numeric work;
-134complete dates34304pairs/rows0ties/no missing dates. Data did not reproduce
-raw labels independently.46focused/source4/actual3 groups; no acquisition,
-PIT/finality/corporate-action or Paper input promotion.
-115 COMPLETE/prepared066268db...; view99e39ca6.../release240f7232...,
-consumera7086504.../actual95d4bd20.... Original251sessions/3012records/2987
-admitted unchanged;7440/3775/3720admitted held slots, paired7440/3770/3720.
-5DEVpeer-history gaps retained.10focused/independent2source6metadata,
-0labels/fits/GPU/acquisition, source/input/child closure honest-host only.
-116 COMPLETE/rejected47695df6...; exact115 intake retained2987admitted,
-nominal slots7440/3775/3720 and available7440/3770/3720.5DEVpeer gaps,
-each learned arm visited1fallback.2CUDA fits do not qualify the dataset.
-Source/input/child/container/GPUlease closure attested, not PIT/finality proof.
-117 COMPLETE/descriptive11c9bf8e...; original2987admitted/all7OPEN support,
-no unavailable block/paired filter. Native11.1125s/541888512-byte peak/0fits/
-GPU/48cells. Source/input/child honest-host closure, no PIT qualification.
-118 COMPLETE/source-SYN31746925...; shared Decimal repair changes no intake,
-cache/provider/collection scope.483serial/full15924pass22skip/fresh authority.
-119 COMPLETE/rejectedcc25a3a8...; source reuse871a051e...
-and original251sessions/3012records/2987admitted retained; TRAIN1488/DEV755/
-later744/all7OPEN support, no missing block or future-qualified deletion.
-TRAIN has124nonempty admitted sessions, distinct from125calendar sessions.
-OneCPU fit does not qualify input/PIT/finality; no independent raw-row replay.
-Host667cb854.../Parentread5f96475f... bind unchanged exact2CSV bytes/source.
-No acquisition, provider, cursor or dataset-promotion change. Source/input/
-child closure honest-host only, not physical decision-time availability.
-120 COMPLETE/rejectede22a63af... retains original2987admitted/all7 support,
-124nonempty TRAIN dates; allzero volume windows0 in all3 blocks. Relative
-geometry required no extra history; CPU2 result cannot qualify PIT/finality.
-121 COMPLETE/source-bound-delivery581f9f5a...; Data sourceafec05da.../38SYN
-repairs missing physical request custody before publication/recovery. Shadow
-R4job1621... and G97job4fe2... source-bound to four original future Actions;
-other37Actions/all41nonActions/due unchanged. Preserve failed attempts and old
-chunks; no actual provider/raw-intake/finality/PIT result from this source work.
-122 CLOSED/technical_failed63a08e1d...; actual support UNKNOWN, no cells/checks.
-DataR2module80aa5626.../11SYN did not match native Panel date ABI: asserted
-ISO strings instead of original dates. Author string-valued SYN masked it.
-Enginefb6dcd04.../4groups and Execution13fc68ee.../5groups reproduce source
-fault, not actual first cause. Original sources, input pins and failure kept.
-123 CLOSED/input_unavailable4c5cde54.../outcomeccf9194a.... Minimal native-date
-module1534e2da.../5SYN; actual28.623165s/0fits,18sealed positive baskets and
-all180selectedopens supported.59missing of16650required per-block union CLOSEs,
-union108; all48cells72checks unknown. Data shortage is not strategy rejection.
-124 CLOSED/technical_failure961731b0...: exact saved preflight return9f29c1c2...
-with no audit exit/collector attempt/host receipt/point plan. Recovery, elapsed
-and source stability UNKNOWN; not59 recovered or a data/model rejection.
-Inherited calendar JSON transport role violates .py source guard;125 corrects
-only metadata role while original bytes/pins stay. DataR2 release5f2014d7.../
-collector8f272584.../5SYN, independent3f72a46b...3groups close sanitizer P2;
-originalR1 and reviewer/Parent harness failures retained. Independent Data4/
-point3/saved-return2 groups and Claude supported-with-limits, not raw recovery.
-125 CLOSED/technical_failureb8d68ed7...; calendar control role passes actual
-transport, Docker audit1/intake phase_failed/12.445976s/600, host9e713b01...,
-source/child/container closed. No collector or point plan; first cause/recovery
-unknown. Legacy publication keyword/proxy ABI mismatch independently source-
-reproducible, not captured first-cause trace. R3 releasec45b4020.../offline
-44522938.../7SYN accepts flag but stays work-bound; safe fault class/SHA/line
-only.126 CLOSED/scoped_source_exhausted519d016c...: original18 hashes/59plan,
-retained0/59accepted pages/anchors source_exhausted/0recovered/0conflicts/
-59unresolved/next_due null. Run735f9126.../hostdc9ace83...156.728278s/600,
-audit0/native0/all cleanup/source closed. View14472424... partial/CLOSE-only,
-not Bar/PIT/finality/global KIS reach proof. No retry. R3source2/actual2
-f33c2883.../Claude limits pass.127 closed5555cc40...: native18.627197s,
-all59 before first positive entry/held-exit required0 across9fixed-q cases.
-Original input bytes/seals/all390marks retained; no acquisition/imputation,
-PIT/finality/full-future-support or economic qualification. Independent2groups
-e2fe8f94.../Claude limits pass.128 uses unchanged intake/windows/seals, fresh
-held-only contract before numerical work; source handoff082f069c.../3checks.
-128 closed/rejected36ac831c...: exact native intake/18seals/180OPENs/390marks,
-all48cells supported,21.927221s/0fits; no dataset/PIT/Paper qualification.
-129 SOURCE preparation: unchanged512/800/71/calendar; common maturity-only14
-anchors/4phases56prior baskets/560 ranked OPEN checks, full390marks retained.
-No future-price/missingness filter; actual new-entry/held support still unknown.
-CLOSE-only grade, conflict/identity/hash/date/MODP checks,15%D:floor and old
-values stay; no page-floor/nearest-date/Bar imputation or Paper qualification.
-Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
-assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
+129 CLOSED/rejected6488f074...:
+D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
+SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
+One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
+48complete cells/48strict checks25true23false0unknown. All12 funded-phase
+parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+
+Data handoffb3ad4ba3.../phase17972637...;3source SYN and independent2
+56e4ea88... verify native512/800/71, common calendar-only14anchors5/5/3/1,
+56 prior windows/560OPEN checks/140phase0/full390marks. Actual complete
+support is scoped to this frozen result, not PIT/finality/dataset promotion.
+No acquisition/collector/API call; original59 gap bytes stay unchanged.
+
+Next130: reuse native input1534... and causal context254f...; extend fixed
+held clocks to20 without reusing five-age bounds. Define TRAIN maturity and
+nextOPEN-versus-terminalCLOSE target before reads/labels; no DEV/later labels
+or future-coverage evaluation filter. Native target support is not yet observed.
+No new scope/cursor or standing collection schedule. Older package history
+is in Gitde0d351 and exact artifacts; retained owners/limits below still apply.
 
 ## Retained Evidence
 

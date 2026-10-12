@@ -2,79 +2,75 @@
 
 ## Objective
 
-Complete daily-fixed20-entry-vintage-diversification-development-v1: test
-whether four quarter-sized fixed20 lots entered five sessions apart improve
-the return/drawdown trade-off versus synchronized full20 and quarter20,
-without confusing timing diversification with simple exposure reduction.
+Complete daily20-remaining-reference-exit-development-v1: test TRAIN-only
+remaining fixed20 value exits without changing entries or using future inputs.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-129 root: D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1.
-128 closure: D:/thericher-v2/model-artifacts/research/daily-held-only-duration-replay-development-v1/integration-evidence.json
-SHA36ac831ced4c9fcabeac8c5f3061342c1ed690c576a7114beb5e51b5f502314e.
+130 root: D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1.
+129 closure: D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
+SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
 
-## Retained Facts
+## Facts And Ownership
 
-128 SAMEfamily trial3/600 used21.927221s, cumulative1800 spent, canonical
-outcome5fd2dbdc...;48complete cells/390marks/72checks33fail0unknown, rejected.
-At10bps carry20 growth exceeds fixed5 on DEV/later but drawdown is worse;
-positive blocks do not qualify a winner.127 exact59 gaps were before positive
-ownership;122/123 full-union unknown screens and all old bytes stay unchanged.
-G124 unallocated vintage proposal/release84a56c24.../ledgerbe19eefe... has
-SYN custody, not a numerical result. It still requires full-union CLOSEs;
-preserve it and version a small held-only ledger, never fabricate missing quotes.
+129 completed28.180085s/600:56seals/560OPENs/390marks/48cells48checks23fail,
+0unknown/rejected; outcomecdf7bfa4.../related2400 spent.128 rejection and old
+122/123 unknown outcomes stay. G101-103 daily five-age exits and G108-109
+remaining-reference supervision already exist: informed20-horizon reexamination,
+not novelty/depth promotion/replication. Five-age APIs are not20-clock drop-ins.
 
-## Work And Frozen Study
+Data owns native clocks/targets/support; Engine one Ridge CPU/one GRU CUDA;
+Execution variable-exit parity; Validation independent frozen source then
+actual review; Parent science/custody/runtime/Git. Parallel source packages.
+No new platform/collector/broker path/approval/report/standing worker.
+Original19Paper owners/sharedbasis/pending107 independent; never KIS_LIVE_*.
 
-Engine owns the versioned lot ledger/composition, Data owns native phase
-scopes/metadata/source/coverage, Execution independent lot/cash/fee parity,
-temporary Validation source then actual aggregate/link review. Parent owns
-scientific contract/custody/CPU transport/integration/Git. Ready source work
-is parallel; reuse frozen intake/transport rather than another worker platform.
+## Freeze Before Numerical Work
 
-Before raw numerical work freeze NEW diversification family with lineage to
-G124 preparation and128 rejection, not novelty or fresh independent data.
-Original ordered512/old800/later71 and390 real marked sessions stay. A common
-calendar-maturity-only rule base+34<=block-last yields14 base anchors5/5/3/1;
-all arms use these same anchors, not a future-return/missingness filter.
-Four prior-only phase decisions per group at offsets0/5/10/15 produce56 baskets
-and560 ranked entry OPEN checks, including140 phase0 control checks. Seal every
-basket before payoffs. Preserve original prior21 selector/entry arithmetic;
-original q reference10bps, quarters q/4, fixed capital, no reinvestment/resizing.
+Original ordered512/old800/later71,1534 native intake/254f prior21 OHLCV context.
+TRAIN starts21..676 every5 sessions:132 calendar starts, all terminal labels
+<=699. Freeze/count TRAIN support masks; never fabricate labels, call DEV/later
+targets or filter evaluation by future coverage. Empty TRAIN is input_unavailable.
+DEV entries720/740/760/780 and later21/41: six prior baskets/60rankedOPENs,
+full80+50=130marks/cash tails. TRAIN-overlapping early blocks are not causal
+out-of-sample comparisons;129 fourteen-anchor scores are not matched controls.
+Freeze temporal order, effective-sample rule, scaler/state schema and source pins.
 
-Candidate: four q/4 lots, own CLOSE(entry+19) exits. Controls: synchronized
-four q/4 at base (full20), one q/4 at base (quarter20), cash. Same actual-leg
-5/10/20bps costs. Initialize pooled cash once, fund all simultaneous buys
-before effects, reconcile each own-lot sale once, no borrow/reset/substitution.
-Consume positive quantities across ALL active lots BEFORE sale/mark; missing
-held/exit CLOSE or funding failure makes whole comparison block unavailable.
-Zero/unowned consumes no quote. Keep every390 mark/cash tail/unknown padding.
+After entry, ages1..19 mean actions at OPEN(entry+age), features ending at
+immediately prior CLOSE. TRAIN target:
+(net10bps terminalCLOSE(entry+19)-net10bps nextOPEN(t+1))/entryOPEN.
+BUY is sunk; fixed-reference value, not future-max/optimal-Q. Prediction<=0
+exits nextOPEN; otherwise hold, mandatory own CLOSE(entry+19). No same-CLOSE
+learned fill/OPEN(entry+20). Original entry/q/ref10bps, fixed capital/no reinvest.
 
-Exactly48 cells and48 predeclared strict checks: for each4 blocks/3 costs,
-staggered U>sync-full, U>sync-quarter, U>cash, DD<=sync-full. No DD<=cash test.
-Record exposure/concentration/turnover/fees and funded phase-averaging parity;
-do not attribute lower exposure alone to diversification. Any failed predicate
-rejects this candidate. No grid, timing/seed/threshold rescue or selected block.
-
-Strongest kill: wrong lot exit/duplicated sale, cash injection/borrowing, future
-quantity or admission filter, missing positive price zeroed, mark deletion,
-unfunded phase-average claim, source/seal mismatch or whole-block false success.
-Ask Claude for concise falsification-first contract/result challenges. ONE600s
-CPU2/4GiB including90s cleanup/publication, pinned d6 runtime/RO/networknone;
-no.env/credential/provider/account/order/Task/GPU/fit/weight/holdout calls.
-Source-safe aggregates A, market/private coordinates M, projected15%D:floor.
-Seen/current-listing/nonPIT/revised/raw-action/finality/nominal fractional-cost
-limits remain. Original19 Paper owners/shared basis/pending107 stay independent.
+One Ridge alpha1 and one frozen GRU16/seed202/16epochs/batch256/Adam0.001/MSE,
+max1600updates; TRAIN-only transforms/date-aware weighting. No seed/window/
+threshold/epoch rescue. Native CPU smoke first, then exclusive existing
+PyTorchCUDA appointment. ONE600s family incl90s publication/cleanup,CPU2/8GiB;
+no per-model clock reset. Reuse pinned existing transport/runtime and bounded
+SYN compatibility if needed, not another wrapper platform. Preserve exact
+started/completed/failed fit and lease facts. Freeze before labels/fits.
 
 ## Completion
 
-Frozen scientific row/lineage; native SYN including original fully-supported
-ledger parity, funded phase averaging, own-lot repeated symbols, q/cost/quarter,
-held/exit/funding failures; one finite actual outcome or exact failure; immutable
-source/time/cleanup reader, independent aggregate review, Execution parity and
-Claude challenge. Close canonical non-promoting outcome and preserve spend.
-No automatic rerun or Paper adoption. External focused checks reattach unchanged
-1312-source15935pass22skip clean8 authority; Ruff/three sample Compose checks.
-Changed shared runtime instead requires serial changed-path/fresh clean8.
-Refresh necessary stateboards/HANDOFF/RUNBOOK, verify/commit/push, replace with
-exactly ONE material next objective and continue. No new report/approval system.
+Freeze each model's causal actions once at10bps; recost identical actions at
+5/10/20bps. Controls fixed5/fixed20/cash, same six baskets/calendar.
+Exactly30cells/36strict predicates: each model/2blocks/3costs U>fixed20,U>cash,
+DD<=fixed20. Report fixed5/exposure/turnover/fees descriptively. Any failure
+rejects only that candidate. Missing positive held/exit OPEN/CLOSE, invalid
+source/clock, funding failure or lost mark makes comparison block unavailable,
+never imputed success/operator gate.
+
+Kills: future terminal feature/EVAL target/wrong action or final clock/other-lot
+sale/cash injection/borrowing/support-selected evaluation/changed q or actions
+across costs. Native SYN/parity, Claude contract/result challenges, one finite
+actual outcome, independent source/aggregate/cleanup and canonical non-promoting
+closure. Artifacts A/private tensors M/15%D:floor; no weights/holdout/external
+model download/.env/API/account/order/Task/schedule changes. Seen/current-listing/
+nonPIT/revised/raw-action/finality/nominal fractional-execution limits stay;
+no Paper promotion. GPU is usable, not a permission hold.
+
+Focused plus unchanged1312-source15935pass22skip clean8 reattachment, Ruff/
+three sample Compose. Shared runtime changes require changed-path serial/fresh
+clean8. Refresh current stateboards/HANDOFF/RUNBOOK, verify/commit/push, replace
+with ONE material next objective and continue.

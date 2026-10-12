@@ -13,261 +13,45 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Current Work (2026-10-12 KST)
 
-111 COMPLETE/rejected3b542a4d... at A/research/
-kis-five-session-path-downside-admission-development-v1/integration-evidence.json.
-Science85d8f043.../trial1rowa2a2c3b0... closed by outcome1025fd49....
-Original600s appointment883063da... completed48.1724s; hosta61ab959.../
-result734d35d4.../actual-readf4f974e9....134complete nonempty TRAIN dates,
-1340rows/821loss519nonloss,1CPU logistic2CUDA GRU16 seeds101/202,
-64epochs1344updates0failed.48tables/all130marks/90strict predicates33fail:
-logistic6/GRU10115/GRU20212, all rejected.10bps/side modeled growth DEV/later:
-logistic+.98245%/+.46815%;GRU101-.20409%/-.02095%;GRU202-.11788%/+.10228%.
-Positive logistic blocks do not change its frozen risk/utility rejection.
-35 focused, direct typed Docker CPU SYN3, independent source3/actual2 groups
-pass; Claude contract/result supported-with-limits.490aliases/0sourcecopies,
-host child/container/source/GPUlease closure attested, not OS/raw NAV/DD proof.
-SYN fixture and review projection faults retained; no runtime/refit/refund,
-weights/holdout/winner or Paper changes. Seen/current-listing/nonPIT/raw-action/
-nominal availability, modeled fractional fees, not settled account return.
-GPU free/usable after two actual CUDA fits; no environment or permission hold.
+129 CLOSED/rejected6488f074...:
+D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
+SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
+One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
+48complete cells/48strict checks25true23false0unknown. All12 funded-phase
+parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
 
-112 COMPLETE/prepared-not-deployed52f20612... at A/execution/
-kis-five-session-optional-fee-accounting-consumer-integration-v1/integration-evidence.json.
-Consumerfc46643a.../projection32d3bc77.../release4a477238... reuses exact G98
-innerjobb9f898f6... and G100 typed cumulative-fee bridge. Selection3eceffd6...
-was frozen under infra-r1/delivery-selection.json;113 delivered the Action.
-Parent9 focused pass; independent R3 four native groups pass. R1 full-book
-point binding and R2 negative-test exception-helper faults retained, no actual
-rerun or canonical accounting mock. One d6 network-none Docker SYN292d1ba0...
-completed28.9023s under180s; host818624e7.../result672cb6b7.../planec8a96ce....
-496source aliases/35mounts, source unchanged/child reaped/container absent;
-honest-host evidence, not independent OS/provider proof. Claude plan/result
-supported-with-limits. Original462snapshot/17roles/15host/6Data pins preserved.
-Missing/invalid fees stay unknown, cumulative observations replace, not sum;
-terminal and return fee projection agree. No producer/API/private inspection,
-fees/settled net, research/GPU allocation or19-owner schedule/budget changes.
+Science58bc92e2.../new related family trial1row0d82e256.../
+outcomecdf7bfa4...; priorrelated1800/new600/cumulative2400 retained.
+Source release15ef3f36...; Parent4/Engine4/Data3/Execution3/Validation
+Data2/source4/actual2; actual review8417700d... and Claude contract/result
+supported-with-limits. Source/child/container closure is assumed-honest host,
+not OS/PIT/raw-NAV proof. Seen/current-listing/nonPIT/revised/raw-action/
+finality/nominal fractional-cost limits stay.10bps modeled DEV staggered
++0.9312% versus syncfull+3.9381%; later-.2515% versus+.9349%.
+Different14-anchor population: never reuse128 growth as a matched control.
 
-113 COMPLETE/action-delivered642a1ee0... at A/execution/
-kis-five-session-optional-fee-accounting-selector-delivery-v1/integration-evidence.json.
-Execution release14d76c11.../runner0ac3910d.../PS14009eb6... and R2 Infra
-300016f4.../installer563ea1d8... bind the same-task Action to frozen112
-selection3eceffd6... plus runtime self/Python checks.21 focused pass;
-independent323cda3e...1 native SYN/1 source-metadata group and80448954...
-1 postdelivery metadata group. Plan88c14759.../before3ed7e8a9.../after884b6685...
-task-after22345bd7... link exact source/time/non-Action facts.1Action changed,
-other41unchanged among42installed definitions (includes retired tasks, not42
-finite owners). Original19 scope, five Oct19..23 20:25..35UTC triggers,
-settings/principal/claims/basis/source/image unchanged. FirstOct20 05:25KST.
-No manual Task/due/provider/order run. Real outside PS smoke not_due/0daily
-attempts; original source flag staysfalse, separate exact byte audit passes.
-Honest-host sampled readback, not OS proof. R1 outer-release gap preserved;
-R2 delivered. Parent ordered-map preparation fault fixed by structured
-roundtrip before task effects. Claude supported-with-limits; fees/net unknown.
+127 diagnostic5555cc40... confirmed all59 prior gaps were before ownership.
+128 rejection36ac831c.../33of72 remains unchanged, as do original122/123
+unknown screens/spend. No quote imputation, old-result rewrite or automatic
+repeat. Earlier closures/source faults remain in Gitde0d351 and exact artifacts.
 
-114 COMPLETE/rejectedc52bc213... at A/research/
-kis-five-session-pairwise-preference-development-v1/integration-evidence.json.
-Sciencea9bd3041.../trial1row740be89f.../outcome34a43fb0...; worker78f30e8f.../
-kernel866810af.../bindingbc04cd4f.... Actual runa20bef4a...49.7217s/600,
-host1b0fb14a.../result3aa686a9.../read4df4b519....1CPU0CUDA0failed,
-134completeTRAINdates34304pairs/rows0ties/n_iter26;30tables130marks30checks
-21fail.10bps/side modeled growth DEV+.68207%/later-.25162%; reject, no rescue.
-46focused/4direct typed Docker SYN/source4/actual3 groups. Source final-chain
-SYN unavailable due reviewer hashlib namespace faults; Parent actual chain
-passes, not independent OS/raw NAV/DD proof. Actual reviewer later/view path
-fixture fault retained. Original Claude result unsupported is NOT agreement;
-separate narrow rejection-interpretation supported-with-limits is not model
-support.493aliases/0copies/source/child/container closure. No weights/refit/
-holdout, Paper/19-owner or107 future changes; GPU remains free/usable.
+ONE130: daily20-remaining-reference-exit-development-v1.
+Keep entries and quantities fixed; learn remaining fixed20 reference value
+versus selling at next OPEN. Data owns causal20 clocks/support, Engine one
+Ridge CPU/one GRU CUDA, Execution variable-exit parity, Validation independent
+frozen source then actual review; Parent owns custody/runtime/Git.
+Existing1534 native inputs need no acquisition. Five-age source is NOT a
+drop-in20-clock target. Freeze new target/split/model/cost/compute before labels.
+Related G101-103/G108-109/128-129 lineage is informed, not novelty/replication.
+GPU appointment starts only after native CPU smoke and frozen contract;
+this is executable preparation, not a new operator approval or Paper gate.
 
-115 COMPLETE/prepared-with-limits066268db... at A/research/
-firstrate-paired-spy-qqq-causal-context-preparation-v1/integration-evidence.json.
-Consumera7086504.../planfec65477.../actual95d4bd20...; native18.3614s,
-565485568-byte peak/0labels/fits/GPU.251sessions/3012original episodes/
-2987admitted; held slots7440/3775/3720, paired7440/3770/3720;5DEVpeer gaps
-retained, original keys/admission/target support unchanged.10focused pass;
-independent7c4c1feb...2source/6metadata checks, not raw-input/OS/PIT proof.
-Claude temporal join supported-with-limits. Pytest collection/import harness fault
-retained, corrected before freeze/actual; no runtime retry or new acquisition.
-
-116 COMPLETE/rejected47695df6... at A/research/
-firstrate-paired-information-inventory-value-development-v1/integration-evidence.json.
-Science23646ee5.../trial1rowa46cb16f.../outcome5ac35628...; actuale4bb0c0c...
-completed34.9535s/600, hostc53a059b.../result104a8db8.../read8c435e06....
-Matched1364param GRUs,2CUDA/0CPU/16epochs624updates/7440TRAINstates/0failed;
-identical initialization/sample/batches/shared scaler, real vs masked peer.
-40cells/14checks11fail;3bps net negative both blocks, no peer-value support.
-All2987original admitted retained,5nominal DEVpeer gaps, each arm1fallback.
-24fresh focused/direct Docker SYN4/source4/actual3 independent groups pass.
-Claude contract/result supported-with-limits. Source/child/container/GPUlease
-closure honest-host only, not raw-price/PIT/OS proof. Stale Parent reader pin
-corrected before math, same result/no refit/weights/holdout/Paper change.
-117 COMPLETE/descriptive11c9bf8e... at A/research/
-firstrate-fixed-entry-exit-ceiling-attribution-v1/integration-evidence.json.
-Science32764472.../plan40bbecdc.../actual3a8e287e.../read3f294dcf...;
-native11.1125s/541888512-byte peak/0fits/GPU,48cells/12gaps/334544marks.
-All2987admitted supported. Best futureSELL ceiling positive3bps/nonpositive
-10bps everyblock, only exact mandatory-entry/one-share/H30 modeled scope.
-Positive ceiling not learnability/DD.12fresh focused/source2/actual2/Execution
-actual2, Claude supported-with-limits. Source/input/child honest-host closure;
-no raw replay/PIT/OS proof, registry/GPU/weights/Paper/19-owner change.
-118 COMPLETE/source-SYN31746925... at A/execution/
-context-independent-decision-target-binding-repair-v1/integration-evidence.json.
-Shared contracts sourcecfee0f6a... replaces context-rounding normalize with
-exact formatting/fractional-zero trim. Two unwrapped SYN failures reproduced
-before fix;95new regressions/483serial17.47s/full8 15924pass22skip370.89s,
-JUnit69a0ec1f.../1311-source6257cf79.... Ruff/three sample Compose pass.
-Independent16451e80...3groups8576checks128contexts; Claude supported-with-limits.
-Compatible default28 hashes preserved; old >28-digit rounded SYN receipts
-remain unchanged/rejected, no migration/substitute or installed-source rebind.
-Temporary launcher failures are not authority; direct existing helper passes.
-119 COMPLETE/rejectedcc25a3a8... at A/research/
-firstrate-fixed-h30-entry-profit-veto-development-v1/integration-evidence.json.
-Canonical outcome6ee2d604... closes the single spent attempt. Family
-firstrate-fixed-h30-entry-profit-veto-development-v1, scienceee1869a1.../
-trial1row79cf44be.... Exact native77dfc4eb... completed17.7943s/600,
-host667cb854.../resulta3383542.../Parentread5f96475f....1CPU complete0failed,
-0CUDA/weights/holdout; TRAIN1488/616positive872negative/124nonempty sessions,
-165iterations/TRAINkeep223. Original755DEV/744later/all7support retained.
-32cells12checks4fail: loss/DD reduction versus mandatory/hash passes, cash
-net3/10 fails both blocks. No positive net, threshold/model rescue or Paper
-qualification. Independent source4/final-host2/actual2 groups pass; Claude
-contract/result supported-with-limits. Parent24focused pass; negative-test
-exception fixture failure retained, no refit.20post-run SYN-generated pyc
-files preserved externally; all462original bytes unchanged, exact inventory
-restored. Source/input/child closure honest-host only, not raw/PIT/OS proof.
-Execution actualb2886e27... independently verifies2 aggregate groups;
-strict terminal-reader35b29e92... adds3SYN groups. Existing19owners unchanged;
-GPU usable/free, no CUDA need for this experiment.
-120 COMPLETE/rejectede22a63af... at A/research/
-firstrate-price-scale-invariant-entry-comparison-v1/integration-evidence.json.
-Scienceeaf439c8.../trial1row9997ea45... closes as outcome94bb089e....
-Exact native2c1bb70b... used13.0101s/600; CPU2 complete0failed/0CUDA/weights/
-holdout,40cells12checks10fail. Raw119 reconstruction matches; relative input
-worsens modeled3bps net and DD in BOTH seen blocks. No encoding/threshold/
-architecture rescue or positive-profit/Paper qualification. Parent23fresh
-focused/source4/actual2 groups pass; Execution actual69bd7866...2groups and
-reader10b1e838...3SYN groups. Claude contract/result supported-with-limits.
-Honest-host source/input/child closure, not raw-PnL/PIT/OS proof. Reattached
-unchanged118 authority15924pass22skip, not a fresh full run.19owners unchanged.
-121 COMPLETE/source-bound-delivery581f9f5a... at A/research/
-prospective512-request-backed-publication-repair-v1/integration-evidence.json.
-Dataafec05da.../38SYN repairs physical request custody before publication and
-recovery. Enginecd069007.../60SYN preserves512/context/model/first-slot. Exact
-R4 typed consumers167serial/11new, Executiondcb95bf4.../14external SYN covers
-old374/R3/337 retained-first recovery and both codec source planes. Shadow
-job1621c736... keeps original455CPU/teacher74d, nativecfee separate RO metadata;
-G97job4fe221e3.../control52379215... keeps original462core74d/113f image with
-only four pure-leaf overlays. Shadow retains its separate originald6 image.
-Four same future Actions changed; other37Actions/all41nonActions and due/last/
-exit/settings unchanged. Parentposte9f22deb... verifies987pins and8 exact frozen
-runner/control refs. Original history/basis/slot/volume remain; private retained
-presence UNKNOWN, historical body DECLARED_NOT_REHASHED, runtime audit unchanged.
-No manual Task/provider/model/order run or actual delivery/fill/fees/net proof.
-Fresh clean8 authority15935pass22skip/376.62s/JUnit8096ab0e.../1312sources;
-Ruff/three sample Compose pass. Claude final delivery supported-with-limits.
-Executed builder repin weakness preserved; actual8refs match original sources,
-corrected expected lookup3SYN plus2collisionSYN pass; finalR3source758ff5c9...
-rejects additional proof/alias collisions. Supplement at this goal's parent/
-preparation-fix-supplement.json; independent postdeliveryd41b9aa5... is ONE
-metadata group, not runtime replay. No creator/Apply replay. Read review output
-before dispatching dependent effects, never bundle those steps unconditionally.
-122 CLOSED/technical_failed63a08e1d... at A/research/
-daily-fixed-basket-holding-duration-development-v1/integration-evidence.json.
-Scienceeb17900e.../trial1c6567ae4... closed by outcome3566a195.... One600s
-appointment used20.599115s, seven fit/update counters0; no result cells/checks.
-Hosta1456ec7.../failure20ce1be6.../fixed-readce2bb1fe... bind source/child/
-container closure. Scientific screen, first cause and runtime versions UNKNOWN,
-not rejection. Independent actuale2f279a4... verifies two groups; Claude result
-888a7585... supported-with-limits. Source/SYN55 author groups, direct Docker3,
-independent ledger7/source2, Engine diagnosis4/Execution diagnosis5; not raw/OS
-proof. Native Panel dates versus Data ISO strings reproduced; string-valued
-SYN masked the ABI. Frozen sources unchanged. Failure-reader7cd2c860.../2SYN
-repairs only offline interpretation. Parent canonical append succeeded before
-DTO datetime serialization failed; original partial pointer retained, existing
-signed row reattached in canonical-outcome-r1.json with no registry rewrite.
-Never replay122 creators/appointment or refund it. Supplementary weekly serial
-15935pass22skip/2312s matches primary clean8; its scratch retained after denied
-cleanup, not helper authority. Shared1312 sources unchanged/Ruff/3Compose pass.
-123 CLOSED/input_unavailable4c5cde54... at A/research/
-daily-fixed-basket-holding-duration-technical-reexecution-v1/integration-evidence.json.
-Science9526dde8.../SAMEfamily trial2row174d7ce2.../outcomeccf9194a.... Native-date
-Data1534e2da.../5SYN, unchanged kernel242e92ce.../7+1nativeSYN, worker9b7fdea...
-/9SYN and Infra6e96c548.../4mocks. Network-none Docker4 direct SYN groups incl
-full native512/18/390/48/72coupling,17.035889s/source/child/container closed.
-Actuale147b707... used28.623165s/600/0fits; host05c696d3.../result34e6f4e.../
-read86c46882.... All18 positive prior baskets/180 ranked entry OPENs supported;
-required16650 own-block ranked-union CLOSEs have59 missing/union108. All48cells/
-72checks unavailable/unknown, no metrics/scientific rejection or profit claim.
-Source/child/container honest-host links closed, not raw-price/OS/PIT proof.
-Independent parity2/source3/actual2 groups; reviewer source-pins/files lookup
-fault retained, final source supplementfe14774a... separate. Claude contract/
-result supported-with-limits. Unchanged1312-source15935pass22skip authority,
-Ruff/3Compose reattached. Original122600s remains spent, cumulative1200; no
-auto-third attempt, source/cost/arm rescue, fits/GPU/weights/holdout/Paper change.
-124 CLOSED/technical_failure961731b0... at A/research/
-daily-fixed-basket-selected-union-gap-recovery-v1/integration-evidence.json.
-ONE600s Data attemptca3e391a... saved return9f29c1c2... says preflight failure,
-audit_exit null/collector_attempted false. No immutable host receipt or point
-plan; actual elapsed/source stability/recovery remain unknown, not recovered0
-or model rejection. Reader initially assumed host receipt/KeyError; separate
-saved-return reader and independent2groups471a8c3e... preserve this distinction.
-Source contradiction: inherited /calendar/calendar.json role=source violates
-transport .py guard189; consistent with preflight, not captured first-cause
-trace. DataR2 collector8f272584... fixes independently reproduced unhashable
-exception sanitizer; originalR1 finding preserved. Data5/helper3/Infra4/Parent5
-SYN groups and independent point3/Data4/collector3 pass; Claude contract/result
-supported-with-limits. No provider recovery, fit/GPU/science/Paper change.
-125 CLOSED/technical_failureb8d68ed7... at A/research/
-daily-fixed-basket-selected-union-gap-technical-recovery-v1/integration-evidence.json.
-Calendar role corrected, exact Dockerbdffff20... audit exited1/intake phase_failed;
-host9e713b01.../plan3c0f28db...,12.445976s/600/source/child/container closed.
-No collector attempt or point plan; recovery and actual first cause unknown,
-not scientific rejection. Adjacent safe failure summary is not host-hashed
-first-cause trace. Parent6SYN/source2/actual2a807fdf2... and Claude limits pass.
-Proven source ABI mismatch: native loader check(publication=True) versus
-zero-argument proxy. DataR3 releasec45b4020.../offline44522938.../7SYN accepts
-legacy flag while retaining work deadline; source-safe failure category/SHA/
-line only, never args/locals/private paths. R1/R2 and both Data attempts kept.
-126 CLOSED/scoped_source_exhausted519d016c... at A/research/
-daily-fixed-basket-selected-union-intake-abi-recovery-v1/integration-evidence.json.
-Run735f9126.../hostdc9ace83.../plan673175f9...156.728278s/600/audit0/native0/
-all cleanup/source closed. Original18 hashes/59plan verified; retained0,
-59accepted pages/anchors source_exhausted,0recovered/0conflicts/59unresolved,
-next_due null. View14472424... is partial/CLOSE-only, not Bar/PIT/finality/
-global KIS reach proof. R3source2a4aa9fb4.../actual2f33c2883.../Parent6SYN/
-Claude limits pass. No retry/fit/GPU/science/19-owner changes. Resolver
-a29e212a.../3SYN/release8cc3a85a... is source-only, not actual integration.
-127 COMPLETE/diagnostic-only5555cc40... at A/research/
-daily-fixed-basket-held-position-support-attribution-v1/integration-evidence.json.
-Native9ae9fdf3...18.627197s/600/host73b5b50d.../resultb74f2ae5...; source,
-child/container closed/no collector. Same18 seals/180OPENs/390marks; exact59
-gaps ALL before first positive entry, held/exit requirements0 across9cases.
-Fixed reference10bps q, cost/quarter masks consistent; no prices imputed,
-48cells72checks/payoffs/fits/GPU/old-outcome rewrite or Paper qualification.
-Engine4/Data2/Execution2/Parent4 SYN, independent2groups/e2fe8f94..., Claude
-contract/result supported-with-limits. Unchanged1312-source15935/22 authority
-reattached; Ruff/three sample Compose pass. Honest-host, not OS/PIT proof.
-128 COMPLETE/rejected36ac831c... at A/research/
-daily-held-only-duration-replay-development-v1/integration-evidence.json.
-Scienceaa9d0c7e.../SAMEfamilytrial3row21e12677.../outcome5fd2dbdc...;
-prior1200/new600/cumulative1800 retained. Native7eda3a22...21.927221s/600,
-hostf52faca8.../result45381c6c.../source/child/container closed/no collector.
-All48cells/390marks/18seals/180OPENs complete;72strict checks39true33false,
-0unknown, rejected. At10bps modeled growth fixed5 DEV+1.9329%/later+0.6530%,
-carry20+2.5632%/+1.3285%, quarter+0.6408%/+0.3321%. Carry20DD3.4304%/
-0.5981% versus fixed5 0.4911%/0.2627%; positive blocks do not override failure.
-Engine4/Parent4/native Docker3/Data3 source checks, independent source4/actual2
-a8d5f40d... and Execution3/2fa9add3... pass; Claude contract/result limits.
-Reviewer invalid-cap funding fixture retained/corrected, not a market fault.
-No fits/GPU/weights/holdout, old122/123 repair or Paper promotion; seen/nonPIT/
-revised/current-listing/raw-action/nominal fractional-cost limitations remain.
-ONE129 daily-fixed20-entry-vintage-diversification-development-v1: four q/4
-lots phased0/5/10/15 sessions, common maturity-only14 anchors/full390marks,
-funded shared cash/own exits; compare synchronized full/quarter/cash controls.
-G124 sourcebe19... has full-union guard: preserve it, version held-only ledger.
-Fresh source/science contract needed; not a duration-threshold/model rescue.
-Quarter-vintage helperbe19eefe.../4SYN/independent3 is source-only, not a campaign
-or numerical-ready/GPU allocation.107/all original19 Paper owners independent.
+Original19 Paper owners/shared10%basis/pending107/unknown other custody stay
+independent. No credential/provider/account/order/Task call in127-129.
+Their exact owned opportunities and recovery facts remain below; absence of
+fresh evidence is unknown, not zero or an instruction to invoke a worker.
+Next direction/projection simplification Claude supported-with-limits:
+D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/claude-next/claude-dual-result-outcome.json.
 
 ## Retained Preparations And Closures
 

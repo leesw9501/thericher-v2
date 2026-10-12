@@ -6,119 +6,38 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-114 COMPLETE/rejectedc52bc213... at A/research/
-kis-five-session-pairwise-preference-development-v1/integration-evidence.json.
-Kernel866810af.../releaseee867ac7.../sciencea9bd3041.../trial1row740be89f...,
-outcome34a43fb0...; shared linear difference loss C1/no intercept/one CPU fit.
-Original600s run49.7217s,134complete dates34304pairs/rows0ties/n_iter26,
-1CPU0CUDA0failed;30tables130marks30checks21fail.10bps/side modeled growth
-DEV+.68207%/later-.25162%; weaker than analytical control, no model adoption.
-46focused/source4/actual3/typed Docker SYN4; source final-chain SYN remains
-unverified reviewer namespace, Parent actual chain passes. Claude original
-result unsupported preserved; narrow rejection interpretation supported-with-
-limits is NOT model agreement. Seen/nonPIT/revised/raw-action/nominal limits,
-no new rank-target novelty/refit/depth/weights/holdout/Paper change.
-115 COMPLETE/prepared066268db...; contracta7086504.../releasee9779cc4...,
-same36M5rows180min/36x10ownpeer/3state. Original251sessions/2987admitted,
-5DEVpeer gaps retained;10focused/independent2source6metadata,0fits/GPU.
-116 COMPLETE/rejected47695df6... at A/research/
-firstrate-paired-information-inventory-value-development-v1/integration-evidence.json.
-Science23646ee5.../trial1a46cb16f.../outcome5ac35628..., actual104a8db8.../
-read8c435e06....2matched GRU CUDA fits/16epochs624updates/7440states,
-34.9535s of600/0CPU/0failed,40cells14checks11fail.3bps net bothnegative,
-joint weaker than masked; no peer-information support or seed/architecture
-rescue. Same original population/pi0 fallback,5nominal DEVgaps retained.
-24fresh focused/direct Docker SYN4/source4/actual3 independent groups;
-Claude supported-with-limits, source/child/container/GPUlease closure attested.
-No weights/holdout/Paper promotion. GPU free after actual training.
-117 COMPLETE/descriptive11c9bf8e...;48cells/12gaps/all2987admitted,
-11.1125s/541888512-byte peak/0fits/GPU. Future ceiling positive3bps/nonpositive
-10bps all3blocks only exact mandatory-entry/one-share/H30 exit-only scope,
-not all trading/DL/Paper. Positive ceiling not learnability/DD.12fresh focused/
-source2/actual2/Execution actual2, Claude supported-with-limits. No model/
-registry/Paper promotion.118 COMPLETE/source-SYN31746925..., sourcecfee0f6a...
-repairs precision2 target identity;95new regressions/full15924pass22skip.
-119 COMPLETE/rejectedcc25a3a8.../outcome6ee2d604.... Scienceee1869a1.../
-row79cf44be... preceded oneCPU fit/0CUDA;17.7943s/600/0failed, no weights.
-Kernel6a66744d.../worker53f1c2b.../release5e90ae0a..., Parentread5f96475f....
-TRAIN1488/616positive872negative/124nonempty sessions/165iterations,
-TRAINparticipation223/1488; original755DEV/744later keys and all7marks retained.
-32cells/12checks4fail: fixed/hash loss and DD comparisons pass, cash-net3/10
-fails both blocks. Primary3 net DEV-21.7248/later-18.8004 modeled one-share,
-not positive profit/NAV/Paper. No threshold/seed/architecture rescue or117oracle.
-24focused/source4/final-host2/actual2 groups, Claude contract/result supported-
-with-limits. Controlled reexamination, not novelty or fresh replication.
-120 COMPLETE/rejectede22a63af.../outcome94bb089e...; scienceeaf439c8.../
-row9997ea45.... Matched raw/relative36x5 Logistic fits CPU2/0CUDA0failed,
-13.0101s/600,40cells12checks10fail. Raw119 reconstruction exact; relative
-net/DD worse both3bps blocks. No geometry/threshold/model rescue, novelty,
-stationarity, profitable-model or Paper claim. Parent23fresh focused,
-independent source4/actual2, Claude contract/result supported-with-limits.
-121 COMPLETE/source-bound-delivery581f9f5a...; Enginecd069007.../60SYN preserves
-original512/context/teacher/scaler/model/first-slot and CPU455 at74d. Native
-cfee is separate RO metadata, not same-plane equivalence. Four future Actions
-updated, no inference/fits/GPU or actual Paper result. Fresh15935/22 authority.
-122 CLOSED/technical_failed63a08e1d.../outcome3566a195..., one600s appointment
-used20.599115s with0fits; no scientific cells/checks or rejection. First cause
-UNKNOWN. Enginefb6dcd04.../4SYN reproduces native date support mismatch; old
-string-valued Panel fixture masked it. Original module242e92ce... unchanged.
-123 CLOSED/input_unavailable4c5cde54.../outcomeccf9194a.... SAMEfamilytrial2
-science9526dde8.../row174d7ce2...,28.623165s/600/0fits. NativeDTO repair works;
-18positive baskets/all180opens supported,59missing/16650CLOSEs/union108.
-48cells/72checks unavailable, no metrics/rejection/third automatic retry.
-Cumulative1200 allocated seconds retains original122 failure.124 Data attempt
-closed technical preflight961731b0... without a point plan/recovery/fit/metric.
-125 calendar role correction reached Docker but intake failed12.445976s/600,
-host9e713b01.../closureb8d68ed7..., no point plan/recovery/metric.126 R3 intake
-passed;59accepted pages recovered0/59, closure519d016c.../156.728278s, not
-model rejection or global hold.127 closed5555cc40.../actual18.627197s:
-all59 missing before first positive entry, held/exit required0 across9cases,
-same18seals/180OPENs/390marks/reference10q. Engine4/Data2/Execution2/Parent4
-SYN/independent2groups/e2fe8f94.../Claude limits; no payoff/screens/GPU.
-Full-union outcomes/spend unchanged.128 source preparation under A/research/
-daily-held-only-duration-replay-development-v1: fresh SAMEfamily trial3 held-
-only consumption, causal q/cash/fees/390marks and original48cells72checks.
-Freeze before numeric work; positive held/exit missing and funding fail remain
-unavailable, no price fabrication/winner/Paper claim. Resolvera29e212a.../
-3SYN/release8cc3a85a... source-only, no qualification/science/GPU allocation.
-Source-only consumption receipt935129da...: existing analytical marks/exits
-may use explicit CLOSE-only resolver with old priors/entry OPENs unchanged;
-conflicting duplicates/valid-original replacement unavailable. Not wired or
-data-qualified; no raw reads, fit, replay, campaign or GPU assignment.
-124 prior-seal helper26495427.../3SYN plus independent3groups; exact18-basket
-hashes must match before private59 plan. Quarter-vintage sourcebe19eefe.../
-release84a56c24... has4SYN and Execution3 independent groups3da94f0f.... Four
-separate q/4 lots/shared cash/own CLOSE(e+19), same-symbol lot custody and
-funding fail unavailable. This is source-only preparation, not a campaign,
-36-cell freeze, actual union support, performance claim or GPU allocation.
-Assignment expired at124 boundary; consume only under a fresh Engine package.
-Original scientific reference proposalb1d1e0e...
-and geometry6ddb5106... are source-ready, actual18-basket/390-mark support
-unverified. Prior-seal unchanged rule top10 basket; fixed5 CLOSE(e+4), carry20
-CLOSE(e+19), quarter q/4 and cash, full NAV/cash tails, costs5/10/20bps per side.
-Weights/ranks/quarter scaling seal before OPEN; q binds AT OPEN, stays fixed
-afterward. Require positive exposure in all18 baskets, not just selected counts.
-48cells/72checks frozen before outcomes; any failure rejects, no horizon/seed/
-architecture rescue. Small typed20-session ledger, never FiveSessionFrame
-backdating. CPU600s including90s publication reserve/2threads/4GiB,0fits/GPU/
-weights/holdout. Seen/current-listing/nonPIT/raw-action/nominal limitations
-remain; quarter matches planned share-session exposure only. Future107 and
-original Paper authority remain independent.
+129 CLOSED/rejected6488f074...:
+D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
+SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
+One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
+48complete cells/48strict checks25true23false0unknown. All12 funded-phase
+parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
 
-128 COMPLETE/rejected36ac831c... at A/research/
-daily-held-only-duration-replay-development-v1; scienceaa9d0c7e.../trial3
-row21e12677.../outcome5fd2dbdc..., prior1200/new600/cumulative1800 retained.
-Native21.927221s,48complete cells/390marks/72checks33fail0unknown/0fits.
-10bps modeled DEV/later growth fixed5+1.9329%/+0.6530%, carry20+2.5632%/
-+1.3285%,quarter+0.6408%/+0.3321%; carry20DD3.4304%/0.5981% versus
-fixed5 0.4911%/0.2627%. Positive blocks do not override frozen risk/utility
-rejection or create a winner. Independent source4/actual2a8d5f40d.../
-Execution3/2fa9add3.../native Docker3, Claude limits; no fresh/Paper claim.
-129 develops SOURCE-only four fixed20 q/4 entry vintages0/5/10/15 with shared
-cash and own-lot exits, common maturity14anchors/56baskets/full390marks;
-controls synchronized full20/quarter20/cash, same costs/reference q.
-Existing G124be19... guard still demands full union; use versioned held-only
-ledger, keep original unchanged. No new numerical allocation until contract.
+Release15ef3f36.../kernel5e868954.../compositione5aa1fd6...; science58bc92e2...,
+row0d82e256.../outcomecdf7bfa4.... Exactly56 prior-only seals before payoffs;
+q/4 frozen at entry/ref10bps, ownentry+19 exits and rolling shared cash.
+10bps modeled DEV staggered growth+.9312%/DD1.8293% versus full+3.9381%/
+DD3.4304%; later-.2515%/DD.6684% versus full+.9349%/DD.1700%.
+Reject timing candidate; lower exposure/risk in one block is not alpha.
+Independent source4/actual2/Execution3 and Claude limits pass. Original
+be19 full-union source,122/123/128 outcomes and all spent allocations stay.
+
+ONE130: daily20-remaining-reference-exit-development-v1.
+Keep entries and quantities fixed; learn remaining fixed20 reference value
+versus selling at next OPEN. Data owns causal20 clocks/support, Engine one
+Ridge CPU/one GRU CUDA, Execution variable-exit parity, Validation independent
+frozen source then actual review; Parent owns custody/runtime/Git.
+Existing1534 native inputs need no acquisition. Five-age source is NOT a
+drop-in20-clock target. Freeze new target/split/model/cost/compute before labels.
+Related G101-103/G108-109/128-129 lineage is informed, not novelty/replication.
+GPU appointment starts only after native CPU smoke and frozen contract;
+this is executable preparation, not a new operator approval or Paper gate.
+
+Fixed21-bar causal context and held state, TRAIN-only target at CLOSE t:
+net terminalCLOSE(entry+19) minus net nextOPEN(t+1), normalized by entryOPEN.
+No future-max/optimal-Q claim or same-CLOSE exit. Preserve all evaluation
+marks/held-price requirements. No new seed/window rescue or ensemble choice.
+Older tracked models, queues and existing teacher/Paper owners remain below.
 
 ## Retained Evidence
 

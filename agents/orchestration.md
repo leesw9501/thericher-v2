@@ -15,18 +15,20 @@ closed; original122 failed600 remains spent, cumulative1200/no third auto run.
 native18.627197s/390marks/0fits; no economic/Paper or old-outcome repair.
 128 CLOSED/rejected36ac831c...:48complete cells/72checks33fail0unknown,
 21.927221s/0fits, no old repair/Paper claim; SAMEfamilytrial3/cumulative1800.
-ONE129: daily-fixed20-entry-vintage-diversification-development-v1; no approval wait.
+129 CLOSED/rejected6488f074.../outcomecdf7bfa4...:48cells48checks23fail0unknown,
+28.180085s/56seals560OPENs390marks/12funded grades/0fits, related2400 spent.
+ONE130: daily20-remaining-reference-exit-development-v1; no approval wait.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent |127 pushed9d544b2;128 closure/129 source preparation, sole Git owner. |
+| Git/integration | Parent |127 pushed9d544b2;128 pushedde0d351;129 closed/130 direction, sole Git owner. |
 | Verification | Parent |Unchanged1312-source clean8 authority15935pass22skip; same supplementary serial2312s, retained scratch not helper authority. |
-| Data |129 source preparation |Unchanged512/800/71/390marks; common maturity14anchors/56phase baskets, no new acquisition or actual support proof. |
-| Engine |129 source preparation |Fixed20 four q/4 lots0/5/10/15; oldbe19 full-union guard needs versioned held-only ledger. Fresh contract before numerical work. |
+| Data |130 source ready to assign |Existing1534panels/254fcontext; new20-clock target needed, no acquisition. Freeze TRAIN/evaluation maturity before labels. |
+| Engine |130 source ready to assign |One CPU Ridge/one GRU CUDA remaining-reference20 target; new informed contract, not five-age drop-in or automatic depth. |
 | Infra |126 actual closed |156.728278s/audit0/native0/all cleanup/source closed, existing frozen transport reusable/no new framework. |
-| Execution |128 parity complete |2fa9add3.../3SYN; exact ledger/q/cost/funding/positive pre-sale price; modeled execution only/no19-owner changes. |
-| Validation |128 handoff complete |Source4/actual2/a8d5f40d... verify48cells72checks33fail/SCI and runtime links; no raw-NAV/OS proof. |
-| GPU |Steward / free |Usable; no CUDA role in zero-fit holding-duration question. |
+| Execution |129 parity complete |1eed050e.../3SYN, assumed nominal execution; next130 nextOPEN/finalCLOSE/cash parity. No19-owner changes. |
+| Validation |129 complete |Source4a3ba8431.../actual2/8417700d...; authenticate23fails/12producer grades, not raw NAV/OS proof. |
+| GPU |Steward / available |No CUDA in129;130 frozen campaign plus CPU smoke precedes one exclusive existing PyTorchCUDA appointment. |
 | Paper due |Existing owners |Oct12 22:30KST entry/original exits and recovery/shared basis unchanged. |
 | Accounting due |Existing owner |FirstOct13 05:25KST; actual captures unknown. |
 | Shadow/successor due |Existing owners |Oct16 shadow/Oct19 entry and finite accounting unchanged. |
@@ -35,26 +37,16 @@ ONE129: daily-fixed20-entry-vintage-diversification-development-v1; no approval 
 
 ## Bottleneck And Reversible Improvement
 
-Native-date coupling repaired/tested, exact Docker4 SYN groups pass. Concrete
-current bottleneck: all180entryopens supported but59/16650 required union CLOSEs
-missing. Improvement: target the exact gaps and relevant retained chunks before
-any new market fetch; no broad512 rescan/sweep, window/drop/fallback rescue.
-New CLOSE-only evidence keeps point grade, not fabricated OHLCV equivalence.
-Prior family remains closed/unavailable; data recovery is useful future coverage,
-not a global research/Paper gate or auto-third evaluation. Keep raw coordinates
-private and old bytes intact. Independent source preparation and due owners
-continue; worker retry next_due never becomes foreground sleep.
-
-127 native attribution confirms all59 gaps precede positive ownership. Current
-bottleneck: full-union pricing contract, not these actual holding/exit prices.
-Reversible improvement: NEW held-only pricing replay with causal q, exit
-pricing before sale, rolling cash and full390 marks. Freeze explicit SAMEfamily
-trial3/600 before numeric work, retaining prior1200; no future selection,
-automatic retry, old rewrite or global research/Paper hold. Economic completeness
-is now complete but rejected33of72; positive held/exit missing and insufficient
-cash remain kills. Next129 separates entry timing diversification from simple
-exposure reduction using funded lots and synchronized full/quarter controls.
-Reuse frozen native intake/transport, focused existing parity and unchanged
-shared-source authority; avoid a new host/validation platform or repeated full
-suite for external-only work. Actual CPU21.9s versus much longer source/review
-integration is the current feedback bottleneck; keep reviews concrete/bounded.
+Economic comparisons now complete; blind20hold and entry timing rejected.
+Current bottleneck is causal20 reference-target preparation, not market/API
+authority or an external wait.130 fixes entries and learns remaining value,
+with named CPU/CUDA fits rather than another timing tweak. Source roles run
+in parallel. Reversible improvement from129: authored/frozen source tests and
+Claude contract allow bounded exploratory compute alongside disjoint readonly
+independent SYN; final claims still require all source/actual/Execution reviews.
+Actual12928.2s versus source assembly motivates reuse of stable intake/transport
+and changed-delta review, not a new platform or repeated full unchanged suite.
+Current first sections now project current ownership; superseded histories live
+in Git/exact artifacts. Preserve all failures/spend and19Paper owners.
+Claude direction/simplification review_received/supported-with-limits at
+D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/claude-next/claude-dual-result-outcome.json.

@@ -6,107 +6,28 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 
 ## Current Package
 
-111 CLOSED/rejected3b542a4d...: validator4b8b9ae2.../8SYN authenticates48tables/
-130marks90checks33fail,1CPU2CUDA64epochs1344updates. Actual2 independent
-aggregate/link groups pass at111/execution-actual-review-r1/receipt.json;
-retained full-ledger-versus-projection review fault, no runtime/fit rerun.
-Not independent review of own validator code, raw NAV/DD or OS proof.
-112 COMPLETE/prepared-not-deployed52f20612... at A/execution/
-kis-five-session-optional-fee-accounting-consumer-integration-v1.
-Consumerfc46643a.../projection32d3bc77.../release4a477238...; selection3eceffd6....
-9 focused/independent4 pass; d6 Docker SYN28.90s/host818624e7.../result672cb6b7...
-with source/child/container closure. Reviewer R1/R2 faults retained and scoped
-bindings corrected only. Original inner job/snapshot/archive claims preserved.
-Missing fee stays PnL-only unknown, not zero/settled net/flatness/permission.
-Actual fee producer/fees/net unobserved; no private/provider/19-owner changes.
-113 COMPLETE/action-delivered642a1ee0... at A/execution/
-kis-five-session-optional-fee-accounting-selector-delivery-v1. Runner0ac3910d.../
-release14d76c11... and R2 installer563ea1d8.../release300016f4... frozen.
-21 focused/source2/postdelivery1 groups pass (1 native SYN/2 metadata groups).
-Same-task Action changed1/other41 definitions unchanged; settings/triggers/
-claims/basis/image unchanged, first due Oct20 05:25KST. No manual Task/due/
-provider/order call or actual fees/net; honest-host readback only.
-114 COMPLETE/rejectedc52bc213...; reader36ffb7a0.../release8bf5979a... checks
-30tables130marks30predicates21fail/1CPU0CUDA0failed/134dates34304pairs,
-n_iter26. Actual1a8275b0...3 independent aggregate/chain/provenance groups;
-source4 groups, final source-chain SYN unverified reviewer namespace. Parent
-actual source/input/child/container checks pass, not raw NAV/DD/OS proof.
-Original Claude result unsupported and narrow rejection-interpretation review
-remain distinct; never infer model agreement. Fixed quantities/fees/OPENe+5
-exit reused unchanged. No refit, actual Paper/19-owner/basis/custody change.
-115 COMPLETE/prepared066268db...; invariants69bc755f.../releasea7fbe696...,
-original3012records/2987admitted and7OPEN support retained,5DEVpeer gaps.
-10focused/independent7c4c1feb...2source6metadata checks, no PnL or broker claim.
-116 COMPLETE/rejected47695df6...; reader73a7e7b8.../release58bbc976...,
-actual read8c435e06... verifies40cells14checks11fail/2CUDA16epochs624updates.
-Original population/one-share all7OPEN marks/costs/fallback retained;24fresh
-focused/source4/actual3 independent groups. Host source/child/container/GPUlease
-closure is not raw-price/OS proof. Stale Parent reader pin fixed without refit.
-117 COMPLETE/descriptive11c9bf8e...; parity410a30ce.../release7ed92f13...,
-actuala4a6cadc...2groups verifies48cells/12gaps/all7marks/fees/BUYSELLonce,
-unchanged causal recost; oracle cost-specific exits diagnostic, not DD bound.
-12fresh focused/source2/Validation actual2.118 COMPLETE/source-SYN31746925...;
-prefault2 reproduced;135stock tests/24new plus483serial/fresh full15924pass22skip.
-Exact target refs context-independent, compatible default28 stable;
-rounded long legacy SYN refs unchanged/rejected, no silent rebind.
-Independent3groups8576checks/Claude supported-with-limits. No installed
-worker rebind/substitute intent.119 COMPLETE/rejectedcc25a3a8...;
-canonical fixedO6 paritya4e63526.../releasef4bf6433... consumes
-original all7 support even cash, frozen masks recost1/3/5/10 unchanged.
-Exact host667cb854.../resulta3383542.../Parentread5f96475f...:32cells12checks,
-4cash-net failures,1CPU/0CUDA/no refit. Independent2 aggregate groups pass;
-own actualb2886e27...2groups/reader35b29e92...3SYN groups pass. Modeled one-share fees/
-net/DD are not broker fees, actual holdings, settled cash or account NAV.
-120 COMPLETE/rejectede22a63af...; parityeaa7c13a.../release9fc4e53e...,
-strict reader10b1e838...3SYN and actual69bd7866...2aggregate groups pass.
-40cells12checks10fail/CPU2 completed, raw119 reconstruction exact; relative
-net/DD worse both blocks. No independent raw-PnL/PIT/OS proof.
-121 COMPLETE/source-bound-delivery581f9f5a...; dcb95bf4... external14SYN and
-tracked167serial/11new preserve exact15-field/schema1 R4 input plus old374/R3/
-337 retained-first recovery. Unknown identity never substitutes. G97 newjob
-4fe221e3.../control52379215..., original462core74d/113f image, four pure leaves
-only. Four original future Actions updated, other37/all41nonActions unchanged;
-private slot/volume/shared basis/history unchanged. Private presence UNKNOWN;
-historical descriptor DECLARED_NOT_REHASHED, original runtime byte audit kept.
-No manual Task/KIS/model/order or actual reconciliation/fill/fees/net claim.
-122 CLOSED/technical_failed63a08e1d...; strict readce2bb1fe.../independent2
-groups keep scientific screen/runtime/first cause unknown and zero ledger
-separate. New read-only inspector7cd2c860.../2SYN fixes failure versions only.
-Execution13fc68ee.../5SYN reproduces source date ABI fault, not actual cause.
-123 CLOSED/input_unavailable4c5cde54...; parityf56d8ca3.../2SYN and typed
-read86c46882... preserve48cells72checks UNKNOWN,59missingCLOSEs,0fit ledger.
-Actual/source/child/container closure honest-host, not raw-PnL/OS proof.
-124 closed technical preflight961731b0...; no point plan/immutable host receipt
-or recovered values. Independent saved-return2groups do not prove OS custody.
-CollectorR1 P2 unhashable exception finding5328e6e6... fixed by DataR2 exact
-str guard8f272584...; independent3groups3f72a46b... pass, old finding preserved.
-No account/order/live inspection/calls or19-owner/basis changes.125 calendar
-role fix reached Docker; audit1/12.445976s/no collector/point plan, exact host
-9e713b01.../closureb8d68ed7..., actual cause/recovery unknown.126 R3 Data ABI
-and safe tracing passed126: hostdc9ace83.../closure519d016c...156.728278s/
-audit0/native0/all cleanup/source closed.59accepted pages,0recovered/59missing,
-CLOSE-only/PITfinality unknown/not Paper grade. No account/order/custody/PnL
-inspection or19-owner/basis change.127 closed5555cc40...: same original q
-reference10/quarter/cost mask, all59 before entry/required0,18.627197s/390marks.
-Exit price remains needed BEFORE sale, not final-flat inventory. Independent
-2groups/e2fe8f94...; no economic/Paper claim or original replay/result change.
-128 source parityd3c26ae0.../2SYN recommends positive pre-sale holdings only;
-preserve180ranked OPEN checks, rolling cash/fees/funding failure/full390marks.
-No reset/borrowing/reinvestment or q resizing; new scientific contract needed.
-128 COMPLETE/rejected36ac831c...; new kernel f5f3100c.../48complete cells/
-390marks/72checks33fail,21.927221s/source/child/container closure. Independent
-Execution3/2fa9add3... attests exact fully supported SYN ledger parity/costs/
-q0/positive pre-sale price/funding; Validation source4/actual2/a8d5f40d....
-Modeled fractional OPEN/CLOSE and fees, not broker latency/observed fees/cash.
-Original19/basis/pending107 unchanged; no account/order/Task/private inspection.
-129 SOURCE lot-parity preparation only; own-lot exits and pooled funded cash,
-no new capital/borrow/reset or global-flat price mask. Actual support unknown.
-Quarter-vintage sourcebe19eefe... independently3SYN3da94f0f... tests own-lot
-sell binding/shared cash/no reset/funding failure, not actual profitability.
-Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),
-quarter q/4, full marked NAV/cash tails and fees once per actual BUY/SELL leg.
-Weights/ranks seal before OPEN, q binds AT OPEN and is immutable afterward;
-entry-OPEN mutation may change q, later mutations may not. No pre-OPEN q claim.
+129 CLOSED/rejected6488f074...:
+D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
+SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
+One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
+48complete cells/48strict checks25true23false0unknown. All12 funded-phase
+parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+
+Independent final new-kernel review:
+D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/execution-parity-r1/source-review.json
+SHA1eed050e14551a2802795547a261415da93bdca29b7fbf3c007f6290e97cdd01.
+3SYN/Ruff; original fully-supported be19 parity at5/10/20, q/cost/quarter,
+own-lot repeats, atomic funding, positive held/exit failures and funded bank
+sum/unfunded counterexample pass. This is modeled execution semantics, not
+independent raw performance or broker proof. Actual aggregate8417700d.../
+2groups verifies exact controls/fees/clock/source chain, not raw path sums.
+
+Next130: attest fixed entry q, sell-after-decision nextOPEN, own mandatory
+CLOSE(entry+19), fee/cash/funding semantics and full cash tails; five-age
+adapters cannot silently handle20. Do not select/train models or edit broker
+submission. Original19 owners/sharedbasis/pending107 unchanged. Actual fills,
+fees/settled cash/net remain unknown until exact owned evidence is reattached.
+Older package history lives in Gitde0d351/exact artifacts; custody below applies.
 
 ## Retained Evidence
 
