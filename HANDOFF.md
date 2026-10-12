@@ -204,12 +204,26 @@ fault retained, final source supplementfe14774a... separate. Claude contract/
 result supported-with-limits. Unchanged1312-source15935pass22skip authority,
 Ruff/3Compose reattached. Original122600s remains spent, cumulative1200; no
 auto-third attempt, source/cost/arm rescue, fits/GPU/weights/holdout/Paper change.
-ONE124: daily-fixed-basket-selected-union-gap-recovery-v1. Datab4b0be35...
-source proposal selects exact59 point planning/retained-first audit, then only
-unresolved read-only KIS market pages if useful, new D: cache/point view. No
-old rewrites/fallback/Bar imputation or holding-family rerun. Current proposal
-for staggered vintages is source-only, not numerical-ready or CUDA allocation.
-Pending107/all original Paper owners remain independent; no market wait.
+124 CLOSED/technical_failure961731b0... at A/research/
+daily-fixed-basket-selected-union-gap-recovery-v1/integration-evidence.json.
+ONE600s Data attemptca3e391a... saved return9f29c1c2... says preflight failure,
+audit_exit null/collector_attempted false. No immutable host receipt or point
+plan; actual elapsed/source stability/recovery remain unknown, not recovered0
+or model rejection. Reader initially assumed host receipt/KeyError; separate
+saved-return reader and independent2groups471a8c3e... preserve this distinction.
+Source contradiction: inherited /calendar/calendar.json role=source violates
+transport .py guard189; consistent with preflight, not captured first-cause
+trace. DataR2 collector8f272584... fixes independently reproduced unhashable
+exception sanitizer; originalR1 finding preserved. Data5/helper3/Infra4/Parent5
+SYN groups and independent point3/Data4/collector3 pass; Claude contract/result
+supported-with-limits. No provider recovery, fit/GPU/science/Paper change.
+ONE125 daily-fixed-basket-selected-union-gap-technical-recovery-v1: preserve
+124 attempt, classify the exact calendar transport ref as control with original
+bytes/hash/source pins, then a new finite Data-only600s attempt. Reuse frozen
+transport/source/cache roots, fresh UUID/cursor only; no clock refund or auto
+third holding-family trial. Unchanged1312-source authority/Ruff/3Compose pass.
+Quarter-vintage helperbe19eefe.../4SYN/independent3 is source-only, not a campaign
+or numerical-ready/GPU allocation.107/all original19 Paper owners independent.
 
 ## Retained Preparations And Closures
 

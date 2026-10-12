@@ -66,12 +66,17 @@ string-valued Panel fixture masked it. Original module242e92ce... unchanged.
 science9526dde8.../row174d7ce2...,28.623165s/600/0fits. NativeDTO repair works;
 18positive baskets/all180opens supported,59missing/16650CLOSEs/union108.
 48cells/72checks unavailable, no metrics/rejection/third automatic retry.
-Cumulative1200 allocated seconds retains original122 failure.124 Data repair
-is exact-point enrichment, not another comparison or global research hold.
-Source-only next proposal at123/next-direction-r1/proposal.json: fixed20 holding
-with staggered quarter-notional entry vintages. This is unverified overlapping
-lot geometry/new union support, not numerical-ready, frozen or GPU allocated.
-Retain informed lineage and await a fresh actual assignment, not a shadow queue.
+Cumulative1200 allocated seconds retains original122 failure.124 Data attempt
+closed technical preflight961731b0... without a point plan/recovery/fit/metric.
+125 corrects transport calendar role and assigns NEW bounded Data work only,
+not third current-family comparison or a global research/Paper hold.
+124 prior-seal helper26495427.../3SYN plus independent3groups; exact18-basket
+hashes must match before private59 plan. Quarter-vintage sourcebe19eefe.../
+release84a56c24... has4SYN and Execution3 independent groups3da94f0f.... Four
+separate q/4 lots/shared cash/own CLOSE(e+19), same-symbol lot custody and
+funding fail unavailable. This is source-only preparation, not a campaign,
+36-cell freeze, actual union support, performance claim or GPU allocation.
+Assignment expired at124 boundary; consume only under a fresh Engine package.
 Original scientific reference proposalb1d1e0e...
 and geometry6ddb5106... are source-ready, actual18-basket/390-mark support
 unverified. Prior-seal unchanged rule top10 basket; fixed5 CLOSE(e+4), carry20

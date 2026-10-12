@@ -2,96 +2,91 @@
 
 ## Objective
 
-Complete daily-fixed-basket-selected-union-gap-recovery-v1: recover or narrowly
-classify the59 exact required daily CLOSE gaps found by123, into a separate
-source-bound repair cache/point view useful for future engine validation.
-This advances data collection, not a third holding-family trial or Paper gate.
+Complete daily-fixed-basket-selected-union-gap-technical-recovery-v1: correct
+the inherited calendar transport-reference classification, then recover or
+narrowly classify the same59 required CLOSE gaps with one NEW finite Data
+attempt. This advances useful engine-data coverage, not a third model trial.
 
 Workdir: C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-Source proposal: A/data/daily-fixed-basket-selected-union-gap-recovery-v1/
-preparation-r1/source-receipt.json SHA
-b4b0be35d1da3933c3aed009c61ca5e9e37a817120cbf35ddbc5694bc910ac6f.
-Raw repair cache: D:/market_data/us_equities/kis_paper_private/
-daily-selected-union-gap-recovery/v1/goal124.
+125 parent: D:/thericher-v2/model-artifacts/research/daily-fixed-basket-selected-union-gap-technical-recovery-v1/parent.
+124 closure: D:/thericher-v2/model-artifacts/research/daily-fixed-basket-selected-union-gap-recovery-v1/integration-evidence.json
+SHA961731b0db395dc81fc92ecd802b172eaed5c77b88cd4b4f55a2de4fe816628c.
 
-## Retained Result
+## Retained Facts
 
-123 CLOSED/input_unavailable4c5cde54... at A/research/
-daily-fixed-basket-holding-duration-technical-reexecution-v1/integration-evidence.json.
-Science9526dde8.../SAMEfamily trial2row174d7ce2.../outcomeccf9194a....
-Actual28.623165s/600/0fits, source/child/container closed. Native-date repair
-resolved source coupling; all18 positive prior baskets/all180 entry OPENs exist.
-16650 required per-block ranked-union CLOSEs,59 missing/union108;48cells and
-all72checks unavailable/unknown. No scientific rejection, metrics or profit.
-Result34e6f4e.../host05c696d3.../read86c46882...; independent actual2groups/
-Claude56ba5ec6... supported-with-limits. Original122 failed600 allocation stays
-spent, cumulative1200; never replay either family's creators or auto-third-run.
-Ruff/3sampleCompose and unchanged1312-source15935pass22skip authority reattached.
+124 ONE600s attemptca3e391a... saved return9f29c1c2... failed preflight with
+no audit exit, collector attempt, immutable host receipt or point plan.
+Actual elapsed/source stability/recovery unknown, not recovered0 or model
+rejection. Original attempt/identity/source/failed reader remain preserved.
+Exact inherited /calendar/calendar.json role=source violates transport .py
+guard189. Reproduced composition contradiction is consistent with failure,
+not a captured runtime first-cause trace.125 must not replay/reset/refund124.
 
-## Required Work
+123 remains closed input_unavailable: original18 prior-sealed baskets,
+180 valid entry OPENs/16650 required own-block union CLOSEs/59missing/union108;
+48cells72checks unknown.122/123 cumulative1200 research allocation stays spent.
+No automatic third science study or reinterpretation as model rejection.
 
-Data owns a small pure gap planner, retained evidence audit, unresolved-only
-collection and new point view. Engine attests prior-sealed identities/slots
-and source-native intake; it may prepare one bounded independent next-mechanism
-source/SYN package but no current-family rerun, labels, fits or GPU allocation.
-Execution verifies source/key/date/route isolation and point-grade semantics;
-Infra is invoked only for existing finite runtime/mount needs. Temporary
-Validation independently attacks exact-point membership/conflict/provenance.
-Parent owns integration/Git and resumes every ready non-conflicting package.
+## Work And Ownership
 
-Freeze one Data-only contract before raw reads: exact original512/old800/later71
-source/calendar/order pins, original123 ranked basket hashes,18 positive sealed
-entries and each block's own ranked union. Derive the59 key/date/CLOSE gaps
-privately; de-duplicate requests only, never erase a required observation.
-Recomputing the prior-only selector for exact gap custody is not another
-research replay: no quantities, payoff metrics, candidate ranking or72screens.
-Verify reconstructed basket hashes against123 before relying on the point plan.
+Parent owns only minimal composition/reader repair and Git. Classify the exact
+calendar transport ref as control while original bytes/hash/calendar/order and
+input source pins remain unchanged. Audit any further inherited non-Python
+source-role references explicitly; no blanket role rewrite. Focused SYN and
+pure composed preflight must exercise the actual schema before new dispatch.
+This is runtime preparation, not an approval or engine/Paper quality gate.
 
-Prefer relevant immutable retained SAME-KIS/MODP0 chunks using original
-manifest/source pointers and verified hashes; avoid full recursive scans.
-Check exact date/key/source/adjustment semantics and duplicate conflicts.
-If retained coverage is insufficient, use the existing broad512-compatible
-private daily collector/make_client paths, not the narrow ETF EndpointClient.
-One in-memory client/token, one collector/new cache, shared measured gates;
-token-request starts and worker next_due are not market-request pacing.
-Keep current evidenced delays until calibrated; no uncontrolled flood/retries.
+Reuse124 frozen DataR2 release5f2014d7... at
+D:/thericher-v2/model-artifacts/data/daily-fixed-basket-selected-union-gap-recovery-v1/collector-r2/source-release.json;
+collector8f272584... fixes unhashable exception sanitizer, independent3groups
+3f72a46b... pass. Offline9da2b2cf..., point helper26495427.../releasefffdaace...,
+transporta7cd13bf.../release3924a091... stay fixed unless a concrete fault demands
+a separately frozen minimal supplement. Infra checks source/native composition;
+Data owns exact-point custody/retained audit/collection; independent Validation
+attacks actual binding/unknowns. Engine may attest existing basket/support
+interfaces without numerical replay, labels, fits or GPU allocation.
 
-ONE600s Data attempt incl90s publication/cleanup,2threads/4GiB, at most120
-market pages and at most2 per frozen anchored collection. The useful-scope
-probe is inside this budget. Persist cursor/debits before calls; preserve
-external retry next_due in its owner, never foreground-wait or reset the clock.
-No new recurring scheduler/platform. Source-limited/empty/conflicting/exhausted
-work closes its exact scope with unresolved points visible, not a global hold.
+ONE NEW600s Data allocation including90s publication/cleanup,2CPU/4GiB,
+max120market pages/max2per fixed anchor. Use fresh UUID/cursor/output with the
+reused transport's original runtime root and separate goal124 cache:
+D:/market_data/us_equities/kis_paper_private/daily-selected-union-gap-recovery/v1/goal124.
+125 parent/integration pointers bind this new invocation; never replace old
+attempt files, reuse a consumed identity or reset a clock. No new scheduler.
 
-Standing AGENTS.md authority permits selective KIS_PAPER_* reads and exact
-read-only market calls for this Data job. Never read/route KIS_LIVE_*, account,
-positions or orders here. THERICHER_MODE=off; private virtual host pinned.
-Never output/log credentials, raw bodies/rows/prices or private coordinates.
-Raw data/cursor only M; categorical counts/hashes/pointers only A/Git/Claude.
-Preserve D:15%free including projected writes; no paid source/dependency.
+Freeze original512/old800/later71/calendar/order and123 basket hashes before
+raw work. Same pinned Python3.12.14/NumPy2.5.1 d6 offline runtime reconstructs
+only prior selectors, validates hashes, derives exact private59 point plan.
+No quantities/payoffs/48cells72checks, model ranking or scientific registry.
+Retained same-KIS/MODP0 relevant immutable chunks first; only unresolved exact
+keys/dates use existing broad-compatible virtual-market client. One client/
+token, durable debits, measured shared gates; preserve owned retry next_due,
+no foreground quota sleep, request flood or futile retry loop.
 
-Publish immutable new observations/custody and a separate repair point view,
-not overwritten old datasets. A valid CLOSE-only observation is point grade,
-not fabricated OHLCV/Bar grade. Preserve every already-valid old value;
-no nearest-date substitution, interpolation, selected deletion or conflict
-overwrite. Requested-floor/page success is NOT exact-date membership.
-Actual fetch times are not backdated to economic session dates. Current-listing,
-seen/nonPIT/revised/raw-action/finality limitations remain. No quality/Paper
-promotion or automatic third122-family study from recovering a point.
+Selective KIS_PAPER_* credentials and exact read-only market calls are already
+authorized. Never read/route KIS_LIVE_*, account, positions or orders here;
+THERICHER_MODE=off. No secrets/raw prices/rows/bodies/private coordinates in
+output/Git/Claude. Raw pages/point view/cursor only M; categorical counts/hashes/
+pointers only A/Git. Preserve projected15%D:free; no paid or unclear-rights source.
+
+Separate CLOSE-only repair view, not fabricated OHLCV/Bar. Preserve old bytes
+and valid values; no interpolation, drop, nearest-date/date-floor inference,
+duplicate conflict overwrite or backdated actual fetch clocks. Seen/current-
+listing/nonPIT/revised/raw-action/finality limits remain; no quality/Paper
+qualification. Original19 due owners/shared10%basis/pending107 untouched.
 
 ## Completion And Continuation
 
-Focused SYN covers wrong key/date/MODP/hash/conflicts, retained-first behavior,
-partial recovery, no imputation, bounded cursor/retry and credential/route scope.
-Completion evidence: frozen source/point contract, exact59 plan, finite audit/
-collection result with recovered/unresolved/conflict/page/clock/cleanup facts,
-strict source-safe reader, independent/Claude limits and exact external pointers.
-Recoverability is unknown until observed; futile scope stops, other lanes continue.
-Existing19 Paper/accounting/data owners/shared basis/pending107 are untouched.
+Exact frozen contract/new identity/clocks, positive source composition, finite
+actual audit/collection outcome, recovered/unresolved/conflict/page/cleanup
+facts (unknowns stay unknown), strict source-safe reader, independent actual
+evidence and concise Claude result interpretation. Missing preflight host
+receipt is saved-return evidence only, never invented host/OS proof.
 
-External-only work may focused-verify and reattach unchanged121 authority;
-shared tracked source changes require changed-path serial plus fresh clean8.
-Ruff and default/research/accounting sample Compose checks. Refresh stateboards/
-HANDOFF/RUNBOOK, verify, commit/push, replace this file with exactly ONE material
-next company objective and continue without market-session foreground waiting.
+External-only work focused-verifies and reattaches unchanged1312-source clean8
+authority15935pass22skip. Ruff/default+research+accounting sample Compose;
+shared tracked runtime edits instead require changed-path serial/fresh clean8.
+Refresh stateboards/HANDOFF/RUNBOOK, commit/push, replace this with exactly ONE
+material next objective, continue ready work without market-session waiting.
+124 quarter-vintage sourcebe19eefe.../4SYN/independent3 is not a campaign or
+numerical-ready result; consume it only under a fresh frozen Engine assignment.

@@ -76,9 +76,15 @@ Execution13fc68ee.../5SYN reproduces source date ABI fault, not actual cause.
 123 CLOSED/input_unavailable4c5cde54...; parityf56d8ca3.../2SYN and typed
 read86c46882... preserve48cells72checks UNKNOWN,59missingCLOSEs,0fit ledger.
 Actual/source/child/container closure honest-host, not raw-PnL/OS proof.
-124 reattests exact source/key/date/MODP and virtual market-only route for the
-new repair point view; CLOSE point grade is not fabricated Bar or Paper grade.
-No original replay/reader, strategy/model/order or19-owner change.
+124 closed technical preflight961731b0...; no point plan/immutable host receipt
+or recovered values. Independent saved-return2groups do not prove OS custody.
+CollectorR1 P2 unhashable exception finding5328e6e6... fixed by DataR2 exact
+str guard8f272584...; independent3groups3f72a46b... pass, old finding preserved.
+No account/order/live inspection/calls or19-owner/basis changes.125 reuses the
+same virtual-market-only source and point-grade checks; calendar ref fix changes
+no replay or broker semantics. CLOSE-only is not fabricated Bar/Paper grade.
+Quarter-vintage sourcebe19eefe... independently3SYN3da94f0f... tests own-lot
+sell binding/shared cash/no reset/funding failure, not actual profitability.
 Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),
 quarter q/4, full marked NAV/cash tails and fees once per actual BUY/SELL leg.
 Weights/ranks seal before OPEN, q binds AT OPEN and is immutable afterward;

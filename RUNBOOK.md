@@ -151,12 +151,20 @@ baskets/all180opens exist;59missing of16650requiredCLOSEs,union108.48cells/
 Original122 spent600 plus123600=cumulative1200; never replay either creator/
 appointment or automaticthirdtrial. Reviewer release-key failure retained;
 correctedfe14774a source check separate. Claude result supported-with-limits.
-ONE124 daily-fixed-basket-selected-union-gap-recovery-v1: Data-only exact59
-plan, retained-first audit then unresolved-only<=120pages/ONE600s/90reserve,
-new D:/market_data/us_equities/kis_paper_private/daily-selected-union-gap-recovery/v1/goal124.
-Source proposalb4b0be35...; NEXT owns precise scope/standing Paper market access.
-No account/order/live or old dataset rewrite, no fabricated Bar grade. Owned
-retry belongs to worker; no foreground market/token sleep or scheduler platform.
+124 CLOSED/technical_failure961731b0... at
+D:/thericher-v2/model-artifacts/research/daily-fixed-basket-selected-union-gap-recovery-v1/integration-evidence.json.
+Exact planbdf0177e.../contract8992a8ab.../saved return9f29c1c2... says preflight,
+no audit exit/collector attempt/immutable host receipt/point plan. Recovery,
+actual elapsed/source stability unknown. Independent2groups471a8c3e... and
+separate saved-return reader distinguish this from host evidence. Never rerun
+parent/run.py --execute or inspect with its host-receipt assumption.
+Source contradiction at host_runtime.py189: calendar JSON inherited source role.
+125 owns a NEW600s Data attempt with control-role ref/original calendar bytes/
+pins, fresh UUID/cursor in the same separate goal124 cache; no clock refund.
+DataR2 release5f2014d7.../collector8f272584...5SYN/independent3 closes sanitizer
+P2. Prior18 hashes/59 points, retained-first/120pages/2per anchor/90reserve/
+CLOSE-only/15%D:floor/virtual-market-only limits remain. NEXT alone is execute
+authority; no account/order/live/research trial/GPU or19-owner changes.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

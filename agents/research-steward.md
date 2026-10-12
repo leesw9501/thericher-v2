@@ -52,10 +52,12 @@ existing signed row without write. Never replay122 creator or appointment.
 science9526dde8.../row174d7ce2... allocated600s used28.623165s/0fits, original
 122600 retained/cumulative1200.18sealed baskets but59missingCLOSEs;48cells/
 72checks unknown, no rejection/refund/third automatic retry/replication.
-Source/child/container closed, no weights/holdout/GPU.124 ONEData-only600s
-audit/collection is a distinct Data allocation, not a refunded research trial;
-no candidate metric/replay/model fitting. Source-only staggered-vintage proposal
-unready/unallocated, not a GPU job. GPU usable/free;107/Paper priority independent.
+Source/child/container closed, no weights/holdout/GPU.124 distinct Data600s
+attempt closed technical preflight961731b0...: no point plan/immutable host
+receipt/fit, actual elapsed and recovery unknown. Original attempt stays spent;
+125 NEW finite Data600s allocation is not a reset/refund or third science trial.
+Quarter-vintage helperbe19eefe.../4SYN/independent3 source-only; no family,
+holdout/evaluation/GPU allocation. GPU usable/free;107/Paper owners independent.
 
 ## Retained Evidence
 
