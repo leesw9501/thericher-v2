@@ -2,82 +2,96 @@
 
 ## Objective
 
-Complete daily-fixed-basket-holding-duration-technical-reexecution-v1: obtain
-the unchanged five-versus-twenty-session holding comparison after repairing
-the native Panel date interface. This is one bounded technical reexecution,
-not a new hypothesis, independent replication, or model/Paper permission gate.
+Complete daily-fixed-basket-selected-union-gap-recovery-v1: recover or narrowly
+classify the59 exact required daily CLOSE gaps found by123, into a separate
+source-bound repair cache/point view useful for future engine validation.
+This advances data collection, not a third holding-family trial or Paper gate.
 
 Workdir: C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-New root: A/research/daily-fixed-basket-holding-duration-technical-reexecution-v1.
+Source proposal: A/data/daily-fixed-basket-selected-union-gap-recovery-v1/
+preparation-r1/source-receipt.json SHA
+b4b0be35d1da3933c3aed009c61ca5e9e37a817120cbf35ddbc5694bc910ac6f.
+Raw repair cache: D:/market_data/us_equities/kis_paper_private/
+daily-selected-union-gap-recovery/v1/goal124.
 
-## Retained Failure
+## Retained Result
 
-122 CLOSED/technical_failed63a08e1d... at A/research/
-daily-fixed-basket-holding-duration-development-v1/integration-evidence.json.
-Scienceeb17900e.../trial1c6567ae4... closed by outcome3566a195...;
-canonical-outcome-r1.json reattaches the existing row without registry write.
-Original600s attempt used20.599115s, seven fit/update counters0. Exact failure
-20ce1be6.../hosta1456ec7.../fixed-readce2bb1fe...; source/child/container closed.
-Scientific outcome, first cause and runtime versions remain UNKNOWN; no cells
-or predicates. Original failure, source bytes and partial pointer preserved.
-Never replay its freeze/prepare/dispatch/close or refund that appointment.
-
-Native loader returns tuple[date]; DataR2 incorrectly compares ISO strings;
-author SYN Panel used strings and masked it. Enginefb6dcd04.../Execution13fc68ee...
-reproduce this SOURCE defect, not the actual first cause. A separate read-only
-failure-reader repairb1f35c72... accepts absent versions as unknown; independent
-actual reviewe2f279a4... verifies two metadata/interpretation groups. Claude
-result888a7585... supported-with-limits, not scientific agreement.
+123 CLOSED/input_unavailable4c5cde54... at A/research/
+daily-fixed-basket-holding-duration-technical-reexecution-v1/integration-evidence.json.
+Science9526dde8.../SAMEfamily trial2row174d7ce2.../outcomeccf9194a....
+Actual28.623165s/600/0fits, source/child/container closed. Native-date repair
+resolved source coupling; all18 positive prior baskets/all180 entry OPENs exist.
+16650 required per-block ranked-union CLOSEs,59 missing/union108;48cells and
+all72checks unavailable/unknown. No scientific rejection, metrics or profit.
+Result34e6f4e.../host05c696d3.../read86c46882...; independent actual2groups/
+Claude56ba5ec6... supported-with-limits. Original122 failed600 allocation stays
+spent, cumulative1200; never replay either family's creators or auto-third-run.
+Ruff/3sampleCompose and unchanged1312-source15935pass22skip authority reattached.
 
 ## Required Work
 
-Run disjoint Data, Engine, Infra and Execution source packages in parallel.
-Data makes the smallest versioned date-typed assertion fix and rejects wrong
-types/order/calendar; retain selected-zero-slot and per-block-union support.
-Engine keeps original holding_duration.py242e92ce... and the scientific grid;
-correct SYN to use the native date-valued original Panel class. Execution
-independently attests unchanged q/cash/fees/replay/availability semantics.
-Infra reuses the same pinned CPU Docker transport with a new isolated root,
-trial2 custody binding, and complete-only runtime-version qualification.
-Parent owns thin composition, shared contracts, actual dispatch and Git.
-Temporary Validation attacks the new native-interface coupling and exact result.
-Do not add generic runtime features, workers, reports, gates or schedules.
+Data owns a small pure gap planner, retained evidence audit, unresolved-only
+collection and new point view. Engine attests prior-sealed identities/slots
+and source-native intake; it may prepare one bounded independent next-mechanism
+source/SYN package but no current-family rerun, labels, fits or GPU allocation.
+Execution verifies source/key/date/route isolation and point-grade semantics;
+Infra is invoked only for existing finite runtime/mount needs. Temporary
+Validation independently attacks exact-point membership/conflict/provenance.
+Parent owns integration/Git and resumes every ready non-conflicting package.
 
-Before numerical work, freeze SAME family
-broad512-fixed-basket-holding-duration-development-v1 trial2 with explicit
-trial1/spent-failure lineage. ONE additional CPU600s attempt including90s
-publication/cleanup,2threads/4GiB,0fits/GPU/weights/holdout. Cumulative maximum
-1200 allocated seconds, not1200s on the second run. No third automatic retry.
-Ask Claude for a concise prospective technical-reexecution/budget challenge.
+Freeze one Data-only contract before raw reads: exact original512/old800/later71
+source/calendar/order pins, original123 ranked basket hashes,18 positive sealed
+entries and each block's own ranked union. Derive the59 key/date/CLOSE gaps
+privately; de-duplicate requests only, never erase a required observation.
+Recomputing the prior-only selector for exact gap custody is not another
+research replay: no quantities, payoff metrics, candidate ranking or72screens.
+Verify reconstructed basket hashes against123 before relying on the point plan.
 
-Keep exactly the original512/old800/later71 pins, prior21 rule momentum/top10/
-proxy/caps and18 entries:420..520 step20;570..670 step20;720..780 step20;21,41.
-Block CLOSE grids420..549,570..699,720..799,21..70:390 marks.
-Slots/weights seal BEFORE OPEN, q=w/(entry_OPEN*1.001) binds AT OPEN and stays
-fixed. Fixed5 exits CLOSE(e+4); carry20/quarter CLOSE(e+19), quarter q/4, cash.
-Rolling cash without rescaling/reinvestment/borrow/reset; each actual leg fee
-once at5/10/20bps per side. Full per-block ranked union including zero slots
-and cash tails; missing support/funding makes the whole comparison unavailable.
-48cells/72fixed checks: BOTH carry arms EVERY block/cost U>fixed5 AND cash,
-DD<=fixed5. Any false rejects; no horizon/arm/cost/threshold/seed/model rescue.
-U is mean daily log NAV change, HHI concentration; quarter matches planned
-share-session quantity only. Seen/current-listed/nonPIT/revised/raw actions/
-nominal availability remain explicit, not total return/Paper qualification.
+Prefer relevant immutable retained SAME-KIS/MODP0 chunks using original
+manifest/source pointers and verified hashes; avoid full recursive scans.
+Check exact date/key/source/adjustment semantics and duplicate conflicts.
+If retained coverage is insufficient, use the existing broad512-compatible
+private daily collector/make_client paths, not the narrow ETF EndpointClient.
+One in-memory client/token, one collector/new cache, shared measured gates;
+token-request starts and worker next_due are not market-request pacing.
+Keep current evidenced delays until calibrated; no uncontrolled flood/retries.
+
+ONE600s Data attempt incl90s publication/cleanup,2threads/4GiB, at most120
+market pages and at most2 per frozen anchored collection. The useful-scope
+probe is inside this budget. Persist cursor/debits before calls; preserve
+external retry next_due in its owner, never foreground-wait or reset the clock.
+No new recurring scheduler/platform. Source-limited/empty/conflicting/exhausted
+work closes its exact scope with unresolved points visible, not a global hold.
+
+Standing AGENTS.md authority permits selective KIS_PAPER_* reads and exact
+read-only market calls for this Data job. Never read/route KIS_LIVE_*, account,
+positions or orders here. THERICHER_MODE=off; private virtual host pinned.
+Never output/log credentials, raw bodies/rows/prices or private coordinates.
+Raw data/cursor only M; categorical counts/hashes/pointers only A/Git/Claude.
+Preserve D:15%free including projected writes; no paid source/dependency.
+
+Publish immutable new observations/custody and a separate repair point view,
+not overwritten old datasets. A valid CLOSE-only observation is point grade,
+not fabricated OHLCV/Bar grade. Preserve every already-valid old value;
+no nearest-date substitution, interpolation, selected deletion or conflict
+overwrite. Requested-floor/page success is NOT exact-date membership.
+Actual fetch times are not backdated to economic session dates. Current-listing,
+seen/nonPIT/revised/raw-action/finality limitations remain. No quality/Paper
+promotion or automatic third122-family study from recovering a point.
 
 ## Completion And Continuation
 
-Native-DTO SYN reproduces old failure and passes only the narrow repair; future
-mutation cannot change prior weights or post-entry q. Freeze all source/science/
-family custody before ONE new run. Exact result/host/source/clock/child/container
-links and independent/Claude interpretation close the attempt, even if failed
-or input_unavailable. Missing evidence stays unknown, not success/rejection.
-Keep all original19 Paper/data/accounting owners, shared basis and pending107
-independent; no manual Task/KIS/account/order/collector/schedule change here.
-Never read credentials or KIS_LIVE_*; raw values stay in process/external roots.
+Focused SYN covers wrong key/date/MODP/hash/conflicts, retained-first behavior,
+partial recovery, no imputation, bounded cursor/retry and credential/route scope.
+Completion evidence: frozen source/point contract, exact59 plan, finite audit/
+collection result with recovered/unresolved/conflict/page/clock/cleanup facts,
+strict source-safe reader, independent/Claude limits and exact external pointers.
+Recoverability is unknown until observed; futile scope stops, other lanes continue.
+Existing19 Paper/accounting/data owners/shared basis/pending107 are untouched.
 
-Focused verification plus unchanged1312-source121 authority reattachment only:
-15935passed22skipped. New shared tracked source requires changed-path serial
-and fresh clean8. Ruff and default/research/accounting sample Compose checks.
-Refresh current stateboards/HANDOFF/RUNBOOK, verify, commit/push, replace this
-file with exactly ONE material next objective and continue without market wait.
+External-only work may focused-verify and reattach unchanged121 authority;
+shared tracked source changes require changed-path serial plus fresh clean8.
+Ruff and default/research/accounting sample Compose checks. Refresh stateboards/
+HANDOFF/RUNBOOK, verify, commit/push, replace this file with exactly ONE material
+next company objective and continue without market-session foreground waiting.

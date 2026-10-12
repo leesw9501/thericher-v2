@@ -62,10 +62,17 @@ updated, no inference/fits/GPU or actual Paper result. Fresh15935/22 authority.
 used20.599115s with0fits; no scientific cells/checks or rejection. First cause
 UNKNOWN. Enginefb6dcd04.../4SYN reproduces native date support mismatch; old
 string-valued Panel fixture masked it. Original module242e92ce... unchanged.
-123 owns daily-fixed-basket-holding-duration-technical-reexecution-v1. Freeze
-SAMEfamily trial2, ONEadditional600s/cumulative1200/0fits, no third automatic
-retry. Correct native-DTO SYN and consume narrow Data repair; scientific rule,
-grid and screens stay identical. Proposalb1d1e0e...
+123 CLOSED/input_unavailable4c5cde54.../outcomeccf9194a.... SAMEfamilytrial2
+science9526dde8.../row174d7ce2...,28.623165s/600/0fits. NativeDTO repair works;
+18positive baskets/all180opens supported,59missing/16650CLOSEs/union108.
+48cells/72checks unavailable, no metrics/rejection/third automatic retry.
+Cumulative1200 allocated seconds retains original122 failure.124 Data repair
+is exact-point enrichment, not another comparison or global research hold.
+Source-only next proposal at123/next-direction-r1/proposal.json: fixed20 holding
+with staggered quarter-notional entry vintages. This is unverified overlapping
+lot geometry/new union support, not numerical-ready, frozen or GPU allocated.
+Retain informed lineage and await a fresh actual assignment, not a shadow queue.
+Original scientific reference proposalb1d1e0e...
 and geometry6ddb5106... are source-ready, actual18-basket/390-mark support
 unverified. Prior-seal unchanged rule top10 basket; fixed5 CLOSE(e+4), carry20
 CLOSE(e+19), quarter q/4 and cash, full NAV/cash tails, costs5/10/20bps per side.

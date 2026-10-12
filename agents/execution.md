@@ -73,8 +73,12 @@ No manual Task/KIS/model/order or actual reconciliation/fill/fees/net claim.
 groups keep scientific screen/runtime/first cause unknown and zero ledger
 separate. New read-only inspector7cd2c860.../2SYN fixes failure versions only.
 Execution13fc68ee.../5SYN reproduces source date ABI fault, not actual cause.
-123 reattests unchanged constant-q/cash/fee/real20-clock arithmetic and typed
-reader against new native-date support. No strategy/model/order change.
+123 CLOSED/input_unavailable4c5cde54...; parityf56d8ca3.../2SYN and typed
+read86c46882... preserve48cells72checks UNKNOWN,59missingCLOSEs,0fit ledger.
+Actual/source/child/container closure honest-host, not raw-PnL/OS proof.
+124 reattests exact source/key/date/MODP and virtual market-only route for the
+new repair point view; CLOSE point grade is not fabricated Bar or Paper grade.
+No original replay/reader, strategy/model/order or19-owner change.
 Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),
 quarter q/4, full marked NAV/cash tails and fees once per actual BUY/SELL leg.
 Weights/ranks seal before OPEN, q binds AT OPEN and is immutable afterward;

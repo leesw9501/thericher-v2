@@ -140,11 +140,23 @@ pointer preserved; canonical-outcome-r1.json reads existing signed row only.
 Independent actual2groups/Claude result supported-with-limits, no science verdict.
 Weekly serial15935pass22skip/2312s supplementary; retained C:/trpy/g121-weekly-serial
 after tool-denied cleanup is not clean-helper authority. Primary clean8 unchanged.
-ONE123 daily-fixed-basket-holding-duration-technical-reexecution-v1: narrow
-native-date support/SYN repair, SAMEfamily trial2/ONEadditional600s, cumulative
-max1200 allocated seconds/0fits/GPU/holdout. Same18/390/48cells72checks, no rescue.
-NEXT alone owns scope; new source/science/custody/Claude freeze before numerical
-work. Original19 owners/pending107 unchanged, no manual Task/provider/orders.
+123 CLOSED/input_unavailable4c5cde54... at
+D:/thericher-v2/model-artifacts/research/daily-fixed-basket-holding-duration-technical-reexecution-v1/integration-evidence.json.
+Science9526dde8.../SAMEfamily trial2row174d7ce2.../outcomeccf9194a.... Native-date
+repair/SYN26groups, independent parity2/source3/actual2; Docker4directgroups
+passed17.035889s without raw mounts. Actual28.623165s/0fits, host05c696d3.../
+result34e6f4e.../read86c46882..., source/child/container closed.18positive
+baskets/all180opens exist;59missing of16650requiredCLOSEs,union108.48cells/
+72checks unavailable/unknown, not rejection/metrics/Paper qualification.
+Original122 spent600 plus123600=cumulative1200; never replay either creator/
+appointment or automaticthirdtrial. Reviewer release-key failure retained;
+correctedfe14774a source check separate. Claude result supported-with-limits.
+ONE124 daily-fixed-basket-selected-union-gap-recovery-v1: Data-only exact59
+plan, retained-first audit then unresolved-only<=120pages/ONE600s/90reserve,
+new D:/market_data/us_equities/kis_paper_private/daily-selected-union-gap-recovery/v1/goal124.
+Source proposalb4b0be35...; NEXT owns precise scope/standing Paper market access.
+No account/order/live or old dataset rewrite, no fabricated Bar grade. Owned
+retry belongs to worker; no foreground market/token sleep or scheduler platform.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

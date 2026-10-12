@@ -50,10 +50,18 @@ DataR2module80aa5626.../11SYN did not match native Panel date ABI: asserted
 ISO strings instead of original dates. Author string-valued SYN masked it.
 Enginefb6dcd04.../4groups and Execution13fc68ee.../5groups reproduce source
 fault, not actual first cause. Original sources, input pins and failure kept.
-123 owns minimal versioned native-date fix, exact metadata calendar equality
-and wrong-type/order/missing-day negatives. Same512/old800/later71/prior21/
-18baskets390marks and full per-block ranked union, including zero/cash slots.
-No acquisition/cache/cursor/quality promotion or Paper change;107 independent.
+123 CLOSED/input_unavailable4c5cde54.../outcomeccf9194a.... Minimal native-date
+module1534e2da.../5SYN; actual28.623165s/0fits,18sealed positive baskets and
+all180selectedopens supported.59missing of16650required per-block union CLOSEs,
+union108; all48cells72checks unknown. Data shortage is not strategy rejection.
+124 owns exact59 private point plan and retained-first source audit, then
+unresolved-only broad-compatible KIS market acquisition if useful. Proposal
+b4b0be35... at A/data/daily-fixed-basket-selected-union-gap-recovery-v1/
+preparation-r1/source-receipt.json. ONE600s/<=120pages/new D: cache; raw/point
+coordinates stay private, source-safe counts only. Exact date/key/hash/MODP
+membership and conflict kills, never page-floor inference/nearest-date/Bar
+imputation/old rewrite. CLOSE-only point grade stays distinct. No automatic
+third holding-family trial or quality/Paper promotion;107 independent.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
 

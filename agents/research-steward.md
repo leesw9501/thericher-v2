@@ -48,11 +48,14 @@ seven fit/update counters0; scientific screen UNKNOWN, not rejected/refunded.
 Host/source/child/container closed, no GPU/weights/holdout allocation. Parent
 pointer serialization failed after append; canonical-outcome-r1 reattaches
 existing signed row without write. Never replay122 creator or appointment.
-123 SAMEfamily technical trial2 may allocate ONEadditional600s/2threads4GiB/
-90s reserve, cumulative max1200 allocated seconds/0fits. Freeze new contract
-and failed-trial lineage before numerical work; no third automatic retry,
-scientific rescue or independent-replication claim.18/390/48/72 unchanged.
-GPU free/usable, no CUDA role in this question;107/Paper priority independent.
+123 CLOSED/input_unavailable4c5cde54.../outcomeccf9194a.... SAMEfamily trial2
+science9526dde8.../row174d7ce2... allocated600s used28.623165s/0fits, original
+122600 retained/cumulative1200.18sealed baskets but59missingCLOSEs;48cells/
+72checks unknown, no rejection/refund/third automatic retry/replication.
+Source/child/container closed, no weights/holdout/GPU.124 ONEData-only600s
+audit/collection is a distinct Data allocation, not a refunded research trial;
+no candidate metric/replay/model fitting. Source-only staggered-vintage proposal
+unready/unallocated, not a GPU job. GPU usable/free;107/Paper priority independent.
 
 ## Retained Evidence
 

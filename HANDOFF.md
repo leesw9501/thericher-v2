@@ -188,11 +188,27 @@ signed row reattached in canonical-outcome-r1.json with no registry rewrite.
 Never replay122 creators/appointment or refund it. Supplementary weekly serial
 15935pass22skip/2312s matches primary clean8; its scratch retained after denied
 cleanup, not helper authority. Shared1312 sources unchanged/Ruff/3Compose pass.
-ONE123: daily-fixed-basket-holding-duration-technical-reexecution-v1. Minimal
-native-date repair plus exactly ONE new same-family trial2 CPU600s, cumulative
-max1200 allocated seconds/0fits/GPU/weights/holdout; original scientific grid
-unchanged. No third automatic retry/hypothesis rescue. Source prep ready in
-parallel; freeze custody and Claude challenge before new numerical outcomes.
+123 CLOSED/input_unavailable4c5cde54... at A/research/
+daily-fixed-basket-holding-duration-technical-reexecution-v1/integration-evidence.json.
+Science9526dde8.../SAMEfamily trial2row174d7ce2.../outcomeccf9194a.... Native-date
+Data1534e2da.../5SYN, unchanged kernel242e92ce.../7+1nativeSYN, worker9b7fdea...
+/9SYN and Infra6e96c548.../4mocks. Network-none Docker4 direct SYN groups incl
+full native512/18/390/48/72coupling,17.035889s/source/child/container closed.
+Actuale147b707... used28.623165s/600/0fits; host05c696d3.../result34e6f4e.../
+read86c46882.... All18 positive prior baskets/180 ranked entry OPENs supported;
+required16650 own-block ranked-union CLOSEs have59 missing/union108. All48cells/
+72checks unavailable/unknown, no metrics/scientific rejection or profit claim.
+Source/child/container honest-host links closed, not raw-price/OS/PIT proof.
+Independent parity2/source3/actual2 groups; reviewer source-pins/files lookup
+fault retained, final source supplementfe14774a... separate. Claude contract/
+result supported-with-limits. Unchanged1312-source15935pass22skip authority,
+Ruff/3Compose reattached. Original122600s remains spent, cumulative1200; no
+auto-third attempt, source/cost/arm rescue, fits/GPU/weights/holdout/Paper change.
+ONE124: daily-fixed-basket-selected-union-gap-recovery-v1. Datab4b0be35...
+source proposal selects exact59 point planning/retained-first audit, then only
+unresolved read-only KIS market pages if useful, new D: cache/point view. No
+old rewrites/fallback/Bar imputation or holding-family rerun. Current proposal
+for staggered vintages is source-only, not numerical-ready or CUDA allocation.
 Pending107/all original Paper owners remain independent; no market wait.
 
 ## Retained Preparations And Closures
