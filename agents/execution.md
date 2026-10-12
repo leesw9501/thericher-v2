@@ -93,6 +93,14 @@ Exit price remains needed BEFORE sale, not final-flat inventory. Independent
 128 source parityd3c26ae0.../2SYN recommends positive pre-sale holdings only;
 preserve180ranked OPEN checks, rolling cash/fees/funding failure/full390marks.
 No reset/borrowing/reinvestment or q resizing; new scientific contract needed.
+128 COMPLETE/rejected36ac831c...; new kernel f5f3100c.../48complete cells/
+390marks/72checks33fail,21.927221s/source/child/container closure. Independent
+Execution3/2fa9add3... attests exact fully supported SYN ledger parity/costs/
+q0/positive pre-sale price/funding; Validation source4/actual2/a8d5f40d....
+Modeled fractional OPEN/CLOSE and fees, not broker latency/observed fees/cash.
+Original19/basis/pending107 unchanged; no account/order/Task/private inspection.
+129 SOURCE lot-parity preparation only; own-lot exits and pooled funded cash,
+no new capital/borrow/reset or global-flat price mask. Actual support unknown.
 Quarter-vintage sourcebe19eefe... independently3SYN3da94f0f... tests own-lot
 sell binding/shared cash/no reset/funding failure, not actual profitability.
 Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),

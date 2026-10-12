@@ -13,17 +13,19 @@ closed; original122 failed600 remains spent, cumulative1200/no third auto run.
 126 CLOSED/scoped_source_exhausted519d016c..., native passed/0of59 recovered.
 127 CLOSED/diagnostic-only5555cc40...: all59beforeentry/held-exit required0,
 native18.627197s/390marks/0fits; no economic/Paper or old-outcome repair.
-ONE128: daily-held-only-duration-replay-development-v1; no approval wait.
+128 CLOSED/rejected36ac831c...:48complete cells/72checks33fail0unknown,
+21.927221s/0fits, no old repair/Paper claim; SAMEfamilytrial3/cumulative1800.
+ONE129: daily-fixed20-entry-vintage-diversification-development-v1; no approval wait.
 
 | Resource | Owner | Current fact |
 | --- | --- | --- |
-| Git/integration | Parent |126 pushed44c16ba;127 close/128 explicit held-only study, sole Git owner. |
+| Git/integration | Parent |127 pushed9d544b2;128 closure/129 source preparation, sole Git owner. |
 | Verification | Parent |Unchanged1312-source clean8 authority15935pass22skip; same supplementary serial2312s, retained scratch not helper authority. |
-| Data |128 source preparation |Unchanged native intake/windows/seals; handoff082f069c.../3checks, no acquisition. Exact126scope remains exhausted. |
-| Engine |128 source preparation |Held-only CLOSE replay; same original q/390marks/cash/fees. Fresh explicit scientific contract/lineage required before numeric work. |
+| Data |129 source preparation |Unchanged512/800/71/390marks; common maturity14anchors/56phase baskets, no new acquisition or actual support proof. |
+| Engine |129 source preparation |Fixed20 four q/4 lots0/5/10/15; oldbe19 full-union guard needs versioned held-only ledger. Fresh contract before numerical work. |
 | Infra |126 actual closed |156.728278s/audit0/native0/all cleanup/source closed, existing frozen transport reusable/no new framework. |
-| Execution |128 source parity |d3c26ae0.../2SYN; positive pre-sale CLOSE/rolling cash/fixed-q/funding kill preserved; no19-owner changes. |
-| Validation |127 handoff complete |Independent2groups/e2fe8f94... verify exact counts/source/time links; not raw-price/economic/OS proof. |
+| Execution |128 parity complete |2fa9add3.../3SYN; exact ledger/q/cost/funding/positive pre-sale price; modeled execution only/no19-owner changes. |
+| Validation |128 handoff complete |Source4/actual2/a8d5f40d... verify48cells72checks33fail/SCI and runtime links; no raw-NAV/OS proof. |
 | GPU |Steward / free |Usable; no CUDA role in zero-fit holding-duration question. |
 | Paper due |Existing owners |Oct12 22:30KST entry/original exits and recovery/shared basis unchanged. |
 | Accounting due |Existing owner |FirstOct13 05:25KST; actual captures unknown. |
@@ -49,4 +51,10 @@ Reversible improvement: NEW held-only pricing replay with causal q, exit
 pricing before sale, rolling cash and full390 marks. Freeze explicit SAMEfamily
 trial3/600 before numeric work, retaining prior1200; no future selection,
 automatic retry, old rewrite or global research/Paper hold. Economic completeness
-is still unknown; positive held/exit missing and insufficient cash remain kills.
+is now complete but rejected33of72; positive held/exit missing and insufficient
+cash remain kills. Next129 separates entry timing diversification from simple
+exposure reduction using funded lots and synchronized full/quarter controls.
+Reuse frozen native intake/transport, focused existing parity and unchanged
+shared-source authority; avoid a new host/validation platform or repeated full
+suite for external-only work. Actual CPU21.9s versus much longer source/review
+integration is the current feedback bottleneck; keep reviews concrete/bounded.

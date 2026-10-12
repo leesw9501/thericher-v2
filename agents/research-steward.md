@@ -65,7 +65,14 @@ diagnostic18.627197s/600/all59beforeentry/held-exit required0. No registry/GPU
 allocation/refund; prior full-union screens remain unknown.128 must freeze a
 fresh changed held-only-pricing scientific contract and explicitly register
 SAMEfamily trial3 before numeric work; prior1200 remains/cumulative1800.
-One CPU600/2threads4GiB/no fit/GPU/holdout; no automatic retry or novelty claim.
+128 COMPLETE/rejected36ac831c...; scienceaa9d0c7e.../row21e12677... SAMEfamily
+trial3, canonical completed non-promoting outcome5fd2dbdc....600allocation
+used21.927221s/48cells72checks33fail/0fits/GPU, prior1200 remains/cumulative1800.
+Same original custody tuple conservatively counts trials; changed held-only
+spec is not byte-equivalent/novel/fresh replication. No automatic fourth run.
+129 new diversification mechanism lineages G124 source/128 rejection, not
+family laundering. Source-only until fresh family/compute/kill contract freeze.
+GPU free/usable; no CUDA role in deterministic timing intervention.
 Quarter-vintage helperbe19eefe.../4SYN/independent3 source-only; no family,
 holdout/evaluation/GPU allocation. GPU usable/free;107/Paper owners independent.
 

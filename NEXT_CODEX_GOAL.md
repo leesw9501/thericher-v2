@@ -2,94 +2,79 @@
 
 ## Objective
 
-Complete daily-held-only-duration-replay-development-v1: run one fresh,
-explicitly frozen developmental comparison of fixed5, carry20, carry20_quarter
-and cash using original holdings' actual required CLOSE prices, preserving
-causal entry decisions, full calendars and self-financing cash. This advances
-engine validation, not dataset qualification or a Paper profitability gate.
+Complete daily-fixed20-entry-vintage-diversification-development-v1: test
+whether four quarter-sized fixed20 lots entered five sessions apart improve
+the return/drawdown trade-off versus synchronized full20 and quarter20,
+without confusing timing diversification with simple exposure reduction.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-128 root: D:/thericher-v2/model-artifacts/research/daily-held-only-duration-replay-development-v1.
-127 closure: D:/thericher-v2/model-artifacts/research/daily-fixed-basket-held-position-support-attribution-v1/integration-evidence.json
-SHA5555cc40d0995da2da5606409f1bab7591f0fbe833a76c0b8b855a8de4c00207.
+129 root: D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1.
+128 closure: D:/thericher-v2/model-artifacts/research/daily-held-only-duration-replay-development-v1/integration-evidence.json
+SHA36ac831ced4c9fcabeac8c5f3061342c1ed690c576a7114beb5e51b5f502314e.
 
 ## Retained Facts
 
-127 native diagnostic9ae9fdf3...18.627197s/600/host73b5b50d.../resultb74f2ae5...
-source/child/container closed/no collector; same18seals/180OPENs/390marks.
-All59 exact missing CLOSEs precede first positive ownership under all9cases;
-held/exit requirements0. Original reference10bps q/quarter/cost masks agree.
-Independent2groups/e2fe8f94... and Claude supported-with-limits. This proves
-only narrow required-price attribution, not funded replay/profit/Paper readiness.
+128 SAMEfamily trial3/600 used21.927221s, cumulative1800 spent, canonical
+outcome5fd2dbdc...;48complete cells/390marks/72checks33fail0unknown, rejected.
+At10bps carry20 growth exceeds fixed5 on DEV/later but drawdown is worse;
+positive blocks do not qualify a winner.127 exact59 gaps were before positive
+ownership;122/123 full-union unknown screens and all old bytes stay unchanged.
+G124 unallocated vintage proposal/release84a56c24.../ledgerbe19eefe... has
+SYN custody, not a numerical result. It still requires full-union CLOSEs;
+preserve it and version a small held-only ledger, never fabricate missing quotes.
 
-122/123 full-union outcomes remain technical_failure/input_unavailable with
-48cells72checks unknown and1200 allocated seconds spent.126 exact collection
-scope is exhausted0/59 recovered/next_due null, not global KIS history proof.
-Do not rewrite originals, retry acquisition or relabel seen data as fresh.
+## Work And Frozen Study
 
-## Required Work
+Engine owns the versioned lot ledger/composition, Data owns native phase
+scopes/metadata/source/coverage, Execution independent lot/cash/fee parity,
+temporary Validation source then actual aggregate/link review. Parent owns
+scientific contract/custody/CPU transport/integration/Git. Ready source work
+is parallel; reuse frozen intake/transport rather than another worker platform.
 
-Engine finishes a small versioned held-only replay and native composition;
-reuse original pure sealer/DTOs/arithmetic/metrics/screens, not the old full-
-union support audit or old run. Data reattests unchanged native intake/windows/
-source hashes; source handoff082f069c.../3checks, no acquisition. Execution
-independently checks ledger parity (source preparationd3c26ae0.../2SYN).
-Temporary Validation receives frozen source then actual aggregates/links;
-Parent owns contract, runtime composition, integration/Git. Infra only reuses
-existing pinned d6 CPU transport and custody APIs. Ready source work is parallel.
+Before raw numerical work freeze NEW diversification family with lineage to
+G124 preparation and128 rejection, not novelty or fresh independent data.
+Original ordered512/old800/later71 and390 real marked sessions stay. A common
+calendar-maturity-only rule base+34<=block-last yields14 base anchors5/5/3/1;
+all arms use these same anchors, not a future-return/missingness filter.
+Four prior-only phase decisions per group at offsets0/5/10/15 produce56 baskets
+and560 ranked entry OPEN checks, including140 phase0 control checks. Seal every
+basket before payoffs. Preserve original prior21 selector/entry arithmetic;
+original q reference10bps, quarters q/4, fixed capital, no reinvestment/resizing.
 
-Freeze a NEW scientific contract before raw numerical work. SAME family
-broad512-fixed-basket-holding-duration-development-v1, explicit trial3 with
-changed held-only pricing semantics and linked122/123/127 evidence; retain
-prior1200 and record new600/cumulative1800. Not novelty, replication, refund
-or automatic technical rerun. Source-isolated root/new UUID and one allocation.
-Ask Claude for a concise falsification-first challenge before relying on the
-changed support interpretation and scientific reexamination.
+Candidate: four q/4 lots, own CLOSE(entry+19) exits. Controls: synchronized
+four q/4 at base (full20), one q/4 at base (quarter20), cash. Same actual-leg
+5/10/20bps costs. Initialize pooled cash once, fund all simultaneous buys
+before effects, reconcile each own-lot sale once, no borrow/reset/substitution.
+Consume positive quantities across ALL active lots BEFORE sale/mark; missing
+held/exit CLOSE or funding failure makes whole comparison block unavailable.
+Zero/unowned consumes no quote. Keep every390 mark/cash tail/unknown padding.
 
-Keep original ordered512/old800/later71/calendar/CSV bytes, prior-only18 basket
-hashes and all180 ranked entry OPEN checks. Same fixed5 CLOSE(e+4), carry20
-CLOSE(e+19), quarter original q/4, cash, costs5/10/20bps per actual BUY/SELL leg.
-Quantity freezes from original initial capital and entry OPEN at reference
-10bps, unchanged across leg-cost bands; no reinvestment or future-data sizing.
-Actual rolling cash initialized once; reject insufficient funding before BUY,
-no borrowing, reset, resized q, invented inventory or substituted order.
+Exactly48 cells and48 predeclared strict checks: for each4 blocks/3 costs,
+staggered U>sync-full, U>sync-quarter, U>cash, DD<=sync-full. No DD<=cash test.
+Record exposure/concentration/turnover/fees and funded phase-averaging parity;
+do not attribute lower exposure alone to diversification. Any failed predicate
+rejects this candidate. No grid, timing/seed/threshold rescue or selected block.
 
-Require finite exact CLOSE for positive holdings BEFORE exit sale or mark.
-Never derive support from final-flat inventory. Zero q contributes algebraic
-zero without consuming or inventing a price; source missingness stays missing.
-Retain all390 calendar marks and cash tails, original48cells72strict predicates,
-complete paired blocks, unchanged naive fixed5/cash controls. Missing positive
-held/exit price or funding failure makes its whole comparison block unavailable,
-not a cash substitute/sample deletion. Reconstruct and verify four basket hashes
-before outcomes. No new horizon, model, threshold, seed or winner rescue.
+Strongest kill: wrong lot exit/duplicated sale, cash injection/borrowing, future
+quantity or admission filter, missing positive price zeroed, mark deletion,
+unfunded phase-average claim, source/seal mismatch or whole-block false success.
+Ask Claude for concise falsification-first contract/result challenges. ONE600s
+CPU2/4GiB including90s cleanup/publication, pinned d6 runtime/RO/networknone;
+no.env/credential/provider/account/order/Task/GPU/fit/weight/holdout calls.
+Source-safe aggregates A, market/private coordinates M, projected15%D:floor.
+Seen/current-listing/nonPIT/revised/raw-action/finality/nominal fractional-cost
+limits remain. Original19 Paper owners/shared basis/pending107 stay independent.
 
-Strongest kill: wrong prior seal, future-missingness-conditioned entry/q,
-missing positive exit priced as zero, skipped mark, cash reset/borrowing,
-changed valid price, false whole-block completeness or replay parity mismatch.
-Technical/input failure stops this exact study; do not convert into rejection
-or issue another allocation. Completed negative screens reject this revision.
+## Completion
 
-ONE600s CPU2/4GiB including90s publication/cleanup; existing d6 Python3.12.14/
-NumPy2.5.1, RO source/input/networknone, no.env/credential/provider/account/
-order/scheduler/GPU/fit/weight/holdout calls. Source-safe aggregate research
-metrics/hashes/pointers A; market/private coordinates only M. Projected15%D:
-floor, seen/current-listing/nonPIT/revised/raw-action/finality/nominal execution
-and fractional modeled-cost limits stay. Original19 Paper owners/shared10%
-basis/pending107 independent and unchanged; no manual due task or live route.
-
-## Completion And Continuation
-
-Frozen contract/canonical family row, source-native SYN and fully supported
-ledger parity, missing/q0/exit/funding/quarter/cost/390-mark kills, one exact
-native outcome or narrowly classified failure, source/time/cleanup reader,
-independent aggregate/link review and Claude result challenge. Close the
-canonical non-promoting outcome even for a failed allocation; preserve spend.
-Report actual cells/checks and modeled DEV/later results only when complete;
-never call analytical results broker fills or settled net returns.
-
-External-only focused checks reattach unchanged1312-source clean8 authority
-15935pass22skip; Ruff/three sample Compose checks. Tracked runtime changes
-require changed-path serial/fresh clean8. Refresh only necessary stateboards,
-HANDOFF/RUNBOOK, verify/commit/push, replace with exactly ONE material next
-objective and continue. No per-agent goals, report family or new approval gate.
+Frozen scientific row/lineage; native SYN including original fully-supported
+ledger parity, funded phase averaging, own-lot repeated symbols, q/cost/quarter,
+held/exit/funding failures; one finite actual outcome or exact failure; immutable
+source/time/cleanup reader, independent aggregate review, Execution parity and
+Claude challenge. Close canonical non-promoting outcome and preserve spend.
+No automatic rerun or Paper adoption. External focused checks reattach unchanged
+1312-source15935pass22skip clean8 authority; Ruff/three sample Compose checks.
+Changed shared runtime instead requires serial changed-path/fresh clean8.
+Refresh necessary stateboards/HANDOFF/RUNBOOK, verify/commit/push, replace with
+exactly ONE material next objective and continue. No new report/approval system.

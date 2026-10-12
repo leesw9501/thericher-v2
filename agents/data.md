@@ -79,6 +79,11 @@ Original input bytes/seals/all390marks retained; no acquisition/imputation,
 PIT/finality/full-future-support or economic qualification. Independent2groups
 e2fe8f94.../Claude limits pass.128 uses unchanged intake/windows/seals, fresh
 held-only contract before numerical work; source handoff082f069c.../3checks.
+128 closed/rejected36ac831c...: exact native intake/18seals/180OPENs/390marks,
+all48cells supported,21.927221s/0fits; no dataset/PIT/Paper qualification.
+129 SOURCE preparation: unchanged512/800/71/calendar; common maturity-only14
+anchors/4phases56prior baskets/560 ranked OPEN checks, full390marks retained.
+No future-price/missingness filter; actual new-entry/held support still unknown.
 CLOSE-only grade, conflict/identity/hash/date/MODP checks,15%D:floor and old
 values stay; no page-floor/nearest-date/Bar imputation or Paper qualification.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone

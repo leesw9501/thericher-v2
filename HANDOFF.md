@@ -247,10 +247,25 @@ Fixed reference10bps q, cost/quarter masks consistent; no prices imputed,
 Engine4/Data2/Execution2/Parent4 SYN, independent2groups/e2fe8f94..., Claude
 contract/result supported-with-limits. Unchanged1312-source15935/22 authority
 reattached; Ruff/three sample Compose pass. Honest-host, not OS/PIT proof.
-ONE128 daily-held-only-duration-replay-development-v1: fresh explicit SAME-
-family trial3 held-only pricing contract before numeric work; prior1200 spent
-stays/cumulative1800, all390marks/cash feasibility/exit-before-sale preserved.
-This does not retroactively complete122/123 or prove a profitable model.
+128 COMPLETE/rejected36ac831c... at A/research/
+daily-held-only-duration-replay-development-v1/integration-evidence.json.
+Scienceaa9d0c7e.../SAMEfamilytrial3row21e12677.../outcome5fd2dbdc...;
+prior1200/new600/cumulative1800 retained. Native7eda3a22...21.927221s/600,
+hostf52faca8.../result45381c6c.../source/child/container closed/no collector.
+All48cells/390marks/18seals/180OPENs complete;72strict checks39true33false,
+0unknown, rejected. At10bps modeled growth fixed5 DEV+1.9329%/later+0.6530%,
+carry20+2.5632%/+1.3285%, quarter+0.6408%/+0.3321%. Carry20DD3.4304%/
+0.5981% versus fixed5 0.4911%/0.2627%; positive blocks do not override failure.
+Engine4/Parent4/native Docker3/Data3 source checks, independent source4/actual2
+a8d5f40d... and Execution3/2fa9add3... pass; Claude contract/result limits.
+Reviewer invalid-cap funding fixture retained/corrected, not a market fault.
+No fits/GPU/weights/holdout, old122/123 repair or Paper promotion; seen/nonPIT/
+revised/current-listing/raw-action/nominal fractional-cost limitations remain.
+ONE129 daily-fixed20-entry-vintage-diversification-development-v1: four q/4
+lots phased0/5/10/15 sessions, common maturity-only14 anchors/full390marks,
+funded shared cash/own exits; compare synchronized full/quarter/cash controls.
+G124 sourcebe19... has full-union guard: preserve it, version held-only ledger.
+Fresh source/science contract needed; not a duration-threshold/model rescue.
 Quarter-vintage helperbe19eefe.../4SYN/independent3 is source-only, not a campaign
 or numerical-ready/GPU allocation.107/all original19 Paper owners independent.
 

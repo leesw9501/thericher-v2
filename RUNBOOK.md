@@ -184,6 +184,16 @@ Never rerun127 exclusive parent execute/inspect/finalize creators. ONE128
 daily-held-only-duration-replay-development-v1 explicitly freezes SAMEfamily
 trial3 before numeric work; prior1200 spent stays, no retroactive repair.
 Positive pre-sale CLOSE and funding failure remain unavailable; no imputation.
+128 COMPLETE/rejected36ac831c... at
+D:/thericher-v2/model-artifacts/research/daily-held-only-duration-replay-development-v1/integration-evidence.json.
+Scienceaa9d0c7e.../trial3row21e12677.../canonical5fd2dbdc...; prior1200/new600/
+cumulative1800, native7eda3a22...21.927221s/hostf52faca8.../result45381c6c....
+48complete cells/390marks/18seals/180OPENs/72checks33fail0unknown,0fits/GPU.
+Source/child/container closed/no collector. Independent source4/actual2
+a8d5f40d.../Execution3/2fa9add3.../native Docker3, Claude limits. Original
+full-union outcomes remain unknown. Never replay128 freeze/execute/inspect/
+finalize exclusive creators. NEXT129 fixed20 entry-vintage diversification
+needs fresh contract; originalG124be19 full-union source stays unchanged.
 DataR2 release5f2014d7.../collector8f272584...5SYN/independent3 closes sanitizer
 P2. Prior18 hashes/59 points, retained-first/120pages/2per anchor/90reserve/
 CLOSE-only/15%D:floor/virtual-market-only limits remain. NEXT alone is execute

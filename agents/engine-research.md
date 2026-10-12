@@ -105,6 +105,21 @@ weights/holdout. Seen/current-listing/nonPIT/raw-action/nominal limitations
 remain; quarter matches planned share-session exposure only. Future107 and
 original Paper authority remain independent.
 
+128 COMPLETE/rejected36ac831c... at A/research/
+daily-held-only-duration-replay-development-v1; scienceaa9d0c7e.../trial3
+row21e12677.../outcome5fd2dbdc..., prior1200/new600/cumulative1800 retained.
+Native21.927221s,48complete cells/390marks/72checks33fail0unknown/0fits.
+10bps modeled DEV/later growth fixed5+1.9329%/+0.6530%, carry20+2.5632%/
++1.3285%,quarter+0.6408%/+0.3321%; carry20DD3.4304%/0.5981% versus
+fixed5 0.4911%/0.2627%. Positive blocks do not override frozen risk/utility
+rejection or create a winner. Independent source4/actual2a8d5f40d.../
+Execution3/2fa9add3.../native Docker3, Claude limits; no fresh/Paper claim.
+129 develops SOURCE-only four fixed20 q/4 entry vintages0/5/10/15 with shared
+cash and own-lot exits, common maturity14anchors/56baskets/full390marks;
+controls synchronized full20/quarter20/cash, same costs/reference q.
+Existing G124be19... guard still demands full union; use versioned held-only
+ledger, keep original unchanged. No new numerical allocation until contract.
+
 ## Retained Evidence
 
 111 rejected3b542a4d.../outcome1025fd49... at A/research/
