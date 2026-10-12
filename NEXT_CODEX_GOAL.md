@@ -2,68 +2,100 @@
 
 ## Objective
 
-Complete prospective512-request-backed-publication-repair-v1: prevent the
-existing prospective512 producer from publishing or recovering accepted
-pages without the physical request custody its strict consumer already needs,
-and deliver the exact repaired source binding to its same inactive future
-shadow owner. Workdir C:/Users/Public/Documents/thericher-v2.
+Complete daily-fixed-basket-holding-duration-development-v1: determine whether
+holding the SAME prior-sealed daily rule basket for20 sessions instead of5
+improves modeled cost-aware utility without worsening drawdown. This advances
+portfolio/holding research, not another H30 model rescue or Paper permission.
+Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
-120 COMPLETE/rejectede22a63af... at A/research/
-firstrate-price-scale-invariant-entry-comparison-v1/integration-evidence.json;
-outcome94bb089e.../CPU2/13.0101s/40cells12checks10fail. Both fits spent,
-relative net/DD worse than raw both blocks; no third H30 rescue. Existing19
-owners, future107 and original shared Paper basis remain independent.
+121 COMPLETE/source-bound-delivery581f9f5a... at A/research/
+prospective512-request-backed-publication-repair-v1/integration-evidence.json.
+Four original future Actions changed, other37/all41nonActions/due preserved;
+actual delivery/fill/fees/net UNKNOWN. Fresh15935pass22skip authority;167serial,
+Ruff/three sample Compose pass. Never replay121 exclusive creators or Apply.
 
-## Source And Ownership
+## Frozen Direction And Inputs
 
-Re-retrieve Engine proposal6d73001f9882ffcb5afb504c4ebec4210a36f63c094dd1f354336938dcb0a2a3
-at A/research/firstrate-price-scale-invariant-entry-comparison-v1/
-next-direction-r1/proposal.json. Exact old producer under
-A/data/kis-stock-five-session-prospective512-shadow-delivery-v1:
-collect.py9a8ef268.../common.py6523d021.... Independent source/SYN review
-a2ea9365... has41pass1fail: accepted_page_missing_physical_request_custody.
-Current strict consumer already rejects incomplete coverage. This is a
-contained source defect, not observed bad installed data or a Paper hold.
-Claude direction supported-with-limits under this goal's claude-direction
-root; reject redundant repair if the selected current source is already fixed.
+Re-retrieve proposalb1d1e0e15f1610ac5645f6a51d010ced5e7664ef0aec0665f87bccd4d0767d7b
+at A/research/prospective512-request-backed-publication-repair-v1/
+engine-r1/next-direction-proposal.json and source-only Data geometry
+6ddb51063b89c3d6f03f2aa5490c0013886b2dc1d7f8d887f296122c4c5354a5 at
+A/data/prospective512-request-backed-publication-repair-v1/
+next-geometry-r1/source-receipt.json.18 entries/390 real CLOSE clocks are
+structurally source-ready; actual basket/mark support remains UNKNOWN.
+Retain nearest-family/seen-data lineage, no exhaustive novelty claim.
 
-Data owns fresh immutable collect/common successor source and focused SYN.
-Before any raw/sidecar/manifest publication, require physical request count
-==page_attempts, existing0<=accepted_pages<=page_attempts<=2, and at least
-accepted_pages records with BOTH completed outer and transport responses.
-Preserve failed attempt records and existing scope-start/monotonic UTC clock
-semantics. Do not require records==accepted or invent response clocks. Inspect
-and recovery must reject omission/mismatch before raw bar reads.
+Reuse original ordered512/old800/later71 retained private KIS daily sources
+with exact manifests/CSV pins declared in the proposal. No new acquisition,
+provider, public model/dependency, credential or Paper runtime needed.
+Use original G99 source-bound intake and continuation_policy.py254f5be...
+prior context/entry_plan. Prior21 completed bars, eligibility>=128 and>=64added,
+same rule momentum/top10/proxy/caps. Seal complete ranked slots and weights
+BEFORE reading each entry OPEN; no outcome-filtering/replacement/retuning.
+Claude concise falsification-first contract review before numerical outcomes.
 
-Engine checks unchanged512/21prior context/teacher/scaler/model/first-slot
-semantics. Independent Validation exercises prepublication and recovery
-negatives plus valid failed-attempt controls; no labels, market fits or tuning.
-Infra/Parent reuse existing job/installer/readback APIs: only if exact current
-job still pins old source and owner inactive, rebind its same future delivery
-Action/source to the pinned successor. Same image, triggers, settings, scope,
-due, claims, budget and accounting. Active owner defers only that binding.
-No manually invoking a Task, KIS client, collector, strategy worker or order.
+## Required Work
+
+Data owns exact source/calendar/pinned-intake and selected-union support audit;
+Engine owns small typed HoldingWindow/FrozenBasket/replay implementation and
+one frozen campaign contract; Execution independently checks q/cash/fees/real
+clocks and strict result reader. Infra reuses existing bounded CPU Docker/
+publication APIs, not a new runtime/platform. Temporary Validation independently
+attacks frozen source/SYN and then exact aggregate/source-linked result. Run
+non-conflicting preparation in parallel; dependent consumers use integrated
+interfaces, not handwritten duplicate transport dictionaries.
+
+Fix entries before outcomes:
+- seen_early1:420,440,460,480,500,520; mark420..549 (130 CLOSEs).
+- seen_early2:570,590,610,630,650,670; mark570..699 (130).
+- DEV:720,740,760,780; mark720..799 (80).
+- later_seen:21,41; mark21..70 (50).
+
+Four arms:fixed5,carry20,carry20_quarter,cash. Same initial-capital quantities
+q_i=w_i/(entry_OPEN_i*1.001); quarter freezes w/4 and q/4 BEFORE OPEN.
+Fixed5 sells CLOSE(e+4), carry20 sells CLOSE(e+19), quarter same20 exit.
+No reinvestment/rebalance/renewal/borrow/reset or increased capital envelope.
+Roll actual cash across entries; after exit remain cash on every real daily
+CLOSE, including flat tails. Quarter matches planned share-session exposure
+only, not realized notional/beta/overnight risk. Use a small typed20-session
+ledger; do not monkeypatch FiveSessionFrame or backdate20CLOSE into fifth.
+
+Require all18 prior-supported nonempty original baskets and complete selected
+ranked-slot union marks, including zero-weight slots and cash tails. Any missing
+point or insufficient funding makes the relevant whole comparison unavailable;
+no date/symbol shift, selected deletion, fallback interpolation or scope rescue.
+
+Costs5/10/20bps PER SIDE on actual changed notional, same frozen q/action paths.
+48cells=4arms*4blocks*3costs. For BOTH carry arms at EVERY block/cost require
+U=mean(diff(log([1,*NAV])))>fixed5 AND cash, and DD<=fixed5:72 fixed checks.
+Report modeled gross/fees/turnover/exposure/concentration/support and utility;
+no selected winning cost/arm or statistical significance on18 dependent baskets.
+Any fixed check failure rejects this campaign; no10/21/60-day/threshold/model
+or third-arm rescue. Raw split/dividend actions remain unverified; do not claim
+total return, PIT, physical availability, replication or Paper qualification.
 
 ## Bounds And Completion
 
-CPU-only source/SYN300s/2threads/4GiB;0fits/GPU/weights/labels/holdout. No new
-schema, platform, wrapper family, worker, provider probe, trigger or runtime.
-Use interface-derived plan/test dictionaries from existing pinned source
-packets, not hand-repeated protocol fields. Preserve used source/chunks,
-private state, all19 owners and exact Paper identities/basis/reservations.
-Never read live credentials or print secrets/private/raw data.
+Source/SYN then ONE CPU600s attempt including90s publication/cleanup reserve,
+2threads/4GiB,0fits/GPU/weights/holdout. Freeze exact source/contract/custody
+before numerical outcomes; no per-cell budget multiplier or retry refund.
+Generated output under A, no raw values in source-safe reports/Git/Claude.
+Never read KIS_LIVE_*. No manual Task/KIS/account/order/collector or scheduler
+change; original19 owners/shared10percent basis/unknown custody and pending107
+remain independent. Their next_due does not foreground-block this research.
 
-Strongest kill: accepted1/attempt1/empty requests must reject before ANY
-publication; omitted/mutated count/response clocks/binding reject on recovery
-before bars. Positive controls include complete failures alongside successes.
-Scope old<=2 as existing local contract, not a new KIS quota. A SYN pass does
-not prove provider finality/PIT, actual delivery data or Paper/account PnL.
+Strongest kill: future mutation cannot alter prior basket/q. Independent SYN
+checks real5/20 clocks, each fee leg once, quarter q/exposure identity and every
+daily cash/NAV conservation point. Missing support => input_unavailable; failed
+fixed predicates => rejected; technical failure preserves its spent attempt.
+SYN/aggregate review is not independent raw-price replay or OS proof.
 
-Completion evidence: reproduced old fault, repaired focused tests, independent
-compatibility review, exact same-owner before/after source and non-Action
-readback if delivered. Fresh focused checks plus unchanged118 authority
-reattachment, Ruff and three sample Compose configurations per AGENTS.md.
-Tracked shared-code change requires new clean8 authority. Integrate truthful
-closure/limits, commit/push, refresh current stateboards, replace this file
-with exactly ONE material next company objective and continue.
+Completion evidence: frozen contract, exact input/support facts, focused SYN,
+one bounded result with source/child/container/allocation closure and truthful
+independent/Claude review limits. Focused verification and unchanged121 authority
+reattachment only when1312 shared source bytes remain identical; any tracked
+change requires changed-path serial plus fresh clean8. Ruff/three sample Compose
+per AGENTS.md. Integrate evidence, refresh current stateboards/HANDOFF/RUNBOOK,
+commit/push, replace this file with exactly ONE material next company objective
+and continue without market-session foreground waiting.

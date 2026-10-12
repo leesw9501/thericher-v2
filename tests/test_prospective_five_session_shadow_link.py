@@ -642,7 +642,7 @@ def test_r3_source_root_cannot_replace_original_attempt_root(r3_chain):
 @pytest.mark.parametrize(
     "root",
     [
-        f"{s._A}/research/{s._GOAL}/delivery-r4",
+        f"{s._A}/research/{s._GOAL}/delivery-r5",
         f"{s._A}/research/other-objective/delivery-r3",
     ],
 )

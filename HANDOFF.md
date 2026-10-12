@@ -149,13 +149,34 @@ focused/source4/actual2 groups pass; Execution actual69bd7866...2groups and
 reader10b1e838...3SYN groups. Claude contract/result supported-with-limits.
 Honest-host source/input/child closure, not raw-PnL/PIT/OS proof. Reattached
 unchanged118 authority15924pass22skip, not a fresh full run.19owners unchanged.
-ONE121: prospective512-request-backed-publication-repair-v1. Exact producer
-collect9a8ef268.../common6523d021... can publish accepted pages without request
-records; independent41pass1faila2ea9365... identifies the contained source fault,
-not an actual broker incident. Consumer already rejects incomplete coverage.
-Repair before publication/recovery and deliver only the same inactive future
-shadow task's exact source binding; no new scope/order/trigger/capital. Claude
-direction supported-with-limits. Future107 stays pending, not a global hold.
+121 COMPLETE/source-bound-delivery581f9f5a... at A/research/
+prospective512-request-backed-publication-repair-v1/integration-evidence.json.
+Dataafec05da.../38SYN repairs physical request custody before publication and
+recovery. Enginecd069007.../60SYN preserves512/context/model/first-slot. Exact
+R4 typed consumers167serial/11new, Executiondcb95bf4.../14external SYN covers
+old374/R3/337 retained-first recovery and both codec source planes. Shadow
+job1621c736... keeps original455CPU/teacher74d, nativecfee separate RO metadata;
+G97job4fe221e3.../control52379215... keeps original462core74d/113f image with
+only four pure-leaf overlays. Shadow retains its separate originald6 image.
+Four same future Actions changed; other37Actions/all41nonActions and due/last/
+exit/settings unchanged. Parentposte9f22deb... verifies987pins and8 exact frozen
+runner/control refs. Original history/basis/slot/volume remain; private retained
+presence UNKNOWN, historical body DECLARED_NOT_REHASHED, runtime audit unchanged.
+No manual Task/provider/model/order run or actual delivery/fill/fees/net proof.
+Fresh clean8 authority15935pass22skip/376.62s/JUnit8096ab0e.../1312sources;
+Ruff/three sample Compose pass. Claude final delivery supported-with-limits.
+Executed builder repin weakness preserved; actual8refs match original sources,
+corrected expected lookup3SYN plus2collisionSYN pass; finalR3source758ff5c9...
+rejects additional proof/alias collisions. Supplement at this goal's parent/
+preparation-fix-supplement.json; independent postdeliveryd41b9aa5... is ONE
+metadata group, not runtime replay. No creator/Apply replay. Read review output
+before dispatching dependent effects, never bundle those steps unconditionally.
+ONE122: daily-fixed-basket-holding-duration-development-v1. Source proposal
+b1d1e0e... and geometry6ddb5106... support18 entries/390 CLOSE clocks only;
+actual basket/mark support remains unverified. Compare prior-sealed fixed5,
+carry20, carry20_quarter and cash with real clocks and full cash/NAV tails.
+No fit/GPU/weights/holdout; CPU600s/2threads/4GiB, no H30/model rescue. Pending107
+and all original Paper owners remain independent; no global market wait.
 
 ## Retained Preparations And Closures
 
@@ -521,22 +542,28 @@ Basic offline claim reader is not full future Paper adoption evidence.
 
 Original Data41pass1faila2ea9365... remains: pure writer accepts accepted pages
 without physical request records. Normal collector supplies records; new
-consumer guard30ff0047... contains exact bad input, NOT a global writer repair.
+consumer guard30ff0047... contains exact bad input.121 fresh Data successor
+afec05da... now repairs prepublication/recovery custody; delivery is still
+active, not an actual capture or broker result. Original fault remains retained.
 Original Engine6pass2faila22b1b49... remains immutable; R2 fixes final expiry/
 plan/deadline and staged no-replace publication. Failure keeps inference1/
 withholds DTO; persistent I/O may leave no canonical receipt, not fake success.
 Original Execution26pass2fail56820b9a... remains: ambient Decimalprec2 changes
 receipt replay to safe no_intent. Caller-context supplement81f659cc.../12pass
-contains local64/FLOOR path, not contracts74d1e9b9... repair.
-Original installed sources/requests/reservations/basis are unchanged.
+contained the local64/FLOOR path only.118 subsequently repaired shared source
+contractscfee0f6a... with fresh source/SYN authority; used74d snapshots remain
+unchanged.121 explicitly separates native cfee metadata from CPU455 old74d.
+Existing requests/reservations/basis are unchanged.121 future source bindings
+are prepared, not yet delivered or actual runtime evidence.
 Harness failures and superseded source versions are retained, never current
 passing authority. No finding becomes a global approval or Paper permission hold.
 
 ## Earlier Input Preparation
 
 106 numerical and107 forecast preparation closures above supersede their old
-source-only readiness. FirstRate input geometry still needs its bounded actual
-check before the next intraday campaign. Historical data is not a fresh holdout;
+source-only readiness.108/115 and119/120 bounded actual FirstRate geometry and
+research closures supersede that earlier pending check; the rejected H30
+families must not be rerun as fresh evidence. Historical data is not a fresh holdout;
 KIS retained390-minute sessions do not establish decision-time availability.
 
 Goal94 kis-five-session-successor-custody-preparation-v1 COMPLETE d6e4bec7...:

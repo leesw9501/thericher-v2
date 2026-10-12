@@ -40,15 +40,17 @@ child closure honest-host only, not physical decision-time availability.
 120 COMPLETE/rejectede22a63af... retains original2987admitted/all7 support,
 124nonempty TRAIN dates; allzero volume windows0 in all3 blocks. Relative
 geometry required no extra history; CPU2 result cannot qualify PIT/finality.
-ONE121 owns a fresh prospective512 producer successor from exact collect
-9a8ef268.../common6523d021.... Independent source/SYN41pass1faila2ea9365...
-shows accepted pages can lack physical request custody. Enforce attempt count
-and completed-response coverage before publication and recovery, preserving
-failed-attempt records and existing clock semantics; no new consumer gate,
-raw read/intake/provider call or physical finality claim. Same512/model/task
-scope only; immutable old source/chunks preserved. Existing19owners/107 future
-coverage/durable cursors and next_due unchanged except the scoped source
-binding if the named future shadow owner is inactive.
+121 COMPLETE/source-bound-delivery581f9f5a...; Data sourceafec05da.../38SYN
+repairs missing physical request custody before publication/recovery. Shadow
+R4job1621... and G97job4fe2... source-bound to four original future Actions;
+other37Actions/all41nonActions/due unchanged. Preserve failed attempts and old
+chunks; no actual provider/raw-intake/finality/PIT result from this source work.
+122 owns original512 daily intake geometry/support, not strategy selection.
+Source-only geometry6ddb5106... has18 entries/390 CLOSE clocks; actual selected
+support UNKNOWN. Use old800/later71 sources, prior21 completed bars and frozen
+original ranked-slot union, including zero-weight slots/cash tails. Any missing
+mark is scoped input_unavailable, never replacement dates/symbols/interpolation.
+No acquisition/cache/cursor/Paper change. Existing owners/107 remain independent.
 Recovery:114/116 fits spent and115 geometry closed; never rerun their creators. Current goal alone
 assigns any next Data work. Market data remains M, artifact root A/15%D:floor.
 

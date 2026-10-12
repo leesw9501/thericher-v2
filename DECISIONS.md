@@ -10163,3 +10163,29 @@ consumer gate, actual provider incident or general Paper pause. Same inactive
 future task may receive an exact successor source binding without widening
 its scope, schedule, image, claims, capital or order authority. Claude's
 supplied-facts direction is supported-with-limits, not an authority grant.
+
+## 2026-10-12 - Separate source planes and preserve exact legacy recovery
+
+A repaired native Data source and an immutable CPU/model snapshot can carry
+different contracts bytes. Attest each honestly: native cfee metadata gets one
+disjoint read-only alias; the executed CPU455/74d snapshot and teacher stay
+unchanged. Derive alias membership from the frozen interface/template rather
+than guessing a mount or claiming byte-equivalence. Canonical Bar semantics
+remain source/SYN-checked; this is not provider finality or runtime proof.
+
+Rebind the necessarily linked future Paper consumer to only the exact R4 tuple,
+not an arbitrary incoming worker/pin. Keep the original request namespace,
+shared basis and retained native374/R3/337 recovery before fresh input. Unknown
+or mismatched retained identity stays in exact recovery and cannot be replaced;
+private retained presence is unknown unless observed, not an approval gate.
+Never rewrite an old receipt, used snapshot, reservation or quantity. Same-owner
+future source/Action compatibility is reversible private work, not new capital,
+order authority, a profitability gate or evidence of an actual fill.
+
+Future source-delivery builders derive runner/control pins from their frozen
+manifests and reject conflicting duplicate keys, including additional proof
+references and aliases. Newly observed bytes never redefine an expectation.
+Read a dependent review's result before dispatching its side effect; do not
+bundle a wait and unconditional mutation into one tool script. Preserve used
+recipes/receipts on a preparation fault and audit exact observed bindings, not
+replay an exclusive creator or infer actual Paper behavior from Task metadata.

@@ -81,7 +81,7 @@ Shared sourcecfee0f6a.../95new regressions;483serial17.47s/clean8 15924pass22ski
 Compose pass. Independent3groups8576checks128contexts, Claude supported-with-limits.
 Compatible default28 refs stable; rounded long legacy receipts remain rejected,
 no migration/substitute/installed-source or19-owner change. Never rerun close.py.
-Authority reattachment for unchanged future external-only work:
+Historical118 authority;121 fresh authority below supersedes it:
 uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/execution/context-independent-decision-target-binding-repair-v1/parent/verification.py --check
 Fresh JUnit: D:/thericher-v2/model-artifacts/verification/full8-20261012-g118-v1/pytest.xml.
 Temporary native-File launcher failures are not authority; successful command
@@ -108,12 +108,31 @@ hoste88a2315.../result25493a5a.../Parentread36c2900b.... CPU2 complete,
 23fresh focused/source4/actual2, Execution69bd7866...2actual/reader3SYN;
 Claude supported-with-limits. Reattached118 authority, not fresh full CI.
 Never rerun120 freeze/run/read/close exclusive creators or reset its fits.
-ONE121 prospective512-request-backed-publication-repair-v1: fresh producer
-successor, prepublication/recovery request custody checks, same future shadow
-scope only. Current collect9a8ef268.../common6523d021... and immutable chunks
-stay unchanged. Consumer already contains the source fault; no global Paper
-hold. No manual Task/provider/collector/order run; source binding only when
-the existing owner is inactive. NEXT alone defines implementation authority.
+121 COMPLETE/source-bound-delivery581f9f5a... at
+D:/thericher-v2/model-artifacts/research/prospective512-request-backed-publication-repair-v1/integration-evidence.json.
+Dataafec05da.../Enginecd069007.../Executiondcb95bf4...; original old source/chunks
+preserved. ShadowR4job1621c736... and G97delivery-r2job4fe221e3.../control52379215...
+delivered to four SAME inactive future Actions. Parentposte9f22deb... verifies
+four changes/37otherActions/all41nonActions, same due/last/exit and987sourcepins.
+No manual Task/provider/model/order run; actual inputs/fills/fees/net UNKNOWN.
+Original74d CPU/core snapshots preserved; nativecfee separate RO metadata.
+Exact374/R3/337 retained recovery before fresh; private presence UNKNOWN, not
+clearance. Historical body DECLARED_NOT_REHASHED, runtime byte audit unchanged.
+Fresh authority:167serial/15935pass22skip clean8/376.62s/JUnit8096ab0e...;
+1312-source9bcbc890..., Ruff/three sample Compose pass. Reattach unchanged bytes:
+uv run --no-env-file --extra dev python -B D:/thericher-v2/model-artifacts/research/prospective512-request-backed-publication-repair-v1/parent/verification.py --check
+JUnit: D:/thericher-v2/model-artifacts/verification/full8-20261012-g121-v1/pytest.xml.
+Never rerun121 prepare_shadow/prepare_g97/prepare_action_plan/invoke_actions/
+post_delivery/close exclusive creators or Apply; used planf26 preserved. Builder
+P2 corrected after exact8ref comparison found0actual mismatch;3+2SYN pass,
+R3source758ff5c9... rejects all conflicting additional proof/alias pins. Separate
+parent/preparation-fix-supplement.json links independent postdeliveryd41b9aa5...
+ONE metadata group. Never invoke R3 creator on the already-delivered scope. Preserve
+executed recipe, failed review/test evidence and separate source-plane limits.
+ONE122 daily-fixed-basket-holding-duration-development-v1: prior-sealed same512
+baskets/real5vs20 CLOSE clocks/cash NAV tails; source geometry18entries390marks
+only, actual support unverified. No fit/GPU/holdout or19-owner change. Current
+NEXT alone owns scope; no numerical run before source contract/custody freeze.
 110 COMPLETE/rejectedf9f55eb5...:
 D:/thericher-v2/model-artifacts/research/kis-peer-residual-return-ranking-development-v1/integration-evidence.json.
 Sciencea6ed5fbe.../rowb4116e81.../outcome9f9dfb41.... Original600s run

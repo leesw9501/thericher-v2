@@ -54,10 +54,20 @@ row9997ea45.... Matched raw/relative36x5 Logistic fits CPU2/0CUDA0failed,
 net/DD worse both3bps blocks. No geometry/threshold/model rescue, novelty,
 stationarity, profitable-model or Paper claim. Parent23fresh focused,
 independent source4/actual2, Claude contract/result supported-with-limits.
-Next proposal6d73001f... selects the measured prospective512 producer fault,
-not a third H30 fit. ONE121 Engine owns unchanged512/context/model semantics
-and source-only compatibility check; no labels/fits/GPU allocation. Future107
-remains pending; Paper authority is independent of research outcomes.
+121 COMPLETE/source-bound-delivery581f9f5a...; Enginecd069007.../60SYN preserves
+original512/context/teacher/scaler/model/first-slot and CPU455 at74d. Native
+cfee is separate RO metadata, not same-plane equivalence. Four future Actions
+updated, no inference/fits/GPU or actual Paper result. Fresh15935/22 authority.
+122 owns daily-fixed-basket-holding-duration-development-v1. Proposalb1d1e0e...
+and geometry6ddb5106... are source-ready, actual18-basket/390-mark support
+unverified. Prior-seal unchanged rule top10 basket; fixed5 CLOSE(e+4), carry20
+CLOSE(e+19), quarter q/4 and cash, full NAV/cash tails, costs5/10/20bps per side.
+48cells/72checks frozen before outcomes; any failure rejects, no horizon/seed/
+architecture rescue. Small typed20-session ledger, never FiveSessionFrame
+backdating. CPU600s including90s publication reserve/2threads/4GiB,0fits/GPU/
+weights/holdout. Seen/current-listing/nonPIT/raw-action/nominal limitations
+remain; quarter matches planned share-session exposure only. Future107 and
+original Paper authority remain independent.
 
 ## Retained Evidence
 

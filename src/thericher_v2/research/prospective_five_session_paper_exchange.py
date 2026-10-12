@@ -40,6 +40,24 @@ SOURCE_PINS = (
         "sha256:525eff415a6f33453450a5ec043934c15105b041c0bb529ca0eb423b7a4ca136",
     ),
 )
+SOURCE_PINS_R4 = (
+    (
+        "src/thericher_v2/data/prospective_five_session_shadow_link.py",
+        "sha256:69a75f1de570962c06880797780b4040c86e3a7fb37ede78fd595a01b1b1f95b",
+    ),
+    (
+        "src/thericher_v2/execution/kis_paper_five_session.py",
+        "sha256:b22da30fcbfbb24f81efd8622822e9382a31832fdbd570be261217dabf719fb6",
+    ),
+    (
+        "src/thericher_v2/research/prospective_five_session_shadow_decision.py",
+        "sha256:a18ecff797be9cb7399e2eae0981afaf803a5eb7609e744ec2fbafdfb2857831",
+    ),
+    (
+        "src/thericher_v2/research/prospective_five_session_shadow_input.py",
+        "sha256:f4b811d2a4197fe642ce1dc53afd4f84aea11b7122ba68261b544240d7e422af",
+    ),
+)
 _PIN = re.compile(r"sha256:[0-9a-f]{64}", re.ASCII)
 _CONTEXT = Context(prec=64, rounding=ROUND_DOWN)
 _JOB = "sha256:90131beb0785da155beb6d435e2a9a07180408264b95ebe650e3d43cd5728e47"
@@ -153,11 +171,10 @@ class ProspectivePaperExchange:
 
 def _pins(pins: PaperExchangePins) -> None:
     _require(type(pins) is PaperExchangePins, "exchange_caller_pins")
-    _require(_pin(pins.job_sha256) == _JOB, "exchange_job")
+    _pin(pins.job_sha256)
+    _, _, sources, _ = _source_contract(pins)
     _pin(pins.control_sha256)
-    _require(
-        type(pins.source_pins) is tuple and pins.source_pins == SOURCE_PINS, "exchange_sources"
-    )
+    _require(type(pins.source_pins) is tuple and pins.source_pins == sources, "exchange_sources")
     _require(
         type(pins.identities) is tuple
         and len(pins.identities) == 512
@@ -195,6 +212,36 @@ def _pins(pins: PaperExchangePins) -> None:
     )
 
 
+def _source_contract(pins: PaperExchangePins):
+    if pins.job_sha256 == _JOB:
+        return _DATA, _WORKER, SOURCE_PINS, _LINEAGE
+    from thericher_v2.data.prospective_five_session_shadow_link import (
+        _R4_PLAN_SHA,
+        _R4_ROOT,
+        _r4_binding,
+    )
+
+    try:
+        binding = _r4_binding()
+    except ValueError:
+        raise PaperExchangeError("exchange_job") from None
+    _require(pins.job_sha256 == binding["job_sha"], "exchange_job")
+    _require(
+        type(SOURCE_PINS_R4) is tuple
+        and len(SOURCE_PINS_R4) == len(SOURCE_PINS)
+        and tuple(name for name, _ in SOURCE_PINS_R4) == tuple(name for name, _ in SOURCE_PINS),
+        "exchange_sources",
+    )
+    for _, wanted in SOURCE_PINS_R4:
+        _pin(wanted)
+    return (
+        _R4_PLAN_SHA,
+        binding["worker_sha"],
+        SOURCE_PINS_R4,
+        {**_LINEAGE, "delivery_root": _R4_ROOT},
+    )
+
+
 def _decision(payload: object, links: object, pins: PaperExchangePins, as_of: datetime):
     from thericher_v2.contracts import decision_instrument_binding_ref
     from thericher_v2.execution.kis_paper_five_session import cohort_from_paper_decision
@@ -205,9 +252,10 @@ def _decision(payload: object, links: object, pins: PaperExchangePins, as_of: da
     for key, value in links.items():
         if key.endswith("sha256"):
             _pin(value)
+    data_plan, worker, _, _ = _source_contract(pins)
     fixed = dict(
-        worker_sha256=_WORKER,
-        input_plan_sha256=_DATA,
+        worker_sha256=worker,
+        input_plan_sha256=data_plan,
         input_metadata_sha256=_METADATA,
         calendar26_sha256=_CALENDAR,
     )
@@ -285,9 +333,10 @@ def encode_prospective_paper_exchange(
             "exchange_loaded_types",
         )
         links = loaded.link.expected_engine_links()
+        data_plan, _, _, lineage = _source_contract(pins)
         _require(
             loaded.link.job_sha == pins.job_sha256
-            and loaded.link.data_plan_sha == _DATA
+            and loaded.link.data_plan_sha == data_plan
             and loaded.link.calendar_sha == _CALENDAR
             and loaded.link.engine_result_sha == links["result_sha256"]
             and loaded.link.engine_plan_sha == links["plan_sha256"]
@@ -305,7 +354,7 @@ def encode_prospective_paper_exchange(
                 dict(
                     schema_version=1,
                     kind=_KIND,
-                    lineage=_LINEAGE,
+                    lineage=lineage,
                     job_sha256=pins.job_sha256,
                     control_sha256=pins.control_sha256,
                     source_pins=pins.source_pins,
@@ -334,6 +383,7 @@ def restore_prospective_paper_exchange(
     """
     try:
         _pins(pins)
+        _, _, _, lineage = _source_contract(pins)
         _utc(as_of)
         _require(type(raw) is bytes and 0 < len(raw) <= MAX_EXCHANGE_BYTES, "exchange_size")
         _require(_sha(raw) == _pin(expected_sha256), "exchange_hash")
@@ -348,7 +398,7 @@ def restore_prospective_paper_exchange(
             type(body["schema_version"]) is int
             and body["schema_version"] == 1
             and body["kind"] == _KIND
-            and body["lineage"] == _LINEAGE,
+            and body["lineage"] == lineage,
             "exchange_schema_lineage",
         )
         _require(

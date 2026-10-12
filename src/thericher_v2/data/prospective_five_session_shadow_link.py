@@ -27,6 +27,21 @@ _A = "D:/thericher-v2/model-artifacts"
 _DATA = f"{_A}/data/{_GOAL}"
 _ROOT = f"{_A}/research/{_GOAL}/delivery-r2"
 _R3_ROOT = f"{_A}/research/{_GOAL}/delivery-r3"
+_R4_ROOT = f"{_A}/research/{_GOAL}/delivery-r4"
+_R4_PRODUCER = f"{_DATA}/producer-repair-r1"
+_R4_PLAN_SHA = "sha256:4cb6195f9abe822593e8abcee12a647f25f9b8293759c0005833504450dba8f1"
+_R4_GUARD_SHA = "sha256:10c077b616079febae845c58ee6e0b8bb6f593196031742cef852c8f3e917603"
+_R4_SOURCE_PINS = {
+    "common.py": "sha256:a5d9fe2002f7044412e31a4c4e3437359e65501814f18287bf1d800c1950588c",
+    "collect.py": "sha256:1f508d4da34945d0ad22452bfd62c33e1a83bc7ce80d533eda883ecc45a87daf",
+}
+_R4_BINDING = {
+    "job_sha": "sha256:1621c736029d86d31e9b5717a056d1f395ee9bfe8657aa3dfebe3b9ca4cf154c",
+    "engine_template_sha": (
+        "sha256:1064b3c82fd371113ba1d7cf64a0e76c18dd7c81f540cb2c19811f382d3c6ad9"
+    ),
+    "worker_sha": "sha256:587a92c4776c854973c17c72088e8139eb04618d65b3b0999d6f1e18edcc599e",
+}
 _ORIGINAL_JOB_SHA = "sha256:e8550670d5b18a9bbf81600cb9d399e591e73300e95d9bbf996de5f73837be0a"
 _ORIGINAL_INSTALLATION_SHA = (
     "sha256:d321f6211d68afb73d4e6555fc2f33c7b660e35dbca2cad01eb76714873e16df"
@@ -207,9 +222,21 @@ def _validate_controls(controls):
     _require(type(controls) is ShadowControls, "controls_invalid")
     root = _path(controls.expected_delivery_root)
     _require(
-        any(_same(root, f"{_A}/research/{_GOAL}/delivery-{version}") for version in ("r2", "r3")),
+        any(
+            _same(root, f"{_A}/research/{_GOAL}/delivery-{version}")
+            for version in ("r2", "r3", "r4")
+        ),
         "delivery_root_invalid",
     )
+    r4 = _same(root, _R4_ROOT)
+    if r4:
+        binding = _r4_binding()
+        _require(
+            controls.job_sha == binding["job_sha"]
+            and controls.engine_template_sha == binding["engine_template_sha"]
+            and controls.data_plan_sha == _R4_PLAN_SHA,
+            "r4_control_binding",
+        )
     job = _document(controls.job_bytes, controls.job_sha)
     data = _document(controls.data_plan_bytes, controls.data_plan_sha)
     template = _document(controls.engine_template_bytes, controls.engine_template_sha)
@@ -226,7 +253,7 @@ def _validate_controls(controls):
         "job_scope",
     )
     attempt_root = _join(_ROOT, "runtime")
-    if _same(root, _R3_ROOT):
+    if _same(root, _R3_ROOT) or r4:
         lineage = _fields(
             job.get("lineage"),
             "original_root original_job_sha256 original_installation_plan_sha256 attempt_root",
@@ -240,7 +267,8 @@ def _validate_controls(controls):
         )
     source = _pins(job["source_pins"])
     _require(
-        source.get(_join(_DATA, "plan.json").casefold()) == controls.data_plan_sha
+        source.get(_join(_R4_PRODUCER if r4 else _DATA, "plan.json").casefold())
+        == controls.data_plan_sha
         and _same(job["engine"]["template_path"], _join(root, "engine-template.json"))
         and source.get(_path(job["engine"]["template_path"]).casefold())
         == controls.engine_template_sha
@@ -256,6 +284,17 @@ def _validate_controls(controls):
         if data["reference_inputs"]
         else _pins(data["source_pins"])
     )
+    if r4:
+        _require(
+            all(
+                declared_data.get(_join(_R4_PRODUCER, name).casefold()) == wanted
+                for name, wanted in _R4_SOURCE_PINS.items()
+            )
+            and _same(job["data"]["clock_guard_path"], _join(_R4_ROOT, "shadow_clock_guard.py"))
+            and source.get(_join(_R4_ROOT, "shadow_clock_guard.py").casefold()) == _R4_GUARD_SHA
+            and template["pins"].get("/worker/shadow_worker.py") == binding["worker_sha"],
+            "r4_source_binding",
+        )
     aliases = template["data_source_paths"]
     normalized_aliases = {_path(host).casefold(): alias for host, alias in aliases.items()}
     _require(
@@ -299,6 +338,15 @@ def _validate_controls(controls):
     return job, data, template, source, metadata, keys, attempt_root
 
 
+def _r4_binding() -> dict[str, str]:
+    """An exact source allowlist, never an incoming expected-pin override."""
+    _require(type(_R4_BINDING) is dict, "r4_sources_unavailable")
+    binding = _fields(_R4_BINDING, "job_sha engine_template_sha worker_sha")
+    for wanted in binding.values():
+        _pin(wanted)
+    return binding
+
+
 def validate_shadow_controls(controls: ShadowControls) -> tuple[tuple[str, object], ...]:
     """Pure pinned-control preflight; no callback, claim or source-file reads."""
     try:
@@ -324,7 +372,9 @@ def _verify(claim_bytes, controls, read_metadata, observed_at):
     )
     job, data, template, source, metadata, keys, attempt_root = _validate_controls(controls)
     root = _path(controls.expected_delivery_root)
-    lineage_fields = " original_job_sha256" if _same(root, _R3_ROOT) else ""
+    lineage_fields = (
+        " original_job_sha256" if _same(root, _R3_ROOT) or _same(root, _R4_ROOT) else ""
+    )
     records = {}
 
     def read(path, wanted=None, cap=4 * 1024**2):

@@ -122,7 +122,7 @@ def load_prospective_shadow_input(
     as_of: datetime,
     read_metadata: Callable[[str, int], bytes] = read_shadow_metadata,
 ) -> ProspectiveShadowInput:
-    """R3 controls -> original R2 claim -> Data 15 links -> schema1 DTO -> cohort.
+    """R3/R4 controls -> original R2 claim -> Data 15 links -> schema1 DTO -> cohort.
 
     ``ShadowControls`` must include explicit caller-frozen R3 job/template hashes
     and delivery root, not the Data type's R2 defaults. Friday inference retains
@@ -131,7 +131,9 @@ def load_prospective_shadow_input(
     The injected reader has the same exact JSON scope and per-read byte ceiling.
     """
     from thericher_v2.data.prospective_five_session_shadow_link import (
+        _R4_ROOT,
         ShadowControls,
+        _r4_binding,
         validate_shadow_controls,
         verify_shadow_link,
     )
@@ -145,12 +147,18 @@ def load_prospective_shadow_input(
         _require(type(as_of) is datetime and as_of.utcoffset() == timedelta(0), "input_clock")
         _require(
             type(controls) is ShadowControls
-            and PureWindowsPath(controls.expected_delivery_root) == PureWindowsPath(_R3_ROOT),
+            and PureWindowsPath(controls.expected_delivery_root)
+            in (PureWindowsPath(_R3_ROOT), PureWindowsPath(_R4_ROOT)),
             "input_controls",
         )
         validate_shadow_controls(controls)
         template = json.loads(controls.engine_template_bytes)
-        _require(template["pins"]["/worker/shadow_worker.py"] == _WORKER_R3, "input_worker")
+        worker = (
+            _r4_binding()["worker_sha"]
+            if PureWindowsPath(controls.expected_delivery_root) == PureWindowsPath(_R4_ROOT)
+            else _WORKER_R3
+        )
+        _require(template["pins"]["/worker/shadow_worker.py"] == worker, "input_worker")
         data = json.loads(controls.data_plan_bytes)["metadata"]
         prior = datetime.fromisoformat(data["prior_clocks"][-1]["close_ts"])
         future = data["future_clocks"]
@@ -193,7 +201,7 @@ def load_prospective_shadow_input(
                 session_closes=closes,
                 entry_valid_until=expiry,
                 as_of=as_of,
-                expected_worker_sha256=_WORKER_R3,
+                expected_worker_sha256=worker,
             )
             if bound.status != "bound_shadow_metadata":
                 return ProspectiveShadowInput(

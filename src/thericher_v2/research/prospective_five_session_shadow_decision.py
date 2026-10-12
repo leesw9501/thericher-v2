@@ -192,8 +192,8 @@ def restore_prospective_shadow_decision(
     strings. The caller independently binds the full chain and source-map digest.
     This checks its finite projection, not physical capture/provider finality.
     Research ``decision.cohort_ref`` is ref:, never the native sha256 fingerprint.
-    R3 requires an explicit independently frozen caller pin; omitted means R2.
-    Only these two released worker byte identities are accepted.
+    R3/R4 require an explicit independently frozen caller pin; omitted means R2.
+    Only the explicitly released worker identities and their Data pins are accepted.
     """
     _utc(as_of)
     if raw is None:
@@ -208,13 +208,24 @@ def restore_prospective_shadow_decision(
             if key.endswith("sha256"):
                 _require(type(value) is str and bool(_PIN.fullmatch(value)), "shadow_expected_pin")
         _require(_sha(raw) == expected_links["result_sha256"], "shadow_result_hash")
+        fixed = _FIXED_LINKS
+        legacy = expected_worker_sha256 in (_FIXED_LINKS["worker_sha256"], _WORKER_R3)
+        if not legacy:
+            from thericher_v2.data.prospective_five_session_shadow_link import (
+                _R4_PLAN_SHA,
+                _r4_binding,
+            )
+
+            try:
+                worker_r4 = _r4_binding()["worker_sha"]
+            except ValueError:
+                raise ShadowDecisionError("shadow_fixed_source") from None
+            _require(expected_worker_sha256 == worker_r4, "shadow_fixed_source")
+            fixed = {**_FIXED_LINKS, "input_plan_sha256": _R4_PLAN_SHA}
         _require(
             type(expected_worker_sha256) is str
-            and expected_worker_sha256 in (_FIXED_LINKS["worker_sha256"], _WORKER_R3)
             and expected_links["worker_sha256"] == expected_worker_sha256
-            and all(
-                expected_links[k] == v for k, v in _FIXED_LINKS.items() if k != "worker_sha256"
-            ),
+            and all(expected_links[k] == v for k, v in fixed.items() if k != "worker_sha256"),
             "shadow_fixed_source",
         )
         r = json.loads(

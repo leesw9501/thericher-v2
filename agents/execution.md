@@ -60,10 +60,19 @@ net/DD are not broker fees, actual holdings, settled cash or account NAV.
 120 COMPLETE/rejectede22a63af...; parityeaa7c13a.../release9fc4e53e...,
 strict reader10b1e838...3SYN and actual69bd7866...2aggregate groups pass.
 40cells12checks10fail/CPU2 completed, raw119 reconstruction exact; relative
-net/DD worse both blocks. No independent raw-PnL/PIT/OS proof. ONE121 repairs
-Data producer request custody, not order/account/recovery logic. Execution
-owners/shared basis/custody unchanged; actual broker fees/settled cash/net
-remain unobserved by these research jobs.
+net/DD worse both blocks. No independent raw-PnL/PIT/OS proof.
+121 COMPLETE/source-bound-delivery581f9f5a...; dcb95bf4... external14SYN and
+tracked167serial/11new preserve exact15-field/schema1 R4 input plus old374/R3/
+337 retained-first recovery. Unknown identity never substitutes. G97 newjob
+4fe221e3.../control52379215..., original462core74d/113f image, four pure leaves
+only. Four original future Actions updated, other37/all41nonActions unchanged;
+private slot/volume/shared basis/history unchanged. Private presence UNKNOWN;
+historical descriptor DECLARED_NOT_REHASHED, original runtime byte audit kept.
+No manual Task/KIS/model/order or actual reconciliation/fill/fees/net claim.
+122 owns independent constant-q/cash/fee/real20-clock arithmetic and strict
+result reader for the holding-duration comparison; no strategy/model/order
+change. Fixed5 exits CLOSE(e+4), not old replay OPEN(e+5); carry20 CLOSE(e+19),
+quarter q/4, full marked NAV/cash tails and fees once per actual BUY/SELL leg.
 
 ## Retained Evidence
 

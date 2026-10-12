@@ -40,8 +40,14 @@ closed by outcome94bb089e.... One600s native2c1bb70b... used13.0101s,
 CPU2 started/completed0failed/0CUDA/weights/holdout. Both fits remain spent;
 raw119 reproduction is no refund.40cells12checks10fail, no rescue/depth.
 Source/input/child closure honest-host,688799744-byte measured peak.
-ONE121 source/SYN prospective producer repair allocates no predictive fit,
-GPU or sealed evaluation. GPU usable/free; future107 original row pending.
+121 COMPLETE/source-bound-delivery581f9f5a... allocates no predictive fit/GPU/
+sealed evaluation. Fresh15935/22 authority, no model or Paper promotion.
+122 daily fixed-basket holding economics reserves one CPU600s attempt including
+90s publication/cleanup,2threads/4GiB; allocation only after exact contract and
+source/support preparation.0fits/GPU/weights/holdout.18 dependent baskets,
+390 marked closes/48cells/72 fixed checks, no per-cell budget multiplier or
+post-result horizon rescue. GPU usable/free, not an approval/environment hold;
+future107 original row stays pending and Paper resource priority unchanged.
 
 ## Retained Evidence
 
