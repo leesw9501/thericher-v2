@@ -6,28 +6,25 @@ A=D:/thericher-v2/model-artifacts. Paper delegated; never read/route KIS_LIVE_*.
 
 ## Current Package
 
-129 CLOSED/rejected6488f074...:
-D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
-SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
-One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
-48complete cells/48strict checks25true23false0unknown. All12 funded-phase
-parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+130 CLOSED/rejectedde64b98f...:
+D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
+SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
+SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
+CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
+674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
 
-Independent final new-kernel review:
-D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/execution-parity-r1/source-review.json
-SHA1eed050e14551a2802795547a261415da93bdca29b7fbf3c007f6290e97cdd01.
-3SYN/Ruff; original fully-supported be19 parity at5/10/20, q/cost/quarter,
-own-lot repeats, atomic funding, positive held/exit failures and funded bank
-sum/unfunded counterexample pass. This is modeled execution semantics, not
-independent raw performance or broker proof. Actual aggregate8417700d.../
-2groups verifies exact controls/fees/clock/source chain, not raw path sums.
+Source replaydce10edf.../release8ce25e5d.../10SYN; independent DataExec3.
+Actual2groups verify all18 original128 fixed5/fixed20/cash control cells exactly,
+matching6baskets/full130marks, per-side fee/turnover/gross-minus-fees/q and
+once-frozen action hashes. Never compare129's14-anchor controls.
+D:/thericher-v2/model-artifacts/execution/daily20-remaining-reference-exit-development-v1/actual-r1/actual-check.json
+SHAb021c12fa1f46ac4fd356365192a7c7af1cb84f5007282b82899bf2f2bb7ff4c.
+Peak HHI1 among surviving holdings is not100%NAV exposure; modeled growth
+not observed broker fill/fees/settlement/net. No raw path or OS proof.
 
-Next130: attest fixed entry q, sell-after-decision nextOPEN, own mandatory
-CLOSE(entry+19), fee/cash/funding semantics and full cash tails; five-age
-adapters cannot silently handle20. Do not select/train models or edit broker
-submission. Original19 owners/sharedbasis/pending107 unchanged. Actual fills,
-fees/settled cash/net remain unknown until exact owned evidence is reattached.
-Older package history lives in Gitde0d351/exact artifacts; custody below applies.
+Next131 source/clock/q/cost/replay unchanged; reattest exact old parity and
+new schedule custody, never choose/train models. Original19 owners/shared
+basis/pending107 unchanged. No API/order/Task/schedule change in130.
 
 ## Retained Evidence
 

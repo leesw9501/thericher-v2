@@ -6,28 +6,32 @@ A=D:/thericher-v2/model-artifacts.
 
 ## Current Allocation
 
-129 CLOSED/rejected6488f074...:
-D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
-SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
-One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
-48complete cells/48strict checks25true23false0unknown. All12 funded-phase
-parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+130 CLOSED/rejectedde64b98f...:
+D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
+SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
+SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
+CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
+674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
 
-New family broad512-fixed20-entry-vintage-diversification-development-v1:
-science58bc92e2.../trial1row0d82e256... closed by outcomecdf7bfa4....
-Family600/priorrelated1800/relatedcumulative2400 are spent; no reset/refund
-or automatic second appointment. Conservative original dataset/split/cost
-lineage is not changed-spec byte equivalence or fresh independent evidence.
-Old holding family128trial3/cumulative1800 remains closed/rejected; old
-technical/unavailable outcomes stay exactly recorded.
+Family broad512-daily20-remaining-reference-exit-development-v1; source
+SCI494e87b4.../row0b19bf76... closed by outcome9b31523f...; canonical body
+e1146126... independently rehashed. Both fits and original600 remain spent.
+Actual78.42s atd6; source/child/container/ownedGPUlease released true.
+No retry/refund/depth/weights/holdout promotion. Pre-actualSYN repair0fits
+remains source-only, never a second market fit or erased attempt.
 
-Next130 proposes TRAIN-only remaining-reference20 target with original
-fixed21 context, one Ridge CPU and one bounded GRU CUDA. No130 scientific row,
-fit/GPU/sealed allocation or new weights exist yet. Freeze own contract and
-native CPU smoke, then allocate one exclusive existing PyTorchCUDA appointment
-under the same finite family budget. Do not relabel G101-103/G108-109 as untested.
-Existing GPU environment works; zero-fit129 intentionally used CPU.
-History/Gitde0d351 and existing sealed custody below remain authoritative.
+ONE131: daily20-mean-versus-lower-quartile-exit-development-v1.
+Same target/rows/scaler/state/entry/q/seed/architecture; paired mean-MSE versus
+fixed .25 pinball objective. Two CUDA fits/shared600, no CPUfit/grid/selection.
+Freeze fresh informed quantile-lineage contract before numerical work; no131
+allocation/fit/weights exist. No authority/environment wait or new platform.
+
+New family must link130/G101-103/G108-109 and existing quantile lineage; same
+seen samples/science history not independent data. TwoCUDA mean/q25 fit
+appointments share600s/32epochs3200update bound; mean reconstruction spends
+one fit, no free selection. Source preparation and CPU smoke are ready work,
+not additional authority or a reason to hold Paper. GPU usable/unowned after
+130closure; no131lease/allocation exists. Canonical sealed custody below stays.
 
 ## Retained Evidence
 

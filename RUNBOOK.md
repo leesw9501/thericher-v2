@@ -2,41 +2,39 @@
 
 ## Current Dispatch (2026-10-12 KST)
 
-129 CLOSED/rejected6488f074...:
-D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
-SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
-One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
-48complete cells/48strict checks25true23false0unknown. All12 funded-phase
-parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+130 CLOSED/rejectedde64b98f...:
+D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
+SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
+SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
+CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
+674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
 
-Exact run5fa49701.../host00c5b828.../plana29d7c03.../
-jobdb560641.../result08fc8e4a...; science58bc92e2.../row0d82e256.../
-outcomecdf7bfa4.../related2400. No creator or clock may be rerun/reset.
-Read immutable129 evidence through existing strict offline checks, not a new
-Docker/model/API invocation. Reader/source/SYN custody verifies aggregates
-and honest-host closure only, never cryptographic scheduler or raw NAV proof.
-Parent4/Engine4/Data3/Execution3/independent Data2/source4/actual2 pass;
-Claude contract/result supported-with-limits. No23-failure threshold rescue.
-External-only1312-source15935pass22skip clean8 authority reattached, Ruff/
-three sample Compose checked; no new full-suite run for unchanged runtime.
-Prior exclusive creators/outcomes remain in Gitde0d351 and exact artifacts;
-do not resurrect a historical command, freeze or spent appointment.
+Exact actualrunb77d8846.../plan74011d4b.../precommite47dc9ee.../
+host3c726ecf.../result07634bc1.../readedbec2a...; source/input/GPUlease/child/
+container closed. Native4GiB/2CPU/d6/image unchanged. Never rerun130freeze,
+study-claim/family-clock/prepare/run/read/close exclusive creators. Source/
+aggregate/semantic evidence is assumed-honest host, not raw NAV or OS proof.
+No weights, modeldownload, Paper adoption or measured broker net.
 
-ONE130: daily20-remaining-reference-exit-development-v1.
-Keep entries and quantities fixed; learn remaining fixed20 reference value
-versus selling at next OPEN. Data owns causal20 clocks/support, Engine one
-Ridge CPU/one GRU CUDA, Execution variable-exit parity, Validation independent
-frozen source then actual review; Parent owns custody/runtime/Git.
-Existing1534 native inputs need no acquisition. Five-age source is NOT a
-drop-in20-clock target. Freeze new target/split/model/cost/compute before labels.
-Related G101-103/G108-109/128-129 lineage is informed, not novelty/replication.
-GPU appointment starts only after native CPU smoke and frozen contract;
-this is executable preparation, not a new operator approval or Paper gate.
+SYN1failure071b4fc5.../bd014...0fits kept; source-traced KeyError native SYN
+ab0d...line92 missing api['torch']. WorkerR2d520e893... adds key; hostR2
+cb14803d... separateENTRY retains old /study/worker.py bytes/all494pins.
+SYNr2ef81febb.../294b00... passed before actual600clock. Model/campaign
+unchanged; source-only recovery is not a market refit or debit reset.
+Model4/Parent4/Engine7/Data5/Execution10/Infra8 focused; independent DataExec3/
+Engine3/actual3 plus Executionactual2, Claude limits. Reattached1312-source
+15935pass22skip clean8; Ruff/three sample Compose passed. No unchanged
+16k-suite rerun, no scratch cleanup bypass.
 
-Reuse named old helpers only through pure source-bound APIs. Do not execute
-old MAIN/freezers/creators or replace a stable runtime. If existing CUDA image
-needs a compatibility check, use bounded credential-free synthetic inputs.
-Current-company goal controls the exact scope, not old next-goal statements.
+ONE131: daily20-mean-versus-lower-quartile-exit-development-v1.
+Same target/rows/scaler/state/entry/q/seed/architecture; paired mean-MSE versus
+fixed .25 pinball objective. Two CUDA fits/shared600, no CPUfit/grid/selection.
+Freeze fresh informed quantile-lineage contract before numerical work; no131
+allocation/fit/weights exist. No authority/environment wait or new platform.
+
+Fresh sources/science/custody precede labels/fits; retain130 mean reconstruction
+as a spent control, never a refund or fresh independent validation. Old commands
+and historical next-goal statements do not override current objective.
 
 ## Retained Owned Opportunity Facts
 

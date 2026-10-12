@@ -13,45 +13,41 @@ History through Gita81a1ae and immutable external receipts replaces role diaries
 
 ## Current Work (2026-10-12 KST)
 
-129 CLOSED/rejected6488f074...:
-D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
-SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
-One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
-48complete cells/48strict checks25true23false0unknown. All12 funded-phase
-parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+130 CLOSED/rejectedde64b98f...:
+D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
+SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
+SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
+CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
+674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
 
-Science58bc92e2.../new related family trial1row0d82e256.../
-outcomecdf7bfa4...; priorrelated1800/new600/cumulative2400 retained.
-Source release15ef3f36...; Parent4/Engine4/Data3/Execution3/Validation
-Data2/source4/actual2; actual review8417700d... and Claude contract/result
-supported-with-limits. Source/child/container closure is assumed-honest host,
-not OS/PIT/raw-NAV proof. Seen/current-listing/nonPIT/revised/raw-action/
-finality/nominal fractional-cost limits stay.10bps modeled DEV staggered
-+0.9312% versus syncfull+3.9381%; later-.2515% versus+.9349%.
-Different14-anchor population: never reuse128 growth as a matched control.
+At10bps modeled GRU growth DEV+2.4215%/later+1.4301%, DD1.4396%/.3727%;
+fixed20+2.5632%/+1.3285%,DD3.4304%/.5981%. Ridge+1.9104%/+1.2597%.
+Both model blocks positive and less drawdown, but frozen strict utility failures
+remain: Ridge6/GRU3. This is not alpha, all-model futility or a Paper gate.
+Only6correlated cohorts/130marks; seen/currentlisting/nonPIT/revised/rawaction/
+finality/nominal fractional-cost/latency/capacity limits, not account settled net.
 
-127 diagnostic5555cc40... confirmed all59 prior gaps were before ownership.
-128 rejection36ac831c.../33of72 remains unchanged, as do original122/123
-unknown screens/spend. No quote imputation, old-result rewrite or automatic
-repeat. Earlier closures/source faults remain in Gitde0d351 and exact artifacts.
+Model4/Parent4/Engine7/Data5/Execution10/Infra8/source-only native SYN passed.
+Independent Data/Exec3,Engine/model3,actual3/23pins and Execution actual2 verify
+all18 matched128 controls exactly; not raw NAV/PIT/OS proof. Claude contract/
+result supported-with-limits. Source/child/container/GPUlease closed.
+SYN1KeyErrormissingTorch atab0d...line92/0fits kept; R2bridge adds that key and
+preserves old494aliases. R2SYN294b00... passed before single actualclock.
+Original130 model/source/targets unchanged; no weights/holdout retained.
 
-ONE130: daily20-remaining-reference-exit-development-v1.
-Keep entries and quantities fixed; learn remaining fixed20 reference value
-versus selling at next OPEN. Data owns causal20 clocks/support, Engine one
-Ridge CPU/one GRU CUDA, Execution variable-exit parity, Validation independent
-frozen source then actual review; Parent owns custody/runtime/Git.
-Existing1534 native inputs need no acquisition. Five-age source is NOT a
-drop-in20-clock target. Freeze new target/split/model/cost/compute before labels.
-Related G101-103/G108-109/128-129 lineage is informed, not novelty/replication.
-GPU appointment starts only after native CPU smoke and frozen contract;
-this is executable preparation, not a new operator approval or Paper gate.
+ONE131: daily20-mean-versus-lower-quartile-exit-development-v1.
+Same target/rows/scaler/state/entry/q/seed/architecture; paired mean-MSE versus
+fixed .25 pinball objective. Two CUDA fits/shared600, no CPUfit/grid/selection.
+Freeze fresh informed quantile-lineage contract before numerical work; no131
+allocation/fit/weights exist. No authority/environment wait or new platform.
 
-Original19 Paper owners/shared10%basis/pending107/unknown other custody stay
-independent. No credential/provider/account/order/Task call in127-129.
-Their exact owned opportunities and recovery facts remain below; absence of
-fresh evidence is unknown, not zero or an instruction to invoke a worker.
-Next direction/projection simplification Claude supported-with-limits:
-D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/claude-next/claude-dual-result-outcome.json.
+Parent owns integration/Git; source roles keep disjoint write sets. Reuse exact
+Dataf4281218.../replaydce10edf...; model loss changes need focused source tests.
+No broker/API/account/order/Task/schedule calls in127-130. Original19 owners/
+shared10%basis/pending107/unknown other custody independent and unchanged.
+Older127-129 closures and all original failures/spend stay in Gitd1dae47 and
+immutable artifacts; never rerun a spent creator or replace a retained identity.
+Owned opportunity/recovery facts below still apply, absence is unknown.
 
 ## Retained Preparations And Closures
 

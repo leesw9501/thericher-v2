@@ -6,25 +6,24 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-129 CLOSED/rejected6488f074...:
-D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
-SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
-One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
-48complete cells/48strict checks25true23false0unknown. All12 funded-phase
-parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+130 CLOSED/rejectedde64b98f...:
+D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
+SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
+SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
+CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
+674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
 
-Data handoffb3ad4ba3.../phase17972637...;3source SYN and independent2
-56e4ea88... verify native512/800/71, common calendar-only14anchors5/5/3/1,
-56 prior windows/560OPEN checks/140phase0/full390marks. Actual complete
-support is scoped to this frozen result, not PIT/finality/dataset promotion.
-No acquisition/collector/API call; original59 gap bytes stay unchanged.
+Data sourcef4281218.../release1d236663.../5SYN; independent Data/Execution3
+386ace7c... verifies132calendar starts/ages1..19/695TRAIN terminal and
+DEV4/later2/130marks. Actual all132 complete/0incomplete/0unsupported/cash,
+25,080 label/scaler rows,674unique decisiondates,0EVALtargets. Dates/rows and
+overlapping20labels are not independent samples. No acquisition/collector/API,
+PIT/finality/corporate-action promotion or source repair. Native old/later
+identity/hash/calendar and all original missing-price records stay.
 
-Next130: reuse native input1534... and causal context254f...; extend fixed
-held clocks to20 without reusing five-age bounds. Define TRAIN maturity and
-nextOPEN-versus-terminalCLOSE target before reads/labels; no DEV/later labels
-or future-coverage evaluation filter. Native target support is not yet observed.
-No new scope/cursor or standing collection schedule. Older package history
-is in Gitde0d351 and exact artifacts; retained owners/limits below still apply.
+Next131 reuses this exact target/helper/intake/source and masks; only model
+loss differs. Reattest unchanged source scope, do not recollect or create a
+new loader. Future original107/ab65 owners below remain independent.
 
 ## Retained Evidence
 

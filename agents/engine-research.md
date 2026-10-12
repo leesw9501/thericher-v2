@@ -6,38 +6,36 @@ A=D:/thericher-v2/model-artifacts; M=D:/market_data.
 
 ## Current Package
 
-129 CLOSED/rejected6488f074...:
-D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
-SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
-One CPU600s appointment used28.180085s;56seals/560OPENs/390marks,
-48complete cells/48strict checks25true23false0unknown. All12 funded-phase
-parity grades complete. No fit/GPU/weights/holdout/Paper adoption.
+130 CLOSED/rejectedde64b98f...:
+D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
+SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
+SCI494e87b4.../trial1row0b19bf76.../outcome9b31523f...;one600s used78.42165s.
+CPU1/CUDA1 complete/16epochs1568updates/0failed,132completeTRAIN/25,080rows/
+674decisiondates.30completecells/36checks27true9false0unknown; both rejected.
 
-Release15ef3f36.../kernel5e868954.../compositione5aa1fd6...; science58bc92e2...,
-row0d82e256.../outcomecdf7bfa4.... Exactly56 prior-only seals before payoffs;
-q/4 frozen at entry/ref10bps, ownentry+19 exits and rolling shared cash.
-10bps modeled DEV staggered growth+.9312%/DD1.8293% versus full+3.9381%/
-DD3.4304%; later-.2515%/DD.6684% versus full+.9349%/DD.1700%.
-Reject timing candidate; lower exposure/risk in one block is not alpha.
-Independent source4/actual2/Execution3 and Claude limits pass. Original
-be19 full-union source,122/123/128 outcomes and all spent allocations stay.
+Source230ab8b3.../compositionf49ae660.../Parentmodelcb79beed.../1124params;
+scaler from prior-valid TRAIN before future targetcoverage, mean-one unique
+decision-date weighting. Native 20-clock target, fixed-reference not optimal-Q.
+All6 prior baskets sealed before payoff; model actions once/refq10 then recost.
+10bps modeled GRU DEV+2.4215%/DD1.4396%,later+1.4301%/DD.3727%;
+fixed20+2.5632%/DD3.4304%,later+1.3285%/DD.5981%. Ridge+1.9104%/+1.2597%
+with lower DD.9strict utility failures remain, no winner/epoch/threshold rescue.
+No retained weights/holdout or profitability gate on independent Paper.
+Source7SYN, independent Engine3/actual3 and Execution2/Claude limits; aggregate
+proof only, not independent raw paths or6-cohort alpha/replication.
 
-ONE130: daily20-remaining-reference-exit-development-v1.
-Keep entries and quantities fixed; learn remaining fixed20 reference value
-versus selling at next OPEN. Data owns causal20 clocks/support, Engine one
-Ridge CPU/one GRU CUDA, Execution variable-exit parity, Validation independent
-frozen source then actual review; Parent owns custody/runtime/Git.
-Existing1534 native inputs need no acquisition. Five-age source is NOT a
-drop-in20-clock target. Freeze new target/split/model/cost/compute before labels.
-Related G101-103/G108-109/128-129 lineage is informed, not novelty/replication.
-GPU appointment starts only after native CPU smoke and frozen contract;
-this is executable preparation, not a new operator approval or Paper gate.
+ONE131: daily20-mean-versus-lower-quartile-exit-development-v1.
+Same target/rows/scaler/state/entry/q/seed/architecture; paired mean-MSE versus
+fixed .25 pinball objective. Two CUDA fits/shared600, no CPUfit/grid/selection.
+Freeze fresh informed quantile-lineage contract before numerical work; no131
+allocation/fit/weights exist. No authority/environment wait or new platform.
 
-Fixed21-bar causal context and held state, TRAIN-only target at CLOSE t:
-net terminalCLOSE(entry+19) minus net nextOPEN(t+1), normalized by entryOPEN.
-No future-max/optimal-Q claim or same-CLOSE exit. Preserve all evaluation
-marks/held-price requirements. No new seed/window rescue or ensemble choice.
-Older tracked models, queues and existing teacher/Paper owners remain below.
+One loss axis, fixed mean/q25 same seed202/GRU16/head19,1, state3/prior21.
+Quantile/forecast lineage already tested; do not claim novelty or change
+features/target/timeframe/seed. Date/scaler/action/control parity first, mean
+reconstruction must match130 exact outcomes, not replace a mismatch.
+Queues below remain history-linked; GPU works and ready frozen research is
+allocated autonomously. Current131 source preparation is unallocated.
 
 ## Retained Evidence
 

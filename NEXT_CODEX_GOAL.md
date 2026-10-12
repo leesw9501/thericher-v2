@@ -2,75 +2,75 @@
 
 ## Objective
 
-Complete daily20-remaining-reference-exit-development-v1: test TRAIN-only
-remaining fixed20 value exits without changing entries or using future inputs.
+Complete daily20-mean-versus-lower-quartile-exit-development-v1: isolate
+whether a fixed lower-quartile remaining-reference objective improves the
+mean-value exit policy's modeled net-utility/drawdown trade-off.
 
 Workdir C:/Users/Public/Documents/thericher-v2.
 A=D:/thericher-v2/model-artifacts; M=D:/market_data.
-130 root: D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1.
-129 closure: D:/thericher-v2/model-artifacts/research/daily-fixed20-entry-vintage-diversification-development-v1/integration-evidence.json
-SHA6488f0742412cd21aaacaca66433fe020959fdf0e6ccc2d483781f3c55a8f1cf.
+131 root: D:/thericher-v2/model-artifacts/research/daily20-mean-versus-lower-quartile-exit-development-v1.
+130 closure: D:/thericher-v2/model-artifacts/research/daily20-remaining-reference-exit-development-v1/integration-evidence.json
+SHAde64b98f681527e4247c8814bb5450cd7e9283ba8e07f3f8f9a2628b596bf29d.
 
-## Facts And Ownership
+## Evidence And Ownership
 
-129 completed28.180085s/600:56seals/560OPENs/390marks/48cells48checks23fail,
-0unknown/rejected; outcomecdf7bfa4.../related2400 spent.128 rejection and old
-122/123 unknown outcomes stay. G101-103 daily five-age exits and G108-109
-remaining-reference supervision already exist: informed20-horizon reexamination,
-not novelty/depth promotion/replication. Five-age APIs are not20-clock drop-ins.
+130 trial1 closed/outcome9b31523f...:78.42165s/600,1CPU1CUDA16epochs1568updates,
+25,080rows/132completeTRAIN/674decisiondates,30cells36checks9fail0unknown.
+Both candidates rejected despite positive modeled10bps growth on both seen
+blocks. GRU DEV+2.4215%/DD1.4396%,later+1.4301%/DD.3727%; fixed20
++2.5632%/DD3.4304%,later+1.3285%/DD.5981%. No all-model futility or alpha claim.
+Weights not retained. SYN1 bridge failure/0fits, R2 repair and all spend stay.
 
-Data owns native clocks/targets/support; Engine one Ridge CPU/one GRU CUDA;
-Execution variable-exit parity; Validation independent frozen source then
-actual review; Parent science/custody/runtime/Git. Parallel source packages.
-No new platform/collector/broker path/approval/report/standing worker.
-Original19Paper owners/sharedbasis/pending107 independent; never KIS_LIVE_*.
+Engine owns one paired scientific recipe; Data reattests unchanged target/input
+scope; Execution unchanged clock/cost/action parity; Infra tiny scoped existing
+transport adaptation only; Validation frozen source then actual review.
+Parent custody/runtime/Git. Parallel disjoint source packages, no new platform,
+report/approval system, collector, broker path or per-agent goals. Original19
+Paper owners/sharedbasis/pending107 independent. Never KIS_LIVE_*.
 
-## Freeze Before Numerical Work
+## Frozen Comparison
 
-Original ordered512/old800/later71,1534 native intake/254f prior21 OHLCV context.
-TRAIN starts21..676 every5 sessions:132 calendar starts, all terminal labels
-<=699. Freeze/count TRAIN support masks; never fabricate labels, call DEV/later
-targets or filter evaluation by future coverage. Empty TRAIN is input_unavailable.
-DEV entries720/740/760/780 and later21/41: six prior baskets/60rankedOPENs,
-full80+50=130marks/cash tails. TRAIN-overlapping early blocks are not causal
-out-of-sample comparisons;129 fourteen-anchor scores are not matched controls.
-Freeze temporal order, effective-sample rule, scaler/state schema and source pins.
+Reuse exact130 original512/800/71,132TRAIN starts21..676/terminal<=695,
+sixDEV/later baskets60OPENs/full130marks, prior21 context/state3/target
+.999*(terminalCLOSE[e+19]-nextOPEN[e+age])/entryOPEN. Dataf4281218.../intake1534...
+and replaydce10edf... stay. Identical TRAIN complete-mask rows, before-future-
+coverage scaler, unique decision-date weights, entry/q/seed202/GRU16/head19,1/
+1124params/FP32/Adam.001/batch256/16epochs/clip1/threshold0/clocks.
+No EVAL targets, support-selected evaluation, changed window/target/seed/state.
 
-After entry, ages1..19 mean actions at OPEN(entry+age), features ending at
-immediately prior CLOSE. TRAIN target:
-(net10bps terminalCLOSE(entry+19)-net10bps nextOPEN(t+1))/entryOPEN.
-BUY is sunk; fixed-reference value, not future-max/optimal-Q. Prediction<=0
-exits nextOPEN; otherwise hold, mandatory own CLOSE(entry+19). No same-CLOSE
-learned fill/OPEN(entry+20). Original entry/q/ref10bps, fixed capital/no reinvest.
+Only changed research axis: mean-MSE versus fixed q=.25 pinball loss
+max(q*(y-p),(q-1)*(y-p)), date-weighted mean. No quantile grid or loss-scale
+tuning. One mean GRU reconstruction and one q25 GRU CUDA fit, CPUfits0;
+one600s family incl90reserve,32totalepochs/max3200updates/2CPU/4GiBhost/
+8GiBVRAMmaximum, pinned existing d6 RO/networknone/exclusivelease.
+Both fits remain spent, even mean reconstruction; no retry/refund.
+Mean must reproduce130 actions/cells under the same frozen inputs/scaler/seed
+or classify exact technical mismatch, not silently replace the control.
+Freeze source/canonical row/lineage before labels/fits. Quantile/forecast
+families already exist: informed objective reexamination, not novelty/depth/
+fresh replication, ensemble selection or a utilization KPI.
 
-One Ridge alpha1 and one frozen GRU16/seed202/16epochs/batch256/Adam0.001/MSE,
-max1600updates; TRAIN-only transforms/date-aware weighting. No seed/window/
-threshold/epoch rescue. Native CPU smoke first, then exclusive existing
-PyTorchCUDA appointment. ONE600s family incl90s publication/cleanup,CPU2/8GiB;
-no per-model clock reset. Reuse pinned existing transport/runtime and bounded
-SYN compatibility if needed, not another wrapper platform. Preserve exact
-started/completed/failed fit and lease facts. Freeze before labels/fits.
+Both models freeze causal exits once at10bps and recost5/10/20 identically;
+own nextOPEN ages1..19 versus mandatoryCLOSE(e+19), no20thOPEN/substitution.
+Controls meanGRU,fixed5,fixed20,cash on the same original6 baskets/calendar.
+Exactly30cells/18strict q25 predicates: each2blocks/3costs U>meanGRU,U>cash,
+DD<=meanGRU. Any failure rejects q25. Mean reconstruction is a control, not
+new qualification. Report exposure/duration/turnover/fees; lower exposure/DD
+alone cannot be alpha. Any positive quote/history/funding/mark failure makes
+comparison block unavailable, never imputed success or an operator gate.
 
 ## Completion
 
-Freeze each model's causal actions once at10bps; recost identical actions at
-5/10/20bps. Controls fixed5/fixed20/cash, same six baskets/calendar.
-Exactly30cells/36strict predicates: each model/2blocks/3costs U>fixed20,U>cash,
-DD<=fixed20. Report fixed5/exposure/turnover/fees descriptively. Any failure
-rejects only that candidate. Missing positive held/exit OPEN/CLOSE, invalid
-source/clock, funding failure or lost mark makes comparison block unavailable,
-never imputed success/operator gate.
+Native source/SYN and CPU smoke reuse only with exact source/ABI evidence;
+changed model loss gets focused tests. Claude contract/result falsification,
+one bounded actual outcome, exact source/time/cleanup/GPU-lease/custody
+reader, independent source/aggregate parity and canonical non-promoting close.
+No weights/holdout/download/.env/API/account/order/Task/schedule changes.
+Artifacts A/private tensors M/15%D:floor. Seen/nonPIT/currentlisting/revised/
+rawaction/finality/nominal fractional-cost limits remain; only6correlated
+eval cohorts, no independence/Paper promotion.
 
-Kills: future terminal feature/EVAL target/wrong action or final clock/other-lot
-sale/cash injection/borrowing/support-selected evaluation/changed q or actions
-across costs. Native SYN/parity, Claude contract/result challenges, one finite
-actual outcome, independent source/aggregate/cleanup and canonical non-promoting
-closure. Artifacts A/private tensors M/15%D:floor; no weights/holdout/external
-model download/.env/API/account/order/Task/schedule changes. Seen/current-listing/
-nonPIT/revised/raw-action/finality/nominal fractional-execution limits stay;
-no Paper promotion. GPU is usable, not a permission hold.
-
-Focused plus unchanged1312-source15935pass22skip clean8 reattachment, Ruff/
-three sample Compose. Shared runtime changes require changed-path serial/fresh
-clean8. Refresh current stateboards/HANDOFF/RUNBOOK, verify/commit/push, replace
-with ONE material next objective and continue.
+Focused verification plus unchanged1312-source15935pass22skip clean8
+reattachment, Ruff/three sample Compose; shared runtime changes require
+changed-path serial/fresh clean8. Refresh current stateboards/HANDOFF/RUNBOOK,
+verify/commit/push, replace with ONE material next objective and continue.
